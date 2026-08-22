@@ -47,11 +47,14 @@ window.Search = (function () {
     onPick = onSelect;
     statusEl = status;
     index = makeIndex();
-    const shard0 = await fetch("data/search-index-0.json", { cache: "force-cache" }).then((r) => r.json());
+    // Same stamp as the attribute shards, and for the same reason: a
+    // force-cached search index outlived every redeploy that changed it.
+    await DataStore.loadVersion();
+    const shard0 = await fetch(DataStore.url("search-index-0.json")).then((r) => r.json());
     absorb(shard0);
     ready = true;
     // Second-level divisions are the long tail; load them without blocking.
-    fetch("data/search-index-2.json", { cache: "force-cache" })
+    fetch(DataStore.url("search-index-2.json"))
       .then((r) => r.json())
       .then((shard2) => { absorb(shard2); deepReady = true; })
       .catch((err) => console.warn("admin-2 search shard failed", err));

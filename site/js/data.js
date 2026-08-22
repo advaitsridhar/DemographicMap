@@ -10,6 +10,14 @@ window.DataStore = (function () {
   "use strict";
 
   const BASE = "data/";
+  // Appended to every data URL so a redeploy is picked up immediately.
+  // Deliberately NOT "force-cache" below: that directive serves the stored
+  // response whatever its age and only touches the network when nothing is
+  // stored, so a viewer who had opened the map once kept that day's figures
+  // for good and every later deploy was invisible to them. The in-memory
+  // maps here already stop a shard being fetched twice in one session, which
+  // is all the caching this needs.
+  let version = "";
   const byId = new Map();                 // shapeID -> record
   const countryRecords = new Map();       // ISO3 -> admin-0 record
   const childrenOf = new Map();           // parent id -> [record]
@@ -21,9 +29,27 @@ window.DataStore = (function () {
   function on(fn) { listeners.add(fn); return () => listeners.delete(fn); }
   function emit(event) { listeners.forEach((fn) => { try { fn(event); } catch (e) { console.error(e); } }); }
 
+  /** Read the build stamp once, so every other request can be cache-busted. */
+  async function loadVersion() {
+    if (version) return version;
+    try {
+      const res = await fetch(BASE + "build.json", { cache: "no-store" });
+      if (res.ok) version = (await res.json()).version || "";
+    } catch (err) {
+      // No stamp is survivable -- requests just fall back to HTTP caching.
+      console.warn("build stamp unavailable", err);
+    }
+    return version;
+  }
+
+  function url(path) {
+    return BASE + path + (version ? (path.includes("?") ? "&" : "?") + "v=" + version : "");
+  }
+
   async function getJSON(path) {
     if (inflight.has(path)) return inflight.get(path);
-    const p = fetch(BASE + path, { cache: "force-cache" })
+    const p = loadVersion()
+      .then(() => fetch(url(path)))
       .then((res) => {
         if (!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
         return res.json();
@@ -104,7 +130,7 @@ window.DataStore = (function () {
   function all() { return byId; }
 
   return { loadCountries, loadLevel, ensureLoaded, loadCoverage, get, country,
-           children, countries, isLoaded, all, on };
+           children, countries, isLoaded, all, on, url, loadVersion };
 })();
 
 /* ------------------------------------------------------------------ format */

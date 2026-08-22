@@ -206,10 +206,10 @@ def build_record(name: str, counts: collections.Counter, *, level: str,
                       "India does not collect ethnicity. Scheduled Caste / Scheduled "
                       "Tribe status and mother tongue are collected instead."),
         language=gap(NOT_AVAILABLE,
-                     "Mother tongue is Census 2011 table C-16, a separate publication "
-                     "with one workbook per state. Units whose workbook is in "
-                     "data/raw/india/c16/ are filled by india_language.py; this "
-                     "marker survives only where that state's workbook is missing."),
+                     "India does ask mother tongue -- Census 2011 table C-16 -- but "
+                     "publishes it as a separate workbook per state rather than "
+                     "through any API. This state's workbook has not been loaded yet, "
+                     "so its districts carry no figure. The state total does."),
         sources=[{"field": "population/religion/scheduled groups", "name": SOURCE,
                   "url": CATALOG, "year": 2011,
                   "license": "Government of India open data (GODL-India)",
