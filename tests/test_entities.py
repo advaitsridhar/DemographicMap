@@ -304,3 +304,62 @@ class IndiaCensusValidation(unittest.TestCase):
         for name, reason in self.india.FORMED_AFTER_2011.items():
             self.assertGreater(len(reason), 80, name)
             self.assertIn("2011 census", reason)
+
+
+class AbsHierarchyCollapse(unittest.TestCase):
+    """ABS classifications nest: summing a parent and its children counts every
+    person twice and halves every share. Albury came out 25.4% Christian in the
+    first populated run; the real figure is about 50%."""
+
+    def setUp(self):
+        from fetch_census import abs as abs_adapter
+        self.abs = abs_adapter
+        self.albury = {
+            "Christianity Total": 53856, "Catholic": 24671, "Anglican": 14166,
+            "Uniting Church": 3446,
+            "Secular Other Spiritual and No Religious Affiliation Total": 44444,
+            "No Religion, so described": 44059,
+            "Religious affiliation not stated": 7948, "Total": 106248,
+        }
+
+    def test_keeps_only_the_top_level(self):
+        out = self.abs.collapse_hierarchy(self.albury)
+        self.assertIn("Christianity", out)
+        for child in ("Catholic", "Anglican", "Uniting Church", "No Religion, so described"):
+            self.assertNotIn(child, out)
+
+    def test_drops_the_grand_total(self):
+        self.assertNotIn("Total", self.abs.collapse_hierarchy(self.albury))
+
+    def test_shares_sum_to_one_hundred(self):
+        out = self.abs.collapse_hierarchy(self.albury)
+        total = sum(out.values())
+        self.assertAlmostEqual(sum(100 * v / total for v in out.values()), 100.0, places=6)
+
+    def test_christianity_is_about_half(self):
+        out = self.abs.collapse_hierarchy(self.albury)
+        total = sum(out.values())
+        self.assertGreater(100 * out["Christianity"] / total, 45)
+
+    def test_keeps_not_stated_beside_the_totals(self):
+        self.assertIn("Religious affiliation not stated",
+                      self.abs.collapse_hierarchy(self.albury))
+
+    def test_a_flat_classification_is_untouched(self):
+        # Ancestry has no hierarchy, so nothing may be dropped.
+        flat = {"English": 44455, "Australian": 42905, "Irish": 14000}
+        self.assertEqual(self.abs.collapse_hierarchy(flat), flat)
+
+    def test_sex_dimension_is_restricted_to_persons(self):
+        rows = [({"REGION": "A", "SEXP": "Persons", "RELP": "Christianity Total"}, 10.0),
+                ({"REGION": "A", "SEXP": "Males", "RELP": "Christianity Total"}, 4.0),
+                ({"REGION": "A", "SEXP": "Females", "RELP": "Christianity Total"}, 6.0)]
+        self.assertEqual(self.abs.sole_sex_dimension(rows), ("SEXP", "Persons"))
+        grouped = self.abs.group_by_region(rows, "RELP", "REGION")
+        self.assertEqual(grouped["A"]["Christianity"], 10.0)
+
+    def test_no_sex_dimension_is_harmless(self):
+        rows = [({"REGION": "A", "RELP": "Christianity Total"}, 10.0)]
+        self.assertIsNone(self.abs.sole_sex_dimension(rows))
+        self.assertEqual(self.abs.group_by_region(rows, "RELP", "REGION")["A"],
+                         {"Christianity": 10.0})

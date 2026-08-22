@@ -179,8 +179,55 @@ def pick_region_dimension(rows: list[tuple[dict[str, str], float]]) -> str:
     return "REGION"
 
 
+# ABS classifications are hierarchical: "Christianity Total" is reported
+# alongside its own children (Catholic, Anglican, Uniting Church...). Summing
+# both levels double-counts every person, which halved every share in the first
+# populated run -- Albury came out 25.4% Christian where the real figure is
+# about 50%. Where "... Total" rows exist they ARE the top level, so keep only
+# those, plus the not-stated rows that sit beside them.
+TOTAL_SUFFIX = " total"
+KEEP_ALWAYS = ("not stated", "not applicable", "inadequately described")
+
+
+def collapse_hierarchy(counts: dict[str, float]) -> dict[str, float]:
+    """Keep one level of a hierarchical classification, never two."""
+    totals = {k: v for k, v in counts.items() if k.lower().endswith(TOTAL_SUFFIX)}
+    if not totals:
+        return counts                      # flat classification (ancestry)
+    kept = dict(totals)
+    for label, value in counts.items():
+        low = label.lower()
+        if low in ("total", "total persons"):
+            continue                       # the grand total is the denominator
+        if any(tag in low for tag in KEEP_ALWAYS) and label not in kept:
+            kept[label] = value
+    # Strip the marker so the UI shows "Christianity", not "Christianity Total".
+    return {(k[: -len(TOTAL_SUFFIX)] if k.lower().endswith(TOTAL_SUFFIX) else k): v
+            for k, v in kept.items()}
+
+
+def sole_sex_dimension(rows: list[tuple[dict[str, str], float]]) -> tuple[str, str] | None:
+    """The (dimension, value) carrying both sexes, so males and females are not
+    added to the persons total and counted twice."""
+    for labels, _ in rows[:50]:
+        for key, value in labels.items():
+            if key.endswith("_CODE") or "SEX" not in key.upper():
+                continue
+            values = {lab.get(key) for lab, _ in rows if lab.get(key)}
+            for candidate in values:
+                if candidate and candidate.strip().lower() in ("persons", "total", "all persons"):
+                    return key, candidate
+    return None
+
+
 def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
                     region_dim: str = "REGION") -> dict[str, dict[str, float]]:
+    sex = sole_sex_dimension(rows)
+    if sex:
+        key, value = sex
+        rows = [(lab, val) for lab, val in rows if lab.get(key) == value]
+        log(f"  restricted {key}={value!r} so the sexes are not counted twice")
+
     out: dict[str, dict[str, float]] = {}
     for labels, value in rows:
         region = labels.get(region_dim + "_CODE") or labels.get(region_dim)
@@ -188,7 +235,7 @@ def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
         if not region or not label:
             continue
         out.setdefault(region, {})[label] = out.setdefault(region, {}).get(label, 0.0) + value
-    return out
+    return {region: collapse_hierarchy(counts) for region, counts in out.items()}
 
 
 def main() -> int:
@@ -225,6 +272,13 @@ def main() -> int:
         code = labels.get(region_dim + "_CODE") or labels.get(region_dim)
         if code:
             names.setdefault(code, labels.get(region_dim, code))
+
+    if religion:
+        sample = next(iter(religion.values()))
+        biggest = max(sample.values()) if sample else 0
+        total = sum(sample.values()) or 1
+        log(f"  sanity: largest religion category is {100 * biggest / total:.1f}% of the "
+            f"sample region's total across {len(sample)} categories")
 
     src = "Australian Bureau of Statistics, Census of Population and Housing 2021"
     records: list[dict[str, Any]] = []
