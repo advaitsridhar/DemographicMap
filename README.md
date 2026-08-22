@@ -24,9 +24,16 @@ browser blocks the data fetches.
 
 Pushing to `main` runs `.github/workflows/pages.yml`, which validates the build
 and publishes `site/` to GitHub Pages at
-`https://<owner>.github.io/DemographicMap/`. Nothing needs configuring by hand:
-the workflow passes `enablement: true` to `actions/configure-pages`, which turns
-Pages on through the API on the first run.
+`https://<owner>.github.io/DemographicMap/`.
+
+**One-time setup.** Pages has to be switched on for the repository first, under
+**Settings → Pages → Build and deployment → Source → GitHub Actions**. The
+workflow does pass `enablement: true` to `actions/configure-pages`, which asks
+the API to create the Pages site, but the default `GITHUB_TOKEN` is not
+permitted to do so — it fails with `Create Pages site failed. Error: Resource
+not accessible by integration`. Enabling it by hand once (or giving that step a
+PAT with `repo` scope) is what unblocks it; every push after that deploys
+unattended.
 
 Any static host works, provided it sends `Access-Control-Allow-Origin`, honours
 `Range` requests, and sets a long `Cache-Control` — those three are what the
