@@ -34,6 +34,15 @@ python3 scripts/fetch_factbook.py
 step "Wikidata subnational attributes"
 soft python3 scripts/fetch_wikidata.py --level admin1
 
+# Admin-2 from Wikidata, for countries whose second-level demographics no
+# statistical adapter reaches. India is the motivating case: its 735 districts
+# have no API at all (the 2011 census ships as per-state workbooks), so
+# Wikidata's population and headquarters statements are the only structured
+# district-level data available. One SPARQL query per country, so the list is
+# deliberately short rather than global.
+WIKIDATA_ADMIN2="${WIKIDATA_ADMIN2:-IND IDN PHL VNM THA PAK BGD NGA ETH KEN MEX COL PER ARG}"
+soft python3 scripts/fetch_wikidata.py --level admin2 --countries $WIKIDATA_ADMIN2
+
 if [ "${WITH_CENSUS:-0}" = "1" ]; then
   step "National statistical offices"
   soft python3 -m scripts.fetch_census.us_acs --level state

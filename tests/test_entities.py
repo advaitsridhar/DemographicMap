@@ -171,3 +171,44 @@ class ContainmentMatching(unittest.TestCase):
         lookup = {be.norm("Fes"): {"name": "Fes"}}
         entity, how = be.match_name({"name": "Oued Fes"}, lookup)
         self.assertIsNone(entity)
+
+
+class CollectionPolicyPropagation(unittest.TestCase):
+    """A country that does not collect a field does not collect it in its regions."""
+
+    def test_not_available_becomes_not_collected(self):
+        entity = {"ethnicity": common.gap(common.NOT_AVAILABLE)}
+        applied = common.apply_collection_policy(entity, "IND")
+        self.assertEqual(applied, ["ethnicity"])
+        self.assertEqual(entity["ethnicity"]["status"], common.NOT_COLLECTED)
+        self.assertIn("Scheduled Caste", entity["ethnicity"]["note"])
+
+    def test_a_real_value_is_never_overwritten(self):
+        # A region may publish what its national census declines to ask.
+        shares = [{"group": "Some group", "pct": 42.0}]
+        entity = {"ethnicity": shares}
+        self.assertEqual(common.apply_collection_policy(entity, "IND"), [])
+        self.assertEqual(entity["ethnicity"], shares)
+
+    def test_untouched_fields_stay_untouched(self):
+        # India collects religion; only ethnicity carries a policy.
+        entity = {"religion": common.gap(common.NOT_AVAILABLE),
+                  "ethnicity": common.gap(common.NOT_AVAILABLE)}
+        common.apply_collection_policy(entity, "IND")
+        self.assertEqual(entity["religion"]["status"], common.NOT_AVAILABLE)
+        self.assertEqual(entity["ethnicity"]["status"], common.NOT_COLLECTED)
+
+    def test_country_without_a_policy_is_a_no_op(self):
+        entity = {"ethnicity": common.gap(common.NOT_AVAILABLE)}
+        self.assertEqual(common.apply_collection_policy(entity, "BRA"), [])
+
+    def test_unknown_country_is_a_no_op(self):
+        entity = {"ethnicity": common.gap(common.NOT_AVAILABLE)}
+        self.assertEqual(common.apply_collection_policy(entity, None), [])
+
+    def test_every_policy_entry_carries_a_reason(self):
+        for iso3, fields in common.NOT_COLLECTED_POLICY.items():
+            self.assertRegex(iso3, r"^[A-Z]{3}$")
+            for field, reason in fields.items():
+                self.assertIn(field, ("religion", "ethnicity", "language"))
+                self.assertGreater(len(reason), 30, f"{iso3}/{field} reason is too thin")

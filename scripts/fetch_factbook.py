@@ -28,6 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import (  # noqa: E402
     NOT_APPLICABLE,
     NOT_AVAILABLE,
+    NOT_COLLECTED_POLICY,
     NOT_COLLECTED,
     PROCESSED,
     RAW,
@@ -54,36 +55,6 @@ REGIONS = [
 # Countries that legally or administratively do not collect a field at all.
 # This is the "not collected" vs "not available" distinction the plan calls an
 # editorial-integrity requirement -- an empty Factbook field is NOT proof of it.
-NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
-    "FRA": {
-        "ethnicity": "France does not collect ethnicity; statistiques ethniques are barred by law (Loi Informatique et Libertes 1978, Conseil constitutionnel 2007).",
-        "religion": "France does not collect religion in its census for the same reason.",
-    },
-    "DEU": {
-        "ethnicity": "Germany does not collect ethnicity. The census records citizenship and migration background; religion comes from church-tax registration, not fine-grained self-ID.",
-    },
-    "JPN": {
-        "ethnicity": "Japan's census collects nationality, not ethnicity.",
-        "religion": "Japan's census does not ask religion; published figures are religious-body self-reports that exceed the population.",
-    },
-    "IND": {
-        "ethnicity": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead.",
-    },
-    "ESP": {
-        "ethnicity": "Spain's census records nationality and birthplace, not ethnicity.",
-        "religion": "Spain's census does not ask religion (CIS survey data exists instead).",
-    },
-    "CHN": {
-        "religion": "China's census does not ask religion; it records the 56 official nationalities (minzu) instead.",
-    },
-    "KOR": {"ethnicity": "South Korea's census does not collect ethnicity."},
-    "NLD": {"ethnicity": "The Netherlands records migration background, not ethnicity."},
-    "SWE": {"ethnicity": "Sweden records country of birth and citizenship, not ethnicity."},
-    "NOR": {"ethnicity": "Norway records immigrant background, not ethnicity."},
-    "DNK": {"ethnicity": "Denmark records ancestry/citizenship, not ethnicity."},
-    "BEL": {"ethnicity": "Belgium does not collect ethnicity; language community is administrative, not a census question."},
-    "ITA": {"ethnicity": "Italy's census records citizenship, not ethnicity."},
-}
 
 
 # ---------------------------------------------------------------------------
@@ -257,8 +228,6 @@ def parse_languages(profile: dict[str, Any]) -> list[dict[str, Any]] | None:
     if not names:
         return None
     return [{"group": n, "pct": None, "pct_status": NOT_AVAILABLE} for n in names]
-
-
 
 # ---------------------------------------------------------------------------
 # GEC -> ISO3 resolution

@@ -54,10 +54,16 @@ one of three things:
 | **Not collected** | The country does not gather it at all. | France records neither ethnicity nor religion — *statistiques ethniques* are barred by law. |
 
 The third category is an editorial commitment, not a shrug. It is asserted from a
-hand-maintained policy table (`NOT_COLLECTED_POLICY` in
-`scripts/fetch_factbook.py`, `COLLECTION_POLICY` in
-`scripts/fetch_census/eurostat.py`), never inferred from an empty field, because
-"the source said nothing" and "the state asks nobody" are different facts:
+hand-maintained policy table (`NOT_COLLECTED_POLICY` in `scripts/common.py`,
+`COLLECTION_POLICY` in `scripts/fetch_census/eurostat.py`), never inferred from
+an empty field, because "the source said nothing" and "the state asks nobody"
+are different facts.
+
+The marker propagates down every level: a question a national census does not
+ask has no answer in that country's provinces or districts either, so
+`apply_collection_policy` re-marks their `not_available` fields after the
+adapters run — and only those, so a region that publishes what its national
+census declines to ask keeps its real value. Countries covered:
 
 - **France** collects neither ethnicity nor religion in its census.
 - **Germany** records citizenship and migration background, not ethnicity; religion

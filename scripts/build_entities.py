@@ -36,8 +36,8 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common import (  # noqa: E402
-    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, ROOT, gap, is_gap, log,
-    measure, read_json, write_json,
+    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, ROOT, apply_collection_policy,
+    gap, is_gap, log, measure, read_json, write_json,
 )
 
 SITE_DATA = ROOT / "site" / "data"
@@ -487,6 +487,20 @@ def main() -> int:
             hit += 1
         if rows:
             log(f"  {iso3}: adapter rows matched {hit}, unmatched {miss}")
+
+    # -- collection policy ---------------------------------------------------
+    # Last, so an adapter's real value always wins over the national marker.
+    policy_hits: dict[str, int] = defaultdict(int)
+    for table in (admin1_by_country, admin2_by_country):
+        for iso3, rows in table.items():
+            for entity in rows:
+                for field in apply_collection_policy(entity, iso3):
+                    policy_hits[f"{iso3}/{field}"] += 1
+    if policy_hits:
+        total = sum(policy_hits.values())
+        top = sorted(policy_hits.items(), key=lambda kv: -kv[1])[:8]
+        log(f"  collection policy marked {total} subnational fields as not_collected: "
+            + ", ".join(f"{k} {v}" for k, v in top))
 
     # -- write ---------------------------------------------------------------
     out = args.out
