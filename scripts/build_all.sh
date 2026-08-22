@@ -42,7 +42,10 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.statcan --level province
   soft python3 -m scripts.fetch_census.ibge_sidra --level state
   soft python3 -m scripts.fetch_census.eurostat --level nuts2
-  soft python3 -m scripts.fetch_census.abs --level state
+  # The ABS publishes 2021-census religion/ancestry by LGA, SA2, postal area
+  # and similar -- there is no state-level dataflow (see the G14 catalogue
+  # listing in run 32566750604). LGAs join the admin-2 layer.
+  soft python3 -m scripts.fetch_census.abs --level lga
 fi
 
 if [ "${SKIP_TILES:-0}" != "1" ]; then
