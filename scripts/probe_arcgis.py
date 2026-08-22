@@ -128,12 +128,26 @@ def main() -> int:
         log(f"    {args.portal}/content/items/{iid}/data")
         return 0
 
+    log(f"\n  service: {service}")
     root = get_json(service)
     if not root:
         return 1
+
+    # An item's url may point at the service root *or* straight at one layer
+    # (".../MapServer/0"). A layer answers with "fields" and no "layers" list,
+    # which is what made the first probe report "0 layers" for a service that
+    # plainly had one.
+    if root.get("fields") is not None and not root.get("layers"):
+        parent, _, leaf = service.rpartition("/")
+        if leaf.isdigit():
+            log("  (item points directly at a single layer)")
+            show_layer(parent, {"id": int(leaf), "name": root.get("name")}, args.samples)
+            return 0
+
     layers = (root.get("layers") or []) + (root.get("tables") or [])
-    log(f"\n  service: {service}")
     log(f"  {len(layers)} layer(s)/table(s)")
+    if not layers:
+        log(f"  service keys: {sorted(root)[:20]}")
     for layer in layers:
         show_layer(service, layer, args.samples)
     return 0
