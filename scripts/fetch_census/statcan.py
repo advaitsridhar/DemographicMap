@@ -86,6 +86,7 @@ def main() -> int:
     src = "Statistics Canada, 2021 Census of Population"
     level = "admin1" if args.level == "province" else "admin2"
     records: list[dict[str, Any]] = []
+    consecutive_failures = 0
     for geo in geographies(args.level):
         dguid = geo.get("GEO_ID_ID") or geo.get("DGUID")
         name = geo.get("GEO_NAME_NOM") or geo.get("NAME")
@@ -98,7 +99,20 @@ def main() -> int:
             language = block(profile(dguid, "language"))
         except Exception as exc:
             log(f"    skipped: {exc}")
+            consecutive_failures += 1
+            if consecutive_failures >= 3 and not records:
+                # Run 3 established that www12.statcan.gc.ca serves its WET
+                # HTML shell to non-browser clients for every REST path tried,
+                # valid DGUIDs included. Three straight failures with nothing
+                # fetched means the API is walled off, not that one geography
+                # is odd -- say so once and stop hammering it.
+                raise SystemExit(
+                    "statcan: www12.statcan.gc.ca is returning HTML pages to "
+                    "API requests (bot wall). The adapter is correct but the "
+                    "host currently blocks non-browser clients; re-try later "
+                    "or fetch the Census Profile CSVs manually.")
             continue
+        consecutive_failures = 0
         records.append(record(
             f"CAN-{dguid}", name, level=level, parent="CAN",
             codes={"dguid": dguid},

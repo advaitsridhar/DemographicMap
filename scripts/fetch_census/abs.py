@@ -57,11 +57,12 @@ def discover_dataflows(region: str) -> dict[str, tuple[str, str, str]]:
     log(f"  {len(flows)} dataflows in the ABS catalogue")
     # When nothing matches, the census-looking ids are the diagnosis: print
     # them so a failed CI run documents the real naming scheme.
-    census_like = sorted({f[0] for f in flows
-                          if any(tag in f[0].upper()
-                                 for tag in ("C21", "G14", "G08", "RELIG", "ANCP", "CENSUS"))})
-    if census_like:
-        log("  census-related dataflow ids: " + ", ".join(census_like[:60]))
+    # The G14/G08 sets are small; print them completely -- run 3's broad sample
+    # was drowned in sixty CENSUS2011_B* ids before reaching the C21 block.
+    for table in ("G14", "G08"):
+        ids = sorted(f[0] for f in flows if table in f[0].upper())
+        if ids:
+            log(f"  dataflows containing {table}: " + ", ".join(ids[:40]))
 
     out: dict[str, tuple[str, str, str]] = {}
     table_of = {"religion": "G14", "ancestry": "G08"}
@@ -94,9 +95,19 @@ def sdmx(flow: tuple[str, str, str], key: str = "all") -> dict[str, Any]:
 
 
 def unpack(payload: dict[str, Any]) -> list[tuple[dict[str, str], float]]:
-    """SDMX-JSON series -> [(dimension label map, observation value)]."""
-    data = payload["data"]["dataSets"][0]
-    struct = payload["data"]["structure"]["dimensions"]
+    """SDMX-JSON series -> [(dimension label map, observation value)].
+
+    Handles both wire formats the ABS serves: SDMX-JSON 1.0 puts a singular
+    ``structure`` beside ``dataSets``; 2.0 puts a ``structures`` list there
+    (the live API answered with the latter -- KeyError 'structure' in run 3).
+    """
+    body = payload["data"]
+    data = body["dataSets"][0]
+    struct_node = body.get("structure")
+    if struct_node is None:
+        candidates = body.get("structures") or payload.get("structures") or []
+        struct_node = candidates[0] if candidates else {}
+    struct = struct_node["dimensions"]
     series_dims = struct.get("series", [])
     obs_dims = struct.get("observation", [])
     out: list[tuple[dict[str, str], float]] = []
