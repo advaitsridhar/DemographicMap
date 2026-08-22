@@ -25,9 +25,21 @@ import argparse
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, gap, http_json, log, measure,
-    record, write_json,
+    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, gap, http_json, log, measure,
+    read_json, record, write_json,
 )
+
+# Eurostat's own two-letter codes, two of which are not ISO 3166-1 alpha-2.
+EUROSTAT_ALPHA2 = {"EL": "GRC", "UK": "GBR"}
+
+
+def alpha2_to_iso3() -> dict[str, str]:
+    """alpha-2 -> alpha-3 from the Natural Earth country index."""
+    out = dict(EUROSTAT_ALPHA2)
+    for row in read_json(RAW / "codes" / "country_index.json", []):
+        if row.get("iso2"):
+            out.setdefault(row["iso2"], row["iso3"])
+    return out
 
 API = ("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
        "{dataset}?format=JSON&lang=EN")
@@ -115,10 +127,18 @@ def main() -> int:
         log(f"  median age unavailable ({exc})")
         median = {}
 
+    iso3_of = alpha2_to_iso3()
     src = "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
     records: list[dict[str, Any]] = []
     for geo, (year, value) in sorted(latest.items()):
         country = geo[:2]
+        # Without a resolvable ISO3 the join would bucket the record under a
+        # junk country and silently match nothing -- the first live run put all
+        # 352 rows under "EU-" exactly this way.
+        iso3 = iso3_of.get(country)
+        if not iso3:
+            log(f"  {geo}: no ISO3 for Eurostat country code {country!r}; skipped")
+            continue
         policy = COLLECTION_POLICY.get(country, {})
         med = median.get(geo)
 
@@ -135,7 +155,8 @@ def main() -> int:
         records.append(record(
             f"EU-{geo}", labels.get(geo, geo),
             level="admin1" if args.level == "nuts2" else "admin2",
-            parent=country,
+            parent=iso3,
+            country=iso3,
             codes={"nuts": geo, "nuts_level": want_len - 2},
             population=measure(int(value), year=int(year[:4]), source=src),
             median_age=(measure(med[1], unit="years", year=int(med[0][:4]), source=src)

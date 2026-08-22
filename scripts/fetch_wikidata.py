@@ -187,6 +187,9 @@ def main() -> int:
 
     qids = country_qids()
     codes = [c.upper() for c in (args.countries or sorted(qids))]
+    # Wikidata's P298 for Kosovo is XKS; geoBoundaries uses XKX. Normalise so
+    # the join buckets the records with the shapes instead of beside them.
+    iso3_alias = {"XKS": "XKX"}
     query = ADMIN1_QUERY if args.level == "admin1" else ADMIN2_QUERY
 
     records: list[dict[str, Any]] = []
@@ -202,7 +205,7 @@ def main() -> int:
             log(f"  {iso3}: query failed ({exc})")
             missing.append(iso3)
             continue
-        got = collapse(rows, level=args.level, iso3=iso3)
+        got = collapse(rows, level=args.level, iso3=iso3_alias.get(iso3, iso3))
         log(f"  {iso3}: {len(got)} {args.level} units")
         records.extend(got)
         time.sleep(args.sleep)

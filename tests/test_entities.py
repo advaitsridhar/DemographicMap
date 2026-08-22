@@ -142,3 +142,32 @@ class CuratedSeed(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ContainmentMatching(unittest.TestCase):
+    """The pass added after the first live run: unique substring containment."""
+
+    def test_official_long_form_matches_short_shape_name(self):
+        lookup = {be.norm("Zurich"): {"name": "Zurich"},
+                  be.norm("Bern"): {"name": "Bern"}}
+        entity, how = be.match_name({"name": "Canton of Zurich"}, lookup)
+        self.assertEqual(entity["name"], "Zurich")
+        self.assertEqual(how, "contains")
+
+    def test_suffixed_source_name(self):
+        lookup = {be.norm("Stockholm"): {"name": "Stockholm"},
+                  be.norm("Uppsala"): {"name": "Uppsala"}}
+        entity, how = be.match_name({"name": "Stockholms lan"}, lookup)
+        self.assertEqual(entity["name"], "Stockholm")
+
+    def test_ambiguous_containment_refuses(self):
+        lookup = {be.norm("Northern"): {}, be.norm("Northern Cape"): {}}
+        entity, how = be.match_name({"name": "North"}, lookup)
+        self.assertIsNone(entity)
+
+    def test_short_keys_never_containment_match(self):
+        # "Oued Fes" contains "fes" mid-string (so the prefix pass cannot fire),
+        # but a 3-character key is too little evidence for containment.
+        lookup = {be.norm("Fes"): {"name": "Fes"}}
+        entity, how = be.match_name({"name": "Oued Fes"}, lookup)
+        self.assertIsNone(entity)

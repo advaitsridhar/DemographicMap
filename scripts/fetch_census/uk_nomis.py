@@ -37,10 +37,12 @@ DEFAULT_GEOGRAPHY = "TYPE154"
 
 
 def fetch_table(dataset: str, cell: str, geography: str) -> dict[str, dict[str, Any]]:
-    url = (f"{BASE}/{dataset}.data.json?geography={geography}"
-           f"&measures=20100&{cell}=0...100&select="
-           f"geography_code,geography_name,{cell}_name,obs_value")
-    payload = http_json(url, timeout=180)
+    # No `select=`: that parameter switches Nomis to a flat column format and
+    # empties the nested "obs" list this parser reads.  Leaving the category
+    # dimension unspecified returns every category, totals included, which is
+    # exactly what shares() needs.
+    url = f"{BASE}/{dataset}.data.json?geography={geography}&measures=20100"
+    payload = http_json(url, timeout=300)
     out: dict[str, dict[str, Any]] = {}
     for obs in payload.get("obs", []):
         code = obs["geography"]["geogcode"]

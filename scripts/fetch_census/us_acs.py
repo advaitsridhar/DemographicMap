@@ -34,6 +34,9 @@ from ._shared import (
 )
 
 BASE = "https://api.census.gov/data/{year}/acs/acs5"
+# DP* variables are served by the data-profile endpoint, not the detailed
+# tables -- asking acs/acs5 for DP05_0018E gets a plain-text error, not JSON.
+BASE_PROFILE = "https://api.census.gov/data/{year}/acs/acs5/profile"
 
 # B03002 lines that partition the population exactly once.
 RACE_LINES = {
@@ -68,11 +71,12 @@ LANGUAGE_TOTAL = "C16001_001E"
 PROFILE_LINES = {"DP05_0018E": "median_age", "DP05_0004E": "sex_ratio_m_per_100f"}
 
 
-def query(year: int, get: list[str], geo: str, key: str | None) -> list[dict[str, str]]:
+def query(year: int, get: list[str], geo: str, key: str | None,
+          base: str = BASE) -> list[dict[str, str]]:
     params = [f"get=NAME,{','.join(get)}", f"for={geo}"]
     if key:
         params.append(f"key={key}")
-    url = f"{BASE.format(year=year)}?" + "&".join(params)
+    url = f"{base.format(year=year)}?" + "&".join(params)
     rows = http_json(url, timeout=180)
     header, *body = rows
     return [dict(zip(header, row)) for row in body]
@@ -99,7 +103,8 @@ def fetch(level: str, year: int, key: str | None) -> list[dict[str, Any]]:
 
     race = query(year, [RACE_TOTAL, *RACE_LINES], geo, key)
     lang = {geoid(r, level): r for r in query(year, [LANGUAGE_TOTAL, *LANGUAGE_LINES], geo, key)}
-    prof = {geoid(r, level): r for r in query(year, list(PROFILE_LINES), geo, key)}
+    prof = {geoid(r, level): r
+            for r in query(year, list(PROFILE_LINES), geo, key, base=BASE_PROFILE)}
 
     out: list[dict[str, Any]] = []
     for row in race:

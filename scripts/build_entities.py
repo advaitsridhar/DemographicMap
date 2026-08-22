@@ -279,6 +279,19 @@ def match_name(row: dict[str, Any], lookup: dict[str, dict[str, Any]]
         hits = [v for k, v in lookup.items() if k.startswith(key) or key.startswith(k)]
         if len(hits) == 1:
             return hits[0], "prefix"
+    # Last pass: unique substring containment. This is what bridges a source's
+    # long official form to the boundary file's short one -- Wikidata's
+    # "Canton of Zurich" to CGAZ's "Zurich", "Stockholms lan" to "Stockholm",
+    # "Emirate of Sharjah" to "Sharjah". Both strings must be substantial and
+    # exactly one shape may qualify, otherwise refuse rather than guess.
+    for candidate in [row["name"], *row.get("aliases", [])]:
+        key = norm(candidate)
+        if len(key) < 4:
+            continue
+        hits = [v for k, v in lookup.items()
+                if len(k) >= 4 and (key in k or k in key)]
+        if len(hits) == 1:
+            return hits[0], "contains"
     return None, "unmatched"
 
 
@@ -465,12 +478,12 @@ def main() -> int:
         hit = miss = 0
         for row in rows:
             table = a1 if row.get("level") == "admin1" else a2
-            entity = table.get(norm(row.get("name")))
+            entity, how = match_name({"name": row.get("name") or ""}, table)
             if entity is None:
                 miss += 1
                 continue
             merge_adapter(entity, row)
-            entity["match"] = "adapter:name"
+            entity["match"] = f"adapter:{how}"
             hit += 1
         if rows:
             log(f"  {iso3}: adapter rows matched {hit}, unmatched {miss}")

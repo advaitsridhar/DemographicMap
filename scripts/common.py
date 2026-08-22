@@ -112,7 +112,9 @@ def http_get(url: str, *, cache: bool = True, retries: int = 4, timeout: int = 1
                 path.write_bytes(blob)
             return blob if binary else blob.decode("utf-8", "replace")
         except urllib.error.HTTPError as exc:  # noqa: PERF203
-            if exc.code in (404, 403, 401):
+            if exc.code in (400, 404, 403, 401):
+                # Client errors will not get better on retry; fail fast so a
+                # wrong table id costs one request, not 30 seconds of backoff.
                 raise
             last = exc
         except Exception as exc:  # pragma: no cover - network shape varies
@@ -125,7 +127,25 @@ def http_get(url: str, *, cache: bool = True, retries: int = 4, timeout: int = 1
 
 
 def http_json(url: str, **kwargs: Any) -> Any:
-    return json.loads(http_get(url, **kwargs))
+    """GET + parse, tolerating the quirks national statistics APIs actually have.
+
+    Statistics Canada prepends a UTF-8 BOM and sometimes a ``//`` guard line to
+    its JSON; both make a raw ``json.loads`` fail with "Expecting value: line 1
+    column 1".  And when a body still is not JSON, the parse error alone is
+    useless in CI -- log the start of what the server actually sent, so a failed
+    run diagnoses itself.
+    """
+    text = http_get(url, **kwargs)
+    assert isinstance(text, str)
+    cleaned = text.lstrip("\ufeff \n\r\t")
+    if cleaned.startswith("//"):
+        cleaned = cleaned.split("\n", 1)[1] if "\n" in cleaned else ""
+    try:
+        return json.loads(cleaned)
+    except json.JSONDecodeError:
+        preview = " ".join(text[:300].split())
+        log(f"  ! non-JSON response from {url}\n    body starts: {preview!r}")
+        raise
 
 
 def download(url: str, dest: Path, *, force: bool = False, timeout: int = 3000) -> Path:
