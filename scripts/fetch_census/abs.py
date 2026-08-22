@@ -127,6 +127,58 @@ def unpack(payload: dict[str, Any]) -> list[tuple[dict[str, str], float]]:
     return out
 
 
+# Dimension ids differ per dataflow and were guessed wrong on the first live
+# run: every LGA came back named but with no religion or ancestry attached,
+# because the observations were filed under an id this code never asked for.
+# Rather than guess again, the characteristic dimension is discovered.
+REGION_HINTS = ("REGION", "ASGS", "LGA", "STE", "SA2")
+TIME_HINTS = ("TIME", "TIME_PERIOD", "FREQ", "MEASURE", "UNIT", "OBS")
+CHARACTERISTIC_HINTS = {
+    "religion": ("RELIGION", "RELIGP", "RLGP", "RELIG"),
+    "ancestry": ("ANCP", "ANCESTRY", "ANC"),
+}
+
+
+def dimension_ids(rows: list[tuple[dict[str, str], float]]) -> list[str]:
+    seen: list[str] = []
+    for labels, _ in rows[:50]:
+        for key in labels:
+            if not key.endswith("_CODE") and key not in seen:
+                seen.append(key)
+    return seen
+
+
+def pick_dimension(rows: list[tuple[dict[str, str], float]], field: str) -> str | None:
+    """Find the dimension carrying the categories, by hint then by cardinality."""
+    ids = dimension_ids(rows)
+    if not ids:
+        return None
+    for hint in CHARACTERISTIC_HINTS.get(field, ()):
+        for did in ids:
+            if hint in did.upper():
+                return did
+    # Fall back to the non-region, non-time dimension with the most distinct
+    # values -- a religion or ancestry breakdown is always the widest one.
+    counts: dict[str, set[str]] = {did: set() for did in ids}
+    for labels, _ in rows:
+        for did in ids:
+            if labels.get(did):
+                counts[did].add(labels[did])
+    candidates = [(len(v), k) for k, v in counts.items()
+                  if not any(h in k.upper() for h in REGION_HINTS + TIME_HINTS)]
+    if not candidates:
+        return None
+    best = max(candidates)
+    return best[1] if best[0] > 1 else None
+
+
+def pick_region_dimension(rows: list[tuple[dict[str, str], float]]) -> str:
+    for did in dimension_ids(rows):
+        if any(h in did.upper() for h in REGION_HINTS):
+            return did
+    return "REGION"
+
+
 def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
                     region_dim: str = "REGION") -> dict[str, dict[str, float]]:
     out: dict[str, dict[str, float]] = {}
@@ -155,13 +207,24 @@ def main() -> int:
     religion_rows = unpack(sdmx(flows["religion"])) if "religion" in flows else []
     ancestry_rows = unpack(sdmx(flows["ancestry"])) if "ancestry" in flows else []
 
-    religion = group_by_region(religion_rows, "RELIGION")
-    ancestry = group_by_region(ancestry_rows, "ANCP")
+    log(f"  religion rows {len(religion_rows)}, ancestry rows {len(ancestry_rows)}")
+    log(f"  dimensions seen: {dimension_ids(religion_rows or ancestry_rows)}")
+
+    region_dim = pick_region_dimension(religion_rows or ancestry_rows)
+    religion_dim = pick_dimension(religion_rows, "religion")
+    ancestry_dim = pick_dimension(ancestry_rows, "ancestry")
+    log(f"  using region={region_dim!r} religion={religion_dim!r} ancestry={ancestry_dim!r}")
+
+    religion = group_by_region(religion_rows, religion_dim, region_dim) if religion_dim else {}
+    ancestry = group_by_region(ancestry_rows, ancestry_dim, region_dim) if ancestry_dim else {}
+    if religion_rows and not religion:
+        log("  ! religion rows returned but none grouped -- dimension detection failed")
+
     names = {}
     for labels, _ in religion_rows + ancestry_rows:
-        code = labels.get("REGION_CODE")
+        code = labels.get(region_dim + "_CODE") or labels.get(region_dim)
         if code:
-            names.setdefault(code, labels.get("REGION", code))
+            names.setdefault(code, labels.get(region_dim, code))
 
     src = "Australian Bureau of Statistics, Census of Population and Housing 2021"
     records: list[dict[str, Any]] = []

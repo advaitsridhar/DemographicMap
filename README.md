@@ -257,7 +257,7 @@ anonymous cap). Nothing else needs credentials.
 | [IBGE SIDRA](https://apisidra.ibge.gov.br/) | IBGE open data | Brazil state / municipality population, *cor ou raça*, religion |
 | [Eurostat](https://ec.europa.eu/eurostat/) | Eurostat re-use policy | NUTS-2 / NUTS-3 population and median age |
 | [ABS](https://data.api.abs.gov.au/) | CC BY 4.0 | Australian religion and ancestry |
-| [Census of India 2011](https://censusindia.gov.in/) | GODL India | State / district religion and mother tongue |
+| [Census of India 2011](https://censusindia.gov.in/) | GODL India | State / district religion, sex ratio, Scheduled Caste / Tribe |
 
 Attribution for geoBoundaries, the Factbook and Natural Earth is shown on the map
 itself, as CC BY requires.

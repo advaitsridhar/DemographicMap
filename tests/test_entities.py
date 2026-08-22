@@ -212,3 +212,95 @@ class CollectionPolicyPropagation(unittest.TestCase):
             for field, reason in fields.items():
                 self.assertIn(field, ("religion", "ethnicity", "language"))
                 self.assertGreater(len(reason), 30, f"{iso3}/{field} reason is too thin")
+
+
+class AbsDimensionDetection(unittest.TestCase):
+    """The ABS names its dimensions differently per dataflow, so they are found,
+    not assumed -- the first live run returned every LGA with no data attached
+    because the characteristic dimension was being looked up under a guess."""
+
+    def setUp(self):
+        from fetch_census import abs as abs_adapter
+        self.abs = abs_adapter
+        self.rows = [
+            ({"REGION": "Albury", "REGION_CODE": "10050",
+              "RELIGP": "Catholic", "TIME_PERIOD": "2021"}, 5.0),
+            ({"REGION": "Albury", "REGION_CODE": "10050",
+              "RELIGP": "No religion", "TIME_PERIOD": "2021"}, 7.0),
+            ({"REGION": "Bland", "REGION_CODE": "10250",
+              "RELIGP": "Anglican", "TIME_PERIOD": "2021"}, 3.0),
+        ]
+
+    def test_finds_the_characteristic_dimension_by_hint(self):
+        self.assertEqual(self.abs.pick_dimension(self.rows, "religion"), "RELIGP")
+
+    def test_finds_the_region_dimension(self):
+        self.assertEqual(self.abs.pick_region_dimension(self.rows), "REGION")
+
+    def test_falls_back_to_the_widest_non_region_dimension(self):
+        rows = [({"ASGS_2021": "Albury", "ASGS_2021_CODE": "1", "XYZ": "Catholic"}, 5.0),
+                ({"ASGS_2021": "Albury", "ASGS_2021_CODE": "1", "XYZ": "Buddhism"}, 2.0)]
+        self.assertEqual(self.abs.pick_dimension(rows, "religion"), "XYZ")
+
+    def test_never_picks_region_or_time_as_the_characteristic(self):
+        rows = [({"REGION": "Albury", "TIME_PERIOD": "2021"}, 1.0),
+                ({"REGION": "Bland", "TIME_PERIOD": "2021"}, 2.0)]
+        self.assertIsNone(self.abs.pick_dimension(rows, "religion"))
+
+    def test_grouping_sums_by_region(self):
+        grouped = self.abs.group_by_region(self.rows, "RELIGP", "REGION")
+        self.assertEqual(grouped["10050"], {"Catholic": 5.0, "No religion": 7.0})
+        self.assertEqual(grouped["10250"], {"Anglican": 3.0})
+
+
+class IndiaCensusValidation(unittest.TestCase):
+    """The India extract is a community redistribution, so it is checked against
+    the Registrar General's published totals before any of it is used."""
+
+    def setUp(self):
+        from fetch_census import india_census
+        self.india = india_census
+
+    def _rows(self, n=640, population=1_210_854_977):
+        # One synthetic district carrying the national totals, padded to count.
+        head = {"District name": "Test", "State name": "TEST", "District code": "1",
+                "Population": str(population), "Male": "620000000", "Female": "590000000",
+                "Hindus": str(int(population * 0.7980)),
+                "Muslims": str(int(population * 0.1423)),
+                "Christians": str(int(population * 0.0230)),
+                "Sikhs": str(int(population * 0.0172)),
+                "Buddhists": str(int(population * 0.0070)),
+                "Jains": str(int(population * 0.0037)),
+                "Others_Religions": "0", "Religion_Not_Stated": "0", "SC": "0", "ST": "0"}
+        pad = dict(head, Population="0", Hindus="0", Muslims="0", Christians="0",
+                   Sikhs="0", Buddhists="0", Jains="0", Male="0", Female="0")
+        return [head] + [dict(pad) for _ in range(n - 1)]
+
+    def test_accepts_an_extract_matching_the_published_totals(self):
+        self.india.validate(self._rows())  # must not raise
+
+    def test_rejects_a_wrong_population(self):
+        with self.assertRaises(SystemExit) as ctx:
+            self.india.validate(self._rows(population=1_000_000_000))
+        self.assertIn("population", str(ctx.exception))
+
+    def test_rejects_a_wrong_district_count(self):
+        with self.assertRaises(SystemExit) as ctx:
+            self.india.validate(self._rows(n=600))
+        self.assertIn("600 districts", str(ctx.exception))
+
+    def test_rejects_drifted_religion_shares(self):
+        rows = self._rows()
+        rows[0]["Hindus"] = str(int(1_210_854_977 * 0.50))
+        with self.assertRaises(SystemExit) as ctx:
+            self.india.validate(rows)
+        self.assertIn("Hindus", str(ctx.exception))
+
+    def test_subdivided_districts_are_never_given_invented_figures(self):
+        for parent, successors in self.india.SUBDIVIDED_SINCE_2011.items():
+            self.assertGreater(len(successors), 1, parent)
+
+    def test_post_2011_states_carry_a_reason(self):
+        for name, reason in self.india.FORMED_AFTER_2011.items():
+            self.assertGreater(len(reason), 80, name)
+            self.assertIn("2011 census", reason)

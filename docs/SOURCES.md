@@ -77,6 +77,48 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Australia | ABS 2021 Census `C21_G14`, `C21_G08` | state, LGA, SA3 | Ancestry is multi-response (up to two per person), so shares are of responses and exceed 100%. No ethnicity question exists. |
 | India | Census 2011 tables C-01, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. |
 
+### India, and trusting a community mirror
+
+India is the only major country here with no statistics API at all. The Registrar
+General publishes table C-01 as per-state XLSX workbooks through the
+censusindia.gov.in NADA catalogue, which cannot be automated.
+
+The adapter therefore reads a **district-level CSV extract of the 2011 primary
+census abstract** redistributed on GitHub, and aggregates it upward to states.
+That is a weaker provenance chain than an official endpoint, so the extract is
+not trusted -- it is *verified*, on every run, before any of it is used:
+
+* 640 districts, matching the 2011 count exactly.
+* Total population 1,210,854,977 -- the published figure, to the person.
+* Hindu 79.80%, Muslim 14.23%, Christian 2.30%, Sikh 1.72%, Buddhist 0.70%,
+  Jain 0.37% -- each within 0.05pp of what the Registrar General published.
+* Scheduled Caste 16.63% and Scheduled Tribe 8.63%, against published 16.6/8.6.
+
+`NATIONAL_CONTROLS` in `scripts/fetch_census/india_census.py` encodes those
+figures and `validate()` raises rather than emit a single record if the extract
+drifts from them. Separately, the state aggregates reproduce the independently
+hand-compiled rows in `data/curated/admin1_seed.json` (Uttar Pradesh, Kerala,
+Punjab, Jammu & Kashmir, Nagaland) to within rounding -- two sources compiled
+by different routes agreeing is the strongest check available without the
+workbooks themselves.
+
+The source of record remains the Census of India (GODL-India); the GitHub file
+is a retrieval path, exactly as the factbook.json mirror is for the Factbook.
+To use the official workbooks instead, download them into `data/raw/india/` and
+run with `--input`.
+
+**Boundary vintage.** The boundary files are newer than the census, so:
+
+* ~109 of 735 present-day districts did not exist in 2011 and carry no census
+  figure.
+* Four 2011 districts have since been subdivided (Jaintia Hills, Karbi Anglong,
+  Warangal, and Hyderabad's reorganisation). Their figures are **not** spread
+  across the successor districts -- the census never measured those areas
+  separately, and apportioning them would be an estimate presented as a
+  measurement. The successors carry an explicit gap saying so.
+* Telangana (2014) and Ladakh (2019) postdate the census entirely, so they have
+  no state-level figure even though their districts do.
+
 ## Collection policy
 
 The `not_collected` marker is asserted from these tables and nowhere else:

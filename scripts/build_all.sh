@@ -55,6 +55,10 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # and similar -- there is no state-level dataflow (see the G14 catalogue
   # listing in run 32566750604). LGAs join the admin-2 layer.
   soft python3 -m scripts.fetch_census.abs --level lga
+  # India has no statistics API; this reads a validated district-level extract
+  # of the 2011 census and aggregates it to states.
+  soft python3 -m scripts.fetch_census.india_census --level state
+  soft python3 -m scripts.fetch_census.india_census --level district
 fi
 
 if [ "${SKIP_TILES:-0}" != "1" ]; then
