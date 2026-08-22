@@ -1,0 +1,7 @@
+# ETL pipeline dependencies. The web app itself has no build step and no runtime
+# dependencies beyond the vendored libraries in site/vendor/.
+fiona>=1.9          # streams GeoPackage boundary layers without loading them whole
+shapely>=2.0        # geometry simplification, clipping and point-in-polygon joins
+mapbox-vector-tile>=2.1  # MVT encoding for the pure-Python tiler
+pmtiles>=3.4        # PMTiles v3 archive writer/reader
+openpyxl>=3.1       # censusindia.gov.in publishes its tables as .xlsx

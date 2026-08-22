@@ -1,0 +1,58 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; let an in-flight run finish rather than cancelling it.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check the site is self-contained
+        run: |
+          # The app must run with no CDN and no API keys. A stray external
+          # script or stylesheet would break it behind a firewall and is the
+          # kind of thing that only shows up in production.
+          if grep -REn '(src|href)="https?://' site/index.html; then
+            echo "::error::site/index.html references an external asset"
+            exit 1
+          fi
+          for f in site/tiles/*.pmtiles; do
+            size=$(stat -c%s "$f")
+            echo "$f: $((size / 1048576)) MB"
+            if [ "$size" -gt 104857600 ]; then
+              echo "::error::$f exceeds GitHub's 100 MB file limit"
+              exit 1
+            fi
+          done
+          test -f site/data/admin0.json
+          test -f site/data/search-index-0.json
+          python3 -c "import json,sys; d=json.load(open('site/data/admin0.json')); print(len(d),'countries'); sys.exit(0 if len(d) > 150 else 1)"
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - id: deploy
+        uses: actions/deploy-pages@v4

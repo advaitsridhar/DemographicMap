@@ -1,0 +1,82 @@
+name: Refresh demographic data
+
+# The sources move on their own schedule -- census rounds publish, Eurostat
+# updates monthly, Wikidata continuously -- so this re-runs the pipeline
+# quarterly and opens a PR when anything actually changed. It never pushes to
+# main directly: a demographic figure changing deserves a human look.
+on:
+  schedule:
+    - cron: "0 4 1 */3 *"
+  workflow_dispatch:
+    inputs:
+      with_census:
+        description: "Also run the national statistical office adapters"
+        type: boolean
+        default: false
+      rebuild_tiles:
+        description: "Rebuild the PMTiles archives (slow)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Install tippecanoe and pmtiles
+        if: inputs.rebuild_tiles
+        run: |
+          sudo apt-get update && sudo apt-get install -y tippecanoe gdal-bin
+          curl -sSL -o /tmp/pmtiles.tar.gz \
+            https://github.com/protomaps/go-pmtiles/releases/latest/download/go-pmtiles_linux_amd64.tar.gz
+          sudo tar -xzf /tmp/pmtiles.tar.gz -C /usr/local/bin pmtiles
+
+      - name: Run the pipeline
+        env:
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+          WITH_CENSUS: ${{ inputs.with_census && '1' || '0' }}
+          SKIP_TILES: ${{ inputs.rebuild_tiles && '0' || '1' }}
+        run: scripts/build_all.sh
+
+      - name: Summarise what changed
+        id: diff
+        run: |
+          git add -A site data/processed
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No source produced a different value." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            {
+              echo "### Files changed"
+              echo '```'
+              git diff --cached --stat
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - uses: peter-evans/create-pull-request@v6
+        if: steps.diff.outputs.changed == 'true'
+        with:
+          branch: data/refresh
+          title: "Data refresh"
+          commit-message: "Refresh demographic data from upstream sources"
+          body: |
+            Automated quarterly refresh from `scripts/build_all.sh`.
+
+            Review the diff for figures that moved unexpectedly: a large swing in
+            a religion or ethnicity share usually means an upstream source changed
+            its categories rather than the population changing.
