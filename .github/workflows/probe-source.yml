@@ -7,13 +7,6 @@ name: Probe a data source
 # source is worth an adapter and to write that adapter against a real schema
 # rather than a guess.
 on:
-  # workflow_dispatch only becomes available once this file is on the default
-  # branch, so a push trigger scoped to this file lets the probe run from a
-  # feature branch: edit PROBE_TARGET below, push, read the log.
-  push:
-    paths:
-      - ".github/workflows/probe-source.yml"
-      - "scripts/probe_arcgis.py"
   workflow_dispatch:
     inputs:
       kind:
@@ -29,10 +22,6 @@ on:
 permissions:
   contents: read
 
-env:
-  # Used when the run comes from a push, which carries no inputs.
-  PROBE_TARGET: "16a1324c517048db890b86a87858a8ef"
-
 jobs:
   probe:
     runs-on: ubuntu-latest
@@ -45,10 +34,9 @@ jobs:
           python-version: "3.11"
 
       - name: Probe ArcGIS item
-        if: inputs.kind == 'arcgis' || github.event_name == 'push'
+        if: inputs.kind == 'arcgis'
         run: |
-          python3 scripts/probe_arcgis.py \
-            "${{ inputs.target || env.PROBE_TARGET }}" --samples 3
+          python3 scripts/probe_arcgis.py "${{ inputs.target }}" --samples 3
 
       - name: Probe plain URL
         if: inputs.kind == 'url'

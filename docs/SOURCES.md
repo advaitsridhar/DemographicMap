@@ -107,6 +107,19 @@ is a retrieval path, exactly as the factbook.json mirror is for the Factbook.
 To use the official workbooks instead, download them into `data/raw/india/` and
 run with `--input`.
 
+**Mother tongue is still missing.** The extract carries religion, literacy,
+housing and amenities, but not table C-16 (population by mother tongue), so
+`language` is `not_available` for every Indian unit -- India asks the question,
+the figures exist, this retrieval path does not carry them.
+
+A district-level languages layer published on ArcGIS Online (item
+`16a1324c517048db890b86a87858a8ef`, 738 records, one column per language) covers
+exactly that gap and was probed with `scripts/probe_arcgis.py`. It is licensed
+**CC BY-NC-SA 4.0**. Non-commercial and share-alike are both incompatible with
+redistributing it from this repository under the permissive terms everything else
+here carries -- the same objection that rules out GADM above. It is therefore not
+used, and the gap stands until the underlying C-16 tables are reached directly.
+
 **Boundary vintage.** The boundary files are newer than the census, so:
 
 * ~109 of 735 present-day districts did not exist in 2011 and carry no census
@@ -123,7 +136,10 @@ run with `--input`.
 
 The `not_collected` marker is asserted from these tables and nowhere else:
 
-- `NOT_COLLECTED_POLICY` in `scripts/fetch_factbook.py` — country level.
+- `NOT_COLLECTED_POLICY` in `scripts/common.py` — asserted for the country and
+  then propagated to every subnational unit inside it by `apply_collection_policy`,
+  because a district of a state that never asks the religion question has not
+  merely failed to publish an answer.
 - `COLLECTION_POLICY` and `COLLECTS_BOTH` in `scripts/fetch_census/eurostat.py` — EU
   member states.
 - `_provenance.*.{religion,ethnicity}_policy` in `data/curated/admin1_seed.json` —
