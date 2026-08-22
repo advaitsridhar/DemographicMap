@@ -133,11 +133,18 @@ def fetch(level: str, year: int, key: str | None) -> list[dict[str, Any]]:
         median = as_float(prow.get("DP05_0018E"))
         ratio = as_float(prow.get("DP05_0004E"))
 
+        # ACS names a county "Autauga County, Alabama". The state half is what
+        # separates the thirty-one counties called Washington from each other, so
+        # it is passed through for matching rather than thrown away.
+        name = row["NAME"]
+        state_name = name.split(",")[-1].strip() if level == "county" and "," in name else None
+
         out.append(record(
             f"USA-{gid}",
-            row["NAME"],
+            name,
             level="admin1" if level == "state" else "admin2",
             parent="USA" if level == "state" else f"USA-{row['state']}",
+            parent_name=state_name,
             codes={"geoid": gid, "fips_state": row["state"],
                    "fips_county": row.get("county")},
             population=measure(int(total), year=year, source=src) if total else gap(NOT_AVAILABLE),

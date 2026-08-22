@@ -34,6 +34,15 @@ python3 scripts/fetch_factbook.py
 step "Wikidata subnational attributes"
 soft python3 scripts/fetch_wikidata.py --level admin1
 
+# Admin-2 from Wikidata, for countries whose second-level demographics no
+# statistical adapter reaches. India is the motivating case: its 735 districts
+# have no API at all (the 2011 census ships as per-state workbooks), so
+# Wikidata's population and headquarters statements are the only structured
+# district-level data available. One SPARQL query per country, so the list is
+# deliberately short rather than global.
+WIKIDATA_ADMIN2="${WIKIDATA_ADMIN2:-IND IDN PHL VNM THA PAK BGD NGA ETH KEN MEX COL PER ARG}"
+soft python3 scripts/fetch_wikidata.py --level admin2 --countries $WIKIDATA_ADMIN2
+
 if [ "${WITH_CENSUS:-0}" = "1" ]; then
   step "National statistical offices"
   soft python3 -m scripts.fetch_census.us_acs --level state
@@ -46,6 +55,15 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # and similar -- there is no state-level dataflow (see the G14 catalogue
   # listing in run 32566750604). LGAs join the admin-2 layer.
   soft python3 -m scripts.fetch_census.abs --level lga
+  # India has no statistics API; this reads a validated district-level extract
+  # of the 2011 census and aggregates it to states.
+  soft python3 -m scripts.fetch_census.india_census --level state
+  soft python3 -m scripts.fetch_census.india_census --level district
+  # Mother tongue (C-16) ships as its own per-state workbooks, checked into
+  # data/raw/india/c16/. No network: these read from disk, so they run
+  # unconditionally rather than through soft().
+  soft python3 -m scripts.fetch_census.india_language --level state
+  soft python3 -m scripts.fetch_census.india_language --level district
 fi
 
 if [ "${SKIP_TILES:-0}" != "1" ]; then

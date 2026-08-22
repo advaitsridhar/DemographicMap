@@ -77,11 +77,105 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Australia | ABS 2021 Census `C21_G14`, `C21_G08` | state, LGA, SA3 | Ancestry is multi-response (up to two per person), so shares are of responses and exceed 100%. No ethnicity question exists. |
 | India | Census 2011 tables C-01, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. |
 
+### India, and trusting a community mirror
+
+India is the only major country here with no statistics API at all. The Registrar
+General publishes table C-01 as per-state XLSX workbooks through the
+censusindia.gov.in NADA catalogue, which cannot be automated.
+
+The adapter therefore reads a **district-level CSV extract of the 2011 primary
+census abstract** redistributed on GitHub, and aggregates it upward to states.
+That is a weaker provenance chain than an official endpoint, so the extract is
+not trusted -- it is *verified*, on every run, before any of it is used:
+
+* 640 districts, matching the 2011 count exactly.
+* Total population 1,210,854,977 -- the published figure, to the person.
+* Hindu 79.80%, Muslim 14.23%, Christian 2.30%, Sikh 1.72%, Buddhist 0.70%,
+  Jain 0.37% -- each within 0.05pp of what the Registrar General published.
+* Scheduled Caste 16.63% and Scheduled Tribe 8.63%, against published 16.6/8.6.
+
+`NATIONAL_CONTROLS` in `scripts/fetch_census/india_census.py` encodes those
+figures and `validate()` raises rather than emit a single record if the extract
+drifts from them. Separately, the state aggregates reproduce the independently
+hand-compiled rows in `data/curated/admin1_seed.json` (Uttar Pradesh, Kerala,
+Punjab, Jammu & Kashmir, Nagaland) to within rounding -- two sources compiled
+by different routes agreeing is the strongest check available without the
+workbooks themselves.
+
+The source of record remains the Census of India (GODL-India); the GitHub file
+is a retrieval path, exactly as the factbook.json mirror is for the Factbook.
+To use the official workbooks instead, download them into `data/raw/india/` and
+run with `--input`.
+
+### Mother tongue: the official C-16 workbooks
+
+Table C-16 (population by mother tongue) is a separate publication from C-01 and
+is not in the CSV extract. It is now read from the Registrar General's own
+workbooks, checked into `data/raw/india/c16/` because there is no API to fetch
+them from — `scripts/fetch_census/india_language.py` reads whatever is present.
+
+The all-India workbook (`DDWC16STMTMDDS0000.XLSX`) carries every state, so all 34
+states enumerated in 2011 have a mother-tongue composition. The numbered
+workbooks carry that state's districts; 17 are present, giving 298 districts.
+Districts elsewhere keep an explicit gap. Adding a state is a matter of dropping
+its workbook into that directory.
+
+**Two kinds of "other".** C-16 has a residual group of its own (code 124),
+distinct from the tail this adapter folds for payload size. They are labelled
+apart — `Other languages (unspecified)` against `Other small languages` —
+because conflating them would misdescribe both. In Zunheboto the census residual
+is 95.6% of the district: the Sümi spoken there is reported under it rather than
+under group 107, and no breakdown is published beneath it at district level.
+Calling that a tail of minor tongues would be the opposite of the truth. Four
+units are affected at 20% or more (Zunheboto, West Khasi Hills, Dimapur, Lohit),
+and where the residual appears the note says what it is.
+
+Two shapes in the table decide how it is read, and both are checked rather than
+assumed:
+
+* **It is hierarchical.** Mother-tongue codes ending in `000` are the 122
+  language groups; the codes beneath each are the individual tongues returned
+  under it. Both sit in one column, so summing the column counts everyone twice.
+  Only group rows are read, and `check_levels` requires them to sum to the unit's
+  enumerated population — an independent total, so unlike a shares-add-to-100%
+  test it cannot be satisfied by double counting. It earned its keep immediately:
+  every state's row appears in both the all-India workbook and its own, and
+  accumulating rather than assigning doubled all fifteen.
+* **It is nested geographically.** State, district and sub-district rows share
+  one sheet. Only zero sub-district codes are read.
+
+`NATIONAL_CONTROLS` encodes the published all-India figures — 1,210,854,977
+people, Hindi 528,347,193, Bengali 97,237,669, Marathi 83,026,680 and nine more —
+and nothing is emitted unless the workbooks reproduce them exactly.
+
+The Esri "Languages in India at District level" layer on ArcGIS Online (item
+`16a1324c517048db890b86a87858a8ef`) covers the same ground and was probed with
+`scripts/probe_arcgis.py`, but it is licensed **CC BY-NC-SA 4.0**. Non-commercial
+and share-alike are both incompatible with redistributing it under the permissive
+terms everything else here carries — the same objection that rules out GADM
+above. The official workbooks are a better source anyway: GODL-India, and the
+primary record rather than a derivative.
+
+**Boundary vintage.** The boundary files are newer than the census, so:
+
+* ~109 of 735 present-day districts did not exist in 2011 and carry no census
+  figure.
+* Four 2011 districts have since been subdivided (Jaintia Hills, Karbi Anglong,
+  Warangal, and Hyderabad's reorganisation). Their figures are **not** spread
+  across the successor districts -- the census never measured those areas
+  separately, and apportioning them would be an estimate presented as a
+  measurement. The successors carry an explicit gap saying so.
+* Telangana (2014) and Ladakh (2019) postdate the census entirely, so they have
+  no state-level figure even though their districts do.
+
 ## Collection policy
 
 The `not_collected` marker is asserted from these tables and nowhere else:
 
-- `NOT_COLLECTED_POLICY` in `scripts/fetch_factbook.py` — country level.
+- `NOT_COLLECTED_POLICY` in `scripts/common.py` — asserted for the country and
+  then propagated to every subnational unit inside it by `apply_collection_policy`,
+  because a district of a state that never asks the religion question has not
+  merely failed to publish an answer.
 - `COLLECTION_POLICY` and `COLLECTS_BOTH` in `scripts/fetch_census/eurostat.py` — EU
   member states.
 - `_provenance.*.{religion,ethnicity}_policy` in `data/curated/admin1_seed.json` —

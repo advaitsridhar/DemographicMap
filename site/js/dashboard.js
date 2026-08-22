@@ -231,6 +231,12 @@ window.Dashboard = (function () {
     if (record.ancestry) {
       html.push(compositionPanel("Ancestry", record.ancestry, record.ancestry_note));
     }
+    if (record.scheduled_groups) {
+      // India's constitutional-schedule classification. Shown as its own panel
+      // rather than under "Ethnicity", which India does not collect.
+      html.push(compositionPanel("Scheduled Caste / Tribe", record.scheduled_groups,
+                                 record.scheduled_groups_note));
+    }
     html.push(hintPanel(record));
     html.push(childrenPanel(record));
     html.push(sourceList(record));

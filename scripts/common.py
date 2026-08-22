@@ -73,6 +73,79 @@ def measure(value: Any, *, year: Any = None, source: str | None = None, unit: st
 
 
 # ---------------------------------------------------------------------------
+# Collection policy: which states do not gather a field AT ALL.
+#
+# This is the project's central editorial claim, so it lives in one place and is
+# asserted only from a citable reason -- never inferred from an empty API
+# response. It is keyed by ISO3 and applies to the whole country: if a national
+# census does not ask a question, its provinces and districts have no answer to
+# it either, so `apply_collection_policy` propagates the marker down every
+# level. Before that propagation existed, 8,541 subnational fields in countries
+# that demonstrably do not collect them still read "not yet available", which
+# told the reader the exact opposite of the truth.
+# ---------------------------------------------------------------------------
+
+NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
+    "FRA": {
+        "ethnicity": "France does not collect ethnicity; statistiques ethniques are barred by law (Loi Informatique et Libertes 1978, Conseil constitutionnel 2007).",
+        "religion": "France does not collect religion in its census for the same reason.",
+    },
+    "DEU": {
+        "ethnicity": "Germany does not collect ethnicity. The census records citizenship and migration background; religion comes from church-tax registration, not fine-grained self-ID.",
+    },
+    "JPN": {
+        "ethnicity": "Japan's census collects nationality, not ethnicity.",
+        "religion": "Japan's census does not ask religion; published figures are religious-body self-reports that exceed the population.",
+    },
+    "IND": {
+        "ethnicity": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead.",
+    },
+    "ESP": {
+        "ethnicity": "Spain's census records nationality and birthplace, not ethnicity.",
+        "religion": "Spain's census does not ask religion (CIS survey data exists instead).",
+    },
+    "CHN": {
+        "religion": "China's census does not ask religion; it records the 56 official nationalities (minzu) instead.",
+    },
+    "KOR": {"ethnicity": "South Korea's census does not collect ethnicity."},
+    "NLD": {"ethnicity": "The Netherlands records migration background, not ethnicity."},
+    "SWE": {"ethnicity": "Sweden records country of birth and citizenship, not ethnicity."},
+    "NOR": {"ethnicity": "Norway records immigrant background, not ethnicity."},
+    "DNK": {"ethnicity": "Denmark records ancestry/citizenship, not ethnicity."},
+    "BEL": {"ethnicity": "Belgium does not collect ethnicity; language community is administrative, not a census question."},
+    "ITA": {"ethnicity": "Italy's census records citizenship, not ethnicity."},
+}
+
+
+def collection_policy(iso3: str | None, field: str) -> str | None:
+    """The documented reason a country does not collect ``field``, or None."""
+    if not iso3:
+        return None
+    return NOT_COLLECTED_POLICY.get(iso3.upper(), {}).get(field)
+
+
+def apply_collection_policy(record: dict[str, Any], iso3: str | None,
+                            fields: Iterable[str] = ("religion", "ethnicity", "language"),
+                            ) -> list[str]:
+    """Mark fields the country never collects, in place.
+
+    Only replaces a ``not_available`` marker: a real value from a subnational
+    source always wins (a country can decline to ask nationally while a region
+    publishes its own figures), and a more specific gap is left alone.
+    """
+    applied: list[str] = []
+    for field in fields:
+        reason = collection_policy(iso3, field)
+        if not reason:
+            continue
+        current = record.get(field)
+        if isinstance(current, dict) and current.get("status") == NOT_AVAILABLE:
+            record[field] = gap(NOT_COLLECTED, reason)
+            applied.append(field)
+    return applied
+
+
+# ---------------------------------------------------------------------------
 # HTTP with on-disk cache + retry/backoff
 # ---------------------------------------------------------------------------
 

@@ -1,5 +1,11 @@
 # Source downloads: large, reproducible with scripts/fetch_*.py, never edited.
 data/raw/
+# ...except the Census of India C-16 workbooks. There is no API to fetch them
+# from, so the build cannot re-derive mother tongue without them, and GODL-India
+# permits redistribution with attribution. 12 MB buys a reproducible pipeline.
+!data/raw/india/
+!data/raw/india/c16/
+!data/raw/india/c16/*.XLSX
 data/processed/http_cache/
 
 # Intermediate tiling artefacts

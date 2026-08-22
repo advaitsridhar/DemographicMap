@@ -127,8 +127,107 @@ def unpack(payload: dict[str, Any]) -> list[tuple[dict[str, str], float]]:
     return out
 
 
+# Dimension ids differ per dataflow and were guessed wrong on the first live
+# run: every LGA came back named but with no religion or ancestry attached,
+# because the observations were filed under an id this code never asked for.
+# Rather than guess again, the characteristic dimension is discovered.
+REGION_HINTS = ("REGION", "ASGS", "LGA", "STE", "SA2")
+TIME_HINTS = ("TIME", "TIME_PERIOD", "FREQ", "MEASURE", "UNIT", "OBS")
+CHARACTERISTIC_HINTS = {
+    "religion": ("RELIGION", "RELIGP", "RLGP", "RELIG"),
+    "ancestry": ("ANCP", "ANCESTRY", "ANC"),
+}
+
+
+def dimension_ids(rows: list[tuple[dict[str, str], float]]) -> list[str]:
+    seen: list[str] = []
+    for labels, _ in rows[:50]:
+        for key in labels:
+            if not key.endswith("_CODE") and key not in seen:
+                seen.append(key)
+    return seen
+
+
+def pick_dimension(rows: list[tuple[dict[str, str], float]], field: str) -> str | None:
+    """Find the dimension carrying the categories, by hint then by cardinality."""
+    ids = dimension_ids(rows)
+    if not ids:
+        return None
+    for hint in CHARACTERISTIC_HINTS.get(field, ()):
+        for did in ids:
+            if hint in did.upper():
+                return did
+    # Fall back to the non-region, non-time dimension with the most distinct
+    # values -- a religion or ancestry breakdown is always the widest one.
+    counts: dict[str, set[str]] = {did: set() for did in ids}
+    for labels, _ in rows:
+        for did in ids:
+            if labels.get(did):
+                counts[did].add(labels[did])
+    candidates = [(len(v), k) for k, v in counts.items()
+                  if not any(h in k.upper() for h in REGION_HINTS + TIME_HINTS)]
+    if not candidates:
+        return None
+    best = max(candidates)
+    return best[1] if best[0] > 1 else None
+
+
+def pick_region_dimension(rows: list[tuple[dict[str, str], float]]) -> str:
+    for did in dimension_ids(rows):
+        if any(h in did.upper() for h in REGION_HINTS):
+            return did
+    return "REGION"
+
+
+# ABS classifications are hierarchical: "Christianity Total" is reported
+# alongside its own children (Catholic, Anglican, Uniting Church...). Summing
+# both levels double-counts every person, which halved every share in the first
+# populated run -- Albury came out 25.4% Christian where the real figure is
+# about 50%. Where "... Total" rows exist they ARE the top level, so keep only
+# those, plus the not-stated rows that sit beside them.
+TOTAL_SUFFIX = " total"
+KEEP_ALWAYS = ("not stated", "not applicable", "inadequately described")
+
+
+def collapse_hierarchy(counts: dict[str, float]) -> dict[str, float]:
+    """Keep one level of a hierarchical classification, never two."""
+    totals = {k: v for k, v in counts.items() if k.lower().endswith(TOTAL_SUFFIX)}
+    if not totals:
+        return counts                      # flat classification (ancestry)
+    kept = dict(totals)
+    for label, value in counts.items():
+        low = label.lower()
+        if low in ("total", "total persons"):
+            continue                       # the grand total is the denominator
+        if any(tag in low for tag in KEEP_ALWAYS) and label not in kept:
+            kept[label] = value
+    # Strip the marker so the UI shows "Christianity", not "Christianity Total".
+    return {(k[: -len(TOTAL_SUFFIX)] if k.lower().endswith(TOTAL_SUFFIX) else k): v
+            for k, v in kept.items()}
+
+
+def sole_sex_dimension(rows: list[tuple[dict[str, str], float]]) -> tuple[str, str] | None:
+    """The (dimension, value) carrying both sexes, so males and females are not
+    added to the persons total and counted twice."""
+    for labels, _ in rows[:50]:
+        for key, value in labels.items():
+            if key.endswith("_CODE") or "SEX" not in key.upper():
+                continue
+            values = {lab.get(key) for lab, _ in rows if lab.get(key)}
+            for candidate in values:
+                if candidate and candidate.strip().lower() in ("persons", "total", "all persons"):
+                    return key, candidate
+    return None
+
+
 def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
                     region_dim: str = "REGION") -> dict[str, dict[str, float]]:
+    sex = sole_sex_dimension(rows)
+    if sex:
+        key, value = sex
+        rows = [(lab, val) for lab, val in rows if lab.get(key) == value]
+        log(f"  restricted {key}={value!r} so the sexes are not counted twice")
+
     out: dict[str, dict[str, float]] = {}
     for labels, value in rows:
         region = labels.get(region_dim + "_CODE") or labels.get(region_dim)
@@ -136,7 +235,7 @@ def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
         if not region or not label:
             continue
         out.setdefault(region, {})[label] = out.setdefault(region, {}).get(label, 0.0) + value
-    return out
+    return {region: collapse_hierarchy(counts) for region, counts in out.items()}
 
 
 def main() -> int:
@@ -155,13 +254,31 @@ def main() -> int:
     religion_rows = unpack(sdmx(flows["religion"])) if "religion" in flows else []
     ancestry_rows = unpack(sdmx(flows["ancestry"])) if "ancestry" in flows else []
 
-    religion = group_by_region(religion_rows, "RELIGION")
-    ancestry = group_by_region(ancestry_rows, "ANCP")
+    log(f"  religion rows {len(religion_rows)}, ancestry rows {len(ancestry_rows)}")
+    log(f"  dimensions seen: {dimension_ids(religion_rows or ancestry_rows)}")
+
+    region_dim = pick_region_dimension(religion_rows or ancestry_rows)
+    religion_dim = pick_dimension(religion_rows, "religion")
+    ancestry_dim = pick_dimension(ancestry_rows, "ancestry")
+    log(f"  using region={region_dim!r} religion={religion_dim!r} ancestry={ancestry_dim!r}")
+
+    religion = group_by_region(religion_rows, religion_dim, region_dim) if religion_dim else {}
+    ancestry = group_by_region(ancestry_rows, ancestry_dim, region_dim) if ancestry_dim else {}
+    if religion_rows and not religion:
+        log("  ! religion rows returned but none grouped -- dimension detection failed")
+
     names = {}
     for labels, _ in religion_rows + ancestry_rows:
-        code = labels.get("REGION_CODE")
+        code = labels.get(region_dim + "_CODE") or labels.get(region_dim)
         if code:
-            names.setdefault(code, labels.get("REGION", code))
+            names.setdefault(code, labels.get(region_dim, code))
+
+    if religion:
+        sample = next(iter(religion.values()))
+        biggest = max(sample.values()) if sample else 0
+        total = sum(sample.values()) or 1
+        log(f"  sanity: largest religion category is {100 * biggest / total:.1f}% of the "
+            f"sample region's total across {len(sample)} categories")
 
     src = "Australian Bureau of Statistics, Census of Population and Housing 2021"
     records: list[dict[str, Any]] = []

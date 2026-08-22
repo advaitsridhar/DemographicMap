@@ -36,8 +36,8 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common import (  # noqa: E402
-    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, ROOT, gap, is_gap, log,
-    measure, read_json, write_json,
+    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, ROOT, apply_collection_policy,
+    gap, is_gap, log, measure, read_json, write_json,
 )
 
 SITE_DATA = ROOT / "site" / "data"
@@ -48,6 +48,9 @@ ADAPTER_FILES = [
     "wikidata_admin1.json", "wikidata_admin2.json",
     "eurostat_nuts2.json", "eurostat_nuts3.json",
     "india_state.json", "india_district.json",
+    # After the C-01 files: mother tongue is the one field these add, and a
+    # later file never overwrites an earlier real value with a gap marker.
+    "india_language_state.json", "india_language_district.json",
     "brazil_state.json", "brazil_municipality.json",
     "canada_province.json", "canada_census_division.json",
     "australia_state.json", "australia_lga.json",
@@ -68,8 +71,9 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.ibge_sidra --level municipality",
     "AUS": "ABS 2021 Census (religion, ancestry): "
            "python -m scripts.fetch_census.abs --level lga",
-    "IND": "Census of India 2011 tables C-01 and C-16: "
-           "python -m scripts.fetch_census.india_census --level district",
+    "IND": "Census of India 2011 tables C-01 (religion) and C-16 (mother tongue): "
+           "python -m scripts.fetch_census.india_census --level district && "
+           "python -m scripts.fetch_census.india_language --level district",
 }
 EUROSTAT_HINT = ("Eurostat NUTS population and median age: "
                  "python -m scripts.fetch_census.eurostat --level nuts3")
@@ -247,7 +251,7 @@ def apply_curated(entity: dict[str, Any], row: dict[str, Any], prov: dict[str, A
 def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     """Adapter values override seeds; gap markers never overwrite real values."""
     for key, value in row.items():
-        if key in {"id", "level", "name", "parent"}:
+        if key in {"id", "level", "name", "parent", "parent_name"}:
             continue
         if key == "sources":
             entity.setdefault("sources", []).extend(value or [])
@@ -292,6 +296,51 @@ def match_name(row: dict[str, Any], lookup: dict[str, dict[str, Any]]
                 if len(k) >= 4 and (key in k or k in key)]
         if len(hits) == 1:
             return hits[0], "contains"
+    return None, "unmatched"
+
+
+def scoped_by_parent(by_name: dict[str, list[dict[str, Any]]], parent_id: str
+                     ) -> dict[str, dict[str, Any]]:
+    """The shapes inside one admin-1, keyed by name, dropping any still ambiguous."""
+    out = {}
+    for key, entities in by_name.items():
+        inside = [e for e in entities if e.get("parent") == parent_id]
+        if len(inside) == 1:
+            out[key] = inside[0]
+    return out
+
+
+def match_admin2(row: dict[str, Any], by_name: dict[str, list[dict[str, Any]]],
+                 admin1: dict[str, dict[str, Any]]) -> tuple[dict[str, Any] | None, str]:
+    """Resolve an adapter row to one admin-2 shape, using its state when it has one.
+
+    District names repeat across states. India has a Hamirpur in Himachal Pradesh
+    and another in Uttar Pradesh, a Pratapgarh in Rajasthan and another in Uttar
+    Pradesh, an Aurangabad in Maharashtra and another in Bihar. A lookup keyed on
+    name alone keeps whichever shape it saw last, which makes one district
+    unreachable and lets the other quietly wear its twin's figures -- a wrong
+    answer that looks exactly like a right one.
+
+    So a row that names its parent state is matched only inside that state. A row
+    that does not is matched only against names that are unique country-wide;
+    where the name is ambiguous the row is refused, on the same principle the
+    prefix and containment passes already follow -- an unmatched row is a visible
+    gap, a mis-matched one is invisible.
+    """
+    parent_name = row.get("parent_name")
+    if parent_name:
+        parent, _ = match_name({"name": parent_name}, admin1)
+        if parent is not None:
+            entity, how = match_name(row, scoped_by_parent(by_name, parent["id"]))
+            if entity is not None:
+                return entity, f"{how}+state"
+
+    unique = {key: entities[0] for key, entities in by_name.items() if len(entities) == 1}
+    entity, how = match_name(row, unique)
+    if entity is not None:
+        return entity, how
+    if norm(row.get("name") or "") in by_name:
+        return None, "ambiguous"
     return None, "unmatched"
 
 
@@ -474,19 +523,40 @@ def main() -> int:
     # -- adapters override both levels --------------------------------------
     for iso3, rows in adapters.items():
         a1 = {norm(e["name"]): e for e in admin1_by_country.get(iso3, [])}
-        a2 = {norm(e["name"]): e for e in admin2_by_country.get(iso3, [])}
-        hit = miss = 0
+        a2: dict[str, list[dict[str, Any]]] = defaultdict(list)
+        for entity in admin2_by_country.get(iso3, []):
+            a2[norm(entity["name"])].append(entity)
+        hit = miss = ambiguous = 0
         for row in rows:
-            table = a1 if row.get("level") == "admin1" else a2
-            entity, how = match_name({"name": row.get("name") or ""}, table)
+            key = {"name": row.get("name") or "", "parent_name": row.get("parent_name")}
+            if row.get("level") == "admin1":
+                entity, how = match_name(key, a1)
+            else:
+                entity, how = match_admin2(key, a2, a1)
             if entity is None:
                 miss += 1
+                ambiguous += how == "ambiguous"
                 continue
             merge_adapter(entity, row)
             entity["match"] = f"adapter:{how}"
             hit += 1
         if rows:
-            log(f"  {iso3}: adapter rows matched {hit}, unmatched {miss}")
+            extra = f" ({ambiguous} ambiguous)" if ambiguous else ""
+            log(f"  {iso3}: adapter rows matched {hit}, unmatched {miss}{extra}")
+
+    # -- collection policy ---------------------------------------------------
+    # Last, so an adapter's real value always wins over the national marker.
+    policy_hits: dict[str, int] = defaultdict(int)
+    for table in (admin1_by_country, admin2_by_country):
+        for iso3, rows in table.items():
+            for entity in rows:
+                for field in apply_collection_policy(entity, iso3):
+                    policy_hits[f"{iso3}/{field}"] += 1
+    if policy_hits:
+        total = sum(policy_hits.values())
+        top = sorted(policy_hits.items(), key=lambda kv: -kv[1])[:8]
+        log(f"  collection policy marked {total} subnational fields as not_collected: "
+            + ", ".join(f"{k} {v}" for k, v in top))
 
     # -- write ---------------------------------------------------------------
     out = args.out

@@ -5,6 +5,7 @@ dependency overwriting its parent country, and a curated row matching the wrong
 shape.
 """
 
+import collections
 import sys
 import unittest
 from pathlib import Path
@@ -14,6 +15,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_entities as be  # noqa: E402
 import common  # noqa: E402
+
+sys.path.insert(0, str(ROOT))
 
 
 class Normalisation(unittest.TestCase):
@@ -171,3 +174,313 @@ class ContainmentMatching(unittest.TestCase):
         lookup = {be.norm("Fes"): {"name": "Fes"}}
         entity, how = be.match_name({"name": "Oued Fes"}, lookup)
         self.assertIsNone(entity)
+
+
+class CollectionPolicyPropagation(unittest.TestCase):
+    """A country that does not collect a field does not collect it in its regions."""
+
+    def test_not_available_becomes_not_collected(self):
+        entity = {"ethnicity": common.gap(common.NOT_AVAILABLE)}
+        applied = common.apply_collection_policy(entity, "IND")
+        self.assertEqual(applied, ["ethnicity"])
+        self.assertEqual(entity["ethnicity"]["status"], common.NOT_COLLECTED)
+        self.assertIn("Scheduled Caste", entity["ethnicity"]["note"])
+
+    def test_a_real_value_is_never_overwritten(self):
+        # A region may publish what its national census declines to ask.
+        shares = [{"group": "Some group", "pct": 42.0}]
+        entity = {"ethnicity": shares}
+        self.assertEqual(common.apply_collection_policy(entity, "IND"), [])
+        self.assertEqual(entity["ethnicity"], shares)
+
+    def test_untouched_fields_stay_untouched(self):
+        # India collects religion; only ethnicity carries a policy.
+        entity = {"religion": common.gap(common.NOT_AVAILABLE),
+                  "ethnicity": common.gap(common.NOT_AVAILABLE)}
+        common.apply_collection_policy(entity, "IND")
+        self.assertEqual(entity["religion"]["status"], common.NOT_AVAILABLE)
+        self.assertEqual(entity["ethnicity"]["status"], common.NOT_COLLECTED)
+
+    def test_country_without_a_policy_is_a_no_op(self):
+        entity = {"ethnicity": common.gap(common.NOT_AVAILABLE)}
+        self.assertEqual(common.apply_collection_policy(entity, "BRA"), [])
+
+    def test_unknown_country_is_a_no_op(self):
+        entity = {"ethnicity": common.gap(common.NOT_AVAILABLE)}
+        self.assertEqual(common.apply_collection_policy(entity, None), [])
+
+    def test_every_policy_entry_carries_a_reason(self):
+        for iso3, fields in common.NOT_COLLECTED_POLICY.items():
+            self.assertRegex(iso3, r"^[A-Z]{3}$")
+            for field, reason in fields.items():
+                self.assertIn(field, ("religion", "ethnicity", "language"))
+                self.assertGreater(len(reason), 30, f"{iso3}/{field} reason is too thin")
+
+
+class AbsDimensionDetection(unittest.TestCase):
+    """The ABS names its dimensions differently per dataflow, so they are found,
+    not assumed -- the first live run returned every LGA with no data attached
+    because the characteristic dimension was being looked up under a guess."""
+
+    def setUp(self):
+        from fetch_census import abs as abs_adapter
+        self.abs = abs_adapter
+        self.rows = [
+            ({"REGION": "Albury", "REGION_CODE": "10050",
+              "RELIGP": "Catholic", "TIME_PERIOD": "2021"}, 5.0),
+            ({"REGION": "Albury", "REGION_CODE": "10050",
+              "RELIGP": "No religion", "TIME_PERIOD": "2021"}, 7.0),
+            ({"REGION": "Bland", "REGION_CODE": "10250",
+              "RELIGP": "Anglican", "TIME_PERIOD": "2021"}, 3.0),
+        ]
+
+    def test_finds_the_characteristic_dimension_by_hint(self):
+        self.assertEqual(self.abs.pick_dimension(self.rows, "religion"), "RELIGP")
+
+    def test_finds_the_region_dimension(self):
+        self.assertEqual(self.abs.pick_region_dimension(self.rows), "REGION")
+
+    def test_falls_back_to_the_widest_non_region_dimension(self):
+        rows = [({"ASGS_2021": "Albury", "ASGS_2021_CODE": "1", "XYZ": "Catholic"}, 5.0),
+                ({"ASGS_2021": "Albury", "ASGS_2021_CODE": "1", "XYZ": "Buddhism"}, 2.0)]
+        self.assertEqual(self.abs.pick_dimension(rows, "religion"), "XYZ")
+
+    def test_never_picks_region_or_time_as_the_characteristic(self):
+        rows = [({"REGION": "Albury", "TIME_PERIOD": "2021"}, 1.0),
+                ({"REGION": "Bland", "TIME_PERIOD": "2021"}, 2.0)]
+        self.assertIsNone(self.abs.pick_dimension(rows, "religion"))
+
+    def test_grouping_sums_by_region(self):
+        grouped = self.abs.group_by_region(self.rows, "RELIGP", "REGION")
+        self.assertEqual(grouped["10050"], {"Catholic": 5.0, "No religion": 7.0})
+        self.assertEqual(grouped["10250"], {"Anglican": 3.0})
+
+
+class IndiaCensusValidation(unittest.TestCase):
+    """The India extract is a community redistribution, so it is checked against
+    the Registrar General's published totals before any of it is used."""
+
+    def setUp(self):
+        from fetch_census import india_census
+        self.india = india_census
+
+    def _rows(self, n=640, population=1_210_854_977):
+        # One synthetic district carrying the national totals, padded to count.
+        head = {"District name": "Test", "State name": "TEST", "District code": "1",
+                "Population": str(population), "Male": "620000000", "Female": "590000000",
+                "Hindus": str(int(population * 0.7980)),
+                "Muslims": str(int(population * 0.1423)),
+                "Christians": str(int(population * 0.0230)),
+                "Sikhs": str(int(population * 0.0172)),
+                "Buddhists": str(int(population * 0.0070)),
+                "Jains": str(int(population * 0.0037)),
+                "Others_Religions": "0", "Religion_Not_Stated": "0", "SC": "0", "ST": "0"}
+        pad = dict(head, Population="0", Hindus="0", Muslims="0", Christians="0",
+                   Sikhs="0", Buddhists="0", Jains="0", Male="0", Female="0")
+        return [head] + [dict(pad) for _ in range(n - 1)]
+
+    def test_accepts_an_extract_matching_the_published_totals(self):
+        self.india.validate(self._rows())  # must not raise
+
+    def test_rejects_a_wrong_population(self):
+        with self.assertRaises(SystemExit) as ctx:
+            self.india.validate(self._rows(population=1_000_000_000))
+        self.assertIn("population", str(ctx.exception))
+
+    def test_rejects_a_wrong_district_count(self):
+        with self.assertRaises(SystemExit) as ctx:
+            self.india.validate(self._rows(n=600))
+        self.assertIn("600 districts", str(ctx.exception))
+
+    def test_rejects_drifted_religion_shares(self):
+        rows = self._rows()
+        rows[0]["Hindus"] = str(int(1_210_854_977 * 0.50))
+        with self.assertRaises(SystemExit) as ctx:
+            self.india.validate(rows)
+        self.assertIn("Hindus", str(ctx.exception))
+
+    def test_subdivided_districts_are_never_given_invented_figures(self):
+        for parent, successors in self.india.SUBDIVIDED_SINCE_2011.items():
+            self.assertGreater(len(successors), 1, parent)
+
+    def test_post_2011_states_carry_a_reason(self):
+        for name, reason in self.india.FORMED_AFTER_2011.items():
+            self.assertGreater(len(reason), 80, name)
+            self.assertIn("2011 census", reason)
+
+
+class AbsHierarchyCollapse(unittest.TestCase):
+    """ABS classifications nest: summing a parent and its children counts every
+    person twice and halves every share. Albury came out 25.4% Christian in the
+    first populated run; the real figure is about 50%."""
+
+    def setUp(self):
+        from fetch_census import abs as abs_adapter
+        self.abs = abs_adapter
+        self.albury = {
+            "Christianity Total": 53856, "Catholic": 24671, "Anglican": 14166,
+            "Uniting Church": 3446,
+            "Secular Other Spiritual and No Religious Affiliation Total": 44444,
+            "No Religion, so described": 44059,
+            "Religious affiliation not stated": 7948, "Total": 106248,
+        }
+
+    def test_keeps_only_the_top_level(self):
+        out = self.abs.collapse_hierarchy(self.albury)
+        self.assertIn("Christianity", out)
+        for child in ("Catholic", "Anglican", "Uniting Church", "No Religion, so described"):
+            self.assertNotIn(child, out)
+
+    def test_drops_the_grand_total(self):
+        self.assertNotIn("Total", self.abs.collapse_hierarchy(self.albury))
+
+    def test_shares_sum_to_one_hundred(self):
+        out = self.abs.collapse_hierarchy(self.albury)
+        total = sum(out.values())
+        self.assertAlmostEqual(sum(100 * v / total for v in out.values()), 100.0, places=6)
+
+    def test_christianity_is_about_half(self):
+        out = self.abs.collapse_hierarchy(self.albury)
+        total = sum(out.values())
+        self.assertGreater(100 * out["Christianity"] / total, 45)
+
+    def test_keeps_not_stated_beside_the_totals(self):
+        self.assertIn("Religious affiliation not stated",
+                      self.abs.collapse_hierarchy(self.albury))
+
+    def test_a_flat_classification_is_untouched(self):
+        # Ancestry has no hierarchy, so nothing may be dropped.
+        flat = {"English": 44455, "Australian": 42905, "Irish": 14000}
+        self.assertEqual(self.abs.collapse_hierarchy(flat), flat)
+
+    def test_sex_dimension_is_restricted_to_persons(self):
+        rows = [({"REGION": "A", "SEXP": "Persons", "RELP": "Christianity Total"}, 10.0),
+                ({"REGION": "A", "SEXP": "Males", "RELP": "Christianity Total"}, 4.0),
+                ({"REGION": "A", "SEXP": "Females", "RELP": "Christianity Total"}, 6.0)]
+        self.assertEqual(self.abs.sole_sex_dimension(rows), ("SEXP", "Persons"))
+        grouped = self.abs.group_by_region(rows, "RELP", "REGION")
+        self.assertEqual(grouped["A"]["Christianity"], 10.0)
+
+    def test_no_sex_dimension_is_harmless(self):
+        rows = [({"REGION": "A", "RELP": "Christianity Total"}, 10.0)]
+        self.assertIsNone(self.abs.sole_sex_dimension(rows))
+        self.assertEqual(self.abs.group_by_region(rows, "RELP", "REGION")["A"],
+                         {"Christianity": 10.0})
+
+
+class C16MotherTongue(unittest.TestCase):
+    """India's C-16 workbooks: hierarchy, geography and the published controls."""
+
+    def setUp(self):
+        from scripts.fetch_census import india_language as il
+        self.il = il
+
+    def test_group_labels_lose_their_index(self):
+        self.assertEqual(self.il.clean_group("6 HINDI"), "Hindi")
+        self.assertEqual(self.il.clean_group("22 URDU"), "Urdu")
+        self.assertEqual(self.il.clean_group("14 BHILI/BHILODI"), "Bhili/Bhilodi")
+
+    def test_the_census_residual_is_not_our_trimmed_tail(self):
+        # C-16 has an "OTHERS" group of its own, and in Zunheboto it is 95.6% of
+        # the district with no breakdown published beneath it. Calling that
+        # "other small languages" would describe a long tail of minor tongues --
+        # the opposite of what it is.
+        self.assertEqual(self.il.clean_group("124 OTHERS"), self.il.CENSUS_RESIDUAL)
+        self.assertNotEqual(self.il.CENSUS_RESIDUAL, self.il.REMAINDER)
+
+    def test_a_dominant_census_residual_survives_trimming(self):
+        counts = collections.Counter({f"L{i}": 1 for i in range(40)})
+        counts[self.il.CENSUS_RESIDUAL] = 9_960
+        rows = self.il.composition(counts)
+        top = rows[0]
+        self.assertEqual(top["group"], self.il.CENSUS_RESIDUAL)
+        self.assertGreater(top["pct"], 99.0)
+
+    def test_the_note_says_which_kind_of_other_it_is(self):
+        rows = [{"group": self.il.CENSUS_RESIDUAL, "pct": 95.6, "count": 1},
+                {"group": self.il.REMAINDER, "pct": 4.4, "count": 1}]
+        note = self.il.language_note(rows, 60)
+        self.assertIn("catch-all", note)
+        self.assertIn("summed into", note)
+
+    def test_tail_is_summed_not_dropped(self):
+        counts = collections.Counter({f"L{i}": 1 for i in range(40)})
+        counts["Hindi"] = 9_960
+        rows = self.il.composition(counts)
+        self.assertLessEqual(len(rows), self.il.MAX_GROUPS + 1)
+        self.assertEqual(sum(r["count"] for r in rows), sum(counts.values()))
+        self.assertIn(self.il.REMAINDER, [r["group"] for r in rows])
+
+    def test_hierarchy_check_catches_a_doubled_unit(self):
+        # The bug this check exists for: every state's row appears in both the
+        # all-India workbook and its own, so accumulating instead of assigning
+        # doubles it -- and the shares still add to 100%.
+        units = {("09", "000"): {"name": "UTTAR PRADESH",
+                                 "counts": collections.Counter({"Hindi": 200})}}
+        with self.assertRaises(SystemExit) as caught:
+            self.il.check_levels(units, {("09", "000"): 100})
+        self.assertIn("2.00x", str(caught.exception))
+
+    def test_hierarchy_check_passes_when_the_levels_agree(self):
+        units = {("09", "000"): {"name": "UTTAR PRADESH",
+                                 "counts": collections.Counter({"Hindi": 100})}}
+        self.il.check_levels(units, {("09", "000"): 100})
+
+    def test_refuses_a_workbook_that_misses_the_published_totals(self):
+        counts = collections.Counter(self.il.NATIONAL_CONTROLS)
+        del counts["_total"]
+        counts["Hindi"] -= 1_000_000          # a mirror that has drifted
+        with self.assertRaises(SystemExit) as caught:
+            self.il.validate({("00", "000"): {"name": "INDIA", "counts": counts}})
+        self.assertIn("Hindi", str(caught.exception))
+
+
+class Admin2Disambiguation(unittest.TestCase):
+    """Two shapes, one name: the row must land on the right one or on neither."""
+
+    def shapes(self):
+        return {
+            be.norm("Hamirpur"): [
+                {"id": "HP-HAM", "name": "Hamirpur", "parent": "S-HP"},
+                {"id": "UP-HAM", "name": "Hamirpur", "parent": "S-UP"},
+            ],
+            be.norm("Agra"): [{"id": "UP-AGR", "name": "Agra", "parent": "S-UP"}],
+        }
+
+    def admin1(self):
+        # Keyed the way build_entities keys the real lookup, so the fixture
+        # cannot pass under a normalisation the pipeline does not use.
+        return {be.norm(name): {"id": eid, "name": name} for eid, name in
+                (("S-HP", "Himachal Pradesh"), ("S-UP", "Uttar Pradesh"))}
+
+    def test_the_state_picks_the_right_twin(self):
+        entity, how = be.match_admin2(
+            {"name": "Hamirpur", "parent_name": "Himachal Pradesh"},
+            self.shapes(), self.admin1())
+        self.assertEqual(entity["id"], "HP-HAM")
+        self.assertIn("state", how)
+
+    def test_the_other_twin_is_reachable_too(self):
+        entity, _ = be.match_admin2(
+            {"name": "Hamirpur", "parent_name": "Uttar Pradesh"},
+            self.shapes(), self.admin1())
+        self.assertEqual(entity["id"], "UP-HAM")
+
+    def test_an_ambiguous_name_with_no_state_is_refused(self):
+        # Silently keeping whichever shape was seen last is how a district ends
+        # up wearing its namesake's figures. An unmatched row is visible; a
+        # mis-matched one is not.
+        entity, how = be.match_admin2(
+            {"name": "Hamirpur", "parent_name": None}, self.shapes(), self.admin1())
+        self.assertIsNone(entity)
+        self.assertEqual(how, "ambiguous")
+
+    def test_unique_names_still_match_without_a_state(self):
+        entity, _ = be.match_admin2(
+            {"name": "Agra", "parent_name": None}, self.shapes(), self.admin1())
+        self.assertEqual(entity["id"], "UP-AGR")
+
+    def test_an_unresolvable_state_falls_back_rather_than_failing(self):
+        entity, _ = be.match_admin2(
+            {"name": "Agra", "parent_name": "Atlantis"}, self.shapes(), self.admin1())
+        self.assertEqual(entity["id"], "UP-AGR")
