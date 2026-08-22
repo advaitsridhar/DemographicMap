@@ -1,0 +1,47 @@
+name: Probe a data source
+
+# The build sandbox cannot reach statistical hosts, so this runs a read-only
+# discovery script on a runner (which can) and prints what a candidate source
+# actually contains -- schema, record counts, sample rows. Nothing is written
+# and nothing is committed: the output is the log, used to decide whether a
+# source is worth an adapter and to write that adapter against a real schema
+# rather than a guess.
+on:
+  workflow_dispatch:
+    inputs:
+      kind:
+        description: "Source type"
+        type: choice
+        options: [arcgis, url]
+        default: arcgis
+      target:
+        description: "ArcGIS item id or portal URL, or for kind=url a direct URL"
+        type: string
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Probe ArcGIS item
+        if: inputs.kind == 'arcgis'
+        run: python3 scripts/probe_arcgis.py "${{ inputs.target }}" --samples 3
+
+      - name: Probe plain URL
+        if: inputs.kind == 'url'
+        run: |
+          # Headers first, then the leading bytes -- enough to tell a CSV from
+          # an HTML error page without downloading a large file in full.
+          curl -sSIL --max-time 60 "${{ inputs.target }}" | sed -n '1,25p'
+          echo '--- first 4 KB ---'
+          curl -sSL --max-time 120 --max-filesize 20000000 "${{ inputs.target }}" | head -c 4096
