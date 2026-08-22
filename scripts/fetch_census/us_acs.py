@@ -29,8 +29,8 @@ from pathlib import Path
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, gap, http_json, log, measure,
-    record, shares, write_json,
+    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, gap, http_get, http_json, log,
+    measure, record, shares, write_json,
 )
 
 BASE = "https://api.census.gov/data/{year}/acs/acs5"
@@ -77,7 +77,19 @@ def query(year: int, get: list[str], geo: str, key: str | None,
     if key:
         params.append(f"key={key}")
     url = f"{base.format(year=year)}?" + "&".join(params)
-    rows = http_json(url, timeout=180)
+    text = http_get(url, timeout=180)
+    assert isinstance(text, str)
+    # The Census API used to allow 500 anonymous calls a day; it now returns a
+    # "Missing Key" HTML page with HTTP 200 when no key is sent. Turn that into
+    # an instruction instead of a JSON traceback.
+    if "Missing Key" in text[:400]:
+        raise SystemExit(
+            "us_acs: api.census.gov now requires an API key for every request. "
+            "Request a free key at https://api.census.gov/data/key_signup.html "
+            "and set it as the CENSUS_API_KEY environment variable (in CI: a "
+            "repository secret of the same name).")
+    import json as _json
+    rows = _json.loads(text.lstrip("\ufeff"))
     header, *body = rows
     return [dict(zip(header, row)) for row in body]
 
@@ -200,7 +212,7 @@ def main() -> int:
 
     key = os.environ.get("CENSUS_API_KEY")
     log(f"us_acs: ACS {args.year} 5-year, level={args.level}"
-        + ("" if key else " (no CENSUS_API_KEY set; limited to 500 calls/day)"))
+        + ("" if key else " (no CENSUS_API_KEY set; the API now rejects keyless requests)"))
     records = fetch(args.level, args.year, key)
     if args.religion_file:
         attach_religion(records, args.religion_file)

@@ -55,19 +55,32 @@ def discover_dataflows(region: str) -> dict[str, tuple[str, str, str]]:
                      r'(?=[^>]*\bagencyID="(?P<agency>[^"]+)")'
                      r'(?=[^>]*\bversion="(?P<version>[^"]+)")[^>]*>', xml)]
     log(f"  {len(flows)} dataflows in the ABS catalogue")
+    # When nothing matches, the census-looking ids are the diagnosis: print
+    # them so a failed CI run documents the real naming scheme.
+    census_like = sorted({f[0] for f in flows
+                          if any(tag in f[0].upper()
+                                 for tag in ("C21", "G14", "G08", "RELIG", "ANCP", "CENSUS"))})
+    if census_like:
+        log("  census-related dataflow ids: " + ", ".join(census_like[:60]))
+
     out: dict[str, tuple[str, str, str]] = {}
+    table_of = {"religion": "G14", "ancestry": "G08"}
     for field, pattern in DATAFLOW_HINTS.items():
         wanted = pattern.format(r=region).upper()
+        table = table_of[field]
         exact = [f for f in flows if f[0].upper() == wanted]
-        loose = [f for f in flows
-                 if wanted.split("_")[1] in f[0].upper()
-                 and "C21" in f[0].upper() and region in f[0].upper()]
-        chosen = (exact or loose or [None])[0]
+        # Same census table, right region.
+        regional = [f for f in flows
+                    if table in f[0].upper() and region in f[0].upper()]
+        # Same census table at all: better one dataflow filtered by region
+        # dimension at query time than nothing.
+        any_region = [f for f in flows if table in f[0].upper()]
+        chosen = (exact or regional or sorted(any_region, key=lambda f: len(f[0])) or [None])[0]
         if chosen:
             out[field] = (chosen[1], chosen[0], chosen[2])
             log(f"  {field}: dataflow {chosen[1]},{chosen[0]},{chosen[2]}")
         else:
-            log(f"  {field}: no dataflow matching {wanted} in the catalogue")
+            log(f"  {field}: nothing in the catalogue mentions table {table}")
     return out
 
 

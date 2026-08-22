@@ -33,8 +33,23 @@ GEO_LIST = ("https://www12.statcan.gc.ca/rest/census-recensement/CR2021Geo.json"
 TOPICS = {"population": 1, "age_sex": 2, "language": 5, "ethnicity": 9, "religion": 10}
 GEOS = {"province": "PR", "census_division": "CD"}
 
+# Standard Geographical Classification province/territory codes. DGUIDs for
+# 2021 are deterministic -- "2021A0002" + the two-digit code -- and these codes
+# have been stable for decades, so the provinces need no geography-list call
+# (which now serves an HTML page instead of JSON; see the first live run).
+PROVINCES = {
+    "10": "Newfoundland and Labrador", "11": "Prince Edward Island",
+    "12": "Nova Scotia", "13": "New Brunswick", "24": "Quebec",
+    "35": "Ontario", "46": "Manitoba", "47": "Saskatchewan", "48": "Alberta",
+    "59": "British Columbia", "60": "Yukon", "61": "Northwest Territories",
+    "62": "Nunavut",
+}
+
 
 def geographies(level: str) -> list[dict[str, Any]]:
+    if level == "province":
+        return [{"GEO_ID_ID": f"2021A0002{code}", "GEO_NAME_NOM": name}
+                for code, name in PROVINCES.items()]
     payload = http_json(GEO_LIST.format(geos=GEOS[level]), timeout=180)
     rows = payload.get("DATA", [])
     cols = [c.upper() for c in payload.get("COLUMNS", [])]
