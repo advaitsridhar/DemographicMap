@@ -380,10 +380,28 @@ class C16MotherTongue(unittest.TestCase):
         self.assertEqual(self.il.clean_group("22 URDU"), "Urdu")
         self.assertEqual(self.il.clean_group("14 BHILI/BHILODI"), "Bhili/Bhilodi")
 
-    def test_the_census_residual_and_our_own_share_one_label(self):
-        # C-16 has its own "OTHERS" group. Folding a tail into a differently
-        # named bucket would show two "other" rows that mean the same thing.
-        self.assertEqual(self.il.clean_group("124 OTHERS"), self.il.REMAINDER)
+    def test_the_census_residual_is_not_our_trimmed_tail(self):
+        # C-16 has an "OTHERS" group of its own, and in Zunheboto it is 95.6% of
+        # the district with no breakdown published beneath it. Calling that
+        # "other small languages" would describe a long tail of minor tongues --
+        # the opposite of what it is.
+        self.assertEqual(self.il.clean_group("124 OTHERS"), self.il.CENSUS_RESIDUAL)
+        self.assertNotEqual(self.il.CENSUS_RESIDUAL, self.il.REMAINDER)
+
+    def test_a_dominant_census_residual_survives_trimming(self):
+        counts = collections.Counter({f"L{i}": 1 for i in range(40)})
+        counts[self.il.CENSUS_RESIDUAL] = 9_960
+        rows = self.il.composition(counts)
+        top = rows[0]
+        self.assertEqual(top["group"], self.il.CENSUS_RESIDUAL)
+        self.assertGreater(top["pct"], 99.0)
+
+    def test_the_note_says_which_kind_of_other_it_is(self):
+        rows = [{"group": self.il.CENSUS_RESIDUAL, "pct": 95.6, "count": 1},
+                {"group": self.il.REMAINDER, "pct": 4.4, "count": 1}]
+        note = self.il.language_note(rows, 60)
+        self.assertIn("catch-all", note)
+        self.assertIn("summed into", note)
 
     def test_tail_is_summed_not_dropped(self):
         counts = collections.Counter({f"L{i}": 1 for i in range(40)})

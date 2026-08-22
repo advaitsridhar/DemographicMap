@@ -70,7 +70,15 @@ GROUP_CODE = re.compile(r"\d+000$")
 # that round to 0.0% -- but the tail is summed and shown, never dropped.
 MAX_GROUPS = 12
 MIN_PCT = 0.1
-REMAINDER = "Other languages"
+REMAINDER = "Other small languages"
+
+# The census has a residual group of its own (code 124), and it is not the same
+# thing as the tail this adapter folds. In Zunheboto it is 95.6% of the district
+# -- the Sumi spoken there is reported under it rather than under group 107 --
+# and the Registrar General publishes no breakdown beneath it at district level.
+# Labelling that "other small languages" would describe a long tail of minor
+# tongues, which is the opposite of what it is, so the two are kept apart.
+CENSUS_RESIDUAL = "Other languages (unspecified)"
 
 # What the Registrar General published for India as a whole. A workbook that
 # does not reproduce these is not C-16, whatever the filename says.
@@ -100,10 +108,10 @@ STATE_NOTE = ("Census of India 2011 table C-16, population by mother tongue. "
 # ---------------------------------------------------------------------------
 
 def clean_group(label: str) -> str:
-    """'6 HINDI' -> 'Hindi'; '124 OTHERS' -> 'Other languages'."""
+    """'6 HINDI' -> 'Hindi'; '124 OTHERS' -> the census's own residual label."""
     name = re.sub(r"^\s*\d+\s+", "", str(label)).strip()
     if name.upper() == "OTHERS":
-        return REMAINDER
+        return CENSUS_RESIDUAL
     return name.title().replace("'S", "'s")
 
 
@@ -226,22 +234,30 @@ def composition(counts: collections.Counter) -> list[dict[str, Any]]:
     kept: dict[str, int] = {}
     tail = 0
     for name, value in ranked:
-        if name != REMAINDER and len(kept) < MAX_GROUPS \
-                and 100.0 * value / total >= MIN_PCT:
+        # The census residual ranks like any other group: it is a category the
+        # Registrar General published, not something this adapter invented.
+        if len(kept) < MAX_GROUPS and 100.0 * value / total >= MIN_PCT:
             kept[name] = value
         else:
             tail += value
     if tail:
-        kept[REMAINDER] = kept.get(REMAINDER, 0) + tail
+        kept[REMAINDER] = tail
     return shares(kept, total=total)
 
 
-def language_note(shown: int, groups: int) -> str:
-    if shown >= groups:
-        return STATE_NOTE
-    return (f"{STATE_NOTE} {groups} mother-tongue groups were reported here; the "
-            f"{groups - shown} smallest are summed into '{REMAINDER}' rather than "
-            f"listed, so the shares still cover everyone enumerated.")
+def language_note(rows: list[dict[str, Any]], groups: int) -> str:
+    note = STATE_NOTE
+    shown = len([r for r in rows if r["group"] != REMAINDER])
+    if shown < groups:
+        note += (f" {groups} mother-tongue groups were reported here; the "
+                 f"{groups - shown} smallest are summed into '{REMAINDER}' rather "
+                 f"than listed, so the shares still cover everyone enumerated.")
+    residual = next((r for r in rows if r["group"] == CENSUS_RESIDUAL), None)
+    if residual:
+        note += (f" '{CENSUS_RESIDUAL}' ({residual['pct']}%) is the census's own "
+                 f"catch-all group, not a tail summed here: the Registrar General "
+                 f"published no breakdown beneath it at this level.")
+    return note
 
 
 def state_names(units: dict[tuple[str, str], dict[str, Any]]) -> dict[str, str]:
@@ -306,7 +322,7 @@ def build(units: dict[tuple[str, str], dict[str, Any]], level: str
             parent_name=None if is_state else states.get(state_code),
             codes=codes,
             language=groups or gap(NOT_AVAILABLE),
-            language_note=language_note(len(groups), len(unit["counts"])),
+            language_note=language_note(groups, len(unit["counts"])),
             language_year=2011,
             sources=[{"field": "language", "name": SOURCE, "url": CATALOG,
                       "year": 2011,

@@ -116,9 +116,19 @@ them from — `scripts/fetch_census/india_language.py` reads whatever is present
 
 The all-India workbook (`DDWC16STMTMDDS0000.XLSX`) carries every state, so all 34
 states enumerated in 2011 have a mother-tongue composition. The numbered
-workbooks carry that state's districts; 15 are present, giving 273 districts.
+workbooks carry that state's districts; 17 are present, giving 298 districts.
 Districts elsewhere keep an explicit gap. Adding a state is a matter of dropping
 its workbook into that directory.
+
+**Two kinds of "other".** C-16 has a residual group of its own (code 124),
+distinct from the tail this adapter folds for payload size. They are labelled
+apart — `Other languages (unspecified)` against `Other small languages` —
+because conflating them would misdescribe both. In Zunheboto the census residual
+is 95.6% of the district: the Sümi spoken there is reported under it rather than
+under group 107, and no breakdown is published beneath it at district level.
+Calling that a tail of minor tongues would be the opposite of the truth. Four
+units are affected at 20% or more (Zunheboto, West Khasi Hills, Dimapur, Lohit),
+and where the residual appears the note says what it is.
 
 Two shapes in the table decide how it is read, and both are checked rather than
 assumed:
