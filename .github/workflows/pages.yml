@@ -48,11 +48,15 @@ jobs:
           test -f site/data/search-index-0.json
           python3 -c "import json,sys; d=json.load(open('site/data/admin0.json')); print(len(d),'countries'); sys.exit(0 if len(d) > 150 else 1)"
 
-      # enablement: true turns Pages on through the API during the run, so a
-      # fresh clone of this repo deploys without anyone visiting
-      # Settings -> Pages first. Without it the step fails with
-      # "Get Pages site failed ... Not Found" on a repo where Pages has never
-      # been configured. The `pages: write` permission above is what allows it.
+      # enablement: true asks the action to create the Pages site through the
+      # API when one does not exist yet. It is kept because it costs nothing
+      # when Pages is already on, but it is NOT sufficient on its own: with the
+      # default GITHUB_TOKEN this repo got
+      #   Create Pages site failed. Error: Resource not accessible by integration
+      # so Pages must be switched on once by hand at
+      # Settings -> Pages -> Build and deployment -> Source -> GitHub Actions
+      # (or this step given a PAT with repo scope). After that one-time step,
+      # every later push deploys unattended.
       - uses: actions/configure-pages@v5
         with:
           enablement: true

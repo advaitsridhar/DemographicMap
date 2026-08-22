@@ -35,8 +35,15 @@ LEVELS = {"state": ("n3", "estados", "admin1"), "municipality": ("n6", "municipi
 TABLES = {
     "population": {"table": "9514", "variable": "93", "classification": None, "period": "2022"},
     "colour_race": {"table": "9605", "variable": "93", "classification": "86", "period": "2022"},
-    "religion": {"table": "10086", "variable": "1000093", "classification": "133", "period": "2022"},
 }
+# The 2022-census religion table's variable id was guessed and 400ed on the
+# first live run, so try the plausible spellings in order and keep the first
+# that answers; a wrong guess now fails fast instead of retrying for 30s.
+RELIGION_VARIANTS = [
+    {"table": "10086", "variable": "93", "classification": "133", "period": "2022"},
+    {"table": "10086", "variable": "1000093", "classification": "133", "period": "2022"},
+    {"table": "10086", "variable": "allxp", "classification": "133", "period": "2022"},
+]
 
 
 def sidra(table: dict[str, Any], level_code: str) -> list[dict[str, str]]:
@@ -82,11 +89,17 @@ def main() -> int:
 
     pop = collect(sidra(TABLES["population"], level_code), "D1C", None)
     race = collect(sidra(TABLES["colour_race"], level_code), "D1C", "D4N")
-    try:
-        religion = collect(sidra(TABLES["religion"], level_code), "D1C", "D4N")
-    except Exception as exc:
-        log(f"  religion table unavailable ({exc}); marking not_available")
-        religion = {}
+    religion: dict[str, dict[str, float]] = {}
+    for variant in RELIGION_VARIANTS:
+        try:
+            religion = collect(sidra(variant, level_code), "D1C", "D4N")
+            if religion:
+                log(f"  religion: table {variant['table']} v/{variant['variable']} answered")
+                break
+        except Exception as exc:
+            log(f"  religion variant v/{variant['variable']} failed ({exc})")
+    if not religion:
+        log("  religion unavailable from every variant; marking not_available")
 
     src = "IBGE, Censo Demográfico 2022 (SIDRA)"
     records: list[dict[str, Any]] = []

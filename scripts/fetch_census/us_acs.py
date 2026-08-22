@@ -29,11 +29,14 @@ from pathlib import Path
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, gap, http_json, log, measure,
-    record, shares, write_json,
+    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, gap, http_get, http_json, log,
+    measure, record, shares, write_json,
 )
 
 BASE = "https://api.census.gov/data/{year}/acs/acs5"
+# DP* variables are served by the data-profile endpoint, not the detailed
+# tables -- asking acs/acs5 for DP05_0018E gets a plain-text error, not JSON.
+BASE_PROFILE = "https://api.census.gov/data/{year}/acs/acs5/profile"
 
 # B03002 lines that partition the population exactly once.
 RACE_LINES = {
@@ -68,12 +71,25 @@ LANGUAGE_TOTAL = "C16001_001E"
 PROFILE_LINES = {"DP05_0018E": "median_age", "DP05_0004E": "sex_ratio_m_per_100f"}
 
 
-def query(year: int, get: list[str], geo: str, key: str | None) -> list[dict[str, str]]:
+def query(year: int, get: list[str], geo: str, key: str | None,
+          base: str = BASE) -> list[dict[str, str]]:
     params = [f"get=NAME,{','.join(get)}", f"for={geo}"]
     if key:
         params.append(f"key={key}")
-    url = f"{BASE.format(year=year)}?" + "&".join(params)
-    rows = http_json(url, timeout=180)
+    url = f"{base.format(year=year)}?" + "&".join(params)
+    text = http_get(url, timeout=180)
+    assert isinstance(text, str)
+    # The Census API used to allow 500 anonymous calls a day; it now returns a
+    # "Missing Key" HTML page with HTTP 200 when no key is sent. Turn that into
+    # an instruction instead of a JSON traceback.
+    if "Missing Key" in text[:400]:
+        raise SystemExit(
+            "us_acs: api.census.gov now requires an API key for every request. "
+            "Request a free key at https://api.census.gov/data/key_signup.html "
+            "and set it as the CENSUS_API_KEY environment variable (in CI: a "
+            "repository secret of the same name).")
+    import json as _json
+    rows = _json.loads(text.lstrip("\ufeff"))
     header, *body = rows
     return [dict(zip(header, row)) for row in body]
 
@@ -99,7 +115,8 @@ def fetch(level: str, year: int, key: str | None) -> list[dict[str, Any]]:
 
     race = query(year, [RACE_TOTAL, *RACE_LINES], geo, key)
     lang = {geoid(r, level): r for r in query(year, [LANGUAGE_TOTAL, *LANGUAGE_LINES], geo, key)}
-    prof = {geoid(r, level): r for r in query(year, list(PROFILE_LINES), geo, key)}
+    prof = {geoid(r, level): r
+            for r in query(year, list(PROFILE_LINES), geo, key, base=BASE_PROFILE)}
 
     out: list[dict[str, Any]] = []
     for row in race:
@@ -195,7 +212,7 @@ def main() -> int:
 
     key = os.environ.get("CENSUS_API_KEY")
     log(f"us_acs: ACS {args.year} 5-year, level={args.level}"
-        + ("" if key else " (no CENSUS_API_KEY set; limited to 500 calls/day)"))
+        + ("" if key else " (no CENSUS_API_KEY set; the API now rejects keyless requests)"))
     records = fetch(args.level, args.year, key)
     if args.religion_file:
         attach_religion(records, args.religion_file)
