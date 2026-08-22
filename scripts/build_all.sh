@@ -59,6 +59,11 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # of the 2011 census and aggregates it to states.
   soft python3 -m scripts.fetch_census.india_census --level state
   soft python3 -m scripts.fetch_census.india_census --level district
+  # Mother tongue (C-16) ships as its own per-state workbooks, checked into
+  # data/raw/india/c16/. No network: these read from disk, so they run
+  # unconditionally rather than through soft().
+  soft python3 -m scripts.fetch_census.india_language --level state
+  soft python3 -m scripts.fetch_census.india_language --level district
 fi
 
 if [ "${SKIP_TILES:-0}" != "1" ]; then

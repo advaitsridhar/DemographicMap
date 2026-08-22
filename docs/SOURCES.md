@@ -107,18 +107,44 @@ is a retrieval path, exactly as the factbook.json mirror is for the Factbook.
 To use the official workbooks instead, download them into `data/raw/india/` and
 run with `--input`.
 
-**Mother tongue is still missing.** The extract carries religion, literacy,
-housing and amenities, but not table C-16 (population by mother tongue), so
-`language` is `not_available` for every Indian unit -- India asks the question,
-the figures exist, this retrieval path does not carry them.
+### Mother tongue: the official C-16 workbooks
 
-A district-level languages layer published on ArcGIS Online (item
-`16a1324c517048db890b86a87858a8ef`, 738 records, one column per language) covers
-exactly that gap and was probed with `scripts/probe_arcgis.py`. It is licensed
-**CC BY-NC-SA 4.0**. Non-commercial and share-alike are both incompatible with
-redistributing it from this repository under the permissive terms everything else
-here carries -- the same objection that rules out GADM above. It is therefore not
-used, and the gap stands until the underlying C-16 tables are reached directly.
+Table C-16 (population by mother tongue) is a separate publication from C-01 and
+is not in the CSV extract. It is now read from the Registrar General's own
+workbooks, checked into `data/raw/india/c16/` because there is no API to fetch
+them from — `scripts/fetch_census/india_language.py` reads whatever is present.
+
+The all-India workbook (`DDWC16STMTMDDS0000.XLSX`) carries every state, so all 34
+states enumerated in 2011 have a mother-tongue composition. The numbered
+workbooks carry that state's districts; 15 are present, giving 273 districts.
+Districts elsewhere keep an explicit gap. Adding a state is a matter of dropping
+its workbook into that directory.
+
+Two shapes in the table decide how it is read, and both are checked rather than
+assumed:
+
+* **It is hierarchical.** Mother-tongue codes ending in `000` are the 122
+  language groups; the codes beneath each are the individual tongues returned
+  under it. Both sit in one column, so summing the column counts everyone twice.
+  Only group rows are read, and `check_levels` requires them to sum to the unit's
+  enumerated population — an independent total, so unlike a shares-add-to-100%
+  test it cannot be satisfied by double counting. It earned its keep immediately:
+  every state's row appears in both the all-India workbook and its own, and
+  accumulating rather than assigning doubled all fifteen.
+* **It is nested geographically.** State, district and sub-district rows share
+  one sheet. Only zero sub-district codes are read.
+
+`NATIONAL_CONTROLS` encodes the published all-India figures — 1,210,854,977
+people, Hindi 528,347,193, Bengali 97,237,669, Marathi 83,026,680 and nine more —
+and nothing is emitted unless the workbooks reproduce them exactly.
+
+The Esri "Languages in India at District level" layer on ArcGIS Online (item
+`16a1324c517048db890b86a87858a8ef`) covers the same ground and was probed with
+`scripts/probe_arcgis.py`, but it is licensed **CC BY-NC-SA 4.0**. Non-commercial
+and share-alike are both incompatible with redistributing it under the permissive
+terms everything else here carries — the same objection that rules out GADM
+above. The official workbooks are a better source anyway: GODL-India, and the
+primary record rather than a derivative.
 
 **Boundary vintage.** The boundary files are newer than the census, so:
 

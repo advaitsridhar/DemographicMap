@@ -5,6 +5,7 @@ dependency overwriting its parent country, and a curated row matching the wrong
 shape.
 """
 
+import collections
 import sys
 import unittest
 from pathlib import Path
@@ -14,6 +15,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_entities as be  # noqa: E402
 import common  # noqa: E402
+
+sys.path.insert(0, str(ROOT))
 
 
 class Normalisation(unittest.TestCase):
@@ -363,3 +366,103 @@ class AbsHierarchyCollapse(unittest.TestCase):
         self.assertIsNone(self.abs.sole_sex_dimension(rows))
         self.assertEqual(self.abs.group_by_region(rows, "RELP", "REGION")["A"],
                          {"Christianity": 10.0})
+
+
+class C16MotherTongue(unittest.TestCase):
+    """India's C-16 workbooks: hierarchy, geography and the published controls."""
+
+    def setUp(self):
+        from scripts.fetch_census import india_language as il
+        self.il = il
+
+    def test_group_labels_lose_their_index(self):
+        self.assertEqual(self.il.clean_group("6 HINDI"), "Hindi")
+        self.assertEqual(self.il.clean_group("22 URDU"), "Urdu")
+        self.assertEqual(self.il.clean_group("14 BHILI/BHILODI"), "Bhili/Bhilodi")
+
+    def test_the_census_residual_and_our_own_share_one_label(self):
+        # C-16 has its own "OTHERS" group. Folding a tail into a differently
+        # named bucket would show two "other" rows that mean the same thing.
+        self.assertEqual(self.il.clean_group("124 OTHERS"), self.il.REMAINDER)
+
+    def test_tail_is_summed_not_dropped(self):
+        counts = collections.Counter({f"L{i}": 1 for i in range(40)})
+        counts["Hindi"] = 9_960
+        rows = self.il.composition(counts)
+        self.assertLessEqual(len(rows), self.il.MAX_GROUPS + 1)
+        self.assertEqual(sum(r["count"] for r in rows), sum(counts.values()))
+        self.assertIn(self.il.REMAINDER, [r["group"] for r in rows])
+
+    def test_hierarchy_check_catches_a_doubled_unit(self):
+        # The bug this check exists for: every state's row appears in both the
+        # all-India workbook and its own, so accumulating instead of assigning
+        # doubles it -- and the shares still add to 100%.
+        units = {("09", "000"): {"name": "UTTAR PRADESH",
+                                 "counts": collections.Counter({"Hindi": 200})}}
+        with self.assertRaises(SystemExit) as caught:
+            self.il.check_levels(units, {("09", "000"): 100})
+        self.assertIn("2.00x", str(caught.exception))
+
+    def test_hierarchy_check_passes_when_the_levels_agree(self):
+        units = {("09", "000"): {"name": "UTTAR PRADESH",
+                                 "counts": collections.Counter({"Hindi": 100})}}
+        self.il.check_levels(units, {("09", "000"): 100})
+
+    def test_refuses_a_workbook_that_misses_the_published_totals(self):
+        counts = collections.Counter(self.il.NATIONAL_CONTROLS)
+        del counts["_total"]
+        counts["Hindi"] -= 1_000_000          # a mirror that has drifted
+        with self.assertRaises(SystemExit) as caught:
+            self.il.validate({("00", "000"): {"name": "INDIA", "counts": counts}})
+        self.assertIn("Hindi", str(caught.exception))
+
+
+class Admin2Disambiguation(unittest.TestCase):
+    """Two shapes, one name: the row must land on the right one or on neither."""
+
+    def shapes(self):
+        return {
+            be.norm("Hamirpur"): [
+                {"id": "HP-HAM", "name": "Hamirpur", "parent": "S-HP"},
+                {"id": "UP-HAM", "name": "Hamirpur", "parent": "S-UP"},
+            ],
+            be.norm("Agra"): [{"id": "UP-AGR", "name": "Agra", "parent": "S-UP"}],
+        }
+
+    def admin1(self):
+        # Keyed the way build_entities keys the real lookup, so the fixture
+        # cannot pass under a normalisation the pipeline does not use.
+        return {be.norm(name): {"id": eid, "name": name} for eid, name in
+                (("S-HP", "Himachal Pradesh"), ("S-UP", "Uttar Pradesh"))}
+
+    def test_the_state_picks_the_right_twin(self):
+        entity, how = be.match_admin2(
+            {"name": "Hamirpur", "parent_name": "Himachal Pradesh"},
+            self.shapes(), self.admin1())
+        self.assertEqual(entity["id"], "HP-HAM")
+        self.assertIn("state", how)
+
+    def test_the_other_twin_is_reachable_too(self):
+        entity, _ = be.match_admin2(
+            {"name": "Hamirpur", "parent_name": "Uttar Pradesh"},
+            self.shapes(), self.admin1())
+        self.assertEqual(entity["id"], "UP-HAM")
+
+    def test_an_ambiguous_name_with_no_state_is_refused(self):
+        # Silently keeping whichever shape was seen last is how a district ends
+        # up wearing its namesake's figures. An unmatched row is visible; a
+        # mis-matched one is not.
+        entity, how = be.match_admin2(
+            {"name": "Hamirpur", "parent_name": None}, self.shapes(), self.admin1())
+        self.assertIsNone(entity)
+        self.assertEqual(how, "ambiguous")
+
+    def test_unique_names_still_match_without_a_state(self):
+        entity, _ = be.match_admin2(
+            {"name": "Agra", "parent_name": None}, self.shapes(), self.admin1())
+        self.assertEqual(entity["id"], "UP-AGR")
+
+    def test_an_unresolvable_state_falls_back_rather_than_failing(self):
+        entity, _ = be.match_admin2(
+            {"name": "Agra", "parent_name": "Atlantis"}, self.shapes(), self.admin1())
+        self.assertEqual(entity["id"], "UP-AGR")

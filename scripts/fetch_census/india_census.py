@@ -27,8 +27,8 @@ Two standing caveats the app displays with every Indian figure:
   instead, and are emitted here as their own field rather than folded into
   "ethnicity".
 
-Mother tongue (table C-16) is *not* in this extract, so language stays an
-explicit gap.
+Mother tongue (table C-16) is a separate publication and is not in this
+extract; ``india_language.py`` reads it from the official workbooks.
 
 Usage:
     python -m scripts.fetch_census.india_census --level district
@@ -206,8 +206,10 @@ def build_record(name: str, counts: collections.Counter, *, level: str,
                       "India does not collect ethnicity. Scheduled Caste / Scheduled "
                       "Tribe status and mother tongue are collected instead."),
         language=gap(NOT_AVAILABLE,
-                     "Mother tongue is Census 2011 table C-16, which is not in this "
-                     "extract; it is published as per-state workbooks."),
+                     "Mother tongue is Census 2011 table C-16, a separate publication "
+                     "with one workbook per state. Units whose workbook is in "
+                     "data/raw/india/c16/ are filled by india_language.py; this "
+                     "marker survives only where that state's workbook is missing."),
         sources=[{"field": "population/religion/scheduled groups", "name": SOURCE,
                   "url": CATALOG, "year": 2011,
                   "license": "Government of India open data (GODL-India)",
@@ -243,11 +245,15 @@ def districts(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
                 ))
             continue
 
-        out.append(build_record(
+        state = (row.get("State name") or "").strip()
+        record_ = build_record(
             DISTRICT_ALIASES.get(key, name), counts,
             level="admin2", parent="IND", entity_id=f"IND-D{code}",
-            codes={"census2011_district": code,
-                   "state_name": (row.get("State name") or "").strip()}))
+            codes={"census2011_district": code, "state_name": state})
+        # District names repeat across states; the state is what disambiguates.
+        record_["parent_name"] = STATE_ALIASES.get(
+            state.lower(), state.title().replace(" And ", " and ").replace(" Of ", " of "))
+        out.append(record_)
     return out
 
 

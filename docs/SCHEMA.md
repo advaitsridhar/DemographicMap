@@ -95,7 +95,7 @@ Religion, language, ethnicity and ancestry are arrays of shares, largest first:
 | `parent` | The containing entity's `id`. CGAZ carries no ADM2→ADM1 link, so `build_entities.py` derives it by point-in-polygon and reports how many units it resolved. |
 | `bbox` | `[west, south, east, north]`, used to fly the map to a search hit. `null` for entities with no polygon. |
 | `sex_ratio.unit` | Either `females_per_1000_males` (census convention in South Asia) or `males_per_1000_females` (Factbook convention). Always read the unit. |
-| `match` | How a statistical row was joined to this shape (`curated:name`, `curated:alias`, `curated:prefix`, `adapter:name`). A bad join is auditable rather than invisible. |
+| `match` | How a statistical row was joined to this shape (`curated:name`, `curated:alias`, `curated:prefix`, `adapter:name`, `adapter:name+state`). A bad join is auditable rather than invisible; a `+state` suffix means the row named its parent division, which is what separates the thirty-one US counties called Washington, or India's two Hamirpurs, from each other. A row whose name is ambiguous and that names no parent is refused rather than guessed. |
 | `disputed` | `true` for geoBoundaries' numeric special-status polygons. No demographic source is joined to them. |
 | `geometry_available` | `false` for Factbook entities that CGAZ folds into their administering state. |
 | `adapter_hint` | The exact command that would fill an empty unit, surfaced in the UI. |
