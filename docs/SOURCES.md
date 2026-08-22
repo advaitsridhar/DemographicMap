@@ -1,0 +1,101 @@
+# Sources, licences and collection policy
+
+## Boundaries
+
+### geoBoundaries (primary)
+
+- **Licence:** gbOpen is CC BY 4.0. Some countries inherit ODbL or CC-BY-SA where the
+  boundary was sourced from OpenStreetMap (Pakistan ADM1 is the usual example), so
+  `scripts/fetch_boundaries.py` records `boundaryLicense` per file in
+  `data/raw/boundaries/manifest.json`. Check it before redistributing a subset.
+- **Attribution:** required, and shown on the map.
+- **Coverage:** 199 entities including all 195 UN member states, plus Greenland,
+  Taiwan, Niue and Kosovo.
+- **Products used:** `CGAZ` global composites for the three shipped layers; `gbOpen`
+  per-country files (`--countries`) for adding admin-2 country by country.
+- **Access:** the API at `https://www.geoboundaries.org/api/current/gbOpen/{ISO3}/{ADM}/`
+  returns a JSON record with `gjDownloadURL`. Release data lives in Git LFS, so
+  `raw.githubusercontent.com` returns a 130-byte pointer file rather than the object;
+  `media.githubusercontent.com/media/...` serves the real bytes. `fetch_boundaries.py`
+  tries the API, then the media host, then the raw host, and detects pointer files so
+  a silent 130-byte "success" cannot slip through.
+- **Known imprecision:** CGAZ simplifies polygons, fills gaps along shared edges, and
+  replaces disputed areas with polygons following US Department of State definitions.
+  For single-country precision use gbOpen HPSCU (`--full-precision`).
+
+### GADM — deliberately not used
+
+GADM's licence states the data "is freely available for academic and other
+non-commercial use. Redistribution, or commercial use, is not allowed without prior
+permission." Hosting GADM geometry in a public repository would violate it. It is
+fine for local analysis; it is not in this pipeline.
+
+### Natural Earth
+
+Public domain (CC0). Used for the GEC↔ISO code concordance (`FIPS_10` ↔ `ISO_A3` on
+`ne_10m_admin_0_countries`), for largest-settlement points
+(`ne_10m_populated_places`, which carries `ADM0_A3`, `ADM1NAME` and `POP_MAX`), and
+as admin-0/1 fallback geometry when geoBoundaries is unreachable.
+
+## Country demographics
+
+### CIA World Factbook
+
+Public domain. Read through the community `factbook/factbook.json` mirror (CC0),
+which tracked the site weekly until its retirement in **February 2026**. Treat it as
+a frozen snapshot; every field carries its own reference year.
+
+Two parsing hazards, both handled in `scripts/common.py`:
+
+1. The mirror keys profiles by two-letter **GEC** (ex-FIPS 10-4) stems, but has
+   migrated some entities to ISO-style stems — `in` is India, `id` is Indonesia.
+   Resolving by stem alone silently swaps countries, so `fetch_factbook.py` resolves
+   by *name* against the Natural Earth index and uses the code only as a tie-break.
+2. Compositions nest commas and semicolons inside parenthetical asides — *"Muslim
+   (official; predominantly Sunni) 99%, other (includes Christian, Jewish...) <1%"*.
+   A naive `split(",")` invents groups called "Jewish" and "and Anglican)", so the
+   parser tracks parenthesis depth.
+
+### Wikidata
+
+CC0. Walks the administrative tree structurally — P150 (*contains administrative
+territorial entity*) then P131 (*located in*) — rather than through per-country
+entity classes, so no class table needs maintaining. Population statements are
+filtered to the most recent P585 (*point in time*) qualifier, and every optional
+field is wrapped in `OPTIONAL` so an entity missing a population is still returned.
+
+## Subnational demographics
+
+| Country | Source | Level | Notes |
+|---|---|---|---|
+| USA | Census ACS 5-year, tables B03002 / C16001 / DP05 | state, county | B03002 rather than B02001, because only B03002 makes Hispanic origin orthogonal to race the way published "White, non-Hispanic" figures do. |
+| USA | 2020 U.S. Religion Census (ASARB/ARDA `RCMSCY20`) | county | **Adherents**, not self-identification: 372 bodies, 161,224,088 adherents, ~48.6% of the population. Never comparable with self-ID percentages. |
+| UK | ONS Census 2021 via Nomis (TS021, TS030) | local authority | England and Wales only; Scotland ran its census in 2022 and Northern Ireland through NISRA. Religion is voluntary — "Not answered" is kept as its own category. |
+| Canada | StatCan 2021 Census Profile (SDMX, keyed by DGUID) | province, census division | Religion is asked once a decade (2021 yes, 2016 no). "Visible minority" is an Employment Equity Act category, not an ethnicity question. |
+| Brazil | IBGE SIDRA tables 9514 / 9605 / 10086 | state, municipality | *Cor ou raça* is self-declared skin colour (branca, preta, parda, amarela, indígena) — not equivalent to ethnicity elsewhere. |
+| EU | Eurostat `demo_r_pjangrp3`, `demo_r_pjanind3` | NUTS-2, NUTS-3 | Population and age everywhere; **no** ethnicity or religion — those are national census questions and only some states ask them. |
+| Australia | ABS 2021 Census `C21_G14`, `C21_G08` | state, LGA, SA3 | Ancestry is multi-response (up to two per person), so shares are of responses and exceed 100%. No ethnicity question exists. |
+| India | Census 2011 tables C-01, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. |
+
+## Collection policy
+
+The `not_collected` marker is asserted from these tables and nowhere else:
+
+- `NOT_COLLECTED_POLICY` in `scripts/fetch_factbook.py` — country level.
+- `COLLECTION_POLICY` and `COLLECTS_BOTH` in `scripts/fetch_census/eurostat.py` — EU
+  member states.
+- `_provenance.*.{religion,ethnicity}_policy` in `data/curated/admin1_seed.json` —
+  subnational.
+
+Adding a country means adding a row with a citable reason. An empty API response is
+never sufficient grounds: it produces `not_available`.
+
+### Collecting vs. not, in the EU
+
+Romania, Bulgaria, Slovakia, Ireland, Hungary, Croatia, Slovenia, the Baltics and
+Czechia collect ethnicity and religion in their censuses. France collects neither.
+Germany does not collect ethnicity. Spain records nationality and birthplace, and
+co-official language by autonomous community, but neither ethnicity nor religion.
+Eurostat redistributes none of the ethnicity or religion tables sub-nationally, so
+for the collecting states the adapter emits `not_available` with a note pointing at
+the national statistical office rather than pretending the question was never asked.

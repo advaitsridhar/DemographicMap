@@ -1,0 +1,24 @@
+# Source downloads: large, reproducible with scripts/fetch_*.py, never edited.
+data/raw/
+data/processed/http_cache/
+
+# Intermediate tiling artefacts
+*.mbtiles
+*.geojson.part
+*.gpkg.part
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node (only used to vendor the frontend libraries)
+node_modules/
+package-lock.json
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp

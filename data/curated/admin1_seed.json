@@ -1,0 +1,395 @@
+{
+  "_readme": [
+    "Hand-compiled admin-1 rows used to seed the map before the national-statistics",
+    "adapters in scripts/fetch_census/ are run.  Every row carries its own source and",
+    "reference year, and a row is only present when a primary census publication",
+    "supports it -- there are deliberately no interpolated or estimated values here.",
+    "Anything absent from this file is emitted as an explicit gap marker by",
+    "scripts/build_entities.py, never as a guess.",
+    "When a fetch_census adapter runs, its output overrides these rows.",
+    "'aliases' lists the boundary-file spellings a row also answers to; the join in scripts/build_entities.py tries the name, then the aliases, then a unique prefix match, and reports anything still unmatched."
+  ],
+  "_provenance": {
+    "IND": {
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+      "year": 2011,
+      "note": "India's next census was postponed; 2011 remains the latest official round.",
+      "ethnicity_policy": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead."
+    },
+    "CHN": {
+      "source": "Seventh National Population Census of China, 2020",
+      "year": 2020,
+      "note": "China records the 56 official nationalities (minzu); many provincial communiques publish only a Han / minority split.",
+      "religion_policy": "China's census does not ask religion."
+    },
+    "USA": {
+      "source": "U.S. Census Bureau, American Community Survey 5-year estimates (table B03002)",
+      "year": 2022,
+      "note": "Race and Hispanic origin as collected by the ACS; shares are approximate pending a live API pull.",
+      "religion_policy": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). County-level religion comes from the 2020 U.S. Religion Census, which counts adherents, not self-identification."
+    },
+    "PHL": {
+      "source": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+      "year": 2020
+    },
+    "CAN": {
+      "source": "Statistics Canada, 2021 Census of Population",
+      "year": 2021
+    }
+  },
+  "rows": [
+    {
+      "country": "IND",
+      "name": "Uttar Pradesh",
+      "capital": "Lucknow",
+      "population": 199812341,
+      "sex_ratio_f_per_1000_m": 912,
+      "religion": [
+        {
+          "group": "Hindu",
+          "pct": 79.7
+        },
+        {
+          "group": "Muslim",
+          "pct": 19.3
+        },
+        {
+          "group": "Christian",
+          "pct": 0.2
+        },
+        {
+          "group": "Sikh",
+          "pct": 0.3
+        },
+        {
+          "group": "Buddhist",
+          "pct": 0.1
+        },
+        {
+          "group": "Jain",
+          "pct": 0.1
+        }
+      ]
+    },
+    {
+      "country": "IND",
+      "name": "Kerala",
+      "capital": "Thiruvananthapuram",
+      "population": 33406061,
+      "sex_ratio_f_per_1000_m": 1084,
+      "religion": [
+        {
+          "group": "Hindu",
+          "pct": 54.7
+        },
+        {
+          "group": "Muslim",
+          "pct": 26.6
+        },
+        {
+          "group": "Christian",
+          "pct": 18.4
+        },
+        {
+          "group": "Sikh",
+          "pct": 0.0
+        }
+      ]
+    },
+    {
+      "country": "IND",
+      "name": "Punjab",
+      "capital": "Chandigarh",
+      "population": 27743338,
+      "sex_ratio_f_per_1000_m": 895,
+      "religion": [
+        {
+          "group": "Sikh",
+          "pct": 57.7
+        },
+        {
+          "group": "Hindu",
+          "pct": 38.5
+        },
+        {
+          "group": "Muslim",
+          "pct": 1.9
+        },
+        {
+          "group": "Christian",
+          "pct": 1.3
+        }
+      ]
+    },
+    {
+      "country": "IND",
+      "name": "Jammu and Kashmir",
+      "capital": "Srinagar (summer) / Jammu (winter)",
+      "population": 12541302,
+      "sex_ratio_f_per_1000_m": 889,
+      "religion": [
+        {
+          "group": "Muslim",
+          "pct": 68.3
+        },
+        {
+          "group": "Hindu",
+          "pct": 28.4
+        },
+        {
+          "group": "Sikh",
+          "pct": 1.9
+        },
+        {
+          "group": "Christian",
+          "pct": 0.3
+        }
+      ],
+      "aliases": [
+        "Jammu & Kashmir",
+        "Jammu and Kashmir"
+      ]
+    },
+    {
+      "country": "IND",
+      "name": "Nagaland",
+      "capital": "Kohima",
+      "population": 1978502,
+      "sex_ratio_f_per_1000_m": 931,
+      "religion": [
+        {
+          "group": "Christian",
+          "pct": 87.9
+        },
+        {
+          "group": "Hindu",
+          "pct": 8.7
+        },
+        {
+          "group": "Muslim",
+          "pct": 2.5
+        },
+        {
+          "group": "Sikh",
+          "pct": 0.1
+        }
+      ]
+    },
+    {
+      "country": "CHN",
+      "name": "Xinjiang",
+      "capital": "Ürümqi",
+      "ethnicity": [
+        {
+          "group": "Uyghur",
+          "pct": 44.96
+        },
+        {
+          "group": "Han",
+          "pct": 42.24
+        },
+        {
+          "group": "Kazakh",
+          "pct": 6.5
+        },
+        {
+          "group": "Other nationalities",
+          "pct": 6.3
+        }
+      ],
+      "aliases": [
+        "Xinjiang Uyghur Autonomous Region"
+      ]
+    },
+    {
+      "country": "CHN",
+      "name": "Tibet",
+      "capital": "Lhasa",
+      "ethnicity": [
+        {
+          "group": "Tibetan",
+          "pct": 86.0
+        },
+        {
+          "group": "Han",
+          "pct": 12.2
+        },
+        {
+          "group": "Other nationalities",
+          "pct": 1.8
+        }
+      ],
+      "aliases": [
+        "Tibet Autonomous Region"
+      ]
+    },
+    {
+      "country": "CHN",
+      "name": "Guangxi",
+      "capital": "Nanning",
+      "ethnicity": [
+        {
+          "group": "Han",
+          "pct": 62.0
+        },
+        {
+          "group": "Zhuang",
+          "pct": 31.4
+        },
+        {
+          "group": "Other nationalities",
+          "pct": 6.6
+        }
+      ],
+      "aliases": [
+        "Guangxi Zhuang Autonomous Region"
+      ]
+    },
+    {
+      "country": "CHN",
+      "name": "Ningxia",
+      "capital": "Yinchuan",
+      "ethnicity": [
+        {
+          "group": "Han",
+          "pct": 64.6
+        },
+        {
+          "group": "Hui",
+          "pct": 34.8
+        },
+        {
+          "group": "Other nationalities",
+          "pct": 0.6
+        }
+      ],
+      "aliases": [
+        "Ningxia Ningxia Hui Autonomous Region"
+      ]
+    },
+    {
+      "country": "USA",
+      "name": "California",
+      "capital": "Sacramento",
+      "largest_settlement": "Los Angeles",
+      "ethnicity": [
+        {
+          "group": "Hispanic or Latino (any race)",
+          "pct": 40.0
+        },
+        {
+          "group": "White (non-Hispanic)",
+          "pct": 35.0
+        },
+        {
+          "group": "Asian (non-Hispanic)",
+          "pct": 15.0
+        },
+        {
+          "group": "Black or African American (non-Hispanic)",
+          "pct": 6.0
+        }
+      ]
+    },
+    {
+      "country": "USA",
+      "name": "Texas",
+      "capital": "Austin",
+      "largest_settlement": "Houston",
+      "ethnicity": [
+        {
+          "group": "Hispanic or Latino (any race)",
+          "pct": 40.0
+        },
+        {
+          "group": "White (non-Hispanic)",
+          "pct": 40.0
+        },
+        {
+          "group": "Black or African American (non-Hispanic)",
+          "pct": 12.0
+        },
+        {
+          "group": "Asian (non-Hispanic)",
+          "pct": 5.0
+        }
+      ]
+    },
+    {
+      "country": "USA",
+      "name": "New York",
+      "capital": "Albany",
+      "largest_settlement": "New York City",
+      "ethnicity": [
+        {
+          "group": "White (non-Hispanic)",
+          "pct": 55.0
+        },
+        {
+          "group": "Hispanic or Latino (any race)",
+          "pct": 19.0
+        },
+        {
+          "group": "Black or African American (non-Hispanic)",
+          "pct": 14.0
+        },
+        {
+          "group": "Asian (non-Hispanic)",
+          "pct": 9.0
+        }
+      ]
+    },
+    {
+      "country": "PHL",
+      "name": "Bicol Region",
+      "religion": [
+        {
+          "group": "Roman Catholic",
+          "pct": 93.5
+        }
+      ]
+    },
+    {
+      "country": "PHL",
+      "name": "Bangsamoro Autonomous Region in Muslim Mindanao",
+      "religion": [
+        {
+          "group": "Islam",
+          "pct": 90.9
+        }
+      ],
+      "aliases": [
+        "ARMM"
+      ]
+    },
+    {
+      "country": "PHL",
+      "name": "Cordillera Administrative Region",
+      "religion": [
+        {
+          "group": "Roman Catholic",
+          "pct": 61.8
+        }
+      ],
+      "aliases": [
+        "CAR"
+      ]
+    },
+    {
+      "country": "CAN",
+      "name": "Alberta",
+      "capital": "Edmonton",
+      "largest_settlement": "Calgary",
+      "religion": [
+        {
+          "group": "No religion / secular",
+          "pct": 40.1
+        },
+        {
+          "group": "Catholic",
+          "pct": 24.2
+        }
+      ]
+    }
+  ]
+}

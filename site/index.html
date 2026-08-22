@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<title>World Demographics Map</title>
+<meta name="description" content="An interactive map of the world's administrative divisions with population, religion, language and ethnicity data — and an explicit record of where that data does not exist.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🗺️</text></svg>">
+<link rel="stylesheet" href="vendor/maplibre-gl.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<a class="skip-link" href="#sidebar">Skip to the data panel</a>
+
+<div id="app">
+  <header id="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">🗺️</span>
+      <span class="brand-text">
+        <strong>World Demographics Map</strong>
+        <span class="brand-sub">countries · first-level · second-level divisions</span>
+      </span>
+    </div>
+
+    <div class="search" role="search">
+      <label class="visually-hidden" for="search-input">Search for a country, state or district</label>
+      <input id="search-input" type="search" autocomplete="off" spellcheck="false"
+             placeholder="Search 52,000 places — try “Kerala”, “Bavaria”, “Harris County”"
+             aria-describedby="search-status" aria-expanded="false"
+             aria-controls="search-results" role="combobox" aria-autocomplete="list">
+      <ul id="search-results" role="listbox" aria-label="Search results" hidden></ul>
+      <p id="search-status" class="visually-hidden" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="topbar-actions">
+      <button id="theme-toggle" class="ghost-button" type="button" aria-label="Switch colour theme">
+        <span data-theme-icon>◐</span>
+      </button>
+      <button id="about-open" class="ghost-button" type="button" aria-haspopup="dialog">About &amp; sources</button>
+    </div>
+  </header>
+
+  <main id="map-wrap">
+    <div id="map" role="application" aria-label="Map of world administrative divisions"></div>
+
+    <section id="controls" aria-label="Map colouring">
+      <div class="control-row">
+        <label for="metric-select">Colour by</label>
+        <select id="metric-select"></select>
+      </div>
+      <div class="control-row" id="group-row" hidden>
+        <label for="group-select">Group</label>
+        <select id="group-select"></select>
+      </div>
+      <div id="legend" aria-live="polite"></div>
+      <p id="level-note" class="control-note"></p>
+    </section>
+
+    <div id="map-status" class="map-status" role="status" aria-live="polite" hidden></div>
+  </main>
+
+  <aside id="sidebar" aria-label="Selected place details" tabindex="-1">
+    <button id="sidebar-close" class="ghost-button sidebar-close" type="button" aria-label="Close the details panel">✕</button>
+    <div id="sidebar-body">
+      <div class="empty-state">
+        <h2>Pick a place</h2>
+        <p>Click any country, state or district on the map, or search above. Zooming in
+           swaps the map from countries to first-level divisions, then to second-level ones.</p>
+        <p class="empty-note">Every field here is either a value with its source and year,
+           or an explicit marker saying whether the data is <em>not yet gathered</em> or
+           <em>not collected at all</em> by that country.</p>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<dialog id="about-dialog" aria-labelledby="about-title">
+  <article>
+    <header class="dialog-head">
+      <h2 id="about-title">About this map</h2>
+      <button id="about-close" class="ghost-button" type="button" aria-label="Close">✕</button>
+    </header>
+
+    <h3>What it shows</h3>
+    <p>Administrative boundaries at three levels — countries (ADM0), first-level
+       divisions (ADM1) and second-level divisions (ADM2) — joined to population,
+       religion, language and ethnicity figures from national censuses and the CIA
+       World Factbook.</p>
+
+    <h3>Gaps are data too</h3>
+    <p>Demographic coverage is extremely uneven, and this map refuses to paper over
+       that. Three distinct states are shown wherever a value is absent:</p>
+    <ul class="gap-key">
+      <li><span class="chip chip-present"></span><strong>Present</strong> — a value with a named source and reference year.</li>
+      <li><span class="chip chip-missing"></span><strong>Not yet available</strong> — the figure exists somewhere but this build has not fetched it.</li>
+      <li><span class="chip chip-notcollected"></span><strong>Not collected</strong> — the country does not gather it at all. France records neither ethnicity nor religion (barred by law); Germany records citizenship and migration background rather than ethnicity; Japan's census asks neither; India collects mother tongue and Scheduled Caste / Tribe status but not ethnicity; the US census may not ask a mandatory religion question.</li>
+    </ul>
+
+    <h3>Comparability warning</h3>
+    <p>Religion and ethnicity categories are <em>not</em> comparable across borders.
+       US race, Brazilian <em>cor ou raça</em>, UK ethnic group, Australian ancestry,
+       Chinese <em>minzu</em> and Indonesian <em>suku</em> are different questions with
+       different answer sets. Percentages here should be read within a country, never
+       across a border.</p>
+
+    <h3>Sources &amp; licences</h3>
+    <ul id="about-sources" class="source-list"></ul>
+
+    <h3>Caveats worth knowing</h3>
+    <ul class="caveat-list">
+      <li>The Factbook was retired in February 2026, so country figures are a frozen snapshot.</li>
+      <li>India's subnational data is from the 2011 census; the next round was postponed.</li>
+      <li>Indonesia's ethnicity and religion data is from 2010 — the 2020 census dropped both questions.</li>
+      <li>The 2020 US Religion Census counts adherents reported by religious bodies (about 48.6% of the population), not self-identification.</li>
+      <li>geoBoundaries' global composite (CGAZ) simplifies polygons, fills gaps along shared edges, and substitutes disputed areas using US Department of State definitions. It is fine for a demographics choropleth and not authoritative for boundary disputes.</li>
+    </ul>
+  </article>
+</dialog>
+
+<script src="vendor/pmtiles.js"></script>
+<script src="vendor/maplibre-gl.js"></script>
+<script src="vendor/minisearch.js"></script>
+<script src="js/palette.js"></script>
+<script src="js/data.js"></script>
+<script src="js/metrics.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/search.js"></script>
+<script src="js/map.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
