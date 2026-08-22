@@ -15,6 +15,23 @@ cd DemographicMap
 python3 scripts/serve.py          # http://127.0.0.1:8899
 ```
 
+Use `scripts/serve.py` rather than `python3 -m http.server`: the stock server
+ignores `Range` headers, and PMTiles reads tiles by byte range, so the map comes
+up blank. Opening `site/index.html` over `file://` does not work either — the
+browser blocks the data fetches.
+
+## Deploying
+
+Pushing to `main` runs `.github/workflows/pages.yml`, which validates the build
+and publishes `site/` to GitHub Pages at
+`https://<owner>.github.io/DemographicMap/`. Nothing needs configuring by hand:
+the workflow passes `enablement: true` to `actions/configure-pages`, which turns
+Pages on through the API on the first run.
+
+Any static host works, provided it sends `Access-Control-Allow-Origin`, honours
+`Range` requests, and sets a long `Cache-Control` — those three are what the
+PMTiles archives need.
+
 ---
 
 ## Why the gaps are the point
