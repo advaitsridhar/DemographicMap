@@ -1,0 +1,3677 @@
+[
+  {
+    "id": "IND-S-Andaman-and-Nicobar-Islands",
+    "level": "admin1",
+    "name": "Andaman and Nicobar Islands",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 380581,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 876,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 69.4,
+        "count": 264296
+      },
+      {
+        "group": "Christian",
+        "pct": 21.3,
+        "count": 80984
+      },
+      {
+        "group": "Muslim",
+        "pct": 8.5,
+        "count": 32413
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 1286
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 669
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 338
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 564
+      },
+      {
+        "group": "Jain",
+        "pct": 0.0,
+        "count": 31
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "ANDAMAN AND NICOBAR ISLANDS"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 7.5,
+        "count": 28530
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Andhra-Pradesh",
+    "level": "admin1",
+    "name": "Andhra Pradesh",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 84580777,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 993,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 88.5,
+        "count": 74824149
+      },
+      {
+        "group": "Muslim",
+        "pct": 9.6,
+        "count": 8082412
+      },
+      {
+        "group": "Christian",
+        "pct": 1.3,
+        "count": 1129784
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 404100
+      },
+      {
+        "group": "Jain",
+        "pct": 0.1,
+        "count": 53849
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 40244
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.0,
+        "count": 36692
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 9547
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "ANDHRA PRADESH"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Caste",
+        "pct": 16.4,
+        "count": 13878078
+      },
+      {
+        "group": "Scheduled Tribe",
+        "pct": 7.0,
+        "count": 5918073
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Arunachal-Pradesh",
+    "level": "admin1",
+    "name": "Arunachal Pradesh",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1383727,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 938,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Christian",
+        "pct": 30.3,
+        "count": 418732
+      },
+      {
+        "group": "Hindu",
+        "pct": 29.0,
+        "count": 401876
+      },
+      {
+        "group": "Other religions",
+        "pct": 26.2,
+        "count": 362553
+      },
+      {
+        "group": "Buddhist",
+        "pct": 11.8,
+        "count": 162815
+      },
+      {
+        "group": "Muslim",
+        "pct": 2.0,
+        "count": 27045
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 6648
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.2,
+        "count": 3287
+      },
+      {
+        "group": "Jain",
+        "pct": 0.1,
+        "count": 771
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "ARUNACHAL PRADESH"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 68.8,
+        "count": 951821
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Assam",
+    "level": "admin1",
+    "name": "Assam",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 31205576,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 958,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 61.5,
+        "count": 19180759
+      },
+      {
+        "group": "Muslim",
+        "pct": 34.2,
+        "count": 10679345
+      },
+      {
+        "group": "Christian",
+        "pct": 3.7,
+        "count": 1165867
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.2,
+        "count": 54993
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 50873
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 20672
+      },
+      {
+        "group": "Jain",
+        "pct": 0.1,
+        "count": 25949
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 27118
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "ASSAM"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 12.4,
+        "count": 3884371
+      },
+      {
+        "group": "Scheduled Caste",
+        "pct": 7.2,
+        "count": 2231321
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Bihar",
+    "level": "admin1",
+    "name": "Bihar",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 104099452,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 918,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 82.7,
+        "count": 86078686
+      },
+      {
+        "group": "Muslim",
+        "pct": 16.9,
+        "count": 17557809
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 252127
+      },
+      {
+        "group": "Christian",
+        "pct": 0.1,
+        "count": 129247
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 23779
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.0,
+        "count": 25453
+      },
+      {
+        "group": "Jain",
+        "pct": 0.0,
+        "count": 18914
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 13437
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "BIHAR"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Caste",
+        "pct": 15.9,
+        "count": 16567325
+      },
+      {
+        "group": "Scheduled Tribe",
+        "pct": 1.3,
+        "count": 1336573
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Chandigarh",
+    "level": "admin1",
+    "name": "Chandigarh",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1055450,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 818,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 80.8,
+        "count": 852574
+      },
+      {
+        "group": "Sikh",
+        "pct": 13.1,
+        "count": 138329
+      },
+      {
+        "group": "Muslim",
+        "pct": 4.9,
+        "count": 51447
+      },
+      {
+        "group": "Christian",
+        "pct": 0.8,
+        "count": 8720
+      },
+      {
+        "group": "Jain",
+        "pct": 0.2,
+        "count": 1960
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 1160
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 1014
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 246
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "CHANDIGARH"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Caste",
+        "pct": 18.9,
+        "count": 199086
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Chhattisgarh",
+    "level": "admin1",
+    "name": "Chhattisgarh",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 25545198,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 991,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 93.2,
+        "count": 23819789
+      },
+      {
+        "group": "Muslim",
+        "pct": 2.0,
+        "count": 514998
+      },
+      {
+        "group": "Christian",
+        "pct": 1.9,
+        "count": 490542
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.9,
+        "count": 494594
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 70036
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.3,
+        "count": 70467
+      },
+      {
+        "group": "Jain",
+        "pct": 0.2,
+        "count": 61510
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 23262
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "CHHATTISGARH"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 30.6,
+        "count": 7822902
+      },
+      {
+        "group": "Scheduled Caste",
+        "pct": 12.8,
+        "count": 3274269
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Dadra-and-Nagar-Haveli",
+    "level": "admin1",
+    "name": "Dadra and Nagar Haveli",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 343709,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 774,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 93.9,
+        "count": 322857
+      },
+      {
+        "group": "Muslim",
+        "pct": 3.8,
+        "count": 12922
+      },
+      {
+        "group": "Christian",
+        "pct": 1.5,
+        "count": 5113
+      },
+      {
+        "group": "Jain",
+        "pct": 0.3,
+        "count": 1186
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.2,
+        "count": 634
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 217
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 293
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 487
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "DADRA AND NAGAR HAVELI"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 52.0,
+        "count": 178564
+      },
+      {
+        "group": "Scheduled Caste",
+        "pct": 1.8,
+        "count": 6186
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Daman-and-Diu",
+    "level": "admin1",
+    "name": "Daman and Diu",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 243247,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 618,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 90.5,
+        "count": 220150
+      },
+      {
+        "group": "Muslim",
+        "pct": 7.9,
+        "count": 19277
+      },
+      {
+        "group": "Christian",
+        "pct": 1.2,
+        "count": 2820
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 172
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 217
+      },
+      {
+        "group": "Jain",
+        "pct": 0.1,
+        "count": 287
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 245
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 79
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "DAMAN AND DIU"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 6.3,
+        "count": 15363
+      },
+      {
+        "group": "Scheduled Caste",
+        "pct": 2.5,
+        "count": 6124
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Goa",
+    "level": "admin1",
+    "name": "Goa",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1458545,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 973,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 66.1,
+        "count": 963877
+      },
+      {
+        "group": "Christian",
+        "pct": 25.1,
+        "count": 366130
+      },
+      {
+        "group": "Muslim",
+        "pct": 8.3,
+        "count": 121564
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 3039
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 1473
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 1095
+      },
+      {
+        "group": "Jain",
+        "pct": 0.1,
+        "count": 1109
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 258
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "GOA"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 10.2,
+        "count": 149275
+      },
+      {
+        "group": "Scheduled Caste",
+        "pct": 1.7,
+        "count": 25449
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Gujarat",
+    "level": "admin1",
+    "name": "Gujarat",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 60439692,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 919,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 88.6,
+        "count": 53533988
+      },
+      {
+        "group": "Muslim",
+        "pct": 9.7,
+        "count": 5846761
+      },
+      {
+        "group": "Jain",
+        "pct": 1.0,
+        "count": 579654
+      },
+      {
+        "group": "Christian",
+        "pct": 0.5,
+        "count": 316178
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 58246
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 30483
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 57902
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 16480
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "GUJARAT"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 14.8,
+        "count": 8917174
+      },
+      {
+        "group": "Scheduled Caste",
+        "pct": 6.7,
+        "count": 4074447
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Haryana",
+    "level": "admin1",
+    "name": "Haryana",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 25351462,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 879,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 87.5,
+        "count": 22171128
+      },
+      {
+        "group": "Muslim",
+        "pct": 7.0,
+        "count": 1781342
+      },
+      {
+        "group": "Sikh",
+        "pct": 4.9,
+        "count": 1243752
+      },
+      {
+        "group": "Christian",
+        "pct": 0.2,
+        "count": 50353
+      },
+      {
+        "group": "Jain",
+        "pct": 0.2,
+        "count": 52613
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 42212
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.0,
+        "count": 7514
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 2548
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "HARYANA"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Caste",
+        "pct": 20.2,
+        "count": 5113615
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Himachal-Pradesh",
+    "level": "admin1",
+    "name": "Himachal Pradesh",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6864602,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 972,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 95.2,
+        "count": 6532765
+      },
+      {
+        "group": "Muslim",
+        "pct": 2.2,
+        "count": 149881
+      },
+      {
+        "group": "Sikh",
+        "pct": 1.2,
+        "count": 79896
+      },
+      {
+        "group": "Buddhist",
+        "pct": 1.1,
+        "count": 78659
+      },
+      {
+        "group": "Christian",
+        "pct": 0.2,
+        "count": 12646
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 8094
+      },
+      {
+        "group": "Jain",
+        "pct": 0.0,
+        "count": 1805
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 856
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "HIMACHAL PRADESH"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Caste",
+        "pct": 25.2,
+        "count": 1729252
+      },
+      {
+        "group": "Scheduled Tribe",
+        "pct": 5.7,
+        "count": 392126
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Jammu-and-Kashmir",
+    "level": "admin1",
+    "name": "Jammu and Kashmir",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12541302,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 889,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 68.3,
+        "count": 8567485
+      },
+      {
+        "group": "Hindu",
+        "pct": 28.4,
+        "count": 3566674
+      },
+      {
+        "group": "Sikh",
+        "pct": 1.9,
+        "count": 234848
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.9,
+        "count": 112584
+      },
+      {
+        "group": "Christian",
+        "pct": 0.3,
+        "count": 35631
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 20082
+      },
+      {
+        "group": "Jain",
+        "pct": 0.0,
+        "count": 2490
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 1508
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "JAMMU AND KASHMIR"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 11.9,
+        "count": 1493299
+      },
+      {
+        "group": "Scheduled Caste",
+        "pct": 7.4,
+        "count": 924991
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Jharkhand",
+    "level": "admin1",
+    "name": "Jharkhand",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 32988134,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 948,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 67.8,
+        "count": 22376051
+      },
+      {
+        "group": "Muslim",
+        "pct": 14.5,
+        "count": 4793994
+      },
+      {
+        "group": "Other religions",
+        "pct": 12.8,
+        "count": 4235786
+      },
+      {
+        "group": "Christian",
+        "pct": 4.3,
+        "count": 1418608
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.2,
+        "count": 71422
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 68343
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.0,
+        "count": 8956
+      },
+      {
+        "group": "Jain",
+        "pct": 0.0,
+        "count": 14974
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "JHARKHAND"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 26.2,
+        "count": 8645042
+      },
+      {
+        "group": "Scheduled Caste",
+        "pct": 12.1,
+        "count": 3985644
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Karnataka",
+    "level": "admin1",
+    "name": "Karnataka",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 61095297,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 973,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 84.0,
+        "count": 51317472
+      },
+      {
+        "group": "Muslim",
+        "pct": 12.9,
+        "count": 7893065
+      },
+      {
+        "group": "Christian",
+        "pct": 1.9,
+        "count": 1142647
+      },
+      {
+        "group": "Jain",
+        "pct": 0.7,
+        "count": 440280
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 166087
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.2,
+        "count": 95710
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 28773
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 11263
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "KARNATAKA"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Caste",
+        "pct": 17.1,
+        "count": 10474992
+      },
+      {
+        "group": "Scheduled Tribe",
+        "pct": 7.0,
+        "count": 4248987
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Kerala",
+    "level": "admin1",
+    "name": "Kerala",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 33406061,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1084,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 54.7,
+        "count": 18282492
+      },
+      {
+        "group": "Muslim",
+        "pct": 26.6,
+        "count": 8873472
+      },
+      {
+        "group": "Christian",
+        "pct": 18.4,
+        "count": 6141269
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 88155
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 3814
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.0,
+        "count": 4752
+      },
+      {
+        "group": "Jain",
+        "pct": 0.0,
+        "count": 4489
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 7618
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "KERALA"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Caste",
+        "pct": 9.1,
+        "count": 3039573
+      },
+      {
+        "group": "Scheduled Tribe",
+        "pct": 1.5,
+        "count": 484839
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Lakshadweep",
+    "level": "admin1",
+    "name": "Lakshadweep",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 64473,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 946,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 96.6,
+        "count": 62268
+      },
+      {
+        "group": "Hindu",
+        "pct": 2.8,
+        "count": 1788
+      },
+      {
+        "group": "Christian",
+        "pct": 0.5,
+        "count": 317
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 64
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Jain",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 7
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "LAKSHADWEEP"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 94.8,
+        "count": 61120
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Madhya-Pradesh",
+    "level": "admin1",
+    "name": "Madhya Pradesh",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 72626809,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 931,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 90.9,
+        "count": 66007121
+      },
+      {
+        "group": "Muslim",
+        "pct": 6.6,
+        "count": 4774695
+      },
+      {
+        "group": "Jain",
+        "pct": 0.8,
+        "count": 567028
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.8,
+        "count": 599594
+      },
+      {
+        "group": "Christian",
+        "pct": 0.3,
+        "count": 213282
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.3,
+        "count": 216052
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.2,
+        "count": 151412
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 97625
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "MADHYA PRADESH"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 21.1,
+        "count": 15316784
+      },
+      {
+        "group": "Scheduled Caste",
+        "pct": 15.6,
+        "count": 11342320
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Maharashtra",
+    "level": "admin1",
+    "name": "Maharashtra",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 112374333,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 929,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 79.8,
+        "count": 89703057
+      },
+      {
+        "group": "Muslim",
+        "pct": 11.5,
+        "count": 12971152
+      },
+      {
+        "group": "Buddhist",
+        "pct": 5.8,
+        "count": 6531200
+      },
+      {
+        "group": "Jain",
+        "pct": 1.2,
+        "count": 1400349
+      },
+      {
+        "group": "Christian",
+        "pct": 1.0,
+        "count": 1080073
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 286290
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.2,
+        "count": 223247
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 178965
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "MAHARASHTRA"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Caste",
+        "pct": 11.8,
+        "count": 13275898
+      },
+      {
+        "group": "Scheduled Tribe",
+        "pct": 9.4,
+        "count": 10510213
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Manipur",
+    "level": "admin1",
+    "name": "Manipur",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2855794,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 985,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 41.4,
+        "count": 1181876
+      },
+      {
+        "group": "Christian",
+        "pct": 41.3,
+        "count": 1179043
+      },
+      {
+        "group": "Muslim",
+        "pct": 8.4,
+        "count": 239836
+      },
+      {
+        "group": "Other religions",
+        "pct": 8.2,
+        "count": 233767
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 10969
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.2,
+        "count": 7084
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 1527
+      },
+      {
+        "group": "Jain",
+        "pct": 0.1,
+        "count": 1692
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "MANIPUR"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 40.9,
+        "count": 1167422
+      },
+      {
+        "group": "Scheduled Caste",
+        "pct": 3.4,
+        "count": 97328
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Meghalaya",
+    "level": "admin1",
+    "name": "Meghalaya",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2966889,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 989,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Christian",
+        "pct": 74.6,
+        "count": 2213027
+      },
+      {
+        "group": "Hindu",
+        "pct": 11.5,
+        "count": 342078
+      },
+      {
+        "group": "Other religions",
+        "pct": 8.7,
+        "count": 258271
+      },
+      {
+        "group": "Muslim",
+        "pct": 4.4,
+        "count": 130399
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.3,
+        "count": 9864
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 9578
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 3045
+      },
+      {
+        "group": "Jain",
+        "pct": 0.0,
+        "count": 627
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "MEGHALAYA"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 86.1,
+        "count": 2555861
+      },
+      {
+        "group": "Scheduled Caste",
+        "pct": 0.6,
+        "count": 17355
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Mizoram",
+    "level": "admin1",
+    "name": "Mizoram",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1097206,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 976,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Christian",
+        "pct": 87.2,
+        "count": 956331
+      },
+      {
+        "group": "Buddhist",
+        "pct": 8.5,
+        "count": 93411
+      },
+      {
+        "group": "Hindu",
+        "pct": 2.7,
+        "count": 30136
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.4,
+        "count": 14832
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 808
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 1026
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 286
+      },
+      {
+        "group": "Jain",
+        "pct": 0.0,
+        "count": 376
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "MIZORAM"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 94.4,
+        "count": 1036115
+      },
+      {
+        "group": "Scheduled Caste",
+        "pct": 0.1,
+        "count": 1218
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Nagaland",
+    "level": "admin1",
+    "name": "Nagaland",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1978502,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 931,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Christian",
+        "pct": 87.9,
+        "count": 1739651
+      },
+      {
+        "group": "Hindu",
+        "pct": 8.7,
+        "count": 173054
+      },
+      {
+        "group": "Muslim",
+        "pct": 2.5,
+        "count": 48963
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.3,
+        "count": 6759
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 3214
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 1890
+      },
+      {
+        "group": "Jain",
+        "pct": 0.1,
+        "count": 2655
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 2316
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "NAGALAND"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 86.5,
+        "count": 1710973
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-NCT-of-Delhi",
+    "level": "admin1",
+    "name": "NCT of Delhi",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 16787941,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 868,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 81.7,
+        "count": 13712100
+      },
+      {
+        "group": "Muslim",
+        "pct": 12.9,
+        "count": 2158684
+      },
+      {
+        "group": "Sikh",
+        "pct": 3.4,
+        "count": 570581
+      },
+      {
+        "group": "Jain",
+        "pct": 1.0,
+        "count": 166231
+      },
+      {
+        "group": "Christian",
+        "pct": 0.9,
+        "count": 146093
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 18449
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 13606
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 2197
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "NCT OF DELHI"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Caste",
+        "pct": 16.8,
+        "count": 2812309
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Odisha",
+    "level": "admin1",
+    "name": "Odisha",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 41974218,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 979,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 93.6,
+        "count": 39300341
+      },
+      {
+        "group": "Christian",
+        "pct": 2.8,
+        "count": 1161708
+      },
+      {
+        "group": "Muslim",
+        "pct": 2.2,
+        "count": 911670
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.1,
+        "count": 478317
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 76919
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 21991
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.0,
+        "count": 13852
+      },
+      {
+        "group": "Jain",
+        "pct": 0.0,
+        "count": 9420
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "ORISSA"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 22.8,
+        "count": 9590756
+      },
+      {
+        "group": "Scheduled Caste",
+        "pct": 17.1,
+        "count": 7188463
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Puducherry",
+    "level": "admin1",
+    "name": "Puducherry",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1247953,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1037,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 87.3,
+        "count": 1089409
+      },
+      {
+        "group": "Christian",
+        "pct": 6.3,
+        "count": 78550
+      },
+      {
+        "group": "Muslim",
+        "pct": 6.1,
+        "count": 75556
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 2122
+      },
+      {
+        "group": "Jain",
+        "pct": 0.1,
+        "count": 1400
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 297
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.0,
+        "count": 451
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 168
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "PONDICHERRY"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Caste",
+        "pct": 15.7,
+        "count": 196325
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Punjab",
+    "level": "admin1",
+    "name": "Punjab",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 27743338,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 895,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Sikh",
+        "pct": 57.7,
+        "count": 16004754
+      },
+      {
+        "group": "Hindu",
+        "pct": 38.5,
+        "count": 10678138
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.9,
+        "count": 535489
+      },
+      {
+        "group": "Christian",
+        "pct": 1.3,
+        "count": 348230
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 87564
+      },
+      {
+        "group": "Jain",
+        "pct": 0.2,
+        "count": 45040
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 33237
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 10886
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "PUNJAB"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Caste",
+        "pct": 31.9,
+        "count": 8860179
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Rajasthan",
+    "level": "admin1",
+    "name": "Rajasthan",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 68548437,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 928,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 88.5,
+        "count": 60657103
+      },
+      {
+        "group": "Muslim",
+        "pct": 9.1,
+        "count": 6215377
+      },
+      {
+        "group": "Sikh",
+        "pct": 1.3,
+        "count": 872930
+      },
+      {
+        "group": "Jain",
+        "pct": 0.9,
+        "count": 622023
+      },
+      {
+        "group": "Christian",
+        "pct": 0.1,
+        "count": 96430
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 67713
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.0,
+        "count": 12185
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 4676
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "RAJASTHAN"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Caste",
+        "pct": 17.8,
+        "count": 12221593
+      },
+      {
+        "group": "Scheduled Tribe",
+        "pct": 13.5,
+        "count": 9238534
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Sikkim",
+    "level": "admin1",
+    "name": "Sikkim",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 610577,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 890,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 57.8,
+        "count": 352662
+      },
+      {
+        "group": "Buddhist",
+        "pct": 27.4,
+        "count": 167216
+      },
+      {
+        "group": "Christian",
+        "pct": 9.9,
+        "count": 60522
+      },
+      {
+        "group": "Other religions",
+        "pct": 2.7,
+        "count": 16300
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.6,
+        "count": 9867
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 1868
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 1828
+      },
+      {
+        "group": "Jain",
+        "pct": 0.1,
+        "count": 314
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "SIKKIM"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 33.8,
+        "count": 206360
+      },
+      {
+        "group": "Scheduled Caste",
+        "pct": 4.6,
+        "count": 28275
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Tamil-Nadu",
+    "level": "admin1",
+    "name": "Tamil Nadu",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 72147030,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 996,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 87.6,
+        "count": 63188168
+      },
+      {
+        "group": "Christian",
+        "pct": 6.1,
+        "count": 4418331
+      },
+      {
+        "group": "Muslim",
+        "pct": 5.9,
+        "count": 4229479
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 188586
+      },
+      {
+        "group": "Jain",
+        "pct": 0.1,
+        "count": 89265
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 14601
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.0,
+        "count": 11186
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 7414
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "TAMIL NADU"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Caste",
+        "pct": 20.0,
+        "count": 14438445
+      },
+      {
+        "group": "Scheduled Tribe",
+        "pct": 1.1,
+        "count": 794697
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Tripura",
+    "level": "admin1",
+    "name": "Tripura",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3673917,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 960,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 83.4,
+        "count": 3063903
+      },
+      {
+        "group": "Muslim",
+        "pct": 8.6,
+        "count": 316042
+      },
+      {
+        "group": "Christian",
+        "pct": 4.4,
+        "count": 159882
+      },
+      {
+        "group": "Buddhist",
+        "pct": 3.4,
+        "count": 125385
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 5261
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 1070
+      },
+      {
+        "group": "Jain",
+        "pct": 0.0,
+        "count": 860
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 1514
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "TRIPURA"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 31.8,
+        "count": 1166813
+      },
+      {
+        "group": "Scheduled Caste",
+        "pct": 17.8,
+        "count": 654918
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Uttar-Pradesh",
+    "level": "admin1",
+    "name": "Uttar Pradesh",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 199812341,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 912,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 79.7,
+        "count": 159312654
+      },
+      {
+        "group": "Muslim",
+        "pct": 19.3,
+        "count": 38483967
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 643500
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 582622
+      },
+      {
+        "group": "Christian",
+        "pct": 0.2,
+        "count": 356448
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 206285
+      },
+      {
+        "group": "Jain",
+        "pct": 0.1,
+        "count": 213267
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 13598
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "UTTAR PRADESH"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Caste",
+        "pct": 20.7,
+        "count": 41357608
+      },
+      {
+        "group": "Scheduled Tribe",
+        "pct": 0.6,
+        "count": 1134273
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Uttarakhand",
+    "level": "admin1",
+    "name": "Uttarakhand",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 10086292,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 963,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 83.0,
+        "count": 8368636
+      },
+      {
+        "group": "Muslim",
+        "pct": 13.9,
+        "count": 1406825
+      },
+      {
+        "group": "Sikh",
+        "pct": 2.3,
+        "count": 236340
+      },
+      {
+        "group": "Christian",
+        "pct": 0.4,
+        "count": 37781
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 14926
+      },
+      {
+        "group": "Jain",
+        "pct": 0.1,
+        "count": 9183
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 11608
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 993
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "UTTARAKHAND"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Caste",
+        "pct": 18.8,
+        "count": 1892516
+      },
+      {
+        "group": "Scheduled Tribe",
+        "pct": 2.9,
+        "count": 291903
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-West-Bengal",
+    "level": "admin1",
+    "name": "West Bengal",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 91276115,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 950,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 70.5,
+        "count": 64385546
+      },
+      {
+        "group": "Muslim",
+        "pct": 27.0,
+        "count": 24654825
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.0,
+        "count": 942297
+      },
+      {
+        "group": "Christian",
+        "pct": 0.7,
+        "count": 658618
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.3,
+        "count": 282898
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 228267
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 63523
+      },
+      {
+        "group": "Jain",
+        "pct": 0.1,
+        "count": 60141
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Mother tongue is Census 2011 table C-16, which is not in this extract; it is published as per-state workbooks."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "WEST BENGAL"
+    },
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Caste",
+        "pct": 23.5,
+        "count": 21463270
+      },
+      {
+        "group": "Scheduled Tribe",
+        "pct": 5.8,
+        "count": 5296953
+      }
+    ],
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Telangana",
+    "level": "admin1",
+    "name": "Telangana",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "Telangana was formed in 2014 from ten districts of Andhra Pradesh. The 2011 census enumerated that territory as part of Andhra Pradesh, so no census figure exists for Telangana as such. Its districts do carry 2011 figures."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Telangana was formed in 2014 from ten districts of Andhra Pradesh. The 2011 census enumerated that territory as part of Andhra Pradesh, so no census figure exists for Telangana as such. Its districts do carry 2011 figures."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity."
+    },
+    "sources": [
+      {
+        "field": "note",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog"
+      }
+    ]
+  },
+  {
+    "id": "IND-S-Ladakh",
+    "level": "admin1",
+    "name": "Ladakh",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "Ladakh became a union territory in 2019, split from Jammu and Kashmir. The 2011 census enumerated it as part of Jammu and Kashmir, so no census figure exists for Ladakh as such. Its districts (Leh, Kargil) do carry 2011 figures."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Ladakh became a union territory in 2019, split from Jammu and Kashmir. The 2011 census enumerated it as part of Jammu and Kashmir, so no census figure exists for Ladakh as such. Its districts (Leh, Kargil) do carry 2011 figures."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity."
+    },
+    "sources": [
+      {
+        "field": "note",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog"
+      }
+    ]
+  }
+]
