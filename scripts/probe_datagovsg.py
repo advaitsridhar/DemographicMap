@@ -40,15 +40,18 @@ KEY_VARS = ("DEMOGRAPHICMAP", "DATA_GOV_SG_KEY", "DATAGOVSG_API_KEY",
 # endpoint is tried with every plausible header until one answers.
 HEADERS = ("x-api-key", "api-key", "AccountKey", "Authorization")
 
+V2 = "https://api-production.data.gov.sg/v2/public/api"
+OPEN = "https://api-open.data.gov.sg/v1/public/api"
+
 ENDPOINTS = [
-    ("v2 dataset search",
-     "https://api-production.data.gov.sg/v2/public/api/datasets?page=1"),
-    ("api-open collections",
-     "https://api-open.data.gov.sg/v1/public/api/collections?page=1"),
+    ("v2 dataset list", V2 + "/datasets?page=1"),
+    ("v2 dataset search param", V2 + "/datasets?page=1&query={query}"),
+    ("api-open collections", OPEN + "/collections?page=1"),
     ("CKAN package_list", "https://data.gov.sg/api/action/package_list"),
-    ("CKAN package_search",
-     "https://data.gov.sg/api/action/package_search?q={query}&rows=5"),
 ]
+
+# How many list pages to walk when the server offers no search of its own.
+MAX_PAGES = 60
 
 
 def find_key() -> tuple[str | None, str | None]:
@@ -98,10 +101,62 @@ def describe(body: str) -> str:
     return f"  JSON scalar: {parsed!r}"
 
 
+def catalogue(terms: list[str], key: str | None) -> list[dict[str, Any]]:
+    """Datasets whose name or description mentions every term.
+
+    The v2 list endpoint pages ten at a time and the probe above establishes
+    whether it honours a query parameter; where it does not, the filtering has
+    to happen here, which is why this walks pages rather than asking.
+    """
+    found, page, seen = [], 1, 0
+    while page <= MAX_PAGES:
+        status, body = fetch(f"{V2}/datasets?page={page}", key, "x-api-key")
+        if status != 200:
+            log(f"  page {page}: HTTP {status}; stopping")
+            break
+        try:
+            data = json.loads(body).get("data") or {}
+        except json.JSONDecodeError:
+            break
+        datasets = data.get("datasets") or []
+        if not datasets:
+            break
+        seen += len(datasets)
+        for entry in datasets:
+            haystack = " ".join(str(entry.get(field) or "")
+                                for field in ("name", "description")).lower()
+            if all(term in haystack for term in terms):
+                found.append(entry)
+        total = data.get("pages")
+        if total and page >= total:
+            break
+        page += 1
+    log(f"  walked {page} page(s), {seen} datasets, {len(found)} matching {terms}")
+    return found
+
+
+def sample(dataset_id: str, key: str | None) -> None:
+    """Metadata and a few rows, so an adapter can be written against real fields."""
+    for label, url in (
+            ("metadata", f"{V2}/datasets/{dataset_id}/metadata"),
+            ("datastore rows",
+             f"https://data.gov.sg/api/action/datastore_search"
+             f"?resource_id={dataset_id}&limit=3"),
+            ("api-open rows", f"{OPEN}/datasets/{dataset_id}/poll-download")):
+        status, body = fetch(url, key, "x-api-key")
+        log(f"\n  --- {label}: HTTP {status}\n      {url}")
+        if status == 200:
+            log(describe(body))
+        else:
+            log("      " + " ".join(body[:220].split()))
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--search", default="population planning area")
+    ap.add_argument("--catalogue", action="store_true",
+                    help="walk the dataset list and sample the best match")
     args = ap.parse_args()
 
     name, key = find_key()
@@ -131,6 +186,17 @@ def main() -> int:
                 break
         else:
             log("  " + " ".join(body[:200].split()))
+
+    if args.catalogue:
+        terms = [t for t in args.search.lower().split() if len(t) > 2]
+        log(f"\n=== searching the catalogue for {terms}")
+        matches = catalogue(terms, key)
+        for entry in matches[:15]:
+            log(f"  {entry.get('datasetId')}  {entry.get('name')}")
+        if matches:
+            first = matches[0]
+            log(f"\n=== sampling {first.get('name')!r} ({first.get('datasetId')})")
+            sample(str(first.get("datasetId")), key)
     return 0
 
 
