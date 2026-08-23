@@ -12,12 +12,17 @@ on:
       kind:
         description: "Source type"
         type: choice
-        options: [arcgis, url]
+        options: [arcgis, url, pdf]
         default: arcgis
       target:
-        description: "ArcGIS item id or portal URL, or for kind=url a direct URL"
+        description: "ArcGIS item id or portal URL, or for kind=url/pdf a direct URL"
         type: string
         required: true
+      terms:
+        description: "kind=pdf: comma-separated terms to find pages for"
+        type: string
+        default: "language,mother tongue,speak"
+        required: false
 
 permissions:
   contents: read
@@ -37,6 +42,19 @@ jobs:
         if: inputs.kind == 'arcgis'
         run: |
           python3 scripts/probe_arcgis.py "${{ inputs.target }}" --samples 3
+
+      - name: Probe PDF
+        if: inputs.kind == 'pdf'
+        run: |
+          sudo apt-get -qq update && sudo apt-get -qq install -y poppler-utils
+          curl -sSL --max-time 300 --max-filesize 200000000 \
+            -o /tmp/probe.pdf "${{ inputs.target }}"
+          file /tmp/probe.pdf
+          pdfinfo /tmp/probe.pdf | sed -n '1,12p'
+          # -layout keeps column alignment, which is what makes a census table
+          # in a PDF readable at all once it is text.
+          pdftotext -layout /tmp/probe.pdf /tmp/probe.txt
+          python3 scripts/probe_pdf.py /tmp/probe.txt --terms "${{ inputs.terms }}"
 
       - name: Probe plain URL
         if: inputs.kind == 'url'

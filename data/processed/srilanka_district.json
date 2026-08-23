@@ -1,0 +1,3227 @@
+[
+  {
+    "id": "LKA-D-Colombo",
+    "level": "admin2",
+    "name": "Colombo District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2375415,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1057,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 70.8,
+        "count": 1682524
+      },
+      {
+        "group": "Islam",
+        "pct": 12.6,
+        "count": 298422
+      },
+      {
+        "group": "Hindu",
+        "pct": 8.3,
+        "count": 197759
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 5.9,
+        "count": 139882
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.3,
+        "count": 55624
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 1204
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sinhalese",
+        "pct": 76.1,
+        "count": 1807945
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 12.0,
+        "count": 285346
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 10.3,
+        "count": 243856
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.6,
+        "count": 15427
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.4,
+        "count": 10643
+      },
+      {
+        "group": "Malay",
+        "pct": 0.3,
+        "count": 8249
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 3136
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 239
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 560
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 14
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Colombo"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Gampaha",
+    "level": "admin2",
+    "name": "Gampaha District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2436142,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1072,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 71.6,
+        "count": 1744475
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 18.2,
+        "count": 442291
+      },
+      {
+        "group": "Islam",
+        "pct": 5.5,
+        "count": 134422
+      },
+      {
+        "group": "Hindu",
+        "pct": 2.8,
+        "count": 69429
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.8,
+        "count": 44540
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 985
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sinhalese",
+        "pct": 89.8,
+        "count": 2188512
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 5.1,
+        "count": 123220
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 4.0,
+        "count": 97925
+      },
+      {
+        "group": "Malay",
+        "pct": 0.4,
+        "count": 9488
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.3,
+        "count": 6575
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.3,
+        "count": 7030
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.1,
+        "count": 1923
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 346
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 1111
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Gampaha"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Kalutara",
+    "level": "admin2",
+    "name": "Kalutara District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1305784,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1069,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 82.8,
+        "count": 1080638
+      },
+      {
+        "group": "Islam",
+        "pct": 10.6,
+        "count": 138230
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.3,
+        "count": 42528
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 2.8,
+        "count": 36510
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.6,
+        "count": 7733
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 145
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sinhalese",
+        "pct": 85.7,
+        "count": 1119109
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 10.4,
+        "count": 136412
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 3.2,
+        "count": 41361
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.6,
+        "count": 7198
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.1,
+        "count": 840
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 476
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 313
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Kalutara"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Kandy",
+    "level": "admin2",
+    "name": "Kandy District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1461895,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1098,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 72.7,
+        "count": 1063511
+      },
+      {
+        "group": "Islam",
+        "pct": 15.3,
+        "count": 223997
+      },
+      {
+        "group": "Hindu",
+        "pct": 9.9,
+        "count": 144618
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 1.3,
+        "count": 18623
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.7,
+        "count": 10919
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 227
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sinhalese",
+        "pct": 73.7,
+        "count": 1077312
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 15.0,
+        "count": 219905
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 8.4,
+        "count": 122772
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 2.6,
+        "count": 38311
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.1,
+        "count": 1891
+      },
+      {
+        "group": "Malay",
+        "pct": 0.1,
+        "count": 1001
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 652
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Kandy"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Matale",
+    "level": "admin2",
+    "name": "Matale District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 526870,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1064,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 79.5,
+        "count": 418608
+      },
+      {
+        "group": "Islam",
+        "pct": 9.9,
+        "count": 52224
+      },
+      {
+        "group": "Hindu",
+        "pct": 8.8,
+        "count": 46181
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 1.5,
+        "count": 7797
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.4,
+        "count": 2026
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 34
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sinhalese",
+        "pct": 80.6,
+        "count": 424788
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 9.8,
+        "count": 51471
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 8.0,
+        "count": 42172
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 1.5,
+        "count": 7716
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.1,
+        "count": 359
+      },
+      {
+        "group": "Malay",
+        "pct": 0.1,
+        "count": 283
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 70
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Matale"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Nuwara-Eliya",
+    "level": "admin2",
+    "name": "Nuwara Eliya District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 725280,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1093,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 52.0,
+        "count": 377266
+      },
+      {
+        "group": "Buddhist",
+        "pct": 38.4,
+        "count": 278828
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 4.4,
+        "count": 31705
+      },
+      {
+        "group": "Islam",
+        "pct": 3.0,
+        "count": 21929
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.1,
+        "count": 15474
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 78
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Indian Tamil",
+        "pct": 50.0,
+        "count": 362299
+      },
+      {
+        "group": "Sinhalese",
+        "pct": 38.9,
+        "count": 281904
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 8.3,
+        "count": 60288
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 2.7,
+        "count": 19245
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.2,
+        "count": 1252
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 216
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 51
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Nuwara Eliya"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Galle",
+    "level": "admin2",
+    "name": "Galle District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1097372,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1080,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 93.5,
+        "count": 1026031
+      },
+      {
+        "group": "Islam",
+        "pct": 4.2,
+        "count": 46038
+      },
+      {
+        "group": "Hindu",
+        "pct": 1.4,
+        "count": 15600
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.5,
+        "count": 5377
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.4,
+        "count": 4207
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 119
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sinhalese",
+        "pct": 93.9,
+        "count": 1030354
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 4.2,
+        "count": 45672
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 1.6,
+        "count": 17600
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.3,
+        "count": 2883
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.0,
+        "count": 244
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 85
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 488
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Galle"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Matara",
+    "level": "admin2",
+    "name": "Matara District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 837889,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1084,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 94.0,
+        "count": 787303
+      },
+      {
+        "group": "Islam",
+        "pct": 3.6,
+        "count": 29858
+      },
+      {
+        "group": "Hindu",
+        "pct": 1.7,
+        "count": 14625
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.4,
+        "count": 3619
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.3,
+        "count": 2445
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 39
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sinhalese",
+        "pct": 94.1,
+        "count": 788804
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 3.5,
+        "count": 29430
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 1.3,
+        "count": 11119
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 1.0,
+        "count": 8082
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.0,
+        "count": 259
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 136
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Matara"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Hambantota",
+    "level": "admin2",
+    "name": "Hambantota District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 671418,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1039,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 96.8,
+        "count": 649736
+      },
+      {
+        "group": "Islam",
+        "pct": 2.7,
+        "count": 17947
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.2,
+        "count": 1401
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.2,
+        "count": 1017
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.2,
+        "count": 1247
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 70
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sinhalese",
+        "pct": 97.0,
+        "count": 651274
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 2.1,
+        "count": 13809
+      },
+      {
+        "group": "Malay",
+        "pct": 0.6,
+        "count": 3931
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 0.3,
+        "count": 2054
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.0,
+        "count": 121
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.0,
+        "count": 99
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 112
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Hambantota"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Jaffna",
+    "level": "admin2",
+    "name": "Jaffna District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 594751,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1112,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 82.3,
+        "count": 489521
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 13.0,
+        "count": 77197
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.5,
+        "count": 20857
+      },
+      {
+        "group": "Islam",
+        "pct": 0.7,
+        "count": 4352
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.5,
+        "count": 2788
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 36
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 98.6,
+        "count": 586491
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 0.7,
+        "count": 3947
+      },
+      {
+        "group": "Sinhalese",
+        "pct": 0.6,
+        "count": 3395
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.1,
+        "count": 782
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 48
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Jaffna"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Mannar",
+    "level": "admin2",
+    "name": "Mannar District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 123756,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1027,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 46.6,
+        "count": 57713
+      },
+      {
+        "group": "Islam",
+        "pct": 27.4,
+        "count": 33883
+      },
+      {
+        "group": "Hindu",
+        "pct": 21.2,
+        "count": 26214
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.5,
+        "count": 5560
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.3,
+        "count": 382
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 72.7,
+        "count": 89992
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 26.5,
+        "count": 32752
+      },
+      {
+        "group": "Sinhalese",
+        "pct": 0.5,
+        "count": 678
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.3,
+        "count": 319
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Mannar"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Vavuniya",
+    "level": "admin2",
+    "name": "Vavuniya District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 172312,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1080,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 66.5,
+        "count": 114504
+      },
+      {
+        "group": "Buddhist",
+        "pct": 10.6,
+        "count": 18292
+      },
+      {
+        "group": "Islam",
+        "pct": 10.3,
+        "count": 17775
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 7.4,
+        "count": 12785
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.2,
+        "count": 8895
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 61
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 78.4,
+        "count": 135164
+      },
+      {
+        "group": "Sinhalese",
+        "pct": 10.8,
+        "count": 18575
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 9.7,
+        "count": 16632
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.9,
+        "count": 1625
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 272
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Vavuniya"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Mullaitivu",
+    "level": "admin2",
+    "name": "Mullaitivu District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 122619,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1053,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 72.4,
+        "count": 88738
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 11.4,
+        "count": 13982
+      },
+      {
+        "group": "Buddhist",
+        "pct": 8.4,
+        "count": 10293
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.2,
+        "count": 6315
+      },
+      {
+        "group": "Islam",
+        "pct": 2.7,
+        "count": 3279
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 88.1,
+        "count": 108082
+      },
+      {
+        "group": "Sinhalese",
+        "pct": 9.1,
+        "count": 11190
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 2.5,
+        "count": 3102
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.2,
+        "count": 223
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 6
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Mullaitivu"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Kilinochchi",
+    "level": "admin2",
+    "name": "Kilinochchi District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 136710,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1067,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 80.7,
+        "count": 110258
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 10.6,
+        "count": 14446
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.6,
+        "count": 9074
+      },
+      {
+        "group": "Buddhist",
+        "pct": 1.1,
+        "count": 1533
+      },
+      {
+        "group": "Islam",
+        "pct": 1.0,
+        "count": 1394
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 97.3,
+        "count": 133023
+      },
+      {
+        "group": "Sinhalese",
+        "pct": 1.2,
+        "count": 1704
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 0.9,
+        "count": 1273
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.5,
+        "count": 685
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Kilinochchi"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Batticaloa",
+    "level": "admin2",
+    "name": "Batticaloa District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 595918,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1137,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 62.9,
+        "count": 374836
+      },
+      {
+        "group": "Islam",
+        "pct": 27.1,
+        "count": 161494
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.7,
+        "count": 27728
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 4.3,
+        "count": 25803
+      },
+      {
+        "group": "Buddhist",
+        "pct": 1.0,
+        "count": 6024
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 33
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 71.3,
+        "count": 424710
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 26.9,
+        "count": 160284
+      },
+      {
+        "group": "Sinhalese",
+        "pct": 1.2,
+        "count": 6855
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.5,
+        "count": 2899
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.2,
+        "count": 992
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 72
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Batticaloa"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Ampara",
+    "level": "admin2",
+    "name": "Ampara District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 744551,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1103,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 45.7,
+        "count": 339896
+      },
+      {
+        "group": "Buddhist",
+        "pct": 37.1,
+        "count": 276176
+      },
+      {
+        "group": "Hindu",
+        "pct": 15.4,
+        "count": 114586
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 1.0,
+        "count": 7351
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.9,
+        "count": 6486
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 56
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 45.6,
+        "count": 339290
+      },
+      {
+        "group": "Sinhalese",
+        "pct": 37.1,
+        "count": 276583
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 16.9,
+        "count": 125751
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.2,
+        "count": 1168
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.1,
+        "count": 664
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.1,
+        "count": 840
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 136
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 89
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Ampara"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Trincomalee",
+    "level": "admin2",
+    "name": "Trincomalee District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 442745,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1034,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 46.5,
+        "count": 205664
+      },
+      {
+        "group": "Hindu",
+        "pct": 24.4,
+        "count": 108050
+      },
+      {
+        "group": "Buddhist",
+        "pct": 24.1,
+        "count": 106919
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 3.2,
+        "count": 14353
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.7,
+        "count": 7714
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 45
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 46.1,
+        "count": 203987
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 28.9,
+        "count": 128088
+      },
+      {
+        "group": "Sinhalese",
+        "pct": 24.5,
+        "count": 108676
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.2,
+        "count": 765
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.2,
+        "count": 861
+      },
+      {
+        "group": "Malay",
+        "pct": 0.1,
+        "count": 311
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 43
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Trincomalee"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Kurunegala",
+    "level": "admin2",
+    "name": "Kurunegala District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1768156,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1082,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 88.1,
+        "count": 1557554
+      },
+      {
+        "group": "Islam",
+        "pct": 8.1,
+        "count": 143299
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 2.3,
+        "count": 40273
+      },
+      {
+        "group": "Hindu",
+        "pct": 1.0,
+        "count": 17487
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.5,
+        "count": 9413
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 130
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sinhalese",
+        "pct": 90.6,
+        "count": 1601899
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 8.0,
+        "count": 140888
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 1.2,
+        "count": 21775
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.1,
+        "count": 1788
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.0,
+        "count": 478
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 796
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 471
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Kurunegala"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Puttalam",
+    "level": "admin2",
+    "name": "Puttalam District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 818816,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1077,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 44.1,
+        "count": 361148
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 29.4,
+        "count": 240975
+      },
+      {
+        "group": "Islam",
+        "pct": 21.6,
+        "count": 176963
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.5,
+        "count": 28832
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.3,
+        "count": 10619
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 279
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sinhalese",
+        "pct": 72.3,
+        "count": 591753
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 21.3,
+        "count": 174497
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 5.9,
+        "count": 48544
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.2,
+        "count": 1229
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.2,
+        "count": 1726
+      },
+      {
+        "group": "Malay",
+        "pct": 0.1,
+        "count": 558
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 454
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Puttalam"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Anuradhapura",
+    "level": "admin2",
+    "name": "Anuradhapura District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 960080,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1058,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 89.9,
+        "count": 862807
+      },
+      {
+        "group": "Islam",
+        "pct": 8.7,
+        "count": 83979
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.6,
+        "count": 5760
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.4,
+        "count": 3755
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.4,
+        "count": 3656
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 123
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sinhalese",
+        "pct": 90.6,
+        "count": 870049
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 8.7,
+        "count": 83283
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 0.5,
+        "count": 5063
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 977
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.0,
+        "count": 412
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.0,
+        "count": 174
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 101
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Anuradhapura"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Polonnaruwa",
+    "level": "admin2",
+    "name": "Polonnaruwa District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 447530,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1037,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 89.3,
+        "count": 399488
+      },
+      {
+        "group": "Islam",
+        "pct": 8.3,
+        "count": 37097
+      },
+      {
+        "group": "Hindu",
+        "pct": 1.6,
+        "count": 7215
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.6,
+        "count": 2560
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.2,
+        "count": 1086
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 84
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sinhalese",
+        "pct": 90.0,
+        "count": 402785
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 8.2,
+        "count": 36864
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 1.7,
+        "count": 7394
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.1,
+        "count": 228
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.0,
+        "count": 94
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 77
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Polonnaruwa"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Badulla",
+    "level": "admin2",
+    "name": "Badulla District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 872307,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1063,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 73.0,
+        "count": 636988
+      },
+      {
+        "group": "Hindu",
+        "pct": 19.1,
+        "count": 166380
+      },
+      {
+        "group": "Islam",
+        "pct": 6.1,
+        "count": 53563
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 1.1,
+        "count": 9593
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.7,
+        "count": 5729
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 54
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sinhalese",
+        "pct": 73.4,
+        "count": 640625
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 11.0,
+        "count": 95686
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 9.4,
+        "count": 81854
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 6.0,
+        "count": 52188
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.1,
+        "count": 890
+      },
+      {
+        "group": "Malay",
+        "pct": 0.1,
+        "count": 715
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 187
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 137
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Badulla"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Monaragala",
+    "level": "admin2",
+    "name": "Monaragala District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 527585,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1022,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 94.5,
+        "count": 498436
+      },
+      {
+        "group": "Hindu",
+        "pct": 2.8,
+        "count": 14974
+      },
+      {
+        "group": "Islam",
+        "pct": 2.3,
+        "count": 12262
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.2,
+        "count": 1181
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.1,
+        "count": 713
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 19
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sinhalese",
+        "pct": 94.7,
+        "count": 499366
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 2.8,
+        "count": 14765
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 2.3,
+        "count": 12085
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.2,
+        "count": 1249
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 18
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Moneragala"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Ratnapura",
+    "level": "admin2",
+    "name": "Ratnapura District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1145423,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1036,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 87.3,
+        "count": 999682
+      },
+      {
+        "group": "Hindu",
+        "pct": 9.1,
+        "count": 103883
+      },
+      {
+        "group": "Islam",
+        "pct": 2.3,
+        "count": 26796
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.8,
+        "count": 8607
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.6,
+        "count": 6394
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 61
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sinhalese",
+        "pct": 87.6,
+        "count": 1003515
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 8.0,
+        "count": 91300
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 2.3,
+        "count": 25870
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 2.1,
+        "count": 23991
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.0,
+        "count": 481
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 65
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 170
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Ratnapura"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "LKA-D-Kegalle",
+    "level": "admin2",
+    "name": "Kegalle District",
+    "parent": "LKA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 870476,
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1092,
+      "unit": "females_per_1000_males",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 83.7,
+        "count": 728929
+      },
+      {
+        "group": "Islam",
+        "pct": 8.3,
+        "count": 72616
+      },
+      {
+        "group": "Hindu",
+        "pct": 6.5,
+        "count": 56199
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.8,
+        "count": 7292
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.6,
+        "count": 5387
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 53
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sri Lanka's census does not ask mother tongue. It asks literacy -- the ability to speak, read and write Sinhala, Tamil and English, for people aged 10 and over -- and the 2024 report states it did not account for proficiency in any other language. Those are overlapping proficiencies, not shares of a population, so they do not form a composition. Nor is language inferred from ethnicity here: most Sri Lankan Moors speak Tamil, which would put a tenth of the country in the wrong column."
+    },
+    "ethnicity": [
+      {
+        "group": "Sinhalese",
+        "pct": 84.6,
+        "count": 736387
+      },
+      {
+        "group": "Sri Lankan Moor",
+        "pct": 8.2,
+        "count": 71794
+      },
+      {
+        "group": "Sri Lankan Tamil",
+        "pct": 4.7,
+        "count": 40484
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 2.4,
+        "count": 21244
+      },
+      {
+        "group": "Burgher",
+        "pct": 0.0,
+        "count": 179
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 117
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 250
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/religion/ethnicity",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
+        "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      }
+    ],
+    "codes": {
+      "census2024_district": "Kegalle"
+    },
+    "religion_note": "Census of Population and Housing 2024, table A3.",
+    "religion_year": 2024,
+    "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
+    "ethnicity_year": 2024
+  }
+]

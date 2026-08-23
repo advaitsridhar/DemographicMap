@@ -75,7 +75,56 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Brazil | IBGE SIDRA tables 9514 / 9605 / 10086 | state, municipality | *Cor ou raça* is self-declared skin colour (branca, preta, parda, amarela, indígena) — not equivalent to ethnicity elsewhere. |
 | EU | Eurostat `demo_r_pjangrp3`, `demo_r_pjanind3` | NUTS-2, NUTS-3 | Population and age everywhere; **no** ethnicity or religion — those are national census questions and only some states ask them. |
 | Australia | ABS 2021 Census `C21_G14`, `C21_G08` | state, LGA, SA3 | Ancestry is multi-response (up to two per person), so shares are of responses and exceed 100%. No ethnicity question exists. |
+| Sri Lanka | Census of Population and Housing 2024, tables A1–A3 | province, district | Population, sex ratio, religion and ethnicity for all 25 districts and 9 provinces. |
 | India | Census 2011 tables C-01, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. |
+
+### Sri Lanka, and a check the source hands you
+
+The Department of Census and Statistics publishes the 2024 district tables as
+small trilingual workbooks — Sinhala, Tamil and English run together in one
+cell — with no API. They live in `data/raw/srilanka/` and are read from disk:
+A1 population by sex and age, A2 by ethnicity, A3 by religion. Each title row
+carries the year in all three languages, which is the authority for the 2024
+label here.
+
+At 2024 this is the **most recent census in the whole dataset** — newer than
+Australia's 2021, England and Wales' 2021, and India's 2011.
+
+Each district occupies **two** rows: counts, then the Department's own published
+percentages. Only the counts are used, but the percentages are not ignored.
+`check_published_shares` recomputes every share from the counts and requires it
+to agree with what was printed beside it, within 0.1pp. That is worth more than
+it sounds: a column read one cell to the left still sums to 100%, so no
+internal consistency test would notice, while the published figures disagree
+immediately. It earned its keep on the first run by catching a rename applied to
+the counts but not to the lookup.
+
+`NATIONAL_CONTROLS` additionally pins the national row — 21,781,800 people,
+Buddhist 15,199,093, Sinhalese 16,144,037 and seven more — and the 25 districts
+must sum to that total exactly. Note what that is and is not: those figures were
+read out of these same workbooks, so it is a regression guard against a file
+being swapped, **not** independent validation the way the India controls are.
+The genuinely independent check here is the published-percentage one above.
+
+The nine provinces are not in these tables; they are summed from their
+districts, which is arithmetic on official counts rather than estimation, and
+the nine sums are required to reproduce the national population.
+
+**Language is `not_collected`, not merely missing.** Sri Lanka's census does not
+ask mother tongue. It asks *literacy* — the ability to speak, read and write
+Sinhala, Tamil and English, for people aged 10 and over — and the 2024 report
+states plainly that it "did not account for proficiency in other languages".
+Those are overlapping proficiencies rather than shares of a population, so they
+are not a composition and are not a substitute for one: a bilingual person
+counts in two of them.
+
+Nor is language inferred from ethnicity here. Most Sri Lankan Moors speak Tamil,
+so that inference would put roughly a tenth of the country in the wrong column.
+
+The literacy figures do exist by district (report table 7.10 — Batticaloa 92.7%
+overall, English literacy from 74.2% in Colombo to 31.7% in Mullaitivu) and
+would be a legitimate field of their own. They are simply not the `language`
+field, and are not loaded.
 
 ### India, and trusting a community mirror
 
