@@ -116,7 +116,7 @@ them from — `scripts/fetch_census/india_language.py` reads whatever is present
 
 The all-India workbook (`DDWC16STMTMDDS0000.XLSX`) carries every state, so all 34
 states enumerated in 2011 have a mother-tongue composition. The numbered
-workbooks carry that state's districts; 17 are present, giving 298 districts.
+workbooks carry that state's districts; 29 are present, giving 624 districts.
 Districts elsewhere keep an explicit gap. Adding a state is a matter of dropping
 its workbook into that directory.
 
