@@ -1,5 +1,7 @@
 # World Demographics Map
 
+**Live map: https://advaitsridhar.github.io/DemographicMap/**
+
 An interactive map of the world's administrative divisions — countries, first-level
 divisions, second-level divisions — joined to population, religion, language and
 ethnicity data, **and to an explicit record of where that data does not exist**.
@@ -23,8 +25,8 @@ browser blocks the data fetches.
 ## Deploying
 
 Pushing to `main` runs `.github/workflows/pages.yml`, which validates the build
-and publishes `site/` to GitHub Pages at
-`https://<owner>.github.io/DemographicMap/`.
+and publishes `site/` to GitHub Pages at `https://<owner>.github.io/DemographicMap/`
+— for this repository, https://advaitsridhar.github.io/DemographicMap/.
 
 **One-time setup.** Pages has to be switched on for the repository first, under
 **Settings → Pages → Build and deployment → Source → GitHub Actions**. The

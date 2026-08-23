@@ -26,6 +26,7 @@ match records *how* it matched so a bad join is auditable rather than invisible.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import re
 import sys
 import unicodedata
@@ -617,6 +618,16 @@ def main() -> int:
                 }
         coverage[iso3] = entry
     write_json(out / "coverage.json", coverage, compact=True)
+
+    # A stamp derived from what was actually written, so the app can bust a
+    # viewer's cached shards the moment the figures change -- and only then.
+    # Content, not a timestamp: an unchanged rebuild must not invalidate
+    # everyone's cache, and a changed one must.
+    digest = hashlib.sha256()
+    for path in sorted(out.rglob("*.json")):
+        if path.name != "build.json":
+            digest.update(path.read_bytes())
+    write_json(out / "build.json", {"version": digest.hexdigest()[:12]}, compact=True)
 
     log(f"  admin0 {len(admin0)} | admin1 {sum(len(v) for v in admin1_by_country.values())} "
         f"| admin2 {sum(len(v) for v in admin2_by_country.values())} | index {len(index)}")
