@@ -39936,6 +39936,301 @@
     "language_year": 2011
   },
   {
+    "id": "IND-D494",
+    "level": "admin2",
+    "name": "Diu",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Gujarati",
+        "pct": 98.0,
+        "count": 51027
+      },
+      {
+        "group": "Hindi",
+        "pct": 1.1,
+        "count": 590
+      },
+      {
+        "group": "Other small languages",
+        "pct": 0.5,
+        "count": 264
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.1,
+        "count": 69
+      },
+      {
+        "group": "Bhili/Bhilodi",
+        "pct": 0.1,
+        "count": 63
+      },
+      {
+        "group": "English",
+        "pct": 0.1,
+        "count": 61
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Census of India 2011, table C-16 population by mother tongue (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)"
+      }
+    ],
+    "parent_name": "Daman & Diu",
+    "codes": {
+      "census2011_state": "25",
+      "census2011_district": "494"
+    },
+    "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 19 mother-tongue groups were reported here; the 14 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated.",
+    "language_year": 2011
+  },
+  {
+    "id": "IND-D495",
+    "level": "admin2",
+    "name": "Daman",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Hindi",
+        "pct": 45.9,
+        "count": 87722
+      },
+      {
+        "group": "Gujarati",
+        "pct": 38.0,
+        "count": 72621
+      },
+      {
+        "group": "Marathi",
+        "pct": 5.7,
+        "count": 10971
+      },
+      {
+        "group": "Bengali",
+        "pct": 2.7,
+        "count": 5163
+      },
+      {
+        "group": "Odia",
+        "pct": 2.3,
+        "count": 4405
+      },
+      {
+        "group": "Other small languages",
+        "pct": 1.2,
+        "count": 2349
+      },
+      {
+        "group": "Other languages (unspecified)",
+        "pct": 0.9,
+        "count": 1679
+      },
+      {
+        "group": "Nepali",
+        "pct": 0.7,
+        "count": 1365
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.6,
+        "count": 1188
+      },
+      {
+        "group": "Assamese",
+        "pct": 0.6,
+        "count": 1174
+      },
+      {
+        "group": "Maithili",
+        "pct": 0.5,
+        "count": 1044
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.5,
+        "count": 1029
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.2,
+        "count": 463
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Census of India 2011, table C-16 population by mother tongue (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)"
+      }
+    ],
+    "parent_name": "Daman & Diu",
+    "codes": {
+      "census2011_state": "25",
+      "census2011_district": "495"
+    },
+    "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 40 mother-tongue groups were reported here; the 28 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated. 'Other languages (unspecified)' (0.9%) is the census's own catch-all group, not a tail summed here: the Registrar General published no breakdown beneath it at this level.",
+    "language_year": 2011
+  },
+  {
+    "id": "IND-D496",
+    "level": "admin2",
+    "name": "Dadra & Nagar Haveli",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Bhili/Bhilodi",
+        "pct": 37.3,
+        "count": 128078
+      },
+      {
+        "group": "Hindi",
+        "pct": 26.2,
+        "count": 89905
+      },
+      {
+        "group": "Gujarati",
+        "pct": 21.5,
+        "count": 73831
+      },
+      {
+        "group": "Marathi",
+        "pct": 7.0,
+        "count": 24105
+      },
+      {
+        "group": "Konkani",
+        "pct": 2.3,
+        "count": 7756
+      },
+      {
+        "group": "Other small languages",
+        "pct": 1.4,
+        "count": 4898
+      },
+      {
+        "group": "Odia",
+        "pct": 1.3,
+        "count": 4463
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.9,
+        "count": 3116
+      },
+      {
+        "group": "Maithili",
+        "pct": 0.6,
+        "count": 2187
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.6,
+        "count": 2172
+      },
+      {
+        "group": "Nepali",
+        "pct": 0.3,
+        "count": 1152
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.3,
+        "count": 1089
+      },
+      {
+        "group": "Assamese",
+        "pct": 0.3,
+        "count": 957
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Census of India 2011, table C-16 population by mother tongue (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)"
+      }
+    ],
+    "parent_name": "Dadra & Nagar Haveli",
+    "codes": {
+      "census2011_state": "26",
+      "census2011_district": "496"
+    },
+    "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 42 mother-tongue groups were reported here; the 30 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated.",
+    "language_year": 2011
+  },
+  {
     "id": "IND-D497",
     "level": "admin2",
     "name": "Nandurbar",
@@ -47854,6 +48149,301 @@
     "language_year": 2011
   },
   {
+    "id": "IND-D585",
+    "level": "admin2",
+    "name": "North Goa",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Konkani",
+        "pct": 65.9,
+        "count": 538727
+      },
+      {
+        "group": "Marathi",
+        "pct": 14.4,
+        "count": 117460
+      },
+      {
+        "group": "Hindi",
+        "pct": 8.6,
+        "count": 70746
+      },
+      {
+        "group": "Kannada",
+        "pct": 3.6,
+        "count": 29594
+      },
+      {
+        "group": "Urdu",
+        "pct": 2.4,
+        "count": 19522
+      },
+      {
+        "group": "Other small languages",
+        "pct": 1.1,
+        "count": 8969
+      },
+      {
+        "group": "English",
+        "pct": 0.9,
+        "count": 7052
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.8,
+        "count": 6552
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.7,
+        "count": 5581
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.5,
+        "count": 3815
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.5,
+        "count": 3728
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.4,
+        "count": 3546
+      },
+      {
+        "group": "Odia",
+        "pct": 0.3,
+        "count": 2716
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Census of India 2011, table C-16 population by mother tongue (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)"
+      }
+    ],
+    "parent_name": "Goa",
+    "codes": {
+      "census2011_state": "30",
+      "census2011_district": "585"
+    },
+    "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 81 mother-tongue groups were reported here; the 69 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated.",
+    "language_year": 2011
+  },
+  {
+    "id": "IND-D586",
+    "level": "admin2",
+    "name": "South Goa",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Konkani",
+        "pct": 66.4,
+        "count": 425578
+      },
+      {
+        "group": "Hindi",
+        "pct": 12.4,
+        "count": 79271
+      },
+      {
+        "group": "Marathi",
+        "pct": 6.5,
+        "count": 41327
+      },
+      {
+        "group": "Kannada",
+        "pct": 6.0,
+        "count": 38329
+      },
+      {
+        "group": "Urdu",
+        "pct": 3.4,
+        "count": 21720
+      },
+      {
+        "group": "Other small languages",
+        "pct": 1.1,
+        "count": 6988
+      },
+      {
+        "group": "Malayalam",
+        "pct": 1.0,
+        "count": 6431
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.9,
+        "count": 5535
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.6,
+        "count": 3553
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.5,
+        "count": 3132
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.5,
+        "count": 3118
+      },
+      {
+        "group": "Odia",
+        "pct": 0.4,
+        "count": 2842
+      },
+      {
+        "group": "English",
+        "pct": 0.4,
+        "count": 2713
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Census of India 2011, table C-16 population by mother tongue (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)"
+      }
+    ],
+    "parent_name": "Goa",
+    "codes": {
+      "census2011_state": "30",
+      "census2011_district": "586"
+    },
+    "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 54 mother-tongue groups were reported here; the 42 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated.",
+    "language_year": 2011
+  },
+  {
+    "id": "IND-D587",
+    "level": "admin2",
+    "name": "Lakshadweep",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Malayalam",
+        "pct": 84.2,
+        "count": 54264
+      },
+      {
+        "group": "Other languages (unspecified)",
+        "pct": 14.4,
+        "count": 9311
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.6,
+        "count": 364
+      },
+      {
+        "group": "Other small languages",
+        "pct": 0.4,
+        "count": 234
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.2,
+        "count": 160
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.2,
+        "count": 140
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Census of India 2011, table C-16 population by mother tongue (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)"
+      }
+    ],
+    "parent_name": "Lakshadweep",
+    "codes": {
+      "census2011_state": "31",
+      "census2011_district": "587"
+    },
+    "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 22 mother-tongue groups were reported here; the 17 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated. 'Other languages (unspecified)' (14.4%) is the census's own catch-all group, not a tail summed here: the Registrar General published no breakdown beneath it at this level.",
+    "language_year": 2011
+  },
+  {
     "id": "IND-D588",
     "level": "admin2",
     "name": "Kasaragod",
@@ -51356,6 +51946,651 @@
       "census2011_district": "633"
     },
     "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 33 mother-tongue groups were reported here; the 26 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated.",
+    "language_year": 2011
+  },
+  {
+    "id": "IND-D634",
+    "level": "admin2",
+    "name": "Yanam",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Telugu",
+        "pct": 97.5,
+        "count": 54256
+      },
+      {
+        "group": "Urdu",
+        "pct": 1.9,
+        "count": 1077
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.2,
+        "count": 101
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.2,
+        "count": 95
+      },
+      {
+        "group": "Other small languages",
+        "pct": 0.2,
+        "count": 97
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Census of India 2011, table C-16 population by mother tongue (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)"
+      }
+    ],
+    "parent_name": "Puducherry",
+    "codes": {
+      "census2011_state": "34",
+      "census2011_district": "634"
+    },
+    "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 11 mother-tongue groups were reported here; the 7 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated.",
+    "language_year": 2011
+  },
+  {
+    "id": "IND-D635",
+    "level": "admin2",
+    "name": "Puducherry",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Tamil",
+        "pct": 95.1,
+        "count": 903931
+      },
+      {
+        "group": "Telugu",
+        "pct": 2.0,
+        "count": 18757
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.8,
+        "count": 7413
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.6,
+        "count": 6148
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.6,
+        "count": 5628
+      },
+      {
+        "group": "Other small languages",
+        "pct": 0.3,
+        "count": 2411
+      },
+      {
+        "group": "Odia",
+        "pct": 0.2,
+        "count": 1703
+      },
+      {
+        "group": "Kannada",
+        "pct": 0.2,
+        "count": 1537
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.1,
+        "count": 1389
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.1,
+        "count": 1372
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Census of India 2011, table C-16 population by mother tongue (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)"
+      }
+    ],
+    "parent_name": "Puducherry",
+    "codes": {
+      "census2011_state": "34",
+      "census2011_district": "635"
+    },
+    "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 39 mother-tongue groups were reported here; the 30 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated.",
+    "language_year": 2011
+  },
+  {
+    "id": "IND-D636",
+    "level": "admin2",
+    "name": "Mahe",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Malayalam",
+        "pct": 98.8,
+        "count": 41310
+      },
+      {
+        "group": "English",
+        "pct": 0.3,
+        "count": 146
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.3,
+        "count": 144
+      },
+      {
+        "group": "Other small languages",
+        "pct": 0.3,
+        "count": 114
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.1,
+        "count": 57
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.1,
+        "count": 45
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Census of India 2011, table C-16 population by mother tongue (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)"
+      }
+    ],
+    "parent_name": "Puducherry",
+    "codes": {
+      "census2011_state": "34",
+      "census2011_district": "636"
+    },
+    "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 16 mother-tongue groups were reported here; the 11 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated.",
+    "language_year": 2011
+  },
+  {
+    "id": "IND-D637",
+    "level": "admin2",
+    "name": "Karaikal",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Tamil",
+        "pct": 98.3,
+        "count": 196800
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.7,
+        "count": 1307
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.3,
+        "count": 635
+      },
+      {
+        "group": "Other small languages",
+        "pct": 0.3,
+        "count": 663
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.2,
+        "count": 500
+      },
+      {
+        "group": "Kannada",
+        "pct": 0.2,
+        "count": 317
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Census of India 2011, table C-16 population by mother tongue (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)"
+      }
+    ],
+    "parent_name": "Puducherry",
+    "codes": {
+      "census2011_state": "34",
+      "census2011_district": "637"
+    },
+    "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 23 mother-tongue groups were reported here; the 18 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated.",
+    "language_year": 2011
+  },
+  {
+    "id": "IND-D638",
+    "level": "admin2",
+    "name": "Nicobars",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Nicobarese",
+        "pct": 66.0,
+        "count": 24309
+      },
+      {
+        "group": "Hindi",
+        "pct": 9.8,
+        "count": 3623
+      },
+      {
+        "group": "Tamil",
+        "pct": 6.1,
+        "count": 2248
+      },
+      {
+        "group": "Telugu",
+        "pct": 4.1,
+        "count": 1493
+      },
+      {
+        "group": "Bengali",
+        "pct": 3.9,
+        "count": 1438
+      },
+      {
+        "group": "Kurukh/Oraon",
+        "pct": 3.3,
+        "count": 1221
+      },
+      {
+        "group": "Malayalam",
+        "pct": 1.8,
+        "count": 662
+      },
+      {
+        "group": "Other small languages",
+        "pct": 1.6,
+        "count": 605
+      },
+      {
+        "group": "Punjabi",
+        "pct": 1.0,
+        "count": 385
+      },
+      {
+        "group": "Other languages (unspecified)",
+        "pct": 0.7,
+        "count": 247
+      },
+      {
+        "group": "Santali",
+        "pct": 0.6,
+        "count": 216
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.5,
+        "count": 202
+      },
+      {
+        "group": "Mundari",
+        "pct": 0.5,
+        "count": 193
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Census of India 2011, table C-16 population by mother tongue (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)"
+      }
+    ],
+    "parent_name": "Andaman & Nicobar Islands",
+    "codes": {
+      "census2011_state": "35",
+      "census2011_district": "638"
+    },
+    "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 30 mother-tongue groups were reported here; the 18 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated. 'Other languages (unspecified)' (0.7%) is the census's own catch-all group, not a tail summed here: the Registrar General published no breakdown beneath it at this level.",
+    "language_year": 2011
+  },
+  {
+    "id": "IND-D639",
+    "level": "admin2",
+    "name": "North & Middle Andaman",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Bengali",
+        "pct": 53.8,
+        "count": 56802
+      },
+      {
+        "group": "Hindi",
+        "pct": 17.1,
+        "count": 18015
+      },
+      {
+        "group": "Telugu",
+        "pct": 6.5,
+        "count": 6830
+      },
+      {
+        "group": "Kurukh/Oraon",
+        "pct": 6.2,
+        "count": 6524
+      },
+      {
+        "group": "Tamil",
+        "pct": 5.9,
+        "count": 6276
+      },
+      {
+        "group": "Malayalam",
+        "pct": 3.2,
+        "count": 3333
+      },
+      {
+        "group": "Other languages (unspecified)",
+        "pct": 2.2,
+        "count": 2300
+      },
+      {
+        "group": "Kharia",
+        "pct": 2.1,
+        "count": 2181
+      },
+      {
+        "group": "Munda",
+        "pct": 1.7,
+        "count": 1834
+      },
+      {
+        "group": "Nicobarese",
+        "pct": 0.6,
+        "count": 609
+      },
+      {
+        "group": "Other small languages",
+        "pct": 0.4,
+        "count": 472
+      },
+      {
+        "group": "Mundari",
+        "pct": 0.3,
+        "count": 270
+      },
+      {
+        "group": "Bhumij",
+        "pct": 0.1,
+        "count": 151
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Census of India 2011, table C-16 population by mother tongue (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)"
+      }
+    ],
+    "parent_name": "Andaman & Nicobar Islands",
+    "codes": {
+      "census2011_state": "35",
+      "census2011_district": "639"
+    },
+    "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 38 mother-tongue groups were reported here; the 26 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated. 'Other languages (unspecified)' (2.2%) is the census's own catch-all group, not a tail summed here: the Registrar General published no breakdown beneath it at this level.",
+    "language_year": 2011
+  },
+  {
+    "id": "IND-D640",
+    "level": "admin2",
+    "name": "South Andaman",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Hindi",
+        "pct": 21.7,
+        "count": 51786
+      },
+      {
+        "group": "Bengali",
+        "pct": 21.1,
+        "count": 50192
+      },
+      {
+        "group": "Tamil",
+        "pct": 20.7,
+        "count": 49306
+      },
+      {
+        "group": "Telugu",
+        "pct": 17.7,
+        "count": 42081
+      },
+      {
+        "group": "Malayalam",
+        "pct": 9.9,
+        "count": 23480
+      },
+      {
+        "group": "Kurukh/Oraon",
+        "pct": 3.1,
+        "count": 7319
+      },
+      {
+        "group": "Nicobarese",
+        "pct": 1.7,
+        "count": 3994
+      },
+      {
+        "group": "Other small languages",
+        "pct": 1.4,
+        "count": 3311
+      },
+      {
+        "group": "Munda",
+        "pct": 0.8,
+        "count": 1812
+      },
+      {
+        "group": "Kharia",
+        "pct": 0.7,
+        "count": 1696
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.5,
+        "count": 1171
+      },
+      {
+        "group": "Punjabi",
+        "pct": 0.5,
+        "count": 1078
+      },
+      {
+        "group": "Odia",
+        "pct": 0.4,
+        "count": 916
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Census of India 2011, table C-16 population by mother tongue (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)"
+      }
+    ],
+    "parent_name": "Andaman & Nicobar Islands",
+    "codes": {
+      "census2011_state": "35",
+      "census2011_district": "640"
+    },
+    "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 57 mother-tongue groups were reported here; the 45 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated.",
     "language_year": 2011
   }
 ]

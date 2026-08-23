@@ -115,10 +115,17 @@ workbooks, checked into `data/raw/india/c16/` because there is no API to fetch
 them from — `scripts/fetch_census/india_language.py` reads whatever is present.
 
 The all-India workbook (`DDWC16STMTMDDS0000.XLSX`) carries every state, so all 34
-states enumerated in 2011 have a mother-tongue composition. The numbered
-workbooks carry that state's districts; 29 are present, giving 624 districts.
-Districts elsewhere keep an explicit gap. Adding a state is a matter of dropping
-its workbook into that directory.
+states enumerated in 2011 have a mother-tongue composition. All 35 per-state
+workbooks are present, giving 637 of 735 districts. The 98 without a figure are
+census-vintage gaps, not missing files: 92 are districts created after 2011 and
+6 were undivided when the census ran.
+
+**Not the `DDWC16TOWN...` files.** The catalogue also publishes a town-level
+C-16 whose filename differs only by that infix. It enumerates urban population
+only — its rural columns are zero — so feeding it to this adapter would publish
+town figures as whole-district ones, and the internal checks would not catch it
+because an urban-only state row and its urban-only district rows agree with each
+other perfectly. Only `DDWC16STMTMDDS*.XLSX` belongs in that directory.
 
 **Two kinds of "other".** C-16 has a residual group of its own (code 124),
 distinct from the tail this adapter folds for payload size. They are labelled
