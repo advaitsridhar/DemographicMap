@@ -89,6 +89,11 @@ NATIONAL_CONTROLS = {
 DISTRICT_ALIASES = {
     "y.s.r.": "Kadapa(YSR)",
     "pondicherry": "Puducherry",
+    # Spellings the boundary files get wrong, or spell differently. Both of
+    # these cost the district its religion figures as well as its languages,
+    # and Hyderabad is not a place to leave blank over a missing vowel.
+    "hyderabad": "Hydrabad",
+    "mahbubnagar": "Mahabubnagar",
 }
 
 # States the 2011 census reported under a different name.
