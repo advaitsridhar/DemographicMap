@@ -83,6 +83,16 @@ def describe(body: str) -> str:
         return "  (not JSON) " + " ".join(body[:300].split())
     if isinstance(parsed, dict):
         lines = [f"  JSON object, keys: {sorted(parsed)[:12]}"]
+        # Print every scalar in data/result verbatim. Pagination lives in these
+        # -- and whether "pages" is a count or a cursor token decides how the
+        # catalogue is walked, which two runs were spent guessing at.
+        for key in ("data", "result"):
+            inner = parsed.get(key)
+            if isinstance(inner, dict):
+                scalars = {k: v for k, v in inner.items()
+                           if not isinstance(v, (list, dict))}
+                if scalars:
+                    lines.append(f"  {key} scalars: {json.dumps(scalars)[:400]}")
         for key in ("data", "result", "results"):
             inner: Any = parsed.get(key)
             if isinstance(inner, dict):
@@ -108,30 +118,36 @@ def catalogue(terms: list[str], key: str | None) -> list[dict[str, Any]]:
     whether it honours a query parameter; where it does not, the filtering has
     to happen here, which is why this walks pages rather than asking.
     """
-    found, page, seen = [], 1, 0
-    while page <= MAX_PAGES:
-        status, body = fetch(f"{V2}/datasets?page={page}", key, "x-api-key")
+    found, seen, walked = [], 0, 0
+    cursor: Any = 1
+    while walked < MAX_PAGES:
+        status, body = fetch(f"{V2}/datasets?page={urllib.parse.quote(str(cursor))}",
+                             key, "x-api-key")
         if status != 200:
-            log(f"  page {page}: HTTP {status}; stopping")
+            log(f"  page {cursor!r}: HTTP {status}; stopping")
             break
         try:
             data = json.loads(body).get("data") or {}
         except json.JSONDecodeError:
             break
         datasets = data.get("datasets") or []
-        if not datasets:
-            break
+        walked += 1
         seen += len(datasets)
         for entry in datasets:
             haystack = " ".join(str(entry.get(field) or "")
                                 for field in ("name", "description")).lower()
             if all(term in haystack for term in terms):
                 found.append(entry)
-        total = data.get("pages")
-        if total and page >= total:
+        if walked == 1:
+            log(f"  first page: {len(datasets)} datasets, "
+                f"totalRowCount={data.get('totalRowCount')}, pages={data.get('pages')!r}")
+        # "pages" is the continuation token, not a count: asking for page=2
+        # returns nothing, while feeding this value back walks the catalogue.
+        nxt = data.get("pages")
+        if not datasets or not nxt or nxt == cursor:
             break
-        page += 1
-    log(f"  walked {page} page(s), {seen} datasets, {len(found)} matching {terms}")
+        cursor = nxt
+    log(f"  walked {walked} page(s), {seen} datasets, {len(found)} matching {terms}")
     return found
 
 
