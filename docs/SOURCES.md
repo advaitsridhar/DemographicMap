@@ -110,10 +110,21 @@ The nine provinces are not in these tables; they are summed from their
 districts, which is arithmetic on official counts rather than estimation, and
 the nine sums are required to reproduce the national population.
 
-**Language is a gap, and deliberately not inferred.** Sri Lanka does ask which
-languages a person can speak, but in a different table from these three.
-Deriving it from ethnicity would be wrong for roughly a tenth of the country:
-most Sri Lankan Moors speak Tamil.
+**Language is `not_collected`, not merely missing.** Sri Lanka's census does not
+ask mother tongue. It asks *literacy* — the ability to speak, read and write
+Sinhala, Tamil and English, for people aged 10 and over — and the 2024 report
+states plainly that it "did not account for proficiency in other languages".
+Those are overlapping proficiencies rather than shares of a population, so they
+are not a composition and are not a substitute for one: a bilingual person
+counts in two of them.
+
+Nor is language inferred from ethnicity here. Most Sri Lankan Moors speak Tamil,
+so that inference would put roughly a tenth of the country in the wrong column.
+
+The literacy figures do exist by district (report table 7.10 — Batticaloa 92.7%
+overall, English literacy from 74.2% in Colombo to 31.7% in Mullaitivu) and
+would be a legitimate field of their own. They are simply not the `language`
+field, and are not loaded.
 
 ### India, and trusting a community mirror
 

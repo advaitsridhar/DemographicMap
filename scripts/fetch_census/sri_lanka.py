@@ -28,9 +28,14 @@ summing to 100% never would.
 districts, which is arithmetic on official counts rather than estimation, and
 the sums are required to reproduce the national totals exactly.
 
-Sri Lanka does ask about languages spoken, but that is a different table from
-these three, so ``language`` stays an explicit gap rather than being inferred
-from ethnicity -- Tamil-speaking Moors alone would make that inference wrong.
+Sri Lanka does not ask mother tongue, so ``language`` is marked *not collected*
+rather than merely missing. What the census asks instead is literacy: the
+ability to speak, read and write Sinhala, Tamil and English, for people aged 10
+and over, explicitly not accounting for any other language. Those are
+overlapping proficiencies rather than shares of a population, so they are not a
+composition, and they are not a substitute for one. Nor is language inferred
+from ethnicity here -- most Sri Lankan Moors speak Tamil, which would put a
+tenth of the country in the wrong column.
 
 Usage:
     python -m scripts.fetch_census.sri_lanka --level district
@@ -46,7 +51,7 @@ from pathlib import Path
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, RAW, gap, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, gap, log, measure, record, shares, write_json,
 )
 
 WORKBOOKS = RAW / "srilanka"
@@ -265,11 +270,16 @@ def build_record(name: str, unit: dict[str, Any], *, level: str,
             "ancestors were brought to the plantations under British rule, and "
             "counts Moors as an ethnic group rather than a religious one."),
         ethnicity_year=2024,
-        language=gap(NOT_AVAILABLE,
-                     "Sri Lanka's census does ask which languages a person can "
-                     "speak, but in a different table from the three loaded here. "
-                     "It is not inferred from ethnicity: most Moors speak Tamil, "
-                     "so that inference would be wrong for a tenth of the country."),
+        language=gap(NOT_COLLECTED,
+                     "Sri Lanka's census does not ask mother tongue. It asks "
+                     "literacy -- the ability to speak, read and write Sinhala, "
+                     "Tamil and English, for people aged 10 and over -- and the "
+                     "2024 report states it did not account for proficiency in any "
+                     "other language. Those are overlapping proficiencies, not "
+                     "shares of a population, so they do not form a composition. "
+                     "Nor is language inferred from ethnicity here: most Sri Lankan "
+                     "Moors speak Tamil, which would put a tenth of the country in "
+                     "the wrong column."),
         sources=[{"field": "population/religion/ethnicity", "name": SOURCE,
                   "url": CATALOG, "year": 2024}],
     )
