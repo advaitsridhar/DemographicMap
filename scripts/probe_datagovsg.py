@@ -25,6 +25,7 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+import time
 from pathlib import Path
 from typing import Any
 
@@ -52,6 +53,10 @@ ENDPOINTS = [
 
 # How many list pages to walk when the server offers no search of its own.
 MAX_PAGES = 470
+# Seconds between catalogue requests. The host rate-limits, and it does so by
+# returning a non-JSON body rather than a 429, which the first walk read as the
+# end of the catalogue and reported as "ten datasets".
+THROTTLE = 0.7
 
 
 def find_key() -> tuple[str | None, str | None]:
@@ -121,14 +126,23 @@ def catalogue(terms: list[str], key: str | None) -> list[dict[str, Any]]:
     found, seen, empty = [], 0, 0
     page = 1
     while page <= MAX_PAGES:
-        status, body = fetch(f"{V2}/datasets?page={page}", key, "x-api-key")
-        if status != 200:
-            log(f"  page {page}: HTTP {status}; stopping")
-            break
-        try:
-            data = json.loads(body).get("data") or {}
-        except json.JSONDecodeError:
-            log(f"  page {page}: not JSON; stopping")
+        data = None
+        for attempt in range(4):
+            time.sleep(THROTTLE * (attempt + 1))
+            status, body = fetch(f"{V2}/datasets?page={page}", key, "x-api-key")
+            if status != 200:
+                log(f"  page {page}: HTTP {status} (attempt {attempt + 1})")
+                continue
+            try:
+                data = json.loads(body).get("data") or {}
+                break
+            except json.JSONDecodeError:
+                # Throttled. The body is an HTML notice, not an error status,
+                # so backing off and retrying is the only way to tell this from
+                # having actually run off the end of the list.
+                log(f"  page {page}: throttled (attempt {attempt + 1}); backing off")
+        if data is None:
+            log(f"  page {page}: giving up after 4 attempts")
             break
         datasets = data.get("datasets") or []
         if page == 1:
