@@ -65,7 +65,7 @@ jobs:
         env:
           DEMOGRAPHICMAP: ${{ secrets.DEMOGRAPHICMAP }}
         run: |
-          python3 scripts/probe_datagovsg.py --catalogue --search "${{ inputs.target }}"
+          python3 scripts/probe_datagovsg.py --raw --catalogue --search "${{ inputs.target }}"
 
       - name: Probe plain URL
         if: inputs.kind == 'url'

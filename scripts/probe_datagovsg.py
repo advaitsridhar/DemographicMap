@@ -51,7 +51,7 @@ ENDPOINTS = [
 ]
 
 # How many list pages to walk when the server offers no search of its own.
-MAX_PAGES = 60
+MAX_PAGES = 470
 
 
 def find_key() -> tuple[str | None, str | None]:
@@ -118,36 +118,41 @@ def catalogue(terms: list[str], key: str | None) -> list[dict[str, Any]]:
     whether it honours a query parameter; where it does not, the filtering has
     to happen here, which is why this walks pages rather than asking.
     """
-    found, seen, walked = [], 0, 0
-    cursor: Any = 1
-    while walked < MAX_PAGES:
-        status, body = fetch(f"{V2}/datasets?page={urllib.parse.quote(str(cursor))}",
-                             key, "x-api-key")
+    found, seen, empty = [], 0, 0
+    page = 1
+    while page <= MAX_PAGES:
+        status, body = fetch(f"{V2}/datasets?page={page}", key, "x-api-key")
         if status != 200:
-            log(f"  page {cursor!r}: HTTP {status}; stopping")
+            log(f"  page {page}: HTTP {status}; stopping")
             break
         try:
             data = json.loads(body).get("data") or {}
         except json.JSONDecodeError:
+            log(f"  page {page}: not JSON; stopping")
             break
         datasets = data.get("datasets") or []
-        walked += 1
+        if page == 1:
+            log(f"  page 1: {len(datasets)} datasets, "
+                f"totalRowCount={data.get('totalRowCount')}, pages={data.get('pages')}")
+        if not datasets:
+            # An empty page is not necessarily the end: the first attempt at
+            # this stopped on one and reported the catalogue as ten datasets
+            # long when it holds four and a half thousand.
+            empty += 1
+            log(f"  page {page}: empty ({empty} in a row)")
+            if empty >= 3:
+                break
+            page += 1
+            continue
+        empty = 0
         seen += len(datasets)
         for entry in datasets:
             haystack = " ".join(str(entry.get(field) or "")
                                 for field in ("name", "description")).lower()
             if all(term in haystack for term in terms):
                 found.append(entry)
-        if walked == 1:
-            log(f"  first page: {len(datasets)} datasets, "
-                f"totalRowCount={data.get('totalRowCount')}, pages={data.get('pages')!r}")
-        # "pages" is the continuation token, not a count: asking for page=2
-        # returns nothing, while feeding this value back walks the catalogue.
-        nxt = data.get("pages")
-        if not datasets or not nxt or nxt == cursor:
-            break
-        cursor = nxt
-    log(f"  walked {walked} page(s), {seen} datasets, {len(found)} matching {terms}")
+        page += 1
+    log(f"  read {page - 1} page(s), {seen} datasets, {len(found)} matching {terms}")
     return found
 
 
@@ -171,6 +176,8 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--search", default="population planning area")
+    ap.add_argument("--raw", action="store_true",
+                    help="dump the first few list pages verbatim")
     ap.add_argument("--catalogue", action="store_true",
                     help="walk the dataset list and sample the best match")
     args = ap.parse_args()
@@ -202,6 +209,11 @@ def main() -> int:
                 break
         else:
             log("  " + " ".join(body[:200].split()))
+
+    if args.raw:
+        for page in (1, 2, 3):
+            status, body = fetch(f"{V2}/datasets?page={page}", key, "x-api-key")
+            log(f"\n=== raw page {page}: HTTP {status}\n{body[:700]}")
 
     if args.catalogue:
         terms = [t for t in args.search.lower().split() if len(t) > 2]
