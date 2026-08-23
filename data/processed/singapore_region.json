@@ -1,0 +1,287 @@
+[
+  {
+    "id": "SGP-R-Central-Region",
+    "level": "admin1",
+    "name": "Central Region",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 975290,
+      "unit": "residents",
+      "year": 2025,
+      "source": "Singapore Department of Statistics, SingStat Table Builder"
+    },
+    "median_age": {
+      "value": 45.3,
+      "unit": "years",
+      "year": 2025,
+      "source": "Singapore Department of Statistics, SingStat Table Builder"
+    },
+    "sex_ratio": {
+      "value": 1094,
+      "unit": "females_per_1000_males",
+      "year": 2025,
+      "source": "Singapore Department of Statistics, SingStat Table Builder"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Singapore's census collects this, but SingStat does not publish it by planning region in the annual series used here -- only nationally, and by census planning area in the decennial release."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Singapore's census collects this, but SingStat does not publish it by planning region in the annual series used here -- only nationally, and by census planning area in the decennial release."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Singapore's census collects this, but SingStat does not publish it by planning region in the annual series used here -- only nationally, and by census planning area in the decennial release."
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio/median age",
+        "name": "Singapore Department of Statistics, SingStat Table Builder",
+        "url": "https://tablebuilder.singstat.gov.sg/table/TS/M810771",
+        "year": 2025,
+        "note": "Table M810771, Singapore residents by planning region, age group and sex."
+      }
+    ],
+    "codes": {
+      "singstat_table": "M810771",
+      "planning_region": "Central Region"
+    },
+    "population_note": "SingStat counts residents -- citizens and permanent residents. Singapore's total population is considerably larger: roughly 1.8 million people on work passes and other long-term permits are enumerated nationally but not in this series, so the five regions do not sum to the country figure shown above.",
+    "median_age_note": "Interpolated from the five-year age bands SingStat publishes, not a median the Department reported. It is also the median age of residents only. Elsewhere on this map median age is a published figure, so the two are not exactly like for like."
+  },
+  {
+    "id": "SGP-R-East-Region",
+    "level": "admin1",
+    "name": "East Region",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 710680,
+      "unit": "residents",
+      "year": 2025,
+      "source": "Singapore Department of Statistics, SingStat Table Builder"
+    },
+    "median_age": {
+      "value": 43.7,
+      "unit": "years",
+      "year": 2025,
+      "source": "Singapore Department of Statistics, SingStat Table Builder"
+    },
+    "sex_ratio": {
+      "value": 1057,
+      "unit": "females_per_1000_males",
+      "year": 2025,
+      "source": "Singapore Department of Statistics, SingStat Table Builder"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Singapore's census collects this, but SingStat does not publish it by planning region in the annual series used here -- only nationally, and by census planning area in the decennial release."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Singapore's census collects this, but SingStat does not publish it by planning region in the annual series used here -- only nationally, and by census planning area in the decennial release."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Singapore's census collects this, but SingStat does not publish it by planning region in the annual series used here -- only nationally, and by census planning area in the decennial release."
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio/median age",
+        "name": "Singapore Department of Statistics, SingStat Table Builder",
+        "url": "https://tablebuilder.singstat.gov.sg/table/TS/M810771",
+        "year": 2025,
+        "note": "Table M810771, Singapore residents by planning region, age group and sex."
+      }
+    ],
+    "codes": {
+      "singstat_table": "M810771",
+      "planning_region": "East Region"
+    },
+    "population_note": "SingStat counts residents -- citizens and permanent residents. Singapore's total population is considerably larger: roughly 1.8 million people on work passes and other long-term permits are enumerated nationally but not in this series, so the five regions do not sum to the country figure shown above.",
+    "median_age_note": "Interpolated from the five-year age bands SingStat publishes, not a median the Department reported. It is also the median age of residents only. Elsewhere on this map median age is a published figure, so the two are not exactly like for like."
+  },
+  {
+    "id": "SGP-R-North-Region",
+    "level": "admin1",
+    "name": "North Region",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 599410,
+      "unit": "residents",
+      "year": 2025,
+      "source": "Singapore Department of Statistics, SingStat Table Builder"
+    },
+    "median_age": {
+      "value": 40.8,
+      "unit": "years",
+      "year": 2025,
+      "source": "Singapore Department of Statistics, SingStat Table Builder"
+    },
+    "sex_ratio": {
+      "value": 1023,
+      "unit": "females_per_1000_males",
+      "year": 2025,
+      "source": "Singapore Department of Statistics, SingStat Table Builder"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Singapore's census collects this, but SingStat does not publish it by planning region in the annual series used here -- only nationally, and by census planning area in the decennial release."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Singapore's census collects this, but SingStat does not publish it by planning region in the annual series used here -- only nationally, and by census planning area in the decennial release."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Singapore's census collects this, but SingStat does not publish it by planning region in the annual series used here -- only nationally, and by census planning area in the decennial release."
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio/median age",
+        "name": "Singapore Department of Statistics, SingStat Table Builder",
+        "url": "https://tablebuilder.singstat.gov.sg/table/TS/M810771",
+        "year": 2025,
+        "note": "Table M810771, Singapore residents by planning region, age group and sex."
+      }
+    ],
+    "codes": {
+      "singstat_table": "M810771",
+      "planning_region": "North Region"
+    },
+    "population_note": "SingStat counts residents -- citizens and permanent residents. Singapore's total population is considerably larger: roughly 1.8 million people on work passes and other long-term permits are enumerated nationally but not in this series, so the five regions do not sum to the country figure shown above.",
+    "median_age_note": "Interpolated from the five-year age bands SingStat publishes, not a median the Department reported. It is also the median age of residents only. Elsewhere on this map median age is a published figure, so the two are not exactly like for like."
+  },
+  {
+    "id": "SGP-R-North-East-Region",
+    "level": "admin1",
+    "name": "North-East Region",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 974650,
+      "unit": "residents",
+      "year": 2025,
+      "source": "Singapore Department of Statistics, SingStat Table Builder"
+    },
+    "median_age": {
+      "value": 42.3,
+      "unit": "years",
+      "year": 2025,
+      "source": "Singapore Department of Statistics, SingStat Table Builder"
+    },
+    "sex_ratio": {
+      "value": 1061,
+      "unit": "females_per_1000_males",
+      "year": 2025,
+      "source": "Singapore Department of Statistics, SingStat Table Builder"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Singapore's census collects this, but SingStat does not publish it by planning region in the annual series used here -- only nationally, and by census planning area in the decennial release."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Singapore's census collects this, but SingStat does not publish it by planning region in the annual series used here -- only nationally, and by census planning area in the decennial release."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Singapore's census collects this, but SingStat does not publish it by planning region in the annual series used here -- only nationally, and by census planning area in the decennial release."
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio/median age",
+        "name": "Singapore Department of Statistics, SingStat Table Builder",
+        "url": "https://tablebuilder.singstat.gov.sg/table/TS/M810771",
+        "year": 2025,
+        "note": "Table M810771, Singapore residents by planning region, age group and sex."
+      }
+    ],
+    "codes": {
+      "singstat_table": "M810771",
+      "planning_region": "North-East Region"
+    },
+    "population_note": "SingStat counts residents -- citizens and permanent residents. Singapore's total population is considerably larger: roughly 1.8 million people on work passes and other long-term permits are enumerated nationally but not in this series, so the five regions do not sum to the country figure shown above.",
+    "median_age_note": "Interpolated from the five-year age bands SingStat publishes, not a median the Department reported. It is also the median age of residents only. Elsewhere on this map median age is a published figure, so the two are not exactly like for like."
+  },
+  {
+    "id": "SGP-R-West-Region",
+    "level": "admin1",
+    "name": "West Region",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 944490,
+      "unit": "residents",
+      "year": 2025,
+      "source": "Singapore Department of Statistics, SingStat Table Builder"
+    },
+    "median_age": {
+      "value": 42.9,
+      "unit": "years",
+      "year": 2025,
+      "source": "Singapore Department of Statistics, SingStat Table Builder"
+    },
+    "sex_ratio": {
+      "value": 1035,
+      "unit": "females_per_1000_males",
+      "year": 2025,
+      "source": "Singapore Department of Statistics, SingStat Table Builder"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Singapore's census collects this, but SingStat does not publish it by planning region in the annual series used here -- only nationally, and by census planning area in the decennial release."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Singapore's census collects this, but SingStat does not publish it by planning region in the annual series used here -- only nationally, and by census planning area in the decennial release."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Singapore's census collects this, but SingStat does not publish it by planning region in the annual series used here -- only nationally, and by census planning area in the decennial release."
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio/median age",
+        "name": "Singapore Department of Statistics, SingStat Table Builder",
+        "url": "https://tablebuilder.singstat.gov.sg/table/TS/M810771",
+        "year": 2025,
+        "note": "Table M810771, Singapore residents by planning region, age group and sex."
+      }
+    ],
+    "codes": {
+      "singstat_table": "M810771",
+      "planning_region": "West Region"
+    },
+    "population_note": "SingStat counts residents -- citizens and permanent residents. Singapore's total population is considerably larger: roughly 1.8 million people on work passes and other long-term permits are enumerated nationally but not in this series, so the five regions do not sum to the country figure shown above.",
+    "median_age_note": "Interpolated from the five-year age bands SingStat publishes, not a median the Department reported. It is also the median age of residents only. Elsewhere on this map median age is a published figure, so the two are not exactly like for like."
+  }
+]

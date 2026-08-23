@@ -75,8 +75,41 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Brazil | IBGE SIDRA tables 9514 / 9605 / 10086 | state, municipality | *Cor ou raça* is self-declared skin colour (branca, preta, parda, amarela, indígena) — not equivalent to ethnicity elsewhere. |
 | EU | Eurostat `demo_r_pjangrp3`, `demo_r_pjanind3` | NUTS-2, NUTS-3 | Population and age everywhere; **no** ethnicity or religion — those are national census questions and only some states ask them. |
 | Australia | ABS 2021 Census `C21_G14`, `C21_G08` | state, LGA, SA3 | Ancestry is multi-response (up to two per person), so shares are of responses and exceed 100%. No ethnicity question exists. |
+| Singapore | SingStat Table Builder M810771 | planning region | Resident population, sex ratio and a derived median age for the 5 regions. Religion, ethnicity and language are collected but not published at this geography. |
 | Sri Lanka | Census of Population and Housing 2024, tables A1–A3 | province, district | Population, sex ratio, religion and ethnicity for all 25 districts and 9 provinces. |
 | India | Census 2011 tables C-01, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. |
+
+### Singapore, and two things the figures are not
+
+The Department of Statistics publishes through the SingStat Table Builder API.
+Table M810771 gives, for each of the five URA planning regions, the resident
+count with a male/female split and nineteen five-year age bands.
+
+**It counts residents, not everybody.** "Resident" means citizens and permanent
+residents. Singapore's total population is considerably larger — roughly 1.8
+million people on work passes and other long-term permits are enumerated
+nationally but not in this series — so the five regions sum to about 4.2 million
+against a much larger country figure. Every record carries a note saying so,
+because a map showing the two side by side without explaining the gap would
+simply look wrong.
+
+**Median age is derived, not published.** The table reports grouped bands, so
+the median is interpolated within whichever band holds the midpoint. That is
+standard demography, but everywhere else in this map median age is a figure a
+statistical office calculated, so `median_age_note` says which kind this is.
+The open-ended top band is given a nominal five-year width rather than dropped,
+which would bias the result downwards.
+
+Religion, ethnicity and language are all collected by Singapore's census, but
+none is published by planning region in this annual series, so each is an
+explicit `not_available` naming what is missing.
+
+The adapter calls the API and falls back to a payload committed under
+`data/raw/singapore/` when the host is unreachable, which is what lets the build
+run in a sandbox with no route to it while still refreshing on a runner. Note
+that Wikidata offers Singapore's five Community Development Councils, which are
+a *different* geography from the planning regions in the boundary files; the
+join refuses them rather than matching them by resemblance.
 
 ### Sri Lanka, and a check the source hands you
 

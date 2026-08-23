@@ -539,3 +539,56 @@ class SriLanka2024(unittest.TestCase):
         with self.assertRaises(SystemExit) as caught:
             self.lk.validate({"Sri Lanka": country})
         self.assertIn("Buddhist", str(caught.exception))
+
+
+class SingaporeGroupedMedian(unittest.TestCase):
+    """The one derived figure in the Singapore adapter, and the series parsing."""
+
+    def setUp(self):
+        from scripts.fetch_census import singstat
+        self.ss = singstat
+
+    def test_median_lands_inside_the_band_holding_the_midpoint(self):
+        bands = {"0 - 4 Years": 100, "5 - 9 Years": 100, "10 - 14 Years": 100}
+        # 300 people, midpoint at 150, which falls halfway through the 5-9 band.
+        self.assertEqual(self.ss.median_from_bands(bands), 7.5)
+
+    def test_a_single_band_interpolates_to_its_middle(self):
+        self.assertEqual(self.ss.median_from_bands({"40 - 44 Years": 1000}), 42.5)
+
+    def test_the_open_ended_band_is_given_a_nominal_width(self):
+        # "90 Years & Over" has no upper bound; it is treated as five years wide
+        # rather than being dropped, which would bias the median downwards.
+        self.assertIsNotNone(self.ss.median_from_bands({"90 Years & Over": 10}))
+
+    def test_empty_or_unparseable_bands_yield_nothing_rather_than_a_guess(self):
+        self.assertIsNone(self.ss.median_from_bands({}))
+        self.assertIsNone(self.ss.median_from_bands({"All ages": 500}))
+        self.assertIsNone(self.ss.median_from_bands({"0 - 4 Years": 0}))
+
+    def test_age_bands_attach_to_the_region_not_to_a_sex_split(self):
+        # Bands hang off whichever top-level series precedes them. Letting the
+        # "(Male)" series claim them would halve every count behind the median.
+        payload = {"Data": {"row": [
+            {"seriesNo": "1", "rowText": "North Region",
+             "columns": [{"key": "2025", "value": "300"}]},
+            {"seriesNo": "1.1", "rowText": "0 - 4 Years",
+             "columns": [{"key": "2025", "value": "300"}]},
+            {"seriesNo": "2", "rowText": "North Region (Male)",
+             "columns": [{"key": "2025", "value": "150"}]},
+            {"seriesNo": "2.1", "rowText": "0 - 4 Years",
+             "columns": [{"key": "2025", "value": "150"}]},
+        ]}}
+        year, regions = self.ss.parse(payload)
+        self.assertEqual(year, "2025")
+        self.assertEqual(regions["North Region"]["bands"], {"0 - 4 Years": 300.0})
+        self.assertEqual(regions["North Region"]["male"], 150.0)
+
+    def test_the_most_recent_period_is_the_one_used(self):
+        rows = [{"seriesNo": "1", "rowText": "West Region",
+                 "columns": [{"key": "2019", "value": "1"}, {"key": "2025", "value": "2"}]}]
+        self.assertEqual(self.ss.latest_year(rows), "2025")
+
+    def test_an_empty_response_fails_loudly(self):
+        with self.assertRaises(SystemExit):
+            self.ss.series_rows({"Data": {"row": []}})
