@@ -592,3 +592,51 @@ class SingaporeGroupedMedian(unittest.TestCase):
     def test_an_empty_response_fails_loudly(self):
         with self.assertRaises(SystemExit):
             self.ss.series_rows({"Data": {"row": []}})
+
+
+class SingaporePlanningAreas(unittest.TestCase):
+    """Suppressed cells, and three tables that must not be conflated."""
+
+    def setUp(self):
+        from scripts.fetch_census import singapore_areas
+        self.sa = singapore_areas
+
+    def test_na_is_missing_and_dash_is_nil(self):
+        # Reading "na" as zero turns "we are not telling you" into "nobody lives
+        # here", which for an industrial planning area is a different claim.
+        self.assertIsNone(self.sa.cell("na"))
+        self.assertIsNone(self.sa.cell(""))
+        self.assertEqual(self.sa.cell("-"), 0.0)
+        self.assertEqual(self.sa.cell("1,234"), 1234.0)
+        self.assertEqual(self.sa.cell(" 90 "), 90.0)
+
+    def test_a_wholly_suppressed_breakdown_is_not_a_reconciliation_failure(self):
+        # Lim Chu Kang publishes 90 residents and suppresses every category.
+        self.sa.check("ethnicity", {"Lim Chu Kang": {}}, {"Lim Chu Kang": 90.0},
+                      self.sa.CONTROLS["ethnicity"])
+
+    def test_categories_that_miss_their_row_total_still_fail(self):
+        with self.assertRaises(SystemExit) as caught:
+            self.sa.check("religion", {"Bedok": {"Buddhist": 10.0}},
+                          {"Bedok": 1000.0}, self.sa.CONTROLS["religion"])
+        self.assertIn("Bedok", str(caught.exception))
+
+    def test_a_wrong_national_total_is_refused(self):
+        with self.assertRaises(SystemExit):
+            self.sa.check("language", {}, {}, 1)
+
+    def test_the_three_tables_keep_separate_years(self):
+        # 2015 survey, 2020 census aged 15+, 2020 census aged 5+. Sharing one
+        # year would imply a single profile of a single population.
+        self.assertEqual(set(self.sa.CONTROLS), {"ethnicity", "religion", "language"})
+        self.assertNotEqual(self.sa.CONTROLS["religion"], self.sa.CONTROLS["language"])
+        self.assertIn("aged 15 and over", self.sa.NOTES["religion"])
+        self.assertIn("aged 5 and over", self.sa.NOTES["language"])
+
+    def test_the_language_categories_are_exhaustive(self):
+        # The six top-level languages partition the base; Tamil is split out of
+        # Indian languages, so the seven must still cover everyone.
+        self.assertIn("IndianLanguages_Tamil_Total1", self.sa.LANGUAGE_COLUMNS)
+        self.assertIn("IndianLanguages_OtherIndianLanguages_Total1",
+                      self.sa.LANGUAGE_COLUMNS)
+        self.assertNotIn("IndianLanguages_Total", self.sa.LANGUAGE_COLUMNS)

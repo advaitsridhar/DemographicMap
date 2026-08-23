@@ -75,9 +75,39 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Brazil | IBGE SIDRA tables 9514 / 9605 / 10086 | state, municipality | *Cor ou raça* is self-declared skin colour (branca, preta, parda, amarela, indígena) — not equivalent to ethnicity elsewhere. |
 | EU | Eurostat `demo_r_pjangrp3`, `demo_r_pjanind3` | NUTS-2, NUTS-3 | Population and age everywhere; **no** ethnicity or religion — those are national census questions and only some states ask them. |
 | Australia | ABS 2021 Census `C21_G14`, `C21_G08` | state, LGA, SA3 | Ancestry is multi-response (up to two per person), so shares are of responses and exceed 100%. No ethnicity question exists. |
+| Singapore | Census 2020 + GHS 2015 planning-area tables | planning area |Ethnicity, religion and language for the planning areas, on three different bases. |
 | Singapore | SingStat Table Builder M810771 | planning region | Resident population, sex ratio and a derived median age for the 5 regions. Religion, ethnicity and language are collected but not published at this geography. |
 | Sri Lanka | Census of Population and Housing 2024, tables A1–A3 | province, district | Population, sex ratio, religion and ethnicity for all 25 districts and 9 provinces. |
 | India | Census 2011 tables C-01, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. |
+
+### Singapore's planning areas: three tables, three populations
+
+The planning-area tables come from the census and household-survey releases
+rather than the Table Builder API, so they sit as CSV extracts in
+`data/raw/singapore/`. They do **not** describe the same population:
+
+| Field | Source | Base | Total |
+|---|---|---|---:|
+| Ethnicity | General Household Survey 2015 | all residents | 3,902,690 |
+| Religion | Census 2020 | residents aged 15 and over | 3,459,093 |
+| Language | Census 2020 | residents aged 5 and over | 3,596,284 |
+
+Each field therefore carries its own year and its own note naming whose shares
+these are. Presenting them as one profile of one population would be wrong in
+three directions at once, and the totals make the difference visible.
+
+**`na` is not zero.** The releases suppress cells too small to publish, and
+several planning areas are industrial or military with under a hundred
+residents. A suppressed cell reads as missing, an explicit `-` as nil, and an
+area whose breakdown is entirely suppressed keeps its published population while
+the composition becomes an explicit gap saying it was withheld. The
+reconciliation check flagged exactly this for Lim Chu Kang, Pioneer and Tuas
+before it was handled.
+
+Coverage differs by table: ethnicity reaches 41 planning areas, religion and
+language 30 each — those two releases bucket the remainder into an "Others" row
+that matches no shape on the map, and it is dropped rather than joined to
+anything.
 
 ### Singapore, and two things the figures are not
 
