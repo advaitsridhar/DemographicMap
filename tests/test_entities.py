@@ -486,8 +486,8 @@ class Admin2Disambiguation(unittest.TestCase):
         self.assertEqual(entity["id"], "UP-AGR")
 
 
-class SriLanka2012(unittest.TestCase):
-    """The 2012 census workbooks: trilingual labels, and the source's own check."""
+class SriLanka2024(unittest.TestCase):
+    """The 2024 census workbooks: trilingual labels, and the source's own check."""
 
     def setUp(self):
         from scripts.fetch_census import sri_lanka as lk

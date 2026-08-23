@@ -73,7 +73,7 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.ibge_sidra --level municipality",
     "AUS": "ABS 2021 Census (religion, ancestry): "
            "python -m scripts.fetch_census.abs --level lga",
-    "LKA": "Sri Lanka Census 2012 tables A1-A3 (population, ethnicity, religion): "
+    "LKA": "Sri Lanka Census 2024 tables A1-A3 (population, ethnicity, religion): "
            "python -m scripts.fetch_census.sri_lanka --level district",
     "IND": "Census of India 2011 tables C-01 (religion) and C-16 (mother tongue): "
            "python -m scripts.fetch_census.india_census --level district && "

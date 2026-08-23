@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sri Lanka -- Census of Population and Housing 2012, by district and province.
+"""Sri Lanka -- Census of Population and Housing 2024, by district and province.
 
 The Department of Census and Statistics publishes the district tables as small
 trilingual workbooks rather than through an API, so they live in
@@ -50,9 +50,9 @@ from ._shared import (
 )
 
 WORKBOOKS = RAW / "srilanka"
-SOURCE = ("Census of Population and Housing 2012, Department of Census and "
+SOURCE = ("Census of Population and Housing 2024, Department of Census and "
           "Statistics, Sri Lanka")
-CATALOG = "http://www.statistics.gov.lk/Population/StaticalInformation/CPH2011"
+CATALOG = "https://www.statistics.gov.lk/"
 
 # Column positions, which the three-row trilingual banner makes worth naming.
 A1_TOTAL, A1_MALE, A1_FEMALE = 3, 4, 5
@@ -86,8 +86,12 @@ PROVINCES = {
 # The boundary files spell one district differently from the census.
 DISTRICT_ALIASES = {"Moneragala": "Monaragala"}
 
-# What the Department published for the country. Nothing is emitted unless the
-# workbooks reproduce these.
+# The national row of these same workbooks, pinned so a different file cannot be
+# swapped in unnoticed. This is a regression guard, not independent validation:
+# unlike the India controls, which are figures the Registrar General published
+# separately, these were read out of the file they check. The independent test
+# here is check_published_shares, which plays the counts off against percentages
+# the Department computed itself.
 NATIONAL_CONTROLS: dict[str, int] = {
     "_total": 21_781_800,
     "Buddhist": 15_199_093,
@@ -228,14 +232,14 @@ def validate(units: dict[str, Any]) -> None:
         elif int(got) != published:
             drift.append(f"{label} {int(got):,}, published {published:,}")
     if drift:
-        raise SystemExit("these workbooks do not reproduce the published 2012 "
-                         "figures -- refusing to emit:\n  " + "\n  ".join(drift))
+        raise SystemExit("these workbooks do not match the pinned 2024 national "
+                         "row -- refusing to emit:\n  " + "\n  ".join(drift))
 
     summed = sum(v["population"] for k, v in units.items() if k != "Sri Lanka")
     if summed != NATIONAL_CONTROLS["_total"]:
         raise SystemExit(f"districts sum to {summed:,}, national row says "
                          f"{NATIONAL_CONTROLS['_total']:,}")
-    log(f"  validated against the published 2012 census: "
+    log(f"  national row matches the pinned 2024 figures: "
         f"{country['population']:,} people, Buddhist "
         f"{100 * merged['Buddhist'] / country['population']:.1f}%, "
         f"Sinhalese {100 * merged['Sinhalese'] / country['population']:.1f}%")
@@ -248,26 +252,26 @@ def build_record(name: str, unit: dict[str, Any], *, level: str,
     ratio = round(1000.0 * female / male) if male else None
     return record(
         entity_id, name, level=level, parent="LKA", codes=codes,
-        population=measure(population, year=2012, source=SOURCE),
-        sex_ratio=(measure(ratio, unit="females_per_1000_males", year=2012,
+        population=measure(population, year=2024, source=SOURCE),
+        sex_ratio=(measure(ratio, unit="females_per_1000_males", year=2024,
                            source=SOURCE) if ratio else gap(NOT_AVAILABLE)),
         religion=shares(unit["religion"], total=population) or gap(NOT_AVAILABLE),
-        religion_note="Census of Population and Housing 2012, table A3.",
-        religion_year=2012,
+        religion_note="Census of Population and Housing 2024, table A3.",
+        religion_year=2024,
         ethnicity=shares(unit["ethnicity"], total=population) or gap(NOT_AVAILABLE),
         ethnicity_note=(
-            "Census 2012 table A2. Sri Lanka's ethnic classification distinguishes "
+            "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes "
             "Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose "
             "ancestors were brought to the plantations under British rule, and "
             "counts Moors as an ethnic group rather than a religious one."),
-        ethnicity_year=2012,
+        ethnicity_year=2024,
         language=gap(NOT_AVAILABLE,
                      "Sri Lanka's census does ask which languages a person can "
                      "speak, but in a different table from the three loaded here. "
                      "It is not inferred from ethnicity: most Moors speak Tamil, "
                      "so that inference would be wrong for a tenth of the country."),
         sources=[{"field": "population/religion/ethnicity", "name": SOURCE,
-                  "url": CATALOG, "year": 2012}],
+                  "url": CATALOG, "year": 2024}],
     )
 
 
@@ -279,7 +283,7 @@ def districts(units: dict[str, Any]) -> list[dict[str, Any]]:
         shape = DISTRICT_ALIASES.get(name, name)
         out.append(build_record(f"{shape} District", unit, level="admin2",
                                 entity_id=f"LKA-D-{shape.replace(' ', '-')}",
-                                codes={"census2012_district": name}))
+                                codes={"census2024_district": name}))
     return out
 
 
