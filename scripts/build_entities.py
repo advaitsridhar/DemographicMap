@@ -52,6 +52,7 @@ ADAPTER_FILES = [
     # After the C-01 files: mother tongue is the one field these add, and a
     # later file never overwrites an earlier real value with a gap marker.
     "india_language_state.json", "india_language_district.json",
+    "srilanka_province.json", "srilanka_district.json",
     "brazil_state.json", "brazil_municipality.json",
     "canada_province.json", "canada_census_division.json",
     "australia_state.json", "australia_lga.json",
@@ -72,6 +73,8 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.ibge_sidra --level municipality",
     "AUS": "ABS 2021 Census (religion, ancestry): "
            "python -m scripts.fetch_census.abs --level lga",
+    "LKA": "Sri Lanka Census 2012 tables A1-A3 (population, ethnicity, religion): "
+           "python -m scripts.fetch_census.sri_lanka --level district",
     "IND": "Census of India 2011 tables C-01 (religion) and C-16 (mother tongue): "
            "python -m scripts.fetch_census.india_census --level district && "
            "python -m scripts.fetch_census.india_language --level district",

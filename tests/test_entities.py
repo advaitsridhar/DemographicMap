@@ -484,3 +484,58 @@ class Admin2Disambiguation(unittest.TestCase):
         entity, _ = be.match_admin2(
             {"name": "Agra", "parent_name": "Atlantis"}, self.shapes(), self.admin1())
         self.assertEqual(entity["id"], "UP-AGR")
+
+
+class SriLanka2012(unittest.TestCase):
+    """The 2012 census workbooks: trilingual labels, and the source's own check."""
+
+    def setUp(self):
+        from scripts.fetch_census import sri_lanka as lk
+        self.lk = lk
+
+    def test_english_is_the_ascii_half_of_a_trilingual_cell(self):
+        self.assertEqual(self.lk.english("නුවරඑළිය நுவெரலியா Nuwara Eliya"), "Nuwara Eliya")
+        self.assertEqual(self.lk.english("කොළඹ கொழும்பு Colombo"), "Colombo")
+
+    def test_published_shares_catch_a_column_read_off_by_one(self):
+        # A row read one cell to the left still sums to 100%, so only the
+        # Department's own printed percentages can catch it.
+        labels = ["Buddhist", "Hindu"]
+        printed = [None, None, 70.0, 30.0]
+        shifted = {"Buddhist": 30.0, "Hindu": 70.0}      # the two swapped
+        drift = self.lk.check_published_shares("Kandy", shifted, 100.0, printed, labels, {})
+        self.assertEqual(len(drift), 2)
+        self.assertIn("Kandy", drift[0])
+
+    def test_published_shares_accept_agreeing_figures(self):
+        labels = ["Buddhist", "Hindu"]
+        printed = [None, None, 70.0, 30.0]
+        counts = {"Buddhist": 70.0, "Hindu": 30.0}
+        self.assertEqual(
+            self.lk.check_published_shares("Kandy", counts, 100.0, printed, labels, {}), [])
+
+    def test_the_rename_map_is_applied_on_both_sides(self):
+        # The counts are keyed by display name and the printed row by the
+        # Department's spelling; checking one against the other without the
+        # rename reported every share as 0%.
+        labels = ["Sinhalees"]
+        printed = [None, None, 74.1]
+        counts = {"Sinhalese": 74.1}
+        self.assertEqual(
+            self.lk.check_published_shares("Sri Lanka", counts, 100.0, printed,
+                                           labels, self.lk.ETHNIC_LABELS), [])
+
+    def test_every_district_belongs_to_exactly_one_province(self):
+        members = [d for ds in self.lk.PROVINCES.values() for d in ds]
+        self.assertEqual(len(members), 25)
+        self.assertEqual(len(set(members)), 25)
+
+    def test_refuses_workbooks_that_miss_the_published_totals(self):
+        country = {"population": self.lk.NATIONAL_CONTROLS["_total"],
+                   "religion": {k: v for k, v in self.lk.NATIONAL_CONTROLS.items()
+                                if k != "_total"},
+                   "ethnicity": {}}
+        country["religion"]["Buddhist"] -= 5_000
+        with self.assertRaises(SystemExit) as caught:
+            self.lk.validate({"Sri Lanka": country})
+        self.assertIn("Buddhist", str(caught.exception))

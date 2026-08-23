@@ -75,7 +75,37 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Brazil | IBGE SIDRA tables 9514 / 9605 / 10086 | state, municipality | *Cor ou raça* is self-declared skin colour (branca, preta, parda, amarela, indígena) — not equivalent to ethnicity elsewhere. |
 | EU | Eurostat `demo_r_pjangrp3`, `demo_r_pjanind3` | NUTS-2, NUTS-3 | Population and age everywhere; **no** ethnicity or religion — those are national census questions and only some states ask them. |
 | Australia | ABS 2021 Census `C21_G14`, `C21_G08` | state, LGA, SA3 | Ancestry is multi-response (up to two per person), so shares are of responses and exceed 100%. No ethnicity question exists. |
+| Sri Lanka | Census of Population and Housing 2012, tables A1–A3 | province, district | Population, sex ratio, religion and ethnicity for all 25 districts and 9 provinces. |
 | India | Census 2011 tables C-01, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. |
+
+### Sri Lanka, and a check the source hands you
+
+The Department of Census and Statistics publishes the 2012 district tables as
+small trilingual workbooks — Sinhala, Tamil and English run together in one
+cell — with no API. They live in `data/raw/srilanka/` and are read from disk:
+A1 population by sex and age, A2 by ethnicity, A3 by religion.
+
+Each district occupies **two** rows: counts, then the Department's own published
+percentages. Only the counts are used, but the percentages are not ignored.
+`check_published_shares` recomputes every share from the counts and requires it
+to agree with what was printed beside it, within 0.1pp. That is worth more than
+it sounds: a column read one cell to the left still sums to 100%, so no
+internal consistency test would notice, while the published figures disagree
+immediately. It earned its keep on the first run by catching a rename applied to
+the counts but not to the lookup.
+
+`NATIONAL_CONTROLS` additionally pins the published national figures —
+21,781,800 people, Buddhist 15,199,093, Sinhalese 16,144,037 and seven more —
+and the 25 districts must sum to that total exactly.
+
+The nine provinces are not in these tables; they are summed from their
+districts, which is arithmetic on official counts rather than estimation, and
+the nine sums are required to reproduce the national population.
+
+**Language is a gap, and deliberately not inferred.** Sri Lanka does ask which
+languages a person can speak, but in a different table from these three.
+Deriving it from ethnicity would be wrong for roughly a tenth of the country:
+most Sri Lankan Moors speak Tamil.
 
 ### India, and trusting a community mirror
 
