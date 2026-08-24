@@ -73,5 +73,30 @@ jobs:
           # Headers first, then the leading bytes -- enough to tell a CSV from
           # an HTML error page without downloading a large file in full.
           curl -sSIL --max-time 60 "${{ inputs.target }}" | sed -n '1,25p'
+          curl -sSL --max-time 120 --max-filesize 20000000 \
+            -o /tmp/probe.body "${{ inputs.target }}"
           echo '--- first 4 KB ---'
-          curl -sSL --max-time 120 --max-filesize 20000000 "${{ inputs.target }}" | head -c 4096
+          head -c 4096 /tmp/probe.body
+          # Licensing is the gate on whether a source can be used at all, and it
+          # is never in the first 4 KB of a JavaScript-heavy page. Strip the
+          # markup and show the sentences that decide it.
+          echo
+          echo '--- lines mentioning terms of use ---'
+          python3 - <<'PYEOF'
+          import re, sys
+          raw = open("/tmp/probe.body", encoding="utf-8", errors="replace").read()
+          text = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", raw, flags=re.S | re.I)
+          text = re.sub(r"<[^>]+>", " ", text)
+          text = re.sub(r"&[a-z]+;", " ", text)
+          words = ("licen", "copyright", "terms of use", "citation", "cite",
+                   "permission", "redistribut", "attribution", "public domain",
+                   "creative commons", "free of charge", "may be used")
+          seen = set()
+          for sentence in re.split(r"(?<=[.!?])\s+|\n{2,}", text):
+              flat = " ".join(sentence.split())
+              if 20 < len(flat) < 400 and any(w in flat.lower() for w in words):
+                  if flat not in seen:
+                      seen.add(flat)
+                      print("  *", flat)
+          print(f"  ({len(seen)} matching sentences)")
+          PYEOF
