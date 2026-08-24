@@ -54,30 +54,51 @@ def main() -> int:
         print(f"  - {name}  ({info.file_size:,} bytes)")
 
     wanted = [w.strip().lower() for w in args.match.split(",") if w.strip()]
-    for name in names:
-        if not name.lower().endswith(".csv"):
+    csvs = [n for n in names if n.lower().endswith(".csv")]
+
+    # A release usually ships its column inventory beside the data. Reading the
+    # dictionary is how the columns get named without downloading a separate
+    # PDF, and taking the first CSV in the archive instead finds a lookup table
+    # of locality size bands.
+    for name in csvs:
+        if "diccionario" not in name.lower():
             continue
-        print(f"\n=== {name}")
+        print(f"\n=== dictionary: {name}")
         with archive.open(name) as fh:
-            text = io.TextIOWrapper(fh, encoding="latin-1", newline="")
-            reader = csv.reader(text)
-            header = next(reader)
-            print(f"  {len(header)} columns")
-            if wanted:
-                hits = [(i, c) for i, c in enumerate(header)
-                        if any(w in c.lower() for w in wanted)]
-                print(f"  {len(hits)} matching: {[c for _, c in hits][:40]}")
-            else:
-                print(f"  {header[:40]}")
-            for n, row in enumerate(reader):
-                if n >= args.rows:
-                    break
-                pairs = {header[i]: row[i] for i in range(min(len(header), len(row)))}
-                keys = [c for _, c in (hits if wanted else [(0, k) for k in header][:14])]
-                print("  row:", {k: pairs.get(k) for k in list(pairs)[:8]})
-                if wanted:
-                    print("   matched values:", {k: pairs.get(k) for k in keys[:12]})
-        break
+            rows = list(csv.reader(io.TextIOWrapper(fh, encoding="latin-1", newline="")))
+        print(f"  {len(rows)} entries")
+        for row in rows:
+            line = " | ".join(c for c in row if c)
+            if wanted and any(w in line.lower() for w in wanted):
+                print(f"  {line[:160]}")
+
+    data = max((n for n in csvs if "diccionario" not in n.lower()
+                and "catalogo" not in n.lower()),
+               key=lambda n: archive.getinfo(n).file_size, default=None)
+    if not data:
+        print("\n  no data member found")
+        return 0
+    print(f"\n=== data: {data}")
+    with archive.open(data) as fh:
+        reader = csv.reader(io.TextIOWrapper(fh, encoding="latin-1", newline=""))
+        header = [h.lstrip("\ufeff") for h in next(reader)]
+        print(f"  {len(header)} columns")
+        hits = [(i, c) for i, c in enumerate(header)
+                if any(w in c.lower() for w in wanted)] if wanted else []
+        print(f"  matching: {[c for _, c in hits][:60]}")
+        # The municipal total is the row where the locality code is zero; the
+        # rest of the file is individual localities, of which there are 190,000.
+        shown = 0
+        for row in reader:
+            cells = dict(zip(header, row))
+            if cells.get("LOC") not in ("0000", "0"):
+                continue
+            print(f"  municipio row: NOM_ENT={cells.get('NOM_ENT')} "
+                  f"NOM_MUN={cells.get('NOM_MUN')} POBTOT={cells.get('POBTOT')}")
+            print("   ", {c: cells.get(c) for _, c in hits[:14]})
+            shown += 1
+            if shown >= args.rows:
+                break
     return 0
 
 
