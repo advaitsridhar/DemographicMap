@@ -100,7 +100,10 @@ def page(url: str, args: argparse.Namespace) -> None:
     try:
         html = fetch(url)
     except Exception as err:                      # noqa: BLE001
-        print(f"  unreachable: {type(err).__name__}: {str(err)[:120]}")
+        # The whole message, not a slice of it. A TLS failure names the host
+        # the certificate *is* valid for, and that name is the finding -- cut
+        # at 120 characters it read "certificate is not valid f".
+        print(f"  unreachable: {type(err).__name__}: {str(err)[:400]}")
         return
     print(f"  {len(html):,} bytes")
 
