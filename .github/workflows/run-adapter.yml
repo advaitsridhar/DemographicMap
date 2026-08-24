@@ -58,6 +58,19 @@ jobs:
       - name: Run the adapter
         env:
           ADAPTER: ${{ inputs.command }}
+          # Keys reach the adapter through the environment and never through a
+          # command line, so they cannot appear in a log or in the run's own
+          # recorded inputs. An unset secret expands to the empty string, so
+          # listing several candidate names costs nothing and saves a round
+          # trip when the secret is not spelled the way the script guessed.
+          NZ_STATS_API: ${{ secrets.NZ_STATS_API }}
+          STATS_NZ_API_KEY: ${{ secrets.STATS_NZ_API_KEY }}
+          STATSNZ_API_KEY: ${{ secrets.STATSNZ_API_KEY }}
+          STATS_NZ_KEY: ${{ secrets.STATS_NZ_KEY }}
+          NZ_STATS_API_KEY: ${{ secrets.NZ_STATS_API_KEY }}
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+          DEMOGRAPHICMAP: ${{ secrets.DEMOGRAPHICMAP }}
+
         # xargs rather than an unquoted expansion: the command is a dispatch
         # input, and a URL with a query string carries "&", which bash reads as
         # "background this and run the rest". A probe URL ending "&rows=25" ran
@@ -66,7 +79,17 @@ jobs:
         # the pieces to python directly, so no shell metacharacter in an input
         # is interpreted -- which also means a dispatch input cannot smuggle a
         # second command into this runner.
-        run: printf '%s' "$ADAPTER" | xargs python3 -m
+        #
+        # The output is also written to a file the Commit step picks up. A
+        # probe's whole value is what it printed, and reading that back out of
+        # the Actions log means pulling a hundred lines of runner cleanup to
+        # find twenty lines of answer. pipefail so a failing adapter still
+        # fails the step rather than being masked by tee's exit code.
+        run: |
+          set -o pipefail
+          mkdir -p data/processed
+          printf '%s' "$ADAPTER" | xargs python3 -m 2>&1 \
+            | tee data/processed/last-run.log
 
       - name: Commit
         if: inputs.commit != 'false'

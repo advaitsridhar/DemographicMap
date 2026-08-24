@@ -210,6 +210,16 @@ def main() -> int:
         records.extend(got)
         time.sleep(args.sleep)
 
+    # An empty file is not an answer. When every country asked for failed --
+    # a Wikidata timeout looks exactly like a country with no units -- writing
+    # [] would leave an artefact that reads as "checked, found nothing" and
+    # would quietly replace a good file from a previous run.
+    if not records and missing:
+        raise SystemExit(
+            f"every query failed ({', '.join(missing[:30])}); nothing written. "
+            "Wikidata's endpoint rate-limits and times out under load; retry "
+            "rather than treating this as an empty result.")
+
     out = args.out or PROCESSED / f"wikidata_{args.level}.json"
     write_json(out, records)
     if missing:

@@ -34,8 +34,10 @@ HEADERS = {
 }
 
 
-def fetch(url: str) -> str:
-    req = urllib.request.Request(url, headers={**HEADERS, "Accept-Encoding": "gzip"})
+def fetch(url: str, accept: str = "") -> str:
+    extra = {"Accept": accept} if accept else {}
+    req = urllib.request.Request(
+        url, headers={**HEADERS, **extra, "Accept-Encoding": "gzip"})
     with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
         raw = resp.read()
         if resp.headers.get("Content-Encoding") == "gzip":
@@ -67,7 +69,12 @@ def head(url: str) -> None:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("url")
+    ap.add_argument("url", nargs="+",
+                    help="one or more URLs. Separate arguments rather than a "
+                         "comma-joined list, because an SDMX data key contains "
+                         "commas -- splitting on them tore "
+                         "'data/STATSNZ,CEN23_ECI_017,1.0/all' into three "
+                         "unreachable fragments.")
     ap.add_argument("--match", default="",
                     help="comma-separated substrings; a link matches on href or text")
     ap.add_argument("--head", action="store_true",
@@ -75,6 +82,9 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=40)
     ap.add_argument("--check", type=int, default=0,
                     help="also fetch headers for the first N matching links")
+    ap.add_argument("--accept", default="",
+                    help="Accept header, for an API that content-negotiates "
+                         "its format (SDMX, JSON-stat)")
     ap.add_argument("--raw", type=int, default=0,
                     help="print the first N bytes of the body instead of "
                          "parsing links; for JSON endpoints and catalogue APIs")
@@ -85,15 +95,15 @@ def main() -> int:
         # JavaScript -- INEGI's census page is 5 KB of shell and no anchors --
         # leaves testing candidate URLs as the only way to find the files, and
         # doing that one CI run at a time is unaffordable.
-        for url in [u.strip() for u in args.url.split(",") if u.strip()]:
+        for url in args.url:
             print(url)
             head(url)
         return 0
 
-    # A list here for the same reason as --head: a landing page is a guess too,
-    # and finding out one CI run at a time which of half a dozen candidates is
-    # the real index costs more than fetching all of them.
-    for url in [u.strip() for u in args.url.split(",") if u.strip()]:
+    # Several pages in one run for the same reason as --head: a landing page is
+    # a guess too, and finding out one CI run at a time which of half a dozen
+    # candidates is the real index costs more than fetching all of them.
+    for url in args.url:
         page(url, args)
     return 0
 
@@ -101,7 +111,7 @@ def main() -> int:
 def page(url: str, args: argparse.Namespace) -> None:
     print(f"page: {url}")
     try:
-        html = fetch(url)
+        html = fetch(url, args.accept)
     except Exception as err:                      # noqa: BLE001
         # The whole message, not a slice of it. A TLS failure names the host
         # the certificate *is* valid for, and that name is the finding -- cut

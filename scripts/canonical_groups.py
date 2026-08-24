@@ -45,6 +45,14 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "Catholic", "Roman Catholic", "Católica Apostólica Romana",
         "Protestant", "Evangélicas", "Orthodox Christian", "Other Christian",
         "Latter-day Saints", "Jehovah's Witnesses",
+        # Stats NZ publishes twelve Christian denominations and no Christian
+        # total, so these are siblings and summing them is right. "Christian
+        # nfd" is people who answered "Christian" without saying which -- a
+        # residual inside Christianity, not a parent of it.
+        "Christian nfd", "Adventist", "Anglican", "Baptist", "Catholicism",
+        "Evangelical, Born Again and Fundamentalist", "Methodist",
+        "Pentecostal", "Presbyterian, Congregational and Reformed",
+        "Other Christian religions",
     ),
     "Islam": ("Islam", "Muslim"),
     "Hinduism": ("Hindu", "Hinduism"),
@@ -97,6 +105,17 @@ LANGUAGE: dict[str, tuple[str, ...]] = {
     # call Newari.
     "Newari": ("Newari", "Nepalbhasha(Newari)", "Nepalbhasha (Newari)"),
     "Nepali": ("Nepali",),
+    # te reo Maori. Stats NZ writes it "Māori" in both the language and the
+    # ethnicity classification; they are different questions and only the
+    # language one is folded here, because the ethnicity table is deliberately
+    # empty.
+    "Māori": ("Māori", "Maori", "te reo Māori"),
+    "Samoan": ("Samoan",),
+    "Tongan": ("Tongan",),
+    "Spanish": ("Spanish",),
+    "Tagalog": ("Tagalog", "Filipino"),
+    "Panjabi": ("Panjabi", "Punjabi"),
+    "Afrikaans": ("Afrikaans",),
     "Maithili": ("Maithili",),
     "Bhojpuri": ("Bhojpuri",),
 }
