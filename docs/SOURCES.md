@@ -360,11 +360,38 @@ sheet dates itself 2022 and the suggested citation on usreligioncensus.org says
 **It is a different kind of number.** The study counts *adherents reported by
 372 religious bodies*, not people answering a question about themselves. It
 reached 161,009,516 people across 3,141 counties — about **48.6%** of the
-population. The remaining half is **uncounted, not unaffiliated**: the study has
-no way to observe someone who belongs to nothing, and a body that declined to
-report leaves its members invisible. Shares therefore sum to roughly 49%, not
-100%, and are marked `religion_basis: adherents` to keep them from being read
-as the self-identification percentages every other country here uses.
+population. Shares are marked `religion_basis: adherents` to keep them from
+being read as the self-identification percentages every other country here uses.
+
+The rest of each area appears as one category, **"Unaffiliated or not
+reported"**, so the composition sums to 100%. That label is deliberately two
+things at once: it mixes people who belong to nothing with members of bodies
+that declined to report, and the study cannot separate them. Naming it that way
+is the only honest option, because the alternatives are both wrong — calling it
+"no religion" invents a measurement nobody took, and leaving it out invites the
+reader to assume the bar describes everyone.
+
+**It must not be rescaled to 100%.** The obvious-looking fix — treat the study
+as a sample and scale each area's shares up until they fill the bar — fails for
+two reasons. It is not a sample: it enumerates religious *bodies*, with no
+sampling frame over people and no weights, so there is nothing to extrapolate
+from. And coverage is not a constant to be divided out. It ranges from **27.3%
+of New Hampshire to 76.2% of Utah**:
+
+| Lowest coverage | | Highest coverage | |
+|---|---|---|---|
+| New Hampshire | 27.3% | Utah | 76.2% |
+| Maine | 30.7% | Alabama | 63.8% |
+| Oregon | 33.0% | Louisiana | 63.3% |
+| Montana | 34.9% | Oklahoma | 61.0% |
+
+That spread is the most informative thing in the dataset. Rescaling would make
+New Hampshire and Utah look equally religious and would assert that nobody in
+the United States is unaffiliated.
+
+Thirty counties report *more* adherents than residents — rural congregations
+drawing members from outside the county, King County, Texas at 452% — so the
+remainder is only added where it is positive.
 
 ### Traditions, not denominations
 
