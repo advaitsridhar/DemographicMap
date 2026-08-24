@@ -651,7 +651,13 @@ def main() -> int:
             a2[norm(entity["name"])].append(entity)
         hit = miss = ambiguous = 0
         for row in rows:
-            key = {"name": row.get("name") or "", "parent_name": row.get("parent_name")}
+            # Aliases travel with the key. They were being dropped here, which
+            # made every alias an adapter declared for an admin-2 row or its
+            # parent dead weight -- the matcher never saw them.
+            key = {"name": row.get("name") or "",
+                   "aliases": row.get("aliases") or [],
+                   "parent_name": row.get("parent_name"),
+                   "parent_aliases": row.get("parent_aliases") or []}
             if row.get("level") == "admin1":
                 entity, how = match_name(key, a1)
             else:

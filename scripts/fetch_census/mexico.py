@@ -343,6 +343,7 @@ def build(levels: set[str]) -> dict[str, list[dict[str, Any]]]:
             country="MEX",
             # Municipio names repeat across states -- there is a Hidalgo in
             # several -- so the state travels with the row for the matcher.
+            aliases=None if municipal else STATE_ALIASES.get(state),
             parent_name=state if municipal else None,
             parent_aliases=STATE_ALIASES.get(state) if municipal else None,
             codes={"inegi": code},

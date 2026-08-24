@@ -79,7 +79,74 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Singapore | Census 2020 + GHS 2015 planning-area tables | planning area |Ethnicity, religion and language for the planning areas, on three different bases. |
 | Singapore | SingStat Table Builder M810771 | planning region | Resident population, sex ratio and a derived median age for the 5 regions. Religion, ethnicity and language are collected but not published at this geography. |
 | Sri Lanka | Census of Population and Housing 2024, tables A1–A3 | province, district | Population, sex ratio, religion and ethnicity for all 25 districts and 9 provinces. |
+| Mexico | INEGI Censo de Población y Vivienda 2020, ITER | state, municipality | Religion, indigenous-language speaking and Afro-descendant identification for 2,453 of 2,457 municipios. All from the *cuestionario básico*, so these are counts, not sample estimates. |
 | India | Census 2011 tables C-01, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. |
+
+### Mexico: one file, four levels of geography
+
+INEGI publishes the 2020 census as ITER — *Principales resultados por
+localidad* — a single CSV covering every locality, municipio, state and the
+nation in one table, distinguished only by the code columns. It carries three
+of the fields this map wants, and all three come from the *cuestionario
+básico*, the short form asked of everyone. They are therefore counts rather
+than sample estimates, which is the only reason Mexico can be shown at
+municipio level at all: an extended-questionnaire field would have a sampling
+error at that geography large enough to make the colours meaningless.
+
+**The nation is all three codes zero, not just the first.** ENTIDAD `00` looks
+like the country, and it is — but it also carries national sub-totals, one row
+per aggregation. Treating every `00` row as the nation ran the validation check
+against a row holding 250,354 people instead of 126 million. This is the same
+trap as the ABS "Christianity Total" row and the US Religion Census grand
+total, and it is invisible in the shares: sub-totals are internally consistent,
+so only an independently published figure catches it. A nation now requires
+ENTIDAD, MUN and LOC all zero; a state requires MUN and LOC zero; a municipio
+requires LOC zero.
+
+**The columns are read from the archive's own dictionary.** The release ships
+its data dictionary beside the data, so the religion columns are found by
+matching descriptions rather than hardcoding `PCATOLICA` and guessing at the
+rest. Matching is accent-blind and tries UTF-8 before latin-1, because the
+archive mixes encodings — read as latin-1 throughout, a UTF-8 member comes back
+as `religiÃ³n` and every match fails silently, which is exactly what happened.
+
+**Three fields, three denominators.**
+
+| Field | Question | Base |
+|---|---|---|
+| Religion | Católica / Protestante o cristiana evangélica / Otras religiones / Sin religión | everyone |
+| Language | Speaks an indigenous language, yes or no | population aged 3 and over |
+| Ethnicity | Identifies as Afro-Mexican or Afro-descendant, yes or no | everyone |
+
+Religion's four groups are asked of everyone, so the remainder is people who
+did not state one; it is named rather than dropped, and the bar reaches 100%
+without implying the remainder is irreligious. Language is not a composition of
+languages: the census records *whether* a person speaks an indigenous language
+in this table, not which one, so the map shows a yes/no split and says so.
+Ethnicity is a single self-identification question, so "Not Afro-descendant"
+means "did not identify as Afro-descendant" and not membership of anything
+else — it is not comparable with other countries' ethnicity categories.
+
+**Validated against three published national figures**, not against itself:
+126,014,024 people, 7,364,645 speakers of an indigenous language aged 3 and
+over, and 2,576,213 people identifying as Afro-descendant. A control derived
+from the same file would only prove the arithmetic; these come from INEGI's own
+published summary, so they test the reading.
+
+**Where the four gaps are.** Oaxaca has two municipios called San Juan
+Mixtepec and two called San Pedro Mixtepec. CGAZ distinguishes them by the
+*distrito* — "San Juan Mixtepec -Dto. 08 -" — and INEGI distinguishes them by
+code, `20208` and `20209`, while giving both the same name. Neither file
+carries the other's discriminator, so the join is refused: an unmatched
+municipio is a visible gap, a mis-matched one would be invisible and would put
+one community's figures on the other's territory.
+
+Mexico City needed the opposite fix. CGAZ still calls it "Distrito Federal", a
+name it lost in 2016, so its sixteen alcaldías could not be scoped to their
+parent; seven of them share a name with a municipio elsewhere — Benito Juárez
+is also in Quintana Roo, Cuauhtémoc in Chihuahua and Colima — and were being
+refused as ambiguous. The adapter declares the old name as an alias, which is
+what the matcher needed to see them as one place.
 
 ### Switzerland: a survey, and up to three languages per person
 
