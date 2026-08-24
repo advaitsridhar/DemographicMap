@@ -1,0 +1,2914 @@
+[
+  {
+    "id": "MEX-01000",
+    "level": "admin1",
+    "name": "Aguascalientes",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1425607,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 89.3,
+        "count": 1272419
+      },
+      {
+        "group": "No religion",
+        "pct": 5.2,
+        "count": 74439
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 5.1,
+        "count": 73359
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 3490
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1900
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 99.8,
+        "count": 1349696
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 0.2,
+        "count": 2539
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.4,
+        "count": 1403182
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.6,
+        "count": 22425
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "01000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-02000",
+    "level": "admin1",
+    "name": "Baja California",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3769020,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 62.0,
+        "count": 2336986
+      },
+      {
+        "group": "No religion",
+        "pct": 20.9,
+        "count": 789177
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 16.4,
+        "count": 616812
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 20367
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 5678
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 98.6,
+        "count": 3561714
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 1.4,
+        "count": 49130
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.3,
+        "count": 3704658
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.7,
+        "count": 64362
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "02000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-03000",
+    "level": "admin1",
+    "name": "Baja California Sur",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 798447,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 73.6,
+        "count": 587796
+      },
+      {
+        "group": "No religion",
+        "pct": 14.5,
+        "count": 116141
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 11.0,
+        "count": 88010
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 5375
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1125
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 98.2,
+        "count": 745061
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 1.8,
+        "count": 13581
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 96.7,
+        "count": 772117
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 3.3,
+        "count": 26330
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "03000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-04000",
+    "level": "admin1",
+    "name": "Campeche",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 928363,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 60.1,
+        "count": 558124
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 24.3,
+        "count": 226028
+      },
+      {
+        "group": "No religion",
+        "pct": 14.9,
+        "count": 137884
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 5302
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1025
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 89.6,
+        "count": 786727
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 10.4,
+        "count": 91801
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 97.9,
+        "count": 909044
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 2.1,
+        "count": 19319
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "04000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-05000",
+    "level": "admin1",
+    "name": "Coahuila de Zaragoza",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3146771,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 74.9,
+        "count": 2357324
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 13.4,
+        "count": 421206
+      },
+      {
+        "group": "No religion",
+        "pct": 11.3,
+        "count": 355798
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 10144
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 2299
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 99.8,
+        "count": 2974717
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 0.2,
+        "count": 5527
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.5,
+        "count": 3100795
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.5,
+        "count": 45976
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "05000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-06000",
+    "level": "admin1",
+    "name": "Colima",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 731391,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 83.5,
+        "count": 610645
+      },
+      {
+        "group": "No religion",
+        "pct": 8.1,
+        "count": 59254
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 7.9,
+        "count": 57884
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 2796
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 812
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 99.3,
+        "count": 694611
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 0.7,
+        "count": 5210
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.1,
+        "count": 717817
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.9,
+        "count": 13574
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "06000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-07000",
+    "level": "admin1",
+    "name": "Chiapas",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5543828,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 53.9,
+        "count": 2985644
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 32.4,
+        "count": 1795861
+      },
+      {
+        "group": "No religion",
+        "pct": 12.9,
+        "count": 713462
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 33432
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.3,
+        "count": 15429
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 71.8,
+        "count": 3722281
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 28.2,
+        "count": 1459648
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 99.0,
+        "count": 5487296
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.0,
+        "count": 56532
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "07000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-08000",
+    "level": "admin1",
+    "name": "Chihuahua",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3741869,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 72.5,
+        "count": 2712366
+      },
+      {
+        "group": "No religion",
+        "pct": 14.3,
+        "count": 533329
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 12.7,
+        "count": 475603
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 17265
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 3306
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 96.9,
+        "count": 3459782
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 3.1,
+        "count": 110498
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.4,
+        "count": 3680951
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.6,
+        "count": 60918
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "08000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-09000",
+    "level": "admin1",
+    "name": "Ciudad de México",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9209944,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 75.9,
+        "count": 6988016
+      },
+      {
+        "group": "No religion",
+        "pct": 16.0,
+        "count": 1472848
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 7.3,
+        "count": 668246
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.6,
+        "count": 55245
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 25589
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 98.6,
+        "count": 8808014
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 1.4,
+        "count": 125153
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.0,
+        "count": 9023030
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 2.0,
+        "count": 186914
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "09000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-10000",
+    "level": "admin1",
+    "name": "Durango",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1832650,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 83.0,
+        "count": 1521197
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 9.2,
+        "count": 168665
+      },
+      {
+        "group": "No religion",
+        "pct": 7.4,
+        "count": 135125
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 6095
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1568
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 97.3,
+        "count": 1686440
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 2.7,
+        "count": 47242
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 99.1,
+        "count": 1815339
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 0.9,
+        "count": 17311
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "10000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-11000",
+    "level": "admin1",
+    "name": "Guanajuato",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6166934,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 90.8,
+        "count": 5601990
+      },
+      {
+        "group": "No religion",
+        "pct": 4.6,
+        "count": 283625
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 4.1,
+        "count": 255840
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 20236
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 5243
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 99.8,
+        "count": 5826909
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 0.2,
+        "count": 14048
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.2,
+        "count": 6058128
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.8,
+        "count": 108806
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "11000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-12000",
+    "level": "admin1",
+    "name": "Guerrero",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3540685,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 80.4,
+        "count": 2845506
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 10.1,
+        "count": 358158
+      },
+      {
+        "group": "No religion",
+        "pct": 8.9,
+        "count": 316012
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 18129
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 2880
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 84.5,
+        "count": 2813275
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 15.5,
+        "count": 515487
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 91.4,
+        "count": 3236762
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 8.6,
+        "count": 303923
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "12000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-13000",
+    "level": "admin1",
+    "name": "Hidalgo",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3082841,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 80.3,
+        "count": 2475984
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 9.8,
+        "count": 301786
+      },
+      {
+        "group": "No religion",
+        "pct": 9.5,
+        "count": 291743
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 6785
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 6543
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 87.7,
+        "count": 2582268
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 12.3,
+        "count": 362629
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.4,
+        "count": 3034148
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.6,
+        "count": 48693
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "13000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-14000",
+    "level": "admin1",
+    "name": "Jalisco",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8348151,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 89.2,
+        "count": 7448776
+      },
+      {
+        "group": "No religion",
+        "pct": 5.0,
+        "count": 417243
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 4.7,
+        "count": 396295
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.8,
+        "count": 64273
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.3,
+        "count": 21564
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 99.2,
+        "count": 7845992
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 0.8,
+        "count": 66963
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.3,
+        "count": 8208475
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.7,
+        "count": 139676
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "14000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-15000",
+    "level": "admin1",
+    "name": "México",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 16992418,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 78.6,
+        "count": 13363922
+      },
+      {
+        "group": "No religion",
+        "pct": 12.7,
+        "count": 2163910
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 7.9,
+        "count": 1344725
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.4,
+        "count": 61487
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 58374
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 97.4,
+        "count": 15842455
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 2.6,
+        "count": 417603
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.3,
+        "count": 16696154
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.7,
+        "count": 296264
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "15000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-16000",
+    "level": "admin1",
+    "name": "Michoacán de Ocampo",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4748846,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 88.9,
+        "count": 4221742
+      },
+      {
+        "group": "No religion",
+        "pct": 5.5,
+        "count": 262920
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 5.2,
+        "count": 248750
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 12010
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 3424
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 96.6,
+        "count": 4338573
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 3.4,
+        "count": 154943
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.5,
+        "count": 4675422
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.5,
+        "count": 73424
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "16000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-17000",
+    "level": "admin1",
+    "name": "Morelos",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1971520,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 71.0,
+        "count": 1399556
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 14.3,
+        "count": 282384
+      },
+      {
+        "group": "No religion",
+        "pct": 14.3,
+        "count": 282418
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 3702
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 3460
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 98.0,
+        "count": 1849653
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 2.0,
+        "count": 38110
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.1,
+        "count": 1933189
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.9,
+        "count": 38331
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "17000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-18000",
+    "level": "admin1",
+    "name": "Nayarit",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1235456,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 83.3,
+        "count": 1028909
+      },
+      {
+        "group": "No religion",
+        "pct": 8.2,
+        "count": 101096
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 8.0,
+        "count": 98696
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.3,
+        "count": 3862
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 2893
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 94.1,
+        "count": 1105670
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 5.9,
+        "count": 69069
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 99.2,
+        "count": 1225040
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 0.8,
+        "count": 10416
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "18000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-19000",
+    "level": "admin1",
+    "name": "Nuevo León",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5784442,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 77.7,
+        "count": 4492947
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 11.9,
+        "count": 690097
+      },
+      {
+        "group": "No religion",
+        "pct": 9.7,
+        "count": 561584
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 34720
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 5094
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 98.6,
+        "count": 5430199
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 1.4,
+        "count": 77945
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.3,
+        "count": 5686839
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.7,
+        "count": 97603
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "19000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-20000",
+    "level": "admin1",
+    "name": "Oaxaca",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4132148,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 75.5,
+        "count": 3118763
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 15.8,
+        "count": 653533
+      },
+      {
+        "group": "No religion",
+        "pct": 8.3,
+        "count": 343027
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 13585
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 3240
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 68.8,
+        "count": 2695745
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 31.2,
+        "count": 1221555
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 95.3,
+        "count": 3937674
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 4.7,
+        "count": 194474
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "20000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-21000",
+    "level": "admin1",
+    "name": "Puebla",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6583278,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 84.3,
+        "count": 5547167
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 8.4,
+        "count": 555536
+      },
+      {
+        "group": "No religion",
+        "pct": 7.0,
+        "count": 458039
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 10518
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 12018
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 90.1,
+        "count": 5622960
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 9.9,
+        "count": 615622
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.3,
+        "count": 6469333
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.7,
+        "count": 113945
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "21000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-22000",
+    "level": "admin1",
+    "name": "Querétaro",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2368467,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 85.5,
+        "count": 2025357
+      },
+      {
+        "group": "No religion",
+        "pct": 8.3,
+        "count": 197324
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 5.6,
+        "count": 131596
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 10238
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 3952
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 98.6,
+        "count": 2222031
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 1.4,
+        "count": 31383
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.2,
+        "count": 2325031
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.8,
+        "count": 43436
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "22000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-23000",
+    "level": "admin1",
+    "name": "Quintana Roo",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1857985,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 54.7,
+        "count": 1016131
+      },
+      {
+        "group": "No religion",
+        "pct": 23.0,
+        "count": 427109
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 20.7,
+        "count": 384207
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.4,
+        "count": 26046
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 4492
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 88.3,
+        "count": 1547621
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 11.7,
+        "count": 204949
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 97.2,
+        "count": 1805720
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 2.8,
+        "count": 52265
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "23000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-24000",
+    "level": "admin1",
+    "name": "San Luis Potosí",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2822255,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 85.6,
+        "count": 2416597
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 8.1,
+        "count": 227847
+      },
+      {
+        "group": "No religion",
+        "pct": 6.0,
+        "count": 168957
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 6336
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 2518
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 91.4,
+        "count": 2456466
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 8.6,
+        "count": 231213
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.0,
+        "count": 2766918
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 2.0,
+        "count": 55337
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "24000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-25000",
+    "level": "admin1",
+    "name": "Sinaloa",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3026943,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 78.4,
+        "count": 2372823
+      },
+      {
+        "group": "No religion",
+        "pct": 12.7,
+        "count": 385911
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 8.6,
+        "count": 260384
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 5997
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1828
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 98.8,
+        "count": 2849776
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 1.2,
+        "count": 35539
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.6,
+        "count": 2984747
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.4,
+        "count": 42196
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "25000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-26000",
+    "level": "admin1",
+    "name": "Sonora",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2944840,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 76.5,
+        "count": 2252402
+      },
+      {
+        "group": "No religion",
+        "pct": 12.0,
+        "count": 353863
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 11.2,
+        "count": 329449
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 7557
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1569
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 97.8,
+        "count": 2755013
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 2.2,
+        "count": 62808
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.5,
+        "count": 2901330
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.5,
+        "count": 43510
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "26000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-27000",
+    "level": "admin1",
+    "name": "Tabasco",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2402598,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 62.2,
+        "count": 1493962
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 27.0,
+        "count": 648724
+      },
+      {
+        "group": "No religion",
+        "pct": 10.6,
+        "count": 254593
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 4284
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 1035
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 96.0,
+        "count": 2192358
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 4.0,
+        "count": 91025
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.4,
+        "count": 2365045
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.6,
+        "count": 37553
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "27000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-28000",
+    "level": "admin1",
+    "name": "Tamaulipas",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3527735,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 67.9,
+        "count": 2394619
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 17.4,
+        "count": 615505
+      },
+      {
+        "group": "No religion",
+        "pct": 14.3,
+        "count": 503067
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 11972
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 2572
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 99.3,
+        "count": 3344472
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 0.7,
+        "count": 22651
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.8,
+        "count": 3484114
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.2,
+        "count": 43621
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "28000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-29000",
+    "level": "admin1",
+    "name": "Tlaxcala",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1342977,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 85.0,
+        "count": 1142076
+      },
+      {
+        "group": "No religion",
+        "pct": 6.9,
+        "count": 92314
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 6.3,
+        "count": 84419
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.7,
+        "count": 22469
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1699
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 97.8,
+        "count": 1230919
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 2.2,
+        "count": 27174
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 98.7,
+        "count": 1324883
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.3,
+        "count": 18094
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "29000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-30000",
+    "level": "admin1",
+    "name": "Veracruz de Ignacio de la Llave",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8062579,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 75.1,
+        "count": 6053044
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 14.8,
+        "count": 1191127
+      },
+      {
+        "group": "No religion",
+        "pct": 9.9,
+        "count": 800425
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 7912
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 10071
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 91.4,
+        "count": 7052860
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 8.6,
+        "count": 663503
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 97.3,
+        "count": 7847144
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 2.7,
+        "count": 215435
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "30000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-31000",
+    "level": "admin1",
+    "name": "Yucatán",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2320898,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 74.3,
+        "count": 1724057
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 16.0,
+        "count": 370398
+      },
+      {
+        "group": "No religion",
+        "pct": 9.3,
+        "count": 215414
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 7317
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 3712
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 76.3,
+        "count": 1690839
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 23.7,
+        "count": 525092
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 97.0,
+        "count": 2251299
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 3.0,
+        "count": 69599
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "31000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  },
+  {
+    "id": "MEX-32000",
+    "level": "admin1",
+    "name": "Zacatecas",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1622138,
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 92.3,
+        "count": 1497371
+      },
+      {
+        "group": "Protestant and evangelical",
+        "pct": 4.6,
+        "count": 74177
+      },
+      {
+        "group": "No religion",
+        "pct": 2.9,
+        "count": 46465
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 3431
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 694
+      }
+    ],
+    "language": [
+      {
+        "group": "Does not speak an indigenous language",
+        "pct": 99.7,
+        "count": 1526842
+      },
+      {
+        "group": "Speaks an indigenous language",
+        "pct": 0.3,
+        "count": 5005
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Not Afro-descendant",
+        "pct": 99.0,
+        "count": 1606187
+      },
+      {
+        "group": "Afro-Mexican or Afro-descendant",
+        "pct": 1.0,
+        "count": 15951
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/language/ethnicity",
+        "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "32000"
+    },
+    "religion_year": 2020,
+    "language_year": 2020,
+    "language_note": "The census records whether a person aged 3 or over speaks an indigenous language, not which one, so this is a yes/no split rather than a composition of languages. Which language is asked, and published in other INEGI tables, but not in this one.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+  }
+]
