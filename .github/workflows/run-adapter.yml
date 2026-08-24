@@ -9,6 +9,14 @@ name: Run one adapter
 # It exists because the build sandbox cannot reach statistical hosts. The
 # adapter has to run somewhere with open egress, and this is that somewhere.
 on:
+  # workflow_dispatch is only offered for workflows already on the default
+  # branch, so a new one cannot be dispatched from the branch that adds it --
+  # which is exactly when it is needed. Pushing this file runs it with the
+  # command below; once this is on main the dispatch form takes over and the
+  # default is just a fallback.
+  push:
+    paths:
+      - ".github/workflows/run-adapter.yml"
   workflow_dispatch:
     inputs:
       command:
@@ -39,13 +47,17 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Run the adapter
-        run: python3 -m ${{ inputs.command }}
+        env:
+          ADAPTER: ${{ inputs.command || 'scripts.fetch_census.mexico --level municipality' }}
+        run: python3 -m $ADAPTER
 
       - name: Rebuild site data
         run: python3 scripts/build_entities.py
 
       - name: Commit
-        if: inputs.commit
+        if: inputs.commit != 'false'
+        env:
+          ADAPTER: ${{ inputs.command || 'scripts.fetch_census.mexico --level municipality' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -55,5 +67,5 @@ jobs:
             exit 0
           fi
           git diff --cached --stat >> "$GITHUB_STEP_SUMMARY"
-          git commit -m "Data: ${{ inputs.command }}"
+          git commit -m "Data: $ADAPTER"
           git push origin HEAD:${{ github.ref_name }}
