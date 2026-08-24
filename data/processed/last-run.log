@@ -1,19 +1,8 @@
-  key from NZ_STATS_API (32 characters)
-  17 regional councils, 89 territorial authorities and local boards
-  CEN23_ECI_017 [2023...9999.99]: 70,784 observations
-  CEN23_ECI_017 [2023..999..99]: 108,704 observations
-  CEN23_ECI_011 [2023...9999.99]: 50,560 observations
-  religion No religion: 2,576,049 vs published 2,576,049 (0.0000%)
-  religion Catholicism: 449,466 vs published 449,466 (0.0000%)
-  religion Hinduism: 144,753 vs published 144,753 (0.0000%)
-  religion Islam: 75,138 vs published 75,138 (0.0000%)
-  ethnicity European: 3,383,742 vs published 3,383,742 (0.0000%)
-  ethnicity Māori: 887,493 vs published 887,493 (0.0000%)
-  ethnicity Asian: 861,576 vs published 861,576 (0.0000%)
-  ethnicity Pacific Peoples: 442,632 vs published 442,632 (0.0000%)
-  language English: 4,750,056 vs published 4,750,056 (0.0000%)
-  language Māori: 213,849 vs published 213,849 (0.0000%)
-  language Samoan: 110,541 vs published 110,541 (0.0000%)
-  wrote data/processed/nz_region.json (115 kB)
-  wrote data/processed/nz_territorial.json (598 kB)
-  17 regions, 89 territorial authorities
+  wrote data/raw/codes/wikidata_countries.json (3 kB)
+  retry 1/4 after 2s :: https://query.wikidata.org/sparql?format=json&query=%0ASELECT+%3Funit+%3FunitLabel+%3Fparent+%3FparentLabel+%3Fpop+%3FpopTime+%3FcapitalLabel+%3Fcoord+WHERE+%7B%0A++VALUES+%3Fcountry+%7B+wd%3AQ664+%7D%0A++%3Fcountry+wdt%3AP150+%3Fparent+.%0A++%3Funit+wdt%3AP131+%3Fparent+.%0A++%3Funit+wdt%3AP31%2Fwdt%3AP279%2A+wd%3AQ56061+.++++++++%23+instance+of+an+administrative+territorial+entity%0A++OPTIONAL+%7B+%3Funit+p%3AP1082+%3FpopSt+.%0A+++++++++++++%3FpopSt+ps%3AP1082+%3Fpop+.%0A+++++++++++++OPTIONAL+%7B+%3FpopSt+pq%3AP585+%3FpopTime+.+%7D+%7D%0A++OPTIONAL+%7B+%3Funit+wdt%3AP36+%3Fcapital+.+%7D%0A++OPTIONAL+%7B+%3Funit+wdt%3AP625+%3Fcoord+.+%7D%0A++SERVICE+wikibase%3Alabel+%7B+bd%3AserviceParam+wikibase%3Alanguage+%22en%2Cmul%22.+%7D%0A%7D%0A :: HTTP Error 504: Gateway Timeout
+  retry 2/4 after 4s :: https://query.wikidata.org/sparql?format=json&query=%0ASELECT+%3Funit+%3FunitLabel+%3Fparent+%3FparentLabel+%3Fpop+%3FpopTime+%3FcapitalLabel+%3Fcoord+WHERE+%7B%0A++VALUES+%3Fcountry+%7B+wd%3AQ664+%7D%0A++%3Fcountry+wdt%3AP150+%3Fparent+.%0A++%3Funit+wdt%3AP131+%3Fparent+.%0A++%3Funit+wdt%3AP31%2Fwdt%3AP279%2A+wd%3AQ56061+.++++++++%23+instance+of+an+administrative+territorial+entity%0A++OPTIONAL+%7B+%3Funit+p%3AP1082+%3FpopSt+.%0A+++++++++++++%3FpopSt+ps%3AP1082+%3Fpop+.%0A+++++++++++++OPTIONAL+%7B+%3FpopSt+pq%3AP585+%3FpopTime+.+%7D+%7D%0A++OPTIONAL+%7B+%3Funit+wdt%3AP36+%3Fcapital+.+%7D%0A++OPTIONAL+%7B+%3Funit+wdt%3AP625+%3Fcoord+.+%7D%0A++SERVICE+wikibase%3Alabel+%7B+bd%3AserviceParam+wikibase%3Alanguage+%22en%2Cmul%22.+%7D%0A%7D%0A :: HTTP Error 504: Gateway Timeout
+  retry 3/4 after 8s :: https://query.wikidata.org/sparql?format=json&query=%0ASELECT+%3Funit+%3FunitLabel+%3Fparent+%3FparentLabel+%3Fpop+%3FpopTime+%3FcapitalLabel+%3Fcoord+WHERE+%7B%0A++VALUES+%3Fcountry+%7B+wd%3AQ664+%7D%0A++%3Fcountry+wdt%3AP150+%3Fparent+.%0A++%3Funit+wdt%3AP131+%3Fparent+.%0A++%3Funit+wdt%3AP31%2Fwdt%3AP279%2A+wd%3AQ56061+.++++++++%23+instance+of+an+administrative+territorial+entity%0A++OPTIONAL+%7B+%3Funit+p%3AP1082+%3FpopSt+.%0A+++++++++++++%3FpopSt+ps%3AP1082+%3Fpop+.%0A+++++++++++++OPTIONAL+%7B+%3FpopSt+pq%3AP585+%3FpopTime+.+%7D+%7D%0A++OPTIONAL+%7B+%3Funit+wdt%3AP36+%3Fcapital+.+%7D%0A++OPTIONAL+%7B+%3Funit+wdt%3AP625+%3Fcoord+.+%7D%0A++SERVICE+wikibase%3Alabel+%7B+bd%3AserviceParam+wikibase%3Alanguage+%22en%2Cmul%22.+%7D%0A%7D%0A :: HTTP Error 500: Internal Server Error
+  retry 4/4 after 16s :: https://query.wikidata.org/sparql?format=json&query=%0ASELECT+%3Funit+%3FunitLabel+%3Fparent+%3FparentLabel+%3Fpop+%3FpopTime+%3FcapitalLabel+%3Fcoord+WHERE+%7B%0A++VALUES+%3Fcountry+%7B+wd%3AQ664+%7D%0A++%3Fcountry+wdt%3AP150+%3Fparent+.%0A++%3Funit+wdt%3AP131+%3Fparent+.%0A++%3Funit+wdt%3AP31%2Fwdt%3AP279%2A+wd%3AQ56061+.++++++++%23+instance+of+an+administrative+territorial+entity%0A++OPTIONAL+%7B+%3Funit+p%3AP1082+%3FpopSt+.%0A+++++++++++++%3FpopSt+ps%3AP1082+%3Fpop+.%0A+++++++++++++OPTIONAL+%7B+%3FpopSt+pq%3AP585+%3FpopTime+.+%7D+%7D%0A++OPTIONAL+%7B+%3Funit+wdt%3AP36+%3Fcapital+.+%7D%0A++OPTIONAL+%7B+%3Funit+wdt%3AP625+%3Fcoord+.+%7D%0A++SERVICE+wikibase%3Alabel+%7B+bd%3AserviceParam+wikibase%3Alanguage+%22en%2Cmul%22.+%7D%0A%7D%0A :: HTTP Error 504: Gateway Timeout
+  NZL: query failed (GET failed after 4 retries: https://query.wikidata.org/sparql?format=json&query=%0ASELECT+%3Funit+%3FunitLabel+%3Fparent+%3FparentLabel+%3Fpop+%3FpopTime+%3FcapitalLabel+%3Fcoord+WHERE+%7B%0A++VALUES+%3Fcountry+%7B+wd%3AQ664+%7D%0A++%3Fcountry+wdt%3AP150+%3Fparent+.%0A++%3Funit+wdt%3AP131+%3Fparent+.%0A++%3Funit+wdt%3AP31%2Fwdt%3AP279%2A+wd%3AQ56061+.++++++++%23+instance+of+an+administrative+territorial+entity%0A++OPTIONAL+%7B+%3Funit+p%3AP1082+%3FpopSt+.%0A+++++++++++++%3FpopSt+ps%3AP1082+%3Fpop+.%0A+++++++++++++OPTIONAL+%7B+%3FpopSt+pq%3AP585+%3FpopTime+.+%7D+%7D%0A++OPTIONAL+%7B+%3Funit+wdt%3AP36+%3Fcapital+.+%7D%0A++OPTIONAL+%7B+%3Funit+wdt%3AP625+%3Fcoord+.+%7D%0A++SERVICE+wikibase%3Alabel+%7B+bd%3AserviceParam+wikibase%3Alanguage+%22en%2Cmul%22.+%7D%0A%7D%0A)
+  wrote data/processed/nz_wikidata_points.json (0 kB)
+  no data for 1 countries: NZL
