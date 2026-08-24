@@ -179,7 +179,17 @@
     // be compared across borders.
     if (metric.needsGroup) {
       options.sort((a, b) => (b.countries || 0) - (a.countries || 0));
-      return options.slice(0, GROUP_LIMIT);
+      const top = options.slice(0, GROUP_LIMIT);
+      // Whatever is currently selected stays in the list even when it falls
+      // outside the cap. A group chosen from the search box is often a rare one
+      // -- that is why it was searched for -- and dropping it here would colour
+      // the map by something the picker denied was selected.
+      const wanted = groupValue(state.field, state.group);
+      if (state.group && !top.some((o) => o.value === wanted)) {
+        const found = options.find((o) => o.value === wanted);
+        if (found) top.unshift(found);
+      }
+      return top;
     }
     return options;
   }
@@ -232,10 +242,21 @@
       [window.WorldMap.getLevel()];
     const parts = [];
     if (!here || !here.units) {
-      parts.push(`No ${shown} carry this figure, though ${group.countries.length} ` +
-                 `${group.countries.length === 1 ? "country reports" : "countries report"} ` +
-                 `it at some level. The map is blank here because the figure is ` +
-                 `missing at this level, not because the share is zero.`);
+      // Saying only that it is missing here leaves the reader stuck in front of
+      // a blank map. Jainism has no country-level figure but 731 Indian
+      // districts, and the fix is one control away.
+      const elsewhere = [];
+      for (const [name, label] of [["admin1", "first-level divisions"],
+                                   ["admin2", "second-level divisions"]]) {
+        const at = (group.levels || {})[name];
+        if (at && at.units) elsewhere.push(`${window.Fmt.number(at.units)} ${label}`);
+      }
+      parts.push(`No ${shown} carry this figure.` +
+                 (elsewhere.length
+                   ? ` It is reported for ${elsewhere.join(" and ")} — set Detail to see them.`
+                   : "") +
+                 ` The map is blank here because the figure is missing at this ` +
+                 `level, not because the share is zero.`);
     } else {
       // At country level the unit *is* the country, so "122 countries across 122
       // countries" would be the same fact said twice.
@@ -266,6 +287,34 @@
     }
     els.groupReach.textContent = parts.join(" ");
     els.groupReach.hidden = false;
+  }
+
+  /* Shade the map by one group, from wherever the request came from.
+   *
+   * The search box and the control panel are two doors into the same state, so
+   * this drives the controls rather than bypassing them -- otherwise picking
+   * "Islam" from the search would colour the map while the panel underneath
+   * still read whatever was there before.
+   */
+  function applyGroupFilter(field, group) {
+    state.metric = "group_share";
+    state.field = field;
+    state.group = group;
+    els.metric.value = "group_share";
+    // Clear any leftover filter text so the chosen group is in the list it is
+    // about to be selected from.
+    state.groupQuery = "";
+    els.groupSearch.value = "";
+    syncFieldControl();
+    const wanted = groupValue(field, group);
+    if (Array.from(els.group.options).some((o) => o.value === wanted)) {
+      els.group.value = wanted;
+      const parsed = splitGroupValue(wanted);
+      state.field = parsed.field;
+      state.group = parsed.group;
+      describeReach(parsed);
+    }
+    refreshColors();
   }
 
   /* -------------------------------------------------------------- legend */
@@ -448,6 +497,7 @@
     window.DataStore.loadGroups().then((index) => {
       state.groupIndex = index;
       window.Metrics.setGroupIndex(index);
+      window.Search.setGroups(index);
       if (window.Metrics.METRICS[state.metric].needsField) populateGroupSelect();
       refreshColors();
     }).catch(() => { /* picker stays label-local; the map still works */ });
@@ -472,6 +522,7 @@
     await window.Search.init({
       status: els.searchStatus,
       onSelect: (row) => {
+        if (row.kind === "group") { applyGroupFilter(row.field, row.name); return; }
         selectEntity(row.id, { fly: true, bbox: row.bbox, country: row.country, level: row.level });
       },
     });

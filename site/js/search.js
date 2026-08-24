@@ -60,13 +60,64 @@ window.Search = (function () {
       .catch((err) => console.warn("admin-2 search shard failed", err));
   }
 
+  /* Groups are searched separately from places, and not through MiniSearch.
+   *
+   * There are only about 1,300 of them, so a scan costs nothing, and they need
+   * matching rules a name index would get wrong: "muslim" has to find Islam,
+   * which means searching the labels each census used as well as the canonical
+   * name, and fuzzy matching across a list this small turns every query into a
+   * pile of near-misses.
+   */
+  const FIELD_LABEL = { religion: "Religion", language: "Language",
+                        ethnicity: "Ethnicity" };
+  let groupIndex = null;
+
+  function setGroups(index_) { groupIndex = index_; }
+
+  function queryGroups(text, limit) {
+    if (!groupIndex) return [];
+    const needle = text.trim().toLowerCase();
+    if (needle.length < 2) return [];
+    const out = [];
+    for (const [field, entry] of Object.entries(groupIndex)) {
+      for (const group of entry.groups || []) {
+        const names = [group.name, ...(group.labels || [])];
+        let rank = -1;
+        for (const name of names) {
+          const lower = name.toLowerCase();
+          // Whole name, then start of name, then start of any word in it. A
+          // bare "includes" would rank "Other religions" against "other".
+          const at = lower === needle ? 0
+            : lower.startsWith(needle) ? 1
+            : new RegExp(`\\b${needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`).test(lower) ? 2
+            : -1;
+          if (at >= 0 && (rank < 0 || at < rank)) rank = at;
+        }
+        if (rank < 0) continue;
+        out.push({ kind: "group", field, name: group.name, rank,
+                   countries: (group.countries || []).length,
+                   units: group.units, labels: group.labels || [],
+                   levels: group.levels || {} });
+      }
+    }
+    // Best match first, then the group reported by the most countries: a
+    // worldwide filter is worth more than one country's category of the same
+    // name.
+    out.sort((a, b) => (a.rank - b.rank) || (b.countries - a.countries));
+    return out.slice(0, limit || 4);
+  }
+
   function query(text, limit) {
     if (!ready || !text || text.trim().length < 2) return [];
     const hits = index.search(text.trim(), { prefix: true, fuzzy: 0.2 });
     // Countries and first-level units outrank districts of the same score, so
     // typing "Georgia" surfaces the country before a US county.
     hits.sort((a, b) => (b.score - a.score) || (a.level - b.level));
-    return hits.slice(0, limit || 12).map((hit) => rows.get(hit.id)).filter(Boolean);
+    const places = hits.slice(0, limit || 12).map((hit) => rows.get(hit.id)).filter(Boolean);
+    // Groups lead, but only a few of them: "Tamil" is both a language and a
+    // place name, and burying Nadu under a list of group matches would be its
+    // own kind of wrong.
+    return queryGroups(text, 3).concat(places).slice(0, (limit || 12) + 3);
   }
 
   function get(id) { return rows.get(id) || null; }
@@ -93,6 +144,20 @@ window.Search = (function () {
         list.innerHTML = `<li class="r-empty" role="option" aria-disabled="true">${window.Fmt.escape(message)}</li>`;
       } else {
         list.innerHTML = results.map((row, i) => {
+          if (row.kind === "group") {
+            // Say what picking it does and how far it reaches, because "Islam"
+            // in a box that has only ever returned places reads as a place.
+            const reach = row.countries === 1
+              ? "1 country" : `${row.countries} countries`;
+            const folds = row.labels.length > 1
+              ? ` · ${row.labels.join(", ")}` : "";
+            return `<li role="option" id="sr-${i}" aria-selected="${i === active}"
+                        data-group="${window.Fmt.escape(row.field + "|" + row.name)}">
+              <span class="r-level r-group">${FIELD_LABEL[row.field] || row.field}</span>
+              <span class="r-name">${window.Fmt.escape(row.name)}</span>
+              <span class="r-context">Shade the map · ${window.Fmt.escape(reach + folds)}</span>
+            </li>`;
+          }
           const country = window.DataStore.country(row.country);
           const countryName = country ? country.name : row.country;
           const context = row.level === 0
@@ -122,6 +187,9 @@ window.Search = (function () {
       onPick(row);
     }
 
+    // Picking a group leaves the map filtered rather than moving it, so the box
+    // keeps the term that produced what is on screen.
+
     input.addEventListener("input", () => paint(query(input.value)));
     input.addEventListener("focus", () => { if (input.value.trim().length >= 2) paint(query(input.value)); });
     input.addEventListener("keydown", (event) => {
@@ -140,7 +208,7 @@ window.Search = (function () {
       }
     });
     list.addEventListener("mousedown", (event) => {
-      const li = event.target.closest("li[data-id]");
+      const li = event.target.closest("li[data-id], li[data-group]");
       if (!li) return;
       event.preventDefault();
       choose(Array.from(list.children).indexOf(li));
@@ -150,5 +218,5 @@ window.Search = (function () {
     });
   }
 
-  return { init, attach, query, get, isDeepReady };
+  return { init, attach, query, get, isDeepReady, setGroups };
 })();

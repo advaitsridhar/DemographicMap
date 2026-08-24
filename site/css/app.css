@@ -150,6 +150,13 @@ html, body {
   color: var(--ink-secondary); background: var(--surface-sunken);
   border: 1px solid var(--hairline); border-radius: 999px; padding: .05rem .4rem;
 }
+/* A group result does something different from a place result -- it shades the
+   map instead of moving it -- so its chip is the accent colour rather than the
+   neutral one, and the row says so in its context line. */
+#search-results .r-group {
+  color: var(--accent-ink); background: var(--accent);
+  border-color: transparent;
+}
 #search-results .r-empty { color: var(--ink-muted); cursor: default; }
 
 .topbar-actions { display: flex; gap: .4rem; align-items: center; }
@@ -181,15 +188,21 @@ html, body {
   box-shadow: var(--shadow);
 }
 .control-row { display: flex; align-items: center; gap: .5rem; margin-bottom: .5rem; }
-.control-row label { font-size: .72rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: .05em; }
+.control-row label {
+  font-size: .72rem; color: var(--ink-muted); text-transform: uppercase;
+  letter-spacing: .05em; white-space: nowrap; flex: 0 0 auto;
+}
 .control-row select {
-  flex: 1; font: inherit; font-size: .8rem; padding: .3rem .4rem;
+  /* min-width:0 or the select refuses to shrink below its longest option and
+     pushes out of the panel: "Religion: Christianity (189 countries)" is wider
+     than the control strip. */
+  flex: 1; min-width: 0; font: inherit; font-size: .8rem; padding: .3rem .4rem;
   color: var(--ink-primary); background: var(--surface-1);
   border: 1px solid var(--hairline); border-radius: var(--radius-sm);
 }
 /* The group search shares the select's box so the two read as one control. */
 .control-row input[type="search"] {
-  flex: 1; font: inherit; font-size: .8rem; padding: .3rem .4rem;
+  flex: 1; min-width: 0; font: inherit; font-size: .8rem; padding: .3rem .4rem;
   color: var(--ink-primary); background: var(--surface-1);
   border: 1px solid var(--hairline); border-radius: var(--radius-sm);
 }

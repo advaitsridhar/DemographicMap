@@ -339,6 +339,13 @@ Three properties of that index matter when reading the map:
 Ethnicity has no canonical layer at all — see the table's own note — so its
 groups are filterable only under the exact names their censuses used.
 
+The same groups are reachable from the search box at the top, alongside
+places: typing `islam` offers the religion before the places whose names
+merely look like it, and picking it shades the map instead of moving it.
+Group matches are capped at three, because `tamil` is a language, two
+ethnic categories *and* Tamil Nādu, and burying the state under its own
+linguistic namesakes would be its own kind of wrong.
+
 ## Choosing the level of detail
 
 By default the level follows the zoom: countries, then first-level divisions
