@@ -460,7 +460,15 @@ def write_json(path: Path, payload: Any, *, compact: bool = False) -> Path:
     else:
         text = json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=False)
     path.write_text(text + "\n", encoding="utf-8")
-    log(f"  wrote {path.relative_to(ROOT)} ({path.stat().st_size / 1e3:.0f} kB)")
+    # A --out given on the command line is relative to the working directory,
+    # not to ROOT, and relative_to raises rather than falling back. The write
+    # has already happened by this point, so a tidier log line was taking down
+    # runs whose real work had succeeded.
+    try:
+        shown = path.resolve().relative_to(ROOT)
+    except ValueError:
+        shown = path
+    log(f"  wrote {shown} ({path.stat().st_size / 1e3:.0f} kB)")
     return path
 
 
