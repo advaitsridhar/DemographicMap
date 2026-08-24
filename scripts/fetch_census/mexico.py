@@ -111,7 +111,7 @@ def religion_columns(archive: zipfile.ZipFile) -> dict[str, str]:
     name among their fields, so the column is taken as the short upper-case
     token on the row whose description names the group.
     """
-    rows = list(read_csv(archive, "diccionario"))
+    rows = list(read_csv(archive, member(archive, "diccionario")))
     found: dict[str, str] = {}
     for label, phrase in RELIGION_HINTS:
         for row in rows:

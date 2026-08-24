@@ -17,6 +17,11 @@ on:
   push:
     paths:
       - ".github/workflows/run-adapter.yml"
+      # While this workflow lives only on the branch, an adapter edit should
+      # re-run it: that is the whole development loop, and touching the
+      # workflow file to trigger a run of something else is a worse habit than
+      # listing the thing being worked on.
+      - "scripts/fetch_census/mexico.py"
   workflow_dispatch:
     inputs:
       command:
