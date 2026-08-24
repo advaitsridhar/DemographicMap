@@ -1,0 +1,3125 @@
+[
+  {
+    "id": "NPL-Koshi",
+    "level": "admin1",
+    "name": "Koshi",
+    "parent": "NPL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4961412,
+      "year": 2021,
+      "source": "National Statistics Office, National Population and Housing Census 2021: National Report on caste/ethnicity, Language and Religion"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 67.4,
+        "count": 3343183
+      },
+      {
+        "group": "Kirat",
+        "pct": 16.8,
+        "count": 835486
+      },
+      {
+        "group": "Bouddha",
+        "pct": 8.7,
+        "count": 433264
+      },
+      {
+        "group": "Islam",
+        "pct": 4.2,
+        "count": 208311
+      },
+      {
+        "group": "Christian",
+        "pct": 2.3,
+        "count": 115253
+      },
+      {
+        "group": "Prakriti",
+        "pct": 0.5,
+        "count": 22417
+      }
+    ],
+    "language": [
+      {
+        "group": "Nepali",
+        "pct": 45.3,
+        "count": 2246027
+      },
+      {
+        "group": "Maithili",
+        "pct": 11.7,
+        "count": 579347
+      },
+      {
+        "group": "Yakthung/Limbu",
+        "pct": 6.7,
+        "count": 332512
+      },
+      {
+        "group": "Tharu",
+        "pct": 4.4,
+        "count": 218534
+      },
+      {
+        "group": "Tamang",
+        "pct": 3.5,
+        "count": 175445
+      },
+      {
+        "group": "Magar Dhut",
+        "pct": 2.9,
+        "count": 143117
+      },
+      {
+        "group": "Bantawa",
+        "pct": 2.7,
+        "count": 133745
+      },
+      {
+        "group": "Rajbanshi",
+        "pct": 2.6,
+        "count": 128189
+      },
+      {
+        "group": "Urdu",
+        "pct": 2.3,
+        "count": 114994
+      },
+      {
+        "group": "Rai",
+        "pct": 1.8,
+        "count": 91746
+      },
+      {
+        "group": "Chamling",
+        "pct": 1.7,
+        "count": 82640
+      },
+      {
+        "group": "Sherpa",
+        "pct": 1.3,
+        "count": 65399
+      },
+      {
+        "group": "Nepalbhasha (Newari)",
+        "pct": 1.3,
+        "count": 62741
+      },
+      {
+        "group": "Santhali",
+        "pct": 1.1,
+        "count": 53438
+      },
+      {
+        "group": "Kulung",
+        "pct": 0.7,
+        "count": 36372
+      },
+      {
+        "group": "Angika",
+        "pct": 0.7,
+        "count": 35903
+      },
+      {
+        "group": "Oraon/Kudukh",
+        "pct": 0.7,
+        "count": 33284
+      },
+      {
+        "group": "Gurung",
+        "pct": 0.6,
+        "count": 27390
+      },
+      {
+        "group": "Ganagai",
+        "pct": 0.5,
+        "count": 26217
+      },
+      {
+        "group": "Thulung",
+        "pct": 0.5,
+        "count": 22409
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 0.4,
+        "count": 22098
+      },
+      {
+        "group": "Sampang",
+        "pct": 0.4,
+        "count": 20687
+      },
+      {
+        "group": "Tajpuriya",
+        "pct": 0.4,
+        "count": 20167
+      },
+      {
+        "group": "Dhimal",
+        "pct": 0.4,
+        "count": 20022
+      },
+      {
+        "group": "Bangla",
+        "pct": 0.3,
+        "count": 16962
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.3,
+        "count": 16440
+      },
+      {
+        "group": "Khaling",
+        "pct": 0.3,
+        "count": 15326
+      },
+      {
+        "group": "Magahi",
+        "pct": 0.3,
+        "count": 14502
+      },
+      {
+        "group": "Yakkha",
+        "pct": 0.3,
+        "count": 13639
+      },
+      {
+        "group": "Sunuwar",
+        "pct": 0.3,
+        "count": 13459
+      },
+      {
+        "group": "Bahing/Bayung",
+        "pct": 0.3,
+        "count": 13219
+      },
+      {
+        "group": "Wambule",
+        "pct": 0.3,
+        "count": 13216
+      },
+      {
+        "group": "Majhi",
+        "pct": 0.3,
+        "count": 13068
+      },
+      {
+        "group": "Yamphu/Yamphe",
+        "pct": 0.2,
+        "count": 10476
+      },
+      {
+        "group": "Marwadi",
+        "pct": 0.2,
+        "count": 10242
+      },
+      {
+        "group": "Nachhiring",
+        "pct": 0.2,
+        "count": 9314
+      },
+      {
+        "group": "Danuwar",
+        "pct": 0.2,
+        "count": 8224
+      },
+      {
+        "group": "Musalman",
+        "pct": 0.2,
+        "count": 7774
+      },
+      {
+        "group": "Dumi",
+        "pct": 0.2,
+        "count": 7542
+      },
+      {
+        "group": "Mewahang",
+        "pct": 0.1,
+        "count": 7203
+      },
+      {
+        "group": "Bhujel",
+        "pct": 0.1,
+        "count": 7113
+      },
+      {
+        "group": "Puma",
+        "pct": 0.1,
+        "count": 6565
+      },
+      {
+        "group": "Athpahariya",
+        "pct": 0.1,
+        "count": 5459
+      },
+      {
+        "group": "Dungmali",
+        "pct": 0.1,
+        "count": 5301
+      },
+      {
+        "group": "Bhote",
+        "pct": 0.1,
+        "count": 4603
+      },
+      {
+        "group": "Sanskrit",
+        "pct": 0.1,
+        "count": 4433
+      },
+      {
+        "group": "Meche",
+        "pct": 0.1,
+        "count": 4153
+      },
+      {
+        "group": "Koyee",
+        "pct": 0.1,
+        "count": 4013
+      },
+      {
+        "group": "Lohorung",
+        "pct": 0.1,
+        "count": 3642
+      },
+      {
+        "group": "Kewarat",
+        "pct": 0.1,
+        "count": 3458
+      },
+      {
+        "group": "Jero/Jerung",
+        "pct": 0.1,
+        "count": 2564
+      },
+      {
+        "group": "Chhintang",
+        "pct": 0.1,
+        "count": 2529
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Kshetri",
+        "pct": 15.0,
+        "count": 744076
+      },
+      {
+        "group": "Brahman - Hill",
+        "pct": 11.6,
+        "count": 573167
+      },
+      {
+        "group": "Rai",
+        "pct": 10.2,
+        "count": 506422
+      },
+      {
+        "group": "Yakthung/Limbu",
+        "pct": 7.8,
+        "count": 387515
+      },
+      {
+        "group": "Tamang",
+        "pct": 4.6,
+        "count": 228838
+      },
+      {
+        "group": "Tharu",
+        "pct": 4.2,
+        "count": 209519
+      },
+      {
+        "group": "Musalman",
+        "pct": 4.1,
+        "count": 202386
+      },
+      {
+        "group": "Magar",
+        "pct": 4.0,
+        "count": 196618
+      },
+      {
+        "group": "Newa: (Newar)",
+        "pct": 3.6,
+        "count": 178405
+      },
+      {
+        "group": "Bishwokarma",
+        "pct": 3.4,
+        "count": 167038
+      },
+      {
+        "group": "Rajbansi",
+        "pct": 2.6,
+        "count": 127985
+      },
+      {
+        "group": "Pariyar",
+        "pct": 1.9,
+        "count": 91927
+      },
+      {
+        "group": "Musahar",
+        "pct": 1.5,
+        "count": 74911
+      },
+      {
+        "group": "Sherpa",
+        "pct": 1.4,
+        "count": 70348
+      },
+      {
+        "group": "Yadav",
+        "pct": 1.4,
+        "count": 70289
+      },
+      {
+        "group": "Gurung",
+        "pct": 1.3,
+        "count": 63370
+      },
+      {
+        "group": "Santhal",
+        "pct": 1.1,
+        "count": 56477
+      },
+      {
+        "group": "Mijar",
+        "pct": 1.0,
+        "count": 48757
+      },
+      {
+        "group": "Teli",
+        "pct": 0.9,
+        "count": 45833
+      },
+      {
+        "group": "Koiri/Kushwaha",
+        "pct": 0.8,
+        "count": 42150
+      },
+      {
+        "group": "Gangai",
+        "pct": 0.8,
+        "count": 41226
+      },
+      {
+        "group": "Bantar/Sardar",
+        "pct": 0.8,
+        "count": 39662
+      },
+      {
+        "group": "Gharti/Bhujel",
+        "pct": 0.8,
+        "count": 37703
+      },
+      {
+        "group": "Oraon/Kudukh",
+        "pct": 0.7,
+        "count": 36004
+      },
+      {
+        "group": "Sanyasi/Dasnami",
+        "pct": 0.7,
+        "count": 34437
+      },
+      {
+        "group": "Kulung",
+        "pct": 0.6,
+        "count": 32180
+      },
+      {
+        "group": "Dhanuk",
+        "pct": 0.6,
+        "count": 31052
+      },
+      {
+        "group": "Majhi",
+        "pct": 0.6,
+        "count": 29850
+      },
+      {
+        "group": "Kewat",
+        "pct": 0.5,
+        "count": 26749
+      },
+      {
+        "group": "Dhimal",
+        "pct": 0.5,
+        "count": 24435
+      },
+      {
+        "group": "Mallaha",
+        "pct": 0.5,
+        "count": 24237
+      },
+      {
+        "group": "Brahman - Tarai",
+        "pct": 0.5,
+        "count": 23718
+      },
+      {
+        "group": "Sunuwar",
+        "pct": 0.4,
+        "count": 21649
+      },
+      {
+        "group": "Haluwai",
+        "pct": 0.4,
+        "count": 21265
+      },
+      {
+        "group": "Tajpuriya",
+        "pct": 0.4,
+        "count": 20605
+      },
+      {
+        "group": "Khawas",
+        "pct": 0.4,
+        "count": 18924
+      },
+      {
+        "group": "Foreigner",
+        "pct": 0.4,
+        "count": 19254
+      },
+      {
+        "group": "Danuwar",
+        "pct": 0.3,
+        "count": 16900
+      },
+      {
+        "group": "Yakkha",
+        "pct": 0.3,
+        "count": 16451
+      },
+      {
+        "group": "Hajam/Thakur",
+        "pct": 0.3,
+        "count": 15447
+      },
+      {
+        "group": "Bantawa",
+        "pct": 0.3,
+        "count": 14985
+      },
+      {
+        "group": "Dusadh/Pasawan/Pasi",
+        "pct": 0.3,
+        "count": 14424
+      },
+      {
+        "group": "Marwadi",
+        "pct": 0.3,
+        "count": 14050
+      },
+      {
+        "group": "Chamar/Harijan/Ram",
+        "pct": 0.3,
+        "count": 14011
+      },
+      {
+        "group": "Amat",
+        "pct": 0.3,
+        "count": 13900
+      },
+      {
+        "group": "Nuniya",
+        "pct": 0.3,
+        "count": 13726
+      },
+      {
+        "group": "Sundi",
+        "pct": 0.2,
+        "count": 12173
+      },
+      {
+        "group": "Bangali",
+        "pct": 0.2,
+        "count": 12060
+      },
+      {
+        "group": "Chamling",
+        "pct": 0.2,
+        "count": 10802
+      },
+      {
+        "group": "Khatwe",
+        "pct": 0.2,
+        "count": 10736
+      },
+      {
+        "group": "Yamphu",
+        "pct": 0.2,
+        "count": 8899
+      },
+      {
+        "group": "Kewarat",
+        "pct": 0.2,
+        "count": 8794
+      },
+      {
+        "group": "Thakuri",
+        "pct": 0.2,
+        "count": 8271
+      },
+      {
+        "group": "Kalwar",
+        "pct": 0.2,
+        "count": 7777
+      },
+      {
+        "group": "Sonar",
+        "pct": 0.1,
+        "count": 7286
+      },
+      {
+        "group": "Nachhiring",
+        "pct": 0.1,
+        "count": 7010
+      },
+      {
+        "group": "Badhaee/Badhee",
+        "pct": 0.1,
+        "count": 6977
+      },
+      {
+        "group": "Kumal",
+        "pct": 0.1,
+        "count": 6920
+      },
+      {
+        "group": "Tatma/Tatwa",
+        "pct": 0.1,
+        "count": 6666
+      },
+      {
+        "group": "Baniyan",
+        "pct": 0.1,
+        "count": 6022
+      },
+      {
+        "group": "Bahing",
+        "pct": 0.1,
+        "count": 6021
+      },
+      {
+        "group": "Thulung",
+        "pct": 0.1,
+        "count": 5717
+      },
+      {
+        "group": "Aathpahariya",
+        "pct": 0.1,
+        "count": 5641
+      },
+      {
+        "group": "Mewahang",
+        "pct": 0.1,
+        "count": 5597
+      },
+      {
+        "group": "Kayastha",
+        "pct": 0.1,
+        "count": 5510
+      },
+      {
+        "group": "Khaling",
+        "pct": 0.1,
+        "count": 5346
+      },
+      {
+        "group": "Kurmi",
+        "pct": 0.1,
+        "count": 5271
+      },
+      {
+        "group": "Kumhar",
+        "pct": 0.1,
+        "count": 5104
+      },
+      {
+        "group": "Meche",
+        "pct": 0.1,
+        "count": 4997
+      },
+      {
+        "group": "Bhote",
+        "pct": 0.1,
+        "count": 4786
+      },
+      {
+        "group": "Dom",
+        "pct": 0.1,
+        "count": 4775
+      },
+      {
+        "group": "Sampang",
+        "pct": 0.1,
+        "count": 4612
+      },
+      {
+        "group": "Sarbaria",
+        "pct": 0.1,
+        "count": 4602
+      },
+      {
+        "group": "Rajput",
+        "pct": 0.1,
+        "count": 4567
+      },
+      {
+        "group": "Rauniyar",
+        "pct": 0.1,
+        "count": 4520
+      },
+      {
+        "group": "Kathabaniyan",
+        "pct": 0.1,
+        "count": 3956
+      },
+      {
+        "group": "Lohar",
+        "pct": 0.1,
+        "count": 3821
+      },
+      {
+        "group": "Gaderi/Bhediyar",
+        "pct": 0.1,
+        "count": 3758
+      },
+      {
+        "group": "Dev",
+        "pct": 0.1,
+        "count": 3726
+      },
+      {
+        "group": "Munda",
+        "pct": 0.1,
+        "count": 3529
+      },
+      {
+        "group": "Bin",
+        "pct": 0.1,
+        "count": 3528
+      },
+      {
+        "group": "Rajbhar",
+        "pct": 0.1,
+        "count": 3510
+      },
+      {
+        "group": "Lepcha",
+        "pct": 0.1,
+        "count": 3302
+      },
+      {
+        "group": "Baraee",
+        "pct": 0.1,
+        "count": 3125
+      },
+      {
+        "group": "Dhobi",
+        "pct": 0.1,
+        "count": 2665
+      },
+      {
+        "group": "Others",
+        "pct": 0.1,
+        "count": 3686
+      }
+    ],
+    "sources": [
+      {
+        "field": "caste/ethnicity, language, religion",
+        "name": "National Statistics Office, National Population and Housing Census 2021: National Report on caste/ethnicity, Language and Religion",
+        "license": "Government of Nepal, National Statistics Office. Official publication."
+      }
+    ],
+    "country": "NPL",
+    "aliases": [
+      "Province 1",
+      "Province No. 1",
+      "Pradesh 1",
+      "Purwanchal"
+    ],
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Caste and ethnicity are one question in Nepal's census, answered with one of 142 categories. It is not comparable with ethnicity elsewhere: the categories mix caste groups, Adivasi/Janajati nationalities and religious communities, and a person answers once.",
+    "language_year": 2021,
+    "language_note": "Mother tongue, the language first spoken at home in childhood -- not the language a person uses now. The census asks second language and ancestor's language separately; neither is shown here.",
+    "religion_year": 2021
+  },
+  {
+    "id": "NPL-Madhesh",
+    "level": "admin1",
+    "name": "Madhesh",
+    "parent": "NPL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6114600,
+      "year": 2021,
+      "source": "National Statistics Office, National Population and Housing Census 2021: National Report on caste/ethnicity, Language and Religion"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 84.2,
+        "count": 5151005
+      },
+      {
+        "group": "Islam",
+        "pct": 13.3,
+        "count": 811878
+      },
+      {
+        "group": "Bouddha",
+        "pct": 2.2,
+        "count": 135325
+      },
+      {
+        "group": "Christian",
+        "pct": 0.2,
+        "count": 10898
+      },
+      {
+        "group": "Kirat",
+        "pct": 0.1,
+        "count": 3099
+      }
+    ],
+    "language": [
+      {
+        "group": "Maithili",
+        "pct": 41.7,
+        "count": 2551917
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 18.8,
+        "count": 1149962
+      },
+      {
+        "group": "Bajjika",
+        "pct": 18.4,
+        "count": 1127255
+      },
+      {
+        "group": "Nepali",
+        "pct": 5.8,
+        "count": 352109
+      },
+      {
+        "group": "Tharu",
+        "pct": 4.2,
+        "count": 254685
+      },
+      {
+        "group": "Urdu",
+        "pct": 4.1,
+        "count": 249614
+      },
+      {
+        "group": "Magahi",
+        "pct": 3.5,
+        "count": 215236
+      },
+      {
+        "group": "Tamang",
+        "pct": 1.6,
+        "count": 100669
+      },
+      {
+        "group": "Magar Dhut",
+        "pct": 0.7,
+        "count": 44385
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.2,
+        "count": 14232
+      },
+      {
+        "group": "Nepalbhasha (Newari)",
+        "pct": 0.2,
+        "count": 12790
+      },
+      {
+        "group": "Danuwar",
+        "pct": 0.1,
+        "count": 8530
+      },
+      {
+        "group": "Oraon/Kudukh",
+        "pct": 0.1,
+        "count": 5296
+      },
+      {
+        "group": "Majhi",
+        "pct": 0.1,
+        "count": 4736
+      },
+      {
+        "group": "Rai",
+        "pct": 0.1,
+        "count": 4676
+      },
+      {
+        "group": "Musalman",
+        "pct": 0.1,
+        "count": 4403
+      },
+      {
+        "group": "Marwadi",
+        "pct": 0.1,
+        "count": 3926
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Yadav",
+        "pct": 15.2,
+        "count": 926508
+      },
+      {
+        "group": "Musalman",
+        "pct": 13.0,
+        "count": 792776
+      },
+      {
+        "group": "Teli",
+        "pct": 5.3,
+        "count": 324705
+      },
+      {
+        "group": "Tharu",
+        "pct": 4.9,
+        "count": 301038
+      },
+      {
+        "group": "Koiri/Kushwaha",
+        "pct": 4.5,
+        "count": 276155
+      },
+      {
+        "group": "Chamar/Harijan/Ram",
+        "pct": 4.4,
+        "count": 269396
+      },
+      {
+        "group": "Dhanuk",
+        "pct": 3.6,
+        "count": 217096
+      },
+      {
+        "group": "Kurmi",
+        "pct": 3.0,
+        "count": 180581
+      },
+      {
+        "group": "Musahar",
+        "pct": 2.9,
+        "count": 179153
+      },
+      {
+        "group": "Dusadh/Pasawan/Pasi",
+        "pct": 2.9,
+        "count": 176190
+      },
+      {
+        "group": "Mallaha",
+        "pct": 2.3,
+        "count": 141638
+      },
+      {
+        "group": "Kanu",
+        "pct": 2.3,
+        "count": 139088
+      },
+      {
+        "group": "Tamang",
+        "pct": 2.0,
+        "count": 122194
+      },
+      {
+        "group": "Tatma/Tatwa",
+        "pct": 1.9,
+        "count": 117507
+      },
+      {
+        "group": "Khatwe",
+        "pct": 1.8,
+        "count": 112521
+      },
+      {
+        "group": "Kalwar",
+        "pct": 1.7,
+        "count": 101860
+      },
+      {
+        "group": "Brahman - Tarai",
+        "pct": 1.7,
+        "count": 101093
+      },
+      {
+        "group": "Kshetri",
+        "pct": 1.6,
+        "count": 98002
+      },
+      {
+        "group": "Kewat",
+        "pct": 1.5,
+        "count": 92346
+      },
+      {
+        "group": "Sundi",
+        "pct": 1.5,
+        "count": 89896
+      },
+      {
+        "group": "Bin",
+        "pct": 1.5,
+        "count": 89482
+      },
+      {
+        "group": "Hajam/Thakur",
+        "pct": 1.5,
+        "count": 88804
+      },
+      {
+        "group": "Brahman - Hill",
+        "pct": 1.3,
+        "count": 80387
+      },
+      {
+        "group": "Nuniya",
+        "pct": 1.2,
+        "count": 72976
+      },
+      {
+        "group": "Kumhar",
+        "pct": 1.2,
+        "count": 72454
+      },
+      {
+        "group": "Lohar",
+        "pct": 1.1,
+        "count": 66626
+      },
+      {
+        "group": "Magar",
+        "pct": 1.1,
+        "count": 65142
+      },
+      {
+        "group": "Dhobi",
+        "pct": 1.0,
+        "count": 62577
+      },
+      {
+        "group": "Sonar",
+        "pct": 1.0,
+        "count": 62183
+      },
+      {
+        "group": "Baraee",
+        "pct": 0.8,
+        "count": 47099
+      },
+      {
+        "group": "Haluwai",
+        "pct": 0.7,
+        "count": 45444
+      },
+      {
+        "group": "Newa: (Newar)",
+        "pct": 0.6,
+        "count": 37356
+      },
+      {
+        "group": "Rajput",
+        "pct": 0.5,
+        "count": 33455
+      },
+      {
+        "group": "Danuwar",
+        "pct": 0.5,
+        "count": 33125
+      },
+      {
+        "group": "Kathabaniyan",
+        "pct": 0.5,
+        "count": 33029
+      },
+      {
+        "group": "Amat",
+        "pct": 0.5,
+        "count": 31999
+      },
+      {
+        "group": "Bhumihar",
+        "pct": 0.5,
+        "count": 30769
+      },
+      {
+        "group": "Badhaee/Badhee",
+        "pct": 0.5,
+        "count": 30211
+      },
+      {
+        "group": "Majhi",
+        "pct": 0.5,
+        "count": 29599
+      },
+      {
+        "group": "Bishwokarma",
+        "pct": 0.5,
+        "count": 28344
+      },
+      {
+        "group": "Bantar/Sardar",
+        "pct": 0.4,
+        "count": 21686
+      },
+      {
+        "group": "Foreigner",
+        "pct": 0.4,
+        "count": 27424
+      },
+      {
+        "group": "Kayastha",
+        "pct": 0.3,
+        "count": 21109
+      },
+      {
+        "group": "Rauniyar",
+        "pct": 0.3,
+        "count": 20431
+      },
+      {
+        "group": "Sanyasi/Dasnami",
+        "pct": 0.3,
+        "count": 19714
+      },
+      {
+        "group": "Baniyan",
+        "pct": 0.3,
+        "count": 16991
+      },
+      {
+        "group": "Gaderi/Bhediyar",
+        "pct": 0.3,
+        "count": 16714
+      },
+      {
+        "group": "Dom",
+        "pct": 0.2,
+        "count": 14060
+      },
+      {
+        "group": "Mali",
+        "pct": 0.2,
+        "count": 13974
+      },
+      {
+        "group": "Rajdhob",
+        "pct": 0.2,
+        "count": 13674
+      },
+      {
+        "group": "Kahar",
+        "pct": 0.2,
+        "count": 12015
+      },
+      {
+        "group": "Rai",
+        "pct": 0.2,
+        "count": 10210
+      },
+      {
+        "group": "Thakuri",
+        "pct": 0.2,
+        "count": 10006
+      },
+      {
+        "group": "Pariyar",
+        "pct": 0.2,
+        "count": 9677
+      },
+      {
+        "group": "Gondh/Gond",
+        "pct": 0.1,
+        "count": 7837
+      },
+      {
+        "group": "Dhunia",
+        "pct": 0.1,
+        "count": 7698
+      },
+      {
+        "group": "Marwadi",
+        "pct": 0.1,
+        "count": 7408
+      },
+      {
+        "group": "Oraon/Kudukh",
+        "pct": 0.1,
+        "count": 6953
+      },
+      {
+        "group": "Gharti/Bhujel",
+        "pct": 0.1,
+        "count": 6685
+      },
+      {
+        "group": "Mijar",
+        "pct": 0.1,
+        "count": 5971
+      },
+      {
+        "group": "Kumal",
+        "pct": 0.1,
+        "count": 5486
+      },
+      {
+        "group": "Rajbhar",
+        "pct": 0.1,
+        "count": 4689
+      },
+      {
+        "group": "Chai/Khulaut",
+        "pct": 0.1,
+        "count": 4651
+      }
+    ],
+    "sources": [
+      {
+        "field": "caste/ethnicity, language, religion",
+        "name": "National Statistics Office, National Population and Housing Census 2021: National Report on caste/ethnicity, Language and Religion",
+        "license": "Government of Nepal, National Statistics Office. Official publication."
+      }
+    ],
+    "country": "NPL",
+    "aliases": [
+      "Province 2",
+      "Madhes",
+      "Madhesh Pradesh",
+      "Province No. 2"
+    ],
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Caste and ethnicity are one question in Nepal's census, answered with one of 142 categories. It is not comparable with ethnicity elsewhere: the categories mix caste groups, Adivasi/Janajati nationalities and religious communities, and a person answers once.",
+    "language_year": 2021,
+    "language_note": "Mother tongue, the language first spoken at home in childhood -- not the language a person uses now. The census asks second language and ancestor's language separately; neither is shown here.",
+    "religion_year": 2021
+  },
+  {
+    "id": "NPL-Bagmati",
+    "level": "admin1",
+    "name": "Bagmati",
+    "parent": "NPL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6116866,
+      "year": 2021,
+      "source": "National Statistics Office, National Population and Housing Census 2021: National Report on caste/ethnicity, Language and Religion"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 72.0,
+        "count": 4406030
+      },
+      {
+        "group": "Bouddha",
+        "pct": 22.3,
+        "count": 1362392
+      },
+      {
+        "group": "Christian",
+        "pct": 3.3,
+        "count": 201794
+      },
+      {
+        "group": "Kirat",
+        "pct": 1.3,
+        "count": 81687
+      },
+      {
+        "group": "Islam",
+        "pct": 0.8,
+        "count": 48405
+      },
+      {
+        "group": "Prakriti",
+        "pct": 0.2,
+        "count": 9780
+      },
+      {
+        "group": "Bon",
+        "pct": 0.1,
+        "count": 5675
+      }
+    ],
+    "language": [
+      {
+        "group": "Nepali",
+        "pct": 56.0,
+        "count": 3427981
+      },
+      {
+        "group": "Tamang",
+        "pct": 18.0,
+        "count": 1100442
+      },
+      {
+        "group": "Nepalbhasha (Newari)",
+        "pct": 11.8,
+        "count": 722943
+      },
+      {
+        "group": "Magar Dhut",
+        "pct": 2.4,
+        "count": 146738
+      },
+      {
+        "group": "Tharu",
+        "pct": 1.6,
+        "count": 95423
+      },
+      {
+        "group": "Maithili",
+        "pct": 1.2,
+        "count": 76455
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 1.1,
+        "count": 69763
+      },
+      {
+        "group": "Gurung",
+        "pct": 1.1,
+        "count": 67893
+      },
+      {
+        "group": "Chepang",
+        "pct": 0.9,
+        "count": 54889
+      },
+      {
+        "group": "Sherpa",
+        "pct": 0.8,
+        "count": 51212
+      },
+      {
+        "group": "Rai",
+        "pct": 0.7,
+        "count": 44409
+      },
+      {
+        "group": "Danuwar",
+        "pct": 0.5,
+        "count": 33198
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.4,
+        "count": 25368
+      },
+      {
+        "group": "Thami",
+        "pct": 0.4,
+        "count": 25082
+      },
+      {
+        "group": "Sunuwar",
+        "pct": 0.3,
+        "count": 18151
+      },
+      {
+        "group": "Yakthung/Limbu",
+        "pct": 0.3,
+        "count": 16674
+      },
+      {
+        "group": "Majhi",
+        "pct": 0.2,
+        "count": 13208
+      },
+      {
+        "group": "Ghale",
+        "pct": 0.2,
+        "count": 13203
+      },
+      {
+        "group": "Hyolmo/Yholmo",
+        "pct": 0.1,
+        "count": 8251
+      },
+      {
+        "group": "Darai",
+        "pct": 0.1,
+        "count": 7573
+      },
+      {
+        "group": "Doteli",
+        "pct": 0.1,
+        "count": 6361
+      },
+      {
+        "group": "Marwadi",
+        "pct": 0.1,
+        "count": 6055
+      },
+      {
+        "group": "Chamling",
+        "pct": 0.1,
+        "count": 5615
+      },
+      {
+        "group": "Pahari",
+        "pct": 0.1,
+        "count": 5562
+      },
+      {
+        "group": "Kumal",
+        "pct": 0.1,
+        "count": 5204
+      },
+      {
+        "group": "Jirel",
+        "pct": 0.1,
+        "count": 5026
+      },
+      {
+        "group": "Bajjika",
+        "pct": 0.1,
+        "count": 4807
+      },
+      {
+        "group": "Bangla",
+        "pct": 0.1,
+        "count": 4211
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.1,
+        "count": 3949
+      },
+      {
+        "group": "Bantawa",
+        "pct": 0.1,
+        "count": 3940
+      },
+      {
+        "group": "Tibetan",
+        "pct": 0.1,
+        "count": 3584
+      },
+      {
+        "group": "Sanskrit",
+        "pct": 0.1,
+        "count": 3183
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Tamang",
+        "pct": 19.9,
+        "count": 1216517
+      },
+      {
+        "group": "Brahman - Hill",
+        "pct": 17.8,
+        "count": 1091480
+      },
+      {
+        "group": "Kshetri",
+        "pct": 17.4,
+        "count": 1064756
+      },
+      {
+        "group": "Newa: (Newar)",
+        "pct": 15.6,
+        "count": 952460
+      },
+      {
+        "group": "Magar",
+        "pct": 5.1,
+        "count": 312409
+      },
+      {
+        "group": "Bishwokarma",
+        "pct": 2.7,
+        "count": 168161
+      },
+      {
+        "group": "Gurung",
+        "pct": 2.3,
+        "count": 140782
+      },
+      {
+        "group": "Rai",
+        "pct": 1.8,
+        "count": 112364
+      },
+      {
+        "group": "Tharu",
+        "pct": 1.8,
+        "count": 110284
+      },
+      {
+        "group": "Pariyar",
+        "pct": 1.5,
+        "count": 94520
+      },
+      {
+        "group": "Mijar",
+        "pct": 1.4,
+        "count": 84610
+      },
+      {
+        "group": "Chepang/Praja",
+        "pct": 1.3,
+        "count": 77914
+      },
+      {
+        "group": "Sherpa",
+        "pct": 1.0,
+        "count": 58119
+      },
+      {
+        "group": "Thakuri",
+        "pct": 0.8,
+        "count": 50461
+      },
+      {
+        "group": "Foreigner",
+        "pct": 0.8,
+        "count": 51770
+      },
+      {
+        "group": "Majhi",
+        "pct": 0.7,
+        "count": 41671
+      },
+      {
+        "group": "Sanyasi/Dasnami",
+        "pct": 0.7,
+        "count": 40573
+      },
+      {
+        "group": "Gharti/Bhujel",
+        "pct": 0.6,
+        "count": 34704
+      },
+      {
+        "group": "Sunuwar",
+        "pct": 0.6,
+        "count": 34527
+      },
+      {
+        "group": "Musalman",
+        "pct": 0.5,
+        "count": 32886
+      },
+      {
+        "group": "Danuwar",
+        "pct": 0.5,
+        "count": 32562
+      },
+      {
+        "group": "Thami",
+        "pct": 0.5,
+        "count": 29407
+      },
+      {
+        "group": "Yakthung/Limbu",
+        "pct": 0.4,
+        "count": 23893
+      },
+      {
+        "group": "Brahman - Tarai",
+        "pct": 0.4,
+        "count": 23246
+      },
+      {
+        "group": "Kumal",
+        "pct": 0.4,
+        "count": 22213
+      },
+      {
+        "group": "Ghale",
+        "pct": 0.4,
+        "count": 21632
+      },
+      {
+        "group": "Yadav",
+        "pct": 0.3,
+        "count": 19627
+      },
+      {
+        "group": "Pahari",
+        "pct": 0.2,
+        "count": 13504
+      },
+      {
+        "group": "Teli",
+        "pct": 0.2,
+        "count": 11186
+      },
+      {
+        "group": "Darai",
+        "pct": 0.2,
+        "count": 10311
+      },
+      {
+        "group": "Marwadi",
+        "pct": 0.2,
+        "count": 9679
+      },
+      {
+        "group": "Kalwar",
+        "pct": 0.1,
+        "count": 8399
+      },
+      {
+        "group": "Hyolmo/Yholmopa",
+        "pct": 0.1,
+        "count": 7989
+      },
+      {
+        "group": "Hajam/Thakur",
+        "pct": 0.1,
+        "count": 7238
+      },
+      {
+        "group": "Jirel",
+        "pct": 0.1,
+        "count": 5858
+      },
+      {
+        "group": "Sonar",
+        "pct": 0.1,
+        "count": 5602
+      },
+      {
+        "group": "Koiri/Kushwaha",
+        "pct": 0.1,
+        "count": 5052
+      },
+      {
+        "group": "Sundi",
+        "pct": 0.1,
+        "count": 4353
+      },
+      {
+        "group": "Kanu",
+        "pct": 0.1,
+        "count": 3715
+      },
+      {
+        "group": "Bote",
+        "pct": 0.1,
+        "count": 3652
+      },
+      {
+        "group": "Thakali",
+        "pct": 0.1,
+        "count": 3369
+      },
+      {
+        "group": "Musahar",
+        "pct": 0.1,
+        "count": 3234
+      },
+      {
+        "group": "Kayastha",
+        "pct": 0.1,
+        "count": 3145
+      }
+    ],
+    "sources": [
+      {
+        "field": "caste/ethnicity, language, religion",
+        "name": "National Statistics Office, National Population and Housing Census 2021: National Report on caste/ethnicity, Language and Religion",
+        "license": "Government of Nepal, National Statistics Office. Official publication."
+      }
+    ],
+    "country": "NPL",
+    "aliases": [
+      "Bagmati Province",
+      "Province 3"
+    ],
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Caste and ethnicity are one question in Nepal's census, answered with one of 142 categories. It is not comparable with ethnicity elsewhere: the categories mix caste groups, Adivasi/Janajati nationalities and religious communities, and a person answers once.",
+    "language_year": 2021,
+    "language_note": "Mother tongue, the language first spoken at home in childhood -- not the language a person uses now. The census asks second language and ancestor's language separately; neither is shown here.",
+    "religion_year": 2021
+  },
+  {
+    "id": "NPL-Gandaki",
+    "level": "admin1",
+    "name": "Gandaki",
+    "parent": "NPL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2466427,
+      "year": 2021,
+      "source": "National Statistics Office, National Population and Housing Census 2021: National Report on caste/ethnicity, Language and Religion"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 82.2,
+        "count": 2027990
+      },
+      {
+        "group": "Bouddha",
+        "pct": 11.5,
+        "count": 284642
+      },
+      {
+        "group": "Christian",
+        "pct": 2.4,
+        "count": 58315
+      },
+      {
+        "group": "Bon",
+        "pct": 2.2,
+        "count": 53405
+      },
+      {
+        "group": "Islam",
+        "pct": 0.9,
+        "count": 22361
+      },
+      {
+        "group": "Prakriti",
+        "pct": 0.7,
+        "count": 16635
+      },
+      {
+        "group": "Kirat",
+        "pct": 0.1,
+        "count": 2968
+      }
+    ],
+    "language": [
+      {
+        "group": "Nepali",
+        "pct": 73.4,
+        "count": 1810003
+      },
+      {
+        "group": "Magar Dhut",
+        "pct": 9.6,
+        "count": 236729
+      },
+      {
+        "group": "Gurung",
+        "pct": 8.4,
+        "count": 208088
+      },
+      {
+        "group": "Tharu",
+        "pct": 1.7,
+        "count": 42795
+      },
+      {
+        "group": "Nepalbhasha (Newari)",
+        "pct": 1.5,
+        "count": 37801
+      },
+      {
+        "group": "Tamang",
+        "pct": 1.4,
+        "count": 33471
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 0.6,
+        "count": 15090
+      },
+      {
+        "group": "Magar Kham",
+        "pct": 0.3,
+        "count": 8030
+      },
+      {
+        "group": "Ghale",
+        "pct": 0.3,
+        "count": 7997
+      },
+      {
+        "group": "Kumal",
+        "pct": 0.2,
+        "count": 6027
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.2,
+        "count": 5573
+      },
+      {
+        "group": "Darai",
+        "pct": 0.2,
+        "count": 4338
+      },
+      {
+        "group": "Chum/Nubri",
+        "pct": 0.2,
+        "count": 4052
+      },
+      {
+        "group": "Maithili",
+        "pct": 0.1,
+        "count": 3642
+      },
+      {
+        "group": "Chepang",
+        "pct": 0.1,
+        "count": 3209
+      },
+      {
+        "group": "Chhantyal",
+        "pct": 0.1,
+        "count": 3092
+      },
+      {
+        "group": "Sanskrit",
+        "pct": 0.1,
+        "count": 2924
+      },
+      {
+        "group": "Rai",
+        "pct": 0.1,
+        "count": 2706
+      },
+      {
+        "group": "Bhujel",
+        "pct": 0.1,
+        "count": 2515
+      },
+      {
+        "group": "Bote",
+        "pct": 0.1,
+        "count": 2512
+      },
+      {
+        "group": "Khash",
+        "pct": 0.1,
+        "count": 2342
+      },
+      {
+        "group": "Thakali",
+        "pct": 0.1,
+        "count": 2252
+      },
+      {
+        "group": "Lhopa",
+        "pct": 0.1,
+        "count": 2202
+      },
+      {
+        "group": "Musalman",
+        "pct": 0.1,
+        "count": 1836
+      },
+      {
+        "group": "Baragunwa",
+        "pct": 0.1,
+        "count": 1536
+      },
+      {
+        "group": "Dura",
+        "pct": 0.1,
+        "count": 1337
+      },
+      {
+        "group": "Balkura/Baram",
+        "pct": 0.1,
+        "count": 1287
+      },
+      {
+        "group": "Majhi",
+        "pct": 0.1,
+        "count": 1236
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Brahman - Hill",
+        "pct": 20.0,
+        "count": 492640
+      },
+      {
+        "group": "Magar",
+        "pct": 18.8,
+        "count": 464310
+      },
+      {
+        "group": "Kshetri",
+        "pct": 13.1,
+        "count": 323959
+      },
+      {
+        "group": "Gurung",
+        "pct": 11.0,
+        "count": 272270
+      },
+      {
+        "group": "Bishwokarma",
+        "pct": 9.3,
+        "count": 229857
+      },
+      {
+        "group": "Mijar",
+        "pct": 4.6,
+        "count": 112991
+      },
+      {
+        "group": "Pariyar",
+        "pct": 4.1,
+        "count": 101521
+      },
+      {
+        "group": "Newa: (Newar)",
+        "pct": 4.1,
+        "count": 101450
+      },
+      {
+        "group": "Tamang",
+        "pct": 2.0,
+        "count": 50349
+      },
+      {
+        "group": "Tharu",
+        "pct": 1.9,
+        "count": 47619
+      },
+      {
+        "group": "Thakuri",
+        "pct": 1.7,
+        "count": 41880
+      },
+      {
+        "group": "Kumal",
+        "pct": 1.6,
+        "count": 40497
+      },
+      {
+        "group": "Gharti/Bhujel",
+        "pct": 1.2,
+        "count": 28751
+      },
+      {
+        "group": "Musalman",
+        "pct": 0.7,
+        "count": 18347
+      },
+      {
+        "group": "Sanyasi/Dasnami",
+        "pct": 0.6,
+        "count": 13640
+      },
+      {
+        "group": "Foreigner",
+        "pct": 0.5,
+        "count": 12955
+      },
+      {
+        "group": "Ghale",
+        "pct": 0.4,
+        "count": 10722
+      },
+      {
+        "group": "Chhantyal/Chhantel",
+        "pct": 0.3,
+        "count": 8502
+      },
+      {
+        "group": "Pun",
+        "pct": 0.3,
+        "count": 8217
+      },
+      {
+        "group": "Rai",
+        "pct": 0.3,
+        "count": 7599
+      },
+      {
+        "group": "Darai",
+        "pct": 0.3,
+        "count": 7581
+      },
+      {
+        "group": "Baram / Baramu",
+        "pct": 0.3,
+        "count": 6452
+      },
+      {
+        "group": "Thakali",
+        "pct": 0.2,
+        "count": 5851
+      },
+      {
+        "group": "Chepang/Praja",
+        "pct": 0.2,
+        "count": 5617
+      },
+      {
+        "group": "Brahman - Tarai",
+        "pct": 0.2,
+        "count": 5451
+      },
+      {
+        "group": "Sunuwar",
+        "pct": 0.2,
+        "count": 5233
+      },
+      {
+        "group": "Bote",
+        "pct": 0.2,
+        "count": 4496
+      },
+      {
+        "group": "Majhi",
+        "pct": 0.2,
+        "count": 4188
+      },
+      {
+        "group": "Dura",
+        "pct": 0.2,
+        "count": 4135
+      },
+      {
+        "group": "Chumba/Nubri",
+        "pct": 0.2,
+        "count": 4096
+      },
+      {
+        "group": "Sonar",
+        "pct": 0.1,
+        "count": 2151
+      },
+      {
+        "group": "Yakthung/Limbu",
+        "pct": 0.1,
+        "count": 1493
+      },
+      {
+        "group": "Yadav",
+        "pct": 0.1,
+        "count": 1466
+      },
+      {
+        "group": "Gaine",
+        "pct": 0.1,
+        "count": 1446
+      },
+      {
+        "group": "Lhopa",
+        "pct": 0.1,
+        "count": 1311
+      },
+      {
+        "group": "Khawas",
+        "pct": 0.1,
+        "count": 1268
+      },
+      {
+        "group": "Sherpa",
+        "pct": 0.1,
+        "count": 1253
+      }
+    ],
+    "sources": [
+      {
+        "field": "caste/ethnicity, language, religion",
+        "name": "National Statistics Office, National Population and Housing Census 2021: National Report on caste/ethnicity, Language and Religion",
+        "license": "Government of Nepal, National Statistics Office. Official publication."
+      }
+    ],
+    "country": "NPL",
+    "aliases": [
+      "Gandaki Province",
+      "Province 4"
+    ],
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Caste and ethnicity are one question in Nepal's census, answered with one of 142 categories. It is not comparable with ethnicity elsewhere: the categories mix caste groups, Adivasi/Janajati nationalities and religious communities, and a person answers once.",
+    "language_year": 2021,
+    "language_note": "Mother tongue, the language first spoken at home in childhood -- not the language a person uses now. The census asks second language and ancestor's language separately; neither is shown here.",
+    "religion_year": 2021
+  },
+  {
+    "id": "NPL-Lumbini",
+    "level": "admin1",
+    "name": "Lumbini",
+    "parent": "NPL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5122078,
+      "year": 2021,
+      "source": "National Statistics Office, National Population and Housing Census 2021: National Report on caste/ethnicity, Language and Religion"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 88.4,
+        "count": 4525623
+      },
+      {
+        "group": "Islam",
+        "pct": 7.4,
+        "count": 381558
+      },
+      {
+        "group": "Bouddha",
+        "pct": 2.0,
+        "count": 102098
+      },
+      {
+        "group": "Christian",
+        "pct": 1.2,
+        "count": 59056
+      },
+      {
+        "group": "Prakriti",
+        "pct": 0.9,
+        "count": 47118
+      },
+      {
+        "group": "Bon",
+        "pct": 0.1,
+        "count": 4999
+      }
+    ],
+    "language": [
+      {
+        "group": "Nepali",
+        "pct": 50.9,
+        "count": 2604614
+      },
+      {
+        "group": "Avadhi",
+        "pct": 16.7,
+        "count": 855264
+      },
+      {
+        "group": "Tharu",
+        "pct": 13.6,
+        "count": 695949
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 11.0,
+        "count": 562062
+      },
+      {
+        "group": "Magar Dhut",
+        "pct": 3.8,
+        "count": 194948
+      },
+      {
+        "group": "Magar Kham",
+        "pct": 1.2,
+        "count": 59104
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.9,
+        "count": 43688
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.5,
+        "count": 27792
+      },
+      {
+        "group": "Nepalbhasha (Newari)",
+        "pct": 0.5,
+        "count": 24560
+      },
+      {
+        "group": "Gurung",
+        "pct": 0.4,
+        "count": 20263
+      },
+      {
+        "group": "Kumal",
+        "pct": 0.1,
+        "count": 5786
+      },
+      {
+        "group": "Maithili",
+        "pct": 0.1,
+        "count": 5761
+      },
+      {
+        "group": "Tamang",
+        "pct": 0.1,
+        "count": 3884
+      },
+      {
+        "group": "Khash",
+        "pct": 0.1,
+        "count": 2682
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Magar",
+        "pct": 14.6,
+        "count": 746154
+      },
+      {
+        "group": "Tharu",
+        "pct": 14.3,
+        "count": 732069
+      },
+      {
+        "group": "Kshetri",
+        "pct": 14.2,
+        "count": 729358
+      },
+      {
+        "group": "Brahman - Hill",
+        "pct": 11.3,
+        "count": 577110
+      },
+      {
+        "group": "Musalman",
+        "pct": 7.1,
+        "count": 365137
+      },
+      {
+        "group": "Bishwokarma",
+        "pct": 6.1,
+        "count": 311282
+      },
+      {
+        "group": "Yadav",
+        "pct": 4.1,
+        "count": 209481
+      },
+      {
+        "group": "Chamar/Harijan/Ram",
+        "pct": 2.1,
+        "count": 107581
+      },
+      {
+        "group": "Pariyar",
+        "pct": 1.9,
+        "count": 98573
+      },
+      {
+        "group": "Kurmi",
+        "pct": 1.7,
+        "count": 88727
+      },
+      {
+        "group": "Mijar",
+        "pct": 1.5,
+        "count": 76223
+      },
+      {
+        "group": "Thakuri",
+        "pct": 1.5,
+        "count": 75375
+      },
+      {
+        "group": "Kewat",
+        "pct": 1.3,
+        "count": 64121
+      },
+      {
+        "group": "Newa: (Newar)",
+        "pct": 1.2,
+        "count": 62599
+      },
+      {
+        "group": "Brahman - Tarai",
+        "pct": 1.2,
+        "count": 62094
+      },
+      {
+        "group": "Dusadh/Pasawan/Pasi",
+        "pct": 1.1,
+        "count": 58319
+      },
+      {
+        "group": "Kumal",
+        "pct": 1.0,
+        "count": 49971
+      },
+      {
+        "group": "Teli",
+        "pct": 0.9,
+        "count": 48191
+      },
+      {
+        "group": "Gurung",
+        "pct": 0.9,
+        "count": 47494
+      },
+      {
+        "group": "Kahar",
+        "pct": 0.9,
+        "count": 45723
+      },
+      {
+        "group": "Sanyasi/Dasnami",
+        "pct": 0.9,
+        "count": 45184
+      },
+      {
+        "group": "Lodh",
+        "pct": 0.8,
+        "count": 39605
+      },
+      {
+        "group": "Mallaha",
+        "pct": 0.8,
+        "count": 38637
+      },
+      {
+        "group": "Dhobi",
+        "pct": 0.7,
+        "count": 34340
+      },
+      {
+        "group": "Koiri/Kushwaha",
+        "pct": 0.6,
+        "count": 31700
+      },
+      {
+        "group": "Baniyan",
+        "pct": 0.5,
+        "count": 27641
+      },
+      {
+        "group": "Hajam/Thakur",
+        "pct": 0.5,
+        "count": 23407
+      },
+      {
+        "group": "Rajbhar",
+        "pct": 0.4,
+        "count": 20903
+      },
+      {
+        "group": "Nuniya",
+        "pct": 0.4,
+        "count": 19789
+      },
+      {
+        "group": "Kori",
+        "pct": 0.4,
+        "count": 18623
+      },
+      {
+        "group": "Foreigner",
+        "pct": 0.4,
+        "count": 18835
+      },
+      {
+        "group": "Kumhar",
+        "pct": 0.3,
+        "count": 17407
+      },
+      {
+        "group": "Baraee",
+        "pct": 0.3,
+        "count": 16481
+      },
+      {
+        "group": "Lohar",
+        "pct": 0.3,
+        "count": 15849
+      },
+      {
+        "group": "Kalwar",
+        "pct": 0.3,
+        "count": 15795
+      },
+      {
+        "group": "Gaderi/Bhediyar",
+        "pct": 0.3,
+        "count": 14741
+      },
+      {
+        "group": "Badhaee/Badhee",
+        "pct": 0.3,
+        "count": 14076
+      },
+      {
+        "group": "Kathabaniyan",
+        "pct": 0.2,
+        "count": 12442
+      },
+      {
+        "group": "Sonar",
+        "pct": 0.2,
+        "count": 10943
+      },
+      {
+        "group": "Gharti/Bhujel",
+        "pct": 0.2,
+        "count": 9737
+      },
+      {
+        "group": "Sunuwar",
+        "pct": 0.2,
+        "count": 9689
+      },
+      {
+        "group": "Khatik",
+        "pct": 0.2,
+        "count": 9121
+      },
+      {
+        "group": "Kanu",
+        "pct": 0.2,
+        "count": 8607
+      },
+      {
+        "group": "Tamang",
+        "pct": 0.2,
+        "count": 7839
+      },
+      {
+        "group": "Dhunia",
+        "pct": 0.1,
+        "count": 6616
+      },
+      {
+        "group": "Musahar",
+        "pct": 0.1,
+        "count": 6603
+      },
+      {
+        "group": "Rajput",
+        "pct": 0.1,
+        "count": 5956
+      },
+      {
+        "group": "Gondh/Gond",
+        "pct": 0.1,
+        "count": 4204
+      },
+      {
+        "group": "Mali",
+        "pct": 0.1,
+        "count": 3548
+      },
+      {
+        "group": "Gaine",
+        "pct": 0.1,
+        "count": 3415
+      },
+      {
+        "group": "Kayastha",
+        "pct": 0.1,
+        "count": 3371
+      },
+      {
+        "group": "Oraon/Kudukh",
+        "pct": 0.1,
+        "count": 3349
+      },
+      {
+        "group": "Haluwai",
+        "pct": 0.1,
+        "count": 3261
+      },
+      {
+        "group": "Badi",
+        "pct": 0.1,
+        "count": 3068
+      },
+      {
+        "group": "Majhi",
+        "pct": 0.1,
+        "count": 2960
+      },
+      {
+        "group": "Patharkatt/ Kushwadiya",
+        "pct": 0.1,
+        "count": 2936
+      },
+      {
+        "group": "Bin",
+        "pct": 0.1,
+        "count": 2811
+      },
+      {
+        "group": "Rai",
+        "pct": 0.1,
+        "count": 2628
+      }
+    ],
+    "sources": [
+      {
+        "field": "caste/ethnicity, language, religion",
+        "name": "National Statistics Office, National Population and Housing Census 2021: National Report on caste/ethnicity, Language and Religion",
+        "license": "Government of Nepal, National Statistics Office. Official publication."
+      }
+    ],
+    "country": "NPL",
+    "aliases": [
+      "Lumbini Province",
+      "Province 5"
+    ],
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Caste and ethnicity are one question in Nepal's census, answered with one of 142 categories. It is not comparable with ethnicity elsewhere: the categories mix caste groups, Adivasi/Janajati nationalities and religious communities, and a person answers once.",
+    "language_year": 2021,
+    "language_note": "Mother tongue, the language first spoken at home in childhood -- not the language a person uses now. The census asks second language and ancestor's language separately; neither is shown here.",
+    "religion_year": 2021
+  },
+  {
+    "id": "NPL-Karnali",
+    "level": "admin1",
+    "name": "Karnali",
+    "parent": "NPL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1688412,
+      "year": 2021,
+      "source": "National Statistics Office, National Population and Housing Census 2021: National Report on caste/ethnicity, Language and Religion"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 94.7,
+        "count": 1598437
+      },
+      {
+        "group": "Bouddha",
+        "pct": 3.2,
+        "count": 53292
+      },
+      {
+        "group": "Christian",
+        "pct": 1.7,
+        "count": 29457
+      },
+      {
+        "group": "Islam",
+        "pct": 0.2,
+        "count": 3570
+      },
+      {
+        "group": "Prakriti",
+        "pct": 0.2,
+        "count": 3009
+      }
+    ],
+    "language": [
+      {
+        "group": "Nepali",
+        "pct": 88.9,
+        "count": 1500161
+      },
+      {
+        "group": "Khash",
+        "pct": 6.3,
+        "count": 107084
+      },
+      {
+        "group": "Magar Dhut",
+        "pct": 1.6,
+        "count": 27072
+      },
+      {
+        "group": "Magar Kham",
+        "pct": 0.8,
+        "count": 13535
+      },
+      {
+        "group": "Tharu",
+        "pct": 0.5,
+        "count": 7791
+      },
+      {
+        "group": "Bhote",
+        "pct": 0.3,
+        "count": 5636
+      },
+      {
+        "group": "Jumli",
+        "pct": 0.3,
+        "count": 5259
+      },
+      {
+        "group": "Dolpali",
+        "pct": 0.2,
+        "count": 3048
+      },
+      {
+        "group": "Karmarong",
+        "pct": 0.1,
+        "count": 2483
+      },
+      {
+        "group": "Mugali",
+        "pct": 0.1,
+        "count": 1724
+      },
+      {
+        "group": "Gurung",
+        "pct": 0.1,
+        "count": 1516
+      },
+      {
+        "group": "Tamang",
+        "pct": 0.1,
+        "count": 1327
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.1,
+        "count": 1204
+      },
+      {
+        "group": "Achhami",
+        "pct": 0.1,
+        "count": 1196
+      },
+      {
+        "group": "Bote",
+        "pct": 0.1,
+        "count": 1086
+      },
+      {
+        "group": "Raji",
+        "pct": 0.1,
+        "count": 993
+      },
+      {
+        "group": "Magar Kaike",
+        "pct": 0.1,
+        "count": 958
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Kshetri",
+        "pct": 42.2,
+        "count": 711889
+      },
+      {
+        "group": "Bishwokarma",
+        "pct": 16.2,
+        "count": 273962
+      },
+      {
+        "group": "Thakuri",
+        "pct": 10.5,
+        "count": 177179
+      },
+      {
+        "group": "Magar",
+        "pct": 10.4,
+        "count": 176068
+      },
+      {
+        "group": "Brahman - Hill",
+        "pct": 8.0,
+        "count": 135617
+      },
+      {
+        "group": "Pariyar",
+        "pct": 4.1,
+        "count": 68465
+      },
+      {
+        "group": "Mijar",
+        "pct": 2.8,
+        "count": 47884
+      },
+      {
+        "group": "Sanyasi/Dasnami",
+        "pct": 1.3,
+        "count": 21882
+      },
+      {
+        "group": "Gurung",
+        "pct": 0.7,
+        "count": 12546
+      },
+      {
+        "group": "Tharu",
+        "pct": 0.5,
+        "count": 8773
+      },
+      {
+        "group": "Bhote",
+        "pct": 0.4,
+        "count": 6055
+      },
+      {
+        "group": "Dolpo",
+        "pct": 0.3,
+        "count": 5205
+      },
+      {
+        "group": "Badi",
+        "pct": 0.3,
+        "count": 4764
+      },
+      {
+        "group": "Newa: (Newar)",
+        "pct": 0.3,
+        "count": 4544
+      },
+      {
+        "group": "Tamang",
+        "pct": 0.3,
+        "count": 4348
+      },
+      {
+        "group": "Byasi/Sauka",
+        "pct": 0.2,
+        "count": 3890
+      },
+      {
+        "group": "Sunuwar",
+        "pct": 0.2,
+        "count": 3399
+      },
+      {
+        "group": "Musalman",
+        "pct": 0.2,
+        "count": 3203
+      },
+      {
+        "group": "Kumal",
+        "pct": 0.1,
+        "count": 2301
+      },
+      {
+        "group": "Mugal/Mugum",
+        "pct": 0.1,
+        "count": 1789
+      },
+      {
+        "group": "Sonar",
+        "pct": 0.1,
+        "count": 1749
+      },
+      {
+        "group": "Majhi",
+        "pct": 0.1,
+        "count": 1700
+      },
+      {
+        "group": "Gharti/Bhujel",
+        "pct": 0.1,
+        "count": 1694
+      },
+      {
+        "group": "Raji",
+        "pct": 0.1,
+        "count": 1502
+      },
+      {
+        "group": "Karmarong",
+        "pct": 0.1,
+        "count": 1465
+      }
+    ],
+    "sources": [
+      {
+        "field": "caste/ethnicity, language, religion",
+        "name": "National Statistics Office, National Population and Housing Census 2021: National Report on caste/ethnicity, Language and Religion",
+        "license": "Government of Nepal, National Statistics Office. Official publication."
+      }
+    ],
+    "country": "NPL",
+    "aliases": [
+      "Karnali Province",
+      "Province 6"
+    ],
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Caste and ethnicity are one question in Nepal's census, answered with one of 142 categories. It is not comparable with ethnicity elsewhere: the categories mix caste groups, Adivasi/Janajati nationalities and religious communities, and a person answers once.",
+    "language_year": 2021,
+    "language_note": "Mother tongue, the language first spoken at home in childhood -- not the language a person uses now. The census asks second language and ancestor's language separately; neither is shown here.",
+    "religion_year": 2021
+  },
+  {
+    "id": "NPL-Sudurpashchim",
+    "level": "admin1",
+    "name": "Sudurpashchim",
+    "parent": "NPL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2694783,
+      "year": 2021,
+      "source": "National Statistics Office, National Population and Housing Census 2021: National Report on caste/ethnicity, Language and Religion"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 97.4,
+        "count": 2625476
+      },
+      {
+        "group": "Christian",
+        "pct": 1.4,
+        "count": 37540
+      },
+      {
+        "group": "Bouddha",
+        "pct": 0.8,
+        "count": 22536
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3,
+        "count": 6983
+      },
+      {
+        "group": "Prakriti",
+        "pct": 0.1,
+        "count": 1540
+      }
+    ],
+    "language": [
+      {
+        "group": "Nepali",
+        "pct": 42.4,
+        "count": 1143562
+      },
+      {
+        "group": "Doteli",
+        "pct": 18.1,
+        "count": 486868
+      },
+      {
+        "group": "Tharu",
+        "pct": 14.8,
+        "count": 398914
+      },
+      {
+        "group": "Baitadeli",
+        "pct": 5.6,
+        "count": 151571
+      },
+      {
+        "group": "Achhami",
+        "pct": 5.1,
+        "count": 138474
+      },
+      {
+        "group": "Bajhangi",
+        "pct": 3.7,
+        "count": 99334
+      },
+      {
+        "group": "Ranatharu",
+        "pct": 2.9,
+        "count": 77727
+      },
+      {
+        "group": "Bajureli",
+        "pct": 2.1,
+        "count": 56396
+      },
+      {
+        "group": "Darchuleli",
+        "pct": 1.7,
+        "count": 45562
+      },
+      {
+        "group": "Dadeldhuri",
+        "pct": 0.8,
+        "count": 21289
+      },
+      {
+        "group": "Magar Dhut",
+        "pct": 0.6,
+        "count": 17326
+      },
+      {
+        "group": "Magar Kham",
+        "pct": 0.3,
+        "count": 9156
+      },
+      {
+        "group": "Tamang",
+        "pct": 0.3,
+        "count": 7837
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.3,
+        "count": 7790
+      },
+      {
+        "group": "Maithili",
+        "pct": 0.2,
+        "count": 4635
+      },
+      {
+        "group": "Dailekhi",
+        "pct": 0.1,
+        "count": 3971
+      },
+      {
+        "group": "Avadhi",
+        "pct": 0.1,
+        "count": 3241
+      },
+      {
+        "group": "Jumli",
+        "pct": 0.1,
+        "count": 2688
+      },
+      {
+        "group": "Khash",
+        "pct": 0.1,
+        "count": 2583
+      },
+      {
+        "group": "Raji",
+        "pct": 0.1,
+        "count": 2437
+      },
+      {
+        "group": "Nepalbhasha (Newari)",
+        "pct": 0.1,
+        "count": 1916
+      },
+      {
+        "group": "Gurung",
+        "pct": 0.1,
+        "count": 1590
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Kshetri",
+        "pct": 41.7,
+        "count": 1124955
+      },
+      {
+        "group": "Tharu",
+        "pct": 14.8,
+        "count": 397822
+      },
+      {
+        "group": "Brahman - Hill",
+        "pct": 12.7,
+        "count": 341972
+      },
+      {
+        "group": "Bishwokarma",
+        "pct": 10.8,
+        "count": 291366
+      },
+      {
+        "group": "Thakuri",
+        "pct": 4.9,
+        "count": 131298
+      },
+      {
+        "group": "Pariyar",
+        "pct": 3.8,
+        "count": 101249
+      },
+      {
+        "group": "Ranatharu",
+        "pct": 3.1,
+        "count": 82299
+      },
+      {
+        "group": "Mijar",
+        "pct": 2.8,
+        "count": 75793
+      },
+      {
+        "group": "Magar",
+        "pct": 2.0,
+        "count": 52797
+      },
+      {
+        "group": "Sanyasi/Dasnami",
+        "pct": 0.9,
+        "count": 23419
+      },
+      {
+        "group": "Lohar",
+        "pct": 0.5,
+        "count": 12286
+      },
+      {
+        "group": "Tamang",
+        "pct": 0.4,
+        "count": 9781
+      },
+      {
+        "group": "Newa: (Newar)",
+        "pct": 0.2,
+        "count": 4549
+      },
+      {
+        "group": "Gurung",
+        "pct": 0.2,
+        "count": 4279
+      },
+      {
+        "group": "Foreigner",
+        "pct": 0.2,
+        "count": 6456
+      },
+      {
+        "group": "Musalman",
+        "pct": 0.1,
+        "count": 3942
+      },
+      {
+        "group": "Sonar",
+        "pct": 0.1,
+        "count": 3466
+      },
+      {
+        "group": "Badi",
+        "pct": 0.1,
+        "count": 2580
+      },
+      {
+        "group": "Raji",
+        "pct": 0.1,
+        "count": 2521
+      },
+      {
+        "group": "Kumal",
+        "pct": 0.1,
+        "count": 2314
+      },
+      {
+        "group": "Brahman - Tarai",
+        "pct": 0.1,
+        "count": 1852
+      },
+      {
+        "group": "Sunuwar",
+        "pct": 0.1,
+        "count": 1752
+      },
+      {
+        "group": "Bhote",
+        "pct": 0.1,
+        "count": 1460
+      },
+      {
+        "group": "Majhi",
+        "pct": 0.1,
+        "count": 1384
+      }
+    ],
+    "sources": [
+      {
+        "field": "caste/ethnicity, language, religion",
+        "name": "National Statistics Office, National Population and Housing Census 2021: National Report on caste/ethnicity, Language and Religion",
+        "license": "Government of Nepal, National Statistics Office. Official publication."
+      }
+    ],
+    "country": "NPL",
+    "aliases": [
+      "Sudurpaschim",
+      "Sudur Pashchim",
+      "Far-Western",
+      "Province 7"
+    ],
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Caste and ethnicity are one question in Nepal's census, answered with one of 142 categories. It is not comparable with ethnicity elsewhere: the categories mix caste groups, Adivasi/Janajati nationalities and religious communities, and a person answers once.",
+    "language_year": 2021,
+    "language_note": "Mother tongue, the language first spoken at home in childhood -- not the language a person uses now. The census asks second language and ancestor's language separately; neither is shown here.",
+    "religion_year": 2021
+  }
+]
