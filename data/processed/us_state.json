@@ -34,6 +34,11 @@
         "count": 2825785
       },
       {
+        "group": "Unaffiliated or not reported",
+        "pct": 36.4,
+        "count": 1828770
+      },
+      {
         "group": "Catholic",
         "pct": 5.0,
         "count": 249650
@@ -200,6 +205,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -210,7 +221,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-02",
@@ -241,6 +252,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 64.8,
+        "count": 475371
+      },
       {
         "group": "Protestant",
         "pct": 21.7,
@@ -413,6 +429,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -423,7 +445,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-04",
@@ -454,6 +476,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 55.9,
+        "count": 4000141
+      },
       {
         "group": "Catholic",
         "pct": 21.3,
@@ -631,6 +658,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -641,7 +674,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-05",
@@ -676,6 +709,11 @@
         "group": "Protestant",
         "pct": 50.2,
         "count": 1511608
+      },
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 42.2,
+        "count": 1271949
       },
       {
         "group": "Catholic",
@@ -849,6 +887,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -859,7 +903,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-06",
@@ -890,6 +934,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 55.2,
+        "count": 21811786
+      },
       {
         "group": "Catholic",
         "pct": 26.2,
@@ -1067,6 +1116,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -1077,7 +1132,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-08",
@@ -1108,6 +1163,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 64.6,
+        "count": 3729274
+      },
       {
         "group": "Protestant",
         "pct": 15.2,
@@ -1285,6 +1345,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -1295,7 +1361,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-09",
@@ -1326,6 +1392,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 52.6,
+        "count": 1897765
+      },
       {
         "group": "Catholic",
         "pct": 28.4,
@@ -1498,6 +1569,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -1508,7 +1585,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-10",
@@ -1539,6 +1616,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 58.6,
+        "count": 580535
+      },
       {
         "group": "Catholic",
         "pct": 19.9,
@@ -1716,6 +1798,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -1726,7 +1814,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-11",
@@ -1757,6 +1845,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 43.6,
+        "count": 300304
+      },
       {
         "group": "Protestant",
         "pct": 35.7,
@@ -1934,6 +2027,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -1944,7 +2043,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-12",
@@ -1975,6 +2074,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 52.9,
+        "count": 11398134
+      },
       {
         "group": "Protestant",
         "pct": 23.9,
@@ -2152,6 +2256,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -2162,7 +2272,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-13",
@@ -2193,6 +2303,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 49.2,
+        "count": 5271962
+      },
       {
         "group": "Protestant",
         "pct": 38.1,
@@ -2365,6 +2480,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -2375,7 +2496,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-15",
@@ -2406,6 +2527,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 58.5,
+        "count": 851541
+      },
       {
         "group": "Catholic",
         "pct": 18.5,
@@ -2578,6 +2704,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -2588,7 +2720,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-16",
@@ -2619,6 +2751,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 47.3,
+        "count": 869205
+      },
       {
         "group": "Latter-day Saints",
         "pct": 25.1,
@@ -2796,6 +2933,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -2806,7 +2949,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-17",
@@ -2837,6 +2980,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 49.2,
+        "count": 6302145
+      },
       {
         "group": "Catholic",
         "pct": 24.2,
@@ -3014,6 +3162,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -3024,7 +3178,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-18",
@@ -3055,6 +3209,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 57.9,
+        "count": 3926089
+      },
       {
         "group": "Protestant",
         "pct": 28.1,
@@ -3232,6 +3391,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -3242,7 +3407,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-19",
@@ -3273,6 +3438,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 55.1,
+        "count": 1759020
+      },
       {
         "group": "Protestant",
         "pct": 27.5,
@@ -3450,6 +3620,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -3460,7 +3636,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-20",
@@ -3491,6 +3667,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 54.0,
+        "count": 1585639
+      },
       {
         "group": "Protestant",
         "pct": 29.0,
@@ -3668,6 +3849,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -3678,7 +3865,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-21",
@@ -3709,6 +3896,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 50.6,
+        "count": 2279548
+      },
       {
         "group": "Protestant",
         "pct": 39.4,
@@ -3886,6 +4078,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -3896,7 +4094,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-22",
@@ -3927,6 +4125,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 36.7,
+        "count": 1708337
+      },
       {
         "group": "Protestant",
         "pct": 34.1,
@@ -4099,6 +4302,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -4109,7 +4318,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-23",
@@ -4140,6 +4349,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 69.2,
+        "count": 942836
+      },
       {
         "group": "Catholic",
         "pct": 16.1,
@@ -4317,6 +4531,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -4327,7 +4547,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-24",
@@ -4358,6 +4578,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 56.5,
+        "count": 3491886
+      },
       {
         "group": "Protestant",
         "pct": 21.3,
@@ -4530,6 +4755,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -4540,7 +4771,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-25",
@@ -4571,6 +4802,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 51.4,
+        "count": 3610547
+      },
       {
         "group": "Catholic",
         "pct": 35.5,
@@ -4748,6 +4984,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -4758,7 +5000,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-26",
@@ -4789,6 +5031,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 60.3,
+        "count": 6078746
+      },
       {
         "group": "Protestant",
         "pct": 20.1,
@@ -4966,6 +5213,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -4976,7 +5229,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-27",
@@ -5007,6 +5260,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 50.5,
+        "count": 2882120
+      },
       {
         "group": "Protestant",
         "pct": 25.8,
@@ -5184,6 +5442,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -5194,7 +5458,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-28",
@@ -5229,6 +5493,11 @@
         "group": "Protestant",
         "pct": 54.3,
         "count": 1608984
+      },
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 40.6,
+        "count": 1201344
       },
       {
         "group": "Catholic",
@@ -5397,6 +5666,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -5407,7 +5682,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-29",
@@ -5438,6 +5713,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 51.6,
+        "count": 3175419
+      },
       {
         "group": "Protestant",
         "pct": 32.4,
@@ -5615,6 +5895,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -5625,7 +5911,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-30",
@@ -5656,6 +5942,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 65.2,
+        "count": 706512
+      },
       {
         "group": "Protestant",
         "pct": 18.4,
@@ -5828,6 +6119,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -5838,7 +6135,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-31",
@@ -5869,6 +6166,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 50.7,
+        "count": 994926
+      },
       {
         "group": "Protestant",
         "pct": 27.1,
@@ -6041,6 +6343,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -6051,7 +6359,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-32",
@@ -6082,6 +6390,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 58.4,
+        "count": 1812836
+      },
       {
         "group": "Catholic",
         "pct": 24.7,
@@ -6254,6 +6567,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -6264,7 +6583,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-33",
@@ -6295,6 +6614,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 72.8,
+        "count": 1002581
+      },
       {
         "group": "Catholic",
         "pct": 16.0,
@@ -6462,6 +6786,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -6472,7 +6802,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-34",
@@ -6503,6 +6833,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 47.8,
+        "count": 4442534
+      },
       {
         "group": "Catholic",
         "pct": 32.0,
@@ -6675,6 +7010,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -6685,7 +7026,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-35",
@@ -6716,6 +7057,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 47.5,
+        "count": 1005545
+      },
       {
         "group": "Catholic",
         "pct": 29.9,
@@ -6893,6 +7239,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -6903,7 +7255,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-36",
@@ -6934,6 +7286,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 48.8,
+        "count": 9853701
+      },
       {
         "group": "Catholic",
         "pct": 30.6,
@@ -7111,6 +7468,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -7121,7 +7484,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-37",
@@ -7152,6 +7515,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 47.9,
+        "count": 4995651
+      },
       {
         "group": "Protestant",
         "pct": 39.4,
@@ -7324,6 +7692,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -7334,7 +7708,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-38",
@@ -7365,6 +7739,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 45.0,
+        "count": 350447
+      },
       {
         "group": "Protestant",
         "pct": 31.8,
@@ -7532,6 +7911,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -7542,7 +7927,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-39",
@@ -7573,6 +7958,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 52.1,
+        "count": 6153210
+      },
       {
         "group": "Protestant",
         "pct": 28.9,
@@ -7750,6 +8140,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -7760,7 +8156,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-40",
@@ -7795,6 +8191,11 @@
         "group": "Protestant",
         "pct": 51.3,
         "count": 2032070
+      },
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 38.8,
+        "count": 1537230
       },
       {
         "group": "Catholic",
@@ -7968,6 +8369,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -7978,7 +8385,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-41",
@@ -8009,6 +8416,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 66.8,
+        "count": 2831283
+      },
       {
         "group": "Protestant",
         "pct": 15.3,
@@ -8181,6 +8593,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -8191,7 +8609,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-42",
@@ -8222,6 +8640,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 53.1,
+        "count": 6905355
+      },
       {
         "group": "Catholic",
         "pct": 21.9,
@@ -8399,6 +8822,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -8409,7 +8838,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-44",
@@ -8440,6 +8869,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 48.5,
+        "count": 532128
+      },
       {
         "group": "Catholic",
         "pct": 40.6,
@@ -8612,6 +9046,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -8622,7 +9062,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-45",
@@ -8653,6 +9093,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 47.3,
+        "count": 2422525
+      },
       {
         "group": "Protestant",
         "pct": 42.0,
@@ -8825,6 +9270,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -8835,7 +9286,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-46",
@@ -8866,6 +9317,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 44.6,
+        "count": 395641
+      },
       {
         "group": "Protestant",
         "pct": 38.3,
@@ -9038,6 +9494,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -9048,7 +9510,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-47",
@@ -9083,6 +9545,11 @@
         "group": "Protestant",
         "pct": 48.6,
         "count": 3360271
+      },
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 44.4,
+        "count": 3065883
       },
       {
         "group": "Catholic",
@@ -9251,6 +9718,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -9261,7 +9734,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-48",
@@ -9292,6 +9765,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 44.9,
+        "count": 13100026
+      },
       {
         "group": "Protestant",
         "pct": 30.3,
@@ -9464,6 +9942,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -9474,7 +9958,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-49",
@@ -9509,6 +9993,11 @@
         "group": "Latter-day Saints",
         "pct": 65.0,
         "count": 2126216
+      },
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 23.9,
+        "count": 782045
       },
       {
         "group": "Catholic",
@@ -9677,6 +10166,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -9687,7 +10182,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-50",
@@ -9718,6 +10213,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 62.4,
+        "count": 401060
+      },
       {
         "group": "Catholic",
         "pct": 20.9,
@@ -9890,6 +10390,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -9900,7 +10406,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-51",
@@ -9931,6 +10437,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 54.0,
+        "count": 4661088
+      },
       {
         "group": "Protestant",
         "pct": 30.4,
@@ -10108,6 +10619,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -10118,7 +10635,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-53",
@@ -10149,6 +10666,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 58.7,
+        "count": 4520530
+      },
       {
         "group": "Protestant",
         "pct": 23.5,
@@ -10326,6 +10848,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -10336,7 +10864,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-54",
@@ -10367,6 +10895,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 62.2,
+        "count": 1116083
+      },
       {
         "group": "Protestant",
         "pct": 30.4,
@@ -10534,6 +11067,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -10544,7 +11083,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-55",
@@ -10575,6 +11114,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 52.0,
+        "count": 3062124
+      },
       {
         "group": "Protestant",
         "pct": 24.0,
@@ -10752,6 +11296,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -10762,7 +11312,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-56",
@@ -10793,6 +11343,11 @@
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
     "religion": [
+      {
+        "group": "Unaffiliated or not reported",
+        "pct": 59.6,
+        "count": 343835
+      },
       {
         "group": "Protestant",
         "pct": 15.6,
@@ -10955,6 +11510,12 @@
         "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
         "url": "https://www.usreligioncensus.org/",
         "license": "Copyright ASARB; used with the publisher's suggested citation"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -10965,7 +11526,7 @@
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
     "religion_basis": "adherents",
-    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-72",

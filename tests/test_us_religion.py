@@ -15,7 +15,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from scripts.fetch_census.us_acs import (  # noqa: E402
-    check_national, read_group_detail, to_traditions,
+    REMAINDER, attach_religion, check_national, read_group_detail, to_traditions,
 )
 
 HEADER = ["FIPS", "State Name", "County Name", "Group Code", "Group Name",
@@ -114,3 +114,40 @@ class Traditions(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class Remainder(unittest.TestCase):
+    """The share the study does not account for is named, not scaled away.
+
+    Coverage runs from 27.3% of New Hampshire to 76.2% of Utah. Rescaling each
+    area to 100% would make them look equally religious.
+    """
+
+    def attach(self, adherents, pop):
+        path = sheet([county("01001", "Catholic Church", adherents, pop),
+                      ["Total", "", "", "", "", 1, adherents, 1, adherents / pop]])
+        records = [{"codes": {"geoid": "01001"}, "sources": [],
+                    "religion": {"status": "not_collected"}}]
+        attach_religion(records, path, "county")
+        return records[0]["religion"]
+
+    def test_shortfall_becomes_a_named_group(self):
+        got = {row["group"]: row["pct"] for row in self.attach(300, 1000)}
+        self.assertEqual(got["Catholic"], 30.0)
+        self.assertEqual(got[REMAINDER], 70.0)
+        self.assertAlmostEqual(sum(got.values()), 100.0)
+
+    def test_coverage_differences_are_preserved(self):
+        # The whole point: two areas with the same single body but different
+        # coverage must not come out looking the same.
+        low = {r["group"]: r["pct"] for r in self.attach(300, 1000)}
+        high = {r["group"]: r["pct"] for r in self.attach(760, 1000)}
+        self.assertNotEqual(low["Catholic"], high["Catholic"])
+        self.assertEqual(high["Catholic"], 76.0)
+
+    def test_no_negative_remainder(self):
+        # 30 counties report more adherents than residents, because rural
+        # congregations draw members from outside them. King County, Texas
+        # reports 452%. A negative remainder is not a group of people.
+        got = {row["group"]: row["pct"] for row in self.attach(4525, 1000)}
+        self.assertNotIn(REMAINDER, got)

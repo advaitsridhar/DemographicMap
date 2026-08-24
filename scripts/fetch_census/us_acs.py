@@ -313,6 +313,17 @@ UNMATCHED_REASONS = {
           "2022. The 2020 study reports the old counties, so its figures cannot "
           "be placed on this geography without inventing a way to split them.",
 }
+# The share of an area the study accounts for is not a constant to be scaled
+# away: it runs from 27.3% in New Hampshire to 76.2% in Utah. Rescaling each
+# area's shares to sum to 100% would make those two look equally religious,
+# which deletes the most informative signal in the data and asserts that nobody
+# in the United States is unaffiliated.
+#
+# So the shortfall is named instead. It is genuinely two things at once -- people
+# who belong to nothing, and members of bodies that did not report -- and the
+# study cannot separate them, so the label does not pretend to.
+REMAINDER = "Unaffiliated or not reported"
+
 UNMATCHED_DEFAULT = (
     "No religious body reporting to the 2020 study had a congregation here. That "
     "is an absence of reported adherents, not a count of zero believers.")
@@ -462,15 +473,26 @@ def attach_religion(records: list[dict[str, Any]], path: Path, level: str) -> No
                                   UNMATCHED_REASONS.get(gid[:2], UNMATCHED_DEFAULT))
             continue
         matched += 1
-        rec["religion"] = shares(to_traditions(groups), total=pop)
+        counts = to_traditions(groups)
+        # Not in 30 counties, where reporting bodies claim more adherents than
+        # the county has residents -- rural congregations drawing members from
+        # outside it. King County, Texas reports 452%. A "remainder" there would
+        # be negative, which is not a group of people.
+        remainder = pop - sum(counts.values())
+        if remainder > 0:
+            counts[REMAINDER] = remainder
+        rec["religion"] = shares(counts, total=pop)
         rec["religion_basis"] = "adherents"
         rec["religion_note"] = (
             "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious "
             "bodies, grouped into traditions and expressed as a share of the 2020 "
-            "census population. This is not self-identification and does not sum to "
-            "100% -- the study reached about 48.6% of the population nationally, and "
-            "the remainder is uncounted rather than unaffiliated. Not comparable "
-            "with the census religion figures used for other countries.")
+            "census population. These are counts of people reported by religious "
+            "bodies, not answers people gave about themselves. The study accounted "
+            "for about 48.6% of the population nationally, and between 27% and 76% "
+            "depending on the state; the rest is shown as one category because it "
+            "mixes people who belong to nothing with members of bodies that did not "
+            "report, and the study cannot tell them apart. Not comparable with the "
+            "census religion figures used for other countries.")
         rec["sources"].append({"field": "religion", "name": RELIGION_CITATION,
                                "url": "https://www.usreligioncensus.org/",
                                "license": "Copyright ASARB; used with the "
