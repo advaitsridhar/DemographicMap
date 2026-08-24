@@ -1,4 +1,8 @@
-page: https://api.data.stats.govt.nz/rest/data/STATSNZ,CEN23_ECI_017,1.0/all?format=csv&startPeriod=2023&endPeriod=2023
-  unreachable: HTTPError: HTTP Error 401: Unauthorized
-page: https://api.data.stats.govt.nz/rest/data/STATSNZ,CEN23_ECI_017,1.0/all
-  unreachable: HTTPError: HTTP Error 401: Unauthorized
+page: https://www.stats.govt.nz/information-releases/2023-census-population-counts-by-ethnic-group-language-and-religious-affiliation-and-selected-total-responses/
+  unreachable: HTTPError: HTTP Error 404: Not Found
+page: https://www.stats.govt.nz/2023-census/
+  139,145 bytes
+  0 matching link(s)
+page: https://www.stats.govt.nz/large-datasets/csv-files-for-download/
+  213,078 bytes
+  0 matching link(s)
