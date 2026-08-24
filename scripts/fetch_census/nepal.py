@@ -142,6 +142,9 @@ DISTRICT_ALIASES: dict[str, tuple[str, ...]] = {
     "Makwanpur": ("Makawanpur",),
     "Syangja": ("Synagja",),
     "Tanahun": ("Tanahu",),
+    # Wikidata's spellings, which the shape check resolves through this table.
+    "Sindhupalchok": ("Sindhupalchowk",),
+    "Terhathum": ("Tehrathum",),
     "Rukum East": ("Rukum_E", "Rukum (East)", "Eastern Rukum"),
     "Rukum West": ("Rukum_W", "Rukum (West)", "Western Rukum"),
     "Nawalpur": ("Nawalparasi (Bardaghat Susta East)",),
@@ -151,32 +154,35 @@ DISTRICT_ALIASES: dict[str, tuple[str, ...]] = {
 
 # Districts whose figures are deliberately not joined to a boundary shape.
 #
-# geoBoundaries CGAZ carries 75 shapes for Nepal's 77 districts, and its names
-# do not sit on the right polygons. Asking the polygons directly which one
-# contains each district's headquarters:
+# Not a judgement call: this is the output of scripts/verify_shapes.py, which
+# checks every district's independent reference point -- Wikidata's P625 --
+# against the polygon bearing its name. Of Nepal's 77 districts, 64 have their
+# point inside their own polygon and 2 more fall just outside it (Lalitpur by
+# 1.6 km, Myagdi by 2.6 km, both into a neighbour whose own point is elsewhere,
+# which says more about a town-hall coordinate than about the boundary). The 11
+# below are somewhere else entirely.
 #
-#   Butwal and Bhairahawa (Rupandehi)  -> a shape named "Nawalapur"
-#   Dailekh town (Dailekh)             -> a shape named "Jajarkot"
-#   Siraha town (Siraha)               -> the western of two named "Saptari"
-#   Kawasoti (Nawalpur)                -> a shape named "Chitawan"
+#     python scripts/verify_shapes.py --country NPL \
+#         --points data/processed/nepal_wikidata_points.json \
+#         --name-contains District --alias-module scripts.fetch_census.nepal
 #
-# and "Bara" and "Saptari" each appear twice while Parsa, Siraha, Rupandehi and
-# Dailekh appear not at all. A name-keyed join would put Rupandehi's 1.1 million
-# people on a polygon labelled Nawalapur and show nothing on screen to say so.
-# These six names are therefore withheld: the shapes they would reach are
-# either duplicated or demonstrably somebody else's ground.
+# geoBoundaries CGAZ carries 75 shapes for 77 districts, two names twice, and
+# in Karnali the labels are shifted along by one. Joining any of these by name
+# would put one district's population on another's ground, and nothing on
+# screen would say so.
 UNJOINABLE = {
-    "Rupandehi": "CGAZ has no Rupandehi; its territory lies inside a shape named Nawalapur",
-    "Nawalpur": "CGAZ has no Nawalpur; its territory lies inside a shape named Chitawan",
-    "Dailekh": "CGAZ has no Dailekh; its territory lies inside a shape named Jajarkot",
-    "Siraha": "CGAZ has no Siraha; its territory lies inside the western of two shapes named Saptari",
-    "Parsa": "CGAZ has no Parsa; its territory lies inside a shape named Bara",
-    "Saptari": "CGAZ carries two shapes named Saptari, one of which is Siraha",
+    "Bara": "two shapes bear this name, and one of them is Parsa",
+    "Parsa": "no shape bears this name; Parsa's ground is inside one named Bara",
+    "Saptari": "two shapes bear this name, and one of them is Siraha",
+    "Siraha": "no shape bears this name; Siraha's ground is inside one named Saptari",
+    "Dailekh": "no shape bears this name; Dailekh's ground is inside one named Jajarkot",
+    "Jajarkot": "the shape named Jajarkot is Dailekh's ground; Jajarkot's own is inside one named Rukum West",
+    "Rukum East": "the shape named Rukum East is 20 km away; this district's ground is inside one named Rolpa",
+    "Rukum West": "the shape named Rukum West is Jajarkot's ground; this district's is inside one named Rukum East",
+    "Rupandehi": "no shape bears this name; Rupandehi's ground is inside one named Nawalapur",
+    "Nawalpur": "no shape bears this name; Nawalpur's ground is inside one named Nawalparasi",
+    "Parasi": "no shape contains this district at all",
 }
-# Bara is in the same bind as Saptari -- two shapes wear the name -- so it goes
-# with them.
-UNJOINABLE["Bara"] = ("CGAZ carries two shapes named Bara, one of which is "
-                      "Parsa")
 
 # The report uses two table shapes, and which one a page is in is decided by
 # the row that opens each area rather than by the annex title. The title is

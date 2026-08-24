@@ -80,7 +80,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Singapore | SingStat Table Builder M810771 | planning region | Resident population, sex ratio and a derived median age for the 5 regions. Religion, ethnicity and language are collected but not published at this geography. |
 | Sri Lanka | Census of Population and Housing 2024, tables A1–A3 | province, district | Population, sex ratio, religion and ethnicity for all 25 districts and 9 provinces. |
 | Mexico | INEGI Censo de Población y Vivienda 2020, ITER | state, municipality | Religion, indigenous-language speaking and Afro-descendant identification for 2,453 of 2,457 municipios. All from the *cuestionario básico*, so these are counts, not sample estimates. |
-| Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. 70 of 77 districts — the boundary file's district names do not sit on the right polygons. |
+| Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. All 7 provinces and 66 of 77 districts — the boundary file's district names do not all sit on the right polygons. |
 | India | Census 2011 tables C-01, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. |
 
 ### Nepal: three fields, one census, and a boundary file that does not fit
@@ -117,24 +117,55 @@ own printed total. That second check is the one that catches a dropped row: a
 shares-add-to-100% test cannot, because the shares are computed from whatever
 was read.
 
-**Seven districts are withheld, and the reason is the boundary file.**
-geoBoundaries CGAZ carries 75 shapes for Nepal's 77 districts. `Bara` and
-`Saptari` each appear twice; `Parsa`, `Siraha`, `Rupandehi` and `Dailekh` do
-not appear at all. Asking the polygons which one contains each district's
-headquarters:
+**Eleven districts are withheld, and the reason is the boundary file.**
+geoBoundaries CGAZ carries 75 shapes for Nepal's 77 districts, two of the names
+appear twice, and in Karnali the labels are shifted along by one. This is not a
+spelling problem an alias fixes — the names are on the wrong ground, and a
+name-keyed join cannot notice, because a wrong join looks exactly like a right
+one.
 
-| Town | District it is in | Polygon containing it |
-|---|---|---|
-| Butwal, Bhairahawa | Rupandehi | `Nawalapur` |
-| Dailekh town | Dailekh | `Jajarkot` |
-| Siraha town | Siraha | the western of two named `Saptari` |
-| Kawasoti | Nawalpur | `Chitawan` |
+So the join is checked rather than assumed. `scripts/verify_shapes.py` takes an
+independent reference point for every district — Wikidata's P625, fetched by
+`fetch_wikidata.py --level admin2` — and asks which polygon contains it:
 
-This is not a spelling problem that an alias fixes — the names are on the wrong
-polygons. Joining by name would render Rupandehi's 1.1 million people on a
-shape labelled Nawalapur with nothing on screen to indicate an error, which is
-the one failure mode this project treats as worse than a gap. The other 70
-districts join normally, and the 7 provinces join in full.
+```
+python scripts/verify_shapes.py --country NPL \
+    --points data/processed/nepal_wikidata_points.json \
+    --name-contains District --alias-module scripts.fetch_census.nepal
+```
+
+| | Districts | |
+|---|---:|---|
+| agrees | 64 | the point is inside the polygon of that name |
+| near | 2 | just outside it, and no other district's point is inside it either |
+| elsewhere | 11 | inside a differently named polygon, or no polygon bears the name |
+
+The two "near" cases are Lalitpur, 1.6 km outside its own polygon, and Myagdi,
+2.6 km. A reference point is a town hall or a centroid, not authoritative
+geometry, and a point that lands just over a boundary into a neighbour whose
+own point is somewhere else says more about the point than the polygon. Both
+join, and the distance is printed so the call is reviewable.
+
+The eleven are not marginal:
+
+| District | Where its ground actually is |
+|---|---|
+| Rupandehi | inside a polygon named `Nawalapur` |
+| Nawalpur | inside one named `Nawalparasi` |
+| Parasi | inside no polygon at all |
+| Dailekh | inside one named `Jajarkot` |
+| Jajarkot | inside one named `Rukum West` |
+| Rukum West | inside one named `Rukum East` |
+| Rukum East | inside one named `Rolpa` |
+| Parsa | inside one named `Bara` |
+| Siraha | inside one named `Saptari` |
+| Bara, Saptari | two polygons bear each name |
+
+Joining any of these would render one district's population on another's
+territory, which is the one failure this project treats as worse than a gap.
+The check is not Nepal-specific: any country whose boundary names might have
+drifted can be run through it, and the aliases come from the adapter itself so
+there is one list of spellings rather than two that can disagree.
 
 **Provinces changed their names, and the boundary file did not.** CGAZ still
 calls Koshi "Province 1" and Madhesh "Province 2", names dropped when the
