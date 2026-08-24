@@ -127,17 +127,26 @@ DISTRICTS: dict[str, tuple[str, ...]] = {
 # Spellings the boundary file uses for a district the census names otherwise.
 # Only spelling variants belong here: a name that names a *different* place is
 # a mis-join waiting to happen and is handled by the exclusion list below.
+# Two sources of variation are folded here, and they are different things.
+# CGAZ's spellings ("Chitawan", "Synagja") are how the boundary file writes a
+# name. The parenthesised forms are the census's own: it calls the two
+# districts carved out of Nawalparasi in 2017 by the stretch of the Bardaghat
+# Susta road that divides them, and calls Rukum's halves the same way.
 DISTRICT_ALIASES: dict[str, tuple[str, ...]] = {
     "Bajura": ("Baijura",),
     "Chitwan": ("Chitawan",),
-    "Dadeldhura": ("Dadeidhura", "Dadeldhura"),
+    "Dadeldhura": ("Dadeidhura",),
+    "Dhanusha": ("Dhanusa",),
+    "Kapilvastu": ("Kapilbastu",),
     "Kavrepalanchok": ("Kabherepalanchok", "Kavre"),
     "Makwanpur": ("Makawanpur",),
     "Syangja": ("Synagja",),
     "Tanahun": ("Tanahu",),
-    "Rukum East": ("Rukum_E", "Eastern Rukum"),
-    "Rukum West": ("Rukum_W", "Western Rukum"),
-    "Parasi": ("Nawalparasi", "Nawalparasi West", "Parasi (Nawalparasi West)"),
+    "Rukum East": ("Rukum_E", "Rukum (East)", "Eastern Rukum"),
+    "Rukum West": ("Rukum_W", "Rukum (West)", "Western Rukum"),
+    "Nawalpur": ("Nawalparasi (Bardaghat Susta East)",),
+    "Parasi": ("Nawalparasi (Bardaghat Susta West)", "Nawalparasi",
+               "Nawalparasi West"),
 }
 
 # Districts whose figures are deliberately not joined to a boundary shape.
@@ -169,15 +178,25 @@ UNJOINABLE = {
 UNJOINABLE["Bara"] = ("CGAZ carries two shapes named Bara, one of which is "
                       "Parsa")
 
-# The rows that are not a group: the annex total, and the residuals.
-TOTAL_ROW = re.compile(r"^(all castes|all languages|all religions|total)$", re.I)
-RESIDUAL = {"Foreigner", "Others", "Not stated"}
+# The report uses two table shapes, and which one a page is in is decided by
+# the row that opens each area rather than by the annex title. The title is
+# page furniture: pypdf emits it *after* the rows it labels on every page but
+# the first, where it does not appear at all, so bracketing an annex by its
+# heading loses a page at each end.
+#
+# Annex 1 (caste/ethnicity) and Annex 2 (mother tongue) are long tables, and
+# each opens an area with its own total label. Both labels occur exactly 85
+# times in the report -- the nation, 7 provinces and 77 districts -- which is
+# what makes them a reliable bracket.
+LONG_TABLES = {"All Castes": "ethnicity", "All MTongues": "language"}
 
-ANNEXES = {
-    "ethnicity": "population by caste/ethnicity and sex",
-    "language": "population by mother tongue and sex",
-    "religion": "population by religion and sex",
-}
+# Annex 5 (religion) is a wide cross-tab instead: a header naming the ten
+# religions, then each area in capitals followed by Total, Male and Female
+# rows. The Total row is the population and then one count per religion, in
+# header order.
+RELIGION_HEADER = re.compile(r"^Hindu\s+Bouddha\s+Islam\b", re.I)
+
+FIELDS = ("ethnicity", "language", "religion")
 
 
 # ---------------------------------------------------------------------------
@@ -207,66 +226,197 @@ def text_of(path: Path) -> list[str]:
 def clean(line: str) -> str:
     """One line, with the extraction's artefacts removed.
 
-    The report is typeset with ligatures that come back as separated letters --
-    "Popula on" for "Population", "ethnici es" for "ethnicities" -- because the
-    fi/ti glyphs carry no Unicode mapping. That matters only for matching
-    headers, never for figures, so the gaps are closed rather than corrected.
+    The report is typeset with fi/ti ligatures whose glyphs carry no Unicode
+    mapping, so "Population" comes back as "Popula \u019f on" and "Office" as
+    "Of\ufb01 ce". That only ever affects prose and headers, never a figure, so
+    the stray letters are dropped and the spacing closed up rather than
+    reconstructed.
     """
+    line = line.replace("\u019f", "").replace("\ufb01", "fi").replace("\ufb02", "fl")
     return re.sub(r"\s+", " ", line).strip()
-
-
-def looks_like_header(line: str) -> bool:
-    low = clean(line).lower()
-    return (low.startswith("annex") or low.startswith("area")
-            or "population total male female" in low.replace("popula on", "population")
-            or low in {"", "nepal population and housing census 2021"})
 
 
 _ROW = re.compile(r"^(?P<name>.+?)\s+(?P<total>\d[\d,]*)\s+(?P<male>\d[\d,]*)"
                   r"\s+(?P<female>\d[\d,]*)$")
+_TOTAL_ROW = re.compile(r"^(?P<label>All Castes|All MTongues)\s+(?P<total>\d[\d,]*)"
+                        r"\s+\d[\d,]*\s+\d[\d,]*$")
 
 
-def parse_annex(lines: list[str], title: str) -> dict[str, dict[str, int]]:
-    """One annex, as {area name: {group: count}}, in document order.
+def squash(text: str) -> str:
+    return "".join(text.split())
 
-    The annex is found by its title, which repeats on every page of it, and ends
-    at the first page whose title is a different annex. Inside, a line with a
-    name and exactly three figures is a data row; a line with a name and no
-    figures opens a new area.
+
+def letter_spaced(line: str) -> bool:
+    """Whether a line has been justified glyph by glyph.
+
+    A few rows per page come back from the extractor with a space between
+    every character -- "T h a r u 9 47 12 3" for "Tharu 94 71 23". Left alone
+    the row parser reads the last three space-separated runs as the figures and
+    takes 47, 12 and 3, which is a wrong number that looks like a right one.
+    Three or more single-letter tokens is the signature.
     """
-    wanted = title.lower()
-    out: dict[str, dict[str, int]] = {}
+    return sum(1 for token in line.split()
+               if len(token) == 1 and token.isalpha()) >= 3
+
+
+def split_figures(digits: str) -> tuple[int, int, int] | None:
+    """The one way to cut a run of digits into total, male and female.
+
+    The table prints all three and they satisfy total = male + female, so the
+    split is recoverable from the document's own redundancy rather than
+    guessed at: "947123" cuts only one way, 94 = 71 + 23. Where more than one
+    cut satisfies it -- or none does -- this returns None and the caller
+    refuses the row rather than choosing.
+    """
+    found = []
+    for i in range(1, len(digits) - 1):
+        for j in range(i + 1, len(digits)):
+            a, b, c = digits[:i], digits[i:j], digits[j:]
+            if any(part != "0" and part.startswith("0") for part in (a, b, c)):
+                continue
+            if int(a) == int(b) + int(c):
+                found.append((int(a), int(b), int(c)))
+    return found[0] if len(found) == 1 else None
+
+
+def parse_long(lines: list[str]) -> dict[str, dict[str, dict[str, int]]]:
+    """Annexes 1 and 2, keyed {field: {area: {group: count}}}.
+
+    Both are read in one pass, because which annex a row belongs to is decided
+    by the last total label seen -- "All Castes" or "All MTongues" -- and not by
+    the page heading. The area is whichever known name last appeared on a line
+    of its own; anything else, including the page numbers and the mangled
+    column headers, matches nothing and is skipped.
+    """
+    out: dict[str, dict[str, dict[str, int]]] = {"ethnicity": {}, "language": {}}
+    field: str | None = None
     area: str | None = None
-    inside = False
+    pending: str | None = None
+    # Rows the extractor justified glyph by glyph, held back until the ordinary
+    # spellings have all been seen, and the name each of them squashes to.
+    deferred: list[tuple[str, str, str]] = []
+    spellings: dict[str, dict[str, str]] = {}
     for raw in lines:
         line = clean(raw)
-        low = line.lower().replace("popula on", "population").replace("ethinicity", "ethnicity")
-        if low.startswith("annex"):
-            inside = wanted in low
+        if not line or line.isdigit():
             continue
-        if not inside or looks_like_header(line):
-            continue
-        # A bare page number is not an area.
-        if line.isdigit():
-            continue
-        match = _ROW.match(line)
-        if match:
-            if area is None:
+        total = _TOTAL_ROW.match(line)
+        if total:
+            # The total row names the annex and closes the area heading above
+            # it. Both are settled here rather than guessed at earlier.
+            field = LONG_TABLES[total.group("label")]
+            if pending is None:
                 continue
-            name = match.group("name").strip()
-            count = int(match.group("total").replace(",", ""))
-            if TOTAL_ROW.match(name):
-                out[area]["_total"] = count
-            else:
-                out[area][name] = count
+            area = pending
+            out[field].setdefault(area, {})["_total"] = int(
+                total.group("total").replace(",", ""))
             continue
-        # No figures: an area name, possibly with the next area's first row
-        # welded on by the extractor. Only a name this report knows is taken.
-        name = line.strip()
-        if known_area(name):
-            area = canonical_area(name)
-            out.setdefault(area, {})
+        if letter_spaced(line):
+            if field and area:
+                deferred.append((field, area, line))
+            continue
+        row = _ROW.match(line)
+        if row:
+            if field and area:
+                name = row.group("name").strip()
+                if name not in {"Total", "Male", "Female"}:
+                    out[field][area][name] = int(
+                        row.group("total").replace(",", ""))
+                    spellings.setdefault(field, {})[squash(name)] = name
+            continue
+        if known_area(line):
+            # A heading closes the block above it as well as opening the next.
+            # Annexes 3 and 4 -- second language and ancestor's language -- have
+            # no "All ..." row of their own, so without this the field and area
+            # last set by annex 2 stayed live and every one of their rows piled
+            # onto Kanchanpur, the last district of annex 2. The printed-total
+            # check caught it: 552,086 against a printed 513,757.
+            pending = canonical_area(line)
+            area = None
+
+    resolve_spaced(out, deferred, spellings)
     return out
+
+
+def resolve_spaced(out: dict[str, dict[str, dict[str, int]]],
+                   deferred: list[tuple[str, str, str]],
+                   spellings: dict[str, dict[str, str]]) -> None:
+    """Put the justified rows back, once every ordinary spelling has been seen.
+
+    The name is recovered by matching it, spaces removed, against the names
+    read from rows that were not justified -- every group in this report
+    appears un-justified somewhere, because a group that appears in one area
+    appears in dozens. That is what restores "Brahman - Hill" rather than
+    leaving "BrahmanHill" as a group of its own.
+    """
+    if not deferred:
+        return
+    recovered = failed = 0
+    for field, area, line in deferred:
+        squashed = squash(line)
+        match = re.match(r"^(?P<name>.*?)(?P<digits>\d+)$", squashed)
+        if not match:
+            failed += 1
+            continue
+        figures = split_figures(match.group("digits"))
+        if figures is None:
+            failed += 1
+            log(f"  ! {field}/{area}: cannot split {line!r}")
+            continue
+        key = match.group("name")
+        name = spellings.get(field, {}).get(key, key)
+        out[field][area][name] = figures[0]
+        recovered += 1
+    log(f"  recovered {recovered} justified row(s)"
+        + (f", {failed} unreadable" if failed else ""))
+    if failed:
+        raise SystemExit(f"{failed} justified row(s) could not be read; the "
+                         "figures for those areas would be short")
+
+
+def parse_religion(lines: list[str]) -> dict[str, dict[str, int]]:
+    """Annex 5, the wide cross-tab, as {area: {religion: count}}.
+
+    The header names the ten religions and the order they appear in; the area
+    follows in capitals, and its Total row is the population and then one count
+    per religion. Male and Female repeat the same columns and are not read --
+    this map does not break a composition down by sex.
+    """
+    out: dict[str, dict[str, int]] = {}
+    columns: list[str] = []
+    area: str | None = None
+    for raw in lines:
+        line = clean(raw)
+        if not line:
+            continue
+        if RELIGION_HEADER.match(line):
+            columns = line.split()
+            continue
+        if not columns:
+            continue
+        if line.isupper() and known_area(line):
+            area = canonical_area(line)
+            continue
+        if area and line.startswith("Total "):
+            figures = line.split()[1:]
+            # The population, then one count per religion. A row of any other
+            # width is the column header repeating on a new page, not data.
+            if len(figures) != len(columns) + 1:
+                continue
+            if not all(f.replace(",", "").isdigit() for f in figures):
+                continue
+            counts = {"_total": int(figures[0].replace(",", ""))}
+            for name, value in zip(columns, figures[1:]):
+                counts[name] = int(value.replace(",", ""))
+            out[area] = counts
+            area = None
+    return out
+
+
+def parse_all(lines: list[str]) -> dict[str, dict[str, dict[str, int]]]:
+    parsed = parse_long(lines)
+    parsed["religion"] = parse_religion(lines)
+    return parsed
 
 
 _AREA_LOOKUP: dict[str, str] = {}
@@ -288,12 +438,12 @@ def _build_area_lookup() -> None:
 
 def known_area(name: str) -> bool:
     _build_area_lookup()
-    return name.lower() in _AREA_LOOKUP
+    return name.strip().lower() in _AREA_LOOKUP
 
 
 def canonical_area(name: str) -> str:
     _build_area_lookup()
-    return _AREA_LOOKUP[name.lower()]
+    return _AREA_LOOKUP[name.strip().lower()]
 
 
 def province_of(district: str) -> str | None:
@@ -391,13 +541,12 @@ MIN_PCT = 0.1
 def build(lines: list[str], *, min_pct: float = MIN_PCT
           ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """(province records, district records), both validated before return."""
-    parsed: dict[str, dict[str, dict[str, int]]] = {}
-    for field, title in ANNEXES.items():
-        areas = parse_annex(lines, title)
+    parsed = parse_all(lines)
+    for field in FIELDS:
+        areas = parsed[field]
         log(f"  {field}: {len(areas)} areas")
         check_national(field, areas)
         check_sums(field, areas)
-        parsed[field] = areas
 
     provinces: list[dict[str, Any]] = []
     districts: list[dict[str, Any]] = []
@@ -446,7 +595,7 @@ def build(lines: list[str], *, min_pct: float = MIN_PCT
 def fields_for(parsed: dict[str, dict[str, dict[str, int]]], area: str,
                min_pct: float) -> dict[str, Any]:
     out: dict[str, Any] = {}
-    for field in ANNEXES:
+    for field in FIELDS:
         counts = parsed[field].get(area)
         if not counts:
             continue
@@ -466,7 +615,7 @@ def population_of(parsed: dict[str, dict[str, dict[str, int]]], area: str):
     All three annexes cover everyone, so all three totals are the same figure;
     taking the first that has it avoids depending on any one being present.
     """
-    for field in ANNEXES:
+    for field in FIELDS:
         total = parsed[field].get(area, {}).get("_total")
         if total:
             return measure(int(total), year=YEAR, source=SOURCE)
