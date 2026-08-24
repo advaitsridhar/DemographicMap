@@ -397,6 +397,16 @@ Three properties of that index matter when reading the map:
   Catholic, Orthodox, Latter-day Saints and Jehovah's Witnesses where Australia
   reports one "Christianity" row. Matching a single row would show the US at its
   largest denomination and call that its Christian share.
+* **Capitalisation is a house style, not a distinction.** Labels are matched
+  case-insensitively. Matched literally, the Factbook's `no religion` and a
+  census's `No religion` sat in the picker as two entries, one reaching ten
+  countries nationally and the other six countries' provinces, as though they
+  were different answers. The same fold takes the Factbook's `none` into "No
+  religion", and `unspecified`, `no response` and `no answer` into "Not
+  stated" — one uncertainty into another, which is the only direction that is
+  safe. None of them is folded into "No religion", and neither is the US
+  "Unaffiliated or not reported", which mixes people who belong to nothing
+  with members of bodies that did not report.
 * **Blank is not zero.** Most groups are reported by a minority of countries.
   Sikhism is shaded in six and blank everywhere else; that means six countries
   publish it, not that nobody else has any Sikhs. The note under the picker says

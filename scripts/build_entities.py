@@ -478,7 +478,7 @@ def group_index(admin0: list[dict[str, Any]],
                     if not isinstance(row.get("pct"), (int, float)):
                         continue
                     raw = row.get("group", "")
-                    name = table.get(raw, raw)
+                    name = table.get(canonical_groups.key(raw), raw)
                     units[name] = units.get(name, 0) + 1
                     countries.setdefault(name, set()).add(code)
                     labels.setdefault(name, set()).add(raw)

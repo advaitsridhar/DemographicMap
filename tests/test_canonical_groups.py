@@ -72,3 +72,21 @@ class DoubleCounting(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CaseFolding(unittest.TestCase):
+    def test_capitalisation_is_not_a_distinction(self):
+        # The Factbook writes "no religion", a census writes "No religion".
+        got = cg.canonicalise(rows(("no religion", 10.0), ("No religion", 5.0)),
+                              "religion")
+        self.assertEqual(got, {"No religion": 15.0})
+
+    def test_a_parent_beside_its_child_is_still_caught_across_cases(self):
+        bad = cg.check_no_double_counting(
+            rows(("christianity", 60.0), ("Catholic", 25.0)), "religion")
+        self.assertEqual(bad, ["Christianity"])
+
+    def test_the_same_label_in_two_cases_is_not_a_conflict(self):
+        self.assertEqual(
+            cg.check_no_double_counting(rows(("Bissa", 5.4), ("bissa", 1.5)),
+                                        "ethnicity"), [])
