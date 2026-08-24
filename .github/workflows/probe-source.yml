@@ -12,14 +12,14 @@ on:
       kind:
         description: "Source type"
         type: choice
-        options: [arcgis, url, pdf, datagovsg, pxweb]
+        options: [arcgis, url, pdf, datagovsg, pxweb, links]
         default: arcgis
       target:
         description: "ArcGIS item id or URL; kind=url/pdf a direct URL; kind=datagovsg a search term"
         type: string
         required: true
       terms:
-        description: "kind=pdf: comma-separated terms to find pages for"
+        description: "kind=pdf/links: comma-separated terms to match"
         type: string
         default: "language,mother tongue,speak"
         required: false
@@ -71,6 +71,12 @@ jobs:
         if: inputs.kind == 'pxweb'
         run: |
           python3 scripts/probe_pxweb.py --countries "${{ inputs.target }}"
+
+      - name: Probe portal links
+        if: inputs.kind == 'links'
+        run: |
+          python3 scripts/probe_links.py "${{ inputs.target }}" \
+            --match "${{ inputs.terms }}" --check 6
 
       - name: Probe plain URL
         if: inputs.kind == 'url'
