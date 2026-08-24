@@ -80,7 +80,66 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Singapore | SingStat Table Builder M810771 | planning region | Resident population, sex ratio and a derived median age for the 5 regions. Religion, ethnicity and language are collected but not published at this geography. |
 | Sri Lanka | Census of Population and Housing 2024, tables A1–A3 | province, district | Population, sex ratio, religion and ethnicity for all 25 districts and 9 provinces. |
 | Mexico | INEGI Censo de Población y Vivienda 2020, ITER | state, municipality | Religion, indigenous-language speaking and Afro-descendant identification for 2,453 of 2,457 municipios. All from the *cuestionario básico*, so these are counts, not sample estimates. |
+| Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. 70 of 77 districts — the boundary file's district names do not sit on the right polygons. |
 | India | Census 2011 tables C-01, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. |
+
+### Nepal: three fields, one census, and a boundary file that does not fit
+
+Nepal's census asks caste/ethnicity, mother tongue and religion, and the
+National Statistics Office publishes all three in a single document. Nothing
+else on this map carries all three from one enumeration, and no statistical
+office outside South Asia asks caste at all.
+
+**It is a PDF because nothing else can be reached.** `censusnepal.cbs.gov.np`
+serves the census portal with a certificate that is not valid for that
+hostname; so does `cbs.gov.np`. `microdata.nsonepal.gov.np` presents a good
+certificate and returns an empty body, and `censusnepal.nsonepal.gov.np` — the
+name the `microdata` certificate suggested — does not resolve. Population
+figures are not worth taking over a connection that cannot be authenticated,
+so the report is fetched once from a URL given on the command line and checked
+into `data/raw/nepal/`, the same treatment as the Census of India C-16
+workbooks and the 2020 U.S. Religion Census.
+
+**One parser reads all three annexes**, because they share a layout: an area
+name alone on a line, the area's printed total, then one row per group with
+three figures. Which areas are provinces and which are districts is nowhere in
+the text — the annex simply runs Nepal, then a province, then that province's
+districts, then the next province — so the 7 provinces and 77 districts are
+named lists in the adapter and an area matching neither is refused. That is
+what stops a page number or a stray header being emitted as a place.
+
+**Two checks, one of them independent.** The summary chapter's tables 10, 11
+and 14 publish national figures for all three fields and are typeset
+separately from the annexes, so agreement is evidence the reading is right
+rather than evidence the arithmetic is self-consistent; every figure has to
+match before a record is emitted. Separately, each area's rows must sum to its
+own printed total. That second check is the one that catches a dropped row: a
+shares-add-to-100% test cannot, because the shares are computed from whatever
+was read.
+
+**Seven districts are withheld, and the reason is the boundary file.**
+geoBoundaries CGAZ carries 75 shapes for Nepal's 77 districts. `Bara` and
+`Saptari` each appear twice; `Parsa`, `Siraha`, `Rupandehi` and `Dailekh` do
+not appear at all. Asking the polygons which one contains each district's
+headquarters:
+
+| Town | District it is in | Polygon containing it |
+|---|---|---|
+| Butwal, Bhairahawa | Rupandehi | `Nawalapur` |
+| Dailekh town | Dailekh | `Jajarkot` |
+| Siraha town | Siraha | the western of two named `Saptari` |
+| Kawasoti | Nawalpur | `Chitawan` |
+
+This is not a spelling problem that an alias fixes — the names are on the wrong
+polygons. Joining by name would render Rupandehi's 1.1 million people on a
+shape labelled Nawalapur with nothing on screen to indicate an error, which is
+the one failure mode this project treats as worse than a gap. The other 70
+districts join normally, and the 7 provinces join in full.
+
+**Provinces changed their names, and the boundary file did not.** CGAZ still
+calls Koshi "Province 1" and Madhesh "Province 2", names dropped when the
+provinces were formally named. Those are genuine spelling variants of the same
+territory, so they are declared as aliases and the join succeeds.
 
 ### Mexico: one file, four levels of geography
 
