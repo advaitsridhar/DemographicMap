@@ -119,6 +119,25 @@ def read_csv(archive: zipfile.ZipFile, name: str):
         yield {(k or "").lstrip("﻿"): v for k, v in row.items()}
 
 
+def read_rows(archive: zipfile.ZipFile, name: str) -> list[list[str]]:
+    """Every cell of a member, as rows, with no assumption about a header.
+
+    The dictionary does not begin with its header -- DictReader made a single
+    field named "" out of a blank first line and every row came back empty.
+    Nothing here needs the header anyway: the columns are found by scanning
+    cells for a description, so reading rows plainly removes the assumption
+    rather than correcting it. The delimiter is sniffed because INEGI is not
+    consistent about it between members.
+    """
+    with archive.open(name) as fh:
+        text = decode(fh.read())
+    try:
+        dialect = csv.Sniffer().sniff(text[:4096], delimiters=",;\t|")
+    except csv.Error:
+        dialect = csv.excel
+    return list(csv.reader(io.StringIO(text, newline=""), dialect))
+
+
 def plain(text: str) -> str:
     """Lower case with the accents removed.
 
@@ -137,17 +156,18 @@ def religion_columns(archive: zipfile.ZipFile) -> dict[str, str]:
     name among their fields, so the column is taken as the short upper-case
     token on the row whose description names the group.
     """
-    rows = list(read_csv(archive, member(archive, "diccionario")))
+    rows = read_rows(archive, member(archive, "diccionario"))
     found: dict[str, str] = {}
     for label, phrase in RELIGION_HINTS:
         for row in rows:
-            values = [str(v or "") for v in row.values()]
-            blob = plain(" ".join(values))
-            if plain(phrase) not in blob:
+            cells = [str(c or "") for c in row]
+            if plain(phrase) not in plain(" ".join(cells)):
                 continue
-            codes = [v.strip() for v in values
-                     if v.strip().isupper() and 3 <= len(v.strip()) <= 16
-                     and " " not in v.strip()]
+            # The column name is the short upper-case token on the row; the
+            # rest of it is prose and a value range.
+            codes = [c.strip() for c in cells
+                     if c.strip().isupper() and 3 <= len(c.strip()) <= 16
+                     and " " not in c.strip()]
             if codes:
                 found[label] = codes[0]
                 break
@@ -156,13 +176,13 @@ def religion_columns(archive: zipfile.ZipFile) -> dict[str, str]:
         # Say what the dictionary actually looks like. "Not found" on its own
         # sends the next person guessing at encodings and column names, which
         # is how two runs were already spent; the rows are right here.
-        sample = [" | ".join(str(v) for v in row.values())[:130] for row in rows[:4]]
-        religious = [" | ".join(str(v) for v in row.values())[:130] for row in rows
-                     if "relig" in plain(" ".join(str(v) for v in row.values()))][:6]
+        sample = [" | ".join(row)[:130] for row in rows[:4]]
+        religious = [" | ".join(row)[:130] for row in rows
+                     if "relig" in plain(" ".join(row))][:6]
         raise SystemExit(
             f"religion columns not found for {missing}.\n"
             f"  dictionary rows: {len(rows)}\n"
-            f"  fields: {list(rows[0]) if rows else 'none'}\n"
+            f"  widest row: {max((len(r) for r in rows), default=0)} cells\n"
             f"  first rows:\n    " + "\n    ".join(sample) +
             f"\n  rows mentioning religion ({len(religious)}):\n    " +
             "\n    ".join(religious))
