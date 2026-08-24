@@ -213,11 +213,18 @@ def level_of(row: dict[str, str]) -> str:
     anything else one of the 190,000 individual localities. Summing the file
     without this counts Mexico four times.
     """
-    if (row.get("ENTIDAD") or "").strip() == "00":
-        return "nation"
-    if (row.get("MUN") or "").strip() == "000":
-        return "state"
-    if (row.get("LOC") or "").strip() == "0000":
+    entidad = (row.get("ENTIDAD") or "").strip()
+    mun = (row.get("MUN") or "").strip()
+    loc = (row.get("LOC") or "").strip()
+    # All three codes have to be zero for the nation, not just the first.
+    # Entity 00 also carries national sub-totals, and treating every one of
+    # them as "the nation" ran the published-figure check against a row holding
+    # 250,354 people -- which is how this was found.
+    if entidad == "00":
+        return "nation" if mun == "000" and loc == "0000" else "national subtotal"
+    if mun == "000":
+        return "state" if loc == "0000" else "state subtotal"
+    if loc == "0000":
         return "municipality"
     return "locality"
 
@@ -296,12 +303,15 @@ def build(level: str) -> list[dict[str, Any]]:
     log(f"  reading {data}")
 
     out: list[dict[str, Any]] = []
-    seen = {"nation": 0, "state": 0, "municipality": 0, "locality": 0}
+    seen: dict[str, int] = {}
+    checked = False
     for row in read_csv(archive, data):
         kind = level_of(row)
-        seen[kind] += 1
+        seen[kind] = seen.get(kind, 0) + 1
         if kind == "nation":
-            check_national(row)
+            if not checked:
+                check_national(row)
+                checked = True
             continue
         if kind != level:
             continue
@@ -328,6 +338,9 @@ def build(level: str) -> list[dict[str, Any]]:
                       "url": URL, "license": LICENSE}],
             **fields,
         ))
+    if not checked:
+        raise SystemExit("no national row (ENTIDAD 00, MUN 000, LOC 0000) to "
+                         "check the published figures against")
     log(f"  rows by level: {seen}")
     return out
 
