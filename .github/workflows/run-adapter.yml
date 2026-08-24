@@ -1,0 +1,59 @@
+name: Run one adapter
+
+# The full refresh runs every source and takes the better part of an hour, which
+# is the wrong tool for adding a single country: most of that time is spent
+# re-fetching data that has not changed, and any of those sources being slow or
+# down delays the one thing being worked on. This runs one adapter, rebuilds the
+# site data from whatever is already committed, and pushes the result.
+#
+# It exists because the build sandbox cannot reach statistical hosts. The
+# adapter has to run somewhere with open egress, and this is that somewhere.
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "Adapter module and arguments, e.g. 'scripts.fetch_census.mexico --level municipality'"
+        type: string
+        required: true
+      commit:
+        description: "Commit and push what changed"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  adapter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r requirements.txt
+
+      - name: Run the adapter
+        run: python3 -m ${{ inputs.command }}
+
+      - name: Rebuild site data
+        run: python3 scripts/build_entities.py
+
+      - name: Commit
+        if: inputs.commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data/processed site/data
+          if git diff --cached --quiet; then
+            echo "nothing changed" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git diff --cached --stat >> "$GITHUB_STEP_SUMMARY"
+          git commit -m "Data: ${{ inputs.command }}"
+          git push origin HEAD:${{ github.ref_name }}
