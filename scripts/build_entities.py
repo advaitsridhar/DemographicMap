@@ -55,6 +55,7 @@ ADAPTER_FILES = [
     "india_language_state.json", "india_language_district.json",
     "mexico_state.json", "mexico_municipality.json",
     "nepal_province.json", "nepal_district.json",
+    "nz_region.json", "nz_territorial.json",
     "switzerland_canton.json",
     "singapore_region.json", "singapore_planning_area.json",
     "srilanka_province.json", "srilanka_district.json",
@@ -80,6 +81,9 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.abs --level lga",
     "MEX": "INEGI Censo 2020 ITER (religion, indigenous language, Afro-descendant): "
            "python -m scripts.fetch_census.mexico --level both",
+    "NZL": "Stats NZ 2023 Census via Aotearoa Data Explorer (ethnicity, "
+           "languages spoken, religious affiliation; needs an API key): "
+           "python -m scripts.fetch_census.new_zealand",
     "NPL": "NPHC 2021 report (caste/ethnicity, mother tongue, religion): "
            "python -m scripts.fetch_census.nepal --url <report PDF>",
     "CHE": "FSO structural survey, main languages by canton: "
