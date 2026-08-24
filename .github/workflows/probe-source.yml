@@ -83,8 +83,29 @@ jobs:
           echo
           echo '--- lines mentioning terms of use ---'
           python3 - <<'PYEOF'
-          import re, sys
+          import json, re, sys
           raw = open("/tmp/probe.body", encoding="utf-8", errors="replace").read()
+
+          # A machine-readable answer beats a prose one. Repositories that
+          # deposit through OSF, Zenodo, CKAN or DataCite record the licence as
+          # a field, so when the body is JSON, say what that field holds rather
+          # than hunting for a sentence that may not exist.
+          def licence_fields(node, path=""):
+              if isinstance(node, dict):
+                  for key, value in node.items():
+                      here = f"{path}.{key}" if path else key
+                      if "licen" in key.lower() or "rights" in key.lower():
+                          print("  #", here, "=", json.dumps(value)[:300])
+                      licence_fields(value, here)
+              elif isinstance(node, list):
+                  for i, value in enumerate(node[:20]):
+                      licence_fields(value, f"{path}[{i}]")
+
+          try:
+              print("--- licence fields in JSON body ---")
+              licence_fields(json.loads(raw))
+          except ValueError:
+              print("  (body is not JSON)")
           text = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", raw, flags=re.S | re.I)
           text = re.sub(r"<[^>]+>", " ", text)
           text = re.sub(r"&[a-z]+;", " ", text)
