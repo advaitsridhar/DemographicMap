@@ -70,11 +70,31 @@ def normalise(name: str) -> str:
 
 
 def use_aliases(dotted: str) -> None:
+    """Resolve names the way one adapter does.
+
+    Adapters spell their alias tables differently -- some expose a pair of
+    lookup functions, some just a {canonical: (variant, ...)} dict -- so both
+    are accepted. Insisting on one shape made this option usable by exactly
+    one adapter, which is not what a general check is for.
+    """
     global _canonical
     import importlib
     module = importlib.import_module(dotted)
-    known, canonical = module.known_area, module.canonical_area
-    _canonical = lambda name: canonical(name) if known(name) else name  # noqa: E731
+    known = getattr(module, "known_area", None)
+    canonical = getattr(module, "canonical_area", None)
+    if known and canonical:
+        _canonical = lambda name: canonical(name) if known(name) else name  # noqa: E731
+        return
+    table = getattr(module, "ALIASES", None)
+    if not table:
+        raise SystemExit(f"{dotted} exposes neither known_area/canonical_area "
+                         "nor an ALIASES table")
+    lookup = {}
+    for good, variants in table.items():
+        lookup[good.lower()] = good
+        for variant in variants:
+            lookup[variant.lower()] = good
+    _canonical = lambda name: lookup.get(name.lower(), name)  # noqa: E731
 
 
 def load_points(path: Path, keep: str = "") -> dict[str, tuple[float, float]]:

@@ -80,8 +80,82 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Singapore | SingStat Table Builder M810771 | planning region | Resident population, sex ratio and a derived median age for the 5 regions. Religion, ethnicity and language are collected but not published at this geography. |
 | Sri Lanka | Census of Population and Housing 2024, tables A1–A3 | province, district | Population, sex ratio, religion and ethnicity for all 25 districts and 9 provinces. |
 | Mexico | INEGI Censo de Población y Vivienda 2020, ITER | state, municipality | Religion, indigenous-language speaking and Afro-descendant identification for 2,453 of 2,457 municipios. All from the *cuestionario básico*, so these are counts, not sample estimates. |
+| New Zealand | Stats NZ 2023 Census via Aotearoa Data Explorer (SDMX) | region, territorial authority | Ethnicity, languages spoken and religious affiliation for all 88 territorial authorities and Auckland local boards. All three are multi-response, so shares are of people who named a group, not slices of a whole. Needs an API key. |
 | Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. All 7 provinces and 66 of 77 districts — the boundary file's district names do not all sit on the right polygons. |
 | India | Census 2011 tables C-01, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. |
+
+### New Zealand: the geography that already fitted
+
+Stats NZ asks ethnicity, languages spoken and religious affiliation, and
+publishes all three broken down by *territorial authority and Auckland local
+board area* — 67 territorial authorities with Auckland replaced by its 21 local
+boards. That is exactly the 88-shape admin-2 layer geoBoundaries ships for New
+Zealand, and all 88 join. Nothing else in this project has lined up so
+precisely; it is worth saying plainly that this was luck, not craft.
+
+**The API needs a key.** Only the bare dataflow catalogue at
+`api.data.stats.govt.nz` is open. Every `/data/`, `/datastructure/` and
+`?references=` request is 401 without one, because the Explorer's public member
+is captcha-gated — its own page config says so. The key lives in a repository
+secret, reaches the runner through the workflow's `env` block, and is sent as
+an Azure API Management header. It never touches a file, a log or a command
+line, and the adapter refuses to run without one rather than failing on a parse.
+
+**Tiers are read from the codelist, not from the code width.** One area
+codelist holds every geography at once, and the widths overlap where it
+matters: `076` is Auckland the territorial authority and `102` is Auckland the
+Te Whatu Ora health district — both three digits, both named "Auckland".
+Reading the tier off the width put twenty health districts on the map as
+territorial authorities. Every code carries a `Parent`, and the three tier
+totals are distinct, so the tier is read:
+
+| Parent | Tier | Codes |
+|---|---|---:|
+| `9999` | regional council | 17 |
+| `999999` | territorial authority and Auckland local board | 89 |
+| `99999` | health region and health district | excluded |
+
+**Ethnicity is hierarchical in that same list.** `1 European` is the parent of
+`111 New Zealand European`, `122 Dutch` and the rest, and both levels sit in
+one codelist. Only the six level-1 codes are read; summing the column would
+count most of the country twice, which is the trap the ABS "Christianity Total"
+row and India's mother-tongue groups set in exactly the same way.
+
+**All three fields are multi-response, and that is not an error to correct.**
+
+| Field | Parts sum to | Because |
+|---|---:|---|
+| Ethnicity | 114.6% | a person may report more than one |
+| Languages spoken | 124.7% | a person may speak several |
+| Religious affiliation | 100.3% | a person may report more than one |
+
+So each share is the percentage of people who named that group, not a slice of
+a whole — European 67.8% and Māori 17.8% are both correct and they do not
+compete. The denominator is the census usually resident population Stats NZ
+prints on every table, which is what makes those figures match its own
+published percentages.
+
+**Two categories that are not what they look like.** "Object to answering" is
+kept as its own category rather than folded into a non-response bucket,
+because Stats NZ counts it inside *total stated* — it is an answer people gave,
+not a question they skipped. And a suppressed cell is not a zero: Stats NZ
+randomly rounds every count to base 3 and withholds cells too small to publish,
+so a withheld group is named in the field's note rather than read as an absence.
+
+**Where the gaps are.** Three source rows have no shape and one shape has no
+source row, all four for the same honest reason:
+
+* `Auckland` (the whole territorial authority) — geoBoundaries carries its 21
+  local boards instead, and those all join.
+* `Area Outside Region` and `Area Outside Territorial Authority` — offshore
+  residuals with no polygon.
+* `Chatham Islands Territory` at region level — the Chathams sit outside every
+  regional council, so Stats NZ's regional tier has no row for them. Their
+  figures are on the map at territorial-authority level.
+
+The region names needed one alias: the region took the "Whanganui" spelling in
+2015 and geoBoundaries still carries "Wanganui", which normalisation cannot
+bridge because the h is a letter rather than an accent.
 
 ### Nepal: three fields, one census, and a boundary file that does not fit
 
