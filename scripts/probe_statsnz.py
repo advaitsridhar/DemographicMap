@@ -37,9 +37,9 @@ TIMEOUT = 45
 # Several, because the repository secret's name is the author's choice and a
 # probe that insists on one spelling fails for a reason that looks like a
 # rejected key.
-KEY_VARS = ("STATS_NZ_API_KEY", "STATSNZ_API_KEY", "STATS_NZ_KEY",
-            "STATSNZ_KEY", "NZ_STATS_API_KEY", "DEMOGRAPHICMAP_NZ",
-            "AOTEAROA_DATA_EXPLORER_KEY", "DEMOGRAPHICMAP")
+KEY_VARS = ("NZ_STATS_API", "STATS_NZ_API_KEY", "STATSNZ_API_KEY",
+            "STATS_NZ_KEY", "STATSNZ_KEY", "NZ_STATS_API_KEY",
+            "DEMOGRAPHICMAP_NZ", "AOTEAROA_DATA_EXPLORER_KEY")
 
 # Header names .Stat Suite deployments use for a subscription key. Stats NZ
 # sits behind Azure API Management, which is the first of these; the others
