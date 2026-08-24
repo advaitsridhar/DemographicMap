@@ -336,54 +336,123 @@ Eurostat redistributes none of the ethnicity or religion tables sub-nationally, 
 for the collecting states the adapter emits `not_available` with a note pointing at
 the national statistical office rather than pretending the question was never asked.
 
-## United States — religion, and why the map does not carry it
+## United States — religion
 
-The United States is the clearest case in the dataset of a gap that is a
-deliberate act of law rather than an oversight. The Census Bureau may not ask a
-mandatory religion question (13 U.S.C. 221(c), since 1976), so no government
-figures exist at any level of geography. Every US record therefore carries
-`religion: not_collected`, and the note says why.
+The United States is the clearest case in the dataset of a gap created
+deliberately by law. The Census Bureau may not ask a mandatory religion question
+(13 U.S.C. 221(c), since 1976), so **no government figures exist at any level of
+geography**. Every US record says so before saying anything else.
 
-The gap is filled privately. The **2020 U.S. Religion Census: Religious
-Congregations & Membership Study** (Grammich, Dollhopf, Gautier, Houseal, Jones,
-Krindatch, Stanley and Thumma, 2022) counts adherents reported by 372 religious
-bodies: 161,009,516 people across 3,141 counties, about 48.6% of the population.
-It is the standard sub-national source and there is no rival to it.
+The figures the map shows come instead from the **2020 U.S. Religion Census:
+Religious Congregations & Membership Study**, checked in at
+`data/raw/us/2020_USRC_Group_Detail.xlsx`. Suggested citation, as the publisher
+gives it:
 
-**It is not published here.** The workbook's own Copyright sheet reads
-"Copyright © 2022 by the Association of Statisticians of American Religious
-Bodies (ASARB) / All rights reserved". The ARDA archive page for the study
-(`fid=RCMSCY20`) states a citation and a DOI and no terms of use, and the OSF
-deposit that DOI resolves to (`10.17605/OSF.IO/ET2A5`, node `et2a5`) reports
-`node_license: null` — the deposit is public, which is not the same as licensed.
-Free download is not permission to redistribute, and this repository is public.
-That is the same objection that rules out GADM and the Esri India language
-layer above.
+> Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E.
+> Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. *2020 U.S.
+> Religion Census: Religious Congregations & Membership Study.* Association of
+> Statisticians of American Religious Bodies.
 
-So `scripts/fetch_census/us_acs.py` ships the reader and not the figures.
-`--religion-file` takes a copy the operator supplies; no scheduled refresh
-fetches it, and nothing derived from it is committed. Anything it does produce
-is labelled `religion_basis: adherents` and notes that the study reached about
-48.6% of the population — the remainder is **uncounted, not unaffiliated**,
-which is a different claim from the self-identification shares used for every
-other country.
+It is carried on every record the study touches. (The workbook's own Copyright
+sheet dates itself 2022 and the suggested citation on usreligioncensus.org says
+2023; the publisher's own wording is what goes on the record.)
 
-### The national block hidden among the counties
+**It is a different kind of number.** The study counts *adherents reported by
+372 religious bodies*, not people answering a question about themselves. It
+reached 161,009,516 people across 3,141 counties — about **48.6%** of the
+population. The remaining half is **uncounted, not unaffiliated**: the study has
+no way to observe someone who belongs to nothing, and a body that declined to
+report leaves its members invisible. Shares therefore sum to roughly 49%, not
+100%, and are marked `religion_basis: adherents` to keep them from being read
+as the self-identification percentages every other country here uses.
 
-The county sheet contains a row keyed `FIPS = "Total"` holding the whole
-country: 161,009,516 adherents, 355,998 congregations, 48.577% of population.
-It names no state, no county and no religious group.
+### Traditions, not denominations
 
-Summing the adherents column without excluding it gives **322,019,032** — 97% of
-the United States religiously adherent, a figure wrong by exactly a factor of
-two. Nothing inside the table catches this. Every county's own shares remain
-correct and still add to their published percentages; the error lives entirely
-in the aggregate. It is the same shape as the ABS "Christianity Total" rows and
-the India C-16 group codes ending `000`: a parent and its children in one
-column, where only a total the child rows did not produce can tell them apart.
+372 individual bodies is neither mappable nor comparable with a census question,
+so they are collapsed into traditions: Catholic, Protestant, Orthodox Christian,
+Latter-day Saints, Jehovah's Witnesses, Other Christian, Judaism, Islam,
+Buddhism, Hinduism, Other religions.
 
-`check_national` therefore uses that row rather than discarding it, and
-**refuses to run if it is absent** — because a reader that requires a group name
-skips it silently (it has none), and a doubled country then reads as a perfectly
-valid table. With it, the counties reconcile exactly: 161,009,516 both ways,
-0.0000% apart, nothing unallocated.
+The mapping is by **exact name**, and only for what is *not* Protestant;
+anything unlisted falls through to Protestant. Keyword matching would be wrong
+in both directions and quietly so — the *Orthodox Presbyterian Church* and the
+*Orthodox Mennonite Church* are Protestant, and the *Polish National Catholic
+Church* is not Roman Catholic. Because the default absorbs anything unknown, the
+adapter prints the largest bodies that fell through on every run, so a body
+added or renamed in a later release is visible rather than silently swallowed.
+
+Judaism is reported by movement (Orthodox, Reform, Conservative,
+Reconstructionist, Independent, Chabad) and shown as one religion. Several
+smaller traditions — Sikh, Jain, Zoroastrian, Shinto, Tao, Vedanta — appear in
+the study with congregations but **no adherent estimate at all**, so they
+contribute nothing to any share. They are classified anyway, so that they land
+correctly if a later release does estimate them.
+
+### The whole-country row, hidden three different ways
+
+Every sheet carries a row holding the entire United States, and each sheet hides
+it differently:
+
+| Sheet | How the row is keyed |
+|---|---|
+| Group by County | `FIPS = "Total"` |
+| Group by State | `StateCode = "Totals"` |
+| Group by Nation | `Group Code = "Totals"` |
+
+None of them names a religious group. Summing a column without excluding it
+gives **322,019,032 adherents — 97% of the United States religiously adherent**,
+wrong by exactly a factor of two.
+
+Nothing inside the table catches this. Every county's own shares stay correct
+and still reproduce the percentages printed beside them; the error lives
+entirely in the aggregate. It is the same shape as the ABS "Christianity Total"
+rows and the India C-16 group codes ending `000`: a parent and its children in
+one column, where only a total the child rows did not produce can tell them
+apart. The singular/plural difference between sheets is why the marker is a set
+and not a string — an exact match on `"total"` silently misses the state sheet,
+and a doubled country then reads as a perfectly valid table.
+
+So `check_national` uses those rows as the control and **refuses to run without
+one**. A reader that requires a group name skips them silently, since they have
+none. With the check in place both levels reconcile exactly:
+
+```
+county: 161,009,516 vs whole-country row 161,009,516 (0.0000% apart, 3141 areas)
+state:  161,224,088 vs whole-country row 161,224,088 (0.0000% apart, 51 areas)
+```
+
+Shares are taken against the population the file itself implies for each area,
+recovered by inverting its published percentage column, rather than against the
+ACS estimate on the record — which is a different year and would quietly
+disagree with the percentages the study published. That inversion assumes one
+denominator per area, so the adapter verifies it on every row: across all 3,140
+counties the rows disagree by 0.000000%.
+
+### A note on the checked-in workbooks
+
+`.gitignore` excluded `data/raw/` — the directory itself, not its contents. Git
+does not descend into an excluded directory, so every `!data/raw/.../*.xlsx`
+negation beneath it was inert. The files already committed were unaffected,
+because a tracked file ignores `.gitignore` entirely, which is exactly why the
+rule looked as though it worked.
+
+It did not. Twenty of the thirty-six Census of India C-16 workbooks had never
+been committed, and a refresh from a clean checkout would have rebuilt mother
+tongue from sixteen states and quietly returned the other twenty to
+`not_available`. The pattern is now `data/raw/*`, which excludes the contents
+and leaves the directory traversable, and all thirty-six are in the repository.
+
+### Where there is still no figure
+
+90 counties and one state keep a gap, and each says which kind it is:
+
+* **78 Puerto Rico municipios and Puerto Rico itself** — the study covers the 50
+  states and DC. Puerto Rico is outside its frame.
+* **9 Connecticut planning regions** — Connecticut replaced its eight counties
+  with nine planning regions in 2022. The 2020 study reports the old counties,
+  and its figures cannot be placed on the new geography without inventing a way
+  to split them. Same class of problem as the post-2011 Indian districts.
+* **Alpine County CA (pop 1,515), Arthur County NE (485) and Loving County TX
+  (96)** — the least populous county in each of those states. No reporting body
+  had a congregation there. That is an absence of reported adherents, not a
+  count of zero believers.

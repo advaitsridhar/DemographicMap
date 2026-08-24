@@ -14,10 +14,12 @@ counts *adherents reported by 372 religious bodies* -- 161,224,088 people, about
 48.6% of the 2020 population -- and is therefore not comparable with the
 self-identification percentages used everywhere else in this dataset.
 
-That study is copyright ASARB, all rights reserved, and the OSF deposit behind
-its DOI records no licence, so the figures are not committed here and no
-scheduled refresh fetches them.  ``--religion-file`` reads a copy the operator
-supplies, and what it produces is always labelled as adherence.
+The 372 individual bodies it reports are collapsed into traditions -- Catholic,
+Protestant, Orthodox Christian, Latter-day Saints, Judaism, Islam, Buddhism,
+Hinduism and so on -- because a denominational breakdown is neither mappable nor
+comparable with the broad census categories used elsewhere here.  Output is
+always labelled ``religion_basis: adherents`` and carries the publisher's
+suggested citation.
 
 An API key is optional below 500 calls/day; set ``CENSUS_API_KEY`` to lift that.
 
@@ -33,7 +35,7 @@ from pathlib import Path
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, gap, http_get, http_json, log,
+    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, gap, http_get, http_json, log,
     measure, record, shares, write_json,
 )
 
@@ -160,52 +162,179 @@ def fetch(level: str, year: int, key: str | None) -> list[dict[str, Any]]:
                             "Not comparable with other countries' ethnicity classifications."),
             language=shares(lcounts, total=as_float(lrow.get(LANGUAGE_TOTAL))) or gap(NOT_AVAILABLE),
             language_note="Language spoken at home, population 5 years and over (ACS table C16001).",
-            religion=gap(NOT_COLLECTED,
-                         "The U.S. census may not ask a mandatory religion question "
-                         "(13 U.S.C. 221(c)), so no government figures exist at any "
-                         "level. The gap is filled privately: the 2020 U.S. Religion "
-                         "Census (ASARB, doi:10.17605/OSF.IO/ET2A5) counts adherents "
-                         "reported by 372 religious bodies, reaching about 48.6% of "
-                         "the population. That study is copyright, all rights "
-                         "reserved, and states no redistribution licence, so this map "
-                         "cites it rather than carrying it."),
+            religion=gap(NOT_COLLECTED, CENSUS_BARRED + " Any figures shown come "
+                         "instead from the 2020 U.S. Religion Census (ASARB), which "
+                         "counts adherents reported by religious bodies rather than "
+                         "asking people."),
             sources=[{"field": "ethnicity/language/population", "name": src,
                       "url": BASE.format(year=year), "license": "Public domain (U.S. Government work)"}],
         ))
     return out
 
 
-# The county sheet carries a national block keyed FIPS = "Total": a full copy of
-# the country's figures sitting in among the 3,141 counties. Summing the column
-# without excluding it doubles the United States -- 322,019,032 adherents, 97%
-# of the population, against a true 161,009,516.
+# The citation the publisher asks for, verbatim, recorded on every record the
+# study touches. Note the year: the workbook's own Copyright sheet says 2022,
+# the suggested citation on usreligioncensus.org says 2023. The publisher's
+# wording is what goes on the record.
+# Checked in under data/raw/us/: there is no API for this study, and the US
+# census is barred from asking the question, so without the workbook the build
+# cannot re-derive religion for a single county.
+RELIGION_FILE = RAW / "us" / "2020_USRC_Group_Detail.xlsx"
+
+RELIGION_CITATION = (
+    "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, "
+    "Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. "
+    "2020 U.S. Religion Census: Religious Congregations & Membership Study. "
+    "Association of Statisticians of American Religious Bodies."
+)
+
+# Every sheet in the workbook carries a row holding the whole country, and each
+# one hides it differently: the county sheet keys it FIPS = "Total", the state
+# sheet StateCode = "Totals", the nation sheet Group Code = "Totals". None of
+# them names a group. Summing a column without excluding it doubles the United
+# States exactly -- 322,019,032 adherents against a true 161,009,516, 97% of the
+# population religiously adherent.
 #
 # Nothing internal to the table catches that. Every county's own shares stay
-# correct and still add up, exactly as they did for the ABS "Christianity Total"
-# rows and the India C-16 group codes. It is only visible against a total the
-# per-county rows did not produce, which is why that block is read and used as
-# the control rather than skipped and forgotten.
-NATIONAL_BLOCK = "total"
-COUNTY_SHEET = "2020 Group by County"
-MAX_GROUPS = 12
+# correct and still reproduce the percentages the file prints beside them,
+# exactly as they did for the ABS "Christianity Total" rows and the India C-16
+# group codes. It is visible only against a total the detail rows did not
+# produce, which is why these rows are read and used as the control rather than
+# skipped and forgotten. The singular/plural difference is the whole reason this
+# is a set: an exact match on "total" silently misses the state sheet.
+NATIONAL_BLOCK = {"total", "totals"}
+
+LEVELS = {
+    "county": {"sheet": "2020 Group by County", "key": ("fips",), "width": 5,
+               "share": ("adherents as % of total population",)},
+    "state": {"sheet": "2020 Group by State", "key": ("statecode",), "width": 2,
+              "share": ("adherents as % of population",)},
+}
+
+# The study reports 372 individual religious bodies, which is far too fine to
+# put on a map and not comparable with the broad census categories every other
+# country here uses. They are collapsed into traditions.
+#
+# The mapping is by exact name and only for what is *not* Protestant; anything
+# unlisted falls through to Protestant, and the adapter prints the largest
+# groups it defaulted so that a body added in a later release is visible rather
+# than silently absorbed. Matching on keywords instead would be wrong in both
+# directions: the Orthodox Presbyterian Church and the Orthodox Mennonite Church
+# are Protestant, and the Polish National Catholic Church is not Roman Catholic.
+DEFAULT_TRADITION = "Protestant"
+TRADITIONS: dict[str, str] = {
+    "Catholic Church": "Catholic",
+    "Church of Jesus Christ of Latter-day Saints": "Latter-day Saints",
+    "Community of Christ": "Latter-day Saints",
+    "Jehovah's Witnesses": "Jehovah's Witnesses",
+    "Muslim Estimate": "Islam",
+    # Judaism is reported by movement; the map shows the religion.
+    "Orthodox Judaism": "Judaism",
+    "Reform Judaism": "Judaism",
+    "Conservative Judaism": "Judaism",
+    "Reconstructionist Judaism": "Judaism",
+    "Independent Judaism": "Judaism",
+    "Chabad Judaism": "Judaism",
+    "Hindu Temples": "Hinduism",
+    "Hindu Yoga and Meditation": "Hinduism",
+    "Vedanta Society": "Hinduism",
+    "Mahayana Buddhist": "Buddhism",
+    "Theravada Buddhist": "Buddhism",
+    "Vajarayana Buddhist": "Buddhism",
+    # Eastern and Oriental Orthodox, by jurisdiction.
+    "Greek Orthodox Archdiocese of America": "Orthodox Christian",
+    "Coptic Orthodox Church": "Orthodox Christian",
+    "Ethiopian Orthodox": "Orthodox Christian",
+    "Eritrean Orthodox": "Orthodox Christian",
+    "Orthodox Church in America": "Orthodox Christian",
+    "Antiochian Orthodox Christian Archdiocese of North America, The": "Orthodox Christian",
+    "Serbian Orthodox Church in North America": "Orthodox Christian",
+    "Armenian Church of North America (Catholicosate of Etchmiadzin)": "Orthodox Christian",
+    "Armenian Apostolic Church of America (Catholicosate of Cilicia)": "Orthodox Christian",
+    "Russian Orthodox Church Outside of Russia": "Orthodox Christian",
+    "Patriarchal Parishes of the Russian Orthodox Church in the USA": "Orthodox Christian",
+    "Malankara Orthodox Syrian Church": "Orthodox Christian",
+    "Malankara Archdiocese of the Syrian Orthodox Church in North America": "Orthodox Christian",
+    "Syriac Orthodox Church of Antioch": "Orthodox Christian",
+    "Macedonian Orthodox Church: American Diocese": "Orthodox Christian",
+    "Ukrainian Orthodox Church of the USA": "Orthodox Christian",
+    "Romanian Orthodox Archdiocese in Americas": "Orthodox Christian",
+    "American Carpatho-Russian Orthodox Diocese": "Orthodox Christian",
+    "Bulgarian Eastern Orthodox Diocese of the USA, Canada and Australia": "Orthodox Christian",
+    "Albanian Orthodox Diocese of America": "Orthodox Christian",
+    "Georgian Orthodox Parishes in the United States": "Orthodox Christian",
+    "Belarusan Autocephalous Orthodox Church": "Orthodox Christian",
+    "Church of the Genuine Orthodox Christians": "Orthodox Christian",
+    "Holy Orthodox Church in North America": "Orthodox Christian",
+    "Syro-Russian Orthodox Catholic Church": "Orthodox Christian",
+    # Old Catholic and independent Catholic bodies, in communion with none of
+    # the above and not counted as Roman Catholic.
+    "Polish National Catholic Church": "Other Christian",
+    "North American Old Roman Catholic Church": "Other Christian",
+    "Orthodox Old Roman Catholic Communion": "Other Christian",
+    "Ecumenical Catholic Communion": "Other Christian",
+    "Ecumenical Catholic Church": "Other Christian",
+    "United Catholic Church": "Other Christian",
+    "Liberal Catholic Church": "Other Christian",
+    "Catholic Apostolic Church in North America": "Other Christian",
+    "Swedenborgian Church": "Other Christian",
+    "Union of Messianic Jewish Congregations": "Other Christian",
+    "Association of Messianic Congregations": "Other Christian",
+    # Reported as congregations with no adherent estimate, so these contribute
+    # nothing to any share; they are listed so the classification is complete
+    # and so they land correctly if a later release does estimate them.
+    "Baha'i Faith USA": "Other religions",
+    "American Sikh Council": "Other religions",
+    "Jain": "Other religions",
+    "Zoroastrian": "Other religions",
+    "Shinto": "Other religions",
+    "Tao": "Other religions",
+    "Unitarian Universalist Association of Congregations": "Other religions",
+    "National Spiritualist Association of Churches": "Other religions",
+}
 
 
-def read_group_detail(path: Path) -> tuple[dict[str, dict[str, float]],
-                                           dict[str, float], float]:
-    """Adherents by county and group, plus county populations and the control.
+# The reason the United States has no government religion figure at any level of
+# geography, stated once. It prefixes every gap this adapter emits, because it
+# is the fact that makes the rest of the sentence necessary.
+CENSUS_BARRED = ("The U.S. census may not ask a mandatory religion question "
+                 "(13 U.S.C. 221(c)), so no government figures exist at any "
+                 "level.")
 
-    Handles the ASARB workbook directly (.xlsx, sheet "2020 Group by County")
-    and a CSV export of the same sheet. Returns per-county group counts, the
-    2020 population the file itself implies for each county, and the national
-    total carried by the FIPS = "Total" row.
+# Why a US area can have no figure even with the workbook in hand. Naming the
+# reason is the whole point: "no data" and "the study does not cover this place"
+# and "nobody reported a congregation here" are three different facts, and only
+# the last is about the place itself.
+UNMATCHED_REASONS = {
+    "72": "The 2020 study covers the 50 states and the District of Columbia. "
+          "Puerto Rico is outside its frame, so no municipio has an adherent "
+          "count from it either.",
+    "09": "Connecticut replaced its eight counties with nine planning regions in "
+          "2022. The 2020 study reports the old counties, so its figures cannot "
+          "be placed on this geography without inventing a way to split them.",
+}
+UNMATCHED_DEFAULT = (
+    "No religious body reporting to the 2020 study had a congregation here. That "
+    "is an absence of reported adherents, not a count of zero believers.")
+
+
+def read_group_detail(path: Path, level: str) -> tuple[dict[str, dict[str, float]],
+                                                       dict[str, float], float]:
+    """Adherents by area and religious body, area populations, and the control.
+
+    Handles the ASARB workbook directly (.xlsx) and a CSV export of one of its
+    sheets. Returns per-area counts keyed by the body's own name, the 2020
+    population the file itself implies for each area, and the national total
+    carried by the whole-country row.
     """
+    spec = LEVELS[level]
     if path.suffix.lower() in (".xlsx", ".xlsm"):
         import openpyxl
         book = openpyxl.load_workbook(path, read_only=True, data_only=True)
-        sheet = book[COUNTY_SHEET] if COUNTY_SHEET in book.sheetnames else book.worksheets[0]
+        sheet = book[spec["sheet"]] if spec["sheet"] in book.sheetnames else book.worksheets[0]
         rows = sheet.iter_rows(values_only=True)
         header = [str(c or "") for c in next(rows)]
-        records = (dict(zip(header, r)) for r in rows)
+        records: Any = (dict(zip(header, r)) for r in rows)
     else:
         import csv
         records = csv.DictReader(path.open(newline="", encoding="utf-8-sig"))
@@ -217,102 +346,134 @@ def read_group_detail(path: Path) -> tuple[dict[str, dict[str, float]],
                     return row[key]
         return None
 
-    counties: dict[str, dict[str, float]] = {}
+    areas: dict[str, dict[str, float]] = {}
     populations: dict[str, float] = {}
     national = 0.0
     for row in records:
-        fips = str(field(row, "fips") or "").strip()
-        if not fips:
+        code = str(field(row, *spec["key"]) or "").strip()
+        if not code:
             continue
         try:
             adherents = float(field(row, "adherents", "adherent"))
         except (TypeError, ValueError):
             continue          # blank means not reported, which is not zero
 
-        # Before anything else: the national row names no group, so a reader
-        # that requires one skips it silently and loses the only figure the
-        # county rows can be checked against.
-        if fips.lower() == NATIONAL_BLOCK:
+        # Before anything else: the whole-country row names no group, so a
+        # reader that requires one skips it silently and loses the only figure
+        # the detail rows can be checked against.
+        if code.lower() in NATIONAL_BLOCK:
             national += adherents
             continue
 
         group = str(field(row, "group name", "grpname") or "").strip()
         if not group:
             continue
-        fips = fips.zfill(5)
-        counties.setdefault(fips, {})[group] = adherents
-        # The file prints each count as a share of its county's population, so
-        # the denominator it used can be recovered rather than assumed. Taking
-        # it from the file keeps the shares equal to the published ones; the
-        # ACS population on the record is a different year and would not.
-        if fips not in populations:
-            try:
-                share = float(field(row, "adherents as % of total population"))
-            except (TypeError, ValueError):
-                share = 0.0
-            if share > 0:
-                populations[fips] = adherents / share
-    return counties, populations, national
+        code = code.zfill(spec["width"])
+        areas.setdefault(code, {})[group] = adherents
+        # The file prints each count as a share of its area's population, so the
+        # denominator it used can be recovered rather than assumed. Taking it
+        # from the file keeps the shares equal to the published ones; the ACS
+        # population on the record is a different year and would not.
+        try:
+            share = float(field(row, *spec["share"]))
+        except (TypeError, ValueError):
+            share = 0.0
+        if share > 0 and adherents > 0:
+            implied = adherents / share
+            known = populations.setdefault(code, implied)
+            # Every row of an area must imply the same denominator. If the file
+            # ever computed its percentages against something that varies by
+            # row, taking the population from the first row would leave every
+            # other share on that area wrong by a factor nothing would show.
+            if abs(implied - known) > max(1.0, known * 1e-6):
+                raise SystemExit(
+                    f"{level} {code}: rows imply different populations "
+                    f"({known:,.0f} and {implied:,.0f}); the share column is not "
+                    "on a single denominator and cannot be inverted")
+    return areas, populations, national
 
 
-def check_national(counties: dict[str, dict[str, float]], national: float) -> None:
-    """The counties must add up to the national block, or the read is wrong.
+def check_national(areas: dict[str, dict[str, float]], national: float, level: str) -> None:
+    """The areas must add up to the whole-country row, or the read is wrong.
 
-    This is the check that catches reading the national block as a county. It
-    compares against a figure the per-county rows did not produce, so unlike a
+    This is the check that catches reading that row as an area. It compares
+    against a figure the detail rows did not produce, so unlike a
     shares-add-to-100% test it cannot be satisfied by double counting.
     """
     if not national:
         raise SystemExit(
-            f"no national block (FIPS {NATIONAL_BLOCK!r}) in the group detail file. "
-            "Either the layout changed or it was filtered out -- without it the "
-            "county figures have nothing independent to reconcile against, and a "
+            f"no whole-country row (key in {sorted(NATIONAL_BLOCK)}) in the {level} "
+            "sheet. Either the layout changed or it was filtered out -- without it "
+            "the detail rows have nothing independent to reconcile against, and a "
             "doubled country reads as a valid table.")
-    total = sum(sum(g.values()) for g in counties.values())
-    control = national
-    drift = abs(total - control) / control if control else 1.0
-    print(f"  counties {total:,.0f} vs national block {control:,.0f} "
-          f"({drift:.4%} apart, {len(counties)} counties)")
+    total = sum(sum(g.values()) for g in areas.values())
+    drift = abs(total - national) / national
+    print(f"  {level}: {total:,.0f} vs whole-country row {national:,.0f} "
+          f"({drift:.4%} apart, {len(areas)} areas)")
     if drift > 0.005:
-        raise SystemExit(f"county adherents are {drift:.2%} from the national block")
+        raise SystemExit(f"{level} adherents are {drift:.2%} from the whole-country row")
 
 
-def attach_religion(records: list[dict[str, Any]], path: Path) -> None:
-    """Merge a 2020 U.S. Religion Census county extract (ASARB / ARDA RCMSCY20).
+def to_traditions(groups: dict[str, float]) -> dict[str, float]:
+    """Collapse individual religious bodies into the traditions the map shows."""
+    out: dict[str, float] = {}
+    for name, adherents in groups.items():
+        tradition = TRADITIONS.get(name, DEFAULT_TRADITION)
+        out[tradition] = out.get(tradition, 0.0) + adherents
+    return out
 
-    Opt-in, and it stays opt-in: the study is copyright ASARB, all rights
-    reserved, and the OSF deposit behind its DOI records no licence at all. The
-    repository therefore ships this reader and not the figures. Supplying the
-    workbook -- and publishing what comes out of it -- is the operator's call
-    against their own copy, not something a scheduled refresh does by itself.
+
+def report_defaults(areas: dict[str, dict[str, float]]) -> None:
+    """Name the largest bodies that fell through to Protestant.
+
+    Everything unlisted defaults, so a body added by a later release -- or a
+    renamed one -- would be absorbed without complaint. Printing the top of that
+    list on every run is what makes the classification auditable.
     """
-    counties, populations, national = read_group_detail(path)
-    check_national(counties, national)
+    totals: dict[str, float] = {}
+    for groups in areas.values():
+        for name, adherents in groups.items():
+            if name not in TRADITIONS:
+                totals[name] = totals.get(name, 0.0) + adherents
+    top = sorted(totals.items(), key=lambda kv: kv[1], reverse=True)[:5]
+    print(f"  {len(totals)} bodies defaulted to {DEFAULT_TRADITION}; largest: "
+          + ", ".join(f"{n} {v:,.0f}" for n, v in top))
+
+
+def attach_religion(records: list[dict[str, Any]], path: Path, level: str) -> None:
+    """Merge a 2020 U.S. Religion Census extract (ASARB, ARDA dataset RCMSCY20).
+
+    Opt-in: the study is copyright ASARB and the map carries it by the
+    publisher's suggested citation, which is recorded on every record it
+    touches.
+    """
+    areas, populations, national = read_group_detail(path, level)
+    check_national(areas, national, level)
+    report_defaults(areas)
 
     matched = 0
     for rec in records:
-        fips = rec.get("codes", {}).get("geoid", "")
-        groups = counties.get(fips)
-        if not groups:
+        gid = rec.get("codes", {}).get("geoid", "")
+        groups = areas.get(gid)
+        pop = populations.get(gid)
+        if not groups or not pop:
+            rec["religion"] = gap(NOT_COLLECTED, CENSUS_BARRED + " " +
+                                  UNMATCHED_REASONS.get(gid[:2], UNMATCHED_DEFAULT))
             continue
         matched += 1
-        top = dict(sorted(groups.items(), key=lambda kv: kv[1], reverse=True)[:MAX_GROUPS])
-        pop = populations.get(fips)
-        if not pop:
-            continue
-        rec["religion"] = shares(top, total=pop)
+        rec["religion"] = shares(to_traditions(groups), total=pop)
         rec["religion_basis"] = "adherents"
         rec["religion_note"] = (
-            "2020 U.S. Religion Census (ASARB): adherents reported by participating "
-            "religious bodies, as a share of the 2020 census population. This is not "
-            "self-identification and does not sum to 100% -- the study reached about "
-            "48.6% of the population nationally, and the remainder is uncounted "
-            "rather than unaffiliated. Not comparable with the census religion "
-            "figures used for other countries.")
-        rec["sources"].append({"field": "religion", "name": "2020 U.S. Religion Census (ASARB)",
+            "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious "
+            "bodies, grouped into traditions and expressed as a share of the 2020 "
+            "census population. This is not self-identification and does not sum to "
+            "100% -- the study reached about 48.6% of the population nationally, and "
+            "the remainder is uncounted rather than unaffiliated. Not comparable "
+            "with the census religion figures used for other countries.")
+        rec["sources"].append({"field": "religion", "name": RELIGION_CITATION,
                                "url": "https://www.usreligioncensus.org/",
-                               "license": "Copyright ASARB, all rights reserved; "
-                                          "no redistribution licence stated"})
+                               "license": "Copyright ASARB; used with the "
+                                          "publisher's suggested citation"})
     print(f"  religion attached to {matched} of {len(records)} records")
 
 
@@ -321,8 +482,9 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--level", default="county", choices=["state", "county"])
     ap.add_argument("--year", type=int, default=2022)
-    ap.add_argument("--religion-file", type=Path, default=None,
-                    help="2020 U.S. Religion Census county CSV (ARDA RCMSCY20)")
+    ap.add_argument("--religion-file", type=Path, default=RELIGION_FILE,
+                    help="2020 U.S. Religion Census workbook or sheet export "
+                         "(ASARB / ARDA RCMSCY20); read at the chosen --level")
     ap.add_argument("--out", type=Path, default=None)
     args = ap.parse_args()
 
@@ -330,8 +492,14 @@ def main() -> int:
     log(f"us_acs: ACS {args.year} 5-year, level={args.level}"
         + ("" if key else " (no CENSUS_API_KEY set; the API now rejects keyless requests)"))
     records = fetch(args.level, args.year, key)
-    if args.religion_file:
-        attach_religion(records, args.religion_file)
+    if args.religion_file and args.religion_file.exists():
+        attach_religion(records, args.religion_file, args.level)
+    else:
+        # Not an error: without the workbook the records keep their
+        # not_collected marker, which is the truthful state of a US religion
+        # figure. Saying so beats a silent skip.
+        print(f"  no religion workbook at {args.religion_file}; "
+              "religion stays not_collected")
     out = args.out or PROCESSED / f"us_{args.level}.json"
     write_json(out, records)
     log(f"  {len(records)} {args.level} records")

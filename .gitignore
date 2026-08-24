@@ -1,5 +1,9 @@
 # Source downloads: large, reproducible with scripts/fetch_*.py, never edited.
-data/raw/
+# Note the trailing /*: excluding "data/raw/" would exclude the directory
+# itself, and git does not descend into an excluded directory, so none of the
+# negations below could take effect. The workbooks already in the repo are
+# there only because tracked files ignore .gitignore entirely.
+data/raw/*
 # ...except the Census of India C-16 workbooks. There is no API to fetch them
 # from, so the build cannot re-derive mother tongue without them, and GODL-India
 # permits redistribution with attribution. 12 MB buys a reproducible pipeline.
@@ -13,6 +17,11 @@ data/raw/
 !data/raw/singapore/*.csv
 !data/raw/switzerland/
 !data/raw/switzerland/*.xlsx
+# The 2020 U.S. Religion Census, for the same reason: there is no API, the
+# US census is barred from asking the question, and without the workbook the
+# build cannot re-derive religion for a single county.
+!data/raw/us/
+!data/raw/us/*.xlsx
 data/processed/http_cache/
 
 # Intermediate tiling artefacts
