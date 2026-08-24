@@ -1,4 +1,8 @@
-page: https://api.data.stats.govt.nz/rest/datastructure/STATSNZ/CEN23_ECI_017?references=children
+page: https://api.data.stats.govt.nz/rest/dataflow/STATSNZ/CEN23_ECI_017?references=all
   unreachable: HTTPError: HTTP Error 401: Unauthorized
-page: https://api.data.stats.govt.nz/rest/datastructure/STATSNZ/CEN23_ECI_011?references=children
-  unreachable: HTTPError: HTTP Error 401: Unauthorized
+page: https://api.data.stats.govt.nz/rest/data/STATSNZ
+  unreachable: HTTPError: HTTP Error 404: Not Found
+page: CEN23_ECI_017
+  unreachable: ValueError: unknown url type: 'CEN23_ECI_017'
+page: 1.0/all?format=csv&startPeriod=2023&endPeriod=2023
+  unreachable: ValueError: unknown url type: '1.0/all?format=csv&startPeriod=2023&endPeriod=2023'
