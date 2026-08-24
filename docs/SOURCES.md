@@ -157,6 +157,26 @@ The region names needed one alias: the region took the "Whanganui" spelling in
 2015 and geoBoundaries still carries "Wanganui", which normalisation cannot
 bridge because the h is a letter rather than an accent.
 
+**The positional check could not be run here, and that is worth saying.**
+After Nepal, every name join is meant to be checked against independent
+reference points rather than trusted. For New Zealand it could not be:
+Wikidata's SPARQL endpoint timed out on the admin-2 query on two separate
+attempts, so there are no reference points to check against. What stands
+instead is weaker evidence, but not nothing:
+
+* `verify_shapes.py` reports 88 shapes under **88 distinct names** — no
+  duplicates. Nepal's failure began with `Bara` and `Saptari` each appearing
+  twice, and that failure mode is absent here.
+* All 88 join by name, against a source whose tier is defined identically —
+  Stats NZ's "territorial authority and Auckland local board area" is the
+  layer geoBoundaries used, including all 21 local boards individually.
+* Every national control matches Stats NZ's published figures to the person.
+
+A 100% match on a tier both files define the same way is a different situation
+from Nepal's 75 shapes for 77 districts. It is still an unverified assumption,
+and re-running `fetch_wikidata.py --level admin2 --countries NZL` when the
+endpoint is healthy would settle it.
+
 ### Nepal: three fields, one census, and a boundary file that does not fit
 
 Nepal's census asks caste/ethnicity, mother tongue and religion, and the
