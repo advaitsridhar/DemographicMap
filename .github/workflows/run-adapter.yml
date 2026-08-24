@@ -16,23 +16,20 @@ name: Run one adapter
 # geometry on every adapter run to avoid that is the wrong trade -- the site
 # rebuild belongs where the boundaries already are.
 on:
-  # workflow_dispatch is only offered for workflows already on the default
-  # branch, so a new one cannot be dispatched from the branch that adds it --
-  # which is exactly when it is needed. Pushing this file runs it with the
-  # command below; once this is on main the dispatch form takes over and the
-  # default is just a fallback.
-  push:
-    paths:
-      - ".github/workflows/run-adapter.yml"
-      # While this workflow lives only on the branch, an adapter edit should
-      # re-run it: that is the whole development loop, and touching the
-      # workflow file to trigger a run of something else is a worse habit than
-      # listing the thing being worked on.
-      - "scripts/fetch_census/mexico.py"
+  # Dispatch only, now that this workflow is on the default branch and the form
+  # is offered. It used to carry a push trigger naming one adapter, because
+  # workflow_dispatch is not offered for a workflow that exists only on the
+  # branch introducing it -- which is exactly when it is first wanted. That
+  # scaffolding has served its purpose; left in place it would silently re-run
+  # Mexico on any edit to Mexico, whatever the run was meant to be for.
   workflow_dispatch:
     inputs:
       command:
-        description: "Adapter module and arguments, e.g. 'scripts.fetch_census.mexico --level both'"
+        description: >-
+          Module and arguments. An adapter, e.g.
+          'scripts.fetch_census.mexico --level both', or a read-only probe,
+          e.g. 'scripts.probe_links https://example.org/census --match xlsx'
+          with commit off.
         type: string
         required: true
       commit:
@@ -60,17 +57,27 @@ jobs:
 
       - name: Run the adapter
         env:
-          ADAPTER: ${{ inputs.command || 'scripts.fetch_census.mexico --level both' }}
-        run: python3 -m $ADAPTER
+          ADAPTER: ${{ inputs.command }}
+        # xargs rather than an unquoted expansion: the command is a dispatch
+        # input, and a URL with a query string carries "&", which bash reads as
+        # "background this and run the rest". A probe URL ending "&rows=25" ran
+        # the fetch in the background, ended the step immediately and killed it,
+        # while the job reported success. xargs splits on whitespace and gives
+        # the pieces to python directly, so no shell metacharacter in an input
+        # is interpreted -- which also means a dispatch input cannot smuggle a
+        # second command into this runner.
+        run: printf '%s' "$ADAPTER" | xargs python3 -m
 
       - name: Commit
         if: inputs.commit != 'false'
         env:
-          ADAPTER: ${{ inputs.command || 'scripts.fetch_census.mexico --level both' }}
+          ADAPTER: ${{ inputs.command }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A data/processed
+          # data/raw too: a source with no fetchable URL is checked in,
+          # and .gitignore names the few directories that applies to.
+          git add -A data/processed data/raw
           if git diff --cached --quiet; then
             echo "nothing changed" >> "$GITHUB_STEP_SUMMARY"
             exit 0

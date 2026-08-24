@@ -17,6 +17,12 @@ data/raw/*
 !data/raw/singapore/*.csv
 !data/raw/switzerland/
 !data/raw/switzerland/*.xlsx
+# Nepal's NPHC 2021 report, for the same reason: the census portal serves a
+# certificate that is not valid for its own hostname, so there is no verified
+# route to re-fetch it, and without the report the build cannot re-derive
+# caste, mother tongue or religion for a single district.
+!data/raw/nepal/
+!data/raw/nepal/*.pdf
 # The 2020 U.S. Religion Census, for the same reason: there is no API, the
 # US census is barred from asking the question, and without the workbook the
 # build cannot re-derive religion for a single county.

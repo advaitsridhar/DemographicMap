@@ -75,6 +75,9 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=40)
     ap.add_argument("--check", type=int, default=0,
                     help="also fetch headers for the first N matching links")
+    ap.add_argument("--raw", type=int, default=0,
+                    help="print the first N bytes of the body instead of "
+                         "parsing links; for JSON endpoints and catalogue APIs")
     args = ap.parse_args()
 
     if args.head:
@@ -87,18 +90,34 @@ def main() -> int:
             head(url)
         return 0
 
-    print(f"page: {args.url}")
+    # A list here for the same reason as --head: a landing page is a guess too,
+    # and finding out one CI run at a time which of half a dozen candidates is
+    # the real index costs more than fetching all of them.
+    for url in [u.strip() for u in args.url.split(",") if u.strip()]:
+        page(url, args)
+    return 0
+
+
+def page(url: str, args: argparse.Namespace) -> None:
+    print(f"page: {url}")
     try:
-        html = fetch(args.url)
+        html = fetch(url)
     except Exception as err:                      # noqa: BLE001
-        print(f"  unreachable: {type(err).__name__}: {str(err)[:120]}")
-        return 0
+        # The whole message, not a slice of it. A TLS failure names the host
+        # the certificate *is* valid for, and that name is the finding -- cut
+        # at 120 characters it read "certificate is not valid f".
+        print(f"  unreachable: {type(err).__name__}: {str(err)[:400]}")
+        return
     print(f"  {len(html):,} bytes")
+    # A catalogue API answers in JSON, which has no anchors to parse.
+    if args.raw:
+        print(html[:args.raw])
+        return
 
     wanted = [w.strip().lower() for w in args.match.split(",") if w.strip()]
     seen, hits = set(), []
     for m in re.finditer(r'<a\b[^>]*href="([^"]+)"[^>]*>(.*?)</a>', html, re.S | re.I):
-        href = urllib.parse.urljoin(args.url, m.group(1))
+        href = urllib.parse.urljoin(url, m.group(1))
         text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", m.group(2))).strip()
         blob = f"{href} {text}".lower()
         if wanted and not any(w in blob for w in wanted):
@@ -115,7 +134,6 @@ def main() -> int:
     for href, _ in hits[:args.check]:
         print(f"  checking {href}")
         head(href)
-    return 0
 
 
 if __name__ == "__main__":
