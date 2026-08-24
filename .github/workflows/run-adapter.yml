@@ -58,7 +58,15 @@ jobs:
       - name: Run the adapter
         env:
           ADAPTER: ${{ inputs.command }}
-        run: python3 -m $ADAPTER
+        # xargs rather than an unquoted expansion: the command is a dispatch
+        # input, and a URL with a query string carries "&", which bash reads as
+        # "background this and run the rest". A probe URL ending "&rows=25" ran
+        # the fetch in the background, ended the step immediately and killed it,
+        # while the job reported success. xargs splits on whitespace and gives
+        # the pieces to python directly, so no shell metacharacter in an input
+        # is interpreted -- which also means a dispatch input cannot smuggle a
+        # second command into this runner.
+        run: printf '%s' "$ADAPTER" | xargs python3 -m
 
       - name: Commit
         if: inputs.commit != 'false'
