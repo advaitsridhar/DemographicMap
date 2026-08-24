@@ -126,8 +126,19 @@ def text_at(profile: dict[str, Any], *path: str) -> str | None:
     if isinstance(node, dict):
         node = node.get("text")
     if isinstance(node, str):
-        text = html.unescape(re.sub(r"<[^>]+>", " ", node))
-        return re.sub(r"\s+", " ", text.replace("\u00a0", " ")).strip()
+        # <br><br> separates independent compositions: a country may publish an
+        # older detailed survey and a current estimate in one field. Collapsing
+        # that boundary into a space welds them into a single list -- Uruguay's
+        # religions then read 158.2% with Roman Catholic counted twice -- so the
+        # blocks are cleaned separately and rejoined as blank lines, which
+        # survive to parse_composition where the choice between them is made.
+        blocks = []
+        for block in re.split(r"(?:<br\s*/?>\s*)+", node):
+            text = html.unescape(re.sub(r"<[^>]+>", " ", block))
+            text = re.sub(r"[^\S\n]+", " ", text.replace("\u00a0", " ")).strip()
+            if text:
+                blocks.append(text)
+        return "\n\n".join(blocks) or None
     return None
 
 

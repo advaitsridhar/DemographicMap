@@ -36,6 +36,7 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import canonical_groups
 from common import (  # noqa: E402
     NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, ROOT, apply_collection_policy,
     gap, is_gap, log, measure, read_json, write_json,
@@ -404,6 +405,74 @@ def field_state(value: Any) -> str:
     return "present"
 
 
+def group_index(admin0: list[dict[str, Any]],
+                admin1: dict[str, list[dict[str, Any]]],
+                admin2: dict[str, list[dict[str, Any]]]) -> dict[str, Any]:
+    """What can be filtered on worldwide, and what each choice actually covers.
+
+    The app cannot build this from the records it happens to have loaded: at
+    world zoom it holds countries only, so a group picker fed from those would
+    offer nothing below the national level, and one fed from a single country's
+    shard would offer only that country's spellings. The whole point of a global
+    filter is to know that "Muslim" and "Islam" are one answer before the map is
+    drawn, so the list is assembled here, over every record, once.
+
+    Each entry carries what it is fair to conclude from it: how many units hold
+    a figure, which countries those are, the source labels folded into it, and
+    any country measuring it a different way -- the US religion figures count
+    adherents reported by religious bodies rather than answers people gave, so a
+    map of Christianity shades those counties on a basis the others do not share.
+    """
+    index: dict[str, Any] = {}
+    for field in ("religion", "language", "ethnicity"):
+        units: dict[str, int] = {}
+        countries: dict[str, set[str]] = {}
+        labels: dict[str, set[str]] = {}
+        bases: dict[str, str] = {}
+        conflicts: set[str] = set()
+
+        for iso3, rows in [("", admin0)] + sorted(admin1.items()) + sorted(admin2.items()):
+            for record in rows:
+                value = record.get(field)
+                if not isinstance(value, list):
+                    continue
+                code = iso3 or record.get("id", "")
+                for bad in canonical_groups.check_no_double_counting(value, field):
+                    conflicts.add(f"{code}:{bad}")
+                basis = record.get(f"{field}_basis")
+                if basis:
+                    bases[code] = basis
+                table = canonical_groups.lookup(field)
+                for row in value:
+                    if not isinstance(row.get("pct"), (int, float)):
+                        continue
+                    raw = row.get("group", "")
+                    name = table.get(raw, raw)
+                    units[name] = units.get(name, 0) + 1
+                    countries.setdefault(name, set()).add(code)
+                    labels.setdefault(name, set()).add(raw)
+
+        if conflicts:
+            # Rolling children into a parent is only sound while no source
+            # publishes both levels at once. If one starts to, the totals would
+            # silently double, so the build stops rather than shipping them.
+            raise SystemExit(f"{field}: parent and child reported together in "
+                             f"{sorted(conflicts)[:5]}")
+
+        index[field] = {
+            "groups": [
+                {"name": name,
+                 "units": units[name],
+                 "countries": sorted(c for c in countries[name] if len(c) == 3),
+                 "labels": sorted(labels[name]),
+                 "canonical": len(labels[name]) > 1 or name in canonical_groups.TABLES[field]}
+                for name in sorted(units, key=lambda n: (-units[n], n))
+            ],
+            "bases": bases,
+        }
+    return index
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -627,6 +696,9 @@ def main() -> int:
                 }
         coverage[iso3] = entry
     write_json(out / "coverage.json", coverage, compact=True)
+
+    write_json(out / "groups.json", group_index(admin0, admin1_by_country,
+                                                admin2_by_country), compact=True)
 
     # A stamp derived from what was actually written, so the app can bust a
     # viewer's cached shards the moment the figures change -- and only then.

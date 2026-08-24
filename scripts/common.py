@@ -303,6 +303,34 @@ def _split_top_level(text: str, separators: str = ",") -> list[str]:
     return parts
 
 
+_YEAR = re.compile(r"\(\s*\d{4}")
+
+
+def _pick_composition_block(text: str) -> str:
+    """One composition out of a field that may carry several.
+
+    The Factbook separates independent compositions with ``<br><br>``, and by
+    the time the tags are stripped they read as one long list. Uruguay carries a
+    detailed older survey followed by a 2023 estimate, so the merged reading put
+    Roman Catholic in twice and totalled 158.2%.
+
+    The most recent estimate wins, which is the last block carrying a vintage
+    marker. Prose notes are dropped first: the World entry ends with three of
+    them, so "take the last block" would return a sentence about how many
+    languages exist rather than any figures at all.
+    """
+    blocks = [b for b in re.split(r"(?:<br\s*/?>\s*)+|\n{2,}", text) if b.strip()]
+    if len(blocks) < 2:
+        return text
+    usable = [b for b in blocks
+              if not re.match(r"\s*(?:<[^>]+>\s*)*note\b", b, re.I)
+              and re.search(r"\d\s*%", b)]
+    if not usable:
+        return text
+    dated = [b for b in usable if _YEAR.search(b)]
+    return dated[-1] if dated else usable[0]
+
+
 def parse_composition(text: str | None, *, source: str | None = None) -> list[dict[str, Any]] | None:
     """Turn ``"Hindu 79.8%, Muslim 14.2%, other 0.9%"`` into structured shares.
 
@@ -312,6 +340,9 @@ def parse_composition(text: str | None, *, source: str | None = None) -> list[di
     """
     if not text:
         return None
+    # Before the tags go: they are what marks the boundary between two separate
+    # compositions, and stripping them first silently welds the two together.
+    text = _pick_composition_block(text)
     clean = re.sub(r"<[^>]+>", " ", text)
     clean = clean.replace("\u00a0", " ")
     clean = re.sub(r"\s*note\s*\d*\s*:.*$", "", clean, flags=re.I | re.S)
@@ -319,6 +350,11 @@ def parse_composition(text: str | None, *, source: str | None = None) -> list[di
     clean = re.sub(r"\((?:[^()]*?\b(?:est\.|census)\b[^()]*?|\s*\d{4}\s*)\)\s*$", " ", clean)
     # A top-level semicolon introduces commentary, not another group.
     clean = _split_top_level(clean, ";")[0]
+    # A block may open with a heading -- "most-spoken language:" -- which once
+    # stripped of its tags reads as part of the first group's name. Only a short
+    # colon-terminated run before any figure qualifies, so a real label
+    # containing a colon cannot be eaten.
+    clean = re.sub(r"^[^,%:]{0,40}:\s*", "", clean.lstrip())
 
     out: list[dict[str, Any]] = []
     for part in _split_top_level(clean, ","):
