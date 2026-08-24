@@ -30,11 +30,16 @@ TIMEOUT = 15
 
 
 def names(cert: dict) -> list[str]:
+    """Every name the certificate claims, from the subject and the SANs.
+
+    The subject is a tuple of relative distinguished names, each of which is
+    itself a tuple of (key, value) pairs -- two levels of nesting, not one.
+    """
     out = []
-    for key, value in cert.get("subject", ()):
-        for k, v in ((key, value),) if isinstance(key, str) else key:
-            if k == "commonName":
-                out.append(f"CN={v}")
+    for rdn in cert.get("subject", ()):
+        for key, value in rdn:
+            if key == "commonName":
+                out.append(f"CN={value}")
     for kind, value in cert.get("subjectAltName", ()):
         out.append(f"{kind}:{value}")
     return out
