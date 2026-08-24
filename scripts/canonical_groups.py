@@ -37,6 +37,9 @@ from typing import Any, Iterable
 RELIGION: dict[str, tuple[str, ...]] = {
     "Christianity": (
         "Christian", "Christianity",
+        # Mexico reports these two alongside "other" and "none", so they are
+        # children of Christianity there, never siblings of it.
+        "Protestant and evangelical",
         # Reported at denomination or tradition level by some offices. These
         # are children of Christianity, never siblings of it in one source.
         "Catholic", "Roman Catholic", "Católica Apostólica Romana",

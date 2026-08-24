@@ -66,6 +66,11 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # data/raw/india/c16/. No network: these read from disk, so they run
   # unconditionally rather than through soft().
   # Singapore, via the SingStat Table Builder API.
+  # Mexico's ITER is a 36 MB download read straight from INEGI; too large to
+  # check in, and the only file that carries religion, indigenous language and
+  # Afro-descendant identity for all 2,470 municipios at once.
+  soft python3 -m scripts.fetch_census.mexico --level state
+  soft python3 -m scripts.fetch_census.mexico --level municipality
   soft python3 -m scripts.fetch_census.switzerland
   soft python3 -m scripts.fetch_census.singstat
   soft python3 -m scripts.fetch_census.singapore_areas
