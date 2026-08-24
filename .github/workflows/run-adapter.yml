@@ -66,7 +66,17 @@ jobs:
         # the pieces to python directly, so no shell metacharacter in an input
         # is interpreted -- which also means a dispatch input cannot smuggle a
         # second command into this runner.
-        run: printf '%s' "$ADAPTER" | xargs python3 -m
+        #
+        # The output is also written to a file the Commit step picks up. A
+        # probe's whole value is what it printed, and reading that back out of
+        # the Actions log means pulling a hundred lines of runner cleanup to
+        # find twenty lines of answer. pipefail so a failing adapter still
+        # fails the step rather than being masked by tee's exit code.
+        run: |
+          set -o pipefail
+          mkdir -p data/processed
+          printf '%s' "$ADAPTER" | xargs python3 -m 2>&1 \
+            | tee data/processed/last-run.log
 
       - name: Commit
         if: inputs.commit != 'false'

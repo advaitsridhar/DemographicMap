@@ -140,6 +140,37 @@ def norm(text: str | None) -> str:
 # Geometry side
 # ---------------------------------------------------------------------------
 
+# The signature of UTF-8 bytes read as latin-1, written as the byte ranges it
+# actually is: a two-or-more-byte lead (0xC2-0xDF and up) followed by a
+# continuation byte (0x80-0xBF). Read as latin-1 those land on A-circumflex
+# through sharp-s, then on a C1 control or Latin-1 punctuation -- a pair no
+# real place name contains. Guessing at the lead characters instead missed
+# Maori macrons, which encode from 0xC4 and 0xC5.
+_MOJIBAKE = re.compile("[\u00c2-\u00df][\u0080-\u00bf]")
+
+
+def repair(name: str) -> str:
+    """Undo a name geoBoundaries stored as UTF-8 that had been read as latin-1.
+
+    CGAZ ships 33 such names across five countries -- Chile's regions read
+    "Regi\u00c3\u00b3n Metropolitana de Santiago", New Zealand has a
+    "Kaip\u00c4\u0081tiki Local Board Area" -- and they are shown to viewers
+    exactly as stored, as well as being what the census join has to match.
+
+    Re-encoding to latin-1 and decoding as UTF-8 is safe because it is
+    self-checking: a name that really is latin-1 does not survive the round
+    trip. "Ca\u00f1ete" encodes to bytes that are not valid UTF-8, so the
+    decode raises and the name is left alone; only a string that *was* UTF-8
+    all along comes back different and legible.
+    """
+    if not _MOJIBAKE.search(name):
+        return name
+    try:
+        return name.encode("latin-1").decode("utf-8")
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        return name
+
+
 def read_shapes(level: str) -> list[dict[str, Any]]:
     """Feature properties + centroid for one CGAZ level (geometry stays on disk)."""
     import fiona
@@ -170,7 +201,7 @@ def read_shapes(level: str) -> list[dict[str, Any]]:
             bounds = geom.bounds
             out.append({
                 "shape_id": props.get("shapeID") or props.get("shapeGroup"),
-                "name": (props.get("shapeName") or "").strip(),
+                "name": repair((props.get("shapeName") or "").strip()),
                 "group": props.get("shapeGroup"),
                 "point": [round(point.x, 5), round(point.y, 5)],
                 "bbox": [round(b, 4) for b in bounds],
