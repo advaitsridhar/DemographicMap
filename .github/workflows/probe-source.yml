@@ -12,7 +12,7 @@ on:
       kind:
         description: "Source type"
         type: choice
-        options: [arcgis, url, pdf, datagovsg, pxweb, links]
+        options: [arcgis, url, pdf, datagovsg, pxweb, links, heads]
         default: arcgis
       target:
         description: "ArcGIS item id or URL; kind=url/pdf a direct URL; kind=datagovsg a search term"
@@ -77,6 +77,11 @@ jobs:
         run: |
           python3 scripts/probe_links.py "${{ inputs.target }}" \
             --match "${{ inputs.terms }}" --check 6
+
+      - name: Check candidate files exist
+        if: inputs.kind == 'heads'
+        run: |
+          python3 scripts/probe_links.py --head "${{ inputs.target }}"
 
       - name: Probe plain URL
         if: inputs.kind == 'url'

@@ -78,8 +78,13 @@ def main() -> int:
     args = ap.parse_args()
 
     if args.head:
-        print(args.url)
-        head(args.url)
+        # A comma-separated list, because a portal that renders its links in
+        # JavaScript -- INEGI's census page is 5 KB of shell and no anchors --
+        # leaves testing candidate URLs as the only way to find the files, and
+        # doing that one CI run at a time is unaffordable.
+        for url in [u.strip() for u in args.url.split(",") if u.strip()]:
+            print(url)
+            head(url)
         return 0
 
     print(f"page: {args.url}")
