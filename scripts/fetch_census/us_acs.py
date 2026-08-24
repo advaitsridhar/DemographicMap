@@ -12,8 +12,12 @@ mandatory religion question since 1976 (13 U.S.C. 221(c)).  The county-level
 substitute is the 2020 U.S. Religion Census (ASARB, distributed by ARDA), which
 counts *adherents reported by 372 religious bodies* -- 161,224,088 people, about
 48.6% of the 2020 population -- and is therefore not comparable with the
-self-identification percentages used everywhere else in this dataset.  It is
-loaded separately by ``--religion-file`` and always labelled as adherence.
+self-identification percentages used everywhere else in this dataset.
+
+That study is copyright ASARB, all rights reserved, and the OSF deposit behind
+its DOI records no licence, so the figures are not committed here and no
+scheduled refresh fetches them.  ``--religion-file`` reads a copy the operator
+supplies, and what it produces is always labelled as adherence.
 
 An API key is optional below 500 calls/day; set ``CENSUS_API_KEY`` to lift that.
 
@@ -158,53 +162,158 @@ def fetch(level: str, year: int, key: str | None) -> list[dict[str, Any]]:
             language_note="Language spoken at home, population 5 years and over (ACS table C16001).",
             religion=gap(NOT_COLLECTED,
                          "The U.S. census may not ask a mandatory religion question "
-                         "(13 U.S.C. 221(c)). Use --religion-file to attach the 2020 "
-                         "U.S. Religion Census adherence estimates instead."),
+                         "(13 U.S.C. 221(c)), so no government figures exist at any "
+                         "level. The gap is filled privately: the 2020 U.S. Religion "
+                         "Census (ASARB, doi:10.17605/OSF.IO/ET2A5) counts adherents "
+                         "reported by 372 religious bodies, reaching about 48.6% of "
+                         "the population. That study is copyright, all rights "
+                         "reserved, and states no redistribution licence, so this map "
+                         "cites it rather than carrying it."),
             sources=[{"field": "ethnicity/language/population", "name": src,
                       "url": BASE.format(year=year), "license": "Public domain (U.S. Government work)"}],
         ))
     return out
 
 
-def attach_religion(records: list[dict[str, Any]], path: Path) -> None:
-    """Merge a 2020 U.S. Religion Census county extract (ARDA dataset RCMSCY20).
+# The county sheet carries a national block keyed FIPS = "Total": a full copy of
+# the country's figures sitting in among the 3,141 counties. Summing the column
+# without excluding it doubles the United States -- 322,019,032 adherents, 97%
+# of the population, against a true 161,009,516.
+#
+# Nothing internal to the table catches that. Every county's own shares stay
+# correct and still add up, exactly as they did for the ABS "Christianity Total"
+# rows and the India C-16 group codes. It is only visible against a total the
+# per-county rows did not produce, which is why that block is read and used as
+# the control rather than skipped and forgotten.
+NATIONAL_BLOCK = "total"
+COUNTY_SHEET = "2020 Group by County"
+MAX_GROUPS = 12
 
-    Expects a CSV with ``FIPS``, ``GRPNAME`` and ``ADHERENT`` columns -- the
-    layout of the ASARB "Group Detail Data by County" release.
+
+def read_group_detail(path: Path) -> tuple[dict[str, dict[str, float]],
+                                           dict[str, float], float]:
+    """Adherents by county and group, plus county populations and the control.
+
+    Handles the ASARB workbook directly (.xlsx, sheet "2020 Group by County")
+    and a CSV export of the same sheet. Returns per-county group counts, the
+    2020 population the file itself implies for each county, and the national
+    total carried by the FIPS = "Total" row.
     """
-    import csv
-    from collections import defaultdict
+    if path.suffix.lower() in (".xlsx", ".xlsm"):
+        import openpyxl
+        book = openpyxl.load_workbook(path, read_only=True, data_only=True)
+        sheet = book[COUNTY_SHEET] if COUNTY_SHEET in book.sheetnames else book.worksheets[0]
+        rows = sheet.iter_rows(values_only=True)
+        header = [str(c or "") for c in next(rows)]
+        records = (dict(zip(header, r)) for r in rows)
+    else:
+        import csv
+        records = csv.DictReader(path.open(newline="", encoding="utf-8-sig"))
 
-    by_fips: dict[str, dict[str, float]] = defaultdict(dict)
-    with path.open(newline="", encoding="utf-8-sig") as fh:
-        for row in csv.DictReader(fh):
-            fips = (row.get("FIPS") or row.get("fips") or "").zfill(5)
-            group = row.get("GRPNAME") or row.get("grpname")
-            adherents = row.get("ADHERENT") or row.get("adherent")
-            if not (fips and group and adherents):
-                continue
+    def field(row: dict, *names: str) -> Any:
+        for name in names:
+            for key in row:
+                if key and key.strip().lower() == name:
+                    return row[key]
+        return None
+
+    counties: dict[str, dict[str, float]] = {}
+    populations: dict[str, float] = {}
+    national = 0.0
+    for row in records:
+        fips = str(field(row, "fips") or "").strip()
+        if not fips:
+            continue
+        try:
+            adherents = float(field(row, "adherents", "adherent"))
+        except (TypeError, ValueError):
+            continue          # blank means not reported, which is not zero
+
+        # Before anything else: the national row names no group, so a reader
+        # that requires one skips it silently and loses the only figure the
+        # county rows can be checked against.
+        if fips.lower() == NATIONAL_BLOCK:
+            national += adherents
+            continue
+
+        group = str(field(row, "group name", "grpname") or "").strip()
+        if not group:
+            continue
+        fips = fips.zfill(5)
+        counties.setdefault(fips, {})[group] = adherents
+        # The file prints each count as a share of its county's population, so
+        # the denominator it used can be recovered rather than assumed. Taking
+        # it from the file keeps the shares equal to the published ones; the
+        # ACS population on the record is a different year and would not.
+        if fips not in populations:
             try:
-                by_fips[fips][group] = by_fips[fips].get(group, 0.0) + float(adherents)
-            except ValueError:
-                continue
+                share = float(field(row, "adherents as % of total population"))
+            except (TypeError, ValueError):
+                share = 0.0
+            if share > 0:
+                populations[fips] = adherents / share
+    return counties, populations, national
 
+
+def check_national(counties: dict[str, dict[str, float]], national: float) -> None:
+    """The counties must add up to the national block, or the read is wrong.
+
+    This is the check that catches reading the national block as a county. It
+    compares against a figure the per-county rows did not produce, so unlike a
+    shares-add-to-100% test it cannot be satisfied by double counting.
+    """
+    if not national:
+        raise SystemExit(
+            f"no national block (FIPS {NATIONAL_BLOCK!r}) in the group detail file. "
+            "Either the layout changed or it was filtered out -- without it the "
+            "county figures have nothing independent to reconcile against, and a "
+            "doubled country reads as a valid table.")
+    total = sum(sum(g.values()) for g in counties.values())
+    control = national
+    drift = abs(total - control) / control if control else 1.0
+    print(f"  counties {total:,.0f} vs national block {control:,.0f} "
+          f"({drift:.4%} apart, {len(counties)} counties)")
+    if drift > 0.005:
+        raise SystemExit(f"county adherents are {drift:.2%} from the national block")
+
+
+def attach_religion(records: list[dict[str, Any]], path: Path) -> None:
+    """Merge a 2020 U.S. Religion Census county extract (ASARB / ARDA RCMSCY20).
+
+    Opt-in, and it stays opt-in: the study is copyright ASARB, all rights
+    reserved, and the OSF deposit behind its DOI records no licence at all. The
+    repository therefore ships this reader and not the figures. Supplying the
+    workbook -- and publishing what comes out of it -- is the operator's call
+    against their own copy, not something a scheduled refresh does by itself.
+    """
+    counties, populations, national = read_group_detail(path)
+    check_national(counties, national)
+
+    matched = 0
     for rec in records:
         fips = rec.get("codes", {}).get("geoid", "")
-        groups = by_fips.get(fips)
+        groups = counties.get(fips)
         if not groups:
             continue
-        top = dict(sorted(groups.items(), key=lambda kv: kv[1], reverse=True)[:12])
-        pop = rec["population"].get("value") if isinstance(rec["population"], dict) else None
+        matched += 1
+        top = dict(sorted(groups.items(), key=lambda kv: kv[1], reverse=True)[:MAX_GROUPS])
+        pop = populations.get(fips)
+        if not pop:
+            continue
         rec["religion"] = shares(top, total=pop)
         rec["religion_basis"] = "adherents"
         rec["religion_note"] = (
-            "2020 U.S. Religion Census (ASARB/ARDA): adherents reported by participating "
-            "religious bodies, expressed as a share of total population. This is NOT "
-            "self-identification and does not sum to 100% -- the 2020 collection covered "
-            "about 48.6% of the population.")
+            "2020 U.S. Religion Census (ASARB): adherents reported by participating "
+            "religious bodies, as a share of the 2020 census population. This is not "
+            "self-identification and does not sum to 100% -- the study reached about "
+            "48.6% of the population nationally, and the remainder is uncounted "
+            "rather than unaffiliated. Not comparable with the census religion "
+            "figures used for other countries.")
         rec["sources"].append({"field": "religion", "name": "2020 U.S. Religion Census (ASARB)",
                                "url": "https://www.usreligioncensus.org/",
-                               "license": "See ARDA terms of use"})
+                               "license": "Copyright ASARB, all rights reserved; "
+                                          "no redistribution licence stated"})
+    print(f"  religion attached to {matched} of {len(records)} records")
 
 
 def main() -> int:
