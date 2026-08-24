@@ -45,6 +45,9 @@ soft python3 scripts/fetch_wikidata.py --level admin2 --countries $WIKIDATA_ADMI
 
 if [ "${WITH_CENSUS:-0}" = "1" ]; then
   step "National statistical offices"
+  # Race, language and age come from the ACS API; religion cannot, because the
+  # census is barred from asking. It is read from the 2020 U.S. Religion Census
+  # workbook in data/raw/us/, picked up automatically when present.
   soft python3 -m scripts.fetch_census.us_acs --level state
   soft python3 -m scripts.fetch_census.us_acs --level county
   soft python3 -m scripts.fetch_census.uk_nomis
@@ -66,7 +69,7 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.switzerland
   soft python3 -m scripts.fetch_census.singstat
   soft python3 -m scripts.fetch_census.singapore_areas
-  # Sri Lanka's 2012 census tables are workbooks too, read from disk.
+  # Sri Lanka's 2024 census tables are workbooks too, read from disk.
   soft python3 -m scripts.fetch_census.sri_lanka --level province
   soft python3 -m scripts.fetch_census.sri_lanka --level district
   soft python3 -m scripts.fetch_census.india_language --level state

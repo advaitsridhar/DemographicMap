@@ -27,10 +27,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 56.2,
+        "count": 2825785
+      },
+      {
+        "group": "Catholic",
+        "pct": 5.0,
+        "count": 249650
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.8,
+        "count": 37765
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7,
+        "count": 34534
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5,
+        "count": 23550
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2,
+        "count": 8979
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 2750
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 2621
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 5067
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 4808
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -146,6 +194,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -154,7 +208,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-02",
@@ -184,10 +240,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 21.7,
+        "count": 159353
+      },
+      {
+        "group": "Catholic",
+        "pct": 5.5,
+        "count": 40280
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 4.6,
+        "count": 33495
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 1.5,
+        "count": 10993
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.8,
+        "count": 6096
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.7,
+        "count": 5282
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 1188
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1,
+        "count": 469
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 400
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 464
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -303,6 +407,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -311,7 +421,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-04",
@@ -341,10 +453,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 21.3,
+        "count": 1522410
+      },
+      {
+        "group": "Protestant",
+        "pct": 12.6,
+        "count": 901495
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 6.1,
+        "count": 436521
+      },
+      {
+        "group": "Islam",
+        "pct": 1.5,
+        "count": 109765
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.2,
+        "count": 86138
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.4,
+        "count": 28340
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.3,
+        "count": 20486
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.3,
+        "count": 17948
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 10822
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 17215
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 221
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -460,6 +625,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -468,7 +639,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-05",
@@ -498,10 +671,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 50.2,
+        "count": 1511608
+      },
+      {
+        "group": "Catholic",
+        "pct": 5.1,
+        "count": 153358
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.1,
+        "count": 32307
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.9,
+        "count": 26964
+      },
+      {
+        "group": "Islam",
+        "pct": 0.2,
+        "count": 6765
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1921
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 2878
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.0,
+        "count": 1413
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 1086
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 65
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0,
+        "count": 1210
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -617,6 +843,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -625,7 +857,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-06",
@@ -655,10 +889,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 26.2,
+        "count": 10361743
+      },
+      {
+        "group": "Protestant",
+        "pct": 11.6,
+        "count": 4601989
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.9,
+        "count": 756507
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.3,
+        "count": 498028
+      },
+      {
+        "group": "Islam",
+        "pct": 1.3,
+        "count": 504056
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.8,
+        "count": 311273
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.6,
+        "count": 221189
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.6,
+        "count": 238702
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.5,
+        "count": 186377
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 44923
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 1650
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -774,6 +1061,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -782,7 +1075,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-08",
@@ -812,10 +1107,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 15.2,
+        "count": 876026
+      },
+      {
+        "group": "Catholic",
+        "pct": 15.1,
+        "count": 873236
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 2.6,
+        "count": 150509
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.8,
+        "count": 47682
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.5,
+        "count": 27189
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.3,
+        "count": 15570
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.3,
+        "count": 15023
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.3,
+        "count": 19601
+      },
+      {
+        "group": "Islam",
+        "pct": 0.2,
+        "count": 10828
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 8255
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 521
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -931,6 +1279,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -939,7 +1293,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-09",
@@ -969,10 +1325,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 28.4,
+        "count": 1024927
+      },
+      {
+        "group": "Protestant",
+        "pct": 14.3,
+        "count": 514764
+      },
+      {
+        "group": "Islam",
+        "pct": 1.2,
+        "count": 43905
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.1,
+        "count": 38288
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.9,
+        "count": 32126
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.5,
+        "count": 18329
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.4,
+        "count": 15946
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2,
+        "count": 8939
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.2,
+        "count": 7195
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 3760
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -1088,6 +1492,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -1096,7 +1506,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-10",
@@ -1126,10 +1538,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 19.9,
+        "count": 197094
+      },
+      {
+        "group": "Protestant",
+        "pct": 17.1,
+        "count": 169678
+      },
+      {
+        "group": "Hinduism",
+        "pct": 1.3,
+        "count": 12908
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.9,
+        "count": 9368
+      },
+      {
+        "group": "Islam",
+        "pct": 0.7,
+        "count": 7065
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.6,
+        "count": 5634
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.3,
+        "count": 2573
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.3,
+        "count": 3000
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 1485
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 567
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 40
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -1245,6 +1710,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -1253,7 +1724,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-11",
@@ -1283,10 +1756,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 35.7,
+        "count": 245938
+      },
+      {
+        "group": "Catholic",
+        "pct": 11.9,
+        "count": 81735
+      },
+      {
+        "group": "Judaism",
+        "pct": 2.8,
+        "count": 18980
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 1.9,
+        "count": 12930
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.3,
+        "count": 9062
+      },
+      {
+        "group": "Islam",
+        "pct": 1.1,
+        "count": 7528
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.9,
+        "count": 6088
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.5,
+        "count": 3144
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.4,
+        "count": 2651
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2,
+        "count": 1158
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 27
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -1402,6 +1928,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -1410,7 +1942,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-12",
@@ -1440,10 +1974,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 23.9,
+        "count": 5151256
+      },
+      {
+        "group": "Catholic",
+        "pct": 19.0,
+        "count": 4097067
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.4,
+        "count": 304524
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.7,
+        "count": 160266
+      },
+      {
+        "group": "Islam",
+        "pct": 0.6,
+        "count": 127172
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.5,
+        "count": 108841
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.3,
+        "count": 62978
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.3,
+        "count": 63939
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.2,
+        "count": 46257
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 17650
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 103
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -1559,6 +2146,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -1567,7 +2160,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-13",
@@ -1597,10 +2192,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 38.1,
+        "count": 4076625
+      },
+      {
+        "group": "Catholic",
+        "pct": 8.4,
+        "count": 898162
+      },
+      {
+        "group": "Islam",
+        "pct": 1.2,
+        "count": 123652
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.1,
+        "count": 119302
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.8,
+        "count": 87411
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.5,
+        "count": 54190
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.3,
+        "count": 35510
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.2,
+        "count": 17146
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.2,
+        "count": 16442
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 11506
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -1716,6 +2359,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -1724,7 +2373,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-15",
@@ -1754,10 +2405,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 18.5,
+        "count": 269726
+      },
+      {
+        "group": "Protestant",
+        "pct": 11.8,
+        "count": 172276
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 5.2,
+        "count": 75009
+      },
+      {
+        "group": "Buddhism",
+        "pct": 3.8,
+        "count": 55240
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.7,
+        "count": 25076
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.3,
+        "count": 3853
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1015
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 797
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.0,
+        "count": 593
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 145
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -1873,6 +2572,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -1881,7 +2586,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-16",
@@ -1911,10 +2618,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Latter-day Saints",
+        "pct": 25.1,
+        "count": 462069
+      },
+      {
+        "group": "Protestant",
+        "pct": 15.1,
+        "count": 278479
+      },
+      {
+        "group": "Catholic",
+        "pct": 11.1,
+        "count": 203790
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.9,
+        "count": 16840
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 1061
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1604
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1,
+        "count": 1247
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 1140
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 2531
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 1080
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 60
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -2030,6 +2790,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -2038,7 +2804,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-17",
@@ -2068,10 +2836,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 24.2,
+        "count": 3099544
+      },
+      {
+        "group": "Protestant",
+        "pct": 20.0,
+        "count": 2557906
+      },
+      {
+        "group": "Islam",
+        "pct": 3.7,
+        "count": 473792
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7,
+        "count": 93798
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.6,
+        "count": 70716
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.5,
+        "count": 61428
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.4,
+        "count": 56888
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.4,
+        "count": 46928
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.3,
+        "count": 36332
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 13002
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 29
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -2187,6 +3008,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -2195,7 +3022,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-18",
@@ -2225,10 +3054,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 28.1,
+        "count": 1903810
+      },
+      {
+        "group": "Catholic",
+        "pct": 11.5,
+        "count": 779477
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.7,
+        "count": 45952
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 41552
+      },
+      {
+        "group": "Islam",
+        "pct": 0.6,
+        "count": 41400
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.3,
+        "count": 20613
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 11559
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 4311
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1,
+        "count": 6360
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 4379
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 26
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -2344,6 +3226,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -2352,7 +3240,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-19",
@@ -2382,10 +3272,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 27.5,
+        "count": 877924
+      },
+      {
+        "group": "Catholic",
+        "pct": 14.7,
+        "count": 470487
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.9,
+        "count": 28402
+      },
+      {
+        "group": "Islam",
+        "pct": 0.7,
+        "count": 23211
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5,
+        "count": 15552
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 3216
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 3286
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 3326
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1,
+        "count": 4031
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 1908
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 6
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -2501,6 +3444,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -2509,7 +3458,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-20",
@@ -2539,10 +3490,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 29.0,
+        "count": 852561
+      },
+      {
+        "group": "Catholic",
+        "pct": 14.1,
+        "count": 414939
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.3,
+        "count": 38311
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 18970
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 6772
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2,
+        "count": 6962
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 3339
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 2659
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 4041
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 3615
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 72
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -2658,6 +3662,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -2666,7 +3676,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-21",
@@ -2696,10 +3708,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 39.4,
+        "count": 1773389
+      },
+      {
+        "group": "Catholic",
+        "pct": 7.9,
+        "count": 354064
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.8,
+        "count": 35886
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 25982
+      },
+      {
+        "group": "Islam",
+        "pct": 0.4,
+        "count": 17957
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 3797
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 4320
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1,
+        "count": 6245
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 2751
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 1737
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 160
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -2815,6 +3880,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -2823,7 +3894,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-22",
@@ -2853,10 +3926,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 34.1,
+        "count": 1587121
+      },
+      {
+        "group": "Catholic",
+        "pct": 26.8,
+        "count": 1248106
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7,
+        "count": 32914
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.6,
+        "count": 29589
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5,
+        "count": 24732
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 7575
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 2530
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 4258
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1,
+        "count": 6375
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 6220
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -2972,6 +4093,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -2980,7 +4107,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-23",
@@ -3010,10 +4139,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 16.1,
+        "count": 219233
+      },
+      {
+        "group": "Protestant",
+        "pct": 11.1,
+        "count": 150903
+      },
+      {
+        "group": "Islam",
+        "pct": 1.2,
+        "count": 16894
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.8,
+        "count": 10958
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7,
+        "count": 9372
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.3,
+        "count": 4364
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 3244
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.2,
+        "count": 2333
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 1541
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0,
+        "count": 553
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 128
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -3129,6 +4311,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -3137,7 +4325,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-24",
@@ -3167,10 +4357,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 21.3,
+        "count": 1313946
+      },
+      {
+        "group": "Catholic",
+        "pct": 14.7,
+        "count": 907317
+      },
+      {
+        "group": "Islam",
+        "pct": 3.1,
+        "count": 188914
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.3,
+        "count": 77368
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.9,
+        "count": 54236
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.7,
+        "count": 43411
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.6,
+        "count": 34394
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.6,
+        "count": 38267
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.3,
+        "count": 17448
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 10037
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -3286,6 +4524,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -3294,7 +4538,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-25",
@@ -3324,10 +4570,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 35.5,
+        "count": 2497737
+      },
+      {
+        "group": "Protestant",
+        "pct": 7.2,
+        "count": 508308
+      },
+      {
+        "group": "Islam",
+        "pct": 1.9,
+        "count": 131749
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.0,
+        "count": 70832
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.8,
+        "count": 58242
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 45302
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.4,
+        "count": 29206
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.4,
+        "count": 28040
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.4,
+        "count": 29986
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.3,
+        "count": 19852
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 116
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -3443,6 +4742,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -3451,7 +4756,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-26",
@@ -3481,10 +4788,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 20.1,
+        "count": 2021986
+      },
+      {
+        "group": "Catholic",
+        "pct": 14.8,
+        "count": 1492732
+      },
+      {
+        "group": "Islam",
+        "pct": 2.4,
+        "count": 241828
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7,
+        "count": 69130
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.4,
+        "count": 44786
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.4,
+        "count": 45074
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.4,
+        "count": 39895
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2,
+        "count": 24030
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 7333
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 11751
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 40
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -3600,6 +4960,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -3608,7 +4974,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-27",
@@ -3638,10 +5006,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 25.8,
+        "count": 1469788
+      },
+      {
+        "group": "Catholic",
+        "pct": 19.5,
+        "count": 1111644
+      },
+      {
+        "group": "Islam",
+        "pct": 2.0,
+        "count": 114590
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.6,
+        "count": 33276
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5,
+        "count": 28334
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.4,
+        "count": 23175
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.2,
+        "count": 12721
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 9729
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2,
+        "count": 9224
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.2,
+        "count": 11801
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 92
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -3757,6 +5178,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -3765,7 +5192,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-28",
@@ -3795,10 +5224,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 54.3,
+        "count": 1608984
+      },
+      {
+        "group": "Catholic",
+        "pct": 3.4,
+        "count": 99663
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.7,
+        "count": 21649
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7,
+        "count": 20760
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1,
+        "count": 2925
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 3106
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.0,
+        "count": 893
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 1051
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 870
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.0,
+        "count": 34
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -3914,6 +5391,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -3922,7 +5405,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-29",
@@ -3952,10 +5437,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 32.4,
+        "count": 1993030
+      },
+      {
+        "group": "Catholic",
+        "pct": 12.5,
+        "count": 769057
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.2,
+        "count": 72525
+      },
+      {
+        "group": "Islam",
+        "pct": 0.9,
+        "count": 53443
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 39628
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.3,
+        "count": 18796
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2,
+        "count": 9271
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.2,
+        "count": 12536
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 7401
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 3702
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 105
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -4071,6 +5609,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -4079,7 +5623,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-30",
@@ -4109,10 +5655,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 18.4,
+        "count": 199481
+      },
+      {
+        "group": "Catholic",
+        "pct": 10.4,
+        "count": 112389
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 4.7,
+        "count": 50552
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0,
+        "count": 10350
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.2,
+        "count": 2032
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1107
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 949
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0,
+        "count": 380
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 200
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 273
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -4228,6 +5822,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -4236,7 +5836,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-31",
@@ -4266,10 +5868,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 27.1,
+        "count": 531887
+      },
+      {
+        "group": "Catholic",
+        "pct": 19.1,
+        "count": 375287
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.3,
+        "count": 25098
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7,
+        "count": 12874
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.5,
+        "count": 9570
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 3830
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 1848
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1397
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 2385
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 2402
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -4385,6 +6035,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -4393,7 +6049,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-32",
@@ -4423,10 +6081,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 24.7,
+        "count": 766102
+      },
+      {
+        "group": "Protestant",
+        "pct": 8.2,
+        "count": 255670
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 5.9,
+        "count": 184703
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0,
+        "count": 31012
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.6,
+        "count": 17808
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.5,
+        "count": 13973
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 6821
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2,
+        "count": 5824
+      },
+      {
+        "group": "Islam",
+        "pct": 0.2,
+        "count": 7400
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 2465
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -4542,6 +6248,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -4550,7 +6262,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-33",
@@ -4580,10 +6294,53 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 16.0,
+        "count": 220305
+      },
+      {
+        "group": "Protestant",
+        "pct": 9.0,
+        "count": 123822
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.6,
+        "count": 8872
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 8010
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.4,
+        "count": 4871
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.3,
+        "count": 3736
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.3,
+        "count": 3512
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 1172
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0,
+        "count": 648
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -4699,6 +6456,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -4707,7 +6470,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-34",
@@ -4737,10 +6502,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 32.0,
+        "count": 2971461
+      },
+      {
+        "group": "Protestant",
+        "pct": 11.0,
+        "count": 1024266
+      },
+      {
+        "group": "Islam",
+        "pct": 3.5,
+        "count": 321652
+      },
+      {
+        "group": "Judaism",
+        "pct": 2.1,
+        "count": 196617
+      },
+      {
+        "group": "Hinduism",
+        "pct": 1.3,
+        "count": 123300
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.8,
+        "count": 78416
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.8,
+        "count": 72400
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.4,
+        "count": 34173
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.2,
+        "count": 17563
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 6612
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -4856,6 +6669,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -4864,7 +6683,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-35",
@@ -4894,10 +6715,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 29.9,
+        "count": 633259
+      },
+      {
+        "group": "Protestant",
+        "pct": 15.7,
+        "count": 331761
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 3.3,
+        "count": 69488
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.2,
+        "count": 25890
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.7,
+        "count": 14351
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.7,
+        "count": 15575
+      },
+      {
+        "group": "Islam",
+        "pct": 0.6,
+        "count": 12046
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 4877
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 3698
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.0,
+        "count": 990
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 42
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -5013,6 +6887,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -5021,7 +6901,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-36",
@@ -5051,10 +6933,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 30.6,
+        "count": 6191464
+      },
+      {
+        "group": "Protestant",
+        "pct": 10.3,
+        "count": 2078358
+      },
+      {
+        "group": "Judaism",
+        "pct": 3.8,
+        "count": 763078
+      },
+      {
+        "group": "Islam",
+        "pct": 3.6,
+        "count": 724475
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.8,
+        "count": 163918
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.7,
+        "count": 141794
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.5,
+        "count": 108532
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.4,
+        "count": 83293
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.4,
+        "count": 76280
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 16193
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 163
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -5170,6 +7105,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -5178,7 +7119,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-37",
@@ -5208,10 +7151,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 39.4,
+        "count": 4108874
+      },
+      {
+        "group": "Catholic",
+        "pct": 8.9,
+        "count": 928735
+      },
+      {
+        "group": "Islam",
+        "pct": 1.3,
+        "count": 130661
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0,
+        "count": 105874
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.9,
+        "count": 89083
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.2,
+        "count": 20920
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 16567
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 13245
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1,
+        "count": 14892
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 14886
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -5327,6 +7318,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -5335,7 +7332,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-38",
@@ -5365,10 +7364,53 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 31.8,
+        "count": 247916
+      },
+      {
+        "group": "Catholic",
+        "pct": 21.2,
+        "count": 164843
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.5,
+        "count": 11550
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.4,
+        "count": 2818
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 530
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 540
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.0,
+        "count": 365
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.0,
+        "count": 17
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -5484,6 +7526,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -5492,7 +7540,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-39",
@@ -5522,10 +7572,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 28.9,
+        "count": 3407188
+      },
+      {
+        "group": "Catholic",
+        "pct": 15.4,
+        "count": 1820233
+      },
+      {
+        "group": "Islam",
+        "pct": 1.0,
+        "count": 120077
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7,
+        "count": 79018
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.5,
+        "count": 62623
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.5,
+        "count": 56052
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.4,
+        "count": 49726
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2,
+        "count": 29065
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 7687
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 14510
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 59
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -5641,6 +7744,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -5649,7 +7758,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-40",
@@ -5679,10 +7790,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 51.3,
+        "count": 2032070
+      },
+      {
+        "group": "Catholic",
+        "pct": 6.9,
+        "count": 273799
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.2,
+        "count": 49227
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7,
+        "count": 27530
+      },
+      {
+        "group": "Islam",
+        "pct": 0.4,
+        "count": 15290
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 3111
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 5867
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 3396
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1,
+        "count": 5930
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 5865
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 38
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -5798,6 +7962,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -5806,7 +7976,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-41",
@@ -5836,10 +8008,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 15.3,
+        "count": 646226
+      },
+      {
+        "group": "Catholic",
+        "pct": 11.3,
+        "count": 480618
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 3.6,
+        "count": 153540
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.3,
+        "count": 56210
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.5,
+        "count": 22534
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.3,
+        "count": 12641
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.2,
+        "count": 8914
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 10273
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 10083
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 4934
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -5955,6 +8175,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -5963,7 +8189,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-42",
@@ -5993,10 +8221,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 21.9,
+        "count": 2845841
+      },
+      {
+        "group": "Protestant",
+        "pct": 21.0,
+        "count": 2735411
+      },
+      {
+        "group": "Islam",
+        "pct": 1.2,
+        "count": 149561
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.7,
+        "count": 85311
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 83140
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.5,
+        "count": 68201
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.4,
+        "count": 50117
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.4,
+        "count": 52290
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 8548
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 18792
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 133
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -6112,6 +8393,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -6120,7 +8407,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-44",
@@ -6150,10 +8439,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 40.6,
+        "count": 445597
+      },
+      {
+        "group": "Protestant",
+        "pct": 7.8,
+        "count": 85676
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.7,
+        "count": 7653
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.7,
+        "count": 7475
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 6902
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.4,
+        "count": 4259
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 1679
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.2,
+        "count": 2075
+      },
+      {
+        "group": "Islam",
+        "pct": 0.2,
+        "count": 2599
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1,
+        "count": 1336
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -6269,6 +8606,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -6277,7 +8620,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-45",
@@ -6307,10 +8652,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 42.0,
+        "count": 2148651
+      },
+      {
+        "group": "Catholic",
+        "pct": 8.0,
+        "count": 407840
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.9,
+        "count": 46010
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.8,
+        "count": 41358
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.4,
+        "count": 19016
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2,
+        "count": 8383
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 7462
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 6364
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 4139
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 6677
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -6426,6 +8819,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -6434,7 +8833,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-46",
@@ -6464,10 +8865,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 38.3,
+        "count": 339420
+      },
+      {
+        "group": "Catholic",
+        "pct": 15.0,
+        "count": 132805
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.2,
+        "count": 10610
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5,
+        "count": 4180
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.2,
+        "count": 2134
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1045
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 535
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0,
+        "count": 177
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.0,
+        "count": 17
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -6583,6 +9032,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -6591,7 +9046,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-47",
@@ -6621,10 +9078,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 48.6,
+        "count": 3360271
+      },
+      {
+        "group": "Catholic",
+        "pct": 4.0,
+        "count": 275494
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.8,
+        "count": 52920
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7,
+        "count": 50130
+      },
+      {
+        "group": "Islam",
+        "pct": 0.6,
+        "count": 39745
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.4,
+        "count": 25022
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 14560
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2,
+        "count": 16131
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 4996
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 5688
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -6740,6 +9245,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -6748,7 +9259,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-48",
@@ -6778,10 +9291,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 30.3,
+        "count": 8837198
+      },
+      {
+        "group": "Catholic",
+        "pct": 20.3,
+        "count": 5905142
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.2,
+        "count": 362037
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.1,
+        "count": 317698
+      },
+      {
+        "group": "Islam",
+        "pct": 1.1,
+        "count": 313209
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.4,
+        "count": 112153
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.2,
+        "count": 54968
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 57161
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.2,
+        "count": 60882
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 25031
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -6897,6 +9458,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -6905,7 +9472,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-49",
@@ -6935,10 +9504,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Latter-day Saints",
+        "pct": 65.0,
+        "count": 2126216
+      },
+      {
+        "group": "Catholic",
+        "pct": 6.5,
+        "count": 213155
+      },
+      {
+        "group": "Protestant",
+        "pct": 2.6,
+        "count": 85927
+      },
+      {
+        "group": "Islam",
+        "pct": 0.8,
+        "count": 25403
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5,
+        "count": 15092
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.3,
+        "count": 9437
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.2,
+        "count": 4993
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 2284
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 2480
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1,
+        "count": 4584
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -7054,6 +9671,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -7062,7 +9685,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-50",
@@ -7092,10 +9717,58 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 20.9,
+        "count": 134208
+      },
+      {
+        "group": "Protestant",
+        "pct": 12.9,
+        "count": 82749
+      },
+      {
+        "group": "Islam",
+        "pct": 1.0,
+        "count": 6201
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.7,
+        "count": 4623
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 3768
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.5,
+        "count": 2996
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.5,
+        "count": 3288
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.4,
+        "count": 2493
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2,
+        "count": 1287
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 404
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -7211,6 +9884,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -7219,7 +9898,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-51",
@@ -7249,10 +9930,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 30.4,
+        "count": 2625652
+      },
+      {
+        "group": "Catholic",
+        "pct": 10.3,
+        "count": 888163
+      },
+      {
+        "group": "Islam",
+        "pct": 2.0,
+        "count": 169371
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.1,
+        "count": 96496
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7,
+        "count": 57744
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.4,
+        "count": 33816
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.4,
+        "count": 35926
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.3,
+        "count": 27251
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.3,
+        "count": 22697
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 13029
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 160
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -7368,6 +10102,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -7376,7 +10116,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-53",
@@ -7406,10 +10148,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 23.5,
+        "count": 1808758
+      },
+      {
+        "group": "Catholic",
+        "pct": 10.7,
+        "count": 826597
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 3.8,
+        "count": 289479
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0,
+        "count": 79842
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.0,
+        "count": 73387
+      },
+      {
+        "group": "Islam",
+        "pct": 0.4,
+        "count": 27391
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.3,
+        "count": 26748
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.3,
+        "count": 19408
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 14241
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 18588
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 312
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -7525,6 +10320,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -7533,7 +10334,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-54",
@@ -7563,10 +10366,53 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 30.4,
+        "count": 544662
+      },
+      {
+        "group": "Catholic",
+        "pct": 5.6,
+        "count": 100780
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.0,
+        "count": 17143
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5,
+        "count": 8916
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 1973
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 1894
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 766
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 849
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.0,
+        "count": 650
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -7682,6 +10528,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -7690,7 +10542,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-55",
@@ -7720,10 +10574,63 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 24.0,
+        "count": 1412982
+      },
+      {
+        "group": "Catholic",
+        "pct": 21.0,
+        "count": 1237342
+      },
+      {
+        "group": "Islam",
+        "pct": 1.2,
+        "count": 68699
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 34684
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.5,
+        "count": 27125
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.2,
+        "count": 10575
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 10976
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.2,
+        "count": 13281
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 7973
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1,
+        "count": 7912
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 45
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -7839,6 +10746,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -7847,7 +10760,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-56",
@@ -7877,10 +10792,48 @@
       "year": 2022,
       "source": "U.S. Census Bureau, ACS 2022 5-year estimates"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
-    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 15.6,
+        "count": 89859
+      },
+      {
+        "group": "Catholic",
+        "pct": 12.0,
+        "count": 69500
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 11.7,
+        "count": 67729
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.8,
+        "count": 4618
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 385
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 599
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 226
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.0,
+        "count": 100
+      }
+    ],
     "language": [
       {
         "group": "English only",
@@ -7996,6 +10949,12 @@
         "name": "U.S. Census Bureau, ACS 2022 5-year estimates",
         "url": "https://api.census.gov/data/2022/acs/acs5",
         "license": "Public domain (U.S. Government work)"
+      },
+      {
+        "field": "religion",
+        "name": "Clifford Grammich, Erica Dollhopf, Mary Gautier, Richard Houseal, Dale E. Jones, Alexei Krindatch, Richie Stanley, and Scott Thumma. 2023. 2020 U.S. Religion Census: Religious Congregations & Membership Study. Association of Statisticians of American Religious Bodies.",
+        "url": "https://www.usreligioncensus.org/",
+        "license": "Copyright ASARB; used with the publisher's suggested citation"
       }
     ],
     "codes": {
@@ -8004,7 +10963,9 @@
       "fips_county": null
     },
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_basis": "adherents",
+    "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. This is not self-identification and does not sum to 100% -- the study reached about 48.6% of the population nationally, and the remainder is uncounted rather than unaffiliated. Not comparable with the census religion figures used for other countries."
   },
   {
     "id": "USA-72",
@@ -8036,7 +10997,7 @@
     },
     "religion": {
       "status": "not_collected",
-      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). Use --religion-file to attach the 2020 U.S. Religion Census adherence estimates instead."
+      "note": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)), so no government figures exist at any level. The 2020 study covers the 50 states and the District of Columbia. Puerto Rico is outside its frame, so no municipio has an adherent count from it either."
     },
     "language": [
       {
