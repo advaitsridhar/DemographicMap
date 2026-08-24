@@ -1,0 +1,5799 @@
+[
+  {
+    "id": "SGP-A-Ang-Mo-Kio",
+    "level": "admin2",
+    "name": "Ang Mo Kio",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 174770,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 34.5,
+        "count": 49544
+      },
+      {
+        "group": "No religion",
+        "pct": 21.0,
+        "count": 30141
+      },
+      {
+        "group": "Taoist",
+        "pct": 12.0,
+        "count": 17279
+      },
+      {
+        "group": "Other Christian",
+        "pct": 11.4,
+        "count": 16339
+      },
+      {
+        "group": "Catholic",
+        "pct": 8.5,
+        "count": 12143
+      },
+      {
+        "group": "Muslim",
+        "pct": 7.6,
+        "count": 10952
+      },
+      {
+        "group": "Hindu",
+        "pct": 4.6,
+        "count": 6661
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.2,
+        "count": 342
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 214
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 43.9,
+        "count": 62041
+      },
+      {
+        "group": "Mandarin",
+        "pct": 33.8,
+        "count": 47748
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 13.4,
+        "count": 19001
+      },
+      {
+        "group": "Malay",
+        "pct": 4.7,
+        "count": 6707
+      },
+      {
+        "group": "Tamil",
+        "pct": 2.8,
+        "count": 3922
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.7,
+        "count": 970
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.6,
+        "count": 885
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 82.0,
+        "count": 143290
+      },
+      {
+        "group": "Indian",
+        "pct": 8.1,
+        "count": 14150
+      },
+      {
+        "group": "Malay",
+        "pct": 7.5,
+        "count": 13060
+      },
+      {
+        "group": "Other",
+        "pct": 2.4,
+        "count": 4270
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Ang Mo Kio"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Bedok",
+    "level": "admin2",
+    "name": "Bedok",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 289750,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 29.3,
+        "count": 69927
+      },
+      {
+        "group": "No religion",
+        "pct": 19.8,
+        "count": 47193
+      },
+      {
+        "group": "Muslim",
+        "pct": 17.0,
+        "count": 40660
+      },
+      {
+        "group": "Other Christian",
+        "pct": 12.3,
+        "count": 29299
+      },
+      {
+        "group": "Catholic",
+        "pct": 8.7,
+        "count": 20874
+      },
+      {
+        "group": "Taoist",
+        "pct": 7.9,
+        "count": 18890
+      },
+      {
+        "group": "Hindu",
+        "pct": 4.3,
+        "count": 10321
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.4,
+        "count": 1058
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 511
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 51.4,
+        "count": 124193
+      },
+      {
+        "group": "Mandarin",
+        "pct": 26.5,
+        "count": 64065
+      },
+      {
+        "group": "Malay",
+        "pct": 10.2,
+        "count": 24602
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 9.2,
+        "count": 22336
+      },
+      {
+        "group": "Tamil",
+        "pct": 1.4,
+        "count": 3301
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.7,
+        "count": 1711
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.6,
+        "count": 1389
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 72.1,
+        "count": 208880
+      },
+      {
+        "group": "Malay",
+        "pct": 15.2,
+        "count": 43980
+      },
+      {
+        "group": "Indian",
+        "pct": 8.7,
+        "count": 25110
+      },
+      {
+        "group": "Other",
+        "pct": 4.1,
+        "count": 11780
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Bedok"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Bishan",
+    "level": "admin2",
+    "name": "Bishan",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 90700,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 28.6,
+        "count": 21950
+      },
+      {
+        "group": "No religion",
+        "pct": 25.1,
+        "count": 19247
+      },
+      {
+        "group": "Other Christian",
+        "pct": 19.2,
+        "count": 14759
+      },
+      {
+        "group": "Catholic",
+        "pct": 11.2,
+        "count": 8607
+      },
+      {
+        "group": "Taoist",
+        "pct": 6.9,
+        "count": 5304
+      },
+      {
+        "group": "Muslim",
+        "pct": 4.4,
+        "count": 3382
+      },
+      {
+        "group": "Hindu",
+        "pct": 4.2,
+        "count": 3217
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.2,
+        "count": 146
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 189
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 63.6,
+        "count": 50219
+      },
+      {
+        "group": "Mandarin",
+        "pct": 23.4,
+        "count": 18464
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 8.3,
+        "count": 6566
+      },
+      {
+        "group": "Malay",
+        "pct": 2.2,
+        "count": 1752
+      },
+      {
+        "group": "Tamil",
+        "pct": 1.5,
+        "count": 1210
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.7,
+        "count": 521
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.4,
+        "count": 286
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 85.1,
+        "count": 77220
+      },
+      {
+        "group": "Indian",
+        "pct": 7.7,
+        "count": 7000
+      },
+      {
+        "group": "Malay",
+        "pct": 4.1,
+        "count": 3760
+      },
+      {
+        "group": "Other",
+        "pct": 3.0,
+        "count": 2720
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Bishan"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Boon-Lay",
+    "level": "admin2",
+    "name": "Boon Lay",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 30,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2015 survey published a resident count for this area (30) but suppressed the ethnic breakdown, as it does for cells too small to report without identifying people."
+    },
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Boon Lay"
+    }
+  },
+  {
+    "id": "SGP-A-Bukit-Batok",
+    "level": "admin2",
+    "name": "Bukit Batok",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 139270,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 29.9,
+        "count": 41591
+      },
+      {
+        "group": "No religion",
+        "pct": 18.9,
+        "count": 26343
+      },
+      {
+        "group": "Muslim",
+        "pct": 16.6,
+        "count": 23059
+      },
+      {
+        "group": "Other Christian",
+        "pct": 12.7,
+        "count": 17726
+      },
+      {
+        "group": "Taoist",
+        "pct": 8.9,
+        "count": 12344
+      },
+      {
+        "group": "Hindu",
+        "pct": 6.6,
+        "count": 9228
+      },
+      {
+        "group": "Catholic",
+        "pct": 5.8,
+        "count": 8125
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 377
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 380
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 46.2,
+        "count": 66118
+      },
+      {
+        "group": "Mandarin",
+        "pct": 31.0,
+        "count": 44391
+      },
+      {
+        "group": "Malay",
+        "pct": 10.1,
+        "count": 14521
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 7.6,
+        "count": 10872
+      },
+      {
+        "group": "Tamil",
+        "pct": 3.4,
+        "count": 4860
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 1.0,
+        "count": 1381
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.8,
+        "count": 1118
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 73.3,
+        "count": 102080
+      },
+      {
+        "group": "Malay",
+        "pct": 14.1,
+        "count": 19570
+      },
+      {
+        "group": "Indian",
+        "pct": 9.9,
+        "count": 13730
+      },
+      {
+        "group": "Other",
+        "pct": 2.8,
+        "count": 3900
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Bukit Batok"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Bukit-Merah",
+    "level": "admin2",
+    "name": "Bukit Merah",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 155840,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 32.8,
+        "count": 42224
+      },
+      {
+        "group": "No religion",
+        "pct": 23.3,
+        "count": 29934
+      },
+      {
+        "group": "Other Christian",
+        "pct": 13.0,
+        "count": 16675
+      },
+      {
+        "group": "Muslim",
+        "pct": 9.5,
+        "count": 12248
+      },
+      {
+        "group": "Taoist",
+        "pct": 9.2,
+        "count": 11813
+      },
+      {
+        "group": "Catholic",
+        "pct": 6.4,
+        "count": 8167
+      },
+      {
+        "group": "Hindu",
+        "pct": 4.9,
+        "count": 6308
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.5,
+        "count": 656
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 560
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 47.9,
+        "count": 59832
+      },
+      {
+        "group": "Mandarin",
+        "pct": 26.4,
+        "count": 33027
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 15.3,
+        "count": 19121
+      },
+      {
+        "group": "Malay",
+        "pct": 5.8,
+        "count": 7237
+      },
+      {
+        "group": "Tamil",
+        "pct": 3.3,
+        "count": 4072
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.9,
+        "count": 1169
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.5,
+        "count": 572
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 78.7,
+        "count": 122610
+      },
+      {
+        "group": "Indian",
+        "pct": 9.7,
+        "count": 15120
+      },
+      {
+        "group": "Malay",
+        "pct": 8.6,
+        "count": 13400
+      },
+      {
+        "group": "Other",
+        "pct": 3.0,
+        "count": 4710
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Bukit Merah"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Bukit-Panjang",
+    "level": "admin2",
+    "name": "Bukit Panjang",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 139030,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 31.4,
+        "count": 37693
+      },
+      {
+        "group": "No religion",
+        "pct": 19.1,
+        "count": 22937
+      },
+      {
+        "group": "Muslim",
+        "pct": 16.9,
+        "count": 20325
+      },
+      {
+        "group": "Taoist",
+        "pct": 11.3,
+        "count": 13519
+      },
+      {
+        "group": "Other Christian",
+        "pct": 10.6,
+        "count": 12715
+      },
+      {
+        "group": "Catholic",
+        "pct": 5.9,
+        "count": 7077
+      },
+      {
+        "group": "Hindu",
+        "pct": 4.4,
+        "count": 5239
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 365
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 242
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 45.9,
+        "count": 59059
+      },
+      {
+        "group": "Mandarin",
+        "pct": 32.8,
+        "count": 42135
+      },
+      {
+        "group": "Malay",
+        "pct": 10.3,
+        "count": 13210
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 7.8,
+        "count": 10074
+      },
+      {
+        "group": "Tamil",
+        "pct": 2.2,
+        "count": 2781
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.6,
+        "count": 755
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.5,
+        "count": 592
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 74.3,
+        "count": 103280
+      },
+      {
+        "group": "Malay",
+        "pct": 16.0,
+        "count": 22230
+      },
+      {
+        "group": "Indian",
+        "pct": 7.4,
+        "count": 10300
+      },
+      {
+        "group": "Other",
+        "pct": 2.3,
+        "count": 3210
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Bukit Panjang"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Bukit-Timah",
+    "level": "admin2",
+    "name": "Bukit Timah",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 74470,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other Christian",
+        "pct": 31.5,
+        "count": 19824
+      },
+      {
+        "group": "No religion",
+        "pct": 28.2,
+        "count": 17733
+      },
+      {
+        "group": "Buddhist",
+        "pct": 17.6,
+        "count": 11103
+      },
+      {
+        "group": "Catholic",
+        "pct": 12.6,
+        "count": 7950
+      },
+      {
+        "group": "Taoist",
+        "pct": 4.8,
+        "count": 3015
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.3,
+        "count": 2063
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.2,
+        "count": 736
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.5,
+        "count": 312
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.4,
+        "count": 227
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 76.4,
+        "count": 52776
+      },
+      {
+        "group": "Mandarin",
+        "pct": 16.5,
+        "count": 11425
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 4.4,
+        "count": 3064
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.5,
+        "count": 1066
+      },
+      {
+        "group": "Malay",
+        "pct": 0.5,
+        "count": 354
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.3,
+        "count": 239
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.2,
+        "count": 168
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 86.1,
+        "count": 64150
+      },
+      {
+        "group": "Other",
+        "pct": 7.9,
+        "count": 5910
+      },
+      {
+        "group": "Indian",
+        "pct": 4.9,
+        "count": 3650
+      },
+      {
+        "group": "Malay",
+        "pct": 1.0,
+        "count": 760
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Bukit Timah"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Central-Water-Catchment",
+    "level": "admin2",
+    "name": "Central Water Catchment",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 10,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2015 survey published a resident count for this area (10) but suppressed the ethnic breakdown, as it does for cells too small to report without identifying people."
+    },
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Central Water Catchment"
+    }
+  },
+  {
+    "id": "SGP-A-Changi",
+    "level": "admin2",
+    "name": "Changi",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2530,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 47.4,
+        "count": 1200
+      },
+      {
+        "group": "Malay",
+        "pct": 28.5,
+        "count": 720
+      },
+      {
+        "group": "Indian",
+        "pct": 18.6,
+        "count": 470
+      },
+      {
+        "group": "Other",
+        "pct": 5.5,
+        "count": 140
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Changi"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015
+  },
+  {
+    "id": "SGP-A-Choa-Chu-Kang",
+    "level": "admin2",
+    "name": "Choa Chu Kang",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 174330,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 30.8,
+        "count": 51662
+      },
+      {
+        "group": "Muslim",
+        "pct": 20.7,
+        "count": 34825
+      },
+      {
+        "group": "No religion",
+        "pct": 17.8,
+        "count": 29826
+      },
+      {
+        "group": "Taoist",
+        "pct": 10.3,
+        "count": 17284
+      },
+      {
+        "group": "Other Christian",
+        "pct": 9.0,
+        "count": 15082
+      },
+      {
+        "group": "Hindu",
+        "pct": 5.9,
+        "count": 9963
+      },
+      {
+        "group": "Catholic",
+        "pct": 5.1,
+        "count": 8605
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.2,
+        "count": 319
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 320
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 45.5,
+        "count": 82356
+      },
+      {
+        "group": "Mandarin",
+        "pct": 31.8,
+        "count": 57536
+      },
+      {
+        "group": "Malay",
+        "pct": 11.8,
+        "count": 21393
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 6.5,
+        "count": 11808
+      },
+      {
+        "group": "Tamil",
+        "pct": 3.1,
+        "count": 5580
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.6,
+        "count": 1132
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.6,
+        "count": 1171
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 70.8,
+        "count": 123450
+      },
+      {
+        "group": "Malay",
+        "pct": 17.0,
+        "count": 29630
+      },
+      {
+        "group": "Indian",
+        "pct": 9.4,
+        "count": 16470
+      },
+      {
+        "group": "Other",
+        "pct": 2.7,
+        "count": 4790
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Choa Chu Kang"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Clementi",
+    "level": "admin2",
+    "name": "Clementi",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 91630,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 29.1,
+        "count": 23091
+      },
+      {
+        "group": "No religion",
+        "pct": 23.2,
+        "count": 18417
+      },
+      {
+        "group": "Other Christian",
+        "pct": 16.0,
+        "count": 12695
+      },
+      {
+        "group": "Muslim",
+        "pct": 11.4,
+        "count": 9033
+      },
+      {
+        "group": "Taoist",
+        "pct": 8.1,
+        "count": 6399
+      },
+      {
+        "group": "Catholic",
+        "pct": 7.1,
+        "count": 5608
+      },
+      {
+        "group": "Hindu",
+        "pct": 4.3,
+        "count": 3398
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.4,
+        "count": 356
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 303
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 51.1,
+        "count": 41176
+      },
+      {
+        "group": "Mandarin",
+        "pct": 26.8,
+        "count": 21615
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 10.7,
+        "count": 8583
+      },
+      {
+        "group": "Malay",
+        "pct": 7.3,
+        "count": 5861
+      },
+      {
+        "group": "Tamil",
+        "pct": 2.4,
+        "count": 1972
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.0,
+        "count": 771
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.7,
+        "count": 549
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 77.2,
+        "count": 70700
+      },
+      {
+        "group": "Malay",
+        "pct": 10.9,
+        "count": 9950
+      },
+      {
+        "group": "Indian",
+        "pct": 8.3,
+        "count": 7600
+      },
+      {
+        "group": "Other",
+        "pct": 3.7,
+        "count": 3390
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Clementi"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Downtown-Core",
+    "level": "admin2",
+    "name": "Downtown Core",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3720,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 37.2,
+        "count": 1011
+      },
+      {
+        "group": "Buddhist",
+        "pct": 22.6,
+        "count": 615
+      },
+      {
+        "group": "Other Christian",
+        "pct": 17.1,
+        "count": 464
+      },
+      {
+        "group": "Catholic",
+        "pct": 12.8,
+        "count": 347
+      },
+      {
+        "group": "Taoist",
+        "pct": 4.0,
+        "count": 109
+      },
+      {
+        "group": "Muslim",
+        "pct": 3.4,
+        "count": 93
+      },
+      {
+        "group": "Hindu",
+        "pct": 2.8,
+        "count": 77
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 68.1,
+        "count": 1426
+      },
+      {
+        "group": "Mandarin",
+        "pct": 21.2,
+        "count": 445
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 8.1,
+        "count": 169
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.7,
+        "count": 36
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.6,
+        "count": 13
+      },
+      {
+        "group": "Malay",
+        "pct": 0.2,
+        "count": 5
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 79.8,
+        "count": 2970
+      },
+      {
+        "group": "Other",
+        "pct": 10.5,
+        "count": 390
+      },
+      {
+        "group": "Indian",
+        "pct": 8.6,
+        "count": 320
+      },
+      {
+        "group": "Malay",
+        "pct": 1.1,
+        "count": 40
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Downtown Core"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Geylang",
+    "level": "admin2",
+    "name": "Geylang",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 116960,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 33.5,
+        "count": 32411
+      },
+      {
+        "group": "No religion",
+        "pct": 21.4,
+        "count": 20690
+      },
+      {
+        "group": "Muslim",
+        "pct": 15.8,
+        "count": 15328
+      },
+      {
+        "group": "Other Christian",
+        "pct": 11.4,
+        "count": 10996
+      },
+      {
+        "group": "Taoist",
+        "pct": 9.3,
+        "count": 9027
+      },
+      {
+        "group": "Catholic",
+        "pct": 5.2,
+        "count": 5033
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.0,
+        "count": 2892
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.2,
+        "count": 193
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 180
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 42.2,
+        "count": 39423
+      },
+      {
+        "group": "Mandarin",
+        "pct": 32.0,
+        "count": 29932
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 11.8,
+        "count": 10987
+      },
+      {
+        "group": "Malay",
+        "pct": 10.2,
+        "count": 9497
+      },
+      {
+        "group": "Tamil",
+        "pct": 2.5,
+        "count": 2297
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.7,
+        "count": 625
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.7,
+        "count": 661
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 75.3,
+        "count": 88060
+      },
+      {
+        "group": "Malay",
+        "pct": 13.1,
+        "count": 15280
+      },
+      {
+        "group": "Indian",
+        "pct": 8.5,
+        "count": 9900
+      },
+      {
+        "group": "Other",
+        "pct": 3.2,
+        "count": 3730
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Geylang"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Hougang",
+    "level": "admin2",
+    "name": "Hougang",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 222310,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 33.7,
+        "count": 66030
+      },
+      {
+        "group": "No religion",
+        "pct": 20.6,
+        "count": 40403
+      },
+      {
+        "group": "Other Christian",
+        "pct": 11.3,
+        "count": 22185
+      },
+      {
+        "group": "Muslim",
+        "pct": 10.4,
+        "count": 20294
+      },
+      {
+        "group": "Taoist",
+        "pct": 10.0,
+        "count": 19523
+      },
+      {
+        "group": "Catholic",
+        "pct": 8.7,
+        "count": 17093
+      },
+      {
+        "group": "Hindu",
+        "pct": 4.4,
+        "count": 8710
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.5,
+        "count": 967
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 670
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 46.8,
+        "count": 94601
+      },
+      {
+        "group": "Mandarin",
+        "pct": 34.1,
+        "count": 68997
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 9.4,
+        "count": 19048
+      },
+      {
+        "group": "Malay",
+        "pct": 6.2,
+        "count": 12485
+      },
+      {
+        "group": "Tamil",
+        "pct": 2.6,
+        "count": 5241
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.6,
+        "count": 1113
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.4,
+        "count": 744
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 81.7,
+        "count": 181700
+      },
+      {
+        "group": "Indian",
+        "pct": 8.1,
+        "count": 18040
+      },
+      {
+        "group": "Malay",
+        "pct": 7.9,
+        "count": 17650
+      },
+      {
+        "group": "Other",
+        "pct": 2.2,
+        "count": 4930
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Hougang"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Jurong-East",
+    "level": "admin2",
+    "name": "Jurong East",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 84980,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 31.5,
+        "count": 21756
+      },
+      {
+        "group": "Muslim",
+        "pct": 18.5,
+        "count": 12743
+      },
+      {
+        "group": "No religion",
+        "pct": 18.2,
+        "count": 12575
+      },
+      {
+        "group": "Taoist",
+        "pct": 10.6,
+        "count": 7343
+      },
+      {
+        "group": "Other Christian",
+        "pct": 9.5,
+        "count": 6552
+      },
+      {
+        "group": "Hindu",
+        "pct": 7.0,
+        "count": 4832
+      },
+      {
+        "group": "Catholic",
+        "pct": 4.2,
+        "count": 2879
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 183
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 145
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 37.9,
+        "count": 26486
+      },
+      {
+        "group": "Mandarin",
+        "pct": 32.5,
+        "count": 22729
+      },
+      {
+        "group": "Malay",
+        "pct": 12.6,
+        "count": 8777
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 11.2,
+        "count": 7818
+      },
+      {
+        "group": "Tamil",
+        "pct": 4.2,
+        "count": 2961
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.8,
+        "count": 525
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.8,
+        "count": 545
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 70.8,
+        "count": 60130
+      },
+      {
+        "group": "Malay",
+        "pct": 16.2,
+        "count": 13740
+      },
+      {
+        "group": "Indian",
+        "pct": 10.8,
+        "count": 9150
+      },
+      {
+        "group": "Other",
+        "pct": 2.3,
+        "count": 1970
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Jurong East"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Jurong-West",
+    "level": "admin2",
+    "name": "Jurong West",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 272660,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 34.8,
+        "count": 78615
+      },
+      {
+        "group": "Muslim",
+        "pct": 20.5,
+        "count": 46353
+      },
+      {
+        "group": "No religion",
+        "pct": 18.2,
+        "count": 41074
+      },
+      {
+        "group": "Taoist",
+        "pct": 10.7,
+        "count": 24184
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.4,
+        "count": 14345
+      },
+      {
+        "group": "Hindu",
+        "pct": 5.4,
+        "count": 12143
+      },
+      {
+        "group": "Catholic",
+        "pct": 3.4,
+        "count": 7769
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 666
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 620
+      }
+    ],
+    "language": [
+      {
+        "group": "Mandarin",
+        "pct": 37.0,
+        "count": 89242
+      },
+      {
+        "group": "English",
+        "pct": 36.5,
+        "count": 88046
+      },
+      {
+        "group": "Malay",
+        "pct": 12.7,
+        "count": 30676
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 8.2,
+        "count": 19864
+      },
+      {
+        "group": "Tamil",
+        "pct": 3.8,
+        "count": 9056
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.0,
+        "count": 2401
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.7,
+        "count": 1624
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 69.8,
+        "count": 190240
+      },
+      {
+        "group": "Malay",
+        "pct": 17.8,
+        "count": 48630
+      },
+      {
+        "group": "Indian",
+        "pct": 9.9,
+        "count": 27090
+      },
+      {
+        "group": "Other",
+        "pct": 2.5,
+        "count": 6710
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Jurong West"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Kallang",
+    "level": "admin2",
+    "name": "Kallang",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 101210,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 32.0,
+        "count": 28286
+      },
+      {
+        "group": "No religion",
+        "pct": 20.9,
+        "count": 18470
+      },
+      {
+        "group": "Other Christian",
+        "pct": 11.0,
+        "count": 9737
+      },
+      {
+        "group": "Taoist",
+        "pct": 10.2,
+        "count": 8979
+      },
+      {
+        "group": "Muslim",
+        "pct": 9.7,
+        "count": 8591
+      },
+      {
+        "group": "Hindu",
+        "pct": 8.2,
+        "count": 7206
+      },
+      {
+        "group": "Catholic",
+        "pct": 6.9,
+        "count": 6105
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.7,
+        "count": 631
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 329
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 47.6,
+        "count": 39825
+      },
+      {
+        "group": "Mandarin",
+        "pct": 28.0,
+        "count": 23440
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 13.2,
+        "count": 11024
+      },
+      {
+        "group": "Malay",
+        "pct": 4.8,
+        "count": 4025
+      },
+      {
+        "group": "Tamil",
+        "pct": 4.0,
+        "count": 3376
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 1.5,
+        "count": 1215
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.8,
+        "count": 694
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 74.9,
+        "count": 75800
+      },
+      {
+        "group": "Indian",
+        "pct": 14.3,
+        "count": 14460
+      },
+      {
+        "group": "Malay",
+        "pct": 7.9,
+        "count": 7980
+      },
+      {
+        "group": "Other",
+        "pct": 2.9,
+        "count": 2970
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Kallang"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Lim-Chu-Kang",
+    "level": "admin2",
+    "name": "Lim Chu Kang",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 90,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2015 survey published a resident count for this area (90) but suppressed the ethnic breakdown, as it does for cells too small to report without identifying people."
+    },
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Lim Chu Kang"
+    }
+  },
+  {
+    "id": "SGP-A-Mandai",
+    "level": "admin2",
+    "name": "Mandai",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2120,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 80.7,
+        "count": 1710
+      },
+      {
+        "group": "Indian",
+        "pct": 11.3,
+        "count": 240
+      },
+      {
+        "group": "Malay",
+        "pct": 5.2,
+        "count": 110
+      },
+      {
+        "group": "Other",
+        "pct": 3.3,
+        "count": 70
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Mandai"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015
+  },
+  {
+    "id": "SGP-A-Marine-Parade",
+    "level": "admin2",
+    "name": "Marine Parade",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 48730,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 23.7,
+        "count": 9103
+      },
+      {
+        "group": "Buddhist",
+        "pct": 22.2,
+        "count": 8532
+      },
+      {
+        "group": "Other Christian",
+        "pct": 20.3,
+        "count": 7791
+      },
+      {
+        "group": "Catholic",
+        "pct": 11.5,
+        "count": 4426
+      },
+      {
+        "group": "Muslim",
+        "pct": 8.4,
+        "count": 3243
+      },
+      {
+        "group": "Hindu",
+        "pct": 7.1,
+        "count": 2718
+      },
+      {
+        "group": "Taoist",
+        "pct": 5.4,
+        "count": 2087
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.9,
+        "count": 338
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.5,
+        "count": 209
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 66.5,
+        "count": 26134
+      },
+      {
+        "group": "Mandarin",
+        "pct": 18.8,
+        "count": 7374
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 6.8,
+        "count": 2673
+      },
+      {
+        "group": "Malay",
+        "pct": 4.8,
+        "count": 1905
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 1.3,
+        "count": 521
+      },
+      {
+        "group": "Tamil",
+        "pct": 1.0,
+        "count": 385
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.7,
+        "count": 292
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 75.1,
+        "count": 36620
+      },
+      {
+        "group": "Indian",
+        "pct": 12.3,
+        "count": 6010
+      },
+      {
+        "group": "Malay",
+        "pct": 7.2,
+        "count": 3510
+      },
+      {
+        "group": "Other",
+        "pct": 5.3,
+        "count": 2590
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Marine Parade"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Museum",
+    "level": "admin2",
+    "name": "Museum",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 380,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 57.9,
+        "count": 220
+      },
+      {
+        "group": "Other",
+        "pct": 28.9,
+        "count": 110
+      },
+      {
+        "group": "Indian",
+        "pct": 10.5,
+        "count": 40
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Museum"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015
+  },
+  {
+    "id": "SGP-A-Newton",
+    "level": "admin2",
+    "name": "Newton",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6920,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 70.4,
+        "count": 4870
+      },
+      {
+        "group": "Other",
+        "pct": 17.5,
+        "count": 1210
+      },
+      {
+        "group": "Indian",
+        "pct": 11.3,
+        "count": 780
+      },
+      {
+        "group": "Malay",
+        "pct": 0.9,
+        "count": 60
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Newton"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015
+  },
+  {
+    "id": "SGP-A-North-Eastern-Islands",
+    "level": "admin2",
+    "name": "North-Eastern Islands",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 60,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2015 survey published a resident count for this area (60) but suppressed the ethnic breakdown, as it does for cells too small to report without identifying people."
+    },
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "North-Eastern Islands"
+    }
+  },
+  {
+    "id": "SGP-A-Novena",
+    "level": "admin2",
+    "name": "Novena",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 47990,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 26.3,
+        "count": 10574
+      },
+      {
+        "group": "No religion",
+        "pct": 25.7,
+        "count": 10338
+      },
+      {
+        "group": "Other Christian",
+        "pct": 20.1,
+        "count": 8072
+      },
+      {
+        "group": "Catholic",
+        "pct": 11.4,
+        "count": 4598
+      },
+      {
+        "group": "Taoist",
+        "pct": 5.8,
+        "count": 2328
+      },
+      {
+        "group": "Muslim",
+        "pct": 5.3,
+        "count": 2114
+      },
+      {
+        "group": "Hindu",
+        "pct": 4.5,
+        "count": 1822
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.5,
+        "count": 205
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 142
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 63.3,
+        "count": 26096
+      },
+      {
+        "group": "Mandarin",
+        "pct": 21.3,
+        "count": 8780
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 9.2,
+        "count": 3785
+      },
+      {
+        "group": "Tamil",
+        "pct": 2.4,
+        "count": 992
+      },
+      {
+        "group": "Malay",
+        "pct": 2.1,
+        "count": 849
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.1,
+        "count": 470
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.7,
+        "count": 282
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 80.9,
+        "count": 38840
+      },
+      {
+        "group": "Indian",
+        "pct": 8.8,
+        "count": 4210
+      },
+      {
+        "group": "Other",
+        "pct": 5.9,
+        "count": 2830
+      },
+      {
+        "group": "Malay",
+        "pct": 4.4,
+        "count": 2110
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Novena"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Orchard",
+    "level": "admin2",
+    "name": "Orchard",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 920,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 67.4,
+        "count": 620
+      },
+      {
+        "group": "Other",
+        "pct": 23.9,
+        "count": 220
+      },
+      {
+        "group": "Indian",
+        "pct": 7.6,
+        "count": 70
+      },
+      {
+        "group": "Malay",
+        "pct": 1.1,
+        "count": 10
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Orchard"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015
+  },
+  {
+    "id": "SGP-A-Outram",
+    "level": "admin2",
+    "name": "Outram",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 22080,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 32.9,
+        "count": 5138
+      },
+      {
+        "group": "No religion",
+        "pct": 26.5,
+        "count": 4139
+      },
+      {
+        "group": "Other Christian",
+        "pct": 12.0,
+        "count": 1881
+      },
+      {
+        "group": "Taoist",
+        "pct": 10.4,
+        "count": 1633
+      },
+      {
+        "group": "Muslim",
+        "pct": 9.4,
+        "count": 1470
+      },
+      {
+        "group": "Catholic",
+        "pct": 4.4,
+        "count": 681
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.8,
+        "count": 591
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 63
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 41
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 42.3,
+        "count": 5871
+      },
+      {
+        "group": "Mandarin",
+        "pct": 30.4,
+        "count": 4214
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 18.6,
+        "count": 2577
+      },
+      {
+        "group": "Malay",
+        "pct": 5.6,
+        "count": 781
+      },
+      {
+        "group": "Tamil",
+        "pct": 2.3,
+        "count": 318
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.5,
+        "count": 68
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.4,
+        "count": 52
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 81.6,
+        "count": 18020
+      },
+      {
+        "group": "Malay",
+        "pct": 8.7,
+        "count": 1930
+      },
+      {
+        "group": "Indian",
+        "pct": 7.2,
+        "count": 1590
+      },
+      {
+        "group": "Other",
+        "pct": 2.4,
+        "count": 540
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Outram"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Pasir-Ris",
+    "level": "admin2",
+    "name": "Pasir Ris",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 139890,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 25.4,
+        "count": 33119
+      },
+      {
+        "group": "Muslim",
+        "pct": 23.2,
+        "count": 30214
+      },
+      {
+        "group": "No religion",
+        "pct": 18.6,
+        "count": 24187
+      },
+      {
+        "group": "Other Christian",
+        "pct": 14.1,
+        "count": 18383
+      },
+      {
+        "group": "Catholic",
+        "pct": 7.7,
+        "count": 9983
+      },
+      {
+        "group": "Taoist",
+        "pct": 6.7,
+        "count": 8777
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.5,
+        "count": 4566
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.4,
+        "count": 491
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 515
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 60.6,
+        "count": 84070
+      },
+      {
+        "group": "Mandarin",
+        "pct": 21.8,
+        "count": 30248
+      },
+      {
+        "group": "Malay",
+        "pct": 10.4,
+        "count": 14490
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 4.8,
+        "count": 6674
+      },
+      {
+        "group": "Tamil",
+        "pct": 1.1,
+        "count": 1546
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.7,
+        "count": 984
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.5,
+        "count": 715
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 67.1,
+        "count": 93910
+      },
+      {
+        "group": "Malay",
+        "pct": 20.3,
+        "count": 28420
+      },
+      {
+        "group": "Indian",
+        "pct": 8.5,
+        "count": 11920
+      },
+      {
+        "group": "Other",
+        "pct": 4.0,
+        "count": 5640
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Pasir Ris"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Paya-Lebar",
+    "level": "admin2",
+    "name": "Paya Lebar",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 40,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2015 survey published a resident count for this area (40) but suppressed the ethnic breakdown, as it does for cells too small to report without identifying people."
+    },
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Paya Lebar"
+    }
+  },
+  {
+    "id": "SGP-A-Pioneer",
+    "level": "admin2",
+    "name": "Pioneer",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 100,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2015 survey published a resident count for this area (100) but suppressed the ethnic breakdown, as it does for cells too small to report without identifying people."
+    },
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Pioneer"
+    }
+  },
+  {
+    "id": "SGP-A-Punggol",
+    "level": "admin2",
+    "name": "Punggol",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 109750,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 33.8,
+        "count": 45742
+      },
+      {
+        "group": "No religion",
+        "pct": 21.1,
+        "count": 28518
+      },
+      {
+        "group": "Muslim",
+        "pct": 15.5,
+        "count": 20960
+      },
+      {
+        "group": "Other Christian",
+        "pct": 11.0,
+        "count": 14861
+      },
+      {
+        "group": "Taoist",
+        "pct": 7.8,
+        "count": 10550
+      },
+      {
+        "group": "Catholic",
+        "pct": 6.7,
+        "count": 9104
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.7,
+        "count": 4976
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 356
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.2,
+        "count": 280
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 55.2,
+        "count": 85910
+      },
+      {
+        "group": "Mandarin",
+        "pct": 29.3,
+        "count": 45639
+      },
+      {
+        "group": "Malay",
+        "pct": 7.3,
+        "count": 11302
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 6.0,
+        "count": 9391
+      },
+      {
+        "group": "Tamil",
+        "pct": 1.2,
+        "count": 1840
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.5,
+        "count": 855
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.4,
+        "count": 611
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 77.3,
+        "count": 84890
+      },
+      {
+        "group": "Malay",
+        "pct": 13.2,
+        "count": 14480
+      },
+      {
+        "group": "Indian",
+        "pct": 7.0,
+        "count": 7720
+      },
+      {
+        "group": "Other",
+        "pct": 2.4,
+        "count": 2670
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Punggol"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Queenstown",
+    "level": "admin2",
+    "name": "Queenstown",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 98050,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 28.6,
+        "count": 22997
+      },
+      {
+        "group": "No religion",
+        "pct": 23.6,
+        "count": 18942
+      },
+      {
+        "group": "Other Christian",
+        "pct": 18.4,
+        "count": 14755
+      },
+      {
+        "group": "Catholic",
+        "pct": 8.5,
+        "count": 6802
+      },
+      {
+        "group": "Muslim",
+        "pct": 8.4,
+        "count": 6785
+      },
+      {
+        "group": "Taoist",
+        "pct": 7.3,
+        "count": 5856
+      },
+      {
+        "group": "Hindu",
+        "pct": 4.4,
+        "count": 3496
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.6,
+        "count": 468
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 202
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 51.8,
+        "count": 40815
+      },
+      {
+        "group": "Mandarin",
+        "pct": 24.9,
+        "count": 19656
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 14.4,
+        "count": 11328
+      },
+      {
+        "group": "Malay",
+        "pct": 5.1,
+        "count": 4009
+      },
+      {
+        "group": "Tamil",
+        "pct": 2.4,
+        "count": 1855
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.0,
+        "count": 769
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.5,
+        "count": 383
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 78.9,
+        "count": 77390
+      },
+      {
+        "group": "Malay",
+        "pct": 8.9,
+        "count": 8720
+      },
+      {
+        "group": "Indian",
+        "pct": 8.2,
+        "count": 8000
+      },
+      {
+        "group": "Other",
+        "pct": 4.0,
+        "count": 3950
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Queenstown"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-River-Valley",
+    "level": "admin2",
+    "name": "River Valley",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9190,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 30.5,
+        "count": 2565
+      },
+      {
+        "group": "Other Christian",
+        "pct": 26.2,
+        "count": 2202
+      },
+      {
+        "group": "Buddhist",
+        "pct": 15.4,
+        "count": 1297
+      },
+      {
+        "group": "Catholic",
+        "pct": 12.6,
+        "count": 1057
+      },
+      {
+        "group": "Hindu",
+        "pct": 10.2,
+        "count": 863
+      },
+      {
+        "group": "Taoist",
+        "pct": 2.1,
+        "count": 175
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.8,
+        "count": 154
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.0,
+        "count": 81
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 27
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 79.9,
+        "count": 6849
+      },
+      {
+        "group": "Mandarin",
+        "pct": 11.4,
+        "count": 976
+      },
+      {
+        "group": "Other languages",
+        "pct": 3.7,
+        "count": 315
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 3.6,
+        "count": 308
+      },
+      {
+        "group": "Malay",
+        "pct": 0.7,
+        "count": 61
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.4,
+        "count": 34
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.3,
+        "count": 23
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 70.1,
+        "count": 6440
+      },
+      {
+        "group": "Other",
+        "pct": 15.2,
+        "count": 1400
+      },
+      {
+        "group": "Indian",
+        "pct": 13.8,
+        "count": 1270
+      },
+      {
+        "group": "Malay",
+        "pct": 1.0,
+        "count": 90
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "River Valley"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Rochor",
+    "level": "admin2",
+    "name": "Rochor",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 14590,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 71.8,
+        "count": 10470
+      },
+      {
+        "group": "Indian",
+        "pct": 20.3,
+        "count": 2960
+      },
+      {
+        "group": "Malay",
+        "pct": 4.4,
+        "count": 640
+      },
+      {
+        "group": "Other",
+        "pct": 3.6,
+        "count": 530
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Rochor"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015
+  },
+  {
+    "id": "SGP-A-Seletar",
+    "level": "admin2",
+    "name": "Seletar",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 270,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 63.0,
+        "count": 170
+      },
+      {
+        "group": "Other",
+        "pct": 22.2,
+        "count": 60
+      },
+      {
+        "group": "Indian",
+        "pct": 14.8,
+        "count": 40
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Seletar"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015
+  },
+  {
+    "id": "SGP-A-Sembawang",
+    "level": "admin2",
+    "name": "Sembawang",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 76530,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 33.6,
+        "count": 29545
+      },
+      {
+        "group": "No religion",
+        "pct": 19.5,
+        "count": 17136
+      },
+      {
+        "group": "Muslim",
+        "pct": 17.7,
+        "count": 15532
+      },
+      {
+        "group": "Other Christian",
+        "pct": 9.5,
+        "count": 8349
+      },
+      {
+        "group": "Taoist",
+        "pct": 8.4,
+        "count": 7412
+      },
+      {
+        "group": "Catholic",
+        "pct": 5.5,
+        "count": 4815
+      },
+      {
+        "group": "Hindu",
+        "pct": 5.4,
+        "count": 4710
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 234
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.2,
+        "count": 219
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 43.4,
+        "count": 41380
+      },
+      {
+        "group": "Mandarin",
+        "pct": 35.6,
+        "count": 33896
+      },
+      {
+        "group": "Malay",
+        "pct": 10.0,
+        "count": 9536
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 6.9,
+        "count": 6561
+      },
+      {
+        "group": "Tamil",
+        "pct": 2.4,
+        "count": 2312
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.1,
+        "count": 1003
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.6,
+        "count": 560
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 72.8,
+        "count": 55690
+      },
+      {
+        "group": "Malay",
+        "pct": 13.5,
+        "count": 10320
+      },
+      {
+        "group": "Indian",
+        "pct": 9.4,
+        "count": 7190
+      },
+      {
+        "group": "Other",
+        "pct": 4.4,
+        "count": 3330
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Sembawang"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Sengkang",
+    "level": "admin2",
+    "name": "Sengkang",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 206680,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 35.1,
+        "count": 72229
+      },
+      {
+        "group": "No religion",
+        "pct": 21.1,
+        "count": 43436
+      },
+      {
+        "group": "Muslim",
+        "pct": 12.9,
+        "count": 26557
+      },
+      {
+        "group": "Other Christian",
+        "pct": 9.8,
+        "count": 20258
+      },
+      {
+        "group": "Taoist",
+        "pct": 8.5,
+        "count": 17591
+      },
+      {
+        "group": "Catholic",
+        "pct": 6.9,
+        "count": 14123
+      },
+      {
+        "group": "Hindu",
+        "pct": 5.2,
+        "count": 10715
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 639
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 450
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 49.5,
+        "count": 113710
+      },
+      {
+        "group": "Mandarin",
+        "pct": 32.5,
+        "count": 74681
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 7.0,
+        "count": 16080
+      },
+      {
+        "group": "Malay",
+        "pct": 6.9,
+        "count": 15962
+      },
+      {
+        "group": "Tamil",
+        "pct": 2.7,
+        "count": 6170
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.9,
+        "count": 1990
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.6,
+        "count": 1320
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 77.7,
+        "count": 160590
+      },
+      {
+        "group": "Malay",
+        "pct": 10.9,
+        "count": 22580
+      },
+      {
+        "group": "Indian",
+        "pct": 8.8,
+        "count": 18200
+      },
+      {
+        "group": "Other",
+        "pct": 2.6,
+        "count": 5310
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Sengkang"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Serangoon",
+    "level": "admin2",
+    "name": "Serangoon",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 120670,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 29.2,
+        "count": 30157
+      },
+      {
+        "group": "No religion",
+        "pct": 21.9,
+        "count": 22647
+      },
+      {
+        "group": "Other Christian",
+        "pct": 16.8,
+        "count": 17399
+      },
+      {
+        "group": "Catholic",
+        "pct": 11.2,
+        "count": 11557
+      },
+      {
+        "group": "Taoist",
+        "pct": 9.1,
+        "count": 9363
+      },
+      {
+        "group": "Hindu",
+        "pct": 6.0,
+        "count": 6233
+      },
+      {
+        "group": "Muslim",
+        "pct": 5.1,
+        "count": 5316
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 340
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 266
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 58.4,
+        "count": 61826
+      },
+      {
+        "group": "Mandarin",
+        "pct": 26.0,
+        "count": 27529
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 9.1,
+        "count": 9673
+      },
+      {
+        "group": "Malay",
+        "pct": 2.9,
+        "count": 3073
+      },
+      {
+        "group": "Tamil",
+        "pct": 2.7,
+        "count": 2820
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.5,
+        "count": 533
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.4,
+        "count": 378
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 84.1,
+        "count": 101460
+      },
+      {
+        "group": "Indian",
+        "pct": 8.9,
+        "count": 10740
+      },
+      {
+        "group": "Malay",
+        "pct": 4.3,
+        "count": 5170
+      },
+      {
+        "group": "Other",
+        "pct": 2.7,
+        "count": 3310
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Serangoon"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Singapore-River",
+    "level": "admin2",
+    "name": "Singapore River",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2720,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 68.8,
+        "count": 1870
+      },
+      {
+        "group": "Other",
+        "pct": 22.8,
+        "count": 620
+      },
+      {
+        "group": "Indian",
+        "pct": 8.1,
+        "count": 220
+      },
+      {
+        "group": "Malay",
+        "pct": 0.4,
+        "count": 10
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Singapore River"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015
+  },
+  {
+    "id": "SGP-A-Southern-Islands",
+    "level": "admin2",
+    "name": "Southern Islands",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1480,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 54.7,
+        "count": 810
+      },
+      {
+        "group": "Other",
+        "pct": 33.8,
+        "count": 500
+      },
+      {
+        "group": "Indian",
+        "pct": 10.1,
+        "count": 150
+      },
+      {
+        "group": "Malay",
+        "pct": 1.4,
+        "count": 20
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Southern Islands"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015
+  },
+  {
+    "id": "SGP-A-Sungei-Kadut",
+    "level": "admin2",
+    "name": "Sungei Kadut",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 850,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 83.5,
+        "count": 710
+      },
+      {
+        "group": "Indian",
+        "pct": 12.9,
+        "count": 110
+      },
+      {
+        "group": "Other",
+        "pct": 3.5,
+        "count": 30
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Sungei Kadut"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015
+  },
+  {
+    "id": "SGP-A-Tampines",
+    "level": "admin2",
+    "name": "Tampines",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 261230,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 28.6,
+        "count": 64965
+      },
+      {
+        "group": "Muslim",
+        "pct": 26.1,
+        "count": 59177
+      },
+      {
+        "group": "No religion",
+        "pct": 16.2,
+        "count": 36837
+      },
+      {
+        "group": "Other Christian",
+        "pct": 10.9,
+        "count": 24778
+      },
+      {
+        "group": "Taoist",
+        "pct": 8.0,
+        "count": 18089
+      },
+      {
+        "group": "Catholic",
+        "pct": 6.0,
+        "count": 13594
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.7,
+        "count": 8351
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 703
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 488
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 46.5,
+        "count": 110367
+      },
+      {
+        "group": "Mandarin",
+        "pct": 26.6,
+        "count": 63129
+      },
+      {
+        "group": "Malay",
+        "pct": 16.2,
+        "count": 38464
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 8.1,
+        "count": 19234
+      },
+      {
+        "group": "Tamil",
+        "pct": 1.3,
+        "count": 3180
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.8,
+        "count": 1979
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.4,
+        "count": 998
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 67.2,
+        "count": 175470
+      },
+      {
+        "group": "Malay",
+        "pct": 21.4,
+        "count": 56010
+      },
+      {
+        "group": "Indian",
+        "pct": 8.3,
+        "count": 21560
+      },
+      {
+        "group": "Other",
+        "pct": 3.1,
+        "count": 8200
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Tampines"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Tanglin",
+    "level": "admin2",
+    "name": "Tanglin",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 19000,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 27.8,
+        "count": 4654
+      },
+      {
+        "group": "Other Christian",
+        "pct": 27.3,
+        "count": 4567
+      },
+      {
+        "group": "Catholic",
+        "pct": 16.0,
+        "count": 2680
+      },
+      {
+        "group": "Buddhist",
+        "pct": 15.2,
+        "count": 2550
+      },
+      {
+        "group": "Hindu",
+        "pct": 6.6,
+        "count": 1102
+      },
+      {
+        "group": "Taoist",
+        "pct": 3.2,
+        "count": 539
+      },
+      {
+        "group": "Muslim",
+        "pct": 2.5,
+        "count": 423
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.8,
+        "count": 131
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.5,
+        "count": 92
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 81.6,
+        "count": 14573
+      },
+      {
+        "group": "Mandarin",
+        "pct": 10.3,
+        "count": 1845
+      },
+      {
+        "group": "Other languages",
+        "pct": 3.5,
+        "count": 627
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 3.4,
+        "count": 608
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.7,
+        "count": 117
+      },
+      {
+        "group": "Malay",
+        "pct": 0.3,
+        "count": 62
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 26
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 74.5,
+        "count": 14160
+      },
+      {
+        "group": "Other",
+        "pct": 14.3,
+        "count": 2720
+      },
+      {
+        "group": "Indian",
+        "pct": 10.2,
+        "count": 1930
+      },
+      {
+        "group": "Malay",
+        "pct": 1.0,
+        "count": 190
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Tanglin"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Tengah",
+    "level": "admin2",
+    "name": "Tengah",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 10,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2015 survey published a resident count for this area (10) but suppressed the ethnic breakdown, as it does for cells too small to report without identifying people."
+    },
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Tengah"
+    }
+  },
+  {
+    "id": "SGP-A-Toa-Payoh",
+    "level": "admin2",
+    "name": "Toa Payoh",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 124940,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 33.3,
+        "count": 34920
+      },
+      {
+        "group": "No religion",
+        "pct": 22.4,
+        "count": 23483
+      },
+      {
+        "group": "Other Christian",
+        "pct": 13.6,
+        "count": 14250
+      },
+      {
+        "group": "Catholic",
+        "pct": 9.5,
+        "count": 9929
+      },
+      {
+        "group": "Taoist",
+        "pct": 8.8,
+        "count": 9271
+      },
+      {
+        "group": "Muslim",
+        "pct": 8.1,
+        "count": 8521
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.6,
+        "count": 3807
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 364
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.2,
+        "count": 245
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 50.5,
+        "count": 51598
+      },
+      {
+        "group": "Mandarin",
+        "pct": 28.9,
+        "count": 29550
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 12.1,
+        "count": 12326
+      },
+      {
+        "group": "Malay",
+        "pct": 5.2,
+        "count": 5303
+      },
+      {
+        "group": "Tamil",
+        "pct": 2.3,
+        "count": 2302
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.8,
+        "count": 843
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.3,
+        "count": 332
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 81.8,
+        "count": 102230
+      },
+      {
+        "group": "Malay",
+        "pct": 7.9,
+        "count": 9920
+      },
+      {
+        "group": "Indian",
+        "pct": 7.4,
+        "count": 9290
+      },
+      {
+        "group": "Other",
+        "pct": 2.8,
+        "count": 3510
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Toa Payoh"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Tuas",
+    "level": "admin2",
+    "name": "Tuas",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 70,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2015 survey published a resident count for this area (70) but suppressed the ethnic breakdown, as it does for cells too small to report without identifying people."
+    },
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Tuas"
+    }
+  },
+  {
+    "id": "SGP-A-Western-Water-Catchment",
+    "level": "admin2",
+    "name": "Western Water Catchment",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 900,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+    },
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 81.1,
+        "count": 730
+      },
+      {
+        "group": "Indian",
+        "pct": 10.0,
+        "count": 90
+      },
+      {
+        "group": "Other",
+        "pct": 7.8,
+        "count": 70
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Western Water Catchment"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015
+  },
+  {
+    "id": "SGP-A-Woodlands",
+    "level": "admin2",
+    "name": "Woodlands",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 250290,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 31.1,
+        "count": 66744
+      },
+      {
+        "group": "Muslim",
+        "pct": 28.1,
+        "count": 60365
+      },
+      {
+        "group": "No religion",
+        "pct": 15.0,
+        "count": 32251
+      },
+      {
+        "group": "Taoist",
+        "pct": 7.4,
+        "count": 15988
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.9,
+        "count": 14900
+      },
+      {
+        "group": "Hindu",
+        "pct": 6.3,
+        "count": 13535
+      },
+      {
+        "group": "Catholic",
+        "pct": 4.6,
+        "count": 9868
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 683
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 612
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 37.5,
+        "count": 85752
+      },
+      {
+        "group": "Mandarin",
+        "pct": 34.8,
+        "count": 79436
+      },
+      {
+        "group": "Malay",
+        "pct": 17.3,
+        "count": 39565
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 5.6,
+        "count": 12770
+      },
+      {
+        "group": "Tamil",
+        "pct": 3.4,
+        "count": 7715
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.9,
+        "count": 1953
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.6,
+        "count": 1327
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 61.4,
+        "count": 153780
+      },
+      {
+        "group": "Malay",
+        "pct": 24.9,
+        "count": 62310
+      },
+      {
+        "group": "Indian",
+        "pct": 11.1,
+        "count": 27810
+      },
+      {
+        "group": "Other",
+        "pct": 2.5,
+        "count": 6380
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Woodlands"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Yishun",
+    "level": "admin2",
+    "name": "Yishun",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 201970,
+      "unit": "residents",
+      "year": 2015,
+      "source": "General Household Survey 2015, Singapore Department of Statistics"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 33.0,
+        "count": 62216
+      },
+      {
+        "group": "Muslim",
+        "pct": 20.2,
+        "count": 38022
+      },
+      {
+        "group": "No religion",
+        "pct": 17.0,
+        "count": 32049
+      },
+      {
+        "group": "Taoist",
+        "pct": 9.4,
+        "count": 17681
+      },
+      {
+        "group": "Other Christian",
+        "pct": 8.3,
+        "count": 15567
+      },
+      {
+        "group": "Hindu",
+        "pct": 6.1,
+        "count": 11466
+      },
+      {
+        "group": "Catholic",
+        "pct": 5.5,
+        "count": 10364
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.4,
+        "count": 767
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 318
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 39.6,
+        "count": 77707
+      },
+      {
+        "group": "Mandarin",
+        "pct": 34.4,
+        "count": 67581
+      },
+      {
+        "group": "Malay",
+        "pct": 12.8,
+        "count": 25185
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 8.5,
+        "count": 16761
+      },
+      {
+        "group": "Tamil",
+        "pct": 3.3,
+        "count": 6402
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.7,
+        "count": 1426
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.7,
+        "count": 1344
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 70.5,
+        "count": 142300
+      },
+      {
+        "group": "Malay",
+        "pct": 16.8,
+        "count": 33940
+      },
+      {
+        "group": "Indian",
+        "pct": 10.0,
+        "count": 20230
+      },
+      {
+        "group": "Other",
+        "pct": 2.7,
+        "count": 5510
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Yishun"
+    },
+    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_year": 2015,
+    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_year": 2020,
+    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_year": 2020
+  }
+]

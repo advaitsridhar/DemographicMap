@@ -62,6 +62,10 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # Mother tongue (C-16) ships as its own per-state workbooks, checked into
   # data/raw/india/c16/. No network: these read from disk, so they run
   # unconditionally rather than through soft().
+  # Singapore, via the SingStat Table Builder API.
+  soft python3 -m scripts.fetch_census.switzerland
+  soft python3 -m scripts.fetch_census.singstat
+  soft python3 -m scripts.fetch_census.singapore_areas
   # Sri Lanka's 2012 census tables are workbooks too, read from disk.
   soft python3 -m scripts.fetch_census.sri_lanka --level province
   soft python3 -m scripts.fetch_census.sri_lanka --level district

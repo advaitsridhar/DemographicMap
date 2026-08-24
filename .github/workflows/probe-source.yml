@@ -12,10 +12,10 @@ on:
       kind:
         description: "Source type"
         type: choice
-        options: [arcgis, url, pdf]
+        options: [arcgis, url, pdf, datagovsg]
         default: arcgis
       target:
-        description: "ArcGIS item id or portal URL, or for kind=url/pdf a direct URL"
+        description: "ArcGIS item id or URL; kind=url/pdf a direct URL; kind=datagovsg a search term"
         type: string
         required: true
       terms:
@@ -55,6 +55,17 @@ jobs:
           # in a PDF readable at all once it is text.
           pdftotext -layout /tmp/probe.pdf /tmp/probe.txt
           python3 scripts/probe_pdf.py /tmp/probe.txt --terms "${{ inputs.terms }}"
+
+      - name: Probe data.gov.sg
+        if: inputs.kind == 'datagovsg'
+        # The key is passed through the environment from the repository secret
+        # and never appears in a command line or a log. The script reports only
+        # whether one was found and how long it is, which is enough to tell a
+        # missing secret from a rejected one.
+        env:
+          DEMOGRAPHICMAP: ${{ secrets.DEMOGRAPHICMAP }}
+        run: |
+          python3 scripts/probe_datagovsg.py --raw --catalogue --search "${{ inputs.target }}"
 
       - name: Probe plain URL
         if: inputs.kind == 'url'

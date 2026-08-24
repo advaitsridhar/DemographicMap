@@ -539,3 +539,143 @@ class SriLanka2024(unittest.TestCase):
         with self.assertRaises(SystemExit) as caught:
             self.lk.validate({"Sri Lanka": country})
         self.assertIn("Buddhist", str(caught.exception))
+
+
+class SingaporeGroupedMedian(unittest.TestCase):
+    """The one derived figure in the Singapore adapter, and the series parsing."""
+
+    def setUp(self):
+        from scripts.fetch_census import singstat
+        self.ss = singstat
+
+    def test_median_lands_inside_the_band_holding_the_midpoint(self):
+        bands = {"0 - 4 Years": 100, "5 - 9 Years": 100, "10 - 14 Years": 100}
+        # 300 people, midpoint at 150, which falls halfway through the 5-9 band.
+        self.assertEqual(self.ss.median_from_bands(bands), 7.5)
+
+    def test_a_single_band_interpolates_to_its_middle(self):
+        self.assertEqual(self.ss.median_from_bands({"40 - 44 Years": 1000}), 42.5)
+
+    def test_the_open_ended_band_is_given_a_nominal_width(self):
+        # "90 Years & Over" has no upper bound; it is treated as five years wide
+        # rather than being dropped, which would bias the median downwards.
+        self.assertIsNotNone(self.ss.median_from_bands({"90 Years & Over": 10}))
+
+    def test_empty_or_unparseable_bands_yield_nothing_rather_than_a_guess(self):
+        self.assertIsNone(self.ss.median_from_bands({}))
+        self.assertIsNone(self.ss.median_from_bands({"All ages": 500}))
+        self.assertIsNone(self.ss.median_from_bands({"0 - 4 Years": 0}))
+
+    def test_age_bands_attach_to_the_region_not_to_a_sex_split(self):
+        # Bands hang off whichever top-level series precedes them. Letting the
+        # "(Male)" series claim them would halve every count behind the median.
+        payload = {"Data": {"row": [
+            {"seriesNo": "1", "rowText": "North Region",
+             "columns": [{"key": "2025", "value": "300"}]},
+            {"seriesNo": "1.1", "rowText": "0 - 4 Years",
+             "columns": [{"key": "2025", "value": "300"}]},
+            {"seriesNo": "2", "rowText": "North Region (Male)",
+             "columns": [{"key": "2025", "value": "150"}]},
+            {"seriesNo": "2.1", "rowText": "0 - 4 Years",
+             "columns": [{"key": "2025", "value": "150"}]},
+        ]}}
+        year, regions = self.ss.parse(payload)
+        self.assertEqual(year, "2025")
+        self.assertEqual(regions["North Region"]["bands"], {"0 - 4 Years": 300.0})
+        self.assertEqual(regions["North Region"]["male"], 150.0)
+
+    def test_the_most_recent_period_is_the_one_used(self):
+        rows = [{"seriesNo": "1", "rowText": "West Region",
+                 "columns": [{"key": "2019", "value": "1"}, {"key": "2025", "value": "2"}]}]
+        self.assertEqual(self.ss.latest_year(rows), "2025")
+
+    def test_an_empty_response_fails_loudly(self):
+        with self.assertRaises(SystemExit):
+            self.ss.series_rows({"Data": {"row": []}})
+
+
+class SingaporePlanningAreas(unittest.TestCase):
+    """Suppressed cells, and three tables that must not be conflated."""
+
+    def setUp(self):
+        from scripts.fetch_census import singapore_areas
+        self.sa = singapore_areas
+
+    def test_na_is_missing_and_dash_is_nil(self):
+        # Reading "na" as zero turns "we are not telling you" into "nobody lives
+        # here", which for an industrial planning area is a different claim.
+        self.assertIsNone(self.sa.cell("na"))
+        self.assertIsNone(self.sa.cell(""))
+        self.assertEqual(self.sa.cell("-"), 0.0)
+        self.assertEqual(self.sa.cell("1,234"), 1234.0)
+        self.assertEqual(self.sa.cell(" 90 "), 90.0)
+
+    def test_a_wholly_suppressed_breakdown_is_not_a_reconciliation_failure(self):
+        # Lim Chu Kang publishes 90 residents and suppresses every category.
+        self.sa.check("ethnicity", {"Lim Chu Kang": {}}, {"Lim Chu Kang": 90.0},
+                      self.sa.CONTROLS["ethnicity"])
+
+    def test_categories_that_miss_their_row_total_still_fail(self):
+        with self.assertRaises(SystemExit) as caught:
+            self.sa.check("religion", {"Bedok": {"Buddhist": 10.0}},
+                          {"Bedok": 1000.0}, self.sa.CONTROLS["religion"])
+        self.assertIn("Bedok", str(caught.exception))
+
+    def test_a_wrong_national_total_is_refused(self):
+        with self.assertRaises(SystemExit):
+            self.sa.check("language", {}, {}, 1)
+
+    def test_the_three_tables_keep_separate_years(self):
+        # 2015 survey, 2020 census aged 15+, 2020 census aged 5+. Sharing one
+        # year would imply a single profile of a single population.
+        self.assertEqual(set(self.sa.CONTROLS), {"ethnicity", "religion", "language"})
+        self.assertNotEqual(self.sa.CONTROLS["religion"], self.sa.CONTROLS["language"])
+        self.assertIn("aged 15 and over", self.sa.NOTES["religion"])
+        self.assertIn("aged 5 and over", self.sa.NOTES["language"])
+
+    def test_the_language_categories_are_exhaustive(self):
+        # The six top-level languages partition the base; Tamil is split out of
+        # Indian languages, so the seven must still cover everyone.
+        self.assertIn("IndianLanguages_Tamil_Total1", self.sa.LANGUAGE_COLUMNS)
+        self.assertIn("IndianLanguages_OtherIndianLanguages_Total1",
+                      self.sa.LANGUAGE_COLUMNS)
+        self.assertNotIn("IndianLanguages_Total", self.sa.LANGUAGE_COLUMNS)
+
+
+class SwitzerlandMainLanguages(unittest.TestCase):
+    """A sample survey where a person may name up to three languages."""
+
+    def setUp(self):
+        from scripts.fetch_census import switzerland
+        self.ch = switzerland
+
+    def test_bilingual_canton_names_map_to_the_boundary_spelling(self):
+        self.assertEqual(self.ch.clean("Bern / Berne"), "Bern")
+        self.assertEqual(self.ch.clean("Valais / Wallis"), "Valais")
+        # The workbook's sheet tabs space the two names instead of slashing
+        # them; the Canton sheet does not, so only the slashed form is aliased.
+        self.assertEqual(self.ch.clean("Fribourg / Freiburg"), "Fribourg")
+        self.assertEqual(self.ch.clean("Zürich"), "Zürich")
+
+    def test_suppressed_cells_are_missing_not_zero(self):
+        # 'X' marks fewer than five observations behind the estimate.
+        self.assertIsNone(self.ch.number("X"))
+        self.assertIsNone(self.ch.number(None))
+        self.assertEqual(self.ch.number(87.4), 87.4)
+
+    def test_the_national_row_must_be_present_to_check_against(self):
+        # Without it the canton sum is compared with itself and cannot fail.
+        with self.assertRaises(SystemExit) as caught:
+            self.ch.check([{"name": "Uri", "total": 1.0, "counts": {}, "dropped": []}],
+                          {"name": "Total", "total": 1.0, "counts": {}})
+        self.assertIn("no language columns", str(caught.exception))
+
+    def test_cantons_must_reproduce_the_national_total(self):
+        with self.assertRaises(SystemExit) as caught:
+            self.ch.check([{"name": "Uri", "total": 100.0, "counts": {}, "dropped": []}],
+                          {"name": "Total", "total": 999.0, "counts": {"German": 1.0}})
+        self.assertIn("cantons sum to", str(caught.exception))
+
+    def test_the_note_says_shares_exceed_one_hundred_percent(self):
+        self.assertIn("more than 100%", self.ch.NOTE)
+        self.assertIn("estimate", self.ch.NOTE)
