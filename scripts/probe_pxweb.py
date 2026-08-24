@@ -1,0 +1,169 @@
+#!/usr/bin/env python3
+"""Find census ethnicity/religion/language tables across national PxWeb APIs.
+
+PxWeb is the statistics-database software most of Europe's national offices
+run, and they expose the same REST shape: a navigable tree of folders ending in
+tables, each describing its own variables. That makes one adapter serve many
+countries the way the Eurostat one does, instead of a scraper per office -- but
+only if the tables actually exist, are public, and break the figures down by a
+geography the boundary files can join.
+
+None of that is guessable from the outside, so this walks each instance and
+reports what is really there: the tables whose titles mention the fields this
+project cares about, the variables each one offers, and how many regions its
+geography variable holds. Read-only; the output is the log.
+
+Usage:
+    python scripts/probe_pxweb.py --countries EST,LVA,LTU
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+import time
+import urllib.error
+import urllib.request
+
+# Base URLs are the language-scoped database roots. Where an office offers
+# English it is used, because the table titles are what the keyword match reads.
+INSTANCES: dict[str, dict[str, str]] = {
+    "FIN": {"name": "Statistics Finland",
+            "base": "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin"},
+    "SWE": {"name": "Statistics Sweden",
+            "base": "https://api.scb.se/OV0104/v1/doris/en/ssd"},
+    "NOR": {"name": "Statistics Norway",
+            "base": "https://data.ssb.no/api/v0/en/table"},
+    "EST": {"name": "Statistics Estonia",
+            "base": "https://andmed.stat.ee/api/v1/en/stat"},
+    "LVA": {"name": "Statistics Latvia",
+            "base": "https://data.stat.gov.lv/api/v1/en/OSP_PUB"},
+    "LTU": {"name": "Statistics Lithuania",
+            "base": "https://osp-rs.stat.gov.lt/rest_xml/data"},
+    "DNK": {"name": "Statistics Denmark",
+            "base": "https://api.statbank.dk/v1"},
+    "ISL": {"name": "Statistics Iceland",
+            "base": "https://px.hagstofa.is/pxen/api/v1/en/Ibuar"},
+}
+
+# What this project can put on a map. "Nationality" is included because several
+# offices use it for what their census calls ethnicity.
+WANTED = ("religio", "ethnic", "nationalit", "language", "mother tongue",
+          "citizenship", "confession", "denomination")
+
+# Geography variable names, in the languages these instances answer in.
+GEO_HINTS = ("region", "municipal", "county", "area", "district", "province",
+             "kommun", "maakond", "vald", "landsdel")
+
+THROTTLE = 0.25
+MAX_NODES = 250
+# Seconds any one instance may consume. A node budget alone does not bound the
+# work: a host that accepts a connection and then stalls costs the full request
+# timeout each time, so 250 nodes at 30 seconds is over two hours and the first
+# run of this probe had to be cancelled. Wall clock is what actually bounds it.
+BUDGET_SECONDS = 70
+REQUEST_TIMEOUT = 12
+
+
+def get(url: str, timeout: int = REQUEST_TIMEOUT):
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap)",
+        "Accept": "application/json",
+    })
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return json.loads(resp.read().decode("utf-8", "replace"))
+
+
+def walk(base: str, budget: list[int], deadline: float,
+         depth: int = 0, path: str = "") -> list[dict]:
+    """Depth-first over the PxWeb tree, collecting tables that look relevant."""
+    if budget[0] <= 0 or depth > 4 or time.monotonic() > deadline:
+        return []
+    url = f"{base}/{path}" if path else base
+    budget[0] -= 1
+    try:
+        time.sleep(THROTTLE)
+        node = get(url)
+    except Exception as err:                      # noqa: BLE001
+        if depth == 0:
+            print(f"    unreachable: {type(err).__name__}: {str(err)[:90]}")
+        return []
+    if not isinstance(node, list):
+        return []
+
+    found = []
+    for entry in node:
+        if not isinstance(entry, dict):
+            continue
+        eid, etype = entry.get("id"), entry.get("type")
+        text = (entry.get("text") or "")
+        child = f"{path}/{eid}" if path else eid
+        if etype == "t":
+            if any(w in text.lower() for w in WANTED):
+                found.append({"path": child, "title": text})
+        elif etype == "l":
+            # Only descend where the folder could plausibly hold what we want,
+            # or near the root where names are broad ("Population").
+            if depth <= 1 or any(w in text.lower() for w in WANTED + ("population", "census")):
+                found.extend(walk(base, budget, deadline, depth + 1, child))
+        if budget[0] <= 0 or time.monotonic() > deadline:
+            break
+    return found
+
+
+def describe(base: str, table: dict) -> None:
+    """Print a table's variables, and the size of its geography dimension."""
+    try:
+        time.sleep(THROTTLE)
+        meta = get(f"{base}/{table['path']}")
+    except Exception as err:                      # noqa: BLE001
+        print(f"      ! metadata failed: {str(err)[:70]}")
+        return
+    variables = meta.get("variables") or []
+    parts = []
+    geo = None
+    for var in variables:
+        label = (var.get("text") or var.get("code") or "")
+        size = len(var.get("values") or [])
+        parts.append(f"{label}({size})")
+        if geo is None and any(h in label.lower() for h in GEO_HINTS) and size > 5:
+            geo = (label, size, (var.get("valueTexts") or [])[:4])
+    print(f"      vars: {', '.join(parts)[:150]}")
+    if geo:
+        print(f"      geography: {geo[0]} — {geo[1]} areas, e.g. {', '.join(geo[2])}")
+    else:
+        print("      geography: none with more than five values — national only")
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--countries", default=",".join(INSTANCES))
+    ap.add_argument("--max-tables", type=int, default=3)
+    args = ap.parse_args()
+
+    for iso in [c.strip().upper() for c in args.countries.split(",") if c.strip()]:
+        spec = INSTANCES.get(iso)
+        if not spec:
+            print(f"\n== {iso}: no instance configured")
+            continue
+        print(f"\n== {iso} {spec['name']}\n   {spec['base']}")
+        started = time.monotonic()
+        tables = walk(spec["base"], [MAX_NODES], started + BUDGET_SECONDS)
+        spent = time.monotonic() - started
+        if spent > BUDGET_SECONDS:
+            print(f"    (stopped after {spent:.0f}s — tree not fully walked)")
+        if not tables:
+            print("    nothing matching religion / ethnicity / language")
+            continue
+        print(f"    {len(tables)} candidate table(s)")
+        for table in tables[:args.max_tables]:
+            print(f"    - {table['path']}")
+            print(f"      {table['title'][:110]}")
+            describe(spec["base"], table)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

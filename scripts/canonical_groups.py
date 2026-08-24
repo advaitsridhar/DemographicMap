@@ -37,6 +37,9 @@ from typing import Any, Iterable
 RELIGION: dict[str, tuple[str, ...]] = {
     "Christianity": (
         "Christian", "Christianity",
+        # Mexico reports these two alongside "other" and "none", so they are
+        # children of Christianity there, never siblings of it.
+        "Protestant and evangelical",
         # Reported at denomination or tradition level by some offices. These
         # are children of Christianity, never siblings of it in one source.
         "Catholic", "Roman Catholic", "Católica Apostólica Romana",
@@ -56,10 +59,17 @@ RELIGION: dict[str, tuple[str, ...]] = {
     "No religion": (
         "No religion", "No religion / secular", "Sem religião",
         "Secular Other Spiritual and No Religious Affiliation",
+        # The Factbook's word for the same answer, in 107 countries.
+        "none",
     ),
     "Not stated": (
         "Not stated", "Not answered", "Religious affiliation not stated",
         "Sem declaração", "Não sabe",
+        # All of these are the non-response bucket under different house
+        # styles. Folding them together merges one uncertainty with another,
+        # which is the only direction that is safe: none of them says the
+        # person has no religion, and none is folded into "No religion".
+        "unspecified", "no response", "no answer",
     ),
     "Other religions": (
         "Other", "Other religion", "Other religions", "Other Religions",
@@ -98,12 +108,24 @@ TABLES: dict[str, dict[str, tuple[str, ...]]] = {
 }
 
 
+def key(label: str) -> str:
+    """The form labels are compared in: case and surrounding space ignored.
+
+    Capitalisation is a house style, not a distinction. The Factbook writes
+    "no religion" and a census writes "No religion"; matching them literally
+    left the world filter offering both, one reaching ten countries at the
+    national level and the other six countries' provinces, as though they were
+    different answers to the question.
+    """
+    return " ".join(label.split()).lower()
+
+
 def lookup(field: str) -> dict[str, str]:
     """Source label -> canonical name, for one field."""
     out: dict[str, str] = {}
     for canonical, labels in TABLES.get(field, {}).items():
         for label in labels:
-            out[label] = canonical
+            out[key(label)] = canonical
     return out
 
 
@@ -119,7 +141,8 @@ def canonicalise(rows: Iterable[dict[str, Any]], field: str) -> dict[str, float]
         pct = row.get("pct")
         if not isinstance(pct, (int, float)):
             continue
-        name = table.get(row.get("group", ""), row.get("group", ""))
+        label = row.get("group", "")
+        name = table.get(key(label), label)
         out[name] = out.get(name, 0.0) + pct
     return out
 
@@ -138,12 +161,15 @@ def check_no_double_counting(rows: Iterable[dict[str, Any]], field: str,
     for row in rows or ():
         if not isinstance(row.get("pct"), (int, float)):
             continue
-        label = row.get("group", "")
+        label = key(row.get("group", ""))
         canonical = table.get(label, label)
         seen.setdefault(canonical, []).append(label)
     # A canonical group reached by its own name AND by a *different* label that
     # rolls into it means the source published the parent and the child side by
     # side. The same label twice is a different thing -- the Factbook lists
     # Bissa twice for Burkina Faso -- and summing those is right, not a fault.
+    # Compared in key() form on both sides: the labels have been folded, and
+    # the canonical name is a display string, so "Christianity" has to be
+    # folded too or a parent beside its child stops being reported.
     return [c for c, labels in seen.items()
-            if len(set(labels)) > 1 and c in labels]
+            if len(set(labels)) > 1 and key(c) in labels]

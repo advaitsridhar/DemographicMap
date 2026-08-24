@@ -12,14 +12,14 @@ on:
       kind:
         description: "Source type"
         type: choice
-        options: [arcgis, url, pdf, datagovsg]
+        options: [arcgis, url, pdf, datagovsg, pxweb, links, heads, zipcsv]
         default: arcgis
       target:
         description: "ArcGIS item id or URL; kind=url/pdf a direct URL; kind=datagovsg a search term"
         type: string
         required: true
       terms:
-        description: "kind=pdf: comma-separated terms to find pages for"
+        description: "kind=pdf/links: comma-separated terms to match"
         type: string
         default: "language,mother tongue,speak"
         required: false
@@ -66,6 +66,28 @@ jobs:
           DEMOGRAPHICMAP: ${{ secrets.DEMOGRAPHICMAP }}
         run: |
           python3 scripts/probe_datagovsg.py --raw --catalogue --search "${{ inputs.target }}"
+
+      - name: Probe PxWeb instances
+        if: inputs.kind == 'pxweb'
+        run: |
+          python3 scripts/probe_pxweb.py --countries "${{ inputs.target }}"
+
+      - name: Probe portal links
+        if: inputs.kind == 'links'
+        run: |
+          python3 scripts/probe_links.py "${{ inputs.target }}" \
+            --match "${{ inputs.terms }}" --check 6
+
+      - name: Check candidate files exist
+        if: inputs.kind == 'heads'
+        run: |
+          python3 scripts/probe_links.py --head "${{ inputs.target }}"
+
+      - name: Probe zipped CSV
+        if: inputs.kind == 'zipcsv'
+        run: |
+          python3 scripts/probe_zip.py "${{ inputs.target }}" \
+            --match "${{ inputs.terms }}" --rows 2
 
       - name: Probe plain URL
         if: inputs.kind == 'url'
