@@ -62,7 +62,7 @@ MAX_NODES = 250
 # work: a host that accepts a connection and then stalls costs the full request
 # timeout each time, so 250 nodes at 30 seconds is over two hours and the first
 # run of this probe had to be cancelled. Wall clock is what actually bounds it.
-BUDGET_SECONDS = 100
+BUDGET_SECONDS = 70
 REQUEST_TIMEOUT = 12
 
 
@@ -140,7 +140,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--countries", default=",".join(INSTANCES))
-    ap.add_argument("--max-tables", type=int, default=6)
+    ap.add_argument("--max-tables", type=int, default=3)
     args = ap.parse_args()
 
     for iso in [c.strip().upper() for c in args.countries.split(",") if c.strip()]:
