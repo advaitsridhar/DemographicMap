@@ -153,10 +153,19 @@ def religion_columns(archive: zipfile.ZipFile) -> dict[str, str]:
                 break
     missing = [label for label, _ in RELIGION_HINTS if label not in found]
     if missing:
+        # Say what the dictionary actually looks like. "Not found" on its own
+        # sends the next person guessing at encodings and column names, which
+        # is how two runs were already spent; the rows are right here.
+        sample = [" | ".join(str(v) for v in row.values())[:130] for row in rows[:4]]
+        religious = [" | ".join(str(v) for v in row.values())[:130] for row in rows
+                     if "relig" in plain(" ".join(str(v) for v in row.values()))][:6]
         raise SystemExit(
-            f"religion columns not found in the dictionary for {missing}. "
-            "INEGI may have renamed them; the adapter reads descriptions "
-            "rather than column names precisely so this fails here.")
+            f"religion columns not found for {missing}.\n"
+            f"  dictionary rows: {len(rows)}\n"
+            f"  fields: {list(rows[0]) if rows else 'none'}\n"
+            f"  first rows:\n    " + "\n    ".join(sample) +
+            f"\n  rows mentioning religion ({len(religious)}):\n    " +
+            "\n    ".join(religious))
     log(f"  religion columns: {found}")
     return found
 
