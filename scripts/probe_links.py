@@ -75,6 +75,9 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=40)
     ap.add_argument("--check", type=int, default=0,
                     help="also fetch headers for the first N matching links")
+    ap.add_argument("--raw", type=int, default=0,
+                    help="print the first N bytes of the body instead of "
+                         "parsing links; for JSON endpoints and catalogue APIs")
     args = ap.parse_args()
 
     if args.head:
@@ -106,6 +109,10 @@ def page(url: str, args: argparse.Namespace) -> None:
         print(f"  unreachable: {type(err).__name__}: {str(err)[:400]}")
         return
     print(f"  {len(html):,} bytes")
+    # A catalogue API answers in JSON, which has no anchors to parse.
+    if args.raw:
+        print(html[:args.raw])
+        return
 
     wanted = [w.strip().lower() for w in args.match.split(",") if w.strip()]
     seen, hits = set(), []
