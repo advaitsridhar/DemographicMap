@@ -264,6 +264,14 @@ html, body {
 .stack-bar > span { display: block; min-width: 2px; }
 .stack-bar > span:first-child { border-radius: 4px 0 0 4px; }
 .stack-bar > span:last-child { border-radius: 0 4px 4px 0; }
+/* The share of a population these categories do not describe. Hatched rather
+   than a flat colour so it reads as absence and never as another group -- it
+   has no swatch in the list below the bar and must not look like one. */
+.stack-rest {
+  background: repeating-linear-gradient(45deg,
+    var(--hairline) 0 3px, transparent 3px 6px);
+  box-shadow: inset 0 0 0 1px var(--hairline);
+}
 
 .composition-list { list-style: none; margin: .55rem 0 0; padding: 0; display: grid; gap: .3rem; }
 .composition-list li { display: flex; align-items: center; gap: .45rem; font-size: .78rem; }

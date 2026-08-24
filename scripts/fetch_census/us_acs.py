@@ -337,7 +337,8 @@ def read_group_detail(path: Path, level: str) -> tuple[dict[str, dict[str, float
         records: Any = (dict(zip(header, r)) for r in rows)
     else:
         import csv
-        records = csv.DictReader(path.open(newline="", encoding="utf-8-sig"))
+        with path.open(newline="", encoding="utf-8-sig") as handle:
+            records = list(csv.DictReader(handle))
 
     def field(row: dict, *names: str) -> Any:
         for name in names:

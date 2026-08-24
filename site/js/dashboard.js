@@ -92,13 +92,31 @@ window.Dashboard = (function () {
     const unlabelled = value.filter((r) => r.pct == null).map((r) => r.group);
 
     if (shown.length) {
+      // Shares that fall short of 100% keep their true widths, and the shortfall
+      // is drawn as an explicit unaccounted segment. Normalising it away -- which
+      // this did -- stretches the bar to full width and asserts the population is
+      // entirely described, which for a source like the US Religion Census (about
+      // 48.6% of people, the rest uncounted rather than unaffiliated) is the one
+      // claim the data cannot support.
+      //
+      // A total above 100% is different: it means the question allowed more than
+      // one answer, so the categories genuinely overlap and there is no remainder
+      // to show. Those still normalise.
+      const short = total > 0 && total < 99.5;
+      const scale = short ? 100 : total;
       const segments = shown.map((row, i) => {
-        const width = total > 0 ? (row.pct / total) * 100 : 0;
+        const width = scale > 0 ? (row.pct / scale) * 100 : 0;
         return `<span style="flex:0 0 ${width.toFixed(2)}%;background:${window.Palette.categorical(i)}"
                       title="${esc(row.group)} ${pct(row.pct, row)}"></span>`;
       }).join("");
+      const remainder = short
+        ? `<span class="stack-rest" style="flex:0 0 ${(100 - total).toFixed(2)}%"
+                 title="Not accounted for by these categories ${pct(100 - total)}"></span>`
+        : "";
+      const label = shown.map((r) => `${r.group} ${pct(r.pct, r)}`).join(", ") +
+        (short ? `, not accounted for ${pct(100 - total)}` : "");
       parts.push(`<div class="stack-bar" role="img"
-        aria-label="${esc(shown.map((r) => `${r.group} ${pct(r.pct, r)}`).join(", "))}">${segments}</div>`);
+        aria-label="${esc(label)}">${segments}${remainder}</div>`);
 
       parts.push(`<ul class="composition-list">` + shown.map((row, i) =>
         `<li><span class="swatch" style="background:${window.Palette.categorical(i)}" aria-hidden="true"></span>
