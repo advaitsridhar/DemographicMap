@@ -40,6 +40,7 @@ from __future__ import annotations
 import argparse
 import csv
 import io
+import unicodedata
 import zipfile
 from pathlib import Path
 from typing import Any
@@ -97,11 +98,36 @@ def member(archive: zipfile.ZipFile, part: str) -> str:
     return max(names, key=lambda n: archive.getinfo(n).file_size)
 
 
+def decode(raw: bytes) -> str:
+    """UTF-8 if it is UTF-8, latin-1 if it is not.
+
+    The archive mixes both, and guessing wrong is not a crash: latin-1 accepts
+    every byte, so a UTF-8 file read as latin-1 turns "religión" into
+    "religiÃ³n" and every description match silently fails. Trying UTF-8 first
+    and falling back only on a real decode error gets each member right.
+    """
+    try:
+        return raw.decode("utf-8")
+    except UnicodeDecodeError:
+        return raw.decode("latin-1")
+
+
 def read_csv(archive: zipfile.ZipFile, name: str):
     with archive.open(name) as fh:
-        text = io.TextIOWrapper(fh, encoding="latin-1", newline="")
-        for row in csv.DictReader(text):
-            yield {(k or "").lstrip("﻿"): v for k, v in row.items()}
+        text = io.StringIO(decode(fh.read()), newline="")
+    for row in csv.DictReader(text):
+        yield {(k or "").lstrip("﻿"): v for k, v in row.items()}
+
+
+def plain(text: str) -> str:
+    """Lower case with the accents removed.
+
+    Matching a description against "religión católica" should not depend on
+    which encoding the member happened to be written in, nor on whether INEGI
+    accented a word this round. Comparing without accents removes the question.
+    """
+    stripped = unicodedata.normalize("NFKD", text or "")
+    return "".join(c for c in stripped if not unicodedata.combining(c)).lower()
 
 
 def religion_columns(archive: zipfile.ZipFile) -> dict[str, str]:
@@ -116,8 +142,8 @@ def religion_columns(archive: zipfile.ZipFile) -> dict[str, str]:
     for label, phrase in RELIGION_HINTS:
         for row in rows:
             values = [str(v or "") for v in row.values()]
-            blob = " ".join(values).lower()
-            if phrase not in blob:
+            blob = plain(" ".join(values))
+            if plain(phrase) not in blob:
                 continue
             codes = [v.strip() for v in values
                      if v.strip().isupper() and 3 <= len(v.strip()) <= 16
