@@ -78,7 +78,7 @@ ADAPTER_HINTS: dict[str, str] = {
     "AUS": "ABS 2021 Census (religion, ancestry): "
            "python -m scripts.fetch_census.abs --level lga",
     "MEX": "INEGI Censo 2020 ITER (religion, indigenous language, Afro-descendant): "
-           "python -m scripts.fetch_census.mexico --level municipality",
+           "python -m scripts.fetch_census.mexico --level both",
     "CHE": "FSO structural survey, main languages by canton: "
            "python -m scripts.fetch_census.switzerland",
     "SGP": "SingStat table M810771 (residents by planning region, age, sex): "
@@ -144,8 +144,18 @@ def read_shapes(level: str) -> list[dict[str, Any]]:
 
     path = BOUNDARIES / f"geoBoundariesCGAZ_{level}.gpkg"
     if not path.exists():
-        log(f"  ! missing {path.name}; run scripts/fetch_boundaries.py --cgaz")
-        return []
+        # Fatal, not a warning. The boundary files are the only source of
+        # shapes, and they are too large to commit, so a checkout that has not
+        # run fetch_boundaries.py has none. Carrying on regardless once wrote a
+        # 9 kB search index over 218 countries and no divisions, a groups index
+        # missing every subnational group, and a coverage matrix that reported
+        # nothing below the national level -- all of it committed and deployed,
+        # because every per-country shard was left untouched and only the
+        # aggregates looked "rebuilt".
+        raise SystemExit(
+            f"missing {path}\n"
+            "The CGAZ boundary files are not in git (they are ~550 MB).\n"
+            "Run: python3 scripts/fetch_boundaries.py --cgaz")
     out: list[dict[str, Any]] = []
     with fiona.open(path) as src:
         for feat in src:
@@ -265,7 +275,7 @@ def apply_curated(entity: dict[str, Any], row: dict[str, Any], prov: dict[str, A
 def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     """Adapter values override seeds; gap markers never overwrite real values."""
     for key, value in row.items():
-        if key in {"id", "level", "name", "parent", "parent_name"}:
+        if key in {"id", "level", "name", "parent", "parent_name", "parent_aliases"}:
             continue
         if key == "sources":
             entity.setdefault("sources", []).extend(value or [])
@@ -343,7 +353,15 @@ def match_admin2(row: dict[str, Any], by_name: dict[str, list[dict[str, Any]]],
     """
     parent_name = row.get("parent_name")
     if parent_name:
-        parent, _ = match_name({"name": parent_name}, admin1)
+        # The parent name is matched with aliases too, because boundary files
+        # and statistical agencies disagree about renamings: CGAZ still calls
+        # Mexico City "Distrito Federal", a name it lost in 2016, so without an
+        # alias none of its sixteen alcaldias can be scoped to it and the ones
+        # sharing a name with a municipio elsewhere -- Benito Juarez, also in
+        # Quintana Roo; Cuauhtemoc, also in Chihuahua and Colima -- are refused
+        # as ambiguous.
+        parent, _ = match_name({"name": parent_name,
+                                "aliases": row.get("parent_aliases") or []}, admin1)
         if parent is not None:
             entity, how = match_name(row, scoped_by_parent(by_name, parent["id"]))
             if entity is not None:

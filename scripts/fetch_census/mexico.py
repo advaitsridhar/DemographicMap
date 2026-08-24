@@ -32,7 +32,7 @@ note says so, because "Mexico: indigenous language 6.1%" beside India's mother
 tongues would otherwise read as the same kind of measurement.
 
 Usage:
-    python -m scripts.fetch_census.mexico --level municipality
+    python -m scripts.fetch_census.mexico --level both
 """
 
 from __future__ import annotations
@@ -296,13 +296,25 @@ def compose(row: dict[str, str], religion: dict[str, str]) -> dict[str, Any]:
     return out
 
 
-def build(level: str) -> list[dict[str, Any]]:
+# CGAZ carries the pre-2016 name for Mexico City. INEGI uses the current one,
+# so the boundary file and the census disagree about the parent of sixteen
+# alcaldias; the alias is how the matcher is told they are the same place.
+STATE_ALIASES = {"Ciudad de México": ["Distrito Federal", "Mexico City"]}
+
+
+def build(levels: set[str]) -> dict[str, list[dict[str, Any]]]:
+    """Records for the requested levels, from one pass over the 190 MB file.
+
+    Both levels are read together because the archive is downloaded, unzipped
+    and scanned once either way; asking for states and municipios separately
+    costs two full passes to answer from the same rows.
+    """
     archive = load()
     religion = religion_columns(archive)
     data = member(archive, "conjunto_de_datos")
     log(f"  reading {data}")
 
-    out: list[dict[str, Any]] = []
+    out: dict[str, list[dict[str, Any]]] = {level: [] for level in levels}
     seen: dict[str, int] = {}
     checked = False
     for row in read_csv(archive, data):
@@ -313,24 +325,26 @@ def build(level: str) -> list[dict[str, Any]]:
                 check_national(row)
                 checked = True
             continue
-        if kind != level:
+        if kind not in out:
             continue
 
+        municipal = kind == "municipality"
         state = (row.get("NOM_ENT") or "").strip()
-        name = (row.get("NOM_MUN") or "").strip() if level == "municipality" else state
+        name = (row.get("NOM_MUN") or "").strip() if municipal else state
         code = f'{(row.get("ENTIDAD") or "").strip()}{(row.get("MUN") or "").strip()}'
         total = number(row.get("POBTOT"))
         fields = compose(row, religion)
 
-        out.append(record(
+        out[kind].append(record(
             f"MEX-{code}",
             name,
-            level="admin2" if level == "municipality" else "admin1",
-            parent=f'MEX-{(row.get("ENTIDAD") or "").strip()}' if level == "municipality" else "MEX",
+            level="admin2" if municipal else "admin1",
+            parent=f'MEX-{(row.get("ENTIDAD") or "").strip()}' if municipal else "MEX",
             country="MEX",
             # Municipio names repeat across states -- there is a Hidalgo in
             # several -- so the state travels with the row for the matcher.
-            parent_name=state if level == "municipality" else None,
+            parent_name=state if municipal else None,
+            parent_aliases=STATE_ALIASES.get(state) if municipal else None,
             codes={"inegi": code},
             population=(measure(int(total), year=YEAR, source=SOURCE)
                         if total else gap(NOT_AVAILABLE)),
@@ -348,15 +362,23 @@ def build(level: str) -> list[dict[str, Any]]:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--level", default="municipality",
-                    choices=["state", "municipality"])
-    ap.add_argument("--out", type=Path, default=None)
+    ap.add_argument("--level", default="both",
+                    choices=["state", "municipality", "both"])
+    ap.add_argument("--out", type=Path, default=None,
+                    help="write to this path instead of data/processed "
+                         "(one level only)")
     args = ap.parse_args()
 
-    records = build(args.level)
-    name = "mexico_state.json" if args.level == "state" else "mexico_municipality.json"
-    write_json(args.out or (PROCESSED / name), records)
-    log(f"  {len(records)} {args.level} records")
+    levels = ["state", "municipality"] if args.level == "both" else [args.level]
+    if args.out and len(levels) > 1:
+        raise SystemExit("--out writes one file; pick a single --level")
+
+    built = build(set(levels))
+    for level in levels:
+        name = ("mexico_state.json" if level == "state"
+                else "mexico_municipality.json")
+        write_json(args.out or (PROCESSED / name), built[level])
+        log(f"  {len(built[level])} {level} records")
     return 0
 
 

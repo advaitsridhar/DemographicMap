@@ -3,11 +3,18 @@ name: Run one adapter
 # The full refresh runs every source and takes the better part of an hour, which
 # is the wrong tool for adding a single country: most of that time is spent
 # re-fetching data that has not changed, and any of those sources being slow or
-# down delays the one thing being worked on. This runs one adapter, rebuilds the
-# site data from whatever is already committed, and pushes the result.
+# down delays the one thing being worked on. This runs one adapter and pushes
+# its output under data/processed.
 #
 # It exists because the build sandbox cannot reach statistical hosts. The
 # adapter has to run somewhere with open egress, and this is that somewhere.
+#
+# It deliberately does NOT rebuild site/data. That join needs the CGAZ boundary
+# files, which are ~550 MB and not in git, so this runner has no shapes; the
+# first version of this workflow ran the build anyway and committed a search
+# index with every subnational division missing. Fetching half a gigabyte of
+# geometry on every adapter run to avoid that is the wrong trade -- the site
+# rebuild belongs where the boundaries already are.
 on:
   # workflow_dispatch is only offered for workflows already on the default
   # branch, so a new one cannot be dispatched from the branch that adds it --
@@ -25,7 +32,7 @@ on:
   workflow_dispatch:
     inputs:
       command:
-        description: "Adapter module and arguments, e.g. 'scripts.fetch_census.mexico --level municipality'"
+        description: "Adapter module and arguments, e.g. 'scripts.fetch_census.mexico --level both'"
         type: string
         required: true
       commit:
@@ -53,20 +60,17 @@ jobs:
 
       - name: Run the adapter
         env:
-          ADAPTER: ${{ inputs.command || 'scripts.fetch_census.mexico --level municipality' }}
+          ADAPTER: ${{ inputs.command || 'scripts.fetch_census.mexico --level both' }}
         run: python3 -m $ADAPTER
-
-      - name: Rebuild site data
-        run: python3 scripts/build_entities.py
 
       - name: Commit
         if: inputs.commit != 'false'
         env:
-          ADAPTER: ${{ inputs.command || 'scripts.fetch_census.mexico --level municipality' }}
+          ADAPTER: ${{ inputs.command || 'scripts.fetch_census.mexico --level both' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A data/processed site/data
+          git add -A data/processed
           if git diff --cached --quiet; then
             echo "nothing changed" >> "$GITHUB_STEP_SUMMARY"
             exit 0
@@ -74,3 +78,5 @@ jobs:
           git diff --cached --stat >> "$GITHUB_STEP_SUMMARY"
           git commit -m "Data: $ADAPTER"
           git push origin HEAD:${{ github.ref_name }}
+          echo "Now run scripts/build_entities.py where the boundaries are." \
+            >> "$GITHUB_STEP_SUMMARY"
