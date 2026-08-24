@@ -48,9 +48,10 @@ RELIGION: dict[str, tuple[str, ...]] = {
     ),
     "Islam": ("Islam", "Muslim"),
     "Hinduism": ("Hindu", "Hinduism"),
-    "Buddhism": ("Buddhist", "Buddhism"),
+    # "Bouddha" is how Nepal's census writes it.
+    "Buddhism": ("Buddhist", "Buddhism", "Bouddha"),
     "Judaism": ("Jewish", "Judaism"),
-    "Sikhism": ("Sikh", "Sikhism"),
+    "Sikhism": ("Sikh", "Sikhism", "Sikha"),
     "Jainism": ("Jain", "Jainism"),
     "Taoism and folk religion": ("Taoist", "Taoism"),
     "Spiritism and Afro-Brazilian religions": (
@@ -91,6 +92,13 @@ LANGUAGE: dict[str, tuple[str, ...]] = {
     "Italian": ("Italian",),
     "Romansh": ("Romansh",),
     "English": ("English",),
+    # Nepal's census writes the language of the Newar people as
+    # "Nepalbhasha(Newari)"; it is the same language Wikidata and the Factbook
+    # call Newari.
+    "Newari": ("Newari", "Nepalbhasha(Newari)", "Nepalbhasha (Newari)"),
+    "Nepali": ("Nepali",),
+    "Maithili": ("Maithili",),
+    "Bhojpuri": ("Bhojpuri",),
 }
 
 # Ethnicity is not merged at all. Every country's categories are an artefact of
