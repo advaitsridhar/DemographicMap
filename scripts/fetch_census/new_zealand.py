@@ -211,6 +211,16 @@ def levels(xml: str) -> dict[str, str]:
 # Assembly
 # ---------------------------------------------------------------------------
 
+# Spellings the boundary file uses for an area Stats NZ names otherwise. Only
+# one differs, and it is the well-known one: the region took the "Whanganui"
+# spelling in 2015 and CGAZ still carries "Wanganui", which normalisation
+# cannot bridge because the h is a letter rather than an accent.
+ALIASES = {
+    "Manawatū-Whanganui Region": ("Manawatu-Wanganui Region",
+                                  "Manawatu-Whanganui Region",
+                                  "Manawatū-Wanganui Region"),
+}
+
 FIELD_NOTES = {
     "ethnicity": (
         "Total response ethnicity: a person may report more than one, so the "
@@ -359,6 +369,7 @@ def build(key: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
             continue
         record_ = record(
             f"NZL-{code}", name,
+            aliases=list(ALIASES.get(name, ())) or None,
             level=level, parent="NZL" if level == "admin1" else None,
             country="NZL",
             population=(measure(population, year=YEAR, source=SOURCE)
