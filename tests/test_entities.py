@@ -640,3 +640,42 @@ class SingaporePlanningAreas(unittest.TestCase):
         self.assertIn("IndianLanguages_OtherIndianLanguages_Total1",
                       self.sa.LANGUAGE_COLUMNS)
         self.assertNotIn("IndianLanguages_Total", self.sa.LANGUAGE_COLUMNS)
+
+
+class SwitzerlandMainLanguages(unittest.TestCase):
+    """A sample survey where a person may name up to three languages."""
+
+    def setUp(self):
+        from scripts.fetch_census import switzerland
+        self.ch = switzerland
+
+    def test_bilingual_canton_names_map_to_the_boundary_spelling(self):
+        self.assertEqual(self.ch.clean("Bern / Berne"), "Bern")
+        self.assertEqual(self.ch.clean("Valais / Wallis"), "Valais")
+        # The workbook's sheet tabs space the two names instead of slashing
+        # them; the Canton sheet does not, so only the slashed form is aliased.
+        self.assertEqual(self.ch.clean("Fribourg / Freiburg"), "Fribourg")
+        self.assertEqual(self.ch.clean("Zürich"), "Zürich")
+
+    def test_suppressed_cells_are_missing_not_zero(self):
+        # 'X' marks fewer than five observations behind the estimate.
+        self.assertIsNone(self.ch.number("X"))
+        self.assertIsNone(self.ch.number(None))
+        self.assertEqual(self.ch.number(87.4), 87.4)
+
+    def test_the_national_row_must_be_present_to_check_against(self):
+        # Without it the canton sum is compared with itself and cannot fail.
+        with self.assertRaises(SystemExit) as caught:
+            self.ch.check([{"name": "Uri", "total": 1.0, "counts": {}, "dropped": []}],
+                          {"name": "Total", "total": 1.0, "counts": {}})
+        self.assertIn("no language columns", str(caught.exception))
+
+    def test_cantons_must_reproduce_the_national_total(self):
+        with self.assertRaises(SystemExit) as caught:
+            self.ch.check([{"name": "Uri", "total": 100.0, "counts": {}, "dropped": []}],
+                          {"name": "Total", "total": 999.0, "counts": {"German": 1.0}})
+        self.assertIn("cantons sum to", str(caught.exception))
+
+    def test_the_note_says_shares_exceed_one_hundred_percent(self):
+        self.assertIn("more than 100%", self.ch.NOTE)
+        self.assertIn("estimate", self.ch.NOTE)

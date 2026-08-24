@@ -75,10 +75,33 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Brazil | IBGE SIDRA tables 9514 / 9605 / 10086 | state, municipality | *Cor ou raça* is self-declared skin colour (branca, preta, parda, amarela, indígena) — not equivalent to ethnicity elsewhere. |
 | EU | Eurostat `demo_r_pjangrp3`, `demo_r_pjanind3` | NUTS-2, NUTS-3 | Population and age everywhere; **no** ethnicity or religion — those are national census questions and only some states ask them. |
 | Australia | ABS 2021 Census `C21_G14`, `C21_G08` | state, LGA, SA3 | Ancestry is multi-response (up to two per person), so shares are of responses and exceed 100%. No ethnicity question exists. |
+| Switzerland | FSO structural survey 2024, main languages | canton | Main languages for all 26 cantons. A person may name up to three, so shares exceed 100%. |
 | Singapore | Census 2020 + GHS 2015 planning-area tables | planning area |Ethnicity, religion and language for the planning areas, on three different bases. |
 | Singapore | SingStat Table Builder M810771 | planning region | Resident population, sex ratio and a derived median age for the 5 regions. Religion, ethnicity and language are collected but not published at this geography. |
 | Sri Lanka | Census of Population and Housing 2024, tables A1–A3 | province, district | Population, sex ratio, religion and ethnicity for all 25 districts and 9 provinces. |
 | India | Census 2011 tables C-01, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. |
+
+### Switzerland: a survey, and up to three languages per person
+
+The Federal Statistical Office publishes main languages by canton as a
+spreadsheet, so it lives in `data/raw/switzerland/`. Two properties decide what
+the records may claim.
+
+**A person may name up to three main languages.** The columns sum to 118.9% of
+the population nationally, so the shares are of *responses*, not of people —
+the same shape as Australian ancestry, and stated on every record rather than
+left for a reader to notice the bars overflow.
+
+**It is a sample survey, not a census.** Every figure ships with a confidence
+interval, some enormous: Uri's French estimate carries ±57%. Estimates whose
+interval exceeds ±25% of the estimate are dropped rather than shown, and the
+note names what was dropped and why. `X` marks cells the FSO suppressed for
+disclosure control — fewer than five observations — and is not zero.
+
+The check reconciles the 26 cantons against the sheet's own national row. An
+early version read the canton rows only, missed that row, and fell back to
+comparing the canton sum with itself, which cannot fail; the adapter now
+refuses to run if the national row is absent.
 
 ### Singapore's planning areas: three tables, three populations
 

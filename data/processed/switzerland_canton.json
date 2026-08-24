@@ -1,0 +1,1798 @@
+[
+  {
+    "id": "CHE-Zürich",
+    "level": "admin1",
+    "name": "Zürich",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1588080,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 79.4,
+        "count": 1261343
+      },
+      {
+        "group": "Other languages",
+        "pct": 23.9,
+        "count": 379911
+      },
+      {
+        "group": "English",
+        "pct": 9.6,
+        "count": 152296
+      },
+      {
+        "group": "Italian",
+        "pct": 5.5,
+        "count": 86662
+      },
+      {
+        "group": "French",
+        "pct": 3.0,
+        "count": 47434
+      },
+      {
+        "group": "Romansh",
+        "pct": 0.2,
+        "count": 3930
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Zürich"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown.",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Bern",
+    "level": "admin1",
+    "name": "Bern",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1048181,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 82.1,
+        "count": 860140
+      },
+      {
+        "group": "Other languages",
+        "pct": 15.5,
+        "count": 162377
+      },
+      {
+        "group": "French",
+        "pct": 10.2,
+        "count": 107251
+      },
+      {
+        "group": "English",
+        "pct": 4.4,
+        "count": 45731
+      },
+      {
+        "group": "Italian",
+        "pct": 3.1,
+        "count": 32202
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Bern"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±26%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Luzern",
+    "level": "admin1",
+    "name": "Luzern",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 429943,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 86.2,
+        "count": 370685
+      },
+      {
+        "group": "Other languages",
+        "pct": 19.3,
+        "count": 82765
+      },
+      {
+        "group": "English",
+        "pct": 5.2,
+        "count": 22151
+      },
+      {
+        "group": "Italian",
+        "pct": 3.3,
+        "count": 14345
+      },
+      {
+        "group": "French",
+        "pct": 1.3,
+        "count": 5547
+      },
+      {
+        "group": "Romansh",
+        "pct": 0.2,
+        "count": 851
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Luzern"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown.",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Uri",
+    "level": "admin1",
+    "name": "Uri",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 37469,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 90.5,
+        "count": 33918
+      },
+      {
+        "group": "Other languages",
+        "pct": 11.9,
+        "count": 4448
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Uri"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: French (±57%), Italian (±39%), Romansh (suppressed), English (±28%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Schwyz",
+    "level": "admin1",
+    "name": "Schwyz",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 166108,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 86.3,
+        "count": 143334
+      },
+      {
+        "group": "Other languages",
+        "pct": 16.8,
+        "count": 27908
+      },
+      {
+        "group": "English",
+        "pct": 6.2,
+        "count": 10243
+      },
+      {
+        "group": "Italian",
+        "pct": 3.3,
+        "count": 5527
+      },
+      {
+        "group": "French",
+        "pct": 1.7,
+        "count": 2855
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Schwyz"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±43%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Obwalden",
+    "level": "admin1",
+    "name": "Obwalden",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 38946,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 89.2,
+        "count": 34755
+      },
+      {
+        "group": "Other languages",
+        "pct": 14.8,
+        "count": 5769
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Obwalden"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: French (±41%), Italian (±39%), Romansh (±91%), English (±27%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Nidwalden",
+    "level": "admin1",
+    "name": "Nidwalden",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 44590,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 89.2,
+        "count": 39791
+      },
+      {
+        "group": "Other languages",
+        "pct": 12.1,
+        "count": 5403
+      },
+      {
+        "group": "English",
+        "pct": 5.6,
+        "count": 2515
+      },
+      {
+        "group": "Italian",
+        "pct": 3.5,
+        "count": 1561
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Nidwalden"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: French (±35%), Romansh (suppressed).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Glarus",
+    "level": "admin1",
+    "name": "Glarus",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 41311,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 84.7,
+        "count": 35005
+      },
+      {
+        "group": "Other languages",
+        "pct": 20.2,
+        "count": 8325
+      },
+      {
+        "group": "Italian",
+        "pct": 4.9,
+        "count": 2020
+      },
+      {
+        "group": "English",
+        "pct": 4.1,
+        "count": 1691
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Glarus"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: French (±56%), Romansh (±98%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Zug",
+    "level": "admin1",
+    "name": "Zug",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 130734,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 77.8,
+        "count": 101686
+      },
+      {
+        "group": "Other languages",
+        "pct": 22.0,
+        "count": 28812
+      },
+      {
+        "group": "English",
+        "pct": 13.4,
+        "count": 17533
+      },
+      {
+        "group": "Italian",
+        "pct": 3.8,
+        "count": 5030
+      },
+      {
+        "group": "French",
+        "pct": 3.6,
+        "count": 4709
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Zug"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±35%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Fribourg",
+    "level": "admin1",
+    "name": "Fribourg",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 339643,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "French",
+        "pct": 69.7,
+        "count": 236802
+      },
+      {
+        "group": "German",
+        "pct": 24.1,
+        "count": 81790
+      },
+      {
+        "group": "Other languages",
+        "pct": 18.5,
+        "count": 62874
+      },
+      {
+        "group": "English",
+        "pct": 3.5,
+        "count": 11849
+      },
+      {
+        "group": "Italian",
+        "pct": 2.4,
+        "count": 8257
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Fribourg"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±70%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Solothurn",
+    "level": "admin1",
+    "name": "Solothurn",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 285487,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 85.8,
+        "count": 244809
+      },
+      {
+        "group": "Other languages",
+        "pct": 20.4,
+        "count": 58220
+      },
+      {
+        "group": "Italian",
+        "pct": 4.3,
+        "count": 12410
+      },
+      {
+        "group": "English",
+        "pct": 4.3,
+        "count": 12395
+      },
+      {
+        "group": "French",
+        "pct": 1.8,
+        "count": 5254
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Solothurn"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±51%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Basel-Stadt",
+    "level": "admin1",
+    "name": "Basel-Stadt",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 195895,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 74.8,
+        "count": 146455
+      },
+      {
+        "group": "Other languages",
+        "pct": 28.0,
+        "count": 54925
+      },
+      {
+        "group": "English",
+        "pct": 11.9,
+        "count": 23333
+      },
+      {
+        "group": "Italian",
+        "pct": 5.7,
+        "count": 11201
+      },
+      {
+        "group": "French",
+        "pct": 4.3,
+        "count": 8519
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Basel-Stadt"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±77%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Basel-Landschaft",
+    "level": "admin1",
+    "name": "Basel-Landschaft",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 296353,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 84.4,
+        "count": 250206
+      },
+      {
+        "group": "Other languages",
+        "pct": 18.9,
+        "count": 55996
+      },
+      {
+        "group": "English",
+        "pct": 7.3,
+        "count": 21610
+      },
+      {
+        "group": "Italian",
+        "pct": 5.3,
+        "count": 15794
+      },
+      {
+        "group": "French",
+        "pct": 2.9,
+        "count": 8519
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Basel-Landschaft"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±53%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Schaffhausen",
+    "level": "admin1",
+    "name": "Schaffhausen",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 87066,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 87.1,
+        "count": 75863
+      },
+      {
+        "group": "Other languages",
+        "pct": 19.8,
+        "count": 17262
+      },
+      {
+        "group": "English",
+        "pct": 6.0,
+        "count": 5221
+      },
+      {
+        "group": "Italian",
+        "pct": 3.7,
+        "count": 3211
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Schaffhausen"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: French (±26%), Romansh (suppressed).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Appenzell-Ausserrhoden",
+    "level": "admin1",
+    "name": "Appenzell Ausserrhoden",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 55740,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 91.2,
+        "count": 50842
+      },
+      {
+        "group": "Other languages",
+        "pct": 13.5,
+        "count": 7500
+      },
+      {
+        "group": "English",
+        "pct": 3.1,
+        "count": 1749
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Appenzell Ausserrhoden"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: French (±37%), Italian (±28%), Romansh (±75%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Appenzell-Innerrhoden",
+    "level": "admin1",
+    "name": "Appenzell Innerrhoden",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 16355,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 93.1,
+        "count": 15218
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Appenzell Innerrhoden"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: French (±82%), Italian (±44%), Romansh (suppressed), English (±49%), Other languages (±27%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-St.-Gallen",
+    "level": "admin1",
+    "name": "St. Gallen",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 531119,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 85.9,
+        "count": 456342
+      },
+      {
+        "group": "Other languages",
+        "pct": 20.8,
+        "count": 110631
+      },
+      {
+        "group": "English",
+        "pct": 4.6,
+        "count": 24442
+      },
+      {
+        "group": "Italian",
+        "pct": 3.2,
+        "count": 16934
+      },
+      {
+        "group": "French",
+        "pct": 0.9,
+        "count": 5023
+      },
+      {
+        "group": "Romansh",
+        "pct": 0.3,
+        "count": 1741
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "St. Gallen"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown.",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Graubünden",
+    "level": "admin1",
+    "name": "Graubünden",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 202369,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 75.1,
+        "count": 151894
+      },
+      {
+        "group": "Other languages",
+        "pct": 14.0,
+        "count": 28298
+      },
+      {
+        "group": "Italian",
+        "pct": 12.8,
+        "count": 25900
+      },
+      {
+        "group": "Romansh",
+        "pct": 12.3,
+        "count": 24883
+      },
+      {
+        "group": "English",
+        "pct": 3.3,
+        "count": 6691
+      },
+      {
+        "group": "French",
+        "pct": 1.1,
+        "count": 2262
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Graubünden"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown.",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Aargau",
+    "level": "admin1",
+    "name": "Aargau",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 725074,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 84.3,
+        "count": 610893
+      },
+      {
+        "group": "Other languages",
+        "pct": 22.8,
+        "count": 165482
+      },
+      {
+        "group": "English",
+        "pct": 5.6,
+        "count": 40778
+      },
+      {
+        "group": "Italian",
+        "pct": 5.0,
+        "count": 36329
+      },
+      {
+        "group": "French",
+        "pct": 1.7,
+        "count": 12270
+      },
+      {
+        "group": "Romansh",
+        "pct": 0.1,
+        "count": 1073
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Aargau"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown.",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Thurgau",
+    "level": "admin1",
+    "name": "Thurgau",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 295432,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 88.1,
+        "count": 260375
+      },
+      {
+        "group": "Other languages",
+        "pct": 17.7,
+        "count": 52227
+      },
+      {
+        "group": "Italian",
+        "pct": 3.7,
+        "count": 11031
+      },
+      {
+        "group": "English",
+        "pct": 3.4,
+        "count": 10154
+      },
+      {
+        "group": "French",
+        "pct": 1.1,
+        "count": 3233
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Thurgau"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±43%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Ticino",
+    "level": "admin1",
+    "name": "Ticino",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 352214,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Italian",
+        "pct": 88.1,
+        "count": 310337
+      },
+      {
+        "group": "Other languages",
+        "pct": 13.2,
+        "count": 46356
+      },
+      {
+        "group": "German",
+        "pct": 8.4,
+        "count": 29437
+      },
+      {
+        "group": "English",
+        "pct": 4.2,
+        "count": 14753
+      },
+      {
+        "group": "French",
+        "pct": 3.6,
+        "count": 12769
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Ticino"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±33%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Vaud",
+    "level": "admin1",
+    "name": "Vaud",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 832130,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "French",
+        "pct": 82.4,
+        "count": 685288
+      },
+      {
+        "group": "Other languages",
+        "pct": 23.3,
+        "count": 193780
+      },
+      {
+        "group": "English",
+        "pct": 8.0,
+        "count": 66847
+      },
+      {
+        "group": "Italian",
+        "pct": 4.5,
+        "count": 37815
+      },
+      {
+        "group": "German",
+        "pct": 4.2,
+        "count": 34858
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Vaud"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±36%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Valais",
+    "level": "admin1",
+    "name": "Valais",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 364225,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "French",
+        "pct": 66.2,
+        "count": 241187
+      },
+      {
+        "group": "German",
+        "pct": 23.5,
+        "count": 85458
+      },
+      {
+        "group": "Other languages",
+        "pct": 17.9,
+        "count": 65212
+      },
+      {
+        "group": "English",
+        "pct": 4.2,
+        "count": 15423
+      },
+      {
+        "group": "Italian",
+        "pct": 4.0,
+        "count": 14441
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Valais"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±62%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Neuchâtel",
+    "level": "admin1",
+    "name": "Neuchâtel",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 176462,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "French",
+        "pct": 87.0,
+        "count": 153573
+      },
+      {
+        "group": "Other languages",
+        "pct": 18.7,
+        "count": 32998
+      },
+      {
+        "group": "Italian",
+        "pct": 4.4,
+        "count": 7774
+      },
+      {
+        "group": "English",
+        "pct": 4.0,
+        "count": 7050
+      },
+      {
+        "group": "German",
+        "pct": 3.9,
+        "count": 6794
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Neuchâtel"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±71%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Genève",
+    "level": "admin1",
+    "name": "Genève",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 482070,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "French",
+        "pct": 79.1,
+        "count": 381419
+      },
+      {
+        "group": "Other languages",
+        "pct": 29.5,
+        "count": 142083
+      },
+      {
+        "group": "English",
+        "pct": 11.0,
+        "count": 52993
+      },
+      {
+        "group": "Italian",
+        "pct": 5.3,
+        "count": 25697
+      },
+      {
+        "group": "German",
+        "pct": 3.1,
+        "count": 14743
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Genève"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±47%).",
+    "language_year": 2024
+  },
+  {
+    "id": "CHE-Jura",
+    "level": "admin1",
+    "name": "Jura",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 73434,
+      "unit": "permanent residents in private households",
+      "year": 2024,
+      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "French",
+        "pct": 91.3,
+        "count": 67011
+      },
+      {
+        "group": "Other languages",
+        "pct": 11.2,
+        "count": 8194
+      },
+      {
+        "group": "German",
+        "pct": 4.7,
+        "count": 3433
+      },
+      {
+        "group": "English",
+        "pct": 2.4,
+        "count": 1732
+      },
+      {
+        "group": "Italian",
+        "pct": 2.2,
+        "count": 1635
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language/population",
+        "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
+        "url": "https://www.bfs.admin.ch/",
+        "year": 2024,
+        "note": "Permanent resident population in private households; diplomats and people in collective households are excluded."
+      }
+    ],
+    "codes": {
+      "canton": "Jura"
+    },
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (suppressed).",
+    "language_year": 2024
+  }
+]
