@@ -12,7 +12,7 @@ on:
       kind:
         description: "Source type"
         type: choice
-        options: [arcgis, url, pdf, datagovsg, pxweb, links, heads]
+        options: [arcgis, url, pdf, datagovsg, pxweb, links, heads, zipcsv]
         default: arcgis
       target:
         description: "ArcGIS item id or URL; kind=url/pdf a direct URL; kind=datagovsg a search term"
@@ -82,6 +82,12 @@ jobs:
         if: inputs.kind == 'heads'
         run: |
           python3 scripts/probe_links.py --head "${{ inputs.target }}"
+
+      - name: Probe zipped CSV
+        if: inputs.kind == 'zipcsv'
+        run: |
+          python3 scripts/probe_zip.py "${{ inputs.target }}" \
+            --match "${{ inputs.terms }}" --rows 2
 
       - name: Probe plain URL
         if: inputs.kind == 'url'
