@@ -1,8 +1,24 @@
-page: https://api.data.stats.govt.nz/rest/dataflow/STATSNZ/CEN23_ECI_017/1.0
-  unreachable: HTTPError: HTTP Error 401: Unauthorized
-page: https://api.data.stats.govt.nz/rest/v2/data/dataflow/STATSNZ/CEN23_ECI_017/1.0/all
-  unreachable: HTTPError: HTTP Error 401: Unauthorized
-page: https://api.data.stats.govt.nz/rest/data/CEN23_ECI_017/all
-  unreachable: HTTPError: HTTP Error 401: Unauthorized
-page: https://api.data.stats.govt.nz/public/rest/data/STATSNZ,CEN23_ECI_017,1.0/all
-  unreachable: HTTPError: HTTP Error 404: Not Found
+  key found in DEMOGRAPHICMAP (100 characters)
+
+  dataflow (known to be open)
+    https://api.data.stats.govt.nz/rest/dataflow/STATSNZ/CEN23_ECI_017/1.0
+    Ocp-Apim-Subscription-Key    HTTP 401
+    Subscription-Key             HTTP 401
+    x-api-key                    HTTP 401
+    api-key                      HTTP 401
+
+  dataflow + references
+    https://api.data.stats.govt.nz/rest/dataflow/STATSNZ/CEN23_ECI_017/1.0?references=all
+    Ocp-Apim-Subscription-Key    HTTP 401
+    Subscription-Key             HTTP 401
+    x-api-key                    HTTP 401
+    api-key                      HTTP 401
+
+  data, SDMX-CSV
+    https://api.data.stats.govt.nz/rest/data/STATSNZ,CEN23_ECI_017,1.0/all
+    Ocp-Apim-Subscription-Key    HTTP 401
+    Subscription-Key             HTTP 401
+    x-api-key                    HTTP 401
+    api-key                      HTTP 401
+
+  a key was found and every request was still refused; either the key is not valid for this API or it is sent another way
