@@ -25,6 +25,7 @@ window.DataStore = (function () {
   const inflight = new Map();
   const listeners = new Set();
   let coverage = null;
+  let groups = null;
 
   function on(fn) { listeners.add(fn); return () => listeners.delete(fn); }
   function emit(event) { listeners.forEach((fn) => { try { fn(event); } catch (e) { console.error(e); } }); }
@@ -110,16 +111,45 @@ window.DataStore = (function () {
     return out;
   }
 
+  // How many attribute shards to fetch at once. Pinning the map to second-level
+  // divisions at world view asks for all 218 of them -- 48 MB -- and firing
+  // that as one Promise.all queues hundreds of requests the browser will not
+  // run in parallel anyway, delaying the first colour until nearly the last
+  // byte. In batches the map fills in as the data arrives.
+  const BATCH = 6;
+
   async function ensureLoaded(iso3List, level) {
-    const pending = iso3List.filter((iso3) => iso3 && !loaded[level === 1 ? "admin1" : "admin2"].has(iso3));
+    const key = level === 1 ? "admin1" : "admin2";
+    const pending = iso3List.filter((iso3) => iso3 && !loaded[key].has(iso3));
     if (!pending.length) return false;
-    await Promise.all(pending.map((iso3) => loadLevel(iso3, level)));
+    // Progress is counted per shard, not per batch. The largest files land last
+    // and one of them is 13 MB, so a batch-sized counter sat at "168 of 174" for
+    // ten seconds at the end and read as a stall.
+    let done = 0;
+    for (let i = 0; i < pending.length; i += BATCH) {
+      const batch = pending.slice(i, i + BATCH);
+      await Promise.all(batch.map((iso3) => loadLevel(iso3, level).then((rows) => {
+        done += 1;
+        emit({ type: "progress", level: key, done, total: pending.length });
+        return rows;
+      })));
+    }
     return true;
   }
 
   async function loadCoverage() {
     if (!coverage) coverage = await getJSON("coverage.json");
     return coverage;
+  }
+
+  // The worldwide list of what can be filtered on, built over every record at
+  // build time. It cannot be derived here: at world zoom the app holds only
+  // country records, so a picker fed from what is loaded would offer nothing
+  // below the national level, and one fed from a single country's shard would
+  // offer only that country's spellings of each group.
+  async function loadGroups() {
+    if (!groups) groups = await getJSON("groups.json");
+    return groups;
   }
 
   function get(id) { return byId.get(id) || null; }
@@ -129,8 +159,9 @@ window.DataStore = (function () {
   function isLoaded(iso3, level) { return loaded[level === 1 ? "admin1" : "admin2"].has(iso3); }
   function all() { return byId; }
 
-  return { loadCountries, loadLevel, ensureLoaded, loadCoverage, get, country,
-           children, countries, isLoaded, all, on, url, loadVersion };
+  return { loadCountries, loadLevel, ensureLoaded, loadCoverage, loadGroups,
+           get, country, children, countries, isLoaded, all, on, url,
+           loadVersion };
 })();
 
 /* ------------------------------------------------------------------ format */

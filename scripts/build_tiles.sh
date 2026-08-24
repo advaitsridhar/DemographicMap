@@ -21,14 +21,16 @@ mkdir -p "$OUT"
 
 # level -> minzoom maxzoom.  Each layer is only tiled over the range at which it
 # is actually drawn, which is what keeps the archives small:
-#   admin0 z0-5, admin1 z0-7, admin2 z4-8.
+#   admin0 z0-5, admin1 z0-7, admin2 z2-8.
 zooms() {
   case "$1" in
     admin0) echo "0 5" ;;
     admin1) echo "0 7" ;;
     # z8 keeps the archive around 25 MB with ~76 m of simplification tolerance,
     # which MapLibre overzooms cleanly past z8. Raise to 9 for ~38 m and ~80 MB.
-    admin2) echo "4 8" ;;
+    # From z2, not z4: the app lets a viewer pin the map to second-level
+    # divisions at world view, and a level with no tiles there shows ocean.
+    admin2) echo "2 8" ;;
     *) echo "0 6" ;;
   esac
 }

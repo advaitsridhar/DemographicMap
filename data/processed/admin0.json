@@ -481,8 +481,9 @@
         "pct": 99.0
       },
       {
-        "group": "European less than",
-        "pct": 1.0
+        "group": "European",
+        "pct": 1.0,
+        "bound": "<"
       }
     ],
     "ethnicity_year": null,
@@ -2672,8 +2673,9 @@
     ],
     "ethnicity": [
       {
-        "group": "Bengali at least",
-        "pct": 99.0
+        "group": "Bengali",
+        "pct": 99.0,
+        "bound": ">"
       },
       {
         "group": "other indigenous ethnic groups",
@@ -3094,8 +3096,9 @@
         "pct": 40.0
       },
       {
-        "group": "German less than",
-        "pct": 1.0
+        "group": "German",
+        "pct": 1.0,
+        "bound": "<"
       }
     ],
     "ethnicity": {
@@ -9279,10 +9282,6 @@
     },
     "religion": [
       {
-        "group": "Christian 93/1%",
-        "pct": 29.9
-      },
-      {
         "group": "Kimbanguist",
         "pct": 2.8
       },
@@ -10483,7 +10482,7 @@
         "pct": 67.6
       },
       {
-        "group": "other , French , Fa d'Ambo spoken in Annobon)",
+        "group": "other",
         "pct": 32.4
       }
     ],
@@ -12444,8 +12443,12 @@
     },
     "religion": [
       {
-        "group": "Muslim 98.0",
-        "pct": 99.0
+        "group": "Muslim",
+        "pct": 98.5,
+        "range": [
+          98.0,
+          99.0
+        ]
       },
       {
         "group": "Christian",
@@ -13209,12 +13212,28 @@
     },
     "religion": [
       {
+        "group": "Greek Orthodox",
+        "pct": 85.5,
+        "range": [
+          81.0,
+          90.0
+        ]
+      },
+      {
         "group": "Muslim",
         "pct": 2.0
       },
       {
         "group": "other",
         "pct": 3.0
+      },
+      {
+        "group": "none",
+        "pct": 9.5,
+        "range": [
+          4.0,
+          15.0
+        ]
       },
       {
         "group": "unspecified",
@@ -14952,7 +14971,7 @@
         "pct": 2.0
       },
       {
-        "group": "persons under 5 or mute",
+        "group": "persons 5 or mute",
         "pct": 3.2
       }
     ],
@@ -15992,8 +16011,24 @@
     },
     "religion": [
       {
+        "group": "Muslim",
+        "pct": 96.5,
+        "range": [
+          95.0,
+          98.0
+        ]
+      },
+      {
         "group": "Christian",
         "pct": 1.0
+      },
+      {
+        "group": "other",
+        "pct": 2.5,
+        "range": [
+          1.0,
+          4.0
+        ]
       }
     ],
     "religion_year": 2015,
@@ -16010,6 +16045,22 @@
       }
     ],
     "ethnicity": [
+      {
+        "group": "Arab",
+        "pct": 77.5,
+        "range": [
+          75.0,
+          80.0
+        ]
+      },
+      {
+        "group": "Kurdish",
+        "pct": 17.5,
+        "range": [
+          15.0,
+          20.0
+        ]
+      },
       {
         "group": "other",
         "pct": 5.0
@@ -20697,8 +20748,9 @@
     },
     "religion": [
       {
-        "group": "Roman Catholic more than",
-        "pct": 90.0
+        "group": "Roman Catholic",
+        "pct": 90.0,
+        "bound": ">"
       }
     ],
     "religion_year": 2006,
@@ -24481,7 +24533,7 @@
         "pct": 1.7
       },
       {
-        "group": "other and Bosnian)",
+        "group": "other",
         "pct": 2.0
       },
       {
@@ -27082,6 +27134,22 @@
     },
     "religion": [
       {
+        "group": "Russian Orthodox",
+        "pct": 17.5,
+        "range": [
+          15.0,
+          20.0
+        ]
+      },
+      {
+        "group": "Muslim",
+        "pct": 12.5,
+        "range": [
+          10.0,
+          15.0
+        ]
+      },
+      {
         "group": "other Christian",
         "pct": 2.0
       }
@@ -29238,8 +29306,34 @@
     "religion_year": 2019,
     "language": [
       {
-        "group": "Krio",
-        "pct": 10.0
+        "group": "English (official",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "regular use limited to literate minority)",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Mende",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Temne",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Krio (English-based Creole",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "spoken by the descendants of freed Jamaican slaves",
+        "pct": null,
+        "pct_status": "not_available"
       }
     ],
     "ethnicity": [
@@ -30092,7 +30186,11 @@
     "language": [
       {
         "group": "English",
-        "pct": 1.0
+        "pct": 1.5,
+        "range": [
+          1.0,
+          2.0
+        ]
       }
     ],
     "ethnicity": [
@@ -30411,7 +30509,7 @@
         "pct": 1.6
       },
       {
-        "group": "other and Khoi or Khoisan or Khoe languages)",
+        "group": "other",
         "pct": 2.0
       }
     ],
@@ -30781,7 +30879,15 @@
     ],
     "ethnicity": [
       {
-        "group": "Nuer approximately",
+        "group": "Dinka",
+        "pct": 37.5,
+        "range": [
+          35.0,
+          40.0
+        ]
+      },
+      {
+        "group": "Nuer",
         "pct": 15.0
       }
     ],
@@ -32067,7 +32173,7 @@
         "pct": 3.9
       },
       {
-        "group": "folk religion approximately",
+        "group": "folk religion",
         "pct": 10.0
       },
       {
@@ -32101,7 +32207,8 @@
     "ethnicity": [
       {
         "group": "Han Chinese",
-        "pct": 70.0
+        "pct": 95.0,
+        "bound": ">"
       },
       {
         "group": "indigenous Malayo-Polynesian peoples",
@@ -34040,8 +34147,24 @@
     ],
     "ethnicity": [
       {
+        "group": "Turkish",
+        "pct": 72.5,
+        "range": [
+          70.0,
+          75.0
+        ]
+      },
+      {
         "group": "Kurdish",
         "pct": 19.0
+      },
+      {
+        "group": "other minorities",
+        "pct": 8.5,
+        "range": [
+          6.0,
+          11.0
+        ]
       }
     ],
     "ethnicity_year": 2016,
@@ -35440,47 +35563,7 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 36.5
-      },
-      {
-        "group": "Protestant",
-        "pct": 5.0
-      },
-      {
-        "group": "African American Cults/Umbanda",
-        "pct": 2.8
-      },
-      {
-        "group": "Jehovah's Witness",
-        "pct": 0.6
-      },
-      {
-        "group": "Church of Jesus Christ",
-        "pct": 0.2
-      },
-      {
-        "group": "other",
-        "pct": 1.0
-      },
-      {
-        "group": "Believer",
-        "pct": 1.8
-      },
-      {
-        "group": "agnostic",
-        "pct": 0.3
-      },
-      {
-        "group": "atheist",
-        "pct": 1.3
-      },
-      {
-        "group": "none",
-        "pct": 47.3
-      },
-      {
-        "group": "unspecified",
-        "pct": 3.4
+        "pct": 42.0
       },
       {
         "group": "Protestant",
@@ -36579,6 +36662,30 @@
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
     "religion": [
+      {
+        "group": "Muslim",
+        "pct": 82.5,
+        "range": [
+          80.0,
+          85.0
+        ]
+      },
+      {
+        "group": "Jewish",
+        "pct": 13.0,
+        "range": [
+          12.0,
+          14.0
+        ]
+      },
+      {
+        "group": "Christian",
+        "pct": 1.75,
+        "range": [
+          1.0,
+          2.5
+        ]
+      },
       {
         "group": "unspecified",
         "pct": 1.0,

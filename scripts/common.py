@@ -254,6 +254,15 @@ def download(url: str, dest: Path, *, force: bool = False, timeout: int = 3000) 
 # ---------------------------------------------------------------------------
 
 _NUM = r"[-+]?\d[\d,]*(?:\.\d+)?"
+# "Greek Orthodox 81-90%" and "Muslim 98.0 - 99.0%": an optional second
+# number makes the range explicit instead of leaving the row unmatched.
+# Words that qualify a figure rather than name a group.
+_QUALIFIER = re.compile(
+    r"\b(?:approximately|approx\.?|about|roughly|around|est\.?|more than|over|"
+    r"at least|greater than|less than|under|up to|nearly|almost|fewer than)\b",
+    re.I)
+_SHARE = re.compile(r"(?:^|\s)(<|>)?\s*(" + _NUM + r")"
+                    r"(?:\s*[-\u2013\u2014]\s*(\d[\d,]*(?:\.\d+)?))?\s*%")
 
 
 def parse_number(text: str | None) -> float | int | None:
@@ -303,6 +312,34 @@ def _split_top_level(text: str, separators: str = ",") -> list[str]:
     return parts
 
 
+_YEAR = re.compile(r"\(\s*\d{4}")
+
+
+def _pick_composition_block(text: str) -> str:
+    """One composition out of a field that may carry several.
+
+    The Factbook separates independent compositions with ``<br><br>``, and by
+    the time the tags are stripped they read as one long list. Uruguay carries a
+    detailed older survey followed by a 2023 estimate, so the merged reading put
+    Roman Catholic in twice and totalled 158.2%.
+
+    The most recent estimate wins, which is the last block carrying a vintage
+    marker. Prose notes are dropped first: the World entry ends with three of
+    them, so "take the last block" would return a sentence about how many
+    languages exist rather than any figures at all.
+    """
+    blocks = [b for b in re.split(r"(?:<br\s*/?>\s*)+|\n{2,}", text) if b.strip()]
+    if len(blocks) < 2:
+        return text
+    usable = [b for b in blocks
+              if not re.match(r"\s*(?:<[^>]+>\s*)*note\b", b, re.I)
+              and re.search(r"\d\s*%", b)]
+    if not usable:
+        return text
+    dated = [b for b in usable if _YEAR.search(b)]
+    return dated[-1] if dated else usable[0]
+
+
 def parse_composition(text: str | None, *, source: str | None = None) -> list[dict[str, Any]] | None:
     """Turn ``"Hindu 79.8%, Muslim 14.2%, other 0.9%"`` into structured shares.
 
@@ -312,6 +349,9 @@ def parse_composition(text: str | None, *, source: str | None = None) -> list[di
     """
     if not text:
         return None
+    # Before the tags go: they are what marks the boundary between two separate
+    # compositions, and stripping them first silently welds the two together.
+    text = _pick_composition_block(text)
     clean = re.sub(r"<[^>]+>", " ", text)
     clean = clean.replace("\u00a0", " ")
     clean = re.sub(r"\s*note\s*\d*\s*:.*$", "", clean, flags=re.I | re.S)
@@ -319,23 +359,83 @@ def parse_composition(text: str | None, *, source: str | None = None) -> list[di
     clean = re.sub(r"\((?:[^()]*?\b(?:est\.|census)\b[^()]*?|\s*\d{4}\s*)\)\s*$", " ", clean)
     # A top-level semicolon introduces commentary, not another group.
     clean = _split_top_level(clean, ";")[0]
+    # A block may open with a heading -- "most-spoken language:" -- which once
+    # stripped of its tags reads as part of the first group's name. Only a short
+    # colon-terminated run before any figure qualifies, so a real label
+    # containing a colon cannot be eaten.
+    clean = re.sub(r"^[^,%:]{0,40}:\s*", "", clean.lstrip())
+    # "1%-2%" is one range, written with a sign on each end. Normalising it to
+    # "1-2%" lets the range arm read it, and lets an aside be judged on how many
+    # figures it really carries rather than how many per-cent signs it contains.
+    clean = re.sub(r"(\d[\d.,]*)\s*%\s*([-\u2013\u2014])\s*(\d[\d.,]*)\s*%",
+                   r"\1\2\3%", clean)
 
     out: list[dict[str, Any]] = []
     for part in _split_top_level(clean, ","):
         part = part.strip(" .")
         if not part:
             continue
-        match = re.search(r"(?:^|\s)(<|>)?\s*(" + _NUM + r")\s*%", part)
-        if not match:
-            continue
+        # Parenthetical asides go before the figure is read, not after. They
+        # carry percentages of their own -- Iraq's "Muslim (official) 95-98%
+        # (Shia 61-64%, Sunni 29-34%)" -- and a search that can see inside them
+        # picks up a sub-split and reports it as the group's own share. It also
+        # means a country whose only figures are inside an aside, as Saudi
+        # Arabia's are, yields nothing and stays an honest gap.
+        bare = re.sub(r"\([^()]*\)", " ", part)
+        match = _SHARE.search(bare)
+        if match:
+            part = bare
+        else:
+            # Nothing outside the aside. Some asides do carry the group's own
+            # share -- Sudan's "Sudanese Arab (approximately 70%)", the Solomon
+            # Islands' "English (... spoken by only 1%-2% ...)" -- and dropping
+            # those loses the only figure the entry has.
+            #
+            # Others carry a breakdown of the group instead, or a statistic
+            # about something else entirely. Saudi Arabia's "(official; citizens
+            # are 85-90% Sunni and 10-12% Shia)" would otherwise be read as the
+            # Muslim share, and Sierra Leone's aside about Krio being "a first
+            # language for 10%" as the country's whole language composition.
+            # Both of those list several things: a semicolon, or more than one
+            # figure. One figure and no list is the case worth trusting.
+            aside = " ".join(re.findall(r"\(([^()]*)\)", part))
+            if ";" in aside or aside.count("%") != 1:
+                continue
+            match = _SHARE.search(part)
+            if not match:
+                continue
         bound = match.group(1)
-        pct = float(match.group(2).replace(",", ""))
+        low = float(match.group(2).replace(",", ""))
+        high = match.group(3)
+        # A range is the Factbook's way of saying it does not know precisely.
+        # Dropping these rows -- which is what a pattern without the range arm
+        # did -- left Greece with no Orthodox, Serbia with neither of its two
+        # largest groups, and Saudi Arabia and the West Bank with nothing at
+        # all, while the remaining slivers still read as a whole composition.
+        # The midpoint is used and the range kept, so the figure can be shown
+        # as the estimate it is rather than as false precision.
+        pct = low if high is None else (low + float(high.replace(",", ""))) / 2
         label = part[: match.start()].strip(" .-")
-        label = re.sub(r"\s*\([^)]*\)?\s*", " ", label).strip(" .-")
+        label = re.sub(r"\s*\([^)]*\)?\s*", " ", label)
         label = re.sub(r"\s+", " ", label)
+        # A qualifier sitting between the group and its figure -- "approximately
+        # 35-40%", "more than 95%" -- is part of the measurement, not of the
+        # group's name. Taiwan is "Han Chinese", not "Han Chinese more than".
+        # Where the qualifier is directional it is kept as a bound, which the
+        # record format already carries for "<1%".
+        tail = label[-24:].lower()
+        if not bound:
+            if re.search(r"\b(?:more than|over|at least|greater than)\s*$", tail):
+                bound = ">"
+            elif re.search(r"\b(?:less than|under|up to|nearly|almost|fewer than)\s*$", tail):
+                bound = "<"
+        label = re.sub(_QUALIFIER, " ", label)
+        label = re.sub(r"\s+", " ", label).strip(" .-")
         if not label or len(label) > 80:
             continue
         row: dict[str, Any] = {"group": label, "pct": pct}
+        if high is not None:
+            row["range"] = [low, float(high.replace(",", ""))]
         # "<1%" is an upper bound, not a measurement; keep the distinction so a
         # chart cannot quietly promote it to an exact share.
         if bound:

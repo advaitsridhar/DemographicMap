@@ -59,6 +59,70 @@ class ParseComposition(unittest.TestCase):
             "German 85.4%, Turkish 1.8% note: data represent population by nationality")
         self.assertEqual([row["group"] for row in got], ["German", "Turkish"])
 
+    def test_two_compositions_in_one_field(self):
+        # The Factbook separates independent surveys with <br><br>. Reading them
+        # as one list put Uruguay at 158.2% with Roman Catholic counted twice.
+        # The dated block is the current estimate and the one that should win.
+        got = common.parse_composition(
+            "Roman Catholic 36.5%, Protestant 5%, other 1%, none 47.3%"
+            "<br><br>Roman Catholic 42%, Protestant 15%, other 6%, "
+            "agnostic 3%, atheist 10%, unspecified 24% (2023 est.)")
+        self.assertEqual(len(got), 6)
+        self.assertAlmostEqual(sum(r["pct"] for r in got), 100.0)
+        self.assertEqual(got[0], {"group": "Roman Catholic", "pct": 42.0})
+
+    def test_trailing_prose_blocks_are_not_mistaken_for_data(self):
+        # The World entry ends with three note blocks. Taking the last block
+        # would return a sentence about how many languages exist.
+        got = common.parse_composition(
+            "<strong>most-spoken language: </strong>English 18.8%, "
+            "Mandarin Chinese 13.8% (2023 est.)"
+            "<br><br><strong>note 1:</strong> the six UN languages are widely used"
+            "<br><br><strong>note 2:</strong> there are 7,168 living languages")
+        self.assertEqual([r["group"] for r in got], ["English", "Mandarin Chinese"])
+
+    def test_a_ranged_share_is_kept_not_dropped(self):
+        # These rows matched nothing before, so Greece lost its Orthodox
+        # majority and the slivers that remained still read as a whole
+        # composition.
+        got = common.parse_composition(
+            "Greek Orthodox 81-90%, Muslim 2%, other 3% (2015 est.)")
+        self.assertEqual(got[0], {"group": "Greek Orthodox", "pct": 85.5,
+                                  "range": [81.0, 90.0]})
+        self.assertEqual(got[1]["group"], "Muslim")
+
+    def test_a_sub_split_inside_an_aside_is_not_the_group_share(self):
+        # Iraq: the parenthesised Shia/Sunni split must not be read as the
+        # Muslim share. The top-level range is the figure.
+        got = common.parse_composition(
+            "Muslim (official) 95-98% (Shia 61-64%, Sunni 29-34%), Christian 1%")
+        self.assertEqual(got[0]["group"], "Muslim")
+        self.assertEqual(got[0]["pct"], 96.5)
+
+    def test_no_share_outside_an_aside_listing_several_figures(self):
+        # Saudi Arabia publishes no overall share: the only figures describe how
+        # its Muslim citizens divide. Inventing one from them would be worse
+        # than the gap.
+        got = common.parse_composition(
+            "Muslim (official; citizens are 85-90% Sunni and 10-12% Shia), other")
+        self.assertIsNone(got)
+
+    def test_a_lone_share_inside_an_aside_is_used(self):
+        # Sudan states the group's own share there and nowhere else.
+        got = common.parse_composition("Sudanese Arab (approximately 70%), Fur, Beja")
+        self.assertEqual(got, [{"group": "Sudanese Arab", "pct": 70.0}])
+
+    def test_a_qualifier_is_a_bound_not_part_of_the_name(self):
+        # "Han Chinese more than 95%" is not a group called "Han Chinese more
+        # than"; it is Han Chinese, bounded below.
+        got = common.parse_composition("Han Chinese more than 95%, other 2.3%")
+        self.assertEqual(got[0], {"group": "Han Chinese", "pct": 95.0, "bound": ">"})
+
+    def test_a_range_written_with_two_signs(self):
+        got = common.parse_composition("English (spoken by only 1%-2% of the population)")
+        self.assertEqual(got[0]["group"], "English")
+        self.assertEqual(got[0]["pct"], 1.5)
+
 
 class SplitTopLevel(unittest.TestCase):
     def test_respects_nesting(self):

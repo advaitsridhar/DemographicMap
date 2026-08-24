@@ -187,7 +187,17 @@ html, body {
   color: var(--ink-primary); background: var(--surface-1);
   border: 1px solid var(--hairline); border-radius: var(--radius-sm);
 }
+/* The group search shares the select's box so the two read as one control. */
+.control-row input[type="search"] {
+  flex: 1; font: inherit; font-size: .8rem; padding: .3rem .4rem;
+  color: var(--ink-primary); background: var(--surface-1);
+  border: 1px solid var(--hairline); border-radius: var(--radius-sm);
+}
+.control-row input[type="search"]::placeholder { color: var(--ink-muted); }
 .control-note { margin: .5rem 0 0; font-size: .7rem; color: var(--ink-muted); line-height: 1.4; }
+/* What the chosen filter covers. Sits directly under the picker because it
+   qualifies the map that is already drawn, not the next thing the reader does. */
+#group-reach { margin-top: .35rem; }
 
 #legend { display: flex; flex-direction: column; gap: .28rem; font-size: .74rem; }
 .legend-scale { display: flex; height: 10px; border-radius: 3px; overflow: hidden; border: 1px solid var(--border-ring); }
@@ -351,6 +361,11 @@ dialog p, dialog li { font-size: .8rem; line-height: 1.6; color: var(--ink-secon
   /* The explanatory note is three lines on a phone and pushes the map off
      screen; the legend above it already carries the meaning. */
   .control-note { display: none; }
+  /* ...but not the one saying what the current filter covers. A worldwide
+     filter invites a worldwide reading, and the caveat that blank means
+     "not reported" rather than "none" is the map's meaning, not decoration
+     around it. The legend does not carry that. */
+  #group-reach:not([hidden]) { display: block; }
   .facts { grid-template-columns: 1fr 1fr; }
 }
 

@@ -310,6 +310,55 @@ primary record rather than a derivative.
 * Telangana (2014) and Ladakh (2019) postdate the census entirely, so they have
   no state-level figure even though their districts do.
 
+## Filtering one group across countries
+
+The map can colour every unit in the world by its share of a single religion,
+language or ethnic group. That is only possible because `scripts/canonical_groups.py`
+records which labels name the same thing, and `build_entities.py` emits the
+result to `site/data/groups.json`. Across nine countries the religion field
+alone carries 39 labels for about a dozen religions, so a filter on raw strings
+would draw a map of Islam that omits every country whose census says "Muslim" —
+865 units in one spelling against 737 in the other.
+
+Three properties of that index matter when reading the map:
+
+* **The list is worldwide, not local.** It is built over every record. The
+  picker used to be filled from whatever was loaded, which quietly made the
+  filter local: at world zoom it offered only groups appearing in country rows,
+  and inside one country only that country's own spellings.
+* **A group's share is summed, not looked up.** The US reports Protestant,
+  Catholic, Orthodox, Latter-day Saints and Jehovah's Witnesses where Australia
+  reports one "Christianity" row. Matching a single row would show the US at its
+  largest denomination and call that its Christian share.
+* **Blank is not zero.** Most groups are reported by a minority of countries.
+  Sikhism is shaded in six and blank everywhere else; that means six countries
+  publish it, not that nobody else has any Sikhs. The note under the picker says
+  how many countries and units stand behind the current filter, which labels
+  were folded together, and where a country measured it another way.
+
+Ethnicity has no canonical layer at all — see the table's own note — so its
+groups are filterable only under the exact names their censuses used.
+
+## Choosing the level of detail
+
+By default the level follows the zoom: countries, then first-level divisions
+from z3.6, then second-level from z6.6. The **Detail** control overrides that
+and pins one level at every zoom, which is what makes a filtered group readable
+at district granularity across borders — 49,349 second-level divisions at once
+rather than 261 countries.
+
+Two consequences are handled rather than hidden:
+
+* `admin2.pmtiles` is built from **z2**, not z4 as before, because a pinned
+  level with no tiles at the current zoom shows ocean and reads as a broken map.
+  The archive grew from 47 MB to 51.8 MB. PMTiles is range-requested, so a
+  viewer who never pins the level never fetches those tiles.
+* Pinning second-level divisions at world view asks for every country's
+  attribute shard — 48 MB across 218 files. They are fetched in batches and the
+  map colours in as they arrive, with a counter saying how far along it is,
+  because a map that stays blank until the last byte reads as broken too. The
+  default stays "Follow zoom", so nobody pays that cost without asking for it.
+
 ## Collection policy
 
 The `not_collected` marker is asserted from these tables and nowhere else:
