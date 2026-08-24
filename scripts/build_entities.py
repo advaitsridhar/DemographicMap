@@ -424,14 +424,24 @@ def group_index(admin0: list[dict[str, Any]],
     map of Christianity shades those counties on a basis the others do not share.
     """
     index: dict[str, Any] = {}
+    levels = [("admin0", [("", admin0)]),
+              ("admin1", sorted(admin1.items())),
+              ("admin2", sorted(admin2.items()))]
     for field in ("religion", "language", "ethnicity"):
         units: dict[str, int] = {}
         countries: dict[str, set[str]] = {}
         labels: dict[str, set[str]] = {}
         bases: dict[str, str] = {}
         conflicts: set[str] = set()
+        # Counted per level as well as overall. A group reported by 122
+        # countries nationally may exist for only two of them at district
+        # level, and a map pinned to districts that claims 122 is telling the
+        # reader the opposite of what it is showing.
+        per_level: dict[str, dict[str, dict[str, Any]]] = {
+            name: {} for name, _ in levels}
 
-        for iso3, rows in [("", admin0)] + sorted(admin1.items()) + sorted(admin2.items()):
+        for level_name, sources in levels:
+          for iso3, rows in sources:
             for record in rows:
                 value = record.get(field)
                 if not isinstance(value, list):
@@ -451,6 +461,10 @@ def group_index(admin0: list[dict[str, Any]],
                     units[name] = units.get(name, 0) + 1
                     countries.setdefault(name, set()).add(code)
                     labels.setdefault(name, set()).add(raw)
+                    at = per_level[level_name].setdefault(
+                        name, {"units": 0, "countries": set()})
+                    at["units"] += 1
+                    at["countries"].add(code)
 
         if conflicts:
             # Rolling children into a parent is only sound while no source
@@ -465,7 +479,16 @@ def group_index(admin0: list[dict[str, Any]],
                  "units": units[name],
                  "countries": sorted(c for c in countries[name] if len(c) == 3),
                  "labels": sorted(labels[name]),
-                 "canonical": len(labels[name]) > 1 or name in canonical_groups.TABLES[field]}
+                 "canonical": len(labels[name]) > 1 or name in canonical_groups.TABLES[field],
+                 "levels": {
+                     level_name: {
+                         "units": per_level[level_name][name]["units"],
+                         "countries": sorted(
+                             c for c in per_level[level_name][name]["countries"]
+                             if len(c) == 3),
+                     }
+                     for level_name, _ in levels if name in per_level[level_name]
+                 }}
                 for name in sorted(units, key=lambda n: (-units[n], n))
             ],
             "bases": bases,

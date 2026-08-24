@@ -6,6 +6,7 @@
 
   const els = {
     metric: document.getElementById("metric-select"),
+    detail: document.getElementById("detail-select"),
     groupRow: document.getElementById("group-row"),
     group: document.getElementById("group-select"),
     groupSearchRow: document.getElementById("group-search-row"),
@@ -90,6 +91,11 @@
       syncFieldControl();
       refreshColors();
     });
+    els.detail.addEventListener("change", () => {
+      const value = els.detail.value;
+      window.WorldMap.setPinnedLevel(value === "auto" ? null : Number(value));
+    });
+
     els.groupSearch.addEventListener("input", () => {
       state.groupQuery = els.groupSearch.value.trim();
       populateGroupSelect();
@@ -216,10 +222,33 @@
     const group = entry && (entry.groups || []).find((g) => g.name === parsed.group);
     if (!group) { els.groupReach.hidden = true; return; }
 
-    const parts = [`Reported by ${group.countries.length} ` +
-                   `${group.countries.length === 1 ? "country" : "countries"}, ` +
-                   `${window.Fmt.number(group.units)} units. Elsewhere the map is ` +
-                   `blank because the figure is missing, not zero.`];
+    // Counted for the level on screen, not for the dataset as a whole. Islam is
+    // reported by 122 countries nationally and by five at second level, so a
+    // map pinned to districts that claims 122 tells the reader the opposite of
+    // what it is showing -- most of the world grey.
+    const levelName = ["admin0", "admin1", "admin2"][window.WorldMap.getLevel()];
+    const here = (group.levels || {})[levelName];
+    const shown = ["countries", "first-level divisions", "second-level divisions"]
+      [window.WorldMap.getLevel()];
+    const parts = [];
+    if (!here || !here.units) {
+      parts.push(`No ${shown} carry this figure, though ${group.countries.length} ` +
+                 `${group.countries.length === 1 ? "country reports" : "countries report"} ` +
+                 `it at some level. The map is blank here because the figure is ` +
+                 `missing at this level, not because the share is zero.`);
+    } else {
+      // At country level the unit *is* the country, so "122 countries across 122
+      // countries" would be the same fact said twice.
+      const where = window.WorldMap.getLevel() === 0
+        ? `${window.Fmt.number(here.units)} countries`
+        : `${window.Fmt.number(here.units)} ${shown} across ${here.countries.length} ` +
+          `${here.countries.length === 1 ? "country" : "countries"}`;
+      parts.push(`At this level: ${where}. Everything else is blank because the ` +
+                 `figure is missing, not zero.`);
+      if (here.countries.length < group.countries.length) {
+        parts.push(`${group.countries.length} countries report it nationally.`);
+      }
+    }
     if ((group.labels || []).length > 1) {
       parts.push(`Combines: ${group.labels.join(", ")}.`);
     }
@@ -357,11 +386,21 @@
     return `<span class="tip-name">${esc(name)}</span><span class="tip-meta">${esc(bits.join(" · "))}</span>`;
   }
 
+  // Countries whose attributes are fetched for one view. Following the zoom,
+  // forty is plenty -- that is more than fit on screen at the level being
+  // shown. Pinned, the cap is the point of the feature: asking for second-level
+  // divisions across the world means all 218 shards, and stopping at forty
+  // would leave most of the map grey with nothing to say why.
+  const VIEW_LIMIT = 40;
+
   async function onViewChange(level, countries) {
     if (level === 0) { refreshColors(); return; }
-    const changed = await window.DataStore.ensureLoaded(countries.slice(0, 40), level);
+    const pinned = window.WorldMap.getPinnedLevel() !== null;
+    const wanted = pinned ? countries : countries.slice(0, VIEW_LIMIT);
+    const changed = await window.DataStore.ensureLoaded(wanted, level);
     if (changed && window.Metrics.METRICS[state.metric].needsGroup) populateGroupSelect();
     refreshColors();
+    status(null);
   }
 
   /* -------------------------------------------------------------- startup */
@@ -380,6 +419,22 @@
     els.aboutClose.addEventListener("click", () => els.about.close());
     els.about.addEventListener("click", (event) => {
       if (event.target === els.about) els.about.close();
+    });
+
+    // Colour what has arrived rather than waiting for the last shard. Pinning
+    // the map to second-level divisions pulls 48 MB across 218 files, and a map
+    // that stays blank until all of it lands reads as broken.
+    // The counter moves on every shard; the repaint does not. Recolouring twenty
+    // thousand features once per country turned a 45-second fill into minutes,
+    // and the eye cannot follow a repaint that often anyway.
+    let lastPaint = 0;
+    window.DataStore.on((event) => {
+      if (event.type !== "progress") return;
+      if (event.done >= event.total) { status(null); refreshColors(); return; }
+      status(`Loading ${event.level === "admin2" ? "second-level" : "first-level"} ` +
+             `data — ${event.done} of ${event.total} countries`, true);
+      const now = Date.now();
+      if (now - lastPaint > 700) { lastPaint = now; refreshColors(); }
     });
 
     status("Loading country data", true);
@@ -401,6 +456,7 @@
       onReady: () => refreshColors(),
       onLevelChange: (level) => {
         state.level = level;
+        describeReach(splitGroupValue(els.group.value));
         // The group list no longer depends on what is loaded, so it is not
         // rebuilt here: doing so used to discard the viewer's chosen group
         // every time the map crossed a zoom threshold.

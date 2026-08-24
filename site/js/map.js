@@ -14,7 +14,10 @@ window.WorldMap = (function () {
   const LEVELS = [
     { id: "admin0", url: "tiles/admin0.pmtiles", minzoom: 0, maxzoom: 5, showFrom: 0,   showTo: 4.4 },
     { id: "admin1", url: "tiles/admin1.pmtiles", minzoom: 0, maxzoom: 7, showFrom: 3.6, showTo: 7.4 },
-    { id: "admin2", url: "tiles/admin2.pmtiles", minzoom: 4, maxzoom: 9, showFrom: 6.6, showTo: 22 },
+    // minzoom is where the archive has tiles, not where the level is shown.
+    // Second-level divisions are tiled from z2 so they can be pinned at world
+    // view; the zoom hand-off below still hands them over at 6.6.
+    { id: "admin2", url: "tiles/admin2.pmtiles", minzoom: 2, maxzoom: 9, showFrom: 6.6, showTo: 22 },
   ];
 
   let map = null;
@@ -25,11 +28,73 @@ window.WorldMap = (function () {
   let handlers = {};
   const colorState = new Map();  // level id -> Map(shapeID -> color)
 
+  // When set, the viewer has chosen a level explicitly and zoom no longer picks
+  // one. Second-level divisions at world view are the point: 49,349 shapes at
+  // once, which is a different map from three thousand countries and the only
+  // way to read a filtered group at district granularity across borders.
+  let pinnedLevel = null;
+  // The floor the map was created with, so unpinning restores it rather than
+  // quietly widening the map's range to zero.
+  const BASE_MIN_ZOOM = 0.6;
+
   function levelIndex(zoom) {
+    if (pinnedLevel !== null) return pinnedLevel;
     if (zoom < LEVELS[1].showFrom) return 0;
     if (zoom < LEVELS[2].showFrom) return 1;
     return 2;
   }
+
+  /* Show one level everywhere, or hand control back to the zoom.
+   *
+   * The fade expressions and the layers' own zoom ranges are what normally
+   * confine a level to its band, so both are overridden here and restored on
+   * the way out -- setting opacity alone would leave the layer clipped to its
+   * original minzoom and the map empty below it.
+   */
+  function setPinnedLevel(index) {
+    pinnedLevel = index;
+    if (!map) return;
+    for (let i = 0; i < LEVELS.length; i += 1) {
+      const level = LEVELS[i];
+      const shown = index === null || i === index;
+      for (const suffix of ["fill", "line", "hover"]) {
+        const id = `${level.id}-${suffix}`;
+        if (!map.getLayer(id)) continue;
+        map.setLayoutProperty(id, "visibility", shown ? "visible" : "none");
+        if (index === null) {
+          map.setLayerZoomRange(id, layerMinZoom(level), layerMaxZoom(level));
+          if (suffix === "fill") map.setPaintProperty(id, "fill-opacity", fadeExpression(level));
+        } else if (shown) {
+          map.setLayerZoomRange(id, level.minzoom, 24);
+          if (suffix === "fill") map.setPaintProperty(id, "fill-opacity", 1);
+        }
+      }
+    }
+    // A level's archive starts where it starts: second-level divisions are not
+    // tiled below z2, so zooming further out while pinned to them would show
+    // ocean and read as a broken map rather than as the edge of the data. The
+    // floor moves with the choice instead.
+    map.setMinZoom(index === null ? BASE_MIN_ZOOM
+                                  : Math.max(BASE_MIN_ZOOM, LEVELS[index].minzoom));
+    if (index !== null && map.getZoom() < LEVELS[index].minzoom) {
+      map.setZoom(LEVELS[index].minzoom);
+    }
+    const next = levelIndex(map.getZoom());
+    if (next !== activeLevel) activeLevel = next;
+    if (handlers.onLevelChange) handlers.onLevelChange(activeLevel);
+
+    // visibleCountries() reads the tiles already in memory, and immediately
+    // after a switch there are none of the new level's -- so asking now returns
+    // an empty list and nothing would ever be fetched for it. Ask again once
+    // the map has settled, which is when the answer exists.
+    const announce = () => {
+      if (handlers.onViewChange) handlers.onViewChange(activeLevel, visibleCountries());
+    };
+    announce();
+    map.once("idle", announce);
+  }
+
+  function getPinnedLevel() { return pinnedLevel; }
 
   const FADE = 0.35;
 
@@ -305,5 +370,6 @@ window.WorldMap = (function () {
   function levelId(i) { return LEVELS[i].id; }
 
   return { init, applyColors, repaintAll, select, fitBBox, visibleCountries,
-           getMap, getLevel, levelId, restyle, LEVELS };
+           getMap, getLevel, levelId, restyle, setPinnedLevel, getPinnedLevel,
+           LEVELS };
 })();
