@@ -12,7 +12,7 @@ on:
       kind:
         description: "Source type"
         type: choice
-        options: [arcgis, url, pdf, datagovsg]
+        options: [arcgis, url, pdf, datagovsg, pxweb]
         default: arcgis
       target:
         description: "ArcGIS item id or URL; kind=url/pdf a direct URL; kind=datagovsg a search term"
@@ -66,6 +66,11 @@ jobs:
           DEMOGRAPHICMAP: ${{ secrets.DEMOGRAPHICMAP }}
         run: |
           python3 scripts/probe_datagovsg.py --raw --catalogue --search "${{ inputs.target }}"
+
+      - name: Probe PxWeb instances
+        if: inputs.kind == 'pxweb'
+        run: |
+          python3 scripts/probe_pxweb.py --countries "${{ inputs.target }}"
 
       - name: Probe plain URL
         if: inputs.kind == 'url'
