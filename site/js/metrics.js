@@ -28,11 +28,43 @@ window.Metrics = (function () {
       .map(([group]) => group);
   }
 
+  // field -> source label -> canonical group, from site/data/groups.json. Until
+  // it arrives, matching falls back to the label itself, which is correct but
+  // country-local: "Islam" would find Sri Lanka and miss the places that say
+  // "Muslim".
+  let canonical = {};
+
+  function setGroupIndex(index) {
+    canonical = {};
+    for (const [field, entry] of Object.entries(index || {})) {
+      const map = new Map();
+      for (const group of entry.groups || []) {
+        for (const label of group.labels || []) map.set(label, group.name);
+      }
+      canonical[field] = map;
+    }
+  }
+
+  function canonicalName(field, label) {
+    const map = canonical[field];
+    return (map && map.get(label)) || label;
+  }
+
   function shareOf(record, field, group) {
     const value = record[field];
     if (!Array.isArray(value)) return null;
-    const row = value.find((r) => r.group === group);
-    return row && typeof row.pct === "number" ? row.pct : null;
+    // Summed, not found: one canonical group can be several rows of a record.
+    // The US reports Protestant, Catholic, Orthodox, Latter-day Saints and
+    // Jehovah's Witnesses where Australia reports one "Christianity" row, so
+    // matching a single row would show the US at its largest denomination and
+    // call that its Christian share.
+    let total = null;
+    for (const row of value) {
+      if (typeof row.pct !== "number") continue;
+      if (canonicalName(field, row.group) !== group) continue;
+      total = (total || 0) + row.pct;
+    }
+    return total;
   }
 
   function largestShare(record, field) {
@@ -189,5 +221,6 @@ window.Metrics = (function () {
     };
   }
 
-  return { METRICS, FIELDS, paint, topGroups, dominant, largestShare, shareOf };
+  return { METRICS, FIELDS, paint, topGroups, dominant, largestShare, shareOf,
+           setGroupIndex, canonicalName };
 })();

@@ -25,6 +25,7 @@ window.DataStore = (function () {
   const inflight = new Map();
   const listeners = new Set();
   let coverage = null;
+  let groups = null;
 
   function on(fn) { listeners.add(fn); return () => listeners.delete(fn); }
   function emit(event) { listeners.forEach((fn) => { try { fn(event); } catch (e) { console.error(e); } }); }
@@ -122,6 +123,16 @@ window.DataStore = (function () {
     return coverage;
   }
 
+  // The worldwide list of what can be filtered on, built over every record at
+  // build time. It cannot be derived here: at world zoom the app holds only
+  // country records, so a picker fed from what is loaded would offer nothing
+  // below the national level, and one fed from a single country's shard would
+  // offer only that country's spellings of each group.
+  async function loadGroups() {
+    if (!groups) groups = await getJSON("groups.json");
+    return groups;
+  }
+
   function get(id) { return byId.get(id) || null; }
   function country(iso3) { return countryRecords.get(iso3) || null; }
   function children(id) { return childrenOf.get(id) || []; }
@@ -129,8 +140,9 @@ window.DataStore = (function () {
   function isLoaded(iso3, level) { return loaded[level === 1 ? "admin1" : "admin2"].has(iso3); }
   function all() { return byId; }
 
-  return { loadCountries, loadLevel, ensureLoaded, loadCoverage, get, country,
-           children, countries, isLoaded, all, on, url, loadVersion };
+  return { loadCountries, loadLevel, ensureLoaded, loadCoverage, loadGroups,
+           get, country, children, countries, isLoaded, all, on, url,
+           loadVersion };
 })();
 
 /* ------------------------------------------------------------------ format */
