@@ -56,11 +56,17 @@ WANTED = ("religio", "ethnic", "nationalit", "language", "mother tongue",
 GEO_HINTS = ("region", "municipal", "county", "area", "district", "province",
              "kommun", "maakond", "vald", "landsdel")
 
-THROTTLE = 0.4
-MAX_NODES = 400
+THROTTLE = 0.25
+MAX_NODES = 250
+# Seconds any one instance may consume. A node budget alone does not bound the
+# work: a host that accepts a connection and then stalls costs the full request
+# timeout each time, so 250 nodes at 30 seconds is over two hours and the first
+# run of this probe had to be cancelled. Wall clock is what actually bounds it.
+BUDGET_SECONDS = 100
+REQUEST_TIMEOUT = 12
 
 
-def get(url: str, timeout: int = 30):
+def get(url: str, timeout: int = REQUEST_TIMEOUT):
     req = urllib.request.Request(url, headers={
         "User-Agent": "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap)",
         "Accept": "application/json",
@@ -69,9 +75,10 @@ def get(url: str, timeout: int = 30):
         return json.loads(resp.read().decode("utf-8", "replace"))
 
 
-def walk(base: str, budget: list[int], depth: int = 0, path: str = "") -> list[dict]:
+def walk(base: str, budget: list[int], deadline: float,
+         depth: int = 0, path: str = "") -> list[dict]:
     """Depth-first over the PxWeb tree, collecting tables that look relevant."""
-    if budget[0] <= 0 or depth > 4:
+    if budget[0] <= 0 or depth > 4 or time.monotonic() > deadline:
         return []
     url = f"{base}/{path}" if path else base
     budget[0] -= 1
@@ -99,8 +106,8 @@ def walk(base: str, budget: list[int], depth: int = 0, path: str = "") -> list[d
             # Only descend where the folder could plausibly hold what we want,
             # or near the root where names are broad ("Population").
             if depth <= 1 or any(w in text.lower() for w in WANTED + ("population", "census")):
-                found.extend(walk(base, budget, depth + 1, child))
-        if budget[0] <= 0:
+                found.extend(walk(base, budget, deadline, depth + 1, child))
+        if budget[0] <= 0 or time.monotonic() > deadline:
             break
     return found
 
@@ -142,7 +149,11 @@ def main() -> int:
             print(f"\n== {iso}: no instance configured")
             continue
         print(f"\n== {iso} {spec['name']}\n   {spec['base']}")
-        tables = walk(spec["base"], [MAX_NODES])
+        started = time.monotonic()
+        tables = walk(spec["base"], [MAX_NODES], started + BUDGET_SECONDS)
+        spent = time.monotonic() - started
+        if spent > BUDGET_SECONDS:
+            print(f"    (stopped after {spent:.0f}s — tree not fully walked)")
         if not tables:
             print("    nothing matching religion / ethnicity / language")
             continue
