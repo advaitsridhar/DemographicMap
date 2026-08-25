@@ -195,6 +195,21 @@ def check_no_double_counting(rows: Iterable[dict[str, Any]], field: str,
     # rolls into it means the source published the parent and the child side by
     # side. The same label twice is a different thing -- the Factbook lists
     # Bissa twice for Burkina Faso -- and summing those is right, not a fault.
+    #
+    # What this cannot see is a parent published under some other label: a
+    # plain "Christian" row above Anglican, Baptist and the rest. Names cannot
+    # settle that, because the same word is usually a residual instead -- the
+    # Factbook gives Sint Maarten "Christian" 4.1% beside Protestant 41.9%,
+    # meaning people who said only "Christian", which should be summed.
+    #
+    # Detecting it by arithmetic was tried and rejected. A parent equals the
+    # sum of its children, so "largest is within 1% of the rest combined"
+    # finds the ABS "Christianity Total" shape exactly -- and also fires on 22
+    # of the ~49,000 shipped records, every one a coincidence of the form
+    # "the biggest group happens to equal the others added up" (Bay County,
+    # Florida: Catholic 19.9 against Protestant 18.9 + Latter-day Saints 0.5 +
+    # Jehovah's Witnesses 0.4). At that false-positive rate the warning costs
+    # more attention than the gap it covers, so the gap is documented instead.
     # Compared in key() form on both sides: the labels have been folded, and
     # the canonical name is a display string, so "Christianity" has to be
     # folded too or a parent beside its child stops being reported.

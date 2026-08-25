@@ -41,7 +41,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 # dotted path when this is run as a script rather than as a module.
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from common import RAW, log  # noqa: E402
+from common import RAW, log, repair  # noqa: E402
 
 # Roughly 3 km at Nepal's latitude. A reference point further outside its own
 # polygon than this is not a rounding difference between sources.
@@ -60,7 +60,7 @@ def normalise(name: str) -> str:
     the join handles them correctly. --alias-module points at the adapter so
     there is one list of spellings rather than two that can drift.
     """
-    plain = " ".join(name.replace(" District", "").split()).strip()
+    plain = " ".join(repair(name).replace(" District", "").split()).strip()
     if _canonical is not None:
         try:
             return _canonical(plain).lower()
@@ -151,7 +151,10 @@ def main() -> int:
             props = feat["properties"]
             if props.get("shapeGroup") != args.country:
                 continue
-            shapes.setdefault(normalise(props.get("shapeName") or ""),
+            # repair() first: geoBoundaries stores 33 names as UTF-8 read as
+            # latin-1, and without undoing that every macronised or accented
+            # name here reads as a mismatch the join actually handles.
+            shapes.setdefault(normalise(repair(props.get("shapeName") or "")),
                               []).append(shape(feat["geometry"]))
     log(f"  {sum(len(v) for v in shapes.values())} shapes under "
         f"{len(shapes)} distinct names")

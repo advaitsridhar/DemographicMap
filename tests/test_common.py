@@ -170,3 +170,36 @@ class Gaps(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class RepairNames(unittest.TestCase):
+    """UTF-8 bytes that a boundary file stored as latin-1.
+
+    The round trip is self-checking, which is the whole reason it is safe to
+    apply to every name: a string that really is latin-1 does not survive it.
+    """
+
+    def test_utf8_read_as_latin1_comes_back(self):
+        self.assertEqual(common.repair("RegiÃ³n Metropolitana"),
+                         "Región Metropolitana")
+        self.assertEqual(common.repair("BRAGANÃ\x87A"), "BRAGANÇA")
+
+    def test_maori_macrons_are_covered(self):
+        # The first version guessed at the visible lead characters and missed
+        # these: a macron encodes from 0xC4 and 0xC5, not the 0xC3 that most
+        # Western European accents use.
+        self.assertEqual(common.repair("KaipÄ\x81tiki"), "Kaipātiki")
+        self.assertEqual(common.repair("Å\x8cpÅ\x8dtiki"), "Ōpōtiki")
+
+    def test_a_name_that_really_is_latin1_is_left_alone(self):
+        # "Cañete" encodes to bytes that are not valid UTF-8, so the decode
+        # raises and the name is returned untouched.
+        self.assertEqual(common.repair("Cañete"), "Cañete")
+
+    def test_names_needing_no_repair_are_untouched(self):
+        for name in ("Kathmandu", "Ōpōtiki District", "", "Wellington City"):
+            self.assertEqual(common.repair(name), name)
+
+    def test_repair_is_idempotent(self):
+        once = common.repair("RegiÃ³n Metropolitana")
+        self.assertEqual(common.repair(once), once)

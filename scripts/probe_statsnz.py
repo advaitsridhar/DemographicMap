@@ -104,6 +104,10 @@ def main() -> int:
         ("data, SDMX-CSV", f"{BASE}/data/{flow}/all", ACCEPT),
     ]
 
+    # Only the data endpoint decides whether the key works. The dataflow
+    # endpoints are the ones that might answer anonymously, and crediting a
+    # header for a request that never needed one would report a rejected key
+    # as an accepted one.
     working: str | None = None
     for label, url, accept in targets:
         log(f"\n  {label}")
@@ -113,7 +117,8 @@ def main() -> int:
             shown = header or "no key"
             log(f"    {shown:<28} HTTP {status}")
             if status == 200:
-                working = header
+                if "data" in label:
+                    working = header
                 head = "\n".join(body.splitlines()[:args.rows])
                 log(f"    --- first {args.rows} lines ---\n{head}\n    --- end ---")
                 break
@@ -125,8 +130,9 @@ def main() -> int:
     if key and working:
         log(f"\n  the service accepts the key in: {working}")
     elif key:
-        log("\n  a key was found and every request was still refused; either "
-            "the key is not valid for this API or it is sent another way")
+        log("\n  a key was found and the data endpoint still refused it; "
+            "either the key is not valid for this API or it is sent another "
+            "way")
     return 0
 
 

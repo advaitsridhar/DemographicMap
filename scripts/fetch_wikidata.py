@@ -176,6 +176,13 @@ def collapse(rows: list[dict[str, Any]], *, level: str, iso3: str) -> list[dict[
     return out
 
 
+def countries_in(records: list[dict[str, Any]]) -> set[str]:
+    """The ISO3 codes a record set actually covers."""
+    return {(row.get("country") or (row.get("id") or "")[:3]).upper()
+            for row in records
+            if (row.get("country") or (row.get("id") or "")[:3])}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -183,6 +190,9 @@ def main() -> int:
     ap.add_argument("--countries", nargs="*", help="ISO3 codes; default is every country")
     ap.add_argument("--sleep", type=float, default=1.0, help="pause between queries (be polite)")
     ap.add_argument("--out", type=Path, default=None)
+    ap.add_argument("--allow-shrink", action="store_true",
+                    help="write even though it drops countries the existing "
+                         "file covers")
     args = ap.parse_args()
 
     qids = country_qids()
@@ -204,23 +214,41 @@ def main() -> int:
         except Exception as exc:
             log(f"  {iso3}: query failed ({exc})")
             missing.append(iso3)
+            # Sleep here too. The pause used to sit only on the success path,
+            # so the run stopped pacing itself at exactly the moment the
+            # endpoint was refusing -- and then hammered the rest of the list
+            # at full speed, turning one throttled query into many.
+            time.sleep(args.sleep)
             continue
         got = collapse(rows, level=args.level, iso3=iso3_alias.get(iso3, iso3))
         log(f"  {iso3}: {len(got)} {args.level} units")
         records.extend(got)
         time.sleep(args.sleep)
 
-    # An empty file is not an answer. When every country asked for failed --
-    # a Wikidata timeout looks exactly like a country with no units -- writing
-    # [] would leave an artefact that reads as "checked, found nothing" and
-    # would quietly replace a good file from a previous run.
-    if not records and missing:
-        raise SystemExit(
-            f"every query failed ({', '.join(missing[:30])}); nothing written. "
-            "Wikidata's endpoint rate-limits and times out under load; retry "
-            "rather than treating this as an empty result.")
-
+    # A thinner answer is not an answer either. A Wikidata timeout looks
+    # exactly like a country with no units, so a run where half the queries
+    # failed would quietly replace a complete file with a partial one and
+    # every country it dropped would read as "checked, found nothing".
+    #
+    # The test is coverage, not row count: countries legitimately gain and
+    # lose units between runs, but the set of countries answered for should
+    # never shrink unless the caller says so.
     out = args.out or PROCESSED / f"wikidata_{args.level}.json"
+    covered = countries_in(records)
+    existing = countries_in(read_json(out, []) or [])
+    lost = existing - covered
+    if lost and not args.allow_shrink:
+        raise SystemExit(
+            f"{len(missing)} of {len(codes)} queries failed, and writing this "
+            f"would drop {len(lost)} countries already in {out.name}: "
+            f"{', '.join(sorted(lost)[:20])}.\n"
+            "Wikidata's endpoint rate-limits and times out under load, so "
+            "retry rather than publishing the gap. Pass --allow-shrink if the "
+            "units really have gone away.")
+    if not records:
+        raise SystemExit(
+            f"every query failed ({', '.join(missing[:30])}); nothing written.")
+
     write_json(out, records)
     if missing:
         log(f"  no data for {len(missing)} countries: {', '.join(missing[:30])}")
