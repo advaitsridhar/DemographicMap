@@ -265,6 +265,37 @@ _SHARE = re.compile(r"(?:^|\s)(<|>)?\s*(" + _NUM + r")"
                     r"(?:\s*[-\u2013\u2014]\s*(\d[\d,]*(?:\.\d+)?))?\s*%")
 
 
+# The signature of UTF-8 bytes read as latin-1, written as the byte ranges it
+# actually is: a two-or-more-byte lead (0xC2 and up) followed by a continuation
+# byte (0x80-0xBF). Read as latin-1 those land on A-circumflex through sharp-s
+# and then on a C1 control or Latin-1 punctuation -- a pair no real place name
+# contains. Guessing at the visible lead characters instead missed Maori
+# macrons, which encode from 0xC4 and 0xC5.
+_MOJIBAKE = re.compile("[\u00c2-\u00df][\u0080-\u00bf]")
+
+
+def repair(name: str) -> str:
+    """Undo a name stored as UTF-8 that had been read as latin-1.
+
+    geoBoundaries ships 33 such names across five countries -- Chile's regions
+    read "Regi\u00c3\u00b3n Metropolitana de Santiago" -- and they are both
+    shown to viewers and matched against by the census join, so every reader of
+    the boundary file needs this, not just the one that builds the site.
+
+    Re-encoding to latin-1 and decoding as UTF-8 is safe because it is
+    self-checking: a name that really is latin-1 does not survive the round
+    trip. "Ca\u00f1ete" encodes to bytes that are not valid UTF-8, so the
+    decode raises and the name is left alone; only a string that *was* UTF-8
+    all along comes back different and legible.
+    """
+    if not _MOJIBAKE.search(name):
+        return name
+    try:
+        return name.encode("latin-1").decode("utf-8")
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        return name
+
+
 def parse_number(text: str | None) -> float | int | None:
     if not text:
         return None

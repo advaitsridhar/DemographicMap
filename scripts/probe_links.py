@@ -45,11 +45,16 @@ def fetch(url: str, accept: str = "") -> str:
         return raw.decode("utf-8", "replace")
 
 
-def head(url: str) -> None:
+def head(url: str, accept: str = "") -> None:
     """Size and type without pulling the file. Some hosts refuse HEAD, so a
     ranged GET is the fallback -- a 206 answers the same question."""
     for method in ("HEAD", "GET"):
-        req = urllib.request.Request(url, method=method, headers=dict(HEADERS))
+        headers = dict(HEADERS)
+        if accept:
+            # An API that content-negotiates reports a different Content-Type
+            # per Accept, and reporting the type is the whole point of --head.
+            headers["Accept"] = accept
+        req = urllib.request.Request(url, method=method, headers=headers)
         if method == "GET":
             req.add_header("Range", "bytes=0-0")
         try:
@@ -91,13 +96,15 @@ def main() -> int:
     args = ap.parse_args()
 
     if args.head:
-        # A comma-separated list, because a portal that renders its links in
-        # JavaScript -- INEGI's census page is 5 KB of shell and no anchors --
-        # leaves testing candidate URLs as the only way to find the files, and
-        # doing that one CI run at a time is unaffordable.
-        for url in args.url:
+        # --head splits on commas; page mode does not. The difference is not
+        # arbitrary: --head takes plain file URLs, which never contain a
+        # comma, and probe-source.yml passes a whole candidate list through
+        # one string input. An SDMX data key *does* contain commas, and that
+        # is what page mode has to carry through intact.
+        for url in [u.strip() for arg in args.url
+                    for u in arg.split(",") if u.strip()]:
             print(url)
-            head(url)
+            head(url, args.accept)
         return 0
 
     # Several pages in one run for the same reason as --head: a landing page is
