@@ -341,6 +341,33 @@ def scoped_by_parent(by_name: dict[str, list[dict[str, Any]]], parent_id: str
     return out
 
 
+def row_point(row: dict[str, Any]) -> list[float] | None:
+    """The adapter row's own coordinates, if it published any.
+
+    Wikidata writes them to `coordinates` and uses the same field to carry a gap
+    marker when P625 is absent, so the shape of the value is the test.
+    """
+    for field in ("coordinates", "point"):
+        value = row.get(field)
+        if isinstance(value, (list, tuple)) and len(value) == 2 \
+                and all(isinstance(n, (int, float)) for n in value):
+            return [float(value[0]), float(value[1])]
+    return None
+
+
+def within_bbox(point: list[float] | None, bbox: list[float] | None) -> bool:
+    """Whether a coordinate falls in a shape's bounding box.
+
+    Deliberately weak as confirmation and strong as refutation: ADM2 geometry is
+    dropped after the parent pass (49,349 polygons will not stay in memory), so a
+    box is all there is to compare against. A point inside the box is not proof
+    it is inside the shape; a point outside the box is proof it is not.
+    """
+    if not point or not bbox or len(bbox) != 4:
+        return False
+    return bbox[0] <= point[0] <= bbox[2] and bbox[1] <= point[1] <= bbox[3]
+
+
 def match_admin2(row: dict[str, Any], by_name: dict[str, list[dict[str, Any]]],
                  admin1: dict[str, dict[str, Any]]) -> tuple[dict[str, Any] | None, str]:
     """Resolve an adapter row to one admin-2 shape, using its state when it has one.
@@ -357,6 +384,28 @@ def match_admin2(row: dict[str, Any], by_name: dict[str, list[dict[str, Any]]],
     where the name is ambiguous the row is refused, on the same principle the
     prefix and containment passes already follow -- an unmatched row is a visible
     gap, a mis-matched one is invisible.
+
+    The one case that used to slip through was a row that named a state, resolved
+    it, found nothing of that name inside -- and was then handed to the
+    country-wide pass anyway, which happily matched a shape in a different state.
+    That is the mis-match this function exists to prevent, arrived at by the
+    function's own fallback: 443 rows across nine countries, among them Vietnam's
+    An Duong (Haiphong, per Wikidata) wearing the figures of An Duong in Hai
+    Duong, and Argentina's Apostoles Department (Misiones) wearing Corrientes'.
+    A row that contradicts itself is refused when its own published coordinates
+    land outside the shape, and kept when they land inside -- which is what
+    rescues the city-provinces whose parent is named historically rather than
+    currently, Bogota under Cundinamarca and Lima under Lima Department.
+
+    The disagreement on its own is deliberately *not* enough to refuse on, and
+    India is the reason. Its district figures are from the 2011 census, so they
+    name the states of 2011: Adilabad and Nizamabad say Andhra Pradesh where the
+    boundary file says Telangana, Leh and Kargil say Jammu and Kashmir where it
+    says Ladakh. Those matches are correct -- the same district, named before the
+    state it sits in was split -- and refusing every parent disagreement would
+    have deleted 26 of them, along with correct rows in Mexico and the US. The
+    census adapters publish no coordinates, so there is no evidence either way,
+    and a rule with no evidence behind it should not be deciding.
     """
     parent_name = row.get("parent_name")
     if parent_name:
@@ -373,6 +422,19 @@ def match_admin2(row: dict[str, Any], by_name: dict[str, list[dict[str, Any]]],
             entity, how = match_name(row, scoped_by_parent(by_name, parent["id"]))
             if entity is not None:
                 return entity, f"{how}+state"
+            # The row said which admin-1 it is in and no shape of its name is
+            # there, so a country-wide match now would contradict the row's own
+            # claim. Whether that contradiction is an error is decided by the
+            # row's coordinates and by nothing else -- see the note below on why
+            # the disagreement alone is not enough to refuse on.
+            unique = {key: entities[0] for key, entities in by_name.items()
+                      if len(entities) == 1}
+            entity, how = match_name(row, unique)
+            point = row_point(row)
+            if entity is not None and point:
+                if within_bbox(point, entity.get("bbox")):
+                    return entity, f"{how}+point"
+                return None, "outside_parent"
 
     unique = {key: entities[0] for key, entities in by_name.items() if len(entities) == 1}
     entity, how = match_name(row, unique)
@@ -670,7 +732,7 @@ def main() -> int:
         a2: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for entity in admin2_by_country.get(iso3, []):
             a2[norm(entity["name"])].append(entity)
-        hit = miss = ambiguous = 0
+        hit = miss = ambiguous = outside = 0
         for row in rows:
             # Aliases travel with the key. They were being dropped here, which
             # made every alias an adapter declared for an admin-2 row or its
@@ -678,7 +740,13 @@ def main() -> int:
             key = {"name": row.get("name") or "",
                    "aliases": row.get("aliases") or [],
                    "parent_name": row.get("parent_name"),
-                   "parent_aliases": row.get("parent_aliases") or []}
+                   "parent_aliases": row.get("parent_aliases") or [],
+                   # The coordinates travel with the key for the same reason the
+                   # aliases do: the matcher cannot use what this dict leaves
+                   # behind, and dropping them here would silently disable the
+                   # one rescue that lets a correct match survive a parent named
+                   # historically rather than currently.
+                   "point": row_point(row)}
             if row.get("level") == "admin1":
                 entity, how = match_name(key, a1)
             else:
@@ -686,12 +754,19 @@ def main() -> int:
             if entity is None:
                 miss += 1
                 ambiguous += how == "ambiguous"
+                outside += how == "outside_parent"
                 continue
             merge_adapter(entity, row)
             entity["match"] = f"adapter:{how}"
             hit += 1
         if rows:
-            extra = f" ({ambiguous} ambiguous)" if ambiguous else ""
+            # Named separately because they mean different things. "Ambiguous"
+            # is a row we cannot place; "outside" is a row we could have placed
+            # wrongly and refused to -- the count is the mis-match that is no
+            # longer happening, and it should not quietly grow.
+            why = [f"{ambiguous} ambiguous" if ambiguous else "",
+                   f"{outside} outside their stated parent" if outside else ""]
+            extra = " (" + ", ".join(w for w in why if w) + ")" if any(why) else ""
             log(f"  {iso3}: adapter rows matched {hit}, unmatched {miss}{extra}")
 
     # -- collection policy ---------------------------------------------------
