@@ -597,8 +597,26 @@ Three properties of that index matter when reading the map:
   how many countries and units stand behind the current filter, which labels
   were folded together, and where a country measured it another way.
 
-Ethnicity has no canonical layer at all — see the table's own note — so its
-groups are filterable only under the exact names their censuses used.
+Ethnicity has the smallest layer of the three, and deliberately. Its
+categories are made by states rather than found in the world: Brazil's *parda*,
+the UK's "Mixed" and the US "Two or more races" are three different questions
+with three different answer sets, and a person counted in one would not
+necessarily be counted in the others. So the table holds only two kinds of
+entry — one people spelled two ways (Māori/Maori, Romani/Roma/Gypsy), and one
+population two sources name differently (Mexico writes its census category as
+both "Afro-descendant" and "Afro-Mexican or Afro-descendant").
+
+Four pairs are named in the code as deliberately *not* merged, because each
+looks foldable and is not: White/European, Black/African, Mestizo/Mixed, and
+Indian/East Indian. Nothing is lost by leaving them apart — an unmapped label
+keys on itself, so the "White" of 27 countries is already one filter.
+
+**A residual is not a group.** "other" reaches 92 countries in the language
+field and 142 in ethnicity, and topped the picker while meaning nothing in
+particular. Those buckets are now named ("Other languages", "Ethnicity not
+stated") and flagged `residual` in `groups.json`, so the picker sorts them
+last and says what they are. They are still shown: a bar that quietly drops a
+fifth of a population is the failure this project cares about most.
 
 The same groups are reachable from the search box at the top, alongside
 places: typing `islam` offers the religion before the places whose names

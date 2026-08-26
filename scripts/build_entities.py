@@ -507,6 +507,10 @@ def group_index(admin0: list[dict[str, Any]],
                  "units": units[name],
                  "countries": sorted(c for c in countries[name] if len(c) == 3),
                  "labels": sorted(labels[name]),
+                 # A residual is an answer's absence, not an answer. The
+                 # picker still lists it -- dropping it would hide a fifth of
+                 # some populations -- but sorts it last and says so.
+                 "residual": canonical_groups.is_residual(name),
                  "canonical": len(labels[name]) > 1 or name in canonical_groups.TABLES[field],
                  "levels": {
                      level_name: {
