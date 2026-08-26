@@ -481,14 +481,24 @@ def group_index(admin0: list[dict[str, Any]],
                 if basis:
                     bases[code] = basis
                 table = canonical_groups.lookup(field)
+                # Collected first, counted once. Several rows of one record can
+                # fold into one group -- the US publishes Protestant, Catholic,
+                # Orthodox, Latter-day Saints and Jehovah's Witnesses where
+                # Australia publishes one "Christianity" -- and counting rows
+                # made "units" a row tally wearing the word "areas": the app
+                # read Christianity's 450 out to a reader as 450 countries,
+                # when only 215 country records carry a religion at all.
+                here: set[str] = set()
                 for row in value:
                     if not isinstance(row.get("pct"), (int, float)):
                         continue
                     raw = row.get("group", "")
                     name = table.get(canonical_groups.key(raw), raw)
+                    labels.setdefault(name, set()).add(raw)
+                    here.add(name)
+                for name in here:
                     units[name] = units.get(name, 0) + 1
                     countries.setdefault(name, set()).add(code)
-                    labels.setdefault(name, set()).add(raw)
                     at = per_level[level_name].setdefault(
                         name, {"units": 0, "countries": set()})
                     at["units"] += 1

@@ -86,6 +86,8 @@ window.Metrics = (function () {
       label: "Data coverage",
       kind: "status",
       needsField: true,
+      hint: "Where a figure exists — and whether a gap is unfetched or never collected.",
+      blank: "Grey means no record for that unit at all, not even a gap marker.",
       note: "Whether a value exists for the chosen field, is not yet fetched, or is " +
             "never collected by that country.",
       evaluate(record, opts) { return gapStatus(record[opts.field]); },
@@ -95,6 +97,8 @@ window.Metrics = (function () {
       kind: "sequential",
       scale: "log",
       unit: "people",
+      hint: "Latest published count, on a log scale.",
+      blank: "Grey areas have no published population at this level.",
       note: "Latest published count for each unit. Reference years differ by country.",
       evaluate(record) { return valueOf(record.population); },
       format: (n) => window.Fmt.number(n),
@@ -104,6 +108,8 @@ window.Metrics = (function () {
       kind: "sequential",
       scale: "linear",
       unit: "years",
+      hint: "Median age of the resident population.",
+      blank: "Grey areas have no published median age at this level.",
       note: "Median age of the resident population.",
       evaluate(record) { return valueOf(record.median_age); },
       format: (n) => `${Math.round(n * 10) / 10} yrs`,
@@ -114,6 +120,8 @@ window.Metrics = (function () {
       scale: "linear",
       needsField: true,
       domain: [0, 100],
+      hint: "How concentrated the composition is — the share held by the single largest group.",
+      blank: "Grey areas publish no composition for this field at this level.",
       note: "How concentrated the chosen composition is: the percentage held by the " +
             "single largest group. High values mean one group dominates.",
       evaluate(record, opts) { return largestShare(record, opts.field); },
@@ -126,6 +134,8 @@ window.Metrics = (function () {
       needsField: true,
       needsGroup: true,
       domain: [0, 100],
+      hint: "One group at a time, shaded by its percentage.",
+      blank: "Blank means the figure is missing at this level — not that the share is zero.",
       note: "The percentage belonging to a single chosen group. This is the faceted " +
             "answer to “which group dominates?” — one group at a time on a single " +
             "hue, rather than a colour-per-group map that colour-blind readers " +

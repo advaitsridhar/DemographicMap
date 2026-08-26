@@ -29,6 +29,10 @@
   --radius: 10px;
   --radius-sm: 6px;
   --sidebar-w: 400px;
+  --filters-w: 330px;
+  /* Measured from the topbar at startup; this is only the value used before
+     the first measurement lands. */
+  --topbar-h: 52px;
   --font: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
@@ -80,13 +84,18 @@ html, body {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Filters on the left, map in the middle, the selected place on the right.
+   The left column is zero-width rather than absent when the panel is hidden,
+   so showing it is a column resize the map can follow rather than a reflow of
+   the whole grid. */
 #app {
   display: grid;
-  grid-template-columns: 1fr var(--sidebar-w);
+  grid-template-columns: 0 1fr var(--sidebar-w);
   grid-template-rows: auto 1fr;
-  grid-template-areas: "top top" "map side";
+  grid-template-areas: "top top top" "filters map side";
   height: 100vh; height: 100dvh;
 }
+#app.filters-open { grid-template-columns: var(--filters-w) 1fr var(--sidebar-w); }
 
 .visually-hidden {
   position: absolute; width: 1px; height: 1px; overflow: hidden;
@@ -172,47 +181,170 @@ html, body {
 .ghost-button:hover { background: var(--surface-sunken); color: var(--ink-primary); }
 .ghost-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 
+/* --------------------------------------------------------- filters panel */
+
+#filters {
+  grid-area: filters;
+  background: var(--surface-1);
+  border-right: 1px solid var(--hairline);
+  overflow-y: auto; overscroll-behavior: contain;
+  z-index: 16; min-width: 0;
+  padding: 0 .9rem 2rem;
+}
+#filters:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+.filters-head {
+  display: flex; align-items: center; gap: .5rem;
+  position: sticky; top: 0; z-index: 2;
+  background: var(--surface-1);
+  padding: .8rem 0 .5rem;
+  border-bottom: 1px solid var(--hairline);
+}
+.filters-head h2 { margin: 0; font-size: .9rem; letter-spacing: -.01em; }
+.filters-head button { margin-left: auto; }
+
+/* The current filter, as chips. Repeated on the map itself when the panel is
+   hidden, which is why it is styled here rather than inside #filters. */
+.filter-summary {
+  display: flex; flex-wrap: wrap; gap: .3rem;
+  margin: .6rem 0 0;
+}
+.fchip {
+  font-size: .68rem; line-height: 1.5;
+  padding: .1rem .45rem; border-radius: 999px;
+  color: var(--ink-secondary); background: var(--surface-sunken);
+  border: 1px solid var(--hairline);
+}
+.fchip-key {
+  color: var(--accent-ink); background: var(--accent); border-color: transparent;
+  font-weight: 600;
+}
+
+.filter-section { margin-top: 1.1rem; }
+.filter-section > h3 {
+  margin: 0 0 .4rem; font-size: .68rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .06em; color: var(--ink-muted);
+}
+
+/* One choice per row, with room for the sentence that says what it does. The
+   <select> this replaced had room for neither. */
+.option-list { display: grid; gap: .2rem; }
+.opt {
+  display: grid; gap: .1rem; text-align: left;
+  font: inherit; cursor: pointer;
+  padding: .4rem .5rem;
+  color: var(--ink-secondary);
+  background: transparent;
+  border: 1px solid transparent; border-radius: var(--radius-sm);
+}
+.opt:hover { background: var(--surface-sunken); }
+.opt:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.opt[aria-checked="true"] {
+  background: var(--surface-sunken);
+  border-color: var(--accent);
+  color: var(--ink-primary);
+}
+.opt .opt-name { font-size: .82rem; font-weight: 600; }
+.opt[aria-checked="true"] .opt-name { color: var(--accent); }
+.opt .opt-hint { font-size: .69rem; color: var(--ink-muted); line-height: 1.4; }
+
+/* Three mutually exclusive fields read better side by side than stacked: they
+   are alternatives of one kind, not a menu of different things. */
+.segmented { display: flex; gap: 2px; padding: 2px; background: var(--surface-sunken);
+             border: 1px solid var(--hairline); border-radius: var(--radius-sm); }
+.seg {
+  flex: 1; min-width: 0; font: inherit; font-size: .76rem; cursor: pointer;
+  padding: .3rem .2rem; border: none; border-radius: 4px;
+  background: transparent; color: var(--ink-secondary);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.seg:hover { color: var(--ink-primary); }
+.seg:focus-visible { outline: 2px solid var(--accent); outline-offset: -1px; }
+.seg[aria-checked="true"] {
+  background: var(--surface-1); color: var(--ink-primary); font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0,0,0,.08);
+}
+
+.group-search input {
+  width: 100%; font: inherit; font-size: .8rem; padding: .35rem .5rem;
+  color: var(--ink-primary); background: var(--surface-sunken);
+  border: 1px solid var(--hairline); border-radius: var(--radius-sm);
+}
+.group-search input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.group-search input::placeholder { color: var(--ink-muted); }
+
+.group-list {
+  display: grid; gap: .1rem;
+  max-height: min(46vh, 380px); overflow-y: auto; overscroll-behavior: contain;
+  border: 1px solid var(--hairline); border-radius: var(--radius-sm);
+  padding: .2rem;
+}
+.g-opt {
+  display: grid; gap: .05rem; text-align: left;
+  font: inherit; cursor: pointer;
+  padding: .32rem .45rem;
+  background: transparent; color: var(--ink-secondary);
+  border: 1px solid transparent; border-radius: 4px;
+}
+.g-opt:hover { background: var(--surface-sunken); }
+.g-opt:focus-visible { outline: 2px solid var(--accent); outline-offset: -1px; }
+.g-opt[aria-selected="true"] {
+  background: var(--surface-sunken); border-color: var(--accent); color: var(--ink-primary);
+}
+.g-name { font-size: .8rem; font-weight: 600; overflow-wrap: anywhere; }
+.g-opt[aria-selected="true"] .g-name { color: var(--accent); }
+.g-reach { font-size: .67rem; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+/* The source labels folded into this entry. Clipped to one line: it is
+   reassurance that "Christianity" also answers for the census that said
+   "Catholic", not a list to read. The full set is spelled out in the reach
+   note once the group is chosen. */
+.g-labels {
+  font-size: .66rem; color: var(--ink-muted); font-style: italic;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.group-divider {
+  margin: .5rem 0 .25rem; padding: .35rem .45rem 0;
+  border-top: 1px solid var(--hairline);
+  display: grid; gap: .12rem;
+}
+.group-divider strong { font-size: .7rem; color: var(--ink-secondary); }
+.group-divider span { font-size: .66rem; color: var(--ink-muted); line-height: 1.45; }
+
+.group-empty { margin: .4rem .2rem; font-size: .72rem; color: var(--ink-muted); line-height: 1.5; }
+
+.reach-labels { margin-top: .3rem; font-size: .68rem; color: var(--ink-muted); line-height: 1.5; }
+.reach-labels > summary { cursor: pointer; }
+.reach-labels > summary:hover { color: var(--ink-primary); }
+.reach-labels > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
 /* ------------------------------------------------------------------- map */
 
 #map-wrap { grid-area: map; position: relative; min-width: 0; }
 #map { position: absolute; inset: 0; background: var(--water); }
 
-#controls {
+.map-legend {
   position: absolute; left: 12px; bottom: 12px; z-index: 10;
-  width: min(300px, calc(100% - 24px));
-  padding: .7rem .8rem;
+  width: min(280px, calc(100% - 24px));
+  padding: .6rem .7rem;
   background: color-mix(in srgb, var(--surface-1) 92%, transparent);
   backdrop-filter: blur(8px);
   border: 1px solid var(--border-ring);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
-.control-row { display: flex; align-items: center; gap: .5rem; margin-bottom: .5rem; }
-.control-row label {
-  font-size: .72rem; color: var(--ink-muted); text-transform: uppercase;
-  letter-spacing: .05em; white-space: nowrap; flex: 0 0 auto;
-}
-.control-row select {
-  /* min-width:0 or the select refuses to shrink below its longest option and
-     pushes out of the panel: "Religion: Christianity (189 countries)" is wider
-     than the control strip. */
-  flex: 1; min-width: 0; font: inherit; font-size: .8rem; padding: .3rem .4rem;
-  color: var(--ink-primary); background: var(--surface-1);
-  border: 1px solid var(--hairline); border-radius: var(--radius-sm);
-}
-/* The group search shares the select's box so the two read as one control. */
-.control-row input[type="search"] {
-  flex: 1; min-width: 0; font: inherit; font-size: .8rem; padding: .3rem .4rem;
-  color: var(--ink-primary); background: var(--surface-1);
-  border: 1px solid var(--hairline); border-radius: var(--radius-sm);
-}
-.control-row input[type="search"]::placeholder { color: var(--ink-muted); }
-.control-note { margin: .5rem 0 0; font-size: .7rem; color: var(--ink-muted); line-height: 1.4; }
-/* What the chosen filter covers. Sits directly under the picker because it
+.map-legend .filter-summary { margin: 0 0 .45rem; }
+.control-note { margin: .5rem 0 0; font-size: .7rem; color: var(--ink-muted); line-height: 1.45; }
+/* What the chosen filter covers. Sits at the foot of the panel because it
    qualifies the map that is already drawn, not the next thing the reader does. */
-#group-reach { margin-top: .35rem; }
+#group-reach { margin-top: .45rem; }
+#group-count { margin-top: .35rem; }
 
-#legend { display: flex; flex-direction: column; gap: .28rem; font-size: .74rem; }
+/* The panel's legend and the on-map copy are the same markup in two places,
+   so they share the rule rather than drifting apart in size. */
+#legend, #map-legend-body {
+  display: flex; flex-direction: column; gap: .28rem; font-size: .74rem;
+}
 .legend-scale { display: flex; height: 10px; border-radius: 3px; overflow: hidden; border: 1px solid var(--border-ring); }
 .legend-scale span { flex: 1; }
 .legend-ends { display: flex; justify-content: space-between; color: var(--ink-muted); font-size: .68rem; }
@@ -370,20 +502,29 @@ dialog p, dialog li { font-size: .8rem; line-height: 1.6; color: var(--ink-secon
   .search input { font-size: 1rem; padding: .5rem .6rem; }
   #about-open { font-size: 0; padding: .38rem .5rem; }
   #about-open::before { content: "?"; font-size: .85rem; }
-  #controls { padding: .55rem .6rem; }
-  /* The explanatory note is three lines on a phone and pushes the map off
-     screen; the legend above it already carries the meaning. */
-  .control-note { display: none; }
-  /* ...but not the one saying what the current filter covers. A worldwide
-     filter invites a worldwide reading, and the caveat that blank means
-     "not reported" rather than "none" is the map's meaning, not decoration
-     around it. The legend does not carry that. */
-  #group-reach:not([hidden]) { display: block; }
+  #filters-toggle { font-size: 0; padding: .38rem .5rem; }
+  #filters-toggle span { font-size: .85rem; }
+  .map-legend { padding: .5rem .6rem; }
+  /* The panel is the whole screen on a phone, so its controls get room to
+     breathe rather than being squeezed to desktop proportions. */
+  .opt { padding: .5rem .55rem; }
+  .g-opt { padding: .42rem .5rem; }
+  .group-search input { font-size: 1rem; }
+  .group-list { max-height: 50vh; }
   .facts { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 900px) {
-  #app { grid-template-columns: 1fr; grid-template-areas: "top" "map"; }
+  #app, #app.filters-open { grid-template-columns: 1fr; grid-template-areas: "top" "map"; }
+  /* Below this width there is no room for three columns, so the panel becomes
+     a drawer over the map. It covers the topbar too -- its own ✕ and the
+     Escape key are how it closes, and both return focus to the button that
+     opened it. */
+  #filters {
+    position: fixed; inset: var(--topbar-h) auto 0 0; width: min(340px, 90vw);
+    border-right: 1px solid var(--hairline);
+    box-shadow: var(--shadow); z-index: 30;
+  }
   #sidebar {
     position: fixed; inset: auto 0 0 0; height: min(62vh, 560px);
     border-left: none; border-top: 1px solid var(--hairline);
@@ -394,7 +535,7 @@ dialog p, dialog li { font-size: .8rem; line-height: 1.6; color: var(--ink-secon
   #sidebar.is-open { transform: translateY(0); }
   .sidebar-close { display: block; }
   .brand-sub { display: none; }
-  #controls { bottom: 12px; width: calc(100% - 24px); }
+  .map-legend { bottom: 12px; width: calc(100% - 24px); }
   #sidebar:not(.is-open) { pointer-events: none; }
 }
 

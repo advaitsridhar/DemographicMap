@@ -211,8 +211,8 @@ There is deliberately **no "dominant religion" categorical choropleth**.
 Colour-vision-safe separation across all pairs of an eight-hue set is not
 achievable, and a map has no room for the direct labels that make the sidebar
 charts safe. The same question is answered by faceting: pick one group and read
-its share on a single sequential ramp ("Share of one group" in the Colour by
-menu).
+its share on a single sequential ramp ("Share of one group" in the filter
+panel's **Colour by** list).
 
 ---
 
