@@ -592,13 +592,47 @@ Three properties of that index matter when reading the map:
   "Unaffiliated or not reported", which mixes people who belong to nothing
   with members of bodies that did not report.
 * **Blank is not zero.** Most groups are reported by a minority of countries.
-  Sikhism is shaded in six and blank everywhere else; that means six countries
-  publish it, not that nobody else has any Sikhs. The note under the picker says
-  how many countries and units stand behind the current filter, which labels
-  were folded together, and where a country measured it another way.
+  Sikhism is reported by eight countries in all and by four of them nationally,
+  so a world-zoom map of it shades four shapes and leaves the rest blank; that
+  means four countries publish a national figure, not that nobody else has any
+  Sikhs. The note under the
+  list says how many countries and areas stand behind the current filter, which
+  labels were folded together, and where a country measured it another way.
+* **`units` counts areas, not rows.** One record can carry several rows that
+  fold into one group — the US publishes Protestant, Catholic, Orthodox,
+  Latter-day Saints and Jehovah's Witnesses where Australia publishes one
+  "Christianity". Counting rows made `units` a row tally wearing the word
+  "areas", and the panel read Christianity's country-level 450 out to a reader
+  as 450 countries when only 215 country records carry a religion at all. It is
+  now 201, which is exactly the length of the group's country list.
 
-Ethnicity has no canonical layer at all — see the table's own note — so its
-groups are filterable only under the exact names their censuses used.
+Ethnicity has the smallest layer of the three, and deliberately. Its
+categories are made by states rather than found in the world: Brazil's *parda*,
+the UK's "Mixed" and the US "Two or more races" are three different questions
+with three different answer sets, and a person counted in one would not
+necessarily be counted in the others. So the table holds only two kinds of
+entry — one people spelled two ways (Māori/Maori, Romani/Roma/Gypsy), and one
+population two sources name differently (Mexico writes its census category as
+both "Afro-descendant" and "Afro-Mexican or Afro-descendant").
+
+Four pairs are named in the code as deliberately *not* merged, because each
+looks foldable and is not: White/European, Black/African, Mestizo/Mixed, and
+Indian/East Indian. Nothing is lost by leaving them apart — an unmapped label
+keys on itself, so the "White" of 27 countries is already one filter.
+
+**A residual is not a group.** "other" reaches 92 countries in the language
+field and 142 in ethnicity, and topped the picker while meaning nothing in
+particular. Those buckets are now named ("Other languages", "Ethnicity not
+stated") and flagged `residual` in `groups.json`, so the picker sorts them
+last, under a heading saying they are the absence of an answer rather than a
+group anyone belongs to. They are still shown: a bar that quietly drops a fifth
+of a population is the failure this project cares about most.
+
+**Reach is the sort order, not size.** The index is written most-areas-first,
+which is the wrong first answer for a worldwide filter: "Unaffiliated or not
+reported" is 3,130 US counties in one country, and it outranked Islam's 124
+countries. The panel sorts by how many countries report a group, because that
+is what makes it comparable across a border at all.
 
 The same groups are reachable from the search box at the top, alongside
 places: typing `islam` offers the religion before the places whose names
@@ -606,6 +640,43 @@ merely look like it, and picking it shades the map instead of moving it.
 Group matches are capped at three, because `tamil` is a language, two
 ethnic categories *and* Tamil Nādu, and burying the state under its own
 linguistic namesakes would be its own kind of wrong.
+
+## The filter panel
+
+Everything above is only reachable through one control, so the control gets the
+left side of the page rather than a floating box over the map. It shows and
+hides from the topbar (**Filters**), from its own ✕, and with Escape; the
+choice is remembered, and on a screen narrower than 900px it starts hidden and
+opens as a drawer below the topbar rather than over it.
+
+Four things it does that the four `<select>`s it replaced could not:
+
+* **Field and group are separate controls.** They used to be one list whose
+  entries read `Religion: Christianity  (201 countries)`, so choosing a
+  language meant scrolling past every religion, and the same control silently
+  changed jobs — from "field" to "group" — depending on a setting three rows up.
+* **Each choice carries the sentence that says what it does.** A `<select>`
+  has room for a label and nothing else, so "Data coverage" and "Share of one
+  group" sat side by side with no hint that one of them needed a group chosen
+  first.
+* **The group list shows its evidence.** Every entry carries how many countries
+  and areas report it, and the source labels folded into it, so the reader can
+  see that picking "Christianity" also answers for the census that said
+  "Catholic" — before picking it, not after.
+* **The legend follows the panel out.** Hiding the controls is a request for
+  more map, not for a map whose colours mean nothing, so the ramp, the chips
+  naming the current filter, and the sentence about what blank means move to
+  the map's corner when the panel closes.
+
+All four choice lists — metric, field, group, detail — follow the same keyboard
+contract: one tab stop, arrows to move, moving selects. The group list is a
+listbox rather than a radio group, but behaves identically, because a list that
+worked differently from the controls directly above it would be the more
+surprising choice. Typing in the group search and pressing ArrowDown lands in
+the list. A group chosen from the search box that a later search excludes is
+kept, at the foot of the list under "Still on the map" — dropping it would
+colour the map by something the picker denied was selected, and putting it at
+the top would make the search look broken.
 
 ## Choosing the level of detail
 

@@ -32,10 +32,12 @@ class Synonyms(unittest.TestCase):
 
     def test_unmapped_labels_keep_their_own_name(self):
         # Nothing is dropped for want of a mapping: an unlisted group stays
-        # filterable under exactly the name its census used.
-        got = cg.canonicalise(rows(("Espírita", 2.0), ("Zoroastrian", 0.1)),
+        # filterable under exactly the name its census used. "Kirat" is one
+        # deliberately -- a living tradition with 924,204 adherents that only
+        # Nepal's census counts, and that dropping into a residual would erase.
+        got = cg.canonicalise(rows(("Espírita", 2.0), ("Kirat", 3.2)),
                               "religion")
-        self.assertEqual(got["Zoroastrian"], 0.1)
+        self.assertEqual(got["Kirat"], 3.2)
         self.assertEqual(got["Spiritism and Afro-Brazilian religions"], 2.0)
 
     def test_an_ambiguity_is_not_folded_into_a_certainty(self):
@@ -46,12 +48,34 @@ class Synonyms(unittest.TestCase):
                               "religion")
         self.assertNotIn("No religion", got)
 
-    def test_ethnicity_is_never_merged_across_countries(self):
-        # Brazil's cor ou raça, the UK's tick-boxes and China's 56 nationalities
-        # are not subdivisions of one another.
-        self.assertEqual(cg.TABLES["ethnicity"], {})
-        got = cg.canonicalise(rows(("White", 5.0), ("Branca", 4.0)), "ethnicity")
-        self.assertEqual(got, {"White": 5.0, "Branca": 4.0})
+    def test_ethnicity_folds_only_spellings_and_the_same_people(self):
+        # Ethnicity categories are made by states rather than found in the
+        # world, so the table holds two kinds of entry and no others: one
+        # people spelled two ways, and one population two sources name
+        # differently.
+        got = cg.canonicalise(rows(("Maori", 5.0), ("Māori", 4.0)), "ethnicity")
+        self.assertEqual(got, {"Māori": 9.0})
+        got = cg.canonicalise(
+            rows(("Afro-Mexican or Afro-descendant", 2.0)), "ethnicity")
+        self.assertEqual(got, {"Afro-descendant": 2.0})
+
+    def test_ethnicity_categories_states_define_differently_stay_apart(self):
+        # Brazil's cor ou raça, the UK's tick-boxes and China's 56
+        # nationalities are not subdivisions of one another, and neither are
+        # these. Folding them would invent a worldwide category no census
+        # asked about.
+        for a, b in (("White", "European"), ("Black", "African"),
+                     ("Mestizo", "Mixed"), ("Indian", "East Indian")):
+            got = cg.canonicalise(rows((a, 5.0), (b, 4.0)), "ethnicity")
+            self.assertEqual(sorted(got), sorted({a, b}),
+                             f"{a} and {b} must not be merged")
+
+    def test_an_unmapped_ethnicity_still_groups_across_countries(self):
+        # Nothing needs a table entry to be filterable worldwide: an unmapped
+        # label keys on itself, so the "White" of 27 countries is already one
+        # group.
+        got = cg.canonicalise(rows(("White", 5.0), ("White", 4.0)), "ethnicity")
+        self.assertEqual(got, {"White": 9.0})
 
 
 class DoubleCounting(unittest.TestCase):
