@@ -638,6 +638,48 @@ twin's figures. So a row that names its parent state is matched only inside
 that state, and a row that does not is matched only against names that are
 unique country-wide.
 
+**Names are compared word by word.** `norm()` squashes a name into one run of
+letters so two spellings can be compared as one key, and a substring test on
+that run reads straight across the gaps between words. "Anta" is four letters
+and sits inside "santacruz", so Argentina's Santa Cruz was joined to a
+department called Anta 406 km away, and Santa Anita to the same shape 817 km
+away. "Tala" starts "talampayanationalpark", so Talampaya National Park went to
+Tala, 835 km away. Both loose passes now line up whole words instead:
+
+* The **prefix** pass anchors at the first word — "Mymensingh Division" to
+  CGAZ's "Mymensingh", "Alif Alif Atoll" to "Alif Alif".
+* The **containment** pass allows a run starting anywhere — "Canton of Zurich"
+  to "Zurich", "Provincia de Bocas del Toro" to "Bocas del Toro".
+* The last word may run up to three characters short of its counterpart, which
+  is an inflected or adjectival ending and not a different word: "Stockholm"
+  against "Stockholms", "Plzeň" against "Plzeňský", "Northeast" against
+  "Northeastern". At five it would reach "Talampaya" from "Tala".
+* A hyphen is read **both ways**, because neither reading is right on its own.
+  Joined, CGAZ's "Bío-Bío" meets a source's "Biobío" and Timor-Leste's
+  "Oe-Cusse" meets "Oecusse". Split, an Arabic article the other side leaves
+  off becomes its own word and the run simply starts after it: "Al-Basrah" to
+  "Basra", "An-Najaf" to "Najaf", "Ar-Raqqa" to "Raqqa".
+* A word under four letters counts only where the match is anchored at the
+  first word. "Lae Atoll" to "Lae" is evidence; "Fes" three letters into "Oued
+  Fes" is a different commune.
+
+Across every adapter this moved 67 joins from a loose pass to an exact one and
+removed 36 loose ones, a net gain of 31. Among the joins it removed: Budapest
+from Pest, Oberbayern and Niederbayern from Bayern, Rheinhessen-Pfalz from
+Hessen, and North and South Aegean from a single shape called Egean.
+
+**`norm()` keeps letters of every script.** It reduced a name to `a-z0-9`,
+which does not delete an accent — NFKD already did that — but does delete any
+letter that is not Latin at all. 693 boundary names normalised to the empty
+string, 352 Russian and 256 Tunisian second-level units among them: unmatchable
+by name, and all colliding on one key. The same rule deleted the letters NFKD
+cannot take apart because they are not a letter plus a mark — "Østfold" became
+"stfold", which is a substring of "vestfoldogtelemark", and Norway's Østfold
+was joined to Vestfold og Telemark. Those letters are now folded (ø→o, đ→d,
+ß→ss, æ→ae) and everything else alphanumeric is kept as itself. Cyrillic stays
+Cyrillic rather than being romanised, because a transliteration this code
+invents is a guess about a name and the name itself is not.
+
 **A row that contradicts itself.** The case that slipped through for a long
 time was a row that named a state, resolved it, found no shape of its name
 inside — and was handed to the country-wide pass anyway, which matched a shape
@@ -673,6 +715,13 @@ adapters publish no coordinates, so there is no evidence either way, and
 refusing on the disagreement alone would have deleted 26 correct Indian
 districts along with correct rows in Mexico and the United States. A rule with
 no evidence behind it does not get to decide.
+
+**What is still wrong here.** Five Ethiopian zones — Burji, Mao-Komo, Tembaro,
+Pawe and Kebena — each contain the words "special woreda", and CGAZ has one
+shape named exactly that, so all five match it and the last one wins. Finland's
+North Ostrobothnia goes to plain Ostrobothnia rather than to Northern
+Ostrobothnia beside it. Both are many-to-one collapses that the uniqueness rule
+cannot see, because each row on its own finds exactly one shape.
 
 **38 rows are still refused as ambiguous**, in Argentina (20), Vietnam (13),
 Colombia and Thailand (2 each) and Mexico (1). Each names a state that resolves,
