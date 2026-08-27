@@ -344,6 +344,17 @@ def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
         totals[region] = published if published is not None else sum(kept.values())
     for how, n in sorted(picked.items(), key=lambda kv: -kv[1]):
         log(f"  outermost level chosen by {how} for {n} regions")
+    # When no rule adds up, the categories themselves are the diagnosis, and a
+    # log that only reports the verdict makes the next run a guess. One region
+    # is enough to show the shape of the classification.
+    if out and not any(how.startswith("code tree") for how in picked):
+        region, counts = next(iter(out.items()))
+        published = next((v for (label, _), v in counts.items()
+                          if label.strip().lower() in GRAND_TOTAL), None)
+        log(f"  ! no rule partitioned {label_dim} for region {region}; "
+            f"published total {published}")
+        for (label, code), value in sorted(counts.items(), key=lambda kv: -kv[1])[:24]:
+            log(f"      {code!r:>10}  {value:>12,.0f}  {label}")
     return grouped, totals
 
 
