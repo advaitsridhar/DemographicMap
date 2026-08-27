@@ -29,10 +29,22 @@ import urllib.request
 # Base URLs are the language-scoped database roots. Where an office offers
 # English it is used, because the table titles are what the keyword match reads.
 INSTANCES: dict[str, dict[str, str]] = {
+    # Finland records mother tongue in the population register for every
+    # resident, by municipality. That is one of the four fields this project
+    # maps, and a register count rather than a sample -- the first pass wrote
+    # it off as "asks language rather than ethnicity", as though language were
+    # a consolation prize.
     "FIN": {"name": "Statistics Finland",
-            "base": "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin"},
+            "base": "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin",
+            # StatFin answers 429 under the default pace, and a walk that is
+            # being throttled finds nothing and reports it as "nothing there".
+            "throttle": 1.2, "budget": 220},
     "SWE": {"name": "Statistics Sweden",
             "base": "https://api.scb.se/OV0104/v1/doris/en/ssd"},
+    # Norway, Iceland and Denmark do not ask religion, but they register
+    # membership of religious and life-stance communities, which is a count of
+    # the same thing by a different route. Iceland's is broken down by
+    # organisation.
     "NOR": {"name": "Statistics Norway",
             "base": "https://data.ssb.no/api/v0/en/table"},
     "EST": {"name": "Statistics Estonia",
@@ -41,8 +53,12 @@ INSTANCES: dict[str, dict[str, str]] = {
             "base": "https://data.stat.gov.lv/api/v1/en/OSP_PUB"},
     "LTU": {"name": "Statistics Lithuania",
             "base": "https://osp-rs.stat.gov.lt/rest_xml/data"},
-    "DNK": {"name": "Statistics Denmark",
-            "base": "https://api.statbank.dk/v1"},
+    # NOT PxWeb: StatBank has its own REST shape (/v1/subjects, /v1/tables),
+    # so the tree walk below cannot read it. Left listed and skipped by name
+    # rather than deleted, because "we looked and it needs a different client"
+    # is worth more to the next person than an absence.
+    "DNK": {"name": "Statistics Denmark (StatBank, not PxWeb)",
+            "base": "https://api.statbank.dk/v1", "skip": "not a PxWeb tree"},
     "ISL": {"name": "Statistics Iceland",
             "base": "https://px.hagstofa.is/pxen/api/v1/en/Ibuar"},
     # The offices this adapter is actually for. The Nordic instances above run
@@ -70,7 +86,13 @@ INSTANCES: dict[str, dict[str, str]] = {
 # What this project can put on a map. "Nationality" is included because several
 # offices use it for what their census calls ethnicity.
 WANTED = ("religio", "ethnic", "nationalit", "language", "mother tongue",
-          "citizenship", "confession", "denomination")
+          "citizenship", "confession", "denomination",
+          # What the Nordic registers call it. Norway files these under "life
+          # stance communities" and Iceland under "life stance organisations";
+          # neither string contains any of the words above except "religio",
+          # and the folder holding them often does not contain that either.
+          "life stance", "livssyn", "faith", "church", "creed",
+          "trossamfunn", "tros")
 
 # Geography variable names, in the languages these instances answer in.
 # "Territorial unit" is Latvia's, and leaving it out made the probe report
@@ -90,24 +112,40 @@ BUDGET_SECONDS = 70
 REQUEST_TIMEOUT = 12
 
 
-def get(url: str, timeout: int = REQUEST_TIMEOUT):
+def get(url: str, timeout: int = REQUEST_TIMEOUT, tries: int = 3):
+    """One GET, backing off when the office says it is being asked too fast.
+
+    A 429 is not an absence and must not be reported as one. Statistics
+    Finland returns it under any brisk pace, and the first walk of that
+    instance came back empty -- which was written down as "Finland asks
+    language rather than ethnicity", a conclusion the probe had not earned.
+    """
     req = urllib.request.Request(url, headers={
         "User-Agent": "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap)",
         "Accept": "application/json",
     })
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return json.loads(resp.read().decode("utf-8", "replace"))
+    for attempt in range(tries):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return json.loads(resp.read().decode("utf-8", "replace"))
+        except urllib.error.HTTPError as err:
+            if err.code not in (429, 503) or attempt == tries - 1:
+                raise
+            wait = float(err.headers.get("Retry-After") or 0) or 2.0 * (2 ** attempt)
+            print(f"      (throttled, waiting {wait:.0f}s)")
+            time.sleep(min(wait, 30.0))
+    raise RuntimeError("unreachable")
 
 
 def walk(base: str, budget: list[int], deadline: float,
-         depth: int = 0, path: str = "") -> list[dict]:
+         depth: int = 0, path: str = "", throttle: float = THROTTLE) -> list[dict]:
     """Depth-first over the PxWeb tree, collecting tables that look relevant."""
     if budget[0] <= 0 or depth > 4 or time.monotonic() > deadline:
         return []
     url = f"{base}/{path}" if path else base
     budget[0] -= 1
     try:
-        time.sleep(THROTTLE)
+        time.sleep(throttle)
         node = get(url)
     except Exception as err:                      # noqa: BLE001
         if depth == 0:
@@ -130,16 +168,16 @@ def walk(base: str, budget: list[int], deadline: float,
             # Only descend where the folder could plausibly hold what we want,
             # or near the root where names are broad ("Population").
             if depth <= 1 or any(w in text.lower() for w in WANTED + ("population", "census")):
-                found.extend(walk(base, budget, deadline, depth + 1, child))
+                found.extend(walk(base, budget, deadline, depth + 1, child, throttle))
         if budget[0] <= 0 or time.monotonic() > deadline:
             break
     return found
 
 
-def describe(base: str, table: dict) -> None:
+def describe(base: str, table: dict, throttle: float = THROTTLE) -> None:
     """Print a table's variables, and the size of its geography dimension."""
     try:
-        time.sleep(THROTTLE)
+        time.sleep(throttle)
         meta = get(f"{base}/{table['path']}")
     except Exception as err:                      # noqa: BLE001
         print(f"      ! metadata failed: {str(err)[:70]}")
@@ -213,19 +251,32 @@ def main() -> int:
             print(f"\n== {iso}: no instance configured")
             continue
         print(f"\n== {iso} {spec['name']}\n   {spec['base']}")
+        if spec.get("skip"):
+            print(f"    skipped: {spec['skip']}")
+            continue
+        # An office that answers slowly needs both a slower pace and longer to
+        # spend at it; one budget for every instance means the throttled ones
+        # report an empty tree, which reads as "nothing there".
+        throttle = float(spec.get("throttle", THROTTLE))
+        budget = int(spec.get("budget", BUDGET_SECONDS))
         started = time.monotonic()
-        tables = walk(spec["base"], [MAX_NODES], started + BUDGET_SECONDS)
+        tables = walk(spec["base"], [MAX_NODES], started + budget, throttle=throttle)
         spent = time.monotonic() - started
-        if spent > BUDGET_SECONDS:
+        exhausted = spent > budget
+        if exhausted:
             print(f"    (stopped after {spent:.0f}s — tree not fully walked)")
         if not tables:
-            print("    nothing matching religion / ethnicity / language")
+            # Distinguish "walked it and there is nothing" from "ran out of
+            # time or was throttled", because only the first is a finding.
+            print("    no candidate tables"
+                  + (" IN THE PART WALKED — not a finding" if exhausted else
+                     " matching religion / ethnicity / language"))
             continue
         print(f"    {len(tables)} candidate table(s)")
         for table in tables[:args.max_tables]:
             print(f"    - {table['path']}")
             print(f"      {table['title'][:110]}")
-            describe(spec["base"], table)
+            describe(spec["base"], table, throttle=throttle)
     return 0
 
 
