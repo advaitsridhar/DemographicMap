@@ -1,11 +1,8 @@
-pxweb: Statistics Latvia (LVA)
-  POP/IR/IRE/IRE031
-    left out (code is not 9 characters): 5 — LV005 Latgale statistical region, LV009 Zemgale statistical region, LV00A Riga statistical region (from 01.01.2024.), LV00B Kurzeme statistical region (from 01.01.2024.), LV00C Vidzeme statistical region (from 01.01.2024.)
-    left out (inside Jēkabpils municipality): 1 — LV0031010 Jēkabpils
-    left out (inside Ogre municipality): 1 — LV0040010 Ogre
-    left out (inside Valmiera municipality): 1 — LV0054010 Valmiera
-    left out (the country itself): 1 — LV Latvia
-    42 units, categories sum to the published total in each
-    ...and to 1,845,096 against a published national 1,845,096
-  wrote data/processed/latvia_municipality.json (91 kB)
-  42 records
+pxweb: Statistics Estonia (EST)
+  rahvastik/rahvastikunaitajad-ja-koosseis/rahvaarv-ja-rahvastiku-koosseis/RV0222U.PX
+    left out (named in drop=): 3 — 784 ..Tallinn, 793 ..Tartu city, unk County unknown
+    left out (the country itself): 1 — 00 Whole country
+    15 units, categories sum to the published total in each
+    ...and to 1,360,745 against a published national 1,360,745
+  wrote data/processed/estonia_county.json (24 kB)
+  15 records
