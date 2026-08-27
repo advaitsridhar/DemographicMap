@@ -313,9 +313,15 @@ def unstack(payload: dict[str, Any]) -> list[tuple[dict[str, tuple[str, str]], f
 # for the municipality that absorbed Varaklani. That parenthetical is metadata
 # about the row, not part of the place's name, and carrying it into the record
 # means the join looks for a shape called "Madona municipality (from
-# 01.07.2025.)" and finds nothing. Only a dated qualifier is stripped -- a
-# parenthesis that is part of a name stays.
-VINTAGE = re.compile(r"\s*\((?:from|until|till|since|to)\s+[\d.\-/ ]+\)\s*$", re.I)
+# 01.07.2025.)" and finds nothing.
+#
+# What marks it is the date, not the word in front of it. Matching on "from"
+# and "until" worked on the English labels and missed the Latvian ones, where
+# the same qualifier reads "(no 01.07.2025.)" -- and the local labels are the
+# ones the join now runs on. A parenthesis with no date in it is part of a
+# name and stays.
+VINTAGE = re.compile(
+    r"\s*\([^()]{0,20}?\d{1,2}[.\-/]\d{1,2}[.\-/]\d{2,4}\.?\s*\)\s*$")
 
 
 def place_name(label: str) -> str:
