@@ -45,6 +45,26 @@ INSTANCES: dict[str, dict[str, str]] = {
             "base": "https://api.statbank.dk/v1"},
     "ISL": {"name": "Statistics Iceland",
             "base": "https://px.hagstofa.is/pxen/api/v1/en/Ibuar"},
+    # The offices this adapter is actually for. The Nordic instances above run
+    # PxWeb well and ask none of the questions Eurostat leaves out; these ask
+    # ethnicity and religion in the same census, which is the gap in the map.
+    # Their base URLs are unverified from here -- the sandbox cannot reach a
+    # statistical host -- so an unreachable one is a result too, and cheaper to
+    # learn from a probe than from a guessed adapter.
+    "SVN": {"name": "Statistical Office of Slovenia",
+            "base": "https://pxweb.stat.si/SiStatData/api/v1/en/Data"},
+    "SVK": {"name": "Statistical Office of Slovakia",
+            "base": "https://datacube.statistics.sk/api/v1/en/DATAcube"},
+    "MKD": {"name": "State Statistical Office of North Macedonia",
+            "base": "https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat"},
+    "SRB": {"name": "Statistical Office of Serbia",
+            "base": "https://data.stat.gov.rs/api/v1/en"},
+    "HRV": {"name": "Croatian Bureau of Statistics",
+            "base": "https://podaci.dzs.hr/api/v1/en"},
+    "GRL": {"name": "Statistics Greenland",
+            "base": "https://bank.stat.gl/api/v1/en/Greenland"},
+    "FRO": {"name": "Statistics Faroe Islands",
+            "base": "https://statbank.hagstova.fo/api/v1/en/H2"},
 }
 
 # What this project can put on a map. "Nationality" is included because several
