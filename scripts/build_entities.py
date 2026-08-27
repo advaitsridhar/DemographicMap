@@ -61,7 +61,7 @@ ADAPTER_FILES = [
     # After Eurostat, which covers both countries at NUTS 3 with population and
     # nothing else: these are the national registers, and ethnicity is a
     # question Eurostat does not ask.
-    "estonia_county.json", "latvia_municipality.json",
+    "estonia_county.json", "latvia_municipality.json", "finland_region.json",
     "singapore_region.json", "singapore_planning_area.json",
     "srilanka_province.json", "srilanka_district.json",
     "brazil_state.json", "brazil_municipality.json",

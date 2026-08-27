@@ -1220,6 +1220,15 @@ class FinlandLevels(unittest.TestCase):
     def test_only_the_rows_own_code_is_stripped(self):
         self.assertEqual(self.px.place_name("A1 Something", "B2"), "A1 Something")
 
+    def test_the_exonyms_geoboundaries_uses_are_declared(self):
+        # Six regions are named there with older English exonyms that neither
+        # the Finnish label nor Statistics Finland's English one reaches.
+        # Nothing infers "Finland Proper" from "Varsinais-Suomi".
+        declared = self.px.INSTANCES["FIN"]["aliases"]
+        self.assertEqual(declared["MK02"], ("Finland Proper",))
+        self.assertEqual(declared["MK05"], ("Tavastia Proper",))
+        self.assertEqual(declared["MK17"], ("Northern Ostrobothnia",))
+
     def test_the_two_language_parents_are_dropped(self):
         # "01 NATIONAL LANGUAGES, TOTAL" holds Finnish, Swedish and Sami; "02
         # FOREIGN LANGUAGES, TOTAL" holds the other 163. Neither label is a

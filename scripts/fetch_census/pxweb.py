@@ -169,6 +169,23 @@ INSTANCES: dict[str, dict[str, Any]] = {
         # its own. Taking the Finnish labels as the name and keeping the
         # English as an alias gives the matcher both forms to try.
         "local": "fi",
+        # geoBoundaries names six of Finland's regions with older English
+        # exonyms that neither the Finnish label nor Statistics Finland's own
+        # English one reaches. These are declared equivalences rather than
+        # anything a matcher could infer: "Varsinais-Suomi" and "Finland
+        # Proper" share no word, and "North Ostrobothnia" is close enough to
+        # bare "Ostrobothnia" -- a different region -- that the loose pass
+        # reached it and was stopped only by the rule that settles two rows
+        # landing on one shape. A wrong join that a tiebreak happens to catch
+        # is still a wrong join waiting for the tiebreak to be absent.
+        "aliases": {
+            "MK02": ("Finland Proper",),        # Varsinais-Suomi
+            "MK05": ("Tavastia Proper",),       # Kanta-Häme
+            "MK10": ("Southern Savonia",),      # Etelä-Savo
+            "MK11": ("Northern Savonia",),      # Pohjois-Savo
+            "MK17": ("Northern Ostrobothnia",), # Pohjois-Pohjanmaa
+            "MK21": ("Åland Islands",),         # Ahvenanmaa
+        },
         "tables": [Table(
             path="vaerak/11rl.px",
             field="language", geo="alue_23_20260101", group="kieli_15_20180102",
@@ -596,7 +613,8 @@ def main() -> int:
         records.append(record(
             f"{iso3}-{code}", place_name(slot["name"], code),
             level=spec["level"], parent=iso3, codes={"pxweb": code},
-            aliases=sorted({place_name(a, code) for a in slot["aliases"]}
+            aliases=sorted(({place_name(a, code) for a in slot["aliases"]}
+                            | set(spec.get("aliases", {}).get(code, ())))
                            - {place_name(slot["name"], code)}) or None,
             population=(measure(int(round(slot["population"])), year=slot.get("year"),
                                 source=spec["source"])
