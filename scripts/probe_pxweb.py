@@ -240,6 +240,12 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--countries", default=",".join(INSTANCES))
     ap.add_argument("--max-tables", type=int, default=3)
+    # A walk from the root spends its budget on whatever it meets first. Once
+    # the office's tree is known, naming the subtree is the difference between
+    # sampling it and reading it: StatFin keeps population by language under
+    # "vaerak", four folders in.
+    ap.add_argument("--root", default="",
+                    help="start the walk at this path instead of the database root")
     ap.add_argument("--dump", metavar="ISO:TABLE_PATH", action="append", default=[],
                     help="print one table's variable codes and values in full")
     args = ap.parse_args()
@@ -276,7 +282,8 @@ def main() -> int:
         # that had correctly stopped at seventy seconds.
         walk_deadline = started + budget
         instance_deadline = started + budget + DESCRIBE_SECONDS
-        tables = walk(spec["base"], [MAX_NODES], walk_deadline, throttle=throttle)
+        tables = walk(spec["base"], [MAX_NODES], walk_deadline,
+                      path=args.root, throttle=throttle)
         spent = time.monotonic() - started
         exhausted = spent > budget
         if exhausted:
@@ -288,7 +295,16 @@ def main() -> int:
                   + (" IN THE PART WALKED — not a finding" if exhausted else
                      " matching religion / ethnicity / language"))
             continue
-        print(f"    {len(tables)} candidate table(s)")
+        # Every path found, then the first few described. Listing is free --
+        # the walk already has these -- and describing costs a request each.
+        # Printing only the described ones hid the finding: Finland returned 44
+        # candidates and the six shown were births, marriages and citizenship,
+        # because a depth-first walk reaches those folders before the one
+        # holding population by language.
+        print(f"    {len(tables)} candidate table(s):")
+        for table in tables:
+            print(f"      {table['path']:<28} {table['title'][:88]}")
+        print(f"    describing the first {min(args.max_tables, len(tables))}:")
         for table in tables[:args.max_tables]:
             print(f"    - {table['path']}")
             print(f"      {table['title'][:110]}")
