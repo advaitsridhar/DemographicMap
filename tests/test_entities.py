@@ -57,7 +57,8 @@ class CuratedMatching(unittest.TestCase):
         self.assertEqual(how, "prefix")
 
     def test_ambiguous_prefix_refuses_to_guess(self):
-        lookup = {be.norm("Amazonas Norte"): {}, be.norm("Amazonas Sul"): {}}
+        lookup = {be.norm("Amazonas Norte"): {"name": "Amazonas Norte"},
+                  be.norm("Amazonas Sul"): {"name": "Amazonas Sul"}}
         entity, how = be.match_name({"name": "Amazonas"}, lookup)
         self.assertIsNone(entity)
         self.assertEqual(how, "unmatched")
@@ -164,7 +165,8 @@ class ContainmentMatching(unittest.TestCase):
         self.assertEqual(entity["name"], "Stockholm")
 
     def test_ambiguous_containment_refuses(self):
-        lookup = {be.norm("Northern"): {}, be.norm("Northern Cape"): {}}
+        lookup = {be.norm("Northern"): {"name": "Northern"},
+                  be.norm("Northern Cape"): {"name": "Northern Cape"}}
         entity, how = be.match_name({"name": "North"}, lookup)
         self.assertIsNone(entity)
 
@@ -641,6 +643,102 @@ class C16MotherTongue(unittest.TestCase):
         with self.assertRaises(SystemExit) as caught:
             self.il.validate({("00", "000"): {"name": "INDIA", "counts": counts}})
         self.assertIn("Hindi", str(caught.exception))
+
+
+class NameNormalisation(unittest.TestCase):
+    """What survives norm(), and what used to be deleted by it."""
+
+    def test_a_letter_that_does_not_decompose_is_folded_not_dropped(self):
+        # NFKD cannot take "o-slash" apart, because it is its own letter rather
+        # than an o plus a mark. Deleting it left "stfold", a substring of
+        # "vestfoldogtelemark", and Norway's Ostfold was joined to Vestfold og
+        # Telemark.
+        self.assertEqual(be.norm("Østfold"), "ostfold")
+        self.assertNotIn(be.norm("Østfold"), be.norm("Vestfold og Telemark"))
+
+    def test_a_non_latin_name_keeps_its_own_letters(self):
+        # 693 boundary names normalised to the empty string -- 352 Russian and
+        # 256 Tunisian second-level units among them -- so they were
+        # unmatchable, and all collided on one key.
+        for name in ("городской округ Канск", "إقليم الخميسات", "高雄市"):
+            self.assertTrue(be.norm(name), f"{name} normalised to nothing")
+        self.assertNotEqual(be.norm("городской округ Канск"), be.norm("إقليم الخميسات"))
+
+    def test_ascii_names_are_unchanged(self):
+        self.assertEqual(be.norm("Zürich"), "zurich")
+        self.assertEqual(be.norm("Canton of Zurich"), "cantonzurich")
+        self.assertEqual(be.norm("São Paulo"), "saopaulo")
+
+    def test_a_modifier_letter_is_not_a_word_break(self):
+        self.assertEqual(be.norm("Dar'a"), be.norm("Dara"))
+        # Sanʿaʾ has one "a" where Sanaa has two, so the folded names are not
+        # equal -- but neither is split into pieces that line up with nothing.
+        self.assertEqual(be.norm("Sanʿaʾ"), "sana")
+        self.assertTrue(be.related(be.name_forms("Sanʿaʾ Governorate"),
+                                   be.name_forms("Sanaa Governorate")))
+
+
+class LooseNameMatching(unittest.TestCase):
+    """The prefix and containment passes, which compare words rather than a
+    squashed run of letters.
+
+    On the squashed string a substring test reads straight across the gap
+    between two words: "Anta" sits inside "santacruz", so Argentina's Santa
+    Cruz was joined to a department called Anta 406 km away, and Santa Anita to
+    the same shape 817 km away.
+    """
+
+    def related(self, a, b, at_start=False):
+        return be.related(be.name_forms(a), be.name_forms(b), at_start=at_start)
+
+    def test_a_word_cannot_start_inside_another_word(self):
+        for other in ("Santa Cruz", "Santa Anita", "Santa Fe"):
+            self.assertFalse(self.related("Anta", other), other)
+
+    def test_a_long_official_form_still_finds_the_short_one(self):
+        self.assertTrue(self.related("Canton of Zurich", "Zurich"))
+        self.assertTrue(self.related("Emirate of Sharjah", "Sharjah"))
+        self.assertTrue(self.related("Provincia de Bocas del Toro", "Bocas del Toro"))
+
+    def test_an_inflected_ending_is_the_same_word(self):
+        self.assertTrue(self.related("Stockholms lan", "Stockholm"))
+        self.assertTrue(self.related("Plzeňský kraj", "Plzeň Region"))
+        self.assertTrue(self.related("Northeastern Region", "Northeast"))
+
+    def test_but_not_a_different_word_that_starts_the_same(self):
+        # "Tala" is a prefix of "Talampaya", 835 km away.
+        self.assertFalse(self.related("Talampaya National Park", "Tala"))
+
+    def test_a_hyphen_is_read_both_ways(self):
+        # Joined: the other side spells it as one word.
+        self.assertTrue(self.related("Región del Bío-Bío", "Biobío Region"))
+        self.assertTrue(self.related("Oe-Cusse Ambeno", "Oecusse"))
+        # Split: the other side leaves an article off.
+        self.assertTrue(self.related("Al-Basrah", "Basra Governorate"))
+        self.assertTrue(self.related("An-Najaf", "Najaf Governorate"))
+
+    def test_a_short_word_only_counts_where_the_match_is_anchored(self):
+        # "Lae Atoll" to "Lae" starts at the first word, which is evidence.
+        self.assertTrue(self.related("Lae Atoll", "Lae", at_start=True))
+        # "Fes" three letters into "Oued Fes" is not: they are different
+        # communes, and the match would start partway through the name.
+        self.assertFalse(self.related("Oued Fes", "Fes"))
+        self.assertFalse(self.related("Oued Fes", "Fes", at_start=True))
+        self.assertFalse(self.related("San", "Santa Cruz"))
+
+    def test_a_part_is_not_its_whole(self):
+        # Each of these was a live mis-join.
+        self.assertFalse(self.related("Budapest", "Pest"))
+        self.assertFalse(self.related("Oberbayern", "Bayern"))
+        self.assertFalse(self.related("Rheinhessen-Pfalz", "Hessen"))
+
+    def test_the_prefix_pass_is_anchored(self):
+        # "Mymensingh Division" to "Mymensingh" starts at the first word;
+        # "Bocas del Toro" inside "Provincia de Bocas del Toro" does not, and
+        # is the containment pass's job.
+        self.assertTrue(self.related("Mymensingh Division", "Mymensingh", at_start=True))
+        self.assertFalse(self.related("Provincia de Bocas del Toro", "Bocas del Toro",
+                                      at_start=True))
 
 
 class Admin2Disambiguation(unittest.TestCase):

@@ -31,6 +31,7 @@ import re
 import sys
 import unicodedata
 from collections import defaultdict
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -129,15 +130,44 @@ def is_disputed(group: str | None) -> bool:
     return bool(group) and group.isdigit()
 
 
+# Letters NFKD cannot take apart, because they are not an ASCII letter plus a
+# mark -- they are their own letter. Stripping combining characters leaves them
+# untouched, and the old "keep only a-z0-9" rule then deleted them outright:
+# "Ostfold" became "stfold", which is a substring of "vestfoldogtelemark", so
+# Norway's Ostfold was joined to Vestfold og Telemark. Folding them is the
+# difference between a name and a fragment of one.
+FOLD = str.maketrans({
+    "ø": "o", "đ": "d", "ð": "d", "ł": "l", "ħ": "h", "ŧ": "t", "ŋ": "n",
+    "ı": "i", "ə": "e",
+    # Modifier letters standing in for a glottal stop or 'ayn. A source writes
+    # "Sanaa" where the boundary file writes "Sanʿaʾ"; they are the same name.
+    # ...and the plain apostrophes that stand in for them. Removed rather than
+    # left to split a word: "Dar'a" is one name, and splitting it gave "dar"
+    # and "a", which lines up with nothing.
+    "ʻ": "", "ʼ": "", "ʹ": "", "ʾ": "", "ʿ": "", "ʽ": "",
+    "`": "", "´": "", "'": "", "’": "", "ʼ": "",
+    "ß": "ss", "æ": "ae", "œ": "oe", "þ": "th",
+})
+
+
 def norm(text: str | None) -> str:
+    """A name reduced to what two sources are likely to agree on.
+
+    Alphanumerics of *any* script survive. Restricting the result to a-z0-9
+    deleted every letter that is not Latin, so 693 boundary names -- 352
+    Russian and 256 Tunisian second-level units among them -- normalised to the
+    empty string: unmatchable by name, and all colliding on one key. Cyrillic
+    stays Cyrillic here rather than being romanised, because a transliteration
+    this code invents is a guess about a name, while the name itself is not.
+    """
     if not text:
         return ""
-    text = unicodedata.normalize("NFKD", text)
-    text = "".join(c for c in text if not unicodedata.combining(c)).lower()
+    text = unicodedata.normalize("NFKD", text.lower()).translate(FOLD)
+    text = "".join(c for c in text if not unicodedata.combining(c))
     text = re.sub(r"\b(province|state|region|district|county|prefecture|governorate|"
                   r"oblast|department|municipality|city|autonomous|territory|of|the|and)\b",
                   " ", text)
-    return re.sub(r"[^a-z0-9]+", "", text)
+    return "".join(c for c in text if c.isalnum())
 
 
 # ---------------------------------------------------------------------------
@@ -296,6 +326,98 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
 # Assembly
 # ---------------------------------------------------------------------------
 
+# How much longer a boundary file's last word may be than the source's and still
+# be the same word. An inflected or adjectival ending is what this is for --
+# "Stockholm" against "Stockholms", "Plzen" against "Plzensky", "Northeast"
+# against "Northeastern" -- and three characters covers those without reaching
+# a different word: "Tala" against "Talampaya" is five.
+INFLECTION_SLACK = 3
+
+# The shortest word a match may rest on when it starts partway through a name.
+# "Fes" is three letters and sits at the end of "Oued Fes", a different commune;
+# a name has to give more than that before a match starting mid-way is worth
+# believing. A match anchored at the first word is stronger evidence, so there
+# a short word may still match, but only outright -- which is what carries
+# "Lae Atoll" to "Lae" while "San" stays out of "Santa Cruz".
+PREFIX_MIN = 4
+
+
+@lru_cache(maxsize=200_000)
+def tokens(text: str | None, joined: bool = False) -> tuple[str, ...]:
+    """A name's words, folded the way norm() folds the whole string.
+
+    norm() exists to compare two names as one key; this exists to compare them
+    a word at a time, which is the only way to tell a name from a fragment of
+    one that happens to straddle two words.
+    """
+    if not text:
+        return ()
+    folded = unicodedata.normalize("NFKD", text.lower()).translate(FOLD)
+    folded = "".join(c for c in folded if not unicodedata.combining(c))
+    folded = re.sub(r"\b(province|state|region|district|county|prefecture|"
+                    r"governorate|oblast|department|municipality|city|autonomous|"
+                    r"territory|of|the|and)\b", " ", folded)
+    if joined:
+        folded = re.sub(r"[-\u2010\u2013]", "", folded)
+    out = []
+    for word in re.split(r"[^\w]+", folded, flags=re.UNICODE):
+        word = "".join(c for c in word if c.isalnum())
+        if word:
+            out.append(word)
+    return tuple(out)
+
+
+def name_forms(text: str | None) -> tuple[tuple[str, ...], ...]:
+    """A name's words, read both ways a hyphen can be read.
+
+    Neither reading is right on its own. Joining fixes CGAZ's "Bio-Bio" against
+    a source's "Biobio", and Timor-Leste's "Oe-Cusse" against "Oecusse".
+    Splitting fixes an Arabic article the other side leaves off -- "Al-Basrah"
+    against "Basra", "An-Najaf" against "Najaf" -- where the article is its own
+    word and the match is a run that starts after it. Trying both costs one
+    extra comparison in a pass that only runs when the exact one has failed.
+    """
+    split, join = tokens(text), tokens(text, joined=True)
+    return (split,) if split == join else (split, join)
+
+
+def run_of(short: tuple[str, ...], long: tuple[str, ...], *,
+           at_start: bool = False) -> bool:
+    """Whether `short` appears in `long` as a run of whole words.
+
+    The last word may run two characters short of its counterpart, which is what
+    carries "Stockholm" into "Stockholms lan" -- a source and a boundary file
+    disagreeing about an inflected ending, not about which place they mean. Any
+    more slack than that and a word matches a different word: "Tala" is a prefix
+    of "Talampaya", and Argentina's Talampaya National Park was joined to Tala,
+    835 km away. Every earlier word has to match outright, so "anta" cannot
+    creep into "santa".
+    """
+    if not short or len(short) > len(long):
+        return False
+    starts = [0] if at_start else range(len(long) - len(short) + 1)
+    for start in starts:
+        window = long[start:start + len(short)]
+        tail, target = short[-1], window[-1]
+        if not all(a == b for a, b in zip(short[:-1], window[:-1])):
+            continue
+        if len(tail) < PREFIX_MIN and not (at_start and start == 0):
+            continue
+        if tail == target:
+            return True
+        if len(tail) >= PREFIX_MIN and target.startswith(tail) \
+                and len(target) - len(tail) <= INFLECTION_SLACK:
+            return True
+    return False
+
+
+def related(mine: tuple[tuple[str, ...], ...], theirs: tuple[tuple[str, ...], ...],
+            *, at_start: bool = False) -> bool:
+    """Whether either name contains the other, under any reading of a hyphen."""
+    return any(run_of(a, b, at_start=at_start) or run_of(b, a, at_start=at_start)
+               for a in mine for b in theirs)
+
+
 def match_name(row: dict[str, Any], lookup: dict[str, dict[str, Any]]
                ) -> tuple[dict[str, Any] | None, str]:
     """Exact normalised name, then declared aliases, then a *unique* prefix match.
@@ -307,24 +429,36 @@ def match_name(row: dict[str, Any], lookup: dict[str, dict[str, Any]]
         key = norm(candidate)
         if key in lookup:
             return lookup[key], "name" if candidate == row["name"] else "alias"
+    # Whole words again, anchored at the first one: this is what bridges
+    # "Mymensingh Division" to CGAZ's "Mymensingh" and "Alif Alif Atoll" to
+    # "Alif Alif". On the squashed string it did what the containment pass did,
+    # and read straight across word boundaries -- "Tala" starts
+    # "talampayanationalpark", so Argentina's Talampaya National Park was joined
+    # to Tala, 835 km away.
     for candidate in [row["name"], *row.get("aliases", [])]:
-        key = norm(candidate)
-        if not key:
-            continue
-        hits = [v for k, v in lookup.items() if k.startswith(key) or key.startswith(k)]
-        if len(hits) == 1:
-            return hits[0], "prefix"
-    # Last pass: unique substring containment. This is what bridges a source's
-    # long official form to the boundary file's short one -- Wikidata's
-    # "Canton of Zurich" to CGAZ's "Zurich", "Stockholms lan" to "Stockholm",
-    # "Emirate of Sharjah" to "Sharjah". Both strings must be substantial and
-    # exactly one shape may qualify, otherwise refuse rather than guess.
-    for candidate in [row["name"], *row.get("aliases", [])]:
-        key = norm(candidate)
-        if len(key) < 4:
+        mine = name_forms(candidate)
+        if not any(mine):
             continue
         hits = [v for k, v in lookup.items()
-                if len(k) >= 4 and (key in k or k in key)]
+                if related(mine, name_forms(v["name"]), at_start=True)]
+        if len(hits) == 1:
+            return hits[0], "prefix"
+    # Last pass: unique containment, word by word. This is what bridges a
+    # source's long official form to the boundary file's short one -- Wikidata's
+    # "Canton of Zurich" to CGAZ's "Zurich", "Stockholms lan" to "Stockholm",
+    # "Emirate of Sharjah" to "Sharjah". Exactly one shape may qualify.
+    #
+    # Word by word, and not by substring, because norm() squashes a name into
+    # one run of letters and a substring test then reads straight across the
+    # gaps between words. "Anta" is four letters and sits inside "santacruz",
+    # so Argentina's Santa Cruz was joined to Anta, 406 km away; Santa Anita
+    # went to the same shape, 817 km away. Comparing tokens instead means a
+    # match has to start where a word starts.
+    for candidate in [row["name"], *row.get("aliases", [])]:
+        mine = name_forms(candidate)
+        if not any(mine):
+            continue
+        hits = [v for k, v in lookup.items() if related(mine, name_forms(v["name"]))]
         if len(hits) == 1:
             return hits[0], "contains"
     return None, "unmatched"
