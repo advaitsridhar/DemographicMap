@@ -526,6 +526,28 @@ class AbsOutermostLevel(unittest.TestCase):
             self.assertNotIn(religion, kept)
         self.assertLess(sum(kept.values()), self.published)
 
+    def test_a_small_region_is_judged_on_people_not_percent(self):
+        # Leonora, 1,588 people, was 53 short of its published total -- the
+        # ABS's perturbation, not a missing religion. A half-percent bound is
+        # eight people there, and rejected a partition that was right.
+        small = {("Christianity Total", "2"): 900, ("Catholic", "207"): 400,
+                 ("Buddhism", "1"): 12, ("Islam", "4"): 9,
+                 ("Religious affiliation not stated", "_N"): 614,
+                 ("Total", "_T"): 1588}
+        kept, how = self.abs.top_level(small, 1588)
+        self.assertEqual(how, "code tree")
+        self.assertIn("Islam", kept)
+        self.assertEqual(sum(kept.values()), 1535)     # 53 short, and accepted
+
+    def test_a_missing_category_is_still_caught_in_a_small_region(self):
+        # The floor must not be wide enough to hide one. Christianity is 900 of
+        # 1,588 people; dropping it is nothing like a perturbation.
+        small = {("Buddhism", "1"): 12, ("Islam", "4"): 9,
+                 ("Religious affiliation not stated", "_N"): 614,
+                 ("Total", "_T"): 1588}
+        _, how = self.abs.top_level(small, 1588)
+        self.assertIn("nothing summed", how)
+
     def test_an_answer_that_does_not_add_up_is_not_used(self):
         # The published total is the judge. A level missing a category is out by
         # far more than the ABS's small-cell perturbation.

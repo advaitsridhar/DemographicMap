@@ -308,10 +308,15 @@ def top_level(coded: dict[tuple[str, str], float], total: float | None
                             ("flat", flat)):
         if not candidate:
             continue
-        # Half a percent, for the small-cell perturbation the ABS applies to
-        # every published count. A level that is missing a whole category is
-        # out by far more than that -- Australia's was out by 8.7%.
-        if abs(sum(candidate.values()) - total) <= 0.005 * total:
+        # The ABS perturbs every published count to protect small cells, and
+        # that perturbation is an absolute number of people rather than a
+        # proportion -- so a proportional tolerance alone fails exactly the
+        # regions the perturbation matters most in. Leonora, population 1,588,
+        # came out 53 people short and fell back to the marker rule; so did 47
+        # other LGAs, none of them above 2,520 people, and none out by more
+        # than 53. A level that is missing a whole category is out by far more
+        # than either bound -- Australia's was out by 8.7%, 2.2 million people.
+        if abs(sum(candidate.values()) - total) <= max(0.005 * total, 60):
             return candidate, name
     return suffix, "suffix (nothing summed to the total)"
 
