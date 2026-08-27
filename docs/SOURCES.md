@@ -561,6 +561,59 @@ primary record rather than a derivative.
 * Telangana (2014) and Ladakh (2019) postdate the census entirely, so they have
   no state-level figure even though their districts do.
 
+## Joining a row to a shape
+
+Every adapter row has to find one boundary polygon. Names alone cannot do it:
+district names repeat, and a lookup keyed on name keeps whichever shape it saw
+last, which makes one district unreachable and lets the other quietly wear its
+twin's figures. So a row that names its parent state is matched only inside
+that state, and a row that does not is matched only against names that are
+unique country-wide.
+
+**A row that contradicts itself.** The case that slipped through for a long
+time was a row that named a state, resolved it, found no shape of its name
+inside — and was handed to the country-wide pass anyway, which matched a shape
+in a different state. 443 rows across nine countries were joined that way. The
+clearest was Vietnam's An Biên: the Wikidata entity is a ward of Haiphong at
+20.85°N, and it was carrying the figures of the An Biên district of Kiên Giang,
+1,200 km south. Argentina's Apóstoles Department (Misiones) wore Corrientes',
+Peru's Huamantanga (Lima) wore Cusco's, and Thailand's Ao Phang Nga National
+Park — not an administrative unit at all — wore Chiang Rai's.
+
+**Coordinates decide, and only coordinates.** Where a row publishes its own
+P625 point, the disagreement is settled against the matched shape's bounding
+box: outside, the match is refused; inside, it is kept. That box is deliberately
+weak as confirmation and strong as refutation — ADM2 geometry is dropped after
+the parent pass, because 49,349 polygons will not stay in memory, so a point
+inside the box is not proof it is inside the shape while a point outside it is
+proof it is not. 274 joins were refused this way and 131 kept.
+
+The 131 matter as much as the 274. They are the rows whose parent is named
+historically rather than currently — Bogotá under Cundinamarca, Lima under Lima
+Department, Sulu under Zamboanga Peninsula — and the rows where CGAZ's own
+parent link is the thing that is wrong: it assigns each ADM2 to whichever ADM1
+polygon contains its centroid, so Hurlingham, Lanús and Morón, all in Buenos
+Aires Province, come out inside the Autonomous City. A rule that refused every
+parent disagreement would have deleted all of them.
+
+**Where there is no coordinate, nothing is refused.** India's district figures
+are from the 2011 census, so they name the states of 2011: Adilabad and
+Nizamabad say Andhra Pradesh where the boundary file says Telangana, Leh and
+Kargil say Jammu and Kashmir where it says Ladakh. Those matches are correct —
+the same district, named before the state it sits in was split. The census
+adapters publish no coordinates, so there is no evidence either way, and
+refusing on the disagreement alone would have deleted 26 correct Indian
+districts along with correct rows in Mexico and the United States. A rule with
+no evidence behind it does not get to decide.
+
+**38 rows are still refused as ambiguous**, in Argentina (20), Vietnam (13),
+Colombia and Thailand (2 each) and Mexico (1). Each names a state that resolves,
+holds no shape of that name, and shares its name with two to eleven shapes
+elsewhere — eleven Argentine provinces have a "Capital Department". A
+coordinate settles fifteen of them, but the shape it picks usually contradicts
+the state the row itself names, so the two signals disagree and neither is
+strong enough to overrule the other. They stay visible gaps.
+
 ## Filtering one group across countries
 
 The map can colour every unit in the world by its share of a single religion,

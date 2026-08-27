@@ -439,12 +439,16 @@ class Admin2Disambiguation(unittest.TestCase):
     """Two shapes, one name: the row must land on the right one or on neither."""
 
     def shapes(self):
+        # Boxes are west-to-east: Himachal around x=0, Uttar Pradesh around x=10.
         return {
             be.norm("Hamirpur"): [
-                {"id": "HP-HAM", "name": "Hamirpur", "parent": "S-HP"},
-                {"id": "UP-HAM", "name": "Hamirpur", "parent": "S-UP"},
+                {"id": "HP-HAM", "name": "Hamirpur", "parent": "S-HP",
+                 "bbox": [0, 0, 2, 2]},
+                {"id": "UP-HAM", "name": "Hamirpur", "parent": "S-UP",
+                 "bbox": [10, 0, 12, 2]},
             ],
-            be.norm("Agra"): [{"id": "UP-AGR", "name": "Agra", "parent": "S-UP"}],
+            be.norm("Agra"): [{"id": "UP-AGR", "name": "Agra", "parent": "S-UP",
+                               "bbox": [10, 0, 12, 2]}],
         }
 
     def admin1(self):
@@ -484,6 +488,74 @@ class Admin2Disambiguation(unittest.TestCase):
         entity, _ = be.match_admin2(
             {"name": "Agra", "parent_name": "Atlantis"}, self.shapes(), self.admin1())
         self.assertEqual(entity["id"], "UP-AGR")
+
+
+class Admin2ContradictsItself(unittest.TestCase):
+    """A row that names one state and matches a shape in another.
+
+    Before this was refused, 274 rows across nine countries wore another unit's
+    figures: Vietnam's An Bien, a ward of Haiphong at 20.85N, carried the
+    population of the An Bien district of Kien Giang, 1,200 km south.
+    """
+
+    def shapes(self):
+        return {
+            # Only Uttar Pradesh has an Agra; Himachal has none.
+            be.norm("Agra"): [{"id": "UP-AGR", "name": "Agra", "parent": "S-UP",
+                               "bbox": [10, 0, 12, 2]}],
+        }
+
+    def admin1(self):
+        return {be.norm(name): {"id": eid, "name": name} for eid, name in
+                (("S-HP", "Himachal Pradesh"), ("S-UP", "Uttar Pradesh"))}
+
+    def test_coordinates_outside_the_shape_refuse_the_match(self):
+        entity, how = be.match_admin2(
+            {"name": "Agra", "parent_name": "Himachal Pradesh", "point": [1, 1]},
+            self.shapes(), self.admin1())
+        self.assertIsNone(entity)
+        self.assertEqual(how, "outside_parent")
+
+    def test_coordinates_inside_the_shape_keep_it(self):
+        # Bogota under Cundinamarca, Lima under Lima Department: the parent is
+        # named historically, and the shape is still the right one.
+        entity, how = be.match_admin2(
+            {"name": "Agra", "parent_name": "Himachal Pradesh", "point": [11, 1]},
+            self.shapes(), self.admin1())
+        self.assertEqual(entity["id"], "UP-AGR")
+        self.assertTrue(how.endswith("+point"))
+
+    def test_without_coordinates_nothing_is_refused(self):
+        # India's 2011 districts name the states of 2011: Adilabad says Andhra
+        # Pradesh where the boundary file says Telangana, and that match is
+        # correct. With no coordinates there is no evidence, and a rule with no
+        # evidence behind it must not be the one deciding.
+        entity, _ = be.match_admin2(
+            {"name": "Agra", "parent_name": "Himachal Pradesh"},
+            self.shapes(), self.admin1())
+        self.assertEqual(entity["id"], "UP-AGR")
+
+
+class RowPointAndBox(unittest.TestCase):
+    """Reading a coordinate off a row, and testing it against a box."""
+
+    def test_a_gap_marker_is_not_a_coordinate(self):
+        # Wikidata writes P625 and its absence into the same field.
+        self.assertIsNone(be.row_point({"coordinates": {"status": "not_available"}}))
+        self.assertIsNone(be.row_point({"coordinates": [1.0]}))
+        self.assertIsNone(be.row_point({}))
+        self.assertEqual(be.row_point({"coordinates": [1, 2]}), [1.0, 2.0])
+        self.assertEqual(be.row_point({"point": [3, 4]}), [3.0, 4.0])
+
+    def test_a_missing_box_never_confirms(self):
+        self.assertFalse(be.within_bbox([1, 1], None))
+        self.assertFalse(be.within_bbox(None, [0, 0, 2, 2]))
+        self.assertFalse(be.within_bbox([1, 1], [0, 0, 2]))
+
+    def test_edges_count_as_inside(self):
+        self.assertTrue(be.within_bbox([0, 0], [0, 0, 2, 2]))
+        self.assertTrue(be.within_bbox([1, 1], [0, 0, 2, 2]))
+        self.assertFalse(be.within_bbox([3, 1], [0, 0, 2, 2]))
 
 
 class SriLanka2024(unittest.TestCase):
