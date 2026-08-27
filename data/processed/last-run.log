@@ -1,30 +1,181 @@
 
-== FIN Statistics Finland
-   https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin
-    9 candidate table(s):
-      vaerak/11rg.px               11rg -- Citizenship according to age and sex by region, 1990-2025
-      vaerak/11rh.px               11rh -- Citizenship according to sex by municipality, 1990-2025
-      vaerak/11rk.px               11rk -- Finnish citizens with dual nationality by age and second nationality, 2000-2025
-      vaerak/11rl.px               11rl -- Language according to age and sex by region, 1990-2025
-      vaerak/11rm.px               11rm -- Language according to sex by municipality, 1990-2025
-      vaerak/11rs.px               11rs -- Origin and background country by language, age (1-year) and sex, 1990-2025
-      vaerak/11rx.px               11rx -- Belonging to a religious community by age and sex, 1990-2025
-      vaerak/11rz.px               11rz -- Marital status by age (1-year), language and sex by area, 1990-2025
-      vaerak/159s.px               159s -- Population according to citizenship, country of birth, language and origin (over
-    describing the first 4:
-    - vaerak/11rg.px
-      11rg -- Citizenship according to age and sex by region, 1990-2025
-      vars: Region(22), Nationality(210), Age(17), Sex(3), Year(36), Information(1)
-      geography: Region — 22 areas, e.g. WHOLE COUNTRY, MA1 MAINLAND FINLAND, MK01 Uusimaa, MK02 Southwest Finland
-    - vaerak/11rh.px
-      11rh -- Citizenship according to sex by municipality, 1990-2025
-      vars: Area(309), Nationality(210), Sex(3), Year(36), Information(1)
-      geography: Area — 309 areas, e.g. WHOLE COUNTRY, Akaa, Alajärvi, Alavieska
-    - vaerak/11rk.px
-      11rk -- Finnish citizens with dual nationality by age and second nationality, 2000-2025
-      vars: Second nationality(207), Year(26), Sex(3), Age(87), Information(1)
-      geography: none with more than five values — national only
-    - vaerak/11rl.px
-      11rl -- Language according to age and sex by region, 1990-2025
-      vars: Region(22), Language(169), Age(17), Sex(3), Year(36), Information(1)
-      geography: Region — 22 areas, e.g. WHOLE COUNTRY, MA1 MAINLAND FINLAND, MK01 Uusimaa, MK02 Southwest Finland
+== FIN Statistics Finland :: vaerak/11rl.px
+  title: Population 31.12.
+
+  code='alue_23_20260101'  text='Region'  22 values  elimination=True  time=None
+      'SSS'            WHOLE COUNTRY
+      'MA1'            MA1 MAINLAND FINLAND
+      'MK01'           MK01 Uusimaa
+      'MK02'           MK02 Southwest Finland
+      'MK04'           MK04 Satakunta
+      'MK05'           MK05 Kanta-Häme
+      'MK06'           MK06 Pirkanmaa
+      'MK07'           MK07 Päijät-Häme
+      'MK08'           MK08 Kymenlaakso
+      'MK09'           MK09 South Karelia
+      'MK10'           MK10 South Savo
+      'MK11'           MK11 North Savo
+      'MK12'           MK12 North Karelia
+      'MK13'           MK13 Central Finland
+      'MK14'           MK14 South Ostrobothnia
+      'MK15'           MK15 Ostrobothnia
+      'MK16'           MK16 Central Ostrobothnia
+      'MK17'           MK17 North Ostrobothnia
+      'MK18'           MK18 Kainuu
+      'MK19'           MK19 Lapland
+      'MA2'            MA2 ÅLAND
+      'MK21'           MK21 Åland
+
+  code='kieli_15_20180102'  text='Language'  169 values  elimination=True  time=None
+      'SSS'            Total
+      '01'             NATIONAL LANGUAGES, TOTAL
+      'fi'             Finnish
+      'sv'             Swedish
+      'se'             Sami
+      '02'             FOREIGN LANGUAGES, TOTAL
+      'ab'             Abkhaz
+      'aa'             Afar
+      'ae'             Avestan
+      'af'             Afrikaans
+      'ay'             Aymara
+      'ak'             Akan
+      'sq'             Albanian
+      'am'             Amharic
+      'ar'             Arabic
+      'an'             Aragonese
+      'hy'             Armenian
+      'as'             Assamese
+      'av'             Avaric;  Avar;  Avarish
+      'az'             Azerbaijani
+      'bm'             Bambara
+      'eu'             Basque
+      'ba'             Bashkir
+      'bn'             Bengali, (Bangla)
+      ... 145 more
+
+  code='ikaryhma_10_20180101'  text='Age'  17 values  elimination=True  time=None
+      'SSS'            Total
+      '0-4'            0 - 4
+      '5-9'            5 - 9
+      '10-14'          10 - 14
+      '15-19'          15 - 19
+      '20-24'          20 - 24
+      '25-29'          25 - 29
+      '30-34'          30 - 34
+      '35-39'          35 - 39
+      '40-44'          40 - 44
+      '45-49'          45 - 49
+      '50-54'          50 - 54
+      '55-59'          55 - 59
+      '60-64'          60 - 64
+      '65-69'          65 - 69
+      '70-74'          70 - 74
+      '75-'            75 -
+
+  code='sukupuoli_9_20180101'  text='Sex'  3 values  elimination=True  time=None
+      'SSS'            Total
+      '1'              Males
+      '2'              Females
+
+  code='timeperiod_y'  text='Year'  36 values  elimination=None  time=True
+      '1990'           1990
+      '1991'           1991
+      '1992'           1992
+      '1993'           1993
+      '1994'           1994
+      '1995'           1995
+      '1996'           1996
+      '1997'           1997
+      '1998'           1998
+      '1999'           1999
+      '2000'           2000
+      '2001'           2001
+      '2002'           2002
+      '2003'           2003
+      '2004'           2004
+      '2005'           2005
+      '2006'           2006
+      '2007'           2007
+      '2008'           2008
+      '2009'           2009
+      '2010'           2010
+      '2011'           2011
+      '2012'           2012
+      '2013'           2013
+      ... 12 more
+
+  code='contentscode'  text='Information'  1 values  elimination=None  time=None
+      'vaerak-vaesto'  Population 31 Dec
+
+== FIN Statistics Finland :: vaerak/11rx.px
+  title: Population 31.12.
+
+  code='uskontokunta_10_20190101'  text='Religious community'  26 values  elimination=True  time=None
+      'SSS'            TOTAL
+      'A00'            INDIGENEOUS RELIGIONS AND NEO-PAGANISM
+      'B00'            BUDDHISM
+      'C00'            HINDUISM
+      'D00'            ISLAM
+      'E00'            JUDAISM
+      'F00'            CHRISTIANITY
+      'F01'            Adventism
+      'F02'            Anglican churches
+      'F03'            Baptism
+      'F04'            Evangelical Lutheran free congregations
+      'F05'            Pentecostalism
+      'F06'            Roman Catholic Church
+      'F07'            Methodism
+      'F08'            Greek Orthodox Church
+      'F09'            Evangelical Lutheran Church of Finland
+      'F10'            Free churches
+      'F11'            Other Christian
+      'G00'            OTHER RELIGIOUS GROUPS
+      'G01'            Bahá'í communities
+      'G02'            Jehovah's Witnesses
+      'G03'            Church of Jesus Christ of Latter-day Saints
+      'G04'            Christian Community of Finland
+      'G05'            Liberal Catholic Church
+      ... 2 more
+
+  code='sukupuoli_9_20180101'  text='Sex'  3 values  elimination=True  time=None
+      'SSS'            Total
+      '1'              Males
+      '2'              Females
+
+  code='ikaryhma_10_20180101'  text='Age'  6 values  elimination=True  time=None
+      'SSS'            Total
+      '0-14'           0 - 14
+      '15-24'          15 - 24
+      '25-44'          25 - 44
+      '45-64'          45 - 64
+      '65-'            65 -
+
+  code='timeperiod_y'  text='Year'  36 values  elimination=None  time=True
+      '1990'           1990
+      '1991'           1991
+      '1992'           1992
+      '1993'           1993
+      '1994'           1994
+      '1995'           1995
+      '1996'           1996
+      '1997'           1997
+      '1998'           1998
+      '1999'           1999
+      '2000'           2000
+      '2001'           2001
+      '2002'           2002
+      '2003'           2003
+      '2004'           2004
+      '2005'           2005
+      '2006'           2006
+      '2007'           2007
+      '2008'           2008
+      '2009'           2009
+      '2010'           2010
+      '2011'           2011
+      '2012'           2012
+      '2013'           2013
+      ... 12 more
+
+  code='contentscode'  text='Information'  1 values  elimination=None  time=None
+      'vaerak-vaesto'  Population 31 Dec
