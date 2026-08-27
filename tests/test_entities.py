@@ -741,6 +741,82 @@ class LooseNameMatching(unittest.TestCase):
                                       at_start=True))
 
 
+class RivalRowsForOneShape(unittest.TestCase):
+    """Several rows of one adapter reaching the same boundary.
+
+    Nothing stopped it, and whichever came last silently overwrote the rest.
+    England's East, Mid, North and West Devon all reached a shape called Devon
+    -- the source has no plain "Devon" row at all -- so Devon wore West Devon's
+    figures and the other three vanished. Texas's Jackson County reached a shape
+    called Jack. 1,324 rows were being lost this way.
+    """
+
+    def claims(self, *rows):
+        """(row, entity, how) triples, all from one adapter file."""
+        return [({"name": name, "_source": "x.json"}, {"id": eid, "name": shape}, how)
+                for name, eid, shape, how in rows]
+
+    def test_an_outright_match_owns_the_shape(self):
+        # "Rotherham" says its own name; "Rother" arrives through the prefix
+        # pass. Only one of them is the shape's.
+        dropped, notes = be.resolve_collisions(self.claims(
+            ("Rotherham", "E1", "Rotherham", "name"),
+            ("Rother", "E1", "Rotherham", "prefix")))
+        self.assertEqual(dropped, {1})
+        self.assertIn("Rotherham", notes[0])
+
+    def test_nothing_to_separate_them_means_nobody_gets_it(self):
+        # Four Devons and no way to tell which is the shape's: a visible gap
+        # beats an invisible guess.
+        dropped, _ = be.resolve_collisions(self.claims(
+            ("East Devon", "E2", "Devon", "contains"),
+            ("Mid Devon", "E2", "Devon", "contains"),
+            ("North Devon", "E2", "Devon", "contains"),
+            ("West Devon", "E2", "Devon", "contains")))
+        self.assertEqual(dropped, {0, 1, 2, 3})
+
+    def test_a_resolved_parent_outweighs_a_country_wide_guess(self):
+        dropped, _ = be.resolve_collisions(self.claims(
+            ("Jack County, Texas", "E3", "Jack", "prefix+state"),
+            ("Jackson County, Texas", "E3", "Jack", "prefix")))
+        self.assertEqual(dropped, {1})
+
+    def test_two_outright_matches_are_a_duplicated_row_not_a_rivalry(self):
+        # Wikidata carries both "Ancasti" and "Ancasti Department", and
+        # "Department" is a word norm() drops, so both are the same name
+        # reaching the same shape. Refusing them would lose Ancasti to a
+        # duplicate rather than to a mistake.
+        dropped, notes = be.resolve_collisions(self.claims(
+            ("Ancasti", "E4", "Ancasti", "name"),
+            ("Ancasti Department", "E4", "Ancasti", "name")))
+        self.assertEqual(dropped, set())
+        self.assertEqual(notes, [])
+
+    def test_an_outright_match_still_evicts_the_loose_ones_beside_it(self):
+        dropped, _ = be.resolve_collisions(self.claims(
+            ("Dhaka", "E5", "Dhaka", "name"),
+            ("Dhaka District", "E5", "Dhaka", "name"),
+            ("Dhaka North City Corporation", "E5", "Dhaka", "contains"),
+            ("Dhaka-21", "E5", "Dhaka", "prefix")))
+        self.assertEqual(dropped, {2, 3})
+
+    def test_rows_from_different_files_are_not_rivals(self):
+        # India's C-01 and C-16 both describe Kargil, and both should land.
+        rows = [({"name": "Kargil", "_source": "india_district.json"},
+                 {"id": "K", "name": "Kargil"}, "name"),
+                ({"name": "Kargil", "_source": "india_language_district.json"},
+                 {"id": "K", "name": "Kargil"}, "name")]
+        dropped, _ = be.resolve_collisions(rows)
+        self.assertEqual(dropped, set())
+
+    def test_one_row_per_shape_is_never_touched(self):
+        dropped, notes = be.resolve_collisions(self.claims(
+            ("Kerala", "A", "Kerala", "contains"),
+            ("Goa", "B", "Goa", "prefix")))
+        self.assertEqual(dropped, set())
+        self.assertEqual(notes, [])
+
+
 class Admin2Disambiguation(unittest.TestCase):
     """Two shapes, one name: the row must land on the right one or on neither."""
 

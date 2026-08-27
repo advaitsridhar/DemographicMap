@@ -271,6 +271,11 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
         log(f"  adapter {filename}: {len(rows)} records")
         for row in rows:
             iso3 = (row.get("country") or (row.get("id") or "")[:3]).upper()
+            # Which file a row came from decides whether two rows landing on one
+            # shape are a conflict. Across files it is normal -- India's C-01 and
+            # C-16 both describe Kargil -- and within one file it means one of
+            # them is wrong.
+            row["_source"] = filename
             by_country[iso3].append(row)
     return by_country
 
@@ -312,7 +317,8 @@ def apply_curated(entity: dict[str, Any], row: dict[str, Any], prov: dict[str, A
 def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     """Adapter values override seeds; gap markers never overwrite real values."""
     for key, value in row.items():
-        if key in {"id", "level", "name", "parent", "parent_name", "parent_aliases"}:
+        if key in {"id", "level", "name", "parent", "parent_name", "parent_aliases",
+                   "_source"}:
             continue
         if key == "sources":
             entity.setdefault("sources", []).extend(value or [])
@@ -753,6 +759,77 @@ def roll_up_parents(admin1_by_country: dict[str, list[dict[str, Any]]],
         log(f"  not summed -- {line}")
 
 
+EXACT = 3
+
+
+def evidence(how: str) -> int:
+    """How much a match is worth when two rows want the same shape.
+
+    A name that matched outright beats one that matched by a fragment of
+    itself, and a match confined to the state the row named beats one that
+    searched the whole country. Rotherham's own row says "Rotherham"; Rother's
+    says "Rother" and reaches the same shape through the prefix pass, so the
+    exact one is the one to keep.
+    """
+    base = how.split("+")[0]
+    if base in ("name", "alias"):
+        return EXACT
+    return 2 if "+" in how else 1
+
+
+def resolve_collisions(matched: list[tuple[dict[str, Any], dict[str, Any], str]]
+                       ) -> tuple[set[int], list[str]]:
+    """Refuse rows of one file that all landed on the same shape.
+
+    Nothing stopped several rows of one adapter from matching one boundary, and
+    whichever came last silently overwrote the rest: England's East, Mid, North
+    and West Devon all reached a shape called Devon, so Devon wore West Devon's
+    figures and the other three vanished. Texas's Jackson County reached a shape
+    called Jack. 1,324 rows were being lost this way.
+
+    Where one row's evidence beats every other's the shape is its own and the
+    rest are refused -- "Rotherham" over "Rother", "Ostrobothnia" over "Central
+    Ostrobothnia". Where nothing separates them, none of them may claim it:
+    four Devons and no way to tell which is the shape's is exactly the case for
+    a visible gap rather than an invisible guess.
+
+    Rows that all matched *outright* are left alone, because there the rivalry
+    is usually a source listing one place twice. Wikidata carries both "Ancasti"
+    and "Ancasti Department", and "Department" is a word this code drops, so
+    both are the same name reaching the same shape; refusing them would lose
+    Ancasti to a duplicate rather than to a mistake. Last one still wins there,
+    exactly as before.
+    """
+    claims: dict[tuple[Any, str], list[int]] = defaultdict(list)
+    for i, (row, entity, _) in enumerate(matched):
+        claims[(row.get("_source"), entity["id"])].append(i)
+
+    dropped: set[int] = set()
+    notes: list[str] = []
+    for (_, _eid), idxs in claims.items():
+        if len(idxs) < 2:
+            continue
+        ranked = sorted(idxs, key=lambda i: -evidence(matched[i][2]))
+        best, runner = evidence(matched[ranked[0]][2]), evidence(matched[ranked[1]][2])
+        if best == EXACT:
+            # A name that matched outright owns the shape; anything that got
+            # there through a fragment of itself does not. Several outright
+            # matches are a duplicated source row, not a rivalry.
+            losers = [i for i in idxs if evidence(matched[i][2]) < EXACT]
+            kept = matched[ranked[0]][0].get("name")
+        else:
+            losers = ranked[1:] if best > runner else ranked
+            kept = matched[ranked[0]][0].get("name") if best > runner else None
+        if not losers:
+            continue
+        dropped.update(losers)
+        shape = matched[idxs[0]][1]["name"]
+        names = ", ".join(str(matched[i][0].get("name"))[:24] for i in losers[:4])
+        notes.append(f"{shape!r}: refused {names}" +
+                     (f" (kept {kept!r})" if kept else " (nothing to separate them)"))
+    return dropped, notes
+
+
 DISPUTED_NOTE = ("Disputed or special-status territory as delimited by geoBoundaries "
                  "CGAZ, which follows US Department of State definitions. Shown for "
                  "completeness; no sovereignty claim is implied and no demographic "
@@ -1040,7 +1117,8 @@ def main() -> int:
         a2: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for entity in admin2_by_country.get(iso3, []):
             a2[norm(entity["name"])].append(entity)
-        hit = miss = ambiguous = outside = 0
+        hit = miss = ambiguous = outside = collided = 0
+        matched: list[tuple[dict[str, Any], dict[str, Any], str]] = []
         for row in rows:
             # Aliases travel with the key. They were being dropped here, which
             # made every alias an adapter declared for an admin-2 row or its
@@ -1064,16 +1142,30 @@ def main() -> int:
                 ambiguous += how == "ambiguous"
                 outside += how == "outside_parent"
                 continue
+            matched.append((row, entity, how))
+
+        # Second pass, because a collision cannot be seen one row at a time.
+        dropped, notes = resolve_collisions(matched)
+        collided = len(dropped)
+        miss += collided
+        for i, (row, entity, how) in enumerate(matched):
+            if i in dropped:
+                continue
             merge_adapter(entity, row)
             entity["match"] = f"adapter:{how}"
             hit += 1
+        for note in notes[:4]:
+            log(f"    {iso3} {note}")
+        if len(notes) > 4:
+            log(f"    {iso3} ...and {len(notes) - 4} more shapes with rival rows")
         if rows:
             # Named separately because they mean different things. "Ambiguous"
             # is a row we cannot place; "outside" is a row we could have placed
             # wrongly and refused to -- the count is the mis-match that is no
             # longer happening, and it should not quietly grow.
             why = [f"{ambiguous} ambiguous" if ambiguous else "",
-                   f"{outside} outside their stated parent" if outside else ""]
+                   f"{outside} outside their stated parent" if outside else "",
+                   f"{collided} beaten to their shape by another row" if collided else ""]
             extra = " (" + ", ".join(w for w in why if w) + ")" if any(why) else ""
             log(f"  {iso3}: adapter rows matched {hit}, unmatched {miss}{extra}")
 

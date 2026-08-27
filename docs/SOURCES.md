@@ -716,12 +716,38 @@ refusing on the disagreement alone would have deleted 26 correct Indian
 districts along with correct rows in Mexico and the United States. A rule with
 no evidence behind it does not get to decide.
 
-**What is still wrong here.** Five Ethiopian zones — Burji, Mao-Komo, Tembaro,
-Pawe and Kebena — each contain the words "special woreda", and CGAZ has one
-shape named exactly that, so all five match it and the last one wins. Finland's
-North Ostrobothnia goes to plain Ostrobothnia rather than to Northern
-Ostrobothnia beside it. Both are many-to-one collapses that the uniqueness rule
-cannot see, because each row on its own finds exactly one shape.
+**Rival rows for one shape.** The uniqueness rule works one row at a time, so
+it cannot see several rows of the same adapter all reaching the same boundary —
+and whichever came last silently overwrote the rest. England's East, Mid, North
+and West Devon all reached a shape called Devon, and the source has no plain
+"Devon" row at all, so Devon wore West Devon's figures and the other three
+vanished. Texas's Jackson County reached a shape called Jack. 1,324 rows were
+being lost this way.
+
+A second pass now settles each shape's rivals by how much evidence each row
+brings: a name that matched outright beats one that arrived through a fragment
+of itself, and a match confined to the state the row named beats one that
+searched the whole country. So "Rotherham" keeps its shape and "Rother" is
+refused; "Ostrobothnia" keeps its own and Central and North Ostrobothnia are
+refused; "Bariloche" keeps its own and "Bariloche Army Garrison" is refused.
+Where nothing separates the rivals, none of them may claim it — four Devons and
+no way to tell which is the shape's is exactly the case for a visible gap.
+
+Rows that all matched *outright* are left alone, because there the rivalry is
+usually a source listing one place twice: Wikidata carries both "Ancasti" and
+"Ancasti Department", and "Department" is a word `norm()` drops.
+
+111 rows across 32 countries are refused this way, and each one is named in the
+build log. Much of what it removes is Wikidata entities that are not
+administrative units at all — army garrisons, national parks, Roman Catholic
+dioceses, parliamentary constituencies — which had been taking the shape of the
+place they are named after.
+
+**What is still wrong here.** Six Ethiopian zones each contain the words
+"special woreda" and CGAZ has one shape named exactly that; five are now
+refused, but Argobba's still lands on it, because its parent resolved and the
+others' did not. That is the rule preferring more evidence, and the evidence is
+still not about the right thing.
 
 **38 rows are still refused as ambiguous**, in Argentina (20), Vietnam (13),
 Colombia and Thailand (2 each) and Mexico (1). Each names a state that resolves,
