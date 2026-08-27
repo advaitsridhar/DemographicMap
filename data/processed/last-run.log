@@ -8,14 +8,12 @@ abs: 2021 Census, LGA
   dimensions seen: ['RELP', 'SEXP', 'REGION', 'REGION_TYPE', 'STATE', 'TIME_PERIOD']
   using region='REGION' religion='RELP' ancestry='ANCP'
   restricted SEXP='Persons' so the sexes are not counted twice
-  outermost level chosen by code tree for 510 regions
-  outermost level chosen by suffix (nothing summed to the total) for 48 regions
-  outermost level chosen by suffix for 4 regions
+  outermost level chosen by code tree for 562 regions
   outermost level chosen by suffix (no total to check against) for 3 regions
-  outermost level chosen by suffix (nothing summed to the total) for 561 regions
+  outermost level chosen by suffix (nothing summed to the total) for 550 regions
+  outermost level chosen by code tree for 12 regions
   outermost level chosen by suffix (no total to check against) for 3 regions
-  outermost level chosen by code tree for 1 regions
   population from the religion table's own total for 562 of 565 regions; they sum to 25,422,828
   sanity: largest religion category is 53.6% of the sample region's total across 8 categories
-  wrote data/processed/australia_lga.json (2777 kB)
+  wrote data/processed/australia_lga.json (2794 kB)
   565 records
