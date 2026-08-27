@@ -58,7 +58,7 @@ class Table:
     def __init__(self, path: str, field: str, geo: str, group: str,
                  keep: dict[str, str] | None = None, year: int | None = None,
                  note: str = "", drop: tuple[str, ...] = (),
-                 geo_len: int | None = None):
+                 geo_len: int | None = None, geo_suffix: str | None = None):
         self.path = path
         self.field = field
         self.geo = geo
@@ -72,6 +72,11 @@ class Table:
         # encodes depth in the code: Latvia's country is "LV", its statistical
         # regions "LV00A", its municipalities "LV0001000".
         self.geo_len = geo_len
+        # ...and length alone is not always enough. Latvia's towns are the same
+        # width as the municipalities that contain them and differ only in the
+        # tail: Jekabpils municipality is "LV0031000" and the town of Jekabpils
+        # inside it is "LV0031010".
+        self.geo_suffix = geo_suffix
 
 
 # Filled in from what scripts/probe_pxweb.py actually found. An office is only
@@ -136,7 +141,7 @@ INSTANCES: dict[str, dict[str, Any]] = {
             # same variable also carries the country and two vintages of the
             # statistical regions, defined before and after 1 January 2024,
             # which overlap each other.
-            geo_len=9,
+            geo_len=9, geo_suffix="000",
             note="Ethnicity as recorded in the population register at the "
                  "beginning of 2026. 'Other ethnicities' also holds people who "
                  "selected none and people who did not indicate one, so it is "
@@ -266,17 +271,27 @@ def wanted_area(code: str, label: str, table: Table) -> bool:
     """
     if code in table.drop or is_total(label) or label.startswith(CHILD_MARKER):
         return False
-    return table.geo_len is None or len(code) == table.geo_len
+    if table.geo_len is not None and len(code) != table.geo_len:
+        return False
+    return table.geo_suffix is None or code.endswith(table.geo_suffix)
 
 
-def fetch(base: str, table: Table) -> dict[str, dict[str, Any]]:
-    """One table -> {area code: {"name", "counts", "total"}}."""
+def fetch(base: str, table: Table) -> tuple[dict[str, dict[str, Any]], float | None]:
+    """One table -> {area code: {"name", "counts", "total"}}, and the country total.
+
+    The country row is dropped from the units and kept as the control. It is
+    the office's own statement of how many people the table describes, and the
+    units have to add up to it.
+    """
     meta = variables(base, table)
     payload = http_json(f"{base}/{table.path}", build_query(table, meta))
     areas: dict[str, dict[str, Any]] = {}
+    national: float | None = None
     for key, value in unstack(payload):
         area_code, area_label = key[table.geo]
         group_code, group_label = key[table.group]
+        if is_total(area_label) and is_total(group_label):
+            national = value
         if not wanted_area(area_code, area_label, table):
             continue
         entry = areas.setdefault(area_code, {"name": area_label, "counts": {},
@@ -287,10 +302,11 @@ def fetch(base: str, table: Table) -> dict[str, dict[str, Any]]:
             continue                    # counted already inside its parent
         elif group_code not in table.drop:
             entry["counts"][group_label] = entry["counts"].get(group_label, 0.0) + value
-    return areas
+    return areas, national
 
 
-def check(iso3: str, table: Table, areas: dict[str, dict[str, Any]]) -> None:
+def check(iso3: str, table: Table, areas: dict[str, dict[str, Any]],
+          national: float | None = None) -> None:
     """Every unit's categories must add up to the total the table itself gives.
 
     This is the one control a single table can offer, and it is worth having:
@@ -310,6 +326,24 @@ def check(iso3: str, table: Table, areas: dict[str, dict[str, Any]]) -> None:
                          f"population in {len(bad)} units — " + "; ".join(bad[:3]))
     log(f"    {len(areas)} units, categories sum to the published total in each")
 
+    # ...and the units have to add up to the country, which is the check that
+    # catches a unit counted inside another one. Every Latvian municipality's
+    # own categories added up perfectly while three towns were being counted
+    # twice, once on their own and once inside the municipality holding them:
+    # 45 units summing to 1,911,026 against a country of 1,845,096.
+    if national is None:
+        log("    (no country row in this table: the units cannot be checked "
+            "against a whole)")
+        return
+    summed = sum(e["total"] for e in areas.values() if e["total"])
+    if abs(summed - national) > max(0.005 * national, 50):
+        raise SystemExit(
+            f"{iso3} {table.path}: {len(areas)} units sum to {summed:,.0f} against "
+            f"a published national {national:,.0f}, a difference of "
+            f"{summed - national:+,.0f}. One of them is inside another, or one "
+            f"is missing.")
+    log(f"    ...and to {summed:,.0f} against a published national {national:,.0f}")
+
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
@@ -328,8 +362,8 @@ def main() -> int:
     merged: dict[str, dict[str, Any]] = {}
     for table in spec["tables"]:
         log(f"  {table.path}")
-        areas = fetch(spec["base"], table)
-        check(iso3, table, areas)
+        areas, national = fetch(spec["base"], table)
+        check(iso3, table, areas, national)
         for code, entry in areas.items():
             slot = merged.setdefault(code, {"name": entry["name"], "fields": {},
                                             "population": None, "notes": {}})

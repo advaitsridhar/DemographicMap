@@ -1165,6 +1165,41 @@ class PxWebPartition(unittest.TestCase):
                       {"37": {"name": "Harju", "total": None,
                               "counts": {"Estonians": 350}}})
 
+    def test_units_must_also_add_up_to_the_country(self):
+        # Every Latvian municipality's own categories added up perfectly while
+        # three towns were counted twice, once alone and once inside the
+        # municipality holding them. Only the national row shows that.
+        units = {"a": {"name": "Jekabpils municipality", "total": 38134,
+                       "counts": {"Latvians": 38134}},
+                 "b": {"name": "Jekabpils", "total": 20685,
+                       "counts": {"Latvians": 20685}}}
+        with self.assertRaises(SystemExit) as caught:
+            self.px.check("LVA", self.table, units, national=38134)
+        self.assertIn("inside another", str(caught.exception))
+
+    def test_units_that_do_add_up_to_the_country_pass(self):
+        units = {"a": {"name": "A", "total": 600, "counts": {"X": 600}},
+                 "b": {"name": "B", "total": 400, "counts": {"X": 400}}}
+        self.px.check("LVA", self.table, units, national=1000)
+
+
+class PxWebNestedLevels(unittest.TestCase):
+    """Code length alone does not always pin a level."""
+
+    def setUp(self):
+        from fetch_census import pxweb
+        self.px = pxweb
+
+    def test_a_town_is_not_the_municipality_that_holds_it(self):
+        # Latvia's towns are the same width as their municipalities and differ
+        # only in the tail: "LV0031000" holds "LV0031010".
+        table = self.px.Table(path="p", field="ethnicity", geo="AREA",
+                              group="E", geo_len=9, geo_suffix="000")
+        self.assertTrue(self.px.wanted_area("LV0031000", "Jekabpils municipality", table))
+        self.assertFalse(self.px.wanted_area("LV0031010", "Jekabpils", table))
+        # A state city is its own unit and keeps the top-level tail.
+        self.assertTrue(self.px.wanted_area("LV0003000", "Jelgava", table))
+
 
 class SriLanka2024(unittest.TestCase):
     """The 2024 census workbooks: trilingual labels, and the source's own check."""
