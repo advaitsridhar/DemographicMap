@@ -1,8 +1,30 @@
-pxweb: Statistics Estonia (EST)
-  rahvastik/rahvastikunaitajad-ja-koosseis/rahvaarv-ja-rahvastiku-koosseis/RV0222U.PX
-    left out (named in drop=): 3 — 784 ..Tallinn, 793 ..Tartu city, unk County unknown
-    left out (the country itself): 1 — 00 Whole country
-    15 units, categories sum to the published total in each
-    ...and to 1,360,745 against a published national 1,360,745
-  wrote data/processed/estonia_county.json (24 kB)
-  15 records
+
+== FIN Statistics Finland
+   https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin
+    9 candidate table(s):
+      vaerak/11rg.px               11rg -- Citizenship according to age and sex by region, 1990-2025
+      vaerak/11rh.px               11rh -- Citizenship according to sex by municipality, 1990-2025
+      vaerak/11rk.px               11rk -- Finnish citizens with dual nationality by age and second nationality, 2000-2025
+      vaerak/11rl.px               11rl -- Language according to age and sex by region, 1990-2025
+      vaerak/11rm.px               11rm -- Language according to sex by municipality, 1990-2025
+      vaerak/11rs.px               11rs -- Origin and background country by language, age (1-year) and sex, 1990-2025
+      vaerak/11rx.px               11rx -- Belonging to a religious community by age and sex, 1990-2025
+      vaerak/11rz.px               11rz -- Marital status by age (1-year), language and sex by area, 1990-2025
+      vaerak/159s.px               159s -- Population according to citizenship, country of birth, language and origin (over
+    describing the first 4:
+    - vaerak/11rg.px
+      11rg -- Citizenship according to age and sex by region, 1990-2025
+      vars: Region(22), Nationality(210), Age(17), Sex(3), Year(36), Information(1)
+      geography: Region — 22 areas, e.g. WHOLE COUNTRY, MA1 MAINLAND FINLAND, MK01 Uusimaa, MK02 Southwest Finland
+    - vaerak/11rh.px
+      11rh -- Citizenship according to sex by municipality, 1990-2025
+      vars: Area(309), Nationality(210), Sex(3), Year(36), Information(1)
+      geography: Area — 309 areas, e.g. WHOLE COUNTRY, Akaa, Alajärvi, Alavieska
+    - vaerak/11rk.px
+      11rk -- Finnish citizens with dual nationality by age and second nationality, 2000-2025
+      vars: Second nationality(207), Year(26), Sex(3), Age(87), Information(1)
+      geography: none with more than five values — national only
+    - vaerak/11rl.px
+      11rl -- Language according to age and sex by region, 1990-2025
+      vars: Region(22), Language(169), Age(17), Sex(3), Year(36), Information(1)
+      geography: Region — 22 areas, e.g. WHOLE COUNTRY, MA1 MAINLAND FINLAND, MK01 Uusimaa, MK02 Southwest Finland
