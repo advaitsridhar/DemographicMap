@@ -74,7 +74,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Canada | StatCan 2021 Census Profile (SDMX, keyed by DGUID) | province, census division | Religion is asked once a decade (2021 yes, 2016 no). "Visible minority" is an Employment Equity Act category, not an ethnicity question. |
 | Brazil | IBGE SIDRA tables 9514 / 9605 / 10086 | state, municipality | *Cor ou raça* is self-declared skin colour (branca, preta, parda, amarela, indígena) — not equivalent to ethnicity elsewhere. |
 | EU | Eurostat `demo_r_pjangrp3`, `demo_r_pjanind3` | NUTS-2, NUTS-3 | Population and age everywhere; **no** ethnicity or religion — those are national census questions and only some states ask them. |
-| Australia | ABS 2021 Census `C21_G14`, `C21_G08` | state, LGA, SA3 | Ancestry is multi-response (up to two per person), so shares are of responses and exceed 100%. No ethnicity question exists. |
+| Australia | ABS 2021 Census `C21_G14`, `C21_G08` | state, LGA | Ancestry is multi-response (up to two per person), so shares are of responses and exceed 100%. No ethnicity question exists. There is no state-level table: the states are read off the LGA table's own `STATE` dimension. Population is the religion table's total, which is the region's counted persons. |
 | Switzerland | FSO structural survey 2024, main languages | canton | Main languages for all 26 cantons. A person may name up to three, so shares exceed 100%. |
 | Singapore | Census 2020 + GHS 2015 planning-area tables | planning area |Ethnicity, religion and language for the planning areas, on three different bases. |
 | Singapore | SingStat Table Builder M810771 | planning region | Resident population, sex ratio and a derived median age for the 5 regions. Religion, ethnicity and language are collected but not published at this geography. |
@@ -331,6 +331,74 @@ parent; seven of them share a name with a municipio elsewhere — Benito Juárez
 is also in Quintana Roo, Cuauhtémoc in Chihuahua and Colima — and were being
 refused as ambiguous. The adapter declares the old name as an alias, which is
 what the matcher needed to see them as one place.
+
+### Australia: a table that was there, and four religions that were not
+
+Two faults, both in the reading rather than the source.
+
+**Every LGA shipped without a population.** The module docstring promised table
+`C21_G01` "selected person characteristics" and the code never fetched it,
+while the religion table it does fetch carries each region's own total. That
+total is the region's counted persons — religion is voluntary, but a blank
+answer is coded "Not stated" rather than dropped — and it was being discarded
+as a denominator. The 565 LGA totals sum to **25,422,828** against Australia's
+published 2021 census count of 25,422,788: forty people apart, which is the
+ABS's perturbation of small cells.
+
+**Islam, Hinduism, Buddhism and Judaism were missing from all 565 of them.**
+The adapter keeps the rows marked `... Total`, because a category with
+sub-levels is published beside its own children and summing both counts
+everyone twice. A category with *no* sub-levels carries no marker, so those four
+looked like denominations and were dropped. The arithmetic named them exactly:
+the LGA populations summed to 25,422,828 and their religion counts to
+23,209,496, a shortfall of 2,213,332 against those four religions' published
+national totals of 2,213,173 — a difference of 159 people.
+
+The classification's own code tree says what the marker cannot. A live region
+looks like this:
+
+```
+   '_T'   8,665  Total
+    '2'   4,644  Christianity Total
+  '7_T'   2,961  Secular ... Total
+ '7101'   2,947  No Religion, so described
+  '207'   2,040  Catholic
+   '_N'     948  Religious affiliation not stated
+  '6_T'      39  Other Religions Total
+    '3'      25  Hinduism
+    '1'      22  Buddhism
+    '4'      17  Islam
+```
+
+Widths vary at the same level, so keeping the shortest codes would throw away
+every branch carrying the marker. The marker has to come off before the prefix
+test, because the children of `7_T` are numbered from `7`. And the grand total
+is nobody's parent: `_T` loses its marker and becomes the empty string, a prefix
+of every code there is. **A category is outermost when no other category's
+branch code is a proper prefix of its own** — which is the only rule that sees a
+childless one.
+
+Two rules disagree about the outermost level and the published total settles
+it, because a partition of a population sums to that population. The bound is
+the larger of half a percent and sixty people: the ABS perturbs counts by an
+absolute number, so a proportional bound alone rejected 48 correct partitions in
+LGAs of 11 to 2,520 people, none out by more than 53. Sixty cannot hide a
+missing category — Australia's was out by 2.2 million.
+
+**There is no state-level census table.** The catalogue offers `C21_G14` for
+CED, LGA, POA, RA, SA2, SAL, SED, SUA and UCL and nothing for STE, so asking for
+`--level state` fell through to Remoteness Areas and returned "Major Cities of
+Australia (NSW)" as a state — 53 records, written to the file the build reads as
+admin-1. The LGA table carries a `STATE` dimension, so the states are read off
+that instead: the ABS's own assignment of each LGA to its state rather than a
+guess from geometry. A state run that returns anything but eight or so records
+now refuses to write.
+
+The state populations are 2021 census counts, which replaced Wikidata's more
+recent estimated resident population. They are the denominator their own
+religion shares are taken against, and the same measure as the LGAs beneath
+them; the ERP is more current but is a different measure, and mixing the two
+across one hierarchy is what the roll-up check would have caught anyway.
 
 ### Switzerland: a survey, and up to three languages per person
 
@@ -630,9 +698,11 @@ own is not filled at all: there would be nothing to check the sum against.
 The refusals are as much the point as the sums. Of sixteen candidates, five
 were filled and eleven were not:
 
-* **Australia, nine states.** The LGA records carry religion and no population,
-  so their populations sum to zero. Weighting by nothing would have produced a
-  state figure with no basis at all.
+* **Australia, nine states.** The LGA records carried religion and no
+  population, so their populations summed to zero and weighting by nothing
+  would have produced a state figure with no basis at all. Fixed at the source
+  since — see below — and the states now carry their own figures, so there is
+  nothing left to sum.
 * **Wales.** Its 22 children sum to 3,107,513 against a published 1,168,000.
   Whatever those two numbers count, it is not the same people.
 * **England, Telangana, Singapore's five regions, American Samoa.** Partial
