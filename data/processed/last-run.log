@@ -6,14 +6,36 @@ abs: 2021 Census, LGA
   ancestry: dataflow ABS,C21_G08_LGA,1.0.0
   religion rows 57630, ancestry rows 111870
   dimensions seen: ['RELP', 'SEXP', 'REGION', 'REGION_TYPE', 'STATE', 'TIME_PERIOD']
-  using region='REGION' religion='RELP' ancestry='ANCP'
+  using region='STATE' religion='RELP' ancestry='ANCP'
   restricted SEXP='Persons' so the sexes are not counted twice
-  outermost level chosen by code tree for 562 regions
-  outermost level chosen by suffix (no total to check against) for 3 regions
-  outermost level chosen by suffix (nothing summed to the total) for 550 regions
-  outermost level chosen by code tree for 12 regions
-  outermost level chosen by suffix (no total to check against) for 3 regions
-  population from the religion table's own total for 562 of 565 regions; they sum to 25,422,828
-  sanity: largest religion category is 53.6% of the sample region's total across 8 categories
-  wrote data/processed/australia_lga.json (2794 kB)
-  565 records
+  outermost level chosen by code tree for 9 regions
+  outermost level chosen by suffix (nothing summed to the total) for 9 regions
+  ! no rule partitioned ANCP for region 3; published total 10312367.0
+            '_T'    10,312,367  Total
+          '2101'     3,919,773  English
+          '1101'     3,449,202  Australian
+          '2201'     1,135,841  Irish
+            '_O'     1,130,020  Other
+          '2102'     1,053,998  Scottish
+            '_N'       708,346  Not stated
+          '2306'       619,387  German
+          '1102'       411,829  Australian Aboriginal
+          '6101'       320,107  Chinese
+          '3103'       305,062  Italian
+          '7106'       187,203  Indian
+          '2303'       161,615  Dutch
+          '5201'       147,692  Filipino
+          '1202'       134,443  New Zealander
+          '1201'       130,017  Maori
+          '1504'        70,454  Samoan
+          '9215'        70,453  South African
+          '2103'        69,332  Welsh
+          '5107'        67,692  Vietnamese
+          '2305'        66,233  French
+          '3307'        65,633  Polish
+          '3205'        65,360  Greek
+          '3106'        51,316  Spanish
+  population from the religion table's own total for 9 of 9 regions; they sum to 25,422,828
+  sanity: largest religion category is 47.6% of the sample region's total across 8 categories
+  wrote data/processed/australia_state.json (45 kB)
+  9 records
