@@ -1183,6 +1183,58 @@ class PxWebPartition(unittest.TestCase):
         self.px.check("LVA", self.table, units, national=1000)
 
 
+class FinlandLevels(unittest.TestCase):
+    """Finland says the level in the code, and repeats the code in the label."""
+
+    def setUp(self):
+        from fetch_census import pxweb
+        self.px = pxweb
+        self.table = pxweb.INSTANCES["FIN"]["tables"][0]
+
+    def test_the_level_is_a_prefix_not_a_width(self):
+        # "MK" is maakunta. A width rule would separate these by luck -- every
+        # MK code happens to be one character longer than every aggregate --
+        # and would break the day an aggregate got a fourth character.
+        self.assertTrue(self.px.wanted_area("MK01", "MK01 Uusimaa", self.table))
+        self.assertTrue(self.px.wanted_area("MK21", "MK21 Åland", self.table))
+        self.assertFalse(self.px.wanted_area("MA1", "MA1 MAINLAND FINLAND", self.table))
+
+    def test_aland_is_not_counted_twice(self):
+        # "MA2 ÅLAND" is "MK21 Åland" under another name: an aggregate of one.
+        # Keeping both would add the whole province a second time.
+        self.assertFalse(self.px.wanted_area("MA2", "MA2 ÅLAND", self.table))
+        self.assertEqual(self.px.reject_reason("MA2", "MA2 ÅLAND", self.table),
+                         "code does not start 'MK'")
+
+    def test_the_country_row_is_the_control_not_a_unit(self):
+        self.assertFalse(self.px.wanted_area("SSS", "WHOLE COUNTRY", self.table))
+        self.assertEqual(self.px.reject_reason("SSS", "WHOLE COUNTRY", self.table),
+                         "the country itself")
+
+    def test_the_code_is_stripped_off_the_label(self):
+        # No boundary file has heard of a place called "MK13 Central Finland".
+        self.assertEqual(self.px.place_name("MK13 Central Finland", "MK13"),
+                         "Central Finland")
+        self.assertEqual(self.px.place_name("MK19 Lapland", "MK19"), "Lapland")
+
+    def test_only_the_rows_own_code_is_stripped(self):
+        self.assertEqual(self.px.place_name("A1 Something", "B2"), "A1 Something")
+
+    def test_the_two_language_parents_are_dropped(self):
+        # "01 NATIONAL LANGUAGES, TOTAL" holds Finnish, Swedish and Sami; "02
+        # FOREIGN LANGUAGES, TOTAL" holds the other 163. Neither label is a
+        # word is_total() knows, so keeping them would count most of the
+        # country twice while every check still passed.
+        self.assertIn("01", self.table.drop)
+        self.assertIn("02", self.table.drop)
+        self.assertFalse(self.px.is_total("NATIONAL LANGUAGES, TOTAL"))
+
+    def test_age_and_sex_are_pinned_to_their_totals(self):
+        # Unpinned, every resident is counted once per age band.
+        self.assertEqual(self.table.keep["ikaryhma_10_20180101"], "SSS")
+        self.assertEqual(self.table.keep["sukupuoli_9_20180101"], "SSS")
+
+
 class BalticPlurals(unittest.TestCase):
     """One people written two ways is one group, not two."""
 
