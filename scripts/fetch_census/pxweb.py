@@ -57,7 +57,8 @@ class Table:
 
     def __init__(self, path: str, field: str, geo: str, group: str,
                  keep: dict[str, str] | None = None, year: int | None = None,
-                 note: str = "", drop: tuple[str, ...] = ()):
+                 note: str = "", drop: tuple[str, ...] = (),
+                 geo_len: int | None = None):
         self.path = path
         self.field = field
         self.geo = geo
@@ -66,15 +67,83 @@ class Table:
         self.year = year
         self.note = note
         self.drop = drop
+        # Length of a geography code at the level being asked for. A PxWeb
+        # geography variable holds several levels at once, and the office
+        # encodes depth in the code: Latvia's country is "LV", its statistical
+        # regions "LV00A", its municipalities "LV0001000".
+        self.geo_len = geo_len
 
 
 # Filled in from what scripts/probe_pxweb.py actually found. An office is only
 # listed here once its tables have been seen to exist, be public, and break
-# down by a geography the boundary files can join -- which is why this is empty:
-# the discovery runs have not yet come back with a table to point it at. Until
-# one does, nothing here is wired into build_all.sh, because an adapter that
-# guesses a table code fails at fetch time rather than at review time.
-INSTANCES: dict[str, dict[str, Any]] = {}
+# down by a geography the boundary files can join.
+#
+# Ten instances were walked. Lithuania, Slovakia, Croatia and Serbia answered
+# 404 or something that was not JSON at the base URLs tried. Finland rate-limits
+# metadata requests and asks language rather than ethnicity. Iceland, Norway,
+# Sweden and Denmark ask citizenship, which is a different question. North
+# Macedonia's tree returned only broadcast-language tables at the depth walked.
+# Slovenia has ethnicity by all 193 municipalities but only from the 1991
+# census, against boundaries that have been redrawn twice since, so it is left
+# out rather than joined across thirty-five years of redistricting.
+#
+# What is left is the two Baltic offices, and they are the point: neither
+# country has had any ethnicity figure in this dataset, and both publish one
+# annually at a level the boundary files carry.
+INSTANCES: dict[str, dict[str, Any]] = {
+    "EST": {
+        "name": "Statistics Estonia",
+        "base": "https://andmed.stat.ee/api/v1/en/stat",
+        "source": "Statistics Estonia, table RV0222U",
+        "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja"
+               "-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0222U",
+        "licence": "CC BY 4.0",
+        "level": "admin1",
+        "file": "estonia_county",
+        "tables": [Table(
+            path="rahvastik/rahvastikunaitajad-ja-koosseis/"
+                 "rahvaarv-ja-rahvastiku-koosseis/RV0222U.PX",
+            field="ethnicity", geo="Maakond", group="Rahvus",
+            # Sex must be pinned or males and females are added to a total that
+            # already contains both. Year likewise: this is a register count on
+            # 1 January, not a census, and every year is in the same table.
+            keep={"Aasta": "2026", "Sugu": "1"}, year=2026,
+            # "00" is the whole country and "unk" is a county nobody recorded;
+            # "784" Tallinn and "793" Tartu city sit *inside* Harju and Tartu
+            # counties, so counting them beside their parents would double
+            # those two counties' people.
+            drop=("00", "unk", "784", "793"),
+            note="Ethnic nationality as recorded in the population register on "
+                 "1 January 2026, not a census answer. Estonia asks it of "
+                 "residents rather than inferring it from citizenship."),
+        ],
+    },
+    "LVA": {
+        "name": "Statistics Latvia",
+        "base": "https://data.stat.gov.lv/api/v1/en/OSP_PUB",
+        "source": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "licence": "CC BY 4.0",
+        "level": "admin1",
+        "file": "latvia_municipality",
+        "tables": [Table(
+            path="POP/IR/IRE/IRE031",
+            field="ethnicity", geo="AREA", group="ETHNICITY",
+            # IRE031 is the count and IRE0311 the same figures as percentages;
+            # taking both would read every number twice.
+            keep={"ContentsCode": "IRE031", "TIME": "2026"}, year=2026,
+            # Nine characters is the municipality and state-city level. The
+            # same variable also carries the country and two vintages of the
+            # statistical regions, defined before and after 1 January 2024,
+            # which overlap each other.
+            geo_len=9,
+            note="Ethnicity as recorded in the population register at the "
+                 "beginning of 2026. 'Other ethnicities' also holds people who "
+                 "selected none and people who did not indicate one, so it is "
+                 "not a count of anyone in particular."),
+        ],
+    },
+}
 
 
 def http_json(url: str, payload: dict | None = None) -> Any:
@@ -121,3 +190,178 @@ def build_query(table: Table, meta: dict[str, dict[str, Any]]) -> dict[str, Any]
             f"{table.path}: {loose} left unpinned; each would be summed over. "
             "Add them to keep= with the value the figures should be read at.")
     return {"query": query, "response": {"format": "json-stat2"}}
+
+
+# ---------------------------------------------------------------------------
+# Reading a table back
+# ---------------------------------------------------------------------------
+
+# A value whose label starts with this is a sub-category of the one above it.
+# Statistics Estonia writes "Other ethnic nationalities" and then "..Ukrainians",
+# "..Belorussians" beneath it; keeping both counts those people twice, which is
+# the same trap the ABS classification sets with its "... Total" rows.
+CHILD_MARKER = ".."
+
+# The label a PxWeb table gives the row that is everyone. It is the denominator
+# rather than a category, and it is also the only population figure these tables
+# carry, so it is taken out of the shares and kept as the unit's population.
+TOTAL_LABELS = ("total", "whole country", "all")
+
+
+def unstack(payload: dict[str, Any]) -> list[tuple[dict[str, tuple[str, str]], float]]:
+    """json-stat2 -> one entry per cell, each carrying its dimensions' codes and labels.
+
+    The values arrive as a single flat array in row-major order over the
+    dimensions named in ``id``, so the position in that array *is* the
+    combination of categories -- there is no other record of which cell is
+    which.
+    """
+    ids: list[str] = payload["id"]
+    sizes: list[int] = payload["size"]
+    dims = payload["dimension"]
+
+    order: list[list[str]] = []
+    labels: list[dict[str, str]] = []
+    for name in ids:
+        category = dims[name]["category"]
+        index = category["index"]
+        # PxWeb sends the index either as code -> position or as a bare list.
+        order.append(sorted(index, key=index.get) if isinstance(index, dict)
+                     else list(index))
+        labels.append(category.get("label") or {})
+
+    strides = [1] * len(sizes)
+    for i in range(len(sizes) - 2, -1, -1):
+        strides[i] = strides[i + 1] * sizes[i + 1]
+
+    values = payload["value"]
+    if isinstance(values, dict):        # sparse form: position -> value
+        values = [values.get(str(i)) for i in range(strides[0] * sizes[0])]
+
+    out = []
+    for flat, value in enumerate(values):
+        if value is None:
+            continue
+        key = {}
+        for i, name in enumerate(ids):
+            code = order[i][(flat // strides[i]) % sizes[i]]
+            key[name] = (code, labels[i].get(code, code))
+        out.append((key, float(value)))
+    return out
+
+
+def is_total(label: str) -> bool:
+    return label.strip().lower() in TOTAL_LABELS
+
+
+def wanted_area(code: str, label: str, table: Table) -> bool:
+    """Whether a geography value is one of the units being asked for.
+
+    A PxWeb geography variable usually holds several levels at once, and often
+    two vintages of one level: Latvia's lists the country, five statistical
+    regions as defined before 2024, five as defined after, and then the
+    municipalities. Summing or joining across that would double-count half the
+    country, so the level is pinned by code length -- the office's own encoding
+    of depth -- and everything else is refused.
+    """
+    if code in table.drop or is_total(label) or label.startswith(CHILD_MARKER):
+        return False
+    return table.geo_len is None or len(code) == table.geo_len
+
+
+def fetch(base: str, table: Table) -> dict[str, dict[str, Any]]:
+    """One table -> {area code: {"name", "counts", "total"}}."""
+    meta = variables(base, table)
+    payload = http_json(f"{base}/{table.path}", build_query(table, meta))
+    areas: dict[str, dict[str, Any]] = {}
+    for key, value in unstack(payload):
+        area_code, area_label = key[table.geo]
+        group_code, group_label = key[table.group]
+        if not wanted_area(area_code, area_label, table):
+            continue
+        entry = areas.setdefault(area_code, {"name": area_label, "counts": {},
+                                             "total": None})
+        if is_total(group_label):
+            entry["total"] = value
+        elif group_label.startswith(CHILD_MARKER):
+            continue                    # counted already inside its parent
+        elif group_code not in table.drop:
+            entry["counts"][group_label] = entry["counts"].get(group_label, 0.0) + value
+    return areas
+
+
+def check(iso3: str, table: Table, areas: dict[str, dict[str, Any]]) -> None:
+    """Every unit's categories must add up to the total the table itself gives.
+
+    This is the one control a single table can offer, and it is worth having:
+    it is exactly what catches a level of the classification being kept twice
+    or dropped once, which is the way these joins go wrong silently.
+    """
+    bad = []
+    for code, entry in areas.items():
+        total, counted = entry["total"], sum(entry["counts"].values())
+        if not total:
+            continue
+        if abs(counted - total) > max(0.005 * total, 5):
+            bad.append(f"{entry['name']} ({code}): categories {counted:,.0f} "
+                       f"against a published {total:,.0f}")
+    if bad:
+        raise SystemExit(f"{iso3} {table.path}: the categories do not partition the "
+                         f"population in {len(bad)} units — " + "; ".join(bad[:3]))
+    log(f"    {len(areas)} units, categories sum to the published total in each")
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--country", required=True)
+    ap.add_argument("--out", default=None)
+    args = ap.parse_args()
+
+    iso3 = args.country.strip().upper()
+    spec = INSTANCES.get(iso3)
+    if not spec:
+        raise SystemExit(f"no PxWeb instance configured for {iso3}. "
+                         f"Configured: {sorted(INSTANCES)}")
+
+    log(f"pxweb: {spec['name']} ({iso3})")
+    merged: dict[str, dict[str, Any]] = {}
+    for table in spec["tables"]:
+        log(f"  {table.path}")
+        areas = fetch(spec["base"], table)
+        check(iso3, table, areas)
+        for code, entry in areas.items():
+            slot = merged.setdefault(code, {"name": entry["name"], "fields": {},
+                                            "population": None, "notes": {}})
+            slot["population"] = slot["population"] or entry["total"]
+            slot["fields"][table.field] = shares(entry["counts"], total=entry["total"])
+            slot["notes"][table.field] = table.note
+            slot["year"] = table.year
+
+    source = {"field": "/".join(sorted({t.field for t in spec["tables"]})),
+              "name": spec["source"], "url": spec["url"],
+              "license": spec["licence"]}
+    records = []
+    for code, slot in sorted(merged.items()):
+        fields: dict[str, Any] = {}
+        for field, rows in slot["fields"].items():
+            fields[field] = rows or gap(NOT_AVAILABLE)
+            if slot["notes"].get(field):
+                fields[f"{field}_note"] = slot["notes"][field]
+            fields[f"{field}_year"] = slot.get("year")
+        records.append(record(
+            f"{iso3}-{code}", slot["name"].strip(),
+            level=spec["level"], parent=iso3, codes={"pxweb": code},
+            population=(measure(int(round(slot["population"])), year=slot.get("year"),
+                                source=spec["source"])
+                        if slot["population"] else gap(NOT_AVAILABLE)),
+            sources=[source], **fields))
+
+    out = args.out or PROCESSED / f"{spec['file']}.json"
+    write_json(out, records)
+    log(f"  {len(records)} records")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

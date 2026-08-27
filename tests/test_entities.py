@@ -1056,6 +1056,116 @@ class ImpliedTotal(unittest.TestCase):
         self.assertIsNone(be.implied_total([]))
 
 
+class PxWebUnstack(unittest.TestCase):
+    """json-stat2 arrives as one flat array; position is the only record of
+    which cell is which."""
+
+    def setUp(self):
+        from fetch_census import pxweb
+        self.px = pxweb
+
+    def payload(self):
+        # Two counties x three ethnicities, row-major over ["Maakond","Rahvus"].
+        return {
+            "class": "dataset",
+            "id": ["Maakond", "Rahvus"],
+            "size": [2, 3],
+            "dimension": {
+                "Maakond": {"category": {
+                    "index": {"37": 0, "39": 1},
+                    "label": {"37": "Harju county", "39": "Hiiu county"}}},
+                "Rahvus": {"category": {
+                    "index": {"1": 0, "2": 1, "3": 2},
+                    "label": {"1": "Total", "2": "Estonians", "3": "Russians"}}},
+            },
+            "value": [600, 350, 250, 100, 90, 10],
+        }
+
+    def test_each_cell_keeps_its_own_categories(self):
+        cells = dict((tuple(sorted((k, v[0]) for k, v in key.items())), value)
+                     for key, value in self.px.unstack(self.payload()))
+        self.assertEqual(cells[(("Maakond", "37"), ("Rahvus", "2"))], 350)
+        self.assertEqual(cells[(("Maakond", "39"), ("Rahvus", "3"))], 10)
+
+    def test_a_missing_cell_is_skipped_not_shifted(self):
+        payload = self.payload()
+        payload["value"][1] = None
+        codes = [tuple(sorted((k, v[0]) for k, v in key.items()))
+                 for key, _ in self.px.unstack(payload)]
+        self.assertNotIn((("Maakond", "37"), ("Rahvus", "2")), codes)
+        # ...and everything after it still lands where it belongs.
+        cells = dict((tuple(sorted((k, v[0]) for k, v in key.items())), value)
+                     for key, value in self.px.unstack(payload))
+        self.assertEqual(cells[(("Maakond", "39"), ("Rahvus", "3"))], 10)
+
+
+class PxWebLevels(unittest.TestCase):
+    """A PxWeb geography variable holds several levels, and often two vintages
+    of one of them."""
+
+    def setUp(self):
+        from fetch_census import pxweb
+        self.px = pxweb
+
+    def table(self, **kw):
+        return self.px.Table(path="p", field="ethnicity", geo="AREA",
+                             group="ETHNICITY", **kw)
+
+    def test_code_length_pins_the_level(self):
+        # Latvia: country "LV", statistical regions "LV00A", municipalities
+        # "LV0001000" -- and the regions come in a pre-2024 and a post-2024
+        # set that overlap each other.
+        table = self.table(geo_len=9)
+        self.assertTrue(self.px.wanted_area("LV0001000", "Riga", table))
+        self.assertFalse(self.px.wanted_area("LV00A", "Riga region", table))
+        self.assertFalse(self.px.wanted_area("LV", "Latvia", table))
+
+    def test_a_named_total_is_never_a_unit(self):
+        table = self.table()
+        self.assertFalse(self.px.wanted_area("00", "Whole country", table))
+        self.assertFalse(self.px.wanted_area("X", "Total", table))
+
+    def test_a_child_row_is_not_a_unit(self):
+        # Estonia writes Tallinn as "..Tallinn" because it sits inside Harju.
+        table = self.table()
+        self.assertFalse(self.px.wanted_area("784", "..Tallinn", table))
+        self.assertTrue(self.px.wanted_area("37", "Harju county", table))
+
+    def test_explicit_drops_win(self):
+        table = self.table(drop=("unk",))
+        self.assertFalse(self.px.wanted_area("unk", "County unknown", table))
+
+
+class PxWebPartition(unittest.TestCase):
+    """The one control a single table offers: the categories must add up to the
+    total the table itself publishes."""
+
+    def setUp(self):
+        from fetch_census import pxweb
+        self.px = pxweb
+        self.table = self.px.Table(path="p", field="ethnicity", geo="AREA",
+                                   group="E")
+
+    def test_categories_summing_to_the_total_pass(self):
+        self.px.check("EST", self.table,
+                      {"37": {"name": "Harju", "total": 600,
+                              "counts": {"Estonians": 350, "Russians": 250}}})
+
+    def test_a_kept_sub_level_is_caught(self):
+        # Keeping "Other" and its children too is the mistake this catches.
+        with self.assertRaises(SystemExit) as caught:
+            self.px.check("EST", self.table,
+                          {"37": {"name": "Harju", "total": 600,
+                                  "counts": {"Estonians": 350, "Other": 250,
+                                             "Ukrainians": 200}}})
+        self.assertIn("Harju", str(caught.exception))
+
+    def test_a_unit_with_no_published_total_is_not_judged(self):
+        self.px.check("EST", self.table,
+                      {"37": {"name": "Harju", "total": None,
+                              "counts": {"Estonians": 350}}})
+
+
 class SriLanka2024(unittest.TestCase):
     """The 2024 census workbooks: trilingual labels, and the source's own check."""
 
