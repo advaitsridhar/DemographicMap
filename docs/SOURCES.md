@@ -78,6 +78,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Switzerland | FSO structural survey 2024, main languages | canton | Main languages for all 26 cantons. A person may name up to three, so shares exceed 100%. |
 | Singapore | Census 2020 + GHS 2015 planning-area tables | planning area |Ethnicity, religion and language for the planning areas, on three different bases. |
 | Singapore | SingStat Table Builder M810771 | planning region | Resident population, sex ratio and a derived median age for the 5 regions. Religion, ethnicity and language are collected but not published at this geography. |
+| Finland | Statistics Finland table `11rl` (PxWeb) | region | Mother tongue for all 19 regions, from the population register at 31 December. One language is recorded per resident, so shares are of everyone rather than of the people who answered a question. |
 | Estonia | Statistics Estonia table `RV0222U` (PxWeb) | county | Ethnic nationality for all 15 counties, from the population register on 1 January — a register count, not a census answer. |
 | Latvia | Central Statistical Bureau table `IRE031` (PxWeb) | municipality, state city | Ethnicity for all 42 municipalities and state cities, from the population register. "Other ethnicities" also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular. |
 | Sri Lanka | Census of Population and Housing 2024, tables A1–A3 | province, district | Population, sex ratio, religion and ethnicity for all 25 districts and 9 provinces. |
@@ -489,6 +490,47 @@ off is the vintage tag an office attaches to a redrawn unit — and what marks
 that is the date inside the parenthesis, not the word in front of it: matching
 on "from" and "until" read the English labels and missed the Latvian
 `(no 01.07.2025.)`.
+
+**Finland, and what a level looks like when the office spells it out.** Table
+11rl gives mother tongue by region: not a census question but a register
+field, one language per resident, which is why the 19 regions sum to
+5,652,881 against a published 5,652,881 exactly.
+
+The level is named in the code rather than implied by its width. `MK` is
+*maakunta*, and the same variable carries `SSS` whole country, `MA1` mainland
+and `MA2` Åland beside the regions. A width rule separates them here by luck —
+every MK code happens to be one character longer — and would stop being true
+the day an aggregate got a fourth character, so the rule is the prefix the
+office itself uses. `MA2` is the one that would have cost something: it is
+`MK21` under another name, and keeping both adds the whole province twice.
+
+The language list is two levels deep and its parents are not marked the way
+Estonia's are. `01 NATIONAL LANGUAGES, TOTAL` holds Finnish, Swedish and Sami;
+`02 FOREIGN LANGUAGES, TOTAL` holds the other 163. Neither label is a word the
+total-detection knows, so both would have been read as ordinary categories and
+most of the country counted twice — with every check still passing, because a
+partition that double-counts consistently still sums to its own total.
+
+Six regions needed declared aliases, because geoBoundaries names them with
+older English exonyms: *Finland Proper* for Varsinais-Suomi, *Tavastia Proper*
+for Kanta-Häme, *Southern* and *Northern Savonia* for Etelä- and Pohjois-Savo,
+*Northern Ostrobothnia* for Pohjois-Pohjanmaa, *Åland Islands* for Ahvenanmaa.
+Nothing infers "Finland Proper" from "Varsinais-Suomi"; they share no word.
+
+Northern Ostrobothnia is why that matters rather than being tidy-up. "North
+Ostrobothnia" is close enough to bare "Ostrobothnia" — a different region, and
+one where Swedish is the plurality language against Finnish at 95% in the
+other — that the loose pass reached it. The only thing that stopped it was the
+rule refusing two rows that land on one shape, and that rule stopped it by
+dropping the row rather than by placing it. A wrong join that a tiebreak
+happens to catch is still a wrong join, waiting for the tiebreak to be absent.
+
+**Not taken from Finland.** Table 11rx, *belonging to a religious community*,
+has no geography dimension at all — religious community, sex, age, year, and
+nothing else. It is a national figure and this map already has one. Table 11rm
+gives language by all 309 municipalities, but geoBoundaries' admin-2 for
+Finland is 70 sub-regions rather than the municipalities, so it would have to
+be rolled up before it could join.
 
 **Where the gaps are.** All 15 Estonian counties join, and 40 of Latvia's 42
 units — 39 of them on an exact name. Madona joins through the prefix pass
