@@ -1,132 +1,122 @@
 
-== EST Statistics Estonia
-   https://andmed.stat.ee/api/v1/en/stat
-    (stopped after 71s — tree not fully walked)
-    75 candidate table(s)
-    - rahvastik/rahvastikunaitajad-ja-koosseis/rahvaarv-ja-rahvastiku-koosseis/RV0222U.PX
-      RV0222U: POPULATION BY SEX, ETHNIC NATIONALITY AND COUNTY, 1 JANUARY
-      vars: Year(9), Sex(3), County(19), Ethnic nationality(16)
-      geography: County — 19 areas, e.g. Whole country, Harju county, ..Tallinn, Hiiu county
-    - rahvastik/rahvastikunaitajad-ja-koosseis/rahvaarv-ja-rahvastiku-koosseis/RV022U.PX
-      RV022U: POPULATION BY SEX, AGE GROUP, ETHNIC NATIONALITY AND COUNTY, 1 JANUARY
-      vars: Year(9), Age group(23), County(27), Sex(3), Ethnic nationality(6)
-      geography: County — 27 areas, e.g. Whole country, Harju county, ..Tallinn, ....Haabersti city district
-    - rahvastik/rahvastikunaitajad-ja-koosseis/rahvaarv-ja-rahvastiku-koosseis/RV066.px
-      RV066: POPULATION BY CITIZENSHIP AND SEX, 1 JANUARY
-      vars: Citizenship(181), Sex(3), Year(5)
-      geography: none with more than five values — national only
-    - rahvastik/rahvastikunaitajad-ja-koosseis/rahvaarv-ja-rahvastiku-koosseis/RV067.px
-      RV067: POPULATION BY ETHNIC NATIONALITY AND SEX, 1 JANUARY
-      vars: Ethnic nationality(232), Sex(3), Year(5)
-      geography: none with more than five values — national only
+== EST Statistics Estonia :: rahvastik/rahvastikunaitajad-ja-koosseis/rahvaarv-ja-rahvastiku-koosseis/RV0222U.PX
+  title: RV0222U: POPULATION BY SEX, ETHNIC NATIONALITY AND COUNTY, 1 JANUARY
 
-== LVA Statistics Latvia
-   https://data.stat.gov.lv/api/v1/en/OSP_PUB
-    (stopped after 71s — tree not fully walked)
-    28 candidate table(s)
-    - POP/IR/IRE/IRE010
-      Population by ethnicity at the beginning of year 1935 - 2026
-      vars: Ethnicity(171), Indicator(1), Time period(22)
-      geography: none with more than five values — national only
-    - POP/IR/IRE/IRE020
-      Population, population change and natural increase by ethnicity 1980 - 2026
-      vars: Ethnicity(11), Indicator(3), Time period(43)
-      geography: none with more than five values — national only
-    - POP/IR/IRE/IRE031
-      Population by ethnicity in regions, State cities and municipalities at the beginning of year 2012 - 2026
-      vars: Ethnicity(11), Territorial unit(57), Unit(2), Time period(15)
-      geography: none with more than five values — national only
-    - POP/IR/IRE/IRE040
-      Population by ethnicity and age group at the beginning of year 2011 - 2026
-      vars: Ethnicity(11), Age group(19), Indicator(1), Time period(16)
-      geography: none with more than five values — national only
+  code='Aasta'  text='Year'  9 values  elimination=None  time=True
+      '2018'           2018
+      '2019'           2019
+      '2020'           2020
+      '2021'           2021
+      '2022'           2022
+      '2023'           2023
+      '2024'           2024
+      '2025'           2025
+      '2026'           2026
 
-== LTU Statistics Lithuania
-   https://osp-rs.stat.gov.lt/rest_xml/data
-    unreachable: HTTPError: HTTP Error 404: 
-    nothing matching religion / ethnicity / language
+  code='Sugu'  text='Sex'  3 values  elimination=True  time=None
+      '1'              Males and females
+      '2'              Males
+      '3'              Females
 
-== SVN Statistical Office of Slovenia
-   https://pxweb.stat.si/SiStatData/api/v1/en/Data
-    94 candidate table(s)
-    - 0556502S.px
-      Population by ethnic affiliation, municipalities, Slovenia, census 1991
-      vars: MUNICIPALITY(193), ETHNIC AFFILIATION(20)
-      geography: MUNICIPALITY — 193 areas, e.g. SLOVENIA, Ajdovščina, Beltinci, Benedikt
-    - 0557093S.px
-      Immigrants in employment by country of citizenship and activity [SKD 2002], Slovenia, 2005 - 2007
-      vars: ACTIVITY(16), YEAR(3), COUNTRY OF CITIZENSHIP(12)
-      geography: none with more than five values — national only
-    - 05E1008S.px
-      Population by country of citizenship, 5-year age groups and sex, Slovenia, annually
-      vars: SEX(3), COUNTRY OF CITIZENSHIP(184), YEAR(15), AGE(20)
-      geography: none with more than five values — national only
-    - 05E1014S.px
-      Foreigners by groups of citizenship, cohesion regions, Slovenia, annually
-      vars: COHESION REGION(3), MEASURES(2), GROUP OF CITIZENSHIP(4), YEAR(16), SEX(3)
-      geography: none with more than five values — national only
+  code='Maakond'  text='County'  19 values  elimination=True  time=None
+      '00'             Whole country
+      '37'             Harju county
+      '784'            ..Tallinn
+      '39'             Hiiu county
+      '45'             Ida-Viru county
+      '50'             Jõgeva county
+      '52'             Järva county
+      '56'             Lääne county
+      '60'             Lääne-Viru county
+      '64'             Põlva county
+      '68'             Pärnu county
+      '71'             Rapla county
+      '74'             Saare county
+      '79'             Tartu county
+      '793'            ..Tartu city
+      '81'             Valga county
+      '84'             Viljandi county
+      '87'             Võru county
+      'unk'            County unknown
 
-== SVK Statistical Office of Slovakia
-   https://datacube.statistics.sk/api/v1/en/DATAcube
-    unreachable: HTTPError: HTTP Error 404: 
-    nothing matching religion / ethnicity / language
+  code='Rahvus'  text='Ethnic nationality'  16 values  elimination=True  time=None
+      '1'              Total
+      '2'              Estonians
+      '3'              Russians
+      '4'              Other ethnic nationalities
+      '5'              ..Ukrainians
+      '6'              ..Belorussians
+      '7'              ..Finns
+      '8'              ..Tatars
+      '9'              ..Latvians
+      '10'             ..Poles
+      '11'             ..Jews
+      '12'             ..Lithuanians
+      '13'             ..Germans
+      '14'             ..Armenians
+      '15'             ..Azerbaijanis
+      '16'             Ethnic nationality unknown
 
-== MKD State Statistical Office of North Macedonia
-   https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat
-    (stopped after 71s — tree not fully walked)
-    2 candidate table(s)
-    - Kultura/RadioTv/200_KulRA_ML_T4NivoJaz_ml.px
-      Broadcast radio programme by language of broadcasting, in hours
-      vars: Language of broadcasting(10), Year(3), Radio broadcasters(3), Level of broadcasting(3)
-      geography: none with more than five values — national only
-    - Kultura/RadioTv/300_KulTV_ML_T4EmitProJaz_ml.px
-      Broadcast television programme by language of broadcasting, in hours
-      vars: Language of broadcasting(10), Year(3), TV broadcasters(2), Level of broadcasting(3)
-      geography: none with more than five values — national only
+== LVA Statistics Latvia :: POP/IR/IRE/IRE031
+  title: Population by ethnicity in regions, State cities and municipalities at the beginning of year by Ethnicity, Territorial unit, Unit and Time period
 
-== SRB Statistical Office of Serbia
-   https://data.stat.gov.rs/api/v1/en
-    unreachable: JSONDecodeError: Expecting value: line 3 column 1 (char 4)
-    nothing matching religion / ethnicity / language
+  code='ETHNICITY'  text='Ethnicity'  11 values  elimination=True  time=None
+      'TOTAL'          Total
+      'E_LAT'          Latvians
+      'E_BRU'          Belarusians
+      'E_ROM'          Roma
+      'E_JEW'          Jews
+      'E_EST'          Estonians
+      'E_RUS'          Russians
+      'E_LIT'          Lithuanians
+      'E_POL'          Poles
+      'E_UKR'          Ukrainians
+      'OTH_NSP_UNK'    Other ethnicities, including not selected and not indicated ethnicity
 
-== HRV Croatian Bureau of Statistics
-   https://podaci.dzs.hr/api/v1/en
-    unreachable: HTTPError: HTTP Error 404: Not Found
-    nothing matching religion / ethnicity / language
+  code='AREA'  text='Territorial unit'  57 values  elimination=True  time=None
+      'LV'             Latvia
+      'LV00A'          Riga statistical region (from 01.01.2024.)
+      'LV006'          Riga statistical region (Riga) (before 01.01.2024.)  
+      'LV007'          Pierīga statistical region (before 01.01.2024.)
+      'LV00C'          Vidzeme statistical region (from 01.01.2024.)
+      'LV008'          Vidzeme statistical region (before 01.01.2024.)
+      'LV00B'          Kurzeme statistical region (from 01.01.2024.)
+      'LV003'          Kurzeme statistical region (before 01.01.2024.)
+      'LV009'          Zemgale statistical region
+      'LV005'          Latgale statistical region
+      'LV0001000'      Riga
+      'LV0002000'      Daugavpils
+      'LV0003000'      Jelgava
+      'LV0031010'      Jēkabpils
+      'LV0004000'      Jūrmala
+      'LV0005000'      Liepāja
+      'LV0040010'      Ogre
+      'LV0006000'      Rēzekne
+      'LV0054010'      Valmiera
+      'LV0007000'      Ventspils
+      'LV0020000'      Aizkraukle municipality
+      'LV0021000'      Alūksne municipality
+      'LV0022000'      Augšdaugava municipality
+      'LV0023000'      Ādaži municipality
+      ... 33 more
 
-== FIN Statistics Finland
-   https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin
-    (stopped after 71s — tree not fully walked)
-    17 candidate table(s)
-    - synt/12dn.px
-      12dn -- Live births by sex and mother's age (5-year) and language, 2000-2025
-      ! metadata failed: HTTP Error 429: 
-    - ssaaty/121h.px
-      121h -- Marriages contracted by nationality of spouses, 1990-2025
-      ! metadata failed: HTTP Error 429: 
-    - ssaaty/121i.px
-      121i -- Marriages contracted by language of spouses, 2000-2025
-      ! metadata failed: HTTP Error 429: 
-    - kans/11l3.px
-      11l3 -- Citizenships granted according to previous nationality, 1990-2025
-      ! metadata failed: HTTP Error 429: 
+  code='ContentsCode'  text='Unit'  2 values  elimination=None  time=None
+      'IRE031'         Number
+      'IRE0311'        Per cent distribution
 
-== ISL Statistics Iceland
-   https://px.hagstofa.is/pxen/api/v1/en/Ibuar
-    13 candidate table(s)
-    - buferlaflutningar/buferlaflmillilanda/MAN01400.px
-      External migration by sex and citizenship 1961-2025
-      vars: Sex(3), Year(65), Citizenship(3), Type of migration(3)
-      geography: none with more than five values — national only
-    - buferlaflutningar/buferlaflmillilanda/MAN01401.px
-      External migration by sex, age and citizenship 1986-2025
-      vars: Sex(3), Year(40), Age(112), Citizenship(3), Type of migration(3)
-      geography: none with more than five values — national only
-    - buferlaflutningar/buferlaflmillilanda/MAN01404.px
-      External migration by sex, countries and citizenship 1986-2025
-      vars: Country(225), Year(40), Migration(3), Citizenship(3), Sex(3)
-      geography: none with more than five values — national only
-    - buferlaflutningar/buferlaflmillilanda/MAN01405.px
-      External migration by sex, citizenship and region 1986-2025
-      vars: Sex(3), Year(40), Region(10), Citizenship(3), Migration(3)
-      geography: Region — 10 areas, e.g. Total, Capital area, Southwest, West
+  code='TIME'  text='Time period'  15 values  elimination=None  time=True
+      '2012'           2012
+      '2013'           2013
+      '2014'           2014
+      '2015'           2015
+      '2016'           2016
+      '2017'           2017
+      '2018'           2018
+      '2019'           2019
+      '2020'           2020
+      '2021'           2021
+      '2022'           2022
+      '2023'           2023
+      '2024'           2024
+      '2025'           2025
+      '2026'           2026
