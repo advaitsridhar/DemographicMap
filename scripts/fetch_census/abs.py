@@ -242,20 +242,49 @@ def collapse_hierarchy(counts: dict[str, float]) -> dict[str, float]:
     return {strip_total(k): v for k, v in kept.items()}
 
 
+# A code ending in the total marker stands for the branch itself rather than a
+# category beneath it: "7_T" is the Secular branch, and its children are "7101",
+# "7102" and so on -- numbered from "7", not from "7_T". Stripping the marker is
+# what makes a parent a prefix of its own children.
+CODE_TOTAL_SUFFIX = "_T"
+
+
+def branch_code(code: str) -> str:
+    return code[: -len(CODE_TOTAL_SUFFIX)] if code.endswith(CODE_TOTAL_SUFFIX) else code
+
+
 def outermost_by_code(coded: dict[tuple[str, str], float]) -> dict[str, float]:
     """The level of a code tree nothing else sits above.
 
-    ABS classification codes nest by prefix and by width -- Christianity "2"
-    above Anglican "2_1" -- so the outermost level is the set of shortest codes.
-    This is what the suffix rule could not see: a category with no children
-    looks flat, and only its code says otherwise.
+    ABS classification codes nest by prefix, and not by width -- the real tree
+    is "1" Buddhism, "2" Christianity Total, "6_T" Other Religions Total, "_N"
+    not stated, with "207" Catholic under "2" and "7101" No Religion under
+    "7_T". A rule that kept the shortest codes would have thrown away every
+    branch whose code carries the marker, and one that ignored the marker would
+    have kept "7101" beside its own parent.
+
+    So: a category is outermost when no other category's branch code is a
+    proper prefix of its own. Buddhism has no children and no marker, and this
+    is the only rule that sees it -- which is the whole point, because it and
+    Hinduism, Islam and Judaism were being dropped from all 565 LGAs.
     """
-    codes = {code for _, code in coded if code}
-    if len(codes) != len(coded):
-        return {}                          # a label without a code: cannot judge
-    width = min(len(c) for c in codes)
-    return {strip_total(label): value for (label, code), value in coded.items()
-            if len(code) == width}
+    # The grand total is nobody's parent. Its code is "_T", which the marker
+    # strip turns into the empty string -- a prefix of every code there is, so
+    # leaving it in excluded every category and returned nothing at all.
+    codes = {code for (label, code) in coded
+             if code and label.strip().lower() not in GRAND_TOTAL}
+    if not codes:
+        return {}                          # no codes: nothing to judge with
+    branches = {b for b in (branch_code(code) for code in codes) if b}
+    out: dict[str, float] = {}
+    for (label, code), value in coded.items():
+        if not code or label.strip().lower() in GRAND_TOTAL:
+            continue
+        mine = branch_code(code)
+        if any(mine != other and mine.startswith(other) for other in branches):
+            continue                       # something sits above it
+        out[strip_total(label)] = out.get(strip_total(label), 0.0) + value
+    return out
 
 
 def top_level(coded: dict[tuple[str, str], float], total: float | None

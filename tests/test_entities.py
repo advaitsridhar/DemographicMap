@@ -463,57 +463,84 @@ class AbsOutermostLevel(unittest.TestCase):
     def setUp(self):
         from fetch_census import abs as abs_adapter
         self.abs = abs_adapter
-        # Codes as the ABS nests them: one digit for the broad level, more for
-        # the denominations beneath it. Only Christianity has any.
+        # Verbatim from a live run: LGA 10650, every code and count as the ABS
+        # serves them. The tree is not uniform -- "2" carries no marker while
+        # "6_T" and "7_T" do, and the children of "7_T" are numbered from "7".
         self.coded = {
-            ("Buddhism", "1"): 615,
-            ("Christianity Total", "2"): 11480,
-            ("Anglican", "21"): 2500,
-            ("Catholic", "22"): 5100,
-            ("Other Protestant", "23"): 3880,
-            ("Hinduism", "3"): 684,
-            ("Islam", "4"): 813,
-            ("Judaism", "5"): 100,
-            ("Other Religions Total", "6"): 200,
-            ("Sikhism", "61"): 200,
-            ("Secular Beliefs Total", "7"): 9886,
-            ("Religious affiliation not stated", "8"): 1644,
-            ("Total", "TOT"): 25422,
+            ("Total", "_T"): 8665,
+            ("Christianity Total", "2"): 4644,
+            ("Secular Other Spiritual and No Religious Affiliation Total", "7_T"): 2961,
+            ("No Religion, so described", "7101"): 2947,
+            ("Catholic", "207"): 2040,
+            ("Anglican", "201"): 1311,
+            ("Religious affiliation not stated", "_N"): 948,
+            ("Uniting Church", "233"): 540,
+            ("Presbyterian and Reformed", "225"): 422,
+            ("Christian, nfd", "200"): 116,
+            ("Latter-day Saints", "215"): 48,
+            ("Other Religions Total", "6_T"): 39,
+            ("Lutheran", "217"): 34,
+            ("Baptist", "203"): 26,
+            ("Other Religious Groups", "6_O"): 25,
+            ("Hinduism", "3"): 25,
+            ("Buddhism", "1"): 22,
+            ("Islam", "4"): 17,
+            ("Sikhism", "6151"): 13,
         }
+        self.published = 8665
 
     def test_the_code_tree_keeps_the_religions_the_marker_missed(self):
-        kept, how = self.abs.top_level(self.coded, 25422)
+        kept, how = self.abs.top_level(self.coded, self.published)
         self.assertEqual(how, "code tree")
-        for religion in ("Buddhism", "Hinduism", "Islam", "Judaism"):
+        for religion in ("Buddhism", "Hinduism", "Islam"):
             self.assertIn(religion, kept)
         self.assertIn("Christianity", kept)          # marker stripped
         self.assertNotIn("Christianity Total", kept)
 
-    def test_no_denomination_survives_beside_its_parent(self):
-        kept, _ = self.abs.top_level(self.coded, 25422)
-        for child in ("Anglican", "Catholic", "Other Protestant", "Sikhism"):
+    def test_no_child_survives_beside_its_parent(self):
+        kept, _ = self.abs.top_level(self.coded, self.published)
+        for child in ("Anglican", "Catholic", "Uniting Church", "Lutheran",
+                      "Sikhism", "Other Religious Groups",
+                      "No Religion, so described"):
             self.assertNotIn(child, kept)
 
+    def test_a_branch_whose_children_are_numbered_from_its_stem(self):
+        # "7101" sits under "7_T", not under a code called "7101"'s prefix
+        # "7_T" -- the marker has to come off before the prefix test.
+        kept, _ = self.abs.top_level(self.coded, self.published)
+        self.assertIn("Secular Other Spiritual and No Religious Affiliation", kept)
+        self.assertNotIn("No Religion, so described", kept)
+
     def test_the_kept_level_is_the_whole_population(self):
-        kept, _ = self.abs.top_level(self.coded, 25422)
-        self.assertEqual(sum(kept.values()), 25422)
+        kept, _ = self.abs.top_level(self.coded, self.published)
+        # Nine people apart from the published total, which is the ABS's own
+        # perturbation of small counts, not a missing category.
+        self.assertLessEqual(abs(sum(kept.values()) - self.published), 12)
         self.assertNotIn("Total", kept)
 
     def test_the_suffix_rule_alone_loses_them(self):
         # The behaviour being replaced, pinned so the regression is visible.
         flat = {label: value for (label, _), value in self.coded.items()}
         kept = self.abs.collapse_hierarchy(flat)
-        self.assertNotIn("Islam", kept)
-        self.assertLess(sum(kept.values()), 25422)
+        for religion in ("Buddhism", "Hinduism", "Islam"):
+            self.assertNotIn(religion, kept)
+        self.assertLess(sum(kept.values()), self.published)
 
     def test_an_answer_that_does_not_add_up_is_not_used(self):
         # The published total is the judge. A level missing a category is out by
         # far more than the ABS's small-cell perturbation.
         broken = dict(self.coded)
-        del broken[("Islam", "4")]
-        kept, how = self.abs.top_level(broken, 25422)
+        del broken[("Christianity Total", "2")]
+        _, how = self.abs.top_level(broken, self.published)
         self.assertNotEqual(how, "code tree")
         self.assertIn("nothing summed", how)
+
+    def test_the_grand_total_is_nobody_s_parent(self):
+        # "_T" loses its marker and becomes the empty string, which prefixes
+        # every code there is. Left in, it excluded every category.
+        kept = self.abs.outermost_by_code(self.coded)
+        self.assertTrue(kept)
+        self.assertGreater(sum(kept.values()), 0)
 
     def test_without_codes_it_falls_back_to_the_marker(self):
         uncoded = {(label, ""): value for (label, _), value in self.coded.items()}
