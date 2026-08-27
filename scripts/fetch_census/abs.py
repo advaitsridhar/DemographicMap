@@ -193,23 +193,84 @@ def pick_region_dimension(rows: list[tuple[dict[str, str], float]]) -> str:
 # those, plus the not-stated rows that sit beside them.
 TOTAL_SUFFIX = " total"
 KEEP_ALWAYS = ("not stated", "not applicable", "inadequately described")
+GRAND_TOTAL = ("total", "total persons", "total all persons", "all persons")
+
+
+def strip_total(label: str) -> str:
+    """"Christianity Total" is what the UI would otherwise print."""
+    return label[: -len(TOTAL_SUFFIX)] if label.lower().endswith(TOTAL_SUFFIX) else label
 
 
 def collapse_hierarchy(counts: dict[str, float]) -> dict[str, float]:
-    """Keep one level of a hierarchical classification, never two."""
+    """Keep one level of a hierarchical classification, never two.
+
+    The suffix rule alone is not enough, and cost Australia 2.2 million people.
+    A category with sub-levels is published as "Christianity Total" beside its
+    denominations, so the marker finds it -- but Buddhism, Hinduism, Islam and
+    Judaism have no sub-levels, carry no marker, and were dropped from all 565
+    LGAs. The shortfall was exactly their published national totals: 2,213,332
+    missing against 2,213,173 counted, a difference of 159 people.
+
+    Kept here for the flat case and as the last fallback; `top_level` prefers
+    the classification's own code tree and checks its answer against the
+    published total.
+    """
     totals = {k: v for k, v in counts.items() if k.lower().endswith(TOTAL_SUFFIX)}
     if not totals:
         return counts                      # flat classification (ancestry)
     kept = dict(totals)
     for label, value in counts.items():
         low = label.lower()
-        if low in ("total", "total persons"):
+        if low in GRAND_TOTAL:
             continue                       # the grand total is the denominator
         if any(tag in low for tag in KEEP_ALWAYS) and label not in kept:
             kept[label] = value
-    # Strip the marker so the UI shows "Christianity", not "Christianity Total".
-    return {(k[: -len(TOTAL_SUFFIX)] if k.lower().endswith(TOTAL_SUFFIX) else k): v
-            for k, v in kept.items()}
+    return {strip_total(k): v for k, v in kept.items()}
+
+
+def outermost_by_code(coded: dict[tuple[str, str], float]) -> dict[str, float]:
+    """The level of a code tree nothing else sits above.
+
+    ABS classification codes nest by prefix and by width -- Christianity "2"
+    above Anglican "2_1" -- so the outermost level is the set of shortest codes.
+    This is what the suffix rule could not see: a category with no children
+    looks flat, and only its code says otherwise.
+    """
+    codes = {code for _, code in coded if code}
+    if len(codes) != len(coded):
+        return {}                          # a label without a code: cannot judge
+    width = min(len(c) for c in codes)
+    return {strip_total(label): value for (label, code), value in coded.items()
+            if len(code) == width}
+
+
+def top_level(coded: dict[tuple[str, str], float], total: float | None
+              ) -> tuple[dict[str, float], str]:
+    """Pick a partition of the population, and let arithmetic judge it.
+
+    Two rules disagree about what the outermost level is, and the published
+    total settles it: a partition of a population sums to that population. The
+    code tree is tried first because it is the classification's own statement
+    of its shape; the suffix rule is the fallback for a source that publishes
+    no codes, and the answer is only preferred when it actually adds up.
+    """
+    flat = {strip_total(label): value for (label, _), value in coded.items()
+            if label.lower() not in GRAND_TOTAL}
+    suffix = collapse_hierarchy(
+        {label: value for (label, _), value in coded.items()})
+    if not total:
+        return suffix, "suffix (no total to check against)"
+    for name, candidate in (("code tree", outermost_by_code(coded)),
+                            ("suffix", suffix),
+                            ("flat", flat)):
+        if not candidate:
+            continue
+        # Half a percent, for the small-cell perturbation the ABS applies to
+        # every published count. A level that is missing a whole category is
+        # out by far more than that -- Australia's was out by 8.7%.
+        if abs(sum(candidate.values()) - total) <= 0.005 * total:
+            return candidate, name
+    return suffix, "suffix (nothing summed to the total)"
 
 
 def sole_sex_dimension(rows: list[tuple[dict[str, str], float]]) -> tuple[str, str] | None:
@@ -224,9 +285,6 @@ def sole_sex_dimension(rows: list[tuple[dict[str, str], float]]) -> tuple[str, s
                 if candidate and candidate.strip().lower() in ("persons", "total", "all persons"):
                     return key, candidate
     return None
-
-
-GRAND_TOTAL = ("total", "total persons", "total all persons", "all persons")
 
 
 def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
@@ -244,26 +302,34 @@ def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
         rows = [(lab, val) for lab, val in rows if lab.get(key) == value]
         log(f"  restricted {key}={value!r} so the sexes are not counted twice")
 
-    out: dict[str, dict[str, float]] = {}
+    # Keyed on (label, code): the code is what says whether a category sits
+    # under another one, and keying on the label alone threw it away before
+    # anything could ask.
+    out: dict[str, dict[tuple[str, str], float]] = {}
     for labels, value in rows:
         region = labels.get(region_dim + "_CODE") or labels.get(region_dim)
         label = labels.get(label_dim)
         if not region or not label:
             continue
-        out.setdefault(region, {})[label] = out.setdefault(region, {}).get(label, 0.0) + value
+        key = (label, labels.get(label_dim + "_CODE") or "")
+        out.setdefault(region, {})[key] = out.setdefault(region, {}).get(key, 0.0) + value
 
     grouped: dict[str, dict[str, float]] = {}
     totals: dict[str, float] = {}
+    picked: dict[str, int] = {}
     for region, counts in out.items():
-        published = next((v for k, v in counts.items()
-                          if k.strip().lower() in GRAND_TOTAL), None)
-        kept = collapse_hierarchy(counts)
+        published = next((v for (label, _), v in counts.items()
+                          if label.strip().lower() in GRAND_TOTAL), None)
+        kept, how = top_level(counts, published)
+        picked[how] = picked.get(how, 0) + 1
         grouped[region] = kept
         # The table's own total where it publishes one. Otherwise the collapsed
         # categories' sum, which partitions the population for religion because
         # "not stated" is one of them -- but not for a multi-response
         # classification, which is why only religion's total is used below.
         totals[region] = published if published is not None else sum(kept.values())
+    for how, n in sorted(picked.items(), key=lambda kv: -kv[1]):
+        log(f"  outermost level chosen by {how} for {n} regions")
     return grouped, totals
 
 

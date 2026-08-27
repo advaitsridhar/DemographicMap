@@ -419,6 +419,83 @@ class AbsHierarchyCollapse(unittest.TestCase):
                          {"Christianity": 10.0})
 
 
+class AbsOutermostLevel(unittest.TestCase):
+    """Which level of a nested classification is one whole population.
+
+    Australia's religion breakdown shipped with four categories. Buddhism,
+    Hinduism, Islam and Judaism have no sub-levels, so the ABS publishes them
+    with no "... Total" marker, and the marker was the only thing being looked
+    for -- 2,213,332 people dropped, against those four religions' published
+    national totals of 2,213,173. A difference of 159.
+    """
+
+    def setUp(self):
+        from fetch_census import abs as abs_adapter
+        self.abs = abs_adapter
+        # Codes as the ABS nests them: one digit for the broad level, more for
+        # the denominations beneath it. Only Christianity has any.
+        self.coded = {
+            ("Buddhism", "1"): 615,
+            ("Christianity Total", "2"): 11480,
+            ("Anglican", "21"): 2500,
+            ("Catholic", "22"): 5100,
+            ("Other Protestant", "23"): 3880,
+            ("Hinduism", "3"): 684,
+            ("Islam", "4"): 813,
+            ("Judaism", "5"): 100,
+            ("Other Religions Total", "6"): 200,
+            ("Sikhism", "61"): 200,
+            ("Secular Beliefs Total", "7"): 9886,
+            ("Religious affiliation not stated", "8"): 1644,
+            ("Total", "TOT"): 25422,
+        }
+
+    def test_the_code_tree_keeps_the_religions_the_marker_missed(self):
+        kept, how = self.abs.top_level(self.coded, 25422)
+        self.assertEqual(how, "code tree")
+        for religion in ("Buddhism", "Hinduism", "Islam", "Judaism"):
+            self.assertIn(religion, kept)
+        self.assertIn("Christianity", kept)          # marker stripped
+        self.assertNotIn("Christianity Total", kept)
+
+    def test_no_denomination_survives_beside_its_parent(self):
+        kept, _ = self.abs.top_level(self.coded, 25422)
+        for child in ("Anglican", "Catholic", "Other Protestant", "Sikhism"):
+            self.assertNotIn(child, kept)
+
+    def test_the_kept_level_is_the_whole_population(self):
+        kept, _ = self.abs.top_level(self.coded, 25422)
+        self.assertEqual(sum(kept.values()), 25422)
+        self.assertNotIn("Total", kept)
+
+    def test_the_suffix_rule_alone_loses_them(self):
+        # The behaviour being replaced, pinned so the regression is visible.
+        flat = {label: value for (label, _), value in self.coded.items()}
+        kept = self.abs.collapse_hierarchy(flat)
+        self.assertNotIn("Islam", kept)
+        self.assertLess(sum(kept.values()), 25422)
+
+    def test_an_answer_that_does_not_add_up_is_not_used(self):
+        # The published total is the judge. A level missing a category is out by
+        # far more than the ABS's small-cell perturbation.
+        broken = dict(self.coded)
+        del broken[("Islam", "4")]
+        kept, how = self.abs.top_level(broken, 25422)
+        self.assertNotEqual(how, "code tree")
+        self.assertIn("nothing summed", how)
+
+    def test_without_codes_it_falls_back_to_the_marker(self):
+        uncoded = {(label, ""): value for (label, _), value in self.coded.items()}
+        _, how = self.abs.top_level(uncoded, None)
+        self.assertIn("suffix", how)
+
+    def test_a_flat_classification_is_taken_whole(self):
+        # Ancestry: no hierarchy, no totals, nothing to strip.
+        coded = {("English", "1"): 70, ("Australian", "2"): 65, ("Irish", "3"): 20}
+        kept, _ = self.abs.top_level(coded, 155)
+        self.assertEqual(kept, {"English": 70, "Australian": 65, "Irish": 20})
+
+
 class C16MotherTongue(unittest.TestCase):
     """India's C-16 workbooks: hierarchy, geography and the published controls."""
 
