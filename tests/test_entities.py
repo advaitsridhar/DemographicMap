@@ -1215,6 +1215,18 @@ class PxWebNestedLevels(unittest.TestCase):
         self.assertTrue(self.px.wanted_area("LV0031010", "Jekabpils", self.table()))
         self.assertEqual(self.px.drop_nested(["LV0031010"], self.table()), {})
 
+    def test_a_redrawn_units_vintage_is_not_part_of_its_name(self):
+        # The office distinguishes vintages in the label. A shape file has
+        # never heard of "Madona municipality (from 01.07.2025.)".
+        self.assertEqual(self.px.place_name("Madona municipality (from 01.07.2025.)"),
+                         "Madona municipality")
+        self.assertEqual(self.px.place_name("Valka municipality (until 30.06.2021.)"),
+                         "Valka municipality")
+
+    def test_a_parenthesis_that_is_part_of_a_name_stays(self):
+        self.assertEqual(self.px.place_name("Saint-Denis (Reunion)"),
+                         "Saint-Denis (Reunion)")
+
     def test_no_stem_means_no_containment_rule(self):
         table = self.px.Table(path="p", field="ethnicity", geo="AREA",
                               group="E", geo_len=9)

@@ -35,6 +35,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import urllib.error
 import urllib.request
 from typing import Any
@@ -264,6 +265,20 @@ def unstack(payload: dict[str, Any]) -> list[tuple[dict[str, tuple[str, str]], f
     return out
 
 
+# An office that redraws a unit distinguishes the vintages in the label rather
+# than only in the code: Latvia writes "Madona municipality (from 01.07.2025.)"
+# for the municipality that absorbed Varaklani. That parenthetical is metadata
+# about the row, not part of the place's name, and carrying it into the record
+# means the join looks for a shape called "Madona municipality (from
+# 01.07.2025.)" and finds nothing. Only a dated qualifier is stripped -- a
+# parenthesis that is part of a name stays.
+VINTAGE = re.compile(r"\s*\((?:from|until|till|since|to)\s+[\d.\-/ ]+\)\s*$", re.I)
+
+
+def place_name(label: str) -> str:
+    return VINTAGE.sub("", label).strip()
+
+
 def is_total(label: str) -> bool:
     return label.strip().lower() in TOTAL_LABELS
 
@@ -452,7 +467,7 @@ def main() -> int:
                 fields[f"{field}_note"] = slot["notes"][field]
             fields[f"{field}_year"] = slot.get("year")
         records.append(record(
-            f"{iso3}-{code}", slot["name"].strip(),
+            f"{iso3}-{code}", place_name(slot["name"]),
             level=spec["level"], parent=iso3, codes={"pxweb": code},
             population=(measure(int(round(slot["population"])), year=slot.get("year"),
                                 source=spec["source"])
