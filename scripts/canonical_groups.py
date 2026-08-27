@@ -266,6 +266,21 @@ ETHNICITY: dict[str, tuple[str, ...]] = {
     # Spelling and diacritics of one people.
     "Māori": ("Māori", "Maori"),
     "Romani": ("Romani", "Romany", "Roma", "Rroma", "Gypsy"),
+    # Singular and plural, and the noun beside the adjective. The Baltic
+    # population registers write "Russians" and "Poles" where every other
+    # source in this dataset writes "Russian" and "Polish", and unmapped they
+    # became a second entry for the same people: "Russians" in two countries
+    # beside "Russian" in twelve, neither of which is the filter anyone wants.
+    # This is the first kind of entry the table admits -- one name spelled two
+    # ways -- and not a merge of two states' categories.
+    "Russian": ("Russian", "Russians"),
+    "Latvian": ("Latvian", "Latvians"),
+    "Estonian": ("Estonian", "Estonians"),
+    "Lithuanian": ("Lithuanian", "Lithuanians"),
+    "Ukrainian": ("Ukrainian", "Ukrainians"),
+    "Belarusian": ("Belarusian", "Belarusians"),
+    "Polish": ("Polish", "Poles"),
+    "Jewish": ("Jewish", "Jews"),
     # Mexico writes its census category two ways in the same release.
     "Afro-descendant": (
         "Afro-descendant", "African descent", "Afro-Mexican or Afro-descendant",
@@ -274,9 +289,19 @@ ETHNICITY: dict[str, tuple[str, ...]] = {
     # Residuals, for the same reason as the language ones: "other" reaches 142
     # countries and tops the picker while meaning nothing in particular.
     "Other ethnicity": ("other", "other ethnicity", "others",
-                        "Other Ethnicity", "Other"),
+                        "Other Ethnicity", "Other",
+                        "Other ethnic nationalities",
+                        # Latvia's residual is both at once and says so: it
+                        # holds people who selected no ethnicity and people
+                        # who did not indicate one, beside people who gave an
+                        # ethnicity outside the nine named. It cannot be split,
+                        # so it goes with "other" and the record's note says
+                        # what is inside it.
+                        "Other ethnicities, including not selected and not "
+                        "indicated ethnicity"),
     "Ethnicity not stated": ("unspecified", "not stated", "no response",
-                             "not reported", "unknown"),
+                             "not reported", "unknown",
+                             "Ethnic nationality unknown"),
 }
 
 # What is deliberately NOT merged here, and why:

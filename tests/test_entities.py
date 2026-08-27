@@ -1183,6 +1183,58 @@ class PxWebPartition(unittest.TestCase):
         self.px.check("LVA", self.table, units, national=1000)
 
 
+class BalticPlurals(unittest.TestCase):
+    """One people written two ways is one group, not two."""
+
+    def setUp(self):
+        import canonical_groups
+        self.cg = canonical_groups
+        self.lookup = canonical_groups.lookup("ethnicity")
+
+    def canonical(self, label):
+        return self.lookup.get(self.cg.key(label), label)
+
+    def test_a_plural_is_the_same_people_as_its_singular(self):
+        # The Baltic registers write "Russians"; every other source in this
+        # dataset writes "Russian". Unmapped they were two entries for one
+        # people, and neither was the filter anyone wanted.
+        for plural, singular in (("Russians", "Russian"),
+                                 ("Latvians", "Latvian"),
+                                 ("Estonians", "Estonian"),
+                                 ("Ukrainians", "Ukrainian"),
+                                 ("Belarusians", "Belarusian")):
+            self.assertEqual(self.canonical(plural), singular)
+            self.assertEqual(self.canonical(singular), singular)
+
+    def test_a_noun_and_its_adjective_are_one_group(self):
+        self.assertEqual(self.canonical("Poles"), self.canonical("Polish"))
+        self.assertEqual(self.canonical("Jews"), self.canonical("Jewish"))
+
+    def test_both_offices_residuals_are_named_as_residuals(self):
+        # Estonia's "unknown" is a non-response; its "other" is an answer
+        # outside the named list. They are different and both must show.
+        self.assertEqual(self.canonical("Ethnic nationality unknown"),
+                         "Ethnicity not stated")
+        self.assertEqual(self.canonical("Other ethnic nationalities"),
+                         "Other ethnicity")
+        self.assertTrue(self.cg.is_residual(self.canonical("Other ethnic nationalities")))
+
+    def test_latvias_residual_holds_two_things_and_is_not_split(self):
+        # It is "other", "selected none" and "did not indicate" in one cell.
+        # Nothing can separate them, so it goes with "other" and the record's
+        # note says what is inside it.
+        self.assertEqual(
+            self.canonical("Other ethnicities, including not selected and "
+                           "not indicated ethnicity"),
+            "Other ethnicity")
+
+    def test_a_category_that_is_not_a_spelling_is_left_alone(self):
+        # The table admits one name spelled two ways, not two states'
+        # categories folded together.
+        self.assertEqual(self.canonical("White"), "White")
+        self.assertEqual(self.canonical("Mestizo"), "Mestizo")
+
+
 class PxWebNestedLevels(unittest.TestCase):
     """Code length alone does not always pin a level."""
 

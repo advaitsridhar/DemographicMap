@@ -78,6 +78,8 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Switzerland | FSO structural survey 2024, main languages | canton | Main languages for all 26 cantons. A person may name up to three, so shares exceed 100%. |
 | Singapore | Census 2020 + GHS 2015 planning-area tables | planning area |Ethnicity, religion and language for the planning areas, on three different bases. |
 | Singapore | SingStat Table Builder M810771 | planning region | Resident population, sex ratio and a derived median age for the 5 regions. Religion, ethnicity and language are collected but not published at this geography. |
+| Estonia | Statistics Estonia table `RV0222U` (PxWeb) | county | Ethnic nationality for all 15 counties, from the population register on 1 January — a register count, not a census answer. |
+| Latvia | Central Statistical Bureau table `IRE031` (PxWeb) | municipality, state city | Ethnicity for all 42 municipalities and state cities, from the population register. "Other ethnicities" also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular. |
 | Sri Lanka | Census of Population and Housing 2024, tables A1–A3 | province, district | Population, sex ratio, religion and ethnicity for all 25 districts and 9 provinces. |
 | Mexico | INEGI Censo de Población y Vivienda 2020, ITER | state, municipality | Religion, indigenous-language speaking and Afro-descendant identification for 2,453 of 2,457 municipios. All from the *cuestionario básico*, so these are counts, not sample estimates. |
 | New Zealand | Stats NZ 2023 Census via Aotearoa Data Explorer (SDMX) | region, territorial authority | Ethnicity, languages spoken and religious affiliation for all 88 territorial authorities and Auckland local boards. All three are multi-response, so shares are of people who named a group, not slices of a whole. Needs an API key. |
@@ -399,6 +401,96 @@ recent estimated resident population. They are the denominator their own
 religion shares are taken against, and the same measure as the LGAs beneath
 them; the ERP is more current but is a different measure, and mixing the two
 across one hierarchy is what the roll-up check would have caught anyway.
+
+### The Baltic offices: a shared adapter, and three ways a level hides
+
+Most of Europe's statistical offices publish through PxWeb, so one adapter
+serves many countries. Ten instances were walked before two were worth
+pointing it at, and what the walk ruled out is worth writing down so nobody
+walks it again: Lithuania, Slovakia, Croatia and Serbia answered 404 or
+something that was not JSON at the base URLs tried; Finland rate-limits
+metadata and asks language rather than ethnicity; Iceland, Norway, Sweden and
+Denmark ask citizenship, which is a different question; North Macedonia's tree
+returned only broadcast-language tables at the depth walked; Slovenia has
+ethnicity for all 193 municipalities but only from the 1991 census, against
+boundaries redrawn twice since, so it is left out rather than joined across
+thirty-five years of redistricting.
+
+Estonia and Latvia are the point. Neither country had any ethnicity figure in
+this dataset, both publish one annually, and both do it at a level the
+boundary files carry.
+
+**A PxWeb geography variable holds several levels at once**, and often two
+vintages of one level. Latvia's carries the country, five statistical regions
+as defined before 1 January 2024, five as defined after, and then the
+municipalities. Summing across that double-counts half the country. Three
+separate rules were needed, and each was found by a check rather than by
+reading:
+
+* *Code length* pins the municipalities apart from the country and the
+  regions. That is the office's own encoding of depth.
+* *Codes grouped by their stem* separate a municipality from a town inside it.
+  `LV0031000` is Jēkabpils municipality and `LV0031010` is the town of
+  Jēkabpils within it — same width, and the parent's tail sorts first. This
+  cannot be decided one row at a time: a town looks exactly like a
+  municipality until the municipality turns up beside it. A rule that simply
+  refused every tail but `000` read the three towns correctly and then also
+  threw away Madona, which since the July 2025 merge with Varakļāni is
+  `LV0038001` and is nobody's child.
+* *A label beginning `..`* is a sub-category of the one above it. Estonia
+  writes "Other ethnic nationalities" and then "..Ukrainians" beneath it, and
+  Tallinn as "..Tallinn" because it sits inside Harju county.
+
+**Two controls, and only the second one catches containment.** Every unit's
+categories are checked against the total the table itself publishes; that
+catches a level of the classification kept twice or dropped once. It cannot
+catch a unit counted inside another, because each such unit is internally
+consistent. Latvia's first run returned 45 municipalities, every one summing
+exactly to its own published total, and 1,911,026 people against a country of
+1,845,096. Only the country row shows that. It now stands as the second
+control, and Latvia's 42 units sum to 1,845,096 exactly.
+
+**The names had to come from the office, not from a rule.** geoBoundaries
+carries local-language names for both countries — `Harju maakond`,
+`Aizkraukles novads` — and the tables' English labels are "Harju county" and
+"Aizkraukle municipality". That is two disagreements at once, a translated
+generic word and a genitive ending, and no rule about English suffixes bridges
+either.
+
+Adding `novads` to the words the matcher strips looked like the fix and is a
+worse bug: it collapses `Ventspils` and `Ventspils novads` — a state city and
+the municipality around it, two different places — onto one key, and one of
+them then quietly wears the other's figures. A local generic word is not a
+word to strip; it is a sign the two sources are speaking different languages.
+
+PxWeb serves the same table under a language path, with the same codes and the
+same figures and local labels, so the adapter asks for those and joins on
+them. The English label stays as an alias. The one qualifier that has to come
+off is the vintage tag an office attaches to a redrawn unit — and what marks
+that is the date inside the parenthesis, not the word in front of it: matching
+on "from" and "until" read the English labels and missed the Latvian
+`(no 01.07.2025.)`.
+
+**Where the gaps are.** All 15 Estonian counties join, and 40 of Latvia's 42
+units — 39 of them on an exact name. Madona joins through the prefix pass
+because geoBoundaries has not yet absorbed Varakļāni into it, so the figures
+are for the merged municipality on the pre-merger shape and Varakļānu novads
+sits blank beside it.
+
+Two do not join: `Jelgava` and `Rēzekne`. geoBoundaries writes the state
+cities in the genitive — `Jelgavas`, `Rēzeknes` — so only the loose pass can
+reach them, and it reaches `Jelgavas novads` at the same time. This project
+refuses a loose match that two shapes answer to, and that refusal is
+deliberate and tested; these two stay visible gaps rather than a coin flip
+between a city and the municipality surrounding it. `Jūrmala` and `Liepāja`
+are inflected the same way and do join, because neither has a municipality
+named after it to compete.
+
+What this pass did fix is the opposite failure. `Ventspils municipality` used
+to normalise to `ventspils` and match the *city* outright, beside the city's
+own row doing the same — two different places on one shape, one of them
+silently wearing the other's figures. On the office's own names they are
+`Ventspils` and `Ventspils novads`, and they land where they belong.
 
 ### Switzerland: a survey, and up to three languages per person
 
