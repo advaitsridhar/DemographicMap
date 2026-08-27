@@ -614,6 +614,46 @@ coordinate settles fifteen of them, but the shape it picks usually contradicts
 the state the row itself names, so the two signals disagree and neither is
 strong enough to overrule the other. They stay visible gaps.
 
+## Summing a parent from its children
+
+Ladakh became a union territory in 2019, so the 2011 census that supplies
+India's district figures never published a row for it — while publishing both
+of its districts. A territory whose every constituent part is measured should
+not read as unmeasured, so `build_entities.py` sums one when it can.
+
+**The control is the parent's own published population.** Leh (133,487) and
+Kargil (140,802) sum to 274,289, which is exactly the population Wikidata gives
+Ladakh — and Wikidata is not where the district figures came from, so the two
+numbers are genuinely independent. A parent with no published population of its
+own is not filled at all: there would be nothing to check the sum against.
+
+The refusals are as much the point as the sums. Of sixteen candidates, five
+were filled and eleven were not:
+
+* **Australia, nine states.** The LGA records carry religion and no population,
+  so their populations sum to zero. Weighting by nothing would have produced a
+  state figure with no basis at all.
+* **Wales.** Its 22 children sum to 3,107,513 against a published 1,168,000.
+  Whatever those two numbers count, it is not the same people.
+* **England, Telangana, Singapore's five regions, American Samoa.** Partial
+  coverage — 9 of England's 150 children have no religion, 24 of Telangana's 33
+  have none. This is the dangerous case, because the sum would look whole and
+  describe only part of the territory.
+
+**Percentages are recomputed against the denominator the children used, not
+against population.** Mexico publishes indigenous-language shares of the
+population aged three and over, and New Zealand's ethnicity responses outnumber
+its people because one person may give several. The denominator is backed out
+of each child's own rows — from its largest group, whose percentage carries the
+least rounding error — and summed. Chatham Islands' rolled-up ethnicity totals
+149.5%, which is what its child says and what the panel is built to show.
+
+Every summed figure carries a note on the record saying so, how many children
+it came from, and the two population numbers side by side, because a figure
+nobody published is a different kind of claim from one somebody did. A value
+marked `not_collected` is never filled: that is a statement about the country,
+not a gap.
+
 ## Filtering one group across countries
 
 The map can colour every unit in the world by its share of a single religion,
