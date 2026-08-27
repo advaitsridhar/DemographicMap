@@ -1190,15 +1190,36 @@ class PxWebNestedLevels(unittest.TestCase):
         from fetch_census import pxweb
         self.px = pxweb
 
-    def test_a_town_is_not_the_municipality_that_holds_it(self):
+    def table(self):
+        return self.px.Table(path="p", field="ethnicity", geo="AREA",
+                             group="E", geo_len=9, geo_stem=6)
+
+    def test_a_town_is_dropped_because_its_municipality_stands_beside_it(self):
         # Latvia's towns are the same width as their municipalities and differ
         # only in the tail: "LV0031000" holds "LV0031010".
+        nested = self.px.drop_nested(
+            ["LV0031000", "LV0031010", "LV0003000"], self.table())
+        self.assertEqual(nested, {"LV0031010": "LV0031000"})
+
+    def test_an_odd_tail_alone_in_its_family_is_a_unit_not_a_child(self):
+        # Madona after the July 2025 merge is "LV0038001". A rule that refused
+        # every tail but "000" took it out and lost 29,466 people; nothing
+        # contains it, so nothing should.
+        nested = self.px.drop_nested(
+            ["LV0038001", "LV0031000", "LV0031010"], self.table())
+        self.assertNotIn("LV0038001", nested)
+
+    def test_containment_needs_the_whole_set(self):
+        # One code at a time cannot tell the two cases apart, so the rule is
+        # not asked to: with no municipality present the town is kept.
+        self.assertTrue(self.px.wanted_area("LV0031010", "Jekabpils", self.table()))
+        self.assertEqual(self.px.drop_nested(["LV0031010"], self.table()), {})
+
+    def test_no_stem_means_no_containment_rule(self):
         table = self.px.Table(path="p", field="ethnicity", geo="AREA",
-                              group="E", geo_len=9, geo_suffix="000")
-        self.assertTrue(self.px.wanted_area("LV0031000", "Jekabpils municipality", table))
-        self.assertFalse(self.px.wanted_area("LV0031010", "Jekabpils", table))
-        # A state city is its own unit and keeps the top-level tail.
-        self.assertTrue(self.px.wanted_area("LV0003000", "Jelgava", table))
+                              group="E", geo_len=9)
+        self.assertEqual(
+            self.px.drop_nested(["LV0031000", "LV0031010"], table), {})
 
 
 class SriLanka2024(unittest.TestCase):

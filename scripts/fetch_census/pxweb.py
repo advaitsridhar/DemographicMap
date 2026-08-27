@@ -58,7 +58,7 @@ class Table:
     def __init__(self, path: str, field: str, geo: str, group: str,
                  keep: dict[str, str] | None = None, year: int | None = None,
                  note: str = "", drop: tuple[str, ...] = (),
-                 geo_len: int | None = None, geo_suffix: str | None = None,
+                 geo_len: int | None = None, geo_stem: int | None = None,
                  national: str | None = None):
         self.path = path
         self.field = field
@@ -73,11 +73,14 @@ class Table:
         # encodes depth in the code: Latvia's country is "LV", its statistical
         # regions "LV00A", its municipalities "LV0001000".
         self.geo_len = geo_len
-        # ...and length alone is not always enough. Latvia's towns are the same
-        # width as the municipalities that contain them and differ only in the
-        # tail: Jekabpils municipality is "LV0031000" and the town of Jekabpils
-        # inside it is "LV0031010".
-        self.geo_suffix = geo_suffix
+        # ...and length alone is not always enough. Latvia's towns are the
+        # same width as the municipalities that contain them and differ only in
+        # the tail: Jekabpils municipality is "LV0031000" and the town of
+        # Jekabpils inside it is "LV0031010". geo_stem is how many leading
+        # characters name the family a code belongs to -- six, here -- so that
+        # a town can be recognised by the municipality standing beside it
+        # rather than by a rule about tails. See drop_nested().
+        self.geo_stem = geo_stem
         # The geography code that means the whole country. Not guessable from
         # the label: Estonia calls that row "Whole country" and Latvia calls it
         # "Latvia", so looking for the word "total" found Estonia's and missed
@@ -147,7 +150,7 @@ INSTANCES: dict[str, dict[str, Any]] = {
             # same variable also carries the country and two vintages of the
             # statistical regions, defined before and after 1 January 2024,
             # which overlap each other.
-            geo_len=9, geo_suffix="000", national="LV",
+            geo_len=9, geo_stem=6, national="LV",
             note="Ethnicity as recorded in the population register at the "
                  "beginning of 2026. 'Other ethnicities' also holds people who "
                  "selected none and people who did not indicate one, so it is "
@@ -277,9 +280,7 @@ def wanted_area(code: str, label: str, table: Table) -> bool:
     """
     if code in table.drop or is_total(label) or label.startswith(CHILD_MARKER):
         return False
-    if table.geo_len is not None and len(code) != table.geo_len:
-        return False
-    return table.geo_suffix is None or code.endswith(table.geo_suffix)
+    return table.geo_len is None or len(code) == table.geo_len
 
 
 def reject_reason(code: str, label: str, table: Table) -> str:
@@ -291,9 +292,38 @@ def reject_reason(code: str, label: str, table: Table) -> str:
         return "a total, not a unit"
     if label.startswith(CHILD_MARKER):
         return f"labelled {CHILD_MARKER!r}, so inside another unit"
-    if table.geo_len is not None and len(code) != table.geo_len:
-        return f"code is not {table.geo_len} characters"
-    return f"code does not end {table.geo_suffix!r}"
+    return f"code is not {table.geo_len} characters"
+
+
+def drop_nested(codes: list[str], table: Table) -> dict[str, str]:
+    """Which of these codes sit inside another one that is also present.
+
+    Latvia numbers a municipality "LV0031000" and the town inside it
+    "LV0031010" -- same width, same first six characters, and the parent's tail
+    sorts first. Refusing every code that does not end "000" reads that
+    correctly for the towns and then throws away Madona, which after the July
+    2025 merge with Varaklani is "LV0038001" and is nobody's child.
+
+    So the tail is not judged on its own. Codes are grouped by their stem and a
+    group of one is kept whatever its tail; only where two codes share a stem
+    does the earlier tail win, and the other is reported as contained. That
+    asks the office's own numbering which units overlap instead of guessing a
+    convention, and it cannot silently drop a unit that stands alone.
+    """
+    if table.geo_stem is None:
+        return {}
+    family: dict[str, list[str]] = {}
+    for code in codes:
+        family.setdefault(code[:table.geo_stem], []).append(code)
+    nested = {}
+    for stem, members in family.items():
+        if len(members) < 2:
+            continue
+        parent = min(members)
+        for code in members:
+            if code != parent:
+                nested[code] = parent
+    return nested
 
 
 def fetch(base: str, table: Table) -> tuple[dict[str, dict[str, Any]], float | None]:
@@ -330,6 +360,12 @@ def fetch(base: str, table: Table) -> tuple[dict[str, dict[str, Any]], float | N
             continue                    # counted already inside its parent
         elif group_code not in table.drop:
             entry["counts"][group_label] = entry["counts"].get(group_label, 0.0) + value
+    # Containment can only be seen once every code is in hand: a town looks
+    # exactly like a municipality until the municipality turns up beside it.
+    for code, parent in drop_nested(list(areas), table).items():
+        inside = areas.pop(code)
+        refused.setdefault(f"inside {areas[parent]['name']}", []).append(
+            f"{code} {inside['name']}")
     for reason, names in sorted(refused.items()):
         unique = sorted(set(names))
         log(f"    left out ({reason}): {len(unique)} — " + ", ".join(unique[:6])
