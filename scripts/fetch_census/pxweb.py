@@ -109,6 +109,10 @@ INSTANCES: dict[str, dict[str, Any]] = {
     "EST": {
         "name": "Statistics Estonia",
         "base": "https://andmed.stat.ee/api/v1/en/stat",
+        # The boundary file names Estonia's counties in Estonian ("Harju
+        # maakond"), so the join needs the Estonian labels; the English ones
+        # ("Harju county") stay as aliases.
+        "local": "et",
         "source": "Statistics Estonia, table RV0222U",
         "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja"
                "-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0222U",
@@ -136,6 +140,9 @@ INSTANCES: dict[str, dict[str, Any]] = {
     "LVA": {
         "name": "Statistics Latvia",
         "base": "https://data.stat.gov.lv/api/v1/en/OSP_PUB",
+        # Likewise Latvian: CGAZ carries "Aizkraukles novads", not "Aizkraukle
+        # municipality", and "Ventspils" beside "Ventspils novads".
+        "local": "lv",
         "source": "Central Statistical Bureau of Latvia, table IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
         "licence": "CC BY 4.0",
@@ -176,6 +183,42 @@ def variables(base: str, table: Table) -> dict[str, dict[str, Any]]:
     """The table's variables by code, so a query can be checked before it is sent."""
     meta = http_json(f"{base}/{table.path}")
     return {v["code"]: v for v in meta.get("variables", [])}
+
+
+def in_language(base: str, lang: str) -> str:
+    """The same PxWeb base URL, served in another language.
+
+    Every instance seen puts the language in the path -- ".../api/v1/en/stat",
+    ".../api/v1/en/OSP_PUB" -- and serves the identical table tree under each
+    one. Same codes, same figures, different labels.
+    """
+    return re.sub(r"/v(\d+)/en/", rf"/v\1/{lang}/", base, count=1)
+
+
+def local_names(base: str, table: Table, lang: str) -> dict[str, str]:
+    """{geography code: the office's own name for it}, or {} if unavailable.
+
+    The boundary files carry local-language names -- "Harju maakond",
+    "Aizkraukles novads" -- and the English labels a PxWeb instance serves by
+    default do not reach them. "Aizkraukle municipality" against "Aizkraukles
+    novads" is two disagreements at once: a translated generic word and a
+    genitive ending, and no rule about English suffixes bridges either.
+
+    Rather than invent the morphology, ask the office. It publishes the same
+    table under a language path, so the local name is a fetch and not a guess.
+    A failure here is not fatal: the English name still matches whatever it
+    matched before.
+    """
+    try:
+        meta = variables(in_language(base, lang), table)
+    except Exception as exc:                # network, 404, or a renamed tree
+        log(f"    no {lang} labels ({exc.__class__.__name__}); "
+            f"joining on the English ones")
+        return {}
+    var = meta.get(table.geo)
+    if not var:
+        return {}
+    return dict(zip(var.get("values", []), var.get("valueTexts", [])))
 
 
 def build_query(table: Table, meta: dict[str, dict[str, Any]]) -> dict[str, Any]:
@@ -447,9 +490,15 @@ def main() -> int:
         log(f"  {table.path}")
         areas, national = fetch(spec["base"], table)
         check(iso3, table, areas, national)
+        local = local_names(spec["base"], table, spec["local"]) if spec.get("local") else {}
         for code, entry in areas.items():
-            slot = merged.setdefault(code, {"name": entry["name"], "fields": {},
-                                            "population": None, "notes": {}})
+            # The local name leads because it is what the boundary file
+            # carries; the English one follows as an alias so a search for
+            # "Aizkraukle municipality" still finds the place.
+            slot = merged.setdefault(code, {
+                "name": local.get(code) or entry["name"],
+                "aliases": [entry["name"]] if local.get(code) else [],
+                "fields": {}, "population": None, "notes": {}})
             slot["population"] = slot["population"] or entry["total"]
             slot["fields"][table.field] = shares(entry["counts"], total=entry["total"])
             slot["notes"][table.field] = table.note
@@ -469,6 +518,8 @@ def main() -> int:
         records.append(record(
             f"{iso3}-{code}", place_name(slot["name"]),
             level=spec["level"], parent=iso3, codes={"pxweb": code},
+            aliases=sorted({place_name(a) for a in slot["aliases"]}
+                           - {place_name(slot["name"])}) or None,
             population=(measure(int(round(slot["population"])), year=slot.get("year"),
                                 source=spec["source"])
                         if slot["population"] else gap(NOT_AVAILABLE)),

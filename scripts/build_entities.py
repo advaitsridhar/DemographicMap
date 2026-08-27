@@ -58,6 +58,10 @@ ADAPTER_FILES = [
     "nepal_province.json", "nepal_district.json",
     "nz_region.json", "nz_territorial.json",
     "switzerland_canton.json",
+    # After Eurostat, which covers both countries at NUTS 3 with population and
+    # nothing else: these are the national registers, and ethnicity is a
+    # question Eurostat does not ask.
+    "estonia_county.json", "latvia_municipality.json",
     "singapore_region.json", "singapore_planning_area.json",
     "srilanka_province.json", "srilanka_district.json",
     "brazil_state.json", "brazil_municipality.json",
@@ -150,6 +154,19 @@ FOLD = str.maketrans({
 })
 
 
+# Words that name a kind of administrative unit rather than a place, dropped
+# from both sides of a comparison. English only, deliberately. Adding Latvian's
+# "novads" here to reach "Aizkraukles novads" from "Aizkraukle municipality"
+# also collapses "Ventspils" and "Ventspils novads" -- a state city and the
+# municipality around it, two different places -- onto one key, and one of them
+# then wears the other's figures. A local generic word is not a word to strip;
+# it is a sign the two sources are speaking different languages, which is what
+# the adapter now fixes by asking the office for its own local name.
+GENERIC = (r"\b(province|state|region|district|county|prefecture|governorate|"
+           r"oblast|department|municipality|city|autonomous|"
+           r"territory|of|the|and)\b")
+
+
 def norm(text: str | None) -> str:
     """A name reduced to what two sources are likely to agree on.
 
@@ -164,9 +181,7 @@ def norm(text: str | None) -> str:
         return ""
     text = unicodedata.normalize("NFKD", text.lower()).translate(FOLD)
     text = "".join(c for c in text if not unicodedata.combining(c))
-    text = re.sub(r"\b(province|state|region|district|county|prefecture|governorate|"
-                  r"oblast|department|municipality|city|autonomous|territory|of|the|and)\b",
-                  " ", text)
+    text = re.sub(GENERIC, " ", text)
     return "".join(c for c in text if c.isalnum())
 
 
@@ -360,9 +375,7 @@ def tokens(text: str | None, joined: bool = False) -> tuple[str, ...]:
         return ()
     folded = unicodedata.normalize("NFKD", text.lower()).translate(FOLD)
     folded = "".join(c for c in folded if not unicodedata.combining(c))
-    folded = re.sub(r"\b(province|state|region|district|county|prefecture|"
-                    r"governorate|oblast|department|municipality|city|autonomous|"
-                    r"territory|of|the|and)\b", " ", folded)
+    folded = re.sub(GENERIC, " ", folded)
     if joined:
         folded = re.sub(r"[-\u2010\u2013]", "", folded)
     out = []
@@ -985,12 +998,23 @@ def group_index(admin0: list[dict[str, Any]],
     return index
 
 
+TRACE: set[str] = set()
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--levels", nargs="*", default=["ADM0", "ADM1", "ADM2"])
+    # A count says a join went wrong; it never says which row went where, and
+    # the difference between 26 matched before a change and 26 after can be a
+    # dozen rows swapping places. This prints the verdict on every row of one
+    # country, which is what makes a matcher change measurable rather than
+    # merely plausible.
+    ap.add_argument("--trace", nargs="*", default=[], metavar="ISO3",
+                    help="log every adapter row's match for these countries")
     ap.add_argument("--out", type=Path, default=SITE_DATA)
     args = ap.parse_args()
+    TRACE.update(iso.upper() for iso in args.trace)
 
     log("build_entities: reading boundaries")
     shapes = {level: read_shapes(level) for level in args.levels}
@@ -1141,6 +1165,8 @@ def main() -> int:
                 miss += 1
                 ambiguous += how == "ambiguous"
                 outside += how == "outside_parent"
+                if iso3 in TRACE:
+                    log(f"    trace {iso3} {row.get('name')!r}: {how}")
                 continue
             matched.append((row, entity, how))
 
@@ -1149,6 +1175,10 @@ def main() -> int:
         collided = len(dropped)
         miss += collided
         for i, (row, entity, how) in enumerate(matched):
+            if iso3 in TRACE:
+                verdict = "beaten to it by another row" if i in dropped else how
+                log(f"    trace {iso3} {row.get('name')!r} -> "
+                    f"{entity.get('name')!r} ({verdict})")
             if i in dropped:
                 continue
             merge_adapter(entity, row)
