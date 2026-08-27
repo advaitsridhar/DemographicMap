@@ -408,9 +408,7 @@ Most of Europe's statistical offices publish through PxWeb, so one adapter
 serves many countries. Ten instances were walked before two were worth
 pointing it at, and what the walk ruled out is worth writing down so nobody
 walks it again: Lithuania, Slovakia, Croatia and Serbia answered 404 or
-something that was not JSON at the base URLs tried; Finland rate-limits
-metadata and asks language rather than ethnicity; Iceland, Norway, Sweden and
-Denmark ask citizenship, which is a different question; North Macedonia's tree
+something that was not JSON at the base URLs tried; North Macedonia's tree
 returned only broadcast-language tables at the depth walked; Slovenia has
 ethnicity for all 193 municipalities but only from the 1991 census, against
 boundaries redrawn twice since, so it is left out rather than joined across
@@ -419,6 +417,27 @@ thirty-five years of redistricting.
 Estonia and Latvia are the point. Neither country had any ethnicity figure in
 this dataset, both publish one annually, and both do it at a level the
 boundary files carry.
+
+**The Nordic offices were ruled out wrongly, and the note that ruled them
+out is worth keeping as a warning.** It read: they "ask citizenship, which is a
+different question", and Finland "rate-limits metadata and asks language rather
+than ethnicity". Two mistakes in one sentence.
+
+The first is a category error about this project. Ethnicity is not the only
+field on this map; language is one of the four, and Finland records mother
+tongue in the population register for every resident — a count, not a sample,
+and better coverage than most censuses manage. Writing that off as "language
+rather than ethnicity" treated a field the map has a column for as a
+consolation prize.
+
+The second is worse, because it dressed a bug up as a finding. StatFin answers
+429 under a brisk walk. The probe treated that error like an unreachable node,
+found nothing, and the nothing was written down as a fact about Finland's
+statistics. Re-walked with backoff, the same instance returns 44 candidate
+tables. A probe that cannot tell "throttled" from "empty" will keep producing
+confident absences, so it now backs off on 429, carries a per-instance pace
+and budget, and says explicitly when a budget ran out — because only a
+completed walk can report an absence.
 
 **A PxWeb geography variable holds several levels at once**, and often two
 vintages of one level. Latvia's carries the country, five statistical regions

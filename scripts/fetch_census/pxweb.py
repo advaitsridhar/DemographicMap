@@ -94,13 +94,22 @@ class Table:
 # down by a geography the boundary files can join.
 #
 # Ten instances were walked. Lithuania, Slovakia, Croatia and Serbia answered
-# 404 or something that was not JSON at the base URLs tried. Finland rate-limits
-# metadata requests and asks language rather than ethnicity. Iceland, Norway,
-# Sweden and Denmark ask citizenship, which is a different question. North
-# Macedonia's tree returned only broadcast-language tables at the depth walked.
-# Slovenia has ethnicity by all 193 municipalities but only from the 1991
-# census, against boundaries that have been redrawn twice since, so it is left
-# out rather than joined across thirty-five years of redistricting.
+# 404 or something that was not JSON at the base URLs tried. North Macedonia's
+# tree returned only broadcast-language tables at the depth walked. Slovenia has
+# ethnicity by all 193 municipalities but only from the 1991 census, against
+# boundaries that have been redrawn twice since, so it is left out rather than
+# joined across thirty-five years of redistricting.
+#
+# The Nordic offices were written off in that pass and should not have been.
+# The line said they "ask citizenship, which is a different question", and of
+# Finland that it "rate-limits metadata requests and asks language rather than
+# ethnicity". Both halves are wrong. Ethnicity is not the only field here --
+# language is one of the four, and Finland records mother tongue in the
+# population register for every resident, which is a count rather than a
+# sample. And the rate-limiting was a fact about the probe's pacing, not about
+# the data: StatFin answers 429 under a brisk walk, the probe read that as an
+# unreachable node, and an empty result became a conclusion about the country.
+# Re-walked with backoff, that instance returns 44 candidate tables.
 #
 # What is left is the two Baltic offices, and they are the point: neither
 # country has had any ethnicity figure in this dataset, and both publish one
