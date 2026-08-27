@@ -6,7 +6,13 @@ The ABS Data API serves census tables as SDMX-JSON dataflows.  This pulls:
 * ``C21_G14_LGA`` religious affiliation
 * ``C21_G08_LGA`` ancestry (multi-response: people may report two ancestries,
   so shares sum above 100% and are labelled as responses, not persons)
-* ``C21_G01_LGA`` selected person characteristics (population, median age)
+
+Population comes out of the religion table rather than from a table of its own.
+G14 carries its own total, and religion is asked of everyone -- the question is
+voluntary, but a blank answer is coded "Not stated" rather than dropped -- so
+that total is the region's counted persons. The docstring here used to promise
+``C21_G01`` and the code never fetched it, which is why all 565 LGAs shipped
+with no population at all.
 
 Australia has no ethnicity question. It asks *ancestry* plus country of birth,
 and separately Aboriginal and Torres Strait Islander status; the app keeps those
@@ -220,8 +226,18 @@ def sole_sex_dimension(rows: list[tuple[dict[str, str], float]]) -> tuple[str, s
     return None
 
 
+GRAND_TOTAL = ("total", "total persons", "total all persons", "all persons")
+
+
 def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
-                    region_dim: str = "REGION") -> dict[str, dict[str, float]]:
+                    region_dim: str = "REGION"
+                    ) -> tuple[dict[str, dict[str, float]], dict[str, float]]:
+    """The categories per region, and the persons the classification totals to.
+
+    The total was being dropped on the floor. `collapse_hierarchy` skips it --
+    correctly, since it is the denominator and not a category -- but it is also
+    the only population figure this fetch ever sees, and the LGAs had none.
+    """
     sex = sole_sex_dimension(rows)
     if sex:
         key, value = sex
@@ -235,7 +251,20 @@ def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
         if not region or not label:
             continue
         out.setdefault(region, {})[label] = out.setdefault(region, {}).get(label, 0.0) + value
-    return {region: collapse_hierarchy(counts) for region, counts in out.items()}
+
+    grouped: dict[str, dict[str, float]] = {}
+    totals: dict[str, float] = {}
+    for region, counts in out.items():
+        published = next((v for k, v in counts.items()
+                          if k.strip().lower() in GRAND_TOTAL), None)
+        kept = collapse_hierarchy(counts)
+        grouped[region] = kept
+        # The table's own total where it publishes one. Otherwise the collapsed
+        # categories' sum, which partitions the population for religion because
+        # "not stated" is one of them -- but not for a multi-response
+        # classification, which is why only religion's total is used below.
+        totals[region] = published if published is not None else sum(kept.values())
+    return grouped, totals
 
 
 def main() -> int:
@@ -262,8 +291,12 @@ def main() -> int:
     ancestry_dim = pick_dimension(ancestry_rows, "ancestry")
     log(f"  using region={region_dim!r} religion={religion_dim!r} ancestry={ancestry_dim!r}")
 
-    religion = group_by_region(religion_rows, religion_dim, region_dim) if religion_dim else {}
-    ancestry = group_by_region(ancestry_rows, ancestry_dim, region_dim) if ancestry_dim else {}
+    religion, persons = (group_by_region(religion_rows, religion_dim, region_dim)
+                         if religion_dim else ({}, {}))
+    # Ancestry's total counts responses, not people -- up to two per person --
+    # so it is never a population and is discarded here.
+    ancestry, _ = (group_by_region(ancestry_rows, ancestry_dim, region_dim)
+                   if ancestry_dim else ({}, {}))
     if religion_rows and not religion:
         log("  ! religion rows returned but none grouped -- dimension detection failed")
 
@@ -273,6 +306,10 @@ def main() -> int:
         if code:
             names.setdefault(code, labels.get(region_dim, code))
 
+    if persons:
+        log(f"  population from the religion table's own total for "
+            f"{sum(1 for v in persons.values() if v)} of {len(persons)} regions; "
+            f"they sum to {sum(persons.values()):,.0f}")
     if religion:
         sample = next(iter(religion.values()))
         biggest = max(sample.values()) if sample else 0
@@ -289,6 +326,8 @@ def main() -> int:
             f"AUS-{code}", names.get(code, code),
             level="admin1" if args.level == "state" else "admin2",
             parent="AUS", codes={"asgs": code, "asgs_level": suffix},
+            population=(measure(int(round(persons[code])), year=2021, source=src)
+                        if persons.get(code) else gap(NOT_AVAILABLE)),
             religion=shares(rel) or gap(NOT_AVAILABLE),
             religion_note="ABS 2021 religious affiliation; the question is voluntary and "
                           "'not stated' is retained as its own category.",
@@ -299,7 +338,7 @@ def main() -> int:
                           "Australia's census does not ask ethnicity. It asks ancestry and "
                           "country of birth, plus a separate Aboriginal and Torres Strait "
                           "Islander status question."),
-            sources=[{"field": "religion/ancestry", "name": src,
+            sources=[{"field": "population/religion/ancestry", "name": src,
                       "url": "https://data.api.abs.gov.au/",
                       "license": "CC BY 4.0"}],
         ))

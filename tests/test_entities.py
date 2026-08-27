@@ -251,9 +251,60 @@ class AbsDimensionDetection(unittest.TestCase):
         self.assertIsNone(self.abs.pick_dimension(rows, "religion"))
 
     def test_grouping_sums_by_region(self):
-        grouped = self.abs.group_by_region(self.rows, "RELIGP", "REGION")
+        grouped, _ = self.abs.group_by_region(self.rows, "RELIGP", "REGION")
         self.assertEqual(grouped["10050"], {"Catholic": 5.0, "No religion": 7.0})
         self.assertEqual(grouped["10250"], {"Anglican": 3.0})
+
+
+class AbsPopulation(unittest.TestCase):
+    """Where the LGA population comes from.
+
+    All 565 LGAs shipped with none. The docstring promised table C21_G01 and the
+    code never fetched it -- while the religion table it did fetch carried the
+    region's own total, which `collapse_hierarchy` correctly drops as a
+    denominator and which was then thrown away.
+    """
+
+    def setUp(self):
+        from fetch_census import abs as abs_adapter
+        self.abs = abs_adapter
+
+    def rows(self, counts, region="10050"):
+        return [({"REGION": "Albury", "REGION_CODE": region, "RELIGP": label}, value)
+                for label, value in counts.items()]
+
+    def test_the_published_total_is_the_population(self):
+        counts = {"Christianity Total": 53856, "Catholic": 24671,
+                  "Secular Total": 44444, "Religious affiliation not stated": 7948,
+                  "Total": 106248}
+        grouped, totals = self.abs.group_by_region(self.rows(counts), "RELIGP", "REGION")
+        self.assertEqual(totals["10050"], 106248)
+        # ...and it is still not offered as a category to shade the map by.
+        self.assertNotIn("Total", grouped["10050"])
+
+    def test_without_a_total_row_the_categories_are_summed(self):
+        # Religion is voluntary, but a blank answer is coded "not stated" rather
+        # than dropped, so the collapsed categories partition the population.
+        counts = {"Christianity Total": 60, "Catholic": 25,
+                  "Religious affiliation not stated": 40}
+        _, totals = self.abs.group_by_region(self.rows(counts), "RELIGP", "REGION")
+        self.assertEqual(totals["10050"], 100)
+
+    def test_a_flat_classification_still_totals(self):
+        # Ancestry has no "... Total" rows, so collapse_hierarchy passes it
+        # through. Its total counts responses rather than people -- up to two
+        # per person -- which is why the adapter uses only religion's.
+        counts = {"English": 70, "Australian": 65, "Irish": 20}
+        grouped, totals = self.abs.group_by_region(self.rows(counts), "RELIGP", "REGION")
+        self.assertEqual(grouped["10050"], counts)
+        self.assertEqual(totals["10050"], 155)
+
+    def test_the_sexes_are_not_added_to_the_persons_total(self):
+        rows = [({"REGION_CODE": "1", "SEX": "Persons", "RELIGP": "Total"}, 100.0),
+                ({"REGION_CODE": "1", "SEX": "Males", "RELIGP": "Total"}, 49.0),
+                ({"REGION_CODE": "1", "SEX": "Females", "RELIGP": "Total"}, 51.0)]
+        _, totals = self.abs.group_by_region(rows, "RELIGP", "REGION")
+        self.assertEqual(totals["1"], 100.0)
 
 
 class IndiaCensusValidation(unittest.TestCase):
@@ -358,13 +409,13 @@ class AbsHierarchyCollapse(unittest.TestCase):
                 ({"REGION": "A", "SEXP": "Males", "RELP": "Christianity Total"}, 4.0),
                 ({"REGION": "A", "SEXP": "Females", "RELP": "Christianity Total"}, 6.0)]
         self.assertEqual(self.abs.sole_sex_dimension(rows), ("SEXP", "Persons"))
-        grouped = self.abs.group_by_region(rows, "RELP", "REGION")
+        grouped, _ = self.abs.group_by_region(rows, "RELP", "REGION")
         self.assertEqual(grouped["A"]["Christianity"], 10.0)
 
     def test_no_sex_dimension_is_harmless(self):
         rows = [({"REGION": "A", "RELP": "Christianity Total"}, 10.0)]
         self.assertIsNone(self.abs.sole_sex_dimension(rows))
-        self.assertEqual(self.abs.group_by_region(rows, "RELP", "REGION")["A"],
+        self.assertEqual(self.abs.group_by_region(rows, "RELP", "REGION")[0]["A"],
                          {"Christianity": 10.0})
 
 
