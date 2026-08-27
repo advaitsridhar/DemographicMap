@@ -109,6 +109,11 @@ MAX_NODES = 250
 # timeout each time, so 250 nodes at 30 seconds is over two hours and the first
 # run of this probe had to be cancelled. Wall clock is what actually bounds it.
 BUDGET_SECONDS = 70
+# ...and what describing the finds may cost on top of it. Bounded separately
+# because it is a different failure: a host that dribbles bytes holds a
+# connection far longer than REQUEST_TIMEOUT, which urllib applies per read
+# rather than to the whole response.
+DESCRIBE_SECONDS = 60
 REQUEST_TIMEOUT = 12
 
 
@@ -174,11 +179,16 @@ def walk(base: str, budget: list[int], deadline: float,
     return found
 
 
-def describe(base: str, table: dict, throttle: float = THROTTLE) -> None:
+def describe(base: str, table: dict, throttle: float = THROTTLE,
+             deadline: float | None = None) -> None:
     """Print a table's variables, and the size of its geography dimension."""
+    if deadline is not None and time.monotonic() > deadline:
+        print("      (out of time — not described)")
+        return
     try:
         time.sleep(throttle)
-        meta = get(f"{base}/{table['path']}")
+        meta = get(f"{base}/{table['path']}",
+                   tries=1 if deadline is None else 2)
     except Exception as err:                      # noqa: BLE001
         print(f"      ! metadata failed: {str(err)[:70]}")
         return
@@ -260,7 +270,13 @@ def main() -> int:
         throttle = float(spec.get("throttle", THROTTLE))
         budget = int(spec.get("budget", BUDGET_SECONDS))
         started = time.monotonic()
-        tables = walk(spec["base"], [MAX_NODES], started + budget, throttle=throttle)
+        # The walk gets most of the budget; what is left pays for describing
+        # what it found. A phase with no deadline is not bounded by one: the
+        # first Nordic run spent fifty minutes inside describe() after a walk
+        # that had correctly stopped at seventy seconds.
+        walk_deadline = started + budget
+        instance_deadline = started + budget + DESCRIBE_SECONDS
+        tables = walk(spec["base"], [MAX_NODES], walk_deadline, throttle=throttle)
         spent = time.monotonic() - started
         exhausted = spent > budget
         if exhausted:
@@ -276,7 +292,8 @@ def main() -> int:
         for table in tables[:args.max_tables]:
             print(f"    - {table['path']}")
             print(f"      {table['title'][:110]}")
-            describe(spec["base"], table, throttle=throttle)
+            describe(spec["base"], table, throttle=throttle,
+                     deadline=instance_deadline)
     return 0
 
 
