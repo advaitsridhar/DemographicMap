@@ -1,14 +1,20 @@
-abs: 2021 Census, STE
+abs: 2021 Census, LGA
   1226 dataflows in the ABS catalogue
   dataflows containing G14: C21_G14_CED, C21_G14_LGA, C21_G14_POA, C21_G14_RA, C21_G14_SA2, C21_G14_SAL, C21_G14_SED, C21_G14_SUA, C21_G14_UCL
   dataflows containing G08: C21_G08_CED, C21_G08_LGA, C21_G08_POA, C21_G08_RA, C21_G08_SA2, C21_G08_SAL, C21_G08_SED, C21_G08_SUA, C21_G08_UCL
-  religion: dataflow ABS,C21_G14_RA,1.0.0
-  ancestry: dataflow ABS,C21_G08_RA,1.0.0
-  religion rows 5406, ancestry rows 10494
+  religion: dataflow ABS,C21_G14_LGA,1.0.0
+  ancestry: dataflow ABS,C21_G08_LGA,1.0.0
+  religion rows 57630, ancestry rows 111870
   dimensions seen: ['RELP', 'SEXP', 'REGION', 'REGION_TYPE', 'STATE', 'TIME_PERIOD']
   using region='REGION' religion='RELP' ancestry='ANCP'
   restricted SEXP='Persons' so the sexes are not counted twice
-  population from the religion table's own total for 50 of 53 regions; they sum to 25,422,787
-  sanity: largest religion category is 53.6% of the sample region's total across 4 categories
-  wrote data/processed/australia_state.json (237 kB)
-  53 records
+  outermost level chosen by suffix (nothing summed to the total) for 503 regions
+  outermost level chosen by suffix for 59 regions
+  outermost level chosen by suffix (no total to check against) for 3 regions
+  outermost level chosen by suffix (nothing summed to the total) for 561 regions
+  outermost level chosen by suffix (no total to check against) for 3 regions
+  outermost level chosen by code tree for 1 regions
+  population from the religion table's own total for 562 of 565 regions; they sum to 25,422,828
+  sanity: largest religion category is 54.1% of the sample region's total across 4 categories
+  wrote data/processed/australia_lga.json (2600 kB)
+  565 records
