@@ -58,7 +58,8 @@ class Table:
     def __init__(self, path: str, field: str, geo: str, group: str,
                  keep: dict[str, str] | None = None, year: int | None = None,
                  note: str = "", drop: tuple[str, ...] = (),
-                 geo_len: int | None = None, geo_suffix: str | None = None):
+                 geo_len: int | None = None, geo_suffix: str | None = None,
+                 national: str | None = None):
         self.path = path
         self.field = field
         self.geo = geo
@@ -77,6 +78,11 @@ class Table:
         # tail: Jekabpils municipality is "LV0031000" and the town of Jekabpils
         # inside it is "LV0031010".
         self.geo_suffix = geo_suffix
+        # The geography code that means the whole country. Not guessable from
+        # the label: Estonia calls that row "Whole country" and Latvia calls it
+        # "Latvia", so looking for the word "total" found Estonia's and missed
+        # Latvia's -- in the one table the check was written for.
+        self.national = national
 
 
 # Filled in from what scripts/probe_pxweb.py actually found. An office is only
@@ -117,7 +123,7 @@ INSTANCES: dict[str, dict[str, Any]] = {
             # "784" Tallinn and "793" Tartu city sit *inside* Harju and Tartu
             # counties, so counting them beside their parents would double
             # those two counties' people.
-            drop=("00", "unk", "784", "793"),
+            drop=("unk", "784", "793"), national="00",
             note="Ethnic nationality as recorded in the population register on "
                  "1 January 2026, not a census answer. Estonia asks it of "
                  "residents rather than inferring it from citizenship."),
@@ -141,7 +147,7 @@ INSTANCES: dict[str, dict[str, Any]] = {
             # same variable also carries the country and two vintages of the
             # statistical regions, defined before and after 1 January 2024,
             # which overlap each other.
-            geo_len=9, geo_suffix="000",
+            geo_len=9, geo_suffix="000", national="LV",
             note="Ethnicity as recorded in the population register at the "
                  "beginning of 2026. 'Other ethnicities' also holds people who "
                  "selected none and people who did not indicate one, so it is "
@@ -276,6 +282,20 @@ def wanted_area(code: str, label: str, table: Table) -> bool:
     return table.geo_suffix is None or code.endswith(table.geo_suffix)
 
 
+def reject_reason(code: str, label: str, table: Table) -> str:
+    if code == table.national:
+        return "the country itself"
+    if code in table.drop:
+        return "named in drop="
+    if is_total(label):
+        return "a total, not a unit"
+    if label.startswith(CHILD_MARKER):
+        return f"labelled {CHILD_MARKER!r}, so inside another unit"
+    if table.geo_len is not None and len(code) != table.geo_len:
+        return f"code is not {table.geo_len} characters"
+    return f"code does not end {table.geo_suffix!r}"
+
+
 def fetch(base: str, table: Table) -> tuple[dict[str, dict[str, Any]], float | None]:
     """One table -> {area code: {"name", "counts", "total"}}, and the country total.
 
@@ -287,12 +307,20 @@ def fetch(base: str, table: Table) -> tuple[dict[str, dict[str, Any]], float | N
     payload = http_json(f"{base}/{table.path}", build_query(table, meta))
     areas: dict[str, dict[str, Any]] = {}
     national: float | None = None
+    # Which geography values were left out, and on which rule. A level pinned
+    # by the shape of a code is a guess about an office's numbering, and a
+    # silent one takes a real unit out with the duplicates: Latvia's first run
+    # dropped three towns that sit inside their municipalities and one
+    # municipality that does not.
+    refused: dict[str, list[str]] = {}
     for key, value in unstack(payload):
         area_code, area_label = key[table.geo]
         group_code, group_label = key[table.group]
-        if is_total(area_label) and is_total(group_label):
+        if area_code == table.national and is_total(group_label):
             national = value
         if not wanted_area(area_code, area_label, table):
+            refused.setdefault(reject_reason(area_code, area_label, table),
+                               []).append(f"{area_code} {area_label}")
             continue
         entry = areas.setdefault(area_code, {"name": area_label, "counts": {},
                                              "total": None})
@@ -302,6 +330,10 @@ def fetch(base: str, table: Table) -> tuple[dict[str, dict[str, Any]], float | N
             continue                    # counted already inside its parent
         elif group_code not in table.drop:
             entry["counts"][group_label] = entry["counts"].get(group_label, 0.0) + value
+    for reason, names in sorted(refused.items()):
+        unique = sorted(set(names))
+        log(f"    left out ({reason}): {len(unique)} — " + ", ".join(unique[:6])
+            + (" ..." if len(unique) > 6 else ""))
     return areas, national
 
 
