@@ -1,0 +1,4058 @@
+[
+  {
+    "id": "LVA-LV0001000",
+    "level": "admin1",
+    "name": "Rīga",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 588911,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 48.4,
+        "count": 284869
+      },
+      {
+        "group": "Russians",
+        "pct": 33.8,
+        "count": 199076
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 6.6,
+        "count": 39138
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 4.8,
+        "count": 28117
+      },
+      {
+        "group": "Belarusians",
+        "pct": 3.3,
+        "count": 19522
+      },
+      {
+        "group": "Poles",
+        "pct": 1.7,
+        "count": 9805
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.7,
+        "count": 4250
+      },
+      {
+        "group": "Jews",
+        "pct": 0.5,
+        "count": 2858
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 697
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.1,
+        "count": 579
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0001000"
+    },
+    "aliases": [
+      "Riga"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0002000",
+    "level": "admin1",
+    "name": "Daugavpils",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 77486,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Russians",
+        "pct": 46.5,
+        "count": 35995
+      },
+      {
+        "group": "Latvians",
+        "pct": 21.6,
+        "count": 16731
+      },
+      {
+        "group": "Poles",
+        "pct": 12.9,
+        "count": 9968
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 8.6,
+        "count": 6650
+      },
+      {
+        "group": "Belarusians",
+        "pct": 6.7,
+        "count": 5208
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 2.3,
+        "count": 1766
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.8,
+        "count": 637
+      },
+      {
+        "group": "Roma",
+        "pct": 0.5,
+        "count": 378
+      },
+      {
+        "group": "Jews",
+        "pct": 0.2,
+        "count": 134
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 19
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0002000"
+    },
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0003000",
+    "level": "admin1",
+    "name": "Jelgava",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 54408,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 63.0,
+        "count": 34287
+      },
+      {
+        "group": "Russians",
+        "pct": 23.2,
+        "count": 12632
+      },
+      {
+        "group": "Belarusians",
+        "pct": 4.5,
+        "count": 2444
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 3.2,
+        "count": 1767
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 2.2,
+        "count": 1176
+      },
+      {
+        "group": "Poles",
+        "pct": 1.6,
+        "count": 851
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 1.3,
+        "count": 719
+      },
+      {
+        "group": "Roma",
+        "pct": 0.8,
+        "count": 442
+      },
+      {
+        "group": "Jews",
+        "pct": 0.1,
+        "count": 47
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.1,
+        "count": 43
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0003000"
+    },
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0004000",
+    "level": "admin1",
+    "name": "Jūrmala",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 52926,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 53.0,
+        "count": 28032
+      },
+      {
+        "group": "Russians",
+        "pct": 31.8,
+        "count": 16820
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 5.4,
+        "count": 2859
+      },
+      {
+        "group": "Belarusians",
+        "pct": 3.2,
+        "count": 1693
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 2.9,
+        "count": 1552
+      },
+      {
+        "group": "Poles",
+        "pct": 1.5,
+        "count": 817
+      },
+      {
+        "group": "Jews",
+        "pct": 0.8,
+        "count": 442
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.8,
+        "count": 408
+      },
+      {
+        "group": "Roma",
+        "pct": 0.5,
+        "count": 260
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.1,
+        "count": 43
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0004000"
+    },
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0005000",
+    "level": "admin1",
+    "name": "Liepāja",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 66746,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 61.2,
+        "count": 40870
+      },
+      {
+        "group": "Russians",
+        "pct": 25.8,
+        "count": 17199
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 4.4,
+        "count": 2943
+      },
+      {
+        "group": "Belarusians",
+        "pct": 2.7,
+        "count": 1815
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 2.7,
+        "count": 1806
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 2.0,
+        "count": 1325
+      },
+      {
+        "group": "Poles",
+        "pct": 0.9,
+        "count": 578
+      },
+      {
+        "group": "Roma",
+        "pct": 0.2,
+        "count": 128
+      },
+      {
+        "group": "Jews",
+        "pct": 0.1,
+        "count": 59
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 23
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0005000"
+    },
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0006000",
+    "level": "admin1",
+    "name": "Rēzekne",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 25978,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 48.3,
+        "count": 12539
+      },
+      {
+        "group": "Russians",
+        "pct": 40.1,
+        "count": 10420
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 5.9,
+        "count": 1543
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 2.0,
+        "count": 508
+      },
+      {
+        "group": "Poles",
+        "pct": 1.9,
+        "count": 503
+      },
+      {
+        "group": "Belarusians",
+        "pct": 1.4,
+        "count": 359
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.2,
+        "count": 43
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 32
+      },
+      {
+        "group": "Jews",
+        "pct": 0.1,
+        "count": 24
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 7
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0006000"
+    },
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0007000",
+    "level": "admin1",
+    "name": "Ventspils",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 32479,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 61.8,
+        "count": 20057
+      },
+      {
+        "group": "Russians",
+        "pct": 23.5,
+        "count": 7644
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 4.3,
+        "count": 1394
+      },
+      {
+        "group": "Belarusians",
+        "pct": 3.7,
+        "count": 1191
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 3.5,
+        "count": 1137
+      },
+      {
+        "group": "Roma",
+        "pct": 1.5,
+        "count": 477
+      },
+      {
+        "group": "Poles",
+        "pct": 0.9,
+        "count": 283
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.8,
+        "count": 262
+      },
+      {
+        "group": "Jews",
+        "pct": 0.1,
+        "count": 22
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0007000"
+    },
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0020000",
+    "level": "admin1",
+    "name": "Aizkraukles novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 27825,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 81.4,
+        "count": 22643
+      },
+      {
+        "group": "Russians",
+        "pct": 10.8,
+        "count": 3016
+      },
+      {
+        "group": "Belarusians",
+        "pct": 2.0,
+        "count": 547
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 1.8,
+        "count": 488
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.3,
+        "count": 365
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.3,
+        "count": 370
+      },
+      {
+        "group": "Poles",
+        "pct": 1.1,
+        "count": 311
+      },
+      {
+        "group": "Roma",
+        "pct": 0.3,
+        "count": 70
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 13
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0020000"
+    },
+    "aliases": [
+      "Aizkraukle municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0021000",
+    "level": "admin1",
+    "name": "Alūksnes novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12894,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 84.6,
+        "count": 10905
+      },
+      {
+        "group": "Russians",
+        "pct": 11.5,
+        "count": 1488
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.2,
+        "count": 155
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.1,
+        "count": 146
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.7,
+        "count": 92
+      },
+      {
+        "group": "Belarusians",
+        "pct": 0.3,
+        "count": 37
+      },
+      {
+        "group": "Poles",
+        "pct": 0.3,
+        "count": 33
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.2,
+        "count": 32
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0021000"
+    },
+    "aliases": [
+      "Alūksne municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0022000",
+    "level": "admin1",
+    "name": "Augšdaugavas novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 23443,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 44.0,
+        "count": 10306
+      },
+      {
+        "group": "Russians",
+        "pct": 34.5,
+        "count": 8077
+      },
+      {
+        "group": "Poles",
+        "pct": 10.3,
+        "count": 2418
+      },
+      {
+        "group": "Belarusians",
+        "pct": 5.3,
+        "count": 1238
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 3.0,
+        "count": 710
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.2,
+        "count": 286
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 1.1,
+        "count": 262
+      },
+      {
+        "group": "Roma",
+        "pct": 0.6,
+        "count": 136
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0022000"
+    },
+    "aliases": [
+      "Augšdaugava municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0023000",
+    "level": "admin1",
+    "name": "Ādažu novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 24141,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 71.6,
+        "count": 17283
+      },
+      {
+        "group": "Russians",
+        "pct": 17.9,
+        "count": 4329
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 4.1,
+        "count": 992
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 2.3,
+        "count": 551
+      },
+      {
+        "group": "Belarusians",
+        "pct": 1.9,
+        "count": 452
+      },
+      {
+        "group": "Poles",
+        "pct": 1.2,
+        "count": 298
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.6,
+        "count": 146
+      },
+      {
+        "group": "Jews",
+        "pct": 0.2,
+        "count": 60
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.1,
+        "count": 28
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0023000"
+    },
+    "aliases": [
+      "Ādaži municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0024000",
+    "level": "admin1",
+    "name": "Balvu novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 17163,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 82.7,
+        "count": 14201
+      },
+      {
+        "group": "Russians",
+        "pct": 13.8,
+        "count": 2366
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.1,
+        "count": 197
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 0.9,
+        "count": 156
+      },
+      {
+        "group": "Belarusians",
+        "pct": 0.6,
+        "count": 95
+      },
+      {
+        "group": "Roma",
+        "pct": 0.4,
+        "count": 75
+      },
+      {
+        "group": "Poles",
+        "pct": 0.3,
+        "count": 52
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.1,
+        "count": 14
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0024000"
+    },
+    "aliases": [
+      "Balvi municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0025000",
+    "level": "admin1",
+    "name": "Bauskas novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 40006,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 79.3,
+        "count": 31726
+      },
+      {
+        "group": "Russians",
+        "pct": 8.3,
+        "count": 3316
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 4.6,
+        "count": 1840
+      },
+      {
+        "group": "Belarusians",
+        "pct": 2.6,
+        "count": 1038
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 2.0,
+        "count": 818
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.9,
+        "count": 780
+      },
+      {
+        "group": "Poles",
+        "pct": 1.0,
+        "count": 410
+      },
+      {
+        "group": "Roma",
+        "pct": 0.2,
+        "count": 61
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0025000"
+    },
+    "aliases": [
+      "Bauska municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0026000",
+    "level": "admin1",
+    "name": "Cēsu novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 40963,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 89.1,
+        "count": 36489
+      },
+      {
+        "group": "Russians",
+        "pct": 6.5,
+        "count": 2652
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.1,
+        "count": 457
+      },
+      {
+        "group": "Belarusians",
+        "pct": 1.0,
+        "count": 415
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.0,
+        "count": 397
+      },
+      {
+        "group": "Poles",
+        "pct": 0.7,
+        "count": 300
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.4,
+        "count": 175
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 39
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.1,
+        "count": 27
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0026000"
+    },
+    "aliases": [
+      "Cēsis municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0027000",
+    "level": "admin1",
+    "name": "Dienvidkurzemes novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 32450,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 89.2,
+        "count": 28943
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 4.3,
+        "count": 1401
+      },
+      {
+        "group": "Russians",
+        "pct": 3.5,
+        "count": 1138
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.1,
+        "count": 370
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 0.8,
+        "count": 245
+      },
+      {
+        "group": "Belarusians",
+        "pct": 0.6,
+        "count": 205
+      },
+      {
+        "group": "Poles",
+        "pct": 0.4,
+        "count": 121
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 8
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0027000"
+    },
+    "aliases": [
+      "Dienvidkurzeme municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0028000",
+    "level": "admin1",
+    "name": "Dobeles novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 27100,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 78.2,
+        "count": 21190
+      },
+      {
+        "group": "Russians",
+        "pct": 9.7,
+        "count": 2640
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 4.0,
+        "count": 1081
+      },
+      {
+        "group": "Belarusians",
+        "pct": 3.4,
+        "count": 913
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.8,
+        "count": 485
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.2,
+        "count": 324
+      },
+      {
+        "group": "Poles",
+        "pct": 1.1,
+        "count": 291
+      },
+      {
+        "group": "Roma",
+        "pct": 0.6,
+        "count": 160
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 13
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0028000"
+    },
+    "aliases": [
+      "Dobele municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0029000",
+    "level": "admin1",
+    "name": "Gulbenes novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 18215,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 88.0,
+        "count": 16035
+      },
+      {
+        "group": "Russians",
+        "pct": 8.0,
+        "count": 1456
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.2,
+        "count": 214
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.0,
+        "count": 185
+      },
+      {
+        "group": "Belarusians",
+        "pct": 0.7,
+        "count": 132
+      },
+      {
+        "group": "Poles",
+        "pct": 0.6,
+        "count": 102
+      },
+      {
+        "group": "Roma",
+        "pct": 0.3,
+        "count": 47
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.2,
+        "count": 38
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 6
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0029000"
+    },
+    "aliases": [
+      "Gulbene municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0030000",
+    "level": "admin1",
+    "name": "Jelgavas novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 31718,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 74.4,
+        "count": 23585
+      },
+      {
+        "group": "Russians",
+        "pct": 14.1,
+        "count": 4474
+      },
+      {
+        "group": "Belarusians",
+        "pct": 4.4,
+        "count": 1383
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 2.0,
+        "count": 644
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.8,
+        "count": 575
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.8,
+        "count": 560
+      },
+      {
+        "group": "Poles",
+        "pct": 1.4,
+        "count": 459
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 17
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 15
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0030000"
+    },
+    "aliases": [
+      "Jelgava municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0031000",
+    "level": "admin1",
+    "name": "Jēkabpils novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 38134,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 72.1,
+        "count": 27487
+      },
+      {
+        "group": "Russians",
+        "pct": 18.2,
+        "count": 6952
+      },
+      {
+        "group": "Belarusians",
+        "pct": 2.3,
+        "count": 861
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 2.1,
+        "count": 809
+      },
+      {
+        "group": "Poles",
+        "pct": 1.9,
+        "count": 712
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.6,
+        "count": 592
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 1.3,
+        "count": 484
+      },
+      {
+        "group": "Roma",
+        "pct": 0.5,
+        "count": 208
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 11
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0031000"
+    },
+    "aliases": [
+      "Jēkabpils municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0032000",
+    "level": "admin1",
+    "name": "Krāslavas novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 19040,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 51.6,
+        "count": 9827
+      },
+      {
+        "group": "Russians",
+        "pct": 23.1,
+        "count": 4395
+      },
+      {
+        "group": "Belarusians",
+        "pct": 14.0,
+        "count": 2657
+      },
+      {
+        "group": "Poles",
+        "pct": 5.5,
+        "count": 1043
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 3.5,
+        "count": 661
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.3,
+        "count": 250
+      },
+      {
+        "group": "Roma",
+        "pct": 0.6,
+        "count": 113
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.4,
+        "count": 81
+      },
+      {
+        "group": "Jews",
+        "pct": 0.1,
+        "count": 10
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0032000"
+    },
+    "aliases": [
+      "Krāslava municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0033000",
+    "level": "admin1",
+    "name": "Kuldīgas novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 26386,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 93.3,
+        "count": 24615
+      },
+      {
+        "group": "Russians",
+        "pct": 2.2,
+        "count": 570
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 1.4,
+        "count": 380
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.1,
+        "count": 289
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 0.7,
+        "count": 192
+      },
+      {
+        "group": "Belarusians",
+        "pct": 0.5,
+        "count": 133
+      },
+      {
+        "group": "Roma",
+        "pct": 0.4,
+        "count": 112
+      },
+      {
+        "group": "Poles",
+        "pct": 0.3,
+        "count": 91
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0033000"
+    },
+    "aliases": [
+      "Kuldīga municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0034000",
+    "level": "admin1",
+    "name": "Ķekavas novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 31668,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 77.2,
+        "count": 24438
+      },
+      {
+        "group": "Russians",
+        "pct": 13.9,
+        "count": 4388
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 3.4,
+        "count": 1064
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.8,
+        "count": 561
+      },
+      {
+        "group": "Belarusians",
+        "pct": 1.7,
+        "count": 554
+      },
+      {
+        "group": "Poles",
+        "pct": 1.0,
+        "count": 310
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.9,
+        "count": 293
+      },
+      {
+        "group": "Jews",
+        "pct": 0.2,
+        "count": 48
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0034000"
+    },
+    "aliases": [
+      "Ķekava municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0035000",
+    "level": "admin1",
+    "name": "Limbažu novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 27276,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 88.6,
+        "count": 24173
+      },
+      {
+        "group": "Russians",
+        "pct": 6.0,
+        "count": 1636
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.4,
+        "count": 383
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.1,
+        "count": 310
+      },
+      {
+        "group": "Belarusians",
+        "pct": 0.9,
+        "count": 245
+      },
+      {
+        "group": "Poles",
+        "pct": 0.7,
+        "count": 182
+      },
+      {
+        "group": "Roma",
+        "pct": 0.6,
+        "count": 165
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.5,
+        "count": 136
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.1,
+        "count": 36
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0035000"
+    },
+    "aliases": [
+      "Limbaži municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0036000",
+    "level": "admin1",
+    "name": "Līvānu novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9897,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 70.8,
+        "count": 7003
+      },
+      {
+        "group": "Russians",
+        "pct": 23.0,
+        "count": 2280
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.9,
+        "count": 184
+      },
+      {
+        "group": "Belarusians",
+        "pct": 1.5,
+        "count": 149
+      },
+      {
+        "group": "Poles",
+        "pct": 1.5,
+        "count": 145
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 0.9,
+        "count": 91
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.3,
+        "count": 28
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 13
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0036000"
+    },
+    "aliases": [
+      "Līvāni municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0037000",
+    "level": "admin1",
+    "name": "Ludzas novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 19659,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 60.9,
+        "count": 11979
+      },
+      {
+        "group": "Russians",
+        "pct": 31.0,
+        "count": 6102
+      },
+      {
+        "group": "Belarusians",
+        "pct": 3.2,
+        "count": 635
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 2.2,
+        "count": 429
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.4,
+        "count": 279
+      },
+      {
+        "group": "Poles",
+        "pct": 0.7,
+        "count": 141
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.2,
+        "count": 48
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 25
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.1,
+        "count": 13
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 8
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0037000"
+    },
+    "aliases": [
+      "Ludza municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0038001",
+    "level": "admin1",
+    "name": "Madonas novads (no 01.07.2025.)",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 29466,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 90.1,
+        "count": 26552
+      },
+      {
+        "group": "Russians",
+        "pct": 6.0,
+        "count": 1765
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.2,
+        "count": 348
+      },
+      {
+        "group": "Belarusians",
+        "pct": 0.9,
+        "count": 257
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 0.7,
+        "count": 214
+      },
+      {
+        "group": "Poles",
+        "pct": 0.5,
+        "count": 162
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.4,
+        "count": 106
+      },
+      {
+        "group": "Roma",
+        "pct": 0.2,
+        "count": 53
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 6
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0038001"
+    },
+    "aliases": [
+      "Madona municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0039000",
+    "level": "admin1",
+    "name": "Mārupes novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 38132,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 70.9,
+        "count": 27031
+      },
+      {
+        "group": "Russians",
+        "pct": 18.1,
+        "count": 6896
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 5.3,
+        "count": 2026
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 2.0,
+        "count": 768
+      },
+      {
+        "group": "Belarusians",
+        "pct": 1.7,
+        "count": 647
+      },
+      {
+        "group": "Poles",
+        "pct": 1.1,
+        "count": 413
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.6,
+        "count": 226
+      },
+      {
+        "group": "Jews",
+        "pct": 0.2,
+        "count": 70
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 31
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.1,
+        "count": 24
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0039000"
+    },
+    "aliases": [
+      "Mārupe municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0040000",
+    "level": "admin1",
+    "name": "Ogres novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 57165,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 82.5,
+        "count": 47160
+      },
+      {
+        "group": "Russians",
+        "pct": 10.7,
+        "count": 6108
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.9,
+        "count": 1097
+      },
+      {
+        "group": "Belarusians",
+        "pct": 1.8,
+        "count": 1040
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.3,
+        "count": 729
+      },
+      {
+        "group": "Poles",
+        "pct": 1.0,
+        "count": 579
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.6,
+        "count": 334
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 46
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.1,
+        "count": 44
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 28
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0040000"
+    },
+    "aliases": [
+      "Ogre municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0041000",
+    "level": "admin1",
+    "name": "Olaines novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 21062,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 48.9,
+        "count": 10290
+      },
+      {
+        "group": "Russians",
+        "pct": 34.3,
+        "count": 7231
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 5.3,
+        "count": 1112
+      },
+      {
+        "group": "Belarusians",
+        "pct": 4.7,
+        "count": 980
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 3.4,
+        "count": 706
+      },
+      {
+        "group": "Poles",
+        "pct": 2.3,
+        "count": 477
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 1.0,
+        "count": 207
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 21
+      },
+      {
+        "group": "Jews",
+        "pct": 0.1,
+        "count": 29
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 9
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0041000"
+    },
+    "aliases": [
+      "Olaine municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0042000",
+    "level": "admin1",
+    "name": "Preiļu novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 15238,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 73.0,
+        "count": 11126
+      },
+      {
+        "group": "Russians",
+        "pct": 22.0,
+        "count": 3357
+      },
+      {
+        "group": "Poles",
+        "pct": 1.2,
+        "count": 179
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.2,
+        "count": 181
+      },
+      {
+        "group": "Belarusians",
+        "pct": 1.0,
+        "count": 154
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 0.8,
+        "count": 123
+      },
+      {
+        "group": "Roma",
+        "pct": 0.5,
+        "count": 83
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.2,
+        "count": 34
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0042000"
+    },
+    "aliases": [
+      "Preiļi municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0043000",
+    "level": "admin1",
+    "name": "Rēzeknes novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 27268,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 58.7,
+        "count": 16011
+      },
+      {
+        "group": "Russians",
+        "pct": 35.2,
+        "count": 9596
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 2.6,
+        "count": 704
+      },
+      {
+        "group": "Belarusians",
+        "pct": 1.1,
+        "count": 309
+      },
+      {
+        "group": "Poles",
+        "pct": 1.0,
+        "count": 273
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.0,
+        "count": 274
+      },
+      {
+        "group": "Roma",
+        "pct": 0.2,
+        "count": 53
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.2,
+        "count": 45
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0043000"
+    },
+    "aliases": [
+      "Rēzekne municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0044000",
+    "level": "admin1",
+    "name": "Ropažu novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 35540,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 63.9,
+        "count": 22693
+      },
+      {
+        "group": "Russians",
+        "pct": 23.5,
+        "count": 8368
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 4.9,
+        "count": 1756
+      },
+      {
+        "group": "Belarusians",
+        "pct": 2.6,
+        "count": 923
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 2.6,
+        "count": 931
+      },
+      {
+        "group": "Poles",
+        "pct": 1.5,
+        "count": 521
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.5,
+        "count": 188
+      },
+      {
+        "group": "Jews",
+        "pct": 0.3,
+        "count": 101
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 42
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 17
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0044000"
+    },
+    "aliases": [
+      "Ropaži municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0045000",
+    "level": "admin1",
+    "name": "Salaspils novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 23915,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 51.9,
+        "count": 12413
+      },
+      {
+        "group": "Russians",
+        "pct": 32.0,
+        "count": 7645
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 6.2,
+        "count": 1475
+      },
+      {
+        "group": "Belarusians",
+        "pct": 4.1,
+        "count": 986
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 3.0,
+        "count": 716
+      },
+      {
+        "group": "Poles",
+        "pct": 1.7,
+        "count": 404
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.9,
+        "count": 217
+      },
+      {
+        "group": "Jews",
+        "pct": 0.2,
+        "count": 37
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.1,
+        "count": 17
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0045000"
+    },
+    "aliases": [
+      "Salaspils municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0046000",
+    "level": "admin1",
+    "name": "Saldus novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 26192,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 87.6,
+        "count": 22933
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 5.0,
+        "count": 1306
+      },
+      {
+        "group": "Russians",
+        "pct": 3.9,
+        "count": 1012
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.2,
+        "count": 314
+      },
+      {
+        "group": "Belarusians",
+        "pct": 1.0,
+        "count": 270
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 0.9,
+        "count": 229
+      },
+      {
+        "group": "Poles",
+        "pct": 0.4,
+        "count": 101
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 22
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0046000"
+    },
+    "aliases": [
+      "Saldus municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0047000",
+    "level": "admin1",
+    "name": "Saulkrastu novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 10113,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 77.0,
+        "count": 7788
+      },
+      {
+        "group": "Russians",
+        "pct": 15.8,
+        "count": 1593
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 2.1,
+        "count": 212
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.7,
+        "count": 176
+      },
+      {
+        "group": "Belarusians",
+        "pct": 1.5,
+        "count": 150
+      },
+      {
+        "group": "Poles",
+        "pct": 1.1,
+        "count": 112
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.5,
+        "count": 54
+      },
+      {
+        "group": "Jews",
+        "pct": 0.2,
+        "count": 21
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0047000"
+    },
+    "aliases": [
+      "Saulkrasti municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0048000",
+    "level": "admin1",
+    "name": "Siguldas novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 31546,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 88.2,
+        "count": 27811
+      },
+      {
+        "group": "Russians",
+        "pct": 7.1,
+        "count": 2237
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.3,
+        "count": 409
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.2,
+        "count": 393
+      },
+      {
+        "group": "Belarusians",
+        "pct": 1.0,
+        "count": 302
+      },
+      {
+        "group": "Poles",
+        "pct": 0.7,
+        "count": 210
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.5,
+        "count": 154
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 11
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0048000"
+    },
+    "aliases": [
+      "Sigulda municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0049000",
+    "level": "admin1",
+    "name": "Smiltenes novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 17306,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 93.3,
+        "count": 16155
+      },
+      {
+        "group": "Russians",
+        "pct": 3.2,
+        "count": 560
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 0.9,
+        "count": 149
+      },
+      {
+        "group": "Belarusians",
+        "pct": 0.8,
+        "count": 138
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 0.7,
+        "count": 127
+      },
+      {
+        "group": "Poles",
+        "pct": 0.5,
+        "count": 92
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.2,
+        "count": 38
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.2,
+        "count": 29
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 15
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0049000"
+    },
+    "aliases": [
+      "Smiltene municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0051000",
+    "level": "admin1",
+    "name": "Talsu novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 34264,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 93.0,
+        "count": 31867
+      },
+      {
+        "group": "Russians",
+        "pct": 2.8,
+        "count": 962
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.1,
+        "count": 369
+      },
+      {
+        "group": "Roma",
+        "pct": 0.8,
+        "count": 278
+      },
+      {
+        "group": "Belarusians",
+        "pct": 0.6,
+        "count": 208
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 0.6,
+        "count": 219
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.5,
+        "count": 170
+      },
+      {
+        "group": "Poles",
+        "pct": 0.5,
+        "count": 166
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.1,
+        "count": 19
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 6
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0051000"
+    },
+    "aliases": [
+      "Talsi municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0052000",
+    "level": "admin1",
+    "name": "Tukuma novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 42991,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 88.2,
+        "count": 37916
+      },
+      {
+        "group": "Russians",
+        "pct": 5.9,
+        "count": 2516
+      },
+      {
+        "group": "Belarusians",
+        "pct": 1.5,
+        "count": 658
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.1,
+        "count": 488
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.1,
+        "count": 469
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.8,
+        "count": 333
+      },
+      {
+        "group": "Roma",
+        "pct": 0.7,
+        "count": 304
+      },
+      {
+        "group": "Poles",
+        "pct": 0.7,
+        "count": 280
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.0,
+        "count": 13
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0052000"
+    },
+    "aliases": [
+      "Tukums municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0053000",
+    "level": "admin1",
+    "name": "Valkas novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7501,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 82.3,
+        "count": 6170
+      },
+      {
+        "group": "Russians",
+        "pct": 11.0,
+        "count": 825
+      },
+      {
+        "group": "Belarusians",
+        "pct": 2.0,
+        "count": 151
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.9,
+        "count": 145
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.2,
+        "count": 88
+      },
+      {
+        "group": "Poles",
+        "pct": 0.6,
+        "count": 43
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.5,
+        "count": 36
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.4,
+        "count": 30
+      },
+      {
+        "group": "Roma",
+        "pct": 0.2,
+        "count": 13
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0053000"
+    },
+    "aliases": [
+      "Valka municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0054000",
+    "level": "admin1",
+    "name": "Valmieras novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 50324,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 86.5,
+        "count": 43536
+      },
+      {
+        "group": "Russians",
+        "pct": 8.4,
+        "count": 4248
+      },
+      {
+        "group": "Belarusians",
+        "pct": 1.5,
+        "count": 770
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.1,
+        "count": 532
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.0,
+        "count": 490
+      },
+      {
+        "group": "Poles",
+        "pct": 0.6,
+        "count": 306
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.4,
+        "count": 214
+      },
+      {
+        "group": "Roma",
+        "pct": 0.3,
+        "count": 166
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.1,
+        "count": 58
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0054000"
+    },
+    "aliases": [
+      "Valmiera municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "LVA-LV0056000",
+    "level": "admin1",
+    "name": "Ventspils novads",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 10161,
+      "year": 2026,
+      "source": "Central Statistical Bureau of Latvia, table IRE031"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Latvians",
+        "pct": 90.7,
+        "count": 9215
+      },
+      {
+        "group": "Russians",
+        "pct": 4.2,
+        "count": 428
+      },
+      {
+        "group": "Ukrainians",
+        "pct": 1.5,
+        "count": 148
+      },
+      {
+        "group": "Other ethnicities, including not selected and not indicated ethnicity",
+        "pct": 1.3,
+        "count": 130
+      },
+      {
+        "group": "Lithuanians",
+        "pct": 0.9,
+        "count": 96
+      },
+      {
+        "group": "Belarusians",
+        "pct": 0.8,
+        "count": 79
+      },
+      {
+        "group": "Poles",
+        "pct": 0.4,
+        "count": 43
+      },
+      {
+        "group": "Roma",
+        "pct": 0.2,
+        "count": 16
+      },
+      {
+        "group": "Estonians",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Jews",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, table IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "LV0056000"
+    },
+    "aliases": [
+      "Ventspils municipality"
+    ],
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026. 'Other ethnicities' also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular.",
+    "ethnicity_year": 2026
+  }
+]

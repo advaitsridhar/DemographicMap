@@ -1,0 +1,1007 @@
+[
+  {
+    "id": "EST-37",
+    "level": "admin1",
+    "name": "Harju maakond",
+    "parent": "EST",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 644758,
+      "year": 2026,
+      "source": "Statistics Estonia, table RV0222U"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Estonians",
+        "pct": 60.5,
+        "count": 390051
+      },
+      {
+        "group": "Russians",
+        "pct": 24.2,
+        "count": 155742
+      },
+      {
+        "group": "Other ethnic nationalities",
+        "pct": 14.8,
+        "count": 95612
+      },
+      {
+        "group": "Ethnic nationality unknown",
+        "pct": 0.5,
+        "count": 3353
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistics Estonia, table RV0222U",
+        "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0222U",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "37"
+    },
+    "aliases": [
+      "Harju county"
+    ],
+    "ethnicity_note": "Ethnic nationality as recorded in the population register on 1 January 2026, not a census answer. Estonia asks it of residents rather than inferring it from citizenship.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "EST-39",
+    "level": "admin1",
+    "name": "Hiiu maakond",
+    "parent": "EST",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8330,
+      "year": 2026,
+      "source": "Statistics Estonia, table RV0222U"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Estonians",
+        "pct": 97.6,
+        "count": 8128
+      },
+      {
+        "group": "Other ethnic nationalities",
+        "pct": 1.8,
+        "count": 151
+      },
+      {
+        "group": "Russians",
+        "pct": 0.5,
+        "count": 42
+      },
+      {
+        "group": "Ethnic nationality unknown",
+        "pct": 0.1,
+        "count": 9
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistics Estonia, table RV0222U",
+        "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0222U",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "39"
+    },
+    "aliases": [
+      "Hiiu county"
+    ],
+    "ethnicity_note": "Ethnic nationality as recorded in the population register on 1 January 2026, not a census answer. Estonia asks it of residents rather than inferring it from citizenship.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "EST-45",
+    "level": "admin1",
+    "name": "Ida-Viru maakond",
+    "parent": "EST",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 127909,
+      "year": 2026,
+      "source": "Statistics Estonia, table RV0222U"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Russians",
+        "pct": 67.4,
+        "count": 86153
+      },
+      {
+        "group": "Estonians",
+        "pct": 20.9,
+        "count": 26741
+      },
+      {
+        "group": "Other ethnic nationalities",
+        "pct": 11.5,
+        "count": 14723
+      },
+      {
+        "group": "Ethnic nationality unknown",
+        "pct": 0.2,
+        "count": 292
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistics Estonia, table RV0222U",
+        "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0222U",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "45"
+    },
+    "aliases": [
+      "Ida-Viru county"
+    ],
+    "ethnicity_note": "Ethnic nationality as recorded in the population register on 1 January 2026, not a census answer. Estonia asks it of residents rather than inferring it from citizenship.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "EST-50",
+    "level": "admin1",
+    "name": "Jõgeva maakond",
+    "parent": "EST",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 26526,
+      "year": 2026,
+      "source": "Statistics Estonia, table RV0222U"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Estonians",
+        "pct": 89.4,
+        "count": 23702
+      },
+      {
+        "group": "Russians",
+        "pct": 6.2,
+        "count": 1635
+      },
+      {
+        "group": "Other ethnic nationalities",
+        "pct": 4.3,
+        "count": 1130
+      },
+      {
+        "group": "Ethnic nationality unknown",
+        "pct": 0.2,
+        "count": 59
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistics Estonia, table RV0222U",
+        "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0222U",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "50"
+    },
+    "aliases": [
+      "Jõgeva county"
+    ],
+    "ethnicity_note": "Ethnic nationality as recorded in the population register on 1 January 2026, not a census answer. Estonia asks it of residents rather than inferring it from citizenship.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "EST-52",
+    "level": "admin1",
+    "name": "Järva maakond",
+    "parent": "EST",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 29573,
+      "year": 2026,
+      "source": "Statistics Estonia, table RV0222U"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Estonians",
+        "pct": 91.3,
+        "count": 27002
+      },
+      {
+        "group": "Other ethnic nationalities",
+        "pct": 6.1,
+        "count": 1807
+      },
+      {
+        "group": "Russians",
+        "pct": 2.3,
+        "count": 667
+      },
+      {
+        "group": "Ethnic nationality unknown",
+        "pct": 0.3,
+        "count": 97
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistics Estonia, table RV0222U",
+        "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0222U",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "52"
+    },
+    "aliases": [
+      "Järva county"
+    ],
+    "ethnicity_note": "Ethnic nationality as recorded in the population register on 1 January 2026, not a census answer. Estonia asks it of residents rather than inferring it from citizenship.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "EST-56",
+    "level": "admin1",
+    "name": "Lääne maakond",
+    "parent": "EST",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 20200,
+      "year": 2026,
+      "source": "Statistics Estonia, table RV0222U"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Estonians",
+        "pct": 87.0,
+        "count": 17577
+      },
+      {
+        "group": "Russians",
+        "pct": 6.7,
+        "count": 1362
+      },
+      {
+        "group": "Other ethnic nationalities",
+        "pct": 5.8,
+        "count": 1174
+      },
+      {
+        "group": "Ethnic nationality unknown",
+        "pct": 0.4,
+        "count": 87
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistics Estonia, table RV0222U",
+        "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0222U",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "56"
+    },
+    "aliases": [
+      "Lääne county"
+    ],
+    "ethnicity_note": "Ethnic nationality as recorded in the population register on 1 January 2026, not a census answer. Estonia asks it of residents rather than inferring it from citizenship.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "EST-60",
+    "level": "admin1",
+    "name": "Lääne-Viru maakond",
+    "parent": "EST",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 58309,
+      "year": 2026,
+      "source": "Statistics Estonia, table RV0222U"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Estonians",
+        "pct": 84.9,
+        "count": 49501
+      },
+      {
+        "group": "Russians",
+        "pct": 8.0,
+        "count": 4664
+      },
+      {
+        "group": "Other ethnic nationalities",
+        "pct": 6.8,
+        "count": 3940
+      },
+      {
+        "group": "Ethnic nationality unknown",
+        "pct": 0.3,
+        "count": 204
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistics Estonia, table RV0222U",
+        "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0222U",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "60"
+    },
+    "aliases": [
+      "Lääne-Viru county"
+    ],
+    "ethnicity_note": "Ethnic nationality as recorded in the population register on 1 January 2026, not a census answer. Estonia asks it of residents rather than inferring it from citizenship.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "EST-64",
+    "level": "admin1",
+    "name": "Põlva maakond",
+    "parent": "EST",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 23223,
+      "year": 2026,
+      "source": "Statistics Estonia, table RV0222U"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Estonians",
+        "pct": 93.6,
+        "count": 21746
+      },
+      {
+        "group": "Other ethnic nationalities",
+        "pct": 3.2,
+        "count": 734
+      },
+      {
+        "group": "Russians",
+        "pct": 3.1,
+        "count": 711
+      },
+      {
+        "group": "Ethnic nationality unknown",
+        "pct": 0.1,
+        "count": 32
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistics Estonia, table RV0222U",
+        "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0222U",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "64"
+    },
+    "aliases": [
+      "Põlva county"
+    ],
+    "ethnicity_note": "Ethnic nationality as recorded in the population register on 1 January 2026, not a census answer. Estonia asks it of residents rather than inferring it from citizenship.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "EST-68",
+    "level": "admin1",
+    "name": "Pärnu maakond",
+    "parent": "EST",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 87015,
+      "year": 2026,
+      "source": "Statistics Estonia, table RV0222U"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Estonians",
+        "pct": 87.1,
+        "count": 75810
+      },
+      {
+        "group": "Other ethnic nationalities",
+        "pct": 6.9,
+        "count": 5964
+      },
+      {
+        "group": "Russians",
+        "pct": 5.7,
+        "count": 4934
+      },
+      {
+        "group": "Ethnic nationality unknown",
+        "pct": 0.4,
+        "count": 307
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistics Estonia, table RV0222U",
+        "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0222U",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "68"
+    },
+    "aliases": [
+      "Pärnu county"
+    ],
+    "ethnicity_note": "Ethnic nationality as recorded in the population register on 1 January 2026, not a census answer. Estonia asks it of residents rather than inferring it from citizenship.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "EST-71",
+    "level": "admin1",
+    "name": "Rapla maakond",
+    "parent": "EST",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 33733,
+      "year": 2026,
+      "source": "Statistics Estonia, table RV0222U"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Estonians",
+        "pct": 92.4,
+        "count": 31169
+      },
+      {
+        "group": "Other ethnic nationalities",
+        "pct": 4.3,
+        "count": 1444
+      },
+      {
+        "group": "Russians",
+        "pct": 3.1,
+        "count": 1031
+      },
+      {
+        "group": "Ethnic nationality unknown",
+        "pct": 0.3,
+        "count": 89
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistics Estonia, table RV0222U",
+        "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0222U",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "71"
+    },
+    "aliases": [
+      "Rapla county"
+    ],
+    "ethnicity_note": "Ethnic nationality as recorded in the population register on 1 January 2026, not a census answer. Estonia asks it of residents rather than inferring it from citizenship.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "EST-74",
+    "level": "admin1",
+    "name": "Saare maakond",
+    "parent": "EST",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 31521,
+      "year": 2026,
+      "source": "Statistics Estonia, table RV0222U"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Estonians",
+        "pct": 95.7,
+        "count": 30178
+      },
+      {
+        "group": "Other ethnic nationalities",
+        "pct": 3.2,
+        "count": 1006
+      },
+      {
+        "group": "Russians",
+        "pct": 0.6,
+        "count": 174
+      },
+      {
+        "group": "Ethnic nationality unknown",
+        "pct": 0.5,
+        "count": 163
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistics Estonia, table RV0222U",
+        "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0222U",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "74"
+    },
+    "aliases": [
+      "Saare county"
+    ],
+    "ethnicity_note": "Ethnic nationality as recorded in the population register on 1 January 2026, not a census answer. Estonia asks it of residents rather than inferring it from citizenship.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "EST-79",
+    "level": "admin1",
+    "name": "Tartu maakond",
+    "parent": "EST",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 164825,
+      "year": 2026,
+      "source": "Statistics Estonia, table RV0222U"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Estonians",
+        "pct": 83.5,
+        "count": 137559
+      },
+      {
+        "group": "Russians",
+        "pct": 8.4,
+        "count": 13913
+      },
+      {
+        "group": "Other ethnic nationalities",
+        "pct": 7.9,
+        "count": 13019
+      },
+      {
+        "group": "Ethnic nationality unknown",
+        "pct": 0.2,
+        "count": 334
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistics Estonia, table RV0222U",
+        "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0222U",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "79"
+    },
+    "aliases": [
+      "Tartu county"
+    ],
+    "ethnicity_note": "Ethnic nationality as recorded in the population register on 1 January 2026, not a census answer. Estonia asks it of residents rather than inferring it from citizenship.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "EST-81",
+    "level": "admin1",
+    "name": "Valga maakond",
+    "parent": "EST",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 27034,
+      "year": 2026,
+      "source": "Statistics Estonia, table RV0222U"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Estonians",
+        "pct": 78.0,
+        "count": 21081
+      },
+      {
+        "group": "Russians",
+        "pct": 11.3,
+        "count": 3067
+      },
+      {
+        "group": "Other ethnic nationalities",
+        "pct": 10.2,
+        "count": 2747
+      },
+      {
+        "group": "Ethnic nationality unknown",
+        "pct": 0.5,
+        "count": 139
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistics Estonia, table RV0222U",
+        "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0222U",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "81"
+    },
+    "aliases": [
+      "Valga county"
+    ],
+    "ethnicity_note": "Ethnic nationality as recorded in the population register on 1 January 2026, not a census answer. Estonia asks it of residents rather than inferring it from citizenship.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "EST-84",
+    "level": "admin1",
+    "name": "Viljandi maakond",
+    "parent": "EST",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 44598,
+      "year": 2026,
+      "source": "Statistics Estonia, table RV0222U"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Estonians",
+        "pct": 93.2,
+        "count": 41557
+      },
+      {
+        "group": "Other ethnic nationalities",
+        "pct": 4.3,
+        "count": 1939
+      },
+      {
+        "group": "Russians",
+        "pct": 2.3,
+        "count": 1023
+      },
+      {
+        "group": "Ethnic nationality unknown",
+        "pct": 0.2,
+        "count": 79
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistics Estonia, table RV0222U",
+        "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0222U",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "84"
+    },
+    "aliases": [
+      "Viljandi county"
+    ],
+    "ethnicity_note": "Ethnic nationality as recorded in the population register on 1 January 2026, not a census answer. Estonia asks it of residents rather than inferring it from citizenship.",
+    "ethnicity_year": 2026
+  },
+  {
+    "id": "EST-87",
+    "level": "admin1",
+    "name": "Võru maakond",
+    "parent": "EST",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 33191,
+      "year": 2026,
+      "source": "Statistics Estonia, table RV0222U"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Estonians",
+        "pct": 92.8,
+        "count": 30801
+      },
+      {
+        "group": "Other ethnic nationalities",
+        "pct": 3.7,
+        "count": 1229
+      },
+      {
+        "group": "Russians",
+        "pct": 3.0,
+        "count": 1007
+      },
+      {
+        "group": "Ethnic nationality unknown",
+        "pct": 0.5,
+        "count": 154
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistics Estonia, table RV0222U",
+        "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0222U",
+        "license": "CC BY 4.0"
+      }
+    ],
+    "codes": {
+      "pxweb": "87"
+    },
+    "aliases": [
+      "Võru county"
+    ],
+    "ethnicity_note": "Ethnic nationality as recorded in the population register on 1 January 2026, not a census answer. Estonia asks it of residents rather than inferring it from citizenship.",
+    "ethnicity_year": 2026
+  }
+]

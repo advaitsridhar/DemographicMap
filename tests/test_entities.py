@@ -741,6 +741,82 @@ class LooseNameMatching(unittest.TestCase):
                                       at_start=True))
 
 
+class RivalRowsForOneShape(unittest.TestCase):
+    """Several rows of one adapter reaching the same boundary.
+
+    Nothing stopped it, and whichever came last silently overwrote the rest.
+    England's East, Mid, North and West Devon all reached a shape called Devon
+    -- the source has no plain "Devon" row at all -- so Devon wore West Devon's
+    figures and the other three vanished. Texas's Jackson County reached a shape
+    called Jack. 1,324 rows were being lost this way.
+    """
+
+    def claims(self, *rows):
+        """(row, entity, how) triples, all from one adapter file."""
+        return [({"name": name, "_source": "x.json"}, {"id": eid, "name": shape}, how)
+                for name, eid, shape, how in rows]
+
+    def test_an_outright_match_owns_the_shape(self):
+        # "Rotherham" says its own name; "Rother" arrives through the prefix
+        # pass. Only one of them is the shape's.
+        dropped, notes = be.resolve_collisions(self.claims(
+            ("Rotherham", "E1", "Rotherham", "name"),
+            ("Rother", "E1", "Rotherham", "prefix")))
+        self.assertEqual(dropped, {1})
+        self.assertIn("Rotherham", notes[0])
+
+    def test_nothing_to_separate_them_means_nobody_gets_it(self):
+        # Four Devons and no way to tell which is the shape's: a visible gap
+        # beats an invisible guess.
+        dropped, _ = be.resolve_collisions(self.claims(
+            ("East Devon", "E2", "Devon", "contains"),
+            ("Mid Devon", "E2", "Devon", "contains"),
+            ("North Devon", "E2", "Devon", "contains"),
+            ("West Devon", "E2", "Devon", "contains")))
+        self.assertEqual(dropped, {0, 1, 2, 3})
+
+    def test_a_resolved_parent_outweighs_a_country_wide_guess(self):
+        dropped, _ = be.resolve_collisions(self.claims(
+            ("Jack County, Texas", "E3", "Jack", "prefix+state"),
+            ("Jackson County, Texas", "E3", "Jack", "prefix")))
+        self.assertEqual(dropped, {1})
+
+    def test_two_outright_matches_are_a_duplicated_row_not_a_rivalry(self):
+        # Wikidata carries both "Ancasti" and "Ancasti Department", and
+        # "Department" is a word norm() drops, so both are the same name
+        # reaching the same shape. Refusing them would lose Ancasti to a
+        # duplicate rather than to a mistake.
+        dropped, notes = be.resolve_collisions(self.claims(
+            ("Ancasti", "E4", "Ancasti", "name"),
+            ("Ancasti Department", "E4", "Ancasti", "name")))
+        self.assertEqual(dropped, set())
+        self.assertEqual(notes, [])
+
+    def test_an_outright_match_still_evicts_the_loose_ones_beside_it(self):
+        dropped, _ = be.resolve_collisions(self.claims(
+            ("Dhaka", "E5", "Dhaka", "name"),
+            ("Dhaka District", "E5", "Dhaka", "name"),
+            ("Dhaka North City Corporation", "E5", "Dhaka", "contains"),
+            ("Dhaka-21", "E5", "Dhaka", "prefix")))
+        self.assertEqual(dropped, {2, 3})
+
+    def test_rows_from_different_files_are_not_rivals(self):
+        # India's C-01 and C-16 both describe Kargil, and both should land.
+        rows = [({"name": "Kargil", "_source": "india_district.json"},
+                 {"id": "K", "name": "Kargil"}, "name"),
+                ({"name": "Kargil", "_source": "india_language_district.json"},
+                 {"id": "K", "name": "Kargil"}, "name")]
+        dropped, _ = be.resolve_collisions(rows)
+        self.assertEqual(dropped, set())
+
+    def test_one_row_per_shape_is_never_touched(self):
+        dropped, notes = be.resolve_collisions(self.claims(
+            ("Kerala", "A", "Kerala", "contains"),
+            ("Goa", "B", "Goa", "prefix")))
+        self.assertEqual(dropped, set())
+        self.assertEqual(notes, [])
+
+
 class Admin2Disambiguation(unittest.TestCase):
     """Two shapes, one name: the row must land on the right one or on neither."""
 
@@ -978,6 +1054,254 @@ class ImpliedTotal(unittest.TestCase):
     def test_shares_without_counts_imply_nothing(self):
         self.assertIsNone(be.implied_total([{"group": "A", "pct": 80.0}]))
         self.assertIsNone(be.implied_total([]))
+
+
+class PxWebUnstack(unittest.TestCase):
+    """json-stat2 arrives as one flat array; position is the only record of
+    which cell is which."""
+
+    def setUp(self):
+        from fetch_census import pxweb
+        self.px = pxweb
+
+    def payload(self):
+        # Two counties x three ethnicities, row-major over ["Maakond","Rahvus"].
+        return {
+            "class": "dataset",
+            "id": ["Maakond", "Rahvus"],
+            "size": [2, 3],
+            "dimension": {
+                "Maakond": {"category": {
+                    "index": {"37": 0, "39": 1},
+                    "label": {"37": "Harju county", "39": "Hiiu county"}}},
+                "Rahvus": {"category": {
+                    "index": {"1": 0, "2": 1, "3": 2},
+                    "label": {"1": "Total", "2": "Estonians", "3": "Russians"}}},
+            },
+            "value": [600, 350, 250, 100, 90, 10],
+        }
+
+    def test_each_cell_keeps_its_own_categories(self):
+        cells = dict((tuple(sorted((k, v[0]) for k, v in key.items())), value)
+                     for key, value in self.px.unstack(self.payload()))
+        self.assertEqual(cells[(("Maakond", "37"), ("Rahvus", "2"))], 350)
+        self.assertEqual(cells[(("Maakond", "39"), ("Rahvus", "3"))], 10)
+
+    def test_a_missing_cell_is_skipped_not_shifted(self):
+        payload = self.payload()
+        payload["value"][1] = None
+        codes = [tuple(sorted((k, v[0]) for k, v in key.items()))
+                 for key, _ in self.px.unstack(payload)]
+        self.assertNotIn((("Maakond", "37"), ("Rahvus", "2")), codes)
+        # ...and everything after it still lands where it belongs.
+        cells = dict((tuple(sorted((k, v[0]) for k, v in key.items())), value)
+                     for key, value in self.px.unstack(payload))
+        self.assertEqual(cells[(("Maakond", "39"), ("Rahvus", "3"))], 10)
+
+
+class PxWebLevels(unittest.TestCase):
+    """A PxWeb geography variable holds several levels, and often two vintages
+    of one of them."""
+
+    def setUp(self):
+        from fetch_census import pxweb
+        self.px = pxweb
+
+    def table(self, **kw):
+        return self.px.Table(path="p", field="ethnicity", geo="AREA",
+                             group="ETHNICITY", **kw)
+
+    def test_code_length_pins_the_level(self):
+        # Latvia: country "LV", statistical regions "LV00A", municipalities
+        # "LV0001000" -- and the regions come in a pre-2024 and a post-2024
+        # set that overlap each other.
+        table = self.table(geo_len=9)
+        self.assertTrue(self.px.wanted_area("LV0001000", "Riga", table))
+        self.assertFalse(self.px.wanted_area("LV00A", "Riga region", table))
+        self.assertFalse(self.px.wanted_area("LV", "Latvia", table))
+
+    def test_a_named_total_is_never_a_unit(self):
+        table = self.table()
+        self.assertFalse(self.px.wanted_area("00", "Whole country", table))
+        self.assertFalse(self.px.wanted_area("X", "Total", table))
+
+    def test_a_child_row_is_not_a_unit(self):
+        # Estonia writes Tallinn as "..Tallinn" because it sits inside Harju.
+        table = self.table()
+        self.assertFalse(self.px.wanted_area("784", "..Tallinn", table))
+        self.assertTrue(self.px.wanted_area("37", "Harju county", table))
+
+    def test_explicit_drops_win(self):
+        table = self.table(drop=("unk",))
+        self.assertFalse(self.px.wanted_area("unk", "County unknown", table))
+
+
+class PxWebPartition(unittest.TestCase):
+    """The one control a single table offers: the categories must add up to the
+    total the table itself publishes."""
+
+    def setUp(self):
+        from fetch_census import pxweb
+        self.px = pxweb
+        self.table = self.px.Table(path="p", field="ethnicity", geo="AREA",
+                                   group="E")
+
+    def test_categories_summing_to_the_total_pass(self):
+        self.px.check("EST", self.table,
+                      {"37": {"name": "Harju", "total": 600,
+                              "counts": {"Estonians": 350, "Russians": 250}}})
+
+    def test_a_kept_sub_level_is_caught(self):
+        # Keeping "Other" and its children too is the mistake this catches.
+        with self.assertRaises(SystemExit) as caught:
+            self.px.check("EST", self.table,
+                          {"37": {"name": "Harju", "total": 600,
+                                  "counts": {"Estonians": 350, "Other": 250,
+                                             "Ukrainians": 200}}})
+        self.assertIn("Harju", str(caught.exception))
+
+    def test_a_unit_with_no_published_total_is_not_judged(self):
+        self.px.check("EST", self.table,
+                      {"37": {"name": "Harju", "total": None,
+                              "counts": {"Estonians": 350}}})
+
+    def test_units_must_also_add_up_to_the_country(self):
+        # Every Latvian municipality's own categories added up perfectly while
+        # three towns were counted twice, once alone and once inside the
+        # municipality holding them. Only the national row shows that.
+        units = {"a": {"name": "Jekabpils municipality", "total": 38134,
+                       "counts": {"Latvians": 38134}},
+                 "b": {"name": "Jekabpils", "total": 20685,
+                       "counts": {"Latvians": 20685}}}
+        with self.assertRaises(SystemExit) as caught:
+            self.px.check("LVA", self.table, units, national=38134)
+        self.assertIn("inside another", str(caught.exception))
+
+    def test_units_that_do_add_up_to_the_country_pass(self):
+        units = {"a": {"name": "A", "total": 600, "counts": {"X": 600}},
+                 "b": {"name": "B", "total": 400, "counts": {"X": 400}}}
+        self.px.check("LVA", self.table, units, national=1000)
+
+
+class BalticPlurals(unittest.TestCase):
+    """One people written two ways is one group, not two."""
+
+    def setUp(self):
+        import canonical_groups
+        self.cg = canonical_groups
+        self.lookup = canonical_groups.lookup("ethnicity")
+
+    def canonical(self, label):
+        return self.lookup.get(self.cg.key(label), label)
+
+    def test_a_plural_is_the_same_people_as_its_singular(self):
+        # The Baltic registers write "Russians"; every other source in this
+        # dataset writes "Russian". Unmapped they were two entries for one
+        # people, and neither was the filter anyone wanted.
+        for plural, singular in (("Russians", "Russian"),
+                                 ("Latvians", "Latvian"),
+                                 ("Estonians", "Estonian"),
+                                 ("Ukrainians", "Ukrainian"),
+                                 ("Belarusians", "Belarusian")):
+            self.assertEqual(self.canonical(plural), singular)
+            self.assertEqual(self.canonical(singular), singular)
+
+    def test_a_noun_and_its_adjective_are_one_group(self):
+        self.assertEqual(self.canonical("Poles"), self.canonical("Polish"))
+        self.assertEqual(self.canonical("Jews"), self.canonical("Jewish"))
+
+    def test_both_offices_residuals_are_named_as_residuals(self):
+        # Estonia's "unknown" is a non-response; its "other" is an answer
+        # outside the named list. They are different and both must show.
+        self.assertEqual(self.canonical("Ethnic nationality unknown"),
+                         "Ethnicity not stated")
+        self.assertEqual(self.canonical("Other ethnic nationalities"),
+                         "Other ethnicity")
+        self.assertTrue(self.cg.is_residual(self.canonical("Other ethnic nationalities")))
+
+    def test_latvias_residual_holds_two_things_and_is_not_split(self):
+        # It is "other", "selected none" and "did not indicate" in one cell.
+        # Nothing can separate them, so it goes with "other" and the record's
+        # note says what is inside it.
+        self.assertEqual(
+            self.canonical("Other ethnicities, including not selected and "
+                           "not indicated ethnicity"),
+            "Other ethnicity")
+
+    def test_a_category_that_is_not_a_spelling_is_left_alone(self):
+        # The table admits one name spelled two ways, not two states'
+        # categories folded together.
+        self.assertEqual(self.canonical("White"), "White")
+        self.assertEqual(self.canonical("Mestizo"), "Mestizo")
+
+
+class PxWebNestedLevels(unittest.TestCase):
+    """Code length alone does not always pin a level."""
+
+    def setUp(self):
+        from fetch_census import pxweb
+        self.px = pxweb
+
+    def table(self):
+        return self.px.Table(path="p", field="ethnicity", geo="AREA",
+                             group="E", geo_len=9, geo_stem=6)
+
+    def test_a_town_is_dropped_because_its_municipality_stands_beside_it(self):
+        # Latvia's towns are the same width as their municipalities and differ
+        # only in the tail: "LV0031000" holds "LV0031010".
+        nested = self.px.drop_nested(
+            ["LV0031000", "LV0031010", "LV0003000"], self.table())
+        self.assertEqual(nested, {"LV0031010": "LV0031000"})
+
+    def test_an_odd_tail_alone_in_its_family_is_a_unit_not_a_child(self):
+        # Madona after the July 2025 merge is "LV0038001". A rule that refused
+        # every tail but "000" took it out and lost 29,466 people; nothing
+        # contains it, so nothing should.
+        nested = self.px.drop_nested(
+            ["LV0038001", "LV0031000", "LV0031010"], self.table())
+        self.assertNotIn("LV0038001", nested)
+
+    def test_containment_needs_the_whole_set(self):
+        # One code at a time cannot tell the two cases apart, so the rule is
+        # not asked to: with no municipality present the town is kept.
+        self.assertTrue(self.px.wanted_area("LV0031010", "Jekabpils", self.table()))
+        self.assertEqual(self.px.drop_nested(["LV0031010"], self.table()), {})
+
+    def test_the_language_segment_of_a_base_url_is_swappable(self):
+        # The join key is the office's own local name, because that is what the
+        # boundary file carries. Every instance seen puts the language in the
+        # path and serves the same tables under each one.
+        self.assertEqual(
+            self.px.in_language("https://data.stat.gov.lv/api/v1/en/OSP_PUB", "lv"),
+            "https://data.stat.gov.lv/api/v1/lv/OSP_PUB")
+        self.assertEqual(
+            self.px.in_language("https://andmed.stat.ee/api/v1/en/stat", "et"),
+            "https://andmed.stat.ee/api/v1/et/stat")
+
+    def test_only_the_language_segment_is_swapped(self):
+        # "en" appears in host names and dataset names too; only the segment
+        # right after the version is the language.
+        self.assertEqual(
+            self.px.in_language("https://x.en.example/api/v1/en/en_DATA", "lv"),
+            "https://x.en.example/api/v1/lv/en_DATA")
+
+    def test_a_redrawn_units_vintage_is_not_part_of_its_name(self):
+        # The office distinguishes vintages in the label. A shape file has
+        # never heard of "Madona municipality (from 01.07.2025.)".
+        self.assertEqual(self.px.place_name("Madona municipality (from 01.07.2025.)"),
+                         "Madona municipality")
+        self.assertEqual(self.px.place_name("Valka municipality (until 30.06.2021.)"),
+                         "Valka municipality")
+
+    def test_a_parenthesis_that_is_part_of_a_name_stays(self):
+        self.assertEqual(self.px.place_name("Saint-Denis (Reunion)"),
+                         "Saint-Denis (Reunion)")
+
+    def test_no_stem_means_no_containment_rule(self):
+        table = self.px.Table(path="p", field="ethnicity", geo="AREA",
+                              group="E", geo_len=9)
+        self.assertEqual(
+            self.px.drop_nested(["LV0031000", "LV0031010"], table), {})
 
 
 class SriLanka2024(unittest.TestCase):

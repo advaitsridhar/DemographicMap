@@ -45,6 +45,26 @@ INSTANCES: dict[str, dict[str, str]] = {
             "base": "https://api.statbank.dk/v1"},
     "ISL": {"name": "Statistics Iceland",
             "base": "https://px.hagstofa.is/pxen/api/v1/en/Ibuar"},
+    # The offices this adapter is actually for. The Nordic instances above run
+    # PxWeb well and ask none of the questions Eurostat leaves out; these ask
+    # ethnicity and religion in the same census, which is the gap in the map.
+    # Their base URLs are unverified from here -- the sandbox cannot reach a
+    # statistical host -- so an unreachable one is a result too, and cheaper to
+    # learn from a probe than from a guessed adapter.
+    "SVN": {"name": "Statistical Office of Slovenia",
+            "base": "https://pxweb.stat.si/SiStatData/api/v1/en/Data"},
+    "SVK": {"name": "Statistical Office of Slovakia",
+            "base": "https://datacube.statistics.sk/api/v1/en/DATAcube"},
+    "MKD": {"name": "State Statistical Office of North Macedonia",
+            "base": "https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat"},
+    "SRB": {"name": "Statistical Office of Serbia",
+            "base": "https://data.stat.gov.rs/api/v1/en"},
+    "HRV": {"name": "Croatian Bureau of Statistics",
+            "base": "https://podaci.dzs.hr/api/v1/en"},
+    "GRL": {"name": "Statistics Greenland",
+            "base": "https://bank.stat.gl/api/v1/en/Greenland"},
+    "FRO": {"name": "Statistics Faroe Islands",
+            "base": "https://statbank.hagstova.fo/api/v1/en/H2"},
 }
 
 # What this project can put on a map. "Nationality" is included because several
@@ -53,8 +73,12 @@ WANTED = ("religio", "ethnic", "nationalit", "language", "mother tongue",
           "citizenship", "confession", "denomination")
 
 # Geography variable names, in the languages these instances answer in.
+# "Territorial unit" is Latvia's, and leaving it out made the probe report
+# IRE031 -- population by ethnicity across 57 municipalities -- as national
+# only, which is the one thing a geography probe must not get wrong.
 GEO_HINTS = ("region", "municipal", "county", "area", "district", "province",
-             "kommun", "maakond", "vald", "landsdel")
+             "kommun", "maakond", "vald", "landsdel", "territorial", "unit",
+             "obcina", "občina", "opstina", "okrug", "voivod", "powiat")
 
 THROTTLE = 0.25
 MAX_NODES = 250
@@ -136,12 +160,52 @@ def describe(base: str, table: dict) -> None:
         print("      geography: none with more than five values — national only")
 
 
+def dump(base: str, path: str) -> int:
+    """Every variable of one table, with the codes a query has to name.
+
+    describe() prints labels, which is what a human reads to decide a table is
+    the right one. A query is written against codes, and those are different
+    strings -- Estonia labels a variable "Ethnic nationality" and codes it
+    "Rahvus" -- so configuring an adapter needs this rather than that.
+    """
+    try:
+        meta = get(f"{base}/{path}", timeout=30)
+    except Exception as err:                      # noqa: BLE001
+        print(f"  ! {type(err).__name__}: {str(err)[:120]}")
+        return 1
+    print(f"  title: {meta.get('title', '')[:150]}")
+    for var in meta.get("variables") or []:
+        values = var.get("values") or []
+        texts = var.get("valueTexts") or []
+        print(f"\n  code={var.get('code')!r}  text={var.get('text')!r}  "
+              f"{len(values)} values  elimination={var.get('elimination')}"
+              f"  time={var.get('time')}")
+        for code, text in list(zip(values, texts))[:24]:
+            print(f"      {code!r:<16} {text}")
+        if len(values) > 24:
+            print(f"      ... {len(values) - 24} more")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--countries", default=",".join(INSTANCES))
     ap.add_argument("--max-tables", type=int, default=3)
+    ap.add_argument("--dump", metavar="ISO:TABLE_PATH", action="append", default=[],
+                    help="print one table's variable codes and values in full")
     args = ap.parse_args()
+
+    for spec in args.dump:
+        iso, _, path = spec.partition(":")
+        instance = INSTANCES.get(iso.strip().upper())
+        if not instance:
+            print(f"\n== {iso}: no instance configured")
+            continue
+        print(f"\n== {iso} {instance['name']} :: {path}")
+        dump(instance["base"], path)
+    if args.dump:
+        return 0
 
     for iso in [c.strip().upper() for c in args.countries.split(",") if c.strip()]:
         spec = INSTANCES.get(iso)
