@@ -6,7 +6,13 @@ The ABS Data API serves census tables as SDMX-JSON dataflows.  This pulls:
 * ``C21_G14_LGA`` religious affiliation
 * ``C21_G08_LGA`` ancestry (multi-response: people may report two ancestries,
   so shares sum above 100% and are labelled as responses, not persons)
-* ``C21_G01_LGA`` selected person characteristics (population, median age)
+
+Population comes out of the religion table rather than from a table of its own.
+G14 carries its own total, and religion is asked of everyone -- the question is
+voluntary, but a blank answer is coded "Not stated" rather than dropped -- so
+that total is the region's counted persons. The docstring here used to promise
+``C21_G01`` and the code never fetched it, which is why all 565 LGAs shipped
+with no population at all.
 
 Australia has no ethnicity question. It asks *ancestry* plus country of birth,
 and separately Aboriginal and Torres Strait Islander status; the app keeps those
@@ -29,7 +35,15 @@ from ._shared import (
 
 API = "https://data.api.abs.gov.au/rest/data/{agency},{dataflow},{version}/{key}"
 CATALOGUE = "https://data.api.abs.gov.au/rest/dataflow/ABS?detail=allstubs"
-REGION_TYPE = {"state": "STE", "lga": "LGA", "sa3": "SA3"}
+# The ABS publishes no state-level census table: the catalogue offers CED, LGA,
+# POA, RA, SA2, SAL, SED, SUA and UCL and nothing else, so asking for "STE" used
+# to fall through to Remoteness Areas and return "Major Cities of Australia
+# (NSW)" as though it were a state. The LGA table carries a STATE dimension,
+# though, so the states are read off that -- the ABS's own assignment of each
+# LGA to its state, rather than a guess from geometry.
+REGION_TYPE = {"state": "LGA", "lga": "LGA", "sa3": "SA3"}
+REGION_DIMENSION = {"state": "STATE"}
+ASGS_LEVEL = {"state": "STE", "lga": "LGA", "sa3": "SA3"}
 # Census 2021 table numbers: G14 religious affiliation, G08 ancestry.
 DATAFLOW_HINTS = {"religion": "C21_G14_{r}", "ancestry": "C21_G08_{r}"}
 
@@ -123,6 +137,12 @@ def unpack(payload: dict[str, Any]) -> list[tuple[dict[str, str], float]]:
                 entry = dict(labels)
                 for dim, i in zip(obs_dims, [int(x) for x in obs_key.split(":")]):
                     entry[dim["id"]] = dim["values"][i]["name"]
+                    # The code, not only the label. Series dimensions were
+                    # already carrying theirs and observation dimensions were
+                    # not, which is where the religion classification lives --
+                    # so the one thing that says which categories nest inside
+                    # which never reached the code that needed it.
+                    entry[dim["id"] + "_CODE"] = dim["values"][i]["id"]
                 out.append((entry, float(obs[0])))
     return out
 
@@ -187,23 +207,118 @@ def pick_region_dimension(rows: list[tuple[dict[str, str], float]]) -> str:
 # those, plus the not-stated rows that sit beside them.
 TOTAL_SUFFIX = " total"
 KEEP_ALWAYS = ("not stated", "not applicable", "inadequately described")
+GRAND_TOTAL = ("total", "total persons", "total all persons", "all persons")
+
+
+def strip_total(label: str) -> str:
+    """"Christianity Total" is what the UI would otherwise print."""
+    return label[: -len(TOTAL_SUFFIX)] if label.lower().endswith(TOTAL_SUFFIX) else label
 
 
 def collapse_hierarchy(counts: dict[str, float]) -> dict[str, float]:
-    """Keep one level of a hierarchical classification, never two."""
+    """Keep one level of a hierarchical classification, never two.
+
+    The suffix rule alone is not enough, and cost Australia 2.2 million people.
+    A category with sub-levels is published as "Christianity Total" beside its
+    denominations, so the marker finds it -- but Buddhism, Hinduism, Islam and
+    Judaism have no sub-levels, carry no marker, and were dropped from all 565
+    LGAs. The shortfall was exactly their published national totals: 2,213,332
+    missing against 2,213,173 counted, a difference of 159 people.
+
+    Kept here for the flat case and as the last fallback; `top_level` prefers
+    the classification's own code tree and checks its answer against the
+    published total.
+    """
     totals = {k: v for k, v in counts.items() if k.lower().endswith(TOTAL_SUFFIX)}
     if not totals:
         return counts                      # flat classification (ancestry)
     kept = dict(totals)
     for label, value in counts.items():
         low = label.lower()
-        if low in ("total", "total persons"):
+        if low in GRAND_TOTAL:
             continue                       # the grand total is the denominator
         if any(tag in low for tag in KEEP_ALWAYS) and label not in kept:
             kept[label] = value
-    # Strip the marker so the UI shows "Christianity", not "Christianity Total".
-    return {(k[: -len(TOTAL_SUFFIX)] if k.lower().endswith(TOTAL_SUFFIX) else k): v
-            for k, v in kept.items()}
+    return {strip_total(k): v for k, v in kept.items()}
+
+
+# A code ending in the total marker stands for the branch itself rather than a
+# category beneath it: "7_T" is the Secular branch, and its children are "7101",
+# "7102" and so on -- numbered from "7", not from "7_T". Stripping the marker is
+# what makes a parent a prefix of its own children.
+CODE_TOTAL_SUFFIX = "_T"
+
+
+def branch_code(code: str) -> str:
+    return code[: -len(CODE_TOTAL_SUFFIX)] if code.endswith(CODE_TOTAL_SUFFIX) else code
+
+
+def outermost_by_code(coded: dict[tuple[str, str], float]) -> dict[str, float]:
+    """The level of a code tree nothing else sits above.
+
+    ABS classification codes nest by prefix, and not by width -- the real tree
+    is "1" Buddhism, "2" Christianity Total, "6_T" Other Religions Total, "_N"
+    not stated, with "207" Catholic under "2" and "7101" No Religion under
+    "7_T". A rule that kept the shortest codes would have thrown away every
+    branch whose code carries the marker, and one that ignored the marker would
+    have kept "7101" beside its own parent.
+
+    So: a category is outermost when no other category's branch code is a
+    proper prefix of its own. Buddhism has no children and no marker, and this
+    is the only rule that sees it -- which is the whole point, because it and
+    Hinduism, Islam and Judaism were being dropped from all 565 LGAs.
+    """
+    # The grand total is nobody's parent. Its code is "_T", which the marker
+    # strip turns into the empty string -- a prefix of every code there is, so
+    # leaving it in excluded every category and returned nothing at all.
+    codes = {code for (label, code) in coded
+             if code and label.strip().lower() not in GRAND_TOTAL}
+    if not codes:
+        return {}                          # no codes: nothing to judge with
+    branches = {b for b in (branch_code(code) for code in codes) if b}
+    out: dict[str, float] = {}
+    for (label, code), value in coded.items():
+        if not code or label.strip().lower() in GRAND_TOTAL:
+            continue
+        mine = branch_code(code)
+        if any(mine != other and mine.startswith(other) for other in branches):
+            continue                       # something sits above it
+        out[strip_total(label)] = out.get(strip_total(label), 0.0) + value
+    return out
+
+
+def top_level(coded: dict[tuple[str, str], float], total: float | None
+              ) -> tuple[dict[str, float], str]:
+    """Pick a partition of the population, and let arithmetic judge it.
+
+    Two rules disagree about what the outermost level is, and the published
+    total settles it: a partition of a population sums to that population. The
+    code tree is tried first because it is the classification's own statement
+    of its shape; the suffix rule is the fallback for a source that publishes
+    no codes, and the answer is only preferred when it actually adds up.
+    """
+    flat = {strip_total(label): value for (label, _), value in coded.items()
+            if label.lower() not in GRAND_TOTAL}
+    suffix = collapse_hierarchy(
+        {label: value for (label, _), value in coded.items()})
+    if not total:
+        return suffix, "suffix (no total to check against)"
+    for name, candidate in (("code tree", outermost_by_code(coded)),
+                            ("suffix", suffix),
+                            ("flat", flat)):
+        if not candidate:
+            continue
+        # The ABS perturbs every published count to protect small cells, and
+        # that perturbation is an absolute number of people rather than a
+        # proportion -- so a proportional tolerance alone fails exactly the
+        # regions the perturbation matters most in. Leonora, population 1,588,
+        # came out 53 people short and fell back to the marker rule; so did 47
+        # other LGAs, none of them above 2,520 people, and none out by more
+        # than 53. A level that is missing a whole category is out by far more
+        # than either bound -- Australia's was out by 8.7%, 2.2 million people.
+        if abs(sum(candidate.values()) - total) <= max(0.005 * total, 60):
+            return candidate, name
+    return suffix, "suffix (nothing summed to the total)"
 
 
 def sole_sex_dimension(rows: list[tuple[dict[str, str], float]]) -> tuple[str, str] | None:
@@ -221,21 +336,60 @@ def sole_sex_dimension(rows: list[tuple[dict[str, str], float]]) -> tuple[str, s
 
 
 def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
-                    region_dim: str = "REGION") -> dict[str, dict[str, float]]:
+                    region_dim: str = "REGION"
+                    ) -> tuple[dict[str, dict[str, float]], dict[str, float]]:
+    """The categories per region, and the persons the classification totals to.
+
+    The total was being dropped on the floor. `collapse_hierarchy` skips it --
+    correctly, since it is the denominator and not a category -- but it is also
+    the only population figure this fetch ever sees, and the LGAs had none.
+    """
     sex = sole_sex_dimension(rows)
     if sex:
         key, value = sex
         rows = [(lab, val) for lab, val in rows if lab.get(key) == value]
         log(f"  restricted {key}={value!r} so the sexes are not counted twice")
 
-    out: dict[str, dict[str, float]] = {}
+    # Keyed on (label, code): the code is what says whether a category sits
+    # under another one, and keying on the label alone threw it away before
+    # anything could ask.
+    out: dict[str, dict[tuple[str, str], float]] = {}
     for labels, value in rows:
         region = labels.get(region_dim + "_CODE") or labels.get(region_dim)
         label = labels.get(label_dim)
         if not region or not label:
             continue
-        out.setdefault(region, {})[label] = out.setdefault(region, {}).get(label, 0.0) + value
-    return {region: collapse_hierarchy(counts) for region, counts in out.items()}
+        key = (label, labels.get(label_dim + "_CODE") or "")
+        out.setdefault(region, {})[key] = out.setdefault(region, {}).get(key, 0.0) + value
+
+    grouped: dict[str, dict[str, float]] = {}
+    totals: dict[str, float] = {}
+    picked: dict[str, int] = {}
+    for region, counts in out.items():
+        published = next((v for (label, _), v in counts.items()
+                          if label.strip().lower() in GRAND_TOTAL), None)
+        kept, how = top_level(counts, published)
+        picked[how] = picked.get(how, 0) + 1
+        grouped[region] = kept
+        # The table's own total where it publishes one. Otherwise the collapsed
+        # categories' sum, which partitions the population for religion because
+        # "not stated" is one of them -- but not for a multi-response
+        # classification, which is why only religion's total is used below.
+        totals[region] = published if published is not None else sum(kept.values())
+    for how, n in sorted(picked.items(), key=lambda kv: -kv[1]):
+        log(f"  outermost level chosen by {how} for {n} regions")
+    # When no rule adds up, the categories themselves are the diagnosis, and a
+    # log that only reports the verdict makes the next run a guess. One region
+    # is enough to show the shape of the classification.
+    if out and not any(how.startswith("code tree") for how in picked):
+        region, counts = next(iter(out.items()))
+        published = next((v for (label, _), v in counts.items()
+                          if label.strip().lower() in GRAND_TOTAL), None)
+        log(f"  ! no rule partitioned {label_dim} for region {region}; "
+            f"published total {published}")
+        for (label, code), value in sorted(counts.items(), key=lambda kv: -kv[1])[:24]:
+            log(f"      {code!r:>10}  {value:>12,.0f}  {label}")
+    return grouped, totals
 
 
 def main() -> int:
@@ -257,13 +411,18 @@ def main() -> int:
     log(f"  religion rows {len(religion_rows)}, ancestry rows {len(ancestry_rows)}")
     log(f"  dimensions seen: {dimension_ids(religion_rows or ancestry_rows)}")
 
-    region_dim = pick_region_dimension(religion_rows or ancestry_rows)
+    region_dim = (REGION_DIMENSION.get(args.level)
+                  or pick_region_dimension(religion_rows or ancestry_rows))
     religion_dim = pick_dimension(religion_rows, "religion")
     ancestry_dim = pick_dimension(ancestry_rows, "ancestry")
     log(f"  using region={region_dim!r} religion={religion_dim!r} ancestry={ancestry_dim!r}")
 
-    religion = group_by_region(religion_rows, religion_dim, region_dim) if religion_dim else {}
-    ancestry = group_by_region(ancestry_rows, ancestry_dim, region_dim) if ancestry_dim else {}
+    religion, persons = (group_by_region(religion_rows, religion_dim, region_dim)
+                         if religion_dim else ({}, {}))
+    # Ancestry's total counts responses, not people -- up to two per person --
+    # so it is never a population and is discarded here.
+    ancestry, _ = (group_by_region(ancestry_rows, ancestry_dim, region_dim)
+                   if ancestry_dim else ({}, {}))
     if religion_rows and not religion:
         log("  ! religion rows returned but none grouped -- dimension detection failed")
 
@@ -273,6 +432,10 @@ def main() -> int:
         if code:
             names.setdefault(code, labels.get(region_dim, code))
 
+    if persons:
+        log(f"  population from the religion table's own total for "
+            f"{sum(1 for v in persons.values() if v)} of {len(persons)} regions; "
+            f"they sum to {sum(persons.values()):,.0f}")
     if religion:
         sample = next(iter(religion.values()))
         biggest = max(sample.values()) if sample else 0
@@ -288,7 +451,9 @@ def main() -> int:
         records.append(record(
             f"AUS-{code}", names.get(code, code),
             level="admin1" if args.level == "state" else "admin2",
-            parent="AUS", codes={"asgs": code, "asgs_level": suffix},
+            parent="AUS", codes={"asgs": code, "asgs_level": ASGS_LEVEL[args.level]},
+            population=(measure(int(round(persons[code])), year=2021, source=src)
+                        if persons.get(code) else gap(NOT_AVAILABLE)),
             religion=shares(rel) or gap(NOT_AVAILABLE),
             religion_note="ABS 2021 religious affiliation; the question is voluntary and "
                           "'not stated' is retained as its own category.",
@@ -299,10 +464,18 @@ def main() -> int:
                           "Australia's census does not ask ethnicity. It asks ancestry and "
                           "country of birth, plus a separate Aboriginal and Torres Strait "
                           "Islander status question."),
-            sources=[{"field": "religion/ancestry", "name": src,
+            sources=[{"field": "population/religion/ancestry", "name": src,
                       "url": "https://data.api.abs.gov.au/",
                       "license": "CC BY 4.0"}],
         ))
+    # Australia has eight states and territories. A "state" run that comes back
+    # with fifty-three of something is not a state run, and the last one wrote
+    # remoteness areas into the file the build reads as admin-1.
+    if args.level == "state" and not 5 <= len(records) <= 12:
+        log(f"  ! {len(records)} records for --level state; Australia has 8 states "
+            f"and territories. Refusing to write: {[r['name'] for r in records[:6]]}")
+        return 1
+
     write_json(args.out or PROCESSED / f"australia_{args.level}.json", records)
     log(f"  {len(records)} records")
     return 0
