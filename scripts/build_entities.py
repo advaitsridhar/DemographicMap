@@ -445,6 +445,180 @@ def match_admin2(row: dict[str, Any], by_name: dict[str, list[dict[str, Any]]],
     return None, "unmatched"
 
 
+# ---------------------------------------------------------------------------
+# Summing a parent from its children
+# ---------------------------------------------------------------------------
+
+ROLLUP_FIELDS = ("religion", "language", "ethnicity")
+
+# How far the children's population may sit from the parent's own before the
+# sum is refused. Rounding and small-cell suppression move it a little -- New
+# Zealand randomly rounds every count to a multiple of three -- and anything
+# beyond this is the two figures describing different things.
+ROLLUP_TOLERANCE = 0.02
+
+
+def published(value: Any) -> float | None:
+    """A measured number, or None for a gap marker or anything else."""
+    if isinstance(value, dict) and isinstance(value.get("value"), (int, float)):
+        return float(value["value"])
+    return None
+
+
+def implied_total(groups: list[dict[str, Any]]) -> float | None:
+    """The denominator a composition's own percentages were taken against.
+
+    Not the unit's population, which is a different number more often than not:
+    Mexico publishes indigenous-language shares of the population aged three and
+    over, and New Zealand's ethnicity responses outnumber its people because one
+    person may give several. Backing the denominator out of the rows keeps
+    whatever basis the source used, so a parent summed from its children states
+    the same kind of thing its children state.
+
+    Taken from the largest group, whose percentage carries the least rounding
+    error: a category at 0.0% would imply any denominator at all.
+    """
+    best: tuple[float, float] | None = None
+    for row in groups:
+        pct, count = row.get("pct"), row.get("count")
+        if not isinstance(pct, (int, float)) or not isinstance(count, (int, float)):
+            continue
+        if pct <= 0:
+            continue
+        if best is None or count > best[0]:
+            best = (count, count / (pct / 100.0))
+    return best[1] if best else None
+
+
+def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
+                  field: str) -> str | None:
+    """Fill a parent's composition by summing a complete set of its children.
+
+    Ladakh is the case this exists for. It became a union territory in 2019, so
+    the 2011 census that supplies India's district figures never published a row
+    for it -- but it published both of its districts, Leh and Kargil, and their
+    counts sum to exactly the population Wikidata gives Ladakh: 274,289. A
+    territory whose every constituent part is measured should not read as
+    unmeasured.
+
+    Returns a reason string when it refuses, so the build can say what it did
+    not do and why. The refusals are the point of the function as much as the
+    sums are:
+
+      * Australia's LGAs carry religion but no population, so their populations
+        sum to zero. Weighting by nothing would produce a state figure with no
+        basis at all -- nine states' worth.
+      * Wales' 22 children sum to 3,107,513 against a parent figure of
+        1,168,000. Whatever those two numbers are counting, it is not the same
+        people, and a sum across that gap would be invented.
+
+    Only a parent with an independently published population can be checked at
+    all, so only such a parent is filled. A control that came from the same
+    source as the children would prove the arithmetic and nothing else.
+    """
+    current = parent.get(field)
+    if isinstance(current, list):
+        return None                                   # already has a real value
+    if isinstance(current, dict) and current.get("status") == NOT_COLLECTED:
+        return None            # a policy statement, not a gap: leave it standing
+    if not children:
+        return None
+
+    missing = [c for c in children if not isinstance(c.get(field), list)]
+    if missing:
+        # Partial coverage is the dangerous case: the sum would look whole and
+        # describe only part of the territory.
+        return (f"{len(missing)} of {len(children)} children have no {field}"
+                if len(missing) < len(children) else None)
+
+    own = published(parent.get("population"))
+    if own is None:
+        return f"{field}: no published population to check the sum against"
+    kid_pop = [published(c.get("population")) for c in children]
+    if any(v is None for v in kid_pop):
+        return f"{field}: {sum(v is None for v in kid_pop)} children have no population"
+    total_pop = sum(kid_pop)                                    # type: ignore[arg-type]
+    if not total_pop or abs(total_pop - own) > ROLLUP_TOLERANCE * own:
+        return (f"{field}: children sum to {total_pop:,.0f} against a published "
+                f"{own:,.0f}")
+
+    counts: dict[str, float] = {}
+    denominator = 0.0
+    for child in children:
+        share = implied_total(child[field])
+        if share is None:
+            return f"{field}: a child publishes shares with no counts"
+        denominator += share
+        for row in child[field]:
+            count = row.get("count")
+            if not isinstance(count, (int, float)):
+                return f"{field}: a child publishes shares with no counts"
+            counts[row.get("group", "")] = counts.get(row.get("group", ""), 0) + count
+    if denominator <= 0:
+        return f"{field}: the children's percentages imply no denominator"
+
+    parent[field] = [{"group": name,
+                      "pct": round(100.0 * total / denominator, 1),
+                      "count": int(round(total))}
+                     # Name breaks a tie, so two groups of equal size do not
+                     # swap places between runs: build.json is a digest of the
+                     # written files, and a churning order would invalidate
+                     # every reader's cache for no change in the figures.
+                     for name, total in sorted(counts.items(),
+                                               key=lambda kv: (-kv[1], kv[0]))]
+    # Said on the record itself, not only in the source list: a figure nobody
+    # published is a different kind of claim from one somebody did, and the
+    # panel that shows the bars is where a reader would want to be told.
+    many = len(children) != 1
+    parent[f"{field}_note"] = (
+        f"Summed from all {len(children)} second-level division"
+        f"{'s' if many else ''}; no source publishes this figure for the unit "
+        f"itself. {'Their' if many else 'Its'} population"
+        f"{'s total' if many else ' is'} {total_pop:,.0f} against a published "
+        f"{own:,.0f} for the unit.")
+    years = {c.get(f"{field}_year") for c in children} - {None}
+    if len(years) == 1:
+        parent[f"{field}_year"] = years.pop()
+    # Keyed on name *and* field, not name alone: one census appears in a record
+    # several times under different fields, and Ladakh already carried this one
+    # as the source of its "became a union territory in 2019" note. Deduplicating
+    # by name dropped the entry that says where the religion figures came from,
+    # which is the entry a reader would go looking for.
+    seen = {(src.get("name"), src.get("field")) for src in parent.get("sources", [])}
+    for child in children:
+        for src in child.get("sources", []):
+            mark = (src.get("name"), src.get("field"))
+            if field in (src.get("field") or "") and mark not in seen:
+                seen.add(mark)
+                parent.setdefault("sources", []).append(dict(src))
+    return None
+
+
+def roll_up_parents(admin1_by_country: dict[str, list[dict[str, Any]]],
+                    admin2_by_country: dict[str, list[dict[str, Any]]]) -> None:
+    """Fill what can be summed, and say what could not be."""
+    filled: list[str] = []
+    refused: list[str] = []
+    for iso3, parents in sorted(admin1_by_country.items()):
+        kids: dict[str | None, list[dict[str, Any]]] = defaultdict(list)
+        for entity in admin2_by_country.get(iso3, []):
+            kids[entity.get("parent")].append(entity)
+        for parent in parents:
+            children = kids.get(parent["id"], [])
+            for field in ROLLUP_FIELDS:
+                before = parent.get(field)
+                why = roll_up_field(parent, children, field)
+                if why:
+                    refused.append(f"{iso3} {parent['name']}: {why}")
+                elif parent.get(field) is not before:
+                    filled.append(f"{iso3} {parent['name']} {field}")
+    if filled:
+        log(f"  summed {len(filled)} admin1 fields from their children: "
+            + ", ".join(filled[:8]) + (" ..." if len(filled) > 8 else ""))
+    for line in refused:
+        log(f"  not summed -- {line}")
+
+
 DISPUTED_NOTE = ("Disputed or special-status territory as delimited by geoBoundaries "
                  "CGAZ, which follows US Department of State definitions. Shown for "
                  "completeness; no sovereignty claim is implied and no demographic "
@@ -782,6 +956,12 @@ def main() -> int:
         top = sorted(policy_hits.items(), key=lambda kv: -kv[1])[:8]
         log(f"  collection policy marked {total} subnational fields as not_collected: "
             + ", ".join(f"{k} {v}" for k, v in top))
+
+    # -- sum parents from children -------------------------------------------
+    # After the policy, so "not collected" still wins: a country that does not
+    # ask the question has no children to sum, and must not be given a figure by
+    # a later pass that only looks at arithmetic.
+    roll_up_parents(admin1_by_country, admin2_by_country)
 
     # -- write ---------------------------------------------------------------
     out = args.out

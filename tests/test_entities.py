@@ -558,6 +558,122 @@ class RowPointAndBox(unittest.TestCase):
         self.assertFalse(be.within_bbox([3, 1], [0, 0, 2, 2]))
 
 
+class RollUpFromChildren(unittest.TestCase):
+    """Summing a parent whose every constituent part is measured.
+
+    Ladakh is the case: a union territory since 2019, so the 2011 census that
+    supplies India's district figures never published a row for it, while
+    publishing both of its districts.
+    """
+
+    def parent(self, population=1000):
+        return {"id": "P", "name": "Ladakh",
+                "population": {"value": population, "year": 2011, "source": "Wikidata"},
+                "religion": {"status": "not_available"}, "sources": []}
+
+    def child(self, name, pop, groups):
+        total = sum(groups.values())
+        return {"id": name, "name": name, "parent": "P",
+                "population": {"value": pop, "year": 2011, "source": "Census"},
+                "religion": [{"group": g, "pct": round(100 * c / total, 1), "count": c}
+                             for g, c in groups.items()],
+                "religion_year": 2011,
+                "sources": [{"field": "population/religion", "name": "Census"}]}
+
+    def kids(self):
+        return [self.child("Leh", 600, {"Buddhist": 400, "Muslim": 200}),
+                self.child("Kargil", 400, {"Muslim": 300, "Buddhist": 100})]
+
+    def test_a_complete_set_of_children_is_summed(self):
+        parent = self.parent()
+        self.assertIsNone(be.roll_up_field(parent, self.kids(), "religion"))
+        # Equal counts, so the name breaks the tie and the order is stable.
+        self.assertEqual([(g["group"], g["pct"], g["count"]) for g in parent["religion"]],
+                         [("Buddhist", 50.0, 500), ("Muslim", 50.0, 500)])
+        self.assertIn("Summed from all 2", parent["religion_note"])
+        self.assertEqual(parent["religion_year"], 2011)
+
+    def test_the_source_travels_with_the_figure(self):
+        # Keyed on name and field: a record carries one census several times.
+        parent = self.parent()
+        parent["sources"] = [{"field": "note", "name": "Census"}]
+        be.roll_up_field(parent, self.kids(), "religion")
+        self.assertIn(("population/religion", "Census"),
+                      {(s.get("field"), s.get("name")) for s in parent["sources"]})
+
+    def test_a_partial_set_of_children_is_refused(self):
+        # The dangerous case: the sum would look whole and cover part of the
+        # territory. Nine of England's 150 children have no religion.
+        parent = self.parent()
+        kids = self.kids()
+        kids[1]["religion"] = {"status": "not_available"}
+        why = be.roll_up_field(parent, kids, "religion")
+        self.assertIn("1 of 2", why)
+        self.assertNotIsInstance(parent["religion"], list)
+
+    def test_children_that_do_not_add_up_are_refused(self):
+        # Wales' 22 children sum to 3,107,513 against a published 1,168,000.
+        parent = self.parent(population=3000)
+        why = be.roll_up_field(parent, self.kids(), "religion")
+        self.assertIn("children sum to", why)
+        self.assertNotIsInstance(parent["religion"], list)
+
+    def test_children_without_population_are_refused(self):
+        # Australia's LGAs carry religion and no population, so weighting them
+        # would weight by nothing at all.
+        parent = self.parent()
+        kids = self.kids()
+        for kid in kids:
+            kid["population"] = {"status": "not_available"}
+        self.assertIn("no population", be.roll_up_field(parent, kids, "religion"))
+        self.assertNotIsInstance(parent["religion"], list)
+
+    def test_a_parent_with_no_population_cannot_be_checked(self):
+        parent = self.parent()
+        parent["population"] = {"status": "not_available"}
+        self.assertIn("no published population",
+                      be.roll_up_field(parent, self.kids(), "religion"))
+
+    def test_a_real_value_is_never_overwritten(self):
+        parent = self.parent()
+        parent["religion"] = [{"group": "Buddhist", "pct": 100.0, "count": 1000}]
+        self.assertIsNone(be.roll_up_field(parent, self.kids(), "religion"))
+        self.assertEqual(parent["religion"][0]["pct"], 100.0)
+
+    def test_not_collected_is_a_statement_and_stands(self):
+        parent = self.parent()
+        parent["religion"] = {"status": "not_collected",
+                              "note": "France records no religion."}
+        self.assertIsNone(be.roll_up_field(parent, self.kids(), "religion"))
+        self.assertEqual(parent["religion"]["status"], "not_collected")
+
+    def test_the_denominator_comes_from_the_shares_not_the_population(self):
+        # New Zealand's ethnicity responses outnumber its people, and Mexico
+        # reports language shares of the population aged three and over. A sum
+        # against total population would restate both as something else.
+        parent = self.parent()
+        kids = [{"id": "A", "name": "A", "parent": "P",
+                 "population": {"value": 1000, "year": 2020, "source": "S"},
+                 "religion": [{"group": "Maori", "pct": 60.0, "count": 480},
+                              {"group": "European", "pct": 70.0, "count": 560}],
+                 "sources": []}]
+        self.assertIsNone(be.roll_up_field(parent, kids, "religion"))
+        # 480/800 and 560/800: the basis the child used, carried through.
+        self.assertEqual([g["pct"] for g in parent["religion"]], [70.0, 60.0])
+
+
+class ImpliedTotal(unittest.TestCase):
+    def test_the_largest_group_sets_the_denominator(self):
+        # A category at 0.0% would imply any denominator at all.
+        rows = [{"group": "A", "pct": 80.0, "count": 800},
+                {"group": "B", "pct": 0.0, "count": 1}]
+        self.assertAlmostEqual(be.implied_total(rows), 1000.0)
+
+    def test_shares_without_counts_imply_nothing(self):
+        self.assertIsNone(be.implied_total([{"group": "A", "pct": 80.0}]))
+        self.assertIsNone(be.implied_total([]))
+
+
 class SriLanka2024(unittest.TestCase):
     """The 2024 census workbooks: trilingual labels, and the source's own check."""
 
