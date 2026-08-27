@@ -419,6 +419,37 @@ class AbsHierarchyCollapse(unittest.TestCase):
                          {"Christianity": 10.0})
 
 
+class AbsUnpackCarriesCodes(unittest.TestCase):
+    """A dimension's code is what says which categories nest inside which.
+
+    Series dimensions were carrying theirs and observation dimensions were not,
+    and the religion classification lives in the observation dimensions -- so
+    the code tree never saw a single code and always fell back.
+    """
+
+    def setUp(self):
+        from fetch_census import abs as abs_adapter
+        self.abs = abs_adapter
+
+    def payload(self):
+        return {"data": {
+            "structures": [{"dimensions": {
+                "series": [{"id": "REGION", "values": [{"id": "10050", "name": "Albury"}]}],
+                "observation": [{"id": "RELP", "values": [{"id": "1", "name": "Buddhism"},
+                                                          {"id": "2", "name": "Christianity"}]}],
+            }}],
+            "dataSets": [{"series": {"0": {"observations": {"0": [615.0], "1": [11480.0]}}}}],
+        }}
+
+    def test_both_kinds_of_dimension_carry_a_code(self):
+        rows = self.abs.unpack(self.payload())
+        self.assertEqual(len(rows), 2)
+        by_label = {lab["RELP"]: lab for lab, _ in rows}
+        self.assertEqual(by_label["Buddhism"]["RELP_CODE"], "1")
+        self.assertEqual(by_label["Christianity"]["RELP_CODE"], "2")
+        self.assertEqual(by_label["Buddhism"]["REGION_CODE"], "10050")
+
+
 class AbsOutermostLevel(unittest.TestCase):
     """Which level of a nested classification is one whole population.
 

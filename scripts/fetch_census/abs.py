@@ -35,7 +35,15 @@ from ._shared import (
 
 API = "https://data.api.abs.gov.au/rest/data/{agency},{dataflow},{version}/{key}"
 CATALOGUE = "https://data.api.abs.gov.au/rest/dataflow/ABS?detail=allstubs"
-REGION_TYPE = {"state": "STE", "lga": "LGA", "sa3": "SA3"}
+# The ABS publishes no state-level census table: the catalogue offers CED, LGA,
+# POA, RA, SA2, SAL, SED, SUA and UCL and nothing else, so asking for "STE" used
+# to fall through to Remoteness Areas and return "Major Cities of Australia
+# (NSW)" as though it were a state. The LGA table carries a STATE dimension,
+# though, so the states are read off that -- the ABS's own assignment of each
+# LGA to its state, rather than a guess from geometry.
+REGION_TYPE = {"state": "LGA", "lga": "LGA", "sa3": "SA3"}
+REGION_DIMENSION = {"state": "STATE"}
+ASGS_LEVEL = {"state": "STE", "lga": "LGA", "sa3": "SA3"}
 # Census 2021 table numbers: G14 religious affiliation, G08 ancestry.
 DATAFLOW_HINTS = {"religion": "C21_G14_{r}", "ancestry": "C21_G08_{r}"}
 
@@ -129,6 +137,12 @@ def unpack(payload: dict[str, Any]) -> list[tuple[dict[str, str], float]]:
                 entry = dict(labels)
                 for dim, i in zip(obs_dims, [int(x) for x in obs_key.split(":")]):
                     entry[dim["id"]] = dim["values"][i]["name"]
+                    # The code, not only the label. Series dimensions were
+                    # already carrying theirs and observation dimensions were
+                    # not, which is where the religion classification lives --
+                    # so the one thing that says which categories nest inside
+                    # which never reached the code that needed it.
+                    entry[dim["id"] + "_CODE"] = dim["values"][i]["id"]
                 out.append((entry, float(obs[0])))
     return out
 
@@ -352,7 +366,8 @@ def main() -> int:
     log(f"  religion rows {len(religion_rows)}, ancestry rows {len(ancestry_rows)}")
     log(f"  dimensions seen: {dimension_ids(religion_rows or ancestry_rows)}")
 
-    region_dim = pick_region_dimension(religion_rows or ancestry_rows)
+    region_dim = (REGION_DIMENSION.get(args.level)
+                  or pick_region_dimension(religion_rows or ancestry_rows))
     religion_dim = pick_dimension(religion_rows, "religion")
     ancestry_dim = pick_dimension(ancestry_rows, "ancestry")
     log(f"  using region={region_dim!r} religion={religion_dim!r} ancestry={ancestry_dim!r}")
@@ -391,7 +406,7 @@ def main() -> int:
         records.append(record(
             f"AUS-{code}", names.get(code, code),
             level="admin1" if args.level == "state" else "admin2",
-            parent="AUS", codes={"asgs": code, "asgs_level": suffix},
+            parent="AUS", codes={"asgs": code, "asgs_level": ASGS_LEVEL[args.level]},
             population=(measure(int(round(persons[code])), year=2021, source=src)
                         if persons.get(code) else gap(NOT_AVAILABLE)),
             religion=shares(rel) or gap(NOT_AVAILABLE),
@@ -408,6 +423,14 @@ def main() -> int:
                       "url": "https://data.api.abs.gov.au/",
                       "license": "CC BY 4.0"}],
         ))
+    # Australia has eight states and territories. A "state" run that comes back
+    # with fifty-three of something is not a state run, and the last one wrote
+    # remoteness areas into the file the build reads as admin-1.
+    if args.level == "state" and not 5 <= len(records) <= 12:
+        log(f"  ! {len(records)} records for --level state; Australia has 8 states "
+            f"and territories. Refusing to write: {[r['name'] for r in records[:6]]}")
+        return 1
+
     write_json(args.out or PROCESSED / f"australia_{args.level}.json", records)
     log(f"  {len(records)} records")
     return 0
