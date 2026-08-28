@@ -181,9 +181,9 @@ def figure_row(cells: list[Cell]) -> bool:
     return bool(cells) and cells[0][2] in SEXES_START
 
 
-def column_edges(pages: list[list[list[Cell]]],
-                 province: str) -> list[tuple[float, float]]:
-    """Where each column ends, learned from the figures themselves.
+def column_edges(rows: list[list[Cell]], province: str,
+                 page: int) -> list[tuple[float, float]]:
+    """Where each column ends on one page, learned from its own figures.
 
     Not from the header. Its numbered row looks like the obvious authority and
     is not one: in Punjab the numerals are set flush right with their columns,
@@ -194,25 +194,24 @@ def column_edges(pages: list[list[list[Cell]]],
 
     The figures agree with each other where the header does not. They are set
     flush right, so every value in a column ends within a point or two of the
-    same x, on every row and every page.
+    same x.
 
-    A band rather than a single x, because a column has two families of figure
-    in it: the province is written 40,641,120 and its districts 1397587,
-    without the separators, and the two end two points apart. Taking the
-    middle of the band and allowing a fixed tolerance around it put Abbottabad
-    outside its own column, so the band is carried and a figure is asked to
-    fall inside it.
+    One page at a time, because the table sits at its own horizontal offset on
+    each page: Khyber Pakhtunkhwa's columns end at 177-179 on page 1 and some
+    twenty points to the left elsewhere. Learned across the document, the
+    commonest edges were a mixture of offsets matching no page, and page 1's
+    own totals were refused as belonging to no column of their own table.
 
-    Counted by how often each edge occurs, so that a column mostly filled with
-    the office's dash still has hundreds of rows saying where it is.
+    A band rather than a single x, because a column holds two families of
+    figure: the province is written 40,641,120 and its districts 1397587,
+    without the separators, and the two end two points apart.
     """
     tally: dict[int, int] = {}
-    for rows in pages:
-        for cells in rows:
-            if not figure_row(cells):
-                continue
-            for right, _value in groups(cells):
-                tally[round(right)] = tally.get(round(right), 0) + 1
+    for cells in rows:
+        if not figure_row(cells):
+            continue
+        for right, _value in groups(cells):
+            tally[round(right)] = tally.get(round(right), 0) + 1
 
     # Adjacent x are one column's band. Columns sit some forty points apart
     # and a band spans a few, so nothing here can bridge two of them.
@@ -224,19 +223,24 @@ def column_edges(pages: list[list[list[Cell]]],
             bands.append([x])
     weighed = sorted(((sum(tally[x] for x in band), band) for band in bands),
                      reverse=True)
+    census = ", ".join(
+        f"{band[0]}-{band[-1]}x{count}" if len(band) > 1 else f"{band[0]}x{count}"
+        for count, band in sorted(weighed, key=lambda w: w[1][0]))
 
     if len(weighed) < len(COLUMNS):
         raise SystemExit(
-            f"{province}: {len(weighed)} column edges in the figures, wanted "
-            f"{len(COLUMNS)} -- the table is not shaped the way this reads it")
+            f"{province} page {page}: {len(weighed)} column edges in the "
+            f"figures, wanted {len(COLUMNS)} -- the table is not shaped the "
+            f"way this reads it. Edges found: {census}")
     # Anything else that occurs often is a tenth column, and a tenth column
     # means the reading is wrong rather than that one row is odd.
     rest = weighed[len(COLUMNS):]
     if rest and rest[0][0] > weighed[len(COLUMNS) - 1][0] / 10:
         raise SystemExit(
-            f"{province}: a tenth column ending near x={rest[0][1][0]} occurs "
-            f"{rest[0][0]} times against {weighed[len(COLUMNS) - 1][0]} for "
-            "the least common of the nine taken")
+            f"{province} page {page}: a tenth column ending near "
+            f"x={rest[0][1][0]} occurs {rest[0][0]} times against "
+            f"{weighed[len(COLUMNS) - 1][0]} for the least common of the nine "
+            f"taken. Edges found: {census}")
     return sorted((float(band[0]), float(band[-1]))
                   for _count, band in weighed[:len(COLUMNS)])
 
@@ -292,7 +296,7 @@ def districts(blob: bytes, province: str) -> dict[str, dict[str, int]]:
     skipped_tehsils = 0
     geometries: list[tuple[tuple[float, float], ...]] = []
 
-    for rows in words_by_row(blob):
+    for page, rows in enumerate(words_by_row(blob), start=1):
         edges: list[tuple[float, float]] | None = None
         for cells in rows:
             line = " ".join(t for _a, _b, t in cells)
@@ -320,7 +324,7 @@ def districts(blob: bytes, province: str) -> dict[str, dict[str, int]]:
                 # Read when the page first has something to place, so a page
                 # this reader cannot make sense of is only fatal if a district
                 # is actually on it.
-                edges = column_edges([rows], province)
+                edges = column_edges(rows, province, page)
                 geometries.append(tuple(edges))
             numbers = values(cells, edges, province, current)
             if numbers and current not in found:

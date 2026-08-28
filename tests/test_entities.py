@@ -1686,7 +1686,7 @@ class PakistanColumns(unittest.TestCase):
         self.punjab = [self.row(spec) for spec in self.PUNJAB]
 
     def edges(self, rows, province="test"):
-        return self.pk.column_edges([rows], province)
+        return self.pk.column_edges(rows, province, 1)
 
     def read(self, rows, cells):
         return dict(zip(self.pk.COLUMNS,
@@ -1706,7 +1706,7 @@ class PakistanColumns(unittest.TestCase):
         # side is not enough; a figure has to fall inside the band.
         district = [(x0 + 2, x1 + 2, t.replace(",", "")) if t[0].isdigit()
                     else (x0, x1, t) for x0, x1, t in self.kp[0]]
-        edges = self.pk.column_edges([self.kp + [district]], "test")
+        edges = self.pk.column_edges(self.kp + [district], "test", 1)
         self.assertEqual([(round(lo), round(hi)) for lo, hi in edges[:2]],
                          [(177, 179), (226, 228)])
         got = dict(zip(self.pk.COLUMNS,
@@ -1764,7 +1764,8 @@ class PakistanColumns(unittest.TestCase):
 
     def test_a_table_with_too_few_columns_is_refused(self):
         with self.assertRaises(SystemExit) as caught:
-            self.pk.column_edges([[self.row("ALL[49-60] 1,117[161-177]")]], "test")
+            self.pk.column_edges([self.row("ALL[49-60] 1,117[161-177]")],
+                                 "test", 1)
         self.assertIn("column edges in the figures", str(caught.exception))
 
     def reconciling(self):
