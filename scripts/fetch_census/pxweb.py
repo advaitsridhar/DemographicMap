@@ -60,7 +60,7 @@ class Table:
                  keep: dict[str, str] | None = None, year: int | None = None,
                  note: str = "", drop: tuple[str, ...] = (),
                  geo_len: int | None = None, geo_stem: int | None = None,
-                 national: str | None = None):
+                 geo_prefix: str | None = None, national: str | None = None):
         self.path = path
         self.field = field
         self.geo = geo
@@ -82,6 +82,14 @@ class Table:
         # a town can be recognised by the municipality standing beside it
         # rather than by a rule about tails. See drop_nested().
         self.geo_stem = geo_stem
+        # Some offices say the level in the code rather than in its width.
+        # Finland's regions are "MK01".."MK21" and the aggregates beside them
+        # are "SSS" whole country, "MA1" mainland and "MA2" Aland; a length
+        # rule would separate them here by luck, because every MK code happens
+        # to be one character longer, and would stop being true the day an
+        # aggregate got a fourth character. "MK" is the office's own word for
+        # the level.
+        self.geo_prefix = geo_prefix
         # The geography code that means the whole country. Not guessable from
         # the label: Estonia calls that row "Whole country" and Latvia calls it
         # "Latvia", so looking for the word "total" found Estonia's and missed
@@ -94,13 +102,32 @@ class Table:
 # down by a geography the boundary files can join.
 #
 # Ten instances were walked. Lithuania, Slovakia, Croatia and Serbia answered
-# 404 or something that was not JSON at the base URLs tried. Finland rate-limits
-# metadata requests and asks language rather than ethnicity. Iceland, Norway,
-# Sweden and Denmark ask citizenship, which is a different question. North
-# Macedonia's tree returned only broadcast-language tables at the depth walked.
-# Slovenia has ethnicity by all 193 municipalities but only from the 1991
-# census, against boundaries that have been redrawn twice since, so it is left
-# out rather than joined across thirty-five years of redistricting.
+# 404 or something that was not JSON at the base URLs tried. North Macedonia's
+# tree returned only broadcast-language tables at the depth walked. Slovenia has
+# ethnicity by all 193 municipalities but only from the 1991 census, against
+# boundaries that have been redrawn twice since, so it is left out rather than
+# joined across thirty-five years of redistricting.
+#
+# The Nordic offices were written off in that pass and should not have been.
+# The line said they "ask citizenship, which is a different question", and of
+# Finland that it "rate-limits metadata requests and asks language rather than
+# ethnicity". Both halves are wrong. Ethnicity is not the only field here --
+# language is one of the four, and Finland records mother tongue in the
+# population register for every resident, which is a count rather than a
+# sample. And the rate-limiting was a fact about the probe's pacing, not about
+# the data: StatFin answers 429 under a brisk walk, the probe read that as an
+# unreachable node, and an empty result became a conclusion about the country.
+# Re-walked with backoff, that instance returns 44 candidate tables.
+#
+# Walked properly, the other three come out like this. Sweden has neither
+# question -- six candidate tables, all citizenship, on a tree that finished
+# inside its budget, so that absence is real. Norway publishes membership of
+# religious and life-stance communities by region, and every such table counts
+# communities *outside* the Church of Norway; the Church is two-thirds of the
+# country and is published by diocese, which does not nest into the counties,
+# so a share from it would be of minority-community members rather than of
+# population. Iceland registers 64 religious organisations annually and the
+# table carries no geography at all. Denmark is StatBank rather than PxWeb.
 #
 # What is left is the two Baltic offices, and they are the point: neither
 # country has had any ethnicity figure in this dataset, and both publish one
@@ -135,6 +162,64 @@ INSTANCES: dict[str, dict[str, Any]] = {
             note="Ethnic nationality as recorded in the population register on "
                  "1 January 2026, not a census answer. Estonia asks it of "
                  "residents rather than inferring it from citizenship."),
+        ],
+    },
+    "FIN": {
+        "name": "Statistics Finland",
+        "base": "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin",
+        "source": "Statistics Finland, table 11rl",
+        "url": "https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__vaerak/"
+               "statfin_vaerak_pxt_11rl.px",
+        "licence": "CC BY 4.0",
+        "level": "admin1",
+        "file": "finland_region",
+        # Finland's regions are named inconsistently in the boundary file --
+        # "Central Finland" and "Lapland" in English beside "Kainuu" and
+        # "Keski-Pohjanmaa" in Finnish -- so neither language reaches all 19 on
+        # its own. Taking the Finnish labels as the name and keeping the
+        # English as an alias gives the matcher both forms to try.
+        "local": "fi",
+        # geoBoundaries names six of Finland's regions with older English
+        # exonyms that neither the Finnish label nor Statistics Finland's own
+        # English one reaches. These are declared equivalences rather than
+        # anything a matcher could infer: "Varsinais-Suomi" and "Finland
+        # Proper" share no word, and "North Ostrobothnia" is close enough to
+        # bare "Ostrobothnia" -- a different region -- that the loose pass
+        # reached it and was stopped only by the rule that settles two rows
+        # landing on one shape. A wrong join that a tiebreak happens to catch
+        # is still a wrong join waiting for the tiebreak to be absent.
+        "aliases": {
+            "MK02": ("Finland Proper",),        # Varsinais-Suomi
+            "MK05": ("Tavastia Proper",),       # Kanta-Häme
+            "MK10": ("Southern Savonia",),      # Etelä-Savo
+            "MK11": ("Northern Savonia",),      # Pohjois-Savo
+            "MK17": ("Northern Ostrobothnia",), # Pohjois-Pohjanmaa
+            "MK21": ("Åland Islands",),         # Ahvenanmaa
+        },
+        "tables": [Table(
+            path="vaerak/11rl.px",
+            field="language", geo="alue_23_20260101", group="kieli_15_20180102",
+            # Age and sex must be pinned to their totals or every person is
+            # counted once per band. contentscode has one value and is pinned
+            # for the same reason the others are: nothing may be summed over.
+            keep={"ikaryhma_10_20180101": "SSS", "sukupuoli_9_20180101": "SSS",
+                  "timeperiod_y": "2025", "contentscode": "vaerak-vaesto"},
+            year=2025,
+            # "MK" is maakunta. The same variable also carries "SSS" the whole
+            # country, "MA1" mainland Finland and "MA2" Aland -- and MA2 is
+            # MK21 under another name, so counting both would add Aland twice.
+            geo_prefix="MK", national="SSS",
+            # The language list is two levels deep and the parents are not
+            # marked the way Estonia's are. "01 NATIONAL LANGUAGES, TOTAL"
+            # holds Finnish, Swedish and Sami; "02 FOREIGN LANGUAGES, TOTAL"
+            # holds the other 163. Keeping either beside its children counts
+            # most of the country twice, and neither label is a word is_total()
+            # knows.
+            drop=("01", "02"),
+            note="Mother tongue as recorded in the population register on 31 "
+                 "December 2025. Finland registers one language per resident, "
+                 "so these are shares of everyone rather than of the people "
+                 "who answered a question."),
         ],
     },
     "LVA": {
@@ -324,7 +409,17 @@ VINTAGE = re.compile(
     r"\s*\([^()]{0,20}?\d{1,2}[.\-/]\d{1,2}[.\-/]\d{2,4}\.?\s*\)\s*$")
 
 
-def place_name(label: str) -> str:
+def place_name(label: str, code: str = "") -> str:
+    """The place's name, with the office's bookkeeping taken off.
+
+    Statistics Finland repeats the code inside the label -- "MK13 Central
+    Finland", "MK19 Lapland" -- which is how a table reads to someone browsing
+    it and is not how any boundary file names a place. Only the row's own code
+    is stripped, so a name that merely starts with letters and digits keeps
+    them.
+    """
+    if code and label.startswith(f"{code} "):
+        label = label[len(code) + 1:]
     return VINTAGE.sub("", label).strip()
 
 
@@ -344,6 +439,8 @@ def wanted_area(code: str, label: str, table: Table) -> bool:
     """
     if code in table.drop or is_total(label) or label.startswith(CHILD_MARKER):
         return False
+    if table.geo_prefix is not None and not code.startswith(table.geo_prefix):
+        return False
     return table.geo_len is None or len(code) == table.geo_len
 
 
@@ -356,6 +453,8 @@ def reject_reason(code: str, label: str, table: Table) -> str:
         return "a total, not a unit"
     if label.startswith(CHILD_MARKER):
         return f"labelled {CHILD_MARKER!r}, so inside another unit"
+    if table.geo_prefix is not None and not code.startswith(table.geo_prefix):
+        return f"code does not start {table.geo_prefix!r}"
     return f"code is not {table.geo_len} characters"
 
 
@@ -522,10 +621,11 @@ def main() -> int:
                 fields[f"{field}_note"] = slot["notes"][field]
             fields[f"{field}_year"] = slot.get("year")
         records.append(record(
-            f"{iso3}-{code}", place_name(slot["name"]),
+            f"{iso3}-{code}", place_name(slot["name"], code),
             level=spec["level"], parent=iso3, codes={"pxweb": code},
-            aliases=sorted({place_name(a) for a in slot["aliases"]}
-                           - {place_name(slot["name"])}) or None,
+            aliases=sorted(({place_name(a, code) for a in slot["aliases"]}
+                            | set(spec.get("aliases", {}).get(code, ())))
+                           - {place_name(slot["name"], code)}) or None,
             population=(measure(int(round(slot["population"])), year=slot.get("year"),
                                 source=spec["source"])
                         if slot["population"] else gap(NOT_AVAILABLE)),

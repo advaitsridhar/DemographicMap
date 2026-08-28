@@ -1,8 +1,66 @@
-pxweb: Statistics Estonia (EST)
-  rahvastik/rahvastikunaitajad-ja-koosseis/rahvaarv-ja-rahvastiku-koosseis/RV0222U.PX
-    left out (named in drop=): 3 — 784 ..Tallinn, 793 ..Tartu city, unk County unknown
-    left out (the country itself): 1 — 00 Whole country
-    15 units, categories sum to the published total in each
-    ...and to 1,360,745 against a published national 1,360,745
-  wrote data/processed/estonia_county.json (24 kB)
-  15 records
+
+== ISL Statistics Iceland :: menning/5_trufelog/trufelog/MAN10001.px
+  title: Populations by religious and life stance organizations 1998-2026
+
+  code='Ár'  text='Year'  29 values  elimination=None  time=True
+      '1998'           1998
+      '1999'           1999
+      '2000'           2000
+      '2001'           2001
+      '2002'           2002
+      '2003'           2003
+      '2004'           2004
+      '2005'           2005
+      '2006'           2006
+      '2007'           2007
+      '2008'           2008
+      '2009'           2009
+      '2010'           2010
+      '2011'           2011
+      '2012'           2012
+      '2013'           2013
+      '2014'           2014
+      '2015'           2015
+      '2016'           2016
+      '2017'           2017
+      '2018'           2018
+      '2019'           2019
+      '2020'           2020
+      '2021'           2021
+      ... 5 more
+
+  code='Trú- og lífsskoðunarfélög'  text='Religious'  64 values  elimination=None  time=None
+      '-'              Total
+      '1'              The Evangelical Lutheran Church of Iceland
+      '2'              The Independent Congregation of Reykjavík
+      '3'              The Independent Congregation
+      '8'              The Independent Congregation of Hafnarfjörður
+      '7'              The Roman Catholic Church
+      '4'              The Seventh Day Adventist Church
+      '6'              The Pentecostal Church of Iceland
+      '5'              The Congregation of Sjónarhæð
+      'V'              Jehova Witnesses
+      'B'              The Bahá'í Community
+      'Á'              Pagan Worship
+      'K'              The Church of Smárinn
+      'M'              The Church of Jesus Christ the Latter-day Saints
+      'C'              The Christian Way, a Church for You
+      'D'              Word of Life
+      'E'              The Rock - Christian Community
+      'F'              The Icelandic Buddhist Society
+      'G'              The Church of Kefas
+      'H'              The First Baptist Church
+      'J'              The Icelandic Muslim Association
+      'L'              The Icelandic Church of Christ
+      'N'              The Church of the Annunciation
+      'P'              The Society of Believers
+      ... 40 more
+
+  code='Skipting'  text='Division'  7 values  elimination=None  time=None
+      '0'              Total
+      '1'              Males
+      '2'              Females
+      '3'              0 - 17 years
+      '4'              18 years and over
+      '5'              Percent
+      '6'              Parish fees payers
