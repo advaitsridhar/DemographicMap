@@ -1,18 +1,3 @@
-page: https://data.humdata.org/dataset/populationa-and-housing-census-dataset
-  2,303 bytes
-  0 matching link(s)
-page: https://data.gov.bd/
-  35,889 bytes
-  6 matching link(s)
-  - Production of Major Crops 2010-16 (csv) (20527)
-    https://data.gov.bd/api/download/?id=7975e610-3816-41bb-ae03-c5d5953583b4
-  - Area under cultivation of different crops 2014-15 (csv) (17388)
-    https://data.gov.bd/api/download/?id=e7253498-dfd3-473d-b838-712e4da38a72
-  - Total Foreign Exchange Reserve 2012-16 (csv) (12485)
-    https://data.gov.bd/api/download/?id=394bb637-d01a-4272-a6e8-9313c1e5c379
-  - Number of Mobile Phone subscribers (2016) (csv) (11559)
-    https://data.gov.bd/api/download/?id=f9a99008-5185-450a-81d1-c407d792a99d
-  - Number of internet subscribers in Bangladesh (2016) (csv) (11039)
-    https://data.gov.bd/api/download/?id=2661d189-6130-46cd-92a8-a28aa97b2ced
-  - Number of PSTN subscribers in Bangladesh (2016) (csv) (9698)
-    https://data.gov.bd/api/download/?id=68048d25-9743-45d9-a5b9-9bd6f3471dee
+page: https://data.humdata.org/api/3/action/package_search?q=bangladesh+census+2022&rows=12&fl=name,title
+  1,630 bytes
+{"help": "https://data.humdata.org/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 543, "facets": {}, "expanded": {}, "results": [{"name": "bangladesh-other-0", "title": "Bangladesh - 2001 Census"}, {"name": "populationa-and-housing-census-dataset", "title": "Bangladesh : Population and Housing Census Dataset"}, {"name": "cod-ps-bgd", "title": "Bangladesh - Subnational Population Statistics"}, {"name": "cod-ab-bgd", "title": "Bangladesh - Subnational Administrative Boundaries"}, {"name": "unhcr-bgd-2022-cbps-anon-data-v2-1", "title": "Bangladesh - Bhasan Char Panel Survey - 2022"}, {"name": "bangladesh-accessibility-indicators", "title": "Bangladesh - Accessibility Indicators"}, {"name": "sri-lanka-census-of-population-and-housing-2012", "title": "Sri Lanka -  Population and Housing Census of  2012"}, {"name": "unhcr-bgd-2022q4-jpm-anon-data-v2-1", "title": "Bangladesh - Joint Protection Monitoring - Q4 2022"}, {"name": "unhcr-bgd-2022q3-jpm-anon-data-v2-1", "title": "Bangladesh - Joint Protection Monitoring - Q3 2022"}, {"name": "unhcr-bgd-2022q2-jpm-anon-data-v2-1", "title": "Bangladesh - Joint Protection Monitoring - Q2 2022"}, {"name": "unhcr-bgd-2022q1-jpm-anon-data-v2-1", "title": "Bangladesh - Joint Protection Monitoring - Q1 2022"}, {"name": "bangladesh-subnational-boundaries-and-tabular-data", "title": "Bangladesh Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Censuses and Surveys"}], "sort": "score desc, last_modified desc", "search_facets": {"pivot": {}, "queries": []}, "facet_pivot": {}, "facet_queries": {}}}
