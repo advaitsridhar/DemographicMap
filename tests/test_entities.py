@@ -2069,6 +2069,17 @@ class RollUpVintage(unittest.TestCase):
         self.assertEqual(parent["population"]["value"], 5_652_881)
         self.assertIn("5,550,449", parent["population_note"])
 
+    def test_a_population_the_children_agree_with_is_left_alone(self):
+        # Ladakh's Leh and Kargil sum to exactly the 274,289 Wikidata gives it.
+        # Restamping that as "summed from 2 divisions" trades a named source
+        # for a derivation and tells a reader less about the same figure.
+        parent = {"population": {"value": 274_289, "year": 2011,
+                                 "source": "Wikidata (CC0)"}}
+        be.roll_up_field(parent, [self.kid(274_289, 2011)], "religion",
+                         whole_country=True)
+        self.assertEqual(parent["population"]["source"], "Wikidata (CC0)")
+        self.assertNotIn("population_note", parent)
+
     def test_a_newer_published_population_is_not_replaced(self):
         parent = {"population": {"value": 9_500_000, "year": 2025},
                   "religion": None}

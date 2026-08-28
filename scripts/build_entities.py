@@ -868,9 +868,15 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # A newer figure still wins, because a later estimate of a place is not
     # something an older count should overwrite. The figure replaced goes into
     # a note either way.
+    # Nothing is rewritten when the two agree. Ladakh's Leh and Kargil sum to
+    # exactly the 274,289 Wikidata gives it, and restamping that number as
+    # "summed from 2 second-level divisions" would trade a named source for a
+    # derivation and tell a reader less about the same figure.
     child_year = common_year(children)
     own_year = vintage(parent.get("population"))
-    if child_year and (own is None or own_year is None or own_year <= child_year):
+    if child_year and (own is None or (round(total_pop) != round(own)
+                                       and (own_year is None
+                                            or own_year <= child_year))):
         if own is not None:
             parent["population_note"] = (
                 f"Summed from all {len(children)} {level} divisions. Replaces "
