@@ -4,6 +4,8 @@ pakistan: Bureau of Statistics, Census 2023 Table 9
     35 districts, 123 tehsils passed over
     every district's religions sum to its own printed total
     and the 35 districts add up to the province
+    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
+    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
   Punjab
     2,592,933 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_punjab_districts.pdf
     36 districts, 145 tehsils passed over
@@ -14,6 +16,7 @@ pakistan: Bureau of Statistics, Census 2023 Table 9
     30 districts, 0 tehsils passed over
     every district's religions sum to its own printed total
     and the 30 districts add up to the province
+    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
   Balochistan
     2,698,658 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_balochistan_districts.pdf
     34 districts, 80 tehsils passed over
@@ -25,5 +28,5 @@ pakistan: Bureau of Statistics, Census 2023 Table 9
   NOT READ (territory, enumerated apart) -- Islamabad Capital Territory: table_9_islamabad_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
   NOT READ (territory, enumerated apart) -- Azad Jammu and Kashmir: table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
   NOT READ (territory, enumerated apart) -- Gilgit-Baltistan: table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  wrote data/processed/pakistan_district.json (262 kB)
-  135 districts
+  wrote data/processed/pakistan_district.json (261 kB)
+  126 districts
