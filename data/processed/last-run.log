@@ -1,4 +1,139 @@
-usage: probe_xlsx.py [-h] [--rows ROWS] [--match MATCH] [--width WIDTH]
-                     [--sheet SHEET] [--cols COLS]
-                     url [url ...]
-probe_xlsx.py: error: unrecognized arguments: religion
+probe_xlsx: https://data.humdata.org/dataset/a6fedebe-72fe-4fc2-8657-1580acfa32c6/resource/72eaaa6c-6a30-4efd-bad9-02133b316ea8/download/bangladesh_bbs_population-and-housing-census-dataset_2022_admin-02.xlsx
+  1,213,869 bytes
+  42 sheet(s): Merged_All_Table, Type of Dwelling_HH & Pop, Type of Household , Type of Dwelling, Sex & Dist,  Population by Sex, Dist & Loca, Type of Household, Dist & Loca, Type of Household, Loca_Rural, Type of Household, Loca_Urban, 10 Yrs & above by Mar Sta_Sex,  Population by Religion, Sex, Population Growth Rate, Sex Rat, PwD (Except Hijra), Literacy Rate_Aged 5 Yrs, Literacy Rate_Aged 7 Yrs & Abov,  Literacy Rate_Aged 7 Yrs Ab_Re, Student Aged 5-29 Years by Sex,  Aged 5 Yrs & Above_Working Sta, Type of Work, Employed Population by Sector, 15-24 Years NEET,  Population having Mobile Phone, Internet User, Having Account in Financial,  Having Mobile Banking Account, Ethnic Population by Sex, Population_District, Returned Migrant, Household by Type of Dwelling, Type of Household, Household by Wall Material , Household by Roof Material , Household by Floor Material, Household by Structure, Household by Ownership Status, Main Source of Drinking Water, Toilet Facilities, Type of Toilet Use, Handwashing Facilities,  Main Source of Electricity ,  Main Source of Cooking Fuel , Foreign Remittance Recipient, Number of Person & Avg HH Size
+
+--- sheet 'Merged_All_Table' (65 rows x 445 cols) --------------------
+  Division | District | Division_Geocode | District_Geocode | Household_Total | Population_Total
+  Barishal | Barguna | 10 | 4 | 255390 | 1010531
+  Khulna | Bagerhat | 40 | 1 | 408840 | 1613076
+  Barishal | Barishal | 10 | 6 | 629626 | 2570446
+  Barishal | Bhola | 10 | 9 | 449057 | 1932518
+  Barishal | Jhalokati | 10 | 42 | 162401 | 661160
+  Chattogram | Bandarban | 20 | 3 | 106155 | 481106
+  Barishal | Patuakhali | 10 | 78 | 424743 | 1727254
+  Barishal | Pirojpur | 10 | 79 | 298490 | 1198195
+  Chattogram | Brahmanbaria | 20 | 12 | 712578 | 3306563
+  Chattogram | Chandpur | 20 | 13 | 635431 | 2635748
+  Rajshahi | Bogura | 50 | 10 | 1025200 | 3734297
+  Chattogram | Chattogram | 20 | 15 | 2143909 | 9169465
+  Chattogram | Cumilla | 20 | 19 | 587114 | 2823268
+  Chattogram | Cox's Bazar | 20 | 22 | 1407368 | 6212216
+  Chattogram | Feni | 20 | 30 | 377164 | 1648896
+  Chattogram | Khagrachhari | 20 | 46 | 169526 | 714119
+  Chattogram | Lakshmipur | 20 | 51 | 459344 | 1937948
+  Khulna | Chuadanga | 40 | 18 | 326714 | 1234054
+  Chattogram | Noakhali | 20 | 75 | 776070 | 3625442
+  Chattogram | Rangamati | 20 | 84 | 153482 | 647586
+  Dhaka | Dhaka | 30 | 26 | 4035241 | 14734701
+  Dhaka | Faridpur | 30 | 29 | 525877 | 2162879
+  Dhaka | Gazipur | 30 | 33 | 1579781 | 5263450
+  Dhaka | Gopalganj | 30 | 35 | 308710 | 1295057
+  Dhaka | Kishoreganj | 30 | 48 | 760952 | 3267626
+  Dhaka | Madaripur | 30 | 54 | 313273 | 1293027
+  Rangpur | Dinajpur | 55 | 27 | 836977 | 3315236
+  Dhaka | Manikganj | 30 | 56 | 393524 | 1558025
+  Dhaka | Munshiganj | 30 | 59 | 399631 | 1625416
+  Rajshahi | Chapainababganj | 50 | 70 | 269905 | 956431
+  Dhaka | Narayanganj | 30 | 67 | 1023175 | 3909138
+  Dhaka | Narsingdi | 30 | 68 | 621511 | 2584452
+  Dhaka | Rajbari | 30 | 82 | 295216 | 1189818
+  Dhaka | Shariatpur | 30 | 86 | 308964 | 1294562
+  Rangpur | Gaibandha | 55 | 32 | 700288 | 2562233
+  Dhaka | Tangail | 30 | 93 | 1061746 | 4037608
+  Khulna | Jashore | 40 | 41 | 798032 | 3076144
+  Khulna | Jhenaidah | 40 | 44 | 519295 | 2005849
+  Sylhet | Habiganj | 60 | 36 | 491884 | 2358886
+  Khulna | Khulna | 40 | 47 | 670861 | 2613385
+  Khulna | Kushtia | 40 | 50 | 565339 | 2149692
+  Mymensingh | Jamalpur | 45 | 39 | 652047 | 2499738
+  Khulna | Magura | 40 | 55 | 254154 | 1033115
+  Khulna | Meherpur | 40 | 57 | 195322 | 705356
+  Khulna | Narail | 40 | 65 | 195660 | 788671
+  Khulna | Satkhira | 40 | 87 | 566752 | 2196582
+  Mymensingh | Mymensingh | 45 | 61 | 1460904 | 5899005
+  Rajshahi | Joypurhat | 50 | 38 | 765457 | 2784599
+  Mymensingh | Netrakona | 45 | 72 | 548443 | 2324853
+  Mymensingh | Sherpur | 45 | 89 | 396149 | 1501853
+  Rajshahi | Naogaon | 50 | 64 | 501957 | 1859922
+  Rajshahi | Natore | 50 | 69 | 448028 | 1835528
+  Rangpur | Kurigram | 55 | 49 | 605722 | 2329160
+  Rajshahi | Pabna | 50 | 76 | 743558 | 2909624
+  Rajshahi | Rajshahi | 50 | 81 | 775245 | 2915009
+  Rangpur | Lalmonirhat | 55 | 52 | 342028 | 1428406
+  Rajshahi | Sirajganj | 50 | 88 | 842308 | 3357706
+  Sylhet | Moulvibazar | 60 | 58 | 446356 | 2123447
+  Rangpur | Nilphamari | 55 | 73 | 505605 | 2092568
+  Rangpur | Panchagarh | 55 | 77 | 281627 | 1179843
+  Rangpur | Rangpur | 55 | 85 | 834307 | 3169614
+  Rangpur | Thakurgaon | 55 | 94 | 382400 | 1533895
+  Sylhet | Sunamganj | 60 | 90 | 528550 | 2695496
+  Sylhet | Sylhet | 60 | 91 | 746854 | 3857123
+
+--- sheet ' Population by Religion, Sex' (1000 rows x 26 cols) --------------------
+  District | # Total_Muslim | # Male_Muslim | # Female_Muslim | # Total_Hindu | # Male_Hindu
+  Barguna | 937495 | 457588 | 479907 | 69481 | 34436
+  Barishal | 2283658 | 1111897 | 1171761 | 275258 | 137929
+  Bhola | 1876690 | 918642 | 958048 | 55532 | 27863
+  Jhalokati | 599593 | 285967 | 313626 | 61352 | 30570
+  Patuakhali | 1617121 | 787844 | 829277 | 107551 | 53793
+  Pirojpur | 1016985 | 493353 | 523632 | 180980 | 89347
+  Bandarban | 253749 | 132622 | 121127 | 16500 | 8734
+  Brahmanbaria | 3084488 | 1429418 | 1655070 | 220958 | 108280
+  Chandpur | 2488360 | 1157636 | 1330724 | 146519 | 71361
+  Chattogram | 8025722 | 4001496 | 4024226 | 982568 | 489004
+  Cumilla | 5936146 | 2766441 | 3169705 | 269206 | 130529
+  Cox's Bazar | 2669896 | 1356290 | 1313606 | 108165 | 55384
+  Feni | 1556655 | 735204 | 821451 | 91158 | 44536
+  Khagrachhari | 332663 | 168674 | 163989 | 119703 | 59125
+  Lakshmipur | 1875706 | 882547 | 993159 | 61844 | 30366
+  Noakhali | 3476342 | 1657381 | 1818961 | 147150 | 72821
+  Rangamati | 234822 | 124764 | 110058 | 33110 | 17112
+  Dhaka | 13980347 | 7501571 | 6478776 | 672218 | 356408
+  Faridpur | 1978900 | 957869 | 1021031 | 182548 | 91875
+  Gazipur | 4971105 | 2585758 | 2385347 | 263468 | 136994
+  Gopalganj | 933667 | 451617 | 482050 | 348965 | 176461
+  Kishoreganj | 3108278 | 1494225 | 1614053 | 158776 | 78448
+  Madaripur | 1146621 | 541986 | 604635 | 144897 | 73039
+  Manikganj | 1418263 | 683176 | 735087 | 138867 | 68327
+  Munshiganj | 1500926 | 727462 | 773464 | 122234 | 59897
+  Narayanganj | 3721916 | 1919424 | 1802492 | 184292 | 95339
+  Narsingdi | 2443100 | 1194712 | 1248388 | 139828 | 70142
+  Rajbari | 1078605 | 526480 | 552125 | 110566 | 55358
+  Shariatpur | 1251474 | 599860 | 651614 | 42721 | 21403
+  Tangail | 3762538 | 1809641 | 1952897 | 257343 | 127312
+  Bagerhat | 1342772 | 665650 | 677122 | 264222 | 133701
+  Chuadanga | 1204554 | 592873 | 611681 | 27804 | 13962
+  Jashore | 2756611 | 1363819 | 1392792 | 313582 | 157706
+  Jhenaidah | 1836164 | 910769 | 925395 | 168438 | 84446
+  Khulna | 2055731 | 1030712 | 1025019 | 542403 | 273911
+  Kushtia | 2090530 | 1026312 | 1064218 | 58770 | 29396
+  Magura | 870445 | 427849 | 442596 | 162136 | 80928
+  Meherpur | 690323 | 332779 | 357544 | 8497 | 4209
+  Narail | 663937 | 321565 | 342372 | 124463 | 61887
+  Satkhira | 1851432 | 919487 | 931945 | 337137 | 170137
+  Jamalpur | 2458607 | 1195728 | 1262879 | 39824 | 19839
+  Mymensingh | 5665401 | 2783289 | 2882112 | 202432 | 101271
+  Netrakona | 2102913 | 1030082 | 1072831 | 202638 | 100148
+  Sherpur | 1455987 | 710117 | 745870 | 36827 | 18112
+  Bogura | 3515831 | 1742853 | 1772978 | 216649 | 109530
+  Joypurhat | 859875 | 424210 | 435665 | 87591 | 44068
+  Naogaon | 2419111 | 1192225 | 1226886 | 321328 | 161161
+  Natore | 1744209 | 862500 | 881709 | 107122 | 53540
+  Chapainababganj | 1753917 | 846521 | 907396 | 72178 | 36039
+  Pabna | 2828271 | 1408099 | 1420172 | 74260 | 37671
+  Rajshahi | 2739995 | 1371262 | 1368733 | 133505 | 67570
+  Sirajganj | 3209883 | 1592233 | 1617650 | 146519 | 73383
+  Dinajpur | 2605690 | 1306976 | 1298714 | 648312 | 324356
+  Gaibandha | 2379978 | 1150964 | 1229014 | 177590 | 87917
+  Kurigram | 2185193 | 1074112 | 1111081 | 143376 | 71474
+  Lalmonirhat | 1242348 | 620882 | 621466 | 185320 | 93278
+  Nilphamari | 1763700 | 877592 | 886108 | 327331 | 163416
+  Panchagarh | 991731 | 495139 | 496592 | 184948 | 92240
+  Rangpur | 2872812 | 1420335 | 1452477 | 283955 | 142552
+  Thakurgaon | 1181734 | 592051 | 589683 | 339577 | 170435
+  Habiganj | 1980964 | 956759 | 1024205 | 374091 | 185258
+  Moulvibazar | 1585155 | 755452 | 829703 | 519247 | 255695
+  Sunamganj | 2377167 | 1164659 | 1212508 | 315024 | 156929
+  Sylhet | 3570264 | 1752718 | 1817546 | 282895 | 141842
+  
+
