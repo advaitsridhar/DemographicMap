@@ -25,6 +25,11 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
+# Generous, and settable, because a slow office and an absent one are
+# different findings and a short timeout cannot tell them apart. Bangladesh's
+# BBS completes a TLS handshake in under a second and then takes far longer
+# than this to answer a GET; reporting that as unreachable would be the same
+# mistake as reading a 429 as an empty database.
 TIMEOUT = 25
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; DemographicMap/1.0; "
@@ -34,18 +39,18 @@ HEADERS = {
 }
 
 
-def fetch(url: str, accept: str = "") -> str:
+def fetch(url: str, accept: str = "", timeout: int = TIMEOUT) -> str:
     extra = {"Accept": accept} if accept else {}
     req = urllib.request.Request(
         url, headers={**HEADERS, **extra, "Accept-Encoding": "gzip"})
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
         raw = resp.read()
         if resp.headers.get("Content-Encoding") == "gzip":
             raw = gzip.decompress(raw)
         return raw.decode("utf-8", "replace")
 
 
-def head(url: str, accept: str = "") -> None:
+def head(url: str, accept: str = "", timeout: int = TIMEOUT) -> None:
     """Size and type without pulling the file. Some hosts refuse HEAD, so a
     ranged GET is the fallback -- a 206 answers the same question."""
     for method in ("HEAD", "GET"):
@@ -58,7 +63,7 @@ def head(url: str, accept: str = "") -> None:
         if method == "GET":
             req.add_header("Range", "bytes=0-0")
         try:
-            with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
                 size = resp.headers.get("Content-Range") or resp.headers.get("Content-Length")
                 print(f"    {resp.status} {resp.headers.get('Content-Type','?')} "
                       f"size={size}")
@@ -85,6 +90,8 @@ def main() -> int:
     ap.add_argument("--head", action="store_true",
                     help="treat the url as a file and report its headers only")
     ap.add_argument("--limit", type=int, default=40)
+    ap.add_argument("--timeout", type=int, default=TIMEOUT,
+                    help="seconds to wait for each response")
     ap.add_argument("--check", type=int, default=0,
                     help="also fetch headers for the first N matching links")
     ap.add_argument("--accept", default="",
@@ -104,7 +111,7 @@ def main() -> int:
         for url in [u.strip() for arg in args.url
                     for u in arg.split(",") if u.strip()]:
             print(url)
-            head(url, args.accept)
+            head(url, args.accept, args.timeout)
         return 0
 
     # Several pages in one run for the same reason as --head: a landing page is
@@ -118,7 +125,7 @@ def main() -> int:
 def page(url: str, args: argparse.Namespace) -> None:
     print(f"page: {url}")
     try:
-        html = fetch(url, args.accept)
+        html = fetch(url, args.accept, args.timeout)
     except Exception as err:                      # noqa: BLE001
         # The whole message, not a slice of it. A TLS failure names the host
         # the certificate *is* valid for, and that name is the finding -- cut
@@ -150,7 +157,7 @@ def page(url: str, args: argparse.Namespace) -> None:
         print(f"    {href}")
     for href, _ in hits[:args.check]:
         print(f"  checking {href}")
-        head(href)
+        head(href, timeout=args.timeout)
 
 
 if __name__ == "__main__":

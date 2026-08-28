@@ -910,6 +910,75 @@ carry 96.7% of the people.
 that is the denominator these shares are of. It is not the only population the
 office publishes.
 
+### Bangladesh: a mirror, and a merged sheet that is wrong
+
+The Bureau of Statistics publishes a workbook of Census 2022 indicators at
+admin-2, one row per zila, and among its forty-two sheets is *Population by
+Religion, Sex*: Muslim, Hindu, Christian, Buddhist and Others, for all
+sixty-four districts. All 64 join, carrying every one of Bangladesh's
+165,158,616 people.
+
+**It is read from a mirror, deliberately.** None of the office's own hosts can
+be fetched over a connection that verifies:
+
+* `bbs.gov.bd` has a valid Sectigo certificate that does cover the host, but
+  the server never sends its intermediate, so no chain can be built. A browser
+  papers over this by fetching the issuer the certificate names; urllib does
+  not.
+* `bbs.portal.gov.bd` answers with a "Kubernetes Ingress Controller Fake
+  Certificate" for `ingress.local`.
+* `file.portal.gov.bd`, `sid.portal.gov.bd` and `portal.gov.bd` time out.
+
+The alternatives were disabling certificate verification, which this project
+does not do, or recording Bangladesh as uncollectable, which would be false:
+the census exists, is published, and is CC0. HDX carries the office's own
+workbook under the UN in Bangladesh.
+
+An earlier note in this repository said `bbs.gov.bd` "failed TLS". It does not
+— its certificate is valid and names the host. What failed was a fetch from a
+sandbox whose egress proxy blocks the domain, and the two were written down as
+the same thing. That is the same error as reading a 429 as an empty database,
+and it is kept here rather than quietly corrected because a probe that cannot
+tell "we could not reach it" from "it is broken" produces confident absences.
+
+**The workbook's merged sheet is wrong, and is not used.** `Merged_All_Table`
+flattens the forty-two sheets into 445 columns. In it, Cumilla and Cox's Bazar
+hold each other's household and population figures — Cumilla 2,823,268 against
+a real 6.2 million — while their district geocodes, 19 and 22, stay correct.
+Joypurhat and Naogaon are wrong too, and Naogaon's figure matches neither
+district, so it is not a clean transposition throughout. The per-topic sheets
+it was built from are consistent, and those are read instead. Nothing here
+takes even the division names from the merged sheet: they may well be sound,
+but a sheet with three known transpositions is not somewhere to take an
+unverifiable field from.
+
+**Two checks, and the second is what found that.** Each religion's total must
+equal its own male plus female column — the sheet stating the same figure
+twice, which is what makes the column headings trustworthy rather than
+assumed. And the religions plus the third gender must equal the district's
+published population **exactly**, which is two separate sheets agreeing to the
+person about every district.
+
+Had only the first check existed, all 64 districts would have passed and three
+would have shipped carrying another district's population: every religion in
+them adds up by sex perfectly well. A tolerance wide enough to admit a hijra
+count would have been wide enough to hide the transposition.
+
+**The religion table does not count everybody.** Each religion's total is
+exactly male plus female, and Bangladesh enumerates a third gender: Barguna's
+religions sum to 1,010,461 against a published 1,010,531, and the 70 missing
+are its hijra — the number the population sheet prints in its own Hijra
+column. Nationally that is 8,124 people the religion table does not classify.
+So the shares are of the population it does classify, and both figures are
+kept: the district's population, and the denominator the shares are of.
+Silently using one for the other is how a footnote becomes a wrong number.
+
+**Joining.** Eight districts were respelled in English in 2018 — Chittagong to
+Chattogram, Comilla to Cumilla, Barisal to Barishal, Jessore to Jashore, Bogra
+to Bogura — and geoBoundaries still carries the older forms, with plain
+transliteration variants for three more. Declared rather than derived:
+"Nawabganj" and "Chapainababganj" share no word.
+
 ## Joining a row to a shape
 
 Every adapter row has to find one boundary polygon. Names alone cannot do it:
