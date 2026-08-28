@@ -1628,66 +1628,103 @@ class SwitzerlandMainLanguages(unittest.TestCase):
 
 
 class PakistanColumns(unittest.TestCase):
-    """Table 9's figures are placed by where they sit, not by counting.
+    """Table 9's figures are placed by where they end, not by counting.
 
-    Every one of these is a fault a live run actually produced, and only the
-    last of them announced itself: a column read one place to the left still
-    sums to something, and the reason Pakistan did not ship wrong is that the
-    table prints its own denominator beside every row.
+    The coordinates below are Punjab's own, off page 1 of table_9_punjab_
+    districts.pdf, because every wrong answer here came from reasoning about
+    where the columns ought to be instead of reading where they are.
+
+    Each of these is a fault a live run produced, and only the last announced
+    itself: a column read one place to the left still sums to something, and
+    the reason Pakistan did not ship wrong is that the table prints its own
+    denominator beside every row.
     """
+
+    # "text[x0-x1] ..." -- a row written as it came off the page.
+    HEADER = ("1[110-114] 2[169-173] 3[218-221] 4[265-268] 5[316-319] "
+              "6[368-371] 7[431-435] 8[467-471] 9[502-506] 1[541-545] 0[545-548]")
+    PUNJAB = ("ALL[49-60] SEXES[62-83] 127,333,305[138-173] 1[186-190] "
+              "24,462,897[190-221] 2[241-244] ,458,924[244-268] 2[297-300] "
+              "28,559[300-319] 1[349-352] 40,512[352-371] 2[416-419] "
+              "1,157[419-435] 5[455-459] ,649[459-471] 3[495-499] 58[499-506] "
+              "15,249[529-548]")
+
+    @staticmethod
+    def row(spec):
+        cells = []
+        for part in spec.split():
+            text, span = part.rsplit("[", 1)
+            x0, x1 = span.rstrip("]").split("-")
+            cells.append((float(x0), float(x1), text))
+        return cells
 
     def setUp(self):
         from scripts.fetch_census import pakistan
         self.pk = pakistan
-        # Ten headings, evenly spaced, as Khyber Pakhtunkhwa sets them.
-        self.plain = [(i * 50.0, i * 50.0 + 8, str(i + 1)) for i in range(10)]
+        self.edges = pakistan.column_edges([self.row(self.HEADER)])
 
-    def test_ten_headings_are_read(self):
-        self.assertEqual(len(self.pk.numbered(self.plain)), 10)
+    def test_the_headings_are_the_columns_right_edges(self):
+        # The numerals are right-aligned with the columns they head: the "2"
+        # heading TOTAL POPULATION ends at 173 and so does 127,333,305.
+        self.assertEqual(self.edges,
+                         [114, 173, 221, 268, 319, 371, 435, 471, 506, 548])
 
     def test_a_heading_split_across_two_words_is_still_one_column(self):
         # Punjab's header reads "1 2 3 4 5 6 7 8 9 1 0": eleven words for ten
         # columns. Comparing the words against ["1", … "10"] read Khyber
         # Pakhtunkhwa and refused Punjab, which is 128 million people.
-        split = self.plain[:9] + [(450.0, 458.0, "1"), (462.0, 470.0, "0")]
-        spans = self.pk.numbered(split)
-        self.assertEqual(len(spans), 10)
-        # And the column's centre spans both words rather than just the first.
-        self.assertAlmostEqual(spans[-1], (450.0 + 470.0) / 2)
+        self.assertEqual(len(self.edges), 10)
+        self.assertEqual(self.edges[-1], 548)      # where the "0" ends, not the "1"
 
-    def test_the_label_column_is_dropped(self):
-        # The first numbered column is AREA/SEX. Leaving it in put the label
-        # where TOTAL POPULATION should have been and pushed every figure one
-        # place left; dropping it also stops a figure landing on it.
-        anchors = self.pk.column_anchors([self.plain])
-        self.assertEqual(len(anchors), len(self.pk.COLUMNS))
-        self.assertEqual(anchors, self.pk.numbered(self.plain)[1:])
+    def test_ten_separate_headings_read_the_same(self):
+        plain = self.row(" ".join(f"{i + 1}[{i * 50}-{i * 50 + 8}]"
+                                  for i in range(10)))
+        self.assertEqual(len(self.pk.numbered(plain)), 10)
 
     def test_a_row_of_figures_is_not_a_header(self):
-        self.assertIsNone(self.pk.numbered([(0.0, 40.0, "127,333,305")]))
+        self.assertIsNone(self.pk.numbered(self.row("127,333,305[138-173]")))
 
     def test_a_row_that_stops_counting_is_not_a_header(self):
-        self.assertIsNone(self.pk.numbered(self.plain[:4]))
+        self.assertIsNone(self.pk.numbered(self.row(self.HEADER)[:4]))
 
     def test_a_near_miss_is_carried_out_to_the_error(self):
         near = []
-        self.pk.column_anchors([self.plain[:4]], near)
+        self.pk.column_edges([self.row(self.HEADER)[:4]], near)
         self.assertEqual(near, ["1 2 3 4"])
 
-    def test_a_value_split_across_two_words_is_joined(self):
-        # Punjab writes 1,071,693 as "1" and ",071,693". Shifted by the width
-        # of what follows rather than by its magnitude: a leading zero read as
-        # a magnitude loses a place.
-        anchors = self.pk.column_anchors([self.plain])
-        row = [(anchors[0] - 30, anchors[0] - 24, "1"),
-               (anchors[0] - 20, anchors[0] + 20, ",071,693")]
-        self.assertEqual(self.pk.values(row, anchors)[0], 1_071_693)
+    def test_the_whole_row_reads_to_the_person(self):
+        got = dict(zip(self.pk.COLUMNS, self.pk.values(self.row(self.PUNJAB),
+                                                       self.edges)))
+        self.assertEqual(got, {
+            "TOTAL": 127_333_305, "Muslim": 124_462_897,
+            "Christian": 2_458_924, "Hindu": 228_559, "Ahmadi": 140_512,
+            "Scheduled Castes": 21_157, "Sikh": 5_649, "Parsi": 358,
+            "Other religion": 15_249})
+
+    def test_a_leading_digit_belongs_to_the_column_it_ends_inside(self):
+        # The fault the fourth live run produced. Punjab writes 124,462,897 as
+        # "1" and "24,462,897", and that leading "1" sits at 186-190 -- clear
+        # of TOTAL's right edge at 173, so unambiguously MUSLIM's, but nearer
+        # to TOTAL's centre than to MUSLIM's. Matching on centres read Attock's
+        # total as 21,330,052: its own leading digit, then the Muslim column's.
+        self.assertEqual(self.pk.column_of(190, self.edges), 2)   # MUSLIM
+        self.assertEqual(self.pk.column_of(173, self.edges), 1)   # TOTAL
+
+    def test_a_leading_zero_is_a_place_not_a_magnitude(self):
+        # Punjab writes 1,071,693 as "1" and ",071,693".
+        split = self.row("1[186-190] ,071,693[190-221]")
+        self.assertEqual(self.pk.values(split, self.edges)[1], 1_071_693)
+
+    def test_nothing_lands_in_the_row_label_column(self):
+        # Column 1 is AREA/SEX. Reading nine anchors off the front of a list
+        # of ten put the label where TOTAL POPULATION should have been.
+        self.assertEqual(self.pk.column_of(83, self.edges), 0)
+        stray = self.row("7[75-83] 127,333,305[138-173]")
+        self.assertEqual(self.pk.values(stray, self.edges)[0], 127_333_305)
 
     def test_a_dash_is_the_offices_zero(self):
-        anchors = self.pk.column_anchors([self.plain])
-        row = [(anchors[0] - 10, anchors[0] + 10, "17"),
-               (anchors[3] - 4, anchors[3] + 4, "-")]
-        self.assertEqual(self.pk.values(row, anchors)[3], 0)
+        row = self.row("127,333,305[138-173] -[264-268]")
+        self.assertEqual(self.pk.values(row, self.edges)[2], 0)
 
     def reconciling(self):
         counts = [2_133_005, 0, 13_286, 457, 175, 44, 7, 69, 115]
@@ -1698,9 +1735,6 @@ class PakistanColumns(unittest.TestCase):
         self.pk.check("Punjab", {"ATTOCK": self.reconciling()})
 
     def test_a_column_read_one_place_to_the_left_is_refused(self):
-        # The fault the first two live runs produced. It is invisible in the
-        # figures themselves -- every one is a real number off the page -- and
-        # is caught only because the table prints its own denominator.
         shifted = self.reconciling()
         shifted["TOTAL"], shifted["Muslim"] = 0, shifted["TOTAL"]
         with self.assertRaises(SystemExit) as caught:
