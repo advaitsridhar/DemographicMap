@@ -131,7 +131,7 @@ def words_by_row(blob: bytes, tolerance: float = 2.0):
 NUMBERED = [str(i) for i in range(1, len(COLUMNS) + 2)]
 
 
-def column_anchors(rows) -> list[float] | None:
+def column_anchors(rows, near: list[str] | None = None) -> list[float] | None:
     """Where each figure column sits, from the header's own "1 2 3 … 10".
 
     Read rather than assumed: the anchors are what makes a value that arrived
@@ -148,6 +148,11 @@ def column_anchors(rows) -> list[float] | None:
         text = [t for _x, t in cells]
         if text[:len(NUMBERED)] == NUMBERED:
             return [x for x, _t in cells][1:len(NUMBERED)]
+        # A row that starts to count and then does not match is the thing
+        # worth seeing when this fails, so it is carried out to the error
+        # rather than costing a separate run to go and look at the page.
+        if near is not None and text[:2] == ["1", "2"]:
+            near.append(" ".join(text[:16]))
     return None
 
 
@@ -186,6 +191,7 @@ def districts(blob: bytes, province: str) -> dict[str, dict[str, int]]:
     current: str | None = None
     locality: str | None = None
     skipped_tehsils = 0
+    near: list[str] = []
 
     for cells in words_by_row(blob):
         anchors = anchors or column_anchors(cells)
@@ -216,7 +222,9 @@ def districts(blob: bytes, province: str) -> dict[str, dict[str, int]]:
                 raise SystemExit(
                     f"{province}: no numbered header row, so no column "
                     "positions -- every figure would be placed by counting "
-                    "rather than by where it sits")
+                    "rather than by where it sits. Rows that begin to count: "
+                    + ("; ".join(repr(n) for n in near[:3]) if near
+                       else "none at all"))
             numbers = values(row, anchors)
             if numbers and current not in found:
                 found[current] = dict(zip(COLUMNS, numbers))
