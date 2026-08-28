@@ -33,56 +33,50 @@ PAGE_BREAK = "\f"
 def laid_out(blob: bytes, tolerance: float = 2.0) -> str:
     """A PDF as text with the rows put back together from their coordinates.
 
-    pypdf's plain extraction returns a page's strings in the order the file
-    happens to store them, which for these census tables is every number
-    first and then every row label in a block at the end:
+    pypdf returns a page's strings in whatever order the file stores them,
+    which for these census tables is every number first and every row label
+    afterwards, in a block at the end of the page:
 
-        ...
         HAVELIAN TEHSIL
         TABLE 9 : POPULATION BY SEX, RELIGION...
         ABBOTTABAD DISTRICT
         ABBOTTABAD TEHSIL
 
     Pairing those with the figures by their order in that list is a guess, and
-    the table interleaves districts with the tehsils inside them, so a wrong
-    guess does not look wrong -- it puts a tehsil's people on a district. The
-    positions are in the file, so they are read instead: every fragment is
-    collected with the y it was drawn at, fragments sharing a y to within a
-    couple of points are one row, and the row is written left to right.
+    that list is not even in document order -- Havelian, the last tehsil on the
+    page, comes first. The table also interleaves districts with the tehsils
+    inside them, so a wrong pairing does not look wrong: it puts a tehsil's
+    people on a district and every total still adds up.
+
+    pypdf's own visitor cannot supply the positions either -- it is never
+    called for some of these fragments, and reading its text matrix lost the
+    whole TOTAL POPULATION column while leaving perfectly well-formed rows
+    behind. pdfplumber reports every word with its box, so the rows are
+    assembled from where the words actually sit: words sharing a baseline to
+    within a couple of points are one row, written left to right.
     """
     import io
-    from pypdf import PdfReader
+
+    import pdfplumber
 
     out: list[str] = []
-    for page in PdfReader(io.BytesIO(blob)).pages:
-        parts: list[tuple[float, float, str]] = []
-
-        def visit(text, cm, tm, font_dict, font_size, _parts=parts):
-            # The text matrix positions a fragment inside the current
-            # transformation, so tm[5] alone is only the y when the CTM happens
-            # to be the identity. Reading it that way lost the whole TOTAL
-            # POPULATION column and every figure under the first district
-            # heading -- text drawn inside a transformed form landed at a y
-            # that matched nothing, so its row was never assembled.
-            if not text or not text.strip():
-                return
-            x = cm[0] * tm[4] + cm[2] * tm[5] + cm[4]
-            y = cm[1] * tm[4] + cm[3] * tm[5] + cm[5]
-            _parts.append((round(y, 1), round(x, 1), text.strip()))
-
-        page.extract_text(visitor_text=visit)
-        rows: list[tuple[float, list[tuple[float, str]]]] = []
-        for y, x, text in sorted(parts, key=lambda p: (-p[0], p[1])):
-            if rows and abs(rows[-1][0] - y) <= tolerance:
-                rows[-1][1].append((x, text))
-            else:
-                rows.append((y, [(x, text)]))
-        for _y, cells in rows:
-            out.append(" ".join(t for _x, t in sorted(cells)))
-        # Said per page, because a page that yields far fewer fragments than
-        # its neighbours is the signature of text this reader cannot see.
-        out.append(f"[{len(parts)} fragments in {len(rows)} rows]")
-        out.append(PAGE_BREAK)
+    with pdfplumber.open(io.BytesIO(blob)) as pdf:
+        log(f"  {len(pdf.pages)} pages")
+        for page in pdf.pages:
+            words = page.extract_words(use_text_flow=False, keep_blank_chars=False)
+            rows: list[tuple[float, list[tuple[float, str]]]] = []
+            for word in sorted(words, key=lambda w: (round(w["top"], 1), w["x0"])):
+                top = round(word["top"], 1)
+                if rows and abs(rows[-1][0] - top) <= tolerance:
+                    rows[-1][1].append((word["x0"], word["text"]))
+                else:
+                    rows.append((top, [(word["x0"], word["text"])]))
+            for _top, cells in rows:
+                out.append(" ".join(t for _x, t in sorted(cells)))
+            # Said per page, because a page yielding far fewer words than its
+            # neighbours is the signature of text this reader cannot see.
+            out.append(f"[{len(words)} words in {len(rows)} rows]")
+            out.append(PAGE_BREAK)
     return "\n".join(out)
 
 

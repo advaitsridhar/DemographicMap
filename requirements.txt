@@ -6,3 +6,4 @@ mapbox-vector-tile>=2.1  # MVT encoding for the pure-Python tiler
 pmtiles>=3.4        # PMTiles v3 archive writer/reader
 openpyxl>=3.1       # censusindia.gov.in publishes its tables as .xlsx
 pypdf>=5.0          # Nepal's census publishes caste, language and religion only as a report PDF
+pdfplumber>=0.11    # Pakistan's census tables store their row labels apart from the figures; only word coordinates put them back together
