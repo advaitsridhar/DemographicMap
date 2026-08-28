@@ -102,6 +102,10 @@ GEO_HINTS = ("region", "municipal", "county", "area", "district", "province",
              "kommun", "maakond", "vald", "landsdel", "territorial", "unit",
              "obcina", "občina", "opstina", "okrug", "voivod", "powiat")
 
+# Folders the descent declined to enter, so a walk that found nothing can be
+# read against what it chose not to open.
+SKIPPED: list[str] = []
+
 THROTTLE = 0.25
 MAX_NODES = 250
 # Seconds any one instance may consume. A node budget alone does not bound the
@@ -174,9 +178,36 @@ def walk(base: str, budget: list[int], deadline: float,
             # or near the root where names are broad ("Population").
             if depth <= 1 or any(w in text.lower() for w in WANTED + ("population", "census")):
                 found.extend(walk(base, budget, deadline, depth + 1, child, throttle))
+            else:
+                # A filter that skips silently is the throttled-vs-empty bug in
+                # another costume: the walk reports "nothing here" having
+                # declined to look. Norway files religious-community membership
+                # under culture rather than population, so every keyword the
+                # descent tests for is on the tables and none is on the folder
+                # holding them.
+                SKIPPED.append(f"{child}  ({text[:60]})")
         if budget[0] <= 0 or time.monotonic() > deadline:
             break
     return found
+
+
+def report_skipped(limit: int = 25) -> None:
+    """Name the folders the descent refused, so "nothing here" can be audited.
+
+    An absence is only worth as much as the search behind it, and this search
+    declines most of a tree on one keyword test against a folder's title.
+    Printing what it declined is what turns "we found no religion tables in
+    Norway" into "we found none in the part of Norway's tree we opened, and
+    here is the part we did not".
+    """
+    if not SKIPPED:
+        return
+    print(f"    did not descend into {len(SKIPPED)} folder(s) "
+          f"(no matching word in the folder's own title):")
+    for line in SKIPPED[:limit]:
+        print(f"      {line}")
+    if len(SKIPPED) > limit:
+        print(f"      ... and {len(SKIPPED) - limit} more")
 
 
 def describe(base: str, table: dict, throttle: float = THROTTLE,
@@ -282,6 +313,7 @@ def main() -> int:
         # that had correctly stopped at seventy seconds.
         walk_deadline = started + budget
         instance_deadline = started + budget + DESCRIBE_SECONDS
+        SKIPPED.clear()
         tables = walk(spec["base"], [MAX_NODES], walk_deadline,
                       path=args.root, throttle=throttle)
         spent = time.monotonic() - started
@@ -294,6 +326,7 @@ def main() -> int:
             print("    no candidate tables"
                   + (" IN THE PART WALKED — not a finding" if exhausted else
                      " matching religion / ethnicity / language"))
+            report_skipped()
             continue
         # Every path found, then the first few described. Listing is free --
         # the walk already has these -- and describing costs a request each.
@@ -304,6 +337,7 @@ def main() -> int:
         print(f"    {len(tables)} candidate table(s):")
         for table in tables:
             print(f"      {table['path']:<28} {table['title'][:88]}")
+        report_skipped()
         print(f"    describing the first {min(args.max_tables, len(tables))}:")
         for table in tables[:args.max_tables]:
             print(f"    - {table['path']}")
