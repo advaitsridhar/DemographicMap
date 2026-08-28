@@ -1,57 +1,118 @@
-probe_pdf: https://file.portal.gov.bd/uploads/34bdd5b8-5c48-4624-a299-4a1b43862f9a//659/d2c/7e3/659d2c7e3f35e896330676.pdf
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
-    self.connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1516, in connect
-    super().connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1010, in connect
-    self.sock = self._create_connection(
-                ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 863, in create_connection
-    raise exceptions[0]
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 848, in create_connection
-    sock.connect(sa)
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 212, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 187, in main
-    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 113, in fetch_text
-    with urllib.request.urlopen(req, timeout=90) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error timed out>
+bbs.gov.bd:443
+  issuer: ((('countryName', 'GB'),), (('organizationName', 'Sectigo Limited'),), (('commonName', 'Sectigo Public Server Authentication CA DV R36'),))
+  notAfter: Feb  5 23:59:59 2027 GMT
+  CN=alnahyantrust.gov.bd
+  DNS:alnahyantrust.gov.bd
+  DNS:ansarvdp.gov.bd
+  DNS:architecture.gov.bd
+  DNS:ashrayanpmo.gov.bd
+  DNS:attorneygeneral.gov.bd
+  DNS:avacademy.gov.bd
+  DNS:bab.gov.bd
+  DNS:badc.gov.bd
+  DNS:baec.gov.bd
+  DNS:baera.gov.bd
+  DNS:bansdoc.gov.bd
+  DNS:bard.gov.bd
+  DNS:bari.gov.bd
+  DNS:barishalpoly.gov.bd
+  DNS:bba.gov.bd
+  DNS:bbs.gov.bd
+  DNS:bcct.gov.bd
+  DNS:bcic.gov.bd
+  DNS:bcmcl.org.bd
+  DNS:bcsadmin.gov.bd
+  DNS:bcsadminacademy.gov.bd
+  DNS:bcsir.gov.bd
+  DNS:bcswomen.net.bd
+  DNS:bdbl.com.bd
+  DNS:bdccl.gov.bd
+  DNS:berc.org.bd
+  DNS:bfa.gov.bd
+  DNS:bfcb.gov.bd
+  DNS:bfdc.gov.bd
+  DNS:bffwt.gov.bd
+  DNS:bfidc.gov.bd
+  DNS:bforest.gov.bd
+  DNS:bfri.gov.bd
+  DNS:bgb.gov.bd
+  DNS:bgdcl.gov.bd
+  DNS:bgfcl.org.bd
+  DNS:bhb.gov.bd
+  DNS:bhbfc.gov.bd
+  DNS:bhdc.gov.bd
+  DNS:bhtpa.gov.bd
+  DNS:bia.gov.bd
+  DNS:bim.gov.bd
+  DNS:bina.gov.bd
+  DNS:birtan.gov.bd
+  DNS:bisdp.gov.bd
+  DNS:bitac.gov.bd
+  DNS:biwta.gov.bd
+  DNS:biwtc.gov.bd
+  DNS:bjc.gov.bd
+  DNS:bjmc.gov.bd
+  DNS:bjri.gov.bd
+  DNS:bjwt.gov.bd
+  DNS:bkkb.gov.bd
+  DNS:bksp.gov.bd
+  DNS:blri.gov.bd
+  DNS:blwf.gov.bd
+  DNS:bmda.gov.bd
+  DNS:bmtti.gov.bd
+  DNS:bnacwcafd.gov.bd
+  DNS:bncu.gov.bd
+  DNS:bnf.gov.bd
+  DNS:bnh.gov.bd
+  DNS:bnswc.gov.bd
+  DNS:bnzoo.gov.bd
+  DNS:boesl.gov.bd
+  DNS:boiler.gov.bd
+  DNS:bori.gov.bd
+  DNS:bpi.gov.bd
+  DNS:bricm.gov.bd
+  DNS:brri.gov.bd
+  DNS:brtc.gov.bd
+  DNS:brwt.gov.bd
+  DNS:bsb.gov.bd
+  DNS:bsbl.org.bd
+  DNS:bscic.gov.bd
+  DNS:bscplc.gov.bd
+  DNS:bsec.gov.bd
+  DNS:bsfic.gov.bd
+  DNS:bsmriith.gov.bd
+  DNS:bsri.gov.bd
+  DNS:bsrti.gov.bd
+  DNS:bstft.gov.bd
+  DNS:btc.gov.bd
+  DNS:btmc.gov.bd
+  DNS:btri.gov.bd
+  DNS:btv.gov.bd
+  DNS:cca.gov.bd
+  DNS:ccb.gov.bd
+  DNS:ccbl.gov.bd
+  DNS:ccbs.gov.bd
+  DNS:ccie.gov.bd
+  DNS:cdb.gov.bd
+  DNS:cgdf.gov.bd
+  DNS:chrdc.gov.bd
+  DNS:cme.gov.bd
+  DNS:simcbp-mowca.gov.bd
+  DNS:stft.gov.bd
+bbs.portal.gov.bd:443
+  issuer: ((('organizationName', 'Acme Co'),), (('commonName', 'Kubernetes Ingress Controller Fake Certificate'),))
+  notAfter: May 22 08:57:27 2027 GMT
+  CN=Kubernetes Ingress Controller Fake Certificate
+  DNS:ingress.local
+file.portal.gov.bd:443
+  unreachable: TimeoutError: timed out
+sid.portal.gov.bd:443
+  unreachable: TimeoutError: timed out
+portal.gov.bd:443
+  unreachable: TimeoutError: timed out
+data.gov.bd:443
+  issuer: ((('countryName', 'US'),), (('organizationName', 'Google Trust Services'),), (('commonName', 'WE1'),))
+  notAfter: Nov 11 19:12:21 2026 GMT
+  CN=data.gov.bd
+  DNS:data.gov.bd
+  DNS:*.data.gov.bd
