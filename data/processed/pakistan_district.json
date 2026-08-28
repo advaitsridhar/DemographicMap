@@ -1,5 +1,86 @@
 [
   {
+    "id": "PAK-kp",
+    "level": "admin1",
+    "name": "Khyber Pakhtunkhwa",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 40641120,
+      "year": 2023,
+      "source": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 9"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 99.6,
+        "count": 40486153
+      },
+      {
+        "group": "Christian",
+        "pct": 0.3,
+        "count": 134884
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 5473
+      },
+      {
+        "group": "Ahmadi",
+        "pct": 0.0,
+        "count": 951
+      },
+      {
+        "group": "Scheduled Castes",
+        "pct": 0.0,
+        "count": 629
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 4050
+      },
+      {
+        "group": "Parsi",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 8944
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/religion",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 9",
+        "url": "https://www.pbs.gov.pk/census-2023-tables",
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "religion_year": 2023,
+    "religion_note": "Census 2023 Table 9, the province's own printed row rather than a sum of the districts below it. The two are the same figure -- the run checks that every district adds up to this exactly -- but the printed row also covers the districts geoBoundaries has no shape for, which a sum of what landed on the map would silently leave out."
+  },
+  {
     "id": "PAK-kp-abbottabad",
     "level": "admin2",
     "name": "Abbottabad",
@@ -2656,6 +2737,87 @@
     "aliases": [],
     "religion_year": 2023,
     "religion_note": "Census 2023 Table 9. 'Scheduled Castes' is counted separately from Hindu in this table, as the census does, and Ahmadis are recorded as a category of their own rather than within Islam. The population is the table's own TOTAL POPULATION column, which is the denominator these shares are of."
+  },
+  {
+    "id": "PAK-punjab",
+    "level": "admin1",
+    "name": "Punjab",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 127333305,
+      "year": 2023,
+      "source": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 9"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 97.7,
+        "count": 124462897
+      },
+      {
+        "group": "Christian",
+        "pct": 1.9,
+        "count": 2458924
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.2,
+        "count": 228559
+      },
+      {
+        "group": "Ahmadi",
+        "pct": 0.1,
+        "count": 140512
+      },
+      {
+        "group": "Scheduled Castes",
+        "pct": 0.0,
+        "count": 21157
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 5649
+      },
+      {
+        "group": "Parsi",
+        "pct": 0.0,
+        "count": 358
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 15249
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/religion",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 9",
+        "url": "https://www.pbs.gov.pk/census-2023-tables",
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "religion_year": 2023,
+    "religion_note": "Census 2023 Table 9, the province's own printed row rather than a sum of the districts below it. The two are the same figure -- the run checks that every district adds up to this exactly -- but the printed row also covers the districts geoBoundaries has no shape for, which a sum of what landed on the map would silently leave out."
   },
   {
     "id": "PAK-punjab-attock",
@@ -5650,6 +5812,87 @@
     "religion_note": "Census 2023 Table 9. 'Scheduled Castes' is counted separately from Hindu in this table, as the census does, and Ahmadis are recorded as a category of their own rather than within Islam. The population is the table's own TOTAL POPULATION column, which is the denominator these shares are of."
   },
   {
+    "id": "PAK-sindh",
+    "level": "admin1",
+    "name": "Sindh",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 55638409,
+      "year": 2023,
+      "source": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 9"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 90.1,
+        "count": 50126428
+      },
+      {
+        "group": "Hindu",
+        "pct": 6.4,
+        "count": 3575848
+      },
+      {
+        "group": "Scheduled Castes",
+        "pct": 2.4,
+        "count": 1325559
+      },
+      {
+        "group": "Christian",
+        "pct": 1.0,
+        "count": 546968
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 38395
+      },
+      {
+        "group": "Ahmadi",
+        "pct": 0.0,
+        "count": 18266
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 5182
+      },
+      {
+        "group": "Parsi",
+        "pct": 0.0,
+        "count": 1763
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/religion",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 9",
+        "url": "https://www.pbs.gov.pk/census-2023-tables",
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "religion_year": 2023,
+    "religion_note": "Census 2023 Table 9, the province's own printed row rather than a sum of the districts below it. The two are the same figure -- the run checks that every district adds up to this exactly -- but the printed row also covers the districts geoBoundaries has no shape for, which a sum of what landed on the map would silently leave out."
+  },
+  {
     "id": "PAK-sindh-badin",
     "level": "admin2",
     "name": "Badin",
@@ -7650,6 +7893,87 @@
     ],
     "religion_year": 2023,
     "religion_note": "Census 2023 Table 9. 'Scheduled Castes' is counted separately from Hindu in this table, as the census does, and Ahmadis are recorded as a category of their own rather than within Islam. The population is the table's own TOTAL POPULATION column, which is the denominator these shares are of."
+  },
+  {
+    "id": "PAK-balochistan",
+    "level": "admin1",
+    "name": "Balochistan",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 14562011,
+      "year": 2023,
+      "source": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 9"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 99.1,
+        "count": 14429568
+      },
+      {
+        "group": "Christian",
+        "pct": 0.4,
+        "count": 62731
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.4,
+        "count": 57010
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 8810
+      },
+      {
+        "group": "Ahmadi",
+        "pct": 0.0,
+        "count": 557
+      },
+      {
+        "group": "Scheduled Castes",
+        "pct": 0.0,
+        "count": 2097
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 1057
+      },
+      {
+        "group": "Parsi",
+        "pct": 0.0,
+        "count": 181
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/religion",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 9",
+        "url": "https://www.pbs.gov.pk/census-2023-tables",
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "religion_year": 2023,
+    "religion_note": "Census 2023 Table 9, the province's own printed row rather than a sum of the districts below it. The two are the same figure -- the run checks that every district adds up to this exactly -- but the printed row also covers the districts geoBoundaries has no shape for, which a sum of what landed on the map would silently leave out."
   },
   {
     "id": "PAK-balochistan-awaran",
