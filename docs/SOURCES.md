@@ -823,6 +823,93 @@ primary record rather than a derivative.
 * Telangana (2014) and Ladakh (2019) postdate the census entirely, so they have
   no state-level figure even though their districts do.
 
+### Pakistan: a table that exists only as a document
+
+The Bureau of Statistics publishes Table 9 -- *population by sex, religion and
+rural/urban* -- as one PDF per province, from the 7th Population and Housing
+Census 2023. There is no API and no spreadsheet. Reading the document is the
+whole job, and it took nine refusals to do it, every one of them the adapter
+stopping itself rather than shipping something wrong.
+
+**The row labels are stored apart from the figures.** pypdf returns a page's
+strings in the order the file happens to hold them, which here is every number
+first and every label afterwards, in a block that is not itself in document
+order. Pairing by position is a guess, and the table interleaves districts with
+the tehsils inside them, so a wrong guess does not look wrong: it puts a
+tehsil's people on a district and every total still adds up. pdfplumber reports
+each word with its box, so the rows are rebuilt from where the words sit.
+
+**A figure can arrive as several words.** Khyber Pakhtunkhwa's 36 Parsis come
+back as `3` and `6`; Punjab writes 124,462,897 as `1` and `24,462,897`, and
+1,071,693 as `1` and `,071,693`. Splitting a row on whitespace yields more
+values than there are columns and shifts every column after the split one place
+to the left. The gaps settle it: measured in both files, a gap inside a value
+is exactly 0 points and a gap between columns never less than 13.
+
+**Where the columns are is not a fact this document has.** Three rules were
+tried on position and each fitted whichever file it had been read off:
+
+* The header's numbered row, `1 2 3 … 10`, is set flush right with the columns
+  in Punjab -- the `2` heading TOTAL POPULATION ends at x=173 and so does
+  127,333,305 beneath it -- and twenty points to their left in Khyber
+  Pakhtunkhwa.
+* The figures themselves are flush right, but the table sits at its own
+  horizontal offset on every page, so edges learned across the document match
+  no page in particular.
+* And within one page: page 2 of Khyber Pakhtunkhwa carries two offsets at
+  once, 37 rows at one and 12 at the other.
+
+What the table does print, every time, is nine cells to a row with nothing left
+out, because the office writes a dash where a religion is absent rather than
+leaving the cell empty. So the cells are counted, dash included, and a row
+without nine of them is refused rather than trimmed to fit. A row shifted
+bodily sideways reads the same, which is a test.
+
+Counting is what failed at the very start. It failed because the words were
+miscounted, not because counting was the wrong idea.
+
+**Two controls, both supplied by the file.** Each district's religions must sum
+to the total printed beside them -- a column read one place to the left still
+sums to something, but not to that. And the districts must sum to the province
+printed above them.
+
+The second one is the one that mattered. Thirty-four districts were read from
+Khyber Pakhtunkhwa, every one reconciling perfectly against its own printed
+total, and together they were 825,377 people short of their province. The
+missing unit was `MALAKAND PROTECTED AREA`, which is not called a district and
+so was never noticed: a heading this reader does not recognise produces no
+wrong figure anywhere. Nothing but the file's own province row knew.
+
+**What is not here.** Islamabad, Azad Jammu and Kashmir and Gilgit-Baltistan
+are enumerated apart from the census proper and their Table 9 is not published
+at either path the office uses. They are named in the run's log as absent
+territories rather than as failed fetches, and the four provinces -- 238 of
+Pakistan's 241 million people -- are required before anything is written.
+
+**Joining, and three different kinds of miss.** Of 126 units, 114 join and
+carry 96.7% of the people.
+
+* *Spelling and renaming*, declared rather than derived: Battagram for
+  Batagram, Qilla Abdullah for Killa Abdullah, and Nawabshah for Shaheed
+  Benazirabad -- a rename that shares no word with the current name, so nothing
+  could infer it. A rule loose enough to bridge these is loose enough to bridge
+  places that are not the same.
+* *Several districts to one shape.* geoBoundaries draws one Chitral where the
+  census counts Lower and Upper, one Kohistan where it counts three, and one
+  Karachi where it counts seven city districts. Each is a division of an older
+  district the file still draws whole, so the parts are exactly the shape. They
+  are summed and the note on each says which districts were summed. A partial
+  sum is refused: putting a fraction of the people on the whole shape would
+  look entirely normal.
+* *Districts the boundary file does not have*: Larkana, Chiniot, Nankana Sahib,
+  Sujawal, Torghar, and six of Balochistan's newer ones -- 7.8 million people,
+  3.3% of the country. These stay unmatched, which is what an unmatched row is
+  for.
+
+**The population figure** is Table 9's own TOTAL POPULATION column, because
+that is the denominator these shares are of. It is not the only population the
+office publishes.
+
 ## Joining a row to a shape
 
 Every adapter row has to find one boundary polygon. Names alone cannot do it:
