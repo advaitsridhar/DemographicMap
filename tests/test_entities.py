@@ -1785,6 +1785,18 @@ class PakistanCells(unittest.TestCase):
                           self.province(2_133_005 + 825_377))
         self.assertIn("+825,377", str(caught.exception))
 
+    def test_a_unit_that_is_not_called_a_district_is_still_a_unit(self):
+        # Khyber Pakhtunkhwa's thirty-sixth is "MALAKAND PROTECTED AREA", and
+        # it went missing without producing one wrong figure: 825,377 people,
+        # 34 districts that each reconciled, and nothing to notice.
+        self.assertEqual(
+            self.pk.DISTRICT.match("MALAKAND PROTECTED AREA").group(1),
+            "MALAKAND")
+        self.assertEqual(
+            self.pk.DISTRICT.match("ABBOTTABAD DISTRICT").group(1),
+            "ABBOTTABAD")
+        self.assertIsNone(self.pk.DISTRICT.match("ABBOTTABAD TEHSIL"))
+
     def test_a_province_with_no_row_of_its_own_is_refused(self):
         # Without it nothing says whether the districts read are all of them.
         with self.assertRaises(SystemExit) as caught:

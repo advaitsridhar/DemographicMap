@@ -112,7 +112,13 @@ COLUMNS = ["TOTAL", "Muslim", "Christian", "Hindu", "Ahmadi",
 SEXES = ("ALL SEXES", "MALE", "FEMALE", "TRANSGENDER")
 LOCALITIES = ("ALL LOCALITIES", "RURAL", "URBAN")
 
-DISTRICT = re.compile(r"^(.+?)\s+DISTRICT$")
+# Not every unit at this level is called a district. Khyber Pakhtunkhwa's
+# thirty-sixth is "MALAKAND PROTECTED AREA", and dropping it cost 825,377
+# people who went missing without producing a single wrong figure -- which is
+# why the run now makes the districts add up to their own province. Anything
+# else the office names differently will be caught the same way, by the sum
+# rather than by having been guessed at here.
+DISTRICT = re.compile(r"^(.+?)\s+(?:DISTRICT|PROTECTED AREA)$")
 NUMBER = re.compile(r"^[\d,]+$")
 
 
