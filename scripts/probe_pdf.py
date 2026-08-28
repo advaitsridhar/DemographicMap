@@ -30,7 +30,8 @@ from common import log  # noqa: E402
 PAGE_BREAK = "\f"
 
 
-def laid_out(blob: bytes, tolerance: float = 2.0) -> str:
+def laid_out(blob: bytes, tolerance: float = 2.0,
+             boxes: bool = False) -> str:
     """A PDF as text with the rows put back together from their coordinates.
 
     pypdf returns a page's strings in whatever order the file stores them,
@@ -64,15 +65,25 @@ def laid_out(blob: bytes, tolerance: float = 2.0) -> str:
         log(f"  {len(pdf.pages)} pages")
         for page in pdf.pages:
             words = page.extract_words(use_text_flow=False, keep_blank_chars=False)
-            rows: list[tuple[float, list[tuple[float, str]]]] = []
+            rows: list[tuple[float, list[tuple[float, float, str]]]] = []
             for word in sorted(words, key=lambda w: (round(w["top"], 1), w["x0"])):
                 top = round(word["top"], 1)
+                cell = (word["x0"], word["x1"], word["text"])
                 if rows and abs(rows[-1][0] - top) <= tolerance:
-                    rows[-1][1].append((word["x0"], word["text"]))
+                    rows[-1][1].append(cell)
                 else:
-                    rows.append((top, [(word["x0"], word["text"])]))
+                    rows.append((top, [cell]))
             for _top, cells in rows:
-                out.append(" ".join(t for _x, t in sorted(cells)))
+                # --boxes prints where each word actually sits, because "which
+                # column is this figure in" is a question about coordinates and
+                # reading the row as text cannot answer it. Pakistan's Punjab
+                # table sets a value's leading digit a wide gap away from the
+                # rest of it, and whether that digit belongs to the column on
+                # its left or the one on its right is not visible at all in
+                # "2 ,133,005 2 ,118,159".
+                out.append(" ".join(
+                    f"{t}[{x0:.0f}-{x1:.0f}]" if boxes else t
+                    for x0, x1, t in sorted(cells)))
             # Said per page, because a page yielding far fewer words than its
             # neighbours is the signature of text this reader cannot see.
             out.append(f"[{len(words)} words in {len(rows)} rows]")
@@ -80,7 +91,8 @@ def laid_out(blob: bytes, tolerance: float = 2.0) -> str:
     return "\n".join(out)
 
 
-def fetch_text(url: str, layout: bool = False) -> str:
+def fetch_text(url: str, layout: bool = False,
+               boxes: bool = False) -> str:
     """A remote PDF as text, page by page, without keeping the file.
 
     The machine that can reach a statistical office is not the machine that
@@ -102,7 +114,7 @@ def fetch_text(url: str, layout: bool = False) -> str:
         blob = resp.read()
     log(f"  {len(blob):,} bytes")
     if layout:
-        return laid_out(blob)
+        return laid_out(blob, boxes=boxes)
     reader = PdfReader(io.BytesIO(blob))
     log(f"  {len(reader.pages)} pages")
     return PAGE_BREAK.join((page.extract_text() or "") for page in reader.pages)
@@ -130,6 +142,8 @@ def main() -> int:
     ap.add_argument("text", type=Path, nargs="?",
                     help="output of pdftotext -layout")
     ap.add_argument("--url", help="fetch and read a PDF instead of a local file")
+    ap.add_argument("--boxes", action="store_true",
+                    help="with --layout, print each word's x span")
     ap.add_argument("--layout", action="store_true",
                     help="rebuild rows from the glyphs' coordinates, so a row "
                          "label stays with the figures it labels")
@@ -143,7 +157,7 @@ def main() -> int:
 
     if args.url:
         log(f"probe_pdf: {args.url}")
-        text = fetch_text(args.url, layout=args.layout)
+        text = fetch_text(args.url, layout=args.layout, boxes=args.boxes)
     elif args.text:
         text = args.text.read_text(encoding="utf-8", errors="replace")
     else:
