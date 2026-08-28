@@ -525,6 +525,47 @@ rule refusing two rows that land on one shape, and that rule stopped it by
 dropping the row rather than by placing it. A wrong join that a tiebreak
 happens to catch is still a wrong join, waiting for the tiebreak to be absent.
 
+**The rest of the Nordics, walked properly this time.** Finland was the one
+that paid. The others were each ruled out for a reason worth writing down,
+because "we looked and there is nothing" is only worth as much as the looking.
+
+*Sweden* has neither. Six candidate tables, every one citizenship or
+naturalisation, and the tree finished inside its budget — so this is a real
+absence rather than an interrupted search. Sweden has kept no register of
+religion since the church separation in 2000 and does not collect ethnicity.
+The original note was right about Sweden.
+
+*Norway* publishes membership of religious and life-stance communities by
+region — table 08531, 42 regions — and it cannot be used here. Every one of
+those tables counts communities **outside the Church of Norway**. The Church
+itself is roughly two-thirds of the country and appears only in table 06929,
+**by diocese**, and Norway's twelve dioceses do not nest into its eleven
+counties. KOSTRA reports the Church by municipality for services, employees,
+users and finances, but not for membership. People who belong to nothing are
+not counted at all.
+
+So a share built from 08531 would have "members of minority religious
+communities" as its denominator. Islam reading 25% in a county would mean a
+quarter of a small slice, not a quarter of the county, on a map where every
+other religion figure is a share of population. That is the mis-match this
+project exists to refuse, and refusing it leaves Norway an honest blank rather
+than a number that looks right.
+
+*Iceland* keeps a register of religious and life-stance organisations —
+MAN10001, 64 organisations, annual since 1998 — and it carries **no geography
+dimension at all**: year, organisation, and a split by sex, age and parish-fee
+payment. National only, exactly like Finland's 11rx.
+
+Finding it took four `--tree` calls, and the reason is worth recording: it is
+not in the database the instance is configured against. Statistics Iceland
+serves several, the configured one is *Ibuar* (inhabitants), and religion sits
+under *Samfelag* → culture → religious organisations. Every walk of Ibuar
+correctly reported no religion tables, and that report was about which database
+had been walked.
+
+*Denmark* is not PxWeb. StatBank has its own REST shape, so the walk cannot
+read it and it is skipped by name rather than reported as empty.
+
 **Not taken from Finland.** Table 11rx, *belonging to a religious community*,
 has no geography dimension at all — religious community, sex, age, year, and
 nothing else. It is a national figure and this map already has one. Table 11rm

@@ -119,6 +119,16 @@ class Table:
 # unreachable node, and an empty result became a conclusion about the country.
 # Re-walked with backoff, that instance returns 44 candidate tables.
 #
+# Walked properly, the other three come out like this. Sweden has neither
+# question -- six candidate tables, all citizenship, on a tree that finished
+# inside its budget, so that absence is real. Norway publishes membership of
+# religious and life-stance communities by region, and every such table counts
+# communities *outside* the Church of Norway; the Church is two-thirds of the
+# country and is published by diocese, which does not nest into the counties,
+# so a share from it would be of minority-community members rather than of
+# population. Iceland registers 64 religious organisations annually and the
+# table carries no geography at all. Denmark is StatBank rather than PxWeb.
+#
 # What is left is the two Baltic offices, and they are the point: neither
 # country has had any ethnicity figure in this dataset, and both publish one
 # annually at a level the boundary files carry.
