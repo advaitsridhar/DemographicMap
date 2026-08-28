@@ -58,8 +58,17 @@ def laid_out(blob: bytes, tolerance: float = 2.0) -> str:
         parts: list[tuple[float, float, str]] = []
 
         def visit(text, cm, tm, font_dict, font_size, _parts=parts):
-            if text and text.strip():
-                _parts.append((round(tm[5], 1), round(tm[4], 1), text.strip()))
+            # The text matrix positions a fragment inside the current
+            # transformation, so tm[5] alone is only the y when the CTM happens
+            # to be the identity. Reading it that way lost the whole TOTAL
+            # POPULATION column and every figure under the first district
+            # heading -- text drawn inside a transformed form landed at a y
+            # that matched nothing, so its row was never assembled.
+            if not text or not text.strip():
+                return
+            x = cm[0] * tm[4] + cm[2] * tm[5] + cm[4]
+            y = cm[1] * tm[4] + cm[3] * tm[5] + cm[5]
+            _parts.append((round(y, 1), round(x, 1), text.strip()))
 
         page.extract_text(visitor_text=visit)
         rows: list[tuple[float, list[tuple[float, str]]]] = []
@@ -70,6 +79,9 @@ def laid_out(blob: bytes, tolerance: float = 2.0) -> str:
                 rows.append((y, [(x, text)]))
         for _y, cells in rows:
             out.append(" ".join(t for _x, t in sorted(cells)))
+        # Said per page, because a page that yields far fewer fragments than
+        # its neighbours is the signature of text this reader cannot see.
+        out.append(f"[{len(parts)} fragments in {len(rows)} rows]")
         out.append(PAGE_BREAK)
     return "\n".join(out)
 
