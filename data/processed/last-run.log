@@ -1,39 +1,6 @@
-probe_xlsx: https://data.humdata.org/dataset/a6fedebe-72fe-4fc2-8657-1580acfa32c6/resource/72eaaa6c-6a30-4efd-bad9-02133b316ea8/download/bangladesh_bbs_population-and-housing-census-dataset_2022_admin-02.xlsx
-  1,213,869 bytes
-  42 sheet(s): Merged_All_Table, Type of Dwelling_HH & Pop, Type of Household , Type of Dwelling, Sex & Dist,  Population by Sex, Dist & Loca, Type of Household, Dist & Loca, Type of Household, Loca_Rural, Type of Household, Loca_Urban, 10 Yrs & above by Mar Sta_Sex,  Population by Religion, Sex, Population Growth Rate, Sex Rat, PwD (Except Hijra), Literacy Rate_Aged 5 Yrs, Literacy Rate_Aged 7 Yrs & Abov,  Literacy Rate_Aged 7 Yrs Ab_Re, Student Aged 5-29 Years by Sex,  Aged 5 Yrs & Above_Working Sta, Type of Work, Employed Population by Sector, 15-24 Years NEET,  Population having Mobile Phone, Internet User, Having Account in Financial,  Having Mobile Banking Account, Ethnic Population by Sex, Population_District, Returned Migrant, Household by Type of Dwelling, Type of Household, Household by Wall Material , Household by Roof Material , Household by Floor Material, Household by Structure, Household by Ownership Status, Main Source of Drinking Water, Toilet Facilities, Type of Toilet Use, Handwashing Facilities,  Main Source of Electricity ,  Main Source of Cooking Fuel , Foreign Remittance Recipient, Number of Person & Avg HH Size
-
---- sheet ' Population by Sex, Dist & Loca' (1000 rows x 14 cols) --------------------
-  District | Population_Total | Population_Male | Population_Femal | Population_Hijra | Population_rural | Population_rural | Population_rural | Population_rural | Population_Urban | Population_Urban | Population_Urban
-  Bagerhat | 1613076 | 802314 | 810691 | 71 | 1227890 | 611466 | 616379 | 45 | 385186 | 190848 | 194312
-  Bandarban | 481106 | 246947 | 234146 | 13 | 286687 | 144657 | 142020 | 10 | 194419 | 102290 | 92126
-  Barguna | 1010531 | 494738 | 515723 | 70 | 779670 | 381325 | 398327 | 18 | 230861 | 113413 | 117396
-  Barishal | 2570446 | 1255436 | 1314935 | 75 | 1793382 | 864628 | 928728 | 26 | 777064 | 390808 | 386207
-
---- sheet 'Type of Household, Dist & Loca' (1000 rows x 26 cols) --------------------
-  District | # Population | # Population_ Ge | # Population_ In | # Population_oth | % Population_Gen | % Population_Ins | % Population_oth
-  Barguna | 1010484 | 992721 | 12095 | 5668 | 98.24 | 1.2 | 0.56
-  Barishal | 2568630 | 2496625 | 42695 | 29310 | 97.2 | 1.66 | 1.14
-  Bhola | 1932477 | 1904358 | 18358 | 9761 | 98.54 | 0.95 | 0.51
-  Jhalokati | 661108 | 647167 | 10348 | 3593 | 97.89 | 1.57 | 0.54
-
---- sheet 'Type of Household, Loca_Rural' (1000 rows x 8 cols) --------------------
-  District | # Population_Rur | # Population_ Ge | # Population_Ins | # Population_oth | % Population_Gen | % Population_Ins | % Population_oth
-  Barguna | 779660 | 769326 | 7517 | 2817 | 98.67 | 0.96 | 0.36
-  Barishal | 1792392 | 1763334 | 19812 | 9246 | 98.38 | 1.11 | 0.52
-  Bhola | 1398164 | 1383208 | 9353 | 5603 | 98.93 | 0.67 | 0.4
-  Jhalokati | 477031 | 471039 | 4185 | 1807 | 98.74 | 0.88 | 0.38
-
---- sheet 'Type of Household, Loca_Urban' (1000 rows x 10 cols) --------------------
-  District | # Population_Urb | # Population_ Ge | # Population_Ins | # Population_oth | % Population_Gen | % Population_Ins | % Population_oth
-  Barguna | 230824 | 223395 | 4578 | 2851 | 96.78 | 1.98 | 1.24
-  Barishal | 776238 | 733291 | 22883 | 20064 | 94.47 | 2.95 | 2.58
-  Bhola | 534313 | 521150 | 9005 | 4158 | 97.54 | 1.69 | 0.78
-  Jhalokati | 184077 | 176128 | 6163 | 1786 | 95.68 | 3.35 | 0.97
-
---- sheet 'Population_District' (1000 rows x 26 cols) --------------------
-  District | # Overall_Bangla | % Overall_Bangla | # Male_Banglades | % Male_Banglades | # Female_Banglad | % Female_Banglad | # Hizra_Banglade | % Hizra_Banglade
-  Barguna | 1144674 | 0.69 | 569422 | 0.7 | 575180 | 0.69 | 72 | 0.89
-  Barishal | 3741221 | 2.27 | 1882997 | 2.3 | 1858097 | 2.23 | 127 | 1.56
-  Bhola | 2474134 | 1.5 | 1246089 | 1.52 | 1227951 | 1.47 | 94 | 1.16
-  Jhalokati | 768999 | 0.47 | 377530 | 0.46 | 391435 | 0.47 | 34 | 0.42
-
+bangladesh: BBS Population and Housing Census 2022, by zila
+    1,213,869 bytes from HDX
+    64 districts in Population by Sex, Dist & Loca, 64 in Population by Religion, Sex
+    every religion's total matches its own male plus female, and in every district the religions plus the hijra come to the published population exactly (8,124 hijra nationally, whom the religion table does not classify)
+  wrote data/processed/bangladesh_district.json (119 kB)
+  64 districts
