@@ -1,8 +1,125 @@
-pxweb: Statistics Finland (FIN)
-  vaerak/11rl.px
-    left out (code does not start 'MK'): 2 — MA1 MA1 MAINLAND FINLAND, MA2 MA2 ÅLAND
-    left out (the country itself): 1 — SSS WHOLE COUNTRY
-    19 units, categories sum to the published total in each
-    ...and to 5,652,881 against a published national 5,652,881
-  wrote data/processed/finland_region.json (296 kB)
-  19 records
+
+== NOR Statistics Norway
+   https://data.ssb.no/api/v0/en/table
+      (throttled, waiting 1s)
+      (throttled, waiting 1s)
+      (throttled, waiting 1s)
+      (throttled, waiting 1s)
+      (throttled, waiting 1s)
+      (throttled, waiting 1s)
+      (throttled, waiting 1s)
+      (throttled, waiting 1s)
+      (throttled, waiting 1s)
+      (throttled, waiting 1s)
+      (throttled, waiting 1s)
+      (throttled, waiting 1s)
+      (throttled, waiting 1s)
+      (throttled, waiting 1s)
+      (throttled, waiting 1s)
+      (throttled, waiting 1s)
+      (throttled, waiting 1s)
+    (stopped after 72s — tree not fully walked)
+    7 candidate table(s):
+      be/be01/folkemengde/SBMENU6923/FolkStatsb 11366: Population, by citizenship (M) (UD) 2016 - 2026
+      be/be01/folkemengde/SBMENU6923/FolkKjStatsb2 05196: Population, by sex, age and citizenship 1977 - 2026
+      be/be01/folkemengde/SBMENU6923/FolkSivilStat2 05328: Population, by sex, marital status and citizenship 2000 - 2026
+      be/be05/befsvalbard/FolkSvalbard09 12622: Population 1 January (H1) or 1 July (H2) in Longyearbyen and Ny-Ålesund, by citiz
+      be/be05/folkemengde/SBMENU6923/FolkStatsb 11366: Population, by citizenship (M) (UD) 2016 - 2026
+      be/be05/folkemengde/SBMENU6923/FolkKjStatsb2 05196: Population, by sex, age and citizenship 1977 - 2026
+      be/be05/folkemengde/SBMENU6923/FolkSivilStat2 05328: Population, by sex, marital status and citizenship 2000 - 2026
+    describing the first 5:
+    - be/be01/folkemengde/SBMENU6923/FolkStatsb
+      11366: Population, by citizenship (M) (UD) 2016 - 2026
+      (throttled, waiting 1s)
+      vars: region(1036), citizenship(264), contents(2), year(11)
+      geography: region — 1036 areas, e.g. The whole country, Østfold, Halden, Moss
+    - be/be01/folkemengde/SBMENU6923/FolkKjStatsb2
+      05196: Population, by sex, age and citizenship 1977 - 2026
+      (throttled, waiting 1s)
+      vars: sex(2), citizenship(259), age(9), contents(1), year(50)
+      geography: none with more than five values — national only
+    - be/be01/folkemengde/SBMENU6923/FolkSivilStat2
+      05328: Population, by sex, marital status and citizenship 2000 - 2026
+      (throttled, waiting 1s)
+      vars: sex(2), citizenship(259), marital status(7), contents(1), year(27)
+      geography: none with more than five values — national only
+    - be/be05/befsvalbard/FolkSvalbard09
+      12622: Population 1 January (H1) or 1 July (H2) in Longyearbyen and Ny-Ålesund, by citizenship and sex 2019H1 
+      (throttled, waiting 1s)
+      vars: citizenship(8), sex(2), contents(1), half year(15)
+      geography: none with more than five values — national only
+    - be/be05/folkemengde/SBMENU6923/FolkStatsb
+      11366: Population, by citizenship (M) (UD) 2016 - 2026
+      (throttled, waiting 1s)
+      vars: region(1036), citizenship(264), contents(2), year(11)
+      geography: region — 1036 areas, e.g. The whole country, Østfold, Halden, Moss
+
+== ISL Statistics Iceland
+   https://px.hagstofa.is/pxen/api/v1/en/Ibuar
+    13 candidate table(s):
+      buferlaflutningar/buferlaflmillilanda/MAN01400.px External migration by sex and citizenship 1961-2025
+      buferlaflutningar/buferlaflmillilanda/MAN01401.px External migration by sex, age and citizenship 1986-2025
+      buferlaflutningar/buferlaflmillilanda/MAN01404.px External migration by sex, countries and citizenship 1986-2025
+      buferlaflutningar/buferlaflmillilanda/MAN01405.px External migration by sex, citizenship and region 1986-2025
+      buferlaflutningar/buferlaflmillilanda/MAN01406.px External migration by citizenship and sex 1986-2025
+      mannfjoldi/3_bakgrunnur/Rikisfang/MAN04103.px Population by country of citizenship, sex and age 1 January 1998-2026
+      mannfjoldi/3_bakgrunnur/Rikisfang/MAN04203.px Population by sex, municipality and citizenship 1 January 1998-2026
+      mannfjoldi/3_bakgrunnur/Rikisfang/MAN04208.px Population by sex, municipality, citizenship and age 1 January 1998-2026
+      mannfjoldi/3_bakgrunnur/Rikisfbr/MAN04119.px Foreign citizens gaining Icelandic citizenship by former citizenship, sex and age 1991-2
+      mannfjoldi/3_bakgrunnur/Rikisfbr/MAN04120.px Foreign citizens gaining Icelandic citizenship by country of birth, sex and age 1991-202
+      mannfjoldi/4_endurskodun/MAN90001.px Population, change of method 2024: Overestimation of the population size by citizenship,
+      mannfjoldi/4_endurskodun/MAN90003.px Population, change of method 2024: Overestimation of the population size by citizenship 
+      manntal/1_yfirlit/CEN9902.px Census: Foreign citizens by country of citizenship 1930-2021
+    describing the first 5:
+    - buferlaflutningar/buferlaflmillilanda/MAN01400.px
+      External migration by sex and citizenship 1961-2025
+      vars: Sex(3), Year(65), Citizenship(3), Type of migration(3)
+      geography: none with more than five values — national only
+    - buferlaflutningar/buferlaflmillilanda/MAN01401.px
+      External migration by sex, age and citizenship 1986-2025
+      vars: Sex(3), Year(40), Age(112), Citizenship(3), Type of migration(3)
+      geography: none with more than five values — national only
+    - buferlaflutningar/buferlaflmillilanda/MAN01404.px
+      External migration by sex, countries and citizenship 1986-2025
+      vars: Country(225), Year(40), Migration(3), Citizenship(3), Sex(3)
+      geography: none with more than five values — national only
+    - buferlaflutningar/buferlaflmillilanda/MAN01405.px
+      External migration by sex, citizenship and region 1986-2025
+      vars: Sex(3), Year(40), Region(10), Citizenship(3), Migration(3)
+      geography: Region — 10 areas, e.g. Total, Capital area, Southwest, West
+    - buferlaflutningar/buferlaflmillilanda/MAN01406.px
+      External migration by citizenship and sex 1986-2025
+      vars: Year(40), Citizenship(202), Sex(3), Migration(3)
+      geography: none with more than five values — national only
+
+== SWE Statistics Sweden
+   https://api.scb.se/OV0104/v1/doris/en/ssd
+    (stopped after 70s — tree not fully walked)
+    6 candidate table(s):
+      AM/AM0207/AM0207H/BefSyssMbAldR Population 16+ years (RAMS) at national level, employment, country of citizenship, age a
+      AM/AM0207/AM0207A/RAMSBefSyssMbAldR Population 16+ years (RAMS) at national level, employment, country of citizenship, age a
+      BE/BE0101/BE0101N/MedborgarByteTotKCKM Number of persons who have acquired Swedish citizenship by region, age and sex.  Year 20
+      BE/BE0101/BE0101N/MedborgarByteTotK Number of persons who have acquired Swedish citizenship by region, age and sex. Year 200
+      BE/BE0101/BE0101N/MedborgByteLandKCKM Number of persons who have acquired Swedish citizenship per quarter by country of citize
+      BE/BE0101/BE0101N/MedborgarByteLandK Number of persons who have acquired Swedish citizenship per quarter by country of citize
+    describing the first 5:
+    - AM/AM0207/AM0207H/BefSyssMbAldR
+      Population 16+ years (RAMS) at national level, employment, country of citizenship, age and sex. Year 2004 - 20
+      vars: employment status(2), country of citizenship(9), age(8), sex(2), observations(1), year(15)
+      geography: none with more than five values — national only
+    - AM/AM0207/AM0207A/RAMSBefSyssMbAldR
+      Population 16+ years (RAMS) at national level, employment, country of citizenship, age and sex. 1993-2003 1993
+      vars: employment status(2), country of citizenship(9), age(8), sex(2), observations(1), year(11)
+      geography: none with more than five values — national only
+    - BE/BE0101/BE0101N/MedborgarByteTotKCKM
+      Number of persons who have acquired Swedish citizenship by region, age and sex.  Year 2025
+      vars: region(312), age(7), sex(3), observations(1), year(1)
+      geography: region — 312 areas, e.g. Sweden, Stockholm county, Upplands Väsby, Vallentuna
+    - BE/BE0101/BE0101N/MedborgarByteTotK
+      Number of persons who have acquired Swedish citizenship by region, age and sex. Year 2000 - 2024
+      vars: region(312), age(6), sex(2), observations(1), year(25)
+      geography: region — 312 areas, e.g. Sweden, Stockholm county, Upplands Väsby, Vallentuna
+    - BE/BE0101/BE0101N/MedborgByteLandKCKM
+      Number of persons who have acquired Swedish citizenship per quarter by country of citizenship and sex.  Year 2
+      vars: country of citizenship(209), sex(3), period(7), observations(1), year(2)
+      geography: none with more than five values — national only
