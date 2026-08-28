@@ -64,6 +64,7 @@ ADAPTER_FILES = [
     "estonia_county.json", "latvia_municipality.json", "finland_region.json",
     "singapore_region.json", "singapore_planning_area.json",
     "srilanka_province.json", "srilanka_district.json",
+    "pakistan_district.json",
     "brazil_state.json", "brazil_municipality.json",
     "canada_province.json", "canada_census_division.json",
     "australia_state.json", "australia_lga.json",

@@ -1625,3 +1625,229 @@ class SwitzerlandMainLanguages(unittest.TestCase):
     def test_the_note_says_shares_exceed_one_hundred_percent(self):
         self.assertIn("more than 100%", self.ch.NOTE)
         self.assertIn("estimate", self.ch.NOTE)
+
+
+class PakistanCells(unittest.TestCase):
+    """Table 9 is read by what it prints, not by where it prints it.
+
+    The coordinates below are real, off page 1 of each province's file, read
+    with probe_pdf --boxes. Both provinces are here because every rule tried
+    on position passed against one file and failed the other.
+
+    Only the reconciliation announces a misread. A column read one place to
+    the left still sums to something, and the reason Pakistan has not shipped
+    wrong is that the table prints its own denominator beside every row.
+    """
+
+    # Khyber Pakhtunkhwa breaks 36 into "3" and "6"; Punjab breaks a leading
+    # digit off almost every figure; and the last row of each has the office's
+    # dash where a religion is absent.
+    KP = [
+        "ALL[49-60] SEXES[62-83] 40,641,120[146-177] 40,486,153[195-226] "
+        "134,884[252-275] 5,473[306-321] 951[356-366] 629[411-421] "
+        "4,050[441-456] 3[490-494] 6[494-497] 8,944[516-532]",
+        "MALE[49-66] 20,742,619[146-177] 20,668,933[195-226] 63,685[256-275] "
+        "2,721[306-321] 475[356-366] 330[411-421] 2,084[441-456] 2[490-494] "
+        "0[494-497] 4,371[516-532]",
+        "TRANSGENDER[49-97] 1,117[161-177] 1,098[210-226] 9[271-275] "
+        "-[312-314] -[357-359] 1[418-421] 2[453-456] -[488-490] 7[528-532]",
+    ]
+    PUNJAB = [
+        "ALL[49-60] SEXES[62-83] 127,333,305[138-173] 1[186-190] "
+        "24,462,897[190-221] 2[241-244] ,458,924[244-268] 2[297-300] "
+        "28,559[300-319] 1[349-352] 40,512[352-371] 2[416-419] 1,157[419-435] "
+        "5[455-459] ,649[459-471] 3[495-499] 58[499-506] 15,249[529-548]",
+        "MALE[49-66] 65,277,723[142-173] 6[190-193] 3,825,580[193-221] "
+        "1[241-244] ,242,198[244-268] 1[297-300] 17,671[300-319] 6[352-356] "
+        "9,941[356-371] 1[416-419] 1,058[419-435] 2[455-459] ,975[459-471] "
+        "1[495-499] 99[499-506] 8,101[533-548]",
+        "TRANSGENDER[49-97] 3,246[157-173] 3[206-209] ,180[209-221] "
+        "5[262-265] 7[265-268] 4[316-319] 1[368-371] -[426-428] 2[467-471] "
+        "-[497-499] 2[545-548]",
+    ]
+    # The same district row as Khyber Pakhtunkhwa's page 1 prints it: no
+    # thousands separators, and set two points right of the province rows.
+    ABBOTTABAD = ("ALL[47-58] SEXES[60-81] 1397587[155-179] 1391394[204-228] "
+                  "5818[263-277] 97[316-323] 21[361-368] 17[416-423] "
+                  "43[451-458] 6[496-499] 191[523-534]")
+
+    @staticmethod
+    def row(spec):
+        """A row written as it came off the page: text[x0-x1] ..."""
+        cells = []
+        for part in spec.split():
+            text, span = part.rsplit("[", 1)
+            x0, x1 = span.rstrip("]").split("-")
+            cells.append((float(x0), float(x1), text))
+        return cells
+
+    def setUp(self):
+        from scripts.fetch_census import pakistan
+        self.pk = pakistan
+
+    def read(self, spec):
+        return dict(zip(self.pk.COLUMNS,
+                        self.pk.values(self.row(spec), "test", "row")))
+
+    def test_every_row_of_both_provinces_has_nine_cells(self):
+        for spec in self.KP + self.PUNJAB + [self.ABBOTTABAD]:
+            self.assertEqual(len(self.pk.printed(self.row(spec))), 9, spec[:40])
+
+    def test_a_figure_split_across_words_is_rejoined(self):
+        # 36 Parsis as "3" and "6"; 124,462,897 as "1" and "24,462,897".
+        self.assertEqual(self.read(self.KP[0])["Parsi"], 36)
+        self.assertEqual(self.read(self.PUNJAB[0])["Muslim"], 124_462_897)
+
+    def test_a_leading_zero_is_a_place_not_a_magnitude(self):
+        # Punjab writes 1,071,693 as "1" and ",071,693"; read as a magnitude
+        # the zero is lost and the figure comes out ten times too small.
+        self.assertEqual(self.pk.printed(self.row("1[186-190] ,071,693[190-221]")),
+                         [1_071_693])
+
+    def test_words_a_column_apart_are_not_joined(self):
+        # The gap inside a value is 0 points and between columns never less
+        # than 13, in both files.
+        self.assertEqual(self.pk.printed(self.row("951[356-366] 629[411-421]")),
+                         [951, 629])
+
+    def test_the_dash_is_a_cell_and_counts_as_one(self):
+        # This is what makes counting sound where position is not: the office
+        # writes a dash rather than leaving a cell empty, so nothing is ever
+        # missing from a row and the cells cannot slip out of step.
+        got = self.read(self.KP[2])
+        self.assertEqual(got["Ahmadi"], 0)
+        self.assertEqual(got["Parsi"], 0)
+        self.assertEqual(got["Other religion"], 7)
+
+    def test_position_is_not_used(self):
+        # Page 2 of Khyber Pakhtunkhwa carries two horizontal offsets at once,
+        # 37 rows at one and 12 at the other, so the same row shifted bodily
+        # sideways must read the same.
+        shifted = " ".join(
+            f"{t}[{x0 - 20:.0f}-{x1 - 20:.0f}]"
+            for x0, x1, t in self.row(self.ABBOTTABAD))
+        self.assertEqual(self.read(self.ABBOTTABAD), self.read(shifted))
+
+    def test_every_row_of_both_provinces_reconciles(self):
+        for spec in self.KP + self.PUNJAB + [self.ABBOTTABAD]:
+            got = self.read(spec)
+            total = got.pop("TOTAL")
+            self.assertEqual(sum(got.values()), total, spec[:40])
+
+    def test_abbottabad_reads_as_the_page_prints_it(self):
+        got = self.read(self.ABBOTTABAD)
+        self.assertEqual(got["TOTAL"], 1_397_587)
+        self.assertEqual(got["Muslim"], 1_391_394)
+        self.assertEqual(got["Parsi"], 6)
+
+    def test_a_row_with_the_wrong_number_of_cells_is_refused(self):
+        # Refused rather than padded or truncated: guessing which end to trim
+        # is how a district ends up with another district's religions while
+        # every total still adds up.
+        with self.assertRaises(SystemExit) as caught:
+            self.pk.values(self.row("40,641,120[146-177] 951[356-366]"),
+                           "test", "ABBOTTABAD")
+        self.assertIn("2 cells where the table has 9", str(caught.exception))
+
+    def reconciling(self):
+        counts = [2_133_005, 0, 13_286, 457, 175, 44, 7, 69, 115]
+        counts[1] = counts[0] - sum(counts[2:])
+        return dict(zip(self.pk.COLUMNS, counts))
+
+    def province(self, total):
+        return [total] + [0] * (len(self.pk.COLUMNS) - 1)
+
+    def test_a_district_that_reconciles_passes(self):
+        self.pk.check("Punjab", {"ATTOCK": self.reconciling()},
+                      self.province(2_133_005))
+
+    def test_a_column_read_one_place_to_the_left_is_refused(self):
+        shifted = self.reconciling()
+        shifted["TOTAL"], shifted["Muslim"] = 0, shifted["TOTAL"]
+        with self.assertRaises(SystemExit) as caught:
+            self.pk.check("Punjab", {"ATTOCK": shifted}, self.province(1))
+        self.assertIn("no total", str(caught.exception))
+
+    def test_religions_that_do_not_add_up_are_refused(self):
+        wrong = self.reconciling()
+        wrong["Christian"] += 50_000
+        with self.assertRaises(SystemExit) as caught:
+            self.pk.check("Punjab", {"ATTOCK": wrong}, self.province(1))
+        self.assertIn("religions sum to", str(caught.exception))
+
+    def test_districts_that_do_not_add_up_to_their_province_are_refused(self):
+        # The dangerous case, because it is not a wrong number anywhere: a
+        # district this reader never noticed is a hole, and every other check
+        # passes over it in silence. Khyber Pakhtunkhwa read 34 districts that
+        # each reconciled perfectly and were 825,377 people short.
+        with self.assertRaises(SystemExit) as caught:
+            self.pk.check("Khyber Pakhtunkhwa", {"ATTOCK": self.reconciling()},
+                          self.province(2_133_005 + 825_377))
+        self.assertIn("+825,377", str(caught.exception))
+
+    def test_a_unit_that_is_not_called_a_district_is_still_a_unit(self):
+        # Khyber Pakhtunkhwa's thirty-sixth is "MALAKAND PROTECTED AREA", and
+        # it went missing without producing one wrong figure: 825,377 people,
+        # 34 districts that each reconciled, and nothing to notice.
+        self.assertEqual(
+            self.pk.DISTRICT.match("MALAKAND PROTECTED AREA").group(1),
+            "MALAKAND")
+        self.assertEqual(
+            self.pk.DISTRICT.match("ABBOTTABAD DISTRICT").group(1),
+            "ABBOTTABAD")
+        self.assertIsNone(self.pk.DISTRICT.match("ABBOTTABAD TEHSIL"))
+
+    def test_a_province_with_no_row_of_its_own_is_refused(self):
+        # Without it nothing says whether the districts read are all of them.
+        with self.assertRaises(SystemExit) as caught:
+            self.pk.check("Punjab", {"ATTOCK": self.reconciling()}, [])
+        self.assertIn("no province row", str(caught.exception))
+
+    def cell(self, total):
+        return dict(zip(self.pk.COLUMNS,
+                        [total, total - 3, 1, 1, 0, 0, 1, 0, 0]))
+
+    def test_districts_sharing_one_shape_are_summed(self):
+        # geoBoundaries draws one Chitral where the census counts two. Summed,
+        # because matching either half to the whole shape puts a fraction of
+        # the people on all of it.
+        found = {"LOWER CHITRAL": self.cell(318_234),
+                 "UPPER CHITRAL": self.cell(195_161)}
+        assembled = self.pk.merge("Khyber Pakhtunkhwa", found)
+        self.assertEqual(set(found), {"CHITRAL"})
+        self.assertEqual(found["CHITRAL"]["TOTAL"], 513_395)
+        self.assertEqual(assembled["CHITRAL"],
+                         ("LOWER CHITRAL", "UPPER CHITRAL"))
+
+    def test_summing_only_some_of_the_parts_is_refused(self):
+        # The dangerous case: it would put a fraction of the people on the
+        # whole shape and look entirely normal.
+        with self.assertRaises(SystemExit) as caught:
+            self.pk.merge("Khyber Pakhtunkhwa",
+                          {"LOWER CHITRAL": self.cell(318_234)})
+        self.assertIn("only LOWER CHITRAL were read", str(caught.exception))
+
+    def test_a_whole_that_is_also_printed_is_refused(self):
+        with self.assertRaises(SystemExit) as caught:
+            self.pk.merge("Khyber Pakhtunkhwa",
+                          {"CHITRAL": self.cell(1), "LOWER CHITRAL": self.cell(1),
+                           "UPPER CHITRAL": self.cell(1)})
+        self.assertIn("counted twice", str(caught.exception))
+
+    def test_karachis_seven_districts_are_one_shape(self):
+        found = {part: self.cell(1_000_000)
+                 for part in self.pk.MERGED["KARACHI"]}
+        self.pk.merge("Sindh", found)
+        self.assertEqual(found["KARACHI"]["TOTAL"], 7_000_000)
+
+    def test_a_renamed_district_is_declared_not_inferred(self):
+        # Nothing infers "Nawabshah" from "Shaheed Benazirabad": the district
+        # was renamed and the two share no word.
+        self.assertEqual(self.pk.ALIASES["Shaheed Benazirabad"], ("Nawabshah",))
+
+    def test_the_four_provinces_are_required_and_the_territories_are_not(self):
+        # Azad Jammu and Kashmir and Gilgit-Baltistan are enumerated apart from
+        # the census proper, so their absence is a fact about what Pakistan
+        # publishes. The four provinces are 240 of its 241 million people.
+        required = {slug for slug, (_n, req, _u) in self.pk.PROVINCES.items() if req}
+        self.assertEqual(required, {"kp", "punjab", "sindh", "balochistan"})
