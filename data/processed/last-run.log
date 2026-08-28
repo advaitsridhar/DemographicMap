@@ -1,6 +1,14 @@
-xargs: unmatched double quote; by default quotes are special to xargs unless you use the -0 option
-usage: probe_links.py [-h] [--match MATCH] [--head] [--limit LIMIT]
-                      [--timeout TIMEOUT] [--check CHECK] [--accept ACCEPT]
-                      [--find FIND] [--raw RAW]
-                      url [url ...]
-probe_links.py: error: argument --find: expected one argument
+page: https://sp2010.bps.go.id/topik/dataset/sp2010/1
+  52,849 bytes
+  11 distinct match(es) for '(?:api|ajax|json|getdata|dataset|tabel)[a-zA-Z0-9_/.=?%-]{0,70}'
+    apita
+    dataset
+    dataset/sp2010/1
+    dataset/sp2010/2
+    dataset/sp2010/3
+    dataset/sp2010/4
+    dataset/sp2010/5
+    dataset/sp2010/6
+    dataset/sp2010/7
+    dataset/sp2010/8
+    tabel-topik-section
