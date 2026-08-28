@@ -1851,3 +1851,83 @@ class PakistanCells(unittest.TestCase):
         # publishes. The four provinces are 240 of its 241 million people.
         required = {slug for slug, (_n, req, _u) in self.pk.PROVINCES.items() if req}
         self.assertEqual(required, {"kp", "punjab", "sindh", "balochistan"})
+
+
+class BangladeshZila(unittest.TestCase):
+    """The workbook's own arithmetic, and the people it does not classify.
+
+    Barguna's figures are real, off the published sheet.
+    """
+
+    BARGUNA = {
+        "name": "Barguna", "population": 1_010_531,
+        "counts": {"Muslim": 937_495, "Hindu": 69_481, "Christian": 252,
+                   "Buddhist": 3_185, "Other religion": 48},
+        "sexed": {"Muslim": (457_588, 479_907), "Hindu": (34_436, 35_045),
+                  "Christian": (117, 135), "Buddhist": (2_564, 621),
+                  "Other religion": (33, 15)},
+    }
+
+    def setUp(self):
+        from scripts.fetch_census import bangladesh
+        self.bd = bangladesh
+
+    def row(self, **changes):
+        row = {k: (dict(v) if isinstance(v, dict) else v)
+               for k, v in self.BARGUNA.items()}
+        row.update(changes)
+        return row
+
+    def test_the_published_figures_pass(self):
+        self.bd.check([self.row()])
+
+    def test_a_religion_total_must_match_its_own_sexes(self):
+        # The sheet states each figure twice, and the two agreeing is what
+        # makes the column headings trustworthy rather than assumed.
+        counts = dict(self.BARGUNA["counts"], Muslim=900_000)
+        with self.assertRaises(SystemExit) as caught:
+            self.bd.check([self.row(counts=counts)])
+        self.assertIn("by sex", str(caught.exception))
+
+    def test_the_third_gender_is_the_only_gap_allowed(self):
+        # 70 people in Barguna, whom the religion table does not classify.
+        classified = sum(self.BARGUNA["counts"].values())
+        self.assertEqual(self.BARGUNA["population"] - classified, 70)
+
+    def test_a_gap_too_wide_to_be_the_third_gender_is_refused(self):
+        with self.assertRaises(SystemExit) as caught:
+            self.bd.check([self.row(population=1_100_000)])
+        self.assertIn("religions classify", str(caught.exception))
+
+    def test_religions_exceeding_the_population_are_refused(self):
+        with self.assertRaises(SystemExit) as caught:
+            self.bd.check([self.row(population=900_000)])
+        self.assertIn("religions classify", str(caught.exception))
+
+    def test_the_shares_are_of_what_the_table_classifies(self):
+        counts = self.BARGUNA["counts"]
+        got = {g["group"]: g["pct"]
+               for g in self.bd.shares(counts, total=sum(counts.values()))}
+        self.assertEqual(got["Muslim"], 92.8)
+        self.assertEqual(got["Hindu"], 6.9)
+
+    def test_the_sheet_name_is_matched_with_its_leading_space_ignored(self):
+        class Book:
+            sheetnames = [" Population by Religion, Sex", "Merged_All_Table"]
+            def __getitem__(self, name):
+                return name
+        self.assertEqual(self.bd.sheet(Book(), self.bd.RELIGION_SHEET),
+                         " Population by Religion, Sex")
+
+    def test_a_missing_sheet_names_what_the_workbook_has(self):
+        class Book:
+            sheetnames = ["Merged_All_Table"]
+            def __getitem__(self, name):
+                return name
+        with self.assertRaises(SystemExit) as caught:
+            self.bd.sheet(Book(), self.bd.RELIGION_SHEET)
+        self.assertIn("Merged_All_Table", str(caught.exception))
+
+    def test_the_note_says_whose_shares_these_are(self):
+        self.assertIn("hijra", self.bd.NOTE)
+        self.assertIn("male and female", self.bd.NOTE)
