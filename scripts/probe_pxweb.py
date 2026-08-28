@@ -323,8 +323,10 @@ def main() -> int:
         if not instance:
             print(f"\n== {iso}: no instance configured")
             continue
+        # --base applies here too: the table being dumped is often the one a
+        # --tree walk just found in a database other than the configured one.
         print(f"\n== {iso} {instance['name']} :: {path}")
-        dump(instance["base"], path)
+        dump(args.base or instance["base"], path)
     if args.dump:
         return 0
 
