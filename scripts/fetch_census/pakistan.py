@@ -53,18 +53,38 @@ YEAR = 2023
 
 BASE = "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables"
 
-# One file per province. The slugs are the office's own and are not guessable
-# from the province names -- "kp" but "khyber pakhtunkhwa", "ict" for the
-# capital territory -- so a 404 here is reported by name rather than skipped,
-# because a province quietly missing is 40 million people quietly missing.
-PROVINCES = {
-    "kp": "Khyber Pakhtunkhwa",
-    "punjab": "Punjab",
-    "sindh": "Sindh",
-    "balochistan": "Balochistan",
-    "ict": "Islamabad Capital Territory",
-    "ajk": "Azad Jammu and Kashmir",
-    "gb": "Gilgit-Baltistan",
+# One file per province, and the office uses two naming schemes at once: the
+# four big provinces sit under census_tables with a slug in the filename, while
+# the territories appear -- when they appear at all -- under a per-province 2023
+# path. The slugs are not guessable from the names ("kp", but "khyber
+# pakhtunkhwa"), so each province carries the candidates to try and the run
+# reports which one answered rather than costing a dispatch per guess.
+#
+# required=False for the three territories: Azad Jammu and Kashmir and
+# Gilgit-Baltistan are enumerated apart from the census proper, so their
+# absence is a fact about what Pakistan publishes rather than a fetch that went
+# wrong. The four provinces are 240 of Pakistan's 241 million people, and any
+# one of them missing is not a partial result worth shipping.
+DCR = "https://www.pbs.gov.pk/sites/default/files/population/2023/tables"
+
+PROVINCES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
+    "kp": ("Khyber Pakhtunkhwa", True, (f"{BASE}/table_9_kp_districts.pdf",)),
+    "punjab": ("Punjab", True, (f"{BASE}/table_9_punjab_districts.pdf",
+                                f"{DCR}/punjab/dcr/table_9.pdf")),
+    "sindh": ("Sindh", True, (f"{BASE}/table_9_sindh_districts.pdf",
+                              f"{DCR}/sindh/dcr/table_9.pdf")),
+    "balochistan": ("Balochistan", True,
+                    (f"{BASE}/table_9_balochistan_districts.pdf",
+                     f"{DCR}/balochistan/dcr/table_9.pdf")),
+    "ict": ("Islamabad Capital Territory", False,
+            (f"{BASE}/table_9_islamabad_districts.pdf",
+             f"{DCR}/islamabad/dcr/table_9.pdf")),
+    "ajk": ("Azad Jammu and Kashmir", False,
+            (f"{BASE}/table_9_ajk_districts.pdf",
+             f"{DCR}/ajk/dcr/table_9.pdf")),
+    "gb": ("Gilgit-Baltistan", False,
+           (f"{BASE}/table_9_gb_districts.pdf",
+            f"{DCR}/gb/dcr/table_9.pdf")),
 }
 
 # Table 9's columns, in the order the numbered header row gives them. Column 1
@@ -120,8 +140,10 @@ def values(cells, anchors: list[float]) -> list[int] | None:
             continue
         if not NUMBER.match(text):
             continue
-        # Nearest anchor at or before this word, so a value split across two
-        # words lands twice in the same column and is joined, not shifted.
+        # The column this word sits under, by distance rather than by its
+        # place in the row, so a value split across two words lands twice in
+        # the same column and is joined there instead of shifting every
+        # column after it one place to the left.
         index = min(range(len(anchors)), key=lambda i: abs(anchors[i] - x))
         digits = text.replace(",", "")
         out[index] = out[index] * 10 ** len(digits) + int(digits) if seen[index] \
@@ -165,9 +187,11 @@ def districts(blob: bytes, province: str) -> dict[str, dict[str, int]]:
                 continue
             if not current or locality != "ALL LOCALITIES":
                 continue
-            if not text or text[0] not in SEXES:
-                continue
-            if text[0] != "ALL SEXES":
+            # The label is two words and the row is a list of words, so
+            # comparing text[0] to "ALL SEXES" could never be true: it read
+            # "ALL", found it in no list, and skipped every figure in the file
+            # while still counting the tehsils it passed over.
+            if not line.startswith("ALL SEXES"):
                 continue
             if anchors is None:
                 raise SystemExit(
@@ -204,20 +228,18 @@ def check(province: str, found: dict[str, dict[str, int]]) -> None:
     log(f"    every district's religions sum to its own printed total")
 
 
-def main() -> int:
+def fetch(candidates: tuple[str, ...]) -> tuple[bytes, str]:
+    """The first candidate URL that answers, and which one it was.
+
+    The office files the same table under two paths and neither is derivable
+    from the province's name, so the run tries each and reports the one that
+    worked. Every failure is carried: a province reported missing should name
+    what was actually asked for, not just the last thing tried.
+    """
     import urllib.request
 
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--out", default=None)
-    args = ap.parse_args()
-
-    log("pakistan: Bureau of Statistics, Census 2023 Table 9")
-    records: list[dict[str, Any]] = []
-    missing: list[str] = []
-    for slug, province in PROVINCES.items():
-        url = f"{BASE}/table_9_{slug}_districts.pdf"
-        log(f"  {province}")
+    failures = []
+    for url in candidates:
         req = urllib.request.Request(url, headers={
             "User-Agent": "Mozilla/5.0 (compatible; DemographicMap/1.0; "
                           "+https://github.com/advaitsridhar/DemographicMap)",
@@ -225,17 +247,37 @@ def main() -> int:
         })
         try:
             with urllib.request.urlopen(req, timeout=120) as resp:
-                blob = resp.read()
+                return resp.read(), url
         except Exception as err:                      # noqa: BLE001
+            failures.append(f"{url.rsplit('/', 1)[-1]}: "
+                            f"{type(err).__name__} {str(err)[:50]}")
+    raise LookupError("; ".join(failures))
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--out", default=None)
+    args = ap.parse_args()
+
+    log("pakistan: Bureau of Statistics, Census 2023 Table 9")
+    records: list[dict[str, Any]] = []
+    absent: dict[str, list[str]] = {"required": [], "optional": []}
+    for slug, (province, required, candidates) in PROVINCES.items():
+        log(f"  {province}")
+        try:
+            blob, url = fetch(candidates)
+        except LookupError as err:
             # Named, not skipped: a province quietly absent is tens of millions
             # of people quietly absent, and the file naming is the office's own.
-            missing.append(f"{province} ({url.rsplit('/', 1)[-1]}): "
-                           f"{type(err).__name__} {str(err)[:60]}")
+            absent["required" if required else "optional"].append(
+                f"{province}: {err}")
             continue
-        log(f"    {len(blob):,} bytes")
+        log(f"    {len(blob):,} bytes from {url}")
         found = districts(blob, province)
         if not found:
-            missing.append(f"{province}: fetched but no districts read")
+            absent["required" if required else "optional"].append(
+                f"{province}: fetched but no districts read")
             continue
         check(province, found)
         for name, counts in sorted(found.items()):
@@ -255,11 +297,14 @@ def main() -> int:
                     "rather than within Islam."),
                 sources=[{"field": "population/religion", "name": SOURCE,
                           "url": URL, "license": LICENCE}]))
-    for line in missing:
+    for line in absent["optional"]:
+        log(f"  NOT READ (territory, enumerated apart) -- {line}")
+    for line in absent["required"]:
         log(f"  NOT READ -- {line}")
-    if missing:
-        raise SystemExit(f"{len(missing)} of {len(PROVINCES)} provinces were "
-                         "not read; refusing to write a partial Pakistan")
+    if absent["required"]:
+        raise SystemExit(f"{len(absent['required'])} of Pakistan's four "
+                         "provinces were not read; refusing to write a "
+                         "partial Pakistan")
     out = args.out or PROCESSED / "pakistan_district.json"
     write_json(out, records)
     log(f"  {len(records)} districts")
