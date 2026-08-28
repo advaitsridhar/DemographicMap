@@ -17,28 +17,29 @@ wrong guess does not look wrong: it puts a tehsil's people on a district and
 every total still adds up. pdfplumber reports each word with its box, so the
 rows are rebuilt from where the words sit.
 
-**A number can arrive as two words.** Khyber Pakhtunkhwa's 36 Parsis come back
-as ``3`` and ``6``; Punjab writes 124,462,897 as ``1`` and ``24,462,897``, and
-1,071,693 as ``1`` and ``,071,693``. Splitting a row on whitespace therefore
-yields more values than there are columns, and every column after the split
-reads one place to the left.
+**A number can arrive as several words.** Khyber Pakhtunkhwa's 36 Parsis come
+back as ``3`` and ``6``; Punjab writes 124,462,897 as ``1`` and ``24,462,897``,
+and 1,071,693 as ``1`` and ``,071,693``. Splitting a row on whitespace
+therefore yields more values than there are columns, and every column after
+the split reads one place to the left.
 
 The gaps say which words belong together. Measured in both files, a gap inside
 a value is exactly 0 points and a gap between columns is never less than 13,
-so the words are rejoined before anything is placed -- which is what makes the
-placing unambiguous, because a fragment on its own genuinely is ambiguous: the
-leading ``1`` of Punjab's Muslim column sits nearer the total column's centre
-than its own.
+so the words are rejoined before anything else happens.
 
-**The columns are read off the figures, not off the header.** The header's
-numbered row looks like the obvious authority and is not one. In Punjab the
-numerals are set flush right with their columns, so the ``2`` heading TOTAL
-POPULATION ends at x=173 and so does 127,333,305 beneath it; in Khyber
-Pakhtunkhwa the same numeral ends at 157 above a column of figures ending at
-177. A rule read off either file fits that file and misplaces the other, and
-both were tried. The figures agree with each other where the header does not:
-they are set flush right, so every value in a column ends at the same x on
-every row of every page, and the nine commonest of those are the columns.
+**Where the columns are is not a fact this document has.** Three rules were
+tried on position and each fitted the file it was read off. The header's
+numerals are set flush right with their columns in Punjab -- the ``2`` heading
+TOTAL POPULATION ends at x=173 and so does 127,333,305 beneath it -- and
+twenty points to their left in Khyber Pakhtunkhwa. The figures themselves are
+flush right, but the table sits at its own horizontal offset on every page.
+And within a single page: page 2 of Khyber Pakhtunkhwa carries two offsets at
+once, 37 rows at one and 12 at the other.
+
+What the table does print, every time, is nine cells to a row with nothing
+left out -- the office writes a dash where a religion is absent rather than
+leaving the cell empty. So the cells are counted, dash included, and a row
+that does not have nine of them is refused rather than trimmed to fit.
 
 **Every area appears three times**, as ALL LOCALITIES, RURAL and URBAN, each
 with four rows for the sexes. Only the first line of the first block is the
@@ -139,138 +140,65 @@ def words_by_row(blob: bytes, tolerance: float = 2.0):
 # A gap inside a value against a gap between columns, measured in both
 # provinces with probe_pdf --boxes: within a value the gap is exactly 0
 # points, between columns it is never less than 13. Four leaves margin on
-# both sides, and being wrong either way is caught -- a split value and two
-# merged columns both fail to sum to the printed total.
+# both sides, and being wrong either way is caught -- two columns merged and
+# one value torn in half both change how many cells the row has.
 GAP = 4.0
 
-# How far a value's right edge may sit from its column's. These are set flush
-# right, so in practice the two are equal; this is for rounding.
-NEAR = 3.0
-
-SEXES_START = tuple(sex.split()[0] for sex in SEXES)
+DASH = "-"                                # the office's zero
 
 
-def groups(cells: list[Cell]) -> list[tuple[float, int]]:
-    """A row's figures, each rejoined from its words, with where it ends.
+def printed(cells: list[Cell]) -> list[int]:
+    """A row's cells as the table prints them, in order.
 
-    Rejoining first is what makes the placing unambiguous. Both provinces
-    break a figure across words -- Khyber Pakhtunkhwa's 36 Parsis arrive as
-    "3" and "6", Punjab writes 124,462,897 as "1" and "24,462,897" -- and
-    placing those fragments one at a time is the question that had no good
-    answer: the leading "1" of the Muslim column sits nearer to the total
-    column's centre than to its own. Joined, the value ends where its column
-    ends, and nothing has to be decided about the fragment at all.
+    The words are rejoined by the gaps between them, and the office's dash is
+    a cell like any other. Together those two make counting sound, which it
+    was not before: splitting the row on whitespace yielded ten values where
+    nine were expected, because a figure can arrive as several words --
+    Khyber Pakhtunkhwa's 36 Parsis as "3" and "6", Punjab's 124,462,897 as
+    "1" and "24,462,897", its 1,071,693 as "1" and ",071,693".
 
-    The digits are concatenated rather than added, so that ",071,693" behind a
-    "1" reads as 1,071,693: a leading zero is a place, not a magnitude.
+    Position is deliberately not used. Three rules were tried on it and each
+    fitted the file it was read off: the header's numerals are flush right
+    with their columns in Punjab and twenty points left of them in Khyber
+    Pakhtunkhwa; the figures are flush right, but the table sits at its own
+    offset on each page; and even within one page, page 2 of Khyber
+    Pakhtunkhwa carries two offsets at once, 37 rows at one and 12 at the
+    other. There is no fact about where a column is that holds across this
+    document. There is a fact about what the table prints: nine cells to a
+    row, every time, with nothing left out.
+
+    The digits are concatenated rather than added, so that ",071,693" behind
+    a "1" reads as 1,071,693: a leading zero is a place, not a magnitude.
     """
-    parts: list[list] = []
+    out: list[list] = []                  # [right edge, digits or None]
     for x0, x1, text in cells:
-        if not NUMBER.match(text):            # "-" is the office's zero
+        if text == DASH:
+            out.append([x1, None])
             continue
-        if parts and x0 - parts[-1][0] <= GAP:
-            parts[-1][0] = x1
-            parts[-1][1] += text.replace(",", "")
-        else:
-            parts.append([x1, text.replace(",", "")])
-    return [(right, int(digits)) for right, digits in parts]
-
-
-def figure_row(cells: list[Cell]) -> bool:
-    """Whether this row carries figures rather than a heading or a label."""
-    return bool(cells) and cells[0][2] in SEXES_START
-
-
-def column_edges(rows: list[list[Cell]], province: str,
-                 page: int) -> list[tuple[float, float]]:
-    """Where each column ends on one page, learned from its own figures.
-
-    Not from the header. Its numbered row looks like the obvious authority and
-    is not one: in Punjab the numerals are set flush right with their columns,
-    so the "2" heading TOTAL POPULATION ends at 173 and so does 127,333,305
-    beneath it -- but in Khyber Pakhtunkhwa the same numeral ends at 157 above
-    a column of figures ending at 177. A rule read off either file fits that
-    file and misplaces the other, and both were tried.
-
-    The figures agree with each other where the header does not. They are set
-    flush right, so every value in a column ends within a point or two of the
-    same x.
-
-    One page at a time, because the table sits at its own horizontal offset on
-    each page: Khyber Pakhtunkhwa's columns end at 177-179 on page 1 and some
-    twenty points to the left elsewhere. Learned across the document, the
-    commonest edges were a mixture of offsets matching no page, and page 1's
-    own totals were refused as belonging to no column of their own table.
-
-    A band rather than a single x, because a column holds two families of
-    figure: the province is written 40,641,120 and its districts 1397587,
-    without the separators, and the two end two points apart.
-    """
-    tally: dict[int, int] = {}
-    for cells in rows:
-        if not figure_row(cells):
+        if not NUMBER.match(text):        # a row label
             continue
-        for right, _value in groups(cells):
-            tally[round(right)] = tally.get(round(right), 0) + 1
-
-    # Adjacent x are one column's band. Columns sit some forty points apart
-    # and a band spans a few, so nothing here can bridge two of them.
-    bands: list[list[int]] = []
-    for x in sorted(tally):
-        if bands and x - bands[-1][-1] <= NEAR:
-            bands[-1].append(x)
+        if out and out[-1][1] is not None and x0 - out[-1][0] <= GAP:
+            out[-1][0] = x1
+            out[-1][1] += text.replace(",", "")
         else:
-            bands.append([x])
-    weighed = sorted(((sum(tally[x] for x in band), band) for band in bands),
-                     reverse=True)
-    census = ", ".join(
-        f"{band[0]}-{band[-1]}x{count}" if len(band) > 1 else f"{band[0]}x{count}"
-        for count, band in sorted(weighed, key=lambda w: w[1][0]))
+            out.append([x1, text.replace(",", "")])
+    return [0 if digits is None else int(digits) for _right, digits in out]
 
-    if len(weighed) < len(COLUMNS):
+
+def values(cells: list[Cell], province: str, where: str) -> list[int] | None:
+    """One row's figures, or None if the row carries none."""
+    figures = printed(cells)
+    if not figures:
+        return None
+    if len(figures) != len(COLUMNS):
+        # Refused rather than padded or truncated. A row with the wrong
+        # number of cells is a row this reader has misread, and guessing
+        # which end to trim is how a district ends up with another
+        # district's religions while every total still adds up.
         raise SystemExit(
-            f"{province} page {page}: {len(weighed)} column edges in the "
-            f"figures, wanted {len(COLUMNS)} -- the table is not shaped the "
-            f"way this reads it. Edges found: {census}")
-    # Anything else that occurs often is a tenth column, and a tenth column
-    # means the reading is wrong rather than that one row is odd.
-    rest = weighed[len(COLUMNS):]
-    if rest and rest[0][0] > weighed[len(COLUMNS) - 1][0] / 10:
-        raise SystemExit(
-            f"{province} page {page}: a tenth column ending near "
-            f"x={rest[0][1][0]} occurs {rest[0][0]} times against "
-            f"{weighed[len(COLUMNS) - 1][0]} for the least common of the nine "
-            f"taken. Edges found: {census}")
-    return sorted((float(band[0]), float(band[-1]))
-                  for _count, band in weighed[:len(COLUMNS)])
-
-
-def describe(edges: list[tuple[float, float]]) -> str:
-    return ", ".join(f"{lo:.0f}" if lo == hi else f"{lo:.0f}-{hi:.0f}"
-                     for lo, hi in edges)
-
-
-def values(cells: list[Cell], edges: list[tuple[float, float]], province: str,
-           where: str) -> list[int] | None:
-    """One row's figures, each put in the column it ends inside."""
-    out = [0] * len(edges)
-    seen = False
-    for right, value in groups(cells):
-        index = min(range(len(edges)),
-                    key=lambda i: abs((edges[i][0] + edges[i][1]) / 2 - right))
-        lo, hi = edges[index]
-        if not lo - NEAR <= right <= hi + NEAR:
-            # Never quietly dropped: a figure that belongs to no column is
-            # either a column this reader does not know about or a value that
-            # has been torn in half, and both of those are wrong answers
-            # rather than missing ones.
-            raise SystemExit(
-                f"{province}: {where} has a figure of {value:,} ending at "
-                f"x={right:.0f}, which is no column of this table -- the "
-                f"nearest ends at {lo:.0f}-{hi:.0f}")
-        out[index] = value
-        seen = True
-    return out if seen else None
+            f"{province}: {where} has {len(figures)} cells where the table "
+            f"has {len(COLUMNS)}: {figures}")
+    return figures
 
 
 def districts(blob: bytes, province: str) -> dict[str, dict[str, int]]:
@@ -282,22 +210,12 @@ def districts(blob: bytes, province: str) -> dict[str, dict[str, int]]:
     per-sex rows, and every TEHSIL -- is a breakdown of something already
     counted, so the district closes as soon as its one row is read.
     """
-    # Two passes over each page, because where the columns are is a fact
-    # about the page and cannot be settled from the row in hand -- and it is
-    # a fact about the page rather than about the file: the table sits at its
-    # own horizontal offset on every page, so Khyber Pakhtunkhwa's columns end
-    # at 177-179 on page 1 and elsewhere twenty points to the left. Learned
-    # across the document, the commonest edges were a mixture of offsets that
-    # matched no page, and page 1's own figures were refused as belonging to
-    # no column.
     found: dict[str, dict[str, int]] = {}
     current: str | None = None
     locality: str | None = None
     skipped_tehsils = 0
-    geometries: list[tuple[tuple[float, float], ...]] = []
 
-    for page, rows in enumerate(words_by_row(blob), start=1):
-        edges: list[tuple[float, float]] | None = None
+    for rows in words_by_row(blob):
         for cells in rows:
             line = " ".join(t for _a, _b, t in cells)
 
@@ -320,21 +238,11 @@ def districts(blob: bytes, province: str) -> dict[str, dict[str, int]]:
             # the file while still counting the tehsils it passed over.
             if not line.startswith("ALL SEXES"):
                 continue
-            if edges is None:
-                # Read when the page first has something to place, so a page
-                # this reader cannot make sense of is only fatal if a district
-                # is actually on it.
-                edges = column_edges(rows, province, page)
-                geometries.append(tuple(edges))
-            numbers = values(cells, edges, province, current)
+            numbers = values(cells, province, current)
             if numbers and current not in found:
                 found[current] = dict(zip(COLUMNS, numbers))
             current = None                          # one row per district
 
-    if geometries:
-        log(f"    {len(set(geometries))} column layouts over "
-            f"{len(geometries)} pages of districts; the first ends at "
-            f"{describe(list(geometries[0]))}")
     log(f"    {len(found)} districts, {skipped_tehsils} tehsils passed over")
     return found
 

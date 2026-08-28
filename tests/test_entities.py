@@ -1627,23 +1627,20 @@ class SwitzerlandMainLanguages(unittest.TestCase):
         self.assertIn("estimate", self.ch.NOTE)
 
 
-class PakistanColumns(unittest.TestCase):
-    """Table 9's figures are rejoined by the gaps, then placed by where they end.
+class PakistanCells(unittest.TestCase):
+    """Table 9 is read by what it prints, not by where it prints it.
 
     The coordinates below are real, off page 1 of each province's file, read
-    with probe_pdf --boxes. Both provinces are here because every wrong rule
-    so far passed against one file: matching a figure to the nearest column
-    centre read Khyber Pakhtunkhwa's 34 districts perfectly and put Punjab's
-    totals out by a factor of ten, and matching to the header's right edges
-    did the reverse.
+    with probe_pdf --boxes. Both provinces are here because every rule tried
+    on position passed against one file and failed the other.
 
-    Only the reconciliation announces a fault. A column read one place to the
-    left still sums to something, and the reason Pakistan has not shipped
+    Only the reconciliation announces a misread. A column read one place to
+    the left still sums to something, and the reason Pakistan has not shipped
     wrong is that the table prints its own denominator beside every row.
     """
 
     # Khyber Pakhtunkhwa breaks 36 into "3" and "6"; Punjab breaks a leading
-    # digit off almost every figure, and the last row of each has the office's
+    # digit off almost every figure; and the last row of each has the office's
     # dash where a religion is absent.
     KP = [
         "ALL[49-60] SEXES[62-83] 40,641,120[146-177] 40,486,153[195-226] "
@@ -1668,6 +1665,11 @@ class PakistanColumns(unittest.TestCase):
         "5[262-265] 7[265-268] 4[316-319] 1[368-371] -[426-428] 2[467-471] "
         "-[497-499] 2[545-548]",
     ]
+    # The same district row as Khyber Pakhtunkhwa's page 1 prints it: no
+    # thousands separators, and set two points right of the province rows.
+    ABBOTTABAD = ("ALL[47-58] SEXES[60-81] 1397587[155-179] 1391394[204-228] "
+                  "5818[263-277] 97[316-323] 21[361-368] 17[416-423] "
+                  "43[451-458] 6[496-499] 191[523-534]")
 
     @staticmethod
     def row(spec):
@@ -1682,91 +1684,70 @@ class PakistanColumns(unittest.TestCase):
     def setUp(self):
         from scripts.fetch_census import pakistan
         self.pk = pakistan
-        self.kp = [self.row(spec) for spec in self.KP]
-        self.punjab = [self.row(spec) for spec in self.PUNJAB]
 
-    def edges(self, rows, province="test"):
-        return self.pk.column_edges(rows, province, 1)
-
-    def read(self, rows, cells):
+    def read(self, spec):
         return dict(zip(self.pk.COLUMNS,
-                        self.pk.values(cells, self.edges(rows), "test", "row")))
+                        self.pk.values(self.row(spec), "test", "row")))
 
-    def test_the_columns_are_learned_from_the_figures(self):
-        self.assertEqual([round(lo) for lo, _hi in self.edges(self.kp)],
-                         [177, 226, 275, 321, 366, 421, 456, 497, 532])
-        self.assertEqual([round(lo) for lo, _hi in self.edges(self.punjab)],
-                         [173, 221, 268, 319, 371, 435, 471, 506, 548])
+    def test_every_row_of_both_provinces_has_nine_cells(self):
+        for spec in self.KP + self.PUNJAB + [self.ABBOTTABAD]:
+            self.assertEqual(len(self.pk.printed(self.row(spec))), 9, spec[:40])
 
-    def test_a_column_is_a_band_because_a_figure_has_two_shapes(self):
-        # The province row is written 40,641,120 and its districts 1397587,
-        # without the separators, and the two end two points apart -- which is
-        # why Abbottabad's own total was refused as belonging to no column.
-        # Taking the middle of the band and allowing a fixed tolerance either
-        # side is not enough; a figure has to fall inside the band.
-        district = [(x0 + 2, x1 + 2, t.replace(",", "")) if t[0].isdigit()
-                    else (x0, x1, t) for x0, x1, t in self.kp[0]]
-        edges = self.pk.column_edges(self.kp + [district], "test", 1)
-        self.assertEqual([(round(lo), round(hi)) for lo, hi in edges[:2]],
-                         [(177, 179), (226, 228)])
-        got = dict(zip(self.pk.COLUMNS,
-                       self.pk.values(district, edges, "test", "ABBOTTABAD")))
-        total = got.pop("TOTAL")
-        self.assertEqual(total, 40_641_120)
-        self.assertEqual(sum(got.values()), total)
-
-    def test_the_header_is_not_the_authority(self):
-        # Punjab's numerals are flush right with their columns -- the "2" over
-        # TOTAL POPULATION ends at 173, and so does 127,333,305 beneath it.
-        # Khyber Pakhtunkhwa's same numeral ends at 157 over figures ending at
-        # 177. Either file's header, read as geometry, misplaces the other.
-        self.assertEqual(round(self.edges(self.punjab)[0][0]), 173)
-        self.assertEqual(round(self.edges(self.kp)[0][0]), 177)
-
-    def test_a_figure_split_across_words_is_rejoined_before_it_is_placed(self):
+    def test_a_figure_split_across_words_is_rejoined(self):
         # 36 Parsis as "3" and "6"; 124,462,897 as "1" and "24,462,897".
-        self.assertEqual(self.read(self.kp, self.kp[0])["Parsi"], 36)
-        self.assertEqual(self.read(self.punjab, self.punjab[0])["Muslim"],
-                         124_462_897)
+        self.assertEqual(self.read(self.KP[0])["Parsi"], 36)
+        self.assertEqual(self.read(self.PUNJAB[0])["Muslim"], 124_462_897)
 
     def test_a_leading_zero_is_a_place_not_a_magnitude(self):
         # Punjab writes 1,071,693 as "1" and ",071,693"; read as a magnitude
         # the zero is lost and the figure comes out ten times too small.
-        joined = self.pk.groups(self.row("1[186-190] ,071,693[190-221]"))
-        self.assertEqual(joined, [(221.0, 1_071_693)])
+        self.assertEqual(self.pk.printed(self.row("1[186-190] ,071,693[190-221]")),
+                         [1_071_693])
 
     def test_words_a_column_apart_are_not_joined(self):
         # The gap inside a value is 0 points and between columns never less
         # than 13, in both files.
-        apart = self.pk.groups(self.row("951[356-366] 629[411-421]"))
-        self.assertEqual(apart, [(366.0, 951), (421.0, 629)])
+        self.assertEqual(self.pk.printed(self.row("951[356-366] 629[411-421]")),
+                         [951, 629])
 
-    def test_a_dash_is_the_offices_zero(self):
-        got = self.read(self.kp, self.kp[2])
+    def test_the_dash_is_a_cell_and_counts_as_one(self):
+        # This is what makes counting sound where position is not: the office
+        # writes a dash rather than leaving a cell empty, so nothing is ever
+        # missing from a row and the cells cannot slip out of step.
+        got = self.read(self.KP[2])
         self.assertEqual(got["Ahmadi"], 0)
         self.assertEqual(got["Parsi"], 0)
+        self.assertEqual(got["Other religion"], 7)
+
+    def test_position_is_not_used(self):
+        # Page 2 of Khyber Pakhtunkhwa carries two horizontal offsets at once,
+        # 37 rows at one and 12 at the other, so the same row shifted bodily
+        # sideways must read the same.
+        shifted = " ".join(
+            f"{t}[{x0 - 20:.0f}-{x1 - 20:.0f}]"
+            for x0, x1, t in self.row(self.ABBOTTABAD))
+        self.assertEqual(self.read(self.ABBOTTABAD), self.read(shifted))
 
     def test_every_row_of_both_provinces_reconciles(self):
-        for rows in (self.kp, self.punjab):
-            for cells in rows:
-                got = self.read(rows, cells)
-                total = got.pop("TOTAL")
-                self.assertEqual(sum(got.values()), total)
+        for spec in self.KP + self.PUNJAB + [self.ABBOTTABAD]:
+            got = self.read(spec)
+            total = got.pop("TOTAL")
+            self.assertEqual(sum(got.values()), total, spec[:40])
 
-    def test_a_figure_belonging_to_no_column_is_refused(self):
-        # Never quietly dropped: it is either a column this reader does not
-        # know about or a value torn in half, and both are wrong answers
-        # rather than missing ones.
-        stray = self.row("40,641,120[146-177] 7[399-403]")
-        with self.assertRaises(SystemExit) as caught:
-            self.pk.values(stray, self.edges(self.kp), "test", "ABBOTTABAD")
-        self.assertIn("no column of this table", str(caught.exception))
+    def test_abbottabad_reads_as_the_page_prints_it(self):
+        got = self.read(self.ABBOTTABAD)
+        self.assertEqual(got["TOTAL"], 1_397_587)
+        self.assertEqual(got["Muslim"], 1_391_394)
+        self.assertEqual(got["Parsi"], 6)
 
-    def test_a_table_with_too_few_columns_is_refused(self):
+    def test_a_row_with_the_wrong_number_of_cells_is_refused(self):
+        # Refused rather than padded or truncated: guessing which end to trim
+        # is how a district ends up with another district's religions while
+        # every total still adds up.
         with self.assertRaises(SystemExit) as caught:
-            self.pk.column_edges([self.row("ALL[49-60] 1,117[161-177]")],
-                                 "test", 1)
-        self.assertIn("column edges in the figures", str(caught.exception))
+            self.pk.values(self.row("40,641,120[146-177] 951[356-366]"),
+                           "test", "ABBOTTABAD")
+        self.assertIn("2 cells where the table has 9", str(caught.exception))
 
     def reconciling(self):
         counts = [2_133_005, 0, 13_286, 457, 175, 44, 7, 69, 115]
