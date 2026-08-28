@@ -191,6 +191,34 @@ def walk(base: str, budget: list[int], deadline: float,
     return found
 
 
+def tree(base: str, path: str = "") -> int:
+    """The immediate children of one node, folders and tables, and stop.
+
+    One request. A blind walk spends its budget on whatever it meets first --
+    Norway's went entirely into the labour-market subject and never reached
+    culture, where the religious-community tables live -- and guessing the
+    next path costs a whole run each time. This is the same discipline as
+    --dump: read the structure, then decide.
+    """
+    url = f"{base}/{path}" if path else base
+    try:
+        node = get(url, timeout=30)
+    except Exception as err:                      # noqa: BLE001
+        print(f"  ! {type(err).__name__}: {str(err)[:120]}")
+        return 1
+    if not isinstance(node, list):
+        print(f"  not a folder listing: {str(node)[:200]}")
+        return 1
+    folders = [e for e in node if e.get("type") == "l"]
+    tables = [e for e in node if e.get("type") == "t"]
+    print(f"  {len(folders)} folder(s), {len(tables)} table(s) under {path or '/'}")
+    for entry in folders:
+        print(f"    [dir] {entry.get('id'):<28} {(entry.get('text') or '')[:80]}")
+    for entry in tables:
+        print(f"          {entry.get('id'):<28} {(entry.get('text') or '')[:80]}")
+    return 0
+
+
 def report_skipped(limit: int = 25) -> None:
     """Name the folders the descent refused, so "nothing here" can be audited.
 
@@ -275,6 +303,14 @@ def main() -> int:
     # the office's tree is known, naming the subtree is the difference between
     # sampling it and reading it: StatFin keeps population by language under
     # "vaerak", four folders in.
+    # Where to look, when the configured base is the wrong database. Iceland
+    # serves several -- the configured one is "Ibuar", inhabitants -- and a
+    # walk of the wrong database reports an absence that is only about which
+    # database was walked.
+    ap.add_argument("--base", default="",
+                    help="override the instance's base URL")
+    ap.add_argument("--tree", action="store_true",
+                    help="list one node's immediate children and stop")
     ap.add_argument("--root", default="",
                     help="start the walk at this path instead of the database root")
     ap.add_argument("--dump", metavar="ISO:TABLE_PATH", action="append", default=[],
@@ -297,7 +333,11 @@ def main() -> int:
         if not spec:
             print(f"\n== {iso}: no instance configured")
             continue
-        print(f"\n== {iso} {spec['name']}\n   {spec['base']}")
+        base = args.base or spec["base"]
+        print(f"\n== {iso} {spec['name']}\n   {base}")
+        if args.tree:
+            tree(base, args.root)
+            continue
         if spec.get("skip"):
             print(f"    skipped: {spec['skip']}")
             continue
@@ -314,7 +354,7 @@ def main() -> int:
         walk_deadline = started + budget
         instance_deadline = started + budget + DESCRIBE_SECONDS
         SKIPPED.clear()
-        tables = walk(spec["base"], [MAX_NODES], walk_deadline,
+        tables = walk(base, [MAX_NODES], walk_deadline,
                       path=args.root, throttle=throttle)
         spent = time.monotonic() - started
         exhausted = spent > budget
@@ -342,7 +382,7 @@ def main() -> int:
         for table in tables[:args.max_tables]:
             print(f"    - {table['path']}")
             print(f"      {table['title'][:110]}")
-            describe(spec["base"], table, throttle=throttle,
+            describe(base, table, throttle=throttle,
                      deadline=instance_deadline)
     return 0
 
