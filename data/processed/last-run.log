@@ -1,27 +1,65 @@
 
 == NOR Statistics Norway
    https://data.ssb.no/api/v0/en/table
-  23 folder(s), 0 table(s) under /
-    [dir] al                           Labour market and earnings
-    [dir] bf                           Banking and financial markets
-    [dir] vf                           Establishments, enterprises and accounts
-    [dir] be                           Population
-    [dir] bb                           Construction, housing and property
-    [dir] ei                           Energy and manufacturing
-    [dir] he                           Health
-    [dir] if                           Income and consumption
-    [dir] in                           Immigration and immigrants
-    [dir] js                           Agriculture, forestry, hunting and fishing
-    [dir] kf                           Culture and recreation
-    [dir] nk                           National accounts and business cycles
-    [dir] nm                           Nature and the environment
-    [dir] os                           Public sector
-    [dir] pp                           Prices and price indices
-    [dir] sk                           Social conditions, welfare and crime
-    [dir] sv                           Svalbard
-    [dir] ti                           Technology and innovation
-    [dir] tr                           Transport and tourism
-    [dir] ud                           Education
-    [dir] ut                           External economy
-    [dir] va                           Elections
-    [dir] vt                           Wholesale and retail trade and service activities
+    9 candidate table(s):
+      kf/kf04/kirke_kostra/SBMENU12107/DNKMedlemmer 06929: Church of Norway. Members, church ceremonies and services, by diocese 2005 - 2025
+      kf/kf04/regkirke/RegKirke02  14486: Number of church parishes, by diocese 1865 - 2026
+      kf/kf04/trosamf/MedlemTroLivsyn 06326: Members of congregations in religious and philosophical communities outside the C
+      kf/kf04/trosamf/MedlemKristTrus 06339: Members of Christian communities outside the Church of Norway, by religious commu
+      kf/kf04/trosamf/MedlemTroLivsynF 08531: Members of congregations in religious and philosophical communities outside the C
+      kf/kf04/trosamf/MedlMenighUKirk 04205: Members and congregations in registered and unregistered religious and philosophi
+      kf/kf04/trosamf/MedlMenigRegUDNK 04216: Members and congregations in registered religious communities outside the Church 
+      kf/kf04/trosamf/MedlMenighDNK 04214: Members and congregtions in unregistered religious and philosophical communities 
+      kf/kf04/trosamf/MedlemKristTru2 06340: Members of congregations in religious and philosophical communities outside the C
+    did not descend into 52 folder(s) (no matching word in the folder's own title):
+      kf/kf01/fritid/SBMENU9581  (Outdoor activities last 12 months )
+      kf/kf01/fritid/SBMENU9582  (How often engaged in outdoor activities)
+      kf/kf01/fritid/SBMENU9583  (Exercise activities last 12 months)
+      kf/kf01/fritid/SBMENU9584  (How often engaged in exercising activities)
+      kf/kf01/fritid/SBMENU9585  (Organised and unorganised exercise)
+      kf/kf01/fritid/SBMENU11437  (Motivation for outdoor life )
+      kf/kf01/fritid/SBMENU11438  (Barriers to outdoor life)
+      kf/kf01/fritid/SBMENU9586  (Exercise motivation)
+      kf/kf01/fritid/SBMENU9587  (Barriers to exercise)
+      kf/kf01/fritid/FRA_GAMMEL_00244  (Closed time series)
+      kf/kf01/fritidbarn/SBMENU11458  (Outdoor activities)
+      kf/kf01/fritidbarn/SBMENU11459  (Organised exercise)
+      kf/kf01/fritidbarn/SBMENU11460  (Frequency of various exercise activities)
+      kf/kf01/fritidbarn/SBMENU11461  (Exercise motivation)
+      kf/kf01/fritidbarn/SBMENU11462  (Barriers to exercise)
+      kf/kf01/kulturbar/div_kulturbar_mappe  (Norwegian cultural barometer)
+      kf/kf01/kulturbar/SBMENU11877  (Cultural participation among people with an immigrant backgr)
+      kf/kf01/kulturbar/SBMENU10000  (Closed time series)
+      kf/kf02/kultur_kostra/SBMENU5820  (KOSTRA )
+      kf/kf02/kultur_kostra/SBMENU9007  (KOSTRA – Economic figures)
+      kf/kf02/kultur_kostra/SBMENU9008  (KOSTRA – Services)
+      kf/kf02/kultur_kostra/SBMENU9009  (KOSTRA – Urban districts Oslo)
+      kf/kf02/kultur_kostra/SBMENU9010  (KOSTRA – In-depth figures)
+      kf/kf02/kultur_kostra/SBMENU6424  (Closed time series)
+      kf/kf02/kulturbar/div_kulturbar_mappe  (Norwegian cultural barometer)
+      ... and 27 more
+    describing the first 6:
+    - kf/kf04/kirke_kostra/SBMENU12107/DNKMedlemmer
+      06929: Church of Norway. Members, church ceremonies and services, by diocese 2005 - 2025
+      vars: diocese(12), contents(15), year(21)
+      geography: none with more than five values — national only
+    - kf/kf04/regkirke/RegKirke02
+      14486: Number of church parishes, by diocese 1865 - 2026
+      vars: diocese(12), contents(1), year(162)
+      geography: none with more than five values — national only
+    - kf/kf04/trosamf/MedlemTroLivsyn
+      06326: Members of congregations in religious and philosophical communities outside the Church of Norway, by re
+      vars: religion/philosophy(10), contents(2), year(21)
+      geography: none with more than five values — national only
+    - kf/kf04/trosamf/MedlemKristTrus
+      06339: Members of Christian communities outside the Church of Norway, by religious communities 2006 - 2026
+      vars: religious communities(19), contents(1), year(21)
+      geography: religious communities — 19 areas, e.g. All members in Christian communities, Adventists, The Free Evangelican Congregation, The Evangelical Lutheran Free Church of Norway
+    - kf/kf04/trosamf/MedlemTroLivsynF
+      08531: Members of congregations in religious and philosophical communities outside the Church of Norway, by re
+      vars: region(42), religion/philosophy(6), contents(1), year(11)
+      geography: region — 42 areas, e.g. The whole country, Østfold, Akershus, Viken (2020-2023)
+    - kf/kf04/trosamf/MedlMenighUKirk
+      04205: Members and congregations in registered and unregistered religious and philosophical communities outsid
+      vars: region(18), type of communities(2), religious communities(15), contents(2), year(2)
+      geography: region — 18 areas, e.g. Østfold (-2019), Oslo and Akershus (-2019), Hedmark (-2019), Oppland (-2019)
