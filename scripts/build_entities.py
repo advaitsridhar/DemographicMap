@@ -644,7 +644,8 @@ def implied_total(groups: list[dict[str, Any]]) -> float | None:
 
 
 def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
-                  field: str) -> str | None:
+                  field: str, *, level: str = "second-level",
+                  over_published: bool = False) -> str | None:
     """Fill a parent's composition by summing a complete set of its children.
 
     Ladakh is the case this exists for. It became a union territory in 2019, so
@@ -670,7 +671,7 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     source as the children would prove the arithmetic and nothing else.
     """
     current = parent.get(field)
-    if isinstance(current, list):
+    if isinstance(current, list) and not over_published:
         return None                                   # already has a real value
     if isinstance(current, dict) and current.get("status") == NOT_COLLECTED:
         return None            # a policy statement, not a gap: leave it standing
@@ -723,12 +724,24 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # published is a different kind of claim from one somebody did, and the
     # panel that shows the bars is where a reader would want to be told.
     many = len(children) != 1
+    # A figure that replaced a published one has to say so, and has to say what
+    # it replaced. Overwriting the only independent statement about a unit and
+    # leaving no trace would turn the control into a casualty of the sum it was
+    # there to check.
+    displaced = ""
+    if isinstance(current, list):
+        top = ", ".join(f"{g.get('group')} {g.get('pct')}%" for g in current[:3])
+        displaced = (f" Replaces a separately published figure for the unit "
+                     f"({top}), which is kept here as the only independent "
+                     f"check on this sum.")
     parent[f"{field}_note"] = (
-        f"Summed from all {len(children)} second-level division"
-        f"{'s' if many else ''}; no source publishes this figure for the unit "
-        f"itself. {'Their' if many else 'Its'} population"
+        f"Summed from all {len(children)} {level} division"
+        f"{'s' if many else ''};"
+        + (" no source publishes this figure for the unit itself."
+           if not displaced else "")
+        + f" {'Their' if many else 'Its'} population"
         f"{'s total' if many else ' is'} {total_pop:,.0f} against a published "
-        f"{own:,.0f} for the unit.")
+        f"{own:,.0f} for the unit." + displaced)
     years = {c.get(f"{field}_year") for c in children} - {None}
     if len(years) == 1:
         parent[f"{field}_year"] = years.pop()
@@ -745,6 +758,54 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                 seen.add(mark)
                 parent.setdefault("sources", []).append(dict(src))
     return None
+
+
+def roll_up_countries(admin0: list[dict[str, Any]],
+                      admin1_by_country: dict[str, list[dict[str, Any]]]) -> None:
+    """Sum a country from its first-level divisions, where they are all there.
+
+    Unlike the level below, this never fills a gap: every country record
+    already carries a Factbook composition, so every sum here *replaces* a
+    published figure. That is worth doing only because the two are not equally
+    good. The children are usually a national statistical office's own count,
+    itemised; the Factbook figure is an older estimate that lumps the tail into
+    "other". Leaving them apart makes the map contradict itself between zoom
+    levels -- Finland reads 85.9% Finnish nationally and 83.5% when you add up
+    the nineteen regions drawn inside it.
+
+    The displaced figure is written into the note rather than dropped, because
+    it is the only independent statement about the country and the sum has
+    nothing else to be checked against.
+
+    The population gate is the same 2% used below, and at this level it is
+    doing something different: the parent's population comes from a current
+    estimate and the children's from a census, so it refuses any country whose
+    census is more than a couple of years stale -- Mexico by 3.6%, New Zealand
+    by 3.2%, Nepal by 6.9%, Australia by 7.5%. Those are vintage gaps rather
+    than faults, and widening the bound for them is a separate decision from
+    this one; it is left tight here so that nothing is rewritten on a looser
+    rule than the one that has been tested.
+    """
+    filled: list[str] = []
+    refused: list[str] = []
+    for country in admin0:
+        iso3 = (country.get("codes") or {}).get("iso3") or country.get("id", "")[:3]
+        children = admin1_by_country.get(iso3, [])
+        if not children:
+            continue
+        for field in ROLLUP_FIELDS:
+            before = country.get(field)
+            why = roll_up_field(country, children, field,
+                                level="first-level", over_published=True)
+            if why:
+                refused.append(f"{iso3}: {why}")
+            elif country.get(field) is not before:
+                filled.append(f"{iso3} {field}")
+    if filled:
+        log(f"  summed {len(filled)} country fields from their first-level "
+            f"divisions: " + ", ".join(filled))
+    for line in refused:
+        log(f"  country not summed -- {line}")
 
 
 def roll_up_parents(admin1_by_country: dict[str, list[dict[str, Any]]],
@@ -1218,6 +1279,10 @@ def main() -> int:
     # ask the question has no children to sum, and must not be given a figure by
     # a later pass that only looks at arithmetic.
     roll_up_parents(admin1_by_country, admin2_by_country)
+    # After the level below, so a first-level unit that was itself summed can
+    # carry into its country -- and so the country's note counts the divisions
+    # as they finally stand rather than as they arrived.
+    roll_up_countries(admin0, admin1_by_country)
 
     # -- write ---------------------------------------------------------------
     out = args.out

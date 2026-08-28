@@ -993,6 +993,55 @@ nobody published is a different kind of claim from one somebody did. A value
 marked `not_collected` is never filled: that is a statement about the country,
 not a gap.
 
+### And up again, to the country
+
+The same sum runs a level higher, from first-level divisions to the country.
+It behaves differently there, and the difference is worth stating: **it never
+fills a gap.** Every country record already carries a Factbook composition, so
+every sum at this level *replaces* a published figure.
+
+That is worth doing only because the two are not equally good. The children are
+a national statistical office's own count, itemised; the Factbook figure is an
+older estimate that lumps the tail into "other". Left apart, the map
+contradicts itself between zoom levels — Finland read 85.9% Finnish nationally
+and 83.5% when you added up the nineteen regions drawn inside it.
+
+Five figures are summed this way: Finland's and Switzerland's language,
+Estonia's ethnicity, and Sri Lanka's religion and ethnicity.
+
+| | published | summed from divisions |
+|---|---|---|
+| Finland, language | Finnish 85.9%, Swedish 5.2%, *other 7.2%* | Finnish 83.5%, Swedish 5.0%, then Russian, Estonian, Ukrainian, Arabic… |
+| Switzerland, language | German 62.1%, French 22.8%, Italian 8.0% | German 61.1%, French 22.5%, Italian 7.8%, and a 20.5% *Other languages* the estimate does not carry |
+| Estonia, ethnicity | Estonian 69.1%, Russian 23.7% | Estonians 68.5%, Russians 20.3% |
+| Sri Lanka, religion | Buddhist 70.2%, Muslim 9.7% (2012) | Buddhist 69.8%, Islam 10.7% (2024) |
+
+**The displaced figure goes into the note, not the bin.** It is the only
+independent statement about the country, and the sum has nothing else to be
+checked against; overwriting it silently would make the control a casualty of
+the thing it was there to check.
+
+**What the gate refuses here, and why it is a different question.** The 2%
+population bound is the same one used a level down, but it is doing something
+else: the parent's population is a current estimate and the children's is a
+census, so it refuses any country whose census has drifted — Mexico by 3.6%,
+New Zealand by 3.2%, Nepal by 6.9%, Australia by 7.5%. Those are vintage gaps
+rather than faults. Widening the bound to admit them is a separate decision
+from this one, and the bound is left tight so nothing is rewritten on a looser
+rule than the one that has been tested.
+
+Everything else is refused for incompleteness, which is the dangerous case: 12
+of Canada's 13 provinces have no religion, 29 of China's 33 units no ethnicity,
+14 of the Philippines' 17 regions no religion. A sum across those would look
+whole and describe a fraction of the country.
+
+Percentages are not expected to land on 100. Finland's summed language totals
+98.8% against children ranging 99.1–99.9%, because the country has some 166
+language groups and the long tail rounds to 0.0% one group at a time; the
+counts reconcile to the person, 5,652,881 either way. Switzerland's totals
+118.7%, because a Swiss resident may name up to three main languages, which is
+what its cantons say too.
+
 ## Filtering one group across countries
 
 The map can colour every unit in the world by its share of a single religion,
