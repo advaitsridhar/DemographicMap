@@ -1,27 +1,32 @@
 probe_pdf: https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
   2,255,958 bytes
   46 pages
-probe_pdf: 46 pages, 46 mention ['religion', 'muslim']
+probe_pdf: 46 pages, 30 mention ['ABBOTTABAD', 'DISTRICT', 'BANNU']
 === front matter ===
+
+
+=== pages mentioning ['ABBOTTABAD', 'DISTRICT', 'BANNU'] (first 3) ===
+
+--- page 1 ----------------------------------------------------
 AREA/SEX TOTAL
 POPULATION MUSLIM CHRISTIAN HINDU JATI QADIANI/
 AHMADI
-SCHEDULED 
+SCHEDULED
 CASTES SIKH PARSI OTHERS
 1 2 3 4 5 6 7 8 9 10
-ALL SEXES 40,641,120         40,486,153       134,884            5,473               951                 629                       4,050        36                 8,944        
-MALE 20,742,619         20,668,933       63,685              2,721               475                 330                       2,084        20                 4,371        
-FEMALE 19,897,384         19,816,122       71,190              2,752               476                 298                       1,964        16                 4,566        
-TRANSGENDER 1,117                  1,098                9                        -                   -                  1                           2               -               7               
-ALL SEXES 34,554,415         34,457,326       85,005              1,476               644                 478                       1,620        29                 7,837        
-MALE 17,603,947         17,558,627       39,331              719                  319                 268                       854           15                 3,814        
-FEMALE 16,950,007         16,898,245       45,673              757                  325                 209                       764           14                 4,020        
-TRANSGENDER 461                     454                   1                        -                   -                  1                           2               -               3               
+ALL SEXES 40,641,120         40,486,153       134,884            5,473               951                 629                       4,050        36                 8,944
+MALE 20,742,619         20,668,933       63,685              2,721               475                 330                       2,084        20                 4,371
+FEMALE 19,897,384         19,816,122       71,190              2,752               476                 298                       1,964        16                 4,566
+TRANSGENDER 1,117                  1,098                9                        -                   -                  1                           2               -               7
+ALL SEXES 34,554,415         34,457,326       85,005              1,476               644                 478                       1,620        29                 7,837
+MALE 17,603,947         17,558,627       39,331              719                  319                 268                       854           15                 3,814
+FEMALE 16,950,007         16,898,245       45,673              757                  325                 209                       764           14                 4,020
+TRANSGENDER 461                     454                   1                        -                   -                  1                           2               -               3
 URBAN
-ALL SEXES 6,086,705           6,028,827         49,879              3,997               307                 151                       2,430        7                   1,107        
-MALE 3,138,672           3,110,306         24,354              2,002               156                 62                         1,230        5                   557           
-FEMALE 2,947,377           2,917,877         25,517              1,995               151                 89                         1,200        2                   546           
-TRANSGENDER 656                     644                   8                        -                   -                  -                        -            -               4               
+ALL SEXES 6,086,705           6,028,827         49,879              3,997               307                 151                       2,430        7                   1,107
+MALE 3,138,672           3,110,306         24,354              2,002               156                 62                         1,230        5                   557
+FEMALE 2,947,377           2,917,877         25,517              1,995               151                 89                         1,200        2                   546
+TRANSGENDER 656                     644                   8                        -                   -                  -                        -            -               4
 ALL LOCALITIES
 ALL SEXES 1397587 1391394 5818 97 21 17 43 6 191
 MALE 701906 699104 2620 48 10 10 24 3 87
@@ -74,102 +79,6 @@ ALL LOCALITIES
 RURAL
 ABBOTTABAD DISTRICT
 ABBOTTABAD TEHSIL
-AREA/SEX TOTAL
-POPULATION MUSLIM CHRISTIAN HINDU JATI QADIANI/
-AHMADI
-SCHEDULED 
-CASTES SIKH PARSI OTHERS
-1 2 3 4 5 6 7 8 9 10
-TABLE 9 : POPULATION BY SEX, RELIGION AND RURAL/URBAN, CENSUS - 2023
-ALL LOCALITIES
-ALL SEXES 98671 98326 268 10 2 3 1 1 60
-MALE 48641 48499 108 7 2 1 0 0 24
-FEMALE 50029 49826 160 3 0 2 1 1 36
-TRANSGENDER 1 1 0 0 0 0 0 0 0
-RURAL
-ALL SEXES 98671 98326 268 10 2 3 1 1 60
-MALE 48641 48499 108 7 2 1 0 0 24
-FEMALE 50029 49826 160 3 0 2 1 1 36
-TRANSGENDER 1 1 0 0 0 0 0 0 0
-URBAN
-ALL SEXES 0 0 0 0 0 0 0 0 0
-MALE 0 0 0 0 0 0 0 0 0
-FEMALE 0 0 0 0 0 0 0 0 0
-TRANSGENDER 0 0 0 0 0 0 0 0 0
-ALL LOCALITIES
-ALL SEXES 60239 60097 129 5 1 2 1 0 4
-MALE 29950 29892 52 1 0 2 1 0 2
-FEMALE 30287 30203 77 4 1 0 0 0 2
-TRANSGENDER 2 2 0 0 0 0 0 0 0
-RURAL
-ALL SEXES 60239 60097 129 5 1 2 1 0 4
-MALE 29950 29892 52 1 0 2 1 0 2
-FEMALE 30287 30203 77 4 1 0 0 0 2
-TRANSGENDER 2 2 0 0 0 0 0 0 0
-URBAN
-ALL SEXES 0 0 0 0 0 0 0 0 0
-MALE 0 0 0 0 0 0 0 0 0
-FEMALE 0 0 0 0 0 0 0 0 0
-TRANSGENDER 0 0 0 0 0 0 0 0 0
-ALL LOCALITIES
-ALL SEXES 1283113 1279889 3068 34 21 16 22 0 63
-MALE 648473 646986 1417 15 11 8 10 0 26
-FEMALE 634625 632888 1651 19 10 8 12 0 37
-TRANSGENDER 15 15 0 0 0 0 0 0 0
-RURAL
-ALL SEXES 1283113 1279889 3068 34 21 16 22 0 63
-MALE 648473 646986 1417 15 11 8 10 0 26
-FEMALE 634625 632888 1651 19 10 8 12 0 37
-TRANSGENDER 15 15 0 0 0 0 0 0 0
-URBAN
-ALL SEXES 0 0 0 0 0 0 0 0 0
-
-=== pages mentioning ['religion', 'muslim'] (first 4) ===
-
---- page 1 ----------------------------------------------------
-AREA/SEX TOTAL
-POPULATION MUSLIM CHRISTIAN HINDU JATI QADIANI/
-AHMADI
-SCHEDULED
-CASTES SIKH PARSI OTHERS
-1 2 3 4 5 6 7 8 9 10
-ALL SEXES 40,641,120         40,486,153       134,884            5,473               951                 629                       4,050        36                 8,944
-MALE 20,742,619         20,668,933       63,685              2,721               475                 330                       2,084        20                 4,371
-FEMALE 19,897,384         19,816,122       71,190              2,752               476                 298                       1,964        16                 4,566
-TRANSGENDER 1,117                  1,098                9                        -                   -                  1                           2               -               7
-ALL SEXES 34,554,415         34,457,326       85,005              1,476               644                 478                       1,620        29                 7,837
-MALE 17,603,947         17,558,627       39,331              719                  319                 268                       854           15                 3,814
-FEMALE 16,950,007         16,898,245       45,673              757                  325                 209                       764           14                 4,020
-TRANSGENDER 461                     454                   1                        -                   -                  1                           2               -               3
-URBAN
-ALL SEXES 6,086,705           6,028,827         49,879              3,997               307                 151                       2,430        7                   1,107
-MALE 3,138,672           3,110,306         24,354              2,002               156                 62                         1,230        5                   557
-FEMALE 2,947,377           2,917,877         25,517              1,995               151                 89                         1,200        2                   546
-TRANSGENDER 656                     644                   8                        -                   -                  -                        -            -               4
-ALL LOCALITIES
-ALL SEXES 1397587 1391394 5818 97 21 17 43 6 191
-MALE 701906 699104 2620 48 10 10 24 3 87
-FEMALE 695577 692187 3197 49 11 7 19 3 104
-TRANSGENDER 104 103 1 0 0 0 0 0 0
-RURAL
-ALL SEXES 1086688 1083261 3174 48 15 16 20 4 150
-MALE 544434 542945 1365 32 7 9 11 2 63
-FEMALE 542231 540293 1809 16 8 7 9 2 87
-TRANSGENDER 23 23 0 0 0 0 0 0 0
-URBAN
-ALL SEXES 310899 308133 2644 49 6 1 23 2 41
-MALE 157472 156159 1255 16 3 1 13 1 24
-FEMALE 153346 151894 1388 33 3 0 10 1 17
-TRANSGENDER 81 80 1 0 0 0 0 0 0
-ALL LOCALITIES
-ALL SEXES 981967 977268 4476 81 16 10 31 5 80
-MALE 495759 493601 2048 40 7 7 15 3 38
-FEMALE 486151 483611 2427 41 9 3 16 2 42
-TRANSGENDER 57 56 1 0 0 0 0 0 0
-RURAL
-ALL SEXES 727449 725230 2106 32 10 9 13 3 46
-MALE 366447 365464 924 24 4 6 6 2 17
-FEMALE 360984 359748 1182 8 6 3 7 1 2
 
 --- page 2 ----------------------------------------------------
 AREA/SEX TOTAL
@@ -247,82 +156,6 @@ BAJAUR DISTRICT
 BAR CHAMER KAND TEHSIL
 BARANG TEHSIL
 
---- page 3 ----------------------------------------------------
-AREA/SEX TOTAL
-POPULATION MUSLIM CHRISTIAN HINDU JATI QADIANI/
-AHMADI
-SCHEDULED
-CASTES SIKH PARSI OTHERS
-1 2 3 4 5 6 7 8 9 10
-TABLE 9 : POPULATION BY SEX, RELIGION AND RURAL/URBAN, CENSUS - 2023
-MALE 45053 45010 41 1 1 0 0 0 0
-FEMALE 44928 44863 62 0 2 1 0 0 0
-TRANSGENDER 0 0 0 0 0 0 0 0 0
-RURAL
-ALL SEXES 89981 89873 103 1 3 1 0 0 0
-MALE 45053 45010 41 1 1 0 0 0 0
-FEMALE 44928 44863 62 0 2 1 0 0 0
-TRANSGENDER 0 0 0 0 0 0 0 0 0
-URBAN
-ALL SEXES 0 0 0 0 0 0 0 0 0
-MALE 0 0 0 0 0 0 0 0 0
-FEMALE 0 0 0 0 0 0 0 0 0
-TRANSGENDER 0 0 0 0 0 0 0 0 0
-ALL LOCALITIES
-ALL SEXES 299385 298872 479 3 1 4 2 0 24
-MALE 151831 151602 213 0 1 3 1 0 11
-FEMALE 147552 147268 266 3 0 1 1 0 13
-TRANSGENDER 2 2 0 0 0 0 0 0 0
-RURAL
-ALL SEXES 299385 298872 479 3 1 4 2 0 24
-MALE 151831 151602 213 0 1 3 1 0 11
-FEMALE 147552 147268 266 3 0 1 1 0 13
-TRANSGENDER 2 2 0 0 0 0 0 0 0
-URBAN
-ALL SEXES 0 0 0 0 0 0 0 0 0
-MALE 0 0 0 0 0 0 0 0 0
-FEMALE 0 0 0 0 0 0 0 0 0
-TRANSGENDER 0 0 0 0 0 0 0 0 0
-ALL LOCALITIES
-ALL SEXES 357135 355762 1329 8 11 7 8 0 10
-MALE 181487 180831 638 3 6 3 3 0 3
-FEMALE 175644 174927 691 5 5 4 5 0 7
-TRANSGENDER 4 4 0 0 0 0 0 0 0
-RURAL
-ALL SEXES 357135 355762 1329 8 11 7 8 0 10
-MALE 181487 180831 638 3 6 3 3 0 3
-FEMALE 175644 174927 691 5 5 4 5 0 7
-TRANSGENDER 4 4 0 0 0 0 0 0 0
-URBAN
-ALL SEXES 0 0 0 0 0 0 0 0 0
-MALE 0 0 0 0 0 0 0 0 0
-FEMALE 0 0 0 0 0 0 0 0 0
-TRANSGENDER 0 0 0 0 0 0 0 0 0
-ALL LOCALITIES
-ALL SEXES 93706 93466 224 1 0 1 3 0 11
-MALE 47593 47486 100 0 0 1 2 0 4
-FEMALE 46109 45976 124 1 0 0 1 0 7
-TRANSGENDER 4 4 0 0 0 0 0 0 0
-RURAL
-ALL SEXES 93706 93466 224 1 0 1 3 0 11
-MALE 47593 47486 100 0 0 1 2 0 4
-FEMALE 46109 45976 124 1 0 0 1 0 7
-TRANSGENDER 4 4 0 0 0 0 0 0 0
-URBAN
-ALL SEXES 0 0 0 0 0 0 0 0 0
-MALE 0 0 0 0 0 0 0 0 0
-FEMALE 0 0 0 0 0 0 0 0 0
-TRANSGENDER 0 0 0 0 0 0 0 0 0
-ALL LOCALITIES
-ALL SEXES 315745 314978 716 21 4 2 8 0 16
-MALE 158686 158330 331 11 2 1 4 0 7
-FEMALE 157056 156645 385 10 2 1 4 0 9
-TRANSGENDER 3 3 0 0 0 0 0 0 0
-KHAR BAJAUR TEHSIL
-MAMUND TEHSIL
-NAWAGAI TEHSIL
-SALARZAI TEHSIL
-
 --- page 4 ----------------------------------------------------
 AREA/SEX TOTAL
 POPULATION MUSLIM CHRISTIAN HINDU JATI QADIANI/
@@ -399,4 +232,4 @@ BANNU TEHSIL
 UTMAN KHEL TEHSIL
 BANNU DISTRICT
 
-... and 42 further pages match; re-run with a narrower --terms to see them.
+... and 27 further pages match; re-run with a narrower --terms to see them.
