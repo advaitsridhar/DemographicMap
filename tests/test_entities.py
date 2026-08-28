@@ -1693,18 +1693,35 @@ class PakistanColumns(unittest.TestCase):
                         self.pk.values(cells, self.edges(rows), "test", "row")))
 
     def test_the_columns_are_learned_from_the_figures(self):
-        self.assertEqual([round(x) for x in self.edges(self.kp)],
+        self.assertEqual([round(lo) for lo, _hi in self.edges(self.kp)],
                          [177, 226, 275, 321, 366, 421, 456, 497, 532])
-        self.assertEqual([round(x) for x in self.edges(self.punjab)],
+        self.assertEqual([round(lo) for lo, _hi in self.edges(self.punjab)],
                          [173, 221, 268, 319, 371, 435, 471, 506, 548])
+
+    def test_a_column_is_a_band_because_a_figure_has_two_shapes(self):
+        # The province row is written 40,641,120 and its districts 1397587,
+        # without the separators, and the two end two points apart -- which is
+        # why Abbottabad's own total was refused as belonging to no column.
+        # Taking the middle of the band and allowing a fixed tolerance either
+        # side is not enough; a figure has to fall inside the band.
+        district = [(x0 + 2, x1 + 2, t.replace(",", "")) if t[0].isdigit()
+                    else (x0, x1, t) for x0, x1, t in self.kp[0]]
+        edges = self.pk.column_edges([self.kp + [district]], "test")
+        self.assertEqual([(round(lo), round(hi)) for lo, hi in edges[:2]],
+                         [(177, 179), (226, 228)])
+        got = dict(zip(self.pk.COLUMNS,
+                       self.pk.values(district, edges, "test", "ABBOTTABAD")))
+        total = got.pop("TOTAL")
+        self.assertEqual(total, 40_641_120)
+        self.assertEqual(sum(got.values()), total)
 
     def test_the_header_is_not_the_authority(self):
         # Punjab's numerals are flush right with their columns -- the "2" over
         # TOTAL POPULATION ends at 173, and so does 127,333,305 beneath it.
         # Khyber Pakhtunkhwa's same numeral ends at 157 over figures ending at
         # 177. Either file's header, read as geometry, misplaces the other.
-        self.assertEqual(round(self.edges(self.punjab)[0]), 173)
-        self.assertEqual(round(self.edges(self.kp)[0]), 177)
+        self.assertEqual(round(self.edges(self.punjab)[0][0]), 173)
+        self.assertEqual(round(self.edges(self.kp)[0][0]), 177)
 
     def test_a_figure_split_across_words_is_rejoined_before_it_is_placed(self):
         # 36 Parsis as "3" and "6"; 124,462,897 as "1" and "24,462,897".

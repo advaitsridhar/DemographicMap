@@ -181,7 +181,8 @@ def figure_row(cells: list[Cell]) -> bool:
     return bool(cells) and cells[0][2] in SEXES_START
 
 
-def column_edges(pages: list[list[list[Cell]]], province: str) -> list[float]:
+def column_edges(pages: list[list[list[Cell]]],
+                 province: str) -> list[tuple[float, float]]:
     """Where each column ends, learned from the figures themselves.
 
     Not from the header. Its numbered row looks like the obvious authority and
@@ -192,10 +193,18 @@ def column_edges(pages: list[list[list[Cell]]], province: str) -> list[float]:
     file and misplaces the other, and both were tried.
 
     The figures agree with each other where the header does not. They are set
-    flush right, so every value in a column ends at the same x, on every row
-    and every page; the nine of those are the columns. Taken by how often each
-    edge occurs, so that a column mostly filled with the office's dash still
-    has hundreds of rows saying where it is.
+    flush right, so every value in a column ends within a point or two of the
+    same x, on every row and every page.
+
+    A band rather than a single x, because a column has two families of figure
+    in it: the province is written 40,641,120 and its districts 1397587,
+    without the separators, and the two end two points apart. Taking the
+    middle of the band and allowing a fixed tolerance around it put Abbottabad
+    outside its own column, so the band is carried and a figure is asked to
+    fall inside it.
+
+    Counted by how often each edge occurs, so that a column mostly filled with
+    the office's dash still has hundreds of rows saying where it is.
     """
     tally: dict[int, int] = {}
     for rows in pages:
@@ -205,49 +214,55 @@ def column_edges(pages: list[list[list[Cell]]], province: str) -> list[float]:
             for right, _value in groups(cells):
                 tally[round(right)] = tally.get(round(right), 0) + 1
 
-    # Adjacent x that are the same edge seen through rounding.
-    clusters: list[list[int]] = []
+    # Adjacent x are one column's band. Columns sit some forty points apart
+    # and a band spans a few, so nothing here can bridge two of them.
+    bands: list[list[int]] = []
     for x in sorted(tally):
-        if clusters and x - clusters[-1][-1] <= NEAR:
-            clusters[-1].append(x)
+        if bands and x - bands[-1][-1] <= NEAR:
+            bands[-1].append(x)
         else:
-            clusters.append([x])
-    weighed = sorted(
-        ((sum(tally[x] for x in c),
-          sum(x * tally[x] for x in c) / sum(tally[x] for x in c)) for c in clusters),
-        reverse=True)
+            bands.append([x])
+    weighed = sorted(((sum(tally[x] for x in band), band) for band in bands),
+                     reverse=True)
 
     if len(weighed) < len(COLUMNS):
         raise SystemExit(
             f"{province}: {len(weighed)} column edges in the figures, wanted "
             f"{len(COLUMNS)} -- the table is not shaped the way this reads it")
-    edges = sorted(x for _count, x in weighed[:len(COLUMNS)])
     # Anything else that occurs often is a tenth column, and a tenth column
     # means the reading is wrong rather than that one row is odd.
     rest = weighed[len(COLUMNS):]
     if rest and rest[0][0] > weighed[len(COLUMNS) - 1][0] / 10:
         raise SystemExit(
-            f"{province}: a tenth column at x={rest[0][1]:.0f} occurs "
+            f"{province}: a tenth column ending near x={rest[0][1][0]} occurs "
             f"{rest[0][0]} times against {weighed[len(COLUMNS) - 1][0]} for "
             "the least common of the nine taken")
+    edges = sorted((float(band[0]), float(band[-1]))
+                   for _count, band in weighed[:len(COLUMNS)])
+    log("    columns end at "
+        + ", ".join(f"{lo:.0f}" if lo == hi else f"{lo:.0f}-{hi:.0f}"
+                    for lo, hi in edges))
     return edges
 
 
-def values(cells: list[Cell], edges: list[float], province: str,
+def values(cells: list[Cell], edges: list[tuple[float, float]], province: str,
            where: str) -> list[int] | None:
-    """One row's figures, each put in the column it ends at."""
+    """One row's figures, each put in the column it ends inside."""
     out = [0] * len(edges)
     seen = False
     for right, value in groups(cells):
-        index = min(range(len(edges)), key=lambda i: abs(edges[i] - right))
-        if abs(edges[index] - right) > NEAR:
+        index = min(range(len(edges)),
+                    key=lambda i: abs((edges[i][0] + edges[i][1]) / 2 - right))
+        lo, hi = edges[index]
+        if not lo - NEAR <= right <= hi + NEAR:
             # Never quietly dropped: a figure that belongs to no column is
             # either a column this reader does not know about or a value that
             # has been torn in half, and both of those are wrong answers
             # rather than missing ones.
             raise SystemExit(
                 f"{province}: {where} has a figure of {value:,} ending at "
-                f"x={right:.0f}, which is no column of this table")
+                f"x={right:.0f}, which is no column of this table -- the "
+                f"nearest ends at {lo:.0f}-{hi:.0f}")
         out[index] = value
         seen = True
     return out if seen else None
