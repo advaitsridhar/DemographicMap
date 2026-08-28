@@ -1958,6 +1958,14 @@ class BangladeshZila(unittest.TestCase):
         body = source.split('"""', 2)[2]
         self.assertNotIn("Merged_All_Table", body)
 
+    def test_the_respelled_districts_are_declared(self):
+        # Bangladesh respelled several districts in English in 2018 and the
+        # boundary file still carries the older forms. "Nawabganj" and
+        # "Chapainababganj" share no word, so nothing infers it.
+        self.assertEqual(self.bd.ALIASES["Chattogram"], ("Chittagong",))
+        self.assertIn("Nawabganj", self.bd.ALIASES["Chapainababganj"])
+        self.assertEqual(len(self.bd.ALIASES), 8)
+
     def test_the_note_says_whose_shares_these_are(self):
         self.assertIn("hijra", self.bd.NOTE)
         self.assertIn("male and female", self.bd.NOTE)

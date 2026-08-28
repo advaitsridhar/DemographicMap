@@ -90,6 +90,24 @@ SEXED = {"Muslim": ("# Male_Muslim", "# Female_Muslim"),
          "Buddhist": ("# Male_Buddhist", "# Female_Buddhist"),
          "Other religion": ("# Male_Others", "# Female_Others")}
 
+# What geoBoundaries calls the same zila. Bangladesh respelled several
+# districts in English in 2018 -- Chittagong became Chattogram, Comilla became
+# Cumilla, Barisal Barishal, Jessore Jashore, Bogra Bogura -- and the boundary
+# file still carries the older forms, alongside plain transliteration variants
+# for three more. Declared rather than derived: "Nawabganj" and
+# "Chapainababganj" share no word, and a rule loose enough to bridge them would
+# bridge a great deal else.
+ALIASES: dict[str, tuple[str, ...]] = {
+    "Barishal": ("Barisal",),
+    "Bogura": ("Bogra",),
+    "Brahmanbaria": ("Brahamanbaria",),
+    "Chapainababganj": ("Nawabganj", "Chapai Nawabganj"),
+    "Chattogram": ("Chittagong",),
+    "Cumilla": ("Comilla",),
+    "Jashore": ("Jessore",),
+    "Moulvibazar": ("Maulvibazar",),
+}
+
 NOTE = ("Census 2022. The religion table classifies the male and female "
         "population only -- each religion's total is exactly its male plus "
         "its female column -- so these shares are of a denominator a few "
@@ -274,6 +292,7 @@ def main() -> int:
         records.append(record(
             f"BGD-{row['name'].lower().replace(' ', '-')}",
             row["name"], level="admin2", parent="BGD",
+            aliases=list(ALIASES.get(row["name"], ())),
             population=measure(row["population"], year=YEAR, source=SOURCE),
             religion=shares(row["counts"], total=classified) or gap(NOT_AVAILABLE),
             religion_year=YEAR, religion_note=NOTE,
