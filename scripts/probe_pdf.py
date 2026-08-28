@@ -130,6 +130,30 @@ def matching(text: str, terms: list[str]) -> list[tuple[int, str]]:
             if any(term in page.lower() for term in lowered)]
 
 
+def around(page: str, terms: list[str], context: int) -> str:
+    """Only the rows naming a term, with a few either side.
+
+    A page excerpt is a budget spent from the top, and the row worth seeing is
+    usually not at the top: Khyber Pakhtunkhwa's Malakand heading sits well
+    down a page of tehsils, so every excerpt large enough to reach it also
+    carried a thousand figures nobody asked for -- and every one too small
+    reported the page as matching while showing none of the match.
+    """
+    lowered = [t.lower() for t in terms]
+    rows = [line.rstrip() for line in page.splitlines() if line.strip()]
+    keep: set[int] = set()
+    for i, row in enumerate(rows):
+        if any(term in row.lower() for term in lowered):
+            keep.update(range(max(0, i - context), min(len(rows), i + context + 1)))
+    out, last = [], None
+    for i in sorted(keep):
+        if last is not None and i > last + 1:
+            out.append("      ...")
+        out.append(rows[i])
+        last = i
+    return "\n".join(out)
+
+
 def condense(page: str, limit: int) -> str:
     """Drop blank lines so a sparse census table fits the excerpt budget."""
     body = "\n".join(line.rstrip() for line in page.splitlines() if line.strip())
@@ -153,6 +177,9 @@ def main() -> int:
                     help="lines of the front matter to print")
     ap.add_argument("--max-pages", type=int, default=12)
     ap.add_argument("--excerpt", type=int, default=2500)
+    ap.add_argument("--context", type=int, default=0,
+                    help="print only the rows naming a term, with this many "
+                         "rows either side, instead of the page's opening")
     args = ap.parse_args()
 
     if args.url:
@@ -173,7 +200,8 @@ def main() -> int:
     log(f"\n=== pages mentioning {terms} (first {args.max_pages}) ===")
     for number, page in hits[: args.max_pages]:
         log(f"\n--- page {number} " + "-" * 52)
-        log(condense(page, args.excerpt))
+        log(around(page, terms, args.context) if args.context
+            else condense(page, args.excerpt))
     if len(hits) > args.max_pages:
         log(f"\n... and {len(hits) - args.max_pages} further pages match; "
             f"re-run with a narrower --terms to see them.")
