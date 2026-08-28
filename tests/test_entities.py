@@ -6,6 +6,7 @@ shape.
 """
 
 import collections
+import pathlib
 import sys
 import unittest
 from pathlib import Path
@@ -1854,13 +1855,13 @@ class PakistanCells(unittest.TestCase):
 
 
 class BangladeshZila(unittest.TestCase):
-    """The workbook's own arithmetic, and the people it does not classify.
+    """Two sheets that have to agree to the person, and one that does not.
 
-    Barguna's figures are real, off the published sheet.
+    Barguna's figures are real, off the published workbook.
     """
 
     BARGUNA = {
-        "name": "Barguna", "population": 1_010_531,
+        "name": "Barguna", "population": 1_010_531, "hijra": 70,
         "counts": {"Muslim": 937_495, "Hindu": 69_481, "Christian": 252,
                    "Buddhist": 3_185, "Other religion": 48},
         "sexed": {"Muslim": (457_588, 479_907), "Hindu": (34_436, 35_045),
@@ -1881,6 +1882,15 @@ class BangladeshZila(unittest.TestCase):
     def test_the_published_figures_pass(self):
         self.bd.check([self.row()])
 
+    def test_the_religions_plus_the_hijra_are_the_population_exactly(self):
+        # Two separate sheets agreeing to the person. 1,010,461 classified by
+        # religion, 70 hijra whom the religion table does not classify, and a
+        # published 1,010,531.
+        classified = sum(self.BARGUNA["counts"].values())
+        self.assertEqual(classified, 1_010_461)
+        self.assertEqual(classified + self.BARGUNA["hijra"],
+                         self.BARGUNA["population"])
+
     def test_a_religion_total_must_match_its_own_sexes(self):
         # The sheet states each figure twice, and the two agreeing is what
         # makes the column headings trustworthy rather than assumed.
@@ -1889,20 +1899,31 @@ class BangladeshZila(unittest.TestCase):
             self.bd.check([self.row(counts=counts)])
         self.assertIn("by sex", str(caught.exception))
 
-    def test_the_third_gender_is_the_only_gap_allowed(self):
-        # 70 people in Barguna, whom the religion table does not classify.
-        classified = sum(self.BARGUNA["counts"].values())
-        self.assertEqual(self.BARGUNA["population"] - classified, 70)
-
-    def test_a_gap_too_wide_to_be_the_third_gender_is_refused(self):
+    def test_one_person_out_is_refused(self):
+        # Exact, not approximate. A tolerance wide enough to admit a hijra
+        # count is wide enough to hide the merged sheet's transpositions.
         with self.assertRaises(SystemExit) as caught:
-            self.bd.check([self.row(population=1_100_000)])
-        self.assertIn("religions classify", str(caught.exception))
+            self.bd.check([self.row(population=1_010_532)])
+        self.assertIn("against a published", str(caught.exception))
 
-    def test_religions_exceeding_the_population_are_refused(self):
+    def test_another_districts_population_is_refused(self):
+        # What the merged sheet actually does: Cumilla carries Cox's Bazar's
+        # population, and every religion in it still adds up by sex.
         with self.assertRaises(SystemExit) as caught:
-            self.bd.check([self.row(population=900_000)])
-        self.assertIn("religions classify", str(caught.exception))
+            self.bd.check([self.row(population=6_212_216)])
+        self.assertIn("against a published 6,212,216", str(caught.exception))
+
+    def test_a_column_is_found_by_a_prefix_when_it_is_unique(self):
+        row = {"Population_Total": 1_010_531, "Population_Hijra": 70,
+               "Population_rural_Total": 779_670, "Population_rural_Male": 381_325}
+        self.assertEqual(self.bd.pick(row, "Population_Hijra"), 70)
+        self.assertEqual(self.bd.pick(row, "Population_Tot"), 1_010_531)
+
+    def test_an_ambiguous_prefix_is_refused_rather_than_taking_the_first(self):
+        row = {"Population_rural_Total": 779_670, "Population_rural_Male": 381_325}
+        with self.assertRaises(SystemExit) as caught:
+            self.bd.pick(row, "Population_rural")
+        self.assertIn("matches 2 columns", str(caught.exception))
 
     def test_the_shares_are_of_what_the_table_classifies(self):
         counts = self.BARGUNA["counts"]
@@ -1913,7 +1934,8 @@ class BangladeshZila(unittest.TestCase):
 
     def test_the_sheet_name_is_matched_with_its_leading_space_ignored(self):
         class Book:
-            sheetnames = [" Population by Religion, Sex", "Merged_All_Table"]
+            sheetnames = [" Population by Religion, Sex",
+                          " Population by Sex, Dist & Loca"]
             def __getitem__(self, name):
                 return name
         self.assertEqual(self.bd.sheet(Book(), self.bd.RELIGION_SHEET),
@@ -1927,6 +1949,14 @@ class BangladeshZila(unittest.TestCase):
         with self.assertRaises(SystemExit) as caught:
             self.bd.sheet(Book(), self.bd.RELIGION_SHEET)
         self.assertIn("Merged_All_Table", str(caught.exception))
+
+    def test_the_merged_sheet_is_not_read(self):
+        # It flattens the forty-two sheets and transposes at least three
+        # districts' figures while their geocodes stay correct.
+        source = pathlib.Path(
+            ROOT / "scripts" / "fetch_census" / "bangladesh.py").read_text()
+        body = source.split('"""', 2)[2]
+        self.assertNotIn("Merged_All_Table", body)
 
     def test_the_note_says_whose_shares_these_are(self):
         self.assertIn("hijra", self.bd.NOTE)

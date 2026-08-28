@@ -26,11 +26,26 @@ under the UN in Bangladesh, and the workbook is the office's own.
 **The religion table does not count everybody.** Each religion's total is
 exactly its male plus its female column, and Bangladesh enumerates a third
 gender: Barguna's religions sum to 1,010,461 against a district population of
-1,010,531, and the 70 missing are its hijra. So the shares here are of the
-population the religion table classifies, which is a few dozen people short of
-the district in most zila, and the note says so. Both figures are kept -- the
-district's own population, and the denominator the shares are of -- because
-silently using one for the other is how a footnote becomes a wrong number.
+1,010,531, and the 70 missing are its hijra -- the number the population sheet
+prints for Barguna in its own Hijra column. So the shares here are of the
+population the religion table classifies, and the note says so. Both figures
+are kept -- the district's own population, and the denominator the shares are
+of -- because silently using one for the other is how a footnote becomes a
+wrong number.
+
+That also makes the check exact rather than approximate: the religions plus
+the hijra must equal the published total, to the person, in every district.
+
+**The workbook's own merged sheet is not used, because it is wrong.**
+``Merged_All_Table`` flattens the forty-two sheets into 445 columns, and in it
+Cumilla and Cox's Bazar hold each other's household and population figures --
+Cumilla 2,823,268 against a real 6.2 million -- while their district geocodes,
+19 and 22, stay correct. Joypurhat and Naogaon are wrong too, and Naogaon's
+figure matches neither district, so it is not a clean transposition throughout.
+The per-topic sheets it was built from are consistent, and those are read
+instead. Nothing here takes the division names from the merged sheet either:
+they may well be sound, but a sheet with three known transpositions in it is
+not something to take an unverifiable field from.
 
 Usage:
     python -m scripts.fetch_census.bangladesh
@@ -60,7 +75,7 @@ WORKBOOK = ("https://data.humdata.org/dataset/"
 # Matched after stripping: the religion sheet's name begins with a space in
 # the published file, and a lookup by the name as it reads would miss it.
 RELIGION_SHEET = "Population by Religion, Sex"
-MERGED_SHEET = "Merged_All_Table"
+POPULATION_SHEET = "Population by Sex, Dist & Loca"
 
 # The order they appear in, and the names this map uses for them. "Others" is
 # the office's own residual and is kept as one, rather than being dropped or
@@ -129,6 +144,25 @@ def table(sheet) -> list[dict[str, Any]]:
     return out
 
 
+def pick(row: dict[str, Any], prefix: str) -> Any:
+    """One column by its name, or by the only name that starts with it.
+
+    The population sheet's headings run "Population_Total",
+    "Population_Hijra", "Population_rural_..." and so on, and reading a
+    heading off a printed excerpt truncates it. A prefix that matches exactly
+    one column is the column; a prefix that matches several is ambiguous and
+    says so rather than taking the first.
+    """
+    if prefix in row:
+        return row[prefix]
+    hits = [key for key in row if key.startswith(prefix)]
+    if len(hits) == 1:
+        return row[hits[0]]
+    raise SystemExit(
+        f"{prefix!r} matches {len(hits)} columns ({hits[:4]}) of: "
+        + ", ".join(list(row)[:14]))
+
+
 def number(value: Any) -> int | None:
     if value is None:
         return None
@@ -148,10 +182,12 @@ def check(districts: list[dict[str, Any]]) -> None:
     sheet stating the same figure twice, and the two agreeing is what makes
     the column headings trustworthy rather than assumed.
 
-    And the religions must account for the district's population apart from
-    the third gender, which is well under a tenth of a percent everywhere. A
-    gap wider than that is not the hijra count and means these are not the
-    columns this reader thinks they are.
+    And the religions plus the third gender must equal the district's
+    published population exactly. Two separate sheets have to agree to the
+    person for that to hold, which is what makes it worth having: the
+    workbook's merged sheet fails this badly enough to have swapped two
+    districts' populations, and a tolerance wide enough to admit a hijra count
+    would have been wide enough to hide something worse.
     """
     bad = []
     for row in districts:
@@ -164,19 +200,20 @@ def check(districts: list[dict[str, Any]]) -> None:
                 bad.append(f"{row['name']}: {religion} totals {total:,} "
                            f"against {sum(parts):,} by sex")
         classified = sum(row["counts"].values())
-        whole = row["population"]
-        if not whole:
-            bad.append(f"{row['name']}: no district population")
-        elif not 0 <= whole - classified <= max(200, 0.001 * whole):
-            bad.append(f"{row['name']}: religions classify {classified:,} of "
-                       f"{whole:,}, a gap of {whole - classified:+,}")
+        whole, hijra = row["population"], row["hijra"]
+        if whole is None or hijra is None:
+            bad.append(f"{row['name']}: no published population or hijra count")
+        elif classified + hijra != whole:
+            bad.append(f"{row['name']}: {classified:,} classified by religion "
+                       f"plus {hijra:,} hijra is {classified + hijra:,}, "
+                       f"against a published {whole:,}")
     if bad:
         raise SystemExit(f"{len(bad)} checks failed — " + "; ".join(bad[:4]))
-    unclassified = sum(r["population"] - sum(r["counts"].values())
-                       for r in districts)
+    hijra = sum(row["hijra"] for row in districts)
     log(f"    every religion's total matches its own male plus female, and "
-        f"the religions account for every district bar {unclassified:,} "
-        f"people not classified by religion")
+        f"in every district the religions plus the hijra come to the "
+        f"published population exactly ({hijra:,} hijra nationally, whom the "
+        f"religion table does not classify)")
 
 
 def read(blob: bytes) -> list[dict[str, Any]]:
@@ -184,21 +221,20 @@ def read(blob: bytes) -> list[dict[str, Any]]:
 
     book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
     try:
-        merged = table(sheet(book, MERGED_SHEET))
+        people = table(sheet(book, POPULATION_SHEET))
         religion = table(sheet(book, RELIGION_SHEET))
     finally:
         book.close()
-    log(f"    {len(merged)} districts in {MERGED_SHEET}, "
+    log(f"    {len(people)} districts in {POPULATION_SHEET}, "
         f"{len(religion)} in {RELIGION_SHEET}")
 
-    whole = {str(row["District"]).strip(): row for row in merged}
-    missing = [str(r["District"]).strip() for r in religion
-               if str(r["District"]).strip() not in whole]
+    whole = {str(row["District"]).strip(): row for row in people}
+    missing = sorted({str(r["District"]).strip() for r in religion} - set(whole))
     if missing:
         # Named, because a district in one sheet and not the other is a fact
         # about the workbook rather than a row to quietly drop.
         raise SystemExit("districts in the religion sheet and not in "
-                         f"{MERGED_SHEET}: {', '.join(missing)}")
+                         f"{POPULATION_SHEET}: {', '.join(missing)}")
 
     out = []
     for row in religion:
@@ -210,9 +246,8 @@ def read(blob: bytes) -> list[dict[str, Any]]:
                              f"number: {counts}")
         out.append({
             "name": name,
-            "division": str(whole[name].get("Division") or "").strip(),
-            "geocode": number(whole[name].get("District_Geocode")),
-            "population": number(whole[name].get("Population_Total")),
+            "population": number(pick(whole[name], "Population_Total")),
+            "hijra": number(pick(whole[name], "Population_Hijra")),
             "counts": counts,
             "sexed": {religion_name: tuple(number(row.get(column))
                                            for column in pair)
@@ -239,7 +274,6 @@ def main() -> int:
         records.append(record(
             f"BGD-{row['name'].lower().replace(' ', '-')}",
             row["name"], level="admin2", parent="BGD",
-            parent_name=row["division"] or None,
             population=measure(row["population"], year=YEAR, source=SOURCE),
             religion=shares(row["counts"], total=classified) or gap(NOT_AVAILABLE),
             religion_year=YEAR, religion_note=NOTE,
