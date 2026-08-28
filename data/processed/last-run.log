@@ -18,6 +18,7 @@
       (throttled, waiting 1s)
       (throttled, waiting 1s)
       (throttled, waiting 1s)
+      (throttled, waiting 1s)
     (stopped after 72s — tree not fully walked)
     7 candidate table(s):
       be/be01/folkemengde/SBMENU6923/FolkStatsb 11366: Population, by citizenship (M) (UD) 2016 - 2026
@@ -27,32 +28,34 @@
       be/be05/folkemengde/SBMENU6923/FolkStatsb 11366: Population, by citizenship (M) (UD) 2016 - 2026
       be/be05/folkemengde/SBMENU6923/FolkKjStatsb2 05196: Population, by sex, age and citizenship 1977 - 2026
       be/be05/folkemengde/SBMENU6923/FolkSivilStat2 05328: Population, by sex, marital status and citizenship 2000 - 2026
-    describing the first 5:
-    - be/be01/folkemengde/SBMENU6923/FolkStatsb
-      11366: Population, by citizenship (M) (UD) 2016 - 2026
-      (throttled, waiting 1s)
-      vars: region(1036), citizenship(264), contents(2), year(11)
-      geography: region — 1036 areas, e.g. The whole country, Østfold, Halden, Moss
-    - be/be01/folkemengde/SBMENU6923/FolkKjStatsb2
-      05196: Population, by sex, age and citizenship 1977 - 2026
-      (throttled, waiting 1s)
-      vars: sex(2), citizenship(259), age(9), contents(1), year(50)
-      geography: none with more than five values — national only
-    - be/be01/folkemengde/SBMENU6923/FolkSivilStat2
-      05328: Population, by sex, marital status and citizenship 2000 - 2026
-      (throttled, waiting 1s)
-      vars: sex(2), citizenship(259), marital status(7), contents(1), year(27)
-      geography: none with more than five values — national only
-    - be/be05/befsvalbard/FolkSvalbard09
-      12622: Population 1 January (H1) or 1 July (H2) in Longyearbyen and Ny-Ålesund, by citizenship and sex 2019H1 
-      (throttled, waiting 1s)
-      vars: citizenship(8), sex(2), contents(1), half year(15)
-      geography: none with more than five values — national only
-    - be/be05/folkemengde/SBMENU6923/FolkStatsb
-      11366: Population, by citizenship (M) (UD) 2016 - 2026
-      (throttled, waiting 1s)
-      vars: region(1036), citizenship(264), contents(2), year(11)
-      geography: region — 1036 areas, e.g. The whole country, Østfold, Halden, Moss
+    did not descend into 129 folder(s) (no matching word in the folder's own title):
+      al/al03/aku  (Labour force survey)
+      al/al03/innvarbl  (Registered unemployed among immigrants (discontinued in Stat)
+      al/al03/ledstill  (Job vacancies)
+      al/al03/nav_statres  (Norwegian Labour and Welfare Service - StatRes (discontinued)
+      al/al03/regledig  (Registered unemployed (terminated in Statistics Norway))
+      al/al04/arbmiljo  (Working environment, survey on living conditions)
+      al/al04/arborg  (Trade union members and strikes)
+      al/al04/arbulykker  (Accidents at work)
+      al/al04/nav_statres  (Norwegian Labour and Welfare Service - StatRes (discontinued)
+      al/al04/sykefratot  (Sickness absence)
+      al/al05/agrl  (Basis for employers’ National Insurance contributions)
+      al/al05/aki  (Index of labour costs)
+      al/al05/arbkost  (Labour costs)
+      al/al05/arblonn  (Number of employments and earnings)
+      al/al05/lonnansatt  (Earnings)
+      al/al06/aku  (Labour force survey)
+      al/al06/arblonn  (Number of employments and earnings)
+      al/al06/arbstatus  (Attachment to employment, education and welfare benefits)
+      al/al06/fobsysut/SBMENU3973  (Activity status for persons 15 years and above (closed time )
+      al/al06/fobsysut/SBMENU3974  (Employed persons 15-74 years (closed time series))
+      al/al06/fobsysut/SBMENU3975  (Highest completed education (closed time series))
+      al/al06/fobsysut/SBMENU3976  (Household and family values (closed time series))
+      al/al06/fobsysut/SBMENU3977  (Commuting (closed time series))
+      al/al06/fobsysut/SBMENU3972  (Pupils and students 16 years and above (closed time series))
+      al/al06/hesospers  (Health care personnel)
+      ... and 104 more
+    describing the first 0:
 
 == ISL Statistics Iceland
    https://px.hagstofa.is/pxen/api/v1/en/Ibuar
@@ -70,56 +73,31 @@
       mannfjoldi/4_endurskodun/MAN90001.px Population, change of method 2024: Overestimation of the population size by citizenship,
       mannfjoldi/4_endurskodun/MAN90003.px Population, change of method 2024: Overestimation of the population size by citizenship 
       manntal/1_yfirlit/CEN9902.px Census: Foreign citizens by country of citizenship 1930-2021
-    describing the first 5:
-    - buferlaflutningar/buferlaflmillilanda/MAN01400.px
-      External migration by sex and citizenship 1961-2025
-      vars: Sex(3), Year(65), Citizenship(3), Type of migration(3)
-      geography: none with more than five values — national only
-    - buferlaflutningar/buferlaflmillilanda/MAN01401.px
-      External migration by sex, age and citizenship 1986-2025
-      vars: Sex(3), Year(40), Age(112), Citizenship(3), Type of migration(3)
-      geography: none with more than five values — national only
-    - buferlaflutningar/buferlaflmillilanda/MAN01404.px
-      External migration by sex, countries and citizenship 1986-2025
-      vars: Country(225), Year(40), Migration(3), Citizenship(3), Sex(3)
-      geography: none with more than five values — national only
-    - buferlaflutningar/buferlaflmillilanda/MAN01405.px
-      External migration by sex, citizenship and region 1986-2025
-      vars: Sex(3), Year(40), Region(10), Citizenship(3), Migration(3)
-      geography: Region — 10 areas, e.g. Total, Capital area, Southwest, West
-    - buferlaflutningar/buferlaflmillilanda/MAN01406.px
-      External migration by citizenship and sex 1986-2025
-      vars: Year(40), Citizenship(202), Sex(3), Migration(3)
-      geography: none with more than five values — national only
-
-== SWE Statistics Sweden
-   https://api.scb.se/OV0104/v1/doris/en/ssd
-    (stopped after 70s — tree not fully walked)
-    6 candidate table(s):
-      AM/AM0207/AM0207H/BefSyssMbAldR Population 16+ years (RAMS) at national level, employment, country of citizenship, age a
-      AM/AM0207/AM0207A/RAMSBefSyssMbAldR Population 16+ years (RAMS) at national level, employment, country of citizenship, age a
-      BE/BE0101/BE0101N/MedborgarByteTotKCKM Number of persons who have acquired Swedish citizenship by region, age and sex.  Year 20
-      BE/BE0101/BE0101N/MedborgarByteTotK Number of persons who have acquired Swedish citizenship by region, age and sex. Year 200
-      BE/BE0101/BE0101N/MedborgByteLandKCKM Number of persons who have acquired Swedish citizenship per quarter by country of citize
-      BE/BE0101/BE0101N/MedborgarByteLandK Number of persons who have acquired Swedish citizenship per quarter by country of citize
-    describing the first 5:
-    - AM/AM0207/AM0207H/BefSyssMbAldR
-      Population 16+ years (RAMS) at national level, employment, country of citizenship, age and sex. Year 2004 - 20
-      vars: employment status(2), country of citizenship(9), age(8), sex(2), observations(1), year(15)
-      geography: none with more than five values — national only
-    - AM/AM0207/AM0207A/RAMSBefSyssMbAldR
-      Population 16+ years (RAMS) at national level, employment, country of citizenship, age and sex. 1993-2003 1993
-      vars: employment status(2), country of citizenship(9), age(8), sex(2), observations(1), year(11)
-      geography: none with more than five values — national only
-    - BE/BE0101/BE0101N/MedborgarByteTotKCKM
-      Number of persons who have acquired Swedish citizenship by region, age and sex.  Year 2025
-      vars: region(312), age(7), sex(3), observations(1), year(1)
-      geography: region — 312 areas, e.g. Sweden, Stockholm county, Upplands Väsby, Vallentuna
-    - BE/BE0101/BE0101N/MedborgarByteTotK
-      Number of persons who have acquired Swedish citizenship by region, age and sex. Year 2000 - 2024
-      vars: region(312), age(6), sex(2), observations(1), year(25)
-      geography: region — 312 areas, e.g. Sweden, Stockholm county, Upplands Väsby, Vallentuna
-    - BE/BE0101/BE0101N/MedborgByteLandKCKM
-      Number of persons who have acquired Swedish citizenship per quarter by country of citizenship and sex.  Year 2
-      vars: country of citizenship(209), sex(3), period(7), observations(1), year(2)
-      geography: none with more than five values — national only
+    did not descend into 43 folder(s) (no matching word in the folder's own title):
+      buferlaflutningar/buferlaflinnanlands/buferlaflinnanlands  (Internal migration)
+      buferlaflutningar/buferlaflinnanlands/buferlaflinnanlandseldra  (Internal migration - earlier tables)
+      Faeddirdanir/danir/danarmein  (Causes of deaths)
+      Faeddirdanir/danir/danir  (Deaths)
+      Faeddirdanir/faeddir/faedingar  (Births)
+      Faeddirdanir/faeddir/faedingardagar  (Birthdays)
+      Faeddirdanir/Nofn/Nofnkk  (Male names)
+      Faeddirdanir/Nofn/Nofnkvk  (Female names )
+      Faeddirdanir/Nofn/x_nofneldra  (Names - earlier tables)
+      fjolsk/giftingarogskilnadir/giftingarogskilnadir  (Marriages and divorces)
+      fjolsk/giftingarogskilnadir/giftingarogskilnadir_eldraefni  (Earlier tables)
+      kosningar/althingi/althframbjodendur  (Candidates)
+      kosningar/althingi/althkjornir  (Elected members)
+      kosningar/althingi/althkjosendur  (Voters and participation)
+      kosningar/althingi/althurslit  (Results)
+      kosningar/sveitastjorn/svf_frambj  (Candidates and elected members)
+      kosningar/sveitastjorn/svf_urslit  (Results and participation)
+      kosningar/sveitastjorn/svf_yfirlit  (Local government elections)
+      mannfjoldi/1_yfirlit/arsfjordungstolur  (Quarterly data)
+      mannfjoldi/1_yfirlit/yfirlit_mannfjolda  (Overview)
+      mannfjoldi/2_byggdir/Byggdakjarnar  (Urban nuclei)
+      mannfjoldi/2_byggdir/Byggdakjarnarhverfi  (Other areas)
+      mannfjoldi/2_byggdir/sveitarfelog  (Municipalities)
+      mannfjoldi/2_byggdir/x_eldraefni  (Earlier tables)
+      mannfjoldi/3_bakgrunnur/Faedingarland  (Country of birth)
+      ... and 18 more
+    describing the first 0:
