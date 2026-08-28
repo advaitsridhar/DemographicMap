@@ -940,6 +940,73 @@ class RowPointAndBox(unittest.TestCase):
         self.assertFalse(be.within_bbox([3, 1], [0, 0, 2, 2]))
 
 
+class RollUpToTheCountry(unittest.TestCase):
+    """Summing a country from its first-level divisions.
+
+    Unlike the level below, this never fills a gap -- every country record
+    already carries a Factbook composition -- so every sum here replaces a
+    published figure, and the thing it replaced has to survive.
+    """
+
+    def country(self, population=1000, language=None):
+        return {"id": "XXX", "codes": {"iso3": "XXX"}, "name": "Somewhere",
+                "population": {"value": population, "year": 2025, "source": "Estimate"},
+                "language": language if language is not None
+                else [{"group": "Alpha", "pct": 90.0, "count": 900},
+                      {"group": "other", "pct": 10.0, "count": 100}],
+                "sources": []}
+
+    def region(self, name, pop, groups):
+        total = sum(groups.values())
+        return {"id": name, "name": name, "parent": "XXX",
+                "population": {"value": pop, "year": 2025, "source": "Register"},
+                "language": [{"group": g, "pct": round(100 * c / total, 1), "count": c}
+                             for g, c in groups.items()],
+                "sources": [{"field": "population/language", "name": "Register"}]}
+
+    def regions(self):
+        return [self.region("North", 600, {"Alpha": 500, "Beta": 100}),
+                self.region("South", 400, {"Alpha": 300, "Beta": 100})]
+
+    def roll(self, country, regions):
+        be.roll_up_countries([country], {"XXX": regions})
+        return country
+
+    def test_a_country_is_summed_from_a_complete_set_of_regions(self):
+        country = self.roll(self.country(), self.regions())
+        self.assertEqual([(g["group"], g["count"]) for g in country["language"]],
+                         [("Alpha", 800), ("Beta", 200)])
+
+    def test_the_displaced_published_figure_is_kept_in_the_note(self):
+        # It is the only independent statement about the country, so
+        # overwriting it silently would destroy the sum's only check.
+        country = self.roll(self.country(), self.regions())
+        note = country["language_note"]
+        self.assertIn("first-level", note)
+        self.assertIn("Replaces a separately published figure", note)
+        self.assertIn("Alpha 90.0%", note)
+
+    def test_a_stale_census_against_a_current_estimate_is_refused(self):
+        # The regions sum to 1,000 and the country's own estimate is 1,100:
+        # a vintage gap, and still outside the bound this has been tested at.
+        country = self.roll(self.country(population=1100), self.regions())
+        self.assertEqual([g["group"] for g in country["language"]], ["Alpha", "other"])
+
+    def test_a_region_missing_the_field_refuses_the_whole_sum(self):
+        # Partial coverage is the dangerous case: the sum would look whole and
+        # describe only part of the country.
+        regions = self.regions()
+        regions[1]["language"] = {"status": "not_available"}
+        country = self.roll(self.country(), regions)
+        self.assertEqual([g["group"] for g in country["language"]], ["Alpha", "other"])
+
+    def test_a_country_that_does_not_ask_is_left_alone(self):
+        country = self.country(language={"status": "not_collected",
+                                         "note": "France asks no such question"})
+        self.roll(country, self.regions())
+        self.assertEqual(country["language"]["status"], "not_collected")
+
+
 class RollUpFromChildren(unittest.TestCase):
     """Summing a parent whose every constituent part is measured.
 
