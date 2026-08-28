@@ -58,12 +58,15 @@ def cells(row) -> list[str]:
     return out
 
 
-def describe(blob: bytes, rows: int, match: list[str], width: int) -> None:
+def describe(blob: bytes, rows: int, match: list[str], width: int,
+             wanted: list[str], cols: int) -> None:
     import openpyxl
 
     book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
     log(f"  {len(book.sheetnames)} sheet(s): {', '.join(book.sheetnames)}")
     for name in book.sheetnames:
+        if wanted and not any(term in name.strip().lower() for term in wanted):
+            continue
         sheet = book[name]
         log(f"\n--- sheet {name!r} "
             f"({sheet.max_row or '?'} rows x {sheet.max_column or '?'} cols) "
@@ -74,7 +77,7 @@ def describe(blob: bytes, rows: int, match: list[str], width: int) -> None:
                 break
             seen.append(cells(row))
         for line in seen:
-            log("  " + " | ".join(value[:width] for value in line[:60]))
+            log("  " + " | ".join(value[:width] for value in line[:cols]))
         if match:
             # Searched across every row read, not just the first: these
             # releases often carry a title row, a blank, then the header.
@@ -94,9 +97,14 @@ def main() -> int:
                     help="comma-separated substrings to report from those rows")
     ap.add_argument("--width", type=int, default=40,
                     help="characters per cell")
+    ap.add_argument("--sheet", default="",
+                    help="comma-separated substrings; only these sheets")
+    ap.add_argument("--cols", type=int, default=60,
+                    help="columns to print from each row")
     args = ap.parse_args()
 
     match = [t.strip().lower() for t in args.match.split(",") if t.strip()]
+    wanted = [t.strip().lower() for t in args.sheet.split(",") if t.strip()]
     for url in args.url:
         log(f"probe_xlsx: {url}")
         try:
@@ -108,7 +116,7 @@ def main() -> int:
             continue
         log(f"  {len(blob):,} bytes")
         try:
-            describe(blob, args.rows, match, args.width)
+            describe(blob, args.rows, match, args.width, wanted, args.cols)
         except Exception as err:                  # noqa: BLE001
             # A soft 404 is an HTML page with a spreadsheet's name, and it
             # fails here rather than at the fetch.
