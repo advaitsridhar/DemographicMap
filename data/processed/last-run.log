@@ -1,23 +1,6 @@
-page: https://sp2010.bps.go.id/topik/dataset/sp2010/1
-  52,849 bytes
-  10 matching link(s)
-  - Layanan Data
-    https://sp2010.bps.go.id/topik/dataset/sp2010/1
-  - Tabel Topik
-    https://sp2010.bps.go.id/topik/index/sp2010
-  - Ubah Lokasi
-    https://sp2010.bps.go.id/topik/dataset/sp2010/update_lokasi/sp2010/91622
-  - Keluarga dan Struktur Rumah Tangga
-    https://sp2010.bps.go.id/topik/dataset/sp2010/2
-  - Kelahiran
-    https://sp2010.bps.go.id/topik/dataset/sp2010/3
-  - Migrasi
-    https://sp2010.bps.go.id/topik/dataset/sp2010/4
-  - Pendidikan
-    https://sp2010.bps.go.id/topik/dataset/sp2010/5
-  - Ketenagakerjaan
-    https://sp2010.bps.go.id/topik/dataset/sp2010/6
-  - Perumahan
-    https://sp2010.bps.go.id/topik/dataset/sp2010/7
-  - Kesejahteraan Sosial
-    https://sp2010.bps.go.id/topik/dataset/sp2010/8
+xargs: unmatched double quote; by default quotes are special to xargs unless you use the -0 option
+usage: probe_links.py [-h] [--match MATCH] [--head] [--limit LIMIT]
+                      [--timeout TIMEOUT] [--check CHECK] [--accept ACCEPT]
+                      [--find FIND] [--raw RAW]
+                      url [url ...]
+probe_links.py: error: argument --find: expected one argument
