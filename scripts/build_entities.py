@@ -612,12 +612,71 @@ ROLLUP_FIELDS = ("religion", "language", "ethnicity")
 # beyond this is the two figures describing different things.
 ROLLUP_TOLERANCE = 0.02
 
+# How much the population gate widens per year between the two figures' dates,
+# and the most it will ever widen by. A census and an estimate of the same
+# territory taken years apart are the same people counted at different times,
+# and the difference between them is growth rather than a fault: Bangladesh's
+# divisions carry 2011 figures and its districts the 2022 census, so the
+# children exceed their parents by about a tenth. The cap keeps this from ever
+# becoming a licence -- Wales' children exceed their parent by 166%, which is
+# two different things being counted and stays refused at any drift.
+ROLLUP_DRIFT_PER_YEAR = 0.015
+ROLLUP_DRIFT_CAP = 0.20
+
 
 def published(value: Any) -> float | None:
     """A measured number, or None for a gap marker or anything else."""
     if isinstance(value, dict) and isinstance(value.get("value"), (int, float)):
         return float(value["value"])
     return None
+
+
+def vintage(value: Any) -> int | None:
+    """The year a measured number is for, when it says."""
+    if isinstance(value, dict) and isinstance(value.get("year"), int):
+        return value["year"]
+    return None
+
+
+def common_year(children: list[dict[str, Any]]) -> int | None:
+    """The year most of the children's populations are for.
+
+    The commonest rather than the newest: one child out of seventeen carrying a
+    later date should not decide what the set is. New Zealand's territorial
+    authorities are 2023 except for the Chatham Islands, whose figure this
+    function's own caller had just rebuilt from its children and stamped 2025 --
+    and reading the set as 2025 inverted the direction test and refused the
+    whole country.
+    """
+    years = [y for y in ((vintage(c.get("population")) or None) for c in children)
+             if y]
+    if not years:
+        return None
+    counted: dict[int, int] = {}
+    for year in years:
+        counted[year] = counted.get(year, 0) + 1
+    return sorted(counted, key=lambda y: (-counted[y], -y))[0]
+
+
+def allowance(own_year: int | None, child_year: int | None,
+              own: float, total: float) -> float:
+    """How far the children may sit from the parent before it is a fault.
+
+    Two figures of the same year should agree to the base tolerance. Two of
+    different years should differ, in the direction time moves: children newer
+    than their parent should be larger, children older should be smaller. The
+    gate widens with the gap between the dates, but only for a difference
+    pointing that way -- children *below* an older parent is shrinkage, which
+    is what a missing child looks like, and gets no allowance at all.
+    """
+    if own_year is None or child_year is None or own_year == child_year:
+        return ROLLUP_TOLERANCE
+    newer = child_year > own_year
+    if newer != (total > own):
+        return ROLLUP_TOLERANCE
+    drift = min(abs(child_year - own_year) * ROLLUP_DRIFT_PER_YEAR,
+                ROLLUP_DRIFT_CAP)
+    return ROLLUP_TOLERANCE + drift
 
 
 def implied_total(groups: list[dict[str, Any]]) -> float | None:
@@ -647,7 +706,8 @@ def implied_total(groups: list[dict[str, Any]]) -> float | None:
 
 def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                   field: str, *, level: str = "second-level",
-                  over_published: bool = False) -> str | None:
+                  over_published: bool = False,
+                  whole_country: bool = False) -> str | None:
     """Fill a parent's composition by summing a complete set of its children.
 
     Ladakh is the case this exists for. It became a union territory in 2019, so
@@ -671,6 +731,16 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     Only a parent with an independently published population can be checked at
     all, so only such a parent is filled. A control that came from the same
     source as the children would prove the arithmetic and nothing else.
+
+    ``whole_country`` is the one thing that replaces that control, and it is a
+    stronger one. The population comparison is a proxy for "are these all the
+    children"; when *every* shape at this level in the country carries the
+    field, the shapes partition the country and the answer is yes by
+    construction, for every parent. Bangladesh is the case: 64 of 64 districts
+    join, so each of its eight divisions has all of its districts, including
+    the two divisions that have no published population of their own to be
+    checked against. Pakistan is why it is not assumed -- 114 of its 126
+    districts join, so its provinces are genuinely short and stay refused.
     """
     current = parent.get(field)
     if isinstance(current, list) and not over_published:
@@ -687,16 +757,38 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         return (f"{len(missing)} of {len(children)} children have no {field}"
                 if len(missing) < len(children) else None)
 
-    own = published(parent.get("population"))
-    if own is None:
-        return f"{field}: no published population to check the sum against"
     kid_pop = [published(c.get("population")) for c in children]
     if any(v is None for v in kid_pop):
         return f"{field}: {sum(v is None for v in kid_pop)} children have no population"
     total_pop = sum(kid_pop)                                    # type: ignore[arg-type]
-    if not total_pop or abs(total_pop - own) > ROLLUP_TOLERANCE * own:
-        return (f"{field}: children sum to {total_pop:,.0f} against a published "
-                f"{own:,.0f}")
+    if not total_pop:
+        return f"{field}: the children have no population between them"
+
+    disagrees = ""
+    own = published(parent.get("population"))
+    if own is None:
+        if not whole_country:
+            return f"{field}: no published population to check the sum against"
+    else:
+        limit = allowance(vintage(parent.get("population")),
+                          common_year(children), own, total_pop)
+        if abs(total_pop - own) > limit * own:
+            drift = "" if limit == ROLLUP_TOLERANCE else \
+                f", outside even the {limit:.0%} allowed for their dates"
+            if not whole_country:
+                return (f"{field}: children sum to {total_pop:,.0f} against a "
+                        f"published {own:,.0f}{drift}")
+            # Complete children and a parent figure that disagrees with them
+            # means the parent's figure is the doubtful one, not the set: Dhaka
+            # division carries a 2011 population of 49,729,000 and lost
+            # Mymensingh out of it in 2015, so its 44,215,759 people in 2022 are
+            # not a shortfall. The sum is taken and the disagreement is written
+            # into the note rather than hidden by it.
+            disagrees = (f" The unit's own published population of {own:,.0f} "
+                         f"disagrees with that by {100 * (total_pop - own) / own:+.0f}%; "
+                         "the sum was taken anyway because every division at "
+                         "this level in the country carries these figures, so "
+                         "these are certainly all of its children.")
 
     counts: dict[str, float] = {}
     denominator = 0.0
@@ -742,11 +834,41 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         + (" no source publishes this figure for the unit itself."
            if not displaced else "")
         + f" {'Their' if many else 'Its'} population"
-        f"{'s total' if many else ' is'} {total_pop:,.0f} against a published "
-        f"{own:,.0f} for the unit." + displaced)
+        f"{'s total' if many else ' is'} {total_pop:,.0f}"
+        # A unit with no published population of its own was filled because
+        # every shape at this level in the country carries the field, so the
+        # note says that rather than comparing against a figure there isn't.
+        + (f" against a published {own:,.0f} for the unit."
+           if own is not None else
+           ", and no source publishes a population for the unit to check that "
+           "against; it was summed because every division at this level in the "
+           "country has these figures, so these are all of its children.")
+        + disagrees + displaced)
     years = {c.get(f"{field}_year") for c in children} - {None}
     if len(years) == 1:
         parent[f"{field}_year"] = years.pop()
+
+    # A unit whose composition was just summed from a complete set of children
+    # should carry their population too, when it has none or an older one.
+    # Bangladesh is why: two of its divisions publish no population at all and
+    # six publish 2011 figures, so the level above was summing a mixture of
+    # vintages -- six 2011 divisions and two 2022 ones -- and comparing that
+    # mongrel against a 2025 estimate. The children's own census total is one
+    # number of one date, and the figure it replaces goes into a note.
+    child_year = common_year(children)
+    own_year = vintage(parent.get("population"))
+    if child_year and (own is None or own_year is None or own_year < child_year):
+        if own is not None:
+            parent["population_note"] = (
+                f"Summed from all {len(children)} {level} divisions. Replaces "
+                f"a separately published {own:,.0f}"
+                + (f" for {own_year}" if own_year else "")
+                + ", which is kept here as the only independent check on this "
+                  "sum.")
+        parent["population"] = {"value": int(round(total_pop)),
+                                "year": child_year,
+                                "source": f"summed from {len(children)} "
+                                          f"{level} divisions"}
     # Keyed on name *and* field, not name alone: one census appears in a record
     # several times under different fields, and Ladakh already carried this one
     # as the source of its "became a union territory in 2019" note. Deduplicating
@@ -819,11 +941,17 @@ def roll_up_parents(admin1_by_country: dict[str, list[dict[str, Any]]],
         kids: dict[str | None, list[dict[str, Any]]] = defaultdict(list)
         for entity in admin2_by_country.get(iso3, []):
             kids[entity.get("parent")].append(entity)
+        everywhere = {
+            field: bool(admin2_by_country.get(iso3))
+            and all(isinstance(e.get(field), list)
+                    for e in admin2_by_country[iso3])
+            for field in ROLLUP_FIELDS}
         for parent in parents:
             children = kids.get(parent["id"], [])
             for field in ROLLUP_FIELDS:
                 before = parent.get(field)
-                why = roll_up_field(parent, children, field)
+                why = roll_up_field(parent, children, field,
+                                    whole_country=everywhere[field])
                 if why:
                     refused.append(f"{iso3} {parent['name']}: {why}")
                 elif parent.get(field) is not before:
