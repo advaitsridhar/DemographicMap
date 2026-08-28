@@ -1625,3 +1625,98 @@ class SwitzerlandMainLanguages(unittest.TestCase):
     def test_the_note_says_shares_exceed_one_hundred_percent(self):
         self.assertIn("more than 100%", self.ch.NOTE)
         self.assertIn("estimate", self.ch.NOTE)
+
+
+class PakistanColumns(unittest.TestCase):
+    """Table 9's figures are placed by where they sit, not by counting.
+
+    Every one of these is a fault a live run actually produced, and only the
+    last of them announced itself: a column read one place to the left still
+    sums to something, and the reason Pakistan did not ship wrong is that the
+    table prints its own denominator beside every row.
+    """
+
+    def setUp(self):
+        from scripts.fetch_census import pakistan
+        self.pk = pakistan
+        # Ten headings, evenly spaced, as Khyber Pakhtunkhwa sets them.
+        self.plain = [(i * 50.0, i * 50.0 + 8, str(i + 1)) for i in range(10)]
+
+    def test_ten_headings_are_read(self):
+        self.assertEqual(len(self.pk.numbered(self.plain)), 10)
+
+    def test_a_heading_split_across_two_words_is_still_one_column(self):
+        # Punjab's header reads "1 2 3 4 5 6 7 8 9 1 0": eleven words for ten
+        # columns. Comparing the words against ["1", … "10"] read Khyber
+        # Pakhtunkhwa and refused Punjab, which is 128 million people.
+        split = self.plain[:9] + [(450.0, 458.0, "1"), (462.0, 470.0, "0")]
+        spans = self.pk.numbered(split)
+        self.assertEqual(len(spans), 10)
+        # And the column's centre spans both words rather than just the first.
+        self.assertAlmostEqual(spans[-1], (450.0 + 470.0) / 2)
+
+    def test_the_label_column_is_dropped(self):
+        # The first numbered column is AREA/SEX. Leaving it in put the label
+        # where TOTAL POPULATION should have been and pushed every figure one
+        # place left; dropping it also stops a figure landing on it.
+        anchors = self.pk.column_anchors([self.plain])
+        self.assertEqual(len(anchors), len(self.pk.COLUMNS))
+        self.assertEqual(anchors, self.pk.numbered(self.plain)[1:])
+
+    def test_a_row_of_figures_is_not_a_header(self):
+        self.assertIsNone(self.pk.numbered([(0.0, 40.0, "127,333,305")]))
+
+    def test_a_row_that_stops_counting_is_not_a_header(self):
+        self.assertIsNone(self.pk.numbered(self.plain[:4]))
+
+    def test_a_near_miss_is_carried_out_to_the_error(self):
+        near = []
+        self.pk.column_anchors([self.plain[:4]], near)
+        self.assertEqual(near, ["1 2 3 4"])
+
+    def test_a_value_split_across_two_words_is_joined(self):
+        # Punjab writes 1,071,693 as "1" and ",071,693". Shifted by the width
+        # of what follows rather than by its magnitude: a leading zero read as
+        # a magnitude loses a place.
+        anchors = self.pk.column_anchors([self.plain])
+        row = [(anchors[0] - 30, anchors[0] - 24, "1"),
+               (anchors[0] - 20, anchors[0] + 20, ",071,693")]
+        self.assertEqual(self.pk.values(row, anchors)[0], 1_071_693)
+
+    def test_a_dash_is_the_offices_zero(self):
+        anchors = self.pk.column_anchors([self.plain])
+        row = [(anchors[0] - 10, anchors[0] + 10, "17"),
+               (anchors[3] - 4, anchors[3] + 4, "-")]
+        self.assertEqual(self.pk.values(row, anchors)[3], 0)
+
+    def reconciling(self):
+        counts = [2_133_005, 0, 13_286, 457, 175, 44, 7, 69, 115]
+        counts[1] = counts[0] - sum(counts[2:])
+        return dict(zip(self.pk.COLUMNS, counts))
+
+    def test_a_district_that_reconciles_passes(self):
+        self.pk.check("Punjab", {"ATTOCK": self.reconciling()})
+
+    def test_a_column_read_one_place_to_the_left_is_refused(self):
+        # The fault the first two live runs produced. It is invisible in the
+        # figures themselves -- every one is a real number off the page -- and
+        # is caught only because the table prints its own denominator.
+        shifted = self.reconciling()
+        shifted["TOTAL"], shifted["Muslim"] = 0, shifted["TOTAL"]
+        with self.assertRaises(SystemExit) as caught:
+            self.pk.check("Punjab", {"ATTOCK": shifted})
+        self.assertIn("no total", str(caught.exception))
+
+    def test_religions_that_do_not_add_up_are_refused(self):
+        wrong = self.reconciling()
+        wrong["Christian"] += 50_000
+        with self.assertRaises(SystemExit) as caught:
+            self.pk.check("Punjab", {"ATTOCK": wrong})
+        self.assertIn("religions sum to", str(caught.exception))
+
+    def test_the_four_provinces_are_required_and_the_territories_are_not(self):
+        # Azad Jammu and Kashmir and Gilgit-Baltistan are enumerated apart from
+        # the census proper, so their absence is a fact about what Pakistan
+        # publishes. The four provinces are 240 of its 241 million people.
+        required = {slug for slug, (_n, req, _u) in self.pk.PROVINCES.items() if req}
+        self.assertEqual(required, {"kp", "punjab", "sindh", "balochistan"})

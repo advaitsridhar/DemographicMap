@@ -101,17 +101,11 @@ DISTRICT = re.compile(r"^(.+?)\s+DISTRICT$")
 NUMBER = re.compile(r"^[\d,]+$")
 
 
-Cell = tuple[float, str]                  # (centre x, text)
+Cell = tuple[float, float, str]           # (left x, right x, text)
 
 
 def words_by_row(blob: bytes, tolerance: float = 2.0):
-    """Every page as rows of (centre x, text), rebuilt from the words' boxes.
-
-    The centre rather than the left edge, because these columns are set
-    right-aligned: the left edge of "40,641,120" and the left edge of "3" sit
-    two centimetres apart in the same column, so an x0 says more about how many
-    digits a figure has than about which column it is in.
-    """
+    """Every page as rows of (left x, right x, text), from the words' boxes."""
     import pdfplumber
 
     with pdfplumber.open(io.BytesIO(blob)) as pdf:
@@ -120,7 +114,7 @@ def words_by_row(blob: bytes, tolerance: float = 2.0):
             rows: list[tuple[float, list[Cell]]] = []
             for word in sorted(words, key=lambda w: (round(w["top"], 1), w["x0"])):
                 top = round(word["top"], 1)
-                cell = ((word["x0"] + word["x1"]) / 2, word["text"])
+                cell = (word["x0"], word["x1"], word["text"])
                 if rows and abs(rows[-1][0] - top) <= tolerance:
                     rows[-1][1].append(cell)
                 else:
@@ -128,7 +122,52 @@ def words_by_row(blob: bytes, tolerance: float = 2.0):
             yield [sorted(cells) for _top, cells in rows]
 
 
-NUMBERED = [str(i) for i in range(1, len(COLUMNS) + 2)]
+def centre(cell: Cell) -> float:
+    """The middle of a word, not its left edge.
+
+    These columns are set right-aligned, so the left edge of "40,641,120" and
+    the left edge of "3" sit two centimetres apart inside the same column: an
+    x0 says more about how many digits a figure has than about where it is.
+    """
+    return (cell[0] + cell[1]) / 2
+
+
+HEADINGS = len(COLUMNS) + 1               # the figures, plus the label column
+
+
+def numbered(cells: list[Cell]) -> list[float] | None:
+    """The centre of each heading in a row that counts 1, 2, … 10.
+
+    Counted rather than compared word for word, because the header is subject
+    to the same splitting as the figures below it: Punjab's reads
+
+        1 2 3 4 5 6 7 8 9 1 0
+
+    -- eleven words for ten columns, the last two being one "10" set wide
+    enough that the extractor calls them separate words. Matching the list of
+    words against ["1", … "10"] therefore found Khyber Pakhtunkhwa's header
+    and refused Punjab's, which is 128 million people.
+
+    So the digits are accumulated until they read as the number being looked
+    for, and that column's centre spans however many words it took to say it.
+    A row that stops agreeing is not a header and stops being read.
+    """
+    spans: list[float] = []
+    wanted, digits, left = 1, "", 0.0
+    for x0, x1, text in cells:
+        if wanted > HEADINGS:
+            break
+        if not text.isdigit():
+            return None
+        if not digits:
+            left = x0
+        digits += text
+        if digits == str(wanted):
+            spans.append((left + x1) / 2)
+            wanted, digits = wanted + 1, ""
+        elif not str(wanted).startswith(digits):
+            return None
+    return spans if wanted > HEADINGS else None
 
 
 def column_anchors(rows, near: list[str] | None = None) -> list[float] | None:
@@ -145,14 +184,14 @@ def column_anchors(rows, near: list[str] | None = None) -> list[float] | None:
     column is also what keeps a figure from ever being assigned to it.
     """
     for cells in rows:
-        text = [t for _x, t in cells]
-        if text[:len(NUMBERED)] == NUMBERED:
-            return [x for x, _t in cells][1:len(NUMBERED)]
+        spans = numbered(cells)
+        if spans:
+            return spans[1:]
         # A row that starts to count and then does not match is the thing
         # worth seeing when this fails, so it is carried out to the error
         # rather than costing a separate run to go and look at the page.
-        if near is not None and text[:2] == ["1", "2"]:
-            near.append(" ".join(text[:16]))
+        if near is not None and [t for _a, _b, t in cells][:2] == ["1", "2"]:
+            near.append(" ".join(t for _a, _b, t in cells[:16]))
     return None
 
 
@@ -160,7 +199,8 @@ def values(cells: list[Cell], anchors: list[float]) -> list[int] | None:
     """One row's figures, each put under the column it sits beneath."""
     out = [0] * len(anchors)
     seen = [False] * len(anchors)
-    for x, text in cells:
+    for cell in cells:
+        text = cell[2]
         if text == "-":                       # the office's zero
             continue
         if not NUMBER.match(text):
@@ -169,8 +209,12 @@ def values(cells: list[Cell], anchors: list[float]) -> list[int] | None:
         # place in the row, so a value split across two words lands twice in
         # the same column and is joined there instead of shifting every
         # column after it one place to the left.
+        x = centre(cell)
         index = min(range(len(anchors)), key=lambda i: abs(anchors[i] - x))
         digits = text.replace(",", "")
+        # Shifted by the width of what follows rather than by its magnitude:
+        # Punjab writes 1,071,693 as "1" and ",071,693", and a leading zero
+        # that is read as a magnitude loses a place.
         out[index] = out[index] * 10 ** len(digits) + int(digits) if seen[index] \
             else int(digits)
         seen[index] = True
@@ -196,7 +240,7 @@ def districts(blob: bytes, province: str) -> dict[str, dict[str, int]]:
     for cells in words_by_row(blob):
         anchors = anchors or column_anchors(cells)
         for row in cells:
-            text = [t for _x, t in row]
+            text = [t for _a, _b, t in row]
             line = " ".join(text)
 
             match = DISTRICT.match(line)
