@@ -1,4 +1,4 @@
-bangladesh: BBS Population and Housing Census 2022, by zila
-    1,213,869 bytes from HDX
-    64 districts in Merged_All_Table, 64 in Population by Religion, Sex
-6 checks failed — Cumilla: religions classify 6,211,951 of 2,823,268, a gap of -3,388,683; Cox's Bazar: religions classify 2,823,185 of 6,212,216, a gap of +3,389,031; Joypurhat: religions classify 956,342 of 2,784,599, a gap of +1,828,257; Naogaon: religions classify 2,784,461 of 1,859,922, a gap of -924,539
+usage: probe_xlsx.py [-h] [--rows ROWS] [--match MATCH] [--width WIDTH]
+                     [--sheet SHEET] [--cols COLS]
+                     url [url ...]
+probe_xlsx.py: error: unrecognized arguments: religion
