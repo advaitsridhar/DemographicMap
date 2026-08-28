@@ -1,17 +1,29 @@
-probe_pdf: https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
-  2,255,958 bytes
-  46 pages
-probe_pdf: 47 pages, 1 mention ['MALAKAND']
-=== front matter ===
-
-
-=== pages mentioning ['MALAKAND'] (first 3) ===
-
---- page 21 ----------------------------------------------------
-MALE 0 0 0 0 0 0 0 0 0
-FEMALE 0 0 0 0 0 0 0 0 0
-TRANSGENDER 0 0 0 0 0 0 0 0 0
-MALAKAND PROTECTED AREA
-ALL LOCALITIES
-ALL SEXES 825377 823056 2092 75 15 11 30 0 98
-MALE 422374 421279 989 33 5 5 15 0 48
+pakistan: Bureau of Statistics, Census 2023 Table 9
+  Khyber Pakhtunkhwa
+    2,255,958 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
+    35 districts, 123 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 35 districts add up to the province
+  Punjab
+    2,592,933 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_punjab_districts.pdf
+    36 districts, 145 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 36 districts add up to the province
+  Sindh
+    2,399,774 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_sindh_districts.pdf
+    30 districts, 0 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 30 districts add up to the province
+  Balochistan
+    2,698,658 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_balochistan_districts.pdf
+    34 districts, 80 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 34 districts add up to the province
+  Islamabad Capital Territory
+  Azad Jammu and Kashmir
+  Gilgit-Baltistan
+  NOT READ (territory, enumerated apart) -- Islamabad Capital Territory: table_9_islamabad_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
+  NOT READ (territory, enumerated apart) -- Azad Jammu and Kashmir: table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
+  NOT READ (territory, enumerated apart) -- Gilgit-Baltistan: table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
+  wrote data/processed/pakistan_district.json (262 kB)
+  135 districts

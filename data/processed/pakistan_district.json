@@ -1476,6 +1476,88 @@
     "religion_note": "Census 2023 Table 9. 'Scheduled Castes' is counted separately from Hindu in this table, as the census does, and Ahmadis are recorded as a category of their own rather than within Islam."
   },
   {
+    "id": "PAK-kp-malakand",
+    "level": "admin2",
+    "name": "Malakand",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 825377,
+      "year": 2023,
+      "source": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 9"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 99.7,
+        "count": 823056
+      },
+      {
+        "group": "Christian",
+        "pct": 0.3,
+        "count": 2092
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Ahmadi",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Scheduled Castes",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Parsi",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 98
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/religion",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 9",
+        "url": "https://www.pbs.gov.pk/census-2023-tables",
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Khyber Pakhtunkhwa",
+    "religion_year": 2023,
+    "religion_note": "Census 2023 Table 9. 'Scheduled Castes' is counted separately from Hindu in this table, as the census does, and Ahmadis are recorded as a category of their own rather than within Islam."
+  },
+  {
     "id": "PAK-kp-mansehra",
     "level": "admin2",
     "name": "Mansehra",
