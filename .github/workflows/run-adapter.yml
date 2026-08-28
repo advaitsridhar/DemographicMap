@@ -56,6 +56,7 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Run the adapter
+        id: run
         env:
           ADAPTER: ${{ inputs.command }}
           # Keys reach the adapter through the environment and never through a
@@ -91,10 +92,17 @@ jobs:
           printf '%s' "$ADAPTER" | xargs python3 -m 2>&1 \
             | tee data/processed/last-run.log
 
+      # always(), so a run that failed still commits what it printed. The log
+      # is the whole point of a failed run -- it is where the adapter names
+      # what it refused and why -- and a skipped Commit step meant every
+      # failure had to be read back out of the Actions API instead. The
+      # adapter writes no data when it refuses, so what lands is the log
+      # alone, and the job still reports the failure.
       - name: Commit
-        if: inputs.commit != 'false'
+        if: always() && inputs.commit != 'false'
         env:
           ADAPTER: ${{ inputs.command }}
+          OUTCOME: ${{ steps.run.outcome }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -106,7 +114,11 @@ jobs:
             exit 0
           fi
           git diff --cached --stat >> "$GITHUB_STEP_SUMMARY"
-          git commit -m "Data: $ADAPTER"
+          # A refusal says so in the history. What lands then is the log and
+          # nothing else, and calling that "Data:" would misdescribe it.
+          MESSAGE="Data: $ADAPTER"
+          [ "$OUTCOME" = success ] || MESSAGE="Refused: $ADAPTER"
+          git commit -m "$MESSAGE"
           git push origin HEAD:${{ github.ref_name }}
           echo "Now run scripts/build_entities.py where the boundaries are." \
             >> "$GITHUB_STEP_SUMMARY"
