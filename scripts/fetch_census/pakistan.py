@@ -101,37 +101,57 @@ DISTRICT = re.compile(r"^(.+?)\s+DISTRICT$")
 NUMBER = re.compile(r"^[\d,]+$")
 
 
+Cell = tuple[float, str]                  # (centre x, text)
+
+
 def words_by_row(blob: bytes, tolerance: float = 2.0):
-    """Every page as rows of (x, text), rebuilt from the words' positions."""
+    """Every page as rows of (centre x, text), rebuilt from the words' boxes.
+
+    The centre rather than the left edge, because these columns are set
+    right-aligned: the left edge of "40,641,120" and the left edge of "3" sit
+    two centimetres apart in the same column, so an x0 says more about how many
+    digits a figure has than about which column it is in.
+    """
     import pdfplumber
 
     with pdfplumber.open(io.BytesIO(blob)) as pdf:
         for page in pdf.pages:
             words = page.extract_words(use_text_flow=False, keep_blank_chars=False)
-            rows: list[tuple[float, list[tuple[float, str]]]] = []
+            rows: list[tuple[float, list[Cell]]] = []
             for word in sorted(words, key=lambda w: (round(w["top"], 1), w["x0"])):
                 top = round(word["top"], 1)
+                cell = ((word["x0"] + word["x1"]) / 2, word["text"])
                 if rows and abs(rows[-1][0] - top) <= tolerance:
-                    rows[-1][1].append((word["x0"], word["text"]))
+                    rows[-1][1].append(cell)
                 else:
-                    rows.append((top, [(word["x0"], word["text"])]))
+                    rows.append((top, [cell]))
             yield [sorted(cells) for _top, cells in rows]
 
 
+NUMBERED = [str(i) for i in range(1, len(COLUMNS) + 2)]
+
+
 def column_anchors(rows) -> list[float] | None:
-    """The x of each numbered column heading, from the header's own "1 2 3 …".
+    """Where each figure column sits, from the header's own "1 2 3 … 10".
 
     Read rather than assumed: the anchors are what makes a value that arrived
     as two words land in one column instead of shifting every column after it.
+
+    The header numbers ten columns and the first of them is AREA/SEX, the
+    row label -- which is why the first live run had every district reporting
+    "no total". Nine anchors were taken from the front of a list of ten, so the
+    label's column stood where TOTAL POPULATION should have been, every figure
+    read one place to the left, and OTHERS fell off the end. Dropping the label
+    column is also what keeps a figure from ever being assigned to it.
     """
     for cells in rows:
         text = [t for _x, t in cells]
-        if text[:3] == ["1", "2", "3"] and len(text) >= len(COLUMNS):
-            return [x for x, _t in cells][:len(COLUMNS)]
+        if text[:len(NUMBERED)] == NUMBERED:
+            return [x for x, _t in cells][1:len(NUMBERED)]
     return None
 
 
-def values(cells, anchors: list[float]) -> list[int] | None:
+def values(cells: list[Cell], anchors: list[float]) -> list[int] | None:
     """One row's figures, each put under the column it sits beneath."""
     out = [0] * len(anchors)
     seen = [False] * len(anchors)
@@ -178,8 +198,7 @@ def districts(blob: bytes, province: str) -> dict[str, dict[str, int]]:
                 current, locality = match.group(1).strip(), None
                 continue
             if line.endswith("TEHSIL"):
-                if current:
-                    skipped_tehsils += 1
+                skipped_tehsils += 1
                 current, locality = None, None      # a part, not a unit
                 continue
             if line in LOCALITIES:
