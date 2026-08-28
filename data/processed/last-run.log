@@ -1,103 +1,27 @@
 
 == NOR Statistics Norway
    https://data.ssb.no/api/v0/en/table
-      (throttled, waiting 1s)
-      (throttled, waiting 1s)
-      (throttled, waiting 1s)
-      (throttled, waiting 1s)
-      (throttled, waiting 1s)
-      (throttled, waiting 1s)
-      (throttled, waiting 1s)
-      (throttled, waiting 1s)
-      (throttled, waiting 1s)
-      (throttled, waiting 1s)
-      (throttled, waiting 1s)
-      (throttled, waiting 1s)
-      (throttled, waiting 1s)
-      (throttled, waiting 1s)
-      (throttled, waiting 1s)
-      (throttled, waiting 1s)
-      (throttled, waiting 1s)
-      (throttled, waiting 1s)
-    (stopped after 72s — tree not fully walked)
-    7 candidate table(s):
-      be/be01/folkemengde/SBMENU6923/FolkStatsb 11366: Population, by citizenship (M) (UD) 2016 - 2026
-      be/be01/folkemengde/SBMENU6923/FolkKjStatsb2 05196: Population, by sex, age and citizenship 1977 - 2026
-      be/be01/folkemengde/SBMENU6923/FolkSivilStat2 05328: Population, by sex, marital status and citizenship 2000 - 2026
-      be/be05/befsvalbard/FolkSvalbard09 12622: Population 1 January (H1) or 1 July (H2) in Longyearbyen and Ny-Ålesund, by citiz
-      be/be05/folkemengde/SBMENU6923/FolkStatsb 11366: Population, by citizenship (M) (UD) 2016 - 2026
-      be/be05/folkemengde/SBMENU6923/FolkKjStatsb2 05196: Population, by sex, age and citizenship 1977 - 2026
-      be/be05/folkemengde/SBMENU6923/FolkSivilStat2 05328: Population, by sex, marital status and citizenship 2000 - 2026
-    did not descend into 129 folder(s) (no matching word in the folder's own title):
-      al/al03/aku  (Labour force survey)
-      al/al03/innvarbl  (Registered unemployed among immigrants (discontinued in Stat)
-      al/al03/ledstill  (Job vacancies)
-      al/al03/nav_statres  (Norwegian Labour and Welfare Service - StatRes (discontinued)
-      al/al03/regledig  (Registered unemployed (terminated in Statistics Norway))
-      al/al04/arbmiljo  (Working environment, survey on living conditions)
-      al/al04/arborg  (Trade union members and strikes)
-      al/al04/arbulykker  (Accidents at work)
-      al/al04/nav_statres  (Norwegian Labour and Welfare Service - StatRes (discontinued)
-      al/al04/sykefratot  (Sickness absence)
-      al/al05/agrl  (Basis for employers’ National Insurance contributions)
-      al/al05/aki  (Index of labour costs)
-      al/al05/arbkost  (Labour costs)
-      al/al05/arblonn  (Number of employments and earnings)
-      al/al05/lonnansatt  (Earnings)
-      al/al06/aku  (Labour force survey)
-      al/al06/arblonn  (Number of employments and earnings)
-      al/al06/arbstatus  (Attachment to employment, education and welfare benefits)
-      al/al06/fobsysut/SBMENU3973  (Activity status for persons 15 years and above (closed time )
-      al/al06/fobsysut/SBMENU3974  (Employed persons 15-74 years (closed time series))
-      al/al06/fobsysut/SBMENU3975  (Highest completed education (closed time series))
-      al/al06/fobsysut/SBMENU3976  (Household and family values (closed time series))
-      al/al06/fobsysut/SBMENU3977  (Commuting (closed time series))
-      al/al06/fobsysut/SBMENU3972  (Pupils and students 16 years and above (closed time series))
-      al/al06/hesospers  (Health care personnel)
-      ... and 104 more
-    describing the first 0:
-
-== ISL Statistics Iceland
-   https://px.hagstofa.is/pxen/api/v1/en/Ibuar
-    13 candidate table(s):
-      buferlaflutningar/buferlaflmillilanda/MAN01400.px External migration by sex and citizenship 1961-2025
-      buferlaflutningar/buferlaflmillilanda/MAN01401.px External migration by sex, age and citizenship 1986-2025
-      buferlaflutningar/buferlaflmillilanda/MAN01404.px External migration by sex, countries and citizenship 1986-2025
-      buferlaflutningar/buferlaflmillilanda/MAN01405.px External migration by sex, citizenship and region 1986-2025
-      buferlaflutningar/buferlaflmillilanda/MAN01406.px External migration by citizenship and sex 1986-2025
-      mannfjoldi/3_bakgrunnur/Rikisfang/MAN04103.px Population by country of citizenship, sex and age 1 January 1998-2026
-      mannfjoldi/3_bakgrunnur/Rikisfang/MAN04203.px Population by sex, municipality and citizenship 1 January 1998-2026
-      mannfjoldi/3_bakgrunnur/Rikisfang/MAN04208.px Population by sex, municipality, citizenship and age 1 January 1998-2026
-      mannfjoldi/3_bakgrunnur/Rikisfbr/MAN04119.px Foreign citizens gaining Icelandic citizenship by former citizenship, sex and age 1991-2
-      mannfjoldi/3_bakgrunnur/Rikisfbr/MAN04120.px Foreign citizens gaining Icelandic citizenship by country of birth, sex and age 1991-202
-      mannfjoldi/4_endurskodun/MAN90001.px Population, change of method 2024: Overestimation of the population size by citizenship,
-      mannfjoldi/4_endurskodun/MAN90003.px Population, change of method 2024: Overestimation of the population size by citizenship 
-      manntal/1_yfirlit/CEN9902.px Census: Foreign citizens by country of citizenship 1930-2021
-    did not descend into 43 folder(s) (no matching word in the folder's own title):
-      buferlaflutningar/buferlaflinnanlands/buferlaflinnanlands  (Internal migration)
-      buferlaflutningar/buferlaflinnanlands/buferlaflinnanlandseldra  (Internal migration - earlier tables)
-      Faeddirdanir/danir/danarmein  (Causes of deaths)
-      Faeddirdanir/danir/danir  (Deaths)
-      Faeddirdanir/faeddir/faedingar  (Births)
-      Faeddirdanir/faeddir/faedingardagar  (Birthdays)
-      Faeddirdanir/Nofn/Nofnkk  (Male names)
-      Faeddirdanir/Nofn/Nofnkvk  (Female names )
-      Faeddirdanir/Nofn/x_nofneldra  (Names - earlier tables)
-      fjolsk/giftingarogskilnadir/giftingarogskilnadir  (Marriages and divorces)
-      fjolsk/giftingarogskilnadir/giftingarogskilnadir_eldraefni  (Earlier tables)
-      kosningar/althingi/althframbjodendur  (Candidates)
-      kosningar/althingi/althkjornir  (Elected members)
-      kosningar/althingi/althkjosendur  (Voters and participation)
-      kosningar/althingi/althurslit  (Results)
-      kosningar/sveitastjorn/svf_frambj  (Candidates and elected members)
-      kosningar/sveitastjorn/svf_urslit  (Results and participation)
-      kosningar/sveitastjorn/svf_yfirlit  (Local government elections)
-      mannfjoldi/1_yfirlit/arsfjordungstolur  (Quarterly data)
-      mannfjoldi/1_yfirlit/yfirlit_mannfjolda  (Overview)
-      mannfjoldi/2_byggdir/Byggdakjarnar  (Urban nuclei)
-      mannfjoldi/2_byggdir/Byggdakjarnarhverfi  (Other areas)
-      mannfjoldi/2_byggdir/sveitarfelog  (Municipalities)
-      mannfjoldi/2_byggdir/x_eldraefni  (Earlier tables)
-      mannfjoldi/3_bakgrunnur/Faedingarland  (Country of birth)
-      ... and 18 more
-    describing the first 0:
+  23 folder(s), 0 table(s) under /
+    [dir] al                           Labour market and earnings
+    [dir] bf                           Banking and financial markets
+    [dir] vf                           Establishments, enterprises and accounts
+    [dir] be                           Population
+    [dir] bb                           Construction, housing and property
+    [dir] ei                           Energy and manufacturing
+    [dir] he                           Health
+    [dir] if                           Income and consumption
+    [dir] in                           Immigration and immigrants
+    [dir] js                           Agriculture, forestry, hunting and fishing
+    [dir] kf                           Culture and recreation
+    [dir] nk                           National accounts and business cycles
+    [dir] nm                           Nature and the environment
+    [dir] os                           Public sector
+    [dir] pp                           Prices and price indices
+    [dir] sk                           Social conditions, welfare and crime
+    [dir] sv                           Svalbard
+    [dir] ti                           Technology and innovation
+    [dir] tr                           Transport and tourism
+    [dir] ud                           Education
+    [dir] ut                           External economy
+    [dir] va                           Elections
+    [dir] vt                           Wholesale and retail trade and service activities
