@@ -30,7 +30,51 @@ from common import log  # noqa: E402
 PAGE_BREAK = "\f"
 
 
-def fetch_text(url: str) -> str:
+def laid_out(blob: bytes, tolerance: float = 2.0) -> str:
+    """A PDF as text with the rows put back together from their coordinates.
+
+    pypdf's plain extraction returns a page's strings in the order the file
+    happens to store them, which for these census tables is every number
+    first and then every row label in a block at the end:
+
+        ...
+        HAVELIAN TEHSIL
+        TABLE 9 : POPULATION BY SEX, RELIGION...
+        ABBOTTABAD DISTRICT
+        ABBOTTABAD TEHSIL
+
+    Pairing those with the figures by their order in that list is a guess, and
+    the table interleaves districts with the tehsils inside them, so a wrong
+    guess does not look wrong -- it puts a tehsil's people on a district. The
+    positions are in the file, so they are read instead: every fragment is
+    collected with the y it was drawn at, fragments sharing a y to within a
+    couple of points are one row, and the row is written left to right.
+    """
+    import io
+    from pypdf import PdfReader
+
+    out: list[str] = []
+    for page in PdfReader(io.BytesIO(blob)).pages:
+        parts: list[tuple[float, float, str]] = []
+
+        def visit(text, cm, tm, font_dict, font_size, _parts=parts):
+            if text and text.strip():
+                _parts.append((round(tm[5], 1), round(tm[4], 1), text.strip()))
+
+        page.extract_text(visitor_text=visit)
+        rows: list[tuple[float, list[tuple[float, str]]]] = []
+        for y, x, text in sorted(parts, key=lambda p: (-p[0], p[1])):
+            if rows and abs(rows[-1][0] - y) <= tolerance:
+                rows[-1][1].append((x, text))
+            else:
+                rows.append((y, [(x, text)]))
+        for _y, cells in rows:
+            out.append(" ".join(t for _x, t in sorted(cells)))
+        out.append(PAGE_BREAK)
+    return "\n".join(out)
+
+
+def fetch_text(url: str, layout: bool = False) -> str:
     """A remote PDF as text, page by page, without keeping the file.
 
     The machine that can reach a statistical office is not the machine that
@@ -51,6 +95,8 @@ def fetch_text(url: str) -> str:
     with urllib.request.urlopen(req, timeout=90) as resp:
         blob = resp.read()
     log(f"  {len(blob):,} bytes")
+    if layout:
+        return laid_out(blob)
     reader = PdfReader(io.BytesIO(blob))
     log(f"  {len(reader.pages)} pages")
     return PAGE_BREAK.join((page.extract_text() or "") for page in reader.pages)
@@ -78,6 +124,9 @@ def main() -> int:
     ap.add_argument("text", type=Path, nargs="?",
                     help="output of pdftotext -layout")
     ap.add_argument("--url", help="fetch and read a PDF instead of a local file")
+    ap.add_argument("--layout", action="store_true",
+                    help="rebuild rows from the glyphs' coordinates, so a row "
+                         "label stays with the figures it labels")
     ap.add_argument("--terms", default="language,mother tongue,speak",
                     help="comma-separated terms to find pages for")
     ap.add_argument("--contents", type=int, default=120,
@@ -88,7 +137,7 @@ def main() -> int:
 
     if args.url:
         log(f"probe_pdf: {args.url}")
-        text = fetch_text(args.url)
+        text = fetch_text(args.url, layout=args.layout)
     elif args.text:
         text = args.text.read_text(encoding="utf-8", errors="replace")
     else:
