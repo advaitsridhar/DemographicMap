@@ -1754,22 +1754,42 @@ class PakistanCells(unittest.TestCase):
         counts[1] = counts[0] - sum(counts[2:])
         return dict(zip(self.pk.COLUMNS, counts))
 
+    def province(self, total):
+        return [total] + [0] * (len(self.pk.COLUMNS) - 1)
+
     def test_a_district_that_reconciles_passes(self):
-        self.pk.check("Punjab", {"ATTOCK": self.reconciling()})
+        self.pk.check("Punjab", {"ATTOCK": self.reconciling()},
+                      self.province(2_133_005))
 
     def test_a_column_read_one_place_to_the_left_is_refused(self):
         shifted = self.reconciling()
         shifted["TOTAL"], shifted["Muslim"] = 0, shifted["TOTAL"]
         with self.assertRaises(SystemExit) as caught:
-            self.pk.check("Punjab", {"ATTOCK": shifted})
+            self.pk.check("Punjab", {"ATTOCK": shifted}, self.province(1))
         self.assertIn("no total", str(caught.exception))
 
     def test_religions_that_do_not_add_up_are_refused(self):
         wrong = self.reconciling()
         wrong["Christian"] += 50_000
         with self.assertRaises(SystemExit) as caught:
-            self.pk.check("Punjab", {"ATTOCK": wrong})
+            self.pk.check("Punjab", {"ATTOCK": wrong}, self.province(1))
         self.assertIn("religions sum to", str(caught.exception))
+
+    def test_districts_that_do_not_add_up_to_their_province_are_refused(self):
+        # The dangerous case, because it is not a wrong number anywhere: a
+        # district this reader never noticed is a hole, and every other check
+        # passes over it in silence. Khyber Pakhtunkhwa read 34 districts that
+        # each reconciled perfectly and were 825,377 people short.
+        with self.assertRaises(SystemExit) as caught:
+            self.pk.check("Khyber Pakhtunkhwa", {"ATTOCK": self.reconciling()},
+                          self.province(2_133_005 + 825_377))
+        self.assertIn("+825,377", str(caught.exception))
+
+    def test_a_province_with_no_row_of_its_own_is_refused(self):
+        # Without it nothing says whether the districts read are all of them.
+        with self.assertRaises(SystemExit) as caught:
+            self.pk.check("Punjab", {"ATTOCK": self.reconciling()}, [])
+        self.assertIn("no province row", str(caught.exception))
 
     def test_the_four_provinces_are_required_and_the_territories_are_not(self):
         # Azad Jammu and Kashmir and Gilgit-Baltistan are enumerated apart from

@@ -201,8 +201,13 @@ def values(cells: list[Cell], province: str, where: str) -> list[int] | None:
     return figures
 
 
-def districts(blob: bytes, province: str) -> dict[str, dict[str, int]]:
-    """{district: {religion: count}} for one province's Table 9.
+def districts(blob: bytes,
+              province: str) -> tuple[dict[str, dict[str, int]], list[int]]:
+    """{district: {religion: count}} for one province's Table 9, and its own.
+
+    The province's own row is the first ALL SEXES line in the file, before any
+    district heading, and it is worth keeping: it is the file's own statement
+    of what its districts ought to add up to.
 
     Walks the rows in document order. A "X DISTRICT" line opens a district; the
     first ALL SEXES row after it, inside the first ALL LOCALITIES block, is its
@@ -211,6 +216,7 @@ def districts(blob: bytes, province: str) -> dict[str, dict[str, int]]:
     counted, so the district closes as soon as its one row is read.
     """
     found: dict[str, dict[str, int]] = {}
+    whole: list[int] = []
     current: str | None = None
     locality: str | None = None
     skipped_tehsils = 0
@@ -230,7 +236,13 @@ def districts(blob: bytes, province: str) -> dict[str, dict[str, int]]:
             if line in LOCALITIES:
                 locality = line
                 continue
-            if not current or locality != "ALL LOCALITIES":
+            if locality != "ALL LOCALITIES":
+                continue
+            if not current:
+                # Before the first district heading, and only then, this is
+                # the province's own row.
+                if not found and not whole and line.startswith("ALL SEXES"):
+                    whole.extend(values(cells, province, province) or [])
                 continue
             # The label is two words and the row is a list of words, so
             # comparing the first of them to "ALL SEXES" could never be true:
@@ -244,15 +256,22 @@ def districts(blob: bytes, province: str) -> dict[str, dict[str, int]]:
             current = None                          # one row per district
 
     log(f"    {len(found)} districts, {skipped_tehsils} tehsils passed over")
-    return found
+    return found, whole
 
 
-def check(province: str, found: dict[str, dict[str, int]]) -> None:
-    """Each district's religions must add up to the total printed beside it.
+def check(province: str, found: dict[str, dict[str, int]],
+          whole: list[int]) -> None:
+    """Two controls the file supplies itself, neither of them invented here.
 
-    Table 9 publishes the denominator in its own first column, so this is the
-    source's own control rather than one this adapter invents: a column read
-    one place to the left still sums to something, but not to that.
+    Each district's religions must add up to the total printed beside it: a
+    column read one place to the left still sums to something, but not to
+    that.
+
+    And the districts must add up to the province printed above them. That
+    one matters more, because a district this reader never noticed is not a
+    wrong number anywhere -- it is a hole, and every other check passes over
+    it in silence. Khyber Pakhtunkhwa read 34 districts that each reconciled
+    perfectly and were 825,377 people short of their own province.
     """
     bad = []
     for name, counts in found.items():
@@ -266,7 +285,20 @@ def check(province: str, found: dict[str, dict[str, int]]) -> None:
     if bad:
         raise SystemExit(f"{province}: {len(bad)} districts do not reconcile — "
                          + "; ".join(bad[:4]))
-    log(f"    every district's religions sum to its own printed total")
+    log("    every district's religions sum to its own printed total")
+
+    if not whole:
+        raise SystemExit(
+            f"{province}: no province row, so nothing says whether these "
+            f"{len(found)} districts are all of them")
+    counted = sum(counts["TOTAL"] for counts in found.values())
+    if counted != whole[0]:
+        raise SystemExit(
+            f"{province}: {len(found)} districts hold {counted:,} people "
+            f"against the {whole[0]:,} printed for the province — "
+            f"{whole[0] - counted:+,}. Read: "
+            + ", ".join(sorted(found)))
+    log(f"    and the {len(found)} districts add up to the province")
 
 
 def fetch(candidates: tuple[str, ...]) -> tuple[bytes, str]:
@@ -315,12 +347,12 @@ def main() -> int:
                 f"{province}: {err}")
             continue
         log(f"    {len(blob):,} bytes from {url}")
-        found = districts(blob, province)
+        found, whole = districts(blob, province)
         if not found:
             absent["required" if required else "optional"].append(
                 f"{province}: fetched but no districts read")
             continue
-        check(province, found)
+        check(province, found, whole)
         for name, counts in sorted(found.items()):
             total = counts["TOTAL"]
             parts = {k: v for k, v in counts.items() if k != "TOTAL"}
