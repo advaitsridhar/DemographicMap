@@ -1803,6 +1803,48 @@ class PakistanCells(unittest.TestCase):
             self.pk.check("Punjab", {"ATTOCK": self.reconciling()}, [])
         self.assertIn("no province row", str(caught.exception))
 
+    def cell(self, total):
+        return dict(zip(self.pk.COLUMNS,
+                        [total, total - 3, 1, 1, 0, 0, 1, 0, 0]))
+
+    def test_districts_sharing_one_shape_are_summed(self):
+        # geoBoundaries draws one Chitral where the census counts two. Summed,
+        # because matching either half to the whole shape puts a fraction of
+        # the people on all of it.
+        found = {"LOWER CHITRAL": self.cell(318_234),
+                 "UPPER CHITRAL": self.cell(195_161)}
+        assembled = self.pk.merge("Khyber Pakhtunkhwa", found)
+        self.assertEqual(set(found), {"CHITRAL"})
+        self.assertEqual(found["CHITRAL"]["TOTAL"], 513_395)
+        self.assertEqual(assembled["CHITRAL"],
+                         ("LOWER CHITRAL", "UPPER CHITRAL"))
+
+    def test_summing_only_some_of_the_parts_is_refused(self):
+        # The dangerous case: it would put a fraction of the people on the
+        # whole shape and look entirely normal.
+        with self.assertRaises(SystemExit) as caught:
+            self.pk.merge("Khyber Pakhtunkhwa",
+                          {"LOWER CHITRAL": self.cell(318_234)})
+        self.assertIn("only LOWER CHITRAL were read", str(caught.exception))
+
+    def test_a_whole_that_is_also_printed_is_refused(self):
+        with self.assertRaises(SystemExit) as caught:
+            self.pk.merge("Khyber Pakhtunkhwa",
+                          {"CHITRAL": self.cell(1), "LOWER CHITRAL": self.cell(1),
+                           "UPPER CHITRAL": self.cell(1)})
+        self.assertIn("counted twice", str(caught.exception))
+
+    def test_karachis_seven_districts_are_one_shape(self):
+        found = {part: self.cell(1_000_000)
+                 for part in self.pk.MERGED["KARACHI"]}
+        self.pk.merge("Sindh", found)
+        self.assertEqual(found["KARACHI"]["TOTAL"], 7_000_000)
+
+    def test_a_renamed_district_is_declared_not_inferred(self):
+        # Nothing infers "Nawabshah" from "Shaheed Benazirabad": the district
+        # was renamed and the two share no word.
+        self.assertEqual(self.pk.ALIASES["Shaheed Benazirabad"], ("Nawabshah",))
+
     def test_the_four_provinces_are_required_and_the_territories_are_not(self):
         # Azad Jammu and Kashmir and Gilgit-Baltistan are enumerated apart from
         # the census proper, so their absence is a fact about what Pakistan

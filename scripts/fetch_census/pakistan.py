@@ -66,6 +66,12 @@ URL = "https://www.pbs.gov.pk/census-2023-tables"
 LICENCE = "Pakistan Bureau of Statistics, free reuse with attribution"
 YEAR = 2023
 
+NOTE = ("Census 2023 Table 9. 'Scheduled Castes' is counted separately from "
+        "Hindu in this table, as the census does, and Ahmadis are recorded as "
+        "a category of their own rather than within Islam. The population is "
+        "the table's own TOTAL POPULATION column, which is the denominator "
+        "these shares are of.")
+
 BASE = "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables"
 
 # One file per province, and the office uses two naming schemes at once: the
@@ -101,6 +107,42 @@ PROVINCES: dict[str, tuple[str, bool, tuple[str, ...]]] = {
            (f"{BASE}/table_9_gb_districts.pdf",
             f"{DCR}/gb/dcr/table_9.pdf")),
 }
+
+# What geoBoundaries calls the same district. Declared rather than derived:
+# nothing infers "Nawabshah" from "Shaheed Benazirabad" -- the district was
+# renamed and the two share no word -- and a rule loose enough to bridge
+# "Killa Abdullah" to "Qilla Abdullah" is loose enough to bridge things that
+# are not the same place at all.
+ALIASES: dict[str, tuple[str, ...]] = {
+    "Batagram": ("Battagram",),
+    "Jaffarabad": ("Jafarabad",),
+    "Kambar Shahdad Kot": ("Qambar Shahdadkot",),
+    "Killa Abdullah": ("Qilla Abdullah",),
+    "Killa Saifullah": ("Qilla Saifullah",),
+    "Mirpur Khas": ("Mirpurkhas",),
+    "Naushahro Feroze": ("Naushehro Feroze",),
+    "Shaheed Benazirabad": ("Nawabshah",),
+    "Sheikhupura": ("Sheikhpura",),
+    "Umer Kot": ("Umerkot",),
+    "Vehari": ("Vihari",),
+}
+
+# Where the boundary file draws one shape and the census counts several
+# districts inside it. Summed, and the note on each says which districts were
+# summed, because the alternative is worse in both directions: matching any
+# one part to the whole shape puts a fraction of the people on all of them,
+# and leaving them unmatched drops Karachi -- twenty million people -- off the
+# map without saying so.
+#
+# Each of these is a division of an older district that geoBoundaries still
+# draws whole, so the parts are exactly the shape and nothing else is in it.
+MERGED: dict[str, tuple[str, ...]] = {
+    "CHITRAL": ("LOWER CHITRAL", "UPPER CHITRAL"),
+    "KOHISTAN": ("LOWER KOHISTAN", "UPPER KOHISTAN", "KOLAI PALAS KOHISTAN"),
+    "KARACHI": ("KARACHI CENTRAL", "KARACHI EAST", "KARACHI SOUTH",
+                "KARACHI WEST", "KORANGI", "MALIR", "KEAMARI"),
+}
+
 
 # Table 9's columns, in the order the numbered header row gives them. Column 1
 # is the total, which is the denominator rather than a religion.
@@ -307,6 +349,34 @@ def check(province: str, found: dict[str, dict[str, int]],
     log(f"    and the {len(found)} districts add up to the province")
 
 
+def merge(province: str,
+          found: dict[str, dict[str, int]]) -> dict[str, tuple[str, ...]]:
+    """Sum the districts that share one boundary shape. Which ones, back."""
+    assembled: dict[str, tuple[str, ...]] = {}
+    for name, parts in MERGED.items():
+        here = [part for part in parts if part in found]
+        if not here:
+            continue
+        if len(here) != len(parts):
+            # Partial is the dangerous case: it would put a fraction of the
+            # people on the whole shape and look entirely normal.
+            raise SystemExit(
+                f"{province}: {name} is {', '.join(parts)} and only "
+                f"{', '.join(here)} were read")
+        if name in found:
+            raise SystemExit(
+                f"{province}: {name} is both printed in the table and "
+                "assembled from its parts here, so it would be counted twice")
+        found[name] = {column: sum(found[part][column] for part in parts)
+                       for column in COLUMNS}
+        for part in parts:
+            del found[part]
+        assembled[name] = parts
+        log(f"    {name} is one shape in the boundaries: summed "
+            f"{len(parts)} districts, {found[name]['TOTAL']:,} people")
+    return assembled
+
+
 def fetch(candidates: tuple[str, ...]) -> tuple[bytes, str]:
     """The first candidate URL that answers, and which one it was.
 
@@ -359,21 +429,22 @@ def main() -> int:
                 f"{province}: fetched but no districts read")
             continue
         check(province, found, whole)
+        assembled = merge(province, found)
         for name, counts in sorted(found.items()):
             total = counts["TOTAL"]
             parts = {k: v for k, v in counts.items() if k != "TOTAL"}
+            note = NOTE
+            if name in assembled:
+                note += (" The boundary file draws one shape here, so this is "
+                         + ", ".join(p.title() for p in assembled[name])
+                         + " summed.")
             records.append(record(
                 f"PAK-{slug}-{name.lower().replace(' ', '-')}",
                 name.title(), level="admin2", parent="PAK",
-                parent_name=province,
+                parent_name=province, aliases=list(ALIASES.get(name.title(), ())),
                 population=measure(total, year=YEAR, source=SOURCE),
                 religion=shares(parts, total=total) or gap(NOT_AVAILABLE),
-                religion_year=YEAR,
-                religion_note=(
-                    "Census 2023 Table 9. 'Scheduled Castes' is counted "
-                    "separately from Hindu in this table, as the census does, "
-                    "and Ahmadis are recorded as a category of their own "
-                    "rather than within Islam."),
+                religion_year=YEAR, religion_note=note,
                 sources=[{"field": "population/religion", "name": SOURCE,
                           "url": URL, "license": LICENCE}]))
     for line in absent["optional"]:
