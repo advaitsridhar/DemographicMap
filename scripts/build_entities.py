@@ -849,15 +849,28 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         parent[f"{field}_year"] = years.pop()
 
     # A unit whose composition was just summed from a complete set of children
-    # should carry their population too, when it has none or an older one.
-    # Bangladesh is why: two of its divisions publish no population at all and
-    # six publish 2011 figures, so the level above was summing a mixture of
-    # vintages -- six 2011 divisions and two 2022 ones -- and comparing that
-    # mongrel against a 2025 estimate. The children's own census total is one
-    # number of one date, and the figure it replaces goes into a note.
+    # should carry their population too, when it has none, an older one, or one
+    # of the same year from somewhere else.
+    #
+    # Bangladesh is the older case: two of its divisions publish no population
+    # at all and six publish 2011 figures, so the level above was summing a
+    # mixture of vintages -- six 2011 divisions and two 2022 ones -- and
+    # comparing that mongrel against a 2025 estimate.
+    #
+    # Finland is the same-year case, and the reason the test is not a strict
+    # one. Its nineteen regions total 5,652,881 for 2025 from Statistics
+    # Finland's own register, and the country carried 5,550,449 for 2025 from
+    # the Factbook: a hundred thousand people apart, an itemised count against
+    # a general estimate, with the language shares already taken from the
+    # register. Leaving the two side by side published a national population
+    # that disagreed with the regions drawn inside it.
+    #
+    # A newer figure still wins, because a later estimate of a place is not
+    # something an older count should overwrite. The figure replaced goes into
+    # a note either way.
     child_year = common_year(children)
     own_year = vintage(parent.get("population"))
-    if child_year and (own is None or own_year is None or own_year < child_year):
+    if child_year and (own is None or own_year is None or own_year <= child_year):
         if own is not None:
             parent["population_note"] = (
                 f"Summed from all {len(children)} {level} divisions. Replaces "

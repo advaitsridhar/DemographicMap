@@ -2058,6 +2058,17 @@ class RollUpVintage(unittest.TestCase):
         self.assertEqual(parent["population"]["year"], 2022)
         self.assertIn("8,325,666", parent["population_note"])
 
+    def test_a_same_year_published_population_gives_way_to_the_children(self):
+        # Finland's nineteen regions total 5,652,881 for 2025 from Statistics
+        # Finland's register; the country carried 5,550,449 for 2025 from the
+        # Factbook. An itemised count against a general estimate, with the
+        # language shares already taken from the register.
+        parent = {"population": {"value": 5_550_449, "year": 2025}}
+        be.roll_up_field(parent, [self.kid(5_652_881, 2025)], "religion",
+                         whole_country=True)
+        self.assertEqual(parent["population"]["value"], 5_652_881)
+        self.assertIn("5,550,449", parent["population_note"])
+
     def test_a_newer_published_population_is_not_replaced(self):
         parent = {"population": {"value": 9_500_000, "year": 2025},
                   "religion": None}
