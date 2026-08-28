@@ -14,6 +14,7 @@ is written and nothing is committed -- the output is the log.
 Usage:
     pdftotext -layout report.pdf report.txt
     python scripts/probe_pdf.py report.txt --terms "language,mother tongue"
+    python scripts/probe_pdf.py --url https://example.org/table.pdf --terms religion
 """
 
 from __future__ import annotations
@@ -27,6 +28,32 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import log  # noqa: E402
 
 PAGE_BREAK = "\f"
+
+
+def fetch_text(url: str) -> str:
+    """A remote PDF as text, page by page, without keeping the file.
+
+    The machine that can reach a statistical office is not the machine that
+    builds the site, so a probe that insists on a local file cannot be pointed
+    at the thing it is meant to describe. pypdf rather than pdftotext for the
+    same reason the adapters use it: a pip dependency travels with the
+    repository and a system package does not.
+    """
+    import io
+    import urllib.request
+    from pypdf import PdfReader
+
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "Mozilla/5.0 (compatible; DemographicMap/1.0; "
+                      "+https://github.com/advaitsridhar/DemographicMap)",
+        "Accept": "application/pdf,*/*",
+    })
+    with urllib.request.urlopen(req, timeout=90) as resp:
+        blob = resp.read()
+    log(f"  {len(blob):,} bytes")
+    reader = PdfReader(io.BytesIO(blob))
+    log(f"  {len(reader.pages)} pages")
+    return PAGE_BREAK.join((page.extract_text() or "") for page in reader.pages)
 
 
 def pages(text: str) -> list[str]:
@@ -48,7 +75,9 @@ def condense(page: str, limit: int) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("text", type=Path, help="output of pdftotext -layout")
+    ap.add_argument("text", type=Path, nargs="?",
+                    help="output of pdftotext -layout")
+    ap.add_argument("--url", help="fetch and read a PDF instead of a local file")
     ap.add_argument("--terms", default="language,mother tongue,speak",
                     help="comma-separated terms to find pages for")
     ap.add_argument("--contents", type=int, default=120,
@@ -57,7 +86,13 @@ def main() -> int:
     ap.add_argument("--excerpt", type=int, default=2500)
     args = ap.parse_args()
 
-    text = args.text.read_text(encoding="utf-8", errors="replace")
+    if args.url:
+        log(f"probe_pdf: {args.url}")
+        text = fetch_text(args.url)
+    elif args.text:
+        text = args.text.read_text(encoding="utf-8", errors="replace")
+    else:
+        ap.error("give a text file or --url")
     terms = [t.strip() for t in args.terms.split(",") if t.strip()]
     all_pages = pages(text)
     hits = matching(text, terms)
