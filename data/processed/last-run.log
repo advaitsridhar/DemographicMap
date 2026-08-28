@@ -1,118 +1,91 @@
-page: https://sp2010.bps.go.id/index.php/site/tabel?tid=321&wid=0
+page: https://sp2010.bps.go.id/
   52,849 bytes
-<!DOCTYPE html>
-<html lang="">
-
-<head>
-			<script nonce='{SERVER-GENERATED-NONCE}'>
-			(function(w, d, s, l, i) {
-				w[l] = w[l] || [];
-				w[l].push({
-					'gtm.start': new Date().getTime(),
-					event: 'gtm.js'
-				});
-				var f = d.getElementsByTagName(s)[0],
-					j = d.createElement(s),
-					dl = l != 'dataLayer' ? '&l=' + l : '';
-				j.async = true;
-				j.src =
-					'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-				var n = d.querySelector('[nonce]');
-				n && j.setAttribute('nonce', n.nonce || n.getAttribute('nonce'));
-				f.parentNode.insertBefore(j, f);
-			})(window, document, 'script', 'dataLayer', 'GTM-PT27S8P');
-		</script>
-		<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Menyediakan data statistik nasional maupun internasional, untuk menghasilkan statistik yang mempunyai kebenaran akurat dan menggambarkan keadaan yang sebenarnya, dalam rangka mendukung Indonesia Maju">
-	<meta name="title" content="Sensus Penduduk 2010 - Badan Pusat Statistik">
-	<meta name="keyword" content="sensus bps, sensus indonesia, badan pusat statistik, website sensus, web sensus, data statistik, statistik indonesia, statistik nasional">
-	<meta http-equiv="cache-control" content="no-cache" />
-	<meta http-equiv="pragma" content="no-cache" />
-	<title>Sensus Penduduk 2010 - Badan Pusat Statistik</title>
-	<link rel="shortcut icon" href="/static/images/logo.png">
-	<meta name="theme-color" content="#043277" />
-	<meta property="og:url" content="">
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="Sensus Penduduk 2010 - Badan Pusat Statistik">
-	<meta property="og:description" content="Sensus Penduduk 2010 - Badan Pusat Statistik">
-	<meta property="og:image" content="http://sensus.bps.go.id/static/images/icon/og-image.png">
-
-	<meta name="csrf-param" content="frontend-csrf">
-<meta name="csrf-token" content="zncrvN_ez12MyMmII-pBq4PgD2n0usAXB7lTVgM0GeO3RVH2mYGWOuWHiOdX3nHd0qs6HZbDjl1CihsVdnFBsg==">
-	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
-<link href="/static/css/app.css" rel="stylesheet">
-<link href="/static/plugins/feather-icons/feather.css" rel="stylesheet">
-<link href="/static/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="/static/css/slick.css" rel="stylesheet">
-<link href="/static/css/jquery.fancybox.min.css" rel="stylesheet">
-<script src="/assets/d27eb723/jquery-3.6.3.min.js"></script>
-<script src="/assets/5c9a903d/yii.js"></script>
-<script src="/static/js/popper.min.js"></script>
-<script src="/static/js/bootstrap.min.js"></script>
-<script src="/static/js/app.js"></script>
-<script src="/static/js/select2.min.js"></script>
-<script src="/static/js/slick.min.js"></script>
-<script src="/static/js/w3.js"></script>
-<script src="/static/js/jquery.fancybox.min.js"></script>
-<script src="/static/js/clipboard.min.js"></script>
-<script src="/static/js/sweetalert.js"></script>
-<script src="/static/plugins/highcharts/highcharts.js"></script>
-<script src="/static/plugins/latex/MathJax/es5/tex-mml-chtml.js"></script>
-<script src="/static/plugins/highcharts/modules/exporting.js"></script>
-<script src="/static/plugins/highcharts/modules/export-data.js"></script>
-<script src="/static/plugins/highcharts/modules/drilldown.js"></script>	<style>
-		:root {
-			--accent-color: #043277;
-			--action-color: #327804;
-		}
-
-		::-moz-selection {
-			/* Code for Firefox */
-			background: var(--accent-color);
-			color: white;
-		}
-
-		::selection {
-			background: var(--accent-color);
-			color: white;
-		}
-
-		.bg-accent ::selection {
-			background: white;
-			color: var(--accent-color);
-		}
-
-		.bg-accent ::-moz-selection {
-			background: white;
-			color: var(--accent-color);
-		}
-	</style>
-</head>
-
-<body>
-			<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT27S8P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-					<!-- NAVBAR -->
-	<nav class="navbar navbar-expand-sm navbar-dark" id="navbar">
-		<div class="container">
-			<a class="navbar-brand d-flex" href="/main/index/sp2010">
-				<div class="image mr-3"><img src="/static/images/logo.png" alt="" height="40"></div>
-				<div class="text align-self-center">
-					<h5 class="font-weight-bold m-0 font-italic">BADAN PUSAT STATISTIK</h5>
-				</div>
-			</a>
-			<span id="logo-sensus" class="d-none d-md-block">
-				<img src="/view_image/images/5/sensus-penduduk-2010.png" alt="Sensus Penduduk 2010" height="66" style="object-position: 10px;">
-			</span>
-
-		</div>
-	</nav>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-accent" id="topnav">
-    <div class="container">
-        <div class="collapse navbar-collapse order-3 order-lg-0" id="navigation">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/main/index/sp2010">Beranda</a>
-                </li>
-                <li class="nav-item dropdown ">
-                    <a class="
+  44 matching link(s)
+  - BADAN PUSAT STATISTIK
+    https://sp2010.bps.go.id/main/index/sp2010
+  - Layanan Data
+    https://sp2010.bps.go.id/
+  - Tabel Topik
+    https://sp2010.bps.go.id/topik/index/sp2010
+  - Query Builder
+    https://sp2010.bps.go.id/query_builder/index/sp2010
+  - Perbandingan Antar Wilayah
+    https://sp2010.bps.go.id/perbandingan_wilayah/index/sp2010
+  - Perbandingan Antar Kegiatan
+    https://sp2010.bps.go.id/perbandingan_tahun/index/sp2010
+  - Metadata Sensus
+    https://sp2010.bps.go.id/metadata_kegiatan/cleares/sp2010
+  - Kuesioner Sensus
+    https://sp2010.bps.go.id/kuisioner_sensus/cleares/sp2010
+  - Istilah Statistik
+    https://sp2010.bps.go.id/metadata_statistik/cleares/sp2010
+  - Kisah Sensus
+    https://sp2010.bps.go.id/kisah_sensus/cleares/sp2010
+  - Galeri Foto
+    https://sp2010.bps.go.id/galeri_foto/cleares/sp2010
+  - Galeri Video
+    https://sp2010.bps.go.id/galeri_video/cleares/sp2010
+  - Berita Resmi Statistik
+    https://sp2010.bps.go.id/berita_resmi/cleares/sp2010
+  - Publikasi
+    https://sp2010.bps.go.id/publikasi/cleares/sp2010
+  - Infografis
+    https://sp2010.bps.go.id/infografis/cleares/sp2010
+  - Leaflet
+    https://sp2010.bps.go.id/leaflet/cleares/sp2010
+  - Dokumen Terkait
+    https://sp2010.bps.go.id/dokumen/cleares/sp2010
+  - Pilih Sensus Lain
+    https://sp2010.bps.go.id/site
+  - Ubah Lokasi
+    https://sp2010.bps.go.id/update_lokasi/sp2010/91622
+  - Jumlah dan Distribusi Penduduk
+    https://sp2010.bps.go.id/topik/dataset/sp2010/1
+  - Keluarga dan Struktur Rumah Tangga
+    https://sp2010.bps.go.id/topik/dataset/sp2010/2
+  - Kelahiran
+    https://sp2010.bps.go.id/topik/dataset/sp2010/3
+  - Migrasi
+    https://sp2010.bps.go.id/topik/dataset/sp2010/4
+  - Pendidikan
+    https://sp2010.bps.go.id/topik/dataset/sp2010/5
+  - Ketenagakerjaan
+    https://sp2010.bps.go.id/topik/dataset/sp2010/6
+  - Perumahan
+    https://sp2010.bps.go.id/topik/dataset/sp2010/7
+  - Kesejahteraan Sosial
+    https://sp2010.bps.go.id/topik/dataset/sp2010/8
+  - Fertilitas Penduduk Indonesia Hasil Sensus Penduduk 2010
+    https://www.bps.go.id/publication/2012/05/23/b962187337275cff3815f4ea/fertilitas-penduduk-indonesia-hasil-sensus-penduduk-2010.html
+  - Kesulitan Fungsional Penduduk Indonesia Hasil Sensus Penduduk 2010
+    https://www.bps.go.id/publication/2012/05/23/2cdeb19dae54e8de314944c2/kesulitan-fungsional-penduduk-indonesia-hasil-sensus-penduduk-2010.html
+  - Migrasi Internal Penduduk Indonesia Hasil Sensus Penduduk 2010
+    https://www.bps.go.id/publication/2012/05/23/9cd01b5265c6988245eca87a/migrasi-internal-penduduk-indonesia-hasil-sensus-penduduk-2010.html
+  - Ketenagakerjaan Penduduk Indonesia Hasil Sensus Penduduk 2010
+    https://www.bps.go.id/publication/2012/05/23/a97b831416338c889b1cc18a/ketenagakerjaan-penduduk-indonesia-hasil-sensus-penduduk-2010.html
+  - Umur Dan Jenis Kelamin Penduduk Indonesia Hasil Sensus Penduduk 2010
+    https://www.bps.go.id/publication/2012/05/23/443332cda01195db289146b6/umur-dan-jenis-kelamin-penduduk-indonesia-hasil-sensus-penduduk-2010.html
+  - Kematian Bayi Dan Angka Harapan Hidup Penduduk Indonesia Hasil Sensus 
+    https://www.bps.go.id/publication/2012/05/23/b61274f8ee882e700b5f7380/kematian-bayi-dan-angka-harapan-hidup-penduduk-indonesia-hasil-sensus-penduduk-2010.html
+  - Lihat Publikasi Lainnya
+    https://sp2010.bps.go.id/publikasi/index/sp2010
+  - 
+    https://bandungkota.bps.go.id/backend/images/SP2010-Kota-Bandung-ind.png
+  - 
+    https://bandungkota.bps.go.id/backend/images/Hasil-SP2010-Kota-Bandung-ind.png
+  - 
+    https://luwutimurkab.bps.go.id/backend/images/Hasil-Sensus-Penduduk-2010-Kabupaten-Luwu-Timur-ind.png
+  - Berita Resmi Statistik
+    https://sp2010.bps.go.id/berita_resmi/index/sp2010
+  - Infografis
+    https://sp2010.bps.go.id/infografis/index/sp2010
+  - Leaflet
+    https://sp2010.bps.go.id/leaflet/index/sp2010
+  - Dokumen Terkait
+    https://sp2010.bps.go.id/dokumen/index/sp2010
+  - Kisah Sensus
+    https://sp2010.bps.go.id/kisah_sensus/index/sp2010
+  - Galeri Foto
+    https://sp2010.bps.go.id/galeri_foto/index/sp2010
+  - Galeri Video
+    https://sp2010.bps.go.id/galeri_video/index/sp2010
