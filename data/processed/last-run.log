@@ -1,4 +1,4 @@
-probe_pdf: https://bbs.portal.gov.bd/sites/default/files/files/bbs.portal.gov.bd/page/b343a8b4_956b_45ca_872f_4cf9b2f1a6e0/2024-01-31-15-51-b53c55dd692233ae401ba013060b9cbb.pdf
+probe_pdf: https://file.portal.gov.bd/uploads/34bdd5b8-5c48-4624-a299-4a1b43862f9a//659/d2c/7e3/659d2c7e3f35e896330676.pdf
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
     h.request(req.get_method(), req.selector, req.data, headers,
@@ -12,17 +12,16 @@ Traceback (most recent call last):
     self.send(msg)
   File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
     self.connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1523, in connect
-    self.sock = self._context.wrap_socket(self.sock,
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/ssl.py", line 517, in wrap_socket
-    return self.sslsocket_class._create(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/ssl.py", line 1104, in _create
-    self.do_handshake()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/ssl.py", line 1382, in do_handshake
-    self._sslobj.do_handshake()
-ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1016)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1516, in connect
+    super().connect()
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1010, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 863, in create_connection
+    raise exceptions[0]
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 848, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
 
 During handling of the above exception, another exception occurred:
 
@@ -55,4 +54,4 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
     raise URLError(err)
-urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1016)>
+urllib.error.URLError: <urlopen error timed out>
