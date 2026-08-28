@@ -1,6 +1,262 @@
-page: https://data.humdata.org/api/3/action/package_show?id=populationa-and-housing-census-dataset
-  9,548 bytes
-{"help": "https://data.humdata.org/api/3/action/help_show?name=package_show", "success": true, "result": {"archived": false, "batch": "f0f73a67-d35e-4b6a-b830-58386e6ce0bd", "creator_user_id": "e41014fb-b93d-4155-a101-e3dca2bc2703", "data_update_frequency": "365", "dataset_date": "[2022-01-01T00:00:00 TO 2022-12-31T23:59:59]", "dataset_preview": "first_resource", "dataset_source": "Bangladesh Bureau of Statistics (BBS).", "due_date": "2023-12-31T23:59:59", "has_geodata": false, "has_showcases": false, "id": "a6fedebe-72fe-4fc2-8657-1580acfa32c6", "is_requestdata_type": false, "isopen": false, "last_modified": "2024-03-31T03:05:28.919074", "license_id": "other-pd-nr", "license_title": "Public Domain / No restrictions (CC0)", "maintainer": "e41014fb-b93d-4155-a101-e3dca2bc2703", "metadata_created": "2024-03-23T17:08:37.665351", "metadata_modified": "2025-04-15T16:09:53.314544", "methodology": "Census", "name": "populationa-and-housing-census-dataset", "notes": "Population and housing census dataset as of Census 2022 by Bangladesh Bureau of  Statistics (BBS). The population and Housing census  has two parts that include-\r\n(1) The Population Census, which provides socio-economic and demographic information on every person living in a country at a point in time, down to the smallest geographical unit. \r\n(2) The Housing Census, which provides data on all dwelling units prevailing in a country, their conditions, and facilities available, down to the smallest geographical unit.\r\nAlthough it covered smallest geographical unit of Bangladesh; till date it's available up to District (Admin 02) level.  \r\nAll information contains this dataset is collated from Final Population and Housing census report published by BBS to ensure meaningful access. For more detail information and further query/questions it\u2019s recommended to check the full report.  \r\n\r\nPlease click in Below link to access the full report-                                                                               \r\nhttps://bbs.portal.gov.bd/sites/default/files/files/bbs.portal.gov.bd/page/b343a8b4_956b_45ca_872f_4cf9b2f1a6e0/2024-01-31-15-51-b53c55dd692233ae401ba013060b9cbb.pdf ", "num_resources": 2, "num_tags": 5, "organization": {"id": "8405d6fb-2abc-4d8c-a335-d59f1bda602f", "name": "unrco-bangladesh", "title": "UN in Bangladesh", "type": "organization", "description": "The United Nations Resident Coordinator Office (UNRCO) coordinates all UN activities in Bangladesh.", "image_url": "", "created": "2023-04-26T05:51:47.657314", "is_organization": true, "approval_status": "approved", "state": "active"}, "owner_org": "8405d6fb-2abc-4d8c-a335-d59f1bda602f", "package_creator": "shahid-hassan-5035", "pageviews_last_14_days": 228, "private": false, "qa_completed": false, "solr_additions": "{\"countries\": [\"Bangladesh\"]}", "state": "active", "subnational": "1", "title": "Bangladesh : Population and Housing Census Dataset", "total_res_downloads": 3435, "type": "dataset", "url": null, "version": null, "groups": [{"description": "test", "display_name": "Bangladesh", "id": "bgd", "image_display_url": "", "name": "bgd", "title": "Bangladesh"}], "resources": [{"alt_url": "https://data.humdata.org/dataset/a6fedebe-72fe-4fc2-8657-1580acfa32c6/resource/039caab2-cde2-4093-a199-c712114789d6/download/", "cache_last_updated": null, "cache_url": null, "created": "2024-03-23T18:12:21.460337", "datastore_active": false, "description": "Definition of indicators (Population and Housing Census Data)", "download_url": "https://data.humdata.org/dataset/a6fedebe-72fe-4fc2-8657-1580acfa32c6/resource/039caab2-cde2-4093-a199-c712114789d6/download/indicator-definition_bangladesh_bbs_population-and-housing-census-dataset_admin-02.xlsx", "format": "XLSX", "fs_check_info": "[{\"state\": \"processing\", \"message\": \"The processing of the file structure check has started\", \"timestamp\": \"2024-03-23T18:12:21.136478\"}, {\"state\": \"success\", \"message\": \"File structure check completed\", \"timestamp\": \"2024-03-23T18:12:22.230033\", \"sheet_changes\": [], \"hxl_proxy_response\": {\"error\": \"RemoteDataException\", \"human_message\": \"Sorry, we can't find the remote data you want to process.\", \"message\": \"No usable data found at remote URL\", \"status\": 404}}]", "hash": "", "hdx_rel_url": "/dataset/a6fedebe-72fe-4fc2-8657-1580acfa32c6/resource/039caab2-cde2-4093-a199-c712114789d6/download/indicator-definition_bangladesh_bbs_population-and-housing-census-dataset_admin-02.xlsx", "id": "039caab2-cde2-4093-a199-c712114789d6", "last_modified": "2024-03-23T18:12:21.334453", "metadata_modified": "2025-04-15T16:09:49.047689", "microdata": false, "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "mimetype_inner": null, "name": "Indicator Definition_Bangladesh_BBS_Population and Housing Census dataset_Admin 02.xlsx", "originalHash": "-988266717", "p_coded": false, "package_id": "a6fedebe-72fe-4fc2-8657-1580acfa32c6", "pii": "false", "position": 0, "resource_type": "file.upload", "size": 186071, "state": "active", "url": "https://data.humdata.org/dataset/a6fedebe-72fe-4fc2-8657-1580acfa32c6/resource/039caab2-cde2-4093-a199-c712114789d6/download/indicator-definition_bangladesh_bbs_population-and-housing-census-dataset_admin-02.xlsx", "url_type": "upload"}, {"alt_url": "https://data.humdata.org/dataset/a6fedebe-72fe-4fc2-8657-1580acfa32c6/resource/72eaaa6c-6a30-4efd-bad9-02133b316ea8/download/", "cache_last_updated": null, "cache_url": null, "created": "2024-03-23T17:09:33.356092", "dataset_preview_enabled": false, "datastore_active": false, "description": "Population and housing census dataset as of Census 2022 by Bangladesh Bureau of  Statistics (BBS). The population and Housing census  has two parts that include-\n(1) The Population Census, which provides socio-economic and demographic information on every person living in a country at a point in time, down to the smallest geographical unit. \n(2) The Housing Census, which provides data on all dwelling units prevailing in a country, their conditions, and facilities available, down to the smallest geographical unit.\nAlthough it covered smallest geographical unit of Bangladesh; till date it's available up to District (Admin 02) level. \n\nAll information contains this dataset is collated from Final Population and Housing census report published by BBS. \nPlease click in Below link to access the full report-                                                                               \nhttps://bbs.portal.gov.bd/sites/default/files/files/bbs.portal.gov.bd/page/b343a8b4_956b_45ca_872f_4cf9b2f1a6e0/2024-01-31-15-51-b53c55dd692233ae401ba013060b9cbb.pdf ", "download_url": "https://data.humdata.org/dataset/a6fedebe-72fe-4fc2-8657-1580acfa32c6/resource/72eaaa6c-6a30-4efd-bad9-02133b316ea8/download/bangladesh_bbs_population-and-housing-census-dataset_2022_admin-02.xlsx", "format": "XLSX", "fs_check_info": "[{\"state\": \"processing\", \"message\": \"The processing of the file structure check has started\", \"timestamp\": \"2024-03-23T17:09:32.709101\"}, {\"state\": \"success\", \"message\": \"File structure check completed\", \"timestamp\": \"2024-03-23T17:09:34.501387\", \"sheet_changes\": [], \"hxl_proxy_response\": {\"error\": \"RemoteDataException\", \"human_message\": \"Sorry, we can't find the remote data you want to process.\", \"message\": \"No usable data found at remote URL\", \"status\": 404}}]", "hash": "", "hdx_rel_url": "/dataset/a6fedebe-72fe-4fc2-8657-1580acfa32c6/resource/72eaaa6c-6a30-4efd-bad9-02133b316ea8/download/bangladesh_bbs_population-and-housing-census-dataset_2022_admin-02.xlsx", "id": "72eaaa6c-6a30-4efd-bad9-02133b316ea8", "last_modified": "2024-03-31T03:05:28.919074", "metadata_modified": "2025-04-15T16:09:53.333379", "microdata": false, "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "mimetype_inner": null, "name": "Bangladesh_BBS_Population and Housing Census dataset_2022_Admin 02.xlsx", "originalHash": -1550020859, "p_coded": false, "package_id": "a6fedebe-72fe-4fc2-8657-1580acfa32c6", "pii": "false", "position": 1, "resource_type": "file.upload", "size": 1213869, "state": "active", "url": "https://data.humdata.org/dataset/a6fedebe-72fe-4fc2-8657-1580acfa32c6/resource/72eaaa6c-6a30-4efd-bad9-02133b316ea8/download/bangladesh_bbs_population-and-housing-census-dataset_2022_admin-02.xlsx", "url_type": "upload"}], "tags": [{"display_name": "baseline population", "id": "db8205e9-b61c-4df7-a987-1a2658ed8666", "name": "baseline population", "state": "active", "vocabulary_id": "b891512e-9516-4bf5-962a-7a289772a2a1"}, {"display_name": "demographics", "id": "7aa60d26-5c83-4c50-80d2-0b944fe80122", "name": "demographics", "state": "active", "vocabulary_id": "b891512e-9516-4bf5-962a-7a289772a2a1"}, {"display_name": "health", "id": "26fe3d20-9de7-436b-b47a-4f7f2e4547d0", "name": "health", "state": "active", "vocabulary_id": "b891512e-9516-4bf5-962a-7a289772a2a1"}, {"display_name": "socioeconomics", "id": "a64218ff-64ff-4777-a664-6b0a331ab605", "name": "socioeconomics", "state": "active", "vocabulary_id": "b891512e-9516-4bf5-962a-7a289772a2a1"}, {"display_name": "water sanitation and hygiene-wash", "id": "5a4f7135-daaf-4c82-985f-e0bb443fdb94", "name": "water sanitation and hygiene-wash", "state": "active", "vocabulary_id": "b891512e-9516-4bf5-962a-7a289772a2a1"}], "relationships_as_subject": [], "relationships_as_object": [], "is_fresh": false, "update_status": "needs_update", "x_resource_grouping": []}}
-page: https://data.humdata.org/api/3/action/package_show?id=bangladesh-subnational-boundaries-and-tabular-data
-  7,124 bytes
-{"help": "https://data.humdata.org/api/3/action/help_show?name=package_show", "success": true, "result": {"archived": false, "batch": "7ea4ea62-3037-44d1-bc76-9b5b3f4336f2", "creator_user_id": "4579a3f3-37b7-4d25-bc63-fc38d2cf132e", "data_update_frequency": "-2", "dataset_date": "[2021-10-04T00:00:00 TO *]", "dataset_preview": "first_resource", "dataset_source": "U.S. Census Bureau", "has_geodata": true, "has_showcases": false, "id": "862d607b-a195-4f69-b0cb-bd2fe6ac858f", "is_requestdata_type": false, "isopen": true, "last_modified": "2022-07-26T18:10:58.829009", "license_id": "cc-by", "license_title": "Creative Commons Attribution International (CC BY)", "license_url": "http://www.opendefinition.org/licenses/cc-by", "maintainer": "4579a3f3-37b7-4d25-bc63-fc38d2cf132e", "metadata_created": "2022-07-26T18:08:15.351077", "metadata_modified": "2025-04-15T14:18:22.352030", "methodology": "Other", "methodology_other": "Data were collected from the Bangladesh Population and Housing Census 2011, 2014, and several surveys: Progotir Pathey Bangladesh: Multiple Indicator Cluster Survey 2019, Census of Slum Areas and Floating Population 2014 and 2015, Rohingya Refugees Population by Location at Camp and Union Level - Cox's Bazar, and the Bangladesh Demographic and Health Survey 2017-18. Census Bureau staff altered boundaries and modified the statistical data as detailed in the Metadata tab of the tabular data.", "name": "bangladesh-subnational-boundaries-and-tabular-data", "notes": "The geodatabase contains boundaries for the first-, second-, third-, and fourth-order administrative divisions,  as well as refugee settlement camps, refugee settlement blocks, and refugee settlement sub-blocks, aligned to the Large Scale International Boundaries dataset from the U.S. Department of State. \r\n\r\nThe tabular data contain total population for 2011 (census), as well five-year age group and sex, characteristics relating to housing and households, floating populations, refugees, religion and ethnicity, economics, information and communication technology, and health. ", "num_resources": 2, "num_tags": 3, "organization": {"id": "c992be95-fd4c-455c-ae9c-a20843aa2a1e", "name": "us-census-bureau", "title": "U.S. Census Bureau", "type": "organization", "description": "The Census Bureau's mission is to serve as the nation\u2019s leading provider of quality data about its people and economy. Find additional international data at https://www.census.gov/geographies/mapping-files/time-series/demo/international-programs/subnationalpopulation.html.", "image_url": "", "created": "2021-09-10T03:53:10.499105", "is_organization": true, "approval_status": "approved", "state": "active"}, "owner_org": "c992be95-fd4c-455c-ae9c-a20843aa2a1e", "package_creator": "census-bureau-international-programs-center", "pageviews_last_14_days": 14, "private": false, "qa_completed": false, "solr_additions": "{\"countries\": [\"Bangladesh\"]}", "state": "active", "subnational": "1", "title": "Bangladesh Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Censuses and Surveys", "total_res_downloads": 559, "type": "dataset", "url": null, "version": null, "groups": [{"description": "test", "display_name": "Bangladesh", "id": "bgd", "image_display_url": "", "name": "bgd", "title": "Bangladesh"}], "resources": [{"alt_url": "https://data.humdata.org/dataset/862d607b-a195-4f69-b0cb-bd2fe6ac858f/resource/b01a071f-f35a-4a6a-adc4-b01b25ef8902/download/", "cache_last_updated": null, "cache_url": null, "created": "2022-07-26T18:10:48.847163", "datastore_active": false, "description": "National and subnational boundary feature classes of Bangladesh for joining (linking) to attribute data provided in tables prepared by the U.S. Census Bureau.", "download_url": "https://data.humdata.org/dataset/862d607b-a195-4f69-b0cb-bd2fe6ac858f/resource/b01a071f-f35a-4a6a-adc4-b01b25ef8902/download/bangladesh.gdb.zip", "format": "Geodatabase", "hash": "", "hdx_rel_url": "/dataset/862d607b-a195-4f69-b0cb-bd2fe6ac858f/resource/b01a071f-f35a-4a6a-adc4-b01b25ef8902/download/bangladesh.gdb.zip", "id": "b01a071f-f35a-4a6a-adc4-b01b25ef8902", "last_modified": "2022-07-26T18:10:47.889663", "metadata_modified": "2025-04-15T14:18:21.769581", "microdata": false, "mimetype": "application/x-zip-compressed", "mimetype_inner": null, "name": "Bangladesh.gdb.zip", "originalHash": "-988266717", "p_coded": false, "package_id": "862d607b-a195-4f69-b0cb-bd2fe6ac858f", "pii": "false", "position": 0, "resource_type": "file.upload", "size": 69246667, "state": "active", "url": "https://data.humdata.org/dataset/862d607b-a195-4f69-b0cb-bd2fe6ac858f/resource/b01a071f-f35a-4a6a-adc4-b01b25ef8902/download/bangladesh.gdb.zip", "url_type": "upload"}, {"alt_url": "https://data.humdata.org/dataset/862d607b-a195-4f69-b0cb-bd2fe6ac858f/resource/1fdc9232-9fb4-49d2-b66a-b7a375472f72/download/", "cache_last_updated": null, "cache_url": null, "created": "2022-07-26T18:10:59.732443", "datastore_active": false, "description": "The tabular data contain total population for 2011 (census), as well five-year age group and sex, characteristics relating to housing and households, floating populations, refugees, religion and ethnicity, economics, information and communication technology, and health.", "download_url": "https://data.humdata.org/dataset/862d607b-a195-4f69-b0cb-bd2fe6ac858f/resource/1fdc9232-9fb4-49d2-b66a-b7a375472f72/download/bangladesh_uscb_202107.xlsx", "format": "XLSX", "hash": "", "hdx_rel_url": "/dataset/862d607b-a195-4f69-b0cb-bd2fe6ac858f/resource/1fdc9232-9fb4-49d2-b66a-b7a375472f72/download/bangladesh_uscb_202107.xlsx", "id": "1fdc9232-9fb4-49d2-b66a-b7a375472f72", "last_modified": "2022-07-26T18:10:58.829009", "metadata_modified": "2025-04-15T14:18:22.380759", "microdata": false, "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "mimetype_inner": null, "name": "Bangladesh_uscb_202107.xlsx", "originalHash": -1850304228, "p_coded": false, "package_id": "862d607b-a195-4f69-b0cb-bd2fe6ac858f", "pii": "false", "position": 1, "resource_type": "file.upload", "size": 4809038, "state": "active", "url": "https://data.humdata.org/dataset/862d607b-a195-4f69-b0cb-bd2fe6ac858f/resource/1fdc9232-9fb4-49d2-b66a-b7a375472f72/download/bangladesh_uscb_202107.xlsx", "url_type": "upload"}], "tags": [{"display_name": "administrative boundaries-divisions", "id": "6e0600e9-167a-482f-9259-4a17455607c6", "name": "administrative boundaries-divisions", "state": "active", "vocabulary_id": "b891512e-9516-4bf5-962a-7a289772a2a1"}, {"display_name": "baseline population", "id": "db8205e9-b61c-4df7-a987-1a2658ed8666", "name": "baseline population", "state": "active", "vocabulary_id": "b891512e-9516-4bf5-962a-7a289772a2a1"}, {"display_name": "demographics", "id": "7aa60d26-5c83-4c50-80d2-0b944fe80122", "name": "demographics", "state": "active", "vocabulary_id": "b891512e-9516-4bf5-962a-7a289772a2a1"}], "relationships_as_subject": [], "relationships_as_object": [], "due_date": null, "is_fresh": false, "update_status": "unknown", "x_resource_grouping": []}}
+probe_xlsx: https://data.humdata.org/dataset/a6fedebe-72fe-4fc2-8657-1580acfa32c6/resource/72eaaa6c-6a30-4efd-bad9-02133b316ea8/download/bangladesh_bbs_population-and-housing-census-dataset_2022_admin-02.xlsx
+  1,213,869 bytes
+  42 sheet(s): Merged_All_Table, Type of Dwelling_HH & Pop, Type of Household , Type of Dwelling, Sex & Dist,  Population by Sex, Dist & Loca, Type of Household, Dist & Loca, Type of Household, Loca_Rural, Type of Household, Loca_Urban, 10 Yrs & above by Mar Sta_Sex,  Population by Religion, Sex, Population Growth Rate, Sex Rat, PwD (Except Hijra), Literacy Rate_Aged 5 Yrs, Literacy Rate_Aged 7 Yrs & Abov,  Literacy Rate_Aged 7 Yrs Ab_Re, Student Aged 5-29 Years by Sex,  Aged 5 Yrs & Above_Working Sta, Type of Work, Employed Population by Sector, 15-24 Years NEET,  Population having Mobile Phone, Internet User, Having Account in Financial,  Having Mobile Banking Account, Ethnic Population by Sex, Population_District, Returned Migrant, Household by Type of Dwelling, Type of Household, Household by Wall Material , Household by Roof Material , Household by Floor Material, Household by Structure, Household by Ownership Status, Main Source of Drinking Water, Toilet Facilities, Type of Toilet Use, Handwashing Facilities,  Main Source of Electricity ,  Main Source of Cooking Fuel , Foreign Remittance Recipient, Number of Person & Avg HH Size
+
+--- sheet 'Merged_All_Table' (65 rows x 445 cols) --------------------
+  Division | District | Division_Geocode | District_Geocode | Household_Total | Population_Total | Household_Excluding_Slum_Floating | Population_Excluding_Slum_Floating | Household_Slum | Population_Slum | Household_Floating | Population_Floating | Population Density | Type of Household_Household_total_ | Type of Household_Population__exce | Type of Household_Household_Genera | Type of Household_Population_Gener | Type of Household_Household_Instit | Type of Household_Population_Insti | Type of Household_Household_Other_ | Type of Household_Population_Other | Type of Dwelling, Sex & Dist_Popul | Type of Dwelling, Sex & Dist_Popul | Type of Dwelling, Sex & Dist_Popul | Type of Dwelling, Sex & Dist_Popul | Type of Dwelling, Sex & Dist_Popul | Type of Dwelling, Sex & Dist_Popul | Type of Dwelling, Sex & Dist_Popul | Type of Dwelling, Sex & Dist_Popul | Type of Dwelling, Sex & Dist_Popul | Type of Dwelling, Sex & Dist_Popul | Type of Dwelling, Sex & Dist_Popul | Type of Dwelling, Sex & Dist_Popul | Type of Dwelling, Sex & Dist_Popul | Type of Dwelling, Sex & Dist_Popul | Type of Dwelling, Sex & Dist_Popul | Type of Dwelling, Sex & Dist_Popul | Population by Sex, Dist & Loca_Pop | Population by Sex, Dist & Loca_Pop | Population by Sex, Dist & Loca_Pop | Population by Sex, Dist & Loca_Pop | Population by Sex, Dist & Loca_Pop | Population by Sex, Dist & Loca_Pop | Population by Sex, Dist & Loca_Pop | Population by Sex, Dist & Loca_Pop | Population by Sex, Dist & Loca_Pop | Population by Sex, Dist & Loca_Pop | Population by Sex, Dist & Loca_Pop | Population by Sex, Dist & Loca_Pop | Type of Household, Dist and Loca_# | Type of Household, Dist and Loca_# | Type of Household, Dist and Loca_# | Type of Household, Dist and Loca_# | Type of Household, Dist and Loca_% | Type of Household, Dist and Loca_% | Type of Household, Dist and Loca_% | Type of Household, Loca_Rural_# Po | Type of Household, Loca_Rural_# Po | Type of Household, Loca_Rural_# Po | Type of Household, Loca_Rural_# Po
+  Barishal | Barguna | 10 | 4 | 255390 | 1010531 | 254895 | 1008695 | 451 | 1789 | 44 | 47 | 552 | 255346 | 1010484 | 253388 | 992721 | 286 | 12095 | 1672 | 5668 | 1010531 | 494738 | 515723 | 70 | 1008695 | 493836 | 514789 | 70 | 1789 | 871 | 918 | 0 | 47 | 31 | 16 | 0 | 1010531 | 494738 | 515723 | 70 | 779670 | 381325 | 398327 | 18 | 230861 | 113413 | 117396 | 52 | 1010484 | 992721 | 12095 | 5668 | 98.24 | 1.2 | 0.56 | 779660 | 769326 | 7517 | 2817
+  Khulna | Bagerhat | 40 | 1 | 408840 | 1613076 | 406058 | 1603126 | 2605 | 9763 | 177 | 187 | 407 | 408663 | 1612889 | 406373 | 1582590 | 534 | 23705 | 1756 | 6594 | 1613076 | 802314 | 810691 | 71 | 1603126 | 797464 | 805592 | 70 | 9763 | 4724 | 5038 | 1 | 187 | 126 | 61 | 0 | 1613076 | 802314 | 810691 | 71 | 1227890 | 611466 | 616379 | 45 | 385186 | 190848 | 194312 | 26 | 1612889 | 1582590 | 23705 | 6594 | 98.12 | 1.47 | 0.41 | 1227793 | 1207533 | 16788 | 3472
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: ['Literacy Rate_Aged 7 Yrs Ab_Re_Christian', 'Literacy Rate_Aged 7 Yrs Ab_Re_Christian_Female', 'Literacy Rate_Aged 7 Yrs Ab_Re_Christian_Male', 'Literacy Rate_Aged 7 Yrs Ab_Re_Hindu', 'Literacy Rate_Aged 7 Yrs Ab_Re_Hindu_Female', 'Literacy Rate_Aged 7 Yrs Ab_Re_Hindu_Male', 'Literacy Rate_Aged 7 Yrs Ab_Re_Muslim', 'Literacy Rate_Aged 7 Yrs Ab_Re_Muslim_Female', 'Literacy Rate_Aged 7 Yrs Ab_Re_Muslim_Male', 'Population by Religion, Sex_# Female_Buddhist', 'Population by Religion, Sex_# Female_Christian', 'Population by Religion, Sex_# Female_Hindu', 'Population by Religion, Sex_# Female_Muslim', 'Population by Religion, Sex_# Female_Others', 'Population by Religion, Sex_# Male_Buddhist', 'Population by Religion, Sex_# Male_Christian', 'Population by Religion, Sex_# Male_Hindu', 'Population by Religion, Sex_# Male_Muslim', 'Population by Religion, Sex_# Male_Others', 'Population by Religion, Sex_# Total_Buddhist', 'Population by Religion, Sex_# Total_Christian', 'Population by Religion, Sex_# Total_Hindu', 'Population by Religion, Sex_# Total_Muslim', 'Population by Religion, Sex_# Total_Others']
+
+--- sheet 'Type of Dwelling_HH & Pop' (1000 rows x 26 cols) --------------------
+  District | Household_Total | Population_Total | Household_Excluding_Slum_Floating | Population_Excluding_Slum_Floating | Household_Slum | Population_Slum | Household_Floating | Population_Floating | Population Density
+  Barguna | 255390 | 1010531 | 254895 | 1008695 | 451 | 1789 | 44 | 47 | 552
+  Barishal | 629626 | 2570446 | 620735 | 2537292 | 8160 | 31338 | 731 | 1816 | 923
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Type of Household ' (1000 rows x 26 cols) --------------------
+  District | Household_total_except_floating | Population__except_floating | Household_General | Population_General | Household_Institutional | Population_Institutional | Household_Other | Population_Other
+  Barguna | 255346 | 1010484 | 253388 | 992721 | 286 | 12095 | 1672 | 5668
+  Barishal | 628895 | 2568630 | 620299 | 2496625 | 853 | 42695 | 7743 | 29310
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Type of Dwelling, Sex & Dist' (1000 rows x 19 cols) --------------------
+  District | Population_Total | Population_Male | Population_Female | Population_Hijra | Population_Excluding_Slum_Floating | Population_Excluding_Slum_Floating | Population_Excluding_Slum_Floating | Population_Excluding_Slum_Floating | Population_Slum_Total | Population_Slum_Male | Population_Slum_Female | Population_Slum_Hijra | Population_Floating_Total | Population_Floating_Male | Population_Floating_Female | Population_Floating_Hijra
+  Barguna | 1010531 | 494738 | 515723 | 70 | 1008695 | 493836 | 514789 | 70 | 1789 | 871 | 918 | 0 | 47 | 31 | 16 | 0
+  Barishal | 2570446 | 1255436 | 1314935 | 75 | 2537292 | 1238533 | 1298689 | 70 | 31338 | 15875 | 15458 | 5 | 1816 | 1028 | 788 | 0
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet ' Population by Sex, Dist & Loca' (1000 rows x 14 cols) --------------------
+  District | Population_Total | Population_Male | Population_Female | Population_Hijra | Population_rural_Total | Population_rural_Male | Population_rural_Female | Population_rural_Hijra | Population_Urban_Total | Population_Urban_Male | Population_Urban_Female | Population_Urban_Hijra
+  Bagerhat | 1613076 | 802314 | 810691 | 71 | 1227890 | 611466 | 616379 | 45 | 385186 | 190848 | 194312 | 26
+  Bandarban | 481106 | 246947 | 234146 | 13 | 286687 | 144657 | 142020 | 10 | 194419 | 102290 | 92126 | 3
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Type of Household, Dist & Loca' (1000 rows x 26 cols) --------------------
+  District | # Population | # Population_ General HH | # Population_ Institutional HH | # Population_other HH | % Population_General HH | % Population_Institutional HH | % Population_other HH
+  Barguna | 1010484 | 992721 | 12095 | 5668 | 98.24 | 1.2 | 0.56
+  Barishal | 2568630 | 2496625 | 42695 | 29310 | 97.2 | 1.66 | 1.14
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Type of Household, Loca_Rural' (1000 rows x 8 cols) --------------------
+  District | # Population_Rural | # Population_ General HH_Rural | # Population_Institutional HH_Rura | # Population_other HH_Rural | % Population_General HH_Rural | % Population_Institutional HH_Rura | % Population_other HH_Rural
+  Barguna | 779660 | 769326 | 7517 | 2817 | 98.67 | 0.96 | 0.36
+  Barishal | 1792392 | 1763334 | 19812 | 9246 | 98.38 | 1.11 | 0.52
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Type of Household, Loca_Urban' (1000 rows x 10 cols) --------------------
+  District | # Population_Urban | # Population_ General HH_Urban | # Population_Institutional HH_Urba | # Population_other HH_Urban | % Population_General HH_Urban | % Population_Institutional HH_Urba | % Population_other HH_Urban
+  Barguna | 230824 | 223395 | 4578 | 2851 | 96.78 | 1.98 | 1.24
+  Barishal | 776238 | 733291 | 22883 | 20064 | 94.47 | 2.95 | 2.58
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet '10 Yrs & above by Mar Sta_Sex' (1000 rows x 27 cols) --------------------
+  District | # population | # Male | # female | # Never married population | # Never married population_male | # Never married population_female | # Currently married population | # Currently married population_mal | # Currently married population_fem | # Widow/Widower population | # Widow/Widower population_male | # Widow/Widower population_female | # Divorced population | # Divorced population_male | # Divorced population_female | # Separated population | # Separated population_male | # Separated population_female
+  Barguna | 833901 | 404669 | 429232 | 205259 | 125054 | 80205 | 575209 | 272294 | 302915 | 46590 | 5379 | 41211 | 3363 | 890 | 2473 | 3480 | 1052 | 2428
+  Barishal | 2095254 | 1010521 | 1084733 | 611465 | 370590 | 240875 | 1347377 | 622966 | 724411 | 124697 | 13260 | 111437 | 5487 | 1659 | 3828 | 6228 | 2046 | 4182
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet ' Population by Religion, Sex' (1000 rows x 26 cols) --------------------
+  District | # Total_Muslim | # Male_Muslim | # Female_Muslim | # Total_Hindu | # Male_Hindu | # Female_Hindu | # Total_Christian | # Male_Christian | # Female_Christian | # Total_Buddhist | # Male_Buddhist | # Female_Buddhist | # Total_Others | # Male_Others | # Female_Others
+  Barguna | 937495 | 457588 | 479907 | 69481 | 34436 | 35045 | 252 | 117 | 135 | 3185 | 2564 | 621 | 48 | 33 | 15
+  Barishal | 2283658 | 1111897 | 1171761 | 275258 | 137929 | 137329 | 11138 | 5437 | 5701 | 253 | 129 | 124 | 64 | 44 | 20
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: ['# Female_Buddhist', '# Female_Christian', '# Female_Hindu', '# Female_Muslim', '# Male_Buddhist', '# Male_Christian', '# Male_Hindu', '# Male_Muslim', '# Total_Buddhist', '# Total_Christian', '# Total_Hindu', '# Total_Muslim']
+
+--- sheet 'Population Growth Rate, Sex Rat' (1000 rows x 26 cols) --------------------
+  District | Overall_Avg._Population Growth | Overall_Sex_Ratio | Overall_Dependeny_Ratio | Overall_Child-Woman Ratio | Rural_Avg._Population Growth | Rural_Sex_Ratio | Rural_Dependeny_Ratio | Rural_Child-Woman Ratio | Urban_Avg._Population Growth | Urban_Sex_Ratio | Urban_Dependeny_Ratio | Urban_Child-Woman Ratio
+  Barguna | 1.1 | 95.93 | 53.44 | 312.12 | -0.11 | 95.73 | 54.23 | 317.13 | 7.17 | 96.61 | 50.83 | 295.91
+  Barishal | 0.89 | 95.48 | 55.35 | 326.79 | -0.06 | 93.1 | 58.22 | 340.51 | 3.59 | 101.19 | 49.1 | 296.3
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'PwD (Except Hijra)' (1000 rows x 26 cols) --------------------
+  District | Total_Persons_With_Disability | Autism or Autism Spectrum Disorder | Physical Disability | Mental Illness Leading to Disabili | Visual Disability | Speech Disability | Intellectual Disability | Hearing Disability | Deaf- Blindness | Cerebral Palsy | Down Syndrome | Multiple Disabilities | Other Disability
+  Barguna | 23206 | 667 | 8330 | 1524 | 3974 | 1620 | 868 | 1345 | 303 | 199 | 248 | 2807 | 1321
+  Barishal | 34625 | 1490 | 11133 | 3480 | 3928 | 3419 | 2324 | 1761 | 193 | 380 | 443 | 4551 | 1523
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Literacy Rate_Aged 5 Yrs' (1000 rows x 10 cols) --------------------
+  District | Literacy Rate_5year+_Overall | Literacy Rate_5year+_Male | Literacy Rate_5year+_Female | Rural_Literacy Rate_5year+_Overall | Rural_Literacy Rate_5year+_Male | Rural_Literacy Rate_5year+_Female | Urban_Literacy Rate_5year+_Overall | Urban_Literacy Rate_5year+_Male | Urban_Literacy Rate_5year+_Female
+  Barguna | 80.02 | 81.5 | 78.61 | 78.64 | 80.12 | 77.23 | 84.67 | 86.11 | 83.28
+  Barishal | 79.21 | 80.05 | 78.41 | 76.76 | 77.36 | 76.2 | 84.8 | 85.92 | 83.67
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Literacy Rate_Aged 7 Yrs & Abov' (1000 rows x 10 cols) --------------------
+  District | Literacy Rate_7year+_Overall | Literacy Rate_7year+_Male | Literacy Rate_7year+_Female | Rural_Literacy Rate_7year+_Overall | Rural_Literacy Rate_7year+_Male | Rural_Literacy Rate_7year+_Female | Urban_Literacy Rate_7year+_Overall | Urban_Literacy Rate_7year+_Male | Urban_Literacy Rate_7year+_Female
+  Barguna | 80.65 | 82.28 | 79.1 | 79.3 | 80.94 | 77.74 | 85.21 | 86.78 | 83.72
+  Barishal | 79.85 | 80.81 | 78.94 | 77.4 | 78.12 | 76.74 | 85.43 | 86.64 | 84.21
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet ' Literacy Rate_Aged 7 Yrs Ab_Re' (1000 rows x 26 cols) --------------------
+  District | Literacy Rate_Muslim | Literacy Rate_Hindu | Literacy Rate_Christian | Literacy Rate_Buddist | Literacy Rate_others | Literacy Rate_Muslim_Male | Literacy Rate_Hindu_Male | Literacy Rate_Christian_Male | Literacy Rate_Buddist_Male | Literacy Rate_others_Male | Literacy Rate_Muslim_Female | Literacy Rate_Hindu_Female | Literacy Rate_Christian_Female | Literacy Rate_Buddist_Female | Literacy Rate_others_Female
+  Barguna | 80.33 | 84.3 | 84.98 | 91.76 | 52.63 | 81.77 | 87.65 | 89.22 | 96.32 | 60.71 | 78.97 | 81.02 | 81.68 | 72.16 | 30
+  Barishal | 79.51 | 82.25 | 87.19 | 80.87 | 65.52 | 80.2 | 85.17 | 88.81 | 84.87 | 77.5 | 78.86 | 79.34 | 85.69 | 76.58 | 38.89
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: ['Literacy Rate_Christian', 'Literacy Rate_Christian_Female', 'Literacy Rate_Christian_Male', 'Literacy Rate_Hindu', 'Literacy Rate_Hindu_Female', 'Literacy Rate_Hindu_Male', 'Literacy Rate_Muslim', 'Literacy Rate_Muslim_Female', 'Literacy Rate_Muslim_Male']
+
+--- sheet 'Student Aged 5-29 Years by Sex' (1000 rows x 26 cols) --------------------
+  District | Total_Male_Student_5-29 years | Total_Female_Student_5-29 years | 5-9 Year_Male_Student | 5-9 Year_Female_Student | 10-14 Years_Male_Student | 10-14 Years_Female_Student | 15-19 Years_Male_Student | 15-19 Years_Female_Student | 20-24 Years_Female_Student | 20-24 Years_Male_Student | 25-29 Years_Male_Student | 25-29 Years_Female_Student
+  Bagerhat | 195106 | 180346 | 57420 | 55533 | 63910 | 62357 | 46866 | 43270 | 20774 | 15103 | 6136 | 4083
+  Bandarban | 65206 | 59915 | 22461 | 20612 | 21900 | 21037 | 13181 | 12860 | 5515 | 4215 | 2149 | 1191
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet ' Aged 5 Yrs & Above_Working Sta' (1000 rows x 26 cols) --------------------
+  District | Overall_Working_Status_5 Year+ | Overall_Working_Status_5 Year+_Mal | Overall_Working_Status_5 Year+_Fem | Overall_Employed_Working_Status_5  | Overall_Employed_Working_Status_5  | Overall_Employed_Working_Status_5  | Overall_Household Work_Working_Sta | Overall_Household Work_Working_Sta | Overall_Household Work_Working_Sta | Overall_Looking for work_Working_S | Overall_Looking for work_Working_S | Overall_Looking for work_Working_S | Overall_Do not Work_Working_Status | Overall_Do not Work_Working_Status | Overall_Do not Work_Working_Status
+  Barguna | 921567 | 449669 | 471898 | 276918 | 241102 | 35816 | 305415 | 29789 | 275626 | 18436 | 13489 | 4947 | 320798 | 165289 | 155509
+  Barishal | 2334868 | 1134790 | 1200078 | 696011 | 601647 | 94364 | 672158 | 38437 | 633721 | 45160 | 32551 | 12609 | 921539 | 462155 | 459384
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Type of Work' (1000 rows x 26 cols) --------------------
+  District | Total_Employed_Population | Male_Employed_Population | Female_Employed_Population | Total_Salary/Wage | Male_Salary/Wage | Female__Salary/Wage | Total_Profit | Male_Profit | Female_Profit | Total_Household Use/Consumption | Male_Household Use/Consumption | Female_Household Use/Consumption | Total_Apprenticeship | Male_Apprenticeship | Female_Apprenticeship
+  Barguna | 276918 | 241102 | 35816 | 149065 | 132440 | 16625 | 59936 | 53276 | 6660 | 50621 | 43986 | 6635 | 17296 | 11400 | 5896
+  Barishal | 696011 | 601647 | 94364 | 399070 | 352518 | 46552 | 170340 | 153302 | 17038 | 95310 | 79114 | 16196 | 31291 | 16713 | 14578
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Employed Population by Sector' (1000 rows x 26 cols) --------------------
+  District | Total_Employed_Population | Male_Employed_Population | Female_Employed_Population | Total_Agriculture | Male_Agriculture | Female_Agriculture | Total_Industry | Male_Industry | Female_Industry | Total_Service | Male_Service | Female_Service
+  Barguna | 276918 | 241102 | 35816 | 136245 | 112834 | 23411 | 26881 | 25318 | 1563 | 113792 | 102950 | 10842
+  Barishal | 696011 | 601647 | 94364 | 273449 | 217853 | 55596 | 89878 | 84865 | 5013 | 332684 | 298929 | 33755
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet '15-24 Years NEET' (1000 rows x 28 cols) --------------------
+  District | NEET_Overall | NEET_male_Overall | NEET_female_Overall | NEET_rural_Overall | NEET_male_rural_Overall | NEET_female_rural_Overall | NEET_urban_Overall | NEET_male_urban_Overall | NEET_female_urban_Overall | NEET_15_19 year_overall | NEET_male_15_19 year | NEET_female_15_19 year | NEET_rural_15_19 year | NEET_male_rural_15_19 year | NEET_female_rural_15_19 year | NEET_urban_15_19 year | NEET_male_urban_15_19 year | NEET_female_urban_15_19 year | NEET_20_24 year_overall | NEET_male_20_24 year | NEET_female_20_24 year | NEET_rural_20_24 year | NEET_male_rural_20_24 year | NEET_female_rural_20_24 year | NEET_urban_20_24 year | NEET_male_urban_20_24 year | NEET_female_urban_20_24 year
+  Bagerhat | 35.66 | 13.89 | 55.29 | 35.77 | 13.92 | 55.8 | 35.32 | 13.78 | 53.79 | 27.01 | 14.85 | 38.71 | 27 | 14.74 | 38.98 | 27.05 | 15.18 | 37.92 | 44.95 | 12.78 | 72.01 | 45.26 | 12.97 | 72.9 | 44 | 12.2 | 69.41
+  Bandarban | 30.44 | 10.97 | 49.49 | 33.09 | 12.81 | 52.17 | 26.96 | 8.67 | 45.81 | 25.7 | 13.53 | 37.75 | 29.63 | 16.57 | 42.16 | 20.67 | 9.78 | 31.9 | 35.83 | 8.02 | 62.7 | 36.95 | 8.53 | 63.14 | 34.33 | 7.36 | 62.08
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet ' Population having Mobile Phone' (1000 rows x 26 cols) --------------------
+  District | Mobile Phone_Total_5year+ | Mobile Phone_Male_5year+ | Mobile Phone_Female_5year+ | Mobile Phone_Rural_Total_5year+ | Mobile Phone_Rural_Male_5year+ | Mobile Phone_Rural_female_5year+ | Mobile Phone_urban_Total_5year+ | Mobile Phone_urban_Male_5year+ | Mobile Phone_urban_female_5year+ | Mobile Phone_Total_15 year+ | Mobile Phone_Male_15 year+ | Mobile Phone_Female_15 year+ | Mobile Phone_Rural_Total_15 year+ | Mobile Phone_Rural_Male_15 year+ | Mobile Phone_Rural_female_15 year+ | Mobile Phone_urban_Total_15 year+ | Mobile Phone_urban_Male_15 year+ | Mobile Phone_urban_female_15 year+
+  Barguna | 57.69 | 66.85 | 48.95 | 56.65 | 66.3 | 47.48 | 61.17 | 68.69 | 53.95 | 71.39 | 83.87 | 59.87 | 70.07 | 83.13 | 58.03 | 75.85 | 86.35 | 66.08
+  Barishal | 57.73 | 65.49 | 50.39 | 55.44 | 63.74 | 47.82 | 62.96 | 69.32 | 56.55 | 72.49 | 83.43 | 62.49 | 69.96 | 81.73 | 59.52 | 78.2 | 87.05 | 69.51
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Internet User' (1000 rows x 26 cols) --------------------
+  District | Inernet_Total_5year+ | Inernet_Male_5year+ | Inernet_Female_5year+ | Inernet_Rural_Total_5year+ | Inernet_Rural_Male_5year+ | Inernet_Rural_female_5year+ | Inernet_urban_Total_5year+ | Inernet_urban_Male_5year+ | Inernet_urban_female_5year+ | Inernet_Total_15 year+ | Inernet_Male_15 year+ | Inernet_Female_15 year+ | Inernet_Rural_Total_15 year+ | Inernet_Rural_Male_15 year+ | Inernet_Rural_female_15 year+ | Inernet_urban_Total_15 year+ | Inernet_urban_Male_15 year+ | Inernet_urban_female_15 year+
+  Barguna | 24.37 | 31.25 | 17.82 | 22.32 | 29.05 | 15.93 | 31.26 | 38.6 | 24.22 | 29.12 | 38.1 | 20.82 | 26.63 | 35.4 | 18.55 | 37.49 | 47.14 | 28.5
+  Barishal | 26.37 | 33.01 | 20.09 | 22.19 | 28.52 | 16.37 | 35.93 | 42.82 | 28.99 | 32.44 | 41.36 | 24.29 | 27.41 | 35.94 | 19.85 | 43.75 | 52.89 | 34.77
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Having Account in Financial' (1000 rows x 26 cols) --------------------
+  District | Have financial account_Overall | Have financial account_Male | Have financial account_Female | Have financial account_Rural | Have financial account_Rural_Male | Have financial account_Rural_Femal | Have financial account_Urban | Have financial account_Urban_Male | Have financial account_Urban_Femal
+  Barguna | 23.91 | 30.45 | 17.88 | 22.13 | 28.19 | 16.55 | 29.93 | 38.03 | 22.39
+  Barishal | 26.29 | 32.53 | 20.59 | 23.17 | 28.65 | 18.32 | 33.3 | 40.8 | 25.94
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet ' Having Mobile Banking Account' (1000 rows x 26 cols) --------------------
+  District | Mobile Bank Account_Overall | Mobile Bank Account_Male | Mobile Bank Account_Female | Mobile Bank Account_Rural | Mobile Bank Account_Rural_Male | Mobile Bank Account_Rural_Female | Mobile Bank Account_Urban | Mobile Bank Account_Urban_Male | Mobile Bank Account_Urban_Female
+  Barguna | 45.23 | 58.29 | 33.17 | 44.5 | 57.34 | 32.67 | 47.69 | 61.45 | 34.88
+  Barishal | 42.03 | 53.76 | 31.31 | 40.23 | 51.41 | 30.34 | 46.07 | 58.78 | 33.6
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Ethnic Population by Sex' (1000 rows x 26 cols) --------------------
+  District | # Overall_Ethnic Population | # Male _Ethnic Population | % Male_Ethnic Population | # Female_Ethnic Population | % Female_Ethnic Population
+  Barguna | 1137 | 555 | 48.81 | 582 | 51.19
+  Barishal | 843 | 479 | 56.82 | 364 | 43.18
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Population_District' (1000 rows x 26 cols) --------------------
+  District | # Overall_Bangladeshi_National | % Overall_Bangladeshi_National | # Male_Bangladeshi_National | % Male_Bangladeshi_National | # Female_Bangladeshi_National | % Female_Bangladeshi_National | # Hizra_Bangladeshi_National | % Hizra_Bangladeshi_National
+  Barguna | 1144674 | 0.69 | 569422 | 0.7 | 575180 | 0.69 | 72 | 0.89
+  Barishal | 3741221 | 2.27 | 1882997 | 2.3 | 1858097 | 2.23 | 127 | 1.56
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Returned Migrant' (1000 rows x 26 cols) --------------------
+  District | Number_Returned_Migrant | Percent_Returned_Migrant
+  Barguna | 2196 | 0.47
+  Barishal | 6098 | 1.31
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Household by Type of Dwelling' (1000 rows x 26 cols) --------------------
+  District | # of HH | # Rural HH | # of Urban HH | # of HH excluding slum and floatin | # of HH excluding slum and floatin | # of HH excluding slum and floatin | # of Slum HH | # of Slum HH _rural | # of Slum HH _urban | # of Floating  HH | # of Floating  HH _rural | # of Floating HH _urban
+  Barguna | 255390 | 196814 | 58576 | 254895 | 196804 | 58091 | 451 | 0 | 451 | 44 | 10 | 34
+  Barishal | 629626 | 438899 | 190727 | 620735 | 437901 | 182834 | 8160 | 696 | 7464 | 731 | 302 | 429
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Type of Household' (1000 rows x 26 cols) --------------------
+  District | # of HH | # Rural HH | # of Urban HH | # of General HH | # of General HH_Rural | # of General HH_Urban | # of Institutional Household | # of Institutional Household_Rural | # of Institutional Household_Urban | # of Other Household | # of Other Household_Rural | # of Other Household_Urban
+  Barguna | 255346 | 196804 | 58542 | 253388 | 195865 | 57523 | 286 | 164 | 122 | 1672 | 775 | 897
+  Barishal | 628895 | 438597 | 190298 | 620299 | 435645 | 184654 | 853 | 425 | 428 | 7743 | 2527 | 5216
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Household by Wall Material ' (1000 rows x 18 cols) --------------------
+  District | #Wall_Total | #Wall_Cement/Concrete/Brick/Terrac | #Wall_Ceramic Tiles | #Wall_Metal sheet/CI sheet/Corruga | #Wall_Wood/Bamboo/Mat/Palm Tree/Be | #Wall_Straw/ Chhan/Golpata/Palm Le | #Wall_Soil/ Mud | #Wall_Other Materials | # No Wall | Cement/Concrete/Brick/Terracotta_W | Ceramic Tiles_Wall_% | Metal sheet/CI sheet/Corrugated Ir | Wood/Bamboo/Mat/Palm Tree/Betal Nu | Straw/ Chhan/Golpata/Palm Leaf/Bic | Soil/ Mud_Wall_% | Other Materials__Wall_% | No wall %
+  Barguna | 253388 | 42420 | 568 | 196608 | 8960 | 1000 | 3674 | 106 | 52 | 16.74 | 0.22 | 77.59 | 3.54 | 0.39 | 1.45 | 0.04 | 0.02
+  Barishal | 620299 | 207674 | 2890 | 369151 | 32092 | 2817 | 5069 | 338 | 268 | 33.48 | 0.47 | 59.51 | 5.17 | 0.45 | 0.82 | 0.05 | 0.04
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Household by Roof Material ' (1000 rows x 26 cols) --------------------
+  District | # roof_Total | # roof_Cement/Concrete/Tile | # roof_Metal Sheet/ CI Sheet/Corru | # roof_Wood/Bamboo/Bichali/Golpata | # roof_Hand-made Tiles/Tile | # roof_Other Materials | # No Roof | Cement/Concrete/Tile_roof_% | Metal Sheet/ CI Sheet/Corrugated I | Wood/Bamboo/Bichali/Golpata Palm L | Hand-made Tiles/Tile_roof_% | Other Materials_roof_% | No_roof_%
+  Barguna | 253388 | 21310 | 228275 | 3485 | 67 | 101 | 150 | 8.41 | 90.09 | 1.38 | 0.03 | 0.04 | 0.06
+  Barishal | 620299 | 126802 | 481208 | 11475 | 250 | 246 | 318 | 20.44 | 77.58 | 1.85 | 0.04 | 0.04 | 0.05
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Household by Floor Material' (1000 rows x 26 cols) --------------------
+  District | # floor_Total | # floor_Cement/Concrete/Brick/Terr | # floor_Tiles/Mosaic | # floor_Wood/Bamboo/Mat/Palm Tree/ | # floor_Soil/Sand/Mud | # floor_Other Materials | Cement/Concrete/Brick/Terracotta_f | Tiles/Mosaic_floor_% | Wood/Bamboo/Mat/Palm Tree/Betel Nu | Soil/Sand/Mud_floor_% | Other Materials_floor_%
+  Barguna | 253388 | 45257 | 3350 | 7651 | 196953 | 177 | 17.86 | 1.32 | 3.02 | 77.73 | 0.07
+  Barishal | 620299 | 200560 | 24506 | 26967 | 367505 | 761 | 32.33 | 3.95 | 4.35 | 59.25 | 0.12
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Household by Structure' (1000 rows x 11 cols) --------------------
+  District | #_Total | #_Pucca | #_Semi-pucca | #_Kancha | #_Jhupri | Total_% | Pucca_% | Semi-pucca_% | Kancha_% | Jhupri_%
+  Barguna | 253388 | 19783 | 17311 | 214105 | 2189 | 100 | 7.81 | 6.83 | 84.5 | 0.86
+  Barishal | 620299 | 120577 | 66960 | 425206 | 7556 | 100 | 19.44 | 10.79 | 68.55 | 1.22
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Household by Ownership Status' (1000 rows x 26 cols) --------------------
+  District | Own dwelling unit_% | Rented but having own dwelling uni | Rented and having no own dwelling  | Rent free but having own dwelling  | Rent free and having no own dwelli
+  Barguna | 93.96 | 4.58 | 0.63 | 0.3 | 0.54
+  Barishal | 85.91 | 10.25 | 2.48 | 0.46 | 0.9
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Main Source of Drinking Water' (1000 rows x 26 cols) --------------------
+  District | Tap/pipe (Supply)_% | Tube-well (Deep/Shallow)_% | Bottled/Jar Water_% | Well_% | Pond/River/Canal/Lake_% | Spring_% | Rain Water_% | Others_%
+  Barguna | 3.17 | 87.7 | 0.32 | 0.05 | 6.07 | 0 | 2.67 | 0.02
+  Barishal | 5.41 | 93.72 | 0.12 | 0.03 | 0.71 | 0 | 0 | 0.01
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Toilet Facilities' (1000 rows x 26 cols) --------------------
+  District | Safe Disposal with Flushing/ Pouri | Unsafe Disposal 
+with Flushing/ 
+P | Pit Latrine with
+Slab/ Ventilated
+ | Pit Latrine 
+Without 
+Slab/ Open P | Raw/Open/ Hanging Latrine (Permane | Open Defecation/ No Latrine Availa
+  Barguna | 28.29 | 9.66 | 55.57 | 5.08 | 1.3 | 0.09
+  Barishal | 45.8 | 11.72 | 35.5 | 4.98 | 1.73 | 0.27
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Type of Toilet Use' (1000 rows x 26 cols) --------------------
+  District | Toilet_Not-Toilet_Shared_% | Toilet_Shared_% | Rural_Toilet_Not-Toilet_Shared_% | Rural_Toilet_Shared_% | urban_Toilet_Not-Toilet_Shared_% | urban_Toilet_Shared_%
+  Bagerhat | 87.32 | 12.68 | 88.21 | 11.79 | 84.48 | 15.52
+  Bandarban | 78.21 | 21.79 | 77.64 | 22.36 | 78.89 | 21.11
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Handwashing Facilities' (1000 rows x 26 cols) --------------------
+  District | Soap & Water_% | Only Soap_% | Only Water_% | No Separate Arrangement_%
+  Barguna | 60.59 | 1.71 | 27.28 | 10.41
+  Barishal | 71.14 | 1.95 | 18.69 | 8.23
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet ' Main Source of Electricity ' (1000 rows x 26 cols) --------------------
+  District | National Grid_% | Solar Power_% | Others_% | No Electricity Connection_%
+  Barguna | 98.41 | 0.69 | 0.16 | 0.75
+  Barishal | 98.42 | 0.96 | 0.12 | 0.5
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet ' Main Source of Cooking Fuel ' (1000 rows x 26 cols) --------------------
+  District | Straw/ Leaf/ Bran/ Husk_% | Wood/ Chalk/ Chopped Wood_% | Wood-coal/ Charcoal/ Dried Dung_% | Kerosene/ Paraffin_% | Petrol/ Diesel_% | Electricty_% | Supply Gas_% | LP Gas_% | Biogas_% | Others_%
+  Barguna | 2.69 | 88.31 | 4.48 | 0.01 | 0.01 | 0.04 | 0 | 4.4 | 0.02 | 0.04
+  Barishal | 5.03 | 78.08 | 2.75 | 0.02 | 0.02 | 0.06 | 0 | 13.88 | 0.06 | 0.1
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Foreign Remittance Recipient' (1000 rows x 26 cols) --------------------
+  District | Total_HH # | Rural_HH # | Urban_HH #
+  Barguna | 12017 | 9197 | 2820
+  Barishal | 35831 | 26117 | 9714
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
+--- sheet 'Number of Person & Avg HH Size' (1000 rows x 26 cols) --------------------
+  District | Total_HH # | # of HH with 1-Person | # of HH with 2-Person | # of HH with 3-Person | # of HH with 4-Person | # of HH with 5-Person | # of HH with 6-Person | # of HH with 7-Person | # of HH with 8-Person | # of HH with 9-Person | # of HH with 10-Person | # of HH with 10-Person + | Average Household Size
+  Barguna | 253388 | 10598 | 37618 | 57097 | 68828 | 43330 | 20901 | 8395 | 3499 | 1583 | 772 | 767 | 3.92
+  Barishal | 620299 | 28014 | 82321 | 135271 | 165285 | 110132 | 54039 | 23613 | 10535 | 5289 | 2819 | 2981 | 4.02
+  matching ['religion', 'muslim', 'hindu', 'buddhist', 'christian']: none in these rows
+
