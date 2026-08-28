@@ -1,7 +1,4 @@
-page: https://webapi.bps.go.id/v1/api/list/model/statictable/lang/ind/domain/1200/
-  56 bytes
-{"status":"Error","message":"Parameter Key is Missing."}
-page: https://sp2010.bps.go.id/
+page: https://sp2010.bps.go.id/index.php/site/tabel?tid=321&wid=0
   52,849 bytes
 <!DOCTYPE html>
 <html lang="">
@@ -29,6 +26,93 @@ page: https://sp2010.bps.go.id/
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Menyediakan data statistik nasional maupun internasional, untuk menghasilkan statistik yang mempunyai kebenaran akurat dan menggambarkan keadaan yang sebenarnya, dalam rangka mendukung Indonesia Maju">
 	<meta name="title" content="Sensus Penduduk 2010 - Badan Pusat Statistik">
-	<meta name="keyword" content="sensus bps, sensus indonesia, badan pusat statistik, website sensus, web sensus, data statistik, statistik i
-page: https://www.bps.go.id/en
-  unreachable: HTTPError: HTTP Error 403: Forbidden
+	<meta name="keyword" content="sensus bps, sensus indonesia, badan pusat statistik, website sensus, web sensus, data statistik, statistik indonesia, statistik nasional">
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<title>Sensus Penduduk 2010 - Badan Pusat Statistik</title>
+	<link rel="shortcut icon" href="/static/images/logo.png">
+	<meta name="theme-color" content="#043277" />
+	<meta property="og:url" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Sensus Penduduk 2010 - Badan Pusat Statistik">
+	<meta property="og:description" content="Sensus Penduduk 2010 - Badan Pusat Statistik">
+	<meta property="og:image" content="http://sensus.bps.go.id/static/images/icon/og-image.png">
+
+	<meta name="csrf-param" content="frontend-csrf">
+<meta name="csrf-token" content="zncrvN_ez12MyMmII-pBq4PgD2n0usAXB7lTVgM0GeO3RVH2mYGWOuWHiOdX3nHd0qs6HZbDjl1CihsVdnFBsg==">
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+<link href="/static/css/app.css" rel="stylesheet">
+<link href="/static/plugins/feather-icons/feather.css" rel="stylesheet">
+<link href="/static/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="/static/css/slick.css" rel="stylesheet">
+<link href="/static/css/jquery.fancybox.min.css" rel="stylesheet">
+<script src="/assets/d27eb723/jquery-3.6.3.min.js"></script>
+<script src="/assets/5c9a903d/yii.js"></script>
+<script src="/static/js/popper.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/app.js"></script>
+<script src="/static/js/select2.min.js"></script>
+<script src="/static/js/slick.min.js"></script>
+<script src="/static/js/w3.js"></script>
+<script src="/static/js/jquery.fancybox.min.js"></script>
+<script src="/static/js/clipboard.min.js"></script>
+<script src="/static/js/sweetalert.js"></script>
+<script src="/static/plugins/highcharts/highcharts.js"></script>
+<script src="/static/plugins/latex/MathJax/es5/tex-mml-chtml.js"></script>
+<script src="/static/plugins/highcharts/modules/exporting.js"></script>
+<script src="/static/plugins/highcharts/modules/export-data.js"></script>
+<script src="/static/plugins/highcharts/modules/drilldown.js"></script>	<style>
+		:root {
+			--accent-color: #043277;
+			--action-color: #327804;
+		}
+
+		::-moz-selection {
+			/* Code for Firefox */
+			background: var(--accent-color);
+			color: white;
+		}
+
+		::selection {
+			background: var(--accent-color);
+			color: white;
+		}
+
+		.bg-accent ::selection {
+			background: white;
+			color: var(--accent-color);
+		}
+
+		.bg-accent ::-moz-selection {
+			background: white;
+			color: var(--accent-color);
+		}
+	</style>
+</head>
+
+<body>
+			<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT27S8P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+					<!-- NAVBAR -->
+	<nav class="navbar navbar-expand-sm navbar-dark" id="navbar">
+		<div class="container">
+			<a class="navbar-brand d-flex" href="/main/index/sp2010">
+				<div class="image mr-3"><img src="/static/images/logo.png" alt="" height="40"></div>
+				<div class="text align-self-center">
+					<h5 class="font-weight-bold m-0 font-italic">BADAN PUSAT STATISTIK</h5>
+				</div>
+			</a>
+			<span id="logo-sensus" class="d-none d-md-block">
+				<img src="/view_image/images/5/sensus-penduduk-2010.png" alt="Sensus Penduduk 2010" height="66" style="object-position: 10px;">
+			</span>
+
+		</div>
+	</nav>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-accent" id="topnav">
+    <div class="container">
+        <div class="collapse navbar-collapse order-3 order-lg-0" id="navigation">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/main/index/sp2010">Beranda</a>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="
