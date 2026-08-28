@@ -237,12 +237,13 @@ def column_edges(pages: list[list[list[Cell]]],
             f"{province}: a tenth column ending near x={rest[0][1][0]} occurs "
             f"{rest[0][0]} times against {weighed[len(COLUMNS) - 1][0]} for "
             "the least common of the nine taken")
-    edges = sorted((float(band[0]), float(band[-1]))
-                   for _count, band in weighed[:len(COLUMNS)])
-    log("    columns end at "
-        + ", ".join(f"{lo:.0f}" if lo == hi else f"{lo:.0f}-{hi:.0f}"
-                    for lo, hi in edges))
-    return edges
+    return sorted((float(band[0]), float(band[-1]))
+                  for _count, band in weighed[:len(COLUMNS)])
+
+
+def describe(edges: list[tuple[float, float]]) -> str:
+    return ", ".join(f"{lo:.0f}" if lo == hi else f"{lo:.0f}-{hi:.0f}"
+                     for lo, hi in edges)
 
 
 def values(cells: list[Cell], edges: list[tuple[float, float]], province: str,
@@ -277,17 +278,22 @@ def districts(blob: bytes, province: str) -> dict[str, dict[str, int]]:
     per-sex rows, and every TEHSIL -- is a breakdown of something already
     counted, so the district closes as soon as its one row is read.
     """
-    # Two passes over the page, because where the columns are is a fact about
-    # the whole document and cannot be settled from the row in hand.
-    pages = list(words_by_row(blob))
-    edges = column_edges(pages, province)
-
+    # Two passes over each page, because where the columns are is a fact
+    # about the page and cannot be settled from the row in hand -- and it is
+    # a fact about the page rather than about the file: the table sits at its
+    # own horizontal offset on every page, so Khyber Pakhtunkhwa's columns end
+    # at 177-179 on page 1 and elsewhere twenty points to the left. Learned
+    # across the document, the commonest edges were a mixture of offsets that
+    # matched no page, and page 1's own figures were refused as belonging to
+    # no column.
     found: dict[str, dict[str, int]] = {}
     current: str | None = None
     locality: str | None = None
     skipped_tehsils = 0
+    geometries: list[tuple[tuple[float, float], ...]] = []
 
-    for rows in pages:
+    for rows in words_by_row(blob):
+        edges: list[tuple[float, float]] | None = None
         for cells in rows:
             line = " ".join(t for _a, _b, t in cells)
 
@@ -310,10 +316,21 @@ def districts(blob: bytes, province: str) -> dict[str, dict[str, int]]:
             # the file while still counting the tehsils it passed over.
             if not line.startswith("ALL SEXES"):
                 continue
+            if edges is None:
+                # Read when the page first has something to place, so a page
+                # this reader cannot make sense of is only fatal if a district
+                # is actually on it.
+                edges = column_edges([rows], province)
+                geometries.append(tuple(edges))
             numbers = values(cells, edges, province, current)
             if numbers and current not in found:
                 found[current] = dict(zip(COLUMNS, numbers))
             current = None                          # one row per district
+
+    if geometries:
+        log(f"    {len(set(geometries))} column layouts over "
+            f"{len(geometries)} pages of districts; the first ends at "
+            f"{describe(list(geometries[0]))}")
     log(f"    {len(found)} districts, {skipped_tehsils} tehsils passed over")
     return found
 
