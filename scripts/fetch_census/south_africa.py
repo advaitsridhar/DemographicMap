@@ -120,6 +120,16 @@ RELIGION_NAMES: dict[str, str] = {
     "Traditional African": "Traditional African religion",
 }
 
+# What the boundary file calls the same province. geoBoundaries' global
+# composite spells the Northern Cape "Nothern Cape", a letter short, so the
+# census's own spelling does not match it and the province would have joined
+# nothing. Declared rather than reached by a looser rule: "Nothern Cape" and
+# "Northern Cape" differ by less than "Eastern Cape" and "Western Cape" do, and
+# a match loose enough to bridge the first would bridge the second.
+ALIASES: dict[str, tuple[str, ...]] = {
+    "Northern Cape": ("Nothern Cape",),
+}
+
 CAPTIONS = {
     "population": "Table 2.2:",
     "ethnicity": "Table 2.4:",
@@ -512,6 +522,7 @@ def main() -> int:
         counts = groups[name]
         records.append(record(
             f"ZAF-{code.lower()}", name, level="admin1", parent="ZAF",
+            aliases=list(ALIASES.get(name, ())),
             population=measure(people[name], year=YEAR, source=SOURCE),
             population_note=POPULATION_NOTE,
             sex_ratio=measure(round(ratios[name] * 10),

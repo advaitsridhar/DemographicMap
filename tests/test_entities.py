@@ -2346,6 +2346,14 @@ class SouthAfricaLabels(unittest.TestCase):
         self.assertIsNone(self.name("language", "Ndebele"))
         self.assertIsNone(self.name("language", "Sotho"))
 
+    def test_the_boundary_files_misspelling_is_declared(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from fetch_census import south_africa
+        # geoBoundaries writes "Nothern Cape". Without the alias the province
+        # matches no shape at all.
+        self.assertEqual(south_africa.ALIASES["Northern Cape"],
+                         ("Nothern Cape",))
+
     def test_a_published_zero_is_kept(self):
         sys.path.insert(0, str(ROOT / "scripts"))
         from fetch_census import south_africa

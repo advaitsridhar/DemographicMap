@@ -1097,6 +1097,14 @@ Two smaller things worth writing down:
   stays plausible. An unmatched row is a visible gap; a mis-matched one is
   invisible and worse.
 
+One join needed declaring. geoBoundaries' global composite spells the Northern
+Cape **`Nothern Cape`**, a letter short, so the census's own spelling matches no
+shape and that province would have carried nothing. It is an alias rather than
+a looser matching rule, because "Nothern Cape" and "Northern Cape" differ by
+less than "Eastern Cape" and "Western Cape" do -- anything lenient enough to
+bridge the first would bridge the second, and put one province's people on
+another.
+
 Two label decisions follow from having both this release and the Factbook
 describing one country. The Factbook writes South Africa's languages as
 compounds -- `isiZulu or Zulu`, `Sepedi or Pedi` -- so those are declared
