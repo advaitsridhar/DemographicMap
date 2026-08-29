@@ -66,6 +66,13 @@ URL = "https://www.pbs.gov.pk/census-2023-tables"
 LICENCE = "Pakistan Bureau of Statistics, free reuse with attribution"
 YEAR = 2023
 
+PROVINCE_NOTE = (
+    "Census 2023 Table 9, the province's own printed row rather than a sum of "
+    "the districts below it. The two are the same figure -- the run checks "
+    "that every district adds up to this exactly -- but the printed row also "
+    "covers the districts geoBoundaries has no shape for, which a sum of what "
+    "landed on the map would silently leave out.")
+
 NOTE = ("Census 2023 Table 9. 'Scheduled Castes' is counted separately from "
         "Hindu in this table, as the census does, and Ahmadis are recorded as "
         "a category of their own rather than within Islam. The population is "
@@ -430,6 +437,22 @@ def main() -> int:
             continue
         check(province, found, whole)
         assembled = merge(province, found)
+
+        # The province itself, from its own printed row. Twelve districts have
+        # no boundary shape, so anything summed from what joins the map is
+        # short by their people -- Sindh by Larkana and Sujawal, 2.6 million.
+        # The printed row is not short, and the check above has just proved it
+        # equals the districts exactly.
+        counts = dict(zip(COLUMNS, whole))
+        total = counts["TOTAL"]
+        records.append(record(
+            f"PAK-{slug}", province, level="admin1", parent="PAK",
+            population=measure(total, year=YEAR, source=SOURCE),
+            religion=shares({k: v for k, v in counts.items() if k != "TOTAL"},
+                            total=total) or gap(NOT_AVAILABLE),
+            religion_year=YEAR, religion_note=PROVINCE_NOTE,
+            sources=[{"field": "population/religion", "name": SOURCE,
+                      "url": URL, "license": LICENCE}]))
         for name, counts in sorted(found.items()):
             total = counts["TOTAL"]
             parts = {k: v for k, v in counts.items() if k != "TOTAL"}
@@ -457,7 +480,8 @@ def main() -> int:
                          "partial Pakistan")
     out = args.out or PROCESSED / "pakistan_district.json"
     write_json(out, records)
-    log(f"  {len(records)} districts")
+    provinces = sum(1 for r in records if r["level"] == "admin1")
+    log(f"  {len(records) - provinces} districts and {provinces} provinces")
     return 0
 
 

@@ -979,6 +979,49 @@ to Bogura — and geoBoundaries still carries the older forms, with plain
 transliteration variants for three more. Declared rather than derived:
 "Nawabganj" and "Chapainababganj" share no word.
 
+### Indonesia: published, and not fetchable
+
+Indonesia is 284 million people and the largest population this map still has
+no subnational religion for. The data exists: BPS publishes *Population by
+Regency/Municipality and Religion* on each provincial site, one table covering
+that province's kabupaten. It could not be fetched, and the reason is worth
+recording precisely, because "unreachable" has meant four different things
+here and only one of them was about Indonesia.
+
+* `bps.go.id`, `www.bps.go.id` and the provincial `*.bps.go.id` sites answer
+  **HTTP 403** to a request carrying this project's User-Agent. Not a
+  certificate problem -- their DigiCert and Google chains are valid and cover
+  the hosts. The block is deliberate, and getting past it means claiming to be
+  a browser, which is circumventing a refusal rather than reading a
+  publication. This project does not do that.
+* `webapi.bps.go.id` **works**. It answered
+  `{"status":"Error","message":"Parameter Key is Missing."}` -- reachable,
+  functioning, and wanting a free registered key. This is BPS's own sanctioned
+  programmatic interface and is the route to take when a key exists.
+* `sp2010.bps.go.id`, the 2010 census service, is reachable and serves **one
+  identical 52,849-byte HTML document at every URL**. Its root, a table path, a
+  topic path, `/static/js/app.js`, `/static/css/app.css` and a deliberately
+  nonsense path all return the same bytes. Its apparent navigation and script
+  list are that document's own template, so searching it for an API endpoint
+  searches the same page again. There is nothing behind it to read.
+* `satudata.kemenag.go.id` (Ministry of Religion) and `data.go.id` time out.
+* HDX carries Indonesia's subnational **population** but not religion, so the
+  mirror that made Bangladesh possible does not help here.
+
+The honest state is therefore: the census exists, is public, and is not
+available to an automated reader without a key. Indonesia stays an explicit
+gap until one exists -- 284 million people uncoloured, with the reason written
+down, rather than a figure assembled from somewhere it should not have come
+from.
+
+Two of those bullets were mistakes before they were findings, and both are the
+same mistake. `sp2010.bps.go.id` was described in this repository as serving
+the 2010 tables in plain HTML before anyone had checked that it served
+anything; and `bps.go.id` was first recorded as unreachable on the strength of
+a 403 from a sandbox whose egress proxy blocks it, exactly as `bbs.gov.bd` was.
+A source is only as absent as the search behind it, and a search is only as
+good as the thing it actually fetched.
+
 ## Joining a row to a shape
 
 Every adapter row has to find one boundary polygon. Names alone cannot do it:

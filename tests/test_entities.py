@@ -1969,3 +1969,121 @@ class BangladeshZila(unittest.TestCase):
     def test_the_note_says_whose_shares_these_are(self):
         self.assertIn("hijra", self.bd.NOTE)
         self.assertIn("male and female", self.bd.NOTE)
+
+
+class RollUpVintage(unittest.TestCase):
+    """Two figures of different dates differ; that is not the same as a fault.
+
+    The population gate is a proxy for "are these all the children". It refuses
+    a set that falls short. But a census and a later estimate of the same
+    territory are the same people counted at different times, and the gap
+    between them is growth: Bangladesh's divisions carry 2011 figures and its
+    districts the 2022 census, so the children exceed their parents by a tenth
+    and every division was refused.
+    """
+
+    def kid(self, count, year=2022, group="Muslim"):
+        return {"religion": [{"group": group, "pct": 100.0, "count": count}],
+                "population": {"value": count, "year": year}}
+
+    def test_the_same_year_gets_the_base_tolerance(self):
+        self.assertEqual(be.allowance(2022, 2022, 100.0, 110.0),
+                         be.ROLLUP_TOLERANCE)
+
+    def test_children_newer_and_larger_are_allowed_to_have_grown(self):
+        # Bangladesh: 2011 parents, 2022 children, about a tenth larger.
+        self.assertGreater(be.allowance(2011, 2022, 100.0, 110.0), 0.15)
+
+    def test_children_older_and_smaller_are_allowed_to_have_grown_since(self):
+        # The other direction: a 2022 census under a 2025 estimate.
+        self.assertGreater(be.allowance(2025, 2022, 100.0, 95.0),
+                           be.ROLLUP_TOLERANCE)
+
+    def test_a_difference_pointing_the_wrong_way_gets_no_allowance(self):
+        # Children below an older parent is shrinkage, which is exactly what a
+        # missing child looks like.
+        self.assertEqual(be.allowance(2011, 2022, 100.0, 90.0),
+                         be.ROLLUP_TOLERANCE)
+        self.assertEqual(be.allowance(2025, 2022, 100.0, 110.0),
+                         be.ROLLUP_TOLERANCE)
+
+    def test_the_allowance_is_capped(self):
+        # Wales' children exceed its parent by 166%, which is two different
+        # things being counted, and no gap of dates excuses it.
+        self.assertLessEqual(be.allowance(1900, 2022, 100.0, 999.0),
+                             be.ROLLUP_TOLERANCE + be.ROLLUP_DRIFT_CAP)
+        parent = {"population": {"value": 1_168_000, "year": 2011}}
+        why = be.roll_up_field(parent, [self.kid(3_107_513)], "religion")
+        self.assertIn("children sum to", why)
+
+    def test_the_set_is_read_by_its_commonest_year_not_its_newest(self):
+        # New Zealand's authorities are 2023 but for the Chatham Islands, whose
+        # population this very function had rebuilt from its children and
+        # stamped 2025. Read as 2025 the direction inverted and the country was
+        # refused.
+        kids = [self.kid(100, 2023) for _ in range(16)] + [self.kid(100, 2025)]
+        self.assertEqual(be.common_year(kids), 2023)
+
+    def test_a_parent_without_a_population_is_filled_when_the_country_is_whole(self):
+        # Chittagong and Rajshahi publish no population at all. Every one of
+        # Bangladesh's 64 districts joins, so the shapes partition the country
+        # and these are certainly all of the division's children.
+        parent = {}
+        self.assertIsNone(be.roll_up_field(parent, [self.kid(1_000)], "religion",
+                                           whole_country=True))
+        self.assertEqual(parent["religion"][0]["group"], "Muslim")
+        self.assertIn("every division at this level", parent["religion_note"])
+
+    def test_a_parent_without_a_population_is_refused_when_it_is_not(self):
+        why = be.roll_up_field({}, [self.kid(1_000)], "religion")
+        self.assertIn("no published population", why)
+
+    def test_a_disagreeing_parent_is_overridden_only_when_the_country_is_whole(self):
+        # Dhaka carries a 2011 population of 49,729,000 and lost Mymensingh out
+        # of it in 2015, so its 44,215,759 people in 2022 are not a shortfall.
+        dhaka = {"population": {"value": 49_729_000, "year": 2011}}
+        self.assertIsNone(be.roll_up_field(dhaka, [self.kid(44_215_759)],
+                                           "religion", whole_country=True))
+        self.assertIn("disagrees with that by", dhaka["religion_note"])
+        # The same numbers without complete coverage stay refused.
+        why = be.roll_up_field({"population": {"value": 49_729_000, "year": 2011}},
+                               [self.kid(44_215_759)], "religion")
+        self.assertIn("children sum to", why)
+
+    def test_a_filled_parent_takes_its_children_population_and_says_what_it_replaced(self):
+        parent = {"population": {"value": 8_325_666, "year": 2011}}
+        be.roll_up_field(parent, [self.kid(9_100_104)], "religion",
+                         whole_country=True)
+        self.assertEqual(parent["population"]["value"], 9_100_104)
+        self.assertEqual(parent["population"]["year"], 2022)
+        self.assertIn("8,325,666", parent["population_note"])
+
+    def test_a_same_year_published_population_gives_way_to_the_children(self):
+        # Finland's nineteen regions total 5,652,881 for 2025 from Statistics
+        # Finland's register; the country carried 5,550,449 for 2025 from the
+        # Factbook. An itemised count against a general estimate, with the
+        # language shares already taken from the register.
+        parent = {"population": {"value": 5_550_449, "year": 2025}}
+        be.roll_up_field(parent, [self.kid(5_652_881, 2025)], "religion",
+                         whole_country=True)
+        self.assertEqual(parent["population"]["value"], 5_652_881)
+        self.assertIn("5,550,449", parent["population_note"])
+
+    def test_a_population_the_children_agree_with_is_left_alone(self):
+        # Ladakh's Leh and Kargil sum to exactly the 274,289 Wikidata gives it.
+        # Restamping that as "summed from 2 divisions" trades a named source
+        # for a derivation and tells a reader less about the same figure.
+        parent = {"population": {"value": 274_289, "year": 2011,
+                                 "source": "Wikidata (CC0)"}}
+        be.roll_up_field(parent, [self.kid(274_289, 2011)], "religion",
+                         whole_country=True)
+        self.assertEqual(parent["population"]["source"], "Wikidata (CC0)")
+        self.assertNotIn("population_note", parent)
+
+    def test_a_newer_published_population_is_not_replaced(self):
+        parent = {"population": {"value": 9_500_000, "year": 2025},
+                  "religion": None}
+        be.roll_up_field(parent, [self.kid(9_100_104)], "religion",
+                         whole_country=True)
+        self.assertEqual(parent["population"]["value"], 9_500_000)
+        self.assertNotIn("population_note", parent)

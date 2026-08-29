@@ -97,6 +97,9 @@ def main() -> int:
     ap.add_argument("--accept", default="",
                     help="Accept header, for an API that content-negotiates "
                          "its format (SDMX, JSON-stat)")
+    ap.add_argument("--find", default="",
+                    help="print the parts of the body matching this regex, "
+                         "for a page whose content is fetched by script")
     ap.add_argument("--raw", type=int, default=0,
                     help="print the first N bytes of the body instead of "
                          "parsing links; for JSON endpoints and catalogue APIs")
@@ -133,6 +136,19 @@ def page(url: str, args: argparse.Namespace) -> None:
         print(f"  unreachable: {type(err).__name__}: {str(err)[:400]}")
         return
     print(f"  {len(html):,} bytes")
+    # A page that is a script shell has the same bytes at every path -- BPS's
+    # 2010 census service answers root, a table URL and a topic URL with one
+    # identical 52,849-byte document -- so its anchors are the template's own
+    # navigation and the data is somewhere its scripts know about. --find
+    # prints just the parts of the body that match, rather than the body.
+    if args.find:
+        import re
+
+        hits = sorted(set(re.findall(args.find, html)))
+        print(f"  {len(hits)} distinct match(es) for {args.find!r}")
+        for hit in hits[:args.limit]:
+            print(f"    {hit if isinstance(hit, str) else hit}")
+        return
     # A catalogue API answers in JSON, which has no anchors to parse.
     if args.raw:
         print(html[:args.raw])
