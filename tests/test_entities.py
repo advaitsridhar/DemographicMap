@@ -2087,3 +2087,47 @@ class RollUpVintage(unittest.TestCase):
                          whole_country=True)
         self.assertEqual(parent["population"]["value"], 9_500_000)
         self.assertNotIn("population_note", parent)
+
+
+class ProbeLinksPaths(unittest.TestCase):
+    """Both ways of reading a page, because only one of them was exercised.
+
+    --find was added with an `import re` inside its own branch, which made the
+    name local to the whole function and left the anchor scan -- every call
+    that does not pass --find -- raising UnboundLocalError. It reached main and
+    broke the first probe run after it.
+    """
+
+    HTML = '<a href="/a.pdf">Report</a><a href="/b.csv">Data</a>'
+
+    def setUp(self):
+        import argparse
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import probe_links
+        self.probe = probe_links
+        self.real_fetch = probe_links.fetch
+        probe_links.fetch = lambda url, accept="", timeout=25: self.HTML
+        self.args = argparse.Namespace(accept="", timeout=25, find="", raw=0,
+                                       match="pdf", limit=10, check=0, head=False)
+
+    def tearDown(self):
+        self.probe.fetch = self.real_fetch
+
+    def out(self):
+        import contextlib, io
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            self.probe.page("https://example.org/", self.args)
+        return buf.getvalue()
+
+    def test_the_anchor_scan_runs_without_find(self):
+        printed = self.out()
+        self.assertIn("1 matching link(s)", printed)
+        self.assertIn("https://example.org/a.pdf", printed)
+
+    def test_find_prints_only_what_matched(self):
+        self.args.find = "[a-z]+[.]pdf"
+        printed = self.out()
+        self.assertIn("1 distinct match(es)", printed)
+        self.assertIn("a.pdf", printed)
+        self.assertNotIn("matching link(s)", printed)

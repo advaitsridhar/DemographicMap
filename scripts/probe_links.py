@@ -142,8 +142,6 @@ def page(url: str, args: argparse.Namespace) -> None:
     # navigation and the data is somewhere its scripts know about. --find
     # prints just the parts of the body that match, rather than the body.
     if args.find:
-        import re
-
         hits = sorted(set(re.findall(args.find, html)))
         print(f"  {len(hits)} distinct match(es) for {args.find!r}")
         for hit in hits[:args.limit]:
