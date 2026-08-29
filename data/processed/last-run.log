@@ -1,50 +1,306 @@
 probe_pdf: https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf
   3,587,195 bytes
   113 pages
-probe_pdf: 114 pages, 2 mention ['isiZulu', 'Ancestral']
+probe_pdf: 114 pages, 28 mention ['isiZulu', 'Coloured', 'religion']
 === front matter ===
 
 
-=== pages mentioning ['isiZulu', 'Ancestral'] (first 5) ===
+=== pages mentioning ['isiZulu', 'Coloured', 'religion'] (first 8) ===
 
---- page 34 ----------------------------------------------------
-Afrikaans 14,5 13,4 13,5 10,6
-English 8,7 8,3 9,7 8,7
-IsiNdebele 1,5 1,6 2,1 1,7
-IsiXhosa 17,9 17,6 16,0 16,3
-IsiZulu 22,8 23,8 22,7 24,4
-Sepedi 9,2 9,4 9,0 10,0
-Sesotho 7,7 7,9 7,6 7,8
-Setswana 8,2 8,2 8,0 8,3
-Sign language - - 0,5 0,02
-      ...
-Xitsonga 4,4 4,4 4,5 4,7
-Other 0,6 0,5 1,6 2,1
-Total 100,0 100,0 100,0 100,0
-Note: Excludes population aged younger than 1. Sign language data not available for 1996 and 2001.
-Results presented in Table 2.8 show that isiZulu remained the most spoken language in the country,
-constituting almost a quarter (24,4%), followed by isiXhosa (16,3%) and Afrikaans (10,6%). The findings
-showed a downward trend in persons who speak Afrikaans (from 14,5% in 1996 to 10,6% in 2022), followed
-by isiXhosa speakers. The proportion of persons who speak English, Xitsonga and Tshivenda remained
-relatively stable. The results further showed that less than 1% of the population communicated using sign
+--- page 11 ----------------------------------------------------
+STATISTICS SOUTH AFRICA x P0301.4
+EXECUTIVE SUMMARY
+The South African population and housing census provides a mechanism for the country to take stock of the
+population and housing numbers every 10 years. The census is a rich source of statistical information and the
+foundation of statistical sampling within the organisation. It provides information on the demographic, socio-
+economic and geographic characteristics of the population, as well as household characteristics. In a departure
+from previous practice, the 2022 census was the first digital census conducted by South Africa and used three
+modes of collection: Computer-assisted Personal Interview (CAPI); Computer-assisted Web Interview (CAWI);
+and Computer-assisted Telephonic Interview (CATI).
+The population of South Africa increased from 51,7 million in 2011 to more than 62 million in 2022; a growth
+rate of 1,8% in the intercensal period. Females constituted 51,5% of the total population, while 48,5% were
+males. Gauteng and KwaZulu-Natal had the highest populations at 15 million and 12,4 million respectively,
+while the Northern Cape had the smallest (1,3 million). Black Africans remain the dominant population group
+at 81,4%, followed by the coloured population at 8,2%. The white population percentage declined to 7,3% in
+2022 from 8,9% observed in 2011, while that for Indians/Asians increased slightly from 2,5% in 2011 to 2,7%
+in 2022. The median age increased to 28 years from 25 years in 2011, suggesting a consistent increase over
+time and an overall increase of three years.
+More than 55 000 homeless individuals were recorded, with more males (70,1%) than females (29,9%), for
+both roofless and sheltered. Homelessness was more prevalent in metropolitan areas (74,1%) compared to
+non-metropolitan areas (25,9%). City of Tshwane recorded the highest proportion of homeless persons
+(18,1%), followed by City of Johannesburg at 15,6%. Looking at the top five reasons for homelessness, job
+loss/no income was the most cited for both males and females (41,3%), followed by alcohol and drug abuse
+(25%).
+Internal migration results showed that two provinces still dominate internal migration in South Africa. Gauteng
+remained the dominant migration stream, receiving more than a third of all internal migrants, followed by
+Western Cape with 15%. Over the intercensal period, four provinces experienced an outflow of people, namely
+Limpopo, Eastern Cape, KwaZulu-Natal and Free State.
+Census 2022 showed there were more than 2,4 million international migrants, which equates to just above 3%
+of the total population. Most of these came from the Southern African Development Community (SADC) region
+(86%) and of these, 45,5% came from Zimbabwe, followed by Mozambique with 18,7% and Lesotho with
+10,2%. The top five sending countries to South Africa were Zimbabwe, Mozambique, Malawi, Lesotho and the
+United Kingdom; these five countries have also maintained their rank since 2011.
+More than three million children (0–4 years) participated in Early Childhood Development (ECD). Provincially,
+children in Northern Cape (57%) and North West (52,4%) were more likely not to participate in ECD, compared
+to other provinces.
+Census 2022
+[483 words in 36 rows]
 
---- page 35 ----------------------------------------------------
-Afrikaans 41,2 9,6 54,6 10,3 1,0 5,2 7,7 3,2 2,3 10,6
-English 22,0 4,8 2,4 1,5 14,4 1,0 9,2 1,5 1,0 8,7
-IsiNdebele 0,2 0,1 0,0 0,1 0,0 0,4 3,1 9,9 1,1 1,7
-IsiXhosa 31,4 81,8 4,5 5,5 3,1 4,8 6,7 1,0 0,2 16,3
-IsiZulu 0,4 0,3 0,3 3,7 80,0 1,6 23,1 27,8 0,6 24,4
-Sepedi 0,1 0,0 0,1 0,2 0,1 2,1 12,6 10,3 55,5 10,0
-Sesotho 1,0 2,4 1,2 72,3 0,6 5,9 13,1 2,3 0,8 7,8
-Setswana 0,1 0,0 35,7 5,3 0,0 72,8 10,4 1,6 1,4 8,3
-Sign language 0,01 0,01 0,02 0,01 0,01 0,03 0,02 0,02 0,02 0,02
-      ...
-Total 100,0 100,0 100,0 100,0 100,0 100,0 100,0 100,0 100,0 100,0
-Note: Excludes population aged younger than 1 year.
-Looking at the provinces and given our history of geographical disaggregation by ethnic and tribal
-backgrounds, it is expected that each province has a dominant spoken language. The results show that in
-KwaZulu-Natal and the Eastern Cape, four out of every five persons speak isiZulu and isiXhosa, respectively.
-Furthermore, more than 70% of the population in Free State and North West speak Sesotho and Setswana,
-respectively. In the Western Cape, two out of every five persons speak Afrikaans.
-Results on other specified languages included in Census 2022 showed that about 1% were Shona speakers.
-Provincial variations showed that Western Cape, Gauteng and North West provinces recorded proportions
+--- page 12 ----------------------------------------------------
+STATISTICS SOUTH AFRICA xi P0301.4
+Seven out of ten black African children attended an ECD facility compared to eight out of ten white children.
+Attendance at an educational institution increased to almost universal level between 1996 and 2022 for
+children aged 5 years and 6 years, while the attendance rate started to decline by age 15–24 over the period.
+Attendance increased for black Africans, coloureds and whites over the period while the Indian/Asian
+population showed little change. For both 2011 and 2022, business, economics and management sciences
+and education were dominated by females, while males continued to dominate in engineering and electrical
+infrastructure studies.
+The number of households increased from 14,4 million in 2011 to 17,8 million in 2022, an intercensal growth
+rate of 2%. The household size declined from 3,6 to 3,5 in 2022. KwaZulu-Natal consistently had the highest
+household size (4,4%), followed by Northern Cape (4,1%). The majority of households resided in formal
+dwellings (88,5%); Limpopo maintained the highest proportion of formal dwellings as was observed in 2011,
+increasing from 90% in 2011 to 95% in 2022. The distribution of household headship between females and
+males is nearly equal, with approximately a 50-50 share for each. KwaZulu-Natal had the highest proportion
+of female-headed households.
+Although there was an increase in the proportion of households with piped water, the rate of increase slowed
+over time. Almost half of households (48,4%) reported experiencing water interruptions for two or more
+consecutive days; Northern Cape (65,8%) had the highest proportion reporting water interruptions, followed
+by North West (65,2%). The least occurrence in water interruptions was recorded in the Western Cape (28%).
+Households with access to the internet increased to 79% in 2022 from 35% in 2011. Internet access via
+cellphone was the most common source of internet for most households.
+There was a slight decline in the number of households participating in agriculture across six of the nine
+provinces from 2011 to 2022. The exception was for Limpopo, where the number of agricultural households
+increased by almost 5%. Slight increases were observed for Gauteng and Mpumalanga as well. In both
+censuses, KwaZulu-Natal, Limpopo and Eastern Cape had the highest number of households participating in
+agriculture. Almost 2 million households reported participating in agriculture for household consumption only;
+of these, and these varied by population group of the household head. 93% were black African-headed
+households, while only 3% were white-headed households. Of the 17,6 million sheep that were reported
+nationally as part of livestock ownership, 58% were reported in Eastern Cape and 13% in the Western Cape.
+Ownership of chickens was more predominant in KwaZulu-Natal (20,3%), followed by Eastern Cape with
+16,7%.
+Census 2022
+[441 words in 32 rows]
+
+--- page 18 ----------------------------------------------------
+STATISTICS SOUTH AFRICA 6 P0301.4
+Table 2.4: Distribution of the population by population group and province, Census 1996–2022
+Population group
+Census
+Province year Black African Coloured Indian/Asian White Other Total
+1996 826 691 2 146 109 40 376 821 551 - 3 834 727
+Western 2001 1 207 429 2 438 976 45 030 832 901 - 4 524 335
+Cape
+2011 1 912 547 2 840 404 60 761 915 053 93 969 5 822 734
+2022 2 884 511 3 124 757 84 363 1 217 807 115 235 7 426 673
+1996 5 291 423 469 684 19 378 331 478 - 6 111 963
+2001 5 473 922 480 408 18 483 305 839 - 6 278 651
+Eastern Cape
+2011 5 660 230 541 850 27 929 310 450 21 595 6 562 053
+2022 6 189 075 547 741 37 568 403 061 48 339 7 225 784
+1996 448 880 436 319 2 350 111 650 - 999 200
+Northern 2001 461 262 425 717 2 379 102 518 - 991 876
+Cape
+2011 576 986 461 899 7 827 81 246 17 903 1 145 861
+2022 679 383 563 605 10 824 99 150 2 667 1 355 629
+1996 2 223 940 79 038 2 805 316 459 - 2 622 242
+2001 2 381 073 83 193 3 719 238 791 - 2 706 775
+Free State
+2011 2 405 533 83 844 10 398 239 026 6 790 2 745 590
+2022 2 630 556 78 141 12 978 235 915 4 274 2 961 864
+1996 7 037 724 116 798 790 791 556 997 - 8 502 310
+KwaZulu- 2001 8 163 564 140 286 798 163 482 115 - 9 584 129
+Natal
+2011 8 912 921 141 376 756 991 428 842 27 170 10 267 300
+2022 10 535 830 183 019 1 157 542 513 377 27 442 12 417 210
+1996 2 444 648 44 236 9 880 214 284 - 2 713 048
+2001 2 684 682 53 710 9 738 233 934 - 2 982 064
+North West
+2011 3 152 063 71 409 20 652 255 385 10 444 3 509 953
+2022 3 562 524 60 720 2 654 171 887 5 894 3 803 679
+
+--- page 19 ----------------------------------------------------
+STATISTICS SOUTH AFRICA 7 P0301.4
+Table 2.4 shows the population group distribution by province in South Africa, 1996–2022. The results show
+that the black African population remains the biggest population group across all provinces since 1996. The
+black African population was highest in Gauteng (12 765 312) and KwaZulu-Natal (10 535 830), and lowest in
+the Northern Cape province (679 383). The highest number of the coloured population was in the Western
+Cape over time; proportionally, they also remained the highest in the Western Cape at 42% in 2022, although
+they declined from 56% in 1996. The largest concentration of the white population group was recorded in
+Gauteng province (1 509 800) followed by the Western Cape (1 217 807) in 2022. However, the proportion of
+the white population declined gradually within each province over time; for instance, the white population
+constituted 22% of the population in Gauteng in 1996, but declined to only 10% in that province in 2022. It was
+21,4% of the Western Cape population in 1996 and declined to just above 16% of the total population in that
+province in 2022. The total number of the Indian/Asian population recorded in 2022 was 1 697 505;
+provincially, the highest number of the Indian/Asian population remains in KwaZulu-Natal (1 157 542) followed
+by Gauteng (329 736). This population group remained steady within these two provinces at just below 10%
+in KwaZulu-Natal and only 2% of the Gauteng population.
+Figure 2.3: Percentage distribution by population group, Census 1996–2022
+100
+80
+60
+%
+40
+20
+-
+1996 2001 2011 2022
+Black African 77.4 79 79.2 81.4
+Coloured 9.0 8.9 8.9 8.2
+Indian or Asian 2.6 2.5 2.5 2.7
+White 11.0 9.6 8.9 7.3
+Other - - 0.5 0.4
+Figure 2.3 presents the percentage distribution of population groups in South Africa for Census 1996 to 2022.
+The results show that eight in ten South Africans were black African, and less than one in ten were white in
+2022. The black Africans remained the highest population group, increasing from 77% recorded in 1996 to
+81,4% in 2022. On the other hand, the white population group declined from 11% in 1996 to 7,3% in 2022.
+The Indian/Asian population group remained below 3% across the four censuses, while the coloured
+population constituted 8,2% of the population in 2022.
+Census 2022
+[386 words in 36 rows]
+
+--- page 23 ----------------------------------------------------
+STATISTICS SOUTH AFRICA 11 P0301.4
+Figure 2.5: Percentage distribution of the population by population group and 5-year age groups,
+Census 2022
+12.0
+10.0
+8.0
+% 6.0
+4.0
+2.0
+-
+5-year age group
+Black African Coloured Indian/Asian White
+The distribution of the population groups by 5-year age groups is presented in Figure 2.5; it indicates that black
+Africans have the highest proportion of the population among those aged 0-34 years, while the white population
+group has the lowest in the same ages. The white population shows the highest proportion of older persons
+(50–85+) among all the population groups. The Indian/Asian population group had the highest proportion of
+persons aged between 35 and 44 years.
+A population structure or pyramid provides a consolidated picture of the age-sex distribution and composition
+of a population. Figures 2.6 to 2.7 below demonstrate the comparison of Census 2022 to the three previous
+censuses (1996, 2001 and 2011).
+Census 2022
+[153 words in 21 rows]
+
+--- page 27 ----------------------------------------------------
+Free State 97,2 92,1 93,8 90,4
+KwaZulu-Natal 88,2 87,7 90,5 91,0
+North West 97,7 99,1 102,9 98,2
+Gauteng 103,7 101,1 101,8 101,8
+Mpumalanga 93,0 91,0 95,6 92,4
+Limpopo 84,5 83,4 87,6 89,2
+South Africa 92,7 91,7 94,8 94,1
+Table 2.7 presents sex ratios by province, Census 1996–2022. Overall, lower sex ratios were observed across
+all four South African censuses. The results also show a slight increase in sex ratio from 93 in 1996 to 94 in
+2022 nationally. Gauteng was the only province that recorded sex ratios above 100 across the four censuses.
+North West was the only other one with a sex ratios of above 100 but only (102,9) in 2011. Migration factors
+may be associated with the provincial sex ratio variation. For examples, the high number of males in the
+Gauteng province and the lower number in Limpopo and Eastern Cape in particular, the Limpopo province
+recorded the lowest sex ratio between 1996 and 2022, followed by Eastern Cape province at 85,9 in 1996 and
+90,0 in the 2022 census.
+Figure 2.9: Sex ratio by population group, Census 1996–2022
+104
+102
+100
+98
+o
+ita 9 6
+9 4
+r
+x 92
+e
+S 90
+88
+86
+84
+Black African Coloured Indian/Asian White
+1996 92 94 96 95
+2001 91 93 96 94
+2011 94 93 101 95
+2022 94 91 102 94
+Figure 2.9 shows the sex ratio by population group, Census 1996–2022. The results show consistently more
+female domination for all population groups, with the exception of the Indian/Asian population in 2011 (101)
+and 2022 (102). The sex ratio decreased slightly among the coloured population, from 94 in 1996 to 91 in
+2022. The white population group shows a slight decrease from 95 to 94, while the black African sex ratio
+remained consistent at 94 between 2011 and 2022.
+Census 2022
+[343 words in 48 rows]
+
+--- page 29 ----------------------------------------------------
+0
+Western Eastern Norther Free KwaZul North Gauten Mpumal Limpop
+SA
+Cape Cape n Cape State u Natal West g anga o
+1996 26 19 24 24 21 22 27 20 17 22
+2001 26 20 24 24 21 23 27 21 18 23
+2011 28 22 25 25 22 25 27 23 21 25
+2022 31 27 27 28 28 27 30 27 26 28
+Figure 2.11 shows the median age by province for Census 1996 to 2022. The results indicate that over time
+the median ages increased consistently, from 22 years in 1996 to 28 years in 2022, an overall increase of six
+years since 1996. All provinces recorded an increase in median age over the years, especially between 2011
+and 2022. The Western Cape (31 years) and Gauteng (30 years) maintained median ages above the national
+median age across all four censuses, while Limpopo (26 years) recorded the lowest in 2022. Eastern Cape,
+KwaZulu-Natal, Mpumalanga and Limpopo showed the highest increases between 2011 and 2022 at a range
+between four and six years.
+Figure 2.12: Median age by population group, Census 1996–2022
+50
+40
+e
+g
+30
+a
+n
+a
+id
+20
+e
+M
+10
+0
+Black African Coloured Indian/Asian White
+1996 21 23 26 33
+2001 22 24 29 35
+2011 21 26 32 38
+2022 27 30 37 45
+Census 2022
+[254 words in 51 rows]
+
+--- page 30 ----------------------------------------------------
+STATISTICS SOUTH AFRICA 18 P0301.4
+Figure 2.12 presents the median age by population group for Census 1996 to 2022. The results show that
+median ages gradually increased among all population groups over the years. This shows an increase ranging
+between four and seven years across the different population groups in this period. The median age of the
+white population group reflects an ageing population, while black Africans remain relatively younger. The
+median age increased from 21 to 27 years among black Africans and from 38 to 45 years among the white
+population between 2011 and 2022, while coloured and Indian/Asian populations increased from 26 to 30
+years and 32 to 37 years, respectively over the same period.
+2.7 Marital status
+The question on marital status is asked from all persons aged 12 years and older at the time of the census. It
+is an important indicator of the circumstances of individuals in relation to other demographic factors such as
+fertility and socio-economic variables. Marital status also provides an understanding of marital trends and
+family formation and dissolution.
+Figure 2.13: Percentage distribution of the population aged 12 years and older and marital status,
+Census 2011 and 2022
+54.0
+Never married
+62.2
+4.6
+Widowed
+4.0
+0.8
+Separated, but still legally married
+0.4
+1.5
+Divorced
+1.6
+9.2
+Living together like husband and wife/partners
+7.8
+Legally married (include 29.9
+customary,traditional,religious,etc.)
+24.0
+0.0 10.0 20.0 30.0 40.0 50.0 60.0 70.0
+2011 2022
+Figure 2.13 shows the distribution of person by marital status for 2011 and 2022. The results indicate an 8,2
+percentage point increase among never married persons between 2011 and 2022. On the other hand, there
+
+... and 20 further pages match; re-run with a narrower --terms to see them.
