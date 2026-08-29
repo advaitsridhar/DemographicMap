@@ -120,6 +120,12 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "animist", "Animist", "Animiste", "animism", "Animism",
         "ethnic religionist", "African traditionalist",
         "traditional African religion", "customary beliefs", "folk",
+        # Census 2022 heads the column "Traditional African" and calls it
+        # "Traditional African religion" in the prose on the same page. The
+        # Factbook string is the tail of "ancestral, tribal, animist, or other
+        # traditional African religions", which its parser leaves cut in half.
+        "Traditional African", "Traditional African religion",
+        "or other traditional African religions",
         "Shaman", "shamanist", "Badimo", "Modekngei", "Mana",
     ),
     # Maori churches. Stats NZ classifies these apart from Christian and this
@@ -143,7 +149,7 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "non-believers", "non-believer", "non-believer/agnostic",
         "no religious affiliation", "not religious",
         "agnostic or atheist", "none/atheist", "nonbeliever/agnostic",
-        "atheist or agnostic",
+        "atheist or agnostic", "agnosticism",
     ),
     "Not stated": (
         "Not stated", "Not answered", "Religious affiliation not stated",
@@ -242,6 +248,27 @@ LANGUAGE: dict[str, tuple[str, ...]] = {
     "Vietnamese": ("Vietnamese",),
     "Turkish": ("Turkish",),
     "Swahili": ("Swahili", "Kiswahili"),
+    # South Africa's official languages, each under the three forms this
+    # dataset meets: the census's own spelling, the Factbook's "X or Y"
+    # compound, and the bare English name other sources use.
+    #
+    # Two bare names are deliberately left out. "Ndebele" is Northern Ndebele
+    # in Zimbabwe and Southern Ndebele in South Africa, which are different
+    # languages; "Sotho" is Sesotho in Lesotho and, loosely, Sepedi in the
+    # north. Folding either would merge two languages under one name. The
+    # Factbook's compounds are safe because they only ever appear in the South
+    # African entry.
+    "isiZulu": ("isiZulu", "Zulu", "isiZulu or Zulu"),
+    "isiXhosa": ("isiXhosa", "Xhosa", "isiXhosa or Xhosa"),
+    "isiNdebele": ("isiNdebele", "isiNdebele or Ndebele", "Southern Ndebele"),
+    "Sepedi": ("Sepedi", "Pedi", "Sepedi or Pedi", "Northern Sotho",
+               "Sesotho sa Leboa"),
+    "Sesotho": ("Sesotho", "Sesotho or Sotho", "Southern Sotho"),
+    "Setswana": ("Setswana", "Tswana", "Setswana or Tswana"),
+    "siSwati": ("siSwati", "Swati", "siSwati or Swati", "Swazi"),
+    "Tshivenda": ("Tshivenda", "Venda", "Tshivenda or Venda"),
+    "Xitsonga": ("Xitsonga", "Tsonga", "Xitsonga or Tsonga"),
+    "South African Sign Language": ("South African Sign Language", "SASL"),
     # Residuals. Named so they stop appearing as the largest "language" in the
     # picker -- "other" reaches 92 countries and is not something anyone means
     # to filter for.
@@ -281,6 +308,11 @@ ETHNICITY: dict[str, tuple[str, ...]] = {
     "Belarusian": ("Belarusian", "Belarusians"),
     "Polish": ("Polish", "Poles"),
     "Jewish": ("Jewish", "Jews"),
+    # One South African category spelled two ways: the census writes
+    # "Coloured" and the Factbook "Colored". This is a spelling, not a merge
+    # of two states' categories -- both describe the same census answer in the
+    # same country.
+    "Coloured": ("Coloured", "Colored"),
     # Mexico writes its census category two ways in the same release.
     "Afro-descendant": (
         "Afro-descendant", "African descent", "Afro-Mexican or Afro-descendant",

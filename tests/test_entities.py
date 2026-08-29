@@ -8,6 +8,7 @@ shape.
 import collections
 import pathlib
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -2087,3 +2088,281 @@ class RollUpVintage(unittest.TestCase):
                          whole_country=True)
         self.assertEqual(parent["population"]["value"], 9_500_000)
         self.assertNotIn("population_note", parent)
+
+
+class ProbeLinksPaths(unittest.TestCase):
+    """Both ways of reading a page, because only one of them was exercised.
+
+    --find was added with an `import re` inside its own branch, which made the
+    name local to the whole function and left the anchor scan -- every call
+    that does not pass --find -- raising UnboundLocalError. It reached main and
+    broke the first probe run after it.
+    """
+
+    HTML = '<a href="/a.pdf">Report</a><a href="/b.csv">Data</a>'
+
+    def setUp(self):
+        import argparse
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import probe_links
+        self.probe = probe_links
+        self.real_fetch = probe_links.fetch
+        probe_links.fetch = lambda url, accept="", timeout=25: self.HTML
+        self.args = argparse.Namespace(accept="", timeout=25, find="", raw=0,
+                                       match="pdf", limit=10, check=0, head=False)
+
+    def tearDown(self):
+        self.probe.fetch = self.real_fetch
+
+    def out(self):
+        import contextlib, io
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            self.probe.page("https://example.org/", self.args)
+        return buf.getvalue()
+
+    def test_the_anchor_scan_runs_without_find(self):
+        printed = self.out()
+        self.assertIn("1 matching link(s)", printed)
+        self.assertIn("https://example.org/a.pdf", printed)
+
+    def test_find_prints_only_what_matched(self):
+        self.args.find = "[a-z]+[.]pdf"
+        printed = self.out()
+        self.assertIn("1 distinct match(es)", printed)
+        self.assertIn("a.pdf", printed)
+        self.assertNotIn("matching link(s)", printed)
+
+
+class ProbePdfPages(unittest.TestCase):
+    """Naming pages, because searching for a term cannot read a long table.
+
+    Table 2.4 of the South African census release puts "Coloured" in its header
+    and nine provinces beneath it; every excerpt centred on the term stopped
+    three provinces short, and the context that would have reached them applied
+    to twenty other pages too.
+    """
+
+    TEXT = "alpha one\n\fbeta two\n\fgamma three\n"
+
+    def setUp(self):
+        import argparse
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import probe_pdf
+        self.probe = probe_pdf
+        self.path = Path(tempfile.mkdtemp()) / "pages.txt"
+        self.path.write_text(self.TEXT, encoding="utf-8")
+        self.args = ["scripts/probe_pdf.py", str(self.path)]
+        self.parse = argparse
+        del argparse
+
+    def out(self, *extra):
+        import contextlib, io
+        buf = io.StringIO()
+        argv = sys.argv
+        sys.argv = self.args + list(extra)
+        try:
+            # stderr: common.log writes there, so the probe's whole report is
+            # on that stream and redirecting stdout captures nothing.
+            with contextlib.redirect_stderr(buf):
+                self.probe.main()
+        finally:
+            sys.argv = argv
+        return buf.getvalue()
+
+    def test_named_pages_print_whole(self):
+        printed = self.out("--pages", "2,3")
+        self.assertIn("beta two", printed)
+        self.assertIn("gamma three", printed)
+        self.assertNotIn("alpha one", printed)
+
+    def test_a_page_past_the_end_is_said_rather_than_guessed(self):
+        printed = self.out("--pages", "9")
+        self.assertIn("outside a document of 3 pages", printed)
+
+    def test_terms_still_work_when_no_pages_are_named(self):
+        printed = self.out("--terms", "beta", "--contents", "0")
+        self.assertIn("1 mention", printed)
+        self.assertIn("beta two", printed)
+
+
+class SouthAfricaRows(unittest.TestCase):
+    """Reading a table whose thousands separator is a space.
+
+    Every row below is copied from the release: five population groups and a
+    total, printed as a stream of digit fragments with nothing marking where
+    one number ends. The arithmetic is what settles it, and Gauteng is the row
+    that shows why nothing else would -- its coloured column is printed
+    "44 3857", with the space in the wrong place, so no rule about gaps or
+    digit counts reads it as 443,857.
+    """
+
+    def setUp(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from fetch_census import south_africa
+        self.za = south_africa
+
+    def test_a_row_of_fragments_resolves_to_one_reading(self):
+        row = "2 884 511 3 124 757 84 363 1 217 807 115 235 7 426 673".split()
+        self.assertEqual(
+            self.za.counted(row, "Western Cape"),
+            [2884511, 3124757, 84363, 1217807, 115235, 7426673])
+
+    def test_a_misplaced_space_is_still_read(self):
+        row = "12 765 312 44 3857 329 736 1 509 800 35 890 15 084 595".split()
+        self.assertEqual(self.za.counted(row, "Gauteng")[1], 443857)
+
+    def test_a_three_digit_value_is_not_swallowed_by_its_neighbour(self):
+        # Mpumalanga's "Other" is 440, the same shape as a thousands group.
+        row = "4 898 063 32 100 25 882 185 731 440 5 142 216".split()
+        self.assertEqual(self.za.counted(row, "Mpumalanga"),
+                         [4898063, 32100, 25882, 185731, 440, 5142216])
+
+    def test_a_row_that_does_not_add_up_is_refused(self):
+        # The release's own national row: its five groups come to 61,988,316
+        # against a printed 61,988,314, so it is read only under the stated
+        # allowance and refused without one.
+        row = ("50 486 856 5 052 349 1 697 506 4 504 252 247 353 "
+               "61 988 314").split()
+        with self.assertRaises(SystemExit) as caught:
+            self.za.counted(row, "South Africa")
+        self.assertIn("adding up to the total", str(caught.exception))
+        self.assertEqual(
+            self.za.counted(row, "South Africa",
+                            slack=self.za.NATIONAL_SLACK)[0], 50486856)
+
+    def test_a_leading_zero_is_not_a_number_of_its_own(self):
+        self.assertIsNone(self.za.value(["063"]))
+        self.assertEqual(self.za.value(["4", "898", "063"]), 4898063)
+        self.assertEqual(self.za.value(["0"]), 0)
+
+    def test_a_province_split_over_two_lines_still_matches(self):
+        self.assertIn(self.za.flat("KwaZulu-Natal"),
+                      self.za.flat("KwaZulu- Natal"))
+
+
+class SouthAfricaTables(unittest.TestCase):
+    """The four readers, against the rows the release actually prints."""
+
+    # Table 2.2's shape: a name, four censuses, and a percentage change after
+    # each of the last three. Only the 2022 column is read, and it is the run
+    # of digits between the second and third percentages -- so the earlier
+    # censuses here are filler and the 2022 figures are the published ones.
+    LATEST = {
+        "Western Cape": "7 433 019", "Eastern Cape": "7 230 204",
+        "Northern Cape": "1 355 946", "Free State": "2 964 412",
+        "KwaZulu-Natal": "12 423 907", "North West": "3 804 548",
+        "Gauteng": "15 099 422", "Mpumalanga": "5 143 324",
+        "Limpopo": "6 572 721", "South Africa": "62 027 503",
+    }
+
+    def population_rows(self, national=None):
+        rows = [["Province", "1996", "2001", "2011", "2022"]]
+        for name, latest in self.LATEST.items():
+            if name == "South Africa" and national:
+                latest = national
+            rows.append(name.split() + "1 000 000 1 100 000".split() + ["10,0"]
+                        + "1 200 000".split() + ["9,1"] + latest.split()
+                        + ["8,3"])
+        return rows
+
+    SHARES = [
+        ["Language", "WC", "EC", "NC", "FS", "KZN", "NW", "GP", "MP", "LP", "SA"],
+        ["Afrikaans", "41,2", "9,6", "54,6", "10,3", "1,0", "5,2", "7,7",
+         "3,2", "2,3", "10,6"],
+        ["Khoi,", "Nama", "&"],
+        ["San", "languages", "58,8", "90,4", "45,4", "89,7", "99,0", "94,8",
+         "92,3", "96,8", "97,7", "89,4"],
+        ["Total", "100,0", "100,0", "100,0", "100,0", "100,0", "100,0",
+         "100,0", "100,0", "100,0", "100,0"],
+    ]
+
+    def setUp(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from fetch_census import south_africa
+        self.za = south_africa
+
+    def quiet(self, call, *args):
+        import contextlib, io
+        with contextlib.redirect_stderr(io.StringIO()):
+            return call(*args)
+
+    def test_the_2022_column_is_the_one_between_the_last_two_percentages(self):
+        found = self.quiet(self.za.population, self.population_rows())
+        self.assertEqual(found["Western Cape"], 7433019)
+        self.assertEqual(found["KwaZulu-Natal"], 12423907)
+        self.assertEqual(found["South Africa"], 62027503)
+
+    def test_provinces_that_miss_the_national_total_are_refused(self):
+        rows = self.population_rows(national="62 027 999")
+        with self.assertRaises(SystemExit) as caught:
+            self.quiet(self.za.population, rows)
+        self.assertIn("against a printed South Africa of 62,027,999",
+                      str(caught.exception))
+
+    def test_a_wrapped_category_name_joins_up(self):
+        found = self.quiet(self.za.percentages, self.SHARES, "Table 2.9:",
+                           "language")
+        self.assertEqual(sorted(found["WC"]),
+                         ["Afrikaans", "Khoi, Nama & San languages"])
+        self.assertEqual(found["KZN"]["Afrikaans"], 1.0)
+
+    def test_a_column_that_does_not_reach_its_printed_total_is_refused(self):
+        rows = [list(r) for r in self.SHARES]
+        rows[1][1] = "31,2"                       # ten points missing from WC
+        with self.assertRaises(SystemExit) as caught:
+            self.quiet(self.za.percentages, rows, "Table 2.9:", "language")
+        self.assertIn("against a printed 100.0%", str(caught.exception))
+
+    def test_a_contents_entry_is_passed_over_for_the_real_table(self):
+        contents = [["Table", "2.9:", "Percentage", "distribution", "......", "23"]]
+        document = [contents, [["Table", "2.9:", "Language"]] + self.SHARES]
+        found = self.quiet(
+            self.za.read, document, "Table 2.9:",
+            lambda rows: self.za.percentages(rows, "Table 2.9:", "language"))
+        self.assertEqual(found["SA"]["Afrikaans"], 10.6)
+
+
+class SouthAfricaLabels(unittest.TestCase):
+    """The census's names and the Factbook's, for the same country."""
+
+    def setUp(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import canonical_groups
+        self.cg = canonical_groups
+
+    def name(self, field, label):
+        return self.cg.lookup(field).get(self.cg.key(label))
+
+    def test_the_census_spelling_and_the_factbook_compound_agree(self):
+        for label in ("IsiZulu", "isiZulu", "Zulu", "isiZulu or Zulu"):
+            self.assertEqual(self.name("language", label), "isiZulu")
+        self.assertEqual(self.name("ethnicity", "Colored"), "Coloured")
+        self.assertEqual(self.name("ethnicity", "Coloured"), "Coloured")
+
+    def test_two_ambiguous_bare_names_are_left_alone(self):
+        # Northern Ndebele (Zimbabwe) and Southern Ndebele (South Africa) are
+        # different languages, and "Sotho" is used for both Sesotho and Sepedi.
+        self.assertIsNone(self.name("language", "Ndebele"))
+        self.assertIsNone(self.name("language", "Sotho"))
+
+    def test_the_boundary_files_misspelling_is_declared(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from fetch_census import south_africa
+        # geoBoundaries writes "Nothern Cape". Without the alias the province
+        # matches no shape at all.
+        self.assertEqual(south_africa.ALIASES["Northern Cape"],
+                         ("Nothern Cape",))
+
+    def test_a_published_zero_is_kept(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from fetch_census import south_africa
+        # 0,0 in these tables means "below 0.05%", which is a measurement.
+        out = south_africa.composition({"Judaism": 0.0, "Islam": 1.9}, {})
+        self.assertEqual([r["group"] for r in out], ["Islam", "Judaism"])
+
+    def test_the_traditional_african_column_folds_with_the_rest(self):
+        self.assertEqual(self.name("religion", "Traditional African"),
+                         "Folk and traditional religion")
+        for label in ("Atheism", "Agnosticism", "No religious affiliation"):
+            self.assertEqual(self.name("religion", label), "No religion")

@@ -1022,6 +1022,99 @@ a 403 from a sandbox whose egress proxy blocks it, exactly as `bbs.gov.bd` was.
 A source is only as absent as the search behind it, and a search is only as
 good as the thing it actually fetched.
 
+### South Africa: a table whose separator is a space
+
+Statistics South Africa publishes Census 2022 through a portal at
+`census.statssa.gov.za` that is a JavaScript shell: fetched, it returns 57,280
+bytes of markup containing **no anchors at all**. Following links from it finds
+nothing, the same way Indonesia's `sp2010` service finds nothing, and for the
+same reason. What it does have is an `/assets/` path the shell does not affect,
+and under it the *Census 2022 Statistical Release* (P0301.4) -- 113 pages, 3.6
+MB, and the only public place four of these tables exist.
+
+Five of its tables carry a province in every row, and they are not equally
+good:
+
+| Table | What it gives | As |
+| --- | --- | --- |
+| 2.2 | Population by province, four censuses | Counts |
+| 2.4 | Population group by province | **Counts**, five groups and a total |
+| 2.7 | Sex ratio by province | Males per 100 females, one decimal |
+| 2.9 | Language spoken most often at home | Percentages, one decimal |
+| 2.10 | Religious affiliation/belief | Percentages, one decimal |
+
+That difference decides what the adapter claims. Population group is a count,
+so it reconciles and it sums into a country. Language and religion are
+percentages and nothing else, so they are stored as shares **with no count
+attached**, and the build's rule that a parent is never summed from children
+publishing shares without counts leaves South Africa's own religion and
+language at the province level. The alternative was available and is worse: a
+count reconstructed as 24,4% of 12,4 million people is out by up to six
+thousand and carries no mark saying it was never counted.
+
+**The thousands separator is a space.** So `2 884 511 3 124 757 84 363` is nine
+words for three numbers, and nothing in the row says where one ends. Pakistan's
+Table 9 posed the same problem and was solved by measuring the gaps between
+words. Here the arithmetic solves it outright: the row prints five groups and
+their total, so of the 3,003 ways to cut sixteen fragments into six numbers,
+the published one is the one where the first five add up to the sixth. Every
+province row has exactly one such reading, and two readings would be refused as
+firmly as none.
+
+That method needs no coordinates, which is the point. Gauteng's coloured column
+is printed `44 3857` -- the space in the wrong place, four digits after it
+where a thousands group has three. No rule about gaps or digit counts reads
+that as 443,857. The arithmetic does, and the nine provinces then sum to the
+published national figure for that column exactly.
+
+**The national row does not add up.** Read the same way it yields nothing: its
+five groups come to 61,988,316 against its own printed total of 61,988,314. Set
+against the nine provinces, its Black African and Indian/Asian cells are each
+one person high and its other four columns agree to the person. So the
+provinces are internally consistent and StatsSA's national row is off by two.
+The run reports both differences by name rather than widening a tolerance until
+they disappear, and reads that row only under an allowance whose size was taken
+from the discrepancy rather than chosen to make a check pass.
+
+**Population comes from Table 2.2, not from Table 2.4's own total.** Table 2.4
+excludes people whose population group was not specified, which makes its
+Western Cape total 7,426,673 where the province holds 7,433,019. Shares should
+be of the group question's own denominator; the population field should not be.
+
+Two smaller things worth writing down:
+
+* **The caption is not enough to find a table.** Every caption appears twice,
+  over the table and in the LIST OF TABLES, and the contents entry comes first.
+  The leader of dots that marks a contents entry wraps onto the following line
+  for the longer captions, so `Table 2.9:` reads identically in both places.
+  Every occurrence is therefore tried and the readers decide which one is a
+  table, which works because each reader is strict about the shape it expects.
+* **Median age by province is deliberately not read.** It exists, as Figure
+  2.11, but only as a chart: the province names survive extraction as
+  `Norther Cape` and `KwaZul u Natal`, and `North` is a prefix of two different
+  provinces. Recovering the column order would be a guess, and a wrong guess
+  gives Limpopo the Western Cape's median age while every number on the page
+  stays plausible. An unmatched row is a visible gap; a mis-matched one is
+  invisible and worse.
+
+One join needed declaring. geoBoundaries' global composite spells the Northern
+Cape **`Nothern Cape`**, a letter short, so the census's own spelling matches no
+shape and that province would have carried nothing. It is an alias rather than
+a looser matching rule, because "Nothern Cape" and "Northern Cape" differ by
+less than "Eastern Cape" and "Western Cape" do -- anything lenient enough to
+bridge the first would bridge the second, and put one province's people on
+another.
+
+Two label decisions follow from having both this release and the Factbook
+describing one country. The Factbook writes South Africa's languages as
+compounds -- `isiZulu or Zulu`, `Sepedi or Pedi` -- so those are declared
+aliases of the census's own spelling, and the province panels and the country
+panel now name the same language the same way. But the bare names `Ndebele` and
+`Sotho` are **not** folded: Ndebele is Northern Ndebele in Zimbabwe and
+Southern Ndebele in South Africa, two different languages, and Sotho is used
+for both Sesotho and Sepedi. The Factbook's compounds are safe precisely
+because they only ever appear in the South African entry.
+
 ## Joining a row to a shape
 
 Every adapter row has to find one boundary polygon. Names alone cannot do it:

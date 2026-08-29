@@ -1,0 +1,1633 @@
+[
+  {
+    "id": "ZAF-wc",
+    "level": "admin1",
+    "name": "Western Cape",
+    "parent": "ZAF",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7433019,
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 940,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "religion": [
+      {
+        "group": "Christianity",
+        "pct": 85.6
+      },
+      {
+        "group": "Traditional African religion",
+        "pct": 5.3
+      },
+      {
+        "group": "Islam",
+        "pct": 5.2
+      },
+      {
+        "group": "No religious affiliation",
+        "pct": 2.0
+      },
+      {
+        "group": "Other",
+        "pct": 0.8
+      },
+      {
+        "group": "Atheism",
+        "pct": 0.3
+      },
+      {
+        "group": "Agnosticism",
+        "pct": 0.3
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1
+      }
+    ],
+    "language": [
+      {
+        "group": "Afrikaans",
+        "pct": 41.2
+      },
+      {
+        "group": "isiXhosa",
+        "pct": 31.4
+      },
+      {
+        "group": "English",
+        "pct": 22.0
+      },
+      {
+        "group": "Shona",
+        "pct": 2.0
+      },
+      {
+        "group": "Sesotho",
+        "pct": 1.0
+      },
+      {
+        "group": "Other",
+        "pct": 0.7
+      },
+      {
+        "group": "Chichewa/Chewa, Nyanja/Chinyanja",
+        "pct": 0.5
+      },
+      {
+        "group": "isiZulu",
+        "pct": 0.4
+      },
+      {
+        "group": "isiNdebele",
+        "pct": 0.2
+      },
+      {
+        "group": "Xitsonga",
+        "pct": 0.2
+      },
+      {
+        "group": "Sepedi",
+        "pct": 0.1
+      },
+      {
+        "group": "Setswana",
+        "pct": 0.1
+      },
+      {
+        "group": "Tshivenda",
+        "pct": 0.1
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1
+      },
+      {
+        "group": "South African Sign Language",
+        "pct": 0.01
+      },
+      {
+        "group": "siSwati",
+        "pct": 0.0
+      },
+      {
+        "group": "Khoi, Nama & San languages",
+        "pct": 0.0
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Coloured",
+        "pct": 42.1,
+        "count": 3124757
+      },
+      {
+        "group": "Black African",
+        "pct": 38.8,
+        "count": 2884511
+      },
+      {
+        "group": "White",
+        "pct": 16.4,
+        "count": 1217807
+      },
+      {
+        "group": "Other",
+        "pct": 1.6,
+        "count": 115235
+      },
+      {
+        "group": "Indian/Asian",
+        "pct": 1.1,
+        "count": 84363
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/language/religion",
+        "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
+        "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source"
+      }
+    ],
+    "aliases": [],
+    "population_note": "Census 2022 Table 2.2. This is the province's population, not the denominator of the population-group question below it: Table 2.4 excludes people whose group was not specified and is 6,346 lower in the Western Cape.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Census 2022 Table 2.4, as counts. The five groups add up to the province's own printed total exactly, and the nine provinces add up to the national row in four of the five groups.",
+    "language_year": 2022,
+    "language_note": "Census 2022 Table 2.9, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report. The question is the language spoken most often in the household, and excludes children under one year old.",
+    "religion_year": 2022,
+    "religion_note": "Census 2022 Table 2.10, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report."
+  },
+  {
+    "id": "ZAF-ec",
+    "level": "admin1",
+    "name": "Eastern Cape",
+    "parent": "ZAF",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7230204,
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 900,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "religion": [
+      {
+        "group": "Christianity",
+        "pct": 86.1
+      },
+      {
+        "group": "Traditional African religion",
+        "pct": 11.0
+      },
+      {
+        "group": "No religious affiliation",
+        "pct": 1.3
+      },
+      {
+        "group": "Islam",
+        "pct": 0.6
+      },
+      {
+        "group": "Other",
+        "pct": 0.6
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1
+      },
+      {
+        "group": "Atheism",
+        "pct": 0.1
+      },
+      {
+        "group": "Agnosticism",
+        "pct": 0.1
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.0
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0
+      }
+    ],
+    "language": [
+      {
+        "group": "isiXhosa",
+        "pct": 81.8
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 9.6
+      },
+      {
+        "group": "English",
+        "pct": 4.8
+      },
+      {
+        "group": "Sesotho",
+        "pct": 2.4
+      },
+      {
+        "group": "Shona",
+        "pct": 0.5
+      },
+      {
+        "group": "Other",
+        "pct": 0.4
+      },
+      {
+        "group": "isiZulu",
+        "pct": 0.3
+      },
+      {
+        "group": "isiNdebele",
+        "pct": 0.1
+      },
+      {
+        "group": "Xitsonga",
+        "pct": 0.1
+      },
+      {
+        "group": "Chichewa/Chewa, Nyanja/Chinyanja",
+        "pct": 0.1
+      },
+      {
+        "group": "South African Sign Language",
+        "pct": 0.01
+      },
+      {
+        "group": "Khoi, Nama & San languages",
+        "pct": 0.01
+      },
+      {
+        "group": "Sepedi",
+        "pct": 0.0
+      },
+      {
+        "group": "Setswana",
+        "pct": 0.0
+      },
+      {
+        "group": "siSwati",
+        "pct": 0.0
+      },
+      {
+        "group": "Tshivenda",
+        "pct": 0.0
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.0
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Black African",
+        "pct": 85.7,
+        "count": 6189075
+      },
+      {
+        "group": "Coloured",
+        "pct": 7.6,
+        "count": 547741
+      },
+      {
+        "group": "White",
+        "pct": 5.6,
+        "count": 403061
+      },
+      {
+        "group": "Other",
+        "pct": 0.7,
+        "count": 48339
+      },
+      {
+        "group": "Indian/Asian",
+        "pct": 0.5,
+        "count": 37568
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/language/religion",
+        "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
+        "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source"
+      }
+    ],
+    "aliases": [],
+    "population_note": "Census 2022 Table 2.2. This is the province's population, not the denominator of the population-group question below it: Table 2.4 excludes people whose group was not specified and is 6,346 lower in the Western Cape.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Census 2022 Table 2.4, as counts. The five groups add up to the province's own printed total exactly, and the nine provinces add up to the national row in four of the five groups.",
+    "language_year": 2022,
+    "language_note": "Census 2022 Table 2.9, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report. The question is the language spoken most often in the household, and excludes children under one year old.",
+    "religion_year": 2022,
+    "religion_note": "Census 2022 Table 2.10, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report."
+  },
+  {
+    "id": "ZAF-nc",
+    "level": "admin1",
+    "name": "Northern Cape",
+    "parent": "ZAF",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1355946,
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 930,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "religion": [
+      {
+        "group": "Christianity",
+        "pct": 97.8
+      },
+      {
+        "group": "Islam",
+        "pct": 0.8
+      },
+      {
+        "group": "Traditional African religion",
+        "pct": 0.7
+      },
+      {
+        "group": "Other",
+        "pct": 0.4
+      },
+      {
+        "group": "No religious affiliation",
+        "pct": 0.3
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.0
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0
+      },
+      {
+        "group": "Atheism",
+        "pct": 0.0
+      },
+      {
+        "group": "Agnosticism",
+        "pct": 0.0
+      }
+    ],
+    "language": [
+      {
+        "group": "Afrikaans",
+        "pct": 54.6
+      },
+      {
+        "group": "Setswana",
+        "pct": 35.7
+      },
+      {
+        "group": "isiXhosa",
+        "pct": 4.5
+      },
+      {
+        "group": "English",
+        "pct": 2.4
+      },
+      {
+        "group": "Sesotho",
+        "pct": 1.2
+      },
+      {
+        "group": "Shona",
+        "pct": 0.4
+      },
+      {
+        "group": "isiZulu",
+        "pct": 0.3
+      },
+      {
+        "group": "Other",
+        "pct": 0.3
+      },
+      {
+        "group": "Khoi, Nama & San languages",
+        "pct": 0.17
+      },
+      {
+        "group": "Sepedi",
+        "pct": 0.1
+      },
+      {
+        "group": "Tshivenda",
+        "pct": 0.1
+      },
+      {
+        "group": "Xitsonga",
+        "pct": 0.1
+      },
+      {
+        "group": "Chichewa/Chewa, Nyanja/Chinyanja",
+        "pct": 0.1
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1
+      },
+      {
+        "group": "South African Sign Language",
+        "pct": 0.02
+      },
+      {
+        "group": "isiNdebele",
+        "pct": 0.0
+      },
+      {
+        "group": "siSwati",
+        "pct": 0.0
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Black African",
+        "pct": 50.1,
+        "count": 679383
+      },
+      {
+        "group": "Coloured",
+        "pct": 41.6,
+        "count": 563605
+      },
+      {
+        "group": "White",
+        "pct": 7.3,
+        "count": 99150
+      },
+      {
+        "group": "Indian/Asian",
+        "pct": 0.8,
+        "count": 10824
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 2667
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/language/religion",
+        "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
+        "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source"
+      }
+    ],
+    "aliases": [
+      "Nothern Cape"
+    ],
+    "population_note": "Census 2022 Table 2.2. This is the province's population, not the denominator of the population-group question below it: Table 2.4 excludes people whose group was not specified and is 6,346 lower in the Western Cape.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Census 2022 Table 2.4, as counts. The five groups add up to the province's own printed total exactly, and the nine provinces add up to the national row in four of the five groups.",
+    "language_year": 2022,
+    "language_note": "Census 2022 Table 2.9, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report. The question is the language spoken most often in the household, and excludes children under one year old.",
+    "religion_year": 2022,
+    "religion_note": "Census 2022 Table 2.10, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report."
+  },
+  {
+    "id": "ZAF-fs",
+    "level": "admin1",
+    "name": "Free State",
+    "parent": "ZAF",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2964412,
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 904,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "religion": [
+      {
+        "group": "Christianity",
+        "pct": 92.7
+      },
+      {
+        "group": "Traditional African religion",
+        "pct": 4.9
+      },
+      {
+        "group": "No religious affiliation",
+        "pct": 1.3
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5
+      },
+      {
+        "group": "Other",
+        "pct": 0.4
+      },
+      {
+        "group": "Agnosticism",
+        "pct": 0.1
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.0
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0
+      },
+      {
+        "group": "Atheism",
+        "pct": 0.0
+      }
+    ],
+    "language": [
+      {
+        "group": "Sesotho",
+        "pct": 72.3
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 10.3
+      },
+      {
+        "group": "isiXhosa",
+        "pct": 5.5
+      },
+      {
+        "group": "Setswana",
+        "pct": 5.3
+      },
+      {
+        "group": "isiZulu",
+        "pct": 3.7
+      },
+      {
+        "group": "English",
+        "pct": 1.5
+      },
+      {
+        "group": "Shona",
+        "pct": 0.3
+      },
+      {
+        "group": "Other",
+        "pct": 0.3
+      },
+      {
+        "group": "Sepedi",
+        "pct": 0.2
+      },
+      {
+        "group": "Xitsonga",
+        "pct": 0.2
+      },
+      {
+        "group": "isiNdebele",
+        "pct": 0.1
+      },
+      {
+        "group": "siSwati",
+        "pct": 0.1
+      },
+      {
+        "group": "Tshivenda",
+        "pct": 0.1
+      },
+      {
+        "group": "South African Sign Language",
+        "pct": 0.01
+      },
+      {
+        "group": "Khoi, Nama & San languages",
+        "pct": 0.01
+      },
+      {
+        "group": "Chichewa/Chewa, Nyanja/Chinyanja",
+        "pct": 0.0
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.0
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Black African",
+        "pct": 88.8,
+        "count": 2630556
+      },
+      {
+        "group": "White",
+        "pct": 8.0,
+        "count": 235915
+      },
+      {
+        "group": "Coloured",
+        "pct": 2.6,
+        "count": 78141
+      },
+      {
+        "group": "Indian/Asian",
+        "pct": 0.4,
+        "count": 12978
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 4274
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/language/religion",
+        "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
+        "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source"
+      }
+    ],
+    "aliases": [],
+    "population_note": "Census 2022 Table 2.2. This is the province's population, not the denominator of the population-group question below it: Table 2.4 excludes people whose group was not specified and is 6,346 lower in the Western Cape.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Census 2022 Table 2.4, as counts. The five groups add up to the province's own printed total exactly, and the nine provinces add up to the national row in four of the five groups.",
+    "language_year": 2022,
+    "language_note": "Census 2022 Table 2.9, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report. The question is the language spoken most often in the household, and excludes children under one year old.",
+    "religion_year": 2022,
+    "religion_note": "Census 2022 Table 2.10, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report."
+  },
+  {
+    "id": "ZAF-kzn",
+    "level": "admin1",
+    "name": "KwaZulu-Natal",
+    "parent": "ZAF",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12423907,
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 910,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "religion": [
+      {
+        "group": "Christianity",
+        "pct": 74.9
+      },
+      {
+        "group": "Traditional African religion",
+        "pct": 13.6
+      },
+      {
+        "group": "Hinduism",
+        "pct": 4.2
+      },
+      {
+        "group": "No religious affiliation",
+        "pct": 3.4
+      },
+      {
+        "group": "Islam",
+        "pct": 1.9
+      },
+      {
+        "group": "Other",
+        "pct": 1.8
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1
+      },
+      {
+        "group": "Atheism",
+        "pct": 0.1
+      },
+      {
+        "group": "Agnosticism",
+        "pct": 0.1
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0
+      }
+    ],
+    "language": [
+      {
+        "group": "isiZulu",
+        "pct": 80.0
+      },
+      {
+        "group": "English",
+        "pct": 14.4
+      },
+      {
+        "group": "isiXhosa",
+        "pct": 3.1
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 1.0
+      },
+      {
+        "group": "Sesotho",
+        "pct": 0.6
+      },
+      {
+        "group": "Shona",
+        "pct": 0.3
+      },
+      {
+        "group": "Chichewa/Chewa, Nyanja/Chinyanja",
+        "pct": 0.2
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Sepedi",
+        "pct": 0.1
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1
+      },
+      {
+        "group": "South African Sign Language",
+        "pct": 0.01
+      },
+      {
+        "group": "isiNdebele",
+        "pct": 0.0
+      },
+      {
+        "group": "Setswana",
+        "pct": 0.0
+      },
+      {
+        "group": "siSwati",
+        "pct": 0.0
+      },
+      {
+        "group": "Tshivenda",
+        "pct": 0.0
+      },
+      {
+        "group": "Xitsonga",
+        "pct": 0.0
+      },
+      {
+        "group": "Khoi, Nama & San languages",
+        "pct": 0.0
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Black African",
+        "pct": 84.8,
+        "count": 10535830
+      },
+      {
+        "group": "Indian/Asian",
+        "pct": 9.3,
+        "count": 1157542
+      },
+      {
+        "group": "White",
+        "pct": 4.1,
+        "count": 513377
+      },
+      {
+        "group": "Coloured",
+        "pct": 1.5,
+        "count": 183019
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 27442
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/language/religion",
+        "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
+        "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source"
+      }
+    ],
+    "aliases": [],
+    "population_note": "Census 2022 Table 2.2. This is the province's population, not the denominator of the population-group question below it: Table 2.4 excludes people whose group was not specified and is 6,346 lower in the Western Cape.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Census 2022 Table 2.4, as counts. The five groups add up to the province's own printed total exactly, and the nine provinces add up to the national row in four of the five groups.",
+    "language_year": 2022,
+    "language_note": "Census 2022 Table 2.9, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report. The question is the language spoken most often in the household, and excludes children under one year old.",
+    "religion_year": 2022,
+    "religion_note": "Census 2022 Table 2.10, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report."
+  },
+  {
+    "id": "ZAF-nw",
+    "level": "admin1",
+    "name": "North West",
+    "parent": "ZAF",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3804548,
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 982,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "religion": [
+      {
+        "group": "Christianity",
+        "pct": 95.5
+      },
+      {
+        "group": "Traditional African religion",
+        "pct": 2.3
+      },
+      {
+        "group": "No religious affiliation",
+        "pct": 1.2
+      },
+      {
+        "group": "Other",
+        "pct": 0.5
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.0
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0
+      },
+      {
+        "group": "Atheism",
+        "pct": 0.0
+      },
+      {
+        "group": "Agnosticism",
+        "pct": 0.0
+      }
+    ],
+    "language": [
+      {
+        "group": "Setswana",
+        "pct": 72.8
+      },
+      {
+        "group": "Sesotho",
+        "pct": 5.9
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 5.2
+      },
+      {
+        "group": "isiXhosa",
+        "pct": 4.8
+      },
+      {
+        "group": "Xitsonga",
+        "pct": 3.1
+      },
+      {
+        "group": "Sepedi",
+        "pct": 2.1
+      },
+      {
+        "group": "isiZulu",
+        "pct": 1.6
+      },
+      {
+        "group": "Shona",
+        "pct": 1.6
+      },
+      {
+        "group": "English",
+        "pct": 1.0
+      },
+      {
+        "group": "isiNdebele",
+        "pct": 0.4
+      },
+      {
+        "group": "Tshivenda",
+        "pct": 0.4
+      },
+      {
+        "group": "Other",
+        "pct": 0.3
+      },
+      {
+        "group": "siSwati",
+        "pct": 0.2
+      },
+      {
+        "group": "Chichewa/Chewa, Nyanja/Chinyanja",
+        "pct": 0.2
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2
+      },
+      {
+        "group": "South African Sign Language",
+        "pct": 0.03
+      },
+      {
+        "group": "Khoi, Nama & San languages",
+        "pct": 0.01
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Black African",
+        "pct": 93.7,
+        "count": 3562524
+      },
+      {
+        "group": "White",
+        "pct": 4.5,
+        "count": 171887
+      },
+      {
+        "group": "Coloured",
+        "pct": 1.6,
+        "count": 60720
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 5894
+      },
+      {
+        "group": "Indian/Asian",
+        "pct": 0.1,
+        "count": 2654
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/language/religion",
+        "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
+        "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source"
+      }
+    ],
+    "aliases": [],
+    "population_note": "Census 2022 Table 2.2. This is the province's population, not the denominator of the population-group question below it: Table 2.4 excludes people whose group was not specified and is 6,346 lower in the Western Cape.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Census 2022 Table 2.4, as counts. The five groups add up to the province's own printed total exactly, and the nine provinces add up to the national row in four of the five groups.",
+    "language_year": 2022,
+    "language_note": "Census 2022 Table 2.9, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report. The question is the language spoken most often in the household, and excludes children under one year old.",
+    "religion_year": 2022,
+    "religion_note": "Census 2022 Table 2.10, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report."
+  },
+  {
+    "id": "ZAF-gp",
+    "level": "admin1",
+    "name": "Gauteng",
+    "parent": "ZAF",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 15099422,
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1018,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "religion": [
+      {
+        "group": "Christianity",
+        "pct": 86.1
+      },
+      {
+        "group": "Traditional African religion",
+        "pct": 6.0
+      },
+      {
+        "group": "No religious affiliation",
+        "pct": 4.1
+      },
+      {
+        "group": "Islam",
+        "pct": 1.6
+      },
+      {
+        "group": "Other",
+        "pct": 1.1
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.7
+      },
+      {
+        "group": "Atheism",
+        "pct": 0.2
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1
+      },
+      {
+        "group": "Agnosticism",
+        "pct": 0.1
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.0
+      }
+    ],
+    "language": [
+      {
+        "group": "isiZulu",
+        "pct": 23.1
+      },
+      {
+        "group": "Sesotho",
+        "pct": 13.1
+      },
+      {
+        "group": "Sepedi",
+        "pct": 12.6
+      },
+      {
+        "group": "Setswana",
+        "pct": 10.4
+      },
+      {
+        "group": "English",
+        "pct": 9.2
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 7.7
+      },
+      {
+        "group": "Xitsonga",
+        "pct": 7.0
+      },
+      {
+        "group": "isiXhosa",
+        "pct": 6.7
+      },
+      {
+        "group": "isiNdebele",
+        "pct": 3.1
+      },
+      {
+        "group": "Tshivenda",
+        "pct": 2.4
+      },
+      {
+        "group": "Shona",
+        "pct": 2.1
+      },
+      {
+        "group": "siSwati",
+        "pct": 0.9
+      },
+      {
+        "group": "Other",
+        "pct": 0.7
+      },
+      {
+        "group": "Chichewa/Chewa, Nyanja/Chinyanja",
+        "pct": 0.6
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.3
+      },
+      {
+        "group": "South African Sign Language",
+        "pct": 0.02
+      },
+      {
+        "group": "Khoi, Nama & San languages",
+        "pct": 0.01
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Black African",
+        "pct": 84.6,
+        "count": 12765312
+      },
+      {
+        "group": "White",
+        "pct": 10.0,
+        "count": 1509800
+      },
+      {
+        "group": "Coloured",
+        "pct": 2.9,
+        "count": 443857
+      },
+      {
+        "group": "Indian/Asian",
+        "pct": 2.2,
+        "count": 329736
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 35890
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/language/religion",
+        "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
+        "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source"
+      }
+    ],
+    "aliases": [],
+    "population_note": "Census 2022 Table 2.2. This is the province's population, not the denominator of the population-group question below it: Table 2.4 excludes people whose group was not specified and is 6,346 lower in the Western Cape.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Census 2022 Table 2.4, as counts. The five groups add up to the province's own printed total exactly, and the nine provinces add up to the national row in four of the five groups.",
+    "language_year": 2022,
+    "language_note": "Census 2022 Table 2.9, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report. The question is the language spoken most often in the household, and excludes children under one year old.",
+    "religion_year": 2022,
+    "religion_note": "Census 2022 Table 2.10, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report."
+  },
+  {
+    "id": "ZAF-mp",
+    "level": "admin1",
+    "name": "Mpumalanga",
+    "parent": "ZAF",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5143324,
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 924,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "religion": [
+      {
+        "group": "Christianity",
+        "pct": 89.1
+      },
+      {
+        "group": "Traditional African religion",
+        "pct": 7.8
+      },
+      {
+        "group": "No religious affiliation",
+        "pct": 1.8
+      },
+      {
+        "group": "Other",
+        "pct": 0.6
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.0
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0
+      },
+      {
+        "group": "Atheism",
+        "pct": 0.0
+      },
+      {
+        "group": "Agnosticism",
+        "pct": 0.0
+      }
+    ],
+    "language": [
+      {
+        "group": "siSwati",
+        "pct": 30.5
+      },
+      {
+        "group": "isiZulu",
+        "pct": 27.8
+      },
+      {
+        "group": "Xitsonga",
+        "pct": 10.6
+      },
+      {
+        "group": "Sepedi",
+        "pct": 10.3
+      },
+      {
+        "group": "isiNdebele",
+        "pct": 9.9
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 3.2
+      },
+      {
+        "group": "Sesotho",
+        "pct": 2.3
+      },
+      {
+        "group": "Setswana",
+        "pct": 1.6
+      },
+      {
+        "group": "English",
+        "pct": 1.5
+      },
+      {
+        "group": "isiXhosa",
+        "pct": 1.0
+      },
+      {
+        "group": "Shona",
+        "pct": 0.6
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.3
+      },
+      {
+        "group": "Other",
+        "pct": 0.3
+      },
+      {
+        "group": "Tshivenda",
+        "pct": 0.2
+      },
+      {
+        "group": "Chichewa/Chewa, Nyanja/Chinyanja",
+        "pct": 0.1
+      },
+      {
+        "group": "South African Sign Language",
+        "pct": 0.02
+      },
+      {
+        "group": "Khoi, Nama & San languages",
+        "pct": 0.01
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Black African",
+        "pct": 95.3,
+        "count": 4898063
+      },
+      {
+        "group": "White",
+        "pct": 3.6,
+        "count": 185731
+      },
+      {
+        "group": "Coloured",
+        "pct": 0.6,
+        "count": 32100
+      },
+      {
+        "group": "Indian/Asian",
+        "pct": 0.5,
+        "count": 25882
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 440
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/language/religion",
+        "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
+        "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source"
+      }
+    ],
+    "aliases": [],
+    "population_note": "Census 2022 Table 2.2. This is the province's population, not the denominator of the population-group question below it: Table 2.4 excludes people whose group was not specified and is 6,346 lower in the Western Cape.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Census 2022 Table 2.4, as counts. The five groups add up to the province's own printed total exactly, and the nine provinces add up to the national row in four of the five groups.",
+    "language_year": 2022,
+    "language_note": "Census 2022 Table 2.9, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report. The question is the language spoken most often in the household, and excludes children under one year old.",
+    "religion_year": 2022,
+    "religion_note": "Census 2022 Table 2.10, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report."
+  },
+  {
+    "id": "ZAF-lp",
+    "level": "admin1",
+    "name": "Limpopo",
+    "parent": "ZAF",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6572721,
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 892,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics South Africa, Census 2022 Statistical Release P0301.4"
+    },
+    "religion": [
+      {
+        "group": "Christianity",
+        "pct": 86.8
+      },
+      {
+        "group": "Traditional African religion",
+        "pct": 6.3
+      },
+      {
+        "group": "No religious affiliation",
+        "pct": 5.1
+      },
+      {
+        "group": "Other",
+        "pct": 1.1
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.0
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0
+      },
+      {
+        "group": "Atheism",
+        "pct": 0.0
+      },
+      {
+        "group": "Agnosticism",
+        "pct": 0.0
+      }
+    ],
+    "language": [
+      {
+        "group": "Sepedi",
+        "pct": 55.5
+      },
+      {
+        "group": "Tshivenda",
+        "pct": 17.4
+      },
+      {
+        "group": "Xitsonga",
+        "pct": 17.3
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 2.3
+      },
+      {
+        "group": "Shona",
+        "pct": 1.6
+      },
+      {
+        "group": "Setswana",
+        "pct": 1.4
+      },
+      {
+        "group": "isiNdebele",
+        "pct": 1.1
+      },
+      {
+        "group": "English",
+        "pct": 1.0
+      },
+      {
+        "group": "Sesotho",
+        "pct": 0.8
+      },
+      {
+        "group": "isiZulu",
+        "pct": 0.6
+      },
+      {
+        "group": "Other",
+        "pct": 0.4
+      },
+      {
+        "group": "siSwati",
+        "pct": 0.3
+      },
+      {
+        "group": "isiXhosa",
+        "pct": 0.2
+      },
+      {
+        "group": "South African Sign Language",
+        "pct": 0.02
+      },
+      {
+        "group": "Khoi, Nama & San languages",
+        "pct": 0.01
+      },
+      {
+        "group": "Chichewa/Chewa, Nyanja/Chinyanja",
+        "pct": 0.0
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.0
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Black African",
+        "pct": 96.5,
+        "count": 6341601
+      },
+      {
+        "group": "White",
+        "pct": 2.5,
+        "count": 167524
+      },
+      {
+        "group": "Indian/Asian",
+        "pct": 0.5,
+        "count": 35958
+      },
+      {
+        "group": "Coloured",
+        "pct": 0.3,
+        "count": 18409
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 7172
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/language/religion",
+        "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
+        "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source"
+      }
+    ],
+    "aliases": [],
+    "population_note": "Census 2022 Table 2.2. This is the province's population, not the denominator of the population-group question below it: Table 2.4 excludes people whose group was not specified and is 6,346 lower in the Western Cape.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Census 2022 Table 2.4, as counts. The five groups add up to the province's own printed total exactly, and the nine provinces add up to the national row in four of the five groups.",
+    "language_year": 2022,
+    "language_note": "Census 2022 Table 2.9, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report. The question is the language spoken most often in the household, and excludes children under one year old.",
+    "religion_year": 2022,
+    "religion_note": "Census 2022 Table 2.10, which publishes this as percentages to one decimal place and no counts. No count is shown because none was published; multiplying by the province's population would invent a precision the census did not report."
+  }
+]
