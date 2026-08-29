@@ -124,7 +124,8 @@ RELIGION: dict[str, tuple[str, ...]] = {
         # "Traditional African religion" in the prose on the same page. The
         # Factbook string is the tail of "ancestral, tribal, animist, or other
         # traditional African religions", which its parser leaves cut in half.
-        "Traditional African", "or other traditional African religions",
+        "Traditional African", "Traditional African religion",
+        "or other traditional African religions",
         "Shaman", "shamanist", "Badimo", "Modekngei", "Mana",
     ),
     # Maori churches. Stats NZ classifies these apart from Christian and this

@@ -2346,6 +2346,13 @@ class SouthAfricaLabels(unittest.TestCase):
         self.assertIsNone(self.name("language", "Ndebele"))
         self.assertIsNone(self.name("language", "Sotho"))
 
+    def test_a_published_zero_is_kept(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from fetch_census import south_africa
+        # 0,0 in these tables means "below 0.05%", which is a measurement.
+        out = south_africa.composition({"Judaism": 0.0, "Islam": 1.9}, {})
+        self.assertEqual([r["group"] for r in out], ["Islam", "Judaism"])
+
     def test_the_traditional_african_column_folds_with_the_rest(self):
         self.assertEqual(self.name("religion", "Traditional African"),
                          "Folk and traditional religion")

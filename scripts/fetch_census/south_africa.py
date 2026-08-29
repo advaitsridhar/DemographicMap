@@ -96,12 +96,29 @@ PROVINCES: tuple[str, ...] = tuple(PROVINCE_BY_CODE[c] for c in CODES[:-1])
 GROUPS: tuple[str, ...] = ("Black African", "Coloured", "Indian/Asian",
                            "White", "Other")
 
-# The release writes "Sign language" in a table of South African languages and
-# names it in the prose on the same page: "Sign language was promulgated as
-# South Africa's 12th official language in July 2023". Left bare it would key
-# on itself and merge with any other country's generic sign-language row, which
-# is a different language.
-LANGUAGE_NAMES: dict[str, str] = {"Sign language": "South African Sign Language"}
+# Where a table's printed label is not the name the release itself uses.
+#
+# The nine Nguni and Sotho names are written with a lower-case prefix
+# everywhere in the prose -- "isiZulu remained the most spoken language" -- and
+# capitalised in the tables only because they start a line. The capital is
+# typesetting, not spelling, and leaving it in makes the province panels
+# disagree with the country panel about the name of the same language.
+#
+# "Sign language" is named in the prose on its own page: "Sign language was
+# promulgated as South Africa's 12th official language in July 2023". Left bare
+# it would key on itself and merge with any other country's generic
+# sign-language row, which is a different language.
+LANGUAGE_NAMES: dict[str, str] = {
+    "IsiNdebele": "isiNdebele", "IsiXhosa": "isiXhosa", "IsiZulu": "isiZulu",
+    "SiSwati": "siSwati",
+    "Sign language": "South African Sign Language",
+}
+
+# Table 2.10 heads the column "Traditional African"; the prose beneath it calls
+# the thing measured "Traditional African religion", which is what the row is.
+RELIGION_NAMES: dict[str, str] = {
+    "Traditional African": "Traditional African religion",
+}
 
 CAPTIONS = {
     "population": "Table 2.2:",
@@ -461,8 +478,11 @@ def composition(row: dict[str, float], names: dict[str, str],
     to sum a parent from children that publish shares with no counts, which is
     the right answer rather than a silent one.
     """
+    # A printed 0,0 is kept. It means "below 0.05%", which is a measurement,
+    # and dropping it would make a province look as though the census never
+    # offered the category. shares() keeps its zeros for the same reason.
     out = [{"group": names.get(label, label), "pct": round(pct, 2)}
-           for label, pct in row.items() if pct > 0]
+           for label, pct in row.items()]
     out.sort(key=lambda r: r["pct"], reverse=True)
     return out
 
@@ -503,7 +523,8 @@ def main() -> int:
             language=composition(tongues[code], LANGUAGE_NAMES)
             or gap(NOT_AVAILABLE),
             language_year=YEAR, language_note=LANGUAGE_NOTE,
-            religion=composition(beliefs[code], {}) or gap(NOT_AVAILABLE),
+            religion=composition(beliefs[code], RELIGION_NAMES)
+            or gap(NOT_AVAILABLE),
             religion_year=YEAR, religion_note=RELIGION_NOTE,
             sources=[{"field": "population/ethnicity/language/religion",
                       "name": SOURCE, "url": URL, "license": LICENCE}]))
