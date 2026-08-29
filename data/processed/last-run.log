@@ -1,14 +1,26 @@
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_links.py", line 180, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_links.py", line 124, in main
-    page(url, args)
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_links.py", line 159, in page
-    for m in re.finditer(r'<a\b[^>]*href="([^"]+)"[^>]*>(.*?)</a>', html, re.S | re.I):
-             ^^
-UnboundLocalError: cannot access local variable 're' where it is not associated with a value
 page: https://www.statssa.gov.za/
   204,101 bytes
+  8 matching link(s)
+  - Census
+    https://www.statssa.gov.za/
+  - 2022 Census
+    http://census.statssa.gov.za
+  - 2011 Census
+    https://www.statssa.gov.za/?page_id=3839
+  - 2011 Census products
+    https://www.statssa.gov.za/?page_id=3955
+  - 2001 Census
+    https://www.statssa.gov.za/?page_id=3892
+  - 1996 Census
+    https://apps.statssa.gov.za/census01/Census96/HTML/default.htm
+  - Noziphos@statssa.gov.za
+    mailto:Noziphos@statssa.gov.za
+  - Language Policy
+    https://www.statssa.gov.za/wp-content/uploads/2022/06/Approved_Language_Policy_2018.pdf
+page: https://www.datafirst.uct.ac.za/dataportal/index.php/catalog/982
+  57,721 bytes
+  2 matching link(s)
+  - ZAF-STATSSA-CENSUS-2022-V1
+    https://www.datafirst.uct.ac.za/dataportal/index.php/catalog/982
+  - South African Population Censuses and Surveys
+    https://www.datafirst.uct.ac.za/dataportal/index.php/collections/SAPCS
