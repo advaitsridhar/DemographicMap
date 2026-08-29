@@ -8,6 +8,7 @@ shape.
 import collections
 import pathlib
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -2131,3 +2132,55 @@ class ProbeLinksPaths(unittest.TestCase):
         self.assertIn("1 distinct match(es)", printed)
         self.assertIn("a.pdf", printed)
         self.assertNotIn("matching link(s)", printed)
+
+
+class ProbePdfPages(unittest.TestCase):
+    """Naming pages, because searching for a term cannot read a long table.
+
+    Table 2.4 of the South African census release puts "Coloured" in its header
+    and nine provinces beneath it; every excerpt centred on the term stopped
+    three provinces short, and the context that would have reached them applied
+    to twenty other pages too.
+    """
+
+    TEXT = "alpha one\n\fbeta two\n\fgamma three\n"
+
+    def setUp(self):
+        import argparse
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import probe_pdf
+        self.probe = probe_pdf
+        self.path = Path(tempfile.mkdtemp()) / "pages.txt"
+        self.path.write_text(self.TEXT, encoding="utf-8")
+        self.args = ["scripts/probe_pdf.py", str(self.path)]
+        self.parse = argparse
+        del argparse
+
+    def out(self, *extra):
+        import contextlib, io
+        buf = io.StringIO()
+        argv = sys.argv
+        sys.argv = self.args + list(extra)
+        try:
+            # stderr: common.log writes there, so the probe's whole report is
+            # on that stream and redirecting stdout captures nothing.
+            with contextlib.redirect_stderr(buf):
+                self.probe.main()
+        finally:
+            sys.argv = argv
+        return buf.getvalue()
+
+    def test_named_pages_print_whole(self):
+        printed = self.out("--pages", "2,3")
+        self.assertIn("beta two", printed)
+        self.assertIn("gamma three", printed)
+        self.assertNotIn("alpha one", printed)
+
+    def test_a_page_past_the_end_is_said_rather_than_guessed(self):
+        printed = self.out("--pages", "9")
+        self.assertIn("outside a document of 3 pages", printed)
+
+    def test_terms_still_work_when_no_pages_are_named(self):
+        printed = self.out("--terms", "beta", "--contents", "0")
+        self.assertIn("1 mention", printed)
+        self.assertIn("beta two", printed)

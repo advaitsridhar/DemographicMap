@@ -20,6 +20,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from pathlib import Path
 
@@ -177,6 +178,9 @@ def main() -> int:
                     help="lines of the front matter to print")
     ap.add_argument("--max-pages", type=int, default=12)
     ap.add_argument("--excerpt", type=int, default=2500)
+    ap.add_argument("--pages", default="",
+                    help="comma-separated page numbers to print in full, "
+                         "instead of searching for terms")
     ap.add_argument("--context", type=int, default=0,
                     help="print only the rows naming a term, with this many "
                          "rows either side, instead of the page's opening")
@@ -191,6 +195,24 @@ def main() -> int:
         ap.error("give a text file or --url")
     terms = [t.strip() for t in args.terms.split(",") if t.strip()]
     all_pages = pages(text)
+
+    # Naming the pages outright, once a search has found them. A term is how a
+    # table is first located and a poor way to read one: "Coloured" sits in
+    # Table 2.4's header, so every excerpt centred on it stops partway down the
+    # provinces and the three at the bottom never appear at all. Widening the
+    # context to reach them widens it on twenty other pages too.
+    wanted = [int(n) for n in re.split(r"[,\s]+", args.pages) if n.strip()]
+    if wanted:
+        log(f"probe_pdf: {len(all_pages)} pages, printing {wanted}")
+        for number in wanted:
+            if not 1 <= number <= len(all_pages):
+                log(f"\n--- page {number}: outside a document of "
+                    f"{len(all_pages)} pages")
+                continue
+            log(f"\n--- page {number} " + "-" * 52)
+            log(condense(all_pages[number - 1], args.excerpt))
+        return 0
+
     hits = matching(text, terms)
 
     log(f"probe_pdf: {len(all_pages)} pages, {len(hits)} mention {terms}")
