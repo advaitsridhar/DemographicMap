@@ -1,9 +1,15 @@
-page: https://www.nso.gov.vn/
-  unreachable: URLError: <urlopen error [Errno 104] Connection reset by peer>
-page: https://nso.gov.vn/en/
-  unreachable: URLError: <urlopen error [Errno 104] Connection reset by peer>
-page: https://data.go.th/api/3/action/package_search?q=religion&rows=20
-  unreachable: HTTPError: HTTP Error 403: Forbidden
 page: https://data.humdata.org/api/3/action/package_show?id=thailand-languages
   11,053 bytes
-  0 matching link(s)
+  3 distinct match(es) for 'https://[a-zA-Z0-9./_%-]{5,140}[.](csv|xlsx|xls|zip|pdf)'
+    csv
+    pdf
+    xlsx
+page: https://vietnam.un.org/en/resources/publications
+  104,326 bytes
+  0 distinct match(es) for 'https://[a-zA-Z0-9./_%-]{5,140}[.](csv|xlsx|xls|zip|pdf)'
+page: https://microdata.worldbank.org/index.php/catalog/vnm
+  442,103 bytes
+  0 distinct match(es) for 'https://[a-zA-Z0-9./_%-]{5,140}[.](csv|xlsx|xls|zip|pdf)'
+page: https://microdata.worldbank.org/index.php/catalog/tha
+  442,103 bytes
+  0 distinct match(es) for 'https://[a-zA-Z0-9./_%-]{5,140}[.](csv|xlsx|xls|zip|pdf)'
