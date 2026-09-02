@@ -1,52 +1,97 @@
-page: https://data.humdata.org/dataset/5fada7f4-9c2a-42eb-8210-620469d217c4/resource/9dd74ec9-8208-4ec7-8caa-4bf0eb5fd9cb/download/th_lang_admin1_v01.csv
-  8,833 bytes
-﻿admin1_name;admin1_pcode;admin0_name;admin0_pcode;number_of_named_languages;main_language;main_language_share;Thai;Other;pop_total;pop_male;pop_female;literacy_all;literacy_male;literacy_female;language_data_yn;data_confidence;notes
-#adm1+name;#adm1+code;#country+name;#country+code;#indicator+lang+num;#indicator+lang+main;#indicator+lang+main+pct;#indicator+lang+pct+iso639-3_tha;#indicator+lang+pct+iso639-3_unknown;#population+total;#population+m+total;#population+f+total;#population+total+pct+literate+age10up;#population+m+pct+literate+age10up;#population+f+pct+literate+age10up;#meta+data+bool;#meta+confidence;#meta+text
-Amnat Charoen;TH37;Thailand;TH;1;Thai;1,000;1,000;0,000;283732;141426;142306;0,935;0,925;0,944;Yes;Medium;
-Ang Thong;TH15;Thailand;TH;1;Thai;1,000;1,000;0,000;254292;121934;132358;0,938;0,945;0,093;Yes;Medium;
-Bangkok;TH10;Thailand;TH;;Thai;0,997;0,997;0,036;8305218;3912499;4392719;0,951;0,962;0,941;Yes;Medium;
-Bueng Kan;TH38;Thailand;TH;;;;;;362755;182073;180682;;;;No;;Province was established after the 2000 Population Census, the only Census for which language and literacy data were made publicly available. For that reason, only population data could be retrieved.
-Buri Ram;TH31;Thailand;TH;;Thai;0,972;0,972;0,239;1274921;633776;641145;0,895;0,918;0,872;Yes;Medium;
-Chachoengsao;TH24;Thailand;TH;1;Thai;1,000;1,000;0,000;715603;351155;364448;0,927;0,953;0,902;Yes;Medium;
-Chai Nat;TH18;Thailand;TH;1;Thai;1,000;1,000;0,000;305587;147017;158570;0,884;0,932;0,840;Yes;Medium;
-Chaiyaphum;TH36;Thailand;TH;1;Thai;1,000;1,000;0,000;963907;477056;486851;0,9
-page: https://data.humdata.org/dataset/5fada7f4-9c2a-42eb-8210-620469d217c4/resource/d3760897-beb0-4b9f-b702-7d363721f2d2/download/th_lang_admin0_v01.csv
-  21,810 bytes
-﻿admin0_name;admin0_pcode;number_of_named_languages;main_language;main_language_share;Thai;Thaikueng;Maylay-yawi;Burmese;English;Other;pop_total;pop_male;pop_female;literacy_all;literacy_male;literacy_female;language_data_yn;data_confidence;notes
-#country+name;#country+code;#indicator+lang+num;#indicator+lang+main;#indicator+lang+main+pct;#indicator+lang+pct+iso639-3_tha;#indicator+lang+pct+iso639-3_unknown;#indicator+lang+pct+iso639-3_mfa;#indicator+lang+pct+iso639-3_mya;#indicator+lang+pct+iso639-3_eng;#indicator+lang+pct+iso639-3_unknown;#population+total;#population+m+total;#population+f+total;#population+total+pct+literate+age10up;#population+m+pct+literate+age10up;#population+f+pct+literate+age10up;#meta+data+bool;#meta+confidence;#meta+text
-Thailand;TH;5;Thai;0,971;0,971;0,01;0,02;0,01;0,004;0,03;65981659;32355032;33626627;0,935;0,956;0,915;Y;Medium;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;
+page: https://vietnam.unfpa.org/en/publications?page=3
+  78,050 bytes
+  18 distinct match(es) for 'https://[a-zA-Z0-9./_%-]{5,140}[.](?:csv|xlsx|xls|zip|pdf)'
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/ageing_report_from_census_2019_eng_final27082021.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/ageing_report_from_census_2019_vie_final20082021.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/policy_brief_on_economic_cost_of_vaw_-_eng.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/policy_brief_on_economic_cost_of_vaw_-_vie.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/policy_brief_on_gel_-_eng.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/policy_brief_on_gel_-_vie.pdf
+    https://vietnam.unfpa.org/sites/default/files/resource-pdf/unfpa_1_structure_en_7.11_0.pdf
+    https://vietnam.unfpa.org/sites/default/files/resource-pdf/unfpa_1_structure_vn_7.11.pdf
+    https://vietnam.unfpa.org/sites/default/files/resource-pdf/unfpa_2_distribution_en_7.11.pdf
+    https://vietnam.unfpa.org/sites/default/files/resource-pdf/unfpa_2_distribution_vn_7.11.pdf
+    https://vietnam.unfpa.org/sites/default/files/resource-pdf/unfpa_3_gender_en_7.11.pdf
+    https://vietnam.unfpa.org/sites/default/files/resource-pdf/unfpa_3_gender_vn_7.11.pdf
+    https://vietnam.unfpa.org/sites/default/files/resource-pdf/unfpa_4_health_en_7.11.pdf
+    https://vietnam.unfpa.org/sites/default/files/resource-pdf/unfpa_4_health_vn_7.11.pdf
+    https://vietnam.unfpa.org/sites/default/files/resource-pdf/unfpa_5_socioeconomic_en_8.11.pdf
+    https://vietnam.unfpa.org/sites/default/files/resource-pdf/unfpa_5_socioeconomic_vn_8.11.pdf
+    https://vietnam.unfpa.org/sites/default/files/resource-pdf/unfpa_6_projection_en_7.11.pdf
+    https://vietnam.unfpa.org/sites/default/files/resource-pdf/unfpa_6_projection_vn_7.11.pdf
+page: https://vietnam.unfpa.org/en/publications?page=4
+  76,859 bytes
+  15 distinct match(es) for 'https://[a-zA-Z0-9./_%-]{5,140}[.](?:csv|xlsx|xls|zip|pdf)'
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/20210301_final_srb_factsheet_eng_1.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/20210308_srb_factsheet_vie_final_1.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/20210630_final_fertilityreport_vn_0.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/20210630_final_fertiltiyreport_eng_1.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/cover_data_dashboard_eng.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/cover_data_warehouse_eng.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/fertility_factsheet_eng_final.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/fertility_factsheet_vie_final.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/final_population_projection_eng_upload_9_august_2021.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/final_population_projection_vie_to_upload.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/interministerial_declaration_and_10_points_call_to_action_march_12_2021.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/migration_and_urbanization_factsheet_eng_final_0.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/migration_and_urbanization_factsheet_vie_0.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/ty_so_gioi_tinh_khi_sinh_eng.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/ty_so_gioi_tinh_khi_sinh_viet.pdf
+page: https://vietnam.unfpa.org/en/publications?page=5
+  79,380 bytes
+  19 distinct match(es) for 'https://[a-zA-Z0-9./_%-]{5,140}[.](?:csv|xlsx|xls|zip|pdf)'
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/0._vaw_study_main_report_final_13_aug_2020.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/1._eng_summary_report.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/2._eng_faq.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/3._eng_key_messages.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/4._eng-policy.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/5._eng-factsheet_1.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/6._eng-factsheet_2.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/Asia%20Pacific%20COVID-19%20Older%20Persons%20Technical%20Brief%20final_clean.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/Bao%20cao%20TN%20B6%20-%2080tr.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/Final%20Youth%20report%202018%20in%20Eng.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/Infogaphic_Eng.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/PhotoBook_Census_Eng_Web_0.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/PhotoBook_Census_Viet_Web.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/Results%20-%202019%20Population%20and%20Housing%20Census_full.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/covid19_impact_analysis_vietnam.final_3_july_2020.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/di_cu_va_do_thi_hoa_eng.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/di_cu_va_do_thi_hoa_viet.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/ge_eng.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/ge_viett.pdf
+page: https://vietnam.unfpa.org/en/publications?page=6
+  80,467 bytes
+  20 distinct match(es) for 'https://[a-zA-Z0-9./_%-]{5,140}[.](?:csv|xlsx|xls|zip|pdf)'
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/Code%20of%20Conduct%20Brochure.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/Policy%20brief%20GBSS_FINAL_EN.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/Policy%20brief_GBV_FINAL_ENG.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/Toward%20a%20comprehensive%20ageing%20policy_ENG.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/UNFPA_codeofconduct_0.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/Vietnam_country_profile_eg.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/Vietnam_factsheet_eg.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/factsheet%201%20eg.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/factsheet%201%20vn.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/factsheet%202%20eg.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/factsheet%202%20vn.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/factsheet%203%20eg.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/factsheet%203%20vn.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/factsheet%204%20eg.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/factsheet%204%20vn.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/factsheet%205%20eg.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/factsheet%205%20vn.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/un-system-model-code-conduct.pdf
+    https://vietnam.unfpa.org/sites/default/files/resource-pdf/Code%20of%20Conduct%20Brochure.pdf
+    https://vietnam.unfpa.org/sites/default/files/resource-pdf/UNFPA_codeofconduct.pdf
+page: https://vietnam.unfpa.org/en/publications?page=7
+  78,189 bytes
+  10 distinct match(es) for 'https://[a-zA-Z0-9./_%-]{5,140}[.](?:csv|xlsx|xls|zip|pdf)'
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/Final%20FP%20quality%20report%20English.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/PD_Factsheet_Age%20%26%20Sex%20structure%20in%20Viet%20Nam_printed%20in%202016_ENG.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/PD_Factsheet_Age%20%26%20Sex%20structure%20in%20Viet%20Nam_printed%20in%202016_VIET_0.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/PD_Migration%20Booklet_ENG_printed%20in%202016.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/PD_Migration%20Booklet_Tieng%20Viet_printed%20in%202016_0.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/SRB%20Report_ENG_Final%20Preface_16%20June.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/SRB%20Report_VIE_Final%20Preface_16%20June.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/Web_Midwifery_Eng.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/ali_eng_221018_final.pdf
+    https://vietnam.unfpa.org/sites/default/files/pub-pdf/asrh_report_tv-22.10.18_final_1.pdf
