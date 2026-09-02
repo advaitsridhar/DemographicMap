@@ -1,12 +1,6 @@
-South Africa: https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf
-  3,587,195 bytes
-  113 pages
-  Table 2.2: 9 provinces, 62,027,503 people, summing to the printed national figure exactly
-  Table 2.4 Black African: the nine provinces come to 50,486,855 against a printed South Africa of 50,486,856, a difference of 1
-  Table 2.4 Indian/Asian: the nine provinces come to 1,697,505 against a printed South Africa of 1,697,506, a difference of 1
-  Table 2.4: 9 provinces, 61,988,314 people classified by population group, every province adding up to its own total
-  Table 2.9: language: 17 categories across 10 columns, every one summing to its printed total
-  Table 2.10: religion: 10 categories across 10 columns, every one summing to its printed total
-  Table 2.7: sex ratios for 9 provinces, 89.2 to 101.8 males per 100 females
-  wrote data/processed/south_africa_province.json (41 kB)
-  9 provinces, 62,027,503 people
+page: https://www.gso.gov.vn/
+  unreachable: URLError: <urlopen error timed out>
+page: https://www.nso.go.th/
+  unreachable: HTTPError: HTTP Error 418: 
+page: https://portal.nso.go.th/
+  unreachable: HTTPError: HTTP Error 403: Forbidden
