@@ -1022,6 +1022,119 @@ a 403 from a sandbox whose egress proxy blocks it, exactly as `bbs.gov.bd` was.
 A source is only as absent as the search behind it, and a search is only as
 good as the thing it actually fetched.
 
+### Viet Nam: collected, and published only for the whole country
+
+Viet Nam's 2019 Population and Housing Census asked religion. Its questionnaire,
+reproduced on page 330 of the results volume, puts it plainly:
+
+> 7. Does [NAME] follow any faith/religion? IF YES: What is [NAME]'s
+> faith/religion?
+
+And it asked ethnicity, in the question above it. So this is not a country that
+declines to count these things. It is a country that publishes the count for
+itself and not for its provinces, which is a different gap and wants a
+different word.
+
+**Getting to the report at all.** The statistics office does not answer this
+project from a GitHub runner, and the three refusals are not the same refusal:
+
+* `www.gso.gov.vn` **times out** -- no response, on two different paths, in two
+  separate runs, while every other host in the same run answered.
+* `www.nso.gov.vn` and `nso.gov.vn` **reset the connection**. The General
+  Statistics Office was restructured into a National Statistics Office in 2025,
+  so this is the current host: it resolves, it is up, and it closes the socket
+  on this client.
+* `www2.gso.gov.vn` **does not resolve** -- but that one is a fact about a
+  hostname this project guessed at, not about Viet Nam. It is recorded here
+  because a guess that fails looks exactly like a source that is missing.
+
+The report is reachable anyway, from the body named on its own title page:
+UNFPA provided the technical assistance for the census and hosts
+`Results - 2019 Population and Housing Census_full.pdf`, 6.8 MB and 380 pages.
+That is a co-publisher rather than a mirror, which is why it is usable where
+`citypopulation.de` would not be.
+
+**What the report contains.** Its narrative body extracts as mojibake --
+`dŚĞ ϮϬϭϵ WŽƉƵůĂƚŝŽŶ` for "The 2019 Population", a font carrying no usable
+character map -- but Part III's data tables are set in a different font and
+decode cleanly. In those tables:
+
+| Table | Breakdown |
+| --- | --- |
+| 2 | Population by ethnic group, urban/rural and sex — **national** |
+| 3 | Population by religion, urban/rural and sex — **national** |
+| 5 | Population by age group and sex, for ethnic groups **and then** for provinces |
+| 13, 18 | Two indicators, same stacked shape |
+
+The word "religion" appears on five of the 380 pages: Table 3, and four pages
+of questionnaire. There is no religion-by-province table to miss.
+
+Table 5 looks at first like the cross-tabulation this map needs, because its
+caption reads "BY AGE GROUP, SEX, ETHNIC, URBAN, RURAL, SOCIO-ECONOMIC REGION
+AND PROVINCE, CITY". It is not. Page 198 prints a section header --
+
+```
+P r o v i n c e ,  c i t y
+Ha Noi        2 133 354  1 133 036  1 000 318
+Ha Giang        296 271    151 900    144 371
+```
+
+-- and repeats the same age-group columns for provinces after finishing the
+ethnic groups. Two breakdowns stacked under one title, not crossed. The caption
+could not settle that and reading the rows could, which is the only reason this
+entry can say so.
+
+One thing is banked for whenever a provincial table does surface: Viet Nam
+prints its figures with **a space as the thousands separator**, and every row
+carries Total, Male and Female. That is the South African problem exactly, and
+the arithmetic reader in `scripts/fetch_census/south_africa.py` transfers to it
+with `Total == Male + Female` as the constraint that picks the right reading.
+
+### Thailand: a language table that cannot be a composition
+
+Thailand's National Statistical Office refuses this project from every host
+tried, and its open-data portal refuses the machine interface too:
+
+* `www.nso.go.th` and `catalog.nso.go.th` answer **HTTP 418**, the teapot code
+  some web application firewalls return to a client they have decided is not a
+  browser.
+* `portal.nso.go.th` answers **HTTP 403**.
+* `statbbi.nso.go.th`, the statistical database, **does not resolve**.
+* `data.go.th` answers **403 at `/` and at `/api/3/action/` alike**. That second
+  one is worth recording: HDX is also CKAN and blocks its HTML pages while
+  serving its API perfectly, so "the site blocks browsers, try the API" is a
+  real pattern -- it simply does not hold here.
+
+Getting past a 418 or a 403 means claiming to be a browser. This project does
+not do that, for the same reason it does not do it to BPS.
+
+That leaves one candidate, and it fails on its own contents rather than on
+access. HDX carries **Thailand: Languages** from CLEAR Global, with a file per
+administrative level -- `th_lang_admin1_v01.csv` is by province, exactly the
+shape wanted. It cannot be used, for four reasons in ascending order of
+seriousness:
+
+1. **The shares are not a composition.** Bangkok is Thai `0.997` and Other
+   `0.036`, which is 103.3%. Buri Ram is `0.972` and `0.239`, which is 121.1%.
+   These are independent indicators that cannot be parts of one whole.
+2. **The provincial detail is two columns.** The national file names five
+   languages; the province file has Thai and Other. Most provinces read Thai
+   `1.000`, Other `0.000` -- a map drawn from it would assert that Isan,
+   Northern Thai and Malay-Yawi do not exist.
+3. **There are visible errors.** Ang Thong's female literacy is `0.093` against
+   a male `0.945`; the file rates its own `data_confidence` as Medium.
+4. **It is the 2000 census**, and the file says so itself, in its own notes
+   column: *"Province was established after the 2000 Population Census, the
+   only Census for which language and literacy data were made publicly
+   available."* Its population column (65,981,659) is a later figure again, so
+   the language shares and the denominator are twenty years apart.
+
+The fourth point is the one that answers the original question. It is not only
+that `nso.go.th` will not serve this client: by the account of the people who
+compiled this dataset, Thailand has made census language data public **once**,
+for 2000. So Thailand is a gap about publication, like Viet Nam, rather than a
+gap about access -- and the access problem is real too.
+
 ### South Africa: a table whose separator is a space
 
 Statistics South Africa publishes Census 2022 through a portal at

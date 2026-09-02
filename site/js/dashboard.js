@@ -143,12 +143,20 @@ window.Dashboard = (function () {
     return parts.join("") + "</section>";
   }
 
-  /** When a unit has no demographic values, say what would fill it. */
+  /** When a unit has no demographic values, say what would fill it -- or why
+   *  nothing would. The two are different claims and must not read alike: a
+   *  command in a <code> block promises that running it fills the panel, which
+   *  is false where the country never published the figures. */
   function hintPanel(record) {
-    if (!record.adapter_hint) return "";
+    if (!record.adapter_hint && !record.gap_reason) return "";
     const fields = ["population", "religion", "language", "ethnicity", "median_age"];
     const hasAny = fields.some((field) => !isGap(record[field]));
     if (hasAny) return "";
+    if (record.gap_reason) {
+      return `<section class="panel"><div class="panel-head"><h3>Why this is empty</h3></div>
+        <p class="note">${esc(record.gap_reason)} See <code>docs/SOURCES.md</code>
+        for what was tried.</p></section>`;
+    }
     return `<section class="panel"><div class="panel-head"><h3>Filling this gap</h3></div>
       <p class="note">This build has not fetched demographics for this unit. The
       pipeline in this repository can: <code>${esc(record.adapter_hint)}</code></p></section>`;
