@@ -364,7 +364,104 @@ ETHIOPIA = Country(
           "available to this project. Read it as a description of 2007."),
 )
 
-COUNTRIES: dict[str, Country] = {c.iso3: c for c in (PHILIPPINES, ETHIOPIA)}
+MYANMAR = Country(
+    iso3="MMR",
+    name="Myanmar",
+    year=2014,
+    source=("Department of Population, Ministry of Labour, Immigration and "
+            "Population, 2014 Myanmar Population and Housing Census, prepared "
+            "as subnational tables by the U.S. Census Bureau"),
+    licence="CC BY-IGO, published via HDX",
+    dataset="burma-subnational-boundaries-and-tabular-data",
+    out="myanmar_state.json",
+    levels={1: "admin1", 2: "admin2"},
+    topics=(
+        # Not the census. The 2014 round asked about ethnicity and its results
+        # were never published -- the tables were withheld -- so the Bureau
+        # uses the Department of Population's township profiles instead, and
+        # the file says so in its data dictionary while the sheet is still
+        # called "Ethnicity". Dating these to 2014 would attribute them to a
+        # census that refused to release them, which is the notable fact about
+        # ethnicity data in Myanmar and the last thing to bury.
+        Topic("Ethnicity", "ethnicity", year=2017,
+              source=("Department of Population, 2018 Township Profiles, "
+                      "Table 14: Ethnic Nationalities Living, prepared as "
+                      "subnational tables by the U.S. Census Bureau"),
+              note=("2018 Township Profiles, with a reference date of 1 April "
+                    "2017. The 2014 census collected ethnicity and its results "
+                    "were never released, so these are the Department of "
+                    "Population's own later figures rather than census "
+                    "counts. Myanmar recognises 135 official ethnic groups "
+                    "and this table names 40; the Rohingya are not among "
+                    "either, having been excluded from enumeration as an "
+                    "ethnicity in 2014.")),
+    ),
+    # None needed for the states and regions: the census writes "KACHIN STATE"
+    # where geoBoundaries writes "Kachin", and norm() drops the word "state"
+    # on both sides. Two boundary names are misspelled rather than differently
+    # spelled, and are corrected in common.MISSPELLED so the label a reader
+    # sees is fixed along with the join.
+    note=("2014 Myanmar Population and Housing Census unless a field says "
+          "otherwise."),
+)
+
+UKRAINE = Country(
+    iso3="UKR",
+    name="Ukraine",
+    year=2001,
+    source=("State Statistics Service of Ukraine, All-Ukrainian Population "
+            "Census 2001, prepared as subnational tables by the U.S. Census "
+            "Bureau"),
+    licence="CC BY-IGO, published via HDX",
+    dataset="ukraine-subnational-boundaries-and-tabular-data",
+    out="ukraine_oblast.json",
+    levels={1: "admin1", 2: "admin2"},
+    # The Language sheet, not Nationality-Language. That second sheet is the
+    # cross-tabulation of the two -- 1,619 columns, every nationality against
+    # every native language -- which is a different and much larger claim than
+    # this map has a field for. The flat sheet is the one that answers "what
+    # is spoken here".
+    topics=(Topic("Language", "language"),),
+    # The Bureau romanises from Ukrainian and geoBoundaries uses the English
+    # exonyms, so every one of the 27 needs declaring: "CHERKAS'KA OBLAST'"
+    # and "Cherkasy Oblast" share no word that norm() leaves standing.
+    aliases={
+        "Avtonomna Respublika Krym": ("Autonomous Republic of Crimea",),
+        "Misto Sevastopol’": ("Sevastopol",),
+        "Misto Kyyiv": ("Kyiv",),
+        "Cherkas’Ka Oblast’": ("Cherkasy Oblast",),
+        "Chernihivs’Ka Oblast’": ("Chernihiv Oblast",),
+        "Chernivets’Ka Oblast’": ("Chernivtsi Oblast",),
+        "Dnipropetrovs’Ka Oblast’": ("Dnipropetrovsk Oblast",),
+        "Donets’Ka Oblast’": ("Donetsk Oblast",),
+        "Ivano-Frankivs’Ka Oblast’": ("Ivano-Frankivsk Oblast",),
+        "Kharkivs’Ka Oblast’": ("Kharkiv Oblast",),
+        "Khersons’Ka Oblast’": ("Kherson Oblast",),
+        "Khmel’Nyts’Ka Oblast’": ("Khmelnytskyi Oblast",),
+        "Kirovohrads’Ka Oblast’": ("Kirovohrad Oblast",),
+        "Kyyivs’Ka Oblast’": ("Kyiv Oblast",),
+        "Luhans’Ka Oblast’": ("Luhansk Oblast",),
+        "L’Vivs’Ka Oblast’": ("Lviv Oblast",),
+        "Mykolayivs’Ka Oblast’": ("Mykolaiv Oblast",),
+        "Odes’Ka Oblast’": ("Odessa Oblast",),
+        "Poltavs’Ka Oblast’": ("Poltava Oblast",),
+        "Rivnens’Ka Oblast’": ("Rivne Oblast",),
+        "Sums’Ka Oblast’": ("Sumy Oblast",),
+        "Ternopil’S’Ka Oblast’": ("Ternopil Oblast",),
+        "Vinnyts’Ka Oblast’": ("Vinnytsia Oblast",),
+        "Volyns’Ka Oblast’": ("Volyn Oblast",),
+        "Zakarpats’Ka Oblast’": ("Zakarpattia Oblast",),
+        "Zaporiz’Ka Oblast’": ("Zaporizhia Oblast",),
+        "Zhytomyrs’Ka Oblast’": ("Zhytomyr Oblast",),
+    },
+    note=("All-Ukrainian Population Census 2001 -- the only census independent "
+          "Ukraine has held. The question is native language, which the census "
+          "asked separately from nationality; the two differ substantially and "
+          "this is the language answer. Read it as a description of 2001."),
+)
+
+COUNTRIES: dict[str, Country] = {
+    c.iso3: c for c in (PHILIPPINES, ETHIOPIA, MYANMAR, UKRAINE)}
 
 
 def discover(limit: int, sheets: bool) -> int:

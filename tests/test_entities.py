@@ -874,6 +874,36 @@ class Admin2Disambiguation(unittest.TestCase):
         self.assertEqual(entity["id"], "UP-AGR")
 
 
+class TwoFirstOrderShapesUnderOneName(unittest.TestCase):
+    """CGAZ draws both "Kyiv" and "Kyiv Oblast", and norm() drops "Oblast".
+
+    The admin-1 lookup was a dict comprehension keyed on the normalised name,
+    so one of them silently overwrote the other and a capital of 2.95 million
+    or the region around it was unreachable -- whichever the boundary file
+    listed first. Ukraine's census names both, which is how this surfaced.
+    """
+
+    def shapes(self):
+        return {be.norm("Kyiv"): [
+            {"id": "UA-30", "name": "Kyiv"},
+            {"id": "UA-32", "name": "Kyiv Oblast"},
+        ]}
+
+    def test_the_city_and_the_region_each_reach_their_own_shape(self):
+        city = be.match_name({"name": "Misto Kyyiv", "aliases": ["Kyiv"]},
+                             be.settle(self.shapes(), ["Misto Kyyiv", "Kyiv"]))
+        self.assertEqual(city[0]["id"], "UA-30")
+        oblast = be.match_name(
+            {"name": "Kyyivs’Ka Oblast’", "aliases": ["Kyiv Oblast"]},
+            be.settle(self.shapes(), ["Kyyivs’Ka Oblast’", "Kyiv Oblast"]))
+        self.assertEqual(oblast[0]["id"], "UA-32")
+
+    def test_neither_is_reachable_without_an_exact_name(self):
+        entity, _how = be.match_name({"name": "Kyyiv", "aliases": []},
+                                     be.settle(self.shapes(), ["Kyyiv"]))
+        self.assertIsNone(entity)
+
+
 class RivalRowsThatDisagree(unittest.TestCase):
     """Two outright matches are one place written twice only if they agree.
 
@@ -2823,6 +2853,44 @@ class UscbReader(unittest.TestCase):
         with self.assertRaises(SystemExit):
             self.resolved(self.hdx([{"name": "philippines_uscb_notes.pdf",
                                      "url": "http://x/pdf"}]))
+
+    # -- a topic's provenance is its own ----------------------------------
+    def test_a_topic_may_override_the_country_year_and_source(self):
+        # Burma's Age-Sex sheet is the 2014 census; its Ethnicity sheet is the
+        # Department of Population's 2018 Township Profiles, reference date
+        # 2017, because the 2014 census's ethnicity tables were withheld.
+        eth = next(t for t in self.uscb.MYANMAR.topics if t.field == "ethnicity")
+        self.assertEqual(self.uscb.MYANMAR.year, 2014)
+        self.assertEqual(eth.year, 2017)
+        self.assertIn("Township Profiles", eth.source)
+        self.assertIn("never released", eth.note)
+
+    def test_a_topic_without_its_own_provenance_takes_the_country_s(self):
+        for country in self.uscb.COUNTRIES.values():
+            for topic in country.topics:
+                self.assertTrue(topic.year or country.year)
+                self.assertTrue(topic.source or country.source)
+
+    def test_ukraine_reads_the_flat_language_sheet(self):
+        # Nationality-Language is the cross-tabulation of the two: 1,619
+        # columns, every nationality against every native language. That is a
+        # different and much larger claim than this map has a field for.
+        sheets = [t.sheet for t in self.uscb.UKRAINE.topics]
+        self.assertEqual(sheets, ["Language"])
+
+    def test_every_ukrainian_oblast_is_declared(self):
+        # The Bureau romanises from Ukrainian and geoBoundaries uses English
+        # exonyms, so all 27 need declaring: "Cherkas'ka Oblast'" and
+        # "Cherkasy Oblast" share no word norm() leaves standing.
+        self.assertEqual(len(self.uscb.UKRAINE.aliases), 27)
+        self.assertIn("Kyiv", self.uscb.UKRAINE.aliases["Misto Kyyiv"])
+        self.assertIn("Kyiv Oblast",
+                      self.uscb.UKRAINE.aliases["Kyyivs’Ka Oblast’"])
+
+    def test_myanmar_needs_no_aliases_because_norm_drops_state(self):
+        # The census writes "KACHIN STATE" and geoBoundaries "Kachin".
+        self.assertEqual(self.uscb.MYANMAR.aliases, {})
+        self.assertEqual(be.norm("Kachin State"), be.norm("Kachin"))
 
     def test_every_country_carries_its_own_census_year(self):
         # Ethiopia's tables are the 2007 census -- the last it completed -- and

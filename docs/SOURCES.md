@@ -1036,6 +1036,8 @@ same call `pxweb.py` makes for the Nordic offices.
 | --- | --- | --- | --- |
 | Philippines | 2020 (Philippine Statistics Authority) | religion, ethnicity | 17 regions, 116 provinces and cities |
 | Ethiopia | **2007** (Central Statistical Agency) | religion, ethnicity, language | 13 first-order areas, 93 zones |
+| Myanmar | **2017** (Department of Population, not the census) | ethnicity | 15 states and regions, 80 districts |
+| Ukraine | **2001** (State Statistics Service) | language | 27 oblasts, 672 rayons |
 
 Ethiopia is 2007 because that is the last census Ethiopia has completed -- the
 2017 round was postponed and never held. It is the most recent measurement in
@@ -1152,6 +1154,55 @@ Three kinds of miss, and they are not the same kind of thing:
   exactly one of two tied shapes is written the way the row writes it, that is
   stronger evidence than the key that tied them, and the tie is now settled on
   the exact name and on nothing weaker.
+
+**A sheet's name is not its contents, and three countries prove it.**
+
+* **Myanmar's "Ethnicity" sheet is not from the census.** The 2014 Population
+  and Housing Census asked about ethnicity and its results were never
+  published; the tables were withheld. So the Bureau uses the Department of
+  Population's *2018 Township Profiles*, Table 14, with a reference date of
+  April 2017 -- and says so in the data dictionary while the sheet keeps the
+  same name and sits in the same file as the 2014 Age-Sex tables. Dating those
+  figures to 2014 would attribute them to a census that refused to release
+  them, which is the single most notable fact about ethnicity data in Myanmar.
+  `Topic` therefore carries its own year, source and note, overriding the
+  country's, and each record gets one citation per topic rather than one for
+  the file. Myanmar recognises 135 official ethnic groups and this table names
+  40; the Rohingya appear in neither, having been excluded from enumeration as
+  an ethnicity in 2014.
+
+* **Syria's "Ethnicity" sheet is nationality, and is not read.** Its nine
+  columns are Syrian, Palestinian, Arab-other, European, African non-Arab,
+  Asian, Australian, American, Other, and its dictionary names the source
+  table: *Distribution of Individuals by Nationality*. Published as ethnicity
+  that would tell a reader Syria is ethnically uniform, which is neither what
+  the 2004 census measured nor what it claimed. There is no field on this map
+  for citizenship, so Syria stays empty and this is the reason.
+
+* **Ukraine has two language sheets and only one is usable.** The flat
+  `Language` sheet gives ten native languages against a total.
+  `Nationality-Language` is the cross-tabulation -- 1,619 columns, every
+  nationality against every native language -- a different and much larger
+  claim than a share of a population, so the flat sheet is the one read.
+
+**Two boundary names are misspelled rather than differently spelled.**
+geoBoundaries transposes Sagaing into "Saigang" and drops a letter from
+Tanintharyi. Both are well-formed words, so nothing can detect them the way
+mojibake announces itself; they are corrected in `common.MISSPELLED`, which
+fixes the label a reader sees along with the join. Everything else in Myanmar
+needs no alias at all: the census writes "KACHIN STATE" where the boundary file
+writes "Kachin", and `norm()` drops the word "state" on both sides. Ukraine is
+the opposite -- all 27 oblasts need declaring, because the Bureau romanises
+from Ukrainian and geoBoundaries uses the English exonyms, and
+"CHERKAS'KA OBLAST'" shares no surviving word with "Cherkasy Oblast".
+
+**And Ukraine found a live defect in the join.** CGAZ draws both `Kyiv` and
+`Kyiv Oblast` as first-order units; `norm()` drops "Oblast"; and the admin-1
+lookup was a dict comprehension keyed on the normalised name. One silently
+overwrote the other, so a capital of 2.95 million or the region around it was
+unreachable, whichever the boundary file listed first. The lookup is now
+grouped and the tie settled on an exact name -- the same test that picks
+Cotabato province over Cotabato City.
 
 **Indonesia is in this series and is not read from it.** Its workbook carries
 no religion and no ethnicity, only a language sheet whose composition is
