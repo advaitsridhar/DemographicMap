@@ -2871,6 +2871,13 @@ class UscbReader(unittest.TestCase):
                 self.assertTrue(topic.year or country.year)
                 self.assertTrue(topic.source or country.source)
 
+    def test_ukraine_is_configured_and_deliberately_not_run(self):
+        # It reconciles and it does not join: 58 of 663 areas reach a shape,
+        # because the source publishes at rayon level and the census romanises
+        # Ukrainian adjectivally where geoBoundaries uses the short exonym.
+        self.assertNotIn("UKR", self.uscb.COUNTRIES)
+        self.assertIn(self.uscb.UKRAINE, self.uscb.PENDING)
+
     def test_ukraine_reads_the_flat_language_sheet(self):
         # Nationality-Language is the cross-tabulation of the two: 1,619
         # columns, every nationality against every native language. That is a
@@ -2887,10 +2894,14 @@ class UscbReader(unittest.TestCase):
         self.assertIn("Kyiv Oblast",
                       self.uscb.UKRAINE.aliases["Kyyivs’Ka Oblast’"])
 
-    def test_myanmar_needs_no_aliases_because_norm_drops_state(self):
-        # The census writes "KACHIN STATE" and geoBoundaries "Kachin".
-        self.assertEqual(self.uscb.MYANMAR.aliases, {})
+    def test_myanmar_states_need_no_aliases_because_norm_drops_state(self):
+        # The census writes "KACHIN STATE" and geoBoundaries "Kachin", so the
+        # 15 first-order areas need nothing declared. Only the districts do,
+        # where both sides romanise from Burmese and neither is wrong.
         self.assertEqual(be.norm("Kachin State"), be.norm("Kachin"))
+        for state in ("Kachin State", "Shan State", "Ayeyarwady"):
+            self.assertNotIn(state, self.uscb.MYANMAR.aliases)
+        self.assertIn("Hakha", self.uscb.MYANMAR.aliases["Haka"])
 
     # -- one sheet, two topics --------------------------------------------
     HEADER = [["AREA_NAME", "ADM_LEVEL", "ETH_A", "ETH_B", "ETH_TPOP",
@@ -2944,7 +2955,8 @@ class UscbReader(unittest.TestCase):
         # defaults stay where they are for everyone else.
         self.assertEqual(self.uscb.REFUSE_AREA, 0.05)
         self.assertEqual(self.uscb.REFUSE_SHARE, 0.10)
-        widened = [c.iso3 for c in self.uscb.COUNTRIES.values()
+        widened = [c.iso3 for c in list(self.uscb.COUNTRIES.values())
+                   + list(self.uscb.PENDING)
                    if c.refuse_area != self.uscb.REFUSE_AREA
                    or c.refuse_share != self.uscb.REFUSE_SHARE]
         self.assertEqual(widened, ["UKR"])

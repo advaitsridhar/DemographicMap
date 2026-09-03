@@ -1036,8 +1036,7 @@ same call `pxweb.py` makes for the Nordic offices.
 | --- | --- | --- | --- |
 | Philippines | 2020 (Philippine Statistics Authority) | religion, ethnicity | 17 regions, 116 provinces and cities |
 | Ethiopia | **2007** (Central Statistical Agency) | religion, ethnicity, language | 13 first-order areas, 93 zones |
-| Myanmar | **2017** (Department of Population, not the census) | ethnicity | 15 states and regions, 80 districts |
-| Ukraine | **2001** (State Statistics Service) | language | 27 oblasts, 672 rayons |
+| Myanmar | 2014 census (religion), **2017** Township Profiles (ethnicity) | religion, ethnicity | 15 states and regions, 80 districts |
 
 Ethiopia is 2007 because that is the last census Ethiopia has completed -- the
 2017 round was postponed and never held. It is the most recent measurement in
@@ -1179,11 +1178,51 @@ Three kinds of miss, and they are not the same kind of thing:
   the 2004 census measured nor what it claimed. There is no field on this map
   for citizenship, so Syria stays empty and this is the reason.
 
-* **Ukraine has two language sheets and only one is usable.** The flat
-  `Language` sheet gives ten native languages against a total.
-  `Nationality-Language` is the cross-tabulation -- 1,619 columns, every
-  nationality against every native language -- a different and much larger
-  claim than a share of a population, so the flat sheet is the one read.
+* **Myanmar's sheet holds two questions.** It is called "Ethnicity" and
+  carries the religion columns beside the ethnic ones. Reading "everything
+  that is not geography" collected both, and the shares came to 3.05 times the
+  population -- 47.8 million of ethnicity, plus 49.0 million of religion, plus
+  the religion denominator, summed as one question. `check_total` refused it.
+  `Topic` therefore takes an optional column prefix, used *only* where a sheet
+  is shared; where it is empty the columns are still whatever is left after
+  the geography, which is what keeps Ethiopia working, since its ethnic-group
+  columns are not named `ETH_`. That is the same trap the first version of
+  this reader fell into, in the opposite direction. The upshot is that Myanmar
+  gains religion as well as ethnicity: Buddhist 90.9%, Christian 7.2%, Islamic
+  3.1%, Hindu 0.8%, from the 2014 census, which published religion even while
+  withholding ethnicity.
+
+* **Ukraine is configured, correct, and deliberately not run.** Its figures
+  reconcile -- the national row to 99.8%, every column one the 2001 census
+  published -- and the adapter writes 663 areas of which **58 join**. The
+  oblast rows are empty, because the source publishes native language at rayon
+  level, and the census romanises Ukrainian adjectivally where geoBoundaries
+  uses the short exonym: `BAKHCHYSARAYS'KYY RAYON` has to reach
+  `Bakhchysarai`, `LUTS'KYY RAYON` to reach `Lutsk`, 661 times. A
+  suffix-stripping rule would bridge most of them and is precisely what
+  `norm()`'s generic-word list refuses to do for a local generic word; it would
+  also collapse `Luts'ka Mis'krada`, the city council, onto `Luts'kyy Rayon`,
+  the district around it, which are two places geoBoundaries draws as one
+  shape. The way in is to sum each oblast's own rayons into it, which the
+  file's `ADM1_NAME` column supports and which would give 27 oblasts for 38
+  million people -- next piece of work, not this one. Its 27 oblast aliases
+  are verified against the census's own list and kept for it.
+
+  Its two language sheets are worth recording either way. The flat `Language`
+  sheet gives ten native languages against a total. `Nationality-Language` is
+  the cross-tabulation -- 1,619 columns, every nationality against every native
+  language -- a different and much larger claim than a share of a population.
+
+* **Ukraine's rayons fall short of their own totals, and that is the source.**
+  105 of 663 miss by up to 6.9%. The shape says it is a hole and not a
+  misreading: the national row reconciles to 99.8%, the columns are exactly
+  the categories the census published including Other and Unstated, and 558
+  rayons agree. A reader that had misunderstood the sheet would be wrong
+  everywhere and by a similar factor, which is what the default bounds are
+  tuned to catch. So the bounds moved onto the country, defaulting to the
+  module's, and Ukraine is the only country that widens them -- with that
+  evidence written beside the numbers, and a test asserting it is the only
+  one.
 
 **Two boundary names are misspelled rather than differently spelled.**
 geoBoundaries transposes Sagaing into "Saigang" and drops a letter from

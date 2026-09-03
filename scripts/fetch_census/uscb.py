@@ -426,6 +426,25 @@ MYANMAR = Country(
     # on both sides. Two boundary names are misspelled rather than differently
     # spelled, and are corrected in common.MISSPELLED so the label a reader
     # sees is fixed along with the join.
+    #
+    # The districts are another matter: both sides romanise from Burmese and
+    # neither is wrong, so these are declared pair by pair against the two
+    # lists rather than bridged by a rule. Not listed, because they are absent
+    # rather than differently spelled: the six self-administered zones and
+    # divisions, which geoBoundaries draws as ordinary townships, and Nay Pyi
+    # Taw, which it has no first-order shape for at all.
+    aliases={
+        "Bawlakhe": ("Bawlake",),
+        "Haka": ("Hakha",),
+        "Kawthaung": ("Kawthoung",),
+        "Kyaunkpyu": ("Kyaukpyu",),
+        "Langhko": ("Langkho",),
+        "Loilem": ("Loilen",),
+        "Myauk U": ("Mrauk-U",),
+        "Pharpon": ("Hpapun",),
+        "Tharrawaddy": ("Thayarwady",),
+        "Yinmarpin": ("Yinmarbin",),
+    },
     note=("2014 Myanmar Population and Housing Census unless a field says "
           "otherwise."),
 )
@@ -496,8 +515,30 @@ UKRAINE = Country(
           "this is the language answer. Read it as a description of 2001."),
 )
 
+# Configured, correct, and deliberately not run. Ukraine's figures reconcile --
+# the national row to 99.8%, every column the 2001 census's own -- and the
+# adapter writes 663 areas. 58 of them join.
+#
+# The oblast rows are empty: the source publishes native language at rayon
+# level, and the census romanises Ukrainian adjectivally where geoBoundaries
+# uses the short exonym, so "BAKHCHYSARAYS'KYY RAYON" has to reach
+# "Bakhchysarai" and "LUTS'KYY RAYON" to reach "Lutsk". That is 661 pairs. A
+# suffix-stripping rule would bridge most of them and is exactly what norm()'s
+# GENERIC list refuses to do for a local generic word -- and it would also
+# collapse "Luts'ka Mis'krada", the city council, onto "Luts'kyy Rayon", the
+# district around it, which are two places geoBoundaries draws as one shape and
+# the collision pass already refuses.
+#
+# The way in is to sum each oblast's own rayons into it, which the file's
+# ADM1_NAME column supports and which would give 27 oblasts of real data for
+# 38 million people. That needs handling the 36 areas the source leaves empty,
+# so it is the next piece of work rather than this one. The 27 oblast aliases
+# below are verified against the census's own list and are what that work will
+# use.
+PENDING: tuple[Country, ...] = (UKRAINE,)
+
 COUNTRIES: dict[str, Country] = {
-    c.iso3: c for c in (PHILIPPINES, ETHIOPIA, MYANMAR, UKRAINE)}
+    c.iso3: c for c in (PHILIPPINES, ETHIOPIA, MYANMAR)}
 
 
 def discover(limit: int, sheets: bool) -> int:
