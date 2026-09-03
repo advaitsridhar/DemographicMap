@@ -50,9 +50,59 @@ from dataclasses import dataclass, field as dc_field
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, RAW, gap, http_get, log, measure, record, shares,
-    write_json,
+    NOT_AVAILABLE, PROCESSED, RAW, gap, http_get, http_json, log, measure,
+    record, shares, write_json,
 )
+
+# HDX serves its API fully while blocking the HTML dataset pages behind a
+# 2.3 kB stub, so the catalogue is reachable where the landing page is not.
+HDX_API = "https://data.humdata.org/api/3/action"
+
+# The dataset holding each country's Common Operational Dataset for population
+# statistics. The name is derived from the ISO3 code and is stable; the
+# resource ids inside it are not.
+COD_PS = "cod-ps-{iso3}"
+
+
+def dataset_url(iso3: str) -> str:
+    """The HDX page a reader should be sent to for this country's tables."""
+    return f"{HDX}/{COD_PS.format(iso3=iso3.lower())}"
+
+
+def workbook_url(iso3: str) -> str:
+    """The country's current USCB workbook, asked of HDX rather than pinned.
+
+    A resource UUID is a snapshot of one moment in a dataset's life. HDX
+    replaces the file when the Bureau publishes a new extraction, and a pinned
+    URL then keeps returning last year's figures until the day it 404s --
+    the failure mode being that nothing fails. The dataset name is derived
+    from the ISO3 code and does not move, so the dataset is asked what it
+    currently holds.
+
+    Raises rather than guessing: a country whose dataset carries no USCB
+    workbook has none, and inventing a URL from the naming convention would
+    turn that into a download error somewhere less obvious.
+    """
+    name = COD_PS.format(iso3=iso3.lower())
+    body = http_json(f"{HDX_API}/package_show?id={name}")
+    if not body.get("success"):
+        raise SystemExit(f"HDX has no dataset {name!r} for {iso3}")
+    found = [r for r in body["result"].get("resources", [])
+             if "uscb" in (r.get("name") or "").lower()
+             and (r.get("name") or "").lower().endswith(".xlsx")]
+    if not found:
+        names = ", ".join(sorted(r.get("name") or "?"
+                                 for r in body["result"].get("resources", []))[:8])
+        raise SystemExit(
+            f"{name} carries no USCB workbook. It holds: {names}\n"
+            f"Not every Common Operational Dataset has one -- the Bureau "
+            f"prepares these for a subset of countries.")
+    # Newest first, so a dataset carrying two extractions uses the later one.
+    found.sort(key=lambda r: (r.get("name") or ""), reverse=True)
+    if len(found) > 1:
+        log(f"  {len(found)} USCB workbooks on {name}; using "
+            f"{found[0].get('name')!r}")
+    return found[0]["url"]
 
 # The columns every sheet in the series begins with, whatever its topic. Listed
 # rather than detected: they are the schema, and a value column that happened
@@ -103,8 +153,6 @@ class Country:
     year: int
     source: str
     licence: str
-    url: str
-    workbook: str
     out: str
     # Which ADM_LEVEL becomes which layer of this map. The Bureau's levels are
     # the country's own, so this is a fact per country: the Philippines' first
@@ -113,6 +161,16 @@ class Country:
     levels: dict[int, str]
     topics: tuple[Topic, ...]
     note: str
+    # Empty for a country that takes its workbook from HDX, which is the normal
+    # case and the one that survives the Bureau republishing. Set only to pin a
+    # specific file, and say in a comment why that file and not the current one.
+    workbook: str = ""
+    # Likewise derived. The hand-written slugs these replace
+    # ("philippines-subnational-population-statistics") were never fetched --
+    # the workbook came from a UUID URL -- so nothing had ever checked that
+    # they resolved, and a citation nobody follows is a citation nobody
+    # notices is wrong.
+    url: str = ""
     aliases: dict[str, tuple[str, ...]] = dc_field(default_factory=dict)
     # Census areas geoBoundaries draws no boundary of their own for, as
     # (parent, area) pairs -- a name alone is not an address, and the
@@ -146,10 +204,6 @@ PHILIPPINES = Country(
     source=("Philippine Statistics Authority, 2020 Census of Population and "
             "Housing, prepared as subnational tables by the U.S. Census Bureau"),
     licence="CC BY-IGO, published via HDX",
-    url=f"{HDX}/philippines-subnational-population-statistics",
-    workbook=(f"{HDX}/809dfb22-77f4-482c-8560-79b07d20fc15/resource/"
-              "5acff37e-0c02-4d89-bbd2-1825ee98916c/download/"
-              "philippines_uscb_202402.xlsx"),
     out="philippines_province.json",
     levels={1: "admin1", 2: "admin2"},
     topics=(Topic("Religion", "religion"),
@@ -228,10 +282,6 @@ ETHIOPIA = Country(
             "Housing Census, prepared as subnational tables by the U.S. Census "
             "Bureau"),
     licence="CC BY-IGO, published via HDX",
-    url=f"{HDX}/ethiopia-subnational-population-statistics",
-    workbook=(f"{HDX}/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/"
-              "f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/"
-              "ethiopia_uscb_202308.xlsx"),
     out="ethiopia_region.json",
     levels={1: "admin1", 2: "admin2"},
     topics=(Topic("Religion", "religion"),
@@ -304,6 +354,65 @@ ETHIOPIA = Country(
 )
 
 COUNTRIES: dict[str, Country] = {c.iso3: c for c in (PHILIPPINES, ETHIOPIA)}
+
+
+def catalogue() -> list[str]:
+    """Every ISO3 code with a Common Operational Dataset for population.
+
+    The dataset names are ``cod-ps-<iso3>``, so the list of countries in the
+    series is the list of those datasets. Archived and legacy entries carry a
+    suffix and are dropped: ``cod-ps-mmr-archived`` is the same country as
+    ``cod-ps-mmr`` at an older vintage, and reading both would put one
+    country's figures in twice.
+    """
+    body = http_json(f"{HDX_API}/package_search?q=cod-ps&rows=1000&fl=name")
+    found = set()
+    for row in body.get("result", {}).get("results", []):
+        parts = (row.get("name") or "").split("-")
+        if len(parts) == 3 and parts[:2] == ["cod", "ps"] and len(parts[2]) == 3:
+            found.add(parts[2].upper())
+    return sorted(found)
+
+
+def discover(codes: list[str], sheets: bool) -> int:
+    """Report which countries carry a USCB workbook, and what is in it.
+
+    The Common Operational Dataset exists for far more countries than the
+    Bureau prepares tables for, and a workbook's existence is still not the
+    question -- Indonesia has one and it holds no religion and no ethnicity,
+    only a four-bucket first-language split. So what decides whether a country
+    is worth a config is its sheet names, and those are only knowable by
+    opening the file.
+    """
+    import openpyxl
+
+    codes = codes or catalogue()
+    log(f"{len(codes)} countries in the series")
+    carried, bare = [], []
+    for iso3 in codes:
+        try:
+            url = workbook_url(iso3)
+        except SystemExit as why:
+            bare.append(iso3)
+            log(f"  {iso3}: no USCB workbook ({str(why).splitlines()[0]})")
+            continue
+        carried.append(iso3)
+        if not sheets:
+            log(f"  {iso3}: {url.rsplit('/', 1)[-1]}")
+            continue
+        blob = http_get(url, binary=True, cache_dir=RAW / "uscb")
+        book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True,
+                                      data_only=True)
+        names = list(book.sheetnames)
+        book.close()
+        # Named rather than filtered to the three this map wants: a sheet this
+        # reader has no use for is still a fact about the source, and a topic
+        # nobody thought to look for is exactly what a listing surfaces.
+        log(f"  {iso3}: {len(blob):,} bytes, sheets: {', '.join(names)}")
+    log(f"{len(carried)} with a workbook, {len(bare)} without")
+    if carried:
+        log("  with: " + " ".join(carried))
+    return 0
 
 
 def sheet_rows(book, name: str) -> list[list[Any]]:
@@ -585,21 +694,44 @@ def main() -> int:
     ap = argparse.ArgumentParser(
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--country", action="append",
-                    choices=sorted(COUNTRIES) + ["all"], default=None)
+    # Deliberately unconstrained: --discover takes ISO3 codes for countries
+    # that are not configured yet, which is the whole point of it. The read
+    # path checks the code against COUNTRIES itself, and says what it knows.
+    ap.add_argument("--country", action="append", default=None,
+                    metavar="ISO3",
+                    help=f"one of {', '.join(sorted(COUNTRIES))} or all; "
+                         f"with --discover, any ISO3 code")
     ap.add_argument("--out")
+    ap.add_argument("--discover", action="store_true",
+                    help="report which countries in the series carry a USCB "
+                         "workbook, instead of reading any")
+    ap.add_argument("--sheets", action="store_true",
+                    help="with --discover, open each workbook and list its "
+                         "sheets (slow; the topics are only in the file)")
     args = ap.parse_args()
+
+    if args.discover:
+        return discover([c.upper() for c in (args.country or [])
+                         if c.lower() != "all"], args.sheets)
 
     import openpyxl
 
     wanted = [c for c in (args.country or ["all"])]
     chosen = (sorted(COUNTRIES) if "all" in wanted else wanted)
 
+    unknown = [c for c in chosen if c not in COUNTRIES]
+    if unknown:
+        raise SystemExit(
+            f"no configuration for {', '.join(unknown)}. Configured: "
+            f"{', '.join(sorted(COUNTRIES))}.\n"
+            f"Try --discover --country {unknown[0]} --sheets to see whether "
+            f"the series carries a workbook for it.")
+
     for iso3 in chosen:
         country = COUNTRIES[iso3]
-        log(f"{country.name}: {country.workbook}")
-        blob = http_get(country.workbook, binary=True,
-                        cache_dir=RAW / "uscb")
+        source = country.workbook or workbook_url(iso3)
+        log(f"{country.name}: {source}")
+        blob = http_get(source, binary=True, cache_dir=RAW / "uscb")
         log(f"  {len(blob):,} bytes")
         book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True,
                                       data_only=True)
@@ -652,7 +784,8 @@ def main() -> int:
                 no_shape=(parent.title(), name.title()) in country.no_shape
                          or None,
                 sources=[{"field": "/".join(t.field for t in country.topics),
-                          "name": country.source, "url": country.url,
+                          "name": country.source,
+                          "url": country.url or dataset_url(iso3),
                           "license": country.licence}],
                 **values))
 
