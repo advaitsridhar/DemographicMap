@@ -15,18 +15,3 @@ Myanmar: https://data.humdata.org/dataset/2689fec5-6a1a-4773-8a0b-304445c52fe7/r
     every one of 95 areas reaches its published total
   wrote data/processed/myanmar_state.json (311 kB)
   95 areas: 15 admin1, 80 admin2
-Ukraine: https://data.humdata.org/dataset/45c19756-9d0b-4673-9de4-fc47168c369a/resource/7f1ace67-fd49-4d2a-8b25-cc0561b5145b/download/ukraine_uscb_201905.xlsx
-  4,486,575 bytes
-  Language: 700 rows, 10 groups, denominator 'Total Population'
-    36 areas listed with no figures at all: AVTONOMNA RESPUBLIKA KRYM, CHERKAS’KA OBLAST’, CHERNIHIVS’KA OBLAST’, CHERNIVETS’KA OBLAST’, DARNYTS’KYY RAYON, DESNYANS’KYY RAYON ...
-    admin1: 2,931,957 against the country's own 48,121,632 -- 45,189,675 fewer (93.9%)
-    admin2: 45,189,675 against the country's own 48,121,632 -- 2,931,957 fewer (6.1%)
-    105 of 663 areas do not reach their published total; the map shows the remainder as unaccounted:
-      CHAPLYNS’KYY RAYON: groups come to 37,521 against a published 40,297 (+6.9%)
-      BRATS’KYY RAYON: groups come to 20,529 against a published 21,263 (+3.5%)
-      YELANETS’KYY RAYON: groups come to 17,903 against a published 18,423 (+2.8%)
-      ARBUZYNS’KYY RAYON: groups come to 24,205 against a published 24,810 (+2.4%)
-      DOMANIVS’KYY RAYON: groups come to 28,445 against a published 29,106 (+2.3%)
-      NOVOMYRHORODS’KYY RAYON: groups come to 35,056 against a published 35,835 (+2.2%)
-  wrote data/processed/ukraine_oblast.json (1121 kB)
-  663 areas: 2 admin1, 661 admin2
