@@ -47,10 +47,10 @@ burma-subnational-boundaries-and-tabular-data: 1,302,201 bytes, 10 sheets
   BTOTL_U | Both sexes total, urban | Total population (both sexes), urban. (March 30, 2014) | 2014 Myanmar Population and Housing Census, 2016, Population by Sex an
 
 --- Ethnicity: 426 rows, sexed=False ---
-  ADM_LEVEL 0: 1 areas  e.g. BURMA
-  ADM_LEVEL 1: 15 areas  e.g. KACHIN STATE, KAYAH STATE, KAYIN STATE, CHIN STATE, SAGAING, TANINTHARYI, BAGO, MAGWAY
-  ADM_LEVEL 2: 80 areas  e.g. MYITKYINĀ, MOHNYIN, BHAMO, PUTAO, LOIKAW, BAWLAKHE, HPA-AN, PHARPON
-  ADM_LEVEL 3: 330 areas  e.g. MYITKYINĀ, WAINGMAW, INJANGYANG, TANAI, CHIPWI, TSAWLAW, MOHNYIN, MOGAUNG
+  ADM_LEVEL 0: 1 areas  BURMA
+  ADM_LEVEL 1: 15 areas  KACHIN STATE, KAYAH STATE, KAYIN STATE, CHIN STATE, SAGAING, TANINTHARYI, BAGO, MAGWAY, MANDALAY, MON STATE, RAKHINE STATE, YANGON, SHAN STATE, AYEYARWADY, NAY PYI TAW
+  ADM_LEVEL 2: 80 areas  MYITKYINĀ, MOHNYIN, BHAMO, PUTAO, LOIKAW, BAWLAKHE, HPA-AN, PHARPON, ...
+  ADM_LEVEL 3: 330 areas  MYITKYINĀ, WAINGMAW, INJANGYANG, TANAI, CHIPWI, TSAWLAW, MOHNYIN, MOGAUNG, ...
   denominator: 'Total population, ethnicity'
   40 group columns:
     ETH_MYA  ->  'Burmese'
@@ -130,9 +130,9 @@ ukraine-subnational-boundaries-and-tabular-data: 4,486,575 bytes, 10 sheets
   B1014 | Both sexes 10 to 14 | Total population age 10 - 14 (both sexes). (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the popula
 
 --- Language: 700 rows, sexed=False ---
-  ADM_LEVEL 0: 1 areas  e.g. UKRAINE
-  ADM_LEVEL 1: 27 areas  e.g. AVTONOMNA RESPUBLIKA KRYM, MISTO SEVASTOPOL’, CHERKAS’KA OBLAST’, CHERNIHIVS’KA OBLAST’, CHERNIVETS’KA OBLAST’, DNIPROPETROVS’KA OBLAST’, DONETS’KA OBLAST’, IVANO-FRANKIVS’KA OBLAST’
-  ADM_LEVEL 2: 672 areas  e.g. ALUSHTYNS’KA MIS’KRADA, ARMYANS’KA MIS’KRADA, BAKHCHYSARAYS’KYY RAYON, BILOHIRS’KYY RAYON, CHORNOMORS’KYY RAYON, DZHANKOYS’KYY RAYON, FEODOSIYS’KA MIS’KRADA, KIROVS’KYY RAYON
+  ADM_LEVEL 0: 1 areas  UKRAINE
+  ADM_LEVEL 1: 27 areas  AVTONOMNA RESPUBLIKA KRYM, MISTO SEVASTOPOL’, CHERKAS’KA OBLAST’, CHERNIHIVS’KA OBLAST’, CHERNIVETS’KA OBLAST’, DNIPROPETROVS’KA OBLAST’, DONETS’KA OBLAST’, IVANO-FRANKIVS’KA OBLAST’, KHARKIVS’KA OBLAST’, KHERSONS’KA OBLAST’, KHMEL’NYTS’KA OBLAST’, KIROVOHRADS’KA OBLAST’, KYYIVS’KA OBLAST’, LUHANS’KA OBLAST’, L’VIVS’KA OBLAST’, MISTO KYYIV, MYKOLAYIVS’KA OBLAST’, ODES’KA OBLAST’, POLTAVS’KA OBLAST’, RIVNENS’KA OBLAST’, SUMS’KA OBLAST’, TERNOPIL’S’KA OBLAST’, VINNYTS’KA OBLAST’, VOLYNS’KA OBLAST’, ZAKARPATS’KA OBLAST’, ZAPORIZ’KA OBLAST’, ZHYTOMYRS’KA OBLAST’
+  ADM_LEVEL 2: 672 areas  ALUSHTYNS’KA MIS’KRADA, ARMYANS’KA MIS’KRADA, BAKHCHYSARAYS’KYY RAYON, BILOHIRS’KYY RAYON, CHORNOMORS’KYY RAYON, DZHANKOYS’KYY RAYON, FEODOSIYS’KA MIS’KRADA, KIROVS’KYY RAYON, ...
   denominator: 'Total Population'
   10 group columns:
     LNG_UKR  ->  'Ukrainian'
@@ -150,9 +150,9 @@ ukraine-subnational-boundaries-and-tabular-data: 4,486,575 bytes, 10 sheets
     LNG_CRH says: Crimean Tatar | Population using the Crimean Tatar language. Original field name: "Crimean Tatar." (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the population by nationality and native language, … oblast (persons) by region, nationali
 
 --- Nationality-Language: 700 rows, sexed=False ---
-  ADM_LEVEL 0: 1 areas  e.g. UKRAINE
-  ADM_LEVEL 1: 27 areas  e.g. AVTONOMNA RESPUBLIKA KRYM, MISTO SEVASTOPOL’, CHERKAS’KA OBLAST’, CHERNIHIVS’KA OBLAST’, CHERNIVETS’KA OBLAST’, DNIPROPETROVS’KA OBLAST’, DONETS’KA OBLAST’, IVANO-FRANKIVS’KA OBLAST’
-  ADM_LEVEL 2: 672 areas  e.g. ALUSHTYNS’KA MIS’KRADA, ARMYANS’KA MIS’KRADA, BAKHCHYSARAYS’KYY RAYON, BILOHIRS’KYY RAYON, CHORNOMORS’KYY RAYON, DZHANKOYS’KYY RAYON, FEODOSIYS’KA MIS’KRADA, KIROVS’KYY RAYON
+  ADM_LEVEL 0: 1 areas  UKRAINE
+  ADM_LEVEL 1: 27 areas  AVTONOMNA RESPUBLIKA KRYM, MISTO SEVASTOPOL’, CHERKAS’KA OBLAST’, CHERNIHIVS’KA OBLAST’, CHERNIVETS’KA OBLAST’, DNIPROPETROVS’KA OBLAST’, DONETS’KA OBLAST’, IVANO-FRANKIVS’KA OBLAST’, KHARKIVS’KA OBLAST’, KHERSONS’KA OBLAST’, KHMEL’NYTS’KA OBLAST’, KIROVOHRADS’KA OBLAST’, KYYIVS’KA OBLAST’, LUHANS’KA OBLAST’, L’VIVS’KA OBLAST’, MISTO KYYIV, MYKOLAYIVS’KA OBLAST’, ODES’KA OBLAST’, POLTAVS’KA OBLAST’, RIVNENS’KA OBLAST’, SUMS’KA OBLAST’, TERNOPIL’S’KA OBLAST’, VINNYTS’KA OBLAST’, VOLYNS’KA OBLAST’, ZAKARPATS’KA OBLAST’, ZAPORIZ’KA OBLAST’, ZHYTOMYRS’KA OBLAST’
+  ADM_LEVEL 2: 672 areas  ALUSHTYNS’KA MIS’KRADA, ARMYANS’KA MIS’KRADA, BAKHCHYSARAYS’KYY RAYON, BILOHIRS’KYY RAYON, CHORNOMORS’KYY RAYON, DZHANKOYS’KYY RAYON, FEODOSIYS’KA MIS’KRADA, KIROVS’KYY RAYON, ...
   denominator: 'Total population'
   1619 group columns:
     NL_ETH_UKR  ->  'Ethnicity/nationality, Ukrainian'
@@ -183,69 +183,3 @@ ukraine-subnational-boundaries-and-tabular-data: 4,486,575 bytes, 10 sheets
     NL_ETH_UKR says: Ethnicity/nationality, Ukrainian | Total population, Ukrainian ethnicity/nationality . Original field name: "Whole Population, Ukrainians." (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the population by nationality and native language, … oblast (persons) by region, nationali
     NL_ETH_ABZ says: Ethnicity/nationality, Abazin | Total population, Abazin ethnicity/nationality . Original field name: "Whole Population, Abazins." (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the population by nationality and native language, … oblast (persons) by region, nationali
     NL_ETH_ABK says: Ethnicity/nationality, Abkhazian | Total population, Abkhazian ethnicity/nationality . Original field name: "Whole Population, Abkhazians." (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the population by nationality and native language, … oblast (persons) by region, nationali
-
-======================================================================
-syria-subnational-boundaries-and-tabular-data: 366,769 bytes, 10 sheets
-
---- Metadata: 137 rows ---
-  Metadata: Syria
-  Contents
-  One metadata tab describing 4 geospatial boundary files and 8 tables, 
-  Geospatial Boundary Metadata
-  National Boundary (SY_GEOG_ADM0_2004_uscb_201811)
-  Title | Syria: National Boundary
-  Tags | Geospatial Boundaries, Syria, National Boundary, Country
-  Summary | The U.S. Census Bureau is providing national and subnational feature c
-  Description | National boundary feature class of Syria for joining (linking) to attr
-  Credits | Geospatial boundaries: International boundaries coincide with the Larg
-  Use Limitations | The international boundaries are derived from the Large Scale Internat
-  Place Keywords | Syria, Country
-  Temporal Keywords | 2018
-  Theme Keywords | National Boundary
-  Supplemental Information | The geodatabase feature class contains 1 polygon representing Syria's 
-  First-Order Administrative Divisions (SY_GEOG_ADM1_2004_uscb_201811)
-  Title | Syria: First-Order Administrative Divisions
-  Tags | Geospatial Boundaries, Syria, First-Order Administrative Divisions, Go
-  Summary | The U.S. Census Bureau is providing national and subnational feature c
-  Description | First-order administrative divisions feature class of Syria for joinin
-
---- Data Dictionary: 313 rows ---
-  Data Dictionary: Syria
-  Standard Geographic Fields
-  Field Name | Field Alias | Field Description | Field Data Source
-  AREA_NAME | Country or subnational area name | Name of the country or subnational area (administrative division). | U.S. Board on Geographic Names, 2018; Central Bureau of Statistics, 20
-  GEO_CONCAT | Administrative name concatenation | Concatenation of all administrative division names separated by unders | Population Division, U.S. Census Bureau
-  GEO_MATCH | Geographic match | Identical subnational area identifiers in the Excel table and geospati | Population Division, U.S. Census Bureau
-  CNTRY_NAME | Country name | Country name. | U.S. Board on Geographic Names
-  ADM1_NAME | First-order administrative division name | First-order administrative division name (ADM1), i.e., governorates (m | U.S. Board on Geographic Names, 2018; Central Bureau of Statistics, 20
-  ADM2_NAME | Second-order administrative division name | Second-order administrative division name (ADM2), i.e., districts (man | U.S. Board on Geographic Names, 2018; Central Bureau of Statistics, 20
-  ADM3_NAME | Third-order administrative division name | Third-order administrative division name (ADM3), i.e., sub-districts ( | U.S. Board on Geographic Names, 2018; Central Bureau of Statistics, 20
-  ADM_LEVEL | Administrative level | Administrative level "0" (ADM0/country); administrative level "1" (ADM | Population Division, U.S. Census Bureau
-  USCBCMNT | Notes | Any notes about a country or subnational division, which may include f | Population Division, U.S. Census Bureau
-  GENC_CODE | GENC code | U.S. Government Geopolitical Entities, Names, and Codes (GENC) Standar | U.S. Government Geopolitical Entities, Names, and Codes (GENC), 2018
-  FIPS_CODE | FIPS code | U.S. Government Federal Information Processing System (FIPS) code (for | U.S. Government Federal Information Processing System (FIPS), 2018
-  NSO_CODE | National statistical office code | Code used by the Central Bureau of Statistics for a subnational admini | Central Bureau of Statistics, 2004
-  NSO_NAME | National statistical office name | Name used by the Central Bureau of Statistics for a subnational admini | Central Bureau of Statistics, 2004
-  Age-Sex
-  BTOTL | Both sexes total | Total population (both sexes). (September 22, 2004) | Syria Population and Housing Census 2004, 2006, Distribution of Popula
-  B0004 | Both sexes 0 to 4 | Total population age 0 - 4 (both sexes). (September 22, 2004) | 2004 Census Population Bulletin - Man and Nah, 2006, Table 2: Distribu
-  B0509 | Both sexes 5 to 9 | Total population age 5 - 9 (both sexes). (September 22, 2004) | 2004 Census Population Bulletin - Man and Nah, 2006, Table 2: Distribu
-
---- Ethnicity: 76 rows, sexed=True ---
-  ADM_LEVEL 0: 1 areas  e.g. SYRIA
-  ADM_LEVEL 1: 14 areas  e.g. DIMASHQ, ḨALAB, RĪF DIMASHQ, ḨIMŞ, ḨAMĀH, AL LĀDHIQĪYAH, IDLIB, AL ḨASAKAH
-  ADM_LEVEL 2: 61 areas  e.g. DIMASHQ, JABAL SIM‘ĀN, AL BĀB, ‘AFRĪN, I‘ZĀZ, MANBIJ, ‘AYN AL ‘ARAB, AS SAFĪRAH
-  denominator: 'Total population, both sexes'
-  9 group columns:
-    ETH_SYR_B  ->  'Syrian'
-    ETH_PAL_B  ->  'Palestinian'
-    ETH_ARAB_B  ->  'Arab, other'
-    ETH_EURO_B  ->  'European'
-    ETH_AFNA_B  ->  'African, non-Arab'
-    ETH_ASIA_B  ->  'Asian'
-    ETH_AUS_B  ->  'Australian'
-    ETH_USA_B  ->  'American'
-    ETH_OTHR_B  ->  'Other'
-    ETH_SYR_B says: Syrian, both sexes | Population with Syrian ethnicity, both sexes. Original field name: "Syrian, Total." (September 22, 2004) | 2004 Census Population Bulletin - Man and Nah, 2006, Table 3: Distribution of Individuals by Nationality and Sex
-    ETH_PAL_B says: Palestinian, both sexes | Population with Palestinian ethnicity, both sexes. Original field name: "Palestinian, Total." (September 22, 2004) | 2004 Census Population Bulletin - Man and Nah, 2006, Table 3: Distribution of Individuals by Nationality and Sex
-    ETH_ARAB_B says: Arab, other, both sexes | Population with other Arab ethnicity, both sexes. Original field name: "Arab Others, Total." (September 22, 2004) | 2004 Census Population Bulletin - Man and Nah, 2006, Table 3: Distribution of Individuals by Nationality and Sex
