@@ -874,6 +874,75 @@ class Admin2Disambiguation(unittest.TestCase):
         self.assertEqual(entity["id"], "UP-AGR")
 
 
+class RivalRowsThatDisagree(unittest.TestCase):
+    """Two outright matches are one place written twice only if they agree.
+
+    norm() drops "Region", "Oblast", "City" and "Department" alike, so a
+    capital and the region named after it reach one key exactly as a duplicate
+    listing does. 113 shapes were resolving that way in favour of whichever row
+    came last: Moscow's 13.3 million on Moscow Oblast against the oblast's 8.6,
+    Kyiv's 2.95 on Kyiv Oblast against 1.80, Morogoro city's on the region 150
+    km around it -- each of them a wrong answer that looked exactly like a
+    right one.
+    """
+
+    def rows(self, one, two):
+        return [({"name": one[0], "_source": "wikidata_admin1.json",
+                  "population": one[1]}, {"id": "S1", "name": "Shape"}, "name"),
+                ({"name": two[0], "_source": "wikidata_admin1.json",
+                  "population": two[1]}, {"id": "S1", "name": "Shape"}, "name")]
+
+    def test_agreeing_duplicates_keep_the_exemption(self):
+        # Wikidata's two Ancasti items publish the same 3,302 people, so
+        # whichever wins the map is right and refusing would lose the place to
+        # a duplicate rather than to a mistake.
+        pop = {"value": 3302, "year": 2022}
+        dropped, _ = be.resolve_collisions(
+            self.rows(("Ancasti", pop), ("Ancasti Department", dict(pop))))
+        self.assertEqual(dropped, set())
+
+    def test_disagreeing_rivals_are_both_refused(self):
+        dropped, notes = be.resolve_collisions(
+            self.rows(("Kyiv", {"value": 2952301}),
+                      ("Kyiv Oblast", {"value": 1795079})))
+        self.assertEqual(dropped, {0, 1})
+        self.assertIn("nothing to separate them", notes[0])
+
+    def test_a_gap_is_not_a_disagreement(self):
+        # One row without a figure is what merge_adapter is for; the figure
+        # survives either order, so this is still a duplicate listing.
+        dropped, _ = be.resolve_collisions(
+            self.rows(("Belén", {"value": 1234}),
+                      ("Belén Department", {"status": "not_available"})))
+        self.assertEqual(dropped, set())
+
+    def test_identity_alone_is_not_a_disagreement(self):
+        # Every Wikidata item has its own Q-id. Counting that as a difference
+        # would make every rivalry a conflict and the test useless.
+        rows = self.rows(("Ancasti", {"value": 3302}),
+                         ("Ancasti Department", {"value": 3302}))
+        rows[0][0]["wikidata"] = "Q1"
+        rows[1][0]["wikidata"] = "Q2"
+        self.assertEqual(be.conflicting([r for r, _e, _h in rows]), [])
+        self.assertEqual(be.resolve_collisions(rows)[0], set())
+
+    def test_the_shapes_own_name_does_not_break_a_row_tie(self):
+        # It settles a tie between two shapes and inverts between two rows:
+        # CGAZ's Argentine ADM2 is the departments and names them without the
+        # word, so the exactly-named rival is the town.
+        rows = self.rows(("Andalgalá", {"value": 3300}),
+                         ("Andalgalá Department", {"value": 17000}))
+        for row, entity, _how in rows:
+            entity["name"] = "Andalgalá"
+        self.assertEqual(be.resolve_collisions(rows)[0], {0, 1})
+
+    def test_rivals_from_different_files_are_not_rivals(self):
+        # India's C-01 and C-16 both describe Kargil, and that is normal.
+        rows = self.rows(("Kargil", {"value": 1}), ("Kargil", {"value": 2}))
+        rows[1][0]["_source"] = "india_c16.json"
+        self.assertEqual(be.resolve_collisions(rows)[0], set())
+
+
 class TwoShapesOneNameInsideOneParent(unittest.TestCase):
     """Same name, same parent: settled by an exact name or not at all.
 

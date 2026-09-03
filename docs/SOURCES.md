@@ -1488,9 +1488,45 @@ City" and "Province Of Cebu" are two places, not one place listed twice, and
 they reach this pass looking exactly like Ancasti: both outright, differing
 only by a word `norm()` drops. Last one wins, and a city's figures land on a
 province with nothing visible to show for it. Nothing here can tell those two
-cases apart from the names alone -- so the fix is upstream, where the adapter
-knows the boundary file folds those cities away and can say so before the
-matcher ever sees the row.
+cases apart from the names alone -- so the Philippine fix was upstream, where
+the adapter knows the boundary file folds those cities away and can say so
+before the matcher ever sees the row.
+
+**Then the same question was asked of every adapter, and the answer was 113
+more.** `scripts/audit_claims.py` runs the real matcher over the real
+boundaries and reports every shape that one file's rows claim twice. The names
+could not sort them, but a different question could: *do the rivals agree?* One
+place written twice publishes the same figures both times, so whichever wins,
+the map is right. Two places publish different figures, and the loser's are
+being discarded without trace. That test needs no knowledge of any country.
+
+It found 113. `norm()` drops "Region", "Oblast" and "City" exactly as it drops
+"Department", so a capital and the region named after it arrive under one key
+looking precisely like a duplicate listing:
+
+| shape | rival rows | published |
+| --- | --- | --- |
+| Moscow Oblast | Moscow / Moscow Oblast | 13,274,285 vs 8,594,454 |
+| Kyiv | Kyiv / Kyiv Oblast | 2,952,301 vs 1,795,079 |
+| Morogoro | Morogoro / Morogoro Region | 150 km apart |
+| Xoxocotla | Morelos's / Veracruz's | 74.6% vs 88.4% Catholic |
+
+The exemption now requires agreement. Ancasti keeps it -- Wikidata's two items
+both say 3,302 people, so nothing is at stake -- and a rivalry that
+contradicts itself is ranked on evidence or refused like any other. 108 shapes
+lose a figure and none gains one; 104 of the 108 are Wikidata population
+estimates, and two are Mexican municipios where a religion breakdown was
+landing on the wrong state.
+
+**What decides it is not which rival is named exactly as the shape is**, and
+that is worth recording because it is the plausible fix and it is backwards.
+An exact name settles a tie between two *shapes* -- "Cotabato" picks the
+province over "Cotabato City". Between two *rows* it inverts, because boundary
+files drop the generic word by convention: CGAZ's Argentine second level *is*
+the departments and names them "Andalgalá", so the exactly-named rival is the
+town of 3,300 and the one saying "Andalgalá Department" is what the shape
+draws. Measured before it was written, that rule would have replaced 108
+honest gaps with 104 confident mis-matches.
 
 111 rows across 32 countries are refused this way, and each one is named in the
 build log. Much of what it removes is Wikidata entities that are not

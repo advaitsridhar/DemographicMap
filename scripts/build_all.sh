@@ -107,6 +107,13 @@ fi
 step "Join boundaries and attributes into site/data"
 python3 scripts/build_entities.py
 
+# Runs here rather than in checks.yml because it needs the CGAZ boundary files
+# (~550 MB, not in git), which only the full pipeline has fetched. It reports
+# and never fails the build: a new adapter is allowed to introduce a rivalry,
+# and the point is that somebody sees it.
+step "Audit rival claims on the same shape"
+python3 scripts/audit_claims.py
+
 step "Done"
 du -sh site/data site/tiles 2>/dev/null || true
 echo "Serve locally with: python3 scripts/serve.py"
