@@ -874,6 +874,67 @@ class Admin2Disambiguation(unittest.TestCase):
         self.assertEqual(entity["id"], "UP-AGR")
 
 
+class TwoShapesOneNameInsideOneParent(unittest.TestCase):
+    """Same name, same parent: settled by an exact name or not at all.
+
+    norm() drops the word "city", so geoBoundaries' "Cotabato" and "Cotabato
+    City" -- a province and the enclave city, both drawn inside Soccsksargen --
+    arrived under one key and were both thrown away as ambiguous. The province
+    was then handed South Cotabato by the containment pass, 900,000 people
+    wearing a neighbour's figures, and the only thing that caught it was the
+    collision pass refusing both. What the map showed was a gap where a census
+    of 1.4 million people should have been.
+    """
+
+    def shapes(self):
+        return {
+            be.norm("Cotabato"): [
+                {"id": "PH-COT", "name": "Cotabato", "parent": "R-12",
+                 "bbox": [0, 0, 2, 2]},
+                {"id": "PH-COC", "name": "Cotabato City", "parent": "R-12",
+                 "bbox": [1, 1, 1.2, 1.2]},
+            ],
+            be.norm("South Cotabato"): [
+                {"id": "PH-SCO", "name": "South Cotabato", "parent": "R-12",
+                 "bbox": [0, -3, 2, -1]}],
+        }
+
+    def admin1(self):
+        return {be.norm("Soccsksargen"): {"id": "R-12", "name": "Soccsksargen"}}
+
+    def test_an_exact_name_settles_the_tie(self):
+        entity, how = be.match_admin2(
+            {"name": "Province Of Cotabato", "aliases": ["Cotabato"],
+             "parent_name": "Soccsksargen"}, self.shapes(), self.admin1())
+        self.assertEqual(entity["id"], "PH-COT")
+        self.assertIn("state", how)
+
+    def test_the_city_reaches_its_own_shape(self):
+        entity, _ = be.match_admin2(
+            {"name": "Cotabato City", "parent_name": "Soccsksargen"},
+            self.shapes(), self.admin1())
+        self.assertEqual(entity["id"], "PH-COC")
+
+    def test_nothing_weaker_than_an_exact_name_settles_it(self):
+        # "Cotabato Province" is neither shape's name, so the tie stands and
+        # this pass hands back nothing. What happens to the row afterwards is
+        # the containment pass's business, tested elsewhere; the point here is
+        # that neither tied shape may be reached on a shared prefix.
+        entity, _ = be.match_admin2(
+            {"name": "Cotabato Province", "parent_name": "Soccsksargen"},
+            self.shapes(), self.admin1())
+        self.assertNotIn(entity and entity["id"], ("PH-COT", "PH-COC"))
+
+    def test_a_tie_with_nothing_else_in_reach_is_refused_outright(self):
+        tied = {k: v for k, v in self.shapes().items()
+                if k != be.norm("South Cotabato")}
+        entity, how = be.match_admin2(
+            {"name": "Cotabato Province", "parent_name": "Soccsksargen"},
+            tied, self.admin1())
+        self.assertIsNone(entity)
+        self.assertEqual(how, "ambiguous")
+
+
 class Admin2ContradictsItself(unittest.TestCase):
     """A row that names one state and matches a shape in another.
 
@@ -2592,6 +2653,53 @@ class UscbReader(unittest.TestCase):
         for census, boundary in (("National Capital Region", "NCR"),
                                  ("Davao De Oro", "Compostela Valley")):
             self.assertIn(boundary, self.uscb.PHILIPPINES.aliases[census])
+
+    # -- what the boundary file has no shape for --------------------------
+    def test_a_folded_city_is_declared_rather_than_left_to_the_matcher(self):
+        # "Cebu City" and "Province Of Cebu" both normalise to "cebu" and both
+        # matched outright, so the collision pass read them as one place listed
+        # twice and let the last one win: a city of 964,000 wearing a
+        # province's figures, or the reverse, with nothing on the map to show
+        # it. Three of those were live (Cebu, Iloilo, Quezon City).
+        for parent, city in (("Central Visayas", "Cebu City"),
+                             ("Western Visayas", "Iloilo City"),
+                             ("National Capital Region", "Quezon")):
+            self.assertIn((parent, city), self.uscb.PHILIPPINES.no_shape)
+
+    def test_a_city_with_a_shape_of_its_own_is_not_declared_away(self):
+        # geoBoundaries draws the City of Manila (as NCR's first district) and
+        # Basketo, so declaring them absent would suppress a real match.
+        self.assertNotIn(("National Capital Region", "Manila"),
+                         self.uscb.PHILIPPINES.no_shape)
+        self.assertFalse([p for p in self.uscb.ETHIOPIA.no_shape
+                          if p[1].startswith("Basketo")])
+
+    def test_a_province_the_boundary_file_merely_lacks_is_left_visible(self):
+        # Sultan Kudarat is a province with no CGAZ shape at all and Sidama a
+        # region created after CGAZ's Ethiopian vintage. Those are upstream
+        # omissions a later release could fix; declaring them here would turn
+        # into a lie that suppresses the match when it does.
+        self.assertNotIn(("Soccsksargen", "Sultan Kudarat"),
+                         self.uscb.PHILIPPINES.no_shape)
+        self.assertFalse([p for p in self.uscb.ETHIOPIA.no_shape
+                          if p[1].startswith("Sīdama")])
+
+    def test_a_parent_is_addressed_with_its_own_aliases(self):
+        # Every Ethiopian region with a macron in it is spelled differently by
+        # the boundary file, so without the parent's aliases no zone could be
+        # scoped inside its region -- and the two North Shewas, which only
+        # their regions tell apart, were both refused as ambiguous.
+        self.assertIn("Amhara", self.uscb.ETHIOPIA.aliases["Āmara"])
+        self.assertIn("Oromia", self.uscb.ETHIOPIA.aliases["Oromīya"])
+
+    def test_every_declared_absence_names_a_parent(self):
+        # A name alone is not an address: the Philippines has a Quezon that is
+        # a province and a Quezon that is a city 130 km away, and only one of
+        # them is folded into another shape.
+        for country in self.uscb.COUNTRIES.values():
+            for pair in country.no_shape:
+                self.assertEqual(len(pair), 2)
+                self.assertTrue(pair[0] and pair[1], pair)
 
     def test_every_country_carries_its_own_census_year(self):
         # Ethiopia's tables are the 2007 census -- the last it completed -- and

@@ -33,6 +33,7 @@ import unicodedata
 from collections import defaultdict
 from functools import lru_cache
 from pathlib import Path
+from collections.abc import Sequence
 from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -505,14 +506,36 @@ def match_name(row: dict[str, Any], lookup: dict[str, dict[str, Any]]
     return None, "unmatched"
 
 
-def scoped_by_parent(by_name: dict[str, list[dict[str, Any]]], parent_id: str
-                     ) -> dict[str, dict[str, Any]]:
-    """The shapes inside one admin-1, keyed by name, dropping any still ambiguous."""
+def scoped_by_parent(by_name: dict[str, list[dict[str, Any]]], parent_id: str,
+                     names: Sequence[str] = ()) -> dict[str, dict[str, Any]]:
+    """The shapes inside one admin-1, keyed by name, dropping any still ambiguous.
+
+    Ambiguous is not always undecidable. norm() drops the word "city", so
+    geoBoundaries' "Cotabato" and "Cotabato City" -- a province and the city
+    that is an enclave inside its neighbour, both drawn in Soccsksargen --
+    arrive here under one key and both used to be thrown away. The province was
+    then left to the containment pass, which handed it South Cotabato, a
+    different province of 900,000 people; the refusal that caught that came
+    from the collision pass, so what the map showed was a gap where a census of
+    1.4 million people had been.
+
+    Where exactly one of the rivals is written the way the row writes it, that
+    is stronger evidence than the normalised key which made them look alike,
+    and the tie is settled instead of refused. Nothing is settled on anything
+    weaker: an identical name is the only tiebreak here, so this pass can add a
+    match but never move one.
+    """
+    exact = {n.strip().casefold() for n in names if n}
     out = {}
     for key, entities in by_name.items():
         inside = [e for e in entities if e.get("parent") == parent_id]
         if len(inside) == 1:
             out[key] = inside[0]
+        elif len(inside) > 1 and exact:
+            named = [e for e in inside
+                     if (e.get("name") or "").strip().casefold() in exact]
+            if len(named) == 1:
+                out[key] = named[0]
     return out
 
 
@@ -594,7 +617,9 @@ def match_admin2(row: dict[str, Any], by_name: dict[str, list[dict[str, Any]]],
         parent, _ = match_name({"name": parent_name,
                                 "aliases": row.get("parent_aliases") or []}, admin1)
         if parent is not None:
-            entity, how = match_name(row, scoped_by_parent(by_name, parent["id"]))
+            scoped = scoped_by_parent(by_name, parent["id"],
+                                      [row["name"], *row.get("aliases", [])])
+            entity, how = match_name(row, scoped)
             if entity is not None:
                 return entity, f"{how}+state"
             # The row said which admin-1 it is in and no shape of its name is
@@ -1375,9 +1400,23 @@ def main() -> int:
         a2: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for entity in admin2_by_country.get(iso3, []):
             a2[norm(entity["name"])].append(entity)
-        hit = miss = ambiguous = outside = collided = 0
+        hit = miss = ambiguous = outside = collided = declared = 0
         matched: list[tuple[dict[str, Any], dict[str, Any], str]] = []
         for row in rows:
+            # A row may declare that no boundary of its own exists. The
+            # Philippines' highly urbanized cities are drawn inside the
+            # provinces around them and Addis Ababa's sub-cities as one shape,
+            # so those rows cannot be shown -- but left to the matcher they are
+            # not merely unshown, they are dangerous: "Cebu City" and "Province
+            # Of Cebu" normalise alike, both match outright, and the collision
+            # pass below reads two outright matches as one place listed twice
+            # and lets the last one win. An adapter that knows the boundary
+            # file folds an area away can say so, and a stated gap is the one
+            # kind that cannot become a wrong answer.
+            if row.get("no_shape"):
+                declared += 1
+                miss += 1
+                continue
             # Aliases travel with the key. They were being dropped here, which
             # made every alias an adapter declared for an admin-2 row or its
             # parent dead weight -- the matcher never saw them.
@@ -1429,7 +1468,8 @@ def main() -> int:
             # longer happening, and it should not quietly grow.
             why = [f"{ambiguous} ambiguous" if ambiguous else "",
                    f"{outside} outside their stated parent" if outside else "",
-                   f"{collided} beaten to their shape by another row" if collided else ""]
+                   f"{collided} beaten to their shape by another row" if collided else "",
+                   f"{declared} with no boundary, as declared" if declared else ""]
             extra = " (" + ", ".join(w for w in why if w) + ")" if any(why) else ""
             log(f"  {iso3}: adapter rows matched {hit}, unmatched {miss}{extra}")
 

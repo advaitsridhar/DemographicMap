@@ -114,6 +114,27 @@ class Country:
     topics: tuple[Topic, ...]
     note: str
     aliases: dict[str, tuple[str, ...]] = dc_field(default_factory=dict)
+    # Census areas geoBoundaries draws no boundary of their own for, as
+    # (parent, area) pairs -- a name alone is not an address, and the
+    # Philippines has a Quezon that is a province and a Quezon that is a city
+    # 130 km away.
+    #
+    # This is not a list of everything unmatched. It is the subset the boundary
+    # file folds away *by design* -- a highly urbanized city drawn inside the
+    # province around it, Addis Ababa's ten sub-cities drawn as one "Region 14"
+    # -- where saying so is what stops the row from reaching a shape that is
+    # not its own. Left undeclared, "Cebu City" and "Province Of Cebu" both
+    # normalise to "cebu", both match outright, and the collision resolver
+    # treats two outright matches as one place listed twice: the last one wins
+    # and a city of 964,000 quietly wears a province's figures, or the reverse.
+    # Three of those were happening here (Cebu, Iloilo, Quezon City).
+    #
+    # An area the boundary file merely lacks is deliberately *not* listed --
+    # Sultan Kudarat is a province with no CGAZ shape at all, Sidama a region
+    # created after CGAZ's Ethiopian vintage. Those are omissions that an
+    # upstream release could fix, and a declaration here would then be a lie
+    # that suppresses a match. A declaration should only ever be doing work.
+    no_shape: frozenset[tuple[str, str]] = frozenset()
 
 
 HDX = "https://data.humdata.org/dataset"
@@ -138,11 +159,8 @@ PHILIPPINES = Country(
     # should bridge on its own -- "NCR" and "National Capital Region" share no
     # word, and a rule loose enough to join them would join a great deal else.
     #
-    # Not listed, because they are absent rather than misnamed: the sixteen
-    # cities of Metro Manila, which geoBoundaries draws as four numbered NCR
-    # districts, and the highly urbanized cities elsewhere, which it folds into
-    # the provinces around them. Those records carry figures no shape can show,
-    # and that is a gap rather than something an alias could fix.
+    # The cities are not here but in no_shape below: they are absent rather
+    # than misnamed, and an alias cannot conjure a boundary.
     aliases={
         "Bangsamoro Autonomous Region Of Muslim Mindanao": ("ARMM",),
         "Cordillera Administrative Region": ("CAR",),
@@ -155,6 +173,46 @@ PHILIPPINES = Country(
         "Davao De Oro": ("Compostela Valley",),
         "Manila": ("City of Manila",),
     },
+    # geoBoundaries draws Metro Manila as four numbered districts, so fifteen
+    # of its sixteen cities have no shape (the City of Manila is the exception
+    # and is aliased above), and it folds every other highly urbanized city
+    # into the province around it. Three of those cities share a normalised
+    # name with a province and were silently taking its shape.
+    no_shape=frozenset((
+        ("National Capital Region", "Caloocan"),
+        ("National Capital Region", "Las Piñas"),
+        ("National Capital Region", "Makati"),
+        ("National Capital Region", "Malabon"),
+        ("National Capital Region", "Mandaluyong"),
+        ("National Capital Region", "Marikina"),
+        ("National Capital Region", "Muntinlupa"),
+        ("National Capital Region", "Navotas"),
+        ("National Capital Region", "Parañaque"),
+        ("National Capital Region", "Pasay"),
+        ("National Capital Region", "Pasig"),
+        ("National Capital Region", "Pateros"),
+        ("National Capital Region", "Quezon"),
+        ("National Capital Region", "San Juan"),
+        ("National Capital Region", "Taguig"),
+        ("National Capital Region", "Valenzuela"),
+        ("Central Luzon", "Angeles"),
+        ("Central Luzon", "Olongapo"),
+        ("Calabarzon", "Lucena"),
+        ("Mimaropa", "Puerto Princesa"),
+        ("Western Visayas", "Bacolod"),
+        ("Western Visayas", "Iloilo City"),
+        ("Central Visayas", "Cebu City"),
+        ("Central Visayas", "Lapu-Lapu"),
+        ("Central Visayas", "Mandaue"),
+        ("Eastern Visayas", "Tacloban"),
+        ("Cordillera Administrative Region", "Baguio"),
+        ("Caraga Region", "Butuan"),
+        ("Northern Mindanao", "Cagayan De Oro"),
+        ("Northern Mindanao", "Iligan"),
+        ("Soccsksargen", "General Santos"),
+        ("Davao Region", "Davao"),
+        ("Zamboanga Peninsula", "Zamboanga"),
+    )),
     note=("2020 Census of Population and Housing. The census records religious "
           "affiliation as the individual church or denomination a person names, "
           "so the groups here are as published rather than collapsed into "
@@ -206,9 +264,39 @@ ETHIOPIA = Country(
         "Mezhenger": ("Majang",),
         "Basketo Special Wereda": ("Basketo",),
         "Harari": ("Hareri",),
+        "Oromiya": ("Oromia",),
         "Southwest Shuwa": ("South West Shewa",),
         "Welayita": ("Wolayita",),
     },
+    # Addis Ababa's ten sub-cities are one shape called "Region 14", and the
+    # special weredas and town administrations are one called "Special Woreda".
+    # Basketo is not here: it has a shape of its own and is aliased above.
+    # "Jimma Town Special Wereda" is the one that was doing damage -- it
+    # reached the zone of Jimma by prefix, 350 km of countryside wearing a
+    # town's figures, and was refused only because the zone's own row got
+    # there first.
+    no_shape=frozenset((
+        ("Ādīs Ābeba", "Addis Ketema"),
+        ("Ādīs Ābeba", "Akaki Kaliti"),
+        ("Ādīs Ābeba", "Arada"),
+        ("Ādīs Ābeba", "Bole"),
+        ("Ādīs Ābeba", "Gulele"),
+        ("Ādīs Ābeba", "Kirkos"),
+        ("Ādīs Ābeba", "Kolfe Keranyo"),
+        ("Ādīs Ābeba", "Lideta"),
+        ("Ādīs Ābeba", "Nefas Silk Lafto"),
+        ("Ādīs Ābeba", "Yeka"),
+        ("Bīnshangul Gumuz", "Mao Komo Special Wereda"),
+        ("Bīnshangul Gumuz", "Pawe Special Wereda"),
+        ("Gambēla Hizboch", "Etang Special Wereda"),
+        ("Oromīya", "Adama Special Wereda"),
+        ("Oromīya", "Burayu Special Wereda"),
+        ("Oromīya", "Jimma Town Special Wereda"),
+        ("Tigray", "Mekele Town Special Wereda"),
+        ("Āmara", "Argoba Special Wereda"),
+        ("Āmara", "Bahir Dar Special Wereda"),
+        ("Yedebub Bihēroch Bihēreseboch Na Hizboch", "Hawassa City Administration"),
+    )),
     note=("2007 Population and Housing Census -- the last census Ethiopia has "
           "completed. The 2017 round was postponed and never held, so this is "
           "the most recent measurement in existence, not the most recent "
@@ -550,6 +638,19 @@ def main() -> int:
                 ident, name.title(), level=level, parent=iso3,
                 parent_name=parent.title() or None,
                 aliases=list(country.aliases.get(name.title(), ())),
+                # The parent's aliases travel with the row for the same reason
+                # its name does. Without them a zone can only be scoped against
+                # a region the boundary file spells differently, which for
+                # Ethiopia is every region with a macron in it -- so no zone
+                # was ever matched *inside* its region, and the two North
+                # Shewas, one in Amhara and one in Oromia, were both refused as
+                # ambiguous when the region each belongs to tells them apart.
+                parent_aliases=list(country.aliases.get(parent.title(), ())),
+                # Declared absence. A row that says it has no boundary is a
+                # visible gap; the same row left to the matcher is whatever
+                # shape it happens to reach.
+                no_shape=(parent.title(), name.title()) in country.no_shape
+                         or None,
                 sources=[{"field": "/".join(t.field for t in country.topics),
                           "name": country.source, "url": country.url,
                           "license": country.licence}],
