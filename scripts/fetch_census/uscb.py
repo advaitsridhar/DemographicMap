@@ -133,6 +133,28 @@ PHILIPPINES = Country(
     levels={1: "admin1", 2: "admin2"},
     topics=(Topic("Religion", "religion"),
             Topic("Ethnicity", "ethnicity")),
+    # What geoBoundaries calls the same area. The census writes a region's
+    # full name and the boundary file its initials, which no matching rule
+    # should bridge on its own -- "NCR" and "National Capital Region" share no
+    # word, and a rule loose enough to join them would join a great deal else.
+    #
+    # Not listed, because they are absent rather than misnamed: the sixteen
+    # cities of Metro Manila, which geoBoundaries draws as four numbered NCR
+    # districts, and the highly urbanized cities elsewhere, which it folds into
+    # the provinces around them. Those records carry figures no shape can show,
+    # and that is a gap rather than something an alias could fix.
+    aliases={
+        "Bangsamoro Autonomous Region Of Muslim Mindanao": ("ARMM",),
+        "Cordillera Administrative Region": ("CAR",),
+        "National Capital Region": ("NCR",),
+        "Caraga Region": ("Caraga",),
+        "Province Of Cebu": ("Cebu",),
+        "Province Of Cotabato": ("Cotabato",),
+        "Province Of Iloilo": ("Iloilo",),
+        "Mountain": ("Mountain Province",),
+        "Davao De Oro": ("Compostela Valley",),
+        "Manila": ("City of Manila",),
+    },
     note=("2020 Census of Population and Housing. The census records religious "
           "affiliation as the individual church or denomination a person names, "
           "so the groups here are as published rather than collapsed into "
@@ -157,6 +179,36 @@ ETHIOPIA = Country(
     topics=(Topic("Religion", "religion"),
             Topic("Ethnicity", "ethnicity"),
             Topic("Language", "language")),
+    # The Bureau transliterates from Amharic and geoBoundaries does not, so
+    # most of Ethiopia's regions reach the map only by declaration: "Oromīya"
+    # and "Oromia" differ by a letter, "Sumalē" and "Somali" by three, and
+    # "Yedebub Bihēroch Bihēreseboch Na Hizboch" is the region the boundary
+    # file simply calls SNNPR. Folding the diacritics is not enough for any of
+    # them, and a rule loose enough to bridge the last would bridge anything.
+    #
+    # Not listed: Addis Ababa's ten sub-cities, which geoBoundaries draws as
+    # the single shape "Region 14", and the special weredas it draws as one
+    # "Special Woreda". Those are absent shapes, not wrong names.
+    aliases={
+        "Ādīs Ābeba": ("Addis Ababa",),
+        "Āfar": ("Afar",),
+        "Āmara": ("Amhara",),
+        "Bīnshangul Gumuz": ("Beneshangul Gumu", "Benishangul Gumuz"),
+        "Dirē Dawa": ("Dire Dawa",),
+        "Gambēla Hizboch": ("Gambela",),
+        "Hārerī Hizb": ("Hareri",),
+        "Oromīya": ("Oromia",),
+        "Sumalē": ("Somali",),
+        "Yedebub Bihēroch Bihēreseboch Na Hizboch": ("SNNPR",),
+        # Zones, where the two spell the same place differently.
+        "Kellem Wellega": ("Kelem Wellega",),
+        "Kembata Tembaro": ("KT",),
+        "Mezhenger": ("Majang",),
+        "Basketo Special Wereda": ("Basketo",),
+        "Harari": ("Hareri",),
+        "Southwest Shuwa": ("South West Shewa",),
+        "Welayita": ("Wolayita",),
+    },
     note=("2007 Population and Housing Census -- the last census Ethiopia has "
           "completed. The 2017 round was postponed and never held, so this is "
           "the most recent measurement in existence, not the most recent "
@@ -313,8 +365,15 @@ def area(row: list[Any], names: list[str]) -> tuple[int | None, str, str]:
     return (int(level) if level is not None else None, name, parent)
 
 
-def read(book, country: Country, topic: Topic) -> dict[str, dict[str, Any]]:
-    """One topic's sheet as {area name: {level, parent, counts, total}}."""
+def read(book, country: Country,
+         topic: Topic) -> dict[tuple[str, str], dict[str, Any]]:
+    """One topic's sheet, keyed by parent and name rather than name alone.
+
+    Ethiopia has a North Shewa in Amhara and another in Oromia -- geoBoundaries
+    distinguishes them as "North Shewa(R3)" and "North Shewa(R4)" -- and keying
+    on the name alone let one silently overwrite the other. The count was the
+    only sign: 92 zones written where the sheet lists 93.
+    """
     rows = sheet_rows(book, topic.sheet)
     names, aliases = columns(rows)
     by_sex = sexed(names)
@@ -330,7 +389,7 @@ def read(book, country: Country, topic: Topic) -> dict[str, dict[str, Any]]:
     if by_sex:
         check_sexes(rows, names, f"{country.iso3} {topic.sheet}")
 
-    out: dict[str, dict[str, Any]] = {}
+    out: dict[tuple[str, str], dict[str, Any]] = {}
     skipped = 0
     empty: list[str] = []
     whole: dict[str, float] = {}
@@ -359,8 +418,14 @@ def read(book, country: Country, topic: Topic) -> dict[str, dict[str, Any]]:
             empty.append(name)
             continue
         published = number(row[total]) if total is not None else None
-        out[name] = {"level": level, "parent": parent, "counts": counts,
-                     "published": published, "summed": sum(counts.values())}
+        key = (parent, name)
+        if key in out:
+            raise SystemExit(
+                f"{country.iso3} {topic.sheet}: two rows for {name!r} under "
+                f"{parent!r}; the sheet's own key is not unique")
+        out[key] = {"level": level, "parent": parent, "name": name,
+                    "counts": counts, "published": published,
+                    "summed": sum(counts.values())}
     if skipped:
         log(f"    {skipped} rows skipped: another level, or no area name")
     if empty:
@@ -396,7 +461,7 @@ def check_total(country: Country, topic: Topic,
     checked = 0
     short: list[tuple[float, str]] = []
     worst = 0.0
-    for name, row in areas.items():
+    for (_parent, name), row in areas.items():
         if row["published"] is None or row["published"] <= 0:
             continue
         checked += 1
@@ -458,14 +523,15 @@ def main() -> int:
             fields[topic.field] = areas
         book.close()
 
-        every = sorted({name for areas in fields.values() for name in areas})
+        every = sorted({key for areas in fields.values() for key in areas})
         records: list[dict[str, Any]] = []
-        for name in every:
-            any_row = next(a[name] for a in fields.values() if name in a)
+        for key in every:
+            parent, name = key
+            any_row = next(a[key] for a in fields.values() if key in a)
             level = country.levels[any_row["level"]]
             values: dict[str, Any] = {}
             for topic in country.topics:
-                row = fields[topic.field].get(name)
+                row = fields[topic.field].get(key)
                 if not row:
                     continue
                 values[topic.field] = shares(
@@ -473,11 +539,17 @@ def main() -> int:
                 ) or gap(NOT_AVAILABLE)
                 values[f"{topic.field}_year"] = country.year
                 values[f"{topic.field}_note"] = country.note
-            slug = name.lower().replace(" ", "-").replace("/", "-")
+            def slug(text: str) -> str:
+                return "".join(c if c.isalnum() else "-"
+                               for c in text.lower()).strip("-")
+            # The parent is part of the id for the same reason it is part of
+            # the key: two zones may share a name and are not the same place.
+            ident = f"{iso3}-{slug(parent)}-{slug(name)}" if parent \
+                else f"{iso3}-{slug(name)}"
             records.append(record(
-                f"{iso3}-{slug}", name.title(), level=level, parent=iso3,
-                parent_name=any_row["parent"].title() or None,
-                aliases=list(country.aliases.get(name, ())),
+                ident, name.title(), level=level, parent=iso3,
+                parent_name=parent.title() or None,
+                aliases=list(country.aliases.get(name.title(), ())),
                 sources=[{"field": "/".join(t.field for t in country.topics),
                           "name": country.source, "url": country.url,
                           "license": country.licence}],

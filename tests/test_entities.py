@@ -2539,9 +2539,13 @@ class UscbReader(unittest.TestCase):
 
     # -- a shortfall is judged by its shape -------------------------------
     def areas(self, shortfalls):
-        return {f"area{i}": {"published": 1_000_000.0,
-                             "summed": 1_000_000.0 * (1 - s),
-                             "level": 1, "parent": "", "counts": {}}
+        # Keyed by (parent, name), as the reader keys them: Ethiopia has a
+        # North Shewa in two different regions, and a name alone let one
+        # overwrite the other.
+        return {("REGION", f"area{i}"): {"published": 1_000_000.0,
+                                         "summed": 1_000_000.0 * (1 - s),
+                                         "level": 1, "parent": "REGION",
+                                         "name": f"area{i}", "counts": {}}
                 for i, s in enumerate(shortfalls)}
 
     def quiet(self, call, *args):
@@ -2570,6 +2574,24 @@ class UscbReader(unittest.TestCase):
             self.quiet(self.uscb.check_total, self.uscb.PHILIPPINES, topic,
                        self.areas([0.02] * 100))
         self.assertIn("misunderstood the sheet", str(caught.exception))
+
+    def test_two_zones_of_one_name_are_kept_apart(self):
+        # geoBoundaries calls them North Shewa(R3) and North Shewa(R4); the
+        # census calls both North Shewa. Keying on the name alone wrote 92
+        # Ethiopian zones where the sheet lists 93.
+        keys = {("AMHARA", "NORTH SHEWA"), ("OROMIYA", "NORTH SHEWA")}
+        self.assertEqual(len(keys), 2)
+
+    def test_the_declared_aliases_reach_the_boundary_names(self):
+        # Most Ethiopian regions reach the map only by declaration: folding
+        # diacritics does not turn "Sumalē" into "Somali".
+        for census, boundary in (("Oromīya", "Oromia"), ("Sumalē", "Somali"),
+                                 ("Yedebub Bihēroch Bihēreseboch Na Hizboch",
+                                  "SNNPR")):
+            self.assertIn(boundary, self.uscb.ETHIOPIA.aliases[census])
+        for census, boundary in (("National Capital Region", "NCR"),
+                                 ("Davao De Oro", "Compostela Valley")):
+            self.assertIn(boundary, self.uscb.PHILIPPINES.aliases[census])
 
     def test_every_country_carries_its_own_census_year(self):
         # Ethiopia's tables are the 2007 census -- the last it completed -- and
