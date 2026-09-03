@@ -67,6 +67,7 @@ ADAPTER_FILES = [
     "pakistan_district.json",
     "bangladesh_district.json",
     "south_africa_province.json",
+    "philippines_province.json", "ethiopia_region.json",
     "brazil_state.json", "brazil_municipality.json",
     "canada_province.json", "canada_census_division.json",
     "australia_state.json", "australia_lga.json",

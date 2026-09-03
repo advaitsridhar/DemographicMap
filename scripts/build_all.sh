@@ -94,6 +94,9 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.south_africa
   soft python3 -m scripts.fetch_census.nepal
   soft python3 -m scripts.fetch_census.new_zealand
+  # One reader, every country in the U.S. Census Bureau's subnational series:
+  # the Philippines (2020 census) and Ethiopia (2007, the last it completed).
+  soft python3 -m scripts.fetch_census.uscb
 fi
 
 if [ "${SKIP_TILES:-0}" != "1" ]; then
