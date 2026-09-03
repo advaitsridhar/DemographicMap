@@ -606,6 +606,19 @@ def inspect(dataset: str, wanted: list[str]) -> int:
             if entry:
                 log(f"    {names[index]} says: "
                     + " | ".join(c[:150] for c in entry if c))
+        # Two rows of actual figures, with the denominator beside the groups.
+        # Burma's ethnicity groups sum to roughly three times the total the
+        # same row publishes, and no amount of reading column names explains
+        # that -- only the numbers do.
+        for row in rows[2:4]:
+            level, area_name, _parent = area(row, names)
+            published = number(row[total]) if total is not None else None
+            cells = [f"{names[i]}={number(row[i])}" for i in list(found)[:8]]
+            summed = sum(v for v in (number(row[i]) for i in found)
+                         if v is not None)
+            log(f"  row: {area_name} (level {level}) published={published} "
+                f"summed={summed:,.0f}")
+            log("       " + "  ".join(cells))
     book.close()
     return 0
 
