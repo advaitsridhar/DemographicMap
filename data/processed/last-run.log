@@ -5,16 +5,16 @@ probe_xlsx: https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc1
 --- sheet 'Metadata' (148 rows x 2 cols) --------------------
   Metadata: Philippines
   Contents
-  One metadata tab describing 5 geospatial boundary files and 8 tables, one data dictionary tab for 8 tables, and 8 tables ("Age-Sex," "Population," "Et
+  One metadata tab describing 5 geospatial boundary files and 8 tables, one data dictionary tab for 8 tables, and 8 tables ("Age-Sex
   Geospatial Boundary Metadata
   National Boundary (PH_GEOG_ADM0_2020_uscb_202402)
   Title | Philippines: National Boundary
   Tags | Geospatial Boundaries, Philippines, National Boundary, Country
-  Summary | The U.S. Census Bureau is providing national and subnational feature class boundaries for joining to subnational population data for the USAID Bureau 
-  Description | National boundary feature class of Philippines for joining (linking) to attribute data provided in tables prepared by the U.S. Census Bureau.
+  Summary | The U.S. Census Bureau is providing national and subnational feature class boundaries for joining to subnational population data f
+  Description | National boundary feature class of Philippines for joining (linking) to attribute data provided in tables prepared by the U.S. Cen
   Credits | Source:
-Geospatial data for the national boundary of Philippines were downloaded from the United Nations Office for the Coordination of Humanitarian A
-  Use Limitations | OCHA Philippines indicates that the Creative Commons Attribution for Intergovernmental Organizations license applies to the shorelines and subnational
+Geospatial data for the national boundary of Philippines were downloaded from the United Nations Office for the Coordinati
+  Use Limitations | OCHA Philippines indicates that the Creative Commons Attribution for Intergovernmental Organizations license applies to the shorel
   Place Keywords | Philippines, Country
   Temporal Keywords | 2020
   Theme Keywords | National Boundaries
@@ -22,24 +22,146 @@ Geospatial data for the national boundary of Philippines were downloaded from th
   First-Order Administrative Divisions (PH_GEOG_ADM1_2020_uscb_202402)
   Title | Philippines: First-Order Administrative Divisions
   Tags | Geospatial Boundaries, Philippines, First-Order Administrative Divisions, Region
-  Summary | The U.S. Census Bureau is providing subnational feature class boundaries for joining to subnational population data for the USAID Bureau for Humanitar
-  Description | First-order administrative divisions feature class of Philippines for joining (linking) to attribute data provided in tables prepared by the U.S. Cens
+  Summary | The U.S. Census Bureau is providing subnational feature class boundaries for joining to subnational population data for the USAID 
+  Description | First-order administrative divisions feature class of Philippines for joining (linking) to attribute data provided in tables prepa
   Credits | Source:
-Geospatial data for the first-order administrative divisions of Philippines were downloaded from the United Nations Office for the Coordinatio
-  Use Limitations | OCHA Philippines indicates that the Creative Commons Attribution for Intergovernmental Organizations license applies to the shorelines and subnational
+Geospatial data for the first-order administrative divisions of Philippines were downloaded from the United Nations Office
+  Use Limitations | OCHA Philippines indicates that the Creative Commons Attribution for Intergovernmental Organizations license applies to the shorel
   Place Keywords | Philippines, Region
   Temporal Keywords | 2020
   Theme Keywords | Subnational Divisions
-  Supplemental Information | The geodatabase feature class contains 17 polygons, 1 polygon for each of Philippines's first-order administrative divisions (17 regions), as reported
+  Supplemental Information | The geodatabase feature class contains 17 polygons, 1 polygon for each of Philippines's first-order administrative divisions (17 r
   Second-Order Administrative Divisions (PH_GEOG_ADM2_2020_uscb_202402)
   Title | Philippines: Second-Order Administrative Divisions
   Tags | Geospatial Boundaries, Philippines, Second-Order Administrative Divisions, Province, Highly Urbanized City
-  Summary | The U.S. Census Bureau is providing subnational feature class boundaries for joining to subnational population data for the USAID Bureau for Humanitar
-  Description | Second-order administrative divisions feature class of Philippines for joining (linking) to attribute data provided in tables prepared by the U.S. Cen
+  Summary | The U.S. Census Bureau is providing subnational feature class boundaries for joining to subnational population data for the USAID 
+  Description | Second-order administrative divisions feature class of Philippines for joining (linking) to attribute data provided in tables prep
   Credits | Source:
-Geospatial data for the second-order administrative divisions of Philippines were downloaded from the United Nations Office for the Coordinati
-  Use Limitations | OCHA Philippines indicates that the Creative Commons Attribution for Intergovernmental Organizations license applies to the shorelines and subnational
+Geospatial data for the second-order administrative divisions of Philippines were downloaded from the United Nations Offic
+  Use Limitations | OCHA Philippines indicates that the Creative Commons Attribution for Intergovernmental Organizations license applies to the shorel
   Place Keywords | Philippines, Province, Highly Urbanized City
+  Temporal Keywords | 2020
+  Theme Keywords | Subnational Divisions
+  Supplemental Information | The geodatabase feature class contains 116 polygons, 1 polygon for each of Philippines's second-order administrative divisions (82
+  Third-Order Administrative Divisions (PH_GEOG_ADM3_2020_uscb_202402)
+  Title | Philippines: Third-Order Administrative Divisions
+  Tags | Geospatial Boundaries, Philippines, Third-Order Administrative Divisions, Municipality, Independent Component City
+  Summary | The U.S. Census Bureau is providing subnational feature class boundaries for joining to subnational population data for the USAID 
+  Description | Third-order administrative divisions feature class of Philippines for joining (linking) to attribute data provided in tables prepa
+  Credits | Source:
+Geospatial data for the third-order administrative divisions of Philippines were downloaded from the United Nations Office
+  Use Limitations | OCHA Philippines indicates that the Creative Commons Attribution for Intergovernmental Organizations license applies to the shorel
+  Place Keywords | Philippines, Municipality, Independent Component City
+  Temporal Keywords | 2020
+  Theme Keywords | Subnational Divisions
+  Supplemental Information | The geodatabase feature class contains 1,634 polygons, 1 polygon for each of Philippines's third-order administrative divisions (1
+  Fourth-Order Administrative Divisions (PH_GEOG_ADM4_2020_uscb_202402)
+  Title | Philippines: Fourth-Order Administrative Divisions
+  Tags | Geospatial Boundaries, Philippines, Fourth-Order Administrative Divisions, Barangay
+  Summary | The U.S. Census Bureau is providing subnational feature class boundaries for joining to subnational population data for the USAID 
+  Description | Fourth-order administrative divisions feature class of Philippines for joining (linking) to attribute data provided in tables prep
+  Credits | Source:
+Geospatial data for the fourth-order administrative divisions of Philippines were downloaded from the United Nations Offic
+  Use Limitations | OCHA Philippines indicates that the Creative Commons Attribution for Intergovernmental Organizations license applies to the shorel
+  Place Keywords | Philippines, Barangay
+  Temporal Keywords | 2020
+  Theme Keywords | Subnational Divisions
+  Supplemental Information | The geodatabase feature class contains 42,042 polygons, 1 polygon for each of Philippines's fourth-order administrative divisions 
+  Table Metadata
+  Age-Sex (PH_AGE_SEX_2020census_uscb_202402)
+  Title | Philippines Age-Sex
+  Tags | Subnational Populations, Philippines, Census, Age-Sex
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Total population by sex and single-year age (0 to 79; open interval is 80 and older) from the 2020 Census of Population and Housin
+  Credits | 2020 Census of Population and Housing, 2023, Population by Single-Year Age, Sex and Admin4 (Barangay). Philippine Statistics Autho
+  Use Limitations | OCHA Philippines indicates that the Creative Commons Attribution International license applies to the data in this table.
+  Place Keywords | Philippines, Regions, Provinces, Highly Urbanized Cities, Municipalities, Independent Component Cities, Barangays
+  Temporal Keywords | 2020 Census
+  Theme Keywords | Subnational Populations, Philippines, Census, Age-Sex
+  Supplemental Information | Administrative Divisions: 1 country, 17 first-order administrative divisions (regions), 116 second-order administrative divisions 
+  Population (PH_POPULATION_2020census_uscb_202402)
+  Title | Philippines Population
+  Tags | Subnational Populations, Philippines, Census, Population
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Total, household, and institutional population, number of households, and average household size from the 2020 Census of Populatio
+  Credits | 2020 Census of Population and Housing, 2022, Table 2: Total Population, Household Population, Number of Households, and Average Ho
+  Use Limitations | None known. The data were downloaded or derived from public online sources.
+  Place Keywords | Philippines, Regions, Provinces, Highly Urbanized Cities, Municipalities, Independent Component Cities
+  Temporal Keywords | 2020 Census
+  Theme Keywords | Subnational Populations, Philippines, Census, Population
+  Supplemental Information | Administrative Divisions: 1 country, 17 first-order administrative divisions (regions), 116 second-order administrative divisions 
+  Ethnicity (PH_ETHNICITY_2020census_uscb_202402)
+  Title | Philippines Ethnicity
+  Tags | Subnational Populations, Philippines, Census, Ethnicity
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Household population by ethnic group from the 2020 Census of Population and Housing for the national and first- and second-order a
+  Credits | 2020 Census of Population and Housing, 2023, Household Population by Ethnicity, Region, Province, and Highly Urbanized City. Phili
+  Use Limitations | None known. The data were downloaded or derived from public online sources.
+  Place Keywords | Philippines, Regions, Provinces, Highly Urbanized Cities
+  Temporal Keywords | 2020 Census
+  Theme Keywords | Subnational Populations, Philippines, Census, Ethnicity
+  Supplemental Information | Administrative Divisions: 1 country, 17 first-order administrative divisions (regions), 116 second-order administrative divisions 
+  Citizenship (PH_CITIZENSHIP_2020census_uscb_202402)
+  Title | Philippines Citizenship
+  Tags | Subnational Populations, Philippines, Census, Citizenship
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Household population by country of citizenship from the 2020 Census of Population and Housing for the national and first- and seco
+  Credits | 2020 Census of Population and Housing, 2023, Table 1: Household Population by Country of Citizenship, Region, Province, and Highly
+  Use Limitations | None known. The data were downloaded or derived from public online sources.
+  Place Keywords | Philippines, Regions, Provinces, Highly Urbanized Cities
+  Temporal Keywords | 2020 Census
+  Theme Keywords | Subnational Populations, Philippines, Census, Citizenship
+  Supplemental Information | Administrative Divisions: 1 country, 17 first-order administrative divisions (regions), 116 second-order administrative divisions 
+  Religion (PH_RELIGION_2020census_uscb_202402)
+  Title | Philippines Religion
+  Tags | Subnational Populations, Philippines, Census, Religion
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Household population by religious affiliation from the 2020 Census of Population and Housing for the national and first- and secon
+  Credits | 2020 Census of Population and Housing, 2023, Table A: Household Population by Religious Affiliation, Region, Province, and Highly 
+  Use Limitations | None known. The data were downloaded or derived from public online sources.
+  Place Keywords | Philippines, Regions, Provinces, Highly Urbanized Cities
+  Temporal Keywords | 2020 Census
+  Theme Keywords | Subnational Populations, Philippines, Census, Religion
+  Supplemental Information | Administrative Divisions: 1 country, 17 first-order administrative divisions (regions), 116 second-order administrative divisions 
+  Households (PH_HOUSEHOLDS_2015census_uscb_202402)
+  Title | Philippines Households
+  Tags | Subnational Populations, Philippines, Census, Housing Units, Living Quarters Amenity
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Housing Units Data:
+Number of households by housing unit and tenure type from the 2015 Census of Population for the national and f
+  Credits | Housing Units Data:
+2015 Census of Population, 2018, Table 4: Number of Households by Type of Building, Tenure Status of the Housi
+  Use Limitations | Housing Units Data:
+None known. The data were downloaded or derived from public online sources.
+
+Living Quarters Amenity Data:
+Non
+  Place Keywords | Philippines, Regions, Provinces, Highly Urbanized Cities, Municipalities, Independent Component Cities
+  Temporal Keywords | 2015 Census
+  Theme Keywords | Subnational Populations, Philippines, Census, Housing Units, Living Quarters Amenity
+  Supplemental Information | Administrative Divisions: 1 country, 17 first-order administrative divisions (regions), 116 second-order administrative divisions 
+  Housing Units (PH_HOUSING_UNITS_2015census_uscb_202402)
+  Title | Philippines Housing Units
+  Tags | Subnational Populations, Philippines, Census, Housing Unit Building Materials
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Number of occupied housing units by type of roof and wall material from the 2015 Census of Population for the national and first-,
+  Credits | 2015 Census of Population, 2018, Table 3: Occupied Housing Units by Construction Materials of the Outer Walls and Roof, and City/M
+  Use Limitations | None known. The data were downloaded or derived from public online sources.
+  Place Keywords | Philippines, Regions, Provinces, Highly Urbanized Cities, Municipalities, Independent Component Cities
+  Temporal Keywords | 2015 Census
+  Theme Keywords | Subnational Populations, Philippines, Census, Housing Unit Building Materials
+  Supplemental Information | Administrative Divisions: 1 country, 17 first-order administrative divisions (regions), 116 second-order administrative divisions 
+  Overseas Workers (PH_OVERSEAS_WORKERS_2015census_uscb_202402)
+  Title | Philippines Overseas Workers
+  Tags | Subnational Populations, Philippines, Census, Overseas Workers
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Number of overseas workers by sex and educational attainment from the 2015 Census of Population for the national and first- and se
+  Credits | 2015 Census of Population, 2015, Table 12: Overseas Workers 15 Years Old and Over by Highest Grade/Year Completed, Sex, and Age Gr
+  Use Limitations | None known. The data were downloaded or derived from public online sources.
+  Place Keywords | Philippines, Regions, Provinces, Highly Urbanized Cities
+  Temporal Keywords | 2015 Census
+  Theme Keywords | Subnational Populations, Philippines, Census, Overseas Workers
+  Supplemental Information | Administrative Divisions: 1 country, 17 first-order administrative divisions (regions), 116 second-order administrative divisions 
 
 probe_xlsx: https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/ethiopia_uscb_202308.xlsx
   1,759,157 bytes
@@ -48,14 +170,14 @@ probe_xlsx: https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d
 --- sheet 'Metadata' (160 rows x 2 cols) --------------------
   Metadata: Ethiopia
   Contents
-  One metadata tab describing 4 geospatial boundary files and 10 tables, one data dictionary tab for 10 tables, and 10 tables ("Age-Sex," "Religion," "E
+  One metadata tab describing 4 geospatial boundary files and 10 tables, one data dictionary tab for 10 tables, and 10 tables ("Age-
   Geospatial Boundary Metadata
   National Boundary (ET_GEOG_ADM0_2021_uscb_202308)
   Title | Ethiopia: National Boundary
   Tags | Geospatial Boundaries, Ethiopia, National Boundary, Country
-  Summary | The U.S. Census Bureau is providing national and subnational feature class boundaries for joining to subnational population data for the USAID Bureau 
-  Description | National boundary feature class of Ethiopia for joining (linking) to attribute data provided in tables prepared by the U.S. Census Bureau.
-  Credits | Geospatial Boundaries: International boundaries coincide with the Large Scale International Boundaries (LSIB) dataset from the U.S. Department of Stat
+  Summary | The U.S. Census Bureau is providing national and subnational feature class boundaries for joining to subnational population data f
+  Description | National boundary feature class of Ethiopia for joining (linking) to attribute data provided in tables prepared by the U.S. Census
+  Credits | Geospatial Boundaries: International boundaries coincide with the Large Scale International Boundaries (LSIB) dataset from the U.S
   Use Limitations | The international boundaries are derived from the Large Scale International Boundaries (LSIB) dataset (public domain).
   Place Keywords | Ethiopia, Country
   Temporal Keywords | 2023
@@ -63,23 +185,153 @@ probe_xlsx: https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d
   Supplemental Information | The geodatabase feature class contains 1 polygon representing Ethiopia's national boundary.
   First-Order Administrative Divisions (ET_GEOG_ADM1_2021_uscb_202308)
   Title | Ethiopia: First-Order Administrative Divisions
-  Tags | Geospatial Boundaries, Ethiopia, First-Order Administrative Divisions, Ethnically Based Regional State (Kilil), Self-Governing Administration (Astedad
-  Summary | The U.S. Census Bureau is providing national and subnational feature class boundaries for joining to subnational population data for the USAID Bureau 
-  Description | First-order administrative divisions feature class of Ethiopia for joining (linking) to attribute data provided in tables prepared by the U.S. Census 
-  Credits | Geospatial Boundaries: International boundaries coincide with the Large Scale International Boundaries (LSIB) dataset from the U.S. Department of Stat
-  Use Limitations | The subnational boundaries used for this feature class were downloaded or derived from publicly available sources (Creative Commons Attribution 4.0 In
+  Tags | Geospatial Boundaries, Ethiopia, First-Order Administrative Divisions, Ethnically Based Regional State (Kilil), Self-Governing Adm
+  Summary | The U.S. Census Bureau is providing national and subnational feature class boundaries for joining to subnational population data f
+  Description | First-order administrative divisions feature class of Ethiopia for joining (linking) to attribute data provided in tables prepared
+  Credits | Geospatial Boundaries: International boundaries coincide with the Large Scale International Boundaries (LSIB) dataset from the U.S
+  Use Limitations | The subnational boundaries used for this feature class were downloaded or derived from publicly available sources (Creative Common
   Place Keywords | Ethiopia, Ethnically Based Regional State (Kilil), Self-Governing Administration (Astedader), Especial Enumeration Area
   Temporal Keywords | 2023
   Theme Keywords | Subnational Divisions
-  Supplemental Information | The geodatabase feature class contains 13 polygons, 1 polygon for each of Ethiopia's first-order administrative divisions (10 ethnically based regiona
+  Supplemental Information | The geodatabase feature class contains 13 polygons, 1 polygon for each of Ethiopia's first-order administrative divisions (10 ethn
   Second-Order Administrative Divisions (ET_GEOG_ADM2_2021_uscb_202308)
   Title | Ethiopia: Second-Order Administrative Divisions
-  Tags | Geospatial Boundaries, Ethiopia, Second-Order Administrative Divisions, Zone, Sub City, Self-Governing Administration (Astedader), Ethnically Based Re
-  Summary | The U.S. Census Bureau is providing national and subnational feature class boundaries for joining to subnational population data for the USAID Bureau 
-  Description | Second-order administrative divisions feature class of Ethiopia for joining (linking) to attribute data provided in tables prepared by the U.S. Census
-  Credits | Geospatial Boundaries: International boundaries coincide with the Large Scale International Boundaries (LSIB) dataset from the U.S. Department of Stat
-  Use Limitations | The subnational boundaries used for this feature class were downloaded or derived from publicly available sources (Creative Commons Attribution 4.0 In
-  Place Keywords | Ethiopia, Zone, Sub City, Self-Governing Administration (Astedader), Ethnically Based Regional State (Kilil), Especial Enumeration Area
+  Tags | Geospatial Boundaries, Ethiopia, Second-Order Administrative Divisions, Zone, Sub City, Self-Governing Administration (Astedader),
+  Summary | The U.S. Census Bureau is providing national and subnational feature class boundaries for joining to subnational population data f
+  Description | Second-order administrative divisions feature class of Ethiopia for joining (linking) to attribute data provided in tables prepare
+  Credits | Geospatial Boundaries: International boundaries coincide with the Large Scale International Boundaries (LSIB) dataset from the U.S
+  Use Limitations | The subnational boundaries used for this feature class were downloaded or derived from publicly available sources (Creative Common
+  Place Keywords | Ethiopia, Zone, Sub City, Self-Governing Administration (Astedader), Ethnically Based Regional State (Kilil), Especial Enumeration
+  Temporal Keywords | 2023
+  Theme Keywords | Subnational Divisions
+  Supplemental Information | The geodatabase feature class contains 93 polygons, 1 polygon for each of Ethiopia's second-order administrative divisions (80 zon
+  Third-Order Administrative Divisions (ET_GEOG_ADM3_2021_uscb_202308)
+  Title | Ethiopia: Third-Order Administrative Divisions
+  Tags | Geospatial Boundaries, Ethiopia, Third-Order Administrative Divisions, Sub City, Wereda, Ethnically Based Regional State (Kilil), 
+  Summary | The U.S. Census Bureau is providing national and subnational feature class boundaries for joining to subnational population data f
+  Description | Third-order administrative divisions feature class of Ethiopia for joining (linking) to attribute data provided in tables prepared
+  Credits | Geospatial Boundaries: International boundaries coincide with the Large Scale International Boundaries (LSIB) dataset from the U.S
+  Use Limitations | The subnational boundaries used for this feature class were downloaded or derived from publicly available sources (Creative Common
+  Place Keywords | Ethiopia, Sub City, Wereda, Ethnically Based Regional State (Kilil), Self-Governing Administration (Astedader), Especial Enumerati
+  Temporal Keywords | 2023
+  Theme Keywords | Subnational Divisions
+  Supplemental Information | The geodatabase feature class contains 742 polygons, 1 polygon for each of Ethiopia's third-order administrative divisions (10 sub
+  Table Metadata
+  Age-Sex (ET_AGE_SEX_2007census_uscb_202308)
+  Title | Ethiopia Age-Sex
+  Tags | Subnational Populations, Ethiopia, Census, Age-Sex, Population
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Total population, five-year age groups (age 0-94), and age 95 and older by sex from the 2007 Population and Housing Census of Ethi
+  Credits | Age-Sex Data: 2007 Population and Housing Census of Ethiopia, 2016, Table 2.8 Population by Urban-Rural Residence, Sex, and Five Y
+  Use Limitations | Age-Sex Data: None known. The data were downloaded or derived from public online sources.
+
+Population Data: None known. The data w
+  Place Keywords | Ethiopia, Ethnically Based Regional States (Kililoch), Self-Governing Administrations (Astedaderoch), Especial Enumeration Area, Z
+  Temporal Keywords | 2007 Census
+  Theme Keywords | Subnational Populations, Ethiopia, Census, Age-Sex, Population
+  Supplemental Information | Administrative Divisions: 1 country, 13 first-order administrative divisions (10 ethnically based regional states (kililoch), 2 se
+  Religion (ET_RELIGION_2007census_uscb_202308)
+  Title | Ethiopia Religion
+  Tags | Subnational Populations, Ethiopia, Census, Religion
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Religion by sex from the 2007 Population and Housing Census of Ethiopia for the national and first-, second-, and third-order admi
+  Credits | 2007 Population and Housing Census of Ethiopia, 2016, Table 3.4 Population by Religion, and Sex 2007. Central Statistical Agency (
+  Use Limitations | None known. The data were downloaded or derived from public online sources.
+  Place Keywords | Ethiopia, Ethnically Based Regional States (Kililoch), Self-Governing Administrations (Astedaderoch), Especial Enumeration Area, Z
+  Temporal Keywords | 2007 Census
+  Theme Keywords | Subnational Populations, Ethiopia, Census, Religion
+  Supplemental Information | Administrative Divisions: 1 country, 13 first-order administrative divisions (10 ethnically based regional states (kililoch), 2 se
+  Economy (ET_ECONOMY_2007census_uscb_202308)
+  Title | Ethiopia Economy
+  Tags | Subnational Populations, Ethiopia, Census, Economic activity
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Economic activity for females and males, and employed and unemployed for females and males from the 2007 Population and Housing Ce
+  Credits | 2007 Population and Housing Census of Ethiopia, 2016, Table 6.2 Population Aged 10 Years and above by Sex, Economic Activity Statu
+  Use Limitations | None known. The data were downloaded or derived from public online sources.
+  Place Keywords | Ethiopia, Ethnically Based Regional States (Kililoch), Self-Governing Administrations (Astedaderoch), Especial Enumeration Area, Z
+  Temporal Keywords | 2007 Census
+  Theme Keywords | Subnational Populations, Ethiopia, Census, Economic activity
+  Supplemental Information | Administrative Divisions: 1 country, 13 first-order administrative divisions (10 ethnically based regional states (kililoch), 2 se
+  Disability (ET_DISABILITY_2007census_uscb_202308)
+  Title | Ethiopia Disability
+  Tags | Subnational Populations, Ethiopia, Census, Disability
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Disabled persons by type of disability from the 2007 Population and Housing Census of Ethiopia for the national and first-, second
+  Credits | 2007 Population and Housing Census of Ethiopia, 2016, Table 4.2 Disabled Persons by Type of Disability and Sex: 2007. Central Stat
+  Use Limitations | None known. The data were downloaded or derived from public online sources.
+  Place Keywords | Ethiopia, Ethnically Based Regional States (Kililoch), Self-Governing Administrations (Astedaderoch), Especial Enumeration Area, Z
+  Temporal Keywords | 2007 Census
+  Theme Keywords | Subnational Populations, Ethiopia, Census, Disability
+  Supplemental Information | Administrative Divisions: 1 country, 13 first-order administrative divisions (10 ethnically based regional states (kililoch), 2 se
+  Household (ET_HOUSEHOLD_2007census_uscb_202308)
+  Title | Ethiopia Household
+  Tags | Subnational Populations, Ethiopia, Census, Household
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Number of conventional and unconventional households, and population in each type of household from the 2007 Population and Housin
+  Credits | 2007 Population and Housing Census of Ethiopia, 2016, Table 2.5 Persons, Households, and Housing Units for Conventional Household 
+  Use Limitations | None known. The data were downloaded or derived from public online sources.
+  Place Keywords | Ethiopia, Ethnically Based Regional States (Kililoch), Self-Governing Administrations (Astedaderoch), Especial Enumeration Area, Z
+  Temporal Keywords | 2007 Census
+  Theme Keywords | Subnational Populations, Ethiopia, Census, Household
+  Supplemental Information | Administrative Divisions: 1 country, 13 first-order administrative divisions (10 ethnically based regional states (kililoch), 2 se
+  Housing (ET_HOUSING_2007census_uscb_202308)
+  Title | Ethiopia Housing
+  Tags | Subnational Populations, Ethiopia, Census, Building Materials, Living Quarters Amenity
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Building materials of housing unit walls, roofs, and floors for rural and urban housing units from the 2007 Population and Housing
+  Credits | Building Materials Data: 2007 Population and Housing Census of Ethiopia, 2016, Table 8.2 Housing Units by Construction Material of
+  Use Limitations | Building Materials Data: None known. The data were downloaded or derived from public online sources.
+
+Living Quarters Amenity Data
+  Place Keywords | Ethiopia, Ethnically Based Regional States (Kililoch), Self-Governing Administrations (Astedaderoch), Especial Enumeration Area, Z
+  Temporal Keywords | 2007 Census
+  Theme Keywords | Subnational Populations, Ethiopia, Census, Building Materials, Living Quarters Amenity
+  Supplemental Information | Administrative Divisions: 1 country, 13 first-order administrative divisions (10 ethnically based regional states (kililoch), 2 se
+  Ethnicity (ET_ETHNICITY_2007census_uscb_202308)
+  Title | Ethiopia Ethnicity-Nationality
+  Tags | Subnational Populations, Ethiopia, Census, Ethnic Group
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Ethnic groups from the 2007 Population and Housing Census of Ethiopia for the national and first- and second-order administrative 
+  Credits | 2007 Population and Housing Census of Ethiopia, 2016, Table 3.1 Population by Urban-Rural Residence, Sex, and Ethnic Group: 2007. 
+  Use Limitations | None known. The data were downloaded or derived from public online sources.
+  Place Keywords | Ethiopia, Ethnically Based Regional States (Kililoch), Self-Governing Administrations (Astedaderoch), Especial Enumeration Area, Z
+  Temporal Keywords | 2007 Census
+  Theme Keywords | Subnational Populations, Ethiopia, Census, Ethnic Group
+  Supplemental Information | Administrative Divisions: 1 country, 13 first-order administrative divisions (10 ethnically based regional states (kililoch), 2 se
+  Language (ET_LANGUAGE_2007census_uscb_202308)
+  Title | Ethiopia Language
+  Tags | Subnational Populations, Ethiopia, Census, Language
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Mother tongue from the 2007 Population and Housing Census of Ethiopia for the national and first- and second-order administrative 
+  Credits | 2007 Population and Housing Census of Ethiopia, 2016, Table 3.2 Population by Urban-Rural Residence, Sex, and Mother Tongue: 2007.
+  Use Limitations | None known. The data were downloaded or derived from public online sources.
+  Place Keywords | Ethiopia, Ethnically Based Regional States (Kililoch), Self-Governing Administrations (Astedaderoch), Especial Enumeration Area, Z
+  Temporal Keywords | 2007 Census
+  Theme Keywords | Subnational Populations, Ethiopia, Census, Language
+  Supplemental Information | Administrative Divisions: 1 country, 13 first-order administrative divisions (10 ethnically based regional states (kililoch), 2 se
+  Health (ET_HEALTH_2007census_uscb_202308)
+  Title | Ethiopia Health
+  Tags | Subnational Populations, Ethiopia, Census, Health
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Female and male population with mental health problems, and female and male deaths from the 2007 Population and Housing Census of 
+  Credits | 2007 Population and Housing Census of Ethiopia, 2016, Table 4.6 Population by Sex, Mental Problem, and Five Year Age Group, with R
+  Use Limitations | None known. The data were downloaded or derived from public online sources.
+  Place Keywords | Ethiopia, Ethnically Based Regional States (Kililoch), Self-Governing Administrations (Astedaderoch), Especial Enumeration Area, Z
+  Temporal Keywords | 2007 Census
+  Theme Keywords | Subnational Populations, Ethiopia, Census, Health
+  Supplemental Information | Administrative Divisions: 1 country, 13 first-order administrative divisions (10 ethnically based regional states (kililoch), 2 se
+  Agriculture (ET_AGRICULTURE_survey2021_uscb_202308)
+  Title | Ethiopia Agriculture
+  Tags | Subnational Populations, Ethiopia, Survey, Agriculture
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Agricultural products, livestock, farming practices, agricultural pests, food stuff production from the Federal Democratic Republi
+  Credits | The Federal Democratic Republic of Ethiopia, Central Statistical Agency, Agricultural Sample Survey 2020/21 (2013 E.C.) Vol VII, 2
+  Use Limitations | None known. The data were downloaded or derived from public online sources.
+  Place Keywords | Ethiopia, Ethnically Based Regional States (Kililoch), Self-Governing Administrations (Astedaderoch), Especial Enumeration Area, Z
+  Temporal Keywords | Survey 2021
+  Theme Keywords | Subnational Populations, Ethiopia, Survey, Agriculture
+  Supplemental Information | Administrative Divisions: 1 country, 13 first-order administrative divisions (10 ethnically based regional states (kililoch), 2 se
+  
 
 probe_xlsx: https://data.humdata.org/dataset/6daa36c4-9ea3-4844-958b-042d2cc3d8b7/resource/2c8fce76-8ad7-4bce-ab02-374318302383/download/indonesia_uscb_202405.xlsx
   556,433 bytes
@@ -88,16 +340,16 @@ probe_xlsx: https://data.humdata.org/dataset/6daa36c4-9ea3-4844-958b-042d2cc3d8b
 --- sheet 'Metadata' (93 rows x 2 cols) --------------------
   Metadata: Indonesia
   Contents
-  One metadata tab describing 3 geospatial boundary files and 5 tables, one data dictionary tab for 5 tables, and 5 tables ("Age-Sex," "Households," "La
+  One metadata tab describing 3 geospatial boundary files and 5 tables, one data dictionary tab for 5 tables, and 5 tables ("Age-Sex
   Geospatial Boundary Metadata
   National Boundary (ID_GEOG_ADM0_2020_uscb_202405)
   Title | Indonesia: National Boundary
   Tags | Geospatial Boundaries, Indonesia, National Boundary, Country
-  Summary | The U.S. Census Bureau is providing national and subnational feature class boundaries for joining to subnational population data for the USAID Bureau 
-  Description | National boundary feature class of Indonesia for joining (linking) to attribute data provided in tables prepared by the U.S. Census Bureau.
+  Summary | The U.S. Census Bureau is providing national and subnational feature class boundaries for joining to subnational population data f
+  Description | National boundary feature class of Indonesia for joining (linking) to attribute data provided in tables prepared by the U.S. Censu
   Credits | Geospatial Boundaries: 
-International boundaries coincide with the Large Scale International Boundaries (LSIB) dataset from the U.S. Department of Sta
-  Use Limitations | The geospatial shoreline data used for this shapefile were downloaded by the U.S. Census Bureau from a publicly available source for this product. Uni
+International boundaries coincide with the Large Scale International Boundaries (LSIB) dataset from the U.
+  Use Limitations | The geospatial shoreline data used for this shapefile were downloaded by the U.S. Census Bureau from a publicly available source f
   Place Keywords | Indonesia, Country
   Temporal Keywords | 2020
   Theme Keywords | National Boundaries
@@ -105,22 +357,88 @@ International boundaries coincide with the Large Scale International Boundaries 
   First-Order Administrative Divisions (ID_GEOG_ADM1_2020_uscb_202405)
   Title | Indonesia: First-Order Administrative Divisions
   Tags | Geospatial Boundaries, Indonesia, First-Order Administrative Divisions, Province
-  Summary | The U.S. Census Bureau is providing subnational feature class boundaries for joining to subnational population data for the USAID Bureau for Humanitar
-  Description | First-order administrative divisions feature class of Indonesia for joining (linking) to attribute data provided in tables prepared by the U.S. Census
+  Summary | The U.S. Census Bureau is providing subnational feature class boundaries for joining to subnational population data for the USAID 
+  Description | First-order administrative divisions feature class of Indonesia for joining (linking) to attribute data provided in tables prepare
   Credits | Geospatial Boundaries: 
-International boundaries coincide with the Large Scale International Boundaries (LSIB) dataset from the U.S. Department of Sta
-  Use Limitations | The subnational boundaries used for this shapefile were downloaded by the U.S. Census Bureau from a publicly available source for this product. United
+International boundaries coincide with the Large Scale International Boundaries (LSIB) dataset from the U.
+  Use Limitations | The subnational boundaries used for this shapefile were downloaded by the U.S. Census Bureau from a publicly available source for 
   Place Keywords | Indonesia, Province
   Temporal Keywords | 2020
   Theme Keywords | Subnational Divisions
-  Supplemental Information | The geodatabase feature class contains 34 polygons, 1 polygon for each of Indonesia's first-order administrative divisions (34 provinces), as reported
+  Supplemental Information | The geodatabase feature class contains 34 polygons, 1 polygon for each of Indonesia's first-order administrative divisions (34 pro
   Second-Order Administrative Divisions (ID_GEOG_ADM2_2020_uscb_202405)
   Title | Indonesia: Second-Order Administrative Divisions
   Tags | Geospatial Boundaries, Indonesia, Second-Order Administrative Divisions, Regency, Municipality, Lake
-  Summary | The U.S. Census Bureau is providing subnational feature class boundaries for joining to subnational population data for the USAID Bureau for Humanitar
-  Description | Second-order administrative divisions feature class of Indonesia for joining (linking) to attribute data provided in tables prepared by the U.S. Censu
+  Summary | The U.S. Census Bureau is providing subnational feature class boundaries for joining to subnational population data for the USAID 
+  Description | Second-order administrative divisions feature class of Indonesia for joining (linking) to attribute data provided in tables prepar
   Credits | Geospatial Boundaries: 
-International boundaries coincide with the Large Scale International Boundaries (LSIB) dataset from the U.S. Department of Sta
-  Use Limitations | The subnational boundaries used for this shapefile were downloaded by the U.S. Census Bureau from a publicly available source for this product. United
+International boundaries coincide with the Large Scale International Boundaries (LSIB) dataset from the U.
+  Use Limitations | The subnational boundaries used for this shapefile were downloaded by the U.S. Census Bureau from a publicly available source for 
   Place Keywords | Indonesia, Regency, Municipality, Lake
+  Temporal Keywords | 2020
+  Theme Keywords | Subnational Divisions
+  Supplemental Information | The geodatabase feature class contains 515 polygons, 1 polygon for each of Indonesia's second-order administrative divisions (416 
+  Table Metadata
+  Age-Sex (ID_AGE_SEX_2020census_uscb_202405)
+  Title | Indonesia Age-Sex
+  Tags | Subnational Populations, Indonesia, Census, Age-Sex
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Total population by sex and population by five-year age groups and sex from The Result of Long Form Population Census 2020 for the
+  Credits | The Result of Long Form Population Census 2020, 2023, Table 3.1 Population by Age Group, Urban/Rural Area, and Sex. Badan Pusat St
+  Use Limitations | None known. The data were downloaded or derived from public online sources
+  Place Keywords | Indonesia, Provinces, Regencies, Municipalities, Lake
+  Temporal Keywords | 2020 Census
+  Theme Keywords | Subnational Populations, Indonesia, Census, Age-Sex
+  Supplemental Information | Administrative Divisions: 1 country, 34 first-order administrative divisions (provinces), 515 second-order administrative division
+  Households (ID_HOUSEHOLDS_2020census_uscb_202405)
+  Title | Indonesia Households
+  Tags | Subnational Populations, Indonesia, Census, Households
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Total households from The Result of Long Form Population Census 2020 for the national and first- and second-order administrative d
+  Credits | The Result of Long Form Population Census 2020, 2023, Table 9.1 Households by Province and Urban/Rural Area, Table 9.6.3 Household
+  Use Limitations | None known. The data were downloaded or derived from public online sources
+  Place Keywords | Indonesia, Provinces, Regencies, Municipalities, Lake
+  Temporal Keywords | 2020 Census
+  Theme Keywords | Subnational Populations, Indonesia, Census, Households
+  Supplemental Information | Administrative Divisions: 1 country, 34 first-order administrative divisions (provinces), 515 second-order administrative division
+  Language (ID_LANGUAGE_2020census_uscb_202405)
+  Title | Indonesia Language
+  Tags | Subnational Populations, Indonesia, Census, Language
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Total five years and older population and five years and older population by their ability to speak Indonesian from The Result of 
+  Credits | The Result of Long Form Population Census 2020, 2023, Table 6.2 Population 5 Years of Age and Over by Province, Ability to Communi
+  Use Limitations | None known. The data were downloaded or derived from public online sources
+  Place Keywords | Indonesia, Provinces, Regencies, Municipalities, Lake
+  Temporal Keywords | 2020 Census
+  Theme Keywords | Subnational Populations, Indonesia, Census, Language
+  Supplemental Information | Administrative Divisions: 1 country, 34 first-order administrative divisions (provinces), 515 second-order administrative division
+  Mortality and Disability (ID_MORTALITY_AND_DISABILITY_2020census_uscb_202405)
+  Title | Indonesia Mortality and Disability
+  Tags | Subnational Populations, Indonesia, Census, Mortality, Disability
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Mortality Data:
+Infant mortality rate, child mortality rate, and under five-mortality rate from The Result of Long Form Population
+  Credits | Mortality Data:
+The Result of Long Form Population Census 2020, 2023, Table 5.3 Infant Mortality Rate, Child Mortality Rate, and U
+  Use Limitations | None known. The data were downloaded or derived from public online sources
+  Place Keywords | Indonesia, Provinces, Regencies, Municipalities, Lake
+  Temporal Keywords | 2020 Census
+  Theme Keywords | Subnational Populations, Indonesia, Census, Mortality, Disability
+  Supplemental Information | Administrative Divisions: 1 country, 34 first-order administrative divisions (provinces), 515 second-order administrative division
+  Migration (ID_MIGRATION_2020census_uscb_202405)
+  Title | Indonesia Migration
+  Tags | Subnational Populations, Indonesia, Census, Interprovincial Migration, Migration Type
+  Summary | The U.S. Census Bureau is providing subnational population data for joining to feature classes for the USAID Bureau for Humanitari
+  Description | Interprovincial Migration Data:
+Total migration, interprovincial migration, and migration from abroad within the last five years f
+  Credits | Interprovincial Migration Data:
+Migration Statistics of Indonesia, The Results of Long Form Population Census 2020, 2023, Table 5.
+  Use Limitations | None known. The data were downloaded or derived from public online sources
+  Place Keywords | Indonesia, Provinces
+  Temporal Keywords | 2020 Census
+  Theme Keywords | Subnational Populations, Indonesia, Census, Interprovincial Migration, Migration Type
+  Supplemental Information | Administrative Divisions: 1 country, 34 first-order administrative divisions (provinces).
+
+Table Note:
+Phenomena not observed in a
 
