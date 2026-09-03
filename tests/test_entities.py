@@ -2471,3 +2471,110 @@ class BoundaryMisspellings(unittest.TestCase):
     def test_an_unlisted_name_is_untouched(self):
         for name in ("Western Cape", "Eastern Cape", "Limpopo"):
             self.assertEqual(common.respell(name, "ZAF"), name)
+
+
+class UscbReader(unittest.TestCase):
+    """The reader for the U.S. Census Bureau's subnational census series.
+
+    Every one of these covers something that went wrong against a real
+    workbook, in the order it went wrong.
+    """
+
+    def setUp(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from fetch_census import uscb
+        self.uscb = uscb
+
+    # -- the sentinel -----------------------------------------------------
+    def test_a_negative_is_not_a_count_of_people(self):
+        # Ethiopia writes -999 where a figure is unavailable, undocumented,
+        # and openpyxl hands it over as an ordinary number. Taken at face
+        # value it would have put a negative population on the map.
+        self.assertIsNone(self.uscb.number(-999))
+        self.assertIsNone(self.uscb.number(-1))
+        self.assertEqual(self.uscb.number(0), 0.0)
+        self.assertEqual(self.uscb.number("1,234"), 1234.0)
+
+    def test_a_boolean_is_not_a_count_either(self):
+        # bool is a subclass of int; True would otherwise read as one person.
+        self.assertIsNone(self.uscb.number(True))
+
+    # -- the shape of a sheet, asked rather than declared ------------------
+    SEXED = (["AREA_NAME", "ADM_LEVEL", "RLG_ORDX_B", "RLG_ORDX_F",
+              "RLG_ORDX_M", "RLG_ISL_B", "RLG_ISL_F", "RLG_ISL_M"],
+             ["Area", "Administrative level", "Orthodox, both sexes",
+              "Orthodox, females", "Orthodox, males", "Islamic, both sexes",
+              "Islamic, females", "Islamic, males"])
+    FLAT = (["AREA_NAME", "ADM_LEVEL", "RLG_HPOP", "RLG_NONE", "RLG_RC"],
+            ["Area", "Administrative level", "Household population",
+             "Non-religious", "Roman Catholic"])
+
+    def test_a_sexed_sheet_is_recognised_and_a_flat_one_is_not(self):
+        self.assertTrue(self.uscb.sexed(self.SEXED[0]))
+        self.assertFalse(self.uscb.sexed(self.FLAT[0]))
+
+    def test_the_group_label_drops_the_sex_it_was_measured_by(self):
+        names, aliases = self.SEXED
+        found = self.uscb.groups(names, aliases, None, True)
+        self.assertEqual(sorted(found.values()), ["Islamic", "Orthodox"])
+
+    def test_groups_are_whatever_is_not_geography(self):
+        # The first version carried a per-topic column prefix and was wrong on
+        # its second file: Ethiopia's ethnic-group columns are not "ETH_".
+        names = ["AREA_NAME", "ADM_LEVEL", "ETHN_AFAR", "XYZ_OROMO"]
+        aliases = ["Area", "Administrative level", "Affar", "Oromo"]
+        found = self.uscb.groups(names, aliases, None, False)
+        self.assertEqual(sorted(found.values()), ["Affar", "Oromo"])
+
+    def test_the_denominator_is_found_by_its_alias(self):
+        names, aliases = self.FLAT
+        total = self.uscb.denominator(names, aliases)
+        self.assertEqual(aliases[total], "Household population")
+        self.assertNotIn(total, self.uscb.groups(names, aliases, total, False))
+
+    def test_a_sheet_with_no_denominator_says_so(self):
+        # Ethiopia publishes none; returning an index anyway would promote a
+        # group column to stand in for everyone.
+        self.assertIsNone(self.uscb.denominator(*self.SEXED))
+
+    # -- a shortfall is judged by its shape -------------------------------
+    def areas(self, shortfalls):
+        return {f"area{i}": {"published": 1_000_000.0,
+                             "summed": 1_000_000.0 * (1 - s),
+                             "level": 1, "parent": "", "counts": {}}
+                for i, s in enumerate(shortfalls)}
+
+    def quiet(self, call, *args):
+        import contextlib, io
+        with contextlib.redirect_stderr(io.StringIO()):
+            return call(*args)
+
+    def test_a_few_areas_falling_short_are_kept_and_named(self):
+        # MIMAROPA and its two Mindoro provinces, 0.6% to 1.3% short of the
+        # census's own household population: a hole in the source, and the map
+        # draws the remainder as unaccounted rather than normalising it away.
+        topic = self.uscb.Topic("Ethnicity", "ethnicity")
+        areas = self.areas([0.013, 0.012, 0.006] + [0.0] * 128)
+        self.quiet(self.uscb.check_total, self.uscb.PHILIPPINES, topic, areas)
+
+    def test_one_area_far_short_is_refused(self):
+        topic = self.uscb.Topic("Ethnicity", "ethnicity")
+        with self.assertRaises(SystemExit) as caught:
+            self.quiet(self.uscb.check_total, self.uscb.PHILIPPINES, topic,
+                       self.areas([0.30] + [0.0] * 130))
+        self.assertIn("too much to be a suppressed group", str(caught.exception))
+
+    def test_a_shortfall_everywhere_is_refused_as_a_misreading(self):
+        topic = self.uscb.Topic("Ethnicity", "ethnicity")
+        with self.assertRaises(SystemExit) as caught:
+            self.quiet(self.uscb.check_total, self.uscb.PHILIPPINES, topic,
+                       self.areas([0.02] * 100))
+        self.assertIn("misunderstood the sheet", str(caught.exception))
+
+    def test_every_country_carries_its_own_census_year(self):
+        # Ethiopia's tables are the 2007 census -- the last it completed -- and
+        # the file's own 2023 extraction date must not stand in for it.
+        self.assertEqual(self.uscb.ETHIOPIA.year, 2007)
+        self.assertEqual(self.uscb.PHILIPPINES.year, 2020)
+        for country in self.uscb.COUNTRIES.values():
+            self.assertIn(str(country.year), country.note)

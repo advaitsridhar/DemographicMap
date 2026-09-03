@@ -1022,6 +1022,85 @@ a 403 from a sandbox whose egress proxy blocks it, exactly as `bbs.gov.bd` was.
 A source is only as absent as the search behind it, and a search is only as
 good as the thing it actually fetched.
 
+### The U.S. Census Bureau's subnational series: one reader, many countries
+
+Some countries publish a census and never publish it as data. The U.S. Census
+Bureau extracts those, for USAID's humanitarian bureau, into one workbook per
+country under a schema that does not vary: every sheet opens with the same
+geography columns -- `AREA_NAME`, `ADM1_NAME`, `ADM2_NAME`, `ADM_LEVEL` -- and
+then a block of value columns for one topic. So `scripts/fetch_census/uscb.py`
+is one reader with a configuration per country rather than an adapter each, the
+same call `pxweb.py` makes for the Nordic offices.
+
+| | Census | Fields | Areas |
+| --- | --- | --- | --- |
+| Philippines | 2020 (Philippine Statistics Authority) | religion, ethnicity | 17 regions, 114 provinces and cities |
+| Ethiopia | **2007** (Central Statistical Agency) | religion, ethnicity, language | 11 regions, 92 zones |
+
+Ethiopia is 2007 because that is the last census Ethiopia has completed -- the
+2017 round was postponed and never held. It is the most recent measurement in
+existence, not the most recent this project could reach, and every record says
+so. The workbook's own filename dates (`_202308`) are extraction dates and were
+never allowed to stand in for the census year; the table identifiers inside
+(`ET_RELIGION_2007census`) are where the year actually comes from.
+
+**Four things this reader learned the hard way**, each from a run that failed
+against a real file rather than from reading the schema:
+
+* **-999 is a missing marker, and nothing documents it.** Four Ethiopian areas
+  carry it across all six religions, and openpyxl hands it over as an ordinary
+  number. The sex check caught it -- "females plus males" came to -1,998
+  against a both-sexes -999 -- and without that it would have put a negative
+  population on the map. Rejected as *not a count* rather than as -999
+  specifically: no census reports a negative number of people, so any negative
+  is a marker whatever its value, and a sentinel changed to -998 tomorrow is
+  still caught.
+* **Which columns hold groups is a fact the sheet states.** The first version
+  carried a column prefix per topic and was wrong on its second file, because
+  Ethiopia's ethnic-group columns are not named `ETH_`. They are now whatever
+  is not geography, which is simpler and cannot be wrong on the next country.
+* **Sex is a check, not a dimension.** Ethiopia reports every religion three
+  times. Only the both-sexes column is a value here; the other two are an
+  independent statement about the same population, and a file whose sexes do
+  not add up is a file the reader has misunderstood. It holds across 5,070
+  cells.
+* **The country's own row is the control.** Every workbook carries one, and not
+  using it is how three million people go missing quietly. Ethiopia's eleven
+  regions come to 70,700,042 against a national 73,750,932; the difference is
+  exactly Sidama (2,954,136) and South West Ethiopia (96,754), which became
+  regions in 2020-21 and are reported here at the level the 2007 census counted
+  them at. Every region equals the sum of its own zones to the person, bar
+  Amhara.
+
+**A shortfall is judged by its shape, not only its size.** Three Philippine
+areas -- MIMAROPA and its two Mindoro provinces -- fall 0.6% to 1.3% short of
+the census's own household population, and the region's shortfall is the sum of
+its provinces'. That is a hole in the source, so they are named, kept, and the
+map draws the remainder as an explicit unaccounted share. A single tolerance
+cannot tell that from a reader that has read the wrong column, so the test is
+the pattern instead: any area more than 5% short is refused as too large to be
+a suppressed group, and more than a tenth of areas falling short is refused as
+a misreading rather than a source with holes in it.
+
+**The Philippine religion groups are published as the census names them** --
+129 of them, from Roman Catholic to the Bible Baptist Church -- rather than
+collapsed into traditions. Collapsing would decide, on this map's authority
+rather than the census's, which churches count as one religion, and the
+Philippines is exactly where that is contentious: Iglesia ni Cristo and the
+Aglipayan church are distinct national institutions, not footnotes under
+"Christian". The panel folds a long tail into "Other groups" for display, so
+faithfulness costs nothing a reader sees. The national figures reproduce the
+PSA's published ones: Roman Catholic 78.81%, Islam 6.42%, Iglesia ni Cristo
+2.58%.
+
+**Indonesia is in this series and is not read from it.** Its workbook carries
+no religion and no ethnicity, only a language sheet whose composition is
+"first language: Indonesian / regional / foreign / sign" -- four buckets that
+reconcile exactly to the total but name no actual language, since "regional"
+holds all seven hundred of them. That is a true statement and not a language
+breakdown, so Indonesia stays the gap it was: what is missing there is religion
+by regency, and that still needs the BPS key.
+
 ### Viet Nam: collected, and published only for the whole country
 
 Viet Nam's 2019 Population and Housing Census asked religion. Its questionnaire,
