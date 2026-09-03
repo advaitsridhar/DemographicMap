@@ -73,10 +73,16 @@ TOLERANCE = 0.005
 
 @dataclass(frozen=True)
 class Topic:
-    """One sheet of a workbook, and the field it fills on this map."""
+    """One sheet of a workbook, and the field it fills on this map.
+
+    No column prefix: the first version of this carried one per topic and was
+    wrong on its second file, because Ethiopia's ethnic-group columns are not
+    named "ETH_". Which columns hold groups is a fact the sheet states -- they
+    are the ones that are not geography -- and asking it is both simpler and
+    the thing this module's docstring already said to do.
+    """
     sheet: str
     field: str
-    prefix: str
 
 
 @dataclass(frozen=True)
@@ -114,8 +120,8 @@ PHILIPPINES = Country(
               "philippines_uscb_202402.xlsx"),
     out="philippines_province.json",
     levels={1: "admin1", 2: "admin2"},
-    topics=(Topic("Religion", "religion", "RLG_"),
-            Topic("Ethnicity", "ethnicity", "ETH_")),
+    topics=(Topic("Religion", "religion"),
+            Topic("Ethnicity", "ethnicity")),
     note=("2020 Census of Population and Housing. The census records religious "
           "affiliation as the individual church or denomination a person names, "
           "so the groups here are as published rather than collapsed into "
@@ -137,9 +143,9 @@ ETHIOPIA = Country(
               "ethiopia_uscb_202308.xlsx"),
     out="ethiopia_region.json",
     levels={1: "admin1", 2: "admin2"},
-    topics=(Topic("Religion", "religion", "RLG_"),
-            Topic("Ethnicity", "ethnicity", "ETH_"),
-            Topic("Language", "language", "LNG_")),
+    topics=(Topic("Religion", "religion"),
+            Topic("Ethnicity", "ethnicity"),
+            Topic("Language", "language")),
     note=("2007 Population and Housing Census -- the last census Ethiopia has "
           "completed. The 2017 round was postponed and never held, so this is "
           "the most recent measurement in existence, not the most recent "
@@ -174,20 +180,21 @@ def columns(rows: list[list[Any]]) -> tuple[list[str], list[str]]:
     return names, aliases
 
 
-def sexed(names: list[str], prefix: str) -> bool:
+def sexed(names: list[str]) -> bool:
     """Does this sheet report every group three times, by sex?
 
     Ethiopia does and the Philippines does not, and the difference is visible
     in the column names rather than declared per country -- a stem that carries
     all three of _B, _F and _M is a sexed sheet.
     """
-    stems = {n[:-2] for n in names if n.startswith(prefix) and n.endswith("_B")}
+    stems = {n[:-2] for n in names
+             if n not in GEOGRAPHY and n.endswith("_B")}
     if not stems:
         return False
     return all(f"{s}_F" in names and f"{s}_M" in names for s in stems)
 
 
-def denominator(names: list[str], aliases: list[str], prefix: str) -> int | None:
+def denominator(names: list[str], aliases: list[str]) -> int | None:
     """The column holding everyone the question was asked of, if there is one.
 
     Found by its alias rather than its name: the Philippines calls it
@@ -197,21 +204,19 @@ def denominator(names: list[str], aliases: list[str], prefix: str) -> int | None
     at all, and returning None says so rather than picking a group at random.
     """
     for index, (name, alias) in enumerate(zip(names, aliases)):
-        if not name.startswith(prefix):
+        if name in GEOGRAPHY or not name:
             continue
         if "population" in alias.lower():
             return index
     return None
 
 
-def groups(names: list[str], aliases: list[str], prefix: str,
+def groups(names: list[str], aliases: list[str],
            total: int | None, by_sex: bool) -> dict[int, str]:
     """Column index -> the label to publish, for every group column."""
     out: dict[int, str] = {}
     for index, (name, alias) in enumerate(zip(names, aliases)):
-        if index == total or not name.startswith(prefix):
-            continue
-        if name in GEOGRAPHY or not alias:
+        if index == total or name in GEOGRAPHY or not name or not alias:
             continue
         if by_sex:
             if not name.endswith("_B"):
@@ -247,8 +252,7 @@ def number(value: Any) -> float | None:
     return None
 
 
-def check_sexes(rows: list[list[Any]], names: list[str], prefix: str,
-                where: str) -> None:
+def check_sexes(rows: list[list[Any]], names: list[str], where: str) -> None:
     """Females plus males must be the both-sexes figure, on every row.
 
     This is the whole reason the sex columns are read at all. They are not a
@@ -258,7 +262,7 @@ def check_sexes(rows: list[list[Any]], names: list[str], prefix: str,
     """
     index = {name: i for i, name in enumerate(names)}
     stems = sorted({n[:-2] for n in names
-                    if n.startswith(prefix) and n.endswith("_B")})
+                    if n not in GEOGRAPHY and n.endswith("_B")})
     off: list[tuple[float, str]] = []
     cells = 0
     for row in rows[2:]:
@@ -302,18 +306,18 @@ def read(book, country: Country, topic: Topic) -> dict[str, dict[str, Any]]:
     """One topic's sheet as {area name: {level, parent, counts, total}}."""
     rows = sheet_rows(book, topic.sheet)
     names, aliases = columns(rows)
-    by_sex = sexed(names, topic.prefix)
-    total = denominator(names, aliases, topic.prefix)
-    found = groups(names, aliases, topic.prefix, total, by_sex)
+    by_sex = sexed(names)
+    total = denominator(names, aliases)
+    found = groups(names, aliases, total, by_sex)
     if not found:
-        raise SystemExit(f"{country.iso3} {topic.sheet}: no column starts with "
-                         f"{topic.prefix!r}")
+        raise SystemExit(f"{country.iso3} {topic.sheet}: every column is "
+                         f"geography; no group columns to read")
     log(f"  {topic.sheet}: {len(rows) - 2} rows, {len(found)} groups"
         + (", by sex" if by_sex else "")
         + (f", denominator {aliases[total]!r}" if total is not None
            else ", no published denominator"))
     if by_sex:
-        check_sexes(rows, names, topic.prefix, f"{country.iso3} {topic.sheet}")
+        check_sexes(rows, names, f"{country.iso3} {topic.sheet}")
 
     out: dict[str, dict[str, Any]] = {}
     skipped = 0
