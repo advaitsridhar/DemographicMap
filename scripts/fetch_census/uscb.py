@@ -606,19 +606,46 @@ def inspect(dataset: str, wanted: list[str]) -> int:
             if entry:
                 log(f"    {names[index]} says: "
                     + " | ".join(c[:150] for c in entry if c))
-        # Two rows of actual figures, with the denominator beside the groups.
-        # Burma's ethnicity groups sum to roughly three times the total the
-        # same row publishes, and no amount of reading column names explains
-        # that -- only the numbers do.
-        for row in rows[2:4]:
+        # The whole country's row, every column, against the total it
+        # publishes. This is what says whether the columns partition a
+        # population or overlap: Burma's forty sum to 3.05 times its own
+        # published total, and the only way to see why is to read all forty
+        # with their shares beside them.
+        def breakdown(row: list[Any], why: str) -> None:
             level, area_name, _parent = area(row, names)
             published = number(row[total]) if total is not None else None
-            cells = [f"{names[i]}={number(row[i])}" for i in list(found)[:8]]
             summed = sum(v for v in (number(row[i]) for i in found)
                          if v is not None)
-            log(f"  row: {area_name} (level {level}) published={published} "
-                f"summed={summed:,.0f}")
-            log("       " + "  ".join(cells))
+            ratio = (summed / published) if published else 0.0
+            log(f"\n  {why}: {area_name} (level {level}) "
+                f"published={published:,.0f} summed={summed:,.0f} "
+                f"ratio={ratio:.3f}" if published else
+                f"\n  {why}: {area_name} (level {level}) no published total")
+            for index, label in found.items():
+                value = number(row[index])
+                if value is None:
+                    continue
+                share = (100.0 * value / published) if published else 0.0
+                log(f"    {names[index]:<14} {label[:34]:<34} "
+                    f"{value:>13,.0f}  {share:6.2f}%")
+
+        national = next((r for r in rows[2:] if area(r, names)[0] == 0), None)
+        if national is not None:
+            breakdown(national, "whole country")
+        # And the areas furthest from their own total, which is where a
+        # misread sheet shows itself first.
+        def gap_of(row: list[Any]) -> float:
+            published = number(row[total]) if total is not None else None
+            if not published:
+                return 0.0
+            summed = sum(v for v in (number(row[i]) for i in found)
+                         if v is not None)
+            return abs(summed - published) / published
+        worst = sorted((r for r in rows[2:] if area(r, names)[0]),
+                       key=gap_of, reverse=True)[:2]
+        for row in worst:
+            if gap_of(row) > 0.001:
+                breakdown(row, "furthest from its own total")
     book.close()
     return 0
 
