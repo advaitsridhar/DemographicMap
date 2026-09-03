@@ -143,9 +143,20 @@ class Topic:
     named "ETH_". Which columns hold groups is a fact the sheet states -- they
     are the ones that are not geography -- and asking it is both simpler and
     the thing this module's docstring already said to do.
+
+    Year, source and note override the country's where a topic does not come
+    from the same place as the rest of the file. Burma is why. Its Age-Sex
+    sheet is the 2014 Population and Housing Census, and its Ethnicity sheet
+    is the Department of Population's 2018 Township Profiles with a 2017
+    reference date -- because the 2014 census's ethnicity tables were never
+    published. Taking the country's year for both would date 2017 figures to
+    2014 and attribute them to a census that did not release them.
     """
     sheet: str
     field: str
+    year: int | None = None
+    source: str = ""
+    note: str = ""
 
 
 @dataclass(frozen=True)
@@ -850,6 +861,12 @@ def main() -> int:
             any_row = next(a[key] for a in fields.values() if key in a)
             level = country.levels[any_row["level"]]
             values: dict[str, Any] = {}
+            # One source entry per topic that produced a figure, rather than
+            # one for the country naming every field. Burma's ethnicity comes
+            # from a different publication and a different year than the rest
+            # of its workbook, so a single citation covering both would be
+            # wrong about one of them whichever way it was written.
+            cites: list[dict[str, Any]] = []
             for topic in country.topics:
                 row = fields[topic.field].get(key)
                 if not row:
@@ -857,8 +874,12 @@ def main() -> int:
                 values[topic.field] = shares(
                     row["counts"], total=row["published"] or row["summed"]
                 ) or gap(NOT_AVAILABLE)
-                values[f"{topic.field}_year"] = country.year
-                values[f"{topic.field}_note"] = country.note
+                values[f"{topic.field}_year"] = topic.year or country.year
+                values[f"{topic.field}_note"] = topic.note or country.note
+                cites.append({"field": topic.field,
+                              "name": topic.source or country.source,
+                              "url": dataset_url(country.dataset),
+                              "license": country.licence})
             def slug(text: str) -> str:
                 return "".join(c if c.isalnum() else "-"
                                for c in text.lower()).strip("-")
@@ -883,10 +904,7 @@ def main() -> int:
                 # shape it happens to reach.
                 no_shape=(parent.title(), name.title()) in country.no_shape
                          or None,
-                sources=[{"field": "/".join(t.field for t in country.topics),
-                          "name": country.source,
-                          "url": dataset_url(country.dataset),
-                          "license": country.licence}],
+                sources=cites,
                 **values))
 
         out = args.out or PROCESSED / country.out
