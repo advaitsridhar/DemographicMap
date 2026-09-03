@@ -1,4 +1,13 @@
 Ethiopia: https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/ethiopia_uscb_202308.xlsx
   1,759,157 bytes
   Religion: 851 rows, 6 groups, by sex, no published denominator
-ETH Religion: 24 cells where females plus males do not equal the both-sexes figure
+    24 of 5094 cells do not reconcile by sex; the largest:
+      NO NAME RLG_TRAD: -999 + -999 = -1,998 against -999 (out by -999)
+      NO NAME RLG_PROT: -999 + -999 = -1,998 against -999 (out by -999)
+      NO NAME RLG_OTHR: -999 + -999 = -1,998 against -999 (out by -999)
+      NO NAME RLG_ORDX: -999 + -999 = -1,998 against -999 (out by -999)
+      NO NAME RLG_ISL: -999 + -999 = -1,998 against -999 (out by -999)
+      NO NAME RLG_CATH: -999 + -999 = -1,998 against -999 (out by -999)
+      BELTU WEREDA RLG_TRAD: -999 + -999 = -1,998 against -999 (out by -999)
+      BELTU WEREDA RLG_PROT: -999 + -999 = -1,998 against -999 (out by -999)
+ETH Religion: 24 of 5094 cells where females plus males do not equal the both-sexes figure
