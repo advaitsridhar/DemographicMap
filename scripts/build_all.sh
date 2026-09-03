@@ -79,6 +79,21 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.sri_lanka --level district
   soft python3 -m scripts.fetch_census.india_language --level state
   soft python3 -m scripts.fetch_census.india_language --level district
+  # Five adapters were missing from this list for as long as they have
+  # existed. Their output is committed under data/processed, so the join
+  # still picked it up and the countries appeared on the map -- which is
+  # exactly why nobody noticed. What a refresh could not do was re-run them,
+  # so a census revision or a fix to one of these readers would never have
+  # reached the site until someone dispatched the adapter by hand.
+  #
+  # Nepal reads a 13 MB report checked into data/raw/nepal/, so it needs no
+  # network and runs unconditionally. New Zealand needs a Stats NZ key from
+  # the environment and soft-fails without one.
+  soft python3 -m scripts.fetch_census.pakistan
+  soft python3 -m scripts.fetch_census.bangladesh
+  soft python3 -m scripts.fetch_census.south_africa
+  soft python3 -m scripts.fetch_census.nepal
+  soft python3 -m scripts.fetch_census.new_zealand
 fi
 
 if [ "${SKIP_TILES:-0}" != "1" ]; then

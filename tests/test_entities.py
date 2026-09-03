@@ -2408,3 +2408,66 @@ class GapReasons(unittest.TestCase):
 
     def test_the_two_never_apply_to_the_same_country(self):
         self.assertFalse(set(be.ADAPTER_GAPS) & set(be.ADAPTER_HINTS))
+
+
+class SiteFreshness(unittest.TestCase):
+    """Whether the map still reflects the adapter output beside it.
+
+    South Africa's provinces were correct in data/processed and absent from
+    site/data for a week, because an adapter run and a site build are separate
+    acts and nothing compared them. These cover the comparison that now does.
+    """
+
+    def setUp(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import check_site_fresh
+        self.check = check_site_fresh
+        self.dir = Path(tempfile.mkdtemp())
+        (self.dir / "a.json").write_text('["a"]', encoding="utf-8")
+        (self.dir / "b.json").write_text('["b"]', encoding="utf-8")
+        self.files = ["a.json", "b.json"]
+        self.stamp = {f: self.check.digest(self.dir / f) for f in self.files}
+
+    def test_an_unchanged_tree_is_current(self):
+        self.assertEqual(self.check.compare(self.stamp, self.dir, self.files),
+                         ([], [], []))
+
+    def test_an_adapter_that_never_reached_the_map_is_named(self):
+        stamp = {"a.json": self.stamp["a.json"]}       # b built after the site
+        added, changed, removed = self.check.compare(stamp, self.dir, self.files)
+        self.assertEqual(added, ["b.json"])
+        self.assertEqual((changed, removed), ([], []))
+
+    def test_a_rerun_adapter_is_named(self):
+        (self.dir / "a.json").write_text('["a","more"]', encoding="utf-8")
+        added, changed, removed = self.check.compare(self.stamp, self.dir, self.files)
+        self.assertEqual(changed, ["a.json"])
+        self.assertEqual((added, removed), ([], []))
+
+    def test_a_stamp_from_before_this_check_is_not_called_current(self):
+        # None means "unknown", which must not be reported as "unchanged":
+        # asserting freshness on no evidence is the bug this guards against.
+        self.assertEqual(self.check.compare(None, self.dir, self.files),
+                         ([], [], []))
+
+    def test_the_build_stamps_every_adapter_file_it_can_see(self):
+        stamped = be.adapter_digests()
+        for filename in ("south_africa_province.json", "pakistan_district.json"):
+            if (be.PROCESSED / filename).exists():
+                self.assertIn(filename, stamped)
+                self.assertEqual(len(stamped[filename]), 12)
+
+
+class BoundaryMisspellings(unittest.TestCase):
+    """geoBoundaries names that are simply wrong, corrected by declaration."""
+
+    def test_the_declared_misspelling_is_corrected(self):
+        self.assertEqual(common.respell("Nothern Cape", "ZAF"), "Northern Cape")
+
+    def test_a_correction_cannot_reach_another_country(self):
+        self.assertEqual(common.respell("Nothern Cape", "USA"), "Nothern Cape")
+        self.assertEqual(common.respell("Nothern Cape"), "Nothern Cape")
+
+    def test_an_unlisted_name_is_untouched(self):
+        for name in ("Western Cape", "Eastern Cape", "Limpopo"):
+            self.assertEqual(common.respell(name, "ZAF"), name)

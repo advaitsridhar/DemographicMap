@@ -296,6 +296,36 @@ def repair(name: str) -> str:
         return name
 
 
+# Names geoBoundaries spells wrong, and what they should be. Keyed by the
+# country's ISO3 so a correction can never reach a similar name elsewhere.
+#
+# Unlike repair() above, nothing detects these. Mojibake is self-announcing --
+# a byte pair no place name contains -- and the fix verifies itself by round
+# trip. "Nothern Cape" is a perfectly well-formed string; only a reader who
+# knows the place can tell it is wrong. So each entry is declared, matched
+# exactly, and nothing is inferred: a rule loose enough to find these by
+# similarity would also "correct" real names that merely resemble another, and
+# "Nothern Cape" differs from "Northern Cape" by less than "Eastern Cape"
+# differs from "Western Cape".
+MISSPELLED: dict[tuple[str, str], str] = {
+    ("ZAF", "Nothern Cape"): "Northern Cape",
+}
+
+
+def respell(name: str, group: str | None = None) -> str:
+    """The boundary file's name, with a declared misspelling corrected.
+
+    Applied where the shapes are read, so the correct spelling is what the
+    census join matches against as well as what a viewer sees. Without it the
+    map labels a South African province "Nothern Cape" -- the data on it right,
+    the name on it wrong -- and every source that spells the province correctly
+    has to carry an alias to reach the shape at all.
+    """
+    if not group:
+        return name
+    return MISSPELLED.get((group, name), name)
+
+
 def parse_number(text: str | None) -> float | int | None:
     if not text:
         return None

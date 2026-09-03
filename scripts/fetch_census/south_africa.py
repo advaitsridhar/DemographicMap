@@ -122,10 +122,15 @@ RELIGION_NAMES: dict[str, str] = {
 
 # What the boundary file calls the same province. geoBoundaries' global
 # composite spells the Northern Cape "Nothern Cape", a letter short, so the
-# census's own spelling does not match it and the province would have joined
-# nothing. Declared rather than reached by a looser rule: "Nothern Cape" and
-# "Northern Cape" differ by less than "Eastern Cape" and "Western Cape" do, and
-# a match loose enough to bridge the first would bridge the second.
+# census's own spelling did not match it and the province joined nothing.
+#
+# That misspelling is now corrected where the shapes are read, by common.respell,
+# so this alias no longer does the work -- but it stays, because it costs
+# nothing and the adapter should not silently depend on a correction made
+# elsewhere. Either way the fix is declared rather than reached by a looser
+# rule: "Nothern Cape" and "Northern Cape" differ by less than "Eastern Cape"
+# and "Western Cape" do, and a match loose enough to bridge the first would
+# bridge the second.
 ALIASES: dict[str, tuple[str, ...]] = {
     "Northern Cape": ("Nothern Cape",),
 }

@@ -1211,12 +1211,20 @@ Two smaller things worth writing down:
   invisible and worse.
 
 One join needed declaring. geoBoundaries' global composite spells the Northern
-Cape **`Nothern Cape`**, a letter short, so the census's own spelling matches no
-shape and that province would have carried nothing. It is an alias rather than
-a looser matching rule, because "Nothern Cape" and "Northern Cape" differ by
-less than "Eastern Cape" and "Western Cape" do -- anything lenient enough to
-bridge the first would bridge the second, and put one province's people on
-another.
+Cape **`Nothern Cape`**, a letter short, so the census's own spelling matched no
+shape and that province carried nothing. It was fixed as an alias rather than a
+looser matching rule, because "Nothern Cape" and "Northern Cape" differ by less
+than "Eastern Cape" and "Western Cape" do -- anything lenient enough to bridge
+the first would bridge the second, and put one province's people on another.
+
+The alias made the data land but left the *label* wrong: entity names come from
+the boundary file, and adapters never override them, so the map read "Nothern
+Cape" over correct figures. The misspelling is now corrected where the shapes
+are read (`common.respell`, beside the `repair()` that undoes geoBoundaries'
+mojibake), which fixes the name a viewer sees and the name every source is
+matched against at once. Nothing is inferred there either: each correction is
+declared with the country it belongs to, because "Nothern Cape" is a
+well-formed string that only a reader who knows the place can tell is wrong.
 
 Two label decisions follow from having both this release and the Factbook
 describing one country. The Factbook writes South Africa's languages as

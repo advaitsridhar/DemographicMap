@@ -40,7 +40,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import canonical_groups
 from common import (  # noqa: E402
     NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, ROOT, apply_collection_policy,
-    gap, is_gap, log, measure, read_json, repair, write_json,
+    gap, is_gap, log, measure, read_json, repair, respell, write_json,
 )
 
 SITE_DATA = ROOT / "site" / "data"
@@ -239,7 +239,8 @@ def read_shapes(level: str) -> list[dict[str, Any]]:
             bounds = geom.bounds
             out.append({
                 "shape_id": props.get("shapeID") or props.get("shapeGroup"),
-                "name": repair((props.get("shapeName") or "").strip()),
+                "name": respell(repair((props.get("shapeName") or "").strip()),
+                                props.get("shapeGroup")),
                 "group": props.get("shapeGroup"),
                 "point": [round(point.x, 5), round(point.y, 5)],
                 "bbox": [round(b, 4) for b in bounds],
@@ -1526,11 +1527,36 @@ def main() -> int:
     for path in sorted(out.rglob("*.json")):
         if path.name != "build.json":
             digest.update(path.read_bytes())
-    write_json(out / "build.json", {"version": digest.hexdigest()[:12]}, compact=True)
+    write_json(out / "build.json",
+               {"version": digest.hexdigest()[:12],
+                "adapters": adapter_digests()}, compact=True)
 
     log(f"  admin0 {len(admin0)} | admin1 {sum(len(v) for v in admin1_by_country.values())} "
         f"| admin2 {sum(len(v) for v in admin2_by_country.values())} | index {len(index)}")
     return 0
+
+
+def adapter_digests(processed: Path | None = None) -> dict[str, str]:
+    """What each adapter file held when the site was last built.
+
+    An adapter run and a site build are separate acts: the adapter writes to
+    data/processed and only the full pipeline joins that into site/data. So a
+    merged adapter and a country visible on the map are different states, and
+    nothing connected them -- South Africa sat correct in data/processed and
+    absent from the map for a week, and it took a reader asking "I don't see
+    anything for South Africa?" to find it.
+
+    Recording the inputs beside the output closes that: scripts/check_site_fresh.py
+    compares this against the files on disk, so the divergence is reported by
+    the build rather than noticed by a person.
+    """
+    processed = processed or PROCESSED
+    out: dict[str, str] = {}
+    for filename in ADAPTER_FILES:
+        path = processed / filename
+        if path.exists():
+            out[filename] = hashlib.sha256(path.read_bytes()).hexdigest()[:12]
+    return out
 
 
 def norm_city(text: str | None) -> str:

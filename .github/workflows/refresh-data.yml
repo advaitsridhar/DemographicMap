@@ -47,6 +47,16 @@ jobs:
       - name: Run the pipeline
         env:
           CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+          # The same keys run-adapter.yml passes. Without them a refresh runs
+          # the New Zealand adapter and watches it soft-fail for want of a
+          # credential the repository already holds -- so the country's
+          # figures would silently stay at whatever the last manual run left.
+          NZ_STATS_API: ${{ secrets.NZ_STATS_API }}
+          STATS_NZ_API_KEY: ${{ secrets.STATS_NZ_API_KEY }}
+          STATSNZ_API_KEY: ${{ secrets.STATSNZ_API_KEY }}
+          STATS_NZ_KEY: ${{ secrets.STATS_NZ_KEY }}
+          NZ_STATS_API_KEY: ${{ secrets.NZ_STATS_API_KEY }}
+          DEMOGRAPHICMAP: ${{ secrets.DEMOGRAPHICMAP }}
           WITH_CENSUS: ${{ inputs.with_census && '1' || '0' }}
           SKIP_TILES: ${{ inputs.rebuild_tiles && '0' || '1' }}
         run: scripts/build_all.sh
