@@ -30,3 +30,11 @@ jobs:
 
       - name: Unit tests
         run: python3 -m unittest discover -s tests -v
+
+      # Reports, never blocks. A pull request that adds an adapter cannot
+      # rebuild site/data -- that join needs the 550 MB boundary files -- so
+      # failing here would block the very change being reported on. It exists
+      # because nothing else connects "adapter merged" to "visible on the
+      # map", and a person had to notice South Africa was missing.
+      - name: Is site/data current with the adapters?
+        run: python3 scripts/check_site_fresh.py
