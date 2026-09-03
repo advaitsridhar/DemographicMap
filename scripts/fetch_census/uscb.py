@@ -408,6 +408,70 @@ def discover(limit: int, sheets: bool) -> int:
     return 0
 
 
+def inspect(dataset: str, wanted: list[str]) -> int:
+    """Everything a config needs, read off the workbook rather than guessed.
+
+    Writing a Country by hand needs four facts the sheet names do not carry:
+    which ADM_LEVEL is this map's admin1 and which its admin2, what the group
+    labels actually say, what census year the tables are from, and what the
+    areas are called so they can be aliased to the boundary file. All four are
+    in the file. None is in the catalogue.
+    """
+    import openpyxl
+
+    blob = http_get(workbook_url(dataset), binary=True, cache_dir=RAW / "uscb")
+    book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True,
+                                  data_only=True)
+    log(f"{dataset}: {len(blob):,} bytes, {len(book.sheetnames)} sheets")
+
+    # The metadata sheet is where the census year lives, in table identifiers
+    # like ET_RELIGION_2007census. The filename's date is an extraction date
+    # and has been mistaken for the census year before.
+    for name in book.sheetnames:
+        if name.strip().lower() in ("metadata", "data dictionary"):
+            rows = [list(r) for r in book[name].iter_rows(values_only=True)]
+            log(f"\n--- {name}: {len(rows)} rows ---")
+            for row in rows[:25]:
+                cells = [str(v).strip() for v in row if v is not None]
+                if cells:
+                    log("  " + " | ".join(c[:70] for c in cells)[:220])
+
+    for name in book.sheetnames:
+        if name.strip().lower() in ("metadata", "data dictionary"):
+            continue
+        if wanted and not any(w.lower() in name.lower() for w in wanted):
+            continue
+        rows = [list(r) for r in book[name].iter_rows(values_only=True)]
+        if len(rows) < 3:
+            log(f"\n--- {name}: {len(rows)} rows, nothing under the header ---")
+            continue
+        names, aliases = columns(rows)
+        if "ADM_LEVEL" not in names or "AREA_NAME" not in names:
+            log(f"\n--- {name}: not a geography sheet "
+                f"(no ADM_LEVEL/AREA_NAME) ---")
+            continue
+        by_level: dict[Any, list[tuple[str, str]]] = {}
+        for row in rows[2:]:
+            level, area_name, parent = area(row, names)
+            by_level.setdefault(level, []).append((parent, area_name))
+        log(f"\n--- {name}: {len(rows) - 2} rows, sexed={sexed(names)} ---")
+        for level in sorted(by_level, key=lambda v: (v is None, v)):
+            found = by_level[level]
+            shown = ", ".join(n for _p, n in found[:8])
+            log(f"  ADM_LEVEL {level}: {len(found)} areas  e.g. {shown}")
+        total = denominator(names, aliases)
+        found = groups(names, aliases, total, sexed(names))
+        log(f"  denominator: {aliases[total]!r}" if total is not None
+            else "  denominator: none found")
+        log(f"  {len(found)} group columns:")
+        for index in found[:20]:
+            log(f"    {names[index]}  ->  {aliases[index]!r}")
+        if len(found) > 20:
+            log(f"    ...and {len(found) - 20} more")
+    book.close()
+    return 0
+
+
 def sheet_rows(book, name: str) -> list[list[Any]]:
     """One sheet as rows, matched on a stripped name.
 
@@ -698,6 +762,12 @@ def main() -> int:
     ap.add_argument("--discover", action="store_true",
                     help="report which countries in the series carry a USCB "
                          "workbook, instead of reading any")
+    ap.add_argument("--inspect", action="append", metavar="DATASET",
+                    help="print the levels, groups, areas and census year of "
+                         "one HDX dataset's workbook, which is what writing a "
+                         "config needs and the catalogue does not carry")
+    ap.add_argument("--sheet", action="append",
+                    help="with --inspect, only sheets whose name contains this")
     ap.add_argument("--limit", type=int, default=25,
                     help="with --discover, how many datasets to report "
                          "(0 for all)")
@@ -706,6 +776,11 @@ def main() -> int:
                          "sheets (slow; the topics are only in the file)")
     args = ap.parse_args()
 
+    if args.inspect:
+        for dataset in args.inspect:
+            log(f"\n{'=' * 70}")
+            inspect(dataset, args.sheet or [])
+        return 0
     if args.discover:
         return discover(args.limit, args.sheets)
 
