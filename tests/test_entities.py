@@ -2779,21 +2779,30 @@ class UscbReader(unittest.TestCase):
         real = self.uscb.http_json
         self.uscb.http_json = lambda url, **kw: body
         try:
-            return self.uscb.workbook_url("PHL")
+            return self.uscb.workbook_url("some-dataset-id")
         finally:
             self.uscb.http_json = real
 
-    def test_the_workbook_is_asked_for_not_pinned(self):
-        # A resource UUID is a snapshot. HDX replaces the file when the Bureau
-        # republishes, and a pinned URL then serves last year's figures until
-        # the day it 404s -- the failure mode being that nothing fails.
+    def test_the_resource_is_resolved_not_pinned(self):
+        # A resource id is a snapshot. HDX issues a new one when the Bureau
+        # publishes a new extraction and leaves the old serving last year's
+        # figures until it 404s -- the failure mode being that nothing fails.
         url = self.resolved(self.hdx([
             {"name": "phl_admgz_adm_itos.gdb.zip", "url": "http://x/gdb"},
             {"name": "philippines_uscb_202402.xlsx", "url": "http://x/book"},
         ]))
         self.assertEqual(url, "http://x/book")
+
+    def test_the_dataset_is_named_because_it_cannot_be_derived(self):
+        # cod-ps-<iso3> is HDX's population collection, a different thing:
+        # UNFPA and OCHA projections, carrying no USCB workbook for any of the
+        # 146 countries in it. Deriving the dataset from the ISO3 code found
+        # nothing for the two countries that demonstrably have tables.
         for country in self.uscb.COUNTRIES.values():
-            self.assertEqual(country.workbook, "")
+            self.assertTrue(country.dataset)
+            self.assertNotIn("cod-ps", country.dataset)
+        self.assertEqual(self.uscb.dataset_url("abc-123"),
+                         "https://data.humdata.org/dataset/abc-123")
 
     def test_two_extractions_take_the_later_one(self):
         url = self.resolved(self.hdx([
@@ -2802,10 +2811,7 @@ class UscbReader(unittest.TestCase):
         ]))
         self.assertEqual(url, "http://x/new")
 
-    def test_a_dataset_with_no_workbook_says_so(self):
-        # Far more countries have a Common Operational Dataset than have tables
-        # prepared, so this is the ordinary case and not an error to paper over
-        # by building a URL from the naming convention.
+    def test_a_dataset_with_no_workbook_says_what_it_has(self):
         with self.assertRaises(SystemExit) as caught:
             self.resolved(self.hdx([{"name": "phl_pop_adm1.csv",
                                      "url": "http://x/csv"}]))
@@ -2817,28 +2823,6 @@ class UscbReader(unittest.TestCase):
         with self.assertRaises(SystemExit):
             self.resolved(self.hdx([{"name": "philippines_uscb_notes.pdf",
                                      "url": "http://x/pdf"}]))
-
-    def test_the_citation_points_at_the_dataset_that_served_the_file(self):
-        # The hand-written slugs this replaced were never fetched -- the
-        # workbook came from a UUID URL -- so nothing had checked they resolve.
-        self.assertEqual(self.uscb.dataset_url("ETH"),
-                         "https://data.humdata.org/dataset/cod-ps-eth")
-        for country in self.uscb.COUNTRIES.values():
-            self.assertEqual(country.url, "")
-
-    def test_the_catalogue_drops_archived_and_legacy_vintages(self):
-        # cod-ps-mmr-archived is the same country at an older vintage, and
-        # reading both would put one country's figures in twice.
-        real = self.uscb.http_json
-        self.uscb.http_json = lambda url, **kw: {"result": {"results": [
-            {"name": "cod-ps-mmr"}, {"name": "cod-ps-mmr-archived"},
-            {"name": "cod-ps-nga"}, {"name": "legacy-cod-ps-afg"},
-            {"name": "cod-ps-global"},
-        ]}}
-        try:
-            self.assertEqual(self.uscb.catalogue(), ["MMR", "NGA"])
-        finally:
-            self.uscb.http_json = real
 
     def test_every_country_carries_its_own_census_year(self):
         # Ethiopia's tables are the 2007 census -- the last it completed -- and

@@ -58,50 +58,52 @@ from ._shared import (
 # 2.3 kB stub, so the catalogue is reachable where the landing page is not.
 HDX_API = "https://data.humdata.org/api/3/action"
 
-# The dataset holding each country's Common Operational Dataset for population
-# statistics. The name is derived from the ISO3 code and is stable; the
-# resource ids inside it are not.
-COD_PS = "cod-ps-{iso3}"
+# The HDX dataset holding a country's USCB tables is named in its config,
+# because there is no deriving it. The obvious guess -- HDX's Common
+# Operational Dataset for population, cod-ps-<iso3> -- is a different thing
+# entirely: UNFPA and OCHA projections. It carries no USCB workbook for any of
+# the 146 countries that have one, the Philippines and Ethiopia included. That
+# was established by asking all 146, after assuming otherwise and breaking both
+# working countries with the assumption.
+#
+# A dataset id is still worth resolving through rather than pinning a resource
+# id. HDX gives the file a new resource id when the Bureau publishes a new
+# extraction, and leaves the old one serving last year's figures until the day
+# it 404s -- the failure mode being that nothing fails. The dataset it hangs
+# on stays put.
 
 
-def dataset_url(iso3: str) -> str:
-    """The HDX page a reader should be sent to for this country's tables."""
-    return f"{HDX}/{COD_PS.format(iso3=iso3.lower())}"
-
-
-def workbook_url(iso3: str) -> str:
-    """The country's current USCB workbook, asked of HDX rather than pinned.
-
-    A resource UUID is a snapshot of one moment in a dataset's life. HDX
-    replaces the file when the Bureau publishes a new extraction, and a pinned
-    URL then keeps returning last year's figures until the day it 404s --
-    the failure mode being that nothing fails. The dataset name is derived
-    from the ISO3 code and does not move, so the dataset is asked what it
-    currently holds.
-
-    Raises rather than guessing: a country whose dataset carries no USCB
-    workbook has none, and inventing a URL from the naming convention would
-    turn that into a download error somewhere less obvious.
-    """
-    name = COD_PS.format(iso3=iso3.lower())
-    body = http_json(f"{HDX_API}/package_show?id={name}")
+def package(dataset: str) -> dict[str, Any]:
+    body = http_json(f"{HDX_API}/package_show?id={dataset}")
     if not body.get("success"):
-        raise SystemExit(f"HDX has no dataset {name!r} for {iso3}")
-    found = [r for r in body["result"].get("resources", [])
+        raise SystemExit(f"HDX has no dataset {dataset!r}")
+    return body["result"]
+
+
+def dataset_url(dataset: str) -> str:
+    """The HDX page a reader should be sent to for these tables."""
+    return f"https://data.humdata.org/dataset/{dataset}"
+
+
+def workbook_url(dataset: str) -> str:
+    """The dataset's current USCB workbook.
+
+    Raises rather than guessing: a dataset with no USCB workbook has none, and
+    building a URL from the naming convention would turn that into a download
+    error somewhere less obvious.
+    """
+    result = package(dataset)
+    found = [r for r in result.get("resources", [])
              if "uscb" in (r.get("name") or "").lower()
              and (r.get("name") or "").lower().endswith(".xlsx")]
     if not found:
         names = ", ".join(sorted(r.get("name") or "?"
-                                 for r in body["result"].get("resources", []))[:8])
-        raise SystemExit(
-            f"{name} carries no USCB workbook. It holds: {names}\n"
-            f"Not every Common Operational Dataset has one -- the Bureau "
-            f"prepares these for a subset of countries.")
+                                 for r in result.get("resources", []))[:8])
+        raise SystemExit(f"{dataset} carries no USCB workbook. It holds: {names}")
     # Newest first, so a dataset carrying two extractions uses the later one.
     found.sort(key=lambda r: (r.get("name") or ""), reverse=True)
     if len(found) > 1:
-        log(f"  {len(found)} USCB workbooks on {name}; using "
-            f"{found[0].get('name')!r}")
+        log(f"  {len(found)} USCB workbooks; using {found[0].get('name')!r}")
     return found[0]["url"]
 
 # The columns every sheet in the series begins with, whatever its topic. Listed
@@ -161,16 +163,12 @@ class Country:
     levels: dict[int, str]
     topics: tuple[Topic, ...]
     note: str
-    # Empty for a country that takes its workbook from HDX, which is the normal
-    # case and the one that survives the Bureau republishing. Set only to pin a
-    # specific file, and say in a comment why that file and not the current one.
-    workbook: str = ""
-    # Likewise derived. The hand-written slugs these replace
-    # ("philippines-subnational-population-statistics") were never fetched --
-    # the workbook came from a UUID URL -- so nothing had ever checked that
-    # they resolved, and a citation nobody follows is a citation nobody
-    # notices is wrong.
-    url: str = ""
+    # The HDX dataset holding this country's tables. Both the workbook and the
+    # citation link come from it, so there is one identifier per country rather
+    # than a resource UUID and a hand-written slug that can disagree -- and the
+    # slugs they replace ("philippines-subnational-population-statistics") were
+    # never fetched, so nothing had ever checked they resolve.
+    dataset: str = ""
     aliases: dict[str, tuple[str, ...]] = dc_field(default_factory=dict)
     # Census areas geoBoundaries draws no boundary of their own for, as
     # (parent, area) pairs -- a name alone is not an address, and the
@@ -204,6 +202,7 @@ PHILIPPINES = Country(
     source=("Philippine Statistics Authority, 2020 Census of Population and "
             "Housing, prepared as subnational tables by the U.S. Census Bureau"),
     licence="CC BY-IGO, published via HDX",
+    dataset="809dfb22-77f4-482c-8560-79b07d20fc15",
     out="philippines_province.json",
     levels={1: "admin1", 2: "admin2"},
     topics=(Topic("Religion", "religion"),
@@ -282,6 +281,7 @@ ETHIOPIA = Country(
             "Housing Census, prepared as subnational tables by the U.S. Census "
             "Bureau"),
     licence="CC BY-IGO, published via HDX",
+    dataset="5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
     out="ethiopia_region.json",
     levels={1: "admin1", 2: "admin2"},
     topics=(Topic("Religion", "religion"),
@@ -356,62 +356,55 @@ ETHIOPIA = Country(
 COUNTRIES: dict[str, Country] = {c.iso3: c for c in (PHILIPPINES, ETHIOPIA)}
 
 
-def catalogue() -> list[str]:
-    """Every ISO3 code with a Common Operational Dataset for population.
+def discover(limit: int, sheets: bool) -> int:
+    """Every USCB workbook on HDX, found by asking for the resources directly.
 
-    The dataset names are ``cod-ps-<iso3>``, so the list of countries in the
-    series is the list of those datasets. Archived and legacy entries carry a
-    suffix and are dropped: ``cod-ps-mmr-archived`` is the same country as
-    ``cod-ps-mmr`` at an older vintage, and reading both would put one
-    country's figures in twice.
-    """
-    body = http_json(f"{HDX_API}/package_search?q=cod-ps&rows=1000&fl=name")
-    found = set()
-    for row in body.get("result", {}).get("results", []):
-        parts = (row.get("name") or "").split("-")
-        if len(parts) == 3 and parts[:2] == ["cod", "ps"] and len(parts[2]) == 3:
-            found.add(parts[2].upper())
-    return sorted(found)
+    Searching datasets cannot answer this. The workbook hangs off a dataset
+    whose title says nothing about the Bureau, and the first attempt at this --
+    deriving the dataset name from the ISO3 code -- reported that none of the
+    146 countries in HDX's population collection had one, which was true and
+    useless, because it was looking in the wrong collection entirely.
 
-
-def discover(codes: list[str], sheets: bool) -> int:
-    """Report which countries carry a USCB workbook, and what is in it.
-
-    The Common Operational Dataset exists for far more countries than the
-    Bureau prepares tables for, and a workbook's existence is still not the
-    question -- Indonesia has one and it holds no religion and no ethnicity,
-    only a four-bucket first-language split. So what decides whether a country
-    is worth a config is its sheet names, and those are only knowable by
-    opening the file.
+    So this asks CKAN for resources by name and works back to the dataset each
+    belongs to. What then decides whether a country is worth a config is its
+    sheet names, and those are only knowable by opening the file: Indonesia has
+    a workbook and it holds no religion and no ethnicity, only a four-bucket
+    first-language split.
     """
     import openpyxl
 
-    codes = codes or catalogue()
-    log(f"{len(codes)} countries in the series")
-    carried, bare = [], []
-    for iso3 in codes:
+    body = http_json(f"{HDX_API}/resource_search?query=name:uscb&limit=1000")
+    rows = body.get("result", {}).get("results", [])
+    books = [r for r in rows if (r.get("name") or "").lower().endswith(".xlsx")]
+    seen: dict[str, dict[str, Any]] = {}
+    for row in books:
+        seen.setdefault(row.get("package_id") or row.get("id"), row)
+    log(f"{len(rows)} resources named for the Bureau, {len(books)} of them "
+        f"workbooks, across {len(seen)} datasets")
+
+    order = sorted(seen.items(), key=lambda kv: kv[1].get("name") or "")
+    for i, (pkg, row) in enumerate(order):
+        if limit and i >= limit:
+            log(f"  ...stopping at {limit} of {len(order)}; --limit 0 for all")
+            break
         try:
-            url = workbook_url(iso3)
+            meta = package(pkg)
         except SystemExit as why:
-            bare.append(iso3)
-            log(f"  {iso3}: no USCB workbook ({str(why).splitlines()[0]})")
+            log(f"  {row.get('name')}: {why}")
             continue
-        carried.append(iso3)
+        line = f"  {row.get('name')}  {meta.get('name')}  ({meta.get('title')})"
         if not sheets:
-            log(f"  {iso3}: {url.rsplit('/', 1)[-1]}")
+            log(line)
             continue
-        blob = http_get(url, binary=True, cache_dir=RAW / "uscb")
+        blob = http_get(row["url"], binary=True, cache_dir=RAW / "uscb")
         book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True,
                                       data_only=True)
         names = list(book.sheetnames)
         book.close()
-        # Named rather than filtered to the three this map wants: a sheet this
-        # reader has no use for is still a fact about the source, and a topic
-        # nobody thought to look for is exactly what a listing surfaces.
-        log(f"  {iso3}: {len(blob):,} bytes, sheets: {', '.join(names)}")
-    log(f"{len(carried)} with a workbook, {len(bare)} without")
-    if carried:
-        log("  with: " + " ".join(carried))
+        # Named in full rather than filtered to the three topics this map
+        # wants: a topic nobody thought to look for is exactly what a listing
+        # surfaces.
+        log(f"{line}\n      {len(blob):,} bytes, sheets: {', '.join(names)}")
     return 0
 
 
@@ -705,14 +698,16 @@ def main() -> int:
     ap.add_argument("--discover", action="store_true",
                     help="report which countries in the series carry a USCB "
                          "workbook, instead of reading any")
+    ap.add_argument("--limit", type=int, default=25,
+                    help="with --discover, how many datasets to report "
+                         "(0 for all)")
     ap.add_argument("--sheets", action="store_true",
                     help="with --discover, open each workbook and list its "
                          "sheets (slow; the topics are only in the file)")
     args = ap.parse_args()
 
     if args.discover:
-        return discover([c.upper() for c in (args.country or [])
-                         if c.lower() != "all"], args.sheets)
+        return discover(args.limit, args.sheets)
 
     import openpyxl
 
@@ -729,7 +724,7 @@ def main() -> int:
 
     for iso3 in chosen:
         country = COUNTRIES[iso3]
-        source = country.workbook or workbook_url(iso3)
+        source = workbook_url(country.dataset)
         log(f"{country.name}: {source}")
         blob = http_get(source, binary=True, cache_dir=RAW / "uscb")
         log(f"  {len(blob):,} bytes")
@@ -785,7 +780,7 @@ def main() -> int:
                          or None,
                 sources=[{"field": "/".join(t.field for t in country.topics),
                           "name": country.source,
-                          "url": country.url or dataset_url(iso3),
+                          "url": dataset_url(country.dataset),
                           "license": country.licence}],
                 **values))
 
