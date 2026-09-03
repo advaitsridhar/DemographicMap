@@ -3,4 +3,9 @@ Ethiopia: https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/
   Religion: 851 rows, 6 groups, by sex, no published denominator
     6 groups reconcile by sex across 5070 cells
     744 rows skipped: another level, or no area name
-ETH Ethnicity: no column starts with 'ETH_'
+  Ethnicity: 108 rows, 93 groups, no published denominator
+    1 rows skipped: another level, or no area name
+  Language: 108 rows, 91 groups, no published denominator
+    1 rows skipped: another level, or no area name
+  wrote data/processed/ethiopia_region.json (1634 kB)
+  103 areas: 11 admin1, 92 admin2
