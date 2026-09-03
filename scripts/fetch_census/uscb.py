@@ -223,8 +223,23 @@ def groups(names: list[str], aliases: list[str], prefix: str,
 
 
 def number(value: Any) -> float | None:
+    """A cell as a count of people, or None where the file has none.
+
+    The workbooks write -999 where a figure is unavailable, which is not
+    documented in their metadata and is easy to read straight through: it is a
+    number, and openpyxl hands it over as one. Four Ethiopian areas carry it
+    across all six religions, and taking it at face value would have put a
+    negative population on the map.
+
+    Rejected as "not a count" rather than as "-999 specifically", because the
+    reason is the stronger one: no census reports a negative number of people,
+    so any negative is a marker of some kind whatever its value, and a sentinel
+    the Bureau changes to -998 tomorrow would still be caught.
+    """
+    if isinstance(value, bool):
+        return None
     if isinstance(value, (int, float)):
-        return float(value)
+        return float(value) if value >= 0 else None
     if isinstance(value, str):
         text = value.replace(",", "").strip()
         if text.replace(".", "", 1).isdigit():
@@ -301,9 +316,14 @@ def read(book, country: Country, topic: Topic) -> dict[str, dict[str, Any]]:
         check_sexes(rows, names, topic.prefix, f"{country.iso3} {topic.sheet}")
 
     out: dict[str, dict[str, Any]] = {}
+    skipped = 0
     for row in rows[2:]:
         level, name, parent = area(row, names)
-        if level not in country.levels or not name:
+        if level not in country.levels or not name or name.upper() == "NO NAME":
+            # "NO NAME" is the workbook's own placeholder for an area it could
+            # not label. It is not a place, and giving it a record would put an
+            # unnamed shape on the map with figures attached.
+            skipped += 1
             continue
         counts = {label: value for index, label in found.items()
                   if (value := number(row[index])) is not None and value > 0}
@@ -312,6 +332,8 @@ def read(book, country: Country, topic: Topic) -> dict[str, dict[str, Any]]:
         published = number(row[total]) if total is not None else None
         out[name] = {"level": level, "parent": parent, "counts": counts,
                      "published": published, "summed": sum(counts.values())}
+    if skipped:
+        log(f"    {skipped} rows skipped: another level, or no area name")
     return out
 
 
