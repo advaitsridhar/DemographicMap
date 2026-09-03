@@ -470,9 +470,14 @@ def inspect(dataset: str, wanted: list[str]) -> int:
             by_level.setdefault(level, []).append((parent, area_name))
         log(f"\n--- {name}: {len(rows) - 2} rows, sexed={sexed(names)} ---")
         for level in sorted(by_level, key=lambda v: (v is None, v)):
-            found = by_level[level]
-            shown = ", ".join(n for _p, n in found[:8])
-            log(f"  ADM_LEVEL {level}: {len(found)} areas  e.g. {shown}")
+            here = by_level[level]
+            # Every name where there are few enough to read, because writing
+            # the aliases is the actual job and a sample of eight cannot do
+            # it: the census says "CHERKAS'KA OBLAST'" where the boundary file
+            # says "Cherkasy Oblast", and each of the 27 needs declaring.
+            shown = ", ".join(n for _p, n in here) if len(here) <= 40 \
+                else ", ".join(n for _p, n in here[:8]) + ", ..."
+            log(f"  ADM_LEVEL {level}: {len(here)} areas  {shown}")
         total = denominator(names, aliases)
         found = groups(names, aliases, total, sexed(names))
         log(f"  denominator: {aliases[total]!r}" if total is not None
