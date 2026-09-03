@@ -64,11 +64,22 @@ GEOGRAPHY = {
     "NSO_CODE", "NSO_NAME",
 }
 
-# How far a group total may sit from the sheet's own denominator and still be
-# rounding rather than a misreading. The Bureau publishes whole people, so the
-# only slack wanted is for a published figure that does not add up -- and where
-# that happens the run says so by name instead of absorbing it.
-TOLERANCE = 0.005
+# How far a group total may sit from the sheet's own denominator before it is
+# worth naming, and how far before the file is refused outright.
+#
+# The two bounds do different jobs, and one bound could not do both. A reader
+# that has misunderstood a sheet gets every area wrong; a census that suppressed
+# a small group, or whose published total counts people its own categories do
+# not, gets a handful wrong. So the test is the *shape* of the failure rather
+# than its size alone: a few named areas are reported and kept, and either a
+# large single gap or a widespread small one is refused.
+#
+# Measured on the Philippine ethnicity sheet, where MIMAROPA and its two
+# Mindoro provinces fall 0.6% to 1.3% short -- and the region's shortfall is the
+# sum of its provinces', which is what a real hole in the source looks like.
+NOTABLE = 0.005
+REFUSE_AREA = 0.05
+REFUSE_SHARE = 0.10
 
 
 @dataclass(frozen=True)
@@ -373,22 +384,48 @@ def read(book, country: Country, topic: Topic) -> dict[str, dict[str, Any]]:
 
 def check_total(country: Country, topic: Topic,
                 areas: dict[str, dict[str, Any]]) -> None:
-    """Where the sheet publishes a denominator, the groups must reach it."""
-    checked = off = 0
+    """Where the sheet publishes a denominator, how near do the groups come?
+
+    Falling short is not by itself an error. The published total is everyone
+    the question was asked of, and a census may decline to publish a group too
+    small to disclose -- so the remainder is people whose answer this table does
+    not show, which the map draws as an explicit unaccounted share rather than
+    normalising away. What would be an error is falling short *everywhere*, or
+    by a lot, and those are refused.
+    """
+    checked = 0
+    short: list[tuple[float, str]] = []
+    worst = 0.0
     for name, row in areas.items():
         if row["published"] is None or row["published"] <= 0:
             continue
         checked += 1
-        if abs(row["summed"] - row["published"]) / row["published"] > TOLERANCE:
-            off += 1
-            if off <= 3:
-                log(f"    {name}: groups come to {row['summed']:,.0f} against "
-                    f"a published {row['published']:,.0f}")
-    if off:
-        raise SystemExit(f"{country.iso3} {topic.sheet}: {off} of {checked} "
-                         f"areas do not reach their own published total")
-    if checked:
+        gap_ = (row["published"] - row["summed"]) / row["published"]
+        if abs(gap_) > NOTABLE:
+            worst = max(worst, abs(gap_))
+            short.append((abs(gap_),
+                          f"{name}: groups come to {row['summed']:,.0f} "
+                          f"against a published {row['published']:,.0f} "
+                          f"({gap_:+.1%})"))
+    if not checked:
+        return
+    if not short:
         log(f"    every one of {checked} areas reaches its published total")
+        return
+    short.sort(reverse=True)
+    log(f"    {len(short)} of {checked} areas do not reach their published "
+        f"total; the map shows the remainder as unaccounted:")
+    for _size, line in short[:6]:
+        log(f"      {line}")
+    if worst > REFUSE_AREA:
+        raise SystemExit(f"{country.iso3} {topic.sheet}: an area is "
+                         f"{worst:.1%} short of its own published total, too "
+                         f"much to be a suppressed group")
+    if len(short) / checked > REFUSE_SHARE:
+        raise SystemExit(f"{country.iso3} {topic.sheet}: {len(short)} of "
+                         f"{checked} areas fall short, which is a reader that "
+                         f"has misunderstood the sheet rather than a source "
+                         f"with holes in it")
 
 
 def main() -> int:
