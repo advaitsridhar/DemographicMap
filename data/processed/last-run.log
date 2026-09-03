@@ -23,11 +23,6 @@ burma-subnational-boundaries-and-tabular-data: 1,302,201 bytes, 10 sheets
   Tags | Geospatial Boundaries, Burma, First-Order Administrative Divisions, St
   Summary | The U.S. Census Bureau is providing national and subnational feature c
   Description | First-order administrative divisions feature class of Burma for joinin
-  Credits | Geospatial Boundaries: International boundaries coincide with the Larg
-  Use Limitations | The subnational boundaries used for this feature class were downloaded
-  Place Keywords | Burma, State, Region, Union Territory
-  Temporal Keywords | 2020
-  Theme Keywords | Subnational Divisions
 
 --- Data Dictionary: 362 rows ---
   Data Dictionary: Burma
@@ -50,11 +45,6 @@ burma-subnational-boundaries-and-tabular-data: 1,302,201 bytes, 10 sheets
   Age-Sex
   BTOTL | Both sexes total | Total population (both sexes). (March 30, 2014) | 2014 Myanmar Population and Housing Census, 2016, Population by Sex an
   BTOTL_U | Both sexes total, urban | Total population (both sexes), urban. (March 30, 2014) | 2014 Myanmar Population and Housing Census, 2016, Population by Sex an
-  BTOTL_R | Both sexes total, rural | Total population (both sexes), rural. (March 30, 2014) | 2014 Myanmar Population and Housing Census, 2016, Population by Sex an
-  B0004 | Both sexes 0 to 4 | Total population age 0 - 4 (both sexes). (March 30, 2014) | 2014 Myanmar Population and Housing Census, 2016, Population by Sex an
-  B0509 | Both sexes 5 to 9 | Total population age 5 - 9 (both sexes). (March 30, 2014) | 2014 Myanmar Population and Housing Census, 2016, Population by Sex an
-  B1014 | Both sexes 10 to 14 | Total population age 10 - 14 (both sexes). (March 30, 2014) | 2014 Myanmar Population and Housing Census, 2016, Population by Sex an
-  B1519 | Both sexes 15 to 19 | Total population age 15 - 19 (both sexes). (March 30, 2014) | 2014 Myanmar Population and Housing Census, 2016, Population by Sex an
 
 --- Ethnicity: 426 rows, sexed=False ---
   ADM_LEVEL 0: 1 areas  e.g. BURMA
@@ -88,6 +78,9 @@ burma-subnational-boundaries-and-tabular-data: 1,302,201 bytes, 10 sheets
     ETH_ZKD  ->  'Kadu'
     ETH_ZKN  ->  'Kanan'
     ...and 16 more
+    ETH_MYA says: Burmese | Population with Burmese ethnicity. Original field name: "ဗမာ." (April 01, 2017) | 2018 Township Profiles, 2019, Table 14: Ethnic Nationalities Living (စဉ် ၁၄: နေထိုင်သည့်တိုင်းရင်းသားလူမျိုးစုများ)
+    ETH_KAR says: Karen | Population with Karen ethnicity. Original field name: "ကရင်." (April 01, 2017) | 2018 Township Profiles, 2019, Table 14: Ethnic Nationalities Living (စဉ် ၁၄: နေထိုင်သည့်တိုင်းရင်းသားလူမျိုးစုများ)
+    ETH_SHN says: Shan | Population with Shan ethnicity. Original field name: "ရှမ်း." (April 01, 2017) | 2018 Township Profiles, 2019, Table 14: Ethnic Nationalities Living (စဉ် ၁၄: နေထိုင်သည့်တိုင်းရင်းသားလူမျိုးစုများ)
 
 ======================================================================
 ukraine-subnational-boundaries-and-tabular-data: 4,486,575 bytes, 10 sheets
@@ -113,11 +106,6 @@ ukraine-subnational-boundaries-and-tabular-data: 4,486,575 bytes, 10 sheets
   Tags | Geospatial Boundaries, Ukraine, First-Order Administrative Divisions, 
   Summary | The U.S. Census Bureau is providing national and subnational feature c
   Description | First-order administrative divisions feature class of Ukraine for join
-  Credits | Geospatial boundaries: International boundaries coincide with the Larg
-  Use Limitations | The subnational boundaries used for this feature class were downloaded
-  Place Keywords | Ukraine, Oblast, Autonomous Territory, Municipality
-  Temporal Keywords | 2019
-  Theme Keywords | Subnational Divisions
 
 --- Data Dictionary: 1963 rows ---
   Data Dictionary: Ukraine
@@ -140,11 +128,6 @@ ukraine-subnational-boundaries-and-tabular-data: 4,486,575 bytes, 10 sheets
   B0004 | Both sexes 0 to 4 | Total population age 0 - 4 (both sexes). (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the popula
   B0509 | Both sexes 5 to 9 | Total population age 5 - 9 (both sexes). (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the popula
   B1014 | Both sexes 10 to 14 | Total population age 10 - 14 (both sexes). (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the popula
-  B1519 | Both sexes 15 to 19 | Total population age 15 - 19 (both sexes). (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the popula
-  B2024 | Both sexes 20 to 24 | Total population age 20 - 24 (both sexes). (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the popula
-  B2529 | Both sexes 25 to 29 | Total population age 25 - 29 (both sexes). (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the popula
-  B3034 | Both sexes 30 to 34 | Total population age 30 - 34 (both sexes). (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the popula
-  B3539 | Both sexes 35 to 39 | Total population age 35 - 39 (both sexes). (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the popula
 
 --- Language: 700 rows, sexed=False ---
   ADM_LEVEL 0: 1 areas  e.g. UKRAINE
@@ -162,6 +145,9 @@ ukraine-subnational-boundaries-and-tabular-data: 4,486,575 bytes, 10 sheets
     LNG_HUN  ->  'Hungarian'
     LNG_OTHR  ->  'Other language'
     LNG_UNST  ->  'Unstated'
+    LNG_UKR says: Ukrainian | Population using the Ukrainian language. Original field name: "Ukrainian." (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the population by nationality and native language, … oblast (persons) by region, nationali
+    LNG_BEL says: Belarusian | Population using the Belarusian language. Original field name: "Belarusian." (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the population by nationality and native language, … oblast (persons) by region, nationali
+    LNG_CRH says: Crimean Tatar | Population using the Crimean Tatar language. Original field name: "Crimean Tatar." (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the population by nationality and native language, … oblast (persons) by region, nationali
 
 --- Nationality-Language: 700 rows, sexed=False ---
   ADM_LEVEL 0: 1 areas  e.g. UKRAINE
@@ -194,6 +180,9 @@ ukraine-subnational-boundaries-and-tabular-data: 4,486,575 bytes, 10 sheets
     NL_ETH_VNM  ->  'Ethnicity/nationality, Vietnamese'
     NL_ETH_VPS  ->  'Ethnicity/nationality, Vep'
     ...and 1595 more
+    NL_ETH_UKR says: Ethnicity/nationality, Ukrainian | Total population, Ukrainian ethnicity/nationality . Original field name: "Whole Population, Ukrainians." (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the population by nationality and native language, … oblast (persons) by region, nationali
+    NL_ETH_ABZ says: Ethnicity/nationality, Abazin | Total population, Abazin ethnicity/nationality . Original field name: "Whole Population, Abazins." (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the population by nationality and native language, … oblast (persons) by region, nationali
+    NL_ETH_ABK says: Ethnicity/nationality, Abkhazian | Total population, Abkhazian ethnicity/nationality . Original field name: "Whole Population, Abkhazians." (December 05, 2001) | All-Ukrainian Population Census 2001, 2004, Distribution of the population by nationality and native language, … oblast (persons) by region, nationali
 
 ======================================================================
 syria-subnational-boundaries-and-tabular-data: 366,769 bytes, 10 sheets
@@ -219,11 +208,6 @@ syria-subnational-boundaries-and-tabular-data: 366,769 bytes, 10 sheets
   Tags | Geospatial Boundaries, Syria, First-Order Administrative Divisions, Go
   Summary | The U.S. Census Bureau is providing national and subnational feature c
   Description | First-order administrative divisions feature class of Syria for joinin
-  Credits | Geospatial boundaries: International boundaries coincide with the Larg
-  Use Limitations | The subnational boundaries used for this feature class were downloaded
-  Place Keywords | Syria, Governorate (Muhafazah)
-  Temporal Keywords | 2018
-  Theme Keywords | Subnational Divisions
 
 --- Data Dictionary: 313 rows ---
   Data Dictionary: Syria
@@ -246,11 +230,6 @@ syria-subnational-boundaries-and-tabular-data: 366,769 bytes, 10 sheets
   BTOTL | Both sexes total | Total population (both sexes). (September 22, 2004) | Syria Population and Housing Census 2004, 2006, Distribution of Popula
   B0004 | Both sexes 0 to 4 | Total population age 0 - 4 (both sexes). (September 22, 2004) | 2004 Census Population Bulletin - Man and Nah, 2006, Table 2: Distribu
   B0509 | Both sexes 5 to 9 | Total population age 5 - 9 (both sexes). (September 22, 2004) | 2004 Census Population Bulletin - Man and Nah, 2006, Table 2: Distribu
-  B1014 | Both sexes 10 to 14 | Total population age 10 - 14 (both sexes). (September 22, 2004) | 2004 Census Population Bulletin - Man and Nah, 2006, Table 2: Distribu
-  B1519 | Both sexes 15 to 19 | Total population age 15 - 19 (both sexes). (September 22, 2004) | 2004 Census Population Bulletin - Man and Nah, 2006, Table 2: Distribu
-  B2024 | Both sexes 20 to 24 | Total population age 20 - 24 (both sexes). (September 22, 2004) | 2004 Census Population Bulletin - Man and Nah, 2006, Table 2: Distribu
-  B2529 | Both sexes 25 to 29 | Total population age 25 - 29 (both sexes). (September 22, 2004) | 2004 Census Population Bulletin - Man and Nah, 2006, Table 2: Distribu
-  B3034 | Both sexes 30 to 34 | Total population age 30 - 34 (both sexes). (September 22, 2004) | 2004 Census Population Bulletin - Man and Nah, 2006, Table 2: Distribu
 
 --- Ethnicity: 76 rows, sexed=True ---
   ADM_LEVEL 0: 1 areas  e.g. SYRIA
@@ -267,3 +246,6 @@ syria-subnational-boundaries-and-tabular-data: 366,769 bytes, 10 sheets
     ETH_AUS_B  ->  'Australian'
     ETH_USA_B  ->  'American'
     ETH_OTHR_B  ->  'Other'
+    ETH_SYR_B says: Syrian, both sexes | Population with Syrian ethnicity, both sexes. Original field name: "Syrian, Total." (September 22, 2004) | 2004 Census Population Bulletin - Man and Nah, 2006, Table 3: Distribution of Individuals by Nationality and Sex
+    ETH_PAL_B says: Palestinian, both sexes | Population with Palestinian ethnicity, both sexes. Original field name: "Palestinian, Total." (September 22, 2004) | 2004 Census Population Bulletin - Man and Nah, 2006, Table 3: Distribution of Individuals by Nationality and Sex
+    ETH_ARAB_B says: Arab, other, both sexes | Population with other Arab ethnicity, both sexes. Original field name: "Arab Others, Total." (September 22, 2004) | 2004 Census Population Bulletin - Man and Nah, 2006, Table 3: Distribution of Individuals by Nationality and Sex
