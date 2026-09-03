@@ -114,6 +114,27 @@ class Country:
     topics: tuple[Topic, ...]
     note: str
     aliases: dict[str, tuple[str, ...]] = dc_field(default_factory=dict)
+    # Census areas geoBoundaries draws no boundary of their own for, as
+    # (parent, area) pairs -- a name alone is not an address, and the
+    # Philippines has a Quezon that is a province and a Quezon that is a city
+    # 130 km away.
+    #
+    # This is not a list of everything unmatched. It is the subset the boundary
+    # file folds away *by design* -- a highly urbanized city drawn inside the
+    # province around it, Addis Ababa's ten sub-cities drawn as one "Region 14"
+    # -- where saying so is what stops the row from reaching a shape that is
+    # not its own. Left undeclared, "Cebu City" and "Province Of Cebu" both
+    # normalise to "cebu", both match outright, and the collision resolver
+    # treats two outright matches as one place listed twice: the last one wins
+    # and a city of 964,000 quietly wears a province's figures, or the reverse.
+    # Three of those were happening here (Cebu, Iloilo, Quezon City).
+    #
+    # An area the boundary file merely lacks is deliberately *not* listed --
+    # Sultan Kudarat is a province with no CGAZ shape at all, Sidama a region
+    # created after CGAZ's Ethiopian vintage. Those are omissions that an
+    # upstream release could fix, and a declaration here would then be a lie
+    # that suppresses a match. A declaration should only ever be doing work.
+    no_shape: frozenset[tuple[str, str]] = frozenset()
 
 
 HDX = "https://data.humdata.org/dataset"
@@ -133,6 +154,65 @@ PHILIPPINES = Country(
     levels={1: "admin1", 2: "admin2"},
     topics=(Topic("Religion", "religion"),
             Topic("Ethnicity", "ethnicity")),
+    # What geoBoundaries calls the same area. The census writes a region's
+    # full name and the boundary file its initials, which no matching rule
+    # should bridge on its own -- "NCR" and "National Capital Region" share no
+    # word, and a rule loose enough to join them would join a great deal else.
+    #
+    # The cities are not here but in no_shape below: they are absent rather
+    # than misnamed, and an alias cannot conjure a boundary.
+    aliases={
+        "Bangsamoro Autonomous Region Of Muslim Mindanao": ("ARMM",),
+        "Cordillera Administrative Region": ("CAR",),
+        "National Capital Region": ("NCR",),
+        "Caraga Region": ("Caraga",),
+        "Province Of Cebu": ("Cebu",),
+        "Province Of Cotabato": ("Cotabato",),
+        "Province Of Iloilo": ("Iloilo",),
+        "Mountain": ("Mountain Province",),
+        "Davao De Oro": ("Compostela Valley",),
+        "Manila": ("City of Manila",),
+    },
+    # geoBoundaries draws Metro Manila as four numbered districts, so fifteen
+    # of its sixteen cities have no shape (the City of Manila is the exception
+    # and is aliased above), and it folds every other highly urbanized city
+    # into the province around it. Three of those cities share a normalised
+    # name with a province and were silently taking its shape.
+    no_shape=frozenset((
+        ("National Capital Region", "Caloocan"),
+        ("National Capital Region", "Las Piñas"),
+        ("National Capital Region", "Makati"),
+        ("National Capital Region", "Malabon"),
+        ("National Capital Region", "Mandaluyong"),
+        ("National Capital Region", "Marikina"),
+        ("National Capital Region", "Muntinlupa"),
+        ("National Capital Region", "Navotas"),
+        ("National Capital Region", "Parañaque"),
+        ("National Capital Region", "Pasay"),
+        ("National Capital Region", "Pasig"),
+        ("National Capital Region", "Pateros"),
+        ("National Capital Region", "Quezon"),
+        ("National Capital Region", "San Juan"),
+        ("National Capital Region", "Taguig"),
+        ("National Capital Region", "Valenzuela"),
+        ("Central Luzon", "Angeles"),
+        ("Central Luzon", "Olongapo"),
+        ("Calabarzon", "Lucena"),
+        ("Mimaropa", "Puerto Princesa"),
+        ("Western Visayas", "Bacolod"),
+        ("Western Visayas", "Iloilo City"),
+        ("Central Visayas", "Cebu City"),
+        ("Central Visayas", "Lapu-Lapu"),
+        ("Central Visayas", "Mandaue"),
+        ("Eastern Visayas", "Tacloban"),
+        ("Cordillera Administrative Region", "Baguio"),
+        ("Caraga Region", "Butuan"),
+        ("Northern Mindanao", "Cagayan De Oro"),
+        ("Northern Mindanao", "Iligan"),
+        ("Soccsksargen", "General Santos"),
+        ("Davao Region", "Davao"),
+        ("Zamboanga Peninsula", "Zamboanga"),
+    )),
     note=("2020 Census of Population and Housing. The census records religious "
           "affiliation as the individual church or denomination a person names, "
           "so the groups here are as published rather than collapsed into "
@@ -157,6 +237,66 @@ ETHIOPIA = Country(
     topics=(Topic("Religion", "religion"),
             Topic("Ethnicity", "ethnicity"),
             Topic("Language", "language")),
+    # The Bureau transliterates from Amharic and geoBoundaries does not, so
+    # most of Ethiopia's regions reach the map only by declaration: "Oromīya"
+    # and "Oromia" differ by a letter, "Sumalē" and "Somali" by three, and
+    # "Yedebub Bihēroch Bihēreseboch Na Hizboch" is the region the boundary
+    # file simply calls SNNPR. Folding the diacritics is not enough for any of
+    # them, and a rule loose enough to bridge the last would bridge anything.
+    #
+    # Not listed: Addis Ababa's ten sub-cities, which geoBoundaries draws as
+    # the single shape "Region 14", and the special weredas it draws as one
+    # "Special Woreda". Those are absent shapes, not wrong names.
+    aliases={
+        "Ādīs Ābeba": ("Addis Ababa",),
+        "Āfar": ("Afar",),
+        "Āmara": ("Amhara",),
+        "Bīnshangul Gumuz": ("Beneshangul Gumu", "Benishangul Gumuz"),
+        "Dirē Dawa": ("Dire Dawa",),
+        "Gambēla Hizboch": ("Gambela",),
+        "Hārerī Hizb": ("Hareri",),
+        "Oromīya": ("Oromia",),
+        "Sumalē": ("Somali",),
+        "Yedebub Bihēroch Bihēreseboch Na Hizboch": ("SNNPR",),
+        # Zones, where the two spell the same place differently.
+        "Kellem Wellega": ("Kelem Wellega",),
+        "Kembata Tembaro": ("KT",),
+        "Mezhenger": ("Majang",),
+        "Basketo Special Wereda": ("Basketo",),
+        "Harari": ("Hareri",),
+        "Oromiya": ("Oromia",),
+        "Southwest Shuwa": ("South West Shewa",),
+        "Welayita": ("Wolayita",),
+    },
+    # Addis Ababa's ten sub-cities are one shape called "Region 14", and the
+    # special weredas and town administrations are one called "Special Woreda".
+    # Basketo is not here: it has a shape of its own and is aliased above.
+    # "Jimma Town Special Wereda" is the one that was doing damage -- it
+    # reached the zone of Jimma by prefix, 350 km of countryside wearing a
+    # town's figures, and was refused only because the zone's own row got
+    # there first.
+    no_shape=frozenset((
+        ("Ādīs Ābeba", "Addis Ketema"),
+        ("Ādīs Ābeba", "Akaki Kaliti"),
+        ("Ādīs Ābeba", "Arada"),
+        ("Ādīs Ābeba", "Bole"),
+        ("Ādīs Ābeba", "Gulele"),
+        ("Ādīs Ābeba", "Kirkos"),
+        ("Ādīs Ābeba", "Kolfe Keranyo"),
+        ("Ādīs Ābeba", "Lideta"),
+        ("Ādīs Ābeba", "Nefas Silk Lafto"),
+        ("Ādīs Ābeba", "Yeka"),
+        ("Bīnshangul Gumuz", "Mao Komo Special Wereda"),
+        ("Bīnshangul Gumuz", "Pawe Special Wereda"),
+        ("Gambēla Hizboch", "Etang Special Wereda"),
+        ("Oromīya", "Adama Special Wereda"),
+        ("Oromīya", "Burayu Special Wereda"),
+        ("Oromīya", "Jimma Town Special Wereda"),
+        ("Tigray", "Mekele Town Special Wereda"),
+        ("Āmara", "Argoba Special Wereda"),
+        ("Āmara", "Bahir Dar Special Wereda"),
+        ("Yedebub Bihēroch Bihēreseboch Na Hizboch", "Hawassa City Administration"),
+    )),
     note=("2007 Population and Housing Census -- the last census Ethiopia has "
           "completed. The 2017 round was postponed and never held, so this is "
           "the most recent measurement in existence, not the most recent "
@@ -313,8 +453,15 @@ def area(row: list[Any], names: list[str]) -> tuple[int | None, str, str]:
     return (int(level) if level is not None else None, name, parent)
 
 
-def read(book, country: Country, topic: Topic) -> dict[str, dict[str, Any]]:
-    """One topic's sheet as {area name: {level, parent, counts, total}}."""
+def read(book, country: Country,
+         topic: Topic) -> dict[tuple[str, str], dict[str, Any]]:
+    """One topic's sheet, keyed by parent and name rather than name alone.
+
+    Ethiopia has a North Shewa in Amhara and another in Oromia -- geoBoundaries
+    distinguishes them as "North Shewa(R3)" and "North Shewa(R4)" -- and keying
+    on the name alone let one silently overwrite the other. The count was the
+    only sign: 92 zones written where the sheet lists 93.
+    """
     rows = sheet_rows(book, topic.sheet)
     names, aliases = columns(rows)
     by_sex = sexed(names)
@@ -330,7 +477,7 @@ def read(book, country: Country, topic: Topic) -> dict[str, dict[str, Any]]:
     if by_sex:
         check_sexes(rows, names, f"{country.iso3} {topic.sheet}")
 
-    out: dict[str, dict[str, Any]] = {}
+    out: dict[tuple[str, str], dict[str, Any]] = {}
     skipped = 0
     empty: list[str] = []
     whole: dict[str, float] = {}
@@ -359,8 +506,14 @@ def read(book, country: Country, topic: Topic) -> dict[str, dict[str, Any]]:
             empty.append(name)
             continue
         published = number(row[total]) if total is not None else None
-        out[name] = {"level": level, "parent": parent, "counts": counts,
-                     "published": published, "summed": sum(counts.values())}
+        key = (parent, name)
+        if key in out:
+            raise SystemExit(
+                f"{country.iso3} {topic.sheet}: two rows for {name!r} under "
+                f"{parent!r}; the sheet's own key is not unique")
+        out[key] = {"level": level, "parent": parent, "name": name,
+                    "counts": counts, "published": published,
+                    "summed": sum(counts.values())}
     if skipped:
         log(f"    {skipped} rows skipped: another level, or no area name")
     if empty:
@@ -396,7 +549,7 @@ def check_total(country: Country, topic: Topic,
     checked = 0
     short: list[tuple[float, str]] = []
     worst = 0.0
-    for name, row in areas.items():
+    for (_parent, name), row in areas.items():
         if row["published"] is None or row["published"] <= 0:
             continue
         checked += 1
@@ -458,14 +611,15 @@ def main() -> int:
             fields[topic.field] = areas
         book.close()
 
-        every = sorted({name for areas in fields.values() for name in areas})
+        every = sorted({key for areas in fields.values() for key in areas})
         records: list[dict[str, Any]] = []
-        for name in every:
-            any_row = next(a[name] for a in fields.values() if name in a)
+        for key in every:
+            parent, name = key
+            any_row = next(a[key] for a in fields.values() if key in a)
             level = country.levels[any_row["level"]]
             values: dict[str, Any] = {}
             for topic in country.topics:
-                row = fields[topic.field].get(name)
+                row = fields[topic.field].get(key)
                 if not row:
                     continue
                 values[topic.field] = shares(
@@ -473,11 +627,30 @@ def main() -> int:
                 ) or gap(NOT_AVAILABLE)
                 values[f"{topic.field}_year"] = country.year
                 values[f"{topic.field}_note"] = country.note
-            slug = name.lower().replace(" ", "-").replace("/", "-")
+            def slug(text: str) -> str:
+                return "".join(c if c.isalnum() else "-"
+                               for c in text.lower()).strip("-")
+            # The parent is part of the id for the same reason it is part of
+            # the key: two zones may share a name and are not the same place.
+            ident = f"{iso3}-{slug(parent)}-{slug(name)}" if parent \
+                else f"{iso3}-{slug(name)}"
             records.append(record(
-                f"{iso3}-{slug}", name.title(), level=level, parent=iso3,
-                parent_name=any_row["parent"].title() or None,
-                aliases=list(country.aliases.get(name, ())),
+                ident, name.title(), level=level, parent=iso3,
+                parent_name=parent.title() or None,
+                aliases=list(country.aliases.get(name.title(), ())),
+                # The parent's aliases travel with the row for the same reason
+                # its name does. Without them a zone can only be scoped against
+                # a region the boundary file spells differently, which for
+                # Ethiopia is every region with a macron in it -- so no zone
+                # was ever matched *inside* its region, and the two North
+                # Shewas, one in Amhara and one in Oromia, were both refused as
+                # ambiguous when the region each belongs to tells them apart.
+                parent_aliases=list(country.aliases.get(parent.title(), ())),
+                # Declared absence. A row that says it has no boundary is a
+                # visible gap; the same row left to the matcher is whatever
+                # shape it happens to reach.
+                no_shape=(parent.title(), name.title()) in country.no_shape
+                         or None,
                 sources=[{"field": "/".join(t.field for t in country.topics),
                           "name": country.source, "url": country.url,
                           "license": country.licence}],

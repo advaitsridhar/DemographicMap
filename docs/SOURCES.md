@@ -1034,8 +1034,8 @@ same call `pxweb.py` makes for the Nordic offices.
 
 | | Census | Fields | Areas |
 | --- | --- | --- | --- |
-| Philippines | 2020 (Philippine Statistics Authority) | religion, ethnicity | 17 regions, 114 provinces and cities |
-| Ethiopia | **2007** (Central Statistical Agency) | religion, ethnicity, language | 11 regions, 92 zones |
+| Philippines | 2020 (Philippine Statistics Authority) | religion, ethnicity | 17 regions, 116 provinces and cities |
+| Ethiopia | **2007** (Central Statistical Agency) | religion, ethnicity, language | 13 first-order areas, 93 zones |
 
 Ethiopia is 2007 because that is the last census Ethiopia has completed -- the
 2017 round was postponed and never held. It is the most recent measurement in
@@ -1044,7 +1044,7 @@ so. The workbook's own filename dates (`_202308`) are extraction dates and were
 never allowed to stand in for the census year; the table identifiers inside
 (`ET_RELIGION_2007census`) are where the year actually comes from.
 
-**Four things this reader learned the hard way**, each from a run that failed
+**Five things this reader learned the hard way**, each from a run that failed
 against a real file rather than from reading the schema:
 
 * **-999 is a missing marker, and nothing documents it.** Four Ethiopian areas
@@ -1064,13 +1064,29 @@ against a real file rather than from reading the schema:
   independent statement about the same population, and a file whose sexes do
   not add up is a file the reader has misunderstood. It holds across 5,070
   cells.
-* **The country's own row is the control.** Every workbook carries one, and not
-  using it is how three million people go missing quietly. Ethiopia's eleven
-  regions come to 70,700,042 against a national 73,750,932; the difference is
-  exactly Sidama (2,954,136) and South West Ethiopia (96,754), which became
-  regions in 2020-21 and are reported here at the level the 2007 census counted
-  them at. Every region equals the sum of its own zones to the person, bar
-  Amhara.
+* **The country's own row is the control.** Every workbook carries one, and
+  not using it is how three million people go missing quietly. Ethiopia's
+  first-order areas come to 73,750,932 against a national 73,750,932, and the
+  Philippines' regions to 108,667,043 against 108,667,043; both levels
+  reconcile to the person.
+
+  They did not at first, and the story of why is worth keeping. The reader
+  keyed areas by name alone, so Ethiopia's two North Shewas -- one in Amhara,
+  one in Oromia -- overwrote each other, and the national total came out
+  3,050,890 short. That number is very close to Sidama's 2,954,136 plus a
+  small area's 96,754, and so a tidy explanation was available and was
+  believed: that the two are regions created in 2020-21 and were being
+  reported at the level the 2007 census counted them at. It was wrong. The
+  shortfall was the bug, the arithmetic was a coincidence, and the account
+  survived as long as it did because it explained the number without ever
+  being checked against the file. Once the key became (parent, name) the sums
+  closed exactly and there was nothing left to explain.
+
+* **A first-order area the file does not name.** Ethiopia's thirteenth
+  first-order row is labelled only "Region 17": 96,754 people, 92.5% Muslim,
+  4.8% Orthodox. The Bureau gives it no name, geoBoundaries has nothing
+  corresponding to it, and this project does not guess -- it is carried with
+  the label the file gives it and joined to no shape.
 
 **A shortfall is judged by its shape, not only its size.** Three Philippine
 areas -- MIMAROPA and its two Mindoro provinces -- fall 0.6% to 1.3% short of
@@ -1092,6 +1108,50 @@ Aglipayan church are distinct national institutions, not footnotes under
 faithfulness costs nothing a reader sees. The national figures reproduce the
 PSA's published ones: Roman Catholic 78.81%, Islam 6.42%, Iglesia ni Cristo
 2.58%.
+
+**What of this reaches the map, measured rather than assumed.** A correct
+adapter and a visible country are different things, and the only way to know
+which one you have is to run the join and count.
+
+| | Rows | On a shape | Declared shapeless | Unmatched |
+| --- | --- | --- | --- | --- |
+| Philippines regions | 17 | 17 | -- | -- |
+| Philippines provinces and cities | 116 | 82 | 33 | 1 |
+| Ethiopia first-order | 13 | 11 | -- | 2 |
+| Ethiopia zones | 93 | 72 | 20 | 1 |
+
+Every CGAZ shape for both countries is filled except six: Ethiopia's "Region
+14" (Addis Ababa, whose ten sub-cities are separate census areas) and "Special
+Woreda" (likewise), the three numbered NCR district shapes that stand for
+fifteen Metro Manila cities, and Cotabato City, which the workbook does not
+carry as an area of its own.
+
+Three kinds of miss, and they are not the same kind of thing:
+
+* **Declared shapeless** -- 53 rows the boundary file folds away by design. A
+  highly urbanized Philippine city is drawn inside the province around it;
+  Addis Ababa's sub-cities are drawn as one shape. These rows carry real
+  figures that no shape can show, and the adapter now says so in the data
+  rather than leaving them to the matcher. That is not tidiness. "Cebu City"
+  and "Province Of Cebu" both normalise to `cebu`, both matched outright, and
+  the collision pass reads two outright matches as one place listed twice and
+  lets the last one win -- so a city of 964,000 was wearing a province's
+  figures, invisibly, and so were Iloilo and Quezon City. Declaring the fold
+  is what turned three wrong answers into three stated gaps.
+* **Absent upstream** -- Sultan Kudarat, a Philippine province with no CGAZ
+  shape at all; Sidama, an Ethiopian region created after CGAZ's Ethiopian
+  vintage; and "Region 17". These are deliberately *not* declared. They are
+  omissions a later boundary release could fix, and a declaration would then
+  be a lie that suppresses a real match. A declaration should only ever be
+  doing work.
+* **Two shapes under one name** -- geoBoundaries carries both "Cotabato" and
+  "Cotabato City" inside Soccsksargen, and `norm()` drops the word "city", so
+  both arrived under one key and both were thrown away as ambiguous. Cotabato
+  province, 1.4 million people, was then handed South Cotabato by the
+  containment pass and saved only by the collision pass refusing it. Where
+  exactly one of two tied shapes is written the way the row writes it, that is
+  stronger evidence than the key that tied them, and the tie is now settled on
+  the exact name and on nothing weaker.
 
 **Indonesia is in this series and is not read from it.** Its workbook carries
 no religion and no ethnicity, only a language sheet whose composition is
@@ -1422,6 +1482,15 @@ no way to tell which is the shape's is exactly the case for a visible gap.
 Rows that all matched *outright* are left alone, because there the rivalry is
 usually a source listing one place twice: Wikidata carries both "Ancasti" and
 "Ancasti Department", and "Department" is a word `norm()` drops.
+
+That exemption has a cost, and the Philippines is where it came due. "Cebu
+City" and "Province Of Cebu" are two places, not one place listed twice, and
+they reach this pass looking exactly like Ancasti: both outright, differing
+only by a word `norm()` drops. Last one wins, and a city's figures land on a
+province with nothing visible to show for it. Nothing here can tell those two
+cases apart from the names alone -- so the fix is upstream, where the adapter
+knows the boundary file folds those cities away and can say so before the
+matcher ever sees the row.
 
 111 rows across 32 countries are refused this way, and each one is named in the
 build log. Much of what it removes is Wikidata entities that are not
