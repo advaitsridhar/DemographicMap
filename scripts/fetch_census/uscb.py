@@ -464,10 +464,14 @@ def inspect(dataset: str, wanted: list[str]) -> int:
         log(f"  denominator: {aliases[total]!r}" if total is not None
             else "  denominator: none found")
         log(f"  {len(found)} group columns:")
-        for index in found[:20]:
-            log(f"    {names[index]}  ->  {aliases[index]!r}")
-        if len(found) > 20:
-            log(f"    ...and {len(found) - 20} more")
+        # groups() returns {column index: label}, and the label is what the
+        # map publishes -- for a sexed sheet it is the alias with ", both
+        # sexes" already stripped, so printing the raw alias would show
+        # something the adapter never emits.
+        for index, label in list(found.items())[:24]:
+            log(f"    {names[index]}  ->  {label!r}")
+        if len(found) > 24:
+            log(f"    ...and {len(found) - 24} more")
     book.close()
     return 0
 
