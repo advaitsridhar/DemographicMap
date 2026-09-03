@@ -427,14 +427,28 @@ def inspect(dataset: str, wanted: list[str]) -> int:
     # The metadata sheet is where the census year lives, in table identifiers
     # like ET_RELIGION_2007census. The filename's date is an extraction date
     # and has been mistaken for the census year before.
+    #
+    # The data dictionary is more important still. It gives every column a
+    # definition and a source, and that is what says whether a sheet holds
+    # what its name suggests -- Syria's "Ethnicity" turns out to list Syrian,
+    # Palestinian, European and American, which is nationality. Publishing
+    # that as ethnicity would tell a reader Syria is ethnically uniform, which
+    # is not what the census measured or said.
+    dictionary: dict[str, list[str]] = {}
     for name in book.sheetnames:
-        if name.strip().lower() in ("metadata", "data dictionary"):
-            rows = [list(r) for r in book[name].iter_rows(values_only=True)]
-            log(f"\n--- {name}: {len(rows)} rows ---")
-            for row in rows[:25]:
-                cells = [str(v).strip() for v in row if v is not None]
-                if cells:
-                    log("  " + " | ".join(c[:70] for c in cells)[:220])
+        if name.strip().lower() not in ("metadata", "data dictionary"):
+            continue
+        rows = [list(r) for r in book[name].iter_rows(values_only=True)]
+        log(f"\n--- {name}: {len(rows)} rows ---")
+        for row in rows[:20]:
+            cells = [str(v).strip() for v in row if v is not None]
+            if cells:
+                log("  " + " | ".join(c[:70] for c in cells)[:220])
+        if name.strip().lower() == "data dictionary":
+            for row in rows:
+                cells = [("" if v is None else str(v).strip()) for v in row]
+                if cells and cells[0]:
+                    dictionary.setdefault(cells[0], cells[1:])
 
     for name in book.sheetnames:
         if name.strip().lower() in ("metadata", "data dictionary"):
@@ -472,6 +486,13 @@ def inspect(dataset: str, wanted: list[str]) -> int:
             log(f"    {names[index]}  ->  {label!r}")
         if len(found) > 24:
             log(f"    ...and {len(found) - 24} more")
+        # What the source says these columns are. A label is a word; the
+        # dictionary row is the claim the map would be repeating.
+        for index in list(found)[:3]:
+            entry = dictionary.get(names[index])
+            if entry:
+                log(f"    {names[index]} says: "
+                    + " | ".join(c[:150] for c in entry if c))
     book.close()
     return 0
 
