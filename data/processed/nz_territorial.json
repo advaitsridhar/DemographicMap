@@ -829,6 +829,11 @@
         "count": 60
       },
       {
+        "group": "Sinitic not further defined",
+        "pct": 0.1,
+        "count": 24
+      },
+      {
         "group": "Northern Chinese",
         "pct": 0.1,
         "count": 30
@@ -837,11 +842,6 @@
         "group": "Yue",
         "pct": 0.1,
         "count": 21
-      },
-      {
-        "group": "Sinitic not further defined",
-        "pct": 0.1,
-        "count": 24
       },
       {
         "group": "Not elsewhere included",
@@ -1111,14 +1111,14 @@
         "count": 99
       },
       {
-        "group": "Northern Chinese",
-        "pct": 0.2,
-        "count": 51
-      },
-      {
         "group": "Samoan",
         "pct": 0.2,
         "count": 57
+      },
+      {
+        "group": "Northern Chinese",
+        "pct": 0.2,
+        "count": 51
       },
       {
         "group": "Tagalog",
@@ -1885,14 +1885,14 @@
         "count": 372
       },
       {
-        "group": "Hinduism",
-        "pct": 0.9,
-        "count": 339
-      },
-      {
         "group": "Buddhism",
         "pct": 0.9,
         "count": 351
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.9,
+        "count": 339
       },
       {
         "group": "Ratana",
@@ -1955,14 +1955,14 @@
         "count": 30
       },
       {
-        "group": "Not elsewhere included",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Judaism",
         "pct": 0.0,
         "count": 18
+      },
+      {
+        "group": "Not elsewhere included",
+        "pct": 0.0,
+        "count": 0
       }
     ],
     "language": [
@@ -2227,14 +2227,14 @@
         "count": 1023
       },
       {
-        "group": "Jedi",
-        "pct": 0.4,
-        "count": 615
-      },
-      {
         "group": "Other Māori religions, beliefs and philosophies",
         "pct": 0.4,
         "count": 702
+      },
+      {
+        "group": "Jedi",
+        "pct": 0.4,
+        "count": 615
       },
       {
         "group": "Adventist",
@@ -2324,14 +2324,14 @@
         "count": 1548
       },
       {
-        "group": "Spanish",
-        "pct": 0.9,
-        "count": 1560
-      },
-      {
         "group": "Samoan",
         "pct": 0.9,
         "count": 1533
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.9,
+        "count": 1560
       },
       {
         "group": "Tongan",
@@ -2816,19 +2816,14 @@
         "count": 54
       },
       {
-        "group": "Evangelical, Born Again and Fundamentalist",
-        "pct": 0.5,
-        "count": 48
-      },
-      {
         "group": "Other religions",
         "pct": 0.5,
         "count": 51
       },
       {
-        "group": "Spiritualism and New Age religions",
-        "pct": 0.3,
-        "count": 36
+        "group": "Evangelical, Born Again and Fundamentalist",
+        "pct": 0.5,
+        "count": 48
       },
       {
         "group": "Jehovah's Witnesses",
@@ -2836,17 +2831,22 @@
         "count": 33
       },
       {
+        "group": "Spiritualism and New Age religions",
+        "pct": 0.3,
+        "count": 36
+      },
+      {
         "group": "Buddhism",
         "pct": 0.3,
         "count": 36
       },
       {
-        "group": "Ringatū",
+        "group": "Jedi",
         "pct": 0.2,
         "count": 24
       },
       {
-        "group": "Jedi",
+        "group": "Ringatū",
         "pct": 0.2,
         "count": 24
       },
@@ -2856,14 +2856,14 @@
         "count": 24
       },
       {
-        "group": "Islam",
-        "pct": 0.1,
-        "count": 15
-      },
-      {
         "group": "Judaism",
         "pct": 0.1,
         "count": 6
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 15
       },
       {
         "group": "Not elsewhere included",
@@ -3148,12 +3148,12 @@
         "count": 93
       },
       {
-        "group": "Jedi",
+        "group": "Ringatū",
         "pct": 0.3,
         "count": 69
       },
       {
-        "group": "Ringatū",
+        "group": "Jedi",
         "pct": 0.3,
         "count": 69
       },
@@ -3722,14 +3722,14 @@
         "count": 243
       },
       {
-        "group": "Baptist",
-        "pct": 0.6,
-        "count": 243
-      },
-      {
         "group": "Evangelical, Born Again and Fundamentalist",
         "pct": 0.6,
         "count": 225
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.6,
+        "count": 243
       },
       {
         "group": "Spiritualism and New Age religions",
@@ -4059,14 +4059,14 @@
         "count": 156
       },
       {
-        "group": "Islam",
-        "pct": 0.2,
-        "count": 135
-      },
-      {
         "group": "Ringatū",
         "pct": 0.2,
         "count": 123
+      },
+      {
+        "group": "Islam",
+        "pct": 0.2,
+        "count": 135
       },
       {
         "group": "Judaism",
@@ -4945,12 +4945,12 @@
         "count": 147
       },
       {
-        "group": "Buddhism",
+        "group": "Spiritualism and New Age religions",
         "pct": 0.4,
         "count": 135
       },
       {
-        "group": "Spiritualism and New Age religions",
+        "group": "Buddhism",
         "pct": 0.4,
         "count": 135
       },
@@ -5247,17 +5247,17 @@
         "count": 24
       },
       {
-        "group": "Methodist",
-        "pct": 0.3,
-        "count": 24
-      },
-      {
         "group": "Adventist",
         "pct": 0.3,
         "count": 24
       },
       {
         "group": "Buddhism",
+        "pct": 0.3,
+        "count": 24
+      },
+      {
+        "group": "Methodist",
         "pct": 0.3,
         "count": 24
       },
@@ -5329,12 +5329,12 @@
         "count": 21
       },
       {
-        "group": "Hindi",
+        "group": "French",
         "pct": 0.2,
         "count": 15
       },
       {
-        "group": "French",
+        "group": "Hindi",
         "pct": 0.2,
         "count": 15
       },
@@ -6440,14 +6440,14 @@
         "count": 489
       },
       {
-        "group": "Baptist",
-        "pct": 0.5,
-        "count": 468
-      },
-      {
         "group": "Other religions",
         "pct": 0.5,
         "count": 405
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.5,
+        "count": 468
       },
       {
         "group": "Islam",
@@ -6552,14 +6552,14 @@
         "count": 597
       },
       {
-        "group": "Spanish",
-        "pct": 0.6,
-        "count": 480
-      },
-      {
         "group": "New Zealand Sign Language",
         "pct": 0.6,
         "count": 516
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.6,
+        "count": 480
       },
       {
         "group": "Tongan",
@@ -6732,14 +6732,14 @@
         "count": 522
       },
       {
-        "group": "Other religions",
-        "pct": 0.5,
-        "count": 321
-      },
-      {
         "group": "Jehovah's Witnesses",
         "pct": 0.5,
         "count": 303
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.5,
+        "count": 321
       },
       {
         "group": "Sikhism",
@@ -6752,14 +6752,14 @@
         "count": 321
       },
       {
-        "group": "Evangelical, Born Again and Fundamentalist",
-        "pct": 0.4,
-        "count": 285
-      },
-      {
         "group": "Baptist",
         "pct": 0.4,
         "count": 282
+      },
+      {
+        "group": "Evangelical, Born Again and Fundamentalist",
+        "pct": 0.4,
+        "count": 285
       },
       {
         "group": "Jedi",
@@ -7326,14 +7326,14 @@
         "count": 498
       },
       {
-        "group": "Baptist",
-        "pct": 0.6,
-        "count": 480
-      },
-      {
         "group": "Islam",
         "pct": 0.6,
         "count": 507
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.6,
+        "count": 480
       },
       {
         "group": "Jehovah's Witnesses",
@@ -7341,14 +7341,14 @@
         "count": 396
       },
       {
-        "group": "Spiritualism and New Age religions",
-        "pct": 0.5,
-        "count": 423
-      },
-      {
         "group": "Other religions",
         "pct": 0.5,
         "count": 417
+      },
+      {
+        "group": "Spiritualism and New Age religions",
+        "pct": 0.5,
+        "count": 423
       },
       {
         "group": "Ratana",
@@ -7386,14 +7386,14 @@
         "count": 114
       },
       {
-        "group": "Judaism",
-        "pct": 0.1,
-        "count": 54
-      },
-      {
         "group": "Ringatū",
         "pct": 0.1,
         "count": 45
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 54
       },
       {
         "group": "Not elsewhere included",
@@ -7623,14 +7623,14 @@
         "count": 66
       },
       {
-        "group": "Spiritualism and New Age religions",
-        "pct": 0.6,
-        "count": 57
-      },
-      {
         "group": "Evangelical, Born Again and Fundamentalist",
         "pct": 0.6,
         "count": 60
+      },
+      {
+        "group": "Spiritualism and New Age religions",
+        "pct": 0.6,
+        "count": 57
       },
       {
         "group": "Hinduism",
@@ -7755,22 +7755,22 @@
         "count": 18
       },
       {
-        "group": "Northern Chinese",
-        "pct": 0.2,
-        "count": 21
-      },
-      {
         "group": "Spanish",
         "pct": 0.2,
         "count": 21
       },
       {
-        "group": "Samoan",
+        "group": "Northern Chinese",
+        "pct": 0.2,
+        "count": 21
+      },
+      {
+        "group": "Hindi",
         "pct": 0.2,
         "count": 18
       },
       {
-        "group": "Hindi",
+        "group": "Samoan",
         "pct": 0.2,
         "count": 18
       },
@@ -7945,14 +7945,14 @@
         "count": 141
       },
       {
-        "group": "Other religions",
-        "pct": 0.4,
-        "count": 108
-      },
-      {
         "group": "Baptist",
         "pct": 0.4,
         "count": 117
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.4,
+        "count": 108
       },
       {
         "group": "Jedi",
@@ -7995,14 +7995,14 @@
         "count": 33
       },
       {
-        "group": "Judaism",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
         "group": "Not elsewhere included",
         "pct": 0.0,
         "count": 0
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 12
       }
     ],
     "language": [
@@ -8494,14 +8494,14 @@
         "count": 3867
       },
       {
-        "group": "Anglican",
-        "pct": 6.1,
-        "count": 2886
-      },
-      {
         "group": "Christian nfd",
         "pct": 6.1,
         "count": 2892
+      },
+      {
+        "group": "Anglican",
+        "pct": 6.1,
+        "count": 2886
       },
       {
         "group": "Presbyterian, Congregational and Reformed",
@@ -8544,14 +8544,14 @@
         "count": 297
       },
       {
-        "group": "Evangelical, Born Again and Fundamentalist",
-        "pct": 0.5,
-        "count": 237
-      },
-      {
         "group": "Other religions",
         "pct": 0.5,
         "count": 249
+      },
+      {
+        "group": "Evangelical, Born Again and Fundamentalist",
+        "pct": 0.5,
+        "count": 237
       },
       {
         "group": "Buddhism",
@@ -8579,14 +8579,14 @@
         "count": 171
       },
       {
-        "group": "Islam",
-        "pct": 0.3,
-        "count": 135
-      },
-      {
         "group": "Adventist",
         "pct": 0.3,
         "count": 129
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3,
+        "count": 135
       },
       {
         "group": "Sikhism",
@@ -8846,14 +8846,14 @@
         "count": 78
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.5,
-        "count": 84
-      },
-      {
         "group": "Jehovah's Witnesses",
         "pct": 0.5,
         "count": 81
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.5,
+        "count": 84
       },
       {
         "group": "Other religions",
@@ -9280,14 +9280,14 @@
         "count": 60
       },
       {
-        "group": "Yue",
-        "pct": 0.1,
-        "count": 42
-      },
-      {
         "group": "Tongan",
         "pct": 0.1,
         "count": 39
+      },
+      {
+        "group": "Yue",
+        "pct": 0.1,
+        "count": 42
       },
       {
         "group": "Panjabi",
@@ -9767,6 +9767,11 @@
         "count": 72
       },
       {
+        "group": "Islam",
+        "pct": 0.3,
+        "count": 63
+      },
+      {
         "group": "Adventist",
         "pct": 0.3,
         "count": 57
@@ -9775,11 +9780,6 @@
         "group": "Hinduism",
         "pct": 0.3,
         "count": 54
-      },
-      {
-        "group": "Islam",
-        "pct": 0.3,
-        "count": 63
       },
       {
         "group": "Buddhism",
@@ -9792,14 +9792,14 @@
         "count": 42
       },
       {
-        "group": "Baptist",
-        "pct": 0.2,
-        "count": 45
-      },
-      {
         "group": "Ringatū",
         "pct": 0.2,
         "count": 33
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.2,
+        "count": 45
       },
       {
         "group": "Not elsewhere included",
@@ -9849,14 +9849,14 @@
         "count": 87
       },
       {
-        "group": "French",
-        "pct": 0.5,
-        "count": 87
-      },
-      {
         "group": "Afrikaans",
         "pct": 0.5,
         "count": 99
+      },
+      {
+        "group": "French",
+        "pct": 0.5,
+        "count": 87
       },
       {
         "group": "German",
@@ -9889,14 +9889,14 @@
         "count": 15
       },
       {
-        "group": "Panjabi",
-        "pct": 0.1,
-        "count": 15
-      },
-      {
         "group": "Northern Chinese",
         "pct": 0.1,
         "count": 12
+      },
+      {
+        "group": "Panjabi",
+        "pct": 0.1,
+        "count": 15
       },
       {
         "group": "Not elsewhere included",
@@ -10166,14 +10166,14 @@
         "count": 216
       },
       {
-        "group": "Tongan",
-        "pct": 0.5,
-        "count": 180
-      },
-      {
         "group": "German",
         "pct": 0.5,
         "count": 198
+      },
+      {
+        "group": "Tongan",
+        "pct": 0.5,
+        "count": 180
       },
       {
         "group": "Afrikaans",
@@ -10381,14 +10381,14 @@
         "count": 183
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 0.3,
-        "count": 153
-      },
-      {
         "group": "Islam",
         "pct": 0.3,
         "count": 147
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.3,
+        "count": 153
       },
       {
         "group": "Adventist",
@@ -10628,14 +10628,14 @@
         "count": 1248
       },
       {
-        "group": "Pentecostal",
-        "pct": 2.0,
-        "count": 1203
-      },
-      {
         "group": "Hinduism",
         "pct": 2.0,
         "count": 1194
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 2.0,
+        "count": 1203
       },
       {
         "group": "Islam",
@@ -10800,14 +10800,14 @@
         "count": 252
       },
       {
-        "group": "Panjabi",
-        "pct": 0.3,
-        "count": 201
-      },
-      {
         "group": "Tongan",
         "pct": 0.3,
         "count": 195
+      },
+      {
+        "group": "Panjabi",
+        "pct": 0.3,
+        "count": 201
       },
       {
         "group": "Not elsewhere included",
@@ -10970,14 +10970,14 @@
         "count": 318
       },
       {
-        "group": "Islam",
-        "pct": 0.6,
-        "count": 267
-      },
-      {
         "group": "Ratana",
         "pct": 0.6,
         "count": 285
+      },
+      {
+        "group": "Islam",
+        "pct": 0.6,
+        "count": 267
       },
       {
         "group": "Latter-day Saints",
@@ -11911,14 +11911,14 @@
         "count": 60
       },
       {
-        "group": "Judaism",
-        "pct": 0.1,
-        "count": 30
-      },
-      {
         "group": "Ringatū",
         "pct": 0.1,
         "count": 21
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 30
       },
       {
         "group": "Other Māori religions, beliefs and philosophies",
@@ -12460,12 +12460,12 @@
         "count": 54
       },
       {
-        "group": "Spiritualism and New Age religions",
+        "group": "Other religions",
         "pct": 0.5,
         "count": 63
       },
       {
-        "group": "Other religions",
+        "group": "Spiritualism and New Age religions",
         "pct": 0.5,
         "count": 63
       },
@@ -12612,14 +12612,14 @@
         "count": 18
       },
       {
-        "group": "Tongan",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
         "group": "Panjabi",
         "pct": 0.0,
         "count": 0
+      },
+      {
+        "group": "Tongan",
+        "pct": 0.0,
+        "count": 3
       },
       {
         "group": "Not elsewhere included",
@@ -12807,14 +12807,14 @@
         "count": 93
       },
       {
-        "group": "Adventist",
-        "pct": 0.1,
-        "count": 81
-      },
-      {
         "group": "Judaism",
         "pct": 0.1,
         "count": 36
+      },
+      {
+        "group": "Adventist",
+        "pct": 0.1,
+        "count": 81
       },
       {
         "group": "Other Māori religions, beliefs and philosophies",
@@ -12894,14 +12894,14 @@
         "count": 282
       },
       {
-        "group": "Northern Chinese",
-        "pct": 0.3,
-        "count": 177
-      },
-      {
         "group": "Tagalog",
         "pct": 0.3,
         "count": 183
+      },
+      {
+        "group": "Northern Chinese",
+        "pct": 0.3,
+        "count": 177
       },
       {
         "group": "Sinitic not further defined",
@@ -12914,14 +12914,14 @@
         "count": 114
       },
       {
-        "group": "Panjabi",
-        "pct": 0.1,
-        "count": 69
-      },
-      {
         "group": "Yue",
         "pct": 0.1,
         "count": 78
+      },
+      {
+        "group": "Panjabi",
+        "pct": 0.1,
+        "count": 69
       },
       {
         "group": "Not elsewhere included",
@@ -13079,24 +13079,24 @@
         "count": 321
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.6,
-        "count": 315
-      },
-      {
         "group": "Jedi",
         "pct": 0.6,
         "count": 306
       },
       {
-        "group": "Baptist",
-        "pct": 0.5,
-        "count": 255
+        "group": "Latter-day Saints",
+        "pct": 0.6,
+        "count": 315
       },
       {
         "group": "Islam",
         "pct": 0.5,
         "count": 237
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.5,
+        "count": 255
       },
       {
         "group": "Jehovah's Witnesses",
@@ -13376,14 +13376,14 @@
         "count": 255
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.5,
-        "count": 228
-      },
-      {
         "group": "Jedi",
         "pct": 0.5,
         "count": 225
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.5,
+        "count": 228
       },
       {
         "group": "Spiritualism and New Age religions",
@@ -13391,24 +13391,24 @@
         "count": 186
       },
       {
-        "group": "Ratana",
-        "pct": 0.4,
-        "count": 195
-      },
-      {
         "group": "Other religions",
         "pct": 0.4,
         "count": 213
       },
       {
-        "group": "Islam",
-        "pct": 0.3,
-        "count": 150
+        "group": "Ratana",
+        "pct": 0.4,
+        "count": 195
       },
       {
         "group": "Baptist",
         "pct": 0.3,
         "count": 168
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3,
+        "count": 150
       },
       {
         "group": "Adventist",
@@ -13508,14 +13508,14 @@
         "count": 213
       },
       {
-        "group": "Sinitic not further defined",
-        "pct": 0.3,
-        "count": 150
-      },
-      {
         "group": "Hindi",
         "pct": 0.3,
         "count": 171
+      },
+      {
+        "group": "Sinitic not further defined",
+        "pct": 0.3,
+        "count": 150
       },
       {
         "group": "Panjabi",
@@ -13683,12 +13683,12 @@
         "count": 21
       },
       {
-        "group": "Hinduism",
+        "group": "Buddhism",
         "pct": 0.4,
         "count": 15
       },
       {
-        "group": "Buddhism",
+        "group": "Hinduism",
         "pct": 0.4,
         "count": 15
       },
@@ -13723,12 +13723,12 @@
         "count": 3
       },
       {
-        "group": "Baptist",
+        "group": "Ringatū",
         "pct": 0.1,
         "count": 3
       },
       {
-        "group": "Ringatū",
+        "group": "Baptist",
         "pct": 0.1,
         "count": 3
       },
@@ -14025,14 +14025,14 @@
         "count": 6
       },
       {
-        "group": "Judaism",
-        "pct": 0.1,
-        "count": 6
-      },
-      {
         "group": "Islam",
         "pct": 0.1,
         "count": 15
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 6
       },
       {
         "group": "Not elsewhere included",
@@ -14277,12 +14277,12 @@
         "count": 63
       },
       {
-        "group": "Other religions",
+        "group": "Methodist",
         "pct": 0.4,
         "count": 63
       },
       {
-        "group": "Methodist",
+        "group": "Other religions",
         "pct": 0.4,
         "count": 63
       },
@@ -14317,11 +14317,6 @@
         "count": 21
       },
       {
-        "group": "Adventist",
-        "pct": 0.1,
-        "count": 15
-      },
-      {
         "group": "Other Māori religions, beliefs and philosophies",
         "pct": 0.1,
         "count": 9
@@ -14330,6 +14325,11 @@
         "group": "Ratana",
         "pct": 0.1,
         "count": 21
+      },
+      {
+        "group": "Adventist",
+        "pct": 0.1,
+        "count": 15
       },
       {
         "group": "Not elsewhere included",
@@ -14409,12 +14409,12 @@
         "count": 12
       },
       {
-        "group": "Northern Chinese",
+        "group": "Samoan",
         "pct": 0.1,
         "count": 18
       },
       {
-        "group": "Samoan",
+        "group": "Northern Chinese",
         "pct": 0.1,
         "count": 18
       },
@@ -14861,12 +14861,12 @@
         "count": 87
       },
       {
-        "group": "Pentecostal",
+        "group": "Methodist",
         "pct": 0.6,
         "count": 87
       },
       {
-        "group": "Methodist",
+        "group": "Pentecostal",
         "pct": 0.6,
         "count": 87
       },
@@ -14921,14 +14921,14 @@
         "count": 27
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.2,
-        "count": 24
-      },
-      {
         "group": "Islam",
         "pct": 0.2,
         "count": 21
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.2,
+        "count": 24
       },
       {
         "group": "Judaism",
@@ -15028,14 +15028,14 @@
         "count": 12
       },
       {
-        "group": "Yue",
-        "pct": 0.0,
-        "count": 6
-      },
-      {
         "group": "Tongan",
         "pct": 0.0,
         "count": 3
+      },
+      {
+        "group": "Yue",
+        "pct": 0.0,
+        "count": 6
       },
       {
         "group": "Not elsewhere included",
@@ -15233,14 +15233,14 @@
         "count": 153
       },
       {
-        "group": "Not elsewhere included",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Other Māori religions, beliefs and philosophies",
         "pct": 0.0,
         "count": 27
+      },
+      {
+        "group": "Not elsewhere included",
+        "pct": 0.0,
+        "count": 0
       },
       {
         "group": "Ringatū",
@@ -15592,14 +15592,14 @@
         "count": 4974
       },
       {
-        "group": "French",
-        "pct": 1.3,
-        "count": 4896
-      },
-      {
         "group": "Samoan",
         "pct": 1.3,
         "count": 5100
+      },
+      {
+        "group": "French",
+        "pct": 1.3,
+        "count": 4896
       },
       {
         "group": "Spanish",
@@ -15847,14 +15847,14 @@
         "count": 0
       },
       {
-        "group": "Ringatū",
-        "pct": 0.0,
-        "count": 9
-      },
-      {
         "group": "Other Māori religions, beliefs and philosophies",
         "pct": 0.0,
         "count": 24
+      },
+      {
+        "group": "Ringatū",
+        "pct": 0.0,
+        "count": 9
       }
     ],
     "language": [
@@ -16094,14 +16094,14 @@
         "count": 219
       },
       {
-        "group": "Islam",
-        "pct": 0.6,
-        "count": 198
-      },
-      {
         "group": "Baptist",
         "pct": 0.6,
         "count": 210
+      },
+      {
+        "group": "Islam",
+        "pct": 0.6,
+        "count": 198
       },
       {
         "group": "Jehovah's Witnesses",
@@ -16129,12 +16129,12 @@
         "count": 99
       },
       {
-        "group": "Jedi",
+        "group": "Other religions",
         "pct": 0.3,
         "count": 102
       },
       {
-        "group": "Other religions",
+        "group": "Jedi",
         "pct": 0.3,
         "count": 102
       },
@@ -16743,11 +16743,6 @@
         "count": 3
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 0.1,
-        "count": 3
-      },
-      {
         "group": "Ringatū",
         "pct": 0.1,
         "count": 3
@@ -16756,6 +16751,11 @@
         "group": "Sikhism",
         "pct": 0.1,
         "count": 6
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.1,
+        "count": 3
       },
       {
         "group": "Not elsewhere included",
@@ -16785,12 +16785,12 @@
         "count": 81
       },
       {
-        "group": "Māori",
+        "group": "Spanish",
         "pct": 1.5,
         "count": 75
       },
       {
-        "group": "Spanish",
+        "group": "Māori",
         "pct": 1.5,
         "count": 75
       },
@@ -16810,14 +16810,14 @@
         "count": 51
       },
       {
-        "group": "Sinitic not further defined",
-        "pct": 0.8,
-        "count": 42
-      },
-      {
         "group": "Tagalog",
         "pct": 0.8,
         "count": 39
+      },
+      {
+        "group": "Sinitic not further defined",
+        "pct": 0.8,
+        "count": 42
       },
       {
         "group": "Hindi",
@@ -16830,14 +16830,14 @@
         "count": 33
       },
       {
-        "group": "Tongan",
-        "pct": 0.1,
-        "count": 3
-      },
-      {
         "group": "New Zealand Sign Language",
         "pct": 0.1,
         "count": 6
+      },
+      {
+        "group": "Tongan",
+        "pct": 0.1,
+        "count": 3
       },
       {
         "group": "Samoan",
@@ -17312,12 +17312,12 @@
         "count": 3
       },
       {
-        "group": "Evangelical, Born Again and Fundamentalist",
+        "group": "Judaism",
         "pct": 0.5,
         "count": 3
       },
       {
-        "group": "Judaism",
+        "group": "Evangelical, Born Again and Fundamentalist",
         "pct": 0.5,
         "count": 3
       },
@@ -17327,12 +17327,12 @@
         "count": 0
       },
       {
-        "group": "Jehovah's Witnesses",
+        "group": "Sikhism",
         "pct": 0.0,
         "count": 0
       },
       {
-        "group": "Sikhism",
+        "group": "Jehovah's Witnesses",
         "pct": 0.0,
         "count": 0
       },
@@ -17352,17 +17352,17 @@
         "count": 0
       },
       {
-        "group": "Pentecostal",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Adventist",
         "pct": 0.0,
         "count": 0
       },
       {
         "group": "Not elsewhere included",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Pentecostal",
         "pct": 0.0,
         "count": 0
       }
@@ -17389,12 +17389,12 @@
         "count": 3
       },
       {
-        "group": "Other",
+        "group": "New Zealand Sign Language",
         "pct": 0.5,
         "count": 3
       },
       {
-        "group": "New Zealand Sign Language",
+        "group": "Other",
         "pct": 0.5,
         "count": 3
       },
@@ -17414,12 +17414,12 @@
         "count": 0
       },
       {
-        "group": "Northern Chinese",
+        "group": "Afrikaans",
         "pct": 0.0,
         "count": 0
       },
       {
-        "group": "Afrikaans",
+        "group": "Northern Chinese",
         "pct": 0.0,
         "count": 0
       },
@@ -17434,12 +17434,12 @@
         "count": 0
       },
       {
-        "group": "Panjabi",
+        "group": "Not elsewhere included",
         "pct": 0.0,
         "count": 0
       },
       {
-        "group": "Not elsewhere included",
+        "group": "Panjabi",
         "pct": 0.0,
         "count": 0
       },
@@ -18792,14 +18792,14 @@
         "count": 87
       },
       {
-        "group": "Spiritualism and New Age religions",
-        "pct": 0.5,
-        "count": 84
-      },
-      {
         "group": "Buddhism",
         "pct": 0.5,
         "count": 99
+      },
+      {
+        "group": "Spiritualism and New Age religions",
+        "pct": 0.5,
+        "count": 84
       },
       {
         "group": "Islam",
@@ -18827,14 +18827,14 @@
         "count": 60
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 0.3,
-        "count": 51
-      },
-      {
         "group": "Baptist",
         "pct": 0.3,
         "count": 48
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.3,
+        "count": 51
       },
       {
         "group": "Latter-day Saints",
@@ -18914,14 +18914,14 @@
         "count": 138
       },
       {
-        "group": "German",
-        "pct": 0.5,
-        "count": 96
-      },
-      {
         "group": "New Zealand Sign Language",
         "pct": 0.5,
         "count": 90
+      },
+      {
+        "group": "German",
+        "pct": 0.5,
+        "count": 96
       },
       {
         "group": "French",
@@ -19139,14 +19139,14 @@
         "count": 75
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.2,
-        "count": 48
-      },
-      {
         "group": "Ratana",
         "pct": 0.2,
         "count": 63
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.2,
+        "count": 48
       },
       {
         "group": "Jehovah's Witnesses",
@@ -19528,14 +19528,14 @@
         "count": 33
       },
       {
-        "group": "German",
-        "pct": 0.2,
-        "count": 24
-      },
-      {
         "group": "Samoan",
         "pct": 0.2,
         "count": 21
+      },
+      {
+        "group": "German",
+        "pct": 0.2,
+        "count": 24
       },
       {
         "group": "Panjabi",
@@ -20307,11 +20307,6 @@
         "count": 624
       },
       {
-        "group": "Buddhism",
-        "pct": 0.7,
-        "count": 510
-      },
-      {
         "group": "Baptist",
         "pct": 0.7,
         "count": 579
@@ -20320,6 +20315,11 @@
         "group": "Evangelical, Born Again and Fundamentalist",
         "pct": 0.7,
         "count": 528
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.7,
+        "count": 510
       },
       {
         "group": "Ratana",
@@ -20664,14 +20664,14 @@
         "count": 207
       },
       {
-        "group": "Adventist",
-        "pct": 0.1,
-        "count": 153
-      },
-      {
         "group": "Ratana",
         "pct": 0.1,
         "count": 162
+      },
+      {
+        "group": "Adventist",
+        "pct": 0.1,
+        "count": 153
       },
       {
         "group": "Other Māori religions, beliefs and philosophies",
@@ -20961,14 +20961,14 @@
         "count": 135
       },
       {
-        "group": "Ratana",
-        "pct": 0.2,
-        "count": 141
-      },
-      {
         "group": "Jehovah's Witnesses",
         "pct": 0.2,
         "count": 186
+      },
+      {
+        "group": "Ratana",
+        "pct": 0.2,
+        "count": 141
       },
       {
         "group": "Other Māori religions, beliefs and philosophies",
@@ -21575,14 +21575,14 @@
         "count": 39
       },
       {
-        "group": "Ratana",
-        "pct": 0.1,
-        "count": 54
-      },
-      {
         "group": "Jehovah's Witnesses",
         "pct": 0.1,
         "count": 63
+      },
+      {
+        "group": "Ratana",
+        "pct": 0.1,
+        "count": 54
       },
       {
         "group": "Not elsewhere included",
@@ -22159,14 +22159,14 @@
         "count": 279
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 0.4,
-        "count": 189
-      },
-      {
         "group": "Ratana",
         "pct": 0.4,
         "count": 240
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.4,
+        "count": 189
       },
       {
         "group": "Adventist",
@@ -22261,14 +22261,14 @@
         "count": 411
       },
       {
-        "group": "Afrikaans",
-        "pct": 0.6,
-        "count": 321
-      },
-      {
         "group": "Tongan",
         "pct": 0.6,
         "count": 330
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 0.6,
+        "count": 321
       },
       {
         "group": "Yue",
@@ -22461,12 +22461,12 @@
         "count": 3
       },
       {
-        "group": "Sikhism",
+        "group": "Baptist",
         "pct": 0.0,
         "count": 0
       },
       {
-        "group": "Baptist",
+        "group": "Sikhism",
         "pct": 0.0,
         "count": 0
       },
@@ -22733,12 +22733,12 @@
         "count": 42
       },
       {
-        "group": "Baptist",
+        "group": "Methodist",
         "pct": 0.5,
         "count": 45
       },
       {
-        "group": "Methodist",
+        "group": "Baptist",
         "pct": 0.5,
         "count": 45
       },
@@ -22855,11 +22855,6 @@
         "count": 36
       },
       {
-        "group": "Northern Chinese",
-        "pct": 0.3,
-        "count": 30
-      },
-      {
         "group": "Tagalog",
         "pct": 0.3,
         "count": 30
@@ -22868,6 +22863,11 @@
         "group": "Panjabi",
         "pct": 0.3,
         "count": 24
+      },
+      {
+        "group": "Northern Chinese",
+        "pct": 0.3,
+        "count": 30
       },
       {
         "group": "Yue",
@@ -23085,14 +23085,14 @@
         "count": 177
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 0.1,
-        "count": 93
-      },
-      {
         "group": "Other Māori religions, beliefs and philosophies",
         "pct": 0.1,
         "count": 84
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.1,
+        "count": 93
       },
       {
         "group": "Not elsewhere included",
@@ -23362,14 +23362,14 @@
         "count": 510
       },
       {
-        "group": "Ratana",
-        "pct": 0.6,
-        "count": 468
-      },
-      {
         "group": "Adventist",
         "pct": 0.6,
         "count": 456
+      },
+      {
+        "group": "Ratana",
+        "pct": 0.6,
+        "count": 468
       },
       {
         "group": "Jehovah's Witnesses",
@@ -23649,14 +23649,14 @@
         "count": 624
       },
       {
-        "group": "Baptist",
-        "pct": 0.5,
-        "count": 483
-      },
-      {
         "group": "Sikhism",
         "pct": 0.5,
         "count": 444
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.5,
+        "count": 483
       },
       {
         "group": "Evangelical, Born Again and Fundamentalist",
@@ -23813,14 +23813,14 @@
         "count": 31953
       },
       {
-        "group": "Māori",
-        "pct": 8.6,
-        "count": 8322
-      },
-      {
         "group": "Pacific Peoples",
         "pct": 8.6,
         "count": 8343
+      },
+      {
+        "group": "Māori",
+        "pct": 8.6,
+        "count": 8322
       },
       {
         "group": "Middle Eastern/Latin American/African",
@@ -24263,14 +24263,14 @@
         "count": 333
       },
       {
-        "group": "Jedi",
-        "pct": 0.3,
-        "count": 255
-      },
-      {
         "group": "Latter-day Saints",
         "pct": 0.3,
         "count": 237
+      },
+      {
+        "group": "Jedi",
+        "pct": 0.3,
+        "count": 255
       },
       {
         "group": "Ratana",
@@ -24550,14 +24550,14 @@
         "count": 1185
       },
       {
-        "group": "Ratana",
-        "pct": 0.9,
-        "count": 732
-      },
-      {
         "group": "Adventist",
         "pct": 0.9,
         "count": 696
+      },
+      {
+        "group": "Ratana",
+        "pct": 0.9,
+        "count": 732
       },
       {
         "group": "Evangelical, Born Again and Fundamentalist",
@@ -25593,14 +25593,14 @@
         "count": 156
       },
       {
-        "group": "German",
-        "pct": 0.1,
-        "count": 72
-      },
-      {
         "group": "Spanish",
         "pct": 0.1,
         "count": 114
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 72
       },
       {
         "group": "Afrikaans",
@@ -25895,14 +25895,14 @@
         "count": 357
       },
       {
-        "group": "French",
-        "pct": 0.2,
-        "count": 225
-      },
-      {
         "group": "Spanish",
         "pct": 0.2,
         "count": 240
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 225
       },
       {
         "group": "German",
@@ -26337,14 +26337,14 @@
         "count": 1416
       },
       {
-        "group": "Pentecostal",
-        "pct": 1.4,
-        "count": 1221
-      },
-      {
         "group": "Methodist",
         "pct": 1.4,
         "count": 1143
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.4,
+        "count": 1221
       },
       {
         "group": "Other Christian religions",
@@ -26489,14 +26489,14 @@
         "count": 621
       },
       {
-        "group": "Spanish",
-        "pct": 0.6,
-        "count": 504
-      },
-      {
         "group": "German",
         "pct": 0.6,
         "count": 498
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.6,
+        "count": 504
       },
       {
         "group": "Yue",
@@ -26634,17 +26634,17 @@
         "count": 3
       },
       {
-        "group": "Islam",
-        "pct": 4.2,
-        "count": 3
-      },
-      {
         "group": "Christian nfd",
         "pct": 4.2,
         "count": 3
       },
       {
-        "group": "Jedi",
+        "group": "Islam",
+        "pct": 4.2,
+        "count": 3
+      },
+      {
+        "group": "Baptist",
         "pct": 0.0,
         "count": 0
       },
@@ -26654,7 +26654,7 @@
         "count": 0
       },
       {
-        "group": "Baptist",
+        "group": "Jedi",
         "pct": 0.0,
         "count": 0
       },
@@ -26669,12 +26669,12 @@
         "count": 0
       },
       {
-        "group": "Jehovah's Witnesses",
+        "group": "Adventist",
         "pct": 0.0,
         "count": 0
       },
       {
-        "group": "Adventist",
+        "group": "Jehovah's Witnesses",
         "pct": 0.0,
         "count": 0
       },
@@ -26704,12 +26704,12 @@
         "count": 0
       },
       {
-        "group": "Spiritualism and New Age religions",
+        "group": "Not elsewhere included",
         "pct": 0.0,
         "count": 0
       },
       {
-        "group": "Not elsewhere included",
+        "group": "Spiritualism and New Age religions",
         "pct": 0.0,
         "count": 0
       },
@@ -26719,12 +26719,12 @@
         "count": 0
       },
       {
-        "group": "Other Māori religions, beliefs and philosophies",
+        "group": "Latter-day Saints",
         "pct": 0.0,
         "count": 0
       },
       {
-        "group": "Latter-day Saints",
+        "group": "Other Māori religions, beliefs and philosophies",
         "pct": 0.0,
         "count": 0
       }
@@ -26751,12 +26751,12 @@
         "count": 0
       },
       {
-        "group": "Samoan",
+        "group": "Hindi",
         "pct": 0.0,
         "count": 0
       },
       {
-        "group": "Hindi",
+        "group": "Samoan",
         "pct": 0.0,
         "count": 0
       },
@@ -26776,22 +26776,22 @@
         "count": 0
       },
       {
-        "group": "Tagalog",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "None (eg too young to talk)",
         "pct": 0.0,
         "count": 0
       },
       {
-        "group": "German",
+        "group": "French",
         "pct": 0.0,
         "count": 0
       },
       {
-        "group": "French",
+        "group": "Tagalog",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "German",
         "pct": 0.0,
         "count": 0
       },
