@@ -244,20 +244,32 @@ def check_sexes(rows: list[list[Any]], names: list[str], prefix: str,
     index = {name: i for i, name in enumerate(names)}
     stems = sorted({n[:-2] for n in names
                     if n.startswith(prefix) and n.endswith("_B")})
-    bad = 0
+    off: list[tuple[float, str]] = []
+    cells = 0
     for row in rows[2:]:
+        where_row = str(row[index["AREA_NAME"]] or "?").strip()
         for stem in stems:
             both = number(row[index[f"{stem}_B"]])
             female = number(row[index[f"{stem}_F"]])
             male = number(row[index[f"{stem}_M"]])
             if both is None or female is None or male is None:
                 continue
-            if abs((female + male) - both) > 0.5:
-                bad += 1
-    if bad:
-        raise SystemExit(f"{where}: {bad} cells where females plus males do "
-                         f"not equal the both-sexes figure")
-    log(f"    {len(stems)} groups reconcile by sex on every row")
+            cells += 1
+            gap_ = (female + male) - both
+            if abs(gap_) > 0.5:
+                off.append((abs(gap_),
+                            f"{where_row} {stem}: {female:,.0f} + {male:,.0f} "
+                            f"= {female + male:,.0f} against {both:,.0f} "
+                            f"(out by {gap_:+,.0f})"))
+    if off:
+        off.sort(reverse=True)
+        log(f"    {len(off)} of {cells} cells do not reconcile by sex; "
+            f"the largest:")
+        for _size, line in off[:8]:
+            log(f"      {line}")
+        raise SystemExit(f"{where}: {len(off)} of {cells} cells where females "
+                         f"plus males do not equal the both-sexes figure")
+    log(f"    {len(stems)} groups reconcile by sex across {cells} cells")
 
 
 def area(row: list[Any], names: list[str]) -> tuple[int | None, str, str]:
