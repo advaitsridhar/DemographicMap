@@ -2366,3 +2366,45 @@ class SouthAfricaLabels(unittest.TestCase):
                          "Folk and traditional religion")
         for label in ("Atheism", "Agnosticism", "No religious affiliation"):
             self.assertEqual(self.name("religion", label), "No religion")
+
+
+class GapReasons(unittest.TestCase):
+    """Countries where naming a script would be a false promise.
+
+    The hint panel renders its text as a command to run. For a country that
+    never published the figures, that says the gap is this build's doing --
+    so those carry a reason instead, and never both.
+    """
+
+    def annotate(self, iso3):
+        entity = {}
+        be.mark_disputed_or_hint(entity, iso3)
+        return entity
+
+    def test_a_gap_country_gets_a_reason_and_no_command(self):
+        entity = self.annotate("VNM")
+        self.assertIn("by province", entity["gap_reason"])
+        self.assertNotIn("adapter_hint", entity)
+
+    def test_an_ordinary_country_gets_a_command_and_no_reason(self):
+        entity = self.annotate("USA")
+        self.assertIn("us_acs", entity["adapter_hint"])
+        self.assertNotIn("gap_reason", entity)
+
+    def test_a_country_with_an_adapter_keeps_its_command(self):
+        self.assertIn("us_acs", be.adapter_hint("USA"))
+        self.assertNotIn("USA", be.ADAPTER_GAPS)
+
+    def test_the_three_documented_gaps_carry_a_reason(self):
+        for iso3 in ("IDN", "VNM", "THA"):
+            self.assertIn(iso3, be.ADAPTER_GAPS)
+            self.assertGreater(len(be.ADAPTER_GAPS[iso3]), 40)
+
+    def test_a_gap_reason_is_prose_rather_than_a_command(self):
+        # A hint is rendered inside <code> and run; a reason is not.
+        for reason in be.ADAPTER_GAPS.values():
+            self.assertNotIn("python", reason)
+            self.assertNotIn("scripts.", reason)
+
+    def test_the_two_never_apply_to_the_same_country(self):
+        self.assertFalse(set(be.ADAPTER_GAPS) & set(be.ADAPTER_HINTS))

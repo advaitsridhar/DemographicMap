@@ -104,6 +104,23 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.india_census --level district && "
            "python -m scripts.fetch_census.india_language --level district",
 }
+# Countries where no command would help, because the figures are not published
+# at this level -- or not published to an automated reader at all. A hint naming
+# a script is a promise that running it would fill the panel; for these it would
+# not, and saying so is the point of the map rather than an admission against
+# it. Kept short here; docs/SOURCES.md carries what was actually tried.
+ADAPTER_GAPS: dict[str, str] = {
+    "IDN": "BPS publishes religion by regency, but its API needs a free "
+           "registered key and its other hosts refuse automated readers. The "
+           "data exists and is not reachable without that key.",
+    "VNM": "The 2019 census asked both religion and ethnicity, and publishes "
+           "each for the country as a whole rather than by province. No "
+           "provincial table exists to fetch.",
+    "THA": "The statistical office refuses automated readers on every host "
+           "tried, and by the account of the one dataset that compiles it, "
+           "Thailand has made census language data public only once, for 2000.",
+}
+
 EUROSTAT_HINT = ("Eurostat NUTS population and median age: "
                  "python -m scripts.fetch_census.eurostat --level nuts3")
 EUROSTAT_COUNTRIES = {
@@ -1069,6 +1086,10 @@ def mark_disputed_or_hint(entity: dict[str, Any], group: str) -> None:
     if is_disputed(group):
         entity["disputed"] = True
         entity["note"] = DISPUTED_NOTE
+    elif group in ADAPTER_GAPS:
+        # Not a hint: naming a script here would say the gap is this build's
+        # doing, when it belongs to what the country publishes.
+        entity["gap_reason"] = ADAPTER_GAPS[group]
     else:
         entity["adapter_hint"] = adapter_hint(group)
 
