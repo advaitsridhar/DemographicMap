@@ -321,8 +321,17 @@ def read(book, country: Country, topic: Topic) -> dict[str, dict[str, Any]]:
 
     out: dict[str, dict[str, Any]] = {}
     skipped = 0
+    empty: list[str] = []
+    whole: dict[str, float] = {}
     for row in rows[2:]:
         level, name, parent = area(row, names)
+        if level == 0 and name:
+            # The country's own row: the control every other row is checked
+            # against. Not a record on this map -- the country already has one
+            # -- but the only independent statement of what the parts add to.
+            whole = {label: value for index, label in found.items()
+                     if (value := number(row[index])) is not None and value > 0}
+            continue
         if level not in country.levels or not name or name.upper() == "NO NAME":
             # "NO NAME" is the workbook's own placeholder for an area it could
             # not label. It is not a place, and giving it a record would put an
@@ -332,12 +341,33 @@ def read(book, country: Country, topic: Topic) -> dict[str, dict[str, Any]]:
         counts = {label: value for index, label in found.items()
                   if (value := number(row[index])) is not None and value > 0}
         if not counts:
+            # An area the file lists and has no figures for. Named rather than
+            # dropped in silence: three Ethiopian first-order divisions arrive
+            # this way, and their absence is what made the regions add up to
+            # three million fewer people than the census counted.
+            empty.append(name)
             continue
         published = number(row[total]) if total is not None else None
         out[name] = {"level": level, "parent": parent, "counts": counts,
                      "published": published, "summed": sum(counts.values())}
     if skipped:
         log(f"    {skipped} rows skipped: another level, or no area name")
+    if empty:
+        log(f"    {len(empty)} areas listed with no figures at all: "
+            + ", ".join(sorted(empty)[:6])
+            + (" ..." if len(empty) > 6 else ""))
+    if whole:
+        for level, layer in sorted(country.levels.items()):
+            parts = sum(sum(r["counts"].values())
+                        for r in out.values() if r["level"] == level)
+            if not parts:
+                continue
+            total = sum(whole.values())
+            short = total - parts
+            log(f"    {layer}: {parts:,.0f} against the country's own "
+                f"{total:,.0f}"
+                + (f" -- {short:,.0f} fewer ({100 * short / total:.1f}%)"
+                   if abs(short) > 0.5 else " -- exactly"))
     return out
 
 
