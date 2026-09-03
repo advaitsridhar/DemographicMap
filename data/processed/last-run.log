@@ -1,36 +1,4 @@
-probe_xlsx: https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15/resource/5acff37e-0c02-4d89-bbd2-1825ee98916c/download/philippines_uscb_202402.xlsx
-  56,136,814 bytes
-  10 sheet(s): Metadata, Data Dictionary, Age-Sex, Population, Ethnicity, Citizenship, Religion, Households, Housing Units, Overseas Workers
-
---- sheet 'Religion' (136 rows x 142 cols) --------------------
-  AREA_NAME | GEO_CONCAT | GEO_MATCH | CNTRY_NAME | ADM1_NAME | ADM2_NAME | ADM_LEVEL | USCBCMNT | GENC_CODE | FIPS_CODE | NSO_CODE | NSO_NAME | RLG_HPOP | RLG_NONE | RLG_AGLI | RLG_ABBC | RLG_ACPE | RLG_AIMP | RLG_APCC | RLG_AEFP | RLG_ASOG | RLG_ABCL | RLG_AFBC | RLG_BPCP | RLG_BTCP | RLG_BBPP
-  Country or subnational area name | Administrative division name concatenati | Geographic match | Country name | First-order administrative division name | Second-order administrative division nam | Administrative level | Notes | GENC code | FIPS code | National statistical office code | National statistical office name | Household population | Non-religious | Aglipay | Alliance of Bible Christian Communities  | Ambassadors for Christ Philippine Evange | Ang Iglesia Metodista sa Pilipinas, Inc. | Apostolic Catholic Church, Inc. | Asia Evangelistic Fellowship Philippines | Assemblies of God | Association of Baptist Churches in Luzon | Association of Fundamental Baptist Churc | Baptist Conference of the Philippines | Bethany Church of Philippines | Bible Baptist Church
-  PHILIPPINES | PHILIPPINES | PHL_00 | PHILIPPINES |  |  | 0 |  | PH | RP | PH | Philippines | 108667043 | 43931 | 818916 | 236408 | 2093 | 5240 | 54543 | 2883 | 413703 | 2798 | 98327 | 274309 | 12058 | 540364
-  NATIONAL CAPITAL REGION | PHILIPPINES_NATIONAL CAPITAL REGION | PHL_01 | PHILIPPINES | NATIONAL CAPITAL REGION |  | 1 |  | PH-00 |  | PH13 | National Capital Region | 13403551 | 6902 | 24098 | 3744 | 298 | 339 | 2377 | 383 | 5143 | 142 | 256 | 24877 | 1082 | 34883
-
-probe_xlsx: https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/ethiopia_uscb_202308.xlsx
+Ethiopia: https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/ethiopia_uscb_202308.xlsx
   1,759,157 bytes
-  12 sheet(s): Metadata, Data Dictionary, Age-Sex, Religion, Economy, Disability, Household, Housing, Ethnicity, Language, Health, Agriculture
-
---- sheet 'Religion' (853 rows x 31 cols) --------------------
-  AREA_NAME | GEO_CONCAT | GEO_MATCH | CNTRY_NAME | ADM1_NAME | ADM2_NAME | ADM3_NAME | ADM_LEVEL | USCBCMNT | GENC_CODE | FIPS_CODE | NSO_CODE | NSO_NAME | RLG_ORDX_B | RLG_PROT_B | RLG_CATH_B | RLG_ISL_B | RLG_TRAD_B | RLG_OTHR_B | RLG_ORDX_F | RLG_PROT_F | RLG_CATH_F | RLG_ISL_F | RLG_TRAD_F | RLG_OTHR_F | RLG_ORDX_M
-  Country or subnational area name | Administrative name concatenation | Geographic match | Country name | First-order administrative division name | Second-order administrative division nam | Third-order administrative division name | Administrative level | Notes | GENC code | FIPS code | National statistical office code | National statistical office name | Orthodox, both sexes | Protestant, both sexes | Catholic, both sexes | Islamic, both sexes | Traditional, both sexes | Other religion, both sexes | Orthodox, females | Protestant, females | Catholic, females | Islamic, females | Traditional, females | Other religion, females | Orthodox, males
-  ETHIOPIA | ETHIOPIA | ETH_00 | ETHIOPIA |  |  |  | 0 | FEDERAL DEMOCARATIC REPUBLIC OF ETHIOPIA | ET | ET |  | ETHIOPIA | 32092182 | 13661588 | 532187 | 25037646 | 1956647 | 470682 | 16063243 | 6888048 | 265463 | 12129554 | 962392 | 225102 | 16028939
-  ĀDĪS ĀBEBA | ETHIOPIA_ĀDĪS ĀBEBA | ETH_01 | ETHIOPIA | ĀDĪS ĀBEBA |  |  | 1 | Self-Governing Administration; REGION 14 | ET-AA | ET44 | 14 | ADDIS ABABA | 2045445 | 212907 | 13202 | 444025 | 1377 | 22595 | 1087268 | 115477 | 6726 | 212623 | 593 | 11477 | 958177
-
---- sheet 'Language' (110 rows x 103 cols) --------------------
-  AREA_NAME | GEO_CONCAT | GEO_MATCH | CNTRY_NAME | ADM1_NAME | ADM2_NAME | ADM_LEVEL | USCBCMNT | GENC_CODE | FIPS_CODE | NSO_CODE | NSO_NAME | LNG_AAR | LNG_AWN | LNG_AGKAM | LNG_ALW | LNG_AMH | LNG_ANU | LNG_ARBR | LNG_AGJ | LNG_AIZ | LNG_XWG | LNG_BST | LNG_BENAG | LNG_BCQ | LNG_WTI
-  Country or subnational area name | Administrative name concatenation | Geographic match | Country name | First-order administrative division name | Second-order administrative division nam | Administrative level | Notes | GENC code | FIPS code | National statistical office code | National statistical office name | Afar | Awngi | Agew-Kamyrnya | Alaba-K’abeena | Amharic | Anuak | Arbore | Argobba | Aari | Kwegu (Kwegoi) | Basketo | Benagna | Bench | Berta
-  ETHIOPIA | ETHIOPIA | ETH_00 | ETHIOPIA |  |  | 0 | FEDERAL DEMOCARATIC REPUBLIC OF ETHIOPIA | ET | ET |  | ETHIOPIA | 1281284 | 488507 | 213355 | 226604 | 21634396 | 90579 | 7211 | 43682 | 285473 | 3472 | 92586 | 26869 | 347636 | 205732
-  ĀDĪS ĀBEBA | ETHIOPIA_ĀDĪS ĀBEBA | ETH_01 | ETHIOPIA | ĀDĪS ĀBEBA |  | 1 | Self-Governing Administration; REGION 14 | ET-AA | ET44 | 14 | ADDIS ABABA | 2044 | 1908 | 3445 | 3061 | 1944775 | 2469 | 212 | 2660 | 896 | 43 | 35 | 37 | 100 | 523
-
-probe_xlsx: https://data.humdata.org/dataset/6daa36c4-9ea3-4844-958b-042d2cc3d8b7/resource/2c8fce76-8ad7-4bce-ab02-374318302383/download/indonesia_uscb_202405.xlsx
-  556,433 bytes
-  7 sheet(s): Metadata, Data Dictionary, Age-Sex, Households, Language, Mortality and Disability, Migration
-
---- sheet 'Language' (552 rows x 19 cols) --------------------
-  AREA_NAME | GEO_CONCAT | GEO_MATCH | CNTRY_NAME | ADM1_NAME | ADM2_NAME | ADM_LEVEL | USCBCMNT | GENC_CODE | FIPS_CODE | NSO_CODE | NSO_NAME | LNG_BTOTL | LNG_YESIN | LNG_NOTIN | LNG_1STIN | LNG_1STRG | LNG_1STFOR | LNG_1STSGN
-  Country or subnational area name | Administrative division name concatenati | Geographic match | Country name | First-order administrative division name | Second-order administrative division nam | Administrative level | Notes | GENC code | FIPS code | National statistical office code | National statistical office name | Total population | Can speak, Indonesian | Cannot speak, Indonesian | First language, Indonesian | First language, regional | First language, foreign | First language, sign
-  INDONESIA | INDONESIA | IDN_00 | INDONESIA |  |  | 0 |  |  |  | 0 |  | 253679348 | 248501794 | 5177554 | 71971184 | 181082044 | 342458 | 283662
-  ACEH | INDONESIA_ACEH | IDN_01 | INDONESIA | ACEH |  | 1 |  | ID-AC | ID01 | 11 |  | 4915358 | 4838486 | 76872 | 1301679 | 3606729 | 2043 | 4907
-
+  Religion: 851 rows, 6 groups, by sex, no published denominator
+ETH Religion: 24 cells where females plus males do not equal the both-sexes figure
