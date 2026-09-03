@@ -1027,6 +1027,32 @@ def roll_up_parents(admin1_by_country: dict[str, list[dict[str, Any]]],
         log(f"  not summed -- {line}")
 
 
+# What identifies or locates a row rather than describing its people. Two rows
+# differing only here may still be one place written twice; two rows differing
+# anywhere else are carrying different claims about the population, whatever
+# their names say. Wikidata gives every item its own Q-id, so counting that as
+# a difference would make every rivalry look like a conflict.
+METADATA = {"id", "wikidata", "level", "name", "parent", "parent_name",
+            "parent_aliases", "aliases", "no_shape", "_source", "sources",
+            "country", "point", "coordinates", "bbox", "match"}
+
+
+def conflicting(rows: list[dict[str, Any]]) -> list[str]:
+    """Fields on which these rows publish different real values.
+
+    A gap is not a difference: one row saying "not available" where another
+    gives a figure is what merge_adapter exists for, and the figure survives
+    either order.
+    """
+    out = []
+    for field in sorted({k for row in rows for k in row} - METADATA):
+        real = [v for v in (row.get(field) for row in rows)
+                if v is not None and not is_gap(v)]
+        if len(real) > 1 and any(v != real[0] for v in real[1:]):
+            out.append(field)
+    return out
+
+
 EXACT = 3
 
 
@@ -1055,6 +1081,17 @@ def resolve_collisions(matched: list[tuple[dict[str, Any], dict[str, Any], str]]
     figures and the other three vanished. Texas's Jackson County reached a shape
     called Jack. 1,324 rows were being lost this way.
 
+    What does *not* decide it is which rival is named exactly as the shape is.
+    That test settles a tie between two shapes -- see scoped_by_parent, where
+    "Cotabato" picks the province over "Cotabato City" -- and inverts when the
+    tie is between two rows. Boundary files drop the generic word by
+    convention: CGAZ's Argentine ADM2 *is* the departments and calls them
+    "Andalgalá", so the exactly-named rival is the town of 3,300 and the one
+    that says "Andalgalá Department" is the unit the shape draws. Applying it
+    here would have installed 104 confident mis-matches in place of 108 honest
+    gaps, which is a worse trade in exactly the direction this file exists to
+    avoid.
+
     Where one row's evidence beats every other's the shape is its own and the
     rest are refused -- "Rotherham" over "Rother", "Ostrobothnia" over "Central
     Ostrobothnia". Where nothing separates them, none of them may claim it:
@@ -1065,8 +1102,18 @@ def resolve_collisions(matched: list[tuple[dict[str, Any], dict[str, Any], str]]
     is usually a source listing one place twice. Wikidata carries both "Ancasti"
     and "Ancasti Department", and "Department" is a word this code drops, so
     both are the same name reaching the same shape; refusing them would lose
-    Ancasti to a duplicate rather than to a mistake. Last one still wins there,
-    exactly as before.
+    Ancasti to a duplicate rather than to a mistake. Last one still wins there.
+
+    That held only as long as nobody asked whether the duplicates agreed. 113
+    shapes had rivals publishing *different* figures under the exemption --
+    Kyiv against Kyiv Oblast, Morogoro city against the region 150 km around
+    it, Tashkent against Tashkent Region -- because the words this code drops
+    include "Region", "Oblast" and "City", so a capital and its region reach
+    one key exactly as a duplicate listing does. The names cannot separate
+    those two cases. The figures can: one place written twice says the same
+    thing twice, and rows that contradict each other are not one place. So the
+    exemption now requires agreement, and a disagreement is ranked on evidence
+    or refused like any other rivalry.
     """
     claims: dict[tuple[Any, str], list[int]] = defaultdict(list)
     for i, (row, entity, _) in enumerate(matched):
@@ -1079,7 +1126,15 @@ def resolve_collisions(matched: list[tuple[dict[str, Any], dict[str, Any], str]]
             continue
         ranked = sorted(idxs, key=lambda i: -evidence(matched[i][2]))
         best, runner = evidence(matched[ranked[0]][2]), evidence(matched[ranked[1]][2])
-        if best == EXACT:
+        # Two outright matches are one place listed twice only if they agree.
+        # Where they publish different figures they are two places, and the
+        # exemption below would hand the shape to whichever came last: Kyiv's
+        # 2.95 million on Kyiv Oblast, or Morogoro city's on the region 150 km
+        # around it. norm() drops "Region", "Oblast", "City" and "Department"
+        # alike, so the names cannot tell a duplicate listing from a capital
+        # and its region -- but the figures can, and a row that contradicts its
+        # rival is evidence enough to stop treating them as one.
+        if best == EXACT and not conflicting([matched[i][0] for i in idxs]):
             # A name that matched outright owns the shape; anything that got
             # there through a fragment of itself does not. Several outright
             # matches are a duplicated source row, not a rivalry.
