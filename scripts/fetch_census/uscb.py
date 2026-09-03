@@ -154,6 +154,13 @@ class Topic:
     """
     sheet: str
     field: str
+    # Set only where one sheet holds two topics. Burma's is called "Ethnicity"
+    # and carries the religion columns as well, so "everything that is not
+    # geography" collected both and the shares came to 3.05 times the
+    # population. Where a sheet holds one topic this stays empty and the
+    # columns are still whatever is left after the geography -- which is what
+    # keeps Ethiopia working, whose ethnic-group columns are not named "ETH_".
+    prefix: str = ""
     year: int | None = None
     source: str = ""
     note: str = ""
@@ -180,6 +187,13 @@ class Country:
     # slugs they replace ("philippines-subnational-population-statistics") were
     # never fetched, so nothing had ever checked they resolve.
     dataset: str = ""
+    # How far this country's areas may fall short of their own published
+    # totals before the file is refused. Defaults are the module's; raising
+    # them is a claim about the source and needs the evidence written down,
+    # because the whole point of the bounds is that a reader which has
+    # misunderstood a sheet gets *every* area wrong.
+    refuse_area: float = REFUSE_AREA
+    refuse_share: float = REFUSE_SHARE
     aliases: dict[str, tuple[str, ...]] = dc_field(default_factory=dict)
     # Census areas geoBoundaries draws no boundary of their own for, as
     # (parent, area) pairs -- a name alone is not an address, and the
@@ -375,6 +389,12 @@ MYANMAR = Country(
     dataset="burma-subnational-boundaries-and-tabular-data",
     out="myanmar_state.json",
     levels={1: "admin1", 2: "admin2"},
+    # One sheet, two topics. It is called "Ethnicity" and carries the religion
+    # columns beside the ethnic ones, so reading "everything that is not
+    # geography" collected both and the shares came to 3.05 times the
+    # population -- 47.8 million of ethnicity plus 49.0 million of religion
+    # plus the religion denominator, all summed as though they were one
+    # question. The prefixes are what separate them here.
     topics=(
         # Not the census. The 2014 round asked about ethnicity and its results
         # were never published -- the tables were withheld -- so the Bureau
@@ -383,7 +403,7 @@ MYANMAR = Country(
         # called "Ethnicity". Dating these to 2014 would attribute them to a
         # census that refused to release them, which is the notable fact about
         # ethnicity data in Myanmar and the last thing to bury.
-        Topic("Ethnicity", "ethnicity", year=2017,
+        Topic("Ethnicity", "ethnicity", prefix="ETH_", year=2017,
               source=("Department of Population, 2018 Township Profiles, "
                       "Table 14: Ethnic Nationalities Living, prepared as "
                       "subnational tables by the U.S. Census Bureau"),
@@ -395,6 +415,11 @@ MYANMAR = Country(
                     "and this table names 40; the Rohingya are not among "
                     "either, having been excluded from enumeration as an "
                     "ethnicity in 2014.")),
+        # Religion, on the other hand, the 2014 census did publish, and these
+        # columns carry its own denominator of 49.0 million against the
+        # ethnicity table's 47.8 million -- two different populations in one
+        # sheet, which is the other reason they cannot be read together.
+        Topic("Ethnicity", "religion", prefix="RLG_"),
     ),
     # None needed for the states and regions: the census writes "KACHIN STATE"
     # where geoBoundaries writes "Kachin", and norm() drops the word "state"
@@ -422,6 +447,17 @@ UKRAINE = Country(
     # this map has a field for. The flat sheet is the one that answers "what
     # is spoken here".
     topics=(Topic("Language", "language"),),
+    # The census's own ten categories fall short of its own published totals
+    # in 105 of 663 rayons, by up to 6.9%. That is a hole in the source and
+    # not a misreading, and the evidence is the shape of it: the national row
+    # reconciles to 99.8%, the columns are exactly the categories the 2001
+    # census published (including Other and Unstated), and 558 rayons agree
+    # exactly. A reader that had misunderstood this sheet would be wrong
+    # everywhere and by a similar factor, which is what the default bounds are
+    # tuned to catch. The map draws the remainder as an explicit unaccounted
+    # share, and every short rayon is named in the log.
+    refuse_area=0.08,
+    refuse_share=0.20,
     # The Bureau romanises from Ukrainian and geoBoundaries uses the English
     # exonyms, so every one of the 27 needs declaring: "CHERKAS'KA OBLAST'"
     # and "Cherkasy Oblast" share no word that norm() leaves standing.
@@ -675,7 +711,12 @@ def columns(rows: list[list[Any]]) -> tuple[list[str], list[str]]:
     return names, aliases
 
 
-def sexed(names: list[str]) -> bool:
+def mine(name: str, prefix: str) -> bool:
+    """Is this column part of the topic being read?"""
+    return not prefix or name.startswith(prefix)
+
+
+def sexed(names: list[str], prefix: str = "") -> bool:
     """Does this sheet report every group three times, by sex?
 
     Ethiopia does and the Philippines does not, and the difference is visible
@@ -683,13 +724,15 @@ def sexed(names: list[str]) -> bool:
     all three of _B, _F and _M is a sexed sheet.
     """
     stems = {n[:-2] for n in names
-             if n not in GEOGRAPHY and n.endswith("_B")}
+             if n not in GEOGRAPHY and n.endswith("_B")
+             and mine(n, prefix)}
     if not stems:
         return False
     return all(f"{s}_F" in names and f"{s}_M" in names for s in stems)
 
 
-def denominator(names: list[str], aliases: list[str]) -> int | None:
+def denominator(names: list[str], aliases: list[str],
+                prefix: str = "") -> int | None:
     """The column holding everyone the question was asked of, if there is one.
 
     Found by its alias rather than its name: the Philippines calls it
@@ -699,7 +742,7 @@ def denominator(names: list[str], aliases: list[str]) -> int | None:
     at all, and returning None says so rather than picking a group at random.
     """
     for index, (name, alias) in enumerate(zip(names, aliases)):
-        if name in GEOGRAPHY or not name:
+        if name in GEOGRAPHY or not name or not mine(name, prefix):
             continue
         if "population" in alias.lower():
             return index
@@ -707,11 +750,13 @@ def denominator(names: list[str], aliases: list[str]) -> int | None:
 
 
 def groups(names: list[str], aliases: list[str],
-           total: int | None, by_sex: bool) -> dict[int, str]:
+           total: int | None, by_sex: bool, prefix: str = "") -> dict[int, str]:
     """Column index -> the label to publish, for every group column."""
     out: dict[int, str] = {}
     for index, (name, alias) in enumerate(zip(names, aliases)):
         if index == total or name in GEOGRAPHY or not name or not alias:
+            continue
+        if not mine(name, prefix):
             continue
         if by_sex:
             if not name.endswith("_B"):
@@ -808,13 +853,17 @@ def read(book, country: Country,
     """
     rows = sheet_rows(book, topic.sheet)
     names, aliases = columns(rows)
-    by_sex = sexed(names)
-    total = denominator(names, aliases)
-    found = groups(names, aliases, total, by_sex)
+    by_sex = sexed(names, topic.prefix)
+    total = denominator(names, aliases, topic.prefix)
+    found = groups(names, aliases, total, by_sex, topic.prefix)
     if not found:
-        raise SystemExit(f"{country.iso3} {topic.sheet}: every column is "
-                         f"geography; no group columns to read")
-    log(f"  {topic.sheet}: {len(rows) - 2} rows, {len(found)} groups"
+        raise SystemExit(
+            f"{country.iso3} {topic.sheet}: no group columns to read"
+            + (f" under the prefix {topic.prefix!r}" if topic.prefix
+               else "; every column is geography"))
+    log(f"  {topic.sheet}"
+        + (f" [{topic.prefix}]" if topic.prefix else "")
+        + f": {len(rows) - 2} rows, {len(found)} groups"
         + (", by sex" if by_sex else "")
         + (f", denominator {aliases[total]!r}" if total is not None
            else ", no published denominator"))
@@ -914,11 +963,11 @@ def check_total(country: Country, topic: Topic,
         f"total; the map shows the remainder as unaccounted:")
     for _size, line in short[:6]:
         log(f"      {line}")
-    if worst > REFUSE_AREA:
+    if worst > country.refuse_area:
         raise SystemExit(f"{country.iso3} {topic.sheet}: an area is "
                          f"{worst:.1%} short of its own published total, too "
                          f"much to be a suppressed group")
-    if len(short) / checked > REFUSE_SHARE:
+    if len(short) / checked > country.refuse_share:
         raise SystemExit(f"{country.iso3} {topic.sheet}: {len(short)} of "
                          f"{checked} areas fall short, which is a reader that "
                          f"has misunderstood the sheet rather than a source "

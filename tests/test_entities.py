@@ -2892,6 +2892,63 @@ class UscbReader(unittest.TestCase):
         self.assertEqual(self.uscb.MYANMAR.aliases, {})
         self.assertEqual(be.norm("Kachin State"), be.norm("Kachin"))
 
+    # -- one sheet, two topics --------------------------------------------
+    HEADER = [["AREA_NAME", "ADM_LEVEL", "ETH_A", "ETH_B", "ETH_TPOP",
+               "RLG_A", "RLG_B", "RLG_TPOP"],
+              ["Area", "Level", "Bamar", "Karen", "Total population, ethnicity",
+               "Buddhist", "Christian", "Total population, religion"],
+              ["BURMA", 0, 70, 30, 100, 90, 20, 110]]
+
+    def test_a_prefix_splits_a_sheet_that_holds_two_questions(self):
+        # Burma's sheet is called "Ethnicity" and carries religion beside it.
+        # Read together the shares came to 3.05 times the population.
+        names, aliases = self.uscb.columns(self.HEADER)
+        eth = self.uscb.groups(names, aliases,
+                               self.uscb.denominator(names, aliases, "ETH_"),
+                               False, "ETH_")
+        rlg = self.uscb.groups(names, aliases,
+                               self.uscb.denominator(names, aliases, "RLG_"),
+                               False, "RLG_")
+        self.assertEqual(sorted(eth.values()), ["Bamar", "Karen"])
+        self.assertEqual(sorted(rlg.values()), ["Buddhist", "Christian"])
+
+    def test_each_topic_takes_its_own_denominator(self):
+        # Two different populations in one sheet: 47.8 million of ethnicity
+        # against 49.0 million of religion.
+        names, aliases = self.uscb.columns(self.HEADER)
+        self.assertEqual(names[self.uscb.denominator(names, aliases, "ETH_")],
+                         "ETH_TPOP")
+        self.assertEqual(names[self.uscb.denominator(names, aliases, "RLG_")],
+                         "RLG_TPOP")
+
+    def test_no_prefix_still_means_everything_that_is_not_geography(self):
+        # Which is what keeps Ethiopia working: its ethnic-group columns are
+        # not named "ETH_", so a prefix cannot be the general rule.
+        names, aliases = self.uscb.columns(self.HEADER)
+        found = self.uscb.groups(names, aliases, None, False)
+        self.assertEqual(len(found), 6)
+
+    def test_a_prefix_that_matches_nothing_is_refused_by_name(self):
+        names, aliases = self.uscb.columns(self.HEADER)
+        self.assertEqual(self.uscb.groups(names, aliases, None, False, "LNG_"),
+                         {})
+
+    def test_myanmar_reads_both_questions_out_of_the_one_sheet(self):
+        sheets = {t.field: (t.sheet, t.prefix)
+                  for t in self.uscb.MYANMAR.topics}
+        self.assertEqual(sheets["ethnicity"], ("Ethnicity", "ETH_"))
+        self.assertEqual(sheets["religion"], ("Ethnicity", "RLG_"))
+
+    def test_a_widened_bound_is_a_claim_that_needs_its_evidence(self):
+        # Ukraine is the only country that widens them, and the module's
+        # defaults stay where they are for everyone else.
+        self.assertEqual(self.uscb.REFUSE_AREA, 0.05)
+        self.assertEqual(self.uscb.REFUSE_SHARE, 0.10)
+        widened = [c.iso3 for c in self.uscb.COUNTRIES.values()
+                   if c.refuse_area != self.uscb.REFUSE_AREA
+                   or c.refuse_share != self.uscb.REFUSE_SHARE]
+        self.assertEqual(widened, ["UKR"])
+
     def test_every_country_carries_its_own_census_year(self):
         # Ethiopia's tables are the 2007 census -- the last it completed -- and
         # the file's own 2023 extraction date must not stand in for it.
