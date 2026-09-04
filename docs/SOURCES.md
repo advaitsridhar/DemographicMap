@@ -954,6 +954,52 @@ Both levels reconcile exactly: 207,684,626 against the census's own
 Sindh reads Sindhi 61.6% and Urdu 18.2%; Punjab, Punjabi 69.7% and Saraiki
 20.7%; Balochistan splits Balochi 35.5% against Pushto 35.3%.
 
+### Central African Republic: three fields, and a table that counts two things
+
+The 2003 census (RGPH03) publishes ethnicity, religion and language, all three
+at both levels this map draws, and it is the cleanest file the Bureau's
+collection has offered. Its 17 first-order and 72 second-order areas are
+exactly what geoBoundaries draws -- no level to work out, after Pakistan's
+turned out to be 1 and 3 -- and every sheet reconciles to within a single
+person of its own published total:
+
+| sheet | groups | published | summed |
+|---|---|---|---|
+| Ethnicity | 26 | 3,895,139 | 3,895,138 |
+| Religion | 5 | 3,836,736 | 3,836,735 |
+| Language | 78 | 3,726,684 | 3,726,679 |
+
+**No column prefix, deliberately.** Each sheet holds one question, and naming a
+prefix could only silently drop a column that failed to match it. The evidence
+that nothing is wrongly in or out is the reconciliation itself: a column
+included by mistake or dropped by mistake would move the sum, and the worst
+area in the whole file is off by one person.
+
+**The ethnicity table counts two different things, and this is the reason it
+is published anyway.** Its source is the census's own *Ethnie-Nationalité*,
+which codes residents who are not Central African by nationality rather than
+by ethnic group -- Cameroonian, Chadian, Sudanese, French and Lebanese sit in
+the same column set as Gbaya and Banda.
+
+That is precisely what Syria's sheet was refused for, so the difference has to
+be stated rather than assumed. Syria's was nationality *entire*: nine columns,
+Syrian first, which published as ethnicity would have told a reader the
+country is ethnically uniform. Here the nine local groups carry **96.1%** of
+the population and every foreign category together carries **1.8%**. It is an
+ethnicity table with a foreign tail, not a nationality table wearing an
+ethnicity label -- and dropping the tail would stop the composition summing to
+the population it is a composition of, which is a worse fault than the mixing.
+
+One local category is written `Haoussa/Musulman` in the original, defining an
+ethnic group partly by religion. It is published as the census wrote it, on
+the same principle as the Philippines' denominations: which categories are one
+thing is the census's judgement to make, not this map's.
+
+Four sub-prefectures needed an alias -- Aba/Abba, Bossemptele/Bossemtélé,
+Nanga-Boguila/Nagha Boguila, and Ndjoukou, which loses its initial N in the
+boundary file. Each was read off the two lists of leftovers, four rows with no
+shape against four shapes with no row, pairing one to one.
+
 ### Bangladesh: a mirror, and a merged sheet that is wrong
 
 The Bureau of Statistics publishes a workbook of Census 2022 indicators at

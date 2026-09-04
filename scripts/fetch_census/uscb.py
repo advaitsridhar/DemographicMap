@@ -604,9 +604,58 @@ PAKISTAN = Country(
 )
 
 
+CENTRAL_AFRICAN_REPUBLIC = Country(
+    iso3="CAF",
+    name="Central African Republic",
+    year=2003,
+    source=("Bureau Central du Recensement, Troisième Recensement Général de "
+            "la Population et de l'Habitation (RGPH03), prepared as "
+            "subnational tables by the U.S. Census Bureau"),
+    licence="CC BY-IGO, published via HDX",
+    dataset="car-subnational-boundaries-and-tabular-data",
+    out="car_prefecture.json",
+    # The straightforward case, and worth saying so after Pakistan: the file's
+    # 17 first-order areas and 72 second-order areas are exactly what
+    # geoBoundaries draws, so the levels are the levels.
+    levels={1: "admin1", 2: "admin2"},
+    # Three sheets, one question each, and no prefix. Each carries its own
+    # ETH_/RLG_/LNG_ columns, but naming a prefix here would silently drop any
+    # column that did not match it, and the evidence that nothing is being
+    # wrongly included or excluded is stronger without one: all three sheets
+    # reconcile to within a single person of their own published totals.
+    topics=(Topic("Ethnicity", "ethnicity"),
+            Topic("Religion", "religion"),
+            Topic("Language", "language")),
+    # 17 of 17 prefectures and 68 of 72 sub-prefectures reach a shape on their
+    # own name. These four are the whole of the disagreement, read off the two
+    # lists of leftovers -- four rows with no shape against four shapes with no
+    # row, pairing one to one. Two are a doubled or dropped letter, one an
+    # accent the census does not write, and Ndjoukou loses its initial N in the
+    # boundary file.
+    aliases={
+        "Aba": ("Abba",),
+        "Bossemptele": ("Bossemtélé",),
+        "Nanga-Boguila": ("Nagha Boguila",),
+        "Ndjoukou": ("Djoukou",),
+    },
+    note=("2003 census (RGPH03). The ethnicity table is the census's own "
+          "\"Ethnie-Nationalité\", which codes residents who are not "
+          "Central African by nationality rather than by ethnic group: "
+          "Cameroonian, Chadian, French and Lebanese sit in the same column "
+          "set as Gbaya and Banda. Those categories are 1.8% of the "
+          "population between them and the nine local groups are 96.1%, so "
+          "this is an ethnicity table with a foreign tail rather than the "
+          "nationality table Syria's sheet turned out to be -- and dropping "
+          "the tail would stop the composition summing to the population it "
+          "is a composition of. One local category, Hausa, is written "
+          "\"Haoussa/Musulman\" in the original, defining an ethnic group "
+          "partly by religion; it is published as the census wrote it."),
+)
+
+
 COUNTRIES: dict[str, Country] = {
     c.iso3: c for c in (PHILIPPINES, ETHIOPIA, MYANMAR, UKRAINE,
-                        PAKISTAN)}
+                        PAKISTAN, CENTRAL_AFRICAN_REPUBLIC)}
 
 
 def discover(limit: int, sheets: bool) -> int:
