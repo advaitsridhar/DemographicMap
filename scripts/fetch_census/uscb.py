@@ -544,8 +544,51 @@ UKRAINE = Country(
 # short exonym -- "BAKHCHYSARAYS'KYY RAYON" against "Bakhchysarai", 661 times.
 # Summing each oblast's own rayons is what got it in, and the oblasts match one
 # for one.
+PAKISTAN = Country(
+    iso3="PAK",
+    name="Pakistan",
+    year=2017,
+    source=("Pakistan Bureau of Statistics, 2017 Population and Housing "
+            "Census, Table 11: Population by mother tongue, sex, and "
+            "rural/urban, prepared as subnational tables by the U.S. Census "
+            "Bureau"),
+    licence="CC BY-IGO, published via HDX",
+    dataset="pakistan-subnational-population-and-housing-data-tables",
+    out="pakistan_language.json",
+    # Level 2 is the 36 divisions and level 3 the 155 districts. It is the
+    # districts geoBoundaries draws as Pakistan's second order, so reading
+    # level 2 here would put a division's figures on a district's shape --
+    # every one of them wrong, and none of them visibly so.
+    levels={1: "admin1", 3: "admin2"},
+    # Religion is deliberately not read, though this workbook carries it.
+    # scripts/fetch_census/pakistan.py already publishes it from the same
+    # census table, and two files claiming one shape with figures that
+    # disagree by a single person would send both to a gap under the
+    # agreement rule. Language is a field nothing else fills, so it is added
+    # where religion could only be risked.
+    topics=(Topic("Mother Tongue", "language", prefix="LNG_"),),
+    # None. The file writes "AWARAN DISTRICT" and norm() drops the word
+    # "district", so the names reach geoBoundaries unaided -- the first
+    # country here that needs no alias at all.
+    aliases={},
+    # The census counted the Federally Administered Tribal Areas as a
+    # first-order area; they were merged into Khyber Pakhtunkhwa in 2018 and
+    # geoBoundaries draws the seven that remain. Declared, so it reads as a
+    # boundary that no longer exists rather than as a row this map lost.
+    no_shape=frozenset(
+        (("Pakistan", "Federally Administered Tribal Areas"),)),
+    note=("2017 Population and Housing Census. The question is mother tongue, "
+          "which is the language of the household a person grew up in rather "
+          "than the language they speak now, and Pakistan's nine named "
+          "tongues leave a tenth column of Other -- 2.3% nationally, and the "
+          "place where Shina, Balti and Khowar are counted without being "
+          "named."),
+)
+
+
 COUNTRIES: dict[str, Country] = {
-    c.iso3: c for c in (PHILIPPINES, ETHIOPIA, MYANMAR, UKRAINE)}
+    c.iso3: c for c in (PHILIPPINES, ETHIOPIA, MYANMAR, UKRAINE,
+                        PAKISTAN)}
 
 
 def discover(limit: int, sheets: bool) -> int:
@@ -879,14 +922,24 @@ def check_sexes(rows: list[list[Any]], names: list[str], where: str) -> None:
     log(f"    {len(stems)} groups reconcile by sex across {cells} cells")
 
 
-def area(row: list[Any], names: list[str]) -> tuple[int | None, str, str]:
+def area(row: list[Any], names: list[str],
+         first_order: int = 1) -> tuple[int | None, str, str]:
     """A row's level, its own name, and its parent's."""
     index = {name: i for i, name in enumerate(names)}
     level = number(row[index["ADM_LEVEL"]])
     name = str(row[index["AREA_NAME"]] or "").strip()
+    # The parent is the area at whichever level this country calls admin1,
+    # not the level immediately above. Those coincide everywhere the file's
+    # second order is this map's -- but Pakistan's do not: the census counts
+    # 36 divisions at level 2 and 155 districts at level 3, and it is the
+    # districts geoBoundaries draws, directly under the provinces. Taking the
+    # level above would scope a district inside a division no boundary file
+    # has, which is a parent that can never match rather than one that
+    # sometimes does.
     parent = ""
-    if level == 2 and "ADM1_NAME" in index:
-        parent = str(row[index["ADM1_NAME"]] or "").strip()
+    above = f"ADM{first_order}_NAME"
+    if level is not None and level > first_order and above in index:
+        parent = str(row[index[above]] or "").strip()
     return (int(level) if level is not None else None, name, parent)
 
 
@@ -930,8 +983,13 @@ def read(book, country: Country,
     kids: dict[str, dict[str, Any]] = defaultdict(
         lambda: {"counts": defaultdict(float), "published": 0.0,
                  "listed": 0, "figured": 0, "blank": []})
+    # Which ADM level this country calls its first order. Every country but
+    # Pakistan says 1, and Pakistan's districts hang off the provinces even
+    # though the census puts a level of divisions between them.
+    first_order = next((n for n, where in sorted(country.levels.items())
+                        if where == "admin1"), 1)
     for row in rows[2:]:
-        level, name, parent = area(row, names)
+        level, name, parent = area(row, names, first_order)
         if level == 0 and name:
             # The country's own row: the control every other row is checked
             # against. Not a record on this map -- the country already has one
@@ -1191,8 +1249,12 @@ def main() -> int:
                 # Declared absence. A row that says it has no boundary is a
                 # visible gap; the same row left to the matcher is whatever
                 # shape it happens to reach.
-                no_shape=(parent.title(), name.title()) in country.no_shape
-                         or None,
+                # A first-order area's parent is the country, and naming it
+                # keeps every declaration a (parent, name) pair: a name alone
+                # is not an address one level down, where the Philippines has
+                # a Quezon province and a Quezon city 130 km apart.
+                no_shape=(parent.title() or country.name,
+                          name.title()) in country.no_shape or None,
                 sources=cites,
                 **values))
 

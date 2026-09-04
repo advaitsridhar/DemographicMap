@@ -66,6 +66,10 @@ ADAPTER_FILES = [
     "singapore_region.json", "singapore_planning_area.json",
     "srilanka_province.json", "srilanka_district.json",
     "pakistan_district.json",
+    # After it, and for the same reason as India's pair above: mother
+    # tongue is the one field this file adds, and the census table it
+    # reads is the one the file above already reads for religion.
+    "pakistan_language.json",
     "bangladesh_district.json",
     "south_africa_province.json",
     "philippines_province.json", "ethiopia_region.json",
