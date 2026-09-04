@@ -483,16 +483,16 @@ UKRAINE = Country(
     # this map has a field for. The flat sheet is the one that answers "what
     # is spoken here".
     topics=(Topic("Language", "language"),),
-    # The census's own ten categories fall short of its own published totals
-    # in 105 of 663 rayons, by up to 6.9%. That is a hole in the source and
-    # not a misreading, and the evidence is the shape of it: the national row
-    # reconciles to 99.8%, the columns are exactly the categories the 2001
-    # census published (including Other and Unstated), and 558 rayons agree
-    # exactly. A reader that had misunderstood this sheet would be wrong
-    # everywhere and by a similar factor, which is what the default bounds are
-    # tuned to catch. The map draws the remainder as an explicit unaccounted
-    # share, and every short rayon is named in the log.
-    refuse_area=0.08,
+    # Only the share bound moves, and only because 27 areas is a coarse
+    # denominator: one oblast is 3.7% of the count, so three of them tripping
+    # a 10% test says almost nothing about whether the sheet was understood.
+    # The size bound stays at the module's default and is not close to being
+    # tested -- the worst oblast is 0.7% short, where 5% is the refusal.
+    #
+    # An earlier version widened the size bound to 8% as well, on evidence
+    # from the rayons: 105 of 663 fell short by up to 6.9%. Those rayons are
+    # no longer published, so that evidence no longer describes anything this
+    # adapter emits, and the bound goes back.
     refuse_share=0.20,
     # The oblast rows are blank and the rayons beneath them are not, so the
     # first order is built by addition. That is what makes Ukraine joinable at

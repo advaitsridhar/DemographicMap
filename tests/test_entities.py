@@ -3040,6 +3040,14 @@ class UscbReader(unittest.TestCase):
         self.assertEqual(sheets["ethnicity"], ("Ethnicity", "ETH_"))
         self.assertEqual(sheets["religion"], ("Ethnicity", "RLG_"))
 
+    def test_ukraine_widens_only_the_bound_its_evidence_supports(self):
+        # The size bound was widened to 8% on rayon evidence -- 105 of 663
+        # short by up to 6.9%. Those rayons are no longer published, so it
+        # went back. The worst oblast is 0.7% short against a 5% refusal.
+        self.assertEqual(self.uscb.UKRAINE.refuse_area, self.uscb.REFUSE_AREA)
+        self.assertGreater(self.uscb.UKRAINE.refuse_share,
+                           self.uscb.REFUSE_SHARE)
+
     def test_a_widened_bound_is_a_claim_that_needs_its_evidence(self):
         # Ukraine is the only country that widens them, and the module's
         # defaults stay where they are for everyone else.
