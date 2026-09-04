@@ -1,103 +1,19 @@
-
-======================================================================
-mali-subnational-population-and-housing-data-tables-with-administrative-boundaries: 594,053 bytes, 12 sheets
-
---- Metadata: 159 rows ---
-  Metadata: Mali
-  Contents
-  One metadata tab describing 4 geospatial boundary files and 10 tables,
-  Geospatial Boundary Metadata
-  National Boundary (ML_GEOG_ADM0_2009_uscb_202211)
-  Title | Mali: National Boundary
-  Tags | Geospatial Boundaries, Mali, National Boundary, Country
-  Summary | The U.S. Census Bureau is providing national and subnational feature c
-  Description | National boundary feature class of Mali for joining (linking) to attri
-  Credits | Geospatial Boundaries: 
-International boundaries coincide with the Lar
-  Use Limitations | The international boundaries used for this feature class are derived f
-  Place Keywords | Mali, Country
-  Temporal Keywords | 2009
-  Theme Keywords | National Boundaries
-  Supplemental Information | The geodatabase feature class contains 1 polygon representing Mali's n
-  First-Order Administrative Divisions (ML_GEOG_ADM1_2009_uscb_202211)
-  Title | Mali: First-Order Administrative Divisions
-  Tags | Geospatial Boundaries, Mali, First-Order Administrative Divisions, Reg
-  Summary | The U.S. Census Bureau is providing subnational feature class boundari
-  Description | First-order administrative divisions feature class of Mali for joining
-
---- Data Dictionary: 300 rows ---
-  Data Dictionary: Mali
-  Standard Geographic Fields
-  Field Name | Field Alias | Field Description | Field Data Source
-  AREA_NAME | Country or subnational area name | Name of the country or subnational area (administrative division). | U.S. Board on Geographic Names, 2022; Institut National de la Statisti
-  GEO_CONCAT | Administrative division name concatenation | Concatenation of all administrative division names separated by unders | Population Division, U.S. Census Bureau
-  GEO_MATCH | Geographic match | Identical subnational area identifiers in the Excel table and geospati | Population Division, U.S. Census Bureau
-  CNTRY_NAME | Country name | Country name. | U.S. Board on Geographic Names
-  ADM1_NAME | First-order administrative division name | First-order administrative division name (ADM1), i.e., regions, distri | U.S. Board on Geographic Names, 2022; Institut National de la Statisti
-  ADM2_NAME | Second-order administrative division name | Second-order administrative division name (ADM2), i.e., circles, distr | U.S. Board on Geographic Names, 2022; Institut National de la Statisti
-  ADM3_NAME | Third-order administrative division name | Third-order administrative division name (ADM3), i.e., communes. | U.S. Board on Geographic Names, 2022; Institut National de la Statisti
-  ADM_LEVEL | Administrative level | Administrative level "0" (ADM0/country); administrative level "1" (ADM | Population Division, U.S. Census Bureau
-  USCBCMNT | Notes | Any notes about a country or subnational division, which may include f | Population Division, U.S. Census Bureau
-  GENC_CODE | GENC code | U.S. Government Geopolitical Entities, Names, and Codes (GENC) Standar | U.S. Government Geopolitical Entities, Names, and Codes (GENC), 2022
-  FIPS_CODE | FIPS code | U.S. Government Federal Information Processing System (FIPS) code (for | U.S. Government Federal Information Processing System (FIPS), 2022
-  NSO_CODE | National statistical office code | Code used by the Institut National de la Statistique (INSTAT) for a su | Institut National de la Statistique (INSTAT), 2009
-  NSO_NAME | National statistical office name | Name used by the Institut National de la Statistique (INSTAT) for a su | Institut National de la Statistique (INSTAT), 2009
-  Age-Sex
-  BTOTL | Both sexes total | Total population (both sexes). (April 01, 2009) | 4Ème Recensement Général de la Population et L'Habitat (RGPH) 2009 - T
-  B0004 | Both sexes 0 to 4 | Total population age 0 to 4 (both sexes). (April 01, 2009) | 4Ème Recensement Général de la Population et L'Habitat (RGPH) 2009 - R
-  B0509 | Both sexes 5 to 9 | Total population age 5 to 9 (both sexes). (April 01, 2009) | 4Ème Recensement Général de la Population et L'Habitat (RGPH) 2009 - R
-
---- Language: 60 rows, sexed=False ---
-  ADM_LEVEL 0: 1 areas  MALI
-  ADM_LEVEL 1: 9 areas  KAYES, KOULIKORO, SIKASSO, SÉGOU, MOPTI, TOMBOUCTOU, GAO, KIDAL, BAMAKO
-  ADM_LEVEL 2: 50 areas  KAYES, BAFOULABÉ, DIÉMA, KÉNIÉBA, KITA, NIORO, YÉLIMANÉ, KOULIKORO, ...
-  denominator: none found
-  22 group columns:
-    LNG_MLS  ->  'Main language spoken'
-    LNG_BAM  ->  'Bambara'
-    LNG_MAL  ->  'Malinke'
-    LNG_FULA  ->  'Fula/fulfulbe'
-    LNG_DJMA  ->  'Sonrai/djerma'
-    LNG_MARA  ->  'Maraka/soninke'
-    LNG_KASS  ->  'Kassonke'
-    LNG_SEN  ->  'Senufo'
-    LNG_DOGN  ->  'Dogon'
-    LNG_MOOR  ->  'Moorish'
-    LNG_TAQ  ->  'Tamasheq'
-    LNG_BOBO  ->  'Bobo'
-    LNG_DAFG  ->  'Dafing'
-    LNG_MKA  ->  'Minianka'
-    LNG_HAU  ->  'Hausa'
-    LNG_SMGO  ->  'Samogo'
-    LNG_BXZO  ->  'Bozo'
-    LNG_ARA  ->  'Arabic'
-    LNG_OTMLI  ->  'Other Mali languages'
-    LNG_OTAF  ->  'Other African languages'
-    LNG_OFRLG  ->  'Other foreign language'
-    LNG_NS  ->  'Language not stated'
-    LNG_MLS says: Main language spoken | The main language spoken . Original field name: "Main Language Spoken." (April 01, 2009) | Mali: Languages, 2022, Languages Spoken In Mali By Percentage (Admin Level 0-2)
-    LNG_BAM says: Bambara | The population that uses the Bambara language. Original field name: "Bambara." (April 01, 2009) | 4Ème Recensement Général de la Population et L'Habitat (RGPH) 2009 - Résultats Définitifs Tome 1: Série Démographique, 2013, Tableau S-3: Population Residente de 6 Ans et Plus Selon la Langue
-    LNG_MAL says: Malinke | Population that uses the Malinke language. Original field name: "Malinké." (April 01, 2009) | 4Ème Recensement Général de la Population et L'Habitat (RGPH) 2009 - Résultats Définitifs Tome 1: Série Démographique, 2013, Tableau S-3: Population Residente de 6 Ans et Plus Selon la Langue
-
-  whole country: MALI (level 0) no published total
-    LNG_BAM        Bambara                                5,756,951    0.00%
-    LNG_MAL        Malinke                                  569,131    0.00%
-    LNG_FULA       Fula/fulfulbe                            921,377    0.00%
-    LNG_DJMA       Sonrai/djerma                            585,544    0.00%
-    LNG_MARA       Maraka/soninke                           631,685    0.00%
-    LNG_KASS       Kassonke                                 118,400    0.00%
-    LNG_SEN        Senufo                                   225,511    0.00%
-    LNG_DOGN       Dogon                                    719,967    0.00%
-    LNG_MOOR       Moorish                                  111,546    0.00%
-    LNG_TAQ        Tamasheq                                 352,737    0.00%
-    LNG_BOBO       Bobo                                     210,065    0.00%
-    LNG_DAFG       Dafing                                    45,825    0.00%
-    LNG_MKA        Minianka                                 418,322    0.00%
-    LNG_HAU        Hausa                                      3,562    0.00%
-    LNG_SMGO       Samogo                                    47,386    0.00%
-    LNG_BXZO       Bozo                                     176,039    0.00%
-    LNG_ARA        Arabic                                    36,931    0.00%
-    LNG_OTMLI      Other Mali languages                      54,010    0.00%
-    LNG_OTAF       Other African languages                   20,532    0.00%
-    LNG_OFRLG      Other foreign language                    20,128    0.00%
-    LNG_NS         Language not stated                       83,663    0.00%
+Mali: https://data.humdata.org/dataset/54941a2a-9546-4885-a12c-80c34eaa20cf/resource/00e9ae0f-0822-4235-97b3-c2c1d125efb3/download/mali_uscb_202211.xlsx
+  594,053 bytes
+  Language: 60 rows, 22 groups, no published denominator
+    50 areas listed with no figures at all: ABEÏBARA, ANSANGO, BAFOULABÉ, BANAMBA, BANDIAGARA, BANKASS ...
+    admin1: 11,109,312 against the country's own 11,109,312 -- exactly
+  wrote data/processed/mali_region.json (32 kB)
+  9 areas: 9 admin1, 0 admin2
+Democratic Republic of the Congo: https://data.humdata.org/dataset/881bdaa3-6d4c-408b-88dc-aed0ecc0d119/resource/a4a72c31-af0d-4b0d-975b-9eadf6d5c103/download/democratic-republic-of-the-congo_uscb_202103.xlsx
+  297,896 bytes
+  Tribe and Religion [TRB_]: 191 rows, 105 groups, denominator 'Sample size'
+    164 rows skipped: another level, or no area name
+    admin1: 31,755 against the country's own 31,755 -- exactly
+    every one of 26 areas reaches its published total
+  Tribe and Religion [RLG_]: 191 rows, 9 groups, denominator 'Sample size'
+    164 rows skipped: another level, or no area name
+    admin1: 31,755 against the country's own 31,755 -- exactly
+    every one of 26 areas reaches its published total
+  wrote data/processed/drc_province.json (131 kB)
+  26 areas: 26 admin1

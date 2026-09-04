@@ -1,0 +1,5094 @@
+[
+  {
+    "id": "COD-bas-uélé",
+    "level": "admin1",
+    "name": "Bas-Uélé",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 51.0
+      },
+      {
+        "group": "Protestant",
+        "pct": 32.1
+      },
+      {
+        "group": "Other Christian",
+        "pct": 12.7
+      },
+      {
+        "group": "Without religion",
+        "pct": 2.1
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.0
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 0.5
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.4
+      },
+      {
+        "group": "No religion data",
+        "pct": 0.3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Zande",
+        "pct": 29.0
+      },
+      {
+        "group": "Other tribe",
+        "pct": 14.9
+      },
+      {
+        "group": "Baboa",
+        "pct": 14.0
+      },
+      {
+        "group": "Benja",
+        "pct": 12.9
+      },
+      {
+        "group": "Mangbetu",
+        "pct": 12.5
+      },
+      {
+        "group": "Budza",
+        "pct": 4.9
+      },
+      {
+        "group": "No tribe data",
+        "pct": 4.7
+      },
+      {
+        "group": "Northern Ngbandi",
+        "pct": 2.5
+      },
+      {
+        "group": "Nande",
+        "pct": 1.8
+      },
+      {
+        "group": "Budu",
+        "pct": 0.4
+      },
+      {
+        "group": "Mayogo",
+        "pct": 0.4
+      },
+      {
+        "group": "Logo",
+        "pct": 0.4
+      },
+      {
+        "group": "Mongo",
+        "pct": 0.3
+      },
+      {
+        "group": "Luba-Katanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Mbala",
+        "pct": 0.1
+      },
+      {
+        "group": "Yansi",
+        "pct": 0.1
+      },
+      {
+        "group": "Lega-Mwenga",
+        "pct": 0.1
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.1
+      },
+      {
+        "group": "Lendu",
+        "pct": 0.1
+      },
+      {
+        "group": "Bakwanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Ndengese",
+        "pct": 0.1
+      },
+      {
+        "group": "Vira",
+        "pct": 0.1
+      },
+      {
+        "group": "Bakongo",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-haut-katanga",
+    "level": "admin1",
+    "name": "Haut-Katanga",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 33.8
+      },
+      {
+        "group": "Catholic",
+        "pct": 30.9
+      },
+      {
+        "group": "Other Christian",
+        "pct": 23.7
+      },
+      {
+        "group": "Without religion",
+        "pct": 5.7
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.9
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 0.8
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.8
+      },
+      {
+        "group": "Animist",
+        "pct": 0.2
+      },
+      {
+        "group": "No religion data",
+        "pct": 0.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Bemba",
+        "pct": 20.2
+      },
+      {
+        "group": "Luba-Katanga",
+        "pct": 12.9
+      },
+      {
+        "group": "Luba",
+        "pct": 11.0
+      },
+      {
+        "group": "Other tribe",
+        "pct": 10.8
+      },
+      {
+        "group": "Sanga",
+        "pct": 10.4
+      },
+      {
+        "group": "Lunda",
+        "pct": 5.7
+      },
+      {
+        "group": "Kaonde",
+        "pct": 4.7
+      },
+      {
+        "group": "Zela",
+        "pct": 3.8
+      },
+      {
+        "group": "Hemba",
+        "pct": 3.5
+      },
+      {
+        "group": "Chokwe",
+        "pct": 2.6
+      },
+      {
+        "group": "No tribe data",
+        "pct": 2.4
+      },
+      {
+        "group": "Luba-Lulua",
+        "pct": 1.8
+      },
+      {
+        "group": "Taabwa",
+        "pct": 1.2
+      },
+      {
+        "group": "Songe",
+        "pct": 1.1
+      },
+      {
+        "group": "Bakwa Kalonji",
+        "pct": 1.0
+      },
+      {
+        "group": "Bakwa Mulumba",
+        "pct": 0.6
+      },
+      {
+        "group": "Ndembe",
+        "pct": 0.6
+      },
+      {
+        "group": "Tetela",
+        "pct": 0.5
+      },
+      {
+        "group": "Bembe",
+        "pct": 0.5
+      },
+      {
+        "group": "Tshoko",
+        "pct": 0.5
+      },
+      {
+        "group": "Kusu",
+        "pct": 0.4
+      },
+      {
+        "group": "Kanioka",
+        "pct": 0.4
+      },
+      {
+        "group": "Bangobango",
+        "pct": 0.4
+      },
+      {
+        "group": "Lega-Mwenga",
+        "pct": 0.3
+      },
+      {
+        "group": "Bena-Kanioka",
+        "pct": 0.3
+      },
+      {
+        "group": "Bushoong",
+        "pct": 0.3
+      },
+      {
+        "group": "Yansi",
+        "pct": 0.2
+      },
+      {
+        "group": "Hutu",
+        "pct": 0.2
+      },
+      {
+        "group": "Bakongo",
+        "pct": 0.2
+      },
+      {
+        "group": "Mongo",
+        "pct": 0.1
+      },
+      {
+        "group": "Northern Ngbandi",
+        "pct": 0.1
+      },
+      {
+        "group": "Yaka",
+        "pct": 0.1
+      },
+      {
+        "group": "Shi",
+        "pct": 0.1
+      },
+      {
+        "group": "Ndibu",
+        "pct": 0.1
+      },
+      {
+        "group": "Budza",
+        "pct": 0.1
+      },
+      {
+        "group": "Zande",
+        "pct": 0.1
+      },
+      {
+        "group": "Ntandu",
+        "pct": 0.1
+      },
+      {
+        "group": "Mbunda",
+        "pct": 0.1
+      },
+      {
+        "group": "Kete",
+        "pct": 0.1
+      },
+      {
+        "group": "Sakata",
+        "pct": 0.1
+      },
+      {
+        "group": "Teke",
+        "pct": 0.1
+      },
+      {
+        "group": "Phende",
+        "pct": 0.1
+      },
+      {
+        "group": "Suku",
+        "pct": 0.1
+      },
+      {
+        "group": "Luntu",
+        "pct": 0.1
+      },
+      {
+        "group": "Budu",
+        "pct": 0.1
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.1
+      },
+      {
+        "group": "Besi Ngombe",
+        "pct": 0.1
+      },
+      {
+        "group": "Baboa",
+        "pct": 0.1
+      },
+      {
+        "group": "Kutshu",
+        "pct": 0.1
+      },
+      {
+        "group": "Bakwanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Benye Nonda",
+        "pct": 0.1
+      },
+      {
+        "group": "Mono",
+        "pct": 0.1
+      },
+      {
+        "group": "Vira",
+        "pct": 0.1
+      },
+      {
+        "group": "Hunde",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-haut-lomami",
+    "level": "admin1",
+    "name": "Haut-Lomami",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 47.8
+      },
+      {
+        "group": "Catholic",
+        "pct": 19.1
+      },
+      {
+        "group": "Other Christian",
+        "pct": 18.4
+      },
+      {
+        "group": "Without religion",
+        "pct": 6.0
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.5
+      },
+      {
+        "group": "Animist",
+        "pct": 1.9
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 1.0
+      },
+      {
+        "group": "No religion data",
+        "pct": 0.3
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Luba-Katanga",
+        "pct": 76.9
+      },
+      {
+        "group": "Other tribe",
+        "pct": 6.6
+      },
+      {
+        "group": "Kanioka",
+        "pct": 3.3
+      },
+      {
+        "group": "Luba",
+        "pct": 2.9
+      },
+      {
+        "group": "Bena-Kanioka",
+        "pct": 2.4
+      },
+      {
+        "group": "No tribe data",
+        "pct": 1.6
+      },
+      {
+        "group": "Lunda",
+        "pct": 1.4
+      },
+      {
+        "group": "Luba-Lulua",
+        "pct": 1.3
+      },
+      {
+        "group": "Chokwe",
+        "pct": 1.0
+      },
+      {
+        "group": "Bakwa Kalonji",
+        "pct": 0.7
+      },
+      {
+        "group": "Songe",
+        "pct": 0.4
+      },
+      {
+        "group": "Sanga",
+        "pct": 0.4
+      },
+      {
+        "group": "Bakwa Mulumba",
+        "pct": 0.4
+      },
+      {
+        "group": "Bakwanga",
+        "pct": 0.3
+      },
+      {
+        "group": "Manyanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Tshoko",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-haut-uélé",
+    "level": "admin1",
+    "name": "Haut-Uélé",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 66.5
+      },
+      {
+        "group": "Protestant",
+        "pct": 24.3
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.6
+      },
+      {
+        "group": "Without religion",
+        "pct": 1.6
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.6
+      },
+      {
+        "group": "Animist",
+        "pct": 0.6
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 0.4
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.4
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Budu",
+        "pct": 20.8
+      },
+      {
+        "group": "Mayogo",
+        "pct": 19.2
+      },
+      {
+        "group": "Zande",
+        "pct": 16.9
+      },
+      {
+        "group": "Logo",
+        "pct": 16.2
+      },
+      {
+        "group": "Other tribe",
+        "pct": 14.4
+      },
+      {
+        "group": "Mamvu",
+        "pct": 8.5
+      },
+      {
+        "group": "Baboa",
+        "pct": 1.2
+      },
+      {
+        "group": "No tribe data",
+        "pct": 0.7
+      },
+      {
+        "group": "Budza",
+        "pct": 0.5
+      },
+      {
+        "group": "Lugbala",
+        "pct": 0.4
+      },
+      {
+        "group": "Mangbetu",
+        "pct": 0.2
+      },
+      {
+        "group": "Nande",
+        "pct": 0.1
+      },
+      {
+        "group": "Luba-Lulua",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngombe",
+        "pct": 0.1
+      },
+      {
+        "group": "Tetela",
+        "pct": 0.1
+      },
+      {
+        "group": "Kusu",
+        "pct": 0.1
+      },
+      {
+        "group": "Phende",
+        "pct": 0.1
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.1
+      },
+      {
+        "group": "Mukumu",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-ituri",
+    "level": "admin1",
+    "name": "Ituri",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 64.5
+      },
+      {
+        "group": "Protestant",
+        "pct": 26.5
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.2
+      },
+      {
+        "group": "Without religion",
+        "pct": 1.8
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.5
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.9
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 0.5
+      },
+      {
+        "group": "Animist",
+        "pct": 0.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Alur",
+        "pct": 31.1
+      },
+      {
+        "group": "Other tribe",
+        "pct": 16.3
+      },
+      {
+        "group": "Lendu",
+        "pct": 14.5
+      },
+      {
+        "group": "Nyari",
+        "pct": 10.9
+      },
+      {
+        "group": "Nande",
+        "pct": 10.7
+      },
+      {
+        "group": "Lugbala",
+        "pct": 8.6
+      },
+      {
+        "group": "No tribe data",
+        "pct": 3.3
+      },
+      {
+        "group": "Budu",
+        "pct": 1.5
+      },
+      {
+        "group": "Luba",
+        "pct": 0.5
+      },
+      {
+        "group": "Logo",
+        "pct": 0.5
+      },
+      {
+        "group": "Zande",
+        "pct": 0.4
+      },
+      {
+        "group": "Tetela",
+        "pct": 0.3
+      },
+      {
+        "group": "Luba-Katanga",
+        "pct": 0.2
+      },
+      {
+        "group": "Shi",
+        "pct": 0.2
+      },
+      {
+        "group": "Lega-Mwenga",
+        "pct": 0.2
+      },
+      {
+        "group": "Bakongo",
+        "pct": 0.2
+      },
+      {
+        "group": "Luba-Lulua",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngombe",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngbaka",
+        "pct": 0.1
+      },
+      {
+        "group": "Bakwa Kalonji",
+        "pct": 0.1
+      },
+      {
+        "group": "Kusu",
+        "pct": 0.1
+      },
+      {
+        "group": "Phende",
+        "pct": 0.1
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.1
+      },
+      {
+        "group": "Bushoong",
+        "pct": 0.1
+      },
+      {
+        "group": "Mukumu",
+        "pct": 0.1
+      },
+      {
+        "group": "Poke",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-kasaï",
+    "level": "admin1",
+    "name": "Kasaï",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other Christian",
+        "pct": 42.1
+      },
+      {
+        "group": "Protestant",
+        "pct": 18.3
+      },
+      {
+        "group": "Catholic",
+        "pct": 16.8
+      },
+      {
+        "group": "Without religion",
+        "pct": 6.6
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 5.2
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.8
+      },
+      {
+        "group": "Muslim",
+        "pct": 3.9
+      },
+      {
+        "group": "Animist",
+        "pct": 2.3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Luba-Lulua",
+        "pct": 31.0
+      },
+      {
+        "group": "Lele",
+        "pct": 8.8
+      },
+      {
+        "group": "Other tribe",
+        "pct": 8.1
+      },
+      {
+        "group": "Bushoong",
+        "pct": 8.0
+      },
+      {
+        "group": "Ndengese",
+        "pct": 7.3
+      },
+      {
+        "group": "Kete",
+        "pct": 7.2
+      },
+      {
+        "group": "Luba",
+        "pct": 5.4
+      },
+      {
+        "group": "Selele",
+        "pct": 5.4
+      },
+      {
+        "group": "Tshoko",
+        "pct": 4.1
+      },
+      {
+        "group": "Phende",
+        "pct": 3.6
+      },
+      {
+        "group": "Chokwe",
+        "pct": 2.2
+      },
+      {
+        "group": "Plains Bira",
+        "pct": 2.2
+      },
+      {
+        "group": "Luntu",
+        "pct": 1.2
+      },
+      {
+        "group": "Tetela",
+        "pct": 1.0
+      },
+      {
+        "group": "Bakwa Kalonji",
+        "pct": 0.6
+      },
+      {
+        "group": "No tribe data",
+        "pct": 0.6
+      },
+      {
+        "group": "Bakwa Dishi",
+        "pct": 0.4
+      },
+      {
+        "group": "Songe",
+        "pct": 0.2
+      },
+      {
+        "group": "Ngongo",
+        "pct": 0.2
+      },
+      {
+        "group": "Bakongo",
+        "pct": 0.2
+      },
+      {
+        "group": "Luba-Katanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Yombe",
+        "pct": 0.1
+      },
+      {
+        "group": "Mongo",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngombe",
+        "pct": 0.1
+      },
+      {
+        "group": "Yaka",
+        "pct": 0.1
+      },
+      {
+        "group": "Lunda",
+        "pct": 0.1
+      },
+      {
+        "group": "Mbala",
+        "pct": 0.1
+      },
+      {
+        "group": "Yansi",
+        "pct": 0.1
+      },
+      {
+        "group": "Ndibu",
+        "pct": 0.1
+      },
+      {
+        "group": "Budza",
+        "pct": 0.1
+      },
+      {
+        "group": "Mbunda",
+        "pct": 0.1
+      },
+      {
+        "group": "Bakwa Mulumba",
+        "pct": 0.1
+      },
+      {
+        "group": "Taabwa",
+        "pct": 0.1
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.1
+      },
+      {
+        "group": "Hemba",
+        "pct": 0.1
+      },
+      {
+        "group": "Kutshu",
+        "pct": 0.1
+      },
+      {
+        "group": "Mba",
+        "pct": 0.1
+      },
+      {
+        "group": "Bakwanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Kwese",
+        "pct": 0.1
+      },
+      {
+        "group": "Kanioka",
+        "pct": 0.1
+      },
+      {
+        "group": "Vira",
+        "pct": 0.1
+      },
+      {
+        "group": "Bangobango",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-kasaï-central",
+    "level": "admin1",
+    "name": "Kasaï Central",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other Christian",
+        "pct": 37.1
+      },
+      {
+        "group": "Catholic",
+        "pct": 22.0
+      },
+      {
+        "group": "Protestant",
+        "pct": 15.8
+      },
+      {
+        "group": "Without religion",
+        "pct": 9.6
+      },
+      {
+        "group": "Other religion",
+        "pct": 9.1
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 3.7
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.6
+      },
+      {
+        "group": "Animist",
+        "pct": 1.0
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Luba-Lulua",
+        "pct": 72.6
+      },
+      {
+        "group": "Luntu",
+        "pct": 14.9
+      },
+      {
+        "group": "Kete",
+        "pct": 7.3
+      },
+      {
+        "group": "Other tribe",
+        "pct": 1.7
+      },
+      {
+        "group": "Luba",
+        "pct": 0.9
+      },
+      {
+        "group": "No tribe data",
+        "pct": 0.6
+      },
+      {
+        "group": "Tetela",
+        "pct": 0.5
+      },
+      {
+        "group": "Lunda",
+        "pct": 0.3
+      },
+      {
+        "group": "Bakwa Kalonji",
+        "pct": 0.3
+      },
+      {
+        "group": "Songe",
+        "pct": 0.2
+      },
+      {
+        "group": "Lele",
+        "pct": 0.2
+      },
+      {
+        "group": "Bakwa Mulumba",
+        "pct": 0.1
+      },
+      {
+        "group": "Bushoong",
+        "pct": 0.1
+      },
+      {
+        "group": "Kutshu",
+        "pct": 0.1
+      },
+      {
+        "group": "Bakwanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Kanioka",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-kasaï-oriental",
+    "level": "admin1",
+    "name": "Kasaï Oriental",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other Christian",
+        "pct": 54.4
+      },
+      {
+        "group": "Catholic",
+        "pct": 15.0
+      },
+      {
+        "group": "Protestant",
+        "pct": 10.8
+      },
+      {
+        "group": "Other religion",
+        "pct": 9.5
+      },
+      {
+        "group": "Without religion",
+        "pct": 8.2
+      },
+      {
+        "group": "Animist",
+        "pct": 0.7
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 0.6
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Bakwa Kalonji",
+        "pct": 21.3
+      },
+      {
+        "group": "Other tribe",
+        "pct": 21.3
+      },
+      {
+        "group": "Luba",
+        "pct": 18.8
+      },
+      {
+        "group": "Bakwa Dishi",
+        "pct": 17.9
+      },
+      {
+        "group": "Bakwanga",
+        "pct": 7.6
+      },
+      {
+        "group": "No tribe data",
+        "pct": 5.8
+      },
+      {
+        "group": "Bakwa Mulumba",
+        "pct": 4.5
+      },
+      {
+        "group": "Songe",
+        "pct": 0.6
+      },
+      {
+        "group": "Bena-Kanioka",
+        "pct": 0.6
+      },
+      {
+        "group": "Luba-Lulua",
+        "pct": 0.4
+      },
+      {
+        "group": "Ngombe",
+        "pct": 0.2
+      },
+      {
+        "group": "Kanioka",
+        "pct": 0.2
+      },
+      {
+        "group": "Tetela",
+        "pct": 0.1
+      },
+      {
+        "group": "Shi",
+        "pct": 0.1
+      },
+      {
+        "group": "Chokwe",
+        "pct": 0.1
+      },
+      {
+        "group": "Nyanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Hutu",
+        "pct": 0.1
+      },
+      {
+        "group": "Bushoong",
+        "pct": 0.1
+      },
+      {
+        "group": "Benye Nonda",
+        "pct": 0.1
+      },
+      {
+        "group": "Lemfu",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-kinshasa",
+    "level": "admin1",
+    "name": "Kinshasa",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other Christian",
+        "pct": 36.8
+      },
+      {
+        "group": "Catholic",
+        "pct": 31.8
+      },
+      {
+        "group": "Protestant",
+        "pct": 17.9
+      },
+      {
+        "group": "Without religion",
+        "pct": 4.2
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 3.9
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.8
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.8
+      },
+      {
+        "group": "Animist",
+        "pct": 0.7
+      },
+      {
+        "group": "No religion data",
+        "pct": 0.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Other tribe",
+        "pct": 18.2
+      },
+      {
+        "group": "Ntandu",
+        "pct": 9.0
+      },
+      {
+        "group": "Luba",
+        "pct": 5.8
+      },
+      {
+        "group": "Ndibu",
+        "pct": 5.4
+      },
+      {
+        "group": "Mbala",
+        "pct": 5.0
+      },
+      {
+        "group": "Yaka",
+        "pct": 4.8
+      },
+      {
+        "group": "Yombe",
+        "pct": 3.8
+      },
+      {
+        "group": "No tribe data",
+        "pct": 3.8
+      },
+      {
+        "group": "Yansi",
+        "pct": 3.5
+      },
+      {
+        "group": "Mongo",
+        "pct": 2.8
+      },
+      {
+        "group": "Nyanga",
+        "pct": 2.7
+      },
+      {
+        "group": "Luba-Lulua",
+        "pct": 2.4
+      },
+      {
+        "group": "Teke",
+        "pct": 2.2
+      },
+      {
+        "group": "Suku",
+        "pct": 2.2
+      },
+      {
+        "group": "Manyanga",
+        "pct": 1.9
+      },
+      {
+        "group": "Sakata",
+        "pct": 1.8
+      },
+      {
+        "group": "Ngombe",
+        "pct": 1.7
+      },
+      {
+        "group": "Tetela",
+        "pct": 1.7
+      },
+      {
+        "group": "Besi Ngombe",
+        "pct": 1.6
+      },
+      {
+        "group": "Mbata",
+        "pct": 1.4
+      },
+      {
+        "group": "Budza",
+        "pct": 1.1
+      },
+      {
+        "group": "Bakongo",
+        "pct": 1.1
+      },
+      {
+        "group": "Phende",
+        "pct": 1.0
+      },
+      {
+        "group": "Songe",
+        "pct": 0.9
+      },
+      {
+        "group": "Lunda",
+        "pct": 0.9
+      },
+      {
+        "group": "Bakwa Kalonji",
+        "pct": 0.9
+      },
+      {
+        "group": "Mbunda",
+        "pct": 0.9
+      },
+      {
+        "group": "Lemfu",
+        "pct": 0.9
+      },
+      {
+        "group": "Luba-Katanga",
+        "pct": 0.8
+      },
+      {
+        "group": "Northern Ngbandi",
+        "pct": 0.7
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.7
+      },
+      {
+        "group": "Mboma",
+        "pct": 0.6
+      },
+      {
+        "group": "Lega-Mwenga",
+        "pct": 0.5
+      },
+      {
+        "group": "Bakwa Mulumba",
+        "pct": 0.4
+      },
+      {
+        "group": "Ngongo",
+        "pct": 0.4
+      },
+      {
+        "group": "Shi",
+        "pct": 0.3
+      },
+      {
+        "group": "Kusu",
+        "pct": 0.3
+      },
+      {
+        "group": "Sengele",
+        "pct": 0.3
+      },
+      {
+        "group": "Hemba",
+        "pct": 0.3
+      },
+      {
+        "group": "Ntomba",
+        "pct": 0.3
+      },
+      {
+        "group": "Bakwanga",
+        "pct": 0.3
+      },
+      {
+        "group": "Nande",
+        "pct": 0.2
+      },
+      {
+        "group": "Bakwa Dishi",
+        "pct": 0.2
+      },
+      {
+        "group": "Bena-Kanioka",
+        "pct": 0.2
+      },
+      {
+        "group": "Hutu",
+        "pct": 0.2
+      },
+      {
+        "group": "Pelende",
+        "pct": 0.2
+      },
+      {
+        "group": "Baboa",
+        "pct": 0.2
+      },
+      {
+        "group": "Poke",
+        "pct": 0.2
+      },
+      {
+        "group": "Nunu",
+        "pct": 0.2
+      },
+      {
+        "group": "Lengola",
+        "pct": 0.2
+      },
+      {
+        "group": "Mba",
+        "pct": 0.2
+      },
+      {
+        "group": "Ekonda",
+        "pct": 0.2
+      },
+      {
+        "group": "Ndembe",
+        "pct": 0.2
+      },
+      {
+        "group": "Ngbaka",
+        "pct": 0.1
+      },
+      {
+        "group": "Sanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Chokwe",
+        "pct": 0.1
+      },
+      {
+        "group": "Kete",
+        "pct": 0.1
+      },
+      {
+        "group": "Luntu",
+        "pct": 0.1
+      },
+      {
+        "group": "Budu",
+        "pct": 0.1
+      },
+      {
+        "group": "Boma",
+        "pct": 0.1
+      },
+      {
+        "group": "Songola",
+        "pct": 0.1
+      },
+      {
+        "group": "Havu",
+        "pct": 0.1
+      },
+      {
+        "group": "Bushoong",
+        "pct": 0.1
+      },
+      {
+        "group": "Mukumu",
+        "pct": 0.1
+      },
+      {
+        "group": "Kutshu",
+        "pct": 0.1
+      },
+      {
+        "group": "Lele",
+        "pct": 0.1
+      },
+      {
+        "group": "Kwese",
+        "pct": 0.1
+      },
+      {
+        "group": "Tshoko",
+        "pct": 0.1
+      },
+      {
+        "group": "Libinja",
+        "pct": 0.1
+      },
+      {
+        "group": "Vira",
+        "pct": 0.1
+      },
+      {
+        "group": "Selele",
+        "pct": 0.1
+      },
+      {
+        "group": "Bangobango",
+        "pct": 0.1
+      },
+      {
+        "group": "Lega-Shabunda",
+        "pct": 0.0
+      },
+      {
+        "group": "Bemba",
+        "pct": 0.0
+      },
+      {
+        "group": "Fuliiru",
+        "pct": 0.0
+      },
+      {
+        "group": "Taabwa",
+        "pct": 0.0
+      },
+      {
+        "group": "Lendu",
+        "pct": 0.0
+      },
+      {
+        "group": "Banyarwanda",
+        "pct": 0.0
+      },
+      {
+        "group": "Ndengese",
+        "pct": 0.0
+      },
+      {
+        "group": "Babango",
+        "pct": 0.0
+      },
+      {
+        "group": "Hunde",
+        "pct": 0.0
+      },
+      {
+        "group": "Lombo",
+        "pct": 0.0
+      },
+      {
+        "group": "Zela",
+        "pct": 0.0
+      },
+      {
+        "group": "Bangando",
+        "pct": 0.0
+      },
+      {
+        "group": "Mamvu",
+        "pct": 0.0
+      },
+      {
+        "group": "Mpama",
+        "pct": 0.0
+      },
+      {
+        "group": "Kundu",
+        "pct": 0.0
+      },
+      {
+        "group": "Ngengele",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-kongo-central",
+    "level": "admin1",
+    "name": "Kongo Central",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 38.2
+      },
+      {
+        "group": "Protestant",
+        "pct": 22.3
+      },
+      {
+        "group": "Other Christian",
+        "pct": 19.6
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 10.5
+      },
+      {
+        "group": "Without religion",
+        "pct": 5.1
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.2
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.6
+      },
+      {
+        "group": "Animist",
+        "pct": 0.5
+      },
+      {
+        "group": "No religion data",
+        "pct": 0.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Yombe",
+        "pct": 43.6
+      },
+      {
+        "group": "Manyanga",
+        "pct": 13.6
+      },
+      {
+        "group": "Ndibu",
+        "pct": 11.8
+      },
+      {
+        "group": "Besi Ngombe",
+        "pct": 5.2
+      },
+      {
+        "group": "Mbata",
+        "pct": 4.2
+      },
+      {
+        "group": "Ntandu",
+        "pct": 4.1
+      },
+      {
+        "group": "Other tribe",
+        "pct": 3.9
+      },
+      {
+        "group": "Mboma",
+        "pct": 3.3
+      },
+      {
+        "group": "Lemfu",
+        "pct": 2.2
+      },
+      {
+        "group": "Nyanga",
+        "pct": 2.0
+      },
+      {
+        "group": "No tribe data",
+        "pct": 0.9
+      },
+      {
+        "group": "Ngombe",
+        "pct": 0.7
+      },
+      {
+        "group": "Luba",
+        "pct": 0.6
+      },
+      {
+        "group": "Bakongo",
+        "pct": 0.6
+      },
+      {
+        "group": "Mbala",
+        "pct": 0.3
+      },
+      {
+        "group": "Yansi",
+        "pct": 0.3
+      },
+      {
+        "group": "Luba-Katanga",
+        "pct": 0.2
+      },
+      {
+        "group": "Mongo",
+        "pct": 0.2
+      },
+      {
+        "group": "Yaka",
+        "pct": 0.2
+      },
+      {
+        "group": "Tetela",
+        "pct": 0.2
+      },
+      {
+        "group": "Songe",
+        "pct": 0.2
+      },
+      {
+        "group": "Ekonda",
+        "pct": 0.2
+      },
+      {
+        "group": "Luba-Lulua",
+        "pct": 0.1
+      },
+      {
+        "group": "Northern Ngbandi",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngbaka",
+        "pct": 0.1
+      },
+      {
+        "group": "Lunda",
+        "pct": 0.1
+      },
+      {
+        "group": "Shi",
+        "pct": 0.1
+      },
+      {
+        "group": "Lega-Mwenga",
+        "pct": 0.1
+      },
+      {
+        "group": "Sakata",
+        "pct": 0.1
+      },
+      {
+        "group": "Teke",
+        "pct": 0.1
+      },
+      {
+        "group": "Phende",
+        "pct": 0.1
+      },
+      {
+        "group": "Suku",
+        "pct": 0.1
+      },
+      {
+        "group": "Bakwa Mulumba",
+        "pct": 0.1
+      },
+      {
+        "group": "Taabwa",
+        "pct": 0.1
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.1
+      },
+      {
+        "group": "Boma",
+        "pct": 0.1
+      },
+      {
+        "group": "Pelende",
+        "pct": 0.1
+      },
+      {
+        "group": "Bushoong",
+        "pct": 0.1
+      },
+      {
+        "group": "Baboa",
+        "pct": 0.1
+      },
+      {
+        "group": "Kutshu",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngongo",
+        "pct": 0.1
+      },
+      {
+        "group": "Kanioka",
+        "pct": 0.1
+      },
+      {
+        "group": "Tshoko",
+        "pct": 0.1
+      },
+      {
+        "group": "Ndembe",
+        "pct": 0.1
+      },
+      {
+        "group": "Selele",
+        "pct": 0.1
+      },
+      {
+        "group": "Lombo",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-kwango",
+    "level": "admin1",
+    "name": "Kwango",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 39.5
+      },
+      {
+        "group": "Other Christian",
+        "pct": 28.8
+      },
+      {
+        "group": "Protestant",
+        "pct": 22.7
+      },
+      {
+        "group": "Without religion",
+        "pct": 4.4
+      },
+      {
+        "group": "Other religion",
+        "pct": 2.3
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 2.0
+      },
+      {
+        "group": "Animist",
+        "pct": 0.2
+      },
+      {
+        "group": "No religion data",
+        "pct": 0.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Yaka",
+        "pct": 50.0
+      },
+      {
+        "group": "Pelende",
+        "pct": 12.8
+      },
+      {
+        "group": "Suku",
+        "pct": 12.7
+      },
+      {
+        "group": "Other tribe",
+        "pct": 7.2
+      },
+      {
+        "group": "Chokwe",
+        "pct": 5.7
+      },
+      {
+        "group": "Mbala",
+        "pct": 2.6
+      },
+      {
+        "group": "Lunda",
+        "pct": 2.4
+      },
+      {
+        "group": "Tshoko",
+        "pct": 1.6
+      },
+      {
+        "group": "No tribe data",
+        "pct": 1.3
+      },
+      {
+        "group": "Luba",
+        "pct": 0.6
+      },
+      {
+        "group": "Yansi",
+        "pct": 0.6
+      },
+      {
+        "group": "Ngongo",
+        "pct": 0.6
+      },
+      {
+        "group": "Mbunda",
+        "pct": 0.5
+      },
+      {
+        "group": "Phende",
+        "pct": 0.4
+      },
+      {
+        "group": "Kwese",
+        "pct": 0.2
+      },
+      {
+        "group": "Ngombe",
+        "pct": 0.1
+      },
+      {
+        "group": "Tetela",
+        "pct": 0.1
+      },
+      {
+        "group": "Songe",
+        "pct": 0.1
+      },
+      {
+        "group": "Ntandu",
+        "pct": 0.1
+      },
+      {
+        "group": "Manyanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Kusu",
+        "pct": 0.1
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.1
+      },
+      {
+        "group": "Mbata",
+        "pct": 0.1
+      },
+      {
+        "group": "Mba",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-kwilu",
+    "level": "admin1",
+    "name": "Kwilu",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 44.1
+      },
+      {
+        "group": "Protestant",
+        "pct": 21.2
+      },
+      {
+        "group": "Other Christian",
+        "pct": 20.6
+      },
+      {
+        "group": "Without religion",
+        "pct": 5.3
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.8
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 3.1
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.9
+      },
+      {
+        "group": "Animist",
+        "pct": 0.8
+      },
+      {
+        "group": "No religion data",
+        "pct": 0.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Yansi",
+        "pct": 20.1
+      },
+      {
+        "group": "Mbala",
+        "pct": 18.7
+      },
+      {
+        "group": "Mbunda",
+        "pct": 17.7
+      },
+      {
+        "group": "Other tribe",
+        "pct": 12.8
+      },
+      {
+        "group": "Kwese",
+        "pct": 6.7
+      },
+      {
+        "group": "Ngongo",
+        "pct": 6.5
+      },
+      {
+        "group": "Phende",
+        "pct": 3.2
+      },
+      {
+        "group": "Sakata",
+        "pct": 3.1
+      },
+      {
+        "group": "Teke",
+        "pct": 3.0
+      },
+      {
+        "group": "Boma",
+        "pct": 2.1
+      },
+      {
+        "group": "Mba",
+        "pct": 1.0
+      },
+      {
+        "group": "No tribe data",
+        "pct": 0.9
+      },
+      {
+        "group": "Luba",
+        "pct": 0.8
+      },
+      {
+        "group": "Yaka",
+        "pct": 0.7
+      },
+      {
+        "group": "Suku",
+        "pct": 0.6
+      },
+      {
+        "group": "Tetela",
+        "pct": 0.3
+      },
+      {
+        "group": "Ntandu",
+        "pct": 0.2
+      },
+      {
+        "group": "Nande",
+        "pct": 0.1
+      },
+      {
+        "group": "Luba-Lulua",
+        "pct": 0.1
+      },
+      {
+        "group": "Mongo",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngombe",
+        "pct": 0.1
+      },
+      {
+        "group": "Lunda",
+        "pct": 0.1
+      },
+      {
+        "group": "Budza",
+        "pct": 0.1
+      },
+      {
+        "group": "Kusu",
+        "pct": 0.1
+      },
+      {
+        "group": "Nyanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Mayogo",
+        "pct": 0.1
+      },
+      {
+        "group": "Mboma",
+        "pct": 0.1
+      },
+      {
+        "group": "Songola",
+        "pct": 0.1
+      },
+      {
+        "group": "Nyari",
+        "pct": 0.1
+      },
+      {
+        "group": "Ntomba",
+        "pct": 0.1
+      },
+      {
+        "group": "Nunu",
+        "pct": 0.1
+      },
+      {
+        "group": "Tshoko",
+        "pct": 0.1
+      },
+      {
+        "group": "Ekonda",
+        "pct": 0.1
+      },
+      {
+        "group": "Selele",
+        "pct": 0.1
+      },
+      {
+        "group": "Plains Bira",
+        "pct": 0.1
+      },
+      {
+        "group": "Kundu",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-lomami",
+    "level": "admin1",
+    "name": "Lomami",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other Christian",
+        "pct": 44.0
+      },
+      {
+        "group": "Catholic",
+        "pct": 25.5
+      },
+      {
+        "group": "Protestant",
+        "pct": 15.3
+      },
+      {
+        "group": "Without religion",
+        "pct": 5.3
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 4.5
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.1
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.0
+      },
+      {
+        "group": "Animist",
+        "pct": 0.3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Songe",
+        "pct": 33.8
+      },
+      {
+        "group": "Luba",
+        "pct": 12.2
+      },
+      {
+        "group": "Bena-Kanioka",
+        "pct": 11.5
+      },
+      {
+        "group": "Bakwa Mulumba",
+        "pct": 10.0
+      },
+      {
+        "group": "Other tribe",
+        "pct": 9.8
+      },
+      {
+        "group": "Kete",
+        "pct": 7.0
+      },
+      {
+        "group": "Bakwa Kalonji",
+        "pct": 5.5
+      },
+      {
+        "group": "Kanioka",
+        "pct": 5.1
+      },
+      {
+        "group": "Luba-Lulua",
+        "pct": 1.3
+      },
+      {
+        "group": "No tribe data",
+        "pct": 0.9
+      },
+      {
+        "group": "Bakwa Dishi",
+        "pct": 0.8
+      },
+      {
+        "group": "Luba-Katanga",
+        "pct": 0.5
+      },
+      {
+        "group": "Bakwanga",
+        "pct": 0.5
+      },
+      {
+        "group": "Lunda",
+        "pct": 0.2
+      },
+      {
+        "group": "Luntu",
+        "pct": 0.2
+      },
+      {
+        "group": "Bushoong",
+        "pct": 0.2
+      },
+      {
+        "group": "Ndembe",
+        "pct": 0.2
+      },
+      {
+        "group": "Nande",
+        "pct": 0.1
+      },
+      {
+        "group": "Tetela",
+        "pct": 0.1
+      },
+      {
+        "group": "Bemba",
+        "pct": 0.1
+      },
+      {
+        "group": "Bembe",
+        "pct": 0.1
+      },
+      {
+        "group": "Benye Nonda",
+        "pct": 0.1
+      },
+      {
+        "group": "Bakongo",
+        "pct": 0.1
+      },
+      {
+        "group": "Lombo",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-lualaba",
+    "level": "admin1",
+    "name": "Lualaba",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 32.9
+      },
+      {
+        "group": "Catholic",
+        "pct": 28.8
+      },
+      {
+        "group": "Other Christian",
+        "pct": 20.8
+      },
+      {
+        "group": "Without religion",
+        "pct": 6.8
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.2
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 4.8
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.5
+      },
+      {
+        "group": "Animist",
+        "pct": 0.2
+      },
+      {
+        "group": "No religion data",
+        "pct": 0.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lunda",
+        "pct": 32.9
+      },
+      {
+        "group": "Chokwe",
+        "pct": 20.3
+      },
+      {
+        "group": "Sanga",
+        "pct": 19.7
+      },
+      {
+        "group": "Luba",
+        "pct": 5.8
+      },
+      {
+        "group": "Ndembe",
+        "pct": 5.5
+      },
+      {
+        "group": "Luba-Katanga",
+        "pct": 4.5
+      },
+      {
+        "group": "Other tribe",
+        "pct": 3.3
+      },
+      {
+        "group": "Bemba",
+        "pct": 1.6
+      },
+      {
+        "group": "Kaonde",
+        "pct": 1.3
+      },
+      {
+        "group": "No tribe data",
+        "pct": 1.3
+      },
+      {
+        "group": "Hemba",
+        "pct": 0.7
+      },
+      {
+        "group": "Songe",
+        "pct": 0.3
+      },
+      {
+        "group": "Lega-Shabunda",
+        "pct": 0.3
+      },
+      {
+        "group": "Lega-Mwenga",
+        "pct": 0.3
+      },
+      {
+        "group": "Mbunda",
+        "pct": 0.3
+      },
+      {
+        "group": "Tshoko",
+        "pct": 0.3
+      },
+      {
+        "group": "Luba-Lulua",
+        "pct": 0.2
+      },
+      {
+        "group": "Tetela",
+        "pct": 0.2
+      },
+      {
+        "group": "Teke",
+        "pct": 0.2
+      },
+      {
+        "group": "Bembe",
+        "pct": 0.2
+      },
+      {
+        "group": "Taabwa",
+        "pct": 0.2
+      },
+      {
+        "group": "Lendu",
+        "pct": 0.2
+      },
+      {
+        "group": "Ntomba",
+        "pct": 0.2
+      },
+      {
+        "group": "Kanioka",
+        "pct": 0.2
+      },
+      {
+        "group": "Nande",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngbaka",
+        "pct": 0.1
+      },
+      {
+        "group": "Yansi",
+        "pct": 0.1
+      },
+      {
+        "group": "Ntandu",
+        "pct": 0.1
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.1
+      },
+      {
+        "group": "Bushoong",
+        "pct": 0.1
+      },
+      {
+        "group": "Zela",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-mai-ndombe",
+    "level": "admin1",
+    "name": "Mai-Ndombe",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 33.2
+      },
+      {
+        "group": "Catholic",
+        "pct": 28.9
+      },
+      {
+        "group": "Other Christian",
+        "pct": 13.7
+      },
+      {
+        "group": "Without religion",
+        "pct": 9.2
+      },
+      {
+        "group": "Other religion",
+        "pct": 7.5
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 5.6
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.2
+      },
+      {
+        "group": "Animist",
+        "pct": 0.6
+      },
+      {
+        "group": "No religion data",
+        "pct": 0.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Sengele",
+        "pct": 18.4
+      },
+      {
+        "group": "Sakata",
+        "pct": 16.0
+      },
+      {
+        "group": "Other tribe",
+        "pct": 13.7
+      },
+      {
+        "group": "Boma",
+        "pct": 11.9
+      },
+      {
+        "group": "Teke",
+        "pct": 11.7
+      },
+      {
+        "group": "Tere",
+        "pct": 8.8
+      },
+      {
+        "group": "Kundu",
+        "pct": 4.9
+      },
+      {
+        "group": "No tribe data",
+        "pct": 4.0
+      },
+      {
+        "group": "Plains Bira",
+        "pct": 2.2
+      },
+      {
+        "group": "Yansi",
+        "pct": 1.4
+      },
+      {
+        "group": "Nunu",
+        "pct": 1.3
+      },
+      {
+        "group": "Ntomba",
+        "pct": 0.9
+      },
+      {
+        "group": "Ekonda",
+        "pct": 0.8
+      },
+      {
+        "group": "Mbala",
+        "pct": 0.7
+      },
+      {
+        "group": "Yaka",
+        "pct": 0.5
+      },
+      {
+        "group": "Suku",
+        "pct": 0.3
+      },
+      {
+        "group": "Luba-Lulua",
+        "pct": 0.2
+      },
+      {
+        "group": "Luba",
+        "pct": 0.2
+      },
+      {
+        "group": "Yombe",
+        "pct": 0.2
+      },
+      {
+        "group": "Ngombe",
+        "pct": 0.2
+      },
+      {
+        "group": "Budza",
+        "pct": 0.2
+      },
+      {
+        "group": "Mbunda",
+        "pct": 0.2
+      },
+      {
+        "group": "Phende",
+        "pct": 0.2
+      },
+      {
+        "group": "Mongo",
+        "pct": 0.1
+      },
+      {
+        "group": "Northern Ngbandi",
+        "pct": 0.1
+      },
+      {
+        "group": "Sanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Ntandu",
+        "pct": 0.1
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.1
+      },
+      {
+        "group": "Mbata",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngongo",
+        "pct": 0.1
+      },
+      {
+        "group": "Tshoko",
+        "pct": 0.1
+      },
+      {
+        "group": "Mpama",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-maniema",
+    "level": "admin1",
+    "name": "Maniema",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 40.0
+      },
+      {
+        "group": "Catholic",
+        "pct": 21.7
+      },
+      {
+        "group": "Other Christian",
+        "pct": 13.9
+      },
+      {
+        "group": "Muslim",
+        "pct": 12.9
+      },
+      {
+        "group": "Without religion",
+        "pct": 5.7
+      },
+      {
+        "group": "Other religion",
+        "pct": 2.8
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 2.6
+      },
+      {
+        "group": "Animist",
+        "pct": 0.2
+      },
+      {
+        "group": "No religion data",
+        "pct": 0.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lega-Shabunda",
+        "pct": 20.3
+      },
+      {
+        "group": "Kusu",
+        "pct": 17.5
+      },
+      {
+        "group": "Other tribe",
+        "pct": 14.4
+      },
+      {
+        "group": "Lega-Mwenga",
+        "pct": 9.6
+      },
+      {
+        "group": "Songola",
+        "pct": 9.4
+      },
+      {
+        "group": "Mukumu",
+        "pct": 7.0
+      },
+      {
+        "group": "Benye Nonda",
+        "pct": 7.0
+      },
+      {
+        "group": "Phende",
+        "pct": 4.5
+      },
+      {
+        "group": "Bangobango",
+        "pct": 3.2
+      },
+      {
+        "group": "Ngengele",
+        "pct": 2.0
+      },
+      {
+        "group": "Tetela",
+        "pct": 1.3
+      },
+      {
+        "group": "No tribe data",
+        "pct": 1.2
+      },
+      {
+        "group": "Songe",
+        "pct": 0.4
+      },
+      {
+        "group": "Nande",
+        "pct": 0.3
+      },
+      {
+        "group": "Luba",
+        "pct": 0.3
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.2
+      },
+      {
+        "group": "Luba-Katanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Bemba",
+        "pct": 0.1
+      },
+      {
+        "group": "Manyanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Fuliiru",
+        "pct": 0.1
+      },
+      {
+        "group": "Bembe",
+        "pct": 0.1
+      },
+      {
+        "group": "Luntu",
+        "pct": 0.1
+      },
+      {
+        "group": "Nyanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Bena-Kanioka",
+        "pct": 0.1
+      },
+      {
+        "group": "Hemba",
+        "pct": 0.1
+      },
+      {
+        "group": "Poke",
+        "pct": 0.1
+      },
+      {
+        "group": "Lengola",
+        "pct": 0.1
+      },
+      {
+        "group": "Tshoko",
+        "pct": 0.1
+      },
+      {
+        "group": "Ekonda",
+        "pct": 0.1
+      },
+      {
+        "group": "Tere",
+        "pct": 0.1
+      },
+      {
+        "group": "Selele",
+        "pct": 0.1
+      },
+      {
+        "group": "Plains Bira",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-mongala",
+    "level": "admin1",
+    "name": "Mongala",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 33.1
+      },
+      {
+        "group": "Other Christian",
+        "pct": 32.1
+      },
+      {
+        "group": "Protestant",
+        "pct": 24.1
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.4
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 2.7
+      },
+      {
+        "group": "Without religion",
+        "pct": 2.3
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.1
+      },
+      {
+        "group": "Animist",
+        "pct": 0.2
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Ngombe",
+        "pct": 48.2
+      },
+      {
+        "group": "Budza",
+        "pct": 28.2
+      },
+      {
+        "group": "Mongo",
+        "pct": 12.0
+      },
+      {
+        "group": "Lokele",
+        "pct": 3.8
+      },
+      {
+        "group": "Ngbaka",
+        "pct": 2.6
+      },
+      {
+        "group": "Other tribe",
+        "pct": 1.5
+      },
+      {
+        "group": "No tribe data",
+        "pct": 1.2
+      },
+      {
+        "group": "Northern Ngbandi",
+        "pct": 0.5
+      },
+      {
+        "group": "Poke",
+        "pct": 0.3
+      },
+      {
+        "group": "Lendu",
+        "pct": 0.2
+      },
+      {
+        "group": "Baboa",
+        "pct": 0.2
+      },
+      {
+        "group": "Libinja",
+        "pct": 0.2
+      },
+      {
+        "group": "Luba",
+        "pct": 0.1
+      },
+      {
+        "group": "Yombe",
+        "pct": 0.1
+      },
+      {
+        "group": "Yansi",
+        "pct": 0.1
+      },
+      {
+        "group": "Suku",
+        "pct": 0.1
+      },
+      {
+        "group": "Boma",
+        "pct": 0.1
+      },
+      {
+        "group": "Mboma",
+        "pct": 0.1
+      },
+      {
+        "group": "Lombo",
+        "pct": 0.1
+      },
+      {
+        "group": "Mbosa",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-nord-kivu",
+    "level": "admin1",
+    "name": "Nord-Kivu",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 51.2
+      },
+      {
+        "group": "Protestant",
+        "pct": 35.3
+      },
+      {
+        "group": "Other Christian",
+        "pct": 7.2
+      },
+      {
+        "group": "Muslim",
+        "pct": 2.4
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.8
+      },
+      {
+        "group": "Without religion",
+        "pct": 1.6
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 0.4
+      },
+      {
+        "group": "No religion data",
+        "pct": 0.0
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Nande",
+        "pct": 64.1
+      },
+      {
+        "group": "Hutu",
+        "pct": 7.4
+      },
+      {
+        "group": "Banyarwanda",
+        "pct": 5.2
+      },
+      {
+        "group": "No tribe data",
+        "pct": 4.1
+      },
+      {
+        "group": "Hunde",
+        "pct": 3.4
+      },
+      {
+        "group": "Nyanga",
+        "pct": 3.3
+      },
+      {
+        "group": "Other tribe",
+        "pct": 3.1
+      },
+      {
+        "group": "Shi",
+        "pct": 2.9
+      },
+      {
+        "group": "Mukumu",
+        "pct": 1.1
+      },
+      {
+        "group": "Bakongo",
+        "pct": 1.1
+      },
+      {
+        "group": "Lega-Mwenga",
+        "pct": 0.6
+      },
+      {
+        "group": "Havu",
+        "pct": 0.6
+      },
+      {
+        "group": "Luba",
+        "pct": 0.5
+      },
+      {
+        "group": "Kusu",
+        "pct": 0.5
+      },
+      {
+        "group": "Bangobango",
+        "pct": 0.4
+      },
+      {
+        "group": "Luba-Katanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Northern Ngbandi",
+        "pct": 0.1
+      },
+      {
+        "group": "Tetela",
+        "pct": 0.1
+      },
+      {
+        "group": "Songe",
+        "pct": 0.1
+      },
+      {
+        "group": "Lega-Shabunda",
+        "pct": 0.1
+      },
+      {
+        "group": "Bembe",
+        "pct": 0.1
+      },
+      {
+        "group": "Mayogo",
+        "pct": 0.1
+      },
+      {
+        "group": "Baboa",
+        "pct": 0.1
+      },
+      {
+        "group": "Kundu",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngombe",
+        "pct": 0.0
+      },
+      {
+        "group": "Bemba",
+        "pct": 0.0
+      },
+      {
+        "group": "Bakwa Kalonji",
+        "pct": 0.0
+      },
+      {
+        "group": "Budza",
+        "pct": 0.0
+      },
+      {
+        "group": "Manyanga",
+        "pct": 0.0
+      },
+      {
+        "group": "Mbunda",
+        "pct": 0.0
+      },
+      {
+        "group": "Luntu",
+        "pct": 0.0
+      },
+      {
+        "group": "Budu",
+        "pct": 0.0
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.0
+      },
+      {
+        "group": "Poke",
+        "pct": 0.0
+      },
+      {
+        "group": "Bakwanga",
+        "pct": 0.0
+      },
+      {
+        "group": "Benye Nonda",
+        "pct": 0.0
+      },
+      {
+        "group": "Libinja",
+        "pct": 0.0
+      },
+      {
+        "group": "Vira",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-nord-ubangi",
+    "level": "admin1",
+    "name": "Nord-Ubangi",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 48.3
+      },
+      {
+        "group": "Protestant",
+        "pct": 30.2
+      },
+      {
+        "group": "Other Christian",
+        "pct": 14.0
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.3
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 1.1
+      },
+      {
+        "group": "Without religion",
+        "pct": 1.0
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.0
+      },
+      {
+        "group": "No religion data",
+        "pct": 0.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Northern Ngbandi",
+        "pct": 57.2
+      },
+      {
+        "group": "Ngbaka",
+        "pct": 23.7
+      },
+      {
+        "group": "Mono",
+        "pct": 5.1
+      },
+      {
+        "group": "Ngombe",
+        "pct": 5.0
+      },
+      {
+        "group": "No tribe data",
+        "pct": 3.5
+      },
+      {
+        "group": "Other tribe",
+        "pct": 1.8
+      },
+      {
+        "group": "Mbandja",
+        "pct": 1.6
+      },
+      {
+        "group": "Budza",
+        "pct": 1.1
+      },
+      {
+        "group": "Mongo",
+        "pct": 0.4
+      },
+      {
+        "group": "Luba",
+        "pct": 0.3
+      },
+      {
+        "group": "Luba-Lulua",
+        "pct": 0.1
+      },
+      {
+        "group": "Suku",
+        "pct": 0.1
+      },
+      {
+        "group": "Lele",
+        "pct": 0.1
+      },
+      {
+        "group": "Benja",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-sankuru",
+    "level": "admin1",
+    "name": "Sankuru",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other Christian",
+        "pct": 42.6
+      },
+      {
+        "group": "Protestant",
+        "pct": 16.4
+      },
+      {
+        "group": "Catholic",
+        "pct": 14.2
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 10.9
+      },
+      {
+        "group": "Other religion",
+        "pct": 9.6
+      },
+      {
+        "group": "Without religion",
+        "pct": 5.0
+      },
+      {
+        "group": "Animist",
+        "pct": 0.7
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.4
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Tetela",
+        "pct": 69.1
+      },
+      {
+        "group": "Songe",
+        "pct": 13.5
+      },
+      {
+        "group": "Kutshu",
+        "pct": 9.4
+      },
+      {
+        "group": "Other tribe",
+        "pct": 3.9
+      },
+      {
+        "group": "Bushoong",
+        "pct": 0.9
+      },
+      {
+        "group": "Luba",
+        "pct": 0.7
+      },
+      {
+        "group": "Luba-Lulua",
+        "pct": 0.4
+      },
+      {
+        "group": "Kusu",
+        "pct": 0.4
+      },
+      {
+        "group": "Luntu",
+        "pct": 0.4
+      },
+      {
+        "group": "No tribe data",
+        "pct": 0.4
+      },
+      {
+        "group": "Sanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Mbunda",
+        "pct": 0.1
+      },
+      {
+        "group": "Sakata",
+        "pct": 0.1
+      },
+      {
+        "group": "Bakwa Dishi",
+        "pct": 0.1
+      },
+      {
+        "group": "Suku",
+        "pct": 0.1
+      },
+      {
+        "group": "Bakwanga",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-sud-kivu",
+    "level": "admin1",
+    "name": "Sud-Kivu",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 42.3
+      },
+      {
+        "group": "Protestant",
+        "pct": 42.0
+      },
+      {
+        "group": "Muslim",
+        "pct": 4.7
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.5
+      },
+      {
+        "group": "Without religion",
+        "pct": 4.5
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.6
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 0.5
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Shi",
+        "pct": 30.0
+      },
+      {
+        "group": "Fuliiru",
+        "pct": 14.4
+      },
+      {
+        "group": "Bembe",
+        "pct": 12.7
+      },
+      {
+        "group": "Lega-Shabunda",
+        "pct": 10.8
+      },
+      {
+        "group": "Lega-Mwenga",
+        "pct": 9.6
+      },
+      {
+        "group": "Havu",
+        "pct": 8.0
+      },
+      {
+        "group": "Other tribe",
+        "pct": 5.2
+      },
+      {
+        "group": "Vira",
+        "pct": 4.0
+      },
+      {
+        "group": "Phende",
+        "pct": 1.1
+      },
+      {
+        "group": "No tribe data",
+        "pct": 1.1
+      },
+      {
+        "group": "Banyarwanda",
+        "pct": 1.0
+      },
+      {
+        "group": "Bangobango",
+        "pct": 0.6
+      },
+      {
+        "group": "Nande",
+        "pct": 0.3
+      },
+      {
+        "group": "Luba",
+        "pct": 0.3
+      },
+      {
+        "group": "Bemba",
+        "pct": 0.2
+      },
+      {
+        "group": "Hunde",
+        "pct": 0.2
+      },
+      {
+        "group": "Kusu",
+        "pct": 0.1
+      },
+      {
+        "group": "Taabwa",
+        "pct": 0.1
+      },
+      {
+        "group": "Nyanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.1
+      },
+      {
+        "group": "Pelende",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-sud-ubangi",
+    "level": "admin1",
+    "name": "Sud-Ubangi",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 44.8
+      },
+      {
+        "group": "Protestant",
+        "pct": 37.3
+      },
+      {
+        "group": "Other Christian",
+        "pct": 12.8
+      },
+      {
+        "group": "Other religion",
+        "pct": 2.2
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 1.3
+      },
+      {
+        "group": "Without religion",
+        "pct": 0.9
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.5
+      },
+      {
+        "group": "Animist",
+        "pct": 0.3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Ngbaka",
+        "pct": 41.3
+      },
+      {
+        "group": "Mbandja",
+        "pct": 15.3
+      },
+      {
+        "group": "Northern Ngbandi",
+        "pct": 11.3
+      },
+      {
+        "group": "Other tribe",
+        "pct": 10.8
+      },
+      {
+        "group": "Ngombe",
+        "pct": 8.5
+      },
+      {
+        "group": "Mboma",
+        "pct": 4.7
+      },
+      {
+        "group": "Mono",
+        "pct": 3.3
+      },
+      {
+        "group": "No tribe data",
+        "pct": 2.5
+      },
+      {
+        "group": "Mongo",
+        "pct": 0.5
+      },
+      {
+        "group": "Budza",
+        "pct": 0.5
+      },
+      {
+        "group": "Libinja",
+        "pct": 0.4
+      },
+      {
+        "group": "Nande",
+        "pct": 0.1
+      },
+      {
+        "group": "Ndibu",
+        "pct": 0.1
+      },
+      {
+        "group": "Manyanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Mbunda",
+        "pct": 0.1
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.1
+      },
+      {
+        "group": "Ntomba",
+        "pct": 0.1
+      },
+      {
+        "group": "Nunu",
+        "pct": 0.1
+      },
+      {
+        "group": "Ekonda",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-tanganyika",
+    "level": "admin1",
+    "name": "Tanganyika",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 39.5
+      },
+      {
+        "group": "Catholic",
+        "pct": 31.2
+      },
+      {
+        "group": "Other Christian",
+        "pct": 12.5
+      },
+      {
+        "group": "Without religion",
+        "pct": 7.2
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.9
+      },
+      {
+        "group": "Animist",
+        "pct": 2.8
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 2.3
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.7
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Luba-Katanga",
+        "pct": 44.4
+      },
+      {
+        "group": "Taabwa",
+        "pct": 29.8
+      },
+      {
+        "group": "Hemba",
+        "pct": 14.4
+      },
+      {
+        "group": "Other tribe",
+        "pct": 8.8
+      },
+      {
+        "group": "Luba",
+        "pct": 1.2
+      },
+      {
+        "group": "No tribe data",
+        "pct": 0.5
+      },
+      {
+        "group": "Songe",
+        "pct": 0.4
+      },
+      {
+        "group": "Fuliiru",
+        "pct": 0.2
+      },
+      {
+        "group": "Bembe",
+        "pct": 0.2
+      },
+      {
+        "group": "Plains Bira",
+        "pct": 0.2
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-tshopo",
+    "level": "admin1",
+    "name": "Tshopo",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 33.3
+      },
+      {
+        "group": "Other Christian",
+        "pct": 24.0
+      },
+      {
+        "group": "Catholic",
+        "pct": 23.3
+      },
+      {
+        "group": "Other religion",
+        "pct": 8.6
+      },
+      {
+        "group": "Without religion",
+        "pct": 4.4
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 4.3
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.4
+      },
+      {
+        "group": "Animist",
+        "pct": 0.5
+      },
+      {
+        "group": "No religion data",
+        "pct": 0.2
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Other tribe",
+        "pct": 26.0
+      },
+      {
+        "group": "Poke",
+        "pct": 10.8
+      },
+      {
+        "group": "Lengola",
+        "pct": 10.1
+      },
+      {
+        "group": "Lokele",
+        "pct": 8.6
+      },
+      {
+        "group": "Mba",
+        "pct": 8.4
+      },
+      {
+        "group": "Babango",
+        "pct": 7.5
+      },
+      {
+        "group": "Lombo",
+        "pct": 7.3
+      },
+      {
+        "group": "No tribe data",
+        "pct": 6.0
+      },
+      {
+        "group": "Mbosa",
+        "pct": 2.3
+      },
+      {
+        "group": "Mbandja",
+        "pct": 1.5
+      },
+      {
+        "group": "Ngengele",
+        "pct": 1.5
+      },
+      {
+        "group": "Vira",
+        "pct": 1.4
+      },
+      {
+        "group": "Kusu",
+        "pct": 1.1
+      },
+      {
+        "group": "Nande",
+        "pct": 1.0
+      },
+      {
+        "group": "Budza",
+        "pct": 0.7
+      },
+      {
+        "group": "Baboa",
+        "pct": 0.7
+      },
+      {
+        "group": "Mongo",
+        "pct": 0.6
+      },
+      {
+        "group": "Tetela",
+        "pct": 0.4
+      },
+      {
+        "group": "Lega-Shabunda",
+        "pct": 0.4
+      },
+      {
+        "group": "Budu",
+        "pct": 0.4
+      },
+      {
+        "group": "Mboma",
+        "pct": 0.4
+      },
+      {
+        "group": "Bangando",
+        "pct": 0.4
+      },
+      {
+        "group": "Luba",
+        "pct": 0.3
+      },
+      {
+        "group": "Ngombe",
+        "pct": 0.2
+      },
+      {
+        "group": "Lega-Mwenga",
+        "pct": 0.2
+      },
+      {
+        "group": "Logo",
+        "pct": 0.2
+      },
+      {
+        "group": "Mukumu",
+        "pct": 0.2
+      },
+      {
+        "group": "Bakongo",
+        "pct": 0.2
+      },
+      {
+        "group": "Bangobango",
+        "pct": 0.2
+      },
+      {
+        "group": "Luba-Lulua",
+        "pct": 0.1
+      },
+      {
+        "group": "Yombe",
+        "pct": 0.1
+      },
+      {
+        "group": "Songe",
+        "pct": 0.1
+      },
+      {
+        "group": "Sanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Bakwa Kalonji",
+        "pct": 0.1
+      },
+      {
+        "group": "Zande",
+        "pct": 0.1
+      },
+      {
+        "group": "Phende",
+        "pct": 0.1
+      },
+      {
+        "group": "Mayogo",
+        "pct": 0.1
+      },
+      {
+        "group": "Nyari",
+        "pct": 0.1
+      },
+      {
+        "group": "Bakwanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Kaonde",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-tshuapa",
+    "level": "admin1",
+    "name": "Tshuapa",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 31.8
+      },
+      {
+        "group": "Protestant",
+        "pct": 29.5
+      },
+      {
+        "group": "Other Christian",
+        "pct": 21.6
+      },
+      {
+        "group": "Other religion",
+        "pct": 12.4
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 2.2
+      },
+      {
+        "group": "Without religion",
+        "pct": 1.6
+      },
+      {
+        "group": "Animist",
+        "pct": 0.4
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.3
+      },
+      {
+        "group": "No religion data",
+        "pct": 0.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mongo",
+        "pct": 68.2
+      },
+      {
+        "group": "Other tribe",
+        "pct": 12.4
+      },
+      {
+        "group": "Bangando",
+        "pct": 9.4
+      },
+      {
+        "group": "Kutshu",
+        "pct": 7.8
+      },
+      {
+        "group": "No tribe data",
+        "pct": 0.8
+      },
+      {
+        "group": "Tetela",
+        "pct": 0.7
+      },
+      {
+        "group": "Luba",
+        "pct": 0.3
+      },
+      {
+        "group": "Ngombe",
+        "pct": 0.3
+      },
+      {
+        "group": "Yansi",
+        "pct": 0.3
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  },
+  {
+    "id": "COD-équateur",
+    "level": "admin1",
+    "name": "Équateur",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 37.2
+      },
+      {
+        "group": "Protestant",
+        "pct": 28.1
+      },
+      {
+        "group": "Other Christian",
+        "pct": 25.1
+      },
+      {
+        "group": "Without religion",
+        "pct": 4.0
+      },
+      {
+        "group": "Other religion",
+        "pct": 2.2
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 1.8
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.5
+      },
+      {
+        "group": "No religion data",
+        "pct": 0.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Ngombe",
+        "pct": 20.6
+      },
+      {
+        "group": "Mongo",
+        "pct": 18.5
+      },
+      {
+        "group": "Other tribe",
+        "pct": 12.4
+      },
+      {
+        "group": "Ntomba",
+        "pct": 8.7
+      },
+      {
+        "group": "Nunu",
+        "pct": 8.5
+      },
+      {
+        "group": "Libinja",
+        "pct": 7.2
+      },
+      {
+        "group": "Ekonda",
+        "pct": 6.4
+      },
+      {
+        "group": "Mpama",
+        "pct": 6.1
+      },
+      {
+        "group": "No tribe data",
+        "pct": 3.1
+      },
+      {
+        "group": "Lokele",
+        "pct": 1.8
+      },
+      {
+        "group": "Plains Bira",
+        "pct": 1.5
+      },
+      {
+        "group": "Suku",
+        "pct": 0.7
+      },
+      {
+        "group": "Budza",
+        "pct": 0.6
+      },
+      {
+        "group": "Sengele",
+        "pct": 0.6
+      },
+      {
+        "group": "Ngbaka",
+        "pct": 0.5
+      },
+      {
+        "group": "Tetela",
+        "pct": 0.5
+      },
+      {
+        "group": "Poke",
+        "pct": 0.5
+      },
+      {
+        "group": "Vira",
+        "pct": 0.4
+      },
+      {
+        "group": "Sanga",
+        "pct": 0.3
+      },
+      {
+        "group": "Northern Ngbandi",
+        "pct": 0.2
+      },
+      {
+        "group": "Bakongo",
+        "pct": 0.2
+      },
+      {
+        "group": "Yansi",
+        "pct": 0.1
+      },
+      {
+        "group": "Lega-Mwenga",
+        "pct": 0.1
+      },
+      {
+        "group": "Teke",
+        "pct": 0.1
+      },
+      {
+        "group": "Baboa",
+        "pct": 0.1
+      },
+      {
+        "group": "Benye Nonda",
+        "pct": 0.1
+      },
+      {
+        "group": "Babango",
+        "pct": 0.1
+      },
+      {
+        "group": "Bangando",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique, Enquête 1-2-3 (2005 and 2012), prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly.",
+    "religion_year": 2012,
+    "religion_note": "Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only source on this map that is a survey rather than a census, and it is reported differently for that reason: the shares are of the 31,755 heads of household the survey reached, about 1,200 per province, and no count is published because the count is of households sampled rather than of people. A provincial share here carries sampling error that a census count does not, and it describes the household head rather than the household. Two survey rounds seven years apart are pooled into one figure by the source, so it dates to neither year exactly."
+  }
+]

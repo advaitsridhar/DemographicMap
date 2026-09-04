@@ -1,0 +1,1316 @@
+[
+  {
+    "id": "MLI-bamako",
+    "level": "admin1",
+    "name": "Bamako",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Bambara",
+        "pct": 86.4,
+        "count": 1272669
+      },
+      {
+        "group": "Maraka/soninke",
+        "pct": 2.9,
+        "count": 42808
+      },
+      {
+        "group": "Malinke",
+        "pct": 2.2,
+        "count": 31847
+      },
+      {
+        "group": "Fula/fulfulbe",
+        "pct": 1.7,
+        "count": 25392
+      },
+      {
+        "group": "Sonrai/djerma",
+        "pct": 1.7,
+        "count": 25431
+      },
+      {
+        "group": "Dogon",
+        "pct": 1.4,
+        "count": 20555
+      },
+      {
+        "group": "Other foreign language",
+        "pct": 0.8,
+        "count": 11190
+      },
+      {
+        "group": "Bobo",
+        "pct": 0.7,
+        "count": 10064
+      },
+      {
+        "group": "Language not stated",
+        "pct": 0.7,
+        "count": 10380
+      },
+      {
+        "group": "Kassonke",
+        "pct": 0.3,
+        "count": 4001
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.3,
+        "count": 4475
+      },
+      {
+        "group": "Senufo",
+        "pct": 0.2,
+        "count": 2322
+      },
+      {
+        "group": "Tamasheq",
+        "pct": 0.2,
+        "count": 3207
+      },
+      {
+        "group": "Minianka",
+        "pct": 0.2,
+        "count": 2523
+      },
+      {
+        "group": "Bozo",
+        "pct": 0.2,
+        "count": 2342
+      },
+      {
+        "group": "Dafing",
+        "pct": 0.1,
+        "count": 1093
+      },
+      {
+        "group": "Other Mali languages",
+        "pct": 0.1,
+        "count": 929
+      },
+      {
+        "group": "Moorish",
+        "pct": 0.0,
+        "count": 697
+      },
+      {
+        "group": "Hausa",
+        "pct": 0.0,
+        "count": 234
+      },
+      {
+        "group": "Samogo",
+        "pct": 0.0,
+        "count": 607
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 447
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Institut National de la Statistique (INSTAT), 4ème Recensement Général de la Population et de l'Habitat 2009, Tableau S-3: Population Résidente de 6 Ans et Plus Selon la Langue, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "language_year": 2009,
+    "language_note": "2009 census. The shares are of the resident population aged 6 and over, not of everybody: the census table is titled \"Population Résidente de 6 Ans et Plus Selon la Langue\" and its columns sum to 11,109,312 against a counted population of about 14.5 million. The missing quarter is children under six, who were not asked. That gap was the reason this file was held back a release -- a quarter of a country unaccounted for is either a stated universe or a misread sheet, and which one it was is a question only the source's own citation could answer."
+  },
+  {
+    "id": "MLI-gao",
+    "level": "admin1",
+    "name": "Gao",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Sonrai/djerma",
+        "pct": 54.9,
+        "count": 227073
+      },
+      {
+        "group": "Tamasheq",
+        "pct": 26.7,
+        "count": 110385
+      },
+      {
+        "group": "Other Mali languages",
+        "pct": 5.1,
+        "count": 21166
+      },
+      {
+        "group": "Moorish",
+        "pct": 3.9,
+        "count": 16218
+      },
+      {
+        "group": "Bambara",
+        "pct": 2.8,
+        "count": 11792
+      },
+      {
+        "group": "Fula/fulfulbe",
+        "pct": 2.1,
+        "count": 8518
+      },
+      {
+        "group": "Arabic",
+        "pct": 1.4,
+        "count": 5611
+      },
+      {
+        "group": "Language not stated",
+        "pct": 1.2,
+        "count": 5032
+      },
+      {
+        "group": "Hausa",
+        "pct": 0.5,
+        "count": 1976
+      },
+      {
+        "group": "Bozo",
+        "pct": 0.5,
+        "count": 1960
+      },
+      {
+        "group": "Malinke",
+        "pct": 0.3,
+        "count": 1231
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.2,
+        "count": 928
+      },
+      {
+        "group": "Maraka/soninke",
+        "pct": 0.1,
+        "count": 342
+      },
+      {
+        "group": "Dogon",
+        "pct": 0.1,
+        "count": 527
+      },
+      {
+        "group": "Bobo",
+        "pct": 0.1,
+        "count": 498
+      },
+      {
+        "group": "Kassonke",
+        "pct": 0.0,
+        "count": 197
+      },
+      {
+        "group": "Senufo",
+        "pct": 0.0,
+        "count": 119
+      },
+      {
+        "group": "Dafing",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Minianka",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Samogo",
+        "pct": 0.0,
+        "count": 86
+      },
+      {
+        "group": "Other foreign language",
+        "pct": 0.0,
+        "count": 160
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Institut National de la Statistique (INSTAT), 4ème Recensement Général de la Population et de l'Habitat 2009, Tableau S-3: Population Résidente de 6 Ans et Plus Selon la Langue, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "language_year": 2009,
+    "language_note": "2009 census. The shares are of the resident population aged 6 and over, not of everybody: the census table is titled \"Population Résidente de 6 Ans et Plus Selon la Langue\" and its columns sum to 11,109,312 against a counted population of about 14.5 million. The missing quarter is children under six, who were not asked. That gap was the reason this file was held back a release -- a quarter of a country unaccounted for is either a stated universe or a misread sheet, and which one it was is a question only the source's own citation could answer."
+  },
+  {
+    "id": "MLI-kayes",
+    "level": "admin1",
+    "name": "Kayes",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Maraka/soninke",
+        "pct": 28.9,
+        "count": 431205
+      },
+      {
+        "group": "Malinke",
+        "pct": 24.0,
+        "count": 357594
+      },
+      {
+        "group": "Bambara",
+        "pct": 23.5,
+        "count": 349959
+      },
+      {
+        "group": "Fula/fulfulbe",
+        "pct": 12.6,
+        "count": 188566
+      },
+      {
+        "group": "Kassonke",
+        "pct": 7.3,
+        "count": 108889
+      },
+      {
+        "group": "Moorish",
+        "pct": 2.0,
+        "count": 29557
+      },
+      {
+        "group": "Language not stated",
+        "pct": 0.6,
+        "count": 9530
+      },
+      {
+        "group": "Other Mali languages",
+        "pct": 0.4,
+        "count": 5634
+      },
+      {
+        "group": "Sonrai/djerma",
+        "pct": 0.1,
+        "count": 2002
+      },
+      {
+        "group": "Dogon",
+        "pct": 0.1,
+        "count": 1053
+      },
+      {
+        "group": "Tamasheq",
+        "pct": 0.1,
+        "count": 1587
+      },
+      {
+        "group": "Bobo",
+        "pct": 0.1,
+        "count": 938
+      },
+      {
+        "group": "Bozo",
+        "pct": 0.1,
+        "count": 1257
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.1,
+        "count": 1054
+      },
+      {
+        "group": "Other foreign language",
+        "pct": 0.1,
+        "count": 1351
+      },
+      {
+        "group": "Senufo",
+        "pct": 0.0,
+        "count": 434
+      },
+      {
+        "group": "Dafing",
+        "pct": 0.0,
+        "count": 225
+      },
+      {
+        "group": "Minianka",
+        "pct": 0.0,
+        "count": 493
+      },
+      {
+        "group": "Hausa",
+        "pct": 0.0,
+        "count": 262
+      },
+      {
+        "group": "Samogo",
+        "pct": 0.0,
+        "count": 271
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 129
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Institut National de la Statistique (INSTAT), 4ème Recensement Général de la Population et de l'Habitat 2009, Tableau S-3: Population Résidente de 6 Ans et Plus Selon la Langue, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "language_year": 2009,
+    "language_note": "2009 census. The shares are of the resident population aged 6 and over, not of everybody: the census table is titled \"Population Résidente de 6 Ans et Plus Selon la Langue\" and its columns sum to 11,109,312 against a counted population of about 14.5 million. The missing quarter is children under six, who were not asked. That gap was the reason this file was held back a release -- a quarter of a country unaccounted for is either a stated universe or a misread sheet, and which one it was is a question only the source's own citation could answer."
+  },
+  {
+    "id": "MLI-kidal",
+    "level": "admin1",
+    "name": "Kidal",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Tamasheq",
+        "pct": 85.7,
+        "count": 45983
+      },
+      {
+        "group": "Arabic",
+        "pct": 3.7,
+        "count": 1999
+      },
+      {
+        "group": "Bambara",
+        "pct": 3.2,
+        "count": 1712
+      },
+      {
+        "group": "Sonrai/djerma",
+        "pct": 3.0,
+        "count": 1592
+      },
+      {
+        "group": "Moorish",
+        "pct": 1.5,
+        "count": 783
+      },
+      {
+        "group": "Other foreign language",
+        "pct": 0.9,
+        "count": 487
+      },
+      {
+        "group": "Malinke",
+        "pct": 0.5,
+        "count": 288
+      },
+      {
+        "group": "Dogon",
+        "pct": 0.4,
+        "count": 195
+      },
+      {
+        "group": "Language not stated",
+        "pct": 0.3,
+        "count": 179
+      },
+      {
+        "group": "Other Mali languages",
+        "pct": 0.2,
+        "count": 90
+      },
+      {
+        "group": "Fula/fulfulbe",
+        "pct": 0.1,
+        "count": 43
+      },
+      {
+        "group": "Maraka/soninke",
+        "pct": 0.1,
+        "count": 28
+      },
+      {
+        "group": "Bobo",
+        "pct": 0.1,
+        "count": 63
+      },
+      {
+        "group": "Hausa",
+        "pct": 0.1,
+        "count": 44
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.1,
+        "count": 52
+      },
+      {
+        "group": "Kassonke",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Senufo",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Dafing",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Minianka",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Samogo",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Bozo",
+        "pct": 0.0,
+        "count": 17
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Institut National de la Statistique (INSTAT), 4ème Recensement Général de la Population et de l'Habitat 2009, Tableau S-3: Population Résidente de 6 Ans et Plus Selon la Langue, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "language_year": 2009,
+    "language_note": "2009 census. The shares are of the resident population aged 6 and over, not of everybody: the census table is titled \"Population Résidente de 6 Ans et Plus Selon la Langue\" and its columns sum to 11,109,312 against a counted population of about 14.5 million. The missing quarter is children under six, who were not asked. That gap was the reason this file was held back a release -- a quarter of a country unaccounted for is either a stated universe or a misread sheet, and which one it was is a question only the source's own citation could answer."
+  },
+  {
+    "id": "MLI-koulikoro",
+    "level": "admin1",
+    "name": "Koulikoro",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Bambara",
+        "pct": 72.7,
+        "count": 1330655
+      },
+      {
+        "group": "Malinke",
+        "pct": 8.5,
+        "count": 155359
+      },
+      {
+        "group": "Maraka/soninke",
+        "pct": 7.1,
+        "count": 129284
+      },
+      {
+        "group": "Fula/fulfulbe",
+        "pct": 6.3,
+        "count": 114400
+      },
+      {
+        "group": "Moorish",
+        "pct": 1.9,
+        "count": 34828
+      },
+      {
+        "group": "Dogon",
+        "pct": 0.7,
+        "count": 13155
+      },
+      {
+        "group": "Sonrai/djerma",
+        "pct": 0.6,
+        "count": 10169
+      },
+      {
+        "group": "Bobo",
+        "pct": 0.6,
+        "count": 10405
+      },
+      {
+        "group": "Language not stated",
+        "pct": 0.6,
+        "count": 10236
+      },
+      {
+        "group": "Tamasheq",
+        "pct": 0.2,
+        "count": 4242
+      },
+      {
+        "group": "Bozo",
+        "pct": 0.2,
+        "count": 2892
+      },
+      {
+        "group": "Other Mali languages",
+        "pct": 0.2,
+        "count": 2978
+      },
+      {
+        "group": "Kassonke",
+        "pct": 0.1,
+        "count": 2290
+      },
+      {
+        "group": "Senufo",
+        "pct": 0.1,
+        "count": 1527
+      },
+      {
+        "group": "Minianka",
+        "pct": 0.1,
+        "count": 2512
+      },
+      {
+        "group": "Samogo",
+        "pct": 0.1,
+        "count": 1177
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.1,
+        "count": 976
+      },
+      {
+        "group": "Other foreign language",
+        "pct": 0.1,
+        "count": 2024
+      },
+      {
+        "group": "Dafing",
+        "pct": 0.0,
+        "count": 795
+      },
+      {
+        "group": "Hausa",
+        "pct": 0.0,
+        "count": 92
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 325
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Institut National de la Statistique (INSTAT), 4ème Recensement Général de la Population et de l'Habitat 2009, Tableau S-3: Population Résidente de 6 Ans et Plus Selon la Langue, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "language_year": 2009,
+    "language_note": "2009 census. The shares are of the resident population aged 6 and over, not of everybody: the census table is titled \"Population Résidente de 6 Ans et Plus Selon la Langue\" and its columns sum to 11,109,312 against a counted population of about 14.5 million. The missing quarter is children under six, who were not asked. That gap was the reason this file was held back a release -- a quarter of a country unaccounted for is either a stated universe or a misread sheet, and which one it was is a question only the source's own citation could answer."
+  },
+  {
+    "id": "MLI-mopti",
+    "level": "admin1",
+    "name": "Mopti",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Dogon",
+        "pct": 41.4,
+        "count": 636256
+      },
+      {
+        "group": "Fula/fulfulbe",
+        "pct": 25.9,
+        "count": 398104
+      },
+      {
+        "group": "Bambara",
+        "pct": 11.1,
+        "count": 170221
+      },
+      {
+        "group": "Bozo",
+        "pct": 9.1,
+        "count": 139619
+      },
+      {
+        "group": "Sonrai/djerma",
+        "pct": 4.4,
+        "count": 68236
+      },
+      {
+        "group": "Tamasheq",
+        "pct": 2.0,
+        "count": 30245
+      },
+      {
+        "group": "Dafing",
+        "pct": 1.8,
+        "count": 27506
+      },
+      {
+        "group": "Other Mali languages",
+        "pct": 1.1,
+        "count": 17181
+      },
+      {
+        "group": "Language not stated",
+        "pct": 1.0,
+        "count": 14779
+      },
+      {
+        "group": "Maraka/soninke",
+        "pct": 0.6,
+        "count": 9809
+      },
+      {
+        "group": "Malinke",
+        "pct": 0.3,
+        "count": 4113
+      },
+      {
+        "group": "Moorish",
+        "pct": 0.3,
+        "count": 4121
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.3,
+        "count": 4770
+      },
+      {
+        "group": "Bobo",
+        "pct": 0.2,
+        "count": 3578
+      },
+      {
+        "group": "Samogo",
+        "pct": 0.2,
+        "count": 3264
+      },
+      {
+        "group": "Kassonke",
+        "pct": 0.1,
+        "count": 1436
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.1,
+        "count": 2001
+      },
+      {
+        "group": "Other foreign language",
+        "pct": 0.1,
+        "count": 1015
+      },
+      {
+        "group": "Senufo",
+        "pct": 0.0,
+        "count": 442
+      },
+      {
+        "group": "Minianka",
+        "pct": 0.0,
+        "count": 728
+      },
+      {
+        "group": "Hausa",
+        "pct": 0.0,
+        "count": 274
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Institut National de la Statistique (INSTAT), 4ème Recensement Général de la Population et de l'Habitat 2009, Tableau S-3: Population Résidente de 6 Ans et Plus Selon la Langue, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "language_year": 2009,
+    "language_note": "2009 census. The shares are of the resident population aged 6 and over, not of everybody: the census table is titled \"Population Résidente de 6 Ans et Plus Selon la Langue\" and its columns sum to 11,109,312 against a counted population of about 14.5 million. The missing quarter is children under six, who were not asked. That gap was the reason this file was held back a release -- a quarter of a country unaccounted for is either a stated universe or a misread sheet, and which one it was is a question only the source's own citation could answer."
+  },
+  {
+    "id": "MLI-sikasso",
+    "level": "admin1",
+    "name": "Sikasso",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Bambara",
+        "pct": 63.1,
+        "count": 1266503
+      },
+      {
+        "group": "Minianka",
+        "pct": 15.7,
+        "count": 314349
+      },
+      {
+        "group": "Senufo",
+        "pct": 11.0,
+        "count": 219939
+      },
+      {
+        "group": "Fula/fulfulbe",
+        "pct": 2.4,
+        "count": 47520
+      },
+      {
+        "group": "Bobo",
+        "pct": 2.2,
+        "count": 43216
+      },
+      {
+        "group": "Samogo",
+        "pct": 2.0,
+        "count": 39740
+      },
+      {
+        "group": "Dogon",
+        "pct": 1.0,
+        "count": 19921
+      },
+      {
+        "group": "Malinke",
+        "pct": 0.8,
+        "count": 15486
+      },
+      {
+        "group": "Language not stated",
+        "pct": 0.7,
+        "count": 13176
+      },
+      {
+        "group": "Sonrai/djerma",
+        "pct": 0.3,
+        "count": 5208
+      },
+      {
+        "group": "Bozo",
+        "pct": 0.3,
+        "count": 5337
+      },
+      {
+        "group": "Maraka/soninke",
+        "pct": 0.2,
+        "count": 4106
+      },
+      {
+        "group": "Tamasheq",
+        "pct": 0.2,
+        "count": 4378
+      },
+      {
+        "group": "Dafing",
+        "pct": 0.1,
+        "count": 2112
+      },
+      {
+        "group": "Other Mali languages",
+        "pct": 0.1,
+        "count": 1061
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.1,
+        "count": 1435
+      },
+      {
+        "group": "Other foreign language",
+        "pct": 0.1,
+        "count": 1110
+      },
+      {
+        "group": "Kassonke",
+        "pct": 0.0,
+        "count": 815
+      },
+      {
+        "group": "Moorish",
+        "pct": 0.0,
+        "count": 599
+      },
+      {
+        "group": "Hausa",
+        "pct": 0.0,
+        "count": 374
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 150
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Institut National de la Statistique (INSTAT), 4ème Recensement Général de la Population et de l'Habitat 2009, Tableau S-3: Population Résidente de 6 Ans et Plus Selon la Langue, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "language_year": 2009,
+    "language_note": "2009 census. The shares are of the resident population aged 6 and over, not of everybody: the census table is titled \"Population Résidente de 6 Ans et Plus Selon la Langue\" and its columns sum to 11,109,312 against a counted population of about 14.5 million. The missing quarter is children under six, who were not asked. That gap was the reason this file was held back a release -- a quarter of a country unaccounted for is either a stated universe or a misread sheet, and which one it was is a question only the source's own citation could answer."
+  },
+  {
+    "id": "MLI-ségou",
+    "level": "admin1",
+    "name": "Ségou",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Bambara",
+        "pct": 74.5,
+        "count": 1333061
+      },
+      {
+        "group": "Bobo",
+        "pct": 7.9,
+        "count": 140997
+      },
+      {
+        "group": "Minianka",
+        "pct": 5.4,
+        "count": 97513
+      },
+      {
+        "group": "Fula/fulfulbe",
+        "pct": 4.5,
+        "count": 79932
+      },
+      {
+        "group": "Dogon",
+        "pct": 1.6,
+        "count": 27943
+      },
+      {
+        "group": "Bozo",
+        "pct": 1.0,
+        "count": 18120
+      },
+      {
+        "group": "Language not stated",
+        "pct": 0.9,
+        "count": 15217
+      },
+      {
+        "group": "Dafing",
+        "pct": 0.8,
+        "count": 13972
+      },
+      {
+        "group": "Maraka/soninke",
+        "pct": 0.7,
+        "count": 12144
+      },
+      {
+        "group": "Tamasheq",
+        "pct": 0.7,
+        "count": 13080
+      },
+      {
+        "group": "Sonrai/djerma",
+        "pct": 0.6,
+        "count": 11318
+      },
+      {
+        "group": "Moorish",
+        "pct": 0.4,
+        "count": 7099
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.4,
+        "count": 6745
+      },
+      {
+        "group": "Other Mali languages",
+        "pct": 0.3,
+        "count": 4701
+      },
+      {
+        "group": "Malinke",
+        "pct": 0.1,
+        "count": 2268
+      },
+      {
+        "group": "Samogo",
+        "pct": 0.1,
+        "count": 2099
+      },
+      {
+        "group": "Other foreign language",
+        "pct": 0.1,
+        "count": 2562
+      },
+      {
+        "group": "Kassonke",
+        "pct": 0.0,
+        "count": 531
+      },
+      {
+        "group": "Senufo",
+        "pct": 0.0,
+        "count": 516
+      },
+      {
+        "group": "Hausa",
+        "pct": 0.0,
+        "count": 148
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 234
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Institut National de la Statistique (INSTAT), 4ème Recensement Général de la Population et de l'Habitat 2009, Tableau S-3: Population Résidente de 6 Ans et Plus Selon la Langue, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "language_year": 2009,
+    "language_note": "2009 census. The shares are of the resident population aged 6 and over, not of everybody: the census table is titled \"Population Résidente de 6 Ans et Plus Selon la Langue\" and its columns sum to 11,109,312 against a counted population of about 14.5 million. The missing quarter is children under six, who were not asked. That gap was the reason this file was held back a release -- a quarter of a country unaccounted for is either a stated universe or a misread sheet, and which one it was is a question only the source's own citation could answer."
+  },
+  {
+    "id": "MLI-tombouctou",
+    "level": "admin1",
+    "name": "Tombouctou",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Sonrai/djerma",
+        "pct": 45.8,
+        "count": 234515
+      },
+      {
+        "group": "Tamasheq",
+        "pct": 27.3,
+        "count": 139630
+      },
+      {
+        "group": "Fula/fulfulbe",
+        "pct": 11.5,
+        "count": 58902
+      },
+      {
+        "group": "Arabic",
+        "pct": 5.1,
+        "count": 26035
+      },
+      {
+        "group": "Bambara",
+        "pct": 4.0,
+        "count": 20379
+      },
+      {
+        "group": "Moorish",
+        "pct": 3.4,
+        "count": 17644
+      },
+      {
+        "group": "Language not stated",
+        "pct": 1.0,
+        "count": 5134
+      },
+      {
+        "group": "Bozo",
+        "pct": 0.9,
+        "count": 4495
+      },
+      {
+        "group": "Maraka/soninke",
+        "pct": 0.4,
+        "count": 1959
+      },
+      {
+        "group": "Malinke",
+        "pct": 0.2,
+        "count": 945
+      },
+      {
+        "group": "Dogon",
+        "pct": 0.1,
+        "count": 362
+      },
+      {
+        "group": "Bobo",
+        "pct": 0.1,
+        "count": 306
+      },
+      {
+        "group": "Other Mali languages",
+        "pct": 0.1,
+        "count": 270
+      },
+      {
+        "group": "Kassonke",
+        "pct": 0.0,
+        "count": 223
+      },
+      {
+        "group": "Senufo",
+        "pct": 0.0,
+        "count": 189
+      },
+      {
+        "group": "Dafing",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Minianka",
+        "pct": 0.0,
+        "count": 107
+      },
+      {
+        "group": "Hausa",
+        "pct": 0.0,
+        "count": 158
+      },
+      {
+        "group": "Samogo",
+        "pct": 0.0,
+        "count": 131
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.0,
+        "count": 97
+      },
+      {
+        "group": "Other foreign language",
+        "pct": 0.0,
+        "count": 229
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Institut National de la Statistique (INSTAT), 4ème Recensement Général de la Population et de l'Habitat 2009, Tableau S-3: Population Résidente de 6 Ans et Plus Selon la Langue, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "language_year": 2009,
+    "language_note": "2009 census. The shares are of the resident population aged 6 and over, not of everybody: the census table is titled \"Population Résidente de 6 Ans et Plus Selon la Langue\" and its columns sum to 11,109,312 against a counted population of about 14.5 million. The missing quarter is children under six, who were not asked. That gap was the reason this file was held back a release -- a quarter of a country unaccounted for is either a stated universe or a misread sheet, and which one it was is a question only the source's own citation could answer."
+  }
+]
