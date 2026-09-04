@@ -2,15 +2,11 @@ Ukraine: https://data.humdata.org/dataset/45c19756-9d0b-4673-9de4-fc47168c369a/r
   4,486,575 bytes
   Language: 700 rows, 10 groups, denominator 'Total Population'
     25 areas at level 1 built by adding up the level below
-    11 areas listed with no figures at all: DARNYTS’KYY RAYON, DESNYANS’KYY RAYON, DNIPROVS’KYY RAYON, HOLOSIYIVS’KYY RAYON, MISTO SEVASTOPOL’, OBOLONS’KYY RAYON ...
+    672 rows skipped: another level, or no area name
     admin1: 48,121,632 against the country's own 48,121,632 -- exactly
-    admin2: 45,189,675 against the country's own 48,121,632 -- 2,931,957 fewer (6.1%)
-    108 of 688 areas do not reach their published total; the map shows the remainder as unaccounted:
-      CHAPLYNS’KYY RAYON: groups come to 37,521 against a published 40,297 (+6.9%)
-      BRATS’KYY RAYON: groups come to 20,529 against a published 21,263 (+3.5%)
-      YELANETS’KYY RAYON: groups come to 17,903 against a published 18,423 (+2.8%)
-      ARBUZYNS’KYY RAYON: groups come to 24,205 against a published 24,810 (+2.4%)
-      DOMANIVS’KYY RAYON: groups come to 28,445 against a published 29,106 (+2.3%)
-      NOVOMYRHORODS’KYY RAYON: groups come to 35,056 against a published 35,835 (+2.2%)
-  wrote data/processed/ukraine_oblast.json (1167 kB)
-  688 areas: 27 admin1, 661 admin2
+    3 of 27 areas do not reach their published total; the map shows the remainder as unaccounted:
+      KHERSONS’KA OBLAST’: groups come to 1,164,267 against a published 1,172,689 (+0.7%)
+      MYKOLAYIVS’KA OBLAST’: groups come to 1,253,868 against a published 1,262,899 (+0.7%)
+      KIROVOHRADS’KA OBLAST’: groups come to 1,118,568 against a published 1,125,704 (+0.6%)
+  wrote data/processed/ukraine_oblast.json (50 kB)
+  27 areas: 27 admin1
