@@ -910,6 +910,50 @@ carry 96.7% of the people.
 that is the denominator these shares are of. It is not the only population the
 office publishes.
 
+### Pakistan again: mother tongue, and a level that is not the one above
+
+The religion above comes from the Bureau of Statistics' own PDF. The Census
+Bureau's workbook for Pakistan carries **both** religion and mother tongue from
+the same 2017 census, and only the second is read here.
+
+**Religion is left where it is, deliberately.** Both files would be publishing
+the same census table onto the same 126 district shapes, and under the
+agreement rule two rows that differ by a single person send *both* to a gap.
+Adding language costs nothing that works; adding religion risks 114 districts
+that already do. A second source is only worth having where it fills something.
+
+**The districts are at level 3, not level 2.** The file counts 8 first-order
+areas, then **36 divisions** at level 2, then **155 districts** at level 3 --
+and it is the districts geoBoundaries draws as Pakistan's second order, hanging
+directly off the provinces. Reading level 2 would have put a division's figures
+on a district's shape: 36 wrong answers that each look exactly like a right one.
+
+That level also broke a rule the reader had been keeping by accident. `area()`
+took a row's parent from the level immediately above, which is the same thing as
+the first order in every country here until now. For Pakistan it is not, and a
+district scoped inside "Karachi Division" would be scoped inside a parent no
+boundary file has -- one that can never match, rather than one that sometimes
+does. The parent is now taken from whichever level the country calls `admin1`,
+so Karachi East is scoped inside Sindh.
+
+**What does not join, and why.**
+
+* The **Federally Administered Tribal Areas** are a first-order area in the 2017
+  census and were merged into Khyber Pakhtunkhwa in 2018, so no shape is drawn
+  for them. Declared rather than left to the matcher. Their 13 agencies keep
+  their own rows: naming a parent that cannot be resolved falls through to the
+  country-wide pass, and Bajaur, Kurram and the Waziristans are distinctive
+  enough to land there.
+* **Azad Kashmir and Gilgit-Baltistan are listed and left blank** -- 2 first-order
+  areas and 20 districts with no figures at all. The census tabulates mother
+  tongue for Pakistan proper. Those areas keep a visible gap, which is what they
+  are.
+
+Both levels reconcile exactly: 207,684,626 against the census's own
+207,684,626, and every one of the 141 areas published reaches its own total.
+Sindh reads Sindhi 61.6% and Urdu 18.2%; Punjab, Punjabi 69.7% and Saraiki
+20.7%; Balochistan splits Balochi 35.5% against Pushto 35.3%.
+
 ### Bangladesh: a mirror, and a merged sheet that is wrong
 
 The Bureau of Statistics publishes a workbook of Census 2022 indicators at
