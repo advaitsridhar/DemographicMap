@@ -1,17 +1,16 @@
-Myanmar: https://data.humdata.org/dataset/2689fec5-6a1a-4773-8a0b-304445c52fe7/resource/788f18ae-67a2-456b-8111-c4edf97baa34/download/burma_uscb_202003.xlsx
-  1,302,201 bytes
-  Ethnicity [ETH_]: 426 rows, 33 groups, denominator 'Total population, ethnicity'
-    330 rows skipped: another level, or no area name
-    admin1: 47,798,404 against the country's own 47,798,404 -- exactly
-    admin2: 47,798,404 against the country's own 47,798,404 -- exactly
-    3 of 95 areas do not reach their published total; the map shows the remainder as unaccounted:
-      MYITKYINĀ: groups come to 406,649 against a published 399,318 (-1.8%)
-      YAMETHIN: groups come to 521,433 against a published 530,143 (+1.6%)
-      KACHIN STATE: groups come to 1,335,021 against a published 1,327,689 (-0.6%)
-  Ethnicity [RLG_]: 426 rows, 6 groups, denominator 'Total population, religion'
-    330 rows skipped: another level, or no area name
-    admin1: 49,013,525 against the country's own 49,013,525 -- exactly
-    admin2: 49,013,525 against the country's own 49,013,525 -- exactly
-    every one of 95 areas reaches its published total
-  wrote data/processed/myanmar_state.json (311 kB)
-  95 areas: 15 admin1, 80 admin2
+Ukraine: https://data.humdata.org/dataset/45c19756-9d0b-4673-9de4-fc47168c369a/resource/7f1ace67-fd49-4d2a-8b25-cc0561b5145b/download/ukraine_uscb_201905.xlsx
+  4,486,575 bytes
+  Language: 700 rows, 10 groups, denominator 'Total Population'
+    25 areas at level 1 built by adding up the level below
+    11 areas listed with no figures at all: DARNYTS’KYY RAYON, DESNYANS’KYY RAYON, DNIPROVS’KYY RAYON, HOLOSIYIVS’KYY RAYON, MISTO SEVASTOPOL’, OBOLONS’KYY RAYON ...
+    admin1: 48,121,632 against the country's own 48,121,632 -- exactly
+    admin2: 45,189,675 against the country's own 48,121,632 -- 2,931,957 fewer (6.1%)
+    108 of 688 areas do not reach their published total; the map shows the remainder as unaccounted:
+      CHAPLYNS’KYY RAYON: groups come to 37,521 against a published 40,297 (+6.9%)
+      BRATS’KYY RAYON: groups come to 20,529 against a published 21,263 (+3.5%)
+      YELANETS’KYY RAYON: groups come to 17,903 against a published 18,423 (+2.8%)
+      ARBUZYNS’KYY RAYON: groups come to 24,205 against a published 24,810 (+2.4%)
+      DOMANIVS’KYY RAYON: groups come to 28,445 against a published 29,106 (+2.3%)
+      NOVOMYRHORODS’KYY RAYON: groups come to 35,056 against a published 35,835 (+2.2%)
+  wrote data/processed/ukraine_oblast.json (1167 kB)
+  688 areas: 27 admin1, 661 admin2
