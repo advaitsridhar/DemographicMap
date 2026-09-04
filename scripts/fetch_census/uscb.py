@@ -798,8 +798,13 @@ def inspect(dataset: str, wanted: list[str]) -> int:
         for index in list(found)[:3]:
             entry = dictionary.get(names[index])
             if entry:
+                # 400 rather than 150: the third cell is the source
+                # citation, and Mali's was cut at "Tableau S-3: Population
+                # R..." -- exactly the clause naming which population the
+                # table counts, which is the question a truncated citation
+                # cannot answer and the whole reason for printing it.
                 log(f"    {names[index]} says: "
-                    + " | ".join(c[:150] for c in entry if c))
+                    + " | ".join(c[:400] for c in entry if c))
         # The whole country's row, every column, against the total it
         # publishes. This is what says whether the columns partition a
         # population or overlap: Burma's forty sum to 3.05 times its own
