@@ -470,7 +470,13 @@ UKRAINE = Country(
     licence="CC BY-IGO, published via HDX",
     dataset="ukraine-subnational-boundaries-and-tabular-data",
     out="ukraine_oblast.json",
-    levels={1: "admin1", 2: "admin2"},
+    # Oblasts only, though the figures live in the rayons and are summed out of
+    # them. Publishing the 661 rayons put 605 rows nowhere and 56 onto shapes
+    # by prefix and containment against an adjectival form -- matches no one
+    # can check one by one, which is the kind this map refuses on principle
+    # even when most of them are probably right. The oblasts match one for one
+    # and reconcile to the census's own national total exactly.
+    levels={1: "admin1"},
     # The Language sheet, not Nationality-Language. That second sheet is the
     # cross-tabulation of the two -- 1,619 columns, every nationality against
     # every native language -- which is a different and much larger claim than
@@ -933,7 +939,7 @@ def read(book, country: Country,
             whole = {label: value for index, label in found.items()
                      if (value := number(row[index])) is not None and value > 0}
             continue
-        if level not in country.levels or not name or name.upper() == "NO NAME":
+        if not name or name.upper() == "NO NAME":
             # "NO NAME" is the workbook's own placeholder for an area it could
             # not label. It is not a place, and giving it a record would put an
             # unnamed shape on the map with figures attached.
@@ -941,6 +947,10 @@ def read(book, country: Country,
             continue
         counts = {label: value for index, label in found.items()
                   if (value := number(row[index])) is not None and value > 0}
+        # Children are added up before the level filter, so a level can feed a
+        # parent without appearing on the map itself. Ukraine needs exactly
+        # that: its rayons are the only place the figures exist, and its
+        # oblasts are the only level that joins.
         if country.sum_into is not None and level == country.sum_into + 1 \
                 and parent:
             kid = kids[parent]
@@ -953,6 +963,9 @@ def read(book, country: Country,
                     kid["counts"][label] += value
             else:
                 kid["blank"].append(name)
+        if level not in country.levels:
+            skipped += 1
+            continue
         if not counts:
             # An area the file lists and has no figures for. Named rather than
             # dropped in silence: three Ethiopian first-order divisions arrive

@@ -2940,6 +2940,23 @@ class UscbReader(unittest.TestCase):
         out = self.uscb.read(self.Book(rows), country, country.topics[0])
         self.assertEqual(out[("", "KYIV OBLAST")]["published"], 999)
 
+    def test_a_level_can_feed_its_parent_without_being_published(self):
+        # Ukraine's rayons are the only place the figures exist and the only
+        # level that does not join, so they are summed and not emitted.
+        country = self.uscb.Country(
+            iso3="UKR", name="Ukraine", year=2001, source="s", licence="l",
+            dataset="d", out="o.json", levels={1: "admin1"},
+            topics=(self.uscb.Topic("Language", "language"),), note="n",
+            sum_into=1, refuse_area=1.0, refuse_share=1.0)
+        out = self.uscb.read(self.Book(self.SUMMED), country,
+                             country.topics[0])
+        self.assertEqual(list(out), [("", "KYIV OBLAST")])
+        self.assertEqual(out[("", "KYIV OBLAST")]["counts"],
+                         {"Ukrainian": 70, "Russian": 30})
+
+    def test_ukraine_publishes_oblasts_only(self):
+        self.assertEqual(self.uscb.UKRAINE.levels, {1: "admin1"})
+
     def test_ukraine_builds_its_oblasts_by_addition(self):
         # The 2001 language table is published by rayon and the 25 oblast rows
         # above them are blank, so the first order carried nothing at all.
