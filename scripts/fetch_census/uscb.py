@@ -681,8 +681,12 @@ MALI = Country(
     dataset="mali-subnational-population-and-housing-data-tables-with-"
             "administrative-boundaries",
     out="mali_region.json",
-    # 9 regions and 50 cercles, which is what geoBoundaries draws.
-    levels={1: "admin1", 2: "admin2"},
+    # Regions only. The file lists all 50 cercles and leaves every one of
+    # them blank, so claiming the second order here would be claiming a level
+    # that carries nothing -- the reverse of Ukraine, whose figures were at
+    # the second order and whose first was the empty one. geoBoundaries draws
+    # both, and the cercles keep a visible gap.
+    levels={1: "admin1"},
     topics=(Topic("Language", "language"),),
     aliases={},
     note=("2009 census. The shares are of the resident population aged 6 and "
