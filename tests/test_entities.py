@@ -5,6 +5,7 @@ dependency overwriting its parent country, and a curated row matching the wrong
 shape.
 """
 
+import json
 import collections
 import pathlib
 import sys
@@ -3115,3 +3116,48 @@ class UscbReader(unittest.TestCase):
         self.assertEqual(self.uscb.PHILIPPINES.year, 2020)
         for country in self.uscb.COUNTRIES.values():
             self.assertIn(str(country.year), country.note)
+
+
+class AliasKeysAreNamesTheSourceUses(unittest.TestCase):
+    """An alias keyed on a name no row carries is dead, and silently so.
+
+    The keys are the *source's* spelling and the values geoBoundaries', which
+    is easy to write backwards: the pairs are discovered by reading the two
+    lists of leftovers side by side, and either column will look plausible as
+    a key. A backwards alias raises nothing, matches nothing and leaves the
+    gap exactly as it was -- the fix appears to be applied and is not.
+
+    Pakistan's nine were written that way the first time. Its file names the
+    areas "BATAGRAM DISTRICT", the reader titles that to "Batagram District",
+    and keys reading "Batagram" reached none of them.
+
+    So every alias key must be a name that country's own committed output
+    actually carries, which is checkable here because the output is in git.
+    """
+
+    def test_every_alias_key_names_a_row_in_the_committed_output(self):
+        # uscb.py imports from ._shared, so it has to arrive as part of its
+        # package rather than as a loose module on sys.path.
+        import importlib
+        sys.path.insert(0, str(ROOT / "scripts"))
+        uscb = importlib.import_module("fetch_census.uscb")
+
+        checked = 0
+        for country in uscb.COUNTRIES.values():
+            if not country.aliases:
+                continue
+            path = ROOT / "data" / "processed" / country.out
+            if not path.exists():
+                continue
+            rows = json.loads(path.read_text())
+            names = {row.get("name") for row in rows}
+            names |= {row.get("parent_name") for row in rows}
+            names.discard(None)
+            for key in country.aliases:
+                checked += 1
+                self.assertIn(
+                    key, names,
+                    f"{country.iso3}: alias key {key!r} matches no row in "
+                    f"{country.out}. The key is the source's own name for "
+                    f"the area, not the boundary file's.")
+        self.assertGreater(checked, 0, "no alias keys were checked")
