@@ -1000,6 +1000,72 @@ Nanga-Boguila/Nagha Boguila, and Ndjoukou, which loses its initial N in the
 boundary file. Each was read off the two lists of leftovers, four rows with no
 shape against four shapes with no row, pairing one to one.
 
+### Mali: a quarter of the country, accounted for
+
+Its 21 language columns sum to **11,109,312** against a census that counted
+about 14.5 million. A quarter of a country unaccounted for is either a stated
+universe or a misread sheet, and the two look identical from the numbers, so
+the file was held back a release rather than guessed at.
+
+The answer was in the source citation the whole time, and could not be read
+because this reader printed only the first 150 characters of a data-dictionary
+cell -- which is past the field description and stops inside the citation.
+Mali's ended at `Tableau S-3: Population R...`. Printing 400 finishes the
+sentence:
+
+> `Tableau S-3: Population Residente de 6 Ans et Plus Selon la Langue`
+
+The resident population **aged 6 and over**. The missing quarter is children
+under six, who were not asked. So every Mali share on this map is of people
+aged six and over, which the note says because the shares cannot.
+
+**Regions only.** The file lists all 50 cercles and leaves every one blank, so
+the second order would be a claim to a level that carries nothing. This is
+Ukraine in reverse -- there the figures were at the second order and the first
+was empty -- and it is settled the same way: publish the level that has the
+data, and let the other be a visible gap.
+
+One column, `LNG_MLS` "Main language spoken", comes from a different source
+again (a 2022 percentages table, not the 2009 census) and holds a language
+name rather than a count. It needed no special handling: it is text, `number()`
+returns None, and the reader already skips it.
+
+### The Democratic Republic of the Congo: the first source here that is not a census
+
+Everything else on this map is a census. This is the *Enquête 1-2-3*, and it is
+reported differently for that reason -- because the difference is invisible
+once a figure is drawn on a shape.
+
+**The figures are not people.** They are the **31,755 heads of household** the
+survey reached, for a country of 119 million. The reader gained
+`Country.counts_are_people` for it: where that is false only the share is
+published and no count is, because the share is what the survey measures and
+the count is how many doors it knocked on. A count of 11,114 Catholics sitting
+in the same field as Pakistan's 200 million Muslims, with nothing to say one
+is a sample, is exactly the invisible mis-match this map exists to refuse.
+Shares without counts are not a new shape here: the whole-country rows from
+the Factbook have always been that.
+
+**The universe column is called "Sample size".** `denominator()` finds that
+column by looking for the word "population" in its alias, which is right for
+every census here and wrong for a survey. Unnamed, `TRB_SSIZE` is read as a
+group -- and since it is the sum of every other group, as the largest tribe in
+the country. `Topic.denominator` names it outright, and both topics take the
+same column, which belongs to neither.
+
+**Provinces only, and this is a decision about sample size rather than about
+names.** The file also carries 164 districts and they would all have joined.
+31,755 households over 26 provinces is about 1,200 each, which supports a
+provincial estimate; over the districts it is about 194, which supports
+nothing. Reading a level and not publishing it is the machinery Ukraine
+already needed; here it is used to refuse detail the source cannot carry
+rather than to build a level it left empty.
+
+Two other things the note has to say, because no figure can. The source pools
+the **2005 and 2012** rounds into one column set, so a share dates to neither
+year exactly. And the unit is the household *head*, so a provincial share
+describes heads of household rather than residents.
+
 ### Bangladesh: a mirror, and a merged sheet that is wrong
 
 The Bureau of Statistics publishes a workbook of Census 2022 indicators at

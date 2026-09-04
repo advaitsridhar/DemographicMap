@@ -3161,3 +3161,67 @@ class AliasKeysAreNamesTheSourceUses(unittest.TestCase):
                     f"{country.out}. The key is the source's own name for "
                     f"the area, not the boundary file's.")
         self.assertGreater(checked, 0, "no alias keys were checked")
+
+
+class SurveyFiguresAreNotPopulationCounts(unittest.TestCase):
+    """The two things the DRC's survey needed the reader to be able to say.
+
+    Its sheet is the first here whose figures are not people. They are the
+    31,755 heads of household the Enquête 1-2-3 reached, for a country of 119
+    million, and the column holding that number is called "Sample size" --
+    which denominator() cannot find, because it looks for the word
+    "population" and this universe is not one.
+
+    Both failures are silent. An unnamed denominator becomes a group, and
+    since it is the sum of every other group it becomes the largest "tribe" in
+    the country. A published count becomes a number in the same field as
+    Pakistan's census counts, with nothing to say one is a sample.
+    """
+
+    def setUp(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import importlib
+        self.uscb = importlib.import_module("fetch_census.uscb")
+
+    def test_the_sample_size_is_the_universe_and_not_a_tribe(self):
+        names = ["AREA_NAME", "ADM_LEVEL", "TRB_SSIZE", "TRB_NNB", "TRB_LUA"]
+        aliases = ["Area", "Level", "Sample size", "Nande", "Luba-Lulua"]
+        # Left to the alias search there is no denominator at all, so every
+        # column including the sample size is read as a group.
+        found = self.uscb.groups(
+            names, aliases, self.uscb.denominator(names, aliases, "TRB_"),
+            False, "TRB_")
+        self.assertIn("Sample size", found.values())
+        # Named outright, it is the total and the groups are the tribes.
+        total = names.index("TRB_SSIZE")
+        found = self.uscb.groups(names, aliases, total, False, "TRB_")
+        self.assertNotIn("Sample size", found.values())
+        self.assertEqual(sorted(found.values()), ["Luba-Lulua", "Nande"])
+
+    def test_a_denominator_named_but_absent_is_refused_by_name(self):
+        drc = self.uscb.COUNTRIES["COD"]
+        self.assertTrue(all(t.denominator == "TRB_SSIZE" for t in drc.topics))
+
+    def test_the_country_that_counts_households_publishes_no_count(self):
+        drc = self.uscb.COUNTRIES["COD"]
+        self.assertFalse(drc.counts_are_people)
+        # Every other country here counts people and says so by default.
+        others = [c.iso3 for c in self.uscb.COUNTRIES.values()
+                  if c.iso3 != "COD"]
+        self.assertTrue(others)
+        for iso3 in others:
+            self.assertTrue(self.uscb.COUNTRIES[iso3].counts_are_people, iso3)
+
+    def test_the_drc_is_read_at_one_level_only(self):
+        # 31,755 households over 26 provinces is about 1,200 each; over the
+        # 164 districts the file also carries it is about 194, which is not a
+        # basis for a published composition.
+        self.assertEqual(self.uscb.COUNTRIES["COD"].levels, {1: "admin1"})
+
+    def test_mali_shares_are_of_the_population_the_table_counts(self):
+        # The columns sum to 11.1 million against a census of about 14.5, and
+        # the source's own title says why: aged 6 and over. The note has to
+        # carry that, because the shares cannot.
+        note = self.uscb.COUNTRIES["MLI"].note
+        self.assertIn("6 and over", note)
+        self.assertIn("11,109,312", note)

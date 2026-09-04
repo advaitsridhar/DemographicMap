@@ -1,19 +1,19 @@
-Central African Republic: https://data.humdata.org/dataset/4f41a2c7-167f-4e60-8e90-dd282383dd90/resource/1670d3a6-a89f-40cd-80c9-bf580b27e08e/download/central_african_republic_uscb_202303.xlsx
-  401,471 bytes
-  Ethnicity: 267 rows, 26 groups, denominator 'Total population'
-    177 rows skipped: another level, or no area name
-    admin1: 3,895,140 against the country's own 3,895,138 -- -2 fewer (-0.0%)
-    admin2: 3,895,111 against the country's own 3,895,138 -- 27 fewer (0.0%)
-    every one of 89 areas reaches its published total
-  Religion: 267 rows, 5 groups, denominator 'Total population'
-    177 rows skipped: another level, or no area name
-    admin1: 3,836,734 against the country's own 3,836,735 -- 1 fewer (0.0%)
-    admin2: 3,836,739 against the country's own 3,836,735 -- -4 fewer (-0.0%)
-    every one of 89 areas reaches its published total
-  Language: 267 rows, 78 groups, denominator 'Total population'
-    177 rows skipped: another level, or no area name
-    admin1: 3,726,658 against the country's own 3,726,679 -- 21 fewer (0.0%)
-    admin2: 3,726,562 against the country's own 3,726,679 -- 117 fewer (0.0%)
-    every one of 89 areas reaches its published total
-  wrote data/processed/car_prefecture.json (925 kB)
-  89 areas: 17 admin1, 72 admin2
+Mali: https://data.humdata.org/dataset/54941a2a-9546-4885-a12c-80c34eaa20cf/resource/00e9ae0f-0822-4235-97b3-c2c1d125efb3/download/mali_uscb_202211.xlsx
+  594,053 bytes
+  Language: 60 rows, 22 groups, no published denominator
+    50 areas listed with no figures at all: ABEÏBARA, ANSANGO, BAFOULABÉ, BANAMBA, BANDIAGARA, BANKASS ...
+    admin1: 11,109,312 against the country's own 11,109,312 -- exactly
+  wrote data/processed/mali_region.json (32 kB)
+  9 areas: 9 admin1, 0 admin2
+Democratic Republic of the Congo: https://data.humdata.org/dataset/881bdaa3-6d4c-408b-88dc-aed0ecc0d119/resource/a4a72c31-af0d-4b0d-975b-9eadf6d5c103/download/democratic-republic-of-the-congo_uscb_202103.xlsx
+  297,896 bytes
+  Tribe and Religion [TRB_]: 191 rows, 105 groups, denominator 'Sample size'
+    164 rows skipped: another level, or no area name
+    admin1: 31,755 against the country's own 31,755 -- exactly
+    every one of 26 areas reaches its published total
+  Tribe and Religion [RLG_]: 191 rows, 9 groups, denominator 'Sample size'
+    164 rows skipped: another level, or no area name
+    admin1: 31,755 against the country's own 31,755 -- exactly
+    every one of 26 areas reaches its published total
+  wrote data/processed/drc_province.json (131 kB)
+  26 areas: 26 admin1
