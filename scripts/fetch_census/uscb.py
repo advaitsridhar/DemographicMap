@@ -626,7 +626,18 @@ CENTRAL_AFRICAN_REPUBLIC = Country(
     topics=(Topic("Ethnicity", "ethnicity"),
             Topic("Religion", "religion"),
             Topic("Language", "language")),
-    aliases={},
+    # 17 of 17 prefectures and 68 of 72 sub-prefectures reach a shape on their
+    # own name. These four are the whole of the disagreement, read off the two
+    # lists of leftovers -- four rows with no shape against four shapes with no
+    # row, pairing one to one. Two are a doubled or dropped letter, one an
+    # accent the census does not write, and Ndjoukou loses its initial N in the
+    # boundary file.
+    aliases={
+        "Aba": ("Abba",),
+        "Bossemptele": ("Bossemtélé",),
+        "Nanga-Boguila": ("Nagha Boguila",),
+        "Ndjoukou": ("Djoukou",),
+    },
     note=("2003 census (RGPH03). The ethnicity table is the census's own "
           "\"Ethnie-Nationalité\", which codes residents who are not "
           "Central African by nationality rather than by ethnic group: "
