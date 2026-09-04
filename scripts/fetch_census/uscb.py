@@ -567,10 +567,28 @@ PAKISTAN = Country(
     # agreement rule. Language is a field nothing else fills, so it is added
     # where religion could only be risked.
     topics=(Topic("Mother Tongue", "language", prefix="LNG_"),),
-    # None. The file writes "AWARAN DISTRICT" and norm() drops the word
-    # "district", so the names reach geoBoundaries unaided -- the first
-    # country here that needs no alias at all.
-    aliases={},
+    # The word "district" is dropped by norm(), so 105 of 126 districts
+    # reached their shape with no help at all. These nine are the ones the
+    # two sources spell differently, and each was read off the pair of
+    # leftovers rather than guessed: after the first join, exactly these
+    # census rows had reached no shape and exactly these shapes had no row.
+    #
+    # Six are transliteration (Killa/Qilla, Kambar/Qambar, Jaffarabad with
+    # two f's, Batagram with one t, Sheikhupura and Vehari with the vowels
+    # moved). Shaheed Benazirabad is different in kind: the district was
+    # renamed from Nawabshah in 2008 and geoBoundaries still carries the old
+    # name, so this alias is a date rather than a spelling.
+    aliases={
+        "Batagram District": ("Battagram",),
+        "Jaffarabad District": ("Jafarabad",),
+        "Kambar Shahdadkot District": ("Qambar Shahdadkot",),
+        "Killa Abdullah District": ("Qilla Abdullah",),
+        "Killa Saifullah District": ("Qilla Saifullah",),
+        "Naushahro Feroze District": ("Naushehro Feroze",),
+        "Shaheed Benazirabad District": ("Nawabshah",),
+        "Sheikhupura District": ("Sheikhpura",),
+        "Vehari District": ("Vihari",),
+    },
     # The census counted the Federally Administered Tribal Areas as a
     # first-order area; they were merged into Khyber Pakhtunkhwa in 2018 and
     # geoBoundaries draws the seven that remain. Declared, so it reads as a
