@@ -1,12 +1,51 @@
-Ukraine: https://data.humdata.org/dataset/45c19756-9d0b-4673-9de4-fc47168c369a/resource/7f1ace67-fd49-4d2a-8b25-cc0561b5145b/download/ukraine_uscb_201905.xlsx
-  4,486,575 bytes
-  Language: 700 rows, 10 groups, denominator 'Total Population'
-    25 areas at level 1 built by adding up the level below
-    672 rows skipped: another level, or no area name
-    admin1: 48,121,632 against the country's own 48,121,632 -- exactly
-    3 of 27 areas do not reach their published total; the map shows the remainder as unaccounted:
-      KHERSONS’KA OBLAST’: groups come to 1,164,267 against a published 1,172,689 (+0.7%)
-      MYKOLAYIVS’KA OBLAST’: groups come to 1,253,868 against a published 1,262,899 (+0.7%)
-      KIROVOHRADS’KA OBLAST’: groups come to 1,118,568 against a published 1,125,704 (+0.6%)
-  wrote data/processed/ukraine_oblast.json (50 kB)
-  27 areas: 27 admin1
+27 resources named for the Bureau, 27 of them workbooks, across 25 datasets
+  Bangladesh_uscb_202107.xlsx  bangladesh-subnational-boundaries-and-tabular-data  (Bangladesh Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Censuses and Surveys)
+      4,805,229 bytes, sheets: Metadata, Data Dictionary, Age-Sex, Households, Housing, Floating Population, Refugees, Religion and Ethnicity, Economy, Info and Com Technology, Health
+  Burma_uscb_202003.xlsx  burma-subnational-boundaries-and-tabular-data  (Burma Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      1,302,201 bytes, sheets: Metadata, Data Dictionary, Age-Sex, Households, Housing, Education, Health, Ethnicity, Needs, Rakhine State
+  Central_African_Republic_uscb_202303.xlsx  car-subnational-boundaries-and-tabular-data  (Central African Republic Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      401,471 bytes, sheets: Metadata, Data Dictionary, Age-Sex, Ethnicity, Religion, Language, Housing Units, Health, Agriculture, Population, Displacement
+  Colombia_uscb_202210.xlsx  colombia-subnational-boundaries-and-tabular-data  (Colombia Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      8,634,434 bytes, sheets: Metadata, Data Dictionary, Age-Sex, Individuals, Indigenous, Households, Housing, Poverty, Health, Agriculture
+  Democratic Republic of the Congo_uscb_202103.xlsx  democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data  (Democratic Republic of the Congo Subnational Population and Housing Data Tables with Administrative Boundaries, Based on Surveys)
+      297,896 bytes, sheets: Metadata, Data Dictionary, Population Estimates, Households, IDP Movements, People in Need, Tribe and Religion
+  Dominica_uscb_202106.xlsx  dominica-subnational-boundaries-and-tabular-data  (Dominica Subnational Population Data Tables with Administrative Boundaries, Based on National Census)
+      42,098 bytes, sheets: Metadata, Data Dictionary, Settlements, Age-Sex
+  Dominican_Republic_uscb_202212.xlsx  dominican-republic-subnational-population-and-housing-data-tables-with-administrative-boundaries  (Dominican Republic Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      966,252 bytes, sheets: Metadata, Data Dictionary, Age-Sex, Population Estimates, Households, Housing Units, Health, Economy, Info and Com Technology, Agricultural Assets
+  Ethiopia_uscb_202308.xlsx  ethiopia-subnational-boundaries-and-tabular-data  (Ethiopia Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      1,759,157 bytes, sheets: Metadata, Data Dictionary, Age-Sex, Religion, Economy, Disability, Household, Housing, Ethnicity, Language, Health, Agriculture
+  Haiti_uscb_202212.xlsx  haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries  (Haiti Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      270,331 bytes, sheets: Metadata, Data Dictionary, Population Estimates, Education, Health, Info and Com Technology, Population, Housing Units, Transportation
+  Indonesia_uscb_202405.xlsx  indonesia-subnational-population-and-housing-data-tables  (Indonesia Subnational Population and Housing Data Tables)
+      556,433 bytes, sheets: Metadata, Data Dictionary, Age-Sex, Households, Language, Mortality and Disability, Migration
+  Iraq_uscb_201905.xlsx  iraq-subnational-boundaries-and-tabular-data  (Iraq Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      368,495 bytes, sheets: Metadata, Data Dictionary, Population, Households, ICT, Health, Mortality, People in Need
+  Jamaica_uscb_202302.xlsx  jamaica-subnational-boundaries-and-tabular-data  (Jamaica Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      438,450 bytes, sheets: Metadata, Data Dictionary, Age-Sex, Population, Ethnicity and Religion, Housing Units, Households, Amenities, Poverty
+  Libya_uscb_202304.xlsx  libya-subnational-boundaries-and-tabular-data  (Libya Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      1,212,407 bytes, sheets: Metadata, Data Dictionary, Age-Sex, Population, Households, Nationality, Population Displacement, Amenities, IDP and Needs
+  Mali_uscb_202211.xlsx  mali-subnational-population-and-housing-data-tables-with-administrative-boundaries  (Mali Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      594,053 bytes, sheets: Metadata, Data Dictionary, Age-Sex, Population Projections, IDP Movements, Nationality, Migration, Language, Economy, Households, Building Materials, Amenities
+  Nigeria_uscb_202001.xlsx  nigeria-subnational-boundaries-and-tabular-data  (Nigeria Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      1,958,906 bytes, sheets: Metadata, Data Dictionary, Age-Sex, Population Estimates, Age-Sex (USCB), Households, Nationality, Info and Comm Technology, Migration and Displacement, Health, Poverty
+  Pakistan_uscb_202401.xlsx  pakistan-subnational-population-and-housing-data-tables  (Pakistan Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      1,147,052 bytes, sheets: Metadata, Data Dictionary, Age-Sex, Households, Housing Units, Amenities, Nationality, Religion, Mother Tongue, Info and Com Technology, Crops, Livestock
+  Philippines_uscb_202402.xlsx  philippines-subnational-population-and-housing-data-tables  (Philippines Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Censuses)
+      56,136,814 bytes, sheets: Metadata, Data Dictionary, Age-Sex, Population, Ethnicity, Citizenship, Religion, Households, Housing Units, Overseas Workers
+  Saint_Vincent_and_The_Grenadines_uscb_202109.xlsx  saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data  (Saint Vincent and the Grenadines Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census)
+      384,613 bytes, sheets: Metadata, Data Dictionary, Age-Sex, Ethnicity and Religion, Education and Occupation, Households, Buildings, Access to Services, Info and Com Technology
+  Somalia_uscb_201905.xlsx  somalia-subnational-boundaries-and-tabular-data  (Somalia Subnational Population Data Tables with Administrative Boundaries, Based on Surveys)
+      256,618 bytes, sheets: Metadata, Data Dictionary, Population, Education, Health, Malaria, Conflict, Insecurity, Stressed, Needs
+  South_Sudan_uscb_201812.xlsx  south-sudan-subnational-boundaries-and-tabular-data  (South Sudan Subnational Population Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      1,388,562 bytes, sheets: Metadata, Data Dictionary, Age-Sex, Education, Employment and Labor, Poverty and Consumption, Disability and Health, Mortality and Domestic Violence, Households, Access to Services, Agriculture and Livelihood, Pop Est and Food Insecurity, Migration, People in Need
+  Sudan_uscb_202101.xlsx  sudan-subnational-boundaries-and-tabular-data  (Sudan Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      413,921 bytes, sheets: Metadata, Data Dictionary, Population_CensusGeog, Population_RetabGeog, Population Estimates_2020Geog, Child Well-Being_2018Geog, Economy_CensusGeog, Nationality_CensusGeog, Migration_2018Geog, Household_CensusGeog, Household_2018Geog, Housing Unit_2018Geog, Amenity_2018Geog
+  Syria_uscb_201811.xlsx  syria-subnational-boundaries-and-tabular-data  (Syria Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      366,769 bytes, sheets: Metadata, Data Dictionary, Age-Sex, Ethnicity, Housing, Access to Services, Population Estimates, Forced Dispersion, IDP Movements, People in Need
+  The_Bahamas_uscb_202105.xlsx  the-bahamas-subnational-boundaries-and-tabular-data  (The Bahamas Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      111,394 bytes, sheets: Metadata, Data Dictionary, Settlements, Age-Sex, Households, Individuals, 2019 Population Estimates, Hurricanes
+  Ukraine_uscb_201905.xlsx  ukraine-subnational-boundaries-and-tabular-data  (Ukraine Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      4,486,575 bytes, sheets: Metadata, Data Dictionary, Age-Sex 2001, Age-Sex 2017, Crimea Population, Language, Nationality-Language, Households, Info and Com Technology, Income and Poverty
+  Yemen_uscb_201806.xlsx  yemen-subnational-boundaries-and-tabular-data  (Yemen Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+      900,659 bytes, sheets: Metadata, Data Dictionary, Census Population, Age-Sex Estimates, IDPs and Refugees, Households, Housing, Income and Poverty, Info and Com Technology, Health
