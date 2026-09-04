@@ -1189,9 +1189,26 @@ Three kinds of miss, and they are not the same kind of thing:
   the geography, which is what keeps Ethiopia working, since its ethnic-group
   columns are not named `ETH_`. That is the same trap the first version of
   this reader fell into, in the opposite direction. The upshot is that Myanmar
-  gains religion as well as ethnicity: Buddhist 90.9%, Christian 7.2%, Islamic
-  3.1%, Hindu 0.8%, from the 2014 census, which published religion even while
-  withholding ethnicity.
+  gains religion as well as ethnicity: Buddhist 88.4%, Christian 7.2%, Islamic
+  3.1%, Hindu 0.8%, Other 0.5%, Nat 0.1%, from the 2014 census, which published
+  religion even while withholding ethnicity. That first figure read 90.9% here
+  until the states that carry it were summed: with the other five it came to
+  102.6%, so it was a transcription and not a misread table -- a misread would
+  have moved every share, and these agree with the summed states to within
+  0.02 points. 88.4% is also what the census itself published, 87.9%, plus the
+  areas the sheet leaves out.
+
+* **Myanmar's two questions do not count the same people.** Religion is asked
+  of everyone; Table 14 is *Ethnic Nationalities Living*, and counts only the
+  135 recognised national races. Across the fourteen first-order areas the
+  religion columns total 47,915,382 and the ethnicity columns 46,701,817, and
+  the 1.2 million difference is not spread evenly: Rakhine alone accounts for
+  584,142 of it and Yangon for 274,710. So Rakhine's 93.7% Rakhine is a share
+  of ethnic nationalities, not of residents, and the people missing from that
+  denominator are the same ones the 2014 census declined to enumerate. Both
+  numbers are published as they stand, with the table's own title carried in
+  the citation for the ethnicity field, because a share cannot state its own
+  universe.
 
 * **Ukraine publishes its language table by rayon, and this map by oblast.**
   The 2001 census asked native language and the Bureau's sheet gives ten of
