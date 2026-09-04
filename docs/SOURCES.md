@@ -1036,6 +1036,7 @@ same call `pxweb.py` makes for the Nordic offices.
 | --- | --- | --- | --- |
 | Philippines | 2020 (Philippine Statistics Authority) | religion, ethnicity | 17 regions, 116 provinces and cities |
 | Ethiopia | **2007** (Central Statistical Agency) | religion, ethnicity, language | 13 first-order areas, 93 zones |
+| Myanmar | 2014 census (religion), **2017** Township Profiles (ethnicity) | religion, ethnicity | 15 states and regions, 80 districts |
 
 Ethiopia is 2007 because that is the last census Ethiopia has completed -- the
 2017 round was postponed and never held. It is the most recent measurement in
@@ -1152,6 +1153,95 @@ Three kinds of miss, and they are not the same kind of thing:
   exactly one of two tied shapes is written the way the row writes it, that is
   stronger evidence than the key that tied them, and the tie is now settled on
   the exact name and on nothing weaker.
+
+**A sheet's name is not its contents, and three countries prove it.**
+
+* **Myanmar's "Ethnicity" sheet is not from the census.** The 2014 Population
+  and Housing Census asked about ethnicity and its results were never
+  published; the tables were withheld. So the Bureau uses the Department of
+  Population's *2018 Township Profiles*, Table 14, with a reference date of
+  April 2017 -- and says so in the data dictionary while the sheet keeps the
+  same name and sits in the same file as the 2014 Age-Sex tables. Dating those
+  figures to 2014 would attribute them to a census that refused to release
+  them, which is the single most notable fact about ethnicity data in Myanmar.
+  `Topic` therefore carries its own year, source and note, overriding the
+  country's, and each record gets one citation per topic rather than one for
+  the file. Myanmar recognises 135 official ethnic groups and this table names
+  40; the Rohingya appear in neither, having been excluded from enumeration as
+  an ethnicity in 2014.
+
+* **Syria's "Ethnicity" sheet is nationality, and is not read.** Its nine
+  columns are Syrian, Palestinian, Arab-other, European, African non-Arab,
+  Asian, Australian, American, Other, and its dictionary names the source
+  table: *Distribution of Individuals by Nationality*. Published as ethnicity
+  that would tell a reader Syria is ethnically uniform, which is neither what
+  the 2004 census measured nor what it claimed. There is no field on this map
+  for citizenship, so Syria stays empty and this is the reason.
+
+* **Myanmar's sheet holds two questions.** It is called "Ethnicity" and
+  carries the religion columns beside the ethnic ones. Reading "everything
+  that is not geography" collected both, and the shares came to 3.05 times the
+  population -- 47.8 million of ethnicity, plus 49.0 million of religion, plus
+  the religion denominator, summed as one question. `check_total` refused it.
+  `Topic` therefore takes an optional column prefix, used *only* where a sheet
+  is shared; where it is empty the columns are still whatever is left after
+  the geography, which is what keeps Ethiopia working, since its ethnic-group
+  columns are not named `ETH_`. That is the same trap the first version of
+  this reader fell into, in the opposite direction. The upshot is that Myanmar
+  gains religion as well as ethnicity: Buddhist 90.9%, Christian 7.2%, Islamic
+  3.1%, Hindu 0.8%, from the 2014 census, which published religion even while
+  withholding ethnicity.
+
+* **Ukraine is configured, correct, and deliberately not run.** Its figures
+  reconcile -- the national row to 99.8%, every column one the 2001 census
+  published -- and the adapter writes 663 areas of which **58 join**. The
+  oblast rows are empty, because the source publishes native language at rayon
+  level, and the census romanises Ukrainian adjectivally where geoBoundaries
+  uses the short exonym: `BAKHCHYSARAYS'KYY RAYON` has to reach
+  `Bakhchysarai`, `LUTS'KYY RAYON` to reach `Lutsk`, 661 times. A
+  suffix-stripping rule would bridge most of them and is precisely what
+  `norm()`'s generic-word list refuses to do for a local generic word; it would
+  also collapse `Luts'ka Mis'krada`, the city council, onto `Luts'kyy Rayon`,
+  the district around it, which are two places geoBoundaries draws as one
+  shape. The way in is to sum each oblast's own rayons into it, which the
+  file's `ADM1_NAME` column supports and which would give 27 oblasts for 38
+  million people -- next piece of work, not this one. Its 27 oblast aliases
+  are verified against the census's own list and kept for it.
+
+  Its two language sheets are worth recording either way. The flat `Language`
+  sheet gives ten native languages against a total. `Nationality-Language` is
+  the cross-tabulation -- 1,619 columns, every nationality against every native
+  language -- a different and much larger claim than a share of a population.
+
+* **Ukraine's rayons fall short of their own totals, and that is the source.**
+  105 of 663 miss by up to 6.9%. The shape says it is a hole and not a
+  misreading: the national row reconciles to 99.8%, the columns are exactly
+  the categories the census published including Other and Unstated, and 558
+  rayons agree. A reader that had misunderstood the sheet would be wrong
+  everywhere and by a similar factor, which is what the default bounds are
+  tuned to catch. So the bounds moved onto the country, defaulting to the
+  module's, and Ukraine is the only country that widens them -- with that
+  evidence written beside the numbers, and a test asserting it is the only
+  one.
+
+**Two boundary names are misspelled rather than differently spelled.**
+geoBoundaries transposes Sagaing into "Saigang" and drops a letter from
+Tanintharyi. Both are well-formed words, so nothing can detect them the way
+mojibake announces itself; they are corrected in `common.MISSPELLED`, which
+fixes the label a reader sees along with the join. Everything else in Myanmar
+needs no alias at all: the census writes "KACHIN STATE" where the boundary file
+writes "Kachin", and `norm()` drops the word "state" on both sides. Ukraine is
+the opposite -- all 27 oblasts need declaring, because the Bureau romanises
+from Ukrainian and geoBoundaries uses the English exonyms, and
+"CHERKAS'KA OBLAST'" shares no surviving word with "Cherkasy Oblast".
+
+**And Ukraine found a live defect in the join.** CGAZ draws both `Kyiv` and
+`Kyiv Oblast` as first-order units; `norm()` drops "Oblast"; and the admin-1
+lookup was a dict comprehension keyed on the normalised name. One silently
+overwrote the other, so a capital of 2.95 million or the region around it was
+unreachable, whichever the boundary file listed first. The lookup is now
+grouped and the tie settled on an exact name -- the same test that picks
+Cotabato province over Cotabato City.
 
 **Indonesia is in this series and is not read from it.** Its workbook carries
 no religion and no ethnicity, only a language sheet whose composition is

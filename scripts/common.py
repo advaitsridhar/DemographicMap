@@ -309,6 +309,12 @@ def repair(name: str) -> str:
 # differs from "Western Cape".
 MISSPELLED: dict[tuple[str, str], str] = {
     ("ZAF", "Nothern Cape"): "Northern Cape",
+    # geoBoundaries transposes Sagaing and drops a letter from Tanintharyi.
+    # Both are well-formed words, so nothing can detect them; a reader who
+    # knows Myanmar is the only test there is. The census, the Department of
+    # Population and Myanmar's own English-language usage all agree.
+    ("MMR", "Saigang"): "Sagaing",
+    ("MMR", "Tanitharyi"): "Tanintharyi",
 }
 
 

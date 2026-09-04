@@ -50,9 +50,61 @@ from dataclasses import dataclass, field as dc_field
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, RAW, gap, http_get, log, measure, record, shares,
-    write_json,
+    NOT_AVAILABLE, PROCESSED, RAW, gap, http_get, http_json, log, measure,
+    record, shares, write_json,
 )
+
+# HDX serves its API fully while blocking the HTML dataset pages behind a
+# 2.3 kB stub, so the catalogue is reachable where the landing page is not.
+HDX_API = "https://data.humdata.org/api/3/action"
+
+# The HDX dataset holding a country's USCB tables is named in its config,
+# because there is no deriving it. The obvious guess -- HDX's Common
+# Operational Dataset for population, cod-ps-<iso3> -- is a different thing
+# entirely: UNFPA and OCHA projections. It carries no USCB workbook for any of
+# the 146 countries that have one, the Philippines and Ethiopia included. That
+# was established by asking all 146, after assuming otherwise and breaking both
+# working countries with the assumption.
+#
+# A dataset id is still worth resolving through rather than pinning a resource
+# id. HDX gives the file a new resource id when the Bureau publishes a new
+# extraction, and leaves the old one serving last year's figures until the day
+# it 404s -- the failure mode being that nothing fails. The dataset it hangs
+# on stays put.
+
+
+def package(dataset: str) -> dict[str, Any]:
+    body = http_json(f"{HDX_API}/package_show?id={dataset}")
+    if not body.get("success"):
+        raise SystemExit(f"HDX has no dataset {dataset!r}")
+    return body["result"]
+
+
+def dataset_url(dataset: str) -> str:
+    """The HDX page a reader should be sent to for these tables."""
+    return f"https://data.humdata.org/dataset/{dataset}"
+
+
+def workbook_url(dataset: str) -> str:
+    """The dataset's current USCB workbook.
+
+    Raises rather than guessing: a dataset with no USCB workbook has none, and
+    building a URL from the naming convention would turn that into a download
+    error somewhere less obvious.
+    """
+    result = package(dataset)
+    found = [r for r in result.get("resources", [])
+             if "uscb" in (r.get("name") or "").lower()
+             and (r.get("name") or "").lower().endswith(".xlsx")]
+    if not found:
+        names = ", ".join(sorted(r.get("name") or "?"
+                                 for r in result.get("resources", []))[:8])
+        raise SystemExit(f"{dataset} carries no USCB workbook. It holds: {names}")
+    # Newest first, so a dataset carrying two extractions uses the later one.
+    found.sort(key=lambda r: (r.get("name") or ""), reverse=True)
+    if len(found) > 1:
+        log(f"  {len(found)} USCB workbooks; using {found[0].get('name')!r}")
+    return found[0]["url"]
 
 # The columns every sheet in the series begins with, whatever its topic. Listed
 # rather than detected: they are the schema, and a value column that happened
@@ -91,9 +143,27 @@ class Topic:
     named "ETH_". Which columns hold groups is a fact the sheet states -- they
     are the ones that are not geography -- and asking it is both simpler and
     the thing this module's docstring already said to do.
+
+    Year, source and note override the country's where a topic does not come
+    from the same place as the rest of the file. Burma is why. Its Age-Sex
+    sheet is the 2014 Population and Housing Census, and its Ethnicity sheet
+    is the Department of Population's 2018 Township Profiles with a 2017
+    reference date -- because the 2014 census's ethnicity tables were never
+    published. Taking the country's year for both would date 2017 figures to
+    2014 and attribute them to a census that did not release them.
     """
     sheet: str
     field: str
+    # Set only where one sheet holds two topics. Burma's is called "Ethnicity"
+    # and carries the religion columns as well, so "everything that is not
+    # geography" collected both and the shares came to 3.05 times the
+    # population. Where a sheet holds one topic this stays empty and the
+    # columns are still whatever is left after the geography -- which is what
+    # keeps Ethiopia working, whose ethnic-group columns are not named "ETH_".
+    prefix: str = ""
+    year: int | None = None
+    source: str = ""
+    note: str = ""
 
 
 @dataclass(frozen=True)
@@ -103,8 +173,6 @@ class Country:
     year: int
     source: str
     licence: str
-    url: str
-    workbook: str
     out: str
     # Which ADM_LEVEL becomes which layer of this map. The Bureau's levels are
     # the country's own, so this is a fact per country: the Philippines' first
@@ -113,6 +181,19 @@ class Country:
     levels: dict[int, str]
     topics: tuple[Topic, ...]
     note: str
+    # The HDX dataset holding this country's tables. Both the workbook and the
+    # citation link come from it, so there is one identifier per country rather
+    # than a resource UUID and a hand-written slug that can disagree -- and the
+    # slugs they replace ("philippines-subnational-population-statistics") were
+    # never fetched, so nothing had ever checked they resolve.
+    dataset: str = ""
+    # How far this country's areas may fall short of their own published
+    # totals before the file is refused. Defaults are the module's; raising
+    # them is a claim about the source and needs the evidence written down,
+    # because the whole point of the bounds is that a reader which has
+    # misunderstood a sheet gets *every* area wrong.
+    refuse_area: float = REFUSE_AREA
+    refuse_share: float = REFUSE_SHARE
     aliases: dict[str, tuple[str, ...]] = dc_field(default_factory=dict)
     # Census areas geoBoundaries draws no boundary of their own for, as
     # (parent, area) pairs -- a name alone is not an address, and the
@@ -146,10 +227,7 @@ PHILIPPINES = Country(
     source=("Philippine Statistics Authority, 2020 Census of Population and "
             "Housing, prepared as subnational tables by the U.S. Census Bureau"),
     licence="CC BY-IGO, published via HDX",
-    url=f"{HDX}/philippines-subnational-population-statistics",
-    workbook=(f"{HDX}/809dfb22-77f4-482c-8560-79b07d20fc15/resource/"
-              "5acff37e-0c02-4d89-bbd2-1825ee98916c/download/"
-              "philippines_uscb_202402.xlsx"),
+    dataset="809dfb22-77f4-482c-8560-79b07d20fc15",
     out="philippines_province.json",
     levels={1: "admin1", 2: "admin2"},
     topics=(Topic("Religion", "religion"),
@@ -228,10 +306,7 @@ ETHIOPIA = Country(
             "Housing Census, prepared as subnational tables by the U.S. Census "
             "Bureau"),
     licence="CC BY-IGO, published via HDX",
-    url=f"{HDX}/ethiopia-subnational-population-statistics",
-    workbook=(f"{HDX}/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/"
-              "f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/"
-              "ethiopia_uscb_202308.xlsx"),
+    dataset="5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
     out="ethiopia_region.json",
     levels={1: "admin1", 2: "admin2"},
     topics=(Topic("Religion", "religion"),
@@ -303,7 +378,353 @@ ETHIOPIA = Country(
           "available to this project. Read it as a description of 2007."),
 )
 
-COUNTRIES: dict[str, Country] = {c.iso3: c for c in (PHILIPPINES, ETHIOPIA)}
+MYANMAR = Country(
+    iso3="MMR",
+    name="Myanmar",
+    year=2014,
+    source=("Department of Population, Ministry of Labour, Immigration and "
+            "Population, 2014 Myanmar Population and Housing Census, prepared "
+            "as subnational tables by the U.S. Census Bureau"),
+    licence="CC BY-IGO, published via HDX",
+    dataset="burma-subnational-boundaries-and-tabular-data",
+    out="myanmar_state.json",
+    levels={1: "admin1", 2: "admin2"},
+    # One sheet, two topics. It is called "Ethnicity" and carries the religion
+    # columns beside the ethnic ones, so reading "everything that is not
+    # geography" collected both and the shares came to 3.05 times the
+    # population -- 47.8 million of ethnicity plus 49.0 million of religion
+    # plus the religion denominator, all summed as though they were one
+    # question. The prefixes are what separate them here.
+    topics=(
+        # Not the census. The 2014 round asked about ethnicity and its results
+        # were never published -- the tables were withheld -- so the Bureau
+        # uses the Department of Population's township profiles instead, and
+        # the file says so in its data dictionary while the sheet is still
+        # called "Ethnicity". Dating these to 2014 would attribute them to a
+        # census that refused to release them, which is the notable fact about
+        # ethnicity data in Myanmar and the last thing to bury.
+        Topic("Ethnicity", "ethnicity", prefix="ETH_", year=2017,
+              source=("Department of Population, 2018 Township Profiles, "
+                      "Table 14: Ethnic Nationalities Living, prepared as "
+                      "subnational tables by the U.S. Census Bureau"),
+              note=("2018 Township Profiles, with a reference date of 1 April "
+                    "2017. The 2014 census collected ethnicity and its results "
+                    "were never released, so these are the Department of "
+                    "Population's own later figures rather than census "
+                    "counts. Myanmar recognises 135 official ethnic groups "
+                    "and this table names 40; the Rohingya are not among "
+                    "either, having been excluded from enumeration as an "
+                    "ethnicity in 2014.")),
+        # Religion, on the other hand, the 2014 census did publish, and these
+        # columns carry its own denominator of 49.0 million against the
+        # ethnicity table's 47.8 million -- two different populations in one
+        # sheet, which is the other reason they cannot be read together.
+        Topic("Ethnicity", "religion", prefix="RLG_"),
+    ),
+    # None needed for the states and regions: the census writes "KACHIN STATE"
+    # where geoBoundaries writes "Kachin", and norm() drops the word "state"
+    # on both sides. Two boundary names are misspelled rather than differently
+    # spelled, and are corrected in common.MISSPELLED so the label a reader
+    # sees is fixed along with the join.
+    #
+    # The districts are another matter: both sides romanise from Burmese and
+    # neither is wrong, so these are declared pair by pair against the two
+    # lists rather than bridged by a rule. Not listed, because they are absent
+    # rather than differently spelled: the six self-administered zones and
+    # divisions, which geoBoundaries draws as ordinary townships, and Nay Pyi
+    # Taw, which it has no first-order shape for at all.
+    aliases={
+        "Bawlakhe": ("Bawlake",),
+        "Haka": ("Hakha",),
+        "Kawthaung": ("Kawthoung",),
+        "Kyaunkpyu": ("Kyaukpyu",),
+        "Langhko": ("Langkho",),
+        "Loilem": ("Loilen",),
+        "Myauk U": ("Mrauk-U",),
+        "Pharpon": ("Hpapun",),
+        "Tharrawaddy": ("Thayarwady",),
+        "Yinmarpin": ("Yinmarbin",),
+    },
+    note=("2014 Myanmar Population and Housing Census unless a field says "
+          "otherwise."),
+)
+
+UKRAINE = Country(
+    iso3="UKR",
+    name="Ukraine",
+    year=2001,
+    source=("State Statistics Service of Ukraine, All-Ukrainian Population "
+            "Census 2001, prepared as subnational tables by the U.S. Census "
+            "Bureau"),
+    licence="CC BY-IGO, published via HDX",
+    dataset="ukraine-subnational-boundaries-and-tabular-data",
+    out="ukraine_oblast.json",
+    levels={1: "admin1", 2: "admin2"},
+    # The Language sheet, not Nationality-Language. That second sheet is the
+    # cross-tabulation of the two -- 1,619 columns, every nationality against
+    # every native language -- which is a different and much larger claim than
+    # this map has a field for. The flat sheet is the one that answers "what
+    # is spoken here".
+    topics=(Topic("Language", "language"),),
+    # The census's own ten categories fall short of its own published totals
+    # in 105 of 663 rayons, by up to 6.9%. That is a hole in the source and
+    # not a misreading, and the evidence is the shape of it: the national row
+    # reconciles to 99.8%, the columns are exactly the categories the 2001
+    # census published (including Other and Unstated), and 558 rayons agree
+    # exactly. A reader that had misunderstood this sheet would be wrong
+    # everywhere and by a similar factor, which is what the default bounds are
+    # tuned to catch. The map draws the remainder as an explicit unaccounted
+    # share, and every short rayon is named in the log.
+    refuse_area=0.08,
+    refuse_share=0.20,
+    # The Bureau romanises from Ukrainian and geoBoundaries uses the English
+    # exonyms, so every one of the 27 needs declaring: "CHERKAS'KA OBLAST'"
+    # and "Cherkasy Oblast" share no word that norm() leaves standing.
+    aliases={
+        "Avtonomna Respublika Krym": ("Autonomous Republic of Crimea",),
+        "Misto Sevastopol’": ("Sevastopol",),
+        "Misto Kyyiv": ("Kyiv",),
+        "Cherkas’Ka Oblast’": ("Cherkasy Oblast",),
+        "Chernihivs’Ka Oblast’": ("Chernihiv Oblast",),
+        "Chernivets’Ka Oblast’": ("Chernivtsi Oblast",),
+        "Dnipropetrovs’Ka Oblast’": ("Dnipropetrovsk Oblast",),
+        "Donets’Ka Oblast’": ("Donetsk Oblast",),
+        "Ivano-Frankivs’Ka Oblast’": ("Ivano-Frankivsk Oblast",),
+        "Kharkivs’Ka Oblast’": ("Kharkiv Oblast",),
+        "Khersons’Ka Oblast’": ("Kherson Oblast",),
+        "Khmel’Nyts’Ka Oblast’": ("Khmelnytskyi Oblast",),
+        "Kirovohrads’Ka Oblast’": ("Kirovohrad Oblast",),
+        "Kyyivs’Ka Oblast’": ("Kyiv Oblast",),
+        "Luhans’Ka Oblast’": ("Luhansk Oblast",),
+        "L’Vivs’Ka Oblast’": ("Lviv Oblast",),
+        "Mykolayivs’Ka Oblast’": ("Mykolaiv Oblast",),
+        "Odes’Ka Oblast’": ("Odessa Oblast",),
+        "Poltavs’Ka Oblast’": ("Poltava Oblast",),
+        "Rivnens’Ka Oblast’": ("Rivne Oblast",),
+        "Sums’Ka Oblast’": ("Sumy Oblast",),
+        "Ternopil’S’Ka Oblast’": ("Ternopil Oblast",),
+        "Vinnyts’Ka Oblast’": ("Vinnytsia Oblast",),
+        "Volyns’Ka Oblast’": ("Volyn Oblast",),
+        "Zakarpats’Ka Oblast’": ("Zakarpattia Oblast",),
+        "Zaporiz’Ka Oblast’": ("Zaporizhia Oblast",),
+        "Zhytomyrs’Ka Oblast’": ("Zhytomyr Oblast",),
+    },
+    note=("All-Ukrainian Population Census 2001 -- the only census independent "
+          "Ukraine has held. The question is native language, which the census "
+          "asked separately from nationality; the two differ substantially and "
+          "this is the language answer. Read it as a description of 2001."),
+)
+
+# Configured, correct, and deliberately not run. Ukraine's figures reconcile --
+# the national row to 99.8%, every column the 2001 census's own -- and the
+# adapter writes 663 areas. 58 of them join.
+#
+# The oblast rows are empty: the source publishes native language at rayon
+# level, and the census romanises Ukrainian adjectivally where geoBoundaries
+# uses the short exonym, so "BAKHCHYSARAYS'KYY RAYON" has to reach
+# "Bakhchysarai" and "LUTS'KYY RAYON" to reach "Lutsk". That is 661 pairs. A
+# suffix-stripping rule would bridge most of them and is exactly what norm()'s
+# GENERIC list refuses to do for a local generic word -- and it would also
+# collapse "Luts'ka Mis'krada", the city council, onto "Luts'kyy Rayon", the
+# district around it, which are two places geoBoundaries draws as one shape and
+# the collision pass already refuses.
+#
+# The way in is to sum each oblast's own rayons into it, which the file's
+# ADM1_NAME column supports and which would give 27 oblasts of real data for
+# 38 million people. That needs handling the 36 areas the source leaves empty,
+# so it is the next piece of work rather than this one. The 27 oblast aliases
+# below are verified against the census's own list and are what that work will
+# use.
+PENDING: tuple[Country, ...] = (UKRAINE,)
+
+COUNTRIES: dict[str, Country] = {
+    c.iso3: c for c in (PHILIPPINES, ETHIOPIA, MYANMAR)}
+
+
+def discover(limit: int, sheets: bool) -> int:
+    """Every USCB workbook on HDX, found by asking for the resources directly.
+
+    Searching datasets cannot answer this. The workbook hangs off a dataset
+    whose title says nothing about the Bureau, and the first attempt at this --
+    deriving the dataset name from the ISO3 code -- reported that none of the
+    146 countries in HDX's population collection had one, which was true and
+    useless, because it was looking in the wrong collection entirely.
+
+    So this asks CKAN for resources by name and works back to the dataset each
+    belongs to. What then decides whether a country is worth a config is its
+    sheet names, and those are only knowable by opening the file: Indonesia has
+    a workbook and it holds no religion and no ethnicity, only a four-bucket
+    first-language split.
+    """
+    import openpyxl
+
+    body = http_json(f"{HDX_API}/resource_search?query=name:uscb&limit=1000")
+    rows = body.get("result", {}).get("results", [])
+    books = [r for r in rows if (r.get("name") or "").lower().endswith(".xlsx")]
+    seen: dict[str, dict[str, Any]] = {}
+    for row in books:
+        seen.setdefault(row.get("package_id") or row.get("id"), row)
+    log(f"{len(rows)} resources named for the Bureau, {len(books)} of them "
+        f"workbooks, across {len(seen)} datasets")
+
+    order = sorted(seen.items(), key=lambda kv: kv[1].get("name") or "")
+    for i, (pkg, row) in enumerate(order):
+        if limit and i >= limit:
+            log(f"  ...stopping at {limit} of {len(order)}; --limit 0 for all")
+            break
+        try:
+            meta = package(pkg)
+        except SystemExit as why:
+            log(f"  {row.get('name')}: {why}")
+            continue
+        line = f"  {row.get('name')}  {meta.get('name')}  ({meta.get('title')})"
+        if not sheets:
+            log(line)
+            continue
+        blob = http_get(row["url"], binary=True, cache_dir=RAW / "uscb")
+        book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True,
+                                      data_only=True)
+        names = list(book.sheetnames)
+        book.close()
+        # Named in full rather than filtered to the three topics this map
+        # wants: a topic nobody thought to look for is exactly what a listing
+        # surfaces.
+        log(f"{line}\n      {len(blob):,} bytes, sheets: {', '.join(names)}")
+    return 0
+
+
+def inspect(dataset: str, wanted: list[str]) -> int:
+    """Everything a config needs, read off the workbook rather than guessed.
+
+    Writing a Country by hand needs four facts the sheet names do not carry:
+    which ADM_LEVEL is this map's admin1 and which its admin2, what the group
+    labels actually say, what census year the tables are from, and what the
+    areas are called so they can be aliased to the boundary file. All four are
+    in the file. None is in the catalogue.
+    """
+    import openpyxl
+
+    blob = http_get(workbook_url(dataset), binary=True, cache_dir=RAW / "uscb")
+    book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True,
+                                  data_only=True)
+    log(f"{dataset}: {len(blob):,} bytes, {len(book.sheetnames)} sheets")
+
+    # The metadata sheet is where the census year lives, in table identifiers
+    # like ET_RELIGION_2007census. The filename's date is an extraction date
+    # and has been mistaken for the census year before.
+    #
+    # The data dictionary is more important still. It gives every column a
+    # definition and a source, and that is what says whether a sheet holds
+    # what its name suggests -- Syria's "Ethnicity" turns out to list Syrian,
+    # Palestinian, European and American, which is nationality. Publishing
+    # that as ethnicity would tell a reader Syria is ethnically uniform, which
+    # is not what the census measured or said.
+    dictionary: dict[str, list[str]] = {}
+    for name in book.sheetnames:
+        if name.strip().lower() not in ("metadata", "data dictionary"):
+            continue
+        rows = [list(r) for r in book[name].iter_rows(values_only=True)]
+        log(f"\n--- {name}: {len(rows)} rows ---")
+        for row in rows[:20]:
+            cells = [str(v).strip() for v in row if v is not None]
+            if cells:
+                log("  " + " | ".join(c[:70] for c in cells)[:220])
+        if name.strip().lower() == "data dictionary":
+            for row in rows:
+                cells = [("" if v is None else str(v).strip()) for v in row]
+                if cells and cells[0]:
+                    dictionary.setdefault(cells[0], cells[1:])
+
+    for name in book.sheetnames:
+        if name.strip().lower() in ("metadata", "data dictionary"):
+            continue
+        if wanted and not any(w.lower() in name.lower() for w in wanted):
+            continue
+        rows = [list(r) for r in book[name].iter_rows(values_only=True)]
+        if len(rows) < 3:
+            log(f"\n--- {name}: {len(rows)} rows, nothing under the header ---")
+            continue
+        names, aliases = columns(rows)
+        if "ADM_LEVEL" not in names or "AREA_NAME" not in names:
+            log(f"\n--- {name}: not a geography sheet "
+                f"(no ADM_LEVEL/AREA_NAME) ---")
+            continue
+        by_level: dict[Any, list[tuple[str, str]]] = {}
+        for row in rows[2:]:
+            level, area_name, parent = area(row, names)
+            by_level.setdefault(level, []).append((parent, area_name))
+        log(f"\n--- {name}: {len(rows) - 2} rows, sexed={sexed(names)} ---")
+        for level in sorted(by_level, key=lambda v: (v is None, v)):
+            here = by_level[level]
+            # Every name where there are few enough to read, because writing
+            # the aliases is the actual job and a sample of eight cannot do
+            # it: the census says "CHERKAS'KA OBLAST'" where the boundary file
+            # says "Cherkasy Oblast", and each of the 27 needs declaring.
+            shown = ", ".join(n for _p, n in here) if len(here) <= 40 \
+                else ", ".join(n for _p, n in here[:8]) + ", ..."
+            log(f"  ADM_LEVEL {level}: {len(here)} areas  {shown}")
+        total = denominator(names, aliases)
+        found = groups(names, aliases, total, sexed(names))
+        log(f"  denominator: {aliases[total]!r}" if total is not None
+            else "  denominator: none found")
+        log(f"  {len(found)} group columns:")
+        # groups() returns {column index: label}, and the label is what the
+        # map publishes -- for a sexed sheet it is the alias with ", both
+        # sexes" already stripped, so printing the raw alias would show
+        # something the adapter never emits.
+        for index, label in list(found.items())[:24]:
+            log(f"    {names[index]}  ->  {label!r}")
+        if len(found) > 24:
+            log(f"    ...and {len(found) - 24} more")
+        # What the source says these columns are. A label is a word; the
+        # dictionary row is the claim the map would be repeating.
+        for index in list(found)[:3]:
+            entry = dictionary.get(names[index])
+            if entry:
+                log(f"    {names[index]} says: "
+                    + " | ".join(c[:150] for c in entry if c))
+        # The whole country's row, every column, against the total it
+        # publishes. This is what says whether the columns partition a
+        # population or overlap: Burma's forty sum to 3.05 times its own
+        # published total, and the only way to see why is to read all forty
+        # with their shares beside them.
+        def breakdown(row: list[Any], why: str) -> None:
+            level, area_name, _parent = area(row, names)
+            published = number(row[total]) if total is not None else None
+            summed = sum(v for v in (number(row[i]) for i in found)
+                         if v is not None)
+            ratio = (summed / published) if published else 0.0
+            log(f"\n  {why}: {area_name} (level {level}) "
+                f"published={published:,.0f} summed={summed:,.0f} "
+                f"ratio={ratio:.3f}" if published else
+                f"\n  {why}: {area_name} (level {level}) no published total")
+            for index, label in found.items():
+                value = number(row[index])
+                if value is None:
+                    continue
+                share = (100.0 * value / published) if published else 0.0
+                log(f"    {names[index]:<14} {label[:34]:<34} "
+                    f"{value:>13,.0f}  {share:6.2f}%")
+
+        national = next((r for r in rows[2:] if area(r, names)[0] == 0), None)
+        if national is not None:
+            breakdown(national, "whole country")
+        # And the areas furthest from their own total, which is where a
+        # misread sheet shows itself first.
+        def gap_of(row: list[Any]) -> float:
+            published = number(row[total]) if total is not None else None
+            if not published:
+                return 0.0
+            summed = sum(v for v in (number(row[i]) for i in found)
+                         if v is not None)
+            return abs(summed - published) / published
+        worst = sorted((r for r in rows[2:] if area(r, names)[0]),
+                       key=gap_of, reverse=True)[:2]
+        for row in worst:
+            if gap_of(row) > 0.001:
+                breakdown(row, "furthest from its own total")
+    book.close()
+    return 0
 
 
 def sheet_rows(book, name: str) -> list[list[Any]]:
@@ -331,7 +752,12 @@ def columns(rows: list[list[Any]]) -> tuple[list[str], list[str]]:
     return names, aliases
 
 
-def sexed(names: list[str]) -> bool:
+def mine(name: str, prefix: str) -> bool:
+    """Is this column part of the topic being read?"""
+    return not prefix or name.startswith(prefix)
+
+
+def sexed(names: list[str], prefix: str = "") -> bool:
     """Does this sheet report every group three times, by sex?
 
     Ethiopia does and the Philippines does not, and the difference is visible
@@ -339,13 +765,15 @@ def sexed(names: list[str]) -> bool:
     all three of _B, _F and _M is a sexed sheet.
     """
     stems = {n[:-2] for n in names
-             if n not in GEOGRAPHY and n.endswith("_B")}
+             if n not in GEOGRAPHY and n.endswith("_B")
+             and mine(n, prefix)}
     if not stems:
         return False
     return all(f"{s}_F" in names and f"{s}_M" in names for s in stems)
 
 
-def denominator(names: list[str], aliases: list[str]) -> int | None:
+def denominator(names: list[str], aliases: list[str],
+                prefix: str = "") -> int | None:
     """The column holding everyone the question was asked of, if there is one.
 
     Found by its alias rather than its name: the Philippines calls it
@@ -355,7 +783,7 @@ def denominator(names: list[str], aliases: list[str]) -> int | None:
     at all, and returning None says so rather than picking a group at random.
     """
     for index, (name, alias) in enumerate(zip(names, aliases)):
-        if name in GEOGRAPHY or not name:
+        if name in GEOGRAPHY or not name or not mine(name, prefix):
             continue
         if "population" in alias.lower():
             return index
@@ -363,11 +791,13 @@ def denominator(names: list[str], aliases: list[str]) -> int | None:
 
 
 def groups(names: list[str], aliases: list[str],
-           total: int | None, by_sex: bool) -> dict[int, str]:
+           total: int | None, by_sex: bool, prefix: str = "") -> dict[int, str]:
     """Column index -> the label to publish, for every group column."""
     out: dict[int, str] = {}
     for index, (name, alias) in enumerate(zip(names, aliases)):
         if index == total or name in GEOGRAPHY or not name or not alias:
+            continue
+        if not mine(name, prefix):
             continue
         if by_sex:
             if not name.endswith("_B"):
@@ -464,13 +894,17 @@ def read(book, country: Country,
     """
     rows = sheet_rows(book, topic.sheet)
     names, aliases = columns(rows)
-    by_sex = sexed(names)
-    total = denominator(names, aliases)
-    found = groups(names, aliases, total, by_sex)
+    by_sex = sexed(names, topic.prefix)
+    total = denominator(names, aliases, topic.prefix)
+    found = groups(names, aliases, total, by_sex, topic.prefix)
     if not found:
-        raise SystemExit(f"{country.iso3} {topic.sheet}: every column is "
-                         f"geography; no group columns to read")
-    log(f"  {topic.sheet}: {len(rows) - 2} rows, {len(found)} groups"
+        raise SystemExit(
+            f"{country.iso3} {topic.sheet}: no group columns to read"
+            + (f" under the prefix {topic.prefix!r}" if topic.prefix
+               else "; every column is geography"))
+    log(f"  {topic.sheet}"
+        + (f" [{topic.prefix}]" if topic.prefix else "")
+        + f": {len(rows) - 2} rows, {len(found)} groups"
         + (", by sex" if by_sex else "")
         + (f", denominator {aliases[total]!r}" if total is not None
            else ", no published denominator"))
@@ -570,11 +1004,11 @@ def check_total(country: Country, topic: Topic,
         f"total; the map shows the remainder as unaccounted:")
     for _size, line in short[:6]:
         log(f"      {line}")
-    if worst > REFUSE_AREA:
+    if worst > country.refuse_area:
         raise SystemExit(f"{country.iso3} {topic.sheet}: an area is "
                          f"{worst:.1%} short of its own published total, too "
                          f"much to be a suppressed group")
-    if len(short) / checked > REFUSE_SHARE:
+    if len(short) / checked > country.refuse_share:
         raise SystemExit(f"{country.iso3} {topic.sheet}: {len(short)} of "
                          f"{checked} areas fall short, which is a reader that "
                          f"has misunderstood the sheet rather than a source "
@@ -585,21 +1019,57 @@ def main() -> int:
     ap = argparse.ArgumentParser(
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--country", action="append",
-                    choices=sorted(COUNTRIES) + ["all"], default=None)
+    # Deliberately unconstrained: --discover takes ISO3 codes for countries
+    # that are not configured yet, which is the whole point of it. The read
+    # path checks the code against COUNTRIES itself, and says what it knows.
+    ap.add_argument("--country", action="append", default=None,
+                    metavar="ISO3",
+                    help=f"one of {', '.join(sorted(COUNTRIES))} or all; "
+                         f"with --discover, any ISO3 code")
     ap.add_argument("--out")
+    ap.add_argument("--discover", action="store_true",
+                    help="report which countries in the series carry a USCB "
+                         "workbook, instead of reading any")
+    ap.add_argument("--inspect", action="append", metavar="DATASET",
+                    help="print the levels, groups, areas and census year of "
+                         "one HDX dataset's workbook, which is what writing a "
+                         "config needs and the catalogue does not carry")
+    ap.add_argument("--sheet", action="append",
+                    help="with --inspect, only sheets whose name contains this")
+    ap.add_argument("--limit", type=int, default=25,
+                    help="with --discover, how many datasets to report "
+                         "(0 for all)")
+    ap.add_argument("--sheets", action="store_true",
+                    help="with --discover, open each workbook and list its "
+                         "sheets (slow; the topics are only in the file)")
     args = ap.parse_args()
+
+    if args.inspect:
+        for dataset in args.inspect:
+            log(f"\n{'=' * 70}")
+            inspect(dataset, args.sheet or [])
+        return 0
+    if args.discover:
+        return discover(args.limit, args.sheets)
 
     import openpyxl
 
     wanted = [c for c in (args.country or ["all"])]
     chosen = (sorted(COUNTRIES) if "all" in wanted else wanted)
 
+    unknown = [c for c in chosen if c not in COUNTRIES]
+    if unknown:
+        raise SystemExit(
+            f"no configuration for {', '.join(unknown)}. Configured: "
+            f"{', '.join(sorted(COUNTRIES))}.\n"
+            f"Try --discover --country {unknown[0]} --sheets to see whether "
+            f"the series carries a workbook for it.")
+
     for iso3 in chosen:
         country = COUNTRIES[iso3]
-        log(f"{country.name}: {country.workbook}")
-        blob = http_get(country.workbook, binary=True,
-                        cache_dir=RAW / "uscb")
+        source = workbook_url(country.dataset)
+        log(f"{country.name}: {source}")
+        blob = http_get(source, binary=True, cache_dir=RAW / "uscb")
         log(f"  {len(blob):,} bytes")
         book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True,
                                       data_only=True)
@@ -618,6 +1088,12 @@ def main() -> int:
             any_row = next(a[key] for a in fields.values() if key in a)
             level = country.levels[any_row["level"]]
             values: dict[str, Any] = {}
+            # One source entry per topic that produced a figure, rather than
+            # one for the country naming every field. Burma's ethnicity comes
+            # from a different publication and a different year than the rest
+            # of its workbook, so a single citation covering both would be
+            # wrong about one of them whichever way it was written.
+            cites: list[dict[str, Any]] = []
             for topic in country.topics:
                 row = fields[topic.field].get(key)
                 if not row:
@@ -625,8 +1101,12 @@ def main() -> int:
                 values[topic.field] = shares(
                     row["counts"], total=row["published"] or row["summed"]
                 ) or gap(NOT_AVAILABLE)
-                values[f"{topic.field}_year"] = country.year
-                values[f"{topic.field}_note"] = country.note
+                values[f"{topic.field}_year"] = topic.year or country.year
+                values[f"{topic.field}_note"] = topic.note or country.note
+                cites.append({"field": topic.field,
+                              "name": topic.source or country.source,
+                              "url": dataset_url(country.dataset),
+                              "license": country.licence})
             def slug(text: str) -> str:
                 return "".join(c if c.isalnum() else "-"
                                for c in text.lower()).strip("-")
@@ -651,9 +1131,7 @@ def main() -> int:
                 # shape it happens to reach.
                 no_shape=(parent.title(), name.title()) in country.no_shape
                          or None,
-                sources=[{"field": "/".join(t.field for t in country.topics),
-                          "name": country.source, "url": country.url,
-                          "license": country.licence}],
+                sources=cites,
                 **values))
 
         out = args.out or PROCESSED / country.out

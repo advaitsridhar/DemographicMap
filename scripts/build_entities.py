@@ -69,6 +69,7 @@ ADAPTER_FILES = [
     "bangladesh_district.json",
     "south_africa_province.json",
     "philippines_province.json", "ethiopia_region.json",
+    "myanmar_state.json",
     "brazil_state.json", "brazil_municipality.json",
     "canada_province.json", "canada_census_division.json",
     "australia_state.json", "australia_lga.json",
@@ -506,8 +507,9 @@ def match_name(row: dict[str, Any], lookup: dict[str, dict[str, Any]]
     return None, "unmatched"
 
 
-def scoped_by_parent(by_name: dict[str, list[dict[str, Any]]], parent_id: str,
-                     names: Sequence[str] = ()) -> dict[str, dict[str, Any]]:
+def settle(by_name: dict[str, list[dict[str, Any]]],
+           names: Sequence[str] = (),
+           parent_id: str | None = None) -> dict[str, dict[str, Any]]:
     """The shapes inside one admin-1, keyed by name, dropping any still ambiguous.
 
     Ambiguous is not always undecidable. norm() drops the word "city", so
@@ -528,7 +530,8 @@ def scoped_by_parent(by_name: dict[str, list[dict[str, Any]]], parent_id: str,
     exact = {n.strip().casefold() for n in names if n}
     out = {}
     for key, entities in by_name.items():
-        inside = [e for e in entities if e.get("parent") == parent_id]
+        inside = entities if parent_id is None else \
+            [e for e in entities if e.get("parent") == parent_id]
         if len(inside) == 1:
             out[key] = inside[0]
         elif len(inside) > 1 and exact:
@@ -617,8 +620,8 @@ def match_admin2(row: dict[str, Any], by_name: dict[str, list[dict[str, Any]]],
         parent, _ = match_name({"name": parent_name,
                                 "aliases": row.get("parent_aliases") or []}, admin1)
         if parent is not None:
-            scoped = scoped_by_parent(by_name, parent["id"],
-                                      [row["name"], *row.get("aliases", [])])
+            scoped = settle(by_name, [row["name"], *row.get("aliases", [])],
+                            parent["id"])
             entity, how = match_name(row, scoped)
             if entity is not None:
                 return entity, f"{how}+state"
@@ -1082,7 +1085,7 @@ def resolve_collisions(matched: list[tuple[dict[str, Any], dict[str, Any], str]]
     called Jack. 1,324 rows were being lost this way.
 
     What does *not* decide it is which rival is named exactly as the shape is.
-    That test settles a tie between two shapes -- see scoped_by_parent, where
+    That test settles a tie between two shapes -- see settle(), where
     "Cotabato" picks the province over "Cotabato City" -- and inverts when the
     tie is between two rows. Boundary files drop the generic word by
     convention: CGAZ's Argentine ADM2 *is* the departments and calls them
@@ -1451,7 +1454,19 @@ def main() -> int:
 
     # -- adapters override both levels --------------------------------------
     for iso3, rows in adapters.items():
-        a1 = {norm(e["name"]): e for e in admin1_by_country.get(iso3, [])}
+        # Grouped, not a dict comprehension. CGAZ draws both "Kyiv" and "Kyiv
+        # Oblast" as first-order units and norm() drops the word "Oblast", so
+        # keying by name alone let one silently overwrite the other and made a
+        # capital of 2.95 million or the region around it unreachable --
+        # whichever the file listed first. Ukraine's census names both.
+        a1_by_key: dict[str, list[dict[str, Any]]] = defaultdict(list)
+        for entity in admin1_by_country.get(iso3, []):
+            a1_by_key[norm(entity["name"])].append(entity)
+        # A flat view for resolving a *parent*, where an ambiguous key is
+        # simply dropped: a parent nobody can identify cannot scope anything,
+        # and there is no row name to settle it with.
+        a1 = {key: found[0] for key, found in a1_by_key.items()
+              if len(found) == 1}
         a2: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for entity in admin2_by_country.get(iso3, []):
             a2[norm(entity["name"])].append(entity)
@@ -1486,7 +1501,9 @@ def main() -> int:
                    # historically rather than currently.
                    "point": row_point(row)}
             if row.get("level") == "admin1":
-                entity, how = match_name(key, a1)
+                entity, how = match_name(
+                    key, settle(a1_by_key,
+                                [key["name"], *key["aliases"]]))
             else:
                 entity, how = match_admin2(key, a2, a1)
             if entity is None:
