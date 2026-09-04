@@ -2954,6 +2954,56 @@ class UscbReader(unittest.TestCase):
         self.assertEqual(out[("", "KYIV OBLAST")]["counts"],
                          {"Ukrainian": 70, "Russian": 30})
 
+    # -- a third level whose parent is the first ---------------------------
+    THIRD = [
+        ["AREA_NAME", "ADM1_NAME", "ADM2_NAME", "ADM_LEVEL",
+         "LNG_A", "LNG_TPOP"],
+        ["Area", "Province", "Division", "Level", "Urdu", "Total Population"],
+        ["PAKISTAN", None, None, 0, 90, 100],
+        ["SINDH", None, None, 1, 40, 50],
+        ["KARACHI DIVISION", "SINDH", None, 2, 25, 30],
+        ["KARACHI EAST DISTRICT", "SINDH", "KARACHI DIVISION", 3, 12, 15],
+    ]
+
+    def third(self, levels):
+        country = self.uscb.Country(
+            iso3="PAK", name="Pakistan", year=2017, source="s", licence="l",
+            dataset="d", out="o.json", levels=levels,
+            topics=(self.uscb.Topic("Language", "language", prefix="LNG_"),),
+            note="n", refuse_area=1.0, refuse_share=1.0)
+        return self.uscb.read(self.Book(self.THIRD), country,
+                              country.topics[0])
+
+    def test_a_third_level_row_is_scoped_by_the_first_not_the_second(self):
+        # Pakistan's districts sit at level 3 with 36 divisions at level 2,
+        # and geoBoundaries draws the districts directly under the provinces.
+        # Taking the level above would scope a district inside a division no
+        # boundary file has -- a parent that can never match.
+        out = self.third({1: "admin1", 3: "admin2"})
+        self.assertIn(("SINDH", "KARACHI EAST DISTRICT"), out)
+        self.assertNotIn(("KARACHI DIVISION", "KARACHI EAST DISTRICT"), out)
+
+    def test_the_second_level_still_takes_the_first_as_its_parent(self):
+        # The generalisation must leave every country already reading level 2
+        # exactly where it was.
+        out = self.third({1: "admin1", 2: "admin2"})
+        self.assertIn(("SINDH", "KARACHI DIVISION"), out)
+
+    def test_a_first_order_row_has_no_parent_of_its_own(self):
+        out = self.third({1: "admin1", 3: "admin2"})
+        self.assertIn(("", "SINDH"), out)
+
+    def test_pakistan_reads_districts_and_not_divisions(self):
+        self.assertEqual(self.uscb.COUNTRIES["PAK"].levels,
+                         {1: "admin1", 3: "admin2"})
+
+    def test_pakistan_does_not_republish_the_religion_it_already_has(self):
+        # scripts/fetch_census/pakistan.py publishes religion from the same
+        # census table. Two files claiming one shape with figures that
+        # disagree at all would send both to a gap under the agreement rule.
+        fields = [t.field for t in self.uscb.COUNTRIES["PAK"].topics]
+        self.assertEqual(fields, ["language"])
+
     def test_ukraine_publishes_oblasts_only(self):
         self.assertEqual(self.uscb.UKRAINE.levels, {1: "admin1"})
 
