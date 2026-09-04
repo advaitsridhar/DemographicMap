@@ -46,6 +46,7 @@ from __future__ import annotations
 
 import argparse
 import io
+from collections import defaultdict
 from dataclasses import dataclass, field as dc_field
 from typing import Any
 
@@ -194,6 +195,16 @@ class Country:
     # misunderstood a sheet gets *every* area wrong.
     refuse_area: float = REFUSE_AREA
     refuse_share: float = REFUSE_SHARE
+    # An ADM_LEVEL whose rows the source lists but leaves blank, to be built by
+    # adding up the level below. Ukraine is the case: its 2001 language table
+    # is published by rayon, and the 25 oblast rows above them are empty, so
+    # the country's first order carried nothing at all. The file's own
+    # ADM1_NAME column says which oblast each rayon belongs to, so the addition
+    # is the source's arithmetic rather than this map's invention.
+    #
+    # Only areas with no figures of their own are built this way. Kyiv and
+    # Sevastopol publish theirs directly and keep them.
+    sum_into: int | None = None
     aliases: dict[str, tuple[str, ...]] = dc_field(default_factory=dict)
     # Census areas geoBoundaries draws no boundary of their own for, as
     # (parent, area) pairs -- a name alone is not an address, and the
@@ -459,24 +470,36 @@ UKRAINE = Country(
     licence="CC BY-IGO, published via HDX",
     dataset="ukraine-subnational-boundaries-and-tabular-data",
     out="ukraine_oblast.json",
-    levels={1: "admin1", 2: "admin2"},
+    # Oblasts only, though the figures live in the rayons and are summed out of
+    # them. Publishing the 661 rayons put 605 rows nowhere and 56 onto shapes
+    # by prefix and containment against an adjectival form -- matches no one
+    # can check one by one, which is the kind this map refuses on principle
+    # even when most of them are probably right. The oblasts match one for one
+    # and reconcile to the census's own national total exactly.
+    levels={1: "admin1"},
     # The Language sheet, not Nationality-Language. That second sheet is the
     # cross-tabulation of the two -- 1,619 columns, every nationality against
     # every native language -- which is a different and much larger claim than
     # this map has a field for. The flat sheet is the one that answers "what
     # is spoken here".
     topics=(Topic("Language", "language"),),
-    # The census's own ten categories fall short of its own published totals
-    # in 105 of 663 rayons, by up to 6.9%. That is a hole in the source and
-    # not a misreading, and the evidence is the shape of it: the national row
-    # reconciles to 99.8%, the columns are exactly the categories the 2001
-    # census published (including Other and Unstated), and 558 rayons agree
-    # exactly. A reader that had misunderstood this sheet would be wrong
-    # everywhere and by a similar factor, which is what the default bounds are
-    # tuned to catch. The map draws the remainder as an explicit unaccounted
-    # share, and every short rayon is named in the log.
-    refuse_area=0.08,
+    # Only the share bound moves, and only because 27 areas is a coarse
+    # denominator: one oblast is 3.7% of the count, so three of them tripping
+    # a 10% test says almost nothing about whether the sheet was understood.
+    # The size bound stays at the module's default and is not close to being
+    # tested -- the worst oblast is 0.7% short, where 5% is the refusal.
+    #
+    # An earlier version widened the size bound to 8% as well, on evidence
+    # from the rayons: 105 of 663 fell short by up to 6.9%. Those rayons are
+    # no longer published, so that evidence no longer describes anything this
+    # adapter emits, and the bound goes back.
     refuse_share=0.20,
+    # The oblast rows are blank and the rayons beneath them are not, so the
+    # first order is built by addition. That is what makes Ukraine joinable at
+    # all: its 27 oblasts match geoBoundaries one for one once aliased, while
+    # its 661 rayons would each need a name the boundary file spells
+    # differently.
+    sum_into=1,
     # The Bureau romanises from Ukrainian and geoBoundaries uses the English
     # exonyms, so every one of the 27 needs declaring: "CHERKAS'KA OBLAST'"
     # and "Cherkasy Oblast" share no word that norm() leaves standing.
@@ -515,30 +538,14 @@ UKRAINE = Country(
           "this is the language answer. Read it as a description of 2001."),
 )
 
-# Configured, correct, and deliberately not run. Ukraine's figures reconcile --
-# the national row to 99.8%, every column the 2001 census's own -- and the
-# adapter writes 663 areas. 58 of them join.
-#
-# The oblast rows are empty: the source publishes native language at rayon
-# level, and the census romanises Ukrainian adjectivally where geoBoundaries
-# uses the short exonym, so "BAKHCHYSARAYS'KYY RAYON" has to reach
-# "Bakhchysarai" and "LUTS'KYY RAYON" to reach "Lutsk". That is 661 pairs. A
-# suffix-stripping rule would bridge most of them and is exactly what norm()'s
-# GENERIC list refuses to do for a local generic word -- and it would also
-# collapse "Luts'ka Mis'krada", the city council, onto "Luts'kyy Rayon", the
-# district around it, which are two places geoBoundaries draws as one shape and
-# the collision pass already refuses.
-#
-# The way in is to sum each oblast's own rayons into it, which the file's
-# ADM1_NAME column supports and which would give 27 oblasts of real data for
-# 38 million people. That needs handling the 36 areas the source leaves empty,
-# so it is the next piece of work rather than this one. The 27 oblast aliases
-# below are verified against the census's own list and are what that work will
-# use.
-PENDING: tuple[Country, ...] = (UKRAINE,)
-
+# Ukraine was configured and held back for one release: its figures reconciled
+# and 58 of 663 areas joined, because the source publishes at rayon level and
+# the census romanises Ukrainian adjectivally where geoBoundaries uses the
+# short exonym -- "BAKHCHYSARAYS'KYY RAYON" against "Bakhchysarai", 661 times.
+# Summing each oblast's own rayons is what got it in, and the oblasts match one
+# for one.
 COUNTRIES: dict[str, Country] = {
-    c.iso3: c for c in (PHILIPPINES, ETHIOPIA, MYANMAR)}
+    c.iso3: c for c in (PHILIPPINES, ETHIOPIA, MYANMAR, UKRAINE)}
 
 
 def discover(limit: int, sheets: bool) -> int:
@@ -915,6 +922,14 @@ def read(book, country: Country,
     skipped = 0
     empty: list[str] = []
     whole: dict[str, float] = {}
+    # Children of an area whose own row is blank, accumulated as they go past.
+    # Every child contributes its published total whether or not it has any
+    # figures, because a rayon the source lists and leaves empty is part of the
+    # oblast's population and leaving it out of the denominator would hide the
+    # hole instead of drawing it.
+    kids: dict[str, dict[str, Any]] = defaultdict(
+        lambda: {"counts": defaultdict(float), "published": 0.0,
+                 "listed": 0, "figured": 0, "blank": []})
     for row in rows[2:]:
         level, name, parent = area(row, names)
         if level == 0 and name:
@@ -924,7 +939,7 @@ def read(book, country: Country,
             whole = {label: value for index, label in found.items()
                      if (value := number(row[index])) is not None and value > 0}
             continue
-        if level not in country.levels or not name or name.upper() == "NO NAME":
+        if not name or name.upper() == "NO NAME":
             # "NO NAME" is the workbook's own placeholder for an area it could
             # not label. It is not a place, and giving it a record would put an
             # unnamed shape on the map with figures attached.
@@ -932,6 +947,25 @@ def read(book, country: Country,
             continue
         counts = {label: value for index, label in found.items()
                   if (value := number(row[index])) is not None and value > 0}
+        # Children are added up before the level filter, so a level can feed a
+        # parent without appearing on the map itself. Ukraine needs exactly
+        # that: its rayons are the only place the figures exist, and its
+        # oblasts are the only level that joins.
+        if country.sum_into is not None and level == country.sum_into + 1 \
+                and parent:
+            kid = kids[parent]
+            kid["listed"] += 1
+            if (its_own := number(row[total]) if total is not None else None):
+                kid["published"] += its_own
+            if counts:
+                kid["figured"] += 1
+                for label, value in counts.items():
+                    kid["counts"][label] += value
+            else:
+                kid["blank"].append(name)
+        if level not in country.levels:
+            skipped += 1
+            continue
         if not counts:
             # An area the file lists and has no figures for. Named rather than
             # dropped in silence: three Ethiopian first-order divisions arrive
@@ -948,12 +982,40 @@ def read(book, country: Country,
         out[key] = {"level": level, "parent": parent, "name": name,
                     "counts": counts, "published": published,
                     "summed": sum(counts.values())}
+    # Build the blank parents from the children just gathered. After the loop,
+    # so that an area publishing its own figures is already in `out` and is
+    # left alone.
+    built = []
+    for name, kid in sorted(kids.items()):
+        key = ("", name)
+        if key in out or not kid["counts"]:
+            continue
+        counts = dict(kid["counts"])
+        out[key] = {"level": country.sum_into, "parent": "", "name": name,
+                    "counts": counts, "published": kid["published"] or None,
+                    "summed": sum(counts.values()),
+                    "built_from": kid["figured"], "listed": kid["listed"]}
+        built.append((name, kid))
+    for name, kid in built:
+        missing = kid["listed"] - kid["figured"]
+        if missing:
+            log(f"    {name}: summed from {kid['figured']} of "
+                f"{kid['listed']} children; {missing} carry no figures "
+                f"({', '.join(sorted(kid['blank'])[:3])}"
+                + (" ..." if missing > 3 else "") + ")")
+    if built:
+        log(f"    {len(built)} areas at level {country.sum_into} built by "
+            f"adding up the level below")
     if skipped:
         log(f"    {skipped} rows skipped: another level, or no area name")
-    if empty:
-        log(f"    {len(empty)} areas listed with no figures at all: "
-            + ", ".join(sorted(empty)[:6])
-            + (" ..." if len(empty) > 6 else ""))
+    # An area that was blank and has since been built is not missing, so it is
+    # not named here -- otherwise Ukraine would report 25 oblasts with nothing
+    # in the same run that fills all 25.
+    still_empty = sorted(set(empty) - {name for name, _kid in built})
+    if still_empty:
+        log(f"    {len(still_empty)} areas listed with no figures at all: "
+            + ", ".join(still_empty[:6])
+            + (" ..." if len(still_empty) > 6 else ""))
     if whole:
         for level, layer in sorted(country.levels.items()):
             parts = sum(sum(r["counts"].values())

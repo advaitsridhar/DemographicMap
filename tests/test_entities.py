@@ -2871,12 +2871,102 @@ class UscbReader(unittest.TestCase):
                 self.assertTrue(topic.year or country.year)
                 self.assertTrue(topic.source or country.source)
 
-    def test_ukraine_is_configured_and_deliberately_not_run(self):
-        # It reconciles and it does not join: 58 of 663 areas reach a shape,
-        # because the source publishes at rayon level and the census romanises
-        # Ukrainian adjectivally where geoBoundaries uses the short exonym.
-        self.assertNotIn("UKR", self.uscb.COUNTRIES)
-        self.assertIn(self.uscb.UKRAINE, self.uscb.PENDING)
+    # -- building a blank level out of the one below -----------------------
+    class Book:
+        """Just enough of an openpyxl workbook for read() to walk."""
+
+        def __init__(self, rows):
+            self.sheetnames = ["Language"]
+            self._rows = rows
+
+        def __getitem__(self, name):
+            rows = self._rows
+
+            class Sheet:
+                @staticmethod
+                def iter_rows(values_only=True):
+                    return iter(rows)
+            return Sheet()
+
+    SUMMED = [
+        ["AREA_NAME", "ADM1_NAME", "ADM_LEVEL", "LNG_A", "LNG_B", "LNG_TPOP"],
+        ["Area", "Oblast", "Level", "Ukrainian", "Russian", "Total Population"],
+        ["UKRAINE", None, 0, 90, 60, 150],
+        ["KYIV OBLAST", None, 1, None, None, None],
+        ["ALPHA RAYON", "KYIV OBLAST", 2, 40, 10, 50],
+        ["BETA RAYON", "KYIV OBLAST", 2, 30, 20, 55],
+        ["GAMMA RAYON", "KYIV OBLAST", 2, None, None, 20],
+    ]
+
+    def summed(self):
+        country = self.uscb.Country(
+            iso3="UKR", name="Ukraine", year=2001, source="s", licence="l",
+            dataset="d", out="o.json", levels={1: "admin1", 2: "admin2"},
+            topics=(self.uscb.Topic("Language", "language"),), note="n",
+            sum_into=1, refuse_area=1.0, refuse_share=1.0)
+        book = self.Book(self.SUMMED)
+        return self.quiet(self.uscb.read, book, country,
+                          country.topics[0]) if hasattr(self, "quiet") \
+            else self.uscb.read(book, country, country.topics[0])
+
+    def test_a_blank_parent_is_built_from_its_children(self):
+        out = self.summed()
+        oblast = out[("", "KYIV OBLAST")]
+        self.assertEqual(oblast["counts"], {"Ukrainian": 70, "Russian": 30})
+        self.assertEqual(oblast["level"], 1)
+
+    def test_the_built_denominator_counts_children_that_have_no_figures(self):
+        # Gamma publishes a population and no languages. Leaving it out of the
+        # denominator would hide the hole; including it draws the remainder as
+        # an unaccounted share, which is what it is.
+        oblast = self.summed()[("", "KYIV OBLAST")]
+        self.assertEqual(oblast["published"], 125)
+        self.assertEqual(oblast["summed"], 100)
+
+    def test_the_children_are_still_their_own_records(self):
+        out = self.summed()
+        self.assertIn(("KYIV OBLAST", "ALPHA RAYON"), out)
+        self.assertIn(("KYIV OBLAST", "BETA RAYON"), out)
+
+    def test_an_area_publishing_its_own_figures_is_not_overwritten(self):
+        # Kyiv city and Sevastopol carry theirs directly and must keep them.
+        rows = [r[:] for r in self.SUMMED]
+        rows[3] = ["KYIV OBLAST", None, 1, 5, 5, 999]
+        country = self.uscb.Country(
+            iso3="UKR", name="Ukraine", year=2001, source="s", licence="l",
+            dataset="d", out="o.json", levels={1: "admin1", 2: "admin2"},
+            topics=(self.uscb.Topic("Language", "language"),), note="n",
+            sum_into=1, refuse_area=1.0, refuse_share=1.0)
+        out = self.uscb.read(self.Book(rows), country, country.topics[0])
+        self.assertEqual(out[("", "KYIV OBLAST")]["published"], 999)
+
+    def test_a_level_can_feed_its_parent_without_being_published(self):
+        # Ukraine's rayons are the only place the figures exist and the only
+        # level that does not join, so they are summed and not emitted.
+        country = self.uscb.Country(
+            iso3="UKR", name="Ukraine", year=2001, source="s", licence="l",
+            dataset="d", out="o.json", levels={1: "admin1"},
+            topics=(self.uscb.Topic("Language", "language"),), note="n",
+            sum_into=1, refuse_area=1.0, refuse_share=1.0)
+        out = self.uscb.read(self.Book(self.SUMMED), country,
+                             country.topics[0])
+        self.assertEqual(list(out), [("", "KYIV OBLAST")])
+        self.assertEqual(out[("", "KYIV OBLAST")]["counts"],
+                         {"Ukrainian": 70, "Russian": 30})
+
+    def test_ukraine_publishes_oblasts_only(self):
+        self.assertEqual(self.uscb.UKRAINE.levels, {1: "admin1"})
+
+    def test_ukraine_builds_its_oblasts_by_addition(self):
+        # The 2001 language table is published by rayon and the 25 oblast rows
+        # above them are blank, so the first order carried nothing at all.
+        self.assertIn("UKR", self.uscb.COUNTRIES)
+        self.assertEqual(self.uscb.UKRAINE.sum_into, 1)
+
+    def test_only_ukraine_sums_a_level(self):
+        summing = [c.iso3 for c in self.uscb.COUNTRIES.values()
+                   if c.sum_into is not None]
+        self.assertEqual(summing, ["UKR"])
 
     def test_ukraine_reads_the_flat_language_sheet(self):
         # Nationality-Language is the cross-tabulation of the two: 1,619
@@ -2950,13 +3040,20 @@ class UscbReader(unittest.TestCase):
         self.assertEqual(sheets["ethnicity"], ("Ethnicity", "ETH_"))
         self.assertEqual(sheets["religion"], ("Ethnicity", "RLG_"))
 
+    def test_ukraine_widens_only_the_bound_its_evidence_supports(self):
+        # The size bound was widened to 8% on rayon evidence -- 105 of 663
+        # short by up to 6.9%. Those rayons are no longer published, so it
+        # went back. The worst oblast is 0.7% short against a 5% refusal.
+        self.assertEqual(self.uscb.UKRAINE.refuse_area, self.uscb.REFUSE_AREA)
+        self.assertGreater(self.uscb.UKRAINE.refuse_share,
+                           self.uscb.REFUSE_SHARE)
+
     def test_a_widened_bound_is_a_claim_that_needs_its_evidence(self):
         # Ukraine is the only country that widens them, and the module's
         # defaults stay where they are for everyone else.
         self.assertEqual(self.uscb.REFUSE_AREA, 0.05)
         self.assertEqual(self.uscb.REFUSE_SHARE, 0.10)
-        widened = [c.iso3 for c in list(self.uscb.COUNTRIES.values())
-                   + list(self.uscb.PENDING)
+        widened = [c.iso3 for c in self.uscb.COUNTRIES.values()
                    if c.refuse_area != self.uscb.REFUSE_AREA
                    or c.refuse_share != self.uscb.REFUSE_SHARE]
         self.assertEqual(widened, ["UKR"])

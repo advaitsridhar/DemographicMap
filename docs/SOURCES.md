@@ -1037,6 +1037,7 @@ same call `pxweb.py` makes for the Nordic offices.
 | Philippines | 2020 (Philippine Statistics Authority) | religion, ethnicity | 17 regions, 116 provinces and cities |
 | Ethiopia | **2007** (Central Statistical Agency) | religion, ethnicity, language | 13 first-order areas, 93 zones |
 | Myanmar | 2014 census (religion), **2017** Township Profiles (ethnicity) | religion, ethnicity | 15 states and regions, 80 districts |
+| Ukraine | **2001** (State Statistics Service) | language | 27 oblasts, summed from 661 rayons |
 
 Ethiopia is 2007 because that is the last census Ethiopia has completed -- the
 2017 round was postponed and never held. It is the most recent measurement in
@@ -1188,41 +1189,78 @@ Three kinds of miss, and they are not the same kind of thing:
   the geography, which is what keeps Ethiopia working, since its ethnic-group
   columns are not named `ETH_`. That is the same trap the first version of
   this reader fell into, in the opposite direction. The upshot is that Myanmar
-  gains religion as well as ethnicity: Buddhist 90.9%, Christian 7.2%, Islamic
-  3.1%, Hindu 0.8%, from the 2014 census, which published religion even while
-  withholding ethnicity.
+  gains religion as well as ethnicity: Buddhist 88.4%, Christian 7.2%, Islamic
+  3.1%, Hindu 0.8%, Other 0.5%, Nat 0.1%, from the 2014 census, which published
+  religion even while withholding ethnicity. That first figure read 90.9% here
+  until the states that carry it were summed: with the other five it came to
+  102.6%, so it was a transcription and not a misread table -- a misread would
+  have moved every share, and these agree with the summed states to within
+  0.02 points. 88.4% is also what the census itself published, 87.9%, plus the
+  areas the sheet leaves out.
 
-* **Ukraine is configured, correct, and deliberately not run.** Its figures
-  reconcile -- the national row to 99.8%, every column one the 2001 census
-  published -- and the adapter writes 663 areas of which **58 join**. The
-  oblast rows are empty, because the source publishes native language at rayon
-  level, and the census romanises Ukrainian adjectivally where geoBoundaries
-  uses the short exonym: `BAKHCHYSARAYS'KYY RAYON` has to reach
-  `Bakhchysarai`, `LUTS'KYY RAYON` to reach `Lutsk`, 661 times. A
-  suffix-stripping rule would bridge most of them and is precisely what
-  `norm()`'s generic-word list refuses to do for a local generic word; it would
-  also collapse `Luts'ka Mis'krada`, the city council, onto `Luts'kyy Rayon`,
-  the district around it, which are two places geoBoundaries draws as one
-  shape. The way in is to sum each oblast's own rayons into it, which the
-  file's `ADM1_NAME` column supports and which would give 27 oblasts for 38
-  million people -- next piece of work, not this one. Its 27 oblast aliases
-  are verified against the census's own list and kept for it.
+* **Myanmar's two questions do not count the same people.** Religion is asked
+  of everyone; Table 14 is *Ethnic Nationalities Living*, and counts only the
+  135 recognised national races. Across the fourteen first-order areas the
+  religion columns total 47,915,382 and the ethnicity columns 46,701,817, and
+  the 1.2 million difference is not spread evenly: Rakhine alone accounts for
+  584,142 of it and Yangon for 274,710. So Rakhine's 93.7% Rakhine is a share
+  of ethnic nationalities, not of residents, and the people missing from that
+  denominator are the same ones the 2014 census declined to enumerate. Both
+  numbers are published as they stand, with the table's own title carried in
+  the citation for the ethnicity field, because a share cannot state its own
+  universe.
 
-  Its two language sheets are worth recording either way. The flat `Language`
-  sheet gives ten native languages against a total. `Nationality-Language` is
-  the cross-tabulation -- 1,619 columns, every nationality against every native
-  language -- a different and much larger claim than a share of a population.
+* **Ukraine publishes its language table by rayon, and this map by oblast.**
+  The 2001 census asked native language and the Bureau's sheet gives ten of
+  them against a total -- but only at rayon level. All 25 oblast rows above
+  them are blank, so Ukraine's first order carried nothing, and only 58 of 663
+  areas reached a shape: the census romanises Ukrainian adjectivally where
+  geoBoundaries uses the short exonym, so `BAKHCHYSARAYS'KYY RAYON` has to
+  become `Bakhchysarai`, 661 times over. A suffix-stripping rule would bridge
+  most of them and is precisely what `norm()`'s generic-word list refuses to do
+  for a local generic word; it would also collapse `Luts'ka Mis'krada`, the
+  city council, onto `Luts'kyy Rayon`, the district around it -- two places
+  geoBoundaries draws as one shape.
 
-* **Ukraine's rayons fall short of their own totals, and that is the source.**
-  105 of 663 miss by up to 6.9%. The shape says it is a hole and not a
-  misreading: the national row reconciles to 99.8%, the columns are exactly
-  the categories the census published including Other and Unstated, and 558
-  rayons agree. A reader that had misunderstood the sheet would be wrong
-  everywhere and by a similar factor, which is what the default bounds are
-  tuned to catch. So the bounds moved onto the country, defaulting to the
-  module's, and Ukraine is the only country that widens them -- with that
-  evidence written beside the numbers, and a test asserting it is the only
-  one.
+  So `Country.sum_into` names a level the source lists and leaves empty, to be
+  built from the level below. The file's own `ADM1_NAME` column says which
+  oblast each rayon belongs to, which makes the addition the source's
+  arithmetic rather than this map's invention; only areas with no figures of
+  their own are built, so an area publishing directly keeps what it published.
+  **27 of 27 oblasts now carry language, and the first order reconciles to
+  48,121,632 against the census's own 48,121,632 exactly** -- Lviv 95.3%
+  Ukrainian, Donetsk 74.9% Russian, Kyiv city 72.1% against 25.3%.
+
+  **The rayons are summed and not published.** Emitting all 661 put 605 rows
+  nowhere and 56 onto shapes by prefix and containment against an adjectival
+  form. Most of those 56 are probably right, and that is what makes them the
+  kind this map refuses: nobody can check them one at a time, an unmatched row
+  is a visible gap, and a mis-matched one is invisible. Children are therefore
+  added up *before* the level filter, so a level can feed its parent without
+  appearing on the map itself.
+
+  **A built denominator counts children that have no figures.** A rayon the
+  source lists and leaves empty is still part of the oblast's population, so
+  including its published total draws the remainder as an unaccounted share.
+  Leaving it out would have let the sum reconcile perfectly against a
+  denominator that had quietly shrunk to match it, and an incomplete oblast
+  would have looked complete. Each such oblast is named in the log with how
+  many of its children it was built from.
+
+* **A widened bound is a claim, and it is narrowed when its evidence goes.**
+  The refusal bounds moved onto `Country`, defaulting to the module's, because
+  Ukraine's rayons fell short of their own totals in 105 of 663 cases by up to
+  6.9% -- a hole in the source rather than a misreading, since the national row
+  reconciled to 99.8% and 558 rayons agreed exactly. Both bounds were widened
+  on that evidence.
+
+  Publishing oblasts instead retired half of it. Only 3 of 27 oblasts fall
+  short and the worst is 0.7%, so the *size* bound went back to the module's
+  5%. Only the *share* bound stays widened, and for a different reason: 27
+  areas is a coarse denominator, one oblast being 3.7% of the count, so three
+  of them tripping a 10% test says almost nothing about whether the sheet was
+  understood. Ukraine is still the only country that widens anything, and a
+  test asserts both which bound and which country.
 
 **Two boundary names are misspelled rather than differently spelled.**
 geoBoundaries transposes Sagaing into "Saigang" and drops a letter from
