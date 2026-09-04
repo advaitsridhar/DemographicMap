@@ -155,6 +155,13 @@ class Topic:
     """
     sheet: str
     field: str
+    # The column holding everyone the question was asked of, named outright
+    # where denominator() cannot find it. That function looks for "population"
+    # in the alias, which is right for every census here and wrong for the DRC:
+    # its universe is TRB_SSIZE / "Sample size", the number of heads of
+    # household the survey reached. Left unnamed it would be read as a tribe --
+    # the largest one in the country, since it is the sum of all the others.
+    denominator: str = ""
     # Set only where one sheet holds two topics. Burma's is called "Ethnicity"
     # and carries the religion columns as well, so "everything that is not
     # geography" collected both and the shares came to 3.05 times the
@@ -227,6 +234,15 @@ class Country:
     # upstream release could fix, and a declaration here would then be a lie
     # that suppresses a match. A declaration should only ever be doing work.
     no_shape: frozenset[tuple[str, str]] = frozenset()
+    # Whether this file's figures count people. They do everywhere but the
+    # DRC, whose survey counts the heads of household it sampled -- 31,755 of
+    # them, for 119 million people. Publishing that beside Pakistan's census
+    # counts would put a sample and a population in one field with nothing to
+    # tell them apart, so where this is false only the share is published.
+    # The share is what the survey measures; the count is how many doors it
+    # knocked on. Shares without counts are already a shape this map has: the
+    # whole-country rows from the Factbook carry exactly that.
+    counts_are_people: bool = True
 
 
 HDX = "https://data.humdata.org/dataset"
@@ -653,9 +669,77 @@ CENTRAL_AFRICAN_REPUBLIC = Country(
 )
 
 
+MALI = Country(
+    iso3="MLI",
+    name="Mali",
+    year=2009,
+    source=("Institut National de la Statistique (INSTAT), 4ème Recensement "
+            "Général de la Population et de l'Habitat 2009, Tableau S-3: "
+            "Population Résidente de 6 Ans et Plus Selon la Langue, prepared "
+            "as subnational tables by the U.S. Census Bureau"),
+    licence="CC BY-IGO, published via HDX",
+    dataset="mali-subnational-population-and-housing-data-tables-with-"
+            "administrative-boundaries",
+    out="mali_region.json",
+    # 9 regions and 50 cercles, which is what geoBoundaries draws.
+    levels={1: "admin1", 2: "admin2"},
+    topics=(Topic("Language", "language"),),
+    aliases={},
+    note=("2009 census. The shares are of the resident population aged 6 and "
+          "over, not of everybody: the census table is titled \"Population "
+          "Résidente de 6 Ans et Plus Selon la Langue\" and its columns sum "
+          "to 11,109,312 against a counted population of about 14.5 million. "
+          "The missing quarter is children under six, who were not asked. "
+          "That gap was the reason this file was held back a release -- a "
+          "quarter of a country unaccounted for is either a stated universe "
+          "or a misread sheet, and which one it was is a question only the "
+          "source's own citation could answer."),
+)
+
+
+DEMOCRATIC_REPUBLIC_OF_THE_CONGO = Country(
+    iso3="COD",
+    name="Democratic Republic of the Congo",
+    year=2012,
+    source=("Institut National de la Statistique, Enquête 1-2-3 (2005 and "
+            "2012), prepared as subnational tables by the U.S. Census Bureau"),
+    licence="CC BY-IGO, published via HDX",
+    dataset="democratic-republic-of-the-congo-subnational-boundaries-and-"
+            "tabular-data",
+    out="drc_province.json",
+    # Provinces only, though the file carries 164 districts. 31,755 households
+    # spread over 26 provinces is about 1,200 each, which supports a
+    # provincial estimate; spread over the districts it is about 194 each,
+    # which does not support anything. The second order is read and not
+    # published, and that is a decision about sample size rather than about
+    # names -- every district would have joined.
+    levels={1: "admin1"},
+    # One sheet, two questions, as Burma's was -- so each topic takes its own
+    # prefix, and both take the same denominator, which belongs to neither.
+    topics=(Topic("Tribe and Religion", "ethnicity", prefix="TRB_",
+                  denominator="TRB_SSIZE"),
+            Topic("Tribe and Religion", "religion", prefix="RLG_",
+                  denominator="TRB_SSIZE")),
+    # The figures are households, not people. See counts_are_people.
+    counts_are_people=False,
+    aliases={},
+    note=("Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only "
+          "source on this map that is a survey rather than a census, and it "
+          "is reported differently for that reason: the shares are of the "
+          "31,755 heads of household the survey reached, about 1,200 per "
+          "province, and no count is published because the count is of "
+          "households sampled rather than of people. A provincial share here "
+          "carries sampling error that a census count does not, and it "
+          "describes the household head rather than the household. Two "
+          "survey rounds seven years apart are pooled into one figure by the "
+          "source, so it dates to neither year exactly."),
+)
+
+
 COUNTRIES: dict[str, Country] = {
     c.iso3: c for c in (PHILIPPINES, ETHIOPIA, MYANMAR, UKRAINE,
-                        PAKISTAN, CENTRAL_AFRICAN_REPUBLIC)}
+                        PAKISTAN, CENTRAL_AFRICAN_REPUBLIC, MALI,
+                        DEMOCRATIC_REPUBLIC_OF_THE_CONGO)}
 
 
 def discover(limit: int, sheets: bool) -> int:
@@ -1027,7 +1111,14 @@ def read(book, country: Country,
     rows = sheet_rows(book, topic.sheet)
     names, aliases = columns(rows)
     by_sex = sexed(names, topic.prefix)
-    total = denominator(names, aliases, topic.prefix)
+    if topic.denominator:
+        if topic.denominator not in names:
+            raise SystemExit(
+                f"{country.iso3} {topic.sheet}: no column named "
+                f"{topic.denominator!r} to use as the denominator")
+        total = names.index(topic.denominator)
+    else:
+        total = denominator(names, aliases, topic.prefix)
     found = groups(names, aliases, total, by_sex, topic.prefix)
     if not found:
         raise SystemExit(
@@ -1290,9 +1381,12 @@ def main() -> int:
                 row = fields[topic.field].get(key)
                 if not row:
                     continue
-                values[topic.field] = shares(
-                    row["counts"], total=row["published"] or row["summed"]
-                ) or gap(NOT_AVAILABLE)
+                published = shares(
+                    row["counts"], total=row["published"] or row["summed"])
+                if not country.counts_are_people:
+                    published = [{"group": g["group"], "pct": g["pct"]}
+                                 for g in published]
+                values[topic.field] = published or gap(NOT_AVAILABLE)
                 values[f"{topic.field}_year"] = topic.year or country.year
                 values[f"{topic.field}_note"] = topic.note or country.note
                 cites.append({"field": topic.field,
