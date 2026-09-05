@@ -201,10 +201,18 @@ def workbook(filename: str) -> bytes:
     Uncached deliberately. http_get caches whatever it received, and a cached
     error page would fail every later run for a reason that had already gone
     away. Two files of about 2.6 MB once per refresh is the cheaper mistake.
+
+    retries=0, because http_get already retries four times with its own
+    backoff and a 120-second timeout. Wrapping four more around it made a
+    throttled fetch twenty slow requests deep and ran for seventeen minutes
+    before it was killed -- the retries multiplied instead of adding. One
+    layer owns the policy, and it is this one, because this is the layer that
+    can tell a throttle from a network error.
     """
     last = b""
     for attempt in range(4):
-        blob = http_get(BASE + filename, binary=True, cache=False)
+        blob = http_get(BASE + filename, binary=True, cache=False,
+                        retries=0, timeout=90)
         if blob[:2] == b"PK":
             return blob
         last = blob
