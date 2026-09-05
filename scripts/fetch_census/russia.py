@@ -213,12 +213,14 @@ def workbook(filename: str) -> bytes:
     error page would fail every later run for a reason that had already gone
     away. Two files of about 2.6 MB once per refresh is the cheaper mistake.
 
-    retries=0, because http_get already retries four times with its own
-    backoff and a 120-second timeout. Wrapping four more around it made a
-    throttled fetch twenty slow requests deep and ran for seventeen minutes
-    before it was killed -- the retries multiplied instead of adding. One
-    layer owns the policy, and it is this one, because this is the layer that
-    can tell a throttle from a network error.
+    retries=1, arrived at by overshooting in both directions. http_get
+    defaults to four, and four of those inside four of these multiply rather
+    than add: a throttled fetch went twenty slow requests deep and ran
+    seventeen minutes before it was killed. Zero then swung too far the other
+    way, because a timeout is exactly the transient this layer should ride out
+    and it aborted on the first one. One retry inside, four outside, and the
+    outer loop owns the policy because it is the layer that can tell an error
+    page from a dropped connection.
     """
     kept = STORE / filename
     if kept.exists():
@@ -231,7 +233,7 @@ def workbook(filename: str) -> bytes:
     last = b""
     for attempt in range(4):
         blob = http_get(BASE + filename, binary=True, cache=False,
-                        retries=0, timeout=90)
+                        retries=1, timeout=90)
         if blob[:2] == b"PK":
             STORE.mkdir(parents=True, exist_ok=True)
             kept.write_bytes(blob)
