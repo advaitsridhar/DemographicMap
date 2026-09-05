@@ -1,27 +1,8 @@
-ethnicity: Tom5_tab1_VPN-2020.xlsx, 10,485 bytes
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/russia.py", line 341, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/russia.py", line 306, in main
-    fields[field] = read(blob, field)
-                    ^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/russia.py", line 232, in read
-    book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/reader/excel.py", line 346, in load_workbook
-    reader = ExcelReader(filename, read_only, keep_vba,
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/reader/excel.py", line 123, in __init__
-    self.archive = _validate_archive(fn)
-                   ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/reader/excel.py", line 95, in _validate_archive
-    archive = ZipFile(filename, 'r')
-              ^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/zipfile.py", line 1330, in __init__
-    self._RealGetContents()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/zipfile.py", line 1397, in _RealGetContents
-    raise BadZipFile("File is not a zip file")
-zipfile.BadZipFile: File is not a zip file
+  Tom5_tab1_VPN-2020.xlsx: 10,485 bytes beginning b'<!DOCTYPE ht', which is not a workbook -- the archive is throttling; retrying in 15s
+  retry 1/4 after 2s :: https://web.archive.org/web/20250105165828/https://rosstat.gov.ru/storage/mediabank/Tom5_tab1_VPN-2020.xlsx :: <urlopen error timed out>
+  retry 2/4 after 4s :: https://web.archive.org/web/20250105165828/https://rosstat.gov.ru/storage/mediabank/Tom5_tab1_VPN-2020.xlsx :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  Tom5_tab1_VPN-2020.xlsx: 10,485 bytes beginning b'<!DOCTYPE ht', which is not a workbook -- the archive is throttling; retrying in 30s
+  retry 1/4 after 2s :: https://web.archive.org/web/20250105165828/https://rosstat.gov.ru/storage/mediabank/Tom5_tab1_VPN-2020.xlsx :: <urlopen error timed out>
+  retry 2/4 after 4s :: https://web.archive.org/web/20250105165828/https://rosstat.gov.ru/storage/mediabank/Tom5_tab1_VPN-2020.xlsx :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  Tom5_tab1_VPN-2020.xlsx: 10,485 bytes beginning b'<!DOCTYPE ht', which is not a workbook -- the archive is throttling; retrying in 45s
+  retry 1/4 after 2s :: https://web.archive.org/web/20250105165828/https://rosstat.gov.ru/storage/mediabank/Tom5_tab1_VPN-2020.xlsx :: <urlopen error timed out>
