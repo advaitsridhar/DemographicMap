@@ -42,8 +42,19 @@ import time
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, shares, write_json,
+    NOT_AVAILABLE, PROCESSED, RAW, gap, http_get, log, record, shares,
+    write_json,
 )
+
+# Where the two workbooks live once fetched. They are checked in, which is
+# this project's existing answer for a source with no reliably fetchable URL --
+# Nepal's report, Sri Lanka's tables and India's C-16 workbooks are all read
+# from here. Russia qualifies twice over: its own host serves a certificate no
+# ordinary trust store carries, and the archive standing in for it throttles
+# hard enough to answer with an HTML page. A quarterly refresh should not
+# depend on an archive being in a good mood, and 2.6 MB is a small price for
+# a build that does the same thing every time.
+STORE = RAW / "russia"
 
 CAPTURE = "20250105165828"
 BASE = (f"https://web.archive.org/web/{CAPTURE}/"
@@ -209,23 +220,36 @@ def workbook(filename: str) -> bytes:
     layer owns the policy, and it is this one, because this is the layer that
     can tell a throttle from a network error.
     """
+    kept = STORE / filename
+    if kept.exists():
+        blob = kept.read_bytes()
+        if blob[:2] == b"PK":
+            log(f"  {filename}: {len(blob):,} bytes from {kept.parent}")
+            return blob
+        log(f"  {filename}: the checked-in copy is not a workbook; refetching")
+
     last = b""
     for attempt in range(4):
         blob = http_get(BASE + filename, binary=True, cache=False,
                         retries=0, timeout=90)
         if blob[:2] == b"PK":
+            STORE.mkdir(parents=True, exist_ok=True)
+            kept.write_bytes(blob)
+            log(f"  {filename}: {len(blob):,} bytes, kept at {kept}")
             return blob
         last = blob
-        wait = 15 * (attempt + 1)
+        wait = 30 * (attempt + 1)
         log(f"  {filename}: {len(blob):,} bytes beginning {blob[:12]!r}, "
             f"which is not a workbook -- the archive is throttling; "
             f"retrying in {wait}s")
         time.sleep(wait)
     raise SystemExit(
-        f"RUS: {filename} came back as {len(last):,} bytes of "
-        f"{last[:60]!r} four times over. That is the archive refusing, not "
-        f"a file that has moved: the capture is named in this module and can "
-        f"be checked by hand.")
+        f"RUS: {filename} came back as {len(last):,} bytes of {last[:60]!r} "
+        f"four times over, and no copy is checked in at {kept}. The archive "
+        f"holds this file -- a probe read all 88 of its sheets -- so this is "
+        f"throttling rather than absence, and the fix is to fetch it once "
+        f"when the archive is willing and commit it, not to fetch it on "
+        f"every build.")
 
 
 def number(cell: Any) -> float | None:
