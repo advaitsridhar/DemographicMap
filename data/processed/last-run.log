@@ -1,19 +1,88 @@
-Mali: https://data.humdata.org/dataset/54941a2a-9546-4885-a12c-80c34eaa20cf/resource/00e9ae0f-0822-4235-97b3-c2c1d125efb3/download/mali_uscb_202211.xlsx
-  594,053 bytes
-  Language: 60 rows, 22 groups, no published denominator
-    50 rows skipped: another level, or no area name
-    admin1: 11,109,312 against the country's own 11,109,312 -- exactly
-  wrote data/processed/mali_region.json (32 kB)
-  9 areas: 9 admin1
-Democratic Republic of the Congo: https://data.humdata.org/dataset/881bdaa3-6d4c-408b-88dc-aed0ecc0d119/resource/a4a72c31-af0d-4b0d-975b-9eadf6d5c103/download/democratic-republic-of-the-congo_uscb_202103.xlsx
-  297,896 bytes
-  Tribe and Religion [TRB_]: 191 rows, 105 groups, denominator 'Sample size'
-    164 rows skipped: another level, or no area name
-    admin1: 31,755 against the country's own 31,755 -- exactly
-    every one of 26 areas reaches its published total
-  Tribe and Religion [RLG_]: 191 rows, 9 groups, denominator 'Sample size'
-    164 rows skipped: another level, or no area name
-    admin1: 31,755 against the country's own 31,755 -- exactly
-    every one of 26 areas reaches its published total
-  wrote data/processed/drc_province.json (131 kB)
-  26 areas: 26 admin1
+page: https://rosstat.gov.ru/vpn/2020
+  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
+page: https://www.e-stat.go.jp/en
+  101,830 bytes
+  0 matching link(s)
+page: https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/
+  21,106 bytes
+  51 matching link(s)
+  - 本文へ移動します
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/#contents
+  - フッターへ移動します
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/#block_04
+  - 閉じる
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/
+  - 宗教年鑑 令和7年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/r07nenkan.pdf
+  - 宗教統計調査の主な結果
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/r07nenkan_gaiyo.pdf
+  - 宗教年鑑 令和6年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/r06nenkan.pdf
+  - 宗教統計調査の主な結果
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/r06nenkan_gaiyo.pdf
+  - 宗教年鑑 令和5年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/r05nenkan.pdf
+  - 宗教統計調査の主な結果
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/r05nenkan_gaiyo.pdf
+  - 宗教年鑑 令和4年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/r04nenkan.pdf
+  - 宗教統計調査の主な結果
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/r04nenkan_gaiyo.pdf
+  - 宗教年鑑 令和3年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/r03nenkan.pdf
+  - 宗教統計調査の主な結果
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/r03nenkan_gaiyo.pdf
+  - 宗教年鑑 令和2年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/r02nenkan.pdf
+  - 宗教統計調査の主な結果
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/r02nenkan_gaiyo.pdf
+  - 正誤表
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/r02nenkan_seigohyo.pdf
+  - 宗教年鑑 令和元年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/r01nenkan.pdf
+  - 宗教統計調査の主な結果
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/r01nenkan_gaiyo.pdf
+  - 宗教年鑑 平成30年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h30nenkan.pdf
+  - 宗教統計調査の主な結果
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h30nenkan_gaiyo.pdf
+  - 宗教年鑑 平成29年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h29nenkan.pdf
+  - 宗教統計調査の主な結果
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h29nenkan_gaiyo.pdf
+  - 宗教年鑑 平成28年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h28nenkan.pdf
+  - 宗教年鑑 平成27年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h27nenkan.pdf
+  - 正誤表
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h27nenkan_seigohyo.pdf
+  - 宗教年鑑 平成26年版（第3部改訂，平成27年9月1日現在）
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h26nenkan_20150901.pdf
+  - 宗教年鑑 平成26年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h26nenkan.pdf
+  - 宗教年鑑 平成25年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h25nenkan.pdf
+  - 正誤表
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h25nenkan_seigohyo.pdf
+  - 宗教年鑑 平成24年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h24nenkan.pdf
+  - 正誤表
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h24nenkan_seigohyo.pdf
+  - 宗教年鑑 平成23年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h23nenkan.pdf
+  - 宗教年鑑 平成22年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h22nenkan.pdf
+  - 宗教年鑑 平成21年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h21nenkan.pdf
+  - 宗教年鑑 平成20年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h20nenkan.pdf
+  - 宗教年鑑 平成19年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h19nenkan.pdf
+  - 宗教年鑑 平成18年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h18nenkan.pdf
+  - 正誤表
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h18nenkan_seigohyo.pdf
+  - 宗教年鑑 平成17年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h17nenkan.pdf
+  - 宗教年鑑 平成16年版
+    https://www.bunka.go.jp/tokei_hakusho_shuppan/hakusho_nenjihokokusho/shukyo_nenkan/pdf/h16nenkan.pdf
