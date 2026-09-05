@@ -38,11 +38,11 @@ from __future__ import annotations
 import argparse
 import io
 import re
+import time
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, RAW, gap, http_get, log, record, shares,
-    write_json,
+    NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, shares, write_json,
 )
 
 CAPTURE = "20250105165828"
@@ -188,6 +188,38 @@ TABLE = {"ethnicity": "Tom5_tab1_VPN-2020.xlsx",
 TOLERANCE = 0.005
 
 
+def workbook(filename: str) -> bytes:
+    """The file, or a refusal that says what arrived instead.
+
+    The Internet Archive throttles, and it does not do so with a status code:
+    it answers 200 with an HTML error page. http_get retries network errors and
+    5xx and is right not to touch this one -- from its side the request
+    succeeded. So the check belongs here, where something knows the response is
+    supposed to be a workbook: a ZIP starts "PK", and 10 kB where 1.6 MB was
+    expected is a page saying no.
+
+    Uncached deliberately. http_get caches whatever it received, and a cached
+    error page would fail every later run for a reason that had already gone
+    away. Two files of about 2.6 MB once per refresh is the cheaper mistake.
+    """
+    last = b""
+    for attempt in range(4):
+        blob = http_get(BASE + filename, binary=True, cache=False)
+        if blob[:2] == b"PK":
+            return blob
+        last = blob
+        wait = 15 * (attempt + 1)
+        log(f"  {filename}: {len(blob):,} bytes beginning {blob[:12]!r}, "
+            f"which is not a workbook -- the archive is throttling; "
+            f"retrying in {wait}s")
+        time.sleep(wait)
+    raise SystemExit(
+        f"RUS: {filename} came back as {len(last):,} bytes of "
+        f"{last[:60]!r} four times over. That is the archive refusing, not "
+        f"a file that has moved: the capture is named in this module and can "
+        f"be checked by hand.")
+
+
 def number(cell: Any) -> float | None:
     """A count, or None. Rosstat writes an em dash where a group is absent."""
     if cell is None:
@@ -301,7 +333,11 @@ def main() -> int:
 
     fields: dict[str, dict[str, dict[str, Any]]] = {}
     for field, filename in TABLE.items():
-        blob = http_get(BASE + filename, binary=True, cache_dir=RAW / "russia")
+        if fields:
+            # Two large files back to back is what tips the archive into
+            # throttling, and waiting is cheaper than retrying.
+            time.sleep(10)
+        blob = workbook(filename)
         log(f"{field}: {filename}, {len(blob):,} bytes")
         fields[field] = read(blob, field)
         check(field, fields[field])
