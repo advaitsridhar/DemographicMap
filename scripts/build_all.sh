@@ -97,6 +97,10 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # One reader, every country in the U.S. Census Bureau's subnational series:
   # the Philippines (2020 census) and Ethiopia (2007, the last it completed).
   soft python3 -m scripts.fetch_census.uscb
+  # Rosstat's own host serves a certificate signed by a state CA no
+  # ordinary trust store carries, so this reads the same files from a
+  # public archive and the citation says which capture.
+  soft python3 -m scripts.fetch_census.russia
 fi
 
 if [ "${SKIP_TILES:-0}" != "1" ]; then

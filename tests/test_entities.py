@@ -3225,3 +3225,82 @@ class SurveyFiguresAreNotPopulationCounts(unittest.TestCase):
         note = self.uscb.COUNTRIES["MLI"].note
         self.assertIn("6 and over", note)
         self.assertIn("11,109,312", note)
+
+
+class MatchingOnACodeRatherThanARomanisation(unittest.TestCase):
+    """Russia is the first source whose names cannot be matched at all.
+
+    Its sheets are Cyrillic, the boundary file is English, and norm() keeps
+    Cyrillic as Cyrillic deliberately -- a transliteration invented in this
+    code would be a guess about a name, and the guesses that look right are
+    the dangerous ones. An ISO 3166-2 code is the one key both sides carry
+    without anybody romanising anything.
+    """
+
+    def setUp(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import importlib
+        self.ru = importlib.import_module("fetch_census.russia")
+
+    def test_every_sheet_is_either_a_subject_or_skipped_for_a_reason(self):
+        # 88 sheets: 83 subjects, 4 named skips, and the country's own row.
+        self.assertEqual(len(self.ru.SUBJECTS), 83)
+        self.assertEqual(len(self.ru.SKIP), 4)
+        self.assertEqual(len(self.ru.SUBJECTS) + len(self.ru.SKIP) + 1, 88)
+        for sheet, why in self.ru.SKIP.items():
+            self.assertTrue(why, f"{sheet} is skipped without a reason")
+            self.assertNotIn(sheet, self.ru.SUBJECTS)
+
+    def test_the_overlapping_forms_are_the_ones_skipped(self):
+        # Reading a combined subject beside its parts counts about four
+        # million people twice, and nothing in the figures would show it.
+        self.assertIn("Архангельская область", self.ru.SKIP)
+        self.assertIn("Архангельская область без АО", self.ru.SUBJECTS)
+        self.assertIn("Ненецкий автономный округ", self.ru.SUBJECTS)
+        self.assertIn("Тюменская область", self.ru.SKIP)
+        self.assertIn("Тюменская область без АО", self.ru.SUBJECTS)
+
+    def test_crimea_and_sevastopol_are_not_published_from_this_source(self):
+        # Ukraine's 2001 census already publishes these shapes on this map,
+        # and geoBoundaries draws neither inside Russia.
+        self.assertIn("Республика Крым", self.ru.SKIP)
+        self.assertIn("г. Севастополь", self.ru.SKIP)
+
+    def test_every_code_names_a_shape_the_boundary_file_draws(self):
+        shapes = json.loads(
+            (ROOT / "site" / "data" / "admin1" / "RUS.json").read_text())
+        codes = {s.get("iso_3166_2") for s in shapes if s.get("iso_3166_2")}
+        codeless = [s["name"] for s in shapes if not s.get("iso_3166_2")]
+        mine = set(self.ru.SUBJECTS.values())
+        # One shape carries no code, so exactly one configured code has no
+        # shape to match and is aliased by name instead.
+        self.assertEqual(len(codeless), 1)
+        self.assertEqual(sorted(mine - codes), sorted(self.ru.BY_NAME))
+        self.assertFalse(codes - mine, "a shape whose code is never read")
+        for code, names in self.ru.BY_NAME.items():
+            self.assertTrue(set(names) & set(codeless),
+                            f"{code} is aliased to a shape that has a code")
+
+    def test_the_proficiency_table_is_not_the_one_read(self):
+        # Table 5 is ВЛАДЕНИЕ ЯЗЫКАМИ -- which languages a person knows, of
+        # which they may know several. Table 6 is РОДНОМУ ЯЗЫКУ, which
+        # partitions. Reading 5 would publish a composition summing past 100%,
+        # which is what Thailand's file was refused for.
+        self.assertIn("tab6", self.ru.TABLE["language"])
+        self.assertNotIn("tab5", "".join(self.ru.TABLE.values()))
+
+    def test_a_nested_row_is_left_to_the_parent_that_contains_it(self):
+        # Rosstat indents the peoples counted inside a group: Аварцы is
+        # followed by Андийцы, Ахвахцы, Дидойцы. Taking every row sums past
+        # the universe the sheet publishes.
+        self.assertEqual(self.ru.label("Аварцы"), ("Аварцы", False))
+        self.assertEqual(self.ru.label("   Андийцы"), ("Андийцы", True))
+        # A group's self-designations are a glossary, not part of its name.
+        self.assertEqual(
+            self.ru.label("Башкиры (башкирцы, башкорт, мин)")[0], "Башкиры")
+
+    def test_an_em_dash_is_absence_and_not_a_number(self):
+        for absent in ("-", "–", "—", "", "   ", None):
+            self.assertIsNone(self.ru.number(absent), repr(absent))
+        self.assertEqual(self.ru.number("3 888 216"), 3888216.0)
+        self.assertEqual(self.ru.number(4004809), 4004809.0)

@@ -74,7 +74,7 @@ ADAPTER_FILES = [
     "south_africa_province.json",
     "philippines_province.json", "ethiopia_region.json",
     "myanmar_state.json", "ukraine_oblast.json", "car_prefecture.json",
-    "mali_region.json", "drc_province.json",
+    "mali_region.json", "drc_province.json", "russia_subject.json",
     "brazil_state.json", "brazil_municipality.json",
     "canada_province.json", "canada_census_division.json",
     "australia_state.json", "australia_lga.json",
@@ -1042,6 +1042,7 @@ def roll_up_parents(admin1_by_country: dict[str, list[dict[str, Any]]],
 # a difference would make every rivalry look like a conflict.
 METADATA = {"id", "wikidata", "level", "name", "parent", "parent_name",
             "parent_aliases", "aliases", "no_shape", "_source", "sources",
+            "iso_3166_2",
             "country", "point", "coordinates", "bbox", "match"}
 
 
@@ -1472,6 +1473,16 @@ def main() -> int:
         # and there is no row name to settle it with.
         a1 = {key: found[0] for key, found in a1_by_key.items()
               if len(found) == 1}
+        # An ISO 3166-2 code is the one key on both sides that needs no
+        # romanisation. Russia's sheets are Cyrillic and its shapes English,
+        # and norm() keeps Cyrillic as Cyrillic on purpose -- a transliteration
+        # invented here would be a guess about a name. A code matches or it
+        # does not, and 82 of Russia's 83 shapes carry one.
+        a1_by_code: dict[str, dict[str, Any]] = {}
+        for entity in admin1_by_country.get(iso3, []):
+            code = entity.get("iso_3166_2")
+            if code and code not in a1_by_code:
+                a1_by_code[code] = entity
         a2: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for entity in admin2_by_country.get(iso3, []):
             a2[norm(entity["name"])].append(entity)
@@ -1506,9 +1517,20 @@ def main() -> int:
                    # historically rather than currently.
                    "point": row_point(row)}
             if row.get("level") == "admin1":
-                entity, how = match_name(
-                    key, settle(a1_by_key,
-                                [key["name"], *key["aliases"]]))
+                # A row that names its code is matched on the code alone when
+                # the boundary file has it. Falling back to the name after a
+                # code miss would defeat the point: the code is the stronger
+                # evidence, and a name match that contradicts it would be the
+                # invisible kind of wrong. A row whose code no shape carries
+                # still gets the ordinary name pass, which is what carries
+                # Sakha, the one Russian shape with no code at all.
+                code = row.get("iso_3166_2")
+                if code and code in a1_by_code:
+                    entity, how = a1_by_code[code], "iso_3166_2"
+                else:
+                    entity, how = match_name(
+                        key, settle(a1_by_key,
+                                    [key["name"], *key["aliases"]]))
             else:
                 entity, how = match_admin2(key, a2, a1)
             if entity is None:
