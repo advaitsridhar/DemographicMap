@@ -688,7 +688,9 @@ MALI = Country(
     # both, and the cercles keep a visible gap.
     levels={1: "admin1"},
     topics=(Topic("Language", "language"),),
-    aliases={},
+    # Eight of nine regions match on their own name. geoBoundaries writes an
+    # extra u into the ninth.
+    aliases={"Koulikoro": ("Koulikouro",)},
     note=("2009 census. The shares are of the resident population aged 6 and "
           "over, not of everybody: the census table is titled \"Population "
           "Résidente de 6 Ans et Plus Selon la Langue\" and its columns sum "
@@ -726,7 +728,23 @@ DEMOCRATIC_REPUBLIC_OF_THE_CONGO = Country(
                   denominator="TRB_SSIZE")),
     # The figures are households, not people. See counts_are_people.
     counts_are_people=False,
-    aliases={},
+    # 21 of 26 provinces match on their own name. The five that do not are one
+    # pattern rather than five: geoBoundaries translates the French compass
+    # word into English, Bas to Lower and Nord to North, and moves Central
+    # from the end of Kasai Central to the front.
+    #
+    # It does this to five provinces and not to the rest -- Haut-Katanga,
+    # Haut-Lomami, Nord-Ubangi, Sud-Ubangi and Kasai Oriental all keep their
+    # French and match unaided -- so there is no rule to write here, only a
+    # list. A rule that turned "Nord-" into "North " would be inventing a
+    # consistency the boundary file does not have.
+    aliases={
+        "Bas-Uélé": ("Lower Uele",),
+        "Haut-Uélé": ("Upper Uele",),
+        "Kasaï Central": ("Central Kasai",),
+        "Nord-Kivu": ("North Kivu",),
+        "Sud-Kivu": ("South Kivu",),
+    },
     note=("Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only "
           "source on this map that is a survey rather than a census, and it "
           "is reported differently for that reason: the shares are of the "
