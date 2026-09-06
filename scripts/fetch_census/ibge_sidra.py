@@ -104,6 +104,23 @@ def englished(field: str, counts: dict[str, float]) -> dict[str, float]:
     return out
 
 
+def uf_of(place: dict[str, Any]) -> dict[str, Any]:
+    """The federative unit a municipality sits in, by whichever path IBGE gives.
+
+    The localities endpoint carries the state twice, under two hierarchies that
+    do not both cover every municipality. ``microrregiao`` is the older
+    mesoregion tree; ``regiao-imediata`` is the 2017 replacement, and a
+    municipality installed since then can have only the newer one. Reading the
+    old path alone left Boa Esperanca do Norte, created in Mato Grosso in 2024,
+    with no state at all -- parented to Brazil itself and scoped to nothing.
+    """
+    old = (place.get("microrregiao") or {}).get("mesorregiao") or {}
+    if (old.get("UF") or {}).get("id"):
+        return old["UF"]
+    new = (place.get("regiao-imediata") or {}).get("regiao-intermediaria") or {}
+    return new.get("UF") or {}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -134,10 +151,19 @@ def main() -> int:
     records: list[dict[str, Any]] = []
     for code, place in places.items():
         name = place.get("nome")
-        parent = "BRA"
+        parent, parent_name = "BRA", None
         if args.level == "municipality":
-            uf = (place.get("microrregiao") or {}).get("mesorregiao", {}).get("UF", {})
-            parent = f"BRA-{uf.get('id')}" if uf.get("id") else "BRA"
+            uf = uf_of(place)
+            if uf.get("id"):
+                parent = f"BRA-{uf['id']}"
+            # The join scopes a district match to its named parent, and only to
+            # its named parent -- a row without one is matched country-wide and
+            # refused wherever the name is not unique. Brazil has five Bom
+            # Jesus, five Sao Domingos, four Bonito; 242 names are shared by 525
+            # municipalities. Without the state those 525 are all correctly
+            # refused, which is 525 real places reading as gaps for no reason
+            # but that this adapter knew the answer and did not say it.
+            parent_name = uf.get("nome")
         total = pop.get(code, {}).get("__total__")
         rvals = englished("ethnicity", {k: v for k, v in race.get(code, {}).items()
                                         if k != "__total__"})
@@ -145,6 +171,7 @@ def main() -> int:
                                        if k != "__total__"})
         records.append(record(
             f"BRA-{code}", name, level=level, parent=parent,
+            parent_name=parent_name,
             codes={"ibge": code},
             population=measure(int(total), year=2022, source=src) if total else gap(NOT_AVAILABLE),
             ethnicity=shares(rvals) or gap(NOT_AVAILABLE),

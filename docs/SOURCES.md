@@ -1618,6 +1618,74 @@ to Bogura — and geoBoundaries still carries the older forms, with plain
 transliteration variants for three more. Declared rather than derived:
 "Nawabganj" and "Chapainababganj" share no word.
 
+### Germany: the census asked, and GAST may only read the index
+
+Germany is 84 million people and, until this was measured, the largest European
+country with nothing below the national line -- sixteen Laender, eleven of them
+carrying a population figure and none a composition. The Eurostat adapter had
+already recorded why ethnicity is absent (Germany counts citizenship and
+migration background, and `COLLECTION_POLICY` says so), but it made no claim
+about religion, and its own header says Germany collects it. So religion was an
+open gap rather than a refusal, and nobody had looked.
+
+`scripts/probe_genesis.py` looked. Three databases speak the same GENESIS REST
+dialect, and they gave three different answers:
+
+* **GENESIS-Online**, the federal database, is open to the anonymous user
+  `GAST` and searchable, and **has no religion demography in it at all**. The
+  word matches fifteen tables -- television airtime by broadcaster, book titles
+  by subject group, gross earnings by occupation, national-accounts spending by
+  government function -- every one of them "Deutschland, Jahre", national and
+  annual. The word is in their subject classifications, not their variables.
+  This is a real absence, established by reading the catalogue rather than by
+  failing to guess a table name.
+* **The Regionaldatenbank** admits `GAST` at the login check and then answers
+  **401 to every catalogue search**. It needs a registered account, and nothing
+  about what it holds is known.
+* **The Zensus 2022 results database has the data.** Zensus 2022 did ask
+  religion: forty tables match, in two families -- `1000A-*` *Personen:
+  Religion* and `2000X-*` *Personen: Religion (ausfuehrlich)*, the finer
+  classification -- alongside cuts by age, sex, marital status, citizenship and
+  migration background. `GAST` can search that catalogue and can do nothing
+  else with it: `catalogue/tables`, `catalogue/variables`, `catalogue/timeseries`,
+  `metadata/table`, `metadata/variable`, `data/table` and `data/tablefile` all
+  answer **401**.
+
+So Germany is one free registration away, and it is the same shape of block as
+Indonesia: the data is public, the interface is sanctioned, and it wants an
+account. The adapter is not written, because the one thing still unknown is
+which table is cut by `DLAND` -- four of them share the title *Personen:
+Religion* and differ only by a letter (`1018`, `1E18`, `1K18`, `1W18`), which
+is the Zensus habit of publishing one table once per regional level, and
+`metadata/table` is exactly the endpoint `GAST` may not call. Writing an
+adapter against a guessed variable code would produce a join nobody could
+check, which is the failure mode this project cares most about.
+
+`probe_genesis.py` already reads `ZENSUS_USER` and `ZENSUS_PASSWORD` from the
+environment, and `run-adapter.yml` passes secrets to adapters through the
+environment and never through a command line. Registering at
+`ergebnisse.zensus2022.de` is free; the credentials belong in repository
+secrets, never in a file, a workflow input or this document.
+
+Four things about the probing were wrong before they were right, and all four
+were the same kind of error -- reading our own request's failure as a fact
+about the server:
+
+* Every endpoint on all three instances answered **405** to a GET. That is the
+  path existing and the verb being wrong, not the data being absent.
+* `data/tablefile` and `data/chart2table` answered **406 Not Acceptable**,
+  which was content negotiation refusing an `Accept: application/json` the
+  probe had chosen itself. Asked with `*/*` they answer 401, which is the
+  actual finding. Reading the 406 as a locked door would have closed Germany on
+  the strength of our own header.
+* GENESIS-Online answered **307** to every call, and urllib follows neither 307
+  nor 308 for a POST. The federal instance had not been asked anything at all
+  at the point it was nearly filed as not answering.
+* That 307 pointed at `genesis.destatis.de`, not the `www-genesis.destatis.de`
+  every Destatis document names. The probe refuses to follow a redirect
+  off-host -- a probe that wanders is no longer evidence about the host it was
+  aimed at -- so the address was recorded rather than the rule loosened.
+
 ### Indonesia: published, and not fetchable
 
 Indonesia is 284 million people and the largest population this map still has

@@ -3861,3 +3861,55 @@ class AnAdapterWhoseOutputIsNeverReadJoinsNothing(unittest.TestCase):
         """
         self.assertEqual(len(self.be.ADAPTER_FILES),
                          len(set(self.be.ADAPTER_FILES)))
+
+
+class ADistrictAdapterWithRepeatedNamesMustNameItsParent(unittest.TestCase):
+    """The 525 Brazilian municipalities that were about to read as gaps.
+
+    match_admin2 scopes a district row to the admin-1 it names, and matches
+    country-wide only when the row names none -- where it then refuses any name
+    that is not unique, because an unmatched row is a visible gap and a
+    mis-matched one is invisible. That refusal is correct and is tested above.
+
+    What this checks is the other side of the same contract: an adapter that
+    knows which state a district is in has to say so, or it hands the join an
+    ambiguity it invented itself. Brazil is the case that found it. Its first
+    municipality run wrote 5,570 rows carrying no parent_name at all, and 242
+    of its names are shared -- five Bom Jesus, five Sao Domingos, four Bonito --
+    so 525 real places would have been correctly refused while the adapter held
+    the answer in the same loop that dropped it.
+
+    A parent_name that names nothing is no better than none, so the state has
+    to resolve against the state file. Comparison is by norm(), which folds the
+    accents CGAZ drops: IBGE's "Sao Paulo" and the boundary file's are one key.
+    """
+
+    def rows(self, name):
+        path = ROOT / "data" / "processed" / name
+        if not path.exists():
+            self.skipTest(f"{name} has not been fetched")
+        return json.loads(path.read_text())
+
+    def test_brazils_shared_municipality_names_all_name_a_state(self):
+        municipalities = self.rows("brazil_municipality.json")
+        states = {be.norm(row["name"]) for row in self.rows("brazil_state.json")}
+        self.assertEqual(len(states), 27, "Brazil has 27 federative units")
+
+        counts = collections.Counter(be.norm(row["name"]) for row in municipalities)
+        shared = [row for row in municipalities if counts[be.norm(row["name"])] > 1]
+        self.assertGreater(len(shared), 0,
+                           "no municipality name repeats -- the premise is gone")
+
+        nameless = [row["name"] for row in shared if not row.get("parent_name")]
+        self.assertEqual(
+            nameless, [],
+            f"{len(nameless)} municipalities share their name with another and "
+            f"name no state, so the join can only refuse them: "
+            f"{sorted(set(nameless))[:6]}")
+
+        unresolvable = sorted({
+            row["parent_name"] for row in shared
+            if be.norm(row["parent_name"]) not in states})
+        self.assertEqual(
+            unresolvable, [],
+            f"parent_name given but matching no federative unit: {unresolvable}")
