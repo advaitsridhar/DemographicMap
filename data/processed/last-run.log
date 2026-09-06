@@ -1,11 +1,7 @@
-
-=== Zensus 2022 results database -- endpoint surface for 1000A-1018 ===
-    credentials: none -- GAST
-    catalogue/tables       HTTP 401 Unauthorized
-    catalogue/variables    HTTP 401 Unauthorized
-    catalogue/timeseries   HTTP 401 Unauthorized
-    metadata/table         HTTP 401 Unauthorized
-    metadata/variable      HTTP 401 Unauthorized
-    data/table             HTTP 401 Unauthorized
-    data/tablefile         HTTP 401 Unauthorized
-    data/chart2table       HTTP 404 Not Found
+ibge_sidra: municipality (n6)
+  religion variant v/93 failed (HTTP Error 400: Bad Request)
+  religion variant v/1000093 failed (HTTP Error 400: Bad Request)
+  religion variant v/allxp failed (HTTP Error 400: Bad Request)
+  religion unavailable from every variant; marking not_available
+  wrote data/processed/brazil_municipality.json (9806 kB)
+  5571 records
