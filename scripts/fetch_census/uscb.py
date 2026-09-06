@@ -782,6 +782,23 @@ COLOMBIA = Country(
     # group -- and collecting "everything that is not geography" sums both and
     # reports 113% of the population.
     topics=(Topic("Individuals", "ethnicity", prefix="ETH_"),),
+    # Read off the two lists of leftovers, one row to one shape.
+    #
+    # The archipelago is the one that mattered beyond itself: geoBoundaries
+    # gives it its full constitutional name, and while the department went
+    # unmatched its municipalities had no parent to be scoped by -- so San
+    # Andrés and Providencia, which each share a name with a mainland
+    # municipality, could not be told apart from them and were refused.
+    #
+    # geoBoundaries truncates Barranquilla's official long name with a literal
+    # asterisk, and spells Tiquisio without its second i.
+    aliases={
+        "San Andrés Y Providencia": (
+            "Archipiélago de San Andrés, Providencia y Santa Catalina",),
+        "Barranquilla": (
+            "Distrito Especial, Industrial Y Portuario De Barr*",),
+        "Tiquisio": ("Tiquiso",),
+    },
     note=("2018 census, self-reported ethnicity (autoreconocimiento étnico). "
           "The seven categories sum to 44,164,417, which is the sheet's own "
           "published universe of people who answered the question, against a "
