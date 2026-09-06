@@ -103,16 +103,25 @@ REGION_CODES = {"DLAND": "Land (16)", "KREISE": "Kreis (~400)",
                 "REGBEZ": "Regierungsbezirk"}
 
 
+# Endpoints that do not answer in JSON. Asking them for JSON earns a 406 Not
+# Acceptable, which is content negotiation refusing the Accept header and not
+# the server refusing the caller -- a distinction worth one line of code,
+# because reading those two 406s as "GAST cannot reach data" would have closed
+# Germany on the strength of a header this probe chose itself.
+NOT_JSON = ("data/tablefile", "data/chart2table", "data/cube", "data/result")
+
+
 def once(base: str, path: str, params: dict[str, object], method: str) -> object:
     """One call, by one method. Returns the parsed body or an error marker."""
     encoded = urllib.parse.urlencode(params)
+    accept = "*/*" if path in NOT_JSON else "application/json"
     if method == "GET":
         req = urllib.request.Request(f"{base}/{path}?{encoded}",
-                                     headers={"Accept": "application/json"})
+                                     headers={"Accept": accept})
     else:
         req = urllib.request.Request(
             f"{base}/{path}", data=encoded.encode(),
-            headers={"Accept": "application/json",
+            headers={"Accept": accept,
                      "Content-Type": "application/x-www-form-urlencoded"},
             method="POST")
     try:
@@ -125,7 +134,12 @@ def once(base: str, path: str, params: dict[str, object], method: str) -> object
     try:
         return json.loads(body)
     except ValueError:
-        return {"__error__": "not JSON: " + body[:200].decode("utf-8", "replace")}
+        # Not an error for the endpoints that answer in CSV: it is the answer.
+        # Reporting the first lines and the size says whether a table came back
+        # and how big it is, which is the whole question for data/tablefile.
+        text = body.decode("utf-8", "replace")
+        head = " | ".join(text.splitlines()[:3])
+        return {"__text__": f"{len(body)} bytes; {head[:400]}"}
 
 
 # Which HTTP method an instance answers on, learned from its first call rather
@@ -156,6 +170,8 @@ def status_of(payload: object) -> str:
     if isinstance(payload, dict):
         if "__error__" in payload:
             return str(payload["__error__"])
+        if "__text__" in payload:
+            return "non-JSON body: " + str(payload["__text__"])
         status = payload.get("Status") or payload.get("status") or {}
         if isinstance(status, dict):
             content = status.get("Content") or status.get("content")
