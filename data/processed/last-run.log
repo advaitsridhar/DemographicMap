@@ -7,5 +7,5 @@
     metadata/table         HTTP 401 Unauthorized
     metadata/variable      HTTP 401 Unauthorized
     data/table             HTTP 401 Unauthorized
-    data/tablefile         HTTP 406 Not Acceptable
-    data/chart2table       HTTP 406 Not Acceptable
+    data/tablefile         HTTP 401 Unauthorized
+    data/chart2table       HTTP 404 Not Found
