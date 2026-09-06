@@ -1,11 +1,43 @@
-  Tom5_tab1_VPN-2020.xlsx: 1,610,049 bytes from /home/runner/work/DemographicMap/DemographicMap/data/raw/russia
-ethnicity: Tom5_tab1_VPN-2020.xlsx, 1,610,049 bytes
-  ethnicity: furthest from its own total is Российская Федерация at 1.0000 of 'Указавшие национальную принадлежность' (130,587,364); largest Русские 105,579,179, Татары 4,713,669, Чеченцы 1,674,854; 51 nested rows left to their parents
-  Tom5_tab6_VPN-2020.xlsx: 978,908 bytes from /home/runner/work/DemographicMap/DemographicMap/data/raw/russia
-language: Tom5_tab6_VPN-2020.xlsx, 978,908 bytes
-/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/worksheet/_reader.py:329: UserWarning: Conditional Formatting extension is not supported and will be removed
-  warn(msg)
-  language: furthest from its own total is Российская Федерация at 1.0000 of 'Указавшие родной язык' (130,543,591); largest Русский 111,546,569, Татарский 4,073,253, Чеченский 1,644,313; 1 nested rows left to their parents
-  wrote data/processed/russia_subject.json (1825 kB)
-  wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/russia_subject.json (1782 kB)
-  83 subjects, 4 sheets skipped by name
+seed dataset : Philippines Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Censuses
+organization : 'us-census-bureau'
+datasets     : 34 listed of 34
+already live : 27 countries with subnational figures
+
+ISO3  live  xlsx  dataset name                                         title
+BHS   -     1     the-bahamas-subnational-boundaries-and-tabular-data  The Bahamas Subnational Population and Housing Data 
+COL   -     2     colombia-subnational-boundaries-and-tabular-data     Colombia Subnational Population and Housing Data Tab
+DMA   -     1     dominica-subnational-boundaries-and-tabular-data     Dominica Subnational Population Data Tables with Adm
+DOM   -     1     dominican-republic-subnational-population-and-housin Dominican Republic Subnational Population and Housin
+HTI   -     1     haiti-subnational-population-and-housing-data-tables Haiti Subnational Population and Housing Data Tables
+IDN   -     1     indonesia-subnational-population-and-housing-data-ta Indonesia Subnational Population and Housing Data Ta
+IRQ   -     1     iraq-subnational-boundaries-and-tabular-data         Iraq Subnational Population and Housing Data Tables 
+JAM   -     2     jamaica-subnational-boundaries-and-tabular-data      Jamaica Subnational Population and Housing Data Tabl
+LBY   -     1     libya-subnational-boundaries-and-tabular-data        Libya Subnational Population and Housing Data Tables
+NGA   -     1     nigeria-subnational-boundaries-and-tabular-data      Nigeria Subnational Population and Housing Data Tabl
+SDN   -     1     sudan-subnational-boundaries-and-tabular-data        Sudan Subnational Population and Housing Data Tables
+SOM   -     1     somalia-subnational-boundaries-and-tabular-data      Somalia Subnational Population Data Tables with Admi
+SSD   -     1     south-sudan-subnational-boundaries-and-tabular-data  South Sudan Subnational Population Data Tables with 
+SYR   -     1     syria-subnational-boundaries-and-tabular-data        Syria Subnational Population and Housing Data Tables
+VCT   -     1     saint-vincent-and-the-grenadines-subnational-boundar Saint Vincent and the Grenadines Subnational Populat
+YEM   -     1     yemen-subnational-boundaries-and-tabular-data        Yemen Subnational Population and Housing Data Tables
+BGD   yes   1     bangladesh-subnational-boundaries-and-tabular-data   Bangladesh Subnational Population and Housing Data T
+CAF   yes   1     car-subnational-boundaries-and-tabular-data          Central African Republic Subnational Population and 
+COD   yes   1     democratic-republic-of-the-congo-subnational-boundar Democratic Republic of the Congo Subnational Populat
+ETH   yes   1     ethiopia-subnational-boundaries-and-tabular-data     Ethiopia Subnational Population and Housing Data Tab
+MLI   yes   1     mali-subnational-population-and-housing-data-tables- Mali Subnational Population and Housing Data Tables 
+MMR   yes   1     burma-subnational-boundaries-and-tabular-data        Burma Subnational Population and Housing Data Tables
+PAK   yes   1     pakistan-subnational-population-and-housing-data-tab Pakistan Subnational Population and Housing Data Tab
+PHL   yes   1     philippines-subnational-population-and-housing-data- Philippines Subnational Population and Housing Data 
+UKR   yes   1     ukraine-subnational-boundaries-and-tabular-data      Ukraine Subnational Population and Housing Data Tabl
+AGO   -     -     angola-and-namibia-gridded-population-dataset        Angola and Namibia - Gridded Population
+BHS   -     -     the-bahamas-gridded-population-dataset               The Bahamas Gridded Population Dataset
+DMA   -     -     dominica-gridded-population-dataset                  Dominica Gridded Population Dataset
+HTI   -     -     haiti-gridded-population-data                        Haiti Gridded Population Dataset
+RWA   -     -     rwanda-gridded-population-dataset                    Rwanda Gridded Population Dataset
+SSD   -     -     south-sudan-gridded-population-data                  South Sudan Gridded Population Dataset
+VCT   -     -     saint-vincent-and-the-grenadines-gridded-population- Saint Vincent and the Grenadines Gridded Population 
+COD   yes   -     democratic-republic-of-the-congo-and-zambia-gridded- Democratic Republic of the Congo and Zambia Gridded 
+PAK   yes   -     pakistan-gridded-population-dataset                  Pakistan Gridded Population Dataset
+
+candidates (a workbook, and not yet on the map): 16
+  BHS, COL, DMA, DOM, HTI, IDN, IRQ, JAM, LBY, NGA, SDN, SOM, SSD, SYR, VCT, YEM
