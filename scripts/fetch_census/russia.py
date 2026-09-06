@@ -185,6 +185,15 @@ SUBJECTS = {
     "Чукотский автономный округ": "RU-CHU",
 }
 
+# The two tables do not spell every subject the same way. Table 1 writes ХМАО
+# and ЯНАО; table 6 writes them out in full. Read under their own names those
+# two sheets are simply unknown, and the two regions lose their language field
+# without anything failing -- which is how this was nearly shipped.
+ALSO_KNOWN_AS = {
+    "Ханты-Мансийский АО - Югра": "ХМАО",
+    "Ямало-Ненецкий АО": "ЯНАО",
+}
+
 # geoBoundaries carries an iso_3166_2 on 82 of Russia's 83 first-order shapes.
 # Sakha is the exception, so it is the one subject matched by name.
 BY_NAME = {"RU-SA": ("Sakha Republic",)}
@@ -344,7 +353,7 @@ def read(blob: bytes, field: str) -> dict[str, dict[str, Any]]:
     wanted = UNIVERSE[field]
     out: dict[str, dict[str, Any]] = {}
     for sheet in book.sheetnames:
-        key = sheet.strip()
+        key = ALSO_KNOWN_AS.get(sheet.strip(), sheet.strip())
         if key != COUNTRY_SHEET and key not in SUBJECTS and key not in SKIP:
             log(f"  unknown sheet, not read: {sheet!r}")
             continue
@@ -444,11 +453,21 @@ def main() -> int:
                       "license": LICENCE, "year": YEAR} for field in TABLE],
         ))
 
-    missing = [s for s in SUBJECTS if s not in fields["ethnicity"]]
-    if missing:
-        raise SystemExit(
-            f"RUS: {len(missing)} configured subjects have no sheet: "
-            + ", ".join(missing[:5]))
+    # Every table, not just the first. Checking one of them let ХМАО and ЯНАО
+    # through with ethnicity and no language, because table 6 spells their
+    # names out where table 1 abbreviates: a subject present in one file and
+    # absent from another is exactly the gap that looks like a country simply
+    # not answering that question.
+    for field in TABLE:
+        missing = [s for s in SUBJECTS if s not in fields[field]]
+        if missing:
+            raise SystemExit(
+                f"RUS {field}: {len(missing)} of {len(SUBJECTS)} configured "
+                f"subjects have no sheet in {TABLE[field]}: "
+                + ", ".join(missing[:6])
+                + ". A subject this file does not carry is a gap for that "
+                  "field alone, which reads on the map as a question the "
+                  "region was not asked.")
     path = PROCESSED / args.out
     write_json(path, records)
     log(f"  wrote {path} ({path.stat().st_size // 1024} kB)")

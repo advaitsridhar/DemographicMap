@@ -3347,3 +3347,34 @@ class MatchingOnACodeRatherThanARomanisation(unittest.TestCase):
             self.assertIsNone(self.ru.number(absent), repr(absent))
         self.assertEqual(self.ru.number("3 888 216"), 3888216.0)
         self.assertEqual(self.ru.number(4004809), 4004809.0)
+
+
+class ASubjectPresentInOneTableAndAbsentFromAnother(unittest.TestCase):
+    """Russia's two tables do not spell every subject the same way.
+
+    Table 1 writes ХМАО and ЯНАО; table 6 writes them out in full. Read under
+    their own names those sheets are unknown, and the two regions come out
+    with ethnicity and no language -- which on the map is indistinguishable
+    from a census that did not ask them the question.
+
+    It passed the first completeness check because that check looked at one
+    table. Two point three million people would have carried a silent gap.
+    """
+
+    def setUp(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import importlib
+        self.ru = importlib.import_module("fetch_census.russia")
+
+    def test_the_alternate_spellings_resolve_to_a_configured_subject(self):
+        for spelling, canonical in self.ru.ALSO_KNOWN_AS.items():
+            self.assertNotIn(spelling, self.ru.SUBJECTS,
+                             f"{spelling} should be an alias, not a subject")
+            self.assertIn(canonical, self.ru.SUBJECTS)
+
+    def test_both_tables_are_checked_for_every_subject(self):
+        source = (ROOT / "scripts" / "fetch_census" / "russia.py").read_text()
+        body = source.split("def main(")[1]
+        # The check runs per field rather than against one table's dict.
+        self.assertIn("for field in TABLE:", body)
+        self.assertIn("s not in fields[field]", body)
