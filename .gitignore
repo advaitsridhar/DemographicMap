@@ -23,6 +23,14 @@ data/raw/*
 # caste, mother tongue or religion for a single district.
 !data/raw/nepal/
 !data/raw/nepal/*.pdf
+# Rosstat's Volume 5 tables, for Nepal's reason: its host serves a certificate
+# signed by a state authority no ordinary trust store carries, so there is no
+# verified route to the original and the files come from the Internet Archive
+# instead. Keeping them makes the archive's availability irrelevant to a
+# quarterly refresh, which is worth 2.6 MB on its own -- the earlier claim
+# here, that the archive throttles, was a misreading of its playback wrapper.
+!data/raw/russia/
+!data/raw/russia/*.xlsx
 # The 2020 U.S. Religion Census, for the same reason: there is no API, the
 # US census is barred from asking the question, and without the workbook the
 # build cannot re-derive religion for a single county.
