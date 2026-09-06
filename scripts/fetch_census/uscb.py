@@ -169,13 +169,6 @@ class Topic:
     # columns are still whatever is left after the geography -- which is what
     # keeps Ethiopia working, whose ethnic-group columns are not named "ETH_".
     prefix: str = ""
-    # A group whose published label this map shows under a different name.
-    # Only for a stated, documented reading of what the source's own category
-    # means -- not for tidying wording, which belongs in canonical_groups where
-    # every country can see it. Colombia is the case and the only one: its
-    # census category is "Ninguno de los anteriores", none of the five
-    # recognised groups, which the source renders "No ethnic group".
-    relabel: dict[str, str] | None = None
     year: int | None = None
     source: str = ""
     note: str = ""
@@ -788,17 +781,7 @@ COLOMBIA = Country(
     # second is not a language composition -- it is yes/no/unknown about one
     # group -- and collecting "everything that is not geography" sums both and
     # reports 113% of the population.
-    topics=(Topic("Individuals", "ethnicity", prefix="ETH_",
-                  # "No ethnic group" is what the Bureau calls Colombia's
-                  # "Ninguno de los anteriores" -- none of the five recognised
-                  # groups. Shown here as Mestizo, which is an assumption this
-                  # build makes and not a category DANE published: the census
-                  # never asked whether anyone was mestizo, and the 87.6% it
-                  # covers includes white Colombians, who are a distinct group
-                  # in every other source on this map. It is the conventional
-                  # reading of that residual in Colombian demography, and it is
-                  # still a reading.
-                  relabel={"No ethnic group": "Mestizo"}),),
+    topics=(Topic("Individuals", "ethnicity", prefix="ETH_"),),
     # Read off the two lists of leftovers, one row to one shape.
     #
     # The archipelago is the one that mattered beyond itself: geoBoundaries
@@ -823,7 +806,12 @@ COLOMBIA = Country(
           "which of five recognised groups a person recognises themselves in "
           "-- indigenous, Rrom/gypsy, raizal, palenquero, black or "
           "Afro-Colombian -- so \"No ethnic group\" at 87.6% is an answer "
-          "people gave, not a residual this build invented.\n\n"
+          "people gave, not a residual this build invented. That 87.6% is "
+          "predominantly mestizo and white Colombians, who are the majority "
+          "of the country and are not among the five groups the question "
+          "offers; the census does not count them separately, so this map "
+          "does not either. The category is left under the name the census "
+          "gave it rather than renamed to one it never asked about.\n\n"
           "The same workbook carries a second sheet naming 124 individual "
           "indigenous peoples, and it is not read. Its universe is the "
           "1,905,617 people who said they were indigenous, not the country, "
@@ -1291,14 +1279,6 @@ def read(book, country: Country,
     else:
         total = denominator(names, aliases, topic.prefix)
     found = groups(names, aliases, total, by_sex, topic.prefix)
-    if topic.relabel:
-        unseen = set(topic.relabel) - set(found.values())
-        if unseen:
-            raise SystemExit(
-                f"{country.iso3} {topic.sheet}: relabel names {sorted(unseen)}, "
-                f"which this sheet does not publish. A rename that matches "
-                f"nothing is a rename that silently stopped applying.")
-        found = {i: topic.relabel.get(label, label) for i, label in found.items()}
     if not found:
         raise SystemExit(
             f"{country.iso3} {topic.sheet}: no group columns to read"

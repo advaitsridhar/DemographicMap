@@ -1526,24 +1526,28 @@ well-formed words — so both are declared beside South Africa's "Nothern Cape"
 and Myanmar's "Saigang". **Brazil goes from 25 states to 27, and 21 million
 people stop being a blank.**
 
-### Colombia's residual, named
+### Colombia's residual, described rather than renamed
 
-`No ethnic group` is now shown as **Mestizo**. That is an assumption this build
-makes and not a category DANE published, and it is written here because it
-cannot be read off the map.
+`No ethnic group` keeps the name the census gave it, and the field carries a
+note saying what that 87.6% is.
 
-The census asks which of five recognised groups a person recognises themselves
-in — indigenous, Rrom/gypsy, raizal, palenquero, black or Afro-Colombian — and
-87.6% answer *ninguno de los anteriores*, none of the above. Calling that
-Mestizo is the conventional reading in Colombian demography. It is still a
-reading: the census never asked whether anyone was mestizo, and the 87.6%
-contains white Colombians, who are a distinct measured group in every other
-source on this map. It also joins the filter that holds Mexico's mestizo, where
-the category *is* measured — a like-for-unlike comparison.
+Colombia's census asks which of five recognised groups a person recognises
+themselves in — indigenous, Rrom/gypsy, raizal, palenquero, black or
+Afro-Colombian — and 87.6% answer *ninguno de los anteriores*. Those people are
+predominantly mestizo and white Colombians: the majority of the country, and
+not among the groups the question offers. **DANE does not count them
+separately, so this map does not either.**
 
-It is declared in one place, on Colombia's topic, with the reasoning beside it.
-A relabel naming a column the sheet does not publish stops the run, because a
-rename that quietly stops applying is worse than no rename at all.
+Renaming the category to "Mestizo" was tried and reverted. It reads better and
+asserts more than the census did: it would put white Colombians — a distinct
+measured group in every other source here — inside a mestizo bar, and it would
+join the filter holding Mexico's mestizo, where the category *is* measured, so
+the two would look comparable and would not be. A note can say "predominantly
+mestizo and white" and stay true; a label cannot say it at all.
+
+The mechanism that did the renaming went with it. It worked, and it had one
+user; an unexercised path that rewrites published labels is not worth keeping
+against the chance that some future country wants one.
 
 ### Bangladesh: a mirror, and a merged sheet that is wrong
 
