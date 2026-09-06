@@ -3296,26 +3296,48 @@ class MatchingOnACodeRatherThanARomanisation(unittest.TestCase):
         self.assertEqual(self.ru.label("   Андийцы  "), "Андийцы")
         self.assertEqual(self.ru.label(None), "")
 
-    def test_nesting_is_read_from_the_indent_and_not_from_whitespace(self):
-        """The first version of this read leading spaces, and was wrong twice.
+    def test_the_group_level_is_the_commonest_indent_not_the_smallest(self):
+        """Three readings of this, two of them wrong, both caught by the sums.
 
-        It missed every real sub-group, and it fired on one row in
-        Воронежская область that turned out to be Русские -- dropping the
-        largest group in the region and leaving the sheet at 13.55% of its own
-        published total. The indent is a cell style, so that is where it is
-        read from now.
+        Leading whitespace missed every real sub-group and fired on Русские in
+        Воронежская область, dropping the largest group in a region of 2.2
+        million and leaving the sheet at 13.55% of its published total.
+
+        "Indented at all" was wrong the other way: Rosstat indents the whole
+        list one level under "в том числе:", so Чукотский автономный округ read
+        94 of 95 rows as nested and kept 446 people out of 47,044.
+
+        A sheet has one row per ethnicity and a handful of sub-groups, so the
+        commonest indent is the top of the list by construction.
         """
-        class Cell:
-            def __init__(self, indent=0, value=""):
-                self.alignment = type("A", (), {"indent": indent})()
-                self.value = value
+        # The shape of a real sheet: a shallow sibling, many groups one level
+        # in, and two constituent peoples one level deeper again.
+        rows = [("не указана", 446, 0),
+                ("Русские", 1_881_129, 1),
+                ("Украинцы", 44_000, 1),
+                ("Аварцы", 594, 1),
+                ("Андийцы", 1, 2),
+                ("Ахвахцы", 3, 2)]
+        kept = dict(self.ru.parents(rows))
+        self.assertIn("Русские", kept)
+        self.assertIn("Аварцы", kept)
+        # The shallower row is a sibling of the list, not a member of it.
+        self.assertIn("не указана", kept)
+        # The deeper rows are counted inside Аварцы already.
+        self.assertNotIn("Андийцы", kept)
+        self.assertNotIn("Ахвахцы", kept)
 
-        self.assertFalse(self.ru.nested(Cell(indent=0, value="Русские")))
-        self.assertTrue(self.ru.nested(Cell(indent=1, value="Андийцы")))
-        # Leading whitespace is not the signal and must not be read as one.
-        self.assertFalse(self.ru.nested(Cell(indent=0, value="   Русские")))
-        # A cell with no alignment at all is not nested.
-        self.assertFalse(self.ru.nested(object()))
+    def test_the_indent_is_a_style_and_not_leading_whitespace(self):
+        class Cell:
+            def __init__(self, depth):
+                self.alignment = type("A", (), {"indent": depth})()
+
+        self.assertEqual(self.ru.indent(Cell(0)), 0)
+        self.assertEqual(self.ru.indent(Cell(2)), 2)
+        # A cell with no alignment at all is at the top level.
+        self.assertEqual(self.ru.indent(object()), 0)
+        # Whitespace in the value is not indentation and never was.
+        self.assertEqual(self.ru.label("   Русские"), "Русские")
 
     def test_an_em_dash_is_absence_and_not_a_number(self):
         for absent in ("-", "–", "—", "", "   ", None):

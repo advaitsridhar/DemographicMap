@@ -39,6 +39,7 @@ import argparse
 import io
 import re
 import time
+from collections import Counter
 from typing import Any
 
 from ._shared import (
@@ -293,22 +294,37 @@ def label(cell: Any) -> str:
     return re.split(r"\s*\(", text, 1)[0].strip()
 
 
-def nested(cell: Any) -> bool:
-    """Whether the sheet indents this label under the group above it.
-
-    Rosstat lists constituent peoples inside the group they are counted in --
-    Аварцы then Андийцы, Ахвахцы, Дидойцы; Татары then Кряшены -- and adding
-    them to their parent counts those people twice.
-
-    Read from the cell's indent style, which is where the indentation actually
-    lives. The first version of this looked for a leading space in the text and
-    was wrong in both directions at once: it missed every real sub-group, and
-    it fired on exactly one row in Воронежская область, which turned out to be
-    Русские. Dropping the largest group in the region left that sheet summing
-    to 13.55% of its own published total, which is how it was caught.
-    """
+def indent(cell: Any) -> int:
+    """How far the sheet indents this label."""
     alignment = getattr(cell, "alignment", None)
-    return bool(alignment and (alignment.indent or 0) > 0)
+    return int((alignment.indent or 0) if alignment else 0)
+
+
+def parents(rows: list[tuple[str, float, int]]) -> list[tuple[str, float]]:
+    """The groups that are not counted inside another group.
+
+    Rosstat lists constituent peoples inside the group they belong to --
+    Аварцы then Андийцы, Ахвахцы, Дидойцы; Татары then Кряшены -- and adding
+    those to their parent counts the same people twice.
+
+    Which rows are which is in the indent, and it took three tries to read it.
+    Leading whitespace was wrong: it missed every real sub-group and fired on
+    Русские in Воронежская область, dropping the largest group in a region of
+    2.2 million. "Indented at all" was wrong the other way: Rosstat indents the
+    whole list one level under "в том числе:", so in Чукотский автономный округ
+    that read 94 of 95 rows as nested and kept 446 people out of 47,044.
+
+    The level that means "a group" is therefore the commonest one, not zero and
+    not the smallest -- a sheet has one row per ethnicity and only a handful of
+    sub-groups, so the mode is the top of the list by construction. Anything
+    deeper is inside something. Anything shallower is a sibling of the list
+    rather than a member of it, which is what the "not stated" line is.
+    """
+    if not rows:
+        return []
+    depths = Counter(depth for _name, _value, depth in rows)
+    top = depths.most_common(1)[0][0]
+    return [(name, value) for name, value, depth in rows if depth <= top]
 
 
 def read(blob: bytes, field: str) -> dict[str, dict[str, Any]]:
@@ -327,8 +343,7 @@ def read(blob: bytes, field: str) -> dict[str, dict[str, Any]]:
             log(f"  unknown sheet, not read: {sheet!r}")
             continue
         published: float | None = None
-        counts: dict[str, float] = {}
-        inside = 0
+        seen: list[tuple[str, float, int]] = []
         for row in book[sheet].iter_rows():
             if not row:
                 continue
@@ -344,12 +359,12 @@ def read(blob: bytes, field: str) -> dict[str, dict[str, Any]]:
             value = number(row[1].value)
             if value is None:
                 continue
-            # A nested row's count is already inside its parent's.
-            if nested(row[0]):
-                inside += 1
-                continue
+            seen.append((name, value, indent(row[0])))
+        counts: dict[str, float] = {}
+        for name, value in parents(seen):
             counts[name] = counts.get(name, 0.0) + value
-        out[key] = {"published": published, "counts": counts, "nested": inside}
+        out[key] = {"published": published, "counts": counts,
+                    "nested": len(seen) - len(parents(seen))}
     book.close()
     return out
 
