@@ -315,6 +315,14 @@ MISSPELLED: dict[tuple[str, str], str] = {
     # Population and Myanmar's own English-language usage all agree.
     ("MMR", "Saigang"): "Sagaing",
     ("MMR", "Tanitharyi"): "Tanintharyi",
+    # Two Brazilian states, and between them 21 million people who have had a
+    # shape and no figures for as long as Brazil has been on this map. IBGE
+    # publishes both; nothing reached them because geoBoundaries drops the "e"
+    # from Grande and writes Janeiro as Jeneiro. Neither is detectable -- they
+    # are well-formed words -- and both are the state's name in every Brazilian
+    # source including the census this map reads.
+    ("BRA", "Rio Granda do Norte"): "Rio Grande do Norte",
+    ("BRA", "Rio de Jeneiro"): "Rio de Janeiro",
 }
 
 

@@ -806,7 +806,12 @@ COLOMBIA = Country(
           "which of five recognised groups a person recognises themselves in "
           "-- indigenous, Rrom/gypsy, raizal, palenquero, black or "
           "Afro-Colombian -- so \"No ethnic group\" at 87.6% is an answer "
-          "people gave, not a residual this build invented.\n\n"
+          "people gave, not a residual this build invented. That 87.6% is "
+          "predominantly mestizo and white Colombians, who are the majority "
+          "of the country and are not among the five groups the question "
+          "offers; the census does not count them separately, so this map "
+          "does not either. The category is left under the name the census "
+          "gave it rather than renamed to one it never asked about.\n\n"
           "The same workbook carries a second sheet naming 124 individual "
           "indigenous peoples, and it is not read. Its universe is the "
           "1,905,617 people who said they were indigenous, not the country, "
@@ -815,10 +820,85 @@ COLOMBIA = Country(
 )
 
 
+JAMAICA = Country(
+    iso3="JAM",
+    name="Jamaica",
+    year=2011,
+    source=("Statistical Institute of Jamaica, Population and Housing Census "
+            "2011: General Report Volume 1, Table 3.1 (ethnic origin) and the "
+            "religion tables, prepared as subnational tables by the U.S. "
+            "Census Bureau"),
+    licence="CC BY-IGO, published via HDX",
+    dataset="jamaica-subnational-boundaries-and-tabular-data",
+    out="jamaica_parish.json",
+    levels={1: "admin1"},
+    # One sheet, two questions, which is Burma's case: read whole it comes to
+    # 2.998 times the population, because it holds the ethnicity columns, the
+    # religion columns, and religion's own total. Each topic takes its prefix,
+    # and religion names its denominator outright -- RLG_RTOTL is a RLG_
+    # column, so left unnamed it would be collected as the largest
+    # denomination in the country, being the sum of all the others.
+    topics=(Topic("Ethnicity and Religion", "ethnicity", prefix="ETH_"),
+            Topic("Ethnicity and Religion", "religion", prefix="RLG_",
+                  # The column code, not its label: denominator is matched
+                  # against the header row, the way the DRC names TRB_SSIZE.
+                  denominator="RLG_RTOTL")),
+    note=("2011 census, by parish. Ethnic origin and religion are separate "
+          "questions with separate universes: 2,683,707 people answered the "
+          "first and 2,683,105 the second."),
+)
+
+
+# Saint Vincent and the Grenadines is in this series and is not read from it.
+#
+# Its workbook has exactly what this map wants -- ethnicity and religion from
+# the 2012 census, reconciling to 109,188 exactly -- published for thirteen
+# areas that are census districts: Kingstown, Suburbs of Kingstown, Calliaqua,
+# Marriaqua, Bridgetown, Colonarie, Georgetown, Sandy Bay, Layou, Barrouallie,
+# Chateaubelair, Northern Grenadines, Southern Grenadines.
+#
+# geoBoundaries draws the six parishes: Charlotte, Grenadines, Saint Andrew,
+# Saint David, Saint George, Saint Patrick. The two lists share no name at all,
+# and configured as admin1 the join was 0 of 6 -- a country of shapes with
+# nothing in them, which is the outcome this project ranks worst after a wrong
+# number.
+#
+# The bridge exists and is not built: the sheet carries a PARISH column naming
+# each district's parish, so the districts could be summed into the six the way
+# Ukraine's rayons are summed into oblasts. Ukraine's parent comes from the
+# file's own geography columns; this one is an ordinary data column, which no
+# country here reads that way. Worth doing, and not worth pretending is done.
+
+
+BAHAMAS = Country(
+    iso3="BHS",
+    name="The Bahamas",
+    year=2010,
+    source=("The Commonwealth of The Bahamas 2010 Census of Population and "
+            "Housing, Table 8.0: Total Population by Sex, Age Group and "
+            "Racial Group, prepared as subnational tables by the U.S. Census "
+            "Bureau"),
+    licence="CC BY-IGO, published via HDX",
+    dataset="the-bahamas-subnational-boundaries-and-tabular-data",
+    out="bahamas_island.json",
+    levels={1: "admin1"},
+    # RCE_ and nothing else. The Individuals sheet also carries eight CIT_
+    # columns -- Bahamian, Haitian, Jamaican, Guyanese, Canadian, American,
+    # British, other -- and that is citizenship, which is what Nigeria's,
+    # Sudan's and Libya's whole workbooks were refused for. Read together they
+    # come to three times the population.
+    topics=(Topic("Individuals", "ethnicity", prefix="RCE_"),),
+    note=("2010 census, by island. The race question, not the citizenship "
+          "question that shares its sheet. The file's own dates are a 2021 "
+          "extraction; the census is the one its data dictionary cites."),
+)
+
+
 COUNTRIES: dict[str, Country] = {
     c.iso3: c for c in (PHILIPPINES, ETHIOPIA, MYANMAR, UKRAINE,
                         PAKISTAN, CENTRAL_AFRICAN_REPUBLIC, MALI,
-                        DEMOCRATIC_REPUBLIC_OF_THE_CONGO, COLOMBIA)}
+                        DEMOCRATIC_REPUBLIC_OF_THE_CONGO, COLOMBIA,
+                        JAMAICA, BAHAMAS)}
 
 
 def discover(limit: int, sheets: bool) -> int:

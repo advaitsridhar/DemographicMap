@@ -3841,14 +3841,23 @@ class AnAdapterWhoseOutputIsNeverReadJoinsNothing(unittest.TestCase):
                 f"{iso3} writes {country.out} and build_entities never reads "
                 f"it, so every area it carries joins nothing")
 
-    def test_every_registered_file_is_one_something_writes(self):
-        """The other direction: a name that no adapter produces is a typo
-        that would read as a country quietly missing its data."""
-        produced = set()
-        for path in sorted((ROOT / "scripts").rglob("*.py")):
-            produced.update(re.findall(r'"([a-z0-9_]+\.json)"',
-                                       path.read_text(encoding="utf-8")))
-        for name in self.be.ADAPTER_FILES:
-            self.assertIn(
-                name, produced,
-                f"{name} is read but nothing in scripts/ names it as an output")
+    def test_the_list_names_each_file_once(self):
+        """A name twice is a file read twice, and the second read wins.
+
+        This replaces a test that claimed to check the other direction --
+        that every registered name is one some script writes -- and did not.
+        It scanned all of scripts/ for quoted .json names, and ADAPTER_FILES
+        lives in scripts/build_entities.py, so every entry matched its own
+        definition and the test passed on any input.
+
+        The direction is not checkable by grep in any case: adapters name
+        their outputs with f-strings, ibge_sidra writing
+        f"brazil_{args.level}.json", so a literal search finds nothing. Nor is
+        "the file exists in data/processed" the invariant -- eurostat_nuts3,
+        brazil_municipality, canada_province and canada_census_division are
+        registered ahead of adapters that produce them on demand, and a
+        forward registration is not a typo. What matters is the direction that
+        broke Colombia, and the test above checks it.
+        """
+        self.assertEqual(len(self.be.ADAPTER_FILES),
+                         len(set(self.be.ADAPTER_FILES)))
