@@ -852,7 +852,9 @@ JAMAICA = Country(
     # denomination in the country, being the sum of all the others.
     topics=(Topic("Ethnicity and Religion", "ethnicity", prefix="ETH_"),
             Topic("Ethnicity and Religion", "religion", prefix="RLG_",
-                  denominator="Total population (religion)")),
+                  # The column code, not its label: denominator is matched
+                  # against the header row, the way the DRC names TRB_SSIZE.
+                  denominator="RLG_RTOTL")),
     note=("2011 census, by parish. Ethnic origin and religion are separate "
           "questions with separate universes: 2,683,707 people answered the "
           "first and 2,683,105 the second."),
