@@ -861,29 +861,25 @@ JAMAICA = Country(
 )
 
 
-SAINT_VINCENT = Country(
-    iso3="VCT",
-    name="Saint Vincent and the Grenadines",
-    year=2012,
-    source=("Saint Vincent and the Grenadines Statistical Office, 2012 "
-            "Population and Housing Census, prepared as subnational tables by "
-            "the U.S. Census Bureau"),
-    licence="CC BY-IGO, published via HDX",
-    dataset="saint-vincent-and-the-grenadines-subnational-boundaries-and-"
-            "tabular-data",
-    out="saint_vincent_parish.json",
-    # Parishes only. The file's second order is 221 enumeration districts,
-    # which are census geography rather than places anyone draws: geoBoundaries
-    # has no counterpart, so claiming that level would be claiming shapes that
-    # do not exist.
-    levels={1: "admin1"},
-    # The same two-question sheet as Jamaica's, and one extra reason for the
-    # prefixes here: a PARISH column carries the parish *name* as text, and
-    # "everything that is not geography" would read it as a group.
-    topics=(Topic("Ethnicity and Religion", "ethnicity", prefix="ETH_"),
-            Topic("Ethnicity and Religion", "religion", prefix="RLG_")),
-    note="2012 census, by parish.",
-)
+# Saint Vincent and the Grenadines is in this series and is not read from it.
+#
+# Its workbook has exactly what this map wants -- ethnicity and religion from
+# the 2012 census, reconciling to 109,188 exactly -- published for thirteen
+# areas that are census districts: Kingstown, Suburbs of Kingstown, Calliaqua,
+# Marriaqua, Bridgetown, Colonarie, Georgetown, Sandy Bay, Layou, Barrouallie,
+# Chateaubelair, Northern Grenadines, Southern Grenadines.
+#
+# geoBoundaries draws the six parishes: Charlotte, Grenadines, Saint Andrew,
+# Saint David, Saint George, Saint Patrick. The two lists share no name at all,
+# and configured as admin1 the join was 0 of 6 -- a country of shapes with
+# nothing in them, which is the outcome this project ranks worst after a wrong
+# number.
+#
+# The bridge exists and is not built: the sheet carries a PARISH column naming
+# each district's parish, so the districts could be summed into the six the way
+# Ukraine's rayons are summed into oblasts. Ukraine's parent comes from the
+# file's own geography columns; this one is an ordinary data column, which no
+# country here reads that way. Worth doing, and not worth pretending is done.
 
 
 BAHAMAS = Country(
@@ -914,7 +910,7 @@ COUNTRIES: dict[str, Country] = {
     c.iso3: c for c in (PHILIPPINES, ETHIOPIA, MYANMAR, UKRAINE,
                         PAKISTAN, CENTRAL_AFRICAN_REPUBLIC, MALI,
                         DEMOCRATIC_REPUBLIC_OF_THE_CONGO, COLOMBIA,
-                        JAMAICA, SAINT_VINCENT, BAHAMAS)}
+                        JAMAICA, BAHAMAS)}
 
 
 def discover(limit: int, sheets: bool) -> int:

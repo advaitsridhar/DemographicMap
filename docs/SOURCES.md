@@ -1431,6 +1431,120 @@ One municipality carries nothing: `Papunaua`, a *corregimiento departamental*
 in Vaupés that the census does not tabulate separately. That is a gap in the
 source, and it stays visible.
 
+### The rest of the Bureau's series: eight refusals and three small finds
+
+Inspecting the eleven remaining candidates settled 144 million people in one
+run. **137 million of it is closed.** Iraq, Yemen, Somalia, South Sudan, Haiti,
+the Dominican Republic and Dominica publish no religion, ethnicity or language
+sheet at all — their workbooks are humanitarian profiles: population, health,
+poverty, displacement. Libya carries a `Nationality` sheet and nothing else,
+which is citizenship, the same refusal as Nigeria's and Sudan's.
+
+Six configs would have been written to discover that.
+
+### Jamaica: two questions on one sheet, and two universes
+
+The 2011 census by parish, and the first country here whose ethnicity and
+religion arrive in the same sheet. Read whole it comes to 2.998 times the
+population, because it holds both sets of columns *and* religion's own total —
+Burma's case, and what `Topic.prefix` is for.
+
+Ethnicity sums to **2,683,707** and religion to **2,678,981**, each exactly its
+own published universe, across all 14 parishes. They are different questions
+and the source says so; the map does not average them into one.
+
+Religion names its denominator outright as `RLG_RTOTL`. Left unnamed it would
+have been collected as the largest denomination in Jamaica, being the sum of
+all the others. Naming it by its *label* rather than its column code was the
+first attempt and the adapter refused the run — correctly, and after Jamaica's
+ethnicity had already reconciled exactly, so the failure was precise about
+where it was.
+
+### The Bahamas: the race question, not the citizenship question beside it
+
+`RCE_` and nothing else. The Individuals sheet also carries eight `CIT_`
+columns — Bahamian, Haitian, Jamaican, Guyanese, Canadian, American, British,
+other — and read together they come to three times the population. That block
+is exactly what Nigeria's, Sudan's and Libya's whole workbooks were refused
+for; here it sits beside a usable question rather than instead of one.
+
+**14 of 32 districts.** The census publishes 18 island groupings and
+geoBoundaries draws 32 districts that subdivide them: Abaco is Central Abaco,
+Hope Town, Grand Cay and more; Grand Bahama is City of Freeport and East Grand
+Bahama. Where an island is a district the join is exact; where the census is
+coarser than the map, eight of its rows have no single shape to land on and
+those districts stay visibly empty rather than being given a figure that
+belongs to their neighbours.
+
+### Saint Vincent and the Grenadines: published, and not placeable
+
+Its workbook has what this map wants — ethnicity and religion from the 2012
+census, reconciling to 109,188 exactly — for thirteen areas that are census
+districts: Kingstown, Suburbs of Kingstown, Calliaqua, Marriaqua, Bridgetown,
+Colonarie, Georgetown, Sandy Bay, Layou, Barrouallie, Chateaubelair, Northern
+and Southern Grenadines.
+
+geoBoundaries draws the six parishes: Charlotte, Grenadines, Saint Andrew,
+Saint David, Saint George, Saint Patrick. **The two lists share no name at
+all**, and configured as `admin1` the join was 0 of 6 — a country of shapes
+with nothing in them.
+
+The bridge exists and is not built. The sheet carries a `PARISH` column naming
+each district's parish, so the thirteen could be summed into the six the way
+Ukraine's rayons are summed into oblasts. Ukraine's parent comes from the
+file's own geography columns; this one is an ordinary data column, which no
+country here reads that way. Worth doing, and not worth pretending is done.
+
+### Brazil, in English — and two states that never had figures
+
+Brazil's 25 states read `Católica Apostólica Romana 56.7%` and `Parda` while
+its own country record, from the Factbook, said Roman Catholic and mixed. The
+canonical tables had been folding the Portuguese to the right groups for as
+long as Brazil has been on this map — and those tables reach the group
+*picker*, not the record. Exactly Russia's half-fix, found the same way and
+fixed the same way: the adapter translates, and an unknown label stops the run.
+
+Two of the five colour-or-race categories are deliberately not translated into
+a category some other country also has, and they go opposite ways.
+
+**`Parda` becomes `Pardo` and stays Brazil's own.** The table it sits in
+already says why: Brazil's *parda*, the UK's *Mixed* and the US "two or more
+races" are three different questions with three different answer sets, and a
+person counted in one would not necessarily be counted in the others.
+Translating it to "Mixed" would merge 92 million people into a category their
+census did not ask about.
+
+**`Amarela` becomes `Asian`,** which is the opposite call and needs its own
+reason: Brazil's own country record already calls these people Asian, so
+leaving the states in Portuguese kept a country apart from its own states —
+the split this whole exercise exists to close.
+
+And two states had a shape and no figures for as long as Brazil has been here.
+IBGE publishes both; nothing reached them because geoBoundaries drops the "e"
+from Grande and writes Janeiro as `Jeneiro`. Neither is detectable — they are
+well-formed words — so both are declared beside South Africa's "Nothern Cape"
+and Myanmar's "Saigang". **Brazil goes from 25 states to 27, and 21 million
+people stop being a blank.**
+
+### Colombia's residual, named
+
+`No ethnic group` is now shown as **Mestizo**. That is an assumption this build
+makes and not a category DANE published, and it is written here because it
+cannot be read off the map.
+
+The census asks which of five recognised groups a person recognises themselves
+in — indigenous, Rrom/gypsy, raizal, palenquero, black or Afro-Colombian — and
+87.6% answer *ninguno de los anteriores*, none of the above. Calling that
+Mestizo is the conventional reading in Colombian demography. It is still a
+reading: the census never asked whether anyone was mestizo, and the 87.6%
+contains white Colombians, who are a distinct measured group in every other
+source on this map. It also joins the filter that holds Mexico's mestizo, where
+the category *is* measured — a like-for-unlike comparison.
+
+It is declared in one place, on Colombia's topic, with the reasoning beside it.
+A relabel naming a column the sheet does not publish stops the run, because a
+rename that quietly stops applying is worse than no rename at all.
+
 ### Bangladesh: a mirror, and a merged sheet that is wrong
 
 The Bureau of Statistics publishes a workbook of Census 2022 indicators at

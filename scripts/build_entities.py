@@ -76,7 +76,7 @@ ADAPTER_FILES = [
     "myanmar_state.json", "ukraine_oblast.json", "car_prefecture.json",
     "mali_region.json", "drc_province.json", "russia_subject.json",
     "colombia_department.json", "jamaica_parish.json",
-    "saint_vincent_parish.json", "bahamas_island.json",
+    "bahamas_island.json",
     "brazil_state.json", "brazil_municipality.json",
     "canada_province.json", "canada_census_division.json",
     "australia_state.json", "australia_lga.json",
