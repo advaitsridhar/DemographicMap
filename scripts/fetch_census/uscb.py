@@ -758,10 +758,50 @@ DEMOCRATIC_REPUBLIC_OF_THE_CONGO = Country(
 )
 
 
+COLOMBIA = Country(
+    iso3="COL",
+    name="Colombia",
+    year=2018,
+    source=("Departamento Administrativo Nacional de Estadística (DANE), "
+            "Censo Nacional de Población y Vivienda 2018, Autoreconocimiento "
+            "étnico, prepared as subnational tables by the U.S. Census Bureau"),
+    licence="CC BY-IGO, published via HDX",
+    dataset="colombia-subnational-boundaries-and-tabular-data",
+    out="colombia_department.json",
+    # Departments and municipalities. The file also carries an ADM_LEVEL 3,
+    # and it is not places: CABECERA, CENTRO POBLADO and RURAL DISPERSO are
+    # the urban/rural strata each municipality is divided into, repeated 1,122
+    # times over. Every area the inspection flagged as furthest from its own
+    # total sits at that level, because a stratum's rows are compared against
+    # a published total that belongs to the whole municipality.
+    levels={1: "admin1", 2: "admin2"},
+    # ETH_ and nothing else. The Individuals sheet holds two questions: seven
+    # ETH_ columns of self-reported ethnicity, and eight LNG_ columns that ask
+    # whether indigenous people speak or understand a native language. The
+    # second is not a language composition -- it is yes/no/unknown about one
+    # group -- and collecting "everything that is not geography" sums both and
+    # reports 113% of the population.
+    topics=(Topic("Individuals", "ethnicity", prefix="ETH_"),),
+    note=("2018 census, self-reported ethnicity (autoreconocimiento étnico). "
+          "The seven categories sum to 44,164,417, which is the sheet's own "
+          "published universe of people who answered the question, against a "
+          "counted population of about 48 million. Colombia's census asks "
+          "which of five recognised groups a person recognises themselves in "
+          "-- indigenous, Rrom/gypsy, raizal, palenquero, black or "
+          "Afro-Colombian -- so \"No ethnic group\" at 87.6% is an answer "
+          "people gave, not a residual this build invented.\n\n"
+          "The same workbook carries a second sheet naming 124 individual "
+          "indigenous peoples, and it is not read. Its universe is the "
+          "1,905,617 people who said they were indigenous, not the country, "
+          "so published as Colombia's ethnicity it would reconcile perfectly "
+          "and tell a reader Colombia is 100% indigenous."),
+)
+
+
 COUNTRIES: dict[str, Country] = {
     c.iso3: c for c in (PHILIPPINES, ETHIOPIA, MYANMAR, UKRAINE,
                         PAKISTAN, CENTRAL_AFRICAN_REPUBLIC, MALI,
-                        DEMOCRATIC_REPUBLIC_OF_THE_CONGO)}
+                        DEMOCRATIC_REPUBLIC_OF_THE_CONGO, COLOMBIA)}
 
 
 def discover(limit: int, sheets: bool) -> int:
