@@ -342,6 +342,33 @@ def parents(rows: list[tuple[str, float, int]]) -> list[tuple[str, float]]:
     return [(name, value) for name, value, depth in rows if depth == top]
 
 
+def layout(sheet: Any, wanted: str) -> tuple[int, int] | None:
+    """Which column holds the label and which the count, for this sheet.
+
+    Not columns 0 and 1. Two sheets of the 88 -- Ингушетия and Красноярский
+    край -- were saved with the pivot table's member keys still in the first
+    column:
+
+        [P16_Nationality].[Hierarchy].[Code02].&[3] | Аварцы | 63
+
+    Reading position 0 there takes the key as the label and the label as the
+    count, so the universe row is never recognised, no groups are collected,
+    and the subject comes out empty. Empty is the dangerous outcome: it reads
+    on the map as a census that did not ask, and it is the reader that did not
+    look.
+
+    So the columns are found rather than assumed, by locating the row that
+    names the universe and taking the first numeric column to its right.
+    """
+    for row in sheet.iter_rows(max_row=40):
+        for i, cell in enumerate(row):
+            if label(cell.value).startswith(wanted):
+                for j in range(i + 1, len(row)):
+                    if number(row[j].value) is not None:
+                        return i, j
+    return None
+
+
 def read(blob: bytes, field: str) -> dict[str, dict[str, Any]]:
     """{sheet name: {published, counts}} for every sheet in one table."""
     import openpyxl
@@ -357,24 +384,32 @@ def read(blob: bytes, field: str) -> dict[str, dict[str, Any]]:
         if key != COUNTRY_SHEET and key not in SUBJECTS and key not in SKIP:
             log(f"  unknown sheet, not read: {sheet!r}")
             continue
+        where = layout(book[sheet], wanted)
+        if where is None:
+            raise SystemExit(
+                f"RUS {field}: {sheet} has no row naming {wanted!r}. Every "
+                f"other sheet in this file does, so this is a layout this "
+                f"reader has not seen rather than a question the region was "
+                f"not asked.")
+        at_name, at_value = where
         published: float | None = None
         seen: list[tuple[str, float, int]] = []
         for row in book[sheet].iter_rows():
-            if not row:
+            if len(row) <= at_value:
                 continue
-            name = label(row[0].value)
+            name = label(row[at_name].value)
             if not name:
                 continue
             if published is None:
                 if name.startswith(wanted):
-                    published = number(row[1].value)
+                    published = number(row[at_value].value)
                 continue
             if name.startswith("в том числе"):
                 continue
-            value = number(row[1].value)
+            value = number(row[at_value].value)
             if value is None:
                 continue
-            seen.append((name, value, indent(row[0])))
+            seen.append((name, value, indent(row[at_name])))
         counts: dict[str, float] = {}
         for name, value in parents(seen):
             counts[name] = counts.get(name, 0.0) + value
@@ -459,11 +494,16 @@ def main() -> int:
     # absent from another is exactly the gap that looks like a country simply
     # not answering that question.
     for field in TABLE:
-        missing = [s for s in SUBJECTS if s not in fields[field]]
+        # Present *and* read. A sheet that exists and yields nothing is the
+        # same gap as a sheet that is absent, and it looks identical on the
+        # map to a census that did not ask -- which is how Ингушетия and
+        # Красноярский край nearly shipped empty.
+        missing = [s for s in SUBJECTS
+                   if not (fields[field].get(s) or {}).get("counts")]
         if missing:
             raise SystemExit(
                 f"RUS {field}: {len(missing)} of {len(SUBJECTS)} configured "
-                f"subjects have no sheet in {TABLE[field]}: "
+                f"subjects came out empty from {TABLE[field]}: "
                 + ", ".join(missing[:6])
                 + ". A subject this file does not carry is a gap for that "
                   "field alone, which reads on the map as a question the "

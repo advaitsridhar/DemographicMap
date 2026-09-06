@@ -3372,9 +3372,24 @@ class ASubjectPresentInOneTableAndAbsentFromAnother(unittest.TestCase):
                              f"{spelling} should be an alias, not a subject")
             self.assertIn(canonical, self.ru.SUBJECTS)
 
-    def test_both_tables_are_checked_for_every_subject(self):
+    def test_every_table_is_checked_and_present_is_not_enough(self):
+        """Two ways to come out empty, and both must refuse rather than gap.
+
+        A sheet can be missing, as ХМАО's was from the language table under
+        that name. Or it can be present and yield nothing, as Ингушетия's was
+        when its pivot-table key column shifted the labels one place right.
+        Both read on the map as a census that did not ask the question.
+        """
         source = (ROOT / "scripts" / "fetch_census" / "russia.py").read_text()
         body = source.split("def main(")[1]
-        # The check runs per field rather than against one table's dict.
         self.assertIn("for field in TABLE:", body)
-        self.assertIn("s not in fields[field]", body)
+        # Checked on the counts, not on the key being present.
+        self.assertIn('.get("counts")', body)
+
+    def test_the_label_and_count_columns_are_found_not_assumed(self):
+        source = (ROOT / "scripts" / "fetch_census" / "russia.py").read_text()
+        self.assertIn("def layout(", source)
+        # Ингушетия and Красноярский край keep the pivot table's member keys
+        # in column 0, so the label is in column 1 and the count in column 2.
+        self.assertIn("at_name, at_value = where", source)
+        self.assertNotIn("label(row[0].value)", source)
