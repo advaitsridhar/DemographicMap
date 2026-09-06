@@ -1,7 +1,33 @@
-ibge_sidra: municipality (n6)
-  religion variant v/93 failed (HTTP Error 400: Bad Request)
-  religion variant v/1000093 failed (HTTP Error 400: Bad Request)
-  religion variant v/allxp failed (HTTP Error 400: Bad Request)
-  religion unavailable from every variant; marking not_available
-  wrote data/processed/brazil_municipality.json (9621 kB)
-  5571 records
+Region variables a usable table would carry:
+  DLAND    Land (16)
+  KREISE   Kreis (~400)
+  GEMEIN   Gemeinde
+  DG       Germany as a whole
+  REGBEZ   Regierungsbezirk
+
+=== GENESIS-Online (Destatis, federal) ===
+    https://www-genesis.destatis.de/genesisWS/rest/2020
+    credentials: none -- asking anonymously
+    logincheck: HTTP 405 Method Not Allowed
+    find 'Religion': 0 tables (HTTP 405 Method Not Allowed)
+    find 'Glaubensrichtung': 0 tables (HTTP 405 Method Not Allowed)
+    find 'Religionsgesellschaft': 0 tables (HTTP 405 Method Not Allowed)
+    find 'Konfession': 0 tables (HTTP 405 Method Not Allowed)
+
+=== Regionaldatenbank Deutschland ===
+    https://www.regionalstatistik.de/genesisws/rest/2020
+    credentials: none -- asking anonymously
+    logincheck: HTTP 405 
+    find 'Religion': 0 tables (HTTP 405 )
+    find 'Glaubensrichtung': 0 tables (HTTP 405 )
+    find 'Religionsgesellschaft': 0 tables (HTTP 405 )
+    find 'Konfession': 0 tables (HTTP 405 )
+
+=== Zensus 2022 results database ===
+    https://ergebnisse.zensus2022.de/api/rest/2020
+    credentials: none -- asking anonymously
+    logincheck: HTTP 405 Method Not Allowed
+    find 'Religion': 0 tables (HTTP 405 Method Not Allowed)
+    find 'Glaubensrichtung': 0 tables (HTTP 405 Method Not Allowed)
+    find 'Religionsgesellschaft': 0 tables (HTTP 405 Method Not Allowed)
+    find 'Konfession': 0 tables (HTTP 405 Method Not Allowed)
