@@ -1,17 +1,11 @@
 
-=== Zensus 2022 results database -- table structures ===
-
-  1000A-1018  (HTTP 401 Unauthorized)
-    no structure returned -- raw: {"__error__": "HTTP 401 Unauthorized"}
-
-  1000A-1E18  (HTTP 401 Unauthorized)
-    no structure returned -- raw: {"__error__": "HTTP 401 Unauthorized"}
-
-  1000A-1K18  (HTTP 401 Unauthorized)
-    no structure returned -- raw: {"__error__": "HTTP 401 Unauthorized"}
-
-  1000A-1W18  (HTTP 401 Unauthorized)
-    no structure returned -- raw: {"__error__": "HTTP 401 Unauthorized"}
-
-  2000X-1022  (HTTP 401 Unauthorized)
-    no structure returned -- raw: {"__error__": "HTTP 401 Unauthorized"}
+=== Zensus 2022 results database -- endpoint surface for 1000A-1018 ===
+    credentials: none -- GAST
+    catalogue/tables       HTTP 401 Unauthorized
+    catalogue/variables    HTTP 401 Unauthorized
+    catalogue/timeseries   HTTP 401 Unauthorized
+    metadata/table         HTTP 401 Unauthorized
+    metadata/variable      HTTP 401 Unauthorized
+    data/table             HTTP 401 Unauthorized
+    data/tablefile         HTTP 406 Not Acceptable
+    data/chart2table       HTTP 406 Not Acceptable
