@@ -3699,3 +3699,112 @@ class ACodeIsEvidenceThatTwoRowsAreTwoPlaces(unittest.TestCase):
         rows = [{"name": "X", "iso_3166_2": "LT-03"},
                 {"name": "X", "iso_3166_2": {"status": "not_available"}}]
         self.assertEqual(self.be.conflicting(rows), [])
+
+
+class TheRussianCensusNamesItsGroupsInRussian(unittest.TestCase):
+    """83 subjects read "Русские 90.2%", and the world filter had two answers.
+
+    Rosstat publishes 147 nationalities and 176 native languages in Cyrillic.
+    Left alone, every label keyed on itself, so "Русские" sat in the picker
+    beside the "Russian" already there from Estonia, Latvia and Lithuania --
+    the same people, counted by four censuses, split across two alphabets.
+
+    Translating a *group* is allowed where romanising a *shape* was refused,
+    and the difference is what a wrong entry can do. A guessed place name
+    attaches real figures to the wrong region and nothing shows it. A group
+    label is the name a bar carries, declared here one at a time rather than
+    transliterated by rule. The one thing a wrong entry can still do is merge
+    two peoples, because rows reaching one name are summed -- which is what
+    the collision test below exists for.
+    """
+
+    def setUp(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import canonical_groups
+        self.cg = canonical_groups
+        self.rows = json.loads(
+            (ROOT / "data" / "processed" / "russia_subject.json")
+            .read_text(encoding="utf-8"))
+
+    FIELDS = ("ethnicity", "language")
+
+    def test_the_adapter_translates_rather_than_the_index(self):
+        """The index alone was half a fix.
+
+        canonical_groups reaches the group picker; the name a bar carries
+        comes from the record. Folding the Cyrillic into the tables left the
+        picker saying "Russian" while Tatarstan still read "Русские 40.3%".
+        """
+        source = (ROOT / "scripts" / "fetch_census" / "russia.py").read_text()
+        self.assertIn("def englished(", source)
+        self.assertIn("canonical_groups.translate_russian", source)
+
+    def test_no_cyrillic_reaches_a_record(self):
+        for record in self.rows:
+            for field in self.FIELDS:
+                for row in record.get(field) or []:
+                    if not isinstance(row, dict):
+                        continue
+                    self.assertFalse(
+                        any("Ѐ" <= ch <= "ӿ" for ch in row.get("group", "")),
+                        f"{record.get('name')} {field}: {row.get('group')!r}")
+
+    def test_an_untranslated_label_stops_the_run(self):
+        """Rather than letting one Cyrillic row through a translated chart."""
+        source = (ROOT / "scripts" / "fetch_census" / "russia.py").read_text()
+        body = source.split("def englished(")[1].split("\ndef ")[0]
+        self.assertIn("raise SystemExit", body)
+        self.assertIn("if name is None:", body)
+
+    def test_no_two_labels_in_one_record_become_one_group(self):
+        """The only way a translation can change a figure.
+
+        Two of a subject's own categories folding together would quietly add
+        two of the census's bars into one. Checked on the translation table
+        against the sheets, because the adapter's output has already applied
+        it -- a collision there would show as a lost row, not a doubled one.
+        """
+        for field in self.FIELDS:
+            table = self.cg.RUSSIAN[field]
+            seen = {}
+            for label, name in table.items():
+                seen.setdefault(name, []).append(label)
+            for name, labels in seen.items():
+                self.assertEqual(
+                    len(labels), 1,
+                    f"{field}: {sorted(labels)} all become {name!r}, and any "
+                    f"subject listing two of them would have them summed")
+
+    def test_no_translation_lands_on_a_name_that_is_itself_an_alias(self):
+        """Resolution is one pass, so a target must be a canonical name.
+
+        Молдавский -> "Moldovan" was exactly this: "Moldovan" was an alias of
+        "Romanian", so the label would have resolved half way and stood as its
+        own group beside the one it was supposed to join.
+        """
+        for field in self.FIELDS:
+            table = self.cg.lookup(field)
+            for label, target in self.cg.RUSSIAN[field].items():
+                onward = table.get(self.cg.key(target))
+                self.assertIn(
+                    onward, (None, target),
+                    f"{field}: {label} -> {target!r}, an alias of {onward!r}")
+
+    def test_moldovan_is_not_folded_into_romanian_as_a_language(self):
+        """Rosstat lists both, in 80 of 83 subjects.
+
+        A source naming two categories side by side in one record is
+        distinguishing them, and folding would sum what it kept apart -- the
+        same evidence that keeps the Central African Republic's Fulah, Fulata
+        and Peulh separate. The fold cost nothing to drop: no source in this
+        dataset has ever emitted "Moldovan" as a language label.
+        """
+        self.assertNotIn("Moldovan", self.cg.LANGUAGE["Romanian"])
+        self.assertEqual(self.cg.RUSSIAN["language"]["Молдавский"], "Moldovan")
+        self.assertEqual(self.cg.RUSSIAN["language"]["Румынский"], "Romanian")
+
+    def test_the_table_holds_nothing_that_never_arrives(self):
+        """An entry for a label the census does not publish is an unchecked
+        guess. Both tables are sized by the sheets themselves."""
+        self.assertEqual(len(self.cg.RUSSIAN["ethnicity"]), 147)
+        self.assertEqual(len(self.cg.RUSSIAN["language"]), 176)

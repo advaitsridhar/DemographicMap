@@ -1293,6 +1293,50 @@ adapter writes its own code onto every shape it matches. It therefore returned
 83 no matter what Wikidata held, and passed throughout the period the join was
 producing one subject.
 
+### Russia: 147 nationalities and 176 languages, in Russian
+
+The join worked and the map was in the wrong language. Tatarstan read
+`Русские 40.3%`, and the world filter offered `Русские` as a different answer
+from the `Russian` it already had from Estonia, Latvia and Lithuania — the same
+people, counted by four censuses, split across two alphabets.
+
+Every other adapter here already emits English: Ukraine's oblasts publish
+`Romanian`, not `румунська`. Russia was the exception.
+
+**Why this is allowed where romanising a shape is not.** This adapter matches
+subjects on their ISO 3166-2 code precisely so that no English spelling of a
+place name is ever invented — a wrong guess there attaches real figures to the
+wrong region and nothing on the map shows it. A group name is not a key into
+anything; it is the label a bar carries. These are declared one at a time in
+`canonical_groups.py`, not transliterated by rule.
+
+The one thing a wrong entry here can still do is **merge two peoples**, because
+rows reaching the same name are summed. So: every label the sheets publish
+appears exactly once in the table, no two labels resolve to one name, and an
+unknown label stops the run rather than reaching the map in Cyrillic — one
+untranslated row among translated ones reads as a different kind of thing
+rather than as the gap in a table that it is.
+
+**Translated in the adapter, not in the group tables.** Folding the Cyrillic
+into `ETHNICITY`/`LANGUAGE` was tried first and is half a fix: those tables
+reach the group *picker*, while the name a bar carries comes from the record
+itself. The picker said `Russian` while Tatarstan still said `Русские`.
+
+**Moldovan is not folded into Romanian here.** The language table had
+`"Romanian": ("Romanian", "Moldovan", "Moldovian")`, and Rosstat lists
+`Молдавский` and `Румынский` as separate rows of the same subject in **80 of
+83**. Folding would have summed two categories the census keeps apart, silently,
+in eighty places — the same evidence that keeps the Central African Republic's
+`Fulah`, `Fulata` and `Peulh` separate. Dropping the fold cost nothing: no
+source in this dataset has ever emitted `Moldovan` as a *language* label, which
+was checked across every built file. The ethnicity table never folded it and
+still does not — there it is a nationality both Moldova and Ukraine report.
+
+The result is 50 of Russia's ethnicity groups and 72 of its language groups now
+sharing a filter with other countries, where before every one of them was an
+island. Not one country's row-to-shape matching changed, which was checked by
+diffing the per-country match counts before and after.
+
 ### Bangladesh: a mirror, and a merged sheet that is wrong
 
 The Bureau of Statistics publishes a workbook of Census 2022 indicators at
