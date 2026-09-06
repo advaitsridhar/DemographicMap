@@ -3289,15 +3289,33 @@ class MatchingOnACodeRatherThanARomanisation(unittest.TestCase):
         self.assertIn("tab6", self.ru.TABLE["language"])
         self.assertNotIn("tab5", "".join(self.ru.TABLE.values()))
 
-    def test_a_nested_row_is_left_to_the_parent_that_contains_it(self):
-        # Rosstat indents the peoples counted inside a group: Аварцы is
-        # followed by Андийцы, Ахвахцы, Дидойцы. Taking every row sums past
-        # the universe the sheet publishes.
-        self.assertEqual(self.ru.label("Аварцы"), ("Аварцы", False))
-        self.assertEqual(self.ru.label("   Андийцы"), ("Андийцы", True))
-        # A group's self-designations are a glossary, not part of its name.
+    def test_a_group_name_stops_before_its_self_designations(self):
+        self.assertEqual(self.ru.label("Аварцы"), "Аварцы")
         self.assertEqual(
-            self.ru.label("Башкиры (башкирцы, башкорт, мин)")[0], "Башкиры")
+            self.ru.label("Башкиры (башкирцы, башкорт, мин)"), "Башкиры")
+        self.assertEqual(self.ru.label("   Андийцы  "), "Андийцы")
+        self.assertEqual(self.ru.label(None), "")
+
+    def test_nesting_is_read_from_the_indent_and_not_from_whitespace(self):
+        """The first version of this read leading spaces, and was wrong twice.
+
+        It missed every real sub-group, and it fired on one row in
+        Воронежская область that turned out to be Русские -- dropping the
+        largest group in the region and leaving the sheet at 13.55% of its own
+        published total. The indent is a cell style, so that is where it is
+        read from now.
+        """
+        class Cell:
+            def __init__(self, indent=0, value=""):
+                self.alignment = type("A", (), {"indent": indent})()
+                self.value = value
+
+        self.assertFalse(self.ru.nested(Cell(indent=0, value="Русские")))
+        self.assertTrue(self.ru.nested(Cell(indent=1, value="Андийцы")))
+        # Leading whitespace is not the signal and must not be read as one.
+        self.assertFalse(self.ru.nested(Cell(indent=0, value="   Русские")))
+        # A cell with no alignment at all is not nested.
+        self.assertFalse(self.ru.nested(object()))
 
     def test_an_em_dash_is_absence_and_not_a_number(self):
         for absent in ("-", "–", "—", "", "   ", None):

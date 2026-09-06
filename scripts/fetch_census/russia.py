@@ -282,31 +282,43 @@ def number(cell: Any) -> float | None:
         return None
 
 
-def label(cell: Any) -> tuple[str, bool]:
-    """The group's published name, and whether the sheet indents it.
+def label(cell: Any) -> str:
+    """The group's published name.
 
-    Rosstat nests constituent peoples under the group they are counted in, and
-    marks them by indenting the label. Returning that fact separately is what
-    lets the reader add up the parents alone; the alternative is a hand-written
-    list of which peoples are inside which, which would be this code asserting
-    an ethnography rather than reading a spreadsheet.
+    The census writes a group's self-designations in brackets after its name --
+    "Башкиры (башкирцы, башкорт, мин, ...)". The name is the part before them;
+    the list is a glossary, not part of what to print.
     """
-    raw = "" if cell is None else str(cell)
-    text = raw.strip()
-    # The census writes a group's self-designations in brackets after its
-    # name -- "Башкиры (башкирцы, башкорт, мин, ...)". The name is the part
-    # before them; the list is a glossary, not part of what to print.
-    name = re.split(r"\s*\(", text, 1)[0].strip()
-    indented = bool(raw) and raw[0] in " \t " and bool(text)
-    return name, indented
+    text = ("" if cell is None else str(cell)).strip()
+    return re.split(r"\s*\(", text, 1)[0].strip()
+
+
+def nested(cell: Any) -> bool:
+    """Whether the sheet indents this label under the group above it.
+
+    Rosstat lists constituent peoples inside the group they are counted in --
+    Аварцы then Андийцы, Ахвахцы, Дидойцы; Татары then Кряшены -- and adding
+    them to their parent counts those people twice.
+
+    Read from the cell's indent style, which is where the indentation actually
+    lives. The first version of this looked for a leading space in the text and
+    was wrong in both directions at once: it missed every real sub-group, and
+    it fired on exactly one row in Воронежская область, which turned out to be
+    Русские. Dropping the largest group in the region left that sheet summing
+    to 13.55% of its own published total, which is how it was caught.
+    """
+    alignment = getattr(cell, "alignment", None)
+    return bool(alignment and (alignment.indent or 0) > 0)
 
 
 def read(blob: bytes, field: str) -> dict[str, dict[str, Any]]:
     """{sheet name: {published, counts}} for every sheet in one table."""
     import openpyxl
 
-    book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True,
-                                  data_only=True)
+    # Not read_only: the indent that says which rows are nested is a style,
+    # and a read-only workbook does not carry styles. Two files of a few
+    # megabytes are worth the memory to read them correctly.
+    book = openpyxl.load_workbook(io.BytesIO(blob), data_only=True)
     wanted = UNIVERSE[field]
     out: dict[str, dict[str, Any]] = {}
     for sheet in book.sheetnames:
@@ -314,31 +326,30 @@ def read(blob: bytes, field: str) -> dict[str, dict[str, Any]]:
         if key != COUNTRY_SHEET and key not in SUBJECTS and key not in SKIP:
             log(f"  unknown sheet, not read: {sheet!r}")
             continue
-        rows = list(book[sheet].iter_rows(values_only=True))
         published: float | None = None
         counts: dict[str, float] = {}
-        nested = 0
-        for row in rows:
+        inside = 0
+        for row in book[sheet].iter_rows():
             if not row:
                 continue
-            name, indented = label(row[0])
+            name = label(row[0].value)
             if not name:
                 continue
             if published is None:
                 if name.startswith(wanted):
-                    published = number(row[1])
+                    published = number(row[1].value)
                 continue
             if name.startswith("в том числе"):
                 continue
-            value = number(row[1])
+            value = number(row[1].value)
             if value is None:
                 continue
             # A nested row's count is already inside its parent's.
-            if indented:
-                nested += 1
+            if nested(row[0]):
+                inside += 1
                 continue
             counts[name] = counts.get(name, 0.0) + value
-        out[key] = {"published": published, "counts": counts, "nested": nested}
+        out[key] = {"published": published, "counts": counts, "nested": inside}
     book.close()
     return out
 
@@ -357,17 +368,23 @@ def check(field: str, tables: dict[str, dict[str, Any]]) -> None:
         raise SystemExit(f"RUS {field}: no sheet published a universe")
     sheet, ratio = worst
     off = abs(ratio - 1)
+    got = tables[sheet]
+    # The largest groups, because the first time this fired the whole story was
+    # that Русские was missing from them and the ratio alone did not say so. A
+    # sum that is wrong is usually wrong about something nameable.
+    top = ", ".join(f"{name} {value:,.0f}" for name, value
+                    in sorted(got["counts"].items(), key=lambda kv: -kv[1])[:3])
     log(f"  {field}: furthest from its own total is {sheet} at "
-        f"{ratio:.4f} of {UNIVERSE[field]!r}"
-        + (f", and {tables[sheet]['nested']} nested rows were left to their "
-           f"parents" if tables[sheet]["nested"] else ""))
+        f"{ratio:.4f} of {UNIVERSE[field]!r} ({got['published']:,.0f}); "
+        f"largest {top}; {got['nested']} nested rows left to their parents")
     if off > TOLERANCE:
         raise SystemExit(
-            f"RUS {field}: {sheet} sums to {ratio:.4f} of the universe the "
-            f"sheet publishes, past the {TOLERANCE:.1%} this reader allows. "
-            f"A sheet that does not add up is one this reader has "
-            f"misunderstood -- most likely which rows are nested inside "
-            f"which.")
+            f"RUS {field}: {sheet} sums to {ratio:.4f} of the "
+            f"{got['published']:,.0f} the sheet publishes, past the "
+            f"{TOLERANCE:.1%} this reader allows. Its largest groups came out "
+            f"as {top} -- check whether one that belongs there is missing "
+            f"before assuming the nesting is wrong, because that is what it "
+            f"was last time.")
 
 
 def main() -> int:
