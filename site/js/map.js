@@ -83,15 +83,29 @@ window.WorldMap = (function () {
     if (next !== activeLevel) activeLevel = next;
     if (handlers.onLevelChange) handlers.onLevelChange(activeLevel);
 
-    // visibleCountries() reads the tiles already in memory, and immediately
-    // after a switch there are none of the new level's -- so asking now returns
-    // an empty list and nothing would ever be fetched for it. Ask again once
-    // the map has settled, which is when the answer exists.
-    const announce = () => {
+    announceView();
+  }
+
+  // Announcing the view is what fetches a country's attributes, so an
+  // announcement that comes too early is the difference between a filled map
+  // and a blank one. visibleCountries() reads the tiles already parsed, and a
+  // move that lands somewhere new -- a jump to a small country, a zoom that
+  // crosses into another level -- has none of them yet: the honest answer at
+  // that instant is an empty list, and nothing is fetched for what is now on
+  // screen. So ask twice. The second ask, once the map falls idle, is when the
+  // answer exists. Without it a view stayed grey until some later pan happened
+  // to ask again, which is how the Bahamas read as having no data at all: its
+  // fourteen recorded islands were never fetched, so not even their gap
+  // markers were drawn.
+  let idleAnnouncePending = false;
+  function announceView() {
+    if (handlers.onViewChange) handlers.onViewChange(activeLevel, visibleCountries());
+    if (idleAnnouncePending) return;
+    idleAnnouncePending = true;
+    map.once("idle", () => {
+      idleAnnouncePending = false;
       if (handlers.onViewChange) handlers.onViewChange(activeLevel, visibleCountries());
-    };
-    announce();
-    map.once("idle", announce);
+    });
   }
 
   function getPinnedLevel() { return pinnedLevel; }
@@ -294,7 +308,7 @@ window.WorldMap = (function () {
       activeLevel = levelIndex(map.getZoom());
       if (handlers.onReady) handlers.onReady(map);
       if (handlers.onLevelChange) handlers.onLevelChange(activeLevel);
-      if (handlers.onViewChange) handlers.onViewChange(activeLevel, visibleCountries());
+      announceView();
     });
 
     let moveTimer = null;
@@ -305,9 +319,7 @@ window.WorldMap = (function () {
         if (handlers.onLevelChange) handlers.onLevelChange(activeLevel);
       }
       clearTimeout(moveTimer);
-      moveTimer = setTimeout(() => {
-        if (handlers.onViewChange) handlers.onViewChange(activeLevel, visibleCountries());
-      }, 120);
+      moveTimer = setTimeout(announceView, 120);
     });
 
     map.on("sourcedata", (event) => {
