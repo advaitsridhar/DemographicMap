@@ -1066,6 +1066,67 @@ the **2005 and 2012** rounds into one column set, so a share dates to neither
 year exactly. And the unit is the household *head*, so a provincial share
 describes heads of household rather than residents.
 
+### Russia: matched on a code, and five wrong readings of one file
+
+The 2020 census, Volume 5, publishes ethnic composition (table 1) and native
+language (table 6) for every federal subject, each sheet naming its own
+universe: *Указавшие национальную принадлежность* and *Указавшие родной язык*.
+Both reconcile at **1.0000** -- the worst sheet in either file is exact to four
+decimal places.
+
+**Not table 5.** It is called ВЛАДЕНИЕ ЯЗЫКАМИ, *proficiency*, and asks which
+languages a person knows, admitting several answers. Published as a
+composition it reads past 100%, which is what Thailand's language file was
+refused for. Table 6 partitions; table 5 does not.
+
+**Matched on ISO 3166-2 rather than on names.** The sheets are Cyrillic, the
+boundary file English, and `norm()` keeps Cyrillic as Cyrillic on purpose: a
+romanisation invented in this code is a guess about a name, and the guesses
+that look right are the dangerous ones. 82 of Russia's 83 shapes carry a code;
+Sakha carries none and is aliased by name, and a test asserts it is the only
+one. This is the first source where the two sides share no alphabet.
+
+**88 sheets, 83 subjects.** Two skips are combined forms of subjects the
+boundary file draws split -- Arkhangelsk with Nenets, Tyumen with the two
+okrugs -- and reading them beside their parts would count about four million
+people twice with nothing in the figures to show it. Two are Crimea and
+Sevastopol, which Ukraine's 2001 census already publishes on these shapes and
+which geoBoundaries does not draw inside Russia. One is the country's own row,
+kept as the control.
+
+**Fetched from the Internet Archive and checked in.** rosstat.gov.ru serves a
+valid certificate signed by the Russian Trusted Sub CA, an authority no
+ordinary trust store carries; the site is not refusing this client and this
+project will not disable verification to reach it. The workbooks live in
+`data/raw/russia/` for Nepal's reason -- no verified route to the original --
+and the citation names the capture date.
+
+#### What five wrong readings of this file cost, and what caught each
+
+Nothing reached the map. Every one was stopped by the same reconciliation
+against the universe the sheet publishes, which is the whole argument for
+having it.
+
+| the reading | what it did | how it showed |
+|---|---|---|
+| the plain archive URL | returned the Wayback player page, 10 kB of `<!DOCTYPE html>` | a workbook that was not a ZIP |
+| leading whitespace means nested | dropped Русские in Воронежская область | that sheet at **13.55%** of its total |
+| any indent means nested | Rosstat indents the whole list; 94 of 95 rows dropped | Чукотка at **0.95%** |
+| shallower rows are members too | counted the *not stated* residual, which the universe excludes | ХМАО at **135%** |
+| labels are in column 0 | two sheets keep the pivot table's member keys there | Ингушетия and Красноярский край silently **empty** |
+
+The fourth is the one worth keeping. "Указавшие" means *those who stated*, so
+the people who stated nothing sit outside the denominator by construction and
+cannot be one of its parts -- and the commit before it had argued the exact
+opposite in writing.
+
+The fifth is the one that nearly got through, because an empty subject is
+quiet: on the map it reads as a census that did not ask, when it was the
+reader that did not look. Both completeness checks now test what was read
+rather than whether a key exists, and the refusal prints the largest groups it
+summed. `0.1355` says something is wrong; `largest: не указана 446` says what,
+and that change turned four runs of guessing into one.
+
 ### Bangladesh: a mirror, and a merged sheet that is wrong
 
 The Bureau of Statistics publishes a workbook of Census 2022 indicators at
