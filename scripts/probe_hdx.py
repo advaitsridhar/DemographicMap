@@ -109,13 +109,17 @@ def main() -> int:
                 break
         books = workbooks(pkg)
         rows.append((bool(books), iso in have, iso, pkg.get("name", ""),
-                     pkg.get("title", "")[:52], len(books)))
+                     pkg.get("title", ""), len(books)))
 
     rows.sort(key=lambda r: (not r[0], r[1], r[2]))
-    print(f"{'ISO3':5} {'live':5} {'xlsx':5} {'dataset name':52} title")
-    for has_book, live, iso, name, title, n in rows:
+    # Printed whole. A dataset name is the identifier --inspect and the
+    # country config take, so a truncated one is not an answer: the first run
+    # of this probe cut them at 52 characters and Indonesia's, the largest
+    # candidate it found, came back unusable.
+    print(f"{'ISO3':5} {'live':5} {'xlsx':5} dataset name")
+    for has_book, live, iso, name, _title, n in rows:
         print(f"{iso or '?':5} {'yes' if live else '-':5} "
-              f"{(str(n) if has_book else '-'):5} {name[:52]:52} {title}")
+              f"{(str(n) if has_book else '-'):5} {name}")
 
     missing = sorted({r[2] for r in rows if r[0] and r[2] and not r[1]})
     print()
