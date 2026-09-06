@@ -29,12 +29,31 @@ words a religion table would be titled with, and prints what comes back with
 the region variable each table offers. A table that exists but is cut only by
 Germany as a whole is no use here and is reported as such rather than counted.
 
+What the first runs established, so the next reader does not repeat them:
+
+* All three instances answer POST and refuse GET with 405.
+* The Zensus 2022 database admits an anonymous user called GAST, and answers
+  its catalogue to that user. Zensus 2022 **did** ask religion: forty tables
+  match, in two families -- ``1000A-*`` "Personen: Religion" and ``2000X-*``
+  "Personen: Religion (ausfuehrlich)", which is the finer classification.
+* The Regionaldatenbank admits GAST too but answers 401 to any catalogue
+  search, so it needs a real account. GENESIS-Online answers 307 to POST.
+
+That leaves one question between here and an adapter: which of those tables is
+cut by a geography the boundary files can join. Four of them share the title
+"Personen: Religion" and differ only in a letter -- 1018, 1E18, 1K18, 1W18 --
+which is the Zensus habit of publishing one table once per regional level. A
+table cut only by Germany as a whole cannot fill sixteen Laender, and the
+title does not say which is which. So ``--tables`` asks each one for its own
+structure and prints the variables it is cut by.
+
 Read-only, and the output is the log. Credentials, if any are set, are read
 from the environment and never from a command line.
 
 Usage:
     python -m scripts.probe_genesis
     python -m scripts.probe_genesis --instances zensus
+    python -m scripts.probe_genesis --instances zensus --tables 1000A-1018,2000X-1022
 """
 
 from __future__ import annotations
@@ -183,11 +202,67 @@ def probe(key: str, spec: dict[str, str]) -> None:
             print(f"      {code:<16} {title[:110]}")
 
 
+def variables_of(payload: object) -> list[dict]:
+    """The variable list out of a metadata response, whatever it nests it in."""
+    if not isinstance(payload, dict):
+        return []
+    obj = payload.get("Object") or payload.get("object") or {}
+    for holder in (obj, payload):
+        if not isinstance(holder, dict):
+            continue
+        struct = holder.get("Structure") or holder.get("structure") or {}
+        if isinstance(struct, dict):
+            out = []
+            for side in ("Rows", "Columns", "rows", "columns"):
+                rows = struct.get(side)
+                if isinstance(rows, list):
+                    out += [dict(r, __side__=side) for r in rows
+                            if isinstance(r, dict)]
+            if out:
+                return out
+    return []
+
+
+def describe(key: str, spec: dict[str, str], tables: list[str]) -> None:
+    """What each named table is cut by -- the question a title cannot answer."""
+    creds = {}
+    user = os.environ.get(spec["user_env"], "").strip()
+    password = os.environ.get(spec["pass_env"], "").strip()
+    if user and password:
+        creds = {"username": user, "password": password}
+    print(f"\n=== {spec['name']} -- table structures ===")
+    for name in tables:
+        meta = call(spec["base"], "metadata/table", creds, name=name)
+        note = status_of(meta)
+        obj = meta.get("Object", {}) if isinstance(meta, dict) else {}
+        title = (obj.get("Content") or "").strip().replace("\n", " ")
+        print(f"\n  {name}  ({note})")
+        if title:
+            print(f"    title: {title[:150]}")
+        variables = variables_of(meta)
+        if not variables:
+            # Not a failure worth hiding: a table can be real and still refuse
+            # its structure to GAST, and that is a different answer from absent.
+            print(f"    no structure returned -- raw: "
+                  f"{json.dumps(meta, ensure_ascii=False)[:400]}")
+            continue
+        for var in variables:
+            code = var.get("Code") or var.get("code") or "?"
+            content = (var.get("Content") or var.get("content") or "").strip()
+            values = var.get("Values") or var.get("values") or "?"
+            flag = "  <-- region" if str(code).upper() in REGION_CODES else ""
+            print(f"    {str(code):<12} {str(values):>7} values  "
+                  f"{content[:70]}{flag}")
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--instances", default=",".join(INSTANCES),
                     help="comma-separated: " + ", ".join(INSTANCES))
+    ap.add_argument("--tables", default="",
+                    help="comma-separated table codes to describe instead of "
+                         "searching, e.g. 1000A-1018,1000A-1K18")
     args = ap.parse_args(argv)
 
     wanted = [k.strip() for k in args.instances.split(",") if k.strip()]
@@ -196,12 +271,17 @@ def main(argv: list[str] | None = None) -> int:
         print(f"unknown instance(s): {', '.join(unknown)}", file=sys.stderr)
         return 2
 
-    print("Region variables a usable table would carry:")
-    for code, meaning in REGION_CODES.items():
-        print(f"  {code:<8} {meaning}")
+    if not args.tables:
+        print("Region variables a usable table would carry:")
+        for code, meaning in REGION_CODES.items():
+            print(f"  {code:<8} {meaning}")
 
+    tables = [t.strip() for t in args.tables.split(",") if t.strip()]
     for key in wanted:
-        probe(key, INSTANCES[key])
+        if tables:
+            describe(key, INSTANCES[key], tables)
+        else:
+            probe(key, INSTANCES[key])
     return 0
 
 
