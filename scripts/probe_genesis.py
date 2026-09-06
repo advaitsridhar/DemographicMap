@@ -73,8 +73,13 @@ TIMEOUT = 90
 # even though they are the same software.
 INSTANCES: dict[str, dict[str, str]] = {
     "genesis": {
+        # www-genesis.destatis.de, the host every Destatis document names,
+        # answers 307 to this path and points at genesis.destatis.de. Following
+        # it was refused on purpose -- a probe that wanders to another host is
+        # no longer evidence about the one it was aimed at -- so the redirect
+        # is taken as the address it is and written down here instead.
         "name": "GENESIS-Online (Destatis, federal)",
-        "base": "https://www-genesis.destatis.de/genesisWS/rest/2020",
+        "base": "https://genesis.destatis.de/genesisWS/rest/2020",
         "user_env": "GENESIS_USER", "pass_env": "GENESIS_PASSWORD",
     },
     "regional": {
