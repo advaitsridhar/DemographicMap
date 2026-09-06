@@ -8,6 +8,7 @@ shape.
 import json
 import collections
 import pathlib
+import re
 import sys
 import tempfile
 import unittest
@@ -3808,3 +3809,46 @@ class TheRussianCensusNamesItsGroupsInRussian(unittest.TestCase):
         guess. Both tables are sized by the sheets themselves."""
         self.assertEqual(len(self.cg.RUSSIAN["ethnicity"]), 147)
         self.assertEqual(len(self.cg.RUSSIAN["language"]), 176)
+
+
+class AnAdapterWhoseOutputIsNeverReadJoinsNothing(unittest.TestCase):
+    """Colombia's first build matched 0 of 1,155 areas and reported success.
+
+    The adapter was right: 33 departments and 1,122 municipalities, every one
+    reaching its published total, both levels reconciling exactly. The file
+    was written to data/processed and then never opened, because
+    build_entities reads a named list and colombia_department.json was not on
+    it.
+
+    Nothing failed. The country's log line even said "adapter rows matched
+    1085", which was true and was the Wikidata rows -- the same shape as
+    Russia's join reading one subject of 83, where a real number sat in the
+    log beside no data on the map. A file that is written and not read is the
+    quietest failure this pipeline has.
+    """
+
+    def setUp(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import build_entities
+        self.be = build_entities
+
+    def test_every_uscb_country_has_its_output_read(self):
+        from fetch_census.uscb import COUNTRIES
+        registered = set(self.be.ADAPTER_FILES)
+        for iso3, country in sorted(COUNTRIES.items()):
+            self.assertIn(
+                country.out, registered,
+                f"{iso3} writes {country.out} and build_entities never reads "
+                f"it, so every area it carries joins nothing")
+
+    def test_every_registered_file_is_one_something_writes(self):
+        """The other direction: a name that no adapter produces is a typo
+        that would read as a country quietly missing its data."""
+        produced = set()
+        for path in sorted((ROOT / "scripts").rglob("*.py")):
+            produced.update(re.findall(r'"([a-z0-9_]+\.json)"',
+                                       path.read_text(encoding="utf-8")))
+        for name in self.be.ADAPTER_FILES:
+            self.assertIn(
+                name, produced,
+                f"{name} is read but nothing in scripts/ names it as an output")

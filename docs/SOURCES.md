@@ -1337,6 +1337,100 @@ sharing a filter with other countries, where before every one of them was an
 island. Not one country's row-to-shape matching changed, which was checked by
 diffing the per-country match counts before and after.
 
+### Which countries the Census Bureau's series actually covers
+
+The USCB adapter is generic, so a new country is a config entry rather than a
+new reader — and how many countries were available had never been measured.
+They were being chosen by guessing at names. `scripts/probe_hdx.py` reads the
+list: it starts from a dataset the adapter already fetches, takes the
+organization from that rather than assuming HDX's naming, and enumerates what
+that organization publishes.
+
+**34 datasets, 25 with workbooks, 9 already read here.** The probe immediately
+killed three candidates picked by intuition — Kenya, Tanzania and Uganda are
+not in the series at all.
+
+Having a workbook is not having the fields. Of the largest remaining:
+
+* **Nigeria** — its only relevant sheet is `Nationality`: Nigerian by birth,
+  by naturalization, other ECOWAS, African other than ECOWAS, non-African.
+  That is citizenship. Published as ethnicity it would tell a reader that a
+  country of some 250 named peoples is ethnically uniform, which is exactly
+  what Syria's sheet was refused for.
+* **Sudan** — `Nationality_CensusGeog` holds two columns, "Born outside Sudan
+  and South Sudan" and "Unknown", together 1.8% of the population. Not a
+  composition.
+* **Indonesia** — already recorded above, and worth repeating because it was
+  briefly mistaken for an opening: its workbook carries a four-bucket first
+  language split and no religion or ethnicity. The BPS key is still what
+  Indonesia needs.
+
+### Colombia: an answer people gave, and a sheet that adds up and is not read
+
+The 2018 census's *autoreconocimiento étnico*, from the `Individuals` sheet:
+seven categories summing to **44,164,417**, which is the sheet's own published
+universe of those who answered, against a counted population of about 48
+million. 33 departments and 1,122 municipalities, every one reaching its own
+published total, both levels reconciling exactly.
+
+| | |
+|---|---|
+| No ethnic group | 87.6% |
+| Black | 6.7% |
+| Indigenous | 4.3% |
+| Unknown ethnicity | 1.4% |
+| Raizal, palenquero, Rrom | 0.1% |
+
+"No ethnic group" is an answer, not a residual invented here. Colombia asks
+which of five recognised groups a person recognises themselves in, and most
+Colombians answer none of them. The departments read the way Colombia reads:
+Chocó is 73.8% Black, Vaupés 81.7% indigenous, La Guajira 47.8%.
+
+**`ETH_` and nothing else.** That sheet holds two questions. Beside the seven
+ethnicity columns sit eight `LNG_` ones asking whether indigenous people speak
+or understand a native language — yes, no, unknown, about one group. It is not
+a language composition, and "everything that is not geography" collects both
+and reports 113% of the population.
+
+**Departments and municipalities, not the third level.** `ADM_LEVEL 3` is
+`CABECERA`, `CENTRO POBLADO` and `RURAL DISPERSO`: the urban and rural strata
+each municipality divides into, repeated 1,122 times over. Every area the
+inspection flagged as furthest from its own total sits there, because a
+stratum's rows are being compared against a total belonging to the whole
+municipality.
+
+**The 124 indigenous peoples are not read.** The same workbook names them
+individually — Achagua, Wiwa, Pijao, Misak — and the sheet reconciles at
+exactly 1.000. Its universe is the 1,905,617 people who said they were
+indigenous, not the country, so published as Colombia's ethnicity it would
+look perfect and say the country is entirely indigenous. A file that adds up
+is not the same as a file that means what its name suggests.
+
+#### The file was written and never opened
+
+The first build joined **0 of 1,155** Colombian areas and reported success. The
+adapter was right in every respect; `build_entities` reads a named list and
+`colombia_department.json` was not on it.
+
+The log even said `COL: adapter rows matched 1085`, which was true and was the
+Wikidata rows — the same shape as Russia's join reading one subject of 83, a
+real number sitting in the log beside no data on the map. Both directions are
+now asserted by a test: every country's declared output is on the list, and
+every name on the list is one something actually writes.
+
+Three shapes were waiting on a name, and the archipelago's mattered beyond
+itself. geoBoundaries gives it its full constitutional name, and while the
+department went unmatched its municipalities had no parent to scope them — so
+San Andrés and Providencia, which each share a name with a mainland
+municipality, could not be told apart from them and were refused. Naming the
+department recovered all three. geoBoundaries also truncates Barranquilla's
+official long name with a literal asterisk, and spells Tiquisio without its
+second i.
+
+One municipality carries nothing: `Papunaua`, a *corregimiento departamental*
+in Vaupés that the census does not tabulate separately. That is a gap in the
+source, and it stays visible.
+
 ### Bangladesh: a mirror, and a merged sheet that is wrong
 
 The Bureau of Statistics publishes a workbook of Census 2022 indicators at
