@@ -1,7 +1,249 @@
-ibge_sidra: municipality (n6)
-  religion variant v/93 failed (HTTP Error 400: Bad Request)
-  religion variant v/1000093 failed (HTTP Error 400: Bad Request)
-  religion variant v/allxp failed (HTTP Error 400: Bad Request)
-  religion unavailable from every variant; marking not_available
-  wrote data/processed/brazil_municipality.json (9806 kB)
-  5571 records
+page: https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/_inhalt.html
+  218,067 bytes
+  289 matching link(s)
+  - Inhalt
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/_inhalt.html#content
+  - Hauptmenü
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/_inhalt.html#navPrimary
+  - Suche
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/_inhalt.html#search
+  - Jobs
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Ueber-uns/Karriere/_inhalt.html
+  - Presse
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Presse/_inhalt.html
+  - Daten übermitteln
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Service/Online-Melden/_inhalt_servicenavi.html
+  - 
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Service/LeichteSprache/_inhalt.html
+  - 
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Service/Gebaerdensprache/_inhalt.html
+  - English
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/EN/Themes/Society-Environment/Population/Census2022/_node.html
+  - 
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Home/_inhalt.html
+  - 
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Service/Suche/suche_node.html
+  - Menü
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Service/Sitemap/sitemap_node.html
+  - Übersicht: Themen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/_inhalt.html
+  - Themen im Fokus
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/_inhalt.html#themaHeadline_1425464_1
+  - 35 Jahre Deutsche Einheit
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Querschnitt/35-Jahre-Deutsche-Einheit/_inhalt.html
+  - Der Durchschnittsmensch in Deutschland
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Im-Fokus/Durchschnittsmensch/_inhalt.html
+  - Fachkräfte
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Im-Fokus/Fachkraefte/_inhalt.html
+  - Klima
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Im-Fokus/Klima/_inhalt.html
+  - Rente
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Im-Fokus/Rente/_inhalt.html
+  - Gesellschaft und Umwelt
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/_inhalt.html#themaHeadline_1425464_2
+  - Bevölkerung
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/_inhalt.html
+  - Bildung, Forschung und Kultur
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Bildung-Forschung-Kultur/_inhalt.html
+  - Einkommen, Konsum und Lebensbedingungen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Einkommen-Konsum-Lebensbedingungen/_inhalt.html
+  - Gesundheit
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Gesundheit/_inhalt.html
+  - Gleichstellungsindikatoren
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Querschnitt/Gleichstellungsindikatoren/_inhalt.html
+  - Nachhaltigkeitsindikatoren
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Nachhaltigkeitsindikatoren/_inhalt.html
+  - Registerzensus
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Registerzensus/_inhalt.html
+  - Soziales
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Soziales/_inhalt.html
+  - Umwelt, Umweltökonomische Gesamtrechnungen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Umwelt/_inhalt.html
+  - Verkehrsunfälle
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Verkehrsunfaelle/_inhalt.html
+  - Wohnen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Wohnen/_inhalt.html
+  - Wirtschaft
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/_inhalt.html#themaHeadline_1425464_3
+  - Außenhandel
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Wirtschaft/Aussenhandel/_inhalt.html
+  - Groß- und Einzelhandel
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Wirtschaft/Grosshandel-Einzelhandel/_inhalt.html
+  - Globalisierungsindikatoren
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Wirtschaft/Globalisierungsindikatoren/_inhalt.html
+  - Konjunkturindikatoren
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Wirtschaft/Konjunkturindikatoren/_inhalt.html
+  - Preise
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Wirtschaft/Preise/_inhalt.html
+  - Volkswirtschaftliche Gesamtrechnungen, Inlandsprodukt
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Wirtschaft/Volkswirtschaftliche-Gesamtrechnungen-Inlandsprodukt/_inhalt.html
+  - Branchen und Unternehmen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/_inhalt.html#themaHeadline_1425464_4
+  - Bauen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Bauen/_inhalt.html
+  - Dienstleistungen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Dienstleistungen/_inhalt.html
+  - Energie
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Energie/_inhalt.html
+  - Gastgewerbe, Tourismus
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Gastgewerbe-Tourismus/_inhalt.html
+  - Handwerk
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Handwerk/_inhalt.html
+  - Industrie, Verarbeitendes Gewerbe
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Industrie-Verarbeitendes-Gewerbe/_inhalt.html
+  - Land- und Forstwirtschaft, Fischerei
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Landwirtschaft-Forstwirtschaft-Fischerei/_inhalt.html
+  - Transport und Verkehr
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Transport-Verkehr/_inhalt.html
+  - Unternehmen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Unternehmen/_inhalt.html
+  - Arbeit
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/_inhalt.html#themaHeadline_1425464_5
+  - Arbeits- und Lohnnebenkosten
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Arbeit/Arbeitskosten-Lohnnebenkosten/_inhalt.html
+  - Arbeitsmarkt
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Arbeit/Arbeitsmarkt/_inhalt.html
+  - Verdienste
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Arbeit/Verdienste/_inhalt.html
+  - Staat
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/_inhalt.html#themaHeadline_1425464_6
+  - Bürokratiekosten
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Staat/Buerokratiekosten/_inhalt.html
+  - Justiz und Rechtspflege
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Staat/Justiz-Rechtspflege/_inhalt.html
+  - Öffentliche Finanzen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Staat/Oeffentliche-Finanzen/_inhalt.html
+  - Öffentlicher Dienst
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Staat/Oeffentlicher-Dienst/_inhalt.html
+  - Steuern
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Staat/Steuern/_inhalt.html
+  - Länder und Regionen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/_inhalt.html#themaHeadline_1425464_7
+  - Europa in Zahlen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Laender-Regionen/Europa/_inhalt.html
+page: https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/Downloads.html
+  218,067 bytes
+  289 matching link(s)
+  - Inhalt
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/_inhalt.html#content
+  - Hauptmenü
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/_inhalt.html#navPrimary
+  - Suche
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/_inhalt.html#search
+  - Jobs
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Ueber-uns/Karriere/_inhalt.html
+  - Presse
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Presse/_inhalt.html
+  - Daten übermitteln
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Service/Online-Melden/_inhalt_servicenavi.html
+  - 
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Service/LeichteSprache/_inhalt.html
+  - 
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Service/Gebaerdensprache/_inhalt.html
+  - English
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/EN/Themes/Society-Environment/Population/Census2022/_node.html
+  - 
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Home/_inhalt.html
+  - 
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Service/Suche/suche_node.html
+  - Menü
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Service/Sitemap/sitemap_node.html
+  - Übersicht: Themen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/_inhalt.html
+  - Themen im Fokus
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/_inhalt.html#themaHeadline_1425464_1
+  - 35 Jahre Deutsche Einheit
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Querschnitt/35-Jahre-Deutsche-Einheit/_inhalt.html
+  - Der Durchschnittsmensch in Deutschland
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Im-Fokus/Durchschnittsmensch/_inhalt.html
+  - Fachkräfte
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Im-Fokus/Fachkraefte/_inhalt.html
+  - Klima
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Im-Fokus/Klima/_inhalt.html
+  - Rente
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Im-Fokus/Rente/_inhalt.html
+  - Gesellschaft und Umwelt
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/_inhalt.html#themaHeadline_1425464_2
+  - Bevölkerung
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/_inhalt.html
+  - Bildung, Forschung und Kultur
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Bildung-Forschung-Kultur/_inhalt.html
+  - Einkommen, Konsum und Lebensbedingungen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Einkommen-Konsum-Lebensbedingungen/_inhalt.html
+  - Gesundheit
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Gesundheit/_inhalt.html
+  - Gleichstellungsindikatoren
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Querschnitt/Gleichstellungsindikatoren/_inhalt.html
+  - Nachhaltigkeitsindikatoren
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Nachhaltigkeitsindikatoren/_inhalt.html
+  - Registerzensus
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Registerzensus/_inhalt.html
+  - Soziales
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Soziales/_inhalt.html
+  - Umwelt, Umweltökonomische Gesamtrechnungen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Umwelt/_inhalt.html
+  - Verkehrsunfälle
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Verkehrsunfaelle/_inhalt.html
+  - Wohnen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Gesellschaft-Umwelt/Wohnen/_inhalt.html
+  - Wirtschaft
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/_inhalt.html#themaHeadline_1425464_3
+  - Außenhandel
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Wirtschaft/Aussenhandel/_inhalt.html
+  - Groß- und Einzelhandel
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Wirtschaft/Grosshandel-Einzelhandel/_inhalt.html
+  - Globalisierungsindikatoren
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Wirtschaft/Globalisierungsindikatoren/_inhalt.html
+  - Konjunkturindikatoren
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Wirtschaft/Konjunkturindikatoren/_inhalt.html
+  - Preise
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Wirtschaft/Preise/_inhalt.html
+  - Volkswirtschaftliche Gesamtrechnungen, Inlandsprodukt
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Wirtschaft/Volkswirtschaftliche-Gesamtrechnungen-Inlandsprodukt/_inhalt.html
+  - Branchen und Unternehmen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/_inhalt.html#themaHeadline_1425464_4
+  - Bauen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Bauen/_inhalt.html
+  - Dienstleistungen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Dienstleistungen/_inhalt.html
+  - Energie
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Energie/_inhalt.html
+  - Gastgewerbe, Tourismus
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Gastgewerbe-Tourismus/_inhalt.html
+  - Handwerk
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Handwerk/_inhalt.html
+  - Industrie, Verarbeitendes Gewerbe
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Industrie-Verarbeitendes-Gewerbe/_inhalt.html
+  - Land- und Forstwirtschaft, Fischerei
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Landwirtschaft-Forstwirtschaft-Fischerei/_inhalt.html
+  - Transport und Verkehr
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Transport-Verkehr/_inhalt.html
+  - Unternehmen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Branchen-Unternehmen/Unternehmen/_inhalt.html
+  - Arbeit
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/_inhalt.html#themaHeadline_1425464_5
+  - Arbeits- und Lohnnebenkosten
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Arbeit/Arbeitskosten-Lohnnebenkosten/_inhalt.html
+  - Arbeitsmarkt
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Arbeit/Arbeitsmarkt/_inhalt.html
+  - Verdienste
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Arbeit/Verdienste/_inhalt.html
+  - Staat
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/_inhalt.html#themaHeadline_1425464_6
+  - Bürokratiekosten
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Staat/Buerokratiekosten/_inhalt.html
+  - Justiz und Rechtspflege
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Staat/Justiz-Rechtspflege/_inhalt.html
+  - Öffentliche Finanzen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Staat/Oeffentliche-Finanzen/_inhalt.html
+  - Öffentlicher Dienst
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Staat/Oeffentlicher-Dienst/_inhalt.html
+  - Steuern
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Staat/Steuern/_inhalt.html
+  - Länder und Regionen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/_inhalt.html#themaHeadline_1425464_7
+  - Europa in Zahlen
+    https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/DE/Themen/Laender-Regionen/Europa/_inhalt.html
+page: https://ergebnisse.zensus2022.de/datenbank/online
+  1,727 bytes
+  0 matching link(s)
