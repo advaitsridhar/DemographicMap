@@ -169,6 +169,13 @@ class Topic:
     # columns are still whatever is left after the geography -- which is what
     # keeps Ethiopia working, whose ethnic-group columns are not named "ETH_".
     prefix: str = ""
+    # A group whose published label this map shows under a different name.
+    # Only for a stated, documented reading of what the source's own category
+    # means -- not for tidying wording, which belongs in canonical_groups where
+    # every country can see it. Colombia is the case and the only one: its
+    # census category is "Ninguno de los anteriores", none of the five
+    # recognised groups, which the source renders "No ethnic group".
+    relabel: dict[str, str] | None = None
     year: int | None = None
     source: str = ""
     note: str = ""
@@ -781,7 +788,17 @@ COLOMBIA = Country(
     # second is not a language composition -- it is yes/no/unknown about one
     # group -- and collecting "everything that is not geography" sums both and
     # reports 113% of the population.
-    topics=(Topic("Individuals", "ethnicity", prefix="ETH_"),),
+    topics=(Topic("Individuals", "ethnicity", prefix="ETH_",
+                  # "No ethnic group" is what the Bureau calls Colombia's
+                  # "Ninguno de los anteriores" -- none of the five recognised
+                  # groups. Shown here as Mestizo, which is an assumption this
+                  # build makes and not a category DANE published: the census
+                  # never asked whether anyone was mestizo, and the 87.6% it
+                  # covers includes white Colombians, who are a distinct group
+                  # in every other source on this map. It is the conventional
+                  # reading of that residual in Colombian demography, and it is
+                  # still a reading.
+                  relabel={"No ethnic group": "Mestizo"}),),
     # Read off the two lists of leftovers, one row to one shape.
     #
     # The archipelago is the one that mattered beyond itself: geoBoundaries
@@ -815,10 +832,87 @@ COLOMBIA = Country(
 )
 
 
+JAMAICA = Country(
+    iso3="JAM",
+    name="Jamaica",
+    year=2011,
+    source=("Statistical Institute of Jamaica, Population and Housing Census "
+            "2011: General Report Volume 1, Table 3.1 (ethnic origin) and the "
+            "religion tables, prepared as subnational tables by the U.S. "
+            "Census Bureau"),
+    licence="CC BY-IGO, published via HDX",
+    dataset="jamaica-subnational-boundaries-and-tabular-data",
+    out="jamaica_parish.json",
+    levels={1: "admin1"},
+    # One sheet, two questions, which is Burma's case: read whole it comes to
+    # 2.998 times the population, because it holds the ethnicity columns, the
+    # religion columns, and religion's own total. Each topic takes its prefix,
+    # and religion names its denominator outright -- RLG_RTOTL is a RLG_
+    # column, so left unnamed it would be collected as the largest
+    # denomination in the country, being the sum of all the others.
+    topics=(Topic("Ethnicity and Religion", "ethnicity", prefix="ETH_"),
+            Topic("Ethnicity and Religion", "religion", prefix="RLG_",
+                  denominator="Total population (religion)")),
+    note=("2011 census, by parish. Ethnic origin and religion are separate "
+          "questions with separate universes: 2,683,707 people answered the "
+          "first and 2,683,105 the second."),
+)
+
+
+SAINT_VINCENT = Country(
+    iso3="VCT",
+    name="Saint Vincent and the Grenadines",
+    year=2012,
+    source=("Saint Vincent and the Grenadines Statistical Office, 2012 "
+            "Population and Housing Census, prepared as subnational tables by "
+            "the U.S. Census Bureau"),
+    licence="CC BY-IGO, published via HDX",
+    dataset="saint-vincent-and-the-grenadines-subnational-boundaries-and-"
+            "tabular-data",
+    out="saint_vincent_parish.json",
+    # Parishes only. The file's second order is 221 enumeration districts,
+    # which are census geography rather than places anyone draws: geoBoundaries
+    # has no counterpart, so claiming that level would be claiming shapes that
+    # do not exist.
+    levels={1: "admin1"},
+    # The same two-question sheet as Jamaica's, and one extra reason for the
+    # prefixes here: a PARISH column carries the parish *name* as text, and
+    # "everything that is not geography" would read it as a group.
+    topics=(Topic("Ethnicity and Religion", "ethnicity", prefix="ETH_"),
+            Topic("Ethnicity and Religion", "religion", prefix="RLG_")),
+    note="2012 census, by parish.",
+)
+
+
+BAHAMAS = Country(
+    iso3="BHS",
+    name="The Bahamas",
+    year=2010,
+    source=("The Commonwealth of The Bahamas 2010 Census of Population and "
+            "Housing, Table 8.0: Total Population by Sex, Age Group and "
+            "Racial Group, prepared as subnational tables by the U.S. Census "
+            "Bureau"),
+    licence="CC BY-IGO, published via HDX",
+    dataset="the-bahamas-subnational-boundaries-and-tabular-data",
+    out="bahamas_island.json",
+    levels={1: "admin1"},
+    # RCE_ and nothing else. The Individuals sheet also carries eight CIT_
+    # columns -- Bahamian, Haitian, Jamaican, Guyanese, Canadian, American,
+    # British, other -- and that is citizenship, which is what Nigeria's,
+    # Sudan's and Libya's whole workbooks were refused for. Read together they
+    # come to three times the population.
+    topics=(Topic("Individuals", "ethnicity", prefix="RCE_"),),
+    note=("2010 census, by island. The race question, not the citizenship "
+          "question that shares its sheet. The file's own dates are a 2021 "
+          "extraction; the census is the one its data dictionary cites."),
+)
+
+
 COUNTRIES: dict[str, Country] = {
     c.iso3: c for c in (PHILIPPINES, ETHIOPIA, MYANMAR, UKRAINE,
                         PAKISTAN, CENTRAL_AFRICAN_REPUBLIC, MALI,
-                        DEMOCRATIC_REPUBLIC_OF_THE_CONGO, COLOMBIA)}
+                        DEMOCRATIC_REPUBLIC_OF_THE_CONGO, COLOMBIA,
+                        JAMAICA, SAINT_VINCENT, BAHAMAS)}
 
 
 def discover(limit: int, sheets: bool) -> int:
@@ -1199,6 +1293,14 @@ def read(book, country: Country,
     else:
         total = denominator(names, aliases, topic.prefix)
     found = groups(names, aliases, total, by_sex, topic.prefix)
+    if topic.relabel:
+        unseen = set(topic.relabel) - set(found.values())
+        if unseen:
+            raise SystemExit(
+                f"{country.iso3} {topic.sheet}: relabel names {sorted(unseen)}, "
+                f"which this sheet does not publish. A rename that matches "
+                f"nothing is a rename that silently stopped applying.")
+        found = {i: topic.relabel.get(label, label) for i, label in found.items()}
     if not found:
         raise SystemExit(
             f"{country.iso3} {topic.sheet}: no group columns to read"

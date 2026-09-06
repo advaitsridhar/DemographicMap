@@ -746,11 +746,63 @@ RUSSIAN_LANGUAGE: dict[str, str] = {
     "Юитский":                      "Siberian Yupik",
 }
 
-RUSSIAN = {"ethnicity": RUSSIAN_ETHNICITY, "language": RUSSIAN_LANGUAGE}
+# ---------------------------------------------------------------------------
+# Sources that publish their groups in their own language
+#
+# Brazil's 2022 census, read from IBGE's SIDRA API. The religion labels already
+# reached the right canonical groups through the tables above -- "Católica
+# Apostólica Romana" has folded into Christianity for as long as Brazil has
+# been on this map -- and the states still read "Católica Apostólica Romana
+# 56.7%", because those tables reach the *index* and not the record. Same
+# half-fix as Russia's, found the same way.
+#
+# Two of the five colour-or-race categories are deliberately not translated
+# into a category some other country also has.
+#
+# "Parda" becomes Pardo and stays Brazil's own. The table above says why in the
+# case it was written for: Brazil's parda, the UK's Mixed and the US "two or
+# more races" are three different questions with three different answer sets,
+# and a person counted in one would not necessarily be counted in the others.
+# Translating it to "Mixed" would merge 92 million people into a category the
+# census did not ask about.
+#
+# "Amarela" becomes Asian, which is the opposite call and needs its own reason:
+# Brazil's own country record, from the Factbook, already calls these people
+# Asian. Leaving the states as "Amarela" keeps a country apart from its own
+# states, which is the split this whole exercise exists to close.
+BRAZIL_ETHNICITY: dict[str, str] = {
+    "Branca":   "White",
+    "Parda":    "Pardo",
+    "Preta":    "Black",
+    "Amarela":  "Asian",
+    "Indígena": "Indigenous",
+}
+
+BRAZIL_RELIGION: dict[str, str] = {
+    "Católica Apostólica Romana": "Roman Catholic",
+    "Evangélicas":                "Evangelical",
+    "Espírita":                   "Spiritism",
+    "Umbanda e Candomblé":        "Umbanda and Candomblé",
+    "Outras religiosidades":      "Other religions",
+    "Sem religião":               "No religion",
+    "Sem declaração":             "Not stated",
+    "Não sabe":                   "Does not know",
+}
+
+# Keyed by the body that publishes the labels, because the tables are facts
+# about a source rather than about a language: a second Portuguese-speaking
+# census would have its own categories and its own translations of them.
+TRANSLATIONS: dict[str, dict[str, dict[str, str]]] = {
+    "Rosstat": {"ethnicity": RUSSIAN_ETHNICITY, "language": RUSSIAN_LANGUAGE},
+    "IBGE": {"ethnicity": BRAZIL_ETHNICITY, "religion": BRAZIL_RELIGION},
+}
+
+# Kept for the Russian adapter and its tests, which name it directly.
+RUSSIAN = TRANSLATIONS["Rosstat"]
 
 
-def translate_russian(field: str, label: str) -> str | None:
-    """The English name for one Rosstat group, or None if it has none.
+def translate(source: str, field: str, label: str) -> str | None:
+    """The English name for one group of one source, or None if it has none.
 
     Applied by the adapter rather than folded into the tables above, because
     the tables only reach the group *index* -- the name a bar carries on the
@@ -758,11 +810,16 @@ def translate_russian(field: str, label: str) -> str | None:
     while Tatarstan still read "Русские 40.3%", which is half a fix.
 
     None is a refusal, not a fallback. A label with no entry here would
-    otherwise reach the map in Cyrillic, and one untranslated row in a chart
-    of translated ones reads as a different kind of thing rather than as a
-    gap in this table.
+    otherwise reach the map in its own language, and one untranslated row in a
+    chart of translated ones reads as a different kind of thing rather than as
+    the gap in this table that it is.
     """
-    return RUSSIAN.get(field, {}).get(" ".join(label.split()))
+    return TRANSLATIONS.get(source, {}).get(field, {}).get(" ".join(label.split()))
+
+
+def translate_russian(field: str, label: str) -> str | None:
+    """Rosstat's, by the name the Russian adapter and its tests already use."""
+    return translate("Rosstat", field, label)
 
 
 # Groups that are the absence of an answer rather than an answer: a residual
