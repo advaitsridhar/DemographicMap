@@ -407,6 +407,73 @@ def _pick_composition_block(text: str) -> str:
     return dated[-1] if dated else usable[0]
 
 
+# A part that carries no readable share is still usually a group: the Factbook
+# writes Mali's plurality language as "Bambara (official)" with no figure, and
+# names South Sudan's Shilluk, Azande, Bari and fifteen more without one. Those
+# used to be dropped, which is the worst of the three possible outcomes -- the
+# remaining slivers were then presented as a whole composition, so Mali read as
+# a country where the language half of it speaks does not exist. Keeping the
+# member with an explicit gap says what the source actually says: this group is
+# here, its share is not published.
+#
+# Three shapes are not members, and each is recognised by where it sits rather
+# than by what it means:
+_NOT_A_MEMBER = re.compile(
+    r"^(?:including|and|or|some|mostly|mainly|largely|chiefly|such\s+as|"
+    r"with|plus|note)\b", re.I)
+
+
+def _shareless_member(parts: list[str], i: int) -> dict[str, Any] | None:
+    """The row for a part naming a group the source gives no figure for.
+
+    Only ever called for a text that carries at least one real share. A list
+    with no figures anywhere is not a composition missing one member, it is a
+    list of names, and ``parse_languages`` already renders those as the whole
+    field being unquantified. Reading them here instead would turn the EU's
+    24 official languages into 24 gaps in a chart nobody asked for.
+    """
+    part = parts[i]
+    # (1) Commentary rather than a group: "including Liberian English variants"
+    #     after Liberia's English, "some 839 living indigenous languages".
+    if _NOT_A_MEMBER.match(part):
+        return None
+    # (2) A count of languages rather than a language: PNG's and the Solomon
+    #     Islands' "120 indigenous languages".
+    if re.match(r"^\d", part):
+        return None
+    # (3) One item of a name the comma-split tore apart. South Africa's
+    #     "ancestral, tribal, animist, or other traditional African religions
+    #     5.4%" is a single group whose share sits on the last fragment, and
+    #     Botswana's bare "other" belongs to "including Kgalagadi ... 7%".
+    #     What marks it is not the fragment but what closes the run it is in:
+    #     a following part opening with "or" or "including" means every
+    #     shareless part back to here was part of that one name.
+    for j in range(i + 1, len(parts)):
+        if re.match(r"^(?:or|including)\b", parts[j], re.I):
+            return None
+        if _SHARE.search(re.sub(r"\([^()]*\)", " ", parts[j])):
+            break
+    label = re.sub(r"\([^()]*\)", " ", part)
+    # A figure the parser could not read -- the Factbook's "Christian 93/1%"
+    # for the DRC, Andorra's "Christian 89.5" with the sign missing -- leaves
+    # digits behind. The name in front of it is still the group; the mangled
+    # figure is not repaired here, because inferring 93.1 from "93/1" is a
+    # guess, and a named group with a stated gap is the honest reading.
+    label = re.split(r"[<>\d]", label)[0]
+    # Qualifiers are deliberately *not* stripped: they belong to a measurement,
+    # and there is none. Rwanda's census category is "more than one language",
+    # which stripping would leave as the nonsense "one language".
+    label = re.sub(r"\s+", " ", label).strip(" .,;-")
+    if not label or len(label) > 80 or not re.search(r"[^\W\d_]", label):
+        return None
+    # Cutting at the digit can leave the qualifier that introduced it and
+    # nothing else -- Chad's "more than 120 languages", Niger's "over", Taiwan's
+    # "approximately". A group name that is only a qualifier is not a group.
+    if not _QUALIFIER.sub(" ", label).strip(" .,;-"):
+        return None
+    return {"group": label, "pct": None, "pct_status": NOT_AVAILABLE}
+
+
 def parse_composition(text: str | None, *, source: str | None = None) -> list[dict[str, Any]] | None:
     """Turn ``"Hindu 79.8%, Muslim 14.2%, other 0.9%"`` into structured shares.
 
@@ -438,10 +505,11 @@ def parse_composition(text: str | None, *, source: str | None = None) -> list[di
                    r"\1\2\3%", clean)
 
     out: list[dict[str, Any]] = []
-    for part in _split_top_level(clean, ","):
-        part = part.strip(" .")
-        if not part:
-            continue
+    parts = [p for p in (q.strip(" .") for q in _split_top_level(clean, ",")) if p]
+    # Whether this text is a composition at all, which is what makes a member
+    # with no figure worth recording. Decided once, over the whole text.
+    quantified = _SHARE.search(clean) is not None
+    for i, part in enumerate(parts):
         # Parenthetical asides go before the figure is read, not after. They
         # carry percentages of their own -- Iraq's "Muslim (official) 95-98%
         # (Shia 61-64%, Sunni 29-34%)" -- and a search that can see inside them
@@ -466,10 +534,11 @@ def parse_composition(text: str | None, *, source: str | None = None) -> list[di
             # Both of those list several things: a semicolon, or more than one
             # figure. One figure and no list is the case worth trusting.
             aside = " ".join(re.findall(r"\(([^()]*)\)", part))
-            if ";" in aside or aside.count("%") != 1:
-                continue
-            match = _SHARE.search(part)
+            match = None if (";" in aside or aside.count("%") != 1) else _SHARE.search(part)
             if not match:
+                row = _shareless_member(parts, i) if quantified else None
+                if row:
+                    out.append(row)
                 continue
         bound = match.group(1)
         low = float(match.group(2).replace(",", ""))

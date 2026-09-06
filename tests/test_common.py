@@ -103,14 +103,26 @@ class ParseComposition(unittest.TestCase):
         # Saudi Arabia publishes no overall share: the only figures describe how
         # its Muslim citizens divide. Inventing one from them would be worse
         # than the gap.
+        #
+        # The groups themselves are still named, with the share recorded as the
+        # gap it is. That is what the source says, and it beats the silence
+        # this returned before, which read as a country that was never asked.
         got = common.parse_composition(
             "Muslim (official; citizens are 85-90% Sunni and 10-12% Shia), other")
-        self.assertIsNone(got)
+        self.assertEqual([r["group"] for r in got], ["Muslim", "other"])
+        for row in got:
+            self.assertIsNone(row["pct"])
+            self.assertEqual(row["pct_status"], common.NOT_AVAILABLE)
 
     def test_a_lone_share_inside_an_aside_is_used(self):
         # Sudan states the group's own share there and nowhere else.
         got = common.parse_composition("Sudanese Arab (approximately 70%), Fur, Beja")
-        self.assertEqual(got, [{"group": "Sudanese Arab", "pct": 70.0}])
+        self.assertEqual(got[0], {"group": "Sudanese Arab", "pct": 70.0})
+        # Fur and Beja are named by the same sentence and given no figure. The
+        # Factbook names eleven of Sudan's peoples that way; dropping them left
+        # one group standing for a country and a composition summing to 70%.
+        self.assertEqual([r["group"] for r in got[1:]], ["Fur", "Beja"])
+        self.assertTrue(all(r["pct"] is None for r in got[1:]))
 
     def test_a_qualifier_is_a_bound_not_part_of_the_name(self):
         # "Han Chinese more than 95%" is not a group called "Han Chinese more
