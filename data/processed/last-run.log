@@ -1,39 +1,6 @@
-  2 USCB workbooks; using 'Jamaica_uscb_202302.xlsx'
-Jamaica: https://data.humdata.org/dataset/cd75b1bc-ec9a-4ab3-9f7a-b36a0ab71626/resource/2a0c52bb-9a55-44fa-b4d2-68966bfcc85d/download/jamaica_uscb_202302.xlsx
-  438,450 bytes
-  Ethnicity and Religion [ETH_]: 15 rows, 7 groups, denominator 'Total population (ethnicity)'
-    admin1: 2,683,707 against the country's own 2,683,707 -- exactly
-    every one of 14 areas reaches its published total
-  Ethnicity and Religion [RLG_]: 15 rows, 19 groups, denominator 'Total population (religion)'
-    admin1: 2,678,981 against the country's own 2,678,981 -- exactly
-    every one of 14 areas reaches its published total
-  wrote data/processed/jamaica_parish.json (60 kB)
-  14 areas: 14 admin1
-Saint Vincent and the Grenadines: https://data.humdata.org/dataset/571447eb-d68f-48bd-8383-f5481b70ab5c/resource/cd246881-5f19-4be4-8bc5-1ef7a17b4247/download/saint_vincent_and_the_grenadines_uscb_202109.xlsx
-  384,613 bytes
-  Ethnicity and Religion [ETH_]: 235 rows, 7 groups, denominator 'Total population'
-    221 rows skipped: another level, or no area name
-    admin1: 109,188 against the country's own 109,188 -- exactly
-    every one of 13 areas reaches its published total
-  Ethnicity and Religion [RLG_]: 235 rows, 18 groups, no published denominator
-    221 rows skipped: another level, or no area name
-    admin1: 109,188 against the country's own 109,188 -- exactly
-  wrote data/processed/saint_vincent_parish.json (47 kB)
-  13 areas: 13 admin1
-The Bahamas: https://data.humdata.org/dataset/73e2f949-a9c1-438d-aae1-0ce544c0ff0a/resource/0c1f9e4e-60db-4cab-a4f0-bbf43594f1f6/download/the_bahamas_uscb_202105.xlsx
-  111,394 bytes
-  Individuals [RCE_]: 19 rows, 9 groups, denominator 'Total population'
-    admin1: 351,461 against the country's own 351,461 -- exactly
-    every one of 18 areas reaches its published total
-  wrote data/processed/bahamas_island.json (31 kB)
-  18 areas: 18 admin1
-  2 USCB workbooks; using 'Colombia_uscb_202210.xlsx'
-Colombia: https://data.humdata.org/dataset/e72c805d-40e1-4fa1-b32d-0bc77c2bf903/resource/5469e274-3f70-4288-8dc0-cd852629ac4c/download/colombia_uscb_202210.xlsx
-  8,634,434 bytes
-  Individuals [ETH_]: 4310 rows, 7 groups, denominator 'Total population with self-reported ethnicity'
-    3154 rows skipped: another level, or no area name
-    admin1: 44,164,417 against the country's own 44,164,417 -- exactly
-    admin2: 44,164,417 against the country's own 44,164,417 -- exactly
-    every one of 1155 areas reaches its published total
-  wrote data/processed/colombia_department.json (2709 kB)
-  1155 areas: 33 admin1, 1122 admin2
+ibge_sidra: state (n3)
+  religion variant v/93 failed (HTTP Error 400: Bad Request)
+  religion variant v/1000093 failed (HTTP Error 400: Bad Request)
+  religion: table 10086 v/allxp answered
+  wrote data/processed/brazil_state.json (65 kB)
+  27 records
