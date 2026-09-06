@@ -1030,6 +1030,93 @@ again (a 2022 percentages table, not the 2009 census) and holds a language
 name rather than a count. It needed no special handling: it is text, `number()`
 returns None, and the reader already skips it.
 
+### Mali again: half the country missing from its own language chart
+
+Mali was live and passing, nine regions of nine, and its country card showed a
+language composition with no Bambara in it.
+
+The Factbook's entry opens `Bambara (official), French 17.2%, Peuhl/Foulfoulbe/
+Fulani 9.4%, ...`. Bambara carries the word "official" and no figure, so the
+parser -- which reads a group only when it finds a share -- dropped the part
+and returned the other eleven. Those eleven sum to **70.9%**, and were rendered
+as Mali's whole language composition. The language about half the country
+speaks did not appear at all.
+
+Our own regional data settles what the right answer is, because it is the same
+2009 census read at the level below. Summing the nine regions:
+
+| | national roll-up | the Factbook's list |
+|---|---|---|
+| Bambara | 51.8% | *(no figure)* |
+| Fula | 8.3% | 9.4% |
+| Dogon | 6.5% | 7.2% |
+| Maraka/Soninke | 5.7% | 6.4% |
+| Sonrhai/Djerma | 5.3% | 5.6% |
+| Malinke | 5.1% | 5.6% |
+| Minianka | 3.8% | 4.3% |
+| Tamasheq | 3.2% | 3.5% |
+| Senufo | 2.0% | 2.6% |
+| Bobo | 1.9% | 2.1% |
+| not stated | 0.8% | 0.7% |
+
+Every member reproduces to about a point. Bambara is the one that does not
+appear, and `French 17.2%` is the one with no counterpart -- the 2009 mother
+tongue table has no French in it anywhere. Neither figure is repaired here.
+The Factbook's text is what the Factbook says, and inventing 46.3% for Bambara
+from the arithmetic would be exactly the kind of plausible guess this project
+refuses.
+
+What changed is that a group the source **names** is no longer thrown away for
+having no figure attached. Bambara is now a member of the composition with its
+share recorded as a gap. Three outcomes were possible and this is the least bad
+one: a wrong share would at least be visible, a named member with a stated gap
+is honest, and silently dropping it is the failure that reads as though the
+question was never asked.
+
+It was never only Mali. The same rule was discarding **73** named groups, among
+them eighteen of South Sudan's peoples -- Shilluk, Azande, Bari, Kakwa, Murle
+and the rest, leaving an ethnicity chart of two groups summing to 52.5% -- and
+eleven of Sudan's. Sierra Leone gained a real language list in place of four
+fragments the old name-only path had cut inside parentheses (`English (official`,
+`regular use limited to literate minority)`). No group that already had a share
+changed by so much as a decimal: that was checked across all 260 profiles and
+711 compositions before and after.
+
+Three shapes are *not* members, and each is recognised by where it sits rather
+than by what it means. Commentary that opens with a joining word (`including
+Liberian English variants`). A count of languages rather than a language (`120
+indigenous languages`). And one item of a name the comma-split tore apart --
+South Africa's `ancestral, tribal, animist, or other traditional African
+religions 5.4%` is a single group whose share sits on the last fragment, marked
+not by the fragments but by what closes the run they are in.
+
+#### And the same language under two spellings
+
+The other half of the same bug. Mali is described by two sources at once, the
+Factbook nationally and the 2009 census regionally, and they spell five
+languages differently. Unmapped, each label keys on itself, so the world filter
+offered `Tamasheq` over nine Malian regions beside `Tamacheq` over Mali entire,
+as though they were different languages spoken by different people.
+
+`Fula/fulfulbe` and `Peuhl/Foulfoulbe/Fulani`; `Maraka/soninke` and
+`Maraka/Soninke`; `Sonrai/djerma` and `Sonrhai/Djerma`; `Tamasheq` and
+`Tamacheq`; `Senufo` and `Senoufo`. Mali's 28 language groups are now 23, and
+`Fula` reaches Burkina Faso and Finland as well.
+
+Two of them keep the weld their source made. `Maraka/Soninke` and
+`Sonrhai/Djerma` each name two peoples the Malian census counts together, and
+the canonical form is the source's own spelling rather than a tidier invented
+one: folding them into a bare "Soninke" or "Songhai" would merge a pair with
+one of its own members the moment another country reports that member alone.
+
+**The Central African Republic is deliberately left out of this.** Its `Fulah`
+and `Peulh` look obviously foldable into Fula, and are not: CAR's census lists
+`Fulah`, `Fulata` and `Peulh` as three separate rows *of the same prefecture*
+(Bamingui-Bangoran has Fulah 11.4%, Fulata 0.0%, Peulh 0.0%), so its
+classification distinguishes them and folding would sum categories the source
+chose to keep apart. Mali's forms are safe because no Malian record carries two
+of them at once, which is asserted by a test rather than assumed.
+
 ### The Democratic Republic of the Congo: the first source here that is not a census
 
 Everything else on this map is a census. This is the *Enquête 1-2-3*, and it is
@@ -1126,6 +1213,85 @@ reader that did not look. Both completeness checks now test what was read
 rather than whether a key exists, and the refusal prints the largest groups it
 summed. `0.1355` says something is wrong; `largest: не указана 446` says what,
 and that change turned four runs of guessing into one.
+
+### Russia: the join that matched one subject of 83
+
+The adapter was correct and the map was empty. Reconciliation had passed at
+1.0000 on both tables, all 83 subjects were in `data/processed`, and the site
+showed 83 shapes with no ethnicity and no language -- which reads exactly like
+a census that did not ask.
+
+Three things were wrong, in a row, and each hid the next.
+
+**The code index was built before anything could fill it.** Matching on ISO
+3166-2 rather than on a romanisation is the right design and was the whole
+point of this adapter. But the codes are not on the shapes: geoBoundaries
+publishes `shapeName`, `shapeID`, `shapeGroup`, `shapeType` and nothing else.
+They arrive from the Wikidata adapter -- whose rows sit in the same list being
+matched, and are merged only after that loop finishes. So the index was read at
+the one moment it was guaranteed to be empty, all 83 Cyrillic sheet names fell
+through to a name pass against English shape names, and 82 landed nowhere. The
+one that matched did so on its declared alias, which is what made a total
+failure look like a near miss.
+
+Rebuilding the index from the code-bearing rows instead does not work either,
+and that was worth learning: it puts an exact-key index where a fuzzy matcher
+belongs. `norm()` takes "Moscow" and "Moscow Oblast" to the same key, and
+"Karelia" and "Republic of Karelia" to different ones, so the same eight
+subjects were lost -- two to a false ambiguity and six to a false miss. The
+matcher bridges those with `contains` and `prefix`; an index cannot.
+
+The fix is ordering, not keying. A row that names a code and misses on its name
+is held back, and matched against the entities **after** the merge, when they
+finally carry the codes Wikidata gave them. 83 of 83.
+
+**A dict is not a code.** Every field in `METADATA` is normalised to
+`{"status": ...}` when a row does not carry it, and 188 Wikidata admin-1 rows
+hold that dict in `iso_3166_2`. A dict is unhashable, so `code in a1_by_code`
+raised `TypeError` rather than missing -- killing the entire join, for every
+country, on the first row that reached it.
+
+**And the refresh reported success anyway.** `build_all.sh` runs without
+`set -e` deliberately, so an adapter behind a blocked host can be skipped and
+still leave a working site. That also made a crash in the *join* survivable:
+the step died, `site/data` kept the previous build's contents, the script
+exited 0 from the `echo` at the bottom, and the workflow opened a data PR
+described as a successful refresh. The join step is now explicitly fatal.
+
+That is the same shape as the three bugs inside this adapter, one level up: a
+check that confirms the pipeline ran rather than that it produced anything.
+Empty is the dangerous outcome precisely because it is quiet.
+
+**And a fourth thing, in the other direction.** Adding `iso_3166_2` to
+`METADATA` had one effect and it was not the intended one. `METADATA` is used
+in exactly one place: it is the exclusion list `conflicting()` consults when
+two rows land on the same shape, to decide whether they are one place written
+twice or two different places. A Wikidata Q-id is excluded because it is unique
+per item, so counting it would make every rivalry look like a conflict. An ISO
+3166-2 code is the opposite of that -- shared and standard, so two rows holding
+*different* codes are two different official units by definition.
+
+Excluding it deleted the strongest evidence that function had. Lithuania's
+Alytus County has two rivals, `Alytus City Municipality` (LT-02) and `Alytus
+District Municipality` (LT-03), and the collision pass had been refusing both
+because nothing separated them. With the codes invisible they read as one place
+listed twice, the duplicate exemption applied, and the shape took the district
+municipality's **25,356** people in place of the county's hundred and forty
+thousand. Laos' Vientiane took Vientiane Province's 388,833 over the
+prefecture's the same way.
+
+Two honest gaps became two confident wrong numbers, which is the trade this
+file exists to refuse. The code is comparable again.
+
+**A correction to what is written above.** This adapter's notes said Wikidata
+carried a code for 82 of Russia's 83 subjects and that Sakha was the exception
+needing a name. Counting them gives 83, `RU-SA` among them; the belief was
+never measured. The alias is kept as a spare if that row ever loses its code,
+but it is not the load-bearing part it was described as -- and the test that
+was supposed to guard this asserted it against the *built* file, where the
+adapter writes its own code onto every shape it matches. It therefore returned
+83 no matter what Wikidata held, and passed throughout the period the join was
+producing one subject.
 
 ### Bangladesh: a mirror, and a merged sheet that is wrong
 

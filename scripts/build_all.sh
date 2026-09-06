@@ -109,7 +109,16 @@ if [ "${SKIP_TILES:-0}" != "1" ]; then
 fi
 
 step "Join boundaries and attributes into site/data"
-python3 scripts/build_entities.py
+# Explicitly fatal. This script deliberately runs without "set -e" so that an
+# adapter behind a blocked host can be skipped and still leave a working site
+# -- but that also meant a crash *here* was survivable, and this is the step
+# whose whole job is to produce site/data. One did crash: the quarterly
+# refresh ran every adapter, died joining them, left the previous build's
+# site/data untouched, exited 0 from the echo at the bottom, and opened a data
+# PR reporting success. Russia's 83 subjects were in data/processed and absent
+# from the map, which is the failure this project cares about most -- not a
+# wrong answer, a missing one that nothing announced.
+python3 scripts/build_entities.py || exit 1
 
 # Runs here rather than in checks.yml because it needs the CGAZ boundary files
 # (~550 MB, not in git), which only the full pipeline has fetched. It reports
