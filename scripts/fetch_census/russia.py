@@ -47,6 +47,9 @@ from ._shared import (
     write_json,
 )
 
+# After ._shared, which is what puts scripts/ on the path.
+import canonical_groups  # noqa: E402
+
 # Where the two workbooks live once fetched. They are checked in, which is
 # this project's existing answer for a source with no reliably fetchable URL --
 # Nepal's report, Sri Lanka's tables and India's C-16 workbooks are all read
@@ -461,6 +464,40 @@ def check(field: str, tables: dict[str, dict[str, Any]]) -> None:
             f"was last time.")
 
 
+def englished(field: str, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Rosstat's group names, in the language the rest of the map is in.
+
+    Every other adapter here emits English already -- Ukraine's oblasts
+    publish "Romanian", not "румунська" -- and Russia was the exception, so
+    83 subjects read "Русские 90.2%" and the world filter offered "Русские"
+    as a different answer from the "Russian" it already had from Estonia,
+    Latvia and Lithuania. The same people, counted by four censuses, split
+    across two alphabets.
+
+    Translating a group is not the romanisation this adapter refuses. That
+    refusal is about matching a *shape*: an invented English spelling of a
+    place name attaches real figures to the wrong region and nothing on the
+    map shows it, which is why subjects are matched on their ISO code. A group
+    name is the label a bar carries, and these are declared one at a time in
+    canonical_groups rather than transliterated by rule.
+
+    An unknown label stops the run. It would otherwise reach the map in
+    Cyrillic, and one untranslated row among translated ones reads as a
+    different kind of thing rather than as the gap in a table that it is.
+    """
+    out = []
+    for row in rows:
+        name = canonical_groups.translate_russian(field, row["group"])
+        if name is None:
+            raise SystemExit(
+                f"{field}: no English name for {row['group']!r}. Rosstat "
+                f"publishes a group this build has never seen; add it to "
+                f"canonical_groups.RUSSIAN_{field.upper()} rather than "
+                f"letting one Cyrillic label through a translated chart.")
+        out.append({**row, "group": name})
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--out", default="russia_subject.json")
@@ -486,8 +523,8 @@ def main() -> int:
             if not got or not got["counts"]:
                 values[field] = gap(NOT_AVAILABLE)
                 continue
-            values[field] = shares(
-                got["counts"], total=got["published"] or None)
+            values[field] = englished(
+                field, shares(got["counts"], total=got["published"] or None))
         records.append(record(
             code, sheet, level="admin1", parent="RUS",
             country="RUS", iso_3166_2=code,
