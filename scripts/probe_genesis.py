@@ -111,7 +111,34 @@ REGION_CODES = {"DLAND": "Land (16)", "KREISE": "Kreis (~400)",
 NOT_JSON = ("data/tablefile", "data/chart2table", "data/cube", "data/result")
 
 
-def once(base: str, path: str, params: dict[str, object], method: str) -> object:
+def _follow(url: str, params: dict[str, object], method: str, accept: str) -> object:
+    """Re-issue a request against an absolute URL, once, after a 307/308."""
+    encoded = urllib.parse.urlencode(params)
+    if method == "GET":
+        req = urllib.request.Request(f"{url}?{encoded}", headers={"Accept": accept})
+    else:
+        req = urllib.request.Request(
+            url, data=encoded.encode(),
+            headers={"Accept": accept,
+                     "Content-Type": "application/x-www-form-urlencoded"},
+            method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=TIMEOUT) as fh:
+            body = fh.read()
+    except urllib.error.HTTPError as err:
+        return {"__error__": f"after redirect: HTTP {err.code} {err.reason or ''}".strip()}
+    except Exception as err:                        # noqa: BLE001 -- reported
+        return {"__error__": f"after redirect: {type(err).__name__}: {err}"}
+    try:
+        return json.loads(body)
+    except ValueError:
+        text = body.decode("utf-8", "replace")
+        return {"__text__": f"{len(body)} bytes; "
+                            f"{' | '.join(text.splitlines()[:3])[:400]}"}
+
+
+def once(base: str, path: str, params: dict[str, object], method: str,
+         *, _redirected: bool = False) -> object:
     """One call, by one method. Returns the parsed body or an error marker."""
     encoded = urllib.parse.urlencode(params)
     accept = "*/*" if path in NOT_JSON else "application/json"
@@ -128,6 +155,17 @@ def once(base: str, path: str, params: dict[str, object], method: str) -> object
         with urllib.request.urlopen(req, timeout=TIMEOUT) as fh:
             body = fh.read()
     except urllib.error.HTTPError as err:
+        # 307 and 308 preserve the method and body; urllib follows neither for
+        # a POST, so GENESIS-Online's redirect came back as an error and was
+        # nearly filed as "this instance does not answer". One hop, once, to
+        # the Location it names -- and a redirect that does not name one, or
+        # points off the host, is reported rather than followed.
+        target = err.headers.get("Location") if err.headers else None
+        if err.code in (307, 308) and target and not _redirected:
+            landing = urllib.parse.urljoin(f"{base}/{path}", target)
+            if urllib.parse.urlparse(landing).netloc != urllib.parse.urlparse(base).netloc:
+                return {"__error__": f"HTTP {err.code} -> off-host {target}"}
+            return _follow(landing, params, method, accept)
         return {"__error__": f"HTTP {err.code} {err.reason or ''}".strip()}
     except Exception as err:                        # noqa: BLE001 -- reported
         return {"__error__": f"{type(err).__name__}: {err}"}
