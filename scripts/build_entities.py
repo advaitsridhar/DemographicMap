@@ -358,11 +358,25 @@ def apply_curated(entity: dict[str, Any], row: dict[str, Any], prov: dict[str, A
          "note": prov.get("note"), "license": "See docs/SOURCES.md"})
 
 
+# What makes a row an answer rather than a label. Wikidata supplies a shape's
+# capital, coordinates, inception and ISO code and none of these; a census
+# adapter supplies these. The distinction is what lets a code-matched row merge
+# into a shape a Wikidata row already matched by name, without ever letting two
+# sets of figures land on one shape.
+VALUE_FIELDS = frozenset({"religion", "language", "ethnicity", "population",
+                          "median_age", "sex_ratio", "largest_settlement"})
+
+
+def value_fields(row: dict[str, Any]) -> set[str]:
+    """The questions this row actually answers, gaps not counted."""
+    return {k for k in VALUE_FIELDS if k in row and not is_gap(row[k])}
+
+
 def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     """Adapter values override seeds; gap markers never overwrite real values."""
     for key, value in row.items():
         if key in {"id", "level", "name", "parent", "parent_name", "parent_aliases",
-                   "_source"}:
+                   "match_by", "_source"}:
             continue
         if key == "sources":
             entity.setdefault("sources", []).extend(value or [])
@@ -1040,9 +1054,21 @@ def roll_up_parents(admin1_by_country: dict[str, list[dict[str, Any]]],
 # anywhere else are carrying different claims about the population, whatever
 # their names say. Wikidata gives every item its own Q-id, so counting that as
 # a difference would make every rivalry look like a conflict.
+#
+# iso_3166_2 was added here and does not belong. A Q-id is unique per item,
+# which is why it is excluded; an ISO 3166-2 code is the opposite -- it is
+# shared and standard, so two rows holding *different* codes are two different
+# official units by definition, and that is the strongest evidence this
+# function can be given. Excluding it deleted exactly that evidence, and the
+# duplicate-listing exemption below then handed one shape to whichever rival
+# came last. Lithuania's Alytus County took the 25,356 people of "Alytus
+# District Municipality" (LT-03 on Wikidata, though LT-03 is the county) in
+# place of its own hundred and forty thousand, and Laos' Vientiane took
+# Vientiane Province's 388,833 over the prefecture's. Both had been honest
+# gaps: the collision pass had refused both rivals because nothing separated
+# them, which is the trade this file exists to make.
 METADATA = {"id", "wikidata", "level", "name", "parent", "parent_name",
             "parent_aliases", "aliases", "no_shape", "_source", "sources",
-            "iso_3166_2",
             "country", "point", "coordinates", "bbox", "match"}
 
 
@@ -1477,17 +1503,35 @@ def main() -> int:
         # romanisation. Russia's sheets are Cyrillic and its shapes English,
         # and norm() keeps Cyrillic as Cyrillic on purpose -- a transliteration
         # invented here would be a guess about a name. A code matches or it
-        # does not, and 82 of Russia's 83 shapes carry one.
-        a1_by_code: dict[str, dict[str, Any]] = {}
-        for entity in admin1_by_country.get(iso3, []):
-            code = entity.get("iso_3166_2")
-            if code and code not in a1_by_code:
-                a1_by_code[code] = entity
+        # does not.
+        #
+        # The code is not on the shape. geoBoundaries publishes no ISO 3166-2
+        # column at all -- shapeName, shapeID, shapeGroup, shapeType, and
+        # nothing else -- so the codes reach an entity from the Wikidata
+        # adapter, whose rows are merged only after this loop has finished
+        # matching. An index read off the entities is therefore empty at
+        # exactly the moment it is needed: built that way, all 83 Russian
+        # subjects fell through to the name pass, Cyrillic against English,
+        # and 82 of them landed nowhere. The one that matched did so on an
+        # alias, which is what made the failure look like a near miss instead
+        # of a total one.
+        #
+        # So it is built from the rows that carry the code, keyed by the name
+        # those rows will themselves be matched on. A normalised name claimed
+        # by two different codes is an ambiguity, not a first-wins race, and
+        # is dropped from the index rather than guessed at.
         a2: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for entity in admin2_by_country.get(iso3, []):
             a2[norm(entity["name"])].append(entity)
         hit = miss = ambiguous = outside = collided = declared = 0
         matched: list[tuple[dict[str, Any], dict[str, Any], str]] = []
+        deferred: list[tuple[dict[str, Any], dict[str, Any]]] = []
+        # Which value fields each shape has already been given, and by a row
+        # matched how. The code pass needs this per field rather than per
+        # shape: Wikidata's rows carry a population for almost every shape in
+        # the world, so "has any value already" would refuse every code match
+        # there is, Russia's 83 included.
+        bearing: dict[int, set[str]] = defaultdict(set)
         for row in rows:
             # A row may declare that no boundary of its own exists. The
             # Philippines' highly urbanized cities are drawn inside the
@@ -1517,20 +1561,44 @@ def main() -> int:
                    # historically rather than currently.
                    "point": row_point(row)}
             if row.get("level") == "admin1":
-                # A row that names its code is matched on the code alone when
-                # the boundary file has it. Falling back to the name after a
-                # code miss would defeat the point: the code is the stronger
-                # evidence, and a name match that contradicts it would be the
-                # invisible kind of wrong. A row whose code no shape carries
-                # still gets the ordinary name pass, which is what carries
-                # Sakha, the one Russian shape with no code at all.
+                entity, how = match_name(
+                    key, settle(a1_by_key, [key["name"], *key["aliases"]]))
+                # A row that *asks* to be matched on its ISO 3166-2 code and
+                # did not match by name is held back for the code pass below
+                # rather than counted as a miss. It cannot be resolved here:
+                # the codes are
+                # not on the shapes -- geoBoundaries publishes shapeName,
+                # shapeID, shapeGroup and shapeType and nothing else -- they
+                # arrive from the Wikidata adapter, whose own rows are in this
+                # same list and are merged only after this loop finishes.
+                #
+                # Matching the code against the entities *here* was tried and
+                # is wrong twice over. The index is empty at this point, so all
+                # 83 Russian subjects fell through to the name pass, Cyrillic
+                # against English, and 82 landed nowhere. Rebuilding it from
+                # the code-bearing rows instead does not work either, because
+                # that is an exact-key index standing in for a fuzzy matcher:
+                # norm() takes "Moscow" and "Moscow Oblast" to the same key and
+                # "Karelia" and "Republic of Karelia" to different ones, so the
+                # same eight subjects were lost to an ambiguity and a miss.
+                # Asked for, never assumed. Carrying a code is not a request
+                # to be matched on one, and treating it as one does damage:
+                # Wikidata puts the county code LT-03 on "Alytus District
+                # Municipality", so Lithuania's Alytus County -- which the
+                # name pass had rightly refused that row -- took the
+                # municipality's 25,356 people in place of its own hundred and
+                # forty thousand. Laos' Vientiane took Vientiane Province's
+                # population over the prefecture's the same way. Both are the
+                # mis-match this project ranks below a gap: nothing on the map
+                # would say the number was wrong.
+                #
+                # So only an adapter that cannot be matched by name at all
+                # declares it, and only Rosstat's does.
                 code = row.get("iso_3166_2")
-                if code and code in a1_by_code:
-                    entity, how = a1_by_code[code], "iso_3166_2"
-                else:
-                    entity, how = match_name(
-                        key, settle(a1_by_key,
-                                    [key["name"], *key["aliases"]]))
+                if (entity is None and row.get("match_by") == "iso_3166_2"
+                        and isinstance(code, str) and code):
+                    deferred.append((row, key))
+                    continue
             else:
                 entity, how = match_admin2(key, a2, a1)
             if entity is None:
@@ -1556,6 +1624,62 @@ def main() -> int:
             merge_adapter(entity, row)
             entity["match"] = f"adapter:{how}"
             hit += 1
+            bearing[id(entity)] |= value_fields(row)
+
+        # -- the code pass ---------------------------------------------------
+        # Now, and not before, the entities carry whatever ISO 3166-2 codes the
+        # Wikidata rows brought with them. A code is the one key on both sides
+        # that needs no romanisation: Russia's sheets are Cyrillic and its
+        # shapes English, and norm() keeps Cyrillic as Cyrillic on purpose,
+        # because a transliteration invented here would be a guess about a
+        # name and the guesses that look right are the dangerous ones.
+        #
+        # There is no name fallback after a code miss. The code is the stronger
+        # evidence, and a name match that contradicted it would be the
+        # invisible kind of wrong. A row whose code no shape carries is a plain
+        # miss -- which is what leaves Sakha, the one Russian subject with no
+        # code, to the alias it declares instead.
+        if deferred:
+            a1_by_code: dict[str, list[dict[str, Any]]] = defaultdict(list)
+            for entity in admin1_by_country.get(iso3, []):
+                code = entity.get("iso_3166_2")
+                if isinstance(code, str) and code:
+                    a1_by_code[code].append(entity)
+            for row, key in deferred:
+                found = a1_by_code.get(row["iso_3166_2"]) or []
+                # One shape per code, or the code is not identifying here.
+                if len(found) != 1:
+                    miss += 1
+                    ambiguous += len(found) > 1
+                    if iso3 in TRACE:
+                        log(f"    trace {iso3} {row.get('name')!r}: "
+                            f"{'ambiguous code' if found else 'code on no shape'}")
+                    continue
+                entity = found[0]
+                # Two answers to the same question about one shape is the case
+                # to refuse: a row matched by name and a row matched by code
+                # both stating its religion would let the later one win in
+                # silence. Answers to *different* questions are the ordinary
+                # case and are merged, which is how a Russian subject keeps the
+                # population Wikidata gave it and gains the ethnicity Rosstat
+                # did.
+                clash = value_fields(row) & bearing[id(entity)]
+                if clash:
+                    collided += 1
+                    miss += 1
+                    if iso3 in TRACE:
+                        log(f"    trace {iso3} {row.get('name')!r} -> "
+                            f"{entity.get('name')!r} (beaten to "
+                            f"{sorted(clash)} by another row)")
+                    continue
+                merge_adapter(entity, row)
+                entity["match"] = "adapter:iso_3166_2"
+                bearing[id(entity)] |= value_fields(row)
+                hit += 1
+                if iso3 in TRACE:
+                    log(f"    trace {iso3} {row.get('name')!r} -> "
+                        f"{entity.get('name')!r} (iso_3166_2)")
+
         for note in notes[:4]:
             log(f"    {iso3} {note}")
         if len(notes) > 4:

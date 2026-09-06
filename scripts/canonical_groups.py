@@ -269,7 +269,35 @@ LANGUAGE: dict[str, tuple[str, ...]] = {
     "Tshivenda": ("Tshivenda", "Venda", "Tshivenda or Venda"),
     "Xitsonga": ("Xitsonga", "Tsonga", "Xitsonga or Tsonga"),
     "South African Sign Language": ("South African Sign Language", "SASL"),
-    # Residuals. Named so they stop appearing as the largest "language" in the
+    # Mali's languages, which arrived under two spellings each because the
+    # country is described by two sources at once: the Factbook at the national
+    # level and the 2009 census, via the US Census Bureau, at the regional one.
+    # Unmapped, every one of them keyed on itself, so the world filter offered
+    # "Tamasheq" over nine Malian regions beside "Tamacheq" over Mali entire,
+    # as though they were different languages spoken by different people. They
+    # are the same census.
+    #
+    # Two of these keep the weld their source made. "Maraka/Soninke" and
+    # "Sonrhai/Djerma" each name two peoples the Malian census counts together,
+    # and the canonical form is the source's own spelling rather than a tidier
+    # invented one -- folding them into a bare "Soninke" or "Songhai" would
+    # merge a pair with one of its members the moment another country reports
+    # that member alone.
+    "Fula": ("Fula", "Fula/fulfulbe", "Peuhl/Foulfoulbe/Fulani",
+             "Fula, Fulah, Pulaar, Pular"),
+    "Maraka/Soninke": ("Maraka/Soninke",),
+    "Sonrhai/Djerma": ("Sonrhai/Djerma", "Sonrai/djerma"),
+    "Tamasheq": ("Tamasheq", "Tamacheq"),
+    "Senufo": ("Senufo", "Senoufo"),
+    # Deliberately NOT folded into "Fula": the Central African Republic's "Fulah",
+# "Fulata" and "Peulh". The first and third are names for the Fula language and
+# would look obviously foldable, but CAR's census lists all three as separate
+# rows *of the same prefecture* -- Bamingui-Bangoran has Fulah 11.4%, Fulata
+# 0.0% and Peulh 0.0% -- so its classification distinguishes them, and folding
+# would sum categories the source chose to keep apart. Mali's forms are safe
+# because no Malian record carries two of them at once.
+#
+# Residuals. Named so they stop appearing as the largest "language" in the
     # picker -- "other" reaches 92 countries and is not something anyone means
     # to filter for.
     "Other languages": ("other", "other languages", "others",

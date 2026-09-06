@@ -3266,20 +3266,42 @@ class MatchingOnACodeRatherThanARomanisation(unittest.TestCase):
         self.assertIn("Республика Крым", self.ru.SKIP)
         self.assertIn("г. Севастополь", self.ru.SKIP)
 
-    def test_every_code_names_a_shape_the_boundary_file_draws(self):
+    def test_every_configured_code_is_one_a_shape_can_be_found_by(self):
+        """Asked of Wikidata, which is where a shape's code comes from.
+
+        Asking the built site file instead measures nothing: this adapter
+        writes its own iso_3166_2 onto every shape it matches, so once the
+        join works every shape has a code and the answer is 83 whatever
+        Wikidata holds. That is what made the earlier version of this test
+        pass while the join was producing one subject out of 83.
+        """
+        rows = json.loads(
+            (ROOT / "data" / "processed" / "wikidata_admin1.json").read_text())
+        codes = {r.get("iso_3166_2") for r in rows
+                 if r.get("country") == "RUS"
+                 and isinstance(r.get("iso_3166_2"), str)}
+        missing = set(self.ru.SUBJECTS.values()) - codes
+        self.assertFalse(
+            missing, f"no Wikidata code for {sorted(missing)}, so those "
+                     "subjects can only be reached by name")
+
+    def test_the_join_reaches_every_subject(self):
+        """The measurement the code pass exists for, on the built file.
+
+        It read 1 of 83 for as long as the code index was built before any
+        adapter row was merged -- the codes are not on the shapes, they
+        arrive from Wikidata, and nothing had merged them yet. Cyrillic
+        against English, 82 subjects landed nowhere, and the build reported
+        success.
+        """
         shapes = json.loads(
             (ROOT / "site" / "data" / "admin1" / "RUS.json").read_text())
-        codes = {s.get("iso_3166_2") for s in shapes if s.get("iso_3166_2")}
-        codeless = [s["name"] for s in shapes if not s.get("iso_3166_2")]
-        mine = set(self.ru.SUBJECTS.values())
-        # One shape carries no code, so exactly one configured code has no
-        # shape to match and is aliased by name instead.
-        self.assertEqual(len(codeless), 1)
-        self.assertEqual(sorted(mine - codes), sorted(self.ru.BY_NAME))
-        self.assertFalse(codes - mine, "a shape whose code is never read")
-        for code, names in self.ru.BY_NAME.items():
-            self.assertTrue(set(names) & set(codeless),
-                            f"{code} is aliased to a shape that has a code")
+        for field in ("ethnicity", "language"):
+            joined = [s for s in shapes if isinstance(s.get(field), list)]
+            self.assertEqual(
+                len(joined), len(self.ru.SUBJECTS),
+                f"{len(joined)} of {len(self.ru.SUBJECTS)} subjects carry "
+                f"{field}; the rest read as a census that did not ask")
 
     def test_the_proficiency_table_is_not_the_one_read(self):
         # Table 5 is ВЛАДЕНИЕ ЯЗЫКАМИ -- which languages a person knows, of
@@ -3393,3 +3415,287 @@ class ASubjectPresentInOneTableAndAbsentFromAnother(unittest.TestCase):
         # in column 0, so the label is in column 1 and the count in column 2.
         self.assertIn("at_name, at_value = where", source)
         self.assertNotIn("label(row[0].value)", source)
+
+
+class AGroupTheSourceNamesWithoutAShare(unittest.TestCase):
+    """The Factbook writes Mali's plurality language as "Bambara (official)".
+
+    No figure, so the parser dropped the part -- and then presented the eleven
+    remaining languages as Mali's whole language composition. They sum to
+    70.9%, and the map showed a country in which the language half of it
+    speaks did not appear at all. Our own regional data for the same 2009
+    census puts Bambara at 51.8%.
+
+    A dropped member is the worst of the three outcomes. A named member with
+    a stated gap says what the source says; a wrong share would be visible;
+    silence reads as though the question was never asked.
+    """
+
+    def setUp(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from common import parse_composition
+        self.parse = parse_composition
+
+    MALI = ("Bambara (official), French 17.2%, Peuhl/Foulfoulbe/Fulani 9.4%, "
+            "Dogon 7.2%, Maraka/Soninke 6.4%, Malinke 5.6%, Sonrhai/Djerma "
+            "5.6%, Minianka 4.3%, Tamacheq 3.5%, Senoufo 2.6%, Bobo 2.1%, "
+            "other 6.3%, unspecified 0.7% (2009 est.)")
+
+    def test_bambara_survives_with_its_share_recorded_as_a_gap(self):
+        rows = self.parse(self.MALI)
+        first = rows[0]
+        self.assertEqual(first["group"], "Bambara")
+        self.assertIsNone(first["pct"])
+        self.assertEqual(first["pct_status"], "not_available")
+
+    def test_the_members_that_do_have_shares_are_untouched(self):
+        rows = self.parse(self.MALI)
+        shares = {r["group"]: r["pct"] for r in rows if r["pct"] is not None}
+        self.assertEqual(shares["French"], 17.2)
+        self.assertEqual(shares["Dogon"], 7.2)
+        self.assertEqual(len(shares), 12)
+
+    def test_a_run_closed_by_or_or_including_is_one_name_not_several(self):
+        """The comma split tears enumerated names apart.
+
+        South Africa's "ancestral, tribal, animist, or other traditional
+        African religions 5.4%" is one group whose share sits on the last
+        fragment, and Botswana's bare "other" belongs to the "including
+        Kgalagadi ... 7%" that follows it. Keeping the fragments would invent
+        groups no census counted.
+        """
+        za = self.parse("Christian 86%, ancestral, tribal, animist, or other "
+                        "traditional African religions 5.4%, Muslim 1.9%, "
+                        "other 1.5%, nothing in particular 5.2% (2015 est.)")
+        names = {r["group"] for r in za}
+        for fragment in ("ancestral", "tribal", "animist"):
+            self.assertNotIn(fragment, names)
+        bw = self.parse("Tswana (or Setswana) 79%, Kalanga 11%, Basarwa 3%, "
+                        "other, including Kgalagadi and people of European "
+                        "ancestry 7%")
+        self.assertNotIn("other", {r["group"] for r in bw})
+
+    def test_commentary_and_counts_of_languages_are_not_groups(self):
+        lr = self.parse("English 20% (official) and 27 indigenous languages, "
+                        "including Liberian English variants")
+        self.assertEqual([r["group"] for r in lr], ["English"])
+        sb = self.parse("Melanesian pidgin (lingua franca in much of the "
+                        "country), English (official but spoken by only "
+                        "1%-2% of the population), 120 indigenous languages")
+        self.assertNotIn("120 indigenous languages", {r["group"] for r in sb})
+
+    def test_a_qualifier_left_behind_by_the_figure_is_not_a_group(self):
+        """Cutting at the digit can leave only the word that introduced it."""
+        td = self.parse("French (official) 12%, Arabic (official), Sara, "
+                        "more than 120 languages")
+        names = {r["group"] for r in td}
+        self.assertNotIn("more than", names)
+        self.assertIn("Arabic", names)
+
+    def test_a_list_with_no_figures_at_all_is_left_to_its_own_path(self):
+        """A name-only list is not a composition missing one member.
+
+        parse_languages already renders those as the whole field being
+        unquantified. Reading them here turned the EU's 24 official languages
+        into 24 gaps in a chart nobody asked for.
+        """
+        self.assertIsNone(self.parse("Bulgarian, Croatian, Czech, Danish, "
+                                     "Dutch, English, Estonian, Finnish"))
+
+
+class OneLanguageUnderTwoSpellings(unittest.TestCase):
+    """Mali is described by two sources at once, and they disagree on spelling.
+
+    The Factbook covers the country, the 2009 census (via the US Census
+    Bureau) covers the nine regions. Unmapped, each label keys on itself, so
+    the world filter offered "Tamasheq" over nine Malian regions beside
+    "Tamacheq" over Mali entire -- the same census, split in half.
+    """
+
+    def setUp(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import canonical_groups
+        self.cg = canonical_groups
+        self.table = canonical_groups.lookup("language")
+
+    def canonical(self, label):
+        return self.table.get(self.cg.key(label), label)
+
+    def test_the_two_spellings_of_each_malian_language_agree(self):
+        for census, factbook in (("Fula/fulfulbe", "Peuhl/Foulfoulbe/Fulani"),
+                                 ("Maraka/soninke", "Maraka/Soninke"),
+                                 ("Sonrai/djerma", "Sonrhai/Djerma"),
+                                 ("Tamasheq", "Tamacheq"),
+                                 ("Senufo", "Senoufo")):
+            self.assertEqual(self.canonical(census), self.canonical(factbook),
+                             f"{census} and {factbook} are one language")
+
+    def test_the_central_african_republic_is_left_alone(self):
+        """Fulah and Peulh look foldable into Fula, and are not.
+
+        CAR's census lists Fulah, Fulata and Peulh as separate rows of the
+        same prefecture, so its classification distinguishes them; folding
+        would sum categories the source chose to keep apart.
+        """
+        for label in ("Fulah", "Fulata", "Peulh"):
+            self.assertEqual(self.canonical(label), label)
+
+    def test_no_record_carries_two_labels_that_now_fold_together(self):
+        """Folding is only safe while no one record holds both spellings."""
+        import json
+        added = {"Fula", "Maraka/Soninke", "Sonrhai/Djerma", "Tamasheq",
+                 "Senufo"}
+        files = sorted((ROOT / "data" / "processed").glob("*.json"))
+        admin0 = ROOT / "site" / "data" / "admin0.json"
+        if admin0.exists():
+            files.append(admin0)
+        for path in files:
+            try:
+                rows = json.loads(path.read_text(encoding="utf-8"))
+            except (ValueError, UnicodeDecodeError):
+                continue
+            if not isinstance(rows, list):
+                continue
+            for record in rows:
+                if not isinstance(record, dict):
+                    continue
+                values = record.get("language")
+                if not isinstance(values, list):
+                    continue
+                seen = {}
+                for row in values:
+                    label = self.cg.key(row.get("group", ""))
+                    name = self.table.get(label, row.get("group", ""))
+                    if name in added:
+                        seen.setdefault(name, set()).add(label)
+                for name, labels in seen.items():
+                    self.assertEqual(
+                        len(labels), 1,
+                        f"{path.name}: {record.get('name')} carries "
+                        f"{sorted(labels)}, which would be summed into {name}")
+
+
+class TheCodeIndexIsBuiltAfterTheRowsThatCarryTheCodes(unittest.TestCase):
+    """Russia joined 1 subject of 83, and every check passed.
+
+    The ISO 3166-2 index was built from the entities at the top of the
+    matching loop. But the codes are not on the shapes -- geoBoundaries
+    publishes shapeName, shapeID, shapeGroup and shapeType and nothing else --
+    they arrive from the Wikidata adapter, whose rows are in the same list and
+    are merged only after that loop finishes. So the index was empty at
+    exactly the moment it was read, all 83 Cyrillic sheet names fell through
+    to a name pass against English shapes, and 82 landed nowhere.
+
+    The one that matched did so on its declared alias, which is what made a
+    total failure look like a near miss.
+    """
+
+    def setUp(self):
+        self.source = (ROOT / "scripts" / "build_entities.py").read_text()
+
+    def test_the_code_pass_runs_after_the_merge(self):
+        # Everything before "resolve_collisions" is the name pass, and the
+        # entities carry no adapter values until after it.
+        before, _, after = self.source.partition("dropped, notes = resolve_collisions")
+        self.assertNotIn("a1_by_code", before,
+                         "the code index is read before any row is merged, "
+                         "which is when it is empty")
+        self.assertIn("a1_by_code", after)
+
+    def test_a_code_that_is_not_a_string_is_not_looked_up(self):
+        """Every METADATA field becomes {"status": ...} when a row lacks it.
+
+        188 Wikidata admin-1 rows hold that dict in iso_3166_2, and a dict is
+        unhashable: "code in a1_by_code" raised TypeError rather than missing.
+        It killed the whole join, and because build_all.sh runs without
+        set -e the refresh went on to report success.
+        """
+        self.assertIn('isinstance(code, str)', self.source)
+
+    def test_two_rows_may_not_answer_one_question_about_one_shape(self):
+        """But two rows answering different questions is the ordinary case.
+
+        Guarding per shape rather than per field refuses every code match
+        there is: Wikidata gives almost every shape in the world a
+        population, so every shape looks answered already.
+        """
+        self.assertIn("def value_fields(", self.source)
+        self.assertIn("clash = value_fields(row) & bearing[id(entity)]",
+                      self.source)
+
+
+class TheJoinMayNotFailQuietly(unittest.TestCase):
+    """The refresh ran every adapter, crashed joining them, and said success.
+
+    build_all.sh runs without "set -e" on purpose, so an adapter behind a
+    blocked host can be skipped and still leave a working site. That also made
+    a crash in the join survivable: site/data kept the previous build's
+    contents, the script exited 0 from its closing echo, and the workflow
+    opened a data PR. Russia's 83 subjects sat in data/processed and were
+    absent from the map, with nothing anywhere saying so.
+    """
+
+    def test_the_join_step_is_fatal(self):
+        script = (ROOT / "scripts" / "build_all.sh").read_text()
+        self.assertNotIn("set -e\n", script,
+                         "the soft-step design depends on set -e being off")
+        line = [l for l in script.splitlines()
+                if l.strip().startswith("python3 scripts/build_entities.py")]
+        self.assertEqual(len(line), 1)
+        self.assertTrue(line[0].strip().endswith("|| exit 1"),
+                        f"the join must stop the build: {line[0]!r}")
+
+    def test_the_join_is_not_a_soft_step(self):
+        script = (ROOT / "scripts" / "build_all.sh").read_text()
+        self.assertNotIn("soft python3 scripts/build_entities.py", script)
+
+
+class ACodeIsEvidenceThatTwoRowsAreTwoPlaces(unittest.TestCase):
+    """iso_3166_2 was added to METADATA, and METADATA is the exclusion list
+    conflicting() uses to decide whether two rows landing on one shape are one
+    place written twice or two different places.
+
+    A Wikidata Q-id is excluded because it is unique per item, so counting it
+    as a difference would make every rivalry look like a conflict. An ISO
+    3166-2 code is the opposite: shared and standard, so two rows holding
+    different codes are two different official units by definition. Excluding
+    it deleted the strongest evidence the function had.
+
+    What followed was the mis-match this project ranks below a gap. Lithuania's
+    Alytus County had two rivals -- "Alytus City Municipality" (LT-02) and
+    "Alytus District Municipality" (LT-03) -- which the collision pass used to
+    refuse outright because nothing separated them. With the codes invisible
+    they read as one place listed twice, the exemption applied, and the shape
+    took the district municipality's 25,356 people in place of the county's
+    hundred and forty thousand. Laos' Vientiane took Vientiane Province's
+    388,833 over the prefecture's the same way. Nothing on the map would have
+    said either number was wrong.
+    """
+
+    def setUp(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import build_entities
+        self.be = build_entities
+
+    def test_a_code_is_not_excluded_from_the_conflict_test(self):
+        self.assertNotIn("iso_3166_2", self.be.METADATA)
+
+    def test_two_rows_with_different_codes_conflict(self):
+        rows = [{"name": "Alytus City Municipality", "iso_3166_2": "LT-02"},
+                {"name": "Alytus District Municipality", "iso_3166_2": "LT-03"}]
+        self.assertIn("iso_3166_2", self.be.conflicting(rows))
+
+    def test_one_place_written_twice_still_does_not_conflict(self):
+        """The case METADATA exists for must keep working.
+
+        Wikidata carries both "Ancasti" and "Ancasti Department" with their own
+        Q-ids; that is a duplicated source row, not a rivalry.
+        """
+        rows = [{"name": "Ancasti", "wikidata": "Q1", "id": "a"},
+                {"name": "Ancasti Department", "wikidata": "Q2", "id": "b"}]
+        self.assertEqual(self.be.conflicting(rows), [])
+
+    def test_a_missing_code_is_a_gap_not_a_difference(self):
+        rows = [{"name": "X", "iso_3166_2": "LT-03"},
+                {"name": "X", "iso_3166_2": {"status": "not_available"}}]
+        self.assertEqual(self.be.conflicting(rows), [])

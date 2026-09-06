@@ -194,8 +194,17 @@ ALSO_KNOWN_AS = {
     "Ямало-Ненецкий АО": "ЯНАО",
 }
 
-# geoBoundaries carries an iso_3166_2 on 82 of Russia's 83 first-order shapes.
-# Sakha is the exception, so it is the one subject matched by name.
+# The map's first-order shapes are geoBoundaries, which publishes no ISO 3166-2
+# column at all -- shapeName, shapeID, shapeGroup, shapeType and nothing else.
+# The codes are joined on from Wikidata, which carries one for all 83 of the
+# subjects configured here.
+#
+# All 83, which is a correction. This was written believing Wikidata had a code
+# for 82 of them and that Sakha was the exception needing a name, and the
+# belief was never measured; counting the codes in the adapter's own output
+# gives 83, Sakha's RU-SA among them. The alias is kept anyway, as the one
+# spelled-out fallback if that row ever loses its code, but it is a spare
+# rather than the load-bearing part it was described as.
 BY_NAME = {"RU-SA": ("Sakha Republic",)}
 
 # The row whose figure is everyone the question reached. Both tables name it,
@@ -482,6 +491,11 @@ def main() -> int:
         records.append(record(
             code, sheet, level="admin1", parent="RUS",
             country="RUS", iso_3166_2=code,
+            # These sheets are Cyrillic and the shapes English, so the name
+            # pass cannot settle them and the code is asked to. Declared per
+            # row rather than inferred from carrying a code, because plenty of
+            # rows carry one and should still be matched by name.
+            match_by="iso_3166_2",
             aliases=list(BY_NAME.get(code, ())),
             **values,
             sources=[{"field": field, "name": SOURCE, "url": LANDING,
