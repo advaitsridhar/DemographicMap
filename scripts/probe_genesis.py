@@ -255,6 +255,49 @@ def describe(key: str, spec: dict[str, str], tables: list[str]) -> None:
                   f"{content[:70]}{flag}")
 
 
+# What an anonymous user may actually do, asked rather than assumed. GAST can
+# search the catalogue and cannot read a table's metadata -- find/find answers
+# and metadata/table returns 401 -- so the permission surface is per endpoint
+# family, not per account. Whether GAST can reach the *data* is the question
+# that decides whether Germany needs a registered account at all, and it is not
+# answerable from the two endpoints already tried.
+ENDPOINTS: tuple[tuple[str, dict[str, object]], ...] = (
+    ("catalogue/tables", {"selection": "{table}"}),
+    ("catalogue/variables", {"selection": "*", "pagelength": 5}),
+    ("catalogue/timeseries", {"selection": "{table}"}),
+    ("metadata/table", {"name": "{table}"}),
+    ("metadata/variable", {"name": "RELIGT"}),
+    ("data/table", {"name": "{table}", "area": "all", "compress": "false"}),
+    ("data/tablefile", {"name": "{table}", "area": "all", "format": "ffcsv"}),
+    ("data/chart2table", {"name": "{table}", "area": "all"}),
+)
+
+
+def endpoints(key: str, spec: dict[str, str], table: str) -> None:
+    """Which endpoint families answer, for the credentials in hand."""
+    creds = {}
+    user = os.environ.get(spec["user_env"], "").strip()
+    password = os.environ.get(spec["pass_env"], "").strip()
+    if user and password:
+        creds = {"username": user, "password": password}
+    print(f"\n=== {spec['name']} -- endpoint surface for {table} ===")
+    print(f"    credentials: {'set via ' + spec['user_env'] if creds else 'none -- GAST'}")
+    for path, template in ENDPOINTS:
+        params = {k: (v.format(table=table) if isinstance(v, str) else v)
+                  for k, v in template.items()}
+        answer = call(spec["base"], path, creds, **params)
+        note = status_of(answer)
+        # A body is the proof, not the status line: GENESIS answers 200 with a
+        # refusal inside often enough that "ok" alone has been wrong twice here.
+        shape = ""
+        if isinstance(answer, dict) and "__error__" not in answer:
+            keys = [k for k in answer if k not in ("Ident", "Status", "Copyright")]
+            shape = f" keys={keys[:6]}"
+            body = json.dumps(answer, ensure_ascii=False)
+            shape += f" len={len(body)}"
+        print(f"    {path:<22} {note[:80]}{shape}")
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -263,6 +306,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--tables", default="",
                     help="comma-separated table codes to describe instead of "
                          "searching, e.g. 1000A-1018,1000A-1K18")
+    ap.add_argument("--endpoints", default="",
+                    help="one table code; report which endpoint families "
+                         "answer for it, rather than searching or describing")
     args = ap.parse_args(argv)
 
     wanted = [k.strip() for k in args.instances.split(",") if k.strip()]
@@ -271,14 +317,16 @@ def main(argv: list[str] | None = None) -> int:
         print(f"unknown instance(s): {', '.join(unknown)}", file=sys.stderr)
         return 2
 
-    if not args.tables:
+    if not args.tables and not args.endpoints:
         print("Region variables a usable table would carry:")
         for code, meaning in REGION_CODES.items():
             print(f"  {code:<8} {meaning}")
 
     tables = [t.strip() for t in args.tables.split(",") if t.strip()]
     for key in wanted:
-        if tables:
+        if args.endpoints:
+            endpoints(key, INSTANCES[key], args.endpoints.strip())
+        elif tables:
             describe(key, INSTANCES[key], tables)
         else:
             probe(key, INSTANCES[key])

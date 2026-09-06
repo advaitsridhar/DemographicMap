@@ -53,6 +53,12 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.uk_nomis
   soft python3 -m scripts.fetch_census.statcan --level province
   soft python3 -m scripts.fetch_census.ibge_sidra --level state
+  # 5,570 municipalities, and the reason the level is spelled out twice:
+  # brazil_municipality.json was registered as an adapter file long before
+  # anything here wrote it, so the join would have read whatever the last
+  # manual run left behind and aged it silently. A file the build consumes
+  # and never refreshes is worse than one it does not have.
+  soft python3 -m scripts.fetch_census.ibge_sidra --level municipality
   soft python3 -m scripts.fetch_census.eurostat --level nuts2
   # The ABS publishes 2021-census religion/ancestry by LGA, SA2, postal area
   # and similar -- there is no state-level dataflow (see the G14 catalogue
