@@ -1,0 +1,2156 @@
+[
+  {
+    "id": "VCT-barrouallie",
+    "level": "admin1",
+    "name": "Barrouallie",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Pentecostal",
+        "pct": 25.0,
+        "count": 1408
+      },
+      {
+        "group": "Anglican",
+        "pct": 16.3,
+        "count": 916
+      },
+      {
+        "group": "Without religion",
+        "pct": 12.2,
+        "count": 686
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 11.0,
+        "count": 621
+      },
+      {
+        "group": "Baptist",
+        "pct": 8.0,
+        "count": 452
+      },
+      {
+        "group": "Evangelical Christian",
+        "pct": 7.7,
+        "count": 435
+      },
+      {
+        "group": "Not stated",
+        "pct": 5.6,
+        "count": 317
+      },
+      {
+        "group": "Methodist",
+        "pct": 5.4,
+        "count": 301
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.2,
+        "count": 290
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 1.4,
+        "count": 78
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 1.1,
+        "count": 60
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.7,
+        "count": 41
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Traditional",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Black",
+        "pct": 88.9,
+        "count": 5001
+      },
+      {
+        "group": "Mixed",
+        "pct": 9.6,
+        "count": 539
+      },
+      {
+        "group": "Indigenous",
+        "pct": 0.9,
+        "count": 53
+      },
+      {
+        "group": "White",
+        "pct": 0.2,
+        "count": 10
+      },
+      {
+        "group": "East Indian",
+        "pct": 0.2,
+        "count": 10
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 12
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "2012 census, by parish.",
+    "religion_year": 2012,
+    "religion_note": "2012 census, by parish."
+  },
+  {
+    "id": "VCT-bridgetown",
+    "level": "admin1",
+    "name": "Bridgetown",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 22.7,
+        "count": 1490
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 22.6,
+        "count": 1482
+      },
+      {
+        "group": "Baptist",
+        "pct": 11.6,
+        "count": 760
+      },
+      {
+        "group": "Without religion",
+        "pct": 11.6,
+        "count": 763
+      },
+      {
+        "group": "Anglican",
+        "pct": 8.4,
+        "count": 550
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.2,
+        "count": 406
+      },
+      {
+        "group": "Methodist",
+        "pct": 4.6,
+        "count": 305
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.6,
+        "count": 300
+      },
+      {
+        "group": "Evangelical Christian",
+        "pct": 2.5,
+        "count": 161
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 2.0,
+        "count": 133
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 1.7,
+        "count": 110
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 0.7,
+        "count": 49
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.5,
+        "count": 34
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.1,
+        "count": 8
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Mormon",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Black",
+        "pct": 80.5,
+        "count": 5286
+      },
+      {
+        "group": "Mixed",
+        "pct": 15.2,
+        "count": 999
+      },
+      {
+        "group": "Indigenous",
+        "pct": 3.1,
+        "count": 206
+      },
+      {
+        "group": "East Indian",
+        "pct": 0.6,
+        "count": 40
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.4,
+        "count": 29
+      },
+      {
+        "group": "White",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "2012 census, by parish.",
+    "religion_year": 2012,
+    "religion_note": "2012 census, by parish."
+  },
+  {
+    "id": "VCT-calliaqua",
+    "level": "admin1",
+    "name": "Calliaqua",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Pentecostal",
+        "pct": 27.0,
+        "count": 6467
+      },
+      {
+        "group": "Anglican",
+        "pct": 15.7,
+        "count": 3748
+      },
+      {
+        "group": "Methodist",
+        "pct": 11.4,
+        "count": 2714
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 11.2,
+        "count": 2674
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 7.2,
+        "count": 1717
+      },
+      {
+        "group": "Baptist",
+        "pct": 6.7,
+        "count": 1613
+      },
+      {
+        "group": "Without religion",
+        "pct": 6.7,
+        "count": 1605
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.9,
+        "count": 943
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.8,
+        "count": 911
+      },
+      {
+        "group": "Evangelical Christian",
+        "pct": 3.0,
+        "count": 718
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 1.3,
+        "count": 305
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 0.9,
+        "count": 227
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.4,
+        "count": 93
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.2,
+        "count": 52
+      },
+      {
+        "group": "Mormon",
+        "pct": 0.2,
+        "count": 58
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 26
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.1,
+        "count": 28
+      },
+      {
+        "group": "Traditional",
+        "pct": 0.0,
+        "count": 9
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Black",
+        "pct": 70.8,
+        "count": 16920
+      },
+      {
+        "group": "Mixed",
+        "pct": 23.1,
+        "count": 5522
+      },
+      {
+        "group": "East Indian",
+        "pct": 1.8,
+        "count": 438
+      },
+      {
+        "group": "Indigenous",
+        "pct": 1.5,
+        "count": 348
+      },
+      {
+        "group": "White",
+        "pct": 1.4,
+        "count": 324
+      },
+      {
+        "group": "Portuguese",
+        "pct": 1.4,
+        "count": 323
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 33
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "2012 census, by parish.",
+    "religion_year": 2012,
+    "religion_note": "2012 census, by parish."
+  },
+  {
+    "id": "VCT-chateaubelair",
+    "level": "admin1",
+    "name": "Chateaubelair",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Baptist",
+        "pct": 23.6,
+        "count": 1359
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 23.0,
+        "count": 1325
+      },
+      {
+        "group": "Methodist",
+        "pct": 15.5,
+        "count": 892
+      },
+      {
+        "group": "Anglican",
+        "pct": 13.7,
+        "count": 786
+      },
+      {
+        "group": "Evangelical Christian",
+        "pct": 5.6,
+        "count": 321
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 3.8,
+        "count": 217
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.8,
+        "count": 217
+      },
+      {
+        "group": "Without religion",
+        "pct": 3.5,
+        "count": 202
+      },
+      {
+        "group": "Other religion",
+        "pct": 2.9,
+        "count": 168
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 2.2,
+        "count": 128
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 1.5,
+        "count": 86
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 0.7,
+        "count": 40
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.2,
+        "count": 11
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Traditional",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Black",
+        "pct": 72.9,
+        "count": 4199
+      },
+      {
+        "group": "Mixed",
+        "pct": 26.1,
+        "count": 1502
+      },
+      {
+        "group": "Indigenous",
+        "pct": 0.6,
+        "count": 35
+      },
+      {
+        "group": "East Indian",
+        "pct": 0.3,
+        "count": 17
+      },
+      {
+        "group": "White",
+        "pct": 0.1,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "2012 census, by parish.",
+    "religion_year": 2012,
+    "religion_note": "2012 census, by parish."
+  },
+  {
+    "id": "VCT-colonarie",
+    "level": "admin1",
+    "name": "Colonarie",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Pentecostal",
+        "pct": 35.3,
+        "count": 2419
+      },
+      {
+        "group": "Baptist",
+        "pct": 13.1,
+        "count": 899
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 10.4,
+        "count": 713
+      },
+      {
+        "group": "Without religion",
+        "pct": 10.4,
+        "count": 714
+      },
+      {
+        "group": "Anglican",
+        "pct": 8.3,
+        "count": 570
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 5.9,
+        "count": 405
+      },
+      {
+        "group": "Methodist",
+        "pct": 4.6,
+        "count": 313
+      },
+      {
+        "group": "Evangelical Christian",
+        "pct": 3.9,
+        "count": 268
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.8,
+        "count": 261
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.8,
+        "count": 194
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 0.7,
+        "count": 46
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 0.4,
+        "count": 28
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Mormon",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Traditional",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Black",
+        "pct": 77.7,
+        "count": 5320
+      },
+      {
+        "group": "Mixed",
+        "pct": 20.0,
+        "count": 1369
+      },
+      {
+        "group": "East Indian",
+        "pct": 0.9,
+        "count": 63
+      },
+      {
+        "group": "Indigenous",
+        "pct": 0.7,
+        "count": 45
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.7,
+        "count": 49
+      },
+      {
+        "group": "White",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "2012 census, by parish.",
+    "religion_year": 2012,
+    "religion_note": "2012 census, by parish."
+  },
+  {
+    "id": "VCT-georgetown",
+    "level": "admin1",
+    "name": "Georgetown",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Pentecostal",
+        "pct": 30.3,
+        "count": 2134
+      },
+      {
+        "group": "Anglican",
+        "pct": 16.3,
+        "count": 1151
+      },
+      {
+        "group": "Baptist",
+        "pct": 13.0,
+        "count": 918
+      },
+      {
+        "group": "Without religion",
+        "pct": 11.4,
+        "count": 805
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 6.8,
+        "count": 480
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 6.2,
+        "count": 438
+      },
+      {
+        "group": "Evangelical Christian",
+        "pct": 4.9,
+        "count": 348
+      },
+      {
+        "group": "Methodist",
+        "pct": 3.5,
+        "count": 249
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.3,
+        "count": 233
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 1.2,
+        "count": 83
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.2,
+        "count": 86
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 0.9,
+        "count": 63
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.4,
+        "count": 26
+      },
+      {
+        "group": "Traditional",
+        "pct": 0.3,
+        "count": 20
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.1,
+        "count": 8
+      },
+      {
+        "group": "Mormon",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Black",
+        "pct": 60.1,
+        "count": 4239
+      },
+      {
+        "group": "Mixed",
+        "pct": 25.6,
+        "count": 1803
+      },
+      {
+        "group": "Indigenous",
+        "pct": 12.3,
+        "count": 866
+      },
+      {
+        "group": "East Indian",
+        "pct": 1.0,
+        "count": 73
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.7,
+        "count": 52
+      },
+      {
+        "group": "White",
+        "pct": 0.1,
+        "count": 10
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 6
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "2012 census, by parish.",
+    "religion_year": 2012,
+    "religion_note": "2012 census, by parish."
+  },
+  {
+    "id": "VCT-kingstown",
+    "level": "admin1",
+    "name": "Kingstown",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Pentecostal",
+        "pct": 29.8,
+        "count": 3785
+      },
+      {
+        "group": "Anglican",
+        "pct": 15.4,
+        "count": 1960
+      },
+      {
+        "group": "Methodist",
+        "pct": 14.7,
+        "count": 1871
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 9.2,
+        "count": 1164
+      },
+      {
+        "group": "Baptist",
+        "pct": 5.5,
+        "count": 698
+      },
+      {
+        "group": "Not stated",
+        "pct": 5.5,
+        "count": 698
+      },
+      {
+        "group": "Without religion",
+        "pct": 5.3,
+        "count": 673
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 4.5,
+        "count": 571
+      },
+      {
+        "group": "Evangelical Christian",
+        "pct": 3.5,
+        "count": 439
+      },
+      {
+        "group": "Other religion",
+        "pct": 2.7,
+        "count": 344
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 1.4,
+        "count": 172
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 0.9,
+        "count": 113
+      },
+      {
+        "group": "Mormon",
+        "pct": 0.6,
+        "count": 71
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.4,
+        "count": 47
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.3,
+        "count": 37
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.3,
+        "count": 34
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.1,
+        "count": 18
+      },
+      {
+        "group": "Traditional",
+        "pct": 0.1,
+        "count": 17
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Black",
+        "pct": 65.1,
+        "count": 8276
+      },
+      {
+        "group": "Mixed",
+        "pct": 29.2,
+        "count": 3707
+      },
+      {
+        "group": "Indigenous",
+        "pct": 1.5,
+        "count": 191
+      },
+      {
+        "group": "Portuguese",
+        "pct": 1.3,
+        "count": 163
+      },
+      {
+        "group": "East Indian",
+        "pct": 1.0,
+        "count": 129
+      },
+      {
+        "group": "Other",
+        "pct": 1.0,
+        "count": 132
+      },
+      {
+        "group": "White",
+        "pct": 0.9,
+        "count": 114
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "2012 census, by parish.",
+    "religion_year": 2012,
+    "religion_note": "2012 census, by parish."
+  },
+  {
+    "id": "VCT-layou",
+    "level": "admin1",
+    "name": "Layou",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Pentecostal",
+        "pct": 27.0,
+        "count": 1709
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 16.7,
+        "count": 1060
+      },
+      {
+        "group": "Anglican",
+        "pct": 11.0,
+        "count": 695
+      },
+      {
+        "group": "Methodist",
+        "pct": 10.2,
+        "count": 645
+      },
+      {
+        "group": "Not stated",
+        "pct": 7.2,
+        "count": 453
+      },
+      {
+        "group": "Baptist",
+        "pct": 6.7,
+        "count": 425
+      },
+      {
+        "group": "Without religion",
+        "pct": 6.4,
+        "count": 404
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.3,
+        "count": 400
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 3.6,
+        "count": 227
+      },
+      {
+        "group": "Evangelical Christian",
+        "pct": 2.8,
+        "count": 178
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 1.1,
+        "count": 68
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 0.6,
+        "count": 41
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.3,
+        "count": 17
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Mormon",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Black",
+        "pct": 88.0,
+        "count": 5576
+      },
+      {
+        "group": "Mixed",
+        "pct": 9.4,
+        "count": 598
+      },
+      {
+        "group": "White",
+        "pct": 0.8,
+        "count": 49
+      },
+      {
+        "group": "East Indian",
+        "pct": 0.8,
+        "count": 48
+      },
+      {
+        "group": "Indigenous",
+        "pct": 0.5,
+        "count": 31
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.5,
+        "count": 32
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "2012 census, by parish.",
+    "religion_year": 2012,
+    "religion_note": "2012 census, by parish."
+  },
+  {
+    "id": "VCT-marriaqua",
+    "level": "admin1",
+    "name": "Marriaqua",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 28.9,
+        "count": 2252
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 22.3,
+        "count": 1741
+      },
+      {
+        "group": "Methodist",
+        "pct": 11.1,
+        "count": 864
+      },
+      {
+        "group": "Baptist",
+        "pct": 9.1,
+        "count": 707
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 7.2,
+        "count": 560
+      },
+      {
+        "group": "Anglican",
+        "pct": 7.0,
+        "count": 545
+      },
+      {
+        "group": "Without religion",
+        "pct": 4.5,
+        "count": 353
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.2,
+        "count": 325
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.0,
+        "count": 233
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 1.2,
+        "count": 90
+      },
+      {
+        "group": "Evangelical Christian",
+        "pct": 0.7,
+        "count": 51
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 0.5,
+        "count": 39
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 0.3,
+        "count": 25
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.1,
+        "count": 11
+      },
+      {
+        "group": "Mormon",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Black",
+        "pct": 77.1,
+        "count": 6010
+      },
+      {
+        "group": "Mixed",
+        "pct": 17.6,
+        "count": 1375
+      },
+      {
+        "group": "East Indian",
+        "pct": 3.8,
+        "count": 294
+      },
+      {
+        "group": "Indigenous",
+        "pct": 0.7,
+        "count": 55
+      },
+      {
+        "group": "White",
+        "pct": 0.5,
+        "count": 37
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 19
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 8
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "2012 census, by parish.",
+    "religion_year": 2012,
+    "religion_note": "2012 census, by parish."
+  },
+  {
+    "id": "VCT-northern-grenadines",
+    "level": "admin1",
+    "name": "Northern Grenadines",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Anglican",
+        "pct": 22.6,
+        "count": 1398
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 17.5,
+        "count": 1085
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 15.4,
+        "count": 952
+      },
+      {
+        "group": "Evangelical Christian",
+        "pct": 9.0,
+        "count": 555
+      },
+      {
+        "group": "Without religion",
+        "pct": 9.0,
+        "count": 554
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 7.0,
+        "count": 431
+      },
+      {
+        "group": "Baptist",
+        "pct": 6.7,
+        "count": 414
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.0,
+        "count": 374
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.9,
+        "count": 182
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 1.5,
+        "count": 95
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 1.0,
+        "count": 63
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.8,
+        "count": 51
+      },
+      {
+        "group": "Traditional",
+        "pct": 0.3,
+        "count": 18
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Mormon",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mixed",
+        "pct": 49.3,
+        "count": 3048
+      },
+      {
+        "group": "Black",
+        "pct": 44.9,
+        "count": 2778
+      },
+      {
+        "group": "White",
+        "pct": 3.5,
+        "count": 218
+      },
+      {
+        "group": "Indigenous",
+        "pct": 1.7,
+        "count": 104
+      },
+      {
+        "group": "East Indian",
+        "pct": 0.3,
+        "count": 16
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 11
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 9
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "2012 census, by parish.",
+    "religion_year": 2012,
+    "religion_note": "2012 census, by parish."
+  },
+  {
+    "id": "VCT-sandy-bay",
+    "level": "admin1",
+    "name": "Sandy Bay",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Pentecostal",
+        "pct": 33.7,
+        "count": 869
+      },
+      {
+        "group": "Anglican",
+        "pct": 23.4,
+        "count": 602
+      },
+      {
+        "group": "Baptist",
+        "pct": 10.0,
+        "count": 258
+      },
+      {
+        "group": "Without religion",
+        "pct": 8.9,
+        "count": 229
+      },
+      {
+        "group": "Other religion",
+        "pct": 8.1,
+        "count": 209
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 5.7,
+        "count": 147
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 5.3,
+        "count": 136
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.5,
+        "count": 64
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 1.0,
+        "count": 27
+      },
+      {
+        "group": "Evangelical Christian",
+        "pct": 0.5,
+        "count": 12
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.3,
+        "count": 8
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 0.3,
+        "count": 8
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.2,
+        "count": 5
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mixed",
+        "pct": 42.7,
+        "count": 1101
+      },
+      {
+        "group": "Indigenous",
+        "pct": 38.4,
+        "count": 988
+      },
+      {
+        "group": "Black",
+        "pct": 18.3,
+        "count": 472
+      },
+      {
+        "group": "East Indian",
+        "pct": 0.3,
+        "count": 8
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "White",
+        "pct": 0.1,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "2012 census, by parish.",
+    "religion_year": 2012,
+    "religion_note": "2012 census, by parish."
+  },
+  {
+    "id": "VCT-southern-grenadines",
+    "level": "admin1",
+    "name": "Southern Grenadines",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Anglican",
+        "pct": 21.0,
+        "count": 852
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 18.4,
+        "count": 744
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 18.2,
+        "count": 736
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 12.8,
+        "count": 519
+      },
+      {
+        "group": "Baptist",
+        "pct": 7.4,
+        "count": 298
+      },
+      {
+        "group": "Not stated",
+        "pct": 6.8,
+        "count": 274
+      },
+      {
+        "group": "Without religion",
+        "pct": 5.2,
+        "count": 209
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.0,
+        "count": 204
+      },
+      {
+        "group": "Methodist",
+        "pct": 2.4,
+        "count": 97
+      },
+      {
+        "group": "Evangelical Christian",
+        "pct": 1.0,
+        "count": 42
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 1.0,
+        "count": 39
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 0.5,
+        "count": 21
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Mormon",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Traditional",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Black",
+        "pct": 79.2,
+        "count": 3206
+      },
+      {
+        "group": "Mixed",
+        "pct": 17.2,
+        "count": 695
+      },
+      {
+        "group": "Indigenous",
+        "pct": 1.8,
+        "count": 73
+      },
+      {
+        "group": "White",
+        "pct": 1.4,
+        "count": 58
+      },
+      {
+        "group": "East Indian",
+        "pct": 0.3,
+        "count": 14
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "2012 census, by parish.",
+    "religion_year": 2012,
+    "religion_note": "2012 census, by parish."
+  },
+  {
+    "id": "VCT-suburbs-of-kingstown",
+    "level": "admin1",
+    "name": "Suburbs Of Kingstown",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Pentecostal",
+        "pct": 35.9,
+        "count": 4948
+      },
+      {
+        "group": "Anglican",
+        "pct": 10.2,
+        "count": 1402
+      },
+      {
+        "group": "Methodist",
+        "pct": 8.3,
+        "count": 1148
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 8.3,
+        "count": 1145
+      },
+      {
+        "group": "Not stated",
+        "pct": 7.2,
+        "count": 987
+      },
+      {
+        "group": "Without religion",
+        "pct": 6.9,
+        "count": 950
+      },
+      {
+        "group": "Baptist",
+        "pct": 6.3,
+        "count": 874
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.0,
+        "count": 694
+      },
+      {
+        "group": "Evangelical Christian",
+        "pct": 4.3,
+        "count": 591
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 4.2,
+        "count": 585
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 1.3,
+        "count": 175
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 0.7,
+        "count": 102
+      },
+      {
+        "group": "Mormon",
+        "pct": 0.5,
+        "count": 64
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.4,
+        "count": 58
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.2,
+        "count": 32
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.2,
+        "count": 24
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Traditional",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Black",
+        "pct": 76.0,
+        "count": 10480
+      },
+      {
+        "group": "Mixed",
+        "pct": 20.7,
+        "count": 2853
+      },
+      {
+        "group": "Indigenous",
+        "pct": 2.1,
+        "count": 285
+      },
+      {
+        "group": "White",
+        "pct": 0.4,
+        "count": 57
+      },
+      {
+        "group": "East Indian",
+        "pct": 0.4,
+        "count": 49
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.4,
+        "count": 56
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Saint Vincent and the Grenadines Statistical Office, 2012 Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "aliases": [],
+    "parent_aliases": [],
+    "ethnicity_year": 2012,
+    "ethnicity_note": "2012 census, by parish.",
+    "religion_year": 2012,
+    "religion_note": "2012 census, by parish."
+  }
+]
