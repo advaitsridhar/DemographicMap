@@ -84,22 +84,52 @@ REGION_CODES = {"DLAND": "Land (16)", "KREISE": "Kreis (~400)",
                 "REGBEZ": "Regierungsbezirk"}
 
 
-def call(base: str, path: str, creds: dict[str, str], **params: object) -> object:
-    """One GENESIS REST call. Returns the parsed body, or an error marker."""
-    query = {"language": "de", **creds, **params}
-    url = f"{base}/{path}?" + urllib.parse.urlencode(query)
-    req = urllib.request.Request(url, headers={"Accept": "application/json"})
+def once(base: str, path: str, params: dict[str, object], method: str) -> object:
+    """One call, by one method. Returns the parsed body or an error marker."""
+    encoded = urllib.parse.urlencode(params)
+    if method == "GET":
+        req = urllib.request.Request(f"{base}/{path}?{encoded}",
+                                     headers={"Accept": "application/json"})
+    else:
+        req = urllib.request.Request(
+            f"{base}/{path}", data=encoded.encode(),
+            headers={"Accept": "application/json",
+                     "Content-Type": "application/x-www-form-urlencoded"},
+            method="POST")
     try:
         with urllib.request.urlopen(req, timeout=TIMEOUT) as fh:
             body = fh.read()
     except urllib.error.HTTPError as err:
-        return {"__error__": f"HTTP {err.code} {err.reason}"}
+        return {"__error__": f"HTTP {err.code} {err.reason or ''}".strip()}
     except Exception as err:                        # noqa: BLE001 -- reported
         return {"__error__": f"{type(err).__name__}: {err}"}
     try:
         return json.loads(body)
     except ValueError:
         return {"__error__": "not JSON: " + body[:200].decode("utf-8", "replace")}
+
+
+# Which HTTP method an instance answers on, learned from its first call rather
+# than assumed. The first pass asked with GET and every endpoint on all three
+# instances answered 405 Method Not Allowed -- which says the path is there and
+# the verb is wrong, not that the data is absent or the account is missing.
+# Those are three different findings and guessing between them is exactly what
+# this probe exists to avoid, so it tries both and reports which one answered.
+METHOD: dict[str, str] = {}
+
+
+def call(base: str, path: str, creds: dict[str, str], **params: object) -> object:
+    """One GENESIS REST call, by whichever method this instance accepts."""
+    query = {"language": "de", **creds, **params}
+    order = [METHOD[base]] if base in METHOD else ["POST", "GET"]
+    last: object = {"__error__": "not attempted"}
+    for method in order:
+        last = once(base, path, query, method)
+        if not (isinstance(last, dict) and str(last.get("__error__", ""))
+                .startswith("HTTP 405")):
+            METHOD.setdefault(base, method)
+            return last
+    return last
 
 
 def status_of(payload: object) -> str:
@@ -137,7 +167,7 @@ def probe(key: str, spec: dict[str, str]) -> None:
     print(f"    credentials: {'set via ' + spec['user_env'] if creds else 'none -- asking anonymously'}")
 
     who = call(spec["base"], "helloworld/logincheck", creds)
-    print(f"    logincheck: {status_of(who)}")
+    print(f"    logincheck: {status_of(who)} [{METHOD.get(spec['base'], 'no method worked')}]")
     if isinstance(who, dict) and "__error__" not in who:
         print(f"      {json.dumps(who, ensure_ascii=False)[:300]}")
 
