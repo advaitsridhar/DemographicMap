@@ -1,4 +1,5 @@
-  Tom5_tab1_VPN-2020.xlsx: 10,485 bytes beginning b'<!DOCTYPE ht', which is not a workbook -- the archive is throttling; retrying in 30s
+  Tom5_tab1_VPN-2020.xlsx: 10,484 bytes beginning b'<!DOCTYPE ht', which is not a workbook -- the archive is throttling; retrying in 30s
+  retry 1/1 after 2s :: https://web.archive.org/web/20250105165828/https://rosstat.gov.ru/storage/mediabank/Tom5_tab1_VPN-2020.xlsx :: <urlopen error [Errno 111] Connection refused>
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
     h.request(req.get_method(), req.selector, req.data, headers,
@@ -21,7 +22,7 @@ Traceback (most recent call last):
     raise exceptions[0]
   File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 848, in create_connection
     sock.connect(sa)
-TimeoutError: timed out
+ConnectionRefusedError: [Errno 111] Connection refused
 
 During handling of the above exception, another exception occurred:
 
@@ -46,22 +47,22 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
     raise URLError(err)
-urllib.error.URLError: <urlopen error timed out>
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
   File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/russia.py", line 409, in <module>
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/russia.py", line 411, in <module>
     raise SystemExit(main())
                      ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/russia.py", line 372, in main
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/russia.py", line 374, in main
     blob = workbook(filename)
            ^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/russia.py", line 233, in workbook
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/russia.py", line 235, in workbook
     blob = http_get(BASE + filename, binary=True, cache=False,
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 199, in http_get
     raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
-RuntimeError: GET failed after 0 retries: https://web.archive.org/web/20250105165828/https://rosstat.gov.ru/storage/mediabank/Tom5_tab1_VPN-2020.xlsx
+RuntimeError: GET failed after 1 retries: https://web.archive.org/web/20250105165828/https://rosstat.gov.ru/storage/mediabank/Tom5_tab1_VPN-2020.xlsx
