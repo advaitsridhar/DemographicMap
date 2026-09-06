@@ -316,15 +316,21 @@ def parents(rows: list[tuple[str, float, int]]) -> list[tuple[str, float]]:
 
     The level that means "a group" is therefore the commonest one, not zero and
     not the smallest -- a sheet has one row per ethnicity and only a handful of
-    sub-groups, so the mode is the top of the list by construction. Anything
-    deeper is inside something. Anything shallower is a sibling of the list
-    rather than a member of it, which is what the "not stated" line is.
+    sub-groups, so the mode is the top of the list by construction.
+
+    Rows at exactly that level, and no others. Deeper is inside something.
+    Shallower is not a member of the list at all, and the row that proves it is
+    "Лица, в переписных листах которых национальная принадлежность не указана"
+    -- the people who stated nothing. Counting them took ХМАО to 135% of its
+    own total, because the universe this reconciles against is Указавшие
+    национальную принадлежность, those who *did* state. A residual outside the
+    denominator cannot be one of its parts.
     """
     if not rows:
         return []
     depths = Counter(depth for _name, _value, depth in rows)
     top = depths.most_common(1)[0][0]
-    return [(name, value) for name, value, depth in rows if depth <= top]
+    return [(name, value) for name, value, depth in rows if depth == top]
 
 
 def read(blob: bytes, field: str) -> dict[str, dict[str, Any]]:

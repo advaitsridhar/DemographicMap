@@ -3321,11 +3321,14 @@ class MatchingOnACodeRatherThanARomanisation(unittest.TestCase):
         kept = dict(self.ru.parents(rows))
         self.assertIn("Русские", kept)
         self.assertIn("Аварцы", kept)
-        # The shallower row is a sibling of the list, not a member of it.
-        self.assertIn("не указана", kept)
         # The deeper rows are counted inside Аварцы already.
         self.assertNotIn("Андийцы", kept)
         self.assertNotIn("Ахвахцы", kept)
+        # And the shallower row is not a member of the list at all. It is the
+        # people who stated nothing, and the universe this reconciles against
+        # is those who did state -- counting them took ХМАО to 135% of its own
+        # published total.
+        self.assertNotIn("не указана", kept)
 
     def test_the_indent_is_a_style_and_not_leading_whitespace(self):
         class Cell:
