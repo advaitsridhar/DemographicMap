@@ -29,23 +29,28 @@ words a religion table would be titled with, and prints what comes back with
 the region variable each table offers. A table that exists but is cut only by
 Germany as a whole is no use here and is reported as such rather than counted.
 
-What the first runs established, so the next reader does not repeat them:
+What the runs established, so the next reader does not repeat them. All three
+instances answer POST and refuse GET with 405, and all three admit an anonymous
+user called GAST:
 
-* All three instances answer POST and refuse GET with 405.
-* The Zensus 2022 database admits an anonymous user called GAST, and answers
-  its catalogue to that user. Zensus 2022 **did** ask religion: forty tables
-  match, in two families -- ``1000A-*`` "Personen: Religion" and ``2000X-*``
-  "Personen: Religion (ausfuehrlich)", which is the finer classification.
-* The Regionaldatenbank admits GAST too but answers 401 to any catalogue
-  search, so it needs a real account. GENESIS-Online answers 307 to POST.
+* **GENESIS-Online** (the federal database) is open and searchable to GAST and
+  holds no religion demography at all. "Religion" matches fifteen tables --
+  television airtime, book titles, gross earnings, national accounts -- all of
+  them "Deutschland, Jahre". The word is in their subject classifications, not
+  their variables. Its documented host redirects: ask genesis.destatis.de.
+* **The Regionaldatenbank** admits GAST and then answers 401 to every catalogue
+  search. It needs a registered account and nothing about it is known.
+* **The Zensus 2022 database has the data.** Zensus 2022 did ask religion:
+  forty tables match, in two families -- 1000A-* "Personen: Religion" and
+  2000X-* "Personen: Religion (ausfuehrlich)". GAST may search that catalogue
+  and do nothing else with it: catalogue, metadata and data endpoints all
+  answer 401. Germany is one free registration away.
 
-That leaves one question between here and an adapter: which of those tables is
-cut by a geography the boundary files can join. Four of them share the title
-"Personen: Religion" and differ only in a letter -- 1018, 1E18, 1K18, 1W18 --
-which is the Zensus habit of publishing one table once per regional level. A
-table cut only by Germany as a whole cannot fill sixteen Laender, and the
-title does not say which is which. So ``--tables`` asks each one for its own
-structure and prints the variables it is cut by.
+What is still unknown, and what an account would settle first: four tables
+share the title "Personen: Religion" and differ only by a letter -- 1018, 1E18,
+1K18, 1W18 -- which is the Zensus habit of publishing one table once per
+regional level. Which of them is cut by DLAND decides the adapter, and
+metadata/table is exactly the endpoint GAST may not call.
 
 Read-only, and the output is the log. Credentials, if any are set, are read
 from the environment and never from a command line.
