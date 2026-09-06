@@ -57,7 +57,13 @@ from ._shared import (
 STORE = RAW / "russia"
 
 CAPTURE = "20250105165828"
-BASE = (f"https://web.archive.org/web/{CAPTURE}/"
+# The "id_" suffix is the Wayback Machine's raw-content form, and it is not
+# optional here. Without it the archive answers a request for a .xlsx with its
+# playback wrapper -- 10 kB of "<!DOCTYPE html><title>Wayback Machine</title>"
+# -- which is a valid page and a useless workbook. That was read here as rate
+# limiting and written up as such four times before anyone looked at the body.
+# It was never rate limiting. id_ returns 1.5 MB beginning "PK", first ask.
+BASE = (f"https://web.archive.org/web/{CAPTURE}id_/"
         "https://rosstat.gov.ru/storage/mediabank/")
 LANDING = ("https://rosstat.gov.ru/vpn/2020/"
            "Tom5_Nacionalnyj_sostav_i_vladenie_yazykami")
@@ -202,12 +208,18 @@ TOLERANCE = 0.005
 def workbook(filename: str) -> bytes:
     """The file, or a refusal that says what arrived instead.
 
-    The Internet Archive throttles, and it does not do so with a status code:
-    it answers 200 with an HTML error page. http_get retries network errors and
-    5xx and is right not to touch this one -- from its side the request
-    succeeded. So the check belongs here, where something knows the response is
-    supposed to be a workbook: a ZIP starts "PK", and 10 kB where 1.6 MB was
-    expected is a page saying no.
+    The check earns its place even now that BASE asks for raw content: the
+    archive answers 200 either way, and an HTML page where a workbook was
+    expected is a successful request for the wrong thing. http_get cannot see
+    that -- from its side nothing failed -- so it belongs here, where something
+    knows what was asked for. A ZIP starts "PK".
+
+    What this guard could not do was explain itself. It refused four runs
+    saying the archive was throttling, which was a guess made from a byte count
+    and never checked against the body. The body said "Wayback Machine". The
+    lesson kept here is that a guard which names the wrong cause is still
+    better than none -- it stopped the bad file -- but that reading the
+    evidence would have cost one probe instead of four runs.
 
     Uncached deliberately. http_get caches whatever it received, and a cached
     error page would fail every later run for a reason that had already gone
@@ -240,18 +252,16 @@ def workbook(filename: str) -> bytes:
             log(f"  {filename}: {len(blob):,} bytes, kept at {kept}")
             return blob
         last = blob
-        wait = 30 * (attempt + 1)
+        wait = 15 * (attempt + 1)
         log(f"  {filename}: {len(blob):,} bytes beginning {blob[:12]!r}, "
-            f"which is not a workbook -- the archive is throttling; "
-            f"retrying in {wait}s")
+            f"which is not a workbook; retrying in {wait}s")
         time.sleep(wait)
     raise SystemExit(
         f"RUS: {filename} came back as {len(last):,} bytes of {last[:60]!r} "
-        f"four times over, and no copy is checked in at {kept}. The archive "
-        f"holds this file -- a probe read all 88 of its sheets -- so this is "
-        f"throttling rather than absence, and the fix is to fetch it once "
-        f"when the archive is willing and commit it, not to fetch it on "
-        f"every build.")
+        f"four times over, and no copy is checked in at {kept}. Read those "
+        f"bytes before concluding anything about why: the last time this "
+        f"fired they were the archive's playback wrapper, and the URL wanted "
+        f"the id_ suffix rather than the four rounds of backoff it got.")
 
 
 def number(cell: Any) -> float | None:
@@ -368,9 +378,10 @@ def main() -> int:
     fields: dict[str, dict[str, dict[str, Any]]] = {}
     for field, filename in TABLE.items():
         if fields:
-            # Two large files back to back is what tips the archive into
-            # throttling, and waiting is cheaper than retrying.
-            time.sleep(10)
+            # A courtesy pause between two multi-megabyte requests to a free
+            # public archive. Not a workaround for anything: the wrapper this
+            # once seemed to be evidence of was a URL mistake, not a limit.
+            time.sleep(5)
         blob = workbook(filename)
         log(f"{field}: {filename}, {len(blob):,} bytes")
         fields[field] = read(blob, field)
