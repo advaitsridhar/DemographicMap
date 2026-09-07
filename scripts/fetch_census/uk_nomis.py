@@ -78,6 +78,43 @@ def fetch_table(dataset: str, cell: str, geography: str) -> dict[str, dict[str, 
     return out
 
 
+def list_datasets(match: str) -> int:
+    """Every dataset Nomis serves, filtered by name.
+
+    Nomis is run for the ONS but is not only the ONS: it is the UK's shared
+    labour-market and census warehouse, and which offices' tables reach it is
+    not something the ONS pages say. That matters because the 45 UK shapes this
+    map cannot fill are Scottish council areas and Northern Irish districts,
+    whose censuses were run by NRS and NISRA -- and their own portals answer a
+    JavaScript shell to a program, with the PxStat and SPARQL endpoints their
+    platforms usually expose returning 404 or closing the connection.
+
+    So before crawling two more sites, ask the warehouse this project already
+    talks to whether it has them. One call lists everything it serves.
+    """
+    url = f"{BASE}/def.sdmx.json"
+    log(f"uk_nomis: datasets matching {match!r}")
+    try:
+        payload = http_json(url, timeout=180)
+    except Exception as err:                        # noqa: BLE001 -- reported
+        log(f"  {type(err).__name__}: {err}")
+        return 1
+    lists = (payload.get("structure", {}).get("keyfamilies", {})
+             .get("keyfamily", []))
+    needle = match.lower()
+    shown = 0
+    for family in lists:
+        name = ((family.get("name") or [{}])[0] or {}).get("value", "") \
+            if isinstance(family.get("name"), list) else \
+            (family.get("name") or {}).get("value", "")
+        if needle and needle not in name.lower():
+            continue
+        log(f"  {str(family.get('id','?')):<14} {name[:120]}")
+        shown += 1
+    log(f"  {shown} of {len(lists)} datasets matched")
+    return 0
+
+
 def list_geographies() -> int:
     """Which geographies Nomis publishes TS030 for.
 
@@ -123,6 +160,8 @@ def main() -> int:
                     help="district (TYPE154) or county (TYPE155)")
     ap.add_argument("--geography", default=None,
                     help="a Nomis geography type, overriding --level")
+    ap.add_argument("--datasets", default=None, metavar="TEXT",
+                    help="list Nomis datasets whose name contains TEXT, and stop")
     ap.add_argument("--geographies", action="store_true",
                     help="list the geography types this dataset is published "
                          "for, and stop")
@@ -130,6 +169,8 @@ def main() -> int:
     args = ap.parse_args()
 
     tables: dict[str, dict[str, dict[str, Any]]] = {}
+    if args.datasets is not None:
+        return list_datasets(args.datasets)
     if args.geographies:
         return list_geographies()
 
