@@ -17,6 +17,15 @@ on:
         description: "Rebuild the PMTiles archives (slow)"
         type: boolean
         default: false
+      trace:
+        description: >-
+          Comma-separated ISO3 codes to trace through the join, e.g. 'BRA'.
+          Logs every adapter row's verdict for those countries. This is the
+          only place the join runs -- the boundary files are ~550 MB and live
+          nowhere else -- so a question about why a row missed can be answered
+          here and nowhere else.
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -64,6 +73,7 @@ jobs:
           ZENSUS_USER: ${{ secrets.ZENSUS_USER }}
           ZENSUS_PASSWORD: ${{ secrets.ZENSUS_PASSWORD }}
           WITH_CENSUS: ${{ inputs.with_census && '1' || '0' }}
+          BUILD_TRACE: ${{ inputs.trace }}
           SKIP_TILES: ${{ inputs.rebuild_tiles && '0' || '1' }}
         run: scripts/build_all.sh
 
