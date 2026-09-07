@@ -1,5 +1,43 @@
-germany: Zensus 2022 table 1000A-1018, cut by GEORB1 (regierungsbezirk)
-  26 areas in the GEORB1 cut
-  wrote data/processed/germany_regierungsbezirk.json (51 kB)
-  wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/germany_regierungsbezirk.json
-  26 records
+seed dataset : Philippines Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Censuses
+organization : 'us-census-bureau'
+datasets     : 34 listed of 34
+already live : 31 countries with subnational figures
+
+ISO3  live  xlsx  dataset name
+DMA   -     1     dominica-subnational-boundaries-and-tabular-data
+DOM   -     1     dominican-republic-subnational-population-and-housing-data-tables-with-administrative-boundaries
+HTI   -     1     haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries
+IDN   -     1     indonesia-subnational-population-and-housing-data-tables
+IRQ   -     1     iraq-subnational-boundaries-and-tabular-data
+LBY   -     1     libya-subnational-boundaries-and-tabular-data
+NGA   -     1     nigeria-subnational-boundaries-and-tabular-data
+SDN   -     1     sudan-subnational-boundaries-and-tabular-data
+SOM   -     1     somalia-subnational-boundaries-and-tabular-data
+SSD   -     1     south-sudan-subnational-boundaries-and-tabular-data
+SYR   -     1     syria-subnational-boundaries-and-tabular-data
+VCT   -     1     saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data
+YEM   -     1     yemen-subnational-boundaries-and-tabular-data
+BGD   yes   1     bangladesh-subnational-boundaries-and-tabular-data
+BHS   yes   1     the-bahamas-subnational-boundaries-and-tabular-data
+CAF   yes   1     car-subnational-boundaries-and-tabular-data
+COD   yes   1     democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data
+COL   yes   2     colombia-subnational-boundaries-and-tabular-data
+ETH   yes   1     ethiopia-subnational-boundaries-and-tabular-data
+JAM   yes   2     jamaica-subnational-boundaries-and-tabular-data
+MLI   yes   1     mali-subnational-population-and-housing-data-tables-with-administrative-boundaries
+MMR   yes   1     burma-subnational-boundaries-and-tabular-data
+PAK   yes   1     pakistan-subnational-population-and-housing-data-tables
+PHL   yes   1     philippines-subnational-population-and-housing-data-tables
+UKR   yes   1     ukraine-subnational-boundaries-and-tabular-data
+AGO   -     -     angola-and-namibia-gridded-population-dataset
+DMA   -     -     dominica-gridded-population-dataset
+HTI   -     -     haiti-gridded-population-data
+RWA   -     -     rwanda-gridded-population-dataset
+SSD   -     -     south-sudan-gridded-population-data
+VCT   -     -     saint-vincent-and-the-grenadines-gridded-population-dataset
+BHS   yes   -     the-bahamas-gridded-population-dataset
+COD   yes   -     democratic-republic-of-the-congo-and-zambia-gridded-population-dataset
+PAK   yes   -     pakistan-gridded-population-dataset
+
+candidates (a workbook, and not yet on the map): 13
+  DMA, DOM, HTI, IDN, IRQ, LBY, NGA, SDN, SOM, SSD, SYR, VCT, YEM
