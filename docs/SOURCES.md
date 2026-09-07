@@ -1618,6 +1618,45 @@ to Bogura — and geoBoundaries still carries the older forms, with plain
 transliteration variants for three more. Declared rather than derived:
 "Nawabganj" and "Chapainababganj" share no word.
 
+### China: 1.4 billion people, and three closed routes
+
+China carries a population on all 33 of its provinces and a composition on
+four. Those four -- Xinjiang, Tibet, Guangxi and Ningxia -- are **hand-compiled
+rows in `data/curated/admin1_seed.json`**, which is what that file exists for.
+There has never been a China adapter, and it is worth saying plainly that this
+is not a broken join: the join works, 27 provinces matching by name and 5 by
+prefix, and the only one that reached nothing was Guangdong, drawn under its
+capital city's name and now declared in `MISSPELLED`.
+
+So the gap is real and the question is whether it can be filled. Three routes
+were measured, and all three are closed:
+
+* **The USCB subnational series does not carry China.** `scripts/probe_hdx.py`
+  enumerates all 34 datasets that organization publishes -- the route that
+  served Bangladesh, Myanmar, Colombia, Pakistan, Ethiopia and eight others --
+  and no Chinese one is among them.
+* **The National Bureau of Statistics answers 403.** Its portal is a JavaScript
+  front end over `easyquery.htm`, which serves JSON; asked by a client that
+  names itself, both the provincial and the national database refuse, from an
+  unblocked runner and not only from the build sandbox. That is the Bureau
+  declining to serve an automated reader. Getting past it means claiming to be
+  a browser, which is circumventing a refusal rather than reading a
+  publication, and this project does not do that -- the same line drawn at
+  Indonesia's `bps.go.id`.
+* **HDX carries 577 China datasets and not one census tabulation.** Searched
+  across every publisher, not only the Census Bureau, because Bangladesh
+  reached this map through HDX from a different publisher entirely. What is
+  there is boundaries, World Bank indicator series, conflict data, health
+  sites, airports and population rasters. No minzu, no census volume.
+
+The data exists: the Seventh National Population Census of 2020 tabulated the
+56 official nationalities by province, and the four curated rows come from its
+provincial communiques. What is absent is a machine-readable route to it that
+does not involve pretending to be something this project is not. China stays
+1.4 billion people with a population and no composition, with the reason
+written down -- and with four provinces filled from the census's own published
+figures rather than none.
+
 ### Germany: sixteen Laender, three categories, and a church-tax register
 
 Germany was the largest European country with nothing below the national line:
@@ -1726,7 +1765,9 @@ Germany at ADM2 as 38 Regierungsbezirke and statistische Regionen, not as
 Kreise, so the 400-row cut would join nothing at all while looking like four
 hundred rows of progress.
 
-GEORB1 returns 26 areas and all 26 reach a shape, covering 60.2 million people.
+GEORB1 returns 26 areas and all 26 reach a shape. Nine more come from the Land
+cut of the same table -- see below -- for 35 of the 38 shapes and 78.6 million
+people.
 Getting there needed three prefixes, because the slash in
 *Regierungsbezirke/Statistische Regionen* is doing real work: North
 Rhine-Westphalia, Bavaria, Baden-Wuerttemberg and Hesse still have
@@ -1737,14 +1778,22 @@ in all three cases, so the prefixes are stripped in the reader rather than
 declared as misspellings -- they are what a source puts on every row of a
 geography, not names anybody got wrong.
 
-**Twelve of the 38 shapes have no row, and that is the source's answer.** Nine
-are Laender with no Regierungsbezirke at all -- Berlin, Hamburg, Bremen,
-Saarland, Schleswig-Holstein and the four eastern Laender -- whose figures live
-in the Land cut and whose ADM2 shape is the whole Land again. Three are
-Rhineland-Palatinate's Koblenz, Trier and Rheinhessen-Pfalz, **abolished in
-2000**, which geoBoundaries still draws and Zensus does not publish. Those
-twelve stay visibly empty rather than being given a figure from a level they
-were not measured at.
+**Nine Laender have no Regierungsbezirke at all** -- Berlin, Hamburg, Bremen,
+Saarland, Schleswig-Holstein and four eastern ones -- so GEORB1 has no row for
+them, and geoBoundaries draws each as a single ADM2 shape carrying the Land's
+own name. The shape *is* the Land, so the Land's figures are that shape's
+figures and they are filled from the Land cut. Leaving them blank marked as
+unmeasured nine places measured exactly once at exactly that extent.
+
+That is a declaration, not the rule "a Land with no GEORB1 row", because the
+rule catches ten and the tenth must not be filled. **Rhineland-Palatinate
+abolished its Regierungsbezirke in 2000** and geoBoundaries still draws
+Koblenz, Trier and Rheinhessen-Pfalz, so its single Land figure would have to
+be split three ways and cannot be. Those three stay visibly empty rather than
+taking a figure from a level they were not measured at, and the adapter refuses
+outright if the two lists ever disagree -- a declared Land missing from the
+Land cut, a name that does not match, or a Land that has since acquired its own
+GEORB1 row and would be counted twice.
 
 Credentials reach the adapter through `ZENSUS_USER` and `ZENSUS_PASSWORD` in
 the environment, never a command line, and both workflows pass them. Without
