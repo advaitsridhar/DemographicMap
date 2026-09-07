@@ -248,23 +248,41 @@ def tables_from(payload: object) -> list[dict]:
     return []
 
 
-def probe(key: str, spec: dict[str, str]) -> None:
-    creds = {}
+def account(spec: dict) -> tuple[dict[str, str], str]:
+    """The credential as headers, and a description naming no secret value.
+
+    Headers, not query parameters. Measured, not assumed: --whoami asked
+    logincheck under four styles and only this one came back with the account
+    -- query parameters, HTTP Basic and a bearer token each left the server
+    still answering GAST, which reads exactly like a rejected account and is
+    not one. Anything that sends credentials to GENESIS goes through here so
+    that finding cannot be lost by one call spelling it differently.
+    """
     user = os.environ.get(spec["user_env"], "").strip()
     password = os.environ.get(spec["pass_env"], "").strip()
     if user and password:
-        creds = {"username": user, "password": password}
+        return ({"username": user, "password": password},
+                f"set via {spec['user_env']}")
+    if user or password:
+        missing = spec["pass_env"] if user else spec["user_env"]
+        return {}, f"INCOMPLETE -- {missing} is empty"
+    return {}, "none -- asking anonymously as GAST"
+
+
+def probe(key: str, spec: dict[str, str]) -> None:
+    auth, described = account(spec)
+    creds: dict[str, str] = {}
     print(f"\n=== {spec['name']} ===")
     print(f"    {spec['base']}")
-    print(f"    credentials: {'set via ' + spec['user_env'] if creds else 'none -- asking anonymously'}")
+    print(f"    credentials: {described}")
 
-    who = call(spec["base"], "helloworld/logincheck", creds)
+    who = call(spec["base"], "helloworld/logincheck", creds, auth)
     print(f"    logincheck: {status_of(who)} [{METHOD.get(spec['base'], 'no method worked')}]")
     if isinstance(who, dict) and "__error__" not in who:
         print(f"      {json.dumps(who, ensure_ascii=False)[:300]}")
 
     for term in TERMS:
-        found = call(spec["base"], "find/find", creds,
+        found = call(spec["base"], "find/find", creds, auth,
                      term=term, category="tables", pagelength=40)
         rows = tables_from(found)
         note = status_of(found)
@@ -298,23 +316,20 @@ def variables_of(payload: object) -> list[dict]:
 
 def describe(key: str, spec: dict[str, str], tables: list[str]) -> None:
     """What each named table is cut by -- the question a title cannot answer."""
-    creds = {}
-    user = os.environ.get(spec["user_env"], "").strip()
-    password = os.environ.get(spec["pass_env"], "").strip()
-    if user and password:
-        creds = {"username": user, "password": password}
+    auth, described = account(spec)
+    creds: dict[str, str] = {}
     print(f"\n=== {spec['name']} -- table structures ===")
     # Whether a credential was in hand is half of what a 401 means here, and
     # this pass used to print only the 401. A run with the secret missing and a
     # run with the secret rejected then looked identical, which sent one whole
     # round trip chasing an account that had never been passed to the process.
-    print(f"    credentials: {'set via ' + spec['user_env'] if creds else 'none -- GAST'}")
-    who = call(spec["base"], "helloworld/logincheck", creds)
+    print(f"    credentials: {described}")
+    who = call(spec["base"], "helloworld/logincheck", creds, auth)
     print(f"    logincheck: {status_of(who)}")
     if isinstance(who, dict) and "__error__" not in who:
         print(f"      {json.dumps(who, ensure_ascii=False)[:300]}")
     for name in tables:
-        meta = call(spec["base"], "metadata/table", creds, name=name)
+        meta = call(spec["base"], "metadata/table", creds, auth, name=name)
         note = status_of(meta)
         obj = meta.get("Object", {}) if isinstance(meta, dict) else {}
         title = (obj.get("Content") or "").strip().replace("\n", " ")
@@ -357,17 +372,14 @@ ENDPOINTS: tuple[tuple[str, dict[str, object]], ...] = (
 
 def endpoints(key: str, spec: dict[str, str], table: str) -> None:
     """Which endpoint families answer, for the credentials in hand."""
-    creds = {}
-    user = os.environ.get(spec["user_env"], "").strip()
-    password = os.environ.get(spec["pass_env"], "").strip()
-    if user and password:
-        creds = {"username": user, "password": password}
+    auth, described = account(spec)
+    creds: dict[str, str] = {}
     print(f"\n=== {spec['name']} -- endpoint surface for {table} ===")
-    print(f"    credentials: {'set via ' + spec['user_env'] if creds else 'none -- GAST'}")
+    print(f"    credentials: {described}")
     for path, template in ENDPOINTS:
         params = {k: (v.format(table=table) if isinstance(v, str) else v)
                   for k, v in template.items()}
-        answer = call(spec["base"], path, creds, **params)
+        answer = call(spec["base"], path, creds, auth, **params)
         note = status_of(answer)
         # A body is the proof, not the status line: GENESIS answers 200 with a
         # refusal inside often enough that "ok" alone has been wrong twice here.
