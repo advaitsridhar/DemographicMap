@@ -1,8 +1,5 @@
-
-=== Zensus 2022 results database -- 1000A-1018 ===
-    credentials: set via ZENSUS_USER
-    27063 bytes, 138 lines
-    [1000A-1018_1788742244768_de_flat.csv]
-    statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_attribute_code;1_variable_attribute_label;2_variable_code;2_variable_label;2_variable_attribute_code;2_variable_attribute_label;value;value_unit;value_variable_code;value_variable_label
-    1000A;Bevölkerung kompakt (Gebietsstand 15.05.2022);STAG;Stichtag;2022-05-15;GEOBL1;Bundesländer;05;Nordrhein-Westfalen;RELZG2;Religion;;Insgesamt;100,0;%;PRS018;Personen
-    ... 135 more lines
+germany: Zensus 2022 table 1000A-1018
+  16 Laender in the table
+  wrote data/processed/germany_land.json (31 kB)
+  wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/germany_land.json
+  16 records
