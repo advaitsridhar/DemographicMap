@@ -1708,6 +1708,44 @@ every figure appears twice, once as a percentage and once as a count -- only
 the counts are read, because a count rebuilt from a rounded percentage is out
 by thousands of people and carries no sign that it was never counted.
 
+**A second level, from the same table.** `1000A-1018` is not a sixteen-row
+table. It is published cut by Bundeslaender, by 36 Regierungsbezirke, by 400
+Landkreise and by 10,787 Gemeinden, and asking for it without naming a
+geography returns whichever it calls its default -- so four separate runs read
+the same code and saw sixteen rows while the finer cuts sat behind it, never
+absent and never asked for. `regionalvariable` is the parameter that asks.
+
+That was found by asking the catalogue rather than reading titles. All four
+single-variable religion tables are titled *Personen: Religion* and none of
+them says what it is cut by, so an absence read off a list of titles would have
+been a fact about titles. `catalogue/variables` and `catalogue/tables2variable`
+make it a fact about the database.
+
+**GEORB1 is the cut this map can use, and GEOLK4 is not.** geoBoundaries draws
+Germany at ADM2 as 38 Regierungsbezirke and statistische Regionen, not as
+Kreise, so the 400-row cut would join nothing at all while looking like four
+hundred rows of progress.
+
+GEORB1 returns 26 areas and all 26 reach a shape, covering 60.2 million people.
+Getting there needed three prefixes, because the slash in
+*Regierungsbezirke/Statistische Regionen* is doing real work: North
+Rhine-Westphalia, Bavaria, Baden-Wuerttemberg and Hesse still have
+Regierungsbezirke (`Reg.-Bez. Arnsberg`), Saxony renamed its own
+*Direktionsbezirke*, and Lower Saxony abolished its own in 2004 and reports
+*statistische Regionen* in their place. The boundary file carries the bare name
+in all three cases, so the prefixes are stripped in the reader rather than
+declared as misspellings -- they are what a source puts on every row of a
+geography, not names anybody got wrong.
+
+**Twelve of the 38 shapes have no row, and that is the source's answer.** Nine
+are Laender with no Regierungsbezirke at all -- Berlin, Hamburg, Bremen,
+Saarland, Schleswig-Holstein and the four eastern Laender -- whose figures live
+in the Land cut and whose ADM2 shape is the whole Land again. Three are
+Rhineland-Palatinate's Koblenz, Trier and Rheinhessen-Pfalz, **abolished in
+2000**, which geoBoundaries still draws and Zensus does not publish. Those
+twelve stay visibly empty rather than being given a figure from a level they
+were not measured at.
+
 Credentials reach the adapter through `ZENSUS_USER` and `ZENSUS_PASSWORD` in
 the environment, never a command line, and both workflows pass them. Without
 them the adapter **refuses** rather than falling back to anonymous: `GAST` can
