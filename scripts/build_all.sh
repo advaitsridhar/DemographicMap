@@ -50,7 +50,11 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # workbook in data/raw/us/, picked up automatically when present.
   soft python3 -m scripts.fetch_census.us_acs --level state
   soft python3 -m scripts.fetch_census.us_acs --level county
-  soft python3 -m scripts.fetch_census.uk_nomis
+  soft python3 -m scripts.fetch_census.uk_nomis --level district
+  # Shire England: geoBoundaries draws the county, ONS publishes the
+  # districts below it, and Nomis publishes both. Without this, 150 rows
+  # have no shape and the counties that do have one carry nothing.
+  soft python3 -m scripts.fetch_census.uk_nomis --level county
   soft python3 -m scripts.fetch_census.statcan --level province
   soft python3 -m scripts.fetch_census.ibge_sidra --level state
   # 5,570 municipalities, and the reason the level is spelled out twice:
