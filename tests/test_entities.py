@@ -4027,6 +4027,14 @@ class GermanysThreeCategoriesMustSumToItsPublishedTotal(unittest.TestCase):
         """
         for label, want in (("Reg.-Bez. Arnsberg", "Arnsberg"),
                             ("Reg.-Bez. Gießen", "Gießen"),
+                            # Saxony renamed its Regierungsbezirke, and Lower
+                            # Saxony abolished its own in 2004 and reports
+                            # statistische Regionen instead. Three prefixes for
+                            # one variable, which is what the slash in
+                            # "Regierungsbezirke/Statistische Regionen" means.
+                            ("Direktionsbezirk Chemnitz", "Chemnitz"),
+                            ("Statistische Region Weser-Ems", "Weser-Ems"),
+                            ("Statistische Region Hannover", "Hannover"),
                             ("Berlin", "Berlin"),
                             ("Schleswig-Holstein", "Schleswig-Holstein")):
             self.assertEqual(self.germany.shape_name(label), want)

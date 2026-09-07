@@ -158,16 +158,25 @@ def tablefile(name: str, auth: dict[str, str], region: str = "") -> str:
     return payload.decode("utf-8-sig", "replace")
 
 
-# The Regierungsbezirk rows are labelled "Reg.-Bez. Arnsberg" where the
-# boundary file says "Arnsberg". Stripped rather than declared as a
-# misspelling: it is a prefix the source puts on every row of one geography,
-# not a name anybody got wrong, and MISSPELLED is for the latter.
-_REGION_PREFIX = "Reg.-Bez. "
+# GEORB1 is "Regierungsbezirke/Statistische Regionen", and the slash is doing
+# real work: the thirty-six areas are of three kinds and each kind is labelled
+# with its own prefix. North Rhine-Westphalia, Bavaria, Baden-Wuerttemberg and
+# Hesse still have Regierungsbezirke ("Reg.-Bez. Arnsberg"); Saxony renamed
+# theirs Direktionsbezirke; Lower Saxony abolished theirs in 2004 and reports
+# statistische Regionen in their place. The boundary file carries the bare
+# name in all three cases.
+#
+# Stripped in the reader rather than declared in MISSPELLED: these are prefixes
+# a source puts on every row of a geography, not names anybody got wrong.
+_REGION_PREFIXES = ("Reg.-Bez. ", "Direktionsbezirk ", "Statistische Region ")
 
 
 def shape_name(label: str) -> str:
     """The label as the boundary file spells it."""
-    return label[len(_REGION_PREFIX):].strip() if label.startswith(_REGION_PREFIX) else label
+    for prefix in _REGION_PREFIXES:
+        if label.startswith(prefix):
+            return label[len(prefix):].strip()
+    return label
 
 
 def parse(text: str, region_code: str = "GEOBL1") -> dict[str, dict[str, Any]]:
