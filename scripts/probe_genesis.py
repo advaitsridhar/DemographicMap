@@ -471,6 +471,46 @@ def whoami(key: str, spec: dict[str, str]) -> None:
             print(f"             {str(note)[:160]}")
 
 
+def fetch(key: str, spec: dict[str, str], table: str, lines: int) -> None:
+    """The table itself, printed, so the labels are read rather than guessed.
+
+    ffcsv is GENESIS's flat format: one row per cell with its variable codes and
+    labels spelled out beside the value, which is what an adapter has to map.
+    Sixteen Laender by three categories is a small table, so it is printed in
+    full -- the whole point is to see every category label exactly as published,
+    including whichever one turns out to be the residual.
+    """
+    auth, described = account(spec)
+    print(f"\n=== {spec['name']} -- {table} ===")
+    print(f"    credentials: {described}")
+    text = raw(spec["base"], "data/tablefile", auth,
+               name=table, area="all", format="ffcsv", compress="false")
+    rows = text.splitlines()
+    print(f"    {len(text)} bytes, {len(rows)} lines")
+    for row in rows[:lines]:
+        print(f"    {row[:220]}")
+    if len(rows) > lines:
+        print(f"    ... {len(rows) - lines} more lines")
+
+
+def raw(base: str, path: str, auth: dict[str, str], **params: object) -> str:
+    """One call, returning the body as text however it is encoded."""
+    encoded = urllib.parse.urlencode({"language": "de", **params})
+    req = urllib.request.Request(
+        f"{base}/{path}", data=encoded.encode(),
+        headers={"Accept": "*/*",
+                 "Content-Type": "application/x-www-form-urlencoded",
+                 **auth},
+        method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=TIMEOUT) as fh:
+            return fh.read().decode("utf-8", "replace")
+    except urllib.error.HTTPError as err:
+        return f"HTTP {err.code} {err.reason or ''}".strip()
+    except Exception as err:                        # noqa: BLE001 -- reported
+        return f"{type(err).__name__}: {err}"
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -479,6 +519,11 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--tables", default="",
                     help="comma-separated table codes to describe instead of "
                          "searching, e.g. 1000A-1018,1000A-1K18")
+    ap.add_argument("--fetch", default="",
+                    help="one table code; print its ffcsv body so the category "
+                         "labels can be read rather than guessed")
+    ap.add_argument("--lines", type=int, default=80,
+                    help="how many lines of --fetch to print")
     ap.add_argument("--whoami", action="store_true",
                     help="report which way of presenting the credential the "
                          "server actually recognises")
@@ -493,14 +538,16 @@ def main(argv: list[str] | None = None) -> int:
         print(f"unknown instance(s): {', '.join(unknown)}", file=sys.stderr)
         return 2
 
-    if not args.tables and not args.endpoints and not args.whoami:
+    if not (args.tables or args.endpoints or args.whoami or args.fetch):
         print("Region variables a usable table would carry:")
         for code, meaning in REGION_CODES.items():
             print(f"  {code:<8} {meaning}")
 
     tables = [t.strip() for t in args.tables.split(",") if t.strip()]
     for key in wanted:
-        if args.whoami:
+        if args.fetch:
+            fetch(key, INSTANCES[key], args.fetch.strip(), args.lines)
+        elif args.whoami:
             whoami(key, INSTANCES[key])
         elif args.endpoints:
             endpoints(key, INSTANCES[key], args.endpoints.strip())
