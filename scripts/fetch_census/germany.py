@@ -37,7 +37,8 @@ The finer classification exists -- RELZG1, seven categories, table 2000X-1022
 something coarser about its Laender than about itself.
 
 Usage:
-    python -m scripts.fetch_census.germany
+    python -m scripts.fetch_census.germany --level land
+    python -m scripts.fetch_census.germany --level regierungsbezirk
 """
 
 from __future__ import annotations
@@ -59,6 +60,23 @@ from ._shared import (
 BASE = "https://ergebnisse.zensus2022.de/api/rest/2020"
 TABLE = "1000A-1018"
 TIMEOUT = 120
+
+# One table, four geographies. 1000A-1018 is published cut by Bundeslaender, by
+# 36 Regierungsbezirke, by 400 Landkreise and by 10,787 Gemeinden, and asking
+# for it without naming one returns whichever it calls its default -- which is
+# how it was read four times as a sixteen-row table while the finer cuts sat
+# behind the same code, never absent and never asked for.
+#
+# geoBoundaries draws Germany at ADM2 as 38 Regierungsbezirke and statistische
+# Regionen -- Arnsberg, Detmold, Duesseldorf, Koeln and Muenster for NRW,
+# Oberbayern through Schwaben for Bavaria, and the smaller Laender standing as
+# one unit each. So GEORB1 is the cut this map can use and GEOLK4 is not: 400
+# Kreise would join nothing at all while looking like four hundred rows of
+# progress.
+LEVELS: dict[str, tuple[str, str, str, int]] = {
+    "land": ("GEOBL1", "admin1", "germany_land.json", 16),
+    "regierungsbezirk": ("GEORB1", "admin2", "germany_regierungsbezirk.json", 0),
+}
 
 # The census date the table itself carries, not the year the file was made.
 CENSUS_YEAR = 2022
@@ -110,12 +128,17 @@ def credentials() -> dict[str, str]:
     return {"username": user, "password": password}
 
 
-def tablefile(name: str, auth: dict[str, str]) -> str:
+def tablefile(name: str, auth: dict[str, str], region: str = "") -> str:
     """The table as CSV text, out of the ZIP the API answers with."""
-    body = urllib.parse.urlencode({
+    params = {
         "name": name, "area": "all", "format": "ffcsv",
         "compress": "false", "language": "de",
-    }).encode()
+    }
+    if region:
+        # regionalvariable is what asks for a geography other than the default.
+        params["regionalvariable"] = region
+        params["regionalschluessel"] = ""
+    body = urllib.parse.urlencode(params).encode()
     request = urllib.request.Request(
         f"{BASE}/data/tablefile", data=body,
         headers={"Accept": "*/*",
@@ -135,7 +158,19 @@ def tablefile(name: str, auth: dict[str, str]) -> str:
     return payload.decode("utf-8-sig", "replace")
 
 
-def parse(text: str) -> dict[str, dict[str, Any]]:
+# The Regierungsbezirk rows are labelled "Reg.-Bez. Arnsberg" where the
+# boundary file says "Arnsberg". Stripped rather than declared as a
+# misspelling: it is a prefix the source puts on every row of one geography,
+# not a name anybody got wrong, and MISSPELLED is for the latter.
+_REGION_PREFIX = "Reg.-Bez. "
+
+
+def shape_name(label: str) -> str:
+    """The label as the boundary file spells it."""
+    return label[len(_REGION_PREFIX):].strip() if label.startswith(_REGION_PREFIX) else label
+
+
+def parse(text: str, region_code: str = "GEOBL1") -> dict[str, dict[str, Any]]:
     """Land -> {name, counts by English group, total}.
 
     ffcsv is one row per cell: the variables spelled out with their codes and
@@ -151,12 +186,12 @@ def parse(text: str) -> dict[str, dict[str, Any]]:
     laender: dict[str, dict[str, Any]] = {}
     unknown: set[str] = set()
     for row in rows:
-        if row.get("1_variable_code") != "GEOBL1":
+        if row.get("1_variable_code") != region_code:
             continue
         if (row.get("value_unit") or "").strip() != "Anzahl":
             continue                      # the percentage twin of this cell
         code = (row.get("1_variable_attribute_code") or "").strip()
-        name = (row.get("1_variable_attribute_label") or "").strip()
+        name = shape_name((row.get("1_variable_attribute_label") or "").strip())
         group_code = (row.get("2_variable_attribute_code") or "").strip()
         raw = (row.get("value") or "").strip()
         if not (code and name and raw):
@@ -188,13 +223,15 @@ def parse(text: str) -> dict[str, dict[str, Any]]:
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--level", default="land", choices=list(LEVELS))
     ap.add_argument("--out", default=None)
     args = ap.parse_args(argv)
 
-    log(f"germany: Zensus 2022 table {TABLE}")
+    region_code, level, filename, expected = LEVELS[args.level]
+    log(f"germany: Zensus 2022 table {TABLE}, cut by {region_code} ({args.level})")
     auth = credentials()
     try:
-        text = tablefile(TABLE, auth)
+        text = tablefile(TABLE, auth, region_code)
     except urllib.error.HTTPError as err:
         raise SystemExit(
             f"germany: {TABLE} answered HTTP {err.code} {err.reason}. A 401 "
@@ -203,16 +240,19 @@ def main(argv: list[str] | None = None) -> int:
             f"parameter, so a working account presented the wrong way looks "
             f"exactly like a rejected one.") from err
 
-    laender = parse(text)
-    log(f"  {len(laender)} Laender in the table")
-    if len(laender) != 16:
+    areas = parse(text, region_code)
+    log(f"  {len(areas)} areas in the {region_code} cut")
+    if expected and len(areas) != expected:
         raise SystemExit(
-            f"germany: expected 16 Laender and the table held {len(laender)}. "
-            f"That is a different geography from the one this adapter was "
-            f"written against, and the join should not be given it unchecked.")
+            f"germany: expected {expected} areas from {region_code} and the "
+            f"table held {len(areas)}. That is a different geography from the "
+            f"one this adapter was written against, and the join should not be "
+            f"given it unchecked.")
+    if not areas:
+        raise SystemExit(f"germany: {region_code} returned no areas at all")
 
     records = []
-    for code, entry in sorted(laender.items()):
+    for code, entry in sorted(areas.items()):
         counts = entry["counts"]
         total = entry["total"]
         if total and counts:
@@ -227,8 +267,12 @@ def main(argv: list[str] | None = None) -> int:
                     f"published total of {total:,}. The categories are meant "
                     f"to be exhaustive; a difference this size means one was "
                     f"dropped.")
+        # A Regierungsbezirk's key opens with its Land's: 059 is Arnsberg in
+        # 05, Nordrhein-Westfalen. So the parent is read off the code rather
+        # than looked up, and the sixteen Laender parent Germany itself.
+        parent = "DEU" if level == "admin1" else f"DEU-{code[:2]}"
         records.append(record(
-            f"DEU-{code}", entry["name"], level="admin1", parent="DEU",
+            f"DEU-{code}", entry["name"], level=level, parent=parent,
             codes={"ags": code},
             population=(measure(int(total), year=CENSUS_YEAR, source=SOURCE)
                         if total else gap(NOT_AVAILABLE)),
@@ -239,7 +283,7 @@ def main(argv: list[str] | None = None) -> int:
                       "url": URL, "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"}],
         ))
 
-    out = args.out or PROCESSED / "germany_land.json"
+    out = args.out or PROCESSED / filename
     write_json(out, records)
     log(f"  wrote {out}")
     log(f"  {len(records)} records")

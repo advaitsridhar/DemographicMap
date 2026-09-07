@@ -4015,6 +4015,43 @@ class GermanysThreeCategoriesMustSumToItsPublishedTotal(unittest.TestCase):
             {"REL-RK-OR", "REL-EV-OR", "REL-SONST-X"},
             "the three RELZG2 codes the table publishes")
 
+    def test_the_regierungsbezirk_prefix_is_stripped_to_the_shape_name(self):
+        """"Reg.-Bez. Arnsberg" is the source's prefix, not a misspelling.
+
+        The GEORB1 cut labels every row "Reg.-Bez. X" where the boundary file
+        says "X". That is a prefix one geography carries on all its rows, so it
+        is stripped in the reader rather than declared in MISSPELLED, which is
+        for names somebody got wrong. The Laender that stand as one region --
+        Berlin, Saarland, Schleswig-Holstein -- carry no prefix and must come
+        through untouched.
+        """
+        for label, want in (("Reg.-Bez. Arnsberg", "Arnsberg"),
+                            ("Reg.-Bez. Gießen", "Gießen"),
+                            ("Berlin", "Berlin"),
+                            ("Schleswig-Holstein", "Schleswig-Holstein")):
+            self.assertEqual(self.germany.shape_name(label), want)
+
+    def test_a_second_geography_is_read_from_the_same_table(self):
+        """One table code, more than one geography, and the reader must say which.
+
+        1000A-1018 is published cut by Bundeslaender, Regierungsbezirke,
+        Landkreise and Gemeinden. parse() takes the region variable it is
+        reading, so rows of another cut in the same file are skipped rather
+        than counted -- asking for GEOBL1 and being handed GEORB1 rows would
+        otherwise produce a composition for the wrong places.
+        """
+        laender = "\n".join([
+            self.HEADER,
+            self.row("11", "Berlin", "REL-RK-OR", "Katholisch", 250000, "Anzahl"),
+        ])
+        bezirke = laender.replace("GEOBL1", "GEORB1")
+        self.assertEqual(set(self.germany.parse(laender, "GEOBL1")), {"11"})
+        self.assertEqual(self.germany.parse(laender, "GEORB1"), {},
+                         "GEOBL1 rows must not be read as a GEORB1 cut")
+        self.assertEqual(set(self.germany.parse(bezirke, "GEORB1")), {"11"})
+        self.assertEqual(self.germany.parse(bezirke, "GEOBL1"), {},
+                         "GEORB1 rows must not be read as a GEOBL1 cut")
+
     def test_the_note_says_the_residual_is_not_only_the_irreligious(self):
         note = self.germany.NOTE.lower()
         for word in ("public law", "muslim", "not stated", "belief"):
