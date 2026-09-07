@@ -1,17 +1,5 @@
-
-=== Zensus 2022 results database -- 1000A-1018 cut by GEORB1 ===
-    credentials: set via ZENSUS_USER
-    50015 bytes, 218 lines
-    [1000A-1018_1788745747573_de_flat.csv]
-    statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_attribute_code;1_variable_attribute_label;2_variable_code;2_variable_label;2_variable_attribute_code;2_variable_attribute_label;value;value_unit;value_variable_code;value_variable_label
-    1000A;Bevölkerung kompakt (Gebietsstand 15.05.2022);STAG;Stichtag;2022-05-15;GEORB1;Regierungsbezirke/Statistische Regionen;065;Reg.-Bez. Gießen;RELZG2;Religion;;Insgesamt;100,0;%;PRS018;Personen
-    1000A;Bevölkerung kompakt (Gebietsstand 15.05.2022);STAG;Stichtag;2022-05-15;GEORB1;Regierungsbezirke/Statistische Regionen;065;Reg.-Bez. Gießen;RELZG2;Religion;;Insgesamt;1031634;Anzahl;PRS018;Personen
-    1000A;Bevölkerung kompakt (Gebietsstand 15.05.2022);STAG;Stichtag;2022-05-15;GEORB1;Regierungsbezirke/Statistische Regionen;059;Reg.-Bez. Arnsberg;RELZG2;Religion;REL-SONST-X;Sonstige, keine, ohne Angabe;42,3;%;PRS018;Personen
-    1000A;Bevölkerung kompakt (Gebietsstand 15.05.2022);STAG;Stichtag;2022-05-15;GEORB1;Regierungsbezirke/Statistische Regionen;059;Reg.-Bez. Arnsberg;RELZG2;Religion;REL-SONST-X;Sonstige, keine, ohne Angabe;1507002;Anzahl;PRS018;Personen
-    1000A;Bevölkerung kompakt (Gebietsstand 15.05.2022);STAG;Stichtag;2022-05-15;GEORB1;Regierungsbezirke/Statistische Regionen;059;Reg.-Bez. Arnsberg;RELZG2;Religion;REL-RK-OR;Römisch-katholische Kirche (öffentlich-rechtlich);30,6;%;PRS018;Personen
-    1000A;Bevölkerung kompakt (Gebietsstand 15.05.2022);STAG;Stichtag;2022-05-15;GEORB1;Regierungsbezirke/Statistische Regionen;059;Reg.-Bez. Arnsberg;RELZG2;Religion;REL-RK-OR;Römisch-katholische Kirche (öffentlich-rechtlich);1090465;Anzahl;PRS018;Personen
-    1000A;Bevölkerung kompakt (Gebietsstand 15.05.2022);STAG;Stichtag;2022-05-15;GEORB1;Regierungsbezirke/Statistische Regionen;092;Niederbayern;RELZG2;Religion;REL-RK-OR;Römisch-katholische Kirche (öffentlich-rechtlich);64,7;%;PRS018;Personen
-    1000A;Bevölkerung kompakt (Gebietsstand 15.05.2022);STAG;Stichtag;2022-05-15;GEORB1;Regierungsbezirke/Statistische Regionen;092;Niederbayern;RELZG2;Religion;REL-RK-OR;Römisch-katholische Kirche (öffentlich-rechtlich);798152;Anzahl;PRS018;Personen
-    1000A;Bevölkerung kompakt (Gebietsstand 15.05.2022);STAG;Stichtag;2022-05-15;GEORB1;Regierungsbezirke/Statistische Regionen;059;Reg.-Bez. Arnsberg;RELZG2;Religion;;Insgesamt;100,0;%;PRS018;Personen
-    1000A;Bevölkerung kompakt (Gebietsstand 15.05.2022);STAG;Stichtag;2022-05-15;GEORB1;Regierungsbezirke/Statistische Regionen;059;Reg.-Bez. Arnsberg;RELZG2;Religion;;Insgesamt;3558726;Anzahl;PRS018;Personen
-    ... 206 more lines
+germany: Zensus 2022 table 1000A-1018, cut by GEORB1 (regierungsbezirk)
+  26 areas in the GEORB1 cut
+  wrote data/processed/germany_regierungsbezirk.json (51 kB)
+  wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/germany_regierungsbezirk.json
+  26 records
