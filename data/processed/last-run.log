@@ -1,17 +1,15 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_genesis.py", line 467, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_genesis.py", line 456, in main
+    whoami(key, INSTANCES[key])
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_genesis.py", line 414, in whoami
+    answer = call(spec["base"], "helloworld/logincheck", params, headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: call() takes 3 positional arguments but 4 were given
 
-=== Zensus 2022 results database -- table structures ===
-    credentials: set via ZENSUS_USER
-    logincheck: ok
-      {"Status": "Sie wurden erfolgreich an- und abgemeldet! Bei mehr als 3 parallelen Requests wurden länger als 15 Minuten laufende Requests beendet.", "Username": "GAST"}
-
-  1000A-1018  (HTTP 401 Unauthorized)
-    no structure returned -- raw: {"__error__": "HTTP 401 Unauthorized"}
-
-  1000A-1E18  (HTTP 401 Unauthorized)
-    no structure returned -- raw: {"__error__": "HTTP 401 Unauthorized"}
-
-  1000A-1K18  (HTTP 401 Unauthorized)
-    no structure returned -- raw: {"__error__": "HTTP 401 Unauthorized"}
-
-  1000A-1W18  (HTTP 401 Unauthorized)
-    no structure returned -- raw: {"__error__": "HTTP 401 Unauthorized"}
+=== Zensus 2022 results database -- authentication styles ===
+    credential from ZENSUS_USER / ZENSUS_PASSWORD (user is 24 chars, password 14)
