@@ -2634,6 +2634,35 @@ class BoundaryMisspellings(unittest.TestCase):
         for name in ("Western Cape", "Eastern Cape", "Limpopo"):
             self.assertEqual(common.respell(name, "ZAF"), name)
 
+    def test_every_correction_normalises_to_something_different(self):
+        """A declaration that norm() folds away anyway is doing nothing.
+
+        norm() drops accents, case, spacing and the administrative words, so a
+        correction that only changes those was never needed -- the join already
+        matched. Each entry here has to survive that folding to be worth its
+        line, which is also the check that catches an entry added against the
+        wrong spelling: Arez keeps its z through norm(), and "Arês" does not
+        become "Arez" by any rule.
+        """
+        for (group, wrong), right in common.MISSPELLED.items():
+            with self.subTest(group=group, wrong=wrong):
+                self.assertNotEqual(
+                    be.norm(wrong), be.norm(right),
+                    f"{group} {wrong!r} -> {right!r} survives norm() unchanged, "
+                    f"so the join matched it already and the declaration is "
+                    f"either redundant or aimed at the wrong name")
+
+    def test_guangdong_is_reachable_from_the_shape_that_names_a_city(self):
+        """126 million people, behind the wrong name.
+
+        geoBoundaries draws China's most populous province as "Guangzhou
+        Province". Guangzhou is its capital city. Nothing that says Guangdong
+        -- Wikidata included -- can reach a shape that says Guangzhou, so the
+        province carried a polygon and no figures at all.
+        """
+        self.assertEqual(be.norm(common.respell("Guangzhou Province", "CHN")),
+                         be.norm("Guangdong"))
+
 
 class UscbReader(unittest.TestCase):
     """The reader for the U.S. Census Bureau's subnational census series.
