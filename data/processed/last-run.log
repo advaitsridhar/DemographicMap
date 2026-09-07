@@ -1,25 +1,36 @@
 
-=== NIR: PxStat dataset list (JSON-RPC) ===
-    https://ws.nisra.gov.uk/public/api.jsonrpc?data=%7B%22jsonrpc%22%3A%20%222.0%22%2C%20%22method%22%3A%20%22PxStat.Data.Cube_API.ReadCollection%22%2C%20...
-    URLError: <urlopen error [Errno -5] No address associated with hostname>
+=== NIR: portal front door ===
+    https://data.nisra.gov.uk/
+    HTTP 200 | text/html | 20342 bytes
+    not JSON: ﻿<!DOCTYPE html> <html lang="en"> <head> <!-- **************************************************************************** --> <!-- Title --> <!-- *****************************************************
+    26 links, 0 look like data or an API
 
-=== NIR: PxStat read MS-B01 (religion) as JSON-stat ===
-    https://ws.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/MS-B01/JSON-stat/2.0/en
-    URLError: <urlopen error [Errno -5] No address associated with hostname>
+=== NIR: PxStat RESTful read, MS-B01 religion ===
+    https://data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/MS-B01/JSON-stat/2.0/en
+    HTTP 404 Not Found
 
-=== NIR: PxStat read MS-B02 (ethnic group) as JSON-stat ===
-    https://ws.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/MS-B02/JSON-stat/2.0/en
-    URLError: <urlopen error [Errno -5] No address associated with hostname>
+=== NIR: PxWeb-shaped API root ===
+    https://data.nisra.gov.uk/api/v1/en
+    HTTP 404 Not Found
 
-=== SCO: statistics.gov.scot SPARQL, ask for the graphs ===
-    https://statistics.gov.scot/sparql.json?query=SELECT%20DISTINCT%20%3Fg%20WHERE%20%7B%20GRAPH%20%3Fg%20%7B%3Fs%20%3Fp%20%3Fo%7D%20%7D%20LIMIT%2025
+=== NIR: NISRA census results page ===
+    https://www.nisra.gov.uk/statistics/census/2021-census
+    HTTP 200 | text/html; charset=UTF-8 | 26011 bytes
+    not JSON: <!DOCTYPE html> <html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://ww
+    52 links, 0 look like data or an API
+
+=== SCO: statistics.gov.scot SPARQL (Accept-negotiated) ===
+    https://statistics.gov.scot/sparql?query=SELECT%20%3Fs%20WHERE%20%7B%3Fs%20%3Fp%20%3Fo%7D%20LIMIT%205
     RemoteDisconnected: Remote end closed connection without response
 
-=== SCO: Scotland's Census front door ===
-    https://www.scotlandscensus.gov.uk/
-    HTTP 200 | text/html; charset=utf-8 | 51387 bytes
-    not JSON: <!DOCTYPE html> <html lang="en" class="no-outline"> <head> <meta charSet="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" /> <meta name="color-scheme" content="light dark"> <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-
+=== SCO: Scotland's Census downloads ===
+    https://www.scotlandscensus.gov.uk/search-the-census#/search
+    HTTP 200 | text/html; charset=utf-8 | 1478 bytes
+    not JSON: <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link href="https://fast.fonts.net/t/1.css?apiType=css&projectid=3
+    4 links, 0 look like data or an API
 
-=== SCO: NRS open data portal ===
-    https://www.nrscotland.gov.uk/statistics-and-data/statistics/
-    HTTP 404 Not Found
+=== SCO: NRS statistics front door ===
+    https://www.nrscotland.gov.uk/
+    HTTP 200 | text/html; charset=utf-8 | 46395 bytes
+    not JSON: <HTML prefix="og: https://ogp.me/ns#" lang="en-GB"> <head> <title>National Records of Scotland (NRS)</title> <meta name="viewport" content="width=device-width, initial-scale=1" /> <meta http-equiv="Ca
+    55 links, 0 look like data or an API
