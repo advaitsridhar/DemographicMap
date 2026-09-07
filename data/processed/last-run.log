@@ -1,36 +1,84 @@
-
-=== NIR: portal front door ===
-    https://data.nisra.gov.uk/
-    HTTP 200 | text/html | 20342 bytes
-    not JSON: ﻿<!DOCTYPE html> <html lang="en"> <head> <!-- **************************************************************************** --> <!-- Title --> <!-- *****************************************************
-    26 links, 0 look like data or an API
-
-=== NIR: PxStat RESTful read, MS-B01 religion ===
-    https://data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/MS-B01/JSON-stat/2.0/en
-    HTTP 404 Not Found
-
-=== NIR: PxWeb-shaped API root ===
-    https://data.nisra.gov.uk/api/v1/en
-    HTTP 404 Not Found
-
-=== NIR: NISRA census results page ===
-    https://www.nisra.gov.uk/statistics/census/2021-census
-    HTTP 200 | text/html; charset=UTF-8 | 26011 bytes
-    not JSON: <!DOCTYPE html> <html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://ww
-    52 links, 0 look like data or an API
-
-=== SCO: statistics.gov.scot SPARQL (Accept-negotiated) ===
-    https://statistics.gov.scot/sparql?query=SELECT%20%3Fs%20WHERE%20%7B%3Fs%20%3Fp%20%3Fo%7D%20LIMIT%205
-    RemoteDisconnected: Remote end closed connection without response
-
-=== SCO: Scotland's Census downloads ===
-    https://www.scotlandscensus.gov.uk/search-the-census#/search
-    HTTP 200 | text/html; charset=utf-8 | 1478 bytes
-    not JSON: <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link href="https://fast.fonts.net/t/1.css?apiType=css&projectid=3
-    4 links, 0 look like data or an API
-
-=== SCO: NRS statistics front door ===
-    https://www.nrscotland.gov.uk/
-    HTTP 200 | text/html; charset=utf-8 | 46395 bytes
-    not JSON: <HTML prefix="og: https://ogp.me/ns#" lang="en-GB"> <head> <title>National Records of Scotland (NRS)</title> <meta name="viewport" content="width=device-width, initial-scale=1" /> <meta http-equiv="Ca
-    55 links, 0 look like data or an API
+uk_nomis: datasets matching 'religion'
+  NM_529_1       QS208EW - Religion
+  NM_573_1       QS210EW - Religion (detailed)
+  NM_616_1       KS209EW - Religion
+  NM_657_1       DC2107EW - Religion by sex by age
+  NM_659_1       DC2201EW - Ethnic Group by Religion
+  NM_662_1       DC2204EW - National identity by religion
+  NM_665_1       DC2207EW - Country of birth by religion by sex
+  NM_672_1       DC3203EW - Long-term health problem or disability by general health by religion by sex by age
+  NM_681_1       DC6205EW - Economic activity by religion by sex by age
+  NM_683_1       DC6207EW - NS-SeC by religion by sex by age
+  NM_713_1       DC4204EW - Tenure by car or van availability by religion of Household Reference Person (HRP)
+  NM_716_1       DC4207EW - Dwelling type by type of central heating in household by occupancy rating (rooms) by religion of Household Re
+  NM_717_1       DC4208EW - Dwelling type by type of central heating in household by occupancy rating (bedrooms) by religion of Household
+  NM_756_1       DC1202EW - Household composition by religion of Household Reference Person (HRP)
+  NM_786_1       DC4409EWla - Communal establishment management and type by religion by sex
+  NM_806_1       LC2107EW - Religion by sex by age
+  NM_807_1       LC2201EW - Ethnic group by religion
+  NM_810_1       LC2204EW - National Identity by religion
+  NM_813_1       LC2207EW - Country of birth by religion by sex
+  NM_819_1       LC6205EW - Economic activity by Religion
+  NM_821_1       LC6207EW - NS-SeC by religion
+  NM_824_1       LC3203EW - General health by religion by sex by age
+  NM_827_1       LC3207EW - Long-term health problem or disability by religion by sex by age
+  NM_857_1       LC1202EW - Household composition by religion of Household Reference Person (HRP)
+  NM_882_1       LC4204EW - Tenure by car or van availability by religion of Household Reference Person (HRP)
+  NM_885_1       LC4207EW - Occupancy rating (rooms) by religion of Household Reference Person (HRP)
+  NM_886_1       LC4208EW - Occupancy rating (bedrooms) by religion of Household Reference Person (HRP)
+  NM_910_1       ST210EWla - Religion
+  NM_937_1       WD210EW - Religion
+  NM_953_1       DC6212EW - Industry by religion by age
+  NM_955_1       DC6214EW - Occupation by religion by sex by age
+  NM_958_1       DC6217EW - Industry by religion by sex
+  NM_1024_1      LC6212EW - Industry by religion
+  NM_1026_1      LC6214EW - Occupation by religion
+  NM_1039_1      LC5204EW - Highest level of qualification by religion
+  NM_1064_1      LC4417EW - Tenure by car or van availability by religion
+  NM_1095_1      LC2120EW - Religion by accommodation type
+  NM_1109_1      DC5204EW - Highest level of qualification by religion by age
+  NM_1307_1      WP210EW - Religion (Workplace population)
+  NM_1359_1      OT210EW - Religion (Out of term-time population)
+  NM_1412_1      LC2123EW - Religion of dependent child by sex
+  NM_1607_1      KS007 - Religion
+  NM_1644_1      UV015 - Religion
+  NM_1769_1      CS103 - Sex and age by religion
+  NM_1790_1      CT010 - Theme table on religion - people
+  NM_1791_1      CT011 - Theme table on religion of Household Reference Person (HRP) - households
+  NM_1871_1      ST103 - Sex and age by religion
+  NM_1872_1      ST104 - Ethnic group by religion
+  NM_1917_1      ST149 - Sex and age by religion
+  NM_1918_1      ST150 - Sex and country of birth by religion
+  NM_1919_1      ST151 - Household composition by religion of Household Reference Person (HRP)
+  NM_1920_1      ST152 - Sex and age and limiting long-term illness and general health by religion
+  NM_1921_1      ST153 - Sex and age and economic activity by religion
+  NM_1922_1      ST154 - Sex and occupation by religion
+  NM_1923_1      ST155 - Sex and industry by religion
+  NM_1924_1      ST156 - Tenure and number of cars or vans by religion of Household Reference Person (HRP)
+  NM_1925_1      ST157 - Sex and NS-SeC by religion
+  NM_1926_1      ST158 - Age and highest level of qualification by religion
+  NM_1927_1      ST159 - Shared/unshared dwelling and central heating and occupancy rating by religion
+  NM_1928_1      ST160 - Shared/unshared dwelling and central heating and occupancy rating by religion of Household Reference Person
+  NM_1929_1      ST161 - Sex and type of communal establishment by resident type and religion
+  NM_1947_1      TT052 - Theme table on religion of all dependent children in households
+  NM_1948_1      TT053 - Theme table on religion
+  NM_2049_1      TS030 - Religion
+  NM_2096_1      TS031 - Religion (detailed)
+  NM_2097_1      TS075 - Multi religion households
+  NM_2123_1      RM023 - Economic activity status by religion
+  NM_2131_1      RM031 - Ethnic group by religion
+  NM_2145_1      RM045 - General health by religion by age
+  NM_2154_1      RM054 - Highest level of qualification by religion
+  NM_2161_1      RM061 - Household composition by religion of Household Reference Person
+  NM_2172_1      RM072 - Disability by religion by sex
+  NM_2183_1      RM083 - Multi-religion households by ethnic group of Household Reference Person
+  NM_2184_1      RM084 - Multi-religion households by occupation of Household Reference Person
+  NM_2185_1      RM085 - Multi-religion households by tenure
+  NM_2188_1      RM088 - National identity by religion
+  NM_2192_1      RM092 - NS-SEC by religion
+  NM_2206_1      RM106 - Occupation by religion
+  NM_2217_1      RM117 - Religion by accommodation type
+  NM_2218_1      RM118 - Religion by age
+  NM_2273_1      RM173 - Gender identity by religion
+  NM_2288_1      RM188 - Sexual orientation by religion
+  82 of 1617 datasets matched
