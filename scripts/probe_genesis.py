@@ -248,6 +248,25 @@ def tables_from(payload: object) -> list[dict]:
     return []
 
 
+def without_username(payload: object) -> str:
+    """A login-check body, with the username taken out of it.
+
+    GENESIS echoes back whatever it took as the username, and for these
+    accounts that is the address the person registered with -- while this log
+    is committed to a public repository. The body is worth printing: it carries
+    the concurrency limits and the session note. The name is not, and it has
+    now been leaked twice by two different printers dumping this same object,
+    which is why every one of them goes through here instead.
+    """
+    if not isinstance(payload, dict):
+        return json.dumps(payload, ensure_ascii=False)[:300]
+    safe = dict(payload)
+    for key in ("Username", "username", "Kennung"):
+        if key in safe:
+            safe[key] = "<withheld>"
+    return json.dumps(safe, ensure_ascii=False)[:300]
+
+
 def account(spec: dict) -> tuple[dict[str, str], str]:
     """The credential as headers, and a description naming no secret value.
 
@@ -279,7 +298,7 @@ def probe(key: str, spec: dict[str, str]) -> None:
     who = call(spec["base"], "helloworld/logincheck", creds, auth)
     print(f"    logincheck: {status_of(who)} [{METHOD.get(spec['base'], 'no method worked')}]")
     if isinstance(who, dict) and "__error__" not in who:
-        print(f"      {json.dumps(who, ensure_ascii=False)[:300]}")
+        print(f"      {without_username(who)}")
 
     for term in TERMS:
         found = call(spec["base"], "find/find", creds, auth,
@@ -327,7 +346,7 @@ def describe(key: str, spec: dict[str, str], tables: list[str]) -> None:
     who = call(spec["base"], "helloworld/logincheck", creds, auth)
     print(f"    logincheck: {status_of(who)}")
     if isinstance(who, dict) and "__error__" not in who:
-        print(f"      {json.dumps(who, ensure_ascii=False)[:300]}")
+        print(f"      {without_username(who)}")
     for name in tables:
         meta = call(spec["base"], "metadata/table", creds, auth, name=name)
         note = status_of(meta)

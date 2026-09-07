@@ -1,10 +1,31 @@
 
-=== Zensus 2022 results database -- authentication styles ===
-    credential from ZENSUS_USER / ZENSUS_PASSWORD (user is 24 chars, password 14)
-    query    -> IGNORED -- server still sees the anonymous GAST
-    header   -> ACCEPTED -- server named the account (name withheld)
-    basic    -> IGNORED -- server still sees the anonymous GAST
-    bearer   -> IGNORED -- server still sees the anonymous GAST
+=== Zensus 2022 results database -- table structures ===
+    credentials: set via ZENSUS_USER
+    logincheck: ok
+      {"Status": "Sie wurden erfolgreich an- und abgemeldet! Bei mehr als 3 parallelen Requests wurden länger als 15 Minuten laufende Requests beendet.", "Username": "<withheld>"}
 
-=== GENESIS-Online (Destatis, federal) -- authentication styles ===
-    no credential: GENESIS_USER is empty in this environment
+  1000A-1018  (erfolgreich)
+    title: Personen: Religion
+    RELZG2             3 values  Religion
+    GEODL1             1 values  Deutschland
+    GEOBL1            16 values  Bundesländer
+
+  1000A-1E18  (erfolgreich)
+    title: Personen: Religion
+    RELZG2             3 values  Religion
+    GEOEV1            19 values  Landeskirche (Evangelische Kirche)
+
+  1000A-1K18  (erfolgreich)
+    title: Personen: Religion
+    RELZG2             3 values  Religion
+    GEORK1            27 values  Bistum (Katholische Kirche)
+
+  1000A-1W18  (erfolgreich)
+    title: Personen: Religion
+    RELZG2             3 values  Religion
+    GEOWK1           299 values  Bundestagswahlkreise
+
+  2000X-1022  (erfolgreich)
+    title: Personen: Religion (ausführlich)
+    RELZG1             7 values  Religion (ausführlich)
+    GEODL3             1 values  Deutschland
