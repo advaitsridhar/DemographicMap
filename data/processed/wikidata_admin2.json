@@ -9882,8 +9882,8 @@
     "wikidata": "Q1335616",
     "level": "admin2",
     "name": "Gunung Leuser National Park",
-    "parent": "Q1823",
-    "parent_name": "Aceh",
+    "parent": "Q2140",
+    "parent_name": "North Sumatra",
     "country": "IDN",
     "capital": {
       "status": "not_available"
@@ -10982,38 +10982,6 @@
     ]
   },
   {
-    "id": "IDN-WD-Q27477",
-    "wikidata": "Q27477",
-    "level": "admin2",
-    "name": "Jayapura",
-    "parent": "Q5095",
-    "parent_name": "Papua",
-    "country": "IDN",
-    "capital": "Jayapura",
-    "coordinates": [
-      139.95,
-      -3.0
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 162199,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q27477",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "IDN-WD-Q27860",
     "wikidata": "Q27860",
     "level": "admin2",
@@ -11044,6 +11012,38 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q27860",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "IDN-WD-Q27477",
+    "wikidata": "Q27477",
+    "level": "admin2",
+    "name": "Jayapura",
+    "parent": "Q5095",
+    "parent_name": "Papua",
+    "country": "IDN",
+    "capital": "Jayapura",
+    "coordinates": [
+      139.95,
+      -3.0
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 162199,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q27477",
         "license": "CC0"
       }
     ]
@@ -15029,7 +15029,7 @@
     "parent": "Q1890",
     "parent_name": "Bengkulu",
     "country": "IDN",
-    "capital": "Tubei",
+    "capital": "Muara Aman",
     "coordinates": [
       102.3349,
       -3.24278
@@ -17953,7 +17953,7 @@
     "parent": "Q2271",
     "parent_name": "South Sumatra",
     "country": "IDN",
-    "capital": "Sekayu",
+    "capital": "Palembang",
     "coordinates": [
       103.8125,
       -2.89389
@@ -19157,8 +19157,8 @@
     "wikidata": "Q12488348",
     "level": "admin2",
     "name": "North Maluku",
-    "parent": "Q5093",
-    "parent_name": "Maluku",
+    "parent": "Q5094",
+    "parent_name": "North Maluku",
     "country": "IDN",
     "capital": "Ternate",
     "coordinates": {
@@ -24642,7 +24642,7 @@
     "parent": "Q3557",
     "parent_name": "Central Java",
     "country": "IDN",
-    "capital": "Ungaran",
+    "capital": "Kota Semarang",
     "coordinates": [
       110.33583,
       -7.26556
@@ -25683,7 +25683,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1063448,
+      "value": 1062801,
       "year": 2014,
       "source": "Wikidata (CC0)"
     },
@@ -27244,7 +27244,7 @@
     "parent": "Q5093",
     "parent_name": "Maluku",
     "country": "IDN",
-    "capital": "Tiakur",
+    "capital": "Moa",
     "coordinates": [
       127.78894,
       -8.17024
@@ -29404,6 +29404,39 @@
     ]
   },
   {
+    "id": "IDN-WD-Q10705",
+    "wikidata": "Q10705",
+    "level": "admin2",
+    "name": "Tegal",
+    "parent": "Q3557",
+    "parent_name": "Central Java",
+    "country": "IDN",
+    "capital": "Slawi",
+    "coordinates": [
+      109.15,
+      -6.86667
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1385254,
+      "year": 2015,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q10705",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
     "id": "IDN-WD-Q11027",
     "wikidata": "Q11027",
     "level": "admin2",
@@ -29434,39 +29467,6 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q11027",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
-    "id": "IDN-WD-Q10705",
-    "wikidata": "Q10705",
-    "level": "admin2",
-    "name": "Tegal",
-    "parent": "Q3557",
-    "parent_name": "Central Java",
-    "country": "IDN",
-    "capital": "Slawi",
-    "coordinates": [
-      109.15,
-      -6.86667
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 1385254,
-      "year": 2015,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q10705",
         "license": "CC0"
       }
     ]
@@ -39087,40 +39087,6 @@
     ]
   },
   {
-    "id": "VNM-WD-Q2754089",
-    "wikidata": "Q2754089",
-    "level": "admin2",
-    "name": "An Phú",
-    "parent": "Q1854",
-    "parent_name": "Ho Chi Minh City",
-    "country": "VNM",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      106.73694,
-      10.94722
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q2754089",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "VNM-WD-Q2414515",
     "wikidata": "Q2414515",
     "level": "admin2",
@@ -39150,6 +39116,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2414515",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "VNM-WD-Q2754089",
+    "wikidata": "Q2754089",
+    "level": "admin2",
+    "name": "An Phú",
+    "parent": "Q1854",
+    "parent_name": "Ho Chi Minh City",
+    "country": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      106.73694,
+      10.94722
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q2754089",
         "license": "CC0"
       }
     ]
@@ -42430,8 +42430,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      106.70278,
-      10.8225
+      106.70333,
+      10.82806
     ],
     "inception": {
       "status": "not_available"
@@ -46668,40 +46668,6 @@
     ]
   },
   {
-    "id": "VNM-WD-Q35656",
-    "wikidata": "Q35656",
-    "level": "admin2",
-    "name": "Cao Lãnh",
-    "parent": "Q36676",
-    "parent_name": "Đồng Tháp",
-    "country": "VNM",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      105.63306,
-      10.46028
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q35656",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "VNM-WD-Q139503841",
     "wikidata": "Q139503841",
     "level": "admin2",
@@ -46731,6 +46697,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q139503841",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "VNM-WD-Q35656",
+    "wikidata": "Q35656",
+    "level": "admin2",
+    "name": "Cao Lãnh",
+    "parent": "Q36676",
+    "parent_name": "Đồng Tháp",
+    "country": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      105.63306,
+      10.46028
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q35656",
         "license": "CC0"
       }
     ]
@@ -50037,8 +50037,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      108.23389,
-      12.79333
+      108.23,
+      12.805
     ],
     "inception": {
       "status": "not_available"
@@ -55780,8 +55780,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      108.17639,
-      12.86333
+      108.17167,
+      12.86556
     ],
     "inception": {
       "status": "not_available"
@@ -55950,8 +55950,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      108.04,
-      13.24333
+      108.03278,
+      13.21444
     ],
     "inception": {
       "status": "not_available"
@@ -56925,40 +56925,6 @@
     ]
   },
   {
-    "id": "VNM-WD-Q5574953",
-    "wikidata": "Q5574953",
-    "level": "admin2",
-    "name": "Gò Vấp",
-    "parent": "Q1854",
-    "parent_name": "Ho Chi Minh City",
-    "country": "VNM",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      106.67194,
-      10.83583
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q5574953",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "VNM-WD-Q4384696",
     "wikidata": "Q4384696",
     "level": "admin2",
@@ -56988,6 +56954,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q4384696",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "VNM-WD-Q5574953",
+    "wikidata": "Q5574953",
+    "level": "admin2",
+    "name": "Gò Vấp",
+    "parent": "Q1854",
+    "parent_name": "Ho Chi Minh City",
+    "country": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      106.67194,
+      10.83583
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q5574953",
         "license": "CC0"
       }
     ]
@@ -57818,8 +57818,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      105.84916,
-      20.96815
+      105.84833,
+      20.96806
     ],
     "inception": {
       "status": "not_available"
@@ -61103,39 +61103,6 @@
     ]
   },
   {
-    "id": "VNM-WD-Q141238874",
-    "wikidata": "Q141238874",
-    "level": "admin2",
-    "name": "Hạ Long",
-    "parent": "Q33396",
-    "parent_name": "Quảng Ninh",
-    "country": "VNM",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": {
-      "status": "not_available"
-    },
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q141238874",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "VNM-WD-Q36077",
     "wikidata": "Q36077",
     "level": "admin2",
@@ -61165,6 +61132,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q36077",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "VNM-WD-Q141238874",
+    "wikidata": "Q141238874",
+    "level": "admin2",
+    "name": "Hạ Long",
+    "parent": "Q33396",
+    "parent_name": "Quảng Ninh",
+    "country": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": {
+      "status": "not_available"
+    },
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q141238874",
         "license": "CC0"
       }
     ]
@@ -63014,8 +63014,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      108.53879,
-      13.5161
+      108.5375,
+      13.51667
     ],
     "inception": {
       "status": "not_available"
@@ -63354,8 +63354,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      107.95815,
-      13.74279
+      107.96472,
+      13.73111
     ],
     "inception": {
       "status": "not_available"
@@ -66514,8 +66514,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      106.11361,
-      11.18556
+      106.11,
+      11.18111
     ],
     "inception": {
       "status": "not_available"
@@ -71087,40 +71087,6 @@
     ]
   },
   {
-    "id": "VNM-WD-Q6813031",
-    "wikidata": "Q6813031",
-    "level": "admin2",
-    "name": "Mường Chà",
-    "parent": "Q36955",
-    "parent_name": "Điện Biên",
-    "country": "VNM",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      103.05928,
-      21.8569
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q6813031",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "VNM-WD-Q6951150",
     "wikidata": "Q6951150",
     "level": "admin2",
@@ -71150,6 +71116,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q6951150",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "VNM-WD-Q6813031",
+    "wikidata": "Q6813031",
+    "level": "admin2",
+    "name": "Mường Chà",
+    "parent": "Q36955",
+    "parent_name": "Điện Biên",
+    "country": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      103.05928,
+      21.8569
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q6813031",
         "license": "CC0"
       }
     ]
@@ -71438,8 +71438,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      103.35417,
-      21.24222
+      103.35222,
+      21.245
     ],
     "inception": {
       "status": "not_available"
@@ -71834,40 +71834,6 @@
     ]
   },
   {
-    "id": "VNM-WD-Q6937078",
-    "wikidata": "Q6937078",
-    "level": "admin2",
-    "name": "Mường Nhé",
-    "parent": "Q36955",
-    "parent_name": "Điện Biên",
-    "country": "VNM",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      102.45556,
-      22.19167
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q6937078",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "VNM-WD-Q6951157",
     "wikidata": "Q6951157",
     "level": "admin2",
@@ -71897,6 +71863,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q6951157",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "VNM-WD-Q6937078",
+    "wikidata": "Q6937078",
+    "level": "admin2",
+    "name": "Mường Nhé",
+    "parent": "Q36955",
+    "parent_name": "Điện Biên",
+    "country": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      102.45556,
+      22.19167
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q6937078",
         "license": "CC0"
       }
     ]
@@ -73816,8 +73816,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      103.98889,
-      22.44417
+      103.98944,
+      22.44028
     ],
     "inception": {
       "status": "not_available"
@@ -80156,40 +80156,6 @@
     ]
   },
   {
-    "id": "VNM-WD-Q2194003",
-    "wikidata": "Q2194003",
-    "level": "admin2",
-    "name": "Phú Nhuận",
-    "parent": "Q1854",
-    "parent_name": "Ho Chi Minh City",
-    "country": "VNM",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      106.6775,
-      10.80167
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q2194003",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "VNM-WD-Q2040133",
     "wikidata": "Q2040133",
     "level": "admin2",
@@ -80219,6 +80185,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2040133",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "VNM-WD-Q2194003",
+    "wikidata": "Q2194003",
+    "level": "admin2",
+    "name": "Phú Nhuận",
+    "parent": "Q1854",
+    "parent_name": "Ho Chi Minh City",
+    "country": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      106.6775,
+      10.80167
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q2194003",
         "license": "CC0"
       }
     ]
@@ -80642,8 +80642,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      106.65,
-      10.76611
+      106.65447,
+      10.76697
     ],
     "inception": {
       "status": "not_available"
@@ -85532,8 +85532,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      104.27556,
-      22.69139
+      104.29361,
+      22.70528
     ],
     "inception": {
       "status": "not_available"
@@ -90997,8 +90997,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      105.91667,
-      18.37472
+      105.91083,
+      18.37028
     ],
     "inception": {
       "status": "not_available"
@@ -91802,6 +91802,38 @@
     ]
   },
   {
+    "id": "VNM-WD-Q2354499",
+    "wikidata": "Q2354499",
+    "level": "admin2",
+    "name": "Thống Nhất",
+    "parent": "Q33271",
+    "parent_name": "Đồng Nai",
+    "country": "VNM",
+    "capital": "Dầu Giây",
+    "coordinates": [
+      107.14015,
+      10.9425
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q2354499",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
     "id": "VNM-WD-Q2661321",
     "wikidata": "Q2661321",
     "level": "admin2",
@@ -91836,17 +91868,19 @@
     ]
   },
   {
-    "id": "VNM-WD-Q2354499",
-    "wikidata": "Q2354499",
+    "id": "VNM-WD-Q10826605",
+    "wikidata": "Q10826605",
     "level": "admin2",
     "name": "Thống Nhất",
-    "parent": "Q33271",
-    "parent_name": "Đồng Nai",
+    "parent": "Q36446",
+    "parent_name": "Lào Cai",
     "country": "VNM",
-    "capital": "Dầu Giây",
+    "capital": {
+      "status": "not_available"
+    },
     "coordinates": [
-      107.14015,
-      10.9425
+      104.04639,
+      22.4
     ],
     "inception": {
       "status": "not_available"
@@ -91862,7 +91896,7 @@
       {
         "field": "population/capital/coordinates",
         "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q2354499",
+        "url": "https://www.wikidata.org/wiki/Q10826605",
         "license": "CC0"
       }
     ]
@@ -91897,40 +91931,6 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q10826592",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
-    "id": "VNM-WD-Q10826605",
-    "wikidata": "Q10826605",
-    "level": "admin2",
-    "name": "Thống Nhất",
-    "parent": "Q36446",
-    "parent_name": "Lào Cai",
-    "country": "VNM",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      104.04639,
-      22.4
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q10826605",
         "license": "CC0"
       }
     ]
@@ -92185,8 +92185,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      105.77806,
-      10.04389
+      105.77611,
+      10.045
     ],
     "inception": {
       "status": "not_available"
@@ -95851,8 +95851,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      107.36556,
-      11.3625
+      107.36083,
+      11.36444
     ],
     "inception": {
       "status": "not_available"
@@ -97481,8 +97481,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      108.07444,
-      12.6675
+      108.07167,
+      12.67639
     ],
     "inception": {
       "status": "not_available"
@@ -99272,40 +99272,6 @@
     ]
   },
   {
-    "id": "VNM-WD-Q10830897",
-    "wikidata": "Q10830897",
-    "level": "admin2",
-    "name": "Tân Thới",
-    "parent": "Q36676",
-    "parent_name": "Đồng Tháp",
-    "country": "VNM",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      106.60186,
-      10.27849
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q10830897",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "VNM-WD-Q10830894",
     "wikidata": "Q10830894",
     "level": "admin2",
@@ -99335,6 +99301,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q10830894",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "VNM-WD-Q10830897",
+    "wikidata": "Q10830897",
+    "level": "admin2",
+    "name": "Tân Thới",
+    "parent": "Q36676",
+    "parent_name": "Đồng Tháp",
+    "country": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      106.60186,
+      10.27849
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q10830897",
         "license": "CC0"
       }
     ]
@@ -101276,40 +101276,6 @@
     ]
   },
   {
-    "id": "VNM-WD-Q7862849",
-    "wikidata": "Q7862849",
-    "level": "admin2",
-    "name": "Tủa Chùa",
-    "parent": "Q36955",
-    "parent_name": "Điện Biên",
-    "country": "VNM",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      103.33778,
-      21.85833
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q7862849",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "VNM-WD-Q7484836",
     "wikidata": "Q7484836",
     "level": "admin2",
@@ -101339,6 +101305,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q7484836",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "VNM-WD-Q7862849",
+    "wikidata": "Q7862849",
+    "level": "admin2",
+    "name": "Tủa Chùa",
+    "parent": "Q36955",
+    "parent_name": "Điện Biên",
+    "country": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      103.33778,
+      21.85833
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q7862849",
         "license": "CC0"
       }
     ]
@@ -102138,8 +102138,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      104.24694,
-      22.09917
+      104.2528,
+      22.089
     ],
     "inception": {
       "status": "not_available"
@@ -103361,8 +103361,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      105.35972,
-      9.62361
+      105.36222,
+      9.62806
     ],
     "inception": {
       "status": "not_available"
@@ -107164,8 +107164,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      104.34306,
-      22.31806
+      104.3425,
+      22.31861
     ],
     "inception": {
       "status": "not_available"
@@ -113732,39 +113732,6 @@
     ]
   },
   {
-    "id": "THA-WD-Q475251",
-    "wikidata": "Q475251",
-    "level": "admin2",
-    "name": "Bang Sai",
-    "parent": "Q476222",
-    "parent_name": "Phra Nakhon Si Ayutthaya",
-    "country": "THA",
-    "capital": "Bang Sai",
-    "coordinates": [
-      100.3,
-      14.32
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 19366,
-      "year": 2018,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q475251",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "THA-WD-Q475250",
     "wikidata": "Q475250",
     "level": "admin2",
@@ -113795,6 +113762,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q475250",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "THA-WD-Q475251",
+    "wikidata": "Q475251",
+    "level": "admin2",
+    "name": "Bang Sai",
+    "parent": "Q476222",
+    "parent_name": "Phra Nakhon Si Ayutthaya",
+    "country": "THA",
+    "capital": "Bang Sai",
+    "coordinates": [
+      100.3,
+      14.32
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 19366,
+      "year": 2018,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q475251",
         "license": "CC0"
       }
     ]
@@ -115261,6 +115261,41 @@
     ]
   },
   {
+    "id": "THA-WD-Q426148",
+    "wikidata": "Q426148",
+    "level": "admin2",
+    "name": "Chaloem Phra Kiat",
+    "parent": "Q327510",
+    "parent_name": "Buriram",
+    "country": "THA",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      102.925,
+      14.55833
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 40468,
+      "year": 2018,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q426148",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
     "id": "THA-WD-Q475339",
     "wikidata": "Q475339",
     "level": "admin2",
@@ -115396,41 +115431,6 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q475351",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
-    "id": "THA-WD-Q426148",
-    "wikidata": "Q426148",
-    "level": "admin2",
-    "name": "Chaloem Phra Kiat",
-    "parent": "Q327510",
-    "parent_name": "Buriram",
-    "country": "THA",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      102.925,
-      14.55833
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 40468,
-      "year": 2018,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q426148",
         "license": "CC0"
       }
     ]
@@ -203833,8 +203833,8 @@
     "country": "NGA",
     "capital": "Jobele",
     "coordinates": [
-      3.92418,
-      7.76415
+      3.8655,
+      7.7243
     ],
     "inception": {
       "status": "not_available"
@@ -207037,8 +207037,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      8.39328,
-      4.95044
+      8.48111,
+      4.90083
     ],
     "inception": {
       "status": "not_available"
@@ -209300,8 +209300,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      7.0176,
-      6.0964
+      6.9963,
+      6.06824
     ],
     "inception": {
       "status": "not_available"
@@ -209908,8 +209908,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      7.63167,
-      7.44861
+      7.63333,
+      7.43333
     ],
     "inception": {
       "status": "not_available"
@@ -212157,41 +212157,6 @@
     ]
   },
   {
-    "id": "NGA-WD-Q11010622",
-    "wikidata": "Q11010622",
-    "level": "admin2",
-    "name": "Awe",
-    "parent": "Q836645",
-    "parent_name": "Nasarawa State",
-    "country": "NGA",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      3.95,
-      7.82361
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 113083,
-      "year": 2006,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q11010622",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "NGA-WD-Q101553460",
     "wikidata": "Q101553460",
     "level": "admin2",
@@ -212222,6 +212187,41 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q101553460",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NGA-WD-Q11010622",
+    "wikidata": "Q11010622",
+    "level": "admin2",
+    "name": "Awe",
+    "parent": "Q836645",
+    "parent_name": "Nasarawa State",
+    "country": "NGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      3.95,
+      7.82361
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 113083,
+      "year": 2006,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q11010622",
         "license": "CC0"
       }
     ]
@@ -233526,8 +233526,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      7.53528,
-      6.44472
+      7.51667,
+      6.46667
     ],
     "inception": {
       "status": "not_available"
@@ -240521,40 +240521,6 @@
     ]
   },
   {
-    "id": "NGA-WD-Q94748250",
-    "wikidata": "Q94748250",
-    "level": "admin2",
-    "name": "Garu",
-    "parent": "Q682777",
-    "parent_name": "Yobe State",
-    "country": "NGA",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      11.00028,
-      11.47056
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q94748250",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "NGA-WD-Q94747701",
     "wikidata": "Q94747701",
     "level": "admin2",
@@ -240584,6 +240550,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q94747701",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NGA-WD-Q94748250",
+    "wikidata": "Q94748250",
+    "level": "admin2",
+    "name": "Garu",
+    "parent": "Q682777",
+    "parent_name": "Yobe State",
+    "country": "NGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      11.00028,
+      11.47056
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q94748250",
         "license": "CC0"
       }
     ]
@@ -245304,8 +245304,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      6.66667,
-      12.16667
+      6.6745,
+      12.1628
     ],
     "inception": {
       "status": "not_available"
@@ -248889,8 +248889,8 @@
     "country": "NGA",
     "capital": "Iwo Road",
     "coordinates": [
-      3.92753,
-      7.36919
+      3.93899,
+      7.40154
     ],
     "inception": {
       "status": "not_available"
@@ -249054,8 +249054,8 @@
     "country": "NGA",
     "capital": "Mapo",
     "coordinates": [
-      3.9114,
-      7.3293
+      3.90359,
+      7.33437
     ],
     "inception": {
       "status": "not_available"
@@ -250304,8 +250304,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      6.71528,
-      7.08139
+      6.75,
+      7.08333
     ],
     "inception": {
       "status": "not_available"
@@ -251621,8 +251621,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      4.53333,
-      7.55
+      4.5315,
+      7.5555
     ],
     "inception": {
       "status": "not_available"
@@ -254023,8 +254023,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      4.0083,
-      6.8827
+      4.0225,
+      6.88806
     ],
     "inception": {
       "status": "not_available"
@@ -261397,8 +261397,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      3.53028,
-      8.20722
+      3.95926,
+      7.35876
     ],
     "inception": {
       "status": "not_available"
@@ -261940,8 +261940,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      4.14139,
-      7.67556
+      4.18333,
+      7.63333
     ],
     "inception": {
       "status": "not_available"
@@ -267487,8 +267487,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      8.51667,
-      12.0
+      8.592,
+      12.0022
     ],
     "inception": {
       "status": "not_available"
@@ -278209,8 +278209,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      6.67556,
-      8.79806
+      6.57089,
+      9.04439
     ],
     "inception": {
       "status": "not_available"
@@ -285733,8 +285733,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      13.3894,
-      10.6181
+      13.39778,
+      10.58083
     ],
     "inception": {
       "status": "not_available"
@@ -287769,8 +287769,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      7.6724,
-      12.1299
+      7.66889,
+      12.1294
     ],
     "inception": {
       "status": "not_available"
@@ -291722,8 +291722,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      7.3733,
-      6.8429
+      7.39583,
+      6.85667
     ],
     "inception": {
       "status": "not_available"
@@ -294046,40 +294046,6 @@
     ]
   },
   {
-    "id": "NGA-WD-Q49107205",
-    "wikidata": "Q49107205",
-    "level": "admin2",
-    "name": "Offa",
-    "parent": "Q464953",
-    "parent_name": "Kwara State",
-    "country": "NGA",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      4.7174,
-      8.1393
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 89674,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q49107205",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "NGA-WD-Q129388439",
     "wikidata": "Q129388439",
     "level": "admin2",
@@ -294110,6 +294076,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q129388439",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NGA-WD-Q49107205",
+    "wikidata": "Q49107205",
+    "level": "admin2",
+    "name": "Offa",
+    "parent": "Q464953",
+    "parent_name": "Kwara State",
+    "country": "NGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      4.7174,
+      8.1393
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 89674,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q49107205",
         "license": "CC0"
       }
     ]
@@ -297496,41 +297496,6 @@
     ]
   },
   {
-    "id": "NGA-WD-Q49107256",
-    "wikidata": "Q49107256",
-    "level": "admin2",
-    "name": "Okene",
-    "parent": "Q387745",
-    "parent_name": "Kogi State",
-    "country": "NGA",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      6.21667,
-      7.48333
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 325623,
-      "year": 2006,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q49107256",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "NGA-WD-Q2017187",
     "wikidata": "Q2017187",
     "level": "admin2",
@@ -297561,6 +297526,41 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2017187",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NGA-WD-Q49107256",
+    "wikidata": "Q49107256",
+    "level": "admin2",
+    "name": "Okene",
+    "parent": "Q387745",
+    "parent_name": "Kogi State",
+    "country": "NGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      6.21667,
+      7.48333
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 325623,
+      "year": 2006,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q49107256",
         "license": "CC0"
       }
     ]
@@ -301800,8 +301800,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      4.86667,
-      7.58333
+      4.8728,
+      7.5194
     ],
     "inception": {
       "status": "not_available"
@@ -304571,8 +304571,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      6.97972,
-      5.47651
+      6.98041,
+      5.43226
     ],
     "inception": {
       "status": "not_available"
@@ -311834,8 +311834,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      4.60944,
-      11.21167
+      4.5675,
+      11.1958
     ],
     "inception": {
       "status": "not_available"
@@ -317673,40 +317673,6 @@
     ]
   },
   {
-    "id": "NGA-WD-Q94745507",
-    "wikidata": "Q94745507",
-    "level": "admin2",
-    "name": "Tofa",
-    "parent": "Q682691",
-    "parent_name": "Jigawa State",
-    "country": "NGA",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      9.0461,
-      12.1635
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q94745507",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "NGA-WD-Q94747771",
     "wikidata": "Q94747771",
     "level": "admin2",
@@ -317736,6 +317702,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q94747771",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NGA-WD-Q94745507",
+    "wikidata": "Q94745507",
+    "level": "admin2",
+    "name": "Tofa",
+    "parent": "Q682691",
+    "parent_name": "Jigawa State",
+    "country": "NGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      9.0461,
+      12.1635
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q94745507",
         "license": "CC0"
       }
     ]
@@ -318692,41 +318692,6 @@
     ]
   },
   {
-    "id": "NGA-WD-Q7851355",
-    "wikidata": "Q7851355",
-    "level": "admin2",
-    "name": "Tudun Wada",
-    "parent": "Q682571",
-    "parent_name": "Kano State",
-    "country": "NGA",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      8.4,
-      11.25
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 228658,
-      "year": 2006,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q7851355",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "NGA-WD-Q108794703",
     "wikidata": "Q108794703",
     "level": "admin2",
@@ -318757,6 +318722,41 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q108794703",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NGA-WD-Q7851355",
+    "wikidata": "Q7851355",
+    "level": "admin2",
+    "name": "Tudun Wada",
+    "parent": "Q682571",
+    "parent_name": "Kano State",
+    "country": "NGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      8.4,
+      11.25
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 228658,
+      "year": 2006,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q7851355",
         "license": "CC0"
       }
     ]
@@ -319281,8 +319281,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      5.49444,
-      12.48611
+      5.54694,
+      12.5894
     ],
     "inception": {
       "status": "not_available"
@@ -322251,41 +322251,6 @@
     ]
   },
   {
-    "id": "NGA-WD-Q49109832",
-    "wikidata": "Q49109832",
-    "level": "admin2",
-    "name": "Uyo",
-    "parent": "Q424388",
-    "parent_name": "Akwa Ibom State",
-    "country": "NGA",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      7.90306,
-      5.01861
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 309573,
-      "year": 2006,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q49109832",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "NGA-WD-Q1999000",
     "wikidata": "Q1999000",
     "level": "admin2",
@@ -322316,6 +322281,41 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q1999000",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NGA-WD-Q49109832",
+    "wikidata": "Q49109832",
+    "level": "admin2",
+    "name": "Uyo",
+    "parent": "Q424388",
+    "parent_name": "Akwa Ibom State",
+    "country": "NGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      7.90306,
+      5.01861
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 309573,
+      "year": 2006,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q49109832",
         "license": "CC0"
       }
     ]
@@ -328191,8 +328191,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      2.95,
-      6.8
+      2.96144,
+      6.79763
     ],
     "inception": {
       "status": "not_available"
@@ -348202,39 +348202,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q3846431",
-    "wikidata": "Q3846431",
-    "level": "admin2",
-    "name": "Abasolo Municipality",
-    "parent": "Q53079",
-    "parent_name": "Coahuila",
-    "country": "MEX",
-    "capital": "Abasolo",
-    "coordinates": [
-      -101.23333,
-      27.15
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 1022,
-      "year": 2020,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q3846431",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q4663551",
     "wikidata": "Q4663551",
     "level": "admin2",
@@ -348263,6 +348230,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q4663551",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q3846431",
+    "wikidata": "Q3846431",
+    "level": "admin2",
+    "name": "Abasolo Municipality",
+    "parent": "Q53079",
+    "parent_name": "Coahuila",
+    "country": "MEX",
+    "capital": "Abasolo",
+    "coordinates": [
+      -101.23333,
+      27.15
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1022,
+      "year": 2020,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q3846431",
         "license": "CC0"
       }
     ]
@@ -348794,39 +348794,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q3887952",
-    "wikidata": "Q3887952",
-    "level": "admin2",
-    "name": "Acatlán Municipality",
-    "parent": "Q80903",
-    "parent_name": "Hidalgo",
-    "country": "MEX",
-    "capital": "Acatlán",
-    "coordinates": [
-      -98.44,
-      20.19556
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 21044,
-      "year": 2015,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q3887952",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q8186764",
     "wikidata": "Q8186764",
     "level": "admin2",
@@ -348888,6 +348855,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q9035926",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q3887952",
+    "wikidata": "Q3887952",
+    "level": "admin2",
+    "name": "Acatlán Municipality",
+    "parent": "Q80903",
+    "parent_name": "Hidalgo",
+    "country": "MEX",
+    "capital": "Acatlán",
+    "coordinates": [
+      -98.44,
+      20.19556
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 21044,
+      "year": 2015,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q3887952",
         "license": "CC0"
       }
     ]
@@ -350745,39 +350745,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q1999574",
-    "wikidata": "Q1999574",
-    "level": "admin2",
-    "name": "Aldama Municipality",
-    "parent": "Q80007",
-    "parent_name": "Tamaulipas",
-    "country": "MEX",
-    "capital": "Aldama",
-    "coordinates": [
-      -98.06667,
-      22.96667
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 29470,
-      "year": 2010,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q1999574",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q1952861",
     "wikidata": "Q1952861",
     "level": "admin2",
@@ -350806,6 +350773,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q1952861",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q1999574",
+    "wikidata": "Q1999574",
+    "level": "admin2",
+    "name": "Aldama Municipality",
+    "parent": "Q80007",
+    "parent_name": "Tamaulipas",
+    "country": "MEX",
+    "capital": "Aldama",
+    "coordinates": [
+      -98.06667,
+      22.96667
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 29470,
+      "year": 2010,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q1999574",
         "license": "CC0"
       }
     ]
@@ -351079,39 +351079,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q3850565",
-    "wikidata": "Q3850565",
-    "level": "admin2",
-    "name": "Allende Municipality",
-    "parent": "Q53079",
-    "parent_name": "Coahuila",
-    "country": "MEX",
-    "capital": "Allende",
-    "coordinates": [
-      -100.88333,
-      28.28333
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 23056,
-      "year": 2020,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q3850565",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q2606327",
     "wikidata": "Q2606327",
     "level": "admin2",
@@ -351140,6 +351107,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2606327",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q3850565",
+    "wikidata": "Q3850565",
+    "level": "admin2",
+    "name": "Allende Municipality",
+    "parent": "Q53079",
+    "parent_name": "Coahuila",
+    "country": "MEX",
+    "capital": "Allende",
+    "coordinates": [
+      -100.88333,
+      28.28333
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 23056,
+      "year": 2020,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q3850565",
         "license": "CC0"
       }
     ]
@@ -353605,39 +353605,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q3845516",
-    "wikidata": "Q3845516",
-    "level": "admin2",
-    "name": "Arteaga Municipality",
-    "parent": "Q79861",
-    "parent_name": "Michoacán",
-    "country": "MEX",
-    "capital": "Arteaga",
-    "coordinates": [
-      -102.37006,
-      18.3222
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 22138,
-      "year": 2015,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q3845516",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q3849679",
     "wikidata": "Q3849679",
     "level": "admin2",
@@ -353666,6 +353633,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q3849679",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q3845516",
+    "wikidata": "Q3845516",
+    "level": "admin2",
+    "name": "Arteaga Municipality",
+    "parent": "Q79861",
+    "parent_name": "Michoacán",
+    "country": "MEX",
+    "capital": "Arteaga",
+    "coordinates": [
+      -102.37006,
+      18.3222
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 22138,
+      "year": 2015,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q3845516",
         "license": "CC0"
       }
     ]
@@ -354849,39 +354849,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q20290431",
-    "wikidata": "Q20290431",
-    "level": "admin2",
-    "name": "Atoyac Municipality",
-    "parent": "Q13160",
-    "parent_name": "Jalisco",
-    "country": "MEX",
-    "capital": "Atoyac",
-    "coordinates": [
-      -103.45,
-      20.0
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 8689,
-      "year": 2020,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q20290431",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q2651766",
     "wikidata": "Q2651766",
     "level": "admin2",
@@ -354910,6 +354877,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2651766",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q20290431",
+    "wikidata": "Q20290431",
+    "level": "admin2",
+    "name": "Atoyac Municipality",
+    "parent": "Q13160",
+    "parent_name": "Jalisco",
+    "country": "MEX",
+    "capital": "Atoyac",
+    "coordinates": [
+      -103.45,
+      20.0
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8689,
+      "year": 2020,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q20290431",
         "license": "CC0"
       }
     ]
@@ -364614,39 +364614,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q2466631",
-    "wikidata": "Q2466631",
-    "level": "admin2",
-    "name": "Chiautla Municipality",
-    "parent": "Q79923",
-    "parent_name": "Puebla",
-    "country": "MEX",
-    "capital": "Chiautla de Tapia",
-    "coordinates": [
-      -98.60278,
-      18.29917
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 21699,
-      "year": 2020,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q2466631",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q2630452",
     "wikidata": "Q2630452",
     "level": "admin2",
@@ -364675,6 +364642,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2630452",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q2466631",
+    "wikidata": "Q2466631",
+    "level": "admin2",
+    "name": "Chiautla Municipality",
+    "parent": "Q79923",
+    "parent_name": "Puebla",
+    "country": "MEX",
+    "capital": "Chiautla de Tapia",
+    "coordinates": [
+      -98.60278,
+      18.29917
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 21699,
+      "year": 2020,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q2466631",
         "license": "CC0"
       }
     ]
@@ -383744,40 +383744,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q61293828",
-    "wikidata": "Q61293828",
-    "level": "admin2",
-    "name": "El Paraíso",
-    "parent": "Q46422",
-    "parent_name": "Sonora",
-    "country": "MEX",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -112.09472,
-      30.99444
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q61293828",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q61293520",
     "wikidata": "Q61293520",
     "level": "admin2",
@@ -383807,6 +383773,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q61293520",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q61293828",
+    "wikidata": "Q61293828",
+    "level": "admin2",
+    "name": "El Paraíso",
+    "parent": "Q46422",
+    "parent_name": "Sonora",
+    "country": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -112.09472,
+      30.99444
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q61293828",
         "license": "CC0"
       }
     ]
@@ -390935,39 +390935,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q6330764",
-    "wikidata": "Q6330764",
-    "level": "admin2",
-    "name": "Emiliano Zapata Municipality",
-    "parent": "Q80914",
-    "parent_name": "Tabasco",
-    "country": "MEX",
-    "capital": "Emiliano Zapata",
-    "coordinates": [
-      -91.68333,
-      17.68333
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 32181,
-      "year": 2020,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q6330764",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q14630115",
     "wikidata": "Q14630115",
     "level": "admin2",
@@ -391029,6 +390996,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q5371735",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q6330764",
+    "wikidata": "Q6330764",
+    "level": "admin2",
+    "name": "Emiliano Zapata Municipality",
+    "parent": "Q80914",
+    "parent_name": "Tabasco",
+    "country": "MEX",
+    "capital": "Emiliano Zapata",
+    "coordinates": [
+      -91.68333,
+      17.68333
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 32181,
+      "year": 2020,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q6330764",
         "license": "CC0"
       }
     ]
@@ -396678,39 +396678,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q2478194",
-    "wikidata": "Q2478194",
-    "level": "admin2",
-    "name": "Guerrero Municipality",
-    "parent": "Q655",
-    "parent_name": "Chihuahua",
-    "country": "MEX",
-    "capital": "Vicente Guerrero",
-    "coordinates": [
-      -107.56667,
-      28.45
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 39064,
-      "year": 2015,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q2478194",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q11005534",
     "wikidata": "Q11005534",
     "level": "admin2",
@@ -396739,6 +396706,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q11005534",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q2478194",
+    "wikidata": "Q2478194",
+    "level": "admin2",
+    "name": "Guerrero Municipality",
+    "parent": "Q655",
+    "parent_name": "Chihuahua",
+    "country": "MEX",
+    "capital": "Vicente Guerrero",
+    "coordinates": [
+      -107.56667,
+      28.45
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 39064,
+      "year": 2015,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q2478194",
         "license": "CC0"
       }
     ]
@@ -396878,39 +396878,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q2450427",
-    "wikidata": "Q2450427",
-    "level": "admin2",
-    "name": "Gómez Farías Municipality",
-    "parent": "Q655",
-    "parent_name": "Chihuahua",
-    "country": "MEX",
-    "capital": "Valentín Gómez Farías",
-    "coordinates": [
-      -107.73333,
-      29.35
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 8905,
-      "year": 2015,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q2450427",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q3846810",
     "wikidata": "Q3846810",
     "level": "admin2",
@@ -396939,6 +396906,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q3846810",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q2450427",
+    "wikidata": "Q2450427",
+    "level": "admin2",
+    "name": "Gómez Farías Municipality",
+    "parent": "Q655",
+    "parent_name": "Chihuahua",
+    "country": "MEX",
+    "capital": "Valentín Gómez Farías",
+    "coordinates": [
+      -107.73333,
+      29.35
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8905,
+      "year": 2015,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q2450427",
         "license": "CC0"
       }
     ]
@@ -409057,17 +409057,17 @@
     ]
   },
   {
-    "id": "MEX-WD-Q3850556",
-    "wikidata": "Q3850556",
+    "id": "MEX-WD-Q2652254",
+    "wikidata": "Q2652254",
     "level": "admin2",
     "name": "Jiménez Municipality",
-    "parent": "Q80007",
-    "parent_name": "Tamaulipas",
+    "parent": "Q655",
+    "parent_name": "Chihuahua",
     "country": "MEX",
-    "capital": "Santander Jiménez",
+    "capital": "José Mariano Jiménez",
     "coordinates": [
-      -98.5,
-      24.2
+      -104.4,
+      27.0
     ],
     "inception": {
       "status": "not_available"
@@ -409076,15 +409076,15 @@
       "status": "not_available"
     },
     "population": {
-      "value": 8338,
-      "year": 2010,
+      "value": 42860,
+      "year": 2015,
       "source": "Wikidata (CC0)"
     },
     "sources": [
       {
         "field": "population/capital/coordinates",
         "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q3850556",
+        "url": "https://www.wikidata.org/wiki/Q2652254",
         "license": "CC0"
       }
     ]
@@ -409123,17 +409123,17 @@
     ]
   },
   {
-    "id": "MEX-WD-Q2652254",
-    "wikidata": "Q2652254",
+    "id": "MEX-WD-Q3850556",
+    "wikidata": "Q3850556",
     "level": "admin2",
     "name": "Jiménez Municipality",
-    "parent": "Q655",
-    "parent_name": "Chihuahua",
+    "parent": "Q80007",
+    "parent_name": "Tamaulipas",
     "country": "MEX",
-    "capital": "José Mariano Jiménez",
+    "capital": "Santander Jiménez",
     "coordinates": [
-      -104.4,
-      27.0
+      -98.5,
+      24.2
     ],
     "inception": {
       "status": "not_available"
@@ -409142,15 +409142,15 @@
       "status": "not_available"
     },
     "population": {
-      "value": 42860,
-      "year": 2015,
+      "value": 8338,
+      "year": 2010,
       "source": "Wikidata (CC0)"
     },
     "sources": [
       {
         "field": "population/capital/coordinates",
         "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q2652254",
+        "url": "https://www.wikidata.org/wiki/Q3850556",
         "license": "CC0"
       }
     ]
@@ -417337,6 +417337,39 @@
     ]
   },
   {
+    "id": "MEX-WD-Q1861497",
+    "wikidata": "Q1861497",
+    "level": "admin2",
+    "name": "La Paz Municipality",
+    "parent": "Q46508",
+    "parent_name": "Baja California Sur",
+    "country": "MEX",
+    "capital": "La Paz",
+    "coordinates": [
+      -110.71667,
+      24.11667
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 292241,
+      "year": 2020,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q1861497",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
     "id": "MEX-WD-Q2276224",
     "wikidata": "Q2276224",
     "level": "admin2",
@@ -417367,39 +417400,6 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2276224",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
-    "id": "MEX-WD-Q1861497",
-    "wikidata": "Q1861497",
-    "level": "admin2",
-    "name": "La Paz Municipality",
-    "parent": "Q46508",
-    "parent_name": "Baja California Sur",
-    "country": "MEX",
-    "capital": "La Paz",
-    "coordinates": [
-      -110.71667,
-      24.11667
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 292241,
-      "year": 2020,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q1861497",
         "license": "CC0"
       }
     ]
@@ -423974,40 +423974,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q61302998",
-    "wikidata": "Q61302998",
-    "level": "admin2",
-    "name": "Las Palomas",
-    "parent": "Q46422",
-    "parent_name": "Sonora",
-    "country": "MEX",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -109.74806,
-      27.73389
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q61302998",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q61302691",
     "wikidata": "Q61302691",
     "level": "admin2",
@@ -424037,6 +424003,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q61302691",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q61302998",
+    "wikidata": "Q61302998",
+    "level": "admin2",
+    "name": "Las Palomas",
+    "parent": "Q46422",
+    "parent_name": "Sonora",
+    "country": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -109.74806,
+      27.73389
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q61302998",
         "license": "CC0"
       }
     ]
@@ -426640,39 +426640,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q2652498",
-    "wikidata": "Q2652498",
-    "level": "admin2",
-    "name": "Loreto Municipality",
-    "parent": "Q80269",
-    "parent_name": "Zacatecas",
-    "country": "MEX",
-    "capital": "Loreto",
-    "coordinates": [
-      -101.98333,
-      22.26667
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 53709,
-      "year": 2020,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q2652498",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q1861506",
     "wikidata": "Q1861506",
     "level": "admin2",
@@ -426701,6 +426668,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q1861506",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q2652498",
+    "wikidata": "Q2652498",
+    "level": "admin2",
+    "name": "Loreto Municipality",
+    "parent": "Q80269",
+    "parent_name": "Zacatecas",
+    "country": "MEX",
+    "capital": "Loreto",
+    "coordinates": [
+      -101.98333,
+      22.26667
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 53709,
+      "year": 2020,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q2652498",
         "license": "CC0"
       }
     ]
@@ -431509,39 +431509,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q3373817",
-    "wikidata": "Q3373817",
-    "level": "admin2",
-    "name": "Magdalena Municipality",
-    "parent": "Q46422",
-    "parent_name": "Sonora",
-    "country": "MEX",
-    "capital": "Magdalena de Kino",
-    "coordinates": [
-      -111.05,
-      30.73333
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 33049,
-      "year": 2020,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q3373817",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q2652046",
     "wikidata": "Q2652046",
     "level": "admin2",
@@ -431570,6 +431537,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2652046",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q3373817",
+    "wikidata": "Q3373817",
+    "level": "admin2",
+    "name": "Magdalena Municipality",
+    "parent": "Q46422",
+    "parent_name": "Sonora",
+    "country": "MEX",
+    "capital": "Magdalena de Kino",
+    "coordinates": [
+      -111.05,
+      30.73333
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 33049,
+      "year": 2020,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q3373817",
         "license": "CC0"
       }
     ]
@@ -433408,39 +433408,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q2450458",
-    "wikidata": "Q2450458",
-    "level": "admin2",
-    "name": "Matamoros Municipality",
-    "parent": "Q80007",
-    "parent_name": "Tamaulipas",
-    "country": "MEX",
-    "capital": "Heroica Matamoros",
-    "coordinates": [
-      -97.53333,
-      25.55
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 489193,
-      "year": 2010,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q2450458",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q2652261",
     "wikidata": "Q2652261",
     "level": "admin2",
@@ -433469,6 +433436,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2652261",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q2450458",
+    "wikidata": "Q2450458",
+    "level": "admin2",
+    "name": "Matamoros Municipality",
+    "parent": "Q80007",
+    "parent_name": "Tamaulipas",
+    "country": "MEX",
+    "capital": "Heroica Matamoros",
+    "coordinates": [
+      -97.53333,
+      25.55
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 489193,
+      "year": 2010,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q2450458",
         "license": "CC0"
       }
     ]
@@ -437651,39 +437651,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q3018336",
-    "wikidata": "Q3018336",
-    "level": "admin2",
-    "name": "Morelos Municipality",
-    "parent": "Q82112",
-    "parent_name": "State of Mexico",
-    "country": "MEX",
-    "capital": "San Bartolo Morelos",
-    "coordinates": [
-      -99.63333,
-      19.73333
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 33164,
-      "year": 2020,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q3018336",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q3846492",
     "wikidata": "Q3846492",
     "level": "admin2",
@@ -437712,6 +437679,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q3846492",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q3018336",
+    "wikidata": "Q3018336",
+    "level": "admin2",
+    "name": "Morelos Municipality",
+    "parent": "Q82112",
+    "parent_name": "State of Mexico",
+    "country": "MEX",
+    "capital": "San Bartolo Morelos",
+    "coordinates": [
+      -99.63333,
+      19.73333
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 33164,
+      "year": 2020,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q3018336",
         "license": "CC0"
       }
     ]
@@ -442399,6 +442399,39 @@
     ]
   },
   {
+    "id": "MEX-WD-Q2651323",
+    "wikidata": "Q2651323",
+    "level": "admin2",
+    "name": "Ocampo Municipality",
+    "parent": "Q46475",
+    "parent_name": "Guanajuato",
+    "country": "MEX",
+    "capital": "Ocampo",
+    "coordinates": [
+      -101.47972,
+      21.6475
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 22683,
+      "year": 2010,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q2651323",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
     "id": "MEX-WD-Q3846309",
     "wikidata": "Q3846309",
     "level": "admin2",
@@ -442460,39 +442493,6 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q15263345",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
-    "id": "MEX-WD-Q2651323",
-    "wikidata": "Q2651323",
-    "level": "admin2",
-    "name": "Ocampo Municipality",
-    "parent": "Q46475",
-    "parent_name": "Guanajuato",
-    "country": "MEX",
-    "capital": "Ocampo",
-    "coordinates": [
-      -101.47972,
-      21.6475
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 22683,
-      "year": 2010,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q2651323",
         "license": "CC0"
       }
     ]
@@ -448992,39 +448992,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q3383096",
-    "wikidata": "Q3383096",
-    "level": "admin2",
-    "name": "Pueblo Nuevo Municipality",
-    "parent": "Q79918",
-    "parent_name": "Durango",
-    "country": "MEX",
-    "capital": "El Salto",
-    "coordinates": [
-      -105.29,
-      23.42
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 51269,
-      "year": 2020,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q3383096",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q2651165",
     "wikidata": "Q2651165",
     "level": "admin2",
@@ -449053,6 +449020,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2651165",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q3383096",
+    "wikidata": "Q3383096",
+    "level": "admin2",
+    "name": "Pueblo Nuevo Municipality",
+    "parent": "Q79918",
+    "parent_name": "Durango",
+    "country": "MEX",
+    "capital": "El Salto",
+    "coordinates": [
+      -105.29,
+      23.42
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 51269,
+      "year": 2020,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q3383096",
         "license": "CC0"
       }
     ]
@@ -453474,39 +453474,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q7299425",
-    "wikidata": "Q7299425",
-    "level": "admin2",
-    "name": "Rayón Municipality",
-    "parent": "Q46422",
-    "parent_name": "Sonora",
-    "country": "MEX",
-    "capital": "Rayón",
-    "coordinates": [
-      -110.53333,
-      29.75
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 1496,
-      "year": 2020,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q7299425",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q9066806",
     "wikidata": "Q9066806",
     "level": "admin2",
@@ -453535,6 +453502,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q9066806",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q7299425",
+    "wikidata": "Q7299425",
+    "level": "admin2",
+    "name": "Rayón Municipality",
+    "parent": "Q46422",
+    "parent_name": "Sonora",
+    "country": "MEX",
+    "capital": "Rayón",
+    "coordinates": [
+      -110.53333,
+      29.75
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1496,
+      "year": 2020,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q7299425",
         "license": "CC0"
       }
     ]
@@ -457247,8 +457247,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      -97.72669,
-      17.68812
+      -97.72639,
+      17.68889
     ],
     "inception": {
       "status": "not_available"
@@ -461143,39 +461143,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q16609567",
-    "wikidata": "Q16609567",
-    "level": "admin2",
-    "name": "San Felipe Municipality",
-    "parent": "Q46475",
-    "parent_name": "Guanajuato",
-    "country": "MEX",
-    "capital": "San Felipe",
-    "coordinates": [
-      -101.21361,
-      21.48083
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 106952,
-      "year": 2010,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q16609567",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q2669540",
     "wikidata": "Q2669540",
     "level": "admin2",
@@ -461204,6 +461171,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2669540",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q16609567",
+    "wikidata": "Q16609567",
+    "level": "admin2",
+    "name": "San Felipe Municipality",
+    "parent": "Q46475",
+    "parent_name": "Guanajuato",
+    "country": "MEX",
+    "capital": "San Felipe",
+    "coordinates": [
+      -101.21361,
+      21.48083
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 106952,
+      "year": 2010,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q16609567",
         "license": "CC0"
       }
     ]
@@ -473024,40 +473024,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q61295176",
-    "wikidata": "Q61295176",
-    "level": "admin2",
-    "name": "San Miguelito",
-    "parent": "Q79923",
-    "parent_name": "Puebla",
-    "country": "MEX",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -98.09278,
-      19.15278
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q61295176",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q61294232",
     "wikidata": "Q61294232",
     "level": "admin2",
@@ -473087,6 +473053,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q61294232",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q61295176",
+    "wikidata": "Q61295176",
+    "level": "admin2",
+    "name": "San Miguelito",
+    "parent": "Q79923",
+    "parent_name": "Puebla",
+    "country": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -98.09278,
+      19.15278
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q61295176",
         "license": "CC0"
       }
     ]
@@ -495901,39 +495901,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q5644730",
-    "wikidata": "Q5644730",
-    "level": "admin2",
-    "name": "Tepetzintla Municipality",
-    "parent": "Q79923",
-    "parent_name": "Puebla",
-    "country": "MEX",
-    "capital": "Tepetzintla",
-    "coordinates": [
-      -97.85667,
-      19.94
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 11622,
-      "year": 2015,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q5644730",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q4455218",
     "wikidata": "Q4455218",
     "level": "admin2",
@@ -495962,6 +495929,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q4455218",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q5644730",
+    "wikidata": "Q5644730",
+    "level": "admin2",
+    "name": "Tepetzintla Municipality",
+    "parent": "Q79923",
+    "parent_name": "Puebla",
+    "country": "MEX",
+    "capital": "Tepetzintla",
+    "coordinates": [
+      -97.85667,
+      19.94
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 11622,
+      "year": 2015,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q5644730",
         "license": "CC0"
       }
     ]
@@ -496363,39 +496363,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q2330431",
-    "wikidata": "Q2330431",
-    "level": "admin2",
-    "name": "Tequila Municipality",
-    "parent": "Q13160",
-    "parent_name": "Jalisco",
-    "country": "MEX",
-    "capital": "Tequila",
-    "coordinates": [
-      -103.78333,
-      21.11667
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 44353,
-      "year": 2020,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q2330431",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q3846856",
     "wikidata": "Q3846856",
     "level": "admin2",
@@ -496424,6 +496391,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q3846856",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q2330431",
+    "wikidata": "Q2330431",
+    "level": "admin2",
+    "name": "Tequila Municipality",
+    "parent": "Q13160",
+    "parent_name": "Jalisco",
+    "country": "MEX",
+    "capital": "Tequila",
+    "coordinates": [
+      -103.78333,
+      21.11667
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 44353,
+      "year": 2020,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q2330431",
         "license": "CC0"
       }
     ]
@@ -508615,39 +508615,6 @@
     ]
   },
   {
-    "id": "MEX-WD-Q20209211",
-    "wikidata": "Q20209211",
-    "level": "admin2",
-    "name": "Victoria Municipality",
-    "parent": "Q46475",
-    "parent_name": "Guanajuato",
-    "country": "MEX",
-    "capital": "Victoria",
-    "coordinates": [
-      -100.22294,
-      21.35448
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 19820,
-      "year": 2010,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q20209211",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "MEX-WD-Q7926884",
     "wikidata": "Q7926884",
     "level": "admin2",
@@ -508676,6 +508643,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q7926884",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "MEX-WD-Q20209211",
+    "wikidata": "Q20209211",
+    "level": "admin2",
+    "name": "Victoria Municipality",
+    "parent": "Q46475",
+    "parent_name": "Guanajuato",
+    "country": "MEX",
+    "capital": "Victoria",
+    "coordinates": [
+      -100.22294,
+      21.35448
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 19820,
+      "year": 2010,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q20209211",
         "license": "CC0"
       }
     ]
@@ -526387,6 +526387,39 @@
     ]
   },
   {
+    "id": "MEX-WD-Q4408246",
+    "wikidata": "Q4408246",
+    "level": "admin2",
+    "name": "Zaragoza Municipality",
+    "parent": "Q79923",
+    "parent_name": "Puebla",
+    "country": "MEX",
+    "capital": "Zaragoza",
+    "coordinates": [
+      -97.56667,
+      19.74583
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 16173,
+      "year": 2015,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q4408246",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
     "id": "MEX-WD-Q3844606",
     "wikidata": "Q3844606",
     "level": "admin2",
@@ -526448,39 +526481,6 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q6170963",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
-    "id": "MEX-WD-Q4408246",
-    "wikidata": "Q4408246",
-    "level": "admin2",
-    "name": "Zaragoza Municipality",
-    "parent": "Q79923",
-    "parent_name": "Puebla",
-    "country": "MEX",
-    "capital": "Zaragoza",
-    "coordinates": [
-      -97.56667,
-      19.74583
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 16173,
-      "year": 2015,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q4408246",
         "license": "CC0"
       }
     ]
@@ -531247,40 +531247,6 @@
     ]
   },
   {
-    "id": "COL-WD-Q937957",
-    "wikidata": "Q937957",
-    "level": "admin2",
-    "name": "Barbosa",
-    "parent": "Q235166",
-    "parent_name": "Santander Department",
-    "country": "COL",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -73.61472,
-      5.93306
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 29581,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q937957",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "COL-WD-Q1946659",
     "wikidata": "Q1946659",
     "level": "admin2",
@@ -531310,6 +531276,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q1946659",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "COL-WD-Q937957",
+    "wikidata": "Q937957",
+    "level": "admin2",
+    "name": "Barbosa",
+    "parent": "Q235166",
+    "parent_name": "Santander Department",
+    "country": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -73.61472,
+      5.93306
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 29581,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q937957",
         "license": "CC0"
       }
     ]
@@ -532240,40 +532240,6 @@
     ]
   },
   {
-    "id": "COL-WD-Q1936249",
-    "wikidata": "Q1936249",
-    "level": "admin2",
-    "name": "Bolívar",
-    "parent": "Q230602",
-    "parent_name": "Cauca Department",
-    "country": "COL",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -76.96639,
-      1.83583
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 44868,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q1936249",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "COL-WD-Q2430208",
     "wikidata": "Q2430208",
     "level": "admin2",
@@ -532303,6 +532269,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2430208",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "COL-WD-Q1936249",
+    "wikidata": "Q1936249",
+    "level": "admin2",
+    "name": "Bolívar",
+    "parent": "Q230602",
+    "parent_name": "Cauca Department",
+    "country": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -76.96639,
+      1.83583
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 44868,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q1936249",
         "license": "CC0"
       }
     ]
@@ -532715,40 +532715,6 @@
     ]
   },
   {
-    "id": "COL-WD-Q1525624",
-    "wikidata": "Q1525624",
-    "level": "admin2",
-    "name": "Buenavista",
-    "parent": "Q234912",
-    "parent_name": "Córdoba Department",
-    "country": "COL",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -75.48167,
-      8.22333
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 22711,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q1525624",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "COL-WD-Q607290",
     "wikidata": "Q607290",
     "level": "admin2",
@@ -532779,6 +532745,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q607290",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "COL-WD-Q1525624",
+    "wikidata": "Q1525624",
+    "level": "admin2",
+    "name": "Buenavista",
+    "parent": "Q234912",
+    "parent_name": "Córdoba Department",
+    "country": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -75.48167,
+      8.22333
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 22711,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q1525624",
         "license": "CC0"
       }
     ]
@@ -534116,6 +534116,40 @@
     ]
   },
   {
+    "id": "COL-WD-Q2430763",
+    "wikidata": "Q2430763",
+    "level": "admin2",
+    "name": "Candelaria",
+    "parent": "Q13990",
+    "parent_name": "Valle del Cauca Department",
+    "country": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -76.34778,
+      3.40037
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 95413,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q2430763",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
     "id": "COL-WD-Q1023776",
     "wikidata": "Q1023776",
     "level": "admin2",
@@ -534146,40 +534180,6 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q1023776",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
-    "id": "COL-WD-Q2430763",
-    "wikidata": "Q2430763",
-    "level": "admin2",
-    "name": "Candelaria",
-    "parent": "Q13990",
-    "parent_name": "Valle del Cauca Department",
-    "country": "COL",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -76.34778,
-      3.40037
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 95413,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q2430763",
         "license": "CC0"
       }
     ]
@@ -534332,8 +534332,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      -74.6574,
-      5.48347
+      -74.65667,
+      5.48333
     ],
     "inception": {
       "status": "not_available"
@@ -538934,40 +538934,6 @@
     ]
   },
   {
-    "id": "COL-WD-Q1150886",
-    "wikidata": "Q1150886",
-    "level": "admin2",
-    "name": "Córdoba",
-    "parent": "Q230597",
-    "parent_name": "Bolívar Department",
-    "country": "COL",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -74.82704,
-      9.58687
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 12266,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q1150886",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "COL-WD-Q1883426",
     "wikidata": "Q1883426",
     "level": "admin2",
@@ -538998,6 +538964,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q1883426",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "COL-WD-Q1150886",
+    "wikidata": "Q1150886",
+    "level": "admin2",
+    "name": "Córdoba",
+    "parent": "Q230597",
+    "parent_name": "Bolívar Department",
+    "country": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -74.82704,
+      9.58687
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12266,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q1150886",
         "license": "CC0"
       }
     ]
@@ -541087,40 +541087,6 @@
     ]
   },
   {
-    "id": "COL-WD-Q961294",
-    "wikidata": "Q961294",
-    "level": "admin2",
-    "name": "El Tambo",
-    "parent": "Q230602",
-    "parent_name": "Cauca Department",
-    "country": "COL",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -76.81083,
-      2.45139
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 48094,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q961294",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "COL-WD-Q2431847",
     "wikidata": "Q2431847",
     "level": "admin2",
@@ -541151,6 +541117,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2431847",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "COL-WD-Q961294",
+    "wikidata": "Q961294",
+    "level": "admin2",
+    "name": "El Tambo",
+    "parent": "Q230602",
+    "parent_name": "Cauca Department",
+    "country": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -76.81083,
+      2.45139
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 48094,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q961294",
         "license": "CC0"
       }
     ]
@@ -542329,8 +542329,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      -75.48667,
-      1.47889
+      -75.49333,
+      1.47
     ],
     "inception": {
       "status": "not_available"
@@ -542557,40 +542557,6 @@
     ]
   },
   {
-    "id": "COL-WD-Q23716942",
-    "wikidata": "Q23716942",
-    "level": "admin2",
-    "name": "Fundo Fundo Nuevo",
-    "parent": "Q13984",
-    "parent_name": "Casanare Department",
-    "country": "COL",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -70.46667,
-      5.63194
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q23716942",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "COL-WD-Q23716615",
     "wikidata": "Q23716615",
     "level": "admin2",
@@ -542620,6 +542586,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q23716615",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "COL-WD-Q23716942",
+    "wikidata": "Q23716942",
+    "level": "admin2",
+    "name": "Fundo Fundo Nuevo",
+    "parent": "Q13984",
+    "parent_name": "Casanare Department",
+    "country": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -70.46667,
+      5.63194
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q23716942",
         "license": "CC0"
       }
     ]
@@ -542727,40 +542727,6 @@
     ]
   },
   {
-    "id": "COL-WD-Q23716669",
-    "wikidata": "Q23716669",
-    "level": "admin2",
-    "name": "Fundo Nuevo",
-    "parent": "Q13984",
-    "parent_name": "Casanare Department",
-    "country": "COL",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -69.9975,
-      6.08806
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q23716669",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "COL-WD-Q23716211",
     "wikidata": "Q23716211",
     "level": "admin2",
@@ -542790,6 +542756,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q23716211",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "COL-WD-Q23716669",
+    "wikidata": "Q23716669",
+    "level": "admin2",
+    "name": "Fundo Nuevo",
+    "parent": "Q13984",
+    "parent_name": "Casanare Department",
+    "country": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -69.9975,
+      6.08806
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q23716669",
         "license": "CC0"
       }
     ]
@@ -543755,41 +543755,6 @@
     ]
   },
   {
-    "id": "COL-WD-Q1578735",
-    "wikidata": "Q1578735",
-    "level": "admin2",
-    "name": "Granada",
-    "parent": "Q123304",
-    "parent_name": "Antioquia",
-    "country": "COL",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -75.18528,
-      6.14417
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 10117,
-      "year": 2018,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q1578735",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "COL-WD-Q2101383",
     "wikidata": "Q2101383",
     "level": "admin2",
@@ -543820,6 +543785,41 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2101383",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "COL-WD-Q1578735",
+    "wikidata": "Q1578735",
+    "level": "admin2",
+    "name": "Granada",
+    "parent": "Q123304",
+    "parent_name": "Antioquia",
+    "country": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -75.18528,
+      6.14417
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 10117,
+      "year": 2018,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q1578735",
         "license": "CC0"
       }
     ]
@@ -544064,40 +544064,6 @@
     ]
   },
   {
-    "id": "COL-WD-Q2315211",
-    "wikidata": "Q2315211",
-    "level": "admin2",
-    "name": "Guadalupe",
-    "parent": "Q123304",
-    "parent_name": "Antioquia",
-    "country": "COL",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -75.24083,
-      6.81389
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "No P1082 statement on Wikidata."
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q2315211",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "COL-WD-Q2432014",
     "wikidata": "Q2432014",
     "level": "admin2",
@@ -544127,6 +544093,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2432014",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "COL-WD-Q2315211",
+    "wikidata": "Q2315211",
+    "level": "admin2",
+    "name": "Guadalupe",
+    "parent": "Q123304",
+    "parent_name": "Antioquia",
+    "country": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -75.24083,
+      6.81389
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No P1082 statement on Wikidata."
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q2315211",
         "license": "CC0"
       }
     ]
@@ -547920,40 +547920,6 @@
     ]
   },
   {
-    "id": "COL-WD-Q979791",
-    "wikidata": "Q979791",
-    "level": "admin2",
-    "name": "La Unión",
-    "parent": "Q230217",
-    "parent_name": "Nariño Department",
-    "country": "COL",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -77.12972,
-      1.60528
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 25270,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q979791",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "COL-WD-Q2022508",
     "wikidata": "Q2022508",
     "level": "admin2",
@@ -548018,6 +547984,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2143798",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "COL-WD-Q979791",
+    "wikidata": "Q979791",
+    "level": "admin2",
+    "name": "La Unión",
+    "parent": "Q230217",
+    "parent_name": "Nariño Department",
+    "country": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -77.12972,
+      1.60528
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 25270,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q979791",
         "license": "CC0"
       }
     ]
@@ -548950,8 +548950,8 @@
     "wikidata": "Q1094889",
     "level": "admin2",
     "name": "Los Nevados National Natural Park",
-    "parent": "Q13993",
-    "parent_name": "Risaralda Department",
+    "parent": "Q13995",
+    "parent_name": "Quindío Department",
     "country": "COL",
     "capital": {
       "status": "not_available"
@@ -551566,40 +551566,6 @@
     ]
   },
   {
-    "id": "COL-WD-Q615597",
-    "wikidata": "Q615597",
-    "level": "admin2",
-    "name": "Morales",
-    "parent": "Q230602",
-    "parent_name": "Cauca Department",
-    "country": "COL",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -76.6339,
-      2.76028
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 26707,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q615597",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "COL-WD-Q2432408",
     "wikidata": "Q2432408",
     "level": "admin2",
@@ -551630,6 +551596,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2432408",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "COL-WD-Q615597",
+    "wikidata": "Q615597",
+    "level": "admin2",
+    "name": "Morales",
+    "parent": "Q230602",
+    "parent_name": "Cauca Department",
+    "country": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -76.6339,
+      2.76028
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 26707,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q615597",
         "license": "CC0"
       }
     ]
@@ -554635,8 +554635,8 @@
     "wikidata": "Q3364541",
     "level": "admin2",
     "name": "Paramillo National Natural Park",
-    "parent": "Q234912",
-    "parent_name": "Córdoba Department",
+    "parent": "Q123304",
+    "parent_name": "Antioquia",
     "country": "COL",
     "capital": {
       "status": "not_available"
@@ -557616,8 +557616,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      -76.35,
-      2.2
+      -76.42167,
+      2.24611
     ],
     "inception": {
       "status": "not_available"
@@ -560331,40 +560331,6 @@
     ]
   },
   {
-    "id": "COL-WD-Q1093015",
-    "wikidata": "Q1093015",
-    "level": "admin2",
-    "name": "Riosucio",
-    "parent": "Q230607",
-    "parent_name": "Caldas Department",
-    "country": "COL",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -75.70278,
-      5.42083
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 62296,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q1093015",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "COL-WD-Q2196660",
     "wikidata": "Q2196660",
     "level": "admin2",
@@ -560394,6 +560360,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2196660",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "COL-WD-Q1093015",
+    "wikidata": "Q1093015",
+    "level": "admin2",
+    "name": "Riosucio",
+    "parent": "Q230607",
+    "parent_name": "Caldas Department",
+    "country": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -75.70278,
+      5.42083
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 62296,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q1093015",
         "license": "CC0"
       }
     ]
@@ -572137,40 +572137,6 @@
     ]
   },
   {
-    "id": "COL-WD-Q1442429",
-    "wikidata": "Q1442429",
-    "level": "admin2",
-    "name": "Villanueva",
-    "parent": "Q272747",
-    "parent_name": "La Guajira Department",
-    "country": "COL",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -72.98,
-      10.60528
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 28736,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q1442429",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "COL-WD-Q1440726",
     "wikidata": "Q1440726",
     "level": "admin2",
@@ -572205,19 +572171,19 @@
     ]
   },
   {
-    "id": "COL-WD-Q942314",
-    "wikidata": "Q942314",
+    "id": "COL-WD-Q1442429",
+    "wikidata": "Q1442429",
     "level": "admin2",
     "name": "Villanueva",
-    "parent": "Q235166",
-    "parent_name": "Santander Department",
+    "parent": "Q272747",
+    "parent_name": "La Guajira Department",
     "country": "COL",
     "capital": {
       "status": "not_available"
     },
     "coordinates": [
-      -73.17472,
-      6.67194
+      -72.98,
+      10.60528
     ],
     "inception": {
       "status": "not_available"
@@ -572226,14 +572192,14 @@
       "status": "not_available"
     },
     "population": {
-      "value": 5443,
+      "value": 28736,
       "source": "Wikidata (CC0)"
     },
     "sources": [
       {
         "field": "population/capital/coordinates",
         "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q942314",
+        "url": "https://www.wikidata.org/wiki/Q1442429",
         "license": "CC0"
       }
     ]
@@ -572268,6 +572234,40 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2433377",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "COL-WD-Q942314",
+    "wikidata": "Q942314",
+    "level": "admin2",
+    "name": "Villanueva",
+    "parent": "Q235166",
+    "parent_name": "Santander Department",
+    "country": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -73.17472,
+      6.67194
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5443,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q942314",
         "license": "CC0"
       }
     ]
@@ -573745,8 +573745,8 @@
     "country": "PER",
     "capital": "Yurimaguas",
     "coordinates": [
-      -76.08333,
-      -5.9
+      -76.10229,
+      -5.81276
     ],
     "inception": {
       "status": "not_available"
@@ -579466,8 +579466,8 @@
     "country": "PER",
     "capital": "Julcán",
     "coordinates": [
-      -78.5,
-      -8.05
+      -78.46356,
+      -8.17238
     ],
     "inception": {
       "status": "not_available"
@@ -584294,8 +584294,8 @@
     "country": "PER",
     "capital": "Santiago de Chuco",
     "coordinates": [
-      -78.17528,
-      -8.14556
+      -78.25,
+      -8.33333
     ],
     "inception": {
       "status": "not_available"
@@ -585959,8 +585959,8 @@
     "country": "PER",
     "capital": "Yauyos",
     "coordinates": [
-      -76.0,
-      -12.41667
+      -75.9233,
+      -12.4641
     ],
     "inception": {
       "status": "not_available"
@@ -586833,41 +586833,6 @@
     ]
   },
   {
-    "id": "ARG-WD-Q4733652",
-    "wikidata": "Q4733652",
-    "level": "admin2",
-    "name": "Almafuerte",
-    "parent": "Q44798",
-    "parent_name": "Misiones Province",
-    "country": "ARG",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -55.40361,
-      -27.50806
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 1103,
-      "year": 2022,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q4733652",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "ARG-WD-Q1935889",
     "wikidata": "Q1935889",
     "level": "admin2",
@@ -586898,6 +586863,41 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q1935889",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "ARG-WD-Q4733652",
+    "wikidata": "Q4733652",
+    "level": "admin2",
+    "name": "Almafuerte",
+    "parent": "Q44798",
+    "parent_name": "Misiones Province",
+    "country": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -55.40361,
+      -27.50806
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1103,
+      "year": 2022,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q4733652",
         "license": "CC0"
       }
     ]
@@ -588489,7 +588489,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1068,
+      "value": 1069,
       "year": 2022,
       "source": "Wikidata (CC0)"
     },
@@ -588637,6 +588637,39 @@
     ]
   },
   {
+    "id": "ARG-WD-Q1190269",
+    "wikidata": "Q1190269",
+    "level": "admin2",
+    "name": "Bariloche",
+    "parent": "Q44802",
+    "parent_name": "Río Negro Province",
+    "country": "ARG",
+    "capital": "Bariloche",
+    "coordinates": [
+      -71.28333,
+      -41.13333
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 162088,
+      "year": 2022,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q1190269",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
     "id": "ARG-WD-Q47772",
     "wikidata": "Q47772",
     "level": "admin2",
@@ -588667,39 +588700,6 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q47772",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
-    "id": "ARG-WD-Q1190269",
-    "wikidata": "Q1190269",
-    "level": "admin2",
-    "name": "Bariloche",
-    "parent": "Q44802",
-    "parent_name": "Río Negro Province",
-    "country": "ARG",
-    "capital": "Bariloche",
-    "coordinates": [
-      -71.28333,
-      -41.13333
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 162088,
-      "year": 2022,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q1190269",
         "license": "CC0"
       }
     ]
@@ -590372,41 +590372,6 @@
     ]
   },
   {
-    "id": "ARG-WD-Q55379",
-    "wikidata": "Q55379",
-    "level": "admin2",
-    "name": "Candelaria",
-    "parent": "Q44798",
-    "parent_name": "Misiones Province",
-    "country": "ARG",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -55.74528,
-      -27.45944
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 18112,
-      "year": 2022,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q55379",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "ARG-WD-Q5031647",
     "wikidata": "Q5031647",
     "level": "admin2",
@@ -590437,6 +590402,41 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q5031647",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "ARG-WD-Q55379",
+    "wikidata": "Q55379",
+    "level": "admin2",
+    "name": "Candelaria",
+    "parent": "Q44798",
+    "parent_name": "Misiones Province",
+    "country": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -55.74528,
+      -27.45944
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 18112,
+      "year": 2022,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q55379",
         "license": "CC0"
       }
     ]
@@ -590710,72 +590710,6 @@
     ]
   },
   {
-    "id": "ARG-WD-Q1190333",
-    "wikidata": "Q1190333",
-    "level": "admin2",
-    "name": "Capital Department",
-    "parent": "Q44805",
-    "parent_name": "San Juan Province",
-    "country": "ARG",
-    "capital": "San Juan",
-    "coordinates": [
-      -68.53333,
-      -31.51667
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 115390,
-      "year": 2022,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q1190333",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
-    "id": "ARG-WD-Q1190331",
-    "wikidata": "Q1190331",
-    "level": "admin2",
-    "name": "Capital Department",
-    "parent": "Q44803",
-    "parent_name": "Salta Province",
-    "country": "ARG",
-    "capital": "Salta",
-    "coordinates": [
-      -65.41056,
-      -24.78917
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 627704,
-      "year": 2022,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q1190331",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "ARG-WD-Q1190324",
     "wikidata": "Q1190324",
     "level": "admin2",
@@ -590839,6 +590773,72 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q1190326",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "ARG-WD-Q1190331",
+    "wikidata": "Q1190331",
+    "level": "admin2",
+    "name": "Capital Department",
+    "parent": "Q44803",
+    "parent_name": "Salta Province",
+    "country": "ARG",
+    "capital": "Salta",
+    "coordinates": [
+      -65.41056,
+      -24.78917
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 627704,
+      "year": 2022,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q1190331",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "ARG-WD-Q1190333",
+    "wikidata": "Q1190333",
+    "level": "admin2",
+    "name": "Capital Department",
+    "parent": "Q44805",
+    "parent_name": "San Juan Province",
+    "country": "ARG",
+    "capital": "San Juan",
+    "coordinates": [
+      -68.53333,
+      -31.51667
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 115390,
+      "year": 2022,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q1190333",
         "license": "CC0"
       }
     ]
@@ -598882,8 +598882,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      -61.9167,
-      -32.7333
+      -61.91611,
+      -32.73194
     ],
     "inception": {
       "status": "not_available"
@@ -607699,39 +607699,6 @@
     ]
   },
   {
-    "id": "ARG-WD-Q942143",
-    "wikidata": "Q942143",
-    "level": "admin2",
-    "name": "Nueve de Julio Department",
-    "parent": "Q44757",
-    "parent_name": "Chaco Province",
-    "country": "ARG",
-    "capital": "Las Breñas",
-    "coordinates": [
-      -61.08333,
-      -27.08333
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 30258,
-      "year": 2022,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q942143",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "ARG-WD-Q1190873",
     "wikidata": "Q1190873",
     "level": "admin2",
@@ -607793,6 +607760,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q1190875",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "ARG-WD-Q942143",
+    "wikidata": "Q942143",
+    "level": "admin2",
+    "name": "Nueve de Julio Department",
+    "parent": "Q44757",
+    "parent_name": "Chaco Province",
+    "country": "ARG",
+    "capital": "Las Breñas",
+    "coordinates": [
+      -61.08333,
+      -27.08333
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 30258,
+      "year": 2022,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q942143",
         "license": "CC0"
       }
     ]
@@ -608431,7 +608431,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 376,
+      "value": 372,
       "year": 2022,
       "source": "Wikidata (CC0)"
     },
@@ -610610,39 +610610,6 @@
     ]
   },
   {
-    "id": "ARG-WD-Q651437",
-    "wikidata": "Q651437",
-    "level": "admin2",
-    "name": "Rawson Department",
-    "parent": "Q44805",
-    "parent_name": "San Juan Province",
-    "country": "ARG",
-    "capital": "Villa Krause",
-    "coordinates": [
-      -68.51667,
-      -31.56667
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 136617,
-      "year": 2022,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q651437",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "ARG-WD-Q1088518",
     "wikidata": "Q1088518",
     "level": "admin2",
@@ -610671,6 +610638,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q1088518",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "ARG-WD-Q651437",
+    "wikidata": "Q651437",
+    "level": "admin2",
+    "name": "Rawson Department",
+    "parent": "Q44805",
+    "parent_name": "San Juan Province",
+    "country": "ARG",
+    "capital": "Villa Krause",
+    "coordinates": [
+      -68.51667,
+      -31.56667
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 136617,
+      "year": 2022,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q651437",
         "license": "CC0"
       }
     ]
@@ -613775,39 +613775,6 @@
     ]
   },
   {
-    "id": "ARG-WD-Q685766",
-    "wikidata": "Q685766",
-    "level": "admin2",
-    "name": "San Martín Department",
-    "parent": "Q44805",
-    "parent_name": "San Juan Province",
-    "country": "ARG",
-    "capital": "Villa San Martín",
-    "coordinates": [
-      -68.28333,
-      -31.5
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 15037,
-      "year": 2022,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q685766",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "ARG-WD-Q1063365",
     "wikidata": "Q1063365",
     "level": "admin2",
@@ -613838,6 +613805,39 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q1063365",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "ARG-WD-Q685766",
+    "wikidata": "Q685766",
+    "level": "admin2",
+    "name": "San Martín Department",
+    "parent": "Q44805",
+    "parent_name": "San Juan Province",
+    "country": "ARG",
+    "capital": "Villa San Martín",
+    "coordinates": [
+      -68.28333,
+      -31.5
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 15037,
+      "year": 2022,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q685766",
         "license": "CC0"
       }
     ]
@@ -615306,8 +615306,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      -62.48194,
-      -31.70278
+      -62.48333,
+      -31.7025
     ],
     "inception": {
       "status": "not_available"
@@ -616922,41 +616922,6 @@
     ]
   },
   {
-    "id": "ARG-WD-Q3037564",
-    "wikidata": "Q3037564",
-    "level": "admin2",
-    "name": "Trenel",
-    "parent": "Q44795",
-    "parent_name": "La Pampa Province",
-    "country": "ARG",
-    "capital": {
-      "status": "not_available"
-    },
-    "coordinates": [
-      -64.1333,
-      -35.7
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 3387,
-      "year": 2010,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q3037564",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "ARG-WD-Q2608919",
     "wikidata": "Q2608919",
     "level": "admin2",
@@ -616987,6 +616952,41 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q2608919",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "ARG-WD-Q3037564",
+    "wikidata": "Q3037564",
+    "level": "admin2",
+    "name": "Trenel",
+    "parent": "Q44795",
+    "parent_name": "La Pampa Province",
+    "country": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "coordinates": [
+      -64.1333,
+      -35.7
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3387,
+      "year": 2010,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q3037564",
         "license": "CC0"
       }
     ]
@@ -619444,8 +619444,8 @@
     "country": "ARG",
     "capital": "Zárate",
     "coordinates": [
-      -59.00954,
-      -34.10249
+      -59.03333,
+      -34.1
     ],
     "inception": {
       "status": "not_available"
