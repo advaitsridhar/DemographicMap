@@ -1665,6 +1665,56 @@ offices, two more adapters, and two reference dates that do not match the third.
 The adapter has always said so in its header; what is new is knowing that those
 43 council areas and districts are the whole of what remains.
 
+### Scotland and Northern Ireland: published, and behind a table builder
+
+Reading the UK census at Nomis' county tier took its second-order coverage from
+152 shapes to 171. The 45 that remain are all Scottish council areas and
+Northern Irish districts, and they are a **source** gap: the ONS census covers
+England and Wales. Scotland ran its own in 2022 through National Records of
+Scotland, Northern Ireland in 2021 through NISRA.
+
+Both offices publish exactly what this map wants -- NISRA's MS-B01 religion and
+MS-B02 ethnic group by 11 local government districts, Scotland's ethnic group
+and religion by 32 council areas. Neither is reachable by a program without
+guessing at an undocumented interface, and that was measured rather than
+assumed:
+
+* **Nomis does not carry them.** It is the UK's shared census warehouse and this
+  project already talks to it, so it was asked first. Every one of the 39
+  datasets whose name contains "religion" is suffixed **EW** -- QS208EW,
+  DC2201EW, LC2107EW and the rest. England and Wales, and nothing else.
+* **NISRA's API endpoints are not there.** `ws.nisra.gov.uk`, the host PxStat
+  deployments usually use, does not resolve at all. Under the portal that does
+  exist, `data.nisra.gov.uk`, both the PxStat RESTful read and a PxWeb-shaped
+  root answer 404. The portal front page and the Census 2021 results page are
+  HTML carrying 26 and 52 links, none of them a file or an API.
+* **Scotland's SPARQL endpoint closes the connection.** `statistics.gov.scot`
+  is a linked-data platform, and `/sparql` disconnects without a response to
+  both a `.json` path and an Accept-negotiated request.
+* **The one workbook that is published is a bulletin's chart data.** Scotland's
+  ethnic-group-and-religion release links a single spreadsheet, and it holds a
+  cover sheet, a contents page, notes and ten "Figure" sheets of the
+  percentages behind that bulletin's charts -- not a council-area table.
+
+What both offices have instead is a **flexible table builder**:
+`build.nisra.gov.uk` and Scotland's *search the census*. Those are JavaScript
+applications with APIs behind them, and the APIs are undocumented. Guessing at
+one is how five separate readings went wrong on Germany before the catalogue
+was asked directly, and there is no catalogue to ask here.
+
+So this is a third kind of block, and worth distinguishing from the other two.
+Indonesia needs a key the repository owner can register for. China's statistics
+bureau refuses an automated client outright. Here the data is public, free and
+unrestricted -- and published only through an interface built for a person
+clicking, with no static file and no documented endpoint behind it.
+
+What would open it: a documented endpoint from either builder, a bulk download
+either office publishes that these probes did not reach, or the same tables
+appearing on a warehouse that does answer programs. Until then, 45 shapes stay
+visibly empty rather than being given England and Wales' figures, and the three
+reference dates -- 2021 for England, Wales and Northern Ireland, 2022 for
+Scotland -- would in any case need saying on any map that combined them.
+
 ### China: 1.4 billion people, and three closed routes
 
 China carries a population on all 33 of its provinces and a composition on
