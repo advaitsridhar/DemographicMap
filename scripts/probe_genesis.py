@@ -308,7 +308,11 @@ def probe(key: str, spec: dict[str, str]) -> None:
         rows = tables_from(found)
         note = status_of(found)
         print(f"    find '{term}': {len(rows)} tables ({note})")
-        for row in rows[:15]:
+        # All of them, not the first fifteen. The question this pass is being
+        # asked now is whether a table exists at some regional level, and a
+        # truncated list cannot answer it -- an absence in the first fifteen of
+        # forty is not an absence.
+        for row in rows:
             code = row.get("Code") or row.get("code") or "?"
             title = (row.get("Content") or row.get("content") or "").strip()
             print(f"      {code:<16} {title[:110]}")
