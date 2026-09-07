@@ -65,12 +65,14 @@ from __future__ import annotations
 
 import argparse
 import base64
+import io
 import json
 import os
 import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+import zipfile
 
 TIMEOUT = 90
 
@@ -493,6 +495,25 @@ def fetch(key: str, spec: dict[str, str], table: str, lines: int) -> None:
         print(f"    ... {len(rows) - lines} more lines")
 
 
+def unzipped(body: bytes) -> str:
+    """The CSV out of the archive GENESIS answers with.
+
+    data/tablefile returns a ZIP holding one .csv whatever compress=false says,
+    so the first read of this table printed a screenful of binary and looked
+    like a broken encoding. The archive is the delivery format, not damage.
+    """
+    if not body.startswith(b"PK"):
+        return body.decode("utf-8", "replace")
+    with zipfile.ZipFile(io.BytesIO(body)) as archive:
+        names = archive.namelist()
+        if not names:
+            return "(empty archive)"
+        # Latin-1 rather than UTF-8: GENESIS writes these files in Windows-1252
+        # and a Bundesland with an umlaut in it is most of them.
+        text = archive.read(names[0]).decode("cp1252", "replace")
+        return f"[{names[0]}]\n{text}"
+
+
 def raw(base: str, path: str, auth: dict[str, str], **params: object) -> str:
     """One call, returning the body as text however it is encoded."""
     encoded = urllib.parse.urlencode({"language": "de", **params})
@@ -504,7 +525,7 @@ def raw(base: str, path: str, auth: dict[str, str], **params: object) -> str:
         method="POST")
     try:
         with urllib.request.urlopen(req, timeout=TIMEOUT) as fh:
-            return fh.read().decode("utf-8", "replace")
+            return unzipped(fh.read())
     except urllib.error.HTTPError as err:
         return f"HTTP {err.code} {err.reason or ''}".strip()
     except Exception as err:                        # noqa: BLE001 -- reported
