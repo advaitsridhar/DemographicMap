@@ -544,6 +544,54 @@ def raw(base: str, path: str, auth: dict[str, str], **params: object) -> str:
         return f"{type(err).__name__}: {err}"
 
 
+def geography(key: str, spec: dict[str, str], selection: str) -> None:
+    """Which geographies this database offers, and what is cut by each.
+
+    Reading titles cannot answer whether a religion table exists at some
+    regional level: the title says "Personen: Religion" for all four of them and
+    nothing about the geography. So ask the catalogue instead -- first for the
+    geographic variables themselves, then for the tables that use the ones that
+    look like a Kreis. An absence established this way is a fact about the
+    database; an absence inferred from a list of titles is a fact about titles.
+    """
+    auth, described = account(spec)
+    print(f"\n=== {spec['name']} -- geographies matching {selection} ===")
+    print(f"    credentials: {described}")
+    found = call(spec["base"], "catalogue/variables", {}, auth,
+                 selection=selection, area="all", pagelength=100)
+    note = status_of(found)
+    variables = []
+    if isinstance(found, dict):
+        for holder in ("List", "list", "Variables", "variables"):
+            rows = found.get(holder)
+            if isinstance(rows, list):
+                variables = [r for r in rows if isinstance(r, dict)]
+                break
+    print(f"    {len(variables)} variable(s) ({note})")
+    for var in variables:
+        code = str(var.get("Code") or var.get("code") or "?")
+        content = (var.get("Content") or var.get("content") or "").strip()
+        values = var.get("Values") or var.get("values") or "?"
+        print(f"    {code:<12} {str(values):>7} values  {content[:80]}")
+
+    # For each geography, which tables are cut by it. This is the question.
+    for var in variables:
+        code = str(var.get("Code") or var.get("code") or "")
+        if not code:
+            continue
+        used = call(spec["base"], "catalogue/tables2variable", {}, auth,
+                    name=code, area="all", pagelength=100)
+        rows = tables_from(used)
+        titled = [r for r in rows
+                  if "religion" in str(r.get("Content") or r.get("content") or "").lower()]
+        print(f"\n    {code}: {len(rows)} table(s), {len(titled)} mentioning religion"
+              f" ({status_of(used)})")
+        for row in titled[:20]:
+            name = row.get("Code") or row.get("code") or "?"
+            content = (row.get("Content") or row.get("content") or "").strip()
+            print(f"      {name:<16} {content[:100]}")
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -552,6 +600,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--tables", default="",
                     help="comma-separated table codes to describe instead of "
                          "searching, e.g. 1000A-1018,1000A-1K18")
+    ap.add_argument("--geography", default="",
+                    help="a variable selection such as GEO*; list the "
+                         "geographies and, for each, the tables cut by it")
     ap.add_argument("--fetch", default="",
                     help="one table code; print its ffcsv body so the category "
                          "labels can be read rather than guessed")
@@ -571,14 +622,17 @@ def main(argv: list[str] | None = None) -> int:
         print(f"unknown instance(s): {', '.join(unknown)}", file=sys.stderr)
         return 2
 
-    if not (args.tables or args.endpoints or args.whoami or args.fetch):
+    if not (args.tables or args.endpoints or args.whoami or args.fetch
+            or args.geography):
         print("Region variables a usable table would carry:")
         for code, meaning in REGION_CODES.items():
             print(f"  {code:<8} {meaning}")
 
     tables = [t.strip() for t in args.tables.split(",") if t.strip()]
     for key in wanted:
-        if args.fetch:
+        if args.geography:
+            geography(key, INSTANCES[key], args.geography.strip())
+        elif args.fetch:
             fetch(key, INSTANCES[key], args.fetch.strip(), args.lines)
         elif args.whoami:
             whoami(key, INSTANCES[key])
