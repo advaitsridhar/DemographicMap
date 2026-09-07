@@ -490,7 +490,11 @@ def fetch(key: str, spec: dict[str, str], table: str, lines: int) -> None:
     rows = text.splitlines()
     print(f"    {len(text)} bytes, {len(rows)} lines")
     for row in rows[:lines]:
-        print(f"    {row[:220]}")
+        # Whole lines. The header of an ffcsv is the thing worth reading here
+        # -- an adapter looks its columns up by name -- and it is longer than
+        # any truncation that suits a data row, so it was the one line the
+        # first print cut off.
+        print(f"    {row}")
     if len(rows) > lines:
         print(f"    ... {len(rows) - lines} more lines")
 
@@ -508,9 +512,13 @@ def unzipped(body: bytes) -> str:
         names = archive.namelist()
         if not names:
             return "(empty archive)"
-        # Latin-1 rather than UTF-8: GENESIS writes these files in Windows-1252
-        # and a Bundesland with an umlaut in it is most of them.
-        text = archive.read(names[0]).decode("cp1252", "replace")
+        # utf-8-sig: the file is UTF-8 and opens with a byte-order mark, which
+        # a cp1252 read turns into a leading "i>>?" and every umlaut into
+        # mojibake -- Bevoelkerung came back "BevÃ¶lkerung" on the first try.
+        # The guess was Windows-1252 because that is what GENESIS's older
+        # exports use; this one does not, and the file says so in its first
+        # three bytes.
+        text = archive.read(names[0]).decode("utf-8-sig", "replace")
         return f"[{names[0]}]\n{text}"
 
 
