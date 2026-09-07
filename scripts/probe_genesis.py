@@ -424,9 +424,18 @@ def whoami(key: str, spec: dict[str, str]) -> None:
         if isinstance(answer, dict):
             name = answer.get("Username") or answer.get("username") or "?"
         note = status_of(answer)
-        verdict = "IGNORED (anonymous)" if name == "GAST" else \
-                  ("ACCEPTED" if name not in ("?", "") else "no username in reply")
-        print(f"    {style:<8} -> Username={name!r}  {verdict}")
+        # The name itself is never printed. GENESIS echoes back whatever it
+        # took as the username, and for these accounts that is the address the
+        # person registered with -- which this log commits to a public
+        # repository. The only thing worth reporting is whether the server
+        # thinks it is talking to GAST or to somebody, and that is a yes or no.
+        if name == "GAST":
+            verdict = "IGNORED -- server still sees the anonymous GAST"
+        elif name in ("?", ""):
+            verdict = "no username in reply"
+        else:
+            verdict = "ACCEPTED -- server named the account (name withheld)"
+        print(f"    {style:<8} -> {verdict}")
         if note != "ok" and not str(note).startswith("Sie wurden"):
             print(f"             {str(note)[:160]}")
 

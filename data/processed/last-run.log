@@ -1,15 +1,10 @@
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_genesis.py", line 467, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_genesis.py", line 456, in main
-    whoami(key, INSTANCES[key])
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_genesis.py", line 414, in whoami
-    answer = call(spec["base"], "helloworld/logincheck", params, headers)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: call() takes 3 positional arguments but 4 were given
 
 === Zensus 2022 results database -- authentication styles ===
     credential from ZENSUS_USER / ZENSUS_PASSWORD (user is 24 chars, password 14)
+    query    -> IGNORED -- server still sees the anonymous GAST
+    header   -> ACCEPTED -- server named the account (name withheld)
+    basic    -> IGNORED -- server still sees the anonymous GAST
+    bearer   -> IGNORED -- server still sees the anonymous GAST
+
+=== GENESIS-Online (Destatis, federal) -- authentication styles ===
+    no credential: GENESIS_USER is empty in this environment
