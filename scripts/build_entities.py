@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import os
 import re
 import sys
 import unicodedata
@@ -1370,6 +1371,16 @@ def main() -> int:
     ap.add_argument("--out", type=Path, default=SITE_DATA)
     args = ap.parse_args()
     TRACE.update(iso.upper() for iso in args.trace)
+    # And from the environment, because the one place this join actually runs
+    # is the refresh workflow -- the boundary files are ~550 MB and live
+    # nowhere else -- and nothing there could reach a command-line flag. A
+    # trace that cannot be switched on where the join runs is a trace that
+    # answers questions only about the countries somebody once ran locally.
+    TRACE.update(iso.strip().upper()
+                 for iso in os.environ.get("BUILD_TRACE", "").split(",")
+                 if iso.strip())
+    if TRACE:
+        log(f"build_entities: tracing {', '.join(sorted(TRACE))}")
 
     log("build_entities: reading boundaries")
     shapes = {level: read_shapes(level) for level in args.levels}
