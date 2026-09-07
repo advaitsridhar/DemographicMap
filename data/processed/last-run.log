@@ -1,5 +1,8 @@
 
 === Zensus 2022 results database -- table structures ===
+    credentials: set via ZENSUS_USER
+    logincheck: ok
+      {"Status": "Sie wurden erfolgreich an- und abgemeldet! Bei mehr als 3 parallelen Requests wurden länger als 15 Minuten laufende Requests beendet.", "Username": "GAST"}
 
   1000A-1018  (HTTP 401 Unauthorized)
     no structure returned -- raw: {"__error__": "HTTP 401 Unauthorized"}
@@ -11,7 +14,4 @@
     no structure returned -- raw: {"__error__": "HTTP 401 Unauthorized"}
 
   1000A-1W18  (HTTP 401 Unauthorized)
-    no structure returned -- raw: {"__error__": "HTTP 401 Unauthorized"}
-
-  2000X-1022  (HTTP 401 Unauthorized)
     no structure returned -- raw: {"__error__": "HTTP 401 Unauthorized"}
