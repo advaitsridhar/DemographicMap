@@ -26,6 +26,31 @@ Region variables a usable table would carry:
       1000A-2028       Personen: Geschlecht - Familienstand/Familienstand(ausführlich)/Religion
       1000A-2031       Personen: Geschlecht/Religion - Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kontinente)
       1000A-2033       Personen: Geschlecht/Religion - Staatsangehörigkeit (Häufigste Länder)
+      1000A-2049       Personen: Religion - Fläche der Wohnung (20 m²-Intervalle)
+      1000A-2074       Personen: Geschlecht/Religion - Seniorenstatus eines privaten Haushalts
+      1000A-2080       Personen: Typ des privaten Haushalts (Familien) - Religion/Staatsangehörigkeit (Gruppen)
+      1000A-2091       Personen: Familienstand/Familienstand(ausführlich)/Geschlecht/Religion - Größe der Kernfamilie
+      1000A-2099       Personen: Familienstand/Familienstand (ausführlich)/Geschlecht/Religion - Typ der Kernfamilie (Lebensform)
+      1000A-2E02       Personen: Religion - Alter (10er-Jahresgruppen)
+      1000A-2E03       Personen: Religion - Alter (11 Altersklassen)
+      1000A-2E09       Personen: Religion - Alter (5 Altersklassen)
+      1000A-2E10       Personen: Religion - Alter (5er-Jahresgruppen)
+      1000A-2E14       Personen: Religion - Alter (Marktforschungsrelevante Altersgruppen)
+      1000A-2E15       Personen: Religion - Alter (7 Altersklassen)
+      1000A-2E22       Personen: Religion - Einwanderungsgeschichte (ausführlich)
+      1000A-2E25       Personen: Religion - Familienstand/Familienstand (ausführlich)
+      1000A-2E28       Personen: Religion - Geschlecht
+      1000A-2E31       Personen: Religion - Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kontinente)
+      1000A-2E33       Personen: Religion - Staatsangehörigkeit (Häufigste Länder)
+      1000A-2E49       Personen: Religion - Fläche der Wohnung (20 m²-Intervalle)
+      1000A-2E74       Personen: Religion - Seniorenstatus eines privaten Haushalts
+      1000A-2E80       Personen: Religion - Typ des privaten Haushalts (Familien)
+      1000A-2E91       Personen: Religion - Größe der Kernfamilie
+      1000A-2E99       Personen: Religion - Typ der Kernfamilie (Lebensform)
+      1000A-2K02       Personen: Religion - Alter (10er-Jahresgruppen)
+      1000A-2K03       Personen: Religion - Alter (11 Altersklassen)
+      1000A-2K09       Personen: Religion - Alter (5 Altersklassen)
+      1000A-2K10       Personen: Religion - Alter (5er-Jahresgruppen)
     find 'Glaubensrichtung': 0 tables (erfolgreich)
     find 'Religionsgesellschaft': 40 tables (erfolgreich)
       2000X-1022       Personen: Religion (ausführlich)
@@ -56,4 +81,53 @@ Schulabschluss/Religion/S
 Altersklassen)/Erwerbsstatus/Familienstand
 (ausführlich)/Migrationshin
       2000X-2065       Personen: Wirtschaftszweig - Geschlecht/Religion (ausführlich)/Höchster berufl. Abschluss (ausführlich)/Staats
+      2000X-2068       Personen: Wirtschaftszweige (Abschnitte) - Alter (Alter (10er-Jahresgruppen)/Familienstand/Höchster berufliche
+      2000X-2072       Personen: Wirt.zweig Wirtschafts(unter)bereiche - Beruf
+(Bereiche KldB 2010)/Höchster beruflicher Abschluss/Hö
+      2000X-2076       Personen: Migrationshintergrund (ausgew. Länder) -
+Erwerbsstatus/Religion (ausführlich)
+      2000X-2080       Personen: Migrationshintergrund (Kontinente) - Alter/Erwerbsstatus/Familienstand (ausführlich)/ Geschlecht/Rel
+      2000X-3009       Personen: Erwerbsstatus (ausführlich) - Alter
+(5er-Jahresgruppen)/Familienstand (ausführlich)/Religion
+(ausfüh
+      2000X-3010       Personen: Erwerbsstatus (ausführlich) - Alter/Migrationshintergrund/Staatsangehörigkeit -  Religion (ausführli
+      2000X-3013       Personen: Erwerbsstatus (ausführlich) - Geschlecht/Religion
+(ausführlich) - Größe der Kernfamilie/Typ der Kern
+      2000X-3014       Personen: Erwerbsstatus (ausführlich) - Religion
+(ausführlich)/Migrationshintergrund - Typ der Kernfamilie
+(na
+      2000X-3019       Personen: Migrationshintergrund - Alter (10er-Jahresgruppen) - Erwerbsstatus (ausführlich)/Religion (ausführli
+      2000X-3022       Personen: Migrationshintergrund - Religion (ausführlich) -
+Typ der Kernfamilie (nach Familien)
+      2000X-3023       Personen: Migrationshintergrund/Religion (ausf.) - Alter (5er-Jahresgruppen)/Familienstand (ausf.)/Geschlecht 
+      2000X-3025       Personen: Migrationshintergrund und -erfahrung - Alter
+(10er-Jahresgruppen)/Familienstand (ausführlich)/Geschl
+      2000X-3027       Personen: Migrationshintergrund und -erfahrung - Alter (11 Altersklassen) - Erwerbsstatus/Familienstand/Religi
+      2000X-3038       Personen: Religion (ausführlich) - Familienstand -
+Staatsangehörigkeit (Ausgewählte Länder)
+      2000X-3039       Personen: Religion (ausführlich) -
+Alter/Familienstand/Staatsangehörigkeit - Geschlecht
+      2000X-3040       Personen: Religion (ausführlich) - Familienstand
+(ausführlich)/Migrationshintergrund und -erfahrung -
+Staatsan
+      2000X-3041       Personen: Religion (ausführlich) - Alter/Staatsangehörigkeit
+(Kontinente) - Geschlecht
+      2000X-3042       Personen: Religion (ausführlich) - Alter/Erwerbsstatus (ausführlich) - Familienstand (ausführlich)
+      2000X-3043       Personen: Religion (ausführlich) - Erwerbsstatus
+(ausführlich)/Geschlecht - Typ des privaten Haushalts (nach
+F
+      2000X-3044       Personen: Religion (ausführlich) - Familienstand
+(ausführlich)/Geschlecht - Größe der Kernfamilie
+      2000X-3046       Personen: Höchster beruflicher Abschluss - Alter/Höchster Schulabschluss/Migrationshintergrund/Religion (ausfü
+      2000X-3049       Personen: Höchster beruflicher Abschluss - Alter
+(10er-Jahresgruppen)/Migrationshintergrund - Religion
+(ausfüh
+      2000X-3052       Personen: Höchster beruflicher Abschluss - Erwerbsstatus
+(ausführlich)/Migrationshintergrund/Religion (ausführ
+      2000X-3053       Personen: Höchster beruflicher Abschluss (ausführlich) -
+Alter (10er-Jahresgruppen)/Religion (ausführlich) -
+M
+      2000X-3055       Personen: Höchster beruflicher Abschluss
+(ausführlich)/Höchster Schulabschluss - Religion
+(ausführlich) - Gesc
     find 'Konfession': 0 tables (erfolgreich)
