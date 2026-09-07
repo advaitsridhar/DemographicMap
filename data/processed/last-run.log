@@ -1,36 +1,83 @@
-Region variables a usable table would carry:
-  DLAND    Land (16)
-  KREISE   Kreis (~400)
-  GEMEIN   Gemeinde
-  DG       Germany as a whole
-  REGBEZ   Regierungsbezirk
 
-=== Zensus 2022 results database ===
-    https://ergebnisse.zensus2022.de/api/rest/2020
+=== Zensus 2022 results database -- geographies matching GEO* ===
     credentials: set via ZENSUS_USER
-    logincheck: ok [POST]
-      {"Status": "Sie wurden erfolgreich an- und abgemeldet! Bei mehr als 3 parallelen Requests wurden länger als 15 Minuten laufende Requests beendet.", "Username": "<withheld>"}
-    find 'Religion': 40 tables (erfolgreich)
+    27 variable(s) (erfolgreich (Mindestens ein Parameter enthält ungültige Werte. Er wurde angepasst, um den Service starten zu können.: sortcriterion))
+    GEOBL1            16 values  Bundesländer
+    GEOBL3            16 values  Bundesländer
+    GEOBZ1            19 values  Bezirke (Hamburg und Berlin)
+    GEODL1             1 values  Deutschland
+    GEODL3             1 values  Deutschland
+    GEOEV1            19 values  Landeskirche (Evangelische Kirche)
+    GEOEV2           489 values  Kirchenkreis (Evangelische Kirche)
+    GEOEV3         14055 values  Kirchengemeinde (Evangelische Kirche)
+    GEOGM1         11340 values  Gemeinden (Gebietsstand 09.05.2011)
+    GEOGM2          1574 values  Gemeinden mit mindestens 10 000 Einwohnern
+    GEOGM3          1574 values  Gemeinden mit mindestens 10 000 Einwohnern
+    GEOGM4         10787 values  Gemeinden (Gebietsstand 15.05.2022)
+    GEOGM5          1578 values  Gemeinden > 10.000 Einwohner (Stand 15.05.2022)
+    GEOLK1           412 values  Landkreise u. krsfr. Städte (Stand 09.05.11)
+    GEOLK3           412 values  Landkreise und kreisfreie Städte
+    GEOLK4           400 values  Landkreise u. krsfr. Städte (Stand 15.05.22)
+    GEORB1            36 values  Regierungsbezirke/Statistische Regionen
+    GEORB3            36 values  Regierungsbezirke/Statistische Regionen
+    GEORK1            27 values  Bistum (Katholische Kirche)
+    GEORK2           517 values  Dekanat (Katholische Kirche)
+    GEORK3          9696 values  Pfarrei (Katholische Kirche)
+    GEOVB1          1333 values  Gemeindeverbände (Gebietsstand 09.05.2011)
+    GEOVB2           338 values  Gemeindeverbände mit mindestens 10 000 Einwohnern
+    GEOVB3           157 values  Gemeindeverbände mit mindestens 10 000 Einwohnern
+    GEOVB4          1207 values  Gemeindeverbände (Gebietsstand 15.05.2022)
+    GEOVB5           588 values  Gemeindeverbände > 10.000 Einw. (Stand 15.05.2022)
+    GEOWK1           299 values  Bundestagswahlkreise
+
+    GEOBL1: 100 table(s), 12 mentioning religion (erfolgreich)
       1000A-1018       Personen: Religion
-      1000A-1E18       Personen: Religion
-      1000A-1K18       Personen: Religion
-      1000A-1W18       Personen: Religion
       1000A-2002       Personen: Alter (10er-Jahresgruppen) - Religion
       1000A-2003       Personen: Alter (11 Altersklassen) - Familienstand (ausführlich)/Religion
-      1000A-2009       Personen: Alter (5 Altersklassen) - Religion/Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kontinente)
+      1000A-2009       Personen: Alter (5 Altersklassen) - Religion/Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kont
       1000A-2010       Personen: Alter (5er-Jahresgruppen) - Familienstand/Religion/Staatsangehörigkeit
-      1000A-2014       Personen: Alter (Marktforschungsrelevante Altersgruppen) - Familienstand(ausführlich)/Geschlecht/Religion
+      1000A-2014       Personen: Alter (Marktforschungsrelevante Altersgruppen) - Familienstand(ausführlich)/Geschlecht/Rel
       1000A-2015       Personen: Alter (7 Altersklassen) - Familienstand(ausführlich)/Geschlecht/Religion
-      1000A-2022       Personen: Alter (10er-Jahresgruppen)/Alter (5er-Jahresgruppen)/Alter (Jahresschritte)/Familienstand (ausführli
+      1000A-2022       Personen: Alter (10er-Jahresgruppen)/Alter (5er-Jahresgruppen)/Alter (Jahresschritte)/Familienstand 
       1000A-2025       Personen: Familienstand/Familienstand (ausführlich) - Staatsangehörigkeit (Gruppen)/Religion
       1000A-2028       Personen: Geschlecht - Familienstand/Familienstand(ausführlich)/Religion
       1000A-2031       Personen: Geschlecht/Religion - Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kontinente)
       1000A-2033       Personen: Geschlecht/Religion - Staatsangehörigkeit (Häufigste Länder)
-      1000A-2049       Personen: Religion - Fläche der Wohnung (20 m²-Intervalle)
-      1000A-2074       Personen: Geschlecht/Religion - Seniorenstatus eines privaten Haushalts
-      1000A-2080       Personen: Typ des privaten Haushalts (Familien) - Religion/Staatsangehörigkeit (Gruppen)
-      1000A-2091       Personen: Familienstand/Familienstand(ausführlich)/Geschlecht/Religion - Größe der Kernfamilie
-      1000A-2099       Personen: Familienstand/Familienstand (ausführlich)/Geschlecht/Religion - Typ der Kernfamilie (Lebensform)
+
+    GEOBL3: 0 table(s), 0 mentioning religion (TimeoutError: The read operation timed out)
+
+    GEOBZ1: 100 table(s), 12 mentioning religion (erfolgreich)
+      1000A-1018       Personen: Religion
+      1000A-2002       Personen: Alter (10er-Jahresgruppen) - Religion
+      1000A-2003       Personen: Alter (11 Altersklassen) - Familienstand (ausführlich)/Religion
+      1000A-2009       Personen: Alter (5 Altersklassen) - Religion/Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kont
+      1000A-2010       Personen: Alter (5er-Jahresgruppen) - Familienstand/Religion/Staatsangehörigkeit
+      1000A-2014       Personen: Alter (Marktforschungsrelevante Altersgruppen) - Familienstand(ausführlich)/Geschlecht/Rel
+      1000A-2015       Personen: Alter (7 Altersklassen) - Familienstand(ausführlich)/Geschlecht/Religion
+      1000A-2022       Personen: Alter (10er-Jahresgruppen)/Alter (5er-Jahresgruppen)/Alter (Jahresschritte)/Familienstand 
+      1000A-2025       Personen: Familienstand/Familienstand (ausführlich) - Staatsangehörigkeit (Gruppen)/Religion
+      1000A-2028       Personen: Geschlecht - Familienstand/Familienstand(ausführlich)/Religion
+      1000A-2031       Personen: Geschlecht/Religion - Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kontinente)
+      1000A-2033       Personen: Geschlecht/Religion - Staatsangehörigkeit (Häufigste Länder)
+
+    GEODL1: 100 table(s), 12 mentioning religion (erfolgreich)
+      1000A-1018       Personen: Religion
+      1000A-2002       Personen: Alter (10er-Jahresgruppen) - Religion
+      1000A-2003       Personen: Alter (11 Altersklassen) - Familienstand (ausführlich)/Religion
+      1000A-2009       Personen: Alter (5 Altersklassen) - Religion/Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kont
+      1000A-2010       Personen: Alter (5er-Jahresgruppen) - Familienstand/Religion/Staatsangehörigkeit
+      1000A-2014       Personen: Alter (Marktforschungsrelevante Altersgruppen) - Familienstand(ausführlich)/Geschlecht/Rel
+      1000A-2015       Personen: Alter (7 Altersklassen) - Familienstand(ausführlich)/Geschlecht/Religion
+      1000A-2022       Personen: Alter (10er-Jahresgruppen)/Alter (5er-Jahresgruppen)/Alter (Jahresschritte)/Familienstand 
+      1000A-2025       Personen: Familienstand/Familienstand (ausführlich) - Staatsangehörigkeit (Gruppen)/Religion
+      1000A-2028       Personen: Geschlecht - Familienstand/Familienstand(ausführlich)/Religion
+      1000A-2031       Personen: Geschlecht/Religion - Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kontinente)
+      1000A-2033       Personen: Geschlecht/Religion - Staatsangehörigkeit (Häufigste Länder)
+
+    GEODL3: 0 table(s), 0 mentioning religion (TimeoutError: The read operation timed out)
+
+    GEOEV1: 17 table(s), 17 mentioning religion (erfolgreich)
+      1000A-1E18       Personen: Religion
       1000A-2E02       Personen: Religion - Alter (10er-Jahresgruppen)
       1000A-2E03       Personen: Religion - Alter (11 Altersklassen)
       1000A-2E09       Personen: Religion - Alter (5 Altersklassen)
@@ -47,87 +94,251 @@ Region variables a usable table would carry:
       1000A-2E80       Personen: Religion - Typ des privaten Haushalts (Familien)
       1000A-2E91       Personen: Religion - Größe der Kernfamilie
       1000A-2E99       Personen: Religion - Typ der Kernfamilie (Lebensform)
+
+    GEOEV2: 17 table(s), 17 mentioning religion (erfolgreich)
+      1000A-1E18       Personen: Religion
+      1000A-2E02       Personen: Religion - Alter (10er-Jahresgruppen)
+      1000A-2E03       Personen: Religion - Alter (11 Altersklassen)
+      1000A-2E09       Personen: Religion - Alter (5 Altersklassen)
+      1000A-2E10       Personen: Religion - Alter (5er-Jahresgruppen)
+      1000A-2E14       Personen: Religion - Alter (Marktforschungsrelevante Altersgruppen)
+      1000A-2E15       Personen: Religion - Alter (7 Altersklassen)
+      1000A-2E22       Personen: Religion - Einwanderungsgeschichte (ausführlich)
+      1000A-2E25       Personen: Religion - Familienstand/Familienstand (ausführlich)
+      1000A-2E28       Personen: Religion - Geschlecht
+      1000A-2E31       Personen: Religion - Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kontinente)
+      1000A-2E33       Personen: Religion - Staatsangehörigkeit (Häufigste Länder)
+      1000A-2E49       Personen: Religion - Fläche der Wohnung (20 m²-Intervalle)
+      1000A-2E74       Personen: Religion - Seniorenstatus eines privaten Haushalts
+      1000A-2E80       Personen: Religion - Typ des privaten Haushalts (Familien)
+      1000A-2E91       Personen: Religion - Größe der Kernfamilie
+      1000A-2E99       Personen: Religion - Typ der Kernfamilie (Lebensform)
+
+    GEOEV3: 17 table(s), 17 mentioning religion (erfolgreich)
+      1000A-1E18       Personen: Religion
+      1000A-2E02       Personen: Religion - Alter (10er-Jahresgruppen)
+      1000A-2E03       Personen: Religion - Alter (11 Altersklassen)
+      1000A-2E09       Personen: Religion - Alter (5 Altersklassen)
+      1000A-2E10       Personen: Religion - Alter (5er-Jahresgruppen)
+      1000A-2E14       Personen: Religion - Alter (Marktforschungsrelevante Altersgruppen)
+      1000A-2E15       Personen: Religion - Alter (7 Altersklassen)
+      1000A-2E22       Personen: Religion - Einwanderungsgeschichte (ausführlich)
+      1000A-2E25       Personen: Religion - Familienstand/Familienstand (ausführlich)
+      1000A-2E28       Personen: Religion - Geschlecht
+      1000A-2E31       Personen: Religion - Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kontinente)
+      1000A-2E33       Personen: Religion - Staatsangehörigkeit (Häufigste Länder)
+      1000A-2E49       Personen: Religion - Fläche der Wohnung (20 m²-Intervalle)
+      1000A-2E74       Personen: Religion - Seniorenstatus eines privaten Haushalts
+      1000A-2E80       Personen: Religion - Typ des privaten Haushalts (Familien)
+      1000A-2E91       Personen: Religion - Größe der Kernfamilie
+      1000A-2E99       Personen: Religion - Typ der Kernfamilie (Lebensform)
+
+    GEOGM1: 100 table(s), 10 mentioning religion (erfolgreich)
+      1000X-1014       Personen: Religion
+      1000X-2001       Personen: Alter (10er-Jahresgruppen/11 Altersklassen) - Familienstand/Religion/Staatsangehörigkeit (
+      1000X-2004       Personen: Alter (5 Altersklassen) -
+Familienstand/Familienstand (ausführlich)/Geburtsland
+(Gruppen)/
+      1000X-2010       Personen: Familienstand - Staatsangehörigkeit (Ausgewählte
+Länder/Gruppen)/Religion
+      1000X-2012       Personen: Geschlecht - Alter/Familienstand/Art des
+Haushalts/Religion
+      1000X-2015       Personen: Staatsangehörigkeit (Ausgewählte Länder) - Geschlecht/Religion
+      1000X-2016       Personen: Staatsangehörigkeit (Gruppen) - Alter (5 Altersklassen/Infrastruktur. Altersgruppen)/Gesch
+      1000X-3001       Personen: Alter/Familienstand/Religion - Staatsangehörigkeit
+(Gruppen) - Geschlecht
+      1000X-3002       Personen: Alter - Familienstand/Religion - Geschlecht
+      1000X-3013       Personen: Familienstand - Religion -
+Geschlecht/Staatsangehörigkeit (Ausgewählte Länder)
+
+    GEOGM2: 30 table(s), 6 mentioning religion (erfolgreich)
+      1000X-2006       Personen: Alter (5er-Jahresgruppen) -
+Staatsangehörigkeit/Religion
+      1000X-2011       Personen: Familienstand (ausführlich)  - Staatsangehörigkeit
+(Ausgew. Länder)/Religion
+      1000X-2034       Personen: Religion - Seniorenstatus eines privaten Haushalts
+      1000X-3005       Personen: Alter/Staatsangehörigkeit (Ausgewählte Länder) -
+Religion - Geschlecht
+      1000X-3020       Personen: Alter (5er-Jahresgruppen)/Geschlecht - Religion -
+Seniorenstatus eines privaten Haushalts
+      1000X-4007       Personen: Alter (5er-Jahresgruppen) - Geschlecht - Religion
+- Seniorenstatus eines privaten Haushalt
+
+    GEOGM3: 0 table(s), 0 mentioning religion (TimeoutError: The read operation timed out)
+
+    GEOGM4: 100 table(s), 13 mentioning religion (erfolgreich)
+      1000A-1018       Personen: Religion
+      1000A-2002       Personen: Alter (10er-Jahresgruppen) - Religion
+      1000A-2003       Personen: Alter (11 Altersklassen) - Familienstand (ausführlich)/Religion
+      1000A-2009       Personen: Alter (5 Altersklassen) - Religion/Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kont
+      1000A-2010       Personen: Alter (5er-Jahresgruppen) - Familienstand/Religion/Staatsangehörigkeit
+      1000A-2014       Personen: Alter (Marktforschungsrelevante Altersgruppen) - Familienstand(ausführlich)/Geschlecht/Rel
+      1000A-2015       Personen: Alter (7 Altersklassen) - Familienstand(ausführlich)/Geschlecht/Religion
+      1000A-2022       Personen: Alter (10er-Jahresgruppen)/Alter (5er-Jahresgruppen)/Alter (Jahresschritte)/Familienstand 
+      1000A-2025       Personen: Familienstand/Familienstand (ausführlich) - Staatsangehörigkeit (Gruppen)/Religion
+      1000A-2028       Personen: Geschlecht - Familienstand/Familienstand(ausführlich)/Religion
+      1000A-2031       Personen: Geschlecht/Religion - Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kontinente)
+      1000A-2033       Personen: Geschlecht/Religion - Staatsangehörigkeit (Häufigste Länder)
+      1000A-2049       Personen: Religion - Fläche der Wohnung (20 m²-Intervalle)
+
+    GEOGM5: 100 table(s), 0 mentioning religion (erfolgreich)
+
+    GEOLK1: 100 table(s), 16 mentioning religion (erfolgreich)
+      1000X-1014       Personen: Religion
+      1000X-2001       Personen: Alter (10er-Jahresgruppen/11 Altersklassen) - Familienstand/Religion/Staatsangehörigkeit (
+      1000X-2004       Personen: Alter (5 Altersklassen) -
+Familienstand/Familienstand (ausführlich)/Geburtsland
+(Gruppen)/
+      1000X-2006       Personen: Alter (5er-Jahresgruppen) -
+Staatsangehörigkeit/Religion
+      1000X-2010       Personen: Familienstand - Staatsangehörigkeit (Ausgewählte
+Länder/Gruppen)/Religion
+      1000X-2011       Personen: Familienstand (ausführlich)  - Staatsangehörigkeit
+(Ausgew. Länder)/Religion
+      1000X-2012       Personen: Geschlecht - Alter/Familienstand/Art des
+Haushalts/Religion
+      1000X-2015       Personen: Staatsangehörigkeit (Ausgewählte Länder) - Geschlecht/Religion
+      1000X-2016       Personen: Staatsangehörigkeit (Gruppen) - Alter (5 Altersklassen/Infrastruktur. Altersgruppen)/Gesch
+      1000X-2034       Personen: Religion - Seniorenstatus eines privaten Haushalts
+      1000X-3001       Personen: Alter/Familienstand/Religion - Staatsangehörigkeit
+(Gruppen) - Geschlecht
+      1000X-3002       Personen: Alter - Familienstand/Religion - Geschlecht
+      1000X-3005       Personen: Alter/Staatsangehörigkeit (Ausgewählte Länder) -
+Religion - Geschlecht
+      1000X-3013       Personen: Familienstand - Religion -
+Geschlecht/Staatsangehörigkeit (Ausgewählte Länder)
+      1000X-3020       Personen: Alter (5er-Jahresgruppen)/Geschlecht - Religion -
+Seniorenstatus eines privaten Haushalts
+      1000X-4007       Personen: Alter (5er-Jahresgruppen) - Geschlecht - Religion
+- Seniorenstatus eines privaten Haushalt
+
+    GEOLK3: 0 table(s), 0 mentioning religion (TimeoutError: The read operation timed out)
+
+    GEOLK4: 100 table(s), 12 mentioning religion (erfolgreich)
+      1000A-1018       Personen: Religion
+      1000A-2002       Personen: Alter (10er-Jahresgruppen) - Religion
+      1000A-2003       Personen: Alter (11 Altersklassen) - Familienstand (ausführlich)/Religion
+      1000A-2009       Personen: Alter (5 Altersklassen) - Religion/Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kont
+      1000A-2010       Personen: Alter (5er-Jahresgruppen) - Familienstand/Religion/Staatsangehörigkeit
+      1000A-2014       Personen: Alter (Marktforschungsrelevante Altersgruppen) - Familienstand(ausführlich)/Geschlecht/Rel
+      1000A-2015       Personen: Alter (7 Altersklassen) - Familienstand(ausführlich)/Geschlecht/Religion
+      1000A-2022       Personen: Alter (10er-Jahresgruppen)/Alter (5er-Jahresgruppen)/Alter (Jahresschritte)/Familienstand 
+      1000A-2025       Personen: Familienstand/Familienstand (ausführlich) - Staatsangehörigkeit (Gruppen)/Religion
+      1000A-2028       Personen: Geschlecht - Familienstand/Familienstand(ausführlich)/Religion
+      1000A-2031       Personen: Geschlecht/Religion - Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kontinente)
+      1000A-2033       Personen: Geschlecht/Religion - Staatsangehörigkeit (Häufigste Länder)
+
+    GEORB1: 100 table(s), 12 mentioning religion (erfolgreich)
+      1000A-1018       Personen: Religion
+      1000A-2002       Personen: Alter (10er-Jahresgruppen) - Religion
+      1000A-2003       Personen: Alter (11 Altersklassen) - Familienstand (ausführlich)/Religion
+      1000A-2009       Personen: Alter (5 Altersklassen) - Religion/Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kont
+      1000A-2010       Personen: Alter (5er-Jahresgruppen) - Familienstand/Religion/Staatsangehörigkeit
+      1000A-2014       Personen: Alter (Marktforschungsrelevante Altersgruppen) - Familienstand(ausführlich)/Geschlecht/Rel
+      1000A-2015       Personen: Alter (7 Altersklassen) - Familienstand(ausführlich)/Geschlecht/Religion
+      1000A-2022       Personen: Alter (10er-Jahresgruppen)/Alter (5er-Jahresgruppen)/Alter (Jahresschritte)/Familienstand 
+      1000A-2025       Personen: Familienstand/Familienstand (ausführlich) - Staatsangehörigkeit (Gruppen)/Religion
+      1000A-2028       Personen: Geschlecht - Familienstand/Familienstand(ausführlich)/Religion
+      1000A-2031       Personen: Geschlecht/Religion - Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kontinente)
+      1000A-2033       Personen: Geschlecht/Religion - Staatsangehörigkeit (Häufigste Länder)
+
+    GEORB3: 0 table(s), 0 mentioning religion (TimeoutError: The read operation timed out)
+
+    GEORK1: 17 table(s), 17 mentioning religion (erfolgreich)
+      1000A-1K18       Personen: Religion
       1000A-2K02       Personen: Religion - Alter (10er-Jahresgruppen)
       1000A-2K03       Personen: Religion - Alter (11 Altersklassen)
       1000A-2K09       Personen: Religion - Alter (5 Altersklassen)
       1000A-2K10       Personen: Religion - Alter (5er-Jahresgruppen)
-    find 'Glaubensrichtung': 0 tables (erfolgreich)
-    find 'Religionsgesellschaft': 40 tables (erfolgreich)
-      2000X-1022       Personen: Religion (ausführlich)
-      2000X-2008       Personen: Erwerbsstatus (ausführlich)/Religion (ausführlich)
-- Größe der Kernfamilie/Typ der Kernfamilie (nach
-      2000X-2011       Personen: Migrationshintergrund - Alter (10er-Jahresgruppen)/Erwerbsstatus-/Familienstand-/Religion (ausführli
-      2000X-2014       Personen: Migrationshintergrund und -erfahrung - Alter/Erwerbsstatus/Familienstand (ausführlich)/Geschlecht/St
-      2000X-2020       Personen: Religion (ausführlich) -
-Alter/Familienstand/Geschlecht/Staatsangehörigkeit
-      2000X-2021       Personen: Religion (ausführlich) - Alter/Erwerbsstatus
-(ausführlich)/Staatsangehörigkeit (Kontinente)
-      2000X-2022       Personen: Religion (ausführlich) - Typ des privaten
-Haushalts (nach Familien)
-      2000X-2023       Personen: Höchster beruflicher Abschluss - Alter/Erwerbsstatus (ausführlich)/Geschlecht/Migrationshintergrund/
-      2000X-2026       Personen: Höchster beruflicher Abschluss (ausführlich) -
-Alter/Familienstand/Geschlecht/Migrationshintergrund 
-      2000X-2035       Personen: Höchster Schulabschluss - Religion (ausführlich)
-      2000X-2040       Personen: Art der Einpendler -
-Alter/Familienstand/Geschlecht/Höchster beruflicher
-Abschluss/Migrationshinterg
-      2000X-2044       Personen: Art der Auspendler -
-Alter/Familienstand/Geschlecht/Höchster beruflicher
-Abschluss/Migrationshinterg
-      2000X-2049       Personen: Beruf (Bereiche KldB 2010) - Alter/Höchster
-beruflicher Abschluss/Höchster
-Schulabschluss/Religion/S
-      2000X-2060       Personen: Stellung im Beruf - Alter (11
-Altersklassen)/Erwerbsstatus/Familienstand
-(ausführlich)/Migrationshin
-      2000X-2065       Personen: Wirtschaftszweig - Geschlecht/Religion (ausführlich)/Höchster berufl. Abschluss (ausführlich)/Staats
-      2000X-2068       Personen: Wirtschaftszweige (Abschnitte) - Alter (Alter (10er-Jahresgruppen)/Familienstand/Höchster berufliche
-      2000X-2072       Personen: Wirt.zweig Wirtschafts(unter)bereiche - Beruf
-(Bereiche KldB 2010)/Höchster beruflicher Abschluss/Hö
-      2000X-2076       Personen: Migrationshintergrund (ausgew. Länder) -
-Erwerbsstatus/Religion (ausführlich)
-      2000X-2080       Personen: Migrationshintergrund (Kontinente) - Alter/Erwerbsstatus/Familienstand (ausführlich)/ Geschlecht/Rel
-      2000X-3009       Personen: Erwerbsstatus (ausführlich) - Alter
-(5er-Jahresgruppen)/Familienstand (ausführlich)/Religion
-(ausfüh
-      2000X-3010       Personen: Erwerbsstatus (ausführlich) - Alter/Migrationshintergrund/Staatsangehörigkeit -  Religion (ausführli
-      2000X-3013       Personen: Erwerbsstatus (ausführlich) - Geschlecht/Religion
-(ausführlich) - Größe der Kernfamilie/Typ der Kern
-      2000X-3014       Personen: Erwerbsstatus (ausführlich) - Religion
-(ausführlich)/Migrationshintergrund - Typ der Kernfamilie
-(na
-      2000X-3019       Personen: Migrationshintergrund - Alter (10er-Jahresgruppen) - Erwerbsstatus (ausführlich)/Religion (ausführli
-      2000X-3022       Personen: Migrationshintergrund - Religion (ausführlich) -
-Typ der Kernfamilie (nach Familien)
-      2000X-3023       Personen: Migrationshintergrund/Religion (ausf.) - Alter (5er-Jahresgruppen)/Familienstand (ausf.)/Geschlecht 
-      2000X-3025       Personen: Migrationshintergrund und -erfahrung - Alter
-(10er-Jahresgruppen)/Familienstand (ausführlich)/Geschl
-      2000X-3027       Personen: Migrationshintergrund und -erfahrung - Alter (11 Altersklassen) - Erwerbsstatus/Familienstand/Religi
-      2000X-3038       Personen: Religion (ausführlich) - Familienstand -
-Staatsangehörigkeit (Ausgewählte Länder)
-      2000X-3039       Personen: Religion (ausführlich) -
-Alter/Familienstand/Staatsangehörigkeit - Geschlecht
-      2000X-3040       Personen: Religion (ausführlich) - Familienstand
-(ausführlich)/Migrationshintergrund und -erfahrung -
-Staatsan
-      2000X-3041       Personen: Religion (ausführlich) - Alter/Staatsangehörigkeit
-(Kontinente) - Geschlecht
-      2000X-3042       Personen: Religion (ausführlich) - Alter/Erwerbsstatus (ausführlich) - Familienstand (ausführlich)
-      2000X-3043       Personen: Religion (ausführlich) - Erwerbsstatus
-(ausführlich)/Geschlecht - Typ des privaten Haushalts (nach
-F
-      2000X-3044       Personen: Religion (ausführlich) - Familienstand
-(ausführlich)/Geschlecht - Größe der Kernfamilie
-      2000X-3046       Personen: Höchster beruflicher Abschluss - Alter/Höchster Schulabschluss/Migrationshintergrund/Religion (ausfü
-      2000X-3049       Personen: Höchster beruflicher Abschluss - Alter
-(10er-Jahresgruppen)/Migrationshintergrund - Religion
-(ausfüh
-      2000X-3052       Personen: Höchster beruflicher Abschluss - Erwerbsstatus
-(ausführlich)/Migrationshintergrund/Religion (ausführ
-      2000X-3053       Personen: Höchster beruflicher Abschluss (ausführlich) -
-Alter (10er-Jahresgruppen)/Religion (ausführlich) -
-M
-      2000X-3055       Personen: Höchster beruflicher Abschluss
-(ausführlich)/Höchster Schulabschluss - Religion
-(ausführlich) - Gesc
-    find 'Konfession': 0 tables (erfolgreich)
+      1000A-2K14       Personen: Religion - Alter (Marktforschungsrelevante Altersgruppen)
+      1000A-2K15       Personen: Religion - Alter (7 Altersklassen)
+      1000A-2K22       Personen: Religion - Einwanderungsgeschichte (ausführlich)
+      1000A-2K25       Personen: Religion - Familienstand/Familienstand (ausführlich)
+      1000A-2K28       Personen: Religion - Geschlecht
+      1000A-2K31       Personen: Religion - Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kontinente)
+      1000A-2K33       Personen: Religion - Staatsangehörigkeit (Häufigste Länder)
+      1000A-2K49       Personen: Religion - Fläche der Wohnung (20 m²-Intervalle)
+      1000A-2K74       Personen: Religion - Seniorenstatus eines privaten Haushalts
+      1000A-2K80       Personen: Religion - Typ des privaten Haushalts (Familien)
+      1000A-2K91       Personen: Religion - Größe der Kernfamilie
+      1000A-2K99       Personen: Religion - Typ der Kernfamilie (Lebensform)
+
+    GEORK2: 17 table(s), 17 mentioning religion (erfolgreich)
+      1000A-1K18       Personen: Religion
+      1000A-2K02       Personen: Religion - Alter (10er-Jahresgruppen)
+      1000A-2K03       Personen: Religion - Alter (11 Altersklassen)
+      1000A-2K09       Personen: Religion - Alter (5 Altersklassen)
+      1000A-2K10       Personen: Religion - Alter (5er-Jahresgruppen)
+      1000A-2K14       Personen: Religion - Alter (Marktforschungsrelevante Altersgruppen)
+      1000A-2K15       Personen: Religion - Alter (7 Altersklassen)
+      1000A-2K22       Personen: Religion - Einwanderungsgeschichte (ausführlich)
+      1000A-2K25       Personen: Religion - Familienstand/Familienstand (ausführlich)
+      1000A-2K28       Personen: Religion - Geschlecht
+      1000A-2K31       Personen: Religion - Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kontinente)
+      1000A-2K33       Personen: Religion - Staatsangehörigkeit (Häufigste Länder)
+      1000A-2K49       Personen: Religion - Fläche der Wohnung (20 m²-Intervalle)
+      1000A-2K74       Personen: Religion - Seniorenstatus eines privaten Haushalts
+      1000A-2K80       Personen: Religion - Typ des privaten Haushalts (Familien)
+      1000A-2K91       Personen: Religion - Größe der Kernfamilie
+      1000A-2K99       Personen: Religion - Typ der Kernfamilie (Lebensform)
+
+    GEORK3: 17 table(s), 17 mentioning religion (erfolgreich)
+      1000A-1K18       Personen: Religion
+      1000A-2K02       Personen: Religion - Alter (10er-Jahresgruppen)
+      1000A-2K03       Personen: Religion - Alter (11 Altersklassen)
+      1000A-2K09       Personen: Religion - Alter (5 Altersklassen)
+      1000A-2K10       Personen: Religion - Alter (5er-Jahresgruppen)
+      1000A-2K14       Personen: Religion - Alter (Marktforschungsrelevante Altersgruppen)
+      1000A-2K15       Personen: Religion - Alter (7 Altersklassen)
+      1000A-2K22       Personen: Religion - Einwanderungsgeschichte (ausführlich)
+      1000A-2K25       Personen: Religion - Familienstand/Familienstand (ausführlich)
+      1000A-2K28       Personen: Religion - Geschlecht
+      1000A-2K31       Personen: Religion - Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kontinente)
+      1000A-2K33       Personen: Religion - Staatsangehörigkeit (Häufigste Länder)
+      1000A-2K49       Personen: Religion - Fläche der Wohnung (20 m²-Intervalle)
+      1000A-2K74       Personen: Religion - Seniorenstatus eines privaten Haushalts
+      1000A-2K80       Personen: Religion - Typ des privaten Haushalts (Familien)
+      1000A-2K91       Personen: Religion - Größe der Kernfamilie
+      1000A-2K99       Personen: Religion - Typ der Kernfamilie (Lebensform)
+
+    GEOVB1: 100 table(s), 10 mentioning religion (erfolgreich)
+      1000X-1014       Personen: Religion
+      1000X-2001       Personen: Alter (10er-Jahresgruppen/11 Altersklassen) - Familienstand/Religion/Staatsangehörigkeit (
+      1000X-2004       Personen: Alter (5 Altersklassen) -
+Familienstand/Familienstand (ausführlich)/Geburtsland
+(Gruppen)/
+      1000X-2010       Personen: Familienstand - Staatsangehörigkeit (Ausgewählte
+Länder/Gruppen)/Religion
+      1000X-2012       Personen: Geschlecht - Alter/Familienstand/Art des
+Haushalts/Religion
+      1000X-2015       Personen: Staatsangehörigkeit (Ausgewählte Länder) - Geschlecht/Religion
+      1000X-2016       Personen: Staatsangehörigkeit (Gruppen) - Alter (5 Altersklassen/Infrastruktur. Altersgruppen)/Gesch
+      1000X-3001       Personen: Alter/Familienstand/Religion - Staatsangehörigkeit
+(Gruppen) - Geschlecht
+      1000X-3002       Personen: Alter - Familienstand/Religion - Geschlecht
+      1000X-3013       Personen: Familienstand - Religion -
+Geschlecht/Staatsangehörigkeit (Ausgewählte Länder)
+
+    GEOVB2: 0 table(s), 0 mentioning religion (Es gibt noch keine Objekte.)
+
+    GEOVB3: 0 table(s), 0 mentioning religion (TimeoutError: The read operation timed out)
+
+    GEOVB4: 100 table(s), 13 mentioning religion (erfolgreich)
+      1000A-1018       Personen: Religion
+      1000A-2002       Personen: Alter (10er-Jahresgruppen) - Religion
+      1000A-2003       Personen: Alter (11 Altersklassen) - Familienstand (ausführlich)/Religion
+      1000A-2009       Personen: Alter (5 Altersklassen) - Religion/Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kont
+      1000A-2010       Personen: Alter (5er-Jahresgruppen) - Familienstand/Religion/Staatsangehörigkeit
+      1000A-2014       Personen: Alter (Marktforschungsrelevante Altersgruppen) - Familienstand(ausführlich)/Geschlecht/Rel
+      1000A-2015       Personen: Alter (7 Altersklassen) - Familienstand(ausführlich)/Geschlecht/Religion
+      1000A-2022       Personen: Alter (10er-Jahresgruppen)/Alter (5er-Jahresgruppen)/Alter (Jahresschritte)/Familienstand 
+      1000A-2025       Personen: Familienstand/Familienstand (ausführlich) - Staatsangehörigkeit (Gruppen)/Religion
+      1000A-2028       Personen: Geschlecht - Familienstand/Familienstand(ausführlich)/Religion
+      1000A-2031       Personen: Geschlecht/Religion - Staatsangehörigkeit (Gruppen)/Staatsangehörigkeit (Kontinente)
+      1000A-2033       Personen: Geschlecht/Religion - Staatsangehörigkeit (Häufigste Länder)
+      1000A-2049       Personen: Religion - Fläche der Wohnung (20 m²-Intervalle)
+
+    GEOVB5: 100 table(s), 0 mentioning religion (erfolgreich)
+
+    GEOWK1: 46 table(s), 1 mentioning religion (erfolgreich)
+      1000A-1W18       Personen: Religion
