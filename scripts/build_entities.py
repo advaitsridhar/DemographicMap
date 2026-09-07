@@ -92,6 +92,9 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.us_acs --level county",
     "GBR": "ONS Census 2021 via Nomis (TS021 ethnic group, TS030 religion): "
            "python -m scripts.fetch_census.uk_nomis",
+    "DEU": "Zensus 2022 religion by Land, three categories from the church-tax "
+           "register (needs a free ergebnisse.zensus2022.de account): "
+           "python -m scripts.fetch_census.germany",
     "CAN": "Statistics Canada 2021 Census Profile (religion, visible minority, language): "
            "python -m scripts.fetch_census.statcan --level census_division",
     "BRA": "IBGE SIDRA 2022 census (population, cor ou raça, religion): "
