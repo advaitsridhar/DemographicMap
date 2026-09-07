@@ -1,6 +1,6 @@
-germany: Zensus 2022 table 1000A-1018, cut by GEORB1 (regierungsbezirk)
-  26 areas in the GEORB1 cut
-  + 9 Laender that are a single region
-  wrote data/processed/germany_regierungsbezirk.json (68 kB)
-  wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/germany_regierungsbezirk.json
-  35 records
+uk_nomis: county (TYPE155)
+uk_nomis: TS021 Ethnic group (NM_2041_1)
+uk_nomis: TS030 Religion (NM_2049_1)
+  wrote data/processed/uk_county.json (846 kB)
+  174 records
+  174 local authority records

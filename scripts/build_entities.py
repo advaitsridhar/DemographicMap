@@ -82,7 +82,7 @@ ADAPTER_FILES = [
     "germany_land.json", "germany_regierungsbezirk.json",
     "canada_province.json", "canada_census_division.json",
     "australia_state.json", "australia_lga.json",
-    "uk_lad.json", "us_state.json", "us_county.json",
+    "uk_lad.json", "uk_county.json", "us_state.json", "us_county.json",
 ]
 
 # Where a real adapter exists for a country's subnational demographics. Shown in

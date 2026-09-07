@@ -15,7 +15,8 @@ people left it blank -- so shares are of all usual residents including
 non-responders, matching the ONS's own published percentages.
 
 Usage:
-    python -m scripts.fetch_census.uk_nomis --geography TYPE154
+    python -m scripts.fetch_census.uk_nomis --level district
+    python -m scripts.fetch_census.uk_nomis --level county
 """
 
 from __future__ import annotations
@@ -34,6 +35,24 @@ DATASETS = {
 }
 # TYPE154 = 2021 local authority districts; TYPE499 = regions; TYPE480 = countries.
 DEFAULT_GEOGRAPHY = "TYPE154"
+
+# Two geographies, because one is not enough to cover the shapes that exist.
+#
+# Nomis publishes the census for districts (TYPE154) and for counties
+# (TYPE155), and geoBoundaries' UK ADM2 needs both: it draws unitary
+# authorities, metropolitan and London boroughs, Scottish councils and Northern
+# Irish districts -- but for shire England it draws the *county*. Read at
+# districts alone, 150 of 331 rows are ONS "E07" codes with no shape of their
+# own, while the counties above them have a shape and no row.
+#
+# Asked for rather than summed. Ukraine's oblasts are built by adding up
+# rayons because nothing else was published; here the county figures are
+# published, by the same office, from the same census, and a total that was
+# counted beats one that was reconstructed.
+LEVELS: dict[str, tuple[str, str]] = {
+    "district": ("TYPE154", "uk_lad.json"),
+    "county": ("TYPE155", "uk_county.json"),
+}
 
 
 def fetch_table(dataset: str, cell: str, geography: str) -> dict[str, dict[str, Any]]:
@@ -59,18 +78,67 @@ def fetch_table(dataset: str, cell: str, geography: str) -> dict[str, dict[str, 
     return out
 
 
+def list_geographies() -> int:
+    """Which geographies Nomis publishes TS030 for.
+
+    150 of the 331 rows this adapter writes reach no shape, and every one of
+    them is an ONS "E07" -- a non-metropolitan district sitting inside a
+    county. geoBoundaries' UK ADM2 is a mixed geography: unitary authorities,
+    metropolitan and London boroughs, Scottish councils and Northern Irish
+    districts, but for shire England the *county*, not the districts below it.
+    So those 150 rows have no shape of their own and their county has no row.
+
+    Ukraine's oblasts were built by summing rayons and that is one way out.
+    Asking Nomis for the county geography instead is a better one, if it has
+    it: the same table, the geography the boundary file actually draws, and no
+    figure reconstructed from parts. Whether it has it is not guessable -- the
+    file names TYPE154, TYPE499 and TYPE480 and says nothing about counties --
+    so this asks.
+    """
+    url = (f"{BASE}/{DATASETS['religion'][0]}/geography/"
+           f"TYPE.def.sdmx.json")
+    log(f"uk_nomis: geography types for {DATASETS['religion'][0]}")
+    try:
+        payload = http_json(url, timeout=120)
+    except Exception as err:                        # noqa: BLE001 -- reported
+        log(f"  {type(err).__name__}: {err}")
+        return 1
+    codes = (payload.get("structure", {}).get("codelists", {})
+             .get("codelist", []))
+    shown = 0
+    for codelist in codes:
+        for code in codelist.get("code", []):
+            name = (code.get("description", {}) or {}).get("value", "")
+            log(f"  {str(code.get('value','?')):<12} {name}")
+            shown += 1
+    if not shown:
+        log(f"  nothing listed; raw: {str(payload)[:400]}")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--geography", default=DEFAULT_GEOGRAPHY,
-                    help="Nomis geography type (TYPE154 = 2021 local authorities)")
+    ap.add_argument("--level", default="district", choices=list(LEVELS),
+                    help="district (TYPE154) or county (TYPE155)")
+    ap.add_argument("--geography", default=None,
+                    help="a Nomis geography type, overriding --level")
+    ap.add_argument("--geographies", action="store_true",
+                    help="list the geography types this dataset is published "
+                         "for, and stop")
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
 
     tables: dict[str, dict[str, dict[str, Any]]] = {}
+    if args.geographies:
+        return list_geographies()
+
+    geography, filename = LEVELS[args.level]
+    geography = args.geography or geography
+    log(f"uk_nomis: {args.level} ({geography})")
     for field, (dataset, label, cell) in DATASETS.items():
         log(f"uk_nomis: {label} ({dataset})")
-        tables[field] = fetch_table(dataset, cell, args.geography)
+        tables[field] = fetch_table(dataset, cell, geography)
 
     codes = sorted(set().union(*(set(t) for t in tables.values())) if tables else set())
     src = "ONS Census 2021 (England and Wales) via Nomis"
@@ -93,7 +161,8 @@ def main() -> int:
                       "url": f"{BASE}/{DATASETS['ethnicity'][0]}.data.json",
                       "license": "Open Government Licence v3.0"}],
         ))
-    write_json(args.out or PROCESSED / "uk_lad.json", records)
+    write_json(args.out or PROCESSED / filename, records)
+    log(f"  {len(records)} records")
     log(f"  {len(records)} local authority records")
     return 0
 

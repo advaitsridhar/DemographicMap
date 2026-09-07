@@ -1618,6 +1618,53 @@ to Bogura — and geoBoundaries still carries the older forms, with plain
 transliteration variants for three more. Declared rather than derived:
 "Nawabganj" and "Chapainababganj" share no word.
 
+### The United Kingdom: two geographies, because the boundary file draws two
+
+The UK looked like a bug and was two things, neither of them one. Its four
+first-order units -- England, Scotland, Wales, Northern Ireland -- carried a
+population and no composition while 152 of its second-order units carried
+both. That reads like a roll-up that failed. It is not.
+
+**The roll-up is refusing correctly.** It fills a parent only from a *complete*
+set of children, and England had 130 of 150, Wales 21 of 22. Summing an
+incomplete set would publish a figure smaller than the country, with nothing on
+the map to say so, which is the trade this project exists to refuse.
+
+**Why the children were incomplete is the real finding, and it is a geography
+mismatch.** ONS publishes TS021 and TS030 for 331 local authority districts.
+geoBoundaries' UK ADM2 is a *mixed* geography of 216 units: unitary
+authorities, metropolitan boroughs, London boroughs, Scottish council areas and
+Northern Irish districts -- but for shire England the **county**, not the
+districts inside it. So 150 of the 331 rows had no shape of their own, every
+one of them an ONS `E07` code, while the county above each of them had a shape
+and no row. Read at districts alone the join was 152 of 331 rows, and 64 shapes
+stayed empty.
+
+Nomis publishes the same tables at the county tier, `TYPE155`. Read there the
+join is **171 of 174 rows**, and because that tier contains the unitary
+authorities and boroughs as well, it covers every shape the district read
+covered and 19 more: **171 of 216**. The two files agree exactly on all 150
+names they share -- same populations, same shares -- and the 24 names only the
+county file has are exactly the shire counties: Cambridgeshire, Cumbria,
+Derbyshire, Devon, East Sussex, Essex, Gloucestershire, Hampshire,
+Hertfordshire, Kent and the rest.
+
+**Asked for, not summed.** Ukraine's oblasts are built by adding up rayons
+because nothing else was published. Here the county figures are published, by
+the same office, from the same census, and a total that was counted beats one
+reconstructed from parts. The type code was not guessed either: `--geographies`
+asked Nomis, which answered `TYPE155 2022 local authorities: counties`
+alongside output areas, wards, national parks and two 2023 vintages, none of
+which the adapter had mentioned.
+
+**The 45 shapes still empty are Scotland and Northern Ireland**, and that is a
+source gap rather than a join one. The 2021 census this adapter reads covers
+**England and Wales only**. Scotland ran its census in 2022 through National
+Records of Scotland and Northern Ireland in 2021 through NISRA -- two more
+offices, two more adapters, and two reference dates that do not match the third.
+The adapter has always said so in its header; what is new is knowing that those
+43 council areas and districts are the whole of what remains.
+
 ### China: 1.4 billion people, and three closed routes
 
 China carries a population on all 33 of its provinces and a composition on
