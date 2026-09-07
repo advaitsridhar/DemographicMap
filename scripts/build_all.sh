@@ -111,7 +111,8 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # refuses outright rather than fetching a 401 and reporting it as a
   # table that went away -- soft, so a refresh without the account
   # skips Germany instead of failing the run.
-  soft python3 -m scripts.fetch_census.germany
+  soft python3 -m scripts.fetch_census.germany --level land
+  soft python3 -m scripts.fetch_census.germany --level regierungsbezirk
 fi
 
 if [ "${SKIP_TILES:-0}" != "1" ]; then

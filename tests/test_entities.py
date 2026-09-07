@@ -2634,6 +2634,35 @@ class BoundaryMisspellings(unittest.TestCase):
         for name in ("Western Cape", "Eastern Cape", "Limpopo"):
             self.assertEqual(common.respell(name, "ZAF"), name)
 
+    def test_every_correction_normalises_to_something_different(self):
+        """A declaration that norm() folds away anyway is doing nothing.
+
+        norm() drops accents, case, spacing and the administrative words, so a
+        correction that only changes those was never needed -- the join already
+        matched. Each entry here has to survive that folding to be worth its
+        line, which is also the check that catches an entry added against the
+        wrong spelling: Arez keeps its z through norm(), and "Arês" does not
+        become "Arez" by any rule.
+        """
+        for (group, wrong), right in common.MISSPELLED.items():
+            with self.subTest(group=group, wrong=wrong):
+                self.assertNotEqual(
+                    be.norm(wrong), be.norm(right),
+                    f"{group} {wrong!r} -> {right!r} survives norm() unchanged, "
+                    f"so the join matched it already and the declaration is "
+                    f"either redundant or aimed at the wrong name")
+
+    def test_guangdong_is_reachable_from_the_shape_that_names_a_city(self):
+        """126 million people, behind the wrong name.
+
+        geoBoundaries draws China's most populous province as "Guangzhou
+        Province". Guangzhou is its capital city. Nothing that says Guangdong
+        -- Wikidata included -- can reach a shape that says Guangzhou, so the
+        province carried a polygon and no figures at all.
+        """
+        self.assertEqual(be.norm(common.respell("Guangzhou Province", "CHN")),
+                         be.norm("Guangdong"))
+
 
 class UscbReader(unittest.TestCase):
     """The reader for the U.S. Census Bureau's subnational census series.
@@ -3985,6 +4014,51 @@ class GermanysThreeCategoriesMustSumToItsPublishedTotal(unittest.TestCase):
             set(self.germany.RELIGION),
             {"REL-RK-OR", "REL-EV-OR", "REL-SONST-X"},
             "the three RELZG2 codes the table publishes")
+
+    def test_the_regierungsbezirk_prefix_is_stripped_to_the_shape_name(self):
+        """"Reg.-Bez. Arnsberg" is the source's prefix, not a misspelling.
+
+        The GEORB1 cut labels every row "Reg.-Bez. X" where the boundary file
+        says "X". That is a prefix one geography carries on all its rows, so it
+        is stripped in the reader rather than declared in MISSPELLED, which is
+        for names somebody got wrong. The Laender that stand as one region --
+        Berlin, Saarland, Schleswig-Holstein -- carry no prefix and must come
+        through untouched.
+        """
+        for label, want in (("Reg.-Bez. Arnsberg", "Arnsberg"),
+                            ("Reg.-Bez. Gießen", "Gießen"),
+                            # Saxony renamed its Regierungsbezirke, and Lower
+                            # Saxony abolished its own in 2004 and reports
+                            # statistische Regionen instead. Three prefixes for
+                            # one variable, which is what the slash in
+                            # "Regierungsbezirke/Statistische Regionen" means.
+                            ("Direktionsbezirk Chemnitz", "Chemnitz"),
+                            ("Statistische Region Weser-Ems", "Weser-Ems"),
+                            ("Statistische Region Hannover", "Hannover"),
+                            ("Berlin", "Berlin"),
+                            ("Schleswig-Holstein", "Schleswig-Holstein")):
+            self.assertEqual(self.germany.shape_name(label), want)
+
+    def test_a_second_geography_is_read_from_the_same_table(self):
+        """One table code, more than one geography, and the reader must say which.
+
+        1000A-1018 is published cut by Bundeslaender, Regierungsbezirke,
+        Landkreise and Gemeinden. parse() takes the region variable it is
+        reading, so rows of another cut in the same file are skipped rather
+        than counted -- asking for GEOBL1 and being handed GEORB1 rows would
+        otherwise produce a composition for the wrong places.
+        """
+        laender = "\n".join([
+            self.HEADER,
+            self.row("11", "Berlin", "REL-RK-OR", "Katholisch", 250000, "Anzahl"),
+        ])
+        bezirke = laender.replace("GEOBL1", "GEORB1")
+        self.assertEqual(set(self.germany.parse(laender, "GEOBL1")), {"11"})
+        self.assertEqual(self.germany.parse(laender, "GEORB1"), {},
+                         "GEOBL1 rows must not be read as a GEORB1 cut")
+        self.assertEqual(set(self.germany.parse(bezirke, "GEORB1")), {"11"})
+        self.assertEqual(self.germany.parse(bezirke, "GEOBL1"), {},
+                         "GEORB1 rows must not be read as a GEOBL1 cut")
 
     def test_the_note_says_the_residual_is_not_only_the_irreligious(self):
         note = self.germany.NOTE.lower()

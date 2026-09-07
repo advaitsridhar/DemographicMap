@@ -323,6 +323,27 @@ MISSPELLED: dict[tuple[str, str], str] = {
     # source including the census this map reads.
     ("BRA", "Rio Granda do Norte"): "Rio Grande do Norte",
     ("BRA", "Rio de Jeneiro"): "Rio de Janeiro",
+    # Five municipalities the 2022 census reached and the boundary file spells
+    # its own way, found by reading the 22 shapes the join left unmatched. Each
+    # right-hand side is IBGE's spelling, taken from the census file rather than
+    # from anyone's memory: Arez keeps a z, Assu doubles its s, Graccho doubles
+    # its c, and two prepositions differ -- Leverger takes "de" and Monte Alto
+    # takes "do", which is the sort of thing no rule finds and no reader
+    # doubts once the two lists are set side by side.
+    ("BRA", "Arês"): "Arez",
+    ("BRA", "Açu"): "Assú",
+    ("BRA", "Gracho Cardoso"): "Graccho Cardoso",
+    ("BRA", "Santo Antônio do Leverger"): "Santo Antônio de Leverger",
+    ("BRA", "Barão de Monte Alto"): "Barão do Monte Alto",
+    # China's most populous province, 126 million people, drawn under the name
+    # of its capital city. Guangzhou is the city; Guangdong is the province, and
+    # nothing that says Guangdong -- Wikidata included -- could ever reach a
+    # shape called Guangzhou, so the province had a polygon and no figures.
+    ("CHN", "Guangzhou Province"): "Guangdong",
+    # And a doubled word: the shape is "Ningxia Ningxia Hui Autonomous Region".
+    # It matched anyway, on the prefix, so this changes no join -- it changes
+    # what a reader is shown, which is reason enough.
+    ("CHN", "Ningxia Ningxia Hui Autonomous Region"): "Ningxia Hui Autonomous Region",
 }
 
 

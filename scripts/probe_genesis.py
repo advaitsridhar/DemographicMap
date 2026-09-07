@@ -308,7 +308,11 @@ def probe(key: str, spec: dict[str, str]) -> None:
         rows = tables_from(found)
         note = status_of(found)
         print(f"    find '{term}': {len(rows)} tables ({note})")
-        for row in rows[:15]:
+        # All of them, not the first fifteen. The question this pass is being
+        # asked now is whether a table exists at some regional level, and a
+        # truncated list cannot answer it -- an absence in the first fifteen of
+        # forty is not an absence.
+        for row in rows:
             code = row.get("Code") or row.get("code") or "?"
             title = (row.get("Content") or row.get("content") or "").strip()
             print(f"      {code:<16} {title[:110]}")
@@ -473,7 +477,8 @@ def whoami(key: str, spec: dict[str, str]) -> None:
             print(f"             {str(note)[:160]}")
 
 
-def fetch(key: str, spec: dict[str, str], table: str, lines: int) -> None:
+def fetch(key: str, spec: dict[str, str], table: str, lines: int,
+          region: str = "") -> None:
     """The table itself, printed, so the labels are read rather than guessed.
 
     ffcsv is GENESIS's flat format: one row per cell with its variable codes and
@@ -483,10 +488,18 @@ def fetch(key: str, spec: dict[str, str], table: str, lines: int) -> None:
     including whichever one turns out to be the residual.
     """
     auth, described = account(spec)
-    print(f"\n=== {spec['name']} -- {table} ===")
+    print(f"\n=== {spec['name']} -- {table}{' cut by ' + region if region else ''} ===")
     print(f"    credentials: {described}")
-    text = raw(spec["base"], "data/tablefile", auth,
-               name=table, area="all", format="ffcsv", compress="false")
+    # A table is not published at one geography. 1000A-1018 is cut by
+    # Bundeslaender, by Regierungsbezirke, by Landkreise and by Gemeinden, and
+    # area=all alone returns whichever the table calls its default -- which is
+    # how it was read four times as a sixteen-row table when 400 rows were
+    # sitting behind the same code. regionalvariable is what asks for another.
+    params = dict(name=table, area="all", format="ffcsv", compress="false")
+    if region:
+        params["regionalvariable"] = region
+        params["regionalschluessel"] = ""
+    text = raw(spec["base"], "data/tablefile", auth, **params)
     rows = text.splitlines()
     print(f"    {len(text)} bytes, {len(rows)} lines")
     for row in rows[:lines]:
@@ -540,6 +553,54 @@ def raw(base: str, path: str, auth: dict[str, str], **params: object) -> str:
         return f"{type(err).__name__}: {err}"
 
 
+def geography(key: str, spec: dict[str, str], selection: str) -> None:
+    """Which geographies this database offers, and what is cut by each.
+
+    Reading titles cannot answer whether a religion table exists at some
+    regional level: the title says "Personen: Religion" for all four of them and
+    nothing about the geography. So ask the catalogue instead -- first for the
+    geographic variables themselves, then for the tables that use the ones that
+    look like a Kreis. An absence established this way is a fact about the
+    database; an absence inferred from a list of titles is a fact about titles.
+    """
+    auth, described = account(spec)
+    print(f"\n=== {spec['name']} -- geographies matching {selection} ===")
+    print(f"    credentials: {described}")
+    found = call(spec["base"], "catalogue/variables", {}, auth,
+                 selection=selection, area="all", pagelength=100)
+    note = status_of(found)
+    variables = []
+    if isinstance(found, dict):
+        for holder in ("List", "list", "Variables", "variables"):
+            rows = found.get(holder)
+            if isinstance(rows, list):
+                variables = [r for r in rows if isinstance(r, dict)]
+                break
+    print(f"    {len(variables)} variable(s) ({note})")
+    for var in variables:
+        code = str(var.get("Code") or var.get("code") or "?")
+        content = (var.get("Content") or var.get("content") or "").strip()
+        values = var.get("Values") or var.get("values") or "?"
+        print(f"    {code:<12} {str(values):>7} values  {content[:80]}")
+
+    # For each geography, which tables are cut by it. This is the question.
+    for var in variables:
+        code = str(var.get("Code") or var.get("code") or "")
+        if not code:
+            continue
+        used = call(spec["base"], "catalogue/tables2variable", {}, auth,
+                    name=code, area="all", pagelength=100)
+        rows = tables_from(used)
+        titled = [r for r in rows
+                  if "religion" in str(r.get("Content") or r.get("content") or "").lower()]
+        print(f"\n    {code}: {len(rows)} table(s), {len(titled)} mentioning religion"
+              f" ({status_of(used)})")
+        for row in titled[:20]:
+            name = row.get("Code") or row.get("code") or "?"
+            content = (row.get("Content") or row.get("content") or "").strip()
+            print(f"      {name:<16} {content[:100]}")
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -548,9 +609,15 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--tables", default="",
                     help="comma-separated table codes to describe instead of "
                          "searching, e.g. 1000A-1018,1000A-1K18")
+    ap.add_argument("--geography", default="",
+                    help="a variable selection such as GEO*; list the "
+                         "geographies and, for each, the tables cut by it")
     ap.add_argument("--fetch", default="",
                     help="one table code; print its ffcsv body so the category "
                          "labels can be read rather than guessed")
+    ap.add_argument("--region", default="",
+                    help="a regional variable such as GEORB1 or GEOLK4; "
+                         "without it the table returns its default geography")
     ap.add_argument("--lines", type=int, default=80,
                     help="how many lines of --fetch to print")
     ap.add_argument("--whoami", action="store_true",
@@ -567,15 +634,19 @@ def main(argv: list[str] | None = None) -> int:
         print(f"unknown instance(s): {', '.join(unknown)}", file=sys.stderr)
         return 2
 
-    if not (args.tables or args.endpoints or args.whoami or args.fetch):
+    if not (args.tables or args.endpoints or args.whoami or args.fetch
+            or args.geography):
         print("Region variables a usable table would carry:")
         for code, meaning in REGION_CODES.items():
             print(f"  {code:<8} {meaning}")
 
     tables = [t.strip() for t in args.tables.split(",") if t.strip()]
     for key in wanted:
-        if args.fetch:
-            fetch(key, INSTANCES[key], args.fetch.strip(), args.lines)
+        if args.geography:
+            geography(key, INSTANCES[key], args.geography.strip())
+        elif args.fetch:
+            fetch(key, INSTANCES[key], args.fetch.strip(), args.lines,
+                  args.region.strip())
         elif args.whoami:
             whoami(key, INSTANCES[key])
         elif args.endpoints:

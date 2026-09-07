@@ -1,5 +1,5 @@
-germany: Zensus 2022 table 1000A-1018
-  16 Laender in the table
-  wrote data/processed/germany_land.json (31 kB)
-  wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/germany_land.json
-  16 records
+germany: Zensus 2022 table 1000A-1018, cut by GEORB1 (regierungsbezirk)
+  26 areas in the GEORB1 cut
+  wrote data/processed/germany_regierungsbezirk.json (51 kB)
+  wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/germany_regierungsbezirk.json
+  26 records
