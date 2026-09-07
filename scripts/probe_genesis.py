@@ -64,6 +64,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import base64
 import json
 import os
 import sys
@@ -371,6 +372,57 @@ def endpoints(key: str, spec: dict[str, str], table: str) -> None:
         print(f"    {path:<22} {note[:80]}{shape}")
 
 
+# How to present a credential. GENESIS has carried three schemes across its
+# versions and the documentation for one instance does not settle another, so
+# the styles are tried rather than chosen. helloworld/logincheck is the oracle:
+# it answers with the username the server believes it is talking to, so a
+# credential that is being ignored says GAST and one that is accepted says its
+# own name. Nothing here prints a secret -- only which style was used and which
+# name came back.
+AUTH_STYLES = ("query", "header", "basic", "bearer")
+
+
+def styled(style: str, user: str, password: str) -> tuple[dict, dict]:
+    """Query parameters and headers presenting the credential one way."""
+    if style == "query":
+        return {"username": user, "password": password}, {}
+    if style == "header":
+        return {}, {"username": user, "password": password}
+    if style == "basic":
+        token = base64.b64encode(f"{user}:{password}".encode()).decode()
+        return {}, {"Authorization": f"Basic {token}"}
+    if style == "bearer":
+        # Some accounts are issued a token rather than a password, and it is
+        # the password field it arrives in.
+        return {}, {"Authorization": f"Bearer {password}"}
+    raise ValueError(style)
+
+
+def whoami(key: str, spec: dict[str, str]) -> None:
+    """Which way of presenting this account the server actually recognises."""
+    user = os.environ.get(spec["user_env"], "").strip()
+    password = os.environ.get(spec["pass_env"], "").strip()
+    print(f"\n=== {spec['name']} -- authentication styles ===")
+    if not (user and password):
+        missing = spec["user_env"] if not user else spec["pass_env"]
+        print(f"    no credential: {missing} is empty in this environment")
+        return
+    print(f"    credential from {spec['user_env']} / {spec['pass_env']}"
+          f" (user is {len(user)} chars, password {len(password)})")
+    for style in AUTH_STYLES:
+        params, headers = styled(style, user, password)
+        answer = call(spec["base"], "helloworld/logincheck", params, headers)
+        name = "?"
+        if isinstance(answer, dict):
+            name = answer.get("Username") or answer.get("username") or "?"
+        note = status_of(answer)
+        verdict = "IGNORED (anonymous)" if name == "GAST" else \
+                  ("ACCEPTED" if name not in ("?", "") else "no username in reply")
+        print(f"    {style:<8} -> Username={name!r}  {verdict}")
+        if note != "ok" and not str(note).startswith("Sie wurden"):
+            print(f"             {str(note)[:160]}")
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -379,6 +431,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--tables", default="",
                     help="comma-separated table codes to describe instead of "
                          "searching, e.g. 1000A-1018,1000A-1K18")
+    ap.add_argument("--whoami", action="store_true",
+                    help="report which way of presenting the credential the "
+                         "server actually recognises")
     ap.add_argument("--endpoints", default="",
                     help="one table code; report which endpoint families "
                          "answer for it, rather than searching or describing")
@@ -390,14 +445,16 @@ def main(argv: list[str] | None = None) -> int:
         print(f"unknown instance(s): {', '.join(unknown)}", file=sys.stderr)
         return 2
 
-    if not args.tables and not args.endpoints:
+    if not args.tables and not args.endpoints and not args.whoami:
         print("Region variables a usable table would carry:")
         for code, meaning in REGION_CODES.items():
             print(f"  {code:<8} {meaning}")
 
     tables = [t.strip() for t in args.tables.split(",") if t.strip()]
     for key in wanted:
-        if args.endpoints:
+        if args.whoami:
+            whoami(key, INSTANCES[key])
+        elif args.endpoints:
             endpoints(key, INSTANCES[key], args.endpoints.strip())
         elif tables:
             describe(key, INSTANCES[key], tables)
