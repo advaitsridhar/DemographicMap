@@ -122,16 +122,20 @@ REGION_CODES = {"DLAND": "Land (16)", "KREISE": "Kreis (~400)",
 NOT_JSON = ("data/tablefile", "data/chart2table", "data/cube", "data/result")
 
 
-def _follow(url: str, params: dict[str, object], method: str, accept: str) -> object:
+def _follow(url: str, params: dict[str, object], method: str, accept: str,
+            headers: dict[str, str] | None = None) -> object:
     """Re-issue a request against an absolute URL, once, after a 307/308."""
     encoded = urllib.parse.urlencode(params)
+    extra = dict(headers or {})
     if method == "GET":
-        req = urllib.request.Request(f"{url}?{encoded}", headers={"Accept": accept})
+        req = urllib.request.Request(f"{url}?{encoded}",
+                                     headers={"Accept": accept, **extra})
     else:
         req = urllib.request.Request(
             url, data=encoded.encode(),
             headers={"Accept": accept,
-                     "Content-Type": "application/x-www-form-urlencoded"},
+                     "Content-Type": "application/x-www-form-urlencoded",
+                     **extra},
             method="POST")
     try:
         with urllib.request.urlopen(req, timeout=TIMEOUT) as fh:
@@ -149,18 +153,21 @@ def _follow(url: str, params: dict[str, object], method: str, accept: str) -> ob
 
 
 def once(base: str, path: str, params: dict[str, object], method: str,
+         headers: dict[str, str] | None = None,
          *, _redirected: bool = False) -> object:
     """One call, by one method. Returns the parsed body or an error marker."""
     encoded = urllib.parse.urlencode(params)
     accept = "*/*" if path in NOT_JSON else "application/json"
+    extra = dict(headers or {})
     if method == "GET":
         req = urllib.request.Request(f"{base}/{path}?{encoded}",
-                                     headers={"Accept": accept})
+                                     headers={"Accept": accept, **extra})
     else:
         req = urllib.request.Request(
             f"{base}/{path}", data=encoded.encode(),
             headers={"Accept": accept,
-                     "Content-Type": "application/x-www-form-urlencoded"},
+                     "Content-Type": "application/x-www-form-urlencoded",
+                     **extra},
             method="POST")
     try:
         with urllib.request.urlopen(req, timeout=TIMEOUT) as fh:
@@ -176,7 +183,7 @@ def once(base: str, path: str, params: dict[str, object], method: str,
             landing = urllib.parse.urljoin(f"{base}/{path}", target)
             if urllib.parse.urlparse(landing).netloc != urllib.parse.urlparse(base).netloc:
                 return {"__error__": f"HTTP {err.code} -> off-host {target}"}
-            return _follow(landing, params, method, accept)
+            return _follow(landing, params, method, accept, extra)
         return {"__error__": f"HTTP {err.code} {err.reason or ''}".strip()}
     except Exception as err:                        # noqa: BLE001 -- reported
         return {"__error__": f"{type(err).__name__}: {err}"}
@@ -200,13 +207,14 @@ def once(base: str, path: str, params: dict[str, object], method: str,
 METHOD: dict[str, str] = {}
 
 
-def call(base: str, path: str, creds: dict[str, str], **params: object) -> object:
+def call(base: str, path: str, creds: dict[str, str],
+         headers: dict[str, str] | None = None, **params: object) -> object:
     """One GENESIS REST call, by whichever method this instance accepts."""
     query = {"language": "de", **creds, **params}
     order = [METHOD[base]] if base in METHOD else ["POST", "GET"]
     last: object = {"__error__": "not attempted"}
     for method in order:
-        last = once(base, path, query, method)
+        last = once(base, path, query, method, headers)
         if not (isinstance(last, dict) and str(last.get("__error__", ""))
                 .startswith("HTTP 405")):
             METHOD.setdefault(base, method)
