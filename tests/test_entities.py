@@ -3913,3 +3913,83 @@ class ADistrictAdapterWithRepeatedNamesMustNameItsParent(unittest.TestCase):
         self.assertEqual(
             unresolvable, [],
             f"parent_name given but matching no federative unit: {unresolvable}")
+
+
+class GermanysThreeCategoriesMustSumToItsPublishedTotal(unittest.TestCase):
+    """What the Zensus reader may not quietly get wrong.
+
+    Zensus 2022 publishes religion by Land in three categories -- Roman
+    Catholic, Protestant, and everyone else -- because it is counting
+    membership of a public-law corporation and only those two churches are
+    ones. Being exhaustive is the whole basis for reading them as shares, so
+    the reader checks them against the table's own Insgesamt row rather than
+    letting shares() fall back on its own sum, which would divide by whatever
+    survived and paper a dropped category over.
+
+    The other half is the ffcsv shape. Every figure appears twice, once as a
+    percentage and once as a count, and only the counts may be read: a share
+    rebuilt from a rounded percentage is out by thousands of people and carries
+    no sign that it was never counted. A reader that took the percentage rows
+    would produce totals near 100 and look entirely plausible.
+    """
+
+    HEADER = ("statistics_code;statistics_label;time_code;time_label;time;"
+              "1_variable_code;1_variable_label;1_variable_attribute_code;"
+              "1_variable_attribute_label;2_variable_code;2_variable_label;"
+              "2_variable_attribute_code;2_variable_attribute_label;value;"
+              "value_unit;value_variable_code;value_variable_label")
+
+    def setUp(self):
+        import importlib
+        sys.path.insert(0, str(ROOT / "scripts"))
+        self.germany = importlib.import_module("fetch_census.germany")
+
+    def row(self, code, name, group_code, label, value, unit):
+        return (f"1000A;Bevolkerung;STAG;Stichtag;2022-05-15;GEOBL1;"
+                f"Bundeslander;{code};{name};RELZG2;Religion;{group_code};"
+                f"{label};{value};{unit};PRS018;Personen")
+
+    def table(self, code, name, catholic, protestant, other, total=None):
+        total = sum((catholic, protestant, other)) if total is None else total
+        return "\n".join([
+            self.HEADER,
+            self.row(code, name, "REL-RK-OR", "Romisch-katholische", catholic, "Anzahl"),
+            self.row(code, name, "REL-RK-OR", "Romisch-katholische", "31,5", "%"),
+            self.row(code, name, "REL-EV-OR", "Evangelische", protestant, "Anzahl"),
+            self.row(code, name, "REL-SONST-X", "Sonstige, keine", other, "Anzahl"),
+            self.row(code, name, "", "Insgesamt", total, "Anzahl"),
+            self.row(code, name, "", "Insgesamt", "100,0", "%"),
+        ])
+
+    def test_counts_are_read_and_percentage_twins_ignored(self):
+        parsed = self.germany.parse(self.table("11", "Berlin", 250000, 509885, 2837114))
+        self.assertEqual(set(parsed), {"11"})
+        entry = parsed["11"]
+        self.assertEqual(entry["name"], "Berlin")
+        self.assertEqual(entry["total"], 3596999)
+        self.assertEqual(sum(entry["counts"].values()), entry["total"])
+        self.assertEqual(set(entry["counts"]),
+                         {"Roman Catholic", "Protestant",
+                          "Other, none, or not stated"})
+
+    def test_a_category_this_build_has_never_seen_stops_the_run(self):
+        text = "\n".join([
+            self.HEADER,
+            self.row("11", "Berlin", "REL-NEU", "Etwas Neues", 5, "Anzahl")])
+        with self.assertRaises(SystemExit) as caught:
+            self.germany.parse(text)
+        self.assertIn("REL-NEU", str(caught.exception))
+
+    def test_the_published_labels_are_declared_not_guessed(self):
+        self.assertEqual(
+            set(self.germany.RELIGION),
+            {"REL-RK-OR", "REL-EV-OR", "REL-SONST-X"},
+            "the three RELZG2 codes the table publishes")
+
+    def test_the_note_says_the_residual_is_not_only_the_irreligious(self):
+        note = self.germany.NOTE.lower()
+        for word in ("public law", "muslim", "not stated", "belief"):
+            self.assertIn(word, note,
+                          f"religion_note must say {word!r}: the third category "
+                          f"is the largest bar in every Land and the least "
+                          f"informative one")

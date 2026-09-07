@@ -78,6 +78,7 @@ ADAPTER_FILES = [
     "colombia_department.json", "jamaica_parish.json",
     "bahamas_island.json",
     "brazil_state.json", "brazil_municipality.json",
+    "germany_land.json",
     "canada_province.json", "canada_census_division.json",
     "australia_state.json", "australia_lga.json",
     "uk_lad.json", "us_state.json", "us_county.json",
