@@ -4060,6 +4060,41 @@ class GermanysThreeCategoriesMustSumToItsPublishedTotal(unittest.TestCase):
         self.assertEqual(self.germany.parse(bezirke, "GEOBL1"), {},
                          "GEORB1 rows must not be read as a GEOBL1 cut")
 
+    def test_the_whole_land_regions_are_nine_and_exclude_rhineland_palatinate(self):
+        """Ten Laender have no GEORB1 row and only nine may be filled.
+
+        Nine of them are drawn by geoBoundaries as one ADM2 shape carrying the
+        Land's own name, so the shape is the Land and the Land's figures are
+        that shape's figures. The tenth is Rhineland-Palatinate, which
+        abolished its Regierungsbezirke in 2000 while the boundary file still
+        draws Koblenz, Trier and Rheinhessen-Pfalz -- its single figure would
+        have to be split three ways and cannot be.
+
+        So this is a declaration and not the rule "a Land with no GEORB1 row",
+        which would catch the one case that must stay empty.
+        """
+        self.assertEqual(len(self.germany.WHOLE_LAND_REGIONS), 9)
+        self.assertNotIn("07", self.germany.WHOLE_LAND_REGIONS,
+                         "Rhineland-Palatinate is drawn as three abolished "
+                         "Regierungsbezirke and cannot take one Land figure")
+        self.assertEqual(
+            set(self.germany.WHOLE_LAND_REGIONS.values()),
+            {"Schleswig-Holstein", "Hamburg", "Bremen", "Saarland", "Berlin",
+             "Brandenburg", "Mecklenburg-Vorpommern", "Sachsen-Anhalt",
+             "Thüringen"})
+
+    def test_a_whole_land_key_is_a_land_key_not_a_region_key(self):
+        """Two digits, because these are Laender standing in for a region.
+
+        GEORB1's own codes are three digits and open with their Land's -- 059
+        is Arnsberg in 05. A three-digit key in this table would mean the
+        declaration had been written against a region that does exist, which is
+        the case main() refuses outright rather than double-counting.
+        """
+        for code in self.germany.WHOLE_LAND_REGIONS:
+            self.assertEqual(len(code), 2, f"{code!r} is not a Land key")
+            self.assertTrue(code.isdigit())
+
     def test_the_note_says_the_residual_is_not_only_the_irreligious(self):
         note = self.germany.NOTE.lower()
         for word in ("public law", "muslim", "not stated", "belief"):
