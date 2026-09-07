@@ -1,6 +1,25 @@
-uk_nomis: county (TYPE155)
-uk_nomis: TS021 Ethnic group (NM_2041_1)
-uk_nomis: TS030 Religion (NM_2049_1)
-  wrote data/processed/uk_county.json (846 kB)
-  174 records
-  174 local authority records
+
+=== NIR: PxStat dataset list (JSON-RPC) ===
+    https://ws.nisra.gov.uk/public/api.jsonrpc?data=%7B%22jsonrpc%22%3A%20%222.0%22%2C%20%22method%22%3A%20%22PxStat.Data.Cube_API.ReadCollection%22%2C%20...
+    URLError: <urlopen error [Errno -5] No address associated with hostname>
+
+=== NIR: PxStat read MS-B01 (religion) as JSON-stat ===
+    https://ws.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/MS-B01/JSON-stat/2.0/en
+    URLError: <urlopen error [Errno -5] No address associated with hostname>
+
+=== NIR: PxStat read MS-B02 (ethnic group) as JSON-stat ===
+    https://ws.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/MS-B02/JSON-stat/2.0/en
+    URLError: <urlopen error [Errno -5] No address associated with hostname>
+
+=== SCO: statistics.gov.scot SPARQL, ask for the graphs ===
+    https://statistics.gov.scot/sparql.json?query=SELECT%20DISTINCT%20%3Fg%20WHERE%20%7B%20GRAPH%20%3Fg%20%7B%3Fs%20%3Fp%20%3Fo%7D%20%7D%20LIMIT%2025
+    RemoteDisconnected: Remote end closed connection without response
+
+=== SCO: Scotland's Census front door ===
+    https://www.scotlandscensus.gov.uk/
+    HTTP 200 | text/html; charset=utf-8 | 51387 bytes
+    not JSON: <!DOCTYPE html> <html lang="en" class="no-outline"> <head> <meta charSet="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" /> <meta name="color-scheme" content="light dark"> <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-
+
+=== SCO: NRS open data portal ===
+    https://www.nrscotland.gov.uk/statistics-and-data/statistics/
+    HTTP 404 Not Found
