@@ -30,6 +30,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -42,25 +43,28 @@ UA = "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap)"
 # a portal or a challenge page answers 200 with HTML, which is a different
 # finding from an API answering JSON.
 CANDIDATES: tuple[tuple[str, str, str], ...] = (
-    ("NIR", "PxStat dataset list (JSON-RPC)",
-     "https://ws.nisra.gov.uk/public/api.jsonrpc?data="
-     + urllib.parse.quote(json.dumps({
-         "jsonrpc": "2.0", "method": "PxStat.Data.Cube_API.ReadCollection",
-         "params": {"language": "en", "format": {"type": "JSON-stat",
-                                                 "version": "2.0"}}, "id": 1}))),
-    ("NIR", "PxStat read MS-B01 (religion) as JSON-stat",
-     "https://ws.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API."
+    # First pass guessed ws.nisra.gov.uk from PxStat's usual deployment and the
+    # hostname does not resolve at all -- not a refusal, an address that is not
+    # there. data.nisra.gov.uk is the portal NISRA actually publishes, so the
+    # API is asked for underneath it.
+    ("NIR", "portal front door", "https://data.nisra.gov.uk/"),
+    ("NIR", "PxStat RESTful read, MS-B01 religion",
+     "https://data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API."
      "ReadDataset/MS-B01/JSON-stat/2.0/en"),
-    ("NIR", "PxStat read MS-B02 (ethnic group) as JSON-stat",
-     "https://ws.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API."
-     "ReadDataset/MS-B02/JSON-stat/2.0/en"),
-    ("SCO", "statistics.gov.scot SPARQL, ask for the graphs",
-     "https://statistics.gov.scot/sparql.json?query="
-     + urllib.parse.quote("SELECT DISTINCT ?g WHERE { GRAPH ?g {?s ?p ?o} } LIMIT 25")),
-    ("SCO", "Scotland's Census front door",
-     "https://www.scotlandscensus.gov.uk/"),
-    ("SCO", "NRS open data portal",
-     "https://www.nrscotland.gov.uk/statistics-and-data/statistics/"),
+    ("NIR", "PxWeb-shaped API root",
+     "https://data.nisra.gov.uk/api/v1/en"),
+    ("NIR", "NISRA census results page",
+     "https://www.nisra.gov.uk/statistics/census/2021-census"),
+    # sparql.json was a guess at the serialisation. The endpoint is /sparql and
+    # the format is asked for in the Accept header, which is what a triple
+    # store expects and what closing the connection was answering.
+    ("SCO", "statistics.gov.scot SPARQL (Accept-negotiated)",
+     "https://statistics.gov.scot/sparql?query="
+     + urllib.parse.quote("SELECT ?s WHERE {?s ?p ?o} LIMIT 5")),
+    ("SCO", "Scotland's Census downloads",
+     "https://www.scotlandscensus.gov.uk/search-the-census#/search"),
+    ("SCO", "NRS statistics front door",
+     "https://www.nrscotland.gov.uk/"),
 )
 
 
@@ -68,7 +72,11 @@ def probe(who: str, what: str, url: str) -> None:
     print(f"\n=== {who}: {what} ===")
     print(f"    {url[:150]}{'...' if len(url) > 150 else ''}")
     request = urllib.request.Request(url, headers={
-        "User-Agent": UA, "Accept": "application/json, text/plain, */*"})
+        "User-Agent": UA,
+        # SPARQL endpoints negotiate on Accept, and asking for JSON in the path
+        # instead is what made statistics.gov.scot close the connection.
+        "Accept": "application/sparql-results+json, application/json, "
+                  "text/plain, */*"})
     try:
         with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
             body = response.read()
@@ -107,8 +115,22 @@ def probe(who: str, what: str, url: str) -> None:
         else:
             print(f"    JSON array of {len(payload)}")
         return
-    head = " ".join(text[:400].split())
-    print(f"    not JSON: {head[:300]}")
+    head = " ".join(text[:300].split())
+    print(f"    not JSON: {head[:200]}")
+    # An HTML page is not a dead end if it links the files. This is what
+    # probe_links exists for and the same reason it exists: a portal's links
+    # are the only reliable index of what an office actually publishes.
+    links = re.findall(r'href=[\'"]([^\'"]+)[\'"]', text, re.I)
+    wanted = [u for u in links
+              if re.search(r"\.(csv|xlsx|zip)($|\?)|/api/|sparql|bulk|download",
+                           u, re.I)]
+    seen, keep = set(), []
+    for u in wanted:
+        if u not in seen:
+            seen.add(u); keep.append(u)
+    print(f"    {len(links)} links, {len(keep)} look like data or an API")
+    for u in keep[:15]:
+        print(f"      {u[:160]}")
 
 
 def main(argv: list[str] | None = None) -> int:
