@@ -70,14 +70,44 @@ def already_here() -> set[str]:
     return out
 
 
+def search(query: str, rows: int) -> None:
+    """Any HDX dataset matching a query, whoever publishes it.
+
+    The rest of this script reads one organization's list, which answers "does
+    the Census Bureau cover this country" and nothing else. Bangladesh reached
+    this map through HDX from a different publisher entirely, so a country the
+    Bureau does not carry is not thereby a country HDX does not carry, and the
+    two questions should not be settled with one answer.
+    """
+    print(f"\n=== HDX search: {query!r} ===")
+    try:
+        result = get("package_search", q=query, rows=rows)
+    except Exception as err:                        # noqa: BLE001 -- reported
+        print(f"    {type(err).__name__}: {err}")
+        return
+    total = result.get("count", 0)
+    found = result.get("results", []) or []
+    print(f"    {total} dataset(s), showing {len(found)}")
+    for package in found:
+        books = workbooks(package)
+        org = (package.get("organization") or {}).get("name", "?")
+        print(f"    {'xlsx' if books else '-':<5} {org:<28} {package.get('name','?')}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--search", default="",
+                    help="a free-text HDX query, across all publishers")
     ap.add_argument("--seed", default=SEED,
                     help="a dataset id the adapter already uses")
     ap.add_argument("--rows", type=int, default=300)
     args = ap.parse_args()
+
+    if args.search:
+        search(args.search, args.rows)
+        return 0
 
     try:
         seed = get("package_show", id=args.seed)

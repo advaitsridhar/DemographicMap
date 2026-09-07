@@ -73,6 +73,29 @@ TIMEOUT = 120
 # one unit each. So GEORB1 is the cut this map can use and GEOLK4 is not: 400
 # Kreise would join nothing at all while looking like four hundred rows of
 # progress.
+# Nine Laender have no Regierungsbezirke at all, so GEORB1 has no row for them
+# -- and geoBoundaries draws each as a single ADM2 shape carrying the Land's own
+# name. The shape is the Land, so the Land's figures are that shape's figures,
+# and leaving them blank would mark as unmeasured nine places that were measured
+# exactly once at exactly this extent.
+#
+# Declared rather than derived, because the rule "a Land with no GEORB1 row"
+# catches ten and the tenth must not be filled. Rhineland-Palatinate abolished
+# its Regierungsbezirke in 2000; geoBoundaries still draws Koblenz, Trier and
+# Rheinhessen-Pfalz, so its one Land figure would have to be split three ways
+# and cannot be. It stays a visible gap, which is the honest answer.
+WHOLE_LAND_REGIONS: dict[str, str] = {
+    "01": "Schleswig-Holstein",
+    "02": "Hamburg",
+    "04": "Bremen",
+    "10": "Saarland",
+    "11": "Berlin",
+    "12": "Brandenburg",
+    "13": "Mecklenburg-Vorpommern",
+    "15": "Sachsen-Anhalt",
+    "16": "Thüringen",
+}
+
 LEVELS: dict[str, tuple[str, str, str, int]] = {
     "land": ("GEOBL1", "admin1", "germany_land.json", 16),
     "regierungsbezirk": ("GEORB1", "admin2", "germany_regierungsbezirk.json", 0),
@@ -251,6 +274,33 @@ def main(argv: list[str] | None = None) -> int:
 
     areas = parse(text, region_code)
     log(f"  {len(areas)} areas in the {region_code} cut")
+
+    if args.level == "regierungsbezirk":
+        # The nine Laender that are one region. Their figures come from the
+        # Land cut of the same table, because GEORB1 simply has no row for a
+        # Land that never divided.
+        whole = parse(tablefile(TABLE, auth, "GEOBL1"), "GEOBL1")
+        added = 0
+        for code, name in WHOLE_LAND_REGIONS.items():
+            entry = whole.get(code)
+            if entry is None:
+                raise SystemExit(
+                    f"germany: {name} ({code}) is declared a whole-Land region "
+                    f"and the Land cut has no row for it. One of the two lists "
+                    f"has moved and guessing which would fill a shape with the "
+                    f"wrong Land's figures.")
+            if entry["name"] != name:
+                raise SystemExit(
+                    f"germany: Land {code} is declared as {name!r} and the "
+                    f"table calls it {entry['name']!r}.")
+            if code in areas:
+                raise SystemExit(
+                    f"germany: {name} is declared a whole-Land region and "
+                    f"GEORB1 now has its own row for it. The declaration is "
+                    f"stale and would double-count.")
+            areas[code] = entry
+            added += 1
+        log(f"  + {added} Laender that are a single region")
     if expected and len(areas) != expected:
         raise SystemExit(
             f"germany: expected {expected} areas from {region_code} and the "
@@ -280,8 +330,14 @@ def main(argv: list[str] | None = None) -> int:
         # 05, Nordrhein-Westfalen. So the parent is read off the code rather
         # than looked up, and the sixteen Laender parent Germany itself.
         parent = "DEU" if level == "admin1" else f"DEU-{code[:2]}"
+        # A whole-Land region's key is its Land's, so its record id would
+        # collide with the Land's own. The suffix keeps them apart; the ags
+        # code stays the real one.
+        entity_id = (f"DEU-{code}-RB"
+                     if level == "admin2" and code in WHOLE_LAND_REGIONS
+                     else f"DEU-{code}")
         records.append(record(
-            f"DEU-{code}", entry["name"], level=level, parent=parent,
+            entity_id, entry["name"], level=level, parent=parent,
             codes={"ags": code},
             population=(measure(int(total), year=CENSUS_YEAR, source=SOURCE)
                         if total else gap(NOT_AVAILABLE)),
