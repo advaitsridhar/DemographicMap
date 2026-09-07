@@ -477,7 +477,8 @@ def whoami(key: str, spec: dict[str, str]) -> None:
             print(f"             {str(note)[:160]}")
 
 
-def fetch(key: str, spec: dict[str, str], table: str, lines: int) -> None:
+def fetch(key: str, spec: dict[str, str], table: str, lines: int,
+          region: str = "") -> None:
     """The table itself, printed, so the labels are read rather than guessed.
 
     ffcsv is GENESIS's flat format: one row per cell with its variable codes and
@@ -487,10 +488,18 @@ def fetch(key: str, spec: dict[str, str], table: str, lines: int) -> None:
     including whichever one turns out to be the residual.
     """
     auth, described = account(spec)
-    print(f"\n=== {spec['name']} -- {table} ===")
+    print(f"\n=== {spec['name']} -- {table}{' cut by ' + region if region else ''} ===")
     print(f"    credentials: {described}")
-    text = raw(spec["base"], "data/tablefile", auth,
-               name=table, area="all", format="ffcsv", compress="false")
+    # A table is not published at one geography. 1000A-1018 is cut by
+    # Bundeslaender, by Regierungsbezirke, by Landkreise and by Gemeinden, and
+    # area=all alone returns whichever the table calls its default -- which is
+    # how it was read four times as a sixteen-row table when 400 rows were
+    # sitting behind the same code. regionalvariable is what asks for another.
+    params = dict(name=table, area="all", format="ffcsv", compress="false")
+    if region:
+        params["regionalvariable"] = region
+        params["regionalschluessel"] = ""
+    text = raw(spec["base"], "data/tablefile", auth, **params)
     rows = text.splitlines()
     print(f"    {len(text)} bytes, {len(rows)} lines")
     for row in rows[:lines]:
@@ -606,6 +615,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--fetch", default="",
                     help="one table code; print its ffcsv body so the category "
                          "labels can be read rather than guessed")
+    ap.add_argument("--region", default="",
+                    help="a regional variable such as GEORB1 or GEOLK4; "
+                         "without it the table returns its default geography")
     ap.add_argument("--lines", type=int, default=80,
                     help="how many lines of --fetch to print")
     ap.add_argument("--whoami", action="store_true",
@@ -633,7 +645,8 @@ def main(argv: list[str] | None = None) -> int:
         if args.geography:
             geography(key, INSTANCES[key], args.geography.strip())
         elif args.fetch:
-            fetch(key, INSTANCES[key], args.fetch.strip(), args.lines)
+            fetch(key, INSTANCES[key], args.fetch.strip(), args.lines,
+                  args.region.strip())
         elif args.whoami:
             whoami(key, INSTANCES[key])
         elif args.endpoints:
