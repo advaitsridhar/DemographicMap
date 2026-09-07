@@ -295,6 +295,15 @@ def describe(key: str, spec: dict[str, str], tables: list[str]) -> None:
     if user and password:
         creds = {"username": user, "password": password}
     print(f"\n=== {spec['name']} -- table structures ===")
+    # Whether a credential was in hand is half of what a 401 means here, and
+    # this pass used to print only the 401. A run with the secret missing and a
+    # run with the secret rejected then looked identical, which sent one whole
+    # round trip chasing an account that had never been passed to the process.
+    print(f"    credentials: {'set via ' + spec['user_env'] if creds else 'none -- GAST'}")
+    who = call(spec["base"], "helloworld/logincheck", creds)
+    print(f"    logincheck: {status_of(who)}")
+    if isinstance(who, dict) and "__error__" not in who:
+        print(f"      {json.dumps(who, ensure_ascii=False)[:300]}")
     for name in tables:
         meta = call(spec["base"], "metadata/table", creds, name=name)
         note = status_of(meta)
