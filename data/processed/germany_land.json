@@ -1,0 +1,946 @@
+[
+  {
+    "id": "DEU-01",
+    "level": "admin1",
+    "name": "Schleswig-Holstein",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2927542,
+      "year": 2022,
+      "source": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other, none, or not stated",
+        "pct": 54.7,
+        "count": 1602045
+      },
+      {
+        "group": "Protestant",
+        "pct": 39.9,
+        "count": 1166822
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 5.4,
+        "count": 158672
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/population",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      }
+    ],
+    "codes": {
+      "ags": "01"
+    },
+    "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
+    "religion_year": 2022
+  },
+  {
+    "id": "DEU-02",
+    "level": "admin1",
+    "name": "Hamburg",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1808846,
+      "year": 2022,
+      "source": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other, none, or not stated",
+        "pct": 69.5,
+        "count": 1256393
+      },
+      {
+        "group": "Protestant",
+        "pct": 22.0,
+        "count": 397896
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 8.5,
+        "count": 154556
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/population",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      }
+    ],
+    "codes": {
+      "ags": "02"
+    },
+    "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
+    "religion_year": 2022
+  },
+  {
+    "id": "DEU-03",
+    "level": "admin1",
+    "name": "Niedersachsen",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7943265,
+      "year": 2022,
+      "source": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other, none, or not stated",
+        "pct": 45.7,
+        "count": 3632754
+      },
+      {
+        "group": "Protestant",
+        "pct": 38.9,
+        "count": 3087042
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 15.4,
+        "count": 1223471
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/population",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      }
+    ],
+    "codes": {
+      "ags": "03"
+    },
+    "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
+    "religion_year": 2022
+  },
+  {
+    "id": "DEU-04",
+    "level": "admin1",
+    "name": "Bremen",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 693204,
+      "year": 2022,
+      "source": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other, none, or not stated",
+        "pct": 62.5,
+        "count": 433322
+      },
+      {
+        "group": "Protestant",
+        "pct": 28.5,
+        "count": 197876
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 8.9,
+        "count": 62004
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/population",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      }
+    ],
+    "codes": {
+      "ags": "04"
+    },
+    "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
+    "religion_year": 2022
+  },
+  {
+    "id": "DEU-05",
+    "level": "admin1",
+    "name": "Nordrhein-Westfalen",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 17890489,
+      "year": 2022,
+      "source": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other, none, or not stated",
+        "pct": 44.1,
+        "count": 7897834
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 34.0,
+        "count": 6090492
+      },
+      {
+        "group": "Protestant",
+        "pct": 21.8,
+        "count": 3902160
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/population",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      }
+    ],
+    "codes": {
+      "ags": "05"
+    },
+    "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
+    "religion_year": 2022
+  },
+  {
+    "id": "DEU-06",
+    "level": "admin1",
+    "name": "Hessen",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6207278,
+      "year": 2022,
+      "source": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other, none, or not stated",
+        "pct": 50.2,
+        "count": 3116057
+      },
+      {
+        "group": "Protestant",
+        "pct": 30.1,
+        "count": 1871249
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 19.7,
+        "count": 1219970
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/population",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      }
+    ],
+    "codes": {
+      "ags": "06"
+    },
+    "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
+    "religion_year": 2022
+  },
+  {
+    "id": "DEU-07",
+    "level": "admin1",
+    "name": "Rheinland-Pfalz",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4094169,
+      "year": 2022,
+      "source": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other, none, or not stated",
+        "pct": 39.1,
+        "count": 1602745
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 36.2,
+        "count": 1483990
+      },
+      {
+        "group": "Protestant",
+        "pct": 24.6,
+        "count": 1007434
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/population",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      }
+    ],
+    "codes": {
+      "ags": "07"
+    },
+    "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
+    "religion_year": 2022
+  },
+  {
+    "id": "DEU-08",
+    "level": "admin1",
+    "name": "Baden-Württemberg",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 11104040,
+      "year": 2022,
+      "source": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other, none, or not stated",
+        "pct": 44.2,
+        "count": 4908749
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 29.9,
+        "count": 3315254
+      },
+      {
+        "group": "Protestant",
+        "pct": 25.9,
+        "count": 2880037
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/population",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      }
+    ],
+    "codes": {
+      "ags": "08"
+    },
+    "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
+    "religion_year": 2022
+  },
+  {
+    "id": "DEU-09",
+    "level": "admin1",
+    "name": "Bayern",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13038724,
+      "year": 2022,
+      "source": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 44.2,
+        "count": 5757451
+      },
+      {
+        "group": "Other, none, or not stated",
+        "pct": 39.5,
+        "count": 5146887
+      },
+      {
+        "group": "Protestant",
+        "pct": 16.4,
+        "count": 2134382
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/population",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      }
+    ],
+    "codes": {
+      "ags": "09"
+    },
+    "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
+    "religion_year": 2022
+  },
+  {
+    "id": "DEU-10",
+    "level": "admin1",
+    "name": "Saarland",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1006864,
+      "year": 2022,
+      "source": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 51.0,
+        "count": 513820
+      },
+      {
+        "group": "Other, none, or not stated",
+        "pct": 33.3,
+        "count": 334984
+      },
+      {
+        "group": "Protestant",
+        "pct": 15.7,
+        "count": 158056
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/population",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      }
+    ],
+    "codes": {
+      "ags": "10"
+    },
+    "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
+    "religion_year": 2022
+  },
+  {
+    "id": "DEU-11",
+    "level": "admin1",
+    "name": "Berlin",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3596999,
+      "year": 2022,
+      "source": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other, none, or not stated",
+        "pct": 78.9,
+        "count": 2837114
+      },
+      {
+        "group": "Protestant",
+        "pct": 13.6,
+        "count": 487488
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 7.6,
+        "count": 272397
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/population",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      }
+    ],
+    "codes": {
+      "ags": "11"
+    },
+    "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
+    "religion_year": 2022
+  },
+  {
+    "id": "DEU-12",
+    "level": "admin1",
+    "name": "Brandenburg",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2534075,
+      "year": 2022,
+      "source": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other, none, or not stated",
+        "pct": 83.4,
+        "count": 2113375
+      },
+      {
+        "group": "Protestant",
+        "pct": 13.2,
+        "count": 334900
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 3.4,
+        "count": 85798
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/population",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      }
+    ],
+    "codes": {
+      "ags": "12"
+    },
+    "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
+    "religion_year": 2022
+  },
+  {
+    "id": "DEU-13",
+    "level": "admin1",
+    "name": "Mecklenburg-Vorpommern",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1570817,
+      "year": 2022,
+      "source": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other, none, or not stated",
+        "pct": 83.4,
+        "count": 1310486
+      },
+      {
+        "group": "Protestant",
+        "pct": 13.4,
+        "count": 211052
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 3.1,
+        "count": 49282
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/population",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      }
+    ],
+    "codes": {
+      "ags": "13"
+    },
+    "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
+    "religion_year": 2022
+  },
+  {
+    "id": "DEU-14",
+    "level": "admin1",
+    "name": "Sachsen",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4038131,
+      "year": 2022,
+      "source": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other, none, or not stated",
+        "pct": 80.1,
+        "count": 3234873
+      },
+      {
+        "group": "Protestant",
+        "pct": 16.4,
+        "count": 660838
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 3.5,
+        "count": 142424
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/population",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      }
+    ],
+    "codes": {
+      "ags": "14"
+    },
+    "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
+    "religion_year": 2022
+  },
+  {
+    "id": "DEU-15",
+    "level": "admin1",
+    "name": "Sachsen-Anhalt",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2146443,
+      "year": 2022,
+      "source": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other, none, or not stated",
+        "pct": 86.2,
+        "count": 1850544
+      },
+      {
+        "group": "Protestant",
+        "pct": 10.8,
+        "count": 231061
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 3.0,
+        "count": 64841
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/population",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      }
+    ],
+    "codes": {
+      "ags": "15"
+    },
+    "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
+    "religion_year": 2022
+  },
+  {
+    "id": "DEU-16",
+    "level": "admin1",
+    "name": "Thüringen",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2110396,
+      "year": 2022,
+      "source": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Other, none, or not stated",
+        "pct": 73.9,
+        "count": 1558804
+      },
+      {
+        "group": "Protestant",
+        "pct": 18.9,
+        "count": 399060
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 7.2,
+        "count": 152530
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/population",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      }
+    ],
+    "codes": {
+      "ags": "16"
+    },
+    "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
+    "religion_year": 2022
+  }
+]

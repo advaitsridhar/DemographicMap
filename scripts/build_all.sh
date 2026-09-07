@@ -107,6 +107,11 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # ordinary trust store carries, so this reads the same files from a
   # public archive and the citation says which capture.
   soft python3 -m scripts.fetch_census.russia
+  # Needs ZENSUS_USER and ZENSUS_PASSWORD. Without them the adapter
+  # refuses outright rather than fetching a 401 and reporting it as a
+  # table that went away -- soft, so a refresh without the account
+  # skips Germany instead of failing the run.
+  soft python3 -m scripts.fetch_census.germany
 fi
 
 if [ "${SKIP_TILES:-0}" != "1" ]; then

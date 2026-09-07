@@ -71,6 +71,12 @@ jobs:
           NZ_STATS_API_KEY: ${{ secrets.NZ_STATS_API_KEY }}
           CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
           DEMOGRAPHICMAP: ${{ secrets.DEMOGRAPHICMAP }}
+          # Zensus 2022 publishes Germany's religion tables and lets an
+          # anonymous GAST search the catalogue and read nothing: every
+          # catalogue, metadata and data endpoint answers 401. This is the
+          # free account that opens them.
+          ZENSUS_USER: ${{ secrets.ZENSUS_USER }}
+          ZENSUS_PASSWORD: ${{ secrets.ZENSUS_PASSWORD }}
 
         # xargs rather than an unquoted expansion: the command is a dispatch
         # input, and a URL with a query string carries "&", which bash reads as

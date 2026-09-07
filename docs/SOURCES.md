@@ -1618,73 +1618,101 @@ to Bogura — and geoBoundaries still carries the older forms, with plain
 transliteration variants for three more. Declared rather than derived:
 "Nawabganj" and "Chapainababganj" share no word.
 
-### Germany: the census asked, and GAST may only read the index
+### Germany: sixteen Laender, three categories, and a church-tax register
 
-Germany is 84 million people and, until this was measured, the largest European
-country with nothing below the national line -- sixteen Laender, eleven of them
-carrying a population figure and none a composition. The Eurostat adapter had
-already recorded why ethnicity is absent (Germany counts citizenship and
-migration background, and `COLLECTION_POLICY` says so), but it made no claim
-about religion, and its own header says Germany collects it. So religion was an
-open gap rather than a refusal, and nobody had looked.
+Germany was the largest European country with nothing below the national line:
+sixteen Laender, eleven carrying a population figure and none a composition.
+The Eurostat adapter had recorded why ethnicity is absent -- Germany counts
+citizenship and migration background -- but made no claim about religion, and
+its own header said Germany collects it. It does, and it is now on the map:
+82.7 million people across all sixteen Laender, from Zensus 2022 table
+**1000A-1018**.
 
-`scripts/probe_genesis.py` looked. Three databases speak the same GENESIS REST
-dialect, and they gave three different answers:
+`scripts/probe_genesis.py` is how it was found, and what it found about the
+other two databases is worth keeping:
 
 * **GENESIS-Online**, the federal database, is open to the anonymous user
-  `GAST` and searchable, and **has no religion demography in it at all**. The
-  word matches fifteen tables -- television airtime by broadcaster, book titles
-  by subject group, gross earnings by occupation, national-accounts spending by
-  government function -- every one of them "Deutschland, Jahre", national and
-  annual. The word is in their subject classifications, not their variables.
-  This is a real absence, established by reading the catalogue rather than by
-  failing to guess a table name.
+  `GAST` and searchable, and holds **no religion demography at all**. The word
+  matches fifteen tables -- television airtime by broadcaster, book titles by
+  subject group, gross earnings by occupation, national-accounts spending by
+  government function -- every one of them "Deutschland, Jahre". The word sits
+  in their subject classifications, not their variables. A real absence, read
+  off the catalogue rather than inferred from a failed guess.
 * **The Regionaldatenbank** admits `GAST` at the login check and then answers
-  **401 to every catalogue search**. It needs a registered account, and nothing
-  about what it holds is known.
-* **The Zensus 2022 results database has the data.** Zensus 2022 did ask
-  religion: forty tables match, in two families -- `1000A-*` *Personen:
-  Religion* and `2000X-*` *Personen: Religion (ausfuehrlich)*, the finer
-  classification -- alongside cuts by age, sex, marital status, citizenship and
-  migration background. `GAST` can search that catalogue and can do nothing
-  else with it: `catalogue/tables`, `catalogue/variables`, `catalogue/timeseries`,
-  `metadata/table`, `metadata/variable`, `data/table` and `data/tablefile` all
-  answer **401**.
+  401 to every catalogue search. It needs an account and nothing about what it
+  holds is known.
+* **The Zensus 2022 results database** has the data, behind a free account.
 
-So Germany is one free registration away, and it is the same shape of block as
-Indonesia: the data is public, the interface is sanctioned, and it wants an
-account. The adapter is not written, because the one thing still unknown is
-which table is cut by `DLAND` -- four of them share the title *Personen:
-Religion* and differ only by a letter (`1018`, `1E18`, `1K18`, `1W18`), which
-is the Zensus habit of publishing one table once per regional level, and
-`metadata/table` is exactly the endpoint `GAST` may not call. Writing an
-adapter against a guessed variable code would produce a join nobody could
-check, which is the failure mode this project cares most about.
+**Which table, and why guessing would have failed.** Four tables share the
+title *Personen: Religion* and differ by a letter. Only one is cut by a civil
+geography:
 
-`probe_genesis.py` already reads `ZENSUS_USER` and `ZENSUS_PASSWORD` from the
-environment, and `run-adapter.yml` passes secrets to adapters through the
-environment and never through a command line. Registering at
-`ergebnisse.zensus2022.de` is free; the credentials belong in repository
-secrets, never in a file, a workflow input or this document.
+| table | religion | geography |
+| --- | --- | --- |
+| **1000A-1018** | RELZG2, 3 values | **GEOBL1 -- 16 Bundeslaender** |
+| 1000A-1E18 | RELZG2, 3 values | GEOEV1 -- 19 Landeskirchen |
+| 1000A-1K18 | RELZG2, 3 values | GEORK1 -- 27 Bistuemer |
+| 1000A-1W18 | RELZG2, 3 values | GEOWK1 -- 299 Bundestagswahlkreise |
+| 2000X-1022 | RELZG1, 7 values | GEODL3 -- Germany as a whole |
 
-Four things about the probing were wrong before they were right, and all four
-were the same kind of error -- reading our own request's failure as a fact
-about the server:
+Two of those geographies are church administrations and one is electoral. A
+guess would have been wrong three times in four, and the wrong answer would
+have joined nothing while looking like a table that simply did not match.
+
+**What the three categories mean.** RELZG2 counts membership of a religious
+body **incorporated under public law** -- the church-tax register -- not
+religious belief. Only the Roman Catholic and Protestant churches are counted
+separately. Germany's Muslims, Jews, Orthodox Christians and free-church
+Protestants fall inside *Sonstige, keine, ohne Angabe* together with the
+irreligious and those who did not answer, because their communities are mostly
+not public-law corporations. That category is the **largest bar in every Land**
+and the least informative one, running from 39.1% in Rheinland-Pfalz to 86.2%
+in Sachsen-Anhalt. Every record carries a `religion_note` saying so.
+
+The finer classification exists -- RELZG1, seven categories, table 2000X-1022
+-- and is published for Germany as a whole and no further. **Germany publishes
+something coarser about its Laender than about itself**, and this map shows the
+coarser thing because it is the only one cut by a geography.
+
+The figures are what German demography looks like, which is the check that
+matters: Saarland 51.0% Catholic and Bayern 44.2%, Schleswig-Holstein 39.9%
+Protestant, and the five eastern Laender between 73.9% and 86.2% *other, none
+or not stated* -- the GDR's secularisation, still the sharpest religious line
+in the country. The sixteen sum to 82.7 million, which is Zensus 2022's own
+count and about 1.4 million below the register-based estimate the Factbook
+carries; that gap is the census's headline finding, not a fault here.
+
+**Four things were wrong before they were right**, and all four were one error:
+reading our own request's failure as a fact about the server. They are recorded
+because each nearly closed Germany as an absence.
 
 * Every endpoint on all three instances answered **405** to a GET. That is the
-  path existing and the verb being wrong, not the data being absent.
-* `data/tablefile` and `data/chart2table` answered **406 Not Acceptable**,
-  which was content negotiation refusing an `Accept: application/json` the
-  probe had chosen itself. Asked with `*/*` they answer 401, which is the
-  actual finding. Reading the 406 as a locked door would have closed Germany on
-  the strength of our own header.
-* GENESIS-Online answered **307** to every call, and urllib follows neither 307
-  nor 308 for a POST. The federal instance had not been asked anything at all
-  at the point it was nearly filed as not answering.
-* That 307 pointed at `genesis.destatis.de`, not the `www-genesis.destatis.de`
-  every Destatis document names. The probe refuses to follow a redirect
-  off-host -- a probe that wanders is no longer evidence about the host it was
-  aimed at -- so the address was recorded rather than the rule loosened.
+  path existing and the verb being wrong.
+* `data/tablefile` answered **406 Not Acceptable** -- content negotiation
+  refusing an `Accept: application/json` the probe had chosen itself. Asked
+  with `*/*` it answers 401, which is the real finding.
+* GENESIS-Online answered **307**, and urllib follows neither 307 nor 308 for a
+  POST. That instance had not been asked anything at the point it was nearly
+  filed as not answering. Its redirect named `genesis.destatis.de`, not the
+  `www-genesis.destatis.de` every Destatis document gives.
+* With a valid account the server still answered `Username: GAST`, which reads
+  exactly like a rejected credential. It was an **ignored** one: this API reads
+  the account from **request headers**, and ignores it as a query parameter, as
+  HTTP Basic and as a bearer token. `helloworld/logincheck` settles it, because
+  it names the user the server thinks it is talking to.
+
+Two smaller traps in the payload: `data/tablefile` returns a **ZIP** holding one
+CSV whatever `compress=false` says, and that CSV is **UTF-8 with a byte-order
+mark** rather than the Windows-1252 older GENESIS exports use. And in ffcsv
+every figure appears twice, once as a percentage and once as a count -- only
+the counts are read, because a count rebuilt from a rounded percentage is out
+by thousands of people and carries no sign that it was never counted.
+
+Credentials reach the adapter through `ZENSUS_USER` and `ZENSUS_PASSWORD` in
+the environment, never a command line, and both workflows pass them. Without
+them the adapter **refuses** rather than falling back to anonymous: `GAST` can
+search the catalogue and read nothing, so an anonymous run would fetch a 401
+that would have to be told apart from a table that had gone away.
 
 ### Indonesia: published, and not fetchable
 

@@ -1,50 +1,5 @@
-Region variables a usable table would carry:
-  DLAND    Land (16)
-  KREISE   Kreis (~400)
-  GEMEIN   Gemeinde
-  DG       Germany as a whole
-  REGBEZ   Regierungsbezirk
-
-=== GENESIS-Online (Destatis, federal) ===
-    https://genesis.destatis.de/genesisWS/rest/2020
-    credentials: none -- asking anonymously
-    logincheck: ok [POST]
-      {"Status": "Sie wurden erfolgreich an- und abgemeldet! Bei mehr als 3 parallelen Requests wurden länger als 15 Minuten laufende Requests beendet.", "Username": "GAST"}
-    find 'Religion': 15 tables (erfolgreich)
-      21611-0010       Sendezeit (Fernsehen): Deutschland, Jahre, ARD und
-Landesrundfunkanstalten, Ressorts
-      21611-0210       Buchtitelproduktion: Deutschland, Jahre, Sachgruppen
-      62361-0030       Bruttostundenverdienste, Bruttomonatsverdienste: Deutschland, Stichmonat, Geschlecht, Berufe
-      62361-0034       Bruttojahresverdienste: Deutschland, Jahre, Geschlecht, Berufe
-      81000-0405       VGR des Bundes - Geleistete Subventionen des Staates:
-Deutschland, Jahre, Staatliche Teilsektoren,
-Aufgabenber
-      81000-0406       VGR des Bundes - Monetäre Sozialleistungen des Staates:
-Deutschland, Jahre, Staatliche Teilsektoren,
-Aufgabenb
-      81000-0407       VGR des Bundes - Sonstige laufende Transfers des Staates:
-Deutschland, Jahre, Staatliche Teilsektoren,
-Aufgabe
-      81000-0408       VGR des Bundes - Vermögenstransfers des Staates:
-Deutschland, Jahre, Staatliche Teilsektoren,
-Aufgabenbereiche
-      81000-0409       VGR des Bundes - Arbeitnehmerentgelt des Staates:
-Deutschland, Jahre, Staatliche Teilsektoren,
-Aufgabenbereich
-      81000-0410       VGR des Bundes - Bruttoinvestitionen des Staates:
-Deutschland, Jahre, Staatliche Teilsektoren,
-Aufgabenbereich
-      81000-0411       VGR des Bundes - Ausgaben des Staates: Deutschland, Jahre,
-Staatliche Teilsektoren, Aufgabenbereiche
-      81000-0412       VGR des Bundes - Konsumausgaben des Staates:
-Deutschland, Jahre, Staatliche Teilsektoren,
-Aufgabenbereiche
-      81000-0413       VGR des Bundes - Ausgaben des Staates:
-Deutschland, Jahre, Aufgabenbereiche des Staates (COFOG)
-      81000-0414       VGR des Bundes - Konsumausgaben des Staates:
-Deutschland, Jahre, Aufgabenbereiche des Staates (COFOG)
-      81000-0415       VGR des Bundes - Bruttoinvestitionen des Staates:
-Deutschland, Jahre, Aufgabenbereiche des Staates (COFOG)
-    find 'Glaubensrichtung': 0 tables (erfolgreich)
-    find 'Religionsgesellschaft': 0 tables (erfolgreich)
-    find 'Konfession': 0 tables (erfolgreich)
+germany: Zensus 2022 table 1000A-1018
+  16 Laender in the table
+  wrote data/processed/germany_land.json (31 kB)
+  wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/germany_land.json
+  16 records
