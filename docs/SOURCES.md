@@ -1665,6 +1665,43 @@ offices, two more adapters, and two reference dates that do not match the third.
 The adapter has always said so in its header; what is new is knowing that those
 43 council areas and districts are the whole of what remains.
 
+### England and Wales: two rows, and why a whole country stayed empty
+
+The roll-up fills a parent only from a **complete** set of children, and after
+the county fix England stood at 149 of 150 and Wales at 21 of 22. One
+unreachable district each -- and so both countries' admin1 records carried no
+composition at all while their districts were 99% filled. That is the rule
+working, not failing: a country summed from 149 of 150 districts publishes a
+figure smaller than the country with nothing on the map to say so.
+
+The two shapes, and two quite different reasons:
+
+**Rhondda Cynon Taf** is a single letter. The council spells itself with one
+`f`, and so does geoBoundaries; Nomis writes `Taff`. Note which side is wrong,
+because it decides where the fix goes: this is the **mirror** of the
+`MISSPELLED` table in `scripts/common.py`, which exists because geoBoundaries
+carries a bad name and correctly-spelled sources cannot reach the shape.
+Here the *shape* is right. Declaring it in `MISSPELLED` would rewrite a correct
+Welsh name into ONS's spelling and the map would begin labelling it "Taff", so
+the correction belongs on the source side, in the adapter.
+
+**Northamptonshire** is a geography change. The county was abolished in April
+2021 and replaced by two unitary authorities; ONS publishes the 2021 census on
+the successor geography while geoBoundaries still draws the county. One shape,
+two rows.
+
+That one is summed, and legitimately. The two unitaries partition the old
+county exactly -- no remainder, no overlap -- and 359,523 + 425,723 = **785,246**
+is the census figure for that area, so it is a complete set rather than a
+sample of one. Every category is added as a **count** and the percentages are
+recomputed from the sum, which is not the same as averaging two percentages and
+gives a different answer for two areas of unequal size. Ukraine's oblasts are
+built this way for the same reason. A partial set is refused rather than
+published: half a county under the county's name is worse than an empty shape.
+
+A merged row does not claim a single ONS code -- there is no published unit
+behind it -- so it carries the codes it was added up from instead.
+
 ### Scotland and Northern Ireland: published, and behind a table builder
 
 Reading the UK census at Nomis' county tier took its second-order coverage from
