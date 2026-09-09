@@ -4102,3 +4102,70 @@ class GermanysThreeCategoriesMustSumToItsPublishedTotal(unittest.TestCase):
                           f"religion_note must say {word!r}: the third category "
                           f"is the largest bar in every Land and the least "
                           f"informative one")
+
+
+class ACountyAbolishedBetweenCensusAndBoundaryFile(unittest.TestCase):
+    """England and Wales were each one child short of a complete set.
+
+    The roll-up fills a parent only from a complete set of children, so a
+    single unreachable district is enough to leave a whole country's admin1
+    record empty -- which is why England (149 of 150) and Wales (21 of 22)
+    both carried no composition while their districts were 99% filled.
+    """
+
+    def table(self):
+        from scripts.fetch_census import uk_nomis
+        return uk_nomis, {
+            "E06000061": {"name": "North Northamptonshire",
+                          "counts": {"Christian": 172329.0, "No religion": 152998.0},
+                          "total": 359523.0},
+            "E06000062": {"name": "West Northamptonshire",
+                          "counts": {"Christian": 210553.0, "No religion": 162751.0},
+                          "total": 425723.0},
+            "W06000016": {"name": "Rhondda Cynon Taff",
+                          "counts": {"Christian": 100.0}, "total": 100.0},
+        }
+
+    def test_the_two_successor_authorities_are_added_up_into_the_county(self):
+        uk_nomis, table = self.table()
+        out = uk_nomis.reconcile(table)
+        merged = out["E06000061+E06000062"]
+        self.assertEqual(merged["name"], "Northamptonshire")
+        self.assertEqual(merged["total"], 785246.0)
+        self.assertEqual(merged["counts"]["Christian"], 382882.0)
+
+    def test_the_parts_do_not_survive_alongside_the_whole(self):
+        """Leaving both would double-count the county's people."""
+        uk_nomis, table = self.table()
+        out = uk_nomis.reconcile(table)
+        self.assertNotIn("E06000061", out)
+        self.assertNotIn("E06000062", out)
+
+    def test_a_partial_set_is_refused_rather_than_published(self):
+        """Half a county under the county's name is worse than an empty shape."""
+        uk_nomis, table = self.table()
+        del table["E06000062"]
+        out = uk_nomis.reconcile(table)
+        self.assertNotIn("E06000061+E06000062", out)
+        self.assertIn("E06000061", out)
+
+    def test_the_source_spelling_is_corrected_towards_the_shape(self):
+        """geoBoundaries has the council's own spelling; Nomis has the variant.
+
+        The mirror of MISSPELLED, which corrects the boundary file. Declaring
+        this one there would rewrite a correct Welsh name into ONS's spelling.
+        """
+        uk_nomis, table = self.table()
+        out = uk_nomis.reconcile(table)
+        self.assertEqual(out["W06000016"]["name"], "Rhondda Cynon Taf")
+
+    def test_both_corrected_names_are_names_geoboundaries_actually_draws(self):
+        path = ROOT / "site" / "data" / "admin2" / "GBR.json"
+        shapes = {r["name"] for r in json.loads(path.read_text(encoding="utf-8"))}
+        self.assertIn("Rhondda Cynon Taf", shapes)
+        self.assertIn("Northamptonshire", shapes)
+
+    def test_a_merged_row_does_not_claim_a_single_ons_code(self):
+        from scripts.fetch_census import uk_nomis
+        name, parts = uk_nomis.MERGED_AUTHORITIES["E06000061+E06000062"]
+        self.assertEqual(parts, ("E06000061", "E06000062"))

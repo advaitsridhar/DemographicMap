@@ -55,6 +55,63 @@ LEVELS: dict[str, tuple[str, str]] = {
 }
 
 
+# Two shapes geoBoundaries draws that no single Nomis row reaches, for two
+# quite different reasons. Both leave England and Wales one child short of a
+# complete set, and the roll-up fills a parent only from a complete set -- so
+# between them these two rows are why the England and Wales admin1 records
+# carry no composition at all.
+
+SOURCE_RESPELLINGS = {
+    # The council spells itself Rhondda Cynon Taf, and so does the boundary
+    # file; Nomis writes Taff. Note which side is wrong: this is the mirror of
+    # MISSPELLED in scripts/common.py, where geoBoundaries carries the bad name
+    # and every correct source needs an alias to reach the shape. Here the
+    # shape is right, so declaring it there would rewrite a correct Welsh name
+    # into ONS's spelling and the map would start labelling it "Taff". The
+    # correction belongs on the source side, which is this file.
+    "Rhondda Cynon Taff": "Rhondda Cynon Taf",
+}
+
+# Northamptonshire was abolished in April 2021 and replaced by two unitary
+# authorities. ONS publishes the 2021 census on the successor geography;
+# geoBoundaries still draws the county, so one shape faces two rows.
+#
+# Summed, and legitimately so. The two unitaries partition the old county
+# exactly -- no remainder, no overlap -- and 359,523 + 425,723 = 785,246 is the
+# census figure for that area, so this is a complete set rather than a sample
+# of one. Every category is added as a *count* and the percentages are then
+# recomputed by shares(), which is not the same thing as averaging two
+# percentages and would give a different answer for two areas of unequal size.
+# Ukraine's oblasts are built this way for the same reason.
+MERGED_AUTHORITIES: dict[str, tuple[str, tuple[str, ...]]] = {
+    "E06000061+E06000062": ("Northamptonshire", ("E06000061", "E06000062")),
+}
+
+
+def reconcile(table: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    """Apply the two declarations above to one fetched table."""
+    for entry in table.values():
+        entry["name"] = SOURCE_RESPELLINGS.get(entry["name"], entry["name"])
+    for code, (name, parts) in MERGED_AUTHORITIES.items():
+        present = [table[p] for p in parts if p in table]
+        if len(present) != len(parts):
+            # A partial merge would publish a county's name over a fraction of
+            # its people, which is worse than leaving the shape empty.
+            if present:
+                log(f"  merge {name}: {len(present)} of {len(parts)} parts, skipped")
+            continue
+        counts: dict[str, float] = {}
+        for entry in present:
+            for label, value in entry["counts"].items():
+                counts[label] = counts.get(label, 0.0) + value
+        totals = [e["total"] for e in present]
+        table[code] = {"name": name, "counts": counts,
+                       "total": sum(totals) if all(t is not None for t in totals) else None}
+        for part in parts:
+            table.pop(part, None)
+    return table
+
+
 def fetch_table(dataset: str, cell: str, geography: str) -> dict[str, dict[str, Any]]:
     # No `select=`: that parameter switches Nomis to a flat column format and
     # empties the nested "obs" list this parser reads.  Leaving the category
@@ -179,7 +236,7 @@ def main() -> int:
     log(f"uk_nomis: {args.level} ({geography})")
     for field, (dataset, label, cell) in DATASETS.items():
         log(f"uk_nomis: {label} ({dataset})")
-        tables[field] = fetch_table(dataset, cell, geography)
+        tables[field] = reconcile(fetch_table(dataset, cell, geography))
 
     codes = sorted(set().union(*(set(t) for t in tables.values())) if tables else set())
     src = "ONS Census 2021 (England and Wales) via Nomis"
@@ -189,9 +246,12 @@ def main() -> int:
         rel = tables["religion"].get(code, {})
         name = eth.get("name") or rel.get("name") or code
         total = eth.get("total") or rel.get("total")
+        merged = MERGED_AUTHORITIES.get(code)
         records.append(record(
             f"GBR-{code}", name, level="admin2", parent="GBR",
-            codes={"ons_code": code},
+            # A merged row is not a published unit, so it does not claim a
+            # single ONS code -- it names the codes it was added up from.
+            codes={"ons_codes": list(merged[1])} if merged else {"ons_code": code},
             population=measure(int(total), year=2021, source=src) if total else gap(NOT_AVAILABLE),
             ethnicity=shares(eth.get("counts", {}), total=eth.get("total")) or gap(NOT_AVAILABLE),
             ethnicity_note="ONS 2021 ethnic group classification (TS021), England and Wales.",
