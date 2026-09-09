@@ -2422,6 +2422,34 @@ Southern Ndebele in South Africa, two different languages, and Sotho is used
 for both Sesotho and Sepedi. The Factbook's compounds are safe precisely
 because they only ever appear in the South African entry.
 
+## One ISO code, several places
+
+Six ISO3 codes carry more than one Factbook profile, because the Factbook
+describes places and ISO 3166 assigns codes to administering states. `PSE` is
+Gaza *and* the West Bank; `SJM` is Jan Mayen *and* Svalbard; `AUS` also carries
+Ashmore and Cartier and the Coral Sea Islands; `FRA` also carries Clipperton
+Island; `UMI` carries Wake and Navassa.
+
+One profile per code owns the boundary, and the others are kept as
+geometry-less records so their figures stay visible and searchable -- the West
+Bank's 3,310,554 people are published and would otherwise vanish.
+
+**What a secondary profile does not own is subdivisions.** Those are filed by
+ISO3, so reading them by code would hand the uninhabited Coral Sea Islands
+Australia's 9 states and 547 districts, and give Clipperton Island France's 13
+regions. The coverage matrix exists to say where data is missing, so a record
+overstating what it contains is worse there than anywhere else: an unmatched
+row is a visible gap, a mis-matched one is invisible. `subdivision_owner()`
+draws the line -- a record owns the code's children only when its id *is* the
+code -- and having no polygon is explicitly not the same test, so Hong Kong
+keeps its own districts.
+
+A related correction: Factbook stem `ck` is **Cocos (Keeling) Islands**, not
+the Cook Islands. It had been declared `COK`, which took the Cook Islands'
+code, suffixed the real Cook Islands to `COK-CW`, and then dropped them at the
+join -- 7,592 people absent from the map because 593 wore their code. Cocos is
+`CCK`.
+
 ## Joining a row to a shape
 
 Every adapter row has to find one boundary polygon. Names alone cannot do it:

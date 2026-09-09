@@ -362,6 +362,26 @@ def geometryless_profiles(rows: list[dict[str, Any]],
                      and (source.get("codes") or {}).get("iso3") in matched_iso3)]
 
 
+def subdivision_owner(entity: dict[str, Any]) -> str | None:
+    """The ISO3 whose admin1 and admin2 rows belong to this record, if any.
+
+    Subdivisions are keyed by ISO3, and for almost every admin0 record the code
+    is the key: it is the sole profile for that code, so its id and its country
+    are the same string. The exception is a *secondary* Factbook profile -- the
+    West Bank inside PSE, Svalbard inside SJM, Clipperton Island inside FRA,
+    Ashmore and Cartier inside AUS. Those are distinct places that share their
+    administering state's code, and they own no subdivisions here.
+
+    Reading the code's rows for them would report Australia's 9 states and 547
+    districts as the *uninhabited* Coral Sea Islands' own, and France's 13
+    regions as Clipperton Island's -- an unmatched row is a visible gap, but a
+    mis-matched one is invisible, which is exactly what the coverage matrix
+    exists to prevent.
+    """
+    iso3 = entity.get("country") or entity.get("id")
+    return iso3 if entity.get("id") == iso3 else None
+
+
 def apply_curated(entity: dict[str, Any], row: dict[str, Any], prov: dict[str, Any]) -> None:
     source = prov.get("source")
     year = prov.get("year")
@@ -1800,12 +1820,12 @@ def main() -> int:
     for entity in admin0:
         if entity.get("disputed"):
             continue
-        iso3 = entity.get("country") or entity["id"]
+        owner = subdivision_owner(entity)
         entry: dict[str, Any] = {"name": entity["name"], "admin0": {}, "admin1": {}, "admin2": {}}
         for field in TRACKED:
             entry["admin0"][field] = field_state(entity.get(field))
         for level, table in (("admin1", admin1_by_country), ("admin2", admin2_by_country)):
-            rows = table.get(iso3, [])
+            rows = table.get(owner, []) if owner else []
             entry[level]["count"] = len(rows)
             for field in TRACKED:
                 states = [field_state(r.get(field)) for r in rows]
