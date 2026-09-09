@@ -339,6 +339,29 @@ def load_curated() -> tuple[dict[str, list[dict[str, Any]]], dict[str, Any]]:
     return rows, payload.get("_provenance", {})
 
 
+def primary_country_profiles(rows: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    """Choose the one profile that can supply each ISO3 boundary."""
+    countries: dict[str, dict[str, Any]] = {}
+    for row in rows:
+        iso3 = (row.get("codes") or {}).get("iso3")
+        if not iso3:
+            continue
+        if row["id"] == iso3 or iso3 not in countries:
+            countries[iso3] = row
+    return countries
+
+
+def geometryless_profiles(rows: list[dict[str, Any]],
+                          countries: dict[str, dict[str, Any]],
+                          matched_iso3: set[str]) -> list[dict[str, Any]]:
+    """Retain unmatched primaries and every distinct secondary profile."""
+    primary_ids = {source["id"] for source in countries.values()}
+    return [source for source in rows
+            if (source.get("codes") or {}).get("iso3")
+            and not (source["id"] in primary_ids
+                     and (source.get("codes") or {}).get("iso3") in matched_iso3)]
+
+
 def apply_curated(entity: dict[str, Any], row: dict[str, Any], prov: dict[str, Any]) -> None:
     source = prov.get("source")
     year = prov.get("year")
@@ -1007,6 +1030,8 @@ def roll_up_countries(admin0: list[dict[str, Any]],
     refused: list[str] = []
     for country in admin0:
         iso3 = (country.get("codes") or {}).get("iso3") or country.get("id", "")[:3]
+        if country.get("id") != iso3:
+            continue
         children = admin1_by_country.get(iso3, [])
         if not children:
             continue
@@ -1290,7 +1315,7 @@ def group_index(admin0: list[dict[str, Any]],
                 value = record.get(field)
                 if not isinstance(value, list):
                     continue
-                code = iso3 or record.get("id", "")
+                code = iso3 or record.get("country") or record.get("id", "")
                 for bad in canonical_groups.check_no_double_counting(value, field):
                     conflicts.add(f"{code}:{bad}")
                 basis = record.get(f"{field}_basis")
@@ -1393,13 +1418,8 @@ def main() -> int:
     # gives the primary entity the bare code and suffixes the rest, so prefer the
     # record whose id *is* the code -- otherwise a dependency overwrites its
     # parent and the country panel shows the wrong place.
-    countries: dict[str, dict[str, Any]] = {}
-    for row in read_json(PROCESSED / "admin0.json", []):
-        iso3 = (row.get("codes") or {}).get("iso3")
-        if not iso3:
-            continue
-        if row["id"] == iso3 or iso3 not in countries:
-            countries[iso3] = row
+    country_profiles = read_json(PROCESSED / "admin0.json", [])
+    countries = primary_country_profiles(country_profiles)
     cities = read_json(PROCESSED / "cities.json", {"by_country": {}, "by_admin1": {}})
     adapters = load_adapters()
     curated_rows, provenance = load_curated()
@@ -1449,11 +1469,11 @@ def main() -> int:
     # Puerto Rico, Palestine, the Channel Islands...). Keeping them as
     # geometry-less records means they are still searchable and still show their
     # demographics, with the missing outline stated rather than implied.
-    for iso3, source in sorted(countries.items()):
-        if iso3 in matched_iso3:
-            continue
+    for source in sorted(geometryless_profiles(country_profiles, countries, matched_iso3),
+                         key=lambda row: row["name"]):
+        iso3 = (source.get("codes") or {}).get("iso3")
         entity = dict(source)
-        entity["id"] = iso3
+        entity["id"] = source["id"]
         entity["level"] = "admin0"
         entity["parent"] = None
         entity["country"] = iso3
@@ -1763,7 +1783,7 @@ def main() -> int:
         return [entity["id"], entity["name"], level, country,
                 [round(v, 3) for v in bbox] if bbox else None, parent]
 
-    shard0: list[list[Any]] = [row(e, 0, e["id"]) for e in admin0]
+    shard0: list[list[Any]] = [row(e, 0, e.get("country") or e["id"]) for e in admin0]
     for iso3, rows in admin1_by_country.items():
         shard0.extend(row(e, 1, iso3) for e in rows)
     shard2: list[list[Any]] = []
@@ -1780,7 +1800,7 @@ def main() -> int:
     for entity in admin0:
         if entity.get("disputed"):
             continue
-        iso3 = entity["id"]
+        iso3 = entity.get("country") or entity["id"]
         entry: dict[str, Any] = {"name": entity["name"], "admin0": {}, "admin1": {}, "admin2": {}}
         for field in TRACKED:
             entry["admin0"][field] = field_state(entity.get(field))
@@ -1794,7 +1814,7 @@ def main() -> int:
                     "not_collected": sum(1 for s in states if s == NOT_COLLECTED),
                     "not_available": sum(1 for s in states if s == NOT_AVAILABLE),
                 }
-        coverage[iso3] = entry
+        coverage[entity["id"]] = entry
     write_json(out / "coverage.json", coverage, compact=True)
 
     write_json(out / "groups.json", group_index(admin0, admin1_by_country,

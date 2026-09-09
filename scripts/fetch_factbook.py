@@ -258,7 +258,7 @@ MANUAL_CODE_ISO = {
     "bm": "MMR",   # Burma             -> Myanmar
     "vt": "VAT",   # Holy See (Vatican City)
     "fk": "FLK",   # Falkland Islands (Islas Malvinas)
-    "ck": "COK",   # Cook Islands
+    "ck": "CCK",   # Cocos (Keeling) Islands
     "vq": "VIR",   # Virgin Islands    -> U.S. Virgin Islands
     "sh": "SHN",   # Saint Helena, Ascension, and Tristan da Cunha
     "sv": "SJM",   # Svalbard          -> Svalbard and Jan Mayen

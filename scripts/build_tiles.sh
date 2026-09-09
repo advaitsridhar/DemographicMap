@@ -52,7 +52,6 @@ build_with_tippecanoe() {
     --minimum-zoom="$minz" --maximum-zoom="$maxz" \
     --drop-densest-as-needed --coalesce-densest-as-needed \
     --simplification=4 --detect-shared-borders \
-    --no-tile-compression=false \
     --attribution="$ATTRIBUTION" \
     --force --output="${dest%.pmtiles}.mbtiles" \
     "$geojson"

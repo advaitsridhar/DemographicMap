@@ -23,6 +23,7 @@ window.DataStore = (function () {
   const childrenOf = new Map();           // parent id -> [record]
   const loaded = { admin0: false, admin1: new Set(), admin2: new Set() };
   const inflight = new Map();
+  const levelInflight = new Map();
   const listeners = new Set();
   let coverage = null;
   let groups = null;
@@ -86,7 +87,10 @@ window.DataStore = (function () {
     if (!iso3 || level < 1 || level > 2) return [];
     const key = level === 1 ? "admin1" : "admin2";
     if (loaded[key].has(iso3)) return childrenOfCountry(iso3, level);
-    try {
+    const loadKey = `${key}/${iso3}`;
+    if (levelInflight.has(loadKey)) return levelInflight.get(loadKey);
+    const task = (async () => {
+      try {
       const records = await getJSON(`${key}/${iso3}.json`);
       index(records);
       loaded[key].add(iso3);
@@ -98,7 +102,12 @@ window.DataStore = (function () {
       loaded[key].add(iso3);
       emit({ type: key, country: iso3, count: 0, error: String(err) });
       return [];
-    }
+      } finally {
+        levelInflight.delete(loadKey);
+      }
+    })();
+    levelInflight.set(loadKey, task);
+    return task;
   }
 
   function childrenOfCountry(iso3, level) {

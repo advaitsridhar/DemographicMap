@@ -252,7 +252,7 @@ window.WorldMap = (function () {
   // the district layer, where the state you just picked is no longer drawn.
   const FIT_MAX_ZOOM = [4.2, 6.4, 8.6];
 
-  function select(id, { fly = false, bbox = null, level = null } = {}) {
+  function select(id, { fly = false, bbox = null, point = null, level = null } = {}) {
     for (const level of LEVELS) {
       if (selectedId) setFeatureState(level.id, selectedId, { selected: false });
     }
@@ -265,18 +265,20 @@ window.WorldMap = (function () {
     // set it on all three and let the miss be a no-op.
     LEVELS.forEach((level) => setFeatureState(level.id, id, { selected: true }));
     if (fly && bbox && bbox.length === 4) {
-      fitBBox(bbox, FIT_MAX_ZOOM[level == null ? 1 : Math.min(level, 2)]);
+      fitBBox(bbox, FIT_MAX_ZOOM[level == null ? 1 : Math.min(level, 2)], point);
     }
   }
 
-  function fitBBox(bbox, maxZoom) {
+  function fitBBox(bbox, maxZoom, point = null) {
     const [w, s, e, n] = bbox;
     if (![w, s, e, n].every(Number.isFinite)) return;
     const cap = Number.isFinite(maxZoom) ? maxZoom : 9;
     // Degenerate or antimeridian-spanning boxes (Russia, Fiji, USA) would make
     // fitBounds zoom all the way out; centre on them instead.
     if (e - w > 180 || e <= w || n <= s) {
-      map.easeTo({ center: [(w + e) / 2, (s + n) / 2], zoom: Math.min(3, cap), duration: 800 });
+      const center = Array.isArray(point) && point.length === 2 && point.every(Number.isFinite)
+        ? point : [(w + e) / 2, (s + n) / 2];
+      map.easeTo({ center, zoom: Math.min(3, cap), duration: 800 });
       return;
     }
     map.fitBounds([[w, s], [e, n]], { padding: 60, maxZoom: cap, duration: 800 });
@@ -372,6 +374,7 @@ window.WorldMap = (function () {
     const style = baseStyle();
     map.setStyle(style, { diff: false });
     map.once("idle", () => {
+      if (pinnedLevel !== null) setPinnedLevel(pinnedLevel);
       repaintAll();
       if (selectedId) LEVELS.forEach((level) => setFeatureState(level.id, selectedId, { selected: true }));
     });
