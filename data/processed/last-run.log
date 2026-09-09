@@ -1,4 +1,6 @@
-usage: probe_xlsx.py [-h] [--rows ROWS] [--match MATCH] [--width WIDTH]
-                     [--sheet SHEET] [--cols COLS]
-                     url [url ...]
-probe_xlsx.py: error: unrecognized arguments: 1
+uk_nomis: county (TYPE155)
+uk_nomis: TS021 Ethnic group (NM_2041_1)
+uk_nomis: TS030 Religion (NM_2049_1)
+  wrote data/processed/uk_county.json (846 kB)
+  174 records
+  174 local authority records

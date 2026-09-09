@@ -25,6 +25,9 @@ jobs:
       - name: Syntax-check the frontend
         run: for f in site/js/*.js; do node --check "$f"; done
 
+      - name: Frontend regression tests
+        run: node tests/test_frontend.js
+
       - name: Shell syntax
         run: for f in scripts/*.sh; do bash -n "$f"; done
 

@@ -105,7 +105,7 @@ jobs:
       # adapter writes no data when it refuses, so what lands is the log
       # alone, and the job still reports the failure.
       - name: Commit
-        if: always() && inputs.commit != 'false'
+        if: always() && inputs.commit
         env:
           ADAPTER: ${{ inputs.command }}
           OUTCOME: ${{ steps.run.outcome }}

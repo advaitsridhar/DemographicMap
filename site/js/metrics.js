@@ -51,20 +51,30 @@ window.Metrics = (function () {
   }
 
   function shareOf(record, field, group) {
+    return shareDetail(record, field, group).value;
+  }
+
+  function shareDetail(record, field, group) {
     const value = record[field];
-    if (!Array.isArray(value)) return null;
+    if (!Array.isArray(value)) return { value: null, approximate: false };
     // Summed, not found: one canonical group can be several rows of a record.
     // The US reports Protestant, Catholic, Orthodox, Latter-day Saints and
     // Jehovah's Witnesses where Australia reports one "Christianity" row, so
     // matching a single row would show the US at its largest denomination and
     // call that its Christian share.
     let total = null;
+    let approximate = false;
+    const matched = [];
     for (const row of value) {
       if (typeof row.pct !== "number") continue;
       if (canonicalName(field, row.group) !== group) continue;
       total = (total || 0) + row.pct;
+      approximate = approximate || Boolean(row.bound || row.range);
+      matched.push(row);
     }
-    return total;
+    return { value: total, approximate,
+             bound: matched.length === 1 ? matched[0].bound : null,
+             range: matched.length === 1 ? matched[0].range : null };
   }
 
   function largestShare(record, field) {
@@ -72,6 +82,24 @@ window.Metrics = (function () {
     if (!Array.isArray(value) || !value.length) return null;
     const best = value.reduce((a, b) => ((b.pct || 0) > (a.pct || 0) ? b : a));
     return typeof best.pct === "number" ? best.pct : null;
+  }
+
+  function largestShareDetail(record, field) {
+    const value = record[field];
+    if (!Array.isArray(value) || !value.length) return { value: null, approximate: false };
+    const best = value.reduce((a, b) => ((b.pct || 0) > (a.pct || 0) ? b : a));
+    return { value: typeof best.pct === "number" ? best.pct : null,
+             approximate: Boolean(best.bound || best.range),
+             bound: best.bound, range: best.range };
+  }
+
+  function formatDetail(detail) {
+    if (!detail || !Number.isFinite(detail.value)) return "—";
+    if (Array.isArray(detail.range) && detail.range.length === 2) {
+      return `${window.Fmt.pct(detail.range[0])}–${window.Fmt.pct(detail.range[1])}`;
+    }
+    if (detail.bound) return `${detail.bound}${window.Fmt.pct(detail.value)}`;
+    return `${detail.approximate ? "about " : ""}${window.Fmt.pct(detail.value)}`;
   }
 
   function dominant(record, field) {
@@ -125,6 +153,7 @@ window.Metrics = (function () {
       note: "How concentrated the chosen composition is: the percentage held by the " +
             "single largest group. High values mean one group dominates.",
       evaluate(record, opts) { return largestShare(record, opts.field); },
+      display(record, opts) { return formatDetail(largestShareDetail(record, opts.field)); },
       format: (n) => window.Fmt.pct(n),
     },
     group_share: {
@@ -142,6 +171,9 @@ window.Metrics = (function () {
             "cannot separate.",
       evaluate(record, opts) {
         return opts.group ? shareOf(record, opts.field, opts.group) : null;
+      },
+      display(record, opts) {
+        return opts.group ? formatDetail(shareDetail(record, opts.field, opts.group)) : "—";
       },
       format: (n) => window.Fmt.pct(n),
     },
@@ -232,5 +264,6 @@ window.Metrics = (function () {
   }
 
   return { METRICS, FIELDS, paint, topGroups, dominant, largestShare, shareOf,
+           shareDetail, largestShareDetail,
            setGroupIndex, canonicalName };
 })();

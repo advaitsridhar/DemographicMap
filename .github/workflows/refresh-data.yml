@@ -47,10 +47,12 @@ jobs:
 
       - name: Install tippecanoe and pmtiles
         if: inputs.rebuild_tiles
+        env:
+          PMTILES_VERSION: "1.31.2"
         run: |
           sudo apt-get update && sudo apt-get install -y tippecanoe gdal-bin
-          curl -sSL -o /tmp/pmtiles.tar.gz \
-            https://github.com/protomaps/go-pmtiles/releases/latest/download/go-pmtiles_linux_amd64.tar.gz
+          curl --fail --silent --show-error --location -o /tmp/pmtiles.tar.gz \
+            "https://github.com/protomaps/go-pmtiles/releases/download/v${PMTILES_VERSION}/go-pmtiles_${PMTILES_VERSION}_Linux_x86_64.tar.gz"
           sudo tar -xzf /tmp/pmtiles.tar.gz -C /usr/local/bin pmtiles
 
       - name: Run the pipeline

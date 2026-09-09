@@ -121,7 +121,7 @@ fi
 
 if [ "${SKIP_TILES:-0}" != "1" ]; then
   step "Vector tiles"
-  scripts/build_tiles.sh
+  scripts/build_tiles.sh || exit 1
 fi
 
 step "Join boundaries and attributes into site/data"

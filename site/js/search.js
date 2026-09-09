@@ -13,6 +13,7 @@ window.Search = (function () {
   const rows = new Map();     // id -> {id, name, level, country, bbox}
   let ready = false;
   let deepReady = false;
+  let deepLoad = Promise.resolve();
   let onPick = () => {};
   let statusEl = null;
 
@@ -54,7 +55,7 @@ window.Search = (function () {
     absorb(shard0);
     ready = true;
     // Second-level divisions are the long tail; load them without blocking.
-    fetch(DataStore.url("search-index-2.json"))
+    deepLoad = fetch(DataStore.url("search-index-2.json"))
       .then((r) => r.json())
       .then((shard2) => { absorb(shard2); deepReady = true; })
       .catch((err) => console.warn("admin-2 search shard failed", err));
@@ -121,6 +122,12 @@ window.Search = (function () {
   }
 
   function get(id) { return rows.get(id) || null; }
+  async function getWhenReady(id) {
+    const found = get(id);
+    if (found || deepReady) return found;
+    await deepLoad;
+    return get(id);
+  }
   function isDeepReady() { return deepReady; }
 
   /** Wire the combobox: typing filters, arrows move, Enter/click selects. */
@@ -218,5 +225,5 @@ window.Search = (function () {
     });
   }
 
-  return { init, attach, query, get, isDeepReady, setGroups };
+  return { init, attach, query, get, getWhenReady, isDeepReady, setGroups };
 })();

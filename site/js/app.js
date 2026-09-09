@@ -690,6 +690,7 @@
     window.WorldMap.select(id, {
       fly: options.fly,
       bbox: options.bbox || record.bbox,
+      point: record.point,
       level: levelIndex < 0 ? 1 : levelIndex,
     });
     if (options.fly && !record.bbox && record.point) {
@@ -699,7 +700,9 @@
     els.sidebar.classList.add("is-open");
 
     // Pull the level below so the children list and the next zoom are ready.
-    if (record.level === "admin0") window.DataStore.loadLevel(record.id, 1).then(afterLoad);
+    if (record.level === "admin0") {
+      window.DataStore.loadLevel(record.country || record.id, 1).then(afterLoad);
+    }
     if (record.level === "admin1") window.DataStore.loadLevel(record.country, 2).then(afterLoad);
 
     try {
@@ -729,7 +732,10 @@
         const field = window.Metrics.FIELDS.find((f) => f.key === state.field);
         bits.push(s.icon + " " + s.label + " — " + (field ? field.label.toLowerCase() : state.field));
       } else if (Number.isFinite(value)) {
-        bits.push(metric.label + ": " + (metric.format ? metric.format(value) : value));
+        const shown = metric.display
+          ? metric.display(record, { field: state.field, group: state.group })
+          : (metric.format ? metric.format(value) : value);
+        bits.push(metric.label + ": " + shown);
       } else {
         bits.push(metric.label + ": no value");
       }
@@ -842,7 +848,7 @@
     let deepLink = null;
     try { deepLink = new URL(location.href).searchParams.get("id"); } catch (err) { /* ignore */ }
     if (deepLink) {
-      const row = window.Search.get(deepLink);
+      const row = await window.Search.getWhenReady(deepLink);
       selectEntity(deepLink, {
         fly: true,
         bbox: row && row.bbox,
