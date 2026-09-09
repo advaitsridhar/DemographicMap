@@ -26,6 +26,27 @@ class BuildGuards(unittest.TestCase):
         self.assertEqual([row["id"] for row in kept], ["PSE-WE"])
         self.assertEqual(kept[0]["codes"]["iso3"], "PSE")
 
+    def test_a_secondary_profile_owns_no_subdivisions(self):
+        """The Coral Sea Islands must not be handed Australia's 547 districts."""
+        import build_entities
+
+        primary = {"id": "AUS", "country": "AUS", "name": "Australia"}
+        secondary = {"id": "AUS-CR", "country": "AUS", "name": "Coral Sea Islands"}
+        self.assertEqual(build_entities.subdivision_owner(primary), "AUS")
+        self.assertIsNone(build_entities.subdivision_owner(secondary))
+
+    def test_a_geometryless_primary_still_owns_its_subdivisions(self):
+        """Having no polygon is not the same as being a secondary profile."""
+        import build_entities
+
+        hong_kong = {"id": "HKG", "country": "HKG", "name": "Hong Kong"}
+        self.assertEqual(build_entities.subdivision_owner(hong_kong), "HKG")
+
+    def test_the_frontend_only_loads_children_for_a_primary_profile(self):
+        source = (ROOT / "site" / "js" / "app.js").read_text(encoding="utf-8")
+        self.assertIn('record.country === record.id', source)
+        self.assertNotIn('loadLevel(record.country || record.id, 1)', source)
+
     def test_tile_failure_is_fatal_to_the_pipeline(self):
         source = (ROOT / "scripts" / "build_all.sh").read_text(encoding="utf-8")
         self.assertIn("scripts/build_tiles.sh || exit 1", source)

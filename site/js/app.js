@@ -700,8 +700,13 @@
     els.sidebar.classList.add("is-open");
 
     // Pull the level below so the children list and the next zoom are ready.
-    if (record.level === "admin0") {
-      window.DataStore.loadLevel(record.country || record.id, 1).then(afterLoad);
+    // Only a country's *primary* profile owns the subdivisions filed under its
+    // code. A secondary Factbook profile (the West Bank under PSE, the Coral
+    // Sea Islands under AUS) is a distinct place sharing that code, so pulling
+    // the code's children here would offer an uninhabited reef Australia's
+    // states as its own.
+    if (record.level === "admin0" && (!record.country || record.country === record.id)) {
+      window.DataStore.loadLevel(record.id, 1).then(afterLoad);
     }
     if (record.level === "admin1") window.DataStore.loadLevel(record.country, 2).then(afterLoad);
 
