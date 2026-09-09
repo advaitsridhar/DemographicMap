@@ -3,7 +3,21 @@ name: Refresh demographic data
 # The sources move on their own schedule -- census rounds publish, Eurostat
 # updates monthly, Wikidata continuously -- so this re-runs the pipeline
 # quarterly and opens a PR when anything actually changed. It never pushes to
-# main directly: a demographic figure changing deserves a human look.
+# main directly.
+#
+# What reviews that PR has changed, and the comment should say so rather than
+# describe a practice the repository no longer follows. It used to read "a
+# demographic figure changing deserves a human look". In practice nobody reads
+# a 36,000-line data diff line by line, and a review that cannot actually be
+# performed is not a safeguard -- it is a comment claiming one.
+#
+# What guards it now is a check against stated expectations: before a refresh
+# is merged, the specific things it was run to change are asserted against the
+# output -- a country that should have gained figures has them, a correction
+# that should have separated two records did, coverage and population totals
+# sit where the previous refresh left them. Anything moving that was not
+# predicted stops the merge and goes to a person. That is a narrower promise
+# than "a human looked", and unlike it, it is one this repository keeps.
 on:
   schedule:
     - cron: "0 4 1 */3 *"
