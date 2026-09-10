@@ -63,16 +63,40 @@
         "count": 40226
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Other Languages",
+        "pct": 61.0,
+        "count": 2146057
+      },
+      {
+        "group": "Not stated",
+        "pct": 13.3,
+        "count": 468073
+      },
+      {
+        "group": "Chinese:",
+        "pct": 12.4,
+        "count": 435084
+      },
+      {
+        "group": "Indo-Aryan:",
+        "pct": 9.8,
+        "count": 344390
+      },
+      {
+        "group": "Southeast Asian Austronesian languages:",
+        "pct": 3.6,
+        "count": 125358
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -245,7 +269,8 @@
         "count": 52831
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
     "id": "AUS-2",
@@ -311,16 +336,40 @@
         "count": 46626
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Other Languages",
+        "pct": 62.4,
+        "count": 1791785
+      },
+      {
+        "group": "Not stated",
+        "pct": 11.9,
+        "count": 341906
+      },
+      {
+        "group": "Indo-Aryan:",
+        "pct": 11.6,
+        "count": 333090
+      },
+      {
+        "group": "Chinese:",
+        "pct": 11.1,
+        "count": 319984
+      },
+      {
+        "group": "Southeast Asian Austronesian languages:",
+        "pct": 2.9,
+        "count": 83510
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -493,7 +542,8 @@
         "count": 40850
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
     "id": "AUS-3",
@@ -559,16 +609,40 @@
         "count": 4793
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Other Languages",
+        "pct": 53.9,
+        "count": 681913
+      },
+      {
+        "group": "Not stated",
+        "pct": 25.6,
+        "count": 323078
+      },
+      {
+        "group": "Chinese:",
+        "pct": 9.1,
+        "count": 114821
+      },
+      {
+        "group": "Indo-Aryan:",
+        "pct": 7.8,
+        "count": 98144
+      },
+      {
+        "group": "Southeast Asian Austronesian languages:",
+        "pct": 3.7,
+        "count": 46385
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -741,7 +815,8 @@
         "count": 6668
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
     "id": "AUS-4",
@@ -807,16 +882,40 @@
         "count": 1122
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Other Languages",
+        "pct": 61.2,
+        "count": 317291
+      },
+      {
+        "group": "Not stated",
+        "pct": 15.7,
+        "count": 81255
+      },
+      {
+        "group": "Indo-Aryan:",
+        "pct": 11.7,
+        "count": 60899
+      },
+      {
+        "group": "Chinese:",
+        "pct": 8.5,
+        "count": 43938
+      },
+      {
+        "group": "Southeast Asian Austronesian languages:",
+        "pct": 3.0,
+        "count": 15314
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -989,7 +1088,8 @@
         "count": 1131
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
     "id": "AUS-5",
@@ -1055,16 +1155,40 @@
         "count": 5641
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Other Languages",
+        "pct": 57.3,
+        "count": 490213
+      },
+      {
+        "group": "Not stated",
+        "pct": 19.7,
+        "count": 168770
+      },
+      {
+        "group": "Chinese:",
+        "pct": 8.8,
+        "count": 75591
+      },
+      {
+        "group": "Indo-Aryan:",
+        "pct": 8.1,
+        "count": 68964
+      },
+      {
+        "group": "Southeast Asian Austronesian languages:",
+        "pct": 6.1,
+        "count": 52425
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -1237,7 +1361,8 @@
         "count": 10448
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
     "id": "AUS-6",
@@ -1303,16 +1428,40 @@
         "count": 370
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Other Languages",
+        "pct": 46.3,
+        "count": 48656
+      },
+      {
+        "group": "Not stated",
+        "pct": 27.6,
+        "count": 29010
+      },
+      {
+        "group": "Indo-Aryan:",
+        "pct": 14.6,
+        "count": 15314
+      },
+      {
+        "group": "Chinese:",
+        "pct": 9.4,
+        "count": 9833
+      },
+      {
+        "group": "Southeast Asian Austronesian languages:",
+        "pct": 2.2,
+        "count": 2295
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -1485,7 +1634,8 @@
         "count": 404
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
     "id": "AUS-7",
@@ -1551,16 +1701,40 @@
         "count": 152
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Other Languages",
+        "pct": 63.0,
+        "count": 75333
+      },
+      {
+        "group": "Not stated",
+        "pct": 20.1,
+        "count": 23998
+      },
+      {
+        "group": "Indo-Aryan:",
+        "pct": 7.4,
+        "count": 8856
+      },
+      {
+        "group": "Southeast Asian Austronesian languages:",
+        "pct": 6.2,
+        "count": 7431
+      },
+      {
+        "group": "Chinese:",
+        "pct": 3.3,
+        "count": 3971
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -1733,7 +1907,8 @@
         "count": 131
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
     "id": "AUS-8",
@@ -1799,16 +1974,40 @@
         "count": 886
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Other Languages",
+        "pct": 61.2,
+        "count": 111659
+      },
+      {
+        "group": "Indo-Aryan:",
+        "pct": 14.7,
+        "count": 26925
+      },
+      {
+        "group": "Chinese:",
+        "pct": 10.5,
+        "count": 19153
+      },
+      {
+        "group": "Not stated",
+        "pct": 10.4,
+        "count": 18984
+      },
+      {
+        "group": "Southeast Asian Austronesian languages:",
+        "pct": 3.2,
+        "count": 5861
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -1981,7 +2180,8 @@
         "count": 2784
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
     "id": "AUS-9",
@@ -2047,16 +2247,40 @@
         "count": 3
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Other Languages",
+        "pct": 66.9,
+        "count": 808
+      },
+      {
+        "group": "Not stated",
+        "pct": 29.3,
+        "count": 354
+      },
+      {
+        "group": "Southeast Asian Austronesian languages:",
+        "pct": 2.5,
+        "count": 30
+      },
+      {
+        "group": "Chinese:",
+        "pct": 0.7,
+        "count": 9
+      },
+      {
+        "group": "Indo-Aryan:",
+        "pct": 0.5,
+        "count": 6
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -2229,6 +2453,7 @@
         "count": 0
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   }
 ]
