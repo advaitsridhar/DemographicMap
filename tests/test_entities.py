@@ -5112,7 +5112,7 @@ class AngolaReadsFiguresByPosition(unittest.TestCase):
         with self.assertRaises(SystemExit):
             a.bars("religion", "Bengo", {"TOTAL": 1000, "Catholic": 600, "Islam": 300})
         # Totals that disagree between the two column groups refuse too.
-        first = pages.index(next(p for p in pages if p.startswith("Quadro 6.2"))) + 2
+        first = pages.index(next(p for p in pages if p.startswith("Lista") and "Quadro 6.2" in p)) + 2
         cabinda = next(l for l in pages[first].splitlines() if l.startswith("Cabinda"))
         pages[first] = pages[first].replace(cabinda, cabinda.replace("10[", "11[", 1), 1)
         with self.assertRaises(SystemExit):
