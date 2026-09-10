@@ -31,6 +31,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import gzip
 import io
 import json
 import re
@@ -73,7 +74,15 @@ def get(url: str, *, timeout: int = 60, limit: int | None = HEAD_BYTES) -> dict[
             out["content_type"] = r.headers.get("Content-Type", "")
             out["content_length"] = r.headers.get("Content-Length")
             out["final_url"] = r.geturl()
-            out["body"] = r.read(limit) if limit else r.read()
+            body = r.read(limit) if limit else r.read()
+            # Some hosts (IBGE's API among them) gzip the body unasked; a
+            # gzip magic number is not a file kind, so undo it here.
+            if body[:2] == b"\x1f\x8b":
+                try:
+                    body = gzip.decompress(body)
+                except Exception:                            # noqa: BLE001 -- truncated
+                    pass                        # a partial read cannot be inflated
+            out["body"] = body
     except urllib.error.HTTPError as err:
         out["status"] = err.code
         out["body"] = err.read(2000)

@@ -22,6 +22,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import gzip
 import json
 import re
 import sys
@@ -36,7 +37,12 @@ AGENT = "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap)"
 def get(url: str) -> Any:
     req = urllib.request.Request(url, headers={"User-Agent": AGENT, "Accept": "application/json"})
     with urllib.request.urlopen(req, timeout=120) as r:
-        return json.loads(r.read().decode("utf-8"))
+        data = r.read()
+    # IBGE compresses the body whether or not it was asked to; urllib does not
+    # undo that, and the first run of this probe died on byte 0x8b.
+    if data[:2] == b"\x1f\x8b":
+        data = gzip.decompress(data)
+    return json.loads(data.decode("utf-8"))
 
 
 def describe(table: str) -> None:
