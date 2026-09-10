@@ -2618,6 +2618,25 @@ columns are citizenship and are not read as ethnicity, and its "linguistic
 minorities" cells are the partial list the paragraphs above describe, so
 language keeps its gap.
 
+### Wikipedia transcriptions: what was measured and left
+
+`scripts/probe_wikitable.py` prints an article's tables compactly, and one
+runner pass read the list articles for the largest countries still empty at
+the first level. Three carried a census table by region and became specs in
+`scripts/fetch_census/wiki_census.py` or `thailand.py` (Thailand, Kazakhstan,
+Cambodia). The rest did not:
+
+* **Taiwan** -- *Demographics of Taiwan* has languages used at home by
+  division, but Mandarin 83.5% beside Hokkien 81.9% is a multi-response
+  question, not a composition, and is not read.
+* **Kazakhstan, ethnicity** -- *Ethnic demography of Kazakhstan* carries the
+  national series only; the 2021 census's ethnicity by region is on no list
+  article measured.
+* **Romania, Peru, Uzbekistan, Ecuador, Guatemala, Rwanda** -- the demographics
+  and religion articles carry national series, age pyramids and vital
+  statistics by region, and no ethnicity, religion or language table by
+  county, department or province.
+
 ### South Africa: a table whose separator is a space
 
 Statistics South Africa publishes Census 2022 through a portal at
