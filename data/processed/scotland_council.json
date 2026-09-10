@@ -1,0 +1,7074 @@
+[
+  {
+    "id": "GBR-SCO-Aberdeen_City",
+    "level": "admin2",
+    "name": "Aberdeen City",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 222793,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 48.1,
+        "count": 107197
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 25.3,
+        "count": 56267
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 8.9,
+        "count": 19751
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 7.2,
+        "count": 15992
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.7,
+        "count": 15030
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.9,
+        "count": 4293
+      },
+      {
+        "group": "Hindu",
+        "pct": 1.0,
+        "count": 2301
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.4,
+        "count": 884
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 794
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 155
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 129
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 85.5,
+        "count": 184335
+      },
+      {
+        "group": "Other",
+        "pct": 9.2,
+        "count": 19853
+      },
+      {
+        "group": "Polish",
+        "pct": 2.9,
+        "count": 6263
+      },
+      {
+        "group": "Scots",
+        "pct": 1.9,
+        "count": 4178
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.3,
+        "count": 563
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.2,
+        "count": 405
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 75.3,
+        "count": 167727
+      },
+      {
+        "group": "Other British",
+        "pct": 7.6,
+        "count": 16910
+      },
+      {
+        "group": "Other White",
+        "pct": 4.7,
+        "count": 10555
+      },
+      {
+        "group": "Polish",
+        "pct": 3.2,
+        "count": 7031
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 2.2,
+        "count": 5009
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 1.5,
+        "count": 3384
+      },
+      {
+        "group": "Irish",
+        "pct": 1.0,
+        "count": 2213
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 1.0,
+        "count": 2187
+      },
+      {
+        "group": "Other Asian",
+        "pct": 1.0,
+        "count": 2319
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.7,
+        "count": 1488
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.5,
+        "count": 1042
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.4,
+        "count": 993
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.3,
+        "count": 587
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.2,
+        "count": 448
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 279
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.1,
+        "count": 296
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.1,
+        "count": 214
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 78
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Aberdeenshire",
+    "level": "admin2",
+    "name": "Aberdeenshire",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 252973,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 42.8,
+        "count": 108376
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 36.3,
+        "count": 91888
+      },
+      {
+        "group": "Other Christian",
+        "pct": 7.6,
+        "count": 19101
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 7.6,
+        "count": 19264
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 4.8,
+        "count": 12136
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.3,
+        "count": 691
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 676
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.2,
+        "count": 437
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 282
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 51
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 90.1,
+        "count": 219664
+      },
+      {
+        "group": "Scots",
+        "pct": 5.5,
+        "count": 13495
+      },
+      {
+        "group": "Other",
+        "pct": 3.0,
+        "count": 7268
+      },
+      {
+        "group": "Polish",
+        "pct": 1.1,
+        "count": 2787
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.2,
+        "count": 418
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.1,
+        "count": 194
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 82.2,
+        "count": 207936
+      },
+      {
+        "group": "Other British",
+        "pct": 12.3,
+        "count": 31158
+      },
+      {
+        "group": "Other White",
+        "pct": 2.2,
+        "count": 5661
+      },
+      {
+        "group": "Polish",
+        "pct": 1.2,
+        "count": 3020
+      },
+      {
+        "group": "Irish",
+        "pct": 0.5,
+        "count": 1162
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.3,
+        "count": 771
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.3,
+        "count": 749
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.2,
+        "count": 473
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 424
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.2,
+        "count": 487
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 175
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.1,
+        "count": 253
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.1,
+        "count": 138
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.1,
+        "count": 159
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.1,
+        "count": 131
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.1,
+        "count": 163
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 34
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Angus",
+    "level": "admin2",
+    "name": "Angus",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 115978,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Church of Scotland",
+        "pct": 40.8,
+        "count": 47361
+      },
+      {
+        "group": "No religion",
+        "pct": 39.9,
+        "count": 46256
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 6.7,
+        "count": 7765
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 6.6,
+        "count": 7670
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.1,
+        "count": 5896
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.3,
+        "count": 395
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 329
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 168
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 107
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 13
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 95.5,
+        "count": 107368
+      },
+      {
+        "group": "Other",
+        "pct": 2.1,
+        "count": 2309
+      },
+      {
+        "group": "Scots",
+        "pct": 1.4,
+        "count": 1533
+      },
+      {
+        "group": "Polish",
+        "pct": 0.8,
+        "count": 921
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.2,
+        "count": 262
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.0,
+        "count": 54
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 88.2,
+        "count": 102316
+      },
+      {
+        "group": "Other British",
+        "pct": 7.7,
+        "count": 8884
+      },
+      {
+        "group": "Other White",
+        "pct": 1.3,
+        "count": 1535
+      },
+      {
+        "group": "Polish",
+        "pct": 0.9,
+        "count": 1014
+      },
+      {
+        "group": "Irish",
+        "pct": 0.5,
+        "count": 530
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.2,
+        "count": 189
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.2,
+        "count": 264
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.2,
+        "count": 266
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 264
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.2,
+        "count": 211
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.1,
+        "count": 163
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.1,
+        "count": 124
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.1,
+        "count": 96
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.0,
+        "count": 29
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Argyll_&_Bute",
+    "level": "admin2",
+    "name": "Argyll & Bute",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 88166,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Church of Scotland",
+        "pct": 40.0,
+        "count": 35298
+      },
+      {
+        "group": "No religion",
+        "pct": 32.0,
+        "count": 28252
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 11.3,
+        "count": 9960
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 8.0,
+        "count": 7055
+      },
+      {
+        "group": "Other Christian",
+        "pct": 7.7,
+        "count": 6779
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 316
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.2,
+        "count": 212
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.2,
+        "count": 186
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 52
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 13
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 95.1,
+        "count": 81526
+      },
+      {
+        "group": "Other",
+        "pct": 2.2,
+        "count": 1896
+      },
+      {
+        "group": "Gaelic",
+        "pct": 1.5,
+        "count": 1278
+      },
+      {
+        "group": "Scots",
+        "pct": 0.5,
+        "count": 395
+      },
+      {
+        "group": "Polish",
+        "pct": 0.5,
+        "count": 437
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.2,
+        "count": 152
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 78.8,
+        "count": 69497
+      },
+      {
+        "group": "Other British",
+        "pct": 16.6,
+        "count": 14675
+      },
+      {
+        "group": "Other White",
+        "pct": 1.8,
+        "count": 1563
+      },
+      {
+        "group": "Irish",
+        "pct": 0.8,
+        "count": 721
+      },
+      {
+        "group": "Polish",
+        "pct": 0.6,
+        "count": 515
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.3,
+        "count": 277
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 146
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.2,
+        "count": 161
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 96
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.1,
+        "count": 102
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.1,
+        "count": 115
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.1,
+        "count": 113
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.1,
+        "count": 52
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.0,
+        "count": 34
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Clackmannanshire",
+    "level": "admin2",
+    "name": "Clackmannanshire",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 51442,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 43.5,
+        "count": 22376
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 34.5,
+        "count": 17762
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 9.4,
+        "count": 4814
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 6.5,
+        "count": 3329
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.0,
+        "count": 2579
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.6,
+        "count": 334
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 147
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 52
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 29
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 95.8,
+        "count": 47598
+      },
+      {
+        "group": "Other",
+        "pct": 2.1,
+        "count": 1023
+      },
+      {
+        "group": "Polish",
+        "pct": 0.9,
+        "count": 450
+      },
+      {
+        "group": "Scots",
+        "pct": 0.8,
+        "count": 416
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.3,
+        "count": 129
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.1,
+        "count": 57
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 88.2,
+        "count": 45387
+      },
+      {
+        "group": "Other British",
+        "pct": 7.4,
+        "count": 3829
+      },
+      {
+        "group": "Other White",
+        "pct": 1.1,
+        "count": 559
+      },
+      {
+        "group": "Polish",
+        "pct": 1.0,
+        "count": 499
+      },
+      {
+        "group": "Irish",
+        "pct": 0.6,
+        "count": 306
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.6,
+        "count": 312
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.2,
+        "count": 128
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.2,
+        "count": 80
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 90
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.2,
+        "count": 86
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 68
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.1,
+        "count": 48
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.0,
+        "count": 18
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Dumfries_&_Galloway",
+    "level": "admin2",
+    "name": "Dumfries & Galloway",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 151324,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Church of Scotland",
+        "pct": 43.1,
+        "count": 65203
+      },
+      {
+        "group": "No religion",
+        "pct": 34.6,
+        "count": 52303
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 8.1,
+        "count": 12237
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.7,
+        "count": 10121
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 6.5,
+        "count": 9885
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.3,
+        "count": 432
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.3,
+        "count": 406
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 465
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 120
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 101
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 51
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 96.5,
+        "count": 141644
+      },
+      {
+        "group": "Other",
+        "pct": 1.6,
+        "count": 2283
+      },
+      {
+        "group": "Scots",
+        "pct": 1.1,
+        "count": 1589
+      },
+      {
+        "group": "Polish",
+        "pct": 0.6,
+        "count": 881
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.2,
+        "count": 308
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.0,
+        "count": 60
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 80.3,
+        "count": 121563
+      },
+      {
+        "group": "Other British",
+        "pct": 16.2,
+        "count": 24462
+      },
+      {
+        "group": "Other White",
+        "pct": 0.9,
+        "count": 1380
+      },
+      {
+        "group": "Irish",
+        "pct": 0.7,
+        "count": 1063
+      },
+      {
+        "group": "Polish",
+        "pct": 0.6,
+        "count": 983
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.3,
+        "count": 413
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.2,
+        "count": 301
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 279
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.2,
+        "count": 230
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 102
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.1,
+        "count": 167
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.1,
+        "count": 125
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.0,
+        "count": 68
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Dundee_City",
+    "level": "admin2",
+    "name": "Dundee City",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 147268,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 40.8,
+        "count": 60155
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 25.3,
+        "count": 37249
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 18.3,
+        "count": 26991
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 6.5,
+        "count": 9636
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.1,
+        "count": 7574
+      },
+      {
+        "group": "Muslim",
+        "pct": 2.6,
+        "count": 3875
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.5,
+        "count": 706
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.3,
+        "count": 391
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 476
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 152
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 63
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 91.5,
+        "count": 130368
+      },
+      {
+        "group": "Other",
+        "pct": 6.3,
+        "count": 8926
+      },
+      {
+        "group": "Polish",
+        "pct": 1.2,
+        "count": 1731
+      },
+      {
+        "group": "Scots",
+        "pct": 0.7,
+        "count": 1008
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.3,
+        "count": 408
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.0,
+        "count": 48
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 84.1,
+        "count": 123827
+      },
+      {
+        "group": "Other British",
+        "pct": 5.3,
+        "count": 7783
+      },
+      {
+        "group": "Other White",
+        "pct": 2.3,
+        "count": 3393
+      },
+      {
+        "group": "Polish",
+        "pct": 1.4,
+        "count": 1990
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 1.4,
+        "count": 2047
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 1.0,
+        "count": 1417
+      },
+      {
+        "group": "Irish",
+        "pct": 0.9,
+        "count": 1369
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.9,
+        "count": 1274
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.8,
+        "count": 1163
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.5,
+        "count": 685
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.5,
+        "count": 790
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.5,
+        "count": 693
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.2,
+        "count": 310
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 98
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.1,
+        "count": 167
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.1,
+        "count": 153
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 66
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 36
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-East_Ayrshire",
+    "level": "admin2",
+    "name": "East Ayrshire",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 122767,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Church of Scotland",
+        "pct": 41.5,
+        "count": 50960
+      },
+      {
+        "group": "No religion",
+        "pct": 37.4,
+        "count": 45904
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 10.0,
+        "count": 12227
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 6.6,
+        "count": 8163
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.6,
+        "count": 4427
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.3,
+        "count": 374
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 337
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 163
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 65
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 88
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 59
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 96.8,
+        "count": 114836
+      },
+      {
+        "group": "Other",
+        "pct": 1.4,
+        "count": 1625
+      },
+      {
+        "group": "Scots",
+        "pct": 1.2,
+        "count": 1403
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.4,
+        "count": 421
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 214
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.1,
+        "count": 161
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 93.0,
+        "count": 114184
+      },
+      {
+        "group": "Other British",
+        "pct": 4.5,
+        "count": 5574
+      },
+      {
+        "group": "Other White",
+        "pct": 0.6,
+        "count": 683
+      },
+      {
+        "group": "Irish",
+        "pct": 0.5,
+        "count": 633
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.3,
+        "count": 315
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 230
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.2,
+        "count": 253
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.2,
+        "count": 272
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.2,
+        "count": 189
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.1,
+        "count": 123
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.1,
+        "count": 72
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.0,
+        "count": 35
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-East_Dunbartonshire",
+    "level": "admin2",
+    "name": "East Dunbartonshire",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 105026,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Church of Scotland",
+        "pct": 35.6,
+        "count": 37415
+      },
+      {
+        "group": "No religion",
+        "pct": 28.2,
+        "count": 29663
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 22.3,
+        "count": 23390
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 6.4,
+        "count": 6765
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.6,
+        "count": 4801
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.0,
+        "count": 1044
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.9,
+        "count": 942
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.6,
+        "count": 605
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 184
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 151
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 66
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 94.8,
+        "count": 96655
+      },
+      {
+        "group": "Other",
+        "pct": 4.2,
+        "count": 4285
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.4,
+        "count": 365
+      },
+      {
+        "group": "Scots",
+        "pct": 0.4,
+        "count": 383
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.2,
+        "count": 183
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 128
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 88.6,
+        "count": 93051
+      },
+      {
+        "group": "Other British",
+        "pct": 4.8,
+        "count": 5026
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 1.5,
+        "count": 1569
+      },
+      {
+        "group": "Irish",
+        "pct": 1.2,
+        "count": 1248
+      },
+      {
+        "group": "Other White",
+        "pct": 1.1,
+        "count": 1126
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.7,
+        "count": 752
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.7,
+        "count": 701
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.4,
+        "count": 420
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.4,
+        "count": 371
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.2,
+        "count": 169
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.2,
+        "count": 170
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 144
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.1,
+        "count": 136
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-East_Lothian",
+    "level": "admin2",
+    "name": "East Lothian",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 99717,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 40.9,
+        "count": 40740
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 36.5,
+        "count": 36354
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 9.7,
+        "count": 9704
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 6.5,
+        "count": 6485
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.3,
+        "count": 5268
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.5,
+        "count": 508
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 256
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.2,
+        "count": 176
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 119
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 65
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 42
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 95.5,
+        "count": 91909
+      },
+      {
+        "group": "Other",
+        "pct": 2.7,
+        "count": 2627
+      },
+      {
+        "group": "Scots",
+        "pct": 0.7,
+        "count": 714
+      },
+      {
+        "group": "Polish",
+        "pct": 0.7,
+        "count": 710
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.2,
+        "count": 182
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.1,
+        "count": 58
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 85.6,
+        "count": 85347
+      },
+      {
+        "group": "Other British",
+        "pct": 9.3,
+        "count": 9244
+      },
+      {
+        "group": "Other White",
+        "pct": 1.7,
+        "count": 1726
+      },
+      {
+        "group": "Irish",
+        "pct": 0.9,
+        "count": 870
+      },
+      {
+        "group": "Polish",
+        "pct": 0.8,
+        "count": 811
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.4,
+        "count": 363
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.3,
+        "count": 288
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.3,
+        "count": 275
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 209
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.2,
+        "count": 177
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.1,
+        "count": 140
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.1,
+        "count": 59
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.1,
+        "count": 74
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.0,
+        "count": 28
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-East_Renfrewshire",
+    "level": "admin2",
+    "name": "East Renfrewshire",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 90574,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Church of Scotland",
+        "pct": 33.4,
+        "count": 30279
+      },
+      {
+        "group": "No religion",
+        "pct": 26.5,
+        "count": 24041
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 22.2,
+        "count": 20135
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 6.3,
+        "count": 5737
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.1,
+        "count": 3724
+      },
+      {
+        "group": "Muslim",
+        "pct": 3.3,
+        "count": 3002
+      },
+      {
+        "group": "Jewish",
+        "pct": 2.6,
+        "count": 2399
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.6,
+        "count": 548
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.4,
+        "count": 366
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.2,
+        "count": 172
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 171
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 93.7,
+        "count": 82170
+      },
+      {
+        "group": "Other",
+        "pct": 5.4,
+        "count": 4721
+      },
+      {
+        "group": "Scots",
+        "pct": 0.3,
+        "count": 264
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.2,
+        "count": 189
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.2,
+        "count": 133
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 208
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 87.0,
+        "count": 78794
+      },
+      {
+        "group": "Other British",
+        "pct": 4.1,
+        "count": 3740
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 3.1,
+        "count": 2779
+      },
+      {
+        "group": "Irish",
+        "pct": 1.5,
+        "count": 1390
+      },
+      {
+        "group": "Other White",
+        "pct": 1.2,
+        "count": 1048
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 1.2,
+        "count": 1061
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.5,
+        "count": 476
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.4,
+        "count": 386
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.3,
+        "count": 241
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 223
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.1,
+        "count": 116
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.1,
+        "count": 131
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.1,
+        "count": 107
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 7
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-City_of_Edinburgh",
+    "level": "admin2",
+    "name": "City of Edinburgh",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 476626,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 44.8,
+        "count": 213651
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 24.3,
+        "count": 115634
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 12.1,
+        "count": 57868
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 7.1,
+        "count": 33771
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.9,
+        "count": 33063
+      },
+      {
+        "group": "Muslim",
+        "pct": 2.6,
+        "count": 12434
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.8,
+        "count": 3996
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.5,
+        "count": 2380
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 1864
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.2,
+        "count": 855
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.2,
+        "count": 1110
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 86.8,
+        "count": 399357
+      },
+      {
+        "group": "Other",
+        "pct": 9.8,
+        "count": 45155
+      },
+      {
+        "group": "Polish",
+        "pct": 2.4,
+        "count": 11160
+      },
+      {
+        "group": "Scots",
+        "pct": 0.6,
+        "count": 2543
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.2,
+        "count": 867
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.2,
+        "count": 1021
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 70.3,
+        "count": 334987
+      },
+      {
+        "group": "Other British",
+        "pct": 11.8,
+        "count": 56132
+      },
+      {
+        "group": "Other White",
+        "pct": 5.1,
+        "count": 24237
+      },
+      {
+        "group": "Polish",
+        "pct": 2.7,
+        "count": 12820
+      },
+      {
+        "group": "Irish",
+        "pct": 1.8,
+        "count": 8603
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 1.7,
+        "count": 8076
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 1.4,
+        "count": 6470
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 1.2,
+        "count": 5858
+      },
+      {
+        "group": "Other Asian",
+        "pct": 1.0,
+        "count": 4583
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.9,
+        "count": 4087
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.9,
+        "count": 4364
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.5,
+        "count": 2500
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.3,
+        "count": 1277
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.2,
+        "count": 1103
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 388
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.1,
+        "count": 505
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.1,
+        "count": 403
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 110
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 123
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Na_h-Eileanan_Siar",
+    "level": "admin2",
+    "name": "Na h-Eileanan Siar",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 27684,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Church of Scotland",
+        "pct": 42.5,
+        "count": 11766
+      },
+      {
+        "group": "Other Christian",
+        "pct": 19.1,
+        "count": 5274
+      },
+      {
+        "group": "No religion",
+        "pct": 18.1,
+        "count": 5014
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 12.3,
+        "count": 3412
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 7.1,
+        "count": 1979
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 97
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.2,
+        "count": 61
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 40
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 37
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 57.5,
+        "count": 15477
+      },
+      {
+        "group": "Gaelic",
+        "pct": 40.4,
+        "count": 10882
+      },
+      {
+        "group": "Other",
+        "pct": 1.5,
+        "count": 413
+      },
+      {
+        "group": "Scots",
+        "pct": 0.3,
+        "count": 75
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 46
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.1,
+        "count": 36
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 86.9,
+        "count": 24066
+      },
+      {
+        "group": "Other British",
+        "pct": 10.5,
+        "count": 2903
+      },
+      {
+        "group": "Other White",
+        "pct": 1.0,
+        "count": 274
+      },
+      {
+        "group": "Irish",
+        "pct": 0.5,
+        "count": 126
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 60
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.2,
+        "count": 67
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.2,
+        "count": 51
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.1,
+        "count": 26
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.1,
+        "count": 41
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Falkirk",
+    "level": "admin2",
+    "name": "Falkirk",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 155990,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 39.0,
+        "count": 60762
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 36.5,
+        "count": 56987
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 12.3,
+        "count": 19181
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 6.6,
+        "count": 10304
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.1,
+        "count": 6406
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.9,
+        "count": 1415
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 396
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 211
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 159
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 122
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 47
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 95.9,
+        "count": 144157
+      },
+      {
+        "group": "Other",
+        "pct": 2.3,
+        "count": 3497
+      },
+      {
+        "group": "Scots",
+        "pct": 0.8,
+        "count": 1195
+      },
+      {
+        "group": "Polish",
+        "pct": 0.6,
+        "count": 967
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.3,
+        "count": 402
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.1,
+        "count": 122
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 91.3,
+        "count": 142432
+      },
+      {
+        "group": "Other British",
+        "pct": 4.5,
+        "count": 7025
+      },
+      {
+        "group": "Other White",
+        "pct": 0.9,
+        "count": 1473
+      },
+      {
+        "group": "Polish",
+        "pct": 0.7,
+        "count": 1080
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.7,
+        "count": 1148
+      },
+      {
+        "group": "Irish",
+        "pct": 0.6,
+        "count": 882
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.3,
+        "count": 413
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.2,
+        "count": 334
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 275
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 145
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.1,
+        "count": 226
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.1,
+        "count": 205
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.1,
+        "count": 92
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.1,
+        "count": 78
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.1,
+        "count": 137
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 17
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Fife",
+    "level": "admin2",
+    "name": "Fife",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 365198,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 46.3,
+        "count": 168932
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 31.4,
+        "count": 114773
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 8.5,
+        "count": 31092
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 6.9,
+        "count": 25069
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.4,
+        "count": 19757
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.7,
+        "count": 2591
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 1190
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.2,
+        "count": 736
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 489
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 245
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 324
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 94.9,
+        "count": 334624
+      },
+      {
+        "group": "Other",
+        "pct": 3.0,
+        "count": 10719
+      },
+      {
+        "group": "Scots",
+        "pct": 1.0,
+        "count": 3437
+      },
+      {
+        "group": "Polish",
+        "pct": 0.8,
+        "count": 2671
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.3,
+        "count": 951
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.0,
+        "count": 156
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 85.7,
+        "count": 312957
+      },
+      {
+        "group": "Other British",
+        "pct": 8.6,
+        "count": 31464
+      },
+      {
+        "group": "Other White",
+        "pct": 1.8,
+        "count": 6495
+      },
+      {
+        "group": "Polish",
+        "pct": 0.8,
+        "count": 3058
+      },
+      {
+        "group": "Irish",
+        "pct": 0.6,
+        "count": 2260
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.5,
+        "count": 1902
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.5,
+        "count": 1735
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.3,
+        "count": 1257
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.3,
+        "count": 1066
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.3,
+        "count": 927
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.2,
+        "count": 684
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 316
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.1,
+        "count": 234
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.1,
+        "count": 299
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.1,
+        "count": 218
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 118
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 141
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 47
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Glasgow_City",
+    "level": "admin2",
+    "name": "Glasgow City",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 593245,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 31.0,
+        "count": 183835
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 27.3,
+        "count": 161685
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 23.1,
+        "count": 136889
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 7.1,
+        "count": 42050
+      },
+      {
+        "group": "Muslim",
+        "pct": 5.4,
+        "count": 32117
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.1,
+        "count": 24380
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.7,
+        "count": 4074
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.5,
+        "count": 3149
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.4,
+        "count": 2570
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 1599
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.2,
+        "count": 897
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 86.6,
+        "count": 496027
+      },
+      {
+        "group": "Other",
+        "pct": 10.9,
+        "count": 62379
+      },
+      {
+        "group": "Polish",
+        "pct": 1.3,
+        "count": 7379
+      },
+      {
+        "group": "Scots",
+        "pct": 0.5,
+        "count": 2826
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.4,
+        "count": 2305
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.3,
+        "count": 1717
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 78.6,
+        "count": 466241
+      },
+      {
+        "group": "Other British",
+        "pct": 4.1,
+        "count": 24154
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 3.8,
+        "count": 22405
+      },
+      {
+        "group": "Other White",
+        "pct": 2.4,
+        "count": 14125
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 2.1,
+        "count": 12298
+      },
+      {
+        "group": "Irish",
+        "pct": 1.9,
+        "count": 11228
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 1.8,
+        "count": 10689
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 1.5,
+        "count": 8640
+      },
+      {
+        "group": "Polish",
+        "pct": 1.4,
+        "count": 8406
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.9,
+        "count": 5566
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.5,
+        "count": 2879
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.4,
+        "count": 2631
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.2,
+        "count": 1170
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 407
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.1,
+        "count": 458
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.1,
+        "count": 783
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.1,
+        "count": 820
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 142
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 203
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Highland",
+    "level": "admin2",
+    "name": "Highland",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 232132,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 37.3,
+        "count": 86641
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 36.9,
+        "count": 85550
+      },
+      {
+        "group": "Other Christian",
+        "pct": 9.1,
+        "count": 21235
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 7.9,
+        "count": 18442
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 7.6,
+        "count": 17677
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 966
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.3,
+        "count": 691
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.2,
+        "count": 579
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 199
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 92
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 60
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 92.9,
+        "count": 208714
+      },
+      {
+        "group": "Other",
+        "pct": 2.5,
+        "count": 5540
+      },
+      {
+        "group": "Gaelic",
+        "pct": 2.4,
+        "count": 5447
+      },
+      {
+        "group": "Polish",
+        "pct": 1.4,
+        "count": 3040
+      },
+      {
+        "group": "Scots",
+        "pct": 0.5,
+        "count": 1233
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.3,
+        "count": 632
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 79.9,
+        "count": 185430
+      },
+      {
+        "group": "Other British",
+        "pct": 14.7,
+        "count": 34135
+      },
+      {
+        "group": "Other White",
+        "pct": 1.9,
+        "count": 4311
+      },
+      {
+        "group": "Polish",
+        "pct": 1.5,
+        "count": 3425
+      },
+      {
+        "group": "Irish",
+        "pct": 0.6,
+        "count": 1389
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.3,
+        "count": 664
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.2,
+        "count": 462
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 379
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.2,
+        "count": 574
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 291
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.1,
+        "count": 234
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.1,
+        "count": 217
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.1,
+        "count": 202
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 111
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 82
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 105
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.0,
+        "count": 109
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Inverclyde",
+    "level": "admin2",
+    "name": "Inverclyde",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 81485,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 37.0,
+        "count": 30156
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 33.0,
+        "count": 26852
+      },
+      {
+        "group": "No religion",
+        "pct": 19.2,
+        "count": 15674
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 5.9,
+        "count": 4846
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.1,
+        "count": 3340
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.2,
+        "count": 197
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 142
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 71
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 101
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 98
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 8
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 97.4,
+        "count": 76949
+      },
+      {
+        "group": "Other",
+        "pct": 1.6,
+        "count": 1241
+      },
+      {
+        "group": "Scots",
+        "pct": 0.5,
+        "count": 398
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.3,
+        "count": 212
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.1,
+        "count": 98
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 97
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 93.8,
+        "count": 76428
+      },
+      {
+        "group": "Other British",
+        "pct": 3.0,
+        "count": 2485
+      },
+      {
+        "group": "Irish",
+        "pct": 0.9,
+        "count": 710
+      },
+      {
+        "group": "Other White",
+        "pct": 0.8,
+        "count": 633
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.3,
+        "count": 256
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.2,
+        "count": 179
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.2,
+        "count": 171
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 196
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 112
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.1,
+        "count": 120
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.1,
+        "count": 89
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.0,
+        "count": 33
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Midlothian",
+    "level": "admin2",
+    "name": "Midlothian",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 83187,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 45.2,
+        "count": 37613
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 33.7,
+        "count": 28021
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 9.8,
+        "count": 8141
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 6.2,
+        "count": 5166
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.0,
+        "count": 3311
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.6,
+        "count": 508
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 208
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 84
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 84
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 20
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 96.2,
+        "count": 77225
+      },
+      {
+        "group": "Other",
+        "pct": 2.3,
+        "count": 1878
+      },
+      {
+        "group": "Scots",
+        "pct": 0.6,
+        "count": 513
+      },
+      {
+        "group": "Polish",
+        "pct": 0.5,
+        "count": 396
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.3,
+        "count": 233
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.0,
+        "count": 35
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 90.0,
+        "count": 74875
+      },
+      {
+        "group": "Other British",
+        "pct": 5.8,
+        "count": 4795
+      },
+      {
+        "group": "Other White",
+        "pct": 1.3,
+        "count": 1044
+      },
+      {
+        "group": "Irish",
+        "pct": 0.6,
+        "count": 474
+      },
+      {
+        "group": "Polish",
+        "pct": 0.5,
+        "count": 455
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.4,
+        "count": 371
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.3,
+        "count": 210
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.2,
+        "count": 180
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 130
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.2,
+        "count": 188
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.2,
+        "count": 157
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 72
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.1,
+        "count": 65
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.1,
+        "count": 53
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 41
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Moray",
+    "level": "admin2",
+    "name": "Moray",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 93295,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 41.2,
+        "count": 38450
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 34.0,
+        "count": 31682
+      },
+      {
+        "group": "Other Christian",
+        "pct": 9.4,
+        "count": 8748
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 7.7,
+        "count": 7149
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 6.6,
+        "count": 6146
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.7,
+        "count": 611
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.3,
+        "count": 236
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.2,
+        "count": 178
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 47
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 92.6,
+        "count": 83463
+      },
+      {
+        "group": "Scots",
+        "pct": 3.9,
+        "count": 3509
+      },
+      {
+        "group": "Other",
+        "pct": 2.1,
+        "count": 1918
+      },
+      {
+        "group": "Polish",
+        "pct": 1.0,
+        "count": 904
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.3,
+        "count": 257
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.1,
+        "count": 127
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 77.7,
+        "count": 72470
+      },
+      {
+        "group": "Other British",
+        "pct": 18.0,
+        "count": 16823
+      },
+      {
+        "group": "Other White",
+        "pct": 1.6,
+        "count": 1476
+      },
+      {
+        "group": "Polish",
+        "pct": 1.1,
+        "count": 985
+      },
+      {
+        "group": "Irish",
+        "pct": 0.5,
+        "count": 430
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.2,
+        "count": 232
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.2,
+        "count": 149
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 164
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.2,
+        "count": 169
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 79
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.1,
+        "count": 101
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.1,
+        "count": 78
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.0,
+        "count": 30
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-North_Ayrshire",
+    "level": "admin2",
+    "name": "North Ayrshire",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 138146,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Church of Scotland",
+        "pct": 39.6,
+        "count": 54718
+      },
+      {
+        "group": "No religion",
+        "pct": 33.6,
+        "count": 46472
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 14.7,
+        "count": 20254
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 7.2,
+        "count": 9901
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.1,
+        "count": 5689
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 371
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.2,
+        "count": 210
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.2,
+        "count": 218
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 204
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 54
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 97.2,
+        "count": 130020
+      },
+      {
+        "group": "Other",
+        "pct": 1.4,
+        "count": 1876
+      },
+      {
+        "group": "Scots",
+        "pct": 0.8,
+        "count": 1015
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.4,
+        "count": 477
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 211
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.1,
+        "count": 129
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 92.0,
+        "count": 127140
+      },
+      {
+        "group": "Other British",
+        "pct": 5.2,
+        "count": 7204
+      },
+      {
+        "group": "Other White",
+        "pct": 0.8,
+        "count": 1051
+      },
+      {
+        "group": "Irish",
+        "pct": 0.7,
+        "count": 948
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 247
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.2,
+        "count": 319
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.2,
+        "count": 328
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 315
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.1,
+        "count": 108
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.1,
+        "count": 175
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.1,
+        "count": 80
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.0,
+        "count": 22
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-North_Lanarkshire",
+    "level": "admin2",
+    "name": "North Lanarkshire",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 337727,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 34.6,
+        "count": 116931
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 30.4,
+        "count": 102754
+      },
+      {
+        "group": "No religion",
+        "pct": 24.3,
+        "count": 82180
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 5.8,
+        "count": 19709
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.3,
+        "count": 11191
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.0,
+        "count": 3315
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 527
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 336
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 347
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 371
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 66
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 96.2,
+        "count": 313245
+      },
+      {
+        "group": "Other",
+        "pct": 2.1,
+        "count": 6678
+      },
+      {
+        "group": "Polish",
+        "pct": 0.8,
+        "count": 2715
+      },
+      {
+        "group": "Scots",
+        "pct": 0.5,
+        "count": 1516
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.3,
+        "count": 828
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.1,
+        "count": 483
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 92.8,
+        "count": 313356
+      },
+      {
+        "group": "Other British",
+        "pct": 2.3,
+        "count": 7892
+      },
+      {
+        "group": "Irish",
+        "pct": 1.3,
+        "count": 4394
+      },
+      {
+        "group": "Polish",
+        "pct": 0.9,
+        "count": 3009
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.9,
+        "count": 3003
+      },
+      {
+        "group": "Other White",
+        "pct": 0.5,
+        "count": 1823
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.3,
+        "count": 997
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.3,
+        "count": 898
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.2,
+        "count": 708
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.2,
+        "count": 523
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 205
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.1,
+        "count": 445
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 83
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 77
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 134
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.0,
+        "count": 118
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Orkney_Islands",
+    "level": "admin2",
+    "name": "Orkney Islands",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 21349,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Church of Scotland",
+        "pct": 40.4,
+        "count": 8619
+      },
+      {
+        "group": "No religion",
+        "pct": 39.2,
+        "count": 8363
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 9.0,
+        "count": 1927
+      },
+      {
+        "group": "Other Christian",
+        "pct": 7.6,
+        "count": 1619
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 2.8,
+        "count": 606
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.6,
+        "count": 131
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.2,
+        "count": 44
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 13
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.1,
+        "count": 20
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 93.9,
+        "count": 19441
+      },
+      {
+        "group": "Scots",
+        "pct": 3.8,
+        "count": 788
+      },
+      {
+        "group": "Other",
+        "pct": 1.5,
+        "count": 317
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.3,
+        "count": 64
+      },
+      {
+        "group": "Polish",
+        "pct": 0.3,
+        "count": 69
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.1,
+        "count": 25
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 79.4,
+        "count": 16960
+      },
+      {
+        "group": "Other British",
+        "pct": 17.7,
+        "count": 3777
+      },
+      {
+        "group": "Other White",
+        "pct": 1.3,
+        "count": 269
+      },
+      {
+        "group": "Irish",
+        "pct": 0.5,
+        "count": 100
+      },
+      {
+        "group": "Polish",
+        "pct": 0.4,
+        "count": 84
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.2,
+        "count": 39
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.1,
+        "count": 15
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.1,
+        "count": 18
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.1,
+        "count": 18
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.1,
+        "count": 31
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.1,
+        "count": 13
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Perth_&_Kinross",
+    "level": "admin2",
+    "name": "Perth & Kinross",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 146652,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Church of Scotland",
+        "pct": 38.5,
+        "count": 56449
+      },
+      {
+        "group": "No religion",
+        "pct": 37.2,
+        "count": 54563
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 8.9,
+        "count": 13041
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 7.1,
+        "count": 10437
+      },
+      {
+        "group": "Other Christian",
+        "pct": 7.0,
+        "count": 10278
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.5,
+        "count": 741
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 405
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.2,
+        "count": 318
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.2,
+        "count": 314
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 57
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 49
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 94.0,
+        "count": 133785
+      },
+      {
+        "group": "Other",
+        "pct": 3.2,
+        "count": 4556
+      },
+      {
+        "group": "Polish",
+        "pct": 1.6,
+        "count": 2216
+      },
+      {
+        "group": "Scots",
+        "pct": 0.9,
+        "count": 1271
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.2,
+        "count": 255
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.1,
+        "count": 194
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 81.8,
+        "count": 119916
+      },
+      {
+        "group": "Other British",
+        "pct": 11.3,
+        "count": 16597
+      },
+      {
+        "group": "Other White",
+        "pct": 2.1,
+        "count": 3130
+      },
+      {
+        "group": "Polish",
+        "pct": 1.7,
+        "count": 2482
+      },
+      {
+        "group": "Irish",
+        "pct": 0.8,
+        "count": 1136
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.4,
+        "count": 585
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.3,
+        "count": 415
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.3,
+        "count": 471
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.3,
+        "count": 461
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.3,
+        "count": 402
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.2,
+        "count": 331
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.2,
+        "count": 228
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.1,
+        "count": 96
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.1,
+        "count": 193
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.1,
+        "count": 77
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 73
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Renfrewshire",
+    "level": "admin2",
+    "name": "Renfrewshire",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 174908,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 32.7,
+        "count": 57132
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 32.2,
+        "count": 56366
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 22.7,
+        "count": 39769
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 6.9,
+        "count": 11986
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.9,
+        "count": 6816
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.8,
+        "count": 1313
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 573
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.2,
+        "count": 273
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 360
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 257
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 63
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 95.8,
+        "count": 161952
+      },
+      {
+        "group": "Other",
+        "pct": 2.7,
+        "count": 4641
+      },
+      {
+        "group": "Polish",
+        "pct": 0.7,
+        "count": 1138
+      },
+      {
+        "group": "Scots",
+        "pct": 0.4,
+        "count": 715
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.2,
+        "count": 282
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.2,
+        "count": 349
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 91.3,
+        "count": 159708
+      },
+      {
+        "group": "Other British",
+        "pct": 3.3,
+        "count": 5805
+      },
+      {
+        "group": "Irish",
+        "pct": 0.9,
+        "count": 1643
+      },
+      {
+        "group": "Other White",
+        "pct": 0.9,
+        "count": 1603
+      },
+      {
+        "group": "Polish",
+        "pct": 0.7,
+        "count": 1298
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.6,
+        "count": 965
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.6,
+        "count": 1028
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.5,
+        "count": 823
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.4,
+        "count": 782
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.2,
+        "count": 437
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.2,
+        "count": 275
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.1,
+        "count": 194
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.1,
+        "count": 117
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.0,
+        "count": 70
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 8
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Scottish_Borders",
+    "level": "admin2",
+    "name": "Scottish Borders",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 113870,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Church of Scotland",
+        "pct": 39.4,
+        "count": 44819
+      },
+      {
+        "group": "No religion",
+        "pct": 37.8,
+        "count": 43091
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 8.0,
+        "count": 9081
+      },
+      {
+        "group": "Other Christian",
+        "pct": 7.6,
+        "count": 8599
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 6.3,
+        "count": 7219
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 350
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.2,
+        "count": 279
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.2,
+        "count": 256
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 103
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 18
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 95.4,
+        "count": 105456
+      },
+      {
+        "group": "Other",
+        "pct": 2.2,
+        "count": 2410
+      },
+      {
+        "group": "Scots",
+        "pct": 1.1,
+        "count": 1219
+      },
+      {
+        "group": "Polish",
+        "pct": 1.1,
+        "count": 1161
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.2,
+        "count": 228
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.0,
+        "count": 40
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 78.8,
+        "count": 89741
+      },
+      {
+        "group": "Other British",
+        "pct": 16.4,
+        "count": 18624
+      },
+      {
+        "group": "Other White",
+        "pct": 1.7,
+        "count": 1902
+      },
+      {
+        "group": "Polish",
+        "pct": 1.1,
+        "count": 1302
+      },
+      {
+        "group": "Irish",
+        "pct": 0.7,
+        "count": 767
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.3,
+        "count": 316
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.2,
+        "count": 184
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 200
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.2,
+        "count": 180
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.2,
+        "count": 198
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 64
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.1,
+        "count": 124
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.1,
+        "count": 63
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.1,
+        "count": 60
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 8
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Shetland_Islands",
+    "level": "admin2",
+    "name": "Shetland Islands",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 23167,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 45.4,
+        "count": 10527
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 29.9,
+        "count": 6938
+      },
+      {
+        "group": "Other Christian",
+        "pct": 10.6,
+        "count": 2456
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 8.5,
+        "count": 1962
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 4.1,
+        "count": 943
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.7,
+        "count": 156
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.4,
+        "count": 96
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.3,
+        "count": 73
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 80.3,
+        "count": 17929
+      },
+      {
+        "group": "Scots",
+        "pct": 15.7,
+        "count": 3508
+      },
+      {
+        "group": "Other",
+        "pct": 3.0,
+        "count": 665
+      },
+      {
+        "group": "Polish",
+        "pct": 0.7,
+        "count": 152
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.3,
+        "count": 62
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 80.7,
+        "count": 18700
+      },
+      {
+        "group": "Other British",
+        "pct": 14.2,
+        "count": 3285
+      },
+      {
+        "group": "Other White",
+        "pct": 2.0,
+        "count": 457
+      },
+      {
+        "group": "Irish",
+        "pct": 0.9,
+        "count": 199
+      },
+      {
+        "group": "Polish",
+        "pct": 0.7,
+        "count": 164
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.3,
+        "count": 72
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.3,
+        "count": 73
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.3,
+        "count": 77
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.2,
+        "count": 45
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.1,
+        "count": 21
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.1,
+        "count": 18
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.1,
+        "count": 22
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.0,
+        "count": 8
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-South_Ayrshire",
+    "level": "admin2",
+    "name": "South Ayrshire",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 112799,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Church of Scotland",
+        "pct": 43.7,
+        "count": 49321
+      },
+      {
+        "group": "No religion",
+        "pct": 33.5,
+        "count": 37783
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 9.9,
+        "count": 11135
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 7.1,
+        "count": 8054
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.8,
+        "count": 5448
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.2,
+        "count": 183
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.2,
+        "count": 246
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 277
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 157
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 143
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 52
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 96.9,
+        "count": 106178
+      },
+      {
+        "group": "Other",
+        "pct": 1.8,
+        "count": 1955
+      },
+      {
+        "group": "Scots",
+        "pct": 0.8,
+        "count": 829
+      },
+      {
+        "group": "Polish",
+        "pct": 0.3,
+        "count": 335
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.2,
+        "count": 180
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.1,
+        "count": 61
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 89.5,
+        "count": 100967
+      },
+      {
+        "group": "Other British",
+        "pct": 7.0,
+        "count": 7933
+      },
+      {
+        "group": "Other White",
+        "pct": 1.0,
+        "count": 1095
+      },
+      {
+        "group": "Irish",
+        "pct": 0.8,
+        "count": 906
+      },
+      {
+        "group": "Polish",
+        "pct": 0.3,
+        "count": 381
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.3,
+        "count": 282
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.2,
+        "count": 278
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 276
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 98
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.1,
+        "count": 159
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.1,
+        "count": 169
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.1,
+        "count": 91
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.0,
+        "count": 52
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-South_Lanarkshire",
+    "level": "admin2",
+    "name": "South Lanarkshire",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 313830,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Church of Scotland",
+        "pct": 35.1,
+        "count": 110203
+      },
+      {
+        "group": "No religion",
+        "pct": 30.6,
+        "count": 95921
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 22.2,
+        "count": 69752
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 6.7,
+        "count": 20893
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.0,
+        "count": 12506
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.8,
+        "count": 2514
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.2,
+        "count": 527
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 564
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 392
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 173
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 385
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 96.3,
+        "count": 292368
+      },
+      {
+        "group": "Other",
+        "pct": 2.4,
+        "count": 7387
+      },
+      {
+        "group": "Scots",
+        "pct": 0.5,
+        "count": 1632
+      },
+      {
+        "group": "Polish",
+        "pct": 0.3,
+        "count": 997
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.2,
+        "count": 722
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.1,
+        "count": 364
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 91.6,
+        "count": 287491
+      },
+      {
+        "group": "Other British",
+        "pct": 3.8,
+        "count": 12068
+      },
+      {
+        "group": "Irish",
+        "pct": 1.0,
+        "count": 3187
+      },
+      {
+        "group": "Other White",
+        "pct": 0.8,
+        "count": 2536
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.7,
+        "count": 2117
+      },
+      {
+        "group": "Polish",
+        "pct": 0.4,
+        "count": 1140
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.4,
+        "count": 1344
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.3,
+        "count": 1012
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.2,
+        "count": 779
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.2,
+        "count": 590
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.2,
+        "count": 637
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 203
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.1,
+        "count": 232
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.1,
+        "count": 167
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 93
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 108
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 67
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 32
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-Stirling",
+    "level": "admin2",
+    "name": "Stirling",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 90247,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 37.8,
+        "count": 34152
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 35.0,
+        "count": 31552
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 12.3,
+        "count": 11140
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 7.1,
+        "count": 6399
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.1,
+        "count": 5511
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.6,
+        "count": 578
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.3,
+        "count": 286
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.3,
+        "count": 232
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 246
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 63
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 88
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 94.0,
+        "count": 82404
+      },
+      {
+        "group": "Other",
+        "pct": 4.4,
+        "count": 3880
+      },
+      {
+        "group": "Scots",
+        "pct": 0.6,
+        "count": 546
+      },
+      {
+        "group": "Polish",
+        "pct": 0.6,
+        "count": 488
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.2,
+        "count": 204
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.1,
+        "count": 123
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 82.0,
+        "count": 74025
+      },
+      {
+        "group": "Other British",
+        "pct": 10.8,
+        "count": 9706
+      },
+      {
+        "group": "Other White",
+        "pct": 2.4,
+        "count": 2187
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 1.1,
+        "count": 951
+      },
+      {
+        "group": "Irish",
+        "pct": 0.9,
+        "count": 826
+      },
+      {
+        "group": "Polish",
+        "pct": 0.6,
+        "count": 578
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.5,
+        "count": 443
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.4,
+        "count": 323
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.4,
+        "count": 349
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.3,
+        "count": 299
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.2,
+        "count": 183
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 68
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.1,
+        "count": 46
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.1,
+        "count": 113
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.1,
+        "count": 97
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 6
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-West_Dunbartonshire",
+    "level": "admin2",
+    "name": "West Dunbartonshire",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 90720,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 33.1,
+        "count": 30007
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 29.0,
+        "count": 26279
+      },
+      {
+        "group": "No religion",
+        "pct": 27.3,
+        "count": 24759
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 6.6,
+        "count": 6006
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.2,
+        "count": 2871
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.4,
+        "count": 344
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 156
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 104
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 76
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 103
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 15
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 97.2,
+        "count": 85130
+      },
+      {
+        "group": "Other",
+        "pct": 1.5,
+        "count": 1329
+      },
+      {
+        "group": "Scots",
+        "pct": 0.5,
+        "count": 474
+      },
+      {
+        "group": "Polish",
+        "pct": 0.4,
+        "count": 346
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.2,
+        "count": 201
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.1,
+        "count": 110
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 93.0,
+        "count": 84344
+      },
+      {
+        "group": "Other British",
+        "pct": 3.1,
+        "count": 2813
+      },
+      {
+        "group": "Irish",
+        "pct": 1.3,
+        "count": 1168
+      },
+      {
+        "group": "Other White",
+        "pct": 0.5,
+        "count": 497
+      },
+      {
+        "group": "Polish",
+        "pct": 0.4,
+        "count": 382
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.3,
+        "count": 251
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.3,
+        "count": 277
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.3,
+        "count": 259
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.2,
+        "count": 178
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 160
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.2,
+        "count": 152
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 102
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.1,
+        "count": 62
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.0,
+        "count": 38
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  },
+  {
+    "id": "GBR-SCO-West_Lothian",
+    "level": "admin2",
+    "name": "West Lothian",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 175118,
+      "year": 2011,
+      "source": "Scotland's Census 2011, National Records of Scotland"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 40.2,
+        "count": 70338
+      },
+      {
+        "group": "Church of Scotland",
+        "pct": 31.8,
+        "count": 55663
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 16.1,
+        "count": 28140
+      },
+      {
+        "group": "Religion not stated",
+        "pct": 6.0,
+        "count": 10575
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.3,
+        "count": 7477
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.0,
+        "count": 1746
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.2,
+        "count": 366
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 429
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 232
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 66
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.0,
+        "count": 86
+      }
+    ],
+    "language": [
+      {
+        "group": "English only",
+        "pct": 94.3,
+        "count": 158573
+      },
+      {
+        "group": "Other",
+        "pct": 2.9,
+        "count": 4916
+      },
+      {
+        "group": "Polish",
+        "pct": 1.8,
+        "count": 2968
+      },
+      {
+        "group": "Scots",
+        "pct": 0.7,
+        "count": 1197
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.3,
+        "count": 463
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.1,
+        "count": 125
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Scottish",
+        "pct": 87.8,
+        "count": 153815
+      },
+      {
+        "group": "Other British",
+        "pct": 5.8,
+        "count": 10204
+      },
+      {
+        "group": "Polish",
+        "pct": 1.9,
+        "count": 3273
+      },
+      {
+        "group": "Other White",
+        "pct": 1.3,
+        "count": 2270
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.8,
+        "count": 1420
+      },
+      {
+        "group": "Irish",
+        "pct": 0.7,
+        "count": 1209
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.4,
+        "count": 641
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.3,
+        "count": 534
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.3,
+        "count": 498
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.3,
+        "count": 445
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.2,
+        "count": 371
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.1,
+        "count": 104
+      },
+      {
+        "group": "Other ethnic group",
+        "pct": 0.1,
+        "count": 114
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.0,
+        "count": 79
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Other Caribbean or Black",
+        "pct": 0.0,
+        "count": 18
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Scotland's Census 2011, National Records of Scotland",
+        "url": "https://www.scotlandscensus.gov.uk/",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "country": "GBR",
+    "religion_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "ethnicity_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years.",
+    "language_note": "Scotland's Census 2011, National Records of Scotland. England and Wales are read from the 2021 census, so a comparison across the border spans ten years. Of people aged 3 and over."
+  }
+]

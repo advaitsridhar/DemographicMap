@@ -101,6 +101,23 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "Celestial Church of Christ", "Fifohazana", "Morovian", "Moravian",
         "United Church of Zambia or UCZ", "United Church of Zambia",
         "New Apostolic Church", "Christian mission in many lands (CMML)",
+        # NISRA's MS-B20, which names every denomination Northern Ireland
+        # counted at a thousand people or more. Four of them are the province's
+        # largest churches and would otherwise each be a one-country group in a
+        # filter that showed Northern Ireland as almost wholly non-Christian.
+        # "Mixed Catholic / Protestant" is a person of both, which is still a
+        # Christian answer; "Non-denominational Christian" is B20's "Non
+        # Denominational", spelled out by the adapter because the bare words say
+        # nothing about which religion they are non-denominational within.
+        "Presbyterian Church in Ireland", "Church of Ireland",
+        "Methodist Church in Ireland", "Independent Methodist",
+        "Free Presbyterian", "Reformed Presbyterian",
+        "Non-Subscribing Presbyterian", "Brethren", "Congregational Church",
+        "Christian Fellowship Church", "Orthodox Church",
+        "Romanian Orthodox Church", "Protestant (Mixed)",
+        "Mixed Catholic / Protestant", "Non-denominational Christian",
+        "Church of Jesus Christ of Latter Day Saints (Mormons)",
+        "Other Christian denominations",
     ),
     "Islam": (
         "Islam", "Muslim", "Muslims", "Musalman", "Musulman", "Islamic",
@@ -181,6 +198,7 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "no answer", "unknown", "refused to answer", "not reported",
         "Object to answering", "Not elsewhere included", "declined to answer",
         "don't know/no answer", "don't know/refused", "do not know",
+        "Religion not stated",
     ),
     "Other religions": (
         "Other", "Other religion", "Other religions", "Other Religions",
@@ -947,5 +965,13 @@ def check_no_double_counting(rows: Iterable[dict[str, Any]], field: str,
     # Compared in key() form on both sides: the labels have been folded, and
     # the canonical name is a display string, so "Christianity" has to be
     # folded too or a parent beside its child stops being reported.
+    #
+    # A residual is never a parent, so a residual reached twice is never this
+    # fault. Northern Ireland is the case: NISRA writes "Other Religions" where
+    # the ONS writes "Other religion", both mean everything the question did
+    # not name, and the United Kingdom's rolled-up record carries one row from
+    # each office. Adding two catch-alls together is right -- there is no third
+    # figure they are both part of -- but "Other Religions" lowercases to the
+    # canonical name exactly, so without this the build stopped on it.
     return [c for c, labels in seen.items()
-            if len(set(labels)) > 1 and key(c) in labels]
+            if len(set(labels)) > 1 and key(c) in labels and not is_residual(c)]

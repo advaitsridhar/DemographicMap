@@ -10,9 +10,16 @@ Nomis serves the 2021 census topic summaries as machine-readable datasets:
 Coverage caveat that the app displays: the 2021 census covers England and
 Wales.  Scotland ran its census in **2022** (National Records of Scotland) and
 Northern Ireland in 2021 through NISRA, so UK-wide comparisons mix reference
-dates.  Religion is a *voluntary* question in England and Wales -- about 6% of
-people left it blank -- so shares are of all usual residents including
-non-responders, matching the ONS's own published percentages.
+dates; those two countries have adapters of their own, ``scotland_census`` and
+``northern_ireland``.  Religion is a *voluntary* question in England and Wales
+-- about 6% of people left it blank -- so shares are of all usual residents
+including non-responders, matching the ONS's own published percentages.
+
+**TS021 is published at two levels in one response** -- five broad groups and
+the nineteen columns of detail beneath them, each level summing to the
+population -- and reading both counted every person twice. Only the leaves are
+kept, by the rule all three UK adapters share in ``_shared.leaves``. TS030 is
+unaffected: religion nests at one level.
 
 Usage:
     python -m scripts.fetch_census.uk_nomis --level district
@@ -25,7 +32,8 @@ import argparse
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, gap, http_json, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, PROCESSED, gap, http_json, leaves, log, measure, record,
+    shares, write_json,
 )
 
 BASE = "https://www.nomisweb.co.uk/api/v01/dataset"
@@ -132,6 +140,16 @@ def fetch_table(dataset: str, cell: str, geography: str) -> dict[str, dict[str, 
             entry["total"] = float(value)
         else:
             entry["counts"][label] = float(value)
+    # TS021 is published at two levels at once and TS030 at one, so this is a
+    # no-op for religion and removes five rows per district for ethnicity.
+    # Without it every England and Wales record summed to 200%: Bradford
+    # carried "White" 61.1% beside "White: English, Welsh, Scottish, Northern
+    # Irish or British" 56.7%, which is the same people twice, and the group
+    # filter counted them as two unrelated groups because neither label is in
+    # the canonical index.
+    for entry in out.values():
+        keep = set(leaves(entry["counts"]))
+        entry["counts"] = {k: v for k, v in entry["counts"].items() if k in keep}
     return out
 
 
@@ -140,7 +158,7 @@ def list_datasets(match: str) -> int:
 
     Nomis is run for the ONS but is not only the ONS: it is the UK's shared
     labour-market and census warehouse, and which offices' tables reach it is
-    not something the ONS pages say. That matters because the 45 UK shapes this
+    not something the ONS pages say. That matters because the 43 UK shapes this
     map cannot fill are Scottish council areas and Northern Irish districts,
     whose censuses were run by NRS and NISRA -- and their own portals answer a
     JavaScript shell to a program, with the PxStat and SPARQL endpoints their

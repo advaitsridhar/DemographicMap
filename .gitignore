@@ -43,6 +43,19 @@ data/raw/*
 !data/raw/afrobarometer/
 !data/raw/afrobarometer/*.csv.gz
 !data/raw/afrobarometer/*.json
+# Scotland's Census 2011 key statistics by council area, as published by
+# National Records of Scotland. Three small CSVs; the 2022 equivalents are
+# still behind a table builder, so these are what the map has.
+!data/raw/scotland/
+!data/raw/scotland/*.csv
+# NISRA's Census 2021 MS-B tables for Northern Ireland, three of the ten the
+# "Ethnicity, Identity, Language and Religion" release publishes: B01 ethnic
+# group, B12 main language, B20 religion in intermediate detail. NISRA serves
+# them as file downloads with no API behind them, and OGL v3.0 permits
+# redistribution -- so without these lines a clean checkout has no Northern
+# Ireland and no way to re-derive it.
+!data/raw/northern_ireland/
+!data/raw/northern_ireland/*.xlsx
 data/processed/http_cache/
 
 # Intermediate tiling artefacts

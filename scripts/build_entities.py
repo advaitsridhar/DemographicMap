@@ -88,7 +88,12 @@ ADAPTER_FILES = [
     "germany_land.json", "germany_regierungsbezirk.json",
     "canada_province.json", "canada_census_division.json",
     "australia_state.json", "australia_lga.json",
-    "uk_lad.json", "uk_county.json", "us_state.json", "us_county.json",
+    "uk_lad.json", "uk_county.json",
+    # Scotland's councils and Northern Ireland's districts are shapes the ONS
+    # census cannot reach: it covers England and Wales. Neither overlaps the
+    # two files above or each other, so the order between them never arises.
+    "scotland_council.json", "northern_ireland_district.json",
+    "us_state.json", "us_county.json",
 ]
 
 # Where a real adapter exists for a country's subnational demographics. Shown in
@@ -97,8 +102,10 @@ ADAPTER_FILES = [
 ADAPTER_HINTS: dict[str, str] = {
     "USA": "US Census ACS (race, language, age) plus the 2020 U.S. Religion Census: "
            "python -m scripts.fetch_census.us_acs --level county",
-    "GBR": "ONS Census 2021 via Nomis (TS021 ethnic group, TS030 religion): "
-           "python -m scripts.fetch_census.uk_nomis",
+    "GBR": "ONS Census 2021 via Nomis for England and Wales (TS021 ethnic "
+           "group, TS030 religion): python -m scripts.fetch_census.uk_nomis; "
+           "Scotland and Northern Ireland have adapters of their own, "
+           "scotland_census and northern_ireland",
     "DEU": "Zensus 2022 religion by Land, three categories from the church-tax "
            "register (needs a free ergebnisse.zensus2022.de account): "
            "python -m scripts.fetch_census.germany",
