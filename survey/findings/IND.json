@@ -1,0 +1,131 @@
+{
+  "iso3": "IND",
+  "name": "India",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Office of the Registrar General & Census Commissioner, India (ORGI), Ministry of Home Affairs", "url": "https://censusindia.gov.in/"},
+  "latest_census": {
+    "year": 2011,
+    "asks": {"religion": true, "ethnicity": false, "language": true},
+    "notes": "2011 is the last completed census: religion (table C-01), mother tongue (C-16) and Scheduled Caste / Scheduled Tribe status (incl. individual tribe, ST tables) were asked and published down to district and sub-district; no ethnicity question. The 2021 round was never held. Census 2027 is now scheduled: search results (Republic World 2026-08-14, Open magazine, Deccan Herald) say the MHA has notified a 40-question Population Enumeration schedule that asks religion, 'Scheduled Caste/Scheduled Tribe status or caste' (the first full caste enumeration since 1931), mother tongue and other languages known; Houselisting runs April-September 2026 and Population Enumeration in February 2027. Nothing from 2027 is publishable before the tabulations appear, so 2011 remains the source of record for now."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion"],
+      "title": "Population by Religious Community, 2011 - India (Open Government Data Platform India)",
+      "url": "https://www.data.gov.in/resource/population-religious-community-2011-india",
+      "publisher": "Open Government Data (OGD) Platform India / ORGI",
+      "kind": "census",
+      "format": "csv/xls download from the OGD resource page (API access on data.gov.in normally needs a key -- unverified for this resource)",
+      "geography": "state, district and tehsil rows in one table (2011: 640 districts)",
+      "geography_count": 640,
+      "matches_boundary_level": "admin2 (640 census districts vs 735 shapes; the repo already joins 637 from the same 2011 table) and admin1 by aggregation",
+      "year": 2011,
+      "confidence": "high",
+      "evidence": "Search snippet: 'details on population by religious community, including information on State Code, District Code, Tehsil Code, Area Name, Persons, Males, Females, Religious communities (Hindu, Muslim, Christian, Sikh, Buddhist, and Jain)'; 'the main India resource contains data that is too large to be visualized'. A per-state resource also surfaced: https://www.data.gov.in/resource/population-religious-community-2011-maharashtra . This is the official C-01 table on the government open-data portal -- an official, keyless retrieval path for the same figures the repo now takes from a community GitHub CSV."
+    },
+    {
+      "fields": ["religion"],
+      "title": "C-01: Population by religious community - 2011 (NADA catalogue, one XLS workbook per state plus an all-India workbook)",
+      "url": "https://censusindia.gov.in/nada/index.php/catalog/11361",
+      "publisher": "ORGI (censusindia.gov.in NADA catalogue)",
+      "kind": "census",
+      "format": "xls (one workbook per state; direct download links exist, e.g. https://censusindia.gov.in/nada/index.php/catalog/11382/download/14495/DDW27C-01%20MDDS.XLS for Maharashtra)",
+      "geography": "state, district, sub-district (MDDS codes)",
+      "geography_count": 640,
+      "matches_boundary_level": "admin2 (district) and admin1 (state)",
+      "year": 2011,
+      "confidence": "high",
+      "evidence": "Search results list catalogue entries PC11_C01-00 (India, 11361) and per-state entries: Punjab 11389, Assam 11365, West Bengal 11396, Sikkim 11391, Bihar 11366, Maharashtra 11382, plus the C-01 Appendix (11398) and Annexure (11397) that itemise the 'Other religions and persuasions' residual. The catalogue IDs for C-01 are contiguous (11361-11398), and a direct /download/ URL surfaced, so the 'cannot be automated' verdict in docs/SOURCES.md may be worth re-measuring from the runner."
+    },
+    {
+      "fields": ["language"],
+      "title": "C-16: Population by mother tongue - 2011 (DDWC16STMTMDDS*.XLSX per state)",
+      "url": null,
+      "publisher": "ORGI (censusindia.gov.in NADA catalogue)",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "state, district, sub-district",
+      "geography_count": 640,
+      "matches_boundary_level": "admin2 and admin1",
+      "year": 2011,
+      "confidence": "high",
+      "evidence": "Not re-searched: already built from workbooks checked into data/raw/india/c16/ (docs/SOURCES.md 'Mother tongue: the official C-16 workbooks'); 35 states and 637 of 735 districts filled. Listed for completeness; the 98 empty districts are boundary-vintage gaps, not a source gap."
+    },
+    {
+      "fields": ["ethnicity (proxy only: Scheduled Tribe population by religious community -- a legal-category cross-tab, not an ethnic composition)"],
+      "title": "ST-14: Scheduled tribe population by religious community (district level) - 2011",
+      "url": "https://censusindia.gov.in/nada/index.php/catalog/12492",
+      "publisher": "ORGI (censusindia.gov.in NADA catalogue)",
+      "kind": "census",
+      "format": "xls (one catalogue entry per district, e.g. PC11_ST14-{state}-{district})",
+      "geography": "district",
+      "geography_count": 640,
+      "matches_boundary_level": "admin2",
+      "year": 2011,
+      "confidence": "medium",
+      "evidence": "Search results show one NADA entry per district (Pudukkottai 12492, Singrauli 12334, Mandla 12325, Kushinagar 12060, Bhojpur 12102, Nashik 12387, Jaipur 11981, Kollam 12471 ...), all dated 2021-01-21. It does not overturn the packet's not_collected declaration for ethnicity: India counts SC/ST status and individual tribe names, not ethnicity, and ST-14 would need ~640 downloads to assemble. Recorded so the next person knows the closest official table exists and what it is."
+    },
+    {
+      "fields": ["religion"],
+      "title": "india-districts-census-2011.csv (nishusharma1608/India-Census-2011-Analysis) -- the community extract the repo currently reads",
+      "url": "https://github.com/nishusharma1608/India-Census-2011-Analysis/blob/master/india-districts-census-2011.csv",
+      "publisher": "GitHub user mirror of the 2011 Primary Census Abstract / C-01",
+      "kind": "census",
+      "format": "csv",
+      "geography": "district",
+      "geography_count": 640,
+      "matches_boundary_level": "admin2",
+      "year": 2011,
+      "confidence": "high",
+      "evidence": "Surfaced in the data.gov.in search; this is the file scripts/fetch_census/india_census.py validates against NATIONAL_CONTROLS. The data.gov.in resource above is the official equivalent."
+    },
+    {
+      "fields": ["religion"],
+      "title": "Religious demography of Indian states and territories (Pew Research Center, 2021)",
+      "url": "https://www.pewresearch.org/religion/2021/09/21/religious-demography-of-indian-states-and-territories/",
+      "publisher": "Pew Research Center (derived from Census 2011)",
+      "kind": "other",
+      "format": "html",
+      "geography": "state/UT",
+      "geography_count": null,
+      "matches_boundary_level": "admin1",
+      "year": 2011,
+      "confidence": "medium",
+      "evidence": "Search result title only; a secondary presentation of C-01 by state, useful as an independent check of the state aggregates, not as a source."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in India", "url": "https://en.wikipedia.org/wiki/Religion_in_India",
+       "appears_to_contain": "search summary says the article carries 'detailed state-by-state breakdowns of religious demographics from the 2011 census' (e.g. Christian-majority Nagaland, Mizoram, Meghalaya; Muslim-majority Lakshadweep and J&K); a by-state table is plausible but unverified"},
+      {"title": "2011 census of India", "url": "https://en.wikipedia.org/wiki/2011_census_of_India",
+       "appears_to_contain": "surfaced in the C-01 search; snippet not specific about tables; unverified"}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Ernakulam", "search_hit_title": null, "url": null,
+       "note": "NOT SEARCHED: the session's shared WebSearch budget (200 calls) was exhausted before this step. A runner should search '\"Ernakulam\" district India wikipedia'."},
+      {"shape_name": "Kaimur (Bhabua)", "search_hit_title": null, "url": null,
+       "note": "NOT SEARCHED (budget exhausted). Note for the join: the boundary name carries the old name in parentheses; the district is usually written 'Kaimur district' or 'Bhabua'."},
+      {"shape_name": "Unokoti", "search_hit_title": null, "url": null,
+       "note": "NOT SEARCHED (budget exhausted). Unakoti (Tripura) is a post-2011 district, so it is one of the 92 census-vintage gaps regardless of what Wikipedia holds."}
+    ]
+  },
+  "tier": "A",
+  "tier_reason": "Census 2011 counts religion (C-01) and mother tongue (C-16) and publishes both by district in XLS/CSV; the repo already fills 35/36 states and 637/735 districts from them. The new finding is an official keyless CSV/XLS of C-01 on data.gov.in that can replace the community GitHub extract as the retrieval path, plus evidence that NADA exposes direct /download/ URLs.",
+  "replaces_existing": true,
+  "recommended_action": "1) Point india_census.py at the data.gov.in resource (or the NADA per-state XLS via the contiguous catalogue IDs 11361-11398) so the 2011 religion figures come from an official path; values should reproduce NATIONAL_CONTROLS exactly, so this is a provenance change, not a data change -- owner review only. 2) Keep ethnicity declared not_collected; ST-14 is an ST-by-religion cross-tab, not an ethnic composition. 3) Nothing to do for language: C-16 is built. 4) Diary Census 2027 (enumeration February 2027; caste, religion and mother tongue all asked) -- tabulations will take years; re-check censusindia.gov.in from 2028. 5) Run the three admin2 Wikipedia sample searches that could not be run here.",
+  "searches_run": [
+    "Census of India 2011 C-01 Population by religious community district level XLSX censusindia.gov.in",
+    "India Census 2027 questions caste enumeration religion mother tongue population enumeration phase 2027",
+    "data.gov.in census 2011 population by religious community district csv",
+    "\"Religion in India\" wikipedia table by state 2011 census",
+    "Census 2011 ST-14 individual scheduled tribe population by district census tables censusindia.gov.in"
+  ],
+  "not_found": [
+    "NOT RUN (WebSearch budget exhausted): '\"Ernakulam\" district India wikipedia', '\"Kaimur\" Bhabua district India wikipedia', '\"Unokoti\" district Tripura India wikipedia', '\"List of Indian states\" by language wikipedia 2011 census table'",
+    "any HDX or IPUMS route for India religion/language (not searched; India is not in the USCB series per docs/SOURCES.md and no search was spent on it)",
+    "any post-2011 count of religion or mother tongue at any level (Census 2027 not yet enumerated)",
+    "any ethnicity question in either the 2011 or the notified 2027 schedule (caste/SC-ST and mother tongue instead)"
+  ],
+  "summary": "India's source of record is still Census 2011: religion (C-01) and mother tongue (C-16) were counted and published by state, district and sub-district, and the repo already fills 35/36 states and 637/735 districts from them; the 98 empty districts are post-2011 creations. The genuinely new finding is that the official C-01 table sits on data.gov.in as an OGD resource with state/district/tehsil codes (and per-state copies), and that the NADA catalogue exposes direct /download/ XLS URLs with contiguous IDs 11361-11398 -- either would replace the community GitHub CSV with an official retrieval path for the same numbers. Ethnicity remains legitimately not_collected; the nearest official table is ST-14 (Scheduled Tribe by religion, one XLS per district), a legal-category cross-tab rather than a composition. Census 2027 (enumeration February 2027) will ask religion, caste and mother tongue, but nothing from it is publishable yet. The three admin2 Wikipedia sample checks were not run because the session's search budget ran out."
+}

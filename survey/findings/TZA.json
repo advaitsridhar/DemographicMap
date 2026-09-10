@@ -1,0 +1,58 @@
+{
+  "iso3": "TZA",
+  "name": "Tanzania",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "National Bureau of Statistics (NBS), Tanzania (with the Office of the Chief Government Statistician, Zanzibar)", "url": "https://www.nbs.go.tz/statistics/topic/census-2022"},
+  "latest_census": {
+    "year": 2022,
+    "asks": {"religion": false, "ethnicity": false, "language": null},
+    "notes": "2022 Population and Housing Census (22-23 Aug 2022, first digital census). Religion has not been asked since 1967 (US State Dept IRF report snippet: 'religious questions have been eliminated from government census reports since 1967'; another snippet dates the last asking to 1973). Ethnicity/tribe was enumerated 'from colonial times until 1973' (institutionalizedethnicity.net snippet). Minority Rights Group snippet: 'the 2022 Census did not disaggregate for ethnicity or religion'. The person questionnaire is at https://unstats.un.org/unsd/envstats/Censuses%20and%20Surveys/Tanzania_2022_PHC_Person_questionnaire.pdf; the microdata catalogue entry (https://microdata.nbs.go.tz/index.php/catalog/45) lists topics as fertility, mortality, migration, orphanhood, disability, national documents, education, economic activity -- language is not mentioned in any snippet, but its absence from the questionnaire could not be confirmed without opening the PDF."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion"],
+      "title": "Tanzania Demographic and Health Survey and Malaria Indicator Survey (TDHS-MIS) 2022 -- Final Report (FR382)",
+      "url": "https://www.dhsprogram.com/publications/publication-fr382-dhs-final-reports.cfm",
+      "publisher": "NBS / OCGS / ICF (The DHS Program)",
+      "kind": "survey",
+      "format": "pdf",
+      "geography": "region",
+      "geography_count": 31,
+      "matches_boundary_level": "admin1 (approximately -- the boundary file draws 30 regions, the survey has 31)",
+      "year": 2022,
+      "confidence": "medium",
+      "evidence": "Snippet: 'The sample design for the 2022 TDHS-MIS provides estimates at the national level, for urban and rural areas, for the nine zones, and for each of Tanzania's 31 regions', and 'for some indicators, estimates are stratified by ethnicity, religion'. Religion is a respondent background characteristic; a religion x region cross-tabulation is not confirmed to be in the printed report and would most likely need the microdata (registration with the DHS Program). Survey page: https://dhsprogram.com/what-we-do/survey/survey-display-578.cfm; summary report SR282 at https://dhsprogram.com/pubs/pdf/SR282/SR282.pdf. Ranks below a count; would be an improvement in sample design over the Afrobarometer Round 9 estimates already on admin1 (DHS regions are estimation domains, Afrobarometer regions are strata), but that is a judgement for the owner."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Tanzania", "url": "https://en.wikipedia.org/wiki/Religion_in_Tanzania", "appears_to_contain": "Pew 2020 national estimates and prose on Zanzibar (99% Muslim) and Dar es Salaam (~70% Muslim); no region-by-region census table is suggested by the snippet, consistent with none existing; unverified"},
+      {"title": "Regions of Tanzania", "url": "https://en.wikipedia.org/wiki/Regions_of_Tanzania", "appears_to_contain": "surfaced in the same search; snippet gives no demographic table"}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Handeni", "search_hit_title": "Handeni District", "url": "https://en.wikipedia.org/wiki/Handeni_District", "note": "article exists (also 'Handeni District, Tanga' and 'Handeni Town Council'); snippet gives 2022 census population 384,353 and borders only. Two articles for one name -- the shape's join needs care"},
+      {"shape_name": "Missenyi", "search_hit_title": "Missenyi District", "url": "https://en.wikipedia.org/wiki/Missenyi_District", "note": "article exists; snippet gives 2022 population 245,394, area, wards -- no religion/ethnicity"},
+      {"shape_name": "Urambo", "search_hit_title": "Urambo District", "url": "https://en.wikipedia.org/wiki/Urambo_District", "note": "article exists; snippet gives 2022 population 260,322 and history (Nyamwezi kingdom) -- prose, no composition"}
+    ]
+  },
+  "tier": "C",
+  "tier_reason": "No count exists: the census has not asked religion since 1967 and ethnicity since 1973, and the 2022 census did not collect either (three independent snippets agree). The only subnational figures are survey estimates (Afrobarometer, already on admin1; DHS 2022 by region, behind registration).",
+  "replaces_existing": false,
+  "recommended_action": "Declare religion and ethnicity not_collected for Tanzania at admin2 (170 districts) with reason 'not asked in any census since 1967 (religion) / 1973 (ethnicity); 2022 PHC did not disaggregate for either', citing the State Department IRF report and the MRG country page. Keep the existing Afrobarometer admin1 estimates but make the declaration visible alongside them so a reader knows they are survey figures standing in for a count that does not exist. Optionally, have the owner decide whether DHS 2022 (31 regions, registration required) should replace Afrobarometer at admin1. Language: open the 2022 person questionnaire PDF from unstats.un.org to settle whether a language question exists; nothing suggests one.",
+  "searches_run": [
+    "Tanzania 2022 population and housing census questionnaire religion ethnicity not asked since 1967",
+    "Tanzania DHS 2022 religion by region final report table background characteristics",
+    "Tanzania 2022 census questionnaire language spoken mother tongue question Kiswahili",
+    "\"Religion in Tanzania\" wikipedia by region table Christian Muslim regions",
+    "\"Handeni\" Tanzania wikipedia district",
+    "\"Missenyi\" Tanzania wikipedia district",
+    "\"Urambo\" Tanzania wikipedia district"
+  ],
+  "not_found": [
+    "any census count of religion, ethnicity or language at any level since 1967/1973",
+    "a language question in the 2022 census (not confirmed absent; questionnaire PDF not readable from the sandbox)",
+    "a region-by-region religion table on Wikipedia",
+    "HDX -- not searched (budget spent on establishing the census position); the repo already records Tanzania is absent from the US Census Bureau international series"
+  ],
+  "summary": "Tanzania is a C: religion has not been asked in a census since 1967 and ethnicity since 1973, and three independent sources say the 2022 census did not disaggregate for either, so no count exists at any geography. The correct output is a not_collected declaration for religion and ethnicity at admin2 (and as context for the Afrobarometer survey estimates already filling 24 of 30 admin1 regions). The DHS 2022 provides survey estimates for 31 regions (boundary file draws 30) but a religion-by-region table is not confirmed in the printed report and would need registered microdata. Whether the 2022 census asked language could not be settled; the questionnaire PDF at unstats.un.org would answer it. District Wikipedia articles exist and carry 2022 populations but nothing on composition."
+}

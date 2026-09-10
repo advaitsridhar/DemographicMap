@@ -1,0 +1,102 @@
+{
+  "iso3": "THA",
+  "name": "Thailand",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "National Statistical Office (NSO), Thailand", "url": "https://www.nso.go.th/nsoweb/index?set_lang=en"},
+  "latest_census": {
+    "year": 2020,
+    "asks": {"religion": true, "ethnicity": false, "language": true},
+    "notes": "2020 Population and Housing Census (B.E. 2563; enumeration slipped into 2021-22). UNSD paper 's05-06-THA.pdf' snippet: religion was among the variables collected. The 2010 census metadata (IHSN catalog 4405) lists 'age, sex, religion, nationality, speaking languages' -- so NATIONALITY is asked, not ethnicity; treat ethnicity as not asked. A Thai-language search result says 2020 census reports were produced at provincial/regional as well as national level, but no provincial religion or language table surfaced as a URL. Note the repo's recorded finding that nso.go.th / catalog.nso.go.th answer HTTP 418 and data.go.th 403 to this project's fetcher, and that CLEAR Global's HDX notes claim 2000 was the only census for which language data were made public."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion", "language", "nationality"],
+      "title": "Nationality, religion, and language data for the provinces of Thailand",
+      "url": "https://en.wikipedia.org/wiki/Nationality,_religion,_and_language_data_for_the_provinces_of_Thailand",
+      "publisher": "Wikipedia (compiled from NSO census publications, per the article's subject; sourcing unverified)",
+      "kind": "other",
+      "format": "html",
+      "geography": "province (changwat)",
+      "geography_count": null,
+      "matches_boundary_level": "admin1",
+      "year": 2000,
+      "confidence": "medium",
+      "evidence": "Search snippet: 'In both 1970 and 2000, almost every Thai province's population was Buddhist-majority ... exceptions being Narathiwat, Pattani, Satun, and Yala'; 'Mae Hong Son's population was composed of a majority of hill tribe language speakers in both 1990 and 2000'; nationality by province for 1970 and 2000. So the article carries per-province religion (1970/1990/2000), language (1990/2000) and nationality tables. Whether it also carries 2010 figures is not visible in the snippet. Wikidata item Q105821639 exists for the article. Province count in 2000 was fewer than today's 77 (Bueng Kan created 2011), so a handful of admin1 shapes will be unmatched or must be flagged."
+    },
+    {
+      "fields": ["religion", "language", "nationality"],
+      "title": "Thailand - Population and Housing Census 2010 (IHSN metadata record; NSO provincial reports)",
+      "url": "https://catalog.ihsn.org/index.php/catalog/4405",
+      "publisher": "National Statistical Office, Thailand (record mirrored on IHSN)",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "province (changwat)",
+      "geography_count": null,
+      "matches_boundary_level": "admin1",
+      "year": 2010,
+      "confidence": "low",
+      "evidence": "IHSN snippet: 'demographic data collected included ... age, sex, religion, nationality, speaking languages' and 'respondents could access census data via www.nso.go.th or http://popcensus.nso.go.th'. The 2010 questionnaire is at https://unstats.un.org/unsd/demographic/sources/census/quest/THA2010en.pdf. No URL for a provincial religion/language table surfaced in two targeted searches; the NSO hosts refuse this project's fetcher (recorded in SOURCES.md), so a runner would need the PDFs by another route."
+    },
+    {
+      "fields": ["unknown"],
+      "title": "ผลการสำรวจ (สำมะโนประชากรและเคหะ) -- Government Data Catalog entry for census results",
+      "url": "https://gdcatalog.go.th/dataset/gdpublish-0404-01-0021",
+      "publisher": "GD Catalog (gdcatalog.go.th), publishing agency not visible in snippet",
+      "kind": "census",
+      "format": null,
+      "geography": null,
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": null,
+      "confidence": "low",
+      "evidence": "Surfaced only as a title in the Thai-language search; contents, fields and geography unverified. Listed because it is a machine-catalogued census-results dataset, the only kind of route that could lift Thailand to tier A. Companion entry gdpublish-0703-01-0037 is the census questionnaire."
+    },
+    {
+      "fields": ["religion"],
+      "title": "จำนวนผู้นับถือศาสนาจากการสำรวจ (Number of religious adherents, from survey)",
+      "url": "https://data.go.th/dataset/os_04_00001",
+      "publisher": "National Statistical Office via Open Government Data of Thailand (data.go.th); mirrored at https://gdcatalog.go.th/dataset/gdpublish-os_04_00001",
+      "kind": "survey",
+      "format": "csv",
+      "geography": "unclear -- snippet says 'national and regional (provincial) level'",
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2024,
+      "confidence": "low",
+      "evidence": "Snippet: population aged 13 and over classified by religion and sex; downloadable as CSV and JSON; dataset registered 18 Sept 2567 (2024). It is a survey (NSO's society/culture survey), ranks below any count, and data.go.th answered 403 at / and at /api/3/action/ to this project (SOURCES.md). New relative to the closed CLEAR Global route, but not a count and not confirmed to be by province."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Nationality, religion, and language data for the provinces of Thailand", "url": "https://en.wikipedia.org/wiki/Nationality,_religion,_and_language_data_for_the_provinces_of_Thailand", "appears_to_contain": "per-province religion (1970, 1990, 2000), language (1990, 2000) and nationality (1970, 2000) figures from NSO censuses; whether 2010 is included is not visible; unverified"},
+      {"title": "Demographics of Thailand", "url": "https://en.wikipedia.org/wiki/Demographics_of_Thailand", "appears_to_contain": "surfaced alongside the list article; no snippet about a provincial table"}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Chiang Kham", "search_hit_title": "Chiang Kham district", "url": "https://en.wikipedia.org/wiki/Chiang_Kham_district", "note": "article exists; snippet gives area, 2015 population, 10 tambons, and prose that the district is 'home to many Tai Lue people' -- prose, not a composition"},
+      {"shape_name": "Doi Saket", "search_hit_title": "Doi Saket district", "url": "https://en.wikipedia.org/wiki/Doi_Saket_district", "note": "article exists; snippet gives area, founding year and tambon count only"},
+      {"shape_name": "Mueang Nan", "search_hit_title": "Mueang Nan district", "url": "https://en.wikipedia.org/wiki/Mueang_Nan_district", "note": "article exists; snippet gives area and 2010 population only"}
+    ]
+  },
+  "tier": "B",
+  "tier_reason": "The census asks religion and language (2010, 2020) and NSO publishes provincial reports, but no machine-readable provincial table surfaced and the NSO/data.go.th hosts refuse this project's fetcher; the one census-sourced provincial table that is reachable is a Wikipedia list article (HTML, latest year in snippet is 2000). Ethnicity is not asked (nationality is).",
+  "replaces_existing": false,
+  "recommended_action": "Have a runner read the Wikipedia list article 'Nationality, religion, and language data for the provinces of Thailand' and report which census years and how many provinces its religion and language tables carry; if a 2010 column is present, that is the admin1 build. Separately, declare ethnicity not_collected (census asks nationality). Do not re-try nso.go.th or data.go.th from the sandbox. The gdcatalog.go.th census-results entry is worth one look from a machine that can open it. Nothing found for the 928 admin2 districts.",
+  "searches_run": [
+    "Thailand 2020 population and housing census religion by province National Statistical Office table",
+    "Thailand 2010 census \"religion\" \"language\" by province NSO Thailand statistical tables",
+    "\"Nationality, religion, and language data for the provinces of Thailand\" wikipedia 2010 census",
+    "popcensus.nso.go.th 2010 census provincial report religion Buddhist Muslim table province PDF",
+    "สำมะโนประชากรและเคหะ 2563 ผลสำมะโน ศาสนา รายจังหวัด สำนักงานสถิติแห่งชาติ",
+    "data.go.th ชุดข้อมูล จำนวนประชากร จำแนกตามศาสนา รายจังหวัด",
+    "\"Chiang Kham\" Thailand wikipedia district",
+    "\"Doi Saket\" Thailand wikipedia district",
+    "\"Mueang Nan\" Thailand wikipedia district"
+  ],
+  "not_found": [
+    "any 2010 or 2020 census religion-by-province or language-by-province table as a direct URL (PDF, XLSX or CSV) from NSO or popcensus.nso.go.th",
+    "any HDX or other mirror of Thai census religion/language by province beyond the already-closed CLEAR Global language file",
+    "any ethnicity question in the Thai census (nationality is asked instead)",
+    "anything at district (amphoe, admin2) level"
+  ],
+  "summary": "Thailand's census does ask religion and 'speaking languages' (2010 and 2020) and asks nationality rather than ethnicity, so ethnicity should be declared not_collected. The NSO publishes provincial reports, but no provincial religion or language table surfaced as a URL and the NSO and data.go.th hosts are recorded as refusing this project's fetcher. The realistic route is the Wikipedia list article 'Nationality, religion, and language data for the provinces of Thailand', which by its snippet carries per-province religion (1970/1990/2000) and language (1990/2000) tables from the censuses; a runner should read it and check for a 2010 column. A data.go.th survey dataset on religious adherents (CSV) is new but is a survey and not confirmed to be by province. Tier B; nothing for admin2."
+}

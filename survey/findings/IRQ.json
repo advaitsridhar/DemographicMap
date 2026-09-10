@@ -1,0 +1,130 @@
+{
+  "iso3": "IRQ",
+  "name": "Iraq",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Central Statistical Organization (CSO / COSIT), Ministry of Planning",
+    "url": "https://cosit.gov.iq/",
+    "other_urls": [
+      "https://mop.gov.iq/en/central-statistical-organization"
+    ]
+  },
+  "latest_census": {
+    "year": 2024,
+    "asks": {
+      "religion": true,
+      "ethnicity": false,
+      "language": false
+    },
+    "published_subnationally": {
+      "religion": null,
+      "ethnicity": false,
+      "language": false
+    },
+    "notes": "General Population and Housing Census, 20-22 November 2024 -- the first nationwide count since 1987 (1997 excluded the Kurdistan Region). Preliminary results 25 November 2024; final results announced by the Minister of Planning on 24 February 2025 (INA; 46,118,793 incl. foreign residents, 45,778,662 excluding them). Sources conflict on the religion item: Rudaw Research Center says 'there are questions regarding religion ... the form does not address issues of ethnicity, language, or sect', Shafaq News reports 'exclusion of sect and ethnicity', Al Jazeera/others say the census 'does include religion information, though it does not differentiate between sects'; Esri ArcNews (Winter 2026) says 'no questions about ethnicity or religion'. The weight of reporting is: religion asked, sect not, ethnicity not, language not. No governorate-level religion table was found in any result. INA: 'All governorate-level data sets have been finalized and will be delivered to provincial authorities, covering districts, sub-districts, villages...' (population and housing, not religion, as far as the snippets show). One snippet says more detailed final results were released in November 2025; not verified."
+  },
+  "subnational_sources": [
+    {
+      "fields": [],
+      "title": "COSIT Annual Abstract of Statistics 2024, Part Two 1-2 Population Census (تعداد السكان)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf",
+      "publisher": "COSIT",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "governorate, urban/rural",
+      "geography_count": 18,
+      "matches_boundary_level": "admin1",
+      "year": 2024,
+      "confidence": "low",
+      "evidence": "Snippet: 'data tables organized by governorate and environment (urban/rural)'. Population only; no religion column is mentioned. Listed as the place a religion table would most plausibly appear, not as a source that holds one."
+    }
+  ],
+  "secondary_routes": [
+    {
+      "route": "HDX - Iraq Subnational Population Statistics (COD-PS)",
+      "url": "https://data.humdata.org/dataset/cod-ps-irq",
+      "note": "admin0-1 sex/age 2021 projections; no religion/ethnicity/language. Confirms HDX admin structure: 18 governorates, 101 districts -- exactly the packet's 18 / 101, so HDX names/P-codes can serve as a join key."
+    },
+    {
+      "route": "HDX - Iraq Subnational Population and Housing Data Tables with Administrative Boundaries",
+      "url": "https://data.humdata.org/dataset/iraq-subnational-boundaries-and-tabular-data",
+      "note": "2009 census total population, 2013/2014 estimates, households, ICT, health, mortality -- no religion/ethnicity/language in the snippet."
+    },
+    {
+      "route": "HDX - Iraq 2021 CSO Population Projection",
+      "url": "https://data.humdata.org/dataset/iraq-population-2021-cso-projection",
+      "note": "governorate projections by age and sex; no demographic-composition fields."
+    },
+    {
+      "route": "Third-party 'Iraq Census: Official Results & Interactive Data Portal' (The National Context)",
+      "url": "https://thenationalcontext.com/portal/iraq-census-data-portal/",
+      "note": "claims an interactive dashboard for all 18 governorates (population, housing, demographics); not an official host; unverified whether religion is included."
+    },
+    {
+      "route": "UN in Iraq - 'Iraq Unveils Key Census Insights'",
+      "url": "https://iraq.un.org/en/289810-iraq-unveils-key-census-insights-new-era-iraq%E2%80%99s-national-planning",
+      "note": "announcement of results; no tables."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Governorates of Iraq",
+        "url": "https://en.wikipedia.org/wiki/Governorates_of_Iraq",
+        "appears_to_contain": "snippet shows 19 governorates (incl. Halabja, 2014) and the four Kurdistan Region governorates; no ethnic/religious composition table visible in the snippet; unverified"
+      },
+      {
+        "title": "Iraqis",
+        "url": "https://en.wikipedia.org/wiki/Iraqis",
+        "appears_to_contain": "national ethnic shares only (Arabs ~80%, Kurds, Turkmen, Assyrians, Yazidis); no subnational table in snippet"
+      },
+      {
+        "title": "Demographics of Iraq",
+        "url": "https://en.wikipedia.org/wiki/Demographics_of_Iraq",
+        "appears_to_contain": "surfaced in the census-questionnaire search; content not seen"
+      }
+    ],
+    "admin2_samples": [
+      {
+        "shape_name": "Balad",
+        "search_hit_title": "Balad District, Iraq",
+        "url": "https://en.wikipedia.org/wiki/Balad_District,_Iraq",
+        "note": "article exists (Saladin Governorate; 2003 population 167,590; 'Sunni Triangle' farmers) -- snippet is narrative, no composition figure; ambiguous with 'Balad Ruz District' (Diyala)"
+      },
+      {
+        "shape_name": "Qalat Saleh",
+        "search_hit_title": "Qal'at Saleh District",
+        "url": "https://en.wikipedia.org/wiki/Qal'at_Saleh_District",
+        "note": "article exists (Maysan; centre ~40,000); snippet is about Mandaean heritage and emigration after 2003 -- no composition figure"
+      },
+      {
+        "shape_name": "Halabcha",
+        "search_hit_title": "Halabja District",
+        "url": "https://en.wikipedia.org/wiki/Halabja_District",
+        "note": "article exists; the district became Halabja Governorate in 2014 and its sub-districts became districts -- the boundary's 18 admin1 do not include it, so the admin2 'Halabcha' shape is the pre-2014 district; snippet has no composition figure"
+      }
+    ]
+  },
+  "tier": "C",
+  "tier_reason": "Ethnicity and language were deliberately excluded from the 2024 questionnaire (Shafaq, Rudaw Research Center, Esri ArcNews all agree), so the right output for those two fields is a not_collected declaration citing the 2024 census. Religion was asked (sect was not) but no governorate-level religion publication was found on cosit.gov.iq, HDX or anywhere else, so that single field is a D within a C country: asked, publication not established.",
+  "replaces_existing": false,
+  "recommended_action": "Declare ethnicity and language not_collected for Iraq with the 2024 census as evidence (questionnaire excluded ethnicity, language and sect). Keep religion open: check COSIT's census pages and the Annual Abstract 2024 chapter 2 for a religion-by-governorate table once the detailed volumes are out (the Ministry said governorate datasets were finalised in February 2025; one report says detailed results came in November 2025), and note the CSO will not publish Sunni/Shia. Also check the Kurdistan Region Statistics Office (KRSO, not searched) for the four northern governorates. Do not fill from 1987/1997 census figures or from Wikipedia narrative without seeing a table. HDX cod-ps-irq gives the same 18/101 structure as the boundary and is the join key to use if a table appears.",
+  "searches_run": [
+    "Iraq census November 2024 results religion ethnicity questions governorate",
+    "Iraq 2024 census questionnaire religion question included excluded ethnicity sect CSO Iraq",
+    "Iraq census 2024 final results November 2025 religion Christians Yazidis by governorate published tables",
+    "cosit.gov.iq Central Statistical Organization Iraq census 2024 results governorate population tables",
+    "data.humdata.org Iraq population statistics governorate district dataset",
+    "\"Governorates of Iraq\" wikipedia ethnic religious composition table",
+    "\"Balad District\" Iraq wikipedia",
+    "\"Qalat Saleh\" Maysan Iraq wikipedia district",
+    "\"Halabja District\" Iraq wikipedia"
+  ],
+  "not_found": [
+    "Any 2024 census table of religion by governorate or district (on cosit.gov.iq, mop.gov.iq, HDX, or news)",
+    "Any 2024 census ethnicity or language table (not asked)",
+    "A machine-readable 2024 census release of any kind (only PDF abstract and announcements)",
+    "Not searched (session search budget exhausted): KRSO (Kurdistan Region Statistics Office); 1987 and 1997 census religion/nationality tables; IPUMS-International Iraq; MICS 2018 Iraq household-head religion/ethnicity"
+  ],
+  "summary": "Iraq's November 2024 census -- the first full count since 1987 -- excluded ethnicity, language and sect from the questionnaire by political decision, so those fields should be declared not_collected with the 2024 census cited. Religion was asked (Christians, Yazidis, Mandaeans etc., but no Sunni/Shia split), yet no governorate table of it surfaced on COSIT's site, in the Annual Abstract chapter, on HDX, or in the press coverage of the February 2025 final results. HDX's COD-PS carries exactly the boundary's 18 governorates and 101 districts and is the join key if a religion table appears. Wikipedia district articles exist for the sampled shapes but their snippets are narrative, not tables."
+}

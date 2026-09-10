@@ -198,6 +198,112 @@ def sample_wikipedia(name: str, country: str) -> dict[str, Any]:
     return out
 
 
+HDX_SEARCH = "https://data.humdata.org/api/3/action/package_search"
+CRAWL_WORDS = re.compile(r"census|religio|ethnic|tribe|caste|language|mother.?tongue|"
+                         r"population|demograph|recensement|censo|religi[oó]n|etnia|"
+                         r"lengua|idioma|zensus|nüfus|sensus|agama|suku|bahasa", re.I)
+FILE_EXT = re.compile(r"\.(csv|xlsx?|pdf|zip|json|ods)(\?|$)", re.I)
+
+
+def hdx_search(country: str, iso3: str) -> list[dict[str, Any]]:
+    """What HDX holds for this country that names a field this map wants.
+
+    HDX is a CKAN, and CKAN has a real search API -- no page, no budget, one
+    call per query. Six of this map's countries are already read from it (the
+    US Census Bureau's international series, DHS-derived tables), so it is the
+    first door to try everywhere rather than a fallback.
+    """
+    out: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for term in ("religion", "ethnicity", "language", "census"):
+        q = urllib.parse.urlencode({"q": f"{term} {country}", "rows": "10",
+                                    "fq": f"groups:{iso3.lower()}"})
+        res = get(f"{HDX_SEARCH}?{q}", limit=None)
+        if res.get("status") != 200:
+            out.append({"term": term, "error": res.get("status") or res.get("error")})
+            continue
+        try:
+            payload = json.loads(res["body"])
+        except ValueError:
+            continue
+        for ds in (payload.get("result") or {}).get("results") or []:
+            name = ds.get("name")
+            if not name or name in seen:
+                continue
+            seen.add(name)
+            resources = [{"name": r.get("name"), "format": r.get("format"),
+                          "url": r.get("url")} for r in (ds.get("resources") or [])[:8]]
+            out.append({"term": term, "title": ds.get("title"), "name": name,
+                        "org": (ds.get("organization") or {}).get("title"),
+                        "url": f"https://data.humdata.org/dataset/{name}",
+                        "resources": resources})
+        time.sleep(0.3)
+    return out
+
+
+def crawl_nso(url: str, *, depth: int = 1, budget: int = 12) -> dict[str, Any]:
+    """Follow an office's own links to the pages and files that name a field.
+
+    One level deep and a dozen pages at most: enough to find a "Census 2022
+    results" page and the files it links, not enough to be a nuisance. Every
+    page is described the way a candidate URL is, so a 403, a bot wall or a
+    broken certificate is recorded as such rather than read as absence.
+    """
+    home = get(url)
+    out: dict[str, Any] = {"url": url, "status": home.get("status"),
+                           "error": home.get("error"), "pages": []}
+    if home.get("status") != 200:
+        return out
+    body = describe_body(home)
+    out["title"] = body.get("title")
+    text = (home.get("body") or b"").decode("utf-8", "replace")
+    base = home.get("final_url") or url
+    links: list[str] = []
+    for href, label in re.findall(r'<a[^>]+href="([^"#]+)"[^>]*>(.*?)</a>', text, re.I | re.S):
+        label = re.sub(r"<[^>]+>", " ", label)
+        if CRAWL_WORDS.search(label) or CRAWL_WORDS.search(href):
+            full = urllib.parse.urljoin(base, href)
+            if urllib.parse.urlparse(full).netloc == urllib.parse.urlparse(base).netloc:
+                if full not in links:
+                    links.append(full)
+    out["matching_links"] = len(links)
+    for link in links[:budget]:
+        res = get(link)
+        entry: dict[str, Any] = {"url": link, "status": res.get("status")}
+        if res.get("status") == 200:
+            d = describe_body(res)
+            entry["kind"] = d.get("kind")
+            entry["title"] = d.get("title")
+            entry["files"] = d.get("links_to_files")
+            entry["mentions"] = d.get("mentions")
+        else:
+            entry["error"] = res.get("error")
+        out["pages"].append(entry)
+        time.sleep(0.5)
+    return out
+
+
+def table_headers(text: str) -> list[dict[str, Any]]:
+    """Every wikitable's header cells, so a list article can be judged by
+    whether one of its tables is a place-by-composition matrix."""
+    out = []
+    for m in TABLE.finditer(text):
+        block = text[m.start(): m.start() + 3000]
+        # A header row is "! a !! b !! c" on one line or "! a" per line; both
+        # forms appear, sometimes in the same article.
+        header = re.findall(r"^\s*!\s*(.+)$", block, re.M)[:14]
+        cells = [re.sub(r"\[\[([^|\]]*\|)?([^\]]+)\]\]", r"\2", c).strip()
+                 for line in header for c in line.split("!!")]
+        place = any(re.search(r"\b(county|district|state|province|region|governorate|"
+                              r"division|department|prefecture|municipality|zone)\b", c, re.I)
+                    for c in cells)
+        comp = sum(bool(COMPOSITION_WORDS.search(c)) for c in cells)
+        rows = block.count("\n|-")
+        out.append({"header": cells[:10], "place_column": place,
+                    "composition_columns": comp, "rows_hint": rows})
+    return out
+
+
 def survey(iso3: str, finding: dict[str, Any], packet: dict[str, Any],
            *, wiki_samples: int) -> dict[str, Any]:
     out: dict[str, Any] = {"iso3": iso3, "name": packet.get("name"),
@@ -219,15 +325,42 @@ def survey(iso3: str, finding: dict[str, Any], packet: dict[str, Any],
         print(f"  {iso3} {res.get('status')} {(entry.get('body') or {}).get('kind', '-'):<9} {url[:100]}")
 
     country = packet.get("name") or iso3
-    for art in (finding.get("wikipedia") or {}).get("country_list_articles") or []:
-        title = art.get("title")
+
+    out["hdx"] = hdx_search(country, iso3)
+    hdx_hits = [h for h in out["hdx"] if h.get("title")]
+    print(f"  {iso3} hdx       {len(hdx_hits)} datasets")
+    for h in hdx_hits[:6]:
+        fmts = sorted({(r.get("format") or "?").upper() for r in h["resources"]})
+        print(f"      [{h['term']}] {h['title'][:80]}  {fmts}")
+
+    nso_url = (finding.get("nso") or {}).get("url") or packet.get("nso_url")
+    if nso_url:
+        out["nso_crawl"] = crawl_nso(nso_url)
+        c = out["nso_crawl"]
+        print(f"  {iso3} nso       {c.get('status')} {c.get('title') or c.get('error') or ''} "
+              f"-> {c.get('matching_links', 0)} matching links, {len(c['pages'])} read")
+        for pg in c["pages"]:
+            if pg.get("files"):
+                print(f"      {pg['status']} {pg.get('title', '')[:60]}: {len(pg['files'])} files")
+
+    # List articles the agents named, plus the two titles that most often
+    # carry a census table by first-level unit whether or not anyone named them.
+    titles = [a.get("title") for a in (finding.get("wikipedia") or {}).get("country_list_articles") or []]
+    for guess in (f"Religion in {country}", f"Demographics of {country}"):
+        if guess not in titles:
+            titles.append(guess)
+    for title in titles:
         if not title:
             continue
         text = wiki_text(title) or ""
         e = {"title": title, "wikitext_bytes": len(text)}
         e.update(signals(text))
+        e["tables"] = table_headers(text)
+        e["place_by_composition_tables"] = sum(
+            1 for tb in e["tables"] if tb["place_column"] and tb["composition_columns"] >= 2)
         out["wikipedia"]["list_articles"].append(e)
-        print(f"  {iso3} wiki-list {e['verdict']:<12} tables={e['wikitables']} {title}")
+        print(f"  {iso3} wiki-list {e['verdict']:<12} tables={e['wikitables']} "
+              f"place-by-composition={e['place_by_composition_tables']} {title}")
 
     names = (packet.get("admin2") or {}).get("sample_names") or []
     if not names:
@@ -240,6 +373,12 @@ def survey(iso3: str, finding: dict[str, Any], packet: dict[str, Any],
     got = [s for s in out["sources"] if s.get("status") == 200]
     comp = sum(1 for e in out["wikipedia"]["admin2_samples"] if e.get("verdict") == "composition")
     out["verdict"] = {
+        "hdx_datasets": len(hdx_hits),
+        "hdx_machine_readable": sum(1 for h in hdx_hits if any(
+            (r.get("format") or "").upper() in ("CSV", "XLSX", "XLS", "JSON") for r in h["resources"])),
+        "nso_files_found": sum(len(p.get("files") or []) for p in (out.get("nso_crawl") or {}).get("pages", [])),
+        "wikipedia_list_tables_by_place": sum(e["place_by_composition_tables"]
+                                              for e in out["wikipedia"]["list_articles"]),
         "urls_answering": f"{len(got)}/{len(out['sources'])}",
         "machine_readable": sorted({(s.get("body") or {}).get("kind") for s in got
                                     if (s.get("body") or {}).get("kind") in ("json", "zip/xlsx", "text/csv?")}),
@@ -275,8 +414,9 @@ def main() -> int:
         (out / f"{iso}.json").write_text(json.dumps(result, indent=1, ensure_ascii=False) + "\n",
                                           encoding="utf-8")
         v = result["verdict"]
-        print(f"  {iso} VERDICT urls {v['urls_answering']} machine-readable {v['machine_readable']} "
-              f"wikipedia admin2 composition {v['wikipedia_admin2_with_composition']}")
+        print(f"  {iso} VERDICT hdx {v['hdx_datasets']} ({v['hdx_machine_readable']} machine-readable) "
+              f"nso-files {v['nso_files_found']} wiki-list-tables {v['wikipedia_list_tables_by_place']} "
+              f"urls {v['urls_answering']} wiki-admin2 {v['wikipedia_admin2_with_composition']}")
         done += 1
     print(f"surveyed {done} countries")
     return 0

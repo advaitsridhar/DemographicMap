@@ -1,0 +1,104 @@
+{
+  "iso3": "POL",
+  "name": "Poland",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Główny Urząd Statystyczny (Statistics Poland, GUS)", "url": "https://stat.gov.pl/"},
+  "latest_census": {
+    "year": 2021,
+    "asks": {"religion": true, "ethnicity": true, "language": true},
+    "notes": "Narodowy Spis Powszechny Ludności i Mieszkań 2021 (NSP 2021). Asks przynależność narodowo-etniczna (national-ethnic affiliation), język używany w domu (language used at home) and przynależność do wyznania religijnego (religious affiliation). The religion question was voluntary and a large share refused (packet national record: 20.9% refused), so any composition must carry a refused/not-stated category. Known methodological caveat (from prior knowledge, verify in the table headers): the ethnicity question allows a first and a second identification, so a composition has to pick one basis. All three fields are published subnationally in final-results tables released 28 Sep 2023."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["ethnicity", "language", "religion"],
+      "title": "Tablice z ostatecznymi danymi w zakresie przynależności narodowo-etnicznej, języka używanego w domu oraz przynależności do wyznania religijnego (NSP 2021, wyniki ostateczne)",
+      "url": "https://stat.gov.pl/spisy-powszechne/nsp-2021/nsp-2021-wyniki-ostateczne/tablice-z-ostatecznymi-danymi-w-zakresie-przynaleznosci-narodowo-etnicznej-jezyka-uzywanego-w-domu-oraz-przynaleznosci-do-wyznania-religijnego,10,1.html",
+      "publisher": "GUS (Statistics Poland)",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "województwo / powiat / gmina",
+      "geography_count": 380,
+      "matches_boundary_level": "admin1 and admin2",
+      "year": 2021,
+      "confidence": "high",
+      "evidence": "Search result title names the page; the search summary says the page carries XLSX tables published 28 Sep 2023 on national-ethnic affiliation 'for the country and territorial units', language used at home 'for the country and territorial units', and religious affiliation 'according to territorial divisions of the country, including voivodeships, counties and communes'; it also names 'Tablica 6: LUDNOŚĆ WEDŁUG PRZYNALEŻNOŚCI DO WYZNANIA RELIGIJNEGO I WOJEWÓDZTW W 2021 R.'. Poland has 16 voivodeships (= packet admin1 16) and 380 powiats incl. 66 cities with powiat rights (= packet admin2 380). Which of the three fields is tabulated at powiat level (vs. only voivodeship) is stated for religion; for ethnicity and language the snippet says 'territorial units' without listing levels -- confirm on the page."
+    },
+    {
+      "fields": ["ethnicity", "language"],
+      "title": "Wyniki Narodowego Spisu Powszechnego Ludności i Mieszkań 2021 - mniejszości narodowe i etniczne oraz język regionalny",
+      "url": "https://www.gov.pl/web/mniejszosci-narodowe-i-etniczne/wyniki-narodowego-spisu-powszechnego-ludnosci-i-mieszkan-2021---mniejszosci-narodowe-i-etniczne-oraz-jezyk-regionalny",
+      "publisher": "Ministry of the Interior and Administration (gov.pl, Mniejszości Narodowe i Etniczne)",
+      "kind": "census",
+      "format": null,
+      "geography": null,
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2021,
+      "confidence": "medium",
+      "evidence": "Search result title; summary describes 'additional NSP 2021 data files related to minorities' on the minorities portal. Format and geography not stated in the snippet. Secondary to the GUS page above."
+    },
+    {
+      "fields": ["ethnicity", "language", "religion"],
+      "title": "Bank Danych Lokalnych (BDL) and BDL REST API",
+      "url": "https://api.stat.gov.pl/Home/BdlApi",
+      "publisher": "GUS",
+      "kind": "census",
+      "format": "api",
+      "geography": "gmina / powiat / województwo",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 and admin2",
+      "year": 2021,
+      "confidence": "low",
+      "evidence": "Search results confirm BDL (https://bdl.stat.gov.pl/bdl/) exposes data via REST API in XML and JSON and covers gminas, powiats, voivodeships. No search result confirmed that the NSP 2021 nationality/language/religion variables are loaded into BDL; the summary only said one 'would need to access these through the web interface or the REST API'. Treat as a route to check, not an established table."
+    },
+    {
+      "fields": ["religion"],
+      "title": "Religious denominations in Poland 2019-2021 (Wyznania religijne w Polsce)",
+      "url": "https://stat.gov.pl/en/topics/other-studies/religious-denominations/religious-denominations-in-poland-2019-2021,1,3.html",
+      "publisher": "GUS",
+      "kind": "register",
+      "format": "pdf",
+      "geography": null,
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2021,
+      "confidence": "low",
+      "evidence": "Search result title only. This is GUS's periodic compendium of figures reported by the religious bodies themselves (membership counts), a different kind of number from the census self-declaration; listed only so it is not mistaken for the census table."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Poland", "url": "https://en.wikipedia.org/wiki/Religion_in_Poland",
+       "appears_to_contain": "Snippet gives national 2021 census shares (71.3% Roman Catholic, 0.40% Orthodox, etc.); no by-voivodeship table visible in the snippet; unverified."},
+      {"title": "2021 Polish census", "url": "https://en.wikipedia.org/wiki/2021_Polish_census",
+       "appears_to_contain": "Article exists; snippet does not say whether it carries tables by voivodeship; unverified."}
+    ],
+    "admin2_samples": [
+      {"shape_name": "powiat brodnicki", "search_hit_title": "Brodnica County", "url": "https://en.wikipedia.org/wiki/Brodnica_County",
+       "note": "English and Polish (https://pl.wikipedia.org/wiki/Powiat_brodnicki) articles exist; snippet gives population (77,593), area and commune count only. Not worth reading given the GUS XLSX."},
+      {"shape_name": "Siemianowice Śląskie", "search_hit_title": "Siemianowice Śląskie", "url": "https://en.wikipedia.org/wiki/Siemianowice_%C5%9Al%C4%85skie",
+       "note": "Article exists (city with powiat rights); snippet gives history and 2011 population only. Polish Wikipedia also has 'Ludność Siemianowic Śląskich'."},
+      {"shape_name": "powiat piotrkowski", "search_hit_title": "Piotrków County", "url": "https://en.wikipedia.org/wiki/Piotrk%C3%B3w_County",
+       "note": "English and Polish articles exist; snippet gives area (1,428.77 km2) and 2023 population (90,278) only."}
+    ]
+  },
+  "tier": "A",
+  "tier_reason": "Census counts of ethnicity, home language and religion, published as XLSX by GUS for voivodeships (16 = admin1) and powiats (380 = admin2) and gminas.",
+  "replaces_existing": false,
+  "recommended_action": "Fetch the XLSX workbooks from the GUS 'Tablice z ostatecznymi danymi...' page. Join admin1 on voivodeship name (16) and admin2 on powiat (380); city-counties appear in GUS tables as 'm. X' / 'Powiat m. X' while the boundary file has bare city names ('Białystok', 'Siemianowice Śląskie'), so normalise or, better, join on the TERYT code if the workbook carries one. Keep 'refused to answer' as a category for religion and record which identification (first/any) the ethnicity table uses. Confirm on the page which fields have a powiat-level table; if one is voivodeship-only, check BDL for that variable.",
+  "searches_run": [
+    "Narodowy Spis Powszechny 2021 wyznanie według województw tabela GUS",
+    "GUS NSP 2021 \"przynależność narodowo-etniczna\" powiaty tablica xlsx \"język używany w domu\"",
+    "Bank Danych Lokalnych NSP 2021 narodowość wyznanie powiaty API bdl.stat.gov.pl",
+    "\"Religion in Poland\" wikipedia table by voivodeship census 2021",
+    "\"powiat brodnicki\" Poland wikipedia",
+    "\"Siemianowice Śląskie\" wikipedia",
+    "\"powiat piotrkowski\" Poland wikipedia"
+  ],
+  "not_found": [
+    "Explicit list of per-field table titles at powiat level (planned search 'GUS NSP 2021 tablice według powiatów ... xlsx Tablica' was not run: session WebSearch budget exhausted)",
+    "Confirmation that NSP 2021 ethnicity/language/religion variables are loaded in BDL",
+    "A Wikipedia by-voivodeship table for religion or ethnicity (not visible in snippets)"
+  ],
+  "summary": "Poland is a straightforward Tier A. The 2021 census asked national-ethnic affiliation, language used at home and religion, and GUS published final-results XLSX tables for the country, voivodeships, powiats and gminas on 28 September 2023 (page: 'Tablice z ostatecznymi danymi w zakresie przynależności narodowo-etnicznej, języka używanego w domu oraz przynależności do wyznania religijnego'). Poland's 16 voivodeships and 380 powiats match the packet's admin1 and admin2 counts exactly. Religion was voluntary with a large 'refused' share that must stay visible in the composition; ethnicity may need a choice between first and any identification. Nothing is currently filled, so this is new data, not a replacement."
+}

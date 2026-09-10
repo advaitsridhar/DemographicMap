@@ -1,0 +1,124 @@
+{
+ "iso3": "MYS",
+ "name": "Malaysia",
+ "researched_at": "2026-09-10",
+ "nso": {
+  "name": "Department of Statistics Malaysia (DOSM); open-data portal OpenDOSM",
+  "url": "https://open.dosm.gov.my/"
+ },
+ "latest_census": {
+  "year": 2020,
+  "asks": {
+   "religion": true,
+   "ethnicity": true,
+   "language": null
+  },
+  "notes": "Population and Housing Census of Malaysia 2020 (MyCensus 2020), enumeration ended 31 October 2021; 32.4 million (29.8m citizens). Ethnicity: Bumiputera 69.4% / Chinese 23.1% / Indians 6.7% / others 0.8% of citizens. Religion: 2020 census gives Muslim 63.5%, Buddhist ~19%, Christian 9%, Hindu 6.1%. Language: the census portal says the questionnaire ran to over 100 questions, but no result confirmed a mother-tongue/language question; left null."
+ },
+ "subnational_sources": [
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Population Table: Administrative Districts | OpenDOSM",
+   "url": "https://open.dosm.gov.my/data-catalogue/population_district",
+   "publisher": "Department of Statistics Malaysia (OpenDOSM)",
+   "kind": "census",
+   "format": "parquet + API (CSV via catalogue)",
+   "geography": "administrative district / jajahan",
+   "geography_count": 160,
+   "matches_boundary_level": "admin2 (159 shapes vs 160 districts; names like Kinabatangan, Jelebu, Selama)",
+   "year": 2020,
+   "confidence": "high",
+   "evidence": "Search snippet: 'population data at district level from 2020 to 2024, with breakdowns by sex, age group and ethnicity'; ethnic categories 'overall, Malay (bumi_malay), other Bumiputera (bumi_other), Chinese, Indian, other citizens (other_citizen), non-citizen residents (other_noncitizen)'; 'available for download in Parquet format and can be accessed via API'; CC BY 4.0. Caveat: the series is DOSM's current population estimates; confirm whether the 2020 row is the census count or the census-based mid-year estimate. Mirror: https://data.gov.my/data-catalogue/population_district. District count 160 from the DOSM Key Findings release below."
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Population Table: States | OpenDOSM",
+   "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+   "publisher": "Department of Statistics Malaysia (OpenDOSM)",
+   "kind": "census",
+   "format": "parquet + API",
+   "geography": "state and federal territory",
+   "geography_count": 16,
+   "matches_boundary_level": "admin1 (16)",
+   "year": 2020,
+   "confidence": "medium",
+   "evidence": "Surfaced in the same catalogue family as the district table; presumed to share its sex/age/ethnicity schema, not confirmed from the snippet."
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "religion"
+   ],
+   "title": "Key Findings Population and Housing Census of Malaysia 2020: Administrative District",
+   "url": "https://www.dosm.gov.my/portal-main/release-content/key-findings-population-and-housing-census-of-malaysia-2020-administrative-district",
+   "publisher": "Department of Statistics Malaysia",
+   "kind": "census",
+   "format": "html release page (pdf publication likely; unverified)",
+   "geography": "administrative district (160), mukim (1,756), local authority (155)",
+   "geography_count": 160,
+   "matches_boundary_level": "admin2 (159)",
+   "year": 2020,
+   "confidence": "medium",
+   "evidence": "Search snippet: 'comprises statistics at small geographical levels namely administrative districts/ jajahan (160), mukim/ sub-districts (1,756) and Local Authority (PBT) (155)'. Which characteristics (ethnicity, religion) are tabulated at district level is not stated in the snippet."
+  }
+ ],
+ "wikipedia": {
+  "country_list_articles": [
+   {
+    "title": "Hinduism in Malaysia",
+    "url": "https://en.wikipedia.org/wiki/Hinduism_in_Malaysia",
+    "appears_to_contain": "snippet cites the 2020 census (1.97 million, 6.1%); a by-state table is plausible, unverified"
+   },
+   {
+    "title": "Buddhism in Malaysia",
+    "url": "https://en.wikipedia.org/wiki/Buddhism_in_Malaysia",
+    "appears_to_contain": "surfaced; contents not seen"
+   },
+   {
+    "title": "Malaysian Chinese",
+    "url": "https://en.wikipedia.org/wiki/Malaysian_Chinese",
+    "appears_to_contain": "surfaced; contents not seen. The intended 'Religion in Malaysia table by state' search did not run (budget exhausted)"
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Kinabatangan",
+    "search_hit_title": null,
+    "url": null,
+    "note": "Not searched: the session's shared WebSearch budget (200 calls) was exhausted before this query ran. This is a fact about the sandbox, not about the article."
+   },
+   {
+    "shape_name": "Jelebu",
+    "search_hit_title": null,
+    "url": null,
+    "note": "Not searched: the session's shared WebSearch budget (200 calls) was exhausted before this query ran. This is a fact about the sandbox, not about the article."
+   },
+   {
+    "shape_name": "Selama",
+    "search_hit_title": null,
+    "url": null,
+    "note": "Not searched: the session's shared WebSearch budget (200 calls) was exhausted before this query ran. This is a fact about the sandbox, not about the article."
+   }
+  ]
+ },
+ "tier": "A",
+ "tier_reason": "Ethnicity from the 2020 census round is machine-readable (Parquet/API, CC BY 4.0) on OpenDOSM by administrative district (160 vs 159 admin2 shapes) and by state (16 = admin1). Religion is asked but no subnational religion table surfaced this session.",
+ "replaces_existing": false,
+ "recommended_action": "Read OpenDOSM population_district and population_state (2020 rows) for ethnicity at admin2 and admin1; confirm in the technical notes (open.dosm.gov.my/publications/technical-notes/population-technotes) whether 2020 is the census count. Then search DOSM for religion by state/district from Census 2020 (Banci 2020 'agama' tables) and check the Key Findings: Administrative District publication for a religion table. Establish whether the census asked language before declaring it.",
+ "searches_run": [
+  "Malaysia census 2020 population by ethnic group religion state administrative district DOSM",
+  "OpenDOSM data catalogue population by administrative district ethnicity",
+  "Malaysia census 2020 mother tongue language question asked"
+ ],
+ "not_found": [
+  "religion by state or district from Census 2020 in any format (dedicated search did not run)",
+  "whether the 2020 census asked mother tongue / language (no result addressed it)",
+  "whether the Key Findings: Administrative District publication tabulates ethnicity or religion (snippet gives geography counts only)",
+  "Wikipedia 'Religion in Malaysia' list article and admin2 sample articles (searches did not run: budget exhausted)"
+ ],
+ "summary": "Malaysia's 2020 census asked ethnicity and religion. OpenDOSM publishes ethnicity (Malay, other Bumiputera, Chinese, Indian, other citizen, non-citizen) by administrative district and by state as Parquet/API under CC BY 4.0, with district counts (160) matching the map's 159 admin2 shapes almost exactly and 16 states matching admin1 -- build ethnicity next. Subnational religion and any language question remain to be established; the DOSM 'Key Findings: Administrative District' release is the place to look for religion by district."
+}

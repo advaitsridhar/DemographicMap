@@ -1,0 +1,39 @@
+{
+  "iso3": "EGY",
+  "name": "Egypt",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Central Agency for Public Mobilization and Statistics (CAPMAS)", "url": null},
+  "latest_census": {
+    "year": null,
+    "asks": {"religion": null, "ethnicity": null, "language": null},
+    "notes": "NOT ESTABLISHED BY SEARCH: the session's WebSearch budget (200/200) was exhausted before any Egypt query ran. The repo holds nothing subnational for Egypt (packet status 'nothing'; 27 admin1 and 364 admin2 shapes, 0 filled; EGY appears in the code only in scripts/fetch_boundaries.py). Unverified prior knowledge, to be confirmed by search before it is relied on: the latest census is 2017; religion has historically been asked but CAPMAS has not published it by governorate since the 1986 census; ethnicity and language are not asked. If confirmed, ethnicity and language would be Tier C (not_collected) and religion Tier B/C depending on whether any governorate table is published."
+  },
+  "subnational_sources": [],
+  "wikipedia": {
+    "country_list_articles": [],
+    "admin2_samples": [
+      {"shape_name": "Sidi Salim", "search_hit_title": null, "url": null, "note": "not searched: budget exhausted"},
+      {"shape_name": "Marsa Matruh", "search_hit_title": null, "url": null, "note": "not searched: budget exhausted"},
+      {"shape_name": "Suhag", "search_hit_title": null, "url": null, "note": "not searched: budget exhausted (note spelling variant Sohag)"}
+    ]
+  },
+  "tier": "D",
+  "tier_reason": "Could not establish by search: zero Egypt searches executed (session budget exhausted). The one route already measured closed by the repo is the U.S. Census Bureau HDX series -- Egypt is not among the 25 USCB datasets the repo's probe enumerated (scratchpad uscb.log).",
+  "replaces_existing": false,
+  "recommended_action": "Re-run once the search budget is raised. Queries: (1) CAPMAS 2017 census final results -- does any volume tabulate religion by governorate, and was religion asked at all; (2) history of the religion question: which census last published it by governorate (1986? 1996? 2006?) -- the answer decides between a not_collected declaration and an old-vintage Tier B PDF; (3) CAPMAS census questionnaire ethnicity / mother tongue -- expected not asked, which would be a Tier C declaration for two fields; (4) 'Religion in Egypt' wikipedia table by governorate, which may carry the 1986 or 2006 census table; (5) the three admin2 samples above (Sidi Salim, Marsa Matruh, Suhag/Sohag). The USCB/HDX route need not be re-checked.",
+  "searches_run": [],
+  "searches_blocked": [
+    "CAPMAS 2017 census Egypt religion by governorate results",
+    "Egypt census religion question 1986 1996 2006 2017 published by governorate Christians Muslims",
+    "CAPMAS census questionnaire ethnicity mother tongue language Egypt",
+    "\"Religion in Egypt\" wikipedia table by governorate census",
+    "\"Sidi Salim\" Egypt wikipedia",
+    "\"Marsa Matruh\" Egypt wikipedia",
+    "\"Sohag\" Egypt wikipedia"
+  ],
+  "not_found": [
+    "nothing searched; every item above is an unrun query",
+    "repo-measured absence: Egypt is not in the U.S. Census Bureau HDX subnational series (25 datasets enumerated by scripts/probe_hdx.py, logged in scratchpad uscb.log)"
+  ],
+  "summary": "No searches could be run for Egypt: the session's 200-search budget was used up before this country's first query, so this finding is tiered D. The repo currently holds nothing subnational for Egypt (27 governorates, 364 admin2 shapes, all empty), and the one secondary route it has already measured -- the U.S. Census Bureau's HDX series -- does not include Egypt. Prior knowledge, unverified here, is that CAPMAS asks religion but has not published it by governorate since 1986 and asks neither ethnicity nor language; a re-run should confirm that, because it would turn two fields into not_collected declarations and leave religion as an old-vintage PDF at best."
+}

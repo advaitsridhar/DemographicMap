@@ -1,0 +1,90 @@
+{
+  "iso3": "SAU",
+  "name": "Saudi Arabia",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "General Authority for Statistics (GASTAT)", "url": "https://www.stats.gov.sa/en/"},
+  "latest_census": {
+    "year": 2022,
+    "asks": {"religion": false, "ethnicity": false, "language": false},
+    "notes": "Saudi Census 2022 (fifth census), first results 31 May 2023: 32,175,224 people, 58.4% Saudi (18.8m) / 41.6% non-Saudi (13.4m). The form had about fifty questions on 'demographic, health, economic, educational and housing characteristics' and was offered in seven languages; it asks citizenship (Saudi/non-Saudi) and country of citizenship (GASTAT/GLMM: Bangladeshi 2.12m, Indian 1.88m, Pakistani 1.81m), but no search result mentions a religion, ethnicity or language question, and Islam is the state religion with no official religious statistics. 'Not asked' for all three is medium confidence: inferred from the absence of any such table or question in the results and the GLMM methodology paper's summary, not from the questionnaire itself. Citizenship is not ethnicity (this project keeps 'the race question, not the citizenship question beside it', per SOURCES.md on the Bahamas), so the nationality tables below are context, not a composition to load."
+  },
+  "subnational_sources": [
+    {
+      "fields": [],
+      "title": "Saudi Census 2022 portal -- population by age, citizenship (Saudi/non-Saudi) and gender at administrative region, governorate and city level",
+      "url": "https://portal.saudicensus.sa/portal",
+      "publisher": "GASTAT",
+      "kind": "census",
+      "format": "table-builder",
+      "geography": "administrative region (13) / governorate / city",
+      "geography_count": 13,
+      "matches_boundary_level": "admin1 (13) and plausibly admin2 (governorates; packet draws 147)",
+      "year": 2022,
+      "confidence": "medium",
+      "evidence": "Search summary: census data 'aggregated at three levels: the Administrative Region, the Governorate, and the City, with data available by age, citizenship, and gender'; 'selected pre-set tables can be downloaded from the thematic section'; methodology at https://portal.saudicensus.sa/portal/public/methodology. Field is citizenship only -- none of religion/ethnicity/language."
+    },
+    {
+      "fields": [],
+      "title": "Population by age, citizenship, gender and governorate (2022) -- RCRC Open Data Portal",
+      "url": "https://opendata.rcrc.gov.sa/explore/dataset/population-by-age-citizenship-gender-and-governorate-2022/",
+      "publisher": "Royal Commission for Riyadh City (mirror of GASTAT census)",
+      "kind": "census",
+      "format": "csv",
+      "geography": "governorate",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 (scope may be Riyadh region only -- unconfirmed)",
+      "year": 2022,
+      "confidence": "medium",
+      "evidence": "Opendatasoft dataset with an /export/ endpoint (sibling datasets: 'Dependent population by citizenship and governorate (2022)', 'Household by citizenship, gender, size, and governorate (2022)'). Whether it covers all kingdom governorates or only Riyadh region's is not stated in the snippet. Citizenship only."
+    },
+    {
+      "fields": [],
+      "title": "Saudi Arabia: Population by nationality (Saudi/non-Saudi) and administrative region (governorate) of residence (2022) -- GLMM",
+      "url": "https://gulfmigration.grc.net/saudi-arabia-population-by-nationality-saudi-non-saudi-and-administrative-region-governorate-of-residence-2022/",
+      "publisher": "Gulf Labour Markets and Migration (GLMM), citing GASTAT",
+      "kind": "census",
+      "format": "html",
+      "geography": "administrative region",
+      "geography_count": 13,
+      "matches_boundary_level": "admin1",
+      "year": 2022,
+      "confidence": "medium",
+      "evidence": "Search result title. Companion table 'Non-Saudi population by country of citizenship and sex (selected countries, 2022)' (https://gulfmigration.grc.net/saudi-arabia-non-saudi-population-by-country-of-citizenship-and-sex-selected-countries-2022/) is national only; no by-region country-of-citizenship table surfaced."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Saudi Arabia", "url": "https://en.wikipedia.org/wiki/Religion_in_Saudi_Arabia",
+       "appears_to_contain": "Snippet gives estimates only (citizens ~90% Sunni, ~10% Shia; Shia concentrated in the Eastern Province; Hinduism ~1.3% of residents); no census table, since none exists."}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Al Taif", "search_hit_title": "Taif", "url": "https://en.wikipedia.org/wiki/Taif",
+       "note": "Article exists (city and governorate, Makkah Province); snippet gives 2022 population (563,282) only. Also https://en.wikipedia.org/wiki/List_of_governorates_of_Saudi_Arabia surfaced."},
+      {"shape_name": "Ar Rass", "search_hit_title": "Ar Rass", "url": "https://en.wikipedia.org/wiki/Ar_Rass",
+       "note": "Article exists (Al-Qassim); snippet gives 2022 census population (121,359) and area only."},
+      {"shape_name": "Sharurah", "search_hit_title": "Sharurah", "url": "https://en.wikipedia.org/wiki/Sharurah",
+       "note": "Article exists (city and governorate, Najran); snippet gives 2022 population (100,199) only."}
+    ]
+  },
+  "tier": "C",
+  "tier_reason": "The 2022 census counts citizenship (Saudi/non-Saudi, country of citizenship) by region and governorate but asks neither religion, ethnicity nor language; there are no official religious statistics at any level. The right output is a not_collected declaration for all three fields.",
+  "replaces_existing": false,
+  "recommended_action": "Declare religion, ethnicity and language not_collected for admin1 (13 regions) and admin2 (147 governorates) with the reason 'census 2022 asks citizenship only; no official religion/ethnicity/language statistics', citing the GASTAT census portal methodology page. Do not load Saudi/non-Saudi shares as ethnicity. If the owner wants a citizenship annotation, the GASTAT portal (region/governorate/city) and the RCRC Opendatasoft export are the machine-readable routes, with GLMM's 13-region HTML table as a check.",
+  "searches_run": [
+    "Saudi Census 2022 GASTAT population by nationality administrative region non-Saudi",
+    "GASTAT census 2022 results population by governorate nationality portal.gastat.gov.sa census tables",
+    "Saudi census 2022 non-Saudi population by country of nationality Indian Bangladeshi Pakistani region breakdown GASTAT",
+    "portal.saudicensus.sa population by nationality group governorate table download census 2022",
+    "Saudi census 2022 questionnaire questions religion language not asked GASTAT census form",
+    "\"Religion in Saudi Arabia\" wikipedia by region table",
+    "\"Ar Rass\" Saudi Arabia wikipedia",
+    "\"Sharurah\" Saudi Arabia wikipedia",
+    "\"Taif\" Saudi Arabia wikipedia governorate"
+  ],
+  "not_found": [
+    "Any religion, ethnicity or language question or table from the 2022 census (the questionnaire itself was not surfaced; absence inferred)",
+    "Country-of-citizenship breakdown below the national level",
+    "Planned searches not run because the session WebSearch budget was exhausted: 'GLMM non-Saudi population by country of citizenship and administrative region 2022', 'Saudi Arabia census does not collect religion IRF report', 'data.humdata.org Saudi Arabia census'"
+  ],
+  "summary": "Saudi Arabia's 2022 census (GASTAT) is a modern register-plus-enumeration count published by region, governorate and city, but the only identity variable it carries is citizenship (Saudi/non-Saudi and country of citizenship); religion, ethnicity and language are not asked and no official figures exist for them at any level. Tier C: declare all three fields not_collected at admin1 (13 regions match) and admin2 (147 governorates plausibly match), and do not let Saudi/non-Saudi shares stand in for ethnicity. The GASTAT portal, an RCRC Opendatasoft export and GLMM's 13-region table are available if a citizenship annotation is ever wanted."
+}

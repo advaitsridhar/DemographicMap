@@ -1,0 +1,93 @@
+{
+  "iso3": "MAR",
+  "name": "Morocco",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Haut-Commissariat au Plan (HCP)", "url": "https://www.hcp.ma/"},
+  "latest_census": {
+    "year": 2024,
+    "asks": {"religion": false, "ethnicity": false, "language": true},
+    "notes": "RGPH 2024 (Recensement Général de la Population et de l'Habitat), results published 17 Dec 2024. Language is asked two ways: 'langues locales utilisées' (Darija, Tachelhit, Tamazight, Tarifit, Hassania, other; multiple response -- 91.9% Darija, 24.8% Amazigh = 14.2% Tachelhit + 7.4% Tamazight + 3.2% Tarifit, 0.8% Hassania) and 'langue maternelle' (Arabic, Amazigh, French, English, Spanish, other), plus literacy in Tifinagh (1.5%). Religion and ethnicity: a search-result summary states 'the Moroccan census does not explicitly track ethnic or religious backgrounds' and that language is used as the proxy for Amazigh identity; the questionnaire itself was not seen, so 'not asked' is medium confidence. Amazigh associations (AMREC) contest the language figures as undercounts -- a caveat to carry on the record. Language shares are multiple-response ('uses'), so the 'langues locales' table is not a composition that sums to 100; 'langue maternelle' is the single-response field to prefer."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["language"],
+      "title": "Plateforme de diffusion du RGPH 2024 (interactive results platform, Apache Superset)",
+      "url": "https://resultats2024.rgphapps.ma/",
+      "publisher": "HCP",
+      "kind": "census",
+      "format": "table-builder",
+      "geography": "région / province-préfecture (levels inferred; not confirmed)",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 (12 regions vs 11 drawn) -- see notes",
+      "year": 2024,
+      "confidence": "medium",
+      "evidence": "HCP page 'Plateforme interactive du RGPH 2024' (https://www.hcp.ma/Plateforme-interactive-du-RGPH-2024_a4026.html) describes 'une base de données des indicateurs du RGPH 2024 sous forme de tableaux et graphiques' covering themes including 'langues locales utilisées'. The platform's own URLs surfaced in search: /superset/welcome/, /tablemodelview/list/ (Datasets), /dashboard/list/, /chart/list/, /explore/?slice_id=810 ('Population légale') -- i.e. an Apache Superset instance. Region-level language figures are quoted in press from HCP results (Souss-Massa: 63.2% use Tachelhit, 56.4% Tamazight mother tongue; Drâa-Tafilalet: 25.8% Tachelhit, 64% Tamazight native speakers), so at least the 12-region level exists. Superset charts normally export CSV, but that was not verified. Geography names are French with accents ('Fès-Meknès', 'Drâa-Tafilalet'); packet admin1 names are mixed ('Fez-Meknes'). Morocco has 12 regions; packet draws 11."
+    },
+    {
+      "fields": ["language"],
+      "title": "RGPH 2024 | Téléchargements (regional/provincial result publications)",
+      "url": "https://www.hcp.ma/downloads/RGPH-2024_t22752.html",
+      "publisher": "HCP",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "région / province",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 / admin2 (provinces: Morocco has 75 provinces-préfectures; packet draws 72)",
+      "year": 2024,
+      "confidence": "medium",
+      "evidence": "Search summary: 'The HCP has made regional RGPH 2024 publications available with demographic and socio-economic characteristics of the population for various provinces and regions.' Whether each provincial PDF carries the language indicators was not confirmed. National 'Principaux résultats' PDF: https://www.hcp.ma/file/242665/ (mirror: https://librentreprise.ma/wp-content/uploads/2024/12/HCP-Resultats-du-RGPH-2024-Fr.pdf)."
+    },
+    {
+      "fields": ["language"],
+      "title": "Indicateurs démographiques et socioéconomiques du Royaume du Maroc selon les résultats du RGPH 2024",
+      "url": "https://www.hcp.ma/Indicateurs-demographiques-et-socioeconomiques-du-Royaume-du-Maroc-selon-les-resultats-du-RGPH-2024_a4022.html",
+      "publisher": "HCP",
+      "kind": "census",
+      "format": null,
+      "geography": null,
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2024,
+      "confidence": "low",
+      "evidence": "Search result title only; likely the national indicator note. Listed as the entry point to HCP's indicator pages."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Languages of Morocco", "url": "https://en.wikipedia.org/wiki/Languages_of_Morocco",
+       "appears_to_contain": "Snippet quotes 2024 census national shares (92.7% Arabic incl. second-language, 24.8% Berber; Tachelhit 14.2 / Tamazight 7.4 / Tarifit 3.2) and names Drâa-Tafilalet and Souss-Massa as the top Tamazight-mother-tongue regions; a by-region table is not visible in the snippet; unverified."},
+      {"title": "Religion in Morocco", "url": "https://en.wikipedia.org/wiki/Religion_in_Morocco",
+       "appears_to_contain": "Article exists; snippet carries no census figures (the census does not ask religion)."}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Essaouira Province", "search_hit_title": "Essaouira Province", "url": "https://en.wikipedia.org/wiki/Essaouira_Province",
+       "note": "Article exists; snippet gives 2024 population (425,449) and names Haha and Chiadma tribes; no language composition in the snippet."},
+      {"shape_name": "Province de Tinghir إقليم تنغير", "search_hit_title": "Tinghir Province", "url": "https://en.wikipedia.org/wiki/Tinghir_Province",
+       "note": "Article exists; snippet gives 2014 population (322,412) and geography only."},
+      {"shape_name": "Province de Boulemane إقليم بولمان", "search_hit_title": "Boulemane Province", "url": "https://en.wikipedia.org/wiki/Boulemane_Province",
+       "note": "Article exists; snippet is descriptive (rural, Middle Atlas, seat Missour); no composition figures visible."}
+    ]
+  },
+  "tier": "B",
+  "tier_reason": "Language (mother tongue and local languages used) is a 2024 census count published subnationally, but it sits behind a Superset table-builder and regional PDFs rather than a plain CSV/XLSX, and the boundary file's 11 regions / 72 provinces do not exactly match Morocco's 12 regions / 75 provinces. Religion and ethnicity are not asked and belong in a not_collected declaration.",
+  "replaces_existing": true,
+  "recommended_action": "Open resultats2024.rgphapps.ma (Datasets list at /tablemodelview/list/) and look for the 'langue maternelle' and 'langues locales utilisées' datasets by région and by province; try the chart CSV export. Prefer 'langue maternelle' (single response) as the composition; if only multiple-response 'langues utilisées' is available, store it with an explicit non-summing basis. Map the 12 HCP regions onto the 11 drawn (find which region the boundary file merges or omits -- likely one of the Saharan regions) and normalise accented French names. Separately, the packet shows religion and ethnicity already filled for 6 of 11 admin1 from 'adapter:name'; since the census asks neither, the owner should review whether those should become not_collected declarations.",
+  "searches_run": [
+    "Recensement 2024 Maroc HCP langues maternelles amazighe par région résultats",
+    "HCP RGPH 2024 résultats par province langues locales tachelhit tamazight tableau téléchargement",
+    "Morocco census religion question not asked RGPH ethnicity Arab Amazigh",
+    "resultats2024.rgphapps.ma langues locales utilisées par province région indicateurs RGPH 2024 télécharger excel",
+    "RGPH 2024 tachelhit tamazight tarifit par région Souss-Massa Drâa-Tafilalet Oriental pourcentage population amazighophone",
+    "\"Languages of Morocco\" wikipedia table by region census amazigh",
+    "\"Essaouira Province\" wikipedia",
+    "\"Tinghir Province\" wikipedia",
+    "\"Boulemane Province\" wikipedia"
+  ],
+  "not_found": [
+    "A direct XLSX/CSV download of language by province from HCP (no search result named one)",
+    "The RGPH 2024 questionnaire itself, to confirm religion is absent (planned search on 'questionnaire RGPH 2024 religion' not run: session WebSearch budget exhausted)",
+    "The 2014 RGPH tabulation site (rgphentableaux.hcp.ma) language-by-province tables (planned search not run: budget exhausted)",
+    "HDX or other mirrors of RGPH 2024 tables (planned search not run: budget exhausted)"
+  ],
+  "summary": "Morocco's 2024 census (HCP) asked language -- mother tongue and local languages used -- but not religion or ethnicity, so those two fields should be declared not_collected (medium confidence: the statement comes from a search summary, not the questionnaire). Language results are published nationally as PDF and subnationally through an Apache Superset platform (resultats2024.rgphapps.ma) with region-level figures already quoted in press for Souss-Massa and Drâa-Tafilalet; provincial coverage is plausible but unconfirmed. Tier B: the count exists but is behind a table-builder, and the boundary file draws 11 regions and 72 provinces against Morocco's 12 and 75. The packet's existing religion/ethnicity fills for 6 regions conflict with the census not asking those questions and need owner review."
+}

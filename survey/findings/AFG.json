@@ -1,0 +1,110 @@
+{
+  "iso3": "AFG",
+  "name": "Afghanistan",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "National Statistics and Information Authority (NSIA), formerly Central Statistics Organization (CSO)",
+    "url": null,
+    "note": "The NSIA site was not surfaced: the search for it was not run (session WebSearch budget exhausted). NSIA is named in UNFPA's partnership page (https://afghanistan.unfpa.org/en/news/unfpa-afghanistan-partners-afghanistan-national-statistics-and-information-authority-promoting)."
+  },
+  "latest_census": {
+    "year": 1979,
+    "asks": {"religion": true, "ethnicity": true, "language": null},
+    "notes": "The 1979 Population Census is the last and only national count, and it was incomplete ('showed Afghanistan to have 16 million inhabitants'). GHDx record (https://ghdx.healthdata.org/record/afghanistan-population-census-1979) lists its topics as including 'ethnicity' and 'religion'; language is not in that list, so language is recorded as unestablished. Minority Rights Group (https://minorityrights.org/country/afghanistan/): 'Afghanistan has not conducted an official census since 1979'; 'After a failed attempt in 2008, another census began in 2013 and was expected to take six years ... this recent census process will not include questions on language or ethnicity, for fear that the results will be too politicized'. WorldPop (https://www.worldpop.org/case_studies/mapping_afg_pop/): 'it has not been possible to conduct a national population and housing census in Afghanistan since 1979'; official statistics 'are largely based on projections from this 1979 baseline'. IHSN catalogue: https://catalog.ihsn.org/index.php/catalog/932/related_materials. Encyclopaedia Iranica 'CENSUS ii. In Afghanistan': https://www.iranicaonline.org/articles/census-ii/. The 1979 census was on the province set of that time, not today's 34."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["ethnicity", "religion"],
+      "title": "Afghanistan Population Census 1979 (GHDx / IHSN records)",
+      "url": "https://ghdx.healthdata.org/record/afghanistan-population-census-1979",
+      "publisher": "Central Statistics Office, Afghanistan (catalogued by IHME GHDx and IHSN)",
+      "kind": "census",
+      "format": "unknown (catalogue records only; no table or file surfaced)",
+      "geography": "province (1979 provinces)",
+      "geography_count": null,
+      "matches_boundary_level": "neither established (1979 province set differs from today's 34; 398 districts did not exist in that form)",
+      "year": 1979,
+      "confidence": "low",
+      "evidence": "GHDx lists ethnicity and religion among the census's data topics. No search result located published provincial tables; the results say the data 'may not be widely available online'. Incomplete enumeration, 47 years old, and on a different province set: a historical record, not a fill."
+    },
+    {
+      "fields": [],
+      "title": "Socio-Demographic and Economic Survey (SDES), provincial reports (Ghor, Kabul, Bamiyan, Daykundi, Kapisa, Parwan, Balkh and others)",
+      "url": "https://afghanistan.unfpa.org/sites/default/files/pub-pdf/SDES-Ghor-English-Low-Resolution-Version.pdf",
+      "publisher": "Central Statistics Organization / NSIA with UNFPA",
+      "kind": "survey",
+      "format": "pdf (one report per province)",
+      "geography": "province, district and village",
+      "geography_count": 13,
+      "matches_boundary_level": "partial admin1 (13 of 34 provinces) and their districts (admin2)",
+      "year": null,
+      "confidence": "low",
+      "evidence": "Snippets: 'planned to cover all 34 provinces ... due to unfavorable security situation SDES was carried out in 13 provinces'; content listed as 'population distribution, education, employment, migration, functional disability, fertility and mortality disaggregated by age and sex, and housing'. No snippet mentions ethnicity, religion or mother tongue, and the dedicated search for a language table in SDES was not run (budget exhausted). Listed because it is the only sub-provincial enumeration since 1979; fields left empty because none was confirmed. Publication index: https://afghanistan.unfpa.org/en/publications/ghor-socio-demographic-and-economic-survey ; Balkh highlights: https://afghanistan.unfpa.org/en/publications/socio-demographic-and-economic-survey-sdes-balkh-highlights."
+    },
+    {
+      "fields": [],
+      "title": "Afghanistan - Subnational Demographic and Health Data (DHS on HDX)",
+      "url": "https://data.humdata.org/dataset/dhs-subnational-data-for-afghanistan",
+      "publisher": "DHS Program via HDX",
+      "kind": "survey",
+      "format": "csv",
+      "geography": "province (DHS regions)",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 (expected for DHS regions; unverified)",
+      "year": 2015,
+      "confidence": "low",
+      "evidence": "Surfaced in the HDX search. DHS subnational indicator files are health/fertility indicators; no result indicates religion, ethnicity or language indicators for Afghanistan. Recorded as a route that exists on HDX and is not the fields wanted."
+    },
+    {
+      "fields": ["ethnicity"],
+      "title": "File:Map of Ethnic Groups in Afghanistan, by district.svg (Wikimedia Commons)",
+      "url": "https://commons.wikimedia.org/wiki/File:Map_of_Ethnic_Groups_in_Afghanistan,_by_district.svg",
+      "publisher": "Wikimedia Commons (contributor-drawn)",
+      "kind": "other",
+      "format": "svg map",
+      "geography": "district",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 (by name of level only; a map, not a table)",
+      "year": null,
+      "confidence": "low",
+      "evidence": "A district-level ethnic map exists on Commons; its underlying data source is not stated in the snippet. Not a count and not a table; noted only so nobody mistakes it for one."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Ethnicity in Afghanistan (redirect target of 'Tribes in Afghanistan')", "url": "https://en.wikipedia.org/wiki/Tribes_in_Afghanistan",
+       "appears_to_contain": "surfaced in the 1979-census search; snippet: 'the last nationwide population count was conducted in 1979, long before modern institutions or systematic surveys could capture demographic diversity'; no evidence of a census-sourced table by province; unverified"},
+      {"title": "Ethnic groups in Afghanistan (Grokipedia mirror, not Wikipedia)", "url": "https://grokipedia.com/page/Ethnic_groups_in_Afghanistan",
+       "appears_to_contain": "a mirror site, not Wikipedia; listed only because it surfaced; do not use as a source"}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Khanabad", "search_hit_title": null, "url": null, "note": "search not run: session WebSearch budget exhausted before this step"},
+      {"shape_name": "Dawlatabad", "search_hit_title": null, "url": null, "note": "search not run: session WebSearch budget exhausted before this step"},
+      {"shape_name": "Bargi Matal", "search_hit_title": null, "url": null, "note": "search not run: session WebSearch budget exhausted before this step"}
+    ],
+    "note": "The dedicated '\"Ethnic groups in Afghanistan\" wikipedia by province table' search was not run. Any province-level ethnic percentages on Wikipedia district/province pages can only be estimates (there is no census to source them from), so those pages would at best carry unofficial figures."
+  },
+  "tier": "C",
+  "tier_reason": "There is no count to build from: the last census was the incomplete 1979 enumeration, whose ethnicity/religion tables were not located and which sits on a different province set; every later attempt failed, and the state's own census design since 2013 explicitly excludes language and ethnicity questions. That is a state-level bar on the fields, not merely a search failure, so a not_collected declaration with this evidence is the right output. Religion (99.7% Muslim nationally) has no subnational count either.",
+  "replaces_existing": false,
+  "recommended_action": "Declare ethnicity and language `not_collected` at both levels with the reason 'no census since 1979; the census begun in 2013 excludes language and ethnicity questions (Minority Rights Group; WorldPop)', and religion `not_collected` with 'no census since 1979'. Do not fill from the Commons ethnic map or from Wikipedia province estimates -- neither is a count. Two searches remain worth one attempt each if the budget is restored: whether any SDES provincial report tabulates mother tongue (the only post-1979 sub-provincial enumeration, 13 provinces), and whether the 1979 provincial tables are reproduced anywhere online (historical note only).",
+  "searches_run": [
+    "Afghanistan NSIA census ethnicity language by province data never conducted 1979 census",
+    "Afghanistan 1979 census results by province ethnicity language religion tables published",
+    "Afghanistan Socio-Demographic and Economic Survey SDES province mother tongue language NSIA UNFPA",
+    "data.humdata.org Afghanistan ethnic groups by district dataset ethnolinguistic",
+    "NOT RUN (budget exhausted): Afghanistan SDES socio-demographic economic survey \"mother tongue\" OR \"language spoken\" Bamyan Daykundi results table",
+    "NOT RUN (budget exhausted): Afghanistan ethnic composition by province and district data Program for Culture and Conflict Studies Naval Postgraduate School provincial profiles",
+    "NOT RUN (budget exhausted): \"Ethnic groups in Afghanistan\" wikipedia by province table",
+    "NOT RUN (budget exhausted): NSIA Afghanistan nsia.gov.af statistical yearbook population by province estimates",
+    "NOT RUN (budget exhausted): \"Khanabad\" / \"Dawlatabad\" / \"Bargi Matal\" Afghanistan wikipedia"
+  ],
+  "not_found": [
+    "any census or register count of religion, ethnicity or language by province or district after 1979",
+    "published 1979 census tables of ethnicity or religion by province (catalogue records only)",
+    "confirmation that SDES asked mother tongue or ethnicity",
+    "an HDX dataset of ethnic groups by district (none surfaced; only boundaries, population estimates and DHS indicators)",
+    "the NSIA website (search not run)"
+  ],
+  "summary": "Afghanistan has had no census since the incomplete 1979 enumeration, which did ask ethnicity and religion but whose provincial tables were not found online and which used a different province set from today's 34. The census begun in 2013 was designed without language or ethnicity questions because the results would be too politicised, so even a completed count would not carry the fields. The only sub-provincial enumeration since is the UNFPA/NSIA Socio-Demographic and Economic Survey, run in 13 of 34 provinces down to district and village, whose listed topics do not include ethnicity, religion or language (not confirmed either way -- the specific search did not run). HDX holds boundaries, population estimates and DHS health indicators for Afghanistan, not ethnic composition; a district ethnic map on Wikimedia Commons is a drawing, not a table. Tier C: declare all three fields not_collected at both levels with the Minority Rights Group and WorldPop evidence. The Wikipedia checks were not run because the session's search budget ran out."
+}

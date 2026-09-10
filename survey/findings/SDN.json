@@ -1,0 +1,95 @@
+{
+  "iso3": "SDN",
+  "name": "Sudan",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Central Bureau of Statistics (CBS), Sudan",
+    "url": null,
+    "note": "The office's own site was not surfaced: the search for it was not run because the session's WebSearch budget was exhausted. The only CBS references copied from results are its GHDx organisation record (https://ghdx.healthdata.org/organizations/central-bureau-statistics-sudan) and the MICS 2014 final report it authored, hosted by UNICEF (https://www.unicef.org/sudan/sites/unicef.org.sudan/files/2019-05/Sudan%20MICS%202014_%20Final%20Report.pdf)."
+  },
+  "latest_census": {
+    "year": 2008,
+    "asks": {"religion": false, "ethnicity": false, "language": null},
+    "notes": "5th Population and Housing Census, 2008 (pre-secession; ~30.9 million counted in the north). The UNSD country paper 'The Fifth population census in Sudan' (https://unstats.un.org/unsd/demographic/sources/census/countries/SDN.pdf) and the IHSN catalogue entry (https://catalog.ihsn.org/index.php/catalog/4216) say: 'Based on the understanding that ethnicity and religion are causes of conflicts in Sudan, the Presidency decided to delete these questions', despite the South Sudan Population Census Council insisting on re-inclusion; the south cited 'the north's veto of ethnicity and religion on the census questionnaires' (Al Jazeera, 2008-04-14). Design: a short form (11 questions) for 90% of EAs and a long form for 10%. Whether the long form asked mother tongue could not be established -- no snippet mentioned language, and the IPUMS variable-list search was not run (budget exhausted). The 1955/56 First Population Census is described in results as 'the only census that recorded ethnicity' (HRW appendix; Sudan Embassy Beijing 'Tribal composition' page), tabulated by the nine provinces of the time."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion"],
+      "title": "Sudan Multiple Indicator Cluster Survey 2014 - Final Report",
+      "url": "https://www.unicef.org/sudan/sites/unicef.org.sudan/files/2019-05/Sudan%20MICS%202014_%20Final%20Report.pdf",
+      "publisher": "Central Bureau of Statistics (Sudan) with UNICEF",
+      "kind": "survey",
+      "format": "pdf (report); microdata via World Bank Microdata Library, registration",
+      "geography": "state",
+      "geography_count": 18,
+      "matches_boundary_level": "admin1 (18 states at the time vs 19 admin1 shapes; one shape will be unmatched)",
+      "year": 2014,
+      "confidence": "low",
+      "evidence": "Snippet: '720 Clusters (40 per state) and 18,000 Households (1,000 per state) to ensure adequate representation of statistical estimation by each state' -- i.e. designed as a state-level estimation domain, unlike Afrobarometer. Standard MICS household questionnaires carry religion of household head, but no result confirmed that Sudan's did or that a by-state religion table is in the report; the snippet only said the cross-tabulation 'was not directly displayed'. Microdata: https://microdata.worldbank.org/index.php/catalog/2656 (registration). Survey, so ranked below any count; would supersede the 4 Afrobarometer admin1 rows and needs owner review."
+    },
+    {
+      "fields": ["ethnicity"],
+      "title": "Appendix A: Population of Sudan: Ethnic Census of 1956 (Human Rights Watch, 2004)",
+      "url": "https://www.hrw.org/reports/2004/sudan0504/appendixa.pdf",
+      "publisher": "Human Rights Watch (reproducing the 1955/56 First Population Census of Sudan)",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "province (1956)",
+      "geography_count": 9,
+      "matches_boundary_level": "neither (9 provinces -- Northern, Khartoum, Central, Eastern, Kordofan, Darfur, Upper Nile, Bahr Elghazal, Equatoria -- vs 19 admin1; three are now South Sudan)",
+      "year": 1956,
+      "confidence": "medium",
+      "evidence": "Search result title 'APPENDIX A: POPULATION OF SUDAN: ETHNIC CENSUS OF 1956 (ONLY ...'; snippets say the 1956 census 'was the only census that recorded ethnicity' and was 'organized around nine provinces'. Seventy years old, pre-secession, and on a province set that fits neither level: a historical note at best, not a fill. The original 'First Population Census of Sudan, 1955/56. Supplement to Interim Reports' is catalogued on Google Books (https://books.google.com/books/about/First_Population_Census_of_Sudan_1955_56.html?id=JpIUAQAAMAAJ) with interim tables for 'Khartoum, Kassala, Darfur, and other regions'."
+    },
+    {
+      "fields": [],
+      "title": "Sudan Population and Housing Census 2008 - IPUMS subset (microdata)",
+      "url": "https://ghdx.healthdata.org/record/sudan-population-and-housing-census-2008-ipums",
+      "publisher": "IPUMS-International (CBS Sudan microdata); also UNHCR microdata library catalog 424 for the South Sudan subset",
+      "kind": "census",
+      "format": "microdata, registration",
+      "geography": "state (and locality codes, unverified)",
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2008,
+      "confidence": "low",
+      "evidence": "Record exists (GHDx; https://microdata.unhcr.org/index.php/catalog/424). Religion and ethnicity were deleted from the questionnaire, so the only field this could possibly carry is language, and no result established that a language variable exists. Listed so the next person knows the microdata route is there and what it cannot contain."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Demographics of Sudan", "url": "https://en.wikipedia.org/wiki/Demographics_of_Sudan",
+       "appears_to_contain": "surfaced incidentally in the census-questionnaire search; snippet did not describe any table by state; unverified"},
+      {"title": "Copts in Sudan", "url": "https://en.wikipedia.org/wiki/Copts_in_Sudan",
+       "appears_to_contain": "surfaced incidentally; a minority article, not a list article; unverified"}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Abu Zabad", "search_hit_title": null, "url": null, "note": "search not run: session WebSearch budget exhausted before this step"},
+      {"shape_name": "Heiban", "search_hit_title": null, "url": null, "note": "search not run: session WebSearch budget exhausted before this step"},
+      {"shape_name": "Port Sudan", "search_hit_title": null, "url": null, "note": "search not run: session WebSearch budget exhausted before this step"}
+    ],
+    "note": "The dedicated '\"Religion in Sudan\" wikipedia table by state' search was not run (budget exhausted)."
+  },
+  "tier": "C",
+  "tier_reason": "The 2008 census did not ask religion or ethnicity -- the Presidency deleted both questions (UNSD country paper, IHSN). The only count that ever recorded ethnicity is the 1956 census, on 9 pre-secession provinces that match neither the 19 admin1 nor the 189 admin2 shapes. Language on the 2008 long form is unestablished. The nearest thing to subnational religion is the MICS 2014 survey, designed for state-level estimation, unconfirmed for the field and behind a PDF/registration -- a B-grade survey route, not a count.",
+  "replaces_existing": false,
+  "recommended_action": "Declare religion and ethnicity `not_collected` for the 2008 census with the UNSD/IHSN evidence, keeping the existing Afrobarometer R9 survey rows (religion, 4 of 19 admin1; ethnicity was not asked in Sudan, code 9994). If the owner wants survey religion for all states, open the MICS 2014 final report PDF and check for a religion-of-household-head by state table before touching the microdata; that would supersede the Afrobarometer rows and needs review. Separately, resolve why the boundary file draws 19 admin1 against 18 states. Leave the 1956 ethnic census as a historical note only. Already closed and not re-researched: the USCB/HDX Sudan workbook (nationality only, docs/SOURCES.md).",
+  "searches_run": [
+    "Sudan 2008 census Central Bureau of Statistics questionnaire religion ethnicity language asked",
+    "Sudan 2008 census final questionnaire long form \"mother tongue\" OR \"religion\" OR \"ethnicity\" removed north results published by state",
+    "Sudan 1956 census tribe language religion by province tables",
+    "Sudan MICS 2014 religion of household head by state table Central Bureau of Statistics",
+    "NOT RUN (budget exhausted): IPUMS International Sudan 2008 census sample variables religion language mother tongue available",
+    "NOT RUN (budget exhausted): Central Bureau of Statistics Sudan cbs.gov.sd 2008 census results tables by state population",
+    "NOT RUN (budget exhausted): \"Religion in Sudan\" wikipedia table by state",
+    "NOT RUN (budget exhausted): \"Abu Zabad\" / \"Heiban\" / \"Port Sudan\" Sudan wikipedia"
+  ],
+  "not_found": [
+    "any 2008 census table of religion, ethnicity or language by state (the questions were deleted)",
+    "confirmation of whether the 2008 long form asked mother tongue",
+    "a MICS 2014 religion-by-state table (survey exists; the specific table was not shown in any snippet)",
+    "religion, ethnicity or language at the locality (admin2, 189) level from any source",
+    "the CBS Sudan website itself (search not run)"
+  ],
+  "summary": "Sudan's last census (2008) deliberately dropped religion and ethnicity: the Presidency deleted both questions as conflict-sensitive, over the South's objection, so no census count of either exists for any of the 19 states or 189 localities; whether the 10% long form asked language could not be established. The only ethnic count ever taken is the 1955/56 census on nine pre-secession provinces, reproduced as a PDF appendix by HRW, which fits neither boundary level. The best subnational religion candidate is the CBS/UNICEF MICS 2014 survey, which was designed to estimate by state (18 states, 1,000 households each), but no result confirmed a religion table and it sits in a PDF report and registration-gated microdata; it would supersede the four Afrobarometer rows now on the map. Tier C: declare religion and ethnicity not_collected for the 2008 census with the evidence above, and treat MICS as an optional survey route for owner review. The Wikipedia checks and the CBS-site search were not run because the session's search budget ran out."
+}

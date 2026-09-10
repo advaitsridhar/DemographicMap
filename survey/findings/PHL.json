@@ -1,0 +1,55 @@
+{
+  "iso3": "PHL",
+  "name": "Philippines",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Philippine Statistics Authority (PSA)", "url": null},
+  "latest_census": {
+    "year": 2020,
+    "asks": {"religion": true, "ethnicity": true, "language": null},
+    "notes": "NOT ESTABLISHED BY SEARCH: the session's WebSearch budget (200/200) was exhausted before any Philippines query ran. Religion and ethnicity are known from repo evidence: scripts/fetch_census/uscb.py reads the PSA 2020 Census of Population and Housing religion and ethnicity sheets from the U.S. Census Bureau's HDX workbook, and docs/SOURCES.md records the national figures reproducing the PSA's published ones (Roman Catholic 78.81%, Islam 6.42%, Iglesia ni Cristo 2.58%) with 129 denominations as published. Whether the 2020 CPH asked language/mother tongue is unestablished; the USCB workbook carries no Language sheet (scratchpad uscb.log: sheets are 'Age-Sex, Population, Ethnicity, Citizenship, Religion, Households, Housing Units, Overseas Workers'), which is why language is 0 at both levels."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion", "ethnicity"],
+      "title": "Philippines Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Censuses (Philippines_uscb_202402.xlsx)",
+      "url": "https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15",
+      "publisher": "U.S. Census Bureau via Humanitarian Data Exchange (HDX); source PSA 2020 CPH",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "region (17) and province / highly urbanized city (116)",
+      "geography_count": 116,
+      "matches_boundary_level": "admin1 (17 = 17, all joined) and admin2 (116 rows vs 86 shapes: 82 joined, 33 declared shapeless because geoBoundaries folds HUCs into provinces and draws Metro Manila as numbered districts, 1 unmatched)",
+      "year": 2020,
+      "confidence": "high",
+      "evidence": "PROVENANCE: repo config, not a search result. URL is the one scripts/fetch_census/uscb.py constructs from dataset id '809dfb22-77f4-482c-8560-79b07d20fc15'; the HDX probe log also gives the slug 'philippines-subnational-population-and-housing-data-tables'. Already built; both levels reconcile to the national total to the person per docs/SOURCES.md."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [],
+    "admin2_samples": [
+      {"shape_name": "Bataan", "search_hit_title": null, "url": null, "note": "not searched: budget exhausted"},
+      {"shape_name": "Cavite", "search_hit_title": null, "url": null, "note": "not searched: budget exhausted"},
+      {"shape_name": "Isabela", "search_hit_title": null, "url": null, "note": "not searched: budget exhausted"}
+    ]
+  },
+  "tier": "D",
+  "tier_reason": "Could not establish by search: zero Philippines searches executed (session budget exhausted). On repo evidence, religion and ethnicity are already at Tier-A quality (2020 census count, XLSX, joins to both levels); the open question -- whether a language/mother-tongue count exists subnationally -- is exactly what could not be researched.",
+  "replaces_existing": false,
+  "recommended_action": "Re-run once the search budget is raised, focused on language only, since religion and ethnicity are built. Queries: (1) PSA 2020 CPH questionnaire -- did it ask 'language/dialect generally spoken at home' or mother tongue, and was it tabulated by region/province; (2) PSA OpenSTAT (a PxWeb-style table builder) for any 2020 or 2010 CPH ethnicity/religion/language tables by region and province -- if it has an API that would be a better-provenance primary than the HDX mirror; (3) PSA press releases 'Ethnicity in the Philippines (2020 Census of Population and Housing)' and 'Religious Affiliation in the Philippines (2020 CPH)' as the office's own publication of what the repo already holds; (4) 'Languages of the Philippines' / 'Religion in the Philippines' wikipedia by region; (5) the three admin2 samples above.",
+  "searches_run": [],
+  "searches_blocked": [
+    "Philippine Statistics Authority 2020 census religious affiliation by region province table",
+    "PSA 2020 CPH ethnicity by region province press release",
+    "PSA OpenSTAT 2020 census ethnicity religion language region province table",
+    "Philippines 2020 census mother tongue language spoken at home by region province",
+    "\"Religion in the Philippines\" wikipedia table by region",
+    "\"Bataan\" Philippines wikipedia",
+    "\"Cavite\" Philippines wikipedia",
+    "\"Isabela\" province Philippines wikipedia"
+  ],
+  "not_found": [
+    "nothing searched; every item above is an unrun query",
+    "repo-measured absence: the USCB Philippines workbook carries no Language sheet (scratchpad uscb.log)"
+  ],
+  "summary": "No searches could be run for the Philippines: the session's 200-search budget was used up before this country's first query, so this finding is tiered D and records repo evidence only. That evidence is strong for two of three fields: the PSA 2020 Census of Population and Housing counted religion and ethnicity, the U.S. Census Bureau's HDX workbook publishes both by 17 regions and 116 provinces/cities, and the repo has already joined 17/17 admin1 and 82/86 admin2 shapes (the rest are highly urbanized cities the boundary file folds away). Language is the gap: the workbook has no language sheet, and whether the 2020 CPH asked language and whether PSA (OpenSTAT or a press release) publishes it by region or province is the single question a re-run should answer."
+}

@@ -1,0 +1,216 @@
+{
+  "iso3": "CAN",
+  "name": "Canada",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Statistics Canada",
+    "url": "https://www.statcan.gc.ca/"
+  },
+  "latest_census": {
+    "year": 2021,
+    "asks": {
+      "religion": true,
+      "ethnicity": true,
+      "language": true
+    },
+    "published_subnationally": {
+      "religion": true,
+      "ethnicity": true,
+      "language": true
+    },
+    "notes": "2021 Census of Population. Religion is asked once a decade (2021 yes, 2016 no; Religion Reference Guide 98-500-X2021016). 'Ethnic or cultural origin' is a multi-response write-in (2021 changes documented in 98-20-0002), so shares are of responses and exceed 100%; 'visible minority' is an Employment Equity Act category, and Indigenous identity is a separate question. Language: mother tongue, language spoken most often at home and knowledge of official languages. Religion, ethnic origin and visible minority are long-form (sample) questions; mother tongue is on the short form for everyone -- the profile still labels all of them as census counts. Ethnocultural and religious diversity release date 26 October 2022; census-division/subdivision tables 21 June 2023."
+  },
+  "subnational_sources": [
+    {
+      "fields": [
+        "religion",
+        "ethnicity",
+        "language"
+      ],
+      "title": "Census Profile, 2021: Canada, Provinces, Territories and Economic Regions (catalogue 98-401-X2021008)",
+      "url": "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021008",
+      "other_urls": [
+        "https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/download-telecharger.cfm?Lang=E"
+      ],
+      "publisher": "Statistics Canada",
+      "kind": "census",
+      "format": "csv (Census Profile Downloads, whole-level file)",
+      "geography": "economic region (and province/territory in the same file)",
+      "geography_count": 76,
+      "matches_boundary_level": "admin2 (76 economic regions -- the packet's admin2 names 'Nord-du-Québec', 'Parklands', 'Regina--Moose Mountain', 'Swift Current--Moose Jaw', 'Vancouver Island and Coast' are StatCan ER names) and admin1 (13 provinces/territories)",
+      "year": 2021,
+      "confidence": "high",
+      "evidence": "Catalogue title names the geography; search help says the Profile covers 'economic regions' among its levels; a Profile page for 'Vancouver Island and Coast [Economic region], British Columbia' surfaced with DGUID 2021S05005910, matching a packet admin2 sample. The profile carries every characteristic (religion, ethnic or cultural origin, mother tongue) for every geography in the file."
+    },
+    {
+      "fields": [
+        "religion",
+        "ethnicity",
+        "language"
+      ],
+      "title": "Census Profile 2021 web data service (REST, per DGUID) -- the route the repo's scripts/fetch_census/statcan.py already uses, pointed at province (2021A0002xx) and census-division DGUIDs",
+      "url": "https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&SearchText=Vancouver+Island+and+Coast&DGUIDlist=2021S05005910&GENDERlist=1%2C2%2C3&STATISTIClist=1%2C4&HEADERlist=0",
+      "publisher": "Statistics Canada",
+      "kind": "census",
+      "format": "api (one geography per call)",
+      "geography": "economic region via DGUIDs of the form 2021S0500 + 4-digit ER code (e.g. 2021S05005910)",
+      "geography_count": 76,
+      "matches_boundary_level": "admin2 (the adapter's current 'census_division' level, ~293 CDs, is NOT the boundary's 76 ERs, which is why admin2 is empty; and SOURCES.md records 12 of 13 provinces without religion after the live run)",
+      "year": 2021,
+      "confidence": "medium",
+      "evidence": "ER DGUID seen in a search result; SOURCES.md notes the geography-list endpoint now serves HTML, so the bulk CSV above is the safer route."
+    },
+    {
+      "fields": [
+        "language"
+      ],
+      "title": "Table 98-10-0178-01 Mother tongue by knowledge of official languages: Canada, provinces and territories and economic regions",
+      "url": null,
+      "publisher": "Statistics Canada",
+      "kind": "census",
+      "format": "csv (data-table download)",
+      "geography": "economic region",
+      "geography_count": 76,
+      "matches_boundary_level": "admin2 and admin1",
+      "year": 2021,
+      "confidence": "medium",
+      "evidence": "Table number and title quoted in a search snippet; its URL was not in the results (data tables live at www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=<pid>)."
+    },
+    {
+      "fields": [
+        "religion"
+      ],
+      "title": "Table 98-10-0354-01 Religion by gender and age: Canada, provinces and territories, census divisions and census subdivisions (released 21 June 2023)",
+      "url": "https://www150.statcan.gc.ca/t1/tbl1/en/dacl!downloadDataAsCustomizedLayout-nonTraduit.action?checkedLevels=0D1%2C0D3%2C4D1%2C4D2%2C4D3&dimensionLayouts=&endDate=20210101&latestN=0&pid=9810035401&selectedMembers=%5B%5B%5D%2C%5B1%5D%2C%5B1%5D%2C%5B1%5D%2C%5B%5D%5D&startDate=20210101",
+      "publisher": "Statistics Canada",
+      "kind": "census",
+      "format": "csv",
+      "geography": "census division / census subdivision (5,000+)",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 for the provincial rows; CDs are not the boundary's ERs but nest within them (ERs are groupings of CDs), so a CD-to-ER crosswalk from the 2021 Geographic Attribute File would be needed",
+      "year": 2021,
+      "confidence": "high",
+      "evidence": "Snippet names the table, release date and geography levels."
+    },
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "Table 98-10-0357-01 Ethnic or cultural origin by gender and age: Canada, provinces and territories and census divisions",
+      "url": null,
+      "publisher": "Statistics Canada",
+      "kind": "census",
+      "format": "csv",
+      "geography": "census division",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 rows; CDs need a crosswalk to ERs",
+      "year": 2021,
+      "confidence": "medium",
+      "evidence": "Table number and title quoted in a search snippet; URL not surfaced."
+    },
+    {
+      "fields": [
+        "religion"
+      ],
+      "title": "Table 98-10-0341-01 Religion by ethnic or cultural origins: Canada, provinces and territories and census metropolitan areas with parts",
+      "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810034101",
+      "publisher": "Statistics Canada",
+      "kind": "census",
+      "format": "csv",
+      "geography": "province/territory (and CMAs)",
+      "geography_count": 13,
+      "matches_boundary_level": "admin1",
+      "year": 2021,
+      "confidence": "high",
+      "evidence": "Title and URL from search results; also 98-10-0342-01 (religion by visible minority) at https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810034201 and 98-10-0288-01 (religion by Indigenous identity) at https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810028801."
+    },
+    {
+      "fields": [
+        "religion"
+      ],
+      "title": "Target group profile of the population by religion, Census 2021 (Community Data Program mirror)",
+      "url": "https://communitydata.ca/data/target-group-profile-population-religion-census-2021",
+      "publisher": "Community Data Program (CCSD)",
+      "kind": "census",
+      "format": "member download",
+      "geography": "various",
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2021,
+      "confidence": "low",
+      "evidence": "Title only; membership site, listed because it surfaced, not recommended over StatCan."
+    }
+  ],
+  "secondary_routes": [
+    {
+      "route": "Open Government Portal - 2021 Census Boundary files (includes an Economic regions boundary file)",
+      "url": "https://open.canada.ca/data/en/dataset/ef70dc3b-1069-4037-9bce-61f47e628a1d",
+      "note": "useful to confirm the boundary file's 76 shapes are StatCan's 2021 ERs and to join by ER code/DGUID instead of name (names like 'Vancouver Island and Coast / *' and 'Southern / Sud' are bilingual composites)."
+    },
+    {
+      "route": "Open Government Portal - 2021 Census Geographic Attribute File",
+      "url": "https://open.canada.ca/data/en/dataset/1b3653d7-a48e-4001-8046-e6964bebe286",
+      "note": "DGUID linkage across levels (CD -> ER -> PR), the crosswalk needed if CD tables are used."
+    },
+    {
+      "route": "Ethnocultural and religious diversity highlight tables, 2021",
+      "url": "https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/hlt-fst/ethno/index-eng.cfm",
+      "note": "counts and shares for Canada, PTs, CMAs/CAs, CDs, CSDs 5,000+; HTML/CSV."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Christianity in Canada / Islam in Canada / Irreligion in Canada / Hinduism in Canada / Buddhism in Canada",
+        "url": "https://en.wikipedia.org/wiki/Christianity_in_Canada",
+        "appears_to_contain": "the 'Religion in Canada' list article itself did not surface; these per-religion articles gave national 2021 figures in snippets and 'some regional breakdowns by province'; unverified and unnecessary given StatCan"
+      },
+      {
+        "title": "Canadian ethnicity; Demographics of Canada",
+        "url": "https://en.wikipedia.org/wiki/Demographics_of_Canada",
+        "appears_to_contain": "surfaced in the ethnic-origin search; content not seen"
+      }
+    ],
+    "admin2_samples": [
+      {
+        "shape_name": "Nord-du-Québec",
+        "search_hit_title": "Nord-du-Québec",
+        "url": "https://en.wikipedia.org/wiki/Nord-du-Qu%C3%A9bec",
+        "note": "article exists (administrative region of Quebec = the ER; 2021 population 45,740); snippet gives population and geography only"
+      },
+      {
+        "shape_name": "Parklands",
+        "search_hit_title": "Parkland Region",
+        "url": "https://en.wikipedia.org/wiki/Parkland_Region",
+        "note": "article exists but for the informal region (population 41,575 as of 2021); the ER 'Parklands' (code 4670) appears instead as a StatCan 2016 Census Profile page -- Wikipedia is the wrong route here"
+      },
+      {
+        "shape_name": "Swift Current--Moose Jaw",
+        "search_hit_title": null,
+        "url": null,
+        "note": "search not performed: session search budget exhausted before this query ran"
+      }
+    ]
+  },
+  "tier": "A",
+  "tier_reason": "All three fields are census counts published in CSV for exactly the two geographies the boundary draws: 13 provinces/territories and 76 economic regions, in one Census Profile download (98-401-X2021008). The existing adapter reads the wrong admin2 (census divisions) through a per-geography REST call that has mostly failed, which is why admin2 is empty and 12 of 13 provinces lack religion.",
+  "replaces_existing": true,
+  "recommended_action": "Fetch the 'Canada, provinces, territories and economic regions' Census Profile CSV from the Downloads page and read religion, ethnic or cultural origin (multi-response: shares of responses, as Australia's ancestry is handled) and mother tongue for the 13 PTs and 76 ERs; join on ER code/DGUID (2021S0500xxxx) via the ER boundary file rather than on names, because the boundary's names are bilingual composites ('Southern / Sud', 'Vancouver Island and Coast / *'). This supersedes the single province filled by the REST adapter. Alternatively retarget statcan.py's GEOS to 'ER' if the geography-list endpoint is fixed. Keep visible minority separate from ethnicity, as the adapter's docstring already says.",
+  "searches_run": [
+    "Statistics Canada Census 2021 religion census division data table download csv",
+    "Statistics Canada 2021 census profile economic regions mother tongue ethnic origin religion table 98-10",
+    "Statistics Canada 2021 census \"economic regions\" religion table 98-10 data table",
+    "Statistics Canada 2021 census \"ethnic or cultural origin\" \"economic regions\" table 98-10",
+    "2021 Census Profile geographic levels \"economic region\" DGUID 2021S0500 76 economic regions",
+    "\"Religion in Canada\" wikipedia by province and territory table 2021 census",
+    "\"Nord-du-Québec\" wikipedia",
+    "\"Parklands\" economic region Manitoba wikipedia"
+  ],
+  "not_found": [
+    "Standalone 98-10 data tables for religion or ethnic origin by economic region (the two searches returned only PT/CD/CMA tables; the ER Census Profile file covers those fields anyway)",
+    "URLs for tables 98-10-0178-01 and 98-10-0357-01 (titles surfaced, links did not)",
+    "The 'Religion in Canada' Wikipedia list article (per-religion articles surfaced instead)",
+    "Not searched (session search budget exhausted): 'Swift Current--Moose Jaw' Wikipedia; the exact Downloads-page file name for the ER-level CSV"
+  ],
+  "summary": "Canada's 2021 census asks religion, ethnic or cultural origin (multi-response) and mother tongue, and StatCan publishes all of them for provinces/territories (13) and economic regions (76) -- precisely the boundary's admin1 and admin2 -- in one downloadable Census Profile file, 98-401-X2021008. The repo's adapter reads census divisions (not the boundary's ERs) through a per-DGUID REST service that has mostly failed, leaving one province with religion and no admin2 at all; the ER CSV replaces that. Join on ER codes/DGUIDs from the 2021 ER boundary file, not on the bilingual composite names. Tables 98-10-0354-01 (religion) and 98-10-0357-01 (ethnic origin) exist at census-division level as a fallback with a CD-to-ER crosswalk."
+}

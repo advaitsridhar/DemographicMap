@@ -1,0 +1,81 @@
+{
+  "iso3": "RUS",
+  "name": "Russia",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Federal State Statistics Service (Rosstat)",
+    "url": "https://rosstat.gov.ru/vpn/2020"
+  },
+  "latest_census": {
+    "year": 2020,
+    "asks": {"religion": false, "ethnicity": true, "language": true},
+    "notes": "The 2020 All-Russian census was taken as of 1 October 2021. Ethnicity (национальность) and native language (родной язык) are asked and published by federal subject in Volume 5 (Национальный состав и владение языками), which the FADN page says was published 30 December 2022; the project already reads tables 1 and 6 from checked-in copies (data/raw/russia/Tom5_tab1_VPN-2020.xlsx, Tom5_tab6_VPN-2020.xlsx). Religion has never been asked: search snippets -- 'The Russian census did not ask respondents their religious affiliation, as this question was considered too politically sensitive for inclusion' and 'There is no official census of religion in Russia, and estimates are based on surveys only' (Wikipedia 'Demographics of Russia' / '2021 Russian census'; Religion, State and Society, 'Statistics on Religion in Russia: The Reality behind the Figures', https://www.tandfonline.com/doi/full/10.1080/09637490500459875). The snippets speak mostly of 2002, but the practice is longstanding and unchanged for 2020."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["ethnicity", "language"],
+      "title": "Итоги ВПН-2020. Том 5. Национальный состав и владение языками (table 1 national composition; table 6 native language)",
+      "url": "https://rosstat.gov.ru/vpn/2020",
+      "publisher": "Rosstat",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "federal subject",
+      "geography_count": 83,
+      "matches_boundary_level": "admin1",
+      "year": 2021,
+      "confidence": "high",
+      "evidence": "Already in use: 83 of 83 admin1 filled, reconciled at 1.0000 (SOURCES.md 'Russia' sections). 88 sheets cover 83 drawn subjects plus two combined forms, Crimea, Sevastopol and the country row. rosstat.gov.ru serves a certificate from the Russian Trusted Sub CA, so the project fetched from the Internet Archive; the adapter cites the capture date. Listed for completeness; nothing new here."
+    },
+    {
+      "fields": ["ethnicity", "language"],
+      "title": "Мосстат -- Всероссийская перепись населения 2020 года (Moscow territorial office results page)",
+      "url": "https://77.rosstat.gov.ru/folder/210976",
+      "publisher": "Mosstat (Rosstat territorial office for Moscow)",
+      "kind": "census",
+      "format": null,
+      "geography": "municipal formation (Moscow)",
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2021,
+      "confidence": "low",
+      "evidence": "Search summary: 'The data for Moscow includes tables on population by citizenship and birthplace by municipal formation, as well as national composition and language proficiency information.' The snippet establishes municipal-formation tables for citizenship/birthplace and the presence of national-composition material; it does not establish that national composition itself is published by municipal formation, nor the file format. This is the only evidence found that any Rosstat territorial office publishes 2020 results below the subject. Rosstat has 83 such offices on the NN.rosstat.gov.ru pattern, each with its own pages and the same Russian Trusted Sub CA certificate; the follow-up searches that would have confirmed a municipal-level national-composition table were not performed (search budget exhausted)."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "2021 Russian census", "url": "https://en.wikipedia.org/wiki/2021_Russian_census",
+       "appears_to_contain": "surfaced incidentally for the religion query; per summary, notes the census does not ask religion; whether it carries an ethnicity-by-subject table is unverified"},
+      {"title": "Demographics of Russia", "url": "https://en.wikipedia.org/wiki/Demographics_of_Russia",
+       "appears_to_contain": "surfaced for the religion and volume-5 queries; summary attributes 'no official census of religion ... estimates are based on surveys only' to it"},
+      {"title": "Всероссийская перепись населения (2020—2021) — Википедия", "url": "https://ru.wikipedia.org/wiki/%D0%92%D1%81%D0%B5%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%B5%D1%80%D0%B5%D0%BF%D0%B8%D1%81%D1%8C_%D0%BD%D0%B0%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_(2020%E2%80%942021)",
+       "appears_to_contain": "surfaced for the municipal-composition query; no snippet content seen"}
+    ],
+    "admin2_samples": [],
+    "note": "The dedicated Wikipedia searches ('\"Ethnic groups in Russia\" wikipedia by federal subject table census', '\"Anapa\" urban okrug Krasnodar Krai wikipedia', '\"Teguldetsky District\" wikipedia', '\"Vengerovsky District\" wikipedia') were not performed: the session's WebSearch budget was exhausted. The articles above surfaced incidentally; nothing is asserted about their content."
+  },
+  "tier": "B",
+  "tier_reason": "Admin1 is already filled from the census at high quality. What remains is (a) religion, which the census has never asked -- a not_collected declaration, certain and cheap; and (b) admin2 (2,326 municipal districts and urban okrugs), for which the only evidence is a Mosstat page suggesting municipal-formation tables exist for Moscow. If the territorial offices publish national composition by municipal formation, it is scattered over 83 sites behind a certificate authority the project does not trust, in unknown formats, with no codes on the geoBoundaries admin2 shapes to join on -- exists but costly. Not A because no machine-readable municipal table was seen; not D because Mosstat is a lead.",
+  "replaces_existing": false,
+  "recommended_action": "First, declare religion not_collected for Russia at every level, citing the Religion, State and Society article and the Wikipedia census article; the national record's survey-derived religion figures stay as they are. Second, for admin2, pick one territorial office (Mosstat, https://77.rosstat.gov.ru/folder/210976) and one rural subject, and have a runner read their VPN-2020 pages for a 'национальный состав по муниципальным образованиям' table; if the offices publish it as XLSX with OKTMO codes, the join should be on code (the packet's admin2 sample includes a Cyrillic shape name, 'городской округ Новошахтин', so names are mixed-alphabet and unreliable), and the Internet Archive route already used for Volume 5 applies. Do not use Volume 5 table 5 (proficiency, multi-answer) for language at any level.",
+  "searches_run": [
+    "Всероссийская перепись населения 2020 национальный состав по муниципальным образованиям",
+    "Russian census 2020 religion question not asked",
+    "Rosstat 2020 census volume 5 ethnic composition municipal districts xlsx"
+  ],
+  "searches_not_run_budget_exhausted": [
+    "перепись 2020 национальный состав населения муниципальные районы городские округа xlsx территориальный орган Росстата",
+    "Росстат итоги ВПН-2020 по муниципальным образованиям национальный состав таблица",
+    "Arena Atlas religions Russia by region 2012 Sreda survey data",
+    "\"Ethnic groups in Russia\" wikipedia by federal subject table census",
+    "\"Anapa\" urban okrug Krasnodar Krai wikipedia",
+    "\"Teguldetsky District\" wikipedia",
+    "\"Vengerovsky District\" wikipedia"
+  ],
+  "not_found": [
+    "a Rosstat or territorial-office table of national composition or native language by municipal formation, in any format (only the Mosstat lead above)",
+    "any religion count at any level (the census does not ask; surveys only)",
+    "the Arena Atlas / Sreda 2012 religion-by-region survey as a secondary route -- the search was not run, so it is neither confirmed nor listed as a source",
+    "the third search ('Rosstat 2020 census volume 5 ... municipal districts xlsx') returned US Census and Wikipedia noise and one Rosstat URL (https://rosstat.gov.ru/storage/mediabank/tab-1_VPN-2020.xlsx) that is a population table, not ethnicity by municipality"
+  ],
+  "summary": "Russia's admin1 ethnicity and language are already filled from Volume 5 of the 2020 census and nothing found improves on that. Religion has never been on a Russian census questionnaire -- 'estimates are based on surveys only' -- so the right output is a not_collected declaration at every level. For the 2,326 admin2 shapes the only lead is Mosstat's VPN-2020 page, whose snippet mentions municipal-formation tables and national-composition material for Moscow; whether Rosstat's 83 territorial offices publish national composition by municipal formation, and in what format, was not established because the search budget ran out before the targeted searches ran. Tier B: a scattered, certificate-blocked, code-less route that a runner should test on one or two offices before anyone commits to it."
+}

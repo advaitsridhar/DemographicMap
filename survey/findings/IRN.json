@@ -1,0 +1,106 @@
+{
+  "iso3": "IRN",
+  "name": "Iran",
+  "researched_at": "2026-09-10",
+  "research_note": "Only 2 of the planned ~9 searches ran before the session-wide WebSearch budget (200/200) was exhausted. Everything below is from those 2 result sets. Statements marked 'background' are the researcher's prior knowledge, not a snippet, and should be re-verified.",
+  "nso": {
+    "name": "Statistical Centre of Iran (Markaz-e Amar-e Iran)",
+    "url": null,
+    "note": "The office's own site did not surface in either search; what surfaced were a provincial portal (Tehran province, amar.thmporg.ir), the GHDx catalogue entry for the 2016 census, the open-data mirror Iran Open Data (iranopendata.org) and a commercial mirror (iranstatis.com). The URL is left null rather than typed from memory."
+  },
+  "latest_census": {
+    "year": 2016,
+    "asks": {"religion": true, "ethnicity": false, "language": false},
+    "notes": "General Census of Population and Housing 1395, conducted 25 Mehr to 25 Aban 1395 (Oct-Nov 2016); 79,926,270 people (fa.wikipedia snippet). Religion IS asked, in the state's recognised categories (Muslim, Christian, Zoroastrian, Jewish, other/not stated -- background). Secondary sources quote it: over 99% Muslim; 117,700 Christians of recognised denominations; 23,109 Zoroastrians (2023 US IRF report and ARDA); and 'According to the 2016 Census, Khuzestan Province was home to sixty-eight Jews' -- a PROVINCE-level census figure, which is the evidence that religion was published subnationally. Ethnicity and mother tongue have never been Iranian census questions (background; consistent with the packet's free-text ethnicity record and with MRG relying on estimates). Whether a 1405 (2025/26) round has been run or published was not researched."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion"],
+      "title": "1395 (2016) census: population by religion, by province -- SCI table not located",
+      "url": null,
+      "publisher": "Statistical Centre of Iran",
+      "kind": "census",
+      "format": null,
+      "geography": "province (ostan)",
+      "geography_count": 31,
+      "matches_boundary_level": "admin1 (Iran has 31 provinces -- background; packet draws 32 shapes, so one shape is extra or duplicated and must be identified before the join)",
+      "year": 2016,
+      "confidence": "medium",
+      "evidence": "2023 Report on International Religious Freedom: Iran (2021-2025.state.gov): 'According to the 2016 Census, Khuzestan Province was home to sixty-eight Jews'. Persian Wikipedia '1395 census' snippet: the census statistics 'include population by religion'. The table's own URL and format were not found; SCI's detailed results are normally published per province as spreadsheets (background)."
+    },
+    {
+      "fields": ["religion"],
+      "title": "Nataaej-e sarshomari-ye sal 1395 -- Amar va ettela'at-e ostan-e Tehran (Tehran province census-results portal)",
+      "url": "https://amar.thmporg.ir/census-results/%D9%86%D8%AA%D8%A7%DB%8C%D8%AC-%D8%B3%D8%B1%D8%B4%D9%85%D8%A7%D8%B1%DB%8C-%D8%B3%D8%A7%D9%84-1395",
+      "publisher": "Tehran Province Management and Planning Organisation statistics portal",
+      "kind": "census",
+      "format": "html",
+      "geography": "one province (Tehran), possibly by shahrestan",
+      "geography_count": null,
+      "matches_boundary_level": "none on its own; shows that provincial portals republish 1395 results",
+      "year": 2016,
+      "confidence": "low",
+      "evidence": "Title only ('Results of the 1395 census'). Whether religion is among the tables is unverified."
+    },
+    {
+      "fields": ["religion"],
+      "title": "Iran Population and Housing Census 2016 | GHDx",
+      "url": "https://ghdx.healthdata.org/record/iran-population-and-housing-census-2016",
+      "publisher": "IHME Global Health Data Exchange (catalogue entry, not data)",
+      "kind": "census",
+      "format": "html",
+      "geography": null,
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2016,
+      "confidence": "low",
+      "evidence": "Catalogue record; useful for the census's official name, reference date and variable list, not for figures."
+    },
+    {
+      "fields": [],
+      "title": "Bar-avard-e jam'iyat-e Iran be tafkik-e ostan dar sal 1403 (Iran Open Data: estimated population by province, 2024)",
+      "url": "https://iranopendata.org/fa/dataset/iod-06124-estimated-population-iran-province-2024/",
+      "publisher": "Iran Open Data (iranopendata.org)",
+      "kind": "other",
+      "format": null,
+      "geography": "province",
+      "geography_count": null,
+      "matches_boundary_level": "admin1",
+      "year": 2024,
+      "confidence": "low",
+      "evidence": "Not a religion table -- listed because it shows this portal republishes SCI provincial tables as open data, making it the best candidate for a machine-readable 1395 religion-by-province file. Not searched for that."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Sarshomari-ye omumi-ye nofus va maskan (1395) (fa)", "url": "https://fa.wikipedia.org/wiki/%D8%B3%D8%B1%D8%B4%D9%85%D8%A7%D8%B1%DB%8C_%D8%B9%D9%85%D9%88%D9%85%DB%8C_%D9%86%D9%81%D9%88%D8%B3_%D9%88_%D9%85%D8%B3%DA%A9%D9%86_(%DB%B1%DB%B3%DB%B9%DB%B5)", "appears_to_contain": "snippet: dates of the census, 79,926,270 total, and that the statistics 'include population by religion'; whether a by-province religion table is on the page is unverified"},
+      {"title": "Jam'iyat-shenasi-ye Iran (Demographics of Iran, fa)", "url": "https://fa.wikipedia.org/wiki/%D8%AC%D9%85%D8%B9%DB%8C%D8%AA%E2%80%8C%D8%B4%D9%86%D8%A7%D8%B3%DB%8C_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86", "appears_to_contain": "surfaced; snippet not shown"}
+    ],
+    "admin2_samples": [],
+    "note": "The mandated English list-article searches ('Religion in Iran' by province; 'Ethnicities in Iran' by province) and the three admin2 sample searches (Babolsar, Izeh, Kamyaran) were refused by the exhausted search budget. Not run, not 'no article'."
+  },
+  "tier": "B",
+  "tier_reason": "Religion is a census question and a province-level 2016 census figure is quoted by a secondary source, so a count by 31 ostans (= admin1) exists; but the SCI table itself (URL, format) was not located, so it is 'exists but costly' until someone finds it. Ethnicity and language are not asked and should be declared not_collected.",
+  "replaces_existing": false,
+  "recommended_action": "Search the SCI site and iranopendata.org for the 1395 census 'jam'iyat bar hasb-e din' (population by religion) table by ostan; expect a spreadsheet, and expect the non-Muslim categories to be tiny (Christians 117,700 nationally). Reconcile the packet's 32 admin1 shapes with Iran's 31 provinces before joining. Declare ethnicity and language not_collected with the reason 'no Iranian census has asked ethnicity or mother tongue' once a snippet confirms it (the packet's free-text ethnicity record is the same absence). Nothing was found or searched for the 431 shahrestans (admin2); SCI's per-province detailed volumes may carry religion by shahrestan -- check one province's volume before assuming. IPUMS-International holds Iranian census samples (background) but was not searched.",
+  "searches_run": [
+    "Statistical Centre of Iran 2016 census religion by province Muslim Christian Zoroastrian Jewish ostan table (ran)",
+    "sarshomari 1395 jam'iyat bar hasb-e din be tafkik-e ostan markaz-e amar-e iran [Persian] (ran)",
+    "iranopendata.org population religion province census 2016 (REFUSED: search budget exhausted)",
+    "amar.org.ir 1395 detailed results by province population by religion table [Persian] (REFUSED)",
+    "Iran census 2016 no question ethnicity language mother tongue (REFUSED)",
+    "Iran 2025 census 1405 register-based Statistical Centre (REFUSED)",
+    "IPUMS International Iran 2016 census sample religion variable (REFUSED)",
+    "\"Religion in Iran\" wikipedia by province table (REFUSED)",
+    "\"Ethnicities in Iran\" wikipedia by province (REFUSED)",
+    "\"Babolsar\" / \"Izeh\" / \"Kamyaran\" Iran wikipedia (REFUSED)"
+  ],
+  "not_found": [
+    "the SCI table of population by religion and province (URL/format) -- only a province-level figure quoted second-hand",
+    "the SCI website itself in a search result",
+    "any religion figure by shahrestan (admin2)",
+    "direct snippet evidence that ethnicity/language are not asked (asserted from background)",
+    "status of the 1405 (2025/26) census"
+  ],
+  "summary": "Iran's 2016 (1395) census asks religion in the state's recognised categories and the figures were published by province -- the 2023 IRF report quotes the census for 68 Jews in Khuzestan -- so a 31-ostan count exists that would join to admin1 (the packet draws 32 shapes; reconcile first). The Statistical Centre of Iran's own table was not located in the two searches that ran, and its site did not surface at all; the Tehran-province portal and Iran Open Data show SCI provincial tables are republished online. Ethnicity and mother tongue are not census questions and should be declared not_collected. Tier B: find the SCI or iranopendata.org religion-by-ostan spreadsheet, then check one province's detailed volume for a shahrestan cut before assuming admin2 is empty."
+}

@@ -1,0 +1,126 @@
+{
+  "iso3": "ETH",
+  "name": "Ethiopia",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Ethiopian Statistical Service (ESS; formerly Central Statistical Agency, CSA)", "url": "https://ess.gov.et/"},
+  "latest_census": {
+    "year": 2007,
+    "asks": {"religion": true, "ethnicity": true, "language": true},
+    "notes": "The 2007 Population and Housing Census asked religion, ethnic group and mother tongue (search snippet: 'collected data on ... religion, mother tongue, ethnic group'; 85 ethnic groups and 87 mother tongues reported). All three were published subnationally by region, zone and woreda in the CSA statistical reports. The 4th census (planned 2017) was never held; a 2024 SJI paper on the Post-Enumeration Survey says officials 'put off the population and housing census until the third and final year of the project (through 2026)'. No search result shows a 4th census enumerated as of 2026-09-10. Ethiopia's Statistical Service published the national 2007 report PDF at ess.gov.et in June 2026."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion", "ethnicity", "language"],
+      "title": "Ethiopia Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys",
+      "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+      "publisher": "U.S. Census Bureau via Humanitarian Data Exchange (HDX)",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "first-order areas (regions) and zones",
+      "geography_count": 93,
+      "matches_boundary_level": "admin2 (93 USCB zones vs 74 boundary zones; 72 already joined) and admin1 (13 areas vs 11 shapes; 11 already joined)",
+      "year": 2007,
+      "confidence": "high",
+      "evidence": "Search snippet: 'tabular data contain total population for 2007 (census) ... religion ... ethnicity, language'. This is the source the repo already reads (docs/SOURCES.md, USCB series section)."
+    },
+    {
+      "fields": ["religion", "ethnicity", "language"],
+      "title": "2007 Population and Housing Census of Ethiopia - national report (Summary and Statistical Report)",
+      "url": "https://ess.gov.et/wp-content/uploads/2026/06/national-population-and-housing-census-report-2007.pdf",
+      "publisher": "Ethiopian Statistical Service",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "region (and zone in the regional volumes)",
+      "geography_count": null,
+      "matches_boundary_level": "admin1",
+      "year": 2007,
+      "confidence": "medium",
+      "evidence": "Search result title '2007 Population and Housing Census of Ethiopia' hosted on ess.gov.et (uploaded 2026/06). Snippet: 'results are presented by regions'. A mirror of the first-draft summary exists at https://www.ethiopianreview.com/pdf/001/Cen2007_firstdraft(1).pdf."
+    },
+    {
+      "fields": ["religion", "ethnicity", "language"],
+      "title": "2007 Population and Housing Census of Ethiopia: Results for [Region], Vol. 1 (regional statistical reports; Tables 2.x/3.x by zone and woreda)",
+      "url": null,
+      "publisher": "Central Statistical Agency (CSA)",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "zone and woreda",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 (zones) and below",
+      "year": 2007,
+      "confidence": "medium",
+      "evidence": "Many Wikipedia woreda articles (e.g. Aleltu, Diga, Kembibit) cite 'Results for Oromia Region, Vol. 1, Tables 2.1, 2.5, 3.4' from the CSA site; the search surfaced only an archived (2011) link and no direct PDF URL, so the URL is left null."
+    },
+    {
+      "fields": ["religion", "ethnicity", "language"],
+      "title": "Ethiopia - The 2007 Population and Housing Census of Ethiopia - IPUMS Subset",
+      "url": "https://microdata.worldbank.org/index.php/catalog/2747",
+      "publisher": "IPUMS International / World Bank Microdata Library",
+      "kind": "census",
+      "format": "microdata (registration required)",
+      "geography": "region and zone (IPUMS geography variables)",
+      "geography_count": null,
+      "matches_boundary_level": "admin1/admin2 via IPUMS GEO variables (unverified)",
+      "year": 2007,
+      "confidence": "medium",
+      "evidence": "Search result title names the IPUMS subset; also catalogued at https://catalog.ihsn.org/index.php/catalog/3583. Needs registration; only useful if the USCB workbook's 93-zone geography ever proves insufficient."
+    },
+    {
+      "fields": ["religion"],
+      "title": "Ethiopia Demographic and Health Survey 2024-25 Key Indicators Report",
+      "url": "https://ess.gov.et/wp-content/uploads/2026/01/edhs-2024-25-kir-01172026.pdf",
+      "publisher": "Ethiopian Statistical Service / DHS Program",
+      "kind": "survey",
+      "format": "pdf",
+      "geography": "region",
+      "geography_count": null,
+      "matches_boundary_level": "admin1",
+      "year": 2025,
+      "confidence": "low",
+      "evidence": "Search result title only; whether the KIR tabulates religion by region is not visible in the snippet. A sample survey, ranked below the 2007 count and not recommended as a replacement."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Demographics of Ethiopia", "url": "https://en.wikipedia.org/wiki/Demographics_of_Ethiopia",
+       "appears_to_contain": "snippet gives national 2007 religion and ethnicity shares and a regional population table; a full religion-by-region table was not visible in the snippet; unverified"},
+      {"title": "List of ethnic groups in Ethiopia", "url": "https://en.wikipedia.org/wiki/List_of_ethnic_groups_in_Ethiopia",
+       "appears_to_contain": "snippet gives 2007 national ethnic shares (Oromo 34.4%, Amhara 27.0% ...); no by-region table evident in snippet"},
+      {"title": "List of Ethiopian regional states by population", "url": "https://en.wikipedia.org/wiki/List_of_Ethiopian_regional_states_by_population",
+       "appears_to_contain": "regional population totals from the 2007 census; not a composition table"}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Awi/Agew", "search_hit_title": "Agew Awi Zone",
+       "url": "https://en.wikipedia.org/wiki/Agew_Awi_Zone",
+       "note": "article exists; snippet gives area, towns, 2012 population estimate and the Awngi language; zone articles in Ethiopia typically cite the 2007 census tables, but the infobox contents cannot be asserted"},
+      {"shape_name": "Gamo Gofa", "search_hit_title": "Gamo Zone",
+       "url": "https://en.wikipedia.org/wiki/Gamo_Zone",
+       "note": "the old Gamo Gofa Zone was split into Gamo and Gofa; English Wikipedia resolves to 'Gamo Zone' (a Cebuano stub 'Gamo Gofa Zone' also exists); snippet gives borders and history only -- a name-vintage mismatch worth noting for the join"},
+      {"shape_name": "Horo Guduru", "search_hit_title": "Horo Guduru Welega Zone",
+       "url": "https://en.wikipedia.org/wiki/Horo_Guduru_Welega_Zone",
+       "note": "article exists; snippet explicitly quotes 2007 census population (570,040) and ethnic composition ('Oromo (93.12%) and the Amhara'), i.e. article body carries census-sourced ethnicity for the zone -- consistent with the 2007 zone tables already read"}
+    ]
+  },
+  "tier": "A",
+  "tier_reason": "The 2007 census counted religion, ethnicity and mother tongue and the USCB/HDX workbook publishes all three by region (13) and zone (93) as XLSX; the repo already reads it and has 11/11 admin1 and 72/74 admin2 filled. No newer count exists: the 4th census has still not been held.",
+  "replaces_existing": false,
+  "recommended_action": "Nothing to replace: the HDX/USCB 2007 workbook is the best and only subnational count and is already built. The two unfilled admin2 shapes (and Sidama/Region 17) are boundary-vintage gaps, not source gaps -- the regional CSA PDF volumes could confirm zone figures for renamed zones (e.g. Gamo Gofa -> Gamo/Gofa) but add no field. Re-check ess.gov.et when the 4th census is actually enumerated; as of September 2026 search results only show it deferred 'through 2026'.",
+  "searches_run": [
+    "Ethiopia 2007 census religion ethnic group mother tongue by zone statistical report Ethiopian Statistical Service",
+    "Ethiopia fourth population and housing census 2026 Ethiopian Statistical Service questionnaire religion ethnicity",
+    "data.humdata.org Ethiopia subnational population census religion ethnicity US Census Bureau",
+    "\"Religion in Ethiopia\" wikipedia table by region 2007 census",
+    "\"Ethiopia ethnic groups by region\" wikipedia 2007 census table region",
+    "\"Awi Zone\" Ethiopia wikipedia",
+    "\"Gamo Gofa Zone\" Ethiopia wikipedia",
+    "\"Horo Guduru Welega Zone\" Ethiopia wikipedia",
+    "2007 census Ethiopia \"statistical report\" Oromia region zone woreda religion ethnic group tables pdf"
+  ],
+  "not_found": [
+    "any 4th-census result or enumeration date (only deferral 'through 2026')",
+    "a direct current URL for the CSA regional 'Results for [Region] Vol. 1' PDFs (only archived 2011 links cited by Wikipedia)",
+    "a machine-readable (CSV/XLSX) ESS-published 2007 table other than the USCB/HDX workbook",
+    "a Wikipedia list article with a religion-by-region table (Demographics of Ethiopia snippet did not show one)"
+  ],
+  "summary": "Ethiopia's last completed census is 2007; it asked religion, ethnic group and mother tongue and the U.S. Census Bureau's HDX workbook publishes all three by 13 first-order areas and 93 zones as XLSX -- the exact source the repo already reads, filling 11/11 admin1 and 72/74 admin2 shapes. The 4th census has not been held (deferred 'through 2026' per a 2024 PES feasibility paper), so nothing newer exists to replace it. ESS has now put the 2007 national report PDF on ess.gov.et and the IPUMS microdata subset is catalogued on the World Bank library, but neither adds a field or a level. Wikipedia zone articles (e.g. Horo Guduru Welega) quote 2007 census ethnic shares in their body text, which would only matter for the two unfilled zone shapes and renamed zones such as Gamo Gofa."
+}

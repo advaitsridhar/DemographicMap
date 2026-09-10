@@ -1,0 +1,53 @@
+{
+  "iso3": "COD",
+  "name": "DRC",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Institut National de la Statistique (INS), Democratic Republic of the Congo", "url": null},
+  "latest_census": {
+    "year": null,
+    "asks": {"religion": null, "ethnicity": null, "language": null},
+    "notes": "NOT ESTABLISHED BY SEARCH: the session's WebSearch budget (200/200) was exhausted before any DRC query ran, so no census fact here is search-verified. Repo evidence (scripts/fetch_census/uscb.py, docs/SOURCES.md): the only subnational source the project holds for the DRC is a survey, the INS Enquete 1-2-3 (2005 and 2012 rounds pooled), and the HDX dataset the U.S. Census Bureau publishes for the DRC is titled '... Based on Surveys' rather than 'Based on National Census', which is itself a signal that no usable census tabulation exists. Unverified prior knowledge, to be confirmed by search before it is relied on: the last general census was 1984 and a second census (RGPH2) has been planned repeatedly and not enumerated."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion", "ethnicity"],
+      "title": "Democratic Republic of the Congo Subnational Population and Housing Data Tables with Administrative Boundaries, Based on Surveys (Democratic Republic of the Congo_uscb_202103.xlsx, sheet 'Tribe and Religion')",
+      "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+      "publisher": "U.S. Census Bureau via Humanitarian Data Exchange (HDX); source INS Enquete 1-2-3",
+      "kind": "survey",
+      "format": "xlsx",
+      "geography": "province (26) and district (164)",
+      "geography_count": 26,
+      "matches_boundary_level": "admin1 (26 = 26, all joined); the 164 districts are read but not published because ~194 sampled households per district supports no estimate (repo decision), and they would need checking against the 189 admin2 shapes",
+      "year": 2012,
+      "confidence": "high",
+      "evidence": "PROVENANCE: repo config, not a search result. URL is the one scripts/fetch_census/uscb.py constructs from dataset slug 'democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data'; the scratchpad HDX probe log (uscb.log) lists the workbook's sheets as 'Metadata, Data Dictionary, Population Estimates, Households, IDP Movements, People in Need, Tribe and Religion' -- there is no Language sheet. Figures are shares of 31,755 heads of household, pooled 2005+2012; already built into admin1 religion and ethnicity."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [],
+    "admin2_samples": [
+      {"shape_name": "Rutshuru", "search_hit_title": null, "url": null, "note": "not searched: budget exhausted"},
+      {"shape_name": "Dungu", "search_hit_title": null, "url": null, "note": "not searched: budget exhausted"},
+      {"shape_name": "Baraka", "search_hit_title": null, "url": null, "note": "not searched: budget exhausted"}
+    ]
+  },
+  "tier": "D",
+  "tier_reason": "Could not establish by search: zero DRC searches executed (session budget exhausted). On repo evidence alone the country has no count at any level -- only the Enquete 1-2-3 survey, already read at admin1 for religion and ethnicity, with no language sheet -- and nothing at admin2 (189 shapes, 0 filled).",
+  "replaces_existing": false,
+  "recommended_action": "Re-run this country once CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION is raised. Queries to run, in order: (1) INS RDC last census year and whether it asked religion/ethnie/langue; RGPH2 status; (2) EDS-RDC III 2023-24 (DHS) final report -- religion by province would be a newer survey estimate than the pooled 2005/2012 Enquete 1-2-3, and DHS also tabulates by 26 provinces; (3) MICS-Palu 2017-18 religion/ethnicity by province; (4) HDX/open data for any language tabulation, since the USCB workbook has none; (5) 'Religion in the Democratic Republic of the Congo' wikipedia by province; (6) the three admin2 samples above. Do not publish the workbook's 164 districts: the repo already judged the sample too thin.",
+  "searches_run": [],
+  "searches_blocked": [
+    "RDC Institut National de la Statistique recensement general population 1984 religion ethnie langue resultats par province",
+    "RDC deuxieme recensement general de la population et de l'habitat RGPH2 2026 INS etat d'avancement",
+    "DRC Demographic and Health Survey 2023-24 religion by province table Congo Democratic Republic EDS-RDC III",
+    "\"Religion in the Democratic Republic of the Congo\" wikipedia table by province",
+    "data.humdata.org Democratic Republic of the Congo subnational census ethnicity religion language dataset",
+    "Enquete 1-2-3 RDC 2012 ethnie religion chef de menage province tableau INS rapport"
+  ],
+  "not_found": [
+    "nothing searched; every item above is an unrun query",
+    "repo-measured absence: the USCB DRC workbook carries no Language sheet (scratchpad uscb.log)"
+  ],
+  "summary": "No searches could be run for the DRC: the session's 200-search budget was used up before this country's first query, so this finding records repo evidence only and is tiered D. The repo already fills all 26 provinces (admin1) for religion and ethnicity from the INS Enquete 1-2-3 survey via the U.S. Census Bureau's HDX workbook -- a sample of 31,755 household heads pooled across 2005 and 2012, not a count -- and that workbook has no language sheet, so language at admin1 and everything at admin2 (189 shapes) is empty. Whether any census has ever tabulated these fields subnationally (prior knowledge says the last census was 1984; unverified here) and whether the 2023-24 DHS offers a newer religion-by-province estimate are the two questions a re-run should settle first."
+}

@@ -1,0 +1,71 @@
+{
+ "iso3": "YEM",
+ "name": "Yemen",
+ "researched_at": "2026-09-10",
+ "nso": {
+  "name": "Central Statistical Organization (CSO), Yemen",
+  "url": null,
+  "note": "Snippets name the site as cso-yemen.com but no link to it surfaced; surfaced pointers are the GHDx organisation page https://ghdx.healthdata.org/organizations/central-statistical-organization-yemen and Wikidata https://www.wikidata.org/wiki/Q12185787."
+ },
+ "latest_census": {
+  "year": 2004,
+  "asks": {
+   "religion": null,
+   "ethnicity": null,
+   "language": null
+  },
+  "notes": "General Census of Population, Housing and Establishments 2004 (about 19.7 million). A 2011 decree ordered a 2014 census that was never conducted; no census since 2004. Whether the 2004 questionnaire asked religion, ethnicity or language could not be established: the IHSN catalog entry (catalog.ihsn.org/index.php/catalog/229) lists the questionnaire variables (e.g. F4/V200 'q_406') and is where a runner can settle it. The map's national 99.1% Muslim figure is a Factbook estimate, not a census count."
+ },
+ "subnational_sources": [],
+ "wikipedia": {
+  "country_list_articles": [
+   {
+    "title": "Demographics of Yemen",
+    "url": "https://en.wikipedia.org/wiki/Demographics_of_Yemen",
+    "appears_to_contain": "surfaced; contents not seen"
+   },
+   {
+    "title": "Yemen - Minority Rights Group",
+    "url": "https://minorityrights.org/country/yemen/",
+    "appears_to_contain": "not Wikipedia; a narrative minorities profile, no subnational table implied"
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Bilad Ar Rus",
+    "search_hit_title": null,
+    "url": null,
+    "note": "Not searched: the session's shared WebSearch budget (200 calls) was exhausted before this query ran. This is a fact about the sandbox, not about the article."
+   },
+   {
+    "shape_name": "Dar Sa'd",
+    "search_hit_title": null,
+    "url": null,
+    "note": "Not searched: the session's shared WebSearch budget (200 calls) was exhausted before this query ran. This is a fact about the sandbox, not about the article."
+   },
+   {
+    "shape_name": "As Salafiyyah",
+    "search_hit_title": null,
+    "url": null,
+    "note": "Not searched: the session's shared WebSearch budget (200 calls) was exhausted before this query ran. This is a fact about the sandbox, not about the article."
+   }
+  ]
+ },
+ "tier": "D",
+ "tier_reason": "No subnational religion, ethnicity or language publication of any kind surfaced, and whether the 2004 census even asked those questions could not be established from search snippets. The U.S. Census Bureau workbook route is already measured closed (SOURCES.md: Yemen's workbook is a humanitarian profile with no religion/ethnicity/language sheet). Likely resolves to C once the IHSN questionnaire is read.",
+ "replaces_existing": false,
+ "recommended_action": "Read the IHSN catalog 229 variable list for the 2004 census; if it carries no religion, ethnicity or language variable (nationality/citizenship does not count), declare all three not_collected at admin1 and admin2 with that as evidence and note that no census has been held since 2004. The 2004 census does give population by 22 governorates and 333 districts with p-codes (HDX 'Yemen: Population Estimates', https://data.humdata.org/dataset/yemen-population-estimates), which matches the 22 admin1 and roughly the 335 admin2 shapes -- useful as a denominator, not as a composition.",
+ "searches_run": [
+  "Yemen 2004 census questionnaire religion ethnicity language question Central Statistical Organization",
+  "Yemen Central Statistical Organization cso-yemen census 2004 governorate district results",
+  "Yemen national census 2014 postponed never conducted last census 2004"
+ ],
+ "not_found": [
+  "any religion, ethnicity or language table by governorate or district, in any format",
+  "confirmation that the 2004 questionnaire asked (or did not ask) religion, ethnicity or language",
+  "a direct link to the CSO site (named in snippets only)",
+  "U.S. Census Bureau subnational workbook: previously measured closed by this project -- humanitarian profile only",
+  "Wikipedia 'Religion in Yemen' list article and admin2 sample articles (searches did not run: budget exhausted)"
+ ],
+ "summary": "Yemen's last census was 2004; the 2014 census was decreed and never held, and the war has prevented any since. The 2004 results exist by governorate and district (population with p-codes on HDX; per-governorate PDF/Excel reports from the CSO), but nothing found tabulates religion, ethnicity or language at any level, and the project has already found the U.S. Census Bureau workbook carries no such sheet. The remaining question is whether the 2004 questionnaire asked at all; the IHSN catalog 229 variable list will answer it, after which this is most likely a not_collected declaration for all three fields."
+}

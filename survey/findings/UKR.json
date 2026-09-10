@@ -1,0 +1,145 @@
+{
+ "iso3": "UKR",
+ "name": "Ukraine",
+ "researched_at": "2026-09-10",
+ "nso": {
+  "name": "State Statistics Service of Ukraine (Derzhstat); census portal ukrcensus.gov.ua",
+  "url": "https://www.ukrcensus.gov.ua/eng/"
+ },
+ "latest_census": {
+  "year": 2001,
+  "asks": {
+   "religion": false,
+   "ethnicity": true,
+   "language": true
+  },
+  "notes": "All-Ukrainian Population Census, 5 December 2001, State Statistics Committee -- the only census independent Ukraine has held (48,457,100 people). Search snippets list its topics as population, urban/rural, sex, age, ethnicity (nationality) and language, education, marital status; religion was not a census topic. The next census was planned for 2011, rescheduled repeatedly (2023 at the last plan), and under the census law cannot be held during martial law or for six months after it. Published subnationally: nationality and native language by region (oblast) on the official site; the U.S. Census Bureau's HDX workbook carries both by rayon."
+ },
+ "subnational_sources": [
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Ukraine - Subnational Boundaries and Tabular Data (U.S. Census Bureau extraction of the 2001 census), sheet 'Nationality-Language'",
+   "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+   "publisher": "U.S. Census Bureau via HDX (source: State Statistics Service of Ukraine)",
+   "kind": "census",
+   "format": "xlsx",
+   "geography": "rayon and city council (oblast rows blank; summed into oblast by the existing reader)",
+   "geography_count": 661,
+   "matches_boundary_level": "admin1 (after sum_into=1, as the language field already does); admin2 (494 old raions) previously measured unjoinable by name -- 58 of 663 matched",
+   "year": 2001,
+   "confidence": "medium",
+   "evidence": "Not from a search result: the repo's own scripts/fetch_census/uscb.py (UKRAINE config) records that the workbook holds a 'Nationality-Language' sheet, 'the cross-tabulation of the two -- 1,619 columns, every nationality against every native language', and chose the flat 'Language' sheet instead. The row margin of that cross-tab (sum over language columns per nationality, or a per-nationality total column if the sheet carries one) is nationality by rayon -- a count this project already fetches and can sum into 27 oblasts with the machinery it already has. Whether the sheet carries clean per-nationality totals is unverified; the workbook is not checked in under data/raw."
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "2001 census | English version | Results | General results of the census | National composition of population (one page per region)",
+   "url": "http://2001.ukrcensus.gov.ua/eng/results/general/nationality/",
+   "publisher": "State Statistics Committee of Ukraine (2001.ukrcensus.gov.ua)",
+   "kind": "census",
+   "format": "html",
+   "geography": "region (oblast, AR Crimea, Kyiv city, Sevastopol city)",
+   "geography_count": 27,
+   "matches_boundary_level": "admin1",
+   "year": 2001,
+   "confidence": "high",
+   "evidence": "Search results list the index page and per-region pages, e.g. '.../nationality/Kharkiv/' and '.../nationality/Lviv/', titled 'National composition of population | Kharkiv region'. Snippet: 'representatives of more than 130 nationalities'. Whether the region pages also break out raions was not established (that search did not run)."
+  },
+  {
+   "fields": [
+    "language"
+   ],
+   "title": "2001 census | Results | Linguistic composition of the population",
+   "url": "http://2001.ukrcensus.gov.ua/eng/results/general/language/",
+   "publisher": "State Statistics Committee of Ukraine (2001.ukrcensus.gov.ua)",
+   "kind": "census",
+   "format": "html",
+   "geography": "region (oblast)",
+   "geography_count": 27,
+   "matches_boundary_level": "admin1",
+   "year": 2001,
+   "confidence": "high",
+   "evidence": "Surfaced alongside the nationality index. Already covered: the map's admin1 language field is filled from the HDX workbook and reconciles to the census total; this is the official mirror of the same numbers."
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "language"
+   ],
+   "title": "Ukraine - All-Ukrainian Population Census 2001 - IPUMS Subset (World Bank Microdata Library catalog 2111; variable GEO2_UA = raion)",
+   "url": "https://microdata.worldbank.org/index.php/catalog/2111/variable/GEO2_UA",
+   "publisher": "IPUMS-International / World Bank Microdata Library",
+   "kind": "census",
+   "format": "microdata (registration required)",
+   "geography": "raion (GEO2_UA, 'second level administrative units, after regions')",
+   "geography_count": null,
+   "matches_boundary_level": "admin2 in principle (494 old raions) but by IPUMS geography codes, not names; unverified",
+   "year": 2001,
+   "confidence": "low",
+   "evidence": "Search result title and snippet: 'GEO2_UA identifies the household's raion within Ukraine in 2001'. An IPUMS forum thread 'Ukraine 2001 census ethnic data' (forum.ipums.org/t/.../3391) also surfaced, which suggests users have asked about the ethnicity variable -- whether it is present in the IPUMS extract was not established."
+  }
+ ],
+ "wikipedia": {
+  "country_list_articles": [
+   {
+    "title": "2001 Ukrainian census",
+    "url": "https://en.wikipedia.org/wiki/2001_Ukrainian_census",
+    "appears_to_contain": "snippet gives Russians by oblast (Donetsk 1,844,399; Crimea 1,180,441; Luhansk 991,825; Kharkiv 742,025), so a census-sourced by-oblast nationality table is likely; unverified"
+   },
+   {
+    "title": "Demographics of Ukraine",
+    "url": "https://en.wikipedia.org/wiki/Demographics_of_Ukraine",
+    "appears_to_contain": "surfaced in the religion/census search; contents not seen"
+   },
+   {
+    "title": "Russians in Ukraine",
+    "url": "https://en.wikipedia.org/wiki/Russians_in_Ukraine",
+    "appears_to_contain": "surfaced with by-region 2001 figures in the snippet; unverified"
+   },
+   {
+    "title": "List of raions of Ukraine (1966-2020)",
+    "url": "https://en.wikipedia.org/wiki/List_of_raions_of_Ukraine_(1966%E2%80%932020)",
+    "appears_to_contain": "snippet: raions 'with 2001 census population data' -- population only, but the name list matches the era the 494 admin2 shapes come from"
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Pokrovsk",
+    "search_hit_title": null,
+    "url": null,
+    "note": "Not searched: the session's shared WebSearch budget (200 calls) was exhausted before this query ran. This is a fact about the sandbox, not about the article."
+   },
+   {
+    "shape_name": "Hrebinka",
+    "search_hit_title": null,
+    "url": null,
+    "note": "Not searched: the session's shared WebSearch budget (200 calls) was exhausted before this query ran. This is a fact about the sandbox, not about the article."
+   },
+   {
+    "shape_name": "Novi Sanzhary",
+    "search_hit_title": null,
+    "url": null,
+    "note": "Not searched: the session's shared WebSearch budget (200 calls) was exhausted before this query ran. This is a fact about the sandbox, not about the article."
+   }
+  ]
+ },
+ "tier": "A",
+ "tier_reason": "Ethnicity (nationality) is a 2001 census count, machine-readable in the HDX/U.S. Census Bureau XLSX the project already fetches for language, by rayon and summable into the 27 oblasts = admin1 with the existing sum_into machinery; the official site publishes the same field by region in HTML as a check. Religion is C: never asked.",
+ "replaces_existing": false,
+ "recommended_action": "(1) In uscb.py's UKRAINE config, read the 'Nationality-Language' sheet as an ethnicity topic: collapse its 1,619 columns to per-nationality totals (sum across languages, or use total columns if present) before the existing sum_into=1 step; reconcile against the census's 48,121,632 and against the official per-region HTML pages. (2) Declare religion not_collected at every level, reason: the 2001 census did not ask religion and no census has been held since. (3) admin2 (494 old raions) stays closed on the name-join problem SOURCES.md records; revisit only with a code-based join.",
+ "searches_run": [
+  "2001 All-Ukrainian census national composition of population by region ukrcensus.gov.ua nationality",
+  "Ukraine 2001 census nationality composition by raion district data table",
+  "Ukraine census religion question never asked State Statistics Service next census postponed"
+ ],
+ "not_found": [
+  "HDX / U.S. Census Bureau ethnicity route confirmed by search (search did not run; evidence is the repo's own uscb.py comment)",
+  "whether 2001.ukrcensus.gov.ua region pages break nationality out by raion (search did not run)",
+  "any religion count at any level -- the census does not ask",
+  "Wikipedia admin2 sample articles (three searches did not run: budget exhausted)"
+ ],
+ "summary": "Ukraine's only census (2001) asked nationality and native language but not religion, and no census has been held since. The map already fills admin1 language from the U.S. Census Bureau's HDX workbook; the project's own reader notes that the same workbook carries a 'Nationality-Language' cross-tab by rayon, whose margins give nationality by rayon and, summed, by the 27 oblasts -- the fastest route to admin1 ethnicity, checkable against the official per-region HTML pages on 2001.ukrcensus.gov.ua. Religion should be declared not_collected. The 494 admin2 shapes (pre-2020 raions) remain closed on the name-join problem already recorded."
+}

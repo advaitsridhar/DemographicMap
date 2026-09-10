@@ -1,0 +1,83 @@
+{
+  "iso3": "DZA",
+  "name": "Algeria",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Office National des Statistiques (ONS)",
+    "url": "https://www.ons.dz/collections/Avant%20propos.html",
+    "note": "The only ons.dz URL copied from a search result (its collections 'Avant propos' page, titled 'Document sans nom'); the site root is ons.dz."
+  },
+  "latest_census": {
+    "year": 2022,
+    "asks": {"religion": false, "ethnicity": false, "language": false},
+    "notes": "6th Recensement Général de la Population et de l'Habitat (RGPH-2022), 25 September to 9 October 2022, collected on tablets; ~53,493 enumerators (Algeria-Watch: https://algeria-watch.org/?p=84267). Content described as demographic data, housing stock, living conditions, household deaths in the last 12 months and emigration in the last 5 years -- no mention of language, religion or ethnicity, and the questionnaire itself was not seen. The legal position is explicit in the Université Laval linguistic-policy pages (https://www.axl.cefan.ulaval.ca/afrique/algerie-1demo.htm and https://www.axl.cefan.ulaval.ca/afrique/algerie-4Berberes_ling.htm): 'Censuses on a linguistic, ethnic, or religious basis are prohibited in Algeria in order to \"preserve national unity\"', and 'the official form of Algeria's General Census of Population and Housing (RGPH) does not contain a question formulated as \"What language do you speak at home?\"'. The 1966 census was 'the only Algerian census containing a count of Berber speakers' (mother tongue, tabulated by département/wilaya and daïra). The 5th census, RGPH 2008 (16-30 April 2008), published results for the 48 wilayas (UNSD workshop deck: https://unstats.un.org/unsd/demographic/meetings/wshops/Kenya_14Sept2010/Presentations/By%20countries/7%20-%20Determination%20of%20scope%20and%20content/Algeria/Session%207%20-%20Alg%C3%A9rie.ppt). The 'asks: false' for 2022 rests on the standing prohibition and the 2022 content description, not on the 2022 form itself."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["language"],
+      "title": "Répartition des berbérophones algériens (au recensement de 1966)",
+      "url": "https://www.persee.fr/doc/tigr_0048-7163_1994_num_85_1_1308",
+      "publisher": "Persée (journal article, 1994, reproducing 1966 census mother-tongue counts)",
+      "kind": "census",
+      "format": "html / pdf (journal article)",
+      "geography": "1966 départements (the wilayas of the time) and daïras",
+      "geography_count": null,
+      "matches_boundary_level": "neither (the 1966 division set is far smaller than the 48 wilayas the boundary file draws; counts not stated in any snippet)",
+      "year": 1966,
+      "confidence": "medium",
+      "evidence": "Snippets: 'The 1966 census included a count of inhabitants by mother language ... grouped by administrative divisions including departments (wilaya) and districts'; 'the only Algerian census containing a count of Berber speakers'; e.g. Chaouia speakers in the Aurès ~450,000, 3.7% of 12,102,000. Sixty years old and on a different geography: a historical note, not a fill. Related: 'Le recensement Algérien de 1966' (ASJP, https://asjp.cerist.dz/en/article/164834); 'Premières données sur le recensement de la population de l'Algérie (1966)' (https://www.persee.fr/doc/bagf_0004-5322_1967_num_44_357_5842); JSTOR https://www.jstor.org/stable/1529666."
+    },
+    {
+      "fields": ["religion"],
+      "title": "Arab Barometer - Algeria (survey waves; religiosity and religion questions)",
+      "url": "https://www.arabbarometer.org/countries/algeria/",
+      "publisher": "Arab Barometer",
+      "kind": "survey",
+      "format": "microdata download from arabbarometer.org (access terms not established); reports pdf",
+      "geography": "governorate/wilaya used as a sampling stratum",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 by name of level only, if the stratum is released in the public file (not established)",
+      "year": null,
+      "confidence": "low",
+      "evidence": "Methodology page (https://www.arabbarometer.org/survey-data/methodology/): surveys 'stratified by governorate (or similar regional characteristic) and sub-stratified by type of settlement'. Religion topic page: https://www.arabbarometer.org/topics/religion/. Same class as Afrobarometer: a national survey whose region is a stratum, not an estimation domain. For Algeria the affiliation composition is near-uniform (99% Muslim nationally), so the only subnational signal would be religiosity, which is not what this map's religion field holds. Not recommended as a fill."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Langues en Algérie (fr)", "url": "https://fr.wikipedia.org/wiki/Langues_en_Alg%C3%A9rie",
+       "appears_to_contain": "surfaced in the 1966-census search; likely carries the 1966 Berber-speaker figures and estimates; no evidence of a table by current wilaya; unverified"},
+      {"title": "Demographics of Algeria", "url": "https://en.wikipedia.org/wiki/Demographics_of_Algeria",
+       "appears_to_contain": "surfaced in the RGPH 2022 search; snippet did not describe any table by wilaya; unverified"},
+      {"title": "Standard Algerian Berber", "url": "https://en.wikipedia.org/wiki/Standard_Algerian_Berber",
+       "appears_to_contain": "surfaced incidentally; a language article, not a list article"}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Guelma", "search_hit_title": null, "url": null, "note": "search not run: session WebSearch budget exhausted before this step"},
+      {"shape_name": "Mila", "search_hit_title": null, "url": null, "note": "search not run: session WebSearch budget exhausted before this step"},
+      {"shape_name": "El Bayadh", "search_hit_title": null, "url": null, "note": "search not run: session WebSearch budget exhausted before this step"}
+    ],
+    "note": "The dedicated '\"Languages of Algeria\" OR \"Religion in Algeria\" wikipedia table by wilaya' search was not run. Incidentally surfaced: 'Algiers Province' (https://en.wikipedia.org/wiki/Algiers_Province) and 'Oranie' (https://en.wikipedia.org/wiki/Oranie), which show that wilaya articles exist; their contents are unverified."
+  },
+  "tier": "C",
+  "tier_reason": "The state bars it: censuses on a linguistic, ethnic or religious basis are prohibited in Algeria to 'preserve national unity', and the RGPH form has no home-language question. The only census that ever counted language was 1966, on a division set that matches neither boundary level. The one subnational-ish alternative, Arab Barometer, is a survey with the wilaya as a stratum and a near-uniform affiliation composition.",
+  "replaces_existing": false,
+  "recommended_action": "Declare religion, ethnicity and language `not_collected` at both levels with the reason 'Algerian censuses may not ask linguistic, ethnic or religious questions (prohibition to preserve national unity; RGPH form has no language question -- Université Laval, axl.cefan.ulaval.ca)'. Optionally attach the 1966 census Berber-speaker share as a historical note. Do not fill from Arab Barometer. Boundary note for the maintainers: the packet draws 48 shapes at admin1 and 48 at admin2 with wilaya names at both (Annaba, Guelma, Mila, Tlemcen, Tébessa), i.e. the admin2 layer appears to duplicate the pre-2019 48-wilaya set rather than draw daïras or communes, and Algeria has had 58 wilayas since 2019 -- any future wilaya table would need the 58-to-48 mapping.",
+  "searches_run": [
+    "Algérie ONS RGPH 2008 questionnaire recensement religion langue berbère tamazight question",
+    "Algérie recensement 1966 berbérophones par wilaya question langue dernier recensement",
+    "Algeria RGPH 2022 sixth census ONS results questionnaire language religion",
+    "Arab Barometer Algeria wilaya region religiosity data by governorate",
+    "NOT RUN (budget exhausted): ONS Algérie ons.dz RGPH 2008 résultats par wilaya population publication",
+    "NOT RUN (budget exhausted): \"Languages of Algeria\" OR \"Religion in Algeria\" wikipedia table by wilaya Berber speakers",
+    "NOT RUN (budget exhausted): data.humdata.org Algeria census subnational dataset wilaya",
+    "NOT RUN (budget exhausted): \"Guelma\" / \"Mila\" / \"El Bayadh\" Algeria wikipedia"
+  ],
+  "not_found": [
+    "any RGPH (1977-2022) table of religion, ethnicity or language by wilaya -- the questions are not asked",
+    "the RGPH 2022 questionnaire itself (only a content description surfaced)",
+    "a 1966 mother-tongue table on the current 48- or 58-wilaya geography",
+    "an HDX or U.S. Census Bureau subnational workbook for Algeria (search not run; Algeria is not among the USCB series countries listed in docs/SOURCES.md)",
+    "confirmation that Arab Barometer's public file carries the wilaya stratum"
+  ],
+  "summary": "Algeria's census cannot carry these fields: linguistic, ethnic and religious census questions are prohibited to preserve national unity, and the RGPH form asks no home-language question, so the 5th census (2008, published for 48 wilayas) and the 6th (September-October 2022, on tablets) count people and housing only. The single exception is the 1966 census, which asked mother tongue and is the only Algerian count of Berber speakers, tabulated by the départements and daïras of that time -- a geography that matches neither the 48 admin1 nor the 48 admin2 shapes, and sixty years old. Arab Barometer surveys Algeria with the wilaya as a sampling stratum, but that is a survey, the affiliation composition is near-uniform, and stratum release was not established. Tier C: declare all three fields not_collected with the Université Laval evidence, and flag to the boundary maintainers that admin2 appears to duplicate the pre-2019 wilaya set. The ONS-site, HDX and Wikipedia checks were not run because the session's search budget ran out."
+}

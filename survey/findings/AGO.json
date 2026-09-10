@@ -1,0 +1,137 @@
+{
+  "iso3": "AGO",
+  "name": "Angola",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Instituto Nacional de Estatística (INE) Angola",
+    "url": "https://www.ine.gov.ao/",
+    "census_site": "https://censo2024.ine.gov.ao/index.html"
+  },
+  "latest_census": {
+    "year": 2024,
+    "asks": {
+      "religion": true,
+      "ethnicity": null,
+      "language": true
+    },
+    "published_subnationally": {
+      "religion": true,
+      "ethnicity": null,
+      "language": true
+    },
+    "notes": "Recenseamento Geral da População e Habitação (Censo) 2024; definitive results published as a national 'Relatório Geral' plus one 'Relatório dos Resultados Definitivos' per province on censo2024.ine.gov.ao (also mirrored as INE 'Publicacao_*.pdf'). Search snippet on the provincial reports: 'The definitive results of the 2024 Census include data on mother tongue by municipality and commune, as well as religion or spirituality data ... by municipality and area of residence.' No snippet mentioned an ethnicity question; treat as not established. The previous census, RGPH 2014 (definitive results March 2016, 25,789,024 people), also collected religion and language with provincial breakdowns per the snippets. Geography caveat: the 2024 provincial reports include separate CUANDO.pdf and CUBANGO.pdf, where the boundary file draws a single 'Cuando Cubango' -- consistent with the census being tabulated on Angola's 2024 territorial reorganisation (more provinces and municipalities than the 18 / 157 the boundary draws). This was not searchable within budget and must be verified."
+  },
+  "subnational_sources": [
+    {
+      "fields": [
+        "religion",
+        "language"
+      ],
+      "title": "Censo 2024 - Relatório dos Resultados Definitivos, provincial reports (e.g. LUANDA.pdf, ZAIRE.pdf, BIE.pdf, CUANDO.pdf, CUBANGO.pdf)",
+      "url": "https://censo2024.ine.gov.ao/LUANDA.pdf",
+      "other_urls": [
+        "https://censo2024.ine.gov.ao/ZAIRE.pdf",
+        "https://censo2024.ine.gov.ao/BIE.pdf",
+        "https://censo2024.ine.gov.ao/CUANDO.pdf",
+        "https://censo2024.ine.gov.ao/CUBANGO.pdf"
+      ],
+      "publisher": "INE Angola",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "município (mother tongue also by comuna); urban/rural",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 plausibly (boundary draws 157 municípios), but the reports appear to use the post-2024 division -- separate Cuando and Cubango reports -- so admin1 (18 in the boundary) and município counts likely differ and need a crosswalk",
+      "year": 2024,
+      "confidence": "medium",
+      "evidence": "Snippet: 'data on mother tongue by municipality and commune, as well as religion or spirituality data for the population aged 2 years and older by municipality and area of residence'; the provincial file names are from search results. Table pages not seen."
+    },
+    {
+      "fields": [
+        "religion",
+        "language"
+      ],
+      "title": "Censo 2024 - Relatório Geral Angola (national report with provincial tables)",
+      "url": "https://censo2024.ine.gov.ao/Relatorio_Geral_Angola_Censo2024.pdf",
+      "other_urls": [
+        "https://www.ine.gov.ao/Arquivos/arquivosCarregados//Carregados/Publicacao_639175237509463838.pdf",
+        "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_638992698392586291.pdf",
+        "https://www.ine.gov.ao/Arquivos/arquivosCarregados//Carregados/Publicacao_638992698392651704.pdf"
+      ],
+      "publisher": "INE Angola",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "província",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 only if the report keeps 18 provinces; the separate Cuando/Cubango provincial reports suggest 21",
+      "year": 2024,
+      "confidence": "medium",
+      "evidence": "Title from search results ('RELATÓRIO DOS RESULTADOS definitivos - Censo 2024 - INE'); the 'Relatório Síntese dos Resultados Definitivos' mirror on ine.gov.ao also surfaced."
+    },
+    {
+      "fields": [
+        "religion",
+        "language"
+      ],
+      "title": "RGPH 2014 - Resultados Definitivos do Recenseamento Geral da População e da Habitação de Angola (Março 2016)",
+      "url": "https://www.ine.gov.ao/publicacoes/detalhes/ODI3Ng==",
+      "other_urls": [
+        "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_637981512172633350.pdf",
+        "https://www.ine.gov.ao/Arquivos/arquivosCarregados//Carregados/Publicacao_639050104455150531.pdf"
+      ],
+      "publisher": "INE Angola (UNFPA Angola announced the release)",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "província",
+      "geography_count": 18,
+      "matches_boundary_level": "admin1 (the 18 pre-reform provinces the boundary draws)",
+      "year": 2014,
+      "confidence": "medium",
+      "evidence": "Snippet: 'the 2014 Census collected information on religion, and the data appears to include provincial and municipal breakdowns'; language detail 'not fully displayed'. Older, but on the boundary's own geography -- a fallback if the 2024 reports cannot be crosswalked."
+    }
+  ],
+  "secondary_routes": [
+    {
+      "route": "Afrobarometer Round 9 (already in the repo, scripts/fetch_census/afrobarometer.py)",
+      "url": null,
+      "note": "this is what currently fills religion and ethnicity for 13 of 18 provinces -- a survey estimate with regions under 25 respondents dropped. Any census figure supersedes it for religion; ethnicity stays Afrobarometer unless the 2024 census asked it."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [],
+    "admin2_samples": [
+      {
+        "shape_name": "Caluquembe",
+        "search_hit_title": null,
+        "url": null,
+        "note": "search not performed: session search budget exhausted"
+      },
+      {
+        "shape_name": "Golungo Alto",
+        "search_hit_title": null,
+        "url": null,
+        "note": "search not performed: session search budget exhausted"
+      },
+      {
+        "shape_name": "Sanza Pombo",
+        "search_hit_title": null,
+        "url": null,
+        "note": "search not performed: session search budget exhausted. Incidentally, en.wikipedia articles 'Cunhinga' and 'Cacolo' (municipalities) surfaced in the census search, so municipality articles exist; whether they carry census religion/language is unknown."
+      }
+    ]
+  },
+  "tier": "B",
+  "tier_reason": "A 2024 census count of religion and mother tongue exists by município -- the boundary's admin2 -- but only as per-province PDF reports, and the reports appear to follow the 2024 territorial reorganisation (separate Cuando and Cubango files) rather than the 18 provinces / 157 municípios the boundary draws, so a crosswalk is needed before anything joins. No XLSX, portal or API was found (searches for them could not run).",
+  "replaces_existing": true,
+  "recommended_action": "Open Relatorio_Geral_Angola_Censo2024.pdf and one provincial report (LUANDA.pdf) to confirm (a) the religion and mother-tongue tables by município, (b) which administrative division they use and how many provinces/municípios they list, and (c) whether ethnicity was asked. If the division is the new one, build a new-to-old crosswalk (new municípios are splits of old ones, so old = sum of new; Cuando + Cubango = Cuando Cubango) so figures land on the boundary's 18 / 157. Extract the PDF tables as Nepal's and Pakistan's were. Religion and language from the census would replace Afrobarometer's survey estimates for admin1 and fill admin2 for the first time; ethnicity remains Afrobarometer unless the census has it. Also check censo2024.ine.gov.ao for an XLSX/data section (not searched) and IPUMS for the 2014 sample (not searched).",
+  "searches_run": [
+    "Angola Censo 2014 resultados definitivos religião língua por província município INE",
+    "Angola Censo 2024 questionário religião língua materna resultados definitivos município"
+  ],
+  "not_found": [
+    "Any machine-readable (xlsx/csv/api) release of the 2024 or 2014 census religion or language tables (only PDFs surfaced; a dedicated search for xlsx/open data could not run)",
+    "Any statement that the 2024 census asked ethnicity",
+    "The number of provinces and municípios in the 2024 census tabulation",
+    "Not searched (session search budget exhausted): Angola 2024 political-administrative reorganisation (province/município counts); IPUMS-International Angola 2014 sample; INE data portal / xlsx; 'Religion in Angola' Wikipedia; the three admin2 sample names"
+  ],
+  "summary": "Angola's Censo 2024 has definitive results out, and the per-province PDF reports on censo2024.ine.gov.ao tabulate mother tongue by município and comuna and religion by município -- both boundary levels, from a count rather than the Afrobarometer survey that currently fills 13 of 18 provinces. Two things stand between that and a build: everything is PDF, and the reports appear to use Angola's 2024 territorial reorganisation (separate Cuando and Cubango reports where the boundary draws one Cuando Cubango), so province and município counts must be established and crosswalked to 18 / 157. The RGPH 2014 definitive results (18 provinces, also PDF) are the fallback on the boundary's own geography. Whether either census asked ethnicity was not established; Wikipedia and open-data routes could not be searched within the session's budget."
+}
