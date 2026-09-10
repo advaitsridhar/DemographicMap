@@ -89,6 +89,7 @@ ADAPTER_FILES = [
     "poland_voivodeship.json", "poland_powiat.json",
     "czechia_kraj.json", "czechia_okres.json",
     "croatia_county.json", "croatia_unit.json",
+    "bosnia_entity.json", "bosnia_canton.json",
     "myanmar_state.json", "ukraine_oblast.json", "car_prefecture.json",
     "mali_region.json", "drc_province.json", "russia_subject.json",
     "colombia_department.json", "jamaica_parish.json",
@@ -127,6 +128,8 @@ ADAPTER_HINTS: dict[str, str] = {
            "by kraj and okres: python -m scripts.fetch_census.czechia",
     "HRV": "DZS Popis 2021 workbook (ethnicity, religion, mother tongue) by "
            "županija and grad/općina: python -m scripts.fetch_census.croatia",
+    "BIH": "BHAS Popis 2013 Book 2 tables (ethnicity, religion, mother tongue) by "
+           "entity and canton: python -m scripts.fetch_census.bosnia",
     "IRL": "CSO Census 2022 via PxStat (SAPMAP religion and ethnicity by local "
            "electoral area): python -m scripts.fetch_census.ireland",
     "DEU": "Zensus 2022 religion by Land, three categories from the church-tax "

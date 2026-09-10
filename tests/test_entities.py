@@ -4777,6 +4777,70 @@ class ThailandReadsTheTranscribedReports(unittest.TestCase):
                                                  "||35.9%||81.0%||63.8%||68.9%"))
 
 
+class BosniaReadsBookTwo(unittest.TestCase):
+    """BHAS Book 2 tables carry a bilingual header (the English row starts
+    "Level"), three rows per territory, a dash for zero, and the territory's
+    Bosnian name over its English one. The Total row is read, entities go to
+    both levels, cantons under the Federation, 'Islamska' and 'Muslimanska'
+    are summed, and an unknown territory or a row off its total refuses.
+    """
+
+    def rows(self):
+        def t(level, name, tot, *c):
+            return (level, name, "Ukupno/\nTotal", tot, *c)
+        return [
+            ("", "5. Stanovništvo prema vjeroispovijesti i spolu"),
+            ("Nivo", "Teritorija", "Spol", "Ukupno", "Islamska", "Pravoslavna", "Muslimanska",
+             "Bošnjačka", "Ostali", "Nepoznato"),
+            ("Level", "Area", "Sex", "Total", "Islam", "Orthodox", "Muslim", "Bosniak",
+             "Others", "Unknown"),
+            t(0, "BOSNA I HERCEGOVINA\nBOSNIA AND HERZEGOVINA", 100, 50, 30, 10, 0, 5, 5),
+            (0, "BOSNA I HERCEGOVINA\nBOSNIA AND HERZEGOVINA", "Muški/\nMale", 50, 25, 15, 5, 0, 3, 2),
+            t(1, "FEDERACIJA BOSNE I HERCEGOVINE\nFEDERATION OF BOSNIA AND HERZEGOVINA",
+              60, 40, 5, 10, 1, 2, 2),
+            t(2, "KANTON 10\nCANTON 10", 20, "-", 18, 1, 0, 1, "-"),
+            t(1, "REPUBLIKA SRPSKA\nREPUBLIKA SRPSKA", 30, 5, 24, "-", 0, "1", 0),
+            t(1, "BRČKO DISTRIKT BOSNE I HERCEGOVINE\nBRČKO DISTRICT", 10, 5, 1, 0, 0, 4, 0),
+        ]
+
+    def test_levels_merge_and_labels(self):
+        from scripts.fetch_census import bosnia
+        labels, units = bosnia.parse_table(self.rows())
+        self.assertEqual(labels, ["Islam", "Orthodox", "Muslim", "Bosniak", "Others", "Unknown"])
+        self.assertEqual([(u["level"], u["native"]) for u in units],
+                         [(0, "BOSNA I HERCEGOVINA"), (1, "FEDERACIJA BOSNE I HERCEGOVINE"),
+                          (2, "KANTON 10"), (1, "REPUBLIKA SRPSKA"),
+                          (1, "BRČKO DISTRIKT BOSNE I HERCEGOVINE")])
+        out = bosnia.build({"religion": {u["native"]: u for u in units}})
+        self.assertEqual(sorted(r["name"] for r in out["admin1"]),
+                         ["Brčko District", "Federation of Bosnia and Herzegovina", "Republika Srpska"])
+        self.assertEqual(sorted(r["name"] for r in out["admin2"]),
+                         ["Brčko District", "Canton 10", "Republika Srpska"])
+        fed = next(r for r in out["admin1"] if r["name"].startswith("Federation"))
+        self.assertEqual(fed["religion"][0], {"group": "Islam", "pct": 83.3, "count": 50})
+        self.assertIn({"group": "Bosniak (written as religion)", "pct": 1.7, "count": 1},
+                      fed["religion"])
+        canton = next(r for r in out["admin2"] if r["name"] == "Canton 10")
+        self.assertEqual(canton["parent"], fed["id"])
+        self.assertEqual(canton["religion"][0]["group"], "Orthodox")
+        self.assertNotIn("Unknown", {b["group"] for b in canton["religion"]})   # the dash
+        brcko = next(r for r in out["admin2"] if r["name"] == "Brčko District")
+        self.assertIn("Brcko District", brcko["aliases"])
+        self.assertNotEqual(brcko["id"], next(r for r in out["admin1"] if r["name"] == "Brčko District")["id"])
+
+    def test_an_unknown_territory_or_a_bad_total_refuses(self):
+        from scripts.fetch_census import bosnia
+        rows = self.rows()
+        rows.append((2, "NOVI KANTON\nNEW CANTON", "Ukupno/\nTotal", 5, 5, 0, 0, 0, 0, 0))
+        _, units = bosnia.parse_table(rows)
+        with self.assertRaises(SystemExit):
+            bosnia.build({"religion": {u["native"]: u for u in units}})
+        _, units = bosnia.parse_table(self.rows())
+        units[2]["counts"]["Orthodox"] = 5
+        with self.assertRaises(SystemExit):
+            bosnia.bars("religion", units[2])
+
+
 class PolandCutsTheReligionTreeOnce(unittest.TestCase):
     """GUS publishes religion as a seven-level classification tree, and the
     composition is one cut through it: Christian branches at level 5, other
