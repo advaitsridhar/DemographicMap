@@ -1,0 +1,951 @@
+{
+ "iso3": "CAN",
+ "name": "Canada",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "religion",
+    "ethnicity",
+    "language"
+   ],
+   "title": "Census Profile, 2021: Canada, Provinces, Territories and Economic Regions (catalogue 98-401-X2021008)",
+   "kind": "census",
+   "format": "csv (Census Profile Downloads, whole-level file)",
+   "geography": "economic region (and province/territory in the same file)",
+   "geography_count": 76,
+   "matches_boundary_level": "admin2 (76 economic regions -- the packet's admin2 names 'Nord-du-Québec', 'Parklands', 'Regina--Moose Mountain', 'Swift Current--Moose Jaw', 'Vancouver Island and Coast' are StatCan ER names) and admin1 (13 provinces/territories)",
+   "url": "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021008",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021008",
+   "error": null,
+   "body": {
+    "bytes_read": 25461,
+    "kind": "html",
+    "title": "Census Profile, 2021: Canada, Provinces, Territories and Economic Regions",
+    "links_to_files": [],
+    "mentions": [
+     "census",
+     "language",
+     "languageswitcher"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity",
+    "language"
+   ],
+   "title": "Census Profile 2021 web data service (REST, per DGUID) -- the route the repo's scripts/fetch_census/statcan.py already uses, pointed at province (2021A0002xx) and census-division DGUIDs",
+   "kind": "census",
+   "format": "api (one geography per call)",
+   "geography": "economic region via DGUIDs of the form 2021S0500 + 4-digit ER code (e.g. 2021S05005910)",
+   "geography_count": 76,
+   "matches_boundary_level": "admin2 (the adapter's current 'census_division' level, ~293 CDs, is NOT the boundary's 76 ERs, which is why admin2 is empty; and SOURCES.md records 12 of 13 provinces without religion after the live run)",
+   "url": "https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&SearchText=Vancouver+Island+and+Coast&DGUIDlist=2021S05005910&GENDERlist=1%2C2%2C3&STATISTIClist=1%2C4&HEADERlist=0",
+   "status": 200,
+   "content_type": "text/html",
+   "final_url": "https://www12.statcan.gc.ca/census-recensement/srvmsg/srvmsg404.html",
+   "error": null,
+   "body": {
+    "bytes_read": 4099,
+    "kind": "html",
+    "title": "File not found | Fichier non trouv&eacute;",
+    "links_to_files": [],
+    "mentions": [
+     "census"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "Table 98-10-0354-01 Religion by gender and age: Canada, provinces and territories, census divisions and census subdivisions (released 21 June 2023)",
+   "kind": "census",
+   "format": "csv",
+   "geography": "census division / census subdivision (5,000+)",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 for the provincial rows; CDs are not the boundary's ERs but nest within them (ERs are groupings of CDs), so a CD-to-ER crosswalk from the 2021 Geographic Attribute File would be needed",
+   "url": "https://www150.statcan.gc.ca/t1/tbl1/en/dacl!downloadDataAsCustomizedLayout-nonTraduit.action?checkedLevels=0D1%2C0D3%2C4D1%2C4D2%2C4D3&dimensionLayouts=&endDate=20210101&latestN=0&pid=9810035401&selectedMembers=%5B%5B%5D%2C%5B1%5D%2C%5B1%5D%2C%5B1%5D%2C%5B%5D%5D&startDate=20210101",
+   "status": 200,
+   "content_type": "text/csv;charset=UTF-8",
+   "final_url": "https://www150.statcan.gc.ca/t1/tbl1/en/dacl!downloadDataAsCustomizedLayout-nonTraduit.action?checkedLevels=0D1%2C0D3%2C4D1%2C4D2%2C4D3&dimensionLayouts=&endDate=20210101&latestN=0&pid=9810035401&selectedMembers=%5B%5B%5D%2C%5B1%5D%2C%5B1%5D%2C%5B1%5D%2C%5B%5D%5D&startDate=20210101",
+   "error": null,
+   "body": {
+    "bytes_read": 67754,
+    "kind": "text/csv?",
+    "first_lines": [
+     "﻿Religion by gender and age: Census divisions",
+     "\"Frequency: Occasional\"",
+     "\"Table: 98-10-0354-01\""
+    ]
+   }
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "Table 98-10-0341-01 Religion by ethnic or cultural origins: Canada, provinces and territories and census metropolitan areas with parts",
+   "kind": "census",
+   "format": "csv",
+   "geography": "province/territory (and CMAs)",
+   "geography_count": 13,
+   "matches_boundary_level": "admin1",
+   "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810034101",
+   "status": 200,
+   "content_type": "text/html;charset=UTF-8",
+   "final_url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810034101",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "html",
+    "title": "Religion by ethnic or cultural origins: Canada, provinces and territories and census metropolitan areas with parts",
+    "links_to_files": [
+     "#?pid=98100341&file=9810034101-eng.csv",
+     "#?pid=98100341&file=9810034101-noSymbol.csv",
+     "#?pid=98100341&file=9810034101-symbolsSeparate.csv",
+     "https://www150.statcan.gc.ca/n1/tbl/b2020/98100341.zip",
+     "https://www150.statcan.gc.ca/n1/tbl/csv/98100341-eng.zip"
+    ],
+    "mentions": [
+     "census",
+     "ethnic",
+     "language",
+     "religion"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "Target group profile of the population by religion, Census 2021 (Community Data Program mirror)",
+   "kind": "census",
+   "format": "member download",
+   "geography": "various",
+   "geography_count": null,
+   "matches_boundary_level": null,
+   "url": "https://communitydata.ca/data/target-group-profile-population-religion-census-2021",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://communitydata.ca/data/target-group-profile-population-religion-census-2021",
+   "error": null,
+   "body": {
+    "bytes_read": 38135,
+    "kind": "html",
+    "title": "Target group profile of the population by religion, Census, 2021 | The Community Data Program",
+    "links_to_files": [
+     "/sites/default/files/CDP%20Vision%20and%20Strategic%20Plan%20for%202022%20-%202026%20-%20FINAL%2020%20JUNE%202022.pdf",
+     "/sites/default/files/ccednet-cdp_schedule-c.pdf"
+    ],
+    "mentions": [
+     "census",
+     "ethnic",
+     "language",
+     "languages",
+     "religion"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Christianity in Canada / Islam in Canada / Irreligion in Canada / Hinduism in Canada / Buddhism in Canada",
+    "wikitext_bytes": 0,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Canadian ethnicity; Demographics of Canada",
+    "wikitext_bytes": 0,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Canada",
+    "wikitext_bytes": 175483,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 5,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Denomination",
+       "Pop, 1951<ref name=\"auto\">{{cite web|title=Table A164-184, Principal religious denominations of the population, census dates 1871 to 1971|url=http://www.statcan.gc.ca/access_acces/archive.action?l=eng&loc=A164_184-eng.csv|publisher=Statistics Canada|access-date=November 18, 2016|archive-date=March 24, 2016|archive-url=https://web.archive.org/web/20160324221430/http://www.statcan.gc.ca/access_acces/archive.action?l=eng&loc=A164_184-eng.csv|url-status=dead}}</ref>",
+       "% of total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "Province/Territory<br />",
+       "Christians"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Province or territory",
+       "Jews",
+       "Percentage"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |Religious<br>denomination",
+       "colspan=\"2\" |1981 Canadian census<br><ref name=\"1981Religion\">{{Cite web |last=Government of Canada |first=Statistics Canada |date=2025-11-04 |title=1981 Census of Canada : volume 1 - national series : population |url=https://publications.gc.ca/site/eng/9.837638/publication.html |access-date=2025-11-09 |website=www12.statcan.gc.ca}}</ref><ref name=\"1981ReligionB\">{{Cite web |last=Government of Canada |first=Statistics Canada |date=2025-11-04 |title=1981 Census of Canada : volume 2 - provincial series : population; language, ethnic origin, religion, place of birth, schooling |url=https://publications.gc.ca/site/eng/9.838030/publication.html |access-date=2025-11-09 |website=www12.statcan.gc.ca}}</ref><ref name=\"1981ReligionC\">{{Cite web |last=Government of Canada |first=Statistics Canada |date=2020-05-26 |title=Data tables, 1981 Census Census Profile for Census Metropolitan Areas and Census Agglomerations, 1981 Census - Part B |url=https://www12.statcan.gc.ca/English/census81/data/tables/Rp-eng.cfm?LANG=E&APATH=3&DETAIL=1&DIM=0&FL=A&FREE=1&GC=0&GID=0&GK=0&GRP=1&PID=113750&PRID=0&PTYPE=113743&S=0&SHOWALL=No&SUB=0&Temporal=1986&THEME=134&VID=0&VNAMEE=&VNAMEF= |access-date=2025-11-09 |website=www12.statcan.gc.ca}}</ref><ref name=\"1981ReligionD\">{{Cite web |last=Government of Canada |first=Statistics Canada |date=2020-05-26 |title=Data tables, 1981 Census Census Profile for Canada, Provinces and Territories, Census Divisions and Census Subdivisions, 1981 Census - Part B |url=https://www12.statcan.gc.ca/English/census81/data/tables/Rp-eng.cfm?LANG=E&APATH=3&DETAIL=1&DIM=0&FL=A&FREE=1&GC=0&GID=0&GK=0&GRP=1&PID=113752&PRID=0&PTYPE=113743&S=0&SHOWALL=No&SUB=0&Temporal=1986&THEME=134&VID=0&VNAMEE=&VNAMEF= |access-date=2025-11-09 |website=www12.statcan.gc.ca}}</ref><ref name=\"pewforum.org\" />",
+       "colspan=\"2\" |1991 Canadian census<br><ref name=\"1991&2001Religion\"/><ref name=\"1991Religion\">{{Cite web |last=Government of Canada |first=Statistics Canada |date=2019-03-29 |title=Data tables, 1991 Census R9101 - Population by Religion (29), Showing Age Groups (13) Education (20% Data) - Canada, provinces and territories, census divisions and census subdivisions |url=https://www12.statcan.gc.ca/English/census91/data/tables/Rp-eng.cfm?LANG=E&APATH=3&DETAIL=1&DIM=0&FL=A&FREE=1&GC=0&GID=0&GK=0&GRP=1&PID=66&PRID=0&PTYPE=4&S=0&SHOWALL=No&SUB=0&Temporal=1991&THEME=114&VID=0&VNAMEE=&VNAMEF= |access-date=2025-11-09 |website=www12.statcan.gc.ca}}</ref><ref name=\"1991ReligionB\">{{Cite web |last=Government of Canada |first=Statistics Canada |date=2019-03-29 |title=1991 Census Area Profiles Profile of Census Metropolitan Areas and Census Agglomerations - Part B |url=https://www12.statcan.gc.ca/English/census91/data/profiles/Rp-eng.cfm?LANG=E&APATH=3&DETAIL=1&DIM=0&FL=A&FREE=1&GC=0&GID=0&GK=0&GRP=1&PID=225&PRID=0&PTYPE=3&S=0&SHOWALL=No&SUB=0&Tempora"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 0
+     },
+     {
+      "header": [
+       "Province/territory<ref name=\"2021religion\">{{cite web|url=https://www.statcan.gc.ca/en/census/census-engagement/community-supporter/ethnocultural-and-religious-diversity|title=Ethnocultural and religious diversity – 2021 Census promotional material|website=Statistics Canada|date=October 21, 2022 |access-date=2023-10-19}}</ref>",
+       "Christians",
+       "%",
+       "Non-religious",
+       "%",
+       "Muslims",
+       "%",
+       "Jews",
+       "%",
+       "Buddhists"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 13
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Canada",
+    "wikitext_bytes": 168710,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnicity and visible minorities",
+     "Ethnic origin",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 23,
+    "charts": [
+     "Bar box",
+     "Historical populations",
+     "Pie chart",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 4,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"30\" |Total fertility rate",
+       "colspan=\"10\" |Years<ref>{{Cite journal |last=Roser |first=Max |date=2014-02-19 |title=Fertility Rate |url=https://ourworldindata.org/fertility-rate |journal=Our World in Data}}</ref>",
+       "1861",
+       "1862",
+       "1863",
+       "1864",
+       "1865",
+       "1866",
+       "1867",
+       "1868"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 43
+     },
+     {
+      "header": [
+       "Province/Territory",
+       "TFR",
+       "rowspan=\"27\" |Average age of childbirth at first birth<ref name=\":1\" />",
+       "colspan=\"11\" |Year",
+       "1945",
+       "1946",
+       "1947",
+       "1948",
+       "1949",
+       "1950"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 36
+     },
+     {
+      "header": [
+       "rowspan=\"27\" |Average age of childbirth at first birth<ref name=\":1\" />",
+       "colspan=\"11\" |Year",
+       "1945",
+       "1946",
+       "1947",
+       "1948",
+       "1949",
+       "1950",
+       "1951",
+       "1952"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "rowspan=\"19\" |Life expectancy",
+       "colspan=\"10\" |Year<ref name=\":0\">{{cite web |title=Life expectancy |url=https://ourworldindata.org/grapher/life-expectancy?year=1810 |access-date=2018-08-28 |website=Our World in Data}}</ref>",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "! style=\"width:70pt;\" | Average population (July 1)",
+       "style=\"width:70pt;\" | Live births",
+       "style=\"width:70pt;\" | Deaths",
+       "style=\"width:70pt;\" | Natural change",
+       "style=\"width:70pt;\" | Birth rate (per 1,000)",
+       "style=\"width:70pt;\" | Death rate (per 1,000)",
+       "style=\"width:70pt;\" | Natural change (per 1,000)",
+       "style=\"width:70pt;\" | Crude Migration change (per 1,000)",
+       "style=\"width:70pt;\" | Total fertility rate{{efn| name=fertility|1=In fertility rates, 2.1 and above is a stable population and has been marked blue, 2 and below leads to an aging population and the result is that the population decreases. }}<ref name=\"publications.gc.ca\" /><ref name=\"cia.gov\" />"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January–March 2025",
+       "January–March 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{cite web |title=Estimates of the components of natural increase, quarterly |url=https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1710005901 |access-date=2 May 2026 |website=Statistics Canada| date=18 March 2026}}</ref>{{sticky header}}",
+       "Age Group",
+       "Percent Unemployed"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Age Group",
+       "Percent Unemployed",
+       "Province / Territory",
+       "Percent Canadians",
+       "Total Canadians"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Province / Territory",
+       "Percent Canadians",
+       "Total Canadians",
+       "Canada total ||  32.3% || 11,136,134"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "scope=\"col\" | Ethnic origin<ref>{{cite web |url=http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/hlt-fst/imm/Table.cfm?Lang=E&T=31&Geo=01&SO=4D|title=Immigration and Ethnocultural Diversity Highlight Tables|date=25 October 2017|publisher=statcan.gc.ca}}</ref>",
+       "%",
+       "scope=\"col\" | Population",
+       "scope=\"row\" | Canadian{{efn| name=Canadian}}",
+       "scope=\"row\" | English",
+       "scope=\"row\" | Irish",
+       "scope=\"row\" | Scottish",
+       "scope=\"row\" | French",
+       "scope=\"row\" | German",
+       "scope=\"row\" | Indian{{efn| name=Indo-Canadian}}"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "rowspan=\"2\"| Group",
+       "colspan=\"2\" | 1981 census<br /><ref name=\"1981CensusProfile\">{{Cite web |last=Government of Canada |first=Statistics Canada |date=2013-04-03 |title=1981 Census of Canada : volume 1 – national series : population = Recensement du Canada de 1981 : volume 1 – série nationale : population. |url=https://publications.gc.ca/site/eng/9.837638/publication.html |access-date=2022-08-24 |website=www12.statcan.gc.ca}}</ref><ref name=\"MinorityPopulation\">{{Cite web |last=Government of Canada |first=Statistics Canada |date=2017-10-25 |title=Number and proportion of visible minority population in Canada, 1981 to 2036 |url=https://www.statcan.gc.ca/en/dai/btd/othervisuals/other010 |access-date=2022-08-24 |website=www12.statcan.gc.ca}}</ref><ref name=\"1981&1986CensusProfile\"/>{{rp|64}}",
+       "colspan=\"2\" | 1986 census<br /><ref name=\"MinorityPopulation\"/><ref name=\"1981&1986CensusProfile\">{{Cite web |last=Government of Canada |first=Statistics Canada |date=2013-04-03 |title=Working paper : comparison of 1981 and 1986 census counts on visible minorities in Canada / Wendy Wright. |url=https://publications.gc.ca/site/eng/9.817220/publication.html |access-date=2022-09-04 |website=www12.statcan.gc.ca}}</ref>{{rp|66}}<ref name=\"AboriginalPop\">{{Cite web |last=Government of Canada |first=Statistics Canada |date=2013-04-03 |title=The aboriginal population and the Census : 120 years of information, 1871–1991 / Gustave Goldmann. |url=https://publications.gc.ca/site/eng/9.823238/publication.html |access-date=2022-09-04 |website=www12.statcan.gc.ca}}</ref>{{rp|6}}",
+       "colspan=\"2\" | 1991 census<br /><ref name=\"MinorityPopulation\"/><ref name=\"1991censusVisibles\">{{Cite web |last=Government of Canada |first=Statistics Canada |date=2013-04-03 |title=1991 employment equity data highlights. |url=https://publications.gc.ca/site/eng/9.822803/publication.html |access-date=2022-09-22 |website=www12.statcan.gc.ca}}</ref>{{rp|11}}<ref name=\"AboriginalPop\"/>{{rp|6}}",
+       "colspan=\"2\" | 1996 census<ref name=\"1996censusAboriginal\"/><ref name=1996censusVisibles>[http://www.statcan.gc.ca/c1996-r1996/feb17-17fev/vm-mv-can-eng.pdf Statistics Canada], Total Population by Visible Minority Population, for Canada, 1996 Census (20% Sample Data)</ref>",
+       "Total",
+       "%",
+       "Total",
+       "%",
+       "Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 3
+     },
+     {
+      "header": [
+       "rowspan=\"2\"| Group",
+       "colspan=\"2\" | 2001 census<ref name=\"2001censusprofile\"/>",
+       "colspan=\"2\" | 2006 census<ref name=\"2006 Canada Census Profile\"/>",
+       "colspan=\"2\" | 2011 survey<ref name=\"2011NHSprofile\"/>",
+       "colspan=\"2\" | 2016 census<ref name=\"Census Profile, 2016 Census 2017\">{{cite web | title=Census Profile, 2016 Census | work=Statistics Canada | date=February 8, 2017 | url=http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page.cfm?Lang=E&Geo1=PR&Code1=01&Geo2=PR&Code2=01&Data=Count&SearchText=canada&SearchType=Begins&SearchPR=01&B1=All&TABID=1 | access-date=February 16, 2018}}</ref>",
+       "colspan=\"2\" | 2021 census<ref name=\"2021 Census Profile\">{{cite web | title = Census Profile, 2021 Census | work=Statistics Canada | date=9 February 2022 | url=https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDList=2021A000011124&GENDERList=1,2,3&STATISTICList=1&HEADERList=0&SearchText=Canada | access-date=October 26, 2022}}</ref><ref name=\"2021censusA\"/><ref name=\"2021newsrelease\"/>",
+       "Total",
+       "%",
+       "Total",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 5
+     },
+     {
+      "header": [
+       "rowspan=\"2\"| Group",
+       "colspan=\"2\" | 1996<ref name=1996censusAboriginal>[http://www.statcan.gc.ca/c1996-r1996/jan13-13jan/c1996-r1996-eng.pdf Statistics Canada], Population by Aboriginal Groups and Sex, Showing Age Groups, for Canada, 1996 Census (20% Sample Data)</ref>",
+       "colspan=\"2\" | 2001<ref name=\"2001censusprofile\">[http://www12.statcan.ca/english/profil01/CP01/Details/Page.cfm?Lang=E&Geo1=PR&Code1=01&Geo2=PR&Code2=01&Data=Count&SearchText=Canada&SearchType=Begins&SearchPR=01&B1=All&Custom= Statistics Canada] {{Webarchive|url=https://web.archive.org/web/20081006025549/http://www12.statcan.ca/english/Profil01/CP01/Details/Page.cfm?Lang=E&Geo1=PR&Code1=01&Geo2=PR&Code2=01&Data=Count&SearchText=Canada&SearchType=Begins&SearchPR=01&B1=All&Custom= |date=2008-10-06 }}, Community Highlights for Canada</ref>",
+       "colspan=\"2\" | 2006<ref name=\"2006 Canada Census Profile\">[http://www12.statcan.ca/census-recensement/2006/dp-pd/prof/92-591/details/page.cfm?Lang=E&Geo1=PR&Code1=01&Geo2=PR&Code2=01&Data=Count&SearchText=Canada&SearchType=Begins&SearchPR=01&B1=All&Custom= Statistics Canada] {{Webarchive|url=https://web.archive.org/web/20090420123722/http://www12.statcan.ca/census-recensement/2006/dp-pd/prof/92-591/details/Page.cfm?Lang=E&Geo1=PR&Code1=01&Geo2=PR&Code2=01&Data=Count&SearchText=Canada&SearchType=Begins&SearchPR=01&B1=All&Custom= |date=2009-04-20 }}, 2006 Community Profiles: Canada (Country)</ref>",
+       "colspan=\"2\" | 2011<ref name=\"2011NHSprofile\">[http://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/prof/details/page.cfm?Lang=E&Geo1=PR&Code1=01&Data=Count&SearchText=Canada&SearchType=Begins&SearchPR=01&A1=All&B1=All&Custom=&TABID=1 Statistics Canada], NHS Profile, Canada, 2011</ref>",
+       "colspan=\"2\" | 2016<ref>{{cite web|url=https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/dt-td/Rp-eng.cfm?LANG=E&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=0&GID=0&GK=0&GRP=1&PID=110588&PRID=10&PTYPE=109445&S=0&SHOWALL=0&SUB=0&Temporal=2017&THEME=122&VID=0&VNAMEE=&VNAMEF=|title=Aboriginal Identity (9), Age (20), Registered or Treaty Indian Status (3) and Sex (3) for the Population in Private Households of Canada, Provinces and Territories, Census Metropolitan Areas and Census Agglomerations, 2016 Census – 25% Sample Data|first=Statistics Canada|last=Government of Canada|date=October 25, 2017|website=www12.statcan.gc.ca}}</ref>",
+       "colspan=\"2\" | 2021<ref name=\"indigenous2021\">{{Cite web |last=Government of Canada |first=Statistics Canada |date=2022-09-21 |title=Indigenous identity by Registered or Treaty Indian status: Canada, provinces and territories, census metropolitan areas and census agglomerations with parts |url=https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810026501 |access-date=2022-09-21 |website=www12.statcan.gc.ca}}</ref>",
+       "%",
+       "Total",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 2
+     },
+     {
+      "header": [
+       "rowspan=2 |",
+       "style=\"text-align:center;\" colspan=\"2\"|<big>2031</big><ref name=\"FutureProjectionsB\"/><ref name=\"IndigenousProjections\">{{Cite web |last=Government of Canada |first=Statistics Canada |date=2021-10-06 |title=Projected population by Indigenous identity, age group, sex, area of residence, provinces and territories, and projection scenario, Canada (x 1,000) |url=https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1710014401 |access-date=2022-10-01 |website=www12.statcan.gc.ca}}</ref>",
+       "style=\"text-align:center;\" colspan=\"2\"|<big>2036</big><ref name=\"FutureProjectionsB\"/><ref name=\"IndigenousProjections\"/>",
+       "style=\"text-align:center;\" colspan=\"2\"|<big>2041</big><ref name=\"FutureProjectionsB\"/><ref name=\"IndigenousProjections\"/>",
+       "Population",
+       "%",
+       "Population",
+       "%",
+       "Population",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |Language",
+       "colspan=\"2\" |2021<ref name=\"language2021\">{{Cite web |last=Government of Canada |first=Statistics Canada |date=2022-08-17 |title=Knowledge of languages by age and gender: Canada, provinces and territories, census metropolitan areas and census agglomerations with parts |url=https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810021701 |access-date=2022-10-12 |website=www12.statcan.gc.ca}}</ref>",
+       "colspan=\"2\" |2011<ref name=\"language2011\">{{Cite web |last=Government of Canada |first=Statistics Canada |date=2022-08-17",
+       "colspan=\"2\" |2001<ref name=\"language2001\">{{Cite web |last=Government of Canada |first=Statistics Canada |date=2001",
+       "colspan=\"2\" |1991<ref name=\"language1991\">{{cite web|url=https://www12.statcan.gc.ca/English/census91/data/profiles/Rp-eng.cfm?LANG=E&APATH=1&DETAIL=0&DIM=0&FL=A&FREE=0&GC=0&GID=0&GK=0&GRP=1&PID=227&PRID=0&PTYPE=56079&S=0&SHOWALL=0&SUB=0&Temporal=1991&THEME=113&VID=0&VNAMEE=&VNAMEF=|title=Profile of Urban Forward Sortation Areas|access-date=24 August 2022}}</ref>",
+       "{{abbr|Pop.|Population}}",
+       "{{Abbr|%|percentage}}",
+       "{{abbr|Pop.|Population}}",
+       "{{Abbr|%|percentage}}",
+       "{{abbr|Pop.|Population}}"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 2
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |First language",
+       "colspan=\"2\" |2016",
+       "colspan=\"2\" |2011",
+       "colspan=\"2\" |2006",
+       "|-",
+       "{{abbr|Pop.|Population}}",
+       "{{Abbr|%|percentage}}",
+       "{{abbr|Pop.|Population}}",
+       "{{Abbr|%|percentage}}",
+       "{{abbr|Pop.|Population}}"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "Language",
+       "% of total population (2016)<ref name=languagesatwork2016>{{Cite web|url=https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page.cfm?Lang=E&Geo1=PR&Code1=01&Geo2=PR&Code2=01&SearchText=Canada&SearchType=Begins&SearchPR=01&B1=Language+of+work&TABID=1&type=0|title=Census Profile, 2016 Census – Canada [Country] and Canada [Country]|first=Statistics Canada|last=Government of Canada|date=8 February 2017|website=www12.statcan.gc.ca|accessdate=18 December 2022}}</ref>",
+       "% of total population (2006)<ref name=languagesatwork2006>[http://www12.statcan.gc.ca/census-recensement/2006/dp-pd/tbt/Rp-eng.cfm?LANG=E&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=0&GID=0&GK=0&GRP=1&PID=92002&PRID=0&PTYPE=88971,97154&S=0&SHOWALL=0&SUB=0&Temporal=2006&THEME=70&VID=0&VNAMEE=&VNAMEF= Statistics Canada – Language used at work1 by frequency of language used at work and mother tongue, 2006 counts]</ref>",
+       "Language",
+       "% of total population (2016)<ref name=languagesathome2016>{{cite web|title=Census Profile, 2016 Census Canada [Country] and Canada [Country] Language spoken most often at home| date=8 February 2017 |url=https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page.cfm?Lang=E&Geo1=PR&Code1=01&Geo2=PR&Code2=01&SearchText=Canada&SearchType=Begins&SearchPR=01&B1=Language&TABID=1&type=0}}</ref>",
+       "% of total population (2006)<ref>The percentage figures cited are the top languages spoken as a home language in Canada, shown as a percentage of total single responses. Source: Statistics Canada, ''2006 Census Profile of Federal Electoral Districts (2003 Representation Order): Language, Mobility and Migration and Immigration and Citizenship.'' Ottawa, 2007, pp. 6–10. Data available online at: {{cite web"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Language",
+       "% of total population (2016)<ref name=languagesathome2016>{{cite web|title=Census Profile, 2016 Census Canada [Country] and Canada [Country] Language spoken most often at home| date=8 February 2017 |url=https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page.cfm?Lang=E&Geo1=PR&Code1=01&Geo2=PR&Code2=01&SearchText=Canada&SearchType=Begins&SearchPR=01&B1=Language&TABID=1&type=0}}</ref>",
+       "% of total population (2006)<ref>The percentage figures cited are the top languages spoken as a home language in Canada, shown as a percentage of total single responses. Source: Statistics Canada, ''2006 Census Profile of Federal Electoral Districts (2003 Representation Order): Language, Mobility and Migration and Immigration and Citizenship.'' Ottawa, 2007, pp. 6–10. Data available online at: {{cite web"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "Year",
+       "width=100|Immigrant percentage",
+       "width=100|Immigrant population",
+       "width=100|Total responses",
+       "width=100|Total population",
+       "class=\"unsortable\" width=100|Source(s)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 3
+     },
+     {
+      "header": [
+       "Year",
+       "Immigration",
+       "Emigration",
+       "Net Migration",
+       "Year",
+       "Immigration",
+       "Emigration",
+       "Net migration",
+       "Net non-permanent migration",
+       "Total net migration"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 51
+     },
+     {
+      "header": [
+       "Year",
+       "Immigration",
+       "Emigration",
+       "Net migration",
+       "Net non-permanent migration",
+       "Total net migration"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 46
+     },
+     {
+      "header": [
+       "Year",
+       "Immigration",
+       "Emigration",
+       "Net Migration",
+       "Non-permanent Resident Inflow",
+       "Non-permanent Resident Outflow",
+       "Net Non-permanent Resident",
+       "Total Net Migration"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "colspan=3 |Religion status of the Canadian Population in 2021<ref name=\":2\" />",
+       "scope=\"col\"| Religion",
+       "scope=\"col\" data-sort-type=\"number\" | Total",
+       "scope=\"col\" data-sort-type=\"number\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Nord-du-Québec",
+    "found": true,
+    "title": "Nord-du-Québec",
+    "url": "https://en.wikipedia.org/wiki/Nord-du-Qu%C3%A9bec",
+    "wikitext_bytes": 31857,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 3,
+    "charts": [],
+    "composition_blocks": 1,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Ottawa",
+    "found": true,
+    "title": "Ottawa River",
+    "url": "https://en.wikipedia.org/wiki/Ottawa_River",
+    "wikitext_bytes": 47185,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Parklands",
+    "found": true,
+    "title": "Aspen parkland",
+    "url": "https://en.wikipedia.org/wiki/Aspen_parkland",
+    "wikitext_bytes": 30963,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Regina--Moose Mountain",
+    "found": true,
+    "title": "List of regions of Saskatchewan",
+    "url": "https://en.wikipedia.org/wiki/List_of_regions_of_Saskatchewan",
+    "wikitext_bytes": 36912,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Saint John--St. Stephen",
+    "found": true,
+    "title": "St. Stephen, New Brunswick",
+    "url": "https://en.wikipedia.org/wiki/St._Stephen%2C_New_Brunswick",
+    "wikitext_bytes": 37002,
+    "infobox_params": [],
+    "sections": [
+     "Demographics",
+     "Language"
+    ],
+    "wikitables": 1,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Canada: Road Surface Data",
+   "name": "canada-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/canada-road-surface-data",
+   "resources": [
+    {
+     "name": "Canada GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_can_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Canada GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_can_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Canada: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-canada",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-canada",
+   "resources": [
+    {
+     "name": "kontur_boundaries_CA_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_CA_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_CA_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_CA_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_CA_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_CA_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Canada - Accessibility Indicators",
+   "name": "canada-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/canada-accessibility-indicators",
+   "resources": [
+    {
+     "name": "CAN_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/can/CAN_education_access.gpkg"
+    },
+    {
+     "name": "CAN_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/can/CAN_education_access_long.csv"
+    },
+    {
+     "name": "CAN_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/can/CAN_education_access_wide.csv"
+    },
+    {
+     "name": "CAN_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/can/CAN_hospitals_access.gpkg"
+    },
+    {
+     "name": "CAN_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/can/CAN_hospitals_access_long.csv"
+    },
+    {
+     "name": "CAN_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/can/CAN_hospitals_access_wide.csv"
+    },
+    {
+     "name": "CAN_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/can/CAN_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "CAN_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/can/CAN_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Canada - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-canada",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-canada",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Canada",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/c83b1e30-3e1c-4467-b91f-51d631f1c1d1/resource/3e8da68d-fac1-4e60-bf97-b913512c6b47/download/social-protection-and-labor_can.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Canada - Population Counts",
+   "name": "worldpop-population-counts-for-canada",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-canada",
+   "resources": [
+    {
+     "name": "can_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/CAN/can_ppp_2020.tif"
+    },
+    {
+     "name": "can_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/CAN/can_ppp_2019.tif"
+    },
+    {
+     "name": "can_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/CAN/can_ppp_2018.tif"
+    },
+    {
+     "name": "can_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/CAN/can_ppp_2017.tif"
+    },
+    {
+     "name": "can_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/CAN/can_ppp_2016.tif"
+    },
+    {
+     "name": "can_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/CAN/can_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "can_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/CAN/can_ppp_2018_UNadj.tif"
+    },
+    {
+     "name": "can_ppp_2017_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/CAN/can_ppp_2017_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Canada: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-can",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-can",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-ca-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-ca-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Canada - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-ca-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-ca-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_CA",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6c626d1f-cea0-4ff4-be32-246a4a239506/resource/d2c1c392-b295-4c7b-a0fa-42ce34189ec1/download/indicator_data_ca.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Canada: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "can-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/can-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/187c5a92-1076-45e4-b90c-1873df84b800/resource/f7096c40-5cde-4483-87da-cd2cd64c3bdd/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_can.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/187c5a92-1076-45e4-b90c-1873df84b800/resource/9fbea5ab-e628-47d5-b7fc-24373a2983cc/download/ghs_pop_e2025_r2023a_54009_100_v1_0_can.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Green area per capita (square meters per capita)",
+   "name": "green-area-per-capita-square-meters-per-capita",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/green-area-per-capita-square-meters-per-capita",
+   "resources": [
+    {
+     "name": "Green area per_capita (square meters per capita).xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/7babf915-12a0-4ceb-ad9c-7ee24b776614/resource/2c1c5e09-0bbe-482f-9703-ec7dfed62c79/download/green-area-per_capita-square-meters-per-capita.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Old age dependency ratio",
+   "name": "old-age-dependency-ratio",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/old-age-dependency-ratio",
+   "resources": [
+    {
+     "name": "Old_age_dependency_ratio.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/1598cce7-3d04-42a5-9a2f-b5ba0095cf2f/resource/5217ad45-f56f-43c7-992f-d4e327d13615/download/old_age_dependency_ratio.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.statcan.gc.ca/",
+  "status": 200,
+  "error": null,
+  "pages": [],
+  "title": "Statistics Canada: Canada's national statistical agency / Statistique Canada : Organisme statistique national du Canada",
+  "matching_links": 0
+ },
+ "verdict": {
+  "hdx_datasets": 10,
+  "hdx_machine_readable": 5,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "5/5",
+  "machine_readable": [
+   "text/csv?"
+  ],
+  "wikipedia_admin2_with_composition": "2/5"
+ }
+}

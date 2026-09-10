@@ -1,0 +1,101 @@
+{
+  "iso3": "ZAF",
+  "name": "South Africa",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Statistics South Africa (Stats SA)", "url": "https://www.statssa.gov.za/"},
+  "latest_census": {
+    "year": 2022,
+    "asks": {"religion": true, "ethnicity": true, "language": true},
+    "notes": "Census 2022 asked population group (South Africa's ethnicity equivalent), language spoken most often at home, and religion. DataFirst catalogue snippet (catalog 982): individuals' characteristics include 'demographics (age, population group, language, religion, citizenship)' with 'geographic coverage including province, district municipality, local municipality'; 'the lowest level of geographic aggregation covered by the data is local municipality'. Province-level figures are already in the repo from the Statistical Release P0301.4 PDF (population group as counts; language and religion as shares only)."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["ethnicity", "language", "religion"],
+      "title": "Stats SA SuperWEB2 data portal -- Census 2022 (province / district municipality / local municipality tables; 'Census 2022 Special District Layer Product')",
+      "url": "https://openup.org.za/blog/how-to-quickly-download-ward-level-data-using-statssas-superweb2",
+      "publisher": "Statistics South Africa (URL above is a third-party how-to that surfaced; the portal itself did not surface as a direct link)",
+      "kind": "census",
+      "format": "table-builder",
+      "geography": "district municipality (also local municipality and, per the how-to, ward)",
+      "geography_count": 52,
+      "matches_boundary_level": "admin2",
+      "year": 2022,
+      "confidence": "medium",
+      "evidence": "Snippets: 'SuperWEB2 is an interactive, browser-based data portal for accessing, manipulating, interrogating, and downloading primary datasets from StatsSA including National Census data ... To use SuperWEB2, you must register for a free account'; 'Statistics South Africa released the Census 2022 Special District Layer Product ... available via the Stats SA SuperWeb Data Portal'. Count of 52 district/metro municipalities is the packet's admin2 count and is not stated in the snippet. Requires free registration; no API found -- tier B by the brief's definition."
+    },
+    {
+      "fields": ["ethnicity", "language", "religion"],
+      "title": "South African Census 2022, 10% Sample (microdata)",
+      "url": "https://www.datafirst.uct.ac.za/dataportal/index.php/catalog/982",
+      "publisher": "Statistics South Africa via DataFirst (UCT); mirrored at https://microdata.worldbank.org/catalog/8218",
+      "kind": "census",
+      "format": "other (microdata; registration)",
+      "geography": "district municipality and local municipality identifiers on each record",
+      "geography_count": null,
+      "matches_boundary_level": "admin2",
+      "year": 2022,
+      "confidence": "medium",
+      "evidence": "Snippet lists population group, language, religion and geography down to local municipality. A 10% sample of a count is a sample: tabulations by district would be weighted estimates, so it ranks below the SuperWEB2 full-count tables but above any survey."
+    },
+    {
+      "fields": ["unknown"],
+      "title": "Census 2022 Municipal fact sheet",
+      "url": "https://census.statssa.gov.za/assets/documents/2022/Census_2022_Municipal_factsheet-Web.pdf",
+      "publisher": "Statistics South Africa",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "municipality",
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2022,
+      "confidence": "low",
+      "evidence": "Snippet: 'provides an executive summary of key population and household indicators for the 2011 and 2022 censuses'. Whether population group / language / religion are among the indicators is not visible. Sits under the /assets/ path the repo already found reachable on census.statssa.gov.za, so it is fetchable by this project. Related: 'Stats SA Updates Census 2022 Municipal Profiles' https://www.statssa.gov.za/?p=18624 and 'Provinces at a Glance' https://census.statssa.gov.za/assets/documents/2022/Provinces_at_a_Glance.pdf."
+    },
+    {
+      "fields": ["unknown"],
+      "title": "South Africa - Census Administrative & Service Provision District Profiles 2022",
+      "url": "https://www.datafirst.uct.ac.za/dataportal/index.php/catalog/1131",
+      "publisher": "DataFirst (UCT), derived from Stats SA",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "district municipality",
+      "geography_count": null,
+      "matches_boundary_level": "admin2",
+      "year": 2022,
+      "confidence": "low",
+      "evidence": "Snippet: 'DataFirst linked each Excel table to the corresponding official district boundary shapefile and appended ... district municipality and province to every record, and revised tables were written back to Excel'. Title suggests service-provision indicators rather than demographic composition; listed because it is the only Excel-by-district product that surfaced."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "2022 South African census", "url": "https://en.wikipedia.org/wiki/2022_South_African_census", "appears_to_contain": "surfaced in both searches; snippet does not describe a district table; unverified. The planned search for 'Religion in South Africa' by province did not run (search budget exhausted)"}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Amathole", "search_hit_title": null, "url": null, "note": "search not run -- session WebSearch budget exhausted before this query"},
+      {"shape_name": "Bojanala", "search_hit_title": null, "url": null, "note": "search not run -- session WebSearch budget exhausted before this query"},
+      {"shape_name": "Xhariep", "search_hit_title": null, "url": null, "note": "search not run -- session WebSearch budget exhausted before this query. Indirect signal: local-municipality articles (Phumelela, Mohokare, Kopanong) surfaced for a query on Census 2022 'first language', suggesting municipality articles carry census language figures; district articles unverified"}
+    ]
+  },
+  "tier": "B",
+  "tier_reason": "Census 2022 counts of population group, language and religion exist at district municipality (52 = admin2) and local municipality, but the only full-count route found is SuperWEB2, a table-builder behind free registration with no API surfaced; the alternatives are registered microdata (a 10% sample) and PDFs whose contents are unverified.",
+  "replaces_existing": true,
+  "recommended_action": "Register a SuperWEB2 account (free) and export Census 2022 population group, language and religion by district municipality as CSV; 52 rows should join admin2 directly (watch the 'Nothern Cape' respelling already handled and hyphen/space variants such as 'Z F Mgcawu' and 'O.R.Tambo'). The same export at province level gives COUNTS for language and religion, which would supersede the shares-without-counts now held from the P0301.4 PDF -- hence replaces_existing. Fallback: the Municipal fact sheet PDF under census.statssa.gov.za/assets/ is fetchable and may carry the same fields as percentages. Owner review required because the export is manual.",
+  "searches_run": [
+    "Stats SA Census 2022 district municipality population group language religion SuperWEB2 download",
+    "Statistics South Africa Census 2022 municipal level \"first language\" \"district municipality\" excel report"
+  ],
+  "searches_not_run_budget_exhausted": [
+    "Stats SA \"Census 2022\" \"Special District Layer\" OR \"district municipality\" population group language xlsx csv download statssa.gov.za",
+    "data.humdata.org South Africa census 2022 population group language district",
+    "\"Religion in South Africa\" wikipedia census 2022 by province table",
+    "\"Amathole\" South Africa wikipedia district municipality",
+    "\"Bojanala\" South Africa wikipedia district municipality",
+    "\"Xhariep\" South Africa wikipedia district municipality"
+  ],
+  "not_found": [
+    "a direct CSV/XLSX download of Census 2022 population group, language or religion by district municipality outside the registered SuperWEB2 portal (two searches; four more planned searches did not run)",
+    "any API endpoint for SuperWEB2",
+    "HDX -- search did not run"
+  ],
+  "summary": "South Africa's Census 2022 counted population group, home language and religion down to local municipality, so the 52 district municipalities in the boundary file are covered by a count. The full-count tables live in Stats SA's SuperWEB2 portal, which needs a free registration and offers a table-builder rather than an API, so this is tier B: one manual export away from A. The same export would give province-level counts for language and religion, improving on the percentage-only figures the repo now reads from the P0301.4 PDF. Registered 10% microdata (DataFirst / World Bank) and a fetchable Municipal fact sheet PDF are fallbacks. Six planned searches, including HDX and the three admin2 Wikipedia checks, did not run because the session's search budget was exhausted."
+}

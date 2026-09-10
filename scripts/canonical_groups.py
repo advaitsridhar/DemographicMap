@@ -118,6 +118,11 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "Mixed Catholic / Protestant", "Non-denominational Christian",
         "Church of Jesus Christ of Latter Day Saints (Mormons)",
         "Other Christian denominations",
+        # KNBS's 2019 categories. "Evangelical Churches" and "African
+        # Instituted Churches" are Kenya's two largest Christian groupings
+        # after Protestant and Catholic; unfolded, a filter for Christianity
+        # would show a country that is 85% Christian at about 55%.
+        "Evangelical Churches", "African Instituted Churches",
     ),
     "Islam": (
         "Islam", "Muslim", "Muslims", "Musalman", "Musulman", "Islamic",
@@ -198,7 +203,7 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "no answer", "unknown", "refused to answer", "not reported",
         "Object to answering", "Not elsewhere included", "declined to answer",
         "don't know/no answer", "don't know/refused", "do not know",
-        "Religion not stated",
+        "Religion not stated", "Don't know",
     ),
     "Other religions": (
         "Other", "Other religion", "Other religions", "Other Religions",
@@ -825,6 +830,7 @@ BRAZIL_RELIGION: dict[str, str] = {
     "Evangélicas":                "Evangelical",
     "Espírita":                   "Spiritism",
     "Umbanda e Candomblé":        "Umbanda and Candomblé",
+    "Tradições indígenas":        "Indigenous traditions",
     "Outras religiosidades":      "Other religions",
     "Sem religião":               "No religion",
     "Sem declaração":             "Not stated",

@@ -1,0 +1,690 @@
+{
+ "iso3": "KHM",
+ "name": "Cambodia",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "religion",
+    "language"
+   ],
+   "title": "IPUMS-International - Cambodia 1998, 2008 (and possibly 2019) census samples",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "province and district",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 and admin2",
+   "url": "https://international.ipums.org/",
+   "status": 200,
+   "content_type": "text/html",
+   "final_url": "https://international.ipums.org/international/",
+   "error": null,
+   "body": {
+    "bytes_read": 13024,
+    "kind": "html",
+    "title": "IPUMS International",
+    "links_to_files": [],
+    "mentions": [
+     "census"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Cambodia",
+    "wikitext_bytes": 31214,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\" | Province",
+       "colspan=\"2\" | Buddhism",
+       "colspan=\"2\" | Islam",
+       "colspan=\"2\" | Christianity",
+       "colspan=\"2\" | Others",
+       "2008 || 2019",
+       "2008 || 2019",
+       "2008 || 2019",
+       "2008 || 2019"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 10
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Cambodia",
+    "wikitext_bytes": 41197,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups",
+     "Languages",
+     "Religions"
+    ],
+    "wikitables": 8,
+    "charts": [
+     "Historical populations",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=2|Year<ref name=\"WPP 2010\">{{cite web| url = http://esa.un.org/unpd/wpp/index.htm| title = Population Division of the Department of Economic and Social Affairs of the United Nations Secretariat, World Population Prospects: The 2010 Revision}}</ref>",
+       "rowspan=2 width=\"80pt\"|Total population (thousands)",
+       "colspan=3|Population percentage",
+       "aged 0–14",
+       "aged 15–64",
+       "aged 65+",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "Period<ref>{{Cite web |title=World Population Prospects – Population Division – United Nations |url=https://population.un.org/wpp/ |access-date=9 July 2025 |website=population.un.org}}</ref>",
+       "Population",
+       "Live births",
+       "Deaths",
+       "Natural change",
+       "CBR<sup>1</sup>",
+       "CDR<sup>1</sup>",
+       "NC<sup>1</sup>",
+       "TFR<sup>1</sup>",
+       "IMR<sup>1</sup>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Province",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15-49 currently pregnant",
+       "style=\"width:100pt;\"| Completed fertility rate (Average number of children born per woman in her lifetime)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years",
+       "width=\"100pt\" rowspan=\"2\" | Ethnic<br />group",
+       "colspan=\"2\" | Census 1998|| colspan=\"2\" | Census 2008|| colspan=\"2\" colspan=\"2\" | Census 2019",
+       "Number || % || Number || %|| Number || %"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "width=\"100pt\" rowspan=\"2\" | Ethnic<br />group",
+       "colspan=\"2\" | Census 1998|| colspan=\"2\" | Census 2008|| colspan=\"2\" colspan=\"2\" | Census 2019",
+       "Number || % || Number || %|| Number || %"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 36
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Chhaeb",
+    "found": true,
+    "title": "Chhaeb District",
+    "url": "https://en.wikipedia.org/wiki/Chhaeb_District",
+    "wikitext_bytes": 4822,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Chhloung",
+    "found": true,
+    "title": "Chhloung district",
+    "url": "https://en.wikipedia.org/wiki/Chhloung_district",
+    "wikitext_bytes": 3938,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Leuk Daek",
+    "found": true,
+    "title": "Leuk Daek District",
+    "url": "https://en.wikipedia.org/wiki/Leuk_Daek_District",
+    "wikitext_bytes": 4067,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Samraong",
+    "found": true,
+    "title": "Samraong Municipality",
+    "url": "https://en.wikipedia.org/wiki/Samraong_Municipality",
+    "wikitext_bytes": 4788,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Siem Reap",
+    "found": true,
+    "title": "Siem Reap",
+    "url": "https://en.wikipedia.org/wiki/Siem_Reap",
+    "wikitext_bytes": 42233,
+    "infobox_params": [
+     "language"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Cambodia: Languages",
+   "name": "cambodia-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/cambodia-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_KHM_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/9540402b-00fc-48ea-b6c8-c5437ff555d9/resource/3be04882-519f-4715-87eb-f4a691d832b6/download/clearglobal_language_use_khm_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_KHM_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/9540402b-00fc-48ea-b6c8-c5437ff555d9/resource/c72bbbf7-17bc-41ab-bbbf-c4dd34c7ada9/download/clearglobal_language_use_khm_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_KHM_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/9540402b-00fc-48ea-b6c8-c5437ff555d9/resource/606a94ee-2353-49b5-8b37-886aec3d21ba/download/clearglobal_language_use_khm_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Cambodia - Subnational Administrative Boundaries",
+   "name": "cod-ab-khm",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-khm",
+   "resources": [
+    {
+     "name": "khm_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/7472f7e0-3deb-44d9-bd36-38237c666a2e/resource/4b35fed1-ca8b-4fda-ac8d-c4a240d1379c/download/khm_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "khm_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/7472f7e0-3deb-44d9-bd36-38237c666a2e/resource/2f14a2c7-71c6-4c5c-ba47-1a7d10a0a9fb/download/khm_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "khm_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/7472f7e0-3deb-44d9-bd36-38237c666a2e/resource/2926d754-10b7-4742-889c-eb37aedd1d03/download/khm_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "khm_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/7472f7e0-3deb-44d9-bd36-38237c666a2e/resource/a9a225a9-9f83-40ff-84fa-4d0bb8013e8d/download/khm_admin_boundaries.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Cambodia - Rivers",
+   "name": "cambodia-water-courses-0",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/cambodia-water-courses-0",
+   "resources": [
+    {
+     "name": "river.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/2dfb751d-f6d8-4d02-8c85-940a18fe5425/resource/b8886505-e8a8-4907-9f0d-065885514f95/download/river.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Cambodia - Roads",
+   "name": "cambodia-roads",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/cambodia-roads",
+   "resources": [
+    {
+     "name": "khm_rdsl_gov.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/e444670e-1766-4a32-b913-25fc8488ddd8/resource/889762d6-31ea-436c-b9ac-1ca589ce5196/download/khm_rdsl_gov.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Cambodia - Railroads",
+   "name": "cambodia-railways",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/cambodia-railways",
+   "resources": [
+    {
+     "name": "khm_rlwl_gov.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/c649c694-9c7b-4d90-8ee4-5826128db9a4/resource/e6630b7c-f646-4ca2-85c7-e51cd703e19b/download/khm_rlwl_gov.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Cambodia - Canals",
+   "name": "cambodia-canals",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/cambodia-canals",
+   "resources": [
+    {
+     "name": "khm_canall_gov.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/4a39c48b-9ae3-424b-9bf9-e6ac44ae91d9/resource/0fcb901d-d4ad-43a1-937e-507f666bd046/download/khm_canall_gov.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Cambodia - Coastline",
+   "name": "cambodia-other-0-0-0-0-0-0-0-0-0",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/cambodia-other-0-0-0-0-0-0-0-0-0",
+   "resources": [
+    {
+     "name": "khm_coast_wfp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/12e367c5-779f-4c21-91ef-b55b3f1eadd6/resource/4c204b70-0ac8-498c-850d-f8e5dfdeedab/download/khm_coast_wfp.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Cambodia - Schools",
+   "name": "cambodia-education",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/cambodia-education",
+   "resources": [
+    {
+     "name": "khm_edufacp_gov.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/d5c037a3-7ed9-48b0-a910-9c7553bac1f4/resource/84ca7667-3169-4035-ae33-aa5111319a6e/download/khm_edufacp_gov.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Cambodia - Dams",
+   "name": "cambodia-other-0-0-0-0-0-0-0-0-0-0-0",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/cambodia-other-0-0-0-0-0-0-0-0-0-0-0",
+   "resources": [
+    {
+     "name": "khm_daml_gov.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/0d713672-9cf1-4438-8fbc-da9eefb67314/resource/cfe316ec-f743-4f55-9497-c4aaa4901628/download/khm_daml_gov.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Cambodia - Malnutrition",
+   "name": "cambodia-food-security-0",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/cambodia-food-security-0",
+   "resources": [
+    {
+     "name": "khm_malnutritiona_sae_nis_wfp_2013.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/cfc2d7ef-ba9c-4c26-9dda-fc270d5d4b4a/resource/90158bf7-c2ba-4bab-a78f-92a93bafe7b3/download/khm_malnutritiona_sae_nis_wfp_2013.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Cambodia - Accessibility Indicators",
+   "name": "cambodia-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/cambodia-accessibility-indicators",
+   "resources": [
+    {
+     "name": "KHM_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/khm/KHM_education_access.gpkg"
+    },
+    {
+     "name": "KHM_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/khm/KHM_education_access_long.csv"
+    },
+    {
+     "name": "KHM_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/khm/KHM_education_access_wide.csv"
+    },
+    {
+     "name": "KHM_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/khm/KHM_hospitals_access.gpkg"
+    },
+    {
+     "name": "KHM_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/khm/KHM_hospitals_access_long.csv"
+    },
+    {
+     "name": "KHM_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/khm/KHM_hospitals_access_wide.csv"
+    },
+    {
+     "name": "KHM_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/khm/KHM_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "KHM_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/khm/KHM_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Cambodia - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-cambodia",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-cambodia",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Cambodia",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/85d58449-185c-4681-9cbd-135bb188d308/resource/527d107c-4a3c-4f09-b7ed-68a6065403e9/download/social-protection-and-labor_khm.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Cambodia - Population Counts",
+   "name": "worldpop-population-counts-for-cambodia",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-cambodia",
+   "resources": [
+    {
+     "name": "khm_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/KHM/khm_ppp_2020.tif"
+    },
+    {
+     "name": "khm_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/KHM/khm_ppp_2019.tif"
+    },
+    {
+     "name": "khm_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/KHM/khm_ppp_2018.tif"
+    },
+    {
+     "name": "khm_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/KHM/khm_ppp_2017.tif"
+    },
+    {
+     "name": "khm_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/KHM/khm_ppp_2016.tif"
+    },
+    {
+     "name": "khm_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/KHM/khm_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "khm_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/KHM/khm_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "khm_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/KHM/khm_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Cambodia: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "cambodia-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/cambodia-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "khm_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/a06c3e7b-8f38-4a99-85a9-f38103112a01/resource/382a4707-f392-41e2-9caf-26633750ba52/download/khm_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "khm_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/a06c3e7b-8f38-4a99-85a9-f38103112a01/resource/70ecdb17-cd57-4af7-aadb-ea9a2c3ad888/download/khm_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "khm_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/a06c3e7b-8f38-4a99-85a9-f38103112a01/resource/ee93326e-15bd-43ae-8a97-a8a63696ee22/download/khm_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "khm_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/a06c3e7b-8f38-4a99-85a9-f38103112a01/resource/6bbb358a-5d7a-47d2-8b58-26c40d13e915/download/khm_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "khm_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/a06c3e7b-8f38-4a99-85a9-f38103112a01/resource/22912320-fa74-4ddd-b1a5-f29bc442c3d2/download/khm_men_2020_csv.zip"
+    },
+    {
+     "name": "khm_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/a06c3e7b-8f38-4a99-85a9-f38103112a01/resource/174e4dca-2ec6-4169-b152-74c4f8b5b3b5/download/khm_men_2020_geotiff.zip"
+    },
+    {
+     "name": "khm_women_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/a06c3e7b-8f38-4a99-85a9-f38103112a01/resource/5c0392ee-a26f-4d84-b1d5-e07568f724d4/download/khm_women_2020_csv.zip"
+    },
+    {
+     "name": "khm_women_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/a06c3e7b-8f38-4a99-85a9-f38103112a01/resource/3cdb932a-7507-464e-a467-68702e160136/download/khm_women_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Cambodia - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-kh-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-kh-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_KH",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/564d6b0e-103d-4e6f-ab37-7d11fa80ad29/resource/5734d913-3212-4731-8155-305a260f36f3/download/indicator_data_kh.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Cambodia: Level 1 Exposure Data",
+   "name": "cambodia-level-1-exposure-data",
+   "org": "Global Earthquake Model Foundation",
+   "url": "https://data.humdata.org/dataset/cambodia-level-1-exposure-data",
+   "resources": [
+    {
+     "name": "KHM_oed_exposure_20200811_hdx.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/2e25109f-c9ee-478f-90eb-3e596db5d40d/resource/a9ecb5b7-5814-4b5b-960f-455a92fc5845/download/khm_oed_exposure_20200811_hdx.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Cambodia: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "khm-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/khm-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/c1afc767-a360-4910-86c5-42b0db433514/resource/75969da0-83c9-4d5e-b22a-1a1bf26a0865/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_khm.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/c1afc767-a360-4910-86c5-42b0db433514/resource/6fe06e84-47cc-4013-a501-92763052797c/download/ghs_pop_e2025_r2023a_54009_100_v1_0_khm.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Cambodia: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-khm",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-khm",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-kh-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-kh-latest.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.nis.gov.kh/",
+  "status": 200,
+  "error": null,
+  "pages": [],
+  "title": "វិទ្យាស្ថានជាតិស្ថិតិ ( NIS ) &#8211; វិទ្យាស្ថានជាតិស្ថិតិ ( NIS )",
+  "matching_links": 0
+ },
+ "verdict": {
+  "hdx_datasets": 18,
+  "hdx_machine_readable": 6,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "1/1",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

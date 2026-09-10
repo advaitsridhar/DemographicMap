@@ -1,0 +1,992 @@
+{
+ "iso3": "CHN",
+ "name": "China",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "中国人口普查年鉴-2020 (China Population Census Yearbook 2020) -- Excel/PDF re-hosts of the NBS publication",
+   "kind": "census",
+   "format": "xlsx and pdf (per the mirror listings)",
+   "geography": "province (31 mainland provincial units)",
+   "geography_count": 31,
+   "matches_boundary_level": "admin1 (31 of 33 shapes; Hong Kong and Macau are not in the mainland census)",
+   "url": "https://www.tjnj.net/navibooklist-n3022062701-4.html",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://www.tjnjdata.com/Yearbook/zhongguo-renkou-pucha-nianjian-2020-one.html",
+   "error": null,
+   "body": {
+    "bytes_read": 88246,
+    "kind": "html",
+    "title": "2020年中国人口普查年鉴(上册)PDF/Excel下载 - 统计年鉴下载站",
+    "links_to_files": [],
+    "mentions": []
+   }
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Provincial Seventh Census communiques (e.g. 2020年黑龙江省第七次全国人口普查主要数据公报) -- one per provincial statistics bureau",
+   "kind": "census",
+   "format": "html",
+   "geography": "province, often with a prefecture breakdown",
+   "geography_count": 31,
+   "matches_boundary_level": "admin1",
+   "url": "http://tjj.hlj.gov.cn/tjj/c106780/202105/c00_30325030.shtml",
+   "status": 403,
+   "content_type": null,
+   "final_url": null,
+   "error": null
+  },
+  {
+   "fields": [
+    "ethnicity (unverified)"
+   ],
+   "title": "中国人口普查分县资料-2020 (China Population Census by County, 2020)",
+   "kind": "census",
+   "format": "printed book / pdf (not free)",
+   "geography": "county-level units (县域: counties, county-level cities, autonomous counties, banners; excludes urban districts)",
+   "geography_count": 1874,
+   "matches_boundary_level": "admin2 partially (1,874 county units vs 2,370 shapes; the boundary names -- 'Kangdingxian', 'Gejiushi', 'Anxinxian' -- are county-level pinyin with the xian/shi suffix, so this is the right level but the book omits urban districts)",
+   "url": "https://www.stats.gov.cn/zs/tjwh/tjkw/tjzl/202302/t20230220_1913738.html",
+   "status": 200,
+   "content_type": "text/html",
+   "final_url": "https://www.stats.gov.cn/zs/tjwh/tjkw/tjzl/202302/t20230220_1913738.html",
+   "error": null,
+   "body": {
+    "bytes_read": 73093,
+    "kind": "html",
+    "title": "《中国人口普查分县资料—2020》 - 国家统计局",
+    "links_to_files": [],
+    "mentions": []
+   }
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "List of Chinese provincial-level divisions by ethnic group (Wikipedia)",
+   "kind": "other",
+   "format": "html table",
+   "geography": "province",
+   "geography_count": 31,
+   "matches_boundary_level": "admin1",
+   "url": "https://en.wikipedia.org/wiki/List_of_Chinese_provincial-level_divisions_by_ethnic_group",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://en.wikipedia.org/wiki/List_of_Chinese_provincial-level_divisions_by_ethnic_group",
+   "error": null,
+   "body": {
+    "bytes_read": 134175,
+    "kind": "html",
+    "title": "List of Chinese provincial-level divisions by ethnic group - Wikipedia",
+    "links_to_files": [],
+    "mentions": [
+     "census",
+     "ethnic",
+     "ethnic_groups_in_china",
+     "ethnic_groups_of_china",
+     "language",
+     "language_sources_"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "population only (no ethnicity evidenced)"
+   ],
+   "title": "leiii/census -- China county-level population panel 2010-2020 (GitHub)",
+   "kind": "census",
+   "format": "csv (repo)",
+   "geography": "county (2,666 counties in 356 prefecture-level cities)",
+   "geography_count": 2666,
+   "matches_boundary_level": "admin2 (2,666 vs 2,370 shapes -- the closest count seen to the boundary file)",
+   "url": "https://github.com/leiii/census",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://github.com/leiii/census",
+   "error": null,
+   "body": {
+    "bytes_read": 249901,
+    "kind": "html",
+    "title": "GitHub - leiii/census: China county-level population data (census) · GitHub",
+    "links_to_files": [
+     "/manifest.json"
+    ],
+    "mentions": [
+     "census",
+     "languages"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "China Data Online (Harvard Spatial Data Lab) -- census databases at province/city/county/township",
+   "kind": "census",
+   "format": "subscription database",
+   "geography": "province, city, county, township",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 and admin2 in principle",
+   "url": "https://sdl.gis.harvard.edu/china-data-online",
+   "status": 403,
+   "content_type": null,
+   "final_url": null,
+   "error": null
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "List of Chinese provincial-level divisions by ethnic group",
+    "wikitext_bytes": 16072,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 8,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Beijing",
+       "colspan=\"2\" | Tianjin",
+       "colspan=\"2\" | Hebei",
+       "colspan=\"2\" | Shanxi",
+       "colspan=\"2\" | Inner Mongolia*<br/>(Western leagues)",
+       "Number",
+       "%",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Liaoning",
+       "colspan=\"2\" | Jilin",
+       "colspan=\"2\" | Heilongjiang",
+       "colspan=\"2\" | Inner Mongolia*<br/>(4 Eastern leagues)",
+       "Number",
+       "%",
+       "Number",
+       "%",
+       "Number"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Shanghai",
+       "colspan=\"2\" | Jiangsu",
+       "colspan=\"2\" | Zhejiang",
+       "colspan=\"2\" | Anhui",
+       "colspan=\"2\" | Fujian",
+       "colspan=\"2\" | Jiangxi",
+       "colspan=\"2\" | Shandong",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Henan",
+       "colspan=\"2\" | Hubei",
+       "colspan=\"2\" | Hunan",
+       "colspan=\"2\" | Guangdong",
+       "colspan=\"2\" | Guangxi*",
+       "colspan=\"2\" | Hainan",
+       "Number",
+       "%",
+       "Number"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Hong Kong<ref>{{cite book |author=Census and Statistics Department |date=2022-02-28 |title=2021 Hong Kong Population Census |url=https://www.censtatd.gov.hk/en/press_release_detail.html?id=5156 |language=zh |location=Hong Kong |publisher=Census and Statistics Department |page= |isbn=}}</ref>",
+       "Number",
+       "%",
+       "align=\"left\" | 2021 Census || colspan=\"2\" | 7,413,070",
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Macau<ref>{{cite book |author=Direcção dos Serviços de Estatística e Censos |date=2022-06-07 |title=XVI Recenseamento da População e o VI Recenseamento da Habitação em Agosto de 2021 |url=https://www.dsec.gov.mo/pt-PT/Statistic?id=103 |language=zh |location=Macau |publisher=Direcção dos Serviços de Estatística e Censos |page= |isbn=}}</ref>",
+       "Number",
+       "%",
+       "align=\"left\" | 2021 Census || colspan=\"2\" | 682,070"
+      ],
+      "place_column": true,
+      "composition_columns": 3,
+      "rows_hint": 31
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Macau<ref>{{cite book |author=Direcção dos Serviços de Estatística e Censos |date=2022-06-07 |title=XVI Recenseamento da População e o VI Recenseamento da Habitação em Agosto de 2021 |url=https://www.dsec.gov.mo/pt-PT/Statistic?id=103 |language=zh |location=Macau |publisher=Direcção dos Serviços de Estatística e Censos |page= |isbn=}}</ref>",
+       "Number",
+       "%",
+       "align=\"left\" | 2021 Census || colspan=\"2\" | 682,070",
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Chongqing",
+       "colspan=\"2\" | Sichuan",
+       "colspan=\"2\" | Guizhou",
+       "colspan=\"2\" | Yunnan"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Chongqing",
+       "colspan=\"2\" | Sichuan",
+       "colspan=\"2\" | Guizhou",
+       "colspan=\"2\" | Yunnan",
+       "colspan=\"2\" | Tibet*",
+       "Number",
+       "%",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Shaanxi",
+       "colspan=\"2\" | Gansu",
+       "colspan=\"2\" | Qinghai",
+       "colspan=\"2\" | Ningxia*",
+       "colspan=\"2\" | Xinjiang*",
+       "Number",
+       "%",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 13
+     }
+    ],
+    "place_by_composition_tables": 1
+   },
+   {
+    "title": "List of Chinese administrative divisions by ethnic group",
+    "wikitext_bytes": 16072,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 8,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Beijing",
+       "colspan=\"2\" | Tianjin",
+       "colspan=\"2\" | Hebei",
+       "colspan=\"2\" | Shanxi",
+       "colspan=\"2\" | Inner Mongolia*<br/>(Western leagues)",
+       "Number",
+       "%",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Liaoning",
+       "colspan=\"2\" | Jilin",
+       "colspan=\"2\" | Heilongjiang",
+       "colspan=\"2\" | Inner Mongolia*<br/>(4 Eastern leagues)",
+       "Number",
+       "%",
+       "Number",
+       "%",
+       "Number"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Shanghai",
+       "colspan=\"2\" | Jiangsu",
+       "colspan=\"2\" | Zhejiang",
+       "colspan=\"2\" | Anhui",
+       "colspan=\"2\" | Fujian",
+       "colspan=\"2\" | Jiangxi",
+       "colspan=\"2\" | Shandong",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Henan",
+       "colspan=\"2\" | Hubei",
+       "colspan=\"2\" | Hunan",
+       "colspan=\"2\" | Guangdong",
+       "colspan=\"2\" | Guangxi*",
+       "colspan=\"2\" | Hainan",
+       "Number",
+       "%",
+       "Number"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Hong Kong<ref>{{cite book |author=Census and Statistics Department |date=2022-02-28 |title=2021 Hong Kong Population Census |url=https://www.censtatd.gov.hk/en/press_release_detail.html?id=5156 |language=zh |location=Hong Kong |publisher=Census and Statistics Department |page= |isbn=}}</ref>",
+       "Number",
+       "%",
+       "align=\"left\" | 2021 Census || colspan=\"2\" | 7,413,070",
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Macau<ref>{{cite book |author=Direcção dos Serviços de Estatística e Censos |date=2022-06-07 |title=XVI Recenseamento da População e o VI Recenseamento da Habitação em Agosto de 2021 |url=https://www.dsec.gov.mo/pt-PT/Statistic?id=103 |language=zh |location=Macau |publisher=Direcção dos Serviços de Estatística e Censos |page= |isbn=}}</ref>",
+       "Number",
+       "%",
+       "align=\"left\" | 2021 Census || colspan=\"2\" | 682,070"
+      ],
+      "place_column": true,
+      "composition_columns": 3,
+      "rows_hint": 31
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Macau<ref>{{cite book |author=Direcção dos Serviços de Estatística e Censos |date=2022-06-07 |title=XVI Recenseamento da População e o VI Recenseamento da Habitação em Agosto de 2021 |url=https://www.dsec.gov.mo/pt-PT/Statistic?id=103 |language=zh |location=Macau |publisher=Direcção dos Serviços de Estatística e Censos |page= |isbn=}}</ref>",
+       "Number",
+       "%",
+       "align=\"left\" | 2021 Census || colspan=\"2\" | 682,070",
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Chongqing",
+       "colspan=\"2\" | Sichuan",
+       "colspan=\"2\" | Guizhou",
+       "colspan=\"2\" | Yunnan"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Chongqing",
+       "colspan=\"2\" | Sichuan",
+       "colspan=\"2\" | Guizhou",
+       "colspan=\"2\" | Yunnan",
+       "colspan=\"2\" | Tibet*",
+       "Number",
+       "%",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic groups",
+       "colspan=\"2\" | Shaanxi",
+       "colspan=\"2\" | Gansu",
+       "colspan=\"2\" | Qinghai",
+       "colspan=\"2\" | Ningxia*",
+       "colspan=\"2\" | Xinjiang*",
+       "Number",
+       "%",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 13
+     }
+    ],
+    "place_by_composition_tables": 1
+   },
+   {
+    "title": "2020 Chinese census",
+    "wikitext_bytes": 24868,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\" align=\"center\" |Region",
+       "colspan=\"2\" align=\"center\" |Resident population{{NoteTag|The resident population includes: anyone who lives in a township and has a household registration in the township or their registration is to be determined; anyone who lives in a township and has been away from the township where their household is registered for more than six months; anyone who has an account in a township and has been away for less than six months or who is working and studying outside the country.}}",
+       "colspan=\"2\" align=\"center\" |Sex",
+       "colspan=\"4\" align=\"center\" |Age",
+       "colspan=\"4\" align=\"center\" |Highest education",
+       "Population",
+       "Proportion (%)",
+       "Female (%)",
+       "Male (%)",
+       "0 to 14 (%)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 18
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in China",
+    "wikitext_bytes": 296845,
+    "infobox_params": [],
+    "sections": [
+     "Demographics",
+     "Ethnic minorities' indigenous religions"
+    ],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Province",
+       "Chinese<br />ancestorism<ref name=\"Wang2015\">Data from the Chinese Spiritual Life Survey (CSLS) 2010 for Chinese ancestorists, and from the Chinese General Social Survey (CGSS) 2009 for Christians. Reported in {{Cite news |last=Wang |first=Xiuhua |year=2015 |title=Explaining Christianity in China: Why a Foreign Religion has Taken Root in Unfertile Ground |page=15 |publisher=Baylor University |url=https://baylor-ir.tdl.org/baylor-ir/bitstream/handle/2104/9326/WANG-THESIS-2015.pdf?sequence=1 |archive-url=https://web.archive.org/web/20150925123928/https://baylor-ir.tdl.org/baylor-ir/bitstream/handle/2104/9326/WANG-THESIS-2015.pdf?sequence=1 |archive-date=25 September 2015}}</ref>",
+       "Buddhism<ref name=\"Gai-Gao\">Data from the China Family Panel Studies (CFPS) 2012. Reported in {{Cite journal |last1=Gai |first1=Rong Hua |last2=Gao |first2=Jun Hui |date=22 December 2016 |title=Multiple-Perspective Analysis on the Geological Distribution of Christians in China |journal=PEOPLE: International Journal of Social Sciences |volume=2 |issue=1 |pages=809–817 |doi=10.20319/pijss.2016.s21.809817 |issn=2454-5899 |doi-access=free}}</ref>",
+       "Christianity<ref name=Gai-Gao/>",
+       "Islam<ref name=\"2010-Islam\">Data from {{Cite journal |last=Yang |first=Zongde |year=2010 |title=Study on Current Muslim Population in China |url=https://doors.doshisha.ac.jp/duar/repository/ir/18185/r002000080004.pdf |journal=Jinan Muslim |archive-url=https://web.archive.org/web/20170427140204/https://doors.doshisha.ac.jp/duar/repository/ir/18185/r002000080004.pdf |archive-date=27 April 2017 |number=2}} Reported in {{cite journal|last=Min|first=Junqing|title=The Present Situation and Characteristics of Contemporary Islam in China|journal=JISMOR|number=8|year=2013|url=https://doors.doshisha.ac.jp/duar/repository/ir/18185/r002000080004.pdf|archive-url=https://web.archive.org/"
+      ],
+      "place_column": true,
+      "composition_columns": 1,
+      "rows_hint": 1
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of China",
+    "wikitext_bytes": 131330,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Religions"
+    ],
+    "wikitables": 10,
+    "charts": [],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "colspan=\"2\"|  || Area (km<sup>2</sup>) || Population  || Density",
+       "colspan=\"2\"| China || 9,650,000 (100%) || 1,411,778,724 (100%) || 134.7/km<sup>2</sup>",
+       "rowspan=\"2\" | Province or<br />autonomous region",
+       "colspan=\"2\" | Census 1953",
+       "colspan=\"2\" | Census 1964",
+       "colspan=\"2\" | Census 1982",
+       "colspan=\"2\" | Census 1990",
+       "colspan=\"2\" | Census 2000",
+       "colspan=\"2\" | Census 2010",
+       "colspan=\"2\" | Census 2020"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Province or<br />autonomous region",
+       "colspan=\"2\" | Census 1953",
+       "colspan=\"2\" | Census 1964",
+       "colspan=\"2\" | Census 1982",
+       "colspan=\"2\" | Census 1990",
+       "colspan=\"2\" | Census 2000",
+       "colspan=\"2\" | Census 2010",
+       "colspan=\"2\" | Census 2020",
+       "number",
+       "%"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Age Group",
+       "Male",
+       "Female",
+       "Total",
+       "%",
+       "Age group",
+       "Male",
+       "Female",
+       "Total",
+       "Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "! style=\"width:70pt;\"|Year end population",
+       "style=\"width:70pt;\"|Live births<sup>1</sup>",
+       "style=\"width:70pt;\"|Deaths<sup>1</sup>",
+       "style=\"width:70pt;\"|Natural change<sup>1</sup>",
+       "style=\"width:70pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:70pt;\"|Crude death rate (per 1000)",
+       "style=\"width:70pt;\"|Natural change (per 1000)",
+       "style=\"width:70pt;\"|Crude migration rate (per 1000)",
+       "style=\"width:70pt;\"|Total fertility rate"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "Years",
+       "1930",
+       "1931",
+       "1932",
+       "1933",
+       "1934",
+       "1935",
+       "1936",
+       "1937",
+       "1938"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Years",
+       "1941",
+       "1942",
+       "1943",
+       "1944",
+       "1945",
+       "1946",
+       "1947",
+       "1948",
+       "1949<ref name=\"ourworldindata.org\"/>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "Ethnic group",
+       "Language family",
+       "1953",
+       "%",
+       "1964",
+       "%",
+       "1982",
+       "%",
+       "1990",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Nationality",
+       "Residents",
+       "Province",
+       "Chinese<br />Folk Religion<ref name=Wang2015>Data from the Chinese Spiritual Life Survey (CSLS) 2010 for Chinese ancestorists, and from the Chinese General Social Survey (CGSS) 2009 for Christians. Reported in {{cite news |last=Wang |first=Xiuhua |title=Explaining Christianity in China: Why a Foreign Religion has Taken Root in Unfertile Ground |year=2015 |publisher=Baylor University |url=https://baylor-ir.tdl.org/baylor-ir/bitstream/handle/2104/9326/WANG-THESIS-2015.pdf?sequence=1 |archive-url=https://web.archive.org/web/20150925123928/https://baylor-ir.tdl.org/baylor-ir/bitstream/handle/2104/9326/WANG-THESIS-2015.pdf?sequence=1 |archive-date=25 September 2015 |page=15 |access-date=13 June 2018 |url-status=dead}}</re"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Province",
+       "Chinese<br />Folk Religion<ref name=Wang2015>Data from the Chinese Spiritual Life Survey (CSLS) 2010 for Chinese ancestorists, and from the Chinese General Social Survey (CGSS) 2009 for Christians. Reported in {{cite news |last=Wang |first=Xiuhua |title=Explaining Christianity in China: Why a Foreign Religion has Taken Root in Unfertile Ground |year=2015 |publisher=Baylor University |url=https://baylor-ir.tdl.org/baylor-ir/bitstream/handle/2104/9326/WANG-THESIS-2015.pdf?sequence=1 |archive-url=https://web.archive.org/web/20150925123928/https://baylor-ir.tdl.org/baylor-ir/bitstream/handle/2104/9326/WANG-THESIS-2015.pdf?sequence=1 |archive-date=25 September 2015 |page=15 |access-date=13 June 2018 |url-status=dead}}</ref>",
+       "Buddhism<ref name=Gai-Gao>Data from the China Family Panel Studies (CFPS) 2012. Reported in {{cite journal |last1=Gai |first1=Rong Hua |last2=Gao |first2=Jun Hui |title=Multiple-Perspective Analysis on the Geological Distribution of Christians in China |journal=PEOPLE: International Journal of Social Sciences |volume=2 |issue=1 |pages=809–817 |date=22 December 2016 |issn=2454-5899 |doi=10.20319/pijss.2016.s21.809817 |doi-access=free}}</ref>",
+       "[[Christianity in Ch"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 1
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Anxinxian",
+    "found": false
+   },
+   {
+    "shape_name": "Baojishi",
+    "found": false
+   },
+   {
+    "shape_name": "Gejiushi",
+    "found": false
+   },
+   {
+    "shape_name": "Huaibinxian",
+    "found": false
+   },
+   {
+    "shape_name": "Jiangdaxian",
+    "found": false
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "China: Road Surface Data",
+   "name": "china-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/china-road-surface-data",
+   "resources": [
+    {
+     "name": "China GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_chn_roadsurface_lines.geojson"
+    },
+    {
+     "name": "China GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_chn_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "China: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-china",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-china",
+   "resources": [
+    {
+     "name": "kontur_boundaries_CN_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_CN_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_CN_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_CN_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_CN_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_CN_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "China - Accessibility Indicators",
+   "name": "china-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/china-accessibility-indicators",
+   "resources": [
+    {
+     "name": "CHN_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/chn/CHN_education_access.gpkg"
+    },
+    {
+     "name": "CHN_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/chn/CHN_education_access_long.csv"
+    },
+    {
+     "name": "CHN_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/chn/CHN_education_access_wide.csv"
+    },
+    {
+     "name": "CHN_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/chn/CHN_hospitals_access.gpkg"
+    },
+    {
+     "name": "CHN_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/chn/CHN_hospitals_access_long.csv"
+    },
+    {
+     "name": "CHN_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/chn/CHN_hospitals_access_wide.csv"
+    },
+    {
+     "name": "CHN_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/chn/CHN_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "CHN_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/chn/CHN_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "China - Population Counts",
+   "name": "worldpop-population-counts-for-china",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-china",
+   "resources": [
+    {
+     "name": "chn_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/CHN/chn_ppp_2020.tif"
+    },
+    {
+     "name": "chn_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/CHN/chn_ppp_2019.tif"
+    },
+    {
+     "name": "chn_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/CHN/chn_ppp_2018.tif"
+    },
+    {
+     "name": "chn_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/CHN/chn_ppp_2017.tif"
+    },
+    {
+     "name": "chn_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/CHN/chn_ppp_2016.tif"
+    },
+    {
+     "name": "chn_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/CHN/chn_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "chn_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/CHN/chn_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "chn_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/CHN/chn_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "China - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-china",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-china",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for China",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/c10bc8f2-2f7d-48d1-b307-2be74f0eee81/resource/c52df969-0069-4596-b06d-78e84d95d81b/download/social-protection-and-labor_chn.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "China - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-cn-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-cn-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_CN",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/16d040bb-ad5a-4073-bde6-fb718ff20907/resource/6fd6e449-9263-4d7a-b84a-5af5549172c5/download/indicator_data_cn.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "China: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-chn",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-chn",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-cn-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-cn-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "China: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "chn-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/chn-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/959b5983-b02a-4507-a6b8-fb28c67e245b/resource/56957c19-0a4d-4ced-bd4f-18ef4520027c/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_chn.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/959b5983-b02a-4507-a6b8-fb28c67e245b/resource/e07217b6-b85a-4bf7-b1c2-6785b5229402/download/ghs_pop_e2025_r2023a_54009_100_v1_0_chn.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "China - Refugee's Children Education - 2021",
+   "name": "unhcr-chn-2021-edu-data-anon-v2-1",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-chn-2021-edu-data-anon-v2-1",
+   "resources": [
+    {
+     "name": "China - Refugee's Children Education - 2021",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/813/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/813/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "China - Refugee's Children Education - 2023",
+   "name": "unhcr-chn-2023-edu-data-anon-v2-1",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-chn-2023-edu-data-anon-v2-1",
+   "resources": [
+    {
+     "name": "China - Refugee's Children Education - 2023",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/1171/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/1171/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "China - Refugee's Children Education - 2024",
+   "name": "unhcr-chn-2024-edu-data-anon-v2-1",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-chn-2024-edu-data-anon-v2-1",
+   "resources": [
+    {
+     "name": "China - Refugee's Children Education - 2024",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/1172/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/1172/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "China - Refugee's Children Education - 2022",
+   "name": "unhcr-chn-2022-edu-data-anon-v2-1",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-chn-2022-edu-data-anon-v2-1",
+   "resources": [
+    {
+     "name": "China - Refugee's Children Education - 2022",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/1170/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/1170/pdf-documentation"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.stats.gov.cn/sj/pcsj/",
+  "status": 200,
+  "error": null,
+  "pages": [],
+  "title": "普查数据 - 国家统计局",
+  "matching_links": 0
+ },
+ "verdict": {
+  "hdx_datasets": 12,
+  "hdx_machine_readable": 3,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 2,
+  "urls_answering": "4/6",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

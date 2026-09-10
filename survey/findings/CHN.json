@@ -1,0 +1,136 @@
+{
+  "iso3": "CHN",
+  "name": "China",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "National Bureau of Statistics of China (NBS)", "url": "https://www.stats.gov.cn/sj/pcsj/"},
+  "latest_census": {
+    "year": 2020,
+    "asks": {"religion": false, "ethnicity": true, "language": false},
+    "notes": "Seventh National Population Census, enumerated 1 Nov-10 Dec 2020. It records the 56 official nationalities (minzu): Communique No. 2 gives Han 1,286.31 million (91.11%) and minorities 125.47 million (8.89%). No religion question (packet declaration stands). No language question surfaced in any result: the communique series covers nationality, sex, age, education and urban/rural only, so language should also be treated as not collected by the census; the packet's national language record ('Standard Chinese or Mandarin (official', 'based on the Beijing dialect)') is a mis-split Factbook sentence, not data, and is worth a not_collected declaration of its own. Ethnicity is published subnationally: by province in the provincial communiques and in the China Population Census Yearbook 2020 (中国人口普查年鉴-2020), and there is a county volume (中国人口普查分县资料-2020, 1,874 county units) whose minority columns are unverified."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["ethnicity"],
+      "title": "中国人口普查年鉴-2020 (China Population Census Yearbook 2020) -- Excel/PDF re-hosts of the NBS publication",
+      "url": "https://www.tjnj.net/navibooklist-n3022062701-4.html",
+      "publisher": "NBS / China Statistics Press; re-hosted by tjnj.net (统计年鉴分享站), the pinggu.org forum and a CSDN blog -- unofficial mirrors",
+      "kind": "census",
+      "format": "xlsx and pdf (per the mirror listings)",
+      "geography": "province (31 mainland provincial units)",
+      "geography_count": 31,
+      "matches_boundary_level": "admin1 (31 of 33 shapes; Hong Kong and Macau are not in the mainland census)",
+      "year": 2020,
+      "confidence": "medium",
+      "evidence": "Search snippets: the yearbook 'contains data organized by region, including breakdowns by ethnicity (民族) and province'; 'three main parts: full population data (8 volumes, 196 tables), census long-form data (9 volumes, 218 tables)'; 'available in PDF/Excel format'. Other mirrors surfaced: 下册 https://www.tjnj.net/navibooklist-n3022062703-1.html ; forum thread '中国人口普查年鉴2020（excel格式）【免费下载】' https://bbs.pinggu.org/thread-11684811-1-1.html ; CSDN '中国2020年人口普查数据Excel文件，数据仅供学习' https://blog.csdn.net/weixin_42060598/article/details/131268833 . These are a NEW route relative to docs/SOURCES.md, but they are re-hosts with no stated licence ('for study only'), some behind forum logins or a cloud-drive link, so they fail the same redistribution test the repo applied to GADM/Esri unless the owner decides otherwise."
+    },
+    {
+      "fields": ["ethnicity"],
+      "title": "Provincial Seventh Census communiques (e.g. 2020年黑龙江省第七次全国人口普查主要数据公报) -- one per provincial statistics bureau",
+      "url": "http://tjj.hlj.gov.cn/tjj/c106780/202105/c00_30325030.shtml",
+      "publisher": "Provincial statistics bureaus (31 separate sites)",
+      "kind": "census",
+      "format": "html",
+      "geography": "province, often with a prefecture breakdown",
+      "geography_count": 31,
+      "matches_boundary_level": "admin1",
+      "year": 2020,
+      "confidence": "high",
+      "evidence": "Heilongjiang's communique surfaced as a search result; docs/SOURCES.md says the four curated rows (Xinjiang, Tibet, Guangxi, Ningxia) were taken from exactly these communiques. Filling the other 27 provinces this way is 27 hand reads of 27 hosts -- costly, but it is official and does not involve NBS."
+    },
+    {
+      "fields": ["ethnicity (unverified)"],
+      "title": "中国人口普查分县资料-2020 (China Population Census by County, 2020)",
+      "url": "https://www.stats.gov.cn/zs/tjwh/tjkw/tjzl/202302/t20230220_1913738.html",
+      "publisher": "Office of the Leading Group of the State Council for the Seventh National Population Census / China Statistics Press (ISBN 978-7-5037-9772-9)",
+      "kind": "census",
+      "format": "printed book / pdf (not free)",
+      "geography": "county-level units (县域: counties, county-level cities, autonomous counties, banners; excludes urban districts)",
+      "geography_count": 1874,
+      "matches_boundary_level": "admin2 partially (1,874 county units vs 2,370 shapes; the boundary names -- 'Kangdingxian', 'Gejiushi', 'Anxinxian' -- are county-level pinyin with the xian/shi suffix, so this is the right level but the book omits urban districts)",
+      "year": 2020,
+      "confidence": "low",
+      "evidence": "NBS publication notice (also http://www.stats.gov.cn/tjsj./tjcbw/202302/t20230220_1913728.html) and a Yicai article ('2020年纳入统计的1874个县域', https://m.yicai.com/news/101886203.html). Whether the 2020 edition carries minority population per county, as the 2010 edition did, was not visible in any snippet."
+    },
+    {
+      "fields": ["ethnicity"],
+      "title": "List of Chinese provincial-level divisions by ethnic group (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/List_of_Chinese_provincial-level_divisions_by_ethnic_group",
+      "publisher": "Wikipedia (census-sourced tables)",
+      "kind": "other",
+      "format": "html table",
+      "geography": "province",
+      "geography_count": 31,
+      "matches_boundary_level": "admin1",
+      "year": 2000,
+      "confidence": "medium",
+      "evidence": "Snippet: 'outlines the distribution of nationalities of China among provinces ... according to the census of 2000' and 'also contains data from the 2020 census for some tables'. A companion article 'List of Chinese administrative divisions by ethnic group' (https://en.wikipedia.org/wiki/List_of_Chinese_administrative_divisions_by_ethnic_group) is 2000-census and flagged as needing update. This is the realistic Wikipedia route for admin1 if the owner accepts a wiki table as a stopgap; a runner must check which vintage each table is."
+    },
+    {
+      "fields": ["population only (no ethnicity evidenced)"],
+      "title": "leiii/census -- China county-level population panel 2010-2020 (GitHub)",
+      "url": "https://github.com/leiii/census",
+      "publisher": "GitHub user (digitised from 2,317 local gazettes)",
+      "kind": "census",
+      "format": "csv (repo)",
+      "geography": "county (2,666 counties in 356 prefecture-level cities)",
+      "geography_count": 2666,
+      "matches_boundary_level": "admin2 (2,666 vs 2,370 shapes -- the closest count seen to the boundary file)",
+      "year": 2020,
+      "confidence": "low",
+      "evidence": "Snippet: 'population panel from 2010 to 2020 at both the county and prefectural-city levels, covering 2,666 counties in 356 prefectural-cities ... manually collected and digitized 2,317 gazettes'. No ethnicity column is mentioned; worth one look at its README, and its county list could serve as a pinyin-name crosswalk for the 2,370 boundary shapes."
+    },
+    {
+      "fields": ["ethnicity"],
+      "title": "China Data Online (Harvard Spatial Data Lab) -- census databases at province/city/county/township",
+      "url": "https://sdl.gis.harvard.edu/china-data-online",
+      "publisher": "China Data Online (commercial, via Harvard)",
+      "kind": "census",
+      "format": "subscription database",
+      "geography": "province, city, county, township",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 and admin2 in principle",
+      "year": 2020,
+      "confidence": "low",
+      "evidence": "Snippet: 'China Census Databases with data at province, city, county, and township levels'. Licensed product; recorded so nobody spends time on it."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "List of Chinese provincial-level divisions by ethnic group", "url": "https://en.wikipedia.org/wiki/List_of_Chinese_provincial-level_divisions_by_ethnic_group",
+       "appears_to_contain": "province-by-nationality table from the 2000 census, with '2020 census for some tables'; unverified which"},
+      {"title": "List of Chinese administrative divisions by ethnic group", "url": "https://en.wikipedia.org/wiki/List_of_Chinese_administrative_divisions_by_ethnic_group",
+       "appears_to_contain": "2000-census distribution of nationalities by province; tagged as needing update since 2010"},
+      {"title": "2020 Chinese census", "url": "https://en.wikipedia.org/wiki/2020_Chinese_census",
+       "appears_to_contain": "national minority total (125.5 million, 8.89%); a by-province ethnicity table not evident in the snippet"}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Kangdingxian", "search_hit_title": null, "url": null,
+       "note": "NOT SEARCHED: session WebSearch budget exhausted. Boundary name is pinyin 'Kangding' + 'xian' (county); Kangding became a county-level city in 2015, so the shape name is older than the 2020 census."},
+      {"shape_name": "Gejiushi", "search_hit_title": null, "url": null,
+       "note": "NOT SEARCHED (budget exhausted). 'Gejiu' + 'shi' (city), Yunnan; any join must strip the xian/shi suffix."},
+      {"shape_name": "Baojishi", "search_hit_title": null, "url": null,
+       "note": "NOT SEARCHED (budget exhausted). 'Baoji' + 'shi'; Baoji is a prefecture-level city in Shaanxi, so the admin2 layer appears to mix prefecture-level cities with counties -- check before assuming every admin2 shape is a county."}
+    ]
+  },
+  "tier": "B",
+  "tier_reason": "A 2020 census count of nationality (minzu) exists and is published by province (31) in the Census Yearbook and provincial communiques, and at county level in a printed volume; but the only machine-readable copies found are unofficial Excel re-hosts of the yearbook with no licence, the official host is the NBS the repo has measured as closed, and the county book is print. Religion and language are not asked (C for those fields).",
+  "replaces_existing": true,
+  "recommended_action": "Ethnicity/admin1: the cheapest defensible fill is the 27 remaining provincial communiques (official HTML, one host each), matching how the 4 curated rows were made; alternatively let the owner decide whether a tjnj.net/pinggu Excel copy of the Census Yearbook's nationality-by-province table is acceptable provenance (it is a re-host of a government publication with no stated licence -- probably not). Ethnicity/admin2 (2,370 county-level shapes): no free machine-readable route found; 分县资料-2020 is a book and its minority columns are unverified. Declare religion not_collected (already done) and language not_collected too, replacing the mis-split Factbook language record. Do not spend effort on NBS. Run the three admin2 Wikipedia sample searches and one look at leiii/census's README that could not be run here.",
+  "searches_run": [
+    "China Seventh National Population Census 2020 tabulation ethnic groups by province county download xlsx mirror",
+    "China 2020 census county-level ethnic minority population dataset Harvard Dataverse OR github \"2020\" \"census\" \"county\" ethnic",
+    "\"中国人口普查年鉴 2020\" 民族 分省 excel OR github OR 下载",
+    "\"中国2020年人口普查分县资料\" 少数民族人口 县级 数据",
+    "\"Ethnic groups in China\" wikipedia by province table 2020 census OR \"List of Chinese administrative divisions by ethnic group\"",
+    "HDX data.humdata.org China provincial statistical yearbook ethnic population"
+  ],
+  "not_found": [
+    "any HDX dataset carrying Chinese census ethnicity or provincial yearbooks (the HDX search returned only library guides and Wikipedia; consistent with the closed route in docs/SOURCES.md)",
+    "any Harvard Dataverse / academic open dataset of 2020 minzu by county",
+    "any GitHub mirror of the 2020 Census Yearbook nationality tables (only Chinese forum/blog/cloud-drive re-hosts)",
+    "any evidence that 分县资料-2020 tabulates minority population by county (the 2010 edition did; 2020 unverified)",
+    "any census question on religion or language",
+    "NOT RUN (WebSearch budget exhausted): '\"Kangding\" Sichuan China wikipedia', '\"Gejiu\" Yunnan China wikipedia', '\"Baoji\" Shaanxi China wikipedia', 'stats.gov.cn 7rp zk indexch.htm 中国人口普查年鉴2020 民族 表', 'leiii census github ... variables ethnic minority'"
+  ],
+  "summary": "China's 2020 census counts the 56 nationalities and publishes them by province in the China Population Census Yearbook 2020 and in each provincial bureau's communique, and by county in the printed 分县资料-2020; it asks neither religion nor language, so both fields are legitimately not_collected (the packet's national language record is a mis-split Factbook sentence and should be declared as such). The only new machine-readable copies found are unofficial Chinese re-hosts of the yearbook's Excel files (tjnj.net, pinggu.org, a CSDN post) with no licence, which the repo's own redistribution test would probably reject; no HDX, Dataverse or GitHub mirror of the nationality tables surfaced. The official but costly route for admin1 is the remaining 27 provincial communiques in HTML, the same source as the four curated rows. For the 2,370 county-level admin2 shapes (pinyin names with xian/shi suffixes, apparently mixing prefecture-level cities such as Baoji with counties) no free machine-readable ethnicity source was found. Tier B for ethnicity; the three admin2 Wikipedia sample checks were not run because the session's search budget ran out."
+}

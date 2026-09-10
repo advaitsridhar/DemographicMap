@@ -1,0 +1,608 @@
+{
+ "iso3": "PRK",
+ "name": "North Korea",
+ "tier_proposed": "C",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in North Korea",
+    "wikitext_bytes": 55307,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of North Korea",
+    "wikitext_bytes": 52911,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 4,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align: center; width: 25pt;\" | Year",
+       "style=\"width:80pt;\" |Mid-year population",
+       "style=\"width:80pt;\" |Live births",
+       "style=\"width:80pt;\" |Deaths",
+       "style=\"width:80pt;\" |Natural change",
+       "scope=\"col\" style=\"text-align: center; width: 60pt;\" data-sort-type=\"number\" | Crude birth rate<br />(per 1000)",
+       "scope=\"col\" style=\"text-align: center; width: 60pt;\" data-sort-type=\"number\" | Crude death rate<br />(per 1000)",
+       "scope=\"col\" style=\"text-align: center; width: 60pt;\" data-sort-type=\"number\" | Natural change<br />(per 1000)",
+       "scope=\"col\" style=\"text-align: center; width: 60pt;\" data-sort-type=\"number\" | Total Fertility rate",
+       "scope=\"col\" style=\"text-align: center; width: 60pt;\" data-sort-type=\"number\" | Infant mortality (per 1000)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "width=\"50\"|Age",
+       "width=\"80pt\"|Population",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 41
+     },
+     {
+      "header": [
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Population",
+       "width=\"80\"|Male",
+       "width=\"80\"|Female",
+       "width=\"50\"|Percent",
+       "width=\"70\"|Number of children 0-14",
+       "width=\"70pt\"|Number of women 15-49",
+       "width=\"70\"|Proportion"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "width=\"70\"|Number of children 0-14",
+       "width=\"70pt\"|Number of women 15-49",
+       "width=\"70\"|Proportion"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 3
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Jangyon",
+    "found": true,
+    "title": "Changyon County",
+    "url": "https://en.wikipedia.org/wiki/Changyon_County",
+    "wikitext_bytes": 4630,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Jongju City",
+    "found": true,
+    "title": "2008 North Korean census",
+    "url": "https://en.wikipedia.org/wiki/2008_North_Korean_census",
+    "wikitext_bytes": 62635,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 4,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kabsan",
+    "found": true,
+    "title": "2008 North Korean census",
+    "url": "https://en.wikipedia.org/wiki/2008_North_Korean_census",
+    "wikitext_bytes": 62635,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 4,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kyongwon",
+    "found": true,
+    "title": "Kyongwon County",
+    "url": "https://en.wikipedia.org/wiki/Kyongwon_County",
+    "wikitext_bytes": 6182,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Pongsan",
+    "found": true,
+    "title": "Pongsan County",
+    "url": "https://en.wikipedia.org/wiki/Pongsan_County",
+    "wikitext_bytes": 2295,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "religion",
+   "title": "North Korea - Conflict Events",
+   "name": "north-korea-acled-conflict-data",
+   "org": "Armed Conflict Location & Event Data Project (ACLED)",
+   "url": "https://data.humdata.org/dataset/north-korea-acled-conflict-data",
+   "resources": [
+    {
+     "name": "north korea_political_violence_events_and_fatalities_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/daade641-378d-403b-ab06-e337147d63d4/resource/1523bc73-6703-4da0-bd8f-a1285bf7ab80/download/north-korea_political_violence_events_and_fatalities_by_month-year_as-of-10sep2026.xlsx"
+    },
+    {
+     "name": "north korea_civilian_targeting_events_and_fatalities_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/daade641-378d-403b-ab06-e337147d63d4/resource/935fd775-9b08-4911-b565-96e09b127e4c/download/north-korea_civilian_targeting_events_and_fatalities_by_month-year_as-of-10sep2026.xlsx"
+    },
+    {
+     "name": "north korea_demonstration_events_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/daade641-378d-403b-ab06-e337147d63d4/resource/dda97810-ec36-4b39-92e3-42173ee1c4f4/download/north-korea_demonstration_events_by_month-year_as-of-10sep2026.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Airports in North Korea",
+   "name": "ourairports-prk",
+   "org": "OurAirports",
+   "url": "https://data.humdata.org/dataset/ourairports-prk",
+   "resources": [
+    {
+     "name": "List of airports in North Korea (HXL tags)",
+     "format": "CSV",
+     "url": "https://ourairports.com/countries/KP/airports.hxl"
+    },
+    {
+     "name": "List of airports in North Korea (no HXL tags)",
+     "format": "CSV",
+     "url": "https://ourairports.com/countries/KP/airports.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Roads of North Korea",
+   "name": "hotosm_prk_roads",
+   "org": "Humanitarian OpenStreetMap Team (HOT)",
+   "url": "https://data.humdata.org/dataset/hotosm_prk_roads",
+   "resources": [
+    {
+     "name": "hotosm_prk_roads_osm_gpkg.zip",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/roads/hotosm_prk_roads_osm_gpkg.zip"
+    },
+    {
+     "name": "hotosm_prk_roads_osm_metadata.json",
+     "format": "JSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/roads/hotosm_prk_roads_osm_metadata.json"
+    },
+    {
+     "name": "hotosm_prk_roads_osm_shp.zip",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/roads/hotosm_prk_roads_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_prk_roads_report.html",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/roads/hotosm_prk_roads_report.html"
+    },
+    {
+     "name": "Roads (OSM), GeoPackage",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/roads/hotosm_prk_roads_osm_gpkg.zip"
+    },
+    {
+     "name": "Roads (OSM), Shapefile",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/roads/hotosm_prk_roads_osm_shp.zip"
+    },
+    {
+     "name": "Roads, Data Quality Report",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/roads/hotosm_prk_roads_report.html"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "North Korea - Risk Assessment Indicators",
+   "name": "north-korea---risk-assessment-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/north-korea---risk-assessment-indicators",
+   "resources": [
+    {
+     "name": "PRK_ADM2_rural_population.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/risk_assessment_inputs/prk/PRK_ADM2_rural_population.csv"
+    },
+    {
+     "name": "PRK_ADM2_cyclone_exposure.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/risk_assessment_inputs/prk/PRK_ADM2_cyclone_exposure.csv"
+    },
+    {
+     "name": "PRK_ADM2_vulnerability.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/risk_assessment_inputs/prk/PRK_ADM2_vulnerability.csv"
+    },
+    {
+     "name": "PRK_ADM2_coping.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/risk_assessment_inputs/prk/PRK_ADM2_coping.csv"
+    },
+    {
+     "name": "PRK_ADM2_facilities.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/risk_assessment_inputs/prk/PRK_ADM2_facilities.csv"
+    },
+    {
+     "name": "PRK_ADM2_demographics.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/risk_assessment_inputs/prk/PRK_ADM2_demographics.csv"
+    },
+    {
+     "name": "PRK_ADM2_access.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/risk_assessment_inputs/prk/PRK_ADM2_access.csv"
+    },
+    {
+     "name": "PRK_ADM2_flood_exposure.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/risk_assessment_inputs/prk/PRK_ADM2_flood_exposure.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "North Korea - Accessibility Indicators",
+   "name": "north-korea-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/north-korea-accessibility-indicators",
+   "resources": [
+    {
+     "name": "PRK_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/prk/PRK_education_access.gpkg"
+    },
+    {
+     "name": "PRK_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/prk/PRK_education_access_long.csv"
+    },
+    {
+     "name": "PRK_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/prk/PRK_education_access_wide.csv"
+    },
+    {
+     "name": "PRK_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/prk/PRK_hospitals_access.gpkg"
+    },
+    {
+     "name": "PRK_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/prk/PRK_hospitals_access_long.csv"
+    },
+    {
+     "name": "PRK_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/prk/PRK_hospitals_access_wide.csv"
+    },
+    {
+     "name": "PRK_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/prk/PRK_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "PRK_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/prk/PRK_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Buildings of North Korea",
+   "name": "hotosm_prk_buildings",
+   "org": "Humanitarian OpenStreetMap Team (HOT)",
+   "url": "https://data.humdata.org/dataset/hotosm_prk_buildings",
+   "resources": [
+    {
+     "name": "Buildings (OSM), GeoPackage",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/buildings/hotosm_prk_buildings_osm_gpkg.zip"
+    },
+    {
+     "name": "Buildings (OSM), Shapefile",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/buildings/hotosm_prk_buildings_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_prk_buildings_osm_gpkg.zip",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/buildings/hotosm_prk_buildings_osm_gpkg.zip"
+    },
+    {
+     "name": "hotosm_prk_buildings_osm_metadata.json",
+     "format": "JSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/buildings/hotosm_prk_buildings_osm_metadata.json"
+    },
+    {
+     "name": "hotosm_prk_buildings_osm_shp.zip",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/buildings/hotosm_prk_buildings_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_prk_buildings_report.html",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/buildings/hotosm_prk_buildings_report.html"
+    },
+    {
+     "name": "Buildings, Data Quality Report",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/buildings/hotosm_prk_buildings_report.html"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Railways of North Korea",
+   "name": "hotosm_prk_railways",
+   "org": "Humanitarian OpenStreetMap Team (HOT)",
+   "url": "https://data.humdata.org/dataset/hotosm_prk_railways",
+   "resources": [
+    {
+     "name": "hotosm_prk_railways_osm_geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/railways/hotosm_prk_railways_osm_geojson.zip"
+    },
+    {
+     "name": "hotosm_prk_railways_osm_gpkg.zip",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/railways/hotosm_prk_railways_osm_gpkg.zip"
+    },
+    {
+     "name": "hotosm_prk_railways_osm_metadata.json",
+     "format": "JSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/railways/hotosm_prk_railways_osm_metadata.json"
+    },
+    {
+     "name": "hotosm_prk_railways_osm_shp.zip",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/railways/hotosm_prk_railways_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_prk_railways_report.html",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/railways/hotosm_prk_railways_report.html"
+    },
+    {
+     "name": "Railways (OSM), GeoJSON",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/railways/hotosm_prk_railways_osm_geojson.zip"
+    },
+    {
+     "name": "Railways (OSM), GeoPackage",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/railways/hotosm_prk_railways_osm_gpkg.zip"
+    },
+    {
+     "name": "Railways (OSM), Shapefile",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/railways/hotosm_prk_railways_osm_shp.zip"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Airports of North Korea",
+   "name": "hotosm_prk_airports",
+   "org": "Humanitarian OpenStreetMap Team (HOT)",
+   "url": "https://data.humdata.org/dataset/hotosm_prk_airports",
+   "resources": [
+    {
+     "name": "Airports (OSM), GeoJSON",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/airports/hotosm_prk_airports_osm_geojson.zip"
+    },
+    {
+     "name": "Airports (OSM), GeoPackage",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/airports/hotosm_prk_airports_osm_gpkg.zip"
+    },
+    {
+     "name": "Airports (OSM), Shapefile",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/airports/hotosm_prk_airports_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_prk_airports_osm_geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/airports/hotosm_prk_airports_osm_geojson.zip"
+    },
+    {
+     "name": "hotosm_prk_airports_osm_gpkg.zip",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/airports/hotosm_prk_airports_osm_gpkg.zip"
+    },
+    {
+     "name": "hotosm_prk_airports_osm_metadata.json",
+     "format": "JSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/airports/hotosm_prk_airports_osm_metadata.json"
+    },
+    {
+     "name": "hotosm_prk_airports_osm_shp.zip",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/airports/hotosm_prk_airports_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_prk_airports_report.html",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/airports/hotosm_prk_airports_report.html"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Waterways of North Korea",
+   "name": "hotosm_prk_waterways",
+   "org": "Humanitarian OpenStreetMap Team (HOT)",
+   "url": "https://data.humdata.org/dataset/hotosm_prk_waterways",
+   "resources": [
+    {
+     "name": "hotosm_prk_waterways_osm_geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/waterways/hotosm_prk_waterways_osm_geojson.zip"
+    },
+    {
+     "name": "hotosm_prk_waterways_osm_gpkg.zip",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/waterways/hotosm_prk_waterways_osm_gpkg.zip"
+    },
+    {
+     "name": "hotosm_prk_waterways_osm_metadata.json",
+     "format": "JSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/waterways/hotosm_prk_waterways_osm_metadata.json"
+    },
+    {
+     "name": "hotosm_prk_waterways_osm_shp.zip",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/waterways/hotosm_prk_waterways_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_prk_waterways_report.html",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/waterways/hotosm_prk_waterways_report.html"
+    },
+    {
+     "name": "Waterways (OSM), GeoJSON",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/waterways/hotosm_prk_waterways_osm_geojson.zip"
+    },
+    {
+     "name": "Waterways (OSM), GeoPackage",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/waterways/hotosm_prk_waterways_osm_gpkg.zip"
+    },
+    {
+     "name": "Waterways (OSM), Shapefile",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/waterways/hotosm_prk_waterways_osm_shp.zip"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Education Facilities of North Korea",
+   "name": "hotosm_prk_education_facilities",
+   "org": "Humanitarian OpenStreetMap Team (HOT)",
+   "url": "https://data.humdata.org/dataset/hotosm_prk_education_facilities",
+   "resources": [
+    {
+     "name": "Education Facilities (OSM), GeoJSON",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/education_facilities/hotosm_prk_education_facilities_osm_geojson.zip"
+    },
+    {
+     "name": "Education Facilities (OSM), GeoPackage",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/education_facilities/hotosm_prk_education_facilities_osm_gpkg.zip"
+    },
+    {
+     "name": "Education Facilities (OSM), Shapefile",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/education_facilities/hotosm_prk_education_facilities_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_prk_education_facilities_osm_geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/education_facilities/hotosm_prk_education_facilities_osm_geojson.zip"
+    },
+    {
+     "name": "hotosm_prk_education_facilities_osm_gpkg.zip",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/education_facilities/hotosm_prk_education_facilities_osm_gpkg.zip"
+    },
+    {
+     "name": "hotosm_prk_education_facilities_osm_metadata.json",
+     "format": "JSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/education_facilities/hotosm_prk_education_facilities_osm_metadata.json"
+    },
+    {
+     "name": "hotosm_prk_education_facilities_osm_shp.zip",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/education_facilities/hotosm_prk_education_facilities_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_prk_education_facilities_report.html",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/PRK/education_facilities/hotosm_prk_education_facilities_report.html"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "DPR Korea - Population Census",
+   "name": "dpr-korea-other",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/dpr-korea-other",
+   "resources": [
+    {
+     "name": "census_data.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/a1550c21-c8f7-4162-8bdb-f5e79c55a316/resource/1d5c8ac9-fa7a-4766-833c-4569544ae25e/download/census_data.xls"
+    }
+   ]
+  }
+ ],
+ "verdict": {
+  "hdx_datasets": 11,
+  "hdx_machine_readable": 11,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

@@ -1,0 +1,911 @@
+{
+ "iso3": "GHA",
+ "name": "Ghana",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "GSS StatsBank -- Official Aggregated Data Dissemination Platform, Population and Housing Census 2021",
+   "kind": "census",
+   "format": "table-builder (API not verified this session)",
+   "geography": "district (261 as at the 2021 census; also 271) and region (16)",
+   "geography_count": 261,
+   "matches_boundary_level": "admin2 (260 shapes vs 261 districts -- near one-to-one) and admin1 (16 regions)",
+   "url": "https://statsbank.statsghana.gov.gh/censusatlas/",
+   "status": 200,
+   "content_type": "text/html",
+   "final_url": "https://statsbank.statsghana.gov.gh/censusatlas/",
+   "error": null,
+   "body": {
+    "bytes_read": 6676,
+    "kind": "html",
+    "title": "GSS StatsBank",
+    "links_to_files": [
+     "https://statsbank.statsghana.gov.gh/Resources/userguide/statsbank_userguide_1.3.pdf"
+    ],
+    "mentions": [
+     "census"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "2021 PHC General Report Volume 3C: Background Characteristics",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "region",
+   "geography_count": 16,
+   "matches_boundary_level": "admin1",
+   "url": "https://statsghana.gov.gh/gssmain/fileUpload/pressrelease/2021%20PHC%20General%20Report%203C_revised%20print_281121a.pdf",
+   "status": 404,
+   "content_type": null,
+   "final_url": null,
+   "error": null
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "Ghana - 2021 Population and Housing Census (GSS microdata catalog 110)",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "national, regional, district and locality (per the catalog description)",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 and admin2 in principle",
+   "url": "https://microdata.statsghana.gov.gh/index.php/catalog/110",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://microdata.statsghana.gov.gh/index.php/catalog/110",
+   "error": null,
+   "body": {
+    "bytes_read": 160288,
+    "kind": "html",
+    "title": "Ghana - 2021 Population and Housing Census",
+    "links_to_files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Demographics of Ghana",
+    "wikitext_bytes": 35715,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 12,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Year<ref>{{Cite web|title=Ghana 2021 Population and Housing Census|url=https://census2021.statsghana.gov.gh/dissemination_details.php?disseminatereport=MjYzOTE0MjAuMzc2NQ==&Publications#|url-status=live|access-date=February 8, 2022|website=Ghana Statistical Service|archive-url=https://web.archive.org/web/20210924092824/https://census2021.statsghana.gov.gh/dissemination_details.php?disseminatereport=MjYzOTE0MjAuMzc2NQ==&Publications |archive-date=2021-09-24 }}</ref>",
+       "Total recorded population"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\"|Mid-year population",
+       "style=\"width:80pt;\"|Live births",
+       "style=\"width:80pt;\"|Deaths",
+       "style=\"width:80pt;\"|Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)",
+       "style=\"width:80pt;\"|Total fertility rate (TFR)",
+       "style=\"width:80pt;\"|Infant mortality (per 1000 live births)",
+       "style=\"width:80pt;\"|Life expectancy (in years)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR (WFR)",
+       "CBR",
+       "TFR (WFR)",
+       "CBR",
+       "TFR (WFR)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929<ref name=\"ourworldindata.org\">{{Cite web |last=Our World in Data |title=Children born per woman |url=https://ourworldindata.org/grapher/children-born-per-woman?year=1800 |url-status=dead |archive-url=https://web.archive.org/web/20180630195909/https://ourworldindata.org/grapher/children-born-per-woman?year=1800|archive-date=30 June 2018 |access-date=May 28, 2026}}</ref>",
+       "Years",
+       "1930",
+       "1931",
+       "1932"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1930",
+       "1931",
+       "1932",
+       "1933",
+       "1934",
+       "1935",
+       "1936",
+       "1937",
+       "1938"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1940",
+       "1941",
+       "1942",
+       "1943",
+       "1944",
+       "1945",
+       "1946",
+       "1947",
+       "1948"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "width=\"70\"|Year",
+       "width=\"70\"|Population",
+       "width=\"70\"|Live births",
+       "width=\"70\"|Deaths",
+       "width=\"70\"|Natural increase",
+       "width=\"70\"|Crude birth rate",
+       "width=\"70\"|Crude death rate",
+       "width=\"70\"|Rate of natural increase",
+       "width=\"70\"|TFR",
+       "style=\"width:100pt;\"| Region"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Region",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women aged 15–49 currently pregnant",
+       "style=\"width:100pt;\"| Mean number of children ever born to women aged 40–49",
+       "style=\"width:100pt;\"| Region",
+       "style=\"width:100pt;\"| Total fertility rate (Wanted fertility rate) 2014",
+       "style=\"width:100pt;\"| Total fertility rate (Wanted fertility rate) 2022"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Region",
+       "style=\"width:100pt;\"| Total fertility rate (Wanted fertility rate) 2014",
+       "style=\"width:100pt;\"| Total fertility rate (Wanted fertility rate) 2022"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 17
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Islam in Ghana",
+    "wikitext_bytes": 24231,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Region",
+       "{{longitem |Population<br />{{nobold|{{smaller|(2010 census)<br /><ref>[http://www.geohive.com/cntry/ghana.aspx Ghana] {{Webarchive|url=https://web.archive.org/web/20141113045337/http://www.geohive.com/cntry/ghana.aspx |date=2014-11-13 }} at GeoHive.</ref>}}}} }}",
+       "Percentage Muslims",
+       "Ghana || 24,658,823 || 20%"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 11
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Ghana",
+    "wikitext_bytes": 34010,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\" |",
+       "colspan=\"5\" | Christian",
+       "rowspan=\"2\" | Muslim",
+       "rowspan=\"2\" | Traditional",
+       "rowspan=\"2\" | Other",
+       "rowspan=\"2\" | No<br />religion",
+       "Total",
+       "Pentecostal/<br />charismatic",
+       "Other Protestant",
+       "Catholic"
+      ],
+      "place_column": false,
+      "composition_columns": 5,
+      "rows_hint": 4
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Ada East",
+    "found": true,
+    "title": "Ada East District",
+    "url": "https://en.wikipedia.org/wiki/Ada_East_District",
+    "wikitext_bytes": 4120,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Ayawaso Central Municipal",
+    "found": true,
+    "title": "Ayawaso Central Municipal Assembly",
+    "url": "https://en.wikipedia.org/wiki/Ayawaso_Central_Municipal_Assembly",
+    "wikitext_bytes": 7438,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Bawku West",
+    "found": true,
+    "title": "Bawku West District",
+    "url": "https://en.wikipedia.org/wiki/Bawku_West_District",
+    "wikitext_bytes": 5706,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Bunkpurugu Nakpanduri",
+    "found": true,
+    "title": "Bunkpurugu Nakpanduri District",
+    "url": "https://en.wikipedia.org/wiki/Bunkpurugu_Nakpanduri_District",
+    "wikitext_bytes": 2455,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Dormaa Municipal",
+    "found": true,
+    "title": "Dormaa Central Municipal District",
+    "url": "https://en.wikipedia.org/wiki/Dormaa_Central_Municipal_District",
+    "wikitext_bytes": 5964,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "religion",
+   "title": "Online Research on African Lifestyles and Outlook",
+   "name": "http-www-voicesafrica-com-clients",
+   "org": "Voices Africa Ltd. (inactive)",
+   "url": "https://data.humdata.org/dataset/http-www-voicesafrica-com-clients",
+   "resources": [
+    {
+     "name": "Voices Africa Online Research on African Lifestyles and Outlook - Maisha Data",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/21220488-f6ea-48d6-b7d4-2f7c92aad543/resource/774bb0af-6821-487b-a7b3-dc58077d4cae/download/maisha-data.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ghana: Languages",
+   "name": "ghana-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/ghana-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_GHA_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/d4d15ef4-216e-47a5-a30e-98f18c4015ce/resource/578adf09-2d4b-4f5d-a366-c6aee1c5588d/download/clearglobal_language_use_gha_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_GHA_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/d4d15ef4-216e-47a5-a30e-98f18c4015ce/resource/cc976d32-462d-4d2b-8ff4-74c0a26db007/download/clearglobal_language_use_gha_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_GHA_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/d4d15ef4-216e-47a5-a30e-98f18c4015ce/resource/e8a8ff99-9539-4989-ad66-0db40ec4baa5/download/clearglobal_language_use_gha_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ghana - Settlements",
+   "name": "ghana-settlements",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/ghana-settlements",
+   "resources": [
+    {
+     "name": "Excel Summary",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/39c93395-732c-408c-a95d-eec4ce7e8b25/resource/c34f08d0-3be6-42ee-8a93-3d64e1da1fb1/download/gha_settlements.xlsx"
+    },
+    {
+     "name": "Settlements.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/39c93395-732c-408c-a95d-eec4ce7e8b25/resource/049790e9-7437-40dd-a21a-8f7558e2469f/download/gha_ppl_1m_nga.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ghana - Roads",
+   "name": "ghana-roads",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/ghana-roads",
+   "resources": [
+    {
+     "name": "GHA_roads_dcw.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/54926e88-ab33-40cc-8cea-a8d0e254da63/resource/ab0bd5d8-dfd9-4f51-8313-07c0ef447e1a/download/gha_roads_dcw.zip"
+    },
+    {
+     "name": "gha_roads_classification_20150406.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/54926e88-ab33-40cc-8cea-a8d0e254da63/resource/783ac477-d1a6-44cb-bd5e-1320fb401835/download/gha_roads_classification_20150406.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ghana: Road Surface Data",
+   "name": "ghana-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/ghana-road-surface-data",
+   "resources": [
+    {
+     "name": "Ghana GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_gha_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Ghana GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_gha_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ghana: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-ghana",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-ghana",
+   "resources": [
+    {
+     "name": "kontur_boundaries_GH_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_GH_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_GH_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_GH_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_GH_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_GH_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ghana - Subnational Administrative Boundaries",
+   "name": "cod-ab-gha",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-gha",
+   "resources": [
+    {
+     "name": "gha_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/dc4c17cf-59d9-478c-b2b7-acd889241194/resource/d0120bd7-1aea-4601-8fb3-637a0fa2dd7a/download/gha_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "gha_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/dc4c17cf-59d9-478c-b2b7-acd889241194/resource/fb70e173-15df-4590-85d3-3f3e6152d991/download/gha_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "gha_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/dc4c17cf-59d9-478c-b2b7-acd889241194/resource/c8d647a7-f396-4108-9fe4-cf7b31731a73/download/gha_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "gha_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/dc4c17cf-59d9-478c-b2b7-acd889241194/resource/a22272f6-1212-497e-b9cc-61f0cbedc551/download/gha_admin_boundaries.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ghana - Subnational Population Statistics",
+   "name": "cod-ps-gha",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-gha",
+   "resources": [
+    {
+     "name": "GHA_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d618e616-dfbc-4993-9eac-0b484b5cd2b4/resource/31c4e4c6-529c-4559-8650-3d994219196d/download/gha_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "gha_admpop_2021.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d618e616-dfbc-4993-9eac-0b484b5cd2b4/resource/b1a5e74b-7b32-4ed6-8f35-eac067ceb871/download/gha_admpop_2021.xlsx"
+    },
+    {
+     "name": "gha_admpop_adm0_2021.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/d618e616-dfbc-4993-9eac-0b484b5cd2b4/resource/3ea1ca65-c246-4571-a289-84436c2037b7/download/gha_admpop_adm0_2021.csv"
+    },
+    {
+     "name": "gha_admpop_adm1_2021.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/d618e616-dfbc-4993-9eac-0b484b5cd2b4/resource/eadada3f-4156-48c3-85bb-88f6a17b3dba/download/gha_admpop_adm1_2021.csv"
+    },
+    {
+     "name": "gha_admpop_adm2_2021.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/d618e616-dfbc-4993-9eac-0b484b5cd2b4/resource/6f59199d-0a30-4fee-b569-56cf7df23555/download/gha_admpop_adm2_2021.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ghana - Accessibility Indicators",
+   "name": "ghana-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/ghana-accessibility-indicators",
+   "resources": [
+    {
+     "name": "GHA_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gha/GHA_education_access.gpkg"
+    },
+    {
+     "name": "GHA_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gha/GHA_education_access_long.csv"
+    },
+    {
+     "name": "GHA_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gha/GHA_education_access_wide.csv"
+    },
+    {
+     "name": "GHA_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gha/GHA_hospitals_access.gpkg"
+    },
+    {
+     "name": "GHA_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gha/GHA_hospitals_access_long.csv"
+    },
+    {
+     "name": "GHA_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gha/GHA_hospitals_access_wide.csv"
+    },
+    {
+     "name": "GHA_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gha/GHA_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "GHA_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gha/GHA_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ghana: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "highresolutionpopulationdensitymaps-gha",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/highresolutionpopulationdensitymaps-gha",
+   "resources": [
+    {
+     "name": "gha_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/fa8f3126-8246-45b0-aab8-f754a84a0561/resource/6577f7c8-8cdd-4e61-b95a-125e2fde605c/download/gha_general_2020_geotiff.zip"
+    },
+    {
+     "name": "gha_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/fa8f3126-8246-45b0-aab8-f754a84a0561/resource/1d60c9e7-847d-4b2b-99c5-6575a7ae88aa/download/gha_general_2020_csv.zip"
+    },
+    {
+     "name": "gha_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/fa8f3126-8246-45b0-aab8-f754a84a0561/resource/e206c5d1-c384-4961-9907-32668c37536d/download/gha_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "gha_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/fa8f3126-8246-45b0-aab8-f754a84a0561/resource/ef50ef2e-8428-465c-9eb5-84bf9e2e35d8/download/gha_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "gha_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/fa8f3126-8246-45b0-aab8-f754a84a0561/resource/2336fd2b-344e-41e5-8b93-fb20184c4f2f/download/gha_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "gha_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/fa8f3126-8246-45b0-aab8-f754a84a0561/resource/6c6cc567-71ac-4114-8a58-1b3e0aec31dc/download/gha_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "gha_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/fa8f3126-8246-45b0-aab8-f754a84a0561/resource/f1e8c84c-6268-4f3f-8262-eb17e79acf7b/download/gha_men_2020_csv.zip"
+    },
+    {
+     "name": "gha_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/fa8f3126-8246-45b0-aab8-f754a84a0561/resource/f3128c82-3765-4e5b-9b66-8655b56b467a/download/gha_men_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ghana - Population Counts",
+   "name": "worldpop-population-counts-for-ghana",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-ghana",
+   "resources": [
+    {
+     "name": "gha_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/GHA/gha_ppp_2020.tif"
+    },
+    {
+     "name": "gha_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/GHA/gha_ppp_2019.tif"
+    },
+    {
+     "name": "gha_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/GHA/gha_ppp_2018.tif"
+    },
+    {
+     "name": "gha_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/GHA/gha_ppp_2017.tif"
+    },
+    {
+     "name": "gha_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/GHA/gha_ppp_2016.tif"
+    },
+    {
+     "name": "gha_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/GHA/gha_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "gha_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/GHA/gha_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "gha_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/GHA/gha_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ghana - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-ghana",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-ghana",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Ghana",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/705082ba-269e-4756-b3d4-44718c159b3e/resource/c42a3def-4f89-48cc-9b72-8cc12b45a5f7/download/social-protection-and-labor_gha.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ghana: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-gha",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-gha",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-gh-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-gh-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ghana - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-gh-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-gh-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_GH",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/df513d33-b694-4957-afc3-650e29738ba6/resource/62d8acc8-f850-4631-a203-cefae4391f0e/download/indicator_data_gh.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ghana: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "gha-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/gha-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/9cf8f5e5-f14d-47e3-a396-ddc9e816f2a7/resource/45b1be1d-5883-4e3c-85f1-dbebf95d441a/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_gha.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/9cf8f5e5-f14d-47e3-a396-ddc9e816f2a7/resource/b7556f36-bd2b-46ff-930e-3adf5b185a90/download/ghs_pop_e2025_r2023a_54009_100_v1_0_gha.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Water Point Data Exchange (GHA)",
+   "name": "wpdx_gha",
+   "org": "Water Point Data Exchange",
+   "url": "https://data.humdata.org/dataset/wpdx_gha",
+   "resources": [
+    {
+     "name": "wpdx_water_points_gha",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/35a11b99-3b89-462e-b62c-89aac6142198/resource/445b5dc3-4c70-43d7-9031-62d055f34bfb/download/wpdx_enhanced.csv"
+    },
+    {
+     "name": "wpdx_adm_region_analysis_gha",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/35a11b99-3b89-462e-b62c-89aac6142198/resource/ac0404d0-8473-4451-8545-f4df1ea6958b/download/adm_analysis.csv"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.statsghana.gov.gh/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.statsghana.gov.gh/census-surveys/population-housing-census",
+    "status": 200,
+    "kind": "html",
+    "title": "Census Surveys - Population Housing Census | Ghana Statistical Service",
+    "files": [],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://www.statsghana.gov.gh/census-surveys/agricultural-census",
+    "status": 200,
+    "kind": "html",
+    "title": "Census Surveys - Agricultural Census | Ghana Statistical Service",
+    "files": [],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://www.statsghana.gov.gh/census-surveys/economic-census",
+    "status": 200,
+    "kind": "html",
+    "title": "Census Surveys - Economic Census | Ghana Statistical Service",
+    "files": [],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://www.statsghana.gov.gh/census-surveys/surveys",
+    "status": 200,
+    "kind": "html",
+    "title": "Census Surveys - Surveys | Ghana Statistical Service",
+    "files": [],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://www.statsghana.gov.gh/publications/census-reports",
+    "status": 200,
+    "kind": "html",
+    "title": "Publications - Census Reports | Ghana Statistical Service",
+    "files": [],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://www.statsghana.gov.gh/publications/survey-reports?q=projected+population",
+    "status": 200,
+    "kind": "html",
+    "title": "Publications - Survey Reports | Ghana Statistical Service",
+    "files": [],
+    "mentions": [
+     "census"
+    ]
+   }
+  ],
+  "title": "Ghana Statistical Service",
+  "matching_links": 6
+ },
+ "verdict": {
+  "hdx_datasets": 16,
+  "hdx_machine_readable": 10,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "2/3",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

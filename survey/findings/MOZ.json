@@ -1,0 +1,141 @@
+{
+  "iso3": "MOZ",
+  "name": "Mozambique",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Instituto Nacional de Estatística (INE Moçambique)",
+    "url": "https://www.ine.gov.mz/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2017,
+    "asks": {
+      "religion": true,
+      "ethnicity": false,
+      "language": true
+    },
+    "published_subnationally": {
+      "religion": true,
+      "ethnicity": null,
+      "language": true
+    },
+    "confidence": "recalled",
+    "notes": "IV Recenseamento Geral da População e Habitação (IV RGPH), enumerated August 2017, definitive results 2019. The 1997, 2007 and 2017 questionnaires all carried a religion item and a mother-tongue item (plus 'language most spoken at home' and 'speaks Portuguese'); none carried an ethnic-group item -- Mozambique has always used language as the proxy, which is why the packet's national ethnicity row is Factbook free text ('African 99%'). The packet's national religion row (Catholic 27.3, Islam 19.1, Pentecostal 16.7, Zione 16.3) is the 2017 census distribution, which is itself evidence the census asked and published religion. ethnicity=false is recalled from three questionnaires, not verified: check the 2017 'Questionário' on ine.gov.mz before declaring not_collected."
+  },
+  "already_in_map": "admin1 8/10 religion and ethnicity from Afrobarometer Round 9 (a survey; SOURCES.md 'Afrobarometer' section). The survey names 'Maputo Province' and 'Maputo City' separately and has no Cabo Delgado stratum, which explains the two unfilled provinces; the boundary folds Maputo City into admin2 as 'Cidade De Maputo'. admin2 (156) holds nothing.",
+  "subnational_sources": [
+    {
+      "fields": [
+        "religion",
+        "language"
+      ],
+      "title": "IV RGPH 2017 -- Resultados Definitivos (national brochure): tables of population by religion, by mother tongue and by language most spoken at home, by province",
+      "url": null,
+      "publisher": "INE Moçambique",
+      "kind": "census",
+      "format": "pdf (INE also posted some result tables as xlsx 'quadros'; unverified)",
+      "geography": "province",
+      "geography_count": 11,
+      "matches_boundary_level": "admin1 (10 provinces; the 11th row, Cidade de Maputo, belongs on the admin2 shape 'Cidade De Maputo')",
+      "year": 2017,
+      "confidence": "medium",
+      "evidence": "Recalled: the 2007 national results volume carried exactly these tables by province and the 2017 series kept the template; the 2017 national religion shares are in circulation, so a province table exists at least in the brochure."
+    },
+    {
+      "fields": [
+        "religion",
+        "language"
+      ],
+      "title": "IV RGPH 2017 -- Resultados Definitivos, one volume per province (e.g. 'Província de Nampula'): population by religion and by mother tongue, by district",
+      "url": null,
+      "publisher": "INE Moçambique",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "district (distritos and cidades)",
+      "geography_count": 154,
+      "matches_boundary_level": "admin2 (156 shapes; the boundary's 'Cidade De X' shapes match the census's 'Cidade de X' rows)",
+      "year": 2017,
+      "confidence": "medium-low",
+      "evidence": "Recalled from the layout of the 2007 provincial volumes ('III RGPH 2007: Indicadores Sócio-Demográficos, Província de ...' had 'população por religião segundo distrito' and 'por língua materna segundo distrito'); the 2017 provincial volumes followed the same series and are the place to look."
+    },
+    {
+      "fields": [
+        "religion",
+        "language"
+      ],
+      "title": "III RGPH 2007 -- provincial volumes with district tables of religion and mother tongue (older fallback)",
+      "url": null,
+      "publisher": "INE Moçambique",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "district",
+      "geography_count": 128,
+      "matches_boundary_level": "admin2 (partial: 2007 predates several district splits)",
+      "year": 2007,
+      "confidence": "medium",
+      "evidence": "Recalled; superseded by 2017 if that is found."
+    },
+    {
+      "fields": [
+        "religion",
+        "language"
+      ],
+      "title": "IPUMS-International: Mozambique 1997 and 2007 census samples (2017 may also be present)",
+      "url": null,
+      "publisher": "IPUMS (Minnesota Population Center)",
+      "kind": "census (microdata sample)",
+      "format": "microdata, registration required",
+      "geography": "district (2007 identifies districts)",
+      "geography_count": null,
+      "matches_boundary_level": "admin1; admin2 for 2007",
+      "year": 2007,
+      "confidence": "medium",
+      "evidence": "Recalled: Mozambique 1997 and 2007 are in IPUMS-I with religion and mother tongue; 2017 unconfirmed."
+    },
+    {
+      "fields": [
+        "religion"
+      ],
+      "title": "DHS Mozambique 2011 and 2022-23 (IDS) final reports: religion of respondents by province",
+      "url": null,
+      "publisher": "INE / ICF (DHS Program)",
+      "kind": "survey",
+      "format": "pdf (STATcompiler/API for some indicators)",
+      "geography": "province",
+      "geography_count": 11,
+      "matches_boundary_level": "admin1",
+      "year": 2022,
+      "confidence": "medium",
+      "evidence": "Recalled; ranked below any count and below the census above."
+    }
+  ],
+  "secondary_routes": {
+    "hdx": "Not in the USCB subnational series as recorded in SOURCES.md; OCHA COD population tables exist for admin1/admin2 (denominators only) -- the runner searches HDX itself.",
+    "ipums": "Mozambique 1997, 2007 (see sources).",
+    "us_census_bureau": "Not recorded in the repo's enumeration of the USCB series.",
+    "other": "The INE site has historically been slow or intermittently offline; a mirror of the provincial PDFs on a UN or World Bank microdata catalogue is worth checking if ine.gov.mz fails."
+  },
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Mozambique"
+      },
+      {
+        "title": "Demographics of Mozambique"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "A census count of religion and mother tongue exists by province (11) and, in the provincial volumes, by district; the known forms are PDF, nothing known to be machine-readable. The census does not ask ethnicity.",
+  "replaces_existing": true,
+  "recommended_action": "Crawl ine.gov.mz's Censo 2017 section for 'Resultados Definitivos' (national and per province) and any xlsx quadros; parse religion and mother-tongue tables by province to admin1 (alias 'Maputo Província'/'Maputo Cidade'; place Cidade de Maputo on the admin2 shape) and by district to admin2 (156). Census religion should replace the Afrobarometer survey rows at admin1 and add Cabo Delgado; keep the survey's ethnicity rows, since the census does not ask ethnicity, and fill the empty 'language' field from the census mother-tongue table rather than relabelling it as ethnicity.",
+  "searches_run": [],
+  "not_found": [
+    "exact titles/URLs of the 2017 provincial volumes (recalled series, not verified)",
+    "any machine-readable (xlsx/csv) publication of religion or language by district",
+    "whether the 2017 questionnaire had any ethnic-group item (believed not)"
+  ],
+  "summary": "Mozambique's 2017 census (IV RGPH) asked religion and mother tongue but not ethnicity, and INE published both by province in the national results brochure and by district in one PDF volume per province; the boundary's 10 admin1 and 156 admin2 shapes correspond to those provinces and districts (Maputo City sits at admin2). That is a count that should replace the Afrobarometer survey rows now filling 8 provinces and fill the language field, which is empty everywhere. Cost is PDF parsing; no machine-readable copy is known. Ethnicity stays survey-only (or not_collected once the questionnaire is checked)."
+}

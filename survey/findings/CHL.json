@@ -1,0 +1,127 @@
+{
+ "iso3": "CHL",
+ "name": "Chile",
+ "mode": "knowledge-only",
+ "researched_at": "2026-09-10",
+ "nso": {
+  "name": "Instituto Nacional de Estadísticas (INE)",
+  "url": "https://www.ine.gob.cl/",
+  "confidence": "recalled"
+ },
+ "latest_census": {
+  "year": 2024,
+  "asks": {
+   "religion": null,
+   "ethnicity": true,
+   "language": null
+  },
+  "confidence": "recalled",
+  "notes": "Censo 2024 (fielded March-June 2024, results released from 2025) asks self-identified belonging to an indigenous people and, new in 2024, Afro-descendant self-identification. Whether it restored a religion item or asked an indigenous-language item I cannot confirm from memory, so both are null. The previous count, the abbreviated Censo 2017, asked indigenous belonging (Mapuche, Aymara, Rapa Nui, Lican Antai, Quechua, Colla, Diaguita, Kawesqar, Yagan, other) and had no religion and no language item; the last census religion question was in 2002 (persons aged 15+). A 'religion not asked' declaration should therefore cite 2017, and be checked against the 2024 questionnaire before it is written."
+ },
+ "subnational_sources": [
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Censo 2017 - Microdatos Personas (full-count person file, CSV, with REGION / PROVINCIA / COMUNA codes and the indigenous-belonging variable)",
+   "url": "https://www.censo2017.cl/",
+   "publisher": "INE Chile",
+   "kind": "census",
+   "format": "csv (zip)",
+   "geography": "comuna (346), carrying provincia and región codes",
+   "geography_count": 346,
+   "matches_boundary_level": "aggregates exactly to admin2 (56 provincias) and admin1 (16 regiones)",
+   "year": 2017,
+   "confidence": "high (recalled)",
+   "evidence": "INE released the full 2017 census as public microdata (one CSV per unit: personas, hogares, viviendas) from the censo2017.cl microsite; the person file carries the 'pueblo indígena' item. The URL is the microsite homepage, not the file path."
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Censo 2024 - Resultados (population by region and comuna, incl. pertenencia a pueblos indígenas and afrodescendencia)",
+   "url": null,
+   "publisher": "INE Chile",
+   "kind": "census",
+   "format": "xlsx / web tables (recalled)",
+   "geography": "región and comuna",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 (16 regiones) directly; admin2 (56 provincias) by summing comunas",
+   "year": 2024,
+   "confidence": "medium (recalled)",
+   "evidence": "INE published 2024 results in 2025 (population, migration, indigenous peoples, disability). Microdata release for 2024 not known to me. Likely host: a censo2024 subdomain of ine.gob.cl."
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Censo 2017 - REDATAM online results processor (resultados.censo2017.ine.cl)",
+   "url": null,
+   "publisher": "INE Chile",
+   "kind": "census",
+   "format": "table-builder",
+   "geography": "región / provincia / comuna",
+   "geography_count": 56,
+   "matches_boundary_level": "admin1 and admin2",
+   "year": 2017,
+   "confidence": "medium (recalled)",
+   "evidence": "Standard REDATAM webserver for the 2017 census; redundant once the microdata is used."
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "Censo 2002 - religion (aged 15+) and indigenous belonging by comuna",
+   "url": null,
+   "publisher": "INE Chile",
+   "kind": "census",
+   "format": "pdf / REDATAM (recalled)",
+   "geography": "comuna, provincia, región (2002 boundaries: 13 regions)",
+   "geography_count": null,
+   "matches_boundary_level": "neither exactly: 13 regions in 2002 vs 16 today (Arica y Parinacota, Los Ríos, Ñuble created later)",
+   "year": 2002,
+   "confidence": "medium (recalled)",
+   "evidence": "2002 is the last census with a religion item. Its regions would need re-mapping to the current 16."
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "IPUMS-International - Chile census samples (1960, 1970, 1982, 1992, 2002, 2017)",
+   "url": "https://international.ipums.org/",
+   "publisher": "IPUMS / Minnesota Population Center",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "región and comuna (as harmonised geography)",
+   "geography_count": null,
+   "matches_boundary_level": "admin1; admin2 via comuna aggregation",
+   "year": 2017,
+   "confidence": "medium (recalled)",
+   "evidence": "Chile is a long-standing IPUMS-I country; registration required, so not preferred over INE's own public microdata."
+  }
+ ],
+ "wikipedia": {
+  "country_list_articles": [
+   {
+    "title": "Religion in Chile"
+   },
+   {
+    "title": "Demographics of Chile"
+   }
+  ],
+  "admin2_samples": []
+ },
+ "tier": "A",
+ "tier_reason": "A census count of indigenous belonging is public as full-count CSV microdata (Censo 2017) with codes that aggregate exactly to the 16 regiones (admin1) and 56 provincias (admin2). Religion is a 2002-only item and language was not asked in 2017; both hinge on what the 2024 questionnaire carried.",
+ "replaces_existing": false,
+ "recommended_action": "Fetch the 2017 person microdata from INE, aggregate the indigenous-belonging variable by REGION and PROVINCIA code, and join to the shapes by INE's own names ('Región de La Araucanía', 'Provincia de Cardenal Caro' are INE spellings). Then open the Censo 2024 results pages: if 2024 published indigenous belonging by comuna, prefer it; if it carried a religion item, use it, otherwise declare religion not_collected citing 2017 (last asked 2002). Declare language not_collected only after confirming 2024 did not ask an indigenous-language item.",
+ "searches_run": [],
+ "not_found": [
+  "whether Censo 2024 asked religion or an indigenous-language item (not recalled)",
+  "exact file names/paths of the 2017 microdata download and the 2024 tables",
+  "any INE publication of language at subnational level"
+ ],
+ "summary": "Chile's INE (ine.gob.cl) publishes the 2017 census as public full-count CSV microdata with region, province and comuna codes, and the 2017 questionnaire asked belonging to an indigenous people, so ethnicity can be counted for all 16 regions and 56 provinces from one download. Religion was last asked in 2002 and not in 2017; language was not asked in 2017; whether Censo 2024 restored either is the open question a runner must settle on INE's 2024 results site before writing not_collected declarations. Tier A on ethnicity."
+}

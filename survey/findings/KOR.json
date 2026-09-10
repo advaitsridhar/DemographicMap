@@ -1,0 +1,113 @@
+{
+  "iso3": "KOR",
+  "name": "South Korea",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Statistics Korea (KOSTAT), now under the Ministry of Data and Statistics (국가데이터처); data portal KOSIS",
+    "url": "https://kostat.go.kr/",
+    "alt_urls": ["https://kosis.kr/", "https://kosis.kr/eng/", "https://mods.go.kr/"]
+  },
+  "latest_census": {
+    "year": 2025,
+    "asks": {"religion": true, "ethnicity": false, "language": null},
+    "published_subnationally": {"religion": false, "ethnicity": false, "language": null},
+    "notes": "The 2025 Population and Housing Census (centennial; field period 22 Oct - 18 Nov 2025 per Buddhist/Won-Buddhist press snippets) includes 'Religion', which 'is surveyed on a 10-year cycle'. Korean news snippet: results including religion 'will be announced in November 2026' -- so nothing from 2025 is published yet as of 2026-09-10. Ethnicity: the packet already declares 'South Korea's census does not collect ethnicity'; nothing in the searches contradicts it (the census counts foreigners by nationality, which is citizenship, not ethnicity). Language: no search result mentioned a language question; unestablished. The latest census WITH published religion results is 2015 (see earlier_census)."
+  },
+  "earlier_census": {
+    "year": 2015,
+    "asks": {"religion": true, "ethnicity": false, "language": null},
+    "published_subnationally": {"religion": true, "ethnicity": false, "language": null},
+    "notes": "Religion was on the 2015 20% sample form ('표본 집계 결과' = sample tabulation results, reference date 1 Nov 2015). National: 56.1% no religion, 19.7% Protestant, 15.5% Buddhist, 7.9% Catholic (Wikipedia 'Religion in South Korea' snippet; KOSTAT release: religious population 43.9%). Regional figures were published: a Catholic News analysis of the 2015 religion tabulation cites Ulsan 29.8%, South Gyeongsang 29.4%, Busan 28.5% Buddhist and North Jeolla 26.9%, Seoul 24.2% Protestant -- i.e. by province/metropolitan city (17 = admin1). By si/gun/gu (admin2): not confirmed by any snippet; the KOSIS search intended to find the table was refused (session search budget exhausted)."
+  },
+  "already_in_map": "Nothing at admin1 (17) or admin2 (228); ethnicity declared not_collected nationally.",
+  "subnational_sources": [
+    {
+      "fields": ["religion"],
+      "title": "2015 인구주택총조사 표본 집계 결과(인구·가구·주택 기본특성항목) - 보도자료 (2015 Census sample tabulation results, press release with attached statistical tables)",
+      "url": "https://www.kostat.go.kr/board.es?mid=a10301020100&bid=203&tag=&act=view&list_no=358170&ref_bid=",
+      "mirrors": [
+        "https://kostat.go.kr/portal/korea/kor_nw/1/2/2/index.board?aSeq=358170&amSeq=&bmode=read&pageNo=&rowNum=10&sTarget=&sTxt=",
+        "https://kostat.go.kr/board.es?mid=a20107010000&bid=11739&tag=&act=view&list_no=420178&ref_bid=11739%2C11740%2C11741"
+      ],
+      "publisher": "Statistics Korea (KOSTAT)",
+      "kind": "census (20% sample tabulation)",
+      "format": "xls (snippet: downloadable '통계표.xls')",
+      "geography": "province / metropolitan city (시도)",
+      "geography_count": 17,
+      "matches_boundary_level": "admin1",
+      "year": 2015,
+      "confidence": "medium",
+      "evidence": "Snippet: sample tabulation results 'are available as downloadable files including a statistics table (통계표.xls)'. That the religion tables run by region is inferred from the Catholic News regional analysis of the same release, not seen directly. The English mirror is the English press release for the same results."
+    },
+    {
+      "fields": ["religion"],
+      "title": "KOSIS (Korean Statistical Information Service) - Population Census tables, table builder and Open API",
+      "url": "https://kosis.kr/",
+      "mirrors": ["https://kosis.kr/eng/", "https://kosis.kr/openapi/index/index.jsp"],
+      "publisher": "Statistics Korea / KOSIS",
+      "kind": "census",
+      "format": "table-builder (web download) and API (key required)",
+      "geography": "si/gun/gu (시군구) likely; unverified for the religion table",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 (228 drawn) if a si/gun/gu religion table exists; admin1 otherwise",
+      "year": 2015,
+      "confidence": "low-medium",
+      "evidence": "Snippets: 'The Open API is available at https://kosis.kr/openapi/index/index.jsp, and you will first need to get your API key'; English KOSIS 'offers 226 subject matters' vs 500+ in Korean. Only a population-by-sex table by si/gun/gu surfaced (https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B040A3), not a religion table; the search for the religion-by-si/gun/gu table was refused (budget). An R package 'kosis' (CRAN) wraps the API."
+    },
+    {
+      "fields": ["religion"],
+      "title": "2025 Population and Housing Census (results due November 2026)",
+      "url": "https://kostat.go.kr/",
+      "publisher": "Ministry of Data and Statistics / Statistics Korea",
+      "kind": "census",
+      "format": null,
+      "geography": null,
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2025,
+      "confidence": "high that religion was asked; not yet published",
+      "evidence": "Buddhist press snippet: '2025 인구주택총조사 10월22일 시작' urging respondents to answer 'Buddhist'; results 'scheduled for November 2026'."
+    }
+  ],
+  "secondary_routes": {
+    "hdx": null,
+    "ipums": null,
+    "us_census_bureau": null,
+    "other": "Hankook Research '2025 Religious Awareness Survey' (https://hrcopinion.co.kr/en/archives/34782) gives national shares (Protestant 20%, Buddhist 16%, Catholic 11%, none 51%) -- a survey, national only; GHDx catalogues the 2015 census (https://ghdx.healthdata.org/record/south-korea-population-and-housing-census-2015)."
+  },
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in South Korea", "url": "https://en.wikipedia.org/wiki/Religion_in_South_Korea", "appears_to_contain": "snippet gives 2015 national shares only; a by-province table was not visible; unverified"},
+      {"title": "Irreligion in South Korea", "url": "https://en.wikipedia.org/wiki/Irreligion_in_South_Korea", "appears_to_contain": "surfaced; content not shown"}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Anyang-si", "search_hit_title": "Anyang, Gyeonggi", "url": "https://en.wikipedia.org/wiki/Anyang,_Gyeonggi", "note": "article exists; snippet: population ~600,000, 2 gu and 31 dong -- no composition"},
+      {"shape_name": "Boeun-gun", "search_hit_title": "Boeun County", "url": "https://en.wikipedia.org/wiki/Boeun_County", "note": "article exists; snippet: 2024 population 30,620, 1 eup 10 myeon -- no composition"},
+      {"shape_name": "Yangcheon-gu", "search_hit_title": "Yangcheon District", "url": "https://en.wikipedia.org/wiki/Yangcheon_District", "note": "article exists; snippet: one of 25 districts of Seoul, 2010 population 469,434 -- no composition"}
+    ],
+    "admin2_level_note": "Boundary admin2 names carry the -si/-gun/-gu suffixes, which are the si/gun/gu units KOSIS tabulates by; Wikipedia titles drop the suffix ('Anyang, Gyeonggi', 'Boeun County', 'Yangcheon District'), so any Wikipedia join needs an alias rule."
+  },
+  "tier": "B",
+  "tier_reason": "A census count of religion exists at province level (2015, 17 = admin1), but the only machine-readable form surfaced is an XLS attached to a Korean press release whose regional content is inferred rather than seen, and the systematic route (KOSIS) is a table-builder whose API needs a key; a si/gun/gu religion table was not confirmed. Ethnicity is not collected (keep the existing declaration); language unestablished. The 2025 census religion results land November 2026 and will supersede everything here.",
+  "replaces_existing": false,
+  "recommended_action": "Open the 2015 sample-tabulation press release (list_no=358170) and read its 통계표.xls for a religion-by-시도 sheet -- if present, that fills admin1 (17) from a count with no key needed. For admin2 (228 si/gun/gu), search KOSIS (Korean interface, 인구총조사 > 2015 > 표본 > 종교) for the 성별/연령별/종교별 인구 table by 시군구 and either download from the builder or register an Open API key. Schedule a re-check after November 2026 for the 2025 census religion release. Keep ethnicity as not_collected; add language as not_collected only after the questionnaire is checked.",
+  "searches_run": [
+    "KOSIS 2015 Population and Housing Census religion by si gun gu Statistics Korea",
+    "South Korea 2025 census religion question sample survey Statistics Korea",
+    "2015 인구주택총조사 종교별 인구 시군구 KOSIS 통계표",
+    "2025 인구주택총조사 종교 결과 공표 시기",
+    "KOSIS open API kosis.kr openapi statistics Korea English religion table download",
+    "\"Religion in South Korea\" wikipedia by province table 2015 census",
+    "\"Anyang-si\" South Korea wikipedia",
+    "\"Boeun-gun\" South Korea wikipedia",
+    "\"Yangcheon-gu\" South Korea wikipedia"
+  ],
+  "not_found": [
+    "a specific KOSIS table URL/ID for religion by si/gun/gu (search 'kosis.kr statHtml 성별 연령별 종교별 인구 시군구' refused -- session search budget exhausted)",
+    "direct confirmation that the press-release XLS holds religion by province (inferred from regional figures quoted in Catholic News)",
+    "any evidence of a language question in the 2015 or 2025 census",
+    "an HDX or IPUMS route for Korea",
+    "a by-province table visible in the 'Religion in South Korea' snippet"
+  ],
+  "summary": "South Korea's census asks religion every ten years on the sample form; the 2015 results were published nationally and by province (a Catholic News analysis quotes Buddhist shares for Ulsan, South Gyeongsang and Busan and Protestant shares for North Jeolla and Seoul), and the KOSTAT press release carries a downloadable 통계표.xls. KOSIS holds the census tables behind a table builder and a keyed Open API, and probably tabulates religion down to si/gun/gu (the 228 admin2 units), but no snippet confirmed that table before the search budget ran out. Ethnicity is not collected, as the map already declares; language was not established. The 2025 centennial census asked religion again and its results are due November 2026, so anything built from 2015 has a known replacement date. Tier B: a count exists at admin1, but reaching it cleanly requires reading a Korean-language release or registering for a key."
+}

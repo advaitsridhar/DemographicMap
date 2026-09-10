@@ -1,0 +1,825 @@
+{
+ "iso3": "KEN",
+ "name": "Kenya",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "2019 Kenya Population and Housing Census - Distribution of Population by Religious Affiliation and County",
+   "kind": "census",
+   "format": "csv/xlsx (openAFRICA resource; exact file type not shown in snippet)",
+   "geography": "county",
+   "geography_count": 47,
+   "matches_boundary_level": "admin1",
+   "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census/resource/2b2a7b48-ff46-4aa1-91c8-94b2c91e568b",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://open.africa/dataset/2019-kenya-population-and-housing-census/resource/2b2a7b48-ff46-4aa1-91c8-94b2c91e568b",
+   "error": null,
+   "body": {
+    "bytes_read": 47644,
+    "kind": "html",
+    "title": "2019 Kenya Population and Housing Census - Distribution of Population by Religious Affiliation and County - openAFRICA",
+    "links_to_files": [
+     "https://open.africa/dataset/9b94fe50-9d75-4b92-be00-6354c6e6cc88/resource/2b2a7b48-ff46-4aa1-91c8-94b2c91e568b/download/distribution-of-population-by-religious-affiliation-and-county-2019-census-volume-iv.csv"
+    ],
+    "mentions": [
+     "census",
+     "ethnicity"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "Table 2.30 Distribution of Population by Religious Affiliation and County | Census.ke",
+   "kind": "census",
+   "format": "html (interactive table)",
+   "geography": "county",
+   "geography_count": 47,
+   "matches_boundary_level": "admin1",
+   "url": "https://census.ke/@census-ke/table-2-30-distribution-of-population-by-religious-affiliation-and-county",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://census.ke/@census-ke/table-2-30-distribution-of-population-by-religious-affiliation-and-county",
+   "error": null,
+   "body": {
+    "bytes_read": 78070,
+    "kind": "html",
+    "title": "Population by Religious Affiliation and County | Census.ke | Kenya 2019 Population and Housing Census",
+    "links_to_files": [
+     "https://ckan.sabasi.io/dataset/07c12265-29d5-425d-b272-920f5de4f367/resource/29d2cfa0-4592-45d3-bac0-f32ee29d3e01/download/2.30_-distribution-of-population-by-religious-affiliation-1.xlsx",
+     "https://ckan.sabasi.io/dataset/07c12265-29d5-425d-b272-920f5de4f367/resource/84ed4c89-63a0-4a10-9656-59129c9bf61b/download/volume_4-table-2.30_-distribution-of-population-by-religious-affiliation-and-county.csv",
+     "https://ckan.sabasi.io/dataset/07c12265-29d5-425d-b272-920f5de4f367/resource/da098c33-22ae-436e-bd17-e509ca269a1a/download/volume_4-table-2.30_-distribution-of-population-by-religious-affiliation-and-county.xlsx",
+     "https://ckan.sabasi.io/dataset/table-2-30-distribution-of-population-by-religious-affiliation-and-county.json"
+    ],
+    "mentions": [
+     "census",
+     "religion"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "2019 Kenya Population and Housing Census Volume IV: Distribution of Population by Socio-Economic Characteristics",
+   "kind": "census",
+   "format": "pdf (KNBS also has HTML topic pages 'Religious Affiliation' and 'Ethnic Affiliation')",
+   "geography": "county (religion); ethnicity level unverified",
+   "geography_count": 47,
+   "matches_boundary_level": "admin1",
+   "url": "https://www.knbs.or.ke/wp-content/uploads/2023/09/2019-Kenya-population-and-Housing-Census-Volume-4-Distribution-of-Population-by-Socio-Economic-Characteristics.pdf",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>"
+  },
+  {
+   "fields": [],
+   "title": "Kenya: Population Per County and sub county from Census Report 2019 (HDX)",
+   "kind": "census",
+   "format": "csv",
+   "geography": "county and sub-county",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 and possibly admin2 (sub-counties vs 290 constituencies drawn)",
+   "url": "https://data.humdata.org/dataset/kenya-population-per-county-from-census-report-2019",
+   "status": 202,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://data.humdata.org/dataset/kenya-population-per-county-from-census-report-2019",
+   "error": null
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Kenya",
+    "wikitext_bytes": 22041,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Religion",
+       "2009",
+       "2019",
+       "Protestant",
+       "Catholicism",
+       "Evangelicals",
+       "Muslim",
+       "African Instituted Churches",
+       "Other Christian",
+       "No Religion"
+      ],
+      "place_column": false,
+      "composition_columns": 5,
+      "rows_hint": 22
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Kenya",
+    "wikitext_bytes": 218555,
+    "infobox_params": [
+     "ethnic_groups",
+     "languages",
+     "official_languages",
+     "religion"
+    ],
+    "sections": [
+     "Demographics",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only",
+    "tables": [
+     {
+      "header": [
+       "style=\"text-align:left;\"| GDP",
+       "style=\"text-align:left;\"| Annual growth rate",
+       "style=\"text-align:left;\"| Per capita income",
+       "style=\"text-align:left;\"| Agricultural&nbsp;produce{{nbsp|2}}",
+       "style=\"text-align:left;\"| Industry",
+       "style=\"text-align:left;\"| Exports",
+       "style=\"text-align:left;\"| Major markets",
+       "style=\"text-align:left;\"| Imports",
+       "style=\"text-align:left;\"| Major&nbsp;suppliers"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "style=\"text-align:left;\"| Exports",
+       "style=\"text-align:left;\"| Major markets",
+       "style=\"text-align:left;\"| Imports",
+       "style=\"text-align:left;\"| Major&nbsp;suppliers"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Kenya",
+    "wikitext_bytes": 45061,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 7,
+    "charts": [
+     "Historical populations",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=2|Year",
+       "rowspan=2|Total population",
+       "colspan=3|Population percentage",
+       "aged 0–14",
+       "aged 15–64",
+       "aged 65+",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"150pt\"|Province",
+       "width=\"70pt\"|2019",
+       "width=\"70pt\"|Period",
+       "Population",
+       "width=\"70pt\"|Live births per year",
+       "width=\"70pt\"|Deaths per year",
+       "width=\"70pt\"|Natural change per year",
+       "width=\"70pt\"|CBR*",
+       "width=\"70pt\"|CDR*",
+       "width=\"70pt\"|NC*"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "width=\"70pt\"|Period",
+       "Population",
+       "width=\"70pt\"|Live births per year",
+       "width=\"70pt\"|Deaths per year",
+       "width=\"70pt\"|Natural change per year",
+       "width=\"70pt\"|CBR*",
+       "width=\"70pt\"|CDR*",
+       "width=\"70pt\"|NC*",
+       "width=\"70pt\"|TFR*",
+       "width=\"70pt\"|IMR*"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 32
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Region",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15–49 currently pregnant",
+       "style=\"width:100pt;\"| Mean number of children ever born to women age 40–49"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 9
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Baringo Central",
+    "found": true,
+    "title": "Baringo Central Constituency",
+    "url": "https://en.wikipedia.org/wiki/Baringo_Central_Constituency",
+    "wikitext_bytes": 6359,
+    "infobox_params": [
+     "blank1_name"
+    ],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Gilgil",
+    "found": true,
+    "title": "Gilgil",
+    "url": "https://en.wikipedia.org/wiki/Gilgil",
+    "wikitext_bytes": 8313,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Githunguri",
+    "found": true,
+    "title": "Githunguri Constituency",
+    "url": "https://en.wikipedia.org/wiki/Githunguri_Constituency",
+    "wikitext_bytes": 5280,
+    "infobox_params": [
+     "blank1_name"
+    ],
+    "sections": [],
+    "wikitables": 3,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kisauni",
+    "found": true,
+    "title": "Kisauni Constituency",
+    "url": "https://en.wikipedia.org/wiki/Kisauni_Constituency",
+    "wikitext_bytes": 5253,
+    "infobox_params": [
+     "blank1_name"
+    ],
+    "sections": [],
+    "wikitables": 3,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kitutu Chache North",
+    "found": true,
+    "title": "Kitutu Chache North Constituency",
+    "url": "https://en.wikipedia.org/wiki/Kitutu_Chache_North_Constituency",
+    "wikitext_bytes": 2366,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "religion",
+   "title": "Online Research on African Lifestyles and Outlook",
+   "name": "http-www-voicesafrica-com-clients",
+   "org": "Voices Africa Ltd. (inactive)",
+   "url": "https://data.humdata.org/dataset/http-www-voicesafrica-com-clients",
+   "resources": [
+    {
+     "name": "Voices Africa Online Research on African Lifestyles and Outlook - Maisha Data",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/21220488-f6ea-48d6-b7d4-2f7c92aad543/resource/774bb0af-6821-487b-a7b3-dc58077d4cae/download/maisha-data.csv"
+    }
+   ]
+  },
+  {
+   "term": "ethnicity",
+   "title": "Kenya - Socioeconomic Survey of the Stateless Shona in 2019",
+   "name": "unhcr-ken-2019-ses-shona-v2-1",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-ken-2019-ses-shona-v2-1",
+   "resources": [
+    {
+     "name": "Kenya - Socioeconomic Survey of the Stateless Shona in 2019",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/282/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/282/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "ethnicity",
+   "title": "Regional Intention Survey of South Sudanese Refugees in Central African Republic, Democratic Republic of The Congo, Ethiopia, Kenya, Sudan and Uganda (June 2019)",
+   "name": "unhcr-ssd-2019-reg-intentionsurv-v2-1",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-ssd-2019-reg-intentionsurv-v2-1",
+   "resources": [
+    {
+     "name": "Regional Intention Survey of South Sudanese Refugees in Central African Republic, Democratic Republic of The Congo, Ethiopia, Kenya, Sudan and Uganda (June 2019)",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/224/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/224/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Kenya: Languages",
+   "name": "kenya-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/kenya-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_KEN_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fcc8cef6-2362-48da-b8f8-f440ee359e1f/resource/b39c556f-4d80-49ce-8728-d691addbf245/download/clearglobal_language_use_ken_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_KEN_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fcc8cef6-2362-48da-b8f8-f440ee359e1f/resource/f97b623a-641f-4d05-8ecc-dc91dc6ee055/download/clearglobal_language_use_ken_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_KEN_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fcc8cef6-2362-48da-b8f8-f440ee359e1f/resource/9ac94cae-b3ef-4a42-aeaa-3034508892bc/download/clearglobal_language_use_ken_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Kenya - Rivers",
+   "name": "kenya-water-courses",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/kenya-water-courses",
+   "resources": [
+    {
+     "name": "ken_rivers.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/b6b7401b-aeea-4cfa-b34b-0470c7e7ee12/resource/7da7fdd9-196b-4b31-a0c1-8602ab80dbbf/download/kenrivers.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Kenya Admin Boundaries - Election Polling stations",
+   "name": "kenya-elections",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/kenya-elections",
+   "resources": [
+    {
+     "name": "Admin1-counties.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/4da920dc-c1dc-4889-b06c-66ecb65e2b94/resource/0d7c191e-35b4-42cd-9df6-bb3b9add3467/download/counties.zip"
+    },
+    {
+     "name": "Admin2-constituencies.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/4da920dc-c1dc-4889-b06c-66ecb65e2b94/resource/8c78dafe-f9f4-4dd3-b6be-a4e57ea7ac22/download/constituencies.zip"
+    },
+    {
+     "name": "Admin3-ward.results.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/4da920dc-c1dc-4889-b06c-66ecb65e2b94/resource/e77739a3-c921-4690-8d3b-62249e26324e/download/ward.results.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Kenya - Roads Network",
+   "name": "kenya-roads",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/kenya-roads",
+   "resources": [
+    {
+     "name": "ken_roads.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/3d10cb5f-f56e-4924-b1fd-32931e0ddb41/resource/0170d6b6-7ad3-439a-ae1e-e84060886502/download/kenroads.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Kenya - Settlements",
+   "name": "kenya-settlements-0",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/kenya-settlements-0",
+   "resources": [
+    {
+     "name": "ken_populated_places_2002_depha.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/58f70c23-8591-475a-8012-54cdf4eb8ed7/resource/7f8e61f9-9809-4859-93df-ef7be48d2872/download/kenpopulatedplaces2002depha.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Kenya - Water Bodies (Lakes)",
+   "name": "kenya-water-bodies",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/kenya-water-bodies",
+   "resources": [
+    {
+     "name": "ken_lakes.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/9b7cb749-e054-4318-8450-6c97d387706d/resource/3ee52286-7555-41a3-86a4-25ed8dcb85cc/download/kenlakes.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Kenya - Admin Level 5 Boundaries",
+   "name": "kenya-admin-level-5-boundaries",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/kenya-admin-level-5-boundaries",
+   "resources": [
+    {
+     "name": "ken_sublocations.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/ef819e1b-eda0-4db9-af36-adac33016973/resource/40b33c69-a47a-47f2-8503-4ddf142127c9/download/kensublocations.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Kenya - Schools in Kenya (2005)",
+   "name": "kenya-education-0",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/kenya-education-0",
+   "resources": [
+    {
+     "name": "ken_schools.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/b505d47b-f2f5-4d2f-bfb9-48a2a1136338/resource/bb639429-9bb7-41d6-ba86-06e8dcaaafef/download/kenschools.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Kenya - Food Security situation outlook for kenya",
+   "name": "kenya-food-security",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/kenya-food-security",
+   "resources": [
+    {
+     "name": "kenya_ipc_oct2012_fsnwg.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/d2c1a67c-79ea-48fb-966b-cb0890d627fd/resource/af14c747-45dc-4e3d-ada1-7e1a32e4ba81/download/kenyaipcoct2012fsnwg.zip"
+    },
+    {
+     "name": "kenya_ipc_jun2012-fsnwg_0.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/d2c1a67c-79ea-48fb-966b-cb0890d627fd/resource/e470ff91-1626-4771-9063-0b206075eea2/download/kenyaipcjun2012-fsnwg0.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Kenya - Logistics",
+   "name": "kenya-logistics",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/kenya-logistics",
+   "resources": [
+    {
+     "name": "ke_ncpbs.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/07d28086-10ad-4ca9-871f-eafd6a339ea6/resource/a43a1570-770a-4ace-9102-62b29001ead4/download/kencpbs.zip"
+    },
+    {
+     "name": "keso_whs.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/07d28086-10ad-4ca9-871f-eafd6a339ea6/resource/496a5578-b46a-4d18-b9ab-6eca520c5ace/download/kesowhs.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Kenya: Population Per County  and sub county from Census Report",
+   "name": "kenya-population-per-county-from-census-report-2019",
+   "org": "Kenya National Bureau of Statistics (inactive)",
+   "url": "https://data.humdata.org/dataset/kenya-population-per-county-from-census-report-2019",
+   "resources": [
+    {
+     "name": "Distribution of Population by Sex, Number of Households, Land Area, Population Density and Sub County.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/fa58ed8d-1daa-48b6-bae1-19746c32c85f/resource/742b08fe-c53d-4538-81fc-b30a41a1280a/download/distribution-of-population-by-sex-number-of-households-land-area-population-density-and-sub-cou.xlsx"
+    },
+    {
+     "name": "2019 Population_Census report per county.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fa58ed8d-1daa-48b6-bae1-19746c32c85f/resource/82f909ce-7358-48da-9639-8fe9c3318251/download/2019-population_census-report-per-county.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Kenya Schools",
+   "name": "kenya-schools",
+   "org": "American Red Cross (inactive)",
+   "url": "https://data.humdata.org/dataset/kenya-schools",
+   "resources": [
+    {
+     "name": "Kenya MOE Schools",
+     "format": "Google Sheet",
+     "url": "https://docs.google.com/spreadsheets/d/1t8S_POnyZnSJWMtgutAdKYnhQXu4L6nS_XKPcryImso/edit?usp=drive_web"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Kenya Sub Counties",
+   "name": "kenya-sub-counties",
+   "org": "American Red Cross (inactive)",
+   "url": "https://data.humdata.org/dataset/kenya-sub-counties",
+   "resources": [
+    {
+     "name": "ke_subcounty.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/7a9a2073-beff-443b-9dc2-dfeef7411c3d/resource/bf1919f7-d908-444f-b5c4-821573e29189/download/ke_subcounty.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Kenya Population characteristics",
+   "name": "kenya-population-by-sex-and-age-groups",
+   "org": "Kenya National Bureau of Statistics (inactive)",
+   "url": "https://data.humdata.org/dataset/kenya-population-by-sex-and-age-groups",
+   "resources": [
+    {
+     "name": "Population by Sex and Age Groups.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/f79091e4-5735-4bc5-bb58-7ee6c9bad2b7/resource/7971f740-9ad8-4aee-a959-2058db5a3d53/download/population-by-sex-and-age-groups.csv"
+    },
+    {
+     "name": "Population by Type of Disability.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/f79091e4-5735-4bc5-bb58-7ee6c9bad2b7/resource/19df5849-de2a-4565-935d-3378b9cea5da/download/population-by-type-of-disability.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Kenya - Mombasa Kenya Age pyramid",
+   "name": "mombasa-kenya-age-pyramid",
+   "org": "Kenya Open Data Initiative (inactive)",
+   "url": "https://data.humdata.org/dataset/mombasa-kenya-age-pyramid",
+   "resources": [
+    {
+     "name": "Mombasa_Population_Pyramid_Age_Groups_2009 .csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/40bed800-6d9b-46b0-b8ab-7defba97b8f2/resource/ca9d999f-d356-4b43-a539-5949af6b07d6/download/mombasa_population_pyramid_age_groups_2009-1.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Administrative Wards in Kenya 1450",
+   "name": "administrative-wards-in-kenya-1450",
+   "org": "American Red Cross (inactive)",
+   "url": "https://data.humdata.org/dataset/administrative-wards-in-kenya-1450",
+   "resources": [
+    {
+     "name": "Kenya_Wards.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/e8d06ae7-740b-4491-8749-43f81700cf41/resource/858129b2-7197-4ffe-b34f-c2091b307b2c/download/kenya_wards.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Kenya: Distribution of Population aged above 3 Years by highest Level of Education Reached",
+   "name": "kenya-distribution-of-population-aged-above-3-years-by-highest-level-of-education-reached",
+   "org": "Kenya National Bureau of Statistics (inactive)",
+   "url": "https://data.humdata.org/dataset/kenya-distribution-of-population-aged-above-3-years-by-highest-level-of-education-reached",
+   "resources": [
+    {
+     "name": "Distribution of Population Age 3 Years and Above by Highest Level of Education Reached, Area of Residence,  Sex, County and Sub-County.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/22617636-91d3-4521-a457-269f7b8dddcc/resource/e973494f-ffbb-4fe4-8859-a7f21c82d948/download/distribution-of-population-age-3-years-and-above-by-highest-level-of-education-reached-area-of-.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Kenya: Distribution of Population Age groups 3 Years and Above by School Attendance Status",
+   "name": "kenya-distribution-of-population-age-groups-3-years-and-above-by-school-attendance-status-special",
+   "org": "Kenya National Bureau of Statistics (inactive)",
+   "url": "https://data.humdata.org/dataset/kenya-distribution-of-population-age-groups-3-years-and-above-by-school-attendance-status-special",
+   "resources": [
+    {
+     "name": "Distribution of Population Age 3 Years and Above by School Attendance Status, Sex, Special Age Groups and County.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/42874d7d-d0e4-48ff-b2f8-654bc7feb21a/resource/329e4d69-44a1-4202-8eda-7a0629b171ff/download/distribution-of-population-age-3-years-and-above-by-school-attendance-status-sex-special-age-gr.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Kenya - Subnational Population Statistics",
+   "name": "cod-ps-ken",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-ken",
+   "resources": [
+    {
+     "name": "KEN_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/26801642-7088-4149-9605-6ae282897937/resource/bfe30344-5fb4-45dd-b1d1-565690aba5fc/download/ken_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "ken_admpop_2019.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/26801642-7088-4149-9605-6ae282897937/resource/e57fb9a8-96dc-4a21-849b-1ddbc4ed7803/download/ken_admpop_2019.xlsx"
+    },
+    {
+     "name": "ken_admpop_adm0_2019.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/26801642-7088-4149-9605-6ae282897937/resource/ce9a60f1-f0df-42bc-910c-5761e6c0ba81/download/ken_admpop_adm0_2019.csv"
+    },
+    {
+     "name": "ken_admpop_adm1_2019.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/26801642-7088-4149-9605-6ae282897937/resource/d4fed43d-8abe-48d2-987a-35c101292af3/download/ken_admpop_adm1_2019.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Kenya: High Resolution Population Density Maps",
+   "name": "highresolutionpopulationdensitymaps-ken",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/highresolutionpopulationdensitymaps-ken",
+   "resources": [
+    {
+     "name": "ken_general_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/2964b369-c10c-4b55-94a8-495de3fc9858/resource/1271b53b-30be-4c4b-aa27-1bd104506636/download/ken_general_2020_geotiff.zip"
+    },
+    {
+     "name": "ken_general_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/2964b369-c10c-4b55-94a8-495de3fc9858/resource/728e9fe2-0707-491f-91d8-3dc8379d7a32/download/ken_general_2020_csv.zip"
+    },
+    {
+     "name": "ken_youth_15_24_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/2964b369-c10c-4b55-94a8-495de3fc9858/resource/20769f96-dc26-4342-8900-135e2e1e9b71/download/ken_youth_15_24_2020_csv.zip"
+    },
+    {
+     "name": "ken_elderly_60_plus_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/2964b369-c10c-4b55-94a8-495de3fc9858/resource/1cdc95e0-3ce4-4515-b08e-e260ee96275a/download/ken_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "ken_women_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/2964b369-c10c-4b55-94a8-495de3fc9858/resource/ef425edf-4b59-4487-8a8f-6fa6fe78b494/download/ken_women_2020_csv.zip"
+    },
+    {
+     "name": "ken_men_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/2964b369-c10c-4b55-94a8-495de3fc9858/resource/c262d93d-588a-4ef3-8422-bc72cd2d829e/download/ken_men_2020_csv.zip"
+    },
+    {
+     "name": "ken_children_under_five_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/2964b369-c10c-4b55-94a8-495de3fc9858/resource/ce0f1108-f863-40f7-b817-a6c552154d90/download/ken_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "ken_women_of_reproductive_age_15_49_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/2964b369-c10c-4b55-94a8-495de3fc9858/resource/09e8d2e4-8656-422c-8167-b0327990235d/download/ken_women_of_reproductive_age_15_49_2020_csv.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.knbs.or.ke/",
+  "status": 0,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>",
+  "pages": []
+ },
+ "verdict": {
+  "hdx_datasets": 23,
+  "hdx_machine_readable": 9,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "2/4",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

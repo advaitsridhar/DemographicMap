@@ -1,0 +1,98 @@
+{
+  "iso3": "ZMB",
+  "name": "Zambia",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Zambia Statistics Agency (ZamStats; formerly Central Statistical Office, CSO)",
+    "url": "https://www.zamstats.gov.zm/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2022,
+    "asks": {"religion": null, "ethnicity": null, "language": null},
+    "confidence": "recalled",
+    "notes": "The 2022 Census of Population and Housing was enumerated Aug-Sep 2022 (preliminary report 2022, summary report 2023). I do not know from memory whether its questionnaire kept the religion, ethnic group (tribe) and language-of-communication items, so all three are null for 2022. The 2010 census certainly asked all three: the packet's national shares -- religion (Protestant 75.3%, Catholic 20.2%), ethnicity (Bemba 21.0%, Tonga 13.6%, Chewa 7.4%, Lozi 5.7%) and language (Bemba 33.4%, Nyanja 14.7%, Tonga 11.4%, Lozi 5.5%) -- are the 2010 census figures, and the 2010 reports tabulate them by province and district."
+  },
+  "prior_census": {
+    "year": 2010,
+    "asks": {"religion": true, "ethnicity": true, "language": true},
+    "confidence": "recalled"
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion", "ethnicity", "language"],
+      "title": "2010 Census of Population and Housing -- National Analytical Report and Descriptive Tables (Volume 11 national; Volumes 1-10 provincial), with religion, ethnic group and predominant language of communication by province and district",
+      "url": "https://www.zamstats.gov.zm/",
+      "publisher": "Central Statistical Office (now ZamStats)",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "province and district",
+      "geography_count": 72,
+      "matches_boundary_level": "admin1 (10 provinces, Muchinga included, matches the 10 drawn); admin2 does not match -- the 2010 frame has 72 districts and the boundary file draws 116 (post-2018 districts such as Ikelenge, Kanchibiya, Mushindano are splits)",
+      "year": 2010,
+      "confidence": "medium",
+      "evidence": "Recalled: the CSO's 2010 census 'Descriptive Tables' series and provincial analytical reports carry these three fields by district; they are PDF. Exact volume titles are from memory."
+    },
+    {
+      "fields": ["religion", "ethnicity", "language"],
+      "title": "2022 Census of Population and Housing -- Summary Report / Analytical reports (if the items were retained), by province and district",
+      "url": "https://www.zamstats.gov.zm/",
+      "publisher": "Zambia Statistics Agency",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "province and district",
+      "geography_count": 116,
+      "matches_boundary_level": "admin1 (10) and admin2 (116 districts, the current frame the boundary file draws) -- if the fields were published",
+      "year": 2022,
+      "confidence": "low",
+      "evidence": "Recalled only that the 2022 census exists and reports on the 116-district frame; whether it tabulates religion/tribe/language is unknown. Worth checking first because it is the only count that could fill 116 admin2 shapes."
+    },
+    {
+      "fields": ["religion", "ethnicity", "language"],
+      "title": "Zambia Data Portal (ZamStats on the openDataforAfrica / Knoema platform) -- 2010 census tables by province",
+      "url": null,
+      "publisher": "ZamStats / African Development Bank open data",
+      "kind": "census",
+      "format": "table-builder",
+      "geography": "province",
+      "geography_count": 10,
+      "matches_boundary_level": "admin1",
+      "year": 2010,
+      "confidence": "low",
+      "evidence": "Recalled that a zambia.opendataforafrica.org portal carried 2010 census tables; whether these three fields are among them, and whether the portal still exists, is not known."
+    },
+    {
+      "fields": ["religion", "ethnicity"],
+      "title": "Afrobarometer Round 9 (already built: fills all 10 admin1 provinces)",
+      "url": null,
+      "publisher": "Afrobarometer",
+      "kind": "survey",
+      "format": "xlsx",
+      "geography": "province",
+      "geography_count": 10,
+      "matches_boundary_level": "admin1",
+      "year": 2022,
+      "confidence": "high",
+      "evidence": "Packet shows admin1 religion/ethnicity filled from an adapter; the Afrobarometer adapter covers ZMB (code 39). A survey; the 2010 census tables above supersede it."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Zambia"},
+      {"title": "Demographics of Zambia"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "The 2010 census counted all three fields by province and district, but the publications are PDF and the 72-district frame does not join to the 116 districts drawn; the 2022 census, which is on the 116 frame, may or may not carry the fields.",
+  "replaces_existing": true,
+  "recommended_action": "On zamstats.gov.zm find the 2022 census analytical/summary reports first and check for religion, ethnic group and language tables by district (116 = admin2, 10 = admin1). If absent, read the 2010 Descriptive Tables by province (10 = admin1) to replace the Afrobarometer survey shares, and accept that the 72 old districts cannot be placed on 116 new ones without inventing splits. Also check IPUMS-International (Zambia 1990, 2000, 2010 microdata; registration) only if a district-level 2010 build is wanted with old-district geography.",
+  "searches_run": [],
+  "not_found": [
+    "Whether the 2022 questionnaire asked religion, tribe or language",
+    "A machine-readable (CSV/XLSX) release of the 2010 religion/ethnicity/language tables",
+    "A USCB/HDX workbook for Zambia with these fields (not known to be in the series)"
+  ],
+  "summary": "Zambia's 2010 census asked religion, ethnic group and language of communication and the CSO published all three by province and district in PDF Descriptive Tables; the 10 provinces match admin1 (and would replace the Afrobarometer survey there), but the 2010 district frame (72) does not join to the 116 districts drawn. The 2022 census is on the 116 frame and is the one to check first, though I cannot say from memory that it retained the three items. Tier B."
+}

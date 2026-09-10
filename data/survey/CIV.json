@@ -1,0 +1,573 @@
+{
+ "iso3": "CIV",
+ "name": "Côte d'Ivoire",
+ "tier_proposed": "B",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Côte d'Ivoire",
+    "wikitext_bytes": 28229,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 2,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "RELIGION",
+       "colspan=2 | 1975",
+       "colspan=2 | 1998",
+       "colspan=2 | 2014",
+       "colspan=2 | 2021<ref>{{Cite news |title=Côte d’Ivoire - Languages, Dialects, French {{!}} Britannica |url=https://www.britannica.com/place/Cote-dIvoire/Languages |archive-url=https://web.archive.org/web/20250523184446/https://www.britannica.com/place/Cote-dIvoire/Languages |archive-date=2025-05-23 |access-date=2026-02-12 |work=Encyclopedia Britannica |language=en}}</ref>",
+       "Animists",
+       "rowspan=2 | Christians",
+       "Muslims",
+       "Not religious",
+       "Other religions"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "style=\"width:50pt;\"| Year",
+       "style=\"width:50pt;\"| Islam",
+       "style=\"width:50pt;\"| Catholic",
+       "style=\"width:50pt;\"| Protestant",
+       "style=\"width:50pt;\"| Traditional/Animist",
+       "style=\"width:50pt;\"| Without religion",
+       "style=\"width:50pt;\"| Others"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 7
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Côte d'Ivoire",
+    "wikitext_bytes": 35854,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 11,
+    "charts": [
+     "Historical populations",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "! width=\"80pt\"|Total population",
+       "width=\"80pt\"|Population aged 0–14 (%)",
+       "width=\"80pt\"|Population aged 15–64 (%)",
+       "width=\"80pt\"|Population aged 65+ (%)",
+       "! style=\"width:80pt;\" |Mid-year population",
+       "style=\"width:80pt;\" |Live births",
+       "style=\"width:80pt;\" |Deaths",
+       "style=\"width:80pt;\" |Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\" |Mid-year population",
+       "style=\"width:80pt;\" |Live births",
+       "style=\"width:80pt;\" |Deaths",
+       "style=\"width:80pt;\" |Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)",
+       "style=\"width:80pt;\"|Total fertility rate (TFR)",
+       "style=\"width:80pt;\"|Infant mortality (per 1000 live births)",
+       "style=\"width:80pt;\"|Life expectancy (in years)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age g"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Region",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15-49 currently pregnant",
+       "style=\"width:100pt;\"| Mean number of children ever born to women age 40–49",
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929<ref name=\"ourworldindata.org\">{{Cite web |last=Our World in Data |title=Children born per woman |url=https://ourworldindata.org/grapher/children-born-per-woman?year=1800 |url-status=dead |archive-url=https://web.archive.org/web/20180630195909/https://ourworldindata.org/grapher/children-born-per-woman?year=1800|archive-date=30 June 2018 |access-date=May 28, 2026}}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929<ref name=\"ourworldindata.org\">{{Cite web |last=Our World in Data |title=Children born per woman |url=https://ourworldindata.org/grapher/children-born-per-woman?year=1800 |url-status=dead |archive-url=https://web.archive.org/web/20180630195909/https://ourworldindata.org/grapher/children-born-per-woman?year=1800|archive-date=30 June 2018 |access-date=May 28, 2026}}</ref>",
+       "Years",
+       "1930",
+       "1931",
+       "1932"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Years",
+       "1930",
+       "1931",
+       "1932",
+       "1933",
+       "1934",
+       "1935",
+       "1936",
+       "1937",
+       "1938"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "Years",
+       "1940",
+       "1941",
+       "1942",
+       "1943",
+       "1944",
+       "1945",
+       "1946",
+       "1947",
+       "1948"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 2
+     },
+     {
+      "header": [
+       "Country",
+       "Ivorian-born population",
+       "See also"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Agneby-Tiassa",
+    "found": true,
+    "title": "Rubino, Ivory Coast",
+    "url": "https://en.wikipedia.org/wiki/Rubino%2C_Ivory_Coast",
+    "wikitext_bytes": 4634,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Bere",
+    "found": true,
+    "title": "Worodougou",
+    "url": "https://en.wikipedia.org/wiki/Worodougou",
+    "wikitext_bytes": 5625,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Bounkani",
+    "found": true,
+    "title": "Bouna, Ivory Coast",
+    "url": "https://en.wikipedia.org/wiki/Bouna%2C_Ivory_Coast",
+    "wikitext_bytes": 11061,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Gbokle",
+    "found": true,
+    "title": "Fresco, Ivory Coast",
+    "url": "https://en.wikipedia.org/wiki/Fresco%2C_Ivory_Coast",
+    "wikitext_bytes": 5095,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Me",
+    "found": true,
+    "title": "Regions of Ivory Coast",
+    "url": "https://en.wikipedia.org/wiki/Regions_of_Ivory_Coast",
+    "wikitext_bytes": 13853,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "religion",
+   "title": "Côte d'Ivoire - Roads",
+   "name": "cote-d-ivoire-roads",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/cote-d-ivoire-roads",
+   "resources": [
+    {
+     "name": "route.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/1ac02382-a0b5-41fc-8f7e-c273cb334523/resource/f8c90d91-7dba-4f1e-b09e-006a44f0c14a/download/route.zip"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Cote d'Ivoire - Infrastructure",
+   "name": "world-bank-infrastructure-indicators-for-cote-d-ivoire",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-infrastructure-indicators-for-cote-d-ivoire",
+   "resources": [
+    {
+     "name": "Infrastructure Indicators for Cote d'Ivoire",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/c505c309-abc4-4379-9dbd-3e1aaa7fe51b/resource/a1ca20a1-5fef-49ec-a226-113cfeca5476/download/infrastructure_civ.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Côte d'Ivoire - Water Bodies",
+   "name": "cote-d-ivoire-water-bodies",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/cote-d-ivoire-water-bodies",
+   "resources": [
+    {
+     "name": "plan_deau.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/d10954f7-c9a4-4192-b7c9-17d6e8581bda/resource/9a0f7fe3-35fb-46c0-9e3b-f1ed34e5805a/download/plan_deau.zip"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Cote d'Ivoire - Education",
+   "name": "world-bank-education-indicators-for-cote-d-ivoire",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-education-indicators-for-cote-d-ivoire",
+   "resources": [
+    {
+     "name": "Education Indicators for Cote d'Ivoire",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/ad2018d9-0140-4bf0-96a1-eba3dd7e99fe/resource/19d1ce5b-63d7-4922-bd76-9445dcd0ae35/download/education_civ.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Côte d'Ivoire - Food Prices",
+   "name": "wfp-food-prices-for-cote-d-ivoire",
+   "org": "WFP - World Food Programme",
+   "url": "https://data.humdata.org/dataset/wfp-food-prices-for-cote-d-ivoire",
+   "resources": [
+    {
+     "name": "Côte d'Ivoire - Food Prices",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e6ff12e6-0670-4a0e-af9f-3750688e6c8d/resource/b54849f9-d90f-48cb-b818-8ea5b60306d5/download/wfp_food_prices_civ.csv"
+    },
+    {
+     "name": "Côte d'Ivoire - Markets",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e6ff12e6-0670-4a0e-af9f-3750688e6c8d/resource/e2dc7c91-0932-4da9-a14e-32b2bea0aebf/download/wfp_markets_civ.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Cote d'Ivoire - Health",
+   "name": "world-bank-health-indicators-for-cote-d-ivoire",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-health-indicators-for-cote-d-ivoire",
+   "resources": [
+    {
+     "name": "Health Indicators for Cote d'Ivoire",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/d550038d-2989-42cf-aae6-706c0684099c/resource/79abbd4e-d5e4-4dff-ad7e-b92ef40d49cf/download/health_civ.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Côte d'Ivoire - Subnational Administrative Boundaries",
+   "name": "cod-ab-civ",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-civ",
+   "resources": [
+    {
+     "name": "civ_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/503a9167-ba56-4174-b160-bdb0fb703719/resource/86af6c72-b289-40ff-a143-15f8c82f7813/download/civ_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "civ_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/503a9167-ba56-4174-b160-bdb0fb703719/resource/778ab2c3-b5b9-4b92-9bf2-45d2ef15b555/download/civ_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "civ_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/503a9167-ba56-4174-b160-bdb0fb703719/resource/321e55d2-3486-400a-a855-4b749cf9ef88/download/civ_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "civ_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/503a9167-ba56-4174-b160-bdb0fb703719/resource/00635da7-ec8f-46ed-882d-7318f05dbf12/download/civ_admin_boundaries.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Cote d'Ivoire - Trade",
+   "name": "world-bank-trade-indicators-for-cote-d-ivoire",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-trade-indicators-for-cote-d-ivoire",
+   "resources": [
+    {
+     "name": "Trade Indicators for Cote d'Ivoire",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4c28733a-0da9-4d96-8e9b-6f1c3a9573e3/resource/381bc00c-8d0d-4820-b216-7cbfda577540/download/trade_civ.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Côte d'Ivoire - Settlements",
+   "name": "cote-d-ivoire-settlements",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/cote-d-ivoire-settlements",
+   "resources": [
+    {
+     "name": "civ_pplp_cntig_ocha.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/444d352f-db9f-49bc-b170-37d31e9a1433/resource/c78a73cc-343f-496e-bda6-e59912836add/download/civ_pplp_cntig_ocha.zip"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Cote d'Ivoire - Poverty",
+   "name": "world-bank-poverty-indicators-for-cote-d-ivoire",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-poverty-indicators-for-cote-d-ivoire",
+   "resources": [
+    {
+     "name": "Poverty Indicators for Cote d'Ivoire",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/48e561c2-781d-4071-948f-c7dcdd25d55d/resource/f0a2ad6b-3ad4-4128-8aae-b33137da07cf/download/poverty_civ.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Côte d'Ivoire - Railways",
+   "name": "cote-d-ivoire-railways",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/cote-d-ivoire-railways",
+   "resources": [
+    {
+     "name": "rails.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/3336aa43-abde-4c99-8b0f-2c8a8f91d175/resource/7f6d3aa4-79aa-4a06-8813-8d8a9745a86a/download/rails.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Côte d'Ivoire - Water Courses",
+   "name": "cote-d-ivoire-water-courses",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/cote-d-ivoire-water-courses",
+   "resources": [
+    {
+     "name": "cours_deau.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/2473425d-6e63-4238-b76d-8bde715f199c/resource/5f85f53a-7659-4c85-9dc2-6f2a5b92f956/download/cours_deau.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Côte d'Ivoire - Subnational Population Statistics",
+   "name": "cod-ps-civ",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/cod-ps-civ",
+   "resources": [
+    {
+     "name": "CIV_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/53d768e8-7a66-438c-abcb-8393fa74adf8/resource/8a6dacf4-c8ec-42ce-8c79-e7e4f8003db7/download/civ_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "civ_population_statistic_2019_unfpa_v2.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/53d768e8-7a66-438c-abcb-8393fa74adf8/resource/ef28ddcc-2cfc-44e3-93ba-f1a1cab8df8f/download/civ_population_statistic_2019_unfpa_v2.xlsx"
+    },
+    {
+     "name": "civ_admpop_adm0_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/53d768e8-7a66-438c-abcb-8393fa74adf8/resource/d01eaae3-a9d2-4bfa-90b5-768c76a95d4b/download/civ_admpop_adm0_v2.csv"
+    },
+    {
+     "name": "civ_admpop_adm1_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/53d768e8-7a66-438c-abcb-8393fa74adf8/resource/47ef99b4-b040-4a90-9f91-775a641d585c/download/civ_admpop_adm1_v2.csv"
+    },
+    {
+     "name": "civ_admpop_adm2_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/53d768e8-7a66-438c-abcb-8393fa74adf8/resource/ac365c06-3d22-4b0d-9890-fc2613ab2b2e/download/civ_admpop_adm2_v2.csv"
+    },
+    {
+     "name": "civ_admpop_adm3_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/53d768e8-7a66-438c-abcb-8393fa74adf8/resource/c49a74aa-9630-4755-9184-b0e5cafa092c/download/civ_admpop_adm3_v2.csv"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.ins.ci/",
+  "status": 0,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.ins.ci'. (_ssl.c:1016)>",
+  "pages": []
+ },
+ "verdict": {
+  "hdx_datasets": 13,
+  "hdx_machine_readable": 8,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

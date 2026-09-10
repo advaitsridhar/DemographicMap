@@ -1,0 +1,757 @@
+{
+ "iso3": "UZB",
+ "name": "Uzbekistan",
+ "tier_proposed": "D",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Census 2026 results (Перепись - 2026) -- national nationality composition; regional tables not yet located",
+   "kind": "census",
+   "format": null,
+   "geography": null,
+   "geography_count": null,
+   "matches_boundary_level": null,
+   "url": "https://gov.uz/ru/pages/2026",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://gov.uz/ru/pages/2026",
+   "error": null,
+   "body": {
+    "bytes_read": 87353,
+    "kind": "html",
+    "title": "Перепись - 2026",
+    "links_to_files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Open Data Portal of the Republic of Uzbekistan (data.egov.uz), linked from stat.uz",
+   "kind": "register",
+   "format": "api",
+   "geography": null,
+   "geography_count": null,
+   "matches_boundary_level": null,
+   "url": "https://data.egov.uz/eng",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Demographics of Uzbekistan",
+    "wikitext_bytes": 75244,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 9,
+    "charts": [
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 3,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "! style=\"width:80pt;\"|Average population (Dec. 31)",
+       "style=\"width:80pt;\"|Live births",
+       "style=\"width:80pt;\"|Deaths",
+       "style=\"width:80pt;\"|Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)",
+       "style=\"width:80pt;\"|Crude migration rate (per 1000)",
+       "style=\"width:80pt;\"|TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January—June 2025",
+       "January—June 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{cite web|title=Demographic situation of the Republic of Uzbekistan in January-December 2025|url=https://stat.uz/oz/press-tsentr/novosti-goskomstata/66542-o-zbekiston-respublikasining-demografik-holati-2024-yil-yanvar-mart-9}}</ref><ref>{{cite web|title=The number of twin births is increasing in Uzbekistan |url=https://stat.uz/en/press-center/news-of-committee/61800-o-zbekistonda-egizak-chaqaloqlar-tug-ilishi-soni-ko-paymoqda-3}}</ref><ref>{{cite web|title=Number and composition of persons born in Uzbekistan in January–April |url=https://stat.uz/en/press-center/news-of-committee/53940-o-zbekistonda-yanvar-aprel-oylarida-tug-ilganlar-soni-va-tarkibi-3}}</ref>",
+       "rowspan=2| Year",
+       "colspan=2| Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929",
+       "1930",
+       "1931",
+       "1932",
+       "1933"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Years",
+       "1935",
+       "1936",
+       "1937",
+       "1938",
+       "1939",
+       "1940",
+       "1941",
+       "1942",
+       "1943"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "Years",
+       "1945",
+       "1946",
+       "1947",
+       "1948",
+       "1949<ref name=\"ourworldindata.org\" />"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 2
+     },
+     {
+      "header": [
+       "colspan=19 | Vital statistics by regions of the Republic of Uzbekistan <ref>{{cite web|title=Demographic situation in the Republic of Uzbekistan, January-December 2022|url=https://stat.uz/images/uploads/reliz2021/demografiya-press-reliz-27_01_2023-ang.pdf}}</ref><ref name=Demography/>",
+       "Division",
+       "Birth rate (‰) || Death rate (‰) || Natural growth rate (‰) || Total fertility rate",
+       "Surxondaryo Region",
+       "Qashqadaryo Region",
+       "Jizzax Region",
+       "Samarqand Region",
+       "Namangan Region",
+       "Andijon Region",
+       "Navoiy Region"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic<br />group",
+       "colspan=\"2\" | census 1926<sup>1</sup>",
+       "colspan=\"2\" | census 1939<sup>2</sup>",
+       "colspan=\"2\" | census 1959<sup>3</sup>",
+       "colspan=\"2\" | census 1970<sup>4</sup>",
+       "colspan=\"2\" | census 1979<sup>5</sup>",
+       "colspan=\"2\" | census 1989<sup>6</sup>",
+       "colspan=\"2\" | estimates 2017<sup>7</sup>",
+       "colspan=\"2\" | census 2026<sup>8</sup>",
+       "Number"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 7
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Uzbeks",
+    "wikitext_bytes": 102642,
+    "infobox_params": [
+     "languages",
+     "religions"
+    ],
+    "sections": [
+     "Language",
+     "Religion"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Uzbekistan",
+    "wikitext_bytes": 21932,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [
+     "Pie chart",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "! Churches, religious schools and centres",
+       "N",
+       "1",
+       "2",
+       "3",
+       "4",
+       "5",
+       "6",
+       "7",
+       "8"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "! List of Catholic parishes in Uzbekistan",
+       "1",
+       "2",
+       "3",
+       "4",
+       "5"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 6
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Akdarya",
+    "found": true,
+    "title": "Zarafshan Bridge",
+    "url": "https://en.wikipedia.org/wiki/Zarafshan_Bridge",
+    "wikitext_bytes": 8556,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Gallyaaral",
+    "found": false
+   },
+   {
+    "shape_name": "Kurgantepa",
+    "found": true,
+    "title": "Emirate of Bukhara",
+    "url": "https://en.wikipedia.org/wiki/Emirate_of_Bukhara",
+    "wikitext_bytes": 33811,
+    "infobox_params": [
+     "religion"
+    ],
+    "sections": [
+     "Ethnic groups and identity"
+    ],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   },
+   {
+    "shape_name": "Kuvasay city",
+    "found": true,
+    "title": "Subdivisions of Uzbekistan",
+    "url": "https://en.wikipedia.org/wiki/Subdivisions_of_Uzbekistan",
+    "wikitext_bytes": 20126,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 4,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Sergeli",
+    "found": true,
+    "title": "Sergeli",
+    "url": "https://en.wikipedia.org/wiki/Sergeli",
+    "wikitext_bytes": 2710,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Uzbekistan - Subnational Administrative Boundaries",
+   "name": "cod-ab-uzb",
+   "org": "OCHA Middle East and North Africa (ROMENA)",
+   "url": "https://data.humdata.org/dataset/cod-ab-uzb",
+   "resources": [
+    {
+     "name": "uzb_adm_2018.xls",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/66f56d39-3f19-4798-a0df-a0ed9a4836ea/resource/606be0ce-8a86-414a-a9d8-e0a60b8b2bc4/download/uzb_adm_2018.xls"
+    },
+    {
+     "name": "uzb_admbnda_adm0_2018b.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/66f56d39-3f19-4798-a0df-a0ed9a4836ea/resource/eb1c227b-5b57-4008-be86-422f91edef6a/download/uzb_admbnda_adm0_2018b.zip"
+    },
+    {
+     "name": "uzb_admbnda_adm1_2018b.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/66f56d39-3f19-4798-a0df-a0ed9a4836ea/resource/6a44247a-f4f5-421d-803a-893ecaf201e2/download/uzb_admbnda_adm1_2018b.zip"
+    },
+    {
+     "name": "uzb_admbnda_adm2_2018b.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/66f56d39-3f19-4798-a0df-a0ed9a4836ea/resource/b9d8c3e7-b261-46a0-8ffc-b1c822c984c3/download/uzb_admbnda_adm2_2018b.zip"
+    },
+    {
+     "name": "uzb_admbndl_ALL_gov.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/66f56d39-3f19-4798-a0df-a0ed9a4836ea/resource/f92e415d-a3d3-4a25-bd6f-234218bf35b0/download/uzb_admbndl_all_gov.zip"
+    },
+    {
+     "name": "uzb_adm_2018b_EMF.zip",
+     "format": "EMF",
+     "url": "https://data.humdata.org/dataset/66f56d39-3f19-4798-a0df-a0ed9a4836ea/resource/5b94f537-1197-4440-8749-b2a7f3e4d764/download/uzb_adm_2018b_emf.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Uzbekistan: Road Surface Data",
+   "name": "uzbekistan-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/uzbekistan-road-surface-data",
+   "resources": [
+    {
+     "name": "Uzbekistan GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_uzb_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Uzbekistan GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_uzb_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Uzbekistan: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-uzbekistan",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-uzbekistan",
+   "resources": [
+    {
+     "name": "kontur_boundaries_UZ_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_UZ_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_UZ_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_UZ_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_UZ_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_UZ_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "INFORM subnational risk index 2021, Caucasus and Central Asia",
+   "name": "inform-subnational-risk-index-for-caucasus-and-central-asia",
+   "org": "United Nations Office for Disaster Risk Reduction (UNDRR)",
+   "url": "https://data.humdata.org/dataset/inform-subnational-risk-index-for-caucasus-and-central-asia",
+   "resources": [
+    {
+     "name": "INFORM CCA2021_infographic_30092021_ENG.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/59dc3d28-466d-440a-aaa9-3bab5e9ab011/resource/78e26e49-e505-48a5-81da-e921302b1e34/download/inform-cca2021_infographic_30092021_eng.pdf"
+    },
+    {
+     "name": "INFORM CCA2021_infographic_30092021_RUS.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/59dc3d28-466d-440a-aaa9-3bab5e9ab011/resource/494f543e-cbbd-48ff-86ef-3320d4af2c71/download/inform-cca2021_infographic_30092021_rus.pdf"
+    },
+    {
+     "name": "INFORM_CCA_2021_30092021_ENG.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/59dc3d28-466d-440a-aaa9-3bab5e9ab011/resource/c95876c0-11f4-430e-b3f1-8f8b439760ef/download/inform_cca_2021_30092021_eng.xlsx"
+    },
+    {
+     "name": "INFORM_CCA_2021_30092021_RUS.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/59dc3d28-466d-440a-aaa9-3bab5e9ab011/resource/a0352c16-8a36-4b07-981b-7f4bccaa67db/download/inform_cca_2021_30092021_rus.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Uzbekistan - Accessibility Indicators",
+   "name": "uzbekistan-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/uzbekistan-accessibility-indicators",
+   "resources": [
+    {
+     "name": "UZB_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/uzb/UZB_education_access.gpkg"
+    },
+    {
+     "name": "UZB_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/uzb/UZB_education_access_long.csv"
+    },
+    {
+     "name": "UZB_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/uzb/UZB_education_access_wide.csv"
+    },
+    {
+     "name": "UZB_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/uzb/UZB_hospitals_access.gpkg"
+    },
+    {
+     "name": "UZB_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/uzb/UZB_hospitals_access_long.csv"
+    },
+    {
+     "name": "UZB_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/uzb/UZB_hospitals_access_wide.csv"
+    },
+    {
+     "name": "UZB_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/uzb/UZB_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "UZB_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/uzb/UZB_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Uzbekistan: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "uzbekistan-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/uzbekistan-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "UZB_children_under_five_2019-06-01_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fe85f110-9b9d-42b8-884f-6add14ec7bb0/resource/5fad67eb-65f2-45de-9e55-31d1537dd14a/download/uzb_children_under_five_2019-06-01_csv.zip"
+    },
+    {
+     "name": "UZB_children_under_five_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/fe85f110-9b9d-42b8-884f-6add14ec7bb0/resource/c75196ce-0275-470a-b9ec-9c08e6c04d5c/download/uzb_children_under_five_2019-06-01_geotiff.zip"
+    },
+    {
+     "name": "UZB_elderly_60_plus_2019-06-01_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fe85f110-9b9d-42b8-884f-6add14ec7bb0/resource/8fbd9ed1-b91d-4c7a-bc7b-15062e97b89e/download/uzb_elderly_60_plus_2019-06-01_csv.zip"
+    },
+    {
+     "name": "UZB_elderly_60_plus_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/fe85f110-9b9d-42b8-884f-6add14ec7bb0/resource/2646276b-2145-4d88-8d0a-191e891dc882/download/uzb_elderly_60_plus_2019-06-01_geotiff.zip"
+    },
+    {
+     "name": "UZB_men_2019-06-01_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fe85f110-9b9d-42b8-884f-6add14ec7bb0/resource/690c3b91-b9ad-473c-a59c-22ee895fa741/download/uzb_men_2019-06-01_csv.zip"
+    },
+    {
+     "name": "UZB_men_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/fe85f110-9b9d-42b8-884f-6add14ec7bb0/resource/f53aef5d-37f3-4f2c-ba96-022dc5dc02dc/download/uzb_men_2019-06-01_geotiff.zip"
+    },
+    {
+     "name": "UZB_women_2019-06-01_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fe85f110-9b9d-42b8-884f-6add14ec7bb0/resource/b9eaa4ab-5f2c-4b47-9ddc-acc35e22237e/download/uzb_women_2019-06-01_csv.zip"
+    },
+    {
+     "name": "UZB_women_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/fe85f110-9b9d-42b8-884f-6add14ec7bb0/resource/29879b8c-2c80-45c8-a554-2dbb7c38d6be/download/uzb_women_2019-06-01_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Uzbekistan - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-uzbekistan",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-uzbekistan",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Uzbekistan",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fb226f6e-097b-45bd-a751-f7e14ce04356/resource/e4565017-762a-4565-95a5-266915214678/download/social-protection-and-labor_uzb.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Uzbekistan - Population Counts",
+   "name": "worldpop-population-counts-for-uzbekistan",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-uzbekistan",
+   "resources": [
+    {
+     "name": "uzb_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/UZB/uzb_ppp_2020.tif"
+    },
+    {
+     "name": "uzb_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/UZB/uzb_ppp_2019.tif"
+    },
+    {
+     "name": "uzb_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/UZB/uzb_ppp_2018.tif"
+    },
+    {
+     "name": "uzb_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/UZB/uzb_ppp_2017.tif"
+    },
+    {
+     "name": "uzb_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/UZB/uzb_ppp_2016.tif"
+    },
+    {
+     "name": "uzb_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/UZB/uzb_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "uzb_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/UZB/uzb_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "uzb_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/UZB/uzb_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Uzbekistan: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-uzb",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-uzb",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-uz-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-uz-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Uzbekistan - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-uz-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-uz-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_UZ",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/276015c4-af90-427b-bd06-7c40653e505f/resource/1ec6b5f2-dbc6-4ebe-bfc1-ffb1b2d24809/download/indicator_data_uz.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Uzbekistan: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "uzb-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/uzb-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/5a40303f-48ee-4a73-98b4-0840a3d08846/resource/8c68f758-1db4-49c2-80f5-b870bad76a2f/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_uzb.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/5a40303f-48ee-4a73-98b4-0840a3d08846/resource/f863ed36-09e7-4b43-adf1-030af4943c3e/download/ghs_pop_e2025_r2023a_54009_100_v1_0_uzb.tif"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://stat.uz/en/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://stat.uz/en/official-statistics/demography",
+    "status": 200,
+    "kind": "html",
+    "title": "Demography",
+    "files": [
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_1190.csv",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_1190.json",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_1190.pdf",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_1190.xlsx",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_1191.csv",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_1191.json",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_1191.pdf",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_1191.xlsx",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_223.csv",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_223.json",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_223.pdf",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_223.xlsx",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_224.csv",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_224.json",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_224.pdf",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_224.xlsx",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_225.csv",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_225.json",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_225.pdf",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_225.xlsx",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_226.csv",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_226.json",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_226.pdf",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_226.xlsx",
+     "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_227.csv"
+    ],
+    "mentions": [
+     "census",
+     "language",
+     "languages"
+    ]
+   },
+   {
+    "url": "https://stat.uz/en/press-center/news-of-committee/68991-o-zbekiston-respublikasida-2026-yilda-o-tkazilgan-aholi-va-qishloq-xo-jaligini-ro-yxatga-olishning-dastlabki-natijalari-infografika-2",
+    "status": 200,
+    "kind": "html",
+    "title": "Preliminary results of the population and agricultural census conducted in the Republic of Uzbekistan in 2026 (infographic)",
+    "files": [],
+    "mentions": [
+     "census",
+     "language",
+     "languages"
+    ]
+   },
+   {
+    "url": "https://stat.uz/en/press-center/news-of-committee/68981-o-zbekiston-respublikasida-2026-yilda-o-tkazilgan-aholi-va-qishloq-xo-jaligini-ro-yxatga-olishning-dastlabki-natijalari-2",
+    "status": 200,
+    "kind": "html",
+    "title": "Preliminary results of population and agriculture census conducted in the Republic of Uzbekistan in 2026",
+    "files": [],
+    "mentions": [
+     "census",
+     "language",
+     "languages"
+    ]
+   },
+   {
+    "url": "https://stat.uz/en/publications/3640-demographic-yearbook-of-uzbekistan",
+    "status": 200,
+    "kind": "html",
+    "title": "Demographic Yearbook of Uzbekistan",
+    "files": [
+     "https://module.stat.uz/search/book_reg/vvedenie/2025/demografic_yearbook.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language",
+     "languages"
+    ]
+   }
+  ],
+  "title": "National Committee of the Republic of Uzbekistan on Statistics",
+  "matching_links": 4
+ },
+ "verdict": {
+  "hdx_datasets": 11,
+  "hdx_machine_readable": 6,
+  "nso_files_found": 26,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "1/2",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

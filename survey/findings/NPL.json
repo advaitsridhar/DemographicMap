@@ -1,0 +1,129 @@
+{
+  "iso3": "NPL",
+  "name": "Nepal",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "National Statistics Office (NSO; formerly Central Bureau of Statistics)",
+    "url": "https://nsonepal.gov.np/",
+    "alternate_url": "https://censusnepal.cbs.gov.np/",
+    "confidence": "recalled (both hosts are named in SOURCES.md, which recorded certificate faults on them)"
+  },
+  "latest_census": {
+    "year": 2021,
+    "asks": {
+      "religion": true,
+      "ethnicity": true,
+      "language": true
+    },
+    "published_subnationally": {
+      "religion": true,
+      "ethnicity": true,
+      "language": true
+    },
+    "confidence": "high (the repo has already built from it)",
+    "notes": "National Population and Housing Census 2021 (enumerated November 2021; National Report March 2023). Asks caste/ethnicity (142 groups), mother tongue (124 languages, plus second and ancestral language) and religion (10 categories), and publishes all three by province (7), district (77) and local level (753). SOURCES.md 'Nepal: three fields, one census, and a boundary file that does not fit' documents the build from the National Report PDF."
+  },
+  "already_in_map": "All three fields at 7/7 provinces and 66/75 admin2 from the 2021 census National Report. The 9 empty admin2 shapes are the boundary's fault, not the source's: geoBoundaries CGAZ draws 75 shapes for 77 districts, two names ('Bara', 'Saptari') appear twice, and Karnali's labels are shifted along by one; eleven districts were withheld by the Wikidata point check because their names sit on the wrong ground. The provinces 'Province 1' and 'Province 2' are CGAZ's old names for Koshi and Madhesh and are aliased.",
+  "subnational_sources": [
+    {
+      "fields": [
+        "religion",
+        "ethnicity",
+        "language"
+      ],
+      "title": "National Population and Housing Census 2021 -- National Report (annex tables of caste/ethnicity, mother tongue and religion by province and district)",
+      "url": null,
+      "publisher": "National Statistics Office, Nepal",
+      "kind": "census",
+      "format": "pdf (checked into data/raw/nepal/)",
+      "geography": "province and district",
+      "geography_count": 77,
+      "matches_boundary_level": "admin1 (7) and admin2 (75 of 77, with the boundary faults above)",
+      "year": 2021,
+      "confidence": "high",
+      "evidence": "Already read by scripts/fetch_census/nepal.py; national totals reconciled against summary tables 10, 11 and 14."
+    },
+    {
+      "fields": [
+        "religion",
+        "ethnicity",
+        "language"
+      ],
+      "title": "Census 2021 results portal -- downloadable tables 'Caste/Ethnicity', 'Mother Tongue', 'Religion' at province, district and local level",
+      "url": null,
+      "publisher": "National Statistics Office, Nepal",
+      "kind": "census",
+      "format": "xlsx/csv downloads (recalled: the portal at censusnepal.cbs.gov.np has a Results section with per-table Excel files and a local-level data browser)",
+      "geography": "province / district / local level (753 municipalities)",
+      "geography_count": 77,
+      "matches_boundary_level": "admin1 and admin2",
+      "year": 2021,
+      "confidence": "medium",
+      "evidence": "Recalled; SOURCES.md records that this host served a certificate not valid for its name, so it was not fetched. A runner with a normal network should retry it -- the same figures as the PDF with fewer parser risks."
+    },
+    {
+      "fields": [
+        "religion",
+        "ethnicity",
+        "language"
+      ],
+      "title": "NSO microdata catalogue (NADA) -- Census 2021 sample microdata",
+      "url": null,
+      "publisher": "National Statistics Office, Nepal",
+      "kind": "census (microdata sample)",
+      "format": "microdata, registration (host recalled as microdata.nsonepal.gov.np, which SOURCES.md found returning an empty body)",
+      "geography": "district",
+      "geography_count": 77,
+      "matches_boundary_level": "admin2",
+      "year": 2021,
+      "confidence": "medium",
+      "evidence": "Recalled."
+    },
+    {
+      "fields": [
+        "religion",
+        "ethnicity",
+        "language"
+      ],
+      "title": "National Population and Housing Census 2011 -- caste/ethnicity, mother tongue and religion by district (VDC/municipality volumes)",
+      "url": null,
+      "publisher": "Central Bureau of Statistics (then)",
+      "kind": "census",
+      "format": "pdf and xlsx (the 2011 district tables circulated as Excel)",
+      "geography": "district",
+      "geography_count": 75,
+      "matches_boundary_level": "admin2 (the 2011 geography is 75 districts, which is what CGAZ appears to draw)",
+      "year": 2011,
+      "confidence": "high that it exists; superseded by 2021",
+      "evidence": "Recalled; worth noting only because CGAZ's 75-shape layer is the pre-2015 district count, so a 2011 table would join it name-for-name -- but it is an older enumeration and the labels are still on the wrong ground in Karnali."
+    }
+  ],
+  "secondary_routes": {
+    "hdx": "OCHA COD administrative boundaries for Nepal (slug pattern cod-ab-npl, recalled) carry the 77 districts -- a candidate replacement for the CGAZ admin2 layer, which is the actual cause of the 9 gaps; the runner searches HDX itself.",
+    "ipums": "Nepal 2001 and 2011 samples in IPUMS-I (recalled); 2021 unknown.",
+    "us_census_bureau": "Not in the series as recorded in SOURCES.md.",
+    "other": null
+  },
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Nepal"
+      },
+      {
+        "title": "Demographics of Nepal"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "A",
+  "tier_reason": "Already built: a census count of all three fields at province and district. A machine-readable copy is recalled on the census portal, and what remains empty is a boundary-file defect rather than a source gap.",
+  "replaces_existing": false,
+  "recommended_action": "Retry censusnepal.cbs.gov.np with a working network for the xlsx tables (same enumeration; a second reading of the same numbers is a useful check on the PDF parse). Fix the 9 empty admin2 shapes on the boundary side -- swap CGAZ's Nepal admin2 for a 77-district layer (OCHA COD-AB or the Survey Department's) and re-run scripts/verify_shapes.py -- rather than hunting for another source. Nothing here supersedes the existing fill.",
+  "searches_run": [],
+  "not_found": [
+    "confirmation that the portal's Excel downloads cover religion and mother tongue at district level (caste/ethnicity is the one most often cited)",
+    "whether the 2021 census is in IPUMS-I"
+  ],
+  "summary": "Nepal is already the best case on the map: the 2021 census asked caste/ethnicity, mother tongue and religion and the NSO publishes all three by province and district, which the repo has read from the National Report PDF into 7 provinces and 66 districts. The nine empty admin2 shapes are geoBoundaries' fault (75 shapes for 77 districts, duplicated and shifted names), so the next step is a better district layer, not a better source. The census portal's Excel tables are the machine-readable copy to retry with a normal network."
+}

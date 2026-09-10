@@ -125,6 +125,25 @@ jobs:
           MESSAGE="Data: $ADAPTER"
           [ "$OUTCOME" = success ] || MESSAGE="Refused: $ADAPTER"
           git commit -m "$MESSAGE"
-          git push origin HEAD:${{ github.ref_name }}
+          # Several adapters run at once and all push to one branch, and a
+          # push that loses the race threw away a finished fetch: Kenya's 47
+          # counties were read, committed on the runner, and rejected because
+          # an unrelated commit had landed a minute earlier. Rebase onto
+          # whatever is there and try again; the data is the deliverable.
+          # Two runs that both end write data/processed/last-run.log, and
+          # a rebase of one onto the other conflicts on it every time -- the
+          # Brazil state run spent four retries failing to pull over an
+          # unresolved conflict in a log file. In a rebase "theirs" is the
+          # commit being replayed, so -X theirs keeps this run's log; the
+          # data files never conflict, each adapter writing its own.
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase -X theirs origin "${{ github.ref_name }}" \
+               && git push origin HEAD:${{ github.ref_name }}; then
+              break
+            fi
+            git rebase --abort 2>/dev/null || true
+            [ "$attempt" = 5 ] && exit 1
+            sleep $((attempt * 5))
+          done
           echo "Now run scripts/build_entities.py where the boundaries are." \
             >> "$GITHUB_STEP_SUMMARY"

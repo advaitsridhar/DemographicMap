@@ -1,0 +1,1164 @@
+[
+  {
+    "id": "MYS-Johor",
+    "level": "admin1",
+    "name": "Johor",
+    "parent": "MYS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4224300,
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Malay",
+        "pct": 54.4,
+        "count": 2297300
+      },
+      {
+        "group": "Chinese",
+        "pct": 28.7,
+        "count": 1212600
+      },
+      {
+        "group": "Non-Malaysian citizen",
+        "pct": 9.1,
+        "count": 383100
+      },
+      {
+        "group": "Indian",
+        "pct": 5.9,
+        "count": 248900
+      },
+      {
+        "group": "Other Bumiputera",
+        "pct": 1.5,
+        "count": 62300
+      },
+      {
+        "group": "Other (Malaysian citizen)",
+        "pct": 0.5,
+        "count": 20100
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
+        "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+        "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
+      }
+    ],
+    "country": "MYS",
+    "aliases": [],
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+  },
+  {
+    "id": "MYS-Kedah",
+    "level": "admin1",
+    "name": "Kedah",
+    "parent": "MYS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2237400,
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Malay",
+        "pct": 77.1,
+        "count": 1724100
+      },
+      {
+        "group": "Chinese",
+        "pct": 11.0,
+        "count": 245500
+      },
+      {
+        "group": "Indian",
+        "pct": 5.7,
+        "count": 128200
+      },
+      {
+        "group": "Non-Malaysian citizen",
+        "pct": 4.9,
+        "count": 108800
+      },
+      {
+        "group": "Other (Malaysian citizen)",
+        "pct": 1.2,
+        "count": 25900
+      },
+      {
+        "group": "Other Bumiputera",
+        "pct": 0.2,
+        "count": 5000
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
+        "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+        "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
+      }
+    ],
+    "country": "MYS",
+    "aliases": [],
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+  },
+  {
+    "id": "MYS-Kelantan",
+    "level": "admin1",
+    "name": "Kelantan",
+    "parent": "MYS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1925300,
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Malay",
+        "pct": 93.3,
+        "count": 1795900
+      },
+      {
+        "group": "Non-Malaysian citizen",
+        "pct": 2.4,
+        "count": 46400
+      },
+      {
+        "group": "Chinese",
+        "pct": 2.3,
+        "count": 43800
+      },
+      {
+        "group": "Other Bumiputera",
+        "pct": 1.2,
+        "count": 23400
+      },
+      {
+        "group": "Other (Malaysian citizen)",
+        "pct": 0.6,
+        "count": 11100
+      },
+      {
+        "group": "Indian",
+        "pct": 0.2,
+        "count": 4700
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
+        "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+        "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
+      }
+    ],
+    "country": "MYS",
+    "aliases": [],
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+  },
+  {
+    "id": "MYS-Melaka",
+    "level": "admin1",
+    "name": "Melaka",
+    "parent": "MYS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1057400,
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Malay",
+        "pct": 65.8,
+        "count": 696100
+      },
+      {
+        "group": "Chinese",
+        "pct": 19.1,
+        "count": 202000
+      },
+      {
+        "group": "Non-Malaysian citizen",
+        "pct": 8.6,
+        "count": 91400
+      },
+      {
+        "group": "Indian",
+        "pct": 5.0,
+        "count": 52500
+      },
+      {
+        "group": "Other Bumiputera",
+        "pct": 1.0,
+        "count": 10200
+      },
+      {
+        "group": "Other (Malaysian citizen)",
+        "pct": 0.5,
+        "count": 5300
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
+        "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+        "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
+      }
+    ],
+    "country": "MYS",
+    "aliases": [
+      "Malacca"
+    ],
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+  },
+  {
+    "id": "MYS-Negeri_Sembilan",
+    "level": "admin1",
+    "name": "Negeri Sembilan",
+    "parent": "MYS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1248500,
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Malay",
+        "pct": 59.2,
+        "count": 739400
+      },
+      {
+        "group": "Chinese",
+        "pct": 19.5,
+        "count": 243900
+      },
+      {
+        "group": "Indian",
+        "pct": 13.1,
+        "count": 163400
+      },
+      {
+        "group": "Non-Malaysian citizen",
+        "pct": 5.8,
+        "count": 72300
+      },
+      {
+        "group": "Other Bumiputera",
+        "pct": 1.9,
+        "count": 23400
+      },
+      {
+        "group": "Other (Malaysian citizen)",
+        "pct": 0.5,
+        "count": 6100
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
+        "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+        "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
+      }
+    ],
+    "country": "MYS",
+    "aliases": [],
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+  },
+  {
+    "id": "MYS-Pahang",
+    "level": "admin1",
+    "name": "Pahang",
+    "parent": "MYS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1686200,
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Malay",
+        "pct": 71.4,
+        "count": 1203300
+      },
+      {
+        "group": "Chinese",
+        "pct": 12.9,
+        "count": 217600
+      },
+      {
+        "group": "Non-Malaysian citizen",
+        "pct": 6.0,
+        "count": 101400
+      },
+      {
+        "group": "Other Bumiputera",
+        "pct": 5.8,
+        "count": 98200
+      },
+      {
+        "group": "Indian",
+        "pct": 3.3,
+        "count": 55900
+      },
+      {
+        "group": "Other (Malaysian citizen)",
+        "pct": 0.6,
+        "count": 9800
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
+        "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+        "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
+      }
+    ],
+    "country": "MYS",
+    "aliases": [],
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+  },
+  {
+    "id": "MYS-Perak",
+    "level": "admin1",
+    "name": "Perak",
+    "parent": "MYS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2577900,
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Malay",
+        "pct": 55.8,
+        "count": 1438800
+      },
+      {
+        "group": "Chinese",
+        "pct": 24.1,
+        "count": 622300
+      },
+      {
+        "group": "Indian",
+        "pct": 10.5,
+        "count": 269600
+      },
+      {
+        "group": "Non-Malaysian citizen",
+        "pct": 6.2,
+        "count": 158600
+      },
+      {
+        "group": "Other Bumiputera",
+        "pct": 3.0,
+        "count": 77600
+      },
+      {
+        "group": "Other (Malaysian citizen)",
+        "pct": 0.4,
+        "count": 11000
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
+        "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+        "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
+      }
+    ],
+    "country": "MYS",
+    "aliases": [],
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+  },
+  {
+    "id": "MYS-Perlis",
+    "level": "admin1",
+    "name": "Perlis",
+    "parent": "MYS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 297300,
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Malay",
+        "pct": 85.8,
+        "count": 255100
+      },
+      {
+        "group": "Chinese",
+        "pct": 6.7,
+        "count": 19800
+      },
+      {
+        "group": "Non-Malaysian citizen",
+        "pct": 3.4,
+        "count": 10100
+      },
+      {
+        "group": "Other (Malaysian citizen)",
+        "pct": 2.0,
+        "count": 5800
+      },
+      {
+        "group": "Indian",
+        "pct": 1.7,
+        "count": 5100
+      },
+      {
+        "group": "Other Bumiputera",
+        "pct": 0.5,
+        "count": 1500
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
+        "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+        "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
+      }
+    ],
+    "country": "MYS",
+    "aliases": [],
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+  },
+  {
+    "id": "MYS-Pulau_Pinang",
+    "level": "admin1",
+    "name": "Pulau Pinang",
+    "parent": "MYS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1808300,
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Malay",
+        "pct": 41.3,
+        "count": 747400
+      },
+      {
+        "group": "Chinese",
+        "pct": 39.1,
+        "count": 706300
+      },
+      {
+        "group": "Non-Malaysian citizen",
+        "pct": 10.1,
+        "count": 182300
+      },
+      {
+        "group": "Indian",
+        "pct": 8.6,
+        "count": 154700
+      },
+      {
+        "group": "Other (Malaysian citizen)",
+        "pct": 0.6,
+        "count": 10300
+      },
+      {
+        "group": "Other Bumiputera",
+        "pct": 0.4,
+        "count": 7400
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
+        "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+        "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
+      }
+    ],
+    "country": "MYS",
+    "aliases": [
+      "Penang"
+    ],
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+  },
+  {
+    "id": "MYS-Sabah",
+    "level": "admin1",
+    "name": "Sabah",
+    "parent": "MYS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3767000,
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Other Bumiputera",
+        "pct": 56.0,
+        "count": 2108600
+      },
+      {
+        "group": "Non-Malaysian citizen",
+        "pct": 27.3,
+        "count": 1030000
+      },
+      {
+        "group": "Malay",
+        "pct": 8.9,
+        "count": 335200
+      },
+      {
+        "group": "Chinese",
+        "pct": 6.4,
+        "count": 240300
+      },
+      {
+        "group": "Other (Malaysian citizen)",
+        "pct": 1.2,
+        "count": 47000
+      },
+      {
+        "group": "Indian",
+        "pct": 0.2,
+        "count": 5900
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
+        "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+        "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
+      }
+    ],
+    "country": "MYS",
+    "aliases": [],
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+  },
+  {
+    "id": "MYS-Sarawak",
+    "level": "admin1",
+    "name": "Sarawak",
+    "parent": "MYS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2539800,
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Other Bumiputera",
+        "pct": 48.5,
+        "count": 1231900
+      },
+      {
+        "group": "Malay",
+        "pct": 24.1,
+        "count": 613200
+      },
+      {
+        "group": "Chinese",
+        "pct": 21.9,
+        "count": 557000
+      },
+      {
+        "group": "Non-Malaysian citizen",
+        "pct": 5.0,
+        "count": 125900
+      },
+      {
+        "group": "Other (Malaysian citizen)",
+        "pct": 0.3,
+        "count": 6700
+      },
+      {
+        "group": "Indian",
+        "pct": 0.2,
+        "count": 5100
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
+        "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+        "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
+      }
+    ],
+    "country": "MYS",
+    "aliases": [],
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+  },
+  {
+    "id": "MYS-Selangor",
+    "level": "admin1",
+    "name": "Selangor",
+    "parent": "MYS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7454200,
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Malay",
+        "pct": 54.7,
+        "count": 4080200
+      },
+      {
+        "group": "Chinese",
+        "pct": 23.6,
+        "count": 1757100
+      },
+      {
+        "group": "Non-Malaysian citizen",
+        "pct": 9.9,
+        "count": 737500
+      },
+      {
+        "group": "Indian",
+        "pct": 9.8,
+        "count": 731500
+      },
+      {
+        "group": "Other Bumiputera",
+        "pct": 1.2,
+        "count": 88000
+      },
+      {
+        "group": "Other (Malaysian citizen)",
+        "pct": 0.8,
+        "count": 59800
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
+        "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+        "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
+      }
+    ],
+    "country": "MYS",
+    "aliases": [],
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+  },
+  {
+    "id": "MYS-Terengganu",
+    "level": "admin1",
+    "name": "Terengganu",
+    "parent": "MYS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1260900,
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Malay",
+        "pct": 94.5,
+        "count": 1191600
+      },
+      {
+        "group": "Non-Malaysian citizen",
+        "pct": 3.1,
+        "count": 39000
+      },
+      {
+        "group": "Chinese",
+        "pct": 1.8,
+        "count": 22500
+      },
+      {
+        "group": "Other Bumiputera",
+        "pct": 0.3,
+        "count": 3400
+      },
+      {
+        "group": "Indian",
+        "pct": 0.2,
+        "count": 2000
+      },
+      {
+        "group": "Other (Malaysian citizen)",
+        "pct": 0.2,
+        "count": 2400
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
+        "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+        "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
+      }
+    ],
+    "country": "MYS",
+    "aliases": [],
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+  },
+  {
+    "id": "MYS-W_P_Kuala_Lumpur",
+    "level": "admin1",
+    "name": "W.P. Kuala Lumpur",
+    "parent": "MYS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2082300,
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Malay",
+        "pct": 41.7,
+        "count": 869100
+      },
+      {
+        "group": "Chinese",
+        "pct": 35.0,
+        "count": 728200
+      },
+      {
+        "group": "Non-Malaysian citizen",
+        "pct": 13.1,
+        "count": 272800
+      },
+      {
+        "group": "Indian",
+        "pct": 8.5,
+        "count": 176800
+      },
+      {
+        "group": "Other Bumiputera",
+        "pct": 1.0,
+        "count": 21300
+      },
+      {
+        "group": "Other (Malaysian citizen)",
+        "pct": 0.7,
+        "count": 14000
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
+        "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+        "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
+      }
+    ],
+    "country": "MYS",
+    "aliases": [
+      "Kuala Lumpur"
+    ],
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+  },
+  {
+    "id": "MYS-W_P_Labuan",
+    "level": "admin1",
+    "name": "W.P. Labuan",
+    "parent": "MYS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 101100,
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Other Bumiputera",
+        "pct": 51.7,
+        "count": 52300
+      },
+      {
+        "group": "Malay",
+        "pct": 25.5,
+        "count": 25800
+      },
+      {
+        "group": "Non-Malaysian citizen",
+        "pct": 10.9,
+        "count": 11000
+      },
+      {
+        "group": "Chinese",
+        "pct": 9.5,
+        "count": 9600
+      },
+      {
+        "group": "Other (Malaysian citizen)",
+        "pct": 1.5,
+        "count": 1500
+      },
+      {
+        "group": "Indian",
+        "pct": 0.9,
+        "count": 900
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
+        "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+        "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
+      }
+    ],
+    "country": "MYS",
+    "aliases": [
+      "Labuan"
+    ],
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+  },
+  {
+    "id": "MYS-W_P_Putrajaya",
+    "level": "admin1",
+    "name": "W.P. Putrajaya",
+    "parent": "MYS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 121400,
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Malay",
+        "pct": 93.6,
+        "count": 113600
+      },
+      {
+        "group": "Non-Malaysian citizen",
+        "pct": 2.6,
+        "count": 3100
+      },
+      {
+        "group": "Other Bumiputera",
+        "pct": 1.9,
+        "count": 2300
+      },
+      {
+        "group": "Indian",
+        "pct": 1.2,
+        "count": 1400
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.5,
+        "count": 600
+      },
+      {
+        "group": "Other (Malaysian citizen)",
+        "pct": 0.2,
+        "count": 300
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
+        "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+        "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
+      }
+    ],
+    "country": "MYS",
+    "aliases": [
+      "Putrajaya"
+    ],
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+  }
+]

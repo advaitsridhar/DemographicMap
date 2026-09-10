@@ -1,0 +1,110 @@
+{
+ "iso3": "NLD",
+ "name": "Netherlands",
+ "mode": "knowledge-only",
+ "researched_at": "2026-09-10",
+ "nso": {
+  "name": "Centraal Bureau voor de Statistiek (CBS); open data via StatLine",
+  "url": "https://www.cbs.nl/",
+  "confidence": "recalled",
+  "also": "https://opendata.cbs.nl/ (StatLine OData API; recalled)"
+ },
+ "latest_census": {
+  "year": 2021,
+  "asks": {
+   "religion": false,
+   "ethnicity": false,
+   "language": false
+  },
+  "confidence": "recalled",
+  "notes": "The Netherlands has held no questionnaire census since 1971; the 2001, 2011 and 2021 'virtual censuses' are compiled from registers and surveys for the Eurostat rounds and carry no religion, ethnicity or language item. The population register records country of birth of the person and parents ('herkomst' / migration background), which the packet already declares is not ethnicity. The 1971 census was the last to ask religious denomination (kerkelijke gezindte), and it published that by municipality. High confidence."
+ },
+ "subnational_sources": [
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "CBS StatLine - religious affiliation by region (survey-based; a table in the 'Religieuze betrokkenheid' / 'Kerkelijke gezindte en kerkbezoek' family with a regio dimension: provincie, COROP, and for pooled years gemeente)",
+   "url": null,
+   "publisher": "CBS",
+   "kind": "survey",
+   "format": "OData API / CSV (StatLine)",
+   "geography": "provincie (12); COROP (40); gemeente for pooled multi-year estimates",
+   "geography_count": 12,
+   "matches_boundary_level": "admin1 (12 provincies) exactly; admin2 (344 gemeenten) only via the pooled-year municipal publication",
+   "year": null,
+   "confidence": "medium (recalled)",
+   "evidence": "CBS derives religion from household surveys (Sociale samenhang en welzijn; earlier the EBB) and has published regional breakdowns, including a 'Kerkelijkheid en kerkbezoek per gemeente' analysis on pooled 2010-2015 data. Exact StatLine table identifier not recalled - do not guess it; search StatLine's catalogue for 'religie' / 'kerkelijke gezindte' with a regio dimension."
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "CBS StatLine - Bevolking naar herkomst (migration background / origin) per gemeente - a register count, NOT ethnicity; listed only for the owner's judgment",
+   "url": null,
+   "publisher": "CBS",
+   "kind": "register",
+   "format": "OData API / CSV (StatLine)",
+   "geography": "gemeente",
+   "geography_count": 342,
+   "matches_boundary_level": "admin2 near (342 municipalities in 2023-24 vs 344 shapes: the boundary file is a year or two older)",
+   "year": 2024,
+   "confidence": "high (recalled that the series exists)",
+   "evidence": "Standard annual register table (herkomstland of person and parents). The packet's not_collected declaration for ethnicity should stand; this is a different concept."
+  },
+  {
+   "fields": [
+    "language"
+   ],
+   "title": "Provincie Fryslân - 'De Fryske taalatlas' (Frisian language survey by municipality)",
+   "url": null,
+   "publisher": "Provincie Fryslân",
+   "kind": "survey",
+   "format": "pdf",
+   "geography": "gemeenten of Fryslân only",
+   "geography_count": null,
+   "matches_boundary_level": "admin2 (a subset of ~18 municipalities)",
+   "year": null,
+   "confidence": "medium (recalled)",
+   "evidence": "Periodic provincial survey of Frisian speaking/reading/writing ability; covers one province only and is not a count."
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "Volkstelling 1971 - kerkelijke gezindte per gemeente (historical, via CBS / DANS volkstellingen archive)",
+   "url": null,
+   "publisher": "CBS / DANS",
+   "kind": "census",
+   "format": "pdf / scanned tables",
+   "geography": "gemeente (1971 boundaries, ~850)",
+   "geography_count": null,
+   "matches_boundary_level": "neither (1971 municipalities do not map to today's 344)",
+   "year": 1971,
+   "confidence": "medium (recalled)",
+   "evidence": "The last census count of religion; half a century old and on obsolete boundaries, so of historical interest only."
+  }
+ ],
+ "wikipedia": {
+  "country_list_articles": [
+   {
+    "title": "Religion in Netherlands"
+   },
+   {
+    "title": "Demographics of Netherlands"
+   }
+  ],
+  "admin2_samples": []
+ },
+ "tier": "B",
+ "tier_reason": "No count of any field exists or can exist (register-based census, no religion/ethnicity/language items). The best available is a CBS survey estimate of religious affiliation by province (12 = admin1) via StatLine's OData API, and pooled-year municipal estimates; ethnicity is already declared not_collected; language has no national source.",
+ "replaces_existing": false,
+ "recommended_action": "Search the StatLine catalogue (opendata.cbs.nl) for a religion table with a regio dimension and read it through the OData API for the 12 provinces, marking it as a survey; check whether the pooled municipal religion figures are in StatLine or only in a CBS article. Keep the ethnicity not_collected declaration (migration background is a different concept). Declare language not_collected with the reason 'no census or register item; Frisian is surveyed by the province of Fryslân only'.",
+ "searches_run": [],
+ "not_found": [
+  "the exact StatLine table id for religion by region (not recalled; must be searched in the catalogue)",
+  "any national language source at subnational level",
+  "a current-boundary count of religion (none exists)"
+ ],
+ "summary": "The Netherlands has no questionnaire census (register-based since 1971) and its register holds no religion, ethnicity or language, so no count is possible; CBS (cbs.nl, StatLine at opendata.cbs.nl) publishes survey-based religious affiliation by province (12 = admin1) and, for pooled years, by municipality, readable through the OData API. Ethnicity stays not_collected (migration background is not ethnicity) and language should be declared not_collected with only the Frisian provincial survey as a partial exception. Tier B."
+}

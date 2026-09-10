@@ -1,0 +1,121 @@
+{
+  "iso3": "VEN",
+  "name": "Venezuela",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Instituto Nacional de Estadística (INE)",
+    "url": "http://www.ine.gov.ve/",
+    "confidence": "recalled",
+    "note": "The host is frequently offline; a .gob.ve variant may also exist."
+  },
+  "latest_census": {
+    "year": 2011,
+    "asks": {
+      "religion": false,
+      "ethnicity": true,
+      "language": null
+    },
+    "published_subnationally": {
+      "religion": null,
+      "ethnicity": true,
+      "language": null
+    },
+    "confidence": "recalled",
+    "notes": "XIV Censo Nacional de Población y Vivienda, Sept 2011 - early 2012. Ethnicity: asked of everyone as self-recognition ('¿Según sus rasgos físicos, ascendencia familiar, cultura y tradiciones se considera: Negra/Negro, Afrodescendiente, Morena/Moreno, Blanca/Blanco, Otra?') plus membership of an indigenous people ('pueblo indígena') for the indigenous count; this is why the Factbook's national ethnicity row is free text -- the census categories are not a conventional ethnic partition but they are a count. Religion: recalled as NOT on the 2011 questionnaire (sex, age, ethnic self-recognition, indigenous people and language, birthplace, nationality, migration, disability, education, marital status, economic activity, fertility) -- nor on 2001 or 1990; the packet's national religion row is a survey estimate. Verify against the 2011 'Cuestionario' on ine.gov.ve before declaring not_collected. Language: only an indigenous-language item asked of persons identifying as indigenous; no general mother-tongue question, so no whole-population language composition -- recorded as null rather than false because the item exists for a subpopulation. A new census has been announced several times since 2021; I do not know one to have been enumerated."
+  },
+  "already_in_map": "Nothing subnational (status 'nothing').",
+  "subnational_sources": [
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "Censo 2011 -- Resultados por entidad federal y municipio (one publication per state): 'Población por autorreconocimiento étnico' and indigenous population, by municipio",
+      "url": null,
+      "publisher": "INE Venezuela",
+      "kind": "census",
+      "format": "pdf/xls tables",
+      "geography": "entidad federal and municipio",
+      "geography_count": 335,
+      "matches_boundary_level": "admin1 (23 estados + Distrito Capital + Dependencias Federales = 25) and admin2 (335 municipios) -- both exact",
+      "year": 2011,
+      "confidence": "medium-low for the municipio breakdown; medium for the state breakdown",
+      "evidence": "Recalled: INE issued state-by-state 'Resultados Básicos' after 2011 with the self-recognition variable; the municipio-level table is recalled, not verified."
+    },
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "Censo 2011 -- Población indígena de Venezuela: resultados por entidad federal, municipio y pueblo indígena (empadronamiento de comunidades indígenas)",
+      "url": null,
+      "publisher": "INE Venezuela",
+      "kind": "census",
+      "format": "pdf (some xls)",
+      "geography": "entidad federal and municipio",
+      "geography_count": 25,
+      "matches_boundary_level": "admin1, admin2",
+      "year": 2011,
+      "confidence": "medium",
+      "evidence": "Recalled 2013 report series; indigenous-vs-non-indigenous is a partition of the whole population and the pueblo breakdown is a composition of the indigenous part."
+    },
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "REDATAM online -- Censo 2011 (INE table-builder)",
+      "url": null,
+      "publisher": "INE Venezuela",
+      "kind": "census",
+      "format": "table-builder (REDATAM web; no API)",
+      "geography": "entidad federal / municipio / parroquia",
+      "geography_count": 335,
+      "matches_boundary_level": "admin1, admin2",
+      "year": 2011,
+      "confidence": "medium that it exists; low that it is online on any given day",
+      "evidence": "Recalled."
+    },
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "IPUMS-International: Venezuela 1971, 1981, 1990, 2001 census samples",
+      "url": null,
+      "publisher": "IPUMS",
+      "kind": "census (microdata sample)",
+      "format": "microdata, registration required",
+      "geography": "estado and municipio",
+      "geography_count": null,
+      "matches_boundary_level": "admin1; admin2 partial",
+      "year": 2001,
+      "confidence": "medium (2011 recalled as not in IPUMS)",
+      "evidence": "Recalled; 2001 has the indigenous-people item only, no afrodescendant item (introduced 2011)."
+    }
+  ],
+  "secondary_routes": {
+    "hdx": "Not recorded in the repo's USCB enumeration; the runner searches HDX itself.",
+    "ipums": "1971-2001 only.",
+    "other": "CEPAL/CELADE's REDATAM mirrors (redatam.org) have hosted Venezuelan census databases when INE's own host was down -- worth a look if ine.gov.ve fails."
+  },
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Venezuela"
+      },
+      {
+        "title": "Demographics of Venezuela"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "A 2011 census count of ethnic self-recognition (and indigenous people) exists by state and municipio, at geographies matching admin1 (25) and admin2 (335) exactly, but only as PDF/XLS volumes and a REDATAM instance on a host that is often unreachable. Religion is believed not asked (C once verified); language is asked only of the indigenous.",
+  "replaces_existing": false,
+  "recommended_action": "Crawl ine.gov.ve (and CELADE's REDATAM mirrors if it is down) for the Censo 2011 state results volumes and the indigenous-population reports; read 'autorreconocimiento' by entidad federal to admin1 and by municipio to admin2, and carry the indigenous share alongside. Read the 2011 questionnaire to confirm there is no religion item, then declare religion not_collected with that evidence.",
+  "searches_run": [],
+  "not_found": [
+    "confirmation that municipio-level self-recognition tables were published (state level is more certain)",
+    "any post-2011 census",
+    "a machine-readable (csv/api) INE publication"
+  ],
+  "summary": "Venezuela's last census (2011) asked ethnic self-recognition (negro/afrodescendiente/moreno/blanco/otro) and indigenous-people membership but, as far as I can recall, not religion, and language only of the indigenous. INE published the self-recognition and indigenous counts by state and municipio in PDF/XLS volumes and through REDATAM, and the boundary's 25 admin1 and 335 admin2 match the states and municipios exactly. The map holds nothing for Venezuela, so this fills ethnicity at both levels at PDF cost, on a host that is often offline; religion should become a not_collected declaration once the questionnaire confirms it."
+}

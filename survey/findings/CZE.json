@@ -1,0 +1,73 @@
+{
+  "iso3": "CZE",
+  "name": "Czechia",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Cesky statisticky urad (Czech Statistical Office, CZSO)", "url": "https://www.czso.cz/", "confidence": "recalled"},
+  "latest_census": {
+    "year": 2021,
+    "asks": {"religion": true, "ethnicity": true, "language": true},
+    "confidence": "recalled",
+    "notes": "Scitani lidu, domu a bytu 2021 (SLDB 2021), reference date 26 March 2021; previous 2011 and 2001. All three fields are on the questionnaire: narodnost (nationality in the ethnic sense; voluntary; up to two answers allowed, so tables distinguish single from dual declarations), materský jazyk (mother tongue; up to two answers), and nabozenska vira (religious belief: believer belonging to a church, believer not belonging, non-believer; voluntary). Because narodnost and religion are voluntary, non-response is large -- roughly a third left narodnost blank in 2021 (the packet's 31.6% 'unspecified') and about the same for religion -- and the composition must keep 'neuvedeno' (not stated) as a visible category. All three are published for the whole territorial hierarchy: kraje (14), okresy (77 = 76 districts + Hlavni mesto Praha), SO ORP (206) and obce (~6,250). The repo's EU note (docs/SOURCES.md 'Collecting vs. not, in the EU') already records that Czechia collects ethnicity and religion and that Eurostat does not redistribute them subnationally."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["ethnicity", "language", "religion"],
+      "title": "SLDB 2021 -- otevrena data (open data): datasets 'Obyvatelstvo podle narodnosti', 'Obyvatelstvo podle materskeho jazyka', 'Obyvatelstvo podle nabozenske viry' by territorial unit (stat, kraj, okres, SO ORP, obec)",
+      "url": null,
+      "publisher": "CZSO (census results portal scitani.gov.cz / czso.cz)",
+      "kind": "census",
+      "format": "csv",
+      "geography": "okres",
+      "geography_count": 77,
+      "matches_boundary_level": "admin2 (77 = 77) and admin1 (kraj, 14 = 14)",
+      "year": 2021,
+      "confidence": "high",
+      "evidence": "Recalled with confidence: CZSO published the SLDB 2021 results as open data CSV files with accompanying code lists (ciselniky) covering every territorial level, including the three voluntary items, under the census results section 'Otevrena data'. The boundary file's admin1 names ('Jihomoravsky kraj', 'Plzensky kraj') are the official kraj names; admin2 names are English/unaccented ('Prague-West' = Praha-zapad, 'Rakovnik', 'Zdar nad Sazavou'), so join on the okres code (LAU1, CZ0xxx) or CZSO's territorial code rather than on name."
+    },
+    {
+      "fields": ["ethnicity", "language", "religion"],
+      "title": "CZSO Verejna databaze (VDB, public database) -- SLDB 2021 tables by kraj / okres / ORP / obec with XLSX/CSV export",
+      "url": "https://vdb.czso.cz/",
+      "publisher": "CZSO",
+      "kind": "census",
+      "format": "table-builder (xlsx/csv export)",
+      "geography": "okres",
+      "geography_count": 77,
+      "matches_boundary_level": "admin2 and admin1",
+      "year": 2021,
+      "confidence": "high",
+      "evidence": "Recalled: the VDB carries the SLDB 2021 (and 2011) result tables with territorial selection and export; a second route to the same counts if the flat CSVs are hard to locate."
+    },
+    {
+      "fields": ["ethnicity", "language", "religion"],
+      "title": "SLDB 2011 -- results by okres (narodnost, materský jazyk, nabozenska vira)",
+      "url": null,
+      "publisher": "CZSO",
+      "kind": "census",
+      "format": "xlsx / table-builder",
+      "geography": "okres",
+      "geography_count": 77,
+      "matches_boundary_level": "admin2 and admin1",
+      "year": 2011,
+      "confidence": "high",
+      "evidence": "Recalled: same three items, same geography; useful only as a cross-check or if a 2021 file is missing."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in the Czech Republic"},
+      {"title": "Demographics of the Czech Republic"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "A",
+  "tier_reason": "Census counts of narodnost, mother tongue and religious belief from SLDB 2021, published by CZSO as open CSV (and via the VDB) for kraje (14 = admin1) and okresy (77 = admin2), both exact matches.",
+  "replaces_existing": false,
+  "recommended_action": "Crawl czso.cz / scitani.gov.cz for the SLDB 2021 open-data CSVs and code lists; take the okres-level rows for admin2 and kraj-level rows for admin1 (or aggregate). Join on territorial codes, since the boundary file's admin2 names are anglicised. For narodnost, choose and record a basis (single declarations vs. first of two; CZSO tabulates both) and keep 'neuvedeno' as a group; do the same for religion, where 'believer not belonging to a church' is its own category. Mother tongue also allows two answers.",
+  "searches_run": [],
+  "not_found": [
+    "Not established from memory: the exact file names/URLs of the SLDB 2021 open-data CSVs (the section exists; the slugs are not recalled)"
+  ],
+  "summary": "Czechia is Tier A. The CZSO (czso.cz) 2021 census asked narodnost, mother tongue and religious belief, all voluntary, and publishes them as open CSV and through the VDB public database for kraje (14, matching admin1 exactly) and okresy (77, matching admin2 exactly), down to municipality. Non-response is large on the voluntary items (about a third for narodnost and religion) and must stay visible as 'not stated', and both narodnost and mother tongue allow two answers, so the composition basis has to be chosen and recorded. Join on territorial codes because the boundary file anglicises district names ('Prague-West')."
+}

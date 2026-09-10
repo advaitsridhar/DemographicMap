@@ -80,13 +80,19 @@ ADAPTER_FILES = [
     "bangladesh_district.json",
     "south_africa_province.json",
     "philippines_province.json", "ethiopia_region.json",
+    # After Afrobarometer, which is first: Kenya's counties carried the survey
+    # and now carry the 2019 census, and merge_adapter lets the count win the
+    # religion field while the survey keeps any field the census did not ask.
+    "kenya_county.json",
+    "malaysia_state.json", "malaysia_district.json",
+    "poland_voivodeship.json", "poland_powiat.json",
     "myanmar_state.json", "ukraine_oblast.json", "car_prefecture.json",
     "mali_region.json", "drc_province.json", "russia_subject.json",
     "colombia_department.json", "jamaica_parish.json",
     "bahamas_island.json",
     "brazil_state.json", "brazil_municipality.json",
     "germany_land.json", "germany_regierungsbezirk.json",
-    "canada_province.json", "canada_census_division.json",
+    "canada_province.json", "canada_economic_region.json",
     "australia_state.json", "australia_lga.json",
     "uk_lad.json", "uk_county.json",
     # Scotland's councils and Northern Ireland's districts are shapes the ONS
@@ -109,13 +115,18 @@ ADAPTER_HINTS: dict[str, str] = {
            "group, TS030 religion): python -m scripts.fetch_census.uk_nomis; "
            "Scotland and Northern Ireland have adapters of their own, "
            "scotland_census and northern_ireland",
+    "POL": "GUS NSP 2021 final tables (religion, national-ethnic identification, "
+           "home language) by voivodeship and powiat: "
+           "python -m scripts.fetch_census.poland",
+    "MYS": "DOSM population estimates by ethnicity, OpenDOSM CSV by state and "
+           "district: python -m scripts.fetch_census.malaysia --level both",
     "IRL": "CSO Census 2022 via PxStat (SAPMAP religion and ethnicity by local "
            "electoral area): python -m scripts.fetch_census.ireland",
     "DEU": "Zensus 2022 religion by Land, three categories from the church-tax "
            "register (needs a free ergebnisse.zensus2022.de account): "
            "python -m scripts.fetch_census.germany",
     "CAN": "Statistics Canada 2021 Census Profile (religion, visible minority, language): "
-           "python -m scripts.fetch_census.statcan --level census_division",
+           "python -m scripts.fetch_census.statcan",
     "BRA": "IBGE SIDRA 2022 census (population, cor ou raça, religion): "
            "python -m scripts.fetch_census.ibge_sidra --level municipality",
     "AUS": "ABS 2021 Census (religion, ancestry): "

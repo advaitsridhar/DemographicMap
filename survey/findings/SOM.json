@@ -1,0 +1,52 @@
+{
+  "iso3": "SOM",
+  "name": "Somalia",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Somali National Bureau of Statistics (SNBS)",
+    "url": "https://nbs.gov.so/",
+    "confidence": "recalled",
+    "note": "Somaliland (Awdal, Woqooyi Galbeed ... in the packet) has its own Central Statistics Department, recalled as https://somalilandcsd.org/ ; Puntland has a statistics department too. Neither publishes a census."
+  },
+  "latest_census": {
+    "year": 1975,
+    "asks": {"religion": null, "ethnicity": null, "language": null},
+    "confidence": "recalled",
+    "notes": "Somalia's last completed census was 1975; a 1986/87 census was enumerated but its results were never fully published. There has been no census since. Population figures used today come from the UNFPA Population Estimation Survey 2014 (PESS) and the Somali Health and Demographic Survey 2020 (SHDS), neither of which tabulates religion, clan/ethnicity or language -- religion because the country is effectively entirely Muslim, clan because it is politically sensitive. A first census in decades has been in preparation with UNFPA (pilot enumeration around 2024); I do not know that a full enumeration has taken place. What the 1975 questionnaire asked is not known to me."
+  },
+  "subnational_sources": [
+    {
+      "fields": [],
+      "title": "Somalia Subnational Population and Housing Data Tables with Administrative Boundaries (USCB via HDX) -- humanitarian profile only, no religion/ethnicity/language sheet; already closed",
+      "url": null,
+      "publisher": "U.S. Census Bureau via HDX",
+      "kind": "other",
+      "format": "xlsx",
+      "geography": "region",
+      "geography_count": 18,
+      "matches_boundary_level": "admin1",
+      "year": null,
+      "confidence": "high",
+      "evidence": "docs/SOURCES.md, 'The rest of the Bureau's series': Somalia's workbook is population, health, poverty and displacement with no composition sheet. Listed so it is not re-researched."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Somalia"},
+      {"title": "Demographics of Somalia"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "D",
+  "tier_reason": "No census since 1975 and no survey that tabulates religion, clan or language subnationally; the USCB workbook is already measured closed. This is an absence of a count, not a census that declines to ask, so not_collected would overstate what is known.",
+  "replaces_existing": false,
+  "recommended_action": "Nothing to build. Record the gap as 'no census since 1975; no subnational count of any field exists' rather than not_collected. Crawl nbs.gov.so once to see whether the planned UNFPA-supported census has been enumerated and what it asked; if a census ever publishes by region (18 = admin1) it will be the first source. Do not build regional religion shares from Wikipedia or from clan maps -- those are estimates or narrative.",
+  "searches_run": [],
+  "not_found": [
+    "Any post-1975 census of Somalia",
+    "Any survey (PESS 2014, SHDS 2020) table of religion, clan or language by region",
+    "The status of the planned first census"
+  ],
+  "summary": "Somalia has had no census since 1975 (the 1986/87 count was never fully published), the humanitarian surveys that stand in for one (PESS 2014, SHDS 2020) do not tabulate religion, clan or language, and the repo has already found the USCB/HDX workbook carries no composition sheet. Tier D: nothing to fetch; the only action is to note on nbs.gov.so whether the long-planned census has happened."
+}

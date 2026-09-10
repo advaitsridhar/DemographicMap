@@ -1,0 +1,864 @@
+{
+ "iso3": "MLI",
+ "name": "Mali",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "language"
+   ],
+   "title": "Mali Subnational Population and Housing Data Tables with Administrative Boundaries (USCB via HDX) -- Tableau S-3 language, regions only (already built)",
+   "kind": "census",
+   "format": "xlsx",
+   "geography": "region",
+   "geography_count": 9,
+   "matches_boundary_level": "admin1 (9/9 filled); the 50 cercles are listed but blank",
+   "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+   "status": 202,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+   "error": null
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity",
+    "language"
+   ],
+   "title": "RGPH 2009 -- Résultats définitifs / analytical volumes (Tome 'État et structure de la population' and socio-cultural characteristics) by region and cercle",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "region and cercle",
+   "geography_count": 50,
+   "matches_boundary_level": "admin1 (9) and admin2 (50 cercles: Bougouni, Goundam, Niafunké, Yélimané ... as drawn)",
+   "url": "https://www.instat-mali.org/",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://www.instat-mali.org/fr",
+   "error": null,
+   "body": {
+    "bytes_read": 231956,
+    "kind": "html",
+    "title": "Institut National de la Statistique du Mali | INSTAT",
+    "links_to_files": [
+     "/laravel-filemanager/files/shares/eq/rana25pas2_eq.pdf",
+     "/laravel-filemanager/files/shares/eq/tab-emop25pas3_eq.xlsx",
+     "/laravel-filemanager/files/shares/pub/calend-pub-instat-2026_pub.pdf",
+     "/laravel-filemanager/files/shares/pub/ihpc0826_pub.pdf",
+     "/laravel-filemanager/files/shares/pub/imc0726_pub.pdf",
+     "/laravel-filemanager/files/shares/pub/pibmali1t26_pub.pdf",
+     "https://www.instat-mali.org/laravel-filemanager/files/shares/doc/conditions-utilisation-donnees-ouvertes_doc.pdf",
+     "https://www.instat-mali.org/storage/345/ranuel25_eq.pdf",
+     "https://www.instat-mali.org/storage/353/khideux53_pub.pdf",
+     "https://www.instat-mali.org/storage/354/cmex-ctci1t26_pub.pdf"
+    ],
+    "mentions": []
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Mali",
+    "wikitext_bytes": 26999,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 3,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\" |Religion",
+       "colspan=\"2\" |1960 Survey",
+       "colspan=\"2\" |2009 Census",
+       "colspan=\"2\" |2022 Census",
+       "Population",
+       "%",
+       "Population",
+       "%",
+       "Population",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "{{Small|Region}}",
+       "{{Small|Muslim}}",
+       "{{Small|Christian}}",
+       "{{Small|Traditional}}",
+       "{{Small|No religion}}",
+       "{{Small|Other}}",
+       "<small>Bamako</small>",
+       "<small>Bandiagara</small>",
+       "<small>Bougouni</small>",
+       "<small>Dioïla</small>"
+      ],
+      "place_column": true,
+      "composition_columns": 2,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "{{Small|Ethnicity}}",
+       "{{Small|Muslim}}",
+       "{{Small|Christian}}",
+       "{{Small|Traditional}}",
+       "{{Small|No religion}}",
+       "{{Small|Unknown}}",
+       "{{Small|Bambara}}",
+       "{{Small|Fula}}",
+       "{{Small|Dogon}}",
+       "{{Small|Soninké}}"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 18
+     }
+    ],
+    "place_by_composition_tables": 1
+   },
+   {
+    "title": "Demographics of Mali",
+    "wikitext_bytes": 40216,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 9,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "! width=\"80\" |Total population",
+       "width=\"80\" |Population aged 0–14 (%)",
+       "width=\"80\" |Population aged 15–64 (%)",
+       "width=\"80\" |Population aged 65+ (%)",
+       "width=\"80\" |Age group",
+       "width=\"80\" |Male",
+       "width=\"80\" |Female",
+       "width=\"80\" |Total",
+       "width=\"80\" |%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "width=\"80\" |Age group",
+       "width=\"80\" |Male",
+       "width=\"80\" |Female",
+       "width=\"80\" |Total",
+       "width=\"80\" |%",
+       "width=\"50\"|Age group",
+       "width=\"80\" |Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\" |Mid-year population",
+       "style=\"width:80pt;\" |Live births",
+       "style=\"width:80pt;\" |Deaths",
+       "style=\"width:80pt;\" |Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)",
+       "style=\"width:80pt;\"|Total fertility rate (TFR)",
+       "style=\"width:80pt;\"|Infant mortality (per 1000 live births)",
+       "style=\"width:80pt;\"|Life expectancy (in years)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 31
+     },
+     {
+      "header": [
+       "style=\"width:70pt;\"| Year",
+       "style=\"width:50pt;\"| CBR (Total)",
+       "style=\"width:50pt;\"| TFR (Total)",
+       "style=\"width:50pt;\"| CBR (Urban)",
+       "style=\"width:50pt;\"| TFR (Urban)",
+       "style=\"width:50pt;\"| CBR (Rural)",
+       "style=\"width:50pt;\"| TFR (Rural)",
+       "style=\"width:100pt;\"| Region",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15-49 currently pregnant"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Region",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15-49 currently pregnant",
+       "style=\"width:100pt;\"| Mean number of children ever born to women age 40–49"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |Ethnic Group",
+       "colspan=\"2\" |2022 Census",
+       "Population",
+       "%",
+       "Bambara",
+       "Fulani",
+       "Senufo",
+       "Malinké",
+       "Soninke",
+       "Dogon"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |Religion",
+       "colspan=\"2\" |2009 Census",
+       "colspan=\"2\" |2022 Census",
+       "Population",
+       "%",
+       "Population",
+       "%",
+       "Islam",
+       "Christianity",
+       "<small>Catholicism</small>"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in <br /> Years<ref>{{Cite web|url=https://esa.un.org/unpd/wpp/DataQuery/|title=World Population Prospects - Population Division - United Nations|website=esa.un.org|access-date=2018-08-26}}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 13
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Bougouni",
+    "found": true,
+    "title": "Bougouni",
+    "url": "https://en.wikipedia.org/wiki/Bougouni",
+    "wikitext_bytes": 10754,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name",
+     "language"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   },
+   {
+    "shape_name": "Gao",
+    "found": true,
+    "title": "Gao",
+    "url": "https://en.wikipedia.org/wiki/Gao",
+    "wikitext_bytes": 50069,
+    "infobox_params": [
+     "blank1_name",
+     "blank2_name",
+     "blank3_name",
+     "blank4_name",
+     "blank5_name",
+     "blank6_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Goundam",
+    "found": true,
+    "title": "Goundam Cercle",
+    "url": "https://en.wikipedia.org/wiki/Goundam_Cercle",
+    "wikitext_bytes": 7709,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name",
+     "language"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   },
+   {
+    "shape_name": "Koulikoro",
+    "found": true,
+    "title": "Ballé, Mali",
+    "url": "https://en.wikipedia.org/wiki/Ball%C3%A9%2C_Mali",
+    "wikitext_bytes": 4082,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Niafunke",
+    "found": true,
+    "title": "Niafunké Cercle",
+    "url": "https://en.wikipedia.org/wiki/Niafunk%C3%A9_Cercle",
+    "wikitext_bytes": 5764,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Mali: Languages",
+   "name": "mali-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/mali-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_MLI_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4243e46c-3861-49ea-b30d-8e023cbb9b09/resource/521f5c1f-cc0d-4516-912f-3575780761f7/download/clearglobal_language_use_mli_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_MLI_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4243e46c-3861-49ea-b30d-8e023cbb9b09/resource/d15cad49-01c7-4252-9578-f5ece8269c84/download/clearglobal_language_use_mli_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_MLI_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4243e46c-3861-49ea-b30d-8e023cbb9b09/resource/6b47b5f7-b010-495b-b119-a8b377b58bcf/download/clearglobal_language_use_mli_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Mali - Settlements",
+   "name": "mali-settlements",
+   "org": "OCHA Mali",
+   "url": "https://data.humdata.org/dataset/mali-settlements",
+   "resources": [
+    {
+     "name": "mli_populatedplaces_shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/1542b2e2-ffd1-4835-bc6f-a9e6dcf7421d/resource/bb63df0b-9485-4c88-90b6-3009e6fd072e/download/mli_populatedplaces_shp.zip"
+    },
+    {
+     "name": "MLI_MapServices",
+     "format": "Geoservice",
+     "url": "https://codgis.itos.uga.edu/arcgis/rest/services/COD_External/MLI_FR/MapServer"
+    },
+    {
+     "name": "MLI_pcode",
+     "format": "XML",
+     "url": "https://codgis.itos.uga.edu/arcgis/rest/services/COD_External/MLI_pcode/MapServer"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Mali - Forests",
+   "name": "mali-other",
+   "org": "OCHA Mali",
+   "url": "https://data.humdata.org/dataset/mali-other",
+   "resources": [
+    {
+     "name": "mli_forest_0.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/0e56a0ea-4169-4c7f-8b5c-3caea82c5ba7/resource/e2d95499-3f37-4b67-9534-cfbf2041dc3e/download/mliforest0.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Mali: Bamako Roads Network",
+   "name": "mali-roads",
+   "org": "OCHA Mali",
+   "url": "https://data.humdata.org/dataset/mali-roads",
+   "resources": [
+    {
+     "name": "shp_Route.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/f24cd828-1d81-427f-9f5a-c569f781b3a4/resource/e72e33d7-65b1-42d7-9314-7bf630889b7a/download/shp_route.zip"
+    },
+    {
+     "name": "Mali_Bamako_Road_Network",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/f24cd828-1d81-427f-9f5a-c569f781b3a4/resource/bedfeb3e-0d82-41be-a394-fbe3688837d8/download/mali_bamako_road_network.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Mali - Railways",
+   "name": "mali-railways",
+   "org": "OCHA Mali",
+   "url": "https://data.humdata.org/dataset/mali-railways",
+   "resources": [
+    {
+     "name": "mli_railway_0.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/0df54fd0-ff05-4e4b-9e74-a93684e74548/resource/f8c0a17b-e146-4c87-8e89-afbd0f3bc2c2/download/mlirailway0.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Mali - Main, secondary rivers and water bodies",
+   "name": "mali-water-bodies-water-courses",
+   "org": "OCHA Mali",
+   "url": "https://data.humdata.org/dataset/mali-water-bodies-water-courses",
+   "resources": [
+    {
+     "name": "mli_rivl_gov_level1.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/ab5d5ce8-624f-43db-8be0-c876e9a89448/resource/da5dc4e1-a436-4c27-9e4e-8eba3c952756/download/mli_rivl_gov_level1.zip"
+    },
+    {
+     "name": "mli_rivl_gov_level2.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/ab5d5ce8-624f-43db-8be0-c876e9a89448/resource/5e6632be-3041-4654-8c25-d65621ef3e31/download/mli_rivl_gov_level2.zip"
+    },
+    {
+     "name": "mli_lakel_gov.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/ab5d5ce8-624f-43db-8be0-c876e9a89448/resource/672c1b9c-de9d-4dbb-97a5-70ddca935a83/download/mli_lakel_gov.zip"
+    },
+    {
+     "name": "mli_lakea_gov_artificialdam.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/ab5d5ce8-624f-43db-8be0-c876e9a89448/resource/37272c93-b024-4797-98ef-dd1f934542fd/download/mli_lakea_gov_artificialdam.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Mali: Road Surface Data",
+   "name": "mali-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/mali-road-surface-data",
+   "resources": [
+    {
+     "name": "Mali GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_mli_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Mali GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_mli_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Mali - Elevation Model",
+   "name": "mali-elevation-model",
+   "org": "OCHA Mali",
+   "url": "https://data.humdata.org/dataset/mali-elevation-model",
+   "resources": [
+    {
+     "name": "mli_dem_0.zip",
+     "format": "ERDAS Image",
+     "url": "https://data.humdata.org/dataset/09581aac-289c-455f-92c4-83232e406346/resource/0a38ad7e-1051-42b4-9c3e-f5d9d4ba364f/download/mlidem0.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Mali - Water Courses",
+   "name": "mali-water-courses",
+   "org": "OCHA Mali",
+   "url": "https://data.humdata.org/dataset/mali-water-courses",
+   "resources": [
+    {
+     "name": "mli_rivers_0.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/6498af61-5dc7-4fe2-891e-e8bec56b546d/resource/be29c86c-51d7-4244-b7dc-1917e2b25d15/download/mli_rivers_0.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Mali: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-mali",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-mali",
+   "resources": [
+    {
+     "name": "kontur_boundaries_ML_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_ML_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_ML_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_ML_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_ML_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_ML_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Mali - Subnational Population Statistics",
+   "name": "cod-ps-mli",
+   "org": "OCHA Mali",
+   "url": "https://data.humdata.org/dataset/cod-ps-mli",
+   "resources": [
+    {
+     "name": "MLI_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/dfbc914d-ecd6-4642-8e18-01ca6d2e3b5d/download/mli_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "Mali_Population_communes_sexe_2018.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/074b6e23-3241-40a9-bd49-d8fc3d4d959e/download/mali_population_communes_sexe_2018.xls"
+    },
+    {
+     "name": "mli_pop_adm0_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/6f243ba2-4d4a-4663-a7c4-e917dbbde73a/download/mli_pop_adm0_v2.csv"
+    },
+    {
+     "name": "mli_pop_adm1_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/0bd515ae-613c-400f-a84c-ea203cc529be/download/mli_pop_adm1_v2.csv"
+    },
+    {
+     "name": "mli_pop_adm2_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/af0c935f-d507-4252-945c-9d1a6cc1b598/download/mli_pop_adm2_v2.csv"
+    },
+    {
+     "name": "mli_pop_adm3_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/6a73b827-302d-47be-94a9-580fa73011b5/download/mli_pop_adm3_v2.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Census-cartography-based gridded population estimates for Mali (2020), version 1.0",
+   "name": "census-cartography-based-gridded-population-estimates-for-mali-2020-version-1-0",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/census-cartography-based-gridded-population-estimates-for-mali-2020-version-1-0",
+   "resources": [
+    {
+     "name": "MLI_population_v1_0_gridded.tif",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/519"
+    },
+    {
+     "name": "MLI_population_v1_0_mastergrid.tif",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/520"
+    },
+    {
+     "name": "MLI_population_v1_0_README.pdf",
+     "format": "PDF",
+     "url": "https://wopr.worldpop.org/download/521"
+    },
+    {
+     "name": "MLI_population_v1_0_sql.sql",
+     "format": "SQL",
+     "url": "https://wopr.worldpop.org/download/522"
+    },
+    {
+     "name": "MLI_population_v1_0_agegender.zip",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/523"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Mali Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys",
+   "name": "mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+   "org": "U.S. Census Bureau",
+   "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+   "resources": [
+    {
+     "name": "Mali.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/54941a2a-9546-4885-a12c-80c34eaa20cf/resource/aa1d8c53-0971-47d8-9d48-ef7260c2ab7e/download/mali.gdb.zip"
+    },
+    {
+     "name": "Mali_uscb_202211.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/54941a2a-9546-4885-a12c-80c34eaa20cf/resource/00e9ae0f-0822-4235-97b3-c2c1d125efb3/download/mali_uscb_202211.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Mali - Accessibility Indicators",
+   "name": "mali-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/mali-accessibility-indicators",
+   "resources": [
+    {
+     "name": "MLI_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mli/MLI_education_access.gpkg"
+    },
+    {
+     "name": "MLI_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mli/MLI_education_access_long.csv"
+    },
+    {
+     "name": "MLI_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mli/MLI_education_access_wide.csv"
+    },
+    {
+     "name": "MLI_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mli/MLI_hospitals_access.gpkg"
+    },
+    {
+     "name": "MLI_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mli/MLI_hospitals_access_long.csv"
+    },
+    {
+     "name": "MLI_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mli/MLI_hospitals_access_wide.csv"
+    },
+    {
+     "name": "MLI_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mli/MLI_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "MLI_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mli/MLI_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Mali: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "highresolutionpopulationdensitymaps-mli",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/highresolutionpopulationdensitymaps-mli",
+   "resources": [
+    {
+     "name": "mli_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/5b502ed7-85d6-429d-8778-53848f31ece7/resource/a4a92579-f03f-4d00-ba18-576e2bd02218/download/mli_general_2020_geotiff.zip"
+    },
+    {
+     "name": "mli_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/5b502ed7-85d6-429d-8778-53848f31ece7/resource/58fd04be-af30-44bf-b240-66336d6a83c4/download/mli_general_2020_csv.zip"
+    },
+    {
+     "name": "mli_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/5b502ed7-85d6-429d-8778-53848f31ece7/resource/70dd01dc-2428-4720-889d-9c7bd5a4dda2/download/mli_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "mli_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/5b502ed7-85d6-429d-8778-53848f31ece7/resource/2eb6a211-1b09-485b-87a7-8c6bde2011aa/download/mli_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "mli_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/5b502ed7-85d6-429d-8778-53848f31ece7/resource/8455cc32-6fc1-4c99-8d81-a3fe0cc24d88/download/mli_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "mli_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/5b502ed7-85d6-429d-8778-53848f31ece7/resource/844f34c7-9f71-4b1f-b62a-bb31b42bbf86/download/mli_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "mli_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/5b502ed7-85d6-429d-8778-53848f31ece7/resource/13dc8db0-7c55-4328-acbc-be8b59234c21/download/mli_men_2020_csv.zip"
+    },
+    {
+     "name": "mli_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/5b502ed7-85d6-429d-8778-53848f31ece7/resource/665f0677-17c9-4def-8347-3316221fdf20/download/mli_men_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Mali - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-mali",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-mali",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Mali",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/456a1f02-fe6e-44fa-b80b-422b37ce13a7/resource/9fa5f664-117b-48a7-9e8c-d7118216136a/download/social-protection-and-labor_mli.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "MALI: STATISTIQUES SCOLAIRES DE L'ENSEIGNEMENT FONDAMENTAL",
+   "name": "statistiques-scolaires-de-l-enseignement-fondamental",
+   "org": "OCHA Mali",
+   "url": "https://data.humdata.org/dataset/statistiques-scolaires-de-l-enseignement-fondamental",
+   "resources": [
+    {
+     "name": "Fundamental Schools in Mali- Statistics.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d3422906-cf22-45db-85bc-c777a4ad6769/resource/f40a93e3-e912-4813-bc25-07584a5f5eef/download/fundamental-schools-in-mali-statistics.xlsx"
+    },
+    {
+     "name": "PRESCOLAIRE.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/d3422906-cf22-45db-85bc-c777a4ad6769/resource/372c98f5-0705-4dc4-ba6c-f5ce6750d4f9/download/prescolaire.xls"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Population of Mali disaggregated by sex for 2013",
+   "name": "population-of-mali-disaggregated-by-sex",
+   "org": "OCHA Mali",
+   "url": "https://data.humdata.org/dataset/population-of-mali-disaggregated-by-sex",
+   "resources": [
+    {
+     "name": "Population of Mali disaggregated by sex.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/d6d5cf58-a873-4328-bc6a-e46c2f7d33b0/resource/f7eeb277-7f67-483b-a961-42dc93678722/download/population-of-mali-disaggregated-by-sex.xls"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Mali - Administrative boundaries (levels 1-3)  with population figures",
+   "name": "mali-admin-boundaries-level-1-2-and-3-including-2017-population-desagregated-by-sexe",
+   "org": "OCHA Mali",
+   "url": "https://data.humdata.org/dataset/mali-admin-boundaries-level-1-2-and-3-including-2017-population-desagregated-by-sexe",
+   "resources": [
+    {
+     "name": "mli_adm_1m_dnct_2021_shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/3feaf6d7-8b21-4db1-a097-fa8a2b680a89/resource/303f57d8-965f-4c70-a081-3e5e0fcba2bf/download/mli_adm_1m_dnct_2021_shp.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.instat-mali.org/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+    "status": 200,
+    "kind": "html",
+    "title": "RECENSEMENT GÉNÉRAL DE LA POPULATION ET DE L&#039;HABITAT (RGPH)",
+    "files": [
+     "/laravel-filemanager/files/shares/rgph/rapport-caracteristiques-culturelles-population-rgph5_rpgh.pdf",
+     "/laravel-filemanager/files/shares/rgph/rapport-caracteristiques-economiques-population-rgph5_rgph.pdf",
+     "/laravel-filemanager/files/shares/rgph/rapport-caracteristiques-habitations-cadre-vie-populations-rgph5_rgph.pdf",
+     "/laravel-filemanager/files/shares/rgph/rapport-caracteristiques-menages-ordinaires-rgph5_rgph.pdf",
+     "/laravel-filemanager/files/shares/rgph/rapport-enregistrement-faits-etat-civil-enr&ocirc;lement-ravec-rgph5_rgph.pdf",
+     "/laravel-filemanager/files/shares/rgph/rapport-etat-matrimonial-nuptialite-rgph5_rgph.pdf",
+     "/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+     "/laravel-filemanager/files/shares/rgph/rapport-evaluation-qualite-donnees-rgph5_rgph.pdf",
+     "/laravel-filemanager/files/shares/rgph/rapport-mortalite-rgph5_rgph.pdf",
+     "/laravel-filemanager/files/shares/rgph/rapport-natalite-fecondite-rgph5_rgph.pdf",
+     "/laravel-filemanager/files/shares/rgph/rapport-scolarisation-instruction-alphabetisation-rgph5_rgph.pdf",
+     "/laravel-filemanager/files/shares/rgph/repvila-rgph5_rgph.pdf",
+     "https://www.instat-mali.org/laravel-filemanager/files/shares/doc/conditions-utilisation-donnees-ouvertes_doc.pdf"
+    ],
+    "mentions": []
+   }
+  ],
+  "title": "Institut National de la Statistique du Mali | INSTAT",
+  "matching_links": 1
+ },
+ "verdict": {
+  "hdx_datasets": 19,
+  "hdx_machine_readable": 7,
+  "nso_files_found": 13,
+  "wikipedia_list_tables_by_place": 1,
+  "urls_answering": "1/2",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

@@ -1,0 +1,527 @@
+{
+ "iso3": "ARE",
+ "name": "United Arab Emirates",
+ "tier_proposed": "B",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in United Arab Emirates",
+    "wikitext_bytes": 0,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of United Arab Emirates",
+    "wikitext_bytes": 51895,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Languages",
+     "Religions"
+    ],
+    "wikitables": 7,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Emirate",
+       "Census 1975",
+       "Census 1985",
+       "Census 1995",
+       "Census 2005",
+       "Est. 2025",
+       "Total",
+       "557,887",
+       "1,379,303",
+       "2,411,041"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"70pt\"|Period",
+       "width=\"70pt\"|Live births per year",
+       "width=\"70pt\"|Deaths per year",
+       "width=\"70pt\"|Natural change per year",
+       "width=\"70pt\"|CBR",
+       "width=\"70pt\"|CDR",
+       "width=\"70pt\"|NC",
+       "width=\"70pt\"|TFR",
+       "width=\"70pt\"|IMR",
+       "width=\"70\"|Year"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "width=\"70\"|Year",
+       "width=\"70\"|Population",
+       "width=\"70\"|Live births",
+       "width=\"70\"|Deaths",
+       "width=\"70\"|Natural change",
+       "width=\"70\"|Crude birth rate (per 1000)",
+       "width=\"70\"|Crude death rate (per 1000)",
+       "width=\"70\"|Natural change (per 1000)",
+       "width=\"70\"|Total fertility rate"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years",
+       "Nationals of",
+       "Population",
+       "Year of data"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "Nationals of",
+       "Population",
+       "Year of data"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Language",
+       "Number of speakers (all users)"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 20
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Abu Dhabi",
+    "found": true,
+    "title": "The National (Abu Dhabi)",
+    "url": "https://en.wikipedia.org/wiki/The_National_%28Abu_Dhabi%29",
+    "wikitext_bytes": 13452,
+    "infobox_params": [
+     "language"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   },
+   {
+    "shape_name": "Ajman",
+    "found": true,
+    "title": "Ajman",
+    "url": "https://en.wikipedia.org/wiki/Ajman",
+    "wikitext_bytes": 24499,
+    "infobox_params": [
+     "demographics2_info1",
+     "demographics2_info2"
+    ],
+    "sections": [
+     "Population"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Dubai",
+    "found": true,
+    "title": "United Arab Emirates",
+    "url": "https://en.wikipedia.org/wiki/United_Arab_Emirates",
+    "wikitext_bytes": 274769,
+    "infobox_params": [
+     "ethnic_groups",
+     "official_languages",
+     "religion"
+    ],
+    "sections": [
+     "Demographics",
+     "Language",
+     "Religion"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 3,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Fujairah",
+    "found": true,
+    "title": "Hamad Bin Abdulla Road",
+    "url": "https://en.wikipedia.org/wiki/Hamad_Bin_Abdulla_Road",
+    "wikitext_bytes": 2757,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Ras al-Khaimah",
+    "found": true,
+    "title": "Ras Al Khaimah",
+    "url": "https://en.wikipedia.org/wiki/Ras_Al_Khaimah",
+    "wikitext_bytes": 33041,
+    "infobox_params": [
+     "demographics2_info1",
+     "demographics2_info2"
+    ],
+    "sections": [
+     "Population"
+    ],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "religion",
+   "title": "United Arab Emirates - Poverty",
+   "name": "world-bank-poverty-indicators-for-united-arab-emirates",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-poverty-indicators-for-united-arab-emirates",
+   "resources": [
+    {
+     "name": "Poverty Indicators for United Arab Emirates",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a5e9c92c-ea14-412c-9fcb-6de920fb3417/resource/77330e7c-a920-40c7-97e6-617d5b359d83/download/poverty_are.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "United Arab Emirates Healthsites",
+   "name": "united-arab-emirates-healthsites",
+   "org": "Global Healthsites Mapping Project",
+   "url": "https://data.humdata.org/dataset/united-arab-emirates-healthsites",
+   "resources": [
+    {
+     "name": "united-arab-emirates-healthsites-csv-with-hxl-tags",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fa8b9f0e-29fe-4044-9089-853825b5ab3e/resource/5fbf0909-0b4c-4381-8406-f74b198d9969/download/united-arab-emirates_hxl.csv"
+    },
+    {
+     "name": "united-arab-emirates-healthsites-shp",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/fa8b9f0e-29fe-4044-9089-853825b5ab3e/resource/0ae7683d-18f2-430b-83c8-abb85b409042/download/united-arab-emirates-shapefiles.zip"
+    },
+    {
+     "name": "united-arab-emirates-healthsites-geojson",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/fa8b9f0e-29fe-4044-9089-853825b5ab3e/resource/e54ef7ce-a14e-416b-8519-9a9484bed633/download/united-arab-emirates.geojson"
+    },
+    {
+     "name": "united-arab-emirates-healthsites-csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fa8b9f0e-29fe-4044-9089-853825b5ab3e/resource/858c40d7-10f5-4644-a16f-dc9dd324d600/download/united-arab-emirates.csv"
+    },
+    {
+     "name": "united-arab-emirates-healthsites-hxl-geojson",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/fa8b9f0e-29fe-4044-9089-853825b5ab3e/resource/90974de9-ab2a-4d08-a384-db7f2f9270db/download/united-arab-emirates_hxl.geojson"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "United Arab Emirates - Health",
+   "name": "world-bank-health-indicators-for-united-arab-emirates",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-health-indicators-for-united-arab-emirates",
+   "resources": [
+    {
+     "name": "Health Indicators for United Arab Emirates",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1b35049d-69a7-461a-b6e5-9bad30e44185/resource/fa0af072-0bd8-47d0-9d2f-23834e932f98/download/health_are.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "United Arab Emirates - Trade",
+   "name": "world-bank-trade-indicators-for-united-arab-emirates",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-trade-indicators-for-united-arab-emirates",
+   "resources": [
+    {
+     "name": "Trade Indicators for United Arab Emirates",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1e279c21-f98b-455c-836d-a43f2d46eea3/resource/c5de5191-cfd6-4507-a5e5-9f2281899dae/download/trade_are.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "United Arab Emirates - Gender",
+   "name": "world-bank-gender-indicators-for-united-arab-emirates",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-gender-indicators-for-united-arab-emirates",
+   "resources": [
+    {
+     "name": "Gender Indicators for United Arab Emirates",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fb0821f3-a82d-4d7f-bd2d-8584778c9283/resource/21cbb0ee-aed3-43d2-895d-1e2770817bbf/download/gender_are.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "United Arab Emirates - Infrastructure",
+   "name": "world-bank-infrastructure-indicators-for-united-arab-emirates",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-infrastructure-indicators-for-united-arab-emirates",
+   "resources": [
+    {
+     "name": "Infrastructure Indicators for United Arab Emirates",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e84a9dbe-577a-4502-984d-fde1d579e836/resource/5fcc2c1e-4d06-4c4d-8e87-b32d05d6cd64/download/infrastructure_are.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Buildings of United Arab Emirates",
+   "name": "hotosm_are_buildings",
+   "org": "Humanitarian OpenStreetMap Team (HOT)",
+   "url": "https://data.humdata.org/dataset/hotosm_are_buildings",
+   "resources": [
+    {
+     "name": "Buildings (OSM), GeoPackage",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/ARE/buildings/hotosm_are_buildings_osm_gpkg.zip"
+    },
+    {
+     "name": "Buildings (OSM), Shapefile",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/ARE/buildings/hotosm_are_buildings_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_are_buildings_osm_gpkg.zip",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/ARE/buildings/hotosm_are_buildings_osm_gpkg.zip"
+    },
+    {
+     "name": "hotosm_are_buildings_osm_metadata.json",
+     "format": "JSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/ARE/buildings/hotosm_are_buildings_osm_metadata.json"
+    },
+    {
+     "name": "hotosm_are_buildings_osm_shp.zip",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/ARE/buildings/hotosm_are_buildings_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_are_buildings_report.html",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/ARE/buildings/hotosm_are_buildings_report.html"
+    },
+    {
+     "name": "Buildings, Data Quality Report",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/ARE/buildings/hotosm_are_buildings_report.html"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "United Arab Emirates - Conflict Events",
+   "name": "united-arab-emirates-acled-conflict-data",
+   "org": "Armed Conflict Location & Event Data Project (ACLED)",
+   "url": "https://data.humdata.org/dataset/united-arab-emirates-acled-conflict-data",
+   "resources": [
+    {
+     "name": "united arab emirates_political_violence_events_and_fatalities_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/a94c96d0-c881-4d99-8934-a0322ed85040/resource/1aab2fe0-4522-4d40-aae2-82aa0b4162af/download/united-arab-emirates_political_violence_events_and_fatalities_by_month-year_as-of-10sep2026.xlsx"
+    },
+    {
+     "name": "united arab emirates_civilian_targeting_events_and_fatalities_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/a94c96d0-c881-4d99-8934-a0322ed85040/resource/27a3dc11-948a-4451-818a-58a38aa9f272/download/united-arab-emirates_civilian_targeting_events_and_fatalities_by_month-year_as-of-10sep2026.xlsx"
+    },
+    {
+     "name": "united arab emirates_demonstration_events_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/a94c96d0-c881-4d99-8934-a0322ed85040/resource/88924505-1e63-4560-b835-a6e33af5459c/download/united-arab-emirates_demonstration_events_by_month-year_as-of-10sep2026.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Roads of United Arab Emirates",
+   "name": "hotosm_are_roads",
+   "org": "Humanitarian OpenStreetMap Team (HOT)",
+   "url": "https://data.humdata.org/dataset/hotosm_are_roads",
+   "resources": [
+    {
+     "name": "hotosm_are_roads_osm_gpkg.zip",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/ARE/roads/hotosm_are_roads_osm_gpkg.zip"
+    },
+    {
+     "name": "hotosm_are_roads_osm_metadata.json",
+     "format": "JSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/ARE/roads/hotosm_are_roads_osm_metadata.json"
+    },
+    {
+     "name": "hotosm_are_roads_osm_shp.zip",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/ARE/roads/hotosm_are_roads_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_are_roads_report.html",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/ARE/roads/hotosm_are_roads_report.html"
+    },
+    {
+     "name": "Roads (OSM), GeoPackage",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/ARE/roads/hotosm_are_roads_osm_gpkg.zip"
+    },
+    {
+     "name": "Roads (OSM), Shapefile",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/ARE/roads/hotosm_are_roads_osm_shp.zip"
+    },
+    {
+     "name": "Roads, Data Quality Report",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/ARE/roads/hotosm_are_roads_report.html"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "United Arab Emirates - Education",
+   "name": "world-bank-education-indicators-for-united-arab-emirates",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-education-indicators-for-united-arab-emirates",
+   "resources": [
+    {
+     "name": "Education Indicators for United Arab Emirates",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/c13e8374-d147-47e9-9b59-e486bdcdcede/resource/0eaa1368-2429-4508-94ea-58b164df085c/download/education_are.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "United Arab Emirates - Accessibility Indicators",
+   "name": "united-arab-emirates-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/united-arab-emirates-accessibility-indicators",
+   "resources": [
+    {
+     "name": "ARE_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/are/ARE_education_access.gpkg"
+    },
+    {
+     "name": "ARE_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/are/ARE_education_access_long.csv"
+    },
+    {
+     "name": "ARE_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/are/ARE_education_access_wide.csv"
+    },
+    {
+     "name": "ARE_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/are/ARE_hospitals_access.gpkg"
+    },
+    {
+     "name": "ARE_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/are/ARE_hospitals_access_long.csv"
+    },
+    {
+     "name": "ARE_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/are/ARE_hospitals_access_wide.csv"
+    },
+    {
+     "name": "ARE_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/are/ARE_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "ARE_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/are/ARE_primary_healthcare_access_long.csv"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://fcsc.gov.ae/",
+  "status": 403,
+  "error": null,
+  "pages": []
+ },
+ "verdict": {
+  "hdx_datasets": 11,
+  "hdx_machine_readable": 11,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "1/5"
+ }
+}

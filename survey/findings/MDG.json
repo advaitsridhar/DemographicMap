@@ -1,0 +1,102 @@
+{
+  "iso3": "MDG",
+  "name": "Madagascar",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Institut National de la Statistique (INSTAT)",
+    "url": "https://www.instat.mg/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2018,
+    "asks": {
+      "religion": null,
+      "ethnicity": false,
+      "language": null
+    },
+    "published_subnationally": {
+      "religion": null,
+      "ethnicity": null,
+      "language": null
+    },
+    "confidence": "recalled",
+    "notes": "RGPH-3 (Troisième Recensement Général de la Population et de l'Habitation), enumerated May-June 2018; definitive results 2020, thematic reports 2021. Previous: RGPH-2 1993, RGPH-1 1975. Ethnicity: recalled with reasonable confidence as not asked -- no post-independence Malagasy census has collected or published ethnic group, which is why the Factbook's national row is free text and the '18 ethnic groups' shares in circulation are colonial-era; verify against the RGPH-3 questionnaire ('questionnaire ménage') on instat.mg before declaring. Religion: I cannot recall a religion item, and the RGPH-3 thematic report list I remember (état et structure, migration, éducation, activité économique, fécondité, mortalité, nuptialité, ménages et habitat, handicap) has no religion theme -- but I cannot rule it out, so null. Language: null (Malagasy is near-universal; no item recalled). The packet's national religion row is a survey/estimate, not census."
+  },
+  "already_in_map": "admin1 18/22 religion and ethnicity from Afrobarometer Round 9 (survey). The survey's 20 rows are regions (incl. 'Vatovavy' and 'Fitovinany' separately, post-2021 split; the boundary's 22 predate it with one 'Vatovavy-Fitovinany'), and the four unfilled are probably spelling: 'Amoron'i Mania', 'DIANA', 'SAVA', 'Matsiatra Ambony' (= Haute Matsiatra) and the Vatovavy/Fitovinany pair. admin2 (119) holds nothing.",
+  "subnational_sources": [
+    {
+      "fields": [
+        "religion"
+      ],
+      "title": "Enquête Démographique et de Santé Madagascar 2021 (MDHS 2021) and EDSMD-IV 2008-09 final reports: religion of respondents by region",
+      "url": null,
+      "publisher": "INSTAT / ICF (DHS Program)",
+      "kind": "survey",
+      "format": "pdf",
+      "geography": "region",
+      "geography_count": 22,
+      "matches_boundary_level": "admin1 (22 or 23 regions)",
+      "year": 2021,
+      "confidence": "medium",
+      "evidence": "Recalled: DHS Madagascar background characteristics include religion; a survey, ranked below any count, but of respondents rather than a 40-person stratum."
+    },
+    {
+      "fields": [],
+      "title": "RGPH-3 2018 -- Résultats définitifs (population by region, district and commune)",
+      "url": null,
+      "publisher": "INSTAT",
+      "kind": "census",
+      "format": "pdf and xlsx",
+      "geography": "region (22) and district (119)",
+      "geography_count": 119,
+      "matches_boundary_level": "admin1 and admin2 -- both exact (119 districts)",
+      "year": 2018,
+      "confidence": "high that it exists; not a composition source",
+      "evidence": "Recalled: denominators and the exact region/district spellings; INSTAT posted the definitive-results tables as Excel."
+    },
+    {
+      "fields": [
+        "religion"
+      ],
+      "title": "IPUMS-International: Madagascar 1993 census sample (check whether the 1993 questionnaire carried a religion item)",
+      "url": null,
+      "publisher": "IPUMS",
+      "kind": "census (microdata sample)",
+      "format": "microdata, registration required",
+      "geography": "faritany (6 former provinces)",
+      "geography_count": 6,
+      "matches_boundary_level": "neither (pre-2004 provinces)",
+      "year": 1993,
+      "confidence": "low",
+      "evidence": "Recalled that Madagascar 1993 is in IPUMS-I; which items it carries I cannot recall."
+    }
+  ],
+  "secondary_routes": {
+    "hdx": "Not recorded in the repo's USCB enumeration; the runner searches HDX itself.",
+    "ipums": "1993 only.",
+    "other": "INSTAT's RGPH-3 pages (instat.mg) carry the questionnaire and the thematic report list; that page settles all three 'asks' columns."
+  },
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Madagascar"
+      },
+      {
+        "title": "Demographics of Madagascar"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "D",
+  "tier_reason": "Could not establish from memory that RGPH-3 2018 asks religion; fairly sure it does not ask ethnicity and unsure about language. If the questionnaire has no religion item this is a C for all three; if it does, the definitive-results series (partly xlsx) would make it A or B.",
+  "replaces_existing": false,
+  "recommended_action": "Read the RGPH-3 questionnaire and thematic-report list on instat.mg. If there is no religion/ethnicity/language item, declare all three not_collected citing the questionnaire and leave the Afrobarometer rows as the only subnational figure (adding aliases for the four unmatched regions). If a religion item exists, look for a region and district tabulation in the definitive results (119 districts = admin2 exactly).",
+  "searches_run": [],
+  "not_found": [
+    "whether the RGPH-3 questionnaire has a religion item",
+    "any census publication of religion by region or district",
+    "any language item"
+  ],
+  "summary": "Madagascar's 2018 census (RGPH-3) almost certainly did not ask ethnicity -- no post-independence census has -- and I cannot recall a religion or language item either, so the honest answer is D pending a read of the INSTAT questionnaire, with C the likely outcome. The boundary's 22 admin1 and 119 admin2 match the regions and districts exactly, so if a religion table exists it joins cleanly. Meanwhile the Afrobarometer survey fills 18 regions and four more would join with spelling aliases; DHS 2021 tabulates religion by region as a better survey."
+}

@@ -66,7 +66,12 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.northern_ireland
   # The Republic, from the CSO's PxStat. Needs the network; no key.
   soft python3 -m scripts.fetch_census.ireland
-  soft python3 -m scripts.fetch_census.statcan --level province
+  # KNBS 2019 religion by county, from the openAFRICA mirror: knbs.or.ke
+  # itself fails TLS verification on a clean client.
+  soft python3 -m scripts.fetch_census.kenya
+  soft python3 -m scripts.fetch_census.malaysia --level both
+  soft python3 -m scripts.fetch_census.poland
+  soft python3 -m scripts.fetch_census.statcan
   soft python3 -m scripts.fetch_census.ibge_sidra --level state
   # 5,570 municipalities, and the reason the level is spelled out twice:
   # brazil_municipality.json was registered as an adapter file long before

@@ -1,0 +1,656 @@
+{
+ "iso3": "PNG",
+ "name": "Papua New Guinea",
+ "tier_proposed": "B",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Papua New Guinea",
+    "wikitext_bytes": 28723,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Papua New Guinea",
+    "wikitext_bytes": 56045,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Religion",
+     "Languages"
+    ],
+    "wikitables": 3,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "width=\"50\"|Age group",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent",
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\" |Mid-year population",
+       "style=\"width:80pt;\" |Live births",
+       "style=\"width:80pt;\" |Deaths",
+       "style=\"width:80pt;\" |Natural change",
+       "style=\"width:80pt;\" |Crude birth rate (per 1000)",
+       "style=\"width:80pt;\" |Crude death rate (per 1000)",
+       "style=\"width:80pt;\" |Natural change (per 1000)",
+       "style=\"width:80pt;\" |Total fertility rate (TFR)",
+       "style=\"width:80pt;\" |Infant mortality (per 1000 live births)",
+       "style=\"width:80pt;\" |Life expectancy (in years)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 30
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Imbonggu District",
+    "found": true,
+    "title": "Imbonggu District",
+    "url": "https://en.wikipedia.org/wiki/Imbonggu_District",
+    "wikitext_bytes": 2153,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Jimi District",
+    "found": true,
+    "title": "Jimi District",
+    "url": "https://en.wikipedia.org/wiki/Jimi_District",
+    "wikitext_bytes": 2725,
+    "infobox_params": [
+     "demographics1_info1"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kairuku - Hiri District",
+    "found": true,
+    "title": "Kairuku-Hiri District",
+    "url": "https://en.wikipedia.org/wiki/Kairuku-Hiri_District",
+    "wikitext_bytes": 5166,
+    "infobox_params": [
+     "demographics1_info1"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kandep District",
+    "found": true,
+    "title": "Kandep District",
+    "url": "https://en.wikipedia.org/wiki/Kandep_District",
+    "wikitext_bytes": 4091,
+    "infobox_params": [
+     "demographics1_info1"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Lagaip/Pogera District",
+    "found": true,
+    "title": "Lagaip-Porgera District",
+    "url": "https://en.wikipedia.org/wiki/Lagaip-Porgera_District",
+    "wikitext_bytes": 3838,
+    "infobox_params": [
+     "demographics1_info1"
+    ],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "religion",
+   "title": "Papua New Guinea: Airstrips",
+   "name": "papua-new-guinea-airports",
+   "org": "UN in Papua New Guinea",
+   "url": "https://data.humdata.org/dataset/papua-new-guinea-airports",
+   "resources": [
+    {
+     "name": "PNG_MAF_Rural_Airstrip_Status.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/bcff2af7-72cc-473d-8dbf-be28501287c1/resource/aba8dc9c-dbe8-439d-a1f3-64eaf0de3b19/download/maf-png-rural-airstrip-status-2022.xlsx"
+    },
+    {
+     "name": "MAF_PNG_Rural_Airstrip_Status_20222.geojson",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/bcff2af7-72cc-473d-8dbf-be28501287c1/resource/b2380bee-3718-4ade-9dfc-e119517a4bbb/download/maf_png_rural_airstrip_status_20222.geojson"
+    },
+    {
+     "name": "MAF_PNG_Rural_Airstrip_Status_20222.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/bcff2af7-72cc-473d-8dbf-be28501287c1/resource/bf6ac1a8-67ae-49c1-8c32-53d4c0dfaff9/download/maf_png_rural_airstrip_status_20222.zip"
+    },
+    {
+     "name": "PNG_airports_geocoded_2018.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/bcff2af7-72cc-473d-8dbf-be28501287c1/resource/9e89062a-a3e4-4332-b031-1e82a1cec068/download/airports_geocoded.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Papua New Guinea - Education",
+   "name": "world-bank-education-indicators-for-papua-new-guinea",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-education-indicators-for-papua-new-guinea",
+   "resources": [
+    {
+     "name": "Education Indicators for Papua New Guinea",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1f87c5ea-175f-40c1-85a0-9b13306ec358/resource/f6b4ab3b-719f-4a19-9d8d-bfc81c4bb546/download/education_png.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Papua New Guinea - Poverty",
+   "name": "world-bank-poverty-indicators-for-papua-new-guinea",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-poverty-indicators-for-papua-new-guinea",
+   "resources": [
+    {
+     "name": "Poverty Indicators for Papua New Guinea",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/bac52d66-cf18-4b98-9dc7-d5b9773a542a/resource/3bb849eb-5b3a-4d9a-a886-30dc44ca5c1f/download/poverty_png.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Papua New Guinea - Infrastructure",
+   "name": "world-bank-infrastructure-indicators-for-papua-new-guinea",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-infrastructure-indicators-for-papua-new-guinea",
+   "resources": [
+    {
+     "name": "Infrastructure Indicators for Papua New Guinea",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/abe5f030-3b20-48cc-9d4c-66b344f651ee/resource/dd93a131-372b-4cb7-a1cf-b20966dd034c/download/infrastructure_png.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Papua New Guinea - Conflict Events",
+   "name": "papua-new-guinea-acled-conflict-data",
+   "org": "Armed Conflict Location & Event Data Project (ACLED)",
+   "url": "https://data.humdata.org/dataset/papua-new-guinea-acled-conflict-data",
+   "resources": [
+    {
+     "name": "papua new guinea_political_violence_events_and_fatalities_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/3235aba8-6836-461e-88a1-93127d83522e/resource/130b3a5d-4c06-4a36-bcf4-ce193dedc625/download/papua-new-guinea_political_violence_events_and_fatalities_by_month-year_as-of-10sep2026.xlsx"
+    },
+    {
+     "name": "papua new guinea_civilian_targeting_events_and_fatalities_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/3235aba8-6836-461e-88a1-93127d83522e/resource/ee34ea4d-b8fb-4ccb-8f41-e4cd2457f074/download/papua-new-guinea_civilian_targeting_events_and_fatalities_by_month-year_as-of-10sep2026.xlsx"
+    },
+    {
+     "name": "papua new guinea_demonstration_events_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/3235aba8-6836-461e-88a1-93127d83522e/resource/8a7efc8b-f110-4d1e-9bcf-81f4284cc093/download/papua-new-guinea_demonstration_events_by_month-year_as-of-10sep2026.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Papua New Guinea - Roads",
+   "name": "papua-new-guinea-roads",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/papua-new-guinea-roads",
+   "resources": [
+    {
+     "name": "png_rdsl_2014_osm.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/81cb8373-0105-4c4d-b2aa-a67ec3c1415b/resource/639ae014-e057-4b1a-bd25-b9e67f0ec4d0/download/png_rdsl_2014_osm.zip"
+    },
+    {
+     "name": "png_rdsl_2000_nmb.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/81cb8373-0105-4c4d-b2aa-a67ec3c1415b/resource/c35212ad-8975-4ed0-9cf7-d99704f77b51/download/png_rdsl_2000_nmb.zip"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Papua New Guinea - Health",
+   "name": "world-bank-health-indicators-for-papua-new-guinea",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-health-indicators-for-papua-new-guinea",
+   "resources": [
+    {
+     "name": "Health Indicators for Papua New Guinea",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e1af101b-9a7d-42a3-8676-829c9f574fb8/resource/07f5218a-0edd-43f1-89ce-6bae667b3b87/download/health_png.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Papua New Guinea - Subnational Administrative Boundaries",
+   "name": "cod-ab-png",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-png",
+   "resources": [
+    {
+     "name": "png_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/f260301d-c32f-4e9e-a7d6-05bde2f70b6b/resource/156e393b-1a62-46dd-a7af-e915c750a967/download/png_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "png_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/f260301d-c32f-4e9e-a7d6-05bde2f70b6b/resource/c0386530-3455-45b4-b413-f41ccbdd2215/download/png_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "png_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/f260301d-c32f-4e9e-a7d6-05bde2f70b6b/resource/3ef879e4-0896-4793-a0c2-6d0636395cf5/download/png_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "png_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/f260301d-c32f-4e9e-a7d6-05bde2f70b6b/resource/afa0ebcd-1861-4eac-9cd8-af06f942633a/download/png_admin_boundaries.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Papua New Guinea - Trade",
+   "name": "world-bank-trade-indicators-for-papua-new-guinea",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-trade-indicators-for-papua-new-guinea",
+   "resources": [
+    {
+     "name": "Trade Indicators for Papua New Guinea",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6c539a31-ee25-4bf4-a0e4-a5d370c8497b/resource/115ef239-adc7-4730-8a49-08f40e07b9cc/download/trade_png.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Papua New Guinea Healthsites",
+   "name": "papua-new-guinea-healthsites",
+   "org": "Global Healthsites Mapping Project",
+   "url": "https://data.humdata.org/dataset/papua-new-guinea-healthsites",
+   "resources": [
+    {
+     "name": "papua-new-guinea-healthsites-hxl-geojson",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/2e7a7464-696c-4776-9ff2-20b4d425c230/resource/a216726d-070b-4cc3-b39c-be0ca2f30629/download/papua-new-guinea_hxl.geojson"
+    },
+    {
+     "name": "papua-new-guinea-healthsites-csv-with-hxl-tags",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/2e7a7464-696c-4776-9ff2-20b4d425c230/resource/5de027f1-67e7-4ad5-8a2d-6612d73b4487/download/papua-new-guinea_hxl.csv"
+    },
+    {
+     "name": "papua-new-guinea-healthsites-csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/2e7a7464-696c-4776-9ff2-20b4d425c230/resource/2b655125-201c-4bfd-ac7c-0fde6f0f9ba1/download/papua-new-guinea.csv"
+    },
+    {
+     "name": "papua-new-guinea-healthsites-geojson",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/2e7a7464-696c-4776-9ff2-20b4d425c230/resource/5210b3d7-8da3-4b87-a021-db33f8299cfe/download/papua-new-guinea.geojson"
+    },
+    {
+     "name": "papua-new-guinea-healthsites-shp",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/2e7a7464-696c-4776-9ff2-20b4d425c230/resource/db3bcfc2-07d1-4f5e-91b7-9e060a13b906/download/papua-new-guinea-shapefiles.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Papua New Guinea - Contour Lines",
+   "name": "papua-new-guinea-contour-lines",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/papua-new-guinea-contour-lines",
+   "resources": [
+    {
+     "name": "png_CENTRAL_contour1_2000_nmb.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/221cbb5f-8119-4b4b-a1bc-57b6f6621109/resource/15746f19-6155-4030-b94e-7a53187d17d4/download/png_central_contour1_2000_nmb.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Papua New Guinea - Health Facilities",
+   "name": "papua-new-guinea-health",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/papua-new-guinea-health",
+   "resources": [
+    {
+     "name": "png_hltfacp_2000_nso_edit.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/e5e8e04a-6d5b-41a2-b4fe-c8241bbdcd78/resource/cd1d0e1f-fc3c-4f76-af2a-f4b450724671/download/png_hltfacp_2000_nso_edit.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Papua New Guinea - Education Facilities",
+   "name": "papua-new-guinea-education",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/papua-new-guinea-education",
+   "resources": [
+    {
+     "name": "png_edup_2000_nso_edit.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/9356c995-cc9f-4567-b65c-64c2cfd10e94/resource/8b074423-2934-4443-9cbf-bad84776023b/download/png_edup_2000_nso_edit.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Papua New Guinea - Water Courses",
+   "name": "papua-new-guinea-water-courses",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/papua-new-guinea-water-courses",
+   "resources": [
+    {
+     "name": "png_watcrsl1_rvr_2000_nso_edit.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/c1623a84-662e-40d9-8ae8-12a07fb4e3ce/resource/3ec32163-8d4c-4845-aa5d-2114d83fd034/download/png_watcrsl1_rvr_2000_nso_edit.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Papua New Guinea - Regions",
+   "name": "papua-new-guinea-regions",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/papua-new-guinea-regions",
+   "resources": [
+    {
+     "name": "PNG_polbnda_regions_2015_nso.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/e43b17b8-d127-4be0-8d92-dc3d2dcb39ff/resource/70d094d9-5b61-4c97-b651-9e42ce328b6e/download/png_polbnda_regions_2015_nso.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Papua New Guinea - Subnational Population Statistics",
+   "name": "cod-ps-png",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ps-png",
+   "resources": [
+    {
+     "name": "PNG_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/5f76d06a-70f6-4cc4-a0f2-d9da9342fc06/resource/863ffcb9-b429-41d6-a8d5-b208dfcd6c88/download/png_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "png_admpop_2011.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/5f76d06a-70f6-4cc4-a0f2-d9da9342fc06/resource/7078d27f-271d-435d-993a-e31fed92f9f9/download/png_admpop_2011.xlsx"
+    },
+    {
+     "name": "png_admpop_adm0_2011_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5f76d06a-70f6-4cc4-a0f2-d9da9342fc06/resource/f34481a5-8c78-49de-8da0-fce8c915d9ae/download/png_admpop_adm0_2011_v2.csv"
+    },
+    {
+     "name": "png_admpop_adm1_2011_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5f76d06a-70f6-4cc4-a0f2-d9da9342fc06/resource/8b4346b6-b0a4-4e65-8d15-b6c79dbacee2/download/png_admpop_adm1_2011_v2.csv"
+    },
+    {
+     "name": "png_admpop_adm2_2011_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5f76d06a-70f6-4cc4-a0f2-d9da9342fc06/resource/534798e8-372a-40b7-bc81-e5679acc07b9/download/png_admpop_adm2_2011_v2.csv"
+    },
+    {
+     "name": "png_admpop_adm3_2011_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5f76d06a-70f6-4cc4-a0f2-d9da9342fc06/resource/fca6139c-15fc-4bad-bf62-5f21426e821b/download/png_admpop_adm3_2011_v2.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Papua New Guinea - Pcodes and Coordinates",
+   "name": "papua-new-guinea-pcodes-and-coordinates",
+   "org": "UN in Papua New Guinea",
+   "url": "https://data.humdata.org/dataset/papua-new-guinea-pcodes-and-coordinates",
+   "resources": [
+    {
+     "name": "Papua New Guinea_Pcodes.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/3faf6e72-16b2-4ad3-ba16-ce58d6e2b369/resource/3d2b4e17-a14d-4601-b467-c2965bc49a04/download/papua-new-guinea_pcodes.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Papua New Guinea - Accessibility Indicators",
+   "name": "papua-new-guinea-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/papua-new-guinea-accessibility-indicators",
+   "resources": [
+    {
+     "name": "PNG_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/png/PNG_education_access.gpkg"
+    },
+    {
+     "name": "PNG_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/png/PNG_education_access_long.csv"
+    },
+    {
+     "name": "PNG_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/png/PNG_education_access_wide.csv"
+    },
+    {
+     "name": "PNG_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/png/PNG_hospitals_access.gpkg"
+    },
+    {
+     "name": "PNG_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/png/PNG_hospitals_access_long.csv"
+    },
+    {
+     "name": "PNG_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/png/PNG_hospitals_access_wide.csv"
+    },
+    {
+     "name": "PNG_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/png/PNG_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "PNG_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/png/PNG_primary_healthcare_access_long.csv"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.nso.gov.pg/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.nso.gov.pg/statistics/population/",
+    "status": 200,
+    "kind": "html",
+    "title": "Population | National Statistical Office | Papua New Guinea",
+    "files": [
+     "https://www.nso.gov.pg/download/51/population-housing/1841/png-final-figures-2011-brochure.pdf",
+     "https://www.nso.gov.pg/download/51/population-housing/1842/png-final-figures-2011-booklet.pdf",
+     "https://www.nso.gov.pg/download/51/population-housing/2151/png-national-report-2000-census.pdf",
+     "https://www.nso.gov.pg/download/51/population-housing/2152/png-national-report-2011-census.pdf",
+     "https://www.nso.gov.pg/download/51/population-housing/2959/census-figures-by-wards-islands-region.pdf",
+     "https://www.nso.gov.pg/download/51/population-housing/2960/census-figures-by-wards-southern-region.pdf",
+     "https://www.nso.gov.pg/download/51/population-housing/2961/census-figures-by-wards-highlands-region.pdf",
+     "https://www.nso.gov.pg/download/51/population-housing/2962/census-figures-by-wards-momase-region.pdf",
+     "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures.pdf",
+     "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf"
+    ],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://www.nso.gov.pg/census-surveys/",
+    "status": 200,
+    "kind": "html",
+    "title": "Census &amp; Surveys | National Statistical Office | Papua New Guinea",
+    "files": [],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://www.nso.gov.pg/census-surveys/demographic-and-health-survey/",
+    "status": 200,
+    "kind": "html",
+    "title": "Demographic and Health Survey | National Statistical Office | Papua New Guinea",
+    "files": [
+     "https://www.nso.gov.pg/download/81/demographic-health-survey/2181/demographic-health-survey-2016-18-report.pdf",
+     "https://www.nso.gov.pg/download/81/demographic-health-survey/2191/demographic-health-survey-2006-report.pdf",
+     "https://www.nso.gov.pg/download/81/demographic-health-survey/2192/demographic-health-survey-2016-18-fact-sheet.pdf",
+     "https://www.nso.gov.pg/download/81/demographic-health-survey/2193/demographic-health-survey-2016-18-fast-facts.pdf"
+    ],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://www.nso.gov.pg/census-surveys/household-and-income-expenditure-survey/",
+    "status": 200,
+    "kind": "html",
+    "title": "Household and Income Expenditure Survey | National Statistical Office | Papua New Guinea",
+    "files": [
+     "https://www.nso.gov.pg/download/84/household-income-and-expenditure-survey/2264/png-household-income-and-expenditure-survey-2009-10-summary-tables.pdf"
+    ],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://www.nso.gov.pg/census-surveys/national-population-housing-census/",
+    "status": 200,
+    "kind": "html",
+    "title": "National Population Housing Census | National Statistical Office | Papua New Guinea",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.nso.gov.pg/census-surveys/population-data-collection-and-assessment/",
+    "status": 200,
+    "kind": "html",
+    "title": "Population Data Collection and Assessment | National Statistical Office | Papua New Guinea",
+    "files": [],
+    "mentions": [
+     "census"
+    ]
+   }
+  ],
+  "title": "National Statistical Office | Papua New Guinea &#8211; Become smarter and strategic with statistics",
+  "matching_links": 6
+ },
+ "verdict": {
+  "hdx_datasets": 18,
+  "hdx_machine_readable": 12,
+  "nso_files_found": 15,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

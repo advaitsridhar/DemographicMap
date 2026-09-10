@@ -1,0 +1,722 @@
+{
+ "iso3": "BFA",
+ "name": "Burkina Faso",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "religion",
+    "ethnicity",
+    "language"
+   ],
+   "title": "RGPH 2019 -- Résultats définitifs, rapport thématique 'Caractéristiques socioculturelles de la population' (religion, ethnie, langue) by region, and the per-region 'monographies régionales'",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "region",
+   "geography_count": 13,
+   "matches_boundary_level": "admin1 (13 regions as drawn: Centre, Centre-Ouest, Est, Hauts-Bassins, Sahel, Sud-Ouest ...)",
+   "url": "https://www.insd.bf/",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://www.insd.bf/",
+   "error": null,
+   "body": {
+    "bytes_read": 102641,
+    "kind": "html",
+    "title": "Accueil | INSD",
+    "links_to_files": [
+     "/sites/default/files/2026-07/BTC_4T2025.xlsx",
+     "/sites/default/files/2026-07/Cnt2025T3.xlsx",
+     "/sites/default/files/2026-07/ICA-COMMERCE_2025_T4.pdf",
+     "/sites/default/files/2026-07/ICA-CONTRUCTION_2025_T4.pdf",
+     "/sites/default/files/2026-07/ICA-INDUSTRIE_2025_T4.pdf",
+     "/sites/default/files/2026-07/IPI%20_IPPI_Info%202025_T4_0.pdf",
+     "/sites/default/files/2026-07/Note_conjoncture_2025_T3.pdf",
+     "/sites/default/files/2026-07/Note_conjoncture_4T2025.pdf",
+     "/sites/default/files/2026-07/Rapport_ETC_2025T4.xlsx"
+    ],
+    "mentions": [
+     "language",
+     "languages"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Burkina Faso",
+    "wikitext_bytes": 16788,
+    "infobox_params": [],
+    "sections": [
+     "Ethnicity and religion"
+    ],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\" |Religion",
+       "colspan=\"2\" |1960<ref name=\":5\" />",
+       "colspan=\"2\" |1996<ref name=\"1996census\" />",
+       "colspan=\"2\" |2006<ref name=\"1996census\" /><ref name=\":2\" /><ref name=\"RGPH2006\" />",
+       "colspan=\"2\" |2019<ref name=\":4\" /><ref name=\":0\" />",
+       "#",
+       "%",
+       "#",
+       "%",
+       "#"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Burkina Faso",
+    "wikitext_bytes": 27118,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 8,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "! width=\"80\" |Total population",
+       "width=\"80\" |Population aged 0–14 (%)",
+       "width=\"80\" |Population aged 15–64 (%)",
+       "width=\"80\" |Population aged 65+ (%)",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 32
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\" |Mid-year population",
+       "style=\"width:80pt;\" |Live births",
+       "style=\"width:80pt;\" |Deaths",
+       "style=\"width:80pt;\" |Natural change",
+       "style=\"width:80pt;\" |Crude birth rate (per 1000)",
+       "style=\"width:80pt;\" |Crude death rate (per 1000)",
+       "style=\"width:80pt;\" |Natural change (per 1000)",
+       "style=\"width:80pt;\" |Total fertility rate (TFR)",
+       "style=\"width:80pt;\" |Infant mortality (per 1000 live births)",
+       "style=\"width:80pt;\" |Life expectancy (in years)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "style=\"width:50pt;\"| Year",
+       "style=\"width:50pt;\"| CBR (Total)",
+       "style=\"width:50pt;\"| TFR (Total)",
+       "style=\"width:50pt;\"| CBR (Urban)",
+       "style=\"width:50pt;\"| TFR (Urban)",
+       "style=\"width:50pt;\"| CBR (Rural)",
+       "style=\"width:50pt;\"| TFR (Rural)",
+       "style=\"width:100pt;\"| Region",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15-49 currently pregnant"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Region",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15-49 currently pregnant",
+       "style=\"width:100pt;\"| Mean number of children ever born to women age 40–49",
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929",
+       "1930",
+       "1931",
+       "1932",
+       "1933"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Years",
+       "1935",
+       "1936",
+       "1937",
+       "1938",
+       "1939",
+       "1940",
+       "1941",
+       "1942",
+       "1943"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "Years",
+       "1945",
+       "1946",
+       "1947",
+       "1948",
+       "1949<ref name=\"ourworldindata.org\" />"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 2
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Boulgou",
+    "found": true,
+    "title": "Bado, Burkina Faso",
+    "url": "https://en.wikipedia.org/wiki/Bado%2C_Burkina_Faso",
+    "wikitext_bytes": 4154,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Boulkiemde",
+    "found": true,
+    "title": "Boulkiemdé Province",
+    "url": "https://en.wikipedia.org/wiki/Boulkiemd%C3%A9_Province",
+    "wikitext_bytes": 5629,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Ioba",
+    "found": true,
+    "title": "Ioba Province",
+    "url": "https://en.wikipedia.org/wiki/Ioba_Province",
+    "wikitext_bytes": 3857,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kadiogo",
+    "found": true,
+    "title": "Kadiogo Province",
+    "url": "https://en.wikipedia.org/wiki/Kadiogo_Province",
+    "wikitext_bytes": 5654,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kompienga",
+    "found": true,
+    "title": "Kompienga Province",
+    "url": "https://en.wikipedia.org/wiki/Kompienga_Province",
+    "wikitext_bytes": 5335,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "religion",
+   "title": "Burkina Faso: Settlements",
+   "name": "bfa_settlements",
+   "org": "OCHA Burkina Faso",
+   "url": "https://data.humdata.org/dataset/bfa_settlements",
+   "resources": [
+    {
+     "name": "BFA_populated_places",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/3a755454-a3c8-49ed-a30a-0cf2c658fd69/resource/e4cedf57-e5a9-4c37-a910-ff467bbd151b/download/bndt_villes_villages_ad_villages_with_pcodes-distributed.xlsx"
+    },
+    {
+     "name": "bfa_pplp_1m_nga_ocha.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/3a755454-a3c8-49ed-a30a-0cf2c658fd69/resource/1913313e-0417-488d-98c2-adf90e47c542/download/bfa_pplp_1m_nga_ocha.zip"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Burkina Faso - Subnational Administrative Boundaries",
+   "name": "cod-ab-bfa",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-bfa",
+   "resources": [
+    {
+     "name": "bfa_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/2940ed80-4b69-4b98-abaf-af79088852c5/resource/042cb48b-0c3c-41cb-b296-fe50ae718510/download/bfa_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "bfa_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/2940ed80-4b69-4b98-abaf-af79088852c5/resource/c97b4e6e-4c80-4a01-8b15-242a9bc9f998/download/bfa_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "bfa_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/2940ed80-4b69-4b98-abaf-af79088852c5/resource/612520fc-1223-4dc2-bf60-a1e9a0e8c42c/download/bfa_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "bfa_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/2940ed80-4b69-4b98-abaf-af79088852c5/resource/6bf2c812-466f-4fc1-8ba7-6276c6c5deaa/download/bfa_admin_boundaries.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Burkina Faso: Languages",
+   "name": "burkina-faso-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/burkina-faso-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_BFA_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e956d5b9-397e-4f11-bc93-215bd5e2339f/resource/4af3b63e-ad34-4cf1-841e-38b650ff1c8a/download/clearglobal_language_use_bfa_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_BFA_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e956d5b9-397e-4f11-bc93-215bd5e2339f/resource/d9651c35-957c-400f-897e-1fff63cedb2f/download/clearglobal_language_use_bfa_admin1.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Burkina Faso - Education",
+   "name": "world-bank-education-indicators-for-burkina-faso",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-education-indicators-for-burkina-faso",
+   "resources": [
+    {
+     "name": "Education Indicators for Burkina Faso",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/b43b9310-b80c-4e8a-9143-f5616fd36fbc/resource/28eec0ac-a4dd-411a-b799-b536459e628f/download/education_bfa.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Burkina Faso Healthsites",
+   "name": "burkina-faso-healthsites",
+   "org": "Global Healthsites Mapping Project",
+   "url": "https://data.humdata.org/dataset/burkina-faso-healthsites",
+   "resources": [
+    {
+     "name": "burkina-faso-healthsites-csv-with-hxl-tags",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/f2a1ba8c-cbde-48a3-99ba-6d4017251950/resource/b3ce9e62-9240-4280-b097-c8812543b267/download/burkina-faso_hxl.csv"
+    },
+    {
+     "name": "burkina-faso-healthsites-shp",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/f2a1ba8c-cbde-48a3-99ba-6d4017251950/resource/aabdd2fc-d632-4fef-bbf5-bb0fb808c103/download/burkina-faso-shapefiles.zip"
+    },
+    {
+     "name": "burkina-faso-healthsites-hxl-geojson",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/f2a1ba8c-cbde-48a3-99ba-6d4017251950/resource/e1c80d2c-4d40-4ae4-9293-e5366d234f03/download/burkina-faso_hxl.geojson"
+    },
+    {
+     "name": "burkina-faso-healthsites-csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/f2a1ba8c-cbde-48a3-99ba-6d4017251950/resource/6148dec6-3c55-4a78-a739-d5c4951b6f0b/download/burkina-faso.csv"
+    },
+    {
+     "name": "burkina-faso-healthsites-geojson",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/f2a1ba8c-cbde-48a3-99ba-6d4017251950/resource/c552f6a9-e810-453d-b5d1-6fb28e43010b/download/burkina-faso.geojson"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Burkina Faso - Conflict Events",
+   "name": "burkina-faso-acled-conflict-data",
+   "org": "Armed Conflict Location & Event Data Project (ACLED)",
+   "url": "https://data.humdata.org/dataset/burkina-faso-acled-conflict-data",
+   "resources": [
+    {
+     "name": "burkina faso_HRP_political_violence_events_and_fatalities_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/697d684e-54b7-4432-80a6-2cbc38da0f03/resource/fc9e2ac7-8871-4377-aae5-2edd606dfa08/download/burkina-faso_hrp_political_violence_events_and_fatalities_by_month-year_as-of-10sep2026.xlsx"
+    },
+    {
+     "name": "burkina faso_HRP_civilian_targeting_events_and_fatalities_by_month",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/697d684e-54b7-4432-80a6-2cbc38da0f03/resource/503f4a7e-6eee-4882-8a86-df748bc2ee85/download/burkina-faso_hrp_civilian_targeting_events_and_fatalities_by_month-year_as-of-18apr2025.xlsx"
+    },
+    {
+     "name": "burkina faso_HRP_demonstration_events_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/697d684e-54b7-4432-80a6-2cbc38da0f03/resource/a755b834-e9cd-448c-a3a4-025e139fef7f/download/burkina-faso_hrp_demonstration_events_by_month-year_as-of-10sep2026.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Burkina Faso - Malian refugees sites in Burkina Faso",
+   "name": "burkina-faso-affected-persons-locations",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/burkina-faso-affected-persons-locations",
+   "resources": [
+    {
+     "name": "bfa_mli_ref.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/844cb190-b404-42fa-9fff-557d7c22d09b/resource/9a22d886-91b5-4459-9441-5b2a69ccaf12/download/bfa_mli_ref.zip"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Burkina Faso: Présence Opérationnelle",
+   "name": "burkina-faso-presence-operationnelle",
+   "org": "OCHA Burkina Faso",
+   "url": "https://data.humdata.org/dataset/burkina-faso-presence-operationnelle",
+   "resources": [
+    {
+     "name": "3W_BFA_June2026",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e56ff099-2e44-47da-9e56-240c618e657e/resource/a3371d7d-f549-404e-af9d-42fee78c6ce0/download/ocha-inter-cluster-3w-compiled-pbix-.xlsx"
+    },
+    {
+     "name": "3W Burkina Faso January-February 2025",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e56ff099-2e44-47da-9e56-240c618e657e/resource/6ea020f2-4141-40c8-825c-563f353c9b51/download/3w-burkina-faso-february-2025.xlsx"
+    },
+    {
+     "name": "3W Burkina Faso July-August 2024",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e56ff099-2e44-47da-9e56-240c618e657e/resource/5469daee-aad4-4fc7-9f2a-6b1745b5c96a/download/ocha-inter-cluster-3w-juillet-aout_2024-compiled_vf-pbix-hxl.xlsx"
+    },
+    {
+     "name": "3W Burkina Faso March-April 2024",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e56ff099-2e44-47da-9e56-240c618e657e/resource/3c9abf00-42ed-4676-a7d2-a85b3999a499/download/ocha-inter-cluster-3w-mars-avril_2024-compiled_vf-pbix.xlsx"
+    },
+    {
+     "name": "3W Burkina Faso January-February 2024",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e56ff099-2e44-47da-9e56-240c618e657e/resource/65a7c22d-1822-4767-9e3e-6c09faabed9d/download/ocha-inter-cluster-3w-janvier-fevrier-2024-compiled_vf-pbix.xlsx"
+    },
+    {
+     "name": "3W Burkina Faso November-December 2023",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e56ff099-2e44-47da-9e56-240c618e657e/resource/bce5627b-684a-404a-94fc-f67f2508baf9/download/ocha-inter-cluster-3w-nov-dec-2023-compiled_partage.xlsx"
+    },
+    {
+     "name": "3W Burkina Faso July-August 2023",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e56ff099-2e44-47da-9e56-240c618e657e/resource/75ac140e-9b52-4bbd-96fc-5eb52d0e76a2/download/burkina-3w-juillet-aout-2023-compiled_partage.xlsx"
+    },
+    {
+     "name": "3W Burkina Faso May-June 2023",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e56ff099-2e44-47da-9e56-240c618e657e/resource/5ff4fdca-c8d8-4ab4-9fd0-0429355d4a85/download/ocha-inter-cluster-3w-mai-juin-2023-compiled_vf-partage.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Burkina Faso - Education",
+   "name": "burkina-faso-education",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/burkina-faso-education",
+   "resources": [
+    {
+     "name": "bfa_educ_pt_s0_mapaction_pp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/17faacfc-dd46-4efc-9434-39f26dada7ff/resource/57faea2a-d8ce-4665-a380-1ff58934936c/download/bfa_educ_pt_s0_mapaction_pp.zip"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Burkina Faso - Nutrition",
+   "name": "burkina-faso-nutrition",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/burkina-faso-nutrition",
+   "resources": [
+    {
+     "name": "bfa_malnutrition_2011.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/40f202a5-3b30-4742-9743-50693516dc8f/resource/5526f4aa-d606-4ba3-88eb-3ef981ee3095/download/bfa_malnutrition_2011.xls"
+    }
+   ]
+  },
+  {
+   "term": "ethnicity",
+   "title": "Burkina Faso - Trade",
+   "name": "world-bank-trade-indicators-for-burkina-faso",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-trade-indicators-for-burkina-faso",
+   "resources": [
+    {
+     "name": "Trade Indicators for Burkina Faso",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/f5e6c387-f107-4d50-8a54-cd6447a7233e/resource/070295bb-02cb-4669-bb2c-6bb86ee375e0/download/trade_bfa.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Burkina Faso - Water Courses",
+   "name": "burkina-faso-water-courses",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/burkina-faso-water-courses",
+   "resources": [
+    {
+     "name": "BFA_rvrs_lines_1m_dcw.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/88ab108a-50bf-49ec-9042-c0c147c8b6ea/resource/45fcc280-1fca-41d8-98d5-f38be11e3eb5/download/bfa_rvrs_lines_1m_dcw.zip"
+    },
+    {
+     "name": "BFA_rvrs_areas_1m_dcw.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/88ab108a-50bf-49ec-9042-c0c147c8b6ea/resource/3819f239-1212-4612-affc-07bcef9a62e0/download/bfa_rvrs_areas_1m_dcw.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Burkina Faso - Statistics of Malian refugees in Burkina Faso",
+   "name": "burkina-faso-affected-persons-locations-0",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/burkina-faso-affected-persons-locations-0",
+   "resources": [
+    {
+     "name": "bfa_mali_refugees_2012.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d28e558f-294f-4430-ad96-53f88563475d/resource/0f635392-cb4b-4811-9e2c-ab3d44a916a0/download/bfa_mali_refugees_2012.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Burkina Faso - Food Security",
+   "name": "burkina-faso-food-security",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/burkina-faso-food-security",
+   "resources": [
+    {
+     "name": "bfa_cereals_prices_variation_may2012.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/589dbd6f-772d-43fc-a544-acfe94c28a3b/resource/4d96cabe-e864-4e59-a615-19a7f291f436/download/bfa_cereals_prices_variation_may2012.xls"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.insd.bf/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.insd.bf/fr/statistiques-demographiques/enquetes-demographiques-et-de-sante-indicateurs-multiples",
+    "status": 200,
+    "kind": "html",
+    "title": "ENQUETES DEMOGRAPHIQUES ET DE SANTE/INDICATEURS MULTIPLES | INSD",
+    "files": [
+     " /sites/default/files/2023-09/EDSBF-V%20Rapport%20de%20Synth%C3%A8se.pdf",
+     " /sites/default/files/2024-10/rapport_emds_2015%20%281%29.pdf",
+     " /sites/default/files/2024-11/Burkina%20Faso%202021%20DHS%20Final%20Report%2009072024.pdf",
+     " /sites/default/files/2024-11/Burkina%20Faso%20DHS%202021%20ERRATUM.pdf",
+     " /sites/default/files/2025-01/1.Pratiques%20alimentataires%20et%20diarrh%C3%A9e%20au%20Burkina%20Faso.pdf",
+     " /sites/default/files/2025-01/3.%20Utilisation%20moustiquaires%20et%20paludisme%C2%A0chez%20les%20enfants%20au%20Burkina%20Faso.pdf",
+     " /sites/default/files/2025-01/4.%20VIOLENCES%20CONJUGALES%20FINAL%20Au%20BURKINA%20FASO.pdf",
+     " /sites/default/files/2025-01/5.%20F%C3%A9condit%C3%A9_Analyse_Approfondie%20au%20Burkina%20Faso.pdf",
+     " /sites/default/files/2025-01/6.%20Ins%C3%A9curit%C3%A9_Alimentaire_final%20au%20Burkina%20Faso.pdf",
+     " /sites/default/files/2025-01/8.%20Baisse%20de%20la%20mortalit%C3%A9%20infanto%20juvenile%20au%20Burkina%20Faso.pdf",
+     " /sites/default/files/2026-07/7.Autonomie%20des%20femmes%20et%20r%C3%A9alisation%20de%20leur%20f%C3%A9condit%C3%A9%20d%C3%A9sir%C3%A9e%20au%20Burkina%20Faso.pdf"
+    ],
+    "mentions": [
+     "language",
+     "languages"
+    ]
+   },
+   {
+    "url": "https://www.insd.bf/fr/statistiques-demographiques/projections-demographiques",
+    "status": 200,
+    "kind": "html",
+    "title": "PROJECTIONS DEMOGRAPHIQUES | INSD",
+    "files": [
+     " /sites/default/files/2023-05/PROJECTIONS%20DEMOGRAPHIQUES_CASCADES%205E%20RGPH_0.pdf",
+     " /sites/default/files/2023-05/PROJECTIONS%20DEMOGRAPHIQUES_CENTRE%205E%20RGPH_0.pdf",
+     " /sites/default/files/2023-05/PROJECTIONS%20DEMOGRAPHIQUES_CENTRE-EST%205E%20RGPH_0.pdf",
+     " /sites/default/files/2023-05/PROJECTIONS%20DEMOGRAPHIQUES_CENTRE-NORD%205E%20RGPH.pdf",
+     " /sites/default/files/2023-05/PROJECTIONS%20DEMOGRAPHIQUES_CENTRE-OUEST%205E%20RGPH.pdf",
+     " /sites/default/files/2023-05/PROJECTIONS%20DEMOGRAPHIQUES_CENTRE-SUD_5E%20RGPH_0.pdf",
+     " /sites/default/files/2023-05/PROJECTIONS%20DEMOGRAPHIQUES_EST_5E%20RGPH.pdf",
+     " /sites/default/files/2023-05/PROJECTIONS%20DEMOGRAPHIQUES_NORD_5E%20RGPH_0.pdf",
+     " /sites/default/files/2023-05/PROJECTIONS%20DEMOGRAPHIQUES_PLATEAU%20CENTRAL__5E%20RGPH.pdf",
+     " /sites/default/files/2025-03/Projections%20Hauts%20Bassins.pdf"
+    ],
+    "mentions": [
+     "language",
+     "languages"
+    ]
+   },
+   {
+    "url": "https://www.insd.bf/fr/statistiques-demographiques/recensements-generaux-de-la-population",
+    "status": 200,
+    "kind": "html",
+    "title": "RECENSEMENTS GENERAUX DE LA POPULATION | INSD",
+    "files": [
+     " /sites/default/files/2023-09/Atlas%20sociod%C3%A9mographique%205e%20RGPH_.pdf",
+     " /sites/default/files/2024-06/Volume%20des%20tableaux%20statistiques_%205e%20RGPH.pdf",
+     " /sites/default/files/2024-07/Activit%C3%A9s-economiques%20des%20personnes%20agees%20au%20Burkina%20Faso_0.pdf",
+     " /sites/default/files/2024-07/Baisse%20de%20la%20f%C3%A9condit%C3%A9%20au%20Burkina%20Faso.pdf",
+     " /sites/default/files/2024-07/C%C3%A9libat%20d%C3%A9finitif%20au%20Burkina%20Faso.pdf",
+     " /sites/default/files/2024-07/Caract%C3%A9ristiques%20des%20m%C3%A9nages%20agricoles%20au%20Burkina%20Faso_0.pdf",
+     " /sites/default/files/2024-07/Facteurs%20de%20l%20union%20endogame%20des%20chefs%20de%20m%C3%A9nages%20au%20Burkina%20Faso.pdf",
+     " /sites/default/files/2024-07/Les%20disparit%C3%A9s%20spatiales%20de%20la%20qualit%C3%A9%20des%20logements%20au%20Burkina%20Faso.pdf",
+     " /sites/default/files/2024-07/Migration%20de%20la%20main%20d%20oeuvre%20au%20Burkina%20Faso%20VF_010724.pdf",
+     " /sites/default/files/2024-07/Rapport%20analyse%20Disparites%20communales%20.pdf"
+    ],
+    "mentions": [
+     "language",
+     "languages"
+    ]
+   },
+   {
+    "url": "https://www.insd.bf/fr/statistiques-demographiques/statistiques-sur-etat-civil",
+    "status": 200,
+    "kind": "html",
+    "title": "STATISTIQUES SUR L'ETAT CIVIL | INSD",
+    "files": [
+     " /sites/default/files/2021-03/EDS_1998-99_2_0.pdf"
+    ],
+    "mentions": [
+     "language",
+     "languages"
+    ]
+   },
+   {
+    "url": "https://www.insd.bf/fr/tableau-bord-demographique",
+    "status": 200,
+    "kind": "html",
+    "title": "Tableau de bord démographique | INSD",
+    "files": [
+     " /sites/default/files/2023-11/Tableau%20de%20Bord%20Demographique%202015.pdf",
+     " /sites/default/files/2024-02/TBD%202022_VF_2023.pdf"
+    ],
+    "mentions": [
+     "language",
+     "languages"
+    ]
+   },
+   {
+    "url": "https://www.insd.bf/fr/statistiques-demographiques/autres-statistiques-demographiques",
+    "status": 200,
+    "kind": "html",
+    "title": "AUTRES STATISTIQUES DEMOGRAPHIQUES | INSD",
+    "files": [
+     " /sites/default/files/2021-12/EIPBF_2018.pdf",
+     " /sites/default/files/2021-12/Tableau%20de%20Bord%20Demographique%202015.pdf"
+    ],
+    "mentions": [
+     "language",
+     "languages"
+    ]
+   }
+  ],
+  "title": "Accueil | INSD",
+  "matching_links": 6
+ },
+ "verdict": {
+  "hdx_datasets": 14,
+  "hdx_machine_readable": 11,
+  "nso_files_found": 36,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "1/1",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

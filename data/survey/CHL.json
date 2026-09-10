@@ -1,0 +1,792 @@
+{
+ "iso3": "CHL",
+ "name": "Chile",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Censo 2017 - Microdatos Personas (full-count person file, CSV, with REGION / PROVINCIA / COMUNA codes and the indigenous-belonging variable)",
+   "kind": "census",
+   "format": "csv (zip)",
+   "geography": "comuna (346), carrying provincia and región codes",
+   "geography_count": 346,
+   "matches_boundary_level": "aggregates exactly to admin2 (56 provincias) and admin1 (16 regiones)",
+   "url": "https://www.censo2017.cl/",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error [Errno 104] Connection reset by peer>"
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "IPUMS-International - Chile census samples (1960, 1970, 1982, 1992, 2002, 2017)",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "región and comuna (as harmonised geography)",
+   "geography_count": null,
+   "matches_boundary_level": "admin1; admin2 via comuna aggregation",
+   "url": "https://international.ipums.org/",
+   "status": 200,
+   "content_type": "text/html",
+   "final_url": "https://international.ipums.org/international/",
+   "error": null,
+   "body": {
+    "bytes_read": 13024,
+    "kind": "html",
+    "title": "IPUMS International",
+    "links_to_files": [],
+    "mentions": [
+     "census"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Chile",
+    "wikitext_bytes": 32526,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Year",
+       "Catholic",
+       "Protestant/Evangelical",
+       "Unaffiliated",
+       "Other religions",
+       "colspan=\"6\" | How important is religion in your life?",
+       "Year",
+       "Very important",
+       "Somewhat important",
+       "Not too important"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "colspan=\"6\" | How important is religion in your life?",
+       "Year",
+       "Very important",
+       "Somewhat important",
+       "Not too important",
+       "Not at all important",
+       "Don't Know/Refused"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 5
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Chile",
+    "wikitext_bytes": 94274,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 13,
+    "charts": [
+     "Historical populations",
+     "Pie chart",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 3,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=2| Year",
+       "rowspan=2| Total population<br />({{times}}1000)",
+       "colspan=3| Population percentage in age bracket",
+       "0–14",
+       "15–64",
+       "65+"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Mal"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "<ref name=\"deis\">{{cite web|url=https://deis.minsal.cl/|title=DEIS|publisher=deis.cl|access-date=November 19, 2015}}</ref>",
+       "width=\"80pt\"|Average population",
+       "width=\"80pt\"|Live births <ref>{{cite web |title=Series y gráficos de natalidad - 1950-2012 |url=http://www.deis.cl/series-y-graficos-de-natalidad/ |website=DEIS - Ministerio de Salud |access-date=5 June 2019 |archive-date=June 5, 2019 |archive-url=https://web.archive.org/web/20190605165924/http://www.deis.cl/series-y-graficos-de-natalidad/ }}</ref>",
+       "width=\"80pt\"|Deaths",
+       "width=\"80pt\"|Natural change",
+       "width=\"80pt\"|Crude birth rate (per 1000)",
+       "width=\"80pt\"|Crude death rate (per 1000)",
+       "width=\"80pt\"|Natural change (per 1000)",
+       "width=\"80pt\"|Crude migration change (per 1000)",
+       "width=\"80pt\"|Total fertility rate"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January-May 2025",
+       "January-May 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{cite web |title=Enero de 2024: número de nacimientos, matrimonios y muertes bajan interanualmente |url=https://www.ine.gob.cl/sala-de-prensa/prensa/general/noticia/2024/03/27/enero-de-2024-n%C3%BAmero-de-nacimientos-matrimonios-y-muertes-bajan-interanualmente |website=Instituto Nacional de Estadística |access-date=1 April 2024}}</ref>",
+       "Region",
+       "TFR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "Region",
+       "TFR",
+       "Years",
+       "1900",
+       "1901",
+       "1902",
+       "1903",
+       "1904",
+       "1905",
+       "1906"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "Years",
+       "1900",
+       "1901",
+       "1902",
+       "1903",
+       "1904",
+       "1905",
+       "1906",
+       "1907",
+       "1908"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1910",
+       "1911",
+       "1912",
+       "1913",
+       "1914",
+       "1915",
+       "1916",
+       "1917",
+       "1918"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1920",
+       "1921",
+       "1922",
+       "1923",
+       "1924",
+       "1925",
+       "1926",
+       "1927",
+       "1928"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "Years",
+       "1930",
+       "1931",
+       "1932",
+       "1933",
+       "1934",
+       "1935",
+       "1936",
+       "1937",
+       "1938"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "Years",
+       "1940",
+       "1941",
+       "1942",
+       "1943",
+       "1944",
+       "1945",
+       "1946",
+       "1947",
+       "1948"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "rowspan=2|Period",
+       "rowspan=2|Live births<br />per year",
+       "rowspan=2|Deaths<br />per year",
+       "rowspan=2|Natural change<br />per year",
+       "rowspan=2|CBR*",
+       "rowspan=2|CDR*",
+       "rowspan=2|NC*",
+       "rowspan=2|TFR*",
+       "rowspan=2|IMR*",
+       "colspan=3|Life expectancy"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "Community",
+       "Population",
+       "Percentage"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Provincia de Cardenal Caro",
+    "found": true,
+    "title": "Julio Ibarra",
+    "url": "https://en.wikipedia.org/wiki/Julio_Ibarra",
+    "wikitext_bytes": 10899,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Provincia de Chañaral",
+    "found": true,
+    "title": "Chañaral Province",
+    "url": "https://en.wikipedia.org/wiki/Cha%C3%B1aral_Province",
+    "wikitext_bytes": 9579,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Provincia de Curicó",
+    "found": true,
+    "title": "Curicó Province",
+    "url": "https://en.wikipedia.org/wiki/Curic%C3%B3_Province",
+    "wikitext_bytes": 12221,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics1_info2"
+    ],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Provincia de El Loa",
+    "found": true,
+    "title": "Nicanor de la Cruz",
+    "url": "https://en.wikipedia.org/wiki/Nicanor_de_la_Cruz",
+    "wikitext_bytes": 4222,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Provincia de Maipo",
+    "found": true,
+    "title": "Maipo Province",
+    "url": "https://en.wikipedia.org/wiki/Maipo_Province",
+    "wikitext_bytes": 10028,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics1_info2"
+    ],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Chile: Road Surface Data",
+   "name": "chile-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/chile-road-surface-data",
+   "resources": [
+    {
+     "name": "Chile GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_chl_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Chile GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_chl_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Chile: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-chile",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-chile",
+   "resources": [
+    {
+     "name": "kontur_boundaries_CL_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_CL_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_CL_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_CL_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_CL_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_CL_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Chile - Accessibility Indicators",
+   "name": "chile-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/chile-accessibility-indicators",
+   "resources": [
+    {
+     "name": "CHL_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/chl/CHL_education_access.gpkg"
+    },
+    {
+     "name": "CHL_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/chl/CHL_education_access_long.csv"
+    },
+    {
+     "name": "CHL_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/chl/CHL_education_access_wide.csv"
+    },
+    {
+     "name": "CHL_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/chl/CHL_hospitals_access.gpkg"
+    },
+    {
+     "name": "CHL_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/chl/CHL_hospitals_access_long.csv"
+    },
+    {
+     "name": "CHL_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/chl/CHL_hospitals_access_wide.csv"
+    },
+    {
+     "name": "CHL_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/chl/CHL_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "CHL_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/chl/CHL_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Chile - Subnational Population Statistics",
+   "name": "cod-ps-chl",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-chl",
+   "resources": [
+    {
+     "name": "CHL_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/41d5a318-783f-4da4-8960-ab938cc8a12f/resource/76c05c15-5c0e-46fa-98f3-bc4a4afc15a8/download/chl_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "chl_admpop_2022.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/41d5a318-783f-4da4-8960-ab938cc8a12f/resource/a71079e4-db99-49d2-ac3a-708f70ff0c44/download/chl_admpop_2022.xlsx"
+    },
+    {
+     "name": "chl_admpop_adm0_2022.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/41d5a318-783f-4da4-8960-ab938cc8a12f/resource/a34e2a0a-929c-4550-8feb-0c6bb6c0aaf1/download/chl_admpop_adm0_2022.csv"
+    },
+    {
+     "name": "chl_admpop_adm1_2022.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/41d5a318-783f-4da4-8960-ab938cc8a12f/resource/778ad1e8-d476-4bfd-a9a2-cfa245c474ec/download/chl_admpop_adm1_2022.csv"
+    },
+    {
+     "name": "chl_admpop_adm2_2022.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/41d5a318-783f-4da4-8960-ab938cc8a12f/resource/b430401e-f9b3-4216-86b2-61560010e054/download/chl_admpop_adm2_2022.csv"
+    },
+    {
+     "name": "chl_admpop_adm3_2022.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/41d5a318-783f-4da4-8960-ab938cc8a12f/resource/fdaadeea-0ebe-45be-a3e3-ff7448655ac9/download/chl_admpop_adm3_2022.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Chile: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "chile-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/chile-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "chl_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/dd47e052-02cc-4a3f-972a-421d600b3d85/resource/60e26929-176e-4c64-963b-f9410982023d/download/chl_general_2020_geotiff.zip"
+    },
+    {
+     "name": "chl_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/dd47e052-02cc-4a3f-972a-421d600b3d85/resource/bb560451-9c50-4d57-8ff3-872fa260c102/download/chl_general_2020_csv.zip"
+    },
+    {
+     "name": "chl_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/dd47e052-02cc-4a3f-972a-421d600b3d85/resource/33b43b9a-9f47-4f25-8bdc-568e8850fde8/download/chl_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "chl_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/dd47e052-02cc-4a3f-972a-421d600b3d85/resource/0f4844a5-e856-4dcb-bee4-74643d611eec/download/chl_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "chl_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/dd47e052-02cc-4a3f-972a-421d600b3d85/resource/056a5832-1490-41e4-8ee1-7c90ff1389ff/download/chl_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "chl_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/dd47e052-02cc-4a3f-972a-421d600b3d85/resource/29176ad5-b825-4737-b928-a588a47b1e72/download/chl_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "chl_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/dd47e052-02cc-4a3f-972a-421d600b3d85/resource/974ca9d6-99c0-47a1-b070-07bdd20c31c9/download/chl_men_2020_csv.zip"
+    },
+    {
+     "name": "chl_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/dd47e052-02cc-4a3f-972a-421d600b3d85/resource/42515e87-99fb-4345-aa10-b27796d8f516/download/chl_men_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Chile - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-chile",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-chile",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Chile",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1285be7c-0c52-46fe-ac9f-5bbf61cb4627/resource/d14df95d-8262-42e7-a74d-fb98d7a98e0f/download/social-protection-and-labor_chl.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Chile - Population Counts",
+   "name": "worldpop-population-counts-for-chile",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-chile",
+   "resources": [
+    {
+     "name": "chl_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/CHL/chl_ppp_2020.tif"
+    },
+    {
+     "name": "chl_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/CHL/chl_ppp_2019.tif"
+    },
+    {
+     "name": "chl_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/CHL/chl_ppp_2018.tif"
+    },
+    {
+     "name": "chl_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/CHL/chl_ppp_2017.tif"
+    },
+    {
+     "name": "chl_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/CHL/chl_ppp_2016.tif"
+    },
+    {
+     "name": "chl_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/CHL/chl_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "chl_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/CHL/chl_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "chl_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/CHL/chl_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Chile - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-cl-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-cl-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_CL",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/33263950-1e49-4496-adff-9d1ad127c79b/resource/35465b69-ef31-4573-8c6e-2ff1d2ef5523/download/indicator_data_cl.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Chile: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "chl-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/chl-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/ee55d5a1-3799-4c68-9875-0e3c392174f3/resource/4ec8bc37-e25f-457e-bf20-577278a3c733/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_chl.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/ee55d5a1-3799-4c68-9875-0e3c392174f3/resource/81b7d02d-c9a5-4f74-9383-5ed8471f14fe/download/ghs_pop_e2025_r2023a_54009_100_v1_0_chl.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Chile: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-chl",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-chl",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-cl-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-cl-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Green area per capita (square meters per capita)",
+   "name": "green-area-per-capita-square-meters-per-capita",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/green-area-per-capita-square-meters-per-capita",
+   "resources": [
+    {
+     "name": "Green area per_capita (square meters per capita).xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/7babf915-12a0-4ceb-ad9c-7ee24b776614/resource/2c1c5e09-0bbe-482f-9703-ec7dfed62c79/download/green-area-per_capita-square-meters-per-capita.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Old age dependency ratio",
+   "name": "old-age-dependency-ratio",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/old-age-dependency-ratio",
+   "resources": [
+    {
+     "name": "Old_age_dependency_ratio.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/1598cce7-3d04-42a5-9a2f-b5ba0095cf2f/resource/5217ad45-f56f-43c7-992f-d4e327d13615/download/old_age_dependency_ratio.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.ine.gob.cl/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.ine.gob.cl/estadisticas-por-tema/agricultura-y-medio-ambiente/censo-agropecuario",
+    "status": 200,
+    "kind": "html",
+    "title": "Censo Agropecuario",
+    "files": [
+     "http://www.ine.gob.cl/docs/default-source/censo-agropecuario/publicaciones-y-anuarios/2007/cambios-estructurales-en-la-agricultura-chilena---analisis-intercensal-1976-1997-2007.pdf",
+     "http://www.ine.gob.cl/docs/default-source/censo-agropecuario/publicaciones-y-anuarios/2007/la-mujer-en-la-agricultura-chilena---resultados-censo-agropecuario-2007.pdf",
+     "http://www.ine.gob.cl/docs/default-source/censo-agropecuario/publicaciones-y-anuarios/2007/las-pequenas-y-medianas-explotaciones---vii-censo-agropecuario-y-forestal-2007.pdf"
+    ],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://www.ine.gob.cl/estadisticas-por-tema/agricultura-y-medio-ambiente/censo-pesquero-y-acuicola",
+    "status": 200,
+    "kind": "html",
+    "title": "Censo Pesquero y Acu&#237;cola",
+    "files": [
+     "http://www.ine.gob.cl/docs/default-source/censo-pesquero-y-acuicola/publicaciones-y-anuarios/documentos/censo_pesquero_presentacion_resultados.pdf",
+     "http://www.ine.gob.cl/docs/default-source/censo-pesquero-y-acuicola/publicaciones-y-anuarios/documentos/primer_censo_nacional_pesquero_y_acuicultor_2008_2009_informe_de_avance_1_12_09_2008.pdf"
+    ],
+    "mentions": []
+   },
+   {
+    "url": "https://www.ine.gob.cl/estadisticas-por-tema/demografia-y-poblacion/censo-de-poblacion-y-vivienda",
+    "status": 200,
+    "kind": "html",
+    "title": "Censo de Poblaci&#243;n y Vivienda",
+    "files": [
+     "http://www.ine.gob.cl/docs/default-source/censo-de-poblacion-y-vivienda/publicaciones-y-anuarios/2017/publicaci&#243;n-de-resultados/presentacion_de_la_segunda_entrega_de_resultados_censo2017.pdf",
+     "http://www.ine.gob.cl/docs/default-source/censo-de-poblacion-y-vivienda/publicaciones-y-anuarios/2017/publicaci&#243;n-de-resultados/presentacion_resultados_definitivos_censo2017.pdf",
+     "http://www.ine.gob.cl/docs/default-source/censo-de-poblacion-y-vivienda/publicaciones-y-anuarios/2017/publicaci&#243;n-de-resultados/sintesis-de-resultados-censo2017.pdf"
+    ],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://www.ine.gob.cl/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion",
+    "status": 200,
+    "kind": "html",
+    "title": "Proyecciones de Poblaci&#243;n",
+    "files": [
+     "http://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/publicaciones-y-anuarios/base-2017/estimaciones-y-proyecciones-2002-2035_base-2017_reg_&#225;rea_infograf&#237;a.pdf",
+     "http://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/publicaciones-y-anuarios/base-2017/ine_estimaciones-y-proyecciones-2002-2035_base-2017_reg_&#225;rea_s&#237;ntesis.pdf",
+     "http://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/publicaciones-y-anuarios/base-2017/ine_estimaciones-y-proyecciones-de-poblaci&#243;n-1992-2050_base-2017_s&#237;ntesis.pdf"
+    ],
+    "mentions": []
+   }
+  ],
+  "title": "Inicio",
+  "matching_links": 4
+ },
+ "verdict": {
+  "hdx_datasets": 12,
+  "hdx_machine_readable": 6,
+  "nso_files_found": 11,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "1/2",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

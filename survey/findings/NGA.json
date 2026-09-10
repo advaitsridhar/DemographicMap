@@ -1,0 +1,73 @@
+{
+  "iso3": "NGA",
+  "name": "Nigeria",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "National Bureau of Statistics (statistics); National Population Commission (census)",
+    "url": "https://www.nigerianstat.gov.ng/",
+    "census_body_url": "https://nationalpopulation.gov.ng/"
+  },
+  "latest_census": {
+    "year": 2006,
+    "asks": {"religion": false, "ethnicity": false, "language": null},
+    "notes": "The 2006 census did not ask religion or ethnicity. Search snippets (Vanguard 2022-07 and 2023-03, Leadership, Daily Nigerian, Legit) quote the NPC: the 2023 census 'would not canvass questions on religion and religious affiliations', the decision 'to exclude religion along with ethnicity from the census questionnaire was taken in consideration of the sensitive nature of these issues', and 'the NPC had never asked questions on ethnicity and religion since 1991, and did not do so in 1991, 2006'. The last census that tabulated them was 1963 (already recorded by the project). Whether the 2023 census was ever conducted is NOT established here: one search summary asserts it 'eventually took place in 2023' while an allAfrica headline in the same results reads 'First Census in 17 Years Postponed Again in Nigeria'; a follow-up search on the current census date was not performed because the session's search budget ran out. Treat 2006 as the latest completed census until a runner checks. Whether 2006 asked language was not established."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion", "ethnicity"],
+      "title": "Nigeria Demographic and Health Survey 2023-24 (Key Indicators Report PR157; final report announced for 2025)",
+      "url": "https://dhsprogram.com/pubs/pdf/PR157/PR157.pdf",
+      "publisher": "National Population Commission / ICF (The DHS Program)",
+      "kind": "survey",
+      "format": "pdf",
+      "geography": "state + FCT",
+      "geography_count": 37,
+      "matches_boundary_level": "admin1",
+      "year": 2024,
+      "confidence": "low",
+      "evidence": "Search summary: results are 'representative of the country as a whole, urban and rural areas separately, and each of the country's 36 states and the Federal territory'; 'a comprehensive analysis of the data will be presented in a final report in 2025'. No snippet showed a religion-by-state table; DHS final reports normally carry religion only as a national background characteristic. Microdata (registration) at https://microdata.worldbank.org/index.php/catalog/8029. This is a survey and adds nothing the project has not already recorded as microdata-only."
+    },
+    {
+      "fields": ["religion", "ethnicity"],
+      "title": "Nigeria 2021 Multiple Indicator Cluster Survey (MICS) Survey Findings Report",
+      "url": "https://mics.unicef.org/sites/mics/files/Nigeria%202021_MICS_SFR_English.pdf",
+      "publisher": "National Bureau of Statistics / UNICEF",
+      "kind": "survey",
+      "format": "pdf",
+      "geography": "state + FCT (37 strata)",
+      "geography_count": 37,
+      "matches_boundary_level": "admin1",
+      "year": 2021,
+      "confidence": "low",
+      "evidence": "Search summary: 'designed to produce statistically reliable estimates ... for the 37 strata including all 36 states and the Federal Capital Territory'; '41,532 households'. Snippet says MICS 'disaggregate[s] data by ... ethnicity and other stratifiers' -- ethnicity as a breakdown variable, not a composition by state. Mirrors: https://www.unicef.org/nigeria/media/6316/file/2021%20MICS%20full%20report%20.pdf and NBS snapshot https://www.nigerianstat.gov.ng/pdfuploads/2021%20MICS%20Statistical%20Snapshots%20Report.pdf. Microdata (registration) at https://microdata.worldbank.org/index.php/catalog/5959. Survey; already recorded by the project as microdata-only."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [],
+    "admin2_samples": [],
+    "note": "Not searched. The session's WebSearch budget (200 calls, shared across the session) was exhausted before the Wikipedia searches ran; queries planned were '\"Religion in Nigeria\" wikipedia table by state', '\"Brass\" Nigeria local government area wikipedia', '\"Gboko\" Nigeria wikipedia', '\"Mopa-Muro\" Nigeria wikipedia'. Nothing is asserted about any article."
+  },
+  "tier": "C",
+  "tier_reason": "The census does not ask religion or ethnicity: the NPC stated in 2022 and 2023 that neither question would be on the 2023 questionnaire and that neither was asked in 1991 or 2006. The only subnational sources are surveys (NDHS, MICS, Afrobarometer), and Afrobarometer already fills 29 of 37 states. No count exists at any level; the right output is a not_collected declaration.",
+  "replaces_existing": false,
+  "recommended_action": "Declare religion and ethnicity not_collected for Nigeria's census with the NPC statements as evidence (Vanguard https://www.vanguardngr.com/2023/03/2023-national-census-no-question-will-be-asked-on-religion-npc/ and https://www.vanguardngr.com/2022/07/2023-census-will-not-canvass-questions-on-religion-npc/; Leadership https://leadership.ng/2023-census-will-not-ask-questions-on-religion-ethnicity-npc/). Keep the Afrobarometer fills. Two cheap follow-ups: (1) confirm whether any census has been held since 2006 (the search was not run); (2) when the NDHS 2023-24 final report appears, check whether it carries religion by state -- if it does, that is a published survey tabulation, which SOURCES.md names as one of the two things that would open Nigeria. Do not build from NDHS/MICS microdata without the owner's explicit decision to carry weighted survey estimates. Separately, 8 of 37 admin1 shapes are unfilled by Afrobarometer; that may be a name-join issue rather than absence and is worth a look in the repo, not a search.",
+  "searches_run": [
+    "Nigeria Demographic and Health Survey 2023-24 final report religion by state table",
+    "Nigeria MICS 2021 survey findings report religion ethnicity by state",
+    "Nigeria 2023 census postponed National Population Commission religion ethnicity question"
+  ],
+  "searches_not_run_budget_exhausted": [
+    "\"Religion in Nigeria\" wikipedia table by state",
+    "\"Brass\" Nigeria local government area wikipedia",
+    "\"Gboko\" Nigeria wikipedia",
+    "\"Mopa-Muro\" Nigeria wikipedia",
+    "Nigeria national census 2026 date National Population Commission latest census held"
+  ],
+  "not_found": [
+    "any census tabulation of religion, ethnicity or language at state or LGA level (the census does not ask)",
+    "a published NDHS or MICS table of religion or ethnicity by state (no snippet showed one; final NDHS 2023-24 report not yet seen)",
+    "any source at LGA level (774 admin2) for any field",
+    "whether the 2006 census asked language"
+  ],
+  "summary": "Nigeria's census has not asked religion or ethnicity since 1963; the NPC said publicly in 2022 and 2023 that the (repeatedly postponed) 2023 census would not ask either, citing sensitivity. Nothing found supersedes what SOURCES.md already records: the only subnational material is survey-based (NDHS 2023-24 and MICS 2021 are state-representative but published as PDFs and microdata behind registration), and Afrobarometer already fills 29 states. Tier C: declare not_collected with the NPC statements as evidence. Watch for the NDHS 2023-24 final report (2025) in case it tabulates religion by state. Wikipedia and the census-date follow-up were not searched because the session's search budget ran out."
+}

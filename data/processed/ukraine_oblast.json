@@ -59,12 +59,362 @@
         "count": 236
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Russian",
+        "pct": 58.4,
+        "count": 1180441
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 24.4,
+        "count": 492227
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 12.0,
+        "count": 243433
+      },
+      {
+        "group": "Belarusian",
+        "pct": 1.4,
+        "count": 29285
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.5,
+        "count": 11090
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.4,
+        "count": 8769
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.3,
+        "count": 7070
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.2,
+        "count": 3748
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.2,
+        "count": 4508
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.2,
+        "count": 3761
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 3879
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 1877
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 2790
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.1,
+        "count": 1774
+      },
+      {
+        "group": "Korean",
+        "pct": 0.1,
+        "count": 2872
+      },
+      {
+        "group": "Mari",
+        "pct": 0.1,
+        "count": 1070
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.1,
+        "count": 2208
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 2536
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.1,
+        "count": 2938
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 1875
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.1,
+        "count": 2171
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 702
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 338
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 569
+      },
+      {
+        "group": "Izhorian",
+        "pct": 0.0,
+        "count": 763
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 521
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 377
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 484
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 474
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 105
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 858
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 926
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 644
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.0,
+        "count": 320
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 733
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 151
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 679
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 215
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 192
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 212
+      },
+      {
+        "group": "Meskhetian Turkish",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 134
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 208
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 183
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 160
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Krymchak",
+        "pct": 0.0,
+        "count": 151
+      },
+      {
+        "group": "Orok",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Abkhazian",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Adyghe",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Afghani",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Karelian",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Indian and Pakistani",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Nivkh",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Slovakian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Ingushetian",
+        "pct": 0.0,
+        "count": 25
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -75,7 +425,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-cherkas-ka-oblast",
@@ -132,12 +484,242 @@
         "count": 81
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 93.2,
+        "count": 1301183
+      },
+      {
+        "group": "Russian",
+        "pct": 5.4,
+        "count": 75577
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.4,
+        "count": 5332
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.3,
+        "count": 3961
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 1735
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.1,
+        "count": 1617
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 1429
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 1092
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.0,
+        "count": 528
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 306
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 343
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 190
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 408
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 662
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.0,
+        "count": 485
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 110
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 79
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Karelian",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 111
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 97
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 65
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 133
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 33
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -148,7 +730,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-chernihivs-ka-oblast",
@@ -200,12 +784,192 @@
         "count": 861
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 93.6,
+        "count": 1155354
+      },
+      {
+        "group": "Russian",
+        "pct": 5.0,
+        "count": 62207
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.6,
+        "count": 7122
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.3,
+        "count": 3472
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 898
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 1484
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.1,
+        "count": 677
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 745
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 158
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 195
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.0,
+        "count": 356
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 439
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.0,
+        "count": 382
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 104
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Indian and Pakistani",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 182
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -216,7 +980,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-chernivets-ka-oblast",
@@ -273,12 +1039,182 @@
         "count": 1176
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 75.0,
+        "count": 689056
+      },
+      {
+        "group": "Romanian",
+        "pct": 12.5,
+        "count": 114555
+      },
+      {
+        "group": "Moldovian",
+        "pct": 7.3,
+        "count": 67225
+      },
+      {
+        "group": "Russian",
+        "pct": 4.1,
+        "count": 37881
+      },
+      {
+        "group": "Polish",
+        "pct": 0.4,
+        "count": 3344
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.2,
+        "count": 1483
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.2,
+        "count": 1421
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.1,
+        "count": 1120
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 238
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 366
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.0,
+        "count": 302
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 93
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 259
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 148
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.0,
+        "count": 150
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 22
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -289,7 +1225,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-dnipropetrovs-ka-oblast",
@@ -351,12 +1289,392 @@
         "count": 37
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 79.4,
+        "count": 2825781
+      },
+      {
+        "group": "Russian",
+        "pct": 17.6,
+        "count": 627531
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.8,
+        "count": 29528
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.4,
+        "count": 13729
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.3,
+        "count": 10683
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.2,
+        "count": 5678
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.2,
+        "count": 7831
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 2221
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.1,
+        "count": 2810
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.1,
+        "count": 4398
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 3762
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 3276
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.1,
+        "count": 3829
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 4028
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 468
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 1081
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 1414
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 545
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 365
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 1300
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 119
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 239
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 289
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 282
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 277
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 138
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 143
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 464
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 86
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.0,
+        "count": 82
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 326
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 340
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 299
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 680
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 390
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 166
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 189
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 195
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 507
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 698
+      },
+      {
+        "group": "Abkhazian",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Adyghe",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Buriat",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 86
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Ingushetian",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Karelian",
+        "pct": 0.0,
+        "count": 80
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 94
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 115
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 63
+      },
+      {
+        "group": "Liv",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Indian and Pakistani",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Nivkh",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Orok",
+        "pct": 0.0,
+        "count": 73
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Rutul",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Slovakian",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 131
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Afghani",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Cuban",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Tsakhur",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 16
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -367,7 +1685,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-donets-ka-oblast",
@@ -429,12 +1749,417 @@
         "count": 50
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 56.9,
+        "count": 2744149
+      },
+      {
+        "group": "Russian",
+        "pct": 38.3,
+        "count": 1844399
+      },
+      {
+        "group": "Greek",
+        "pct": 1.6,
+        "count": 77516
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.9,
+        "count": 44525
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.4,
+        "count": 19153
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.3,
+        "count": 15734
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.2,
+        "count": 8075
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.2,
+        "count": 8209
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.2,
+        "count": 8766
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 4798
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.1,
+        "count": 7188
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.1,
+        "count": 7171
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 4610
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 4335
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 4058
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 1023
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 927
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 399
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 1242
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 330
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 309
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 490
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 1160
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 207
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 888
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 551
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 386
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 599
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 1260
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 578
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 262
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 207
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 291
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 1209
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 1754
+      },
+      {
+        "group": "Meskhetian Turkish",
+        "pct": 0.0,
+        "count": 104
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 1034
+      },
+      {
+        "group": "Abazin",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Abkhazian",
+        "pct": 0.0,
+        "count": 196
+      },
+      {
+        "group": "Adyghe",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 417
+      },
+      {
+        "group": "Afghani",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 127
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 274
+      },
+      {
+        "group": "Mountain Jewish",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Karelian",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 79
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 144
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Indian and Pakistani",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Nivkh",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Orok",
+        "pct": 0.0,
+        "count": 115
+      },
+      {
+        "group": "Oroch",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Circassian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 98
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 112
+      },
+      {
+        "group": "Yakut",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 302
+      },
+      {
+        "group": "Buriat",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Cuban",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Nenet",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Ent",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -445,7 +2170,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-ivano-frankivs-ka-oblast",
@@ -492,12 +2219,157 @@
         "count": 1014
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 97.6,
+        "count": 1371242
+      },
+      {
+        "group": "Russian",
+        "pct": 1.8,
+        "count": 24925
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.2,
+        "count": 3136
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.1,
+        "count": 1468
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 1858
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.0,
+        "count": 543
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 239
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 162
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 93
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 190
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.0,
+        "count": 157
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.0,
+        "count": 105
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 80
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 327
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 19
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -508,7 +2380,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-kharkivs-ka-oblast",
@@ -560,12 +2434,412 @@
         "count": 920
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 70.8,
+        "count": 2048699
+      },
+      {
+        "group": "Russian",
+        "pct": 25.6,
+        "count": 742025
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.9,
+        "count": 27382
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.5,
+        "count": 14752
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.4,
+        "count": 11150
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.4,
+        "count": 11513
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.2,
+        "count": 5673
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.2,
+        "count": 4385
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.1,
+        "count": 2449
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 1891
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.1,
+        "count": 4157
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 2283
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.1,
+        "count": 2427
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 977
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 130
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 953
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 340
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 650
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 309
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 374
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 1403
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 93
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 202
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 347
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 369
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 236
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 795
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 318
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 453
+      },
+      {
+        "group": "Ingushetian",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 270
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 298
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 1243
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 372
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 156
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 969
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 126
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 159
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 120
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 217
+      },
+      {
+        "group": "Meskhetian Turkish",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Abkhazian",
+        "pct": 0.0,
+        "count": 141
+      },
+      {
+        "group": "Adyghe",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Afghani",
+        "pct": 0.0,
+        "count": 119
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Buriat",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Karelian",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 730
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Cuban",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 139
+      },
+      {
+        "group": "Liv",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Indian and Pakistani",
+        "pct": 0.0,
+        "count": 144
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 291
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Rutul",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Khakas",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Circassian",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Chuvant",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Yakut",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -576,7 +2850,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-khersons-ka-oblast",
@@ -628,12 +2904,272 @@
         "count": 11
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 82.1,
+        "count": 961584
+      },
+      {
+        "group": "Russian",
+        "pct": 14.1,
+        "count": 165211
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.7,
+        "count": 8186
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.5,
+        "count": 5328
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.4,
+        "count": 4548
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.4,
+        "count": 4179
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.3,
+        "count": 3707
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.2,
+        "count": 2061
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.2,
+        "count": 1883
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.1,
+        "count": 1272
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 1024
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.1,
+        "count": 588
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 1690
+      },
+      {
+        "group": "Korean",
+        "pct": 0.1,
+        "count": 1245
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 1358
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 1616
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 1735
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 305
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 171
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 213
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 170
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 365
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 276
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.0,
+        "count": 120
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 102
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 80
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 105
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 129
+      },
+      {
+        "group": "Meskhetian Turkish",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 411
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.0,
+        "count": 283
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 57
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 142
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 99
+      },
+      {
+        "group": "Dungan",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 77
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 13
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -644,7 +3180,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-khmel-nyts-ka-oblast",
@@ -696,12 +3234,202 @@
         "count": 588
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 94.0,
+        "count": 1339331
+      },
+      {
+        "group": "Russian",
+        "pct": 3.6,
+        "count": 50686
+      },
+      {
+        "group": "Polish",
+        "pct": 1.6,
+        "count": 23005
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.2,
+        "count": 2750
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.2,
+        "count": 2945
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 1132
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.1,
+        "count": 1338
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 1329
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 315
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 104
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 472
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.0,
+        "count": 327
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.0,
+        "count": 410
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 161
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 67
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 128
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Afghani",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.0,
+        "count": 17
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -712,7 +3440,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-kirovohrads-ka-oblast",
@@ -764,12 +3494,217 @@
         "count": 16
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 90.3,
+        "count": 1014616
+      },
+      {
+        "group": "Russian",
+        "pct": 7.5,
+        "count": 83929
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.7,
+        "count": 8274
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.5,
+        "count": 5550
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.3,
+        "count": 2994
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.2,
+        "count": 2170
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.1,
+        "count": 742
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 1012
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 899
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 494
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 85
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 430
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 216
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 494
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.0,
+        "count": 468
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.0,
+        "count": 63
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 226
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 272
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 80
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 85
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 119
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 16
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -780,7 +3715,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-kyyivs-ka-oblast",
@@ -842,12 +3779,252 @@
         "count": 16
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 92.7,
+        "count": 1684803
+      },
+      {
+        "group": "Russian",
+        "pct": 6.0,
+        "count": 109322
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.5,
+        "count": 8698
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 2831
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 2341
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.1,
+        "count": 1510
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.1,
+        "count": 1350
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 1178
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 373
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 131
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 164
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.0,
+        "count": 870
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 660
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.0,
+        "count": 829
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 444
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 106
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 817
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 57
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 145
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 125
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 144
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Mountain Jewish",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Meskhetian Turkish",
+        "pct": 0.0,
+        "count": 73
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -858,7 +4035,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-luhans-ka-oblast",
@@ -910,12 +4089,282 @@
         "count": 304
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 58.0,
+        "count": 1472376
+      },
+      {
+        "group": "Russian",
+        "pct": 39.1,
+        "count": 991825
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.8,
+        "count": 20587
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.4,
+        "count": 10616
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.3,
+        "count": 6587
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.3,
+        "count": 8529
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.1,
+        "count": 3116
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 1583
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.1,
+        "count": 2041
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 2596
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.1,
+        "count": 3252
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 1523
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 2076
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 2238
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 239
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 238
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 961
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 150
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 501
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 723
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 371
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 565
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 1017
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 92
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 241
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 170
+      },
+      {
+        "group": "Karelian",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 418
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 207
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 176
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 313
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 153
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 65
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 106
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 164
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Abkhazian",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 81
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 158
+      },
+      {
+        "group": "Afghani",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.0,
+        "count": 446
+      },
+      {
+        "group": "Indian and Pakistani",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Nivkh",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Orok",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -926,7 +4375,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-l-vivs-ka-oblast",
@@ -988,12 +4439,272 @@
         "count": 154
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 94.9,
+        "count": 2471033
+      },
+      {
+        "group": "Russian",
+        "pct": 3.6,
+        "count": 92565
+      },
+      {
+        "group": "Polish",
+        "pct": 0.7,
+        "count": 18948
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.3,
+        "count": 7333
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.2,
+        "count": 5437
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 2166
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.0,
+        "count": 758
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 696
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 1078
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.0,
+        "count": 591
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 122
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.0,
+        "count": 354
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 308
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 115
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 118
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 83
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 556
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 79
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 63
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 245
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 332
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Afghani",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 105
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Karelian",
+        "pct": 0.0,
+        "count": 138
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Indian and Pakistani",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Orok",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 65
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Slovakian",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -1004,7 +4715,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-misto-kyyiv",
@@ -1071,12 +4784,542 @@
         "count": 133
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 82.2,
+        "count": 2110767
+      },
+      {
+        "group": "Russian",
+        "pct": 13.1,
+        "count": 337323
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 1.8,
+        "count": 45895
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.7,
+        "count": 17962
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.6,
+        "count": 16549
+      },
+      {
+        "group": "Polish",
+        "pct": 0.3,
+        "count": 6924
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.2,
+        "count": 4935
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.1,
+        "count": 2567
+      },
+      {
+        "group": "Arab",
+        "pct": 0.1,
+        "count": 1426
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 1514
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.1,
+        "count": 2352
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.1,
+        "count": 1927
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.1,
+        "count": 2451
+      },
+      {
+        "group": "Abazin",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Abkhazian",
+        "pct": 0.0,
+        "count": 67
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 111
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Aghul",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Adyghe",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 295
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 317
+      },
+      {
+        "group": "Afghani",
+        "pct": 0.0,
+        "count": 301
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 198
+      },
+      {
+        "group": "Baloch",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Buriat",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 469
+      },
+      {
+        "group": "Vep",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 182
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 901
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 133
+      },
+      {
+        "group": "Even",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 194
+      },
+      {
+        "group": "Mountain Jewish",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Georgian Jewish",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Ingushetian",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 73
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 339
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Canadian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Karelian",
+        "pct": 0.0,
+        "count": 141
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 107
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 505
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 82
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 384
+      },
+      {
+        "group": "Koryak",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Krymchak",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Cuban",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 118
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.0,
+        "count": 199
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 149
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 369
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 198
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 406
+      },
+      {
+        "group": "Liv",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 131
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 279
+      },
+      {
+        "group": "Indian and Pakistani",
+        "pct": 0.0,
+        "count": 445
+      },
+      {
+        "group": "Negidal",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Nenet",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Nivkh",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 1123
+      },
+      {
+        "group": "Orok",
+        "pct": 0.0,
+        "count": 101
+      },
+      {
+        "group": "Oroch",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 374
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 189
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 203
+      },
+      {
+        "group": "Sami",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 125
+      },
+      {
+        "group": "Slovakian",
+        "pct": 0.0,
+        "count": 83
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 201
+      },
+      {
+        "group": "Talysh",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Tat",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 122
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 274
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 257
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 124
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 688
+      },
+      {
+        "group": "Uyghur",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Ulch",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Khalkha",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Hunt",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 245
+      },
+      {
+        "group": "Circassian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 381
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 280
+      },
+      {
+        "group": "Chuvant",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 340
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Yakut",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 653
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -1087,7 +5330,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-misto-sevastopol",
@@ -1144,12 +5389,312 @@
         "count": 922
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Russian",
+        "pct": 71.6,
+        "count": 269953
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 22.4,
+        "count": 84420
+      },
+      {
+        "group": "Belarusian",
+        "pct": 1.6,
+        "count": 5872
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 1.0,
+        "count": 3820
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.7,
+        "count": 2512
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.5,
+        "count": 1858
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.3,
+        "count": 1319
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.3,
+        "count": 1016
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.2,
+        "count": 629
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.2,
+        "count": 801
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 580
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 405
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 241
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.1,
+        "count": 363
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.1,
+        "count": 366
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 254
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.1,
+        "count": 508
+      },
+      {
+        "group": "Abkhazian",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Adyghe",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 139
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 77
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Karelian",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 150
+      },
+      {
+        "group": "Krymchak",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 94
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 67
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 156
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Nivkh",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Orok",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Oroch",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 181
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Selkup",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Slovakian",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 123
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 140
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 16
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -1160,7 +5705,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-mykolayivs-ka-oblast",
@@ -1217,12 +5764,297 @@
         "count": 449
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 82.0,
+        "count": 1034446
+      },
+      {
+        "group": "Russian",
+        "pct": 14.1,
+        "count": 177530
+      },
+      {
+        "group": "Moldovian",
+        "pct": 1.0,
+        "count": 13171
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.7,
+        "count": 8369
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.4,
+        "count": 5614
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.3,
+        "count": 4277
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.3,
+        "count": 3169
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.1,
+        "count": 1459
+      },
+      {
+        "group": "Korean",
+        "pct": 0.1,
+        "count": 1710
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 1194
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 1297
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 1428
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.1,
+        "count": 860
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.1,
+        "count": 763
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.1,
+        "count": 1232
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.1,
+        "count": 748
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.1,
+        "count": 1166
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 57
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 72
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 219
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 63
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 70
+      },
+      {
+        "group": "Abkhazian",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 65
+      },
+      {
+        "group": "Buriat",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 269
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Karelian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.0,
+        "count": 108
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 129
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 179
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 82
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 84
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 313
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 231
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 14
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -1233,7 +6065,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-odes-ka-oblast",
@@ -1290,12 +6124,407 @@
         "count": 901
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 62.9,
+        "count": 1542341
+      },
+      {
+        "group": "Russian",
+        "pct": 20.7,
+        "count": 508537
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 6.1,
+        "count": 150683
+      },
+      {
+        "group": "Moldovian",
+        "pct": 5.0,
+        "count": 123751
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 1.3,
+        "count": 32817
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 1.1,
+        "count": 27608
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.5,
+        "count": 12767
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.5,
+        "count": 13328
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.3,
+        "count": 7440
+      },
+      {
+        "group": "Roma",
+        "pct": 0.2,
+        "count": 4018
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.1,
+        "count": 2753
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 2032
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.1,
+        "count": 2739
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 2841
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 3199
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.1,
+        "count": 2572
+      },
+      {
+        "group": "Arab",
+        "pct": 0.1,
+        "count": 1254
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.1,
+        "count": 1815
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 322
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 268
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 382
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 294
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 655
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 746
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 774
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 465
+      },
+      {
+        "group": "Abkhazian",
+        "pct": 0.0,
+        "count": 308
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 159
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 446
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 739
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 243
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 285
+      },
+      {
+        "group": "Afghani",
+        "pct": 0.0,
+        "count": 205
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 192
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 318
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 144
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 124
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 107
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 254
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 98
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 98
+      },
+      {
+        "group": "Adyghe",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 338
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 83
+      },
+      {
+        "group": "Ingushetian",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Karelian",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 380
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Cuban",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Liv",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Indian and Pakistani",
+        "pct": 0.0,
+        "count": 339
+      },
+      {
+        "group": "Nenet",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Nivkh",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Orok",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Oroch",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Sami",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Slovakian",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Tat",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 71
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -1306,7 +6535,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-poltavs-ka-oblast",
@@ -1353,12 +6584,252 @@
         "count": 40
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 91.5,
+        "count": 1481167
+      },
+      {
+        "group": "Russian",
+        "pct": 7.2,
+        "count": 117071
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.4,
+        "count": 6309
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.2,
+        "count": 2562
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.2,
+        "count": 2674
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.1,
+        "count": 1177
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 1803
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 924
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 771
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.0,
+        "count": 762
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 606
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 284
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 270
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 541
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 166
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 72
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 150
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 111
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 95
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 161
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 151
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 121
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 130
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 97
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Ingushetian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Karelian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 37
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -1369,7 +6840,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-rivnens-ka-oblast",
@@ -1426,12 +6899,172 @@
         "count": 31
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 96.0,
+        "count": 1123401
+      },
+      {
+        "group": "Russian",
+        "pct": 2.6,
+        "count": 30129
+      },
+      {
+        "group": "Belarusian",
+        "pct": 1.0,
+        "count": 11827
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 2019
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.0,
+        "count": 339
+      },
+      {
+        "group": "Slovakian",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 291
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 198
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.0,
+        "count": 206
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.0,
+        "count": 234
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 261
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 156
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 66
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 400
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.0,
+        "count": 131
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 113
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 16
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -1442,7 +7075,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-sums-ka-oblast",
@@ -1489,12 +7124,212 @@
         "count": 1986
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 89.0,
+        "count": 1152034
+      },
+      {
+        "group": "Russian",
+        "pct": 9.4,
+        "count": 121655
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.8,
+        "count": 10016
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.3,
+        "count": 4320
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 1175
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.1,
+        "count": 769
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 1361
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 719
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.0,
+        "count": 498
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 304
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.0,
+        "count": 362
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 347
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 336
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 110
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Karelian",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 93
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 106
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 11
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -1505,7 +7340,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-ternopil-s-ka-oblast",
@@ -1557,12 +7394,142 @@
         "count": 11
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 97.9,
+        "count": 1113516
+      },
+      {
+        "group": "Russian",
+        "pct": 1.2,
+        "count": 14194
+      },
+      {
+        "group": "Polish",
+        "pct": 0.3,
+        "count": 3842
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.3,
+        "count": 3465
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.1,
+        "count": 956
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 220
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.0,
+        "count": 311
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 131
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Vep",
+        "pct": 0.0,
+        "count": 93
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 11
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -1573,7 +7540,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-vinnyts-ka-oblast",
@@ -1620,12 +7589,232 @@
         "count": 1936
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 95.0,
+        "count": 1674135
+      },
+      {
+        "group": "Russian",
+        "pct": 3.8,
+        "count": 67501
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.2,
+        "count": 3114
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.2,
+        "count": 3018
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.2,
+        "count": 2944
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 3766
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 1057
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.1,
+        "count": 1907
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.0,
+        "count": 677
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 196
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 317
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 87
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.0,
+        "count": 411
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 829
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 288
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 406
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 102
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 108
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 113
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Karelian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Indian and Pakistani",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Orok",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 15
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -1636,7 +7825,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-volyns-ka-oblast",
@@ -1678,12 +7869,172 @@
         "count": 446
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 97.1,
+        "count": 1024955
+      },
+      {
+        "group": "Russian",
+        "pct": 2.4,
+        "count": 25132
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.3,
+        "count": 3217
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 747
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 259
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 226
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.0,
+        "count": 265
+      },
+      {
+        "group": "Slovakian",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.0,
+        "count": 187
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 182
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 88
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.0,
+        "count": 121
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 207
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 25
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -1694,7 +8045,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-zakarpats-ka-oblast",
@@ -1761,12 +8114,212 @@
         "count": 108
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 80.6,
+        "count": 1010127
+      },
+      {
+        "group": "Hungarian",
+        "pct": 12.1,
+        "count": 151508
+      },
+      {
+        "group": "Romanian",
+        "pct": 2.6,
+        "count": 32109
+      },
+      {
+        "group": "Russian",
+        "pct": 2.5,
+        "count": 30993
+      },
+      {
+        "group": "Roma",
+        "pct": 1.1,
+        "count": 14002
+      },
+      {
+        "group": "Slovakian",
+        "pct": 0.5,
+        "count": 5693
+      },
+      {
+        "group": "German",
+        "pct": 0.3,
+        "count": 3574
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.1,
+        "count": 1540
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 447
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 538
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.0,
+        "count": 493
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 482
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.0,
+        "count": 208
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.0,
+        "count": 286
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 242
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 283
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.0,
+        "count": 177
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 147
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 101
+      },
+      {
+        "group": "Indian and Pakistani",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -1777,7 +8330,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-zaporiz-ka-oblast",
@@ -1839,12 +8394,387 @@
         "count": 207
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 70.9,
+        "count": 1364095
+      },
+      {
+        "group": "Russian",
+        "pct": 24.8,
+        "count": 476748
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 1.4,
+        "count": 27753
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.7,
+        "count": 12655
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.3,
+        "count": 6400
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.3,
+        "count": 5153
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.2,
+        "count": 3867
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.2,
+        "count": 4299
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.1,
+        "count": 2479
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 2168
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.1,
+        "count": 2476
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 2191
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 1739
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 1849
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.1,
+        "count": 1123
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 140
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 213
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 86
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 220
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 88
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 911
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 151
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 254
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 117
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 474
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 249
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 120
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 126
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 143
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 253
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 667
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 549
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 524
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 166
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 179
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.0,
+        "count": 841
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 219
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Krymchak",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 334
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 758
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 139
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 83
+      },
+      {
+        "group": "Karelian",
+        "pct": 0.0,
+        "count": 79
+      },
+      {
+        "group": "Eskimo",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Abkhazian",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Aghul",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 146
+      },
+      {
+        "group": "Afghani",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Cuban",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Liv",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Indian and Pakistani",
+        "pct": 0.0,
+        "count": 85
+      },
+      {
+        "group": "Nivkh",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Orok",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Oroch",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Sami",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Slovakian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Ulch",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Tsakhur",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 97
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -1855,7 +8785,9 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   },
   {
     "id": "UKR-zhytomyrs-ka-oblast",
@@ -1902,12 +8834,227 @@
         "count": 394
       }
     ],
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Ukrainian",
+        "pct": 90.5,
+        "count": 1254855
+      },
+      {
+        "group": "Russian",
+        "pct": 5.0,
+        "count": 68851
+      },
+      {
+        "group": "Polish",
+        "pct": 3.5,
+        "count": 49046
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.4,
+        "count": 4924
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.2,
+        "count": 2651
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 791
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.1,
+        "count": 1425
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 969
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 716
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 801
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.0,
+        "count": 309
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 164
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.0,
+        "count": 412
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 82
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.0,
+        "count": 259
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 80
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 147
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Chuvashian",
+        "pct": 0.0,
+        "count": 79
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 57
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Afghani",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 77
+      },
+      {
+        "group": "Mordvinian",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Indian and Pakistani",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Slovakian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 39
+      }
+    ],
     "sources": [
       {
         "field": "language",
+        "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
         "name": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, prepared as subnational tables by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
         "license": "CC BY-IGO, published via HDX"
@@ -1918,6 +9065,8 @@
     ],
     "parent_aliases": [],
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001."
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001.",
+    "ethnicity_year": 2001,
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001."
   }
 ]

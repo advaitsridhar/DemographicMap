@@ -1,0 +1,889 @@
+{
+ "iso3": "TZA",
+ "name": "Tanzania",
+ "tier_proposed": "C",
+ "sources": [
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "Tanzania Demographic and Health Survey and Malaria Indicator Survey (TDHS-MIS) 2022 -- Final Report (FR382)",
+   "kind": "survey",
+   "format": "pdf",
+   "geography": "region",
+   "geography_count": 31,
+   "matches_boundary_level": "admin1 (approximately -- the boundary file draws 30 regions, the survey has 31)",
+   "url": "https://www.dhsprogram.com/publications/publication-fr382-dhs-final-reports.cfm",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error timed out>"
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Tanzania",
+    "wikitext_bytes": 13239,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Regions of Tanzania",
+    "wikitext_bytes": 8832,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Rank<br>(Area)",
+       "Region",
+       "Capital",
+       "Districts",
+       "class=data-sort-type:number | Area<br>(km{{sup|2}})",
+       "Population<br>(2022){{r|2022_census}}",
+       "Rank<br>(Population)",
+       "Postcode",
+       "class=\"unsortable\" | Map"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 18
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Tanzania",
+    "wikitext_bytes": 37197,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 8,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "! width=\"80\" |Total population<ref name=\"WPP 2012\"/>",
+       "width=\"80\" |Population aged 0–14 (%)<ref name=\"WPP 2012\"/>",
+       "width=\"80\" |Population aged 15–64 (%)<ref name=\"WPP 2012\"/>",
+       "width=\"80\" |Population aged 65+ (%)<ref name=\"WPP 2012\"/>",
+       "width=\"80\" |Age group",
+       "width=\"80\" |Male",
+       "width=\"80\" |Female",
+       "width=\"80\" |Total",
+       "width=\"80  |%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80\" |Age group",
+       "width=\"80\" |Male",
+       "width=\"80\" |Female",
+       "width=\"80\" |Total",
+       "width=\"80  |%",
+       "width=\"50\"|Age group",
+       "width=\"80\" |Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\" |Mid-year population",
+       "style=\"width:80pt;\" |Live births",
+       "style=\"width:80pt;\" |Deaths",
+       "style=\"width:80pt;\" |Natural change",
+       "style=\"width:80pt;\" |Crude birth rate (per 1000)",
+       "style=\"width:80pt;\" |Crude death rate (per 1000)",
+       "style=\"width:80pt;\" |Natural change (per 1000)",
+       "style=\"width:80pt;\" |Total fertility rate (TFR)",
+       "style=\"width:80pt;\" |Infant mortality (per 1000 births)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 32
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in <br /> Years<ref>{{Cite web|url=https://esa.un.org/unpd/wpp/DataQuery/|title=World Population Prospects - Population Division - United Nations|website=esa.un.org|access-date=2018-08-26}}</ref>",
+       "width=\"220\" |Region",
+       "width=\"150\" |1967 (Population / Crude Birth Rate / Total Fertility Rate)",
+       "width=\"150\" |1978 (Population / Crude Birth Rate / Total Fertility Rate)",
+       "width=\"150\" |1988 (Population / Crude Birth Rate / Total Fertility Rate)",
+       "width=\"150\" |2002 (Population / Crude Birth Rate / Total Fertility Rate)",
+       "width=\"150\" |2012 (Population / Crude Birth Rate / Total Fertility Rate)",
+       "style=\"width:70pt;\"| Year",
+       "style=\"width:50pt;\"| CBR (Total)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "width=\"220\" |Region",
+       "width=\"150\" |1967 (Population / Crude Birth Rate / Total Fertility Rate)",
+       "width=\"150\" |1978 (Population / Crude Birth Rate / Total Fertility Rate)",
+       "width=\"150\" |1988 (Population / Crude Birth Rate / Total Fertility Rate)",
+       "width=\"150\" |2002 (Population / Crude Birth Rate / Total Fertility Rate)",
+       "width=\"150\" |2012 (Population / Crude Birth Rate / Total Fertility Rate)",
+       "style=\"width:70pt;\"| Year",
+       "style=\"width:50pt;\"| CBR (Total)",
+       "style=\"width:60pt;\"| TFR (Total)",
+       "style=\"width:50pt;\"| CBR (Urban)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "style=\"width:70pt;\"| Year",
+       "style=\"width:50pt;\"| CBR (Total)",
+       "style=\"width:60pt;\"| TFR (Total)",
+       "style=\"width:50pt;\"| CBR (Urban)",
+       "style=\"width:60pt;\"| TFR (Urban)",
+       "style=\"width:50pt;\"| CBR (Rural)",
+       "style=\"width:60pt;\"| TFR (Rural)",
+       "style=\"width:50pt;\"| CBR (Zanzibar)",
+       "style=\"width:60pt;\"| TFR (Zanzibar)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "width=\"150\" |Region",
+       "width=\"70\" |1967<ref name=\"2002 Census\">{{cite web|url=http://www.nbs.go.tz/takwimu/references/2002popcensus.pdf|title=2002 Census, United Republic of Tanzania|access-date=2013-03-12|archive-url=https://web.archive.org/web/20120417080712/http://www.nbs.go.tz/takwimu/references/2002popcensus.pdf|archive-date=2012-04-17|url-status=dead}}</ref>",
+       "width=\"70\" |1978<ref name=\"2002 Census\"/>",
+       "width=\"70\" |1988<ref name=\"2002 Census\"/>",
+       "width=\"70\" |2006-09<ref name=\"DHS 2010\">[http://www.nbs.go.tz/takwimu/references/2010TDHS.pdf Tanzania Demographic and Health Survey 2010, Tanzania National Bureau of Standards, funding provided by the Ministry of Health and Social Welfare (Tanzania), Tanzania Food and Nutrition Centre, Department for International Development (United Kingdom), World Health Organization/Zanzibar, United Nations Fund for Population Activities, United Nations Children's Fund, World Food Programme, United Nations Development Programme, and Irish Aids, technical assistance provided by ICF Macro through its MEASURE DHS programme, survey conducted 19 December 2010 to 23 May 2011, with results applying to the preceding three-year period] {{webarchive |url=https://web.archive.org/web/20120913152403/http://www.nbs.go.tz/takwimu/references/2010TDHS.pdf |date=September 13, 2012 }}</ref>",
+       "2017<ref>{{Cite web|url=https://www.statcompiler.com/en/#|title=STATcompiler|website=www.statcompiler.com|access-date=2020-02-17}}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 30
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Handeni",
+    "found": true,
+    "title": "Handeni",
+    "url": "https://en.wikipedia.org/wiki/Handeni",
+    "wikitext_bytes": 7633,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name",
+     "language"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   },
+   {
+    "shape_name": "Itilima",
+    "found": true,
+    "title": "Itilima District",
+    "url": "https://en.wikipedia.org/wiki/Itilima_District",
+    "wikitext_bytes": 4591,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Missenyi",
+    "found": true,
+    "title": "Missenyi District",
+    "url": "https://en.wikipedia.org/wiki/Missenyi_District",
+    "wikitext_bytes": 5290,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Momba",
+    "found": true,
+    "title": "Wanda language",
+    "url": "https://en.wikipedia.org/wiki/Wanda_language",
+    "wikitext_bytes": 1666,
+    "infobox_params": [
+     "ethnicity"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   },
+   {
+    "shape_name": "Mpanda",
+    "found": true,
+    "title": "Mpanda Airport",
+    "url": "https://en.wikipedia.org/wiki/Mpanda_Airport",
+    "wikitext_bytes": 6068,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "ethnicity",
+   "title": "United Republic of Tanzania - Standardized Expanded Nutrition Survey (SENS) in Kigoma Refugee Camps (Nyarugusu, Nduta and Mtendeli) - October 2019",
+   "name": "unhcr-tza-2019-sens-kigoma-v2-1",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-tza-2019-sens-kigoma-v2-1",
+   "resources": [
+    {
+     "name": "United Republic of Tanzania - Standardized Expanded Nutrition Survey (SENS) in Kigoma Refugee Camps (Nyarugusu, Nduta and Mtendeli) - October 2019",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/235/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/235/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "United Republic of Tanzania: Languages",
+   "name": "united-republic-of-tanzania-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/united-republic-of-tanzania-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_TZA_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e937c9c2-affd-48b2-8a0a-40349b5575ff/resource/3e8033af-ea27-484d-9172-e8e5fec6456e/download/clearglobal_language_use_tza_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_TZA_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e937c9c2-affd-48b2-8a0a-40349b5575ff/resource/b95649f2-e699-446d-a9c9-3a1e01dcfd6b/download/clearglobal_language_use_tza_admin1.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "United Republic of Tanzania: Road Surface Data",
+   "name": "united-republic-of-tanzania-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/united-republic-of-tanzania-road-surface-data",
+   "resources": [
+    {
+     "name": "United republic of tanzania GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_tza_roadsurface_lines.geojson"
+    },
+    {
+     "name": "United republic of tanzania GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_tza_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "United Republic of Tanzania: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-united-republic-of-tanzania",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-united-republic-of-tanzania",
+   "resources": [
+    {
+     "name": "kontur_boundaries_TZ_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_TZ_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_TZ_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_TZ_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_TZ_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_TZ_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "United Republic of Tanzania - Subnational Administrative Boundaries",
+   "name": "cod-ab-tza",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-tza",
+   "resources": [
+    {
+     "name": "tza_admgz_20181019.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/451bdd28-d06d-46ea-91c0-2e081f884395/resource/076ad43a-0651-4077-87ed-40eb0f52112f/download/tza_admgz_20181019.xlsx"
+    },
+    {
+     "name": "tza_admbnda_adm0_20181019.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/451bdd28-d06d-46ea-91c0-2e081f884395/resource/b3d5fbd6-d5d9-47f6-9d23-f1b0bf25448a/download/tza_admbnda_adm0_20181019.zip"
+    },
+    {
+     "name": "tza_admbnda_adm0_20181019.emf",
+     "format": "EMF",
+     "url": "https://data.humdata.org/dataset/451bdd28-d06d-46ea-91c0-2e081f884395/resource/d1e3bcee-734f-48ba-ab73-e8950adcb7dd/download/tza_admbnda_adm0_20181019.emf"
+    },
+    {
+     "name": "tza_admbnda_adm1_20181019.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/451bdd28-d06d-46ea-91c0-2e081f884395/resource/55e9e1d3-6585-4e38-ae35-726875c1e8ed/download/tza_admbnda_adm1_20181019.zip"
+    },
+    {
+     "name": "tza_admbnda_adm1_20181019.emf",
+     "format": "EMF",
+     "url": "https://data.humdata.org/dataset/451bdd28-d06d-46ea-91c0-2e081f884395/resource/1faa5a07-cfb5-491a-943d-05d8ca954c92/download/tza_admbnda_adm1_20181019.emf"
+    },
+    {
+     "name": "tza_admbnda_adm2_20181019.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/451bdd28-d06d-46ea-91c0-2e081f884395/resource/50fec0b7-ba83-43fb-bb1c-941e2dbc7a95/download/tza_admbnda_adm2_20181019.zip"
+    },
+    {
+     "name": "tza_admbnda_adm2_20181019.emf",
+     "format": "EMF",
+     "url": "https://data.humdata.org/dataset/451bdd28-d06d-46ea-91c0-2e081f884395/resource/372db6f6-8275-4bcd-8d64-9deaa5fbb32b/download/tza_admbnda_adm2_20181019.emf"
+    },
+    {
+     "name": "tza_admbnda_adm3_20181019.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/451bdd28-d06d-46ea-91c0-2e081f884395/resource/930fb85d-f508-4e56-a7d6-0da021364861/download/tza_admbnda_adm3_20181019.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Tanzania - Accessibility Indicators",
+   "name": "tanzania-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/tanzania-accessibility-indicators",
+   "resources": [
+    {
+     "name": "TZA_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tza/TZA_education_access.gpkg"
+    },
+    {
+     "name": "TZA_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tza/TZA_education_access_long.csv"
+    },
+    {
+     "name": "TZA_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tza/TZA_education_access_wide.csv"
+    },
+    {
+     "name": "TZA_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tza/TZA_hospitals_access.gpkg"
+    },
+    {
+     "name": "TZA_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tza/TZA_hospitals_access_long.csv"
+    },
+    {
+     "name": "TZA_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tza/TZA_hospitals_access_wide.csv"
+    },
+    {
+     "name": "TZA_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tza/TZA_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "TZA_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tza/TZA_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Tanzania: Learning levels",
+   "name": "learning-levels-in-tanzania",
+   "org": "Uwezo at Twaweza East Africa (inactive)",
+   "url": "https://data.humdata.org/dataset/learning-levels-in-tanzania",
+   "resources": [
+    {
+     "name": "TZ_2013_Schooling_status_of_children_aged_7-16yrs_at_national&provincial_level.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d391fcb5-2039-4bbe-a093-3938091054bf/resource/23559aef-95bd-4e70-98d6-4e46ee918cc2/download/tz2013schoolingstatusofchildrenaged7-16yrsatnationalprovinciallevel.xlsx"
+    },
+    {
+     "name": "TZ_2013_Schooling_status_of_children_per_age-group..xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d391fcb5-2039-4bbe-a093-3938091054bf/resource/52c889ac-7c22-4018-afe8-e0ce09b583e9/download/tz2013schoolingstatusofchildrenperage-group..xlsx"
+    },
+    {
+     "name": "TZ_2013_Number&percentage_of_school_dropouts_per_district.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d391fcb5-2039-4bbe-a093-3938091054bf/resource/c2266a03-684e-4a82-b980-f1ba2043d3d1/download/tz2013numberpercentageofschooldropoutsperdistrict.xlsx"
+    },
+    {
+     "name": "TZ_2013_Class-wise_English&Swahili_performance_per_socioeconomic_status.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d391fcb5-2039-4bbe-a093-3938091054bf/resource/e02a0c3e-e531-4564-8f01-9d0eabe70862/download/tz2013class-wiseenglishswahiliperformancepersocioeconomicstatus.xlsx"
+    },
+    {
+     "name": "TZ_2013_Age-wise_Performance_of_children_in_Kiswahili_comprehension_questions..xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d391fcb5-2039-4bbe-a093-3938091054bf/resource/a07d7768-a55c-41a6-8bb8-331cb41e61ff/download/tz2013age-wiseperformanceofchildreninkiswahilicomprehensionquestions..xlsx"
+    },
+    {
+     "name": "TZ_2013_Class-wise_Kiswahili_literacy_levels_by_Age&Gender_in_each_district.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d391fcb5-2039-4bbe-a093-3938091054bf/resource/50901d5e-3ac9-400c-bdf0-0fb255f90109/download/tz2013class-wisekiswahililiteracylevelsbyagegenderineachdistrict.xlsx"
+    },
+    {
+     "name": "TZ_2013_literacy&Numeracy_levels_of_children_by_age&class.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d391fcb5-2039-4bbe-a093-3938091054bf/resource/c4a89d74-5aae-48bd-8356-acbc64b8a433/download/tz2013literacynumeracylevelsofchildrenbyageclass.xlsx"
+    },
+    {
+     "name": "TZ_2013_Age-wise_English_comprehension_performance_at_district&national_level.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d391fcb5-2039-4bbe-a093-3938091054bf/resource/134427bb-2ff6-4745-8369-d52401dfa773/download/tz2013age-wiseenglishcomprehensionperformanceatdistrictnationallevel.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Tanzania population by ward (adm3)",
+   "name": "population-by-ward-adm3",
+   "org": "MapAction",
+   "url": "https://data.humdata.org/dataset/population-by-ward-adm3",
+   "resources": [
+    {
+     "name": "tza_pop_popn_nbs_baselinedata.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/413174ce-fc61-42eb-99e5-41a96c9fda2f/resource/85a5f741-4aac-45e6-88b3-09b944884600/download/tza_pop_popn_nbs_baselinedata.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "United Republic of Tanzania - Subnational Population Statistics",
+   "name": "cod-ps-tza",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-tza",
+   "resources": [
+    {
+     "name": "tza_gazetteer.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/fcd33248-774d-4be2-aa16-86b10519330e/resource/0f4a07fb-137a-45d0-bb10-902ff7873ab8/download/tza_gazetteer.xlsx"
+    },
+    {
+     "name": "tza_admpop_2020_v2.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/fcd33248-774d-4be2-aa16-86b10519330e/resource/93c5d08e-9c5b-4d6d-835d-fa3a59ebfea3/download/tza_admpop_2020_v2.xlsx"
+    },
+    {
+     "name": "tza_admpop_adm0_2020_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fcd33248-774d-4be2-aa16-86b10519330e/resource/25c200e3-e28a-4cf6-a2c9-9e59b571fb27/download/tza_admpop_adm0_2020_v2.csv"
+    },
+    {
+     "name": "tza_admpop_adm1_2020_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fcd33248-774d-4be2-aa16-86b10519330e/resource/89dd7ca4-4b73-4725-8ac8-0e0ef78d4fbd/download/tza_admpop_adm1_2020_v2.csv"
+    },
+    {
+     "name": "tza_admpop_adm2_2020_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fcd33248-774d-4be2-aa16-86b10519330e/resource/8af542c3-9f80-4f5c-9362-d5954d7824ec/download/tza_admpop_adm2_2020_v2.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "POMELO - Tanzania High Resolution Population Density",
+   "name": "pomelo-tanzania-high-resolution-population",
+   "org": "ETH Zürich, Photogrammetry and Remote Sensing",
+   "url": "https://data.humdata.org/dataset/pomelo-tanzania-high-resolution-population",
+   "resources": [
+    {
+     "name": "tza_pomelo.tiff",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/b2146b6f-8267-464f-8bda-efdf2f62f41a/resource/08da2c38-c179-46a8-8ce3-6e7488b06720/download/tza_pomelo.tiff"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Tanzania - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-tanzania",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-tanzania",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Tanzania",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/21869f1a-f86d-470c-866d-e472306854d8/resource/6c1f5c10-b3f5-4d79-8c22-037780e06770/download/social-protection-and-labor_tza.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Tanzania - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-tz-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-tz-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_TZ",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/3f6e1595-d71c-4364-9acd-347f255f0b2a/resource/24bf3c78-c7de-4dab-9651-12313f8220e9/download/indicator_data_tz.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Tanzania: Level 1 Exposure Data",
+   "name": "tanzania-level-1-exposure-data",
+   "org": "Global Earthquake Model Foundation",
+   "url": "https://data.humdata.org/dataset/tanzania-level-1-exposure-data",
+   "resources": [
+    {
+     "name": "TZA_oed_exposure_20200811_hdx.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/b4057152-63ba-4b18-bada-6271620638c7/resource/547c51ef-b511-4420-807c-bc2bc59ee43e/download/tza_oed_exposure_20200811_hdx.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "United Republic of Tanzania - Population Counts",
+   "name": "worldpop-population-counts-for-united-republic-of-tanzania",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-united-republic-of-tanzania",
+   "resources": [
+    {
+     "name": "tza_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/TZA/tza_ppp_2020.tif"
+    },
+    {
+     "name": "tza_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/TZA/tza_ppp_2019.tif"
+    },
+    {
+     "name": "tza_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/TZA/tza_ppp_2018.tif"
+    },
+    {
+     "name": "tza_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/TZA/tza_ppp_2017.tif"
+    },
+    {
+     "name": "tza_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/TZA/tza_ppp_2016.tif"
+    },
+    {
+     "name": "tza_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/TZA/tza_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "tza_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/TZA/tza_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "tza_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/TZA/tza_ppp_2018_UNadj.tif"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.nbs.go.tz/statistics/topic/census-2022",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.nbs.go.tz/language/en",
+    "status": 200,
+    "kind": "html",
+    "title": "NBS | National Bureau of Statistics - Home",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.nbs.go.tz/language/sw",
+    "status": 200,
+    "kind": "html",
+    "title": "NBS | National Bureau of Statistics - Home",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.nbs.go.tz/statistics/demographics-and-population",
+    "status": 200,
+    "kind": "html",
+    "title": "NBS | Population and Housing Census",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.nbs.go.tz/statistics/subtopic/building-census-reports",
+    "status": 200,
+    "kind": "html",
+    "title": "NBS | Building Census Reports",
+    "files": [
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1760345208-Dodoma Building_Census2022.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1760345298-Arusha Building_Census2022.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1760345425-Kilimanjaro Building_Census2022.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1760345497-Tanga Building_Census2022_Report.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1760345565-Morogoro Building_Census2022_Report.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1760345676-Pwani  Building_Census2022_Report.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1760345746-Dar es Salaam Building_Census2022.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1760345848-Lindi Building_Census2022.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1760346072-Mtwara Building_Census2022_Report.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1760346269-Ruvuma Building_Census2022_Report.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.nbs.go.tz/statistics/subtopic/census-instruments",
+    "status": 200,
+    "kind": "html",
+    "title": "NBS | Census Instruments",
+    "files": [
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1705484563-Madodoso_ya_Sensa_2022.zip",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1719123191-mwongozo.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1739945123-Mkakati wa Uelimishaji na Uhamasishaji wa Sensa ya Watu na Makazi .pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.nbs.go.tz/statistics/subtopic/dodoma-regional-population-projections-2023-2050",
+    "status": 200,
+    "kind": "html",
+    "title": "NBS | Dodoma Council Level Population Projections 2023 - 2050",
+    "files": [
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763975072-01.Kondoa Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763975162-02.Kondoa Town Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763975234-03.Mpwapwa Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763975292-04.Kongwa Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763975363-05.Chamwino Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763975540-06.Dodoma City Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763975739-07.Bahi Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763975810-08.Chemba Council Population Projection Report _ 2023-2050.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.nbs.go.tz/statistics/subtopic/arusha-regional-population-projections-2023-2050",
+    "status": 200,
+    "kind": "html",
+    "title": "NBS | Arusha Council Level Population Projections 2023 - 2050",
+    "files": [
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763976144-02.1.Monduli Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763976230-02.2Meru Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763976295-02.3 Arusha District Council Population Projection Report_2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763976414-02.4.Longido Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763976497-02.5.Karatu  Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763976614-02.6. Ngorongoro Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763976699-02.7. Arusha City Council Population Projection Report _ 2023-2050.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.nbs.go.tz/statistics/subtopic/kilimanjaro-regional-population-projections-reports-2023-2050",
+    "status": 200,
+    "kind": "html",
+    "title": "NBS | Kilimanjaro Council Level Population Projections 2023-2050",
+    "files": [
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763977204-03.01 Rombo Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763977334-03.02 Mwanga Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763977407-03.03  Same  Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763977481-03.04 Moshi District Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763977637-03.05 Hai Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763977718-03.06  Moshi Municipal Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763977863-03.07 Siha Council Population Projection Report _ 2023-2050.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.nbs.go.tz/statistics/subtopic/tanga-regional-population-projections-2023-2050",
+    "status": 200,
+    "kind": "html",
+    "title": "NBS | Tanga Council Level Population Projections 2023-2050",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.nbs.go.tz/statistics/subtopic/morogoro-regional-population-projections-2023-2050",
+    "status": 200,
+    "kind": "html",
+    "title": "NBS | Morogoro Council Level Population Projections 2023-2050",
+    "files": [
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763982471-05.01.Kilosa  Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763982560-05.02.Morogoro District  Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763982624-05.03.Morogoro Municipal Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763982730-05.04.Mlimba Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763982794-05.05.Ifakara Town Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763982861-05.06.Ulanga District Council Population Report.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763982917-05.07.Malinyi Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763982986-05.08.Mvomero  Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763983038-05.09.Gairo Council Population Projection Report _ 2023-2050.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.nbs.go.tz/statistics/subtopic/pwani-regional-population-projections-2023-2050",
+    "status": 200,
+    "kind": "html",
+    "title": "NBS | Pwani Council Level Population Projections 2023-2050",
+    "files": [
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763983607-1. Bagamoyo District Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763983747-2. Chalinze DIstrict Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763983987-3. Kibaha District Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763984055-4. Kibaha Municipal  Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763984168-5. Kisarawe District Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763984247-6. Mkuranga District Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763984534-7. Rufiji District Council Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763984618-8. Mafia District Council Population Projection Report _ 2023-2050.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763984688-9. Kibiti District Council Population Projection Report _ 2023-2050.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.nbs.go.tz/statistics/subtopic/dar-es-salaam-regional-population-projections-2023-2050",
+    "status": 200,
+    "kind": "html",
+    "title": "NBS | Dar es Salaam Council Level Population Projections 2023-2050",
+    "files": [
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763985625-7.1_Kinondoni Population Projection Report.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763985707-7.2_Ilala Population Projection Report.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763985917-7.3_Temeke Population Projection Report.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763985993-7.4_ Kigamboni Population Projection Report.pdf",
+     "https://www.nbs.go.tz/uploads/statistics/documents/en-1763986055-7.5_Ubungo Population Projection Report.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   }
+  ],
+  "title": "NBS | Census 2022",
+  "matching_links": 32
+ },
+ "verdict": {
+  "hdx_datasets": 14,
+  "hdx_machine_readable": 9,
+  "nso_files_found": 58,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/1",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

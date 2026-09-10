@@ -1,0 +1,146 @@
+{
+  "iso3": "MMR",
+  "name": "Burma",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Department of Population, Ministry of Immigration and Population (Myanmar)",
+    "url": "https://dop.gov.mm/en"
+  },
+  "latest_census": {
+    "year": 2024,
+    "asks": {"religion": null, "ethnicity": null, "language": null},
+    "notes": "The 2024 census is the latest. DoP publishes a '2024 Provisional Result' (https://dop.gov.mm/sites/dop.gov.mm/files/publication_docs/2024_provisional_result_eng.pdf) and a '2024 Main Report' category (https://www.dop.gov.mm/en/publication-category/2024-main-report). Provisional-result snippet: 51,316,756 residents as of 30 Sep 2024, of whom only 32,191,407 were enumerated and 19,125,349 were 'estimated' for unenumerated areas -- so it is a partial count. A Wikipedia snippet ('Hinduism in Myanmar') attributes a national 2024 figure (0.6%, about 189,718 Hindus) to it, which suggests religion was asked, but no search result showed a 2024 religion or ethnicity table by state/region; the search intended to check this ('Myanmar 2024 census main report religion by state and region') did not run because the session's search budget was exhausted. The well-documented census is 2014 -- see earlier_census.",
+    "published_subnationally": {"religion": null, "ethnicity": null, "language": null}
+  },
+  "earlier_census": {
+    "year": 2014,
+    "asks": {"religion": true, "ethnicity": true, "language": null},
+    "published_subnationally": {"religion": true, "ethnicity": false, "language": null},
+    "notes": "Religion: asked of everyone and published in Census Report Volume 2-C 'The Union Report: Religion' (launched July 2016), 'at the Union level and by State/Region' (ReliefWeb snippet). Ethnicity: asked, but the tables were withheld -- 'while the religion section was released in June 2016, the ethnic population figures continued to be withheld' (Irrawaddy / Myanmar Times / TNI results); no search result shows them ever being released. Language: no search result mentioned a language question either way; the check ('Myanmar 2014 census questionnaire language question') did not run (budget exhausted), so this is unestablished. The map's national record already marks language pct as not_available."
+  },
+  "already_in_map": "Per docs/SOURCES.md (USCB subnational series table and the Myanmar bullets), admin1 (14/14) and admin2 (70/74) religion and ethnicity are already filled from the US Census Bureau workbook: religion from the 2014 census (15 states/regions, 80 districts) and 'ethnicity' from the DoP 2018 Township Profiles Table 14 (reference April 2017, Ethnic Nationalities Living, 40 named groups, not a census). Kenya/Uganda are not in that series; Myanmar is. The 4 unfilled admin2 shapes are most plausibly districts created after the workbook's district list -- the Loilen District snippet says 'in 2022, most of its townships were split off to form new districts', and Mongmit District 'was created by decree in 2015'.",
+  "subnational_sources": [
+    {
+      "fields": ["religion"],
+      "title": "The 2014 Myanmar Population and Housing Census - The Union Report: Religion - Census Report Volume 2-C",
+      "url": "https://www.dop.gov.mm/sites/dop.gov.mm/files/publication_docs/union_2-c_religion_en_0.pdf",
+      "mirrors": [
+        "https://myanmar.unfpa.org/sites/default/files/pub-pdf/UNION_2C_Religion_EN.pdf",
+        "https://reliefweb.int/report/myanmar/2014-myanmar-population-and-housing-census-union-report-religion-census-report-volume",
+        "https://themimu.info/node/48405"
+      ],
+      "publisher": "Department of Population (with UNFPA)",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "state/region",
+      "geography_count": 15,
+      "matches_boundary_level": "admin1 (boundary draws 14; the census's 15th unit is Nay Pyi Taw Union Territory, per the USCB workbook's '15 states and regions' in SOURCES.md)",
+      "year": 2014,
+      "confidence": "high",
+      "evidence": "ReliefWeb snippet: 'Census Report Volume 2-C is The Union Report: Religion ... presents results ... at the Union level and by State/Region'; launched July 2016. Same count is already in the map via the USCB XLSX, so this PDF adds nothing at admin1 unless the workbook route breaks."
+    },
+    {
+      "fields": ["religion"],
+      "title": "MIMU Baseline Datasets / Township Profiles (2014 census indicators digitised by township)",
+      "url": "https://themimu.info/baseline-datasets",
+      "mirrors": [
+        "https://themimu.info/census-data",
+        "https://themimu.info/township-profiles?field_doc_tx_state_regions_tid=60"
+      ],
+      "publisher": "Myanmar Information Management Unit (MIMU)",
+      "kind": "census (compiled)",
+      "format": "xlsx",
+      "geography": "township",
+      "geography_count": 330,
+      "matches_boundary_level": "neither directly; townships nest inside the 74 admin2 districts, so a township-to-district crosswalk would be needed",
+      "year": 2014,
+      "confidence": "medium",
+      "evidence": "Search snippets: 'MIMU Baseline Dataset tracks available data from published sources on more than 384 indicators across 13 sectors, with data gathered at the lowest administrative level available (Union, State/Region or Township level), digitized in Excel format'; township profiles 'produced for 323 of the total 330 townships' and include 'social and religious characteristics'. Whether the Excel carries religion counts per township is not verified -- the confirming search did not run (budget)."
+    },
+    {
+      "fields": ["ethnicity", "religion"],
+      "title": "US Census Bureau international subnational workbook for Myanmar (2014 census religion; DoP 2018 Township Profiles Table 14 ethnicity, ref. April 2017)",
+      "url": null,
+      "publisher": "US Census Bureau (from DoP)",
+      "kind": "census (religion) / administrative profile (ethnicity, not a census)",
+      "format": "xlsx",
+      "geography": "state/region and district",
+      "geography_count": 80,
+      "matches_boundary_level": "admin1 and admin2 (80 districts vs 74 drawn; already joined for 70)",
+      "year": 2014,
+      "confidence": "high",
+      "evidence": "Already consumed -- documented in docs/SOURCES.md, USCB series table. Listed here so the reader knows the A-grade route is the one already built; no URL because it did not surface in this session's searches."
+    },
+    {
+      "fields": [],
+      "title": "2024 Main Report / 2024 Provisional Result - Department of Population",
+      "url": "https://www.dop.gov.mm/en/publication-category/2024-main-report",
+      "mirrors": ["https://dop.gov.mm/sites/dop.gov.mm/files/publication_docs/2024_provisional_result_eng.pdf", "https://dop.gov.mm/en/publication-category/2024-provisional-result"],
+      "publisher": "Department of Population",
+      "kind": "census",
+      "format": "pdf",
+      "geography": null,
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2024,
+      "confidence": "low",
+      "evidence": "Only the category pages and the provisional-result PDF surfaced; fields and geography unverified. Enumeration covered 32.2M of a 51.3M total, the rest estimated -- any subnational religion table from it would be a count for enumerated areas only."
+    },
+    {
+      "fields": [],
+      "title": "2014 Myanmar Census: Household and Population Data for Townships - OD Mekong Datahub",
+      "url": "https://data.opendevelopmentmyanmar.net/en/dataset/2014-myanmar-census",
+      "publisher": "Open Development Myanmar",
+      "kind": "census (mirror)",
+      "format": null,
+      "geography": "township",
+      "geography_count": null,
+      "matches_boundary_level": "neither directly (township)",
+      "year": 2014,
+      "confidence": "low",
+      "evidence": "Title only; whether it includes religion is not shown in the snippet."
+    }
+  ],
+  "secondary_routes": {
+    "hdx": "A query page surfaced (https://data.humdata.org/dataset?q=Population+and+Housing+Census+of+Myanmar+2014&page=2), so HDX holds 2014-census datasets, but no specific religion dataset appeared in results.",
+    "ipums": null,
+    "us_census_bureau": "Already used (see already_in_map).",
+    "open_data_portal": "OD Mekong dataset above."
+  },
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "2014 Myanmar census", "url": "https://en.wikipedia.org/wiki/2014_Myanmar_census", "appears_to_contain": "snippet gives national religion shares (87.9% Buddhist, 6.2% Christian, 4.3% Muslim, 0.8% tribal, 0.5% Hindu); a by-state table is plausible but not visible in the snippet; unverified"},
+      {"title": "Demographics of Myanmar", "url": "https://en.wikipedia.org/wiki/Demographics_of_Myanmar", "appears_to_contain": "surfaced for the 2024 query; content not shown"},
+      {"title": "Religion in Myanmar", "url": null, "appears_to_contain": "did not surface as its own result for the query '\"Religion in Myanmar\" wikipedia table by state and region 2014 census'; 'Islam in Myanmar' and 'Christianity in Myanmar' surfaced instead"}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Labutta", "search_hit_title": "Labutta District", "url": "https://en.wikipedia.org/wiki/Labutta_District", "note": "article exists; snippet: district in Ayeyarwady Region established 2008 after Cyclone Nargis; no composition in snippet"},
+      {"shape_name": "Loilen", "search_hit_title": "Loilen District", "url": "https://en.wikipedia.org/wiki/Loilen_District", "note": "article exists; snippet: central Shan State, 'in 2022 most of its townships were split off to form new districts, leaving it with only three townships' -- relevant to why 74 drawn districts differ from the workbook's 80; no composition in snippet"},
+      {"shape_name": "Mongmit", "search_hit_title": "Mongmit District", "url": "https://en.wikipedia.org/wiki/Mongmit_District", "note": "article exists; snippet: northern Shan State, created by decree in 2015 from Kyaukme District; no composition in snippet"}
+    ]
+  },
+  "tier": "B",
+  "tier_reason": "The A-grade route (USCB XLSX of 2014 census religion by state/district plus the 2017 Township Profiles ethnicity) is already built per SOURCES.md. Everything not yet in the map is B-grade: the official Vol 2-C is a PDF at the level already filled; township-level religion exists only as MIMU Excel that must be aggregated to districts through a crosswalk; census ethnicity has never been published from any Myanmar census; the 2024 census's religion tables are unverified and it enumerated only 32.2M of 51.3M people; language is unestablished.",
+  "replaces_existing": false,
+  "recommended_action": "Nothing found here improves on the workbook already joined. Two follow-ups when search budget allows: (1) open the DoP '2024 Main Report' category page to see whether a religion-by-state/region table exists -- if so it would supersede 2014 at admin1 and needs the 32.2M-enumerated caveat recorded; (2) open MIMU baseline-datasets to check for a religion-by-township sheet, then map the 4 unfilled admin2 districts (likely 2015/2022 splits such as Mongmit and the Loilen offshoots) to their townships. Language should stay declared unknown until the 2014 questionnaire is checked.",
+  "searches_run": [
+    "Myanmar 2014 census religion by state and region Department of Population Union Report Volume 2-C",
+    "Myanmar 2014 census township level religion data MIMU dataset",
+    "Myanmar 2014 census ethnicity data never released 135 ethnic groups unpublished",
+    "Myanmar 2024 census results religion ethnicity published Department of Population",
+    "data.humdata.org Myanmar 2014 census township religion dataset",
+    "\"Religion in Myanmar\" wikipedia table by state and region 2014 census",
+    "\"Labutta\" Myanmar wikipedia",
+    "\"Loilen\" Myanmar wikipedia",
+    "\"Mongmit\" Myanmar wikipedia"
+  ],
+  "not_found": [
+    "any published 2014 census ethnicity table, at any level (withheld; confirmed by three news results)",
+    "a 2024 census religion or ethnicity table by state/region (not searched to completion: 'Myanmar 2024 census main report religion by state and region' was refused -- session search budget exhausted)",
+    "confirmation that MIMU's Excel baseline holds religion by township (search 'MIMU baseline dataset religion by township excel' refused -- budget)",
+    "whether the 2014 questionnaire asked language (search refused -- budget)",
+    "a specific HDX dataset for religion",
+    "a 'Religion in Myanmar' Wikipedia list article in results"
+  ],
+  "summary": "Myanmar's admin1 and 70 of 74 admin2 already carry 2014-census religion and 2017 Township-Profile ethnicity from the US Census Bureau workbook, and nothing surfaced that beats it. The 2014 census asked ethnicity but the tables were withheld and never released, so no census ethnicity exists at any level; religion was published in Volume 2-C (PDF, by state/region) and is digitised to township level by MIMU in Excel, which could fill the last four districts only via a township-to-district crosswalk. The 2024 census has provisional and main-report pages on dop.gov.mm but enumerated only 32.2M of 51.3M people; whether it publishes religion subnationally could not be checked before the search budget ran out. Language was not established either way. Tier B: what remains is costly, and the one potential upgrade (2024 religion by state/region) is unverified."
+}

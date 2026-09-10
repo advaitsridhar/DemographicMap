@@ -1,0 +1,492 @@
+{
+ "iso3": "SSD",
+ "name": "South Sudan",
+ "tier_proposed": "C",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in South Sudan",
+    "wikitext_bytes": 9640,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of South Sudan",
+    "wikitext_bytes": 55363,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 4,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Age",
+       "Percent",
+       "Male",
+       "Female",
+       "Age group",
+       "Male",
+       "Female",
+       "Total",
+       "%",
+       "Age group"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 44
+     },
+     {
+      "header": [
+       "Age group",
+       "Male",
+       "Female",
+       "Total",
+       "%",
+       "Age group",
+       "Male",
+       "Female",
+       "Total",
+       "Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 50
+     },
+     {
+      "header": [
+       "Age group",
+       "Male",
+       "Female",
+       "Total",
+       "%",
+       "Age group",
+       "Male",
+       "Female",
+       "Total",
+       "Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "! Mid-year population",
+       "Live births",
+       "Deaths",
+       "Natural change",
+       "Crude birth rate<br>(per 1000)",
+       "Crude death rate<br>(per 1000)",
+       "Natural change<br>(per 1000)",
+       "Total fertility rate",
+       "Infant mortality<br>(per 1000 live births)",
+       "Life expectancy<br>(in years)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 31
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Jur River",
+    "found": true,
+    "title": "Jur River",
+    "url": "https://en.wikipedia.org/wiki/Jur_River",
+    "wikitext_bytes": 5997,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Leer",
+    "found": true,
+    "title": "Leer",
+    "url": "https://en.wikipedia.org/wiki/Leer",
+    "wikitext_bytes": 695,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Mayendit",
+    "found": true,
+    "title": "Mayiandit County",
+    "url": "https://en.wikipedia.org/wiki/Mayiandit_County",
+    "wikitext_bytes": 4176,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Panyikang",
+    "found": true,
+    "title": "Panykang County",
+    "url": "https://en.wikipedia.org/wiki/Panykang_County",
+    "wikitext_bytes": 5644,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Raga",
+    "found": true,
+    "title": "Raga, South Sudan",
+    "url": "https://en.wikipedia.org/wiki/Raga%2C_South_Sudan",
+    "wikitext_bytes": 10223,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [
+     "Population"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "religion",
+   "title": "South Sudan - Subnational Administrative Boundaries",
+   "name": "cod-ab-ssd",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-ssd",
+   "resources": [
+    {
+     "name": "ssd_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/cdd62bd9-e442-4eac-9b44-cfee8bf79153/resource/4a023359-0a23-4130-a987-9e979976919e/download/ssd_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "ssd_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/cdd62bd9-e442-4eac-9b44-cfee8bf79153/resource/47b1ce82-198e-4707-a70d-63c47021d669/download/ssd_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "ssd_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/cdd62bd9-e442-4eac-9b44-cfee8bf79153/resource/c6bb2f28-6379-4750-b792-15915e9ab320/download/ssd_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "ssd_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/cdd62bd9-e442-4eac-9b44-cfee8bf79153/resource/153e2837-ed15-4f4e-95b9-b0700bb9440a/download/ssd_admin_boundaries.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Sudan - Rivers",
+   "name": "south-sudan-water-courses",
+   "org": "OCHA South Sudan",
+   "url": "https://data.humdata.org/dataset/south-sudan-water-courses",
+   "resources": [
+    {
+     "name": "ssd_main_rivers_fao_250k.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/ccb596ff-c694-4918-b47d-0556a0e793ea/resource/886b9e79-db80-4591-b103-c681b1f6e6e2/download/ssd_main_rivers_fao_250k.zip"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Sudan: Settlements",
+   "name": "south-sudan-settlements",
+   "org": "OCHA South Sudan",
+   "url": "https://data.humdata.org/dataset/south-sudan-settlements",
+   "resources": [
+    {
+     "name": "South Sudan_PopulatedPlaces_2022.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/335243c7-6534-416b-9170-5951a4d782fd/resource/1087bdbf-75dc-4434-b89d-3e2fde36677f/download/south-sudan_populatedplaces_2022.zip"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Sudan: Airstrips",
+   "name": "south-sudan-airstrips",
+   "org": "OCHA South Sudan",
+   "url": "https://data.humdata.org/dataset/south-sudan-airstrips",
+   "resources": [
+    {
+     "name": "South Sudan_airstrips.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/bd2e7cdf-4e8a-4eac-be66-eb6a1560af76/resource/1c527848-d0e7-463a-81a4-a464ff4b9105/download/south-sudan_airstrips_wfp_unhas-2022.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Sudan: Flood Data",
+   "name": "south-sudan-flood-data",
+   "org": "OCHA South Sudan",
+   "url": "https://data.humdata.org/dataset/south-sudan-flood-data",
+   "resources": [
+    {
+     "name": "SS_People_Affected_and_Displaced_by_Floods_20251130.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/70cefa0a-e4bd-481e-b773-20c2a462ea2e/resource/eb064156-f948-4520-8e2c-3b271badbd5c/download/ss_people_affected_and_displaced_by_floods_20251130.xlsx"
+    },
+    {
+     "name": "SSD_Flood_Response_20122024.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/70cefa0a-e4bd-481e-b773-20c2a462ea2e/resource/eed79fad-e7d2-4890-881d-de8e0ec88a41/download/ssd_flood_response_20122024.xlsx"
+    },
+    {
+     "name": "SSD_floods_301122.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/70cefa0a-e4bd-481e-b773-20c2a462ea2e/resource/918b0b51-30d3-4d46-b0c5-1688bdf27b8e/download/ssd_flood_response_301122.xlsx"
+    },
+    {
+     "name": "SSD_floods_211022.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/70cefa0a-e4bd-481e-b773-20c2a462ea2e/resource/bfa47921-2a7b-43e4-b08d-fb4dfec8326e/download/ssd_flood_response_211022.xlsx"
+    },
+    {
+     "name": "SSD_floods_131221.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/70cefa0a-e4bd-481e-b773-20c2a462ea2e/resource/1f91a97c-5c60-4375-8e5d-8967f764cbac/download/ss_floodsaffected_people_20211213.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Sudan: Operational Presence",
+   "name": "south-sudan-operational-presence",
+   "org": "OCHA South Sudan",
+   "url": "https://data.humdata.org/dataset/south-sudan-operational-presence",
+   "resources": [
+    {
+     "name": "ss_20260901_3w_operational presence_Jan-Jul_2026.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/531fe931-4b87-43e9-ae4c-a3e25a2bd388/resource/8772f95a-0f00-49aa-acdd-ca106a3a30e2/download/ss_20260901_3w_operational-presence_jan-jul_2026.xlsx"
+    },
+    {
+     "name": "ss_20260806_3w_operational presence_Jan-June_2026.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/531fe931-4b87-43e9-ae4c-a3e25a2bd388/resource/529fd9e4-075c-497a-b48a-869cc8ae9c36/download/ss_20260806_3w_operational-presence_jan-june_2026.xlsx"
+    },
+    {
+     "name": "ss_20260704_3w_operational presence_Jan-May_2026.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/531fe931-4b87-43e9-ae4c-a3e25a2bd388/resource/610f03a1-458d-4a57-8e16-67f370e40470/download/ss_20260704_3w_operational-presence_jan-may_2026.xlsx"
+    },
+    {
+     "name": "ss_20260526_3w_operational presence_Jan-Apr_2026.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/531fe931-4b87-43e9-ae4c-a3e25a2bd388/resource/6bc765da-897d-4b48-9050-7c2402cffa07/download/ss_20260526_3w_operational-presence_jan-apr_2026.xlsx"
+    },
+    {
+     "name": "ss_20260513_3w_operational presence_Jan-Mar_2026.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/531fe931-4b87-43e9-ae4c-a3e25a2bd388/resource/e6ab5700-c748-4337-8ea0-b6462e2270ae/download/ss_20260513_3w_operational-presence_jan-mar_2026.xlsx"
+    },
+    {
+     "name": "ss_20262006_3w_operational presence_Jan-Dec_2025.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/531fe931-4b87-43e9-ae4c-a3e25a2bd388/resource/bf244e0b-5a7b-44e0-a72b-88a82fbf607c/download/ss_20262006_3w_operational-presence_jan-dec_2025.xlsx"
+    },
+    {
+     "name": "ss_20261020_3w_operational presence_Jan-Nov_2025.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/531fe931-4b87-43e9-ae4c-a3e25a2bd388/resource/1d42f26c-6164-4c25-8ae1-594c5bb17a12/download/ss_20261020_3w_operational-presence_jan-nov_2025.xlsx"
+    },
+    {
+     "name": "ss_20251202_3w_operational presence_Jan-Oct_2025.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/531fe931-4b87-43e9-ae4c-a3e25a2bd388/resource/97a42466-1554-421b-ba61-f1c4bb118379/download/ss_20251202_3w_operational-presence_jan-oct_2025.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Sudan - Waterpoints",
+   "name": "south-sudan-water-sanitation-hygiene",
+   "org": "OCHA South Sudan",
+   "url": "https://data.humdata.org/dataset/south-sudan-water-sanitation-hygiene",
+   "resources": [
+    {
+     "name": "SSD_Waterpoints_WIMS_2012.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/84dae951-8473-4ce3-a551-66839a111feb/resource/c43daf9b-cdc9-4cd3-ba48-ca3748489c71/download/ssd_waterpoints_wims_2012.zip"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Sudan - Subnational Population Statistics",
+   "name": "cod-ps-ssd",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-ssd",
+   "resources": [
+    {
+     "name": "SSD_2024_population_estimates_data.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/5116cb9f-5db8-4f56-9766-735d88dcbbfa/resource/dfad888d-c594-4795-9b5b-3cbe958a3c18/download/ssd_2024_population_estimates_data.xlsx"
+    },
+    {
+     "name": "SSD_2023_Population_Estimates_Data.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/5116cb9f-5db8-4f56-9766-735d88dcbbfa/resource/8bd5f105-6fcb-43be-b53f-f3e31c992654/download/ssd_2023_population_estimates_data.xlsx"
+    },
+    {
+     "name": "SS_20211210_2022_Population_Estimates_Overview v3.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/5116cb9f-5db8-4f56-9766-735d88dcbbfa/resource/75ecc4e4-e128-400d-b7e3-03cb9ac40ccd/download/ss_20211210_2022_population_estimates_overview-v3.pdf"
+    },
+    {
+     "name": "SSD_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/5116cb9f-5db8-4f56-9766-735d88dcbbfa/resource/48a8f978-8dc7-42c2-8f07-703a56a2af2d/download/ssd_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "ssd_admpop_2022_v2.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/5116cb9f-5db8-4f56-9766-735d88dcbbfa/resource/d57b3d1a-c297-4a91-a676-b0de55df6af7/download/ssd_admpop_2022_v2.xlsx"
+    },
+    {
+     "name": "ssd_admpop_adm0_2022_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5116cb9f-5db8-4f56-9766-735d88dcbbfa/resource/de6f609b-fba3-4088-8cd4-b870f79a7e01/download/ssd_admpop_adm0_2022_v2.csv"
+    },
+    {
+     "name": "ssd_admpop_adm1_2022_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5116cb9f-5db8-4f56-9766-735d88dcbbfa/resource/7a5243b5-9b54-4453-a30e-044e79417e1f/download/ssd_admpop_adm1_2022_v2.csv"
+    },
+    {
+     "name": "ssd_admpop_adm2_2022_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5116cb9f-5db8-4f56-9766-735d88dcbbfa/resource/209b6acb-99d0-4055-878e-e1a68618abe1/download/ssd_admpop_adm2_2022_v2.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Sudan - Education",
+   "name": "world-bank-education-indicators-for-south-sudan",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-education-indicators-for-south-sudan",
+   "resources": [
+    {
+     "name": "Education Indicators for South Sudan",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/888db8c0-f9db-46c7-932f-6387f232b10c/resource/a1557882-71cb-4951-b8de-cb2b323fe20e/download/education_ssd.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Sudan - Conflict Events",
+   "name": "south-sudan-acled-conflict-data",
+   "org": "Armed Conflict Location & Event Data Project (ACLED)",
+   "url": "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "resources": [
+    {
+     "name": "south sudan_HRP_political_violence_events_and_fatalities_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/2f85df58-ab46-49dd-9253-d1d77aec687a/resource/de70c202-2ad4-4b11-b6de-58b0653017c0/download/south-sudan_hrp_political_violence_events_and_fatalities_by_month-year_as-of-10sep2026.xlsx"
+    },
+    {
+     "name": "south sudan_HRP_civilian_targeting_events_and_fatalities_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/2f85df58-ab46-49dd-9253-d1d77aec687a/resource/6247d4c5-decd-4e29-87a4-6db282dd3cb0/download/south-sudan_hrp_civilian_targeting_events_and_fatalities_by_month-year_as-of-10sep2026.xlsx"
+    },
+    {
+     "name": "south sudan_HRP_demonstration_events_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/2f85df58-ab46-49dd-9253-d1d77aec687a/resource/b00690ad-44a2-4deb-9f9a-7ee1ff6d72bc/download/south-sudan_hrp_demonstration_events_by_month-year_as-of-10sep2026.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "South Sudan - Health Facilities",
+   "name": "south-sudan-health",
+   "org": "OCHA South Sudan",
+   "url": "https://data.humdata.org/dataset/south-sudan-health",
+   "resources": [
+    {
+     "name": "ssd_health_facilities_MOH-WB_2009.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/64664568-616d-46e6-b190-11987d5d44e4/resource/9be8b0f7-6857-4161-b27d-5063027e7546/download/ssd_health_facilities_moh-wb_2009.zip"
+    },
+    {
+     "name": "List_HF_SS_MoH_update_v1_20160404.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/64664568-616d-46e6-b190-11987d5d44e4/resource/bb00ae93-6c53-429c-8d28-a698cc2c9907/download/list_hf_ss_moh_update_v1_20160404.xls"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "South Sudan Gridded Population Dataset",
+   "name": "south-sudan-gridded-population-data",
+   "org": "U.S. Census Bureau",
+   "url": "https://data.humdata.org/dataset/south-sudan-gridded-population-data",
+   "resources": [
+    {
+     "name": "south-sudan-gridded-population-estimates-2017.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/891fc716-2b22-436c-b6d4-937ac9cb26e2/resource/5fd888a6-f733-4d01-8ca6-a5533917ae9f/download/south-sudan-gridded-population-estimates-2017-1.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.ssnbs.org/",
+  "status": 200,
+  "error": null,
+  "pages": [],
+  "title": null,
+  "matching_links": 0
+ },
+ "verdict": {
+  "hdx_datasets": 12,
+  "hdx_machine_readable": 8,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

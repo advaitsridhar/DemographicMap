@@ -1,0 +1,45 @@
+{
+  "iso3": "BEL",
+  "name": "Belgium",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Statbel (Statistics Belgium, Direction generale Statistique)", "url": "https://statbel.fgov.be/", "confidence": "recalled"},
+  "latest_census": {
+    "year": 2021,
+    "asks": {"religion": false, "ethnicity": false, "language": false},
+    "confidence": "recalled",
+    "notes": "Census 2021 (reference 1 January 2021) is, like Census 2011, entirely register-based: there is no questionnaire, so nothing is 'asked'. The last questionnaire census was 2001 (the 'socio-economic survey'), and none of the modern ones carried religion. Language: the last language census was 1947; its results triggered the linguistic conflict, and the law of 24 July 1961 abolished the language count outright, so no official enumeration of home language has existed since -- the Dutch/French/German shares in the packet are derived from the population of the language regions, which are administrative territories, not a count of speakers. Ethnicity: not collected (already declared in the packet). Statbel does publish nationality and country of birth, and an 'origin' statistic (Belgian / EU / non-EU origin, based on the person's and parents' first nationality) by municipality; these are register counts of citizenship and ancestry, not ethnicity, and the repo's convention refuses citizenship as ethnicity."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["ethnicity"],
+      "title": "Statbel -- Population by origin (herkomst / origine), by region, province and municipality -- PROXY ONLY, not an ethnicity count",
+      "url": null,
+      "publisher": "Statbel",
+      "kind": "register",
+      "format": "xlsx (Statbel open data)",
+      "geography": "province (and municipality)",
+      "geography_count": 11,
+      "matches_boundary_level": "admin2 (10 provinces + Brussels-Capital = 11) and admin1 (3 regions)",
+      "year": 2023,
+      "confidence": "medium",
+      "evidence": "Recalled: Statbel's 'Diversity by origin' series classifies residents as Belgian origin, EU origin or non-EU origin (with country groupings) from the National Register, and distributes it as open XLSX by municipality. Listed so the owner can decide whether an ancestry proxy is admissible; under the repo's stated rule (citizenship-type sheets refused for Nigeria, Sudan, Libya) it is not ethnicity."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Belgium"},
+      {"title": "Demographics of Belgium"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "C",
+  "tier_reason": "Belgium's register-based census asks nothing; religion has never been in the modern census, ethnicity is not collected, and the language count was abolished by law in 1961 after the 1947 census.",
+  "replaces_existing": false,
+  "recommended_action": "Declare all three fields not_collected for admin1 (3 regions) and admin2 (11 provinces incl. Brussels): religion 'not in the register-based census', ethnicity 'not collected' (already declared), language 'language census abolished by the law of 24 July 1961; last count 1947'. If the owner wants a labelled proxy, Statbel's origin statistics by municipality are open XLSX, but they are ancestry-by-nationality, not ethnicity. Religion by province exists only in surveys (e.g. European Social Survey, or the Catholic Church's own annual statistics), which are not counts.",
+  "searches_run": [],
+  "not_found": [
+    "No official subnational count of religion, ethnicity or home language exists for Belgium; nothing to search for beyond confirming the legal history above"
+  ],
+  "summary": "Belgium is a clean Tier C. Statbel (statbel.fgov.be) runs a fully register-based census (2011, 2021) with no questionnaire; religion is not in it, ethnicity is not collected, and the language count was abolished by the law of 24 July 1961 after the contested 1947 language census, so the Dutch/French/German shares are territorial, not enumerated. The right output is a not_collected declaration on all three fields at both levels (3 regions, 11 provinces plus Brussels). Statbel's open 'origin' statistics by municipality are a citizenship-based ancestry proxy the repo's rules currently refuse."
+}

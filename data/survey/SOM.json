@@ -1,0 +1,532 @@
+{
+ "iso3": "SOM",
+ "name": "Somalia",
+ "tier_proposed": "D",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Somalia",
+    "wikitext_bytes": 26593,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Somalia",
+    "wikitext_bytes": 26966,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages"
+    ],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align: left;\" |Year",
+       "style=\"width:70pt;\"|Population",
+       "style=\"width:70pt;\"|Live births per year",
+       "style=\"width:70pt;\"|Deaths per year",
+       "style=\"width:70pt;\"|Natural change per year",
+       "style=\"width:70pt;\"|CBR*",
+       "style=\"width:70pt;\"|CDR*",
+       "style=\"width:70pt;\"|NC*",
+       "style=\"width:70pt;\"|TFR*",
+       "style=\"width:70pt;\"|IMR*"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 32
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "AWDHEEGLE",
+    "found": true,
+    "title": "Awdheegle",
+    "url": "https://en.wikipedia.org/wiki/Awdheegle",
+    "wikitext_bytes": 3184,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "DANYILE",
+    "found": false
+   },
+   {
+    "shape_name": "EL DHERE",
+    "found": true,
+    "title": "El Dhere",
+    "url": "https://en.wikipedia.org/wiki/El_Dhere",
+    "wikitext_bytes": 5755,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "ELGARAS",
+    "found": false
+   },
+   {
+    "shape_name": "GOLDOGOB",
+    "found": true,
+    "title": "Galdogob",
+    "url": "https://en.wikipedia.org/wiki/Galdogob",
+    "wikitext_bytes": 12576,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Somalia: Languages",
+   "name": "somalia-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/somalia-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_SOM_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/bca88f44-8be0-42e7-9380-779cfb6ca9e4/resource/8fac3af1-343e-4e7c-828d-f8aea9abbdf4/download/clearglobal_language_use_som_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_SOM_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/bca88f44-8be0-42e7-9380-779cfb6ca9e4/resource/a5f63a17-ae01-4e92-96bb-816622af9c80/download/clearglobal_language_use_som_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_SOM_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/bca88f44-8be0-42e7-9380-779cfb6ca9e4/resource/7f0613e7-0d6d-4e07-ba03-d17be625c7f7/download/clearglobal_language_use_som_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Somalia: Road Surface Data",
+   "name": "somalia-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/somalia-road-surface-data",
+   "resources": [
+    {
+     "name": "Somalia GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_som_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Somalia GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_som_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Somalia: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-somalia",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-somalia",
+   "resources": [
+    {
+     "name": "kontur_boundaries_SO_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_SO_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_SO_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_SO_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_SO_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_SO_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Food Security for the Horn of Africa",
+   "name": "ethiopia-food-security",
+   "org": "OCHA Ethiopia",
+   "url": "https://data.humdata.org/dataset/ethiopia-food-security",
+   "resources": [
+    {
+     "name": "Food security situation for Horn of Africa",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/76654673-8c03-4431-a947-fd0fb853a70b/resource/2ec3b5d2-38a1-43e6-9944-6a9373253eeb/download/ea1107cs1.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Food Security for the Horn of Africa",
+   "name": "horn-of-africa-food-security",
+   "org": "OCHA Ethiopia",
+   "url": "https://data.humdata.org/dataset/horn-of-africa-food-security",
+   "resources": [
+    {
+     "name": "ea_1107_ml1_2.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/80fafa94-f78f-4cfd-ad92-7cb4c7c2d7bc/resource/c69bc669-3226-4393-a62b-53cafe33b58c/download/ea1107ml12.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Somalia - Subnational Population Statistics",
+   "name": "cod-ps-som",
+   "org": "OCHA Somalia",
+   "url": "https://data.humdata.org/dataset/cod-ps-som",
+   "resources": [
+    {
+     "name": "Somalia District-level gender-and-age-disaggregated population estimates for humanitarian response planning 2026.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/6cac9c64-2716-4809-9e82-440839d421f6/resource/9096cd51-037b-4c05-b591-ec6777166fbd/download/somalia-district-level-sex-and-age-disaggregated-population-estimates-for-humanitarian-response.xlsx"
+    },
+    {
+     "name": "CODs_working_file_Population_Data_v7.2.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/6cac9c64-2716-4809-9e82-440839d421f6/resource/4bef9d92-f213-441f-93a1-52da27ae5076/download/copy-of-cods_working_file_population_data_v7.2-share-002.xlsx"
+    },
+    {
+     "name": "som_pplp_adm1_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6cac9c64-2716-4809-9e82-440839d421f6/resource/ba86a46c-f922-4f8f-a213-ad9dbd5154c8/download/som_pplp_adm1_v2.csv"
+    },
+    {
+     "name": "som_pplp_adm2_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6cac9c64-2716-4809-9e82-440839d421f6/resource/a63d9729-c8fa-4456-a3fd-11034dd2117b/download/som_pplp_adm2_v2.csv"
+    },
+    {
+     "name": "Somalia population gender and age disaggregated 2021",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/6cac9c64-2716-4809-9e82-440839d421f6/resource/6359a185-01a9-401f-8883-eccc7674ec82/download/population-15.7_final.xlsx"
+    },
+    {
+     "name": "Somalia population gender disaggregated 2019",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/6cac9c64-2716-4809-9e82-440839d421f6/resource/dc1e7705-781c-49b6-b011-6cad9adb2de3/download/somalia-total-population-by-district.xlsx"
+    },
+    {
+     "name": "somalia-population-statistics 2014",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/6cac9c64-2716-4809-9e82-440839d421f6/resource/87bae300-8b66-452a-8da1-439664757ef2/download/somalia-population-statistics.xlsx"
+    },
+    {
+     "name": "som_pplp_adm0_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6cac9c64-2716-4809-9e82-440839d421f6/resource/2357ee7e-1874-46fe-8875-1a85596b6ab7/download/som_pplp_adm0_v2.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Administrative regions of Somalia",
+   "name": "administrative-regions-of-somalia",
+   "org": "Spatial Collective (inactive)",
+   "url": "https://data.humdata.org/dataset/administrative-regions-of-somalia",
+   "resources": [
+    {
+     "name": "somalia.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/ec83aac4-3562-4e13-93fd-69fba908734e/resource/17c12d93-a927-47c5-8aa2-13418c2f8f6d/download/somalia.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Somalia - Drought situation in Somalia",
+   "name": "somalia-drought-situation-in-somalia",
+   "org": "FAO SWALIM (inactive)",
+   "url": "https://data.humdata.org/dataset/somalia-drought-situation-in-somalia",
+   "resources": [
+    {
+     "name": "Somalia_drought.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/cccd5fca-d917-4d5b-8f62-8f9eaf69928c/resource/88856a4f-3645-435b-b2b1-df8c8b2a1106/download/somalia_drought.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Somalia - Mortality Estimation",
+   "name": "somalia-mortality-estimation-2014-2018",
+   "org": "Health Cluster",
+   "url": "https://data.humdata.org/dataset/somalia-mortality-estimation-2014-2018",
+   "resources": [
+    {
+     "name": "2014-2018 - Somalia Death Rates.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/89d5e091-e4be-48f3-8ab1-bb169e5e0255/resource/e4da3c36-204c-476c-a666-a88afbd23633/download/2014-2018-somalia-death-rates.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Somalia - Accessibility Indicators",
+   "name": "somalia-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/somalia-accessibility-indicators",
+   "resources": [
+    {
+     "name": "SOM_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/som/SOM_education_access.gpkg"
+    },
+    {
+     "name": "SOM_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/som/SOM_education_access_long.csv"
+    },
+    {
+     "name": "SOM_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/som/SOM_education_access_wide.csv"
+    },
+    {
+     "name": "SOM_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/som/SOM_hospitals_access.gpkg"
+    },
+    {
+     "name": "SOM_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/som/SOM_hospitals_access_long.csv"
+    },
+    {
+     "name": "SOM_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/som/SOM_hospitals_access_wide.csv"
+    },
+    {
+     "name": "SOM_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/som/SOM_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "SOM_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/som/SOM_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Somalia -  Flow Monitoring Dataset",
+   "name": "somalia-dtm-flow-monitoring-dataset",
+   "org": "International Organization for Migration (IOM)",
+   "url": "https://data.humdata.org/dataset/somalia-dtm-flow-monitoring-dataset",
+   "resources": [
+    {
+     "name": "Somalia_DTM-Flow-Monitoring-Dataset-Oct-Dec-2016.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/8b2953d1-1dba-4c0d-8ff9-eaf0dceee038/resource/a1278f1e-a493-4311-aacd-0d2a7aebb19f/download/somalia_dtm-flow-monitoring-dataset-oct-dec-2016.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Somalia - Population Counts",
+   "name": "worldpop-population-counts-for-somalia",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-somalia",
+   "resources": [
+    {
+     "name": "som_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/SOM/som_ppp_2020.tif"
+    },
+    {
+     "name": "som_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/SOM/som_ppp_2019.tif"
+    },
+    {
+     "name": "som_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/SOM/som_ppp_2018.tif"
+    },
+    {
+     "name": "som_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/SOM/som_ppp_2017.tif"
+    },
+    {
+     "name": "som_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/SOM/som_ppp_2016.tif"
+    },
+    {
+     "name": "som_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/SOM/som_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "som_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/SOM/som_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "som_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/SOM/som_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Somalia-Adeso 3W Matrix",
+   "name": "adeso-somalia-data",
+   "org": "Adeso (inactive)",
+   "url": "https://data.humdata.org/dataset/adeso-somalia-data",
+   "resources": [
+    {
+     "name": "Adeso Somalia 3W_Matrix.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/dc9d0eaa-9664-463b-9b67-0b440eff662a/resource/b5e8f320-368d-4a8c-862e-1ac86cc9821e/download/adeso-somalia-3w_matrix.xls"
+    },
+    {
+     "name": "district-boundaries_polygon.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/dc9d0eaa-9664-463b-9b67-0b440eff662a/resource/18a9a970-e11c-4e84-aca3-9d06e3fa8b65/download/district-boundaries_polygon.zip"
+    },
+    {
+     "name": "Somalia_districts.geojson",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/dc9d0eaa-9664-463b-9b67-0b440eff662a/resource/d4949fb4-d4b0-481c-ab7c-ca7f1e3550c0/download/somalia_districts.geojson"
+    },
+    {
+     "name": "ADESO_what_where_and_when_3W1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/dc9d0eaa-9664-463b-9b67-0b440eff662a/resource/dde7b622-35fa-459e-91ed-2961566bfcca/download/adeso_what_where_and_when_3w1.csv"
+    },
+    {
+     "name": "ADESO_what_where_and_when_3W1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/dc9d0eaa-9664-463b-9b67-0b440eff662a/resource/e3360ae8-c6b2-4ca4-8021-1d73b697f049/download/adeso_what_where_and_when_3w1.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Somalia flood - May 2018",
+   "name": "somalia-flood-may-2018",
+   "org": "OCHA Somalia",
+   "url": "https://data.humdata.org/dataset/somalia-flood-may-2018",
+   "resources": [
+    {
+     "name": "Somalia flood - people affected per district",
+     "format": "CSV",
+     "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTwCdz-isFqHIqIZjGN1Rm_JdOjXhZIINhQ_jorshyTg2J2_-AKr1WIbfu6TiXo1rFR337qP_MWhmBS/pub?gid=0&single=true&output=csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Somalia - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-so-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-so-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_SO",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/f14bffcb-bd5d-46f6-87d5-04c399dcaacd/resource/8cdc91ac-150d-4840-bc5b-6d8992d28389/download/indicator_data_so.csv"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://nbs.gov.so/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://nbs.gov.so/surveys/",
+    "status": 200,
+    "kind": "html",
+    "title": "Surveys -",
+    "files": [
+     "https://nbs.gov.so/wp-content/uploads/2023/07/Labour-Force-Survey-Reports-2021.pdf",
+     "https://nbs.gov.so/wp-content/uploads/2023/07/Population-Estimation-Survey.pdf",
+     "https://nbs.gov.so/wp-content/uploads/2023/07/SHDS-Benadir-Report-2020-.pdf",
+     "https://nbs.gov.so/wp-content/uploads/2023/07/SHDS-Galmudug-Report-2020-.pdf",
+     "https://nbs.gov.so/wp-content/uploads/2023/07/SHDS-Hirshabelle-Report-2020.pdf",
+     "https://nbs.gov.so/wp-content/uploads/2023/07/SHDS-Jubaland-Report-2020-.pdf",
+     "https://nbs.gov.so/wp-content/uploads/2023/07/SHDS-Puntland-Report-2020.pdf",
+     "https://nbs.gov.so/wp-content/uploads/2023/07/SHDS-Somaliland-Report-2020.pdf",
+     "https://nbs.gov.so/wp-content/uploads/2023/07/SHDS-South-West-Report-2020.pdf",
+     "https://nbs.gov.so/wp-content/uploads/2023/07/Somali-Health-Demographic-Survey-2020.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://nbs.gov.so/somali-health-and-demographic-survey-2020/",
+    "status": 200,
+    "kind": "html",
+    "title": "Somali Health and Demographic Survey 2020 -",
+    "files": [
+     "https://nbs.gov.so/wp-content/uploads/2023/05/SHDS-Report-2020.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   }
+  ],
+  "title": "Home - Somali National Bureau of Statistics",
+  "matching_links": 2
+ },
+ "verdict": {
+  "hdx_datasets": 15,
+  "hdx_machine_readable": 8,
+  "nso_files_found": 11,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

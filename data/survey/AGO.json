@@ -1,0 +1,836 @@
+{
+ "iso3": "AGO",
+ "name": "Angola",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "religion",
+    "language"
+   ],
+   "title": "Censo 2024 - Relatório dos Resultados Definitivos, provincial reports (e.g. LUANDA.pdf, ZAIRE.pdf, BIE.pdf, CUANDO.pdf, CUBANGO.pdf)",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "município (mother tongue also by comuna); urban/rural",
+   "geography_count": null,
+   "matches_boundary_level": "admin2 plausibly (boundary draws 157 municípios), but the reports appear to use the post-2024 division -- separate Cuando and Cubango reports -- so admin1 (18 in the boundary) and município counts likely differ and need a crosswalk",
+   "url": "https://censo2024.ine.gov.ao/LUANDA.pdf",
+   "status": 200,
+   "content_type": "application/pdf",
+   "final_url": "https://censo2024.ine.gov.ao/LUANDA.pdf",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "pdf"
+   }
+  },
+  {
+   "fields": [
+    "religion",
+    "language"
+   ],
+   "title": "Censo 2024 - Relatório Geral Angola (national report with provincial tables)",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "província",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 only if the report keeps 18 provinces; the separate Cuando/Cubango provincial reports suggest 21",
+   "url": "https://censo2024.ine.gov.ao/Relatorio_Geral_Angola_Censo2024.pdf",
+   "status": 200,
+   "content_type": "application/pdf",
+   "final_url": "https://censo2024.ine.gov.ao/Relatorio_Geral_Angola_Censo2024.pdf",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "pdf"
+   }
+  },
+  {
+   "fields": [
+    "religion",
+    "language"
+   ],
+   "title": "RGPH 2014 - Resultados Definitivos do Recenseamento Geral da População e da Habitação de Angola (Março 2016)",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "província",
+   "geography_count": 18,
+   "matches_boundary_level": "admin1 (the 18 pre-reform provinces the boundary draws)",
+   "url": "https://www.ine.gov.ao/publicacoes/detalhes/ODI3Ng==",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://www.ine.gov.ao/publicacoes/detalhes/ODI3Ng==",
+   "error": null,
+   "body": {
+    "bytes_read": 113831,
+    "kind": "html",
+    "title": "INE-Instituto Nacional De Estatísticas",
+    "links_to_files": [
+     "/Arquivos/Geral/DConduta.pdf",
+     "/Arquivos/Geral/Novo_Estatuto_Organico_do_INE_e_Regulamento_do_SEN_Actualizado2026.pdf",
+     "/Arquivos/Geral/PFEO.pdf",
+     "/Arquivos/Geral/PRevisao.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637541681293105172.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637586581811778193.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637586745599904903.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637586834912349696.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637586837981839620.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637586852612407176.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637586868978696851.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637586885169414553.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637586925081516691.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637588269382576348.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637588285029829822.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637601889872076706.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637601891289331990.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637601892431234536.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637601894480417832.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637601904384229382.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637602522083935596.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637793866436254443.xlsx.xls",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637824156615558971.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637840788471761457.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637867491114668762.pdf"
+    ],
+    "mentions": [
+     "language"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Angola",
+    "wikitext_bytes": 31745,
+    "infobox_params": [],
+    "sections": [
+     "Religions"
+    ],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Religion",
+       "Population",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Angola",
+    "wikitext_bytes": 30690,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 10,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "! width=\"80pt\"|Total population<ref name=\"ReferenceA\"/>",
+       "width=\"80pt\"|Population aged 0–14 (%)",
+       "width=\"80pt\"|Population aged 15–64 (%)",
+       "width=\"80pt\"|Population aged 65+ (%)",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 31
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\" |Mid-year population",
+       "style=\"width:80pt;\" |Live births",
+       "style=\"width:80pt;\" |Deaths",
+       "style=\"width:80pt;\" |Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)",
+       "style=\"width:80pt;\"|Total fertility rate (TFR)",
+       "style=\"width:80pt;\"|Infant mortality (per 1000 live births)",
+       "style=\"width:80pt;\"|Life expectancy (in years)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Years",
+       "1900",
+       "1901",
+       "1902",
+       "1903",
+       "1904",
+       "1905",
+       "1906",
+       "1907",
+       "1908"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1910",
+       "1911",
+       "1912",
+       "1913",
+       "1914",
+       "1915",
+       "1916",
+       "1917",
+       "1918"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Years",
+       "1920",
+       "1921",
+       "1922",
+       "1923",
+       "1924",
+       "1925",
+       "1926",
+       "1927",
+       "1928"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Years",
+       "1930",
+       "1931",
+       "1932",
+       "1933",
+       "1934",
+       "1935",
+       "1936",
+       "1937",
+       "1938"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "Years",
+       "1940",
+       "1941",
+       "1942",
+       "1943",
+       "1944",
+       "1945",
+       "1946",
+       "1947",
+       "1948"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 2
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Caluquembe",
+    "found": true,
+    "title": "Caluquembe",
+    "url": "https://en.wikipedia.org/wiki/Caluquembe",
+    "wikitext_bytes": 6464,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Chongoroi",
+    "found": true,
+    "title": "Chongorói",
+    "url": "https://en.wikipedia.org/wiki/Chongor%C3%B3i",
+    "wikitext_bytes": 5174,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Golungo Alto",
+    "found": true,
+    "title": "Golungo Alto",
+    "url": "https://en.wikipedia.org/wiki/Golungo_Alto",
+    "wikitext_bytes": 5440,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Lucapa",
+    "found": true,
+    "title": "Lucapa",
+    "url": "https://en.wikipedia.org/wiki/Lucapa",
+    "wikitext_bytes": 4297,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Mussende",
+    "found": true,
+    "title": "Mussende",
+    "url": "https://en.wikipedia.org/wiki/Mussende",
+    "wikitext_bytes": 4654,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Angola: Languages",
+   "name": "angola-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/angola-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_AGO_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/90d7aea5-1046-4c43-b73b-53aa5b317d39/resource/d3a2db93-8a00-4702-a433-d028185d8263/download/clearglobal_language_use_ago_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_AGO_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/90d7aea5-1046-4c43-b73b-53aa5b317d39/resource/cf74d158-9558-4653-9f52-3010bde773ab/download/clearglobal_language_use_ago_admin1.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Angola: Road Surface Data",
+   "name": "angola-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/angola-road-surface-data",
+   "resources": [
+    {
+     "name": "Angola GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_ago_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Angola GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_ago_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Angola: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-angola",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-angola",
+   "resources": [
+    {
+     "name": "kontur_boundaries_AO_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_AO_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_AO_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_AO_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_AO_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_AO_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Angola - Subnational Administrative Boundaries",
+   "name": "cod-ab-ago",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-ago",
+   "resources": [
+    {
+     "name": "ago_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/a62b2816-7d2e-4e07-a794-0a1dcb507092/resource/2d79a4a7-a161-4775-af64-7aa0a7c9a5a9/download/ago_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "ago_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/a62b2816-7d2e-4e07-a794-0a1dcb507092/resource/e793b6b3-77df-4e06-a7f5-2fac6882863f/download/ago_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "ago_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/a62b2816-7d2e-4e07-a794-0a1dcb507092/resource/1076fc26-8c42-4196-bb6b-2353487fd7e0/download/ago_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "ago_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/a62b2816-7d2e-4e07-a794-0a1dcb507092/resource/1e2b4c71-600c-4917-9de3-46fb011c8976/download/ago_admin_boundaries.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Angola - Subnational Population Statistics",
+   "name": "cod-ps-ago",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-ago",
+   "resources": [
+    {
+     "name": "AGO-COD-PS-2024-Explanatory-Note.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/01679d5e-9cf1-45a4-a212-662a2309780c/resource/47ff751e-d993-48e7-9cb9-bd2bf96b8566/download/ago-cod-ps-2024-explanatory-note.pdf"
+    },
+    {
+     "name": "ago_admpop_2024.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/01679d5e-9cf1-45a4-a212-662a2309780c/resource/70c8e692-1698-4cc9-9d8c-02300983afa0/download/ago_admpop_2024.xlsx"
+    },
+    {
+     "name": "AGO_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/01679d5e-9cf1-45a4-a212-662a2309780c/resource/5e3f60b5-5e52-4dcf-840f-a2d08d0b8089/download/ago_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "ago_admpop_adm0_2024.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/01679d5e-9cf1-45a4-a212-662a2309780c/resource/4744895a-e3a9-45e3-9150-1bd5172b811e/download/ago_admpop_adm0_2024.csv"
+    },
+    {
+     "name": "ago_admpop_adm1_2024.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/01679d5e-9cf1-45a4-a212-662a2309780c/resource/6a92e532-7c99-4d0d-864b-05ee4599492e/download/ago_admpop_adm1_2024.csv"
+    },
+    {
+     "name": "ago_admpop_adm2_2024.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/01679d5e-9cf1-45a4-a212-662a2309780c/resource/8eaff3c4-277c-4404-b135-2bf512a280ff/download/ago_admpop_adm2_2024.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Angola - Subnational Administrative Boundaries",
+   "name": "geoboundaries-admin-boundaries-for-angola",
+   "org": "geoBoundaries",
+   "url": "https://data.humdata.org/dataset/geoboundaries-admin-boundaries-for-angola",
+   "resources": [
+    {
+     "name": "geoBoundaries-AGO-ADM0_simplified.geojson",
+     "format": "GeoJSON",
+     "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/AGO/ADM0/geoBoundaries-AGO-ADM0_simplified.geojson"
+    },
+    {
+     "name": "geoBoundaries-AGO-ADM0.geojson",
+     "format": "GeoJSON",
+     "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/AGO/ADM0/geoBoundaries-AGO-ADM0.geojson"
+    },
+    {
+     "name": "geoBoundaries-AGO-ADM0.topojson",
+     "format": "GeoJSON",
+     "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/AGO/ADM0/geoBoundaries-AGO-ADM0.topojson"
+    },
+    {
+     "name": "geoBoundaries-AGO-ADM0-all.zip",
+     "format": "SHP",
+     "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/AGO/ADM0/geoBoundaries-AGO-ADM0-all.zip"
+    },
+    {
+     "name": "geoBoundaries-AGO-ADM1_simplified.geojson",
+     "format": "GeoJSON",
+     "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/AGO/ADM1/geoBoundaries-AGO-ADM1_simplified.geojson"
+    },
+    {
+     "name": "geoBoundaries-AGO-ADM1.geojson",
+     "format": "GeoJSON",
+     "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/AGO/ADM1/geoBoundaries-AGO-ADM1.geojson"
+    },
+    {
+     "name": "geoBoundaries-AGO-ADM1.topojson",
+     "format": "GeoJSON",
+     "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/AGO/ADM1/geoBoundaries-AGO-ADM1.topojson"
+    },
+    {
+     "name": "geoBoundaries-AGO-ADM1-all.zip",
+     "format": "SHP",
+     "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/AGO/ADM1/geoBoundaries-AGO-ADM1-all.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Angola - Accessibility Indicators",
+   "name": "angola-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/angola-accessibility-indicators",
+   "resources": [
+    {
+     "name": "AGO_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ago/AGO_education_access.gpkg"
+    },
+    {
+     "name": "AGO_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ago/AGO_education_access_long.csv"
+    },
+    {
+     "name": "AGO_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ago/AGO_education_access_wide.csv"
+    },
+    {
+     "name": "AGO_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ago/AGO_hospitals_access.gpkg"
+    },
+    {
+     "name": "AGO_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ago/AGO_hospitals_access_long.csv"
+    },
+    {
+     "name": "AGO_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ago/AGO_hospitals_access_wide.csv"
+    },
+    {
+     "name": "AGO_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ago/AGO_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "AGO_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ago/AGO_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Angola and Namibia - Gridded Population",
+   "name": "angola-and-namibia-gridded-population-dataset",
+   "org": "U.S. Census Bureau",
+   "url": "https://data.humdata.org/dataset/angola-and-namibia-gridded-population-dataset",
+   "resources": [
+    {
+     "name": "Angola_Namibia_gridded_population_2024.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/fff217aa-5a3d-4a26-8b55-e1f48a1dc2ad/resource/432eddc0-c6b8-4fa2-8efd-d79868067446/download/angola_namibia_gridded_population_2024.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Angola - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-angola",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-angola",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Angola",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/7afbea31-6d25-4328-815e-6328b40a67d4/resource/8c6b3742-65b1-475c-89a7-e298b7f9caea/download/social-protection-and-labor_ago.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Angola - Population Counts",
+   "name": "worldpop-population-counts-for-angola",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-angola",
+   "resources": [
+    {
+     "name": "ago_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/AGO/ago_ppp_2020.tif"
+    },
+    {
+     "name": "ago_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/AGO/ago_ppp_2019.tif"
+    },
+    {
+     "name": "ago_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/AGO/ago_ppp_2018.tif"
+    },
+    {
+     "name": "ago_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/AGO/ago_ppp_2017.tif"
+    },
+    {
+     "name": "ago_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/AGO/ago_ppp_2016.tif"
+    },
+    {
+     "name": "ago_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/AGO/ago_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "ago_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/AGO/ago_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "ago_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/AGO/ago_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Angola: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "highresolutionpopulationdensitymaps-ago",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/highresolutionpopulationdensitymaps-ago",
+   "resources": [
+    {
+     "name": "ago_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/af95dc18-3f93-492e-aa32-d635c9de7076/resource/c0ff89e3-93dc-493b-815d-3fc109ae6fc3/download/ago_general_2020_geotiff.zip"
+    },
+    {
+     "name": "ago_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/af95dc18-3f93-492e-aa32-d635c9de7076/resource/40fe771f-6483-4b0a-91b7-f48a4a0316e5/download/ago_general_2020_csv.zip"
+    },
+    {
+     "name": "ago_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/af95dc18-3f93-492e-aa32-d635c9de7076/resource/44482c0c-e279-4caf-842a-442b5f0fc1a3/download/ago_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "ago_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/af95dc18-3f93-492e-aa32-d635c9de7076/resource/8c652b13-b9b8-40b7-9942-5f415779085d/download/ago_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "ago_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/af95dc18-3f93-492e-aa32-d635c9de7076/resource/2ea22db3-b6ef-4080-b7c7-5c88efa0e287/download/ago_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "ago_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/af95dc18-3f93-492e-aa32-d635c9de7076/resource/459a8441-ccf9-4487-a814-e2a90bd19d32/download/ago_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "ago_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/af95dc18-3f93-492e-aa32-d635c9de7076/resource/fea48895-a904-47c6-917d-28f228fe7c47/download/ago_men_2020_csv.zip"
+    },
+    {
+     "name": "ago_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/af95dc18-3f93-492e-aa32-d635c9de7076/resource/438adce5-a961-4e94-a70d-b2073c1d6fb0/download/ago_men_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Angola - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-ao-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-ao-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_AO",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4b00cd4c-9aa2-4b17-90ab-84d99d137d60/resource/def955c9-79a1-4846-827d-62a2c8362b0f/download/indicator_data_ao.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Angola: Level 1 Exposure Data",
+   "name": "angola-level-1-exposure-data",
+   "org": "Global Earthquake Model Foundation",
+   "url": "https://data.humdata.org/dataset/angola-level-1-exposure-data",
+   "resources": [
+    {
+     "name": "AGO_oed_exposure_20200811_hdx.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/07ce1506-a199-4500-b8b4-16c6289e8a0f/resource/f4e4e24e-f58a-448a-ac31-e12053a2f61b/download/ago_oed_exposure_20200811_hdx.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.ine.gov.ao/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.ine.gov.ao/publicacoes/detalhes/ODI3Ng%3D%3D",
+    "status": 200,
+    "kind": "html",
+    "title": "INE-Instituto Nacional De Estatísticas",
+    "files": [
+     "/Arquivos/Geral/DConduta.pdf",
+     "/Arquivos/Geral/Novo_Estatuto_Organico_do_INE_e_Regulamento_do_SEN_Actualizado2026.pdf",
+     "/Arquivos/Geral/PFEO.pdf",
+     "/Arquivos/Geral/PRevisao.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637541681293105172.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637586581811778193.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637586745599904903.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637586834912349696.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637586837981839620.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637586852612407176.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637586868978696851.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637586885169414553.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637586925081516691.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637588269382576348.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637588285029829822.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637601889872076706.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637601891289331990.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637601892431234536.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637601894480417832.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637601904384229382.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637602522083935596.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637793866436254443.xlsx.xls",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637824156615558971.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637840788471761457.pdf",
+     "/Arquivos/arquivosCarregados//Carregados/Publicacao_637867491114668762.pdf"
+    ],
+    "mentions": [
+     "language"
+    ]
+   }
+  ],
+  "title": "INE-Instituto Nacional De Estatísticas",
+  "matching_links": 1
+ },
+ "verdict": {
+  "hdx_datasets": 13,
+  "hdx_machine_readable": 7,
+  "nso_files_found": 25,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "3/3",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

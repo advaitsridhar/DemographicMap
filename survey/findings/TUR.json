@@ -1,0 +1,90 @@
+{
+  "iso3": "TUR",
+  "name": "Turkey",
+  "researched_at": "2026-09-10",
+  "research_note": "Only 2 of the planned ~8 searches ran before the session-wide WebSearch budget (200/200) was exhausted. Both confirmed the packet's closed route rather than opening a new one. Statements marked 'background' are prior knowledge, not a snippet.",
+  "nso": {
+    "name": "Turkish Statistical Institute (TUIK / Turkiye Istatistik Kurumu)",
+    "url": "https://nip.tuik.gov.tr/Home/VeriKaynaklari",
+    "note": "The URL is TUIK's Population Statistics Portal (Nufus Istatistikleri Portali, 'data sources' page), which surfaced; the main site tuik.gov.tr did not surface in a result and is not typed here. The packet already records that MEDAS's 92 subjects include none of the three fields."
+  },
+  "latest_census": {
+    "year": 2011,
+    "asks": {"religion": false, "ethnicity": false, "language": false},
+    "notes": "Turkey stopped enumerating in 2000; since 2007 population comes from the Address-Based Population Registration System (ADNKS) and the 2011 Population and Housing Census was a sample survey (background). Neither asks religion, ethnicity or mother tongue. Snippet evidence: 'The last officially published census covering language data in Turkey was the 1965 census. There were no questions related to the mother tongue or self-identification of people in censuses taken after 1965' (Fanack); 'Turkish census surveys collected questions about mother tongue between 1927-1965. After 1965 ... not asked'; 'Although subsequent censuses may have included questions about mother tongue, the results were not published' (tr.wikipedia 'Turkiye'deki azinliklar' / Cumhuriyet). Ethnicity was never asked directly; mother tongue was the proxy. 1965 national totals: 31,391,421 people; Turkish 28,175,579 (89.76%; another source gives 90.11%); Kurdish (Kurmanji) 2,219,502 (7.07%); Arabic 365,340 (1.16%); Zaza 150,644 (0.48%); Circassian 0.18%; Georgian 0.09%; Laz 0.08%; Pomak 0.07%; Bosnian 0.06%; Albanian 0.04%; Armenian 33,094. Sources note that suppression of Kurdish identity depressed Kurdish declarations."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["language"],
+      "title": "1965 Turkish census (English Wikipedia) -- mother tongue by province",
+      "url": "https://en.wikipedia.org/wiki/1965_Turkish_census",
+      "publisher": "Wikipedia, transcribing the State Institute of Statistics (DIE, TUIK's predecessor) 1965 census volume",
+      "kind": "census",
+      "format": "html",
+      "geography": "province (il), 1965 boundaries",
+      "geography_count": 67,
+      "matches_boundary_level": "neither exactly: 67 provinces in 1965 (background) vs 81 admin1 shapes today; the provinces created since 1989 were carved out of 1965 provinces, so most 1965 rows would each cover one to three current shapes. Nothing at ilce (admin2, 972) level.",
+      "year": 1965,
+      "confidence": "medium",
+      "evidence": "Search summary: 'a Wikipedia reference to the 1965 Turkish census with provincial tables'. Corroborated by the 'Mardin Province' article snippet: 'In the last Turkish census in 1965, Kurdish remained the largest language spoken by 71% of the population in Mardin Province, while Arabic remained the second largest language at 20% and Turkish stood at 8.9%', and by the Commons map 'Mother language in 1965 Turkey census - Kurdish.png', which can only have been drawn from a provincial table. Sixty years old and the project's tier definitions do not contemplate a stale count; flagged as a historical layer, not current composition."
+    },
+    {
+      "fields": ["language"],
+      "title": "File:Mother language in 1965 Turkey census - Kurdish.png -- Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Mother_language_in_1965_Turkey_census_-_Kurdish.png",
+      "publisher": "Wikimedia Commons",
+      "kind": "other",
+      "format": "html",
+      "geography": "province, 1965",
+      "geography_count": null,
+      "matches_boundary_level": "neither",
+      "year": 1965,
+      "confidence": "low",
+      "evidence": "A map, not a table; its description page may cite the DIE volume or a machine-readable transcription."
+    },
+    {
+      "fields": ["language"],
+      "title": "'Mother Tongue' Data in Turkish Censuses (1927-1965) | ResearchGate table",
+      "url": "https://www.researchgate.net/figure/Mother-Tongue-Data-in-Turkish-Censuses-1927-1965_tbl1_269286244",
+      "publisher": "ResearchGate (academic article figure)",
+      "kind": "census",
+      "format": "html",
+      "geography": "national",
+      "geography_count": 1,
+      "matches_boundary_level": "none",
+      "year": 1965,
+      "confidence": "medium",
+      "evidence": "National time series 1927-1965 only; listed so nobody re-checks it as subnational."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Turkiye'deki azinliklar (Minorities in Turkey, tr)", "url": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye'deki_az%C4%B1nl%C4%B1klar", "appears_to_contain": "snippet: no ethnic-origin question since 1965; later mother-tongue results unpublished; the 1965 national shares by language"},
+      {"title": "1965 Turkish census", "url": "https://en.wikipedia.org/wiki/1965_Turkish_census", "appears_to_contain": "provincial mother-tongue tables per the search summary; unverified"},
+      {"title": "Mardin Province", "url": "https://en.wikipedia.org/wiki/Mardin_Province", "appears_to_contain": "snippet gives 1965 mother-tongue shares for the province (Kurdish 71%, Arabic 20%, Turkish 8.9%) -- suggests province articles in the south-east carry the 1965 figures"},
+      {"title": "Derik, Turkey", "url": "https://en.wikipedia.org/wiki/Derik,_Turkey", "appears_to_contain": "an ilce (district) article that surfaced for a mother-tongue query -- suggests some district articles also carry 1965 language data; snippet not shown"}
+    ],
+    "admin2_samples": [],
+    "note": "The mandated searches ('Religion in Turkey' by province; Kurdish population by province; 'Beykoz', 'Birecik', 'Tillo' wikipedia) were refused by the exhausted search budget. Not run, not 'no article'. The Derik hit above is incidental evidence that a district-article route may exist for the 1965 figures."
+  },
+  "tier": "C",
+  "tier_reason": "No census since 1965 has asked religion, ethnicity or mother tongue, later mother-tongue collections were never published, and TUIK publishes none of the three (the packet's MEDAS finding stands). The only subnational count is the 1965 mother-tongue table for 67 provinces, which is 60 years old and matches neither current level.",
+  "replaces_existing": false,
+  "recommended_action": "Declare religion, ethnicity and language not_collected at both levels with the reason 'last asked in the 1965 census; not asked or not published since; ADNKS/2011 census carry none' and cite the Fanack and tr.wikipedia snippets. Optional, clearly labelled historical layer: transcribe the 1965 mother-tongue-by-province table from the English Wikipedia '1965 Turkish census' article (67 provinces; needs a 1965-to-current province mapping and a prominent year flag); a runner should confirm the table is actually on the page. Any KONDA or similar survey estimates of Kurdish share by region (not searched) are samples and rank below that.",
+  "searches_run": [
+    "Turkey 1965 census mother tongue by province table Kurdish Arabic TUIK last census language question (ran)",
+    "TUIK din etnik koken anadil verisi yayinlamiyor nufus sayimi 1965 son (ran)",
+    "\"1965 Turkish census\" wikipedia by province mother tongue table (REFUSED: search budget exhausted)",
+    "KONDA Kurt nufus orani bolgelere gore arastirma (REFUSED)",
+    "2011 Nufus ve Konut Arastirmasi din anadil sorusu (REFUSED)",
+    "\"Religion in Turkey\" wikipedia by province (REFUSED)",
+    "\"Beykoz\" / \"Birecik\" / \"Tillo\" wikipedia (REFUSED)"
+  ],
+  "not_found": [
+    "any post-1965 official figure for religion, ethnicity or mother tongue at any geography",
+    "a machine-readable (CSV/XLSX) copy of the 1965 provincial mother-tongue table -- only HTML/Wikipedia and a map surfaced",
+    "anything at ilce (admin2) level except the incidental Derik article hit",
+    "TUIK's main site in a search result"
+  ],
+  "summary": "Turkey is a census-does-not-ask case: mother tongue (and religion) were last asked in the 1965 census, later mother-tongue collections were never published, ethnicity was never asked directly, and the register-based system TUIK has used since 2007 carries none of the three -- which confirms the packet's closed MEDAS route. Both searches that ran agree. The only subnational count is the 1965 mother-tongue table for the 67 provinces of that year, transcribed in the English Wikipedia '1965 Turkish census' article and echoed in province articles (Mardin: Kurdish 71%), which matches neither the 81 current provinces nor the 972 districts and is sixty years old. Tier C: declare all three fields not_collected with the 1965 reason; the 1965 table is an optional, prominently dated historical layer at best."
+}

@@ -24,43 +24,48 @@
     "religion": [
       {
         "group": "Evangelical",
-        "pct": 45.2,
-        "count": 200950
+        "pct": 41.1,
+        "count": 554466
       },
       {
         "group": "Roman Catholic",
-        "pct": 40.3,
-        "count": 178904
+        "pct": 40.9,
+        "count": 551671
       },
       {
         "group": "No religion",
-        "pct": 9.8,
-        "count": 43515
+        "pct": 12.9,
+        "count": 174574
       },
       {
         "group": "Other religions",
-        "pct": 3.7,
-        "count": 16551
+        "pct": 3.9,
+        "count": 52952
       },
       {
         "group": "Spiritism",
-        "pct": 0.5,
-        "count": 2432
+        "pct": 0.6,
+        "count": 7483
       },
       {
         "group": "Umbanda and Candomblé",
-        "pct": 0.2,
-        "count": 1046
+        "pct": 0.3,
+        "count": 3733
       },
       {
         "group": "Not stated",
         "pct": 0.2,
-        "count": 776
+        "count": 3051
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.1,
+        "count": 873
       },
       {
         "group": "Does not know",
-        "pct": 0.0,
-        "count": 74
+        "pct": 0.1,
+        "count": 911
       }
     ],
     "language": {
@@ -104,7 +109,8 @@
     "codes": {
       "ibge": "11"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-12",
@@ -131,43 +137,48 @@
     "religion": [
       {
         "group": "Evangelical",
-        "pct": 48.2,
-        "count": 102508
+        "pct": 44.4,
+        "count": 303599
       },
       {
         "group": "Roman Catholic",
-        "pct": 38.0,
-        "count": 80653
+        "pct": 38.9,
+        "count": 266329
       },
       {
         "group": "No religion",
-        "pct": 8.4,
-        "count": 17761
+        "pct": 11.2,
+        "count": 76608
       },
       {
         "group": "Other religions",
-        "pct": 4.5,
-        "count": 9493
+        "pct": 4.1,
+        "count": 28004
       },
       {
         "group": "Spiritism",
-        "pct": 0.7,
-        "count": 1428
+        "pct": 0.6,
+        "count": 3791
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.5,
+        "count": 3188
       },
       {
         "group": "Umbanda and Candomblé",
         "pct": 0.2,
-        "count": 440
+        "count": 1626
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 167
+        "count": 871
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 25
+        "count": 96
       }
     ],
     "language": {
@@ -211,7 +222,8 @@
     "codes": {
       "ibge": "12"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-13",
@@ -238,43 +250,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 46.2,
-        "count": 455791
+        "pct": 47.4,
+        "count": 1526406
       },
       {
         "group": "Evangelical",
-        "pct": 42.5,
-        "count": 419145
+        "pct": 39.4,
+        "count": 1267989
       },
       {
         "group": "No religion",
-        "pct": 5.6,
-        "count": 55343
+        "pct": 7.4,
+        "count": 237767
       },
       {
         "group": "Other religions",
-        "pct": 4.9,
-        "count": 47844
+        "pct": 4.6,
+        "count": 147169
       },
       {
         "group": "Spiritism",
         "pct": 0.4,
-        "count": 4047
+        "count": 12160
       },
       {
         "group": "Umbanda and Candomblé",
         "pct": 0.3,
-        "count": 2521
+        "count": 10472
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.3,
+        "count": 11164
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 5128
       },
       {
         "group": "Does not know",
         "pct": 0.1,
-        "count": 624
-      },
-      {
-        "group": "Not stated",
-        "pct": 0.1,
-        "count": 768
+        "count": 2706
       }
     ],
     "language": {
@@ -318,7 +335,8 @@
     "codes": {
       "ibge": "13"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-14",
@@ -345,43 +363,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 37.5,
-        "count": 57948
+        "pct": 37.9,
+        "count": 192821
       },
       {
         "group": "Evangelical",
-        "pct": 37.5,
-        "count": 58057
+        "pct": 34.3,
+        "count": 174801
       },
       {
         "group": "No religion",
-        "pct": 14.6,
-        "count": 22613
+        "pct": 16.9,
+        "count": 86216
       },
       {
         "group": "Other religions",
-        "pct": 9.2,
-        "count": 14167
+        "pct": 7.8,
+        "count": 39529
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 1.7,
+        "count": 8488
       },
       {
         "group": "Spiritism",
-        "pct": 0.7,
-        "count": 1032
+        "pct": 0.6,
+        "count": 3245
       },
       {
         "group": "Umbanda and Candomblé",
-        "pct": 0.2,
-        "count": 334
+        "pct": 0.3,
+        "count": 1551
       },
       {
         "group": "Not stated",
-        "pct": 0.2,
-        "count": 384
+        "pct": 0.3,
+        "count": 1748
       },
       {
         "group": "Does not know",
         "pct": 0.1,
-        "count": 92
+        "count": 518
       }
     ],
     "language": {
@@ -425,7 +448,8 @@
     "codes": {
       "ibge": "14"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-15",
@@ -452,43 +476,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 52.9,
-        "count": 1131829
+        "pct": 54.4,
+        "count": 3704300
       },
       {
         "group": "Evangelical",
-        "pct": 38.6,
-        "count": 826170
+        "pct": 35.3,
+        "count": 2403587
       },
       {
         "group": "No religion",
-        "pct": 5.2,
-        "count": 110539
+        "pct": 7.1,
+        "count": 481039
       },
       {
         "group": "Other religions",
         "pct": 2.5,
-        "count": 53693
+        "count": 167251
       },
       {
         "group": "Spiritism",
         "pct": 0.4,
-        "count": 8910
+        "count": 25344
       },
       {
         "group": "Umbanda and Candomblé",
         "pct": 0.3,
-        "count": 6054
+        "count": 21970
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 1325
+        "count": 6919
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 2621
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 285
+        "count": 2018
       }
     ],
     "language": {
@@ -532,7 +561,8 @@
     "codes": {
       "ibge": "15"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-16",
@@ -559,43 +589,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 50.5,
-        "count": 91651
+        "pct": 51.0,
+        "count": 306643
       },
       {
         "group": "Evangelical",
-        "pct": 39.3,
-        "count": 71239
+        "pct": 36.4,
+        "count": 218499
       },
       {
         "group": "No religion",
-        "pct": 5.7,
-        "count": 10389
+        "pct": 7.6,
+        "count": 45842
       },
       {
         "group": "Other religions",
-        "pct": 3.5,
-        "count": 6285
+        "pct": 3.2,
+        "count": 19487
       },
       {
         "group": "Spiritism",
         "pct": 0.5,
-        "count": 996
+        "count": 3087
       },
       {
         "group": "Umbanda and Candomblé",
-        "pct": 0.4,
-        "count": 687
+        "pct": 0.5,
+        "count": 2881
       },
       {
         "group": "Does not know",
-        "pct": 0.1,
-        "count": 108
+        "pct": 0.5,
+        "count": 2739
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.2,
+        "count": 963
       },
       {
         "group": "Not stated",
-        "pct": 0.0,
-        "count": 44
+        "pct": 0.1,
+        "count": 669
       }
     ],
     "language": {
@@ -639,7 +674,8 @@
     "codes": {
       "ibge": "16"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-17",
@@ -666,43 +702,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 56.9,
-        "count": 235072
+        "pct": 58.7,
+        "count": 751144
       },
       {
         "group": "Evangelical",
-        "pct": 34.7,
-        "count": 143172
+        "pct": 31.0,
+        "count": 396908
       },
       {
         "group": "No religion",
-        "pct": 4.7,
-        "count": 19240
+        "pct": 6.4,
+        "count": 82560
       },
       {
         "group": "Other religions",
-        "pct": 3.0,
-        "count": 12320
+        "pct": 2.7,
+        "count": 34972
       },
       {
         "group": "Spiritism",
-        "pct": 0.6,
-        "count": 2353
+        "pct": 0.5,
+        "count": 7008
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.3,
+        "count": 4151
       },
       {
         "group": "Umbanda and Candomblé",
         "pct": 0.1,
-        "count": 405
+        "count": 1762
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 275
+        "count": 1292
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 48
+        "count": 383
       }
     ],
     "language": {
@@ -746,7 +787,8 @@
     "codes": {
       "ibge": "17"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-21",
@@ -773,43 +815,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 63.3,
-        "count": 1167311
+        "pct": 64.4,
+        "count": 3676771
       },
       {
         "group": "Evangelical",
-        "pct": 28.3,
-        "count": 521222
+        "pct": 25.4,
+        "count": 1449366
       },
       {
         "group": "No religion",
-        "pct": 5.4,
-        "count": 99387
+        "pct": 7.1,
+        "count": 405845
       },
       {
         "group": "Other religions",
-        "pct": 2.4,
-        "count": 43969
+        "pct": 2.3,
+        "count": 133201
       },
       {
         "group": "Umbanda and Candomblé",
         "pct": 0.3,
-        "count": 6046
+        "count": 19508
       },
       {
         "group": "Spiritism",
         "pct": 0.2,
-        "count": 3757
+        "count": 11011
       },
       {
         "group": "Not stated",
+        "pct": 0.2,
+        "count": 9119
+      },
+      {
+        "group": "Indigenous traditions",
         "pct": 0.1,
-        "count": 1528
+        "count": 7265
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 160
+        "count": 943
       }
     ],
     "language": {
@@ -853,7 +900,8 @@
     "codes": {
       "ibge": "21"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-22",
@@ -880,43 +928,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 76.6,
-        "count": 725427
+        "pct": 77.4,
+        "count": 2189877
       },
       {
         "group": "Evangelical",
-        "pct": 17.7,
-        "count": 167443
+        "pct": 15.6,
+        "count": 440074
       },
       {
         "group": "No religion",
-        "pct": 3.1,
-        "count": 29000
+        "pct": 4.3,
+        "count": 121603
       },
       {
         "group": "Other religions",
         "pct": 1.8,
-        "count": 17354
+        "count": 51588
       },
       {
         "group": "Spiritism",
         "pct": 0.4,
-        "count": 3592
+        "count": 10358
       },
       {
         "group": "Umbanda and Candomblé",
         "pct": 0.4,
-        "count": 3755
+        "count": 12237
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 2075
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 121
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 92
-      },
-      {
-        "group": "Not stated",
-        "pct": 0.0,
-        "count": 425
+        "count": 294
       }
     ],
     "language": {
@@ -960,7 +1013,8 @@
     "codes": {
       "ibge": "22"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-23",
@@ -987,43 +1041,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 70.1,
-        "count": 1718315
+        "pct": 70.4,
+        "count": 5357610
       },
       {
         "group": "Evangelical",
-        "pct": 23.2,
-        "count": 568599
+        "pct": 20.8,
+        "count": 1579300
       },
       {
         "group": "No religion",
-        "pct": 3.4,
-        "count": 82147
+        "pct": 5.3,
+        "count": 401128
       },
       {
         "group": "Other religions",
-        "pct": 2.4,
-        "count": 58605
+        "pct": 2.5,
+        "count": 188935
       },
       {
         "group": "Spiritism",
         "pct": 0.6,
-        "count": 13880
+        "count": 43194
       },
       {
         "group": "Umbanda and Candomblé",
-        "pct": 0.3,
-        "count": 7082
+        "pct": 0.4,
+        "count": 27861
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 1393
+        "count": 6572
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 2113
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 595
+        "count": 3018
       }
     ],
     "language": {
@@ -1067,7 +1126,8 @@
     "codes": {
       "ibge": "23"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-24",
@@ -1094,43 +1154,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 66.7,
-        "count": 639659
+        "pct": 67.0,
+        "count": 1927490
       },
       {
         "group": "Evangelical",
-        "pct": 24.3,
-        "count": 233633
+        "pct": 21.4,
+        "count": 615630
       },
       {
         "group": "No religion",
-        "pct": 4.9,
-        "count": 47454
+        "pct": 7.4,
+        "count": 213484
       },
       {
         "group": "Other religions",
-        "pct": 2.7,
-        "count": 26006
+        "pct": 2.8,
+        "count": 81657
       },
       {
         "group": "Spiritism",
-        "pct": 1.0,
-        "count": 9617
+        "pct": 0.9,
+        "count": 26336
       },
       {
         "group": "Umbanda and Candomblé",
         "pct": 0.3,
-        "count": 2600
+        "count": 8292
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 488
+        "count": 2492
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 456
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 91
+        "count": 563
       }
     ],
     "language": {
@@ -1174,7 +1239,8 @@
     "codes": {
       "ibge": "24"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-25",
@@ -1201,43 +1267,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 68.4,
-        "count": 790226
+        "pct": 69.0,
+        "count": 2367779
       },
       {
         "group": "Evangelical",
-        "pct": 23.5,
-        "count": 270855
+        "pct": 20.8,
+        "count": 713123
       },
       {
         "group": "No religion",
-        "pct": 4.2,
-        "count": 48564
+        "pct": 6.2,
+        "count": 211164
       },
       {
         "group": "Other religions",
-        "pct": 2.9,
-        "count": 33532
+        "pct": 3.0,
+        "count": 104136
       },
       {
         "group": "Spiritism",
-        "pct": 0.7,
-        "count": 7974
+        "pct": 0.6,
+        "count": 22108
       },
       {
         "group": "Umbanda and Candomblé",
         "pct": 0.3,
-        "count": 3089
+        "count": 10322
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.1,
+        "count": 1766
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 607
+        "count": 2202
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 78
+        "count": 750
       }
     ],
     "language": {
@@ -1281,7 +1352,8 @@
     "codes": {
       "ibge": "25"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-26",
@@ -1308,43 +1380,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 58.1,
-        "count": 1516030
+        "pct": 58.8,
+        "count": 4599858
       },
       {
         "group": "Evangelical",
-        "pct": 29.1,
-        "count": 758981
+        "pct": 25.2,
+        "count": 1969412
       },
       {
         "group": "No religion",
-        "pct": 7.4,
-        "count": 193014
+        "pct": 10.4,
+        "count": 812594
       },
       {
         "group": "Other religions",
-        "pct": 3.5,
-        "count": 92267
+        "pct": 3.6,
+        "count": 285086
       },
       {
         "group": "Spiritism",
-        "pct": 1.4,
-        "count": 36485
+        "pct": 1.2,
+        "count": 96380
       },
       {
         "group": "Umbanda and Candomblé",
-        "pct": 0.4,
-        "count": 11093
+        "pct": 0.5,
+        "count": 35898
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.1,
+        "count": 7540
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 2600
+        "count": 11419
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 522
+        "count": 2213
       }
     ],
     "language": {
@@ -1388,7 +1465,8 @@
     "codes": {
       "ibge": "26"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-27",
@@ -1415,43 +1493,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 63.5,
-        "count": 573725
+        "pct": 64.2,
+        "count": 1708615
       },
       {
         "group": "Evangelical",
-        "pct": 26.1,
-        "count": 235662
+        "pct": 22.9,
+        "count": 609355
       },
       {
         "group": "No religion",
-        "pct": 6.8,
-        "count": 61455
+        "pct": 9.3,
+        "count": 247848
       },
       {
         "group": "Other religions",
-        "pct": 2.4,
-        "count": 21343
+        "pct": 2.3,
+        "count": 61451
       },
       {
         "group": "Spiritism",
-        "pct": 0.7,
-        "count": 6647
+        "pct": 0.6,
+        "count": 17288
       },
       {
         "group": "Umbanda and Candomblé",
         "pct": 0.4,
-        "count": 3463
+        "count": 10597
       },
       {
         "group": "Not stated",
+        "pct": 0.2,
+        "count": 4039
+      },
+      {
+        "group": "Indigenous traditions",
         "pct": 0.1,
-        "count": 712
+        "count": 3060
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 246
+        "count": 977
       }
     ],
     "language": {
@@ -1495,7 +1578,8 @@
     "codes": {
       "ibge": "27"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-28",
@@ -1522,43 +1606,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 67.7,
-        "count": 430685
+        "pct": 67.8,
+        "count": 1290800
       },
       {
         "group": "Evangelical",
-        "pct": 21.0,
-        "count": 133810
+        "pct": 18.3,
+        "count": 348063
       },
       {
         "group": "No religion",
-        "pct": 6.3,
-        "count": 40269
+        "pct": 9.1,
+        "count": 173517
       },
       {
         "group": "Other religions",
-        "pct": 2.9,
-        "count": 18426
+        "pct": 2.8,
+        "count": 53396
       },
       {
         "group": "Spiritism",
-        "pct": 1.3,
-        "count": 8127
+        "pct": 1.1,
+        "count": 21309
       },
       {
         "group": "Umbanda and Candomblé",
         "pct": 0.8,
-        "count": 4780
+        "count": 14691
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 437
+        "count": 2519
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 142
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 84
+        "count": 457
       }
     ],
     "language": {
@@ -1602,7 +1691,8 @@
     "codes": {
       "ibge": "28"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-29",
@@ -1629,43 +1719,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 56.0,
-        "count": 2287353
+        "pct": 57.0,
+        "count": 7002933
       },
       {
         "group": "Evangelical",
-        "pct": 27.4,
-        "count": 1118814
+        "pct": 23.3,
+        "count": 2869362
       },
       {
         "group": "No religion",
-        "pct": 9.5,
-        "count": 386632
+        "pct": 12.9,
+        "count": 1586137
       },
       {
         "group": "Other religions",
-        "pct": 4.8,
-        "count": 196660
+        "pct": 4.5,
+        "count": 554447
       },
       {
         "group": "Spiritism",
-        "pct": 1.2,
-        "count": 48146
+        "pct": 1.0,
+        "count": 123375
       },
       {
         "group": "Umbanda and Candomblé",
         "pct": 1.0,
-        "count": 39639
+        "count": 123322
+      },
+      {
+        "group": "Does not know",
+        "pct": 0.1,
+        "count": 9574
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 3455
+        "count": 15599
       },
       {
-        "group": "Does not know",
+        "group": "Indigenous traditions",
         "pct": 0.0,
-        "count": 1804
+        "count": 4719
       }
     ],
     "language": {
@@ -1709,7 +1804,8 @@
     "codes": {
       "ibge": "29"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-31",
@@ -1736,43 +1832,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 62.9,
-        "count": 3720441
+        "pct": 63.5,
+        "count": 11487378
       },
       {
         "group": "Evangelical",
-        "pct": 27.3,
-        "count": 1615322
+        "pct": 24.8,
+        "count": 4485264
       },
       {
         "group": "No religion",
-        "pct": 3.6,
-        "count": 213294
+        "pct": 5.7,
+        "count": 1034941
       },
       {
         "group": "Other religions",
         "pct": 3.2,
-        "count": 189868
+        "count": 584613
       },
       {
         "group": "Spiritism",
-        "pct": 2.4,
-        "count": 142906
+        "pct": 2.2,
+        "count": 390282
       },
       {
         "group": "Umbanda and Candomblé",
-        "pct": 0.4,
-        "count": 26031
+        "pct": 0.5,
+        "count": 89548
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 3225
+        "count": 15317
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 3548
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 1106
+        "count": 5806
       }
     ],
     "language": {
@@ -1816,7 +1917,8 @@
     "codes": {
       "ibge": "31"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-32",
@@ -1844,42 +1946,47 @@
       {
         "group": "Roman Catholic",
         "pct": 47.8,
-        "count": 529221
+        "count": 1596617
       },
       {
         "group": "Evangelical",
-        "pct": 39.0,
-        "count": 431184
+        "pct": 35.4,
+        "count": 1181988
       },
       {
         "group": "No religion",
-        "pct": 8.2,
-        "count": 90484
+        "pct": 11.5,
+        "count": 385418
       },
       {
         "group": "Other religions",
         "pct": 3.7,
-        "count": 40434
+        "count": 124959
       },
       {
         "group": "Spiritism",
         "pct": 0.9,
-        "count": 10456
+        "count": 30188
       },
       {
         "group": "Umbanda and Candomblé",
         "pct": 0.4,
-        "count": 4138
+        "count": 14113
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 797
+        "count": 3253
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 1035
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 214
+        "count": 1096
       }
     ],
     "language": {
@@ -1923,7 +2030,8 @@
     "codes": {
       "ibge": "32"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-33",
@@ -1950,43 +2058,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 39.3,
-        "count": 1826029
+        "pct": 38.9,
+        "count": 5503882
       },
       {
         "group": "Evangelical",
-        "pct": 35.6,
-        "count": 1653036
+        "pct": 32.0,
+        "count": 4526166
       },
       {
         "group": "No religion",
-        "pct": 12.0,
-        "count": 558064
+        "pct": 16.9,
+        "count": 2388904
       },
       {
         "group": "Other religions",
-        "pct": 6.1,
-        "count": 282196
+        "pct": 5.9,
+        "count": 828098
       },
       {
         "group": "Spiritism",
-        "pct": 4.2,
-        "count": 194237
+        "pct": 3.5,
+        "count": 499189
       },
       {
         "group": "Umbanda and Candomblé",
         "pct": 2.6,
-        "count": 120564
+        "count": 365452
+      },
+      {
+        "group": "Does not know",
+        "pct": 0.1,
+        "count": 8460
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 4920
+        "count": 20474
       },
       {
-        "group": "Does not know",
+        "group": "Indigenous traditions",
         "pct": 0.0,
-        "count": 1996
+        "count": 2578
       }
     ],
     "language": {
@@ -2030,7 +2143,8 @@
     "codes": {
       "ibge": "33"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-35",
@@ -2057,43 +2171,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 52.5,
-        "count": 6683770
+        "pct": 52.2,
+        "count": 20459882
       },
       {
         "group": "Evangelical",
-        "pct": 30.3,
-        "count": 3853998
+        "pct": 27.3,
+        "count": 10701732
       },
       {
         "group": "No religion",
-        "pct": 7.0,
-        "count": 888223
+        "pct": 10.5,
+        "count": 4095180
       },
       {
         "group": "Other religions",
         "pct": 5.4,
-        "count": 693528
+        "count": 2116568
       },
       {
         "group": "Spiritism",
-        "pct": 3.3,
-        "count": 420214
+        "pct": 2.9,
+        "count": 1135067
       },
       {
         "group": "Umbanda and Candomblé",
-        "pct": 1.4,
-        "count": 173971
+        "pct": 1.5,
+        "count": 576339
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 12186
+        "count": 50781
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 10423
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 4061
+        "count": 18530
       }
     ],
     "language": {
@@ -2137,7 +2256,8 @@
     "codes": {
       "ibge": "35"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-41",
@@ -2164,43 +2284,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 63.1,
-        "count": 2147829
+        "pct": 62.8,
+        "count": 6275443
       },
       {
         "group": "Evangelical",
-        "pct": 28.2,
-        "count": 960371
+        "pct": 26.1,
+        "count": 2601880
       },
       {
         "group": "No religion",
-        "pct": 3.9,
-        "count": 131480
+        "pct": 6.0,
+        "count": 602549
       },
       {
         "group": "Other religions",
-        "pct": 3.1,
-        "count": 105502
+        "pct": 3.2,
+        "count": 319190
       },
       {
         "group": "Spiritism",
-        "pct": 1.2,
-        "count": 39450
+        "pct": 1.0,
+        "count": 104621
       },
       {
         "group": "Umbanda and Candomblé",
-        "pct": 0.5,
-        "count": 17962
+        "pct": 0.6,
+        "count": 58530
+      },
+      {
+        "group": "Does not know",
+        "pct": 0.1,
+        "count": 7166
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 2307
+        "count": 12581
       },
       {
-        "group": "Does not know",
+        "group": "Indigenous traditions",
         "pct": 0.0,
-        "count": 573
+        "count": 3601
       }
     ],
     "language": {
@@ -2244,7 +2369,8 @@
     "codes": {
       "ibge": "41"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-42",
@@ -2271,43 +2397,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 65.0,
-        "count": 1430760
+        "pct": 64.3,
+        "count": 4278447
       },
       {
         "group": "Evangelical",
-        "pct": 24.9,
-        "count": 548240
+        "pct": 23.4,
+        "count": 1557437
       },
       {
         "group": "No religion",
-        "pct": 4.1,
-        "count": 90832
+        "pct": 6.3,
+        "count": 420588
       },
       {
         "group": "Other religions",
-        "pct": 3.3,
-        "count": 72712
+        "pct": 3.4,
+        "count": 228795
       },
       {
         "group": "Spiritism",
-        "pct": 1.8,
-        "count": 40088
+        "pct": 1.6,
+        "count": 107998
       },
       {
         "group": "Umbanda and Candomblé",
-        "pct": 0.7,
-        "count": 16086
+        "pct": 0.8,
+        "count": 52305
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 4002
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 2214
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 569
-      },
-      {
-        "group": "Not stated",
-        "pct": 0.0,
-        "count": 935
+        "count": 3186
       }
     ],
     "language": {
@@ -2351,7 +2482,8 @@
     "codes": {
       "ibge": "42"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-43",
@@ -2378,43 +2510,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 60.9,
-        "count": 2001179
+        "pct": 60.6,
+        "count": 5824141
       },
       {
         "group": "Evangelical",
-        "pct": 23.1,
-        "count": 758917
+        "pct": 21.4,
+        "count": 2051481
       },
       {
         "group": "No religion",
-        "pct": 6.1,
-        "count": 200646
-      },
-      {
-        "group": "Spiritism",
-        "pct": 3.4,
-        "count": 113382
+        "pct": 8.8,
+        "count": 847293
       },
       {
         "group": "Umbanda and Candomblé",
-        "pct": 3.4,
-        "count": 110644
+        "pct": 3.2,
+        "count": 306493
       },
       {
         "group": "Other religions",
-        "pct": 3.1,
-        "count": 101451
+        "pct": 3.0,
+        "count": 292223
+      },
+      {
+        "group": "Spiritism",
+        "pct": 2.9,
+        "count": 274787
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 3221
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 496
+        "count": 3523
       },
       {
         "group": "Not stated",
         "pct": 0.0,
-        "count": 953
+        "count": 3620
       }
     ],
     "language": {
@@ -2458,7 +2595,8 @@
     "codes": {
       "ibge": "43"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-50",
@@ -2485,43 +2623,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 51.7,
-        "count": 410194
+        "pct": 51.9,
+        "count": 1219677
       },
       {
         "group": "Evangelical",
-        "pct": 35.2,
-        "count": 279096
+        "pct": 32.5,
+        "count": 763096
       },
       {
         "group": "No religion",
-        "pct": 6.5,
-        "count": 51329
+        "pct": 9.0,
+        "count": 210472
       },
       {
         "group": "Other religions",
         "pct": 4.1,
-        "count": 32215
+        "count": 96896
       },
       {
         "group": "Spiritism",
-        "pct": 1.9,
-        "count": 15301
+        "pct": 1.7,
+        "count": 39526
       },
       {
         "group": "Umbanda and Candomblé",
         "pct": 0.6,
-        "count": 4675
+        "count": 14410
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.1,
+        "count": 2100
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 579
+        "count": 2815
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 231
+        "count": 1140
       }
     ],
     "language": {
@@ -2565,7 +2708,8 @@
     "codes": {
       "ibge": "50"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-51",
@@ -2592,43 +2736,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 55.8,
-        "count": 552760
+        "pct": 56.7,
+        "count": 1755041
       },
       {
         "group": "Evangelical",
-        "pct": 33.2,
-        "count": 328645
+        "pct": 30.0,
+        "count": 927714
       },
       {
         "group": "No religion",
-        "pct": 6.0,
-        "count": 59828
+        "pct": 8.1,
+        "count": 251912
       },
       {
         "group": "Other religions",
-        "pct": 3.4,
-        "count": 33455
+        "pct": 3.2,
+        "count": 98180
       },
       {
         "group": "Spiritism",
-        "pct": 1.2,
-        "count": 12143
+        "pct": 1.1,
+        "count": 33685
       },
       {
         "group": "Umbanda and Candomblé",
         "pct": 0.4,
-        "count": 3678
+        "count": 13093
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.4,
+        "count": 10835
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 513
+        "count": 2273
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 179
+        "count": 796
       }
     ],
     "language": {
@@ -2672,7 +2821,8 @@
     "codes": {
       "ibge": "51"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-52",
@@ -2699,43 +2849,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 51.3,
-        "count": 1022630
+        "pct": 51.9,
+        "count": 3167846
       },
       {
         "group": "Evangelical",
-        "pct": 35.6,
-        "count": 708792
+        "pct": 32.6,
+        "count": 1987368
       },
       {
         "group": "No religion",
-        "pct": 6.0,
-        "count": 120021
+        "pct": 8.4,
+        "count": 512330
       },
       {
         "group": "Other religions",
-        "pct": 4.2,
-        "count": 84078
+        "pct": 4.4,
+        "count": 265558
       },
       {
         "group": "Spiritism",
-        "pct": 2.3,
-        "count": 46647
+        "pct": 2.1,
+        "count": 128022
       },
       {
         "group": "Umbanda and Candomblé",
-        "pct": 0.4,
-        "count": 8747
+        "pct": 0.5,
+        "count": 31822
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 1405
+        "count": 5463
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 658
       },
       {
         "group": "Does not know",
         "pct": 0.0,
-        "count": 301
+        "count": 2406
       }
     ],
     "language": {
@@ -2779,7 +2934,8 @@
     "codes": {
       "ibge": "52"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
     "id": "BRA-53",
@@ -2806,43 +2962,48 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 50.9,
-        "count": 393522
+        "pct": 49.7,
+        "count": 1226753
       },
       {
         "group": "Evangelical",
-        "pct": 32.5,
-        "count": 251331
+        "pct": 29.2,
+        "count": 720363
       },
       {
         "group": "No religion",
-        "pct": 7.3,
-        "count": 56375
+        "pct": 11.3,
+        "count": 277831
       },
       {
         "group": "Other religions",
-        "pct": 4.7,
-        "count": 36319
+        "pct": 4.9,
+        "count": 120759
       },
       {
         "group": "Spiritism",
-        "pct": 3.8,
-        "count": 29141
+        "pct": 3.3,
+        "count": 80611
       },
       {
         "group": "Umbanda and Candomblé",
-        "pct": 0.7,
-        "count": 5748
+        "pct": 0.9,
+        "count": 20995
+      },
+      {
+        "group": "Does not know",
+        "pct": 0.6,
+        "count": 15089
       },
       {
         "group": "Not stated",
         "pct": 0.1,
-        "count": 644
+        "count": 3180
       },
       {
-        "group": "Does not know",
+        "group": "Indigenous traditions",
         "pct": 0.0,
-        "count": 271
+        "count": 582
       }
     ],
     "language": {
@@ -2886,6 +3047,7 @@
     "codes": {
       "ibge": "53"
     },
-    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere."
+    "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   }
 ]

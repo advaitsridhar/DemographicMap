@@ -1,0 +1,92 @@
+{
+  "iso3": "CUB",
+  "name": "Cuba",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Oficina Nacional de Estadistica e Informacion (ONEI)",
+    "url": "https://www.onei.gob.cu/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2012,
+    "asks": {
+      "religion": false,
+      "ethnicity": true,
+      "language": false
+    },
+    "confidence": "recalled",
+    "notes": "The Censo de Poblacion y Viviendas 2012 asked 'color de la piel' (blanco / negro / mulato o mestizo), the country's ethnicity equivalent and the source of the packet's 64.1 / 26.6 / 9.3 split. Neither the 2012 nor the 2002 or 1981 census asked religion (the packet's religion figures are estimates) or language. The next census, planned for 2022, was postponed (to 2025 as last recalled); no results from it are recalled."
+  },
+  "subnational_sources": [
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "El Color de la Piel segun el Censo de Poblacion y Viviendas 2012 (ONEI thematic report, 2016): population by skin colour by provincia and municipio",
+      "url": null,
+      "publisher": "ONEI",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "provincia and municipio",
+      "geography_count": 168,
+      "matches_boundary_level": "admin1 and admin2",
+      "year": 2012,
+      "confidence": "recalled",
+      "evidence": "ONEI published a stand-alone monograph on skin colour from the 2012 census with tables by province and municipality. Cuba's 15 provinces plus the Isla de la Juventud special municipality equal the packet's 16 admin1, and 168 municipios equal the packet's admin2 count exactly."
+    },
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "Censo de Poblacion y Viviendas 2012: tablas de resultados por provincia y municipio (ONEI census site), poblacion por color de la piel",
+      "url": null,
+      "publisher": "ONEI",
+      "kind": "census",
+      "format": "xls",
+      "geography": "municipio",
+      "geography_count": 168,
+      "matches_boundary_level": "admin2",
+      "year": 2012,
+      "confidence": "low",
+      "evidence": "ONEI's 2012 census results were also released as per-province table sets, some as Excel; whether the skin-colour table is among the XLS releases, and whether they are still online, is not recalled with confidence."
+    },
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "IPUMS International: Cuba 2002 census microdata sample (skin colour)",
+      "url": null,
+      "publisher": "IPUMS International",
+      "kind": "census",
+      "format": "api",
+      "geography": "provincia / municipio",
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2002,
+      "confidence": "low",
+      "evidence": "Registration required, sample not count, and a decade older; fallback only."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Cuba"
+      },
+      {
+        "title": "Demographics of Cuba"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "A 2012 census count of skin colour exists by province (16 = admin1) and municipio (168 = admin2) in an ONEI PDF monograph; an XLS edition is plausible but not confirmed. Religion and language are not asked.",
+  "replaces_existing": false,
+  "recommended_action": "Crawl onei.gob.cu for the 2012 census results and the 'El color de la piel' report; prefer any XLS table set, else extract the PDF tables for 168 municipios and 16 provinces. Record the field as skin colour (color de la piel) with its three categories. Declare religion and language not_collected with the census-programme reason. Check whether the postponed census (2025) has produced results, which would supersede 2012.",
+  "searches_run": [],
+  "not_found": [
+    "A confirmed XLS/CSV edition of the 2012 skin-colour table by municipio",
+    "Results from the postponed 2022/2025 census"
+  ],
+  "summary": "Cuba's 2012 census asked skin colour (blanco, negro, mulato/mestizo), which is the ethnicity field here, and ONEI published it by province and municipality in the monograph 'El color de la piel segun el Censo 2012'; 16 provinces and 168 municipios match both boundary levels exactly. The known edition is PDF, so Tier B; an Excel table set on ONEI's census site is possible but unconfirmed. Religion and language are not census items and should be declared not_collected."
+}

@@ -1,0 +1,96 @@
+{
+ "iso3": "GTM",
+ "name": "Guatemala",
+ "mode": "knowledge-only",
+ "researched_at": "2026-09-10",
+ "nso": {
+  "name": "Instituto Nacional de Estadística (INE)",
+  "url": "https://www.ine.gob.gt/",
+  "confidence": "recalled"
+ },
+ "latest_census": {
+  "year": 2018,
+  "asks": {
+   "religion": false,
+   "ethnicity": true,
+   "language": true
+  },
+  "confidence": "recalled",
+  "notes": "XII Censo Nacional de Población y VII de Vivienda 2018 (fielded July-August 2018; results September 2019). It asks 'pueblo de pertenencia' (Maya, Garífuna, Xinka, Afrodescendiente/Creole/Afromestizo, Ladino, Extranjero), the Maya 'comunidad lingüística' (22 communities), the language in which the person learned to speak (mother tongue) and other languages spoken. No religion item in 2018 or in the 2002 census; Guatemala's religion figures come from surveys (Pew, Latinobarómetro, CID Gallup), which is why the national record's evangelical/Catholic split is survey-derived. High confidence on ethnicity and language; medium-high on 'religion not asked'."
+ },
+ "subnational_sources": [
+  {
+   "fields": [
+    "ethnicity",
+    "language"
+   ],
+   "title": "Censo 2018 - Resultados: cuadros by departamento and municipio (pueblo de pertenencia, comunidad lingüística, idioma materno), REDATAM online, and the public census database",
+   "url": "https://www.censopoblacion.gt/",
+   "publisher": "INE Guatemala",
+   "kind": "census",
+   "format": "xlsx cuadros; REDATAM table-builder; public microdata (recalled)",
+   "geography": "departamento (22) and municipio (340 at the 2018 census)",
+   "geography_count": 340,
+   "matches_boundary_level": "admin1 (22 departamentos) exactly; admin2 near (340 municipios vs 342 shapes - municipios created after 2018 or a boundary-file duplicate)",
+   "year": 2018,
+   "confidence": "medium-high (recalled)",
+   "evidence": "INE built a dedicated results portal for the 2018 census with downloadable tables to municipio level and released the anonymised database; the domain is recalled, the table file names are not."
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "language"
+   ],
+   "title": "INE - 'Resultados del Censo 2018' report and departmental PDFs",
+   "url": null,
+   "publisher": "INE Guatemala",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "departamento",
+   "geography_count": 22,
+   "matches_boundary_level": "admin1",
+   "year": 2018,
+   "confidence": "medium (recalled)",
+   "evidence": "Fallback if the portal's XLSX is not reachable."
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "language"
+   ],
+   "title": "IPUMS-International - Guatemala 1964, 1973, 1981, 1994, 2002 (and possibly 2018) census samples",
+   "url": "https://international.ipums.org/",
+   "publisher": "IPUMS / INE",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "departamento and municipio",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 and admin2",
+   "year": 2002,
+   "confidence": "medium (recalled)",
+   "evidence": "Ethnicity and language variables are present in the 2002 sample; whether 2018 has been integrated I cannot confirm."
+  }
+ ],
+ "wikipedia": {
+  "country_list_articles": [
+   {
+    "title": "Religion in Guatemala"
+   },
+   {
+    "title": "Demographics of Guatemala"
+   }
+  ],
+  "admin2_samples": []
+ },
+ "tier": "A",
+ "tier_reason": "The 2018 census counts ethnic belonging, Maya linguistic community and mother tongue and INE publishes them to municipio level (340 ~ 342 admin2; 22 departamentos = admin1) through a results portal with downloadable tables and public microdata. Religion is not a census item.",
+ "replaces_existing": false,
+ "recommended_action": "Crawl censopoblacion.gt (and ine.gob.gt) for the 2018 cuadros or database; aggregate pueblo de pertenencia and idioma materno by departamento and municipio. Join municipios on departamento + municipio, never on name alone: 'San José' and similar names recur across departments. Declare religion not_collected after confirming the 2018 questionnaire has no religion item.",
+ "searches_run": [],
+ "not_found": [
+  "exact table titles and download paths on the 2018 results portal",
+  "whether INE published the 2018 microdata openly (recalled as yes, medium confidence)",
+  "the two extra admin2 shapes (342 vs 340 municipios)"
+ ],
+ "summary": "Guatemala's INE (ine.gob.gt; census portal censopoblacion.gt) counted 'pueblo de pertenencia', Maya linguistic community and mother tongue in the 2018 census and publishes them by departamento (22 = admin1) and municipio (340 vs 342 admin2 shapes) as downloadable tables, REDATAM and public microdata. Religion is not asked in Guatemalan censuses, so it becomes a not_collected declaration. Tier A on ethnicity and language; join municipios on department + name because names repeat."
+}

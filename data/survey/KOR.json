@@ -1,0 +1,1062 @@
+{
+ "iso3": "KOR",
+ "name": "South Korea",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "2015 인구주택총조사 표본 집계 결과(인구·가구·주택 기본특성항목) - 보도자료 (2015 Census sample tabulation results, press release with attached statistical tables)",
+   "kind": "census (20% sample tabulation)",
+   "format": "xls (snippet: downloadable '통계표.xls')",
+   "geography": "province / metropolitan city (시도)",
+   "geography_count": 17,
+   "matches_boundary_level": "admin1",
+   "url": "https://www.kostat.go.kr/board.es?mid=a10301020100&bid=203&tag=&act=view&list_no=358170&ref_bid=",
+   "status": 200,
+   "content_type": "text/html;charset=UTF-8",
+   "final_url": "https://mods.go.kr/board.es?mid=a10301020100&bid=203&tag=&act=view&list_no=358170&ref_bid=",
+   "error": null,
+   "body": {
+    "bytes_read": 101802,
+    "kind": "html",
+    "title": "2015 인구주택총조사 표본 집계 결과(인구.가구.주택 기본특성항목) | 전체 | 인구 · 가구 | 보도자료 | 새소식 : 국가데이터처",
+    "links_to_files": [
+     "/ansk/file/WAQC_20260211.pdf"
+    ],
+    "mentions": [
+     "census"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "KOSIS (Korean Statistical Information Service) - Population Census tables, table builder and Open API",
+   "kind": "census",
+   "format": "table-builder (web download) and API (key required)",
+   "geography": "si/gun/gu (시군구) likely; unverified for the religion table",
+   "geography_count": null,
+   "matches_boundary_level": "admin2 (228 drawn) if a si/gun/gu religion table exists; admin1 otherwise",
+   "url": "https://kosis.kr/",
+   "status": 200,
+   "content_type": "text/html;charset=utf-8",
+   "final_url": "https://kosis.kr/index/index.do",
+   "error": null,
+   "body": {
+    "bytes_read": 128678,
+    "kind": "html",
+    "title": "KOSIS 국가통계포털",
+    "links_to_files": [],
+    "mentions": []
+   }
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "2025 Population and Housing Census (results due November 2026)",
+   "kind": "census",
+   "format": null,
+   "geography": null,
+   "geography_count": null,
+   "matches_boundary_level": null,
+   "url": "https://kostat.go.kr/",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "RemoteDisconnected: Remote end closed connection without response"
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in South Korea",
+    "wikitext_bytes": 73689,
+    "infobox_params": [
+     "language"
+    ],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 5,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\"|religion",
+       "colspan=\"2\"|1950–1962<ref>{{cite web |trans-title=Development of Protestantism in South Korea: Positive and Negative Elements |url=https://aatfweb.org/2014/10/31/development-of-protestantism-in-south-korea-positive-and-negative-elements/ |website=AATF |access-date=9 October 2022 |language=ko |script-title=ko:한국의 개신교 발전: 긍정적 요소와 부정적 요소 |date=2014-10-31}}</ref>",
+       "colspan=\"2\"|1985",
+       "colspan=\"2\"|1995<ref>{{cite web |trans-title=South Korea National Statistical Office's 19th Population and Housing Census (2015) |url=http://image.kmib.co.kr/online_image/2016/1219/201612191738_61220011145071_1.jpg |access-date=9 October 2022 |language=ko |script-title=ko:통계청 제19차 인구주택총조사(2015)}}</ref>",
+       "colspan=\"2\"|2005<ref>{{cite web |trans-title=South Korea National Statistical Office's 19th Population and Housing Census (2015) |url=http://image.kmib.co.kr/online_image/2016/1219/201612191738_61220011145071_1.jpg |access-date=9 October 2022 |language=ko |script-title=ko:통계청 제19차 인구주택총조사(2015)}}</ref>",
+       "colspan=\"2\"|2015<ref>{{cite web |trans-title=South Korea National Statistical Office's 19th Population and Housing Census (2015) |url=http://image.kmib.co.kr/online_image/2016/1219/201612191738_61220011145071_1.jpg |access-date=9 October 2022 |language=ko |script-title=ko:통계청 제19차 인구주택총조사(2015)}}</ref>",
+       "num.",
+       "%",
+       "num.",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Administrative area",
+       "Protestantism",
+       "Catholicism",
+       "Buddhism",
+       "Other",
+       "No Religion",
+       "Korea National",
+       "20%",
+       "11%",
+       "16%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "Age <ref>{{Cite web |last=이동한 |date=2025-12-02 |title=[2025 종교인식조사] 종교인구 현황과 종교 활동 |url=https://hrcopinion.co.kr/archives/34782 |access-date=2025-12-06 |website=한국리서치 정기조사 여론속의 여론 |language=ko-KR}}</ref>",
+       "Protestantism",
+       "Catholicism",
+       "Buddhism",
+       "Other religions",
+       "No affiliation",
+       "18–29",
+       "30–39",
+       "40–49",
+       "50–59"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "<ref>{{Cite web |last=이동한 |date=2025-12-02 |title=[2025 종교인식조사] 종교인구 현황과 종교 활동 |url=https://hrcopinion.co.kr/archives/34782 |access-date=2025-12-06 |website=한국리서치 정기조사 여론속의 여론 |language=ko-KR}}</ref>",
+       "Protestantism",
+       "Catholicism",
+       "Buddhism",
+       "Other religions",
+       "No affiliation",
+       "Male",
+       "Female",
+       "colspan=\"6\" |<small>Other religions include Won Buddhism, Confucianism, Cheondoism, Daesun Jinrihoe, Daejongism, and Jeungsanism.</small>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 3
+     },
+     {
+      "header": [
+       "School || Temples"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Irreligion in South Korea",
+    "wikitext_bytes": 5912,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 3,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Year",
+       "Percent",
+       "People",
+       "1985<ref>{{Cite web|url=http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1IN8505&conn_path=I2|title=시도/연령/성별 종교인구|date=1985|website=Korean Statistical Information Service|language=ko|trans-title=Population by Cities, Age, Gender, Religion|access-date=2018-03-17}}</ref>",
+       "1995<ref>{{Cite web|url=http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1IN9506&conn_path=I2|title=행정구역/성/연령별 종교인구|date=1995|website=Korean Statistical Information Service|language=ko|trans-title=Population of Religions by Region, Gender, Age|access-date=2018-03-17}}</ref>",
+       "2005<ref>{{Cite web|url=http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1IN0505&conn_path=I2|title=성/연령/종교별 인구 - 시군구|date=2005|website=Korean Statistical Information Service|language=ko|trans-title=Population by Gender, Age, and Religion - City/Country|access-date=2018-03-17}}</ref>",
+       "2015<ref name=\":1\" />",
+       "Age<ref name=\":1\" />",
+       "Percent",
+       "20–29"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Age<ref name=\":1\" />",
+       "Percent",
+       "20–29",
+       "30–39",
+       "40–49",
+       "50–59",
+       "60–69",
+       "70–79",
+       "80–85",
+       "above 85"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Gender <ref name=\":1\" />",
+       "Percent",
+       "Male",
+       "Female"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 2
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of South Korea",
+    "wikitext_bytes": 133158,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 15,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "Age group",
+       "Male",
+       "Female",
+       "Total",
+       "Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\"|Average population",
+       "style=\"width:80pt;\"|Live births",
+       "style=\"width:80pt;\"|Deaths",
+       "style=\"width:80pt;\"|Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)",
+       "style=\"width:80pt;\"|Total fertility rate (TFR)<ref name=\"ourworldindata.org\"/>",
+       "style=\"width:80pt;\"|Net Migration Rate (per 1000)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January–June 2025",
+       "January–June 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{Cite web|url=https://kosis.kr/eng/statisticsList/statisticsListIndex.do?menuId=M_01_01&vwcd=MT_ETITLE&parmTabId=M_01_01&statId=1962004&themaId=#A_3.2|title=KOSIS KOrean Statistical Information Service|website=kosis.kr|access-date=2020-11-30|archive-date=2021-02-24|archive-url=https://web.archive.org/web/20210224162446/https://kosis.kr/eng/statisticsList/statisticsListIndex.do?menuId=M_01_01&vwcd=MT_ETITLE&parmTabId=M_01_01&statId=1962004&themaId=#A_3.2|url-status=live}}</ref>",
+       "Province and cities",
+       "TFR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "Province and cities",
+       "TFR",
+       "Years",
+       "1900",
+       "1901",
+       "1902",
+       "1903",
+       "1904",
+       "1905",
+       "1906"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "Years",
+       "1900",
+       "1901",
+       "1902",
+       "1903",
+       "1904",
+       "1905",
+       "1906",
+       "1907",
+       "1908"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1911",
+       "1912",
+       "1913",
+       "1914",
+       "1915",
+       "1916",
+       "1917",
+       "1918",
+       "1919"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1921",
+       "1922",
+       "1923",
+       "1924<ref name=\"ourworldindata.org\"/>",
+       "style=\"width:80pt;\"|Period",
+       "style=\"width:80pt;\"|Live births per year",
+       "style=\"width:80pt;\"|Deaths per year",
+       "style=\"width:80pt;\"|Natural change per year",
+       "style=\"width:50pt;\"|CBR<sup>1</sup>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "style=\"width:80pt;\"|Period",
+       "style=\"width:80pt;\"|Live births per year",
+       "style=\"width:80pt;\"|Deaths per year",
+       "style=\"width:80pt;\"|Natural change per year",
+       "style=\"width:50pt;\"|CBR<sup>1</sup>",
+       "style=\"width:50pt;\"|CDR<sup>1</sup>",
+       "style=\"width:50pt;\"|NC<sup>1</sup>",
+       "style=\"width:50pt;\"|TFR<sup>1</sup>",
+       "style=\"width:50pt;\"|IMR<sup>1</sup>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "rowspan=2 class=\"unsortable\" style=\"vertical-align:middle;\"|Age",
+       "colspan=4|South Korea on average",
+       "colspan=4 style=\"border-left-width:2px;\"|Gyeonggi Province",
+       "colspan=4 style=\"border-left-width:2px;\"|Seoul",
+       "class=\"unsortable\" style=\"vertical-align:middle;width:3.5em;\"|{{tooltip|overall|All population on average}}",
+       "class=\"unsortable\" style=\"vertical-align:middle;width:3em;\"|male",
+       "class=\"unsortable\" style=\"vertical-align:middle;width:3em;\"|female",
+       "class=\"unsortable\"|{{tooltip|sex gap|Difference in life expectancy for female and male}}",
+       "class=\"unsortable\" style=\"border-left-width:2px;vertical-align:middle;width:3.5em;\"|overall",
+       "class=\"unsortable\" style=\"vertical-align:middle;width:3em;\"|male"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Years",
+       "1908",
+       "1913",
+       "1918",
+       "1923",
+       "1928",
+       "1933",
+       "1938",
+       "1942",
+       "1950<ref name=\":02\">{{Cite web|url=https://ourworldindata.org/grapher/life-expectancy?year=1810|title=Life expectancy|website=Our World in Data|access-date=2018-08-28|archive-date=2018-08-29|archive-url=https://web.archive.org/web/20180829072115/https://ourworldindata.org/grapher/life-expectancy?year=1810|url-status=live}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />years",
+       "Period",
+       "Life expectancy in<br />years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "Year",
+       "Immigration",
+       "Emigration",
+       "Net Migration"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "Country",
+       "2024 (Sept)",
+       "2021 (Aug)<ref>{{cite news |last=Kim |first=Yon-se |date=2021-09-26 |url=http://www.koreaherald.com/view.php?ud=20210926000093 |title=Number of foreigners in Korea up for 1st time in 20 months |access-date=11 November 2021 |archive-date=30 September 2023 |archive-url=https://web.archive.org/web/20230930223640/https://www.koreaherald.com/view.php?ud=20210926000093| url-status=live |work=The Korea Herald}}</ref>",
+       "2019"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 60
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Anyang-si",
+    "found": true,
+    "title": "Anyang, Gyeonggi",
+    "url": "https://en.wikipedia.org/wiki/Anyang%2C_Gyeonggi",
+    "wikitext_bytes": 47756,
+    "infobox_params": [
+     "language"
+    ],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 3,
+    "charts": [],
+    "composition_blocks": 1,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Boeun-gun",
+    "found": true,
+    "title": "Boeun County",
+    "url": "https://en.wikipedia.org/wiki/Boeun_County",
+    "wikitext_bytes": 9583,
+    "infobox_params": [
+     "language"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   },
+   {
+    "shape_name": "Bucheon-si",
+    "found": true,
+    "title": "Bucheon",
+    "url": "https://en.wikipedia.org/wiki/Bucheon",
+    "wikitext_bytes": 16665,
+    "infobox_params": [
+     "language"
+    ],
+    "sections": [
+     "Religion"
+    ],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   },
+   {
+    "shape_name": "Gapyeong-gun",
+    "found": true,
+    "title": "Gapyeong County",
+    "url": "https://en.wikipedia.org/wiki/Gapyeong_County",
+    "wikitext_bytes": 8090,
+    "infobox_params": [
+     "language"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   },
+   {
+    "shape_name": "Gimpo-si",
+    "found": true,
+    "title": "Gimpo",
+    "url": "https://en.wikipedia.org/wiki/Gimpo",
+    "wikitext_bytes": 10382,
+    "infobox_params": [
+     "language"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "religion",
+   "title": "South Korea - Conflict Events",
+   "name": "south-korea-acled-conflict-data",
+   "org": "Armed Conflict Location & Event Data Project (ACLED)",
+   "url": "https://data.humdata.org/dataset/south-korea-acled-conflict-data",
+   "resources": [
+    {
+     "name": "south korea_political_violence_events_and_fatalities_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/3cbf99e7-9514-4439-8889-75a8e5125fd5/resource/d87c74e6-7d83-4fe1-a455-aec2a8b38786/download/south-korea_political_violence_events_and_fatalities_by_month-year_as-of-10sep2026.xlsx"
+    },
+    {
+     "name": "south korea_civilian_targeting_events_and_fatalities_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/3cbf99e7-9514-4439-8889-75a8e5125fd5/resource/9b87ad78-fe3c-4a06-922c-0931f23840fd/download/south-korea_civilian_targeting_events_and_fatalities_by_month-year_as-of-10sep2026.xlsx"
+    },
+    {
+     "name": "south korea_demonstration_events_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/3cbf99e7-9514-4439-8889-75a8e5125fd5/resource/45e73b80-8ea4-4dd1-8487-6534f3e9370e/download/south-korea_demonstration_events_by_month-year_as-of-10sep2026.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Roads of South Korea",
+   "name": "hotosm_kor_roads",
+   "org": "Humanitarian OpenStreetMap Team (HOT)",
+   "url": "https://data.humdata.org/dataset/hotosm_kor_roads",
+   "resources": [
+    {
+     "name": "hotosm_kor_roads_osm_gpkg.zip",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/roads/hotosm_kor_roads_osm_gpkg.zip"
+    },
+    {
+     "name": "hotosm_kor_roads_osm_metadata.json",
+     "format": "JSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/roads/hotosm_kor_roads_osm_metadata.json"
+    },
+    {
+     "name": "hotosm_kor_roads_osm_shp.zip",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/roads/hotosm_kor_roads_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_kor_roads_report.html",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/roads/hotosm_kor_roads_report.html"
+    },
+    {
+     "name": "Roads (OSM), GeoPackage",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/roads/hotosm_kor_roads_osm_gpkg.zip"
+    },
+    {
+     "name": "Roads (OSM), Shapefile",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/roads/hotosm_kor_roads_osm_shp.zip"
+    },
+    {
+     "name": "Roads, Data Quality Report",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/roads/hotosm_kor_roads_report.html"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Airports in South Korea",
+   "name": "ourairports-kor",
+   "org": "OurAirports",
+   "url": "https://data.humdata.org/dataset/ourairports-kor",
+   "resources": [
+    {
+     "name": "List of airports in South Korea (HXL tags)",
+     "format": "CSV",
+     "url": "https://ourairports.com/countries/KR/airports.hxl"
+    },
+    {
+     "name": "List of airports in South Korea (no HXL tags)",
+     "format": "CSV",
+     "url": "https://ourairports.com/countries/KR/airports.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Waterways of South Korea",
+   "name": "hotosm_kor_waterways",
+   "org": "Humanitarian OpenStreetMap Team (HOT)",
+   "url": "https://data.humdata.org/dataset/hotosm_kor_waterways",
+   "resources": [
+    {
+     "name": "hotosm_kor_waterways_osm_geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/waterways/hotosm_kor_waterways_osm_geojson.zip"
+    },
+    {
+     "name": "hotosm_kor_waterways_osm_gpkg.zip",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/waterways/hotosm_kor_waterways_osm_gpkg.zip"
+    },
+    {
+     "name": "hotosm_kor_waterways_osm_metadata.json",
+     "format": "JSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/waterways/hotosm_kor_waterways_osm_metadata.json"
+    },
+    {
+     "name": "hotosm_kor_waterways_osm_shp.zip",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/waterways/hotosm_kor_waterways_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_kor_waterways_report.html",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/waterways/hotosm_kor_waterways_report.html"
+    },
+    {
+     "name": "Waterways (OSM), GeoJSON",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/waterways/hotosm_kor_waterways_osm_geojson.zip"
+    },
+    {
+     "name": "Waterways (OSM), GeoPackage",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/waterways/hotosm_kor_waterways_osm_gpkg.zip"
+    },
+    {
+     "name": "Waterways (OSM), Shapefile",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/waterways/hotosm_kor_waterways_osm_shp.zip"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Railways of South Korea",
+   "name": "hotosm_kor_railways",
+   "org": "Humanitarian OpenStreetMap Team (HOT)",
+   "url": "https://data.humdata.org/dataset/hotosm_kor_railways",
+   "resources": [
+    {
+     "name": "hotosm_kor_railways_osm_geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/railways/hotosm_kor_railways_osm_geojson.zip"
+    },
+    {
+     "name": "hotosm_kor_railways_osm_gpkg.zip",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/railways/hotosm_kor_railways_osm_gpkg.zip"
+    },
+    {
+     "name": "hotosm_kor_railways_osm_metadata.json",
+     "format": "JSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/railways/hotosm_kor_railways_osm_metadata.json"
+    },
+    {
+     "name": "hotosm_kor_railways_osm_shp.zip",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/railways/hotosm_kor_railways_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_kor_railways_report.html",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/railways/hotosm_kor_railways_report.html"
+    },
+    {
+     "name": "Railways (OSM), GeoJSON",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/railways/hotosm_kor_railways_osm_geojson.zip"
+    },
+    {
+     "name": "Railways (OSM), GeoPackage",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/railways/hotosm_kor_railways_osm_gpkg.zip"
+    },
+    {
+     "name": "Railways (OSM), Shapefile",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/railways/hotosm_kor_railways_osm_shp.zip"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Airports of South Korea",
+   "name": "hotosm_kor_airports",
+   "org": "Humanitarian OpenStreetMap Team (HOT)",
+   "url": "https://data.humdata.org/dataset/hotosm_kor_airports",
+   "resources": [
+    {
+     "name": "Airports (OSM), GeoJSON",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/airports/hotosm_kor_airports_osm_geojson.zip"
+    },
+    {
+     "name": "Airports (OSM), GeoPackage",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/airports/hotosm_kor_airports_osm_gpkg.zip"
+    },
+    {
+     "name": "Airports (OSM), Shapefile",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/airports/hotosm_kor_airports_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_kor_airports_osm_geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/airports/hotosm_kor_airports_osm_geojson.zip"
+    },
+    {
+     "name": "hotosm_kor_airports_osm_gpkg.zip",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/airports/hotosm_kor_airports_osm_gpkg.zip"
+    },
+    {
+     "name": "hotosm_kor_airports_osm_metadata.json",
+     "format": "JSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/airports/hotosm_kor_airports_osm_metadata.json"
+    },
+    {
+     "name": "hotosm_kor_airports_osm_shp.zip",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/airports/hotosm_kor_airports_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_kor_airports_report.html",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/airports/hotosm_kor_airports_report.html"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Korea - Accessibility Indicators",
+   "name": "south-korea-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/south-korea-accessibility-indicators",
+   "resources": [
+    {
+     "name": "KOR_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/kor/KOR_education_access.gpkg"
+    },
+    {
+     "name": "KOR_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/kor/KOR_education_access_long.csv"
+    },
+    {
+     "name": "KOR_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/kor/KOR_education_access_wide.csv"
+    },
+    {
+     "name": "KOR_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/kor/KOR_hospitals_access.gpkg"
+    },
+    {
+     "name": "KOR_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/kor/KOR_hospitals_access_long.csv"
+    },
+    {
+     "name": "KOR_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/kor/KOR_hospitals_access_wide.csv"
+    },
+    {
+     "name": "KOR_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/kor/KOR_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "KOR_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/kor/KOR_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Buildings of South Korea",
+   "name": "hotosm_kor_buildings",
+   "org": "Humanitarian OpenStreetMap Team (HOT)",
+   "url": "https://data.humdata.org/dataset/hotosm_kor_buildings",
+   "resources": [
+    {
+     "name": "Buildings (OSM), GeoPackage",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/buildings/hotosm_kor_buildings_osm_gpkg.zip"
+    },
+    {
+     "name": "Buildings (OSM), Shapefile",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/buildings/hotosm_kor_buildings_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_kor_buildings_osm_gpkg.zip",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/buildings/hotosm_kor_buildings_osm_gpkg.zip"
+    },
+    {
+     "name": "hotosm_kor_buildings_osm_metadata.json",
+     "format": "JSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/buildings/hotosm_kor_buildings_osm_metadata.json"
+    },
+    {
+     "name": "hotosm_kor_buildings_osm_shp.zip",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/buildings/hotosm_kor_buildings_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_kor_buildings_report.html",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/buildings/hotosm_kor_buildings_report.html"
+    },
+    {
+     "name": "Buildings, Data Quality Report",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/buildings/hotosm_kor_buildings_report.html"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Sea Ports of South Korea",
+   "name": "hotosm_kor_sea_ports",
+   "org": "Humanitarian OpenStreetMap Team (HOT)",
+   "url": "https://data.humdata.org/dataset/hotosm_kor_sea_ports",
+   "resources": [
+    {
+     "name": "hotosm_kor_sea_ports_osm_geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/sea_ports/hotosm_kor_sea_ports_osm_geojson.zip"
+    },
+    {
+     "name": "hotosm_kor_sea_ports_osm_gpkg.zip",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/sea_ports/hotosm_kor_sea_ports_osm_gpkg.zip"
+    },
+    {
+     "name": "hotosm_kor_sea_ports_osm_metadata.json",
+     "format": "JSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/sea_ports/hotosm_kor_sea_ports_osm_metadata.json"
+    },
+    {
+     "name": "hotosm_kor_sea_ports_osm_shp.zip",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/sea_ports/hotosm_kor_sea_ports_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_kor_sea_ports_report.html",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/sea_ports/hotosm_kor_sea_ports_report.html"
+    },
+    {
+     "name": "Sea Ports (OSM), GeoJSON",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/sea_ports/hotosm_kor_sea_ports_osm_geojson.zip"
+    },
+    {
+     "name": "Sea Ports (OSM), GeoPackage",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/sea_ports/hotosm_kor_sea_ports_osm_gpkg.zip"
+    },
+    {
+     "name": "Sea Ports (OSM), Shapefile",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/sea_ports/hotosm_kor_sea_ports_osm_shp.zip"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Populated Places of South Korea",
+   "name": "hotosm_kor_populated_places",
+   "org": "Humanitarian OpenStreetMap Team (HOT)",
+   "url": "https://data.humdata.org/dataset/hotosm_kor_populated_places",
+   "resources": [
+    {
+     "name": "hotosm_kor_populated_places_osm_geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/populated_places/hotosm_kor_populated_places_osm_geojson.zip"
+    },
+    {
+     "name": "hotosm_kor_populated_places_osm_gpkg.zip",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/populated_places/hotosm_kor_populated_places_osm_gpkg.zip"
+    },
+    {
+     "name": "hotosm_kor_populated_places_osm_metadata.json",
+     "format": "JSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/populated_places/hotosm_kor_populated_places_osm_metadata.json"
+    },
+    {
+     "name": "hotosm_kor_populated_places_osm_shp.zip",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/populated_places/hotosm_kor_populated_places_osm_shp.zip"
+    },
+    {
+     "name": "hotosm_kor_populated_places_report.html",
+     "format": "HTML",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/populated_places/hotosm_kor_populated_places_report.html"
+    },
+    {
+     "name": "Populated Places (OSM), GeoJSON",
+     "format": "GeoJSON",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/populated_places/hotosm_kor_populated_places_osm_geojson.zip"
+    },
+    {
+     "name": "Populated Places (OSM), GeoPackage",
+     "format": "Geopackage",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/populated_places/hotosm_kor_populated_places_osm_gpkg.zip"
+    },
+    {
+     "name": "Populated Places (OSM), Shapefile",
+     "format": "SHP",
+     "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/KOR/populated_places/hotosm_kor_populated_places_osm_shp.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "South Korea: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "south-korea-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/south-korea-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "KOR_children_under_five_2019-06-01_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/97777cbe-1a07-4e0c-911a-9f781d4d3874/resource/5b0d32b3-e74b-4e05-9a0f-f81866abca27/download/kor_children_under_five_2019-06-01_csv.zip"
+    },
+    {
+     "name": "KOR_children_under_five_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/97777cbe-1a07-4e0c-911a-9f781d4d3874/resource/01b48861-6a0f-463e-8b7c-061567afd0fe/download/kor_children_under_five_2019-06-01_geotiff.zip"
+    },
+    {
+     "name": "KOR_elderly_60_plus_2019-06-01_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/97777cbe-1a07-4e0c-911a-9f781d4d3874/resource/6991ed3c-256b-4b96-bb4f-90a72663fdb0/download/kor_elderly_60_plus_2019-06-01_csv.zip"
+    },
+    {
+     "name": "KOR_elderly_60_plus_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/97777cbe-1a07-4e0c-911a-9f781d4d3874/resource/741e7929-9174-4654-909d-e21835c5b1ab/download/kor_elderly_60_plus_2019-06-01_geotiff.zip"
+    },
+    {
+     "name": "KOR_men_2019-06-01_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/97777cbe-1a07-4e0c-911a-9f781d4d3874/resource/734830d1-24bb-4f25-be1e-eed40f814b9d/download/kor_men_2019-06-01_csv.zip"
+    },
+    {
+     "name": "KOR_men_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/97777cbe-1a07-4e0c-911a-9f781d4d3874/resource/3d19a677-983c-4b4c-b0ea-86c08bac8379/download/kor_men_2019-06-01_geotiff.zip"
+    },
+    {
+     "name": "KOR_women_2019-06-01_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/97777cbe-1a07-4e0c-911a-9f781d4d3874/resource/3a496ba2-6bb2-4d1a-a820-bdaa1a04a3c1/download/kor_women_2019-06-01_csv.zip"
+    },
+    {
+     "name": "KOR_women_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/97777cbe-1a07-4e0c-911a-9f781d4d3874/resource/2a1d8026-9fcc-42e0-a4e2-067aad585813/download/kor_women_2019-06-01_geotiff.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://kostat.go.kr/",
+  "status": 200,
+  "error": null,
+  "pages": [],
+  "title": "국가데이터처",
+  "matching_links": 0
+ },
+ "verdict": {
+  "hdx_datasets": 11,
+  "hdx_machine_readable": 11,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "2/3",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "1/5"
+ }
+}

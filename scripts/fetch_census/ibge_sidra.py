@@ -9,7 +9,13 @@ with ``n3`` = state (UF) and ``n6`` = municipality.  Tables used:
 
 * **9514** resident population by sex and age (2022 Census)
 * **9605** population by colour or race (cor ou raça)
-* **10086** population by religion (2022 Census, released June 2025)
+* **9537** persons aged 10 and over by religion (2022 Census, released
+  June 2025). Religion was asked of persons aged 10 and over, so this is a
+  count of that universe, not of all residents; the note on every record
+  says so. Table 10086, which this adapter read before, is a fertility table
+  (women aged 12 and over who have had live births, by religion) -- it
+  answered numbers, and numbers that answer look like the right ones. The
+  catalogue was asked (scripts/probe_sidra.py) before this id replaced it.
 
 Brazil's *cor ou raça* is self-declared skin colour, not ethnicity: the
 categories (branca, preta, parda, amarela, indígena) do not map onto US race or
@@ -39,24 +45,52 @@ TABLES = {
     "population": {"table": "9514", "variable": "93", "classification": None, "period": "2022"},
     "colour_race": {"table": "9605", "variable": "93", "classification": "86", "period": "2022"},
 }
-# The 2022-census religion table's variable id was guessed and 400ed on the
-# first live run, so try the plausible spellings in order and keep the first
-# that answers; a wrong guess now fails fast instead of retrying for 30s.
+# Table 9537 is cross-tabulated by sex (c2) and age group (c58) as well as
+# religion (c133). SIDRA returns the Total category of any classification the
+# URL leaves out, so naming c133 alone asks for both sexes and all ages.
+# Variable 140 is the count of persons aged 10 and over. Kept as a list so a
+# second spelling can be tried without restructuring the loop below.
 RELIGION_VARIANTS = [
-    {"table": "10086", "variable": "93", "classification": "133", "period": "2022"},
-    {"table": "10086", "variable": "1000093", "classification": "133", "period": "2022"},
-    {"table": "10086", "variable": "allxp", "classification": "133", "period": "2022"},
+    {"table": "9537", "variable": "140", "classification": "133", "period": "2022"},
 ]
+RELIGION_UNIVERSE = ("Religion was asked of persons aged 10 and over (IBGE table 9537); "
+                     "shares are of that universe, not of all residents.")
 
 
-def sidra(table: dict[str, Any], level_code: str) -> list[dict[str, str]]:
-    url = (f"{SIDRA}/t/{table['table']}/{level_code}/all"
+def sidra(table: dict[str, Any], level_code: str, *, within_state: str | None = None
+          ) -> list[dict[str, str]]:
+    # "n6/all" is every municipality in the country; "n6/in n3 33" is every
+    # municipality inside one state. The second exists for the case below.
+    # Percent-encoded: urllib refuses a literal space in a path, and the first
+    # run of this fallback failed on every state for that reason alone.
+    scope = f"{level_code}/in%20n3%20{within_state}" if within_state else f"{level_code}/all"
+    url = (f"{SIDRA}/t/{table['table']}/{scope}"
            f"/v/{table['variable']}/p/{table['period']}")
     if table["classification"]:
         url += f"/c{table['classification']}/all"
     rows = http_json(url, timeout=300)
     # SIDRA returns the column dictionary as row 0.
     return rows[1:] if len(rows) > 1 else []
+
+
+def sidra_by_state(table: dict[str, Any], level_code: str) -> list[dict[str, str]]:
+    """The same table, asked for one state at a time and joined.
+
+    Religion by municipality is 5,570 municipalities across some twenty
+    categories, and SIDRA answers 400 to that request whole while answering
+    the same table for 27 states and the same municipalities for six colour
+    or race categories. That is the shape of a size limit, not a missing
+    table -- and for a long time every municipality in Brazil carried "IBGE
+    2022 religion table not returned for this locality", which named the
+    wrong thing as missing. Twenty-seven state-scoped requests return exactly
+    the rows one request would have, and nothing is reconstructed: each
+    municipality's row arrives once, from its own state's answer.
+    """
+    states = http_json(LOCALITIES.format(kind="estados"), timeout=180)
+    out: list[dict[str, str]] = []
+    for state in sorted(states, key=lambda s: str(s["id"])):
+        out.extend(sidra(table, level_code, within_state=str(state["id"])))
+    return out
 
 
 def collect(rows: list[dict[str, str]], code_key: str, label_key: str | None) -> dict[str, dict[str, float]]:
@@ -144,6 +178,18 @@ def main() -> int:
                 break
         except Exception as exc:
             log(f"  religion variant v/{variant['variable']} failed ({exc})")
+            # A 400 on the whole-country municipal request is SIDRA's size
+            # limit, not a wrong variable: the same variant answers for
+            # states. Ask state by state before trying the next spelling.
+            if level_code == "n6" and "400" in str(exc):
+                try:
+                    religion = collect(sidra_by_state(variant, level_code), "D1C", "D4N")
+                    if religion:
+                        log(f"  religion: table {variant['table']} v/{variant['variable']} "
+                            f"answered state by state ({len(religion)} municipalities)")
+                        break
+                except Exception as exc2:
+                    log(f"  religion variant v/{variant['variable']} by state failed ({exc2})")
     if not religion:
         log("  religion unavailable from every variant; marking not_available")
 
@@ -181,6 +227,7 @@ def main() -> int:
                             "shown in English; 'Pardo' keeps Brazil's own term rather than "
                             "becoming 'Mixed', which is a different question asked elsewhere."),
             religion=shares(gvals) or gap(NOT_AVAILABLE, "IBGE 2022 religion table not returned for this locality."),
+            religion_note=RELIGION_UNIVERSE if gvals else None,
             sources=[{"field": "population/colour-race/religion", "name": src,
                       "url": f"{SIDRA}/t/{TABLES['colour_race']['table']}",
                       "license": "IBGE open data"}],

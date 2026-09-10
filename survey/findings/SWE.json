@@ -1,0 +1,76 @@
+{
+  "iso3": "SWE",
+  "name": "Sweden",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Statistics Sweden (Statistiska centralbyrån, SCB)",
+    "url": "https://www.scb.se/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2011,
+    "asks": {
+      "religion": false,
+      "ethnicity": false,
+      "language": false
+    },
+    "confidence": "recalled",
+    "notes": "Sweden has been register-based since the 1990 census (FoB 90) was the last questionnaire; the 2011 and 2021 EU census rounds were compiled from registers. The population register holds country of birth and citizenship only: no ethnicity (already declared not_collected), no religion (the state kept no religious-affiliation register after the Church of Sweden separated in 2000), no mother tongue. This repository's own PxWeb walk of SCB (docs/SOURCES.md) found six candidate tables, all citizenship or naturalisation, and finished inside budget."
+  },
+  "subnational_sources": [
+    {
+      "fields": [
+        "religion"
+      ],
+      "title": "Church of Sweden membership statistics: members and share of population by diocese, parish and municipality (Svenska kyrkan, Medlemmar i Svenska kyrkan)",
+      "url": null,
+      "publisher": "Church of Sweden (svenskakyrkan.se), not SCB",
+      "kind": "register",
+      "format": "xlsx",
+      "geography": "kommun",
+      "geography_count": 290,
+      "matches_boundary_level": "admin2",
+      "year": null,
+      "confidence": "recalled",
+      "evidence": "The Church publishes annual membership counts and the membership share of the resident population by municipality; the packet's national 53.9% is this series. It is one denomination's roll, so it yields 'Church of Sweden member / everyone else', not a religion composition -- the same shape this project refused for Norway's 08531, though here the denominator is the whole population, which is the less bad half of that problem."
+    },
+    {
+      "fields": [
+        "religion"
+      ],
+      "title": "Myndigheten for stod till trossamfund (SST) statistics on registered faith communities",
+      "url": null,
+      "publisher": "SST (state agency for support to faith communities)",
+      "kind": "register",
+      "format": "pdf",
+      "geography": "national",
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": null,
+      "confidence": "recalled",
+      "evidence": "Membership of the state-supported communities outside the Church of Sweden (Catholic, Orthodox, Muslim, free churches) is reported nationally only, and only for communities that apply for support. Listed so it is not mistaken for a subnational source."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Sweden"
+      },
+      {
+        "title": "Demographics of Sweden"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "C",
+  "tier_reason": "No Swedish census or register records religion, ethnicity or language; SCB's PxWeb was walked by this project and holds nothing. The only subnational count is a single church's membership roll.",
+  "replaces_existing": false,
+  "recommended_action": "Declare religion and language not_collected alongside the existing ethnicity declaration, with the register-based-census reason. If the owner wants the one count that exists, the Church of Sweden's membership-share-by-municipality file gives a two-category 'member / not member' figure for 290 kommuner (= admin2) and 21 lan (= admin1) -- record it as a membership register, not as a religion composition. Do not re-walk SCB.",
+  "searches_run": [],
+  "not_found": [
+    "Any state count of religion, ethnicity or mother tongue below national level",
+    "The Church of Sweden statistics file URL"
+  ],
+  "summary": "Sweden is register-based and its registers record country of birth and citizenship, not ethnicity, religion or language, so all three fields are not_collected at every level. The repository already walked SCB's PxWeb tree and confirmed the absence. The only subnational count in existence is the Church of Sweden's own membership roll by municipality, which is one denomination's register and not a composition. Tier C."
+}

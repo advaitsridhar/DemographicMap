@@ -1,0 +1,31 @@
+{
+  "iso3": "SSD",
+  "name": "South Sudan",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "National Bureau of Statistics (NBS), South Sudan", "url": "https://www.ssnbs.org/", "confidence": "recalled"},
+  "latest_census": {
+    "year": 2008,
+    "asks": {"religion": false, "ethnicity": false, "language": null},
+    "confidence": "recalled",
+    "notes": "The only census ever to cover the territory is the Fifth Sudan Population and Housing Census of April 2008, taken while Southern Sudan was still part of Sudan and enumerated in the south by the Southern Sudan Centre for Census, Statistics and Evaluation (SSCCSE, the NBS's predecessor). Ethnicity and religion were deliberately left off the 2008 questionnaire after the north-south dispute over the census; that omission was widely reported and contested by the south at the time, and is the reason the Factbook's Dinka/Nuer shares are estimates rather than counts. I cannot recall whether a language item survived; leave null. No census has been conducted since independence in 2011. The NBS with UNFPA ran a Population Estimation Survey (PES) in 2021 -- satellite-based dwelling counts plus a household sample -- which estimated ~12.4 million and carries no religion, ethnicity or language."
+  },
+  "subnational_sources": [],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in South Sudan"},
+      {"title": "Demographics of South Sudan"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "C",
+  "tier_reason": "The 2008 census, the only enumeration of the territory, did not ask ethnicity or religion by political decision, and no census has been held since independence; the repo has already measured the US Census Bureau workbook as carrying no religion, ethnicity or language sheet (docs/SOURCES.md, 'eight refusals').",
+  "replaces_existing": false,
+  "recommended_action": "Declare religion and ethnicity not_collected with the reason 'omitted from the 2008 Sudan census; no census since independence (2011)'. Leave language null unless a runner finds a 2008 language table. If a source is ever wanted for the map's 10 states and 78 counties, the 2008 census was tabulated for the same 10 states and 79 counties, so population joins are possible even though the fields are not. Watch for the long-announced first national census of South Sudan; nothing had been enumerated as of my knowledge.",
+  "searches_run": [],
+  "not_found": [
+    "Not established from memory: whether the 2008 questionnaire had a language item",
+    "No subnational count of religion, ethnicity or language is known to exist for South Sudan; surveys (e.g. the 2010 Sudan Household Health Survey) did not publish ethnicity by state either, on recollection"
+  ],
+  "summary": "South Sudan has never had a census of its own; the 2008 Sudan census that covered it deliberately omitted the ethnicity and religion questions, and the 2021 Population Estimation Survey carries neither. The NBS (ssnbs.org) is the office to crawl, but the honest output is a not_collected declaration for religion and ethnicity citing the 2008 omission and the absence of any later census; language is unknown. The USCB workbook route is already closed in the repo."
+}

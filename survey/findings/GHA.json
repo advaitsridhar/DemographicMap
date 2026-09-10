@@ -1,0 +1,122 @@
+{
+ "iso3": "GHA",
+ "name": "Ghana",
+ "researched_at": "2026-09-10",
+ "nso": {
+  "name": "Ghana Statistical Service (GSS)",
+  "url": "https://www.statsghana.gov.gh/"
+ },
+ "latest_census": {
+  "year": 2021,
+  "asks": {
+   "religion": true,
+   "ethnicity": true,
+   "language": false
+  },
+  "notes": "2021 Population and Housing Census, 28 June - 11 July 2021, 30,832,019 people, Ghana's first fully digital census. Volume 3C (Background Characteristics) covers nationality, place of birth, marital status, ethnicity, religious affiliation (eight categories incl. Traditional Religion, Other, No Religion). Language: the only language item found is a binary literacy question ('can read and write' across a list of 23 languages); no mother-tongue or language-spoken question surfaced. The questionnaire PDF surfaced (census2021.statsghana.gov.gh/gssmain/fileUpload/pressrelease/2021%20PHC%20Questionnaires.pdf) and can settle this; 'language: false' is my reading of the snippets, not a confirmed absence. nso.url is the host of surfaced GSS URLs, not itself a copied result."
+ },
+ "subnational_sources": [
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "GSS StatsBank -- Official Aggregated Data Dissemination Platform, Population and Housing Census 2021",
+   "url": "https://statsbank.statsghana.gov.gh/censusatlas/",
+   "publisher": "Ghana Statistical Service",
+   "kind": "census",
+   "format": "table-builder (API not verified this session)",
+   "geography": "district (261 as at the 2021 census; also 271) and region (16)",
+   "geography_count": 261,
+   "matches_boundary_level": "admin2 (260 shapes vs 261 districts -- near one-to-one) and admin1 (16 regions)",
+   "year": 2021,
+   "confidence": "medium",
+   "evidence": "Search result 'GSS StatsBank': 'Official Aggregated Data Dissemination Platform that provides aggregated data on Population and Housing Census 2021, with options to download geo-files for 271 and 261 districts'. The census microdata description says the census gives 'Ghanaians by major ethnic group, sex and region' and 'population by religious affiliation, sex and region'. That district-level religion/ethnicity tables are in StatsBank is inferred from its district geo-files, not seen."
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "2021 PHC General Report Volume 3C: Background Characteristics",
+   "url": "https://statsghana.gov.gh/gssmain/fileUpload/pressrelease/2021%20PHC%20General%20Report%203C_revised%20print_281121a.pdf",
+   "publisher": "Ghana Statistical Service",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "region",
+   "geography_count": 16,
+   "matches_boundary_level": "admin1",
+   "year": 2021,
+   "confidence": "high",
+   "evidence": "Search snippet: 'Volume 3C presents background (socio-demographic) characteristics on the population by region ... nationality, emigration status, place of birth, marital status, ethnicity, religious affiliation, and health insurance coverage'. Released 18 November 2021. Also reachable via the census site: https://census2021.statsghana.gov.gh/subreport.php?readreport=NTI3ODI4NDAuNzUz&Ghana-2021-Population-and-Housing-Census-General-Report-Volume-3C="
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "Ghana - 2021 Population and Housing Census (GSS microdata catalog 110)",
+   "url": "https://microdata.statsghana.gov.gh/index.php/catalog/110",
+   "publisher": "Ghana Statistical Service (NADA)",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "national, regional, district and locality (per the catalog description)",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 and admin2 in principle",
+   "year": 2021,
+   "confidence": "medium",
+   "evidence": "Snippet: 'provides demographic data, social and economic characteristics ... at all levels of the country's administrative units: national, regional, districts and localities'."
+  }
+ ],
+ "wikipedia": {
+  "country_list_articles": [
+   {
+    "title": "Demographics of Ghana",
+    "url": "https://en.wikipedia.org/wiki/Demographics_of_Ghana",
+    "appears_to_contain": "surfaced in the census search; contents not seen"
+   },
+   {
+    "title": "Islam in Ghana",
+    "url": "https://en.wikipedia.org/wiki/Islam_in_Ghana",
+    "appears_to_contain": "surfaced; contents not seen. The intended 'Religion in Ghana table by region' search did not run (budget exhausted)"
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Kumasi Metropolitan",
+    "search_hit_title": null,
+    "url": null,
+    "note": "Not searched: the session's shared WebSearch budget (200 calls) was exhausted before this query ran. This is a fact about the sandbox, not about the article."
+   },
+   {
+    "shape_name": "Jaman North",
+    "search_hit_title": null,
+    "url": null,
+    "note": "Not searched: the session's shared WebSearch budget (200 calls) was exhausted before this query ran. This is a fact about the sandbox, not about the article."
+   },
+   {
+    "shape_name": "Bawku West",
+    "search_hit_title": null,
+    "url": null,
+    "note": "Not searched: the session's shared WebSearch budget (200 calls) was exhausted before this query ran. This is a fact about the sandbox, not about the article."
+   }
+  ]
+ },
+ "tier": "B",
+ "tier_reason": "A 2021 census count of religion and ethnicity exists by region (16 = admin1, PDF) and GSS StatsBank advertises the same census at 261 districts (admin2 = 260), but StatsBank is a table-builder whose API I could not verify this session, and the PDF is the only confirmed format. If StatsBank is a PxWeb instance the project's existing pxweb.py reader makes this Tier A.",
+ "replaces_existing": true,
+ "recommended_action": "Open StatsBank first: if it exposes a PxWeb/API endpoint, pull religion and ethnicity by district (261, join to the 260 admin2 shapes by name -- 'Kumasi Metropolitan', 'Ada East' style) and by region (16 = admin1). The admin1 religion/ethnicity currently filled from Afrobarometer Round 9 (a survey) should be superseded by the census; owner review required. Fallback: Volume 3C PDF for the 16 regions. Check the questionnaire PDF to confirm there is no language-spoken question before declaring language not_collected.",
+ "searches_run": [
+  "Ghana 2021 Population and Housing Census religion ethnicity by district StatsBank statsghana",
+  "Ghana Statistical Service 2021 PHC General Report Volume 3C Background Characteristics religion ethnicity",
+  "Ghana 2021 census language question mother tongue asked"
+ ],
+ "not_found": [
+  "StatsBank PxWeb/API endpoint (search did not run)",
+  "district-level religion/ethnicity table confirmed by title (only the 261-district geo-file download is stated)",
+  "a mother-tongue / language-spoken question in the 2021 census (only literacy in 23 languages surfaced)",
+  "HDX / open.africa mirror of the 2021 census (search did not run)",
+  "Wikipedia 'Religion in Ghana' list article and admin2 sample articles (searches did not run: budget exhausted)"
+ ],
+ "summary": "Ghana's 2021 census asked religion and ethnicity and publishes both by region in the Volume 3C PDF; the GSS StatsBank platform advertises 2021 census tables with 261-district geo-files, which would match the map's 260 admin2 shapes almost one-to-one. The census would replace the Afrobarometer survey estimates now filling admin1. Language appears to be asked only as literacy in 23 languages, so it is probably a not_collected declaration once the questionnaire is checked. Tier B pending confirmation that StatsBank has an API."
+}

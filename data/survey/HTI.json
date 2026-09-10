@@ -1,0 +1,661 @@
+{
+ "iso3": "HTI",
+ "name": "Haiti",
+ "tier_proposed": "B",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Haiti",
+    "wikitext_bytes": 17710,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Haiti",
+    "wikitext_bytes": 39415,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 6,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "! width=\"70\" |Total population",
+       "width=\"70\" |Proportion<br />aged 0–14<br />(%)",
+       "width=\"70\" |Proportion<br />aged 15–64<br />(%)",
+       "width=\"70\" |Proportion<br />aged 65+<br />(%)",
+       "width=\"80\" |Age group",
+       "width=\"80\" |Male",
+       "width=\"80\" |Female",
+       "width=\"80\" |Total",
+       "width=\"80\" |%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [
+       "width=\"80\" |Age group",
+       "width=\"80\" |Male",
+       "width=\"80\" |Female",
+       "width=\"80\" |Total",
+       "width=\"80\" |%",
+       "width=\"50\"|Age group",
+       "width=\"80\" |Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" |Age group",
+       "width=\"80\" |Male",
+       "width=\"80\" |Female",
+       "width=\"80\" |Total",
+       "width=\"80\" |%",
+       "width=\"50\"|Age group",
+       "width=\"80\" |Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\" |Mid-year population",
+       "style=\"width:80pt;\" |Live births",
+       "style=\"width:80pt;\" |Deaths",
+       "style=\"width:80pt;\" |Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)",
+       "style=\"width:80pt;\"|Crude migration rate (per 1000)",
+       "style=\"width:80pt;\"|Total fertility rate (TFR)",
+       "style=\"width:80pt;\"|Infant mortality (per 1000 live births)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "style=\"width:50pt;\"| Year",
+       "style=\"width:50pt;\"| CBR (Total)",
+       "style=\"width:50pt;\"| TFR (Total)",
+       "style=\"width:50pt;\"| CBR (Urban)",
+       "style=\"width:50pt;\"| TFR (Urban)",
+       "style=\"width:50pt;\"| CBR (Rural)",
+       "style=\"width:50pt;\"| TFR (Rural)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Arrondissement Grande-Rivière-Du-Nord",
+    "found": true,
+    "title": "List of communes of Haiti",
+    "url": "https://en.wikipedia.org/wiki/List_of_communes_of_Haiti",
+    "wikitext_bytes": 7181,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Arrondissement Limbé",
+    "found": true,
+    "title": "Bas-Limbé",
+    "url": "https://en.wikipedia.org/wiki/Bas-Limb%C3%A9",
+    "wikitext_bytes": 1632,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Arrondissement Ouanaminthe",
+    "found": true,
+    "title": "Capotille",
+    "url": "https://en.wikipedia.org/wiki/Capotille",
+    "wikitext_bytes": 1899,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Arrondissement de Cap-Haïtien",
+    "found": true,
+    "title": "Cap-Haïtien Arrondissement",
+    "url": "https://en.wikipedia.org/wiki/Cap-Ha%C3%AFtien_Arrondissement",
+    "wikitext_bytes": 3040,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Arrondissement de Fort-Liberté",
+    "found": true,
+    "title": "Fort-Liberté Arrondissement",
+    "url": "https://en.wikipedia.org/wiki/Fort-Libert%C3%A9_Arrondissement",
+    "wikitext_bytes": 2166,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Haiti: Languages",
+   "name": "haiti-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/haiti-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_HTI_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/9aad61d0-b3b0-4759-a454-ee2461c29d02/resource/cadb19d7-c7a3-4b6d-81c8-debd76d9f0d4/download/clearglobal_language_use_hti_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_HTI_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/9aad61d0-b3b0-4759-a454-ee2461c29d02/resource/6006392a-2682-4694-9870-1512ae6f6779/download/clearglobal_language_use_hti_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_HTI_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/9aad61d0-b3b0-4759-a454-ee2461c29d02/resource/10836561-d761-43e4-b6da-18d90db94acd/download/clearglobal_language_use_hti_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Haiti - Localities",
+   "name": "haiti_localities_adm3",
+   "org": "OCHA Haiti",
+   "url": "https://data.humdata.org/dataset/haiti_localities_adm3",
+   "resources": [
+    {
+     "name": "hti-localities-adm3-16OCT24-FIX.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/502a52bf-7400-44ac-a632-032c0a5eece2/resource/6f232c8b-0571-44da-a0fa-a375bc670d46/download/hti-localities-adm3-16oct24-fix.xlsx"
+    },
+    {
+     "name": "hti_localities_adm3_16OCT24_FIX.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/502a52bf-7400-44ac-a632-032c0a5eece2/resource/63ae5511-f978-4f84-b4ea-7275729d75b5/download/hti_localities_adm3_16oct24_fix.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Haiti - Rivers",
+   "name": "haiti-water-courses",
+   "org": "OCHA Haiti",
+   "url": "https://data.humdata.org/dataset/haiti-water-courses",
+   "resources": [
+    {
+     "name": "hti_rvrl_cnigs.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/96e10180-8bd7-441a-aecb-dc356b25cafe/resource/5c938056-c16e-4385-8a9e-658c884cd98c/download/hti_rvrl_cnigs.zip"
+    },
+    {
+     "name": "hti_dom_watcrsl_rvr_osm.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/96e10180-8bd7-441a-aecb-dc356b25cafe/resource/5c7c5864-1ebd-4d81-893a-3db7a2b7ed2a/download/hti_dom_watcrsl_rvr_osm.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Haiti - Lakes",
+   "name": "haiti-water-bodies",
+   "org": "OCHA Haiti",
+   "url": "https://data.humdata.org/dataset/haiti-water-bodies",
+   "resources": [
+    {
+     "name": "hti_lakersa_cnigs.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/c40db200-027f-4d6c-8116-00798c7c97a1/resource/377f6fad-463c-4e18-b681-ed48a8ca16f0/download/hti_lakersa_cnigs.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Haiti - Ports",
+   "name": "haiti-ports",
+   "org": "OCHA Haiti",
+   "url": "https://data.humdata.org/dataset/haiti-ports",
+   "resources": [
+    {
+     "name": "hit_prtp_wfp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/f5ba4f22-014e-400d-98d8-92bc6069d5d7/resource/3221683a-e90c-43c7-8129-f84834cb7e72/download/hit_prtp_wfp.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Haiti - Road Network",
+   "name": "haiti-roads",
+   "org": "OCHA Haiti",
+   "url": "https://data.humdata.org/dataset/haiti-roads",
+   "resources": [
+    {
+     "name": "hti_polbndl_rd_CNIGS_2019.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/3b39f85b-12cf-49cd-aa00-ee3ac04ce61f/resource/e74120e1-c0d5-4236-bad7-c7e581a9faba/download/route_cnigs_2019.zip"
+    },
+    {
+     "name": "hti_polbndl_rd_CNIGS.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/3b39f85b-12cf-49cd-aa00-ee3ac04ce61f/resource/9cf4a82d-6292-44b1-aa3f-1f9666322081/download/hti_polbndl_rd_cnigs.zip"
+    },
+    {
+     "name": "hti_polbndl_rd_cnigs.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/3b39f85b-12cf-49cd-aa00-ee3ac04ce61f/resource/235f892e-beea-4d90-8af3-19baf12ea5b9/download/hti_polbndl_rd_cnigs.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "HOTOSM Haiti Schools",
+   "name": "hotosm-haiti-schools",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/hotosm-haiti-schools",
+   "resources": [
+    {
+     "name": "hti_schools_shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/2ed85a3f-370d-47fa-aae8-f8863c4cbb5c/resource/5a0d2934-5ee6-4f85-9c61-c55f745b5d14/download/hti_schools_shp.zip"
+    },
+    {
+     "name": "hti_schools_gpkg.zip",
+     "format": "Geopackage",
+     "url": "https://data.humdata.org/dataset/2ed85a3f-370d-47fa-aae8-f8863c4cbb5c/resource/a672e92e-86e4-4b3e-83ec-59da02ebdbd2/download/hti_schools_gpkg.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Haiti: Road Surface Data",
+   "name": "haiti-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/haiti-road-surface-data",
+   "resources": [
+    {
+     "name": "Haiti GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_hti_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Haiti GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_hti_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Haiti: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-haiti",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-haiti",
+   "resources": [
+    {
+     "name": "kontur_boundaries_HT_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_HT_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_HT_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_HT_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_HT_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_HT_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Quasi-census of sanitation access and behavior in northern Haiti",
+   "name": "quasi-census-of-sanitation-access-and-behavior-in-northern-haiti",
+   "org": "Sustainable Organic Integrated Livelihoods",
+   "url": "https://data.humdata.org/dataset/quasi-census-of-sanitation-access-and-behavior-in-northern-haiti",
+   "resources": [
+    {
+     "name": "SOIL_RBFBaselineData.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/c421f068-7778-4440-a69b-c01c548ce0d6/resource/cc652df9-e12c-4130-89d2-7a1ae12aabaa/download/soil_rbfbaselinedata.csv"
+    },
+    {
+     "name": "SOILRBFBaseline_codebook.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/c421f068-7778-4440-a69b-c01c548ce0d6/resource/a946ca54-f5f3-4266-a9a4-c166e92a49e7/download/soilrbfbaseline_codebook.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Haiti Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys",
+   "name": "haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+   "org": "U.S. Census Bureau",
+   "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+   "resources": [
+    {
+     "name": "Haiti.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/83579cb5-3d43-4d21-8088-6ce124f16234/resource/7c2903a3-63ac-4965-a6e7-74f65e28dcd9/download/haiti.gdb.zip"
+    },
+    {
+     "name": "Haiti_uscb_202212.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/83579cb5-3d43-4d21-8088-6ce124f16234/resource/03eaf28b-f74d-4cea-bb2a-726918450a5c/download/haiti_uscb_202212.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Haiti Gridded Population Dataset",
+   "name": "haiti-gridded-population-data",
+   "org": "U.S. Census Bureau",
+   "url": "https://data.humdata.org/dataset/haiti-gridded-population-data",
+   "resources": [
+    {
+     "name": "haiti-gridded-population-estimates-2003.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/390c0013-9e21-4bbd-ba79-4439139d2086/resource/5b083aed-7642-4e6d-bc82-812ee35fd1b0/download/haiti-gridded-population-estimates-2003.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Haiti - Accessibility Indicators",
+   "name": "haiti-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/haiti-accessibility-indicators",
+   "resources": [
+    {
+     "name": "HTI_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/hti/HTI_education_access.gpkg"
+    },
+    {
+     "name": "HTI_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/hti/HTI_education_access_long.csv"
+    },
+    {
+     "name": "HTI_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/hti/HTI_education_access_wide.csv"
+    },
+    {
+     "name": "HTI_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/hti/HTI_hospitals_access.gpkg"
+    },
+    {
+     "name": "HTI_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/hti/HTI_hospitals_access_long.csv"
+    },
+    {
+     "name": "HTI_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/hti/HTI_hospitals_access_wide.csv"
+    },
+    {
+     "name": "HTI_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/hti/HTI_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "HTI_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/hti/HTI_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Haiti - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-haiti",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-haiti",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Haiti",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/f1b31751-ab70-41ab-8351-6a57ed860b81/resource/63c6fbd5-8234-47c6-a673-263067988cf7/download/social-protection-and-labor_hti.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Haiti - Population Counts",
+   "name": "worldpop-population-counts-for-haiti",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-haiti",
+   "resources": [
+    {
+     "name": "hti_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/HTI/hti_ppp_2020.tif"
+    },
+    {
+     "name": "hti_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/HTI/hti_ppp_2019.tif"
+    },
+    {
+     "name": "hti_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/HTI/hti_ppp_2018.tif"
+    },
+    {
+     "name": "hti_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/HTI/hti_ppp_2017.tif"
+    },
+    {
+     "name": "hti_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/HTI/hti_ppp_2016.tif"
+    },
+    {
+     "name": "hti_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/HTI/hti_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "hti_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/HTI/hti_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "hti_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/HTI/hti_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Haiti - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-ht-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-ht-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_HT",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e6734a35-8886-4c71-acf3-ad81456cb157/resource/d1ae6250-0044-46cf-a249-c20f609de216/download/indicator_data_ht.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Haiti: Level 1 Exposure Data",
+   "name": "haiti-level-1-exposure-data",
+   "org": "Global Earthquake Model Foundation",
+   "url": "https://data.humdata.org/dataset/haiti-level-1-exposure-data",
+   "resources": [
+    {
+     "name": "HTI_oed_exposure_20200811_hdx.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4829b7bb-8a03-4c96-9abb-ff8e0d2af6be/resource/cad9e9e1-0ec7-4d77-b8a8-0ac1e9f1a8c1/download/hti_oed_exposure_20200811_hdx.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Haiti: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "hti-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/hti-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/c3f23d7e-b344-402d-8097-cd13034e9c64/resource/8af273ad-ce5f-484d-b702-7cfd9c2941ce/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_hti.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/c3f23d7e-b344-402d-8097-cd13034e9c64/resource/4d14b6f2-4ad7-4ac7-8d3d-58a510461875/download/ghs_pop_e2025_r2023a_54009_100_v1_0_hti.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Haiti: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "haiti-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/haiti-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "population_hti_2018-10-01.csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/8647b7d7-84de-4002-8f6c-0ff9c13e5717/resource/fa8ee8ff-988b-4eb3-8a1b-a274b95959d3/download/population_hti_2018-10-01.csv.zip"
+    },
+    {
+     "name": "population_hti_2018-10-01.geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/8647b7d7-84de-4002-8f6c-0ff9c13e5717/resource/95c60564-4254-4659-8ccd-c3330d824bf5/download/population_hti_2018-10-01.zip"
+    },
+    {
+     "name": "HTI_children_under_five_2019-06-01_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/8647b7d7-84de-4002-8f6c-0ff9c13e5717/resource/d642d50a-a17c-4d41-a250-5ed45bfbabbf/download/hti_children_under_five_2019-06-01_csv.zip"
+    },
+    {
+     "name": "HTI_children_under_five_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/8647b7d7-84de-4002-8f6c-0ff9c13e5717/resource/8eeffd39-27c0-4ee7-9409-76fe74c0bddf/download/hti_children_under_five_2019-06-01_geotiff.zip"
+    },
+    {
+     "name": "HTI_elderly_60_plus_2019-06-01_csv.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/8647b7d7-84de-4002-8f6c-0ff9c13e5717/resource/7af53009-1d24-4daf-b77a-5f490a088783/download/hti_elderly_60_plus_2019-06-01_csv.zip"
+    },
+    {
+     "name": "HTI_elderly_60_plus_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/8647b7d7-84de-4002-8f6c-0ff9c13e5717/resource/29369eba-f70f-42f5-8099-d05a67135e79/download/hti_elderly_60_plus_2019-06-01_geotiff.zip"
+    },
+    {
+     "name": "HTI_men_2019-06-01_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/8647b7d7-84de-4002-8f6c-0ff9c13e5717/resource/eb9ebde6-76cf-44fd-b8a1-147f9dbabf1c/download/hti_men_2019-06-01_csv.zip"
+    },
+    {
+     "name": "HTI_men_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/8647b7d7-84de-4002-8f6c-0ff9c13e5717/resource/a7b48821-c3b5-47db-8aea-9a89a90c9f4c/download/hti_men_2019-06-01_geotiff.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.ihsi.ht/",
+  "status": 200,
+  "error": null,
+  "pages": [],
+  "title": "Institut Haitien de Statistique et d'Informatique ➤ IHSI",
+  "matching_links": 0
+ },
+ "verdict": {
+  "hdx_datasets": 19,
+  "hdx_machine_readable": 10,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

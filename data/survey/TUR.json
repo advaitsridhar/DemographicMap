@@ -1,0 +1,2323 @@
+{
+ "iso3": "TUR",
+ "name": "Turkey",
+ "tier_proposed": "C",
+ "sources": [
+  {
+   "fields": [
+    "language"
+   ],
+   "title": "1965 Turkish census (English Wikipedia) -- mother tongue by province",
+   "kind": "census",
+   "format": "html",
+   "geography": "province (il), 1965 boundaries",
+   "geography_count": 67,
+   "matches_boundary_level": "neither exactly: 67 provinces in 1965 (background) vs 81 admin1 shapes today; the provinces created since 1989 were carved out of 1965 provinces, so most 1965 rows would each cover one to three current shapes. Nothing at ilce (admin2, 972) level.",
+   "url": "https://en.wikipedia.org/wiki/1965_Turkish_census",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://en.wikipedia.org/wiki/1965_Turkish_census",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "html",
+    "title": "1965 Turkish census - Wikipedia",
+    "links_to_files": [],
+    "mentions": [
+     "census",
+     "ethnicities",
+     "language",
+     "languages",
+     "mother tongue"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "language"
+   ],
+   "title": "File:Mother language in 1965 Turkey census - Kurdish.png -- Wikimedia Commons",
+   "kind": "other",
+   "format": "html",
+   "geography": "province, 1965",
+   "geography_count": null,
+   "matches_boundary_level": "neither",
+   "url": "https://commons.wikimedia.org/wiki/File:Mother_language_in_1965_Turkey_census_-_Kurdish.png",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://commons.wikimedia.org/wiki/File:Mother_language_in_1965_Turkey_census_-_Kurdish.png",
+   "error": null,
+   "body": {
+    "bytes_read": 94743,
+    "kind": "html",
+    "title": "File:Mother language in 1965 Turkey census - Kurdish.png - Wikimedia Commons",
+    "links_to_files": [
+     "https://commons.wikimedia.org/wiki/Special:EntityData/M33462431.json"
+    ],
+    "mentions": [
+     "census",
+     "language",
+     "languages",
+     "languages_of_turkey",
+     "languageselect"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "language"
+   ],
+   "title": "'Mother Tongue' Data in Turkish Censuses (1927-1965) | ResearchGate table",
+   "kind": "census",
+   "format": "html",
+   "geography": "national",
+   "geography_count": 1,
+   "matches_boundary_level": "none",
+   "url": "https://www.researchgate.net/figure/Mother-Tongue-Data-in-Turkish-Censuses-1927-1965_tbl1_269286244",
+   "status": 403,
+   "content_type": null,
+   "final_url": null,
+   "error": null
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Turkiye'deki azinliklar (Minorities in Turkey, tr)",
+    "wikitext_bytes": 0,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "1965 Turkish census",
+    "wikitext_bytes": 42021,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 5,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "! total population",
+       "no",
+       "rate",
+       "urban",
+       "%",
+       "rural",
+       "%",
+       "man",
+       "%",
+       "woman"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "Ranking",
+       "City",
+       "Population",
+       "Province"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 52
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\" rowspan=\"2\"| Language",
+       "colspan=\"2\" | Census 1935<ref name=\"1965censusdata1\"/><ref>Modern Turkey, Bill Park, Taylor & Francis, 2011, page 10</ref> || colspan=\"2\" | Census 1945<ref name=\"1965censusdata1\"/><ref name=\"UN Demographic Yearbooks\">{{cite web|url=http://unstats.un.org/unsd/demographic/products/dyb/dyb2.htm#2001 |title=UN Demographic Yearbooks |publisher=Unstats.un.org |date= |accessdate=2014-06-17}}</ref>|| colspan=\"2\" | Census 1965<ref name=\"1965censusdata1\"/><ref name=\"1965censusdata2\"/><ref name=\"UN Demographic Yearbooks\"/>",
+       "Number || % || Number || % || Number || %",
+       "Language",
+       "Mother tongue",
+       "Only language spoken",
+       "Second best language spoken"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 28
+     },
+     {
+      "header": [
+       "Language",
+       "Mother tongue",
+       "Only language spoken",
+       "Second best language spoken",
+       "'''Total'''",
+       "'''31,009,934'''",
+       "'''28,583,607'''",
+       "'''2,786,610'''",
+       "Province / Language",
+       "Turkish"
+      ],
+      "place_column": true,
+      "composition_columns": 1,
+      "rows_hint": 33
+     },
+     {
+      "header": [
+       "Province / Language",
+       "Turkish",
+       "Kurdish",
+       "Arabic",
+       "Zazaki",
+       "Circassian",
+       "Greek",
+       "Georgian",
+       "Armenian",
+       "Laz"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 18
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Mardin Province",
+    "wikitext_bytes": 20123,
+    "infobox_params": [],
+    "sections": [
+     "Demographics",
+     "Language",
+     "Religion"
+    ],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 3,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Turkish",
+       "Greek",
+       "Armenian",
+       "French",
+       "Italian",
+       "English",
+       "Arabic",
+       "Persian{{efn|''{{lang|tr|Acemce}}'', which can also refer to the Achomi language.}}",
+       "Jewish{{efn|''{{lang|tr|Yahudice}}'', which can also refer to the Hebrew language or any Judeo-Arabic dialect.}}",
+       "Circassian"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 1
+     },
+     {
+      "header": [
+       "Muslim",
+       "Catholic",
+       "Protestant",
+       "Orthodox",
+       "Armenian",
+       "Christian",
+       "Jewish",
+       "Other religion",
+       "Unknown"
+      ],
+      "place_column": false,
+      "composition_columns": 5,
+      "rows_hint": 1
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Derik, Turkey",
+    "wikitext_bytes": 15800,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Turkish",
+       "Arabic",
+       "Kurdish",
+       "Circassian",
+       "Armenian",
+       "Unknown or other languages",
+       "Muslim",
+       "Christian",
+       "Jewish",
+       "Other and Undeclared"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 2
+     },
+     {
+      "header": [
+       "Muslim",
+       "Christian",
+       "Jewish",
+       "Other and Undeclared"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 1
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Turkey",
+    "wikitext_bytes": 145821,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 4,
+    "charts": [
+     "Pie chart",
+     "pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Year",
+       "1914",
+       "1927",
+       "1945",
+       "1965",
+       "1990",
+       "2005",
+       "Muslims",
+       "Greeks",
+       "Armenians"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Religions",
+       "Estimated population",
+       "Expropriation measures<ref name=\"la croix\">{{cite news |url=http://www.la-croix.com/Religion/Urbi-Orbi/Monde/Le-gouvernement-turc-va-restituer-des-biens-saisis-a-des-minorites-religieuses-_NP_-2011-08-29-704560 |title=Le gouvernement turc va restituer des biens saisis à des minorités religieuses |newspaper=La Croix |date=2011-08-29 |access-date=2016-01-31 |archive-date=14 January 2021 |archive-url=https://web.archive.org/web/20210114050042/https://www.la-croix.com/Religion/Urbi-Orbi/Monde/Le-gouvernement-turc-va-restituer-des-biens-saisis-a-des-minorites-religieuses-_NP_-2011-08-29-704560 |url-status=live}}</ref>",
+       "Official recognition through the Constitution or international treaties",
+       "Government Financing of places of worship and religious staff",
+       "scope=\"row\" style=\"text-align:left;\"|Sunni Islam – Hanafi"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 3
+     },
+     {
+      "header": [
+       "rowspan=\"1\" |Source",
+       "rowspan=\"1\" |Islam",
+       "rowspan=\"1\" |No religion",
+       "rowspan=\"1\" |Christianity",
+       "rowspan=\"1\" |Other religions and no reply"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "percentage",
+       "response",
+       "percentage",
+       "response"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Turkey",
+    "wikitext_bytes": 516525,
+    "infobox_params": [
+     "language"
+    ],
+    "sections": [
+     "Population",
+     "Ethnicity",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 88,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 3,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\"|Year",
+       "rowspan=\"2\"|Total population<br />(census;<br />thousands)",
+       "colspan=\"3\"|Population by age (%)",
+       "0–14",
+       "15–64",
+       "65+",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\" | Age group",
+       "width=\"80pt\" | Male",
+       "width=\"80pt\" | Female",
+       "width=\"80pt\" | Total",
+       "width=\"80pt\" | Percent",
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80\" | Age group",
+       "width=\"80\" | Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"80\" | Percent",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|Percent",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|Percent",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|Percent",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|Percent",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|Percent",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|Percent",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "! style=\"width:70pt;\"|Population",
+       "style=\"width:70pt;\"|Live births",
+       "style=\"width:70pt;\"|Deaths",
+       "style=\"width:70pt;\"|Natural change",
+       "style=\"width:70pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:70pt;\"|Crude death rate (per 1000)",
+       "style=\"width:70pt;\"|Natural change rate (per 1000)",
+       "style=\"width:70pt;\"|Crude migration rate (per 1000)",
+       "style=\"width:70pt;\"|Total fertility rate (TFR)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January—April 2025",
+       "January—April 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref name=\"Data\">{{cite web |title=Monthly Birth and Death Figures for the Current Year |url=https://data.tuik.gov.tr/Kategori/GetKategori?p=Nufus-ve-Demografi-109 |website=Data.tuik.gov.tr|access-date=10 August 2026}}</ref>",
+       "style=\"width:50pt;\"| Year",
+       "style=\"width:50pt;\"| CBR (Total)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "style=\"width:50pt;\"| Year",
+       "style=\"width:50pt;\"| CBR (Total)",
+       "style=\"width:50pt;\"| TFR (Total)",
+       "style=\"width:50pt;\"| CBR (Urban)",
+       "style=\"width:50pt;\"| TFR (Urban)",
+       "style=\"width:50pt;\"| CBR (Rural)",
+       "style=\"width:50pt;\"| TFR (Rural)",
+       "Years",
+       "1900",
+       "1901"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1900",
+       "1901",
+       "1902",
+       "1903",
+       "1904",
+       "1905",
+       "1906",
+       "1907",
+       "1908"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1910",
+       "1911",
+       "1912",
+       "1913",
+       "1914",
+       "1915",
+       "1916",
+       "1917",
+       "1918"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1920",
+       "1921",
+       "1922",
+       "1923",
+       "1924",
+       "1925",
+       "1926",
+       "1927",
+       "1928"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1930",
+       "1931",
+       "1932",
+       "1933",
+       "1934",
+       "1935",
+       "1936",
+       "1937",
+       "1938"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1940",
+       "1941",
+       "1942",
+       "1943",
+       "1944",
+       "1945",
+       "1946",
+       "1947",
+       "1948"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "width=\"80\"|",
+       "width=\"80\"|South-East",
+       "width=\"80\"|East",
+       "width=\"80\"|Mediterranean",
+       "width=\"80\"|Black Sea",
+       "width=\"80\"|Central",
+       "width=\"80\"|Aegean",
+       "width=\"80\"|Marmara",
+       "width=\"80\"|Turkey",
+       "width=\"80\"|"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "width=\"80\"|",
+       "width=\"80\"|South-East",
+       "width=\"80\"|East",
+       "width=\"80\"|Mediterranean",
+       "width=\"80\"|Black Sea",
+       "width=\"80\"|Central",
+       "width=\"80\"|Aegean",
+       "width=\"80\"|Marmara",
+       "width=\"80\"|Turkey",
+       "style=\"width:80pt;\"|Period"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "style=\"width:80pt;\"|Period",
+       "style=\"width:80pt;\"|Live births per year",
+       "style=\"width:80pt;\"|Deaths per year",
+       "style=\"width:80pt;\"|Natural change per year",
+       "style=\"width:80pt;\"|CBR{{efn|1=CBR = crude birth rate (per 1000); CDR = crude death rate (per 1000); NC = natural change (per 1000); TFR = total fertility rate (number of children per woman); IMR = infant mortality rate per 1000 births|name=abbr}}",
+       "style=\"width:80pt;\"|CDR{{efn|name=abbr}}",
+       "style=\"width:80pt;\"|NC{{efn|name=abbr}}",
+       "style=\"width:80pt;\"|TFR{{efn|name=abbr}}",
+       "style=\"width:80pt;\"|IMR{{efn|name=abbr}}"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years",
+       "rowspan=2 style=\"vertical-align:middle;\"|region",
+       "colspan=4|2019",
+       "rowspan=2 style=\"vertical-align:middle;border-left-width:2px;\"|{{tooltip|2019<br />→2021|Change in total life expectancy from 2019 to 2021}}",
+       "style=\"border-left-width:2px;\"|2021",
+       "rowspan=2 style=\"vertical-align:middle;border-left-width:2px;\"|2021<br />→2022",
+       "colspan=4 style=\"border-left-width:2px;\"|2022"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "rowspan=2 style=\"vertical-align:middle;\"|region",
+       "colspan=4|2019",
+       "rowspan=2 style=\"vertical-align:middle;border-left-width:2px;\"|{{tooltip|2019<br />→2021|Change in total life expectancy from 2019 to 2021}}",
+       "style=\"border-left-width:2px;\"|2021",
+       "rowspan=2 style=\"vertical-align:middle;border-left-width:2px;\"|2021<br />→2022",
+       "colspan=4 style=\"border-left-width:2px;\"|2022",
+       "rowspan=2 style=\"vertical-align:middle;border-left-width:2px;\"|2019<br />→2022",
+       "style=\"vertical-align:middle;min-width:3em;\"|{{tooltip|overall|All population on average}}",
+       "style=\"vertical-align:middle;min-width:3em;\"|male",
+       "style=\"vertical-align:middle;min-width:3em;\"|female"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 5
+     },
+     {
+      "header": [
+       "Region",
+       "Population (2025)",
+       "style=\"width:80pt;\"|Birth Rate (TFR)/2025",
+       "style=\"width:80pt;\"|Birth Rate (TFR)/2024",
+       "style=\"width:80pt;\"|Birth Rate (TFR)/2023",
+       "style=\"width:80pt;\"|Birth Rate (TFR)/2022",
+       "style=\"width:80pt;\"|Birth Rate (TFR)/2021",
+       "style=\"width:80pt;\"|Birth Rate (TFR)/2020",
+       "style=\"width:80pt;\"|Birth Rate (TFR)/2019",
+       "style=\"width:80pt;\"|Birth Rate (TFR)/2018"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "Region",
+       "Population (2025)",
+       "style=\"width:80pt;\"|Death Rate (2024)",
+       "style=\"width:80pt;\"|Death Rate (2023)",
+       "style=\"width:80pt;\"|Death Rate (2022)",
+       "style=\"width:80pt;\"|Death Rate (2021)",
+       "style=\"width:80pt;\"|Death Rate (2020)",
+       "style=\"width:80pt;\"|Death Rate (2019)",
+       "style=\"width:80pt;\"|Death Rate (2018)",
+       "style=\"width:80pt;\"|Death Rate (2017)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "style=\"width:120pt;\"|Province",
+       "style=\"width:80pt;\"|Population (2025)",
+       "style=\"width:72pt;\"|Births (2025)",
+       "style=\"width:72pt;\"|Births (2024)",
+       "style=\"width:72pt;\"|Births (2023)",
+       "style=\"width:72pt;\"|Births (2022)",
+       "style=\"width:72pt;\"|Births (2021)",
+       "style=\"width:72pt;\"|Births (2020)",
+       "style=\"width:72pt;\"|Births (2019)",
+       "style=\"width:72pt;\"|Births (2018)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 3
+     },
+     {
+      "header": [
+       "style=\"width:120pt;\"|Province",
+       "style=\"width:80pt;\"|Population (2025)",
+       "style=\"width:72pt;\"|Deaths (2025)",
+       "style=\"width:72pt;\"|Deaths (2024)",
+       "style=\"width:72pt;\"|Deaths (2023)",
+       "style=\"width:72pt;\"|Deaths (2022)",
+       "style=\"width:72pt;\"|Deaths (2021)",
+       "style=\"width:72pt;\"|Deaths (2020)",
+       "style=\"width:72pt;\"|Deaths (2019)",
+       "style=\"width:72pt;\"|Deaths (2018)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 3
+     },
+     {
+      "header": [
+       "Region",
+       "Population (2025)",
+       "style=\"width:80pt;\"|Natural Increase (2024)||Natural Increase (2023)||Natural Increase (2022)||Natural Increase (2021)||Natural Increase (2020)||Natural Increase (2019)||Natural Increase (2018)||Natural Increase (2017)|| Natural Increase (2016)|| Natural Increase (2015)|| Natural Increase (2014)|| Natural Increase (2013)|| Natural Increase (2012)|| Natural Increase (2011) || Natural Increase (2010)|| Natural Increase (2009)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "style=\"width:120pt;\"|Province",
+       "style=\"width:80pt;\"|Population (2025)",
+       "style=\"width:35pt;\"|Median Age (1935)",
+       "style=\"width:35pt;\"|Median Age (1940)",
+       "style=\"width:35pt;\"|Median Age (1945)",
+       "style=\"width:35pt;\"|Median Age (1950)",
+       "style=\"width:35pt;\"|Median Age (1955)",
+       "style=\"width:35pt;\"|Median Age (1960)",
+       "style=\"width:35pt;\"|Median Age (1965)",
+       "style=\"width:35pt;\"|Median Age (1970)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 2
+     },
+     {
+      "header": [
+       "style=\"width:120pt;\"|Province",
+       "style=\"width:80pt;\"|Population (2025)<ref>{{cite web|url=http://www.tuik.gov.tr/PreIstatistikTablo.do?istab_id=1595|title=İllerin aldığı, verdiği göç, net göç ve net göç hızı, 1980–2018|website=Turk.gov.ty|access-date=8 November 2017|archive-date=16 March 2018|archive-url=https://web.archive.org/web/20180316020515/http://www.tuik.gov.tr/PreIstatistikTablo.do?istab_id=1595|url-status=dead}}</ref>",
+       "style=\"width:35pt;\"|TFR (1980)<ref>{{Cite web|url=http://kutuphane.tuik.gov.tr/yordam/?dil=0&p=1&q=2000+n%C3%BCfus+say%C4%B1m%C4%B1+sosyal+ve+ekonomik+nitelikleri&alan=tum_txt&sno=1|title=TÜİK Kütüphanesi|website=kutuphane.tuik.gov.tr}}</ref>",
+       "style=\"width:35pt;\"|TFR (1985)",
+       "style=\"width:35pt;\"|TFR (1990)<ref>{{cite web | title=T.C. Sanayi ve Teknoloji Bakanlığı | url=https://www.sanayi.gov.tr/merkez-birimi/b94224510b7b/sege/il-sege-raporlari }}</ref>",
+       "style=\"width:35pt;\"|TFR (2000)<ref>{{Cite report |url=https://www.sbb.gov.tr/wp-content/uploads/2022/08/Illerin_Sosyo-Ekonomik_Gelismislik_Siralamasi_Arastirmasi_2003.pdf |title=Lleri̇n Ve Bölgeleri̇n Sosyo-ekonomi̇k Geli̇şmi̇şli̇k Siralamasi Araştirmasi |language=tr |trans-title=Research on Socio-Economic Development Ranking of Provinces and Regions |date=May 2003 |first1=Bülent |last1=Di̇ncer |first2=Metin |last2=Özaslan |first3=Taner |last3=Kavasoğlu |publisher=Devlet Planlama Teşkilatı [State Planning Organization] |isbn=975-19-3354-4 |access-date=12 August 2025}}<!--Look for \"Doğurganlık hızı\" to find the numbers--></ref>",
+       "style=\"width:35pt;\"|TFR (2009)",
+       "style=\"width:35pt;\"|TFR (2010)",
+       "style=\"width:35pt;\"|TFR (2011)",
+       "style=\"width:35pt;\"|TFR (2012)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 2
+     },
+     {
+      "header": [
+       "People",
+       "Population",
+       "Percentage",
+       "Language",
+       "Status"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 36
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |Language",
+       "colspan=\"2\" |Census 1927",
+       "colspan=\"2\" |Census 1935",
+       "colspan=\"2\" |Census 1945",
+       "colspan=\"2\" |Census 1950",
+       "colspan=\"2\" |Census 1955",
+       "colspan=\"2\" |Census 1960",
+       "colspan=\"2\" |Census 1965",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Year",
+       "1914",
+       "1927",
+       "1945",
+       "1965",
+       "1990",
+       "2005",
+       "Muslims",
+       "Greeks",
+       "Armenians"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "Age Group",
+       "Percentage Wearing Headscarf (%)",
+       "Education Level",
+       "Percentage Wearing Headscarf (%)",
+       "Region",
+       "Percentage Wearing Headscarf (%)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "Education Level",
+       "Percentage Wearing Headscarf (%)",
+       "Region",
+       "Percentage Wearing Headscarf (%)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Region",
+       "Percentage Wearing Headscarf (%)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Country of Citizenship",
+       "2025",
+       "2024",
+       "2023",
+       "2022",
+       "2021",
+       "2020"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "Year",
+       "Total Immigration",
+       "Total Emigration",
+       "Total Net Migration",
+       "Turkish Immigration",
+       "Turkish Emigration",
+       "Turkish Net Migration",
+       "Foreign Immigration",
+       "Foreign Emigration",
+       "Foreign Net Migration"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "<small>Regions</small>",
+       "<small>İstanbul</small>",
+       "<small>West Marmara</small>",
+       "<small>Aegean</small>",
+       "<small>East Marmara</small>",
+       "<small>West Anatolia</small>",
+       "<small>Mediterranean</small>",
+       "<small>Central Anatolia</small>",
+       "<small>West Black Sea</small>",
+       "<small>East Black Sea</small>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Beykoz",
+    "found": true,
+    "title": "Beykoz University",
+    "url": "https://en.wikipedia.org/wiki/Beykoz_University",
+    "wikitext_bytes": 2435,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Birecik",
+    "found": true,
+    "title": "Birecik Dam",
+    "url": "https://en.wikipedia.org/wiki/Birecik_Dam",
+    "wikitext_bytes": 4644,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Delice",
+    "found": true,
+    "title": "Delice, Mudurnu",
+    "url": "https://en.wikipedia.org/wiki/Delice%2C_Mudurnu",
+    "wikitext_bytes": 1069,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Demirköy",
+    "found": true,
+    "title": "List of populated places in Kırklareli Province",
+    "url": "https://en.wikipedia.org/wiki/List_of_populated_places_in_K%C4%B1rklareli_Province",
+    "wikitext_bytes": 5395,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Develi",
+    "found": true,
+    "title": "Develi",
+    "url": "https://en.wikipedia.org/wiki/Develi",
+    "wikitext_bytes": 9551,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Turkey - Health Indicators",
+   "name": "who-data-for-turkey",
+   "org": "World Health Organization",
+   "url": "https://data.humdata.org/dataset/who-data-for-turkey",
+   "resources": [
+    {
+     "name": "All Health Indicators for Turkey",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a82a2140-4d31-4506-ad12-10db73f5f4f6/resource/cbd15d9a-6489-4a01-9f20-bfe565d9fe3a/download/health_indicators_tur.csv"
+    },
+    {
+     "name": "Mortality and global health estimates Indicators for Turkey",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a82a2140-4d31-4506-ad12-10db73f5f4f6/resource/d45a2481-e741-4bf2-8a7f-b6df050d2bd3/download/mortality_and_global_health_estimates_indicators_tur.csv"
+    },
+    {
+     "name": "Sustainable development goals Indicators for Turkey",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a82a2140-4d31-4506-ad12-10db73f5f4f6/resource/910cac2e-caa6-4fe1-aeb9-9db4b5190bc5/download/sustainable_development_goals_indicators_tur.csv"
+    },
+    {
+     "name": "Millennium Development Goals (MDGs) Indicators for Turkey",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a82a2140-4d31-4506-ad12-10db73f5f4f6/resource/0c7b6f0a-ce7f-4364-afc4-502c387f84cd/download/millennium_development_goals_mdgs_indicators_tur.csv"
+    },
+    {
+     "name": "Health systems Indicators for Turkey",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a82a2140-4d31-4506-ad12-10db73f5f4f6/resource/d860e640-e18c-45a9-89d9-cbb1f4c4607e/download/health_systems_indicators_tur.csv"
+    },
+    {
+     "name": "Malaria Indicators for Turkey",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a82a2140-4d31-4506-ad12-10db73f5f4f6/resource/1cc1531d-1f99-4a6d-b9a7-fdcc637d3ed3/download/malaria_indicators_tur.csv"
+    },
+    {
+     "name": "Tuberculosis Indicators for Turkey",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a82a2140-4d31-4506-ad12-10db73f5f4f6/resource/e3a6437d-b5c4-41f4-b168-4baabfed9e21/download/tuberculosis_indicators_tur.csv"
+    },
+    {
+     "name": "Child health Indicators for Turkey",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a82a2140-4d31-4506-ad12-10db73f5f4f6/resource/e1b5eaa1-0f8a-496e-8fa7-a7f37974bf56/download/child_health_indicators_tur.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Turkey - Education Indicators",
+   "name": "unesco-data-for-turkey",
+   "org": "UNESCO",
+   "url": "https://data.humdata.org/dataset/unesco-data-for-turkey",
+   "resources": [
+    {
+     "name": "National Monitoring data",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1ea7af77-b173-42cd-a4f6-3e133bcd36e7/resource/0b307ebf-149d-4c11-b6f4-0477272175ee/download/natmon_data_tur.csv"
+    },
+    {
+     "name": "National Monitoring indicator list",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1ea7af77-b173-42cd-a4f6-3e133bcd36e7/resource/1f073467-0d58-4fab-bbff-335a3ba37404/download/natmon_indicatorlist_tur.csv"
+    },
+    {
+     "name": "National Monitoring metadata",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1ea7af77-b173-42cd-a4f6-3e133bcd36e7/resource/26a7ec4f-5108-44f3-a02c-bff141093fff/download/natmon_metadata_tur.csv"
+    },
+    {
+     "name": "SDG 4 Global and Thematic data",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1ea7af77-b173-42cd-a4f6-3e133bcd36e7/resource/8404037f-35cc-43b8-9d19-9e952b4aa592/download/sdg_data_tur.csv"
+    },
+    {
+     "name": "SDG 4 Global and Thematic indicator list",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1ea7af77-b173-42cd-a4f6-3e133bcd36e7/resource/fbbeff91-c9f4-4e3b-b10a-74be0b5926fe/download/sdg_indicatorlist_tur.csv"
+    },
+    {
+     "name": "SDG 4 Global and Thematic metadata",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1ea7af77-b173-42cd-a4f6-3e133bcd36e7/resource/b7552e17-db9f-4b6f-8060-a4b321fc8384/download/sdg_metadata_tur.csv"
+    },
+    {
+     "name": "Demographic and Socio-economic data",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1ea7af77-b173-42cd-a4f6-3e133bcd36e7/resource/e897d5ff-7274-43e3-867c-af80ee3d4b38/download/dem_data_tur.csv"
+    },
+    {
+     "name": "Demographic and Socio-economic indicator list",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1ea7af77-b173-42cd-a4f6-3e133bcd36e7/resource/0614f668-bede-4f59-84c1-a0bbdd1285ed/download/dem_indicatorlist_tur.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Türkiye: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-turkey",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-turkey",
+   "resources": [
+    {
+     "name": "kontur_boundaries_TR_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_TR_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_TR_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_TR_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_TR_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_TR_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Turkey - Accessibility Indicators",
+   "name": "turkey-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/turkey-accessibility-indicators",
+   "resources": [
+    {
+     "name": "TUR_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tur/TUR_education_access.gpkg"
+    },
+    {
+     "name": "TUR_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tur/TUR_education_access_long.csv"
+    },
+    {
+     "name": "TUR_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tur/TUR_education_access_wide.csv"
+    },
+    {
+     "name": "TUR_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tur/TUR_hospitals_access.gpkg"
+    },
+    {
+     "name": "TUR_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tur/TUR_hospitals_access_long.csv"
+    },
+    {
+     "name": "TUR_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tur/TUR_hospitals_access_wide.csv"
+    },
+    {
+     "name": "TUR_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tur/TUR_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "TUR_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tur/TUR_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Turkey: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "turkey-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/turkey-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "population_turkey_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/dd6ae158-e35b-45e2-8eb8-dca248b8c3d6/resource/f724b3e0-4788-411c-81a5-2737ccada96e/download/population_turkey_2020_csv.zip"
+    },
+    {
+     "name": "population_turkey_2020_tif.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/dd6ae158-e35b-45e2-8eb8-dca248b8c3d6/resource/9a0963d3-60ad-40e7-83d0-d15d9f492fb4/download/population_turkey_2020_tif.zip"
+    },
+    {
+     "name": "tur_children_under_five_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/dd6ae158-e35b-45e2-8eb8-dca248b8c3d6/resource/06cf6311-a894-4e37-8ae2-1ac9c3ac53ef/download/tur_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "tur_elderly_60_plus_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/dd6ae158-e35b-45e2-8eb8-dca248b8c3d6/resource/28781a77-958b-4b34-a293-6704c17bae28/download/tur_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "tur_men_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/dd6ae158-e35b-45e2-8eb8-dca248b8c3d6/resource/a0f1793b-440b-41ae-a702-e869de9bc012/download/tur_men_2020_geotiff.zip"
+    },
+    {
+     "name": "tur_women_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/dd6ae158-e35b-45e2-8eb8-dca248b8c3d6/resource/d3ee498f-dc3c-46e5-a4ad-8168a8dce627/download/tur_women_2020_geotiff.zip"
+    },
+    {
+     "name": "tur_women_of_reproductive_age_15_49_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/dd6ae158-e35b-45e2-8eb8-dca248b8c3d6/resource/cf190ad2-fbed-425b-82e1-9cd74f998dae/download/tur_women_of_reproductive_age_15_49_2020_geotiff.zip"
+    },
+    {
+     "name": "tur_youth_15_24_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/dd6ae158-e35b-45e2-8eb8-dca248b8c3d6/resource/8819843c-a94b-43f5-860d-6ea95471ff0c/download/tur_youth_15_24_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Turkey - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-tr-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-tr-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_TR",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/82648749-a516-4ce2-af70-1fa867ee140e/resource/ea2696cf-cd94-4c9d-9388-e3e5c7c66785/download/indicator_data_tr.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Türkiye - Population Counts",
+   "name": "worldpop-population-counts-for-turkiye",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-turkiye",
+   "resources": [
+    {
+     "name": "tur_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/TUR/tur_ppp_2020.tif"
+    },
+    {
+     "name": "tur_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/TUR/tur_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "tur_ppp_2020_constrained.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/BSGM/TUR/tur_ppp_2020_constrained.tif"
+    },
+    {
+     "name": "tur_ppp_2020_UNadj_constrained.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/BSGM/TUR/tur_ppp_2020_UNadj_constrained.tif"
+    },
+    {
+     "name": "tur_ppp_2020_1km_Aggregated.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_1km/2020/TUR/tur_ppp_2020_1km_Aggregated.tif"
+    },
+    {
+     "name": "tur_ppp_2020_1km_ASCII_XYZ.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_1km/2020/TUR/tur_ppp_2020_1km_ASCII_XYZ.zip"
+    },
+    {
+     "name": "tur_ppp_2020_1km_UNadj_ASCII_XYZ.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_1km_UNadj/2020/TUR/tur_ppp_2020_1km_UNadj_ASCII_XYZ.zip"
+    },
+    {
+     "name": "tur_ppp_2020_1km_Aggregated_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_1km_UNadj/2020/TUR/tur_ppp_2020_1km_Aggregated_UNadj.tif"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://nip.tuik.gov.tr/Home/VeriKaynaklari",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://nip.tuik.gov.tr/Home/NufusKonutSayimlari",
+    "status": 200,
+    "kind": "html",
+    "title": "N&#xFC;fus &#x130;statistikleri Portal&#x131;",
+    "files": [],
+    "mentions": [
+     "language"
+    ]
+   },
+   {
+    "url": "https://nip.tuik.gov.tr/Home/GelenekselNufusSayimlari",
+    "status": 200,
+    "kind": "html",
+    "title": "N&#xFC;fus &#x130;statistikleri Portal&#x131;",
+    "files": [],
+    "mentions": [
+     "language"
+    ]
+   },
+   {
+    "url": "https://nip.tuik.gov.tr/Home/Adnks",
+    "status": 200,
+    "kind": "html",
+    "title": "N&#xFC;fus &#x130;statistikleri Portal&#x131;",
+    "files": [],
+    "mentions": [
+     "language"
+    ]
+   },
+   {
+    "url": "https://nip.tuik.gov.tr/Home/NufusKonutSayimi2011",
+    "status": 200,
+    "kind": "html",
+    "title": "N&#xFC;fus &#x130;statistikleri Portal&#x131;",
+    "files": [],
+    "mentions": [
+     "language"
+    ]
+   },
+   {
+    "url": "https://nip.tuik.gov.tr/Home/NufusKonutSayimi2021",
+    "status": 200,
+    "kind": "html",
+    "title": "N&#xFC;fus &#x130;statistikleri Portal&#x131;",
+    "files": [],
+    "mentions": [
+     "language"
+    ]
+   },
+   {
+    "url": "https://nip.tuik.gov.tr/?value=DogumYerineNufus",
+    "status": 200,
+    "kind": "html",
+    "title": "N&#xFC;fus &#x130;statistikleri Portal&#x131;",
+    "files": [],
+    "mentions": [
+     "language"
+    ]
+   },
+   {
+    "url": "https://nip.tuik.gov.tr/?value=YurtdisiDogumluNufus",
+    "status": 200,
+    "kind": "html",
+    "title": "N&#xFC;fus &#x130;statistikleri Portal&#x131;",
+    "files": [],
+    "mentions": [
+     "language"
+    ]
+   },
+   {
+    "url": "https://nip.tuik.gov.tr/?value=CinsiyeteGoreNufus",
+    "status": 200,
+    "kind": "html",
+    "title": "N&#xFC;fus &#x130;statistikleri Portal&#x131;",
+    "files": [],
+    "mentions": [
+     "language"
+    ]
+   },
+   {
+    "url": "https://nip.tuik.gov.tr/?value=NufusArtisHizi",
+    "status": 200,
+    "kind": "html",
+    "title": "N&#xFC;fus &#x130;statistikleri Portal&#x131;",
+    "files": [],
+    "mentions": [
+     "language"
+    ]
+   },
+   {
+    "url": "https://nip.tuik.gov.tr/?value=NufusYogunlugu",
+    "status": 200,
+    "kind": "html",
+    "title": "N&#xFC;fus &#x130;statistikleri Portal&#x131;",
+    "files": [],
+    "mentions": [
+     "language"
+    ]
+   },
+   {
+    "url": "https://nip.tuik.gov.tr/?value=YabanciNufusBuyuklugu",
+    "status": 200,
+    "kind": "html",
+    "title": "N&#xFC;fus &#x130;statistikleri Portal&#x131;",
+    "files": [],
+    "mentions": [
+     "language"
+    ]
+   },
+   {
+    "url": "https://nip.tuik.gov.tr/?value=TabiiyetYabanciNufus",
+    "status": 200,
+    "kind": "html",
+    "title": "N&#xFC;fus &#x130;statistikleri Portal&#x131;",
+    "files": [],
+    "mentions": [
+     "language"
+    ]
+   }
+  ],
+  "title": "N&#xFC;fus &#x130;statistikleri Portal&#x131;",
+  "matching_links": 13
+ },
+ "verdict": {
+  "hdx_datasets": 7,
+  "hdx_machine_readable": 5,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "2/3",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

@@ -1,0 +1,97 @@
+{
+  "iso3": "BGD",
+  "name": "Bangladesh",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Bangladesh Bureau of Statistics (BBS)",
+    "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census"
+  },
+  "latest_census": {
+    "year": 2022,
+    "asks": {"religion": true, "ethnicity": true, "language": null},
+    "notes": "Population and Housing Census 2022, reference night 15 June 2022; total 165,158,616 (Wikipedia '2022 Bangladeshi census' snippet). Religion: asked and published by zila -- already on the map from the BBS workbook on HDX. Ethnicity: asked; search summary says 'ethnic population data by sex and district for 2022 is available, and ethnic population data by category, sex and division for 2022 has been compiled', and 'ethnic minority population totaled 1,650,159 people (1.00% of the population)'. Language: NOT established. A search summary quoted '163,507,029 people reported Bengali/Bangla as their mother tongue, with only 1,651,587 reporting other languages' -- those two figures sum exactly to the census total and the second is within 1,500 of the ethnic-minority count, so they may be a derived split rather than a mother-tongue tabulation; the questionnaire search that would have settled it was not performed (search budget exhausted)."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["ethnicity"],
+      "title": "Population and Housing Census 2022 -- national report PDF(s) carrying 'ethnic population by sex and district'",
+      "url": "https://file.portal.gov.bd/uploads/34bdd5b8-5c48-4624-a299-4a1b43862f9a//659/d2c/7e3/659d2c7e3f35e896330676.pdf",
+      "publisher": "Bangladesh Bureau of Statistics",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "zila (district)",
+      "geography_count": 64,
+      "matches_boundary_level": "admin2",
+      "year": 2022,
+      "confidence": "medium",
+      "evidence": "Two PDFs titled 'Population and Housing Census 2022' surfaced on file.portal.gov.bd (the other: https://file.portal.gov.bd/media/a843c98f-964e-4de5-a7a4-f0732be76fa2/uploaded-files/2024-01-31-15-51-b53c55dd692233ae401ba013060b9cbb.pdf); which is the National Report volume is not established from the titles. Search summary: 'The official census documents contain tables with ethnic population breakdowns by district (zila)'. The 64 zila match the boundary file's 64 admin2 exactly, with the eight 2018 respellings SOURCES.md already declares. Note SOURCES.md records that file.portal.gov.bd times out and bbs.gov.bd does not send its intermediate certificate; fetch via HDX or a mirror, not directly."
+    },
+    {
+      "fields": ["ethnicity"],
+      "title": "Bangladesh : Population and Housing Census Dataset (BBS Census 2022 indicators workbook, Admin 02) -- possible ethnic sheet, unverified",
+      "url": "https://data.humdata.org/dataset/populationa-and-housing-census-dataset",
+      "publisher": "HDX (UN in Bangladesh, mirroring BBS)",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "zila (district)",
+      "geography_count": 64,
+      "matches_boundary_level": "admin2",
+      "year": 2022,
+      "confidence": "low",
+      "evidence": "This is the workbook the project already reads for religion (scripts/fetch_census/bangladesh.py: 42 sheets, one row per zila). Snippet: 'currently available up to District (Admin 02) level' and names an 'Indicator Definition_Bangladesh_BBS_Population and Housing Census dataset_Admin 02.xlsx' file. Whether one of the 42 sheets is an ethnic-population table is not established: the adapter names only 'Population by Religion, Sex' and 'Population by Sex, Dist & Loca'. One run of scripts/probe_xlsx.py on the workbook lists the sheet names and settles it. If an ethnic sheet exists this is tier A; read it beside the per-topic sheets, never Merged_All_Table."
+    },
+    {
+      "fields": ["ethnicity"],
+      "title": "Ethnic Population by Category, Sex and Division, 2022",
+      "url": "https://en.wikipedia.org/wiki/2022_Bangladeshi_census",
+      "publisher": "Bangladesh Bureau of Statistics (table named in a search summary; URL is the Wikipedia article that surfaced for the query, not the BBS table)",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "division",
+      "geography_count": 8,
+      "matches_boundary_level": "admin1",
+      "year": 2022,
+      "confidence": "low",
+      "evidence": "Search summary for the HDX query: 'the census includes data on \"Ethnic Population by Category, Sex and Division, 2022\"'. Division-level (8 = admin1). Would fill admin1 ethnicity, currently empty. Source document not identified; likely the same national report PDF as above."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "2022 Bangladeshi census", "url": "https://en.wikipedia.org/wiki/2022_Bangladeshi_census",
+       "appears_to_contain": "surfaced incidentally for the ethnic-by-district query; snippet gives total population 165,158,616 and 'sixth national census'; whether it tabulates ethnicity by district is unverified"},
+      {"title": "Hinduism in Bangladesh", "url": "https://en.wikipedia.org/wiki/Hinduism_in_Bangladesh",
+       "appears_to_contain": "surfaced for the ethnic-by-district query; no snippet content seen; may carry a religion-by-district table; unverified"},
+      {"title": "Languages of Bangladesh", "url": "https://en.wikipedia.org/wiki/Languages_of_Bangladesh",
+       "appears_to_contain": "surfaced for the mother-tongue query; probably the origin of the 163,507,029 / 1,651,587 split quoted above; unverified"},
+      {"title": "Demographics of Bangladesh", "url": "https://en.wikipedia.org/wiki/Demographics_of_Bangladesh",
+       "appears_to_contain": "surfaced for both queries; no snippet content seen"},
+      {"title": "Nhila Union", "url": "https://en.wikipedia.org/wiki/Nhila_Union",
+       "appears_to_contain": "a union-level (admin4) article surfaced for the ethnic-by-district query, which suggests union/upazila pages carry census ethnic figures; unverified"}
+    ],
+    "admin2_samples": [],
+    "note": "The dedicated Wikipedia searches ('\"Religion in Bangladesh\" wikipedia table by district', '\"Bagerhat District\" Bangladesh wikipedia', '\"Netrokona District\" Bangladesh wikipedia', '\"Gopalganj District\" Bangladesh wikipedia') were not performed: the session's WebSearch budget was exhausted. The articles above surfaced incidentally in other searches; nothing is asserted about their infoboxes."
+  },
+  "tier": "B",
+  "tier_reason": "The 2022 census counts ethnicity and publishes it by zila (64 = admin2) and by division (8 = admin1), but the only confirmed carrier is a BBS PDF on hosts the project cannot fetch with verification. The HDX workbook the project already reads may carry the same table as a sheet, which would make this tier A -- one probe decides. Language is unestablished.",
+  "replaces_existing": false,
+  "recommended_action": "Run scripts/probe_xlsx.py against the HDX workbook already used for religion and look for an ethnic/ethnicity sheet among its 42; if present, extend scripts/fetch_census/bangladesh.py to read it with the same two reconciliation checks (sex columns sum; ethnic + non-ethnic = published population) and the same Merged_All_Table refusal. If absent, the zila table lives in the BBS national report PDF -- a document-reading job like Pakistan's. Then settle the mother-tongue question by reading the 2022 questionnaire or the national report; do not take the Wikipedia-style Bangla/other split as a census tabulation until a BBS table is seen.",
+  "searches_run": [
+    "Bangladesh census 2022 ethnic population by district zila",
+    "Bangladesh Population and Housing Census 2022 mother tongue language question",
+    "HDX Bangladesh census 2022 indicators zila workbook ethnic"
+  ],
+  "searches_not_run_budget_exhausted": [
+    "Bangladesh census 2022 national report volume 1 ethnic population by zila table",
+    "Bangladesh census 2022 questionnaire ethnicity mother tongue question included",
+    "\"Religion in Bangladesh\" wikipedia table by district",
+    "\"Bagerhat District\" Bangladesh wikipedia",
+    "\"Netrokona District\" Bangladesh wikipedia",
+    "\"Gopalganj District\" Bangladesh wikipedia"
+  ],
+  "not_found": [
+    "a machine-readable (CSV/XLSX) ethnic-population-by-zila table confirmed by name (the HDX workbook may hold one; unverified)",
+    "whether the 2022 census asked mother tongue, and any language table by zila or division",
+    "the specific volume/page of the national report that carries the ethnic-by-zila table"
+  ],
+  "summary": "Bangladesh's 2022 census asked ethnicity and, per search summaries, publishes ethnic population by sex and district (64 zila = admin2) and by category, sex and division (8 = admin1); 1,650,159 people, 1.00%, in the ethnic minorities. The confirmed carrier is a BBS national-report PDF on file.portal.gov.bd, which SOURCES.md records as unfetchable with verification, so the practical route is the HDX workbook the project already reads for religion -- probe its 42 sheet names for an ethnic table before treating this as a PDF job. Language could not be established; a quoted Bangla/other split sums exactly to the census total and sits within 1,500 of the ethnic count, so treat it as derived until a BBS table is seen. Tier B, one probe away from A for ethnicity. Wikipedia and the questionnaire searches were not run because the search budget was exhausted."
+}

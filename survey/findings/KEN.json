@@ -1,27 +1,121 @@
 {
-  "iso3": "KEN", "name": "Kenya", "researched_at": "2026-09-10",
-  "nso": {"name": "Kenya National Bureau of Statistics", "url": "https://www.knbs.or.ke/"},
-  "latest_census": {"year": 2019, "asks": {"religion": true, "ethnicity": true, "language": null},
-                    "notes": "Search result: Volume IV 'presents the distribution of enumerated population by socio-economic characteristics' including religion and ethnicity."},
+  "iso3": "KEN",
+  "name": "Kenya",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Kenya National Bureau of Statistics (KNBS)", "url": "https://www.knbs.or.ke/"},
+  "latest_census": {
+    "year": 2019,
+    "asks": {"religion": true, "ethnicity": true, "language": null},
+    "published_subnationally": {"religion": true, "ethnicity": null, "language": null},
+    "notes": "2019 Kenya Population and Housing Census (August 2019; results released 4 Nov 2019). Religion: Volume IV 'Distribution of Population by Socio-Economic Characteristics' has 'Table 2.30 Distribution of Population by Religious Affiliation and County' (census.ke URL slug and openAFRICA resource title both name it). Ethnicity: asked -- national shares are published (Wikipedia 'Kenya' snippet: 'According to the 2019 census ... 17.13% Kikuyu; 14.35% Luhya; 13.37% Kalenjin; 10.65% Luo ...' across '46 tribes and ethnicities') and KNBS has an 'Ethnic Affiliation' page (https://www.knbs.or.ke/ethnic-affiliation/); whether an ethnicity-by-county table exists could not be confirmed from any snippet, and the checking searches ('open.africa ... ethnicity nationality county resource', 'ethnicity by county not published national only') were refused -- session search budget exhausted. Language: no result tied a language/mother-tongue question to the census questionnaire; a Statista title 'Primary languages spoken at home in Kenya 2019, by area' surfaced but its source is not shown and 'by area' suggests urban/rural, not counties. Treat language as unestablished. Kenya is NOT in the US Census Bureau subnational series (SOURCES.md line ~1353: 'Kenya, Tanzania and Uganda are not in the series at all')."
+  },
+  "already_in_map": "admin1 35/47 religion and ethnicity from Afrobarometer Round 9 (a survey; SOURCES.md's Afrobarometer table lists Kenya: n=2,400, 47 regions, median 40 per region, thinnest 8). 12 counties did not join by name. admin2 (290) holds nothing.",
   "subnational_sources": [
-    {"fields": ["religion"], "title": "2019 KPHC - Distribution of Population by Religious Affiliation and County",
-     "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census/resource/2b2a7b48-ff46-4aa1-91c8-94b2c91e568b",
-     "publisher": "openAFRICA", "kind": "census", "format": "unknown", "geography": "county", "geography_count": 47,
-     "matches_boundary_level": "admin1", "year": 2019, "confidence": "medium",
-     "evidence": "Search result title names religious affiliation by county."},
-    {"fields": ["religion", "ethnicity"], "title": "2019 Kenya Population and Housing Census Volume IV",
-     "url": "https://www.knbs.or.ke/wp-content/uploads/2023/09/2019-Kenya-population-and-Housing-Census-Volume-4-Distribution-of-Population-by-Socio-Economic-Characteristics.pdf",
-     "publisher": "KNBS", "kind": "census", "format": "pdf", "geography": "county", "geography_count": 47,
-     "matches_boundary_level": "admin1", "year": 2019, "confidence": "high", "evidence": "KNBS's own upload."},
-    {"fields": ["religion"], "title": "Religious Affiliation - KNBS", "url": "https://www.knbs.or.ke/religious-affiliation/",
-     "publisher": "KNBS", "kind": "census", "format": "html", "geography": null, "geography_count": null,
-     "matches_boundary_level": "unknown", "year": 2019, "confidence": "low", "evidence": "Search result title only."}
+    {
+      "fields": ["religion"],
+      "title": "2019 Kenya Population and Housing Census - Distribution of Population by Religious Affiliation and County",
+      "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census/resource/2b2a7b48-ff46-4aa1-91c8-94b2c91e568b",
+      "mirrors": ["https://open.africa/dataset/2019-kenya-population-and-housing-census"],
+      "publisher": "openAFRICA (Code for Africa), mirroring KNBS Volume IV",
+      "kind": "census",
+      "format": "csv/xlsx (openAFRICA resource; exact file type not shown in snippet)",
+      "geography": "county",
+      "geography_count": 47,
+      "matches_boundary_level": "admin1",
+      "year": 2019,
+      "confidence": "high",
+      "evidence": "Search result title is exactly 'Distribution of Population by Religious Affiliation and County'; the summary lists the columns as Orthodox, African Instituted Churches, Catholics, Evangelical Churches, Hindus, Muslims, Protestants and other Christian groups. Parent dataset page '2019 Kenya Population and Housing Census - Dataset - openAFRICA' surfaced repeatedly."
+    },
+    {
+      "fields": ["religion"],
+      "title": "Table 2.30 Distribution of Population by Religious Affiliation and County | Census.ke",
+      "url": "https://census.ke/@census-ke/table-2-30-distribution-of-population-by-religious-affiliation-and-county",
+      "publisher": "census.ke (third-party republication of KNBS tables)",
+      "kind": "census",
+      "format": "html (interactive table)",
+      "geography": "county",
+      "geography_count": 47,
+      "matches_boundary_level": "admin1",
+      "year": 2019,
+      "confidence": "high",
+      "evidence": "Result title 'Population by Religious Affiliation and County | Census.ke | Kenya 2019 Population and Housing Census'; the slug carries the official table number 2.30."
+    },
+    {
+      "fields": ["religion", "ethnicity"],
+      "title": "2019 Kenya Population and Housing Census Volume IV: Distribution of Population by Socio-Economic Characteristics",
+      "url": "https://www.knbs.or.ke/wp-content/uploads/2023/09/2019-Kenya-population-and-Housing-Census-Volume-4-Distribution-of-Population-by-Socio-Economic-Characteristics.pdf",
+      "mirrors": [
+        "https://www.knbs.or.ke/2019-kenya-population-and-housing-census-reports/",
+        "https://www.knbs.or.ke/religious-affiliation/",
+        "https://www.knbs.or.ke/ethnic-affiliation/",
+        "https://africacheck.org/sites/default/files/media/documents/2024-07/Kenya-2019%20Census-%20Volume%20IV.pdf"
+      ],
+      "publisher": "KNBS",
+      "kind": "census",
+      "format": "pdf (KNBS also has HTML topic pages 'Religious Affiliation' and 'Ethnic Affiliation')",
+      "geography": "county (religion); ethnicity level unverified",
+      "geography_count": 47,
+      "matches_boundary_level": "admin1",
+      "year": 2019,
+      "confidence": "high for religion by county; low for ethnicity by county",
+      "evidence": "KNBS snippet: Volume IV 'presents the distribution of population by socioeconomic characteristics, including education, activity status, housing ..., disability, religious affiliation, access to ICT and ownership of household assets' -- note ethnicity is not in that list, which is weak evidence that ethnicity may be national-only in this volume."
+    },
+    {
+      "fields": [],
+      "title": "Kenya: Population Per County and sub county from Census Report 2019 (HDX)",
+      "url": "https://data.humdata.org/dataset/kenya-population-per-county-from-census-report-2019",
+      "mirrors": ["https://data.humdata.org/organization/kenya-national-bureau-of-statistics?sort=metadata_modified+desc", "https://data.humdata.org/dataset/kenyacencusict2019?force_layout=desktop"],
+      "publisher": "KNBS on HDX",
+      "kind": "census",
+      "format": "csv",
+      "geography": "county and sub-county",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 and possibly admin2 (sub-counties vs 290 constituencies drawn)",
+      "year": 2019,
+      "confidence": "high that it exists; not a source for religion/ethnicity/language",
+      "evidence": "HDX holds a KNBS organisation page with population-by-county/sub-county and 'ICT Usage by Subcounty' from the 2019 census, but no religion or ethnicity dataset surfaced. Useful only as a denominator / sub-county name list."
+    }
   ],
-  "wikipedia": {"country_list_articles": [{"title": "Religion in Kenya", "url": "https://en.wikipedia.org/wiki/Religion_in_Kenya", "appears_to_contain": "unverified"}],
-                "admin2_samples": []},
-  "tier": "A", "tier_reason": "Census religion by county on an open-data mirror; 47 counties = admin1.",
+  "secondary_routes": {
+    "hdx": "KNBS organisation page exists; population and ICT by sub-county only (see above).",
+    "open_africa": "Primary route above.",
+    "ipums": null,
+    "us_census_bureau": "Not in the series (SOURCES.md).",
+    "other": "Stats Kenya (https://statskenya.co.ke/at-stats-kenya/about/tribe-and-ethnicity-in-kenya-number-of-people-by-tribe/93/) and Talk Africa ('Census Distribution of Kenya's Ethnic Communities') surfaced as secondary republications of national ethnicity counts; unofficial."
+  },
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Kenya", "url": "https://en.wikipedia.org/wiki/Religion_in_Kenya", "appears_to_contain": "surfaced for the 'religious affiliation by county' query, which is consistent with a county table, but the snippet did not show one; unverified"},
+      {"title": "Kenya", "url": "https://en.wikipedia.org/wiki/Kenya", "appears_to_contain": "national 2019 ethnic shares in the snippet; no by-county ethnic list article surfaced ('Narok County' and 'Kipsigis people' came up instead)"}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Baringo Central", "search_hit_title": "Baringo Central Constituency", "url": "https://en.wikipedia.org/wiki/Baringo_Central_Constituency", "note": "article exists; snippet gives population 96,951, area, 5 wards, MP -- no composition"},
+      {"shape_name": "Kisauni", "search_hit_title": "Kisauni Constituency", "url": "https://en.wikipedia.org/wiki/Kisauni_Constituency", "note": "article exists; snippet gives population 291,930, 7 wards, Mombasa County -- no composition; citypopulation.de also lists Kisauni as a sub-county"},
+      {"shape_name": "Mwatate", "search_hit_title": "Mwatate Constituency", "url": "https://en.wikipedia.org/wiki/Mwatate_Constituency", "note": "constituency article exists (Wikidata Q6944699 too); the snippet shown was for the town article -- no composition"}
+    ],
+    "admin2_level_note": "The three samples all resolve to Constituency articles, so the boundary's 290 admin2 shapes are Kenya's 290 parliamentary constituencies. KNBS publishes by 'sub-county' (Volume I: 'Population by County and Sub-County'); sub-counties largely coincide with constituencies but are not identical, and no religion or ethnicity table below county surfaced at all."
+  },
+  "tier": "A",
+  "tier_reason": "A census count of religion by county, in a machine-readable openAFRICA resource whose title names the table, at 47 counties = admin1 exactly. Ethnicity by county is unconfirmed (the check was cut off by the search budget); nothing exists below county.",
   "replaces_existing": true,
-  "recommended_action": "Engine test finding, hand-written from one WebSearch; the agent's version supersedes it.",
-  "searches_run": ["Kenya 2019 census Volume IV religion by county KNBS"], "not_found": [],
-  "summary": "Test finding to validate scripts/survey_sources.py end to end."
+  "recommended_action": "Fetch the openAFRICA 'Distribution of Population by Religious Affiliation and County' resource and join on county to admin1 -- it supersedes the Afrobarometer survey estimate for religion at 35 counties and should also fill the 12 counties the survey missed (check those 12 for name spelling, e.g. hyphenation like 'Taita-Taveta', 'Elgeyo-Marakwet', 'Tharaka-Nithi'). While there, list the other resources in the same openAFRICA dataset for an ethnicity-by-county table; if absent, check KNBS Volume IV's ethnicity table level before declaring ethnicity county-level not_published. Leave admin2 (constituencies) empty: Volume IV is by county only, and nothing by sub-county or constituency surfaced.",
+  "searches_run": [
+    "Kenya 2019 census Volume IV religious affiliation by county",
+    "Kenya 2019 census ethnicity by county KNBS distribution of population by ethnicity",
+    "Kenya 2019 census ethnic affiliation by county table Volume IV tribe",
+    "Kenya 2019 census questionnaire language mother tongue question asked",
+    "data.humdata.org Kenya 2019 census religion ethnicity county dataset",
+    "Kenya ethnic groups by county wikipedia 2019 census table",
+    "\"Baringo Central\" Kenya wikipedia",
+    "\"Kisauni\" Kenya wikipedia",
+    "\"Mwatate\" Kenya wikipedia"
+  ],
+  "not_found": [
+    "an ethnicity-by-county table (not disproven either; two confirming searches were refused -- session search budget exhausted)",
+    "religion or ethnicity by sub-county or constituency (admin2, 290)",
+    "any evidence that the 2019 census asked language / mother tongue",
+    "an HDX dataset for religion or ethnicity",
+    "a Wikipedia list article with an ethnicity-by-county table"
+  ],
+  "summary": "Kenya's 2019 census asked religion and ethnicity; religion is published by county in Volume IV Table 2.30 and mirrored as a machine-readable resource on openAFRICA (and as an HTML table on census.ke), at 47 counties matching admin1 exactly. That count should replace the Afrobarometer survey estimate now filling 35 counties and fill the 12 the survey missed. Ethnicity is published nationally (46 groups) but whether Volume IV tabulates it by county could not be confirmed before the search budget ran out; language does not appear to have been asked. The 290 admin2 shapes are parliamentary constituencies, and no religion or ethnicity table exists below county."
 }

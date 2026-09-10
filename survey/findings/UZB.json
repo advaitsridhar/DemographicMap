@@ -1,0 +1,78 @@
+{
+  "iso3": "UZB",
+  "name": "Uzbekistan",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "National Committee of the Republic of Uzbekistan on Statistics (Milliy statistika qo'mitasi / Нацкомстат)", "url": "https://stat.uz/en/"},
+  "latest_census": {
+    "year": 2026,
+    "asks": {"religion": null, "ethnicity": true, "language": null},
+    "notes": "First census since 1989, conducted 15 Jan - 28 Feb 2026 (Presidential decree of 19 Sep 2025), partly online via census.stat.uz with OneID. Nationality (ethnicity) was asked and national results are out: 89.4% Uzbek, 3.3% Tajik, 2.2% Karakalpak, 1.8% Kazakh, 1.6% Russian, 0.6% Kyrgyz, 0.5% Turkmen, 0.6% other; total 39,047,321 (kun.uz 30 Jun 2026; gazeta.uz interview 31 Mar 2026). Whether native language was asked could not be confirmed from search snippets (they only say respondents were interviewed in the state language or their native language, which is interview language, not a question). No search result mentioned a religion question; Soviet-lineage censuses do not usually ask it, but this is not established. Regional breakdowns of nationality were not found in any search result."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["ethnicity"],
+      "title": "Census 2026 results (Перепись - 2026) -- national nationality composition; regional tables not yet located",
+      "url": "https://gov.uz/ru/pages/2026",
+      "publisher": "Government of Uzbekistan / Нацкомстат",
+      "kind": "census",
+      "format": null,
+      "geography": null,
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2026,
+      "confidence": "low",
+      "evidence": "Search results (gov.uz 'Перепись - 2026', kun.uz 'Census: Ethnic Uzbeks account for nearly 90%', gazeta.uz 'Большое интервью с Нацкомстатом о результатах переписи') give national shares and regional population totals (Samarkand 4,379.8k, Fergana 4,223.0k, Kashkadarya 3,717.0k, Andijan 3,521.8k) but the summary explicitly says 'the search results do not contain detailed breakdowns of ethnic composition by individual regions'. Regional nationality tables, if published, would be on stat.uz or census.stat.uz."
+    },
+    {
+      "fields": ["ethnicity"],
+      "title": "Open Data Portal of the Republic of Uzbekistan (data.egov.uz), linked from stat.uz",
+      "url": "https://data.egov.uz/eng",
+      "publisher": "Government of Uzbekistan (Нацкомстат datasets)",
+      "kind": "register",
+      "format": "api",
+      "geography": null,
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": null,
+      "confidence": "low",
+      "evidence": "stat.uz's 'Open Data Portal' page (https://stat.uz/ru/17-partnerships/87-open-data-portal) links to data.egov.uz. No search result named a 'национальный состав по регионам' dataset there; the summary said the specific dataset 'was not directly found'. Listed as the route to check for pre-census annual estimates of national composition by region."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Demographics of Uzbekistan", "url": "https://en.wikipedia.org/wiki/Demographics_of_Uzbekistan",
+       "appears_to_contain": "Article exists; snippet gives only national 2026 census shares (89.4% Uzbek etc.); a by-region ethnicity table is not visible in the snippet; unverified."},
+      {"title": "Uzbeks", "url": "https://en.wikipedia.org/wiki/Uzbeks",
+       "appears_to_contain": "Snippet quotes the 2026 census count of Uzbeks (34,901,261); national only."}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Akdarya", "search_hit_title": "Oqdarya District - Wikidata", "url": "https://www.wikidata.org/wiki/Q2396632",
+       "note": "No English Wikipedia district article surfaced; hits were Wikidata (Oqdarya District), the Samarkand regional government page and the 'Loyish' town article. Not worth reading for composition."},
+      {"shape_name": "Shumanay", "search_hit_title": "Shomanay district - Wikipedia", "url": "https://en.wikipedia.org/wiki/Shumanay_District",
+       "note": "Article exists (Karakalpakstan); snippet gives area (780 km2) and 2022 population (57,000) only."},
+      {"shape_name": "Kurgantepa", "search_hit_title": "Kurgontepa District - Wikidata", "url": "https://www.wikidata.org/wiki/Q2671584",
+       "note": "District article not surfaced on English Wikipedia (only the town 'Kurgontepa' and Wikidata Q2671584, Andijan Region, established 1926); snippet gives no composition. Name spellings vary (Qo'rg'ontepa / Kurgontepa / Kurgantepa) -- a join hazard for the boundary names."}
+    ]
+  },
+  "tier": "D",
+  "tier_reason": "A 2026 census with a nationality question exists and national results are published, but no search result surfaced a regional or district table, and the search budget ran out before stat.uz/census.stat.uz could be probed further.",
+  "replaces_existing": false,
+  "recommended_action": "Check stat.uz (Russian section 'Демография' and the census results section) and census.stat.uz for 'национальный состав постоянного населения' by region (14 = admin1: 12 viloyats + Karakalpakstan + Tashkent city) and by district/city (packet admin2 198). If the 2026 census regional tables are not yet out, look for Нацкомстат's annual register-based national-composition-by-region tables on stat.uz or data.egov.uz as an interim. Establish from the questionnaire whether native language was asked; if religion was not, declare it not_collected.",
+  "searches_run": [
+    "Uzbekistan census 2026 nationality ethnic composition by region stat.uz",
+    "перепись населения 2026 Узбекистан национальный состав по регионам областям итоги stat.uz",
+    "stat.uz open data \"национальный состав\" постоянного населения по регионам xlsx data.egov.uz",
+    "перепись 2026 Узбекистан вопросы анкеты национальность родной язык вероисповедание",
+    "Нацкомстат перепись 2026 национальный состав Каракалпакстан Самаркандская область таджики доля результаты по областям",
+    "\"Akdarya District\" wikipedia",
+    "\"Shumanay District\" wikipedia",
+    "\"Kurgantepa District\" wikipedia"
+  ],
+  "not_found": [
+    "Any regional or district nationality table from the 2026 census",
+    "The census questionnaire's question list (native language, religion)",
+    "A 'национальный состав по регионам' dataset on stat.uz or data.egov.uz",
+    "Planned searches not run because the session WebSearch budget was exhausted: 'stat.uz демография национальный состав постоянного населения в разрезе регионов xlsx', 'gazeta.uz перепись 2026 итоги родной язык по регионам', 'Uzbekistan census 2026 questionnaire religion question', 'data.humdata.org Uzbekistan'"
+  ],
+  "summary": "Uzbekistan ran its first post-Soviet census in January-February 2026 and has published national nationality shares (89.4% Uzbek, 3.3% Tajik, 2.2% Karakalpak, 1.8% Kazakh, 1.6% Russian) and regional population totals, but no search result showed nationality by region or district, and whether language or religion were asked could not be confirmed. Tier D for now: the data almost certainly will exist at the 14-region level on stat.uz or census.stat.uz, and a runner should look there first, then at data.egov.uz for interim register-based composition tables. Nothing is currently filled."
+}

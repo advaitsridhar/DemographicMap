@@ -1,0 +1,130 @@
+{
+ "iso3": "KHM",
+ "name": "Cambodia",
+ "mode": "knowledge-only",
+ "researched_at": "2026-09-10",
+ "nso": {
+  "name": "National Institute of Statistics (NIS), Ministry of Planning",
+  "url": "https://www.nis.gov.kh/",
+  "confidence": "recalled"
+ },
+ "latest_census": {
+  "year": 2019,
+  "asks": {
+   "religion": true,
+   "ethnicity": false,
+   "language": true
+  },
+  "confidence": "recalled",
+  "notes": "General Population Census of Cambodia 2019 (3-12 March 2019; final results October 2020, with UNFPA support). Both the 2008 and 2019 censuses asked religion and mother tongue; neither asked ethnicity, and NIS reports ethnic minorities through mother tongue as the proxy. High confidence for 2008 (Buddhist ~97%, Khmer mother tongue ~95%); high that 2019 kept both items. 'Ethnicity not asked' is medium-high confidence - the questionnaire is a one-page check before declaring."
+ },
+ "subnational_sources": [
+  {
+   "fields": [
+    "religion",
+    "language"
+   ],
+   "title": "General Population Census of Cambodia 2019 - National Report on Final Census Results (population by religion and by mother tongue, by province)",
+   "url": null,
+   "publisher": "NIS, Ministry of Planning (with UNFPA)",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "province / capital",
+   "geography_count": 25,
+   "matches_boundary_level": "admin1 (25 provinces incl. Phnom Penh) exactly",
+   "year": 2019,
+   "confidence": "medium-high (recalled)",
+   "evidence": "The 2019 national report follows the 2008 report's chapter structure, which had province-level religion and mother-tongue tables; hosted on nis.gov.kh."
+  },
+  {
+   "fields": [
+    "religion",
+    "language"
+   ],
+   "title": "GPCC 2019 - Provincial Reports (one per province), with district-level tables",
+   "url": null,
+   "publisher": "NIS",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "district (srok / khan / krong)",
+   "geography_count": null,
+   "matches_boundary_level": "admin2 (197 shapes; Cambodia had roughly 200 districts in 2019, so near) if religion/mother tongue are tabulated by district",
+   "year": 2019,
+   "confidence": "low-medium (recalled)",
+   "evidence": "NIS issued provincial volumes for 2008 with district tables; the 2019 round is expected to mirror that, but I cannot confirm that religion and mother tongue appear by district."
+  },
+  {
+   "fields": [
+    "religion",
+    "language"
+   ],
+   "title": "CamStat - NIS statistical database (.Stat Suite instance) with census 2019 tables",
+   "url": null,
+   "publisher": "NIS",
+   "kind": "census",
+   "format": "table-builder / SDMX API (.Stat)",
+   "geography": "province",
+   "geography_count": 25,
+   "matches_boundary_level": "admin1",
+   "year": 2019,
+   "confidence": "low-medium (recalled)",
+   "evidence": "NIS launched a .Stat-based dissemination platform (camstat, on a nis.gov.kh subdomain) around 2020; whether census religion/mother-tongue tables are loaded there is unverified. If they are, this is the machine-readable route."
+  },
+  {
+   "fields": [
+    "religion",
+    "language"
+   ],
+   "title": "General Population Census of Cambodia 2008 - National Report and Provincial Reports (religion, mother tongue by province and district)",
+   "url": null,
+   "publisher": "NIS",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "province (24 in 2008) and district",
+   "geography_count": 24,
+   "matches_boundary_level": "admin1 near (24 vs 25: Tbong Khmum split from Kampong Cham in 2013)",
+   "year": 2008,
+   "confidence": "medium (recalled)",
+   "evidence": "Fallback; boundaries predate the 2013 Tbong Khmum split named in the packet's admin1 sample."
+  },
+  {
+   "fields": [
+    "religion",
+    "language"
+   ],
+   "title": "IPUMS-International - Cambodia 1998, 2008 (and possibly 2019) census samples",
+   "url": "https://international.ipums.org/",
+   "publisher": "IPUMS / NIS",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "province and district",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 and admin2",
+   "year": 2008,
+   "confidence": "medium (recalled)",
+   "evidence": "Religion and mother tongue variables are in the Cambodian samples; registration required."
+  }
+ ],
+ "wikipedia": {
+  "country_list_articles": [
+   {
+    "title": "Religion in Cambodia"
+   },
+   {
+    "title": "Demographics of Cambodia"
+   }
+  ],
+  "admin2_samples": []
+ },
+ "tier": "B",
+ "tier_reason": "Census counts of religion and mother tongue exist by province (25 = admin1) in the 2019 national report, but the only format I can vouch for is PDF; CamStat may offer a table-builder/API but is unverified, and district-level tables are uncertain. Ethnicity is not a census item (mother tongue is the proxy).",
+ "replaces_existing": false,
+ "recommended_action": "Crawl nis.gov.kh for the 2019 final-results national report and read its religion and mother-tongue province tables with probe_pdf.py (25 provinces join by name - 'Siem Reap', 'Tbong Khmum'). Probe the CamStat instance for the same tables via its SDMX/.Stat API before settling for PDF. For the 197 districts, check the 2019 provincial reports. Declare ethnicity not_collected with the reason 'the census asks mother tongue, not ethnic group' after confirming on the 2019 questionnaire.",
+ "searches_run": [],
+ "not_found": [
+  "exact titles and URLs of the 2019 report PDFs and the CamStat instance",
+  "whether religion/mother tongue are tabulated by district in the 2019 provincial reports",
+  "an XLSX/CSV release of the 2019 census tables"
+ ],
+ "summary": "Cambodia's NIS (nis.gov.kh) counted religion and mother tongue in the 2019 census and publishes both by the 25 provinces (= admin1) in the final-results report (PDF), with district tables possible in the provincial volumes and a .Stat-based CamStat database that may expose the same machine-readably. Ethnicity is not asked; mother tongue is the office's proxy for ethnic minorities. Tier B pending a check of CamStat."
+}

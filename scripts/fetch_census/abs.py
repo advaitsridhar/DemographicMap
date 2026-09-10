@@ -6,6 +6,9 @@ The ABS Data API serves census tables as SDMX-JSON dataflows.  This pulls:
 * ``C21_G14_LGA`` religious affiliation
 * ``C21_G08_LGA`` ancestry (multi-response: people may report two ancestries,
   so shares sum above 100% and are labelled as responses, not persons)
+* ``C21_G13_LGA`` language used at home, cross-tabulated with proficiency in
+  spoken English and sex; the total of both is read, so it is one answer per
+  person and partitions the population
 
 Population comes out of the religion table rather than from a table of its own.
 G14 carries its own total, and religion is asked of everyone -- the question is
@@ -45,7 +48,8 @@ REGION_TYPE = {"state": "LGA", "lga": "LGA", "sa3": "SA3"}
 REGION_DIMENSION = {"state": "STATE"}
 ASGS_LEVEL = {"state": "STE", "lga": "LGA", "sa3": "SA3"}
 # Census 2021 table numbers: G14 religious affiliation, G08 ancestry.
-DATAFLOW_HINTS = {"religion": "C21_G14_{r}", "ancestry": "C21_G08_{r}"}
+DATAFLOW_HINTS = {"religion": "C21_G14_{r}", "ancestry": "C21_G08_{r}",
+                  "language": "C21_G13_{r}"}
 
 
 def discover_dataflows(region: str) -> dict[str, tuple[str, str, str]]:
@@ -73,13 +77,13 @@ def discover_dataflows(region: str) -> dict[str, tuple[str, str, str]]:
     # them so a failed CI run documents the real naming scheme.
     # The G14/G08 sets are small; print them completely -- run 3's broad sample
     # was drowned in sixty CENSUS2011_B* ids before reaching the C21 block.
-    for table in ("G14", "G08"):
+    for table in ("G14", "G08", "G13"):
         ids = sorted(f[0] for f in flows if table in f[0].upper())
         if ids:
             log(f"  dataflows containing {table}: " + ", ".join(ids[:40]))
 
     out: dict[str, tuple[str, str, str]] = {}
-    table_of = {"religion": "G14", "ancestry": "G08"}
+    table_of = {"religion": "G14", "ancestry": "G08", "language": "G13"}
     for field, pattern in DATAFLOW_HINTS.items():
         wanted = pattern.format(r=region).upper()
         table = table_of[field]
@@ -156,7 +160,16 @@ TIME_HINTS = ("TIME", "TIME_PERIOD", "FREQ", "MEASURE", "UNIT", "OBS")
 CHARACTERISTIC_HINTS = {
     "religion": ("RELIGION", "RELIGP", "RLGP", "RELIG"),
     "ancestry": ("ANCP", "ANCESTRY", "ANC"),
+    "language": ("LANP", "LANGUAGE", "LANG"),
 }
+# G13 carries a third dimension, proficiency in spoken English, beside sex.
+# A cross-tabulation summed over every cell counts each person once per
+# proficiency category as well as once per sex; only the total of each
+# extra dimension is a count of people.
+TOTAL_VALUES = ("persons", "total", "all persons", "total persons")
+# G13's one English category is worded as a behaviour; the chart names a
+# language, so it is renamed to sit beside the others.
+LANGUAGE_LABELS = {"Speaks English only": "English only"}
 
 
 def dimension_ids(rows: list[tuple[dict[str, str], float]]) -> list[str]:
@@ -211,8 +224,42 @@ GRAND_TOTAL = ("total", "total persons", "total all persons", "all persons")
 
 
 def strip_total(label: str) -> str:
-    """"Christianity Total" is what the UI would otherwise print."""
-    return label[: -len(TOTAL_SUFFIX)] if label.lower().endswith(TOTAL_SUFFIX) else label
+    """"Christianity Total" is what the UI would otherwise print.
+
+    G13 writes its families as "Chinese: Total", so the colon goes too.
+    """
+    if label.lower().endswith(TOTAL_SUFFIX):
+        label = label[: -len(TOTAL_SUFFIX)]
+    return label.rstrip(": ")
+
+
+def without_duplicated_parent(candidate: dict[str, float], total: float,
+                              tolerance: float, groups: set[str]) -> dict[str, float]:
+    """Drop the one marked group whose children are also in the set.
+
+    G13 lists "Other Languages Total" beside every language under it, and its
+    code, "O_T", is no prefix of "3103" Italian or "52" Indo-Aryan, so the
+    code tree cannot see that it is their parent. Arithmetic can: the set
+    over-counts the published total by that one row. Only a category the ABS
+    marks "... Total" is tried, and the one whose removal lands nearest the
+    total is taken -- by the same tolerance the rest of this module uses,
+    because the parent's own value and its children's sum differ by the
+    perturbation of every cell: in an LGA of 524 people the group read 96 and
+    its children 83, and a band on the parent's value found nothing.
+    """
+    excess = sum(candidate.values()) - total
+    if excess <= tolerance:
+        return candidate
+    best: tuple[float, str] | None = None
+    for label in groups:
+        if label not in candidate:
+            continue
+        miss = abs(sum(candidate.values()) - candidate[label] - total)
+        if miss <= tolerance and (best is None or miss < best[0]):
+            best = (miss, label)
+    if best is None:
+        return candidate
+    return {k: v for k, v in candidate.items() if k != best[1]}
 
 
 def collapse_hierarchy(counts: dict[str, float]) -> dict[str, float]:
@@ -247,6 +294,12 @@ def collapse_hierarchy(counts: dict[str, float]) -> dict[str, float]:
 # "7102" and so on -- numbered from "7", not from "7_T". Stripping the marker is
 # what makes a parent a prefix of its own children.
 CODE_TOTAL_SUFFIX = "_T"
+# A parent the codes and the marker both miss. G13's "Other" (code _O)
+# holds "Australian Indigenous Languages" (code 8): in the Northern
+# Territory the two read 40,850 and 36,082 and the block summed only with
+# the second inside the first, and the same in every LGA where both are
+# non-zero. Declared, because no rule could see it.
+CHILDREN_OF = {"_O": ("8",)}
 
 
 def branch_code(code: str) -> str:
@@ -275,12 +328,22 @@ def outermost_by_code(coded: dict[tuple[str, str], float]) -> dict[str, float]:
              if code and label.strip().lower() not in GRAND_TOTAL}
     if not codes:
         return {}                          # no codes: nothing to judge with
-    branches = {b for b in (branch_code(code) for code in codes) if b}
+    # Only a category the ABS marks as a group can be a parent. G13 codes
+    # "Speaks English only" as "1", and "1" is a prefix of "1403" Afrikaans
+    # -- a language it has nothing to do with -- so 109 LGAs lost Afrikaans,
+    # Dutch and Norwegian to a parent that is no parent, and none of them
+    # then summed. Every real group in these tables is written "... Total".
+    branches = {b for b in (branch_code(code) for (label, code) in coded
+                            if code and label.lower().endswith(TOTAL_SUFFIX)) if b}
+    hidden = {child for parent, children in CHILDREN_OF.items() if parent in codes
+              for child in children}
     out: dict[str, float] = {}
     for (label, code), value in coded.items():
         if not code or label.strip().lower() in GRAND_TOTAL:
             continue
         mine = branch_code(code)
+        if code in hidden:
+            continue                       # a declared child of a present code
         if any(mine != other and mine.startswith(other) for other in branches):
             continue                       # something sits above it
         out[strip_total(label)] = out.get(strip_total(label), 0.0) + value
@@ -316,8 +379,16 @@ def top_level(coded: dict[tuple[str, str], float], total: float | None
         # other LGAs, none of them above 2,520 people, and none out by more
         # than 53. A level that is missing a whole category is out by far more
         # than either bound -- Australia's was out by 8.7%, 2.2 million people.
-        if abs(sum(candidate.values()) - total) <= max(0.005 * total, 60):
+        tolerance = max(0.005 * total, 60)
+        if abs(sum(candidate.values()) - total) <= tolerance:
             return candidate, name
+        if name != "code tree":
+            continue                       # only where the structure is known
+        groups = {strip_total(label) for (label, _) in coded
+                  if label.lower().endswith(TOTAL_SUFFIX)}
+        trimmed = without_duplicated_parent(candidate, total, tolerance, groups)
+        if trimmed is not candidate and abs(sum(trimmed.values()) - total) <= tolerance:
+            return trimmed, f"{name} less a duplicated parent"
     return suffix, "suffix (nothing summed to the total)"
 
 
@@ -335,8 +406,29 @@ def sole_sex_dimension(rows: list[tuple[dict[str, str], float]]) -> tuple[str, s
     return None
 
 
+def restrict_extra_dimensions(rows: list[tuple[dict[str, str], float]],
+                              keep: tuple[str, ...]
+                              ) -> list[tuple[dict[str, str], float]]:
+    """Keep only the Total of every dimension that is not the region, the
+    characteristic or time. G13's proficiency-in-English dimension is why:
+    without this, every language was counted once per proficiency level and
+    the shares summed to several hundred percent."""
+    for did in dimension_ids(rows):
+        if did in keep or any(h in did.upper() for h in REGION_HINTS + TIME_HINTS):
+            continue
+        values = {lab.get(did) for lab, _ in rows if lab.get(did)}
+        if len(values) < 2:
+            continue
+        total = next((v for v in values if v.strip().lower() in TOTAL_VALUES), None)
+        if total is None:
+            continue
+        rows = [(lab, val) for lab, val in rows if lab.get(did) == total]
+        log(f"  restricted {did}={total!r} so its categories are not summed")
+    return rows
+
+
 def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
-                    region_dim: str = "REGION"
+                    region_dim: str = "REGION", strict: bool = False
                     ) -> tuple[dict[str, dict[str, float]], dict[str, float]]:
     """The categories per region, and the persons the classification totals to.
 
@@ -349,6 +441,7 @@ def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
         key, value = sex
         rows = [(lab, val) for lab, val in rows if lab.get(key) == value]
         log(f"  restricted {key}={value!r} so the sexes are not counted twice")
+    rows = restrict_extra_dimensions(rows, (label_dim, region_dim))
 
     # Keyed on (label, code): the code is what says whether a category sits
     # under another one, and keying on the label alone threw it away before
@@ -370,6 +463,12 @@ def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
                           if label.strip().lower() in GRAND_TOTAL), None)
         kept, how = top_level(counts, published)
         picked[how] = picked.get(how, 0) + 1
+        # The suffix rule is right for religion, whose every top level is
+        # marked, and wrong for language, whose "Speaks English only" is not:
+        # a region it falls back to loses its largest category. Strict means
+        # a region no rule sums is published as a gap, not as that.
+        if strict and how.startswith("suffix (nothing summed"):
+            kept = {}
         grouped[region] = kept
         # The table's own total where it publishes one. Otherwise the collapsed
         # categories' sum, which partitions the population for religion because
@@ -380,14 +479,20 @@ def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
         log(f"  outermost level chosen by {how} for {n} regions")
     # When no rule adds up, the categories themselves are the diagnosis, and a
     # log that only reports the verdict makes the next run a guess. One region
-    # is enough to show the shape of the classification.
-    if out and not any(how.startswith("code tree") for how in picked):
-        region, counts = next(iter(out.items()))
+    # per verdict is enough to show the shape of the classification -- and
+    # one per verdict rather than one per run, because 109 LGAs fell to the
+    # suffix rule for language while 354 did not, and the run's log showed
+    # neither what they looked like nor why.
+    shown: set[str] = set()
+    for region, counts in out.items():
         published = next((v for (label, _), v in counts.items()
                           if label.strip().lower() in GRAND_TOTAL), None)
-        log(f"  ! no rule partitioned {label_dim} for region {region}; "
-            f"published total {published}")
-        for (label, code), value in sorted(counts.items(), key=lambda kv: -kv[1])[:24]:
+        _, how = top_level(counts, published)
+        if how.startswith("code tree") or how in shown:
+            continue
+        shown.add(how)
+        log(f"  ! {how}: {label_dim} for region {region}; published total {published}")
+        for (label, code), value in sorted(counts.items(), key=lambda kv: -kv[1])[:28]:
             log(f"      {code!r:>10}  {value:>12,.0f}  {label}")
     return grouped, totals
 
@@ -407,15 +512,19 @@ def main() -> int:
         return 1
     religion_rows = unpack(sdmx(flows["religion"])) if "religion" in flows else []
     ancestry_rows = unpack(sdmx(flows["ancestry"])) if "ancestry" in flows else []
+    language_rows = unpack(sdmx(flows["language"])) if "language" in flows else []
 
-    log(f"  religion rows {len(religion_rows)}, ancestry rows {len(ancestry_rows)}")
+    log(f"  religion rows {len(religion_rows)}, ancestry rows {len(ancestry_rows)}, "
+        f"language rows {len(language_rows)}")
     log(f"  dimensions seen: {dimension_ids(religion_rows or ancestry_rows)}")
 
     region_dim = (REGION_DIMENSION.get(args.level)
                   or pick_region_dimension(religion_rows or ancestry_rows))
     religion_dim = pick_dimension(religion_rows, "religion")
     ancestry_dim = pick_dimension(ancestry_rows, "ancestry")
-    log(f"  using region={region_dim!r} religion={religion_dim!r} ancestry={ancestry_dim!r}")
+    language_dim = pick_dimension(language_rows, "language")
+    log(f"  using region={region_dim!r} religion={religion_dim!r} "
+        f"ancestry={ancestry_dim!r} language={language_dim!r}")
 
     religion, persons = (group_by_region(religion_rows, religion_dim, region_dim)
                          if religion_dim else ({}, {}))
@@ -423,8 +532,12 @@ def main() -> int:
     # so it is never a population and is discarded here.
     ancestry, _ = (group_by_region(ancestry_rows, ancestry_dim, region_dim)
                    if ancestry_dim else ({}, {}))
+    language, _ = (group_by_region(language_rows, language_dim, region_dim, strict=True)
+                   if language_dim else ({}, {}))
     if religion_rows and not religion:
         log("  ! religion rows returned but none grouped -- dimension detection failed")
+    if language_rows and not language:
+        log("  ! language rows returned but none grouped -- dimension detection failed")
 
     names = {}
     for labels, _ in religion_rows + ancestry_rows:
@@ -445,9 +558,11 @@ def main() -> int:
 
     src = "Australian Bureau of Statistics, Census of Population and Housing 2021"
     records: list[dict[str, Any]] = []
-    for code in sorted(set(religion) | set(ancestry)):
+    for code in sorted(set(religion) | set(ancestry) | set(language)):
         rel = {k: v for k, v in religion.get(code, {}).items() if not k.lower().startswith("total")}
         anc = {k: v for k, v in ancestry.get(code, {}).items() if not k.lower().startswith("total")}
+        lan = {LANGUAGE_LABELS.get(k, k): v for k, v in language.get(code, {}).items()
+               if not k.lower().startswith("total")}
         records.append(record(
             f"AUS-{code}", names.get(code, code),
             level="admin1" if args.level == "state" else "admin2",
@@ -460,11 +575,15 @@ def main() -> int:
             ancestry=shares(anc) or gap(NOT_AVAILABLE),
             ancestry_note="ABS ancestry is multi-response (up to two per person), so shares "
                           "are of responses and sum above 100%.",
+            language=shares(lan) or gap(NOT_AVAILABLE),
+            language_note="ABS 2021 language used at home (G13), one answer per person, "
+                          "at the outermost level of the ABS classification; 'not stated' "
+                          "is retained as its own category.",
             ethnicity=gap(NOT_COLLECTED,
                           "Australia's census does not ask ethnicity. It asks ancestry and "
                           "country of birth, plus a separate Aboriginal and Torres Strait "
                           "Islander status question."),
-            sources=[{"field": "population/religion/ancestry", "name": src,
+            sources=[{"field": "population/religion/ancestry/language", "name": src,
                       "url": "https://data.api.abs.gov.au/",
                       "license": "CC BY 4.0"}],
         ))

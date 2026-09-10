@@ -63,16 +63,160 @@
         "count": 40226
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "English only",
+        "pct": 67.6,
+        "count": 5457944
+      },
+      {
+        "group": "Not stated",
+        "pct": 5.8,
+        "count": 468073
+      },
+      {
+        "group": "Chinese",
+        "pct": 5.4,
+        "count": 435084
+      },
+      {
+        "group": "Indo-Aryan",
+        "pct": 4.3,
+        "count": 344390
+      },
+      {
+        "group": "Other",
+        "pct": 3.0,
+        "count": 244282
+      },
+      {
+        "group": "Arabic",
+        "pct": 2.8,
+        "count": 227248
+      },
+      {
+        "group": "Southeast Asian Austronesian languages",
+        "pct": 1.6,
+        "count": 125358
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 1.5,
+        "count": 117928
+      },
+      {
+        "group": "Greek",
+        "pct": 1.0,
+        "count": 78658
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.9,
+        "count": 71790
+      },
+      {
+        "group": "Italian",
+        "pct": 0.8,
+        "count": 64070
+      },
+      {
+        "group": "Korean",
+        "pct": 0.8,
+        "count": 62274
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.5,
+        "count": 38451
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.4,
+        "count": 30243
+      },
+      {
+        "group": "Thai",
+        "pct": 0.3,
+        "count": 28019
+      },
+      {
+        "group": "Persian (excluding Dari)",
+        "pct": 0.3,
+        "count": 26783
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.3,
+        "count": 23812
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.3,
+        "count": 28060
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.3,
+        "count": 22898
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.3,
+        "count": 20420
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.3,
+        "count": 20841
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 23575
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 20030
+      },
+      {
+        "group": "Khmer",
+        "pct": 0.2,
+        "count": 12643
+      },
+      {
+        "group": "Samoan",
+        "pct": 0.2,
+        "count": 17322
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.2,
+        "count": 18043
+      },
+      {
+        "group": "German",
+        "pct": 0.2,
+        "count": 20175
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 13534
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 0.1,
+        "count": 8971
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -245,7 +389,8 @@
         "count": 52831
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
     "id": "AUS-2",
@@ -311,16 +456,160 @@
         "count": 46626
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "English only",
+        "pct": 67.2,
+        "count": 4369822
+      },
+      {
+        "group": "Not stated",
+        "pct": 5.3,
+        "count": 341906
+      },
+      {
+        "group": "Indo-Aryan",
+        "pct": 5.1,
+        "count": 333090
+      },
+      {
+        "group": "Chinese",
+        "pct": 4.9,
+        "count": 319984
+      },
+      {
+        "group": "Other",
+        "pct": 4.0,
+        "count": 262068
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 1.8,
+        "count": 118780
+      },
+      {
+        "group": "Greek",
+        "pct": 1.6,
+        "count": 107201
+      },
+      {
+        "group": "Italian",
+        "pct": 1.4,
+        "count": 92331
+      },
+      {
+        "group": "Arabic",
+        "pct": 1.4,
+        "count": 91449
+      },
+      {
+        "group": "Southeast Asian Austronesian languages",
+        "pct": 1.3,
+        "count": 83510
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.7,
+        "count": 43193
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.5,
+        "count": 29358
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.5,
+        "count": 34837
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.5,
+        "count": 34096
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.4,
+        "count": 25328
+      },
+      {
+        "group": "Persian (excluding Dari)",
+        "pct": 0.3,
+        "count": 22390
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.3,
+        "count": 19254
+      },
+      {
+        "group": "Korean",
+        "pct": 0.3,
+        "count": 16801
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.3,
+        "count": 17821
+      },
+      {
+        "group": "German",
+        "pct": 0.3,
+        "count": 16529
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 18557
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 18221
+      },
+      {
+        "group": "Khmer",
+        "pct": 0.3,
+        "count": 17535
+      },
+      {
+        "group": "Thai",
+        "pct": 0.2,
+        "count": 14732
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 13658
+      },
+      {
+        "group": "Samoan",
+        "pct": 0.2,
+        "count": 13161
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.2,
+        "count": 12318
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 0.1,
+        "count": 6048
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1,
+        "count": 9204
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -493,7 +782,8 @@
         "count": 40850
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
     "id": "AUS-3",
@@ -559,16 +849,160 @@
         "count": 4793
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "English only",
+        "pct": 80.5,
+        "count": 4151208
+      },
+      {
+        "group": "Not stated",
+        "pct": 6.3,
+        "count": 323078
+      },
+      {
+        "group": "Other",
+        "pct": 2.6,
+        "count": 132284
+      },
+      {
+        "group": "Chinese",
+        "pct": 2.2,
+        "count": 114821
+      },
+      {
+        "group": "Indo-Aryan",
+        "pct": 1.9,
+        "count": 98144
+      },
+      {
+        "group": "Southeast Asian Austronesian languages",
+        "pct": 0.9,
+        "count": 46385
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.6,
+        "count": 29609
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.6,
+        "count": 31387
+      },
+      {
+        "group": "Korean",
+        "pct": 0.4,
+        "count": 21896
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.3,
+        "count": 12985
+      },
+      {
+        "group": "German",
+        "pct": 0.3,
+        "count": 15277
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.3,
+        "count": 16146
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.3,
+        "count": 17911
+      },
+      {
+        "group": "Italian",
+        "pct": 0.3,
+        "count": 17987
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 0.3,
+        "count": 15006
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.3,
+        "count": 14962
+      },
+      {
+        "group": "Samoan",
+        "pct": 0.3,
+        "count": 16611
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 7739
+      },
+      {
+        "group": "Persian (excluding Dari)",
+        "pct": 0.2,
+        "count": 8491
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 12359
+      },
+      {
+        "group": "Greek",
+        "pct": 0.2,
+        "count": 10479
+      },
+      {
+        "group": "Thai",
+        "pct": 0.2,
+        "count": 10679
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.1,
+        "count": 3919
+      },
+      {
+        "group": "Khmer",
+        "pct": 0.1,
+        "count": 2874
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 7333
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.1,
+        "count": 5249
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 5604
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.1,
+        "count": 2814
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 1378
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -741,7 +1175,8 @@
         "count": 6668
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
     "id": "AUS-4",
@@ -807,16 +1242,160 @@
         "count": 1122
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "English only",
+        "pct": 77.7,
+        "count": 1382959
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.6,
+        "count": 81255
+      },
+      {
+        "group": "Indo-Aryan",
+        "pct": 3.4,
+        "count": 60899
+      },
+      {
+        "group": "Other",
+        "pct": 3.0,
+        "count": 52857
+      },
+      {
+        "group": "Chinese",
+        "pct": 2.5,
+        "count": 43938
+      },
+      {
+        "group": "Italian",
+        "pct": 1.3,
+        "count": 23837
+      },
+      {
+        "group": "Greek",
+        "pct": 1.2,
+        "count": 21874
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 1.2,
+        "count": 21849
+      },
+      {
+        "group": "Southeast Asian Austronesian languages",
+        "pct": 0.9,
+        "count": 15314
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.6,
+        "count": 11032
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.4,
+        "count": 7277
+      },
+      {
+        "group": "Persian (excluding Dari)",
+        "pct": 0.3,
+        "count": 5397
+      },
+      {
+        "group": "German",
+        "pct": 0.3,
+        "count": 5458
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.3,
+        "count": 4817
+      },
+      {
+        "group": "Khmer",
+        "pct": 0.3,
+        "count": 4578
+      },
+      {
+        "group": "Polish",
+        "pct": 0.3,
+        "count": 5109
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.2,
+        "count": 4299
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 0.2,
+        "count": 2887
+      },
+      {
+        "group": "Korean",
+        "pct": 0.2,
+        "count": 3678
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 3542
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 2740
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.2,
+        "count": 2896
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.2,
+        "count": 3328
+      },
+      {
+        "group": "Thai",
+        "pct": 0.1,
+        "count": 2405
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1,
+        "count": 2661
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.1,
+        "count": 2282
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 576
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 865
+      },
+      {
+        "group": "Samoan",
+        "pct": 0.0,
+        "count": 228
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -989,7 +1568,8 @@
         "count": 1131
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
     "id": "AUS-5",
@@ -1055,16 +1635,160 @@
         "count": 5641
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "English only",
+        "pct": 75.3,
+        "count": 2003376
+      },
+      {
+        "group": "Not stated",
+        "pct": 6.3,
+        "count": 168770
+      },
+      {
+        "group": "Other",
+        "pct": 3.4,
+        "count": 91463
+      },
+      {
+        "group": "Chinese",
+        "pct": 2.8,
+        "count": 75591
+      },
+      {
+        "group": "Indo-Aryan",
+        "pct": 2.6,
+        "count": 68964
+      },
+      {
+        "group": "Southeast Asian Austronesian languages",
+        "pct": 2.0,
+        "count": 52425
+      },
+      {
+        "group": "Italian",
+        "pct": 1.0,
+        "count": 25420
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.9,
+        "count": 22740
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 0.6,
+        "count": 14709
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.6,
+        "count": 16012
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.5,
+        "count": 12954
+      },
+      {
+        "group": "French",
+        "pct": 0.4,
+        "count": 9735
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.4,
+        "count": 9723
+      },
+      {
+        "group": "Persian (excluding Dari)",
+        "pct": 0.3,
+        "count": 7585
+      },
+      {
+        "group": "German",
+        "pct": 0.3,
+        "count": 8885
+      },
+      {
+        "group": "Korean",
+        "pct": 0.3,
+        "count": 6968
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.3,
+        "count": 8228
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.3,
+        "count": 8728
+      },
+      {
+        "group": "Thai",
+        "pct": 0.3,
+        "count": 7755
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.2,
+        "count": 5891
+      },
+      {
+        "group": "Greek",
+        "pct": 0.2,
+        "count": 4492
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.2,
+        "count": 6079
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.2,
+        "count": 5572
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 5700
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.2,
+        "count": 5105
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 3845
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.1,
+        "count": 1993
+      },
+      {
+        "group": "Khmer",
+        "pct": 0.1,
+        "count": 1602
+      },
+      {
+        "group": "Samoan",
+        "pct": 0.0,
+        "count": 919
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -1237,7 +1961,8 @@
         "count": 10448
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
     "id": "AUS-6",
@@ -1303,16 +2028,160 @@
         "count": 370
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "English only",
+        "pct": 86.1,
+        "count": 479874
+      },
+      {
+        "group": "Not stated",
+        "pct": 5.2,
+        "count": 29010
+      },
+      {
+        "group": "Indo-Aryan",
+        "pct": 2.7,
+        "count": 15314
+      },
+      {
+        "group": "Chinese",
+        "pct": 1.8,
+        "count": 9833
+      },
+      {
+        "group": "Other",
+        "pct": 1.2,
+        "count": 6642
+      },
+      {
+        "group": "Southeast Asian Austronesian languages",
+        "pct": 0.4,
+        "count": 2295
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.3,
+        "count": 1571
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.3,
+        "count": 1454
+      },
+      {
+        "group": "German",
+        "pct": 0.3,
+        "count": 1452
+      },
+      {
+        "group": "Italian",
+        "pct": 0.2,
+        "count": 951
+      },
+      {
+        "group": "Greek",
+        "pct": 0.2,
+        "count": 1126
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.2,
+        "count": 977
+      },
+      {
+        "group": "Thai",
+        "pct": 0.1,
+        "count": 626
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 374
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.1,
+        "count": 578
+      },
+      {
+        "group": "French",
+        "pct": 0.1,
+        "count": 823
+      },
+      {
+        "group": "Korean",
+        "pct": 0.1,
+        "count": 684
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 0.1,
+        "count": 644
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 612
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 444
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1,
+        "count": 475
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.1,
+        "count": 625
+      },
+      {
+        "group": "Persian (excluding Dari)",
+        "pct": 0.1,
+        "count": 478
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 86
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 198
+      },
+      {
+        "group": "Khmer",
+        "pct": 0.0,
+        "count": 84
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Samoan",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 151
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -1485,7 +2354,8 @@
         "count": 404
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
     "id": "AUS-7",
@@ -1551,16 +2421,160 @@
         "count": 152
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "English only",
+        "pct": 57.5,
+        "count": 133249
+      },
+      {
+        "group": "Other",
+        "pct": 17.6,
+        "count": 40850
+      },
+      {
+        "group": "Not stated",
+        "pct": 10.3,
+        "count": 23998
+      },
+      {
+        "group": "Indo-Aryan",
+        "pct": 3.8,
+        "count": 8856
+      },
+      {
+        "group": "Southeast Asian Austronesian languages",
+        "pct": 3.2,
+        "count": 7431
+      },
+      {
+        "group": "Chinese",
+        "pct": 1.7,
+        "count": 3971
+      },
+      {
+        "group": "Greek",
+        "pct": 1.4,
+        "count": 3254
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.7,
+        "count": 1598
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.7,
+        "count": 1556
+      },
+      {
+        "group": "Thai",
+        "pct": 0.4,
+        "count": 1011
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.3,
+        "count": 752
+      },
+      {
+        "group": "German",
+        "pct": 0.3,
+        "count": 690
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.3,
+        "count": 613
+      },
+      {
+        "group": "Italian",
+        "pct": 0.3,
+        "count": 648
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 627
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.2,
+        "count": 427
+      },
+      {
+        "group": "Korean",
+        "pct": 0.2,
+        "count": 351
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.2,
+        "count": 542
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 0.1,
+        "count": 337
+      },
+      {
+        "group": "Samoan",
+        "pct": 0.1,
+        "count": 150
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 150
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.1,
+        "count": 217
+      },
+      {
+        "group": "Khmer",
+        "pct": 0.1,
+        "count": 222
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 107
+      },
+      {
+        "group": "Persian (excluding Dari)",
+        "pct": 0.0,
+        "count": 106
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 73
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 43
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -1733,7 +2747,8 @@
         "count": 131
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
     "id": "AUS-8",
@@ -1799,16 +2814,160 @@
         "count": 886
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "English only",
+        "pct": 71.3,
+        "count": 323854
+      },
+      {
+        "group": "Indo-Aryan",
+        "pct": 5.9,
+        "count": 26925
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.2,
+        "count": 18984
+      },
+      {
+        "group": "Chinese",
+        "pct": 4.2,
+        "count": 19153
+      },
+      {
+        "group": "Other",
+        "pct": 3.6,
+        "count": 16285
+      },
+      {
+        "group": "Southeast Asian Austronesian languages",
+        "pct": 1.3,
+        "count": 5861
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 1.1,
+        "count": 5029
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.9,
+        "count": 4119
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.9,
+        "count": 3865
+      },
+      {
+        "group": "Korean",
+        "pct": 0.6,
+        "count": 2809
+      },
+      {
+        "group": "Italian",
+        "pct": 0.6,
+        "count": 2813
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.6,
+        "count": 2769
+      },
+      {
+        "group": "Greek",
+        "pct": 0.6,
+        "count": 2525
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.5,
+        "count": 2235
+      },
+      {
+        "group": "French",
+        "pct": 0.5,
+        "count": 2330
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.5,
+        "count": 2417
+      },
+      {
+        "group": "German",
+        "pct": 0.4,
+        "count": 1805
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.3,
+        "count": 1211
+      },
+      {
+        "group": "Persian (excluding Dari)",
+        "pct": 0.3,
+        "count": 1240
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.3,
+        "count": 1231
+      },
+      {
+        "group": "Thai",
+        "pct": 0.3,
+        "count": 1296
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 0.2,
+        "count": 719
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.2,
+        "count": 764
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 1022
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 927
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 916
+      },
+      {
+        "group": "Khmer",
+        "pct": 0.1,
+        "count": 415
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.1,
+        "count": 391
+      },
+      {
+        "group": "Samoan",
+        "pct": 0.1,
+        "count": 543
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -1981,7 +3140,8 @@
         "count": 2784
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
     "id": "AUS-9",
@@ -2047,16 +3207,160 @@
         "count": 3
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "English only",
+        "pct": 53.8,
+        "count": 1346
+      },
+      {
+        "group": "Other",
+        "pct": 29.0,
+        "count": 726
+      },
+      {
+        "group": "Not stated",
+        "pct": 14.1,
+        "count": 354
+      },
+      {
+        "group": "Southeast Asian Austronesian languages",
+        "pct": 1.2,
+        "count": 30
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.4,
+        "count": 10
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.4,
+        "count": 9
+      },
+      {
+        "group": "Greek",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "Indo-Aryan",
+        "pct": 0.2,
+        "count": 6
+      },
+      {
+        "group": "Thai",
+        "pct": 0.2,
+        "count": 6
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Samoan",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Persian (excluding Dari)",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Khmer",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "ethnicity": {
       "status": "not_collected",
       "note": "Australia's census does not ask ethnicity. It asks ancestry and country of birth, plus a separate Aboriginal and Torres Strait Islander status question."
     },
     "sources": [
       {
-        "field": "population/religion/ancestry",
+        "field": "population/religion/ancestry/language",
         "name": "Australian Bureau of Statistics, Census of Population and Housing 2021",
         "url": "https://data.api.abs.gov.au/",
         "license": "CC BY 4.0"
@@ -2229,6 +3533,7 @@
         "count": 0
       }
     ],
-    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%."
+    "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   }
 ]

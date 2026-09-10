@@ -1,0 +1,111 @@
+{
+  "iso3": "COL",
+  "name": "Colombia",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Departamento Administrativo Nacional de Estadística (DANE)",
+    "url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/censo-nacional-de-poblacion-y-vivenda-2018",
+    "note": "URL is DANE's CNPV 2018 landing page as surfaced; the site root is dane.gov.co."
+  },
+  "latest_census": {
+    "year": 2018,
+    "asks": {"religion": false, "ethnicity": true, "language": false},
+    "notes": "Censo Nacional de Población y Vivienda (CNPV) 2018, covering '32 departments, 1,101 municipalities, 20 non-municipalized areas, and the San Andrés, Providencia and Santa Catalina archipelago'. Ethnicity: asked as autorreconocimiento étnico (indigenous, Rrom/gypsy, raizal, palenquero, black/Afro-Colombian, or none) and published by department and municipality -- already built on this map from the USCB/HDX workbook (docs/SOURCES.md). Religion: not asked; Wikipedia's 'Freedom of religion in Colombia' / 'Religion in Colombia' snippets state 'the National Administrative Department of Statistics (DANE) does not collect religious statistics'. The year a Colombian census last asked religion was not established (my '1938' hypothesis was not confirmed by any result -- treat as null). Language: the census has no mother-tongue or home-language question for the population; it asks only respondents who self-identify as indigenous whether they speak the native language of their people (yes/no), per the DANE snippet 'questionnaire included questions on self-recognition, territoriality, native languages' and the LNG_ columns described in docs/SOURCES.md. That is not a language composition."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["ethnicity"],
+      "title": "Colombia - Subnational Boundaries and Tabular Data (U.S. Census Bureau workbook, CNPV 2018 autoreconocimiento étnico)",
+      "url": null,
+      "publisher": "U.S. Census Bureau via Humanitarian Data Exchange (HDX)",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "department and municipality",
+      "geography_count": 1155,
+      "matches_boundary_level": "admin1 (33) and admin2 (1,122); 33 + 1,121 already joined, Papunaua unmatched",
+      "year": 2018,
+      "confidence": "high",
+      "evidence": "This is the source the repo already reads: scripts/fetch_census/uscb.py names HDX dataset slug 'colombia-subnational-boundaries-and-tabular-data' (out: colombia_department.json). URL left null because it was not re-surfaced by a search result in this session and the brief forbids constructing one. Listed first because it is the standing A-grade source; nothing found supersedes it."
+    },
+    {
+      "fields": ["ethnicity"],
+      "title": "DANE - Autorreconocimiento étnico (Geovisor de Autorreconocimiento Étnico, CNPV 2018) with xlsx/xls downloads",
+      "url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/enfoque-diferencial-e-interseccional/autorreconocimiento-etnico",
+      "publisher": "DANE",
+      "kind": "census",
+      "format": "xlsx / table-builder (geovisor)",
+      "geography": "department and municipality (geovisor); the xlsx files surfaced are described for indigenous peoples",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 and admin2 (expected, since the geovisor is municipal; count not stated in any snippet)",
+      "year": 2018,
+      "confidence": "medium",
+      "evidence": "Snippet: 'The DANE provides a Geovisor for Ethnic Self-Recognition with data from the 2018 National Census ... Download options are available in xlsx and xls formats for indigenous peoples data.' The office's own publication of what the USCB workbook mirrors; useful as a cross-check, not a replacement. Companion geovisor: https://geoportal.dane.gov.co/geovisores/sociedad/cnpv-2018/ (HTML table-builder, no API surfaced)."
+    },
+    {
+      "fields": ["ethnicity", "language"],
+      "title": "Colombia - Censo Nacional de Población y Vivienda - CNPV - 2018 (DANE microdata catalog)",
+      "url": "https://microdatos.dane.gov.co/index.php/catalog/643",
+      "publisher": "DANE (Archivo Nacional de Datos, ANDA)",
+      "kind": "census",
+      "format": "microdata (person-level files; DANE anonymised microdata is normally downloadable, registration not established)",
+      "geography": "municipality (DIVIPOLA codes)",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 by code, admin1 by aggregation (expected; not verified)",
+      "year": 2018,
+      "confidence": "medium",
+      "evidence": "Catalog entry surfaced twice; a person-file variable page also surfaced (http://microdatos.dane.gov.co/index.php/catalog/643/datafile/F11/V712) in the native-language search, suggesting the indigenous native-language question is a coded variable. The language field here is the indigenous-only yes/no, so it can yield 'share of indigenous people speaking a native language' per municipality, not a composition of the population. Costly route; only worth it if the owner wants that specific indicator."
+    },
+    {
+      "fields": ["ethnicity", "language"],
+      "title": "Población indígena [department/city] - Resultados del CNPV 2018 (DANE territorial presentations; e.g. Cauca, Montería, Amazonas resguardos)",
+      "url": "https://www.dane.gov.co/files/censo2018/informacion-tecnica/presentaciones-territorio/190814-CNPV-presentacion-Resultados-etnicos-Cauca.pdf",
+      "publisher": "DANE",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "department (one PDF per department/city)",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 (per-department PDFs; not a single table)",
+      "year": 2018,
+      "confidence": "medium",
+      "evidence": "Snippets: Montería PDF (https://www.dane.gov.co/files/investigaciones/planes-departamentos-ciudades/210723-Poblacion-indigena-en-Monteria-CNPV-2018.pdf) reports '13.5% of the indigenous population in Montería reported speaking the native language ... Emberá 52.7%, Zenú 10.8%'. National bulletin: https://www.dane.gov.co/files/investigaciones/boletines/grupos-etnicos/presentacion-grupos-etnicos-2019.pdf ('115 pueblos nativos', 1,905,617 indigenous). PDFs, one per territory -- B-grade for the indigenous-language indicator, redundant for ethnicity."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Colombia", "url": "https://en.wikipedia.org/wiki/Religion_in_Colombia",
+       "appears_to_contain": "snippet says DANE does not record religious affiliation and that surveys supply national estimates; no mention of a table by department; unverified"},
+      {"title": "Freedom of religion in Colombia", "url": "https://en.wikipedia.org/wiki/Freedom_of_religion_in_Colombia",
+       "appears_to_contain": "snippet: 'the National Administrative Department of Statistics (DANE) does not collect religious statistics'; not a list article"},
+      {"title": "Censo de Colombia de 2018 (es)", "url": "https://es.wikipedia.org/wiki/Censo_de_Colombia_de_2018",
+       "appears_to_contain": "Spanish article on the 2018 census; surfaced incidentally; contents unverified"}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Curití", "search_hit_title": null, "url": null, "note": "search not run: session WebSearch budget exhausted before this step"},
+      {"shape_name": "Marinilla", "search_hit_title": null, "url": null, "note": "search not run: session WebSearch budget exhausted before this step"},
+      {"shape_name": "Roberto Payán (San José)", "search_hit_title": null, "url": null, "note": "search not run: session WebSearch budget exhausted before this step"}
+    ],
+    "note": "The dedicated '\"Religion in Colombia\" wikipedia table by department' search was not run; the article surfaced in the DANE-religion search instead. Admin2 ethnicity is already filled from the census at 1,121/1,122, so the municipality pages have nothing to add for that field."
+  },
+  "tier": "C",
+  "tier_reason": "Ethnicity is already an A-grade census build at both levels and nothing found supersedes it. The two empty fields are not collected: DANE does not collect religious statistics (no census religion question), and the census has no language question for the population -- only an indigenous-only 'speaks native language' yes/no, which is not a composition. The right output for religion and language is a not_collected declaration with that evidence.",
+  "replaces_existing": false,
+  "recommended_action": "Declare religion `not_collected` (reason: DANE does not collect religious statistics; the CNPV has no religion question) and language `not_collected` (reason: the CNPV asks native-language use only of self-identified indigenous respondents, a yes/no, not a mother-tongue question), citing the Wikipedia/DANE snippets above. Keep the existing USCB/HDX ethnicity build. Optionally, DANE's autorreconocimiento page can be used to cross-check the workbook's department totals. A department-level religion survey was to be searched for (Latinobarómetro/academic diversidad-religiosa studies) but that search did not run; if the owner wants a survey fill for religion, that is the next search, and it would rank below any count.",
+  "searches_run": [
+    "Colombia DANE censo 2018 CNPV pregunta religión no incluye censo religión Colombia",
+    "Colombia census does not ask religion last census religion question 1938 Colombia religious affiliation by department survey",
+    "DANE CNPV 2018 autorreconocimiento étnico por municipio descarga xlsx población negra indígena",
+    "DANE CNPV 2018 hablantes lengua nativa por departamento resultados pueblos indígenas",
+    "NOT RUN (budget exhausted): Colombia encuesta religión por departamento resultados diversidad religiosa regional afiliación religiosa",
+    "NOT RUN (budget exhausted): \"Religion in Colombia\" wikipedia table by department",
+    "NOT RUN (budget exhausted): site:dane.gov.co autorreconocimiento étnico CNPV 2018 xlsx municipio departamento",
+    "NOT RUN (budget exhausted): \"Curití\" / \"Marinilla\" / \"Roberto Payán\" Colombia wikipedia"
+  ],
+  "not_found": [
+    "any census religion question or table (DANE does not collect religious statistics)",
+    "the year a Colombian census last asked religion (not established; do not cite 1938)",
+    "any population-wide mother-tongue or home-language census table by department or municipality",
+    "a religion survey with department-level breakdown (search not run)",
+    "a direct URL to a single DANE xlsx of ethnic self-recognition by municipality (the page offering downloads surfaced; the file did not)"
+  ],
+  "summary": "Colombia's ethnicity is already built from the 2018 census at both levels (33 departments, 1,121 of 1,122 municipalities) via the U.S. Census Bureau workbook on HDX, and DANE's own autorreconocimiento page with xlsx downloads is the office's publication of the same figures. The two empty fields are empty because the census does not collect them: DANE does not collect religious statistics at all, and the only language question is put to self-identified indigenous people (do you speak your people's native language, yes/no), which DANE publishes in per-department PDFs and microdata but which is not a language composition. Tier C for religion and language: declare both not_collected with the evidence above; nothing found replaces the existing ethnicity build. A department-level religion survey and the Wikipedia municipality checks were not searched because the session's search budget ran out."
+}

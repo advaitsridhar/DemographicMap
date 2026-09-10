@@ -3050,11 +3050,19 @@ class UscbReader(unittest.TestCase):
         self.assertEqual(summing, ["UKR"])
 
     def test_ukraine_reads_the_flat_language_sheet(self):
-        # Nationality-Language is the cross-tabulation of the two: 1,619
-        # columns, every nationality against every native language. That is a
-        # different and much larger claim than this map has a field for.
-        sheets = [t.sheet for t in self.uscb.UKRAINE.topics]
-        self.assertEqual(sheets, ["Language"])
+        # Language comes from the flat sheet. Nationality-Language is the
+        # cross-tabulation of the two, 1,619 columns, and only its first
+        # block -- the whole population of each nationality, NL_ETH_* -- is
+        # read, by prefix; the cells of the cross-tabulation are not a field
+        # this map has.
+        topics = {t.field: t for t in self.uscb.UKRAINE.topics}
+        self.assertEqual(topics["language"].sheet, "Language")
+        self.assertEqual(topics["language"].prefix, "")
+        self.assertEqual(topics["ethnicity"].sheet, "Nationality-Language")
+        self.assertEqual(topics["ethnicity"].prefix, "NL_ETH_")
+        self.assertEqual(topics["ethnicity"].label_prefix, "Ethnicity/nationality,")
+        self.assertTrue(self.uscb.mine("NL_ETH_UKR", "NL_ETH_"))
+        self.assertFalse(self.uscb.mine("NL_RUS_UKR", "NL_ETH_"))
 
     def test_every_ukrainian_oblast_is_declared(self):
         # The Bureau romanises from Ukrainian and geoBoundaries uses English
@@ -4550,3 +4558,124 @@ class IrelandsSeatCountIsNotItsName(unittest.TestCase):
                                       "No religion", "Not stated"}, row["name"])
             total = sum(g["pct"] for g in row["religion"])
             self.assertAlmostEqual(total, 100.0, delta=1.0, msg=row["name"])
+
+
+class MalaysiaKeepsTheNonCitizenRow(unittest.TestCase):
+    """OpenDOSM's ethnicity dimension has six categories, and one of them is
+    citizenship. Dropping it would hand a fifth of Sabah's east coast to the
+    other five bars; the adapter keeps it, named for what it is, and reads the
+    latest year of a series that runs from 2020.
+    """
+
+    ROWS = [
+        {"state": "Johor", "district": "Batu Pahat", "date": date, "sex": sex,
+         "age": "overall", "ethnicity": eth, "population": value}
+        for date in ("2020-01-01", "2024-01-01")
+        for sex, scale in (("both", 1.0), ("male", 0.5))
+        for eth, value in (("overall", "49.0"), ("bumi_malay", "29.4"),
+                           ("bumi_other", "0.4"), ("chinese", "12.1"),
+                           ("indian", "0.6"), ("other_citizen", "0.3"),
+                           ("other_noncitizen", "6.1"))
+    ]
+
+    def test_latest_year_both_sexes_all_ages_in_persons(self):
+        from scripts.fetch_census import malaysia
+        date, comps = malaysia.compositions(self.ROWS, ("state", "district"))
+        self.assertEqual(date, "2024-01-01")
+        counts = comps[("Johor", "Batu Pahat")]
+        self.assertEqual(counts["__total__"], 49000)
+        self.assertEqual(counts["Non-Malaysian citizen"], 6100)
+        self.assertEqual(malaysia.check("Batu Pahat", counts), 49000)
+        self.assertNotIn("overall", counts)
+
+    def test_an_unknown_category_stops_the_run(self):
+        from scripts.fetch_census import malaysia
+        rows = self.ROWS + [dict(self.ROWS[-1], sex="both", ethnicity="orang_asli")]
+        with self.assertRaises(SystemExit):
+            malaysia.compositions(rows, ("state", "district"))
+
+
+class PolandCutsTheReligionTreeOnce(unittest.TestCase):
+    """GUS publishes religion as a seven-level classification tree, and the
+    composition is one cut through it: Christian branches at level 5, other
+    religions at level 4, no religion at level 3, the non-response at level
+    2. Reading any other level as well double-counts; reading none of the
+    level-2 rows renormalises away a fifth of Poland.
+    """
+
+    def rows(self):
+        def tr(voiv, powiat, code, level, label, count):
+            r = [voiv, powiat, code, str(level)] + [""] * 5 + [str(count), "1", "x", "x"]
+            r[4 + min(level - 1, 4)] = label
+            return tuple(r)
+        return [
+            ("Województwo", "Powiat", "Kod powiatu", "Poziom klasyfikacji",
+             "", "", "", "", "Grupa wyznań", "W liczbach", "", "", ""),
+            tr("DOLNOŚLĄSKIE", "bolesławiecki", "0201", 1, "Ogółem", 88435),
+            tr("", "", "0201", 2, "Udzielający odpowiedzi na pytanie o wyznanie", 69320),
+            tr("", "", "0201", 3, "należący do wyznania w tym:", 63683),
+            tr("", "", "0201", 4, "chrześcijaństwo", 63636),
+            tr("", "", "0201", 5, "katolicyzm", 63071),
+            tr("", "", "0201", 6, "Kościół katolicki", 63045),
+            tr("", "", "0201", 5, "protestantyzm i tradycja protestancka", 171),
+            tr("", "", "0201", 4, "islam", 10),
+            tr("", "", "0201", 3, "nienależący do żadnego wyznania", 5637),
+            tr("", "", "0201", 2, "Odmawiający odpowiedzi na pytanie o wyznanie", 19075),
+            tr("", "", "0201", 2, "Nie ustalono", 40),
+            tr("", "dzierżoniowski", "0202", 1, "Ogółem", 97721),
+            tr("", "", "0202", 5, "katolicyzm", 68363),
+        ]
+
+    def test_one_cut_and_the_non_response_kept(self):
+        from scripts.fetch_census import poland
+        rows = self.rows()
+
+        class Sheet:
+            def iter_rows(self, values_only=True):
+                return iter(rows)
+        poland.workbook = lambda field: {"TABL.4": Sheet()}
+        units = poland.units_tree("admin2")
+        first = units[("DOLNOŚLĄSKIE", "bolesławiecki")]
+        self.assertEqual(first["__total__"], 88435)
+        self.assertEqual(first["Catholic"], 63071)          # level 5, not 6 or 4
+        self.assertNotIn("Other Christian", first)
+        self.assertEqual(first["Not stated"], 19075 + 40)   # both level-2 rows
+        self.assertEqual(first["No religion"], 5637)
+        # The second powiat inherits the voivodeship its column left blank.
+        self.assertIn(("DOLNOŚLĄSKIE", "dzierżoniowski"), units)
+
+    def test_powiat_names_follow_the_boundary_file(self):
+        from scripts.fetch_census import poland
+        self.assertEqual(poland.powiat_names("DOLNOŚLĄSKIE", "bolesławiecki"),
+                         ("powiat bolesławiecki", []))
+        self.assertEqual(poland.powiat_names("ŚLĄSKIE", "bielski"),
+                         ("powiat bielski", ["Bielsko County"]))
+        self.assertEqual(poland.powiat_names("PODLASKIE", "bielski"),
+                         ("powiat bielski", []))
+        self.assertEqual(poland.powiat_names("DOLNOŚLĄSKIE", "m. Wrocław"), ("Wrocław", []))
+        self.assertEqual(poland.powiat_names("MAZOWIECKIE", "m. st. Warszawa"), ("Warszawa", []))
+
+
+class AbsLanguageTableListsAParentBesideItsChildren(unittest.TestCase):
+    """G13 puts "Other Languages Total" (code O_T) beside every language under
+    it, and O_T is no prefix of "3103" Italian, so the code tree cannot see the
+    parent. Arithmetic can: the set over-counts the total by exactly that row.
+    """
+
+    def test_the_duplicated_parent_is_dropped_and_nothing_else(self):
+        from scripts.fetch_census import abs as abs_
+        coded = {("Total", "_T"): 1000, ("Speaks English only", "1"): 700,
+                 ("Other Languages Total", "O_T"): 250, ("Not stated", "_N"): 50,
+                 ("Italian", "3103"): 100, ("Chinese: Total", "71"): 150,
+                 ("Chinese: Mandarin", "7104"): 120}
+        kept, how = abs_.top_level(coded, 1000)
+        self.assertEqual(how, "code tree less a duplicated parent")
+        self.assertEqual(kept, {"Speaks English only": 700, "Not stated": 50,
+                                "Italian": 100, "Chinese": 150})
+
+    def test_a_small_region_short_of_a_category_is_not_rescued(self):
+        from scripts.fetch_census import abs as abs_
+        small = {("Buddhism", "1"): 12, ("Islam", "4"): 9,
+                 ("Religious affiliation not stated", "_N"): 614, ("Total", "_T"): 1588}
+        _, how = abs_.top_level(small, 1588)
+        self.assertIn("nothing summed", how)

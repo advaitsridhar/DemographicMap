@@ -1,0 +1,621 @@
+{
+ "iso3": "ECU",
+ "name": "Ecuador",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity",
+    "language"
+   ],
+   "title": "IPUMS-International - Ecuador 1962, 1974, 1982, 1990, 2001, 2010 census samples",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "provincia and cantón",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 and admin2",
+   "url": "https://international.ipums.org/",
+   "status": 200,
+   "content_type": "text/html",
+   "final_url": "https://international.ipums.org/international/",
+   "error": null,
+   "body": {
+    "bytes_read": 13024,
+    "kind": "html",
+    "title": "IPUMS International",
+    "links_to_files": [],
+    "mentions": [
+     "census"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Ecuador",
+    "wikitext_bytes": 20126,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Ecuador",
+    "wikitext_bytes": 83868,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnicity",
+     "Language",
+     "Religion"
+    ],
+    "wikitables": 10,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "style=\"text-align:center;\"| No.",
+       "style=\"text-align:center;\"| Time lapse",
+       "style=\"text-align:center;\"| Growth percentile",
+       "! style=\"width:70pt;\"|Total population<br /> (x 1000)",
+       "style=\"width:70pt;\"|Proportion<br />aged 0–14<br />(%)",
+       "style=\"width:70pt;\"|Proportion<br />aged 15–64<br />(%)",
+       "style=\"width:70pt;\"|Proportion<br />aged 65+<br />(%)",
+       "style=\"width:80pt;\"|Age group",
+       "style=\"width:80pt;\"|Male",
+       "style=\"width:80pt;\"|Female"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "! style=\"width:70pt;\"|Total population<br /> (x 1000)",
+       "style=\"width:70pt;\"|Proportion<br />aged 0–14<br />(%)",
+       "style=\"width:70pt;\"|Proportion<br />aged 15–64<br />(%)",
+       "style=\"width:70pt;\"|Proportion<br />aged 65+<br />(%)",
+       "style=\"width:80pt;\"|Age group",
+       "style=\"width:80pt;\"|Male",
+       "style=\"width:80pt;\"|Female",
+       "style=\"width:80pt;\"|Total",
+       "style=\"width:80pt;\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 37
+     },
+     {
+      "header": [
+       "style=\"width:80pt;\"|Age group",
+       "style=\"width:80pt;\"|Male",
+       "style=\"width:80pt;\"|Female",
+       "style=\"width:80pt;\"|Total",
+       "style=\"width:80pt;\"|%",
+       "style=\"width:50px;\"|Age group",
+       "style=\"width:80pt;\"|Male",
+       "style=\"width:80px;\"|Female",
+       "style=\"width:80px;\"|Total",
+       "style=\"width:50px;\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Fe"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "rowspan=2|Period",
+       "rowspan=2|Live births<br />per year",
+       "rowspan=2|Deaths<br />per year",
+       "rowspan=2|Natural change<br />per year",
+       "rowspan=2|CBR*",
+       "rowspan=2|CDR*",
+       "rowspan=2|NC*",
+       "rowspan=2|TFR*",
+       "rowspan=2|IMR*",
+       "colspan=3|Life expectancy"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "style=\"width:70px;\"|Year",
+       "style=\"width:70px;\"|Population",
+       "style=\"width:70px;\"|Live births <ref>{{cite web |title=Población y Demografía |url=https://www.ecuadorencifras.gob.ec/category/poblacion-y-demografia/ |website=INEC |access-date=2 September 2020}}</ref>",
+       "style=\"width:70px;\"|Deaths",
+       "style=\"width:70px;\"|Natural increase",
+       "style=\"width:70px;\"|Crude birth rate",
+       "style=\"width:70px;\"|Crude death rate",
+       "style=\"width:70px;\"|Rate of natural increase",
+       "style=\"width:70px;\"|Crude migration rate",
+       "style=\"width:70px;\"|TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 31
+     },
+     {
+      "header": [
+       "Years",
+       "1920",
+       "1921",
+       "1922",
+       "1923",
+       "1924",
+       "1925",
+       "1926",
+       "1927",
+       "1928"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Years",
+       "1930",
+       "1931",
+       "1932",
+       "1933",
+       "1934",
+       "1935",
+       "1936",
+       "1937",
+       "1938"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "Years",
+       "1940",
+       "1941",
+       "1942",
+       "1943",
+       "1944",
+       "1945",
+       "1946",
+       "1947",
+       "1948"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 2
+     },
+     {
+      "header": [
+       "Amerindian",
+       "European",
+       "African",
+       "Arab",
+       "Asian",
+       "Study",
+       "Year",
+       "Source"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Alfredo Baquerizo Moreno",
+    "found": true,
+    "title": "Alfredo Baquerizo Moreno Canton",
+    "url": "https://en.wikipedia.org/wiki/Alfredo_Baquerizo_Moreno_Canton",
+    "wikitext_bytes": 3621,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Lomas de Sargentillo",
+    "found": true,
+    "title": "Lomas de Sargentillo Canton",
+    "url": "https://en.wikipedia.org/wiki/Lomas_de_Sargentillo_Canton",
+    "wikitext_bytes": 2957,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Naranjal",
+    "found": true,
+    "title": "Naranjal Canton",
+    "url": "https://en.wikipedia.org/wiki/Naranjal_Canton",
+    "wikitext_bytes": 1803,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Otavalo",
+    "found": true,
+    "title": "Otavalo Canton",
+    "url": "https://en.wikipedia.org/wiki/Otavalo_Canton",
+    "wikitext_bytes": 3178,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Pablo Sexto",
+    "found": true,
+    "title": "Pablo Sexto Canton",
+    "url": "https://en.wikipedia.org/wiki/Pablo_Sexto_Canton",
+    "wikitext_bytes": 2605,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Ecuador: Languages",
+   "name": "ecuador-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/ecuador-languages",
+   "resources": [
+    {
+     "name": "EC_lang_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/ab959e0f-5087-4be7-a095-de0d73c40506/resource/0c65956d-906f-4b12-9721-eef5823a6503/download/ec_lang_admin0.csv"
+    },
+    {
+     "name": "EC_lang_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/ab959e0f-5087-4be7-a095-de0d73c40506/resource/5a917ca6-c3c6-4dc4-b16b-00657f9a7fd6/download/ec_lang_admin1.csv"
+    },
+    {
+     "name": "EC_lang_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/ab959e0f-5087-4be7-a095-de0d73c40506/resource/f1449872-d808-4223-8609-46fe952cbf71/download/ec_lang_admin2.csv"
+    },
+    {
+     "name": "EC_lang_v02.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/ab959e0f-5087-4be7-a095-de0d73c40506/resource/a8957c52-48fb-4ca7-9fb4-03ddb92cca3c/download/ec_lang_v02.xlsx"
+    },
+    {
+     "name": "metadata.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/ab959e0f-5087-4be7-a095-de0d73c40506/resource/bb587e33-740e-4bbc-9f4c-b44a0eb95735/download/metadata.pdf"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ecuador: Road Surface Data",
+   "name": "ecuador-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/ecuador-road-surface-data",
+   "resources": [
+    {
+     "name": "Ecuador GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_ecu_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Ecuador GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_ecu_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ecuador: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-ecuador",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-ecuador",
+   "resources": [
+    {
+     "name": "kontur_boundaries_EC_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_EC_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_EC_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_EC_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_EC_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_EC_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ecuador Earthquake 5W - Round 12",
+   "name": "ecuador-earthquake-5w-round-12",
+   "org": "Redhum (inactive)",
+   "url": "https://data.humdata.org/dataset/ecuador-earthquake-5w-round-12",
+   "resources": [
+    {
+     "name": "Redhum-Ec 5w 2.0 Ronda 12 Versión 2061012-HDX.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/fb1e801f-e78c-4224-adde-95d171348262/resource/d7fffd19-4bd0-46a5-88e0-e8e17899ea08/download/redhum-ec-5w-2.0-ronda-12-version-2061012-hdx.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ecuador Earthquake 5W - Round 10",
+   "name": "ecuador-earthquake-5w-round-10",
+   "org": "Redhum (inactive)",
+   "url": "https://data.humdata.org/dataset/ecuador-earthquake-5w-round-10",
+   "resources": [
+    {
+     "name": "160906_5W_HDX.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/79fee4cc-0dcb-40f5-8b4b-51a93887086b/resource/ac8d491f-338f-4141-8f77-8480e6f6c414/download/160906_5w_hdx.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ecuador Earthquake 5W - Round 13",
+   "name": "ecuador-earthquake-5w-round-13",
+   "org": "Redhum (inactive)",
+   "url": "https://data.humdata.org/dataset/ecuador-earthquake-5w-round-13",
+   "resources": [
+    {
+     "name": "OCHA_5W_2.0_ R13.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/f500f8a0-a8e8-42e9-b6bc-2a23eddb99a8/resource/a4595ede-01ea-4d84-a2cf-a6a9774be8ab/download/ocha_5w_2.0_-r13.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ecuador Earthquake 5W - Round 11",
+   "name": "ecuador-earthquake-5w-round-11",
+   "org": "Redhum (inactive)",
+   "url": "https://data.humdata.org/dataset/ecuador-earthquake-5w-round-11",
+   "resources": [
+    {
+     "name": "160909_5W 2.0_HDX.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/4c6f9827-5c07-4f8a-86fa-e60673b5a545/resource/920df0fe-411d-47ee-8004-11b2302fbe1c/download/160909_5w-2.0_hdx.xlsx"
+    },
+    {
+     "name": "Redhum_Ecuador 3w_round11.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4c6f9827-5c07-4f8a-86fa-e60673b5a545/resource/bec09656-5774-43ce-9080-f47b0b2c0729/download/redhum_ecuador-3w_round11.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ecuador – Population by administrative areas (Province, cantonal and Parish)",
+   "name": "population-by-area-acording-to-province-cantonal-parish-of-census",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/population-by-area-acording-to-province-cantonal-parish-of-census",
+   "resources": [
+    {
+     "name": "ECLB012.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/edcef26f-fdc3-40c4-ba88-219982e7517f/resource/9cac15c3-a1f4-4004-b082-98e0e4d3df04/download/eclb012.xls"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ecuador - Food Prices",
+   "name": "wfp-food-prices-for-ecuador",
+   "org": "WFP - World Food Programme",
+   "url": "https://data.humdata.org/dataset/wfp-food-prices-for-ecuador",
+   "resources": [
+    {
+     "name": "Ecuador - Food Prices",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/111bd135-8f22-4f0e-9917-3f0d040a1c82/resource/cfea5b70-e50b-44e2-9728-de735af134a8/download/wfp_food_prices_ecu.csv"
+    },
+    {
+     "name": "Ecuador - Markets",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/111bd135-8f22-4f0e-9917-3f0d040a1c82/resource/f40694e2-3f1e-444a-82e6-31e134aea672/download/wfp_markets_ecu.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ecuador - Population with a National Identity card at the parish Level in Manabi",
+   "name": "population-wth-card-at-level-parish-in-manabi",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/population-wth-card-at-level-parish-in-manabi",
+   "resources": [
+    {
+     "name": "ECLB008.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/fa784332-cea7-44d8-bb17-a9cf77609ee7/resource/22d459dd-e291-47de-baad-78ed4ec84154/download/eclb008.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ecuador – Population registered in the Civil registry at the Cantonal Level in Esmeraldas",
+   "name": "population-iscribed-in-the-civil-registration-in-esmeraldas-at-the-cantonal-level",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/population-iscribed-in-the-civil-registration-in-esmeraldas-at-the-cantonal-level",
+   "resources": [
+    {
+     "name": "ECLB006.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/649d519a-a95b-41f0-ac8d-3ddaad5ad948/resource/5b20dbb2-b89f-473a-aa71-4cc8e30af73c/download/eclb006.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ecuador - Population registered in the civil registry at the Parish Level in Esmeraldas",
+   "name": "population-iscribed-in-the-civil-registration-in-esmeraldas-at-the-parish-level",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/population-iscribed-in-the-civil-registration-in-esmeraldas-at-the-parish-level",
+   "resources": [
+    {
+     "name": "ECLB003.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/0f02c975-fe20-4f6a-bbcf-1b9f44de9eb5/resource/ec527746-b991-444f-8e24-3980911d86c6/download/eclb003.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ecuador – Population with a National Identity card at the Parish Level in Esmeraldas",
+   "name": "population-wth-indentity-card-at-level-parish-in-esmeraldas",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/population-wth-indentity-card-at-level-parish-in-esmeraldas",
+   "resources": [
+    {
+     "name": "ECLB007.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/092a3fc0-a281-4e2f-9659-29218e7f8e9d/resource/7fbe40dc-47f9-48aa-9981-1fb5504c1bee/download/eclb007.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ecuador – Population with  a National Identity card at the Cantonal  Level in Esmeraldas",
+   "name": "population-that-have-card-at-the-cantonal-level-in-esmeraldas",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/population-that-have-card-at-the-cantonal-level-in-esmeraldas",
+   "resources": [
+    {
+     "name": "ECLB004.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/0e9ed511-00bd-4e9b-8526-5bf0c6223239/resource/3d022ced-678d-4122-b3e1-d9689845af52/download/eclb004.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ecuador - Subnational Population Statistics",
+   "name": "cod-ps-ecu",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-ecu",
+   "resources": [
+    {
+     "name": "ecu_admpop_2020.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/538a4523-8d2f-4875-b2c6-e7ba2b85fcd8/resource/8c3e3abe-71bd-4561-8e10-4d092c14be4c/download/ecu_admpop_2020.xlsx"
+    },
+    {
+     "name": "ecu_admpop_adm0_2020.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/538a4523-8d2f-4875-b2c6-e7ba2b85fcd8/resource/ed8a56bc-41a4-4e11-af8e-00fc96c431cd/download/ecu_admpop_adm0_2020.csv"
+    },
+    {
+     "name": "ecu_admpop_adm1_2020.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/538a4523-8d2f-4875-b2c6-e7ba2b85fcd8/resource/35aadfff-a5c2-4de2-8c70-2202b7d96828/download/ecu_admpop_adm1_2020.csv"
+    },
+    {
+     "name": "ECU_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/538a4523-8d2f-4875-b2c6-e7ba2b85fcd8/resource/a882d581-e78a-4a55-ab7f-1683dd847fc9/download/ecu_adminboundaries_tabulardata.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ecuador - Population registered in the civil  registry at the Parish Level in Manabi",
+   "name": "population-iscribed-in-the-civil-registration-at-the-parish-level-in-manabi",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/population-iscribed-in-the-civil-registration-at-the-parish-level-in-manabi",
+   "resources": [
+    {
+     "name": "ECLB009.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/5140d227-9f50-4e3a-8ced-2c959a6d384c/resource/9cb3e0c3-c328-4c39-a5ec-c4c59198ae84/download/eclb009.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.ecuadorencifras.gob.ec/",
+  "status": 200,
+  "error": null,
+  "pages": [],
+  "title": null,
+  "matching_links": 0
+ },
+ "verdict": {
+  "hdx_datasets": 16,
+  "hdx_machine_readable": 14,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "1/1",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

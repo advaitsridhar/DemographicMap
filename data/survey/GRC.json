@@ -1,0 +1,819 @@
+{
+ "iso3": "GRC",
+ "name": "Greece",
+ "tier_proposed": "C",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Greece",
+    "wikitext_bytes": 26833,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Greece",
+    "wikitext_bytes": 109458,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups, languages and religion"
+    ],
+    "wikitables": 21,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Region",
+       "Population (1971)",
+       "Population (1981)",
+       "Population (1991)",
+       "Population (2001)",
+       "Population (2011)",
+       "Population (2021)",
+       "Population (2025)<ref>{{Cite web | title=Not Found | url=https://www.statistics.gr/documents/20181/3cdc6530-6451-1ed1-d866-bbfb5eeb3e1f | archive-url=https://web.archive.org/web/20251219032638/https://www.statistics.gr/documents/20181/3cdc6530-6451-1ed1-d866-bbfb5eeb3e1f | archive-date=2025-12-19}}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1850",
+       "1851",
+       "1852",
+       "1853",
+       "1854",
+       "1855",
+       "1856",
+       "1857",
+       "1858"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1861",
+       "1862",
+       "1863",
+       "1864",
+       "1865",
+       "1866",
+       "1867",
+       "1868",
+       "1869"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1871",
+       "1872",
+       "1873",
+       "1874",
+       "1875",
+       "1876",
+       "1877",
+       "1878",
+       "1879"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1881",
+       "1882",
+       "1883",
+       "1884",
+       "1885",
+       "1886",
+       "1887",
+       "1888",
+       "1889"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1891",
+       "1892",
+       "1893",
+       "1894",
+       "1895",
+       "1896",
+       "1897",
+       "1898",
+       "1899"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Years",
+       "1901",
+       "1902",
+       "1903",
+       "1904",
+       "1905",
+       "1906",
+       "1907",
+       "1908",
+       "1909"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Years",
+       "1911",
+       "1912",
+       "1913",
+       "1914",
+       "1915",
+       "1916",
+       "1917",
+       "1918",
+       "1919"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years",
+       "rowspan=\"2\" |Age group",
+       "colspan=\"2\" |1971",
+       "colspan=\"2\" |1981",
+       "colspan=\"2\" |1991",
+       "colspan=\"2\" |2001",
+       "colspan=\"2\" |2011"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |Age group",
+       "colspan=\"2\" |1971",
+       "colspan=\"2\" |1981",
+       "colspan=\"2\" |1991",
+       "colspan=\"2\" |2001",
+       "colspan=\"2\" |2011",
+       "colspan=\"2\" |2021",
+       "Population",
+       "%",
+       "Population"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "! style=\"width:60pt;\" |Average population",
+       "style=\"width:60pt;\" |Live births",
+       "style=\"width:60pt;\" |Deaths",
+       "style=\"width:60pt;\" |Natural change",
+       "style=\"width:60pt;\" |Crude birth rate (per 1000)",
+       "style=\"width:60pt;\" |Crude death rate (per 1000)",
+       "style=\"width:60pt;\" |Natural change (per 1000)",
+       "style=\"width:60pt;\" |Crude migration change (per 1000)",
+       "style=\"width:60pt;\" |Total Fertility Rates{{refn|group=fn|In fertility rates, 2.1 and above is a stable population and has been marked blue, 2 and below leads to an aging population and the result is that the population decreases. }}<ref name=\"ourworldindata.org\" /><ref>{{Cite web|url=https://greece.greekreporter.com/2018/03/29/greek-women-have-fewer-children-than-eu-average/|title=Greek Women Have Fewer Children than EU Average |website=GreekReporter.com|first=Philip|last=Chrysopoulos}}</ref><ref name=\"cia.gov\" />"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January–August 2025",
+       "January–August 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{Cite web |title=Statistics of Registry Deeds PSMIPOL |url=https://www.ypes.gr/politikes-kai-draseis/statistika/statistika-2}}</ref>",
+       "Regions",
+       "2013"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Regions",
+       "2013",
+       "2014",
+       "2015",
+       "2016",
+       "2017",
+       "2018",
+       "2019",
+       "2020",
+       "2021"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "wid"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "Country",
+       "2010",
+       "2014",
+       "2020 {{abbr|n-aEU|Non European Union, European Free Trade Association, United Kingdom countries}}<ref>[https://migration.gov.gr/wp-content/uploads/2020/05/%CE%A3%CE%A4%CE%91%CE%A4%CE%99%CE%A3%CE%A4%CE%99%CE%9A%CE%91_%CE%91%CE%94_20200131.zip ΣΤΑΤΙΣΤΙΚΑ_ΑΔ_20200131]</ref>",
+       "<!--AVOID WP:SYNTH-->2020 EU<ref>{{cite web | title=Population on 1 January by age group, sex and citizenship | website=European Commission | url=https://ec.europa.eu/eurostat/databrowser/view/migr_pop1ctz__custom_9061190/default/table?lang=en | access-date=18 December 2023}}</ref>",
+       "2021<ref name=\"21.cen.for\">{{Cite web |url=https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A02_F_BI.xlsx |format=XLSX |title=2021 Population Census. Resident population by sex and citizenship |website=statistics.gr |date=2021 |access-date=8 June 2025 |language=el,en}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |Nationality",
+       "colspan=\"2\" |1951",
+       "colspan=\"2\" |1961",
+       "colspan=\"2\" |1971",
+       "colspan=\"2\" |1981",
+       "colspan=\"2\" |1991",
+       "colspan=\"2\" |2001",
+       "colspan=\"2\" |2011",
+       "colspan=\"2\" |2021<ref>{{Cite web |title=File:Tab04 Non-national population by group of citizenship, 1 January 2021 rev.png |url=https://ec.europa.eu/eurostat/statistics-explained/index.php?title=File:Tab04_Non-national_population_by_group_of_citizenship,_1_January_2021_rev.png |access-date=2023-02-25 |website=ec.europa.eu |language=en}}</ref>",
+       "colspan=\"2\" |2021<br />census<ref name=\"21.cen.for\"/>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 38
+     },
+     {
+      "header": [
+       "Year",
+       "Immigration",
+       "Emigration",
+       "Net Migration"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 34
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Language (and religion)",
+       "colspan=\"2\" | census 1879<ref>{{cite book |last1=Zervas |first1=Theodore G.|title=Formal and informal education during the rise of Greek nationalism: learning to be Greek |publisher=Springer |isbn=9781137484147 |page=52 |quote=An 1879 Greek census found that, in the Peloponnese, Central Greece, Euboea and the island of Andros, there were nearly 225,000 Albanian/ Arvanitic speakers|date=8 December 2016 }}</ref><ref>{{cite book |last1=Martin |first1=Frederick |title=The statesman's year-book statistical and historical annual of the states of the civilised world for the year 1882 |date=1924 |publisher=Oxford University |page=288 |quote=Greece, at the last census, taken June 1879, had a total population of 1,679,775}}</ref>",
+       "colspan=\"2\" | estimate 1913<ref name=slavic>Peter Trudgill & Daniel Schreier, \"Greece and Cyprus\", in: ''Sociolinguistics'' (HSK 3.3), 2nd ed., Berlin & New York: de Gruyter, p. 1881–1889, esp. [https://books.google.com/books?id=LMZm0w0k1c4C&pg=PA1885 p. 1885]</ref>",
+       "colspan=\"2\" | census 1928<ref name=\"Angelopoulos\">{{cite journal |last1=Angelopoulos |first1=Ath |title=Population Distribution of Greece Today According to Language, National Consciousness, and Religion |journal=Balkan Studies |volume=43 |url=https://ojs.lib.uom.gr/index.php/BalkanStudies/article/download/306/342 |location=Thessaloniki |issn=2241-1674 |pages=126–131}}</ref><ref name=Helsinki/><ref name=nm>{{cite journal|last=Mavrogordatos|first=George Th.|journal=Ιστορία Της Ελλάδας Του 20Ού Αιώνα, Επιμ. Χ. Χατζηιωσήφ, Τόμος Β2. Αθήνα: Βιβλιόραμα, 2003 |url=https://www.academia.edu/2363351|script-title=el:Οι εθνικές μειονότητες|trans-title=The National Minorities|language=el|publisher=academia.edu|date=2003|access-date=7 February 2017}}</ref>",
+       "colspan=\"2\" | census 1940<ref name=\"Angelopoulos\"/><ref name=nm/><ref name=\"Shea1997\">{{cite book|last=Shea|first=John|title=Macedonia and Greece: The Struggle to Define a New Balkan Nation|url=https://books.google.com/books?id=InyEqBVhH-EC&pg=PA129|access-date=7 February 2017|year=1997|publisher=McFarland|isbn=978-0-7864-0228-1|page=129}}</ref>",
+       "colspan=\"2\" | census 1951<ref name=\"Angelopoulos\"/><ref name=\"Clogg2002\"/>",
+       "Number",
+       "%",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "Language",
+       "Classification",
+       "Speaking population",
+       "Spoken by",
+       "Ethnic population",
+       "Region",
+       "Notes",
+       "colspan=7|Greek classification"
+      ],
+      "place_column": true,
+      "composition_columns": 1,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Total",
+       "7,632,801"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Agion Oros",
+    "found": true,
+    "title": "Singitic Gulf",
+    "url": "https://en.wikipedia.org/wiki/Singitic_Gulf",
+    "wikitext_bytes": 2217,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Anatolikis Makedonias kai Thr*",
+    "found": true,
+    "title": "Eastern Macedonia and Thrace",
+    "url": "https://en.wikipedia.org/wiki/Eastern_Macedonia_and_Thrace",
+    "wikitext_bytes": 10820,
+    "infobox_params": [
+     "demographics2_info1",
+     "demographics2_info2"
+    ],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Attikis",
+    "found": true,
+    "title": "Irakleio, Attica",
+    "url": "https://en.wikipedia.org/wiki/Irakleio%2C_Attica",
+    "wikitext_bytes": 5181,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kentrikis Makedonias",
+    "found": true,
+    "title": "Central Macedonia Army Section",
+    "url": "https://en.wikipedia.org/wiki/Central_Macedonia_Army_Section",
+    "wikitext_bytes": 3397,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kritis",
+    "found": true,
+    "title": "AE Ergazomenon Kritis SYN.KA F.C.",
+    "url": "https://en.wikipedia.org/wiki/AE_Ergazomenon_Kritis_SYN.KA_F.C.",
+    "wikitext_bytes": 3561,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Greece: Road Surface Data",
+   "name": "greece-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/greece-road-surface-data",
+   "resources": [
+    {
+     "name": "Greece GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_grc_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Greece GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_grc_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Greece: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-greece",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-greece",
+   "resources": [
+    {
+     "name": "kontur_boundaries_GR_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_GR_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_GR_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_GR_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_GR_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_GR_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Greece - Accessibility Indicators",
+   "name": "greece-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/greece-accessibility-indicators",
+   "resources": [
+    {
+     "name": "GRC_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/grc/GRC_education_access.gpkg"
+    },
+    {
+     "name": "GRC_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/grc/GRC_education_access_long.csv"
+    },
+    {
+     "name": "GRC_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/grc/GRC_education_access_wide.csv"
+    },
+    {
+     "name": "GRC_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/grc/GRC_hospitals_access.gpkg"
+    },
+    {
+     "name": "GRC_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/grc/GRC_hospitals_access_long.csv"
+    },
+    {
+     "name": "GRC_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/grc/GRC_hospitals_access_wide.csv"
+    },
+    {
+     "name": "GRC_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/grc/GRC_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "GRC_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/grc/GRC_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Greece: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "greece-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/greece-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "grc_general_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/16f0abe9-0ff1-4a69-9b91-132a3179b681/resource/4c8f435d-2c66-421d-9b4c-16b0556f5af3/download/grc_general_2020_geotiff.zip"
+    },
+    {
+     "name": "grc_general_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/16f0abe9-0ff1-4a69-9b91-132a3179b681/resource/759b28df-c49f-46e1-b291-73251810891c/download/grc_general_2020_csv.zip"
+    },
+    {
+     "name": "grc_children_under_five_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/16f0abe9-0ff1-4a69-9b91-132a3179b681/resource/e26405ec-6cfc-403d-af07-52a7e95c4ac8/download/grc_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "grc_children_under_five_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/16f0abe9-0ff1-4a69-9b91-132a3179b681/resource/0c0e61c5-010f-41d6-a556-1637bd852410/download/grc_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "grc_elderly_60_plus_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/16f0abe9-0ff1-4a69-9b91-132a3179b681/resource/aa706131-1d91-40df-be0b-ae1104bdc804/download/grc_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "grc_elderly_60_plus_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/16f0abe9-0ff1-4a69-9b91-132a3179b681/resource/5f076950-fc36-4051-afc1-63b1a6cfb0fa/download/grc_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "grc_men_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/16f0abe9-0ff1-4a69-9b91-132a3179b681/resource/96f0b9e8-00a0-4207-b2ce-1b093a6f3c40/download/grc_men_2020_csv.zip"
+    },
+    {
+     "name": "grc_men_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/16f0abe9-0ff1-4a69-9b91-132a3179b681/resource/8616e52f-adc9-44c4-99b7-41d90be1deac/download/grc_men_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Greece - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-greece",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-greece",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Greece",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1eeb2035-dde5-4f4c-a389-1bc4395f2604/resource/7b564dd6-3ad0-4851-8a8e-0243c3632a5d/download/social-protection-and-labor_grc.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Greece - Population Counts",
+   "name": "worldpop-population-counts-for-greece",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-greece",
+   "resources": [
+    {
+     "name": "grc_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/GRC/grc_ppp_2020.tif"
+    },
+    {
+     "name": "grc_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/GRC/grc_ppp_2019.tif"
+    },
+    {
+     "name": "grc_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/GRC/grc_ppp_2018.tif"
+    },
+    {
+     "name": "grc_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/GRC/grc_ppp_2017.tif"
+    },
+    {
+     "name": "grc_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/GRC/grc_ppp_2016.tif"
+    },
+    {
+     "name": "grc_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/GRC/grc_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "grc_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/GRC/grc_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "grc_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/GRC/grc_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Greece - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-gr-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-gr-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_GR",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/56322633-e635-4b21-89dd-70e8bac97c30/resource/ba57246f-7ba2-4468-a0b4-c795ee901078/download/indicator_data_gr.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Greece: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "grc-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/grc-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/a26e5aa3-1d72-4a26-80ef-fc926b5d352a/resource/3131c938-f377-4fe8-a43e-d9a876bfcbd7/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_grc.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/a26e5aa3-1d72-4a26-80ef-fc926b5d352a/resource/145198d6-f019-4ecc-b01c-90c4dbd53805/download/ghs_pop_e2025_r2023a_54009_100_v1_0_grc.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Greece: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-grc",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-grc",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-gr-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-gr-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Green area per capita (square meters per capita)",
+   "name": "green-area-per-capita-square-meters-per-capita",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/green-area-per-capita-square-meters-per-capita",
+   "resources": [
+    {
+     "name": "Green area per_capita (square meters per capita).xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/7babf915-12a0-4ceb-ad9c-7ee24b776614/resource/2c1c5e09-0bbe-482f-9703-ec7dfed62c79/download/green-area-per_capita-square-meters-per-capita.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Old age dependency ratio",
+   "name": "old-age-dependency-ratio",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/old-age-dependency-ratio",
+   "resources": [
+    {
+     "name": "Old_age_dependency_ratio.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/1598cce7-3d04-42a5-9a2f-b5ba0095cf2f/resource/5217ad45-f56f-43c7-992f-d4e327d13615/download/old_age_dependency_ratio.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.statistics.gr/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.statistics.gr/el/agricultural-census-2021",
+    "status": 200,
+    "kind": "html",
+    "title": "Απογραφή Γεωργίας &#8211; Κτηνοτροφίας 2021 - ELSTAT",
+    "files": [],
+    "mentions": [
+     "census",
+     "language",
+     "languageid"
+    ]
+   },
+   {
+    "url": "https://www.statistics.gr/el/census_priv_results_1821-2021",
+    "status": 200,
+    "kind": "html",
+    "title": "Απογραφές Πληθυσμού 1821 - 2021 - ELSTAT",
+    "files": [
+     "https://www.statistics.gr/documents/20181/17202034/ELSTAT_APOGRAFES_1821_2021.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language",
+     "languageid"
+    ]
+   },
+   {
+    "url": "https://www.statistics.gr/el/2021-census-pop-hous",
+    "status": 200,
+    "kind": "html",
+    "title": "Απογραφή Πληθυσμού-Κατοικιών 2021 - ELSTAT",
+    "files": [],
+    "mentions": [
+     "census",
+     "language",
+     "languageid"
+    ]
+   },
+   {
+    "url": "https://www.statistics.gr/el/2021-census-res-pop-results",
+    "status": 200,
+    "kind": "html",
+    "title": "Μόνιμος Πληθυσμός - ELSTAT",
+    "files": [
+     "/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A01_F_BI.xlsx",
+     "/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A02_F_BI.xlsx",
+     "/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A03_F_BI.xlsx",
+     "/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A04_F_BI.xlsx",
+     "/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A05_F_BI.xlsx",
+     "/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A06_F_BI.xlsx",
+     "/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A07_F_BI.xlsx",
+     "/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A08_F_BI.xlsx",
+     "/documents/20181/17286366/APOF_APOT_MON_DHM_KOIN.pdf",
+     "/documents/20181/17286366/FEK-2023-Tefxos-B-02802.pdf",
+     "/documents/20181/17286366/FEK-2024-Tefxos-B-02090.pdf",
+     "/documents/20181/17286366/MON_PLH_ELEKTR_APOGR_2021.xlsx",
+     "/documents/20181/17286366/MON_PLI_DHM_KOIN_2021.xlsx",
+     "/documents/20181/17286366/MON_PLI_DHM_OIKISN_2021.xlsx",
+     "/documents/20181/17286366/S_2081_B4-241.pdf",
+     "/documents/20181/17286366/mon_plith_2021.xlsx",
+     "/documents/20181/17911189/Booklet_65.pdf",
+     "/documents/20181/18409455/Booklet_CHILDREN_GR.pdf",
+     "https://elstat-outsourcers.statistics.gr/Booklet_%CE%91%CF%80%CE%BF%CF%84%CE%B5%CE%BB%CE%B5%CF%83%CE%BC%CE%B1%CF%84%CE%B1%CE%A0%CE%BB%CE%B7%CE%B8%CF%85%CF%83%CE%BC%CE%BF%CF%852023_II%20GR_FINAL2_WEB.pdf",
+     "https://elstat-outsourcers.statistics.gr/Census2022_GR.pdf",
+     "https://www.statistics.gr/documents/20181/18409455/population_%CE%9A%CE%95%CE%9D%CE%A4%CE%A1%CE%99%CE%9A%CE%97_ELLADA_GR.pdf",
+     "https://www.statistics.gr/documents/20181/18409455/population_ATTICA_GR.pdf",
+     "https://www.statistics.gr/documents/20181/18409455/population_NISIA_GR.pdf",
+     "https://www.statistics.gr/documents/20181/18409455/population_VORIA_ELLADA_GR.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language",
+     "languageid"
+    ]
+   }
+  ],
+  "title": "Κεντρική Σελίδα ΕΛΣΤΑΤ - ELSTAT",
+  "matching_links": 4
+ },
+ "verdict": {
+  "hdx_datasets": 11,
+  "hdx_machine_readable": 6,
+  "nso_files_found": 25,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

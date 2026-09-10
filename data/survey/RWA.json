@@ -1,0 +1,678 @@
+{
+ "iso3": "RWA",
+ "name": "Rwanda",
+ "tier_proposed": "B",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Rwanda",
+    "wikitext_bytes": 19902,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Rwanda",
+    "wikitext_bytes": 25929,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 8,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "! scope=\"col\" style=\"width:80px;\"|Total population (in thousands)",
+       "scope=\"col\" style=\"width:80px;\"|Population aged 0–14 (%)",
+       "scope=\"col\" style=\"width:80px;\"|Population aged 15–64 (%)",
+       "scope=\"col\" style=\"width:80px;\"|Population aged 65+ (%)",
+       "scope=\"row\" | 1950",
+       "scope=\"row\" | 1955",
+       "scope=\"row\" | 1960",
+       "scope=\"row\" | 1965",
+       "scope=\"row\" | 1970",
+       "scope=\"row\" | 1975"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 36
+     },
+     {
+      "header": [
+       "style=\"width:80px;\"|Age group",
+       "style=\"width:80px;\"|Male",
+       "style=\"width:80px;\"|Female",
+       "style=\"width:80px;\"|Total",
+       "style=\"width:80px;\"|%",
+       "style=\"width:80pt;\"|Age group",
+       "style=\"width:80pt;\"|Male",
+       "style=\"width:80pt;\"|Female",
+       "style=\"width:80pt;\"|Total",
+       "style=\"width:80pt;\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 33
+     },
+     {
+      "header": [
+       "style=\"width:80pt;\"|Age group",
+       "style=\"width:80pt;\"|Male",
+       "style=\"width:80pt;\"|Female",
+       "style=\"width:80pt;\"|Total",
+       "style=\"width:80pt;\"|%",
+       "style=\"width:50px;\"|Age group",
+       "style=\"width:80pt;\"|Male",
+       "style=\"width:80px;\"|Female",
+       "style=\"width:80px;\"|Total",
+       "style=\"width:50px;\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\"|Mid-year population",
+       "style=\"width:80pt;\"|Live births",
+       "style=\"width:80pt;\"|Deaths",
+       "style=\"width:80pt;\"|Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)",
+       "style=\"width:80pt;\"|Total fertility rate (TFR)",
+       "style=\"width:80pt;\"|Infant mortality (per 1000)",
+       "style=\"width:80pt;\"|Life expectancy (in years)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=3| Total",
+       "colspan=3| Urban",
+       "colspan=3| Rural",
+       "{{abbr|CBR|Crude Birth Rate}}",
+       "{{abbr|TFR|Total Fertility Rate}}",
+       "{{abbr|WFR|Wanted Fertility Rate}}",
+       "{{abbr|CBR|Crude Birth Rate}}",
+       "{{abbr|TFR|Total Fertility Rate}}",
+       "{{abbr|WFR|Wanted Fertility Rate}}"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Province",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15–49 currently pregnant",
+       "style=\"width:100pt;\"| Mean number of children ever born to women age 40–49",
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Language(s) of Literacy",
+       "Percentage",
+       "Total",
+       "100%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 17
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Gicumbi",
+    "found": true,
+    "title": "Gicumbi District",
+    "url": "https://en.wikipedia.org/wiki/Gicumbi_District",
+    "wikitext_bytes": 4550,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Gisagara",
+    "found": true,
+    "title": "Gisagara District",
+    "url": "https://en.wikipedia.org/wiki/Gisagara_District",
+    "wikitext_bytes": 2408,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Huye",
+    "found": true,
+    "title": "Butare",
+    "url": "https://en.wikipedia.org/wiki/Butare",
+    "wikitext_bytes": 10811,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kicukiro",
+    "found": true,
+    "title": "Kicukiro District",
+    "url": "https://en.wikipedia.org/wiki/Kicukiro_District",
+    "wikitext_bytes": 10877,
+    "infobox_params": [],
+    "sections": [
+     "Population"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Ngororero",
+    "found": true,
+    "title": "Ngororero District",
+    "url": "https://en.wikipedia.org/wiki/Ngororero_District",
+    "wikitext_bytes": 3253,
+    "infobox_params": [],
+    "sections": [
+     "Population"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Rwanda - Settlements",
+   "name": "rwanda-settlements-0",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/rwanda-settlements-0",
+   "resources": [
+    {
+     "name": "rwa_settlements.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/61763430-ba07-4049-9a83-90574cc4ecc3/resource/d1a28aa5-05bf-4146-b299-a80d1e5340db/download/rwasettlements.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Rwanda - Airports",
+   "name": "rwanda-ports",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/rwanda-ports",
+   "resources": [
+    {
+     "name": "Rwanda Airports",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/0da211e0-80e5-4320-9f4e-8a98c656f638/resource/27671044-17cf-4f44-98d5-1aa35e10ba07/download/rwaairportsnisr.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Rwanda - Settlements (towns)",
+   "name": "rwanda-settlements",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/rwanda-settlements",
+   "resources": [
+    {
+     "name": "rwa_towns.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/78756611-b4d4-43b5-9fc8-9f4dccf4bb5a/resource/f9609203-13b0-424d-8186-071e741787e8/download/rwatowns.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Rwanda - Water courses (Rivers)",
+   "name": "rwanda-water-courses",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/rwanda-water-courses",
+   "resources": [
+    {
+     "name": "Rwanda rivers",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/9018958c-c1e9-4650-80a8-3c80495b296a/resource/07baacd9-77cc-4858-8b11-f1581cee20f2/download/rwariversnisr.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Rwanda - Water Bodies (Lakes)",
+   "name": "rwanda-water-bodies",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/rwanda-water-bodies",
+   "resources": [
+    {
+     "name": "rwa_lakes.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/0535f2f4-1612-49bc-835c-7d4f10c812a1/resource/ac787d08-9374-4399-98f7-6bc13bf397b2/download/rwalakes.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Rwanda: Road Surface Data",
+   "name": "rwanda-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/rwanda-road-surface-data",
+   "resources": [
+    {
+     "name": "Rwanda GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_rwa_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Rwanda GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_rwa_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Rwanda: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-rwanda",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-rwanda",
+   "resources": [
+    {
+     "name": "kontur_boundaries_RW_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_RW_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_RW_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_RW_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_RW_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_RW_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Food Security for the Horn of Africa",
+   "name": "ethiopia-food-security",
+   "org": "OCHA Ethiopia",
+   "url": "https://data.humdata.org/dataset/ethiopia-food-security",
+   "resources": [
+    {
+     "name": "Food security situation for Horn of Africa",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/76654673-8c03-4431-a947-fd0fb853a70b/resource/2ec3b5d2-38a1-43e6-9944-6a9373253eeb/download/ea1107cs1.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Food Security for the Horn of Africa",
+   "name": "horn-of-africa-food-security",
+   "org": "OCHA Ethiopia",
+   "url": "https://data.humdata.org/dataset/horn-of-africa-food-security",
+   "resources": [
+    {
+     "name": "ea_1107_ml1_2.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/80fafa94-f78f-4cfd-ad92-7cb4c7c2d7bc/resource/c69bc669-3226-4393-a62b-53cafe33b58c/download/ea1107ml12.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Rwanda Gridded Population Dataset",
+   "name": "rwanda-gridded-population-dataset",
+   "org": "U.S. Census Bureau",
+   "url": "https://data.humdata.org/dataset/rwanda-gridded-population-dataset",
+   "resources": [
+    {
+     "name": "rwanda_gridded_2002.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/09806feb-d200-46ae-8306-296a5275999c/resource/36840b26-43f7-453f-8bd8-ab5d22d5fa4a/download/rwanda_gridded_2002.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Rwanda - Accessibility Indicators",
+   "name": "rwanda-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/rwanda-accessibility-indicators",
+   "resources": [
+    {
+     "name": "RWA_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rwa/RWA_education_access.gpkg"
+    },
+    {
+     "name": "RWA_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rwa/RWA_education_access_long.csv"
+    },
+    {
+     "name": "RWA_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rwa/RWA_education_access_wide.csv"
+    },
+    {
+     "name": "RWA_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rwa/RWA_hospitals_access.gpkg"
+    },
+    {
+     "name": "RWA_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rwa/RWA_hospitals_access_long.csv"
+    },
+    {
+     "name": "RWA_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rwa/RWA_hospitals_access_wide.csv"
+    },
+    {
+     "name": "RWA_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rwa/RWA_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "RWA_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rwa/RWA_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Rwanda - Subnational Population Statistics",
+   "name": "cod-ps-rwa",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-rwa",
+   "resources": [
+    {
+     "name": "rwa_admpop_2023.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/94b26815-cd91-4553-b64d-7a6f153400bc/resource/231380c3-e8f6-408b-bf69-9aac06823d25/download/rwa_admpop_2023.xlsx"
+    },
+    {
+     "name": "rwa_gazetteer_rphc2012_v2.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/94b26815-cd91-4553-b64d-7a6f153400bc/resource/8c9fe1c1-379d-4b04-898d-04c89d3d2675/download/rwa_gazetteer_rphc2012_v2.xlsx"
+    },
+    {
+     "name": "RWA_CODPS_QA_2023.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/94b26815-cd91-4553-b64d-7a6f153400bc/resource/00848851-0e2c-4245-898d-851475a90353/download/rwa_codps_qa_2023.pdf"
+    },
+    {
+     "name": "rwa_admpop_2022.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/94b26815-cd91-4553-b64d-7a6f153400bc/resource/73836c44-8611-473f-a42f-5f90a6a460eb/download/rwa_admpop_2022.xlsx"
+    },
+    {
+     "name": "rwa_admpop_adm0_2023.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/94b26815-cd91-4553-b64d-7a6f153400bc/resource/164eee66-f158-41af-81d7-4f240151ff8d/download/rwa_admpop_adm0_2023.csv"
+    },
+    {
+     "name": "rwa_admpop_adm1_2023.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/94b26815-cd91-4553-b64d-7a6f153400bc/resource/63dfb3b5-7aac-4cdd-9fa5-baac711b2a50/download/rwa_admpop_adm1_2023.csv"
+    },
+    {
+     "name": "rwa_admpop_adm2_2023.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/94b26815-cd91-4553-b64d-7a6f153400bc/resource/4c88332a-ed41-4220-ac72-d3bddd2a3a05/download/rwa_admpop_adm2_2023.csv"
+    },
+    {
+     "name": "rwa_admpop_adm3_2023.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/94b26815-cd91-4553-b64d-7a6f153400bc/resource/b07265ad-055e-4ea8-bb95-de3adb1ae0a1/download/rwa_admpop_adm3_2023.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "POMELO - Rwanda High Resolution Population Density",
+   "name": "pomelo-rwanda-high-resolution-population",
+   "org": "ETH Zürich, Photogrammetry and Remote Sensing",
+   "url": "https://data.humdata.org/dataset/pomelo-rwanda-high-resolution-population",
+   "resources": [
+    {
+     "name": "rwa_pomelo.tiff",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/55b4e34a-3016-47d7-9d1e-db9dde7f1f97/resource/eeca5520-a1b3-4a42-b43d-e415bb8bb953/download/rwa_pomelo.tiff"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Rwanda - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-rwanda",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-rwanda",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Rwanda",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/f63ddc57-355a-433c-939c-b7693ede83e1/resource/ac4d8bd9-e968-4f5e-9a6e-2f8b423a48bc/download/social-protection-and-labor_rwa.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Rwanda: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "highresolutionpopulationdensitymaps-rwa",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/highresolutionpopulationdensitymaps-rwa",
+   "resources": [
+    {
+     "name": "rwa_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0ee1affc-6a90-4ad3-b7eb-166645668fc3/resource/be8af0ca-f3f6-4049-a2b6-13a5547527d9/download/rwa_general_2020_csv.zip"
+    },
+    {
+     "name": "rwa_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0ee1affc-6a90-4ad3-b7eb-166645668fc3/resource/a9013c82-cee9-43aa-a741-75a7595ca4fb/download/rwa_general_2020_geotiff.zip"
+    },
+    {
+     "name": "rwa_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0ee1affc-6a90-4ad3-b7eb-166645668fc3/resource/d9fe7d2b-ff7c-44eb-8352-4c4a7b029588/download/rwa_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "rwa_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0ee1affc-6a90-4ad3-b7eb-166645668fc3/resource/c52c86b9-7bf1-4138-9f7f-c7b6dba3aa38/download/rwa_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "rwa_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0ee1affc-6a90-4ad3-b7eb-166645668fc3/resource/343d8fc0-821e-482a-b393-33600881df2a/download/rwa_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "rwa_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0ee1affc-6a90-4ad3-b7eb-166645668fc3/resource/5d6fca76-25ef-48fd-92ab-86c94692fded/download/rwa_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "rwa_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0ee1affc-6a90-4ad3-b7eb-166645668fc3/resource/893854a2-afde-459c-b4a3-e3b7db5225d4/download/rwa_men_2020_csv.zip"
+    },
+    {
+     "name": "rwa_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0ee1affc-6a90-4ad3-b7eb-166645668fc3/resource/191b90a0-1354-4d19-8b68-9f648e28548a/download/rwa_men_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Rwanda - Population Counts",
+   "name": "worldpop-population-counts-for-rwanda",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-rwanda",
+   "resources": [
+    {
+     "name": "rwa_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/RWA/rwa_ppp_2020.tif"
+    },
+    {
+     "name": "rwa_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/RWA/rwa_ppp_2019.tif"
+    },
+    {
+     "name": "rwa_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/RWA/rwa_ppp_2018.tif"
+    },
+    {
+     "name": "rwa_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/RWA/rwa_ppp_2017.tif"
+    },
+    {
+     "name": "rwa_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/RWA/rwa_ppp_2016.tif"
+    },
+    {
+     "name": "rwa_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/RWA/rwa_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "rwa_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/RWA/rwa_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "rwa_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/RWA/rwa_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Rwanda - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-rw-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-rw-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_RW",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/3c3b1f73-f1a6-44fe-866a-c31cbaabf061/resource/dfd3b89f-7df8-4212-aa25-22c9edea8542/download/indicator_data_rw.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Rwanda: Level 1 Exposure Data",
+   "name": "rwanda-level-1-exposure-data",
+   "org": "Global Earthquake Model Foundation",
+   "url": "https://data.humdata.org/dataset/rwanda-level-1-exposure-data",
+   "resources": [
+    {
+     "name": "RWA_oed_exposure_20200811_hdx.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/0cbf91a8-3dbe-402b-8592-3fca9b052633/resource/223e53f9-94fa-4ddd-990a-292b35cc3d01/download/rwa_oed_exposure_20200811_hdx.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Rwanda: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-rwa",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-rwa",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-rw-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-rw-latest.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.statistics.gov.rw/",
+  "status": 0,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.statistics.gov.rw'. (_ssl.c:1016)>",
+  "pages": []
+ },
+ "verdict": {
+  "hdx_datasets": 19,
+  "hdx_machine_readable": 5,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

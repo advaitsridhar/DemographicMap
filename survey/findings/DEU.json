@@ -1,0 +1,99 @@
+{
+  "iso3": "DEU",
+  "name": "Germany",
+  "researched_at": "2026-09-10",
+  "research_note": "Only 2 of the planned ~8 searches ran before the session-wide WebSearch budget (200/200) was exhausted. The packet is 'partial': religion is already filled for all 16 Laender and 35 of 38 admin2 shapes from Zensus 2022 table 1000A-1018 (docs/SOURCES.md, Germany section), and ethnicity is declared not collected. This finding therefore concentrates on the two open gaps -- language everywhere, and religion for Rhineland-Palatinate's three former Regierungsbezirke -- and does not reopen the declared field.",
+  "nso": {
+    "name": "Statistisches Bundesamt (Destatis)",
+    "url": "https://www.destatis.de/",
+    "note": "Host of several search-result URLs (press releases under /DE/Presse/). Zensus 2022 results are published by the Statistische Aemter des Bundes und der Laender in a separate results database that needs a free account (SOURCES.md)."
+  },
+  "latest_census": {
+    "year": 2022,
+    "asks": {"religion": true, "ethnicity": false, "language": false},
+    "notes": "Zensus 2022 (reference 15 May 2022), register-based with a household sample. Religion is recorded as membership of a religious body incorporated under public law (RELZG2: Roman Catholic / Protestant / other-none-not stated by Land, Regierungsbezirk, Kreis and Gemeinde; RELZG1, seven categories, nationally only) -- SOURCES.md. Ethnicity is not collected; the census records citizenship and migration background (packet declaration; the statistik.rlp.de snippet lists 'age, gender and nationality' as the demographic items). Language is NOT a Zensus item: the Destatis press-release snippet says 'Data on languages predominantly spoken in households have been collected in the Microcensus since 2017' -- the Mikrozensus is an annual 1% household sample survey, not a count. Latest Mikrozensus headline: 77% of the population in private households spoke exclusively German at home (Destatis 'Zahl der Woche' 2025 and a Feb 2026 report on 2024 data; 80% in the 2023 release), with Turkish, Russian and Arabic the next most common."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion"],
+      "title": "Zensus 2022 table 1000A-1018 'Personen: Religion', Kreise cut (GEOLK4, ~400 Landkreise/kreisfreie Staedte) -- to aggregate Rhineland-Palatinate's Kreise to its three former Regierungsbezirke",
+      "url": null,
+      "publisher": "Statistische Aemter des Bundes und der Laender, Zensus 2022 results database (account-gated; ZENSUS_USER/ZENSUS_PASSWORD already wired in the repo's adapter)",
+      "kind": "census",
+      "format": "api",
+      "geography": "Landkreis / kreisfreie Stadt",
+      "geography_count": 400,
+      "matches_boundary_level": "neither directly (admin2 = 38 Regierungsbezirke/statistische Regionen). But Rhineland-Palatinate's 36 Kreise (12 kreisfreie Staedte + 24 Landkreise, per the statistik.rlp.de snippet) partition exactly into the three former Regierungsbezirke Koblenz, Trier and Rheinhessen-Pfalz that geoBoundaries still draws and that are the packet's 3 unfilled admin2 shapes. A fixed Kreis-to-former-RB mapping (abolished 2000, unchanged since) turns the 400-row cut into those 3 rows.",
+      "year": 2022,
+      "confidence": "high",
+      "evidence": "The cut's existence and the account/`regionalvariable` mechanics are recorded in docs/SOURCES.md (Germany section: 'published cut by Bundeslaender, by 36 Regierungsbezirke, by 400 Landkreise and by 10,787 Gemeinden'). The Kreis count for RLP is from the search snippet: 'census collection offices established in the administrations of the 12 independent cities and 24 districts of Rheinland-Pfalz'. The mapping itself is background knowledge and must be declared in the adapter, not inferred. No URL because it is a database table, not a page."
+    },
+    {
+      "fields": ["religion"],
+      "title": "Ergebnisse . Statistisches Landesamt Rheinland-Pfalz (Zensus 2022 results page)",
+      "url": "https://www.statistik.rlp.de/themen/zensus/ergebnisse",
+      "publisher": "Statistisches Landesamt Rheinland-Pfalz",
+      "kind": "census",
+      "format": "html",
+      "geography": "Landkreis / kreisfreie Stadt (36)",
+      "geography_count": 36,
+      "matches_boundary_level": "neither directly; aggregates to the 3 former Regierungsbezirke as above",
+      "year": 2022,
+      "confidence": "low",
+      "evidence": "Snippet mentions Kreis-level deviations from the projection ('plus 1.5 percent in Landkreis Bad Kreuznach ... minus 5.1 percent') but does not mention religion. An alternative, login-free route to the same Kreis figures if the Landesamt publishes the religion table; unverified."
+    },
+    {
+      "fields": ["language"],
+      "title": "Mikrozensus: 'vorwiegend zu Hause gesprochene Sprache' -- 77 % der Bevoelkerung sprechen zu Hause ausschliesslich Deutsch (Destatis Zahl der Woche, 2025)",
+      "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/Zahl-der-Woche/2025/PD25_08_p002.html",
+      "publisher": "Statistisches Bundesamt (Destatis)",
+      "kind": "survey",
+      "format": "html",
+      "geography": "national",
+      "geography_count": 1,
+      "matches_boundary_level": "none as published; a Bundesland cut was not found",
+      "year": 2024,
+      "confidence": "medium",
+      "evidence": "Snippet: 'Data on languages predominantly spoken in households have been collected in the Microcensus since 2017. In 2024, 77% of the population in private households in Germany spoke exclusively German at home.' The search summary states the results 'focus on national-level statistics and breakdowns by migration background, but not specifically tables organized by state' and points to Fachserie 1 Reihe 2.2 and GENESIS-Online as where a Land table would live. Related releases: https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/02/PD24_N008_12.html (more than three quarters of people with an immigration history speak German at home), https://www.destatis.de/DE/Presse/Pressemitteilungen/Zahl-der-Woche/2023/PD23_08_p002.html (80%), https://www.destatis.de/DE/Presse/Pressemitteilungen/Zahl-der-Woche/2019/PD19_37_p002.html (63% of households with a migration background speak mainly German). A 1% sample survey: the project ranks it below any count, but the language field currently holds nothing at either level."
+    },
+    {
+      "fields": ["language"],
+      "title": "Adler (2024), 'Die Erhebung von Sprachen im Deutschen ...' (IDS, Leibniz-Institut fuer Deutsche Sprache)",
+      "url": "https://ids-pub.bsz-bw.de/files/12893/Adler_Die_Erhebung_von_Sprachen_im_Deutschen_2024.pdf",
+      "publisher": "Leibniz-Institut fuer Deutsche Sprache (academic)",
+      "kind": "other",
+      "format": "pdf",
+      "geography": null,
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2024,
+      "confidence": "low",
+      "evidence": "Title only. A methodological review of how German official statistics collect language; the right document to settle whether any Land-level language table is published before searching for one."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [],
+    "admin2_samples": [],
+    "note": "The mandated searches ('Religion in Germany' wikipedia by state; 'Rheinhessen-Pfalz', 'Regierungsbezirk Braunschweig', 'Direktionsbezirk Chemnitz' wikipedia) were refused by the exhausted search budget. Not run, not 'no article'. For Germany the Wikipedia route is low value anyway: religion is already filled from the census at both levels, and German Wikipedia infoboxes for Regierungsbezirke do not usually carry language."
+  },
+  "tier": "B",
+  "tier_reason": "What is left is costly rather than absent. Religion for the 3 empty admin2 shapes exists as a count in the account-gated Zensus 2022 database, but at Kreis level, so it needs a declared Kreis-to-former-Regierungsbezirk aggregation. Language exists only in the Mikrozensus (a survey), and a Bundesland table was not found in the one search that ran. Ethnicity stays declared not_collected (tier C for that field).",
+  "replaces_existing": false,
+  "recommended_action": "(1) Religion, admin2: extend the existing Zensus adapter to request 1000A-1018 with the Kreis regionalvariable (GEOLK4) for Rhineland-Palatinate only, and sum the 36 Kreise into Koblenz, Trier and Rheinhessen-Pfalz using a mapping declared in code; refuse if a Kreis is unmapped or the three sums disagree with the Land row already held. Alternatively check whether statistik.rlp.de publishes the religion table by Kreis without a login. (2) Language, admin1: search GENESIS-Online's Mikrozensus tables and Fachserie 1 Reihe 2.2 for 'zu Hause gesprochene Sprache' by Bundesland (the search summary names both as the likely home); if found, load it flagged as a survey -- it fills a field that holds nothing. The Laender statistical offices' own Mikrozensus reports are the fallback. (3) Do not reopen ethnicity. (4) Nothing new on the 7-category religion classification (RELZG1): still national only.",
+  "searches_run": [
+    "Mikrozensus vorwiegend gesprochene Sprache im Haushalt nach Bundeslaendern Tabelle Destatis (ran)",
+    "Zensus 2022 Religion Landkreise Rheinland-Pfalz Ergebnisse statistik.rlp.de Tabelle (ran)",
+    "GENESIS-Online Mikrozensus zu Hause gesprochene Sprache Bundeslaender Tabelle (REFUSED: search budget exhausted)",
+    "Zensus 2022 Fragebogen Fragen Religion Sprache Migrationshintergrund (REFUSED)",
+    "Zensus 2022 Religionszugehoerigkeit kreisfreie Staedte Landkreise Rheinland-Pfalz Koblenz Trier (REFUSED)",
+    "\"Religion in Germany\" wikipedia by state table (REFUSED)",
+    "\"Rheinhessen-Pfalz\" / \"Regierungsbezirk Braunschweig\" / \"Direktionsbezirk Chemnitz\" wikipedia (REFUSED)"
+  ],
+  "not_found": [
+    "a Mikrozensus home-language table by Bundesland (only national press releases surfaced; the search summary explicitly says no state-level table was in the results)",
+    "any Zensus 2022 religion table cut by Rhineland-Palatinate's former Regierungsbezirke (none expected; the Kreis aggregation is the route)",
+    "any mention of religion on the statistik.rlp.de Zensus results snippet",
+    "any language item in Zensus 2022 (language is a Mikrozensus item since 2017)"
+  ],
+  "summary": "Germany's religion composition is already on the map from Zensus 2022 table 1000A-1018 for all 16 Laender and 35 of 38 admin2 shapes; the three empty shapes are Rhineland-Palatinate's former Regierungsbezirke, and the same table's Kreis cut (12 kreisfreie Staedte + 24 Landkreise for RLP) can be summed into them with a declared mapping -- a count, but behind the free-account database and an aggregation step. Language is not a census item at all: since 2017 the Mikrozensus (a 1% sample survey) asks which language is predominantly spoken at home (77% exclusively German in 2024), and the one search that ran found only national releases, with Fachserie 1 Reihe 2.2 and GENESIS-Online named as where a Bundesland table would be. Ethnicity remains declared not collected. Tier B: fill the three RLP shapes from the Kreis cut, then look for the Mikrozensus language table by Land and load it flagged as a survey if it exists."
+}

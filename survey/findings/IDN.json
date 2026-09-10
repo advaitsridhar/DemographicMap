@@ -1,0 +1,135 @@
+{
+  "iso3": "IDN",
+  "name": "Indonesia",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Badan Pusat Statistik (BPS-Statistics Indonesia)", "url": "https://www.bps.go.id/"},
+  "latest_census": {
+    "year": 2020,
+    "asks": {"religion": true, "ethnicity": true, "language": true},
+    "notes": "Sensus Penduduk 2020 (SP2020) ran as a short form in 2020 and a sample long form in 2022 (delayed by COVID). Ethnicity (suku bangsa) and daily/regional language were asked on the 2022 long form, i.e. on a SAMPLE -- evidenced by UNFPA/BPS 'Profile of Ethnic Groups and Regional Language Diversity: 2020 Population Census Long Form Results' and BPS 'Hasil Long Form Sensus Penduduk 2020'. Religion appears in BPS provincial tables by kabupaten/kota (e.g. DKI Jakarta) but the search snippets do not say whether those figures are SP2020 or Dukcapil registry counts. The last FULL-COUNT publication of all three fields is SP2010: BPS 'Kewarganegaraan, Suku Bangsa, Agama, dan Bahasa Sehari-hari Penduduk Indonesia' (2012), which tabulates 146 ethnic groups, religion and daily language by province. So: religion counted and published by kabupaten (registry and/or census); ethnicity and language counted in full only in 2010 (by province, PDF) and sampled in 2022."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion"],
+      "title": "Portal GIS Dukcapil (Ministry of Home Affairs civil registry) -- 'Visualisasi Data Kependudukan' incl. Agama by province and kabupaten/kota; ArcGIS Online item 'Data GIS Dukcapil Kemendagri Penduduk'",
+      "url": "https://gis.dukcapil.kemendagri.go.id/",
+      "publisher": "Direktorat Jenderal Kependudukan dan Pencatatan Sipil (Dukcapil), Kemendagri",
+      "kind": "register",
+      "format": "ArcGIS web map / feature layer (a public ArcGIS feature service would answer keyless REST queries with f=json; unverified that the religion attributes are in the layer)",
+      "geography": "province and kabupaten/kota",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 plausibly (Indonesia has ~514 kabupaten/kota; the boundary file draws 518) and admin1 (34 shapes vs 38 current provinces)",
+      "year": 2024,
+      "confidence": "medium",
+      "evidence": "Search snippets: 'Portal GIS Dukcapil can be used to display ... Population Data in Indonesia, such as Demographic Data, Religion, Gender, Marital Status ...'; 'Each province displays complete information including the number of regencies/cities down to ... number of residents'. Related result URLs: web app https://gis.dukcapil.kemendagri.go.id/arcgis/apps/webappviewer/index.html?id=c557104ad5054f488232c2a1235d86ef ; ArcGIS Online item https://www.arcgis.com/home/item.html?id=20c44406e97d445ca7f294b6d0ea9c54 ; 29 items tagged kemendagri at https://www.arcgis.com/home/search.html?q=tags:%22kemendagri%22 . A keyless route the repo has not measured (scripts/probe_arcgis.py already exists for Esri items). Registry counts, not a census, but a full count."
+    },
+    {
+      "fields": ["religion"],
+      "title": "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi Sumatera Utara, 2022 (Portal Satu Data Indonesia catalogue; one dataset per province)",
+      "url": "https://katalog.satudata.go.id/dataset/jumlah-penduduk-menurut-agama-dan-kabupaten-kota-di-provinsi-sumatera-utara-2022",
+      "publisher": "Portal Satu Data Indonesia (katalog.satudata.go.id / data.go.id), contributed by provincial agencies",
+      "kind": "register",
+      "format": "CKAN dataset (resources normally CSV/XLSX; CKAN's /api/3/action endpoints are keyless on a standard install -- unverified here)",
+      "geography": "kabupaten/kota within one province",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 for the provinces that have such a dataset; only Sumatera Utara surfaced",
+      "year": 2022,
+      "confidence": "medium",
+      "evidence": "Search result title names the table and level. Sibling datasets on the same portal: 'Jumlah Penduduk Menurut Agama' (by province) https://katalog.satudata.go.id/dataset/jumlah-penduduk-menurut-agama6 and https://data.go.id/dataset/dataset/jumlah-penduduk-menurut-agama6 ; 'Jumlah Penduduk Menurut Agama dan Kecamatan' https://data.go.id/dataset/dataset/jumlah-penduduk-menurut-agama-dan-kecamatan1 ; a village-level one for Kecamatan Sumber. docs/SOURCES.md records data.go.id timing out from the runner; katalog.satudata.go.id is a different host and unmeasured. Coverage across all 34-38 provinces is unknown -- a runner should use the catalogue search."
+    },
+    {
+      "fields": ["religion"],
+      "title": "Jumlah Penduduk Menurut Agama (Satu Data Kementerian Agama) -- with an open download endpoint",
+      "url": "https://satudata.kemenag.go.id/dataset/detail/jumlah-penduduk-menurut-agama",
+      "publisher": "Kementerian Agama RI (Ministry of Religious Affairs)",
+      "kind": "register",
+      "format": "download via https://satudata.kemenag.go.id/api/satudata/open/data/download?slug=jumlah-penduduk-menurut-agama (format not visible; 'open' in the path suggests keyless)",
+      "geography": "province; kabupaten/kota granularity suggested but unverified",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 at least; admin2 unverified",
+      "year": null,
+      "confidence": "medium",
+      "evidence": "The download URL itself surfaced as a search result; snippet: 'population by religion (Islam, and other religions) broken down by province, and ... also includes data organized by district/city (kabupaten/kota)'. Variants ?partner=265 and ?toggleid=3 surfaced, suggesting several views. docs/SOURCES.md line 2201 says this host timed out from the runner -- re-measure rather than assume; a timeout is not a refusal."
+    },
+    {
+      "fields": ["ethnicity", "religion", "language"],
+      "title": "Kewarganegaraan, Suku Bangsa, Agama, dan Bahasa Sehari-hari Penduduk Indonesia: Hasil Sensus Penduduk 2010 (BPS, 2012)",
+      "url": "https://media.neliti.com/media/publications/49956-ID-kewarganegaraan-suku-bangsa-agama-dan-bahasa-sehari-hari-penduduk-indonesia.pdf",
+      "publisher": "BPS-Statistics Indonesia (PDF mirrored on neliti.com; BPS page https://www.bps.go.id/en/publication/2012/05/23/55eca38b7fe0830834605b35/kewarganegaraan-suku-bangsa-agama-dan-bahasa-sehari-hari-penduduk-indonesia)",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "province (33 in 2010)",
+      "geography_count": 33,
+      "matches_boundary_level": "admin1 (33 of 34 shapes; North Kalimantan was created 2012)",
+      "year": 2010,
+      "confidence": "high",
+      "evidence": "Search snippets: 'describes the situation of Indonesia's population regarding nationality, ethnicity, religion, and daily language'; '146 ethnic groups ... based on the 2010 Population Census'; 'Suku Jawa ... 40.05 percent ... Suku Sunda 15.50 percent'. Full count, the only one of ethnicity and language; bps.go.id is 403 to the project's agent but the neliti mirror is a different host. PDF tables by province -- tier B cost."
+    },
+    {
+      "fields": ["ethnicity", "language"],
+      "title": "Profile of Ethnic Groups and Regional Language Diversity: 2020 Population Census Long Form Results (BPS/UNFPA)",
+      "url": "https://indonesia.unfpa.org/en/publications/profile-ethnic-groups-and-regional-language-diversity-2020-population-census-long-form",
+      "publisher": "BPS with UNFPA Indonesia",
+      "kind": "survey",
+      "format": "pdf",
+      "geography": "province (distribution of ten major ethnic groups)",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 (partial: profiles ten groups, not a full composition)",
+      "year": 2022,
+      "confidence": "medium",
+      "evidence": "Snippet: 'reviews the socio-demographic profiles of ten major ethnic groups in Indonesia, including their distribution'. Long-form = sample, ranked below the 2010 count. BPS companion publications on bps.go.id (closed host): https://www.bps.go.id/en/publication/2023/01/27/ffb5939b4393e5b1146a9b91/hasil-long-form-sensus-penduduk-2020.html and https://www.bps.go.id/id/publication/2023/07/18/4a49f846d0708c1fe1117b5f/penduduk-indonesia-hasil-long-form-sensus-penduduk-2020.html ; per-kabupaten long-form booklets also exist on *.bps.go.id (e.g. Pegunungan Bintang, Pangkep) -- whether they tabulate suku/agama is unverified."
+    },
+    {
+      "fields": ["religion"],
+      "title": "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi DKI Jakarta (BPS provincial statistics table; one such table per province)",
+      "url": "https://jakarta.bps.go.id/en/statistics-table/2/ODQ0IzI=/jumlah-penduduk-menurut-agama-dan-kabupaten-kota-di-provinsi-dki-jakarta.html",
+      "publisher": "BPS Provinsi DKI Jakarta",
+      "kind": "register",
+      "format": "html table-builder (XLSX export on the page)",
+      "geography": "kabupaten/kota",
+      "geography_count": null,
+      "matches_boundary_level": "admin2",
+      "year": null,
+      "confidence": "high",
+      "evidence": "Search result title. Confirms the table docs/SOURCES.md describes; the *.bps.go.id hosts answer 403 to the project's agent and the WebAPI needs a key, so this stays the closed route unless the owner registers a key."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Indonesia", "url": "https://en.wikipedia.org/wiki/Religion_in_Indonesia",
+       "appears_to_contain": "snippet gives 2025 government national shares (87.15% Muslim, 7.37% Protestant ...) and a provinces map (File:Religion in Indonesian Provinces.jpg); a by-province table was not evident in the snippet; unverified"},
+      {"title": "Christianity in Indonesia", "url": "https://en.wikipedia.org/wiki/Christianity_in_Indonesia",
+       "appears_to_contain": "snippet gives Christian shares for named provinces (ENT 55% Catholic, Papua 58% Protestant), i.e. some by-province figures exist in the text"},
+      {"title": "Daftar suku bangsa di Indonesia menurut jumlah penduduk (id.wikipedia)", "url": "https://id.wikipedia.org/wiki/Daftar_suku_bangsa_di_Indonesia_menurut_jumlah_penduduk",
+       "appears_to_contain": "SP2010 national ethnic-group counts; by-province not evident. Companion: 'Daftar bahasa di Indonesia menurut BPS 2010' https://id.wikipedia.org/wiki/Daftar_bahasa_di_Indonesia_menurut_BPS_2010"}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Jeneponto", "search_hit_title": null, "url": null,
+       "note": "NOT SEARCHED: session WebSearch budget exhausted. Runner: search '\"Jeneponto\" Indonesia wikipedia'."},
+      {"shape_name": "Sumba Tengah", "search_hit_title": null, "url": null,
+       "note": "NOT SEARCHED (budget exhausted). English article is likely titled 'Central Sumba Regency'; the boundary uses the Indonesian name."},
+      {"shape_name": "Tanjung Jabung Timur", "search_hit_title": null, "url": null,
+       "note": "NOT SEARCHED (budget exhausted). English article is likely 'East Tanjung Jabung Regency' -- another Indonesian-vs-English naming case for the join."}
+    ]
+  },
+  "tier": "B",
+  "tier_reason": "Religion by kabupaten/kota is a full count (Dukcapil registry and BPS tables) and three keyless hosts carrying it surfaced -- the Dukcapil ArcGIS portal, the Satu Data catalogue (per-province datasets) and the Kemenag open download -- but none is verified as CSV/API at admin2 and two of them are recorded as timing out from the runner. Ethnicity and language: full count only in SP2010, by province, as a PDF (neliti mirror). Not A until a runner confirms one machine-readable kabupaten resource.",
+  "replaces_existing": false,
+  "recommended_action": "1) Probe the Dukcapil ArcGIS Online item (20c44406e97d445ca7f294b6d0ea9c54) and the 29 kemendagri-tagged items with scripts/probe_arcgis.py: if a public feature layer carries agama attributes per kabupaten/kota, that is a keyless full-count religion source for 518 admin2 shapes (registry, not census -- label it so). 2) Query katalog.satudata.go.id's CKAN API for 'Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi' to see how many provinces publish it and in what format. 3) Re-measure satudata.kemenag.go.id's open download endpoint (recorded as a timeout, not a refusal). 4) For ethnicity/language at admin1, read the SP2010 BPS publication PDF from the neliti mirror (33 provinces). 5) The BPS WebAPI key remains the clean census route for religion by kabupaten when the owner registers one. 6) Run the three admin2 Wikipedia sample searches not run here.",
+  "searches_run": [
+    "Indonesia jumlah penduduk menurut agama kabupaten kota xlsx csv data.go.id OR satudata.kemenag.go.id",
+    "Dukcapil Kemendagri data penduduk menurut agama per kabupaten 2024 gis.dukcapil.kemendagri.go.id",
+    "satudata.kemenag.go.id jumlah penduduk menurut agama kabupaten kota seluruh indonesia download",
+    "BPS \"Kewarganegaraan, Suku Bangsa, Agama, dan Bahasa Sehari-hari Penduduk Indonesia\" Sensus Penduduk 2010 suku bangsa per provinsi",
+    "Sensus Penduduk 2020 long form hasil agama kabupaten kota BPS publikasi 2022 suku bangsa",
+    "\"Religion in Indonesia\" wikipedia table by province OR \"Ethnic groups in Indonesia\" wikipedia by province"
+  ],
+  "not_found": [
+    "a single all-Indonesia CSV of religion by kabupaten/kota on a keyless host (only per-province Satu Data datasets, a Kemenag download of unverified granularity, and the Dukcapil GIS portal)",
+    "any HDX dataset of Indonesian religion/ethnicity (not re-searched; docs/SOURCES.md records HDX has population only)",
+    "ethnicity or language by kabupaten from any census (SP2010 publishes by province; SP2020 long form is a sample)",
+    "a Wikipedia list article with a clear religion-by-province table in its snippet",
+    "NOT RUN (WebSearch budget exhausted): '\"Jeneponto\" Indonesia wikipedia', '\"Sumba Tengah\" Central Sumba Indonesia wikipedia', '\"Tanjung Jabung Timur\" Indonesia wikipedia', 'katalog.satudata.go.id \"Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi\"', 'arcgis.com Dukcapil Kemendagri feature layer penduduk agama kabupaten', '\"Ethnic groups in Indonesia\" wikipedia 2010 census table by province'"
+  ],
+  "summary": "Indonesia collects religion for everyone (SP2020 and the Dukcapil civil registry) and publishes it by kabupaten/kota, and three keyless hosts outside the 403/keyed BPS perimeter surfaced: the Kemendagri Dukcapil GIS portal (ArcGIS Online item 20c44406e97d445ca7f294b6d0ea9c54, snippet says it displays religion by province and kabupaten), the national Satu Data catalogue with per-province datasets such as 'Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi Sumatera Utara, 2022', and a Kemenag open download endpoint. None is verified as CSV/API at admin2 from a snippet, and SOURCES.md records two of the hosts timing out from the runner, so this is tier B pending one probe -- the ArcGIS feature-layer route is the most promising and the repo already has an Esri prober. Ethnicity and language were fully counted only in SP2010, published by province in the BPS publication 'Kewarganegaraan, Suku Bangsa, Agama, dan Bahasa Sehari-hari' (PDF, mirrored on neliti.com); the 2022 long form re-asked them on a sample and BPS/UNFPA profile ten major groups by province. The three admin2 Wikipedia sample checks were not run because the session's search budget ran out."
+}

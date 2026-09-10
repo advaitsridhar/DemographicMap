@@ -1,0 +1,732 @@
+{
+ "iso3": "GTM",
+ "name": "Guatemala",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity",
+    "language"
+   ],
+   "title": "Censo 2018 - Resultados: cuadros by departamento and municipio (pueblo de pertenencia, comunidad lingüística, idioma materno), REDATAM online, and the public census database",
+   "kind": "census",
+   "format": "xlsx cuadros; REDATAM table-builder; public microdata (recalled)",
+   "geography": "departamento (22) and municipio (340 at the 2018 census)",
+   "geography_count": 340,
+   "matches_boundary_level": "admin1 (22 departamentos) exactly; admin2 near (340 municipios vs 342 shapes - municipios created after 2018 or a boundary-file duplicate)",
+   "url": "https://www.censopoblacion.gt/",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error timed out>"
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "language"
+   ],
+   "title": "IPUMS-International - Guatemala 1964, 1973, 1981, 1994, 2002 (and possibly 2018) census samples",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "departamento and municipio",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 and admin2",
+   "url": "https://international.ipums.org/",
+   "status": 200,
+   "content_type": "text/html",
+   "final_url": "https://international.ipums.org/international/",
+   "error": null,
+   "body": {
+    "bytes_read": 13024,
+    "kind": "html",
+    "title": "IPUMS International",
+    "links_to_files": [],
+    "mentions": [
+     "census"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Guatemala",
+    "wikitext_bytes": 17239,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Guatemala",
+    "wikitext_bytes": 53166,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 12,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 3,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "! width=\"70pt\"|Total population<br /> (x 1000)",
+       "width=\"70pt\"|Proportion<br />aged 0–14<br />(%)",
+       "width=\"70pt\"|Proportion<br />aged 15–64<br />(%)",
+       "width=\"70pt\"|Proportion<br />aged 65+<br />(%)",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|F"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "Rank",
+       "Department",
+       "Pop.",
+       "Rank",
+       "Department",
+       "Pop.",
+       "! style=\"width:80pt;\"|Average population",
+       "style=\"width:80pt;\"|Live births",
+       "style=\"width:80pt;\"|Deaths",
+       "style=\"width:80pt;\"|Natural change"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\"|Average population",
+       "style=\"width:80pt;\"|Live births",
+       "style=\"width:80pt;\"|Deaths",
+       "style=\"width:80pt;\"|Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1,000)",
+       "style=\"width:80pt;\"|Death rate (per 1,000)",
+       "style=\"width:80pt;\"|Natural change (per 1,000)",
+       "style=\"width:80pt;\"|Crude migration change (per 1,000)",
+       "style=\"width:80pt;\"|Fertility rate"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 36
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January – March 2024",
+       "January – March 2025",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:",
+       "style=\"width:50pt;\"| Year",
+       "style=\"width:50pt;\"| CBR (total)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "style=\"width:50pt;\"| Year",
+       "style=\"width:50pt;\"| CBR (total)",
+       "style=\"width:50pt;\"| TFR (total)",
+       "style=\"width:50pt;\"| CBR (urban)",
+       "style=\"width:50pt;\"| TFR (urban)",
+       "style=\"width:50pt;\"| CBR (rural)",
+       "style=\"width:50pt;\"| TFR (rural)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "colspan=7 | Religious evolution in Guatemala<ref name=\"dary\">Pdf. Crecimiento y Situación Actual de la Iglesia Evangélica de Guatemala. Public Religious Affiliation Surveys (CBN Poll´s compilation). Claudia Dary. 2019</ref>",
+       "style=\"background:#659ec7;\"|Year",
+       "style=\"background:#659ec7;\"|% Catholic",
+       "style=\"background:#659ec7;\"|% Protestants",
+       "style=\"background:#659ec7;\"|% Others",
+       "style=\"background:#659ec7;\"|% No religion",
+       "style=\"background:lemonchiffon;\"| March 1986",
+       "style=\"background:lemonchiffon;\"| March 1991",
+       "style=\"background:lemonchiffon;\"| October 2001 – January 2002",
+       "style=\"background:lemonchiffon;\"| June 2011"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "colspan=7 | Religious evolution in Guatemala<ref name=\"dary\">Pdf. Crecimiento y Situación Actual de la Iglesia Evangélica de Guatemala. Public Religious Affiliation Surveys (CBN Poll´s compilation). Claudia Dary. 2019</ref>",
+       "style=\"background:#659ec7;\"|Year",
+       "style=\"background:#659ec7;\"|% Catholic",
+       "style=\"background:#659ec7;\"|% Protestants",
+       "style=\"background:#659ec7;\"|% Others",
+       "style=\"background:#659ec7;\"|% No religion",
+       "style=\"background:lemonchiffon;\"| March 1986",
+       "style=\"background:lemonchiffon;\"| March 1991",
+       "style=\"background:lemonchiffon;\"| October 2001 – January 2002",
+       "style=\"background:lemonchiffon;\"| June 2011"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Country",
+       "Count"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Chiché",
+    "found": true,
+    "title": "Chiché, Guatemala",
+    "url": "https://en.wikipedia.org/wiki/Chich%C3%A9%2C_Guatemala",
+    "wikitext_bytes": 5502,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Génova",
+    "found": true,
+    "title": "Génova, Quetzaltenango",
+    "url": "https://en.wikipedia.org/wiki/G%C3%A9nova%2C_Quetzaltenango",
+    "wikitext_bytes": 2798,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "San Francisco Zapotitlán",
+    "found": true,
+    "title": "San Francisco Zapotitlán",
+    "url": "https://en.wikipedia.org/wiki/San_Francisco_Zapotitl%C3%A1n",
+    "wikitext_bytes": 5192,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "San José",
+    "found": true,
+    "title": "San José",
+    "url": "https://en.wikipedia.org/wiki/San_Jos%C3%A9",
+    "wikitext_bytes": 7624,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "San Juan La Laguna",
+    "found": true,
+    "title": "San Juan La Laguna",
+    "url": "https://en.wikipedia.org/wiki/San_Juan_La_Laguna",
+    "wikitext_bytes": 18459,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics2_info1"
+    ],
+    "sections": [
+     "Ethnic history"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Guatemala: Languages",
+   "name": "guatemala-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/guatemala-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_GTM_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/08bdb9aa-4ceb-4d28-b6d3-3d54198d4269/resource/e1668279-72b2-4bb2-9e52-d4b6fd523a44/download/clearglobal_language_use_gtm_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_GTM_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/08bdb9aa-4ceb-4d28-b6d3-3d54198d4269/resource/287114eb-5dd9-4ef3-b9a5-e0905c724d8f/download/clearglobal_language_use_gtm_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_GTM_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/08bdb9aa-4ceb-4d28-b6d3-3d54198d4269/resource/29b2cbbf-0c54-4425-b8d9-b601764398fe/download/clearglobal_language_use_gtm_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Guatemala: Road Surface Data",
+   "name": "guatemala-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/guatemala-road-surface-data",
+   "resources": [
+    {
+     "name": "Guatemala GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_gtm_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Guatemala GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_gtm_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Guatemala: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-guatemala",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-guatemala",
+   "resources": [
+    {
+     "name": "kontur_boundaries_GT_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_GT_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_GT_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_GT_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_GT_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_GT_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Central America - Media Analysis",
+   "name": "central-america-media-analysis",
+   "org": "Acción Contra el hambre - GIS4tech",
+   "url": "https://data.humdata.org/dataset/central-america-media-analysis",
+   "resources": [
+    {
+     "name": "mediaanalysis.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a70d6200-52ca-4ddb-b95c-db065c0b448f/resource/46c69855-71c0-4f82-8427-16837cfbc714/download/mediaanalysis.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Censo de población Guatemala",
+   "name": "censo-de-poblacion-guatemala",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/censo-de-poblacion-guatemala",
+   "resources": [
+    {
+     "name": "PROYECCIONES Población 2000-2050 INE.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/9f1f1a9d-f782-473f-beb2-34b7856ad242/resource/b6bd72d1-8e42-4fd7-86d9-15dcceb0909b/download/proyecciones-poblacin-2000-2050-ine.xls"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Guatemala - Subnational Population Statistics",
+   "name": "cod-ps-gtm",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-gtm",
+   "resources": [
+    {
+     "name": "GTM-COD-PS-2024-Explanatory-Note.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/452f4fe9-6baf-46ef-a50e-7a6b1862d9fb/resource/50e39d84-8c79-4bed-9c16-31fdcf6975d5/download/gtm-cod-ps-2024-explanatory-note.pdf"
+    },
+    {
+     "name": "gtm_admpop_2024.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/452f4fe9-6baf-46ef-a50e-7a6b1862d9fb/resource/56021c82-342a-410b-ac13-7a931d6b2feb/download/gtm_admpop_2024.xlsx"
+    },
+    {
+     "name": "gtm_admgz.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/452f4fe9-6baf-46ef-a50e-7a6b1862d9fb/resource/c82c3a26-2a58-4956-bd7a-f8274d332e90/download/gtm_admgz.xlsx"
+    },
+    {
+     "name": "gtm_admpop_adm0_2024.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/452f4fe9-6baf-46ef-a50e-7a6b1862d9fb/resource/c35ba3b7-1046-45ca-93b5-d7bce302fdba/download/gtm_admpop_adm0_2024.csv"
+    },
+    {
+     "name": "gtm_admpop_adm1_2024.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/452f4fe9-6baf-46ef-a50e-7a6b1862d9fb/resource/a983f193-2cb3-4f7c-af0b-6b889b7201bc/download/gtm_admpop_adm1_2024.csv"
+    },
+    {
+     "name": "gtm_admpop_adm2_2024.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/452f4fe9-6baf-46ef-a50e-7a6b1862d9fb/resource/2dc15d20-568b-4c23-92bc-443eefba8460/download/gtm_admpop_adm2_2024.csv"
+    },
+    {
+     "name": "gtm_admpop_2023.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/452f4fe9-6baf-46ef-a50e-7a6b1862d9fb/resource/fae0d488-a3ce-4ab4-afc0-ed4269cf0399/download/gtm_admpop_2023.xlsx"
+    },
+    {
+     "name": "gtm_admpop_2022.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/452f4fe9-6baf-46ef-a50e-7a6b1862d9fb/resource/5aa9b39e-cd5f-45de-b08f-ba661f8bc12f/download/gtm_admpop_2022.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Guatemala - Accessibility Indicators",
+   "name": "guatemala-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/guatemala-accessibility-indicators",
+   "resources": [
+    {
+     "name": "GTM_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gtm/GTM_education_access.gpkg"
+    },
+    {
+     "name": "GTM_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gtm/GTM_education_access_long.csv"
+    },
+    {
+     "name": "GTM_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gtm/GTM_education_access_wide.csv"
+    },
+    {
+     "name": "GTM_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gtm/GTM_hospitals_access.gpkg"
+    },
+    {
+     "name": "GTM_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gtm/GTM_hospitals_access_long.csv"
+    },
+    {
+     "name": "GTM_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gtm/GTM_hospitals_access_wide.csv"
+    },
+    {
+     "name": "GTM_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gtm/GTM_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "GTM_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gtm/GTM_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Guatemala: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "guatemala-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/guatemala-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "gtm_general_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/2bdadbd8-c704-4231-8457-9b1dc5ce18b1/resource/dd90e4ea-866b-4b16-b326-1d285505334a/download/gtm_general_2020_csv.zip"
+    },
+    {
+     "name": "gtm_general_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/2bdadbd8-c704-4231-8457-9b1dc5ce18b1/resource/dd699b9d-0cce-4092-8793-8698bd658bed/download/gtm_general_2020_geotiff.zip"
+    },
+    {
+     "name": "gtm_children_under_five_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/2bdadbd8-c704-4231-8457-9b1dc5ce18b1/resource/9a643d75-6fd2-4fbf-b4a3-6ea674a02d5d/download/gtm_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "gtm_children_under_five_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/2bdadbd8-c704-4231-8457-9b1dc5ce18b1/resource/868a3383-cb38-4238-acc6-5cab4e2fd4fd/download/gtm_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "gtm_elderly_60_plus_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/2bdadbd8-c704-4231-8457-9b1dc5ce18b1/resource/7a60db91-268f-4978-adfd-e2ac1d4eff74/download/gtm_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "gtm_elderly_60_plus_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/2bdadbd8-c704-4231-8457-9b1dc5ce18b1/resource/eca5e028-c21d-41f4-9c6b-a5e9ad6bfcfc/download/gtm_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "gtm_men_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/2bdadbd8-c704-4231-8457-9b1dc5ce18b1/resource/0a409913-66c4-46bc-97ff-87a5a0ca9b96/download/gtm_men_2020_csv.zip"
+    },
+    {
+     "name": "gtm_men_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/2bdadbd8-c704-4231-8457-9b1dc5ce18b1/resource/ff12bd37-65a9-4601-9348-5b8088fdc56e/download/gtm_men_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Guatemala - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-guatemala",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-guatemala",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Guatemala",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/0bc67bfa-75f5-4741-9247-06db95f51485/resource/78cb56bc-c996-48e0-973c-c7c9f99441e4/download/social-protection-and-labor_gtm.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Guatemala Pobreza rural 2009",
+   "name": "guatemala-pobreza-rural-2009",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/guatemala-pobreza-rural-2009",
+   "resources": [
+    {
+     "name": "2.1.1.C Pobreza rural en Guatemala.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/2e394436-6477-4545-a615-f9d4133a7212/resource/ed9a4b2b-e851-47fa-b416-4f755fc1256c/download/2.1.1.c-pobreza-rural-en-guatemala.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Guatemala - Population Counts",
+   "name": "worldpop-population-counts-for-guatemala",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-guatemala",
+   "resources": [
+    {
+     "name": "gtm_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/GTM/gtm_ppp_2020.tif"
+    },
+    {
+     "name": "gtm_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/GTM/gtm_ppp_2019.tif"
+    },
+    {
+     "name": "gtm_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/GTM/gtm_ppp_2018.tif"
+    },
+    {
+     "name": "gtm_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/GTM/gtm_ppp_2017.tif"
+    },
+    {
+     "name": "gtm_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/GTM/gtm_ppp_2016.tif"
+    },
+    {
+     "name": "gtm_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/GTM/gtm_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "gtm_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/GTM/gtm_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "gtm_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/GTM/gtm_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Central America - Classification of Municipal Agricultural Productivity",
+   "name": "municipal-productivity",
+   "org": "Acción Contra el hambre - GIS4tech",
+   "url": "https://data.humdata.org/dataset/municipal-productivity",
+   "resources": [
+    {
+     "name": "Municipal productivity by ACH-GIS4Tech.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a6ac2d9f-1a38-403c-a7a4-cd9bf51adf19/resource/e4a02d88-82d4-47a5-8a42-f517c1513305/download/municipal-productivity.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Guatemala - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-gt-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-gt-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_GT",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a5582cd9-59b9-4b97-9d4f-765fe94f474c/resource/830288cc-76a3-4ba0-bb85-9c7651275073/download/indicator_data_gt.csv"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.ine.gob.gt/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.ine.gob.gt/censo-poblacion/",
+    "status": 200,
+    "kind": "html",
+    "title": "Radware Captcha Page",
+    "files": [],
+    "mentions": []
+   }
+  ],
+  "title": "Instituto Nacional de Estadística &#8211; Instituto Nacional de Estadística Guatemala",
+  "matching_links": 1
+ },
+ "verdict": {
+  "hdx_datasets": 13,
+  "hdx_machine_readable": 10,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "1/2",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

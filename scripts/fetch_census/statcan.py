@@ -1,42 +1,82 @@
 #!/usr/bin/env python3
-"""Canada -- Statistics Canada 2021 Census Profile (provinces and census divisions).
+"""Canada -- 2021 Census Profile for provinces, territories and economic regions.
 
-StatCan keys census geography by **DGUID** (e.g. ``2021A000224`` for Quebec,
-``2021A00033520`` for Toronto CD).  The Census Profile web data service returns
-every characteristic for one geography at a time, so this walks the geography
-list and pulls the four characteristic blocks the app uses.
+The Census Profile web service on www12.statcan.gc.ca answers non-browser
+clients with an HTML shell for every REST path, valid DGUIDs included -- a
+deliberate wall this project does not spoof its way past. The same profile
+is published as one downloadable file per geography set, and the set for
+"Canada, provinces, territories and economic regions" (catalogue
+98-401-X2021008) answers a plain GET on a runner: a 4 MB zip holding a 37 MB
+CSV, one row per geography and characteristic. That file was requested and
+its column and characteristic lists read before this was written.
 
-Canada's census asks religion only every ten years -- 2021 has it, 2016 does
-not -- and reports "visible minority" (a legal category under the Employment
-Equity Act) rather than ethnicity, alongside a separate multi-response
-"ethnic or cultural origin" question.  Both are labelled as such so they are not
-read as equivalent to, say, the UK's ethnic-group question.
+The 76 economic regions are what geoBoundaries draws as Canada's second
+level, so this adapter fills both levels from the one file.
+
+**The characteristics are a tree.** Each row's CHARACTERISTIC_NAME carries
+its depth as leading spaces, two per level, and a block starts at an
+unindented "Total - ..." row. A composition is the block's leaves -- the rows
+no deeper row follows -- which partition the block's total exactly (to
+StatCan's random rounding to a multiple of 5). Religion's leaves are the
+denominations under Christian and the other religions beside it; mother
+tongue's are the individual languages and the multiple-response
+combinations; visible minority's are the twelve groups under "Total visible
+minority population" and "Not a visible minority" beside it.
+
+**What the fields are.** Religion is asked once a decade and 2021 asked it.
+Canada has no ethnicity question: "visible minority" is a category of the
+Employment Equity Act, published beside a separate multi-response ethnic or
+cultural origin question, and the record's note says so. Language is mother
+tongue for the total population excluding institutional residents (100%
+data); religion and visible minority are 25% sample data of the population
+in private households, and their block totals are that universe.
 
 Usage:
-    python -m scripts.fetch_census.statcan --level province
+    python -m scripts.fetch_census.statcan
 """
 
 from __future__ import annotations
 
 import argparse
+import csv
+import io
+import re
+import zipfile
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, gap, http_json, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares, write_json,
 )
 
-PROFILE = ("https://www12.statcan.gc.ca/rest/census-recensement/CPR2021.json"
-           "?lang=E&dguid={dguid}&topic={topic}&notes=0&stat=0")
-GEO_LIST = ("https://www12.statcan.gc.ca/rest/census-recensement/CR2021Geo.json"
-            "?lang=E&geos={geos}&cpt=00")
+URL = ("https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/"
+       "download-telecharger/comp/GetFile.cfm?Lang=E&FILETYPE=CSV&GEONO=008")
+PAGE = "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021008"
+SOURCE = "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
+LICENCE = "Statistics Canada Open Licence"
+YEAR = 2021
 
-TOPICS = {"population": 1, "age_sex": 2, "language": 5, "ethnicity": 9, "religion": 10}
-GEOS = {"province": "PR", "census_division": "CD"}
-
-# Standard Geographical Classification province/territory codes. DGUIDs for
-# 2021 are deterministic -- "2021A0002" + the two-digit code -- and these codes
-# have been stable for decades, so the provinces need no geography-list call
-# (which now serves an HTML page instead of JSON; see the first live run).
+# Block headers, matched as prefixes of the unindented row that opens each.
+BLOCKS = {
+    "population": "Population, 2021",
+    "religion": "Total - Religion for the population in private households",
+    "ethnicity": "Total - Visible minority for the population in private households",
+    "language": "Total - Mother tongue for the total population excluding institutional residents",
+}
+NOTES = {
+    "religion": ("Statistics Canada 2021 religion question (asked once a decade), 25% "
+                 "sample data for the population in private households; shown at the "
+                 "denominations StatCan publishes, with 'No religion and secular "
+                 "perspectives' as its own category."),
+    "ethnicity": ("Statistics Canada publishes 'visible minority', a category of the "
+                  "Employment Equity Act, beside a separate multi-response ethnic or "
+                  "cultural origin question; neither is an ethnicity question as other "
+                  "countries ask one. This is the visible-minority classification, with "
+                  "'Not a visible minority' kept as its own category."),
+    "language": ("Mother tongue, 2021 Census, total population excluding institutional "
+                 "residents (100% data), at the individual languages StatCan publishes; "
+                 "people who reported more than one are in the multiple-response "
+                 "categories rather than counted twice."),
+}
 PROVINCES = {
     "10": "Newfoundland and Labrador", "11": "Prince Edward Island",
     "12": "Nova Scotia", "13": "New Brunswick", "24": "Quebec",
@@ -44,91 +84,157 @@ PROVINCES = {
     "59": "British Columbia", "60": "Yukon", "61": "Northwest Territories",
     "62": "Nunavut",
 }
+LEVELS = {"Province": "admin1", "Territory": "admin1", "Economic region": "admin2"}
+# geoBoundaries writes the bilingual form for some regions and truncates long
+# names with an asterisk; a unique prefix carries most of those, but
+# Manitoba's "North" is a prefix of its "North Central" as well, and was
+# refused as ambiguous. The bilingual form is declared for it.
+ALIASES = {"North": ["North / Nord"]}
 
 
-def geographies(level: str) -> list[dict[str, Any]]:
-    if level == "province":
-        return [{"GEO_ID_ID": f"2021A0002{code}", "GEO_NAME_NOM": name}
-                for code, name in PROVINCES.items()]
-    payload = http_json(GEO_LIST.format(geos=GEOS[level]), timeout=180)
-    rows = payload.get("DATA", [])
-    cols = [c.upper() for c in payload.get("COLUMNS", [])]
-    return [dict(zip(cols, row)) for row in rows]
+def depth(name: str) -> int:
+    return (len(name) - len(name.lstrip(" "))) // 2
 
 
-def profile(dguid: str, topic: str) -> list[dict[str, Any]]:
-    payload = http_json(PROFILE.format(dguid=dguid, topic=TOPICS[topic]), timeout=180)
-    cols = [c.upper() for c in payload.get("COLUMNS", [])]
-    return [dict(zip(cols, row)) for row in payload.get("DATA", [])]
+def count(value: str) -> float | None:
+    value = (value or "").strip().replace(",", "")
+    if not value or value in ("..", "...", "x", "F"):
+        return None
+    try:
+        return float(value)
+    except ValueError:
+        return None
 
 
-def block(rows: list[dict[str, Any]], *, keep: int = 14) -> dict[str, float]:
+def leaves(rows: list[tuple[str, float | None]]) -> dict[str, float]:
+    """The rows of a block that nothing deeper follows, keyed by label.
+
+    ``rows`` is the block's rows in file order after its header, as (name
+    with indentation, count). A row is a leaf when the next row is not deeper
+    than it. Missing counts (suppressed cells) are skipped, which the total
+    check below then reports.
+    """
     out: dict[str, float] = {}
-    for row in rows:
-        label = (row.get("TEXT_NAME_NOM") or "").strip()
-        value = row.get("T_DATA_DONNEE")
-        if not label or value in (None, "", ".."):
+    for i, (name, value) in enumerate(rows):
+        here = depth(name)
+        nxt = depth(rows[i + 1][0]) if i + 1 < len(rows) else 0
+        if nxt > here:
+            continue                      # a parent
+        if value is None:
             continue
-        try:
-            out[label] = float(value)
-        except (TypeError, ValueError):
-            continue
-    return dict(sorted(out.items(), key=lambda kv: kv[1], reverse=True)[:keep])
+        label = name.strip()
+        out[label] = out.get(label, 0.0) + value
+    return out
+
+
+def read_profile() -> dict[str, dict[str, Any]]:
+    """{geography DGUID: {"name", "level", "code", field: {label: count}}}."""
+    blob = http_get(URL, binary=True, timeout=600)
+    archive = zipfile.ZipFile(io.BytesIO(blob))
+    member = max((n for n in archive.namelist() if n.lower().endswith(".csv")),
+                 key=lambda n: archive.getinfo(n).file_size)
+    log(f"  {member}: {archive.getinfo(member).file_size:,} bytes")
+    geos: dict[str, dict[str, Any]] = {}
+    # One block at a time per geography: the header opens it, and the next
+    # unindented row closes it.
+    current: dict[str, Any] | None = None
+    field: str | None = None
+    block_rows: list[tuple[str, float | None]] = []
+    block_total: float | None = None
+
+    def close() -> None:
+        nonlocal field, block_rows, block_total
+        if current is not None and field and field != "population":
+            current[field] = leaves(block_rows)
+            current[f"{field}_total"] = block_total
+        field, block_rows, block_total = None, [], None
+
+    with archive.open(member) as fh:
+        reader = csv.DictReader(io.TextIOWrapper(fh, encoding="cp1252", newline=""))
+        for row in reader:
+            level = LEVELS.get(row["GEO_LEVEL"])
+            if level is None:
+                continue
+            dguid = row["DGUID"]
+            if current is None or current["dguid"] != dguid:
+                close()
+                current = geos.setdefault(dguid, {
+                    "dguid": dguid, "name": row["GEO_NAME"].strip(), "level": level,
+                    "code": row["ALT_GEO_CODE"].strip()})
+            name = row["CHARACTERISTIC_NAME"]
+            value = count(row["C1_COUNT_TOTAL"])
+            if depth(name) == 0:
+                close()
+                for key, header in BLOCKS.items():
+                    if name.strip().startswith(header):
+                        field = key
+                        block_total = value
+                        if key == "population":
+                            current["population"] = value
+                            field = None
+                        break
+                continue
+            if field:
+                block_rows.append((name, value))
+    close()
+    return geos
+
+
+def build() -> list[dict[str, Any]]:
+    log("statcan: 2021 Census Profile, provinces and economic regions")
+    geos = read_profile()
+    records = []
+    for dguid, geo in geos.items():
+        fields: dict[str, Any] = {}
+        for key in ("religion", "ethnicity", "language"):
+            groups = geo.get(key) or {}
+            total = geo.get(f"{key}_total")
+            summed = sum(groups.values())
+            if not groups or not total:
+                fields[key] = gap(NOT_AVAILABLE, f"{key} block not in the profile for this geography")
+                continue
+            # Leaves partition the block; random rounding to 5 on a few
+            # hundred cells can miss by a few hundred people, never by a
+            # category. Two percent is far beyond rounding and well short of
+            # any real category.
+            if abs(summed - total) > max(0.02 * total, 50):
+                raise SystemExit(f"statcan: {geo['name']} {key} leaves sum to {summed:,.0f} "
+                                 f"against the block total {total:,.0f}")
+            fields[key] = shares(groups, total=total) or gap(NOT_AVAILABLE)
+            fields[f"{key}_note"] = NOTES[key]
+        if geo["level"] == "admin1":
+            parent, parent_name = "CAN", None
+        else:
+            province = geo["code"][:2]
+            parent, parent_name = f"CAN-{province}", PROVINCES.get(province)
+        records.append(record(
+            f"CAN-{geo['code']}", geo["name"], level=geo["level"], parent=parent,
+            parent_name=parent_name, country="CAN", codes={"dguid": dguid},
+            aliases=ALIASES.get(geo["name"], []),
+            population=(measure(int(geo["population"]), year=YEAR, source=SOURCE)
+                        if geo.get("population") else gap(NOT_AVAILABLE)),
+            sources=[{"field": "population/religion/ethnicity/language", "name": SOURCE,
+                      "url": PAGE, "license": LICENCE}],
+            **fields,
+        ))
+    by_level = {"admin1": 0, "admin2": 0}
+    for r in records:
+        by_level[r["level"]] += 1
+    log(f"  {by_level}")
+    if by_level["admin1"] != 13 or not 70 <= by_level["admin2"] <= 80:
+        raise SystemExit(f"statcan: expected 13 provinces and 76 economic regions, read {by_level}")
+    return records
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--level", default="province", choices=list(GEOS))
-    ap.add_argument("--out", default=None)
-    args = ap.parse_args()
-
-    src = "Statistics Canada, 2021 Census of Population"
-    level = "admin1" if args.level == "province" else "admin2"
-    records: list[dict[str, Any]] = []
-    consecutive_failures = 0
-    for geo in geographies(args.level):
-        dguid = geo.get("GEO_ID_ID") or geo.get("DGUID")
-        name = geo.get("GEO_NAME_NOM") or geo.get("NAME")
-        if not dguid:
-            continue
-        log(f"  {dguid} {name}")
-        try:
-            religion = block(profile(dguid, "religion"))
-            ethnicity = block(profile(dguid, "ethnicity"))
-            language = block(profile(dguid, "language"))
-        except Exception as exc:
-            log(f"    skipped: {exc}")
-            consecutive_failures += 1
-            if consecutive_failures >= 3 and not records:
-                # Run 3 established that www12.statcan.gc.ca serves its WET
-                # HTML shell to non-browser clients for every REST path tried,
-                # valid DGUIDs included. Three straight failures with nothing
-                # fetched means the API is walled off, not that one geography
-                # is odd -- say so once and stop hammering it.
-                raise SystemExit(
-                    "statcan: www12.statcan.gc.ca is returning HTML pages to "
-                    "API requests (bot wall). The adapter is correct but the "
-                    "host currently blocks non-browser clients; re-try later "
-                    "or fetch the Census Profile CSVs manually.")
-            continue
-        consecutive_failures = 0
-        records.append(record(
-            f"CAN-{dguid}", name, level=level, parent="CAN",
-            codes={"dguid": dguid},
-            religion=shares(religion) or gap(NOT_AVAILABLE),
-            religion_note="Statistics Canada 2021 religion question (asked once per decade).",
-            ethnicity=shares(ethnicity) or gap(NOT_AVAILABLE),
-            ethnicity_note=("Statistics Canada reports 'visible minority' (Employment Equity Act "
-                            "category) and a separate multi-response ethnic or cultural origin "
-                            "question; neither is equivalent to another country's ethnicity."),
-            language=shares(language) or gap(NOT_AVAILABLE),
-            sources=[{"field": "religion/ethnicity/language", "name": src,
-                      "url": PROFILE.format(dguid=dguid, topic=TOPICS["religion"]),
-                      "license": "Statistics Canada Open Licence"}],
-        ))
-    write_json(args.out or PROCESSED / f"canada_{args.level}.json", records)
-    log(f"  {len(records)} records")
+    ap.parse_args()
+    records = build()
+    write_json(PROCESSED / "canada_province.json",
+               [r for r in records if r["level"] == "admin1"])
+    write_json(PROCESSED / "canada_economic_region.json",
+               [r for r in records if r["level"] == "admin2"])
     return 0
 
 

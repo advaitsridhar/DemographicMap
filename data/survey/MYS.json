@@ -1,0 +1,1143 @@
+{
+ "iso3": "MYS",
+ "name": "Malaysia",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Population Table: Administrative Districts | OpenDOSM",
+   "kind": "census",
+   "format": "parquet + API (CSV via catalogue)",
+   "geography": "administrative district / jajahan",
+   "geography_count": 160,
+   "matches_boundary_level": "admin2 (159 shapes vs 160 districts; names like Kinabatangan, Jelebu, Selama)",
+   "url": "https://open.dosm.gov.my/data-catalogue/population_district",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://open.dosm.gov.my/data-catalogue/population_district",
+   "error": null,
+   "body": {
+    "bytes_read": 161450,
+    "kind": "html",
+    "title": "Population Table: Administrative Districts | OpenDOSM",
+    "links_to_files": [
+     "/manifest.json",
+     "https://storage.dosm.gov.my/population/population_district.csv"
+    ],
+    "mentions": [
+     "census",
+     "ethnic",
+     "ethnicities",
+     "ethnicity",
+     "languages",
+     "religion"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Population Table: States | OpenDOSM",
+   "kind": "census",
+   "format": "parquet + API",
+   "geography": "state and federal territory",
+   "geography_count": 16,
+   "matches_boundary_level": "admin1 (16)",
+   "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://open.dosm.gov.my/data-catalogue/population_state",
+   "error": null,
+   "body": {
+    "bytes_read": 144446,
+    "kind": "html",
+    "title": "Population Table: States | OpenDOSM",
+    "links_to_files": [
+     "/manifest.json",
+     "https://storage.dosm.gov.my/population/population_state.csv"
+    ],
+    "mentions": [
+     "census",
+     "ethnic",
+     "ethnicities",
+     "ethnicity",
+     "languages",
+     "religion"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "religion"
+   ],
+   "title": "Key Findings Population and Housing Census of Malaysia 2020: Administrative District",
+   "kind": "census",
+   "format": "html release page (pdf publication likely; unverified)",
+   "geography": "administrative district (160), mukim (1,756), local authority (155)",
+   "geography_count": 160,
+   "matches_boundary_level": "admin2 (159)",
+   "url": "https://www.dosm.gov.my/portal-main/release-content/key-findings-population-and-housing-census-of-malaysia-2020-administrative-district",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://www.dosm.gov.my/portal-main/release-content/key-findings-population-and-housing-census-of-malaysia-2020-administrative-district",
+   "error": null,
+   "body": {
+    "bytes_read": 116196,
+    "kind": "html",
+    "title": "Department of Statistics Malaysia",
+    "links_to_files": [
+     "/assets/documents/Metadata_Guideline.pdf"
+    ],
+    "mentions": [
+     "census",
+     "ethnic",
+     "ethnicities",
+     "ethnicity",
+     "ethnics",
+     "language",
+     "languagetext",
+     "religion"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Hinduism in Malaysia",
+    "wikitext_bytes": 54045,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 3,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "rowspan=3| Gender",
+       "rowspan=3| Total Hindus Population<br>(2010 Census)",
+       "colspan=5| Hindu Malaysian Citizens",
+       "rowspan=3| Hindu non-Malaysians",
+       "colspan=2| Bumiputera Hindus",
+       "colspan=3| Non-Bumiputera Hindus",
+       "Malay Hindus",
+       "Other Bumiputera Hindus",
+       "Chinese Hindus",
+       "Indian Hindus"
+      ],
+      "place_column": true,
+      "composition_columns": 2,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "State",
+       "Total Hindus population<br>(2020 Census)",
+       "% of State Population<ref name=\"Census 2020\"/>",
+       "colspan=\"4\" |Hindus %age over the time<ref>{{Cite web |title=Department of Statistics Malaysia |url=https://www.dosm.gov.my/portal-main/landingv2 |access-date=2024-01-14 |website=www.dosm.gov.my}}</ref>",
+       "Years",
+       "Hindu population",
+       "Total population",
+       "Hindus (%)"
+      ],
+      "place_column": true,
+      "composition_columns": 1,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "colspan=\"4\" |Hindus %age over the time<ref>{{Cite web |title=Department of Statistics Malaysia |url=https://www.dosm.gov.my/portal-main/landingv2 |access-date=2024-01-14 |website=www.dosm.gov.my}}</ref>",
+       "Years",
+       "Hindu population",
+       "Total population",
+       "Hindus (%)"
+      ],
+      "place_column": true,
+      "composition_columns": 1,
+      "rows_hint": 8
+     }
+    ],
+    "place_by_composition_tables": 1
+   },
+   {
+    "title": "Buddhism in Malaysia",
+    "wikitext_bytes": 24305,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "rowspan=3| Gender",
+       "rowspan=3| Total Buddhist Population<br />(2010 Census)",
+       "colspan=5| Malaysian Buddhist Citizens",
+       "rowspan=3| Non-Malaysian Buddhist Citizens",
+       "colspan=2| Bumiputera Buddhist",
+       "colspan=3| Non-Bumiputera Buddhist",
+       "Malay Buddhist",
+       "Other Bumiputera Buddhist",
+       "Chinese Buddhist",
+       "Indian Buddhist"
+      ],
+      "place_column": true,
+      "composition_columns": 11,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "State",
+       "Total Buddhist population<br />(2010 Census)",
+       "% of State Population"
+      ],
+      "place_column": true,
+      "composition_columns": 1,
+      "rows_hint": 17
+     }
+    ],
+    "place_by_composition_tables": 1
+   },
+   {
+    "title": "Malaysian Chinese",
+    "wikitext_bytes": 189554,
+    "infobox_params": [
+     "language",
+     "languages",
+     "religions"
+    ],
+    "sections": [
+     "Religion"
+    ],
+    "wikitables": 4,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "State or federal territory",
+       "Total population",
+       "Chinese population",
+       "Chinese population (%)",
+       "style=\"text-align:left;\" |{{flag|Johor}}",
+       "style=\"text-align:left;\" |{{flag|Kedah}}",
+       "style=\"text-align:left;\" |{{flag|Kelantan}}",
+       "style=\"text-align:left;\" |{{flag|Malacca}}",
+       "style=\"text-align:left;\" |{{flag|Negeri Sembilan}}",
+       "style=\"text-align:left;\" |{{flag|Pahang}}"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "! style=\"width:80px;\"|Average population",
+       "style=\"width:80px;\"|Live births",
+       "style=\"width:80px;\"|Deaths",
+       "style=\"width:80px;\"|Natural change",
+       "style=\"width:80px;\"|Crude birth rate (per 1000)",
+       "style=\"width:80px;\"|Crude death rate (per 1000)",
+       "style=\"width:80px;\"|Natural change (per 1000)",
+       "style=\"width:80px;\"|Total fertility rate (TFR)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "State or federal territory",
+       "Live Births",
+       "Death",
+       "Natural Increase",
+       "Total Fertility Rate",
+       "style=\"text-align:left;\" |{{flag|Malaysia}}",
+       "style=\"text-align:left;\" |{{flag|Johor}}",
+       "style=\"text-align:left;\" |{{flag|Kedah}}",
+       "style=\"text-align:left;\" |{{flag|Kelantan}}",
+       "style=\"text-align:left;\" |{{flag|Malacca}}"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "align=\"center\" style=\"background-color: #E9E9E9\" |Loanword",
+       "align=\"center\" style=\"background-color: #E9E9E9\" | English description"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 21
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Malaysia",
+    "wikitext_bytes": 97417,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 3,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "style=\"width:50pt;\"| Year",
+       "style=\"width:50pt;\"| Islam",
+       "style=\"width:50pt;\"| Buddhism",
+       "style=\"width:50pt;\"| Christianity",
+       "style=\"width:50pt;\"| Hinduism",
+       "style=\"width:50pt;\"| Confucianism, Taoism and other traditional Chinese folk religion",
+       "style=\"width:50pt;\"| Other religions",
+       "style=\"width:50pt;\"| No religion or no information",
+       "style=\"width:50pt;\"| States",
+       "style=\"width:50pt;\"| Islam"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "style=\"width:50pt;\"| States",
+       "style=\"width:50pt;\"| Islam",
+       "style=\"width:50pt;\"| Buddhism",
+       "style=\"width:50pt;\"| Christianity",
+       "style=\"width:50pt;\"| Hinduism",
+       "style=\"width:50pt;\"| Confucianism, Taoism and other traditional Chinese folk religion",
+       "style=\"width:50pt;\"| Other religions",
+       "style=\"width:50pt;\"| No religion or No information"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "style=\"width:50pt;\"| States",
+       "style=\"width:50pt;\"| Islam",
+       "style=\"width:50pt;\"| Buddhism",
+       "style=\"width:50pt;\"| Christianity",
+       "style=\"width:50pt;\"| Hinduism",
+       "style=\"width:50pt;\"| Confucianism, Taoism and other traditional Chinese folk religion",
+       "style=\"width:50pt;\"| No religion",
+       "style=\"width:50pt;\"| Other religions or No information"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Malaysia",
+    "wikitext_bytes": 151694,
+    "infobox_params": [],
+    "sections": [
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 19,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "State",
+       "Population",
+       "Area (km<sup>2</sup>)",
+       "Pop. density",
+       "Urban pop.",
+       "Bumiputra",
+       "Chinese",
+       "Indians",
+       "style=\"text-align:left;\" |Johor",
+       "style=\"text-align:left;\" |Kedah"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "style=\"width:50px;\"|Year",
+       "< 15 Years",
+       "15 - 64 Years",
+       "> 64 Years",
+       "Population (in millions)",
+       "2001",
+       "2002",
+       "2004",
+       "2005",
+       "2006"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "style=\"width:80px;\"|Age group",
+       "style=\"width:80px;\"|Male",
+       "style=\"width:80px;\"|Female",
+       "style=\"width:80px;\"|Total",
+       "style=\"width:80px;\"|%",
+       "style=\"width:50px;\"|Age group",
+       "style=\"width:80px;\"|Male",
+       "style=\"width:80px;\"|Female",
+       "style=\"width:80px;\"|Total",
+       "style=\"width:50px;\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "style=\"width:80px;\"|Age group",
+       "style=\"width:80px;\"|Male",
+       "style=\"width:80px;\"|Female",
+       "style=\"width:80px;\"|Total",
+       "style=\"width:80px;\"|%",
+       "style=\"width:50px;\"|Age group",
+       "style=\"width:80px;\"|Male",
+       "style=\"width:80px;\"|Female",
+       "style=\"width:80px;\"|Total",
+       "style=\"width:50px;\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "style=\"width:80pt;\"|Age group",
+       "style=\"width:80pt;\"|Male",
+       "style=\"width:80pt;\"|Female",
+       "style=\"width:80pt;\"|Total",
+       "style=\"width:80pt;\"|%",
+       "style=\"width:50px;\"|Age group",
+       "style=\"width:80pt;\"|Male",
+       "style=\"width:80px;\"|Female",
+       "style=\"width:80px;\"|Total",
+       "style=\"width:50px;\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "Age groups || 0–14 (%) || 15–64 (%) || 65-over (%) || Total",
+       "Age groups || 0–14 (%) || 15–64 (%) || 65-over (%) || Total",
+       "Age groups || 0–14 (%) || 15–64 (%) || 65-over (%) || Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "Age groups || 0–14 (%) || 15–64 (%) || 65-over (%) || Total",
+       "Age groups || 0–14 (%) || 15–64 (%) || 65-over (%) || Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Age groups || 0–14 (%) || 15–64 (%) || 65-over (%) || Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "! style=\"width:80px;\"|Average population",
+       "style=\"width:80px;\"|Live births",
+       "style=\"width:80px;\"|Deaths",
+       "style=\"width:80px;\"|Natural change",
+       "style=\"width:80px;\"|Crude birth rate (per 1000)",
+       "style=\"width:80px;\"|Crude death rate (per 1000)",
+       "style=\"width:80px;\"|Natural change (per 1000)",
+       "style=\"width:80px;\"|Crude migration rate (per 1000)",
+       "style=\"width:80px;\"|Total fertility rate (TFR)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January—June 2025",
+       "January—June 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{cite web|title=Demographic Statistics, Malaysia|url=https://www.dosm.gov.my/portal-main/release-content/demographic-statistics-first-quarter-2024|access-date=14 May 2024|archive-date=16 May 2024|archive-url=https://web.archive.org/web/20240516102531/https://www.dosm.gov.my/portal-main/release-content/demographic-statistics-first-quarter-2024|url-status=live}}</ref>",
+       "style=\"width:80px;\"|Period",
+       "style=\"width:80px;\"|Live births per year"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "style=\"width:80px;\"|Period",
+       "style=\"width:80px;\"|Live births per year",
+       "style=\"width:80px;\"|Deaths per year",
+       "style=\"width:80px;\"|Natural change per year",
+       "style=\"width:80px;\"|CBR<sup>1</sup>",
+       "style=\"width:80px;\"|CDR<sup>1</sup>",
+       "style=\"width:80px;\"|NC<sup>1</sup>",
+       "style=\"width:80px;\"|TFR<sup>1</sup>",
+       "style=\"width:80px;\"|IMR<sup>1</sup>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "style=\"width:25px;\"|Time",
+       "style=\"width:100px;\"|Malay",
+       "style=\"width:100px;\"|Other Bumiputera",
+       "style=\"width:90px;\"|Chinese",
+       "style=\"width:90px;\"|Indian",
+       "style=\"width:90px;\"|Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Years",
+       "1920",
+       "1921",
+       "1922",
+       "1923",
+       "1924",
+       "1925",
+       "1926",
+       "1927",
+       "1928"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1930",
+       "1931",
+       "1932",
+       "1933",
+       "1934",
+       "1935",
+       "1936",
+       "1937",
+       "1938"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "Years",
+       "1940",
+       "1941",
+       "1942",
+       "1943",
+       "1944",
+       "1945",
+       "1946",
+       "1947",
+       "1948"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "<ref>[https://www.dosm.gov.my/portal-main/release-content/vital-statistics-malaysia-2023 DOSM]</ref>",
+       "style=\"width:80px;\"|Malays",
+       "style=\"width:80px;\"|Chinese",
+       "style=\"width:80px;\"|Indians",
+       "style=\"width:80px;\"|Total",
+       "State",
+       "2011",
+       "2015",
+       "2020"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "State",
+       "2011",
+       "2015",
+       "2020",
+       "State",
+       "Malay",
+       "Chinese",
+       "Indian",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 37
+     },
+     {
+      "header": [
+       "State",
+       "Malay",
+       "Chinese",
+       "Indian",
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Jelebu",
+    "found": true,
+    "title": "Jelebu (federal constituency)",
+    "url": "https://en.wikipedia.org/wiki/Jelebu_%28federal_constituency%29",
+    "wikitext_bytes": 21830,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 5,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Kinabatangan",
+    "found": true,
+    "title": "Eastern Kadazan language",
+    "url": "https://en.wikipedia.org/wiki/Eastern_Kadazan_language",
+    "wikitext_bytes": 3097,
+    "infobox_params": [
+     "ethnicity"
+    ],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   },
+   {
+    "shape_name": "Kota Kinabalu",
+    "found": true,
+    "title": "Kota Kinabalu",
+    "url": "https://en.wikipedia.org/wiki/Kota_Kinabalu",
+    "wikitext_bytes": 120869,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [
+     "Ethnicity and religion",
+     "Languages"
+    ],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 1,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Matu",
+    "found": true,
+    "title": "Daro-Matu language",
+    "url": "https://en.wikipedia.org/wiki/Daro-Matu_language",
+    "wikitext_bytes": 858,
+    "infobox_params": [
+     "ethnicity"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   },
+   {
+    "shape_name": "Penampang",
+    "found": true,
+    "title": "Penampang",
+    "url": "https://en.wikipedia.org/wiki/Penampang",
+    "wikitext_bytes": 6722,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Malaysia: Road Surface Data",
+   "name": "malaysia-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/malaysia-road-surface-data",
+   "resources": [
+    {
+     "name": "Malaysia GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_mys_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Malaysia GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_mys_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Malaysia: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-malaysia",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-malaysia",
+   "resources": [
+    {
+     "name": "kontur_boundaries_MY_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_MY_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_MY_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_MY_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_MY_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_MY_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Malaysia - Subnational Population Statistics",
+   "name": "cod-ps-mys",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-mys",
+   "resources": [
+    {
+     "name": "MYS_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/12645b70-5eb9-4248-a876-4a19741dba07/resource/6b7dc193-d97e-41e7-b48e-21a736440e80/download/mys_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "mys_admpop_2020.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/12645b70-5eb9-4248-a876-4a19741dba07/resource/d334308f-dab6-40df-90b6-0bc414dcaef5/download/mys_admpop_2020.xlsx"
+    },
+    {
+     "name": "mys_admpop_adm0_2020_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/12645b70-5eb9-4248-a876-4a19741dba07/resource/793446d4-d5af-436b-9981-fe093e7a2cb9/download/mys_admpop_adm0_2020_v2.csv"
+    },
+    {
+     "name": "mys_admpop_adm1_2020_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/12645b70-5eb9-4248-a876-4a19741dba07/resource/aeab157e-624f-4c1c-8700-7691434e0282/download/mys_admpop_adm1_2020_v2.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Malaysia - Accessibility Indicators",
+   "name": "malaysia-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/malaysia-accessibility-indicators",
+   "resources": [
+    {
+     "name": "MYS_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mys/MYS_education_access.gpkg"
+    },
+    {
+     "name": "MYS_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mys/MYS_education_access_long.csv"
+    },
+    {
+     "name": "MYS_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mys/MYS_education_access_wide.csv"
+    },
+    {
+     "name": "MYS_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mys/MYS_hospitals_access.gpkg"
+    },
+    {
+     "name": "MYS_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mys/MYS_hospitals_access_long.csv"
+    },
+    {
+     "name": "MYS_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mys/MYS_hospitals_access_wide.csv"
+    },
+    {
+     "name": "MYS_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mys/MYS_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "MYS_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mys/MYS_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Malaysia: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "malaysia-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/malaysia-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "mys_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/f165a732-7125-4321-baad-1b7005ed93d0/resource/fe901e6b-1170-4084-92ff-98de38a2d11b/download/mys_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "mys_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/f165a732-7125-4321-baad-1b7005ed93d0/resource/61d4f373-8faf-480b-a43e-54668d4a7cf5/download/mys_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "mys_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/f165a732-7125-4321-baad-1b7005ed93d0/resource/b94f5aa0-256e-4d2f-95a3-3ef482d1bc5d/download/mys_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "mys_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/f165a732-7125-4321-baad-1b7005ed93d0/resource/f5887fb3-64c0-47d0-8ef5-2e2c47bac4c5/download/mys_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "mys_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/f165a732-7125-4321-baad-1b7005ed93d0/resource/a7d2ea78-7033-4b40-80f8-aff3e386d89f/download/mys_men_2020_csv.zip"
+    },
+    {
+     "name": "mys_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/f165a732-7125-4321-baad-1b7005ed93d0/resource/4538641a-d6cf-423c-ae69-7113b75bfb62/download/mys_men_2020_geotiff.zip"
+    },
+    {
+     "name": "mys_women_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/f165a732-7125-4321-baad-1b7005ed93d0/resource/42e29855-3bbc-48fb-b7c5-37c4604603bd/download/mys_women_2020_csv.zip"
+    },
+    {
+     "name": "mys_women_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/f165a732-7125-4321-baad-1b7005ed93d0/resource/7f65827d-c0f1-44d7-8158-86047d4986bc/download/mys_women_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Malaysia - Population Counts",
+   "name": "worldpop-population-counts-for-malaysia",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-malaysia",
+   "resources": [
+    {
+     "name": "mys_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/MYS/mys_ppp_2020.tif"
+    },
+    {
+     "name": "mys_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/MYS/mys_ppp_2019.tif"
+    },
+    {
+     "name": "mys_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/MYS/mys_ppp_2018.tif"
+    },
+    {
+     "name": "mys_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/MYS/mys_ppp_2017.tif"
+    },
+    {
+     "name": "mys_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/MYS/mys_ppp_2016.tif"
+    },
+    {
+     "name": "mys_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/MYS/mys_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "mys_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/MYS/mys_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "mys_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/MYS/mys_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Malaysia - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-malaysia",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-malaysia",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Malaysia",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fd97bb19-184f-456e-96cb-f565b5434c79/resource/68df1242-8ffb-4e12-8d6f-f2afe10d6ce6/download/social-protection-and-labor_mys.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Malaysia: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "mys-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/mys-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/f5333d5e-012a-4639-9745-bac38743a751/resource/d22aec1f-7506-4f86-8063-d0791ed235ba/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_mys.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/f5333d5e-012a-4639-9745-bac38743a751/resource/c3090974-9133-449f-ac29-51ca490ebf44/download/ghs_pop_e2025_r2023a_54009_100_v1_0_mys.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Malaysia - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-my-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-my-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_MY",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4c058a00-9fa5-49a2-954f-4fb660ce0b6f/resource/d8cee580-27ad-4e96-acb6-7846745c0be1/download/indicator_data_my.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Malaysia: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-mys",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-mys",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-my-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-my-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Malaysia - Post-Distribution Monitoring of Cash-Based Intervention - 2023",
+   "name": "unhcr-mys-2023-pdm-anon-data-v2-1",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-mys-2023-pdm-anon-data-v2-1",
+   "resources": [
+    {
+     "name": "Malaysia - Post-Distribution Monitoring of Cash-Based Intervention - 2023",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/1109/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/1109/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Malaysia - Post-Distribution Monitoring of Cash-Based Intervention, 2021",
+   "name": "unhcr-mys-2021-pdm-anon-data-v2-1",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-mys-2021-pdm-anon-data-v2-1",
+   "resources": [
+    {
+     "name": "Malaysia - Post-Distribution Monitoring of Cash-Based Intervention, 2021",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/812/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/812/pdf-documentation"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://open.dosm.gov.my/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://open.dosm.gov.my/dashboard/population",
+    "status": 200,
+    "kind": "html",
+    "title": "Malaysia - The Population of Malaysia | OpenDOSM",
+    "files": [
+     "/manifest.json"
+    ],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://open.dosm.gov.my/data-catalogue/population_state",
+    "status": 200,
+    "kind": "html",
+    "title": "Population Table: States | OpenDOSM",
+    "files": [
+     "/manifest.json",
+     "https://storage.dosm.gov.my/population/population_state.csv"
+    ],
+    "mentions": [
+     "census",
+     "ethnic",
+     "ethnicities",
+     "ethnicity",
+     "languages",
+     "religion"
+    ]
+   },
+   {
+    "url": "https://open.dosm.gov.my/data-catalogue/population_malaysia",
+    "status": 200,
+    "kind": "html",
+    "title": "Population Table: Malaysia | OpenDOSM",
+    "files": [
+     "/manifest.json",
+     "https://storage.dosm.gov.my/population/population_malaysia.csv"
+    ],
+    "mentions": [
+     "census",
+     "ethnic",
+     "ethnicities",
+     "ethnicity",
+     "languages",
+     "religion"
+    ]
+   },
+   {
+    "url": "https://open.dosm.gov.my/data-catalogue/population_district",
+    "status": 200,
+    "kind": "html",
+    "title": "Population Table: Administrative Districts | OpenDOSM",
+    "files": [
+     "/manifest.json",
+     "https://storage.dosm.gov.my/population/population_district.csv"
+    ],
+    "mentions": [
+     "census",
+     "ethnic",
+     "ethnicities",
+     "ethnicity",
+     "languages",
+     "religion"
+    ]
+   }
+  ],
+  "title": "OpenDOSM",
+  "matching_links": 4
+ },
+ "verdict": {
+  "hdx_datasets": 12,
+  "hdx_machine_readable": 4,
+  "nso_files_found": 7,
+  "wikipedia_list_tables_by_place": 2,
+  "urls_answering": "3/3",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "2/5"
+ }
+}

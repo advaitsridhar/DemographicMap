@@ -1,0 +1,122 @@
+{
+  "iso3": "VNM",
+  "name": "Vietnam",
+  "researched_at": "2026-09-10",
+  "research_note": "Only 3 of the planned ~10 searches ran: the session-wide WebSearch budget (200/200) was exhausted mid-batch. Everything below is from those 3 result sets plus docs/SOURCES.md. The Wikipedia probes and the secondary-route checks were NOT run and are listed under searches_run as refused.",
+  "nso": {
+    "name": "National Statistics Office of Viet Nam (NSO; the General Statistics Office, GSO, restructured in 2025)",
+    "url": "https://www.nso.gov.vn/en/",
+    "note": "Host of the search-result URL https://www.nso.gov.vn/en/events/2019/12/press-release-on-results-of-the-population-and-housing-census-01-4-2019/ . Legacy www.gso.gov.vn URLs still serve the 2019 and 2024 publications (both surfaced). docs/SOURCES.md records that gso.gov.vn times out and nso.gov.vn resets the connection from the project's runner; UNFPA co-publishes the 2019 English results volume."
+  },
+  "latest_census": {
+    "year": 2019,
+    "asks": {"religion": true, "ethnicity": true, "language": null},
+    "notes": "2019 Population and Housing Census, reference 1 April 2019; 96,208,984 people (press release, results published 19 Dec 2019). Ethnicity and religion are both asked (questionnaire Q6/Q7, per docs/SOURCES.md) and both are published NATIONALLY: Kinh 85.3%, 53 minorities 14.7%; six minorities over 1 million (Tay 1.85M, Thai 1.82M, Muong 1.45M, Mong 1.39M, Khmer 1.32M, Nung 1.08M); Catholic 5.9M (6.1% of population), Buddhist 4.6M (4.8%), 16 religions tabulated by sex. Whether a language question was asked was not established this session (null). A mid-decade Population and Housing Survey (Dieu tra dan so va nha o giua ky, reference 1 April 2024; 101,112,656 people; all 63 provinces except 4 island districts; sample-based) published results Dec 2024 / Jan 2025 -- the search snippet lists population size/structure, marital status, education, fertility, mortality, migration and housing and does NOT mention ethnicity or religion, so it is not evidence of a new provincial breakdown."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["ethnicity"],
+      "title": "Muong people (English Wikipedia) -- carries 2019 per-province counts, which implies a published province x ethnic-group table",
+      "url": "https://en.wikipedia.org/wiki/Muong_people",
+      "publisher": "Wikipedia (citing the 2019 census / 2019 survey of 53 ethnic minorities -- citation not seen)",
+      "kind": "other",
+      "format": "html",
+      "geography": "province (tinh / thanh pho)",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 (2019 geography = 63 provinces; packet draws 64 shapes -- one extra to identify)",
+      "year": 2019,
+      "confidence": "medium",
+      "evidence": "Search snippet: 'Muong people concentrate in Hoa Binh Province (549,026), Thanh Hoa Province (376,340), Phu Tho Province (218,404), Son La Province (84,676), and Hanoi (62,239)'. Exact five- and six-digit province figures for one ethnic group mean a census-derived province x ethnic-group table has been published somewhere; the article's footnote should name it. The Tay people article snippet likewise lists provinces (Cao Bang, Lang Son, Bac Kan, Thai Nguyen, Quang Ninh, Bac Ninh, Bac Giang) without figures. This is the lead, not the source."
+    },
+    {
+      "fields": ["ethnicity", "religion"],
+      "title": "Ket qua toan bo Tong dieu tra dan so va nha o nam 2019 (complete results, Vietnamese-language volume)",
+      "url": "https://www.gso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+      "publisher": "General Statistics Office of Viet Nam",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "province (unverified)",
+      "geography_count": 63,
+      "matches_boundary_level": "admin1 if a province cut exists (63 vs 64 shapes)",
+      "year": 2019,
+      "confidence": "low",
+      "evidence": "Surfaced for the Vietnamese query on population by religion and province; the snippet only says the census results were released 19 Dec 2019 and that a 26-table compilation exists. The ENGLISH results volume this project already read (docs/SOURCES.md, Viet Nam section) stacks ethnic groups and provinces under one Table 5 caption rather than crossing them, and prints religion only nationally (Table 3). Whether the Vietnamese volume differs is unverified; it is the first thing to read. Vietnamese tables use a space as thousands separator and carry Total/Male/Female (SOURCES.md)."
+    },
+    {
+      "fields": ["ethnicity"],
+      "title": "Figures on Ethnic Minority Women and Men in Viet Nam (UN Women, 2021)",
+      "url": "https://asiapacific.unwomen.org/sites/default/files/Field%20Office%20ESEAsia/Docs/Publications/2021/10/vn-UNWM_Figures-on-53-EMs_ENGLISH_FINAL.pdf",
+      "publisher": "UN Women Asia-Pacific (compiled from the 2019 census and the 2019 survey of 53 ethnic minorities -- inferred from the title '53 EMs')",
+      "kind": "other",
+      "format": "pdf",
+      "geography": null,
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2021,
+      "confidence": "low",
+      "evidence": "Title only; surfaced for the ethnic-group-by-province query. Worth opening because the 53-ethnic-minority survey (GSO with the Committee for Ethnic Minority Affairs) is the usual source of province-level minority counts -- but that is background knowledge, not a snippet."
+    },
+    {
+      "fields": ["religion"],
+      "title": "Danh sach ton giao Viet Nam xep theo dan so va gioi tinh (Vietnamese Wikipedia)",
+      "url": "https://vi.wikipedia.org/wiki/Danh_s%C3%A1ch_t%C3%B4n_gi%C3%A1o_Vi%E1%BB%87t_Nam_x%E1%BA%BFp_theo_d%C3%A2n_s%E1%BB%91_v%C3%A0_gi%E1%BB%9Bi_t%C3%ADnh",
+      "publisher": "Wikipedia (vi), citing the 2019 census",
+      "kind": "other",
+      "format": "html",
+      "geography": "national",
+      "geography_count": 1,
+      "matches_boundary_level": "none",
+      "year": 2019,
+      "confidence": "high",
+      "evidence": "Snippet: '16 religions in Vietnam according to the 2019 population census ... recorded as of April 1, 2019, broken down by population and gender'. National only -- listed so nobody re-checks it as a provincial source."
+    },
+    {
+      "fields": ["ethnicity", "religion"],
+      "title": "Population and Census -- Open Development Vietnam (topic page)",
+      "url": "https://vietnam.opendevelopmentmekong.net/topics/vietnams-population-and-census/",
+      "publisher": "Open Development Mekong (open-data portal)",
+      "kind": "other",
+      "format": "html",
+      "geography": null,
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": null,
+      "confidence": "low",
+      "evidence": "Title only. An open-data portal that sometimes republishes GSO tables as CSV; not verified for these fields."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Demographics of Vietnam", "url": "https://en.wikipedia.org/wiki/Demographics_of_Vietnam", "appears_to_contain": "surfaced for the ethnic-group-by-province query; snippet not shown; unverified whether it carries a by-province table"},
+      {"title": "Tong dieu tra dan so va nha o nam 2019 (Viet Nam) (vi)", "url": "https://vi.wikipedia.org/wiki/T%E1%BB%95ng_%C4%91i%E1%BB%81u_tra_d%C3%A2n_s%E1%BB%91_v%C3%A0_nh%C3%A0_%E1%BB%9F_n%C4%83m_2019_(Vi%E1%BB%87t_Nam)", "appears_to_contain": "Vietnamese article on the 2019 census; snippet gives the national total and the ethnicity/religion headline shares; unverified whether it tabulates by province"}
+    ],
+    "admin2_samples": [],
+    "note": "The mandated searches ('Religion in Vietnam' by province; 'Ethnic groups in Vietnam' by province; 'Hoang Mai', 'Krong Pac', 'Nghia Hung' Vietnam wikipedia) were refused by the exhausted search budget. Not run, not 'no article'."
+  },
+  "tier": "D",
+  "tier_reason": "Could not establish a provincial publication. The packet's closed route (religion and ethnicity published nationally only) still stands on the evidence gathered; the one new lead is that English Wikipedia ethnic-group articles quote exact 2019 per-province counts, which means a province x ethnic-group table exists somewhere -- but its publisher, URL and format were not located before the search budget ran out.",
+  "replaces_existing": false,
+  "recommended_action": "Three things, in order. (1) Open the Vietnamese 'Ket qua toan bo' PDF (URL above) and look for a province x dan toc (ethnic group) table -- the English volume's Table 5 stacks the two breakdowns, the Vietnamese one may cross them. (2) Read the citation behind the Muong people article's per-province counts; it names the table. (3) Searches still owed: the 2019 census data-exploration portal (tongdieutradanso.vn), the 2019 survey of 53 ethnic minorities (GSO + CEMA) for province-level minority counts, IPUMS-International's Vietnam 2019 sample (registration), and HDX. Geography caveat, unverified this session: Viet Nam reportedly merged its 63 provinces into 34 and abolished the district tier on 1 July 2025; if so, the packet's 64 admin1 / 705 admin2 shapes are the pre-2025 geography, any 2019-census table by 63 provinces still joins to it, and post-2025 publications will not. Confirm before building.",
+  "searches_run": [
+    "Vietnam 2019 population census ethnic group by province table Kinh Tay Thai Muong tinh (ran)",
+    "Tong dieu tra dan so 2019 dan so theo ton giao va tinh thanh pho bieu (ran)",
+    "Dieu tra dan so va nha o giua ky 2024 ket qua dan toc ton giao theo tinh (ran)",
+    "tongdieutradanso.vn khai thac du lieu tong dieu tra 2019 dan toc ton giao theo tinh (REFUSED: search budget exhausted)",
+    "Vietnam 2019 census completed results table population by ethnic group and province 63 provinces xlsx (REFUSED)",
+    "IPUMS International Vietnam 2019 census sample ethnicity religion province variables (REFUSED)",
+    "Vietnam provinces merged 34 provinces July 2025 district level abolished two-tier local government (REFUSED)",
+    "\"Religion in Vietnam\" wikipedia table by province census 2019 (REFUSED)",
+    "\"Ethnic groups in Vietnam\" wikipedia by province table (REFUSED)",
+    "\"Hoang Mai\" Vietnam district wikipedia (REFUSED)",
+    "\"Krong Pac\" Vietnam district wikipedia (REFUSED)",
+    "\"Nghia Hung\" Vietnam district wikipedia (REFUSED)"
+  ],
+  "not_found": [
+    "any 2019 census table of population by religion and province (three result sets; the religion results surfaced are national only)",
+    "a confirmed province x ethnic-group census table (only second-hand per-province figures in Wikipedia ethnic-group articles)",
+    "any mention of ethnicity or religion in the 2024 mid-decade survey results snippet",
+    "anything at the district (admin2, 705) level",
+    "whether the 2019 census asked language"
+  ],
+  "summary": "Viet Nam's 2019 census asked ethnicity and religion and the office publishes both only for the whole country, which is what the packet already records; three searches found no provincial religion table and no new publication from the 2024 mid-decade survey. The one new lead is that English Wikipedia's ethnic-group articles quote exact 2019 per-province counts (e.g. Muong: Hoa Binh 549,026), so a province x ethnic-group table has been published somewhere -- most likely in the Vietnamese-language complete-results volume or the 2019 survey of 53 ethnic minorities -- but its URL and format were not located before the session's search budget ran out. Tier D: read the Vietnamese 'Ket qua toan bo' PDF and the Muong article's citation first, then run the owed searches (tongdieutradanso.vn portal, 53-EM survey, IPUMS, HDX). Confirm the reported July 2025 provincial merger before joining anything to the 64-shape admin1 file."
+}

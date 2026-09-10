@@ -1,0 +1,704 @@
+{
+ "iso3": "BOL",
+ "name": "Bolivia",
+ "tier_proposed": "A",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Bolivia",
+    "wikitext_bytes": 22893,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Religion",
+       "Percentage of Population",
+       "Notes"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Bolivia",
+    "wikitext_bytes": 43959,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 8,
+    "charts": [
+     "Historical populations",
+     "Pie chart",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Year",
+       "width=\"80pt\"|Population",
+       "width=\"80pt\"|Births",
+       "width=\"80pt\"|Deaths",
+       "width=\"80pt\"|Natural change",
+       "width=\"80pt\"|Crude birth rate",
+       "width=\"80pt\"|Crude death rate",
+       "width=\"80pt\"|Natural change",
+       "width=\"80pt\"|Fertility rates",
+       "1950"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "width=\"70\"|Year",
+       "width=\"70\"|Population",
+       "width=\"70\"|Live births",
+       "width=\"70\"|Deaths",
+       "width=\"70\"|Natural increase",
+       "width=\"70\"|Crude birth rate",
+       "width=\"70\"|Crude death rate",
+       "width=\"70\"|Rate of natural increase",
+       "width=\"70\"|Crude migration rate",
+       "width=\"70\"|TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "style=\"width:50pt;\"| Year",
+       "style=\"width:50pt;\"| CBR (Total)",
+       "style=\"width:50pt;\"| TFR (Total)",
+       "style=\"width:50pt;\"| CBR (Urban)",
+       "style=\"width:50pt;\"| TFR (Urban)",
+       "style=\"width:50pt;\"| CBR (Rural)",
+       "style=\"width:50pt;\"| TFR (Rural)",
+       "Years",
+       "1930",
+       "1931"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Years",
+       "1930",
+       "1931",
+       "1932",
+       "1933",
+       "1934",
+       "1935",
+       "1936",
+       "1937",
+       "1938"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Years",
+       "1940",
+       "1941",
+       "1942",
+       "1943",
+       "1944",
+       "1945",
+       "1946",
+       "1947",
+       "1948"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Azurduy",
+    "found": true,
+    "title": "Azurduy Municipality",
+    "url": "https://en.wikipedia.org/wiki/Azurduy_Municipality",
+    "wikitext_bytes": 15607,
+    "infobox_params": [
+     "language"
+    ],
+    "sections": [
+     "Population"
+    ],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   },
+   {
+    "shape_name": "Caranavi",
+    "found": true,
+    "title": "Caranavi",
+    "url": "https://en.wikipedia.org/wiki/Caranavi",
+    "wikitext_bytes": 6435,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Carangas",
+    "found": true,
+    "title": "San Pedro Curahuara de Carangas",
+    "url": "https://en.wikipedia.org/wiki/San_Pedro_Curahuara_de_Carangas",
+    "wikitext_bytes": 5214,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Manuel María Caballero",
+    "found": true,
+    "title": "Manuel María Caballero Province",
+    "url": "https://en.wikipedia.org/wiki/Manuel_Mar%C3%ADa_Caballero_Province",
+    "wikitext_bytes": 4833,
+    "infobox_params": [],
+    "sections": [
+     "Population"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Manuripi",
+    "found": true,
+    "title": "Manuripi-Heath Amazonian Wildlife National Reserve",
+    "url": "https://en.wikipedia.org/wiki/Manuripi-Heath_Amazonian_Wildlife_National_Reserve",
+    "wikitext_bytes": 1184,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Bolivia (Plurinational State of): Languages",
+   "name": "bolivia-plurinational-state-of-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/bolivia-plurinational-state-of-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_BOL_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6c0ffd7d-4616-4e78-999b-59d570e5aded/resource/5bb39b8e-7b06-4ff4-9ce0-2d1be0453a22/download/clearglobal_language_use_bol_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_BOL_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6c0ffd7d-4616-4e78-999b-59d570e5aded/resource/adf60d24-a63c-4cf6-8daf-40e127dd9a97/download/clearglobal_language_use_bol_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_BOL_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6c0ffd7d-4616-4e78-999b-59d570e5aded/resource/6308df2d-891c-48ed-89bd-ff9fd4cadead/download/clearglobal_language_use_bol_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bolivia - Settlements",
+   "name": "bolivia-settlements",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/bolivia-settlements",
+   "resources": [
+    {
+     "name": "Bolivia Lugares poblados-2012.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/9fbe6437-8da6-4024-9d59-ea7fc19612a1/resource/dcda7c81-e53b-4318-89a5-d0b749fe0c3b/download/bolivia-lugares-poblados-2012.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bolivia - Aerodromes",
+   "name": "bolivia-aerodromes",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/bolivia-aerodromes",
+   "resources": [
+    {
+     "name": "aeropuertos.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/cf2d9e3b-cc49-415c-87cf-f0d5b177d5c6/resource/9026e8fa-d358-4c6e-8913-d408d8840365/download/aeropuertos.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bolivia - Health",
+   "name": "bolivia-health",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/bolivia-health",
+   "resources": [
+    {
+     "name": "centros_de_salud_0.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/2d3656c8-c54e-4388-8907-db4f84f08490/resource/0e8364ff-ef62-44ca-a703-ee1fe954f768/download/centros_de_salud_0.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bolivia - Education",
+   "name": "bolivia-education",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/bolivia-education",
+   "resources": [
+    {
+     "name": "centros_educativos.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/ce1f49f8-f92c-4b16-b1c8-00960d51a6ad/resource/a4b6885a-1033-452b-bced-a7105695bcc9/download/centros_educativos.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bolivia - Railways",
+   "name": "bolivia-railways",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/bolivia-railways",
+   "resources": [
+    {
+     "name": "transportation_network_vias_ferreas.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/1f9145fb-1266-4c4d-bff1-770c10248074/resource/30efcae6-75e3-4c56-9176-e645563898d2/download/transportation_network_vias_ferreas.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bolivia - Main Roads",
+   "name": "bolivia-roads-0",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/bolivia-roads-0",
+   "resources": [
+    {
+     "name": "transportation_network_red_principal.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/70defa57-a007-4b31-8393-9a7e52cf2c02/resource/dd0a650c-dd88-4edb-a3bd-9fb47aaae0e9/download/transportation_network_red_principal.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bolivia - Secondary Roads",
+   "name": "bolivia-roads",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/bolivia-roads",
+   "resources": [
+    {
+     "name": "transportation_network_red_secundaria.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/bd28f2df-daff-431d-9ca4-a170a172178f/resource/578cf0a4-1e0e-48dd-bc06-043c3a0774ab/download/transportation_network_red_secundaria.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bolivia (Plurinational State of): Road Surface Data",
+   "name": "bolivia-plurinational-state-of-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/bolivia-plurinational-state-of-road-surface-data",
+   "resources": [
+    {
+     "name": "Bolivia (plurinational state of) GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_bol_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Bolivia (plurinational state of) GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_bol_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bolivia (Plurinational State of): Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-bolivia-plurinational-state-of",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-bolivia-plurinational-state-of",
+   "resources": [
+    {
+     "name": "kontur_boundaries_BO_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_BO_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_BO_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_BO_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_BO_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_BO_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bolivia - Accessibility Indicators",
+   "name": "bolivia-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/bolivia-accessibility-indicators",
+   "resources": [
+    {
+     "name": "BOL_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bol/BOL_education_access.gpkg"
+    },
+    {
+     "name": "BOL_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bol/BOL_education_access_long.csv"
+    },
+    {
+     "name": "BOL_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bol/BOL_education_access_wide.csv"
+    },
+    {
+     "name": "BOL_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bol/BOL_hospitals_access.gpkg"
+    },
+    {
+     "name": "BOL_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bol/BOL_hospitals_access_long.csv"
+    },
+    {
+     "name": "BOL_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bol/BOL_hospitals_access_wide.csv"
+    },
+    {
+     "name": "BOL_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bol/BOL_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "BOL_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bol/BOL_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bolivia - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-bolivia",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-bolivia",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Bolivia",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/45cbb037-4891-4497-810f-968c1726571a/resource/01cdc730-4a0a-4613-8477-1c2553f6a37a/download/social-protection-and-labor_bol.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bolivia (Plurinational State of) - Subnational Population Statistics",
+   "name": "cod-ps-bol",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-bol",
+   "resources": [
+    {
+     "name": "bol_admpop_2022.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/095b9a42-8880-477b-9fa9-e84054c6da98/resource/8f1b277a-0126-419c-8e72-1cf7dc40c218/download/bol_admpop_2022b.xlsx"
+    },
+    {
+     "name": "bol_admpop_adm0_2022.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/095b9a42-8880-477b-9fa9-e84054c6da98/resource/e38c1090-2dab-4986-b1d7-833f92e5638a/download/bol_admpop_adm0_2022b.csv"
+    },
+    {
+     "name": "bol_admpop_adm1_2022.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/095b9a42-8880-477b-9fa9-e84054c6da98/resource/557d7e42-af6c-4138-960b-794570816bf7/download/bol_admpop_adm1_2022b.csv"
+    },
+    {
+     "name": "BOL_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/095b9a42-8880-477b-9fa9-e84054c6da98/resource/4653fb99-7bea-4346-948b-2a6b865bba86/download/bol_adminboundaries_tabulardata.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bolivia: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "bolivia-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/bolivia-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "bol_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/64f916a6-2f35-4399-8971-25e18fdb09bd/resource/d5fc8980-f3f2-4523-ac4d-f188201518d5/download/bol_general_2020_csv.zip"
+    },
+    {
+     "name": "bol_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/64f916a6-2f35-4399-8971-25e18fdb09bd/resource/e192c9a8-a209-4dac-8744-31cd60246660/download/bol_general_2020_geotiff.zip"
+    },
+    {
+     "name": "bol_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/64f916a6-2f35-4399-8971-25e18fdb09bd/resource/4fe96e38-3895-4f5e-b3f9-df6317a9752f/download/bol_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "bol_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/64f916a6-2f35-4399-8971-25e18fdb09bd/resource/c6f1f8c2-3160-49aa-9186-b0727f6bbfda/download/bol_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "bol_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/64f916a6-2f35-4399-8971-25e18fdb09bd/resource/8acccec8-a1a4-42d7-b301-fb734324960e/download/bol_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "bol_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/64f916a6-2f35-4399-8971-25e18fdb09bd/resource/cb920c93-4081-4d40-af8c-9211b35e6aea/download/bol_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "bol_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/64f916a6-2f35-4399-8971-25e18fdb09bd/resource/87fdfd9c-14d3-4871-a01e-e68a7ff352bf/download/bol_men_2020_csv.zip"
+    },
+    {
+     "name": "bol_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/64f916a6-2f35-4399-8971-25e18fdb09bd/resource/b8dc649a-3137-4e3e-b3eb-4c98c591b3fd/download/bol_men_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bolivia - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-bo-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-bo-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_BO",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/ad24de8d-49ad-47af-9b28-19ca56568575/resource/08f58f7a-503a-49d4-b5fb-20aa21e3c27a/download/indicator_data_bo.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bolivia (Plurinational State of): Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "bol-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/bol-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/22f291f8-d01e-48c4-964f-4561fc14799c/resource/42b452ab-398e-4cac-882f-069144aa8192/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_bol.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/22f291f8-d01e-48c4-964f-4561fc14799c/resource/c14949bd-60e8-433f-9ee5-449fe47f77bb/download/ghs_pop_e2025_r2023a_54009_100_v1_0_bol.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bolivia (Plurinational State of) - Population Counts",
+   "name": "worldpop-population-counts-for-bolivia-plurinational-state-of",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-bolivia-plurinational-state-of",
+   "resources": [
+    {
+     "name": "bol_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/BOL/bol_ppp_2020.tif"
+    },
+    {
+     "name": "bol_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/BOL/bol_ppp_2019.tif"
+    },
+    {
+     "name": "bol_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/BOL/bol_ppp_2018.tif"
+    },
+    {
+     "name": "bol_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/BOL/bol_ppp_2017.tif"
+    },
+    {
+     "name": "bol_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/BOL/bol_ppp_2016.tif"
+    },
+    {
+     "name": "bol_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/BOL/bol_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "bol_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/BOL/bol_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "bol_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/BOL/bol_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bolivia (Plurinational State of): WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-bol",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-bol",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-bo-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-bo-latest.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.ine.gob.bo/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.ine.gob.bo/index.php/oruro-y-potosi-activan-comites-impulsores-para-el-censo-agropecuario/",
+    "status": 200,
+    "kind": "html",
+    "title": "ORURO Y POTOSÍ ACTIVAN COMITÉS IMPULSORES PARA EL CENSO AGROPECUARIO - INE",
+    "files": [],
+    "mentions": []
+   },
+   {
+    "url": "https://www.ine.gob.bo/index.php/ine-inicia-la-ultima-fase-de-reclutamiento-de-personal-para-el-censo-agropecuario/",
+    "status": 200,
+    "kind": "html",
+    "title": "INE INICIA LA ÚLTIMA FASE DE RECLUTAMIENTO DE PERSONAL PARA EL CENSO AGROPECUARIO - INE",
+    "files": [],
+    "mentions": []
+   }
+  ],
+  "title": "Instituto Nacional de Estadística - INE",
+  "matching_links": 2
+ },
+ "verdict": {
+  "hdx_datasets": 18,
+  "hdx_machine_readable": 5,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

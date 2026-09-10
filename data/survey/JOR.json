@@ -1,0 +1,810 @@
+{
+ "iso3": "JOR",
+ "name": "Jordan",
+ "tier_proposed": "B",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Jordan",
+    "wikitext_bytes": 9010,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Jordan",
+    "wikitext_bytes": 63451,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic and religious groups",
+     "Religion"
+    ],
+    "wikitables": 13,
+    "charts": [
+     "Historical populations",
+     "Pie chart",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|P"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Period<ref>{{cite web|url=http://esa.un.org/unpd/wpp/index.htm|title=World Population Prospects: The 2010 Revision|website=un.org|access-date=2011-12-17|archive-url=https://web.archive.org/web/20110506065230/http://esa.un.org/unpd/wpp/index.htm|archive-date=2011-05-06|url-status=live}}</ref>",
+       "width=\"80pt\"|Live births per year",
+       "width=\"80pt\"|Deaths per year",
+       "width=\"80pt\"|Natural change per year",
+       "width=\"80pt\"|CBR<sup>1</sup>",
+       "width=\"80pt\"|CDR<sup>1</sup>",
+       "width=\"80pt\"|NC<sup>1</sup>",
+       "width=\"80pt\"|TFR<sup>1</sup>",
+       "width=\"80pt\"|IMR<sup>1</sup>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "! width=\"80pt\"|Average population",
+       "width=\"80pt\"|Live births",
+       "width=\"80pt\"|Deaths",
+       "width=\"80pt\"|Natural change",
+       "width=\"80pt\"|Crude birth rate (per 1000)",
+       "width=\"80pt\"|Crude death rate (per 1000)",
+       "width=\"80pt\"|Natural change (per 1000)",
+       "width=\"80pt\"|Crude mirgration rate (per 1000)",
+       "width=\"80pt\"|Total fertility rate (TFR)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January–December 2024",
+       "January–December 2025",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{cite web|title=Department of Statistics Jordan|url=https://dosweb.dos.gov.jo}}</ref>",
+       "rowspan=2| Year",
+       "colspan=2| Total"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "style=\"width:50pt;\"| Year",
+       "style=\"width:50pt;\"| Jordanian",
+       "style=\"width:50pt;\"| Syrian",
+       "style=\"width:50pt;\"| Other nationality",
+       "style=\"width:50pt;\"| Year",
+       "style=\"width:50pt;\"| Jordanian",
+       "style=\"width:50pt;\"| Syrian outside camps/inside camps/Total",
+       "style=\"width:50pt;\"| Other nationality",
+       "Years",
+       "1925"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "style=\"width:50pt;\"| Year",
+       "style=\"width:50pt;\"| Jordanian",
+       "style=\"width:50pt;\"| Syrian outside camps/inside camps/Total",
+       "style=\"width:50pt;\"| Other nationality",
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929",
+       "1930",
+       "1931",
+       "1932",
+       "1933"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Years",
+       "1935",
+       "1936",
+       "1937",
+       "1938",
+       "1939",
+       "1940",
+       "1941",
+       "1942",
+       "1943"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Years",
+       "1945",
+       "1946",
+       "1947",
+       "1948",
+       "1949<ref name=\"ourworldindata.org\" />",
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Al-Balqa",
+    "found": true,
+    "title": "Balqa Governorate",
+    "url": "https://en.wikipedia.org/wiki/Balqa_Governorate",
+    "wikitext_bytes": 8293,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Al-Qasr",
+    "found": true,
+    "title": "Al-Qasr, Karak",
+    "url": "https://en.wikipedia.org/wiki/Al-Qasr%2C_Karak",
+    "wikitext_bytes": 1954,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Amman",
+    "found": true,
+    "title": "Amman",
+    "url": "https://en.wikipedia.org/wiki/Amman",
+    "wikitext_bytes": 140231,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics1_info2",
+     "language"
+    ],
+    "sections": [
+     "Demographics",
+     "Religion"
+    ],
+    "wikitables": 3,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Ar Ramtha",
+    "found": true,
+    "title": "Ar-Ramtha",
+    "url": "https://en.wikipedia.org/wiki/Ar-Ramtha",
+    "wikitext_bytes": 14649,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Ayi",
+    "found": true,
+    "title": "Judeo-Malayalam",
+    "url": "https://en.wikipedia.org/wiki/Judeo-Malayalam",
+    "wikitext_bytes": 11770,
+    "infobox_params": [
+     "ethnicity"
+    ],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Jordan: Road Surface Data",
+   "name": "jordan-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/jordan-road-surface-data",
+   "resources": [
+    {
+     "name": "Jordan GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_jor_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Jordan GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_jor_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Jordan: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-jordan",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-jordan",
+   "resources": [
+    {
+     "name": "kontur_boundaries_JO_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_JO_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_JO_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_JO_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_JO_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_JO_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Jordan - Accessibility Indicators",
+   "name": "jordan-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/jordan-accessibility-indicators",
+   "resources": [
+    {
+     "name": "JOR_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/jor/JOR_education_access.gpkg"
+    },
+    {
+     "name": "JOR_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/jor/JOR_education_access_long.csv"
+    },
+    {
+     "name": "JOR_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/jor/JOR_education_access_wide.csv"
+    },
+    {
+     "name": "JOR_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/jor/JOR_hospitals_access.gpkg"
+    },
+    {
+     "name": "JOR_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/jor/JOR_hospitals_access_long.csv"
+    },
+    {
+     "name": "JOR_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/jor/JOR_hospitals_access_wide.csv"
+    },
+    {
+     "name": "JOR_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/jor/JOR_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "JOR_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/jor/JOR_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Jordan - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-jordan",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-jordan",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Jordan",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/69424bb7-6d9d-4dfd-b3aa-bbe85017ce94/resource/23311fa0-ce68-4905-b5c8-d3f14370ee58/download/social-protection-and-labor_jor.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Jordan: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "jordan-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/jordan-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "jor_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/b05f91f7-1206-49d7-ae57-30daf2973363/resource/0b5bfad1-7fcd-44fb-b97d-04a065ca7abf/download/jor_general_2020_geotiff.zip"
+    },
+    {
+     "name": "jor_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/b05f91f7-1206-49d7-ae57-30daf2973363/resource/413f2f22-b115-4f3c-bb21-749889e7d866/download/jor_general_2020_csv.zip"
+    },
+    {
+     "name": "jor_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/b05f91f7-1206-49d7-ae57-30daf2973363/resource/8f05b378-b384-4312-a9f3-8fb9838cffe4/download/jor_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "jor_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/b05f91f7-1206-49d7-ae57-30daf2973363/resource/a0dda0fc-58cb-466a-8713-9d674e8e64a7/download/jor_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "jor_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/b05f91f7-1206-49d7-ae57-30daf2973363/resource/33dd4e88-c44b-440b-9c62-32c55a9247bf/download/jor_men_2020_geotiff.zip"
+    },
+    {
+     "name": "jor_women_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/b05f91f7-1206-49d7-ae57-30daf2973363/resource/586ed2b3-8ede-4a7f-bd31-1bd107f82cc0/download/jor_women_2020_geotiff.zip"
+    },
+    {
+     "name": "jor_women_of_reproductive_age_15_49_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/b05f91f7-1206-49d7-ae57-30daf2973363/resource/4a03db9b-c893-4aa3-aab8-4becf08c168d/download/jor_women_of_reproductive_age_15_49_2020_geotiff.zip"
+    },
+    {
+     "name": "jor_youth_15_24_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/b05f91f7-1206-49d7-ae57-30daf2973363/resource/68e04ee0-b44d-475d-b0c9-1a46f3a1a5a4/download/jor_youth_15_24_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Jordan - Population Counts",
+   "name": "worldpop-population-counts-for-jordan",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-jordan",
+   "resources": [
+    {
+     "name": "jor_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/JOR/jor_ppp_2020.tif"
+    },
+    {
+     "name": "jor_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/JOR/jor_ppp_2019.tif"
+    },
+    {
+     "name": "jor_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/JOR/jor_ppp_2018.tif"
+    },
+    {
+     "name": "jor_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/JOR/jor_ppp_2017.tif"
+    },
+    {
+     "name": "jor_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/JOR/jor_ppp_2016.tif"
+    },
+    {
+     "name": "jor_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/JOR/jor_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "jor_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/JOR/jor_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "jor_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/JOR/jor_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Jordan - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-jo-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-jo-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_JO",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/902ebac6-a16d-4c6f-abe5-e91c5b1101ff/resource/bec42b51-a3b6-4ed0-8da0-929c6ef584d8/download/indicator_data_jo.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Jordan: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-jor",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-jor",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-jo-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-jo-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Jordan: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "jor-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/jor-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/b9b87576-b480-412c-aebb-bb95c9ba5456/resource/0cedbea2-4daf-419b-8bc5-069271b36cef/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_jor.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/b9b87576-b480-412c-aebb-bb95c9ba5456/resource/657538cd-a898-4ae3-ae4c-bf1b7f6c4ea6/download/ghs_pop_e2025_r2023a_54009_100_v1_0_jor.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Za'atari Refugee Camp Population Count",
+   "name": "za-atari-refugee-camp-population-count",
+   "org": "REACH Initiative",
+   "url": "https://data.humdata.org/dataset/za-atari-refugee-camp-population-count",
+   "resources": [
+    {
+     "name": "Za'atari Refugee Camp Population Count, January 2015.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/5e020509-ddb9-4635-abc7-1ceb02ff0af5/resource/2d935738-ca55-4b06-9618-71d6ce4f617e/download/unicef-reach-population-count-za-atari-dec-jan-2014-2015.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://dosweb.dos.gov.jo/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://dosweb.dos.gov.jo/population/",
+    "status": 200,
+    "kind": "html",
+    "title": "POPULATION - Department of Statistics",
+    "files": [
+     "https://dosweb.dos.gov.jo/DataBank/Services/Services2017_En.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://dosweb.dos.gov.jo/population/population-2/",
+    "status": 200,
+    "kind": "html",
+    "title": "Population - Department of Statistics",
+    "files": [
+     "http://www.dos.gov.jo/dos_home_e/main/Demograghy/Methodology.pdf",
+     "https://dosweb.dos.gov.jo/DataBank/Population/Population_Estimares/Municipalities.pdf",
+     "https://dosweb.dos.gov.jo/DataBank/Population/Population_Estimares/POP_PROJECTIONS(2015-2050).pdf",
+     "https://dosweb.dos.gov.jo/DataBank/Population/Population_Estimares/PopulationEstimates.pdf",
+     "https://dosweb.dos.gov.jo/DataBank/Population/Population_Estimares/PopulationEstimatesbyLocality.pdf",
+     "https://dosweb.dos.gov.jo/DataBank/Services/Services2017_En.pdf",
+     "https://dosweb.dos.gov.jo/Databank/Metadata/Pupulation_2025.xlsx",
+     "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/Municipalities.xlsx",
+     "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/PopulationEstimates.xlsx",
+     "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/PopulationEstimatesbyLocality.xlsx"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://dosweb.dos.gov.jo/population/marriage-and-divorce/",
+    "status": 200,
+    "kind": "html",
+    "title": "Marriage and divorce - Department of Statistics",
+    "files": [
+     "https://dosweb.dos.gov.jo/DataBank/Services/Services2017_En.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language",
+     "religion"
+    ]
+   },
+   {
+    "url": "https://dosweb.dos.gov.jo/population/births-and-deaths/",
+    "status": 200,
+    "kind": "html",
+    "title": "Births and Deaths - Department of Statistics",
+    "files": [
+     "https://dosweb.dos.gov.jo/DataBank/Services/Services2017_En.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://dosweb.dos.gov.jo/population/woman-statistics/",
+    "status": 200,
+    "kind": "html",
+    "title": "Jordan women statistics - Department of Statistics",
+    "files": [
+     "https://dosweb.dos.gov.jo/DataBank/Population/Woman_Statistics/Woman_Statistics.xlsx",
+     "https://dosweb.dos.gov.jo/DataBank/Services/Services2017_En.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://dosweb.dos.gov.jo/population/gender-indicators/",
+    "status": 200,
+    "kind": "html",
+    "title": "Gender Indicators - Department of Statistics",
+    "files": [
+     "https://dosweb.dos.gov.jo/DataBank/Population/Gender/Gender_Statistics.xlsx",
+     "https://dosweb.dos.gov.jo/DataBank/Services/Services2017_En.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://dosweb.dos.gov.jo/population/health/",
+    "status": 200,
+    "kind": "html",
+    "title": "Health - Department of Statistics",
+    "files": [
+     "http://www.dos.gov.jo/dos_home_e/main/linked-html/DHS2017_en.pdf",
+     "https://dosweb.dos.gov.jo/DataBank/Population/Health/DHS2017_KF.pdf",
+     "https://dosweb.dos.gov.jo/DataBank/Population/Health/DHS2017_en.pdf",
+     "https://dosweb.dos.gov.jo/DataBank/Population/Health/DHS2023.pdf",
+     "https://dosweb.dos.gov.jo/DataBank/Population/Health/DHS2023_Survey.pdf",
+     "https://dosweb.dos.gov.jo/DataBank/Population/Health/HealthPopulation2009.pdf",
+     "https://dosweb.dos.gov.jo/DataBank/Population/Health/HealthPopulation2012.pdf",
+     "https://dosweb.dos.gov.jo/DataBank/Population/Health/JPFHS_Summary_Report__2023_en.pdf",
+     "https://dosweb.dos.gov.jo/DataBank/Services/Services2017_En.pdf",
+     "https://dosweb.dos.gov.jo/Databank/Metadata/PopulationHealth.xlsx"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://dosweb.dos.gov.jo/population/poverty/",
+    "status": 200,
+    "kind": "html",
+    "title": "Poverty statistics - Department of Statistics",
+    "files": [
+     "https://dosweb.dos.gov.jo/DataBank/Population/poverty/Poverty_Statistics.xlsx",
+     "https://dosweb.dos.gov.jo/DataBank/Services/Services2017_En.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://dosweb.dos.gov.jo/censuses/",
+    "status": 200,
+    "kind": "html",
+    "title": "CENSUSES - Department of Statistics",
+    "files": [
+     "https://dosweb.dos.gov.jo/DataBank/Services/Services2017_En.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://dosweb.dos.gov.jo/censuses/population_housing/",
+    "status": 200,
+    "kind": "html",
+    "title": "Population and Housing - Department of Statistics",
+    "files": [
+     "https://dosweb.dos.gov.jo/DataBank/Services/Services2017_En.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://dosweb.dos.gov.jo/censuses/agriculture-census/",
+    "status": 200,
+    "kind": "html",
+    "title": "Agricultural census - Department of Statistics",
+    "files": [
+     "http://dosweb.dos.gov.jo/DataBank/Agri/Methodology/Methodology2017_En.pdf",
+     "http://dosweb.dos.gov.jo/DataBank/Agri2017/Questionare/Questionnair_en.pdf",
+     "https://dosweb.dos.gov.jo/DataBank/Services/Services2017_En.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://dosweb.dos.gov.jo/censuses/establish-census/",
+    "status": 200,
+    "kind": "html",
+    "title": "Economic Establishments Census - Department of Statistics",
+    "files": [
+     "https://dosweb.dos.gov.jo/DataBank/Economic_census/Establishments_2006_e.pdf",
+     "https://dosweb.dos.gov.jo/DataBank/Economic_census/Establishments_2011_e.pdf",
+     "https://dosweb.dos.gov.jo/DataBank/Services/Services2017_En.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   }
+  ],
+  "title": "Department of Statistics Jordan - Home",
+  "matching_links": 16
+ },
+ "verdict": {
+  "hdx_datasets": 10,
+  "hdx_machine_readable": 4,
+  "nso_files_found": 37,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "1/5"
+ }
+}

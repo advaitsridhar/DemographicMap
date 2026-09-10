@@ -1,0 +1,769 @@
+{
+ "iso3": "IRN",
+ "name": "Iran",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "Nataaej-e sarshomari-ye sal 1395 -- Amar va ettela'at-e ostan-e Tehran (Tehran province census-results portal)",
+   "kind": "census",
+   "format": "html",
+   "geography": "one province (Tehran), possibly by shahrestan",
+   "geography_count": null,
+   "matches_boundary_level": "none on its own; shows that provincial portals republish 1395 results",
+   "url": "https://amar.thmporg.ir/census-results/%D9%86%D8%AA%D8%A7%DB%8C%D8%AC-%D8%B3%D8%B1%D8%B4%D9%85%D8%A7%D8%B1%DB%8C-%D8%B3%D8%A7%D9%84-1395",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error timed out>"
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "Iran Population and Housing Census 2016 | GHDx",
+   "kind": "census",
+   "format": "html",
+   "geography": null,
+   "geography_count": null,
+   "matches_boundary_level": null,
+   "url": "https://ghdx.healthdata.org/record/iran-population-and-housing-census-2016",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://ghdx.healthdata.org/record/iran-population-and-housing-census-2016",
+   "error": null,
+   "body": {
+    "bytes_read": 34631,
+    "kind": "html",
+    "title": "Iran Population and Housing Census 2016 | GHDx",
+    "links_to_files": [],
+    "mentions": [
+     "census",
+     "religion"
+    ]
+   }
+  },
+  {
+   "fields": [],
+   "title": "Bar-avard-e jam'iyat-e Iran be tafkik-e ostan dar sal 1403 (Iran Open Data: estimated population by province, 2024)",
+   "kind": "other",
+   "format": null,
+   "geography": "province",
+   "geography_count": null,
+   "matches_boundary_level": "admin1",
+   "url": "https://iranopendata.org/fa/dataset/iod-06124-estimated-population-iran-province-2024/",
+   "status": 404,
+   "content_type": null,
+   "final_url": null,
+   "error": null
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Sarshomari-ye omumi-ye nofus va maskan (1395) (fa)",
+    "wikitext_bytes": 0,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Jam'iyat-shenasi-ye Iran (Demographics of Iran, fa)",
+    "wikitext_bytes": 0,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Iran",
+    "wikitext_bytes": 120194,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 2,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Religion",
+       "Percent",
+       "Number",
+       "Source",
+       "Year",
+       "Results"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "Source",
+       "Year",
+       "Results"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Iran",
+    "wikitext_bytes": 100159,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups"
+    ],
+    "wikitables": 17,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Census date",
+       "Population",
+       "Average annual<br /> growth (%)",
+       "Population<br />density/km<sup>2</sup>",
+       "Proportion<br />urban (%)",
+       "Household size <br />",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Number (2006)",
+       "width=\"80pt\"|Percentage (2006)",
+       "width=\"80pt\"|Number (2011)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Number (2006)",
+       "width=\"80pt\"|Percentage (2006)",
+       "width=\"80pt\"|Number (2011)",
+       "width=\"80pt\"|Percentage (2011)",
+       "width=\"110\" | Number of children 0–14",
+       "width=\"110\" | Number of people 15–49",
+       "width=\"70\"  | Proportion",
+       "width=\"110\" | Number of women 15–49",
+       "width=\"70\"  | Proportion"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "width=\"110\" | Number of children 0–14",
+       "width=\"110\" | Number of people 15–49",
+       "width=\"70\"  | Proportion",
+       "width=\"110\" | Number of women 15–49",
+       "width=\"70\"  | Proportion",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "width=\"70\"  | Year",
+       "width=\"120\" | 0–14",
+       "width=\"120\" | 15–64",
+       "width=\"120\" | 65+",
+       "width=\"160\" | Province",
+       "width=\"120\" | 2006",
+       "width=\"120\" | 2011",
+       "width=\"120\" | Average annual growth"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "width=\"160\" | Province",
+       "width=\"120\" | 2006",
+       "width=\"120\" | 2011",
+       "width=\"120\" | Average annual growth"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "width=\"160\" | Province",
+       "width=\"100\" | 2006",
+       "width=\"100\" | 2011"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 33
+     },
+     {
+      "header": [
+       "scope=\"col\" rowspan=\"2\"| Rank",
+       "scope=\"col\" rowspan=\"2\"| City",
+       "scope=\"col\" rowspan=\"2\"| Province",
+       "scope=\"col\" colspan=\"2\"| population",
+       "scope=\"col\" |City<ref>{{Cite web|url=https://www.amar.org.ir/english|title = Statistical Center of Iran > Home|website=Amar.org.ir}}</ref>",
+       "scope=\"col\" |Metro<ref>{{Cite web | website=Citypopulation.de |archive-url=https://web.archive.org/web/20180913144137/http://citypopulation.de/world/Agglomerations.html |url=http://citypopulation.de/world/Agglomerations.html |archive-date=13 September 2018 |title = Major Agglomerations of the World – Population Statistics and Maps | date= 13 September 2018}}</ref>",
+       "1",
+       "2",
+       "3",
+       "4"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "!Population <br />(on 1 July)",
+       "Live births<br />per year",
+       "Deaths<br />per year",
+       "Natural<br />change<br />per year",
+       "Crude<br />birth<br />rate<sup>1</sup>",
+       "Crude<br />death<br />rate<sup>1</sup>",
+       "Natural<br />change<sup>1</sup>",
+       "Crude<br />migration<br />rate<sup>1</sup>",
+       "Total<br />fertility<br />rate<sup>2</sup>",
+       "Infant<br />mortality<br /> rate<sup>3</sup>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [
+       "! style=\"width:70pt;\"|Average population",
+       "style=\"width:70pt;\"|Live births",
+       "style=\"width:70pt;\"|Deaths",
+       "style=\"width:70pt;\"|Natural change",
+       "style=\"width:70pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:70pt;\"|Crude death rate (per 1000)",
+       "style=\"width:70pt;\"|Natural change (per 1000)",
+       "style=\"width:70pt;\"|Crude migration rate (per 1000)",
+       "style=\"width:70pt;\" |Total Fertility Rate"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 42
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "March—July 2025",
+       "March—July 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{Cite web|title=روند کاهشی ولادت‌ها در کشور/ شارژ کارت مادر 257 هزار نفر در تیرماه|website=Tasnim News Agency|date=9 August 2026|url=https://www.tasnimnews.ir/fa/news/1405/05/18/3666764/%D8%B1%D9%88%D9%86%D8%AF-%DA%A9%D8%A7%D9%87%D8%B4%DB%8C-%D9%88%D9%84%D8%A7%D8%AF%D8%AA-%D9%87%D8%A7-%D8%AF%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D8%B4%D8%A7%D8%B1%DA%98-%DA%A9%D8%A7%D8%B1%D8%AA-%D9%85%D8%A7%D8%AF%D8%B1-257-%D9%87%D8%B2%D8%A7%D8%B1-%D9%86%D9%81%D8%B1-%D8%AF%D8%B1-%D8%AA%DB%8C%D8%B1%D9%85%D8%A7%D9%8|lang=fa}}{{Dead link|date=August 2026 |bot=InternetArchiveBot }}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 5
+     },
+     {
+      "header": [
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929",
+       "1930",
+       "1931",
+       "1932",
+       "1933"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Years",
+       "1935",
+       "1936",
+       "1937",
+       "1938",
+       "1939",
+       "1940",
+       "1941",
+       "1942",
+       "1943"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "Years",
+       "1945",
+       "1946",
+       "1947",
+       "1948",
+       "1949<ref name=\"ourworldindata.org\" />",
+       "District",
+       "Locality",
+       "Sedentary<br />{{clarify|date=December 2024}}<br />population<br />(approx.)",
+       "Chief"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 2
+     },
+     {
+      "header": [
+       "District",
+       "Locality",
+       "Sedentary<br />{{clarify|date=December 2024}}<br />population<br />(approx.)",
+       "Chief town",
+       "Ethnic Group"
+      ],
+      "place_column": true,
+      "composition_columns": 1,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "Haplogroup<ref>{{cite journal |last1=Bekada |first1=Asmahan |last2=Fregel |first2=Rosa |last3=Cabrera |first3=Vicente M. |last4=Larruga |first4=José M. |last5=Pestano |first5=José |last6=Benhamamouch |first6=Soraya |last7=González |first7=Ana M. |title=Introducing the Algerian Mitochondrial DNA and Y-Chromosome Profiles into the North African Landscape |journal=PLOS ONE |date=19 February 2013 |volume=8 |issue=2 |article-number=e56775 |doi=10.1371/journal.pone.0056775 |doi-access=free |pmid=23431392 |pmc=3576335 |bibcode=2013PLoSO...856775B }}</ref>",
+       "n",
+       "B",
+       "C",
+       "E1b1a",
+       "E1b1b1a2",
+       "E1b1b1a3",
+       "E1b1b1c",
+       "F",
+       "G"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 3
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |",
+       "colspan=\"2\" | Muslims",
+       "colspan=\"2\" | Christians",
+       "colspan=\"2\" | Zoroastrians",
+       "colspan=\"2\" | Jews",
+       "colspan=\"2\" | Other",
+       "colspan=\"2\" | Unknown",
+       "#",
+       "%",
+       "#"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Babolsar",
+    "found": true,
+    "title": "Babolsar",
+    "url": "https://en.wikipedia.org/wiki/Babolsar",
+    "wikitext_bytes": 26991,
+    "infobox_params": [],
+    "sections": [
+     "Demographics",
+     "Population"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Basht",
+    "found": true,
+    "title": "Orf, Iran",
+    "url": "https://en.wikipedia.org/wiki/Orf%2C_Iran",
+    "wikitext_bytes": 1869,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Hoveyzeh",
+    "found": true,
+    "title": "Hoveyzeh (cruise missile)",
+    "url": "https://en.wikipedia.org/wiki/Hoveyzeh_%28cruise_missile%29",
+    "wikitext_bytes": 6248,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Izeh",
+    "found": true,
+    "title": "Izeh",
+    "url": "https://en.wikipedia.org/wiki/Izeh",
+    "wikitext_bytes": 16973,
+    "infobox_params": [],
+    "sections": [
+     "Demographics",
+     "Language",
+     "Population"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Jask",
+    "found": true,
+    "title": "Jask",
+    "url": "https://en.wikipedia.org/wiki/Jask",
+    "wikitext_bytes": 19812,
+    "infobox_params": [],
+    "sections": [
+     "Demographics",
+     "Population",
+     "Language"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Iran (Islamic Republic of): Road Surface Data",
+   "name": "iran-islamic-republic-of-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/iran-islamic-republic-of-road-surface-data",
+   "resources": [
+    {
+     "name": "Iran (islamic republic of) GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_irn_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Iran (islamic republic of) GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_irn_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Iran (Islamic Republic Of): Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-iran-islamic-republic-of",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-iran-islamic-republic-of",
+   "resources": [
+    {
+     "name": "kontur_boundaries_IR_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_IR_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_IR_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_IR_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_IR_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_IR_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Iran : Census Population results from  dis aggregated by gender and age",
+   "name": "iran-census-population-results-from-dis-aggregated-by-gender-and-age",
+   "org": "HDX",
+   "url": "https://data.humdata.org/dataset/iran-census-population-results-from-dis-aggregated-by-gender-and-age",
+   "resources": [
+    {
+     "name": "POPULATION BY SEX, PROVINCE AND  CITIZENSHIP ( TOTAL COUNTRY).xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/7189ef64-90c6-4964-817b-44c93d72b03f/resource/47416227-52c7-40c1-b848-13a9e94abf8f/download/population-by-sex-province-and-citizenship-total-country.xlsx"
+    },
+    {
+     "name": "POPULATION IN PRIVATE HOUSEHOLDS BY SEX, AGE AND SIZE OF HOUSEHOLDS (TOTAL COUNTRY).xls",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/7189ef64-90c6-4964-817b-44c93d72b03f/resource/cff9d042-982c-443a-8633-e76faefffbbb/download/population-in-private-households-by-sex-age-and-size-of-households-total-country.xls"
+    },
+    {
+     "name": "PRIVATE HOUSEHOLDS BY SEX AND AGE OF  HOUSEHOLD HEAD AND SIZE OF HOUSEHOLD ( Total country).xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/7189ef64-90c6-4964-817b-44c93d72b03f/resource/d312b807-a331-4b37-9465-b721803e3e1d/download/private-households-by-sex-and-age-of-household-head-and-size-of-household-total-country.xls"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Iran - Accessibility Indicators",
+   "name": "iran-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/iran-accessibility-indicators",
+   "resources": [
+    {
+     "name": "IRN_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/irn/IRN_education_access.gpkg"
+    },
+    {
+     "name": "IRN_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/irn/IRN_education_access_long.csv"
+    },
+    {
+     "name": "IRN_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/irn/IRN_education_access_wide.csv"
+    },
+    {
+     "name": "IRN_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/irn/IRN_hospitals_access.gpkg"
+    },
+    {
+     "name": "IRN_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/irn/IRN_hospitals_access_long.csv"
+    },
+    {
+     "name": "IRN_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/irn/IRN_hospitals_access_wide.csv"
+    },
+    {
+     "name": "IRN_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/irn/IRN_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "IRN_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/irn/IRN_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Iran (Islamic Republic of) - Subnational Population Statistics",
+   "name": "cod-ps-irn",
+   "org": "OCHA Middle East and North Africa (ROMENA)",
+   "url": "https://data.humdata.org/dataset/cod-ps-irn",
+   "resources": [
+    {
+     "name": "IRN_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/07f4ec78-42c7-4606-ae62-4f1bff918c45/resource/6536032d-54c1-43cd-b4a0-0ecb28dc18b6/download/irn_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "irn_admpop.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/07f4ec78-42c7-4606-ae62-4f1bff918c45/resource/fe006638-cd61-49fa-acdc-362fb70625f7/download/irn_admpop.xlsx"
+    },
+    {
+     "name": "irn_admpop_adm0_2016_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/07f4ec78-42c7-4606-ae62-4f1bff918c45/resource/ce2ccad0-9e39-43c5-b546-6ea7b7117877/download/irn_admpop_adm0_2016_v2.csv"
+    },
+    {
+     "name": "irn_admpop_adm1_2016_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/07f4ec78-42c7-4606-ae62-4f1bff918c45/resource/5e9b5713-9d1a-4d90-90b3-e0861a994e88/download/irn_admpop_adm1_2016_v2.csv"
+    },
+    {
+     "name": "irn_admpop_adm2_2016_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/07f4ec78-42c7-4606-ae62-4f1bff918c45/resource/81700d7b-fbea-49ab-9972-c867231cb3c0/download/irn_admpop_adm2_2016_v2.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Iran, Islamic Rep. - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-iran-islamic-rep",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-iran-islamic-rep",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Iran, Islamic Rep.",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/3e69171a-7011-4083-9eac-801395d4f36f/resource/34c5feb8-8796-488c-9043-abc94b01c5d6/download/social-protection-and-labor_irn.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Iran - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-ir-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-ir-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_IR",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/3a40c5b3-7ee3-4c56-805e-09b35711e830/resource/4ef896d5-e294-480d-90d2-0f7558260a18/download/indicator_data_ir.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Iran (Islamic Republic of) - Population Counts",
+   "name": "worldpop-population-counts-for-iran-islamic-republic-of",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-iran-islamic-republic-of",
+   "resources": [
+    {
+     "name": "irn_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/IRN/irn_ppp_2020.tif"
+    },
+    {
+     "name": "irn_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/IRN/irn_ppp_2019.tif"
+    },
+    {
+     "name": "irn_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/IRN/irn_ppp_2018.tif"
+    },
+    {
+     "name": "irn_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/IRN/irn_ppp_2017.tif"
+    },
+    {
+     "name": "irn_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/IRN/irn_ppp_2016.tif"
+    },
+    {
+     "name": "irn_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/IRN/irn_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "irn_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/IRN/irn_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "irn_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/IRN/irn_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Iran (Islamic Republic of): Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "irn-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/irn-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/3bb0541c-2582-49e0-af3b-39eac5a9ab1d/resource/340c1dbc-7456-49da-8d5d-54a077a6ba01/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_irn.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/3bb0541c-2582-49e0-af3b-39eac5a9ab1d/resource/6fcdd4f2-3cd7-4e34-96ff-0301912b5771/download/ghs_pop_e2025_r2023a_54009_100_v1_0_irn.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Iran (Islamic Republic of): WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-irn",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-irn",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-ir-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-ir-latest.zip"
+    }
+   ]
+  }
+ ],
+ "verdict": {
+  "hdx_datasets": 10,
+  "hdx_machine_readable": 5,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "1/3",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

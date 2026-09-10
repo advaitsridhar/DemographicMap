@@ -1,0 +1,138 @@
+{
+  "iso3": "NER",
+  "name": "Niger",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Institut National de la Statistique (INS Niger)",
+    "url": "https://www.stat-niger.org/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2012,
+    "asks": {
+      "religion": true,
+      "ethnicity": true,
+      "language": null
+    },
+    "published_subnationally": {
+      "religion": null,
+      "ethnicity": null,
+      "language": null
+    },
+    "confidence": "recalled",
+    "notes": "4e Recensement Général de la Population et de l'Habitat (RGP/H 2012), enumerated December 2012 (17.1M); definitive results and thematic reports 2014-2016. Ethnicity: recalled with good confidence -- the packet's national row (Hausa 53.1, Zarma/Songhai 21.2, Tuareg 11.0, Fulani 6.5; with Kanuri 5.9, Gourmantché 0.8, Arab 0.4, Toubou 0.4) is the RGP/H 2012 'ethnie' distribution published by INS and carried by the Factbook. Religion: recalled at medium confidence -- the 2012 questionnaire had a religion item (musulman / chrétien / animiste / autre / sans religion) and the ~99% Muslim figure is quoted from it; the packet's national religion row (95.5 / 4.1 / 0.3) is a non-census estimate. Language: null (I cannot recall whether 2012 asked 'langue parlée'). A 5th RGPH was scheduled for around 2022-2024; I do not know it to have been enumerated."
+  },
+  "already_in_map": "admin1 3/6 religion and ethnicity from Afrobarometer Round 9 (survey). The survey carries Niger's 8 regions (Agadez, Diffa, Dosso, Maradi, Tahoua, Tillabéri, Zinder, Niamey), but the boundary's admin1 layer draws only 6 shapes with merged labels 'Tahoua/Agadez' and 'Zinder/Diffa' and a misspelt 'Dossa', so only Maradi, Niamey and Tillaberi joined. That admin1 layer matches nothing Niger publishes (INS tabulates by 8 regions and 63 departments): a merged shape can only be filled by summing two regions' counts, which a survey's shares cannot do and a census's counts can. The admin2 layer (67) looks like the departments (Aguié, Arlit, Gothèye, Kantché, Madarounfa, Mirriah, Tibiri are departments; 63 departments + Niamey's 5 arrondissements = 68), so department-level census tables would join there.",
+  "subnational_sources": [
+    {
+      "fields": [
+        "ethnicity",
+        "religion"
+      ],
+      "title": "RGP/H 2012 -- Rapport d'analyse thématique 'État et structure de la population' (and/or 'Caractéristiques socioculturelles'): population by ethnie and by religion, by region",
+      "url": null,
+      "publisher": "INS Niger",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "region",
+      "geography_count": 8,
+      "matches_boundary_level": "admin1 only partly: fills Dosso, Maradi, Niamey, Tillabéri directly; 'Tahoua/Agadez' and 'Zinder/Diffa' need two regions' counts summed (legitimate for a census count, not for the survey's shares)",
+      "year": 2012,
+      "confidence": "medium-low",
+      "evidence": "Recalled: the national ethnie shares are published by INS from this census, so a tabulation exists; the region breakdown is recalled from the thematic-report series, not verified."
+    },
+    {
+      "fields": [
+        "ethnicity",
+        "religion"
+      ],
+      "title": "RGP/H 2012 -- Monographies régionales (one per region, 8): department-level tables",
+      "url": null,
+      "publisher": "INS Niger",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "department",
+      "geography_count": 63,
+      "matches_boundary_level": "admin2 (67 shapes; 63 departments + Niamey's arrondissements)",
+      "year": 2012,
+      "confidence": "low-medium",
+      "evidence": "Recalled series; whether the monographs tabulate ethnie/religion by department is unverified."
+    },
+    {
+      "fields": [],
+      "title": "Répertoire National des Localités (ReNaLoc) 2012",
+      "url": null,
+      "publisher": "INS Niger",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "locality, rolled up to commune / department / region",
+      "geography_count": null,
+      "matches_boundary_level": "admin1, admin2 (denominators and the exact department spellings only; no composition)",
+      "year": 2012,
+      "confidence": "medium-high",
+      "evidence": "Recalled: a widely used Excel gazetteer of the 2012 census population by village."
+    },
+    {
+      "fields": [
+        "religion",
+        "ethnicity"
+      ],
+      "title": "Enquête Démographique et de Santé et à Indicateurs Multiples du Niger 2012 (EDSN-MICS IV) final report: religion and ethnic group of respondents by region",
+      "url": null,
+      "publisher": "INS Niger / ICF (DHS Program)",
+      "kind": "survey",
+      "format": "pdf",
+      "geography": "region",
+      "geography_count": 8,
+      "matches_boundary_level": "admin1 (with the merged-shape caveat)",
+      "year": 2012,
+      "confidence": "medium",
+      "evidence": "Recalled; a survey, ranked below the census."
+    },
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "IPUMS-International: Niger 1988 and 2001 census samples",
+      "url": null,
+      "publisher": "IPUMS",
+      "kind": "census (microdata sample)",
+      "format": "microdata, registration required",
+      "geography": "region and department",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 (pre-2011 geography differs in detail)",
+      "year": 2001,
+      "confidence": "low-medium",
+      "evidence": "Recalled; which items they carry I cannot confirm."
+    }
+  ],
+  "secondary_routes": {
+    "hdx": "Not recorded in the repo's USCB enumeration; OCHA COD admin boundaries for Niger (8 regions / departments) would be the fix for the merged admin1 layer -- the runner searches HDX itself.",
+    "ipums": "1988, 2001.",
+    "other": "INS Niger also runs a NADA microdata catalogue (recalled) where the RGP/H 2012 questionnaire settles the religion and language columns."
+  },
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Niger"
+      },
+      {
+        "title": "Demographics of Niger"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "A 2012 census count of ethnic group (certain) and religion (probable), recalled to be tabulated by region in INS's PDF thematic reports and possibly by department in the regional monographs; nothing known machine-readable except the ReNaLoc population gazetteer. The boundary's 6-shape admin1 layer is itself defective against Niger's 8 regions.",
+  "replaces_existing": true,
+  "recommended_action": "Crawl stat-niger.org for the RGP/H 2012 thematic reports and regional monographs; read ethnie and religion by region into admin1 (alias 'Dossa'->'Dosso'; fill 'Tahoua/Agadez' and 'Zinder/Diffa' by summing the two regions' counts, and say so in the record) and by department into admin2 if the monographs carry it. Flag the admin1 layer to the repo owner: six shapes for eight regions is a boundary defect worth replacing with an 8-region layer, after which the existing Afrobarometer rows for Agadez, Diffa, Dosso, Tahoua and Zinder would also join.",
+  "searches_run": [],
+  "not_found": [
+    "which 2012 volume carries ethnie/religion by region and whether any reaches department",
+    "whether the 2012 questionnaire had a language item",
+    "whether a 5th RGPH has been enumerated",
+    "any machine-readable INS publication of the two fields"
+  ],
+  "summary": "Niger's 2012 census asked ethnic group -- the packet's national shares are its distribution -- and, at medium confidence, religion, and INS published the results as PDF thematic reports by region and regional monographs that may reach department. The boundary is the harder problem: its admin1 layer draws six shapes for Niger's eight regions, two of them merged and one misspelt, so a region table joins only four shapes directly and the merged two only by summing census counts; the 67 admin2 shapes look like the departments and would join a department table cleanly. A census fill is PDF work and would replace the three Afrobarometer survey rows."
+}

@@ -1,0 +1,96 @@
+{
+ "iso3": "GIN",
+ "name": "Guinea",
+ "mode": "knowledge-only",
+ "researched_at": "2026-09-10",
+ "nso": {
+  "name": "Institut National de la Statistique (INS)",
+  "url": "https://www.stat-guinee.org/",
+  "confidence": "recalled"
+ },
+ "latest_census": {
+  "year": 2014,
+  "asks": {
+   "religion": true,
+   "ethnicity": null,
+   "language": null
+  },
+  "confidence": "recalled",
+  "notes": "RGPH-3, March-April 2014 (final results 2017; about 10.5 million). I recall the 2014 questionnaire carrying a religion item, with moderate confidence; the 1996 RGPH-2 asked both religion and ethnicity, and I believe 2014 did too, but ethnicity is politically sensitive in Guinea and I cannot rule out that it was dropped - null rather than a guess. Language: not recalled. A fourth census has been discussed but not, to my knowledge, fielded."
+ },
+ "subnational_sources": [
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "RGPH-3 2014 - Résultats définitifs and thematic analysis reports (INS, 2017): population by région and préfecture, with religion by région if the item was asked",
+   "url": null,
+   "publisher": "INS Guinée",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "région (7 administrative regions + Conakry = 8) and préfecture (33 + Conakry = 34)",
+   "geography_count": 34,
+   "matches_boundary_level": "admin1 (8) and admin2 (34) exactly, for whatever the reports tabulate at those levels",
+   "year": 2014,
+   "confidence": "low-medium (recalled)",
+   "evidence": "The 2014 definitive results are published as PDF volumes on stat-guinee.org; population by préfecture is certain, religion by région is my recollection, religion by préfecture unknown."
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "IPUMS-International - Guinea 1983, 1996, 2014 census samples",
+   "url": "https://international.ipums.org/",
+   "publisher": "IPUMS / INS",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "région and préfecture",
+   "geography_count": 34,
+   "matches_boundary_level": "admin1 (8) and admin2 (34)",
+   "year": 2014,
+   "confidence": "medium (recalled)",
+   "evidence": "The 1996 sample carries religion and ethnicity; I believe the 2014 sample does as well. If so this is the only route I can name to the 34 prefectures."
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "Enquête Démographique et de Santé (EDS-V / DHS 2018): respondents' religion and ethnicity by region",
+   "url": null,
+   "publisher": "INS / ICF (DHS Program)",
+   "kind": "survey",
+   "format": "pdf final report; STATcompiler; datasets (registration)",
+   "geography": "région",
+   "geography_count": 8,
+   "matches_boundary_level": "admin1",
+   "year": 2018,
+   "confidence": "medium-high (recalled)",
+   "evidence": "Standard DHS background-characteristics tables (women 15-49 and men 15-59) give religion and ethnic group by region. A survey, ranked below any count, but with a far larger regional sample than Afrobarometer R9."
+  }
+ ],
+ "wikipedia": {
+  "country_list_articles": [
+   {
+    "title": "Religion in Guinea"
+   },
+   {
+    "title": "Demographics of Guinea"
+   }
+  ],
+  "admin2_samples": []
+ },
+ "tier": "B",
+ "tier_reason": "A 2014 census exists whose questionnaire I believe carried religion, published by region (8 = admin1) as PDF, with the 34 prefectures (= admin2 exactly) reachable only via registered IPUMS microdata; my confidence is the lowest in this batch and a runner must confirm the questionnaire before anything is built.",
+ "replaces_existing": true,
+ "recommended_action": "Crawl stat-guinee.org for the RGPH-3 2014 definitive-results volumes and thematic reports; confirm from the questionnaire or the tables whether religion and ethnicity were asked. If religion by région is there, read it with probe_pdf.py and replace the Afrobarometer R9 survey on the 8 admin1 rows (owner review). For the 34 préfectures, request the IPUMS 2014 sample. If the census asked neither, the DHS 2018 regional tables are the better survey, and ethnicity/religion become not_collected declarations citing the 2014 questionnaire.",
+ "searches_run": [],
+ "not_found": [
+  "confirmation that RGPH-3 2014 asked religion and/or ethnicity (moderate recollection only)",
+  "any table of religion or ethnicity by préfecture",
+  "any XLSX/CSV release from INS Guinée",
+  "whether a fourth census has been fielded since 2014"
+ ],
+ "summary": "Guinea's INS (stat-guinee.org) ran its last census in 2014 (RGPH-3) and publishes the definitive results as PDF volumes by the 8 regions (= admin1) and 34 prefectures (= admin2 exactly); I recall a religion item and possibly ethnicity, but a runner must verify the questionnaire. The 34 prefectures are otherwise reachable only through IPUMS-International's 2014 sample. Tier B with low confidence; a confirmed census read would replace the Afrobarometer survey on admin1, and the 2018 DHS is the better survey fallback."
+}

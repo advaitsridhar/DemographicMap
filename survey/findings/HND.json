@@ -1,0 +1,93 @@
+{
+  "iso3": "HND",
+  "name": "Honduras",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Instituto Nacional de Estadistica (INE Honduras)",
+    "url": "https://www.ine.gob.hn/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2013,
+    "asks": {
+      "religion": false,
+      "ethnicity": true,
+      "language": null
+    },
+    "confidence": "recalled",
+    "notes": "The XVII Censo de Poblacion y VI de Vivienda 2013 asked ethnic self-identification ('pueblo': Lenca, Miskito, Garifuna, Maya-Chorti, Tolupan, Pech, Tawahka, Nahua, negro de habla inglesa, other/none), as the 2001 census had; the packet's 7% indigenous / 2% Afro-descendant is from it. Honduran censuses do not ask religion -- the packet's Evangelical/Catholic split is a survey figure. Whether 2013 carried a language item beyond the ethnic question is not recalled, so language is null. A new census was planned for the mid-2020s; no results are recalled."
+  },
+  "subnational_sources": [
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "Censo 2013 online REDATAM processor (INE Honduras): poblacion por pueblo de pertenencia (autoidentificacion etnica), by departamento and municipio",
+      "url": null,
+      "publisher": "INE Honduras (REDATAM web processor)",
+      "kind": "census",
+      "format": "table-builder",
+      "geography": "departamento (18) and municipio (298)",
+      "geography_count": 298,
+      "matches_boundary_level": "admin1 and admin2",
+      "year": 2013,
+      "confidence": "recalled",
+      "evidence": "INE disseminates the 2013 census through a REDATAM processor that cross-tabulates any variable by department and municipality; 18 departments and 298 municipios equal the packet's admin1 and admin2 counts exactly. REDATAM has no API and its export is a table at a time; the CELADE (ECLAC) REDATAM mirror may hold the same database."
+    },
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "Censo 2013 -- Caracterizacion de la poblacion indigena y afrohondurena (INE thematic tables by departamento)",
+      "url": null,
+      "publisher": "INE Honduras",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "departamento",
+      "geography_count": 18,
+      "matches_boundary_level": "admin1",
+      "year": 2013,
+      "confidence": "low",
+      "evidence": "INE issued thematic PDF products on the indigenous and Afro-Honduran population after 2013; recalled as departmental, not municipal."
+    },
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "IPUMS International: Honduras 2001 census microdata sample (ethnic group)",
+      "url": null,
+      "publisher": "IPUMS International",
+      "kind": "census",
+      "format": "api",
+      "geography": "departamento / municipio",
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2001,
+      "confidence": "low",
+      "evidence": "Registration required, sample, and a census older; fallback only."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Honduras"
+      },
+      {
+        "title": "Demographics of Honduras"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "A 2013 census count of ethnic self-identification exists at department (18 = admin1) and municipio (298 = admin2), but through INE's REDATAM table builder with no API; religion is not asked.",
+  "replaces_existing": false,
+  "recommended_action": "Open INE Honduras' REDATAM Censo 2013 processor and run 'pueblo de pertenencia' by municipio (298) and departamento (18); export as XLS/CSV. Watch homonymous municipio names across departments (La Union, San Andres, El Porvenir each occur in more than one department), so join on the INE department+municipio code, not the bare name. Declare religion not_collected ('Honduran censuses do not ask religion'); leave language null until the 2013 questionnaire is checked.",
+  "searches_run": [],
+  "not_found": [
+    "A machine-readable (CSV/XLSX) release of 2013 ethnicity by municipio outside REDATAM",
+    "Whether the 2013 questionnaire asked language",
+    "Status of the next census"
+  ],
+  "summary": "Honduras' 2013 census asked ethnic self-identification (indigenous and Afro-Honduran pueblos) and INE serves it through a REDATAM online processor at department (18 = admin1) and municipio (298 = admin2) level, so both boundary levels can be filled, but only through a table builder with no API, hence Tier B. Religion is not a census item and the national figure in the packet is a survey estimate, so religion should be declared not_collected. Language is left null pending a look at the questionnaire. Municipio names repeat across departments, so join on codes."
+}

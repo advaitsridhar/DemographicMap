@@ -1,0 +1,900 @@
+{
+ "iso3": "MMR",
+ "name": "Burma",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "The 2014 Myanmar Population and Housing Census - The Union Report: Religion - Census Report Volume 2-C",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "state/region",
+   "geography_count": 15,
+   "matches_boundary_level": "admin1 (boundary draws 14; the census's 15th unit is Nay Pyi Taw Union Territory, per the USCB workbook's '15 states and regions' in SOURCES.md)",
+   "url": "https://www.dop.gov.mm/sites/dop.gov.mm/files/publication_docs/union_2-c_religion_en_0.pdf",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>"
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "MIMU Baseline Datasets / Township Profiles (2014 census indicators digitised by township)",
+   "kind": "census (compiled)",
+   "format": "xlsx",
+   "geography": "township",
+   "geography_count": 330,
+   "matches_boundary_level": "neither directly; townships nest inside the 74 admin2 districts, so a township-to-district crosswalk would be needed",
+   "url": "https://themimu.info/baseline-datasets",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://themimu.info/baseline-datasets",
+   "error": null,
+   "body": {
+    "bytes_read": 75185,
+    "kind": "html",
+    "title": "Baseline Datasets | MIMU",
+    "links_to_files": [
+     "https://themimu.info/sites/themimu.info/files/documents/BaselineData_HealthFacilities_All_StateRegion_GAD2019_MIMUPcode9.2_26Nov2020.xlsx",
+     "https://themimu.info/sites/themimu.info/files/documents/Excel_Heat_Mapping_MIMU_V206_20200513.zip",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_Agriculture_Countrywide_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_AllSectors_Ayeyarwady_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_AllSectors_Bago_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_AllSectors_Chin_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_AllSectors_Countrywide_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_AllSectors_Kachin_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_AllSectors_Kayah_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_AllSectors_Kayin_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_AllSectors_Magway_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_AllSectors_Mandalay_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_AllSectors_Mon_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_AllSectors_Nay_Pyi_Taw_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_AllSectors_Rakhine_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_AllSectors_Sagaing_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_AllSectors_Shan_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_AllSectors_Tanintharyi_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_AllSectors_Yangon_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_Demography_Countrywide_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_Economy_Countrywide_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_Education_Countrywide_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_Environment_Countrywide_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_Gender_Countrywide_30Jan2026.xls",
+     "https://themimu.info/sites/themimu.info/files/documents/MIMU_BaselineData_HardToReach_08May2019.xls"
+    ],
+    "mentions": [
+     "census",
+     "ethnic",
+     "language",
+     "languages"
+    ]
+   }
+  },
+  {
+   "fields": [],
+   "title": "2024 Main Report / 2024 Provisional Result - Department of Population",
+   "kind": "census",
+   "format": "pdf",
+   "geography": null,
+   "geography_count": null,
+   "matches_boundary_level": null,
+   "url": "https://www.dop.gov.mm/en/publication-category/2024-main-report",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>"
+  },
+  {
+   "fields": [],
+   "title": "2014 Myanmar Census: Household and Population Data for Townships - OD Mekong Datahub",
+   "kind": "census (mirror)",
+   "format": null,
+   "geography": "township",
+   "geography_count": null,
+   "matches_boundary_level": "neither directly (township)",
+   "url": "https://data.opendevelopmentmyanmar.net/en/dataset/2014-myanmar-census",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://data.opendevelopmentmyanmar.net/en/dataset/2014-myanmar-census",
+   "error": null,
+   "body": {
+    "bytes_read": 105070,
+    "kind": "html",
+    "title": "2014 Myanmar Census: Household and Population Data for Townships - Dataset OD Mekong Datahub",
+    "links_to_files": [
+     "https://data.opendevelopmentmekong.net/dataset/be760472-6224-4d73-b309-335d732cab93/resource/0e254b69-0d94-4cb0-945d-24f579f8d630/download/migrantpopulationinconventionalhouseholdsbymainreasonofmovementfrompriorresidenceandsex.csv",
+     "https://data.opendevelopmentmekong.net/dataset/be760472-6224-4d73-b309-335d732cab93/resource/1edc5ad5-9e50-4a24-8fbe-fa35c3645e74/download/census2014stateregionreligion.csv",
+     "https://data.opendevelopmentmekong.net/dataset/be760472-6224-4d73-b309-335d732cab93/resource/30699e84-f413-410a-a498-1f573613d937/download/censustransportationtsp.csv",
+     "https://data.opendevelopmentmekong.net/dataset/be760472-6224-4d73-b309-335d732cab93/resource/4b81a382-0df7-463d-86f6-f04aa1d1be39/download/censusmeanhhsizetsp.csv",
+     "https://data.opendevelopmentmekong.net/dataset/be760472-6224-4d73-b309-335d732cab93/resource/5e23c802-e443-4aa9-a0b9-cb5c3631625a/download/censusownershipofhousingtsp.csv",
+     "https://data.opendevelopmentmekong.net/dataset/be760472-6224-4d73-b309-335d732cab93/resource/702f8d11-8301-4661-b7b8-030501a90626/download/householdpopulationbaseddatasetmimutownshipsabbreviated.csv",
+     "https://data.opendevelopmentmekong.net/dataset/be760472-6224-4d73-b309-335d732cab93/resource/717ec2e8-5ef8-4a72-ab37-d870c037da0b/download/householdpopulationbaseddatasetmimutownshipsidcards.csv",
+     "https://data.opendevelopmentmekong.net/dataset/be760472-6224-4d73-b309-335d732cab93/resource/83424b4f-ea17-4abb-9a20-ba9f7fa543d5/download/censususualactivitystatustsp.csv",
+     "https://data.opendevelopmentmekong.net/dataset/be760472-6224-4d73-b309-335d732cab93/resource/9ceb7b18-4798-4f5b-b004-d8b3a0392661/download/householdpopulationbaseddatasetmimutownshipslabour.csv",
+     "https://data.opendevelopmentmekong.net/dataset/be760472-6224-4d73-b309-335d732cab93/resource/b6456c36-0cc7-41eb-94b8-edef44bfe417/download/censusmfheadedhhtsp.csv",
+     "https://data.opendevelopmentmekong.net/dataset/be760472-6224-4d73-b309-335d732cab93/resource/b7921fd3-e7aa-4320-921c-fc1f4220d00f/download/censuscommuniationtsp.csv",
+     "https://data.opendevelopmentmekong.net/dataset/be760472-6224-4d73-b309-335d732cab93/resource/b9829c50-37ee-4500-919a-59c3e4e27ab2/download/censusliteracyratetsp.csv",
+     "https://data.opendevelopmentmekong.net/dataset/be760472-6224-4d73-b309-335d732cab93/resource/cf6dda40-bf1b-46c9-a25c-52f582e2382c/download/householdpopulationbaseddatasetmimutownshipsdisabilities.csv",
+     "https://data.opendevelopmentmekong.net/dataset/be760472-6224-4d73-b309-335d732cab93/resource/f33a6208-ce00-49ec-bac4-f3a5f02c4a3c/download/datadictionaryhhpoptownships.csv",
+     "https://data.opendevelopmentmekong.net/dataset/be760472-6224-4d73-b309-335d732cab93/resource/f87d8ef4-46d4-4bc9-824b-c00f4009da1b/download/censuspopruralurbantsp.csv",
+     "https://data.opendevelopmentmekong.net/dataset/be760472-6224-4d73-b309-335d732cab93/resource/fd68548f-15e0-40dc-886f-c08b82df3a8b/download/censuspopgendertsp.csv",
+     "https://data.opendevelopmentmekong.net/dataset/be760472-6224-4d73-b309-335d732cab93/resource/fd9605bc-a5d4-4420-bca5-434fced2076a/download/censussourceoflighttsp.csv",
+     "https://data.opendevelopmentmyanmar.net/en/dataset/be760472-6224-4d73-b309-335d732cab93.json"
+    ],
+    "mentions": [
+     "census",
+     "language",
+     "religion"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "2014 Myanmar census",
+    "wikitext_bytes": 17407,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Myanmar",
+    "wikitext_bytes": 41590,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups",
+     "Language"
+    ],
+    "wikitables": 15,
+    "charts": [
+     "Bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "width=\"80pt\"| Age group",
+       "width=\"80pt\"| Male",
+       "width=\"80pt\"| Female",
+       "width=\"80pt\"| Total",
+       "width=\"80pt\"| %",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"| Age group",
+       "width=\"80pt\"| Male",
+       "width=\"80pt\"| Female",
+       "width=\"80pt\"| Total",
+       "width=\"80pt\"| %",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"| Age group",
+       "width=\"80pt\"| Male",
+       "width=\"80pt\"| Female",
+       "width=\"80pt\"| Total",
+       "width=\"80pt\"| %",
+       "width=\"50\"| Age group",
+       "width=\"80pt\"| Male",
+       "width=\"80\"| Female",
+       "width=\"80\"| Total",
+       "width=\"50\"| Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "style=\"width:80pt;\"|Year<ref>{{Cite web |url=https://population.un.org/wpp/ |title=World Population Prospects: The 2022 Revision |access-date=18 January 2021 |archive-date=16 August 2015 |archive-url=https://web.archive.org/web/20150816232627/http://esa.un.org/unpd/wpp/index.htm |url-status=live }}</ref>",
+       "style=\"width:80pt;\"|Live births per year",
+       "style=\"width:80pt;\"|Deaths per year",
+       "style=\"width:80pt;\"|Natural change per year",
+       "style=\"width:80pt;\"|CBR<sup>1</sup>",
+       "style=\"width:80pt;\"|CDR<sup>1</sup>",
+       "style=\"width:80pt;\"|NC<sup>1</sup>",
+       "style=\"width:80pt;\"|TFR<sup>1</sup>",
+       "style=\"width:80pt;\"|IMR<sup>1</sup>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 32
+     },
+     {
+      "header": [
+       "Year<ref>{{Cite web |title=Myanmar Statistical Yearbook |url=https://www.csostat.gov.mm/PublicationAndRelease/StatisticalYearbook |access-date=2025-07-30}}</ref><ref>{{Cite web |title=Live births, deaths, and infant deaths, latest available year |url=https://unstats.un.org/unsd/demographic-social/products/vitstats/seratab3.pdf |access-date=2025-07-30}}</ref>",
+       "Births",
+       "Deaths",
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "Region",
+       "Crude Birth Rate (CBR)",
+       "Total Fertility Rate (TFR)",
+       "Total Marital Fertility Rate (TMFR)",
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929",
+       "1930",
+       "1931",
+       "1932",
+       "1933"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Years",
+       "1935",
+       "1936",
+       "1937",
+       "1938",
+       "1939",
+       "1940",
+       "1941",
+       "1942",
+       "1943"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Years",
+       "1945",
+       "1946",
+       "1947",
+       "1948",
+       "1949<ref name=\"ourworldindata.org\" />",
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "Religious<br>group",
+       "Population <br>% 1973<ref name=\"TUR\">{{cite book | url=https://drive.google.com/open?id=0B067GBtstE5TSl9FNElRRGtvMUk | title=The 2014 Myanmar Population and Housing Census Census Report Volume 2-C | publisher=Department of Population Ministry of Labour, Immigration and Population MYANMAR | author=Department of Population Ministry of Labour, Immigration and Population MYANMAR | date=July 2016 | pages=12–15 | access-date=28 July 2016 | archive-date=27 April 2020 | archive-url=https://web.archive.org/web/20200427034248/https://drive.google.com/file/d/0B067GBtstE5TSl9FNElRRGtvMUk/view?usp=drive_open | url-status=live }}</ref>",
+       "Population <br>% 1983<ref name=\"TUR\"/>",
+       "Population <br>% 2014<ref name=\"TUR\"/>{{refn|group=note|Based on the estimated overall population, including both the enumerated and non-enumerated population (51,486,253), and on the assumption that the non-enumerated population in Rakhine State affiliate with the Islamic faith.}}",
+       "Population <br>% 2024<ref name=\"MPHC\">{{cite web | url=https://www.dop.gov.mm/sites/dop.gov.mm/files/publication_docs/2024mphc_unionreport_en_26nov.pdf | title=The 2024 Myanmar Population and Housing Census Census Report Volume 2 | publisher=Department of Population Ministry of Immigration and Population Myanmar | date=October 2025 |pages=40–41}}</ref>",
+       "style=\"background:Yellow;\"| Buddhism",
+       "style=\"background:DodgerBlue;\"| Christianity",
+       "style=\"background:Green;\"| Islam",
+       "style=\"background:DarkOrange;\"| Hinduism",
+       "style=\"background:Chartreuse;\"| Tribal religions"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "Faith",
+       "%<br />(2008 est.)",
+       "Division",
+       "Samanera members",
+       "%",
+       "Bhikkhu members",
+       "%",
+       "Sangha members",
+       "%",
+       "Kachin State"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 40
+     },
+     {
+      "header": [
+       "Division",
+       "Samanera members",
+       "%",
+       "Bhikkhu members",
+       "%",
+       "Sangha members",
+       "%",
+       "Kachin State",
+       "Kayah State",
+       "Kayin State"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 33
+     },
+     {
+      "header": [
+       "Division",
+       "Thilashin members",
+       "%",
+       "Kachin State",
+       "Kayah State",
+       "Kayin State",
+       "Chin State",
+       "Sagaing Region",
+       "Tanintharyi Region",
+       "Naypyidaw Union Territory"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 16
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Myanmar",
+    "wikitext_bytes": 36971,
+    "infobox_params": [],
+    "sections": [
+     "Religions"
+    ],
+    "wikitables": 2,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "! style=\"background:Yellow;\"| Buddhist",
+       "style=\"background:DodgerBlue;\"| Christian",
+       "style=\"background:Green;\"| Muslim",
+       "style=\"background:DarkOrange;\"| Hindu",
+       "style=\"background:Chartreuse;\"| Tribal<br>religions",
+       "style=\"background:Crimson;\"| Other<br>religions",
+       "style=\"background:Black; color:White;\"| Not<br>religious"
+      ],
+      "place_column": false,
+      "composition_columns": 4,
+      "rows_hint": 5
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | State/Region",
+       "colspan=\"2\" | Buddhism",
+       "colspan=\"2\" | Christianity",
+       "colspan=\"2\" | Islam",
+       "colspan=\"2\" | Animism",
+       "colspan=\"2\" | Hinduism",
+       "colspan=\"2\" | Other religions",
+       "colspan=\"2\" | No religion",
+       "colspan=\"2\" | Not stated",
+       "rowspan=\"2\" | Total"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 9
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Burma",
+    "wikitext_bytes": 36971,
+    "infobox_params": [],
+    "sections": [
+     "Religions"
+    ],
+    "wikitables": 2,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "! style=\"background:Yellow;\"| Buddhist",
+       "style=\"background:DodgerBlue;\"| Christian",
+       "style=\"background:Green;\"| Muslim",
+       "style=\"background:DarkOrange;\"| Hindu",
+       "style=\"background:Chartreuse;\"| Tribal<br>religions",
+       "style=\"background:Crimson;\"| Other<br>religions",
+       "style=\"background:Black; color:White;\"| Not<br>religious"
+      ],
+      "place_column": false,
+      "composition_columns": 4,
+      "rows_hint": 5
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | State/Region",
+       "colspan=\"2\" | Buddhism",
+       "colspan=\"2\" | Christianity",
+       "colspan=\"2\" | Islam",
+       "colspan=\"2\" | Animism",
+       "colspan=\"2\" | Hinduism",
+       "colspan=\"2\" | Other religions",
+       "colspan=\"2\" | No religion",
+       "colspan=\"2\" | Not stated",
+       "rowspan=\"2\" | Total"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 9
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Burma",
+    "wikitext_bytes": 41590,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups",
+     "Language"
+    ],
+    "wikitables": 15,
+    "charts": [
+     "Bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "width=\"80pt\"| Age group",
+       "width=\"80pt\"| Male",
+       "width=\"80pt\"| Female",
+       "width=\"80pt\"| Total",
+       "width=\"80pt\"| %",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"| Age group",
+       "width=\"80pt\"| Male",
+       "width=\"80pt\"| Female",
+       "width=\"80pt\"| Total",
+       "width=\"80pt\"| %",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"| Age group",
+       "width=\"80pt\"| Male",
+       "width=\"80pt\"| Female",
+       "width=\"80pt\"| Total",
+       "width=\"80pt\"| %",
+       "width=\"50\"| Age group",
+       "width=\"80pt\"| Male",
+       "width=\"80\"| Female",
+       "width=\"80\"| Total",
+       "width=\"50\"| Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "style=\"width:80pt;\"|Year<ref>{{Cite web |url=https://population.un.org/wpp/ |title=World Population Prospects: The 2022 Revision |access-date=18 January 2021 |archive-date=16 August 2015 |archive-url=https://web.archive.org/web/20150816232627/http://esa.un.org/unpd/wpp/index.htm |url-status=live }}</ref>",
+       "style=\"width:80pt;\"|Live births per year",
+       "style=\"width:80pt;\"|Deaths per year",
+       "style=\"width:80pt;\"|Natural change per year",
+       "style=\"width:80pt;\"|CBR<sup>1</sup>",
+       "style=\"width:80pt;\"|CDR<sup>1</sup>",
+       "style=\"width:80pt;\"|NC<sup>1</sup>",
+       "style=\"width:80pt;\"|TFR<sup>1</sup>",
+       "style=\"width:80pt;\"|IMR<sup>1</sup>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 32
+     },
+     {
+      "header": [
+       "Year<ref>{{Cite web |title=Myanmar Statistical Yearbook |url=https://www.csostat.gov.mm/PublicationAndRelease/StatisticalYearbook |access-date=2025-07-30}}</ref><ref>{{Cite web |title=Live births, deaths, and infant deaths, latest available year |url=https://unstats.un.org/unsd/demographic-social/products/vitstats/seratab3.pdf |access-date=2025-07-30}}</ref>",
+       "Births",
+       "Deaths",
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "Region",
+       "Crude Birth Rate (CBR)",
+       "Total Fertility Rate (TFR)",
+       "Total Marital Fertility Rate (TMFR)",
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929",
+       "1930",
+       "1931",
+       "1932",
+       "1933"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Years",
+       "1935",
+       "1936",
+       "1937",
+       "1938",
+       "1939",
+       "1940",
+       "1941",
+       "1942",
+       "1943"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Years",
+       "1945",
+       "1946",
+       "1947",
+       "1948",
+       "1949<ref name=\"ourworldindata.org\" />",
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "Religious<br>group",
+       "Population <br>% 1973<ref name=\"TUR\">{{cite book | url=https://drive.google.com/open?id=0B067GBtstE5TSl9FNElRRGtvMUk | title=The 2014 Myanmar Population and Housing Census Census Report Volume 2-C | publisher=Department of Population Ministry of Labour, Immigration and Population MYANMAR | author=Department of Population Ministry of Labour, Immigration and Population MYANMAR | date=July 2016 | pages=12–15 | access-date=28 July 2016 | archive-date=27 April 2020 | archive-url=https://web.archive.org/web/20200427034248/https://drive.google.com/file/d/0B067GBtstE5TSl9FNElRRGtvMUk/view?usp=drive_open | url-status=live }}</ref>",
+       "Population <br>% 1983<ref name=\"TUR\"/>",
+       "Population <br>% 2014<ref name=\"TUR\"/>{{refn|group=note|Based on the estimated overall population, including both the enumerated and non-enumerated population (51,486,253), and on the assumption that the non-enumerated population in Rakhine State affiliate with the Islamic faith.}}",
+       "Population <br>% 2024<ref name=\"MPHC\">{{cite web | url=https://www.dop.gov.mm/sites/dop.gov.mm/files/publication_docs/2024mphc_unionreport_en_26nov.pdf | title=The 2024 Myanmar Population and Housing Census Census Report Volume 2 | publisher=Department of Population Ministry of Immigration and Population Myanmar | date=October 2025 |pages=40–41}}</ref>",
+       "style=\"background:Yellow;\"| Buddhism",
+       "style=\"background:DodgerBlue;\"| Christianity",
+       "style=\"background:Green;\"| Islam",
+       "style=\"background:DarkOrange;\"| Hinduism",
+       "style=\"background:Chartreuse;\"| Tribal religions"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "Faith",
+       "%<br />(2008 est.)",
+       "Division",
+       "Samanera members",
+       "%",
+       "Bhikkhu members",
+       "%",
+       "Sangha members",
+       "%",
+       "Kachin State"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 40
+     },
+     {
+      "header": [
+       "Division",
+       "Samanera members",
+       "%",
+       "Bhikkhu members",
+       "%",
+       "Sangha members",
+       "%",
+       "Kachin State",
+       "Kayah State",
+       "Kayin State"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 33
+     },
+     {
+      "header": [
+       "Division",
+       "Thilashin members",
+       "%",
+       "Kachin State",
+       "Kayah State",
+       "Kayin State",
+       "Chin State",
+       "Sagaing Region",
+       "Tanintharyi Region",
+       "Naypyidaw Union Territory"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 16
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Labutta",
+    "found": true,
+    "title": "Labutta Township",
+    "url": "https://en.wikipedia.org/wiki/Labutta_Township",
+    "wikitext_bytes": 13104,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Lashio",
+    "found": true,
+    "title": "Lashio Township",
+    "url": "https://en.wikipedia.org/wiki/Lashio_Township",
+    "wikitext_bytes": 1615,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Loikaw",
+    "found": true,
+    "title": "Kayah State",
+    "url": "https://en.wikipedia.org/wiki/Kayah_State",
+    "wikitext_bytes": 33196,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics1_info2"
+    ],
+    "sections": [
+     "Demographics",
+     "Ethnic makeup",
+     "Religion"
+    ],
+    "wikitables": 2,
+    "charts": [
+     "Bar box",
+     "Historical populations",
+     "Pie chart",
+     "bar percent"
+    ],
+    "composition_blocks": 3,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Loilen",
+    "found": true,
+    "title": "Kyethi",
+    "url": "https://en.wikipedia.org/wiki/Kyethi",
+    "wikitext_bytes": 2080,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Mongmit",
+    "found": true,
+    "title": "Möng Mit",
+    "url": "https://en.wikipedia.org/wiki/M%C3%B6ng_Mit",
+    "wikitext_bytes": 10268,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "ethnicity",
+   "title": "Burma Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys",
+   "name": "burma-subnational-boundaries-and-tabular-data",
+   "org": "U.S. Census Bureau",
+   "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+   "resources": [
+    {
+     "name": "Burma.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/2689fec5-6a1a-4773-8a0b-304445c52fe7/resource/20453862-f0e6-4d78-bb7e-15e639983ffb/download/burma.gdb.zip"
+    },
+    {
+     "name": "Burma_uscb_202003.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/2689fec5-6a1a-4773-8a0b-304445c52fe7/resource/788f18ae-67a2-456b-8111-c4edf97baa34/download/burma_uscb_202003.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://dop.gov.mm/en",
+  "status": 0,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>",
+  "pages": []
+ },
+ "verdict": {
+  "hdx_datasets": 1,
+  "hdx_machine_readable": 1,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "2/4",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "1/5"
+ }
+}

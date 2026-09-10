@@ -1,0 +1,76 @@
+{
+  "iso3": "BDI",
+  "name": "Burundi",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Institut de Statistiques et d'Etudes Economiques du Burundi (ISTEEBU), restructured c. 2023 as the Institut National de la Statistique du Burundi (INSBU)", "url": "https://www.isteebu.bi/", "confidence": "recalled"},
+  "latest_census": {
+    "year": 2008,
+    "asks": {"religion": true, "ethnicity": false, "language": null},
+    "confidence": "recalled",
+    "notes": "Recensement General de la Population et de l'Habitation (RGPH) of 16-17 August 2008 is the last census with published results (the previous one was 1990). Religion: the 2008 questionnaire had a religion item and the results were published (order of magnitude: Catholic ~62%, Protestant ~22%, Muslim ~2.5%). Ethnicity: not asked -- Burundi, like Rwanda, does not enumerate Hutu/Tutsi/Twa; the post-Arusha political settlement treats the ethnic count as too sensitive, so the census questionnaire omits it. Language: I cannot recall a language item on the 2008 questionnaire; leave null. A new census (RGPHAE, combining population, housing, agriculture and livestock) was in preparation from 2022 with enumeration planned around 2024; I cannot confirm whether it was carried out or what it asked. Note also that Burundi legislated in 2023 a reorganisation from 18 provinces / 119 communes to 5 provinces / 42 communes, to take effect after the 2025 elections; any new census will be published on the new layout, which matches neither level of the packet's boundary file."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion"],
+      "title": "RGPH 2008 -- Resultats definitifs, thematic volumes (socio-cultural characteristics), tables by province",
+      "url": null,
+      "publisher": "ISTEEBU / Bureau Central du Recensement",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "province",
+      "geography_count": 17,
+      "matches_boundary_level": "admin1 (17 of 18: Rumonge, created in 2015 from parts of Bururi and Bujumbura Rural, has no 2008 row)",
+      "year": 2008,
+      "confidence": "medium",
+      "evidence": "Recalled: the definitive 2008 results were issued as a set of thematic tomes in PDF (spatial distribution, socio-cultural characteristics, education, activity, etc.), tabulated by the 17 provinces of the time. Whether the religion table also goes to commune level (which would join the 119 admin2 shapes) I cannot say from memory."
+    },
+    {
+      "fields": ["religion"],
+      "title": "Troisieme Enquete Demographique et de Sante au Burundi (EDSB-III) 2016-17, religion by province",
+      "url": null,
+      "publisher": "ISTEEBU / Ministere de la Sante / ICF (DHS Program)",
+      "kind": "survey",
+      "format": "pdf / DHS API",
+      "geography": "province",
+      "geography_count": 18,
+      "matches_boundary_level": "admin1",
+      "year": 2017,
+      "confidence": "medium",
+      "evidence": "Recalled: the Burundi DHS reports religion among background characteristics and its sampling domains are the 18 provinces. A sampled estimate, ranked below the 2008 count."
+    },
+    {
+      "fields": ["religion"],
+      "title": "IPUMS-International: Burundi 1990 and 2008 census samples",
+      "url": null,
+      "publisher": "IPUMS-International (Minnesota Population Center)",
+      "kind": "census",
+      "format": "microdata (registration required)",
+      "geography": "province",
+      "geography_count": 17,
+      "matches_boundary_level": "admin1",
+      "year": 2008,
+      "confidence": "low",
+      "evidence": "Recalled with low confidence that Burundi 2008 is in the IPUMS catalogue with a religion variable and province identifiers; verify before relying on it."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Burundi"},
+      {"title": "Demographics of Burundi"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "A census religion count exists (RGPH 2008) but is 18 years old, PDF-only on recollection, and tabulated for 17 provinces against a boundary file of 18; ethnicity is not asked (Tier C field) and language is unknown.",
+  "replaces_existing": false,
+  "recommended_action": "Crawl isteebu.bi (and, if it has moved, the INSBU successor site) for the RGPH 2008 definitive-results tomes; extract religion by province and, if present, by commune. Join 17 provinces to admin1 by name and leave Rumonge visibly empty rather than splitting Bururi. Declare ethnicity not_collected with the post-conflict policy reason. Check whether the 2024 RGPHAE has published anything; if it has, expect the new 5-province layout and record the mismatch.",
+  "searches_run": [],
+  "not_found": [
+    "Not established from memory: the exact tome title and number carrying religion in the RGPH 2008 results, and whether it tabulates by commune",
+    "Not established: whether the 2008 questionnaire asked language",
+    "Not established: whether the 2024 RGPHAE enumeration took place and what it asked",
+    "Not established: the current URL of the renamed statistical office (INSBU)"
+  ],
+  "summary": "Burundi's last published census is the RGPH of August 2008 (ISTEEBU, now INSBU; isteebu.bi). It asked religion and published it by the 17 provinces of the time, one short of the boundary file's 18 because Rumonge was created in 2015; the results are PDF tomes as far as I recall, so Tier B. Ethnicity is not enumerated, a deliberate post-conflict choice, and should be declared not_collected; whether language was asked I cannot say. A new census was planned for 2024 and the country is moving to a 5-province layout, so a runner should check for new publications but expect a geography that matches neither level."
+}

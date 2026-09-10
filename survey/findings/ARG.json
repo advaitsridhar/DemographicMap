@@ -1,0 +1,183 @@
+{
+  "iso3": "ARG",
+  "name": "Argentina",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Instituto Nacional de Estadística y Censos (INDEC)",
+    "url": "https://www.indec.gob.ar/",
+    "census_site": "https://censo.gob.ar/"
+  },
+  "latest_census": {
+    "year": 2022,
+    "asks": {
+      "religion": false,
+      "ethnicity": true,
+      "language": false
+    },
+    "published_subnationally": {
+      "religion": false,
+      "ethnicity": true,
+      "language": false
+    },
+    "notes": "Censo Nacional de Población, Hogares y Viviendas 2022 (61 questions, first bimodal census). Ethnicity is two universal self-recognition questions: indigenous or descendant of indigenous peoples, naming the pueblo (58 pueblos; 1,306,730 people, 2.9% of the population in private dwellings), and Afro-descendant (302,936 people, 0.7%; universal for the first time -- in 2010 it was asked only on a sample). Religion has not been asked since 1960: only the 1947 and 1960 censuses carried it; a religion item was tested in the 2020 pilot and dropped from the final form (Aleteia, Chequeado, Religión en Argentina snippets). Language: asked only of people who self-identified as indigenous, as whether they speak and/or understand the language of their pueblo (29.3% said yes) -- an ability question on a subpopulation, not a mother-tongue or home-language composition; the Tejido organisation criticised exactly this narrowing (Agencia Presentes snippet)."
+  },
+  "subnational_sources": [
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "Censo 2022 - Resultados definitivos por provincia (one page per jurisdiction, e.g. 'Córdoba - Censo Nacional de Población, Hogares y Viviendas'), including 'Población que se reconoce indígena o descendiente de pueblos indígenas u originarios' by departamento",
+      "url": "https://censo.gob.ar/index.php/datos_definitivos_cordoba/",
+      "other_urls": [
+        "https://censo.gob.ar/index.php/datos_definitivos_rionegro/",
+        "https://censo.gob.ar/index.php/datos_definitivos_tucuman/",
+        "https://censo.gob.ar/index.php/datos_definitivos_mendoza/",
+        "https://censo.gob.ar/index.php/datos_definitivos_santiago_del_estero/"
+      ],
+      "publisher": "INDEC (censo.gob.ar)",
+      "kind": "census",
+      "format": "xlsx (plus PDF thematic publications)",
+      "geography": "departamento / partido (CABA: comunas)",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 (boundary draws 525 departments; count on the pages not seen)",
+      "year": 2022,
+      "confidence": "medium",
+      "evidence": "Search snippet for the provincial pages: 'The statistical tables are available in xlsx format, and tables in .xlsx format are made available for users in addition to the thematic publications of final results in PDF format' and that the pages carry 'Población que se reconoce indígena o descendiente de pueblos indígenas u originarios ... organized by department for various provinces'. The xlsx file URLs themselves were not surfaced; 24 separate jurisdiction pages must be walked. Afro-descendant by department is not confirmed by any snippet."
+    },
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "Población indígena - Censo Nacional de Población, Hogares y Viviendas 2022 (thematic report, March 2024)",
+      "url": "https://censo.gob.ar/wp-content/uploads/2024/03/censo2022_poblacion_indigena.pdf",
+      "other_urls": [
+        "https://www.indec.gob.ar/ftp/cuadros/poblacion/censo2022_poblacion_indigena.pdf",
+        "https://biblioteca.indec.gob.ar/bases/minde/1c2022_9.pdf"
+      ],
+      "publisher": "INDEC",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "provincia / jurisdicción",
+      "geography_count": 24,
+      "matches_boundary_level": "admin1 (boundary draws 23; the census reports 24 jurisdictions -- 23 provinces plus the Ciudad Autónoma de Buenos Aires -- so one row will not place unless CABA is folded into Buenos Aires)",
+      "year": 2022,
+      "confidence": "high",
+      "evidence": "Snippets give the provincial shares (Jujuy 10.1%, Salta 10.0%, Chubut 7.9%, Formosa 7.8%, Neuquén 7.7%, Río Negro 6.4%; Corrientes and Entre Ríos lowest at 1.3%), which can only come from a by-jurisdiction table."
+    },
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "Población afrodescendiente - Censo Nacional de Población, Hogares y Viviendas 2022 (thematic report)",
+      "url": "https://www.indec.gob.ar/ftp/cuadros/poblacion/censo2022_poblacion_afrodescendiente.pdf",
+      "publisher": "INDEC",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "provincia / jurisdicción",
+      "geography_count": 24,
+      "matches_boundary_level": "admin1 (same CABA caveat)",
+      "year": 2022,
+      "confidence": "high",
+      "evidence": "Snippet: 302,936 people identified as Afro-descendant, 0.7%; 55.9% of them in CABA (13.4%) and Buenos Aires province (42.5%) -- a by-jurisdiction figure."
+    },
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "REDATAM online processing of Censo 2022 (redarg/CENSOS/CPV2022)",
+      "url": "https://redatam.indec.gob.ar/redarg/CENSOS/CPV2022/Docs/Redatam_aspectos_metodologicos.pdf",
+      "publisher": "INDEC",
+      "kind": "census",
+      "format": "table-builder (no API found)",
+      "geography": "departamento",
+      "geography_count": null,
+      "matches_boundary_level": "admin2",
+      "year": 2022,
+      "confidence": "medium",
+      "evidence": "Methodological note snippet: REDATAM 'allows data to be made available at the departmental level for various topics', with disclosure limits. Only the methodology PDF surfaced; the query interface URL was not in results."
+    },
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "Provincial statistics offices' Censo 2022 reports (mirrors of INDEC): Salta 'Informe Censo Población indígena'; San Luis 'Migración externa e interna / Población afrodescendiente / Población indígena'",
+      "url": "https://estadisticas.salta.gov.ar/web/archivos/informes/censo2022/23.%20Informe_Censo_Poblacion%20indigena.pdf",
+      "other_urls": [
+        "https://estadistica.sanluis.gov.ar/documents/Sociedad/Poblaci%C3%B3n/Migraciones/Migraci%C3%B3n%20externa%20e%20interna%20seg%C3%BAn%20el%20Censo%20Nacional%20de%20Poblaci%C3%B3n,%20Hogares%20y%20Viviendas%202022..pdf"
+      ],
+      "publisher": "Dirección General de Estadísticas de Salta; Dirección Provincial de Estadística de San Luis",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "province-specific (likely departamento within the province)",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 (partial: one province each)",
+      "year": 2022,
+      "confidence": "low",
+      "evidence": "Titles only; geography not stated in snippets."
+    }
+  ],
+  "secondary_routes": [],
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religión en Argentina (es)",
+        "url": "https://es.wikipedia.org/wiki/Religi%C3%B3n_en_Argentina",
+        "appears_to_contain": "snippet says the 1947 and 1960 censuses were the only ones to ask religion; provincial figures, if any, would be survey-based (CONICET 2019), not census; unverified"
+      },
+      {
+        "title": "Pueblos indígenas de Argentina (es)",
+        "url": "https://es.wikipedia.org/wiki/Pueblos_ind%C3%ADgenas_de_Argentina",
+        "appears_to_contain": "snippet gives the 2022 national count (1,306,730; 2.83%) and the six highest provinces; a by-province table is plausible but unverified"
+      },
+      {
+        "title": "Censo argentino de 2022 (es)",
+        "url": "https://es.wikipedia.org/wiki/Censo_argentino_de_2022",
+        "appears_to_contain": "census overview; unverified whether it tabulates indigenous/afro by province"
+      }
+    ],
+    "admin2_samples": [
+      {
+        "shape_name": "Castellanos",
+        "search_hit_title": "Castellanos Department",
+        "url": "https://en.wikipedia.org/wiki/Castellanos_Department",
+        "note": "article exists (Santa Fe; head town Rafaela; population 162,165 in snippet); snippet gives population and area only"
+      },
+      {
+        "shape_name": "Río Senguer",
+        "search_hit_title": "Río Senguer Department",
+        "url": "https://en.wikipedia.org/wiki/R%C3%ADo_Senguer_Department",
+        "note": "article exists in en and es (es category 'Departamento Río Senguer'); snippet gives population ~6,194 and area 22,335 km2 only"
+      },
+      {
+        "shape_name": "San Rafael",
+        "search_hit_title": "Departamento de San Rafael (es)",
+        "url": "https://es.wikipedia.org/wiki/Departamento_de_San_Rafael",
+        "note": "article exists; snippet gives area, borders, wine economy -- nothing demographic. Name is ambiguous across provinces (boundary also has 'General San Martín' and 'San Martín'; SOURCES.md notes 20 Argentine admin2 rows refused as ambiguous)"
+      }
+    ]
+  },
+  "tier": "A",
+  "tier_reason": "Census 2022 counts indigenous and Afro-descendant self-recognition, and censo.gob.ar's per-province final-results pages say the tables are published in .xlsx by departamento, which is the boundary's admin2 (525). Confidence is medium because the xlsx links themselves were not surfaced and there are 24 pages to walk. Religion and language are not asked (Tier C for those two fields: religion last asked 1960; language asked only of the indigenous-identified as an ability).",
+  "replaces_existing": false,
+  "recommended_action": "Open one province page (datos_definitivos_cordoba) and confirm an .xlsx with 'Población que se reconoce indígena o descendiente de pueblos indígenas u originarios' by departamento; then walk all 24 jurisdiction pages (the URL slugs vary: rionegro, santiago_del_estero). Build a three-class ethnicity composition -- indigenous / Afro-descendant / neither -- as Mexico's ITER is built, labelled as self-recognition, not an ethnic-group question; check whether Afro-descendant is also tabulated by department or only by jurisdiction. Declare religion not_collected (not asked since 1960; 2020 pilot item dropped) and language not_collected (asked only of the indigenous-identified, as ability). Check whether the boundary's 23 admin1 shapes include CABA, because the census reports 24 jurisdictions. Watch admin2 name ambiguity ('San Martín', 'General San Martín', 'Capital' in eleven provinces): join within province.",
+  "searches_run": [
+    "INDEC Censo 2022 Argentina resultados definitivos pueblos indígenas afrodescendientes por provincia",
+    "INDEC censo 2022 cuadros población indígena por provincia y departamento xlsx",
+    "Argentina censo religión última vez preguntó 1960 censo 2022 no pregunta religión ni lengua",
+    "INDEC censo 2022 REDATAM procesamiento en línea población indígena afrodescendiente departamento",
+    "censo 2022 Argentina cuestionario preguntas lengua idioma hablado no incluye pueblo indígena habla lengua",
+    "\"Pueblos indígenas en Argentina\" wikipedia población indígena por provincia censo 2022 tabla",
+    "\"Departamento Castellanos\" Santa Fe Argentina wikipedia",
+    "\"Departamento Río Senguer\" Chubut wikipedia",
+    "\"Departamento San Rafael\" Mendoza wikipedia"
+  ],
+  "not_found": [
+    "A single national xlsx of indigenous or Afro-descendant population by departamento (only per-province pages and national PDFs surfaced)",
+    "Direct URLs of the per-province .xlsx files (only the page URLs surfaced)",
+    "Any religion question in a census after 1960",
+    "Any whole-population language question in 2022",
+    "Afro-descendant tabulated by departamento (not confirmed by any snippet)",
+    "Not searched (session search budget exhausted): IPUMS-International Argentina 2022 sample, datos.gob.ar, HDX"
+  ],
+  "summary": "Argentina's 2022 census does not ask religion (last asked 1960) and asks language only of people who identified as indigenous, as an ability, so both fields should be declared not_collected with those reasons. What it does count, universally, is indigenous self-recognition (58 pueblos, 2.9%) and Afro-descendant self-recognition (0.7%), published by INDEC in national PDFs by jurisdiction (24, versus 23 boundary shapes) and, per censo.gob.ar's per-province final-results pages, in .xlsx by departamento, the boundary's admin2. The realistic build is a three-class self-recognition composition for admin2 from 24 provincial workbooks, then aggregated to admin1, with the xlsx links confirmed on one page first."
+}

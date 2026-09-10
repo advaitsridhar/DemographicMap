@@ -1,0 +1,509 @@
+{
+ "iso3": "COD",
+ "name": "DRC",
+ "tier_proposed": "D",
+ "sources": [
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "Democratic Republic of the Congo Subnational Population and Housing Data Tables with Administrative Boundaries, Based on Surveys (Democratic Republic of the Congo_uscb_202103.xlsx, sheet 'Tribe and Religion')",
+   "kind": "survey",
+   "format": "xlsx",
+   "geography": "province (26) and district (164)",
+   "geography_count": 26,
+   "matches_boundary_level": "admin1 (26 = 26, all joined); the 164 districts are read but not published because ~194 sampled households per district supports no estimate (repo decision), and they would need checking against the 189 admin2 shapes",
+   "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+   "status": 202,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data",
+   "error": null
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in DRC",
+    "wikitext_bytes": 0,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of DRC",
+    "wikitext_bytes": 45655,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religions"
+    ],
+    "wikitables": 11,
+    "charts": [
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "! style=\"width:80pt;\"|Total population<ref name=\"cia.gov\"/>",
+       "style=\"width:80pt;\"|Population aged 0–14 (%)",
+       "style=\"width:80pt;\"|Population aged 15–64 (%)",
+       "style=\"width:80pt;\"|Population aged 65+ (%)",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age Group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "style=\"width:70pt;\"|Period",
+       "style=\"width:70pt;\"|Population",
+       "style=\"width:70pt;\"|Live births",
+       "style=\"width:70pt;\"|Deaths",
+       "style=\"width:70pt;\"|Natural change",
+       "style=\"width:70pt;\"|CBR*",
+       "style=\"width:70pt;\" |CDR*",
+       "style=\"width:70pt;\" |NC*",
+       "style=\"width:70pt;\"|TFR*",
+       "style=\"width:70pt;\"|IMR*"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 31
+     },
+     {
+      "header": [
+       "style=\"width:50pt;\"| Year",
+       "style=\"width:50pt;\"| CBR (Total)",
+       "style=\"width:50pt;\"| TFR (Total)",
+       "style=\"width:50pt;\"| CBR (Urban)",
+       "style=\"width:50pt;\"| TFR (Urban)",
+       "style=\"width:50pt;\"| CBR (Rural)",
+       "style=\"width:50pt;\"| TFR (Rural)",
+       "style=\"width:100pt;\"| Province",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15-49 currently pregnant"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Province",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15-49 currently pregnant",
+       "style=\"width:100pt;\"| Mean number of children ever born to women age 40–49",
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929<ref name=\"ourworldindata.org\">{{Cite web |last=Our World in Data |title=Children born per woman |url=https://ourworldindata.org/grapher/children-born-per-woman?year=1800 |url-status=dead |archive-url=https://web.archive.org/web/20180630195909/https://ourworldindata.org/grapher/children-born-per-woman?year=1800|archive-date=30 June 2018 |access-date=May 28, 2026}}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929<ref name=\"ourworldindata.org\">{{Cite web |last=Our World in Data |title=Children born per woman |url=https://ourworldindata.org/grapher/children-born-per-woman?year=1800 |url-status=dead |archive-url=https://web.archive.org/web/20180630195909/https://ourworldindata.org/grapher/children-born-per-woman?year=1800|archive-date=30 June 2018 |access-date=May 28, 2026}}</ref>",
+       "Years",
+       "1930",
+       "1931",
+       "1932"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Years",
+       "1930",
+       "1931",
+       "1932",
+       "1933",
+       "1934",
+       "1935",
+       "1936",
+       "1937",
+       "1938"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "Years",
+       "1940",
+       "1941",
+       "1942",
+       "1943",
+       "1944",
+       "1945",
+       "1946",
+       "1947",
+       "1948"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in <br /> Years<ref>{{Cite web|url=https://esa.un.org/unpd/wpp/DataQuery/|title=World Population Prospects - Population Division - United Nations|website=esa.un.org|access-date=26 August 2018|archive-date=19 September 2016|archive-url=https://web.archive.org/web/20160919061238/https://esa.un.org/unpd/wpp/DataQuery/|url-status=live}}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Rank",
+       "Country",
+       "Region",
+       "Year",
+       "DRC born population"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 16
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Baraka",
+    "found": true,
+    "title": "Baraka, Democratic Republic of the Congo",
+    "url": "https://en.wikipedia.org/wiki/Baraka%2C_Democratic_Republic_of_the_Congo",
+    "wikitext_bytes": 19752,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Boende",
+    "found": true,
+    "title": "Time in the Democratic Republic of the Congo",
+    "url": "https://en.wikipedia.org/wiki/Time_in_the_Democratic_Republic_of_the_Congo",
+    "wikitext_bytes": 2153,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Dungu",
+    "found": true,
+    "title": "Angélique Namaika",
+    "url": "https://en.wikipedia.org/wiki/Ang%C3%A9lique_Namaika",
+    "wikitext_bytes": 2647,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kalima",
+    "found": true,
+    "title": "Société Aurifère du Kivu et du Maniema",
+    "url": "https://en.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_Aurif%C3%A8re_du_Kivu_et_du_Maniema",
+    "wikitext_bytes": 8277,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Libenge",
+    "found": true,
+    "title": "Libenge",
+    "url": "https://en.wikipedia.org/wiki/Libenge",
+    "wikitext_bytes": 2575,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "ethnicity",
+   "title": "DRC Tribes and Ethnic Cultural Dataset",
+   "name": "drc_cultural_social-data",
+   "org": "American Red Cross (inactive)",
+   "url": "https://data.humdata.org/dataset/drc_cultural_social-data",
+   "resources": [
+    {
+     "name": "RDC_Tribus_Ethnies.xlsx",
+     "format": "XLSX",
+     "url": "https://www.dropbox.com/s/czvj1015eqku91q/RDC_Tribus_Ethnies.xlsx?dl=0"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "DRC: Languages",
+   "name": "drc-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/drc-languages",
+   "resources": [
+    {
+     "name": "cd_lang_metadata_V01.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/0e616edb-dffa-4ebc-9aa1-90f6a4db33ff/resource/4b9f794b-bb42-4294-96d8-29ba05c2d71d/download/cd_lang_metadata_v01.pdf"
+    },
+    {
+     "name": "cd_lang_V01.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/0e616edb-dffa-4ebc-9aa1-90f6a4db33ff/resource/7263f024-45b1-4a45-903d-e4b0e075be79/download/cd_lang_v01.xlsx"
+    },
+    {
+     "name": "cd_lang_admin2_V01.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/0e616edb-dffa-4ebc-9aa1-90f6a4db33ff/resource/cc250cda-95b2-4b38-a3cc-cac1da090e27/download/cd_lang_admin2_v01.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "DRC official Languages",
+   "name": "drc-official-languages",
+   "org": "American Red Cross (inactive)",
+   "url": "https://data.humdata.org/dataset/drc-official-languages",
+   "resources": [
+    {
+     "name": "langues-parlees (1).csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/13ec1b95-7194-48c9-9683-3989fc9adcd7/resource/652c8db2-71eb-475a-ae22-b73219d1b7e1/download/langues-parlees-1.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Protracted Displacement Economies, 2021 - 2023",
+   "name": "unhcr-pde-2021-2023-v2-1",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-pde-2021-2023-v2-1",
+   "resources": [
+    {
+     "name": "Protracted Displacement Economies, 2021 - 2023",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/1252/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/1252/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "DR Congo - Affected Persons Locations",
+   "name": "dr-congo-affected-persons-locations",
+   "org": "OCHA Democratic Republic of the Congo (DRC)",
+   "url": "https://data.humdata.org/dataset/dr-congo-affected-persons-locations",
+   "resources": [
+    {
+     "name": "rdc_synthese_idps25juin2015.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/fce36ec7-d010-4701-8f93-096b5a1e846e/resource/3d9118d1-a224-44f8-80b0-bc4252a6ca2f/download/rdc_synthese_idps25juin2015.xls"
+    },
+    {
+     "name": "drc_factsheet_aout_2015_a3p.zip",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/fce36ec7-d010-4701-8f93-096b5a1e846e/resource/76fb41e5-9ffb-41b7-9a0b-2ca43846cd5a/download/drc_factsheet_aout_2015_a3p.zip"
+    },
+    {
+     "name": "refugee_factsheet_31_08_2015.zip",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/fce36ec7-d010-4701-8f93-096b5a1e846e/resource/8f3327e7-44ff-496d-923a-6db4600b1e4b/download/refugee_factsheet_31_08_2015.zip"
+    },
+    {
+     "name": "repatriation_factsheet_31_08_2015.zip",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/fce36ec7-d010-4701-8f93-096b5a1e846e/resource/3bc5ceb4-e166-4de2-b434-83c84bf8fcbd/download/repatriation_factsheet_31_08_2015.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Democratic Republic of the Congo and Zambia Gridded Population Dataset",
+   "name": "democratic-republic-of-the-congo-and-zambia-gridded-population-dataset",
+   "org": "U.S. Census Bureau",
+   "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-and-zambia-gridded-population-dataset",
+   "resources": [
+    {
+     "name": "DRC_Zambia_gridded_population_2022.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/8b9ff9b4-9229-40ea-b9c9-cd2a36f6ccab/resource/b2ef365f-db0e-4c51-b28e-e306c462e9fd/download/drc_zambia_gridded_population_2022.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Modelled gridded population estimates for the Haut-Katanga, Haut-Lomami, Ituri, Kasaï, Kasaï Oriental, Lomami and Sud-Kivu provinces in the Democratic Republic of the Congo (2021), version  3.0.",
+   "name": "modelled-gridded-population-estimates-for-cod-version-3-0",
+   "org": "GRID3",
+   "url": "https://data.humdata.org/dataset/modelled-gridded-population-estimates-for-cod-version-3-0",
+   "resources": [
+    {
+     "name": "COD_population_v3_0_gridded.tif",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/488"
+    },
+    {
+     "name": "COD_population_v3_0_agesex.zip",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/487"
+    },
+    {
+     "name": "COD_population_v3_0_README.pdf",
+     "format": "PDF",
+     "url": "https://wopr.worldpop.org/download/490"
+    },
+    {
+     "name": "COD_population_v3_0_mastergrid.tif",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/489"
+    },
+    {
+     "name": "COD_population_v3_0_methods.zip",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/493"
+    },
+    {
+     "name": "COD_population_v3_0_sql.sql",
+     "format": "SQL",
+     "url": "https://wopr.worldpop.org/download/491"
+    },
+    {
+     "name": "COD_population_v3_0_tiles.zip",
+     "format": "PNG",
+     "url": "https://wopr.worldpop.org/download/492"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Modelled gridded population estimates for the Kinshasa, Kongo-Central, Kwango, Kwilu, and Mai-Ndombe provinces in the Democratic Republic of the Congo 2018, version 2.0",
+   "name": "modelled-gridded-population-estimates-for-cod-2018-v2",
+   "org": "GRID3",
+   "url": "https://data.humdata.org/dataset/modelled-gridded-population-estimates-for-cod-2018-v2",
+   "resources": [
+    {
+     "name": "COD_population_v2_0_gridded.zip",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/113"
+    },
+    {
+     "name": "COD_population_v2_0_agesex.zip",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/120"
+    },
+    {
+     "name": "COD_population_v2_0_mastergrid.tif",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/117"
+    },
+    {
+     "name": "COD_population_v2_0_README.pdf",
+     "format": "PDF",
+     "url": "https://wopr.worldpop.org/download/114"
+    },
+    {
+     "name": "COD_population_v2_0_sql.sql",
+     "format": "SQL",
+     "url": "https://wopr.worldpop.org/download/115"
+    },
+    {
+     "name": "COD_population_v2_0_tiles.zip",
+     "format": "PNG",
+     "url": "https://wopr.worldpop.org/download/116"
+    }
+   ]
+  }
+ ],
+ "verdict": {
+  "hdx_datasets": 8,
+  "hdx_machine_readable": 4,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/1",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

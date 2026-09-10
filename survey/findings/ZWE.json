@@ -1,0 +1,125 @@
+{
+ "iso3": "ZWE",
+ "name": "Zimbabwe",
+ "mode": "knowledge-only",
+ "researched_at": "2026-09-10",
+ "nso": {
+  "name": "Zimbabwe National Statistics Agency (ZIMSTAT)",
+  "url": "https://www.zimstat.co.zw/",
+  "confidence": "recalled"
+ },
+ "latest_census": {
+  "year": 2022,
+  "asks": {
+   "religion": true,
+   "ethnicity": null,
+   "language": null
+  },
+  "confidence": "recalled",
+  "notes": "2022 Population and Housing Census (20-30 April 2022; Volume 1 population figures released 2022, thematic volumes 2023-2024). The 2012 census asked religion and published it by province in the National Report (Apostolic sects the largest group), and I believe the 2022 questionnaire kept the religion item, but I cannot confirm it from memory. Ethnicity: Zimbabwean censuses ask citizenship rather than tribe/ethnic group as far as I recall, but not confidently enough to declare 'not asked' - null. Language: not recalled - null."
+ },
+ "subnational_sources": [
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "2022 Population and Housing Census - thematic report / volume covering religion, by province (and possibly district)",
+   "url": null,
+   "publisher": "ZIMSTAT",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "province (10); district if tabulated",
+   "geography_count": 10,
+   "matches_boundary_level": "admin1 (10 provinces) exactly",
+   "year": 2022,
+   "confidence": "low-medium (recalled)",
+   "evidence": "Contingent on the 2022 questionnaire having retained religion; the report series is hosted on zimstat.co.zw."
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "Zimbabwe Population Census 2012 - National Report (ZIMSTAT, 2013): population by religion and province",
+   "url": null,
+   "publisher": "ZIMSTAT",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "province",
+   "geography_count": 10,
+   "matches_boundary_level": "admin1 exactly",
+   "year": 2012,
+   "confidence": "medium-high (recalled)",
+   "evidence": "The 2012 National Report's religion chapter is the source of the widely quoted 'Apostolic sect / Pentecostal / Protestant / Roman Catholic / traditional / none' split."
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "Zimbabwe Population Census 2012 - Provincial Reports (one per province), with district tables",
+   "url": null,
+   "publisher": "ZIMSTAT",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "district (about 60 administrative districts)",
+   "geography_count": 60,
+   "matches_boundary_level": "unclear: the boundary file draws 91 admin2 shapes, more than Zimbabwe's ~60 rural/urban districts - the shapes may be a different districting (e.g. including urban councils); expect a partial join",
+   "year": 2012,
+   "confidence": "medium (recalled that the reports exist; low that religion is tabulated by district in them)",
+   "evidence": "ZIMSTAT issued ten provincial reports for 2012 with district-level demographic tables."
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "IPUMS-International - Zimbabwe 1992, 2002, 2012 census samples",
+   "url": "https://international.ipums.org/",
+   "publisher": "IPUMS / ZIMSTAT",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "province and district",
+   "geography_count": null,
+   "matches_boundary_level": "admin1; admin2 partially",
+   "year": 2012,
+   "confidence": "medium (recalled)",
+   "evidence": "IPUMS holds Zimbabwe's 2012 census with a religion variable (I believe); registration required."
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "ZIMSTAT NADA microdata catalogue (census 2012 / 2022)",
+   "url": null,
+   "publisher": "ZIMSTAT",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "province / district",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 and admin2 partially",
+   "year": 2022,
+   "confidence": "low-medium (recalled)",
+   "evidence": "Most African NSOs run a NADA; the repo's probe_nada.py can test zimstat.co.zw for one."
+  }
+ ],
+ "wikipedia": {
+  "country_list_articles": [
+   {
+    "title": "Religion in Zimbabwe"
+   },
+   {
+    "title": "Demographics of Zimbabwe"
+   }
+  ],
+  "admin2_samples": []
+ },
+ "tier": "B",
+ "tier_reason": "A census count of religion exists by province (2012 National Report, PDF; 10 provinces = admin1) and probably in the 2022 thematic reports; nothing machine-readable is known to me, and the 91 admin2 shapes do not obviously correspond to Zimbabwe's ~60 districts. Ethnicity and language may not be census items at all.",
+ "replaces_existing": true,
+ "recommended_action": "Crawl zimstat.co.zw for the 2022 census report series; if a religion-by-province table exists, read it with probe_pdf.py and replace the Afrobarometer R9 survey now on the 10 provinces (owner review). Otherwise use the 2012 National Report. Before touching admin2, establish what the 91 shapes are - if they are not the census districts, no census table will join. Do not declare ethnicity or language not_collected from this finding; check the 2022 questionnaire first.",
+ "searches_run": [],
+ "not_found": [
+  "confirmation that the 2022 questionnaire asked religion; whether it asked ethnicity or language",
+  "any XLSX/CSV release of census religion tables",
+  "what geography the 91 admin2 shapes represent (Zimbabwe has ~60 districts)"
+ ],
+ "summary": "ZIMSTAT (zimstat.co.zw) counted religion in the 2012 census and published it by the 10 provinces (= admin1) in the National Report PDF, and the 2022 census very likely retained the item with thematic volumes now out; either would replace the Afrobarometer survey estimates currently on admin1. Ethnicity and language may not be census items, but I cannot say so confidently. The 91 admin2 shapes exceed Zimbabwe's ~60 districts, so district joins need the shapes identified first. Tier B."
+}

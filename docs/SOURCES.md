@@ -74,10 +74,13 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Scotland | Census 2011 Key Statistics `KS201SC` / `KS206SC` / `KS209SCb` (NRS) | council area | Fourteen years older than England and Wales, and stamped 2011 on every figure rather than smoothed. The 2022 results are still only in a flexible table builder. Ethnicity reads the leaves; language reads the one block of `KS206SC` that is a composition. |
 | Northern Ireland | NISRA Census 2021 `MS-B01` / `MS-B12` / `MS-B20` | local government district | Religion is the one **held** (`MS-B20`, 32 denominations), not the "religion or religion brought up in" of `MS-B23`/`B24` that is the province's more familiar figure — a different question, and this map has no field for it. Language is main language of residents aged 3+, not knowledge of Irish or Ulster-Scots. |
 | Ireland | CSO Census 2022 via PxStat, `SAP2022T2T4LEA22` / `SAP2022T2T2LEA22` | local electoral area | Religion at this geography is **four categories** — Catholic, Other religion, No religion, Not stated — so "Other religion" holds the Church of Ireland, Presbyterians, Orthodox and Muslims together and a filter for Christianity reads an Irish area at its Catholic share. Language is declared, not filled: the census asks which foreign languages a person speaks (English absent) and whether they can speak Irish (an ability). |
-| Canada | StatCan 2021 Census Profile (SDMX, keyed by DGUID) | province, census division | Religion is asked once a decade (2021 yes, 2016 no). "Visible minority" is an Employment Equity Act category, not an ethnicity question. |
-| Brazil | IBGE SIDRA tables 9514 / 9605 / 10086 | state, municipality | *Cor ou raça* is self-declared skin colour (branca, preta, parda, amarela, indígena) — not equivalent to ethnicity elsewhere. |
+| Canada | StatCan 2021 Census Profile, catalogue 98-401-X2021008 (zipped CSV) | province, economic region | Religion is asked once a decade (2021 yes, 2016 no). "Visible minority" is an Employment Equity Act category, not an ethnicity question; mother tongue is 100% data, the other two 25% sample data. The 76 economic regions are what geoBoundaries draws as the second level. Read from the downloadable profile, because www12's REST service answers non-browser clients with an HTML shell. |
+| Brazil | IBGE SIDRA tables 9514 / 9605 / 9537 | state, municipality | *Cor ou raça* is self-declared skin colour (branca, preta, parda, amarela, indígena) — not equivalent to ethnicity elsewhere. Religion is a count of persons aged 10 and over, the universe the 2022 census asked. |
 | EU | Eurostat `demo_r_pjangrp3`, `demo_r_pjanind3` | NUTS-2, NUTS-3 | Population and age everywhere; **no** ethnicity or religion — those are national census questions and only some states ask them. |
-| Australia | ABS 2021 Census `C21_G14`, `C21_G08` | state, LGA | Ancestry is multi-response (up to two per person), so shares are of responses and exceed 100%. No ethnicity question exists. There is no state-level table: the states are read off the LGA table's own `STATE` dimension. Population is the religion table's total, which is the region's counted persons. |
+| Australia | ABS 2021 Census `C21_G14`, `C21_G08`, `C21_G13` | state, LGA | Ancestry is multi-response (up to two per person), so shares are of responses and exceed 100%. No ethnicity question exists. There is no state-level table: the states are read off the LGA table's own `STATE` dimension. Population is the religion table's total, which is the region's counted persons. Language used at home (G13) is held at the Total of its proficiency and sex dimensions; its "Other Languages Total" row sits beside every language under it and is found by arithmetic, and only categories marked "... Total" can be parents in the code tree, because "Speaks English only" is coded `1` and is no parent of `1403` Afrikaans. |
+| Poland | GUS NSP 2021 final tables (three workbooks: przynależność wyznaniowa, narodowo-etniczna, język używany w domu) | voivodeship, powiat | Religion is a seven-level classification tree, cut once: Christian branches at level 5, other religions at level 4, no religion at level 3, and the fifth of Poland that declined to answer at level 2, kept as "Not stated". National-ethnic identification and home language allow two answers and are carried as multi-response; identifications and languages without an English name are summed as Other. Column A of every sheet is empty. |
+| Malaysia | DOSM OpenDOSM `population_state` / `population_district` CSV | state, district | Annual population estimates by ethnicity carried forward from Census 2020, in thousands; the latest year is read and the records say "estimate". The non-citizen row is DOSM's own category of the resident population and is kept. |
+| Kenya | KNBS 2019 Census Volume IV, Table 2.30 (openAFRICA mirror) | county | Religion for all 47 counties, replacing the Afrobarometer survey rows; ethnicity stays Afrobarometer's. KNBS's own site fails TLS verification (incomplete chain) and this project does not turn verification off. |
 | Switzerland | FSO structural survey 2024, main languages | canton | Main languages for all 26 cantons. A person may name up to three, so shares exceed 100%. |
 | Singapore | Census 2020 + GHS 2015 planning-area tables | planning area |Ethnicity, religion and language for the planning areas, on three different bases. |
 | Singapore | SingStat Table Builder M810771 | planning region | Resident population, sex ratio and a derived median age for the 5 regions. Religion, ethnicity and language are collected but not published at this geography. |
@@ -2231,7 +2234,7 @@ same call `pxweb.py` makes for the Nordic offices.
 | Philippines | 2020 (Philippine Statistics Authority) | religion, ethnicity | 17 regions, 116 provinces and cities |
 | Ethiopia | **2007** (Central Statistical Agency) | religion, ethnicity, language | 13 first-order areas, 93 zones |
 | Myanmar | 2014 census (religion), **2017** Township Profiles (ethnicity) | religion, ethnicity | 15 states and regions, 80 districts |
-| Ukraine | **2001** (State Statistics Service) | language | 27 oblasts, summed from 661 rayons |
+| Ukraine | **2001** (State Statistics Service) | language, ethnicity | 27 oblasts, summed from 661 rayons; nationality from the `NL_ETH_*` block of the Nationality-Language sheet, which is the whole population of each nationality |
 
 Ethiopia is 2007 because that is the last census Ethiopia has completed -- the
 2017 round was postponed and never held. It is the most recent measurement in
@@ -2696,6 +2699,118 @@ panel now name the same language the same way. But the bare names `Ndebele` and
 Southern Ndebele in South Africa, two different languages, and Sotho is used
 for both Sesotho and Sepedi. The Factbook's compounds are safe precisely
 because they only ever appear in the South African entry.
+
+### Japan and Turkey: 208 million, and two different kinds of empty
+
+Both are large, both are blank below the country line, and the reasons are not
+the same -- which is the point of measuring rather than assuming.
+
+**Japan does not ask.** The Kokusei Chosa records name, sex, date of birth,
+marital status, nationality, household relationship, dwelling, employment,
+industry, occupation and commuting. Religion and ethnicity were already
+declared here; **language** is now declared alongside them, because the census
+does not ask that either and 47 prefectures of empty language field were
+reading as "not fetched yet" rather than "never asked". Japan's published
+religion figures come from the Agency for Cultural Affairs' yearbook, where
+religious bodies report their own adherents and the total exceeds the
+population -- the same person counted by a shrine and a temple. That is not a
+composition and cannot be made into one.
+
+What Japan does publish by prefecture is **foreign residents by nationality**,
+and that is refused here for the reason Nigeria's, Sudan's, Libya's and
+Syria's `Nationality` sheets were refused: citizenship is not ethnicity, and
+published as one it would describe a country of 123 million as ethnically
+uniform. e-Stat itself is open and answers a program -- the Population Census
+database is right there -- so this is a limit of what was asked, not of access.
+
+**Turkey may ask, and cannot be read.** Four routes measured:
+
+* **HDX** carries about thirty Turkiye datasets and not one is a composition:
+  World Bank indicator series, FAO food prices, earthquake response, conflict
+  forecasts, geoBoundaries.
+* **`data.tuik.gov.tr`** times out; its `Kategori/GetKategori` path answers
+  3,685 bytes with no links, which is a fact about that path rather than about
+  TUIK -- it is a fragment endpoint, and a first probe that treated it as a
+  measurement would have been fiction.
+* **`www.tuik.gov.tr`** answers properly, 431 kB, and names the two places the
+  data would live: `biruni.tuik.gov.tr/medas` and its regional statistics
+  portal.
+* **MEDAS returns 66 kB and zero topic links**, because the catalogue tree is
+  built client-side. The regional portal answers 6.5 kB, a frame.
+
+That looked like the Scotland and Northern Ireland case -- a JavaScript
+application with an undocumented API -- and it was not. **MEDAS renders its
+subject list server-side**, as ninety-two `<option>` elements; only the
+*contents* of a subject load over JavaScript. A saved copy of the page carries
+the whole catalogue, and a link crawler saw none of it because there are no
+links to see.
+
+**Ninety-two subjects, and not one is religion, ethnicity or mother tongue.**
+The list runs Address Based Population Registration System Results, births,
+deaths, marriages, divorces, life tables, family structure, labour force,
+education, health, poverty, income distribution, agriculture, industry,
+prices, foreign trade, tourism, road traffic, prisons, suicide, cinema,
+theatre, libraries. Turkey publishes a great deal by province. None of it is
+what this map needs.
+
+So Turkey is declared, and the declaration rests on that catalogue rather than
+on history. The history is the explanation rather than the evidence: the census
+last asked mother tongue and ethnicity in **1965**, and what replaced it is an
+address-based register, which records where a citizen lives rather than what
+they are.
+
+One trap worth recording, because it nearly produced three findings out of
+nothing. A first keyword pass matched `din` -- Turkish for religion -- and
+returned "Building Construction Cost Index", "Building Permit Statistics" and
+"Survey on Building and Dwelling Characteristics". All three are *Buil-din-g*.
+Matching on word boundaries returns nothing, which is the true answer.
+
+And the route that worked is worth keeping: **a saved page beat six probes.**
+`data.tuik.gov.tr` timed out, its `GetKategori` path answered 3,685 bytes of
+fragment, MEDAS answered 66 kB with zero links, and none of that settled
+anything. One right-click on a rendered page settled all of it.
+
+### Brazil: the table that answered was the wrong table
+
+Brazil's 27 states carried a religion composition summing to a quarter of
+each state's population, read as a quirk of a sample table. It was not.
+Table 10086, which the adapter had been calling "population by religion",
+is a fertility table: its one variable is women aged 12 and over who have
+had live births, cross-tabulated by religion. Every figure on the map for
+Brazil's religion was the religion of mothers. The id had been guessed, the
+guess answered numbers, and numbers that answer look like the right ones.
+
+`scripts/probe_sidra.py` now asks IBGE's aggregates catalogue what a table
+*is* -- its name, variables, classifications and levels -- before any number
+is read. The 2022 census religion table is 9537, persons aged 10 and over by
+religion, sex and age group, published to municipality level; SIDRA returns
+the Total of any classification a URL leaves out, so naming c133 alone gives
+both sexes and all ages. Every Brazilian record now says the universe is
+persons aged 10 and over, and Tradições indígenas, a category the build had
+never seen, is Indigenous traditions.
+
+### The survey: 90 countries, two waves, and what a runner can measure
+
+`survey/BRIEF.md` is the brief the research agents worked under, one JSON
+finding per country under `survey/findings/`. The first wave of 40 could
+search the web; the shared search budget ran out mid-wave, so the second
+wave of 50 (`survey/BRIEF_WAVE2.md`) wrote from what the agents already
+knew, marked `"confidence": "recalled"`, and gave the statistical office's
+homepage for a runner to crawl. `scripts/survey_sources.py`, run by
+`survey-sources.yml`, then requested every proposed URL, crawled the office
+homepage one level for files, searched HDX, and read each country's
+Wikipedia list articles and five second-level articles through the
+MediaWiki API; the measurements are under `data/survey/`.
+
+What the Wikipedia pass found: across 90 countries, the second-level
+articles carried a composition block in a handful of places (Bangladesh's
+upazilas, Nepal's districts, Sri Lanka, two of Canada's regions) and nowhere
+that a census table did not already cover better. The list articles by
+place were rarer still. Wikipedia is not where a second-level composition
+lives; the statistical office's file is, and the survey's value was in
+naming those files. The nineteen `not_collected` declarations added to
+`NOT_COLLECTED_POLICY` in `scripts/common.py` came from the tier-C findings,
+each resting on a named fact about the questionnaire.
 
 ## Afrobarometer: the first sampled source, and the rules that keep it honest
 

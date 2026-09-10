@@ -1,0 +1,101 @@
+{
+  "iso3": "BRA",
+  "name": "Brazil",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "url": "https://www.ibge.gov.br/estatisticas/sociais/trabalho/22827-censo-demografico-2022.html"
+  },
+  "latest_census": {
+    "year": 2022,
+    "asks": {"religion": true, "ethnicity": true, "language": false},
+    "notes": "Religion: asked on the sample (long-form) questionnaire; IBGE 'Censo Demográfico 2022: Religiões' (published 2025) reports 'o perfil religioso das pessoas de 10 anos ou mais de idade' and says 'Os resultados no SIDRA abarcam os recortes Brasil, Grandes Regiões, Unidades da Federação, Regiões Geográficas Intermediária e Imediata, Concentrações Urbanas e Municípios.' Two question wordings: 'Qual a sua crença, ritual indígena ou religião?' in indigenous lands/sectors, 'Qual é sua religião ou culto?' elsewhere. Ethnicity: 'cor ou raça' (self-declared colour/race) on the universe questionnaire -- already on the map at both levels -- plus indigenous 'etnia' (391 etnias) and quilombola status for those sub-populations. Language: NOT asked of the general population; only self-declared indigenous persons aged 2+ are asked which languages they speak at home ('Censo Demográfico 2022: Etnias e línguas indígenas': 295 languages, 474,856 speakers, 29.19% of indigenous people 2+). That cannot form a language composition for a municipality, so language is recorded as not collected for the population as a whole."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion"],
+      "title": "Censo Demográfico 2022: Religiões -- SIDRA tables (religion by municipality); adapter targets table 10086, search surfaced table 10203",
+      "url": "https://www.ibge.gov.br/novo-portal-erramos/44543-substituicao-de-tabela-sidra-da-divulgacao-censo-demografico-2022-religioes-resultados-preliminares-da-amostra.html",
+      "publisher": "IBGE (SIDRA)",
+      "kind": "census",
+      "format": "api",
+      "geography": "município",
+      "geography_count": 5570,
+      "matches_boundary_level": "admin2",
+      "year": 2022,
+      "confidence": "high",
+      "evidence": "IBGE's own catalogue entry (https://biblioteca.ibge.gov.br/index.php/biblioteca-catalogo?view=detalhes&id=2102182) states the SIDRA results reach 'Municípios'. The repo's adapter scripts/fetch_census/ibge_sidra.py already queries https://apisidra.ibge.gov.br/values with table 10086 ('population by religion (2022 Census, released June 2025)') at n3 (state, 27 -- filled) and n6 (municipality). The packet shows admin2 religion = 0, and the adapter's comments say why: the variable id was guessed and 400ed, three variants are tried, and the whole-country n6 request hits SIDRA's size limit so it retries state by state. So the block is the request, not the publication. The URL here is IBGE's errata page: search snippet says SIDRA table 10203 in the 'Religiões - Resultados preliminares da Amostra' release 'foi corrigida e substituída' because its values were calculated incorrectly -- a second table id to try, and a warning that any copy fetched before the correction carries wrong values. 5,570 municipalities = the boundary file's admin2 count."
+    },
+    {
+      "fields": ["religion"],
+      "title": "Censo Demográfico 2022: Religiões -- Resultados preliminares da amostra (publication PDF)",
+      "url": "https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102182.pdf",
+      "publisher": "IBGE",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "unidade da federação",
+      "geography_count": 27,
+      "matches_boundary_level": "admin1",
+      "year": 2022,
+      "confidence": "high",
+      "evidence": "Search title 'Censo Demográfico 2022 Religiões Resultados preliminares da amostra'; summary: 'Em 25 das 27 unidades federativas, o catolicismo é predominante; as exceções são Acre e Rondônia'. Admin1 is already filled from the same release via SIDRA; the PDF is the citation, not a build route."
+    },
+    {
+      "fields": ["ethnicity", "language"],
+      "title": "Censo Demográfico 2022: Etnias e línguas indígenas (indigenous ethnicity and indigenous languages, by municipality)",
+      "url": "https://biblioteca.ibge.gov.br/visualizacao/livros/liv102223.pdf",
+      "publisher": "IBGE",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "município",
+      "geography_count": null,
+      "matches_boundary_level": "admin2",
+      "year": 2022,
+      "confidence": "medium",
+      "evidence": "Search summary: '391 etnias e 295 línguas'; 'Em 1.990 municípios pelo menos uma pessoa indígena com 2 anos ou mais de idade fala língua indígena'; '1.694.836 pessoas indígenas estão distribuídas em 4.833 municípios'; the publication 'fornece informações desagregadas por municípios, estados e terras indígenas'. Sub-population only (indigenous persons): usable as an indigenous-ethnicity or indigenous-language breakdown, NOT as a whole-population composition. Whether these tables are also in SIDRA was not established (search not run)."
+    },
+    {
+      "fields": ["religion"],
+      "title": "SIDRA Tabela 137: População residente, por religião (earlier censuses, 2010 and before) -- fallback only",
+      "url": "https://sidra.ibge.gov.br/tabela/137",
+      "publisher": "IBGE (SIDRA)",
+      "kind": "census",
+      "format": "table-builder",
+      "geography": "município (unverified from snippet)",
+      "geography_count": null,
+      "matches_boundary_level": "admin2",
+      "year": 2010,
+      "confidence": "low",
+      "evidence": "Surfaced by title only, with tables 135, 1489, 2102 and 2105 (2010 Resultados da Amostra). Listed as a fallback if the 2022 municipal request cannot be made to answer; the project prefers the 2022 count and the geography count for 2010 differs from 5,570."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [],
+    "admin2_samples": [],
+    "note": "Not searched. The session's WebSearch budget was exhausted before the Wikipedia searches ran; queries planned were '\"Religion in Brazil\" wikipedia table by state census', '\"Matozinhos\" Brazil wikipedia', '\"Rancharia\" Brazil wikipedia', '\"Terra Nova do Norte\" Brazil wikipedia'. Wikipedia is in any case the wrong route here: the census publishes every municipality through an API the project already calls."
+  },
+  "tier": "A",
+  "tier_reason": "A 2022 census count of religion is published for all 5,570 municipalities (= admin2) through the SIDRA API, and the repo already has an adapter pointed at it; the empty admin2 religion column is a failing API request (guessed variable id, whole-country size limit), not a missing publication. Ethnicity (cor ou raça) is already filled at both levels from the same API. Language is not asked of the general population -- declare not_collected, with the indigenous-languages publication as the reason it is not simply 'absent'.",
+  "replaces_existing": false,
+  "recommended_action": "Fix the existing SIDRA request rather than build anything new: (1) confirm the 2022 religion table id -- the adapter uses 10086, the errata page names 10203 for the 'Religiões - Resultados preliminares da amostra' release -- and its variable/classification ids by reading the SIDRA table page, not by guessing; (2) keep the state-by-state n6 fetch since 'n6/all' exceeds SIDRA's size limit; (3) reconcile each municipality's religion total against table 9514 population, remembering the religion universe is persons aged 10+ and so will not equal total population; (4) note the errata date and refuse any cached copy fetched before the correction. Then declare language not_collected for Brazil at both levels, citing the Etnias e línguas indígenas publication as evidence that only indigenous persons are asked. The 17 municipalities missing ethnicity (5,553 of 5,570) are probably a name or new-municipality join issue, not a source gap.",
+  "searches_run": [
+    "Censo 2022 religião municípios IBGE divulgação resultados",
+    "SIDRA tabela religião Censo 2022 município",
+    "Censo 2022 línguas indígenas faladas municípios IBGE"
+  ],
+  "searches_not_run_budget_exhausted": [
+    "Censo 2022 religião SIDRA tabela 10203 municípios população residente por religião",
+    "API SIDRA apisidra.ibge.gov.br Censo 2022 religião tabela",
+    "Censo 2022 etnias línguas indígenas SIDRA tabela município língua falada no domicílio",
+    "\"Religion in Brazil\" wikipedia table by state census",
+    "\"Matozinhos\" Brazil wikipedia",
+    "\"Rancharia\" Brazil wikipedia",
+    "\"Terra Nova do Norte\" Brazil wikipedia"
+  ],
+  "not_found": [
+    "the exact 2022 religion SIDRA table id and variable id confirmed from a search result (10086 comes from the repo adapter; 10203 from the errata snippet; neither snippet lists variable ids)",
+    "any language question for the non-indigenous population (none exists)",
+    "whether the indigenous etnia / língua tables are in SIDRA by municipality (search not run)"
+  ],
+  "summary": "Brazil is the clearest tier A in this batch and needs no new source: IBGE's 2022 census religion results are in SIDRA down to all 5,570 municipalities (= admin2) and the repo already calls the SIDRA API for them; admin2 religion is empty because the adapter's guessed variable id 400s and the whole-country municipal request exceeds SIDRA's size limit, so the fix is to confirm the table (10086 in the adapter; 10203 named in IBGE's errata for the same release, replaced after a calculation error) and its ids from the table page and fetch state by state. Ethnicity (cor ou raça) is already filled at both levels. Language is asked only of indigenous persons (295 languages, 474,856 speakers, in the 'Etnias e línguas indígenas' publication), so it should be declared not_collected for the general population with that publication as evidence. Wikipedia was not searched because the session's search budget ran out; it is not the route for Brazil anyway."
+}

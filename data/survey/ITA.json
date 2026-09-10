@@ -1,0 +1,809 @@
+{
+ "iso3": "ITA",
+ "name": "Italy",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "language"
+   ],
+   "title": "L'uso della lingua italiana, dei dialetti e delle lingue straniere -- Anno 2024 (ISTAT report 'Lingue e dialetti', published 27 January 2026)",
+   "kind": "survey",
+   "format": "pdf",
+   "geography": "region (and macro-area / ripartizione)",
+   "geography_count": 20,
+   "matches_boundary_level": "admin2 (regions) and admin1 (the five ripartizioni Nord-ovest, Nord-est, Centro, Sud, Isole are exactly the packet's admin1 names)",
+   "url": "https://www.istat.it/wp-content/uploads/2026/01/REPORT_lingue-e-dialetti-def.pdf",
+   "status": 200,
+   "content_type": "application/pdf",
+   "final_url": "https://www.istat.it/wp-content/uploads/2026/01/REPORT_lingue-e-dialetti-def.pdf",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "pdf",
+    "pages_hint": 15
+   }
+  },
+  {
+   "fields": [
+    "language"
+   ],
+   "title": "L'uso della lingua italiana, dei dialetti e delle lingue straniere -- Anno 2015 (ISTAT report)",
+   "kind": "survey",
+   "format": "pdf",
+   "geography": "region (and macro-area)",
+   "geography_count": 20,
+   "matches_boundary_level": "admin2 and admin1",
+   "url": "https://www.istat.it/it/files/2017/12/Report_Uso-italiano_dialetti_altrelingue_2015.pdf",
+   "status": 200,
+   "content_type": "application/pdf",
+   "final_url": "https://www.istat.it/it/files/2017/12/Report_Uso-italiano_dialetti_altrelingue_2015.pdf",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "pdf",
+    "pages_hint": 22
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Demografia religiosa d'Italia (Italian Wikipedia)",
+    "wikitext_bytes": 0,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Italy",
+    "wikitext_bytes": 74602,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "style=\"background-color:#E9E9E9\" align=left valign=center rowspan=2 valign=center|Religion / denomination",
+       "colspan=\"2\" align=center valign=center|Italian citizens",
+       "colspan=\"2\" align=center valign=center|Foreign residents",
+       "colspan=\"2\" align=center valign=center|Total population"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Italy",
+    "wikitext_bytes": 125977,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 13,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Years",
+       "1871",
+       "1872",
+       "1873",
+       "1874",
+       "1875",
+       "1876",
+       "1877",
+       "1878",
+       "1879"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "Metropolitan city",
+       "Region",
+       "Area<br /><small>(km<sup>2</sup>)</small>",
+       "Population<br /><small>(1 January 2025)</small>",
+       "Functional Urban<br />Areas (FUA)<br />Population<br /><small>(2016)</small>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "! width=\"80pt\" |Average population (1 January)",
+       "width=\"80pt\" |Live births",
+       "width=\"80pt\" |Deaths",
+       "width=\"80pt\" |Natural change",
+       "width=\"80pt\" |Crude birth rate (per 1,000)",
+       "width=\"80pt\" |Crude death rate (per 1,000)",
+       "width=\"80pt\" |Natural change (per 1,000)",
+       "width=\"80pt\" |Crude migration change (per 1,000)",
+       "width=\"80pt\" |Total fertility rates{{refn|group=fn|In fertility rates, 2.1 and above is a stable population and has been marked blue, 2 and below leads to an aging population and the result is that the population decreases.}}<ref name=\"ourworldindata.org\">{{citation|url=https://ourworldindata.org/grapher/children-born-per-woman?year=1800&country=ITA|title=Total Fertility Rate around the world over the last centuries|author=Max Roser|date=2014|work=Our World in Data, Gapminder Foundation|access-date=7 August 2018|archive-url=https://web.archive.org/web/20180807185906/https://ourworldindata.org/grapher/children-born-per-woman?year=1800&country=ITA|archive-date=7 August 2018}}</ref><ref name=\"cia.gov\">{{citation |title=The World FactBook – Italy |date=3 February 2021 |url=https://www.cia.gov/the-world-factbook/countries/italy/ |archive-url=https://web.archive.org/web/20210109235252/https://www.cia.gov/the-world-factbook/countries/italy |url-status=dead |archive-date=9 January 2021 |work=The World Factbook}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural change",
+       "January—May 2025",
+       "January—May 2026",
+       "Difference",
+       "colspan=\"4\" |Source: <ref>{{cite web |title=Monthly Demographic Balance |url=https://demo.istat.it/app/?i=D7B&l=en&a=2026 |website=Istat — National Institute of Statistics}}</ref>",
+       "Region",
+       "TFR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 60
+     },
+     {
+      "header": [
+       "Region",
+       "TFR",
+       "Provinces",
+       "TFR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 67
+     },
+     {
+      "header": [
+       "Provinces",
+       "TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 67
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |Nationality groups",
+       "colspan=\"2\" |2002<ref name=\":12\">{{Cite web |title=Estimated resident population – Years 2002–2019 |url=http://dati.istat.it/Index.aspx?QueryId=12386&lang=en |access-date=2021-12-22 |website=dati.istat.it}}</ref>",
+       "colspan=\"2\" |2005<ref name=\":12\" />",
+       "colspan=\"2\" |2010<ref name=\":12\" />",
+       "colspan=\"2\" |2015<ref name=\":12\" />",
+       "colspan=\"2\" |2019<ref name=\":13\">{{Cite web |title=Resident foreigners on 1st January – Citizenship: Italy, regions, provinces – Area of citizenship |url=https://appsso.eurostat.ec.europa.eu/nui/submitViewTableAction.do |website=dati.istat.it}}</ref>",
+       "colspan=\"2\" |2021<ref name=\":14\">{{Cite web |title=Resident foreigners on 1st January – Citizenship: Italy, regions, provinces – Area of citizenship |url=http://dati.istat.it/Index.aspx?QueryId=19675&lang=en# |url-status=live |archive-url=https://web.archive.org/web/20220128055552/http://dati.istat.it/Index.aspx?QueryId=19675&lang=en |archive-date=28 January 2022 |website=dati.istat.it}}</ref>",
+       "colspan=\"2\" |2023<ref>{{cite web | url=http://dati.istat.it/Index.aspx?QueryId=19675&lang=en# | title=Resident foreigners on 1st January – Citizenship }}</ref>",
+       "colspan=\"2\" |2025",
+       "Number"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "Year || Population",
+       "Ref."
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "Country",
+       "Population<ref>{{Cite web |title=Resident foreigners on 1st January – Citizenship |url=http://dati.istat.it/Index.aspx?QueryId=19675&lang=en# |access-date=2025-12-29 |website=dati.istat.it}}</ref>",
+       "Year",
+       "Emigration",
+       "Immigration",
+       "Net Migration"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 70
+     },
+     {
+      "header": [
+       "Year",
+       "Emigration",
+       "Immigration",
+       "Net Migration",
+       "Year",
+       "Immigration",
+       "Emigration",
+       "Net Migration"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 68
+     },
+     {
+      "header": [
+       "Year",
+       "Immigration",
+       "Emigration",
+       "Net Migration"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Calabria",
+    "found": true,
+    "title": "Calabria",
+    "url": "https://en.wikipedia.org/wiki/Calabria",
+    "wikitext_bytes": 91152,
+    "infobox_params": [
+     "demographics2_info1",
+     "demographics2_info2"
+    ],
+    "sections": [
+     "Demographics",
+     "Language",
+     "Religion"
+    ],
+    "wikitables": 4,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Friuli Venezia Giulia",
+    "found": true,
+    "title": "Friuli-Venezia Giulia",
+    "url": "https://en.wikipedia.org/wiki/Friuli-Venezia_Giulia",
+    "wikitext_bytes": 53542,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics1_info2",
+     "demographics1_info3",
+     "demographics2_info1",
+     "demographics2_info2"
+    ],
+    "sections": [
+     "Demographics",
+     "Language"
+    ],
+    "wikitables": 3,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Marche",
+    "found": true,
+    "title": "Marche",
+    "url": "https://en.wikipedia.org/wiki/Marche",
+    "wikitext_bytes": 29712,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics1_info2",
+     "demographics1_info3",
+     "demographics2_info1",
+     "demographics2_info2"
+    ],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 2,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Molise",
+    "found": true,
+    "title": "List of railway stations in Molise",
+    "url": "https://en.wikipedia.org/wiki/List_of_railway_stations_in_Molise",
+    "wikitext_bytes": 3794,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Piemonte",
+    "found": true,
+    "title": "Giro del Piemonte",
+    "url": "https://en.wikipedia.org/wiki/Giro_del_Piemonte",
+    "wikitext_bytes": 17022,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Italy: Road Surface Data",
+   "name": "italy-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/italy-road-surface-data",
+   "resources": [
+    {
+     "name": "Italy GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_ita_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Italy GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_ita_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Italy: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-italy",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-italy",
+   "resources": [
+    {
+     "name": "kontur_boundaries_IT_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_IT_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_IT_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_IT_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_IT_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_IT_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Italy - Accessibility Indicators",
+   "name": "italy-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/italy-accessibility-indicators",
+   "resources": [
+    {
+     "name": "ITA_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ita/ITA_education_access.gpkg"
+    },
+    {
+     "name": "ITA_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ita/ITA_education_access_long.csv"
+    },
+    {
+     "name": "ITA_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ita/ITA_education_access_wide.csv"
+    },
+    {
+     "name": "ITA_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ita/ITA_hospitals_access.gpkg"
+    },
+    {
+     "name": "ITA_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ita/ITA_hospitals_access_long.csv"
+    },
+    {
+     "name": "ITA_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ita/ITA_hospitals_access_wide.csv"
+    },
+    {
+     "name": "ITA_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ita/ITA_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "ITA_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ita/ITA_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Italy: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "italy-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/italy-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "ita_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0eb77b21-06be-42c8-9245-2edaff79952f/resource/a5f709f2-9871-46ab-a573-a25b0a7615ca/download/ita_general_2020_geotiff.zip"
+    },
+    {
+     "name": "ita_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0eb77b21-06be-42c8-9245-2edaff79952f/resource/1e96f272-7d86-4108-b4ca-5a951a8b11a0/download/ita_general_2020_csv.zip"
+    },
+    {
+     "name": "ita_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0eb77b21-06be-42c8-9245-2edaff79952f/resource/3b34cabc-3e92-4529-991a-bf7faef62d80/download/ita_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "ita_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0eb77b21-06be-42c8-9245-2edaff79952f/resource/2c4264fb-a096-4ef5-a64b-f5d9cd598b06/download/ita_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "ita_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0eb77b21-06be-42c8-9245-2edaff79952f/resource/7d09b091-69e0-4107-8ef8-f7770e319eb4/download/ita_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "ita_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0eb77b21-06be-42c8-9245-2edaff79952f/resource/5e91e89a-224c-4b9d-bf22-aebffbb975f7/download/ita_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "ita_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0eb77b21-06be-42c8-9245-2edaff79952f/resource/09c3a4bc-5f03-4aba-9d48-d4a82a0472ca/download/ita_men_2020_geotiff.zip"
+    },
+    {
+     "name": "ita_women_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0eb77b21-06be-42c8-9245-2edaff79952f/resource/57337a71-32c9-4c6a-bff1-8eb8616e1bb5/download/ita_women_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Italy - Population Counts",
+   "name": "worldpop-population-counts-for-italy",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-italy",
+   "resources": [
+    {
+     "name": "ita_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/ITA/ita_ppp_2020.tif"
+    },
+    {
+     "name": "ita_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/ITA/ita_ppp_2019.tif"
+    },
+    {
+     "name": "ita_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/ITA/ita_ppp_2018.tif"
+    },
+    {
+     "name": "ita_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/ITA/ita_ppp_2017.tif"
+    },
+    {
+     "name": "ita_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/ITA/ita_ppp_2016.tif"
+    },
+    {
+     "name": "ita_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/ITA/ita_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "ita_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/ITA/ita_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "ita_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/ITA/ita_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Italy - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-italy",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-italy",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Italy",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/7a2c8a49-790c-41ea-ab6d-82cb0fc84895/resource/6da87c3c-0139-4d4b-bd79-b35c6bfba154/download/social-protection-and-labor_ita.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Italy: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-ita",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-ita",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-it-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-it-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Italy - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-it-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-it-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_IT",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/bd13331e-6ff7-415d-9c7e-2962d2fe8914/resource/9bb649fb-6a2a-487a-b2db-98223a1c075e/download/indicator_data_it.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Italy: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "ita-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/ita-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/b34a8630-d307-43f6-860b-609d384e0e0b/resource/15a4ecc1-93be-4c36-99ab-4771ee9aa553/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_ita.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/b34a8630-d307-43f6-860b-609d384e0e0b/resource/25604b44-46a8-4b90-b2dd-4f5079698e80/download/ghs_pop_e2025_r2023a_54009_100_v1_0_ita.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Green area per capita (square meters per capita)",
+   "name": "green-area-per-capita-square-meters-per-capita",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/green-area-per-capita-square-meters-per-capita",
+   "resources": [
+    {
+     "name": "Green area per_capita (square meters per capita).xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/7babf915-12a0-4ceb-ad9c-7ee24b776614/resource/2c1c5e09-0bbe-482f-9703-ec7dfed62c79/download/green-area-per_capita-square-meters-per-capita.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Old age dependency ratio",
+   "name": "old-age-dependency-ratio",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/old-age-dependency-ratio",
+   "resources": [
+    {
+     "name": "Old_age_dependency_ratio.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/1598cce7-3d04-42a5-9a2f-b5ba0095cf2f/resource/5217ad45-f56f-43c7-992f-d4e327d13615/download/old_age_dependency_ratio.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.istat.it/en/statistical-themes/censuses/permanent-census-of-population-and-housing/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.istat.it/en/statistical-themes/population/",
+    "status": 200,
+    "kind": "html",
+    "title": "Population &#8211; Istat",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.istat.it/en/statistical-themes/population/population-and-households/",
+    "status": 200,
+    "kind": "html",
+    "title": "Population and households &#8211; Istat",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.istat.it/en/statistical-themes/population/households-economic-conditions/",
+    "status": 200,
+    "kind": "html",
+    "title": "Households economic conditions &#8211; Istat",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.istat.it/en/statistical-themes/population/daily-life-and-citizen-opinions/",
+    "status": 200,
+    "kind": "html",
+    "title": "Daily life and citizen opinions &#8211; Istat",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.istat.it/en/statistical-themes/censuses/",
+    "status": 200,
+    "kind": "html",
+    "title": "Censuses &#8211; Istat",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.istat.it/en/statistical-themes/censuses/agriculture/",
+    "status": 200,
+    "kind": "html",
+    "title": "Agriculture &#8211; Istat",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.istat.it/en/statistical-themes/censuses/permanent-census-of-population-and-housing/",
+    "status": 200,
+    "kind": "html",
+    "title": "Population and housing &#8211; Istat",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.istat.it/en/statistical-themes/censuses/enterprises/",
+    "status": 200,
+    "kind": "html",
+    "title": "Enterprises &#8211; Istat",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.istat.it/en/statistical-themes/censuses/public-institutions/",
+    "status": 200,
+    "kind": "html",
+    "title": "Public institutions &#8211; Istat",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.istat.it/en/statistical-themes/censuses/nonprofit-institutions/",
+    "status": 200,
+    "kind": "html",
+    "title": "Nonprofit institutions &#8211; Istat",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.istat.it/en/statistical-themes/censuses/previous-censuses/",
+    "status": 200,
+    "kind": "html",
+    "title": "Historical censuses &#8211; Istat",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.istat.it/en/statistical-themes/censuses/agriculture/7th-general-census-of-agriculture/",
+    "status": 200,
+    "kind": "html",
+    "title": "7th general census of agriculture &#8211; Istat",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   }
+  ],
+  "title": "Population and housing &#8211; Istat",
+  "matching_links": 13
+ },
+ "verdict": {
+  "hdx_datasets": 11,
+  "hdx_machine_readable": 5,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "2/2",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

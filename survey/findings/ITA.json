@@ -1,0 +1,74 @@
+{
+  "iso3": "ITA",
+  "name": "Italy",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Istituto Nazionale di Statistica (ISTAT)", "url": "https://www.istat.it/en/statistical-themes/censuses/permanent-census-of-population-and-housing/"},
+  "latest_census": {
+    "year": 2021,
+    "asks": {"religion": false, "ethnicity": false, "language": null},
+    "notes": "Since 2018 the 'Censimento permanente' is an annual sample survey integrated with registers (about 1 million households in 2,533 comuni in 2025), with reference years reported (2021 is the EU census round year). Religion is not asked: ISTAT's own FAQ page for the census snippet says religion 'is not indicated for privacy reasons' (https://www4.istat.it/it/censimenti-permanenti/popolazione-e-abitazioni/rilevazione-sul-conteggio-della-/domande-frequenti); the last Italian census to classify the population by religion is the 1911 one held in ISTAT's digital library. Ethnicity is not asked (the packet already declares it: citizenship is recorded). Language: the 2025 questionnaires surfaced (https://www.istat.it/wp-content/uploads/2025/10/Questionario_censpop_LISTA_2025.pdf and ..._AREALE_2025.pdf) but could not be opened; no snippet mentions a language question. The separate linguistic-group declaration in the Province of Bolzano (ASTAT) is known to this researcher but its search did not run (budget exhausted), so it is recorded as unverified."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["language"],
+      "title": "L'uso della lingua italiana, dei dialetti e delle lingue straniere -- Anno 2024 (ISTAT report 'Lingue e dialetti', published 27 January 2026)",
+      "url": "https://www.istat.it/wp-content/uploads/2026/01/REPORT_lingue-e-dialetti-def.pdf",
+      "publisher": "ISTAT (Indagine Aspetti della vita quotidiana, multipurpose household survey)",
+      "kind": "survey",
+      "format": "pdf",
+      "geography": "region (and macro-area / ripartizione)",
+      "geography_count": 20,
+      "matches_boundary_level": "admin2 (regions) and admin1 (the five ripartizioni Nord-ovest, Nord-est, Centro, Sud, Isole are exactly the packet's admin1 names)",
+      "year": 2024,
+      "confidence": "medium",
+      "evidence": "Snippets quote regional and macro-area figures: 'In family settings, 68.8% of people living in the North-west speak almost exclusively Italian, and 64.8% in the Center, compared to 39.1% in the South and 39.9% in the Islands'; 'high values of dialect use are recorded in Veneto (55.3%) and in the province of Trento (54.5%) ... Calabria (64%), Sicily (61.5%) and Campania (61%)'. So the tables split by region and separate Trento and Bolzano (21 rows), meaning Trentino-Alto Adige needs a weighted merge. The measure is language USED in family/with friends/with strangers (only or mainly Italian / only or mainly dialect / both / another language) -- a usage composition, not mother tongue. Whether ISTAT attaches XLSX 'tavole' to the report is not visible in the snippet. Regional mirror of the release: https://protezionecivile.regione.puglia.it/it/web/ufficio-statistico/-/istat.-l-uso-della-lingua-italiana-dei-dialetti-e-delle-lingue-straniere.-anno-2024"
+    },
+    {
+      "fields": ["language"],
+      "title": "L'uso della lingua italiana, dei dialetti e delle lingue straniere -- Anno 2015 (ISTAT report)",
+      "url": "https://www.istat.it/it/files/2017/12/Report_Uso-italiano_dialetti_altrelingue_2015.pdf",
+      "publisher": "ISTAT",
+      "kind": "survey",
+      "format": "pdf",
+      "geography": "region (and macro-area)",
+      "geography_count": 20,
+      "matches_boundary_level": "admin2 and admin1",
+      "year": 2015,
+      "confidence": "medium",
+      "evidence": "Earlier edition of the same survey (snippet: 40.6% spoke only or mainly Italian in all contexts in 2015 vs 48.4% in 2024). Same geography and same caveats as the 2024 edition."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Demografia religiosa d'Italia (Italian Wikipedia)", "url": "https://it.wikipedia.org/wiki/Demografia_religiosa_d'Italia", "appears_to_contain": "Italian-language article on religious demography; surfaced in the census-religion search; whether it carries a by-region table (which could only be survey-based) is not visible. The planned English 'Religion in Italy' search did not run (budget exhausted)"}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Calabria", "search_hit_title": null, "url": null, "note": "search not run -- session WebSearch budget exhausted. The shape is one of Italy's 20 regions; an English Wikipedia article almost certainly exists but no snippet was retrieved"},
+      {"shape_name": "Molise", "search_hit_title": null, "url": null, "note": "search not run -- session WebSearch budget exhausted; same remark"},
+      {"shape_name": "Friuli Venezia Giulia", "search_hit_title": null, "url": null, "note": "search not run -- session WebSearch budget exhausted; same remark"}
+    ]
+  },
+  "tier": "B",
+  "tier_reason": "No count exists for any field: religion is not asked for privacy reasons (ISTAT FAQ) and ethnicity is already declared not collected. The best subnational data is ISTAT's language-use survey, published by region (20 = admin2) and by the five ripartizioni (= admin1) as PDF report tables -- a survey in PDF, so B for language and C for religion and ethnicity.",
+  "replaces_existing": false,
+  "recommended_action": "Declare religion not_collected for Italy with the ISTAT FAQ ('non viene rilevata per motivi di privacy') as evidence, alongside the existing ethnicity declaration. For language, read the 2024 'Lingue e dialetti' report tables (and check istat.it for accompanying XLSX tavole) for the family-context language-use split by region and ripartizione; store it as a survey estimate of language USE, not mother tongue, merging the Trento and Bolzano rows for Trentino-Alto Adige only with the survey's population weights. Separately verify the Province of Bolzano linguistic-group declaration (ASTAT) -- a count, but at a geography below admin2 that fills nothing here.",
+  "searches_run": [
+    "ISTAT censimento permanente popolazione religione non rilevata domanda religione censimento Italia",
+    "ISTAT indagine uso della lingua italiana dialetti lingue straniere per regione tavole"
+  ],
+  "searches_not_run_budget_exhausted": [
+    "ISTAT esploradati OR dati.istat.it \"lingua italiana\" dialetti \"regione\" tavola aspetti della vita quotidiana dati per regione",
+    "ASTAT censimento 2011 gruppi linguistici Alto Adige dichiarazione di appartenenza comuni tedesco italiano ladino",
+    "\"Religion in Italy\" wikipedia by region table Catholic percentage regions",
+    "\"Calabria\" Italy wikipedia region",
+    "\"Molise\" Italy wikipedia region",
+    "\"Friuli Venezia Giulia\" Italy wikipedia region"
+  ],
+  "not_found": [
+    "any official religion figure for Italy at any subnational level (none exists; census bars it for privacy)",
+    "a machine-readable (I.Stat / esploradati / XLSX) version of the language-use survey by region -- search did not run",
+    "confirmation of whether the permanent census questionnaire carries any language question outside Bolzano -- questionnaire PDFs surfaced but could not be opened",
+    "Eurostat -- not searched; the repo already records that Eurostat redistributes no ethnicity or religion tables sub-nationally"
+  ],
+  "summary": "Italy collects neither religion (ISTAT's census FAQ: not asked for privacy reasons; last asked in 1911) nor ethnicity (already declared), so both should be not_collected declarations at admin1 and admin2. The one subnational language source is ISTAT's multipurpose-survey report 'L'uso della lingua italiana, dei dialetti e delle lingue straniere' (2015 and 2024 editions), whose tables give the share speaking only/mainly Italian, dialect, both, or another language in the family by region (20, with Trento and Bolzano split) and by the five ripartizioni that are exactly the boundary file's admin1 names. It is a survey of language use in PDF form, hence tier B. Six planned searches (ISTAT data warehouse, ASTAT Bolzano linguistic census, English Wikipedia list and three region articles) did not run because the session's search budget was exhausted."
+}
