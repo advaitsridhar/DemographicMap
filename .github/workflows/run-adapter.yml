@@ -125,6 +125,18 @@ jobs:
           MESSAGE="Data: $ADAPTER"
           [ "$OUTCOME" = success ] || MESSAGE="Refused: $ADAPTER"
           git commit -m "$MESSAGE"
-          git push origin HEAD:${{ github.ref_name }}
+          # Several adapters run at once and all push to one branch, and a
+          # push that loses the race threw away a finished fetch: Kenya's 47
+          # counties were read, committed on the runner, and rejected because
+          # an unrelated commit had landed a minute earlier. Rebase onto
+          # whatever is there and try again; the data is the deliverable.
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin "${{ github.ref_name }}" \
+               && git push origin HEAD:${{ github.ref_name }}; then
+              break
+            fi
+            [ "$attempt" = 5 ] && exit 1
+            sleep $((attempt * 5))
+          done
           echo "Now run scripts/build_entities.py where the boundaries are." \
             >> "$GITHUB_STEP_SUMMARY"
