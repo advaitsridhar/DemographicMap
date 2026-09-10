@@ -1,2 +1,3 @@
-ibge_sidra: municipality (n6)
-  retry 1/4 after 2s :: https://servicodados.ibge.gov.br/api/v1/localidades/municipios :: <urlopen error [Errno 110] Connection timed out>
+kenya: religion by county, KNBS 2019 Volume IV via openAFRICA
+  47 counties
+  wrote data/processed/kenya_county.json (120 kB)

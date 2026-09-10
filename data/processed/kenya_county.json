@@ -1,0 +1,5033 @@
+[
+  {
+    "id": "KEN-Mombasa",
+    "level": "admin1",
+    "name": "Mombasa",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1190987,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 37.8,
+        "count": 450740
+      },
+      {
+        "group": "Protestant",
+        "pct": 20.3,
+        "count": 241554
+      },
+      {
+        "group": "Catholic",
+        "pct": 14.3,
+        "count": 170797
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 12.8,
+        "count": 151939
+      },
+      {
+        "group": "Other Christian",
+        "pct": 8.4,
+        "count": 100568
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 3.9,
+        "count": 46094
+      },
+      {
+        "group": "No religion",
+        "pct": 0.9,
+        "count": 11148
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.6,
+        "count": 6637
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.5,
+        "count": 6136
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.3,
+        "count": 3104
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.1,
+        "count": 1040
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 1018
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 212
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Kwale",
+    "level": "admin1",
+    "name": "Kwale",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 858748,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 60.6,
+        "count": 520160
+      },
+      {
+        "group": "Protestant",
+        "pct": 13.6,
+        "count": 116453
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 9.6,
+        "count": 82176
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.6,
+        "count": 47892
+      },
+      {
+        "group": "Catholic",
+        "pct": 5.1,
+        "count": 43624
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 2.6,
+        "count": 22193
+      },
+      {
+        "group": "No religion",
+        "pct": 1.5,
+        "count": 12551
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.8,
+        "count": 7121
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.5,
+        "count": 4703
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.1,
+        "count": 720
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 715
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 332
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 108
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Kilifi",
+    "level": "admin1",
+    "name": "Kilifi",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1440958,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 27.0,
+        "count": 388893
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 21.3,
+        "count": 307345
+      },
+      {
+        "group": "Islam",
+        "pct": 17.6,
+        "count": 253966
+      },
+      {
+        "group": "No religion",
+        "pct": 10.2,
+        "count": 146669
+      },
+      {
+        "group": "Other Christian",
+        "pct": 8.9,
+        "count": 128298
+      },
+      {
+        "group": "Catholic",
+        "pct": 6.6,
+        "count": 95148
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 3.8,
+        "count": 54980
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 2.3,
+        "count": 32605
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.9,
+        "count": 27502
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.2,
+        "count": 2858
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 1989
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 518
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 187
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Tana_River",
+    "level": "admin1",
+    "name": "Tana River",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 314710,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 81.5,
+        "count": 256422
+      },
+      {
+        "group": "Protestant",
+        "pct": 7.3,
+        "count": 22866
+      },
+      {
+        "group": "Catholic",
+        "pct": 3.6,
+        "count": 11306
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.5,
+        "count": 11148
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 2.2,
+        "count": 6791
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 1.3,
+        "count": 4015
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3,
+        "count": 1044
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.1,
+        "count": 176
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.1,
+        "count": 226
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.1,
+        "count": 453
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 115
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.0,
+        "count": 80
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 68
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Lamu",
+    "level": "admin1",
+    "name": "Lamu",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 141909,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 50.6,
+        "count": 71786
+      },
+      {
+        "group": "Protestant",
+        "pct": 15.8,
+        "count": 22397
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 11.8,
+        "count": 16777
+      },
+      {
+        "group": "Catholic",
+        "pct": 9.6,
+        "count": 13668
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.6,
+        "count": 7962
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 3.9,
+        "count": 5598
+      },
+      {
+        "group": "No religion",
+        "pct": 1.4,
+        "count": 2007
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.7,
+        "count": 925
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.3,
+        "count": 390
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.2,
+        "count": 258
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.0,
+        "count": 67
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 29
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Taita_Taveta",
+    "level": "admin1",
+    "name": "Taita/Taveta",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 335747,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 38.2,
+        "count": 128302
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 25.8,
+        "count": 86464
+      },
+      {
+        "group": "Catholic",
+        "pct": 19.9,
+        "count": 66878
+      },
+      {
+        "group": "Islam",
+        "pct": 7.5,
+        "count": 25096
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 4.1,
+        "count": 13609
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.8,
+        "count": 9555
+      },
+      {
+        "group": "No religion",
+        "pct": 0.9,
+        "count": 3037
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.4,
+        "count": 1496
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.2,
+        "count": 811
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 255
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.0,
+        "count": 158
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 47
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Garissa",
+    "level": "admin1",
+    "name": "Garissa",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 835482,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 97.6,
+        "count": 815755
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.9,
+        "count": 7919
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.6,
+        "count": 4819
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.5,
+        "count": 4253
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 0.1,
+        "count": 800
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 0.1,
+        "count": 714
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 529
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.0,
+        "count": 222
+      },
+      {
+        "group": "No religion",
+        "pct": 0.0,
+        "count": 98
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.0,
+        "count": 195
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 117
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Wajir",
+    "level": "admin1",
+    "name": "Wajir",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 775302,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.0,
+        "count": 767312
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.4,
+        "count": 3060
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.3,
+        "count": 2280
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.2,
+        "count": 1298
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 609
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 0.0,
+        "count": 247
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 0.0,
+        "count": 263
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.0,
+        "count": 86
+      },
+      {
+        "group": "No religion",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 35
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Mandera",
+    "level": "admin1",
+    "name": "Mandera",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 862079,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.3,
+        "count": 856450
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.2,
+        "count": 1775
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.2,
+        "count": 1615
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.1,
+        "count": 1185
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 524
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 0.0,
+        "count": 157
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.0,
+        "count": 88
+      },
+      {
+        "group": "No religion",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 138
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Marsabit",
+    "level": "admin1",
+    "name": "Marsabit",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 447150,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 48.5,
+        "count": 217079
+      },
+      {
+        "group": "Catholic",
+        "pct": 22.3,
+        "count": 99579
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 15.5,
+        "count": 69372
+      },
+      {
+        "group": "Protestant",
+        "pct": 8.7,
+        "count": 39098
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 1.5,
+        "count": 6731
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.4,
+        "count": 6167
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 1.1,
+        "count": 4710
+      },
+      {
+        "group": "No religion",
+        "pct": 0.4,
+        "count": 1706
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.3,
+        "count": 1439
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.2,
+        "count": 765
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.0,
+        "count": 141
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 185
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 178
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Isiolo",
+    "level": "admin1",
+    "name": "Isiolo",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 267997,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 72.3,
+        "count": 193775
+      },
+      {
+        "group": "Catholic",
+        "pct": 12.2,
+        "count": 32608
+      },
+      {
+        "group": "Protestant",
+        "pct": 6.9,
+        "count": 18583
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 3.1,
+        "count": 8419
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 2.9,
+        "count": 7669
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.4,
+        "count": 3688
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 0.6,
+        "count": 1709
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3,
+        "count": 932
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.1,
+        "count": 200
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.1,
+        "count": 209
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 100
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 36
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Meru",
+    "level": "admin1",
+    "name": "Meru",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1535635,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 40.1,
+        "count": 615129
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 23.8,
+        "count": 365759
+      },
+      {
+        "group": "Catholic",
+        "pct": 20.4,
+        "count": 313277
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 8.4,
+        "count": 129224
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.0,
+        "count": 45405
+      },
+      {
+        "group": "No religion",
+        "pct": 1.4,
+        "count": 20985
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.2,
+        "count": 18898
+      },
+      {
+        "group": "Islam",
+        "pct": 0.8,
+        "count": 12531
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.6,
+        "count": 9479
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.2,
+        "count": 2348
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.1,
+        "count": 2022
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 336
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 242
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Tharaka-Nithi",
+    "level": "admin1",
+    "name": "Tharaka-Nithi",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 391303,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 44.0,
+        "count": 172266
+      },
+      {
+        "group": "Catholic",
+        "pct": 27.7,
+        "count": 108266
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 17.9,
+        "count": 70043
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 4.8,
+        "count": 18749
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.3,
+        "count": 9114
+      },
+      {
+        "group": "No religion",
+        "pct": 1.1,
+        "count": 4461
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.0,
+        "count": 4082
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.7,
+        "count": 2656
+      },
+      {
+        "group": "Islam",
+        "pct": 0.2,
+        "count": 724
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.2,
+        "count": 615
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.1,
+        "count": 251
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 67
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [
+      "Tharaka"
+    ],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Embu",
+    "level": "admin1",
+    "name": "Embu",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 604769,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 36.6,
+        "count": 221437
+      },
+      {
+        "group": "Catholic",
+        "pct": 27.0,
+        "count": 163196
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 22.7,
+        "count": 137315
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 8.4,
+        "count": 50957
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.1,
+        "count": 12451
+      },
+      {
+        "group": "No religion",
+        "pct": 1.1,
+        "count": 6873
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.8,
+        "count": 4886
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.6,
+        "count": 3603
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5,
+        "count": 2861
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.1,
+        "count": 363
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 675
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 106
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 46
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Kitui",
+    "level": "admin1",
+    "name": "Kitui",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1130134,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 44.3,
+        "count": 500806
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 22.0,
+        "count": 248778
+      },
+      {
+        "group": "Catholic",
+        "pct": 20.8,
+        "count": 235032
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 5.4,
+        "count": 60649
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.7,
+        "count": 30867
+      },
+      {
+        "group": "No religion",
+        "pct": 2.1,
+        "count": 23778
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.1,
+        "count": 12332
+      },
+      {
+        "group": "Islam",
+        "pct": 0.8,
+        "count": 8898
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.4,
+        "count": 4278
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.2,
+        "count": 2297
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.2,
+        "count": 2273
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 106
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Machakos",
+    "level": "admin1",
+    "name": "Machakos",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1414022,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 41.2,
+        "count": 582456
+      },
+      {
+        "group": "Catholic",
+        "pct": 35.4,
+        "count": 500155
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 15.4,
+        "count": 217122
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 3.9,
+        "count": 55175
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.7,
+        "count": 23935
+      },
+      {
+        "group": "Islam",
+        "pct": 0.9,
+        "count": 12984
+      },
+      {
+        "group": "No religion",
+        "pct": 0.7,
+        "count": 9384
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.5,
+        "count": 6900
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.2,
+        "count": 2405
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 976
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.1,
+        "count": 987
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 1377
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 166
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Makueni",
+    "level": "admin1",
+    "name": "Makueni",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 977015,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 49.1,
+        "count": 479698
+      },
+      {
+        "group": "Catholic",
+        "pct": 29.9,
+        "count": 292056
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 13.5,
+        "count": 131964
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 3.7,
+        "count": 36575
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.3,
+        "count": 13030
+      },
+      {
+        "group": "No religion",
+        "pct": 0.9,
+        "count": 8817
+      },
+      {
+        "group": "Islam",
+        "pct": 0.7,
+        "count": 6559
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.5,
+        "count": 4807
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.2,
+        "count": 1478
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.1,
+        "count": 981
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.1,
+        "count": 892
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 57
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 101
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Nyandarua",
+    "level": "admin1",
+    "name": "Nyandarua",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 636002,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Evangelical Churches",
+        "pct": 30.7,
+        "count": 195213
+      },
+      {
+        "group": "Protestant",
+        "pct": 30.5,
+        "count": 193696
+      },
+      {
+        "group": "Catholic",
+        "pct": 17.1,
+        "count": 108971
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 11.2,
+        "count": 70943
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.9,
+        "count": 37672
+      },
+      {
+        "group": "No religion",
+        "pct": 2.3,
+        "count": 14722
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.4,
+        "count": 8766
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.6,
+        "count": 3692
+      },
+      {
+        "group": "Islam",
+        "pct": 0.2,
+        "count": 969
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.1,
+        "count": 719
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 556
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 50
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Nyeri",
+    "level": "admin1",
+    "name": "Nyeri",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 752695,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 38.0,
+        "count": 285723
+      },
+      {
+        "group": "Catholic",
+        "pct": 28.0,
+        "count": 210407
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 19.3,
+        "count": 145046
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 9.1,
+        "count": 68441
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.8,
+        "count": 21342
+      },
+      {
+        "group": "No religion",
+        "pct": 0.8,
+        "count": 6102
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.6,
+        "count": 4772
+      },
+      {
+        "group": "Islam",
+        "pct": 0.6,
+        "count": 4501
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.6,
+        "count": 4578
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.1,
+        "count": 575
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 1001
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 171
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 36
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Kirinyaga",
+    "level": "admin1",
+    "name": "Kirinyaga",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 605630,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 39.7,
+        "count": 240600
+      },
+      {
+        "group": "Catholic",
+        "pct": 29.6,
+        "count": 179316
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 20.2,
+        "count": 122301
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 5.6,
+        "count": 34072
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.4,
+        "count": 14564
+      },
+      {
+        "group": "No religion",
+        "pct": 0.9,
+        "count": 5580
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.5,
+        "count": 3314
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.4,
+        "count": 2304
+      },
+      {
+        "group": "Islam",
+        "pct": 0.4,
+        "count": 2425
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 721
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 169
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.0,
+        "count": 233
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 31
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Murang'a",
+    "level": "admin1",
+    "name": "Murang'a",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1053059,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 39.4,
+        "count": 415159
+      },
+      {
+        "group": "Catholic",
+        "pct": 24.7,
+        "count": 259936
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 19.7,
+        "count": 207410
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 9.9,
+        "count": 103788
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.5,
+        "count": 36738
+      },
+      {
+        "group": "No religion",
+        "pct": 1.1,
+        "count": 11496
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.7,
+        "count": 7704
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.5,
+        "count": 5119
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3,
+        "count": 3640
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.1,
+        "count": 1000
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 910
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 100
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Kiambu",
+    "level": "admin1",
+    "name": "Kiambu",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2402834,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 36.7,
+        "count": 882779
+      },
+      {
+        "group": "Catholic",
+        "pct": 24.5,
+        "count": 588975
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 21.9,
+        "count": 525366
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 7.8,
+        "count": 187238
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.0,
+        "count": 120492
+      },
+      {
+        "group": "No religion",
+        "pct": 1.3,
+        "count": 30770
+      },
+      {
+        "group": "Islam",
+        "pct": 0.9,
+        "count": 21311
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.8,
+        "count": 19515
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.7,
+        "count": 17670
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.2,
+        "count": 3854
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 1311
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.1,
+        "count": 3117
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 436
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Turkana",
+    "level": "admin1",
+    "name": "Turkana",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 922210,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 44.1,
+        "count": 406439
+      },
+      {
+        "group": "Protestant",
+        "pct": 28.8,
+        "count": 265802
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 9.5,
+        "count": 87298
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 4.7,
+        "count": 43412
+      },
+      {
+        "group": "Islam",
+        "pct": 3.3,
+        "count": 30776
+      },
+      {
+        "group": "No religion",
+        "pct": 2.8,
+        "count": 25361
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 2.4,
+        "count": 22498
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.9,
+        "count": 17210
+      },
+      {
+        "group": "Don't know",
+        "pct": 1.2,
+        "count": 11221
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.0,
+        "count": 8773
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.3,
+        "count": 2806
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.1,
+        "count": 480
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 134
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-West_Pokot",
+    "level": "admin1",
+    "name": "West Pokot",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 618867,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 37.6,
+        "count": 232950
+      },
+      {
+        "group": "Catholic",
+        "pct": 31.2,
+        "count": 192787
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 13.1,
+        "count": 81184
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 7.1,
+        "count": 43831
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 3.2,
+        "count": 19645
+      },
+      {
+        "group": "No religion",
+        "pct": 2.9,
+        "count": 18104
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.3,
+        "count": 14202
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.6,
+        "count": 9723
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.4,
+        "count": 2477
+      },
+      {
+        "group": "Islam",
+        "pct": 0.4,
+        "count": 2619
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.2,
+        "count": 1213
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 106
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Samburu",
+    "level": "admin1",
+    "name": "Samburu",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 307957,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 57.3,
+        "count": 176566
+      },
+      {
+        "group": "Protestant",
+        "pct": 17.6,
+        "count": 54349
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 9.9,
+        "count": 30433
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 6.0,
+        "count": 18339
+      },
+      {
+        "group": "No religion",
+        "pct": 2.4,
+        "count": 7428
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.2,
+        "count": 6760
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.5,
+        "count": 4686
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 1.4,
+        "count": 4313
+      },
+      {
+        "group": "Islam",
+        "pct": 0.9,
+        "count": 2849
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.6,
+        "count": 1945
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.1,
+        "count": 207
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 11
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Trans_Nzoia",
+    "level": "admin1",
+    "name": "Trans Nzoia",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 985333,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 35.1,
+        "count": 346099
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 30.7,
+        "count": 302598
+      },
+      {
+        "group": "Catholic",
+        "pct": 20.6,
+        "count": 203368
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 7.0,
+        "count": 69304
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.8,
+        "count": 27154
+      },
+      {
+        "group": "No religion",
+        "pct": 1.3,
+        "count": 12530
+      },
+      {
+        "group": "Islam",
+        "pct": 1.0,
+        "count": 9930
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.7,
+        "count": 7304
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.4,
+        "count": 3644
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.2,
+        "count": 1532
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 1382
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 436
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 52
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Uasin_Gishu",
+    "level": "admin1",
+    "name": "Uasin Gishu",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1152671,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 45.2,
+        "count": 521093
+      },
+      {
+        "group": "Catholic",
+        "pct": 21.7,
+        "count": 250572
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 19.3,
+        "count": 222364
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 6.0,
+        "count": 68784
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.4,
+        "count": 39428
+      },
+      {
+        "group": "Islam",
+        "pct": 1.6,
+        "count": 18805
+      },
+      {
+        "group": "No religion",
+        "pct": 1.2,
+        "count": 14289
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.8,
+        "count": 9523
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.3,
+        "count": 3537
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 1600
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.1,
+        "count": 1193
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 1362
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 121
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Elgeyo_Marakwet",
+    "level": "admin1",
+    "name": "Elgeyo/Marakwet",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 453403,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 51.1,
+        "count": 231873
+      },
+      {
+        "group": "Protestant",
+        "pct": 31.9,
+        "count": 144855
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 10.2,
+        "count": 46334
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 2.7,
+        "count": 12461
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.6,
+        "count": 7394
+      },
+      {
+        "group": "No religion",
+        "pct": 1.1,
+        "count": 5210
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.6,
+        "count": 2933
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3,
+        "count": 1141
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.1,
+        "count": 256
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.1,
+        "count": 491
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 395
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 46
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Nandi",
+    "level": "admin1",
+    "name": "Nandi",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 883634,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 45.5,
+        "count": 401975
+      },
+      {
+        "group": "Catholic",
+        "pct": 24.5,
+        "count": 216901
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 17.4,
+        "count": 153342
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 5.6,
+        "count": 49849
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.5,
+        "count": 21776
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.7,
+        "count": 14936
+      },
+      {
+        "group": "No religion",
+        "pct": 1.1,
+        "count": 10002
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.9,
+        "count": 7580
+      },
+      {
+        "group": "Islam",
+        "pct": 0.7,
+        "count": 5755
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.1,
+        "count": 630
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 740
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 90
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 58
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Baringo",
+    "level": "admin1",
+    "name": "Baringo",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 662760,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 44.1,
+        "count": 291992
+      },
+      {
+        "group": "Catholic",
+        "pct": 18.5,
+        "count": 122620
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 16.8,
+        "count": 111615
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 6.1,
+        "count": 40269
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.3,
+        "count": 28449
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 3.6,
+        "count": 23589
+      },
+      {
+        "group": "No religion",
+        "pct": 3.6,
+        "count": 23697
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.9,
+        "count": 12275
+      },
+      {
+        "group": "Islam",
+        "pct": 0.8,
+        "count": 5241
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.3,
+        "count": 1914
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.1,
+        "count": 976
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 90
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 33
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Laikipia",
+    "level": "admin1",
+    "name": "Laikipia",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 513879,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 29.7,
+        "count": 152699
+      },
+      {
+        "group": "Catholic",
+        "pct": 28.8,
+        "count": 147752
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 21.2,
+        "count": 108701
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 6.9,
+        "count": 35236
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.4,
+        "count": 27854
+      },
+      {
+        "group": "No religion",
+        "pct": 3.1,
+        "count": 15695
+      },
+      {
+        "group": "Islam",
+        "pct": 1.6,
+        "count": 8475
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 1.4,
+        "count": 7127
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.4,
+        "count": 7238
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.3,
+        "count": 1648
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.2,
+        "count": 1221
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 205
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 28
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Nakuru",
+    "level": "admin1",
+    "name": "Nakuru",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2142667,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 32.9,
+        "count": 703881
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 30.2,
+        "count": 647780
+      },
+      {
+        "group": "Catholic",
+        "pct": 16.3,
+        "count": 349527
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 7.2,
+        "count": 154007
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.5,
+        "count": 140000
+      },
+      {
+        "group": "No religion",
+        "pct": 3.2,
+        "count": 67640
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.4,
+        "count": 30739
+      },
+      {
+        "group": "Islam",
+        "pct": 1.2,
+        "count": 25479
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.6,
+        "count": 12182
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.2,
+        "count": 4568
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.2,
+        "count": 4937
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 1660
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 267
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Narok",
+    "level": "admin1",
+    "name": "Narok",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1149379,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 36.3,
+        "count": 417457
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 30.5,
+        "count": 350885
+      },
+      {
+        "group": "Catholic",
+        "pct": 13.3,
+        "count": 152607
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.2,
+        "count": 71598
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 5.0,
+        "count": 57673
+      },
+      {
+        "group": "No religion",
+        "pct": 4.0,
+        "count": 45617
+      },
+      {
+        "group": "Other Religion",
+        "pct": 2.0,
+        "count": 22476
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 1.4,
+        "count": 15953
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.5,
+        "count": 6227
+      },
+      {
+        "group": "Islam",
+        "pct": 0.4,
+        "count": 4805
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.3,
+        "count": 3710
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 249
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 122
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Kajiado",
+    "level": "admin1",
+    "name": "Kajiado",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1107296,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 41.7,
+        "count": 461955
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 23.5,
+        "count": 260678
+      },
+      {
+        "group": "Catholic",
+        "pct": 18.4,
+        "count": 204086
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.4,
+        "count": 60271
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 4.9,
+        "count": 53865
+      },
+      {
+        "group": "Islam",
+        "pct": 2.4,
+        "count": 26779
+      },
+      {
+        "group": "No religion",
+        "pct": 1.4,
+        "count": 15071
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.1,
+        "count": 12299
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.4,
+        "count": 4162
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.4,
+        "count": 4083
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.3,
+        "count": 3421
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 379
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 247
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Kericho",
+    "level": "admin1",
+    "name": "Kericho",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 896863,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 44.2,
+        "count": 396003
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 29.2,
+        "count": 262307
+      },
+      {
+        "group": "Catholic",
+        "pct": 11.1,
+        "count": 99191
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 6.2,
+        "count": 55903
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.3,
+        "count": 38915
+      },
+      {
+        "group": "No religion",
+        "pct": 2.8,
+        "count": 25030
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.3,
+        "count": 11322
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.3,
+        "count": 2949
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3,
+        "count": 2423
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.2,
+        "count": 1358
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 461
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 838
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 163
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Bomet",
+    "level": "admin1",
+    "name": "Bomet",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 873023,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 44.3,
+        "count": 387001
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 25.8,
+        "count": 225608
+      },
+      {
+        "group": "Catholic",
+        "pct": 14.8,
+        "count": 129547
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 6.5,
+        "count": 56401
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.7,
+        "count": 32527
+      },
+      {
+        "group": "No religion",
+        "pct": 2.7,
+        "count": 23413
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.3,
+        "count": 11045
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.3,
+        "count": 2858
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.3,
+        "count": 2514
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 997
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 957
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 96
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 59
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Kakamega",
+    "level": "admin1",
+    "name": "Kakamega",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1861332,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 32.2,
+        "count": 598611
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 30.4,
+        "count": 566271
+      },
+      {
+        "group": "Catholic",
+        "pct": 16.5,
+        "count": 306477
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 11.7,
+        "count": 216915
+      },
+      {
+        "group": "Islam",
+        "pct": 4.7,
+        "count": 88412
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.5,
+        "count": 46594
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.9,
+        "count": 17491
+      },
+      {
+        "group": "No religion",
+        "pct": 0.5,
+        "count": 8575
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.4,
+        "count": 6837
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.2,
+        "count": 3002
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 1277
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 578
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 292
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Vihiga",
+    "level": "admin1",
+    "name": "Vihiga",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 587189,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Evangelical Churches",
+        "pct": 41.0,
+        "count": 240628
+      },
+      {
+        "group": "Protestant",
+        "pct": 34.4,
+        "count": 201738
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 15.1,
+        "count": 88697
+      },
+      {
+        "group": "Catholic",
+        "pct": 3.8,
+        "count": 22331
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.3,
+        "count": 13469
+      },
+      {
+        "group": "Islam",
+        "pct": 1.0,
+        "count": 5796
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.8,
+        "count": 4913
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.8,
+        "count": 4639
+      },
+      {
+        "group": "No religion",
+        "pct": 0.6,
+        "count": 3337
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.2,
+        "count": 1148
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 389
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 73
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Bungoma",
+    "level": "admin1",
+    "name": "Bungoma",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1663898,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 43.0,
+        "count": 715732
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 28.1,
+        "count": 467570
+      },
+      {
+        "group": "Catholic",
+        "pct": 17.5,
+        "count": 291998
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 5.3,
+        "count": 88179
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.4,
+        "count": 40682
+      },
+      {
+        "group": "Islam",
+        "pct": 1.3,
+        "count": 21687
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.9,
+        "count": 15342
+      },
+      {
+        "group": "No religion",
+        "pct": 0.7,
+        "count": 11813
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.3,
+        "count": 4993
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.2,
+        "count": 3884
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 1474
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 424
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 120
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Busia",
+    "level": "admin1",
+    "name": "Busia",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 886856,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 30.0,
+        "count": 266299
+      },
+      {
+        "group": "Protestant",
+        "pct": 29.1,
+        "count": 257869
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 27.8,
+        "count": 246936
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 6.7,
+        "count": 59847
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.1,
+        "count": 18431
+      },
+      {
+        "group": "Islam",
+        "pct": 1.9,
+        "count": 16909
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.0,
+        "count": 8904
+      },
+      {
+        "group": "No religion",
+        "pct": 0.7,
+        "count": 6537
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.3,
+        "count": 3070
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.1,
+        "count": 1150
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 681
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 164
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 59
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Siaya",
+    "level": "admin1",
+    "name": "Siaya",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 989708,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "African Instituted Churches",
+        "pct": 23.9,
+        "count": 236416
+      },
+      {
+        "group": "Catholic",
+        "pct": 22.9,
+        "count": 226455
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 22.8,
+        "count": 225650
+      },
+      {
+        "group": "Protestant",
+        "pct": 22.7,
+        "count": 224860
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.5,
+        "count": 34443
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.7,
+        "count": 16993
+      },
+      {
+        "group": "No religion",
+        "pct": 0.9,
+        "count": 8614
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.8,
+        "count": 7426
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5,
+        "count": 4994
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.3,
+        "count": 2526
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 1073
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 233
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Kisumu",
+    "level": "admin1",
+    "name": "Kisumu",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1144777,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 27.9,
+        "count": 319349
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 25.4,
+        "count": 291233
+      },
+      {
+        "group": "Catholic",
+        "pct": 19.6,
+        "count": 224352
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 18.2,
+        "count": 208708
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.8,
+        "count": 43791
+      },
+      {
+        "group": "Islam",
+        "pct": 1.5,
+        "count": 17241
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.4,
+        "count": 15901
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.9,
+        "count": 10630
+      },
+      {
+        "group": "No religion",
+        "pct": 0.6,
+        "count": 6653
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.3,
+        "count": 3619
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.2,
+        "count": 2375
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 723
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 202
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Homa_Bay",
+    "level": "admin1",
+    "name": "Homa Bay",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1125823,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 38.5,
+        "count": 433102
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 21.4,
+        "count": 241060
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 17.8,
+        "count": 200900
+      },
+      {
+        "group": "Catholic",
+        "pct": 16.3,
+        "count": 183946
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.6,
+        "count": 28805
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.3,
+        "count": 15039
+      },
+      {
+        "group": "Islam",
+        "pct": 0.7,
+        "count": 7469
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.6,
+        "count": 6731
+      },
+      {
+        "group": "No religion",
+        "pct": 0.4,
+        "count": 4779
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.3,
+        "count": 3407
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 138
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.0,
+        "count": 394
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 53
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Migori",
+    "level": "admin1",
+    "name": "Migori",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1108950,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 37.1,
+        "count": 411800
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 25.3,
+        "count": 280400
+      },
+      {
+        "group": "Catholic",
+        "pct": 17.2,
+        "count": 190734
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 13.8,
+        "count": 152709
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.9,
+        "count": 32242
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.3,
+        "count": 14496
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.7,
+        "count": 8012
+      },
+      {
+        "group": "Islam",
+        "pct": 0.7,
+        "count": 7552
+      },
+      {
+        "group": "No religion",
+        "pct": 0.7,
+        "count": 7370
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.2,
+        "count": 2652
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.1,
+        "count": 712
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 134
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 137
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Kisii",
+    "level": "admin1",
+    "name": "Kisii",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1260509,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 45.7,
+        "count": 575994
+      },
+      {
+        "group": "Catholic",
+        "pct": 34.1,
+        "count": 429285
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 15.0,
+        "count": 188751
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 2.1,
+        "count": 26226
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.3,
+        "count": 16062
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.7,
+        "count": 9078
+      },
+      {
+        "group": "No religion",
+        "pct": 0.7,
+        "count": 8574
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.2,
+        "count": 2538
+      },
+      {
+        "group": "Islam",
+        "pct": 0.2,
+        "count": 2753
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 351
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.0,
+        "count": 445
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.0,
+        "count": 354
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 98
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Nyamira",
+    "level": "admin1",
+    "name": "Nyamira",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 603051,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 54.2,
+        "count": 326691
+      },
+      {
+        "group": "Catholic",
+        "pct": 25.4,
+        "count": 152888
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 14.9,
+        "count": 90004
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 2.1,
+        "count": 12789
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.7,
+        "count": 10249
+      },
+      {
+        "group": "Other Religion",
+        "pct": 0.9,
+        "count": 5341
+      },
+      {
+        "group": "No religion",
+        "pct": 0.6,
+        "count": 3347
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.1,
+        "count": 762
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 554
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.0,
+        "count": 206
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.0,
+        "count": 176
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 28
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  },
+  {
+    "id": "KEN-Nairobi",
+    "level": "admin1",
+    "name": "Nairobi",
+    "parent": "KEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4337080,
+      "year": 2019,
+      "source": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 31.3,
+        "count": 1358985
+      },
+      {
+        "group": "Catholic",
+        "pct": 24.0,
+        "count": 1041619
+      },
+      {
+        "group": "Evangelical Churches",
+        "pct": 20.7,
+        "count": 897741
+      },
+      {
+        "group": "Islam",
+        "pct": 7.5,
+        "count": 326809
+      },
+      {
+        "group": "African Instituted Churches",
+        "pct": 7.1,
+        "count": 307019
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.2,
+        "count": 225003
+      },
+      {
+        "group": "No religion",
+        "pct": 1.3,
+        "count": 54841
+      },
+      {
+        "group": "Other Religion",
+        "pct": 1.1,
+        "count": 46401
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.9,
+        "count": 38141
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.5,
+        "count": 23160
+      },
+      {
+        "group": "Traditional religion",
+        "pct": 0.2,
+        "count": 7029
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.2,
+        "count": 9047
+      },
+      {
+        "group": "Not Stated",
+        "pct": 0.0,
+        "count": 1285
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA)",
+        "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+        "license": "Open Data (openAFRICA mirror of a KNBS publication)"
+      }
+    ],
+    "country": "KEN",
+    "aliases": [],
+    "religion_note": "KNBS, 2019 Kenya Population and Housing Census, Volume IV Table 2.30 (via openAFRICA). A census count of all residents, replacing the Afrobarometer survey estimate this county carried before. 'Protestant' and 'Evangelical Churches' are KNBS's own separate categories and are kept apart."
+  }
+]
