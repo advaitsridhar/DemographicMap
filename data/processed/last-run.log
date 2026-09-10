@@ -1,9 +1,4 @@
-croatia: Popis 2021, counties and towns/municipalities
-  18,279,747 bytes
-  sheet 1. (ethnicity): 29 categories: ['Croats', 'Albanians', 'Austrians', 'Bosniacs', 'Bulgarians', 'Montenegrins', 'Czechs', 'Hungarians', 'Macedonians', 'Germans', 'Poles', 'Roma', 'Romanians', 'Russians', 'Ruthenians', 'Slovaks', 'Slovenians', 'Serbs', 'Italians', 'Turks', 'Ukrainians', 'Vlachs', 'Jews', 'Other', 'Regional affiliation', 'Declared religion', 'Not classified', 'Not declared', 'Unknown']
-  sheet 2. (religion): 12 categories: ['Catholics', 'Orthodox', 'Protestants', 'Other Christians', 'Muslims', 'Jews', 'Oriental religions', 'Other religions, movements and life philosophies', 'Agnostics and sceptics', 'Not religious and atheists', 'Not declared', 'Unknown']
-  sheet 4. (language): 26 categories: ['Croatian', 'Croato-Serbian', 'Albanian', 'Bosnian', 'Bulgarian', 'Montenegrin', 'Czech', 'Hungarian', 'Macedonian', 'German', 'Polish', 'Romani', 'Romanian', 'Russian', 'Ruthenian', 'Slovak', 'Slovenian', 'Serbian', 'Serbo-Croatian', 'Italian', 'Turkish', 'Ukrainian', 'Vlach', 'Hebrew', 'Other languages', 'Unknown']
-  skipped 17 rows of type 'Gradska četvrt': not a town or municipality
-  {'admin1': 21, 'admin2': 556}
-  wrote data/processed/croatia_county.json (156 kB)
-  wrote data/processed/croatia_unit.json (2803 kB)
+thailand: religion by province, NSO, 2000 Population and Housing Census, provincial final reports
+  'Nationality, religion, and language data for the provinces of Thailand': 30,739 bytes of wikitext
+  76 provinces with a 2000 religion
+  wrote data/processed/thailand_province.json (117 kB)
