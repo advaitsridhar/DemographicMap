@@ -1,0 +1,114 @@
+{
+ "iso3": "BEN",
+ "name": "Benin",
+ "mode": "knowledge-only",
+ "researched_at": "2026-09-10",
+ "nso": {
+  "name": "Institut National de la Statistique et de la Démographie (INStaD; formerly INSAE)",
+  "url": "https://instad.bj/",
+  "confidence": "recalled"
+ },
+ "latest_census": {
+  "year": 2013,
+  "asks": {
+   "religion": true,
+   "ethnicity": true,
+   "language": null
+  },
+  "confidence": "recalled",
+  "notes": "RGPH-4, May 2013, is the latest count I know of; a fifth census (RGPH-5) has been planned since 2022 but I am not aware that it has been fielded and published. RGPH-4 asked religion and ethnic group (as did RGPH-3 2002 and RGPH-2 1992) and INSAE published both by département in its synthesis and thematic volumes. Whether RGPH-4 asked a language item I cannot recall (2002 asked language spoken); null. Note the office was renamed from INSAE to INStaD around 2020-2021, so older documents sit under insae-bj.org."
+ },
+ "subnational_sources": [
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "RGPH-4 2013 - 'Synthèse des principaux résultats' and the thematic volume on socio-cultural characteristics (religion, ethnie) by département",
+   "url": null,
+   "publisher": "INSAE (now INStaD)",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "département",
+   "geography_count": 12,
+   "matches_boundary_level": "admin1 (12 départements) exactly",
+   "year": 2013,
+   "confidence": "medium (recalled)",
+   "evidence": "INSAE's RGPH-4 publications (2015-2016) include religion and ethnic-group distributions for the 12 départements; commune-level (77) versions may exist in the thematic tome but I cannot confirm. Older host insae-bj.org; current instad.bj."
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "IPUMS-International - Benin 1979, 1992, 2002, 2013 census samples (religion, ethnicity; département and commune geography)",
+   "url": "https://international.ipums.org/",
+   "publisher": "IPUMS / INSAE",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "département (12) and commune (77)",
+   "geography_count": 77,
+   "matches_boundary_level": "admin1 (12) and admin2 (77 communes) exactly",
+   "year": 2013,
+   "confidence": "medium-high (recalled)",
+   "evidence": "Benin's four censuses are all in IPUMS-I with religion and ethnicity variables; 10% samples support commune-level shares for most of the 77 communes."
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "RGPH-3 2002 - 'Synthèse des analyses' (religion and ethnic group by département and commune)",
+   "url": null,
+   "publisher": "INSAE",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "département and commune",
+   "geography_count": 77,
+   "matches_boundary_level": "admin1 and admin2",
+   "year": 2002,
+   "confidence": "low-medium (recalled)",
+   "evidence": "Fallback if the 2013 thematic volume does not go below département."
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "INStaD NADA microdata catalogue (RGPH-4 2013)",
+   "url": null,
+   "publisher": "INStaD",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "département / commune",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 and admin2",
+   "year": 2013,
+   "confidence": "low-medium (recalled)",
+   "evidence": "Test instad.bj with probe_nada.py."
+  }
+ ],
+ "wikipedia": {
+  "country_list_articles": [
+   {
+    "title": "Religion in Benin"
+   },
+   {
+    "title": "Demographics of Benin"
+   }
+  ],
+  "admin2_samples": []
+ },
+ "tier": "B",
+ "tier_reason": "A census count of religion and ethnicity exists by département (12 = admin1) in INStaD's RGPH-4 PDFs, and by commune (77 = admin2 exactly) only through registered IPUMS microdata; no public CSV/XLSX is known to me.",
+ "replaces_existing": true,
+ "recommended_action": "Crawl instad.bj (and the legacy insae-bj.org) for the RGPH-4 synthesis/thematic PDFs and read the religion and ethnicity tables for the 12 départements with probe_pdf.py; this replaces the Afrobarometer R9 survey now on 9 of 12 admin1 rows (owner review). Note the boundary file spells 'Atlanique' where INStaD writes 'Atlantique' - add an alias. For the 77 communes, IPUMS 2013 is the route. Check whether RGPH-5 has been fielded before building.",
+ "searches_run": [],
+ "not_found": [
+  "whether RGPH-5 has been conducted and published",
+  "a commune-level (77) census publication of religion/ethnicity outside IPUMS",
+  "whether RGPH-4 asked a language item",
+  "exact titles/URLs of the RGPH-4 volumes on instad.bj"
+ ],
+ "summary": "Benin's INStaD (instad.bj, formerly INSAE) asked religion and ethnic group in the 2013 RGPH-4 and publishes both by the 12 départements (= admin1) as PDF; the 77 communes (= admin2 exactly) are reachable through IPUMS-International's 2013 sample with registration. A census read would replace the Afrobarometer survey estimates currently on admin1. Tier B; watch for RGPH-5 and fix the 'Atlanique' spelling in the boundary file."
+}

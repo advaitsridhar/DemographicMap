@@ -1,0 +1,164 @@
+{
+  "iso3": "PER",
+  "name": "Peru",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Instituto Nacional de Estadística e Informática (INEI)",
+    "url": "https://www.inei.gob.pe/",
+    "alternate_url": "https://www.gob.pe/inei",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2017,
+    "asks": {
+      "religion": true,
+      "ethnicity": true,
+      "language": true
+    },
+    "published_subnationally": {
+      "religion": true,
+      "ethnicity": true,
+      "language": true
+    },
+    "confidence": "recalled",
+    "notes": "Censos Nacionales 2017: XII de Población, VII de Vivienda y III de Comunidades Indígenas (22 Oct 2017). Religion asked of persons 12+ ('¿Cuál es su religión?'); ethnic self-identification asked for the first time in 2017 ('Por sus costumbres y sus antepasados usted se siente o considera: Quechua / Aimara / Nativo o indígena de la Amazonía / ... / Negro, moreno, zambo, mulato, afroperuano / Blanco / Mestizo / Otro'); mother tongue asked ('idioma o lengua con el que aprendió a hablar'). All three are tabulated at departamento, provincia and distrito. The packet's national rows (Catholic 76.0 / Evangelical 15.7; Mestizo 60.2 / Indigenous 25.8; Spanish 82.9 / Quechua 13.6) are the 2017 census distributions. A XIII census (Censos Nacionales 2025) was in the field from August 2025 (recalled); I do not know its results to be published as of this date -- check inei.gob.pe, but build from 2017 meanwhile."
+  },
+  "already_in_map": "Nothing subnational (status 'nothing').",
+  "subnational_sources": [
+    {
+      "fields": [
+        "religion",
+        "ethnicity",
+        "language"
+      ],
+      "title": "Sistema de Consulta de Base de Datos REDATAM -- Censos Nacionales 2017 (online table-builder; cross-tabulate religión, autoidentificación étnica, lengua materna by departamento / provincia / distrito, export to xlsx)",
+      "url": null,
+      "publisher": "INEI",
+      "kind": "census",
+      "format": "table-builder (REDATAM web; no API; host recalled as censos2017.inei.gob.pe/redatam/)",
+      "geography": "departamento / provincia / distrito",
+      "geography_count": 196,
+      "matches_boundary_level": "admin1 (24 departamentos + Callao, with Lima usually split into Provincia de Lima and Región Lima = 26) and admin2 (196 provincias)",
+      "year": 2017,
+      "confidence": "high that it exists; medium that it is reachable",
+      "evidence": "Recalled: INEI has published every census since 1993 through REDATAM; the 2017 instance is the standard route researchers use for district-level ethnicity and language."
+    },
+    {
+      "fields": [
+        "religion",
+        "ethnicity",
+        "language"
+      ],
+      "title": "Resultados Definitivos de los Censos Nacionales 2017 -- one publication per departamento (Tomo I onward), with cuadros by provincia and distrito including población censada por religión, por lengua materna and por autoidentificación étnica",
+      "url": null,
+      "publisher": "INEI",
+      "kind": "census",
+      "format": "pdf (INEI's library at inei.gob.pe/biblioteca-virtual; some cuadros also as xlsx)",
+      "geography": "provincia and distrito",
+      "geography_count": 196,
+      "matches_boundary_level": "admin2 (196 provincias) and admin1 via the department volume",
+      "year": 2017,
+      "confidence": "high",
+      "evidence": "Recalled series; 25 department volumes released 2018."
+    },
+    {
+      "fields": [
+        "religion",
+        "ethnicity",
+        "language"
+      ],
+      "title": "Perú: Perfil Sociodemográfico -- Informe Nacional (Censos Nacionales 2017)",
+      "url": null,
+      "publisher": "INEI",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "departamento",
+      "geography_count": 25,
+      "matches_boundary_level": "admin1 (needs the Lima split to reach 26)",
+      "year": 2017,
+      "confidence": "high",
+      "evidence": "Recalled: the 2018 national profile has department tables for religion, mother tongue and ethnic self-identification."
+    },
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "La Autoidentificación Étnica: Población Indígena y Afroperuana (Censos Nacionales 2017)",
+      "url": null,
+      "publisher": "INEI",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "departamento",
+      "geography_count": 25,
+      "matches_boundary_level": "admin1",
+      "year": 2017,
+      "confidence": "medium-high",
+      "evidence": "Recalled 2018 thematic report."
+    },
+    {
+      "fields": [
+        "religion",
+        "ethnicity",
+        "language"
+      ],
+      "title": "INEI Microdatos portal -- Censos Nacionales 2017 person-level microdata (ubigeo to distrito)",
+      "url": null,
+      "publisher": "INEI",
+      "kind": "census (full microdata)",
+      "format": "csv/spss download; free, no registration recalled (host recalled as iinei.inei.gob.pe/microdatos/)",
+      "geography": "distrito (aggregate to provincia and departamento)",
+      "geography_count": 1874,
+      "matches_boundary_level": "admin1 and admin2 by aggregation",
+      "year": 2017,
+      "confidence": "medium",
+      "evidence": "Recalled: INEI publishes census and survey microdata openly on its microdata portal; this is the only fully machine-readable route I know of, at the cost of a ~30M-row build."
+    },
+    {
+      "fields": [
+        "religion",
+        "ethnicity",
+        "language"
+      ],
+      "title": "IPUMS-International: Peru 1993, 2007 and 2017 census samples",
+      "url": null,
+      "publisher": "IPUMS",
+      "kind": "census (microdata sample)",
+      "format": "microdata, registration required",
+      "geography": "departamento and provincia",
+      "geography_count": null,
+      "matches_boundary_level": "admin1, admin2",
+      "year": 2017,
+      "confidence": "medium (1993 and 2007 certain; 2017 recalled)",
+      "evidence": "Recalled."
+    }
+  ],
+  "secondary_routes": {
+    "hdx": "Not recorded in the repo's enumeration of the USCB series; the runner searches HDX itself.",
+    "ipums": "Peru 1993, 2007, 2017.",
+    "open_data": "Peru's national open-data portal (datosabiertos.gob.pe, recalled) carries some INEI census tables; unverified for these fields.",
+    "other": null
+  },
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Peru"
+      },
+      {
+        "title": "Demographics of Peru"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "A census count of all three fields at department, province and district, but the published forms are a REDATAM table-builder and PDF volumes; the machine-readable route is the full microdata. Borderline A if the microdata portal is open as recalled.",
+  "replaces_existing": false,
+  "recommended_action": "Crawl inei.gob.pe for the 2017 'Resultados Definitivos' department volumes and the REDATAM instance; the cheapest correct build is probably REDATAM exports of the three variables by provincia (196 = admin2 exactly) and by departamento, with Provincia de Lima and Región Lima kept separate to reach the boundary's 26 admin1. If the microdata portal serves the 2017 census as CSV, aggregate ubigeo to provincia/departamento instead. Check whether Censos 2025 results have appeared; if so they supersede.",
+  "searches_run": [],
+  "not_found": [
+    "release status of the 2025 census",
+    "an xlsx/csv publication of the three tables by province (only recalled as pdf/REDATAM)",
+    "which 26 units the boundary's admin1 layer draws (24 departments + Callao + a Lima split is the likely 26)"
+  ],
+  "summary": "Peru's 2017 census asked religion, ethnic self-identification (new in 2017) and mother tongue, and INEI tabulates all three by departamento, provincia and distrito -- through REDATAM online, in one 'Resultados Definitivos' PDF volume per department, and in the national 'Perfil Sociodemográfico'. The boundary's 196 admin2 shapes are the 196 provinces, and the 26 admin1 are 24 departments plus Callao plus a Lima split. The map holds nothing for Peru today, so any of these fills three fields at two levels; the cost is a table-builder or PDFs, unless INEI's open microdata portal serves the 2017 census as CSV, in which case aggregation is the clean route."
+}

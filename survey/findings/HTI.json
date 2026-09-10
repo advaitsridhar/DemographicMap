@@ -1,0 +1,75 @@
+{
+  "iso3": "HTI",
+  "name": "Haiti",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Institut Haitien de Statistique et d'Informatique (IHSI)", "url": "https://www.ihsi.ht/", "confidence": "recalled"},
+  "latest_census": {
+    "year": 2003,
+    "asks": {"religion": true, "ethnicity": false, "language": null},
+    "confidence": "recalled",
+    "notes": "The 4th Recensement General de la Population et de l'Habitat (RGPH) was enumerated in January 2003 and the definitive results published in 2005. It is still the latest: the 5th census was prepared (cartography from ~2018) but never enumerated because of the security collapse. Religion: the 2003 questionnaire had a religion item and the results were published (Catholic ~55%, Protestant ~28-29% split into Baptist, Pentecostal, Adventist etc., Vodou ~2%); the packet's national shares are that count as relayed by the Factbook. Ethnicity: not asked; the '95% Black' figure is an estimate. Language: I cannot recall a French/Creole language item on the 2003 questionnaire; leave null. IHSI later issued population estimates (2015) by department, arrondissement and commune, but those are totals only. The repo already found the US Census Bureau workbook for Haiti has no religion, ethnicity or language sheet."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion"],
+      "title": "RGPH 2003 -- Resultats definitifs: 'Ensemble du pays' volume and one volume per departement (tables on religion by departement, arrondissement and commune)",
+      "url": null,
+      "publisher": "IHSI",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "departement (with arrondissement/commune tables in the departmental volumes)",
+      "geography_count": 10,
+      "matches_boundary_level": "admin1 (10 departements = 10); departmental volumes may reach the 42 arrondissements = admin2",
+      "year": 2003,
+      "confidence": "medium",
+      "evidence": "Recalled: IHSI published the 2003 definitive results as a national volume plus departmental volumes, each with the standard demographic tables including religion, organised departement > arrondissement > commune. Whether the religion table is carried down to arrondissement in every departmental volume I cannot confirm from memory. Note the boundary file uses mixed naming ('Artibonite Department', 'Departement de l'Ouest', 'Arrondissement de Cap-Haitien'): join on the bare toponym."
+    },
+    {
+      "fields": ["religion"],
+      "title": "Enquete Mortalite, Morbidite et Utilisation des Services (EMMUS-VI) 2016-17, religion by departement",
+      "url": null,
+      "publisher": "IHE / ICF (DHS Program)",
+      "kind": "survey",
+      "format": "pdf / DHS API",
+      "geography": "departement",
+      "geography_count": 10,
+      "matches_boundary_level": "admin1",
+      "year": 2017,
+      "confidence": "medium",
+      "evidence": "Recalled: the Haiti DHS reports religion as a background characteristic with the 10 departments as domains. A sampled estimate, below the 2003 count; useful only as a more recent cross-check."
+    },
+    {
+      "fields": ["religion"],
+      "title": "IPUMS-International: Haiti 1971, 1982 and 2003 census samples",
+      "url": null,
+      "publisher": "IPUMS-International (Minnesota Population Center)",
+      "kind": "census",
+      "format": "microdata (registration required)",
+      "geography": "departement / arrondissement",
+      "geography_count": 10,
+      "matches_boundary_level": "admin1",
+      "year": 2003,
+      "confidence": "medium",
+      "evidence": "Recalled: Haiti 2003 is in the IPUMS catalogue with a religion variable and department identifiers; this is the machine-readable route to the same count, behind registration."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Haiti"},
+      {"title": "Demographics of Haiti"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "A census religion count exists by departement (10 = admin1) and probably by arrondissement (42 = admin2) in IHSI's 2003 definitive-results PDFs, and as IPUMS microdata behind registration; it is 23 years old and there is no successor. Ethnicity is not asked (Tier C field); language unknown.",
+  "replaces_existing": false,
+  "recommended_action": "Crawl ihsi.ht (often unreachable; try the IHSI publications mirrors and IPUMS as a backup) for the RGPH 2003 'Resultats definitifs' volumes; extract religion by departement and, from the departmental volumes, by arrondissement. Join admin1 on the department toponym and admin2 on 'Arrondissement de X' with the prefix stripped. Record the 2003 date prominently. Declare ethnicity not_collected ('not on the 2003 questionnaire'); check the questionnaire for a language item before declaring language.",
+  "searches_run": [],
+  "not_found": [
+    "Not established from memory: whether the departmental 2003 volumes tabulate religion at arrondissement or commune level",
+    "Not established: whether the 2003 questionnaire asked language",
+    "Not established: a currently reachable copy of the IHSI 2003 volumes (the IHSI site has been intermittently offline)"
+  ],
+  "summary": "Haiti's only usable count is the IHSI (ihsi.ht) 2003 census, which asked religion and published it by the 10 departments (= admin1) in PDF definitive-results volumes, with departmental volumes that on recollection go down to arrondissement (42 = admin2) and commune; IPUMS holds the 2003 microdata behind registration. No census has been held since and the planned 5th was abandoned for security reasons, so this is Tier B on age and format. Ethnicity is not asked and should be declared not_collected; language is unestablished. The USCB workbook route is already closed."
+}

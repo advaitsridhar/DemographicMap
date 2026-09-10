@@ -1,0 +1,80 @@
+{
+  "iso3": "HUN",
+  "name": "Hungary",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Hungarian Central Statistical Office (Kozponti Statisztikai Hivatal, KSH)",
+    "url": "https://www.ksh.hu/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2022,
+    "asks": {
+      "religion": true,
+      "ethnicity": true,
+      "language": true
+    },
+    "confidence": "recalled",
+    "notes": "Nepszamlalas 2022 (enumerated Oct-Nov 2022, final results 2023-24) asked nationality (nemzetiseg, two answers allowed), mother tongue (anyanyelv), language used with family and friends, and religion (vallas), all voluntary. Religion non-response in 2022 was about 40%, which is why the packet's national Catholic 30.1% looks low; the not-answering share must stay a category. KSH's ethnicity headline ('nemzetiseghez tartozok') combines nationality, mother tongue and language-used answers, so a composition must state which basis it uses. The 2011 census asked the same items."
+  },
+  "subnational_sources": [
+    {
+      "fields": [
+        "ethnicity",
+        "language",
+        "religion"
+      ],
+      "title": "Nepszamlalas 2022 -- Teruleti adatok (territorial data): population by nationality, mother tongue, language spoken and religion, by varmegye (county), jaras (district) and telepules (settlement)",
+      "url": "https://nepszamlalas2022.ksh.hu/",
+      "publisher": "KSH (2022 census results site; also the KSH dissemination database)",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "county (19 + Budapest) and district (174 jaras + 23 Budapest kerulet)",
+      "geography_count": 197,
+      "matches_boundary_level": "admin1 and admin2",
+      "year": 2022,
+      "confidence": "recalled",
+      "evidence": "KSH publishes census results as downloadable XLSX tables by territorial unit, as it did for 2011 ('Teruleti adatok' per county). Hungary has 19 counties plus Budapest (20) against the packet's 19 admin1 shapes, so check whether Budapest is missing or merged; 174 jaras plus 23 Budapest districts (197) against the packet's 198 admin2 shapes (sample names include 'III. kerulet' and jaras seats like Ozd, Tab, Vecses), so expect one shape to reconcile. The results-site URL is recalled, not verified."
+    },
+    {
+      "fields": [
+        "ethnicity",
+        "language",
+        "religion"
+      ],
+      "title": "Nepszamlalas 2011 -- Teruleti adatok (per-county volumes 3.1.x.x with nationality, mother tongue and religion by jaras/settlement)",
+      "url": null,
+      "publisher": "KSH",
+      "kind": "census",
+      "format": "xls",
+      "geography": "county / district / settlement",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 and admin2",
+      "year": 2011,
+      "confidence": "recalled",
+      "evidence": "Fallback if the 2022 tables are not found; same questions, high non-response on religion (about 27% in 2011)."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Hungary"
+      },
+      {
+        "title": "Demographics of Hungary"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "A",
+  "tier_reason": "Hungary's 2022 census asked all three fields and KSH publishes them as XLSX by county and district, which match the packet's admin1 and admin2 to within one shape each.",
+  "replaces_existing": false,
+  "recommended_action": "From nepszamlalas2022.ksh.hu (or ksh.hu/nepszamlalas) download the territorial-data workbooks for nationality, mother tongue and religion by jaras and county. Join admin1 on county name (19 counties; find out where Budapest is in the boundary file) and admin2 on jaras and Budapest kerulet names. Keep 'nem kivant valaszolni' / not answering as a category in religion; for ethnicity choose and record one basis (nationality first answer, or KSH's combined 'belongs to nationality' figure). Eurostat is already handled by the adapter and carries none of this.",
+  "searches_run": [],
+  "not_found": [
+    "The exact workbook file names on the 2022 results site",
+    "Whether Budapest is one of the packet's 19 admin1 shapes"
+  ],
+  "summary": "Hungary is Tier A: the 2022 census asked nationality, mother tongue, language used and religion, and KSH publishes territorial results as XLSX by county, district (jaras) and settlement. Counties (19 plus Budapest) and districts (174 jaras plus 23 Budapest kerulet) line up with the packet's 19 admin1 and 198 admin2 within one shape each. Religion had roughly 40% non-response in 2022 and the ethnicity figure can be counted on more than one basis, so both need explicit handling. The 2011 census tables are a same-shape fallback."
+}

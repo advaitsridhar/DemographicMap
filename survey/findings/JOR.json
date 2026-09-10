@@ -1,0 +1,75 @@
+{
+  "iso3": "JOR",
+  "name": "Jordan",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Department of Statistics (DoS), Jordan", "url": "https://dosweb.dos.gov.jo/", "confidence": "recalled"},
+  "latest_census": {
+    "year": 2015,
+    "asks": {"religion": null, "ethnicity": false, "language": false},
+    "confidence": "recalled",
+    "notes": "General Population and Housing Census of 30 November 2015 (previous: 2004, 1994); the next was planned for around 2025 and I cannot confirm its status. Ethnicity: not asked. What the 2015 census asked and published prominently is nationality (Jordanian, Syrian, Egyptian, Palestinian, Iraqi, Yemeni, Libyan, other) -- the packet's 'ethnicity' shares (Jordanian 69.3, Syrian 13.3, Palestinian 6.7, Egyptian 6.7) are that citizenship table, which this repo's rules refuse as ethnicity (the Nigeria/Sudan/Libya precedent in docs/SOURCES.md). Religion: I cannot say with confidence whether the 2015 questionnaire carried a religion item; the Factbook's shares (Muslim 97.1, Christian 2.1, Buddhist 0.4, Hindu 0.1) look like a full-resident count that includes migrant workers, which would point to the 2015 census, but I have not seen a DoS religion table -- leave null and have the runner look for one. Language: not asked."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["ethnicity"],
+      "title": "2015 General Population and Housing Census -- main results tables: population by nationality, sex, governorate and district (NATIONALITY = citizenship, refused as ethnicity by repo convention)",
+      "url": null,
+      "publisher": "Department of Statistics, Jordan",
+      "kind": "census",
+      "format": "xlsx / pdf",
+      "geography": "governorate (12) and district/liwa (~51)",
+      "geography_count": 12,
+      "matches_boundary_level": "admin1 (12 governorates = 12); districts approximately admin2 (52 shapes)",
+      "year": 2015,
+      "confidence": "medium",
+      "evidence": "Recalled: DoS released the 2015 census results as Excel/PDF tables on dosweb.dos.gov.jo organised by governorate and district, and the nationality-by-governorate table was widely quoted (Amman, Irbid, Mafraq and Zarqa carrying most Syrians). Listed so the owner can see what exists; it is a citizenship count, not an ethnicity count."
+    },
+    {
+      "fields": ["religion"],
+      "title": "2015 General Population and Housing Census -- possible table on population by religion and governorate (unconfirmed)",
+      "url": null,
+      "publisher": "Department of Statistics, Jordan",
+      "kind": "census",
+      "format": "xlsx / pdf",
+      "geography": "governorate",
+      "geography_count": 12,
+      "matches_boundary_level": "admin1",
+      "year": 2015,
+      "confidence": "low",
+      "evidence": "Not recalled with confidence; entered only as the thing the runner should look for in the same results workbook. If absent, religion is unknown-not-asked (D), not a not_collected declaration."
+    },
+    {
+      "fields": ["religion", "ethnicity"],
+      "title": "IPUMS-International: Jordan 2004 census sample",
+      "url": null,
+      "publisher": "IPUMS-International (Minnesota Population Center)",
+      "kind": "census",
+      "format": "microdata (registration required)",
+      "geography": "governorate",
+      "geography_count": 12,
+      "matches_boundary_level": "admin1",
+      "year": 2004,
+      "confidence": "low",
+      "evidence": "Recalled with low confidence that Jordan 2004 is in IPUMS with nationality and possibly religion variables; verify."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Jordan"},
+      {"title": "Demographics of Jordan"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "DoS publishes the 2015 census by governorate (12 = admin1) and district in XLSX/PDF, but the field it certainly carries is nationality, which the repo refuses as ethnicity, and whether a religion table exists is unconfirmed; language and ethnicity proper are not asked.",
+  "replaces_existing": false,
+  "recommended_action": "Crawl dosweb.dos.gov.jo for the 2015 census results workbooks (Arabic and English editions). If a religion-by-governorate table is present, build admin1 (12 governorates: Ajloun, Amman, Aqaba, Balqa, Irbid, Jerash, Karak, Ma'an, Madaba, Mafraq, Tafilah, Zarqa) and try the district table for admin2 (the boundary file's 52 shapes mix governorate and district names -- 'Amman', 'Al-Balqa', 'Az-Zarqa' -- so expect a partial join). Declare language not_collected. Do not load the nationality table as ethnicity; if the owner wants it, label it citizenship.",
+  "searches_run": [],
+  "not_found": [
+    "Not established from memory: whether the 2015 census asked or published religion",
+    "Not established: whether a 2025 census was enumerated",
+    "Not established: the exact title/URL of the 2015 results workbooks on dosweb"
+  ],
+  "summary": "Jordan's DoS (dosweb.dos.gov.jo) ran its last census in November 2015 and publishes its tables by governorate (12 = admin1) and district in Excel and PDF. The certain subnational field is nationality (Jordanian/Syrian/Egyptian/Palestinian...), which is citizenship and is refused as ethnicity under the repo's own rule; ethnicity proper and language are not asked. Whether a religion table exists is the open question -- the Factbook's shares including Buddhist and Hindu residents hint at a 2015 count, but I cannot confirm one, so Tier B pending the runner's look at the 2015 workbooks."
+}

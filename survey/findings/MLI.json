@@ -1,0 +1,93 @@
+{
+  "iso3": "MLI",
+  "name": "Mali",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Institut National de la Statistique (INSTAT)",
+    "url": "https://www.instat-mali.org/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2009,
+    "asks": {"religion": true, "ethnicity": true, "language": true},
+    "confidence": "recalled",
+    "notes": "4e RGPH, April 2009. Language is certain: the repo already reads Tableau S-3 'Population Résidente de 6 Ans et Plus Selon la Langue' by region from the USCB/HDX workbook. Religion and ethnicity are recalled as also on the 2009 questionnaire (the 1998 and 2009 reports give a Muslim share around 90-95%), with medium confidence -- the USCB workbook carried only the language sheet, which is weak evidence either way. A 5th RGPH was prepared (cartography from 2022) but I do not know that enumeration has taken place; treat 2009 as latest until the runner sees otherwise on instat-mali.org."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["language"],
+      "title": "Mali Subnational Population and Housing Data Tables with Administrative Boundaries (USCB via HDX) -- Tableau S-3 language, regions only (already built)",
+      "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+      "publisher": "U.S. Census Bureau via HDX",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "region",
+      "geography_count": 9,
+      "matches_boundary_level": "admin1 (9/9 filled); the 50 cercles are listed but blank",
+      "year": 2009,
+      "confidence": "high",
+      "evidence": "The repo's own adapter (scripts/fetch_census/uscb.py, MALI) and docs/SOURCES.md; slug copied from the adapter."
+    },
+    {
+      "fields": ["religion", "ethnicity", "language"],
+      "title": "RGPH 2009 -- Résultats définitifs / analytical volumes (Tome 'État et structure de la population' and socio-cultural characteristics) by region and cercle",
+      "url": "https://www.instat-mali.org/",
+      "publisher": "INSTAT",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "region and cercle",
+      "geography_count": 50,
+      "matches_boundary_level": "admin1 (9) and admin2 (50 cercles: Bougouni, Goundam, Niafunké, Yélimané ... as drawn)",
+      "year": 2009,
+      "confidence": "medium",
+      "evidence": "Recalled: INSTAT published the 2009 definitive results as PDF volumes with tables by region and cercle; religion and ethnicity tables by region are what I expect there. Exact volume title and URL not certain. The cercle-level language table would fill what the USCB sheet left blank."
+    },
+    {
+      "fields": ["religion", "ethnicity"],
+      "title": "Afrobarometer Round 9 (already built: fills 7 of 9 admin1 regions; two thin regions dropped by the MIN_SAMPLE rule)",
+      "url": null,
+      "publisher": "Afrobarometer",
+      "kind": "survey",
+      "format": "xlsx",
+      "geography": "region",
+      "geography_count": 9,
+      "matches_boundary_level": "admin1",
+      "year": 2022,
+      "confidence": "high",
+      "evidence": "Packet: religion 7, ethnicity 7 of 9 from an adapter; the Afrobarometer adapter covers MLI (code 21). Any 2009 census religion/ethnicity table by region supersedes it."
+    },
+    {
+      "fields": ["religion", "ethnicity"],
+      "title": "Enquête Démographique et de Santé du Mali 2018 (EDSM-VI) -- respondents by religion and ethnic group, by region",
+      "url": null,
+      "publisher": "INSTAT / DHS Program",
+      "kind": "survey",
+      "format": "pdf",
+      "geography": "region (northern regions partly unsurveyed)",
+      "geography_count": null,
+      "matches_boundary_level": "admin1, incomplete",
+      "year": 2018,
+      "confidence": "medium",
+      "evidence": "The packet's national ethnicity shares (Bambara 33.3%, Fulani 13.3% ...) are the 2018 DHS figures. A survey of women and men 15-49, not a count; listed below the census and below nothing else."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Mali"},
+      {"title": "Demographics of Mali"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "Language by region is already built from the machine-readable USCB workbook; the remaining prizes -- religion and ethnicity by region from the 2009 census, and any field by cercle -- exist only in INSTAT PDF volumes whose titles and URLs I cannot give with certainty.",
+  "replaces_existing": true,
+  "recommended_action": "Crawl instat-mali.org for the RGPH 2009 'résultats définitifs' volumes; read religion and ethnicity by region (9 = admin1) to replace the Afrobarometer shares and fill Kidal/whichever two regions the survey dropped; read language (and, if present, religion/ethnicity) by cercle for the 50 blank admin2 shapes. Also check whether RGPH5 has been enumerated. Hazard: Mali's 2023 reorganisation into 19 regions -- the boundary file and the 2009 tables share the old 8 regions + Bamako frame, so use 2009-frame tables only.",
+  "searches_run": [],
+  "not_found": [
+    "Certainty that religion and ethnicity were on the 2009 questionnaire (medium confidence only)",
+    "Any machine-readable cercle-level table (the USCB workbook lists the cercles blank)",
+    "The status of the 5th RGPH"
+  ],
+  "summary": "Mali's 2009 census language table by region is already built from the USCB/HDX workbook (9/9 admin1) and its cercle rows are blank there. Religion and ethnicity currently come from the Afrobarometer survey (7 of 9 regions) and would be superseded by the 2009 census tables that INSTAT published as PDF volumes by region and cercle. Tier B: the count exists on paper, not in a file I can name."
+}

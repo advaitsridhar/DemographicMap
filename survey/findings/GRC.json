@@ -1,0 +1,57 @@
+{
+  "iso3": "GRC",
+  "name": "Greece",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Hellenic Statistical Authority (ELSTAT, Elliniki Statistiki Archi)",
+    "url": "https://www.statistics.gr/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2021,
+    "asks": {
+      "religion": false,
+      "ethnicity": false,
+      "language": false
+    },
+    "confidence": "recalled",
+    "notes": "The Population-Housing Census 2021 (and 2011, 2001) records citizenship and country of birth only. Religion and mother tongue were last asked in the 1951 census and have been omitted since; Greece has never asked an ethnicity item. The Muslim minority of Thrace and the packet's national religion range are estimates, not census counts."
+  },
+  "subnational_sources": [
+    {
+      "fields": [],
+      "title": "Census 2021 / 2011: resident population by citizenship (Greek, EU, non-EU, by country of citizenship), by region and regional unit",
+      "url": null,
+      "publisher": "ELSTAT",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "region (periféreia) and regional unit",
+      "geography_count": 13,
+      "matches_boundary_level": "admin2",
+      "year": 2021,
+      "confidence": "recalled",
+      "evidence": "Listed only to record that the one subnational identity table Greece publishes is citizenship, which is nationality, not ethnicity, and is not a substitute for any of the three fields."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Greece"
+      },
+      {
+        "title": "Demographics of Greece"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "C",
+  "tier_reason": "The Greek census has not asked religion or language since 1951 and has never asked ethnicity; there is no count to find at any geography.",
+  "replaces_existing": false,
+  "recommended_action": "Declare religion, ethnicity and language not_collected for Greece and propagate to the 8 admin1 and 14 admin2 shapes, citing 'last asked in the 1951 census; the 2001, 2011 and 2021 censuses record citizenship and country of birth only'. Eurostat is already handled by the adapter. Do not substitute citizenship for ethnicity.",
+  "searches_run": [],
+  "not_found": [
+    "Any post-1951 official count of religion or mother tongue in Greece"
+  ],
+  "summary": "Greece is a clean Tier C: the 2021 census, like 2011 and 2001, asks citizenship and country of birth and nothing on religion, ethnicity or language; religion and mother tongue were last asked in 1951. All three fields should be declared not_collected at national, admin1 (8) and admin2 (14) level. ELSTAT's citizenship-by-regional-unit tables exist but are nationality, not ethnicity, and should not be used as a stand-in."
+}

@@ -1,0 +1,66 @@
+{
+  "iso3": "SYR",
+  "name": "Syria",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Central Bureau of Statistics (CBS), Damascus (المكتب المركزي للإحصاء)",
+    "url": "http://cbssyr.sy/",
+    "confidence": "recalled",
+    "note": "Homepage recalled; the site has historically been HTTP-only and intermittently offline. After the December 2024 change of government the bureau's web presence may have moved."
+  },
+  "latest_census": {
+    "year": 2004,
+    "asks": {"religion": false, "ethnicity": false, "language": null},
+    "confidence": "recalled",
+    "notes": "The 2004 General Census of Population and Housing asked nationality (citizenship) but not religion or ethnic group; the repo already established from the USCB workbook's data dictionary that the sheet labelled 'Ethnicity' is 'Distribution of Individuals by Nationality' (docs/SOURCES.md). The last Syrian census to tabulate religion was 1960; no census since (1970, 1981, 1994, 2004) has asked it, and ethnicity was never enumerated -- both were treated as politically off-limits under the Ba'athist state. Whether a mother-tongue item existed on the 2004 form is not known from memory, so language is left null rather than declared. No census has been held since 2004; the planned 2014 round did not happen because of the war."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion"],
+      "title": "1960 Census of Syria -- population by religion (Muslim / Christian / other) by mohafaza",
+      "url": null,
+      "publisher": "Directorate of Statistics (predecessor of the CBS)",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "mohafaza (governorate)",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 only partially: Tartous was carved out of Latakia in 1972 and Quneitra's population was displaced after 1967, so the 1960 frame does not equal the 14 governorates drawn",
+      "year": 1960,
+      "confidence": "low",
+      "evidence": "Recalled as the last count of religion in Syria; it is the figure Wikipedia's governorate-level Christian shares ultimately trace to. Sixty-six years old and pre-dating the boundary frame -- listed so the runner knows it exists, not as a build candidate."
+    },
+    {
+      "fields": ["ethnicity"],
+      "title": "Syria Subnational Population and Housing Data Tables with Administrative Boundaries (USCB via HDX) -- 'Ethnicity' sheet is nationality; already refused",
+      "url": null,
+      "publisher": "U.S. Census Bureau via HDX",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "governorate",
+      "geography_count": 14,
+      "matches_boundary_level": "admin1",
+      "year": 2004,
+      "confidence": "high",
+      "evidence": "Already measured closed by this repo (docs/SOURCES.md, USCB series): the columns are Syrian, Palestinian, Arab-other, European, ... which is citizenship, not ethnicity. Listed only so it is not re-researched."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Syria"},
+      {"title": "Demographics of Syria"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "C",
+  "tier_reason": "No Syrian census since 1960 has asked religion and none has ever asked ethnicity; the 2004 census asked nationality only, which the repo has already confirmed from the USCB workbook's dictionary. The right output for religion and ethnicity is a not_collected declaration. Language is unestablished (null), not declared.",
+  "replaces_existing": false,
+  "recommended_action": "Declare religion and ethnicity not_collected at admin1 and admin2 with the reason 'no census since 1960 has asked religion; ethnicity never enumerated; 2004 census asked nationality only'. Leave language as a visible gap unless the runner can see the 2004 questionnaire on cbssyr.sy. Any subnational religion/ethnicity figures found on the web for Syria (e.g. governorate-level shares on Wikipedia) will be estimates or the 1960 count, not a post-1960 census, and should not be built as a count. Re-check the CBS site: a post-2024 government may announce a new census.",
+  "searches_run": [],
+  "not_found": [
+    "Any post-1960 Syrian census table of religion (none exists to my knowledge)",
+    "Any census table of ethnicity or mother tongue (none exists to my knowledge)",
+    "Whether the 2004 questionnaire had a language item -- not known, left null"
+  ],
+  "summary": "Syria's last census (2004) asked citizenship, not religion, ethnicity or (so far as I recall) language; the repo already found the USCB 'Ethnicity' sheet is nationality and refused it. The last count of religion was 1960, on a governorate frame that predates Tartous. Tier C: declare religion and ethnicity not_collected with that reason and keep language as an open gap; the CBS homepage (cbssyr.sy) is the only thing to crawl, and only to see whether a new census is announced."
+}

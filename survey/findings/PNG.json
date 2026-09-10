@@ -1,0 +1,91 @@
+{
+  "iso3": "PNG",
+  "name": "Papua New Guinea",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "National Statistical Office of Papua New Guinea (NSO)",
+    "url": "https://www.nso.gov.pg/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2011,
+    "asks": {
+      "religion": true,
+      "ethnicity": false,
+      "language": null
+    },
+    "confidence": "recalled",
+    "notes": "The 2011 National Population and Housing Census is the last with published results; the 2021 round was postponed and a 2024 enumeration was run but its results were not released in usable form as far as recalled. The 2000 and 2011 questionnaires carried a religion item (denomination). The census records citizenship and province of birth rather than an ethnic group, so ethnicity is treated as not asked, with moderate confidence. Whether 2011 asked a spoken-language item (2000 asked literacy in English/Tok Pisin/Motu) is not recalled, hence null."
+  },
+  "subnational_sources": [
+    {
+      "fields": [
+        "religion"
+      ],
+      "title": "Papua New Guinea 2011 National Population and Housing Census -- National Report and Provincial Reports (religion by province; district tables in the provincial reports)",
+      "url": null,
+      "publisher": "National Statistical Office of Papua New Guinea",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "province",
+      "geography_count": 22,
+      "matches_boundary_level": "admin1",
+      "year": 2011,
+      "confidence": "recalled",
+      "evidence": "The 2011 national report tabulates religious affiliation by province; 22 provinces (20 provinces plus NCD and Bougainville) equals the packet's admin1 count. District-level religion, if present, sits in the per-province PDF reports; the packet's 87 districts are the pre-2012 district set (89 after Hela and Jiwaka were carved out), so a district join needs a crosswalk."
+    },
+    {
+      "fields": [
+        "religion"
+      ],
+      "title": "Papua New Guinea 2000 Census National Report (religion by province)",
+      "url": null,
+      "publisher": "National Statistical Office of Papua New Guinea",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "province",
+      "geography_count": 20,
+      "matches_boundary_level": "admin1 (pre-2012 provinces)",
+      "year": 2000,
+      "confidence": "recalled",
+      "evidence": "Fallback if the 2011 report cannot be found; predates Hela and Jiwaka."
+    },
+    {
+      "fields": [],
+      "title": "PNG 2011 census population by LLG / ward (HDX, OCHA/NSO)",
+      "url": null,
+      "publisher": "HDX (data.humdata.org)",
+      "kind": "census",
+      "format": "csv",
+      "geography": "LLG",
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2011,
+      "confidence": "recalled",
+      "evidence": "Population only; no religion or language columns are recalled. Listed so the runner does not expect fields from it."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Papua New Guinea"
+      },
+      {
+        "title": "Demographics of Papua New Guinea"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "A 2011 census count of religion by province (22 = admin1) exists but only inside PDF reports; ethnicity is not asked and language is unconfirmed.",
+  "replaces_existing": false,
+  "recommended_action": "Crawl nso.gov.pg for the 2011 census National Report and Provincial Reports and extract the religion-by-province table for the 22 admin1 shapes; check the provincial reports for district tables and build an 87-to-89 district crosswalk before joining admin2. Check the questionnaire for a language item before declaring language. Declare ethnicity not_collected (census records citizenship and province of birth, not ethnic group) only after the questionnaire confirms it. Watch for any 2024 census release, which would supersede.",
+  "searches_run": [],
+  "not_found": [
+    "A machine-readable (CSV/XLSX) edition of 2011 religion tables",
+    "Whether the 2011 questionnaire had a spoken-language item",
+    "Status of 2024 census results"
+  ],
+  "summary": "Papua New Guinea's last published census is 2011 and it asked religious denomination; religion by province is in the NSO's national report, which is PDF, and 22 provinces match the packet's admin1 count exactly. District tables, if any, are in the provincial reports and the boundary file's 87 districts predate the 2012 creation of Hela and Jiwaka. The census records citizenship rather than ethnic group, and whether it asked language is not recalled, so language stays null. Tier B for PDF-only tables."
+}

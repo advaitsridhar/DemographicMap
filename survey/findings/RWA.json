@@ -1,0 +1,89 @@
+{
+  "iso3": "RWA",
+  "name": "Rwanda",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "National Institute of Statistics of Rwanda (NISR)", "url": "https://www.statistics.gov.rw/", "confidence": "recalled"},
+  "latest_census": {
+    "year": 2022,
+    "asks": {"religion": true, "ethnicity": false, "language": true},
+    "confidence": "recalled",
+    "notes": "Fifth Rwanda Population and Housing Census (RPHC5), enumerated August 2022; the previous one (RPHC4) was August 2012. Religion: the 2012 questionnaire carried a religion item and NISR's RPHC4 thematic report on socio-cultural characteristics tabulated it by province and district; the packet's national shares (Catholic 39.9, Pentecostal 21.3, Protestant 14.6, Adventist 12.2) split Pentecostal from Protestant the way the 2022 results did, so religion appears to have been asked again in RPHC5. Ethnicity: not asked, and this is a deliberate state policy rather than an omission -- post-1994 Rwanda removed Hutu/Tutsi/Twa from identity documents and official statistics, and the constitutional provisions against ethnic 'divisionism' are the usual citation; the 1991 census was the last to record ethnicity. Language: the 2012 census asked which languages a person speaks (Kinyarwanda, French, English, Kiswahili, multiple answers allowed) and the same thematic report tabulated it; expect the same in 2022 but confirm on the RPHC5 questionnaire. Publication is by province (5) and district (30) in both censuses."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion", "language"],
+      "title": "RPHC5 (2022) thematic report on socio-cultural characteristics of the population (religion, languages spoken)",
+      "url": null,
+      "publisher": "NISR",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "district",
+      "geography_count": 30,
+      "matches_boundary_level": "admin2 (and province = admin1, 5)",
+      "year": 2022,
+      "confidence": "medium",
+      "evidence": "Recalled: NISR released the RPHC5 main indicators report in 2023 and a series of thematic reports in 2023-2024 following the RPHC4 pattern, in which the socio-cultural volume carried religion and language tables by province and district. Exact report title and whether the district tables include religion should be confirmed on statistics.gov.rw (Publications > Census)."
+    },
+    {
+      "fields": ["religion", "language"],
+      "title": "RPHC4 (2012) Thematic Report: Socio-cultural characteristics of the population",
+      "url": null,
+      "publisher": "NISR",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "district",
+      "geography_count": 30,
+      "matches_boundary_level": "admin2 (and province = admin1, 5)",
+      "year": 2012,
+      "confidence": "high",
+      "evidence": "Recalled with confidence: this thematic report exists and tabulates religious affiliation and languages spoken by province and district (the 2012 layout of 5 provinces / 30 districts is unchanged today). Fallback if the 2022 volume is not yet out or lacks district tables."
+    },
+    {
+      "fields": ["religion", "language"],
+      "title": "NISR microdata catalogue (NADA) and IPUMS-International: Rwanda 2012 census sample",
+      "url": null,
+      "publisher": "NISR / IPUMS-International (Minnesota Population Center)",
+      "kind": "census",
+      "format": "microdata (csv/dat, registration required)",
+      "geography": "district",
+      "geography_count": 30,
+      "matches_boundary_level": "admin2",
+      "year": 2012,
+      "confidence": "medium",
+      "evidence": "Recalled: IPUMS-International distributes Rwanda 1991, 2002 and 2012 census samples with district identifiers; the 2012 sample carries a religion variable. Requires registration, so it is a Tier B route even though it is machine-readable."
+    },
+    {
+      "fields": ["religion"],
+      "title": "Rwanda Demographic and Health Survey 2019-20 (RDHS), household/individual religion by province",
+      "url": null,
+      "publisher": "NISR / ICF (DHS Program)",
+      "kind": "survey",
+      "format": "pdf / DHS API",
+      "geography": "province",
+      "geography_count": 5,
+      "matches_boundary_level": "admin1",
+      "year": 2020,
+      "confidence": "medium",
+      "evidence": "Recalled: DHS Rwanda includes religion as a background characteristic. A sampled estimate ranked below the census counts above; listed only as a fallback."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Rwanda"},
+      {"title": "Demographics of Rwanda"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "Census counts of religion and languages exist at exactly the boundary file's two levels (5 provinces, 30 districts) but, as far as memory goes, only inside NISR PDF thematic reports; ethnicity is a Tier C field (not asked since 1991, by state policy).",
+  "replaces_existing": false,
+  "recommended_action": "Crawl statistics.gov.rw for the RPHC5 (2022) thematic reports; if the socio-cultural volume has religion and language tables by district, extract them (30 districts join admin2 by name -- Gicumbi, Huye, Rubavu etc. are the official spellings; 'City of Kigali' is the province name for admin1). Fall back to the RPHC4 (2012) socio-cultural report, same geography. Check whether NISR also posts the report tables as XLSX, which would lift this to A. Declare ethnicity not_collected with the post-1994 policy reason.",
+  "searches_run": [],
+  "not_found": [
+    "Not established from memory: the exact title of the RPHC5 thematic report carrying religion, and whether its tables go to district or stop at province",
+    "Not established: whether NISR publishes any census table in XLSX/CSV rather than PDF",
+    "Not established: whether the RPHC5 questionnaire kept the languages-spoken item"
+  ],
+  "summary": "Rwanda's NISR (statistics.gov.rw) ran RPHC5 in August 2022; the 2012 and, on recollection, 2022 censuses asked religion and languages spoken and published them by province (5 = admin1) and district (30 = admin2), the geography being unchanged since 2006. The publications I can name are PDF thematic reports (RPHC4 'Socio-cultural characteristics of the population' for 2012, and its RPHC5 successor), so this is Tier B until a runner finds XLSX versions; IPUMS holds the 2012 microdata behind registration. Ethnicity is not asked and will not be: the state removed Hutu/Tutsi/Twa from official statistics after 1994, so that field is a not_collected declaration."
+}

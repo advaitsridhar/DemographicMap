@@ -1,0 +1,79 @@
+{
+  "iso3": "BFA",
+  "name": "Burkina Faso",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Institut National de la Statistique et de la Démographie (INSD)",
+    "url": "https://www.insd.bf/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2019,
+    "asks": {"religion": true, "ethnicity": true, "language": true},
+    "confidence": "recalled",
+    "notes": "The 5th RGPH (Cinquième Recensement Général de la Population et de l'Habitation), enumerated Nov-Dec 2019, definitive results 2022. Religion is certain: the packet's national shares (Muslim 63.8%, Catholic 20.1%, animist 9.0%, Protestant 6.2%) are the RGPH 2019 figures. Ethnicity and language spoken (langue parlée / langue principale) were also on the questionnaire, as they were on the 2006 RGPH; the 2019 thematic report on socio-cultural characteristics carries all three. Recalled with good confidence for religion and ethnicity, fair for language."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion", "ethnicity", "language"],
+      "title": "RGPH 2019 -- Résultats définitifs, rapport thématique 'Caractéristiques socioculturelles de la population' (religion, ethnie, langue) by region, and the per-region 'monographies régionales'",
+      "url": "https://www.insd.bf/",
+      "publisher": "INSD",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "region",
+      "geography_count": 13,
+      "matches_boundary_level": "admin1 (13 regions as drawn: Centre, Centre-Ouest, Est, Hauts-Bassins, Sahel, Sud-Ouest ...)",
+      "year": 2019,
+      "confidence": "medium",
+      "evidence": "Recalled: INSD published the 2019 definitive results as a set of thematic PDF reports and 13 regional monographs on insd.bf; the socio-cultural theme tabulates religion by region, and I believe ethnic group and language likewise. Exact report title and URL not certain; province-level (45) tables may exist inside the regional monographs but I cannot assert it."
+    },
+    {
+      "fields": ["religion", "ethnicity", "language"],
+      "title": "RGPH 2006 -- Résultats définitifs, thematic analysis reports (Thème 2: État et structure de la population, and the socio-cultural theme) by region and province",
+      "url": null,
+      "publisher": "INSD",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "region and province",
+      "geography_count": 45,
+      "matches_boundary_level": "admin1 (13) and admin2 (45 provinces: Boulgou, Boulkiemdé, Ioba, Kadiogo, Yatenga ... as drawn)",
+      "year": 2006,
+      "confidence": "medium",
+      "evidence": "Recalled: the 2006 census thematic reports tabulated religion and ethnicity down to province, and the 45-province frame has been stable since 1996, so it joins to admin2. Older than 2019 but the only count I can name at the province level."
+    },
+    {
+      "fields": ["religion", "ethnicity"],
+      "title": "Afrobarometer Round 9 (already built: fills all 13 admin1 regions)",
+      "url": null,
+      "publisher": "Afrobarometer",
+      "kind": "survey",
+      "format": "xlsx",
+      "geography": "region",
+      "geography_count": 13,
+      "matches_boundary_level": "admin1",
+      "year": 2022,
+      "confidence": "high",
+      "evidence": "The packet says admin1 religion and ethnicity are filled from an adapter; the repo's Afrobarometer adapter covers BFA (code 5). A survey; any census table above supersedes it."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Burkina Faso"},
+      {"title": "Demographics of Burkina Faso"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "A 2019 census that asked all three fields and published them by region exists, but as PDF thematic reports whose exact titles and URLs I cannot give; province-level tables are known for 2006 and only possible for 2019. Nothing I can name is CSV/XLSX.",
+  "replaces_existing": true,
+  "recommended_action": "Crawl insd.bf for the RGPH 2019 'résultats définitifs' publications (thematic report on socio-cultural characteristics; 13 regional monographs) and read religion/ethnicity/language by region -- 13 regions = admin1 -- to replace the Afrobarometer survey shares. Then look inside the regional monographs, or fall back to the RGPH 2006 thematic reports, for province tables (45 = admin2). Hazard: in 2025 the government re-cut the 13 regions into 17 with new names (e.g. Kadiogo, Guiriko, Liptako, Goulmou -- recalled, unverified); the census reports are in the 13-region frame the boundary file draws, so prefer those over any re-issued tables.",
+  "searches_run": [],
+  "not_found": [
+    "A machine-readable (CSV/XLSX) release of the RGPH 2019 socio-cultural tables",
+    "Certainty that the 2019 reports break religion/ethnicity down to the 45 provinces",
+    "A stable HDX or USCB workbook for Burkina Faso with these fields (the repo's HDX probe did not list one among the 9 read; not known from memory)"
+  ],
+  "summary": "Burkina Faso's RGPH 2019 asked religion, ethnicity and language and INSD published them by the 13 regions the boundary file draws, as PDF thematic reports and regional monographs on insd.bf; the 2006 census reports carried the same fields down to the 45 provinces (= admin2). That census count should replace the Afrobarometer survey shares now filling admin1. Tier B because everything I can name is PDF with no certain URL."
+}

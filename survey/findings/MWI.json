@@ -1,0 +1,79 @@
+{
+  "iso3": "MWI",
+  "name": "Malawi",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "National Statistical Office (NSO), Zomba",
+    "url": "http://www.nsomalawi.mw/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2018,
+    "asks": {"religion": true, "ethnicity": true, "language": true},
+    "confidence": "recalled",
+    "notes": "2018 Malawi Population and Housing Census (Sept 2018; Main Report May 2019). Religion and tribe are certain: the packet's national ethnicity shares (Chewa 34.3%, Lomwe 18.8%, Yao 13.2%, Ngoni 10.4%) and the Christian/Muslim split are the 2018 census figures. Language: recalled with medium confidence that the 2018 questionnaire asked the language commonly used in the household and the Main Report tabulates it; a wrong 'true' here only sends a runner to look, so it is not left null."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion", "ethnicity", "language"],
+      "title": "2018 Malawi Population and Housing Census -- Main Report (tables of population by religion, by tribe and by language, by district and city)",
+      "url": "http://www.nsomalawi.mw/",
+      "publisher": "National Statistical Office",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "district and city",
+      "geography_count": 32,
+      "matches_boundary_level": "admin2 after folding the four cities into their districts: the census tabulates 28 districts plus Lilongwe City, Blantyre City, Zomba City and Mzuzu City separately (32 rows), the boundary file draws 28 shapes (Chikwawa, Dedza, Mwanza, Neno, Nkhata Bay, Phalombe, Salima, Thyolo ...); admin1 = 3 regions, matches",
+      "year": 2018,
+      "confidence": "medium",
+      "evidence": "Recalled: the Main Report PDF on nsomalawi.mw carries religion and tribe by district; NSO also released the 2018 results as a set of Excel 'population tables' on its site, but whether religion/tribe are among the Excel tables is not known."
+    },
+    {
+      "fields": ["religion", "ethnicity", "language"],
+      "title": "2018 PHC -- IPUMS-International microdata (Malawi 1987, 1998, 2008, 2018 are in IPUMS-I)",
+      "url": null,
+      "publisher": "IPUMS International / NSO",
+      "kind": "census",
+      "format": "microdata (registration required)",
+      "geography": "district",
+      "geography_count": 28,
+      "matches_boundary_level": "admin2 (district GEO variable), admin1 (region)",
+      "year": 2018,
+      "confidence": "medium",
+      "evidence": "Recalled that Malawi is one of IPUMS-I's African series with the 2018 round included, carrying religion, ethnicity (tribe) and language variables. Needs registration; a fallback if the PDF tables prove hard to read."
+    },
+    {
+      "fields": ["religion", "ethnicity"],
+      "title": "Afrobarometer Round 9 (already built: fills the 3 admin1 regions)",
+      "url": null,
+      "publisher": "Afrobarometer",
+      "kind": "survey",
+      "format": "xlsx",
+      "geography": "region",
+      "geography_count": 3,
+      "matches_boundary_level": "admin1",
+      "year": 2022,
+      "confidence": "high",
+      "evidence": "Packet shows admin1 religion/ethnicity filled from an adapter; the Afrobarometer adapter covers MWI (code 20). A survey; the 2018 census supersedes it."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Malawi"},
+      {"title": "Demographics of Malawi"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "A recent census (2018) counted religion, tribe and (I believe) language and published them by district in the Main Report, but I can only vouch for the PDF; the Excel release may or may not include these tables, and the city/district split needs folding to join 32 rows to 28 shapes.",
+  "replaces_existing": true,
+  "recommended_action": "Crawl nsomalawi.mw for the '2018 Malawi Population and Housing Census Main Report' and any accompanying Excel table set; read religion, tribe and language by district, sum each city into its host district (Lilongwe City into Lilongwe, Blantyre City into Blantyre, Zomba City into Zomba, Mzuzu City into Mzimba) to reach the 28 admin2 shapes, and sum districts to the 3 regions to replace the Afrobarometer survey shares. IPUMS-I 2018 microdata is the registered fallback.",
+  "searches_run": [],
+  "not_found": [
+    "Certainty that language was on the 2018 questionnaire",
+    "Whether NSO's Excel release of 2018 tables includes religion/tribe/language",
+    "A USCB/HDX workbook for Malawi with these fields (not known to be in the series)"
+  ],
+  "summary": "Malawi's 2018 census asked religion and tribe (and, I believe, household language) and the NSO Main Report tabulates them for 28 districts plus 4 cities; folding the cities into their districts joins to the 28 admin2 shapes, and the 3 regions sum from there and would replace the Afrobarometer survey shares now at admin1. Tier B: a PDF I can name, an Excel set I cannot vouch for, and IPUMS-I microdata behind registration."
+}

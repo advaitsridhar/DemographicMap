@@ -1,0 +1,92 @@
+{
+  "iso3": "PRT",
+  "name": "Portugal",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Instituto Nacional de Estatistica (INE Portugal)",
+    "url": "https://www.ine.pt/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2021,
+    "asks": {
+      "religion": true,
+      "ethnicity": false,
+      "language": false
+    },
+    "confidence": "recalled",
+    "notes": "Censos 2021 asked religion as a voluntary question of residents aged 15 and over (categories: Catholic, Orthodox, Protestant/Evangelical, other Christian, Jewish, Muslim, other non-Christian, none, plus 'no answer'), as did 2011 and 2001; the packet's national 68.1% Catholic / 12.9% 'not applicable' (under-15s) is that table. An ethnic-racial origin question was proposed for 2021 by a government working group and not adopted, so ethnicity is not asked; the census records nationality and country of birth. No mother-tongue item is asked."
+  },
+  "subnational_sources": [
+    {
+      "fields": [
+        "religion"
+      ],
+      "title": "Censos 2021 (resultados definitivos): Populacao residente com 15 e mais anos de idade por Local de residencia (a data dos Censos 2021), Sexo, Grupo etario e Religiao -- INE statistical database indicator with municipio breakdown",
+      "url": null,
+      "publisher": "INE Portugal (ine.pt statistical database; census portal censos.ine.pt)",
+      "kind": "census",
+      "format": "table-builder",
+      "geography": "municipio (also NUTS I/II/III and freguesia)",
+      "geography_count": 308,
+      "matches_boundary_level": "admin2",
+      "year": 2021,
+      "confidence": "recalled",
+      "evidence": "INE disseminates every census indicator through its online database with XLS/CSV export and a JSON indicator API (ine.pt/ine/json_indicador), and the 2021 religion indicator is published down to municipio. Portugal has 308 municipios against the packet's 311 admin2 shapes, so three shapes will not join and must be reconciled. The 20 admin1 shapes (18 distritos plus Acores and Madeira) are not in INE's NUTS-based dissemination hierarchy but every municipio nests in exactly one distrito, so admin1 is a sum."
+    },
+    {
+      "fields": [
+        "religion"
+      ],
+      "title": "Censos 2011: Populacao residente com 15 e mais anos por religiao, por municipio (Quadros de apuramento / resultados definitivos)",
+      "url": null,
+      "publisher": "INE Portugal",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "municipio",
+      "geography_count": 308,
+      "matches_boundary_level": "admin2",
+      "year": 2011,
+      "confidence": "recalled",
+      "evidence": "Same question and geography a decade earlier; fallback only."
+    },
+    {
+      "fields": [
+        "religion"
+      ],
+      "title": "IPUMS International: Portugal 2011 census microdata sample",
+      "url": null,
+      "publisher": "IPUMS International (Minnesota Population Center)",
+      "kind": "census",
+      "format": "api",
+      "geography": "NUTS 3 / municipio (as coded in the sample)",
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2011,
+      "confidence": "low",
+      "evidence": "Requires registration and is a sample; only worth it if INE's tables fail."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Portugal"
+      },
+      {
+        "title": "Demographics of Portugal"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "A",
+  "tier_reason": "A 2021 census count of religion is published by INE at municipio level with XLS/CSV export and a JSON API; 308 municipios join to the 311 admin2 shapes with three to reconcile, and sum to the 20 admin1 units.",
+  "replaces_existing": false,
+  "recommended_action": "On ine.pt find the Censos 2021 religion indicator (population 15+ by religion, by local de residencia) and export it at municipio level, or pull it through the JSON indicator API. Keep 'sem religiao' and 'nao respondeu' as categories and note the denominator is residents aged 15+, not total population. Join admin2 on municipio name (accents: the boundary file has 'Nazare', 'Serta', 'Sao Roque do Pico' unaccented) and aggregate to distrito for admin1; the Azores and Madeira municipios roll up to the two autonomous regions. Find the three boundary shapes with no municipio. Declare ethnicity and language not_collected with the reasons above.",
+  "searches_run": [],
+  "not_found": [
+    "The exact INE indicator code (varcd) for the 2021 religion table",
+    "Which three of the 311 admin2 shapes are not municipios"
+  ],
+  "summary": "Portugal's 2021 census asked religion (voluntary, residents 15+) and INE publishes it by municipio through its statistical database with XLS/CSV export and a JSON API, which is why this is Tier A even from memory. 308 municipios nearly match the 311 admin2 shapes and nest cleanly into the 18 distritos plus Azores and Madeira (admin1, 20). The census does not ask ethnicity (an ethno-racial question was considered for 2021 and dropped) or mother tongue, so those two fields are not_collected. Keep the 15+ denominator and the no-answer share visible."
+}

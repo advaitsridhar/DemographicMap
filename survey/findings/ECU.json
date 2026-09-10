@@ -1,0 +1,96 @@
+{
+ "iso3": "ECU",
+ "name": "Ecuador",
+ "mode": "knowledge-only",
+ "researched_at": "2026-09-10",
+ "nso": {
+  "name": "Instituto Nacional de Estadística y Censos (INEC)",
+  "url": "https://www.ecuadorencifras.gob.ec/",
+  "confidence": "recalled"
+ },
+ "latest_census": {
+  "year": 2022,
+  "asks": {
+   "religion": false,
+   "ethnicity": true,
+   "language": true
+  },
+  "confidence": "recalled",
+  "notes": "Censo de Población y Vivienda 2022 (fielded Nov 2022 - Jan 2023; results from Sept 2023). It asks ethnic self-identification 'según su cultura y costumbres' (indígena, afroecuatoriano/afrodescendiente, negro, mulato, montubio, mestizo, blanco, otro), the nacionalidad/pueblo of indigenous respondents, and the language(s) spoken (indigenous language, Spanish, foreign). The 2010 census asked the same three. Religion: neither the 2010 nor, to my recollection, the 2022 questionnaire carried a religion item; INEC's only religion figures come from a 2012 five-city urban survey. Medium confidence on 'religion not asked' for 2022 - verify against the 2022 questionnaire before declaring."
+ },
+ "subnational_sources": [
+  {
+   "fields": [
+    "ethnicity",
+    "language"
+   ],
+   "title": "Censo Ecuador 2022 - Resultados: tabulados by provincia and cantón (autoidentificación étnica, idioma) and the public census database",
+   "url": null,
+   "publisher": "INEC",
+   "kind": "census",
+   "format": "xlsx tables and public microdata (SPSS/CSV) (recalled)",
+   "geography": "provincia (24) and cantón (221)",
+   "geography_count": 221,
+   "matches_boundary_level": "admin1 (24 provincias) exactly; admin2 near (221 cantones vs 223 shapes - the boundary file probably adds the zonas no delimitadas or a since-merged cantón)",
+   "year": 2022,
+   "confidence": "medium (recalled)",
+   "evidence": "INEC published 2022 results on ecuadorencifras.gob.ec with downloadable tabulados and, following its 2010 practice, the anonymised person-level database; I cannot name the exact file titles."
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "language"
+   ],
+   "title": "Censo 2010 - Base de datos (public microdata) and 'Resultados del Censo 2010' tabulados: autoidentificación étnica and idioma by cantón and parroquia",
+   "url": null,
+   "publisher": "INEC",
+   "kind": "census",
+   "format": "spss/csv microdata; xlsx; REDATAM online; pdf fascículos",
+   "geography": "provincia (24), cantón (221 in 2010), parroquia",
+   "geography_count": 221,
+   "matches_boundary_level": "admin1 exactly; admin2 near",
+   "year": 2010,
+   "confidence": "high (recalled)",
+   "evidence": "INEC's 2010 census microdata and cantonal tables have been openly downloadable for a decade (the 'Fascículos provinciales/cantonales' PDFs and the 'Bases de datos' page); ethnic self-identification by cantón is the standard published table."
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "language"
+   ],
+   "title": "IPUMS-International - Ecuador 1962, 1974, 1982, 1990, 2001, 2010 census samples",
+   "url": "https://international.ipums.org/",
+   "publisher": "IPUMS / INEC",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "provincia and cantón",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 and admin2",
+   "year": 2010,
+   "confidence": "medium (recalled)",
+   "evidence": "Redundant with INEC's own public microdata; listed for completeness."
+  }
+ ],
+ "wikipedia": {
+  "country_list_articles": [
+   {
+    "title": "Religion in Ecuador"
+   },
+   {
+    "title": "Demographics of Ecuador"
+   }
+  ],
+  "admin2_samples": []
+ },
+ "tier": "A",
+ "tier_reason": "Census counts of ethnic self-identification and language spoken are published by INEC as public microdata and XLSX tabulados at provincia (24 = admin1) and cantón (221 ~ 223 admin2); the 2010 release is certain and the 2022 one very likely. Religion is a not_collected declaration (no census item; a 2012 urban survey only).",
+ "replaces_existing": false,
+ "recommended_action": "Crawl ecuadorencifras.gob.ec for the Censo 2022 tabulados / base de datos; aggregate autoidentificación and idioma by provincia and cantón, joining on INEC's DPA names (e.g. 'Santo Domingo de los Tsáchilas', 'San Miguel de Urcuqui'). Fall back to the 2010 census microdata, which is certainly public. Declare religion not_collected after confirming the 2022 questionnaire has no religion question, citing the 2012 INEC survey as the office's only religion source.",
+ "searches_run": [],
+ "not_found": [
+  "exact titles/URLs of the 2022 tabulados and microdata",
+  "confirmation that the 2022 questionnaire has no religion item (medium confidence from memory)",
+  "why the boundary file draws 223 cantón-level shapes against 221 cantones"
+ ],
+ "summary": "Ecuador's INEC (ecuadorencifras.gob.ec) counts ethnic self-identification and language spoken in every census, most recently 2022, and publishes results by provincia (24 = admin1) and cantón (221 vs 223 admin2 shapes) as XLSX tables and public microdata - the 2010 release is certain, the 2022 one very likely. Religion has never been a census item (INEC ran a five-city survey in 2012), so it becomes a not_collected declaration. Tier A on ethnicity and language."
+}

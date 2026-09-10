@@ -1,0 +1,124 @@
+{
+  "iso3": "AUS",
+  "name": "Australia",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Australian Bureau of Statistics (ABS)",
+    "url": "https://www.abs.gov.au/",
+    "alternate_url": "https://data.api.abs.gov.au/rest/dataflow/ABS?detail=allstubs",
+    "confidence": "recalled (the API catalogue URL is copied from scripts/fetch_census/abs.py)"
+  },
+  "latest_census": {
+    "year": 2021,
+    "asks": {
+      "religion": true,
+      "ethnicity": true,
+      "language": true
+    },
+    "published_subnationally": {
+      "religion": true,
+      "ethnicity": true,
+      "language": true
+    },
+    "confidence": "high (religion and ancestry already read from the API)",
+    "notes": "2021 Census of Population and Housing (10 August 2021). Religion: asked, voluntary, 'not stated' is a category. Ethnicity: no ethnicity question; the census asks ancestry (up to two responses per person, so not a partition) and, separately, Aboriginal and/or Torres Strait Islander status (single response, a partition). Language: 'language used at home' (2016 wording 'language spoken at home'), single response, a partition. All are published in the General Community Profile at every ASGS level (STE, SA1-SA4, LGA, POA, ...): G07 Indigenous status by age by sex, G08 Ancestry by country of birth of parents, G13 Language used at home by proficiency in spoken English by sex, G14 Religious affiliation by sex. The 2026 Census was held on 11 August 2026 (recalled); first results are not due until mid-2027, so 2021 remains the latest with data."
+  },
+  "already_in_map": "Religion at 9 states and 547 LGAs from ABS Data API dataflow C21_G14_LGA (SOURCES.md 'Australia: a table that was there, and four religions that were not'). The adapter also fetches C21_G08_LGA ancestry and by design keeps it as a separate multi-response 'ancestry' field rather than 'ethnicity' (abs.py docstring: 'Australia has no ethnicity question ... the app keeps those as distinct fields rather than folding them into an ethnicity bucket'), so the packet's ethnicity=0 is a deliberate withhold, not a missing source. Language is a genuine gap: the adapter does not fetch G13.",
+  "subnational_sources": [
+    {
+      "fields": [
+        "language"
+      ],
+      "title": "2021 Census GCP table G13 -- Language used at home by proficiency in spoken English by sex (ABS Data API dataflow family C21_G13_{LGA|SA3|...}, resolved through the adapter's existing discover_dataflows() the same way C21_G14 and C21_G08 are)",
+      "url": "https://data.api.abs.gov.au/rest/dataflow/ABS?detail=allstubs",
+      "publisher": "ABS",
+      "kind": "census",
+      "format": "api (SDMX-JSON), no key",
+      "geography": "LGA (565 ABS regions; the boundary draws 547) with a STATE dimension for the states",
+      "geography_count": 565,
+      "matches_boundary_level": "admin2 and admin1 (states read off the LGA table's STATE dimension, as the religion build does)",
+      "year": 2021,
+      "confidence": "high that G13 is the language table and is served for LGA; the exact dataflow id must be read from the catalogue, as the adapter already does for G14/G08",
+      "evidence": "Recalled table numbering, consistent with the G08/G14 numbering the adapter verified live. G13 is a partition (one language per person, 'not stated' as a category) so the roll-up check applies. Expect the collapsed 2021 classification: 'English only' plus a few dozen named languages and 'Other'."
+    },
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "2021 Census GCP table G07 -- Indigenous status by age by sex (Aboriginal / Torres Strait Islander / both / non-Indigenous / not stated)",
+      "url": null,
+      "publisher": "ABS",
+      "kind": "census",
+      "format": "api (SDMX-JSON)",
+      "geography": "LGA and every other ASGS level",
+      "geography_count": 565,
+      "matches_boundary_level": "admin2, admin1",
+      "year": 2021,
+      "confidence": "high",
+      "evidence": "Recalled. Offered only as the one single-response, partition-shaped item Australia asks that is ethnicity-adjacent; whether to surface it under 'ethnicity' is the repo owner's call given the deliberate ancestry-not-ethnicity design."
+    },
+    {
+      "fields": [
+        "religion",
+        "ethnicity",
+        "language"
+      ],
+      "title": "2021 Census DataPacks -- General Community Profile by LGA / STE (zip of CSV per table, incl. G07, G08, G13, G14)",
+      "url": null,
+      "publisher": "ABS",
+      "kind": "census",
+      "format": "csv (zip download from abs.gov.au; no key)",
+      "geography": "LGA (and any ASGS level)",
+      "geography_count": 565,
+      "matches_boundary_level": "admin2, admin1",
+      "year": 2021,
+      "confidence": "high",
+      "evidence": "Recalled; the same tables as the API in bulk, useful as a cross-check or if the API changes."
+    },
+    {
+      "fields": [
+        "religion",
+        "ethnicity",
+        "language"
+      ],
+      "title": "ABS TableBuilder (2021 Census)",
+      "url": null,
+      "publisher": "ABS",
+      "kind": "census",
+      "format": "table-builder, registration",
+      "geography": "any",
+      "geography_count": null,
+      "matches_boundary_level": "admin1, admin2",
+      "year": 2021,
+      "confidence": "high",
+      "evidence": "Recalled; unnecessary given the API."
+    }
+  ],
+  "secondary_routes": {
+    "hdx": null,
+    "ipums": "Australia is in IPUMS-I (2001-2021 samples, recalled); unnecessary.",
+    "other": null
+  },
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Australia"
+      },
+      {
+        "title": "Demographics of Australia"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "A",
+  "tier_reason": "A census count of language used at home, machine-readable through the ABS Data API the repo already reads, at the same LGA/STATE geography the religion build joins to. Ethnicity is withheld by design (ancestry is multi-response); the single-response alternative, Indigenous status, is on the same API.",
+  "replaces_existing": false,
+  "recommended_action": "Extend scripts/fetch_census/abs.py with a 'language' field from C21_G13 (add 'language': 'C21_G13_{r}' to DATAFLOW_HINTS and a G13 entry to table_of and the dimension hints -- the dimension id will need the same live discovery G08's did), keep the outermost-category rule for the language classification tree, and reconcile each LGA's language total against the G14 person total. Leave ethnicity as is unless the owner wants Indigenous status (G07) surfaced. Note the 2026 Census for a rebuild in 2027.",
+  "searches_run": [],
+  "not_found": [
+    "the exact 2021 G13 dataflow id (must be read from the catalogue; the adapter already does this for G08/G14)",
+    "whether G13's 2021 language classification is served collapsed or in full on the API"
+  ],
+  "summary": "Australia's 2021 census asks religion, ancestry (multi-response, deliberately kept out of the map's ethnicity field), Indigenous status and language used at home, and publishes all of them for every LGA and state through the same ABS Data API the repo already reads for religion. Language is the real gap and is one more dataflow (GCP table G13, a clean single-response partition) in the existing adapter. Nothing is missing at the source; the 2026 Census was taken in August 2026 with results due 2027."
+}

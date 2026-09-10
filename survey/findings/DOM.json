@@ -1,0 +1,60 @@
+{
+  "iso3": "DOM",
+  "name": "Dominican Republic",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Oficina Nacional de Estadistica (ONE)", "url": "https://www.one.gob.do/", "confidence": "recalled"},
+  "latest_census": {
+    "year": 2022,
+    "asks": {"religion": false, "ethnicity": true, "language": false},
+    "confidence": "recalled",
+    "notes": "X Censo Nacional de Poblacion y Vivienda, enumerated November 2022 (previous: IX Censo 2010, VIII 2002). Ethnicity: the 2022 census introduced, for the first time in the country's census history, an ethnic-racial self-identification question (autoidentificacion etnico-racial, with categories on the order of negro/a, blanco/a, mestizo/a, indio/a, mulato/a, other) after years of advocacy by Afro-descendant organisations; the wording, and especially the 'indio' category, was publicly debated at the time. I recall results being released in 2023-2024 but not the geographic detail. Religion: not asked -- neither 2010 nor, on recollection, 2022 carried a religion item; the packet's Evangelical/Catholic shares are from an opinion survey. Language: not asked. The repo already found the US Census Bureau workbook for the Dominican Republic has no religion, ethnicity or language sheet."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["ethnicity"],
+      "title": "X Censo Nacional de Poblacion y Vivienda 2022 -- resultados: poblacion por autoidentificacion etnico-racial segun provincia (y municipio)",
+      "url": null,
+      "publisher": "ONE",
+      "kind": "census",
+      "format": null,
+      "geography": "provincia",
+      "geography_count": 32,
+      "matches_boundary_level": "admin1 (31 provinces + Distrito Nacional = 32 = 32); municipios (~158) approximately admin2 (155)",
+      "year": 2022,
+      "confidence": "low",
+      "evidence": "Recalled that the question was asked and national results published; the existence of a provincial table, and its format (ONE distributes results as PDF reports, XLSX 'cuadros' and a REDATAM processor), is not established from memory. This is the item the runner should look for first on one.gob.do."
+    },
+    {
+      "fields": ["ethnicity"],
+      "title": "ONE REDATAM online processor (Censo 2010 and, if loaded, Censo 2022)",
+      "url": null,
+      "publisher": "ONE (CELADE REDATAM)",
+      "kind": "census",
+      "format": "table-builder",
+      "geography": "municipio",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 (aggregate to provincia for admin1)",
+      "year": 2022,
+      "confidence": "low",
+      "evidence": "Recalled: ONE has long exposed the 2010 census through REDATAM; the 2010 database has no ethnicity or religion variable, so it is only useful if the 2022 database is loaded. No API."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in the Dominican Republic"},
+      {"title": "Demographics of the Dominican Republic"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "The 2022 census asked ethnic-racial self-identification for the first time, and ONE publishes census results by the 32 provinces (= admin1) and municipios (~158 vs 155 admin2), but I cannot confirm from memory that the ethnicity table is out below national level or in a machine-readable form; religion and language are not asked.",
+  "replaces_existing": false,
+  "recommended_action": "Crawl one.gob.do (Censos > Censo 2022 > resultados / cuadros) for the autoidentificacion etnico-racial tables by provincia and municipio; take XLSX if offered, else the PDF. Join admin1 on province names (accent-fold 'Sanchez Ramirez') and admin2 on municipio names (the boundary file drops accents: 'Cristobal', 'Sosua'). Keep 'no declarado' visible. Declare religion and language not_collected: no Dominican census asks them (confirm the 2022 boleta censal for religion before declaring).",
+  "searches_run": [],
+  "not_found": [
+    "Not established from memory: whether ONE has published the 2022 ethnic self-identification results by provincia or municipio, and in what format",
+    "Not established with certainty: that the 2022 questionnaire had no religion item (believed not)"
+  ],
+  "summary": "The Dominican Republic's ONE (one.gob.do) enumerated the X Censo in November 2022, which for the first time asked ethnic-racial self-identification; whether that table has been published by provincia (32 = admin1) or municipio (~158 vs 155 admin2), and in XLSX or PDF, I cannot confirm from memory, so Tier B until the runner checks. Religion and language are not census questions -- the packet's Evangelical/Catholic shares are survey figures -- and should be declared not_collected after a glance at the 2022 questionnaire. The USCB workbook route is already closed in the repo."
+}

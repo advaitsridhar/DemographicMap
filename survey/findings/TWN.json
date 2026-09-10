@@ -1,0 +1,66 @@
+{
+  "iso3": "TWN",
+  "name": "Taiwan",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Directorate-General of Budget, Accounting and Statistics (DGBAS), Executive Yuan (行政院主計總處)",
+    "url": "https://www.dgbas.gov.tw/",
+    "confidence": "recalled",
+    "note": "English site https://eng.dgbas.gov.tw/ ; the census results are served from a separate census portal, recalled as https://census.dgbas.gov.tw/ . Two other offices matter here: the Ministry of the Interior's Department of Household Registration (https://www.ris.gov.tw/, register statistics) and the Council of Indigenous Peoples (https://www.cip.gov.tw/)."
+  },
+  "latest_census": {
+    "year": 2020,
+    "asks": {"religion": false, "ethnicity": true, "language": true},
+    "confidence": "recalled",
+    "notes": "The 2020 Population and Housing Census (109年人口及住宅普查, Nov-Dec 2020) is register-based with a sample survey. Taiwan's census has never had a religion item (recalled with reasonable confidence; the 2010 census certainly did not ask it). 'Ethnicity' here means indigenous status and tribe (原住民身分/族別), which the census carries from the household register; there is no Han/Hakka/Hoklo item. Language: the 2010 census (99年普查) asked 'languages used at home' (在家使用語言) for residents aged 6+, published as multi-response shares (Mandarin ~83.5%, Minnan ~81.9%, Hakka ~6.6%, indigenous ~1.4%) by county/city; I believe the 2020 census repeated the item but that is recalled with less confidence. Multi-response, so it is a Switzerland-style 'up to n languages per person' table, not a strict composition."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["ethnicity"],
+      "title": "Indigenous population by township/district (原住民人口數 by 鄉鎮市區, monthly household-registration statistics; also by tribe/族別)",
+      "url": "https://www.ris.gov.tw/",
+      "publisher": "Ministry of the Interior, Department of Household Registration (內政部戶政司); mirrored by the Council of Indigenous Peoples",
+      "kind": "register",
+      "format": "xlsx",
+      "geography": "township/district (鄉鎮市區) and county/city",
+      "geography_count": 368,
+      "matches_boundary_level": "admin2 (368 townships/districts) and admin1 (22 counties/cities)",
+      "year": null,
+      "confidence": "medium",
+      "evidence": "Recalled as a standing monthly series on the ris.gov.tw statistics pages (and on the CIP site), published as Excel/ODS. It counts indigenous persons (mountain/plains, and by the 16 recognised tribes) against total registered population, so what it yields is a two-part composition (indigenous vs. everyone else) with tribal detail inside the indigenous share -- a real count, but only a partial ethnicity composition. URL is the office homepage, not the table."
+    },
+    {
+      "fields": ["language"],
+      "title": "2010 Population and Housing Census -- languages used at home (在家使用語言) by county/city, residents aged 6 and over (multi-response)",
+      "url": "https://census.dgbas.gov.tw/",
+      "publisher": "DGBAS",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "county/city (縣市)",
+      "geography_count": 22,
+      "matches_boundary_level": "admin1",
+      "year": 2010,
+      "confidence": "medium",
+      "evidence": "Recalled: the 2010 census statistical tables were published as Excel on the DGBAS census portal, including a home-language table by county/city; 2020 likely repeats it. Multi-response (shares sum well over 100%), so it would need the Switzerland treatment (docs/SOURCES.md, 'up to three languages per person'). Whether a township-level breakdown exists is not known."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Taiwan"},
+      {"title": "Demographics of Taiwan"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "Counts exist (a register of indigenous status by all 368 townships; a census home-language table by 22 counties/cities, probably Excel), but the first is only a partial ethnicity composition and the second is multi-response, and neither URL is more than a homepage from memory. Religion is not asked by the census at all.",
+  "replaces_existing": false,
+  "recommended_action": "Crawl ris.gov.tw's monthly statistics for the indigenous-population-by-township workbook (Chinese column headers; 368 rows = admin2, 22 = admin1) and decide whether 'indigenous / non-indigenous (+ tribe)' is acceptable as an ethnicity composition. Then find the 2020 (else 2010) census home-language table on census.dgbas.gov.tw and load it as a multi-response language table if the Switzerland reader pattern fits. Declare religion not_collected at both levels: the census does not ask it and the MOI's religion statistics count temples and churches, not adherents.",
+  "searches_run": [],
+  "not_found": [
+    "Any adherent-level religion count by county (the MOI religion yearbook counts organisations, not people)",
+    "Any Han-subgroup (Hoklo/Hakka/mainlander) census item -- Hakka shares come from Hakka Affairs Council sample surveys, which are surveys and national/county estimates",
+    "Whether the 2020 census kept the home-language item and whether it is tabulated below county level"
+  ],
+  "summary": "Taiwan's census does not ask religion, and its only ethnicity item is indigenous status carried from the household register, so the realistic counts are the MOI's monthly indigenous-population-by-township workbook (368 townships = admin2, 22 counties/cities = admin1, Excel, a partial composition) and the 2010/2020 census 'languages used at home' table by county/city (multi-response). Tier B: real, public, probably machine-readable, but each needs a design decision before it is a composition. Religion should be declared not_collected."
+}

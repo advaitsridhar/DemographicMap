@@ -1,0 +1,77 @@
+{
+  "iso3": "ARE",
+  "name": "United Arab Emirates",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Federal Competitiveness and Statistics Centre (FCSC); emirate-level: Statistics Centre - Abu Dhabi (SCAD), Dubai Statistics Center (DSC)",
+    "url": "https://fcsc.gov.ae/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2005,
+    "asks": {
+      "religion": true,
+      "ethnicity": true,
+      "language": false
+    },
+    "confidence": "recalled",
+    "notes": "The 2005 census is the last full enumeration; it recorded nationality (country of citizenship) and religion, and religion was released nationally only (roughly three-quarters Muslim). The 2010 round was register/estimate-based with no questionnaire, and there has been no census since; population figures are register-based estimates from the FCSC and the emirate statistics centres (SCAD, DSC, Sharjah). 'Ethnicity' here means nationality, and the only subnational split published is citizen / non-citizen."
+  },
+  "subnational_sources": [
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "Population estimates by emirate, nationality (citizens / non-citizens) and sex (FCSC statistical yearbook / SCAD Statistical Yearbook of Abu Dhabi / DSC Population Bulletin)",
+      "url": null,
+      "publisher": "FCSC; SCAD (scad.gov.ae); DSC (dsc.gov.ae)",
+      "kind": "register",
+      "format": "xlsx",
+      "geography": "emirate",
+      "geography_count": 7,
+      "matches_boundary_level": "admin1 and admin2",
+      "year": null,
+      "confidence": "recalled",
+      "evidence": "Every UAE statistical yearbook carries population by emirate split into citizens and non-citizens, and the emirate centres publish the same as XLS. It gives an Emirati share per emirate (the packet's 'Emirati 11.6%') but no breakdown of the non-national majority by country or region, so it is a two-category count, not the national record's composition. The 7 emirates equal both the admin1 and admin2 counts."
+    },
+    {
+      "fields": [
+        "religion"
+      ],
+      "title": "2005 census: population by religion (national total only)",
+      "url": null,
+      "publisher": "Ministry of Economy / National Bureau of Statistics (predecessor of FCSC)",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "national",
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2005,
+      "confidence": "recalled",
+      "evidence": "Religion was tabulated nationally in 2005 and never by emirate; listed to record that a religion-by-emirate table is not known to exist."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in United Arab Emirates"
+      },
+      {
+        "title": "Demographics of United Arab Emirates"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "The only subnational identity count is citizen versus non-citizen by emirate (7 = admin1 = admin2), in yearbook XLS; religion has only ever been released nationally and language is not collected.",
+  "replaces_existing": false,
+  "recommended_action": "Take the citizen / non-citizen population by emirate from the FCSC or the emirate statistics centres and record it as a nationality register with two categories, if the owner accepts a partial ethnicity composition; otherwise leave ethnicity not_available with a note. Record religion as not_available below national level (asked in 2005, released nationally only) rather than not_collected, and language as not_collected (no census or register item).",
+  "searches_run": [],
+  "not_found": [
+    "Any religion table by emirate",
+    "Any nationality-by-country table by emirate",
+    "Any language count"
+  ],
+  "summary": "The UAE's last full census was 2005; since then population statistics are register estimates from the FCSC and the emirate centres. The only subnational identity split published is citizens versus non-citizens by emirate, available as yearbook XLS and matching the 7 admin1/admin2 shapes, which yields an Emirati share but not the rest of the national ethnicity list. Religion was tabulated nationally in 2005 and never by emirate; language is not collected. Tier B for a partial two-category count."
+}

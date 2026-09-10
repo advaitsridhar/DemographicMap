@@ -1,0 +1,66 @@
+{
+  "iso3": "KAZ",
+  "name": "Kazakhstan",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Bureau of National Statistics, Agency for Strategic Planning and Reforms of the Republic of Kazakhstan (Бюро национальной статистики АСПиР РК)",
+    "url": "https://stat.gov.kz/",
+    "confidence": "recalled",
+    "note": "The 2021 census results were also served from a dedicated portal, recalled as https://sanak.gov.kz/ (lower confidence)."
+  },
+  "latest_census": {
+    "year": 2021,
+    "asks": {"religion": true, "ethnicity": true, "language": true},
+    "confidence": "recalled",
+    "notes": "National Population Census 2021 (Sept-Oct 2021, partly online). Nationality (ethnicity) is the census's core item and is certain; the packet's religion shares (Muslim 69.3%, Christian 17.2%) are the 2021 census 'отношение к религии' figures, so religion was asked, as it was in 2009; languages (native language; command of Kazakh, Russian, English and others -- the packet's 80.1/83.7/35.1 are those proficiency shares, multi-response) were asked in both rounds. Note the language item is 'command of' languages, which overlaps; the native-language (родной язык) item is the composition."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["ethnicity"],
+      "title": "Численность населения Республики Казахстан по отдельным этносам на начало года (population by ethnic group at the start of the year), by region and by district/city -- annual series",
+      "url": "https://stat.gov.kz/",
+      "publisher": "Bureau of National Statistics",
+      "kind": "register",
+      "format": "xlsx",
+      "geography": "region (oblast / city of republican significance) and district (район) / city",
+      "geography_count": 20,
+      "matches_boundary_level": "admin1 with a vintage caveat (16 drawn; the country had 14 oblasts + 2 cities before 2018, 17 units 2018-2022, 20 since June 2022 when Abai, Zhetysu and Ulytau were created); admin2 plausibly -- the workbooks list rayons under each oblast, and the boundary's 174 transliterated rayon names (Akzhaikskiy, Atbasarskiy ...) are the Russian adjectival forms that need a transliteration alias table",
+      "year": null,
+      "confidence": "medium",
+      "evidence": "Recalled as a standing annual Excel publication of the Bureau (demographic statistics section), built forward from the last census; the district-level breakdown is what regional statistics departments publish and I believe it is in the national workbook too. URL is the office homepage."
+    },
+    {
+      "fields": ["ethnicity", "religion", "language"],
+      "title": "Итоги Национальной переписи населения 2021 года -- volumes on national composition, religious affiliation and command of languages, by region (in 2009 the corresponding volume was 'Национальный состав, вероисповедание и владения языками в Республике Казахстан')",
+      "url": "https://stat.gov.kz/",
+      "publisher": "Bureau of National Statistics",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "region (17 units at census time: 14 oblasts + Nur-Sultan/Astana, Almaty, Shymkent)",
+      "geography_count": 17,
+      "matches_boundary_level": "admin1 (16 drawn vs 17 census units; expect one city or Turkistan/Shymkent to need attention)",
+      "year": 2021,
+      "confidence": "medium",
+      "evidence": "Recalled: the 2009 results were published as thematic volumes with region tables (PDF and Excel), and the 2021 results followed on stat.gov.kz as xlsx tables by region, with nationality also by district. The religion table by region is the only subnational count of religion I can name in Central Asia."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Kazakhstan"},
+      {"title": "Demographics of Kazakhstan"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "A",
+  "tier_reason": "The Bureau publishes ethnic composition by region and district as public Excel workbooks (annual series plus the 2021 census tables), and the 2021 census also tabulated religion and native language by region; no key or registration. Held at A on the strength of a well-known office series rather than a URL I can quote.",
+  "replaces_existing": false,
+  "recommended_action": "Crawl stat.gov.kz (Russian section, 'Демографическая статистика' / 'Перепись населения 2021') for (1) the 2021 census xlsx tables of national composition, religious affiliation and native language by region and (2) the annual 'по отдельным этносам' workbook with rayon rows. Resolve the admin1 vintage first: decide whether the boundary's 16 units are the pre-2018 frame (fold Shymkent into Turkistan/South Kazakhstan) or something else, and do not place post-2022 20-region tables on it. For admin2 (174 rayons) build a transliteration alias map from the Russian 'Акжаикский' forms to the boundary's 'Akzhaikskiy'.",
+  "searches_run": [],
+  "not_found": [
+    "A quotable URL for either workbook (homepage only)",
+    "Certainty about whether religion and native language are tabulated below region in 2021",
+    "Which 16-unit frame the boundary file draws"
+  ],
+  "summary": "Kazakhstan's 2021 census asked nationality, religious affiliation and language, and the Bureau of National Statistics publishes nationality by region and district as public Excel workbooks (an annual 'по отдельным этносам' series and the census tables), with religion and native language by region from the census. That is a machine-readable count at both levels, so tier A, with two joins to solve: the region frame changed in 2018 and 2022 (16 drawn vs 17/20), and the 174 rayon names are Russian adjectival transliterations."
+}

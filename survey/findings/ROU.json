@@ -1,0 +1,98 @@
+{
+ "iso3": "ROU",
+ "name": "Romania",
+ "mode": "knowledge-only",
+ "researched_at": "2026-09-10",
+ "nso": {
+  "name": "Institutul Național de Statistică (INS)",
+  "url": "https://insse.ro/",
+  "confidence": "recalled"
+ },
+ "latest_census": {
+  "year": 2021,
+  "asks": {
+   "religion": true,
+   "ethnicity": true,
+   "language": true
+  },
+  "confidence": "recalled",
+  "notes": "Recensământul Populației și Locuințelor 2021 (RPL 2021, fielded March-July 2022; definitive results 2023). Ethnicity (etnie), mother tongue (limba maternă) and religion (religie) are all asked, as voluntary items, as they were in 2011 and 2002. High confidence. Caveat for shares: 2021 non-respondents were completed from registers, so a large 'informație nedisponibilă' category (roughly 2.5 million people for ethnicity) exists and must be carried as its own row, not dropped silently. The repo's eurostat.py already lists RO among the states that collect both."
+ },
+ "subnational_sources": [
+  {
+   "fields": [
+    "ethnicity",
+    "language",
+    "religion"
+   ],
+   "title": "RPL 2021 - Rezultate definitive: 'Populația rezidentă după etnie', '... după limba maternă', '... după religie' - pe județe, municipii, orașe și comune",
+   "url": "https://www.recensamantromania.ro/",
+   "publisher": "INS (census site)",
+   "kind": "census",
+   "format": "xlsx",
+   "geography": "județ (41 + București = 42) and UAT (municipii, orașe, comune, about 3,181, plus the six sectors of București)",
+   "geography_count": 42,
+   "matches_boundary_level": "admin1 exactly (42); admin2 near (about 3,181-3,187 UATs vs 3,235 shapes - the boundary file likely carries some since-merged or sector-level units)",
+   "year": 2021,
+   "confidence": "medium-high (recalled)",
+   "evidence": "INS published the 2021 definitive results as a numbered series of XLSX tables on the census site; county-level ethnicity/religion/mother-tongue tables are certain, the UAT-level versions I recall as published (the 2011 round certainly had them). URL is the census-site homepage."
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "language",
+    "religion"
+   ],
+   "title": "RPL 2011 - Rezultate definitive: 'Tab8. Populația stabilă după etnie', 'Tab10 ... după limba maternă', 'Tab13 ... după religie' - județe, municipii, orașe, comune",
+   "url": null,
+   "publisher": "INS (recensamantromania.ro/rpl-2011/rezultate-2011/)",
+   "kind": "census",
+   "format": "xlsx",
+   "geography": "județ (42) and UAT (about 3,180)",
+   "geography_count": 3180,
+   "matches_boundary_level": "admin1 exactly; admin2 near",
+   "year": 2011,
+   "confidence": "high (recalled)",
+   "evidence": "These three workbooks are the standard citation for every Romanian commune's ethnic/religious composition (Wikipedia commune articles cite them); they list every UAT with its SIRUTA code."
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "language",
+    "religion"
+   ],
+   "title": "TEMPO-Online (INS statistical database) - RPL 2011 / RPL 2021 tables by county (e.g. population by ethnicity, religion, mother tongue, județ)",
+   "url": null,
+   "publisher": "INS",
+   "kind": "census",
+   "format": "table-builder with a JSON export API (statistici.insse.ro/tempo-online)",
+   "geography": "județ",
+   "geography_count": 42,
+   "matches_boundary_level": "admin1",
+   "year": 2021,
+   "confidence": "medium (recalled)",
+   "evidence": "TEMPO holds census matrices at county level; the XLSX route above is simpler and goes deeper."
+  }
+ ],
+ "wikipedia": {
+  "country_list_articles": [
+   {
+    "title": "Religion in Romania"
+   },
+   {
+    "title": "Demographics of Romania"
+   }
+  ],
+  "admin2_samples": []
+ },
+ "tier": "A",
+ "tier_reason": "All three fields are census counts published by INS as XLSX for the 42 județe (= admin1) and for every commune/town/city (~3,180 vs 3,235 admin2 shapes) in both the 2021 and 2011 rounds.",
+ "replaces_existing": false,
+ "recommended_action": "Crawl recensamantromania.ro for the 2021 definitive XLSX tables on etnie, limba maternă and religie (fall back to the 2011 Tab8/Tab10/Tab13 workbooks). Join județe by name after folding diacritics and case - the boundary file has 'BACAU', 'NEAMT' while INS writes 'Bacău', 'Neamț'. For admin2, join on județ + UAT name (commune names such as 'Poiana' recur across counties); the INS tables carry SIRUTA codes, which would be the safer key if the boundary file has them. Keep 'informație nedisponibilă' as an explicit row.",
+ "searches_run": [],
+ "not_found": [
+  "exact 2021 table numbers/filenames (the 2011 ones are Tab8/Tab10/Tab13)",
+  "why the boundary file draws 3,235 admin2 shapes against ~3,181 UATs + 6 sectors"
+ ],
+ "summary": "Romania's INS (insse.ro; census site recensamantromania.ro) asks ethnicity, mother tongue and religion in every census and publishes the 2021 and 2011 results as XLSX workbooks listing every județ (42 = admin1) and every commune, town and city (~3,180 vs 3,235 admin2 shapes). This is a straightforward Tier A build for all three fields; the only work is a diacritics/case fold on county names, a county-qualified join for communes, and carrying the 2021 'information not available' category explicitly."
+}

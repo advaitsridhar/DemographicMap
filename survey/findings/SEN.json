@@ -1,0 +1,130 @@
+{
+ "iso3": "SEN",
+ "name": "Senegal",
+ "mode": "knowledge-only",
+ "researched_at": "2026-09-10",
+ "nso": {
+  "name": "Agence Nationale de la Statistique et de la Démographie (ANSD)",
+  "url": "https://www.ansd.sn/",
+  "confidence": "recalled"
+ },
+ "latest_census": {
+  "year": 2023,
+  "asks": {
+   "religion": true,
+   "ethnicity": true,
+   "language": null
+  },
+  "confidence": "recalled",
+  "notes": "RGPH-5 was fielded May-June 2023 (preliminary count about 18.1 million, released 2024). Senegal's previous censuses (RGPH 1988, RGPH 2002, RGPHAE 2013) all asked religion and ethnic group, and the RGPHAE 2013 final report has chapters on both by region; I believe RGPH-5 kept both items but cannot confirm its questionnaire from memory, and I do not know whether its thematic volumes are published yet. Language: 2013 asked literacy by language, not a mother tongue; null."
+ },
+ "subnational_sources": [
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "RGPHAE 2013 - Rapport définitif (chapitres 'Religion' and 'Ethnie'), population by region",
+   "url": null,
+   "publisher": "ANSD",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "région",
+   "geography_count": 14,
+   "matches_boundary_level": "admin1 (14 regions)",
+   "year": 2013,
+   "confidence": "medium-high (recalled)",
+   "evidence": "The 2013 final report (published 2014) carries religion and ethnic-group distributions by region; hosted on ansd.sn under the RGPHAE 2013 pages."
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "RGPHAE 2013 - Rapports régionaux (one report per region)",
+   "url": null,
+   "publisher": "ANSD",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "région, with some tables by département",
+   "geography_count": 45,
+   "matches_boundary_level": "admin2 (45 départements in 2013; 46 today after Keur Massar, 2021) if the tables go to département",
+   "year": 2013,
+   "confidence": "low-medium (recalled)",
+   "evidence": "ANSD produced regional reports for the 2013 census; whether religion/ethnicity are tabulated by département within them is not something I can confirm."
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "IPUMS-International - Senegal 1988, 2002, 2013 census samples (religion, ethnicity; région and département geography)",
+   "url": "https://international.ipums.org/",
+   "publisher": "IPUMS / ANSD",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "région and département",
+   "geography_count": 45,
+   "matches_boundary_level": "admin1 (14) and admin2 (45 départements as of 2013)",
+   "year": 2013,
+   "confidence": "medium (recalled)",
+   "evidence": "Senegal's three censuses are in IPUMS-I with religion and ethnicity variables; the 10% sample is large enough for département shares."
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "ANADS - Archive Nationale des Données du Sénégal (ANSD NADA microdata catalogue): RGPHAE 2013 and RGPH-5 2023",
+   "url": null,
+   "publisher": "ANSD",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "région / département",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 and admin2",
+   "year": 2023,
+   "confidence": "medium (recalled)",
+   "evidence": "ANSD runs a NADA catalogue (anads.ansd.sn) listing its censuses and surveys; the repo's probe_nada.py is the tool for it."
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "RGPH-5 2023 - Résultats définitifs / rapports thématiques (as published)",
+   "url": null,
+   "publisher": "ANSD",
+   "kind": "census",
+   "format": "pdf / xlsx (unknown)",
+   "geography": "région, possibly département",
+   "geography_count": 14,
+   "matches_boundary_level": "admin1",
+   "year": 2023,
+   "confidence": "low (recalled)",
+   "evidence": "Only the preliminary population count is known to me; thematic results may have appeared after my knowledge."
+  }
+ ],
+ "wikipedia": {
+  "country_list_articles": [
+   {
+    "title": "Religion in Senegal"
+   },
+   {
+    "title": "Demographics of Senegal"
+   }
+  ],
+  "admin2_samples": []
+ },
+ "tier": "B",
+ "tier_reason": "A census count of religion and ethnicity exists by region (2013, PDF) and by département only through registered microdata (IPUMS / ANADS); nothing I can name is a public CSV/XLSX. 14 regions = admin1 exactly.",
+ "replaces_existing": true,
+ "recommended_action": "Crawl ansd.sn for the RGPH-5 2023 definitive/thematic results first; if religion and ethnicity by region are out, use them (XLSX if offered, else PDF via probe_pdf.py). Otherwise take the RGPHAE 2013 final report's regional tables. Either replaces the Afrobarometer R9 survey now filling 13 of 14 admin1 rows; owner review needed. For the 45 départements, IPUMS 2013 (registration) is the only route I can name. Language: declare not_available rather than not_collected until the RGPH-5 questionnaire is seen.",
+ "searches_run": [],
+ "not_found": [
+  "RGPH-5 2023 questionnaire contents and whether thematic results are published",
+  "any public CSV/XLSX of 2013 religion/ethnicity by region or département",
+  "a language/mother-tongue item in any Senegalese census (2013 asked literacy language only)"
+ ],
+ "summary": "Senegal's ANSD (ansd.sn) has asked religion and ethnicity in every census, most recently the 2013 RGPHAE whose final report tabulates both by the 14 regions (= admin1) as PDF; the 2023 RGPH-5 has a preliminary count out and probably retained both items. Département-level (45 = admin2) figures are reachable only via IPUMS-International or ANSD's NADA archive with registration. Tier B; a census read would replace the Afrobarometer survey estimates currently on admin1."
+}

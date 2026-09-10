@@ -1,0 +1,46 @@
+{
+  "iso3": "TUN",
+  "name": "Tunisia",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Institut National de la Statistique (INS)", "url": "https://www.ins.tn/", "confidence": "recalled"},
+  "latest_census": {
+    "year": 2024,
+    "asks": {"religion": false, "ethnicity": false, "language": null},
+    "confidence": "recalled",
+    "notes": "Recensement General de la Population et de l'Habitat (RGPH) 2024, enumerated in late 2024 with first results in 2025; the previous census was 2014. Religion: no Tunisian census carries a religion item -- the state treats the population as Muslim and the Factbook's 99% is an estimate, not a count; there is no statute like France's, it is simply not on the questionnaire. Ethnicity: not asked; like the rest of the Maghreb, Tunisia does not enumerate Arab/Amazigh identity. Language: I cannot recall a mother-tongue or languages-spoken item on the 2014 questionnaire (Morocco 2014 had one; Tunisia I believe did not) -- leave null and have the runner check the 2014 and 2024 questionnaires. The repo already records that Afrobarometer Round 9 did not ask Tunisian respondents about ethnicity (code 9994 -> not_collected)."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion"],
+      "title": "Afrobarometer Round 9 (2021-2023), religion by region -- already in the repo as afrobarometer_region.json",
+      "url": null,
+      "publisher": "Afrobarometer",
+      "kind": "survey",
+      "format": "xlsx (merged R9 file, already extracted)",
+      "geography": "governorate (sampling stratum)",
+      "geography_count": 24,
+      "matches_boundary_level": "admin1 (packet shows 1 of 24 filled after the 25-respondent suppression rule)",
+      "year": 2022,
+      "confidence": "high",
+      "evidence": "From the repo: scripts/fetch_census/afrobarometer.py maps country code 37 to TUN and docs/SOURCES.md notes Tunisia was not asked ethnicity. This is the only subnational religion figure that exists for Tunisia and it is a survey estimate; nothing found here replaces it."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Tunisia"},
+      {"title": "Demographics of Tunisia"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "C",
+  "tier_reason": "The Tunisian census asks neither religion nor ethnicity (no count exists at any geography); language is unestablished. The one existing fill is the Afrobarometer survey estimate the repo already holds.",
+  "replaces_existing": false,
+  "recommended_action": "Declare religion and ethnicity not_collected with the reason 'not on the RGPH questionnaire (2014, 2024)'; keep the Afrobarometer admin1 religion fill as the labelled survey estimate it is. Have the runner check the RGPH 2014/2024 questionnaires on ins.tn for a language item; if one exists, INS publishes census tables by governorate (24 = admin1) and delegation (264 = admin2, an exact match) in XLSX/PDF, in Arabic and French, and the boundary file's Arabic admin2 names would join to the Arabic edition.",
+  "searches_run": [],
+  "not_found": [
+    "Not established from memory: whether the 2014 or 2024 questionnaire asked language",
+    "No count of religion or ethnicity at any subnational level is known to exist for Tunisia"
+  ],
+  "summary": "Tunisia's INS (ins.tn) ran the RGPH in 2024 (previous 2014) and, on recollection, has never asked religion or ethnicity, so both fields are not_collected declarations; whether a language item exists I cannot say. The only subnational religion figure is the Afrobarometer R9 survey estimate already in the repo (1 of 24 governorates surviving the suppression rule), and nothing here replaces it. Should a language table turn up, INS's 24 governorates and 264 delegations match both boundary levels exactly, with Arabic names available for the admin2 join."
+}

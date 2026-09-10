@@ -1,0 +1,72 @@
+{
+  "iso3": "PRK",
+  "name": "North Korea",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Central Bureau of Statistics (CBS) of the DPR Korea",
+    "url": null,
+    "confidence": "recalled",
+    "note": "No public website is known to me; the census reports circulate through UNFPA and the UN Statistics Division."
+  },
+  "latest_census": {
+    "year": 2008,
+    "asks": {
+      "religion": false,
+      "ethnicity": false,
+      "language": false
+    },
+    "published_subnationally": {
+      "religion": false,
+      "ethnicity": false,
+      "language": false
+    },
+    "confidence": "recalled",
+    "notes": "DPR Korea 2008 Population Census, enumerated 1-15 October 2008 with UNFPA technical support; 'National Report' published 2009 by the CBS, Pyongyang, and circulated by UNFPA/UNSD. The questionnaire covered relationship to head, sex, age, marital status, education, economic activity and occupation, fertility, migration and housing -- no religion, ethnicity or language item; the state counts its population as ethnically homogeneous and does not enumerate religion, and the 1993 census likewise had none. A follow-up census was planned for October 2018 with UNFPA support; I have no knowledge of its results being published. This is a C: a not_collected declaration for all three fields with the 2008 questionnaire and report table list as evidence."
+  },
+  "already_in_map": "Nothing subnational; the national record is Factbook free text for all three fields.",
+  "subnational_sources": [
+    {
+      "fields": [],
+      "title": "DPR Korea 2008 Population Census -- National Report (CBS, 2009): population by province and by county/city/district, with age, sex, education, economic activity and housing tables",
+      "url": null,
+      "publisher": "Central Bureau of Statistics, DPRK (distributed by UNFPA; a copy is held by the UN Statistics Division)",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "province (first-level) and county/city/district",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 (11 shapes vs the report's first-level units) and admin2 (179 shapes vs roughly 200 counties/cities) -- denominators and names only; no religion, ethnicity or language tables exist in it",
+      "year": 2008,
+      "confidence": "high that the report exists; high that it carries none of the three fields",
+      "evidence": "Recalled table of contents; the census is the only subnational statistical publication from the DPRK in decades and its contents are well documented in the demographic literature."
+    }
+  ],
+  "secondary_routes": {
+    "hdx": "OCHA COD population tables for PRK derive from the 2008 census (denominators only); the runner searches HDX itself.",
+    "ipums": "Not in IPUMS-I.",
+    "us_census_bureau": "Not in the subnational series as recorded.",
+    "other": null
+  },
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in North Korea"
+      },
+      {
+        "title": "Demographics of North Korea"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "C",
+  "tier_reason": "The only census (2008) asked none of religion, ethnicity or language, and no other statistical publication does; the right output is a not_collected declaration at every level citing the 2008 census questionnaire.",
+  "replaces_existing": false,
+  "recommended_action": "Declare religion, ethnicity and language not_collected for PRK at admin1 and admin2 (and note the national record is estimate/free text), citing the 2008 Population Census National Report's table list. Do not spend a runner on it; the 2008 report is useful only as a denominator if the map ever needs one.",
+  "searches_run": [],
+  "not_found": [
+    "any DPRK publication of religion, ethnicity or language at any level",
+    "results of the planned 2018 census",
+    "a CBS website"
+  ],
+  "summary": "North Korea's only modern census, the UNFPA-supported 2008 Population Census, asked nothing about religion, ethnicity or language, and the state publishes no other subnational statistics; the 2009 National Report tabulates population, age, sex, education, work and housing by province and county. The correct record is a not_collected declaration for all three fields at both levels with the 2008 questionnaire as evidence. No statistical-office website is known."
+}

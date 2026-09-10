@@ -1,0 +1,89 @@
+{
+  "iso3": "BOL",
+  "name": "Bolivia",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Instituto Nacional de Estadistica (INE)", "url": "https://www.ine.gob.bo/", "confidence": "recalled"},
+  "latest_census": {
+    "year": 2024,
+    "asks": {"religion": false, "ethnicity": true, "language": true},
+    "confidence": "recalled",
+    "notes": "Censo de Poblacion y Vivienda 2024, enumerated 23 March 2024 (after two postponements from 2022); the previous census was 21 November 2012 and before that 2001. Ethnicity: asked as self-identification -- 'pertenencia a alguna nacion o pueblo indigena originario campesino o afroboliviano' with the specific people named (Quechua, Aymara, Guarani, Chiquitano, Mojeno, Afroboliviano, other); this was on the 2001, 2012 and 2024 questionnaires. Note the 2012 wording famously offered no 'mestizo' option, so the composition is 'belongs to X people' vs 'does not belong' and the packet's Factbook 'Mestizo 68%' is not a census category. Language: asked -- the language the person learned to speak in (idioma materno) and the languages spoken; 2012 and 2024. Religion: no Bolivian census has carried a religion item on my recollection (2001 and 2012 did not; I do not believe 2024 did either -- confirm on the 2024 boleta censal); the packet's religion shares are survey-based."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["ethnicity", "language"],
+      "title": "Censo Nacional de Poblacion y Vivienda 2012 -- cuadros de caracteristicas de la poblacion: poblacion por condicion de pertenencia a nacion o pueblo indigena originario campesino o afroboliviano, y por idioma materno / idiomas que habla, segun departamento, provincia y municipio",
+      "url": null,
+      "publisher": "INE Bolivia",
+      "kind": "census",
+      "format": "xlsx (also PDF compendia 'Caracteristicas de Poblacion y Vivienda')",
+      "geography": "provincia (and departamento, municipio)",
+      "geography_count": 112,
+      "matches_boundary_level": "admin2 (112 provincias vs 110 shapes -- near match, expect two unmatched) and admin1 (9 departamentos = 9)",
+      "year": 2012,
+      "confidence": "medium",
+      "evidence": "Recalled: INE's Censo 2012 pages distribute the results tables as downloadable Excel workbooks organised departamento > provincia > municipio, and the self-identification and language tables are among them. The packet's admin2 names (Azurduy, Caranavi, Manuripi, Nor Carangas, Velasco, Manuel Maria Caballero) are provincias, which INE tabulates. Confirm the format on ine.gob.bo; if only the PDF compendium is found, demote to B."
+    },
+    {
+      "fields": ["ethnicity", "language"],
+      "title": "Censo de Poblacion y Vivienda 2024 -- resultados (autoidentificacion e idiomas)",
+      "url": null,
+      "publisher": "INE Bolivia",
+      "kind": "census",
+      "format": null,
+      "geography": "departamento (municipio-level detail expected later)",
+      "geography_count": 9,
+      "matches_boundary_level": "admin1",
+      "year": 2024,
+      "confidence": "low",
+      "evidence": "Recalled: INE published the 2024 population totals in August 2024 and began releasing characteristics (including self-identification) during 2025. I cannot say from memory which geographic levels or formats are out; a runner should prefer 2024 over 2012 wherever the same table exists."
+    },
+    {
+      "fields": ["ethnicity", "language"],
+      "title": "INE REDATAM online processor for Censo 2012 (and 2001)",
+      "url": null,
+      "publisher": "INE Bolivia (CELADE REDATAM)",
+      "kind": "census",
+      "format": "table-builder",
+      "geography": "municipio",
+      "geography_count": 339,
+      "matches_boundary_level": "neither directly (aggregate to provincia = admin2)",
+      "year": 2012,
+      "confidence": "medium",
+      "evidence": "Recalled: INE exposes the 2012 census through a REDATAM web processor, the standard Latin American route for custom cross-tabs. No API; Tier B on its own."
+    },
+    {
+      "fields": ["ethnicity", "language"],
+      "title": "IPUMS-International: Bolivia 1976, 1992, 2001, 2012 census samples",
+      "url": null,
+      "publisher": "IPUMS-International (Minnesota Population Center)",
+      "kind": "census",
+      "format": "microdata (registration required)",
+      "geography": "provincia / municipio",
+      "geography_count": null,
+      "matches_boundary_level": "admin2",
+      "year": 2012,
+      "confidence": "medium",
+      "evidence": "Recalled: Bolivia 2012 is in IPUMS with indigenous self-identification and language variables and subnational identifiers."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Bolivia"},
+      {"title": "Demographics of Bolivia"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "A",
+  "tier_reason": "Census counts of indigenous self-identification and language (2012, with 2024 arriving) published by INE for departamentos (9 = admin1) and provincias (112 vs 110 = admin2), on recollection as XLSX; religion is never asked and is a not_collected declaration.",
+  "replaces_existing": false,
+  "recommended_action": "Crawl ine.gob.bo (Censos > Censo 2012 and Censo 2024) for the self-identification and language tables by departamento/provincia/municipio; take XLSX if present, else the PDF compendium. Join admin1 on the 9 department names and admin2 on provincia names (accent-fold 'Mendez', 'Manuel Maria Caballero'); expect ~2 provincias without a shape. Compose ethnicity as the named peoples plus an explicit 'no pertenece' group, and language on the 'idioma materno' universe (age 4+), keeping the universe in the record. Declare religion not_collected: no Bolivian census asks it.",
+  "searches_run": [],
+  "not_found": [
+    "Not established from memory: whether the 2024 questionnaire added a religion item (believed not)",
+    "Not established: which 2024 tables are already published below departamento level and in what format",
+    "Not established: the exact INE URL of the 2012 Excel tables"
+  ],
+  "summary": "Bolivia's INE (ine.gob.bo) asks indigenous/Afro-Bolivian self-identification and languages in every census (2001, 2012, 2024) and publishes them by departamento, provincia and municipio; the 9 departments and ~112 provincias line up with the packet's admin1 (9) and admin2 (110). On recollection the 2012 tables are downloadable Excel, which makes this Tier A, with 2024 results superseding them as INE releases characteristics through 2025. Religion has never been on the questionnaire and should be declared not_collected. The 'no mestizo option' wording matters: the census composition is 'belongs to people X' versus 'does not belong', not the Factbook's mestizo/indigenous/white split."
+}

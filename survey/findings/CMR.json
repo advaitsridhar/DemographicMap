@@ -1,0 +1,107 @@
+{
+  "iso3": "CMR",
+  "name": "Cameroon",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Institut National de la Statistique (INS Cameroun); census body: Bureau Central des Recensements et des Études de Population (BUCREP)",
+    "url": "https://ins-cameroun.cm/",
+    "alternate_url": "http://www.bucrep.cm/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2005,
+    "asks": {
+      "religion": true,
+      "ethnicity": null,
+      "language": null
+    },
+    "published_subnationally": {
+      "religion": null,
+      "ethnicity": null,
+      "language": null
+    },
+    "confidence": "recalled",
+    "notes": "3e Recensement Général de la Population et de l'Habitat (3e RGPH), enumerated November 2005; definitive results published by BUCREP in 2010 as a set of thematic volumes (état et structure, scolarisation, activité économique, ménages, migrations, mortalité, nuptialité, fécondité, ...). Religion: recalled with reasonable confidence -- the 2005 census religion distribution (Catholic ~38%, Protestant ~26%, other Christian ~4-5%, Muslim ~21%, animist ~6%, none ~3%) is the figure quoted as 'the 2005 census' in the literature. Ethnicity: the 1976 and 1987 censuses asked ethnic group; whether 2005 kept the item I cannot recall, and Cameroon has been reluctant to publish ethnic tables -- null. Language: null. A 4th RGPH has been in preparation since ~2015 (cartography) with enumeration repeatedly postponed; I do not know it to have been completed. The packet's national religion and ethnicity rows look like DHS 2018 (EDSC-V) categories, i.e. survey estimates."
+  },
+  "already_in_map": "admin1 3/10 religion and ethnicity from Afrobarometer Round 9 (survey). The survey's 12 Cameroon rows are the ten regions in French (Adamaoua, Centre, Est, 'Extreme- Nord', Littoral, Nord, 'Nord Ouest', Ouest, Sud, 'Sud Ouest') plus the cities Yaounde and Douala; the boundary names its admin1 in English (North, North-West, South, West, ...), so only the three spelled alike joined. A French-to-English alias list (Est->East, Nord->North, Nord Ouest->North-West, Ouest->West, Sud->South, Sud Ouest->South-West, Extreme- Nord->Far North) would fill the other seven from data already fetched -- still survey rows, still subject to the 25-respondent rule. The Yaounde and Douala rows are cities and must not be joined to Centre or Littoral.",
+  "subnational_sources": [
+    {
+      "fields": [
+        "religion"
+      ],
+      "title": "3e RGPH 2005 -- Rapport de présentation des résultats définitifs / Tome 'État et structure de la population' (BUCREP, 2010): population by religion, by region",
+      "url": null,
+      "publisher": "BUCREP",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "region",
+      "geography_count": 10,
+      "matches_boundary_level": "admin1 (10 regions, exact once names are translated)",
+      "year": 2005,
+      "confidence": "low-medium",
+      "evidence": "Recalled: national religion shares from the 2005 census are widely quoted, so a tabulation exists; which volume carries the region breakdown, and whether it goes to département (58 = admin2 exactly), is recalled by analogy only."
+    },
+    {
+      "fields": [
+        "religion",
+        "ethnicity"
+      ],
+      "title": "Enquête Démographique et de Santé du Cameroun 2018 (EDSC-V) final report: religion and ethnic group of respondents by region",
+      "url": null,
+      "publisher": "INS Cameroun / ICF (DHS Program)",
+      "kind": "survey",
+      "format": "pdf (STATcompiler/DHS API for a subset of indicators)",
+      "geography": "survey domain: 10 regions + Yaoundé + Douala",
+      "geography_count": 12,
+      "matches_boundary_level": "admin1 (cities folded into their regions or dropped)",
+      "year": 2018,
+      "confidence": "high that it exists and tabulates both",
+      "evidence": "Recalled: DHS Cameroon background characteristics include religion and 'ethnie' with the Bamileke/Beti/Biu-Mandara/Arab-Choa... grouping the Factbook and the packet use."
+    },
+    {
+      "fields": [
+        "religion"
+      ],
+      "title": "IPUMS-International: Cameroon 1976, 1987 and 2005 census samples",
+      "url": null,
+      "publisher": "IPUMS",
+      "kind": "census (microdata sample)",
+      "format": "microdata, registration required",
+      "geography": "region and département",
+      "geography_count": null,
+      "matches_boundary_level": "admin1; admin2 partial",
+      "year": 2005,
+      "confidence": "medium (2005 recalled to carry religion; ethnicity unsure)",
+      "evidence": "Recalled."
+    }
+  ],
+  "secondary_routes": {
+    "hdx": "Not recorded in the repo's USCB enumeration; the runner searches HDX itself.",
+    "ipums": "1976, 1987, 2005.",
+    "other": "BUCREP's site (bucrep.cm) hosts the 2010 volumes as PDF; the INS site hosts the DHS and MICS reports."
+  },
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Cameroon"
+      },
+      {
+        "title": "Demographics of Cameroon"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "A 2005 census count of religion, recalled to be tabulated by region (10 = admin1) in BUCREP's PDF volumes, twenty years old; ethnicity unknown for 2005 and otherwise survey-only. The boundary's 58 admin2 are Cameroon's 58 départements, a level the census volumes may or may not reach.",
+  "replaces_existing": true,
+  "recommended_action": "Crawl bucrep.cm and ins-cameroun.cm for the 3e RGPH 2005 volumes; read religion by region (and by département if present) into admin1/admin2, translating region names. Read the 2005 questionnaire to settle the ethnicity and language columns. Separately, and cheaply: add the French-English region aliases so the seven unmatched Afrobarometer rows join, and confirm that Yaounde/Douala are not being joined to any region.",
+  "searches_run": [],
+  "not_found": [
+    "which 2005 volume carries religion by region and whether it reaches département",
+    "whether the 2005 questionnaire had an ethnic-group or language item",
+    "whether the 4th RGPH has been enumerated",
+    "any machine-readable BUCREP publication"
+  ],
+  "summary": "Cameroon's last completed census is the 2005 3e RGPH, which asked religion (its national distribution is the one quoted everywhere) and whose results BUCREP published in 2010 as PDF thematic volumes; a region-level religion table is recalled but not verified, and ethnicity for 2005 is unknown. The boundary's 10 admin1 and 58 admin2 match Cameroon's regions and départements exactly, in English. Today's three filled regions come from Afrobarometer and seven more would join with French-English aliases; DHS 2018 is the best survey source for both fields by region. A census fill is PDF work and twenty years old."
+}

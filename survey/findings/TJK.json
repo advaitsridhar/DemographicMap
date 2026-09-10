@@ -1,0 +1,79 @@
+{
+  "iso3": "TJK",
+  "name": "Tajikistan",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Agency on Statistics under the President of the Republic of Tajikistan (Agentii omori nazdi Prezidenti Jumhurii Tojikiston)",
+    "url": "https://www.stat.tj/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2020,
+    "asks": {
+      "religion": false,
+      "ethnicity": true,
+      "language": true
+    },
+    "confidence": "recalled",
+    "notes": "Censuses in 2000, 2010 and October 2020. The questionnaire follows the Soviet programme: nationality (millat), native language and other languages spoken are asked; religion has never been an item. The 2010 results were released as themed volumes; the 2020 round's detailed ethnic volume may or may not be out."
+  },
+  "subnational_sources": [
+    {
+      "fields": [
+        "ethnicity",
+        "language"
+      ],
+      "title": "Perepis naseleniya i zhilishchnogo fonda Respubliki Tadzhikistan 2010 goda, Tom III: Natsionalnyi sostav, vladenie yazykami i grazhdanstvo naseleniya Respubliki Tadzhikistan (2010 census Volume III: national composition, language proficiency and citizenship)",
+      "url": null,
+      "publisher": "Agency on Statistics under the President of the Republic of Tajikistan (Dushanbe, 2012)",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "oblast (viloyat) and city/rayon (nohiya)",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 and admin2",
+      "year": 2010,
+      "confidence": "recalled",
+      "evidence": "Volume III is the known publication of ethnicity and native language; it tabulates by the five top-level units (Dushanbe, Sughd, Khatlon, GBAO, Districts of Republican Subordination = the packet's admin1, 5) and by city and rayon (the packet's admin2, 58, is in the right range). It circulated as a PDF; no machine-readable edition is recalled."
+    },
+    {
+      "fields": [
+        "ethnicity",
+        "language"
+      ],
+      "title": "2020 census results (Natijahoi baruykhatgirii aholi va fondi manzil 2020), ethnic composition volume",
+      "url": null,
+      "publisher": "Agency on Statistics under the President of the Republic of Tajikistan",
+      "kind": "census",
+      "format": null,
+      "geography": null,
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2020,
+      "confidence": "low",
+      "evidence": "The 2020 census asked the same items; whether the ethnic-composition volume with a rayon breakdown has been published is not recalled. Look on stat.tj first, then fall back to 2010."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Tajikistan"
+      },
+      {
+        "title": "Demographics of Tajikistan"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "Census counts of ethnicity and native language by oblast and rayon exist (2010 Volume III, possibly 2020), but as PDF volumes, not tables; religion is not asked.",
+  "replaces_existing": false,
+  "recommended_action": "Crawl stat.tj for the 2020 census result volumes; if an ethnic-composition volume by rayon is there, extract it, otherwise extract 2010 Volume III. Both levels join: 5 oblast-level units and about 58 rayons/cities (watch the DRS rayons, which are listed under 'Districts of Republican Subordination' rather than an oblast, and rayons renamed since 2010, e.g. Tavildara -> Sangvor, Nosiri Khusrav). Declare religion not_collected with the Soviet-programme reason.",
+  "searches_run": [],
+  "not_found": [
+    "A machine-readable (XLS/CSV) edition of the 2010 or 2020 ethnic tables",
+    "Publication status of the 2020 ethnic-composition volume",
+    "Exact rayon count in Volume III"
+  ],
+  "summary": "Tajikistan's censuses (2000, 2010, 2020) ask nationality and native language but never religion, which is a not_collected declaration. The 2010 census Volume III (national composition, language proficiency and citizenship) tabulates both fields by oblast and by city/rayon, which lines up with the packet's 5 admin1 and 58 admin2 shapes, but it is a PDF volume. The 2020 equivalent should be checked on stat.tj before extracting 2010. Tier B for the PDF-only format and rayon renamings since 2010."
+}

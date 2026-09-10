@@ -1,0 +1,122 @@
+{
+  "iso3": "CIV",
+  "name": "Côte d'Ivoire",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Institut National de la Statistique (INS)",
+    "url": "https://www.ins.ci/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2021,
+    "asks": {
+      "religion": true,
+      "ethnicity": true,
+      "language": null
+    },
+    "published_subnationally": {
+      "religion": null,
+      "ethnicity": null,
+      "language": null
+    },
+    "confidence": "recalled",
+    "notes": "RGPH 2021 (Recensement Général de la Population et de l'Habitat), enumerated Nov-Dec 2021; 'Résultats globaux définitifs' published 2022 (29.4M). Previous RGPH 2014 (22.7M) and 1998. Religion: the packet's national row (Muslim 42.9, Catholic 17.2, Evangelical 11.8, Methodist 1.7) is the RGPH 2014 distribution as quoted by the Factbook, so the 2014 census asked and published religion; the 2021 questionnaire is on the same UNFPA template and is recalled to have kept it. Ethnicity: recalled at lower confidence -- RGPH 1998 and 2014 carried an ethnic-group item for Ivorian nationals beside a nationality item for everyone, and the national shares by major group (Akan, Gur, Northern Mande, Kru, Southern Mande) are census-derived. Language: I cannot recall a language item; null."
+  },
+  "already_in_map": "admin1 2/14 religion and ethnicity from Afrobarometer Round 9 via 'adapter:contains' and 'adapter:prefix' joins. WARNING: the survey's 12 surviving Côte d'Ivoire rows (from data/processed/afrobarometer_region.json: Abidjan, Agneby-Tiassa, Gbêkê, Gôh, Gontougo, Guémon, Haut Sassandra, Lôh-Djiboua, Marahoué, Nawa, Poro, Tonkpi) are Côte d'Ivoire's 31 regions plus Abidjan -- the boundary's admin2 level (33 = 31 regions + the two autonomous districts), not its admin1 level (14 districts). 'Abidjan' -> 'District Autonome D'Abidjan' is the same territory and fine; the other admin1 fill must be a contains-match of 'Marahoué' or 'Haut Sassandra' onto 'Sassandra-Marahoue', i.e. one region's 24-49 respondents standing for a two-region district. That is a mis-join of the kind the project treats as worse than a gap. Recommend re-pointing the Afrobarometer CIV rows at admin2 by exact name and dropping the contains/prefix join for this country.",
+  "subnational_sources": [
+    {
+      "fields": [
+        "religion",
+        "ethnicity"
+      ],
+      "title": "RGPH 2014 -- Rapport d'exécution et présentation des principaux résultats (2015) and the RGPH 2014 thematic analysis reports (e.g. 'État et structure de la population')",
+      "url": null,
+      "publisher": "INS Côte d'Ivoire",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "region (31) and/or district (14)",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 (33) if by region, admin1 (14) if by district -- the boundary matches the country's own hierarchy exactly",
+      "year": 2014,
+      "confidence": "low for the subnational breakdown; high that the national religion table exists",
+      "evidence": "Recalled: the 2015 presentation report is the source of the national religion shares; whether it or a thematic volume breaks religion and ethnic group down by region is recalled only by analogy with other UNFPA-template RGPH analysis series, which routinely do."
+    },
+    {
+      "fields": [],
+      "title": "RGPH 2021 -- Résultats globaux définitifs (population by district, region, department, sub-prefecture)",
+      "url": null,
+      "publisher": "INS Côte d'Ivoire",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "district / region / department",
+      "geography_count": 33,
+      "matches_boundary_level": "admin1 and admin2 (name lists and denominators only)",
+      "year": 2021,
+      "confidence": "high that it exists; it is not a composition source",
+      "evidence": "Recalled: the November 2022 release; useful for denominators and the exact region/district spellings. Thematic RGPH 2021 reports (religion, ethnicity) may have followed in 2023-24 -- unknown."
+    },
+    {
+      "fields": [
+        "religion",
+        "ethnicity"
+      ],
+      "title": "Enquête Démographique et de Santé de Côte d'Ivoire 2021 (EDS-CI 2021) final report: religion and ethnic group of respondents by region/district",
+      "url": null,
+      "publisher": "INS / ICF (DHS Program)",
+      "kind": "survey",
+      "format": "pdf",
+      "geography": "survey domain (districts or regions)",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 probably",
+      "year": 2021,
+      "confidence": "medium",
+      "evidence": "Recalled; a survey, ranked below any count, but of respondents rather than a 24-person stratum."
+    },
+    {
+      "fields": [
+        "religion",
+        "ethnicity"
+      ],
+      "title": "IPUMS-International: Côte d'Ivoire 1988 and 1998 census samples (religion, ethnic group, nationality)",
+      "url": null,
+      "publisher": "IPUMS",
+      "kind": "census (microdata sample)",
+      "format": "microdata, registration required",
+      "geography": "region (1998 geography, pre-2011 reform)",
+      "geography_count": null,
+      "matches_boundary_level": "neither without a crosswalk (the 14 districts / 31 regions date from 2011)",
+      "year": 1998,
+      "confidence": "medium",
+      "evidence": "Recalled."
+    }
+  ],
+  "secondary_routes": {
+    "hdx": "Not recorded in the repo's USCB enumeration; the runner searches HDX itself.",
+    "ipums": "1988, 1998.",
+    "other": "INS also runs a data portal (recalled: 'ins.ci/documentation' and a NADA microdata catalogue); the RGPH 2014 and 2021 questionnaires there settle the 'asks' columns."
+  },
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Côte d'Ivoire"
+      },
+      {
+        "title": "Demographics of Côte d'Ivoire"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "The census asks religion (certain) and ethnic group (fairly sure), the boundary's 14 admin1 and 33 admin2 are exactly the country's districts and regions, and INS publishes analysis reports as PDF -- but I cannot name the region-level table from memory. If the runner finds no region or district breakdown in the RGPH 2014/2021 reports on ins.ci, this drops to D.",
+  "replaces_existing": true,
+  "recommended_action": "Crawl ins.ci for RGPH 2014 and RGPH 2021 publications (rapport de présentation, rapports d'analyse thématique, résultats globaux) and read any religion or ethnie table by région or district into admin2/admin1; any census figure supersedes the two survey rows. Independently of the census: fix the existing Afrobarometer join for CIV -- its rows are regions and belong at admin2 by exact name, and the contains-match onto 'Sassandra-Marahoue' should be removed.",
+  "searches_run": [],
+  "not_found": [
+    "a nameable RGPH 2014 or 2021 table of religion or ethnicity by region or district",
+    "whether the 2021 questionnaire kept the ethnic-group item",
+    "any language item on either questionnaire",
+    "any machine-readable INS publication"
+  ],
+  "summary": "Côte d'Ivoire's RGPH 2014 asked religion (the packet's national figures are its distribution) and, at lower confidence, ethnic group; RGPH 2021 followed the same template. INS publishes as PDF, and I cannot name the region-level table, so this is a B that a crawl of ins.ci must confirm. The boundary matches the country's 14 districts and 33 regions exactly, which also exposes a present fault: the Afrobarometer rows filling two admin1 districts are region-level names that belong at admin2, and one district is filled by a contains-match from a single region."
+}

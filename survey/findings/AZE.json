@@ -1,0 +1,94 @@
+{
+  "iso3": "AZE",
+  "name": "Azerbaijan",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "State Statistical Committee of the Republic of Azerbaijan (Dövlət Statistika Komitəsi)",
+    "url": "https://www.stat.gov.az/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2019,
+    "asks": {
+      "religion": false,
+      "ethnicity": true,
+      "language": true
+    },
+    "confidence": "recalled",
+    "notes": "Censuses in 1999, 2009 and 2019 follow the Soviet programme: nationality (milli mensubiyyet) and native language (ana dili, plus other languages spoken) are asked; there has never been a religion item. The 2009 results were published in full; how much of the 2019 ethnic/language detail has been released by rayon is not recalled with confidence."
+  },
+  "subnational_sources": [
+    {
+      "fields": [
+        "ethnicity"
+      ],
+      "title": "2009 census results: population by ethnic (national) composition, by economic region and administrative rayon/city (Ehalinin milli terkibi / Nacionalnyi sostav naseleniya)",
+      "url": null,
+      "publisher": "State Statistical Committee (stat.gov.az), population/demography section",
+      "kind": "census",
+      "format": "xls",
+      "geography": "rayon and republic-subordinate city",
+      "geography_count": null,
+      "matches_boundary_level": "admin2",
+      "year": 2009,
+      "confidence": "recalled",
+      "evidence": "The committee publishes its census and demographic tables as XLS workbooks under the population section; the 2009 ethnic-composition table by rayon is the one Wikipedia's district tables cite. Count of rayons in the table (about 66 rayons plus ~12 cities, close to the packet's 79) and exact file name not recalled."
+    },
+    {
+      "fields": [
+        "language"
+      ],
+      "title": "2009 census results: population by native language, by rayon/city",
+      "url": null,
+      "publisher": "State Statistical Committee (stat.gov.az)",
+      "kind": "census",
+      "format": "xls",
+      "geography": "rayon and republic-subordinate city",
+      "geography_count": null,
+      "matches_boundary_level": "admin2",
+      "year": 2009,
+      "confidence": "low",
+      "evidence": "The native-language item was asked and tabulated nationally; whether the rayon-level breakdown was released as a separate table is recalled less firmly than the ethnicity one."
+    },
+    {
+      "fields": [
+        "ethnicity",
+        "language"
+      ],
+      "title": "2019 census (Ehalinin siyahiyaalinmasi 2019) detailed results, ethnic and language composition",
+      "url": null,
+      "publisher": "State Statistical Committee (stat.gov.az)",
+      "kind": "census",
+      "format": null,
+      "geography": null,
+      "geography_count": null,
+      "matches_boundary_level": null,
+      "year": 2019,
+      "confidence": "low",
+      "evidence": "The 2019 census asked the same nationality and language items. Release of the rayon-level ethnic tables was slow; the runner should look for them first and fall back to 2009 if absent."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {
+        "title": "Religion in Azerbaijan"
+      },
+      {
+        "title": "Demographics of Azerbaijan"
+      }
+    ],
+    "admin2_samples": []
+  },
+  "tier": "B",
+  "tier_reason": "Census counts of ethnicity (and language) by rayon exist from 2009 and probably 2019, and the office distributes tables as XLS, but neither the file nor the rayon count is verifiable from memory; religion is not asked at all.",
+  "replaces_existing": false,
+  "recommended_action": "Crawl stat.gov.az's population/census pages for the 2019 (then 2009) ethnic-composition-by-rayon XLS. Join to the 79 admin2 shapes; the two admin1 shapes (contiguous Azerbaijan, Nakhchivan) are sums of rayons. Handle the Karabakh rayons (Khankendi, Khojaly, etc.): in 2009 these were not enumerated in place -- their figures are IDP counts or blanks -- and the 2019 position is similar, so a value there needs a note or a gap rather than a silent join. Declare religion not_collected with the Soviet-programme reason.",
+  "searches_run": [],
+  "not_found": [
+    "Exact table/file name and URL of the ethnic-composition-by-rayon workbook",
+    "Whether 2019 ethnic tables by rayon are released",
+    "Whether native language is tabulated by rayon"
+  ],
+  "summary": "Azerbaijan's censuses (1999, 2009, 2019) ask nationality and native language but not religion, so religion is a not_collected declaration. Ethnic composition by rayon and city was published from the 2009 census and the office publishes its tables as XLS on stat.gov.az; the 2019 equivalent should be looked for first. That table joins to the 79 admin2 shapes and rolls up to the two admin1 shapes. Tier B because nothing here is verified from a live page, and the Karabakh rayons need special handling."
+}

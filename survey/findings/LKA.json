@@ -1,0 +1,63 @@
+{
+  "iso3": "LKA",
+  "name": "Sri Lanka",
+  "mode": "knowledge-only",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Department of Census and Statistics (DCS)",
+    "url": "http://www.statistics.gov.lk/",
+    "confidence": "recalled"
+  },
+  "latest_census": {
+    "year": 2024,
+    "asks": {"religion": true, "ethnicity": true, "language": false},
+    "confidence": "high",
+    "notes": "Census of Population and Housing 2024 -- already read by the repo from the DCS trilingual workbooks (A2 ethnicity, A3 religion by district; docs/SOURCES.md 'Sri Lanka, and a check the source hands you'). Language is not asked as mother tongue; the census asks literacy (ability to speak/read/write Sinhala, Tamil, English, aged 10+), which is overlapping proficiency rather than a composition, and the adapter already marks language NOT_COLLECTED for that reason (scripts/fetch_census/sri_lanka.py, line ~273). The packet's empty declared_not_collected looks like a packet-side omission rather than a gap in the data."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion", "ethnicity"],
+      "title": "Census of Population and Housing 2024 -- tables A2 (population by ethnicity and district) and A3 (population by religion and district); already built",
+      "url": "http://www.statistics.gov.lk/",
+      "publisher": "Department of Census and Statistics",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "district",
+      "geography_count": 25,
+      "matches_boundary_level": "admin2 (25/25 filled); admin1 provinces (9/9) summed from districts",
+      "year": 2024,
+      "confidence": "high",
+      "evidence": "The repo reads these from data/raw/srilanka/ (docs/SOURCES.md)."
+    },
+    {
+      "fields": ["religion", "ethnicity"],
+      "title": "Census of Population and Housing 2012 -- population by ethnicity / by religion, by Divisional Secretariat (DS) division",
+      "url": null,
+      "publisher": "Department of Census and Statistics",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "DS division",
+      "geography_count": 331,
+      "matches_boundary_level": "neither: the boundary file stops at district (admin2 = 25)",
+      "year": 2012,
+      "confidence": "medium",
+      "evidence": "Recalled: DCS published 2012 ethnicity and religion by DS division (and Grama Niladhari division) as Excel/PDF tables on statistics.gov.lk. Only relevant if an admin3 layer is ever added; the 2024 round may carry the same."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Sri Lanka"},
+      {"title": "Demographics of Sri Lanka"}
+    ],
+    "admin2_samples": []
+  },
+  "tier": "A",
+  "tier_reason": "The newest census in the dataset (2024) already fills religion and ethnicity at both drawn levels from DCS workbooks; language is a genuine not_collected with the reason recorded in the adapter.",
+  "replaces_existing": false,
+  "recommended_action": "Nothing to build. Confirm the packet generator picks up the adapter's language NOT_COLLECTED declaration (it exists in sri_lanka.py but the packet shows declared_not_collected as empty). If a DS-division layer is ever added, the 2012 (and possibly 2024) DS-division tables on statistics.gov.lk cover both fields.",
+  "searches_run": [],
+  "not_found": [
+    "Any mother-tongue count for Sri Lanka (the census does not ask one; only literacy in Sinhala/Tamil/English)"
+  ],
+  "summary": "Sri Lanka is done: the 2024 census tables A2/A3 already fill religion and ethnicity for all 25 districts and the 9 provinces summed from them. Language is not asked as a composition -- the census records literacy in three languages -- and the adapter declares it not_collected; the packet's empty declaration list should be checked against that. Tier A, already built; nothing replaces it."
+}
