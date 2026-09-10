@@ -699,7 +699,9 @@ def within_bbox(point: list[float] | None, bbox: list[float] | None) -> bool:
 
 
 def match_admin2(row: dict[str, Any], by_name: dict[str, list[dict[str, Any]]],
-                 admin1: dict[str, dict[str, Any]]) -> tuple[dict[str, Any] | None, str]:
+                 admin1: dict[str, dict[str, Any]],
+                 exact: dict[str, dict[str, Any]] | None = None,
+                 ) -> tuple[dict[str, Any] | None, str]:
     """Resolve an adapter row to one admin-2 shape, using its state when it has one.
 
     District names repeat across states. India has a Hamirpur in Himachal Pradesh
@@ -751,9 +753,12 @@ def match_admin2(row: dict[str, Any], by_name: dict[str, list[dict[str, Any]]],
         # answered for both -- which scoped Almaty Region's districts to the
         # city, where none of them are, and refused the two whose names repeat
         # elsewhere (Aksuskiy, Zhambylskiy) as ambiguous.
+        # `exact` holds every first-level shape by its written name, the
+        # ambiguous ones included, since a written name is not ambiguous.
         wanted = " ".join(parent_name.split()).casefold()
-        parent = next((e for e in admin1.values()
-                       if " ".join((e.get("name") or "").split()).casefold() == wanted), None)
+        parent = (exact or {}).get(wanted) or next(
+            (e for e in admin1.values()
+             if " ".join((e.get("name") or "").split()).casefold() == wanted), None)
         if parent is None:
             parent, _ = match_name({"name": parent_name,
                                     "aliases": row.get("parent_aliases") or []}, admin1)
@@ -1625,6 +1630,10 @@ def main() -> int:
         # and there is no row name to settle it with.
         a1 = {key: found[0] for key, found in a1_by_key.items()
               if len(found) == 1}
+        # ...and the written names, for a district row that names its parent:
+        # "Almaty Region" is not ambiguous even though its key is.
+        a1_exact = {" ".join(e["name"].split()).casefold(): e
+                    for e in admin1_by_country.get(iso3, [])}
         # An ISO 3166-2 code is the one key on both sides that needs no
         # romanisation. Russia's sheets are Cyrillic and its shapes English,
         # and norm() keeps Cyrillic as Cyrillic on purpose -- a transliteration
@@ -1726,7 +1735,7 @@ def main() -> int:
                     deferred.append((row, key))
                     continue
             else:
-                entity, how = match_admin2(key, a2, a1)
+                entity, how = match_admin2(key, a2, a1, a1_exact)
             if entity is None:
                 miss += 1
                 ambiguous += how == "ambiguous"

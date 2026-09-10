@@ -4936,11 +4936,12 @@ class ParentIsResolvedByExactNameFirst(unittest.TestCase):
     def test_region_and_city_of_one_name(self):
         region = {"id": "R", "name": "Almaty Region"}
         city = {"id": "C", "name": "Almaty"}
-        admin1 = {be.norm("Almaty Region"): city, "almaty-city": city, "almaty-region": region}
+        admin1 = {}                                   # the ambiguous key was dropped
+        exact = {"almaty region": region, "almaty": city}
         shapes = {be.norm("Aksuskiy"): [{"id": "a1", "name": "Aksuskiy", "parent": "R"},
                                         {"id": "a2", "name": "Aksuskiy", "parent": "P"}]}
         entity, how = be.match_admin2({"name": "Аксуский район", "aliases": ["Aksuskiy"],
-                                       "parent_name": "Almaty Region"}, shapes, admin1)
+                                       "parent_name": "Almaty Region"}, shapes, admin1, exact)
         self.assertEqual((entity or {}).get("id"), "a1")
         self.assertTrue(how.endswith("+state"))
 

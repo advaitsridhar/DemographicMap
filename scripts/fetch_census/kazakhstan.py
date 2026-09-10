@@ -32,7 +32,8 @@ than several renamings, so ``RENAMED`` declares those the map knows under
 their previous name (Zelenovskiy is today's Bäiterek District, Tselinniy is
 Gabit Musrepov District, and so on) -- each a renaming of the same unit, not a
 redrawing. Districts the file draws under a name this adapter cannot settle
-stay as visible gaps. Districts inside the three cities of republican
+stay as visible gaps -- Jambyl Region's second "Zhualy" shape beside
+"Zhualynskiy" is one. Districts inside the three cities of republican
 significance are not emitted: the map draws each city as one shape, and that
 shape gets the city's total.
 
@@ -118,7 +119,6 @@ RENAMED: dict[str, list[str]] = {
     "Мангистауский район": ["Manghystauskiy"],
     "Райымбекский район": ["Raiymbekskiy"],
     "Район Байдибека": ["Baydibekskiy"],
-    "Жуалынский район": ["Zhualy"],
     "Актау г.а.": ["Aqtau"],
     "город Актобе": ["Aqtobe"],
     "город Костанай": ["Qostanay"],
@@ -142,6 +142,8 @@ RENAMED: dict[str, list[str]] = {
     # replaced: Semipalatinsk became Semey in 2007; Aksu's and Arys's rural
     # districts were folded into their city akimats.
     "Семей г.а.": ["Semipalatinskiy"],
+    "город Тараз": ["Zhamb."],                      # Taraz was Zhambyl, 1993-1997
+
     "Аксу г.а.": ["Aksuskiy"],
     "Арысь г.а.": ["Arysskiy"],
 }
