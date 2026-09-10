@@ -61,6 +61,9 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.uk_nomis --level county
   # Reads three committed CSVs; no network, no key.
   soft python3 -m scripts.fetch_census.scotland_census
+  # Likewise, three committed NISRA workbooks: the last of the UK shapes the
+  # ONS census cannot reach.
+  soft python3 -m scripts.fetch_census.northern_ireland
   soft python3 -m scripts.fetch_census.statcan --level province
   soft python3 -m scripts.fetch_census.ibge_sidra --level state
   # 5,570 municipalities, and the reason the level is spelled out twice:

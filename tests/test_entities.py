@@ -4324,3 +4324,152 @@ class ScotlandsCensusNestsAndAsksThreeQuestions(unittest.TestCase):
         for name in ("City of Edinburgh", "Na h-Eileanan Siar"):
             self.assertIn(name, shapes)
             self.assertIn(name, {r["name"] for r in self.rows()})
+
+
+class NorthernIrelandAsksTwoReligionQuestions(unittest.TestCase):
+    """NISRA publishes ten MS-B tables and three of them are compositions.
+
+    The rest are traps of two kinds. Knowledge of Irish, knowledge of
+    Ulster-Scots and proficiency in English count an *ability*, so a person can
+    appear in two of them or in none -- Scotland's KS206SC mixed the same three
+    kinds of question in one sheet. And MS-B23/B24 report **religion or
+    religion brought up in**, the community-background figure most quoted about
+    Northern Ireland, which is a different question from the one every other
+    country's religion field answers.
+    """
+
+    def rows(self):
+        path = ROOT / "data" / "processed" / "northern_ireland_district.json"
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    def test_all_eleven_districts_are_present(self):
+        self.assertEqual(len(self.rows()), 11)
+
+    def test_every_composition_partitions_its_universe_once(self):
+        for row in self.rows():
+            for field in ("religion", "ethnicity", "language"):
+                value = row.get(field)
+                self.assertIsInstance(value, list, f"{row['name']} {field}")
+                total = sum(g["pct"] for g in value)
+                self.assertAlmostEqual(
+                    total, 100.0, delta=1.0,
+                    msg=f"{row['name']} {field} sums to {total}, not ~100")
+
+    def test_religion_is_the_one_held_not_the_one_brought_up_in(self):
+        """B20 and B23 disagree by design, and the map carries B20.
+
+        Belfast is 43.5% Catholic and 21.7% of no religion by B20, and 48.7%
+        Catholic and 11.6% of none by B23, because everyone raised in a church
+        is returned to it. Reading B23 into a field labelled "religion" would
+        put a number against Belfast that answers a question Birmingham was
+        never asked.
+        """
+        belfast = next(r for r in self.rows() if r["name"] == "Belfast")
+        groups = {g["group"]: g["pct"] for g in belfast["religion"]}
+        self.assertAlmostEqual(groups["Catholic"], 43.5, delta=0.2)
+        self.assertGreater(groups["No religion"], 20.0)
+        self.assertIn("brought up in", belfast["religion_note"])
+
+    def test_language_is_main_language_not_knowledge_of_irish(self):
+        """MS-B05 counts anyone with any Irish; MS-B12 is the composition.
+
+        12.4% of Northern Ireland aged 3 and over has some ability in Irish and
+        0.3% give it as their main language -- 0.8% in Belfast, the highest of
+        the eleven. If this reads much above that, MS-B05 was summed into a
+        field that has to add to a hundred.
+        """
+        rows = self.rows()
+        irish = {r["name"]: {g["group"]: g["pct"] for g in r["language"]}
+                 .get("Irish", 0.0) for r in rows}
+        self.assertLess(max(irish.values()), 2.0, irish)
+        for row in rows:
+            groups = {g["group"] for g in row["language"]}
+            self.assertIn("English", groups)
+            self.assertNotIn("Understands but does not read, write or speak Irish",
+                             groups)
+            self.assertIn("aged 3 and over", row["language_note"])
+
+    def test_the_denominations_reach_christianity(self):
+        """Unfolded, Northern Ireland reads as a country of no Christians.
+
+        Its four largest churches are named in no other source this map reads,
+        so each would be a one-country group and a filter for Christianity
+        would show the province at roughly the Catholic share alone.
+        """
+        import canonical_groups as cg
+        table = cg.lookup("religion")
+        for label in ("Presbyterian Church in Ireland", "Church of Ireland",
+                      "Methodist Church in Ireland", "Free Presbyterian",
+                      "Brethren", "Non-denominational Christian",
+                      "Mixed Catholic / Protestant",
+                      "Other Christian denominations"):
+            self.assertEqual(table.get(cg.key(label)), "Christianity", label)
+        belfast = next(r for r in self.rows() if r["name"] == "Belfast")
+        folded = cg.canonicalise(belfast["religion"], "religion")
+        self.assertGreater(folded["Christianity"], 70.0)
+        self.assertEqual(cg.check_no_double_counting(belfast["religion"],
+                                                     "religion"), [])
+
+    def test_every_district_name_reaches_a_shape(self):
+        """Unlike Scotland's councils, none of the eleven needs an alias."""
+        shapes = {r["name"] for r in
+                  json.loads((ROOT / "site" / "data" / "admin2" / "GBR.json")
+                             .read_text(encoding="utf-8"))}
+        for row in self.rows():
+            self.assertIn(row["name"], shapes)
+
+    def test_the_committed_workbooks_are_actually_committed(self):
+        """data/raw/* has silently un-tracked a source before now."""
+        import subprocess
+        for name in ("census2021msb01.xlsx", "census2021msb12.xlsx",
+                     "census2021msb20.xlsx"):
+            path = f"data/raw/northern_ireland/{name}"
+            listed = subprocess.run(["git", "ls-files", "--error-unmatch", path],
+                                    cwd=ROOT, capture_output=True, text=True)
+            self.assertEqual(listed.returncode, 0,
+                             f"{path} is not tracked; a clean checkout loses it")
+
+
+class TheUKCensusPublishesEthnicityAtTwoLevels(unittest.TestCase):
+    """Read whole, TS021 counts everyone twice.
+
+    Nomis returns the broad groups and the detail beneath them in one response,
+    both summing to the population, and for a long time every England and Wales
+    record shipped at ~200%: Bradford carried "White" 61.1% beside "White:
+    English, Welsh, Scottish, Northern Irish or British" 56.7%. Neither label
+    is in the canonical index, so nothing downstream noticed -- the group
+    filter simply treated them as two unrelated groups.
+    """
+
+    def rows(self, name):
+        return json.loads((ROOT / "data" / "processed" / name)
+                          .read_text(encoding="utf-8"))
+
+    def test_no_english_or_welsh_record_counts_its_people_twice(self):
+        for name in ("uk_lad.json", "uk_county.json"):
+            for row in self.rows(name):
+                for field in ("religion", "ethnicity"):
+                    value = row.get(field)
+                    if not isinstance(value, list) or not value:
+                        continue
+                    total = sum(g["pct"] for g in value)
+                    self.assertAlmostEqual(
+                        total, 100.0, delta=1.0,
+                        msg=f"{name} {row['name']} {field} sums to {total}")
+
+    def test_the_broad_headings_are_gone_and_the_detail_is_kept(self):
+        bradford = next(r for r in self.rows("uk_lad.json")
+                        if r["name"] == "Bradford")
+        groups = {g["group"] for g in bradford["ethnicity"]}
+        self.assertNotIn("White", groups)
+        self.assertNotIn("Asian, Asian British or Asian Welsh", groups)
+        self.assertIn("Asian, Asian British or Asian Welsh: Pakistani", groups)
+
+    def test_the_rule_is_shared_with_the_other_two_uk_adapters(self):
+        """One nesting rule, so a third census cannot be read a fourth way."""
+        from fetch_census._shared import leaves
+        self.assertEqual(
+            leaves(["White", "White: Irish", "Other ethnic group"]),
+            ["White: Irish", "Other ethnic group"])
+        # A group with no detail keeps its own row rather than vanishing.
+        self.assertEqual(leaves(["Chinese", "Roma"]), ["Chinese", "Roma"])

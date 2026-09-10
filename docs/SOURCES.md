@@ -70,7 +70,9 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 |---|---|---|---|
 | USA | Census ACS 5-year, tables B03002 / C16001 / DP05 | state, county | B03002 rather than B02001, because only B03002 makes Hispanic origin orthogonal to race the way published "White, non-Hispanic" figures do. |
 | USA | 2020 U.S. Religion Census (ASARB/ARDA `RCMSCY20`) | county | **Adherents**, not self-identification: 372 bodies, 161,224,088 adherents, ~48.6% of the population. Never comparable with self-ID percentages. |
-| UK | ONS Census 2021 via Nomis (TS021, TS030) | local authority | England and Wales only; Scotland ran its census in 2022 and Northern Ireland through NISRA. Religion is voluntary — "Not answered" is kept as its own category. |
+| UK | ONS Census 2021 via Nomis (TS021, TS030) | local authority, county | **England and Wales only** — Scotland and Northern Ireland are the two rows below. Religion is voluntary, so "Not answered" is kept as its own category. TS021 is returned at two nesting levels at once and only the leaves are read; summing both counted every person twice. |
+| Scotland | Census 2011 Key Statistics `KS201SC` / `KS206SC` / `KS209SCb` (NRS) | council area | Fourteen years older than England and Wales, and stamped 2011 on every figure rather than smoothed. The 2022 results are still only in a flexible table builder. Ethnicity reads the leaves; language reads the one block of `KS206SC` that is a composition. |
+| Northern Ireland | NISRA Census 2021 `MS-B01` / `MS-B12` / `MS-B20` | local government district | Religion is the one **held** (`MS-B20`, 32 denominations), not the "religion or religion brought up in" of `MS-B23`/`B24` that is the province's more familiar figure — a different question, and this map has no field for it. Language is main language of residents aged 3+, not knowledge of Irish or Ulster-Scots. |
 | Canada | StatCan 2021 Census Profile (SDMX, keyed by DGUID) | province, census division | Religion is asked once a decade (2021 yes, 2016 no). "Visible minority" is an Employment Equity Act category, not an ethnicity question. |
 | Brazil | IBGE SIDRA tables 9514 / 9605 / 10086 | state, municipality | *Cor ou raça* is self-declared skin colour (branca, preta, parda, amarela, indígena) — not equivalent to ethnicity elsewhere. |
 | EU | Eurostat `demo_r_pjangrp3`, `demo_r_pjanind3` | NUTS-2, NUTS-3 | Population and age everywhere; **no** ethnicity or religion — those are national census questions and only some states ask them. |
@@ -1657,7 +1659,7 @@ asked Nomis, which answered `TYPE155 2022 local authorities: counties`
 alongside output areas, wards, national parks and two 2023 vintages, none of
 which the adapter had mentioned.
 
-**The 45 shapes still empty are Scotland and Northern Ireland**, and that is a
+**The 43 shapes still empty are Scotland and Northern Ireland**, and that is a
 source gap rather than a join one. The 2021 census this adapter reads covers
 **England and Wales only**. Scotland ran its census in 2022 through National
 Records of Scotland and Northern Ireland in 2021 through NISRA -- two more
@@ -1743,8 +1745,96 @@ Two councils needed a name declaration, and neither side is wrong: NRS writes
 `Eilean Siar` where it writes the Gaelic `Na h-Eileanan Siar`. Source-side
 aliases, the same shape as Rhondda Cynon Taf.
 
-**Northern Ireland's 11 districts remain blocked**, and 45 empty UK shapes
-become 13.
+**Northern Ireland's 11 districts remain blocked**, and 43 empty UK shapes
+become 11. The section below closes that too, and all 216 of the UK's
+second-order shapes then carry a religion and an ethnicity.
+
+(An earlier draft of this section counted 45 and 13. The measured figures are
+43 and 11: 32 Scottish council areas plus 11 Northern Irish districts.)
+
+### Northern Ireland: which of ten tables is a composition
+
+NISRA publishes the Census 2021 "Ethnicity, Identity, Language and Religion"
+release as ten `MS-B` workbooks by local government district. Three of them are
+read and seven are not, and the exclusions are the judgement here.
+
+**Read.** `MS-B01` ethnic group, thirteen categories. `MS-B12` main language,
+eighteen named languages and Other languages, of residents aged 3 and over.
+`MS-B20` religion in intermediate detail, thirty-two categories -- every
+denomination Northern Ireland counted at a thousand people or more, from
+Catholic and Presbyterian down to the Christian Fellowship Church. All three
+reconcile exactly against their own published totals, and the adapter refuses
+the run rather than publishing a composition that misses by more than half a
+percent. None of the eleven district names needs an alias: NISRA and
+geoBoundaries spell all eleven the same way.
+
+**Not read, first kind: not a composition.** `MS-B05` knowledge of Irish,
+`MS-B08` knowledge of Ulster-Scots and `MS-B14` proficiency in English count an
+*ability*. A person can appear in the Irish table and the Ulster-Scots table
+both, or in neither, so their columns do not add to anyone — `MS-B05` even
+carries a "Some ability in Irish" summary column beside the four skill columns
+it is the sum of, and adding every column of that sheet reaches 112% of the
+people in it. This is Scotland's `KS206SC` again, which asked three questions
+in one sheet. **12.4%** of Northern Ireland aged 3 and over reports some
+ability in Irish and **0.3%** give it as their main language; a language field
+built from `MS-B05` would state the first number where a reader expects the
+second.
+
+**Not read, second kind: a different question.** `MS-B23` and `MS-B24` report
+**religion or religion brought up in** -- Northern Ireland's community
+background, and the figure most often quoted about the place. They cover the
+districts and they were not used. A person raised Catholic who now has no
+religion is Catholic in `B23` and No religion in `B20`, and the two answers are
+far apart: Belfast is **43.5% Catholic and 21.7% of no religion** by `B20`, and
+**48.7% Catholic and 11.6% of none** by `B23`. Folding `B23` into a field
+labelled "religion" would move five points of the city into a church and halve
+the share that told the census it has no religion — a number against Belfast
+answering a question Birmingham was never asked, with nothing on the map to say
+so. The honest
+statement is that this map has no community-background field, which is a gap
+worth naming rather than papering over with the nearest number.
+
+`MS-B19` is `B20`'s question at eight categories instead of thirty-two, with no
+extra coverage, and `MS-B22` is religion back to 1861 for Northern Ireland as a
+whole, with no district breakdown at all.
+
+**Where the denominations go.** Presbyterian Church in Ireland, Church of
+Ireland, Methodist Church in Ireland and the rest are named in no other source
+this map reads. Unfolded, each would be a one-country group and a filter for
+Christianity would show the province at roughly its Catholic share, so all
+seventeen are declared in the canonical index. Belfast then reads Christianity
+73.5%, No religion 21.7%.
+
+**One guard needed loosening, and it was right to.** The build stops when a
+record carries a parent total beside its own children. NISRA writes "Other
+Religions" where the ONS writes "Other religion", both meaning everything the
+question did not name, and the United Kingdom's rolled-up record now carries
+one row from each office -- which tripped the guard, because the NISRA spelling
+lowercases to the canonical group's own name. A residual is never a parent:
+there is no third figure two catch-alls are both part of. The guard now exempts
+them, and a real parent beside a real child still stops the build.
+
+### England and Wales: ethnicity was counted twice for as long as it was published
+
+Found while reading NISRA's tables for the nesting Scotland's `KS201SC` has.
+Nomis returns TS021 at **both** classification levels in one response -- five
+broad groups and the nineteen columns of detail beneath them, each level
+summing to the population -- and the adapter kept them all. Every one of the
+503 England and Wales records shipped with its ethnicity summing to about 200%:
+Bradford carried `White` 61.1% beside `White: English, Welsh, Scottish,
+Northern Irish or British` 56.7%, which are the same people.
+
+Nothing downstream noticed, and the reason is worth recording. Neither label is
+in the canonical index, so the double-counting guard saw two unrelated groups
+rather than a parent and its child, and the group filter did too. A composition
+that sums to 200% is not subtle; it survived because no check looked at the sum.
+
+The fix is the rule `scotland_census` already applied, lifted into
+`_shared.leaves()` and used by all three UK adapters: keep a group's detail
+where it has any, the group itself where it has none. Scotland's output is
+byte-for-byte unchanged by the refactor, TS030 religion is unaffected because
+it nests at one level, and the England and Wales records lose 2,515 rows and
+now sum to 100%.
 
 ### Scotland and Northern Ireland: published, and behind a table builder
 
@@ -1791,7 +1881,7 @@ clicking, with no static file and no documented endpoint behind it.
 
 What would open it: a documented endpoint from either builder, a bulk download
 either office publishes that these probes did not reach, or the same tables
-appearing on a warehouse that does answer programs. Until then, 45 shapes stay
+appearing on a warehouse that does answer programs. Until then, 43 shapes stay
 visibly empty rather than being given England and Wales' figures, and the three
 reference dates -- 2021 for England, Wales and Northern Ireland, 2022 for
 Scotland -- would in any case need saying on any map that combined them.

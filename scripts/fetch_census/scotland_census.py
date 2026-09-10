@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Scotland: religion, ethnicity and language by council area (Census 2011).
 
-The 45 UK shapes this map could not fill were Scotland's 32 council areas and
+The 43 UK shapes this map could not fill were Scotland's 32 council areas and
 Northern Ireland's 11 districts, and Scotland was recorded here as blocked: the
 2022 census is published through National Records of Scotland' flexible table
 builder, and the only file that release links is a bulletin's chart data.
@@ -47,7 +47,9 @@ import argparse
 import csv
 from typing import Any
 
-from ._shared import NOT_AVAILABLE, PROCESSED, RAW, gap, log, measure, record, shares, write_json
+from ._shared import (
+    NOT_AVAILABLE, PROCESSED, RAW, gap, leaves, log, measure, record, shares, write_json,
+)
 
 HERE = RAW / "scotland"
 OUT = "scotland_council.json"
@@ -89,15 +91,13 @@ def count(value: str) -> int:
 
 
 def leaf_columns(header: list[str]) -> list[int]:
-    """The columns that partition the population exactly once.
+    """The data columns that partition the population exactly once.
 
-    A group with detail beneath it is dropped in favour of that detail; a group
-    with none keeps its own column. Summing both levels would count Scotland's
-    4.4 million White Scottish people as White as well.
+    The rule is _shared.leaves(); what this adds is the first two columns,
+    which are the council's name and its published total rather than a group.
     """
-    parents = {h.split(":")[0].strip() for h in header if ":" in h}
-    return [i for i, h in enumerate(header)
-            if i > 1 and h.strip() not in parents]
+    keep = set(leaves(header[2:]))
+    return [i for i, h in enumerate(header) if i > 1 and h.strip() in keep]
 
 
 def label(header: str) -> str:

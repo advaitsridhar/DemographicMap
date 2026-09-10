@@ -93,6 +93,29 @@ class DoubleCounting(unittest.TestCase):
         got = cg.canonicalise(rows(("Bissa", 5.4), ("Bissa", 1.5)), "ethnicity")
         self.assertAlmostEqual(got["Bissa"], 6.9)
 
+    def test_two_offices_catch_alls_are_not_a_conflict(self):
+        """A residual has no children, so it is never a parent.
+
+        NISRA writes "Other Religions" where the ONS writes "Other religion",
+        and the United Kingdom's rolled-up record carries one row from each.
+        Adding two catch-alls is right -- there is no third figure they are
+        both part of -- but the NISRA spelling lowercases to the canonical name
+        exactly, which used to stop the build.
+        """
+        self.assertEqual(
+            cg.check_no_double_counting(
+                rows(("Other religion", 0.5), ("Other Religions", 0.1)),
+                "religion"), [])
+        got = cg.canonicalise(
+            rows(("Other religion", 0.5), ("Other Religions", 0.1)), "religion")
+        self.assertAlmostEqual(got["Other religions"], 0.6)
+
+    def test_a_real_parent_is_still_caught_when_a_residual_is_present(self):
+        bad = cg.check_no_double_counting(
+            rows(("Christianity", 60.0), ("Catholic", 25.0),
+                 ("Other religion", 0.5), ("Other Religions", 0.1)), "religion")
+        self.assertEqual(bad, ["Christianity"])
+
 
 if __name__ == "__main__":
     unittest.main()
