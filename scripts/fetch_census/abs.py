@@ -247,10 +247,14 @@ def without_duplicated_parent(candidate: dict[str, float], total: float,
     excess = sum(candidate.values()) - total
     if excess <= tolerance:
         return candidate
-    # Never the non-response or the grand total: a small region's "not
-    # stated" can be within the tolerance of a suffix set's excess by
-    # coincidence, and dropping it would hide a missing category.
-    parents = [k for k, v in candidate.items() if abs(v - excess) <= tolerance
+    # The parent's own value is the excess, give or take the perturbation of
+    # its children -- a few people, never the 60 the summing tolerance
+    # allows. In an LGA of 4,295 the excess was 65 and seven languages sat
+    # within 60 of it; a band of five percent of the excess, never under
+    # five people, names one row. Never the non-response or the grand
+    # total: dropping either would hide a missing category.
+    band = max(5.0, 0.05 * excess)
+    parents = [k for k, v in candidate.items() if abs(v - excess) <= band
                and k.strip().lower() not in GRAND_TOTAL
                and not any(tag in k.lower() for tag in KEEP_ALWAYS)]
     if len(parents) != 1:
