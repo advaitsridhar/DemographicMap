@@ -1,0 +1,105 @@
+{
+ "iso3": "LAO",
+ "name": "Laos",
+ "population": 7953556,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Buddhist",
+    "pct": 64.7
+   },
+   {
+    "group": "Christian",
+    "pct": 1.7
+   },
+   {
+    "group": "none",
+    "pct": 31.4
+   },
+   {
+    "group": "other/not stated",
+    "pct": 2.1
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Lao",
+    "pct": 53.2
+   },
+   {
+    "group": "Khmou",
+    "pct": 11.0
+   },
+   {
+    "group": "Hmong",
+    "pct": 9.2
+   },
+   {
+    "group": "Phouthay",
+    "pct": 3.4
+   }
+  ],
+  "language": [
+   {
+    "group": "Lao",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "various ethnic languages",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 18,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bokeo",
+   "Champasak",
+   "Luang Namtha",
+   "Phongsaly",
+   "Savannakhet",
+   "Xekong"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 148,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Champhone",
+   "Hinherb",
+   "Khongxedone",
+   "Ngeun",
+   "Nhommalath",
+   "Pakkading",
+   "Xaychamphone",
+   "Xon"
+  ]
+ }
+}

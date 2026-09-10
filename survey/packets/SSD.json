@@ -1,0 +1,112 @@
+{
+ "iso3": "SSD",
+ "name": "South Sudan",
+ "population": 12703714,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 60.5
+   },
+   {
+    "group": "folk religion",
+    "pct": 32.9
+   },
+   {
+    "group": "Muslim",
+    "pct": 6.2
+   },
+   {
+    "group": "other",
+    "pct": 1.0,
+    "bound": "<"
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Dinka",
+    "pct": 37.5,
+    "range": [
+     35.0,
+     40.0
+    ]
+   },
+   {
+    "group": "Nuer",
+    "pct": 15.0
+   },
+   {
+    "group": "Shilluk",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Azande",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "ethnic languages include Dinka",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Nuer",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 10,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Eastern Equatoria",
+   "Jonglei",
+   "Lakes",
+   "Unity",
+   "Upper Nile",
+   "Warrap"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 78,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Jur River",
+   "Leer",
+   "Mayendit",
+   "Panyikang",
+   "Raga",
+   "Rumbek North",
+   "Terekeka",
+   "Tonj North"
+  ]
+ }
+}

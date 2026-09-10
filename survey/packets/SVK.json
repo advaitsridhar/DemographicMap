@@ -1,0 +1,101 @@
+{
+ "iso3": "SVK",
+ "name": "Slovakia",
+ "population": 5563649,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 55.8
+   },
+   {
+    "group": "Evangelical Church of the Augsburg Confession",
+    "pct": 5.3
+   },
+   {
+    "group": "Greek Catholic",
+    "pct": 4.0
+   },
+   {
+    "group": "Reformed Christian",
+    "pct": 1.6
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Slovak",
+    "pct": 83.8
+   },
+   {
+    "group": "Hungarian",
+    "pct": 7.8
+   },
+   {
+    "group": "Romani",
+    "pct": 1.2
+   },
+   {
+    "group": "other",
+    "pct": 1.8
+   }
+  ],
+  "language": [
+   {
+    "group": "Slovak",
+    "pct": 81.8
+   },
+   {
+    "group": "Hungarian",
+    "pct": 8.5
+   },
+   {
+    "group": "Roma",
+    "pct": 1.8
+   },
+   {
+    "group": "other",
+    "pct": 2.2
+   }
+  ]
+ },
+ "admin1": {
+  "count": 8,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Region of Banská Bystrica",
+   "Region of Bratislava",
+   "Region of Prešov",
+   "Region of Trenčín",
+   "Region of Trnava",
+   "Region of Žilina"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 79,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "District of Bonovce nad Bebra*",
+   "District of Brezno",
+   "District of Levoca",
+   "District of Liptovsk",
+   "District of Piertany",
+   "District of Spieskn Novo Ves",
+   "District of Velka Krta",
+   "District of Zvolen"
+  ]
+ }
+}

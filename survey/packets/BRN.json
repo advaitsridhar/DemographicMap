@@ -1,0 +1,94 @@
+{
+ "iso3": "BRN",
+ "name": "Brunei",
+ "population": 491900,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 82.1
+   },
+   {
+    "group": "Christian",
+    "pct": 6.7
+   },
+   {
+    "group": "Buddhist",
+    "pct": 6.3
+   },
+   {
+    "group": "other",
+    "pct": 4.9
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Malay",
+    "pct": 67.4
+   },
+   {
+    "group": "Chinese",
+    "pct": 9.6
+   },
+   {
+    "group": "other",
+    "pct": 23.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Malay",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Chinese dialects",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 4,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Belait",
+   "Brunei-Muara",
+   "Temburong",
+   "Tutong"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 38,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Amo",
+   "Berakas B",
+   "Labi",
+   "Liang",
+   "Lumapas",
+   "Serasa",
+   "Sukang",
+   "Tamoi"
+  ]
+ }
+}

@@ -1,0 +1,68 @@
+{
+ "iso3": "YEM",
+ "name": "Yemen",
+ "population": 34505496,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 99.1
+   },
+   {
+    "group": "other",
+    "pct": 0.9
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: predominantly Arab; but also Afro-Arab, South Asian, European"
+  },
+  "language": [
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 22,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Al Bayda' Governorate",
+   "Al Jawf Governorate",
+   "Al Mahrah Governorate",
+   "Hadhramaut",
+   "Ma'rib Governorate",
+   "Shabwah Governorate"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 335,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Al Bayda City",
+   "Ar Ryashyyah",
+   "As Salafiyyah",
+   "At Tahrir",
+   "Bilad Ar Rus",
+   "Dar Sa'd",
+   "Hajjah",
+   "Suwayr"
+  ]
+ }
+}

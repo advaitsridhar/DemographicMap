@@ -1,0 +1,97 @@
+{
+ "iso3": "POL",
+ "name": "Poland",
+ "population": 38746310,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 70.7
+   },
+   {
+    "group": "refused to answer",
+    "pct": 20.9
+   },
+   {
+    "group": "no religion",
+    "pct": 6.9
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Polish",
+    "pct": 96.9
+   },
+   {
+    "group": "Silesian",
+    "pct": 1.1
+   },
+   {
+    "group": "German",
+    "pct": 0.2
+   },
+   {
+    "group": "Ukrainian",
+    "pct": 0.1
+   }
+  ],
+  "language": [
+   {
+    "group": "Polish",
+    "pct": 98.2
+   },
+   {
+    "group": "Silesian",
+    "pct": 1.4
+   },
+   {
+    "group": "other",
+    "pct": 1.1
+   },
+   {
+    "group": "unspecified",
+    "pct": 1.2
+   }
+  ]
+ },
+ "admin1": {
+  "count": 16,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Greater Poland Voivodeship",
+   "Kuyavian-Pomeranian Voivodeship",
+   "Lesser Poland Voivodeship",
+   "Lublin Voivodeship",
+   "Pomeranian Voivodeship",
+   "Świętokrzyskie Voivodeship"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 380,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Białystok",
+   "Siemianowice Śląskie",
+   "powiat brodnicki",
+   "powiat brzozowski",
+   "powiat gostyniński",
+   "powiat mogileński",
+   "powiat piotrkowski",
+   "powiat stalowowolski"
+  ]
+ }
+}

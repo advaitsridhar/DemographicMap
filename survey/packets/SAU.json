@@ -1,0 +1,76 @@
+{
+ "iso3": "SAU",
+ "name": "Saudi Arabia",
+ "population": 36544431,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "other",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Arab",
+    "pct": 90.0
+   },
+   {
+    "group": "Afro-Asian",
+    "pct": 10.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 13,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Al Madinah Region",
+   "Eastern Region",
+   "Hayel Region",
+   "Najran Region",
+   "Northern Borders Region",
+   "Riyadh Region"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 147,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Adam",
+   "Al Taif",
+   "An Nabhaniyah",
+   "Ar Rass",
+   "As Sulaymi",
+   "Ash Shimasiyah",
+   "Duruma",
+   "Sharurah"
+  ]
+ }
+}

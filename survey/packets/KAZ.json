@@ -1,0 +1,97 @@
+{
+ "iso3": "KAZ",
+ "name": "Kazakhstan",
+ "population": 20432662,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 69.3
+   },
+   {
+    "group": "Christian",
+    "pct": 17.2
+   },
+   {
+    "group": "Buddhism",
+    "pct": 0.1
+   },
+   {
+    "group": "other",
+    "pct": 0.1
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Kazakh",
+    "pct": 71.0
+   },
+   {
+    "group": "Russian",
+    "pct": 14.9
+   },
+   {
+    "group": "Uzbek",
+    "pct": 3.3
+   },
+   {
+    "group": "Ukrainian",
+    "pct": 1.9
+   }
+  ],
+  "language": [
+   {
+    "group": "Kazakh",
+    "pct": 80.1
+   },
+   {
+    "group": "Russian",
+    "pct": 83.7
+   },
+   {
+    "group": "English",
+    "pct": 35.1
+   }
+  ]
+ },
+ "admin1": {
+  "count": 16,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Aktobe Region",
+   "Almaty Region",
+   "Atyrau Region",
+   "Jambyl Region",
+   "Kyzylorda Region",
+   "Mangystau Region"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 174,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Akzhaikskiy",
+   "Atbasarskiy",
+   "Irtyshskiy",
+   "Kaztalovskiy",
+   "Koksuskiy",
+   "Moyynkumskiy",
+   "Sarykol`skiy",
+   "Shortandinskiy"
+  ]
+ }
+}

@@ -1,0 +1,104 @@
+{
+ "iso3": "ETH",
+ "name": "Ethiopia",
+ "population": 121372632,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Ethiopian Orthodox",
+    "pct": 43.8
+   },
+   {
+    "group": "Muslim",
+    "pct": 31.3
+   },
+   {
+    "group": "Protestant",
+    "pct": 22.8
+   },
+   {
+    "group": "Catholic",
+    "pct": 0.7
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Oromo",
+    "pct": 35.8
+   },
+   {
+    "group": "Amhara",
+    "pct": 24.1
+   },
+   {
+    "group": "Somali",
+    "pct": 7.2
+   },
+   {
+    "group": "Tigray",
+    "pct": 5.7
+   }
+  ],
+  "language": [
+   {
+    "group": "Oromo",
+    "pct": 33.8
+   },
+   {
+    "group": "Amharic",
+    "pct": 29.3
+   },
+   {
+    "group": "Somali",
+    "pct": 6.2
+   },
+   {
+    "group": "Tigrigna",
+    "pct": 5.9
+   }
+  ]
+ },
+ "admin1": {
+  "count": 11,
+  "filled": 11,
+  "fields_filled": {
+   "religion": 11,
+   "ethnicity": 11,
+   "language": 11
+  },
+  "sample_names": [
+   "Addis Ababa",
+   "Afar",
+   "Beneshangul Gumu",
+   "Hareri",
+   "Oromia",
+   "Tigray"
+  ],
+  "filled_from": [
+   "adapter:alias",
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 74,
+  "filled": 72,
+  "fields_filled": {
+   "religion": 72,
+   "ethnicity": 72,
+   "language": 72
+  },
+  "sample_names": [
+   "Agnuak",
+   "Awi/Agew",
+   "Central",
+   "Gamo Gofa",
+   "Horo Guduru",
+   "North Shewa(R4)",
+   "Wolayita",
+   "Zone 1"
+  ]
+ }
+}

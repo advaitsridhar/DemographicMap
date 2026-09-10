@@ -1,0 +1,97 @@
+{
+ "iso3": "GRC",
+ "name": "Greece",
+ "population": 10424536,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Greek Orthodox",
+    "pct": 85.5,
+    "range": [
+     81.0,
+     90.0
+    ]
+   },
+   {
+    "group": "Muslim",
+    "pct": 2.0
+   },
+   {
+    "group": "other",
+    "pct": 3.0
+   },
+   {
+    "group": "none",
+    "pct": 9.5,
+    "range": [
+     4.0,
+     15.0
+    ]
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Greek",
+    "pct": 91.6
+   },
+   {
+    "group": "Albanian",
+    "pct": 4.4
+   },
+   {
+    "group": "other",
+    "pct": 4.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Greek",
+    "pct": 99.0
+   },
+   {
+    "group": "other",
+    "pct": 1.0
+   }
+  ]
+ },
+ "admin1": {
+  "count": 8,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Agion Oros",
+   "Attica",
+   "Crete",
+   "Egean",
+   "Epirus-Western Macedonia",
+   "Thessalia-Central Greece"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 14,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Agion Oros",
+   "Anatolikis Makedonias kai Thr*",
+   "Attikis",
+   "Kentrikis Makedonias",
+   "Kritis",
+   "Notioy Aigaioy",
+   "Thessalias",
+   "Voreioy Aigaioy"
+  ]
+ }
+}

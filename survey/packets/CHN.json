@@ -1,0 +1,88 @@
+{
+ "iso3": "CHN",
+ "name": "China",
+ "population": 1407181209,
+ "status": "partial",
+ "declared_not_collected": {
+  "religion": "China's census does not ask religion; it records the 56 official nationalities (minzu) instead."
+ },
+ "already_closed_routes": "three routes measured and closed (NBS 403 to a self-identifying agent; no API; see docs/SOURCES.md 'China'). Do not spend effort on NBS; note only if a NEW route (e.g. provincial yearbooks on HDX, academic mirrors of the 2020 census tabulations) appears.",
+ "national_record": {
+  "religion": {
+   "status": "not_collected",
+   "note": "China's census does not ask religion; it records the 56 official nationalities (minzu) instead."
+  },
+  "ethnicity": [
+   {
+    "group": "Han Chinese",
+    "pct": 91.1
+   },
+   {
+    "group": "ethnic minorities",
+    "pct": 8.9
+   }
+  ],
+  "language": [
+   {
+    "group": "Standard Chinese or Mandarin (official",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Putonghua",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "based on the Beijing dialect)",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Yue",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 33,
+  "filled": 4,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 4,
+   "language": 0
+  },
+  "sample_names": [
+   "Heilongjiang Province",
+   "Hunan Province",
+   "Inner Mongolia Autonomous Region",
+   "Jiangxi Province",
+   "Shanghai Municipality",
+   "Shanxi Province"
+  ],
+  "filled_from": [
+   "adapter:name",
+   "adapter:prefix"
+  ]
+ },
+ "admin2": {
+  "count": 2370,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Anxinxian",
+   "Baojishi",
+   "Gejiushi",
+   "Huaibinxian",
+   "Jiangdaxian",
+   "Kangdingxian",
+   "Yonghexian",
+   "Zhongxiangshi"
+  ]
+ }
+}

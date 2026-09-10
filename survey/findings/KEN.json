@@ -1,0 +1,27 @@
+{
+  "iso3": "KEN", "name": "Kenya", "researched_at": "2026-09-10",
+  "nso": {"name": "Kenya National Bureau of Statistics", "url": "https://www.knbs.or.ke/"},
+  "latest_census": {"year": 2019, "asks": {"religion": true, "ethnicity": true, "language": null},
+                    "notes": "Search result: Volume IV 'presents the distribution of enumerated population by socio-economic characteristics' including religion and ethnicity."},
+  "subnational_sources": [
+    {"fields": ["religion"], "title": "2019 KPHC - Distribution of Population by Religious Affiliation and County",
+     "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census/resource/2b2a7b48-ff46-4aa1-91c8-94b2c91e568b",
+     "publisher": "openAFRICA", "kind": "census", "format": "unknown", "geography": "county", "geography_count": 47,
+     "matches_boundary_level": "admin1", "year": 2019, "confidence": "medium",
+     "evidence": "Search result title names religious affiliation by county."},
+    {"fields": ["religion", "ethnicity"], "title": "2019 Kenya Population and Housing Census Volume IV",
+     "url": "https://www.knbs.or.ke/wp-content/uploads/2023/09/2019-Kenya-population-and-Housing-Census-Volume-4-Distribution-of-Population-by-Socio-Economic-Characteristics.pdf",
+     "publisher": "KNBS", "kind": "census", "format": "pdf", "geography": "county", "geography_count": 47,
+     "matches_boundary_level": "admin1", "year": 2019, "confidence": "high", "evidence": "KNBS's own upload."},
+    {"fields": ["religion"], "title": "Religious Affiliation - KNBS", "url": "https://www.knbs.or.ke/religious-affiliation/",
+     "publisher": "KNBS", "kind": "census", "format": "html", "geography": null, "geography_count": null,
+     "matches_boundary_level": "unknown", "year": 2019, "confidence": "low", "evidence": "Search result title only."}
+  ],
+  "wikipedia": {"country_list_articles": [{"title": "Religion in Kenya", "url": "https://en.wikipedia.org/wiki/Religion_in_Kenya", "appears_to_contain": "unverified"}],
+                "admin2_samples": []},
+  "tier": "A", "tier_reason": "Census religion by county on an open-data mirror; 47 counties = admin1.",
+  "replaces_existing": true,
+  "recommended_action": "Engine test finding, hand-written from one WebSearch; the agent's version supersedes it.",
+  "searches_run": ["Kenya 2019 census Volume IV religion by county KNBS"], "not_found": [],
+  "summary": "Test finding to validate scripts/survey_sources.py end to end."
+}

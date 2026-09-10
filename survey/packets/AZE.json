@@ -1,0 +1,83 @@
+{
+ "iso3": "AZE",
+ "name": "Azerbaijan",
+ "population": 10694370,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 97.3
+   },
+   {
+    "group": "Christian",
+    "pct": 2.6
+   },
+   {
+    "group": "other",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "unaffiliated",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Azerbaijani",
+    "pct": 94.8
+   },
+   {
+    "group": "other",
+    "pct": 1.8
+   }
+  ],
+  "language": [
+   {
+    "group": "Azerbaijani",
+    "pct": 96.1
+   },
+   {
+    "group": "other",
+    "pct": 1.4
+   }
+  ]
+ },
+ "admin1": {
+  "count": 2,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Contiguous Azerbaijan",
+   "Nakhchivan Autonomous Republic"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 79,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Dashkasan District",
+   "Gadabay District",
+   "Goygol District",
+   "Khankendi City",
+   "Khojaly District",
+   "Masally District",
+   "Salyan District",
+   "Siazan District"
+  ]
+ }
+}

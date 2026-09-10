@@ -1,0 +1,74 @@
+{
+ "iso3": "MSR",
+ "name": "Montserrat",
+ "population": 5468,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 71.4
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 11.4
+   },
+   {
+    "group": "Rastafarian",
+    "pct": 1.4
+   },
+   {
+    "group": "Hindu",
+    "pct": 1.2
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "African/Black",
+    "pct": 86.2
+   },
+   {
+    "group": "mixed",
+    "pct": 4.8
+   },
+   {
+    "group": "Hispanic/Spanish",
+    "pct": 3.0
+   },
+   {
+    "group": "Caucasian/White",
+    "pct": 2.7
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": []
+ }
+}

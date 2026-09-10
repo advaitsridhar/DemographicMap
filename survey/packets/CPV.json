@@ -1,0 +1,93 @@
+{
+ "iso3": "CPV",
+ "name": "Cabo Verde",
+ "population": 611014,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 72.5
+   },
+   {
+    "group": "Protestant",
+    "pct": 4.0
+   },
+   {
+    "group": "Christian Rationalism",
+    "pct": 1.7
+   },
+   {
+    "group": "Muslim",
+    "pct": 1.3
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Creole",
+    "pct": 71.0
+   },
+   {
+    "group": "African",
+    "pct": 28.0
+   },
+   {
+    "group": "European",
+    "pct": 1.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Portuguese",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Crioulo",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 22,
+  "filled": 3,
+  "fields_filled": {
+   "religion": 3,
+   "ethnicity": 3,
+   "language": 0
+  },
+  "sample_names": [
+   "Boa Vista",
+   "Ribeira Grande de Santiago",
+   "Santa Cruz",
+   "São Salvador do Mundo",
+   "São Vicente",
+   "Tarrafal de São Nicolau"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 32,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Nossa Senhora Do Rosario",
+   "Santissimo Nome De Jesus",
+   "Santo Andre",
+   "Santo Crucifixo",
+   "Sao Joao Baptista",
+   "Sao Joao Baptista",
+   "Sao Miguel Arcanjo",
+   "Sao Nicolau Tolentino"
+  ]
+ }
+}

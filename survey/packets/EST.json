@@ -1,0 +1,107 @@
+{
+ "iso3": "EST",
+ "name": "Estonia",
+ "population": 1360745,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Orthodox",
+    "pct": 16.5
+   },
+   {
+    "group": "Protestant",
+    "pct": 9.2
+   },
+   {
+    "group": "other",
+    "pct": 3.0
+   },
+   {
+    "group": "none",
+    "pct": 58.4
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Estonians",
+    "pct": 68.5,
+    "count": 932603
+   },
+   {
+    "group": "Russians",
+    "pct": 20.3,
+    "count": 276125
+   },
+   {
+    "group": "Other ethnic nationalities",
+    "pct": 10.8,
+    "count": 146619
+   },
+   {
+    "group": "Ethnic nationality unknown",
+    "pct": 0.4,
+    "count": 5398
+   }
+  ],
+  "language": [
+   {
+    "group": "Estonian",
+    "pct": 67.2
+   },
+   {
+    "group": "Russian",
+    "pct": 28.5
+   },
+   {
+    "group": "other",
+    "pct": 3.7
+   },
+   {
+    "group": "unspecified",
+    "pct": 0.6
+   }
+  ]
+ },
+ "admin1": {
+  "count": 15,
+  "filled": 15,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 15,
+   "language": 0
+  },
+  "sample_names": [
+   "Harju maakond",
+   "Ida-Viru maakond",
+   "Lääne maakond",
+   "Lääne-Viru maakond",
+   "Pärnu maakond",
+   "Saare maakond"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 214,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Antsla vald",
+   "Hanila vald",
+   "Noo vald",
+   "Otepaa vald",
+   "Paikuse vald",
+   "Tori vald",
+   "Urvaste vald",
+   "Vandra alev"
+  ]
+ }
+}

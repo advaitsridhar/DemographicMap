@@ -1,0 +1,96 @@
+{
+ "iso3": "TUN",
+ "name": "Tunisia",
+ "population": 11962995,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 99.0
+   },
+   {
+    "group": "other",
+    "pct": 1.0,
+    "bound": "<"
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Arab",
+    "pct": 98.0
+   },
+   {
+    "group": "European",
+    "pct": 1.0
+   },
+   {
+    "group": "Jewish and other",
+    "pct": 1.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Arabic (official",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "one of the languages of commerce)",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Tamazight",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 24,
+  "filled": 1,
+  "fields_filled": {
+   "religion": 1,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Ben Arous",
+   "Jendouba",
+   "Nabeul",
+   "Siliana",
+   "Sousse",
+   "Zaghouan"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 264,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "أم العرائس",
+   "القلعة الخصباء",
+   "بوفيشة",
+   "بومرداس",
+   "جربة ميدون",
+   "سيدي بوزيد الغربية",
+   "كسرى",
+   "ملولش"
+  ]
+ }
+}

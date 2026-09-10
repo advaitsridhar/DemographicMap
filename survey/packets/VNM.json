@@ -1,0 +1,105 @@
+{
+ "iso3": "VNM",
+ "name": "Vietnam",
+ "population": 106688169,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": "census publishes religion/ethnicity nationally only (recorded). Only report if a provincial breakdown has since appeared.",
+ "national_record": {
+  "religion": [
+   {
+    "group": "Catholic",
+    "pct": 6.1
+   },
+   {
+    "group": "Buddhist",
+    "pct": 5.8
+   },
+   {
+    "group": "Protestant",
+    "pct": 1.0
+   },
+   {
+    "group": "other",
+    "pct": 0.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Kinh",
+    "pct": 85.3
+   },
+   {
+    "group": "Tay",
+    "pct": 1.9
+   },
+   {
+    "group": "Thai",
+    "pct": 1.9
+   },
+   {
+    "group": "Muong",
+    "pct": 1.5
+   }
+  ],
+  "language": [
+   {
+    "group": "Vietnamese",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "some French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Chinese",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 64,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bà Rịa–Vũng Tàu",
+   "Bắc Giang",
+   "Hà Giang",
+   "Lào Cai",
+   "Tiền Giang",
+   "Vĩnh Long"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 705,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Hoang Mai",
+   "Huong Thuy",
+   "Huyen Hong Ngu",
+   "Ia Pa",
+   "Krong Buk",
+   "Krong Pac",
+   "Nam Tra My",
+   "Nghia Hung"
+  ]
+ }
+}

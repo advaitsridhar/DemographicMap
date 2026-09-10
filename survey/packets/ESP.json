@@ -1,0 +1,76 @@
+{
+ "iso3": "ESP",
+ "name": "Spain",
+ "population": 47280433,
+ "status": "declared",
+ "declared_not_collected": {
+  "religion": "Spain's census does not ask religion (CIS survey data exists instead).",
+  "ethnicity": "Spain's census records nationality and birthplace, not ethnicity."
+ },
+ "already_closed_routes": "census does not ask religion/ethnicity (declared).",
+ "national_record": {
+  "religion": {
+   "status": "not_collected",
+   "note": "Spain's census does not ask religion (CIS survey data exists instead)."
+  },
+  "ethnicity": {
+   "status": "not_collected",
+   "note": "Spain's census records nationality and birthplace, not ethnicity."
+  },
+  "language": [
+   {
+    "group": "Castilian Spanish",
+    "pct": 74.0
+   },
+   {
+    "group": "Catalan",
+    "pct": 17.0
+   },
+   {
+    "group": "Galician",
+    "pct": 7.0
+   },
+   {
+    "group": "Basque",
+    "pct": 2.0
+   }
+  ]
+ },
+ "admin1": {
+  "count": 19,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Canarias",
+   "Comunitat Valenciana",
+   "Galicia",
+   "Illes Balears",
+   "País Vasco/Euskadi",
+   "Región de Murcia"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 52,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Alicante",
+   "Almeria",
+   "Balears, Illes",
+   "Ciudad Real",
+   "Gipuzkoa",
+   "Santa Cruz de Tenerife",
+   "Tarragona",
+   "Toledo"
+  ]
+ }
+}

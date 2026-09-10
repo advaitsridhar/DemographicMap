@@ -1,0 +1,84 @@
+{
+ "iso3": "STP",
+ "name": "Sao Tome and Principe",
+ "population": 223561,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Catholic",
+    "pct": 55.7
+   },
+   {
+    "group": "Adventist",
+    "pct": 4.1
+   },
+   {
+    "group": "Assembly of God",
+    "pct": 3.4
+   },
+   {
+    "group": "New Apostolic",
+    "pct": 2.9
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Mestico, Angolares (descendants of Angolan slaves), Forros (descendants of freed slaves), Servicais (contract laborers from Angola, Mozambique, and Cabo Verde), Tongas (children of"
+  },
+  "language": [
+   {
+    "group": "Portuguese",
+    "pct": 98.4
+   },
+   {
+    "group": "Forro",
+    "pct": 36.2
+   },
+   {
+    "group": "Cabo Verdian",
+    "pct": 8.5
+   },
+   {
+    "group": "French",
+    "pct": 6.8
+   }
+  ]
+ },
+ "admin1": {
+  "count": 2,
+  "filled": 1,
+  "fields_filled": {
+   "religion": 1,
+   "ethnicity": 1,
+   "language": 0
+  },
+  "sample_names": [
+   "Príncipe Province",
+   "São Tomé Province"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 7,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Cantagalo",
+   "Caué",
+   "Lemba",
+   "Lobata",
+   "Mé-zóxi",
+   "Pagué",
+   "Água Grande"
+  ]
+ }
+}

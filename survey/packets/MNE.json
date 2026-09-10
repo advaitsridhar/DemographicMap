@@ -1,0 +1,101 @@
+{
+ "iso3": "MNE",
+ "name": "Montenegro",
+ "population": 599849,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Orthodox",
+    "pct": 72.1
+   },
+   {
+    "group": "Muslim",
+    "pct": 19.1
+   },
+   {
+    "group": "Catholic",
+    "pct": 3.4
+   },
+   {
+    "group": "atheist",
+    "pct": 1.2
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Montenegrin",
+    "pct": 45.0
+   },
+   {
+    "group": "Serbian",
+    "pct": 28.7
+   },
+   {
+    "group": "Bosniak",
+    "pct": 8.7
+   },
+   {
+    "group": "Albanian",
+    "pct": 4.9
+   }
+  ],
+  "language": [
+   {
+    "group": "Serbian",
+    "pct": 42.9
+   },
+   {
+    "group": "Montenegrin",
+    "pct": 37.0
+   },
+   {
+    "group": "Bosnian",
+    "pct": 5.3
+   },
+   {
+    "group": "Albanian",
+    "pct": 5.3
+   }
+  ]
+ },
+ "admin1": {
+  "count": 23,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Berane Municipality",
+   "Kolašin Municipality",
+   "Mojkovac Municipality",
+   "Pljevlja Municipality",
+   "Podgorica Municipality",
+   "Tivat Municipality"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 23,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bijelo Polje Municipality",
+   "Gusinje Municipality",
+   "Herceg Novi Municipality",
+   "Nikšić Municipality",
+   "Pljevlja Municipality",
+   "Plužine Municipality",
+   "Ulcinj Municipality",
+   "Šavnik Municipality"
+  ]
+ }
+}

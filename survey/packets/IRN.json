@@ -1,0 +1,91 @@
+{
+ "iso3": "IRN",
+ "name": "Iran",
+ "population": 89177357,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 98.5
+   },
+   {
+    "group": "Christian",
+    "pct": 0.7
+   },
+   {
+    "group": "Baha'i",
+    "pct": 0.3
+   },
+   {
+    "group": "agnostic",
+    "pct": 0.3
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Persian, Azeri, Kurd, Lur, Baloch, Arab, Turkmen, and Turkic tribes"
+  },
+  "language": [
+   {
+    "group": "Persian Farsi",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Azeri and other Turkic dialects",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Kurdish",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Gilaki and Mazandarani",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 32,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Alborz",
+   "Chaharmahal and Bakhtiari",
+   "Fars",
+   "North Khorasan",
+   "Qom",
+   "Zanjan"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 431,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Babolsar",
+   "Basht",
+   "Hoveyzeh",
+   "Izeh",
+   "Jask",
+   "Kamyaran",
+   "Khur and Biabanak",
+   "Ramhormoz"
+  ]
+ }
+}

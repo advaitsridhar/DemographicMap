@@ -1,0 +1,87 @@
+{
+ "iso3": "QAT",
+ "name": "Qatar",
+ "population": 2568426,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 65.2
+   },
+   {
+    "group": "Christian",
+    "pct": 13.7
+   },
+   {
+    "group": "Hindu",
+    "pct": 15.9
+   },
+   {
+    "group": "Buddhist",
+    "pct": 3.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "non-Qatari",
+    "pct": 88.4
+   },
+   {
+    "group": "Qatari",
+    "pct": 11.6
+   }
+  ],
+  "language": [
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English commonly used as a second language",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 8,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Al Daayen",
+   "Al Khor and Al Thakhira",
+   "Al Sheehaniya",
+   "Al Wakra",
+   "Doha",
+   "Umm Slal"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 79,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "31",
+   "39",
+   "46",
+   "47",
+   "53",
+   "74",
+   "77",
+   "90"
+  ]
+ }
+}

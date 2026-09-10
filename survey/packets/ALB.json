@@ -1,0 +1,101 @@
+{
+ "iso3": "ALB",
+ "name": "Albania",
+ "population": 2551837,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 56.7
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 10.0
+   },
+   {
+    "group": "Orthodox",
+    "pct": 6.8
+   },
+   {
+    "group": "atheist",
+    "pct": 2.5
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Albanian",
+    "pct": 82.6
+   },
+   {
+    "group": "Greek",
+    "pct": 0.9
+   },
+   {
+    "group": "other",
+    "pct": 1.0
+   },
+   {
+    "group": "unspecified",
+    "pct": 15.5
+   }
+  ],
+  "language": [
+   {
+    "group": "Albanian",
+    "pct": 98.8
+   },
+   {
+    "group": "Greek",
+    "pct": 0.5
+   },
+   {
+    "group": "other",
+    "pct": 0.6
+   },
+   {
+    "group": "unspecified",
+    "pct": 0.1
+   }
+  ]
+ },
+ "admin1": {
+  "count": 12,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Dibër",
+   "Durrës",
+   "Korçë",
+   "Lezhë",
+   "Shkodër",
+   "Vlorë"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 36,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Berat",
+   "Delvinë",
+   "Fier",
+   "Kukës",
+   "Mirditë",
+   "Përmet",
+   "Tepelenë",
+   "Vlorë"
+  ]
+ }
+}

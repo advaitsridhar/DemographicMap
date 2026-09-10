@@ -1,0 +1,105 @@
+{
+ "iso3": "IDN",
+ "name": "Indonesia",
+ "population": 283587097,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": "BPS WebAPI needs a free key only the repo owner can register; adapter route known. Only report if a keyless source of religion by kabupaten exists.",
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 87.4
+   },
+   {
+    "group": "Protestant",
+    "pct": 7.5
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 3.1
+   },
+   {
+    "group": "Hindu",
+    "pct": 1.7
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Javanese",
+    "pct": 40.1
+   },
+   {
+    "group": "Sundanese",
+    "pct": 15.5
+   },
+   {
+    "group": "Malay",
+    "pct": 3.7
+   },
+   {
+    "group": "Batak",
+    "pct": 3.6
+   }
+  ],
+  "language": [
+   {
+    "group": "Bahasa Indonesia (official",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "modified form of Malay)",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Dutch",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 34,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Aceh",
+   "Bali",
+   "North Sumatra",
+   "Riau",
+   "South Sulawesi",
+   "West Sulawesi"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 518,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bandung Barat",
+   "Barru",
+   "Jeneponto",
+   "Kota Bandung",
+   "Kota Gorontalo",
+   "Sumba Tengah",
+   "Tanjung Jabung Timur",
+   "Wonogiri"
+  ]
+ }
+}

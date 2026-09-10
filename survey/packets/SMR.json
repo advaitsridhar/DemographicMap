@@ -1,0 +1,62 @@
+{
+ "iso3": "SMR",
+ "name": "San Marino",
+ "population": 35291,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Roman Catholic"
+  },
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Sammarinese, Italian"
+  },
+  "language": [
+   {
+    "group": "Italian",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 9,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Acquaviva",
+   "Chiesanuova",
+   "Domagnano",
+   "Fiorentino",
+   "Montegiardino",
+   "Serravalle"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 9,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Acquaviva",
+   "Chiesanuova",
+   "Città di San Marino",
+   "Domagnano",
+   "Faetano",
+   "Fiorentino",
+   "Montegiardino",
+   "Serravalle"
+  ]
+ }
+}

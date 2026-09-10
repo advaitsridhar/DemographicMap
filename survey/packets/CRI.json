@@ -1,0 +1,95 @@
+{
+ "iso3": "CRI",
+ "name": "Costa Rica",
+ "population": 5304932,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 47.5
+   },
+   {
+    "group": "Evangelical and Pentecostal",
+    "pct": 19.8
+   },
+   {
+    "group": "Jehovah's Witness",
+    "pct": 1.4
+   },
+   {
+    "group": "other Protestant",
+    "pct": 1.2
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "White or Mestizo",
+    "pct": 83.6
+   },
+   {
+    "group": "Mulatto",
+    "pct": 6.7
+   },
+   {
+    "group": "Indigenous",
+    "pct": 2.4
+   },
+   {
+    "group": "Black or African descent",
+    "pct": 1.1
+   }
+  ],
+  "language": [
+   {
+    "group": "Spanish",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 7,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Provincia Alajuela",
+   "Provincia Cartago",
+   "Provincia Guanacaste",
+   "Provincia Heredia",
+   "Provincia Puntarenas",
+   "Provincia San José"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 83,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Acosta",
+   "Alajuela",
+   "Canas",
+   "Dota",
+   "Liberia",
+   "Osa",
+   "San Jose",
+   "Turrubares"
+  ]
+ }
+}

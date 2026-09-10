@@ -1,0 +1,83 @@
+{
+ "iso3": "TLS",
+ "name": "Timor-Leste",
+ "population": 1404785,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Catholic",
+    "pct": 90.7
+   },
+   {
+    "group": "other",
+    "pct": 7.1
+   },
+   {
+    "group": "Protestant Evangelical",
+    "pct": 1.9
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Austronesian (Malayo-Polynesian) (includes Tetun, Mambai, Tokodede, Galoli, Kemak, Baikeno), Melanesian-Papuan (includes Bunak, Fataluku, Bakasai), small Chinese minority"
+  },
+  "language": [
+   {
+    "group": "Tetun Prasa",
+    "pct": 30.6
+   },
+   {
+    "group": "Mambai",
+    "pct": 16.6
+   },
+   {
+    "group": "Makasai",
+    "pct": 10.5
+   },
+   {
+    "group": "Tetun Terik",
+    "pct": 6.1
+   }
+  ]
+ },
+ "admin1": {
+  "count": 13,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Ainaro",
+   "Bobonaro",
+   "Cova Lima",
+   "Dili",
+   "Manatuto",
+   "Viqueque"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 65,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Barique/Natarbora",
+   "Fatuberliu",
+   "Fatumean",
+   "Liquidoe",
+   "Maliana",
+   "Passabe",
+   "Vemasse",
+   "Vera Cruz"
+  ]
+ }
+}

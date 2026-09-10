@@ -1,0 +1,83 @@
+{
+ "iso3": "KOR",
+ "name": "South Korea",
+ "population": 51486343,
+ "status": "nothing",
+ "declared_not_collected": {
+  "ethnicity": "South Korea's census does not collect ethnicity."
+ },
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 17.0
+   },
+   {
+    "group": "Buddhist",
+    "pct": 16.0
+   },
+   {
+    "group": "Catholic",
+    "pct": 6.0
+   },
+   {
+    "group": "none",
+    "pct": 60.0
+   }
+  ],
+  "ethnicity": {
+   "status": "not_collected",
+   "note": "South Korea's census does not collect ethnicity."
+  },
+  "language": [
+   {
+    "group": "Korean",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 17,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Busan",
+   "Gangwon",
+   "Gwangju",
+   "Jeju",
+   "Sejong",
+   "South Jeolla"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 228,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Anyang-si",
+   "Boeun-gun",
+   "Bucheon-si",
+   "Gapyeong-gun",
+   "Gimpo-si",
+   "Hwaseong-si",
+   "Icheon-si",
+   "Yangcheon-gu"
+  ]
+ }
+}

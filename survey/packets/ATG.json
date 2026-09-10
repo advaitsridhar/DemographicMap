@@ -1,0 +1,95 @@
+{
+ "iso3": "ATG",
+ "name": "Antigua and Barbuda",
+ "population": 102634,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 68.3
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 8.2
+   },
+   {
+    "group": "other",
+    "pct": 12.2
+   },
+   {
+    "group": "unspecified",
+    "pct": 5.5
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "African descent",
+    "pct": 87.3
+   },
+   {
+    "group": "mixed",
+    "pct": 4.7
+   },
+   {
+    "group": "Hispanic",
+    "pct": 2.7
+   },
+   {
+    "group": "White",
+    "pct": 1.6
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Antiguan Creole",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 8,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Redonda",
+   "Saint George",
+   "Saint Mary",
+   "Saint Paul",
+   "Saint Peter",
+   "Saint Philip"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 8,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Barbuda",
+   "Redonda",
+   "Saint George",
+   "Saint John",
+   "Saint Mary",
+   "Saint Paul",
+   "Saint Peter",
+   "Saint Philip"
+  ]
+ }
+}

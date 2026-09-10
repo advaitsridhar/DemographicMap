@@ -1,0 +1,101 @@
+{
+ "iso3": "LUX",
+ "name": "Luxembourg",
+ "population": 671254,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 70.6
+   },
+   {
+    "group": "Muslim",
+    "pct": 2.3
+   },
+   {
+    "group": "other",
+    "pct": 0.4
+   },
+   {
+    "group": "unaffiliated",
+    "pct": 26.7
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Luxembourger",
+    "pct": 52.9
+   },
+   {
+    "group": "Portuguese",
+    "pct": 14.5
+   },
+   {
+    "group": "French",
+    "pct": 7.6
+   },
+   {
+    "group": "Italian",
+    "pct": 3.7
+   }
+  ],
+  "language": [
+   {
+    "group": "Luxembourgish",
+    "pct": 48.9
+   },
+   {
+    "group": "Portuguese",
+    "pct": 15.4
+   },
+   {
+    "group": "French",
+    "pct": 14.9
+   },
+   {
+    "group": "Italian",
+    "pct": 3.6
+   }
+  ]
+ },
+ "admin1": {
+  "count": 12,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Canton Capellen",
+   "Canton Clervaux",
+   "Canton Echternach",
+   "Canton Esch-sur-Alzette",
+   "Canton Remich",
+   "Canton Vianden"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 105,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bertrange",
+   "Dalheim",
+   "Diekirch",
+   "Hesperange",
+   "Leudelange",
+   "Mompach",
+   "Rambrouch",
+   "Vichten"
+  ]
+ }
+}

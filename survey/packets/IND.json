@@ -1,0 +1,93 @@
+{
+ "iso3": "IND",
+ "name": "India",
+ "population": 1419316933,
+ "status": "partial",
+ "declared_not_collected": {
+  "ethnicity": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead."
+ },
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Hindu",
+    "pct": 79.8
+   },
+   {
+    "group": "Muslim",
+    "pct": 14.2
+   },
+   {
+    "group": "Christian",
+    "pct": 2.3
+   },
+   {
+    "group": "Sikh",
+    "pct": 1.7
+   }
+  ],
+  "ethnicity": {
+   "status": "not_collected",
+   "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead."
+  },
+  "language": [
+   {
+    "group": "Hindi",
+    "pct": 43.6
+   },
+   {
+    "group": "Bengali",
+    "pct": 8.0
+   },
+   {
+    "group": "Marathi",
+    "pct": 6.9
+   },
+   {
+    "group": "Telugu",
+    "pct": 6.7
+   }
+  ]
+ },
+ "admin1": {
+  "count": 36,
+  "filled": 35,
+  "fields_filled": {
+   "religion": 35,
+   "ethnicity": 0,
+   "language": 35
+  },
+  "sample_names": [
+   "Chandīgarh",
+   "Gujarāt",
+   "Nāgāland",
+   "Punjab",
+   "Sikkim",
+   "Telangāna"
+  ],
+  "filled_from": [
+   "adapter:contains",
+   "adapter:name",
+   "adapter:prefix"
+  ]
+ },
+ "admin2": {
+  "count": 735,
+  "filled": 637,
+  "fields_filled": {
+   "religion": 637,
+   "ethnicity": 0,
+   "language": 637
+  },
+  "sample_names": [
+   "Ernakulam",
+   "Haveri",
+   "Imphal East",
+   "Kaimur (Bhabua)",
+   "Lohardaga",
+   "Pali",
+   "Shivpuri",
+   "Unokoti"
+  ]
+ }
+}

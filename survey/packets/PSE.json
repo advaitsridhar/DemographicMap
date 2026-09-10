@@ -1,0 +1,77 @@
+{
+ "iso3": "PSE",
+ "name": "Gaza, Gaza Strip",
+ "population": 2184652,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 98.5,
+    "range": [
+     98.0,
+     99.0
+    ]
+   },
+   {
+    "group": "Christian",
+    "pct": 1.0,
+    "bound": "<"
+   },
+   {
+    "group": "other",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "unaffiliated",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Palestinian Arab"
+  },
+  "language": [
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Hebrew",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": []
+ }
+}

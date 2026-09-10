@@ -1,0 +1,101 @@
+{
+ "iso3": "ARG",
+ "name": "Argentina",
+ "population": 45418098,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 62.9
+   },
+   {
+    "group": "Evangelical",
+    "pct": 15.3
+   },
+   {
+    "group": "Jehovah's Witness and Church of Jesus Christ",
+    "pct": 1.4
+   },
+   {
+    "group": "other",
+    "pct": 1.2
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "European and Mestizo",
+    "pct": 97.2
+   },
+   {
+    "group": "Indigenous",
+    "pct": 2.4
+   },
+   {
+    "group": "African descent",
+    "pct": 0.4
+   }
+  ],
+  "language": [
+   {
+    "group": "Spanish",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Italian",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "German",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 23,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Chubut",
+   "Formosa",
+   "La Pampa",
+   "La Roja",
+   "Neuquén",
+   "Tucumán"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 525,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Anelo",
+   "Castellanos",
+   "General Paz",
+   "General San Martín",
+   "Río Senguer",
+   "San Martín",
+   "San Rafael",
+   "Tala"
+  ]
+ }
+}

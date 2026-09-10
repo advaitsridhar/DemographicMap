@@ -1,0 +1,95 @@
+{
+ "iso3": "URY",
+ "name": "Uruguay",
+ "population": 3449444,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 42.0
+   },
+   {
+    "group": "Protestant",
+    "pct": 15.0
+   },
+   {
+    "group": "other",
+    "pct": 6.0
+   },
+   {
+    "group": "agnostic",
+    "pct": 3.0
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "White",
+    "pct": 87.7
+   },
+   {
+    "group": "Black",
+    "pct": 4.6
+   },
+   {
+    "group": "Indigenous",
+    "pct": 2.4
+   },
+   {
+    "group": "other",
+    "pct": 0.3
+   }
+  ],
+  "language": [
+   {
+    "group": "Spanish (official",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Rioplatense is the most widely spoken dialect)",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 19,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Artigas",
+   "Canelones",
+   "Cerro Largo",
+   "Durazno",
+   "Salto",
+   "San José"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 124,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Cerro Chato",
+   "Colonia Lavalleja",
+   "Maldonado",
+   "Municipality CH",
+   "Plácido Rosas",
+   "San Antonio",
+   "Soca",
+   "Tarariras"
+  ]
+ }
+}

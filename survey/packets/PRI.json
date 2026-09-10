@@ -1,0 +1,79 @@
+{
+ "iso3": "PRI",
+ "name": "Puerto Rico",
+ "population": 2984841,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 56.0
+   },
+   {
+    "group": "Protestant",
+    "pct": 33.0
+   },
+   {
+    "group": "other",
+    "pct": 2.0
+   },
+   {
+    "group": "atheist",
+    "pct": 1.0
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "White",
+    "pct": 75.8
+   },
+   {
+    "group": "Black/African American",
+    "pct": 12.4
+   },
+   {
+    "group": "other",
+    "pct": 8.5
+   },
+   {
+    "group": "mixed",
+    "pct": 3.3
+   }
+  ],
+  "language": [
+   {
+    "group": "Spanish",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": []
+ }
+}

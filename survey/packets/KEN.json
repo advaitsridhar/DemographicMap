@@ -1,0 +1,102 @@
+{
+ "iso3": "KEN",
+ "name": "Kenya",
+ "population": 55751717,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 85.5
+   },
+   {
+    "group": "Muslim",
+    "pct": 10.9
+   },
+   {
+    "group": "other",
+    "pct": 1.8
+   },
+   {
+    "group": "none",
+    "pct": 1.6
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Kikuyu",
+    "pct": 17.1
+   },
+   {
+    "group": "Luhya",
+    "pct": 14.3
+   },
+   {
+    "group": "Kalenjin",
+    "pct": 13.4
+   },
+   {
+    "group": "Luo",
+    "pct": 10.7
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Kiswahili",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "numerous indigenous languages",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 47,
+  "filled": 35,
+  "fields_filled": {
+   "religion": 35,
+   "ethnicity": 35,
+   "language": 0
+  },
+  "sample_names": [
+   "Embu",
+   "Isiolo",
+   "Kakamega",
+   "Kisii",
+   "Nyamira",
+   "Samburu"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 290,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Baringo Central",
+   "Gilgil",
+   "Githunguri",
+   "Kisauni",
+   "Kitutu Chache North",
+   "Likuyani",
+   "Mandera West",
+   "Mwatate"
+  ]
+ }
+}

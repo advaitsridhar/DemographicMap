@@ -1,0 +1,101 @@
+{
+ "iso3": "CZE",
+ "name": "Czechia",
+ "population": 10838703,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 7.0
+   },
+   {
+    "group": "other believers belonging to a church or religious society",
+    "pct": 6.0
+   },
+   {
+    "group": "believers unaffiliated with a religious society",
+    "pct": 9.1
+   },
+   {
+    "group": "none",
+    "pct": 47.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Czech",
+    "pct": 57.3
+   },
+   {
+    "group": "Moravian",
+    "pct": 3.4
+   },
+   {
+    "group": "other",
+    "pct": 7.7
+   },
+   {
+    "group": "unspecified",
+    "pct": 31.6
+   }
+  ],
+  "language": [
+   {
+    "group": "Czech",
+    "pct": 88.4
+   },
+   {
+    "group": "Slovak",
+    "pct": 1.5
+   },
+   {
+    "group": "other",
+    "pct": 2.6
+   },
+   {
+    "group": "unspecified",
+    "pct": 7.2
+   }
+  ]
+ },
+ "admin1": {
+  "count": 14,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Jihomoravský kraj",
+   "Karlovarský kraj",
+   "Liberecký kraj",
+   "Olomoucký kraj",
+   "Pardubický kraj",
+   "Plzeňský kraj"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 77,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Kroměříž",
+   "Liberec",
+   "Prague-West",
+   "Rakovnik",
+   "Semily",
+   "Strakonice",
+   "Třebíč",
+   "Žďár nad Sázavou"
+  ]
+ }
+}

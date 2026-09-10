@@ -1,0 +1,87 @@
+{
+ "iso3": "HTI",
+ "name": "Haiti",
+ "population": 11898812,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Catholic",
+    "pct": 55.0
+   },
+   {
+    "group": "Protestant",
+    "pct": 29.0
+   },
+   {
+    "group": "Vodou",
+    "pct": 2.1
+   },
+   {
+    "group": "other",
+    "pct": 4.6
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Black",
+    "pct": 95.0
+   },
+   {
+    "group": "mixed and White",
+    "pct": 5.0
+   }
+  ],
+  "language": [
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Creole",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 10,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Artibonite Department",
+   "Département de l'Ouest",
+   "Département des Nippes",
+   "Département du Sud-Est",
+   "Nord-Ouest Department",
+   "Sud Department"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 42,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Arrondissement Grande-Rivière-Du-Nord",
+   "Arrondissement Limbé",
+   "Arrondissement Ouanaminthe",
+   "Arrondissement de Cap-Haïtien",
+   "Arrondissement de Fort-Liberté",
+   "Arrondissement de Jacmel",
+   "Arrondissement de Léogâne",
+   "Arrondissement des Côteaux"
+  ]
+ }
+}

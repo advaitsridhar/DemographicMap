@@ -1,0 +1,98 @@
+{
+ "iso3": "FJI",
+ "name": "Fiji",
+ "population": 951611,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 45.0
+   },
+   {
+    "group": "Hindu",
+    "pct": 27.9
+   },
+   {
+    "group": "other Christian",
+    "pct": 10.4
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 9.1
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "iTaukei",
+    "pct": 56.8
+   },
+   {
+    "group": "Indo-Fijian",
+    "pct": 37.5
+   },
+   {
+    "group": "Rotuman",
+    "pct": 1.2
+   },
+   {
+    "group": "other",
+    "pct": 4.5
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "iTaukei",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Fiji Hindi",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 4,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Central",
+   "Eastern",
+   "Northern",
+   "Western"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 15,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Ba",
+   "Bua",
+   "Kadavu",
+   "Nadroga-Navosa",
+   "Naitasiri",
+   "Namosi",
+   "Ra",
+   "Rewa"
+  ]
+ }
+}

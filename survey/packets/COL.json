@@ -1,0 +1,101 @@
+{
+ "iso3": "COL",
+ "name": "Colombia",
+ "population": 49842298,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 63.6
+   },
+   {
+    "group": "Protestant",
+    "pct": 17.2
+   },
+   {
+    "group": "Jehovah's Witness",
+    "pct": 0.6
+   },
+   {
+    "group": "Church of Jesus Christ",
+    "pct": 0.1
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Mestizo and White",
+    "pct": 87.6
+   },
+   {
+    "group": "Afro-Colombian",
+    "pct": 6.8
+   },
+   {
+    "group": "Indigenous",
+    "pct": 4.3
+   },
+   {
+    "group": "unspecified",
+    "pct": 1.4
+   }
+  ],
+  "language": [
+   {
+    "group": "Spanish",
+    "pct": 98.9
+   },
+   {
+    "group": "indigenous",
+    "pct": 1.0
+   },
+   {
+    "group": "Portuguese",
+    "pct": 0.1
+   }
+  ]
+ },
+ "admin1": {
+  "count": 33,
+  "filled": 33,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 33,
+   "language": 0
+  },
+  "sample_names": [
+   "Archipiélago de San Andrés, Providencia y Santa Catalina",
+   "Bolívar",
+   "Cundinamarca",
+   "Guainía",
+   "Guaviare",
+   "Vichada"
+  ],
+  "filled_from": [
+   "adapter:alias",
+   "adapter:name",
+   "adapter:prefix"
+  ]
+ },
+ "admin2": {
+  "count": 1122,
+  "filled": 1121,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 1121,
+   "language": 0
+  },
+  "sample_names": [
+   "Briceño",
+   "Curití",
+   "El Carmen De Viboral",
+   "Jericó",
+   "Marinilla",
+   "Retiro",
+   "Roberto Payán (San José)",
+   "Santa Marta"
+  ]
+ }
+}

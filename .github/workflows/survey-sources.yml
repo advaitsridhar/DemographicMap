@@ -1,0 +1,60 @@
+name: Survey candidate sources
+
+# Research agents can search the web but cannot open a page, and the build
+# sandbox cannot reach any statistical host. This runs where the network is:
+# it requests every URL the agents proposed for a batch of countries, samples
+# their Wikipedia articles through the MediaWiki API, and commits one
+# measurement file per country under data/survey/ for a person to read.
+# Nothing under data/processed or site/ is touched.
+on:
+  workflow_dispatch:
+    inputs:
+      countries:
+        description: "Comma-separated ISO3 codes, or ALL for every finding on the branch"
+        type: string
+        required: true
+      wiki_samples:
+        description: "Second-level shape names to look up on Wikipedia per country"
+        type: string
+        default: "5"
+
+permissions:
+  contents: write
+
+jobs:
+  survey:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Survey
+        run: |
+          python3 scripts/survey_sources.py \
+            --findings survey/findings --packets survey/packets \
+            --countries "${{ inputs.countries }}" \
+            --wiki-samples "${{ inputs.wiki_samples }}" \
+            --out data/survey
+
+      - name: Commit measurements
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/survey
+          if git diff --cached --quiet; then
+            echo "nothing changed"; exit 0
+          fi
+          git commit -m "Survey: measured sources for ${{ inputs.countries }}"
+          # Batches run in parallel and all push to the same branch; a rebase
+          # onto whatever landed first keeps every batch's files.
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin "${{ github.ref_name }}" && git push && exit 0
+            sleep $((attempt * 5))
+          done
+          exit 1

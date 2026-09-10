@@ -1,0 +1,78 @@
+{
+ "iso3": "IMN",
+ "name": "Isle of Man",
+ "population": 92666,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 54.7
+   },
+   {
+    "group": "Muslim",
+    "pct": 0.5
+   },
+   {
+    "group": "Buddhist",
+    "pct": 0.5
+   },
+   {
+    "group": "Hindu",
+    "pct": 0.4
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "White",
+    "pct": 94.7
+   },
+   {
+    "group": "Asian",
+    "pct": 3.1
+   },
+   {
+    "group": "Mixed",
+    "pct": 1.0
+   },
+   {
+    "group": "Black",
+    "pct": 0.6
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Manx Gaelic",
+    "pct": 2.0
+   }
+  ]
+ },
+ "admin1": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": []
+ }
+}

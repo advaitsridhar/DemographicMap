@@ -1,0 +1,97 @@
+{
+ "iso3": "JAM",
+ "name": "Jamaica",
+ "population": 2938503,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 64.8
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 2.2
+   },
+   {
+    "group": "Jehovah's Witness",
+    "pct": 1.9
+   },
+   {
+    "group": "Rastafarian",
+    "pct": 1.1
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Black",
+    "pct": 92.1
+   },
+   {
+    "group": "mixed",
+    "pct": 6.1
+   },
+   {
+    "group": "East Indian",
+    "pct": 0.8
+   },
+   {
+    "group": "other",
+    "pct": 0.4
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Jamaican patois",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 14,
+  "filled": 14,
+  "fields_filled": {
+   "religion": 14,
+   "ethnicity": 14,
+   "language": 0
+  },
+  "sample_names": [
+   "Clarendon",
+   "Hanover",
+   "Kingston",
+   "Saint Catherine",
+   "Saint James",
+   "Saint Thomas"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 827,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Campbell Town",
+   "Claremont",
+   "Clarks Town",
+   "Flamstead",
+   "Fullersfield",
+   "Milk River",
+   "New Monkland",
+   "Orange Bay"
+  ]
+ }
+}

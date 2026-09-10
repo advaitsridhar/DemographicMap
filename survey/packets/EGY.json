@@ -1,0 +1,79 @@
+{
+ "iso3": "EGY",
+ "name": "Egypt",
+ "population": 112870457,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 90.0
+   },
+   {
+    "group": "Christian",
+    "pct": 10.0
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Egyptian",
+    "pct": 99.7
+   },
+   {
+    "group": "other",
+    "pct": 0.3
+   }
+  ],
+  "language": [
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English and French widely understood by educated classes",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 27,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Dakahlia Governorate",
+   "Ismailia Governorate",
+   "Luxor Governate",
+   "Monufia Governorate",
+   "North Sinai Governorate",
+   "Red Sea Governorate"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 364,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Al Wasta",
+   "Al-Ganoub",
+   "Luxor",
+   "Marsa Matruh",
+   "Qasr Al-Nile",
+   "Sidi Salim",
+   "Suez",
+   "Suhag"
+  ]
+ }
+}

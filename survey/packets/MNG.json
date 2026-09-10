@@ -1,0 +1,99 @@
+{
+ "iso3": "MNG",
+ "name": "Mongolia",
+ "population": 3281676,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Buddhist",
+    "pct": 51.8
+   },
+   {
+    "group": "no religion",
+    "pct": 40.6
+   },
+   {
+    "group": "Muslim",
+    "pct": 3.2
+   },
+   {
+    "group": "Shaman",
+    "pct": 2.5
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Khalkh",
+    "pct": 83.8
+   },
+   {
+    "group": "Kazak",
+    "pct": 3.8
+   },
+   {
+    "group": "Durvud",
+    "pct": 2.6
+   },
+   {
+    "group": "Bayad",
+    "pct": 2.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Mongolian",
+    "pct": 90.0
+   },
+   {
+    "group": "Turkic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Russian",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 22,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bayan-Ölgii",
+   "Dornod",
+   "Khentii",
+   "Sükhbaatar",
+   "Töv",
+   "Zavkhan"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 339,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Adaacag",
+   "Bat-O'lzii",
+   "Batsu'mber",
+   "Bayantal",
+   "Buyant",
+   "Delgerxangai",
+   "Erdene",
+   "Erdenesant"
+  ]
+ }
+}

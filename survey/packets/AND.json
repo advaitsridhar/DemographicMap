@@ -1,0 +1,97 @@
+{
+ "iso3": "AND",
+ "name": "Andorra",
+ "population": 85370,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "other",
+    "pct": 8.8
+   },
+   {
+    "group": "unaffiliated",
+    "pct": 1.7
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Spanish",
+    "pct": 34.3
+   },
+   {
+    "group": "Andorran",
+    "pct": 32.1
+   },
+   {
+    "group": "Portuguese",
+    "pct": 10.0
+   },
+   {
+    "group": "French",
+    "pct": 5.6
+   }
+  ],
+  "language": [
+   {
+    "group": "Catalan",
+    "pct": 44.1
+   },
+   {
+    "group": "Castilian",
+    "pct": 40.3
+   },
+   {
+    "group": "Portuguese",
+    "pct": 13.5
+   },
+   {
+    "group": "French",
+    "pct": 10.0
+   }
+  ]
+ },
+ "admin1": {
+  "count": 7,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Andorra la Vella",
+   "Canillo",
+   "Escaldes-Engordany",
+   "La Massana",
+   "Ordino",
+   "Sant Julia de Loria"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 7,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Andorra la Vella",
+   "Canillo",
+   "Encamp",
+   "Escaldes-Engordany",
+   "La Massana",
+   "Ordino",
+   "Sant Julia de Loria"
+  ]
+ }
+}

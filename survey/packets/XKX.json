@@ -1,0 +1,101 @@
+{
+ "iso3": "XKX",
+ "name": "Kosovo",
+ "population": 1977093,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 95.6
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 2.2
+   },
+   {
+    "group": "Orthodox",
+    "pct": 1.5
+   },
+   {
+    "group": "other",
+    "pct": 0.1
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Albanians",
+    "pct": 92.9
+   },
+   {
+    "group": "Bosniaks",
+    "pct": 1.6
+   },
+   {
+    "group": "Serbs",
+    "pct": 1.5
+   },
+   {
+    "group": "Turk",
+    "pct": 1.1
+   }
+  ],
+  "language": [
+   {
+    "group": "Albanian",
+    "pct": 94.5
+   },
+   {
+    "group": "Bosnian",
+    "pct": 1.7
+   },
+   {
+    "group": "Serbian",
+    "pct": 1.6
+   },
+   {
+    "group": "Turkish",
+    "pct": 1.1
+   }
+  ]
+ },
+ "admin1": {
+  "count": 7,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "District of Ferizaj",
+   "District of Gjakova",
+   "District of Mitrovica",
+   "District of Peja",
+   "District of Prishtina",
+   "District of Prizren"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 38,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Municipality of Deçan",
+   "Municipality of Gjilan",
+   "Municipality of Junik",
+   "Municipality of Leposaviq",
+   "Municipality of Obiliq",
+   "Municipality of Peja",
+   "Municipality of Skenderaj",
+   "Municipality of Suhareka"
+  ]
+ }
+}

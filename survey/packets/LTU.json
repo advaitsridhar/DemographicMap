@@ -1,0 +1,101 @@
+{
+ "iso3": "LTU",
+ "name": "Lithuania",
+ "population": 2815687,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 74.2
+   },
+   {
+    "group": "Russian Orthodox",
+    "pct": 3.7
+   },
+   {
+    "group": "Old Believer",
+    "pct": 0.6
+   },
+   {
+    "group": "Evangelical Lutheran",
+    "pct": 0.6
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Lithuanian",
+    "pct": 84.6
+   },
+   {
+    "group": "Polish",
+    "pct": 6.5
+   },
+   {
+    "group": "Russian",
+    "pct": 5.0
+   },
+   {
+    "group": "Belarusian",
+    "pct": 1.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Lithuanian",
+    "pct": 85.3
+   },
+   {
+    "group": "Russian",
+    "pct": 6.8
+   },
+   {
+    "group": "Polish",
+    "pct": 5.1
+   },
+   {
+    "group": "other",
+    "pct": 1.1
+   }
+  ]
+ },
+ "admin1": {
+  "count": 10,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Marijampole County",
+   "Panevezys County",
+   "Siauliai County",
+   "Telsiai County",
+   "Utena County",
+   "Vilnius County"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 60,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Druskininkų savivaldybė",
+   "Jurbarko rajono savivaldybė",
+   "Kaišiadorių rajono savivaldybė",
+   "Kauno miesto savivaldybė",
+   "Kretinga District Municipality",
+   "Plungės rajono savivaldybė",
+   "Prienai District Municipality",
+   "Raseinių rajono savivaldybė"
+  ]
+ }
+}

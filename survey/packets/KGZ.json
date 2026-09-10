@@ -1,0 +1,97 @@
+{
+ "iso3": "KGZ",
+ "name": "Kyrgyzstan",
+ "population": 6219751,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 90.0
+   },
+   {
+    "group": "Christian",
+    "pct": 7.0
+   },
+   {
+    "group": "other",
+    "pct": 3.0
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Kyrgyz",
+    "pct": 73.8
+   },
+   {
+    "group": "Uzbek",
+    "pct": 14.8
+   },
+   {
+    "group": "Russian",
+    "pct": 5.1
+   },
+   {
+    "group": "Dungan",
+    "pct": 1.1
+   }
+  ],
+  "language": [
+   {
+    "group": "Kyrgyz",
+    "pct": 71.4
+   },
+   {
+    "group": "Uzbek",
+    "pct": 14.4
+   },
+   {
+    "group": "Russian",
+    "pct": 9.0
+   },
+   {
+    "group": "other",
+    "pct": 5.2
+   }
+  ]
+ },
+ "admin1": {
+  "count": 7,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Batken Region",
+   "Issyk-Kul Region",
+   "Jalal-Abad Region",
+   "Naryn Region",
+   "Osh Region",
+   "Talas Region"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 41,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Ak-Suu",
+   "Ak-Talaa",
+   "Alamudun",
+   "Alay",
+   "Kadamjay",
+   "Kara-Buura",
+   "Suzak",
+   "Toktogul"
+  ]
+ }
+}

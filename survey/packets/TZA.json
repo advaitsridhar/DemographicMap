@@ -1,0 +1,100 @@
+{
+ "iso3": "TZA",
+ "name": "Tanzania",
+ "population": 69145464,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 63.1
+   },
+   {
+    "group": "Muslim",
+    "pct": 34.1
+   },
+   {
+    "group": "folk religion",
+    "pct": 1.1
+   },
+   {
+    "group": "Buddhist",
+    "pct": 1.0,
+    "bound": "<"
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "mainland - African",
+    "pct": 99.0
+   },
+   {
+    "group": "other",
+    "pct": 1.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Kiswahili or Swahili",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Kiunguja",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English (official",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "primary language of commerce",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 30,
+  "filled": 24,
+  "fields_filled": {
+   "religion": 24,
+   "ethnicity": 24,
+   "language": 0
+  },
+  "sample_names": [
+   "Arusha",
+   "Dar es Salaam",
+   "Morogoro",
+   "Rukwa",
+   "Shinyanga",
+   "Zanzibar Urban/West"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 170,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Handeni",
+   "Itilima",
+   "Missenyi",
+   "Momba",
+   "Mpanda",
+   "Shinyanga Urban",
+   "Tunduma",
+   "Urambo"
+  ]
+ }
+}

@@ -1,0 +1,107 @@
+{
+ "iso3": "NER",
+ "name": "Niger",
+ "population": 27322555,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 95.5
+   },
+   {
+    "group": "ethnic religionist",
+    "pct": 4.1
+   },
+   {
+    "group": "Christian",
+    "pct": 0.3
+   },
+   {
+    "group": "agnostics and other",
+    "pct": 0.1
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Hausa",
+    "pct": 53.1
+   },
+   {
+    "group": "Zarma/Songhai",
+    "pct": 21.2
+   },
+   {
+    "group": "Tuareg",
+    "pct": 11.0
+   },
+   {
+    "group": "Fulani",
+    "pct": 6.5
+   }
+  ],
+  "language": [
+   {
+    "group": "Hausa",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Zarma",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Fufulde",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 6,
+  "filled": 3,
+  "fields_filled": {
+   "religion": 3,
+   "ethnicity": 3,
+   "language": 0
+  },
+  "sample_names": [
+   "Dossa",
+   "Maradi",
+   "Niamey",
+   "Tahoua/Agadez",
+   "Tillaberi",
+   "Zinder/Diffa"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 67,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Aguié",
+   "Arlit",
+   "Diffa",
+   "Gothèye",
+   "Kantché",
+   "Madarounfa",
+   "Mirriah",
+   "Tibiri"
+  ]
+ }
+}

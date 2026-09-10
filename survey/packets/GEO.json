@@ -1,0 +1,101 @@
+{
+ "iso3": "GEO",
+ "name": "Georgia",
+ "population": 4900961,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Eastern Orthodox Christian",
+    "pct": 83.4
+   },
+   {
+    "group": "Muslim",
+    "pct": 10.7
+   },
+   {
+    "group": "Armenian Apostolic Christian",
+    "pct": 2.9
+   },
+   {
+    "group": "other",
+    "pct": 1.2
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Georgian",
+    "pct": 86.8
+   },
+   {
+    "group": "Azeri",
+    "pct": 6.3
+   },
+   {
+    "group": "Armenian",
+    "pct": 4.5
+   },
+   {
+    "group": "other",
+    "pct": 2.3
+   }
+  ],
+  "language": [
+   {
+    "group": "Georgian",
+    "pct": 87.6
+   },
+   {
+    "group": "Azeri",
+    "pct": 6.2
+   },
+   {
+    "group": "Armenian",
+    "pct": 3.9
+   },
+   {
+    "group": "Russian",
+    "pct": 1.2
+   }
+  ]
+ },
+ "admin1": {
+  "count": 12,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Abkhazia",
+   "Adjara",
+   "Imereti",
+   "Racha-Lechkhumi and Kvemo Svaneti",
+   "Samegrelo-Zemo Svaneti",
+   "Shida Kartli"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 68,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Ambrolauri",
+   "Chkhorotsku",
+   "Dmanisi",
+   "Lanchkhuti",
+   "Ozurgeti",
+   "Qvareli",
+   "Sagarejo",
+   "Telavi"
+  ]
+ }
+}

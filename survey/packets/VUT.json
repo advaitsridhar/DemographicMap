@@ -1,0 +1,93 @@
+{
+ "iso3": "VUT",
+ "name": "Vanuatu",
+ "population": 318007,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 39.9
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 12.1
+   },
+   {
+    "group": "Apostolic",
+    "pct": 2.3
+   },
+   {
+    "group": "Church of Jesus Christ",
+    "pct": 1.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Ni-Vanuatu",
+    "pct": 99.0
+   },
+   {
+    "group": "other",
+    "pct": 1.0
+   }
+  ],
+  "language": [
+   {
+    "group": "indigenous languages",
+    "pct": 82.6
+   },
+   {
+    "group": "Bislama",
+    "pct": 14.5
+   },
+   {
+    "group": "English",
+    "pct": 2.1
+   },
+   {
+    "group": "French",
+    "pct": 0.8
+   }
+  ]
+ },
+ "admin1": {
+  "count": 6,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Malampa",
+   "Penama",
+   "Sanma",
+   "Shefa Province",
+   "Tafea",
+   "Torba"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 58,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "East Santo",
+   "Erakor",
+   "Ifira",
+   "Motalava",
+   "North East Malekula",
+   "Paama",
+   "South Erromango",
+   "West Ambrym"
+  ]
+ }
+}

@@ -1,0 +1,101 @@
+{
+ "iso3": "BLZ",
+ "name": "Belize",
+ "population": 421960,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 40.1
+   },
+   {
+    "group": "Protestant",
+    "pct": 31.5
+   },
+   {
+    "group": "Jehovah's Witness",
+    "pct": 1.7
+   },
+   {
+    "group": "other",
+    "pct": 10.5
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Mestizo",
+    "pct": 52.9
+   },
+   {
+    "group": "Creole",
+    "pct": 25.9
+   },
+   {
+    "group": "Maya",
+    "pct": 11.3
+   },
+   {
+    "group": "Garifuna",
+    "pct": 6.1
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": 62.9
+   },
+   {
+    "group": "Spanish",
+    "pct": 56.6
+   },
+   {
+    "group": "Creole",
+    "pct": 44.6
+   },
+   {
+    "group": "Maya",
+    "pct": 10.5
+   }
+  ]
+ },
+ "admin1": {
+  "count": 6,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Belize",
+   "Cayo",
+   "Corozal",
+   "Orange Walk",
+   "Stann Creek",
+   "Toledo"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 31,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Cayo Central",
+   "Cayo North",
+   "Corozal North",
+   "Fort George",
+   "Orange Walk North",
+   "Pickstock",
+   "Queen Square",
+   "Toledo West"
+  ]
+ }
+}

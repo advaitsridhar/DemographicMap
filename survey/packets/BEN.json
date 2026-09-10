@@ -1,0 +1,107 @@
+{
+ "iso3": "BEN",
+ "name": "Benin",
+ "population": 15186090,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 27.7
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 25.5
+   },
+   {
+    "group": "Protestant",
+    "pct": 13.5
+   },
+   {
+    "group": "Vodoun",
+    "pct": 11.6
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Fon and related",
+    "pct": 38.4
+   },
+   {
+    "group": "Adja and related",
+    "pct": 15.1
+   },
+   {
+    "group": "Yoruba and related",
+    "pct": 12.0
+   },
+   {
+    "group": "Bariba and related",
+    "pct": 9.6
+   }
+  ],
+  "language": [
+   {
+    "group": "55 languages",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Fon",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "half a dozen regionally important languages in the north",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 12,
+  "filled": 9,
+  "fields_filled": {
+   "religion": 9,
+   "ethnicity": 9,
+   "language": 0
+  },
+  "sample_names": [
+   "Atakora",
+   "Atlanique",
+   "Collines",
+   "Donga",
+   "Littoral",
+   "Zou"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 77,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bante",
+   "Copargo",
+   "Cotonou",
+   "Houeyogbe",
+   "Kalale",
+   "Ouinhi",
+   "Perere",
+   "Tanguieta"
+  ]
+ }
+}

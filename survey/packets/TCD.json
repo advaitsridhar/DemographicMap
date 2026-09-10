@@ -1,0 +1,105 @@
+{
+ "iso3": "TCD",
+ "name": "Chad",
+ "population": 19674004,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 52.1
+   },
+   {
+    "group": "Protestant",
+    "pct": 23.9
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 20.0
+   },
+   {
+    "group": "animist",
+    "pct": 0.3
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Sara",
+    "pct": 30.5
+   },
+   {
+    "group": "Kanembu/Bornu/Buduma",
+    "pct": 9.8
+   },
+   {
+    "group": "Arab",
+    "pct": 9.7
+   },
+   {
+    "group": "Wadai/Maba/Masalit/Mimi",
+    "pct": 7.0
+   }
+  ],
+  "language": [
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Sara",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "more than 120 languages and dialects",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 23,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Ennedi-Ouest",
+   "Hadjer-Lamis",
+   "Kanem",
+   "Logone Oriental",
+   "Mayo-Kebbi Est",
+   "Sila"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 70,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Barh-El-Gazel Sud",
+   "Barh-Sara",
+   "Dababa",
+   "Kimiti",
+   "Kouh Ouest",
+   "La Nya",
+   "Mayo-Lemié",
+   "Nord Kanem"
+  ]
+ }
+}

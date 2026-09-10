@@ -1,0 +1,98 @@
+{
+ "iso3": "SLB",
+ "name": "Solomon Islands",
+ "population": 738774,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 73.4
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 19.6
+   },
+   {
+    "group": "other Christian",
+    "pct": 2.9
+   },
+   {
+    "group": "other",
+    "pct": 4.0
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Melanesian",
+    "pct": 95.3
+   },
+   {
+    "group": "Polynesian",
+    "pct": 3.1
+   },
+   {
+    "group": "Micronesian",
+    "pct": 1.2
+   },
+   {
+    "group": "other",
+    "pct": 0.3
+   }
+  ],
+  "language": [
+   {
+    "group": "Melanesian pidgin",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": 1.5,
+    "range": [
+     1.0,
+     2.0
+    ]
+   }
+  ]
+ },
+ "admin1": {
+  "count": 10,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Capital Territory (Honiara)",
+   "Choiseul",
+   "Guadalcanal",
+   "Isabel",
+   "Rennell and Bellona",
+   "Western"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 49,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Baegu-Asifola",
+   "Central Honiara",
+   "North New Georgia",
+   "South Choiseul",
+   "South Guadalcanal",
+   "Ulawa-Ugi",
+   "West Kwara'ae",
+   "West New Georgia-Vonavona"
+  ]
+ }
+}

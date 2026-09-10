@@ -1,0 +1,88 @@
+{
+ "iso3": "PRT",
+ "name": "Portugal",
+ "population": 10194277,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Catholic",
+    "pct": 68.1
+   },
+   {
+    "group": "not applicable",
+    "pct": 12.9
+   },
+   {
+    "group": "no religion",
+    "pct": 12.0
+   },
+   {
+    "group": "no response",
+    "pct": 2.2
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Portuguese",
+    "pct": 95.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Portuguese",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Mirandese (official",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "but locally used)",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 20,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "BEJA",
+   "CASTELO BRANCO",
+   "COIMBRA",
+   "PORTALEGRE",
+   "Região Autónoma dos Açores",
+   "SANTARÉM"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 311,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Lajes do Pico",
+   "Montemor-o-Novo",
+   "Nazare",
+   "Oleiros",
+   "Palmela",
+   "Penedono",
+   "Sao Roque do Pico",
+   "Serta"
+  ]
+ }
+}

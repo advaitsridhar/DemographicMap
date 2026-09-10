@@ -1,0 +1,97 @@
+{
+ "iso3": "HRV",
+ "name": "Croatia",
+ "population": 4071208,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 79.0
+   },
+   {
+    "group": "Orthodox",
+    "pct": 3.3
+   },
+   {
+    "group": "Protestant",
+    "pct": 0.3
+   },
+   {
+    "group": "other Christian",
+    "pct": 4.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Croat",
+    "pct": 91.6
+   },
+   {
+    "group": "Serb",
+    "pct": 3.2
+   },
+   {
+    "group": "other",
+    "pct": 3.9
+   },
+   {
+    "group": "unspecified",
+    "pct": 1.3
+   }
+  ],
+  "language": [
+   {
+    "group": "Croatian",
+    "pct": 95.2
+   },
+   {
+    "group": "Serbian",
+    "pct": 1.2
+   },
+   {
+    "group": "other",
+    "pct": 3.1
+   }
+  ]
+ },
+ "admin1": {
+  "count": 21,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Brod-Posavina",
+   "Dubrovnik-Neretva",
+   "Koprivnica-Križevci",
+   "Međimurje",
+   "Sisak-Moslavina",
+   "Šibenik-Knin"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 545,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Općina Barilović",
+   "Općina Bukovlje",
+   "Općina Crnac",
+   "Općina Gornji Bogićevci",
+   "Općina Lokve",
+   "Općina Mihovljan",
+   "Općina Zagvozd",
+   "Općina Zažablje"
+  ]
+ }
+}

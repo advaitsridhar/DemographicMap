@@ -1,0 +1,65 @@
+{
+ "iso3": "VAT",
+ "name": "Holy See (Vatican City)",
+ "population": 1000,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Roman Catholic"
+  },
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Italian, Swiss, Argentinian, and other nationalities from around the world (2017)"
+  },
+  "language": [
+   {
+    "group": "Italian",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Latin",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "various other languages",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 1,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Vatican City"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 1,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Vatican City"
+  ]
+ }
+}

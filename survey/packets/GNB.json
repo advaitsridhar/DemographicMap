@@ -1,0 +1,105 @@
+{
+ "iso3": "GNB",
+ "name": "Guinea-Bissau",
+ "population": 2132325,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 46.1
+   },
+   {
+    "group": "folk religions",
+    "pct": 30.6
+   },
+   {
+    "group": "Christian",
+    "pct": 18.9
+   },
+   {
+    "group": "other or unaffiliated",
+    "pct": 4.4
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Balanta",
+    "pct": 30.0
+   },
+   {
+    "group": "Fulani",
+    "pct": 30.0
+   },
+   {
+    "group": "Manjaco",
+    "pct": 14.0
+   },
+   {
+    "group": "Mandinga",
+    "pct": 13.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Portuguese-based Creole",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Portuguese (official",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "largely used as a second or third language)",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Pular",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 9,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bafatá",
+   "Bissau",
+   "Bolama",
+   "Gabu",
+   "Quinara",
+   "Tombali"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 39,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Setor de Bafata",
+   "Setor de Boe",
+   "Setor de Buba",
+   "Setor de Bula",
+   "Setor de Caravela",
+   "Setor de Empada",
+   "Setor de Fulacunda",
+   "Setor de Madina do Bo˒"
+  ]
+ }
+}

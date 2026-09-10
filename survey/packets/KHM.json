@@ -1,0 +1,101 @@
+{
+ "iso3": "KHM",
+ "name": "Cambodia",
+ "population": 17230333,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Buddhist",
+    "pct": 97.1
+   },
+   {
+    "group": "Muslim",
+    "pct": 2.0
+   },
+   {
+    "group": "Christian",
+    "pct": 0.3
+   },
+   {
+    "group": "other",
+    "pct": 0.5
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Khmer",
+    "pct": 95.4
+   },
+   {
+    "group": "Cham",
+    "pct": 2.4
+   },
+   {
+    "group": "Chinese",
+    "pct": 1.5
+   },
+   {
+    "group": "other",
+    "pct": 0.7
+   }
+  ],
+  "language": [
+   {
+    "group": "Khmer",
+    "pct": 95.8
+   },
+   {
+    "group": "minority languages",
+    "pct": 2.9
+   },
+   {
+    "group": "Chinese",
+    "pct": 0.6
+   },
+   {
+    "group": "Vietnamese",
+    "pct": 0.5
+   }
+  ]
+ },
+ "admin1": {
+  "count": 25,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Battambang",
+   "Mondulkiri",
+   "Preah Vihear",
+   "Pursat",
+   "Siem Reap",
+   "Tbong Khmum"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 197,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Chhaeb",
+   "Chhloung",
+   "Leuk Daek",
+   "Samraong",
+   "Siem Reap",
+   "Srei Snam",
+   "Treang",
+   "Tuek Phos"
+  ]
+ }
+}

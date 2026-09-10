@@ -1,0 +1,107 @@
+{
+ "iso3": "NGA",
+ "name": "Nigeria",
+ "population": 244344065,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": "religion/ethnicity never tabulated by any census since 1963 (recorded). Afrobarometer fills states. Report only a new subnational source (e.g. NDHS/MICS by state are surveys).",
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 53.5
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 10.6
+   },
+   {
+    "group": "other Christian",
+    "pct": 35.3
+   },
+   {
+    "group": "other",
+    "pct": 0.6
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Hausa",
+    "pct": 30.0
+   },
+   {
+    "group": "Yoruba",
+    "pct": 15.5
+   },
+   {
+    "group": "Igbo",
+    "pct": 15.2
+   },
+   {
+    "group": "Fulani",
+    "pct": 6.0
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Hausa",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Yoruba",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Igbo",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 37,
+  "filled": 29,
+  "fields_filled": {
+   "religion": 29,
+   "ethnicity": 29,
+   "language": 0
+  },
+  "sample_names": [
+   "Akwa Ibom",
+   "Bauchi",
+   "Benue",
+   "Jigawa",
+   "Sokoto",
+   "Taraba"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 774,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Brass",
+   "Dala",
+   "Gboko",
+   "Iwajowa",
+   "Kiri Kasama",
+   "Mopa-Muro",
+   "Ogbadibo",
+   "Oyo East"
+  ]
+ }
+}

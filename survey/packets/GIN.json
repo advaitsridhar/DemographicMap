@@ -1,0 +1,107 @@
+{
+ "iso3": "GIN",
+ "name": "Guinea",
+ "population": 14374590,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 85.2
+   },
+   {
+    "group": "Christian",
+    "pct": 13.4
+   },
+   {
+    "group": "animist",
+    "pct": 0.2
+   },
+   {
+    "group": "none",
+    "pct": 1.2
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Fulani",
+    "pct": 33.4
+   },
+   {
+    "group": "Malinke",
+    "pct": 29.4
+   },
+   {
+    "group": "Susu",
+    "pct": 21.2
+   },
+   {
+    "group": "Guerze",
+    "pct": 7.8
+   }
+  ],
+  "language": [
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Pular",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Maninka",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Susu",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 8,
+  "filled": 8,
+  "fields_filled": {
+   "religion": 8,
+   "ethnicity": 8,
+   "language": 0
+  },
+  "sample_names": [
+   "Faranah",
+   "Kankan",
+   "Kindia",
+   "Labe",
+   "Mamou",
+   "Nzerekore"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 34,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Beyla",
+   "Boke",
+   "Dalaba",
+   "Dubreka",
+   "Forecariah",
+   "Gaoual",
+   "Kankan",
+   "Kouroussa"
+  ]
+ }
+}

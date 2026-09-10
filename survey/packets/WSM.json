@@ -1,0 +1,97 @@
+{
+ "iso3": "WSM",
+ "name": "Samoa",
+ "population": 210223,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 54.9
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 18.8
+   },
+   {
+    "group": "Church of Jesus Christ",
+    "pct": 16.9
+   },
+   {
+    "group": "Worship Centre",
+    "pct": 2.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Samoan",
+    "pct": 96.0
+   },
+   {
+    "group": "Samoan/New Zealander",
+    "pct": 2.0
+   },
+   {
+    "group": "other",
+    "pct": 1.9
+   }
+  ],
+  "language": [
+   {
+    "group": "Samoan",
+    "pct": 91.1
+   },
+   {
+    "group": "Samoan/English",
+    "pct": 6.7
+   },
+   {
+    "group": "English",
+    "pct": 0.5
+   },
+   {
+    "group": "other",
+    "pct": 0.2
+   }
+  ]
+ },
+ "admin1": {
+  "count": 11,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Aiga-i-le-Tai",
+   "Gaga'emauga",
+   "Palauli",
+   "Tuamasaga",
+   "Va'a-o-Fonoti",
+   "Vaisigano"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 43,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Aiga i le Tai",
+   "Alataua West",
+   "Falealili",
+   "Gagaemauga I (PART)",
+   "Gagaifomauga I",
+   "Lepa",
+   "Palauli East",
+   "Vaimauga West"
+  ]
+ }
+}

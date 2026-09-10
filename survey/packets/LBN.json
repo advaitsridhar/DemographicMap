@@ -1,0 +1,102 @@
+{
+ "iso3": "LBN",
+ "name": "Lebanon",
+ "population": 5364482,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 67.8
+   },
+   {
+    "group": "Christian",
+    "pct": 32.4
+   },
+   {
+    "group": "Druze",
+    "pct": 4.5
+   },
+   {
+    "group": "very small numbers of Jews",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Arab",
+    "pct": 95.0
+   },
+   {
+    "group": "Armenian",
+    "pct": 4.0
+   },
+   {
+    "group": "other",
+    "pct": 1.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Armenian",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 9,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Beyrouth",
+   "Béqaa",
+   "Keserwan-Jbeil",
+   "Liban-Nord",
+   "Mont-Liban",
+   "Nabatîyé"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 26,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Baalbek",
+   "Batroun",
+   "Hasbaya",
+   "Jezzine",
+   "Marjaayoun",
+   "Nabatiye",
+   "West Bekaa",
+   "Zahle"
+  ]
+ }
+}

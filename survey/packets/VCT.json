@@ -1,0 +1,98 @@
+{
+ "iso3": "VCT",
+ "name": "Saint Vincent and the Grenadines",
+ "population": 100647,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 75.0
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 6.3
+   },
+   {
+    "group": "Rastafarian",
+    "pct": 1.1
+   },
+   {
+    "group": "Jehovah's Witness",
+    "pct": 0.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "African descent",
+    "pct": 71.2
+   },
+   {
+    "group": "mixed",
+    "pct": 23.0
+   },
+   {
+    "group": "Indigenous",
+    "pct": 3.0
+   },
+   {
+    "group": "East Indian/Indian",
+    "pct": 1.1
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Vincentian Creole English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "French patois",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 6,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Charlotte",
+   "Grenadines",
+   "Saint Andrew",
+   "Saint David",
+   "Saint George",
+   "Saint Patrick"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 6,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Charlotte",
+   "Grenadines",
+   "Saint Andrew",
+   "Saint David",
+   "Saint George",
+   "Saint Patrick"
+  ]
+ }
+}

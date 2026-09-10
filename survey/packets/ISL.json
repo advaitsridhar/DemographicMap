@@ -1,0 +1,105 @@
+{
+ "iso3": "ISL",
+ "name": "Iceland",
+ "population": 364036,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Evangelical Lutheran Church of Iceland",
+    "pct": 58.6
+   },
+   {
+    "group": "Independent Congregation of Reykjavik",
+    "pct": 2.6
+   },
+   {
+    "group": "Independent Congregation of Hafnarfjordur",
+    "pct": 1.9
+   },
+   {
+    "group": "pagan worship",
+    "pct": 1.5
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Icelandic",
+    "pct": 78.7
+   },
+   {
+    "group": "Polish",
+    "pct": 5.8
+   },
+   {
+    "group": "Danish",
+    "pct": 1.0
+   },
+   {
+    "group": "Ukrainian",
+    "pct": 1.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Icelandic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Polish",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Nordic languages",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 8,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Eastern Region",
+   "Northeastern Region",
+   "Northwestern Region",
+   "Southern Peninsula",
+   "Southern Region",
+   "Westfjords"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 73,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Eyja- og Miklaholtshreppur",
+   "Fjarðabyggð",
+   "Grýtubakkahreppur",
+   "Norðurþing",
+   "Rangárþing eystra",
+   "Skorradalshreppur",
+   "Sveitarfélagið Skagafjörðu",
+   "Tálknafjarðarhreppur"
+  ]
+ }
+}

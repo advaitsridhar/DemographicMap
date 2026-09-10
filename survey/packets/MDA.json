@@ -1,0 +1,102 @@
+{
+ "iso3": "MDA",
+ "name": "Moldova",
+ "population": 3578930,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Orthodox",
+    "pct": 90.1
+   },
+   {
+    "group": "other Christian",
+    "pct": 2.6
+   },
+   {
+    "group": "other",
+    "pct": 0.1
+   },
+   {
+    "group": "agnostic",
+    "pct": 0.1,
+    "bound": "<"
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Moldovan",
+    "pct": 75.1
+   },
+   {
+    "group": "Romanian",
+    "pct": 7.0
+   },
+   {
+    "group": "Ukrainian",
+    "pct": 6.6
+   },
+   {
+    "group": "Gagauz",
+    "pct": 4.6
+   }
+  ],
+  "language": [
+   {
+    "group": "Moldovan/Romanian",
+    "pct": 80.2
+   },
+   {
+    "group": "Russian",
+    "pct": 9.7
+   },
+   {
+    "group": "Gagauz",
+    "pct": 4.2
+   },
+   {
+    "group": "Ukrainian",
+    "pct": 3.9
+   }
+  ]
+ },
+ "admin1": {
+  "count": 37,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bender",
+   "Falesti",
+   "Ialoveni",
+   "RIscani",
+   "Rezina",
+   "Taraclia"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 37,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Basarabeasca",
+   "Cahul",
+   "Calarasi",
+   "Dubasari",
+   "Hincesti",
+   "Ialoveni",
+   "Leova",
+   "Transnistria"
+  ]
+ }
+}

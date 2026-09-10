@@ -1,0 +1,83 @@
+{
+ "iso3": "NLD",
+ "name": "Netherlands",
+ "population": 17833885,
+ "status": "nothing",
+ "declared_not_collected": {
+  "ethnicity": "The Netherlands records migration background, not ethnicity."
+ },
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 20.1
+   },
+   {
+    "group": "Protestant",
+    "pct": 14.8
+   },
+   {
+    "group": "Muslim",
+    "pct": 5.0
+   },
+   {
+    "group": "other",
+    "pct": 5.9
+   }
+  ],
+  "ethnicity": {
+   "status": "not_collected",
+   "note": "The Netherlands records migration background, not ethnicity."
+  },
+  "language": [
+   {
+    "group": "Dutch",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Frisian",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 12,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Drenthe",
+   "Flevoland",
+   "Fryslân",
+   "Limburg",
+   "Overijssel",
+   "Zeeland"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 344,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Amstelveen",
+   "Midden-Delfland",
+   "Nederweert",
+   "Rijssen-Holten",
+   "Súdwest-Fryslân",
+   "Texel",
+   "Tytsjerksteradiel",
+   "Westland"
+  ]
+ }
+}

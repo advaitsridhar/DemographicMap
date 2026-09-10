@@ -1,0 +1,105 @@
+{
+ "iso3": "MLI",
+ "name": "Mali",
+ "population": 22634423,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 93.9
+   },
+   {
+    "group": "Christian",
+    "pct": 2.8
+   },
+   {
+    "group": "animist",
+    "pct": 0.7
+   },
+   {
+    "group": "none",
+    "pct": 2.5
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Bambara",
+    "pct": 33.3
+   },
+   {
+    "group": "Fulani",
+    "pct": 13.3
+   },
+   {
+    "group": "Sarakole/Soninke/Marka",
+    "pct": 9.8
+   },
+   {
+    "group": "Senufo/Manianka",
+    "pct": 9.6
+   }
+  ],
+  "language": [
+   {
+    "group": "Bambara",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "French",
+    "pct": 17.2
+   },
+   {
+    "group": "Peuhl/Foulfoulbe/Fulani",
+    "pct": 9.4
+   },
+   {
+    "group": "Dogon",
+    "pct": 7.2
+   }
+  ]
+ },
+ "admin1": {
+  "count": 9,
+  "filled": 9,
+  "fields_filled": {
+   "religion": 7,
+   "ethnicity": 7,
+   "language": 9
+  },
+  "sample_names": [
+   "Bamako",
+   "Gao",
+   "Kayes",
+   "Kidal",
+   "Sikasso",
+   "Tombouctou"
+  ],
+  "filled_from": [
+   "adapter:alias",
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 50,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bougouni",
+   "Gao",
+   "Goundam",
+   "Koulikoro",
+   "Niafunke",
+   "Segou",
+   "Sikasso",
+   "Yelimane"
+  ]
+ }
+}

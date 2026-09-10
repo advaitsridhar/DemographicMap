@@ -1,0 +1,91 @@
+{
+ "iso3": "KWT",
+ "name": "Kuwait",
+ "population": 3172511,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 74.6
+   },
+   {
+    "group": "Christian",
+    "pct": 18.2
+   },
+   {
+    "group": "other and unspecified",
+    "pct": 7.2
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Kuwaiti",
+    "pct": 30.4
+   },
+   {
+    "group": "other Arab",
+    "pct": 27.4
+   },
+   {
+    "group": "Asian",
+    "pct": 40.3
+   },
+   {
+    "group": "African",
+    "pct": 1.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English widely spoken",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 6,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Ahmadi",
+   "Al Asimah",
+   "Farwaniya",
+   "Hawalli",
+   "Jahra",
+   "Mubarak Al-Kabeer"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 137,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Abu_Halifa",
+   "Fahad_Al-Ahmad",
+   "Ghornata",
+   "Hawalli",
+   "South Doha",
+   "Subhan",
+   "Taima",
+   "Zahra"
+  ]
+ }
+}

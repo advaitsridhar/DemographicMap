@@ -1,0 +1,79 @@
+{
+ "iso3": "DEU",
+ "name": "Germany",
+ "population": 84012284,
+ "status": "partial",
+ "declared_not_collected": {
+  "ethnicity": "Germany does not collect ethnicity. The census records citizenship and migration background; religion comes from church-tax registration, not fine-grained self-ID."
+ },
+ "already_closed_routes": "ethnicity declared; religion filled by Land from Zensus 2022 (Regierungsbezirk partial).",
+ "national_record": {
+  "religion": [
+   {
+    "group": "Other, none, or not stated",
+    "pct": 51.8,
+    "count": 42836966
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 25.1,
+    "count": 20746952
+   },
+   {
+    "group": "Protestant",
+    "pct": 23.1,
+    "count": 19127353
+   }
+  ],
+  "ethnicity": {
+   "status": "not_collected",
+   "note": "Germany does not collect ethnicity. The census records citizenship and migration background; religion comes from church-tax registration, not fine-grained self-ID."
+  },
+  "language": [
+   {
+    "group": "German",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 16,
+  "filled": 16,
+  "fields_filled": {
+   "religion": 16,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Berlin",
+   "Hessen",
+   "Niedersachsen",
+   "Nordrhein-Westfalen",
+   "Saarland",
+   "Sachsen"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 38,
+  "filled": 35,
+  "fields_filled": {
+   "religion": 35,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Berlin",
+   "Braunschweig",
+   "Chemnitz",
+   "Hamburg",
+   "Köln",
+   "Leipzig",
+   "Rheinhessen-Pfalz",
+   "Stuttgart"
+  ]
+ }
+}

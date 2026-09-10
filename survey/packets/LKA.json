@@ -1,0 +1,107 @@
+{
+ "iso3": "LKA",
+ "name": "Sri Lanka",
+ "population": 22050561,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Buddhist",
+    "pct": 69.8,
+    "count": 15199093
+   },
+   {
+    "group": "Hindu",
+    "pct": 12.6,
+    "count": 2734839
+   },
+   {
+    "group": "Islam",
+    "pct": 10.7,
+    "count": 2337379
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 5.6,
+    "count": 1224348
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Sinhalese",
+    "pct": 74.1,
+    "count": 16144037
+   },
+   {
+    "group": "Sri Lankan Tamil",
+    "pct": 12.3,
+    "count": 2681627
+   },
+   {
+    "group": "Sri Lankan Moor",
+    "pct": 10.5,
+    "count": 2283246
+   },
+   {
+    "group": "Indian Tamil",
+    "pct": 2.8,
+    "count": 600360
+   }
+  ],
+  "language": [
+   {
+    "group": "Sinhala",
+    "pct": 87.0
+   },
+   {
+    "group": "Tamil",
+    "pct": 28.5
+   },
+   {
+    "group": "English",
+    "pct": 23.8
+   }
+  ]
+ },
+ "admin1": {
+  "count": 9,
+  "filled": 9,
+  "fields_filled": {
+   "religion": 9,
+   "ethnicity": 9,
+   "language": 0
+  },
+  "sample_names": [
+   "Central Province",
+   "North Central Province",
+   "North Western Province",
+   "Northern Province",
+   "Sabaragamuwa Province",
+   "Southern Province"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 25,
+  "filled": 25,
+  "fields_filled": {
+   "religion": 25,
+   "ethnicity": 25,
+   "language": 0
+  },
+  "sample_names": [
+   "Colombo District",
+   "Hambantota District",
+   "Kandy District",
+   "Kilinochchi District",
+   "Kurunegala District",
+   "Matara District",
+   "Nuwara Eliya District",
+   "Polonnaruwa District"
+  ]
+ }
+}

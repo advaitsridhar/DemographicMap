@@ -1,0 +1,83 @@
+{
+ "iso3": "PSE-WE",
+ "name": "West Bank",
+ "population": 3310554,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 82.5,
+    "range": [
+     80.0,
+     85.0
+    ]
+   },
+   {
+    "group": "Jewish",
+    "pct": 13.0,
+    "range": [
+     12.0,
+     14.0
+    ]
+   },
+   {
+    "group": "Christian",
+    "pct": 1.75,
+    "range": [
+     1.0,
+     2.5
+    ]
+   },
+   {
+    "group": "other",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Palestinian Arab, Jewish, other"
+  },
+  "language": [
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Hebrew",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": []
+ }
+}

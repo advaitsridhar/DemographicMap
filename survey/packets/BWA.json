@@ -1,0 +1,103 @@
+{
+ "iso3": "BWA",
+ "name": "Botswana",
+ "population": 2521534,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 79.1
+   },
+   {
+    "group": "Badimo",
+    "pct": 4.1
+   },
+   {
+    "group": "other",
+    "pct": 1.4
+   },
+   {
+    "group": "none",
+    "pct": 15.2
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Tswana",
+    "pct": 79.0
+   },
+   {
+    "group": "Kalanga",
+    "pct": 11.0
+   },
+   {
+    "group": "Basarwa",
+    "pct": 3.0
+   },
+   {
+    "group": "including Kgalagadi and people of European ancestry",
+    "pct": 7.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Setswana",
+    "pct": 77.3
+   },
+   {
+    "group": "Sekalanga",
+    "pct": 7.4
+   },
+   {
+    "group": "Shekgalagadi",
+    "pct": 3.4
+   },
+   {
+    "group": "English",
+    "pct": 2.8
+   }
+  ]
+ },
+ "admin1": {
+  "count": 10,
+  "filled": 4,
+  "fields_filled": {
+   "religion": 4,
+   "ethnicity": 4,
+   "language": 0
+  },
+  "sample_names": [
+   "Chobe District",
+   "Kgalagadi District",
+   "Kgatleng District",
+   "Kweneng District",
+   "North-East District",
+   "North-West District"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 25,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Barolong",
+   "Bobonong",
+   "Kgatleng",
+   "Kweneng North",
+   "Masungu",
+   "Ngwaketse North",
+   "Ngwaketse South",
+   "Tutume"
+  ]
+ }
+}

@@ -1,0 +1,89 @@
+{
+ "iso3": "RWA",
+ "name": "Rwanda",
+ "population": 13623302,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Catholic",
+    "pct": 39.9
+   },
+   {
+    "group": "Pentecostal",
+    "pct": 21.3
+   },
+   {
+    "group": "Protestant",
+    "pct": 14.6
+   },
+   {
+    "group": "Adventist",
+    "pct": 12.2
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Hutu, Tutsi, Twa"
+  },
+  "language": [
+   {
+    "group": "Kinyarwanda",
+    "pct": 93.2
+   },
+   {
+    "group": "French",
+    "pct": 0.1,
+    "bound": "<"
+   },
+   {
+    "group": "English",
+    "pct": 0.1,
+    "bound": "<"
+   },
+   {
+    "group": "Swahili/Kiswahili",
+    "pct": 0.1,
+    "bound": "<"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 5,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "City of Kigali",
+   "Eastern Province",
+   "Northern Province",
+   "Southern Province",
+   "Western Province"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 30,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Gicumbi",
+   "Gisagara",
+   "Huye",
+   "Kicukiro",
+   "Ngororero",
+   "Rubavu",
+   "Rulindo",
+   "Rutsiro"
+  ]
+ }
+}

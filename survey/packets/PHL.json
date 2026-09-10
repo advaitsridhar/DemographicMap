@@ -1,0 +1,104 @@
+{
+ "iso3": "PHL",
+ "name": "Philippines",
+ "population": 118277063,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 78.8
+   },
+   {
+    "group": "Muslim",
+    "pct": 6.4
+   },
+   {
+    "group": "Iglesia ni Cristo",
+    "pct": 2.6
+   },
+   {
+    "group": "other Christian",
+    "pct": 3.9
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Tagalog",
+    "pct": 26.0
+   },
+   {
+    "group": "Bisaya/Binisaya",
+    "pct": 14.3
+   },
+   {
+    "group": "Ilocano",
+    "pct": 8.0
+   },
+   {
+    "group": "Cebuano",
+    "pct": 8.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Tagalog",
+    "pct": 39.9
+   },
+   {
+    "group": "Bisaya/Binisaya",
+    "pct": 16.0
+   },
+   {
+    "group": "Hiligaynon/Ilonggo",
+    "pct": 7.3
+   },
+   {
+    "group": "Ilocano",
+    "pct": 7.1
+   }
+  ]
+ },
+ "admin1": {
+  "count": 17,
+  "filled": 17,
+  "fields_filled": {
+   "religion": 17,
+   "ethnicity": 17,
+   "language": 0
+  },
+  "sample_names": [
+   "Bicol Region",
+   "Calabarzon",
+   "Central Luzon",
+   "Davao Region",
+   "NCR",
+   "Northern Mindanao"
+  ],
+  "filled_from": [
+   "adapter:alias",
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 86,
+  "filled": 82,
+  "fields_filled": {
+   "religion": 82,
+   "ethnicity": 82,
+   "language": 0
+  },
+  "sample_names": [
+   "Agusan del Norte",
+   "Bataan",
+   "Cavite",
+   "Ilocos Norte",
+   "Isabela",
+   "Misamis Oriental",
+   "Southern Leyte",
+   "Surigao del Norte"
+  ]
+ }
+}

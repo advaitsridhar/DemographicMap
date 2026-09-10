@@ -1,0 +1,103 @@
+{
+ "iso3": "GHA",
+ "name": "Ghana",
+ "population": 35336133,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 71.3
+   },
+   {
+    "group": "Muslim",
+    "pct": 19.9
+   },
+   {
+    "group": "traditionalist",
+    "pct": 3.2
+   },
+   {
+    "group": "other",
+    "pct": 4.5
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Akan",
+    "pct": 45.7
+   },
+   {
+    "group": "Mole-Dagbani",
+    "pct": 18.5
+   },
+   {
+    "group": "Ewe",
+    "pct": 12.8
+   },
+   {
+    "group": "Ga-Dangme",
+    "pct": 7.1
+   }
+  ],
+  "language": [
+   {
+    "group": "Asante",
+    "pct": 16.0
+   },
+   {
+    "group": "Ewe",
+    "pct": 14.0
+   },
+   {
+    "group": "Fante",
+    "pct": 11.6
+   },
+   {
+    "group": "Boron",
+    "pct": 4.9
+   }
+  ]
+ },
+ "admin1": {
+  "count": 16,
+  "filled": 16,
+  "fields_filled": {
+   "religion": 16,
+   "ethnicity": 16,
+   "language": 0
+  },
+  "sample_names": [
+   "Bono East Region",
+   "Central Region",
+   "Greater Accra Region",
+   "Northern Region",
+   "Upper West Region",
+   "Western Region"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 260,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Ada East",
+   "Ayawaso Central Municipal",
+   "Bawku West",
+   "Bunkpurugu Nakpanduri",
+   "Dormaa Municipal",
+   "Ejisu Municipal",
+   "Jaman North",
+   "Kumasi Metropolitan"
+  ]
+ }
+}

@@ -1,0 +1,103 @@
+{
+ "iso3": "AGO",
+ "name": "Angola",
+ "population": 38984796,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 41.1
+   },
+   {
+    "group": "Protestant",
+    "pct": 38.1
+   },
+   {
+    "group": "other",
+    "pct": 8.6
+   },
+   {
+    "group": "none",
+    "pct": 12.3
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Ovimbundu",
+    "pct": 37.0
+   },
+   {
+    "group": "Kimbundu",
+    "pct": 25.0
+   },
+   {
+    "group": "Bakongo",
+    "pct": 13.0
+   },
+   {
+    "group": "Mestico",
+    "pct": 2.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Portuguese",
+    "pct": 71.2
+   },
+   {
+    "group": "Umbundu",
+    "pct": 23.0
+   },
+   {
+    "group": "Kikongo",
+    "pct": 8.2
+   },
+   {
+    "group": "Kimbundu",
+    "pct": 7.8
+   }
+  ]
+ },
+ "admin1": {
+  "count": 18,
+  "filled": 13,
+  "fields_filled": {
+   "religion": 13,
+   "ethnicity": 13,
+   "language": 0
+  },
+  "sample_names": [
+   "Benguela",
+   "Cuando Cubango",
+   "Cuanza Sul",
+   "Cunene",
+   "Huambo",
+   "Lunda Sul"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 157,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Caluquembe",
+   "Chongoroi",
+   "Golungo Alto",
+   "Lucapa",
+   "Mussende",
+   "Namibe",
+   "Quimbele",
+   "Sanza Pombo"
+  ]
+ }
+}

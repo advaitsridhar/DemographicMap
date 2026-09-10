@@ -1,0 +1,105 @@
+{
+ "iso3": "SUR",
+ "name": "Suriname",
+ "population": 653605,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 23.6
+   },
+   {
+    "group": "Hindu",
+    "pct": 22.3
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 21.6
+   },
+   {
+    "group": "Muslim",
+    "pct": 13.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Hindustani",
+    "pct": 27.4
+   },
+   {
+    "group": "Maroon",
+    "pct": 21.7
+   },
+   {
+    "group": "Creole",
+    "pct": 15.7
+   },
+   {
+    "group": "Javanese",
+    "pct": 13.7
+   }
+  ],
+  "language": [
+   {
+    "group": "Dutch",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Sranang Tongo (Surinamese",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "sometimes called Taki-Taki",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 10,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Commewijne",
+   "Marowijne",
+   "Nickerie",
+   "Para",
+   "Paramaribo",
+   "Wanica"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 58,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Boven Saramacca",
+   "De Nieuwe Grond",
+   "Galibi",
+   "Kampong Baroe",
+   "Margaretha",
+   "Marshallkreek",
+   "Moengotapoe",
+   "Nieuw Amsterdam"
+  ]
+ }
+}

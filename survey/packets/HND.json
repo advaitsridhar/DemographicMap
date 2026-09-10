@@ -1,0 +1,95 @@
+{
+ "iso3": "HND",
+ "name": "Honduras",
+ "population": 9529188,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Evangelical",
+    "pct": 55.0
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 33.4
+   },
+   {
+    "group": "none",
+    "pct": 10.1
+   },
+   {
+    "group": "unspecified",
+    "pct": 1.5
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Mestizo",
+    "pct": 90.0
+   },
+   {
+    "group": "Indigenous",
+    "pct": 7.0
+   },
+   {
+    "group": "African descent",
+    "pct": 2.0
+   },
+   {
+    "group": "White",
+    "pct": 1.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Spanish",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Amerindian dialects",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 18,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Atlántida",
+   "Bay Islands",
+   "Intibucá",
+   "Ocotepeque",
+   "Olancho",
+   "Santa Bárbara"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 298,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "El Porvenir",
+   "Esquipulas del Norte",
+   "La Union",
+   "Las Vegas",
+   "Moroceli",
+   "Pimienta",
+   "San Andres",
+   "Santa Maria del Real"
+  ]
+ }
+}

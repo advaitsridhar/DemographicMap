@@ -1,0 +1,101 @@
+{
+ "iso3": "PER",
+ "name": "Peru",
+ "population": 32768614,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Catholic",
+    "pct": 76.0
+   },
+   {
+    "group": "Evangelical Christian",
+    "pct": 15.7
+   },
+   {
+    "group": "no religion",
+    "pct": 5.1
+   },
+   {
+    "group": "other religions",
+    "pct": 3.2
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Mestizo",
+    "pct": 60.2
+   },
+   {
+    "group": "Indigenous",
+    "pct": 25.8
+   },
+   {
+    "group": "White",
+    "pct": 5.9
+   },
+   {
+    "group": "African descent",
+    "pct": 3.6
+   }
+  ],
+  "language": [
+   {
+    "group": "Spanish",
+    "pct": 82.9
+   },
+   {
+    "group": "Quechua",
+    "pct": 13.6
+   },
+   {
+    "group": "Aymara",
+    "pct": 1.6
+   },
+   {
+    "group": "Ashaninka",
+    "pct": 0.3
+   }
+  ]
+ },
+ "admin1": {
+  "count": 26,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Ancash",
+   "Cusco",
+   "La Libertad",
+   "Lambayeque",
+   "San Martín",
+   "Tacna"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 196,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Callao",
+   "Chincheros",
+   "Huancavelica",
+   "Moyobamba",
+   "Quispicanchi",
+   "Santiago de Chuco",
+   "Sechura",
+   "Talara"
+  ]
+ }
+}

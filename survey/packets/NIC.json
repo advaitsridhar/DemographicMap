@@ -1,0 +1,101 @@
+{
+ "iso3": "NIC",
+ "name": "Nicaragua",
+ "population": 6739380,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 44.9
+   },
+   {
+    "group": "Protestant",
+    "pct": 38.7
+   },
+   {
+    "group": "other",
+    "pct": 1.2
+   },
+   {
+    "group": "believer but not belonging to a church",
+    "pct": 1.0
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Mestizo",
+    "pct": 69.0
+   },
+   {
+    "group": "White",
+    "pct": 17.0
+   },
+   {
+    "group": "Black",
+    "pct": 9.0
+   },
+   {
+    "group": "Indigenous",
+    "pct": 5.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Spanish",
+    "pct": 99.5
+   },
+   {
+    "group": "Indigenous",
+    "pct": 0.3
+   },
+   {
+    "group": "Portuguese",
+    "pct": 0.1
+   },
+   {
+    "group": "other",
+    "pct": 0.1
+   }
+  ]
+ },
+ "admin1": {
+  "count": 17,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Boaco",
+   "Jinotega (Departamento)",
+   "Leon",
+   "Masaya",
+   "North Carribean Coast Autonomous Region",
+   "Rio San Juan"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 153,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Altagracia (Municipio)",
+   "Corn Island",
+   "Municipio Boaco",
+   "Municipio El Coral",
+   "Municipio Laguna de Perlas",
+   "Municipio Murra",
+   "Municipio San Dionisio",
+   "Palacagüina (Municipio)"
+  ]
+ }
+}

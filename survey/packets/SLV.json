@@ -1,0 +1,95 @@
+{
+ "iso3": "SLV",
+ "name": "El Salvador",
+ "population": 6334723,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 43.9
+   },
+   {
+    "group": "Protestant",
+    "pct": 39.6
+   },
+   {
+    "group": "none",
+    "pct": 16.3
+   },
+   {
+    "group": "unspecified",
+    "pct": 0.2
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Mestizo",
+    "pct": 86.3
+   },
+   {
+    "group": "White",
+    "pct": 12.7
+   },
+   {
+    "group": "Indigenous",
+    "pct": 0.2
+   },
+   {
+    "group": "Black",
+    "pct": 0.1
+   }
+  ],
+  "language": [
+   {
+    "group": "Spanish",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Nawat",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 14,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Departamento de Ahuachapán",
+   "Departamento de Cabañas",
+   "Departamento de La Paz",
+   "Departamento de La Unión",
+   "Departamento de Morazán",
+   "Departamento de San Salvador"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 272,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Chalchuapa",
+   "El Refugio",
+   "El Rosario",
+   "El Rosario",
+   "Ereguayquín",
+   "San Fernando",
+   "San Jose Villanueva",
+   "Soyapango"
+  ]
+ }
+}

@@ -1,0 +1,101 @@
+{
+ "iso3": "ROU",
+ "name": "Romania",
+ "population": 18148155,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Romanian Orthodox",
+    "pct": 85.3
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 4.5
+   },
+   {
+    "group": "Reformed",
+    "pct": 3.0
+   },
+   {
+    "group": "Pentecostal",
+    "pct": 2.5
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Romanian",
+    "pct": 89.3
+   },
+   {
+    "group": "Hungarian",
+    "pct": 6.0
+   },
+   {
+    "group": "Romani",
+    "pct": 3.4
+   },
+   {
+    "group": "Ukrainian",
+    "pct": 0.3
+   }
+  ],
+  "language": [
+   {
+    "group": "Romanian",
+    "pct": 91.6
+   },
+   {
+    "group": "Hungarian",
+    "pct": 6.3
+   },
+   {
+    "group": "Romani",
+    "pct": 1.2
+   },
+   {
+    "group": "other",
+    "pct": 0.7
+   }
+  ]
+ },
+ "admin1": {
+  "count": 42,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "BACAU",
+   "BUZAU",
+   "GALATI",
+   "HUNEDOARA",
+   "MARAMURES",
+   "NEAMT"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 3235,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "BUNESTI-AVERESTI",
+   "GEACA",
+   "LEORDA",
+   "MANDRA",
+   "POIANA",
+   "SEICA MARE",
+   "SIMNICU DE SUS",
+   "ZAMBREASCA"
+  ]
+ }
+}

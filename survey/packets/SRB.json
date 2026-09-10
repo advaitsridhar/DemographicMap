@@ -1,0 +1,101 @@
+{
+ "iso3": "SRB",
+ "name": "Serbia",
+ "population": 6652212,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Serbian Orthodox",
+    "pct": 81.1
+   },
+   {
+    "group": "unknown",
+    "pct": 5.3
+   },
+   {
+    "group": "Islam",
+    "pct": 4.2
+   },
+   {
+    "group": "Catholic",
+    "pct": 3.9
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Serb",
+    "pct": 83.3
+   },
+   {
+    "group": "Hungarian",
+    "pct": 3.5
+   },
+   {
+    "group": "Romani",
+    "pct": 2.1
+   },
+   {
+    "group": "Bosniak",
+    "pct": 2.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Serbian",
+    "pct": 88.1
+   },
+   {
+    "group": "Hungarian",
+    "pct": 3.4
+   },
+   {
+    "group": "Bosnian",
+    "pct": 1.9
+   },
+   {
+    "group": "Romani",
+    "pct": 1.4
+   }
+  ]
+ },
+ "admin1": {
+  "count": 25,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Pcinja District",
+   "Pirot District",
+   "Rasina District",
+   "South Backa District",
+   "Syrmia District",
+   "Zajecar District"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 145,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bela Palanka Municipality",
+   "Knic Municipality",
+   "Kosjeric Municipality",
+   "Kucevo Municipality",
+   "Nis City",
+   "Pozega Municipality",
+   "Tutin Municipality",
+   "Vladicin Han Municipality"
+  ]
+ }
+}

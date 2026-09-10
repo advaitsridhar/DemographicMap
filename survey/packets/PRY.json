@@ -1,0 +1,93 @@
+{
+ "iso3": "PRY",
+ "name": "Paraguay",
+ "population": 7604044,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 80.4
+   },
+   {
+    "group": "Protestant",
+    "pct": 7.0
+   },
+   {
+    "group": "Believer",
+    "pct": 5.7
+   },
+   {
+    "group": "other",
+    "pct": 0.6
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Mestizo",
+    "pct": 95.0
+   },
+   {
+    "group": "other",
+    "pct": 5.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Spanish and Guarani",
+    "pct": 46.3
+   },
+   {
+    "group": "only Guarani",
+    "pct": 34.0
+   },
+   {
+    "group": "only Spanish",
+    "pct": 15.2
+   },
+   {
+    "group": "other",
+    "pct": 4.1
+   }
+  ]
+ },
+ "admin1": {
+  "count": 18,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "ALTO PARANA",
+   "AMAMBAY",
+   "CANINDEYU",
+   "CONCEPCION",
+   "CORDILLERA",
+   "PARAGUARI"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 247,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Atyra",
+   "J Augusto Saldivar",
+   "Moises Bertoni",
+   "Repatriacion",
+   "San Juan Bautista De Ñeembucu",
+   "Santa Elena",
+   "Santa Rosa Del Aguaray",
+   "Tte 1Ro Manuel Irala Fernandez"
+  ]
+ }
+}

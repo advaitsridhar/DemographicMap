@@ -1,0 +1,106 @@
+{
+ "iso3": "UGA",
+ "name": "Uganda",
+ "population": 50863850,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 45.1
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 39.3
+   },
+   {
+    "group": "Muslim",
+    "pct": 13.7
+   },
+   {
+    "group": "other",
+    "pct": 1.6
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Baganda",
+    "pct": 16.5
+   },
+   {
+    "group": "Banyankole",
+    "pct": 9.6
+   },
+   {
+    "group": "Basoga",
+    "pct": 8.8
+   },
+   {
+    "group": "Bakiga",
+    "pct": 7.1
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Ganda or Luganda",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "other Niger-Congo languages",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Nilo-Saharan languages",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 4,
+  "filled": 2,
+  "fields_filled": {
+   "religion": 2,
+   "ethnicity": 2,
+   "language": 0
+  },
+  "sample_names": [
+   "Central Region",
+   "Eastern Region",
+   "Northern Region",
+   "Western Region"
+  ],
+  "filled_from": [
+   "adapter:name",
+   "adapter:prefix"
+  ]
+ },
+ "admin2": {
+  "count": 151,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bujenje",
+   "Dokolo",
+   "Jie",
+   "Kazo",
+   "Ntoroko",
+   "Pian",
+   "Rwampara",
+   "Soroti"
+  ]
+ }
+}

@@ -1,0 +1,92 @@
+{
+ "iso3": "MCO",
+ "name": "Monaco",
+ "population": 32047,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 90.0
+   },
+   {
+    "group": "other",
+    "pct": 10.0
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Monegasque",
+    "pct": 32.1
+   },
+   {
+    "group": "French",
+    "pct": 19.9
+   },
+   {
+    "group": "Italian",
+    "pct": 15.3
+   },
+   {
+    "group": "British",
+    "pct": 5.0
+   }
+  ],
+  "language": [
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Italian",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Monegasque",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 1,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Monaco"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 9,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Fontvieille",
+   "Jardin Exotique",
+   "La Rousse",
+   "Larvotto",
+   "Les Monegetti",
+   "Monaco-Ville",
+   "Monte-Carlo",
+   "Sainte-Dévote"
+  ]
+ }
+}

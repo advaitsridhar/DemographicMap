@@ -1,0 +1,92 @@
+{
+ "iso3": "KIR",
+ "name": "Kiribati",
+ "population": 116545,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 58.9
+   },
+   {
+    "group": "Kiribati Uniting Church",
+    "pct": 21.2
+   },
+   {
+    "group": "Kiribati Protestant Church",
+    "pct": 8.4
+   },
+   {
+    "group": "Church of Jesus Christ",
+    "pct": 5.6
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "I-Kiribati",
+    "pct": 95.78
+   },
+   {
+    "group": "I-Kiribati/mixed",
+    "pct": 3.8
+   },
+   {
+    "group": "Tuvaluan",
+    "pct": 0.2
+   },
+   {
+    "group": "other",
+    "pct": 1.7
+   }
+  ],
+  "language": [
+   {
+    "group": "Gilbertese",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 3,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Gilbert Islands",
+   "Line Islands",
+   "Phoenix Islands"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 23,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Abaiang",
+   "Banaba",
+   "Betio",
+   "Marakei",
+   "Nonouti",
+   "Onotoa",
+   "Tamana",
+   "Tarawa Teinainano"
+  ]
+ }
+}

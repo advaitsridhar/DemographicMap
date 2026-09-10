@@ -1,0 +1,101 @@
+{
+ "iso3": "LIE",
+ "name": "Liechtenstein",
+ "population": 40547,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 73.4
+   },
+   {
+    "group": "Protestant Reformed",
+    "pct": 6.3
+   },
+   {
+    "group": "Muslim",
+    "pct": 5.9
+   },
+   {
+    "group": "Christian Orthodox",
+    "pct": 1.3
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Liechtensteiner",
+    "pct": 65.6
+   },
+   {
+    "group": "Swiss",
+    "pct": 9.6
+   },
+   {
+    "group": "Austrian",
+    "pct": 5.8
+   },
+   {
+    "group": "German",
+    "pct": 4.5
+   }
+  ],
+  "language": [
+   {
+    "group": "German",
+    "pct": 91.5
+   },
+   {
+    "group": "Italian",
+    "pct": 1.5
+   },
+   {
+    "group": "Turkish",
+    "pct": 1.3
+   },
+   {
+    "group": "Portuguese",
+    "pct": 1.1
+   }
+  ]
+ },
+ "admin1": {
+  "count": 11,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Eschen",
+   "Gamprin",
+   "Mauren",
+   "Planken",
+   "Schaan",
+   "Schellenberg"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 11,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Balzers",
+   "Eschen",
+   "Mauren",
+   "Planken",
+   "Schaan",
+   "Schellenberg",
+   "Triesen",
+   "Vaduz"
+  ]
+ }
+}
