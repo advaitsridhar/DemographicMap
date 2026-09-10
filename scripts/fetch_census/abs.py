@@ -318,7 +318,13 @@ def outermost_by_code(coded: dict[tuple[str, str], float]) -> dict[str, float]:
              if code and label.strip().lower() not in GRAND_TOTAL}
     if not codes:
         return {}                          # no codes: nothing to judge with
-    branches = {b for b in (branch_code(code) for code in codes) if b}
+    # Only a category the ABS marks as a group can be a parent. G13 codes
+    # "Speaks English only" as "1", and "1" is a prefix of "1403" Afrikaans
+    # -- a language it has nothing to do with -- so 109 LGAs lost Afrikaans,
+    # Dutch and Norwegian to a parent that is no parent, and none of them
+    # then summed. Every real group in these tables is written "... Total".
+    branches = {b for b in (branch_code(code) for (label, code) in coded
+                            if code and label.lower().endswith(TOTAL_SUFFIX)) if b}
     out: dict[str, float] = {}
     for (label, code), value in coded.items():
         if not code or label.strip().lower() in GRAND_TOTAL:
