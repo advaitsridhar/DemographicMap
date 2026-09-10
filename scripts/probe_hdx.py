@@ -50,6 +50,33 @@ def workbooks(package: dict) -> list[str]:
             or str(r.get("name", "")).lower().endswith((".xlsx", ".xls"))]
 
 
+def resources(name: str) -> None:
+    """Every resource on one dataset, whatever its format.
+
+    workbooks() answers "does the Census Bureau adapter have something to
+    read", which is a narrower question than "is there anything here at all":
+    it looks only for .xlsx. A publisher that ships CSV scores a dash under
+    that test and may still carry exactly the table wanted -- DHS is one, and
+    a dash next to its Nigeria dataset is what prompted this.
+    """
+    print(f"\n=== HDX dataset: {name} ===")
+    try:
+        package = get("package_show", id=name)
+    except Exception as err:                        # noqa: BLE001 -- reported
+        print(f"    {type(err).__name__}: {err}")
+        return
+    print(f"    title: {package.get('title','?')}")
+    print(f"    org:   {(package.get('organization') or {}).get('name','?')}")
+    notes = (package.get("notes") or "").strip().replace("\n", " ")
+    if notes:
+        print(f"    notes: {notes[:400]}")
+    items = package.get("resources", []) or []
+    print(f"    {len(items)} resource(s):")
+    for r in items:
+        print(f"      {str(r.get('format','?')):<6} {str(r.get('name','?'))[:70]}")
+        print(f"             {r.get('url','')}")
+
+
 def already_here() -> set[str]:
     """ISO3s this map already carries subnational figures for."""
     site = Path(__file__).resolve().parent.parent / "site" / "data"
@@ -103,7 +130,13 @@ def main() -> int:
     ap.add_argument("--seed", default=SEED,
                     help="a dataset id the adapter already uses")
     ap.add_argument("--rows", type=int, default=300)
+    ap.add_argument("--dataset", default="",
+                    help="an HDX dataset name; list its resources and stop")
     args = ap.parse_args()
+
+    if args.dataset:
+        resources(args.dataset)
+        return 0
 
     if args.search:
         search(args.search, args.rows)

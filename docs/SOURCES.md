@@ -1935,6 +1935,53 @@ them the adapter **refuses** rather than falling back to anonymous: `GAST` can
 search the catalogue and read nothing, so an anonymous run would fetch a 401
 that would have to be told apart from a table that had gone away.
 
+### Nigeria: asked, and never tabulated
+
+244 million people and no subnational composition, which makes Nigeria the
+largest gap on this map after Indonesia. Four routes measured, and the answer
+is unusual enough to be worth stating precisely: **the questions are asked, and
+no published subnational tabulation of the answers is reachable.**
+
+* **The Census Bureau's series** carries a `Nationality` sheet and nothing else
+  -- Nigerian by birth, by naturalization, other ECOWAS, African other,
+  non-African. That is citizenship, refused earlier and refused still.
+* **DHS's subnational series on HDX** is 45 CSVs and none of them is a
+  composition: anemia, anthropometry, literacy, immunization, water, tobacco,
+  fertility. The mismatch is structural rather than incidental -- DHS publishes
+  indicators broken down *by* region, never the distribution of the
+  characteristic doing the breaking down. No amount of looking further into
+  that series changes it.
+* **NBS Nigeria's own site** publishes no census tabulation of either field.
+  Nigeria's census has not carried religion or ethnicity for decades; the
+  balance between them decides revenue allocation and representation, and the
+  questions have been left off.
+* **NBS's NADA microdata archive** is where they are, and it took a corrected
+  probe to see it. `microdata.nigerianstat.gov.ng` holds 27 studies, and NADA's
+  search matches *variable labels*, so it answers "was this asked" directly:
+  MICS/NICS 2016-17 carries 11 ethnicity variables and MICS5 2016 carries 8,
+  both public; DHS 2008 carries 4 of each; `tribe` matches nothing anywhere.
+
+So the block is not availability and not permission. It is **shape**: what
+exists is microdata -- individual survey records -- and every figure on this
+map comes from a tabulation someone published. Turning MICS5 into a state-level
+religious composition means downloading records behind an account, applying
+sampling weights, and producing estimates with their own error, which is a
+different kind of claim from "the census counted this many". This project has
+never done that, and doing it silently would put survey estimates beside census
+counts with nothing to tell them apart.
+
+Two smaller cautions recorded so the next reader does not have to rediscover
+them. The `language` search returns large hit counts -- 37 in one COVID-19
+*phone* survey -- which is language of interview, not mother tongue; the count
+is not evidence of a composition. And the Living Standards Survey 2018-19, the
+one study designed to be representative at state level and the reason the probe
+was written, appears in neither the religion nor the ethnicity search. The best
+lead was the wrong one, which is the argument for asking rather than assuming.
+
+What would open Nigeria: a published MICS or DHS tabulation by state, from
+either office; or an explicit decision that this map may carry weighted survey
+estimates, labelled as such, and the machinery to compute them.
+
 ### Indonesia: published, and not fetchable
 
 Indonesia is 284 million people and the largest population this map still has
