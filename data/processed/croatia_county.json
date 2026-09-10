@@ -1,0 +1,7692 @@
+[
+  {
+    "id": "HRV-zagrebačka",
+    "level": "admin1",
+    "name": "Zagreb County",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 299985,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 83.3,
+        "count": 250023
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.0,
+        "count": 18020
+      },
+      {
+        "group": "No religion",
+        "pct": 3.5,
+        "count": 10516
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.7,
+        "count": 5082
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.4,
+        "count": 4083
+      },
+      {
+        "group": "Agnostic",
+        "pct": 1.3,
+        "count": 4038
+      },
+      {
+        "group": "Islam",
+        "pct": 0.9,
+        "count": 2667
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.9,
+        "count": 2582
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.8,
+        "count": 2399
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.1,
+        "count": 338
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.1,
+        "count": 212
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 25
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 97.8,
+        "count": 293291
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 1955
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.3,
+        "count": 801
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.3,
+        "count": 991
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 630
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 180
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 219
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1,
+        "count": 174
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.1,
+        "count": 430
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.1,
+        "count": 411
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.1,
+        "count": 177
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.0,
+        "count": 65
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 113
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 83
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 129
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 79
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 96.6,
+        "count": 289929
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 2246
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.6,
+        "count": 1789
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.4,
+        "count": 1142
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.3,
+        "count": 771
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 806
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.3,
+        "count": 886
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 218
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 206
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 245
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.1,
+        "count": 378
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.1,
+        "count": 249
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.1,
+        "count": 201
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 98
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 114
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 135
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 100
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 88
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.0,
+        "count": 100
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Zagrebačka",
+      "Zagrebačka županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-krapinsko-zagorska",
+    "level": "admin1",
+    "name": "Krapina-Zagorje",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 120702,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 86.2,
+        "count": 104002
+      },
+      {
+        "group": "Other Christian",
+        "pct": 7.5,
+        "count": 9097
+      },
+      {
+        "group": "No religion",
+        "pct": 1.7,
+        "count": 2103
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.6,
+        "count": 1949
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.9,
+        "count": 1042
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.9,
+        "count": 1070
+      },
+      {
+        "group": "Agnostic",
+        "pct": 0.7,
+        "count": 873
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.2,
+        "count": 218
+      },
+      {
+        "group": "Islam",
+        "pct": 0.2,
+        "count": 201
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.1,
+        "count": 73
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.1,
+        "count": 72
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 98.2,
+        "count": 118542
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.9,
+        "count": 1034
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.4,
+        "count": 452
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.1,
+        "count": 105
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.1,
+        "count": 93
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 64
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.1,
+        "count": 69
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 147
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 16
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 97.9,
+        "count": 118161
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.9,
+        "count": 1097
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.3,
+        "count": 369
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.2,
+        "count": 190
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.1,
+        "count": 87
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.1,
+        "count": 73
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.1,
+        "count": 159
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 171
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.1,
+        "count": 142
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.0,
+        "count": 23
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Krapinsko-zagorska",
+      "Krapinsko-zagorska županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-sisačko-moslavačka",
+    "level": "admin1",
+    "name": "Sisak-Moslavina",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 139603,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 77.7,
+        "count": 108432
+      },
+      {
+        "group": "Orthodox",
+        "pct": 9.2,
+        "count": 12899
+      },
+      {
+        "group": "No religion",
+        "pct": 3.4,
+        "count": 4753
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.6,
+        "count": 3564
+      },
+      {
+        "group": "Islam",
+        "pct": 2.0,
+        "count": 2728
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.8,
+        "count": 2486
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.6,
+        "count": 2200
+      },
+      {
+        "group": "Agnostic",
+        "pct": 1.0,
+        "count": 1428
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.5,
+        "count": 753
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.2,
+        "count": 298
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.0,
+        "count": 58
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 94.3,
+        "count": 131669
+      },
+      {
+        "group": "Serbian",
+        "pct": 2.0,
+        "count": 2849
+      },
+      {
+        "group": "Romani",
+        "pct": 1.1,
+        "count": 1580
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.5,
+        "count": 652
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 653
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.4,
+        "count": 626
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.3,
+        "count": 411
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 346
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 154
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.1,
+        "count": 70
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 185
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 54
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 85.7,
+        "count": 119595
+      },
+      {
+        "group": "Serbian",
+        "pct": 8.7,
+        "count": 12153
+      },
+      {
+        "group": "Roma",
+        "pct": 1.2,
+        "count": 1636
+      },
+      {
+        "group": "Bosniak",
+        "pct": 1.1,
+        "count": 1520
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.8,
+        "count": 1131
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 885
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.4,
+        "count": 567
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.3,
+        "count": 407
+      },
+      {
+        "group": "Czech",
+        "pct": 0.3,
+        "count": 394
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 267
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 91
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 90
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.1,
+        "count": 149
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.1,
+        "count": 84
+      },
+      {
+        "group": "Italian",
+        "pct": 0.1,
+        "count": 124
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 184
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.1,
+        "count": 80
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 57
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.0,
+        "count": 30
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Sisačko-moslavačka",
+      "Sisačko-moslavačka županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-karlovačka",
+    "level": "admin1",
+    "name": "Karlovac",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 112195,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 79.9,
+        "count": 89637
+      },
+      {
+        "group": "Orthodox",
+        "pct": 7.4,
+        "count": 8265
+      },
+      {
+        "group": "No religion",
+        "pct": 3.4,
+        "count": 3776
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.0,
+        "count": 3383
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.6,
+        "count": 1798
+      },
+      {
+        "group": "Islam",
+        "pct": 1.5,
+        "count": 1686
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.4,
+        "count": 1565
+      },
+      {
+        "group": "Agnostic",
+        "pct": 1.1,
+        "count": 1248
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.5,
+        "count": 604
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.1,
+        "count": 159
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.1,
+        "count": 72
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 96.4,
+        "count": 108160
+      },
+      {
+        "group": "Serbian",
+        "pct": 1.2,
+        "count": 1360
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.5,
+        "count": 616
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 594
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.3,
+        "count": 322
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.2,
+        "count": 242
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 218
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.2,
+        "count": 239
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 64
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 60
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 167
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 88.5,
+        "count": 99240
+      },
+      {
+        "group": "Serbian",
+        "pct": 7.7,
+        "count": 8683
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.9,
+        "count": 1001
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.9,
+        "count": 1052
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 723
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 248
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.2,
+        "count": 254
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 255
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.2,
+        "count": 273
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 86
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.1,
+        "count": 62
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.0,
+        "count": 24
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Karlovačka",
+      "Karlovačka županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-varaždinska",
+    "level": "admin1",
+    "name": "Varaždin",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 159487,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 82.0,
+        "count": 130793
+      },
+      {
+        "group": "Other Christian",
+        "pct": 8.8,
+        "count": 14003
+      },
+      {
+        "group": "No religion",
+        "pct": 3.0,
+        "count": 4784
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.3,
+        "count": 3730
+      },
+      {
+        "group": "Agnostic",
+        "pct": 1.2,
+        "count": 1940
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.1,
+        "count": 1806
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.8,
+        "count": 1206
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.3,
+        "count": 486
+      },
+      {
+        "group": "Islam",
+        "pct": 0.2,
+        "count": 322
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.1,
+        "count": 200
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.1,
+        "count": 210
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 7
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 97.7,
+        "count": 155755
+      },
+      {
+        "group": "Romani",
+        "pct": 0.7,
+        "count": 1070
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 899
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.3,
+        "count": 484
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 344
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.1,
+        "count": 221
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.1,
+        "count": 154
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.1,
+        "count": 173
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 26
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 97.2,
+        "count": 154989
+      },
+      {
+        "group": "Roma",
+        "pct": 0.7,
+        "count": 1101
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 960
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.3,
+        "count": 444
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.3,
+        "count": 472
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 441
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.2,
+        "count": 287
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.1,
+        "count": 226
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.1,
+        "count": 100
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.0,
+        "count": 52
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Varaždinska",
+      "Varaždinska županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-koprivničko-križevačka",
+    "level": "admin1",
+    "name": "Koprivnica-Križevci",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 101221,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 84.2,
+        "count": 85253
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.8,
+        "count": 5826
+      },
+      {
+        "group": "No religion",
+        "pct": 2.8,
+        "count": 2809
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.8,
+        "count": 1843
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.7,
+        "count": 1701
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.3,
+        "count": 1339
+      },
+      {
+        "group": "Agnostic",
+        "pct": 1.0,
+        "count": 1007
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.0,
+        "count": 1001
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.2,
+        "count": 184
+      },
+      {
+        "group": "Islam",
+        "pct": 0.2,
+        "count": 223
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.0,
+        "count": 33
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 97.7,
+        "count": 98856
+      },
+      {
+        "group": "Romani",
+        "pct": 1.1,
+        "count": 1118
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 322
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 166
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.2,
+        "count": 168
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.1,
+        "count": 96
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 66
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.1,
+        "count": 55
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.1,
+        "count": 71
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 76
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 9
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 96.0,
+        "count": 97189
+      },
+      {
+        "group": "Serbian",
+        "pct": 1.5,
+        "count": 1535
+      },
+      {
+        "group": "Roma",
+        "pct": 1.0,
+        "count": 1052
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 426
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 152
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.2,
+        "count": 219
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.1,
+        "count": 57
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 62
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 52
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.1,
+        "count": 68
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 124
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.1,
+        "count": 52
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.0,
+        "count": 31
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Koprivničko-križevačka",
+      "Koprivničko-križevačka županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-bjelovarsko-bilogorska",
+    "level": "admin1",
+    "name": "Bjelovar-Bilogora",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 101879,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 84.2,
+        "count": 85793
+      },
+      {
+        "group": "Orthodox",
+        "pct": 5.4,
+        "count": 5459
+      },
+      {
+        "group": "No religion",
+        "pct": 3.2,
+        "count": 3213
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.7,
+        "count": 2706
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.5,
+        "count": 1559
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.1,
+        "count": 1150
+      },
+      {
+        "group": "Agnostic",
+        "pct": 1.0,
+        "count": 975
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 409
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.3,
+        "count": 316
+      },
+      {
+        "group": "Islam",
+        "pct": 0.2,
+        "count": 249
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.0,
+        "count": 48
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 94.4,
+        "count": 96164
+      },
+      {
+        "group": "Czech",
+        "pct": 3.3,
+        "count": 3314
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.6,
+        "count": 629
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.4,
+        "count": 416
+      },
+      {
+        "group": "Romani",
+        "pct": 0.3,
+        "count": 286
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.2,
+        "count": 210
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 156
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.1,
+        "count": 118
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.1,
+        "count": 141
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 115
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 54
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.1,
+        "count": 64
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 74
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 7
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 86.9,
+        "count": 88511
+      },
+      {
+        "group": "Czech",
+        "pct": 4.9,
+        "count": 5002
+      },
+      {
+        "group": "Serbian",
+        "pct": 4.9,
+        "count": 4964
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.7,
+        "count": 682
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.6,
+        "count": 633
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.5,
+        "count": 469
+      },
+      {
+        "group": "Roma",
+        "pct": 0.4,
+        "count": 381
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 395
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.1,
+        "count": 86
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.1,
+        "count": 54
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 56
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 103
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.1,
+        "count": 76
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 149
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.1,
+        "count": 114
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.0,
+        "count": 42
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Bjelovarsko-bilogorska",
+      "Bjelovarsko-bilogorska županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-primorsko-goranska",
+    "level": "admin1",
+    "name": "Primorje-Gorski Kotar",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 265419,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 71.3,
+        "count": 189115
+      },
+      {
+        "group": "No religion",
+        "pct": 8.2,
+        "count": 21729
+      },
+      {
+        "group": "Orthodox",
+        "pct": 4.4,
+        "count": 11636
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.3,
+        "count": 8826
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.2,
+        "count": 8531
+      },
+      {
+        "group": "Islam",
+        "pct": 3.0,
+        "count": 7834
+      },
+      {
+        "group": "Not declared",
+        "pct": 3.0,
+        "count": 8025
+      },
+      {
+        "group": "Agnostic",
+        "pct": 2.5,
+        "count": 6709
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.8,
+        "count": 2222
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.2,
+        "count": 443
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.1,
+        "count": 325
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 24
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 93.8,
+        "count": 248951
+      },
+      {
+        "group": "Bosnian",
+        "pct": 1.0,
+        "count": 2698
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.8,
+        "count": 2022
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.8,
+        "count": 2116
+      },
+      {
+        "group": "Italian",
+        "pct": 0.8,
+        "count": 2077
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.6,
+        "count": 1469
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 1481
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.4,
+        "count": 1014
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 840
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.2,
+        "count": 516
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.1,
+        "count": 340
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 259
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 388
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1,
+        "count": 301
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 253
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 123
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 112
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 81
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 107
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 77
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 88.1,
+        "count": 233859
+      },
+      {
+        "group": "Serbian",
+        "pct": 3.9,
+        "count": 10419
+      },
+      {
+        "group": "Bosniak",
+        "pct": 1.3,
+        "count": 3547
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.2,
+        "count": 3279
+      },
+      {
+        "group": "Italian",
+        "pct": 0.9,
+        "count": 2368
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.9,
+        "count": 2294
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.7,
+        "count": 1771
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.6,
+        "count": 1575
+      },
+      {
+        "group": "Other",
+        "pct": 0.6,
+        "count": 1493
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.4,
+        "count": 1009
+      },
+      {
+        "group": "Roma",
+        "pct": 0.3,
+        "count": 683
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.2,
+        "count": 414
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.2,
+        "count": 443
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.2,
+        "count": 493
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 149
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 302
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 282
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 153
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 154
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.1,
+        "count": 302
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 111
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Primorsko-goranska",
+      "Primorsko-goranska županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-ličko-senjska",
+    "level": "admin1",
+    "name": "Lika-Senj",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 42748,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 81.5,
+        "count": 34857
+      },
+      {
+        "group": "Orthodox",
+        "pct": 9.6,
+        "count": 4098
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.0,
+        "count": 1711
+      },
+      {
+        "group": "No religion",
+        "pct": 1.5,
+        "count": 646
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.0,
+        "count": 413
+      },
+      {
+        "group": "Islam",
+        "pct": 0.9,
+        "count": 375
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.6,
+        "count": 249
+      },
+      {
+        "group": "Agnostic",
+        "pct": 0.5,
+        "count": 226
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 141
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.0,
+        "count": 11
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 93.9,
+        "count": 40125
+      },
+      {
+        "group": "Serbian",
+        "pct": 3.4,
+        "count": 1441
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.7,
+        "count": 281
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.5,
+        "count": 235
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.5,
+        "count": 195
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.3,
+        "count": 114
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 134
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 23
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 32
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.1,
+        "count": 39
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 54
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 8
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 87.9,
+        "count": 37561
+      },
+      {
+        "group": "Serbian",
+        "pct": 9.5,
+        "count": 4062
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.5,
+        "count": 206
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.4,
+        "count": 151
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 191
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.3,
+        "count": 125
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.3,
+        "count": 141
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 104
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 24
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 28
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 28
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.1,
+        "count": 31
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Ličko-senjska",
+      "Ličko-senjska županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-virovitičko-podravska",
+    "level": "admin1",
+    "name": "Virovitica-Podravina",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 70368,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 85.8,
+        "count": 60387
+      },
+      {
+        "group": "Orthodox",
+        "pct": 4.6,
+        "count": 3263
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.9,
+        "count": 2725
+      },
+      {
+        "group": "No religion",
+        "pct": 2.2,
+        "count": 1563
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.0,
+        "count": 707
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.8,
+        "count": 582
+      },
+      {
+        "group": "Agnostic",
+        "pct": 0.6,
+        "count": 454
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.5,
+        "count": 320
+      },
+      {
+        "group": "Islam",
+        "pct": 0.4,
+        "count": 251
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.1,
+        "count": 81
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.0,
+        "count": 33
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 98.1,
+        "count": 69007
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.4,
+        "count": 276
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 306
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 147
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.1,
+        "count": 57
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.1,
+        "count": 92
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 56
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 101
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 37
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.1,
+        "count": 52
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.1,
+        "count": 80
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 33
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 93.2,
+        "count": 65581
+      },
+      {
+        "group": "Serbian",
+        "pct": 4.5,
+        "count": 3168
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 386
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.4,
+        "count": 274
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 173
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.2,
+        "count": 167
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.1,
+        "count": 67
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 91
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 43
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 38
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.1,
+        "count": 36
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.1,
+        "count": 54
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 69
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.1,
+        "count": 76
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.0,
+        "count": 24
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Virovitičko-podravska",
+      "Virovitičko-podravska županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-požeško-slavonska",
+    "level": "admin1",
+    "name": "Požega-Slavonia",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 64084,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 85.6,
+        "count": 54872
+      },
+      {
+        "group": "Orthodox",
+        "pct": 4.4,
+        "count": 2831
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.5,
+        "count": 2244
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.0,
+        "count": 1898
+      },
+      {
+        "group": "No religion",
+        "pct": 1.4,
+        "count": 868
+      },
+      {
+        "group": "Agnostic",
+        "pct": 0.6,
+        "count": 367
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.6,
+        "count": 391
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 254
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3,
+        "count": 184
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.2,
+        "count": 159
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.0,
+        "count": 15
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 96.6,
+        "count": 61898
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.3,
+        "count": 823
+      },
+      {
+        "group": "Serbian",
+        "pct": 1.0,
+        "count": 619
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 106
+      },
+      {
+        "group": "Czech",
+        "pct": 0.2,
+        "count": 141
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.1,
+        "count": 61
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.1,
+        "count": 63
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 35
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.1,
+        "count": 76
+      },
+      {
+        "group": "Italian",
+        "pct": 0.1,
+        "count": 74
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 45
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 91.3,
+        "count": 58506
+      },
+      {
+        "group": "Serbian",
+        "pct": 4.4,
+        "count": 2801
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.4,
+        "count": 921
+      },
+      {
+        "group": "Czech",
+        "pct": 0.8,
+        "count": 491
+      },
+      {
+        "group": "Italian",
+        "pct": 0.7,
+        "count": 419
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.3,
+        "count": 189
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 113
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.2,
+        "count": 108
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.2,
+        "count": 102
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.1,
+        "count": 48
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 48
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 46
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.1,
+        "count": 63
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 73
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.0,
+        "count": 26
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Požeško-slavonska",
+      "Požeško-slavonska županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-brodsko-posavska",
+    "level": "admin1",
+    "name": "Brod-Posavina",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 130267,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 87.5,
+        "count": 113940
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.3,
+        "count": 5624
+      },
+      {
+        "group": "Orthodox",
+        "pct": 2.9,
+        "count": 3832
+      },
+      {
+        "group": "No religion",
+        "pct": 1.6,
+        "count": 2092
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.1,
+        "count": 1456
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.8,
+        "count": 997
+      },
+      {
+        "group": "Islam",
+        "pct": 0.7,
+        "count": 907
+      },
+      {
+        "group": "Agnostic",
+        "pct": 0.6,
+        "count": 800
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 482
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.1,
+        "count": 119
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.0,
+        "count": 13
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 97.8,
+        "count": 127337
+      },
+      {
+        "group": "Romani",
+        "pct": 0.7,
+        "count": 889
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 541
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.3,
+        "count": 430
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.2,
+        "count": 218
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.1,
+        "count": 150
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.1,
+        "count": 178
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.1,
+        "count": 90
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 74
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.0,
+        "count": 28
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 95.8,
+        "count": 124804
+      },
+      {
+        "group": "Serbian",
+        "pct": 1.7,
+        "count": 2170
+      },
+      {
+        "group": "Roma",
+        "pct": 0.9,
+        "count": 1155
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 588
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.3,
+        "count": 352
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.2,
+        "count": 232
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.1,
+        "count": 161
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 125
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 134
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.1,
+        "count": 151
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.0,
+        "count": 38
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Brodsko-posavska",
+      "Brodsko-posavska županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-zadarska",
+    "level": "admin1",
+    "name": "Zadar County",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 159766,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 85.2,
+        "count": 136107
+      },
+      {
+        "group": "Orthodox",
+        "pct": 3.8,
+        "count": 6093
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.3,
+        "count": 5263
+      },
+      {
+        "group": "No religion",
+        "pct": 2.9,
+        "count": 4666
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.2,
+        "count": 1844
+      },
+      {
+        "group": "Agnostic",
+        "pct": 1.1,
+        "count": 1727
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.1,
+        "count": 1706
+      },
+      {
+        "group": "Islam",
+        "pct": 0.7,
+        "count": 1127
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.6,
+        "count": 931
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.1,
+        "count": 198
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.1,
+        "count": 95
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 9
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 95.9,
+        "count": 153246
+      },
+      {
+        "group": "Serbian",
+        "pct": 1.6,
+        "count": 2557
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.5,
+        "count": 767
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.4,
+        "count": 613
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 479
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 439
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.2,
+        "count": 252
+      },
+      {
+        "group": "German",
+        "pct": 0.2,
+        "count": 266
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.2,
+        "count": 291
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 80
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 86
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 86
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.1,
+        "count": 238
+      },
+      {
+        "group": "Italian",
+        "pct": 0.1,
+        "count": 87
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 93.5,
+        "count": 149447
+      },
+      {
+        "group": "Serbian",
+        "pct": 3.7,
+        "count": 5955
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.5,
+        "count": 781
+      },
+      {
+        "group": "Other",
+        "pct": 0.4,
+        "count": 611
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.3,
+        "count": 476
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.3,
+        "count": 441
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 553
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.1,
+        "count": 84
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 81
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 107
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 98
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 214
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.1,
+        "count": 221
+      },
+      {
+        "group": "Italian",
+        "pct": 0.1,
+        "count": 102
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.1,
+        "count": 87
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.1,
+        "count": 114
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.1,
+        "count": 96
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 6
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Zadarska",
+      "Zadarska županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-osječko-baranjska",
+    "level": "admin1",
+    "name": "Osijek-Baranja",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 258026,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 81.3,
+        "count": 209693
+      },
+      {
+        "group": "Orthodox",
+        "pct": 6.3,
+        "count": 16309
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.6,
+        "count": 9231
+      },
+      {
+        "group": "No religion",
+        "pct": 3.0,
+        "count": 7737
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.3,
+        "count": 3426
+      },
+      {
+        "group": "Protestant",
+        "pct": 1.2,
+        "count": 3000
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.2,
+        "count": 3193
+      },
+      {
+        "group": "Agnostic",
+        "pct": 1.0,
+        "count": 2688
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.6,
+        "count": 1425
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5,
+        "count": 1198
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.0,
+        "count": 95
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 93.1,
+        "count": 240192
+      },
+      {
+        "group": "Serbian",
+        "pct": 2.5,
+        "count": 6571
+      },
+      {
+        "group": "Hungarian",
+        "pct": 1.8,
+        "count": 4670
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.5,
+        "count": 1305
+      },
+      {
+        "group": "Romani",
+        "pct": 0.4,
+        "count": 969
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.3,
+        "count": 890
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 839
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.2,
+        "count": 482
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 630
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.1,
+        "count": 386
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 237
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 240
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 128
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 97
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.0,
+        "count": 113
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 64
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 88.1,
+        "count": 227324
+      },
+      {
+        "group": "Serbian",
+        "pct": 6.0,
+        "count": 15486
+      },
+      {
+        "group": "Hungarian",
+        "pct": 2.3,
+        "count": 6059
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.7,
+        "count": 1723
+      },
+      {
+        "group": "Roma",
+        "pct": 0.6,
+        "count": 1660
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.5,
+        "count": 1369
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.3,
+        "count": 681
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 877
+      },
+      {
+        "group": "German",
+        "pct": 0.2,
+        "count": 596
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 433
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.1,
+        "count": 283
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.1,
+        "count": 204
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 230
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.1,
+        "count": 188
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.1,
+        "count": 238
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.1,
+        "count": 154
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 86
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.0,
+        "count": 100
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Osječko-baranjska",
+      "Osječko-baranjska županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-šibensko-kninska",
+    "level": "admin1",
+    "name": "Šibenik-Knin",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 96381,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 78.0,
+        "count": 75155
+      },
+      {
+        "group": "Orthodox",
+        "pct": 7.7,
+        "count": 7428
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.9,
+        "count": 4746
+      },
+      {
+        "group": "No religion",
+        "pct": 3.5,
+        "count": 3359
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.7,
+        "count": 1606
+      },
+      {
+        "group": "Agnostic",
+        "pct": 1.3,
+        "count": 1285
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.3,
+        "count": 1207
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.9,
+        "count": 850
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5,
+        "count": 527
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.1,
+        "count": 139
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.1,
+        "count": 68
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 11
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 92.5,
+        "count": 89199
+      },
+      {
+        "group": "Serbian",
+        "pct": 3.6,
+        "count": 3457
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 1.2,
+        "count": 1184
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.8,
+        "count": 783
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.4,
+        "count": 376
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.3,
+        "count": 279
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.3,
+        "count": 256
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 204
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 49
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 70
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 120
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 50
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.1,
+        "count": 130
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 88.6,
+        "count": 85395
+      },
+      {
+        "group": "Serbian",
+        "pct": 8.4,
+        "count": 8064
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.9,
+        "count": 861
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.4,
+        "count": 392
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 282
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.3,
+        "count": 314
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.2,
+        "count": 213
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.1,
+        "count": 54
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 58
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 68
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 94
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.1,
+        "count": 118
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.1,
+        "count": 76
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.1,
+        "count": 70
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.1,
+        "count": 56
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Šibensko-kninska",
+      "Šibensko-kninska županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-vukovarsko-srijemska",
+    "level": "admin1",
+    "name": "Vukovar-Syrmia",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 143113,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 77.9,
+        "count": 111506
+      },
+      {
+        "group": "Orthodox",
+        "pct": 13.5,
+        "count": 19306
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.6,
+        "count": 3786
+      },
+      {
+        "group": "Islam",
+        "pct": 1.2,
+        "count": 1765
+      },
+      {
+        "group": "No religion",
+        "pct": 1.2,
+        "count": 1664
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.9,
+        "count": 1297
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.9,
+        "count": 1312
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.8,
+        "count": 1165
+      },
+      {
+        "group": "Agnostic",
+        "pct": 0.5,
+        "count": 667
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 617
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.0,
+        "count": 24
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 85.5,
+        "count": 122386
+      },
+      {
+        "group": "Serbian",
+        "pct": 11.1,
+        "count": 15835
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.5,
+        "count": 770
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.5,
+        "count": 704
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.4,
+        "count": 606
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.4,
+        "count": 518
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.3,
+        "count": 404
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 498
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.2,
+        "count": 349
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 303
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1,
+        "count": 173
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 204
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 136
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 63
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 81.6,
+        "count": 116847
+      },
+      {
+        "group": "Serbian",
+        "pct": 13.5,
+        "count": 19309
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.8,
+        "count": 1110
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.8,
+        "count": 1180
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.7,
+        "count": 965
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.6,
+        "count": 842
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.4,
+        "count": 633
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 498
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 342
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.2,
+        "count": 323
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 246
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 119
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 191
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.1,
+        "count": 182
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.0,
+        "count": 45
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Vukovarsko-srijemska",
+      "Vukovarsko-srijemska županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-splitsko-dalmatinska",
+    "level": "admin1",
+    "name": "Split-Dalmatia",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 423407,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 82.9,
+        "count": 351133
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.8,
+        "count": 20395
+      },
+      {
+        "group": "No religion",
+        "pct": 4.5,
+        "count": 18843
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.8,
+        "count": 7737
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.6,
+        "count": 6975
+      },
+      {
+        "group": "Agnostic",
+        "pct": 1.5,
+        "count": 6495
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.4,
+        "count": 5903
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.8,
+        "count": 3215
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5,
+        "count": 1944
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.1,
+        "count": 387
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.1,
+        "count": 328
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 52
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 97.9,
+        "count": 414527
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 1846
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.3,
+        "count": 1075
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 1183
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 871
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.2,
+        "count": 1005
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 238
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 429
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 308
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.1,
+        "count": 403
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.1,
+        "count": 303
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 132
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 184
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 188
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 133
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 119
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 136
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 98
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 6
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 96.8,
+        "count": 410041
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.8,
+        "count": 3271
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 2229
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 1367
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.3,
+        "count": 1165
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 864
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.2,
+        "count": 937
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.1,
+        "count": 327
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 269
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 285
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.1,
+        "count": 410
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.1,
+        "count": 583
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.1,
+        "count": 244
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 172
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 199
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 114
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 211
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 142
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 119
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.0,
+        "count": 165
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Splitsko-dalmatinska",
+      "Splitsko-dalmatinska županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-istarska",
+    "level": "admin1",
+    "name": "Istria",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 195237,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 65.3,
+        "count": 127529
+      },
+      {
+        "group": "No religion",
+        "pct": 9.9,
+        "count": 19389
+      },
+      {
+        "group": "Not stated",
+        "pct": 5.6,
+        "count": 10932
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.8,
+        "count": 9387
+      },
+      {
+        "group": "Islam",
+        "pct": 4.3,
+        "count": 8475
+      },
+      {
+        "group": "Not declared",
+        "pct": 3.5,
+        "count": 6867
+      },
+      {
+        "group": "Orthodox",
+        "pct": 3.0,
+        "count": 5848
+      },
+      {
+        "group": "Agnostic",
+        "pct": 2.4,
+        "count": 4640
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.8,
+        "count": 1598
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.2,
+        "count": 331
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.1,
+        "count": 229
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 87.1,
+        "count": 170015
+      },
+      {
+        "group": "Italian",
+        "pct": 5.0,
+        "count": 9836
+      },
+      {
+        "group": "Bosnian",
+        "pct": 1.7,
+        "count": 3263
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.2,
+        "count": 2350
+      },
+      {
+        "group": "Albanian",
+        "pct": 1.0,
+        "count": 1891
+      },
+      {
+        "group": "Serbian",
+        "pct": 1.0,
+        "count": 1992
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.8,
+        "count": 1527
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.5,
+        "count": 937
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.3,
+        "count": 518
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 657
+      },
+      {
+        "group": "German",
+        "pct": 0.2,
+        "count": 384
+      },
+      {
+        "group": "Romani",
+        "pct": 0.2,
+        "count": 481
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.1,
+        "count": 254
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.1,
+        "count": 145
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 257
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 224
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.1,
+        "count": 131
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 82
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 66
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 85
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 76.4,
+        "count": 149152
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 5.1,
+        "count": 10025
+      },
+      {
+        "group": "Italian",
+        "pct": 5.0,
+        "count": 9784
+      },
+      {
+        "group": "Serbian",
+        "pct": 3.0,
+        "count": 5778
+      },
+      {
+        "group": "Bosniak",
+        "pct": 2.5,
+        "count": 4838
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.8,
+        "count": 3448
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.6,
+        "count": 3077
+      },
+      {
+        "group": "Albanian",
+        "pct": 1.1,
+        "count": 2055
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.8,
+        "count": 1515
+      },
+      {
+        "group": "Other",
+        "pct": 0.6,
+        "count": 1241
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.5,
+        "count": 931
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.3,
+        "count": 523
+      },
+      {
+        "group": "Roma",
+        "pct": 0.3,
+        "count": 531
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.2,
+        "count": 360
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.2,
+        "count": 488
+      },
+      {
+        "group": "German",
+        "pct": 0.2,
+        "count": 305
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.2,
+        "count": 345
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 112
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 186
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.1,
+        "count": 143
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 138
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 11
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Istarska",
+      "Istarska županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-dubrovačko-neretvanska",
+    "level": "admin1",
+    "name": "Dubrovnik-Neretva",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 115564,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 82.1,
+        "count": 94838
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.6,
+        "count": 6515
+      },
+      {
+        "group": "No religion",
+        "pct": 3.0,
+        "count": 3412
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.2,
+        "count": 2525
+      },
+      {
+        "group": "Islam",
+        "pct": 2.1,
+        "count": 2461
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.5,
+        "count": 1736
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.2,
+        "count": 1405
+      },
+      {
+        "group": "Agnostic",
+        "pct": 1.1,
+        "count": 1258
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.0,
+        "count": 1184
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.1,
+        "count": 127
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.1,
+        "count": 85
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 18
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 96.2,
+        "count": 111230
+      },
+      {
+        "group": "Bosnian",
+        "pct": 1.0,
+        "count": 1125
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.8,
+        "count": 912
+      },
+      {
+        "group": "Other",
+        "pct": 0.5,
+        "count": 611
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.3,
+        "count": 323
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.3,
+        "count": 400
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.1,
+        "count": 85
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 92
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 152
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 65
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.1,
+        "count": 142
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.1,
+        "count": 144
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 94.2,
+        "count": 108888
+      },
+      {
+        "group": "Bosniak",
+        "pct": 1.4,
+        "count": 1602
+      },
+      {
+        "group": "Serbian",
+        "pct": 1.2,
+        "count": 1433
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.9,
+        "count": 1057
+      },
+      {
+        "group": "Other",
+        "pct": 0.5,
+        "count": 596
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.4,
+        "count": 470
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.3,
+        "count": 308
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.2,
+        "count": 204
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 59
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 89
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 102
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.1,
+        "count": 126
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.1,
+        "count": 132
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.1,
+        "count": 156
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.1,
+        "count": 79
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Roma",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Dubrovačko-neretvanska",
+      "Dubrovačko-neretvanska županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-međimurska",
+    "level": "admin1",
+    "name": "Međimurje",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 105250,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 77.8,
+        "count": 81845
+      },
+      {
+        "group": "Other Christian",
+        "pct": 11.6,
+        "count": 12164
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.5,
+        "count": 3682
+      },
+      {
+        "group": "No religion",
+        "pct": 3.2,
+        "count": 3417
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.2,
+        "count": 1226
+      },
+      {
+        "group": "Agnostic",
+        "pct": 0.9,
+        "count": 919
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.7,
+        "count": 723
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.5,
+        "count": 478
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.3,
+        "count": 282
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3,
+        "count": 358
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.1,
+        "count": 143
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 13
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 90.8,
+        "count": 95559
+      },
+      {
+        "group": "Romani",
+        "pct": 6.6,
+        "count": 6914
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.0,
+        "count": 1092
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.5,
+        "count": 487
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 230
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 224
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.1,
+        "count": 153
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 59
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 72
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 151
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.1,
+        "count": 94
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 41
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 90.3,
+        "count": 95069
+      },
+      {
+        "group": "Roma",
+        "pct": 6.6,
+        "count": 6954
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.1,
+        "count": 1182
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.4,
+        "count": 407
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 291
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 216
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.2,
+        "count": 187
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.2,
+        "count": 187
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.2,
+        "count": 191
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.1,
+        "count": 92
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 118
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 53
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.0,
+        "count": 35
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Međimurska",
+      "Međimurska županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  },
+  {
+    "id": "HRV-grad-zagreb",
+    "level": "admin1",
+    "name": "City of Zagreb",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 767131,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 73.4,
+        "count": 562825
+      },
+      {
+        "group": "No religion",
+        "pct": 7.9,
+        "count": 60849
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.9,
+        "count": 37744
+      },
+      {
+        "group": "Agnostic",
+        "pct": 3.3,
+        "count": 25217
+      },
+      {
+        "group": "Not declared",
+        "pct": 2.6,
+        "count": 19915
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.6,
+        "count": 19908
+      },
+      {
+        "group": "Islam",
+        "pct": 2.0,
+        "count": 15499
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.4,
+        "count": 10949
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.4,
+        "count": 11047
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.2,
+        "count": 1608
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.2,
+        "count": 1223
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 347
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 96.7,
+        "count": 741626
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.6,
+        "count": 4343
+      },
+      {
+        "group": "Other",
+        "pct": 0.5,
+        "count": 3507
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.4,
+        "count": 3300
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 3183
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.3,
+        "count": 2482
+      },
+      {
+        "group": "Romani",
+        "pct": 0.2,
+        "count": 1212
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.1,
+        "count": 613
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 446
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 480
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 987
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 514
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 565
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.1,
+        "count": 1140
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.1,
+        "count": 1094
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 125
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 260
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 167
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 87
+      },
+      {
+        "group": "Ruthenian",
+        "pct": 0.0,
+        "count": 63
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 173
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 327
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 127
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 244
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 65
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 93.5,
+        "count": 717526
+      },
+      {
+        "group": "Serbian",
+        "pct": 1.6,
+        "count": 12034
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.9,
+        "count": 6566
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.8,
+        "count": 6036
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 5045
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.5,
+        "count": 3475
+      },
+      {
+        "group": "Other",
+        "pct": 0.5,
+        "count": 4043
+      },
+      {
+        "group": "Roma",
+        "pct": 0.3,
+        "count": 2167
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.2,
+        "count": 1312
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.2,
+        "count": 1168
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.1,
+        "count": 865
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 807
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 646
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 1036
+      },
+      {
+        "group": "Italian",
+        "pct": 0.1,
+        "count": 430
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.1,
+        "count": 563
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.1,
+        "count": 1126
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 84
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 114
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 377
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 157
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 380
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 111
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 217
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 134
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 376
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 260
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
+    "country": "HRV",
+    "aliases": [
+      "Grad Zagreb",
+      "Grad Zagreb županija"
+    ],
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars.",
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+  }
+]
