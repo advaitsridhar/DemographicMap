@@ -4841,6 +4841,57 @@ class BosniaReadsBookTwo(unittest.TestCase):
             bosnia.bars("religion", units[2])
 
 
+class WikiCensusReadsATranscribedTable(unittest.TestCase):
+    """A census table reaching the project as a Wikipedia transcription: the
+    table is found by its first header cells, the header rows skipped, the
+    percent columns read, the total row dropped, aliases attached, a short
+    row given its remainder, and a reordered or overflowing table refused.
+    """
+
+    KAZ = (
+        "{| class=\"wikitable\"\n|-\n"
+        "! rowspan=\"2\" |Region !! colspan=\"2\" |Islam !! colspan=\"2\" |Christianity"
+        " !! colspan=\"2\" |Other !! colspan=\"2\" |No Religion !! colspan=\"2\" |Undeclared\n|-\n"
+        "! # !! % !! # !! % !! # !! % !! # !! % !! # !! %\n|-\n"
+        "|Total||13,297,775||69.31||3,297,550||17.19||45,897||0.24||432,140||2.25||2,112,653||11.01\n|-\n"
+        "|[[Akmola Region]]||362,070||46.24||287,619||36.73||1,481||0.19||14,578||1.86||117,247||14.97\n|-\n"
+        "|Atyrau Region||563,53||83.66||29,513||4.38||870||0.13||6,395||0.95||73,284||10.88\n|}"
+    )
+    KHM = (
+        "{| class=\"wikitable sortable\"\n"
+        "! rowspan=\"2\" | Province !! colspan=\"2\" | Buddhism !! colspan=\"2\" | Islam"
+        " !! colspan=\"2\" | Christianity !! colspan=\"2\" | Others\n|-\n"
+        "! 2008 !! 2019 !! 2008 !! 2019 !! 2008 !! 2019 !! 2008 !! 2019\n|-\n"
+        "| [[Banteay Meanchey]] || 99.2 || 99.3 || 0.5 || 0.4 || 0.3 || 0.2 || 0.0 || 0.0\n|-\n"
+        "| Mondulkiri || 54.7 || 70.4 || 5.5 || 4.4 || 4.4 || 4.0 || 35.5 || 21.2\n|-\n"
+        "| Total || 96.9 || 97.1 || 1.9 || 2.0 || 0.4 || 0.3 || 0.8 || 0.5\n|}"
+    )
+
+    def test_kazakhstan_and_cambodia(self):
+        from scripts.fetch_census import wiki_census as w
+        kaz = w.build("KAZ", w.SPECS["KAZ"], "intro\n" + self.KAZ)
+        self.assertEqual([r["name"] for r in kaz], ["Akmola Region", "Atyrau Region"])
+        self.assertEqual(kaz[0]["religion"][0], {"group": "Islam", "pct": 46.24})
+        self.assertEqual({b["group"] for b in kaz[1]["religion"]},
+                         {"Islam", "Christianity", "Other religions", "No religion", "Not stated"})
+        khm = w.build("KHM", w.SPECS["KHM"], self.KHM)
+        self.assertEqual([r["name"] for r in khm], ["Banteay Meanchey", "Mondulkiri"])
+        self.assertEqual(khm[0]["aliases"], ["Bantey Meanchey"])
+        self.assertEqual(khm[0]["religion"][0], {"group": "Buddhism", "pct": 99.3})   # 2019, not 2008
+        self.assertIn({"group": "Other religions", "pct": 0.0}, khm[0]["religion"])  # a printed 0.0 is kept
+        self.assertEqual(khm[1]["religion"][1], {"group": "Other religions", "pct": 21.2})
+
+    def test_a_short_row_gets_a_remainder_and_a_bad_table_refuses(self):
+        from scripts.fetch_census import wiki_census as w
+        short = self.KHM.replace("|| 0.0 || 0.0", "|| 0.0 || N/A").replace("99.2 || 99.3", "99.2 || 97.0")
+        khm = w.build("KHM", w.SPECS["KHM"], short)
+        self.assertIn({"group": "Other or not stated", "pct": 2.4}, khm[0]["religion"])
+        with self.assertRaises(SystemExit):
+            w.build("KHM", w.SPECS["KHM"], self.KHM.replace("Province !!", "Area !!"))
+        with self.assertRaises(SystemExit):
+            w.build("KHM", w.SPECS["KHM"], self.KHM.replace("|| 70.4 ||", "|| 90.4 ||"))
+
+
 class PolandCutsTheReligionTreeOnce(unittest.TestCase):
     """GUS publishes religion as a seven-level classification tree, and the
     composition is one cut through it: Christian branches at level 5, other
