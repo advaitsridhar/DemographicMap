@@ -3050,11 +3050,18 @@ class UscbReader(unittest.TestCase):
         self.assertEqual(summing, ["UKR"])
 
     def test_ukraine_reads_the_flat_language_sheet(self):
-        # Nationality-Language is the cross-tabulation of the two: 1,619
-        # columns, every nationality against every native language. That is a
-        # different and much larger claim than this map has a field for.
-        sheets = [t.sheet for t in self.uscb.UKRAINE.topics]
-        self.assertEqual(sheets, ["Language"])
+        # Language comes from the flat sheet. Nationality-Language is the
+        # cross-tabulation of the two, 1,619 columns, and only its first
+        # block -- the whole population of each nationality, NL_ETH_* -- is
+        # read, by prefix; the cells of the cross-tabulation are not a field
+        # this map has.
+        topics = {t.field: t for t in self.uscb.UKRAINE.topics}
+        self.assertEqual(topics["language"].sheet, "Language")
+        self.assertEqual(topics["language"].prefix, "")
+        self.assertEqual(topics["ethnicity"].sheet, "Nationality-Language")
+        self.assertEqual(topics["ethnicity"].prefix, "NL_ETH_")
+        self.assertTrue(self.uscb.mine("NL_ETH_UKR", "NL_ETH_"))
+        self.assertFalse(self.uscb.mine("NL_RUS_UKR", "NL_ETH_"))
 
     def test_every_ukrainian_oblast_is_declared(self):
         # The Bureau romanises from Ukrainian and geoBoundaries uses English
