@@ -73,6 +73,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | UK | ONS Census 2021 via Nomis (TS021, TS030) | local authority, county | **England and Wales only** — Scotland and Northern Ireland are the two rows below. Religion is voluntary, so "Not answered" is kept as its own category. TS021 is returned at two nesting levels at once and only the leaves are read; summing both counted every person twice. |
 | Scotland | Census 2011 Key Statistics `KS201SC` / `KS206SC` / `KS209SCb` (NRS) | council area | Fourteen years older than England and Wales, and stamped 2011 on every figure rather than smoothed. The 2022 results are still only in a flexible table builder. Ethnicity reads the leaves; language reads the one block of `KS206SC` that is a composition. |
 | Northern Ireland | NISRA Census 2021 `MS-B01` / `MS-B12` / `MS-B20` | local government district | Religion is the one **held** (`MS-B20`, 32 denominations), not the "religion or religion brought up in" of `MS-B23`/`B24` that is the province's more familiar figure — a different question, and this map has no field for it. Language is main language of residents aged 3+, not knowledge of Irish or Ulster-Scots. |
+| Ireland | CSO Census 2022 via PxStat, `SAP2022T2T4LEA22` / `SAP2022T2T2LEA22` | local electoral area | Religion at this geography is **four categories** — Catholic, Other religion, No religion, Not stated — so "Other religion" holds the Church of Ireland, Presbyterians, Orthodox and Muslims together and a filter for Christianity reads an Irish area at its Catholic share. Language is declared, not filled: the census asks which foreign languages a person speaks (English absent) and whether they can speak Irish (an ability). |
 | Canada | StatCan 2021 Census Profile (SDMX, keyed by DGUID) | province, census division | Religion is asked once a decade (2021 yes, 2016 no). "Visible minority" is an Employment Equity Act category, not an ethnicity question. |
 | Brazil | IBGE SIDRA tables 9514 / 9605 / 10086 | state, municipality | *Cor ou raça* is self-declared skin colour (branca, preta, parda, amarela, indígena) — not equivalent to ethnicity elsewhere. |
 | EU | Eurostat `demo_r_pjangrp3`, `demo_r_pjanind3` | NUTS-2, NUTS-3 | Population and age everywhere; **no** ethnicity or religion — those are national census questions and only some states ask them. |
@@ -1813,6 +1814,62 @@ one row from each office -- which tripped the guard, because the NISRA spelling
 lowercases to the canonical group's own name. A residual is never a parent:
 there is no third figure two catch-alls are both part of. The guard now exempts
 them, and a real parent beside a real child still stops the build.
+
+### Ireland: a seat count is not a name
+
+Ireland had nothing subnational: four provinces and 166 local electoral areas
+with no religion, no ethnicity and no language, and the Factbook's national
+figures as the only Irish numbers on the map.
+
+**The CSO does not run PxWeb.** It runs PxStat, its own platform, whose API
+answers RPC-style method names rather than the navigable folder tree
+`probe_pxweb` walks -- so Ireland was never going to appear in that probe
+however often it ran, and the endpoint shape had to be established rather than
+assumed. Two measurements worth keeping: the *collection* answers on the bare
+`ReadCollection` method and returns **500** on the JSON-stat-suffixed path,
+while `ReadDataset` is the other way round. Neither is guessable, and the
+plausible-looking one is the broken one.
+
+**The table is called "Population".** `SAP2022T2T4LEA22` is Ireland's religion
+by local electoral area and its title says nothing about religion; the subject
+is a *dimension*. Searching table titles returned zero matches and that zero
+was nearly written up as a finding about Ireland when it was a fact about the
+search. The probe now searches dimension labels too.
+
+**Totals are named by the source.** Every PxStat dataset carries
+`extension.elimination`, stating which category of each dimension is its total
+-- `T` for Ethnicity, `IE0` for the geography. Hunting for the word "Total"
+would be a guess that breaks on the first table spelling it differently, and
+including one doubles the composition.
+
+**The seat count is not a name, and this was the whole join.** geoBoundaries
+writes `ADARE-RATHKEALE LEA-6` where the CSO writes `Adare-Rathkeale,
+Limerick`: the 6 is how many councillors the area returns. Left in the
+comparison, all 166 rows miss their shape. `norm()` now drops LEA followed by
+digits, and that was measured before it was added -- across both CGAZ levels
+the pattern appears on 166 shapes, every one Irish, and on nothing else in the
+world. The single real place called Lea, a township in the United States, has
+no number after it and is untouched.
+
+**Stripping a suffix can merge two names, and here it merges exactly one
+pair.** Athlone straddles the Shannon, so the town has two local electoral
+areas either side of a county boundary, and the CSO distinguishes them only by
+the county it appends. Resolved geometrically rather than guessed from seat
+counts: `ATHLONE LEA-5` lies 100% inside Leinster and `ATHLONE LEA-6` 99.9%
+inside Connacht, so the Westmeath row is the first and the Roscommon row the
+second. Each states its province, which is the mechanism the matcher already
+has. A test asserts `athlone` is the *only* shared key, because a second
+undetected pair would hand one area another's figures in silence. The result
+reads as it should: rural Roscommon 82.7% Catholic against urban Westmeath
+66.0%, which is also the check that the two were not assigned the wrong way
+round.
+
+**What it cost.** 166 of 166 shapes matched, the 166 populations sum to
+5,149,139 -- Ireland's Census 2022 count to the person -- and the four
+provinces roll up to the same figure. Religion arrives in four categories,
+which is what exists at this geography; the fuller classification is published
+for counties and provinces, and geoBoundaries draws no Irish county layer, so
+the real choice was four categories across 166 areas or nothing.
 
 ### England and Wales: ethnicity was counted twice for as long as it was published
 
