@@ -1,5 +1,5 @@
-ibge_sidra: municipality (n6)
-  religion variant v/140 failed (HTTP Error 400: Bad Request)
-  religion: table 9537 v/140 answered state by state (5570 municipalities)
-  wrote data/processed/brazil_municipality.json (13288 kB)
-  5571 records
+malaysia: ethnicity by state and district, OpenDOSM
+  states: 16 at 2026-01-01
+  wrote data/processed/malaysia_state.json (30 kB)
+  districts: 160 at 2025-01-01
+  wrote data/processed/malaysia_district.json (308 kB)
