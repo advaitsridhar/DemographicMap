@@ -1,3 +1,5 @@
-kenya: religion by county, KNBS 2019 Volume IV via openAFRICA
-  47 counties
-  wrote data/processed/kenya_county.json (120 kB)
+ibge_sidra: municipality (n6)
+  religion variant v/140 failed (HTTP Error 400: Bad Request)
+  religion: table 9537 v/140 answered state by state (5570 municipalities)
+  wrote data/processed/brazil_municipality.json (13288 kB)
+  5571 records
