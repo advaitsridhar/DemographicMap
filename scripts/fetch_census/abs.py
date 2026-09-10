@@ -428,7 +428,7 @@ def restrict_extra_dimensions(rows: list[tuple[dict[str, str], float]],
 
 
 def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
-                    region_dim: str = "REGION"
+                    region_dim: str = "REGION", strict: bool = False
                     ) -> tuple[dict[str, dict[str, float]], dict[str, float]]:
     """The categories per region, and the persons the classification totals to.
 
@@ -463,6 +463,12 @@ def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
                           if label.strip().lower() in GRAND_TOTAL), None)
         kept, how = top_level(counts, published)
         picked[how] = picked.get(how, 0) + 1
+        # The suffix rule is right for religion, whose every top level is
+        # marked, and wrong for language, whose "Speaks English only" is not:
+        # a region it falls back to loses its largest category. Strict means
+        # a region no rule sums is published as a gap, not as that.
+        if strict and how.startswith("suffix (nothing summed"):
+            kept = {}
         grouped[region] = kept
         # The table's own total where it publishes one. Otherwise the collapsed
         # categories' sum, which partitions the population for religion because
@@ -526,7 +532,7 @@ def main() -> int:
     # so it is never a population and is discarded here.
     ancestry, _ = (group_by_region(ancestry_rows, ancestry_dim, region_dim)
                    if ancestry_dim else ({}, {}))
-    language, _ = (group_by_region(language_rows, language_dim, region_dim)
+    language, _ = (group_by_region(language_rows, language_dim, region_dim, strict=True)
                    if language_dim else ({}, {}))
     if religion_rows and not religion:
         log("  ! religion rows returned but none grouped -- dimension detection failed")
