@@ -1,0 +1,162 @@
+{
+ "iso3": "KEN",
+ "name": "Kenya",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "2019 KPHC - Distribution of Population by Religious Affiliation and County",
+   "kind": "census",
+   "format": "unknown",
+   "geography": "county",
+   "geography_count": 47,
+   "matches_boundary_level": "admin1",
+   "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census/resource/2b2a7b48-ff46-4aa1-91c8-94b2c91e568b",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://open.africa/dataset/2019-kenya-population-and-housing-census/resource/2b2a7b48-ff46-4aa1-91c8-94b2c91e568b",
+   "error": null,
+   "body": {
+    "bytes_read": 47644,
+    "kind": "html",
+    "title": "2019 Kenya Population and Housing Census - Distribution of Population by Religious Affiliation and County - openAFRICA",
+    "links_to_files": [
+     "https://open.africa/dataset/9b94fe50-9d75-4b92-be00-6354c6e6cc88/resource/2b2a7b48-ff46-4aa1-91c8-94b2c91e568b/download/distribution-of-population-by-religious-affiliation-and-county-2019-census-volume-iv.csv"
+    ],
+    "mentions": [
+     "census",
+     "ethnicity"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "2019 Kenya Population and Housing Census Volume IV",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "county",
+   "geography_count": 47,
+   "matches_boundary_level": "admin1",
+   "url": "https://www.knbs.or.ke/wp-content/uploads/2023/09/2019-Kenya-population-and-Housing-Census-Volume-4-Distribution-of-Population-by-Socio-Economic-Characteristics.pdf",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>"
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "Religious Affiliation - KNBS",
+   "kind": "census",
+   "format": "html",
+   "geography": null,
+   "geography_count": null,
+   "matches_boundary_level": "unknown",
+   "url": "https://www.knbs.or.ke/religious-affiliation/",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>"
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Kenya",
+    "wikitext_bytes": 22041,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Baringo Central",
+    "found": true,
+    "title": "Baringo Central Constituency",
+    "url": "https://en.wikipedia.org/wiki/Baringo_Central_Constituency",
+    "wikitext_bytes": 6359,
+    "infobox_params": [
+     "blank1_name"
+    ],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Gilgil",
+    "found": true,
+    "title": "Gilgil",
+    "url": "https://en.wikipedia.org/wiki/Gilgil",
+    "wikitext_bytes": 8313,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Githunguri",
+    "found": true,
+    "title": "Githunguri Constituency",
+    "url": "https://en.wikipedia.org/wiki/Githunguri_Constituency",
+    "wikitext_bytes": 5280,
+    "infobox_params": [
+     "blank1_name"
+    ],
+    "sections": [],
+    "wikitables": 3,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kisauni",
+    "found": true,
+    "title": "Kisauni Constituency",
+    "url": "https://en.wikipedia.org/wiki/Kisauni_Constituency",
+    "wikitext_bytes": 5253,
+    "infobox_params": [
+     "blank1_name"
+    ],
+    "sections": [],
+    "wikitables": 3,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kitutu Chache North",
+    "found": true,
+    "title": "Kitutu Chache North Constituency",
+    "url": "https://en.wikipedia.org/wiki/Kitutu_Chache_North_Constituency",
+    "wikitext_bytes": 2366,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "verdict": {
+  "urls_answering": "1/3",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}
