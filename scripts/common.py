@@ -137,12 +137,85 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
         "ethnicity": "Turkey has not collected ethnicity since the 1965 census; its address-based register records residence and citizenship instead.",
         "language": "Turkey has not collected mother tongue since the 1965 census.",
     },
+    # The entries below were written from the survey under survey/findings:
+    # each names the census and the fact about its questionnaire the
+    # declaration rests on. A wrong "not asked" would hide real data, so a
+    # country whose questionnaire the survey could not settle is left alone.
+    "NGA": {
+        "religion": "Nigeria's census does not ask religion. The National Population Commission stated in 2022 and 2023 that the question was excluded from the 2023 questionnaire for its sensitivity, as it was from 1991 and 2006; the only subnational figures are survey estimates.",
+        "ethnicity": "Nigeria's census does not ask ethnicity, excluded from the 2023 questionnaire with religion for the same stated reason; the only subnational figures are survey estimates.",
+    },
+    "TZA": {
+        "religion": "Tanzania's census has not asked religion since 1967; the 2022 census did not, and the only subnational figures are survey estimates.",
+        "ethnicity": "Tanzania's census has not asked ethnic group since 1973; the 2022 census did not.",
+    },
+    "SDN": {
+        "religion": "Sudan's 2008 census, the last, dropped religion from the questionnaire by decision of the Presidency (UNSD country paper; IHSN catalogue); the only subnational figures are survey estimates.",
+        "ethnicity": "Sudan's 2008 census dropped ethnicity with religion; the last count of ethnic group was 1956, on nine provinces that match no current boundary.",
+    },
+    "SSD": {
+        "religion": "South Sudan has held no census since independence; the 2008 Sudan census that covered it dropped religion from the questionnaire by decision of the Presidency.",
+        "ethnicity": "South Sudan has held no census since independence; the 2008 Sudan census that covered it dropped ethnicity with religion.",
+    },
+    "COL": {
+        "religion": "Colombia's census does not ask religion; DANE publishes no religious statistics. The 2018 census asked ethnic self-recognition, which is on the map.",
+        "language": "Colombia's 2018 census has no language question for the population; it asks only whether a person who is indigenous speaks their native language, which is not a composition.",
+    },
+    "DZA": {
+        "religion": "Algeria's census does not ask religion; censuses on a religious, linguistic or ethnic basis are barred to preserve national unity. The 2022 RGPH form has no such question.",
+        "ethnicity": "Algeria's census does not ask ethnicity, barred with religion and language; the 2022 RGPH form has no such question.",
+        "language": "Algeria's census has not asked language since 1966, on a division set that matches no current boundary; the 2022 RGPH form has no such question.",
+    },
+    "SAU": {
+        "religion": "Saudi Arabia's 2022 census asks citizenship (Saudi or non-Saudi, and country of citizenship) and not religion; there are no official religious statistics at any level.",
+        "ethnicity": "Saudi Arabia's 2022 census records citizenship, not ethnicity.",
+        "language": "Saudi Arabia's 2022 census does not ask language.",
+    },
+    "IRQ": {
+        "ethnicity": "Iraq's 2024 census, the first nationwide count since 1987, deliberately excluded ethnicity from the questionnaire; religion was asked, sect was not.",
+        "language": "Iraq's 2024 census deliberately excluded language from the questionnaire with ethnicity.",
+    },
+    "RUS": {
+        "religion": "Russia's census has never asked religion; the 2020 census asked nationality and native language, which are on the map.",
+    },
+    "ARG": {
+        "religion": "Argentina's census has not asked religion since 1960; only the 1947 and 1960 censuses carried the question. The 2022 census asks indigenous and Afro-descendant self-recognition instead.",
+    },
+    "BRA": {
+        "language": "Brazil's census does not ask language of the population; the 2022 census asks which indigenous languages an indigenous person speaks, which is not a composition.",
+    },
+    "IRN": {
+        "ethnicity": "Iran's census does not ask ethnicity; the 2016 census asked religion in the state's recognised categories, not ethnic group.",
+        "language": "Iran's census does not ask language.",
+    },
+    "GRC": {
+        "religion": "Greece's census has not asked religion since 1951; the 2021 census records citizenship and country of birth.",
+        "language": "Greece's census has not asked mother tongue since 1951.",
+    },
+    "PRK": {
+        "religion": "North Korea's only modern census, 2008, asked no religion question, and the state publishes no other figures.",
+        "ethnicity": "North Korea's 2008 census asked no ethnicity question.",
+        "language": "North Korea's 2008 census asked no language question.",
+    },
+    "SYR": {
+        "religion": "Syria's census has not asked religion since 1960; the 2004 census asked nationality (citizenship) only, as the US Census Bureau workbook's dictionary confirms.",
+        "ethnicity": "Syria's census has never asked ethnicity; the 2004 sheet labelled Ethnicity is a distribution by nationality, which is citizenship.",
+    },
+    "TUN": {
+        "religion": "Tunisia's census (2014, 2024) carries no religion question; the national figure is an estimate, not a count, and the only subnational figures are survey estimates.",
+        "ethnicity": "Tunisia's census does not ask ethnicity.",
+    },
     "KOR": {"ethnicity": "South Korea's census does not collect ethnicity."},
-    "NLD": {"ethnicity": "The Netherlands records migration background, not ethnicity."},
-    "SWE": {"ethnicity": "Sweden records country of birth and citizenship, not ethnicity."},
+    "NLD": {"ethnicity": "The Netherlands records migration background, not ethnicity.",
+            "language": "The Netherlands has had no questionnaire census since 1971 and no register records language."},
+    "SWE": {"ethnicity": "Sweden records country of birth and citizenship, not ethnicity.",
+            "religion": "Sweden's census is compiled from registers, and no register records religion; the state kept none after the Church of Sweden separated in 2000.",
+            "language": "Sweden's census is compiled from registers, and no register records mother tongue."},
     "NOR": {"ethnicity": "Norway records immigrant background, not ethnicity."},
     "DNK": {"ethnicity": "Denmark records ancestry/citizenship, not ethnicity."},
-    "BEL": {"ethnicity": "Belgium does not collect ethnicity; language community is administrative, not a census question."},
+    "BEL": {"ethnicity": "Belgium does not collect ethnicity; language community is administrative, not a census question.",
+            "religion": "Belgium's census is compiled from registers and has never carried religion.",
+            "language": "Belgium's language census was abolished by the law of 24 July 1961 after the 1947 count; the register-based census records none."},
     "ITA": {"ethnicity": "Italy's census records citizenship, not ethnicity."},
 }
 
