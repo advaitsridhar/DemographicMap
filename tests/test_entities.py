@@ -4595,6 +4595,77 @@ class MalaysiaKeepsTheNonCitizenRow(unittest.TestCase):
             malaysia.compositions(rows, ("state", "district"))
 
 
+class CzechiaReadsTheOpenDataLong(unittest.TestCase):
+    """ČSÚ's open data is one long CSV per table: the territory's kind in
+    uzemi_cis, a row with no category for its population, and a category
+    label per row. Religion partitions the population and a row absent from
+    the table stops the build; the single-mother-tongue file leaves the
+    two-language and other-language people as the total less its rows, kept
+    as one bar; a district is filed under its kraj by the adapter's own
+    table, with the boundary file's English spelling as an alias.
+    """
+
+    HEADER = ("idhod,hodnota,ukaz_kod,vira_cis,vira_kod,uzemi_cis,uzemi_kod,"
+              "sldb_rok,sldb_datum,ukaz_txt,vira_txt,uzemi_txt")
+
+    def rows(self, label_column="vira_txt", cis="101", kod="40924", name="Praha-východ",
+             extra=()):
+        header = self.HEADER.replace("vira_txt", label_column)
+        lines = [header,
+                 f"1,1000,3162,,,{cis},{kod},2021,2021-03-26,Počet,,{name}",
+                 f"2,5,3162,3078,2,43,500011,2021,2021-03-26,Počet,Apoštolská církev,Želechovice"]
+        for i, (label, n) in enumerate(extra, 10):
+            lines.append(f"{i},{n},3162,3078,{i},{cis},{kod},2021,2021-03-26,Počet,{label},{name}")
+        return "\n".join(lines).encode("utf-8")
+
+    def test_only_kraje_and_okresy_are_read_and_the_blank_row_is_the_total(self):
+        from scripts.fetch_census import czechia
+        czechia.http_get = lambda url, **kw: self.rows(
+            extra=[("Bez náboženské víry", 600), ("Církev římskokatolická", 100),
+                   ("katolická víra (katolík)", 50), ("ateismus", 10), ("Neuvedeno", 240)])
+        units = czechia.read_table("religion")
+        self.assertEqual(list(units), [("101", "40924")])
+        unit = units[("101", "40924")]
+        self.assertEqual(unit["total"], 1000)
+        groups = czechia.religion(unit["rows"], unit["total"], unit["name"])
+        self.assertEqual(groups["No religion"], 610)        # the written atheism joins it
+        self.assertEqual(groups["Roman Catholic"], 100)
+        self.assertEqual(groups["Catholic (unspecified)"], 50)  # and stays apart
+
+    def test_a_religion_row_outside_the_table_or_a_bad_sum_stops_the_build(self):
+        from scripts.fetch_census import czechia
+        with self.assertRaises(SystemExit):
+            czechia.religion({"Bez náboženské víry": 600, "Církev jedi rytířů": 400}, 1000, "x")
+        with self.assertRaises(SystemExit):
+            czechia.religion({"Bez náboženské víry": 600, "Neuvedeno": 100}, 1000, "x")
+
+    def test_language_remainder_is_one_labelled_bar(self):
+        from scripts.fetch_census import czechia
+        groups = czechia.language({"Český jazyk": 800, "Slovenský jazyk": 50, "Nezjištěno": 100},
+                                  1000, "x")
+        self.assertEqual(groups[czechia.LANGUAGE_REMAINDER], 50)
+        self.assertEqual(groups["Not stated"], 100)
+        with self.assertRaises(SystemExit):        # more rows than people
+            czechia.language({"Český jazyk": 1100}, 1000, "x")
+
+    def test_nationality_drops_celkem_and_keeps_every_group(self):
+        from scripts.fetch_census import czechia
+        groups = czechia.nationality({"Česká celkem": 700, "Moravská celkem": 100,
+                                      "Jiná celkem": 5})
+        self.assertEqual(groups, {"Czech": 700, "Moravian": 100, "Other": 5})
+        with self.assertRaises(SystemExit):
+            czechia.nationality({"Marťanská celkem": 1})
+
+    def test_every_okres_has_a_kraj_and_the_english_spellings_are_aliases(self):
+        from scripts.fetch_census import czechia
+        self.assertEqual(sum(len(v) for v in czechia.OKRES_KRAJ.values()), 77)
+        self.assertEqual(len(czechia.KRAJ_OF), 77)
+        self.assertEqual(czechia.KRAJ_OF["Praha-východ"], "Středočeský kraj")
+        self.assertEqual(czechia.OKRES_ALIASES["Brno-město"], ["Brno-City"])
+        for okres in czechia.OKRES_ALIASES:
+            self.assertIn(okres, czechia.KRAJ_OF)
+
+
 class PolandCutsTheReligionTreeOnce(unittest.TestCase):
     """GUS publishes religion as a seven-level classification tree, and the
     composition is one cut through it: Christian branches at level 5, other
