@@ -217,6 +217,42 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
             "religion": "Belgium's census is compiled from registers and has never carried religion.",
             "language": "Belgium's language census was abolished by the law of 24 July 1961 after the 1947 count; the register-based census records none."},
     "ITA": {"ethnicity": "Italy's census records citizenship, not ethnicity."},
+    "AUT": {
+        "ethnicity": "Austria's census has been register-based since 2011 (Registerzählung) and records citizenship and country of birth; no register holds ethnicity.",
+        "religion": "Austria's register-based census carries no religion; the last religion question was in the 2001 census.",
+        "language": "Austria's register-based census carries no language; the last Umgangssprache question was in 2001.",
+    },
+    "SVN": {
+        "ethnicity": "Slovenia's census has been register-based since 2011; ethnic affiliation was last asked in 2002.",
+        "religion": "Slovenia's register-based census carries no religion; last asked in 2002.",
+        "language": "Slovenia's register-based census carries no mother tongue; last asked in 2002.",
+    },
+    "ISL": {
+        "ethnicity": "Iceland's census is register-based and records citizenship and country of birth, not ethnicity.",
+        "language": "Iceland's register-based census carries no language.",
+    },
+    "FIN": {
+        "ethnicity": "Finland's census is register-based and records citizenship, country of birth and mother tongue, not ethnicity.",
+    },
+    "CHE": {
+        "ethnicity": "Switzerland's census records nationality, not ethnicity; religion and language come from the structural survey.",
+    },
+    "LUX": {
+        "ethnicity": "Luxembourg's census records nationality, not ethnicity.",
+        "religion": "Luxembourg's census (RP 2021) does not ask religion.",
+    },
+    "PRT": {
+        "ethnicity": "Portugal's census records nationality, not ethnicity; an ethno-racial question was considered for 2021 and not included.",
+    },
+    "LVA": {
+        "religion": "Latvia's census does not ask religion; it asks ethnicity and language.",
+    },
+    "UKR": {
+        "religion": "Ukraine's 2001 census asked nationality and language, not religion.",
+    },
+    "BLR": {
+        "religion": "Belarus's 2019 census asked nationality and language, not religion.",
+    },
 }
 
 

@@ -1,0 +1,6273 @@
+[
+  {
+    "id": "KAZ-east-kazakhstan-region",
+    "level": "admin1",
+    "name": "East Kazakhstan Region",
+    "parent": "KAZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1326799,
+      "year": 2025,
+      "source": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Kazakh",
+        "pct": 63.8,
+        "count": 846168
+      },
+      {
+        "group": "Russian",
+        "pct": 31.3,
+        "count": 414829
+      },
+      {
+        "group": "German",
+        "pct": 1.4,
+        "count": 18330
+      },
+      {
+        "group": "Tatar",
+        "pct": 1.3,
+        "count": 17141
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.7,
+        "count": 8709
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.2,
+        "count": 2616
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 2637
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.1,
+        "count": 1687
+      },
+      {
+        "group": "Uyghur",
+        "pct": 0.1,
+        "count": 1619
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.1,
+        "count": 1880
+      },
+      {
+        "group": "Korean",
+        "pct": 0.1,
+        "count": 1471
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.1,
+        "count": 765
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.1,
+        "count": 1611
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 726
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 317
+      },
+      {
+        "group": "Dungan",
+        "pct": 0.0,
+        "count": 444
+      },
+      {
+        "group": "Kurd",
+        "pct": 0.0,
+        "count": 85
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 470
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 353
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.0,
+        "count": 131
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 431
+      },
+      {
+        "group": "Ingush",
+        "pct": 0.0,
+        "count": 107
+      },
+      {
+        "group": "Moldovan",
+        "pct": 0.0,
+        "count": 457
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 151
+      },
+      {
+        "group": "Mordvin",
+        "pct": 0.0,
+        "count": 318
+      },
+      {
+        "group": "Chuvash",
+        "pct": 0.0,
+        "count": 241
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 166
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 248
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 362
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 208
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 160
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 99
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 191
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 182
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 182
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 108
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 93
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 150
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Peoples of India and Pakistan",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Buryat",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Altai",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Khakas",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Yakut",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 261
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)",
+        "url": "https://stat.gov.kz/ru/industries/social-statistics/stat-demography/",
+        "license": "Official statistics of the Bureau of National Statistics; free to use with attribution"
+      }
+    ],
+    "country": "KAZ",
+    "ethnicity_note": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025). Register-based population at 1 January 2025, carried forward from the 2021 census; not a census count. Read from the Bureau's workbook."
+  },
+  {
+    "id": "KAZ-akmola-region",
+    "level": "admin1",
+    "name": "Akmola Region",
+    "parent": "KAZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 787263,
+      "year": 2025,
+      "source": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Kazakh",
+        "pct": 56.8,
+        "count": 446901
+      },
+      {
+        "group": "Russian",
+        "pct": 26.3,
+        "count": 207130
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 4.9,
+        "count": 38833
+      },
+      {
+        "group": "German",
+        "pct": 3.8,
+        "count": 29754
+      },
+      {
+        "group": "Tatar",
+        "pct": 1.7,
+        "count": 13533
+      },
+      {
+        "group": "Belarusian",
+        "pct": 1.5,
+        "count": 11587
+      },
+      {
+        "group": "Polish",
+        "pct": 1.1,
+        "count": 8340
+      },
+      {
+        "group": "Ingush",
+        "pct": 0.6,
+        "count": 4641
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.4,
+        "count": 3325
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.3,
+        "count": 2327
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.3,
+        "count": 2102
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.2,
+        "count": 1852
+      },
+      {
+        "group": "Korean",
+        "pct": 0.2,
+        "count": 1607
+      },
+      {
+        "group": "Moldovan",
+        "pct": 0.2,
+        "count": 1802
+      },
+      {
+        "group": "Dungan",
+        "pct": 0.1,
+        "count": 593
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.1,
+        "count": 591
+      },
+      {
+        "group": "Kurd",
+        "pct": 0.1,
+        "count": 752
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.1,
+        "count": 800
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 1078
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 650
+      },
+      {
+        "group": "Mordvin",
+        "pct": 0.1,
+        "count": 885
+      },
+      {
+        "group": "Chuvash",
+        "pct": 0.1,
+        "count": 691
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.1,
+        "count": 1109
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.1,
+        "count": 401
+      },
+      {
+        "group": "Mari",
+        "pct": 0.1,
+        "count": 959
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1,
+        "count": 519
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 424
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 1151
+      },
+      {
+        "group": "Uyghur",
+        "pct": 0.0,
+        "count": 375
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 294
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.0,
+        "count": 194
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 298
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 116
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 127
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 93
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 77
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 121
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 83
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 90
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 130
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 87
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 106
+      },
+      {
+        "group": "Peoples of India and Pakistan",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Buryat",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Altai",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Khakas",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Yakut",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.0,
+        "count": 19
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)",
+        "url": "https://stat.gov.kz/ru/industries/social-statistics/stat-demography/",
+        "license": "Official statistics of the Bureau of National Statistics; free to use with attribution"
+      }
+    ],
+    "country": "KAZ",
+    "ethnicity_note": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025). Register-based population at 1 January 2025, carried forward from the 2021 census; not a census count. Read from the Bureau's workbook."
+  },
+  {
+    "id": "KAZ-aktobe-region",
+    "level": "admin1",
+    "name": "Aktobe Region",
+    "parent": "KAZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 949524,
+      "year": 2025,
+      "source": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Kazakh",
+        "pct": 85.7,
+        "count": 813582
+      },
+      {
+        "group": "Russian",
+        "pct": 7.2,
+        "count": 68155
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 3.3,
+        "count": 30998
+      },
+      {
+        "group": "Tatar",
+        "pct": 1.0,
+        "count": 9934
+      },
+      {
+        "group": "German",
+        "pct": 0.7,
+        "count": 7018
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.2,
+        "count": 1629
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.2,
+        "count": 1578
+      },
+      {
+        "group": "Korean",
+        "pct": 0.2,
+        "count": 1566
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.2,
+        "count": 1767
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.2,
+        "count": 1509
+      },
+      {
+        "group": "Moldovan",
+        "pct": 0.2,
+        "count": 1757
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 1360
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.1,
+        "count": 1001
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 538
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 822
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 839
+      },
+      {
+        "group": "Uyghur",
+        "pct": 0.0,
+        "count": 244
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 232
+      },
+      {
+        "group": "Dungan",
+        "pct": 0.0,
+        "count": 81
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 284
+      },
+      {
+        "group": "Kurd",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 466
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 272
+      },
+      {
+        "group": "Ingush",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 123
+      },
+      {
+        "group": "Mordvin",
+        "pct": 0.0,
+        "count": 333
+      },
+      {
+        "group": "Chuvash",
+        "pct": 0.0,
+        "count": 338
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 152
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 228
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 98
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 358
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 96
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 228
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 102
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 66
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 137
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 72
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 111
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 66
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Peoples of India and Pakistan",
+        "pct": 0.0,
+        "count": 256
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0,
+        "count": 67
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Buryat",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 116
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Altai",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Khakas",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Yakut",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 436
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)",
+        "url": "https://stat.gov.kz/ru/industries/social-statistics/stat-demography/",
+        "license": "Official statistics of the Bureau of National Statistics; free to use with attribution"
+      }
+    ],
+    "country": "KAZ",
+    "ethnicity_note": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025). Register-based population at 1 January 2025, carried forward from the 2021 census; not a census count. Read from the Bureau's workbook."
+  },
+  {
+    "id": "KAZ-almaty-region",
+    "level": "admin1",
+    "name": "Almaty Region",
+    "parent": "KAZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2254449,
+      "year": 2025,
+      "source": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Kazakh",
+        "pct": 74.2,
+        "count": 1673274
+      },
+      {
+        "group": "Russian",
+        "pct": 10.2,
+        "count": 230722
+      },
+      {
+        "group": "Uyghur",
+        "pct": 7.4,
+        "count": 166400
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 1.5,
+        "count": 33991
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.2,
+        "count": 26093
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.7,
+        "count": 15156
+      },
+      {
+        "group": "Korean",
+        "pct": 0.7,
+        "count": 16813
+      },
+      {
+        "group": "Kurd",
+        "pct": 0.7,
+        "count": 16609
+      },
+      {
+        "group": "German",
+        "pct": 0.6,
+        "count": 14572
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.5,
+        "count": 10523
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.4,
+        "count": 9437
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.3,
+        "count": 7295
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.3,
+        "count": 6248
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.2,
+        "count": 4183
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 4555
+      },
+      {
+        "group": "Dungan",
+        "pct": 0.1,
+        "count": 2612
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.1,
+        "count": 1589
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.1,
+        "count": 1969
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 1604
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 1822
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 550
+      },
+      {
+        "group": "Ingush",
+        "pct": 0.0,
+        "count": 789
+      },
+      {
+        "group": "Moldovan",
+        "pct": 0.0,
+        "count": 667
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 599
+      },
+      {
+        "group": "Mordvin",
+        "pct": 0.0,
+        "count": 427
+      },
+      {
+        "group": "Chuvash",
+        "pct": 0.0,
+        "count": 300
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 195
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 331
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 295
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 197
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 113
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 201
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 533
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 180
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 521
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 360
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 382
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.0,
+        "count": 87
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 81
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 63
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 80
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Peoples of India and Pakistan",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 142
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Buryat",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 140
+      },
+      {
+        "group": "Altai",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Khakas",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Yakut",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 912
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)",
+        "url": "https://stat.gov.kz/ru/industries/social-statistics/stat-demography/",
+        "license": "Official statistics of the Bureau of National Statistics; free to use with attribution"
+      }
+    ],
+    "country": "KAZ",
+    "ethnicity_note": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025). Register-based population at 1 January 2025, carried forward from the 2021 census; not a census count. Read from the Bureau's workbook."
+  },
+  {
+    "id": "KAZ-atyrau-region",
+    "level": "admin1",
+    "name": "Atyrau Region",
+    "parent": "KAZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 710781,
+      "year": 2025,
+      "source": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Kazakh",
+        "pct": 93.0,
+        "count": 661088
+      },
+      {
+        "group": "Russian",
+        "pct": 4.2,
+        "count": 29870
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.5,
+        "count": 3234
+      },
+      {
+        "group": "Korean",
+        "pct": 0.5,
+        "count": 3772
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.3,
+        "count": 1811
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.2,
+        "count": 1559
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.2,
+        "count": 1660
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 764
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.1,
+        "count": 873
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.1,
+        "count": 497
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.1,
+        "count": 470
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 426
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 483
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 842
+      },
+      {
+        "group": "Uyghur",
+        "pct": 0.0,
+        "count": 184
+      },
+      {
+        "group": "Dungan",
+        "pct": 0.0,
+        "count": 82
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 105
+      },
+      {
+        "group": "Kurd",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 325
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 307
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 119
+      },
+      {
+        "group": "Ingush",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Moldovan",
+        "pct": 0.0,
+        "count": 156
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 270
+      },
+      {
+        "group": "Mordvin",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Chuvash",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 70
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 144
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 156
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 82
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 227
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 57
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Peoples of India and Pakistan",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Buryat",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Altai",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 90
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Khakas",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 289
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)",
+        "url": "https://stat.gov.kz/ru/industries/social-statistics/stat-demography/",
+        "license": "Official statistics of the Bureau of National Statistics; free to use with attribution"
+      }
+    ],
+    "country": "KAZ",
+    "ethnicity_note": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025). Register-based population at 1 January 2025, carried forward from the 2021 census; not a census count. Read from the Bureau's workbook."
+  },
+  {
+    "id": "KAZ-west-kazakhstan-region",
+    "level": "admin1",
+    "name": "West Kazakhstan Region",
+    "parent": "KAZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 695988,
+      "year": 2025,
+      "source": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Kazakh",
+        "pct": 78.8,
+        "count": 548542
+      },
+      {
+        "group": "Russian",
+        "pct": 15.8,
+        "count": 109651
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.8,
+        "count": 12780
+      },
+      {
+        "group": "Tatar",
+        "pct": 1.3,
+        "count": 9361
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.3,
+        "count": 1962
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.3,
+        "count": 2362
+      },
+      {
+        "group": "German",
+        "pct": 0.2,
+        "count": 1672
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 1235
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.1,
+        "count": 907
+      },
+      {
+        "group": "Korean",
+        "pct": 0.1,
+        "count": 1011
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.1,
+        "count": 577
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.1,
+        "count": 510
+      },
+      {
+        "group": "Moldovan",
+        "pct": 0.1,
+        "count": 388
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 555
+      },
+      {
+        "group": "Mordvin",
+        "pct": 0.1,
+        "count": 615
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 707
+      },
+      {
+        "group": "Uyghur",
+        "pct": 0.0,
+        "count": 148
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 89
+      },
+      {
+        "group": "Dungan",
+        "pct": 0.0,
+        "count": 110
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 245
+      },
+      {
+        "group": "Kurd",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 226
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 163
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.0,
+        "count": 160
+      },
+      {
+        "group": "Ingush",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 95
+      },
+      {
+        "group": "Chuvash",
+        "pct": 0.0,
+        "count": 237
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 268
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 98
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 121
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 164
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 67
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 179
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 72
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 66
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Peoples of India and Pakistan",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Buryat",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Altai",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Khakas",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Yakut",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)",
+        "url": "https://stat.gov.kz/ru/industries/social-statistics/stat-demography/",
+        "license": "Official statistics of the Bureau of National Statistics; free to use with attribution"
+      }
+    ],
+    "country": "KAZ",
+    "ethnicity_note": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025). Register-based population at 1 January 2025, carried forward from the 2021 census; not a census count. Read from the Bureau's workbook."
+  },
+  {
+    "id": "KAZ-jambyl-region",
+    "level": "admin1",
+    "name": "Jambyl Region",
+    "parent": "KAZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1222391,
+      "year": 2025,
+      "source": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Kazakh",
+        "pct": 74.7,
+        "count": 912779
+      },
+      {
+        "group": "Russian",
+        "pct": 7.0,
+        "count": 86060
+      },
+      {
+        "group": "Dungan",
+        "pct": 4.9,
+        "count": 60436
+      },
+      {
+        "group": "Uzbek",
+        "pct": 2.5,
+        "count": 30205
+      },
+      {
+        "group": "Turkish",
+        "pct": 2.5,
+        "count": 30872
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 1.5,
+        "count": 18775
+      },
+      {
+        "group": "Kurd",
+        "pct": 1.3,
+        "count": 15520
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 1.0,
+        "count": 12049
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.8,
+        "count": 9202
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.8,
+        "count": 9401
+      },
+      {
+        "group": "Korean",
+        "pct": 0.8,
+        "count": 9395
+      },
+      {
+        "group": "German",
+        "pct": 0.6,
+        "count": 6893
+      },
+      {
+        "group": "Uyghur",
+        "pct": 0.3,
+        "count": 3894
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.2,
+        "count": 2280
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.2,
+        "count": 2274
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 2985
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.1,
+        "count": 953
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.1,
+        "count": 1069
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 1287
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.1,
+        "count": 758
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 223
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 522
+      },
+      {
+        "group": "Ingush",
+        "pct": 0.0,
+        "count": 409
+      },
+      {
+        "group": "Moldovan",
+        "pct": 0.0,
+        "count": 282
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 437
+      },
+      {
+        "group": "Mordvin",
+        "pct": 0.0,
+        "count": 226
+      },
+      {
+        "group": "Chuvash",
+        "pct": 0.0,
+        "count": 199
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 97
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 260
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 79
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 85
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 262
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 115
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 214
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 308
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 499
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 159
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Peoples of India and Pakistan",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Buryat",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Altai",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Khakas",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Yakut",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 206
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)",
+        "url": "https://stat.gov.kz/ru/industries/social-statistics/stat-demography/",
+        "license": "Official statistics of the Bureau of National Statistics; free to use with attribution"
+      }
+    ],
+    "country": "KAZ",
+    "ethnicity_note": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025). Register-based population at 1 January 2025, carried forward from the 2021 census; not a census count. Read from the Bureau's workbook."
+  },
+  {
+    "id": "KAZ-karaganda-region",
+    "level": "admin1",
+    "name": "Karaganda Region",
+    "parent": "KAZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1355223,
+      "year": 2025,
+      "source": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Kazakh",
+        "pct": 56.9,
+        "count": 771279
+      },
+      {
+        "group": "Russian",
+        "pct": 28.3,
+        "count": 383182
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 3.7,
+        "count": 50292
+      },
+      {
+        "group": "German",
+        "pct": 2.8,
+        "count": 37595
+      },
+      {
+        "group": "Tatar",
+        "pct": 2.2,
+        "count": 29730
+      },
+      {
+        "group": "Belarusian",
+        "pct": 1.0,
+        "count": 13863
+      },
+      {
+        "group": "Korean",
+        "pct": 0.9,
+        "count": 12498
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.4,
+        "count": 5232
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.4,
+        "count": 5118
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.3,
+        "count": 4156
+      },
+      {
+        "group": "Polish",
+        "pct": 0.3,
+        "count": 3994
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.3,
+        "count": 4308
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 3433
+      },
+      {
+        "group": "Moldovan",
+        "pct": 0.2,
+        "count": 2809
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.2,
+        "count": 2063
+      },
+      {
+        "group": "Greek",
+        "pct": 0.2,
+        "count": 2099
+      },
+      {
+        "group": "Mordvin",
+        "pct": 0.2,
+        "count": 2346
+      },
+      {
+        "group": "Uyghur",
+        "pct": 0.1,
+        "count": 891
+      },
+      {
+        "group": "Dungan",
+        "pct": 0.1,
+        "count": 1199
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.1,
+        "count": 1861
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.1,
+        "count": 1426
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 769
+      },
+      {
+        "group": "Ingush",
+        "pct": 0.1,
+        "count": 1542
+      },
+      {
+        "group": "Chuvash",
+        "pct": 0.1,
+        "count": 2006
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.1,
+        "count": 721
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.1,
+        "count": 784
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 1380
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.1,
+        "count": 1830
+      },
+      {
+        "group": "Mari",
+        "pct": 0.1,
+        "count": 854
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 451
+      },
+      {
+        "group": "Kurd",
+        "pct": 0.0,
+        "count": 558
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 646
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 558
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 456
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 496
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 172
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 313
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 153
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 241
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 229
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 115
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Peoples of India and Pakistan",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 101
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0,
+        "count": 93
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Buryat",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 124
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 77
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Altai",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Khakas",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Yakut",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 337
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)",
+        "url": "https://stat.gov.kz/ru/industries/social-statistics/stat-demography/",
+        "license": "Official statistics of the Bureau of National Statistics; free to use with attribution"
+      }
+    ],
+    "country": "KAZ",
+    "ethnicity_note": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025). Register-based population at 1 January 2025, carried forward from the 2021 census; not a census count. Read from the Bureau's workbook."
+  },
+  {
+    "id": "KAZ-kostanay-region",
+    "level": "admin1",
+    "name": "Kostanay Region",
+    "parent": "KAZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 825569,
+      "year": 2025,
+      "source": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Kazakh",
+        "pct": 44.6,
+        "count": 367908
+      },
+      {
+        "group": "Russian",
+        "pct": 33.5,
+        "count": 276766
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 10.2,
+        "count": 84394
+      },
+      {
+        "group": "German",
+        "pct": 3.7,
+        "count": 30346
+      },
+      {
+        "group": "Belarusian",
+        "pct": 1.9,
+        "count": 15921
+      },
+      {
+        "group": "Tatar",
+        "pct": 1.7,
+        "count": 14167
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.5,
+        "count": 4215
+      },
+      {
+        "group": "Korean",
+        "pct": 0.5,
+        "count": 4078
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.5,
+        "count": 3865
+      },
+      {
+        "group": "Moldovan",
+        "pct": 0.3,
+        "count": 2630
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.2,
+        "count": 1645
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.2,
+        "count": 1699
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 1627
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.2,
+        "count": 1839
+      },
+      {
+        "group": "Mordvin",
+        "pct": 0.2,
+        "count": 1480
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.2,
+        "count": 1664
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 1391
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.1,
+        "count": 865
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.1,
+        "count": 734
+      },
+      {
+        "group": "Ingush",
+        "pct": 0.1,
+        "count": 884
+      },
+      {
+        "group": "Chuvash",
+        "pct": 0.1,
+        "count": 1106
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.1,
+        "count": 484
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.1,
+        "count": 777
+      },
+      {
+        "group": "Mari",
+        "pct": 0.1,
+        "count": 905
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1,
+        "count": 508
+      },
+      {
+        "group": "Uyghur",
+        "pct": 0.0,
+        "count": 271
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 296
+      },
+      {
+        "group": "Dungan",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Kurd",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.0,
+        "count": 331
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 232
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 175
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 115
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 158
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 96
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 79
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 93
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 261
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 109
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 101
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 191
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 208
+      },
+      {
+        "group": "Peoples of India and Pakistan",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Buryat",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Altai",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Khakas",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Yakut",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 250
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)",
+        "url": "https://stat.gov.kz/ru/industries/social-statistics/stat-demography/",
+        "license": "Official statistics of the Bureau of National Statistics; free to use with attribution"
+      }
+    ],
+    "country": "KAZ",
+    "ethnicity_note": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025). Register-based population at 1 January 2025, carried forward from the 2021 census; not a census count. Read from the Bureau's workbook."
+  },
+  {
+    "id": "KAZ-kyzylorda-region",
+    "level": "admin1",
+    "name": "Kyzylorda Region",
+    "parent": "KAZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 846104,
+      "year": 2025,
+      "source": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Kazakh",
+        "pct": 96.3,
+        "count": 814475
+      },
+      {
+        "group": "Russian",
+        "pct": 1.4,
+        "count": 12246
+      },
+      {
+        "group": "Korean",
+        "pct": 0.9,
+        "count": 7943
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.3,
+        "count": 2275
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.2,
+        "count": 2063
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.2,
+        "count": 1615
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 845
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.1,
+        "count": 998
+      },
+      {
+        "group": "Uyghur",
+        "pct": 0.0,
+        "count": 276
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 323
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 408
+      },
+      {
+        "group": "Dungan",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.0,
+        "count": 189
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 181
+      },
+      {
+        "group": "Kurd",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 362
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.0,
+        "count": 204
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 194
+      },
+      {
+        "group": "Ingush",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Moldovan",
+        "pct": 0.0,
+        "count": 161
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 79
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 204
+      },
+      {
+        "group": "Mordvin",
+        "pct": 0.0,
+        "count": 65
+      },
+      {
+        "group": "Chuvash",
+        "pct": 0.0,
+        "count": 122
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 128
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Peoples of India and Pakistan",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Buryat",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Altai",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Khakas",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Yakut",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 265
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)",
+        "url": "https://stat.gov.kz/ru/industries/social-statistics/stat-demography/",
+        "license": "Official statistics of the Bureau of National Statistics; free to use with attribution"
+      }
+    ],
+    "country": "KAZ",
+    "ethnicity_note": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025). Register-based population at 1 January 2025, carried forward from the 2021 census; not a census count. Read from the Bureau's workbook."
+  },
+  {
+    "id": "KAZ-mangystau-region",
+    "level": "admin1",
+    "name": "Mangystau Region",
+    "parent": "KAZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 805156,
+      "year": 2025,
+      "source": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Kazakh",
+        "pct": 91.5,
+        "count": 736687
+      },
+      {
+        "group": "Russian",
+        "pct": 3.9,
+        "count": 31249
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.9,
+        "count": 7458
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.8,
+        "count": 6293
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.4,
+        "count": 3168
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.4,
+        "count": 3087
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.3,
+        "count": 2511
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.3,
+        "count": 2735
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 2281
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 508
+      },
+      {
+        "group": "Korean",
+        "pct": 0.1,
+        "count": 1128
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.1,
+        "count": 424
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.1,
+        "count": 935
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.1,
+        "count": 868
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 1100
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 416
+      },
+      {
+        "group": "Uyghur",
+        "pct": 0.0,
+        "count": 308
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 270
+      },
+      {
+        "group": "Dungan",
+        "pct": 0.0,
+        "count": 129
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 161
+      },
+      {
+        "group": "Kurd",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 72
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 265
+      },
+      {
+        "group": "Ingush",
+        "pct": 0.0,
+        "count": 181
+      },
+      {
+        "group": "Moldovan",
+        "pct": 0.0,
+        "count": 166
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 89
+      },
+      {
+        "group": "Mordvin",
+        "pct": 0.0,
+        "count": 72
+      },
+      {
+        "group": "Chuvash",
+        "pct": 0.0,
+        "count": 106
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 312
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 342
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 299
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 98
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 165
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Peoples of India and Pakistan",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 218
+      },
+      {
+        "group": "Buryat",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 96
+      },
+      {
+        "group": "Altai",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 296
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Khakas",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)",
+        "url": "https://stat.gov.kz/ru/industries/social-statistics/stat-demography/",
+        "license": "Official statistics of the Bureau of National Statistics; free to use with attribution"
+      }
+    ],
+    "country": "KAZ",
+    "ethnicity_note": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025). Register-based population at 1 January 2025, carried forward from the 2021 census; not a census count. Read from the Bureau's workbook."
+  },
+  {
+    "id": "KAZ-pavlodar-region",
+    "level": "admin1",
+    "name": "Pavlodar Region",
+    "parent": "KAZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 751018,
+      "year": 2025,
+      "source": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Kazakh",
+        "pct": 56.9,
+        "count": 427170
+      },
+      {
+        "group": "Russian",
+        "pct": 28.9,
+        "count": 217302
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 5.3,
+        "count": 39466
+      },
+      {
+        "group": "German",
+        "pct": 3.1,
+        "count": 23591
+      },
+      {
+        "group": "Tatar",
+        "pct": 1.9,
+        "count": 14111
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.7,
+        "count": 5429
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.3,
+        "count": 2327
+      },
+      {
+        "group": "Moldovan",
+        "pct": 0.3,
+        "count": 2573
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.2,
+        "count": 1751
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.2,
+        "count": 1833
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.2,
+        "count": 1403
+      },
+      {
+        "group": "Ingush",
+        "pct": 0.2,
+        "count": 1777
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 1209
+      },
+      {
+        "group": "Korean",
+        "pct": 0.1,
+        "count": 1054
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.1,
+        "count": 597
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.1,
+        "count": 465
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 1015
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 705
+      },
+      {
+        "group": "Mordvin",
+        "pct": 0.1,
+        "count": 721
+      },
+      {
+        "group": "Chuvash",
+        "pct": 0.1,
+        "count": 702
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.1,
+        "count": 625
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 1017
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.1,
+        "count": 410
+      },
+      {
+        "group": "Mari",
+        "pct": 0.1,
+        "count": 381
+      },
+      {
+        "group": "Uyghur",
+        "pct": 0.0,
+        "count": 268
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 122
+      },
+      {
+        "group": "Dungan",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Kurd",
+        "pct": 0.0,
+        "count": 172
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.0,
+        "count": 110
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 369
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 304
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 158
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 310
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 107
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 100
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 279
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 70
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 119
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 72
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 85
+      },
+      {
+        "group": "Peoples of India and Pakistan",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0,
+        "count": 57
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Buryat",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Altai",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Khakas",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Yakut",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 90
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)",
+        "url": "https://stat.gov.kz/ru/industries/social-statistics/stat-demography/",
+        "license": "Official statistics of the Bureau of National Statistics; free to use with attribution"
+      }
+    ],
+    "country": "KAZ",
+    "ethnicity_note": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025). Register-based population at 1 January 2025, carried forward from the 2021 census; not a census count. Read from the Bureau's workbook."
+  },
+  {
+    "id": "KAZ-north-kazakhstan-region",
+    "level": "admin1",
+    "name": "North Kazakhstan Region",
+    "parent": "KAZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 522171,
+      "year": 2025,
+      "source": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Russian",
+        "pct": 44.4,
+        "count": 231804
+      },
+      {
+        "group": "Kazakh",
+        "pct": 37.8,
+        "count": 197131
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 5.4,
+        "count": 28035
+      },
+      {
+        "group": "German",
+        "pct": 4.1,
+        "count": 21581
+      },
+      {
+        "group": "Tatar",
+        "pct": 2.2,
+        "count": 11520
+      },
+      {
+        "group": "Polish",
+        "pct": 2.0,
+        "count": 10586
+      },
+      {
+        "group": "Belarusian",
+        "pct": 1.2,
+        "count": 6451
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.4,
+        "count": 1864
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.2,
+        "count": 1000
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.2,
+        "count": 1076
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.2,
+        "count": 1225
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 800
+      },
+      {
+        "group": "Korean",
+        "pct": 0.1,
+        "count": 526
+      },
+      {
+        "group": "Kurd",
+        "pct": 0.1,
+        "count": 540
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.1,
+        "count": 495
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.1,
+        "count": 736
+      },
+      {
+        "group": "Ingush",
+        "pct": 0.1,
+        "count": 536
+      },
+      {
+        "group": "Moldovan",
+        "pct": 0.1,
+        "count": 608
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 286
+      },
+      {
+        "group": "Mordvin",
+        "pct": 0.1,
+        "count": 547
+      },
+      {
+        "group": "Chuvash",
+        "pct": 0.1,
+        "count": 743
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.1,
+        "count": 543
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.1,
+        "count": 741
+      },
+      {
+        "group": "Mari",
+        "pct": 0.1,
+        "count": 307
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1,
+        "count": 460
+      },
+      {
+        "group": "Uyghur",
+        "pct": 0.0,
+        "count": 186
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 233
+      },
+      {
+        "group": "Dungan",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 239
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 245
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 94
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 81
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 72
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 57
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 97
+      },
+      {
+        "group": "Peoples of India and Pakistan",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Buryat",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Altai",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Khakas",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Yakut",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)",
+        "url": "https://stat.gov.kz/ru/industries/social-statistics/stat-demography/",
+        "license": "Official statistics of the Bureau of National Statistics; free to use with attribution"
+      }
+    ],
+    "country": "KAZ",
+    "ethnicity_note": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025). Register-based population at 1 January 2025, carried forward from the 2021 census; not a census count. Read from the Bureau's workbook."
+  },
+  {
+    "id": "KAZ-south-kazakhstan-region",
+    "level": "admin1",
+    "name": "South Kazakhstan Region",
+    "parent": "KAZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3410205,
+      "year": 2025,
+      "source": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Kazakh",
+        "pct": 73.6,
+        "count": 2510124
+      },
+      {
+        "group": "Uzbek",
+        "pct": 17.5,
+        "count": 595197
+      },
+      {
+        "group": "Russian",
+        "pct": 3.0,
+        "count": 103454
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 1.4,
+        "count": 46630
+      },
+      {
+        "group": "Tajik",
+        "pct": 1.2,
+        "count": 42003
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.6,
+        "count": 19933
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.6,
+        "count": 19194
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.3,
+        "count": 10283
+      },
+      {
+        "group": "Korean",
+        "pct": 0.3,
+        "count": 9876
+      },
+      {
+        "group": "Kurd",
+        "pct": 0.3,
+        "count": 10214
+      },
+      {
+        "group": "Uyghur",
+        "pct": 0.2,
+        "count": 5725
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 6371
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 8380
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 4076
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.1,
+        "count": 3695
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.1,
+        "count": 2513
+      },
+      {
+        "group": "Dungan",
+        "pct": 0.0,
+        "count": 131
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.0,
+        "count": 1045
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 229
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.0,
+        "count": 1650
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 1198
+      },
+      {
+        "group": "Ingush",
+        "pct": 0.0,
+        "count": 133
+      },
+      {
+        "group": "Moldovan",
+        "pct": 0.0,
+        "count": 733
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 767
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 1593
+      },
+      {
+        "group": "Mordvin",
+        "pct": 0.0,
+        "count": 444
+      },
+      {
+        "group": "Chuvash",
+        "pct": 0.0,
+        "count": 256
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 92
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 495
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 132
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 212
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 93
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 84
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 230
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 257
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 804
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 65
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.0,
+        "count": 399
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 282
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 155
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Peoples of India and Pakistan",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Buryat",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Altai",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 225
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Khakas",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Yakut",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)",
+        "url": "https://stat.gov.kz/ru/industries/social-statistics/stat-demography/",
+        "license": "Official statistics of the Bureau of National Statistics; free to use with attribution"
+      }
+    ],
+    "country": "KAZ",
+    "ethnicity_note": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025). Register-based population at 1 January 2025, carried forward from the 2021 census; not a census count. Read from the Bureau's workbook."
+  },
+  {
+    "id": "KAZ-astana",
+    "level": "admin1",
+    "name": "Astana",
+    "parent": "KAZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1528703,
+      "year": 2025,
+      "source": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Kazakh",
+        "pct": 82.3,
+        "count": 1258208
+      },
+      {
+        "group": "Russian",
+        "pct": 8.6,
+        "count": 131620
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.4,
+        "count": 21516
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.4,
+        "count": 21221
+      },
+      {
+        "group": "Tatar",
+        "pct": 1.0,
+        "count": 15696
+      },
+      {
+        "group": "German",
+        "pct": 0.9,
+        "count": 13474
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.6,
+        "count": 9477
+      },
+      {
+        "group": "Korean",
+        "pct": 0.6,
+        "count": 8737
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.4,
+        "count": 6218
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.3,
+        "count": 5007
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.3,
+        "count": 4517
+      },
+      {
+        "group": "Polish",
+        "pct": 0.3,
+        "count": 3986
+      },
+      {
+        "group": "Uyghur",
+        "pct": 0.2,
+        "count": 2469
+      },
+      {
+        "group": "Ingush",
+        "pct": 0.2,
+        "count": 3356
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 3602
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.1,
+        "count": 2068
+      },
+      {
+        "group": "Dungan",
+        "pct": 0.1,
+        "count": 1912
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.1,
+        "count": 1537
+      },
+      {
+        "group": "Kurd",
+        "pct": 0.1,
+        "count": 1160
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.1,
+        "count": 1893
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.1,
+        "count": 1886
+      },
+      {
+        "group": "Moldovan",
+        "pct": 0.1,
+        "count": 1185
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 1409
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.0,
+        "count": 575
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 423
+      },
+      {
+        "group": "Mordvin",
+        "pct": 0.0,
+        "count": 407
+      },
+      {
+        "group": "Chuvash",
+        "pct": 0.0,
+        "count": 534
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 432
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 471
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 231
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 318
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 360
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 220
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 303
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 180
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 248
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 169
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 132
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 80
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 132
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 102
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 72
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Peoples of India and Pakistan",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Buryat",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Altai",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 66
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Khakas",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Yakut",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.0,
+        "count": 50
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)",
+        "url": "https://stat.gov.kz/ru/industries/social-statistics/stat-demography/",
+        "license": "Official statistics of the Bureau of National Statistics; free to use with attribution"
+      }
+    ],
+    "country": "KAZ",
+    "ethnicity_note": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025). Register-based population at 1 January 2025, carried forward from the 2021 census; not a census count. Read from the Bureau's workbook."
+  },
+  {
+    "id": "KAZ-almaty",
+    "level": "admin1",
+    "name": "Almaty",
+    "parent": "KAZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2292055,
+      "year": 2025,
+      "source": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Kazakh",
+        "pct": 64.2,
+        "count": 1471393
+      },
+      {
+        "group": "Russian",
+        "pct": 18.8,
+        "count": 429898
+      },
+      {
+        "group": "Uyghur",
+        "pct": 5.3,
+        "count": 122390
+      },
+      {
+        "group": "Korean",
+        "pct": 1.7,
+        "count": 39211
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.7,
+        "count": 37952
+      },
+      {
+        "group": "Tatar",
+        "pct": 1.4,
+        "count": 31435
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 1.0,
+        "count": 22002
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.9,
+        "count": 21184
+      },
+      {
+        "group": "Dungan",
+        "pct": 0.8,
+        "count": 18156
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.6,
+        "count": 14684
+      },
+      {
+        "group": "German",
+        "pct": 0.6,
+        "count": 12775
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.4,
+        "count": 9089
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.4,
+        "count": 9308
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 6816
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.2,
+        "count": 3505
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.2,
+        "count": 5403
+      },
+      {
+        "group": "Kurd",
+        "pct": 0.2,
+        "count": 5412
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.2,
+        "count": 3810
+      },
+      {
+        "group": "Ingush",
+        "pct": 0.2,
+        "count": 3492
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 1640
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 2424
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 2642
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 2308
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 2010
+      },
+      {
+        "group": "Bashkir",
+        "pct": 0.0,
+        "count": 1069
+      },
+      {
+        "group": "Moldovan",
+        "pct": 0.0,
+        "count": 717
+      },
+      {
+        "group": "Mordvin",
+        "pct": 0.0,
+        "count": 610
+      },
+      {
+        "group": "Chuvash",
+        "pct": 0.0,
+        "count": 476
+      },
+      {
+        "group": "Udmurt",
+        "pct": 0.0,
+        "count": 260
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 1060
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 374
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 301
+      },
+      {
+        "group": "Mari",
+        "pct": 0.0,
+        "count": 194
+      },
+      {
+        "group": "Lezgin",
+        "pct": 0.0,
+        "count": 350
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 257
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 989
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 378
+      },
+      {
+        "group": "Balkar",
+        "pct": 0.0,
+        "count": 782
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 329
+      },
+      {
+        "group": "Karachay",
+        "pct": 0.0,
+        "count": 308
+      },
+      {
+        "group": "Avar",
+        "pct": 0.0,
+        "count": 167
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 822
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 156
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 111
+      },
+      {
+        "group": "Dargin",
+        "pct": 0.0,
+        "count": 88
+      },
+      {
+        "group": "Kumyk",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 99
+      },
+      {
+        "group": "Komi-Permyak",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Peoples of India and Pakistan",
+        "pct": 0.0,
+        "count": 327
+      },
+      {
+        "group": "Kalmyk",
+        "pct": 0.0,
+        "count": 158
+      },
+      {
+        "group": "Arab",
+        "pct": 0.0,
+        "count": 355
+      },
+      {
+        "group": "Karaim",
+        "pct": 0.0,
+        "count": 369
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Nogai",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Buryat",
+        "pct": 0.0,
+        "count": 234
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 281
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Tabasaran",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Crimean Tatar",
+        "pct": 0.0,
+        "count": 97
+      },
+      {
+        "group": "Altai",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Udi",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Kabardian",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Lak",
+        "pct": 0.0,
+        "count": 70
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 101
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 214
+      },
+      {
+        "group": "Khakas",
+        "pct": 0.0,
+        "count": 99
+      },
+      {
+        "group": "Yakut",
+        "pct": 0.0,
+        "count": 164
+      },
+      {
+        "group": "Komi",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.0,
+        "count": 46
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025)",
+        "url": "https://stat.gov.kz/ru/industries/social-statistics/stat-demography/",
+        "license": "Official statistics of the Bureau of National Statistics; free to use with attribution"
+      }
+    ],
+    "country": "KAZ",
+    "ethnicity_note": "Bureau of National Statistics of Kazakhstan, 'Population by ethnic groups of the Republic of Kazakhstan at the start of 2025' (series 18, Demographic statistics, published 27 March 2025). Register-based population at 1 January 2025, carried forward from the 2021 census; not a census count. Read from the Bureau's workbook."
+  }
+]

@@ -57,6 +57,11 @@ INSTANCES: dict[str, dict[str, str]] = {
     # so the tree walk below cannot read it. Left listed and skipped by name
     # rather than deleted, because "we looked and it needs a different client"
     # is worth more to the next person than an absence.
+    # Ghana's StatsBank is PxWeb 2021 (the page markup says pcaxis) with the
+    # 2021 census as its own database; the API root without a database name
+    # answers 500, so the base names it.
+    "GHA": {"name": "Ghana Statistical Service StatsBank",
+            "base": "https://statsbank.statsghana.gov.gh/pxweb/api/v1/en/PHC%202021%20StatsBank"},
     "DNK": {"name": "Statistics Denmark (StatBank, not PxWeb)",
             "base": "https://api.statbank.dk/v1", "skip": "not a PxWeb tree"},
     "ISL": {"name": "Statistics Iceland",

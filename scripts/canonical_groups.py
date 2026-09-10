@@ -62,6 +62,13 @@ RELIGION: dict[str, tuple[str, ...]] = {
         # them -- describes the same people twice under different headings.
         "Jehovah's Witness", "Jehovah's Witnesses", "Jehovah Witness",
         "Latter-day Saints", "Church of Jesus Christ",
+        # Czechia's churches, and its census write-ins that name a tradition
+        # but no church; ČSÚ lists those beside the churches, and this
+        # project keeps a written "catholic" apart from the Roman Catholic
+        # Church's count.
+        "Evangelical Church of Czech Brethren", "Czechoslovak Hussite",
+        "Catholic (unspecified)", "Protestant (unspecified)",
+        "Christian (unspecified)",
         "Church of Jesus Christ of Latter-day Saints", "Mormon",
         "Other Christian", "Other Christians", "other Christians",
         "Other Christian religions", "Christian nfd", "Christian, unspecified",

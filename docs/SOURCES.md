@@ -81,6 +81,13 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Poland | GUS NSP 2021 final tables (three workbooks: przynależność wyznaniowa, narodowo-etniczna, język używany w domu) | voivodeship, powiat | Religion is a seven-level classification tree, cut once: Christian branches at level 5, other religions at level 4, no religion at level 3, and the fifth of Poland that declined to answer at level 2, kept as "Not stated". National-ethnic identification and home language allow two answers and are carried as multi-response; identifications and languages without an English name are summed as Other. Column A of every sheet is empty. |
 | Malaysia | DOSM OpenDOSM `population_state` / `population_district` CSV | state, district | Annual population estimates by ethnicity carried forward from Census 2020, in thousands; the latest year is read and the records say "estimate". The non-citizen row is DOSM's own category of the resident population and is kept. |
 | Kenya | KNBS 2019 Census Volume IV, Table 2.30 (openAFRICA mirror) | county | Religion for all 47 counties, replacing the Afrobarometer survey rows; ethnicity stays Afrobarometer's. KNBS's own site fails TLS verification (incomplete chain) and this project does not turn verification off. |
+| Thailand | NSO 2000 Population and Housing Census, provincial final reports (`web.nso.go.th/pop2000/finalrep/`), transcribed in the Wikipedia article *Nationality, religion, and language data for the provinces of Thailand* | province | Buddhist, Muslim and Christian shares for 2000 as printed, read through the MediaWiki API because the NSO's own hosts refuse this client; the rest of 100% is one 'Other or not stated' group; an N/A is absent, not zero. 76 of 77 provinces: Bueng Kan was carved out of Nong Khai in 2011 and has no 2000 row. Nationality is citizenship and is not read as ethnicity; the 'linguistic minorities' cells name a few languages and not the rest, so language stays a gap. `scripts/fetch_census/thailand.py`. |
+| Kazakhstan | Bureau of National Statistics, 2021 National Population Census, religious affiliation by region, transcribed in the Wikipedia article *Religion in Kazakhstan* | region | The percent columns are read (one count in the article is mistyped; its percent is not). The article lists 16 regions and omits Shymkent (a city of republican significance since 2018); the boundary file draws the 2017 layout in which Shymkent sits inside South Kazakhstan Region, so the article's Turkistan Region is deliberately not matched to that shape and South Kazakhstan stays a visible gap: 15/16. `scripts/fetch_census/wiki_census.py`. |
+| Kazakhstan (ethnicity) | Bureau of National Statistics, *Population by ethnic groups of the Republic of Kazakhstan at the start of 2025* (series 18, 27 March 2025), workbook committed under `data/raw/kazakhstan/` because the Bureau's site offers no file link | region, district | Register-based population at 1 January 2025 carried forward from the 2021 census, 73 ethnic rows, and the record says it is not a census count. The workbook's 20 regions are summed into the 16 shapes of the 2017 layout (Abai into East Kazakhstan, Jetisu into Almaty Region, Ulytau into Karaganda, Shymkent into South Kazakhstan), exact because these are counts, and every column is checked against its own total. Districts keep the Bureau's Cyrillic name with a transliteration as alias; `RENAMED` declares the shapes the boundary file still draws under a superseded name (Zelenovskiy for Bäiterek, Tselinniy for Gabit Musrepov, and so on). Almaty and Shymkent get their city totals as their one second-level shape; Astana has none. 173 of 174 district shapes filled; the boundary file draws Jambyl's Zhualy district twice and the second copy stays empty. `scripts/fetch_census/kazakhstan.py`. |
+| Cambodia | NIS General Population Census of Cambodia 2019, religion by province, transcribed in the Wikipedia article *Religion in Cambodia* (2008 and 2019 columns; 2019 read) | province | Buddhism, Islam, Christianity, Others as printed; 25/25 with four spellings declared as aliases (Bantey Meanchey, Kratie, Takeo, Tbong Khmum). `scripts/fetch_census/wiki_census.py`. |
+| Czechia | ČSÚ SLDB 2021 open data (`sldb2021_narodnost.csv`, `sldb2021_vira.csv`, `sldb2021_jazyk1.csv`) | kraj, okres | Nationality is voluntary and allows two answers; the file counts every declaration and has no not-stated row, so it is carried as multi-response. Religious belief partitions the population across 78 rows, registered churches and write-in beliefs alike; a written "catholic" is kept apart from the Roman Catholic Church's count and a written "atheism" counts with no religious belief. Mother tongue is read from the single-mother-tongue file, and people with two mother tongues or a language outside its thirteen are the total less its rows, kept as one labelled bar. Okresy are named in Czech where geoBoundaries has English (Praha-východ / Prague-East), carried as aliases; the okres-to-kraj table is in the adapter because the rows do not carry it. |
+| Croatia | DZS Popis 2021 final results, workbook `popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx` (sheets 1, 2, 4) | županija, grad/općina | One layout for all three tables: a bilingual header (Croatian over English) with a count and a percent column per category, read from the header rather than declared; county rows interleaved with their towns and municipalities; a dash is zero. Each table partitions the population, Other, Not declared and Unknown included, and a row that does not sum to its total stops the build. Counties are named as geoBoundaries names them in English, with the Croatian as an alias; units are composed as the bureau writes them, type first ("Grad Samobor", "Općina Bibinje"). The workbook lists the City of Zagreb by its 17 city districts, which are skipped, the city coming from its own county row. The boundary file's spellings (a dozen typos, Istria's bilingual names, two islands each drawn as one town) are declared as aliases; 545 shapes for 556 units, 543 matched. |
+| Bosnia and Herzegovina | BHAS Popis 2013, Book 2 workbooks `K2_T2_B` (ethnicity), `K2_T5_B` (religion), `K2_T6_B` (mother tongue) under `popis.gov.ba/popis2013/doc/Knjiga2/BOS/` | entity, canton | One layout for all three: Level, Area (Bosnian over English), Sex, Total, then the categories; the Total row of each territory is read and matched by its Bosnian name. The two entities and Brčko District are published at both levels, since geoBoundaries draws Republika Srpska and Brčko as their own second-level shapes beside the ten cantons: 3/3 and 12/12. The bureau's 'Islamska' and 'Muslimanska' religion columns are summed into Islam (both are Islam; the build refuses a group beside its parent) and the note says so; ethnonyms given as a religion, and 'Orthodox' given as an ethnicity, are kept and marked. A row that does not sum to its Total refuses. Republika Srpska's institute published a different reading of the same count; these are the Agency's figures. `scripts/fetch_census/bosnia.py`. |
 | Switzerland | FSO structural survey 2024, main languages | canton | Main languages for all 26 cantons. A person may name up to three, so shares exceed 100%. |
 | Singapore | Census 2020 + GHS 2015 planning-area tables | planning area |Ethnicity, religion and language for the planning areas, on three different bases. |
 | Singapore | SingStat Table Builder M810771 | planning region | Resident population, sex ratio and a derived median age for the 5 regions. Religion, ethnicity and language are collected but not published at this geography. |
@@ -2598,6 +2605,38 @@ that `nso.go.th` will not serve this client: by the account of the people who
 compiled this dataset, Thailand has made census language data public **once**,
 for 2000. So Thailand is a gap about publication, like Viet Nam, rather than a
 gap about access -- and the access problem is real too.
+
+**Religion, later.** The 2000 census did publish religion by province, in a
+final report per province under `web.nso.go.th/pop2000/finalrep/`, and the
+Wikipedia article *Nationality, religion, and language data for the provinces
+of Thailand* transcribes the Buddhist, Muslim and Christian shares from all 76
+of them, each row citing its report. That article is read through the MediaWiki
+API (`scripts/fetch_census/thailand.py`), which the NSO's hosts never were, and
+the record's source is the report the row cites. It is a 2000 figure and says
+so; a 2010 or 2020 provincial religion table exists behind the same 418 and
+would replace it the day the office serves one. The article's nationality
+columns are citizenship and are not read as ethnicity, and its "linguistic
+minorities" cells are the partial list the paragraphs above describe, so
+language keeps its gap.
+
+### Wikipedia transcriptions: what was measured and left
+
+`scripts/probe_wikitable.py` prints an article's tables compactly, and one
+runner pass read the list articles for the largest countries still empty at
+the first level. Three carried a census table by region and became specs in
+`scripts/fetch_census/wiki_census.py` or `thailand.py` (Thailand, Kazakhstan,
+Cambodia). The rest did not:
+
+* **Taiwan** -- *Demographics of Taiwan* has languages used at home by
+  division, but Mandarin 83.5% beside Hokkien 81.9% is a multi-response
+  question, not a composition, and is not read.
+* **Kazakhstan, ethnicity** -- *Ethnic demography of Kazakhstan* carries the
+  national series only; the 2021 census's ethnicity by region is on no list
+  article measured.
+* **Romania, Peru, Uzbekistan, Ecuador, Guatemala, Rwanda** -- the demographics
+  and religion articles carry national series, age pyramids and vital
+  statistics by region, and no ethnicity, religion or language table by
+  county, department or province.
 
 ### South Africa: a table whose separator is a space
 

@@ -84,8 +84,14 @@ ADAPTER_FILES = [
     # and now carry the 2019 census, and merge_adapter lets the count win the
     # religion field while the survey keeps any field the census did not ask.
     "kenya_county.json",
+    "thailand_province.json",
+    "kazakhstan_region.json", "cambodia_province.json",
+    "kazakhstan_oblast.json", "kazakhstan_district.json",
     "malaysia_state.json", "malaysia_district.json",
     "poland_voivodeship.json", "poland_powiat.json",
+    "czechia_kraj.json", "czechia_okres.json",
+    "croatia_county.json", "croatia_unit.json",
+    "bosnia_entity.json", "bosnia_canton.json",
     "myanmar_state.json", "ukraine_oblast.json", "car_prefecture.json",
     "mali_region.json", "drc_province.json", "russia_subject.json",
     "colombia_department.json", "jamaica_parish.json",
@@ -120,6 +126,18 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.poland",
     "MYS": "DOSM population estimates by ethnicity, OpenDOSM CSV by state and "
            "district: python -m scripts.fetch_census.malaysia --level both",
+    "CZE": "ČSÚ SLDB 2021 open data (nationality, religious belief, mother tongue) "
+           "by kraj and okres: python -m scripts.fetch_census.czechia",
+    "HRV": "DZS Popis 2021 workbook (ethnicity, religion, mother tongue) by "
+           "županija and grad/općina: python -m scripts.fetch_census.croatia",
+    "KAZ": "2021 census religion by region, transcribed on Wikipedia "
+           "(python -m scripts.fetch_census.wiki_census --country KAZ); ethnicity by "
+           "region and district from the Bureau's start-of-2025 workbook "
+           "(python -m scripts.fetch_census.kazakhstan)",
+    "KHM": "2019 census religion by province, transcribed on Wikipedia: "
+           "python -m scripts.fetch_census.wiki_census --country KHM",
+    "BIH": "BHAS Popis 2013 Book 2 tables (ethnicity, religion, mother tongue) by "
+           "entity and canton: python -m scripts.fetch_census.bosnia",
     "IRL": "CSO Census 2022 via PxStat (SAPMAP religion and ethnicity by local "
            "electoral area): python -m scripts.fetch_census.ireland",
     "DEU": "Zensus 2022 religion by Land, three categories from the church-tax "
@@ -161,8 +179,9 @@ ADAPTER_GAPS: dict[str, str] = {
            "each for the country as a whole rather than by province. No "
            "provincial table exists to fetch.",
     "THA": "The statistical office refuses automated readers on every host "
-           "tried, and by the account of the one dataset that compiles it, "
-           "Thailand has made census language data public only once, for 2000.",
+           "tried. Religion by province is the 2000 census, read from its "
+           "provincial final reports as transcribed on Wikipedia; language was "
+           "made public once, for 2000, in a file that is not a composition.",
 }
 
 EUROSTAT_HINT = ("Eurostat NUTS population and median age: "
@@ -680,7 +699,9 @@ def within_bbox(point: list[float] | None, bbox: list[float] | None) -> bool:
 
 
 def match_admin2(row: dict[str, Any], by_name: dict[str, list[dict[str, Any]]],
-                 admin1: dict[str, dict[str, Any]]) -> tuple[dict[str, Any] | None, str]:
+                 admin1: dict[str, dict[str, Any]],
+                 exact: dict[str, dict[str, Any]] | None = None,
+                 ) -> tuple[dict[str, Any] | None, str]:
     """Resolve an adapter row to one admin-2 shape, using its state when it has one.
 
     District names repeat across states. India has a Hamirpur in Himachal Pradesh
@@ -727,8 +748,20 @@ def match_admin2(row: dict[str, Any], by_name: dict[str, list[dict[str, Any]]],
         # sharing a name with a municipio elsewhere -- Benito Juarez, also in
         # Quintana Roo; Cuauhtemoc, also in Chihuahua and Colima -- are refused
         # as ambiguous.
-        parent, _ = match_name({"name": parent_name,
-                                "aliases": row.get("parent_aliases") or []}, admin1)
+        # An exact name first: norm() drops the generic word, so "Almaty Region"
+        # and the city "Almaty" share one key and whichever was keyed last
+        # answered for both -- which scoped Almaty Region's districts to the
+        # city, where none of them are, and refused the two whose names repeat
+        # elsewhere (Aksuskiy, Zhambylskiy) as ambiguous.
+        # `exact` holds every first-level shape by its written name, the
+        # ambiguous ones included, since a written name is not ambiguous.
+        wanted = " ".join(parent_name.split()).casefold()
+        parent = (exact or {}).get(wanted) or next(
+            (e for e in admin1.values()
+             if " ".join((e.get("name") or "").split()).casefold() == wanted), None)
+        if parent is None:
+            parent, _ = match_name({"name": parent_name,
+                                    "aliases": row.get("parent_aliases") or []}, admin1)
         if parent is not None:
             scoped = settle(by_name, [row["name"], *row.get("aliases", [])],
                             parent["id"])
@@ -1597,6 +1630,10 @@ def main() -> int:
         # and there is no row name to settle it with.
         a1 = {key: found[0] for key, found in a1_by_key.items()
               if len(found) == 1}
+        # ...and the written names, for a district row that names its parent:
+        # "Almaty Region" is not ambiguous even though its key is.
+        a1_exact = {" ".join(e["name"].split()).casefold(): e
+                    for e in admin1_by_country.get(iso3, [])}
         # An ISO 3166-2 code is the one key on both sides that needs no
         # romanisation. Russia's sheets are Cyrillic and its shapes English,
         # and norm() keeps Cyrillic as Cyrillic on purpose -- a transliteration
@@ -1698,7 +1735,7 @@ def main() -> int:
                     deferred.append((row, key))
                     continue
             else:
-                entity, how = match_admin2(key, a2, a1)
+                entity, how = match_admin2(key, a2, a1, a1_exact)
             if entity is None:
                 miss += 1
                 ambiguous += how == "ambiguous"

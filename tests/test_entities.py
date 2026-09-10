@@ -4595,6 +4595,357 @@ class MalaysiaKeepsTheNonCitizenRow(unittest.TestCase):
             malaysia.compositions(rows, ("state", "district"))
 
 
+class CzechiaReadsTheOpenDataLong(unittest.TestCase):
+    """ČSÚ's open data is one long CSV per table: the territory's kind in
+    uzemi_cis, a row with no category for its population, and a category
+    label per row. Religion partitions the population and a row absent from
+    the table stops the build; the single-mother-tongue file leaves the
+    two-language and other-language people as the total less its rows, kept
+    as one bar; a district is filed under its kraj by the adapter's own
+    table, with the boundary file's English spelling as an alias.
+    """
+
+    HEADER = ("idhod,hodnota,ukaz_kod,vira_cis,vira_kod,uzemi_cis,uzemi_kod,"
+              "sldb_rok,sldb_datum,ukaz_txt,vira_txt,uzemi_txt")
+
+    def rows(self, label_column="vira_txt", cis="101", kod="40924", name="Praha-východ",
+             extra=()):
+        header = self.HEADER.replace("vira_txt", label_column)
+        lines = [header,
+                 f"1,1000,3162,,,{cis},{kod},2021,2021-03-26,Počet,,{name}",
+                 f"2,5,3162,3078,2,43,500011,2021,2021-03-26,Počet,Apoštolská církev,Želechovice"]
+        for i, (label, n) in enumerate(extra, 10):
+            lines.append(f"{i},{n},3162,3078,{i},{cis},{kod},2021,2021-03-26,Počet,{label},{name}")
+        return "\n".join(lines).encode("utf-8")
+
+    def test_only_kraje_and_okresy_are_read_and_the_blank_row_is_the_total(self):
+        from scripts.fetch_census import czechia
+        czechia.http_get = lambda url, **kw: self.rows(
+            extra=[("Bez náboženské víry", 600), ("Církev římskokatolická", 100),
+                   ("katolická víra (katolík)", 50), ("ateismus", 10), ("Neuvedeno", 240)])
+        units = czechia.read_table("religion")
+        self.assertEqual(list(units), [("101", "40924")])
+        unit = units[("101", "40924")]
+        self.assertEqual(unit["total"], 1000)
+        groups = czechia.religion(unit["rows"], unit["total"], unit["name"])
+        self.assertEqual(groups["No religion"], 610)        # the written atheism joins it
+        self.assertEqual(groups["Roman Catholic"], 100)
+        self.assertEqual(groups["Catholic (unspecified)"], 50)  # and stays apart
+
+    def test_a_religion_row_outside_the_table_is_other_and_a_bad_sum_stops_the_build(self):
+        from scripts.fetch_census import czechia
+        groups = czechia.religion({"Bez náboženské víry": 600, "Církev jedi rytířů": 400},
+                                  1000, "x")
+        self.assertEqual(groups["Other religion"], 400)
+        self.assertEqual(czechia.UNNAMED["religion"]["Církev jedi rytířů"], 400)
+        with self.assertRaises(SystemExit):
+            czechia.religion({"Bez náboženské víry": 600, "Neuvedeno": 100}, 1000, "x")
+
+    def test_language_remainder_is_one_labelled_bar(self):
+        from scripts.fetch_census import czechia
+        groups = czechia.language({"Český jazyk": 800, "Slovenský jazyk": 50, "Nezjištěno": 100,
+                                   "Osoby se dvěma mateřskými jazyky": 25, "Jiný jazyk": 5,
+                                   "Klingonský jazyk": 20},
+                                  1000, "x")
+        self.assertEqual(groups["Two mother tongues"], 25)
+        self.assertEqual(groups[czechia.LANGUAGE_REMAINDER], 5 + 20)   # the unnamed 20 join it
+        self.assertNotIn("Klingonský jazyk", groups)
+        self.assertEqual(groups["Not stated"], 100)
+        with self.assertRaises(SystemExit):        # more rows than people
+            czechia.language({"Český jazyk": 1100}, 1000, "x")
+
+    def test_nationality_drops_celkem_and_keeps_every_group(self):
+        from scripts.fetch_census import czechia
+        groups = czechia.nationality({"Česká celkem": 700, "Moravská celkem": 100,
+                                      "Jiná celkem": 5})
+        self.assertEqual(groups, {"Czech": 700, "Moravian": 100, "Other": 5})
+        self.assertEqual(czechia.nationality({"Marťanská celkem": 1}), {"Other": 1})
+
+    def test_every_okres_has_a_kraj_and_the_english_spellings_are_aliases(self):
+        from scripts.fetch_census import czechia
+        self.assertEqual(sum(len(v) for v in czechia.OKRES_KRAJ.values()), 77)
+        self.assertEqual(len(czechia.KRAJ_OF), 77)
+        self.assertEqual(czechia.KRAJ_OF["Praha-východ"], "Středočeský kraj")
+        self.assertEqual(czechia.OKRES_ALIASES["Brno-město"], ["Brno-City"])
+        for okres in czechia.OKRES_ALIASES:
+            self.assertIn(okres, czechia.KRAJ_OF)
+
+
+class CroatiaReadsTheBilingualHeader(unittest.TestCase):
+    """DZS's census workbook names each category in a bilingual header cell
+    (Croatian over English) with a count and a percent column per category;
+    the categories are read from the header, the percent columns skipped, a
+    dash is zero, the country row is skipped, and a county's own row is the
+    one with no unit type. A row that does not sum to its total stops the
+    build.
+    """
+
+    ROWS = [
+        ("1.",), ("STANOVNIŠTVO PREMA NARODNOSTI",), (None,), (None,), (None,), (None,), (None,),
+        ("Županija", "Jedinica lokalne samouprave", "County of", "Local self-government unit",
+         "Grad/općina\nTown/Municipality", "Ukupno\nTotal", "Ukupno, %\nTotal, %",
+         "Hrvati\nCroats", "Hrvati, %\nCroats, %", "Srbi\nSerbs", "Srbi, %\nSerbs, %",
+         "Ostali\nOther", "Ostali, %\nOther, %", "Nepoznato\nUnknown", "Nepoznato, %\nUnknown, %"),
+        ("Republika Hrvatska", None, "Republic of Croatia", None, None, 100, 100, 90, 90, 5, 5, 3, 3, 2, 2),
+        ("Zagrebačka", None, "Zagreb", None, None, 100, 100, 90, 90, 5, 5, 3, 3, 2, 2),
+        ("Zagrebačka", "Grad", "Zagreb", "Town", "Dugo Selo", 60, 100, 55, 91.7, "-", "-", 3, 5, 2, 3.3),
+        ("Zagrebačka", "Općina", "Zagreb", "Municipality", "Bibinje", 40, 100, 35, 87.5, 5, 12.5, "-", "-", "-", "-"),
+        ("1) Footnote under the table", None, None, None, None, None),
+    ]
+
+    def test_labels_units_and_dashes(self):
+        from scripts.fetch_census import croatia
+        labels, units = croatia.parse_sheet(self.ROWS)
+        self.assertEqual(labels, ["Croats", "Serbs", "Other", "Unknown"])
+        self.assertEqual(len(units), 3)                 # the footnote is not a unit
+        self.assertEqual(croatia.english("Ostali kršćani1)\nOther Christians1)"), "Other Christians")
+        self.assertEqual(croatia.bars("religion", {"county": "x", "name": None, "total": 10,
+                                                   "counts": {"Jews": 10}})[0]["group"], "Judaism")
+        self.assertEqual([(u["type"], u["name"]) for u in units],
+                         [(None, None), ("Grad", "Dugo Selo"), ("Općina", "Bibinje")])
+        self.assertEqual(units[1]["counts"]["Serbs"], 0)
+        bars = croatia.bars("ethnicity", units[1])
+        self.assertEqual(bars[0], {"group": "Croatian", "pct": 91.7, "count": 55})
+        self.assertEqual([b["group"] for b in bars], ["Croatian", "Other", "Not stated"])
+
+    def test_a_row_that_does_not_sum_stops_the_build(self):
+        from scripts.fetch_census import croatia
+        _, units = croatia.parse_sheet(self.ROWS)
+        units[2]["counts"]["Croats"] = 10
+        with self.assertRaises(SystemExit):
+            croatia.bars("ethnicity", units[2])
+
+    def test_every_county_is_named_for_the_boundary_file(self):
+        from scripts.fetch_census import croatia
+        self.assertEqual(len(croatia.COUNTIES), 21)
+        self.assertEqual(croatia.COUNTIES["Grad Zagreb"], "City of Zagreb")
+        self.assertEqual(croatia.unit_aliases("Grad Buje – Buie"), ["Grad Buje"])
+        self.assertEqual(croatia.unit_aliases("Grad Cres"), ["Otok Cres"])
+
+
+class ThailandReadsTheTranscribedReports(unittest.TestCase):
+    """The Wikipedia table transcribes each province's 2000 final report: a
+    header row separated by "||", a province link with a <ref> citing the
+    NSO PDF, shares with and without their "%", and N/A where the report gave
+    nothing. The three shares leave a remainder that is published as one group;
+    a faith the report did not give is absent; a changed column order refuses.
+    """
+
+    WIKITEXT = (
+        "intro\n{| class=\"wikitable sortable\"\n|+\'\'\'caption\'\'\'\n|-\n"
+        "!province name||% [[Thai nationality law|Thai nationals]] in 1970||% Thai nationals in 2000"
+        "||[[Buddhist]] % in 1990||[[Buddhist]] % in 2000||[[Muslim]] % in 1990||Muslim % in 2000"
+        "||[[Christianity|Christian]] % in 1990||Christian % in 2000"
+        "||Linguistic minorities in 1990||Linguistic minorities in 2000\n|-\n"
+        "|[[Yala province|Yala]]<ref>{{cite web|url=http://web.nso.go.th/pop2000/finalrep/yalafn.pdf "
+        "|title=Data}}</ref>||97.3%||99.8%||35.9%||31.0%||63.8%||68.9%||N/A||N/A||Malay (62.4%)||Malay (66.1%)\n|-\n"
+        "|[[Sisaket province|Sisaket]]<ref>{{cite web |url=http://web.nso.go.th/pop2000/finalrep/sisaketfn.pdf "
+        "|archive-url=https://web.archive.org/x }}</ref>||[[N/A]]||99.5||99.6%||99.5||0.1%||0.1%||N/A||0.3||N/A||N/A\n|-\n"
+        "|[[Bangkok]]<ref>{{cite web|url=http://web.nso.go.th/pop2000/finalrep/bangkok1.pdf}}</ref>"
+        "||94.8%||99.0%||95.1%||94.5%||4.0%||4.1%||0.7%||1.0%||English (0.1%)||English (0.7%)\n"
+        "|}\nafter"
+    )
+
+    def test_shares_remainder_names_and_the_cited_report(self):
+        from scripts.fetch_census import thailand
+        records = thailand.build(self.WIKITEXT)
+        by = {r["name"]: r for r in records}
+        self.assertEqual(sorted(by), ["Bangkok", "Sisaket Province", "Yala Province"])
+        yala = by["Yala Province"]
+        self.assertEqual(yala["religion"], [{"group": "Islam", "pct": 68.9},
+                                            {"group": "Buddhism", "pct": 31.0},
+                                            {"group": "Other or not stated", "pct": 0.1}])
+        self.assertEqual(yala["sources"][0]["url"], "http://web.nso.go.th/pop2000/finalrep/yalafn.pdf")
+        self.assertEqual(yala["aliases"], ["Yala"])
+        self.assertEqual(by["Bangkok"]["aliases"], [])
+        self.assertIn("Si Sa Ket Province", by["Sisaket Province"]["aliases"])
+        sisaket = {b["group"]: b["pct"] for b in by["Sisaket Province"]["religion"]}
+        self.assertEqual(sisaket, {"Buddhism": 99.5, "Islam": 0.1, "Christianity": 0.3,
+                                   "Other or not stated": 0.1})
+        self.assertNotIn("Christianity", {b["group"] for b in yala["religion"]})
+        self.assertEqual(thailand.percent("[[N/A]]"), None)
+        self.assertEqual(thailand.plain("% [[Buddhist]] % in 1990<ref>x</ref>"), "Buddhist in 1990")
+
+    def test_a_reordered_table_refuses(self):
+        from scripts.fetch_census import thailand
+        swapped = self.WIKITEXT.replace("[[Buddhist]] % in 2000||[[Muslim]] % in 1990",
+                                        "[[Muslim]] % in 1990||[[Buddhist]] % in 2000")
+        with self.assertRaises(SystemExit):
+            thailand.build(swapped)
+        with self.assertRaises(SystemExit):
+            thailand.build(self.WIKITEXT.replace("||35.9%||31.0%||63.8%||68.9%",
+                                                 "||35.9%||81.0%||63.8%||68.9%"))
+
+
+class BosniaReadsBookTwo(unittest.TestCase):
+    """BHAS Book 2 tables carry a bilingual header (the English row starts
+    "Level"), three rows per territory, a dash for zero, and the territory's
+    Bosnian name over its English one. The Total row is read, entities go to
+    both levels, cantons under the Federation, 'Islamska' and 'Muslimanska'
+    are summed, and an unknown territory or a row off its total refuses.
+    """
+
+    def rows(self):
+        def t(level, name, tot, *c):
+            return (level, name, "Ukupno/\nTotal", tot, *c)
+        return [
+            ("", "5. Stanovništvo prema vjeroispovijesti i spolu"),
+            ("Nivo", "Teritorija", "Spol", "Ukupno", "Islamska", "Pravoslavna", "Muslimanska",
+             "Bošnjačka", "Ostali", "Nepoznato"),
+            ("Level", "Area", "Sex", "Total", "Islam", "Orthodox", "Muslim", "Bosniak",
+             "Others", "Unknown"),
+            t(0, "BOSNA I HERCEGOVINA\nBOSNIA AND HERZEGOVINA", 100, 50, 30, 10, 0, 5, 5),
+            (0, "BOSNA I HERCEGOVINA\nBOSNIA AND HERZEGOVINA", "Muški/\nMale", 50, 25, 15, 5, 0, 3, 2),
+            t(1, "FEDERACIJA BOSNE I HERCEGOVINE\nFEDERATION OF BOSNIA AND HERZEGOVINA",
+              60, 40, 5, 10, 1, 2, 2),
+            t(2, "KANTON 10\nCANTON 10", 20, "-", 18, 1, 0, 1, "-"),
+            t(1, "REPUBLIKA SRPSKA\nREPUBLIKA SRPSKA", 30, 5, 24, "-", 0, "1", 0),
+            t(1, "BRČKO DISTRIKT BOSNE I HERCEGOVINE\nBRČKO DISTRICT", 10, 5, 1, 0, 0, 4, 0),
+        ]
+
+    def test_levels_merge_and_labels(self):
+        from scripts.fetch_census import bosnia
+        labels, units = bosnia.parse_table(self.rows())
+        self.assertEqual(labels, ["Islam", "Orthodox", "Muslim", "Bosniak", "Others", "Unknown"])
+        self.assertEqual([(u["level"], u["native"]) for u in units],
+                         [(0, "BOSNA I HERCEGOVINA"), (1, "FEDERACIJA BOSNE I HERCEGOVINE"),
+                          (2, "KANTON 10"), (1, "REPUBLIKA SRPSKA"),
+                          (1, "BRČKO DISTRIKT BOSNE I HERCEGOVINE")])
+        out = bosnia.build({"religion": {u["native"]: u for u in units}})
+        self.assertEqual(sorted(r["name"] for r in out["admin1"]),
+                         ["Brčko District", "Federation of Bosnia and Herzegovina", "Republika Srpska"])
+        self.assertEqual(sorted(r["name"] for r in out["admin2"]),
+                         ["Brčko District", "Canton 10", "Republika Srpska"])
+        fed = next(r for r in out["admin1"] if r["name"].startswith("Federation"))
+        self.assertEqual(fed["religion"][0], {"group": "Islam", "pct": 83.3, "count": 50})
+        self.assertIn({"group": "Bosniak (written as religion)", "pct": 1.7, "count": 1},
+                      fed["religion"])
+        canton = next(r for r in out["admin2"] if r["name"] == "Canton 10")
+        self.assertEqual(canton["parent"], fed["id"])
+        self.assertEqual(canton["religion"][0]["group"], "Orthodox")
+        self.assertNotIn("Unknown", {b["group"] for b in canton["religion"]})   # the dash
+        brcko = next(r for r in out["admin2"] if r["name"] == "Brčko District")
+        self.assertIn("Brcko District", brcko["aliases"])
+        self.assertNotEqual(brcko["id"], next(r for r in out["admin1"] if r["name"] == "Brčko District")["id"])
+
+    def test_an_unknown_territory_or_a_bad_total_refuses(self):
+        from scripts.fetch_census import bosnia
+        rows = self.rows()
+        rows.append((2, "NOVI KANTON\nNEW CANTON", "Ukupno/\nTotal", 5, 5, 0, 0, 0, 0, 0))
+        _, units = bosnia.parse_table(rows)
+        with self.assertRaises(SystemExit):
+            bosnia.build({"religion": {u["native"]: u for u in units}})
+        _, units = bosnia.parse_table(self.rows())
+        units[2]["counts"]["Orthodox"] = 5
+        with self.assertRaises(SystemExit):
+            bosnia.bars("religion", units[2])
+
+
+class WikiCensusReadsATranscribedTable(unittest.TestCase):
+    """A census table reaching the project as a Wikipedia transcription: the
+    table is found by its first header cells, the header rows skipped, the
+    percent columns read, the total row dropped, aliases attached, a short
+    row given its remainder, and a reordered or overflowing table refused.
+    """
+
+    KAZ = (
+        "{| class=\"wikitable\"\n|-\n"
+        "! rowspan=\"2\" |Region !! colspan=\"2\" |Islam !! colspan=\"2\" |Christianity"
+        " !! colspan=\"2\" |Other !! colspan=\"2\" |No Religion !! colspan=\"2\" |Undeclared\n|-\n"
+        "! # !! % !! # !! % !! # !! % !! # !! % !! # !! %\n|-\n"
+        "|Total||13,297,775||69.31||3,297,550||17.19||45,897||0.24||432,140||2.25||2,112,653||11.01\n|-\n"
+        "|[[Akmola Region]]||362,070||46.24||287,619||36.73||1,481||0.19||14,578||1.86||117,247||14.97\n|-\n"
+        "|Atyrau Region||563,53||83.66||29,513||4.38||870||0.13||6,395||0.95||73,284||10.88\n|}"
+    )
+    KHM = (
+        "{| class=\"wikitable sortable\"\n"
+        "! rowspan=\"2\" | Province !! colspan=\"2\" | Buddhism !! colspan=\"2\" | Islam"
+        " !! colspan=\"2\" | Christianity !! colspan=\"2\" | Others\n|-\n"
+        "! 2008 !! 2019 !! 2008 !! 2019 !! 2008 !! 2019 !! 2008 !! 2019\n|-\n"
+        "| [[Banteay Meanchey]] || 99.2 || 99.3 || 0.5 || 0.4 || 0.3 || 0.2 || 0.0 || 0.0\n|-\n"
+        "| Mondulkiri || 54.7 || 70.4 || 5.5 || 4.4 || 4.4 || 4.0 || 35.5 || 21.2\n|-\n"
+        "| Total || 96.9 || 97.1 || 1.9 || 2.0 || 0.4 || 0.3 || 0.8 || 0.5\n|}"
+    )
+
+    def test_kazakhstan_and_cambodia(self):
+        from scripts.fetch_census import wiki_census as w
+        kaz = w.build("KAZ", w.SPECS["KAZ"], "intro\n" + self.KAZ)
+        self.assertEqual([r["name"] for r in kaz], ["Akmola Region", "Atyrau Region"])
+        self.assertEqual(kaz[0]["religion"][0], {"group": "Islam", "pct": 46.24})
+        self.assertEqual({b["group"] for b in kaz[1]["religion"]},
+                         {"Islam", "Christianity", "Other religions", "No religion", "Not stated"})
+        khm = w.build("KHM", w.SPECS["KHM"], self.KHM)
+        self.assertEqual([r["name"] for r in khm], ["Banteay Meanchey", "Mondulkiri"])
+        self.assertEqual(khm[0]["aliases"], ["Bantey Meanchey"])
+        self.assertEqual(khm[0]["religion"][0], {"group": "Buddhism", "pct": 99.3})   # 2019, not 2008
+        self.assertIn({"group": "Other religions", "pct": 0.0}, khm[0]["religion"])  # a printed 0.0 is kept
+        self.assertEqual(khm[1]["religion"][1], {"group": "Other religions", "pct": 21.2})
+
+    def test_a_short_row_gets_a_remainder_and_a_bad_table_refuses(self):
+        from scripts.fetch_census import wiki_census as w
+        short = self.KHM.replace("|| 0.0 || 0.0", "|| 0.0 || N/A").replace("99.2 || 99.3", "99.2 || 97.0")
+        khm = w.build("KHM", w.SPECS["KHM"], short)
+        self.assertIn({"group": "Other or not stated", "pct": 2.4}, khm[0]["religion"])
+        with self.assertRaises(SystemExit):
+            w.build("KHM", w.SPECS["KHM"], self.KHM.replace("Province !!", "Area !!"))
+        with self.assertRaises(SystemExit):
+            w.build("KHM", w.SPECS["KHM"], self.KHM.replace("|| 70.4 ||", "|| 90.4 ||"))
+
+
+class KazakhstanSumsTheNewRegionsBack(unittest.TestCase):
+    """The Bureau's workbook has 20 regions in the 2022 layout; the map draws
+    16 in the 2017 one. The four carved-out regions are summed back into the
+    ones they came from, a column is checked against its own total, the
+    city columns' two spellings are one city, and a district keeps its
+    Cyrillic name with a transliteration and any renamed shape as aliases.
+    """
+
+    def test_parse_merge_and_names(self):
+        from scripts.fetch_census import kazakhstan as k
+        rows = [("2.Численность",), (None, None, None, None, None, "человек"),
+                ("№", "Код", "Этносы", "Республика", "В том числе"),
+                (None, None, None, None, "Абай", "Восточно-Казахстанская", "г. Астана"),
+                (1, "000", "Всего", 130, 30, 70, 30),
+                (2, "005", "Казахи", 100, 20, 60, 20),
+                (3, "001", "Русские", 25, 10, 8, 7),
+                (4, "190", "Не указавшие", 5, "-", 2, 3)]
+        units, counts = k.parse_sheet(rows)
+        self.assertEqual(units, ["Абай", "Восточно-Казахстанская", "г.Астана"])
+        self.assertEqual(counts["Абай"], {"Всего": 30, "Казахи": 20, "Русские": 10, "Не указавшие": 0})
+        merged = k.merged({**{c: {"Всего": 1, "Казахи": 1} for c in k.REGIONS}, **counts})
+        self.assertEqual(merged["East Kazakhstan Region"]["Всего"], 100)
+        self.assertEqual(merged["East Kazakhstan Region"]["Казахи"], 80)
+        self.assertEqual(len(merged), 16)
+        bars = k.bars("x", counts["Восточно-Казахстанская"])
+        self.assertEqual(bars[0], {"group": "Kazakh", "pct": 85.7, "count": 60})
+        self.assertEqual([b["group"] for b in bars], ["Kazakh", "Russian", "Not stated"])
+        with self.assertRaises(SystemExit):
+            k.bars("x", {"Всего": 100, "Казахи": 50})
+        self.assertEqual(k.transliterate(k.bare("Щербактинский район")), "Shcherbaktinskiy")
+        self.assertEqual(k.transliterate(k.bare("Кокшетау г.а.")), "Kokshetau")
+        self.assertEqual(k.RENAMED["район Бәйтерек"], ["Zelenovskiy"])
+        self.assertEqual(k.label("Саха(Якуты)"), "Yakut")
+
+
+class ParentIsResolvedByExactNameFirst(unittest.TestCase):
+    """norm() drops "Region", so "Almaty Region" and the city "Almaty" share a
+    key; a district row naming the region as its parent must be scoped to the
+    region, not to whichever of the two was keyed last.
+    """
+
+    def test_region_and_city_of_one_name(self):
+        region = {"id": "R", "name": "Almaty Region"}
+        city = {"id": "C", "name": "Almaty"}
+        admin1 = {}                                   # the ambiguous key was dropped
+        exact = {"almaty region": region, "almaty": city}
+        shapes = {be.norm("Aksuskiy"): [{"id": "a1", "name": "Aksuskiy", "parent": "R"},
+                                        {"id": "a2", "name": "Aksuskiy", "parent": "P"}]}
+        entity, how = be.match_admin2({"name": "Аксуский район", "aliases": ["Aksuskiy"],
+                                       "parent_name": "Almaty Region"}, shapes, admin1, exact)
+        self.assertEqual((entity or {}).get("id"), "a1")
+        self.assertTrue(how.endswith("+state"))
+
+
 class PolandCutsTheReligionTreeOnce(unittest.TestCase):
     """GUS publishes religion as a seven-level classification tree, and the
     composition is one cut through it: Christian branches at level 5, other

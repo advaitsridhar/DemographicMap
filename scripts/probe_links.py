@@ -39,10 +39,16 @@ HEADERS = {
 }
 
 
+def as_uri(url: str) -> str:
+    """Percent-encode the non-ASCII characters of an IRI. NSI Bulgaria's pages
+    are addressed in Cyrillic, and urllib refuses those as they are."""
+    return urllib.parse.quote(url, safe="%/:=&?~#+!$,;'@()*[]")
+
+
 def fetch(url: str, accept: str = "", timeout: int = TIMEOUT) -> str:
     extra = {"Accept": accept} if accept else {}
     req = urllib.request.Request(
-        url, headers={**HEADERS, **extra, "Accept-Encoding": "gzip"})
+        as_uri(url), headers={**HEADERS, **extra, "Accept-Encoding": "gzip"})
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         raw = resp.read()
         if resp.headers.get("Content-Encoding") == "gzip":
@@ -59,7 +65,7 @@ def head(url: str, accept: str = "", timeout: int = TIMEOUT) -> None:
             # An API that content-negotiates reports a different Content-Type
             # per Accept, and reporting the type is the whole point of --head.
             headers["Accept"] = accept
-        req = urllib.request.Request(url, method=method, headers=headers)
+        req = urllib.request.Request(as_uri(url), method=method, headers=headers)
         if method == "GET":
             req.add_header("Range", "bytes=0-0")
         try:

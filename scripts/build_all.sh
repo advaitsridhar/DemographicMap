@@ -69,8 +69,20 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # KNBS 2019 religion by county, from the openAFRICA mirror: knbs.or.ke
   # itself fails TLS verification on a clean client.
   soft python3 -m scripts.fetch_census.kenya
+  # One MediaWiki API call; the NSO's own hosts refuse automated readers.
+  soft python3 -m scripts.fetch_census.thailand
+  # Census tables that reach us only as Wikipedia transcriptions (KAZ, KHM).
+  soft python3 -m scripts.fetch_census.wiki_census
+  # Reads the committed BNS workbook under data/raw/kazakhstan; no network.
+  soft python3 -m scripts.fetch_census.kazakhstan
   soft python3 -m scripts.fetch_census.malaysia --level both
   soft python3 -m scripts.fetch_census.poland
+  # Three ČSÚ open-data CSVs, 170 MB between them; no key.
+  soft python3 -m scripts.fetch_census.czechia
+  # One 18 MB DZS workbook; no key.
+  soft python3 -m scripts.fetch_census.croatia
+  # Three small BHAS workbooks; no key.
+  soft python3 -m scripts.fetch_census.bosnia
   soft python3 -m scripts.fetch_census.statcan
   soft python3 -m scripts.fetch_census.ibge_sidra --level state
   # 5,570 municipalities, and the reason the level is spelled out twice:
