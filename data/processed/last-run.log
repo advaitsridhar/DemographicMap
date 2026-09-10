@@ -1,6 +1,20 @@
 czechia: SLDB 2021 open data, kraje and okresy
+  retry 1/4 after 2s :: https://csu.gov.cz/docs/107508/8c121222-8d78-85ed-95d8-dc86246c5ba0/sldb2021_narodnost.csv?version=1.0 :: IncompleteRead(540672 bytes read)
   ethnicity: 76,109,588 bytes
-  retry 1/4 after 2s :: https://csu.gov.cz/docs/107508/4250766c-69e6-3845-0eb4-580f7a692558/sldb2021_vira.csv?version=2.0 :: IncompleteRead(983040 bytes read)
+  retry 1/4 after 2s :: https://csu.gov.cz/docs/107508/4250766c-69e6-3845-0eb4-580f7a692558/sldb2021_vira.csv?version=2.0 :: IncompleteRead(1127962 bytes read)
   religion: 80,039,394 bytes
   language: 13,944,413 bytes
-czechia: language row 'Francouzský jazyk' is not in LANGUAGE
+  {'admin1': 14, 'admin2': 77}
+  ! language row 'Osoby se dvěma mateřskými jazyky' has no English name here: 259,940 people summed across territories, shown as the remainder bar
+  ! language row 'Jiný jazyk' has no English name here: 8,700 people summed across territories, shown as the remainder bar
+  ! language row 'Azerbájdžánský jazyk' has no English name here: 600 people summed across territories, shown as the remainder bar
+  ! language row 'Paštunský jazyk' has no English name here: 147 people summed across territories, shown as the remainder bar
+  ! language row 'Srbochorvatský jazyk' has no English name here: 116 people summed across territories, shown as the remainder bar
+  ! language row 'Paňdžábský jazyk' has no English name here: 102 people summed across territories, shown as the remainder bar
+  ! language row 'Čečenský jazyk' has no English name here: 94 people summed across territories, shown as the remainder bar
+  ! language row 'Černohorský jazyk' has no English name here: 34 people summed across territories, shown as the remainder bar
+  Hlavní město Praha ethnicity: 79 bars, largest Czech 61.7%
+  Hlavní město Praha religion: 23 bars, largest No religion 49.6%
+  Hlavní město Praha language: 51 bars, largest Czech 76.2%
+  wrote data/processed/czechia_kraj.json (215 kB)
+  wrote data/processed/czechia_okres.json (946 kB)
