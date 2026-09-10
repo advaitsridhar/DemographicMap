@@ -225,10 +225,14 @@ def read_annex(rows: list[list[str]], groups: dict[str, str]
 
 def religion_rows(text: str) -> dict[str, tuple[int, dict[str, float]]]:
     """{report region: (population, {religion: percent})} from Tableau 2.03."""
+    # pypdf hands back accents as combining marks on some pages, so the text
+    # is composed before any name is compared, and the header is checked
+    # with the accents folded away.
+    text = unicodedata.normalize("NFC", text)
     page = next((p for p in text.split(PAGE_BREAK) if "Tableau 2.03" in p), None)
     if page is None:
         raise SystemExit("mali: no page carries 'Tableau 2.03'")
-    if not re.search(r"Musulman\s+Chrétien\s+Animiste\s+Sans", page):
+    if not re.search(r"Musulman\s+Chretien\s+Animiste\s+Sans", fold(page)):
         raise SystemExit("mali: Tableau 2.03's columns are not Musulman, Chrétien, "
                          "Animiste, Sans religion, Autre religion")
     row = re.compile(r"^(\S+(?: \S+)?)\s+" + r"\s+".join([r"(\d+,\d+)"] * 5)
@@ -376,7 +380,8 @@ def main() -> int:
     log(f"mali: {SOURCE}")
     blob = fetch_blob(URL)
     reader = PdfReader(io.BytesIO(blob))
-    text = PAGE_BREAK.join((p.extract_text() or "") for p in reader.pages)
+    text = unicodedata.normalize(
+        "NFC", PAGE_BREAK.join((p.extract_text() or "") for p in reader.pages))
     log(f"  {len(reader.pages)} pages")
     where = annex_pages(text)
     log(f"  annex tables on pages {', '.join(f'{f} {p + 1}' for f, p in where.items())}")

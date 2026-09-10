@@ -237,6 +237,16 @@ class AnnexTablesAreReadBottomUp(unittest.TestCase):
             mali.checked("ethnicity", got)
 
 
+class DecomposedAccentsStillRead(unittest.TestCase):
+    def test_religion_table_with_combining_marks(self):
+        import unicodedata
+        text = "front\f" + unicodedata.normalize("NFD", TABLEAU_2_03)
+        got = mali.religion_rows(text)
+        self.assertEqual(len(got), 20)
+        self.assertEqual(got["Ségou"][0], 2208847)
+        self.assertEqual(got["Ménaka"][1]["Islam"], 99.67)
+
+
 class TwentyRegionsSumIntoNineShapes(unittest.TestCase):
     def test_build(self):
         text = "front matter\f" + TABLEAU_2_03
