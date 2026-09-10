@@ -11856,9 +11856,9 @@
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
-    "id": "GBR-E06000061",
+    "id": "GBR-E06000061+E06000062",
     "level": "admin2",
-    "name": "North Northamptonshire",
+    "name": "Northamptonshire",
     "parent": "GBR",
     "capital": {
       "status": "not_available"
@@ -11867,7 +11867,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 359523,
+      "value": 785246,
       "year": 2021,
       "source": "ONS Census 2021 (England and Wales) via Nomis"
     },
@@ -11880,48 +11880,48 @@
     "religion": [
       {
         "group": "Christian",
-        "pct": 47.9,
-        "count": 172329
+        "pct": 48.8,
+        "count": 382882
       },
       {
         "group": "No religion",
-        "pct": 42.6,
-        "count": 152998
+        "pct": 40.2,
+        "count": 315749
       },
       {
         "group": "Not answered",
-        "pct": 5.6,
-        "count": 20212
+        "pct": 5.9,
+        "count": 46366
+      },
+      {
+        "group": "Muslim",
+        "pct": 2.4,
+        "count": 19067
       },
       {
         "group": "Hindu",
         "pct": 1.3,
-        "count": 4540
-      },
-      {
-        "group": "Muslim",
-        "pct": 1.2,
-        "count": 4373
+        "count": 9971
       },
       {
         "group": "Sikh",
         "pct": 0.5,
-        "count": 1787
+        "count": 3578
       },
       {
         "group": "Other religion",
         "pct": 0.5,
-        "count": 1900
+        "count": 4306
       },
       {
         "group": "Buddhist",
         "pct": 0.3,
-        "count": 1095
+        "count": 2610
       },
       {
         "group": "Jewish",
         "pct": 0.1,
-        "count": 291
+        "count": 721
       }
     ],
     "language": {
@@ -11930,123 +11930,123 @@
     "ethnicity": [
       {
         "group": "White",
-        "pct": 90.3,
-        "count": 324664
+        "pct": 87.9,
+        "count": 690422
       },
       {
         "group": "White: English, Welsh, Scottish, Northern Irish or British",
-        "pct": 80.5,
-        "count": 289274
+        "pct": 77.5,
+        "count": 608783
       },
       {
         "group": "White: Other White",
-        "pct": 8.8,
-        "count": 31699
+        "pct": 9.2,
+        "count": 72327
       },
       {
         "group": "Asian, Asian British or Asian Welsh",
-        "pct": 3.5,
-        "count": 12726
+        "pct": 4.5,
+        "count": 35189
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African",
-        "pct": 3.1,
-        "count": 11017
-      },
-      {
-        "group": "Mixed or Multiple ethnic groups",
-        "pct": 2.3,
-        "count": 8175
-      },
-      {
-        "group": "Asian, Asian British or Asian Welsh: Indian",
-        "pct": 2.0,
-        "count": 7325
+        "pct": 4.0,
+        "count": 31678
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: African",
-        "pct": 1.9,
-        "count": 6889
+        "pct": 2.7,
+        "count": 21193
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups",
+        "pct": 2.6,
+        "count": 20291
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Indian",
+        "pct": 2.2,
+        "count": 16986
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.8,
-        "count": 3024
+        "pct": 1.0,
+        "count": 7643
       },
       {
         "group": "Other ethnic group",
-        "pct": 0.8,
-        "count": 2941
+        "pct": 1.0,
+        "count": 7666
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
-        "pct": 0.7,
-        "count": 2473
+        "pct": 0.8,
+        "count": 6120
       },
       {
         "group": "White: Irish",
-        "pct": 0.7,
-        "count": 2590
+        "pct": 0.8,
+        "count": 6462
       },
       {
         "group": "Other ethnic group: Any other ethnic group",
+        "pct": 0.8,
+        "count": 6643
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
         "pct": 0.7,
-        "count": 2603
+        "count": 5764
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Other Asian",
-        "pct": 0.6,
-        "count": 2263
+        "pct": 0.7,
+        "count": 5597
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Other Black",
-        "pct": 0.5,
-        "count": 1655
+        "pct": 0.6,
+        "count": 4365
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.5,
-        "count": 1926
+        "pct": 0.6,
+        "count": 4646
       },
       {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.6,
+        "count": 4885
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Pakistani",
         "pct": 0.5,
-        "count": 1905
+        "count": 3945
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Chinese",
+        "pct": 0.4,
+        "count": 2897
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Black African",
         "pct": 0.4,
-        "count": 1320
-      },
-      {
-        "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
-        "pct": 0.3,
-        "count": 1104
-      },
-      {
-        "group": "Asian, Asian British or Asian Welsh: Chinese",
-        "pct": 0.3,
-        "count": 1005
-      },
-      {
-        "group": "Asian, Asian British or Asian Welsh: Pakistani",
-        "pct": 0.3,
-        "count": 1029
+        "count": 3117
       },
       {
         "group": "White: Roma",
-        "pct": 0.2,
-        "count": 736
+        "pct": 0.3,
+        "count": 2145
       },
       {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.1,
-        "count": 365
+        "count": 705
       },
       {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
-        "count": 338
+        "count": 1023
       }
     ],
     "sources": [
@@ -12058,215 +12058,10 @@
       }
     ],
     "codes": {
-      "ons_code": "E06000061"
-    },
-    "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
-    "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
-  },
-  {
-    "id": "GBR-E06000062",
-    "level": "admin2",
-    "name": "West Northamptonshire",
-    "parent": "GBR",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 425723,
-      "year": 2021,
-      "source": "ONS Census 2021 (England and Wales) via Nomis"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": [
-      {
-        "group": "Christian",
-        "pct": 49.5,
-        "count": 210553
-      },
-      {
-        "group": "No religion",
-        "pct": 38.2,
-        "count": 162751
-      },
-      {
-        "group": "Not answered",
-        "pct": 6.1,
-        "count": 26154
-      },
-      {
-        "group": "Muslim",
-        "pct": 3.5,
-        "count": 14694
-      },
-      {
-        "group": "Hindu",
-        "pct": 1.3,
-        "count": 5431
-      },
-      {
-        "group": "Other religion",
-        "pct": 0.6,
-        "count": 2406
-      },
-      {
-        "group": "Buddhist",
-        "pct": 0.4,
-        "count": 1515
-      },
-      {
-        "group": "Sikh",
-        "pct": 0.4,
-        "count": 1791
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.1,
-        "count": 430
-      }
-    ],
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": [
-      {
-        "group": "White",
-        "pct": 85.9,
-        "count": 365758
-      },
-      {
-        "group": "White: English, Welsh, Scottish, Northern Irish or British",
-        "pct": 75.1,
-        "count": 319509
-      },
-      {
-        "group": "White: Other White",
-        "pct": 9.5,
-        "count": 40628
-      },
-      {
-        "group": "Asian, Asian British or Asian Welsh",
-        "pct": 5.3,
-        "count": 22463
-      },
-      {
-        "group": "Black, Black British, Black Welsh, Caribbean or African",
-        "pct": 4.9,
-        "count": 20661
-      },
-      {
-        "group": "Black, Black British, Black Welsh, Caribbean or African: African",
-        "pct": 3.4,
-        "count": 14304
-      },
-      {
-        "group": "Mixed or Multiple ethnic groups",
-        "pct": 2.8,
-        "count": 12116
-      },
-      {
-        "group": "Asian, Asian British or Asian Welsh: Indian",
-        "pct": 2.3,
-        "count": 9661
-      },
-      {
-        "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
-        "pct": 1.1,
-        "count": 4660
-      },
-      {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 1.1,
-        "count": 4619
-      },
-      {
-        "group": "Other ethnic group",
-        "pct": 1.1,
-        "count": 4725
-      },
-      {
-        "group": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
-        "pct": 0.9,
-        "count": 3647
-      },
-      {
-        "group": "White: Irish",
-        "pct": 0.9,
-        "count": 3872
-      },
-      {
-        "group": "Other ethnic group: Any other ethnic group",
-        "pct": 0.9,
-        "count": 4040
-      },
-      {
-        "group": "Asian, Asian British or Asian Welsh: Other Asian",
-        "pct": 0.8,
-        "count": 3334
-      },
-      {
-        "group": "Asian, Asian British or Asian Welsh: Pakistani",
-        "pct": 0.7,
-        "count": 2916
-      },
-      {
-        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
-        "pct": 0.7,
-        "count": 2980
-      },
-      {
-        "group": "Black, Black British, Black Welsh, Caribbean or African: Other Black",
-        "pct": 0.6,
-        "count": 2710
-      },
-      {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.6,
-        "count": 2720
-      },
-      {
-        "group": "Asian, Asian British or Asian Welsh: Chinese",
-        "pct": 0.4,
-        "count": 1892
-      },
-      {
-        "group": "Mixed or Multiple ethnic groups: White and Black African",
-        "pct": 0.4,
-        "count": 1797
-      },
-      {
-        "group": "White: Roma",
-        "pct": 0.3,
-        "count": 1409
-      },
-      {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.2,
-        "count": 685
-      },
-      {
-        "group": "White: Gypsy or Irish Traveller",
-        "pct": 0.1,
-        "count": 340
-      }
-    ],
-    "sources": [
-      {
-        "field": "ethnicity/religion",
-        "name": "ONS Census 2021 (England and Wales) via Nomis",
-        "url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_2041_1.data.json",
-        "license": "Open Government Licence v3.0"
-      }
-    ],
-    "codes": {
-      "ons_code": "E06000062"
+      "ons_codes": [
+        "E06000061",
+        "E06000062"
+      ]
     },
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
@@ -34530,7 +34325,7 @@
   {
     "id": "GBR-W06000016",
     "level": "admin2",
-    "name": "Rhondda Cynon Taff",
+    "name": "Rhondda Cynon Taf",
     "parent": "GBR",
     "capital": {
       "status": "not_available"
