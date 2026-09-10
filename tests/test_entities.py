@@ -4653,3 +4653,28 @@ class PolandCutsTheReligionTreeOnce(unittest.TestCase):
                          ("powiat bielski", []))
         self.assertEqual(poland.powiat_names("DOLNOŚLĄSKIE", "m. Wrocław"), ("Wrocław", []))
         self.assertEqual(poland.powiat_names("MAZOWIECKIE", "m. st. Warszawa"), ("Warszawa", []))
+
+
+class AbsLanguageTableListsAParentBesideItsChildren(unittest.TestCase):
+    """G13 puts "Other Languages Total" (code O_T) beside every language under
+    it, and O_T is no prefix of "3103" Italian, so the code tree cannot see the
+    parent. Arithmetic can: the set over-counts the total by exactly that row.
+    """
+
+    def test_the_duplicated_parent_is_dropped_and_nothing_else(self):
+        from scripts.fetch_census import abs as abs_
+        coded = {("Total", "_T"): 1000, ("Speaks English only", "1"): 700,
+                 ("Other Languages Total", "O_T"): 250, ("Not stated", "_N"): 50,
+                 ("Italian", "3103"): 100, ("Chinese: Total", "71"): 150,
+                 ("Chinese: Mandarin", "7104"): 120}
+        kept, how = abs_.top_level(coded, 1000)
+        self.assertEqual(how, "code tree less a duplicated parent")
+        self.assertEqual(kept, {"Speaks English only": 700, "Not stated": 50,
+                                "Italian": 100, "Chinese": 150})
+
+    def test_a_small_region_short_of_a_category_is_not_rescued(self):
+        from scripts.fetch_census import abs as abs_
+        small = {("Buddhism", "1"): 12, ("Islam", "4"): 9,
+                 ("Religious affiliation not stated", "_N"): 614, ("Total", "_T"): 1588}
+        _, how = abs_.top_level(small, 1588)
+        self.assertIn("nothing summed", how)

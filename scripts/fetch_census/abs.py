@@ -167,6 +167,9 @@ CHARACTERISTIC_HINTS = {
 # proficiency category as well as once per sex; only the total of each
 # extra dimension is a count of people.
 TOTAL_VALUES = ("persons", "total", "all persons", "total persons")
+# G13's one English category is worded as a behaviour; the chart names a
+# language, so it is renamed to sit beside the others.
+LANGUAGE_LABELS = {"Speaks English only": "English only"}
 
 
 def dimension_ids(rows: list[tuple[dict[str, str], float]]) -> list[str]:
@@ -221,8 +224,38 @@ GRAND_TOTAL = ("total", "total persons", "total all persons", "all persons")
 
 
 def strip_total(label: str) -> str:
-    """"Christianity Total" is what the UI would otherwise print."""
-    return label[: -len(TOTAL_SUFFIX)] if label.lower().endswith(TOTAL_SUFFIX) else label
+    """"Christianity Total" is what the UI would otherwise print.
+
+    G13 writes its families as "Chinese: Total", so the colon goes too.
+    """
+    if label.lower().endswith(TOTAL_SUFFIX):
+        label = label[: -len(TOTAL_SUFFIX)]
+    return label.rstrip(": ")
+
+
+def without_duplicated_parent(candidate: dict[str, float], total: float,
+                              tolerance: float) -> dict[str, float]:
+    """Drop the one category that is the sum of the others' excess.
+
+    G13 lists "Other Languages Total" beside every language under it, and its
+    code, "O_T", is no prefix of "3103" Italian or "52" Indo-Aryan, so the
+    code tree cannot see that it is their parent. Arithmetic can: the
+    categories over-count the published total by exactly that one row. A
+    candidate that is out by the value of one of its own members loses that
+    member, and only then; anything else is left for the next rule.
+    """
+    excess = sum(candidate.values()) - total
+    if excess <= tolerance:
+        return candidate
+    # Never the non-response or the grand total: a small region's "not
+    # stated" can be within the tolerance of a suffix set's excess by
+    # coincidence, and dropping it would hide a missing category.
+    parents = [k for k, v in candidate.items() if abs(v - excess) <= tolerance
+               and k.strip().lower() not in GRAND_TOTAL
+               and not any(tag in k.lower() for tag in KEEP_ALWAYS)]
+    if len(parents) != 1:
+        return candidate
+    return {k: v for k, v in candidate.items() if k != parents[0]}
 
 
 def collapse_hierarchy(counts: dict[str, float]) -> dict[str, float]:
@@ -326,8 +359,14 @@ def top_level(coded: dict[tuple[str, str], float], total: float | None
         # other LGAs, none of them above 2,520 people, and none out by more
         # than 53. A level that is missing a whole category is out by far more
         # than either bound -- Australia's was out by 8.7%, 2.2 million people.
-        if abs(sum(candidate.values()) - total) <= max(0.005 * total, 60):
+        tolerance = max(0.005 * total, 60)
+        if abs(sum(candidate.values()) - total) <= tolerance:
             return candidate, name
+        if name != "code tree":
+            continue                       # only where the structure is known
+        trimmed = without_duplicated_parent(candidate, total, tolerance)
+        if trimmed is not candidate and abs(sum(trimmed.values()) - total) <= tolerance:
+            return trimmed, f"{name} less a duplicated parent"
     return suffix, "suffix (nothing summed to the total)"
 
 
@@ -488,7 +527,8 @@ def main() -> int:
     for code in sorted(set(religion) | set(ancestry) | set(language)):
         rel = {k: v for k, v in religion.get(code, {}).items() if not k.lower().startswith("total")}
         anc = {k: v for k, v in ancestry.get(code, {}).items() if not k.lower().startswith("total")}
-        lan = {k: v for k, v in language.get(code, {}).items() if not k.lower().startswith("total")}
+        lan = {LANGUAGE_LABELS.get(k, k): v for k, v in language.get(code, {}).items()
+               if not k.lower().startswith("total")}
         records.append(record(
             f"AUS-{code}", names.get(code, code),
             level="admin1" if args.level == "state" else "admin2",
