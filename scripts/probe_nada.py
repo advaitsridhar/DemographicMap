@@ -68,8 +68,13 @@ def studies(base: str, keyword: str, limit: int, raw: bool = False) -> list[dict
         print("    " + json.dumps(rows[0], indent=2)[:2000].replace("\n", "\n    "))
         print("    --- end ---")
     for row in rows:
-        print(f"    id={str(row.get('id','?')):<6} {str(row.get('year_end') or row.get('year_start') or '?'):<6} "
-              f"{str(row.get('title',''))[:90]}")
+        # var_found is the whole point: NADA's search matches variable labels
+        # as well as titles, so a keyword like "religion" reports how many of a
+        # study's variables carry it. That answers "was the question asked"
+        # without the detail endpoints, which refuse the numeric id with 400.
+        print(f"    id={str(row.get('id','?')):<5} {str(row.get('year_end') or row.get('year_start') or '?'):<5} "
+              f"vars={str(row.get('varcount','?')):<6} hits={str(row.get('var_found','0')):<4} "
+              f"{str(row.get('form_model','?')):<10} {str(row.get('title',''))[:64]}")
     return rows
 
 
