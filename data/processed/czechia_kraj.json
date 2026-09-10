@@ -150,9 +150,9 @@
         "count": 100661
       },
       {
-        "group": "Other language or two mother tongues",
-        "pct": 4.6,
-        "count": 59509
+        "group": "Two mother tongues",
+        "pct": 4.2,
+        "count": 55129
       },
       {
         "group": "Russian",
@@ -183,6 +183,11 @@
         "group": "Chinese",
         "pct": 0.3,
         "count": 3358
+      },
+      {
+        "group": "Other language",
+        "pct": 0.3,
+        "count": 4094
       },
       {
         "group": "French",
@@ -315,6 +320,16 @@
         "count": 471
       },
       {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 407
@@ -365,6 +380,11 @@
         "count": 582
       },
       {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
         "group": "Hebrew",
         "pct": 0.0,
         "count": 276
@@ -378,6 +398,16 @@
         "group": "Bengali",
         "pct": 0.0,
         "count": 197
+      },
+      {
+        "group": "Punjabi",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "Pashto",
+        "pct": 0.0,
+        "count": 85
       },
       {
         "group": "Persian",
@@ -808,7 +838,7 @@
     "aliases": [],
     "ethnicity_note": "Nationality (národnost), SLDB 2021. Answering was voluntary and about a third of the country left it blank; a person could declare two nationalities and every declaration is counted, so each share is the percentage of the population that named that nationality, and the shares neither sum to 100 nor account for those who did not answer.",
     "religion_note": "Religious belief, SLDB 2021: one answer per person, voluntary. Believers are shown by church where the church has a world-map name; the other registered churches are summed as Other Christian or Other religion. Believers of no church, no religious belief and Not stated are kept as their own bars.",
-    "language_note": "Mother tongue, SLDB 2021, for people who named exactly one of the thirteen languages ČSÚ publishes. People who named two mother tongues or a language outside those thirteen are the territory's total less its rows, kept as one bar so labelled."
+    "language_note": "Mother tongue, SLDB 2021, at the languages ČSÚ publishes for people who named exactly one; people who named two are the 'Two mother tongues' bar, and languages ČSÚ does not list singly are 'Other language'. Not stated is kept as its own bar."
   },
   {
     "id": "CZE-3026",
@@ -961,9 +991,9 @@
         "count": 98617
       },
       {
-        "group": "Other language or two mother tongues",
-        "pct": 2.2,
-        "count": 30774
+        "group": "Two mother tongues",
+        "pct": 2.1,
+        "count": 29903
       },
       {
         "group": "Slovak",
@@ -1019,6 +1049,11 @@
         "group": "Bulgarian",
         "pct": 0.1,
         "count": 1392
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 826
       },
       {
         "group": "French",
@@ -1106,6 +1141,16 @@
         "count": 228
       },
       {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 60
@@ -1176,6 +1221,11 @@
         "count": 81
       },
       {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
         "group": "Hebrew",
         "pct": 0.0,
         "count": 30
@@ -1189,6 +1239,16 @@
         "group": "Bengali",
         "pct": 0.0,
         "count": 34
+      },
+      {
+        "group": "Punjabi",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Pashto",
+        "pct": 0.0,
+        "count": 25
       },
       {
         "group": "Persian",
@@ -1583,11 +1643,6 @@
         "count": 151
       },
       {
-        "group": "Walloon",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Welsh",
         "pct": 0.0,
         "count": 4
@@ -1619,7 +1674,7 @@
     "aliases": [],
     "ethnicity_note": "Nationality (národnost), SLDB 2021. Answering was voluntary and about a third of the country left it blank; a person could declare two nationalities and every declaration is counted, so each share is the percentage of the population that named that nationality, and the shares neither sum to 100 nor account for those who did not answer.",
     "religion_note": "Religious belief, SLDB 2021: one answer per person, voluntary. Believers are shown by church where the church has a world-map name; the other registered churches are summed as Other Christian or Other religion. Believers of no church, no religious belief and Not stated are kept as their own bars.",
-    "language_note": "Mother tongue, SLDB 2021, for people who named exactly one of the thirteen languages ČSÚ publishes. People who named two mother tongues or a language outside those thirteen are the territory's total less its rows, kept as one bar so labelled."
+    "language_note": "Mother tongue, SLDB 2021, at the languages ČSÚ publishes for people who named exactly one; people who named two are the 'Two mother tongues' bar, and languages ČSÚ does not list singly are 'Other language'. Not stated is kept as its own bar."
   },
   {
     "id": "CZE-3034",
@@ -1772,9 +1827,9 @@
         "count": 43449
       },
       {
-        "group": "Other language or two mother tongues",
-        "pct": 1.7,
-        "count": 10565
+        "group": "Two mother tongues",
+        "pct": 1.6,
+        "count": 10253
       },
       {
         "group": "Slovak",
@@ -1917,6 +1972,16 @@
         "count": 19
       },
       {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 9
@@ -1967,24 +2032,19 @@
         "count": 5
       },
       {
-        "group": "Tajik",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Turkish",
         "pct": 0.0,
         "count": 48
       },
       {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Uzbek",
         "pct": 0.0,
         "count": 14
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 7
       },
       {
         "group": "Hebrew",
@@ -2002,6 +2062,16 @@
         "count": 8
       },
       {
+        "group": "Punjabi",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Pashto",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "Persian",
         "pct": 0.0,
         "count": 18
@@ -2015,6 +2085,11 @@
         "group": "Sign language",
         "pct": 0.0,
         "count": 58
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 301
       }
     ],
     "ethnicity": [
@@ -2124,11 +2199,6 @@
         "count": 12
       },
       {
-        "group": "Basque",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Belgian",
         "pct": 0.0,
         "count": 17
@@ -2207,11 +2277,6 @@
         "group": "Indian",
         "pct": 0.0,
         "count": 98
-      },
-      {
-        "group": "Iraqi",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Irish",
@@ -2384,29 +2449,9 @@
         "count": 50
       },
       {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Uzbek",
         "pct": 0.0,
         "count": 22
-      },
-      {
-        "group": "Walloon",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Welsh",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Flemish",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Jewish",
@@ -2430,7 +2475,7 @@
     "aliases": [],
     "ethnicity_note": "Nationality (národnost), SLDB 2021. Answering was voluntary and about a third of the country left it blank; a person could declare two nationalities and every declaration is counted, so each share is the percentage of the population that named that nationality, and the shares neither sum to 100 nor account for those who did not answer.",
     "religion_note": "Religious belief, SLDB 2021: one answer per person, voluntary. Believers are shown by church where the church has a world-map name; the other registered churches are summed as Other Christian or Other religion. Believers of no church, no religious belief and Not stated are kept as their own bars.",
-    "language_note": "Mother tongue, SLDB 2021, for people who named exactly one of the thirteen languages ČSÚ publishes. People who named two mother tongues or a language outside those thirteen are the territory's total less its rows, kept as one bar so labelled."
+    "language_note": "Mother tongue, SLDB 2021, at the languages ČSÚ publishes for people who named exactly one; people who named two are the 'Two mother tongues' bar, and languages ČSÚ does not list singly are 'Other language'. Not stated is kept as its own bar."
   },
   {
     "id": "CZE-3042",
@@ -2583,9 +2628,9 @@
         "count": 43198
       },
       {
-        "group": "Other language or two mother tongues",
-        "pct": 2.1,
-        "count": 12388
+        "group": "Two mother tongues",
+        "pct": 2.0,
+        "count": 11904
       },
       {
         "group": "Slovak",
@@ -2631,6 +2676,11 @@
         "group": "Hungarian",
         "pct": 0.1,
         "count": 501
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 469
       },
       {
         "group": "English",
@@ -2778,24 +2828,19 @@
         "count": 4
       },
       {
-        "group": "Tajik",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Turkish",
         "pct": 0.0,
         "count": 64
       },
       {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Uzbek",
         "pct": 0.0,
         "count": 47
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 7
       },
       {
         "group": "Hebrew",
@@ -2811,6 +2856,16 @@
         "group": "Bengali",
         "pct": 0.0,
         "count": 24
+      },
+      {
+        "group": "Punjabi",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Pashto",
+        "pct": 0.0,
+        "count": 4
       },
       {
         "group": "Persian",
@@ -2955,11 +3010,6 @@
         "count": 19
       },
       {
-        "group": "Basque",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Belgian",
         "pct": 0.0,
         "count": 17
@@ -3010,11 +3060,6 @@
         "count": 124
       },
       {
-        "group": "Galician",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 29
@@ -3058,11 +3103,6 @@
         "group": "Canadian",
         "pct": 0.0,
         "count": 35
-      },
-      {
-        "group": "Catalan",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Kazakh",
@@ -3205,19 +3245,9 @@
         "count": 56
       },
       {
-        "group": "Walloon",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Welsh",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Flemish",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Jewish",
@@ -3241,7 +3271,7 @@
     "aliases": [],
     "ethnicity_note": "Nationality (národnost), SLDB 2021. Answering was voluntary and about a third of the country left it blank; a person could declare two nationalities and every declaration is counted, so each share is the percentage of the population that named that nationality, and the shares neither sum to 100 nor account for those who did not answer.",
     "religion_note": "Religious belief, SLDB 2021: one answer per person, voluntary. Believers are shown by church where the church has a world-map name; the other registered churches are summed as Other Christian or Other religion. Believers of no church, no religious belief and Not stated are kept as their own bars.",
-    "language_note": "Mother tongue, SLDB 2021, for people who named exactly one of the thirteen languages ČSÚ publishes. People who named two mother tongues or a language outside those thirteen are the territory's total less its rows, kept as one bar so labelled."
+    "language_note": "Mother tongue, SLDB 2021, at the languages ČSÚ publishes for people who named exactly one; people who named two are the 'Two mother tongues' bar, and languages ČSÚ does not list singly are 'Other language'. Not stated is kept as its own bar."
   },
   {
     "id": "CZE-3051",
@@ -3375,11 +3405,6 @@
         "group": "Hinduism",
         "pct": 0.0,
         "count": 20
-      },
-      {
-        "group": "Sikhism",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "language": [
@@ -3394,9 +3419,9 @@
         "count": 27355
       },
       {
-        "group": "Other language or two mother tongues",
+        "group": "Two mother tongues",
         "pct": 3.8,
-        "count": 10691
+        "count": 10560
       },
       {
         "group": "Slovak",
@@ -3524,11 +3549,6 @@
         "count": 14
       },
       {
-        "group": "Silesian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Albanian",
         "pct": 0.0,
         "count": 102
@@ -3589,19 +3609,9 @@
         "count": 2
       },
       {
-        "group": "Tajik",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Turkish",
         "pct": 0.0,
         "count": 23
-      },
-      {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Uzbek",
@@ -3624,19 +3634,29 @@
         "count": 5
       },
       {
+        "group": "Punjabi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Pashto",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
         "group": "Persian",
         "pct": 0.0,
         "count": 11
       },
       {
-        "group": "Urdu",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Sign language",
         "pct": 0.0,
         "count": 30
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 124
       }
     ],
     "ethnicity": [
@@ -3761,11 +3781,6 @@
         "count": 21
       },
       {
-        "group": "Basque",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Belgian",
         "pct": 0.0,
         "count": 8
@@ -3784,16 +3799,6 @@
         "group": "British",
         "pct": 0.0,
         "count": 63
-      },
-      {
-        "group": "Chechen",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Montenegrin",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Chinese",
@@ -3819,11 +3824,6 @@
         "group": "French",
         "pct": 0.0,
         "count": 43
-      },
-      {
-        "group": "Galician",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Georgian",
@@ -3869,11 +3869,6 @@
         "group": "Canadian",
         "pct": 0.0,
         "count": 29
-      },
-      {
-        "group": "Catalan",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Kazakh",
@@ -3996,29 +3991,14 @@
         "count": 26
       },
       {
-        "group": "Tajik",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Turkish",
         "pct": 0.0,
         "count": 30
       },
       {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Uzbek",
         "pct": 0.0,
         "count": 15
-      },
-      {
-        "group": "Walloon",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Welsh",
@@ -4052,7 +4032,7 @@
     "aliases": [],
     "ethnicity_note": "Nationality (národnost), SLDB 2021. Answering was voluntary and about a third of the country left it blank; a person could declare two nationalities and every declaration is counted, so each share is the percentage of the population that named that nationality, and the shares neither sum to 100 nor account for those who did not answer.",
     "religion_note": "Religious belief, SLDB 2021: one answer per person, voluntary. Believers are shown by church where the church has a world-map name; the other registered churches are summed as Other Christian or Other religion. Believers of no church, no religious belief and Not stated are kept as their own bars.",
-    "language_note": "Mother tongue, SLDB 2021, for people who named exactly one of the thirteen languages ČSÚ publishes. People who named two mother tongues or a language outside those thirteen are the territory's total less its rows, kept as one bar so labelled."
+    "language_note": "Mother tongue, SLDB 2021, at the languages ČSÚ publishes for people who named exactly one; people who named two are the 'Two mother tongues' bar, and languages ČSÚ does not list singly are 'Other language'. Not stated is kept as its own bar."
   },
   {
     "id": "CZE-3069",
@@ -4205,9 +4185,9 @@
         "count": 79763
       },
       {
-        "group": "Other language or two mother tongues",
-        "pct": 2.6,
-        "count": 20127
+        "group": "Two mother tongues",
+        "pct": 2.5,
+        "count": 19690
       },
       {
         "group": "Slovak",
@@ -4253,6 +4233,11 @@
         "group": "Romani",
         "pct": 0.1,
         "count": 595
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 420
       },
       {
         "group": "English",
@@ -4350,6 +4335,11 @@
         "count": 124
       },
       {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 51
@@ -4400,11 +4390,6 @@
         "count": 10
       },
       {
-        "group": "Tajik",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Turkish",
         "pct": 0.0,
         "count": 50
@@ -4420,6 +4405,11 @@
         "count": 8
       },
       {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
         "group": "Hebrew",
         "pct": 0.0,
         "count": 1
@@ -4433,6 +4423,11 @@
         "group": "Bengali",
         "pct": 0.0,
         "count": 9
+      },
+      {
+        "group": "Punjabi",
+        "pct": 0.0,
+        "count": 4
       },
       {
         "group": "Persian",
@@ -4567,11 +4562,6 @@
         "count": 29
       },
       {
-        "group": "Basque",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Belgian",
         "pct": 0.0,
         "count": 27
@@ -4632,11 +4622,6 @@
         "count": 124
       },
       {
-        "group": "Galician",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 45
@@ -4680,11 +4665,6 @@
         "group": "Canadian",
         "pct": 0.0,
         "count": 40
-      },
-      {
-        "group": "Catalan",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Kazakh",
@@ -4827,16 +4807,6 @@
         "count": 15
       },
       {
-        "group": "Walloon",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Welsh",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Flemish",
         "pct": 0.0,
         "count": 3
@@ -4863,7 +4833,7 @@
     "aliases": [],
     "ethnicity_note": "Nationality (národnost), SLDB 2021. Answering was voluntary and about a third of the country left it blank; a person could declare two nationalities and every declaration is counted, so each share is the percentage of the population that named that nationality, and the shares neither sum to 100 nor account for those who did not answer.",
     "religion_note": "Religious belief, SLDB 2021: one answer per person, voluntary. Believers are shown by church where the church has a world-map name; the other registered churches are summed as Other Christian or Other religion. Believers of no church, no religious belief and Not stated are kept as their own bars.",
-    "language_note": "Mother tongue, SLDB 2021, for people who named exactly one of the thirteen languages ČSÚ publishes. People who named two mother tongues or a language outside those thirteen are the territory's total less its rows, kept as one bar so labelled."
+    "language_note": "Mother tongue, SLDB 2021, at the languages ČSÚ publishes for people who named exactly one; people who named two are the 'Two mother tongues' bar, and languages ČSÚ does not list singly are 'Other language'. Not stated is kept as its own bar."
   },
   {
     "id": "CZE-3077",
@@ -5016,9 +4986,9 @@
         "count": 36645
       },
       {
-        "group": "Other language or two mother tongues",
+        "group": "Two mother tongues",
         "pct": 2.3,
-        "count": 10115
+        "count": 9902
       },
       {
         "group": "Slovak",
@@ -5146,11 +5116,6 @@
         "count": 27
       },
       {
-        "group": "Silesian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Albanian",
         "pct": 0.0,
         "count": 55
@@ -5159,6 +5124,11 @@
         "group": "Armenian",
         "pct": 0.0,
         "count": 20
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 4
       },
       {
         "group": "Georgian",
@@ -5221,14 +5191,14 @@
         "count": 40
       },
       {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Uzbek",
         "pct": 0.0,
         "count": 12
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 3
       },
       {
         "group": "Hebrew",
@@ -5246,6 +5216,16 @@
         "count": 3
       },
       {
+        "group": "Punjabi",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Pashto",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "Persian",
         "pct": 0.0,
         "count": 10
@@ -5259,6 +5239,11 @@
         "group": "Sign language",
         "pct": 0.0,
         "count": 67
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 204
       }
     ],
     "ethnicity": [
@@ -5383,11 +5368,6 @@
         "count": 4
       },
       {
-        "group": "Basque",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Belgian",
         "pct": 0.0,
         "count": 13
@@ -5443,11 +5423,6 @@
         "count": 69
       },
       {
-        "group": "Galician",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 27
@@ -5471,11 +5446,6 @@
         "group": "Irish",
         "pct": 0.0,
         "count": 24
-      },
-      {
-        "group": "Icelandic",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Italian",
@@ -5628,11 +5598,6 @@
         "count": 43
       },
       {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Uzbek",
         "pct": 0.0,
         "count": 13
@@ -5646,11 +5611,6 @@
         "group": "Welsh",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Flemish",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Jewish",
@@ -5674,7 +5634,7 @@
     "aliases": [],
     "ethnicity_note": "Nationality (národnost), SLDB 2021. Answering was voluntary and about a third of the country left it blank; a person could declare two nationalities and every declaration is counted, so each share is the percentage of the population that named that nationality, and the shares neither sum to 100 nor account for those who did not answer.",
     "religion_note": "Religious belief, SLDB 2021: one answer per person, voluntary. Believers are shown by church where the church has a world-map name; the other registered churches are summed as Other Christian or Other religion. Believers of no church, no religious belief and Not stated are kept as their own bars.",
-    "language_note": "Mother tongue, SLDB 2021, for people who named exactly one of the thirteen languages ČSÚ publishes. People who named two mother tongues or a language outside those thirteen are the territory's total less its rows, kept as one bar so labelled."
+    "language_note": "Mother tongue, SLDB 2021, at the languages ČSÚ publishes for people who named exactly one; people who named two are the 'Two mother tongues' bar, and languages ČSÚ does not list singly are 'Other language'. Not stated is kept as its own bar."
   },
   {
     "id": "CZE-3085",
@@ -5827,9 +5787,9 @@
         "count": 37793
       },
       {
-        "group": "Other language or two mother tongues",
+        "group": "Two mother tongues",
         "pct": 1.8,
-        "count": 9931
+        "count": 9697
       },
       {
         "group": "Slovak",
@@ -5957,11 +5917,6 @@
         "count": 40
       },
       {
-        "group": "Silesian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Albanian",
         "pct": 0.0,
         "count": 32
@@ -5970,6 +5925,16 @@
         "group": "Armenian",
         "pct": 0.0,
         "count": 34
+      },
+      {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Georgian",
@@ -6022,24 +5987,19 @@
         "count": 2
       },
       {
-        "group": "Tajik",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Turkish",
         "pct": 0.0,
         "count": 30
       },
       {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Uzbek",
         "pct": 0.0,
         "count": 6
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 5
       },
       {
         "group": "Hebrew",
@@ -6057,6 +6017,11 @@
         "count": 4
       },
       {
+        "group": "Pashto",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "Persian",
         "pct": 0.0,
         "count": 67
@@ -6070,6 +6035,11 @@
         "group": "Sign language",
         "pct": 0.0,
         "count": 89
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 225
       }
     ],
     "ethnicity": [
@@ -6182,11 +6152,6 @@
         "group": "Azerbaijani",
         "pct": 0.0,
         "count": 31
-      },
-      {
-        "group": "Basque",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Belgian",
@@ -6439,24 +6404,9 @@
         "count": 29
       },
       {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Uzbek",
         "pct": 0.0,
         "count": 15
-      },
-      {
-        "group": "Walloon",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Welsh",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Flemish",
@@ -6485,7 +6435,7 @@
     "aliases": [],
     "ethnicity_note": "Nationality (národnost), SLDB 2021. Answering was voluntary and about a third of the country left it blank; a person could declare two nationalities and every declaration is counted, so each share is the percentage of the population that named that nationality, and the shares neither sum to 100 nor account for those who did not answer.",
     "religion_note": "Religious belief, SLDB 2021: one answer per person, voluntary. Believers are shown by church where the church has a world-map name; the other registered churches are summed as Other Christian or Other religion. Believers of no church, no religious belief and Not stated are kept as their own bars.",
-    "language_note": "Mother tongue, SLDB 2021, for people who named exactly one of the thirteen languages ČSÚ publishes. People who named two mother tongues or a language outside those thirteen are the territory's total less its rows, kept as one bar so labelled."
+    "language_note": "Mother tongue, SLDB 2021, at the languages ČSÚ publishes for people who named exactly one; people who named two are the 'Two mother tongues' bar, and languages ČSÚ does not list singly are 'Other language'. Not stated is kept as its own bar."
   },
   {
     "id": "CZE-3093",
@@ -6638,9 +6588,9 @@
         "count": 32289
       },
       {
-        "group": "Other language or two mother tongues",
+        "group": "Two mother tongues",
         "pct": 1.5,
-        "count": 7752
+        "count": 7584
       },
       {
         "group": "Slovak",
@@ -6833,11 +6783,6 @@
         "count": 2
       },
       {
-        "group": "Tajik",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Turkish",
         "pct": 0.0,
         "count": 24
@@ -6851,6 +6796,11 @@
         "group": "Uzbek",
         "pct": 0.0,
         "count": 19
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "Hebrew",
@@ -6881,6 +6831,11 @@
         "group": "Sign language",
         "pct": 0.0,
         "count": 52
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 166
       }
     ],
     "ethnicity": [
@@ -7000,11 +6955,6 @@
         "count": 16
       },
       {
-        "group": "Basque",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Belgian",
         "pct": 0.0,
         "count": 9
@@ -7045,11 +6995,6 @@
         "count": 3
       },
       {
-        "group": "Estonian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Finnish",
         "pct": 0.0,
         "count": 4
@@ -7058,11 +7003,6 @@
         "group": "French",
         "pct": 0.0,
         "count": 68
-      },
-      {
-        "group": "Galician",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Georgian",
@@ -7143,11 +7083,6 @@
         "group": "Latvian",
         "pct": 0.0,
         "count": 4
-      },
-      {
-        "group": "Sorbian",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Macedonian",
@@ -7260,11 +7195,6 @@
         "count": 17
       },
       {
-        "group": "Walloon",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Welsh",
         "pct": 0.0,
         "count": 2
@@ -7296,7 +7226,7 @@
     "aliases": [],
     "ethnicity_note": "Nationality (národnost), SLDB 2021. Answering was voluntary and about a third of the country left it blank; a person could declare two nationalities and every declaration is counted, so each share is the percentage of the population that named that nationality, and the shares neither sum to 100 nor account for those who did not answer.",
     "religion_note": "Religious belief, SLDB 2021: one answer per person, voluntary. Believers are shown by church where the church has a world-map name; the other registered churches are summed as Other Christian or Other religion. Believers of no church, no religious belief and Not stated are kept as their own bars.",
-    "language_note": "Mother tongue, SLDB 2021, for people who named exactly one of the thirteen languages ČSÚ publishes. People who named two mother tongues or a language outside those thirteen are the territory's total less its rows, kept as one bar so labelled."
+    "language_note": "Mother tongue, SLDB 2021, at the languages ČSÚ publishes for people who named exactly one; people who named two are the 'Two mother tongues' bar, and languages ČSÚ does not list singly are 'Other language'. Not stated is kept as its own bar."
   },
   {
     "id": "CZE-3107",
@@ -7449,9 +7379,9 @@
         "count": 27548
       },
       {
-        "group": "Other language or two mother tongues",
+        "group": "Two mother tongues",
         "pct": 1.1,
-        "count": 5531
+        "count": 5412
       },
       {
         "group": "Slovak",
@@ -7614,11 +7544,6 @@
         "count": 1
       },
       {
-        "group": "Kyrgyz",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Lithuanian",
         "pct": 0.0,
         "count": 2
@@ -7644,24 +7569,19 @@
         "count": 4
       },
       {
-        "group": "Tajik",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Turkish",
         "pct": 0.0,
         "count": 15
       },
       {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Uzbek",
         "pct": 0.0,
         "count": 9
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Hebrew",
@@ -7674,9 +7594,14 @@
         "count": 2
       },
       {
-        "group": "Bengali",
+        "group": "Punjabi",
         "pct": 0.0,
-        "count": 0
+        "count": 1
+      },
+      {
+        "group": "Pashto",
+        "pct": 0.0,
+        "count": 3
       },
       {
         "group": "Persian",
@@ -7684,14 +7609,14 @@
         "count": 12
       },
       {
-        "group": "Urdu",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Sign language",
         "pct": 0.0,
         "count": 42
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 114
       }
     ],
     "ethnicity": [
@@ -7836,11 +7761,6 @@
         "count": 1
       },
       {
-        "group": "Montenegrin",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Chinese",
         "pct": 0.0,
         "count": 51
@@ -7851,11 +7771,6 @@
         "count": 3
       },
       {
-        "group": "Estonian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Finnish",
         "pct": 0.0,
         "count": 6
@@ -7864,11 +7779,6 @@
         "group": "French",
         "pct": 0.0,
         "count": 55
-      },
-      {
-        "group": "Galician",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Georgian",
@@ -7916,19 +7826,9 @@
         "count": 21
       },
       {
-        "group": "Catalan",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Kazakh",
         "pct": 0.0,
         "count": 13
-      },
-      {
-        "group": "Korean",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Kurdish",
@@ -8061,11 +7961,6 @@
         "count": 18
       },
       {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Uzbek",
         "pct": 0.0,
         "count": 11
@@ -8079,11 +7974,6 @@
         "group": "Welsh",
         "pct": 0.0,
         "count": 3
-      },
-      {
-        "group": "Flemish",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Jewish",
@@ -8107,7 +7997,7 @@
     "aliases": [],
     "ethnicity_note": "Nationality (národnost), SLDB 2021. Answering was voluntary and about a third of the country left it blank; a person could declare two nationalities and every declaration is counted, so each share is the percentage of the population that named that nationality, and the shares neither sum to 100 nor account for those who did not answer.",
     "religion_note": "Religious belief, SLDB 2021: one answer per person, voluntary. Believers are shown by church where the church has a world-map name; the other registered churches are summed as Other Christian or Other religion. Believers of no church, no religious belief and Not stated are kept as their own bars.",
-    "language_note": "Mother tongue, SLDB 2021, for people who named exactly one of the thirteen languages ČSÚ publishes. People who named two mother tongues or a language outside those thirteen are the territory's total less its rows, kept as one bar so labelled."
+    "language_note": "Mother tongue, SLDB 2021, at the languages ČSÚ publishes for people who named exactly one; people who named two are the 'Two mother tongues' bar, and languages ČSÚ does not list singly are 'Other language'. Not stated is kept as its own bar."
   },
   {
     "id": "CZE-3115",
@@ -8260,9 +8150,9 @@
         "count": 71845
       },
       {
-        "group": "Other language or two mother tongues",
-        "pct": 2.5,
-        "count": 30186
+        "group": "Two mother tongues",
+        "pct": 2.4,
+        "count": 28925
       },
       {
         "group": "Slovak",
@@ -8328,6 +8218,11 @@
         "group": "Arabic",
         "pct": 0.1,
         "count": 778
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 1208
       },
       {
         "group": "French",
@@ -8405,6 +8300,16 @@
         "count": 276
       },
       {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 34
@@ -8475,6 +8380,11 @@
         "count": 11
       },
       {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
         "group": "Hebrew",
         "pct": 0.0,
         "count": 48
@@ -8488,6 +8398,16 @@
         "group": "Bengali",
         "pct": 0.0,
         "count": 45
+      },
+      {
+        "group": "Punjabi",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Pashto",
+        "pct": 0.0,
+        "count": 12
       },
       {
         "group": "Persian",
@@ -8882,11 +8802,6 @@
         "count": 23
       },
       {
-        "group": "Walloon",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Welsh",
         "pct": 0.0,
         "count": 5
@@ -8918,7 +8833,7 @@
     "aliases": [],
     "ethnicity_note": "Nationality (národnost), SLDB 2021. Answering was voluntary and about a third of the country left it blank; a person could declare two nationalities and every declaration is counted, so each share is the percentage of the population that named that nationality, and the shares neither sum to 100 nor account for those who did not answer.",
     "religion_note": "Religious belief, SLDB 2021: one answer per person, voluntary. Believers are shown by church where the church has a world-map name; the other registered churches are summed as Other Christian or Other religion. Believers of no church, no religious belief and Not stated are kept as their own bars.",
-    "language_note": "Mother tongue, SLDB 2021, for people who named exactly one of the thirteen languages ČSÚ publishes. People who named two mother tongues or a language outside those thirteen are the territory's total less its rows, kept as one bar so labelled."
+    "language_note": "Mother tongue, SLDB 2021, at the languages ČSÚ publishes for people who named exactly one; people who named two are the 'Two mother tongues' bar, and languages ČSÚ does not list singly are 'Other language'. Not stated is kept as its own bar."
   },
   {
     "id": "CZE-3123",
@@ -9071,9 +8986,9 @@
         "count": 40752
       },
       {
-        "group": "Other language or two mother tongues",
-        "pct": 2.1,
-        "count": 13135
+        "group": "Two mother tongues",
+        "pct": 2.0,
+        "count": 12684
       },
       {
         "group": "Slovak",
@@ -9119,6 +9034,11 @@
         "group": "Romani",
         "pct": 0.1,
         "count": 350
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 435
       },
       {
         "group": "French",
@@ -9216,6 +9136,11 @@
         "count": 14
       },
       {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 6
@@ -9234,11 +9159,6 @@
         "group": "Korean",
         "pct": 0.0,
         "count": 12
-      },
-      {
-        "group": "Kyrgyz",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Lithuanian",
@@ -9266,24 +9186,19 @@
         "count": 6
       },
       {
-        "group": "Tajik",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Turkish",
         "pct": 0.0,
         "count": 33
       },
       {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Uzbek",
         "pct": 0.0,
         "count": 10
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Hebrew",
@@ -9299,6 +9214,16 @@
         "group": "Bengali",
         "pct": 0.0,
         "count": 3
+      },
+      {
+        "group": "Punjabi",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Pashto",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Persian",
@@ -9463,11 +9388,6 @@
         "count": 106
       },
       {
-        "group": "Chechen",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Montenegrin",
         "pct": 0.0,
         "count": 13
@@ -9583,11 +9503,6 @@
         "count": 8
       },
       {
-        "group": "Sorbian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Macedonian",
         "pct": 0.0,
         "count": 74
@@ -9673,29 +9588,14 @@
         "count": 18
       },
       {
-        "group": "Tajik",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Turkish",
         "pct": 0.0,
         "count": 45
       },
       {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Uzbek",
         "pct": 0.0,
         "count": 18
-      },
-      {
-        "group": "Walloon",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Welsh",
@@ -9729,7 +9629,7 @@
     "aliases": [],
     "ethnicity_note": "Nationality (národnost), SLDB 2021. Answering was voluntary and about a third of the country left it blank; a person could declare two nationalities and every declaration is counted, so each share is the percentage of the population that named that nationality, and the shares neither sum to 100 nor account for those who did not answer.",
     "religion_note": "Religious belief, SLDB 2021: one answer per person, voluntary. Believers are shown by church where the church has a world-map name; the other registered churches are summed as Other Christian or Other religion. Believers of no church, no religious belief and Not stated are kept as their own bars.",
-    "language_note": "Mother tongue, SLDB 2021, for people who named exactly one of the thirteen languages ČSÚ publishes. People who named two mother tongues or a language outside those thirteen are the territory's total less its rows, kept as one bar so labelled."
+    "language_note": "Mother tongue, SLDB 2021, at the languages ČSÚ publishes for people who named exactly one; people who named two are the 'Two mother tongues' bar, and languages ČSÚ does not list singly are 'Other language'. Not stated is kept as its own bar."
   },
   {
     "id": "CZE-3131",
@@ -9863,11 +9763,6 @@
         "group": "Hinduism",
         "pct": 0.0,
         "count": 92
-      },
-      {
-        "group": "Sikhism",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "language": [
@@ -9882,9 +9777,9 @@
         "count": 32658
       },
       {
-        "group": "Other language or two mother tongues",
+        "group": "Two mother tongues",
         "pct": 1.8,
-        "count": 10434
+        "count": 10162
       },
       {
         "group": "Slovak",
@@ -10027,6 +9922,11 @@
         "count": 12
       },
       {
+        "group": "Chechen",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 6
@@ -10040,16 +9940,6 @@
         "group": "Kazakh",
         "pct": 0.0,
         "count": 11
-      },
-      {
-        "group": "Korean",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Kyrgyz",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Lithuanian",
@@ -10077,24 +9967,14 @@
         "count": 4
       },
       {
-        "group": "Tajik",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Turkish",
         "pct": 0.0,
         "count": 22
       },
       {
-        "group": "Turkmen",
+        "group": "Serbo-Croatian",
         "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 0
+        "count": 3
       },
       {
         "group": "Hebrew",
@@ -10112,6 +9992,11 @@
         "count": 3
       },
       {
+        "group": "Pashto",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "Persian",
         "pct": 0.0,
         "count": 13
@@ -10125,6 +10010,11 @@
         "group": "Sign language",
         "pct": 0.0,
         "count": 88
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 267
       }
     ],
     "ethnicity": [
@@ -10259,16 +10149,6 @@
         "count": 73
       },
       {
-        "group": "Chechen",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Montenegrin",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Chinese",
         "pct": 0.0,
         "count": 20
@@ -10294,11 +10174,6 @@
         "count": 62
       },
       {
-        "group": "Galician",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 5
@@ -10322,11 +10197,6 @@
         "group": "Irish",
         "pct": 0.0,
         "count": 27
-      },
-      {
-        "group": "Icelandic",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Italian",
@@ -10377,11 +10247,6 @@
         "group": "Latvian",
         "pct": 0.0,
         "count": 9
-      },
-      {
-        "group": "Sorbian",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Hungarian",
@@ -10484,34 +10349,14 @@
         "count": 32
       },
       {
-        "group": "Tajik",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Turkish",
         "pct": 0.0,
         "count": 29
       },
       {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Walloon",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Welsh",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Flemish",
@@ -10540,7 +10385,7 @@
     "aliases": [],
     "ethnicity_note": "Nationality (národnost), SLDB 2021. Answering was voluntary and about a third of the country left it blank; a person could declare two nationalities and every declaration is counted, so each share is the percentage of the population that named that nationality, and the shares neither sum to 100 nor account for those who did not answer.",
     "religion_note": "Religious belief, SLDB 2021: one answer per person, voluntary. Believers are shown by church where the church has a world-map name; the other registered churches are summed as Other Christian or Other religion. Believers of no church, no religious belief and Not stated are kept as their own bars.",
-    "language_note": "Mother tongue, SLDB 2021, for people who named exactly one of the thirteen languages ČSÚ publishes. People who named two mother tongues or a language outside those thirteen are the territory's total less its rows, kept as one bar so labelled."
+    "language_note": "Mother tongue, SLDB 2021, at the languages ČSÚ publishes for people who named exactly one; people who named two are the 'Two mother tongues' bar, and languages ČSÚ does not list singly are 'Other language'. Not stated is kept as its own bar."
   },
   {
     "id": "CZE-3140",
@@ -10693,9 +10538,9 @@
         "count": 86821
       },
       {
-        "group": "Other language or two mother tongues",
+        "group": "Two mother tongues",
         "pct": 3.3,
-        "count": 38595
+        "count": 38135
       },
       {
         "group": "Slovak",
@@ -10898,14 +10743,14 @@
         "count": 68
       },
       {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Uzbek",
         "pct": 0.0,
         "count": 4
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 3
       },
       {
         "group": "Hebrew",
@@ -10923,6 +10768,16 @@
         "count": 11
       },
       {
+        "group": "Punjabi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Pashto",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
         "group": "Persian",
         "pct": 0.0,
         "count": 30
@@ -10936,6 +10791,11 @@
         "group": "Sign language",
         "pct": 0.0,
         "count": 122
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 447
       }
     ],
     "ethnicity": [
@@ -11055,11 +10915,6 @@
         "count": 17
       },
       {
-        "group": "Basque",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Belgian",
         "pct": 0.0,
         "count": 25
@@ -11118,11 +10973,6 @@
         "group": "French",
         "pct": 0.0,
         "count": 162
-      },
-      {
-        "group": "Galician",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Georgian",
@@ -11315,11 +11165,6 @@
         "count": 8
       },
       {
-        "group": "Walloon",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Welsh",
         "pct": 0.0,
         "count": 1
@@ -11351,6 +11196,6 @@
     "aliases": [],
     "ethnicity_note": "Nationality (národnost), SLDB 2021. Answering was voluntary and about a third of the country left it blank; a person could declare two nationalities and every declaration is counted, so each share is the percentage of the population that named that nationality, and the shares neither sum to 100 nor account for those who did not answer.",
     "religion_note": "Religious belief, SLDB 2021: one answer per person, voluntary. Believers are shown by church where the church has a world-map name; the other registered churches are summed as Other Christian or Other religion. Believers of no church, no religious belief and Not stated are kept as their own bars.",
-    "language_note": "Mother tongue, SLDB 2021, for people who named exactly one of the thirteen languages ČSÚ publishes. People who named two mother tongues or a language outside those thirteen are the territory's total less its rows, kept as one bar so labelled."
+    "language_note": "Mother tongue, SLDB 2021, at the languages ČSÚ publishes for people who named exactly one; people who named two are the 'Two mother tongues' bar, and languages ČSÚ does not list singly are 'Other language'. Not stated is kept as its own bar."
   }
 ]
