@@ -28,10 +28,12 @@ their own bars.
 "City of Zagreb", "Bjelovar-Bilogora") and the second level as the bureau
 writes it, type first ("Grad Samobor", "Općina Bibinje"), which is what this
 adapter composes; the county record carries the Croatian name as an alias and
-each unit names its county. The boundary file has 545 shapes for 556 units
-and misspells two ("Opicina Muter-Kornati"); those are declared as aliases,
-and the rest of the difference is visible as unmatched rows, not papered
-over.
+each unit names its county. The workbook lists the City of Zagreb by its
+seventeen city districts rather than as one unit; those are skipped and the
+city is written from its own county row, since it is both a county and a
+second-level shape. The boundary file has 545 shapes for 556 units and
+misspells two ("Opicina Muter-Kornati"); those are declared as aliases, and
+the rest of the difference is visible as unmatched rows, not papered over.
 
 Usage:
     python -m scripts.fetch_census.croatia
@@ -59,7 +61,8 @@ SOURCE = "Croatian Bureau of Statistics (DZS), Census of Population, Households 
 LICENCE = "DZS open data (free reuse with attribution)"
 YEAR = 2021
 SHEETS = {"ethnicity": "1.", "religion": "2.", "language": "4."}
-EXPECTED = {"admin1": 21, "admin2": (550, 560)}
+EXPECTED = {"admin1": 21, "admin2": (550, 565)}
+UNIT_KINDS = ("Grad", "Općina")
 
 # The bureau's county name (column A of every sheet) -> the boundary file's.
 COUNTIES = {
@@ -241,32 +244,46 @@ def build() -> list[dict[str, Any]]:
     by_key = {field: {(u["county"], u["type"], u["name"]): u for u in units}
               for field, units in parsed.items()}
     records = []
+    skipped: dict[str, int] = {}
     for key in keys:
         county, kind, name = key
         if county not in COUNTIES:
             raise SystemExit(f"croatia: county {county!r} is not in COUNTIES")
+        if kind is not None and kind not in UNIT_KINDS:
+            # The City of Zagreb is listed by its seventeen city districts,
+            # which are neither towns nor municipalities and have no shape;
+            # the city itself is written below from its county row.
+            skipped[kind] = skipped.get(kind, 0) + 1
+            continue
         unit = by_key["ethnicity"][key]
         fields: dict[str, Any] = {}
         for field in SHEETS:
             fields[field] = bars(field, by_key[field][key])
             fields[f"{field}_note"] = NOTES[field]
         county_id = f"HRV-{slugify(county)}"
+        shapes = []
         if name is None:
-            shown, level, parent, parent_name = COUNTIES[county], "admin1", "HRV", None
-            entity_id, aliases = county_id, [county, f"{county} županija"]
+            shapes.append((COUNTIES[county], "admin1", "HRV", None, county_id,
+                           [county, f"{county} županija"]))
+            if county == "Grad Zagreb":
+                # The city is its own county and its own second-level shape.
+                shapes.append(("Grad Zagreb", "admin2", county_id, COUNTIES[county],
+                               f"{county_id}-grad-zagreb", []))
         else:
-            shown, level = f"{kind} {name}", "admin2"
-            parent, parent_name = county_id, COUNTIES[county]
-            entity_id = f"{county_id}-{slugify(shown)}"
-            aliases = UNIT_ALIASES.get(shown, [])
-        records.append(record(
-            entity_id, shown, level=level, parent=parent, parent_name=parent_name,
-            country="HRV", aliases=aliases,
-            population=measure(unit["total"], year=YEAR, source=SOURCE),
-            sources=[{"field": "population/ethnicity/religion/language", "name": SOURCE,
-                      "url": PAGE, "license": LICENCE}],
-            **fields,
-        ))
+            shown = f"{kind} {name}"
+            shapes.append((shown, "admin2", county_id, COUNTIES[county],
+                           f"{county_id}-{slugify(shown)}", UNIT_ALIASES.get(shown, [])))
+        for shown, level, parent, parent_name, entity_id, aliases in shapes:
+            records.append(record(
+                entity_id, shown, level=level, parent=parent, parent_name=parent_name,
+                country="HRV", aliases=aliases,
+                population=measure(unit["total"], year=YEAR, source=SOURCE),
+                sources=[{"field": "population/ethnicity/religion/language", "name": SOURCE,
+                          "url": PAGE, "license": LICENCE}],
+                **fields,
+            ))
+    for kind, n in skipped.items():
+        log(f"  skipped {n} rows of type {kind!r}: not a town or municipality")
     by_level = {"admin1": 0, "admin2": 0}
     for r in records:
         by_level[r["level"]] += 1
