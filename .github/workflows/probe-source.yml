@@ -12,12 +12,16 @@ on:
       kind:
         description: "Source type"
         type: choice
-        options: [arcgis, url, pdf, datagovsg, pxweb, links, heads, zipcsv]
+        options: [arcgis, url, pdf, datagovsg, pxweb, pxstat, links, heads, zipcsv]
         default: arcgis
       target:
-        description: "ArcGIS item id or URL; kind=url/pdf a direct URL; kind=datagovsg a search term"
+        description: >-
+          ArcGIS item id or URL; kind=url/pdf a direct URL; kind=datagovsg a
+          search term; kind=pxstat a matrix code to describe, or empty to list
+          the collection filtered by terms.
         type: string
-        required: true
+        required: false
+        default: ""
       terms:
         description: "kind=pdf/links: comma-separated terms to match"
         type: string
@@ -71,6 +75,25 @@ jobs:
         if: inputs.kind == 'pxweb'
         run: |
           python3 scripts/probe_pxweb.py --countries "${{ inputs.target }}"
+
+      - name: Probe the CSO's PxStat
+        # PxStat is not PxWeb: it answers RPC-style methods rather than the
+        # folder tree probe_pxweb walks, so Ireland needs its own reader.
+        # target is a matrix code to describe (e.g. F5013), or empty to list
+        # the collection; terms filters the listing by table title.
+        if: inputs.kind == 'pxstat'
+        run: |
+          if [ -n "${{ inputs.target }}" ]; then
+            python3 scripts/probe_cso.py --matrix "${{ inputs.target }}"
+          else
+            # geography comes in on the same input as the search terms, after a
+            # pipe: "religion,ethnic|Local Electoral Areas 2022". One workflow
+            # input carrying two filters beats a fourth input nobody else uses.
+            python3 scripts/probe_cso.py \
+              --search "$(echo "${{ inputs.terms }}" | cut -d'|' -f1)" \
+              --geography "$(echo "${{ inputs.terms }}" | cut -d'|' -s -f2)" \
+              --describe 3
+          fi
 
       - name: Probe portal links
         if: inputs.kind == 'links'

@@ -1,6 +1,6 @@
-uk_nomis: county (TYPE155)
-uk_nomis: TS021 Ethnic group (NM_2041_1)
-uk_nomis: TS030 Religion (NM_2049_1)
-  wrote data/processed/uk_county.json (846 kB)
-  174 records
-  174 local authority records
+ireland: religion from SAP2022T2T4LEA22
+  166 areas, 4 categories
+ireland: ethnicity from SAP2022T2T2LEA22
+  166 areas, 7 categories
+  166 local electoral areas; names shared by more than one area: ['Athlone']
+  wrote data/processed/ireland_lea.json (490 kB)
