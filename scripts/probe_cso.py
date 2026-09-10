@@ -90,10 +90,12 @@ def datasets(payload: Any) -> list[dict[str, Any]]:
     """Every dataset in the collection, with its dimensions and their sizes.
 
     The collection is 45 MB and 65,266 labelled nodes because it embeds each
-    dataset's own dimension block, which is the useful accident here: one fetch
-    answers both "which tables are about religion" and "how many areas does
-    each one break down by", and the second question is the one that decides
-    whether a table is usable.
+    dataset's dimension block -- but only the *names*. Every category list in
+    it is empty, so the collection says a table breaks down by "CSO Local
+    Electoral Areas 2022" and not how many of them there are. Reading that
+    empty list as a count printed "(0)" against every geography in the first
+    run, which looks like a finding and is an artefact. The count needs
+    ReadMetadata per table, which is what --describe does.
 
     A node is a dataset when it carries a matrix code. Dimension labels --
     "Religion", "Ethnic or Cultural Background" -- are labelled nodes too, and
@@ -196,11 +198,15 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--search", default="religion,ethnic,irish travel",
                     help="comma-separated terms matched against table titles")
-    ap.add_argument("--census", default=None,
-                    help="only tables whose title names this census year, e.g. 2022")
+    ap.add_argument("--geography", default=None,
+                    help="only tables carrying a dimension whose label contains "
+                         "this, e.g. 'Local Electoral Areas 2022'")
     ap.add_argument("--matrix", default=None,
                     help="describe one table's dimensions and stop")
-    ap.add_argument("--limit", type=int, default=60)
+    ap.add_argument("--describe", type=int, default=0,
+                    help="after filtering, fetch metadata for this many matches "
+                         "to get the category counts the collection omits")
+    ap.add_argument("--limit", type=int, default=40)
     args = ap.parse_args()
 
     if args.matrix:
@@ -217,40 +223,43 @@ def main() -> int:
     print(f"  {len(rows)} datasets in the collection")
 
     needles = [term.strip().lower() for term in args.search.split(",") if term.strip()]
+    place = (args.geography or "").lower()
     matches = [r for r in rows
                if any(n in r["label"].lower() for n in needles)
-               and (not args.census or args.census in r["label"])]
-    matches.sort(key=lambda r: (-len(r["label"]), r["matrix"]))
-    label = f"{len(matches)} datasets matching {needles}"
-    if args.census:
-        label += f" from the {args.census} census"
-    print(f"\n== {label}")
-    for row in matches[:args.limit]:
-        place = geography_of(row)
-        where = (f"{place['size']:>5} x {place['label'][:34]}" if place
-                 else "    ? no geography dimension recognised")
-        print(f"\n  {row['matrix']:<9} {row['updated'][:10]}  {row['label'][:120]}")
-        print(f"      geography: {where}")
-        if place and place["sample"]:
-            print(f"      first areas: {'; '.join(str(s) for s in place['sample'])}")
-        for dim in row["dims"]:
-            print(f"      dim {dim['name']:<22} {dim['size']:>6}  {dim['label'][:60]}")
-    if len(matches) > args.limit:
-        print(f"\n  ... and {len(matches) - args.limit} more")
+               and (not place or any(place in d["label"].lower() for d in r["dims"]))]
+    matches.sort(key=lambda r: r["matrix"])
 
-    # What geographies exist at all, across every matching table. This is the
-    # number the adapter lives or dies by: geoBoundaries draws 4 provinces and
-    # 166 local electoral areas for Ireland, and a table published only for 26
-    # counties fills none of those shapes.
-    sizes: dict[str, int] = {}
+    heading = f"{len(matches)} datasets matching {needles}"
+    if args.geography:
+        heading += f", broken down by {args.geography!r}"
+    print(f"\n== {heading}")
+    for row in matches[:args.limit]:
+        subjects = "; ".join(d["label"] for d in row["dims"]
+                             if d["name"].upper() != "STATISTIC"
+                             and not d["name"].upper().startswith("TLIST"))
+        print(f"  {row['matrix']:<9} {row['updated'][:10]}  {row['label'][:105]}")
+        print(f"      by: {subjects[:150]}")
+    if len(matches) > args.limit:
+        print(f"  ... and {len(matches) - args.limit} more")
+
+    # Every geography any matching table offers, by name. The collection does
+    # not carry category counts, so this is a list of what exists rather than
+    # how big each one is -- --describe turns a name into a number.
+    offered: dict[str, int] = {}
     for row in matches:
-        place = geography_of(row)
-        if place:
-            key = f"{place['label']} ({place['size']})"
-            sizes[key] = sizes.get(key, 0) + 1
-    print("\n== geographies offered by the matching tables")
-    for key, count in sorted(sizes.items(), key=lambda kv: -kv[1]):
+        for dim in row["dims"]:
+            name = dim["name"].upper()
+            if name == "STATISTIC" or name.startswith("TLIST"):
+                continue
+            offered[dim["label"]] = offered.get(dim["label"], 0) + 1
+    print("\n== dimensions offered by the matching tables (counts of tables, "
+          "not of categories)")
+    for key, count in sorted(offered.items(), key=lambda kv: -kv[1])[:40]:
         print(f"  {count:>4} tables  {key}")
+
+    for row in matches[:args.describe]:
+        print(f"\n{'=' * 70}")
+        describe(row["matrix"])
     return 0
 
 

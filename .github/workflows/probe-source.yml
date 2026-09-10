@@ -86,7 +86,13 @@ jobs:
           if [ -n "${{ inputs.target }}" ]; then
             python3 scripts/probe_cso.py --matrix "${{ inputs.target }}"
           else
-            python3 scripts/probe_cso.py --search "${{ inputs.terms }}"
+            # geography comes in on the same input as the search terms, after a
+            # pipe: "religion,ethnic|Local Electoral Areas 2022". One workflow
+            # input carrying two filters beats a fourth input nobody else uses.
+            python3 scripts/probe_cso.py \
+              --search "$(echo "${{ inputs.terms }}" | cut -d'|' -f1)" \
+              --geography "$(echo "${{ inputs.terms }}" | cut -d'|' -s -f2)" \
+              --describe 3
           fi
 
       - name: Probe portal links
