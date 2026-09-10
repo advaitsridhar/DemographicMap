@@ -53,7 +53,9 @@ def sidra(table: dict[str, Any], level_code: str, *, within_state: str | None = 
           ) -> list[dict[str, str]]:
     # "n6/all" is every municipality in the country; "n6/in n3 33" is every
     # municipality inside one state. The second exists for the case below.
-    scope = f"{level_code}/in n3 {within_state}" if within_state else f"{level_code}/all"
+    # Percent-encoded: urllib refuses a literal space in a path, and the first
+    # run of this fallback failed on every state for that reason alone.
+    scope = f"{level_code}/in%20n3%20{within_state}" if within_state else f"{level_code}/all"
     url = (f"{SIDRA}/t/{table['table']}/{scope}"
            f"/v/{table['variable']}/p/{table['period']}")
     if table["classification"]:
