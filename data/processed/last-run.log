@@ -1,7 +1,4 @@
-poland: admin1
-/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
-  warn("""Cannot parse header or footer so it will be ignored""")
-  ethnicity: 0 units
-  language: 0 units
-  religion: 0 units
-poland: admin1 has 0 units, expected 16: []
+ibge_sidra: state (n3)
+  religion: table 9537 v/140 answered
+  wrote data/processed/brazil_state.json (71 kB)
+  27 records
