@@ -211,6 +211,20 @@ def cell(value: Any) -> str:
     return " ".join(str(value).split()) if value is not None else ""
 
 
+# Every sheet's column A is empty -- the probe printed each row as
+# " | DOLNOŚLĄSKIE | 02 | ..." and the first run read column A as the
+# voivodeship and found none. The header row says where the table starts:
+# its first named cell is the offset, and rows above it are the title.
+HEADER_MARKERS = ("Województwo", "Poziom klasyfikacji")
+
+
+def table_offset(vals: list[str]) -> int | None:
+    for marker in HEADER_MARKERS:
+        if marker in vals:
+            return vals.index(marker)
+    return None
+
+
 def workbook(field: str):
     import openpyxl
     raw = http_get(FILES[field], binary=True, timeout=300)
@@ -228,8 +242,13 @@ def units_flat(field: str, level: str) -> dict[tuple[str, str], dict[str, Any]]:
     ws = workbook(field)[SHEETS[field][level]]
     out: dict[tuple[str, str], dict[str, Any]] = {}
     voiv = name = None
+    offset = None
     for row in ws.iter_rows(values_only=True):
         vals = [cell(v) for v in row]
+        if offset is None:
+            offset = table_offset(vals)
+            continue                      # the title rows, then the header
+        vals = vals[offset:] + [""] * 6
         if level == "admin1":
             v, code, label, count = vals[0], vals[1], vals[2], vals[3]
             n = v
@@ -267,9 +286,14 @@ def units_tree(level: str) -> dict[tuple[str, str], dict[str, Any]]:
     else:
         level_col, label_cols, count_col = 3, range(4, 9), 9
     voiv = name = code = None
+    offset = None
     for row in ws.iter_rows(values_only=True):
         vals = [cell(v) for v in row]
-        if len(vals) <= count_col or not re.fullmatch(r"[1-7]", vals[level_col]):
+        if offset is None:
+            offset = table_offset(vals)
+            continue
+        vals = vals[offset:] + [""] * 12
+        if not re.fullmatch(r"[1-7]", vals[level_col]):
             continue
         lvl = int(vals[level_col])
         label = next((vals[i] for i in label_cols if vals[i]), "")
