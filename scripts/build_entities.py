@@ -96,7 +96,11 @@ ADAPTER_FILES = [
     "croatia_county.json", "croatia_unit.json",
     "bosnia_entity.json", "bosnia_canton.json",
     "myanmar_state.json", "ukraine_oblast.json", "car_prefecture.json",
-    "mali_region.json", "drc_province.json", "russia_subject.json",
+    "mali_region.json",
+    # After both Afrobarometer and the 2009 census file: Mali's nine regions
+    # now carry RGPH5 2022 for all three fields.
+    "mali_rgph5_region.json",
+    "drc_province.json", "russia_subject.json",
     "colombia_department.json", "jamaica_parish.json",
     "bahamas_island.json",
     "brazil_state.json", "brazil_municipality.json",
@@ -139,6 +143,9 @@ ADAPTER_HINTS: dict[str, str] = {
            "(python -m scripts.fetch_census.kazakhstan)",
     "KHM": "2019 census religion by province, transcribed on Wikipedia: "
            "python -m scripts.fetch_census.wiki_census --country KHM",
+    "MLI": "INSTAT RGPH5 2022 thematic report on cultural characteristics (religion, "
+           "ethnie, langue maternelle) by region, its 20 regions summed into the 9 "
+           "shapes: python -m scripts.fetch_census.mali",
     "AGO": "INE Censo 2024 final report (ethnic group, mother tongue, religion) by "
            "province, read from the PDF's word coordinates: "
            "python -m scripts.fetch_census.angola",

@@ -71,6 +71,8 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.kenya
   # INE Angola's 12 MB final report; the tables are read from word coordinates.
   soft python3 -m scripts.fetch_census.angola
+  # INSTAT Mali's RGPH5 thematic report (18 MB); annex tables read cell by cell.
+  soft python3 -m scripts.fetch_census.mali
   # One MediaWiki API call; the NSO's own hosts refuse automated readers.
   soft python3 -m scripts.fetch_census.thailand
   # Census tables that reach us only as Wikipedia transcriptions (KAZ, KHM).
