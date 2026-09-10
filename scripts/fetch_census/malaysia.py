@@ -86,6 +86,10 @@ DISTRICT_ALIASES = {
     "Kulai": ["Kulaijaya"],
     "Tangkak": ["Ledang"],
     "Nabawan": ["Nabawan / Persiangan"],
+    # DOSM abbreviates Seberang Perai, the mainland half of Penang.
+    "Sp Selatan": ["Seberang Perai Selatan"],
+    "Sp Tengah": ["Seberang Perai Tengah"],
+    "Sp Utara": ["Seberang Perai Utara"],
 }
 
 
