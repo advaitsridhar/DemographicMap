@@ -1,0 +1,98 @@
+{
+ "iso3": "BIH",
+ "name": "Bosnia and Herzegovina",
+ "population": 3653499,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 50.7
+   },
+   {
+    "group": "Orthodox",
+    "pct": 30.7
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 15.2
+   },
+   {
+    "group": "atheist",
+    "pct": 0.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Bosniak",
+    "pct": 50.1
+   },
+   {
+    "group": "Serb",
+    "pct": 30.8
+   },
+   {
+    "group": "Croat",
+    "pct": 15.4
+   },
+   {
+    "group": "other",
+    "pct": 2.7
+   }
+  ],
+  "language": [
+   {
+    "group": "Bosnian",
+    "pct": 52.9
+   },
+   {
+    "group": "Serbian",
+    "pct": 30.8
+   },
+   {
+    "group": "Croatian",
+    "pct": 14.6
+   },
+   {
+    "group": "other",
+    "pct": 1.6
+   }
+  ]
+ },
+ "admin1": {
+  "count": 3,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Brčko District",
+   "Federation of Bosnia and Herzegovina",
+   "Republika Srpska"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 12,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Brcko District",
+   "Canton 10",
+   "Herzegovina-Neretva Canton",
+   "Republika Srpska",
+   "Sarajevo Canton",
+   "Una-Sana Canton",
+   "West Herzegovina Canton",
+   "Zenica-Doboj Canton"
+  ]
+ }
+}

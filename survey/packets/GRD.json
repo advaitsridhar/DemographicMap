@@ -1,0 +1,94 @@
+{
+ "iso3": "GRD",
+ "name": "Grenada",
+ "population": 114621,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 49.2
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 36.0
+   },
+   {
+    "group": "Jehovah's Witness",
+    "pct": 1.2
+   },
+   {
+    "group": "Rastafarian",
+    "pct": 1.2
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "African descent",
+    "pct": 82.4
+   },
+   {
+    "group": "mixed",
+    "pct": 13.3
+   },
+   {
+    "group": "East Indian",
+    "pct": 2.2
+   },
+   {
+    "group": "other",
+    "pct": 1.3
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "French patois",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 7,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Saint Andrew",
+   "Saint David",
+   "Saint John",
+   "Saint Mark",
+   "Saint Patrick",
+   "Southern Grenadine Islands"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 7,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Saint Andrew",
+   "Saint David",
+   "Saint George",
+   "Saint John",
+   "Saint Mark",
+   "Saint Patrick",
+   "Southern Grenadine Islands"
+  ]
+ }
+}

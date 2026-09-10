@@ -1,0 +1,100 @@
+{
+ "iso3": "SGP",
+ "name": "Singapore",
+ "population": 6080545,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Buddhist",
+    "pct": 31.1
+   },
+   {
+    "group": "Christian",
+    "pct": 18.9
+   },
+   {
+    "group": "Muslim",
+    "pct": 15.6
+   },
+   {
+    "group": "Taoist",
+    "pct": 8.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Chinese",
+    "pct": 74.2
+   },
+   {
+    "group": "Malay",
+    "pct": 13.7
+   },
+   {
+    "group": "Indian",
+    "pct": 8.9
+   },
+   {
+    "group": "other",
+    "pct": 3.2
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": 48.3
+   },
+   {
+    "group": "Mandarin",
+    "pct": 29.9
+   },
+   {
+    "group": "other Chinese dialects",
+    "pct": 8.7
+   },
+   {
+    "group": "Malay",
+    "pct": 9.2
+   }
+  ]
+ },
+ "admin1": {
+  "count": 5,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "CENTRAL REGION",
+   "EAST REGION",
+   "NORTH REGION",
+   "NORTH-EAST REGION",
+   "WEST REGION"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 55,
+  "filled": 41,
+  "fields_filled": {
+   "religion": 30,
+   "ethnicity": 41,
+   "language": 30
+  },
+  "sample_names": [
+   "BEDOK",
+   "BUKIT PANJANG",
+   "MUSEUM",
+   "NORTH-EASTERN ISLANDS",
+   "RIVER VALLEY",
+   "SEMBAWANG",
+   "SERANGOON",
+   "STRAITS VIEW"
+  ]
+ }
+}

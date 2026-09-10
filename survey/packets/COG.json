@@ -1,0 +1,102 @@
+{
+ "iso3": "COG",
+ "name": "Congo (Brazzaville)",
+ "population": 6097665,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 33.1
+   },
+   {
+    "group": "Awakening Churches/Christian Revival",
+    "pct": 22.3
+   },
+   {
+    "group": "Protestant",
+    "pct": 19.9
+   },
+   {
+    "group": "Salutiste",
+    "pct": 2.2
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Kongo",
+    "pct": 40.5
+   },
+   {
+    "group": "Teke",
+    "pct": 16.9
+   },
+   {
+    "group": "Mbochi",
+    "pct": 13.1
+   },
+   {
+    "group": "foreigner",
+    "pct": 8.2
+   }
+  ],
+  "language": [
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "French Lingala and Monokutuba",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "many local languages and dialects",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 12,
+  "filled": 10,
+  "fields_filled": {
+   "religion": 10,
+   "ethnicity": 10,
+   "language": 0
+  },
+  "sample_names": [
+   "Bouenza",
+   "Brazzaville",
+   "Cuvette",
+   "Lékoumou",
+   "Plateaux",
+   "Pool"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 46,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Dongou",
+   "Kelle",
+   "Kindamba",
+   "Kinkala",
+   "Madingou",
+   "Mbomo",
+   "Mfouati",
+   "Sibiti"
+  ]
+ }
+}

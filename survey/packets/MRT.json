@@ -1,0 +1,91 @@
+{
+ "iso3": "MRT",
+ "name": "Mauritania",
+ "population": 5202109,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 100.0
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Black Moors",
+    "pct": 40.0
+   },
+   {
+    "group": "White Moors",
+    "pct": 30.0
+   },
+   {
+    "group": "Sub-Saharan Mauritanians",
+    "pct": 30.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Pular",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Soninke",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Wolof",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 13,
+  "filled": 6,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 6,
+   "language": 0
+  },
+  "sample_names": [
+   "Adrar",
+   "Brakna",
+   "Gorgol",
+   "Hodh ech Chargui",
+   "Inchiri",
+   "Trarza"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 57,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Aleg",
+   "Aoujeft",
+   "Bababe",
+   "Chami",
+   "Dar Naim",
+   "Monguel",
+   "R'Kiz",
+   "Rosso"
+  ]
+ }
+}

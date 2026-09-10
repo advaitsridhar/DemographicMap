@@ -1,0 +1,84 @@
+{
+ "iso3": "GRL",
+ "name": "Greenland",
+ "population": 57751,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Evangelical Lutheran, traditional Inuit spiritual beliefs"
+  },
+  "ethnicity": [
+   {
+    "group": "Greenlandic",
+    "pct": 88.1
+   },
+   {
+    "group": "Danish",
+    "pct": 7.1
+   },
+   {
+    "group": "Filipino",
+    "pct": 1.6
+   },
+   {
+    "group": "other Nordic peoples",
+    "pct": 0.9
+   }
+  ],
+  "language": [
+   {
+    "group": "Greenlandic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Danish",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 6,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Avannaata",
+   "Kujalleq",
+   "Northeast Greenland National Park",
+   "Qeqertalik",
+   "Qeqqata",
+   "Sermersooq"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 6,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Avannaata",
+   "Kujalleq",
+   "Northeast Greenland National Park",
+   "Qeqertalik",
+   "Qeqqata",
+   "Sermersooq"
+  ]
+ }
+}

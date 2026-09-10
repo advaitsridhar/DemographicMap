@@ -1,0 +1,93 @@
+{
+ "iso3": "BGD",
+ "name": "Bangladesh",
+ "population": 174370536,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 91.1,
+    "count": 150415066
+   },
+   {
+    "group": "Hindu",
+    "pct": 8.0,
+    "count": 13143749
+   },
+   {
+    "group": "Buddhist",
+    "pct": 0.6,
+    "count": 1001927
+   },
+   {
+    "group": "Christian",
+    "pct": 0.3,
+    "count": 488555
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Bengali",
+    "pct": 99.0,
+    "bound": ">"
+   },
+   {
+    "group": "other indigenous ethnic groups",
+    "pct": 1.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Bangla",
+    "pct": 98.8
+   },
+   {
+    "group": "other",
+    "pct": 1.2
+   }
+  ]
+ },
+ "admin1": {
+  "count": 8,
+  "filled": 8,
+  "fields_filled": {
+   "religion": 8,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Barisal",
+   "Chittagong",
+   "Khulna",
+   "Mymensingh",
+   "Rajshani",
+   "Sylhet"
+  ],
+  "filled_from": [
+   "",
+   "adapter:prefix"
+  ]
+ },
+ "admin2": {
+  "count": 64,
+  "filled": 64,
+  "fields_filled": {
+   "religion": 64,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bagerhat",
+   "Barguna",
+   "Bogra",
+   "Dhaka",
+   "Gopalganj",
+   "Jessore",
+   "Mymensingh",
+   "Netrakona"
+  ]
+ }
+}

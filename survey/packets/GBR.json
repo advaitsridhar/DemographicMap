@@ -1,0 +1,99 @@
+{
+ "iso3": "GBR",
+ "name": "United Kingdom",
+ "population": 68751311,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 41.2,
+    "count": 27544071
+   },
+   {
+    "group": "No religion",
+    "pct": 36.6,
+    "count": 24433207
+   },
+   {
+    "group": "Muslim",
+    "pct": 5.9,
+    "count": 3955740
+   },
+   {
+    "group": "Not answered",
+    "pct": 5.4,
+    "count": 3595471
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "White: English, Welsh, Scottish, Northern Irish or British",
+    "pct": 66.4,
+    "count": 44353115
+   },
+   {
+    "group": "Scottish",
+    "pct": 6.7,
+    "count": 4445678
+   },
+   {
+    "group": "White: Other White",
+    "pct": 5.5,
+    "count": 3667924
+   },
+   {
+    "group": "Asian, Asian British or Asian Welsh: Indian",
+    "pct": 2.8,
+    "count": 1864305
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 4,
+  "filled": 4,
+  "fields_filled": {
+   "religion": 4,
+   "ethnicity": 4,
+   "language": 2
+  },
+  "sample_names": [
+   "England",
+   "Northern Ireland",
+   "Scotland",
+   "Wales"
+  ],
+  "filled_from": [
+   "adapter:name",
+   "adapter:prefix"
+  ]
+ },
+ "admin2": {
+  "count": 216,
+  "filled": 216,
+  "fields_filled": {
+   "religion": 216,
+   "ethnicity": 216,
+   "language": 43
+  },
+  "sample_names": [
+   "Bolton",
+   "Calderdale",
+   "Derbyshire",
+   "Dundee City",
+   "Hertfordshire",
+   "Neath Port Talbot",
+   "Perth and Kinross",
+   "Tower Hamlets"
+  ]
+ }
+}

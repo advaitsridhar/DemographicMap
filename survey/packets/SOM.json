@@ -1,0 +1,83 @@
+{
+ "iso3": "SOM",
+ "name": "Somalia",
+ "population": 20324160,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 99.9
+   },
+   {
+    "group": "ethnic religionist",
+    "pct": 0.1
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: predominantly Somali with lesser numbers of Arabs, Bantus, and others"
+  },
+  "language": [
+   {
+    "group": "Somali",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Italian",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 18,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Awdal",
+   "Bari",
+   "Middle Juba",
+   "Mudug",
+   "Nugaal",
+   "Woqooyi Galbeed"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 118,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "AWDHEEGLE",
+   "DANYILE",
+   "EL DHERE",
+   "ELGARAS",
+   "GOLDOGOB",
+   "ISKUSHUBAN",
+   "MARKA",
+   "QORYOLEY"
+  ]
+ }
+}

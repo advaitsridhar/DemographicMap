@@ -1,0 +1,95 @@
+{
+ "iso3": "COD",
+ "name": "DRC",
+ "population": 119038825,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Kimbanguist",
+    "pct": 2.8
+   },
+   {
+    "group": "Muslim",
+    "pct": 1.3
+   },
+   {
+    "group": "other",
+    "pct": 1.2
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: more than 200 African ethnic groups of which the majority are Bantu; the four largest groups - Mongo, Luba, Kongo (all Bantu), and the Mangbetu-Azande (Hamitic) - make up about 45%"
+  },
+  "language": [
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Lingala",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Kingwana",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Kikongo",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 26,
+  "filled": 26,
+  "fields_filled": {
+   "religion": 26,
+   "ethnicity": 26,
+   "language": 0
+  },
+  "sample_names": [
+   "Kasai",
+   "Kongo-Central",
+   "Lomami",
+   "Mongala",
+   "North Kivu",
+   "Tshopo"
+  ],
+  "filled_from": [
+   "adapter:alias",
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 189,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Baraka",
+   "Boende",
+   "Dungu",
+   "Kalima",
+   "Libenge",
+   "Lubutu",
+   "Malemba-Nkulu",
+   "Rutshuru"
+  ]
+ }
+}

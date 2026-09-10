@@ -1,0 +1,99 @@
+{
+ "iso3": "LBY",
+ "name": "Libya",
+ "population": 7361263,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 96.6
+   },
+   {
+    "group": "Christian",
+    "pct": 2.7
+   },
+   {
+    "group": "Buddhist",
+    "pct": 1.0,
+    "bound": "<"
+   },
+   {
+    "group": "Hindu",
+    "pct": 1.0,
+    "bound": "<"
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Amazigh and Arab",
+    "pct": 97.0
+   },
+   {
+    "group": "other",
+    "pct": 3.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Italian",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Tamazight (Nafusi",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 22,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Al Kufrah",
+   "Ash Shati'",
+   "Az Zawiyah",
+   "Murzuq",
+   "Sabha",
+   "Surt"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 22,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Al Butnan",
+   "Al Jufrah",
+   "Ash Shati'",
+   "Benghazi",
+   "Ghat",
+   "Misratah",
+   "Murzuq",
+   "Sabha"
+  ]
+ }
+}

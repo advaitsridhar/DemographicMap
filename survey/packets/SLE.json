@@ -1,0 +1,97 @@
+{
+ "iso3": "SLE",
+ "name": "Sierra Leone",
+ "population": 9331203,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 77.1
+   },
+   {
+    "group": "Christian",
+    "pct": 22.9
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Temne",
+    "pct": 35.4
+   },
+   {
+    "group": "Mende",
+    "pct": 30.8
+   },
+   {
+    "group": "Limba",
+    "pct": 8.8
+   },
+   {
+    "group": "Kono",
+    "pct": 4.3
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Mende",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Temne",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Krio",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 4,
+  "filled": 4,
+  "fields_filled": {
+   "religion": 4,
+   "ethnicity": 4,
+   "language": 0
+  },
+  "sample_names": [
+   "Eastern",
+   "Northern",
+   "Southern",
+   "Western Area"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 14,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Kailahun",
+   "Kenema",
+   "Koinadugu",
+   "Kono",
+   "Moyamba",
+   "Port Loko",
+   "Pujehun",
+   "Western Area Urban"
+  ]
+ }
+}

@@ -1,0 +1,88 @@
+{
+ "iso3": "COM",
+ "name": "Comoros",
+ "population": 911707,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 98.1
+   },
+   {
+    "group": "ethnic religionist",
+    "pct": 1.1
+   },
+   {
+    "group": "Christian",
+    "pct": 0.6
+   },
+   {
+    "group": "other",
+    "pct": 0.3
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Antalote, Cafre, Makoa, Oimatsaha, Sakalava"
+  },
+  "language": [
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Shikomoro (official",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "similar to Swahili)",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 3,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Anjouan",
+   "Grande Comore",
+   "Moheli"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 17,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Djando",
+   "Fomboni",
+   "Hambou",
+   "Mbadjini Est",
+   "Mitsamiouli-Mboudé",
+   "Mutsamudu",
+   "Nioumachioi",
+   "Ouani"
+  ]
+ }
+}

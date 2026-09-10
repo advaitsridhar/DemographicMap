@@ -1,0 +1,100 @@
+{
+ "iso3": "TUV",
+ "name": "Tuvalu",
+ "population": 11824,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 92.7
+   },
+   {
+    "group": "Baha'i",
+    "pct": 1.5
+   },
+   {
+    "group": "Jehovah's Witness",
+    "pct": 1.5
+   },
+   {
+    "group": "other",
+    "pct": 3.9
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Tuvaluan",
+    "pct": 97.0
+   },
+   {
+    "group": "Tuvaluan/I-Kiribati",
+    "pct": 1.6
+   },
+   {
+    "group": "Tuvaluan/other",
+    "pct": 0.8
+   },
+   {
+    "group": "other",
+    "pct": 0.6
+   }
+  ],
+  "language": [
+   {
+    "group": "Tuvaluan",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Samoan",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Kiribati",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 3,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Nui",
+   "Nukufetau",
+   "Vaitupu"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 6,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Alamoni",
+   "Aulotu",
+   "Matagi",
+   "Motufoua",
+   "Saniuta",
+   "Temotu"
+  ]
+ }
+}

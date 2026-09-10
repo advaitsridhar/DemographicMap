@@ -1,0 +1,52 @@
+{
+ "iso3": "SPM",
+ "name": "Saint Pierre and Miquelon",
+ "population": 5070,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 99.0
+   },
+   {
+    "group": "other",
+    "pct": 1.0
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Basques and Bretons (French fishermen)"
+  },
+  "language": [
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": []
+ }
+}

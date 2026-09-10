@@ -1,0 +1,107 @@
+{
+ "iso3": "TGO",
+ "name": "Togo",
+ "population": 9143439,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 42.3
+   },
+   {
+    "group": "folk religion",
+    "pct": 36.9
+   },
+   {
+    "group": "Muslim",
+    "pct": 14.0
+   },
+   {
+    "group": "Hindu",
+    "pct": 1.0,
+    "bound": "<"
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Adja-Ewe/Mina",
+    "pct": 42.4
+   },
+   {
+    "group": "Kabye/Tem",
+    "pct": 25.9
+   },
+   {
+    "group": "Para-Gourma/Akan",
+    "pct": 17.1
+   },
+   {
+    "group": "Akposso/Akebu",
+    "pct": 4.1
+   }
+  ],
+  "language": [
+   {
+    "group": "French (official",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "language of commerce)",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Ewe and Mina",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Kabye  and Dagomba",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 5,
+  "filled": 5,
+  "fields_filled": {
+   "religion": 5,
+   "ethnicity": 5,
+   "language": 0
+  },
+  "sample_names": [
+   "Centrale Region",
+   "Kara Region",
+   "Maritime Region",
+   "Plateaux Region",
+   "Savanes Region"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 37,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Amou",
+   "Ave",
+   "Bas-Mono",
+   "Bassar",
+   "Kloto",
+   "Kpélé",
+   "Tandjouare",
+   "Wawa"
+  ]
+ }
+}

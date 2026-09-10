@@ -1,0 +1,88 @@
+{
+ "iso3": "TON",
+ "name": "Tonga",
+ "population": 104519,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 63.9
+   },
+   {
+    "group": "Church of Jesus Christ",
+    "pct": 19.7
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 13.7
+   },
+   {
+    "group": "other",
+    "pct": 2.1
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Tongan",
+    "pct": 96.5
+   },
+   {
+    "group": "other",
+    "pct": 3.5
+   }
+  ],
+  "language": [
+   {
+    "group": "Tongan only",
+    "pct": 85.0
+   },
+   {
+    "group": "Tongan and other language",
+    "pct": 13.9
+   },
+   {
+    "group": "Tongan not used at home",
+    "pct": 1.1
+   }
+  ]
+ },
+ "admin1": {
+  "count": 5,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "'Eua",
+   "Ha'apai",
+   "Niuas",
+   "Tongatapu",
+   "Vava'u"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 21,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "'Eua Prope",
+   "Foa",
+   "Hahake",
+   "Hihifo",
+   "Kolofo'ou",
+   "Lapaha",
+   "Niuafo'ou",
+   "Tatakamotonga"
+  ]
+ }
+}

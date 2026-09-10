@@ -1,0 +1,107 @@
+{
+ "iso3": "CHE",
+ "name": "Switzerland",
+ "population": 8925741,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 34.4
+   },
+   {
+    "group": "Protestant",
+    "pct": 22.5
+   },
+   {
+    "group": "other Christian",
+    "pct": 5.7
+   },
+   {
+    "group": "Muslim",
+    "pct": 5.4
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Swiss",
+    "pct": 69.2
+   },
+   {
+    "group": "German",
+    "pct": 4.2
+   },
+   {
+    "group": "Italian",
+    "pct": 3.2
+   },
+   {
+    "group": "Portuguese",
+    "pct": 2.5
+   }
+  ],
+  "language": [
+   {
+    "group": "German",
+    "pct": 61.1,
+    "count": 5400067
+   },
+   {
+    "group": "French",
+    "pct": 22.5,
+    "count": 1990925
+   },
+   {
+    "group": "Other languages",
+    "pct": 20.5,
+    "count": 1807756
+   },
+   {
+    "group": "Italian",
+    "pct": 7.8,
+    "count": 686113
+   }
+  ]
+ },
+ "admin1": {
+  "count": 26,
+  "filled": 26,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 26
+  },
+  "sample_names": [
+   "Graubünden",
+   "Schwyz",
+   "Solothurn",
+   "Thurgau",
+   "Valais",
+   "Zürich"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 169,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bernina",
+   "Brig",
+   "Jura-North Vaudois",
+   "Leuk",
+   "Obersimmental",
+   "Saanen",
+   "Steckborn",
+   "Thal"
+  ]
+ }
+}

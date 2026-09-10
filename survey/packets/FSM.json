@@ -1,0 +1,103 @@
+{
+ "iso3": "FSM",
+ "name": "Federated States of Micronesia",
+ "population": 99603,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 54.7
+   },
+   {
+    "group": "Protestant",
+    "pct": 41.1
+   },
+   {
+    "group": "Church of Jesus Christ",
+    "pct": 1.5
+   },
+   {
+    "group": "other",
+    "pct": 1.9
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Chuukese/Mortlockese",
+    "pct": 49.3
+   },
+   {
+    "group": "Pohnpeian",
+    "pct": 29.8
+   },
+   {
+    "group": "Kosraean",
+    "pct": 6.3
+   },
+   {
+    "group": "Yapese",
+    "pct": 5.7
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Chuukese",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Kosrean",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Pohnpeian",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 4,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Chuuk",
+   "Kosrae",
+   "Pohnpei",
+   "Yap"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 31,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Dalipebinaw",
+   "Gagil",
+   "Gilman",
+   "Malem",
+   "Paata",
+   "Sokehs",
+   "Tol",
+   "Weloy"
+  ]
+ }
+}

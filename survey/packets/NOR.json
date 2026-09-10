@@ -1,0 +1,88 @@
+{
+ "iso3": "NOR",
+ "name": "Norway",
+ "population": 5509733,
+ "status": "nothing",
+ "declared_not_collected": {
+  "ethnicity": "Norway records immigrant background, not ethnicity."
+ },
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Church of Norway",
+    "pct": 67.5
+   },
+   {
+    "group": "Muslim",
+    "pct": 3.1
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 3.1
+   },
+   {
+    "group": "other Christian",
+    "pct": 3.8
+   }
+  ],
+  "ethnicity": {
+   "status": "not_collected",
+   "note": "Norway records immigrant background, not ethnicity."
+  },
+  "language": [
+   {
+    "group": "Bokmal Norwegian",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Nynorsk Norwegian",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "small Sami- and Finnish-speaking minorities",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 11,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Møre og Romsdal",
+   "Nordland",
+   "Rogaland",
+   "Trøndelag",
+   "Vestfold og Telemark",
+   "Vestland"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 424,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Askøy nor",
+   "Bjerkreim nor",
+   "Bokn nor",
+   "Farsund nor",
+   "Gaular nor",
+   "Marker nor",
+   "Sortland nor",
+   "Tranøy nor"
+  ]
+ }
+}

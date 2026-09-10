@@ -1,0 +1,105 @@
+{
+ "iso3": "MYS",
+ "name": "Malaysia",
+ "population": 34905275,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 63.5
+   },
+   {
+    "group": "Buddhist",
+    "pct": 18.7
+   },
+   {
+    "group": "Christian",
+    "pct": 9.1
+   },
+   {
+    "group": "Hindu",
+    "pct": 6.1
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Bumiputera",
+    "pct": 63.8
+   },
+   {
+    "group": "Chinese",
+    "pct": 20.6
+   },
+   {
+    "group": "Indian",
+    "pct": 6.0
+   },
+   {
+    "group": "other",
+    "pct": 0.6
+   }
+  ],
+  "language": [
+   {
+    "group": "Bahasa Malaysia",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Chinese (Cantonese",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Mandarin",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 16,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Kedah",
+   "Kelantan",
+   "Malacca",
+   "Putrajaya",
+   "Sarawak",
+   "Selangor"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 159,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Jelebu",
+   "Kinabatangan",
+   "Kota Kinabalu",
+   "Matu",
+   "Penampang",
+   "Pitas",
+   "Selama",
+   "Tuaran"
+  ]
+ }
+}

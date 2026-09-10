@@ -1,0 +1,88 @@
+{
+ "iso3": "DNK",
+ "name": "Denmark",
+ "population": 6051491,
+ "status": "nothing",
+ "declared_not_collected": {
+  "ethnicity": "Denmark records ancestry/citizenship, not ethnicity."
+ },
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Evangelical Lutheran",
+    "pct": 71.4
+   },
+   {
+    "group": "Muslim",
+    "pct": 4.3
+   },
+   {
+    "group": "other/none/unspecified",
+    "pct": 24.3
+   }
+  ],
+  "ethnicity": {
+   "status": "not_collected",
+   "note": "Denmark records ancestry/citizenship, not ethnicity."
+  },
+  "language": [
+   {
+    "group": "Danish",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Faroese",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Greenlandic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "German",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 5,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Hovedstaden",
+   "Midtjylland",
+   "Nordjylland",
+   "Sjælland",
+   "Syddanmark"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 98,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Albertslund",
+   "Gladsaxe",
+   "Hjørring",
+   "Horsens",
+   "Ikast-Brande",
+   "Køge",
+   "Næstved",
+   "Rebild"
+  ]
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "iso3": "NAM",
+ "name": "Namibia",
+ "population": 2852777,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 97.5
+   },
+   {
+    "group": "other",
+    "pct": 0.6
+   },
+   {
+    "group": "unaffiliated",
+    "pct": 1.9
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Ovambo",
+    "pct": 50.0
+   },
+   {
+    "group": "Kavangos",
+    "pct": 9.0
+   },
+   {
+    "group": "Herero",
+    "pct": 7.0
+   },
+   {
+    "group": "Damara",
+    "pct": 7.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Oshiwambo languages",
+    "pct": 49.7
+   },
+   {
+    "group": "Nama/Damara",
+    "pct": 11.0
+   },
+   {
+    "group": "Kavango languages",
+    "pct": 10.4
+   },
+   {
+    "group": "Afrikaans",
+    "pct": 9.4
+   }
+  ]
+ },
+ "admin1": {
+  "count": 13,
+  "filled": 11,
+  "fields_filled": {
+   "religion": 11,
+   "ethnicity": 11,
+   "language": 0
+  },
+  "sample_names": [
+   "Caprivi",
+   "Erongo",
+   "Ohangwena",
+   "Omaheke",
+   "Oshana",
+   "Otjozondjupa"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 103,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Arandis",
+   "Berseba",
+   "Luderitz",
+   "Mariental Urban",
+   "Omatako",
+   "Opuwo",
+   "Outapi",
+   "Windhoek Rural"
+  ]
+ }
+}

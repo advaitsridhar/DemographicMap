@@ -1,0 +1,85 @@
+{
+ "iso3": "UKR",
+ "name": "Ukraine",
+ "population": 35661826,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Orthodox (includes the Orthodox Church of Ukraine (OCU), Ukrainian Autocephalous Orthodox Church (UAOC), and the Ukrainian Orthodox - Moscow Patriarchate (UOC-MP)), Ukrainian Greek"
+  },
+  "ethnicity": [
+   {
+    "group": "Ukrainian",
+    "pct": 77.8
+   },
+   {
+    "group": "Russian",
+    "pct": 17.3
+   },
+   {
+    "group": "Belarusian",
+    "pct": 0.6
+   },
+   {
+    "group": "Moldovan",
+    "pct": 0.5
+   }
+  ],
+  "language": [
+   {
+    "group": "Ukrainian",
+    "pct": 67.5
+   },
+   {
+    "group": "Russian",
+    "pct": 29.6
+   },
+   {
+    "group": "other",
+    "pct": 2.9
+   }
+  ]
+ },
+ "admin1": {
+  "count": 27,
+  "filled": 27,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 27
+  },
+  "sample_names": [
+   "Autonomous Republic of Crimea",
+   "Cherkasy Oblast",
+   "Chernihiv Oblast",
+   "Lviv Oblast",
+   "Sevastopol",
+   "Zakarpattia Oblast"
+  ],
+  "filled_from": [
+   "adapter:alias"
+  ]
+ },
+ "admin2": {
+  "count": 494,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Dovzhansk",
+   "Hrebinka",
+   "Myronivka",
+   "Novi Sanzhary",
+   "Pokrovsk",
+   "Stara Syniava",
+   "Vinnytsia",
+   "Vysokopillia"
+  ]
+ }
+}

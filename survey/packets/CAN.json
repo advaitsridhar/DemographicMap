@@ -1,0 +1,103 @@
+{
+ "iso3": "CAN",
+ "name": "Canada",
+ "population": 39187155,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 53.3
+   },
+   {
+    "group": "Muslim",
+    "pct": 4.9
+   },
+   {
+    "group": "Hindu",
+    "pct": 2.3
+   },
+   {
+    "group": "Sikh",
+    "pct": 2.1
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Canadian",
+    "pct": 15.6
+   },
+   {
+    "group": "English",
+    "pct": 14.7
+   },
+   {
+    "group": "Scottish",
+    "pct": 12.1
+   },
+   {
+    "group": "French",
+    "pct": 11.0
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": 87.1
+   },
+   {
+    "group": "French",
+    "pct": 29.1
+   },
+   {
+    "group": "Chinese languages",
+    "pct": 4.2
+   },
+   {
+    "group": "Spanish",
+    "pct": 3.2
+   }
+  ]
+ },
+ "admin1": {
+  "count": 13,
+  "filled": 1,
+  "fields_filled": {
+   "religion": 1,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Alberta",
+   "Manitoba",
+   "New Brunswick",
+   "Newfoundland and Labrador",
+   "Quebec",
+   "Saskatchewan"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 76,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Nord-du-Québec",
+   "Ottawa",
+   "Parklands",
+   "Regina--Moose Mountain",
+   "Saint John--St. Stephen",
+   "Southern / Sud",
+   "Swift Current--Moose Jaw",
+   "Vancouver Island and Coast / *"
+  ]
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "iso3": "JPN",
+ "name": "Japan",
+ "population": 123201945,
+ "status": "declared",
+ "declared_not_collected": {
+  "religion": "Japan's census does not ask religion; published figures are religious-body self-reports that exceed the population.",
+  "ethnicity": "Japan's census collects nationality, not ethnicity."
+ },
+ "already_closed_routes": "census does not ask religion or ethnicity (declared). Language also not asked. Skip unless something new.",
+ "national_record": {
+  "religion": {
+   "status": "not_collected",
+   "note": "Japan's census does not ask religion; published figures are religious-body self-reports that exceed the population."
+  },
+  "ethnicity": {
+   "status": "not_collected",
+   "note": "Japan's census collects nationality, not ethnicity."
+  },
+  "language": [
+   {
+    "group": "Japanese",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 47,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Fukushima",
+   "Nagano",
+   "Osaka Prefecture",
+   "Saitama",
+   "Shizuoka",
+   "Toyama"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 1731,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Ebina",
+   "Got2",
+   "Naganohara",
+   "Ogaki",
+   "Ota",
+   "Taiji",
+   "Yaidu",
+   "Yawata"
+  ]
+ }
+}

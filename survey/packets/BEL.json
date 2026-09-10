@@ -1,0 +1,84 @@
+{
+ "iso3": "BEL",
+ "name": "Belgium",
+ "population": 11960170,
+ "status": "nothing",
+ "declared_not_collected": {
+  "ethnicity": "Belgium does not collect ethnicity; language community is administrative, not a census question."
+ },
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 57.1
+   },
+   {
+    "group": "Protestant",
+    "pct": 2.3
+   },
+   {
+    "group": "other Christian",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Muslim",
+    "pct": 6.8
+   }
+  ],
+  "ethnicity": {
+   "status": "not_collected",
+   "note": "Belgium does not collect ethnicity; language community is administrative, not a census question."
+  },
+  "language": [
+   {
+    "group": "Dutch",
+    "pct": 60.0
+   },
+   {
+    "group": "French",
+    "pct": 40.0
+   },
+   {
+    "group": "German",
+    "pct": 1.0,
+    "bound": "<"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 3,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Brussels Hoofdstedelijk",
+   "Vlaams Gewest",
+   "Wallonne Gewest"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 11,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Antwerpen",
+   "Henegouwen",
+   "Limburg",
+   "Luxemburg",
+   "Namen",
+   "Oost-Vlaanderen",
+   "Waals-Brabant",
+   "West-Vlaanderen"
+  ]
+ }
+}

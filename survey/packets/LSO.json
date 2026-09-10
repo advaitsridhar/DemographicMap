@@ -1,0 +1,115 @@
+{
+ "iso3": "LSO",
+ "name": "Lesotho",
+ "population": 2222962,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 39.2,
+    "count": 463
+   },
+   {
+    "group": "Calvinist",
+    "pct": 12.8,
+    "count": 151
+   },
+   {
+    "group": "Pentecostal",
+    "pct": 10.1,
+    "count": 119
+   },
+   {
+    "group": "Evangelical",
+    "pct": 9.5,
+    "count": 112
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Mokoena",
+    "pct": 19.9,
+    "count": 232
+   },
+   {
+    "group": "Mofokeng",
+    "pct": 18.6,
+    "count": 217
+   },
+   {
+    "group": "Letebele",
+    "pct": 16.4,
+    "count": 192
+   },
+   {
+    "group": "Motaung",
+    "pct": 13.4,
+    "count": 157
+   }
+  ],
+  "language": [
+   {
+    "group": "Sesotho",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Phuthi",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Xhosa",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 10,
+  "filled": 10,
+  "fields_filled": {
+   "religion": 10,
+   "ethnicity": 10,
+   "language": 0
+  },
+  "sample_names": [
+   "Butha-Buthe District",
+   "Maseru District",
+   "Mohale's Hoek District",
+   "Mokhotlong District",
+   "Quthing District",
+   "Thaba-Tseka District"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 78,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Hleoheng",
+   "Lilala",
+   "Maputsoe",
+   "Maseru (Berea Distict)",
+   "Mohale's Hoek",
+   "Qibing",
+   "Semonkong",
+   "Tsana-Talana"
+  ]
+ }
+}

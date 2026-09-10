@@ -1,0 +1,101 @@
+{
+ "iso3": "BGR",
+ "name": "Bulgaria",
+ "population": 6737997,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 64.7
+   },
+   {
+    "group": "Muslim",
+    "pct": 9.8
+   },
+   {
+    "group": "other",
+    "pct": 0.1
+   },
+   {
+    "group": "none",
+    "pct": 4.7
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Bulgarian",
+    "pct": 78.5
+   },
+   {
+    "group": "Turkish",
+    "pct": 7.8
+   },
+   {
+    "group": "Roma",
+    "pct": 4.1
+   },
+   {
+    "group": "other",
+    "pct": 1.2
+   }
+  ],
+  "language": [
+   {
+    "group": "Bulgarian",
+    "pct": 77.3
+   },
+   {
+    "group": "Turkish",
+    "pct": 7.9
+   },
+   {
+    "group": "Romani",
+    "pct": 3.5
+   },
+   {
+    "group": "other",
+    "pct": 1.0
+   }
+  ]
+ },
+ "admin1": {
+  "count": 28,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Burgas",
+   "Gabrovo",
+   "Kyustendil",
+   "Razgrad",
+   "Sofia",
+   "Veliko Tarnovo"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 265,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Belovo",
+   "Chuprene",
+   "Gorna Malina",
+   "Kostinbrod",
+   "Nikola Kozlevo",
+   "Strelcha",
+   "Suvorovo",
+   "Ugarchin"
+  ]
+ }
+}

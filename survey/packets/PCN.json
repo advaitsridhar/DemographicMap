@@ -1,0 +1,53 @@
+{
+ "iso3": "PCN",
+ "name": "Pitcairn Islands",
+ "population": 50,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Seventh Day Adventist",
+    "pct": 100.0
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: descendants of the Bounty mutineers and their Tahitian wives"
+  },
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Pitkern",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": []
+ }
+}

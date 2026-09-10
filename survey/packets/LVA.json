@@ -1,0 +1,104 @@
+{
+ "iso3": "LVA",
+ "name": "Latvia",
+ "population": 1888439,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Lutheran",
+    "pct": 36.2
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 19.5
+   },
+   {
+    "group": "Orthodox",
+    "pct": 19.1
+   },
+   {
+    "group": "other Christian",
+    "pct": 1.6
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Latvian",
+    "pct": 62.7
+   },
+   {
+    "group": "Russian",
+    "pct": 24.5
+   },
+   {
+    "group": "Belarusian",
+    "pct": 3.1
+   },
+   {
+    "group": "Ukrainian",
+    "pct": 2.2
+   }
+  ],
+  "language": [
+   {
+    "group": "Latvian",
+    "pct": 56.3
+   },
+   {
+    "group": "Russian",
+    "pct": 33.8
+   },
+   {
+    "group": "other",
+    "pct": 0.6
+   },
+   {
+    "group": "unspecified",
+    "pct": 9.4
+   }
+  ]
+ },
+ "admin1": {
+  "count": 43,
+  "filled": 40,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 40,
+   "language": 0
+  },
+  "sample_names": [
+   "Bauskas novads",
+   "Daugavpils",
+   "Liepājas",
+   "Salaspils novads",
+   "Varakļānu novads",
+   "Ādažu novads"
+  ],
+  "filled_from": [
+   "adapter:name",
+   "adapter:prefix"
+  ]
+ },
+ "admin2": {
+  "count": 589,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Balvu pag.",
+   "Mazsalacas pag.",
+   "Medzes pag.",
+   "Nīkrāces pag.",
+   "Ošupes pag.",
+   "Variņu pag.",
+   "Zvirgzdenes pag.",
+   "Ēdoles pag."
+  ]
+ }
+}

@@ -1,0 +1,101 @@
+{
+ "iso3": "MKD",
+ "name": "North Macedonia",
+ "population": 2137556,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Orthodox",
+    "pct": 46.1
+   },
+   {
+    "group": "Islam",
+    "pct": 32.2
+   },
+   {
+    "group": "Christian",
+    "pct": 13.2
+   },
+   {
+    "group": "Other",
+    "pct": 7.2
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Macedonian",
+    "pct": 58.4
+   },
+   {
+    "group": "Albanian",
+    "pct": 24.3
+   },
+   {
+    "group": "Turkish",
+    "pct": 3.9
+   },
+   {
+    "group": "Romani",
+    "pct": 2.5
+   }
+  ],
+  "language": [
+   {
+    "group": "Macedonian",
+    "pct": 61.4
+   },
+   {
+    "group": "Albanian",
+    "pct": 24.3
+   },
+   {
+    "group": "Turkish",
+    "pct": 3.4
+   },
+   {
+    "group": "Romani",
+    "pct": 1.7
+   }
+  ]
+ },
+ "admin1": {
+  "count": 8,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "East",
+   "Northeast",
+   "Pelagonia",
+   "Polog",
+   "Skopje",
+   "Southeast"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 84,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Berovo",
+   "Gradsko",
+   "Karposh",
+   "Kratovo",
+   "Mavrovo and Rostusha",
+   "Petrovets",
+   "Shuto Orizari",
+   "Vinitsa"
+  ]
+ }
+}

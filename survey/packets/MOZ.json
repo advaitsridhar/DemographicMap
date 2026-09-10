@@ -1,0 +1,100 @@
+{
+ "iso3": "MOZ",
+ "name": "Mozambique",
+ "population": 34206144,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Catholic",
+    "pct": 27.3
+   },
+   {
+    "group": "Islam",
+    "pct": 19.1
+   },
+   {
+    "group": "Pentecostal",
+    "pct": 16.7
+   },
+   {
+    "group": "Saio/Zione",
+    "pct": 16.3
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "African",
+    "pct": 99.0
+   },
+   {
+    "group": "Mestizo",
+    "pct": 0.8
+   },
+   {
+    "group": "other",
+    "pct": 0.2
+   }
+  ],
+  "language": [
+   {
+    "group": "Makhuwa",
+    "pct": 26.1
+   },
+   {
+    "group": "Portuguese",
+    "pct": 16.6
+   },
+   {
+    "group": "Tsonga",
+    "pct": 8.6
+   },
+   {
+    "group": "Nyanja",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 10,
+  "filled": 8,
+  "fields_filled": {
+   "religion": 8,
+   "ethnicity": 8,
+   "language": 0
+  },
+  "sample_names": [
+   "Cabo Delgado",
+   "Manica",
+   "Maputo",
+   "Niassa",
+   "Sofala",
+   "Zambézia"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 156,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Changara",
+   "Chigubo",
+   "Chinde",
+   "Cidade De Inhambane",
+   "Cidade De Maputo",
+   "Dondo",
+   "Funhalouro",
+   "Manica"
+  ]
+ }
+}

@@ -1,0 +1,87 @@
+{
+ "iso3": "SYR",
+ "name": "Syria",
+ "population": 24261882,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 87.0
+   },
+   {
+    "group": "Christian",
+    "pct": 10.0
+   },
+   {
+    "group": "Druze",
+    "pct": 3.0
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Arab ~50%, Alawite ~15%, Kurd ~10%, Levantine ~10%, other ~15% (includes Druze, Ismaili, Imami, Nusairi, Assyrian, Turkoman, Armenian)"
+  },
+  "language": [
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Kurdish",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Armenian",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Aramaic",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 14,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Al-Hasakeh",
+   "Aleppo",
+   "Deir-ez-Zor",
+   "Homs",
+   "Quneitra",
+   "Tartous"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 61,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Al Bab",
+   "Al-Hasakeh",
+   "Ar-Rastan",
+   "As-Sweida",
+   "Deir-ez-Zor",
+   "Menbij",
+   "Shahba",
+   "Tartous"
+  ]
+ }
+}

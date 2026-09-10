@@ -1,0 +1,80 @@
+{
+ "iso3": "NCL",
+ "name": "New Caledonia",
+ "population": 307612,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 85.2
+   },
+   {
+    "group": "Muslim",
+    "pct": 2.8
+   },
+   {
+    "group": "other",
+    "pct": 1.6
+   },
+   {
+    "group": "unaffiliated",
+    "pct": 10.4
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Kanak",
+    "pct": 39.1
+   },
+   {
+    "group": "European",
+    "pct": 27.1
+   },
+   {
+    "group": "Wallisian",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Futunian",
+    "pct": 8.2
+   }
+  ],
+  "language": [
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "33 Melanesian-Polynesian dialects",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": []
+ }
+}

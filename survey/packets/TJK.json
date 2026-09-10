@@ -1,0 +1,84 @@
+{
+ "iso3": "TJK",
+ "name": "Tajikistan",
+ "population": 10593876,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 98.0
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Tajik",
+    "pct": 84.3
+   },
+   {
+    "group": "Uzbek",
+    "pct": 13.8
+   },
+   {
+    "group": "other",
+    "pct": 2.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Tajik",
+    "pct": 84.4
+   },
+   {
+    "group": "Uzbek",
+    "pct": 11.9
+   },
+   {
+    "group": "Kyrgyz",
+    "pct": 0.8
+   },
+   {
+    "group": "Russian",
+    "pct": 0.5
+   }
+  ]
+ },
+ "admin1": {
+  "count": 5,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Districts of Republican Subordination",
+   "Dushanbe",
+   "Gorno-Badakhshan Autonomous Region",
+   "Khatlon Region",
+   "Sughd Region"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 58,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Farkhor District",
+   "Istaravshan District",
+   "Murghob District",
+   "Norak District",
+   "Nosiri Khusrav District",
+   "Tavildara District",
+   "Tursunzoda District",
+   "Zafarobod District"
+  ]
+ }
+}

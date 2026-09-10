@@ -1,0 +1,96 @@
+{
+ "iso3": "TUR",
+ "name": "Turkey",
+ "population": 84625585,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": "TUIK's MEDAS catalogue of 92 subjects measured; none is religion/ethnicity/language; census last asked in 1965. Treat as census-does-not-ask unless a new source appears.",
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 99.8
+   },
+   {
+    "group": "other",
+    "pct": 0.2
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Turkish",
+    "pct": 72.5,
+    "range": [
+     70.0,
+     75.0
+    ]
+   },
+   {
+    "group": "Kurdish",
+    "pct": 19.0
+   },
+   {
+    "group": "other minorities",
+    "pct": 8.5,
+    "range": [
+     6.0,
+     11.0
+    ]
+   }
+  ],
+  "language": [
+   {
+    "group": "Turkish",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Kurdish",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "other minority languages",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 81,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bitlis",
+   "Burdur",
+   "Gaziantep",
+   "Karabük",
+   "Samsun",
+   "İstanbul"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 972,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Beykoz",
+   "Birecik",
+   "Delice",
+   "Demirköy",
+   "Develi",
+   "Kurucaşile",
+   "Köse",
+   "Tillo"
+  ]
+ }
+}

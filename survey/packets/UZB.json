@@ -1,0 +1,97 @@
+{
+ "iso3": "UZB",
+ "name": "Uzbekistan",
+ "population": 37015151,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 88.0
+   },
+   {
+    "group": "Eastern Orthodox",
+    "pct": 9.0
+   },
+   {
+    "group": "other",
+    "pct": 3.0
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Uzbek",
+    "pct": 83.8
+   },
+   {
+    "group": "Tajik",
+    "pct": 4.8
+   },
+   {
+    "group": "Kazakh",
+    "pct": 2.5
+   },
+   {
+    "group": "Russian",
+    "pct": 2.3
+   }
+  ],
+  "language": [
+   {
+    "group": "Uzbek",
+    "pct": 74.3
+   },
+   {
+    "group": "Russian",
+    "pct": 14.2
+   },
+   {
+    "group": "Tajik",
+    "pct": 4.4
+   },
+   {
+    "group": "other",
+    "pct": 7.1
+   }
+  ]
+ },
+ "admin1": {
+  "count": 14,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bukhara Region",
+   "Fergana Region",
+   "Namangan Region",
+   "Sirdaryo Region",
+   "Tashkent",
+   "Xorazm Region"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 198,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Akdarya",
+   "Gallyaaral",
+   "Kurgantepa",
+   "Kuvasay city",
+   "Sergeli",
+   "Shakhrixan",
+   "Shumanay",
+   "Yashnobod"
+  ]
+ }
+}

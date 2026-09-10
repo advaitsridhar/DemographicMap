@@ -1,0 +1,105 @@
+{
+ "iso3": "TTO",
+ "name": "Trinidad and Tobago",
+ "population": 1410170,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 32.1
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 21.6
+   },
+   {
+    "group": "Hindu",
+    "pct": 18.2
+   },
+   {
+    "group": "Muslim",
+    "pct": 5.0
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "East Indian",
+    "pct": 35.4
+   },
+   {
+    "group": "African descent",
+    "pct": 34.2
+   },
+   {
+    "group": "mixed - other",
+    "pct": 15.3
+   },
+   {
+    "group": "mixed - African/East Indian",
+    "pct": 7.7
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Trinidadian Creole English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Tobagonian Creole English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Caribbean Hindustani",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 14,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Chaguanas",
+   "Penal-Debe",
+   "Point Fortin",
+   "Princes Town",
+   "Sangre Grande",
+   "Tunapuna-Piarco"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 14,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Couva-Tabaquite-Talparo",
+   "Diego Martin",
+   "Point Fortin",
+   "Rio Claro-Mayaro",
+   "San Fernando",
+   "San Juan-Laventille",
+   "Siparia",
+   "Tobago"
+  ]
+ }
+}

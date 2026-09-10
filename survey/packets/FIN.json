@@ -1,0 +1,94 @@
+{
+ "iso3": "FIN",
+ "name": "Finland",
+ "population": 5652881,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Lutheran",
+    "pct": 66.6
+   },
+   {
+    "group": "Greek Orthodox",
+    "pct": 1.1
+   },
+   {
+    "group": "other",
+    "pct": 1.7
+   },
+   {
+    "group": "none",
+    "pct": 30.6
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Finnish, Swedish, Russian, Estonian, Romani, Sami"
+  },
+  "language": [
+   {
+    "group": "Finnish",
+    "pct": 83.5,
+    "count": 4719802
+   },
+   {
+    "group": "Swedish",
+    "pct": 5.0,
+    "count": 284611
+   },
+   {
+    "group": "Russian",
+    "pct": 1.8,
+    "count": 102618
+   },
+   {
+    "group": "Estonian",
+    "pct": 0.9,
+    "count": 48495
+   }
+  ]
+ },
+ "admin1": {
+  "count": 19,
+  "filled": 19,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 19
+  },
+  "sample_names": [
+   "Central Finland",
+   "Finland Proper",
+   "Kainuu",
+   "Keski-Pohjanmaa",
+   "Satakunta",
+   "Åland Islands"
+  ],
+  "filled_from": [
+   "adapter:alias",
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 70,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Joensuun seutukunta",
+   "Jyväskylä",
+   "Kajaanin seutukunta",
+   "Kaustisen seutukunta",
+   "Lahden seutukunta",
+   "Loimaan seutukunta",
+   "Luoteis-Pirkanmaan seutukunta",
+   "Varkauden seutukunta"
+  ]
+ }
+}

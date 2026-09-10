@@ -1,0 +1,98 @@
+{
+ "iso3": "BHS",
+ "name": "The Bahamas",
+ "population": 415306,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 69.9
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 12.0
+   },
+   {
+    "group": "other Christian",
+    "pct": 13.0
+   },
+   {
+    "group": "other",
+    "pct": 0.6
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "African descent",
+    "pct": 90.6
+   },
+   {
+    "group": "White",
+    "pct": 4.7
+   },
+   {
+    "group": "mixed",
+    "pct": 2.1
+   },
+   {
+    "group": "other",
+    "pct": 1.9
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Creole",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 32,
+  "filled": 14,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 14,
+   "language": 0
+  },
+  "sample_names": [
+   "Biminis",
+   "Black Point",
+   "Mayaguana",
+   "Ragged Island",
+   "South Andros",
+   "South Eleuthera"
+  ],
+  "filled_from": [
+   "adapter:name",
+   "adapter:prefix"
+  ]
+ },
+ "admin2": {
+  "count": 32,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Acklins",
+   "Cat Island",
+   "Central Eleuthera",
+   "Crooked Island and Long Cay",
+   "Moore's Island",
+   "North Abaco",
+   "North Eleuthera",
+   "San Salvador"
+  ]
+ }
+}

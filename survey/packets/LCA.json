@@ -1,0 +1,95 @@
+{
+ "iso3": "LCA",
+ "name": "Saint Lucia",
+ "population": 168462,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 61.5
+   },
+   {
+    "group": "Protestant",
+    "pct": 25.5
+   },
+   {
+    "group": "other Christian",
+    "pct": 3.4
+   },
+   {
+    "group": "Rastafarian",
+    "pct": 1.9
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Black/African descent",
+    "pct": 85.3
+   },
+   {
+    "group": "mixed",
+    "pct": 10.9
+   },
+   {
+    "group": "East Indian",
+    "pct": 2.2
+   },
+   {
+    "group": "other",
+    "pct": 1.6
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Saint Lucian Creole",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 10,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Anse la Raya",
+   "Canaries",
+   "Gros Islet",
+   "Micoud",
+   "Soufrière",
+   "Vieux Fort"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 547,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bocage",
+   "City",
+   "Dugard",
+   "Dupre",
+   "Hospital Road",
+   "Morne Ciseaux",
+   "Sunny Acres",
+   "Theodorine"
+  ]
+ }
+}

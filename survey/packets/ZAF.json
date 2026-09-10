@@ -1,0 +1,107 @@
+{
+ "iso3": "ZAF",
+ "name": "South Africa",
+ "population": 61089926,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 86.0
+   },
+   {
+    "group": "or other traditional African religions",
+    "pct": 5.4
+   },
+   {
+    "group": "Muslim",
+    "pct": 1.9
+   },
+   {
+    "group": "other",
+    "pct": 1.5
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Black African",
+    "pct": 81.4,
+    "count": 50486855
+   },
+   {
+    "group": "Coloured",
+    "pct": 8.2,
+    "count": 5052349
+   },
+   {
+    "group": "White",
+    "pct": 7.3,
+    "count": 4504252
+   },
+   {
+    "group": "Indian/Asian",
+    "pct": 2.7,
+    "count": 1697505
+   }
+  ],
+  "language": [
+   {
+    "group": "isiZulu or Zulu",
+    "pct": 25.3
+   },
+   {
+    "group": "isiXhosa or Xhosa",
+    "pct": 14.8
+   },
+   {
+    "group": "Afrikaans",
+    "pct": 12.2
+   },
+   {
+    "group": "Sepedi or Pedi",
+    "pct": 10.1
+   }
+  ]
+ },
+ "admin1": {
+  "count": 9,
+  "filled": 9,
+  "fields_filled": {
+   "religion": 9,
+   "ethnicity": 9,
+   "language": 9
+  },
+  "sample_names": [
+   "Eastern Cape",
+   "Gauteng",
+   "KwaZulu-Natal",
+   "North West",
+   "Northern Cape",
+   "Western Cape"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 52,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Amathole",
+   "Bojanala",
+   "Central Karoo",
+   "O.R.Tambo",
+   "Sedibeng",
+   "West Coast",
+   "Xhariep",
+   "Z F Mgcawu"
+  ]
+ }
+}

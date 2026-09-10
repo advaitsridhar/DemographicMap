@@ -1,0 +1,107 @@
+{
+ "iso3": "GAB",
+ "name": "Gabon",
+ "population": 2513738,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 46.4
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 29.8
+   },
+   {
+    "group": "other Christian",
+    "pct": 4.0
+   },
+   {
+    "group": "Muslim",
+    "pct": 10.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Fang",
+    "pct": 23.5
+   },
+   {
+    "group": "Shira-Punu'Vii",
+    "pct": 20.6
+   },
+   {
+    "group": "Nzabi-Duma",
+    "pct": 11.2
+   },
+   {
+    "group": "Mbede-Teke",
+    "pct": 5.6
+   }
+  ],
+  "language": [
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Fang",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Myene",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Nzebi",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 9,
+  "filled": 8,
+  "fields_filled": {
+   "religion": 8,
+   "ethnicity": 8,
+   "language": 0
+  },
+  "sample_names": [
+   "Haut-Ogooué",
+   "Moyen-Ogooué",
+   "Ngounié",
+   "Ogooué-Ivindo",
+   "Ogooué-Maritime",
+   "Woleu-Ntem"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 49,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Basse-Banio",
+   "Bayi-Brikolo",
+   "Komo-Mondah",
+   "Lèbombi-Leyou",
+   "Mougoutsi",
+   "Offouè-Onoyè",
+   "Okano",
+   "Sèbè-Brikolo"
+  ]
+ }
+}

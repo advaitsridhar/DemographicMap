@@ -1,0 +1,117 @@
+{
+ "iso3": "NZL",
+ "name": "New Zealand",
+ "population": 5161211,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "No religion",
+    "pct": 51.6,
+    "count": 2576037
+   },
+   {
+    "group": "Catholicism",
+    "pct": 9.0,
+    "count": 449463
+   },
+   {
+    "group": "Christian nfd",
+    "pct": 7.3,
+    "count": 364647
+   },
+   {
+    "group": "Object to answering",
+    "pct": 6.9,
+    "count": 342708
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "European",
+    "pct": 67.8,
+    "count": 3383730
+   },
+   {
+    "group": "Māori",
+    "pct": 17.8,
+    "count": 887493
+   },
+   {
+    "group": "Asian",
+    "pct": 17.3,
+    "count": 861570
+   },
+   {
+    "group": "Pacific Peoples",
+    "pct": 8.9,
+    "count": 442626
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": 95.1,
+    "count": 4750038
+   },
+   {
+    "group": "Other",
+    "pct": 7.8,
+    "count": 391473
+   },
+   {
+    "group": "Māori",
+    "pct": 4.3,
+    "count": 213855
+   },
+   {
+    "group": "Samoan",
+    "pct": 2.2,
+    "count": 110535
+   }
+  ]
+ },
+ "admin1": {
+  "count": 17,
+  "filled": 17,
+  "fields_filled": {
+   "religion": 17,
+   "ethnicity": 17,
+   "language": 17
+  },
+  "sample_names": [
+   "Canterbury Region",
+   "Chatham Islands Territory",
+   "Gisborne Region",
+   "Hawke's Bay Region",
+   "Manawatu-Wanganui Region",
+   "Wellington Region"
+  ],
+  "filled_from": [
+   "adapter:alias",
+   "adapter:name",
+   "adapter:prefix"
+  ]
+ },
+ "admin2": {
+  "count": 88,
+  "filled": 88,
+  "fields_filled": {
+   "religion": 88,
+   "ethnicity": 88,
+   "language": 88
+  },
+  "sample_names": [
+   "Christchurch City",
+   "Devonport-Takapuna Local Board Area",
+   "Kaipātiki Local Board Area",
+   "Tasman District",
+   "Upper Harbour Local Board Area",
+   "Waitomo District",
+   "Wellington City",
+   "Ōrākei Local Board Area"
+  ]
+ }
+}

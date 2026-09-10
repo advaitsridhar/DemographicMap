@@ -1,0 +1,89 @@
+{
+ "iso3": "GIB",
+ "name": "Gibraltar",
+ "population": 29733,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 72.1
+   },
+   {
+    "group": "Church of England",
+    "pct": 7.7
+   },
+   {
+    "group": "other Christian",
+    "pct": 3.8
+   },
+   {
+    "group": "Muslim",
+    "pct": 3.6
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Gibraltarian",
+    "pct": 79.0
+   },
+   {
+    "group": "other British",
+    "pct": 13.2
+   },
+   {
+    "group": "Spanish",
+    "pct": 2.1
+   },
+   {
+    "group": "Moroccan",
+    "pct": 1.6
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Spanish",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Italian",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Portuguese",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": []
+ }
+}

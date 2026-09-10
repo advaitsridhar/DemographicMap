@@ -1,0 +1,104 @@
+{
+ "iso3": "MWI",
+ "name": "Malawi",
+ "population": 21763309,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 33.5
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 17.2
+   },
+   {
+    "group": "other Christian",
+    "pct": 26.6
+   },
+   {
+    "group": "Muslim",
+    "pct": 13.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Chewa",
+    "pct": 34.3
+   },
+   {
+    "group": "Lomwe",
+    "pct": 18.8
+   },
+   {
+    "group": "Yao",
+    "pct": 13.2
+   },
+   {
+    "group": "Ngoni",
+    "pct": 10.4
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Chewa",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Lambya",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Lomwe",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 3,
+  "filled": 3,
+  "fields_filled": {
+   "religion": 3,
+   "ethnicity": 3,
+   "language": 0
+  },
+  "sample_names": [
+   "Central Region",
+   "Northern Region",
+   "Southern Region"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 28,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Chikwawa",
+   "Dedza",
+   "Mwanza",
+   "Neno",
+   "Nkhata Bay",
+   "Phalombe",
+   "Salima",
+   "Thyolo"
+  ]
+ }
+}

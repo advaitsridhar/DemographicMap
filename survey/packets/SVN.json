@@ -1,0 +1,97 @@
+{
+ "iso3": "SVN",
+ "name": "Slovenia",
+ "population": 2097893,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Catholic",
+    "pct": 69.0
+   },
+   {
+    "group": "Orthodox",
+    "pct": 4.0
+   },
+   {
+    "group": "Muslim",
+    "pct": 3.0
+   },
+   {
+    "group": "Christian",
+    "pct": 1.0
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Slovene",
+    "pct": 83.1
+   },
+   {
+    "group": "Serb",
+    "pct": 2.0
+   },
+   {
+    "group": "Croat",
+    "pct": 1.8
+   },
+   {
+    "group": "Bosniak",
+    "pct": 1.1
+   }
+  ],
+  "language": [
+   {
+    "group": "Slovene",
+    "pct": 87.7
+   },
+   {
+    "group": "Croatian",
+    "pct": 2.8
+   },
+   {
+    "group": "Serbo-Croatian",
+    "pct": 1.8
+   },
+   {
+    "group": "Bosnian",
+    "pct": 1.6
+   }
+  ]
+ },
+ "admin1": {
+  "count": 2,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Vzhodna",
+   "Zahodna Slovenija"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 213,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Borovnica",
+   "Cerkno",
+   "Divaca",
+   "Hrpelje - Kozina",
+   "Krcko",
+   "Novo mesto",
+   "Sveti Andrac v Slov. goricah",
+   "Trzin"
+  ]
+ }
+}

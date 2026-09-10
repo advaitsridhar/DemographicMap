@@ -1,0 +1,93 @@
+{
+ "iso3": "BTN",
+ "name": "Bhutan",
+ "population": 892877,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Lamaistic Buddhist",
+    "pct": 75.3
+   },
+   {
+    "group": "Indian- and Nepali-influenced Hinduism",
+    "pct": 22.1
+   },
+   {
+    "group": "other",
+    "pct": 2.6
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Ngalop",
+    "pct": 50.0
+   },
+   {
+    "group": "ethnic Nepali",
+    "pct": 35.0
+   },
+   {
+    "group": "indigenous or migrant tribes",
+    "pct": 15.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Sharchopkha",
+    "pct": 28.0
+   },
+   {
+    "group": "Dzongkha",
+    "pct": 24.0
+   },
+   {
+    "group": "Lhotshamkha",
+    "pct": 22.0
+   },
+   {
+    "group": "other",
+    "pct": 26.0
+   }
+  ]
+ },
+ "admin1": {
+  "count": 20,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Gasa",
+   "Punakha",
+   "Samtse",
+   "Trashigang",
+   "Trashiyangtse",
+   "Zhemgang"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 205,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bhur",
+   "Gosarling",
+   "Korphu",
+   "Metsho",
+   "Senge",
+   "Shingkhar",
+   "Ugentse",
+   "Ura"
+  ]
+ }
+}

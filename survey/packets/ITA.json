@@ -1,0 +1,92 @@
+{
+ "iso3": "ITA",
+ "name": "Italy",
+ "population": 60924851,
+ "status": "nothing",
+ "declared_not_collected": {
+  "ethnicity": "Italy's census records citizenship, not ethnicity."
+ },
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 80.8
+   },
+   {
+    "group": "Muslim",
+    "pct": 4.9
+   },
+   {
+    "group": "unaffiliated",
+    "pct": 13.4
+   },
+   {
+    "group": "other",
+    "pct": 0.9
+   }
+  ],
+  "ethnicity": {
+   "status": "not_collected",
+   "note": "Italy's census records citizenship, not ethnicity."
+  },
+  "language": [
+   {
+    "group": "Italian",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "German",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Slovene",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 5,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Centro",
+   "Isole",
+   "Nord-Est",
+   "Nord-Ovest",
+   "Sud"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 20,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Calabria",
+   "Friuli Venezia Giulia",
+   "Marche",
+   "Molise",
+   "Piemonte",
+   "Puglia",
+   "Sardegna",
+   "Veneto"
+  ]
+ }
+}

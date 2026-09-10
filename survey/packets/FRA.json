@@ -1,0 +1,69 @@
+{
+ "iso3": "FRA",
+ "name": "France",
+ "population": 68512806,
+ "status": "declared",
+ "declared_not_collected": {
+  "religion": "France does not collect religion in its census for the same reason.",
+  "ethnicity": "France does not collect ethnicity; statistiques ethniques are barred by law (Loi Informatique et Libertes 1978, Conseil constitutionnel 2007)."
+ },
+ "already_closed_routes": "religion/ethnicity barred by law (declared).",
+ "national_record": {
+  "religion": {
+   "status": "not_collected",
+   "note": "France does not collect religion in its census for the same reason."
+  },
+  "ethnicity": {
+   "status": "not_collected",
+   "note": "France does not collect ethnicity; statistiques ethniques are barred by law (Loi Informatique et Libertes 1978, Conseil constitutionnel 2007)."
+  },
+  "language": [
+   {
+    "group": "French",
+    "pct": 100.0
+   },
+   {
+    "group": "declining regional dialects and languages",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 13,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Centre-Val de Loire",
+   "Grand Est",
+   "Hauts-de-France",
+   "Occitanie",
+   "Provence-Alpes-Côte d'Azur",
+   "Île-de-France"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 96,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Eure",
+   "Haute-Loire",
+   "Loir-et-Cher",
+   "Loiret",
+   "Meurthe-et-Moselle",
+   "Rhône",
+   "Sarthe",
+   "Tarn-et-Garonne"
+  ]
+ }
+}

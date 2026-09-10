@@ -1,0 +1,81 @@
+{
+ "iso3": "ARM",
+ "name": "Armenia",
+ "population": 2963837,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Armenian Apostolic",
+    "pct": 95.2
+   },
+   {
+    "group": "not stated",
+    "pct": 1.7
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Armenian",
+    "pct": 98.1
+   },
+   {
+    "group": "Yezidi",
+    "pct": 1.1
+   }
+  ],
+  "language": [
+   {
+    "group": "Armenian",
+    "pct": 97.2
+   },
+   {
+    "group": "Russian",
+    "pct": 1.4
+   },
+   {
+    "group": "Ezidian",
+    "pct": 1.0
+   }
+  ]
+ },
+ "admin1": {
+  "count": 11,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Gegharkunik",
+   "Kotayk",
+   "Lori",
+   "Shirak",
+   "Vayots Dzor",
+   "Yerevan"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 39,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Gavar",
+   "Gugark",
+   "Kotayk",
+   "Martuni",
+   "Sevan",
+   "Stepanavan",
+   "Tashir",
+   "Vayk"
+  ]
+ }
+}

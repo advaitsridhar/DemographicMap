@@ -1,0 +1,108 @@
+{
+ "iso3": "RUS",
+ "name": "Russia",
+ "population": 140134279,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Russian Orthodox",
+    "pct": 17.5,
+    "range": [
+     15.0,
+     20.0
+    ]
+   },
+   {
+    "group": "Muslim",
+    "pct": 12.5,
+    "range": [
+     10.0,
+     15.0
+    ]
+   },
+   {
+    "group": "other Christian",
+    "pct": 2.0
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Russian",
+    "pct": 77.7
+   },
+   {
+    "group": "Tatar",
+    "pct": 3.7
+   },
+   {
+    "group": "Ukrainian",
+    "pct": 1.4
+   },
+   {
+    "group": "Bashkir",
+    "pct": 1.1
+   }
+  ],
+  "language": [
+   {
+    "group": "Russian",
+    "pct": 85.7
+   },
+   {
+    "group": "Tatar",
+    "pct": 3.2
+   },
+   {
+    "group": "Chechen",
+    "pct": 1.0
+   },
+   {
+    "group": "other",
+    "pct": 10.1
+   }
+  ]
+ },
+ "admin1": {
+  "count": 83,
+  "filled": 83,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 83,
+   "language": 83
+  },
+  "sample_names": [
+   "Amur Oblast",
+   "Chelyabinsk Oblast",
+   "Komi Republic",
+   "North Ossetia–Alania",
+   "Penza Oblast",
+   "Vladimir Oblast"
+  ],
+  "filled_from": [
+   "adapter:alias",
+   "adapter:iso_3166_2"
+  ]
+ },
+ "admin2": {
+  "count": 2326,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Anapa Urban Okrug",
+   "Belgorodsky District",
+   "Kashira Urban Okrug",
+   "Pavlovsky District",
+   "Shchuchansky District",
+   "Teguldetsky District",
+   "Vengerovsky District",
+   "городской округ Новошахтин"
+  ]
+ }
+}

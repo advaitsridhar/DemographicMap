@@ -1,0 +1,97 @@
+{
+ "iso3": "GTM",
+ "name": "Guatemala",
+ "population": 18255216,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Evangelical",
+    "pct": 45.7
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 42.4
+   },
+   {
+    "group": "none",
+    "pct": 11.0
+   },
+   {
+    "group": "unspecified",
+    "pct": 0.9
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Mestizo",
+    "pct": 56.0
+   },
+   {
+    "group": "Maya",
+    "pct": 41.7
+   },
+   {
+    "group": "Xinca",
+    "pct": 1.8
+   },
+   {
+    "group": "African descent",
+    "pct": 0.2
+   }
+  ],
+  "language": [
+   {
+    "group": "Spanish",
+    "pct": 69.9
+   },
+   {
+    "group": "Maya languages",
+    "pct": 29.7
+   },
+   {
+    "group": "other",
+    "pct": 0.4
+   }
+  ]
+ },
+ "admin1": {
+  "count": 22,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Alta Verapaz",
+   "Chimaltenango",
+   "Escuintla",
+   "Huehuetenango",
+   "Retalhuleu",
+   "Sololá"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 342,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Chiché",
+   "Génova",
+   "San Francisco Zapotitlán",
+   "San José",
+   "San Juan La Laguna",
+   "Santa Cruz La Laguna",
+   "Tactic",
+   "Tamahú"
+  ]
+ }
+}

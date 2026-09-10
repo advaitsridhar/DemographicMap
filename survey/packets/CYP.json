@@ -1,0 +1,97 @@
+{
+ "iso3": "CYP",
+ "name": "Cyprus",
+ "population": 1332293,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Eastern Orthodox Christian",
+    "pct": 89.1
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 2.9
+   },
+   {
+    "group": "Protestant/Anglican",
+    "pct": 2.0
+   },
+   {
+    "group": "Muslim",
+    "pct": 1.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Greek",
+    "pct": 98.8
+   },
+   {
+    "group": "other",
+    "pct": 1.0
+   },
+   {
+    "group": "unspecified",
+    "pct": 0.2
+   }
+  ],
+  "language": [
+   {
+    "group": "Greek",
+    "pct": 80.9
+   },
+   {
+    "group": "Turkish",
+    "pct": 0.2
+   },
+   {
+    "group": "English",
+    "pct": 4.1
+   },
+   {
+    "group": "Romanian",
+    "pct": 2.9
+   }
+  ]
+ },
+ "admin1": {
+  "count": 6,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Famagusta",
+   "Kyrenia",
+   "Larnaca",
+   "Limassol",
+   "Nicosia",
+   "Paphos"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 609,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Agridaki",
+   "Kiomourtzou",
+   "Oikos",
+   "Ovgoros",
+   "Parekklisia",
+   "Platanisteia",
+   "Psevdas",
+   "Souskiou"
+  ]
+ }
+}

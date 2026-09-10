@@ -1,0 +1,97 @@
+{
+ "iso3": "MEX",
+ "name": "Mexico",
+ "population": 130739927,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Catholic",
+    "pct": 77.7,
+    "count": 97864218
+   },
+   {
+    "group": "Protestant and evangelical",
+    "pct": 11.2,
+    "count": 14095307
+   },
+   {
+    "group": "No religion",
+    "pct": 10.6,
+    "count": 13314516
+   },
+   {
+    "group": "Not stated",
+    "pct": 0.4,
+    "count": 491814
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Not Afro-descendant",
+    "pct": 98.0,
+    "count": 123437811
+   },
+   {
+    "group": "Afro-Mexican or Afro-descendant",
+    "pct": 2.0,
+    "count": 2576213
+   }
+  ],
+  "language": [
+   {
+    "group": "Does not speak an indigenous language",
+    "pct": 93.9,
+    "count": 112611939
+   },
+   {
+    "group": "Speaks an indigenous language",
+    "pct": 6.1,
+    "count": 7364645
+   }
+  ]
+ },
+ "admin1": {
+  "count": 32,
+  "filled": 32,
+  "fields_filled": {
+   "religion": 32,
+   "ethnicity": 32,
+   "language": 32
+  },
+  "sample_names": [
+   "Campeche",
+   "Hidalgo",
+   "Jalisco",
+   "Mexico",
+   "Nuevo Leon",
+   "Sonora"
+  ],
+  "filled_from": [
+   "adapter:alias",
+   "adapter:name",
+   "adapter:prefix"
+  ]
+ },
+ "admin2": {
+  "count": 2457,
+  "filled": 2451,
+  "fields_filled": {
+   "religion": 2451,
+   "ethnicity": 2451,
+   "language": 2451
+  },
+  "sample_names": [
+   "Chiquilistlán",
+   "Chumayel",
+   "El Plateado de Joaquín Amaro",
+   "Othón P. Blanco",
+   "San Fernando",
+   "Santa Catalina Quierí",
+   "Villa de Arista",
+   "Yuriria"
+  ]
+ }
+}

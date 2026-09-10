@@ -1,0 +1,92 @@
+{
+ "iso3": "MMR",
+ "name": "Burma",
+ "population": 57931718,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Buddhist",
+    "pct": 87.9
+   },
+   {
+    "group": "Christian",
+    "pct": 6.2
+   },
+   {
+    "group": "Muslim",
+    "pct": 4.3
+   },
+   {
+    "group": "Animist",
+    "pct": 0.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Burman",
+    "pct": 68.0
+   },
+   {
+    "group": "Shan",
+    "pct": 9.0
+   },
+   {
+    "group": "Karen",
+    "pct": 7.0
+   },
+   {
+    "group": "Rakhine",
+    "pct": 4.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Burmese",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 14,
+  "filled": 14,
+  "fields_filled": {
+   "religion": 14,
+   "ethnicity": 14,
+   "language": 0
+  },
+  "sample_names": [
+   "Kachin",
+   "Mon",
+   "Rakhine",
+   "Shan",
+   "Tanintharyi",
+   "Yangon"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 74,
+  "filled": 70,
+  "fields_filled": {
+   "religion": 70,
+   "ethnicity": 70,
+   "language": 0
+  },
+  "sample_names": [
+   "Labutta",
+   "Lashio",
+   "Loikaw",
+   "Loilen",
+   "Mongmit",
+   "Muse",
+   "Thandwe",
+   "Yangon (West)"
+  ]
+ }
+}

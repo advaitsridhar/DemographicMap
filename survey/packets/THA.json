@@ -1,0 +1,98 @@
+{
+ "iso3": "THA",
+ "name": "Thailand",
+ "population": 70025248,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": "only provincial language dataset found was unusable (recorded). Report only a new source.",
+ "national_record": {
+  "religion": [
+   {
+    "group": "Buddhist",
+    "pct": 92.5
+   },
+   {
+    "group": "Muslim",
+    "pct": 5.4
+   },
+   {
+    "group": "Christian",
+    "pct": 1.2
+   },
+   {
+    "group": "other",
+    "pct": 0.9
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Thai",
+    "pct": 97.5
+   },
+   {
+    "group": "Burmese",
+    "pct": 1.3
+   },
+   {
+    "group": "other",
+    "pct": 1.1
+   },
+   {
+    "group": "unspecified",
+    "pct": 0.1,
+    "bound": "<"
+   }
+  ],
+  "language": [
+   {
+    "group": "Thai only",
+    "pct": 90.7
+   },
+   {
+    "group": "Thai and other languages",
+    "pct": 6.4
+   },
+   {
+    "group": "only other languages",
+    "pct": 2.9
+   }
+  ]
+ },
+ "admin1": {
+  "count": 77,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Amnat Charoen Province",
+   "Chaiyaphum Province",
+   "Nakhon Nayok Province",
+   "Pathum Thani Province",
+   "Phuket Province",
+   "Prachuap Khiri Khan Province"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 928,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Chiang Kham",
+   "Chiang Khan",
+   "Doi Saket",
+   "Mueang Nan",
+   "Phayu",
+   "Phon Sai",
+   "Si Samrong",
+   "Somdet"
+  ]
+ }
+}

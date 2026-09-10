@@ -1,0 +1,102 @@
+{
+ "iso3": "CAF",
+ "name": "Central African Republic",
+ "population": 5750570,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 34.6
+   },
+   {
+    "group": "Protestant",
+    "pct": 15.7
+   },
+   {
+    "group": "other Christian",
+    "pct": 22.9
+   },
+   {
+    "group": "Muslim",
+    "pct": 13.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Baya",
+    "pct": 28.8
+   },
+   {
+    "group": "Banda",
+    "pct": 22.9
+   },
+   {
+    "group": "Mandjia",
+    "pct": 9.9
+   },
+   {
+    "group": "Sara",
+    "pct": 7.9
+   }
+  ],
+  "language": [
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Sangho",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "tribal languages",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 17,
+  "filled": 17,
+  "fields_filled": {
+   "religion": 17,
+   "ethnicity": 17,
+   "language": 17
+  },
+  "sample_names": [
+   "Bamingui-Bangoran",
+   "Basse-Kotto",
+   "Haut-Mbomou",
+   "Kémo",
+   "Mambéré-Kadéï",
+   "Ouham-Pendé"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 72,
+  "filled": 72,
+  "fields_filled": {
+   "religion": 72,
+   "ethnicity": 72,
+   "language": 72
+  },
+  "sample_names": [
+   "Batangafo",
+   "Berbérati",
+   "Boganangone",
+   "Carnot",
+   "Mingala",
+   "Nagha Boguila",
+   "Nola",
+   "Ouanda-Djallé"
+  ]
+ }
+}

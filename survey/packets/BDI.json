@@ -1,0 +1,91 @@
+{
+ "iso3": "BDI",
+ "name": "Burundi",
+ "population": 13590102,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 93.9
+   },
+   {
+    "group": "Muslim",
+    "pct": 3.4
+   },
+   {
+    "group": "other",
+    "pct": 1.3
+   },
+   {
+    "group": "none",
+    "pct": 1.3
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Hutu, Tutsi, Twa, South Asian"
+  },
+  "language": [
+   {
+    "group": "Kirundi",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English (official",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "least spoken)",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 18,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bubanza",
+   "Cibitoke",
+   "Gitega",
+   "Karuzi",
+   "Makamba",
+   "Rutana"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 119,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Buyengero",
+   "Cendajuru",
+   "Kayokwe",
+   "Makamba",
+   "Mpinga-Kay",
+   "Mutambu",
+   "Songa",
+   "Vyanda"
+  ]
+ }
+}

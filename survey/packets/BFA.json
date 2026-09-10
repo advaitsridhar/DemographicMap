@@ -1,0 +1,103 @@
+{
+ "iso3": "BFA",
+ "name": "Burkina Faso",
+ "population": 23490300,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 63.8
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 20.1
+   },
+   {
+    "group": "Animiste",
+    "pct": 9.0
+   },
+   {
+    "group": "Protestant",
+    "pct": 6.2
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Mossi",
+    "pct": 53.7
+   },
+   {
+    "group": "Fulani",
+    "pct": 6.8
+   },
+   {
+    "group": "Gurunsi",
+    "pct": 5.9
+   },
+   {
+    "group": "Bissa",
+    "pct": 5.4
+   }
+  ],
+  "language": [
+   {
+    "group": "Mossi",
+    "pct": 52.9
+   },
+   {
+    "group": "Fula",
+    "pct": 7.8
+   },
+   {
+    "group": "Gourmantche",
+    "pct": 6.8
+   },
+   {
+    "group": "Dyula",
+    "pct": 5.7
+   }
+  ]
+ },
+ "admin1": {
+  "count": 13,
+  "filled": 13,
+  "fields_filled": {
+   "religion": 13,
+   "ethnicity": 13,
+   "language": 0
+  },
+  "sample_names": [
+   "Centre",
+   "Centre-Ouest",
+   "Est",
+   "Hauts-Bassins",
+   "Sahel",
+   "Sud-Ouest"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 45,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Boulgou",
+   "Boulkiemde",
+   "Ioba",
+   "Kadiogo",
+   "Kompienga",
+   "Sissili",
+   "Tuy",
+   "Yatenga"
+  ]
+ }
+}

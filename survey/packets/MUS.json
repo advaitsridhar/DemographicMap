@@ -1,0 +1,89 @@
+{
+ "iso3": "MUS",
+ "name": "Mauritius",
+ "population": 1311375,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Hindu",
+    "pct": 48.5
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 26.3
+   },
+   {
+    "group": "Muslim",
+    "pct": 17.3
+   },
+   {
+    "group": "other Christian",
+    "pct": 6.4
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Indo-Mauritian (compose approximately two thirds of the total population), Creole, Sino-Mauritian, Franco-Mauritian"
+  },
+  "language": [
+   {
+    "group": "Creole",
+    "pct": 86.5
+   },
+   {
+    "group": "Bhojpuri",
+    "pct": 5.3
+   },
+   {
+    "group": "French",
+    "pct": 4.1
+   },
+   {
+    "group": "two languages",
+    "pct": 1.4
+   }
+  ]
+ },
+ "admin1": {
+  "count": 12,
+  "filled": 9,
+  "fields_filled": {
+   "religion": 9,
+   "ethnicity": 9,
+   "language": 0
+  },
+  "sample_names": [
+   "Black River",
+   "Grand Port",
+   "Moka",
+   "Plaines Wilhems",
+   "Rivière du Rempart",
+   "Rodrigues"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 12,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Black River",
+   "Flacq",
+   "Grand Port",
+   "Pamplemousses",
+   "Port Louis",
+   "Rodrigues",
+   "Savanne",
+   "St. Brandon"
+  ]
+ }
+}

@@ -1,0 +1,101 @@
+{
+ "iso3": "AUT",
+ "name": "Austria",
+ "population": 9174390,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 55.2
+   },
+   {
+    "group": "Muslim",
+    "pct": 8.3
+   },
+   {
+    "group": "Orthodox",
+    "pct": 4.9
+   },
+   {
+    "group": "Evangelical Christian",
+    "pct": 3.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Austrian",
+    "pct": 80.8
+   },
+   {
+    "group": "German",
+    "pct": 2.6
+   },
+   {
+    "group": "Bosnian and Herzegovinian",
+    "pct": 1.9
+   },
+   {
+    "group": "Turkish",
+    "pct": 1.8
+   }
+  ],
+  "language": [
+   {
+    "group": "German",
+    "pct": 88.6
+   },
+   {
+    "group": "Turkish",
+    "pct": 2.3
+   },
+   {
+    "group": "Serbian",
+    "pct": 2.2
+   },
+   {
+    "group": "Croatian",
+    "pct": 1.6
+   }
+  ]
+ },
+ "admin1": {
+  "count": 9,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Burgenland",
+   "Oberösterreich",
+   "Salzburg",
+   "Steiermark",
+   "Tirol",
+   "Vorarlberg"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 94,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bruck-Mürzzuschlag",
+   "Klagenfurt(Stadt)",
+   "Lienz",
+   "Linz-Land",
+   "Spittal an der Drau",
+   "Tulln",
+   "Wels-Land",
+   "Wien(Stadt)"
+  ]
+ }
+}

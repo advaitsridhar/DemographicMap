@@ -1,0 +1,91 @@
+{
+ "iso3": "DZA",
+ "name": "Algeria",
+ "population": 47735685,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 99.0
+   },
+   {
+    "group": "other",
+    "pct": 1.0,
+    "bound": "<"
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Arab-Amazigh",
+    "pct": 99.0
+   },
+   {
+    "group": "European",
+    "pct": 1.0,
+    "bound": "<"
+   }
+  ],
+  "language": [
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Tamazight",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Shawiya",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 48,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Djelfa",
+   "Ghardaia",
+   "Ouargla",
+   "Tindouf",
+   "Tissemsilt",
+   "Tébessa"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 48,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Annaba",
+   "El Bayadh",
+   "Guelma",
+   "Medea",
+   "Mila",
+   "Tamanghasset",
+   "Tebessa",
+   "Tlemcen"
+  ]
+ }
+}

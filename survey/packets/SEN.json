@@ -1,0 +1,99 @@
+{
+ "iso3": "SEN",
+ "name": "Senegal",
+ "population": 18847519,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 97.2
+   },
+   {
+    "group": "Christian",
+    "pct": 2.7
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Wolof",
+    "pct": 39.7
+   },
+   {
+    "group": "Pulaar",
+    "pct": 27.5
+   },
+   {
+    "group": "Sereer",
+    "pct": 16.0
+   },
+   {
+    "group": "Mandinka",
+    "pct": 4.9
+   }
+  ],
+  "language": [
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Wolof",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Pulaar",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Jola",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 14,
+  "filled": 13,
+  "fields_filled": {
+   "religion": 13,
+   "ethnicity": 13,
+   "language": 0
+  },
+  "sample_names": [
+   "Diourbel",
+   "Fatick",
+   "Kaolack",
+   "Kolda",
+   "Saint Louis",
+   "Ziguinchor"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 45,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bakel",
+   "Dakar",
+   "Gossas",
+   "Kedougou",
+   "Kolda",
+   "Ranerou",
+   "Salemata",
+   "Thies"
+  ]
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "iso3": "MLT",
+ "name": "Malta",
+ "population": 521828,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 90.0,
+    "bound": ">"
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Maltese (descendants of ancient Carthaginians and Phoenicians with strong elements of Italian and other Mediterranean stock)"
+  },
+  "language": [
+   {
+    "group": "Maltese",
+    "pct": 90.1
+   },
+   {
+    "group": "English",
+    "pct": 6.0
+   },
+   {
+    "group": "multilingual",
+    "pct": 3.0
+   },
+   {
+    "group": "other",
+    "pct": 0.9
+   }
+  ]
+ },
+ "admin1": {
+  "count": 68,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Ghasri",
+   "Lija",
+   "Mqabba",
+   "Nadur",
+   "Pietà",
+   "Xgħajra"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 68,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Floriana",
+   "Għaxaq",
+   "Marsaskala",
+   "Msida",
+   "Nadur",
+   "Qrendi",
+   "Sliema",
+   "Tarxien"
+  ]
+ }
+}

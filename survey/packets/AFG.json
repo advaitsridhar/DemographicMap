@@ -1,0 +1,80 @@
+{
+ "iso3": "AFG",
+ "name": "Afghanistan",
+ "population": 49474805,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 99.7
+   },
+   {
+    "group": "other",
+    "pct": 0.3,
+    "bound": "<"
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: current, reliable statistical data on ethnicity in Afghanistan are not available; Afghanistan's 2004 Constitution cited Pashtun, Tajik, Hazara, Uzbek, Turkman, Baluch, Pashaie, Nur"
+  },
+  "language": [
+   {
+    "group": "Afghan Persian or Dari",
+    "pct": 77.0
+   },
+   {
+    "group": "Pashto",
+    "pct": 48.0
+   },
+   {
+    "group": "Uzbeki",
+    "pct": 11.0
+   },
+   {
+    "group": "English",
+    "pct": 6.0
+   }
+  ]
+ },
+ "admin1": {
+  "count": 34,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Baghlan",
+   "Helmand",
+   "Kapisa",
+   "Panjshir",
+   "Takhar",
+   "Wardak"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 398,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bargi Matal",
+   "Dawlatabad",
+   "Daychopan",
+   "Dila",
+   "Khanabad",
+   "Khwaja Ghar",
+   "Saghar",
+   "Sar Hawza"
+  ]
+ }
+}

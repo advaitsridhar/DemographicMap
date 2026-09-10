@@ -1,0 +1,89 @@
+{
+ "iso3": "MDG",
+ "name": "Madagascar",
+ "population": 31345040,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Church of Jesus Christ in Madagascar/Malagasy Lutheran Church/Anglican Church",
+    "pct": 34.0
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 32.3
+   },
+   {
+    "group": "other Christian",
+    "pct": 8.1
+   },
+   {
+    "group": "traditional/Animist",
+    "pct": 1.7
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Malayo-Indonesian (Merina and related Betsileo), Cotiers (mixed African, Malayo-Indonesian, and Arab ancestry - Betsimisaraka, Tsimihety, Antaisaka, Sakalava), French, Indian, Creo"
+  },
+  "language": [
+   {
+    "group": "Malagasy",
+    "pct": 99.9
+   },
+   {
+    "group": "French",
+    "pct": 23.6
+   },
+   {
+    "group": "English",
+    "pct": 8.2
+   },
+   {
+    "group": "other",
+    "pct": 0.6
+   }
+  ]
+ },
+ "admin1": {
+  "count": 22,
+  "filled": 18,
+  "fields_filled": {
+   "religion": 18,
+   "ethnicity": 18,
+   "language": 0
+  },
+  "sample_names": [
+   "Alaotra-Mangoro",
+   "Atsinanana",
+   "Bongolava",
+   "Melaky",
+   "Menabe",
+   "Sofia"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 119,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Ambatofinandrahana",
+   "Ambatolampy",
+   "Antananarivo Atsimondrano",
+   "Antsalova",
+   "Bekily",
+   "Beloha",
+   "Toliary-II",
+   "Vohipeno"
+  ]
+ }
+}

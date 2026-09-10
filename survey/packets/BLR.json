@@ -1,0 +1,101 @@
+{
+ "iso3": "BLR",
+ "name": "Belarus",
+ "population": 9460972,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Orthodox",
+    "pct": 48.3
+   },
+   {
+    "group": "Catholic",
+    "pct": 7.1
+   },
+   {
+    "group": "other",
+    "pct": 3.5
+   },
+   {
+    "group": "non-believers",
+    "pct": 41.1
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Belarusian",
+    "pct": 83.7
+   },
+   {
+    "group": "Russian",
+    "pct": 8.3
+   },
+   {
+    "group": "Polish",
+    "pct": 3.1
+   },
+   {
+    "group": "Ukrainian",
+    "pct": 1.7
+   }
+  ],
+  "language": [
+   {
+    "group": "Russian",
+    "pct": 71.4
+   },
+   {
+    "group": "Belarusian",
+    "pct": 26.0
+   },
+   {
+    "group": "other",
+    "pct": 0.3
+   },
+   {
+    "group": "unspecified",
+    "pct": 2.3
+   }
+  ]
+ },
+ "admin1": {
+  "count": 7,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Brest",
+   "Gomel",
+   "Grodno",
+   "Minsk",
+   "Mogilev",
+   "Vitebsk"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 118,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Brest",
+   "Dobrush",
+   "Dzyarzhynsk",
+   "Kalinkavichy",
+   "Krychaw",
+   "Lyakhavichy",
+   "Talachyn",
+   "Vietka"
+  ]
+ }
+}

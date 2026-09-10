@@ -1,0 +1,90 @@
+{
+ "iso3": "PNG",
+ "name": "Papua New Guinea",
+ "population": 10273996,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 64.3
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 26.0
+   },
+   {
+    "group": "other Christian",
+    "pct": 5.3
+   },
+   {
+    "group": "non-Christian",
+    "pct": 1.4
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Melanesian, Papuan, Negrito, Micronesian, Polynesian"
+  },
+  "language": [
+   {
+    "group": "Tok Pisin",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Hiri Motu",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "some 839 living indigenous languages are spoken",
+    "pct": 12.0
+   }
+  ]
+ },
+ "admin1": {
+  "count": 22,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Central Province",
+   "East New Britain Province",
+   "East Sepik Province",
+   "Madang Province",
+   "New Ireland Province",
+   "Western Province"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 87,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Imbonggu District",
+   "Jimi District",
+   "Kairuku - Hiri District",
+   "Kandep District",
+   "Lagaip/Pogera District",
+   "Markham District",
+   "Rai Coast District",
+   "Wosera Gawi District"
+  ]
+ }
+}

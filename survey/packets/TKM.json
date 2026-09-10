@@ -1,0 +1,102 @@
+{
+ "iso3": "TKM",
+ "name": "Turkmenistan",
+ "population": 5744151,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 93.0
+   },
+   {
+    "group": "Christian",
+    "pct": 6.4
+   },
+   {
+    "group": "Buddhist",
+    "pct": 1.0,
+    "bound": "<"
+   },
+   {
+    "group": "folk religion",
+    "pct": 1.0,
+    "bound": "<"
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Turkmen",
+    "pct": 85.0
+   },
+   {
+    "group": "Uzbek",
+    "pct": 5.0
+   },
+   {
+    "group": "Russian",
+    "pct": 4.0
+   },
+   {
+    "group": "other",
+    "pct": 6.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Turkmen",
+    "pct": 72.0
+   },
+   {
+    "group": "Russian",
+    "pct": 12.0
+   },
+   {
+    "group": "Uzbek",
+    "pct": 9.0
+   },
+   {
+    "group": "other",
+    "pct": 7.0
+   }
+  ]
+ },
+ "admin1": {
+  "count": 5,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Ahai",
+   "Balkan",
+   "Dasoguz",
+   "Lebap",
+   "Mary"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 59,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "10190150B22950665135778",
+   "10190150B71318451734132",
+   "Etrek",
+   "Gubadag",
+   "Kaka",
+   "Koytendag",
+   "Oguzhan",
+   "Wekilbazar"
+  ]
+ }
+}

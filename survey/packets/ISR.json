@@ -1,0 +1,96 @@
+{
+ "iso3": "ISR",
+ "name": "Israel",
+ "population": 9402617,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Jewish",
+    "pct": 73.5
+   },
+   {
+    "group": "Muslim",
+    "pct": 18.1
+   },
+   {
+    "group": "Christian",
+    "pct": 1.9
+   },
+   {
+    "group": "Druze",
+    "pct": 1.6
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Jewish",
+    "pct": 73.5
+   },
+   {
+    "group": "Arab",
+    "pct": 21.1
+   },
+   {
+    "group": "other",
+    "pct": 5.4
+   }
+  ],
+  "language": [
+   {
+    "group": "Hebrew",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 6,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Central District",
+   "Haifa",
+   "Jerusalem District",
+   "Northern District",
+   "Southern District",
+   "Tel Aviv"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 15,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Akko",
+   "Ashqelon",
+   "Be'er Sheva",
+   "HaSharon",
+   "Hadera",
+   "Ramla",
+   "Rehovot",
+   "Yizre'el"
+  ]
+ }
+}

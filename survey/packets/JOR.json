@@ -1,0 +1,95 @@
+{
+ "iso3": "JOR",
+ "name": "Jordan",
+ "population": 11312507,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 97.1
+   },
+   {
+    "group": "Christian",
+    "pct": 2.1
+   },
+   {
+    "group": "Buddhist",
+    "pct": 0.4
+   },
+   {
+    "group": "Hindu",
+    "pct": 0.1
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Jordanian",
+    "pct": 69.3
+   },
+   {
+    "group": "Syrian",
+    "pct": 13.3
+   },
+   {
+    "group": "Palestinian",
+    "pct": 6.7
+   },
+   {
+    "group": "Egyptian",
+    "pct": 6.7
+   }
+  ],
+  "language": [
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 12,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Ajloun",
+   "Amman",
+   "Jerash",
+   "Mafraq",
+   "Tafilah",
+   "Zarqa"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 52,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Al-Balqa",
+   "Al-Qasr",
+   "Amman",
+   "Ar Ramtha",
+   "Ayi",
+   "Az-Zarqa",
+   "Sabha",
+   "Tayybeh"
+  ]
+ }
+}

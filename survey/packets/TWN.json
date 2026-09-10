@@ -1,0 +1,98 @@
+{
+ "iso3": "TWN",
+ "name": "Taiwan",
+ "population": 23600776,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Buddhist",
+    "pct": 35.3
+   },
+   {
+    "group": "Taoist",
+    "pct": 33.2
+   },
+   {
+    "group": "Christian",
+    "pct": 3.9
+   },
+   {
+    "group": "folk religion",
+    "pct": 10.0
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Han Chinese",
+    "pct": 95.0,
+    "bound": ">"
+   },
+   {
+    "group": "indigenous Malayo-Polynesian peoples",
+    "pct": 2.3
+   }
+  ],
+  "language": [
+   {
+    "group": "Mandarin",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Min Nan",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Hakka dialects",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "approximately 16 indigenous languages",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 22,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Chiayi County",
+   "Hsinchu County",
+   "Nantou County",
+   "Pingtung County",
+   "Taitung County",
+   "Taoyuan"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 368,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Alishan",
+   "Dapu",
+   "Guantian",
+   "Linluo",
+   "Majia",
+   "Pingzhen District",
+   "Xinyuan",
+   "Zhubei City"
+  ]
+ }
+}

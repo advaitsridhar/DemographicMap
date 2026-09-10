@@ -1,0 +1,88 @@
+{
+ "iso3": "CUB",
+ "name": "Cuba",
+ "population": 10059519,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 58.9
+   },
+   {
+    "group": "folk religion",
+    "pct": 17.6
+   },
+   {
+    "group": "Buddhist",
+    "pct": 1.0,
+    "bound": "<"
+   },
+   {
+    "group": "Hindu",
+    "pct": 1.0,
+    "bound": "<"
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "White",
+    "pct": 64.1
+   },
+   {
+    "group": "Mulatto or mixed",
+    "pct": 26.6
+   },
+   {
+    "group": "Black",
+    "pct": 9.3
+   }
+  ],
+  "language": [
+   {
+    "group": "Spanish",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 16,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Cienfuegos",
+   "Granma",
+   "Holguín",
+   "Mayabeque",
+   "Pinar del Rio",
+   "Villa Clara"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 168,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Baraguá",
+   "Bejucal",
+   "Fomento",
+   "Jobabo",
+   "La Habana Vieja",
+   "Limonar",
+   "Pilón",
+   "Sancti Spiritus"
+  ]
+ }
+}

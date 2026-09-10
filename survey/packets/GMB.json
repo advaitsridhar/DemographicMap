@@ -1,0 +1,103 @@
+{
+ "iso3": "GMB",
+ "name": "The Gambia",
+ "population": 2523327,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 96.4
+   },
+   {
+    "group": "Christian",
+    "pct": 3.5
+   },
+   {
+    "group": "other or none",
+    "pct": 0.1
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Mandinka/Jahanka",
+    "pct": 33.3
+   },
+   {
+    "group": "Fulani/Tukulur/Lorobo",
+    "pct": 18.2
+   },
+   {
+    "group": "Wolof",
+    "pct": 12.9
+   },
+   {
+    "group": "Jola/Karoninka",
+    "pct": 11.0
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Mandinka",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Wolof",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Fula",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 8,
+  "filled": 7,
+  "fields_filled": {
+   "religion": 7,
+   "ethnicity": 7,
+   "language": 0
+  },
+  "sample_names": [
+   "Banjul",
+   "Brikama",
+   "Janjanbureh",
+   "Kanifing",
+   "Kerewan",
+   "Mansakonko"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 48,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Foni Bintang Karanai",
+   "Janjanbureh",
+   "Jeshwang",
+   "Kiang Central",
+   "Sabach Sanjar",
+   "Sandu",
+   "Serrekunda West",
+   "Upper Saloum"
+  ]
+ }
+}

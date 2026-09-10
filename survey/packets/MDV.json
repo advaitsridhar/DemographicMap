@@ -1,0 +1,77 @@
+{
+ "iso3": "MDV",
+ "name": "Maldives",
+ "population": 388858,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Sunni Muslim (official)"
+  },
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: homogeneous mixture of Sinhalese, Dravidian, Arab, Australasian, and African resulting from historical changes in regional hegemony over marine trade routes"
+  },
+  "language": [
+   {
+    "group": "Dhivehi (official",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "closely related to Sinhala",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "script derived from Arabic)",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 13,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Addu",
+   "Baa",
+   "Dhaalu",
+   "Faafu",
+   "Haa Alif",
+   "Haa Dhaalu"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 20,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Addoo",
+   "Faadhippolhu",
+   "Hadhdhunmathee",
+   "Male'",
+   "North Nilandhoo",
+   "North Thiladhunmathe",
+   "South Maalhosmadulu",
+   "South Nilandhoo"
+  ]
+ }
+}

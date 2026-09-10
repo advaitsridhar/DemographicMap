@@ -1,0 +1,93 @@
+{
+ "iso3": "GNQ",
+ "name": "Equatorial Guinea",
+ "population": 1795834,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 88.0
+   },
+   {
+    "group": "Protestant",
+    "pct": 5.0
+   },
+   {
+    "group": "Muslim",
+    "pct": 2.0
+   },
+   {
+    "group": "other",
+    "pct": 5.0
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Fang",
+    "pct": 78.1
+   },
+   {
+    "group": "Bubi",
+    "pct": 9.4
+   },
+   {
+    "group": "Ndowe",
+    "pct": 2.8
+   },
+   {
+    "group": "Nanguedambo",
+    "pct": 2.7
+   }
+  ],
+  "language": [
+   {
+    "group": "Spanish",
+    "pct": 67.6
+   },
+   {
+    "group": "other",
+    "pct": 32.4
+   }
+  ]
+ },
+ "admin1": {
+  "count": 7,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Annobón",
+   "Bioko Norte",
+   "Bioko Sur",
+   "Centro Sur Province",
+   "Kié-Ntem Province",
+   "Litoral Province"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 25,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "ANNOBON",
+   "EVINAYONG",
+   "LUBA",
+   "MALABO",
+   "MICOMISENG",
+   "MONGOMOYEN",
+   "NKUE",
+   "NSORK"
+  ]
+ }
+}

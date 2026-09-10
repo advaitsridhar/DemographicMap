@@ -1,0 +1,116 @@
+{
+ "iso3": "NPL",
+ "name": "Nepal",
+ "population": 31334402,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Hindu",
+    "pct": 81.2,
+    "count": 23677744
+   },
+   {
+    "group": "Bouddha",
+    "pct": 8.2,
+    "count": 2393549
+   },
+   {
+    "group": "Islam",
+    "pct": 5.1,
+    "count": 1483066
+   },
+   {
+    "group": "Kirat",
+    "pct": 3.2,
+    "count": 923240
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Kshetri",
+    "pct": 16.5,
+    "count": 4796995
+   },
+   {
+    "group": "Brahman - Hill",
+    "pct": 11.3,
+    "count": 3292373
+   },
+   {
+    "group": "Magar",
+    "pct": 6.9,
+    "count": 2013498
+   },
+   {
+    "group": "Tharu",
+    "pct": 6.2,
+    "count": 1807124
+   }
+  ],
+  "language": [
+   {
+    "group": "Nepali",
+    "pct": 44.9,
+    "count": 13084457
+   },
+   {
+    "group": "Maithili",
+    "pct": 11.0,
+    "count": 3221757
+   },
+   {
+    "group": "Bhojpuri",
+    "pct": 6.2,
+    "count": 1818975
+   },
+   {
+    "group": "Tharu",
+    "pct": 5.9,
+    "count": 1714091
+   }
+  ]
+ },
+ "admin1": {
+  "count": 7,
+  "filled": 7,
+  "fields_filled": {
+   "religion": 7,
+   "ethnicity": 7,
+   "language": 7
+  },
+  "sample_names": [
+   "Bagmati",
+   "Gandaki",
+   "Karnali",
+   "Lumbini",
+   "Province 2",
+   "Sudurpaschim"
+  ],
+  "filled_from": [
+   "adapter:alias",
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 75,
+  "filled": 66,
+  "fields_filled": {
+   "religion": 66,
+   "ethnicity": 66,
+   "language": 66
+  },
+  "sample_names": [
+   "Bara",
+   "Dhanusha",
+   "Dolakha",
+   "Kapilbastu",
+   "Kaski",
+   "Manang",
+   "Morang",
+   "Surkhet"
+  ]
+ }
+}

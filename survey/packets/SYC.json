@@ -1,0 +1,89 @@
+{
+ "iso3": "SYC",
+ "name": "Seychelles",
+ "population": 98187,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 76.2
+   },
+   {
+    "group": "Protestant",
+    "pct": 10.5
+   },
+   {
+    "group": "other Christian",
+    "pct": 2.4
+   },
+   {
+    "group": "Hindu",
+    "pct": 2.4
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: predominantly Creole (mainly of East African and Malagasy heritage); also French, Indian, Chinese, and Arab populations"
+  },
+  "language": [
+   {
+    "group": "Seychellois Creole",
+    "pct": 89.1
+   },
+   {
+    "group": "English",
+    "pct": 5.1
+   },
+   {
+    "group": "French",
+    "pct": 0.7
+   },
+   {
+    "group": "other",
+    "pct": 3.8
+   }
+  ]
+ },
+ "admin1": {
+  "count": 26,
+  "filled": 1,
+  "fields_filled": {
+   "religion": 1,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Anse Etoil",
+   "Anse Royal",
+   "Baie Saint",
+   "Bel Ombre",
+   "Cascade",
+   "Glacis"
+  ],
+  "filled_from": [
+   "adapter:prefix"
+  ]
+ },
+ "admin2": {
+  "count": 8,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Central 1 Mahe",
+   "Central 2 Mahe",
+   "East Mahe",
+   "La Digue",
+   "North Mahe",
+   "Other Islands",
+   "Praslin",
+   "West Mahe"
+  ]
+ }
+}

@@ -1,0 +1,105 @@
+{
+ "iso3": "GUY",
+ "name": "Guyana",
+ "population": 794099,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 34.8
+   },
+   {
+    "group": "Hindu",
+    "pct": 24.8
+   },
+   {
+    "group": "other Christian",
+    "pct": 20.8
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 7.1
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "East Indian",
+    "pct": 39.8
+   },
+   {
+    "group": "African descent",
+    "pct": 29.3
+   },
+   {
+    "group": "mixed",
+    "pct": 19.9
+   },
+   {
+    "group": "Indigenous",
+    "pct": 10.5
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Guyanese Creole",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Amerindian languages",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Indian languages (including Caribbean Hindustani",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 10,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Cuyuni-Mazaruni",
+   "Demerara-Mahaica",
+   "East Berbice-Corentyne",
+   "Mahaica-Berbice",
+   "Upper Demerara-Berbice",
+   "Upper Takutu-Upper Essequibo"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 26,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "I-1  Barima",
+   "III-1 Essequibo Islands",
+   "III-2 Bonasika/Boerasirie",
+   "VI-4 Lower Corentyne Rive",
+   "VI-7 Upper Corentyne",
+   "VII-2 Mazaruni/L.B.E.Rive",
+   "VIII-2 Lower Potaro/Ladsm",
+   "X-2 Torani/Bulletwood"
+  ]
+ }
+}

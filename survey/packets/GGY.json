@@ -1,0 +1,70 @@
+{
+ "iso3": "GGY",
+ "name": "Guernsey",
+ "population": 67923,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Protestant (Anglican, Presbyterian, Baptist, Congregational, Methodist), Roman Catholic"
+  },
+  "ethnicity": [
+   {
+    "group": "Guernsey",
+    "pct": 53.5
+   },
+   {
+    "group": "UK and Ireland",
+    "pct": 23.8
+   },
+   {
+    "group": "Portugal",
+    "pct": 2.1
+   },
+   {
+    "group": "Latvia",
+    "pct": 1.4
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Norman-French dialect spoken in country districts",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 0,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": []
+ }
+}

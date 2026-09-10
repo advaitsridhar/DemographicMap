@@ -1,0 +1,91 @@
+{
+ "iso3": "OMN",
+ "name": "Oman",
+ "population": 3969824,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 85.9
+   },
+   {
+    "group": "Christian",
+    "pct": 6.4
+   },
+   {
+    "group": "Hindu",
+    "pct": 5.7
+   },
+   {
+    "group": "other and unaffiliated",
+    "pct": 2.0
+   }
+  ],
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: Arab, Baluchi, South Asian (Indian, Pakistani, Sri Lankan, Bangladeshi), African"
+  },
+  "language": [
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Baluchi",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Swahili",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 7,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Ad Dakhiliyah",
+   "Al Wusta",
+   "Ash Sharqiyah",
+   "Az Zahirah",
+   "Dhofar",
+   "Muscat"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 61,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "WILAYAT AL MUSANAAH",
+   "WILAYAT AL QABIL",
+   "WILAYAT AS SUNAYNAH",
+   "WILAYAT BIDBID",
+   "WILAYAT MAHADAH",
+   "WILAYAT NAKHAL",
+   "WILAYAT SAMAIL",
+   "WILAYAT SOHAR"
+  ]
+ }
+}

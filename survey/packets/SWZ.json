@@ -1,0 +1,108 @@
+{
+ "iso3": "SWZ",
+ "name": "Eswatini",
+ "population": 1137268,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Christian",
+    "pct": 64.9,
+    "count": 777
+   },
+   {
+    "group": "Zionist Christian Church",
+    "pct": 8.9,
+    "count": 107
+   },
+   {
+    "group": "None",
+    "pct": 7.9,
+    "count": 95
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 4.3,
+    "count": 52
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "No ethnic group",
+    "pct": 99.0,
+    "count": 1182
+   },
+   {
+    "group": "Zulu",
+    "pct": 0.7,
+    "count": 8
+   },
+   {
+    "group": "Shangaan",
+    "pct": 0.1,
+    "count": 1
+   },
+   {
+    "group": "Other",
+    "pct": 0.0,
+    "count": 0
+   }
+  ],
+  "language": [
+   {
+    "group": "English (official",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "used for government business)",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "siSwati",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 4,
+  "filled": 4,
+  "fields_filled": {
+   "religion": 4,
+   "ethnicity": 4,
+   "language": 0
+  },
+  "sample_names": [
+   "Hhohho",
+   "Lubombo",
+   "Manzini",
+   "Shiselweni"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 53,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Inkhundla Ekukhanyeni",
+   "Inkhundla Gege",
+   "Inkhundla Lobamba",
+   "Inkhundla Lugongolweni",
+   "Inkhundla Mangcongco",
+   "Inkhundla Maphalaleni",
+   "Inkhundla Ngudzeni",
+   "Inkhundla Nkwene"
+  ]
+ }
+}

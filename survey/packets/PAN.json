@@ -1,0 +1,105 @@
+{
+ "iso3": "PAN",
+ "name": "Panama",
+ "population": 4536008,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Evangelical",
+    "pct": 55.0
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 33.4
+   },
+   {
+    "group": "none",
+    "pct": 10.1
+   },
+   {
+    "group": "unspecified",
+    "pct": 1.5
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Mestizo",
+    "pct": 65.0
+   },
+   {
+    "group": "Indigenous",
+    "pct": 12.3
+   },
+   {
+    "group": "Black or African descent",
+    "pct": 9.2
+   },
+   {
+    "group": "Mulatto",
+    "pct": 6.8
+   }
+  ],
+  "language": [
+   {
+    "group": "Spanish",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Indigenous languages",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Buglere",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Kuna",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 13,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Colón Province",
+   "Comarca Emberá-Wounaan",
+   "Comarca Guna Yala",
+   "Provincia de Coclé",
+   "Provincia de Panamá Oeste",
+   "Provincia de Veraguas"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 75,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Chepo",
+   "Chimán",
+   "Chitré",
+   "David",
+   "Kankintú",
+   "La Mesa",
+   "Penonomé",
+   "Santa María"
+  ]
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "iso3": "CIV",
+ "name": "Côte d'Ivoire",
+ "population": 31855971,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 42.9
+   },
+   {
+    "group": "Catholic",
+    "pct": 17.2
+   },
+   {
+    "group": "Evangelical",
+    "pct": 11.8
+   },
+   {
+    "group": "Methodist",
+    "pct": 1.7
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Akan",
+    "pct": 38.0
+   },
+   {
+    "group": "Voltaique or Gur",
+    "pct": 22.0
+   },
+   {
+    "group": "Northern Mande",
+    "pct": 22.0
+   },
+   {
+    "group": "Kru",
+    "pct": 9.1
+   }
+  ],
+  "language": [
+   {
+    "group": "French",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 14,
+  "filled": 2,
+  "fields_filled": {
+   "religion": 2,
+   "ethnicity": 2,
+   "language": 0
+  },
+  "sample_names": [
+   "Denguele",
+   "District Autonome D'Abidjan",
+   "Lagunes",
+   "Montagnes",
+   "Sassandra-Marahoue",
+   "Woroba"
+  ],
+  "filled_from": [
+   "adapter:contains",
+   "adapter:prefix"
+  ]
+ },
+ "admin2": {
+  "count": 33,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Agneby-Tiassa",
+   "Bere",
+   "Bounkani",
+   "Gbokle",
+   "Me",
+   "N'Zi",
+   "San Pedro",
+   "Sud-Comoe"
+  ]
+ }
+}

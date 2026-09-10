@@ -1,0 +1,104 @@
+{
+ "iso3": "ARE",
+ "name": "United Arab Emirates",
+ "population": 10093593,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 74.5
+   },
+   {
+    "group": "Christian",
+    "pct": 12.9
+   },
+   {
+    "group": "Hindu",
+    "pct": 6.2
+   },
+   {
+    "group": "Buddhist",
+    "pct": 3.2
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Emirati",
+    "pct": 11.6
+   },
+   {
+    "group": "South Asian",
+    "pct": 59.4
+   },
+   {
+    "group": "Egyptian",
+    "pct": 10.2
+   },
+   {
+    "group": "Filipino",
+    "pct": 6.1
+   }
+  ],
+  "language": [
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Hindi",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Malayalam",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 7,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Abu Dhabi",
+   "Dubai",
+   "Fujairah",
+   "Ras al-Khaimah",
+   "Sharjah",
+   "Umm al-Quwain"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 7,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Abu Dhabi",
+   "Ajman",
+   "Dubai",
+   "Fujairah",
+   "Ras al-Khaimah",
+   "Sharjah",
+   "Umm al-Quwain"
+  ]
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "iso3": "MAR",
+ "name": "Morocco",
+ "population": 37387585,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Muslim",
+    "pct": 99.0
+   },
+   {
+    "group": "other",
+    "pct": 1.0
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Arab-Amazigh",
+    "pct": 99.0
+   },
+   {
+    "group": "other",
+    "pct": 1.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Arabic",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Tamazight languages",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Tachelhit",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Tarifit)",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 11,
+  "filled": 6,
+  "fields_filled": {
+   "religion": 6,
+   "ethnicity": 6,
+   "language": 0
+  },
+  "sample_names": [
+   "Béni Mellal-Khénifra",
+   "Drâa-Tafilalet",
+   "Fez-Meknes",
+   "Guelmim-Oued Noun",
+   "Laâyoune-Sakia El Hamra",
+   "Rabat-Salé-Kenitra"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 72,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Chtouka-Ait Baha Province",
+   "Essaouira Province",
+   "Province d'El Hajeb إقليم الحاجب",
+   "Province de Boulemane إقليم بولمان",
+   "Province de Jerada إقليم جرادة",
+   "Province de Kenitra إقليم القنيطرة",
+   "Province de Tinghir إقليم تنغير",
+   "Tetouan Province"
+  ]
+ }
+}

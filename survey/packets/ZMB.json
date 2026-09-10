@@ -1,0 +1,103 @@
+{
+ "iso3": "ZMB",
+ "name": "Zambia",
+ "population": 22021971,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 75.3
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 20.2
+   },
+   {
+    "group": "other",
+    "pct": 2.7
+   },
+   {
+    "group": "none",
+    "pct": 1.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Bemba",
+    "pct": 21.0
+   },
+   {
+    "group": "Tonga",
+    "pct": 13.6
+   },
+   {
+    "group": "Chewa",
+    "pct": 7.4
+   },
+   {
+    "group": "Lozi",
+    "pct": 5.7
+   }
+  ],
+  "language": [
+   {
+    "group": "Bemba",
+    "pct": 33.4
+   },
+   {
+    "group": "Nyanja",
+    "pct": 14.7
+   },
+   {
+    "group": "Tonga",
+    "pct": 11.4
+   },
+   {
+    "group": "Lozi",
+    "pct": 5.5
+   }
+  ]
+ },
+ "admin1": {
+  "count": 10,
+  "filled": 10,
+  "fields_filled": {
+   "religion": 10,
+   "ethnicity": 10,
+   "language": 0
+  },
+  "sample_names": [
+   "Central",
+   "Eastern",
+   "Luapula",
+   "Lusaka",
+   "Muchinga",
+   "Northern"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 116,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Ikelenge",
+   "Itezhi-Tezhi",
+   "Kanchibiya",
+   "Mbala",
+   "Mulobezi",
+   "Mushindano",
+   "Petauke",
+   "Serenje"
+  ]
+ }
+}

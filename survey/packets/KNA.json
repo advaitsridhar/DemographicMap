@@ -1,0 +1,76 @@
+{
+ "iso3": "KNA",
+ "name": "Saint Kitts and Nevis",
+ "population": 55434,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": {
+   "status": "not_available",
+   "note": "No composition published by the Factbook for this entity."
+  },
+  "ethnicity": [
+   {
+    "group": "African descent",
+    "pct": 92.5
+   },
+   {
+    "group": "mixed",
+    "pct": 3.0
+   },
+   {
+    "group": "White",
+    "pct": 2.1
+   },
+   {
+    "group": "East Indian",
+    "pct": 1.5
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 14,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Christ Church Nichola Town",
+   "Saint John Capisterre",
+   "Saint Paul Capisterre",
+   "Saint Paul Charlestown",
+   "Saint Peter Basseterre",
+   "Saint Thomas Lowland"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 14,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Saint Anne Sandy Point",
+   "Saint George Basseterre",
+   "Saint James Windward",
+   "Saint John Capisterre",
+   "Saint John Figtree",
+   "Saint Paul Capisterre",
+   "Saint Peter Basseterre",
+   "Saint Thomas Lowland"
+  ]
+ }
+}

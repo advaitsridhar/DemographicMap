@@ -1,0 +1,95 @@
+{
+ "iso3": "ZWE",
+ "name": "Zimbabwe",
+ "population": 17472752,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Apostolic Sect",
+    "pct": 40.3
+   },
+   {
+    "group": "Pentecostal",
+    "pct": 17.0
+   },
+   {
+    "group": "Protestant",
+    "pct": 13.8
+   },
+   {
+    "group": "other Christian",
+    "pct": 7.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "African",
+    "pct": 99.6
+   },
+   {
+    "group": "other",
+    "pct": 0.4
+   }
+  ],
+  "language": [
+   {
+    "group": "Shona",
+    "pct": 80.9
+   },
+   {
+    "group": "Ndebele",
+    "pct": 11.5
+   },
+   {
+    "group": "English",
+    "pct": 0.3
+   },
+   {
+    "group": "13 minority languages",
+    "pct": 7.0
+   }
+  ]
+ },
+ "admin1": {
+  "count": 10,
+  "filled": 10,
+  "fields_filled": {
+   "religion": 10,
+   "ethnicity": 10,
+   "language": 0
+  },
+  "sample_names": [
+   "Bulawayo",
+   "Harare",
+   "Manicaland",
+   "Mashonaland Central",
+   "Mashonaland East",
+   "Midlands"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 91,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Beitbridge",
+   "Buhera",
+   "Chipinge",
+   "Gwanda",
+   "Hwedza",
+   "Marondera",
+   "Mount Darwin",
+   "Mudzi"
+  ]
+ }
+}

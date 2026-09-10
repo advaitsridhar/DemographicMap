@@ -1,0 +1,103 @@
+{
+ "iso3": "USA",
+ "name": "United States",
+ "population": 338016259,
+ "status": "partial",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Protestant",
+    "pct": 46.5
+   },
+   {
+    "group": "Roman Catholic",
+    "pct": 20.8
+   },
+   {
+    "group": "Jewish",
+    "pct": 1.9
+   },
+   {
+    "group": "Church of Jesus Christ",
+    "pct": 1.6
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "White",
+    "pct": 61.6
+   },
+   {
+    "group": "Black or African American",
+    "pct": 12.4
+   },
+   {
+    "group": "Asian",
+    "pct": 6.0
+   },
+   {
+    "group": "Indigenous and Alaska native",
+    "pct": 1.1
+   }
+  ],
+  "language": [
+   {
+    "group": "English only",
+    "pct": 78.2
+   },
+   {
+    "group": "Spanish",
+    "pct": 13.4
+   },
+   {
+    "group": "Chinese",
+    "pct": 1.1
+   },
+   {
+    "group": "other",
+    "pct": 7.3
+   }
+  ]
+ },
+ "admin1": {
+  "count": 56,
+  "filled": 52,
+  "fields_filled": {
+   "religion": 51,
+   "ethnicity": 52,
+   "language": 52
+  },
+  "sample_names": [
+   "Colorado",
+   "Commonwealth of the Northern Mariana Islands",
+   "New York",
+   "North Carolina",
+   "South Dakota",
+   "West Virginia"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 3231,
+  "filled": 3191,
+  "fields_filled": {
+   "religion": 3109,
+   "ethnicity": 3191,
+   "language": 3191
+  },
+  "sample_names": [
+   "Gallia",
+   "Ionia",
+   "King",
+   "Logan",
+   "Miami",
+   "Presidio",
+   "Rock",
+   "Schenectady"
+  ]
+ }
+}

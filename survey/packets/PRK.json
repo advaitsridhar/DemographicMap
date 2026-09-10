@@ -1,0 +1,62 @@
+{
+ "iso3": "PRK",
+ "name": "North Korea",
+ "population": 26402841,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: traditionally Buddhist and Confucian, some Christian and syncretic Chondogyo (Religion of the Heavenly Way)"
+  },
+  "ethnicity": {
+   "status": "not_available",
+   "note": "Factbook reports free text only: racially homogeneous; there is a small Chinese community and a few ethnic Japanese"
+  },
+  "language": [
+   {
+    "group": "Korean",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 11,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Nampo",
+   "North Hamgyong",
+   "North Hwanghae",
+   "Ryanggang",
+   "South Hamgyong",
+   "South Pyongan"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 179,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Jangyon",
+   "Jongju City",
+   "Kabsan",
+   "Kyongwon",
+   "Pongsan",
+   "Thongchon",
+   "Thosan",
+   "Unryul"
+  ]
+ }
+}

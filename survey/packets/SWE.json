@@ -1,0 +1,74 @@
+{
+ "iso3": "SWE",
+ "name": "Sweden",
+ "population": 10643745,
+ "status": "nothing",
+ "declared_not_collected": {
+  "ethnicity": "Sweden records country of birth and citizenship, not ethnicity."
+ },
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Church of Sweden",
+    "pct": 53.9
+   },
+   {
+    "group": "other",
+    "pct": 8.9
+   },
+   {
+    "group": "none or unspecified",
+    "pct": 37.2
+   }
+  ],
+  "ethnicity": {
+   "status": "not_collected",
+   "note": "Sweden records country of birth and citizenship, not ethnicity."
+  },
+  "language": [
+   {
+    "group": "Swedish",
+    "pct": null,
+    "pct_status": "not_available"
+   }
+  ]
+ },
+ "admin1": {
+  "count": 21,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Dalarnas län",
+   "Jönköpings län",
+   "Norrbottens län",
+   "Skåne län",
+   "Stockholms län",
+   "Västmanlands län"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 290,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Bollebygd",
+   "Dals-Ed",
+   "Gnesta",
+   "Huddinge",
+   "Laxå",
+   "Storfors",
+   "Söderköping",
+   "Tomelilla"
+  ]
+ }
+}

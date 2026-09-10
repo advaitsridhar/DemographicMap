@@ -1,0 +1,104 @@
+{
+ "iso3": "IRL",
+ "name": "Ireland",
+ "population": 5233461,
+ "status": "partial",
+ "declared_not_collected": {
+  "language": "Ireland's census asks which foreign languages a person speaks and whether they can speak Irish. Neither is a breakdown of the population by language: the first excludes English speakers, the second counts an ability."
+ },
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Catholic",
+    "pct": 68.8,
+    "count": 3540412
+   },
+   {
+    "group": "No religion",
+    "pct": 14.7,
+    "count": 755455
+   },
+   {
+    "group": "Other religion",
+    "pct": 9.9,
+    "count": 508107
+   },
+   {
+    "group": "Not stated",
+    "pct": 6.7,
+    "count": 345165
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "White Irish",
+    "pct": 76.5,
+    "count": 3893056
+   },
+   {
+    "group": "Other White",
+    "pct": 9.9,
+    "count": 502081
+   },
+   {
+    "group": "Not stated",
+    "pct": 6.2,
+    "count": 313176
+   },
+   {
+    "group": "Asian or Asian Irish",
+    "pct": 3.3,
+    "count": 166206
+   }
+  ],
+  "language": [
+   {
+    "group": "English",
+    "pct": null,
+    "pct_status": "not_available"
+   },
+   {
+    "group": "Irish",
+    "pct": 37.7
+   }
+  ]
+ },
+ "admin1": {
+  "count": 4,
+  "filled": 4,
+  "fields_filled": {
+   "religion": 4,
+   "ethnicity": 4,
+   "language": 0
+  },
+  "sample_names": [
+   "Connacht",
+   "Leinster",
+   "Munster",
+   "Ulster"
+  ],
+  "filled_from": [
+   "adapter:name"
+  ]
+ },
+ "admin2": {
+  "count": 166,
+  "filled": 166,
+  "fields_filled": {
+   "religion": 166,
+   "ethnicity": 166,
+   "language": 0
+  },
+  "sample_names": [
+   "BALLYFERMOT-DRIMNAGH LEA-5",
+   "CARRICK-ON-SUIR  LEA-5",
+   "CASTLEISLAND LEA-4",
+   "DONEGAL LEA-6",
+   "DÚN LAOGHAIRE LEA-7",
+   "RATOATH LEA-7",
+   "TALLAGHT SOUTH LEA-5",
+   "WATERFORD CITY SOUTH LEA-6"
+  ]
+ }
+}

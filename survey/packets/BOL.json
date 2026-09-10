@@ -1,0 +1,101 @@
+{
+ "iso3": "BOL",
+ "name": "Bolivia",
+ "population": 12436103,
+ "status": "nothing",
+ "declared_not_collected": {},
+ "already_closed_routes": null,
+ "national_record": {
+  "religion": [
+   {
+    "group": "Roman Catholic",
+    "pct": 65.0
+   },
+   {
+    "group": "Protestant",
+    "pct": 19.6
+   },
+   {
+    "group": "Believer",
+    "pct": 0.9
+   },
+   {
+    "group": "other",
+    "pct": 4.8
+   }
+  ],
+  "ethnicity": [
+   {
+    "group": "Mestizo",
+    "pct": 68.0
+   },
+   {
+    "group": "Indigenous",
+    "pct": 20.0
+   },
+   {
+    "group": "White",
+    "pct": 5.0
+   },
+   {
+    "group": "Cholo/Chola",
+    "pct": 2.0
+   }
+  ],
+  "language": [
+   {
+    "group": "Spanish",
+    "pct": 68.1
+   },
+   {
+    "group": "Quechua",
+    "pct": 17.2
+   },
+   {
+    "group": "Aymara",
+    "pct": 10.5
+   },
+   {
+    "group": "Guarani",
+    "pct": 0.6
+   }
+  ]
+ },
+ "admin1": {
+  "count": 9,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Beni",
+   "Chuquisaca",
+   "Cochabamba",
+   "La Paz",
+   "Pando",
+   "Santa Cruz"
+  ],
+  "filled_from": []
+ },
+ "admin2": {
+  "count": 110,
+  "filled": 0,
+  "fields_filled": {
+   "religion": 0,
+   "ethnicity": 0,
+   "language": 0
+  },
+  "sample_names": [
+   "Azurduy",
+   "Caranavi",
+   "Carangas",
+   "Manuel María Caballero",
+   "Manuripi",
+   "Méndez",
+   "Nor Carangas",
+   "Velasco"
+  ]
+ }
+}
