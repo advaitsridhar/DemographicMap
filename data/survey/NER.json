@@ -1,0 +1,719 @@
+{
+ "iso3": "NER",
+ "name": "Niger",
+ "tier_proposed": "B",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Niger",
+    "wikitext_bytes": 10700,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Niger",
+    "wikitext_bytes": 26937,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Religion",
+     "Languages"
+    ],
+    "wikitables": 7,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Year||Population",
+       "! width=\"80\" |Total population",
+       "width=\"80\" |Population aged 0–14 (%)",
+       "width=\"80\" |Population aged 15–64 (%)",
+       "width=\"80\" |Population aged 65+ (%)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "! width=\"80\" |Total population",
+       "width=\"80\" |Population aged 0–14 (%)",
+       "width=\"80\" |Population aged 15–64 (%)",
+       "width=\"80\" |Population aged 65+ (%)",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\" |Mid-year population",
+       "style=\"width:80pt;\" |Live births",
+       "style=\"width:80pt;\" |Deaths",
+       "style=\"width:80pt;\" |Natural change",
+       "style=\"width:80pt;\" |Crude birth rate (per 1000)",
+       "style=\"width:80pt;\" |Crude death rate (per 1000)",
+       "style=\"width:80pt;\" |Natural change (per 1000)",
+       "style=\"width:80pt;\" |Total fertility rate (TFR)",
+       "style=\"width:80pt;\" |Infant mortality (per 1000 live births)",
+       "style=\"width:80pt;\" |Life expectancy (in years)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": true,
+      "composition_columns": 1,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Region",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15-49 currently pregnant",
+       "style=\"width:100pt;\"| Mean number of children ever born to women age 40-49",
+       "rowspan=\"2\" | Ethnic<br />group",
+       "colspan=\"2\" | census 1988<ref name=\"UN Demographic Yearbooks\">{{cite web| url = http://unstats.un.org/unsd/demographic/products/dyb/dyb2.htm#2001| title = UN Demographic Yearbooks| access-date = 2012-09-05| archive-date = 2016-12-27| archive-url = https://web.archive.org/web/20161227194033/http://unstats.un.org/unsd/demographic/products/dyb/dyb2.htm#2001| url-status = live}}</ref>",
+       "colspan=\"2\" | census 2001<ref name=\"UN Demographic Yearbooks\"/>",
+       "#",
+       "%",
+       "#"
+      ],
+      "place_column": true,
+      "composition_columns": 1,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic<br />group",
+       "colspan=\"2\" | census 1988<ref name=\"UN Demographic Yearbooks\">{{cite web| url = http://unstats.un.org/unsd/demographic/products/dyb/dyb2.htm#2001| title = UN Demographic Yearbooks| access-date = 2012-09-05| archive-date = 2016-12-27| archive-url = https://web.archive.org/web/20161227194033/http://unstats.un.org/unsd/demographic/products/dyb/dyb2.htm#2001| url-status = live}}</ref>",
+       "colspan=\"2\" | census 2001<ref name=\"UN Demographic Yearbooks\"/>",
+       "#",
+       "%",
+       "#",
+       "%",
+       "align=\"\"left\"\" | Total",
+       "colspan=\"2\" | 7,119,929",
+       "colspan=\"2\" | 10,964,126"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 21
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Aguié",
+    "found": true,
+    "title": "Aguie",
+    "url": "https://en.wikipedia.org/wiki/Aguie",
+    "wikitext_bytes": 9007,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [
+     "Population"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Arlit",
+    "found": true,
+    "title": "Arlit",
+    "url": "https://en.wikipedia.org/wiki/Arlit",
+    "wikitext_bytes": 13530,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Diffa",
+    "found": true,
+    "title": "Diffa",
+    "url": "https://en.wikipedia.org/wiki/Diffa",
+    "wikitext_bytes": 9888,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Gothèye",
+    "found": true,
+    "title": "Gothèye",
+    "url": "https://en.wikipedia.org/wiki/Goth%C3%A8ye",
+    "wikitext_bytes": 3527,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kantché",
+    "found": true,
+    "title": "Matameye",
+    "url": "https://en.wikipedia.org/wiki/Matameye",
+    "wikitext_bytes": 5439,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "ethnicity",
+   "title": "Niger - Tahoua IDP enrolment - Apr-May 2020",
+   "name": "unhcr-ner-2020-idpreg-tahoua",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-ner-2020-idpreg-tahoua",
+   "resources": [
+    {
+     "name": "Niger - Tahoua IDP enrolment - Apr-May 2020",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/452/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/452/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "ethnicity",
+   "title": "Niger - Tillaberi IDP enrolment - May-Oct 2020",
+   "name": "unhcr-ner-2020-idpreg-tillaberi",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-ner-2020-idpreg-tillaberi",
+   "resources": [
+    {
+     "name": "Niger - Tillaberi IDP enrolment - May-Oct 2020",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/455/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/455/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "ethnicity",
+   "title": "Niger - Maradi IDP enrolment - Apr-Sep 2020",
+   "name": "unhcr-ner-2020-idpreg-maradi",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-ner-2020-idpreg-maradi",
+   "resources": [
+    {
+     "name": "Niger - Maradi IDP enrolment - Apr-Sep 2020",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/454/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/454/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Niger: Languages",
+   "name": "niger-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/niger-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_NER_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/024c694e-088f-4a3c-8e1f-10fe135c2c87/resource/bd4d42e6-97bd-4106-a791-0f8c1f825702/download/clearglobal_language_use_ner_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_NER_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/024c694e-088f-4a3c-8e1f-10fe135c2c87/resource/4d7cb028-5496-4a4c-bd6c-a2a304e7ffc8/download/clearglobal_language_use_ner_admin1.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Niger: Settlements",
+   "name": "niger-settlements",
+   "org": "OCHA Niger",
+   "url": "https://data.humdata.org/dataset/niger-settlements",
+   "resources": [
+    {
+     "name": "NER_settlements.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/5d17ed45-74a6-4417-9801-6935dcdc9c86/resource/657ed876-2ad1-4103-99b1-f882fa64fb7a/download/ner_localites-21-10.zip"
+    },
+    {
+     "name": "Niger_pplp_ocha_itos.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/5d17ed45-74a6-4417-9801-6935dcdc9c86/resource/3970d02a-00b5-4e15-a8fb-6227aef45cc7/download/niger_pplp_ocha_itos.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Niger - Subnational Administrative Boundaries",
+   "name": "cod-ab-ner",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-ner",
+   "resources": [
+    {
+     "name": "ner_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/c0e0998c-b45a-4aea-ac06-c1de1d94e596/resource/daf753dc-3e53-4864-be4b-c78a55235ce4/download/ner_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "ner_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/c0e0998c-b45a-4aea-ac06-c1de1d94e596/resource/b2a4cf8d-da46-4f52-bed0-865160470dac/download/ner_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "ner_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/c0e0998c-b45a-4aea-ac06-c1de1d94e596/resource/52a76bdf-7c22-43d4-9e2d-bad40351007c/download/ner_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "ner_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/c0e0998c-b45a-4aea-ac06-c1de1d94e596/resource/b5143bc8-4a17-4cc1-8b3d-d122a17b841b/download/ner_admin_boundaries.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Niger - Roads",
+   "name": "niger-roads",
+   "org": "OCHA Niger",
+   "url": "https://data.humdata.org/dataset/niger-roads",
+   "resources": [
+    {
+     "name": "roads.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/a388fd5d-0dbd-4d05-b047-7f5db50838dc/resource/06eb9b57-b170-4fd7-82f4-0c34ae52f4a7/download/roads.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Niger - Population Statistics",
+   "name": "niger-other",
+   "org": "OCHA Niger",
+   "url": "https://data.humdata.org/dataset/niger-other",
+   "resources": [
+    {
+     "name": "annuaire_statistique_du_niger.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/c8bd4cf6-48e7-4e11-bf60-57877d5fd095/resource/ab22d184-52f3-4e2f-bbfd-c21e0a7c3d9f/download/annuaire_statistique_du_niger.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Niger - Elevation Model",
+   "name": "niger-elevation-model",
+   "org": "OCHA Niger",
+   "url": "https://data.humdata.org/dataset/niger-elevation-model",
+   "resources": [
+    {
+     "name": "ner_dem_ne.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/0d10de07-48b5-429f-bfe8-f44d4d9fb6ff/resource/2ffd81d8-1b83-47ab-8cc1-3b2a128178cf/download/ner_dem_ne.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Niger: Road Surface Data",
+   "name": "niger-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/niger-road-surface-data",
+   "resources": [
+    {
+     "name": "Niger GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_ner_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Niger GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_ner_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Niger: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-niger",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-niger",
+   "resources": [
+    {
+     "name": "kontur_boundaries_NE_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_NE_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_NE_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_NE_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_NE_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_NE_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Census disaggregated gridded population estimates for Niger (2021), version 1.0.",
+   "name": "census-disaggregated-gridded-population-estimates-for-niger-2021-version-1-0",
+   "org": "GRID3",
+   "url": "https://data.humdata.org/dataset/census-disaggregated-gridded-population-estimates-for-niger-2021-version-1-0",
+   "resources": [
+    {
+     "name": "NER_population_v1_0_gridded.tif",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/511"
+    },
+    {
+     "name": "NER_population_v1_0_README.pdf",
+     "format": "PDF",
+     "url": "https://wopr.worldpop.org/download/513"
+    },
+    {
+     "name": "NER_population_v1_0_agesex.zip",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/512"
+    },
+    {
+     "name": "NER_population_v1_0_mastergrid.tif",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/510"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Niger - Accessibility Indicators",
+   "name": "niger-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/niger-accessibility-indicators",
+   "resources": [
+    {
+     "name": "NER_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ner/NER_education_access.gpkg"
+    },
+    {
+     "name": "NER_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ner/NER_education_access_long.csv"
+    },
+    {
+     "name": "NER_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ner/NER_education_access_wide.csv"
+    },
+    {
+     "name": "NER_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ner/NER_hospitals_access.gpkg"
+    },
+    {
+     "name": "NER_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ner/NER_hospitals_access_long.csv"
+    },
+    {
+     "name": "NER_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ner/NER_hospitals_access_wide.csv"
+    },
+    {
+     "name": "NER_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ner/NER_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "NER_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ner/NER_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Niger - Population Counts",
+   "name": "worldpop-population-counts-for-niger",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-niger",
+   "resources": [
+    {
+     "name": "ner_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/NER/ner_ppp_2020.tif"
+    },
+    {
+     "name": "ner_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/NER/ner_ppp_2019.tif"
+    },
+    {
+     "name": "ner_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/NER/ner_ppp_2018.tif"
+    },
+    {
+     "name": "ner_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/NER/ner_ppp_2017.tif"
+    },
+    {
+     "name": "ner_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/NER/ner_ppp_2016.tif"
+    },
+    {
+     "name": "ner_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/NER/ner_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "ner_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/NER/ner_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "ner_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/NER/ner_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Niger: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "highresolutionpopulationdensitymaps-ner",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/highresolutionpopulationdensitymaps-ner",
+   "resources": [
+    {
+     "name": "ner_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/ab6939a8-2546-48db-836e-644150628a2d/resource/d1d523fb-acfe-477a-bae0-6ab4d66b5734/download/ner_general_2020_geotiff.zip"
+    },
+    {
+     "name": "ner_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/ab6939a8-2546-48db-836e-644150628a2d/resource/909222ae-b255-4ce6-99d5-f79c34136ebc/download/ner_general_2020_csv.zip"
+    },
+    {
+     "name": "ner_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/ab6939a8-2546-48db-836e-644150628a2d/resource/16904d18-99ac-4282-8656-37d7bca3df71/download/ner_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "ner_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/ab6939a8-2546-48db-836e-644150628a2d/resource/1a493e35-aab4-4f41-b53f-9602bb2ba69d/download/ner_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "ner_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/ab6939a8-2546-48db-836e-644150628a2d/resource/445ece79-35ea-4f2a-a749-b2f26026c6cf/download/ner_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "ner_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/ab6939a8-2546-48db-836e-644150628a2d/resource/cb0a5e8d-1b28-4236-9d67-edeb3afb816a/download/ner_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "ner_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/ab6939a8-2546-48db-836e-644150628a2d/resource/de420d67-2d6e-438c-91e0-a60ba3fd2638/download/ner_men_2020_csv.zip"
+    },
+    {
+     "name": "ner_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/ab6939a8-2546-48db-836e-644150628a2d/resource/4b56314b-7244-43a7-ac7e-9bd809177f57/download/ner_men_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Niger : Base de Données des Etablissements Scolaires",
+   "name": "niger-base-de-donnees-des-etablissements-scolaires",
+   "org": "OCHA Niger",
+   "url": "https://data.humdata.org/dataset/niger-base-de-donnees-des-etablissements-scolaires",
+   "resources": [
+    {
+     "name": "NER_ Liste_Etablissements du Niger.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e8dbdabf-ee26-498b-b408-65d0956a935b/resource/7680329f-7abf-462d-b349-61ffd81f1dac/download/ner_-liste_etablissements-du-niger.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Niger - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-niger",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-niger",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Niger",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/328949c8-7e51-44ef-a5a0-dcf8fb337e2f/resource/9c89530d-20ad-48eb-986a-8b536e2554ad/download/social-protection-and-labor_ner.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Niger: Level 1 Exposure Data",
+   "name": "niger-level-1-exposure-data",
+   "org": "Global Earthquake Model Foundation",
+   "url": "https://data.humdata.org/dataset/niger-level-1-exposure-data",
+   "resources": [
+    {
+     "name": "ner_oed_exposure_20200811_updated_20230915.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a6c2a041-bd8d-4812-80da-f4e8357d1a40/resource/83553271-eb6c-4eb7-9dae-afebad89282e/download/ner_oed_exposure_20200811_updated_20230915.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Niger - Targeting Food and Livelihoods Assistance - 2016",
+   "name": "unhcr-ner-2016-ta",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-ner-2016-ta",
+   "resources": [
+    {
+     "name": "Niger - Targeting Food and Livelihoods Assistance - 2016",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/1110/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/1110/pdf-documentation"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.stat-niger.org/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.stat-niger.org/?rapport_enquete=enquetes-demographiques-et-de-sante-eds",
+    "status": 200,
+    "kind": "html",
+    "title": "Enquêtes Démographiques et de Santé (EDS) &#8211; Institut National de la Statistique du Niger",
+    "files": [
+     "http://stat-niger.org/wp-content/uploads/2020/06/EDS8MICS2006.pdf",
+     "http://stat-niger.org/wp-content/uploads/2020/06/EDSN-MICS1992.pdf",
+     "http://stat-niger.org/wp-content/uploads/2020/06/EDSN_MICS%20IV2012DepliantVIH.pdf",
+     "http://stat-niger.org/wp-content/uploads/2020/06/EDSN_MICSIV2012Rapportdesynthese.pdf",
+     "http://stat-niger.org/wp-content/uploads/2020/06/EDSN_MICSIV_Affichemurale.pdf",
+     "http://stat-niger.org/wp-content/uploads/2020/06/EDSN_MICS_1998.pdf",
+     "http://stat-niger.org/wp-content/uploads/rapport_enquete/Rapport_ENAFEME_2021.pdf",
+     "https://stat-niger.org/wp-content/uploads/rapport_enquete/4/EDSN_MICS_IV_2012_Dépliant_VIH.pdf"
+    ],
+    "mentions": [
+     "language"
+    ]
+   }
+  ],
+  "title": "Institut National de la Statistique du Niger",
+  "matching_links": 1
+ },
+ "verdict": {
+  "hdx_datasets": 19,
+  "hdx_machine_readable": 7,
+  "nso_files_found": 8,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

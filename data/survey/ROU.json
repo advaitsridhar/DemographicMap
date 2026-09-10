@@ -1,0 +1,827 @@
+{
+ "iso3": "ROU",
+ "name": "Romania",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity",
+    "language",
+    "religion"
+   ],
+   "title": "RPL 2021 - Rezultate definitive: 'Populația rezidentă după etnie', '... după limba maternă', '... după religie' - pe județe, municipii, orașe și comune",
+   "kind": "census",
+   "format": "xlsx",
+   "geography": "județ (41 + București = 42) and UAT (municipii, orașe, comune, about 3,181, plus the six sectors of București)",
+   "geography_count": 42,
+   "matches_boundary_level": "admin1 exactly (42); admin2 near (about 3,181-3,187 UATs vs 3,235 shapes - the boundary file likely carries some since-merged or sector-level units)",
+   "url": "https://www.recensamantromania.ro/",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error timed out>"
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Romania",
+    "wikitext_bytes": 55699,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "|| Denominations and religious organizations || 1992 census<ref name=\"evolution\">{{cite journal |url=http://www.revistadestatistica.ro/supliment/wp-content/uploads/2014/09/RRRS06_2014_A2_en.pdf |title=The evolution of the religious structure in Romania since 1859 to the present day |author=Sorin Negruți |journal=Revista Română de Statistică |issue=6 |date=2014 |page=46}}</ref> || 2002 census<ref name=\"evolution\" /> || 2011 census<ref name=\"evolution\" /><ref>{{in lang|ro}} [https://web.archive.org/web/20211026093815/https://www.recensamantromania.ro/wp-content/uploads/2012/08/Comunicat-presa_Rezultate-preliminare.pdf Comunicat de presă privind rezultatele  preliminare ale Recensământului Populaţiei şi Locuinţelor – 2011], at the 2011 census official site; accessed October 28, 2012.</ref><ref>{{cite web |url=https://insse.ro/cms/files/publicatii/pliante%20statistice/08-Recensamintele%20despre%20religie_n.pdf |title=Ce ne spune recensământul din 2011 despre religie? |language=Romanian}}</ref> || 2022 census<ref name=\"Rezultatele parțiale\"/> || Trend",
+       "rowspan=\"7\" | Traditional Christian denominations",
+       "rowspan=\"9\" | Protestant Christian denominations"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "|| Denominations and religious organizations || 1859–1860 census<ref name=\"evolution\" /> || 1899 census<ref name=\"evolution\" /> || 1912 census<ref name=\"evolution\" /> || 1930 census<ref name=\"evolution\" />",
+       "rowspan=\"5\" | Traditional Christian denominations",
+       "rowspan=\"2\" | Protestant Christian denominations",
+       "rowspan=\"5\" | Christian denominations after unification",
+       "rowspan=\"5\" | Other"
+      ],
+      "place_column": false,
+      "composition_columns": 3,
+      "rows_hint": 18
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Romania",
+    "wikitext_bytes": 89846,
+    "infobox_params": [
+     "language"
+    ],
+    "sections": [
+     "Ethnic groups",
+     "Population",
+     "Religion"
+    ],
+    "wikitables": 24,
+    "charts": [
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 0,
+    "verdict": "infobox-only",
+    "tables": [
+     {
+      "header": [
+       "Year",
+       "Population",
+       "Ethnicity",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "Ethnicity",
+       "Number",
+       "%",
+       "Ethnicity",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 33
+     },
+     {
+      "header": [
+       "Ethnicity",
+       "Number",
+       "%",
+       "Ethnicity",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [
+       "Ethnicity",
+       "Number",
+       "%",
+       "rowspan=\"2\" | Ethnic<br />group",
+       "colspan=\"2\" | census 1948<sup>1</sup>",
+       "colspan=\"2\" | census 1956<sup>2</sup>",
+       "colspan=\"2\" | census 1966<sup>3</sup>",
+       "colspan=\"2\" | census 1977<sup>4</sup>",
+       "colspan=\"2\" | census 1992<sup>5</sup>",
+       "colspan=\"2\" | census 2002<sup>6</sup>"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic<br />group",
+       "colspan=\"2\" | census 1948<sup>1</sup>",
+       "colspan=\"2\" | census 1956<sup>2</sup>",
+       "colspan=\"2\" | census 1966<sup>3</sup>",
+       "colspan=\"2\" | census 1977<sup>4</sup>",
+       "colspan=\"2\" | census 1992<sup>5</sup>",
+       "colspan=\"2\" | census 2002<sup>6</sup>",
+       "colspan=\"3\" | census 2011<sup>7</sup>",
+       "colspan=\"3\" | census 2021<sup>8</sup>",
+       "Number"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Years",
+       "1850",
+       "1851",
+       "1852",
+       "1853",
+       "1854",
+       "1855",
+       "1856",
+       "1857",
+       "1858"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "Years",
+       "1861",
+       "1862",
+       "1863",
+       "1864",
+       "1865",
+       "1866",
+       "1867",
+       "1868",
+       "1869"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "Years",
+       "1871",
+       "1872",
+       "1873",
+       "1874",
+       "1875",
+       "1876",
+       "1877",
+       "1878",
+       "1879"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "Years",
+       "1881",
+       "1882",
+       "1883",
+       "1884",
+       "1885",
+       "1886",
+       "1887",
+       "1888",
+       "1889"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 32
+     },
+     {
+      "header": [
+       "Years",
+       "1891",
+       "1892",
+       "1893",
+       "1894",
+       "1895",
+       "1896",
+       "1897",
+       "1898",
+       "1899<ref name=\"ourworldindata.org\"/>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 36
+     },
+     {
+      "header": [
+       "Year",
+       "style=\"width:80pt;\"|Average population",
+       "style=\"width:80pt;\"|Live births",
+       "style=\"width:80pt;\"|Deaths",
+       "style=\"width:80pt;\"|Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)",
+       "style=\"width:80pt;\"|Total fertility rates<ref name=\"ourworldindata.org\"/>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 40
+     },
+     {
+      "header": [
+       "Years",
+       "1916",
+       "1917",
+       "1918<ref name=\"ourworldindata.org\"/>",
+       "! style=\"width:80pt;\"|Average population",
+       "style=\"width:80pt;\"|Live births",
+       "style=\"width:80pt;\"|Deaths",
+       "style=\"width:80pt;\"|Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\"|Average population",
+       "style=\"width:80pt;\"|Live births",
+       "style=\"width:80pt;\"|Deaths",
+       "style=\"width:80pt;\"|Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)",
+       "style=\"width:80pt;\"|Total fertility rates<ref name=\"ourworldindata.org\"/>",
+       "Years",
+       "1940"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "Years",
+       "1940",
+       "1941",
+       "1942",
+       "1943",
+       "1944",
+       "1945<ref name=\"ourworldindata.org\"/>",
+       "! style=\"width:80pt;\"|Average population (July 1)",
+       "style=\"width:80pt;\"|Live births",
+       "style=\"width:80pt;\"|Deaths"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\"|Average population (July 1)",
+       "style=\"width:80pt;\"|Live births",
+       "style=\"width:80pt;\"|Deaths",
+       "style=\"width:80pt;\"|Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)",
+       "style=\"width:80pt;\"|Crude migration change (per 1000)",
+       "style=\"width:80pt;\"|Total fertility rates{{refn|group=fn|In fertility rates, 2.1 and above is a stable population and has been marked blue, 2 and below leads to an aging population and the result is that the population decreases. }}"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January-July 2025",
+       "January-July 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{cite web|title=Vital statistics |url=https://insse.ro/cms/ro/tags/comunicat-miscarea-naturala-populatiei|website=National Institute of Statistics}}</ref>",
+       "Regions",
+       "TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 57
+     },
+     {
+      "header": [
+       "Regions",
+       "TFR",
+       "Regions",
+       "TFR",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 60
+     },
+     {
+      "header": [
+       "Regions",
+       "TFR",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 66
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 42
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in years",
+       "Județ",
+       "Total CBR (‰) || Urban (‰) || Rural (‰)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 36
+     },
+     {
+      "header": [
+       "Județ",
+       "Total CBR (‰) || Urban (‰) || Rural (‰)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 35
+     },
+     {
+      "header": [
+       "style=\"width:40pt;\" |Age group",
+       "style=\"width:60pt;\" |Total population",
+       "style=\"width:60pt;\" |Romanians",
+       "style=\"width:60pt;\" |Hungarians",
+       "style=\"width:60pt;\" |Roma",
+       "style=\"width:60pt;\" |Ukrainians",
+       "style=\"width:60pt;\" |Germans",
+       "style=\"width:60pt;\" |Turks",
+       "style=\"width:60pt;\" |Others/Undeclared"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "",
+       "2016",
+       "2018",
+       "2020",
+       "Population total",
+       "Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 37
+     },
+     {
+      "header": [
+       "Year",
+       "Immigration (Permanent)",
+       "Emigration (Permanent)",
+       "Net migration (permanent)",
+       "Temporary immigration",
+       "Temporary emigration",
+       "Net temporary migration",
+       "Total net migration"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 34
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "BUNESTI-AVERESTI",
+    "found": true,
+    "title": "Bunești-Averești",
+    "url": "https://en.wikipedia.org/wiki/Bune%C8%99ti-Avere%C8%99ti",
+    "wikitext_bytes": 1369,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "GEACA",
+    "found": true,
+    "title": "Geaca",
+    "url": "https://en.wikipedia.org/wiki/Geaca",
+    "wikitext_bytes": 2865,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "LEORDA",
+    "found": true,
+    "title": "Leorda",
+    "url": "https://en.wikipedia.org/wiki/Leorda",
+    "wikitext_bytes": 1258,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "MANDRA",
+    "found": true,
+    "title": "Argeș (river)",
+    "url": "https://en.wikipedia.org/wiki/Arge%C8%99_%28river%29",
+    "wikitext_bytes": 7788,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "POIANA",
+    "found": true,
+    "title": "Stadionul Poiana",
+    "url": "https://en.wikipedia.org/wiki/Stadionul_Poiana",
+    "wikitext_bytes": 1379,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Romania: Road Surface Data",
+   "name": "romania-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/romania-road-surface-data",
+   "resources": [
+    {
+     "name": "Romania GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_rou_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Romania GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_rou_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Romania: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-romania",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-romania",
+   "resources": [
+    {
+     "name": "kontur_boundaries_RO_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_RO_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_RO_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_RO_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_RO_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_RO_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Romania - Subnational Population Statistics",
+   "name": "cod-ps-rou",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-rou",
+   "resources": [
+    {
+     "name": "ROU_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/819ed0e9-f983-4d72-a60c-6825fc50c8e1/resource/a181bfde-2de9-4f56-a6b5-2d9d19619aeb/download/rou_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "rou_admpop_2022_v01.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/819ed0e9-f983-4d72-a60c-6825fc50c8e1/resource/630264b5-76c4-4704-b58e-6f88fcb67a64/download/rou_admpop_2022_v01.xlsx"
+    },
+    {
+     "name": "rou_admpop_adm0_2022_v01.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/819ed0e9-f983-4d72-a60c-6825fc50c8e1/resource/ebaf9769-fcac-4c61-a36b-aaaa4f22697c/download/rou_admpop_adm0_2022_v01.csv"
+    },
+    {
+     "name": "rou_admpop_adm1_2022_v01.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/819ed0e9-f983-4d72-a60c-6825fc50c8e1/resource/91966f08-8c32-4a9a-a1d1-b0c39819b87e/download/rou_admpop_adm1_2022_v01.csv"
+    },
+    {
+     "name": "rou_admpop_adm2_2022_v01.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/819ed0e9-f983-4d72-a60c-6825fc50c8e1/resource/9575af76-87f0-415a-953e-bb6c8c7ec145/download/rou_admpop_adm2_2022_v01.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Romania - Accessibility Indicators",
+   "name": "romania-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/romania-accessibility-indicators",
+   "resources": [
+    {
+     "name": "ROU_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rou/ROU_education_access.gpkg"
+    },
+    {
+     "name": "ROU_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rou/ROU_education_access_long.csv"
+    },
+    {
+     "name": "ROU_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rou/ROU_education_access_wide.csv"
+    },
+    {
+     "name": "ROU_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rou/ROU_hospitals_access.gpkg"
+    },
+    {
+     "name": "ROU_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rou/ROU_hospitals_access_long.csv"
+    },
+    {
+     "name": "ROU_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rou/ROU_hospitals_access_wide.csv"
+    },
+    {
+     "name": "ROU_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rou/ROU_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "ROU_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rou/ROU_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Romania: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "romania-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/romania-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "rou_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/33941492-5ef1-40f4-93fa-8bcda93bde92/resource/7d24dd0e-4d33-460b-90e0-4a1259fcaa18/download/rou_general_2020_geotiff.zip"
+    },
+    {
+     "name": "rou_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/33941492-5ef1-40f4-93fa-8bcda93bde92/resource/c8e10652-088f-444c-a79f-df54d1ba9c2d/download/rou_general_2020_csv.zip"
+    },
+    {
+     "name": "rou_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/33941492-5ef1-40f4-93fa-8bcda93bde92/resource/db2c1239-3fa2-4dbc-bc28-2e0cb13ba931/download/rou_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "rou_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/33941492-5ef1-40f4-93fa-8bcda93bde92/resource/7a190ab4-fcce-4bf4-b853-7e86535bf81c/download/rou_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "rou_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/33941492-5ef1-40f4-93fa-8bcda93bde92/resource/05955a7c-1d42-4dec-9982-1cd51bee3259/download/rou_men_2020_geotiff.zip"
+    },
+    {
+     "name": "rou_women_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/33941492-5ef1-40f4-93fa-8bcda93bde92/resource/f248e262-42ca-494d-9988-44d3bfc5a9c6/download/rou_women_2020_geotiff.zip"
+    },
+    {
+     "name": "rou_women_of_reproductive_age_15_49_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/33941492-5ef1-40f4-93fa-8bcda93bde92/resource/dd5f9d85-bf8e-4109-8fe0-15012faa0ab3/download/rou_women_of_reproductive_age_15_49_2020_geotiff.zip"
+    },
+    {
+     "name": "rou_youth_15_24_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/33941492-5ef1-40f4-93fa-8bcda93bde92/resource/b75eef59-7754-44f4-9e34-700b392af234/download/rou_youth_15_24_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Romania - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-romania",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-romania",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Romania",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/873acb3c-630b-4cb7-a930-1680a246fb47/resource/f73ece85-d505-414c-a682-e6237a62d989/download/social-protection-and-labor_rou.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Romania - Population Counts",
+   "name": "worldpop-population-counts-for-romania",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-romania",
+   "resources": [
+    {
+     "name": "rou_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/ROU/rou_ppp_2020.tif"
+    },
+    {
+     "name": "rou_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/ROU/rou_ppp_2019.tif"
+    },
+    {
+     "name": "rou_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/ROU/rou_ppp_2018.tif"
+    },
+    {
+     "name": "rou_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/ROU/rou_ppp_2017.tif"
+    },
+    {
+     "name": "rou_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/ROU/rou_ppp_2016.tif"
+    },
+    {
+     "name": "rou_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/ROU/rou_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "rou_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/ROU/rou_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "rou_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/ROU/rou_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Romania: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "rou-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/rou-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/80fd530e-eb0d-455a-a9b7-c0bbce18fef7/resource/1a9bd430-d749-452d-bcb6-824c57f3845f/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_rou.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/80fd530e-eb0d-455a-a9b7-c0bbce18fef7/resource/9453b46e-9ede-468b-a027-cd218b10dffc/download/ghs_pop_e2025_r2023a_54009_100_v1_0_rou.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Romania - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-ro-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-ro-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_RO",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/92b46181-b426-40fe-9193-ef3bafc6f44e/resource/cea9100d-2c61-4b6c-aeff-df0e4a74bbb2/download/indicator_data_ro.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Romania: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-rou",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-rou",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-ro-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-ro-latest.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://insse.ro/",
+  "status": 0,
+  "error": "URLError: <urlopen error [Errno 101] Network is unreachable>",
+  "pages": []
+ },
+ "verdict": {
+  "hdx_datasets": 10,
+  "hdx_machine_readable": 4,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/1",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

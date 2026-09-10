@@ -1,0 +1,790 @@
+{
+ "iso3": "PRT",
+ "name": "Portugal",
+ "tier_proposed": "A",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Portugal",
+    "wikitext_bytes": 52612,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 6,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Religion",
+       "Number",
+       "Percent",
+       "rowspan=\"2\" |Region",
+       "rowspan=\"2\" |'''Total'''",
+       "colspan=\"2\" style=\"background:#CCECFC;\" ! |'''Christianity'''",
+       "colspan=\"2\" |''- Catholicism''",
+       "colspan=\"2\" |''- Other Christian''",
+       "colspan=\"2\" style=\"background:#FEFAC5;\" ! |'''Non-Christian religions'''",
+       "colspan=\"2\" style=\"background:#DCD9FA;\" ! |'''No religion'''"
+      ],
+      "place_column": true,
+      "composition_columns": 2,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |Region",
+       "rowspan=\"2\" |'''Total'''",
+       "colspan=\"2\" style=\"background:#CCECFC;\" ! |'''Christianity'''",
+       "colspan=\"2\" |''- Catholicism''",
+       "colspan=\"2\" |''- Other Christian''",
+       "colspan=\"2\" style=\"background:#FEFAC5;\" ! |'''Non-Christian religions'''",
+       "colspan=\"2\" style=\"background:#DCD9FA;\" ! |'''No religion'''",
+       "style=\"background:#CCECFC;\" |'''Number'''",
+       "style=\"background:#CCECFC;\" |'''Percent'''",
+       "''Number''"
+      ],
+      "place_column": true,
+      "composition_columns": 2,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Religion",
+       "Male",
+       "Female",
+       "Religion",
+       "15-24",
+       "25-34",
+       "35-44",
+       "45-54",
+       "55-64",
+       "65-74"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "Religion",
+       "15-24",
+       "25-34",
+       "35-44",
+       "45-54",
+       "55-64",
+       "65-74",
+       "75+",
+       "Religion",
+       "No formal education"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "Religion",
+       "No formal education",
+       "Basic education",
+       "Upper secondary",
+       "Post secondary",
+       "Higher education",
+       "Religion",
+       "Rural areas",
+       "Urban areas"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Religion",
+       "Rural areas",
+       "Urban areas"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     }
+    ],
+    "place_by_composition_tables": 2
+   },
+   {
+    "title": "Demographics of Portugal",
+    "wikitext_bytes": 106793,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic minorities and persons with disabilities",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 19,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years",
+       "Years<ref>{{Cite web |title=Taxa de mortalidade infantil (‰) |url=https://www.pordata.pt/pt/estatisticas/populacao/esperanca-de-vida-e-obitos/taxa-de-mortalidade-infantil-0?_gl=1*729ht7*_up*MQ..*_ga*OTYxNzQ1OTUuMTc1OTMxNDc5Nw..*_ga_HL9EXBCVBZ*czE3NTkzMTQ3OTckbzEkZzEkdDE3NTkzMTQ4MzUkajIyJGwwJGgw |access-date=2025-10-01 |website=www.pordata.pt}}</ref>",
+       "1960",
+       "1961",
+       "1962",
+       "1963",
+       "1964"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "Years<ref>{{Cite web |title=Taxa de mortalidade infantil (‰) |url=https://www.pordata.pt/pt/estatisticas/populacao/esperanca-de-vida-e-obitos/taxa-de-mortalidade-infantil-0?_gl=1*729ht7*_up*MQ..*_ga*OTYxNzQ1OTUuMTc1OTMxNDc5Nw..*_ga_HL9EXBCVBZ*czE3NTkzMTQ3OTckbzEkZzEkdDE3NTkzMTQ4MzUkajIyJGwwJGgw |access-date=2025-10-01 |website=www.pordata.pt}}</ref>",
+       "1960",
+       "1961",
+       "1962",
+       "1963",
+       "1964",
+       "1965",
+       "1966",
+       "1967",
+       "1968"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "! width=\"80pt\"|Average population (31 December)",
+       "width=\"80pt\"|Live births",
+       "width=\"80pt\"|Deaths",
+       "width=\"80pt\"|Natural change",
+       "width=\"80pt\"|Crude birth rate (per 1000)",
+       "width=\"80pt\"|Crude death rate (per 1000)",
+       "width=\"80pt\"|Natural change (per 1000)",
+       "width=\"80pt\"|Crude migration change (per 1000)",
+       "width=\"80pt\"|Total fertility rates{{refn|group=fn|In fertility rates, 2.1 and above is a stable population and has been marked blue, 2 and below leads to an aging population and the result is that the population decreases. }}<ref name=\"ourworldindata.org\"/><ref>{{cite web|url=http://www.prb.org/pdf11/2011population-data-sheet_eng.pdf|title=2011 WORLD POPULATION DATA SHEET|website=Prb.org|access-date=3 October 2017|archive-date=18 November 2017|archive-url=https://web.archive.org/web/20171118162350/http://www.prb.org/pdf11/2011population-data-sheet_eng.pdf|url-status=dead}}</ref><ref>{{cite web|url=http://portuguese-american-journal.com/2012-birth-rate-negative-decreases-further-portugal/|title=2012 – Negative birth rate decreases further – Portugal – Portuguese American Journal|website=Portuguese-american-journal.com|date=2 January 2013|access-date=3 October 2017}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January–June 2025",
+       "January–June 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{Cite web |title=O número de nados-vivos aumentou 0,8% no primeiro semestre de 2026, em relação ao período homólogo de 2025 - Julho de 2026 |url=https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUESdest_boui=770289376&DESTAQUESmodo=2|date=14 August 2026|access-date=14 August 2026|website=www.ine.pt}}</ref>",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "Region",
+       "TFR",
+       "Intermunicipal community",
+       "TFR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 32
+     },
+     {
+      "header": [
+       "Intermunicipal community",
+       "TFR",
+       "Years<ref name=\"ourworldindata.org\"/>",
+       "1850",
+       "1851",
+       "1852",
+       "1853",
+       "1854",
+       "1855",
+       "1856"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "Years<ref name=\"ourworldindata.org\"/>",
+       "1850",
+       "1851",
+       "1852",
+       "1853",
+       "1854",
+       "1855",
+       "1856",
+       "1857",
+       "1858"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years<ref name=\"ourworldindata.org\"/>",
+       "1861",
+       "1862",
+       "1863",
+       "1864",
+       "1865",
+       "1866",
+       "1867",
+       "1868",
+       "1869"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Years<ref name=\"ourworldindata.org\"/>",
+       "1871",
+       "1872",
+       "1873",
+       "1874",
+       "1875",
+       "1876",
+       "1877",
+       "1878",
+       "1879"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Years<ref name=\"ourworldindata.org\"/>",
+       "1881",
+       "1882",
+       "1883",
+       "1884",
+       "1885",
+       "1886",
+       "1887",
+       "1888",
+       "1889"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "Years<ref name=\"ourworldindata.org\"/>",
+       "1891",
+       "1892",
+       "1893",
+       "1894",
+       "1895",
+       "1896",
+       "1897",
+       "1898",
+       "1899"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "Image",
+       "City",
+       "Metropolitan area",
+       "Core municipality"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 2
+     },
+     {
+      "header": [
+       "align=\"right\" | Rank",
+       "align=\"left\" | City name",
+       "align=\"right\" | Population",
+       "align=\"left\" | Metropolitan area",
+       "align=\"left\" | Subregion"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "align=\"right\" | Rank",
+       "align=\"left\" | Municipality",
+       "align=\"right\" | Population",
+       "Land Area",
+       "Density",
+       "align=\"left\" | Metropolitan area"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "Nationality",
+       "Population<ref name=\"aima\" />",
+       "Nationality",
+       "Acquisitions of Citizenship<br/>(2008–2023)<ref name=\":02\">{{cite web |title=Eurostat |url=https://ec.europa.eu/eurostat/databrowser/view/MIGR_ACQ__custom_6165248/default/table?lang=en}}</ref><ref name=\":9\">{{Cite web |title=Portal do INE |url=https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_indicadores&indOcorrCod=0008370&contexto=bd&selTab=tab2&xlang=pt |access-date=2023-09-30 |website=www.ine.pt}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 40
+     },
+     {
+      "header": [
+       "Nationality",
+       "Acquisitions of Citizenship<br/>(2008–2023)<ref name=\":02\">{{cite web |title=Eurostat |url=https://ec.europa.eu/eurostat/databrowser/view/MIGR_ACQ__custom_6165248/default/table?lang=en}}</ref><ref name=\":9\">{{Cite web |title=Portal do INE |url=https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_indicadores&indOcorrCod=0008370&contexto=bd&selTab=tab2&xlang=pt |access-date=2023-09-30 |website=www.ine.pt}}</ref>",
+       "Year",
+       "Portugal",
+       "Mainland",
+       "Azores",
+       "Madeira"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [
+       "Year",
+       "Portugal",
+       "Mainland",
+       "Azores",
+       "Madeira"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Lajes do Pico",
+    "found": true,
+    "title": "Lajes do Pico",
+    "url": "https://en.wikipedia.org/wiki/Lajes_do_Pico",
+    "wikitext_bytes": 8360,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Montemor-o-Novo",
+    "found": true,
+    "title": "Montemor-o-Novo",
+    "url": "https://en.wikipedia.org/wiki/Montemor-o-Novo",
+    "wikitext_bytes": 5284,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Nazare",
+    "found": true,
+    "title": "Nazaré, Portugal",
+    "url": "https://en.wikipedia.org/wiki/Nazar%C3%A9%2C_Portugal",
+    "wikitext_bytes": 25239,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Oleiros",
+    "found": true,
+    "title": "Castelo de Oleiros",
+    "url": "https://en.wikipedia.org/wiki/Castelo_de_Oleiros",
+    "wikitext_bytes": 4132,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Palmela",
+    "found": true,
+    "title": "Castle of Palmela",
+    "url": "https://en.wikipedia.org/wiki/Castle_of_Palmela",
+    "wikitext_bytes": 2214,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Portugal: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-portugal",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-portugal",
+   "resources": [
+    {
+     "name": "kontur_boundaries_PT_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_PT_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_PT_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_PT_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_PT_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_PT_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Portugal: Road Surface Data",
+   "name": "portugal-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/portugal-road-surface-data",
+   "resources": [
+    {
+     "name": "Portugal GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_prt_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Portugal GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_prt_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Portugal - Accessibility Indicators",
+   "name": "portugal-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/portugal-accessibility-indicators",
+   "resources": [
+    {
+     "name": "PRT_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/prt/PRT_education_access.gpkg"
+    },
+    {
+     "name": "PRT_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/prt/PRT_education_access_long.csv"
+    },
+    {
+     "name": "PRT_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/prt/PRT_education_access_wide.csv"
+    },
+    {
+     "name": "PRT_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/prt/PRT_hospitals_access.gpkg"
+    },
+    {
+     "name": "PRT_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/prt/PRT_hospitals_access_long.csv"
+    },
+    {
+     "name": "PRT_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/prt/PRT_hospitals_access_wide.csv"
+    },
+    {
+     "name": "PRT_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/prt/PRT_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "PRT_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/prt/PRT_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Portugal: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "portugal-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/portugal-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "prt_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/1f2279d4-8af5-46e1-baf8-1585765e0e57/resource/f33e457e-c97c-460e-ad5c-588b34180b7a/download/prt_general_2020_geotiff.zip"
+    },
+    {
+     "name": "prt_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/1f2279d4-8af5-46e1-baf8-1585765e0e57/resource/10606333-45d7-4b95-b918-1b1defa64b0c/download/prt_general_2020_csv.zip"
+    },
+    {
+     "name": "prt_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/1f2279d4-8af5-46e1-baf8-1585765e0e57/resource/86ecc703-08a9-4742-96ae-44b8a7f619f8/download/prt_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "prt_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/1f2279d4-8af5-46e1-baf8-1585765e0e57/resource/81b0a9f9-9406-47c2-9835-21669b82b537/download/prt_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "prt_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/1f2279d4-8af5-46e1-baf8-1585765e0e57/resource/237eb627-4bf9-4968-a1f3-9fee9e8ad553/download/prt_men_2020_geotiff.zip"
+    },
+    {
+     "name": "prt_women_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/1f2279d4-8af5-46e1-baf8-1585765e0e57/resource/2a1eff87-96b7-459c-83c1-8063292cd978/download/prt_women_2020_geotiff.zip"
+    },
+    {
+     "name": "prt_women_of_reproductive_age_15_49_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/1f2279d4-8af5-46e1-baf8-1585765e0e57/resource/f32d7f70-4e91-473d-9d6f-74d81668641c/download/prt_women_of_reproductive_age_15_49_2020_geotiff.zip"
+    },
+    {
+     "name": "prt_youth_15_24_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/1f2279d4-8af5-46e1-baf8-1585765e0e57/resource/41db44af-593f-417d-b4a4-2fbda73a4e60/download/prt_youth_15_24_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Portugal - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-portugal",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-portugal",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Portugal",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/2fe79698-5604-4372-a00e-f217643cdc8f/resource/a5336a05-777a-4a23-9213-2cbb443f179d/download/social-protection-and-labor_prt.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Portugal - Population Counts",
+   "name": "worldpop-population-counts-for-portugal",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-portugal",
+   "resources": [
+    {
+     "name": "prt_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/PRT/prt_ppp_2020.tif"
+    },
+    {
+     "name": "prt_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/PRT/prt_ppp_2019.tif"
+    },
+    {
+     "name": "prt_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/PRT/prt_ppp_2018.tif"
+    },
+    {
+     "name": "prt_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/PRT/prt_ppp_2017.tif"
+    },
+    {
+     "name": "prt_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/PRT/prt_ppp_2016.tif"
+    },
+    {
+     "name": "prt_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/PRT/prt_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "prt_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/PRT/prt_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "prt_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/PRT/prt_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Portugal - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-pt-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-pt-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_PT",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/8a3f2803-bc9a-4411-9f6a-1e88998f2de8/resource/7dee8492-62f9-4302-affc-f351407fbcd4/download/indicator_data_pt.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Portugal: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "prt-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/prt-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/89392ade-8600-4e5c-a8b3-5601139dcf5f/resource/94d55f60-8b75-425f-b952-c60855697e8e/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_prt.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/89392ade-8600-4e5c-a8b3-5601139dcf5f/resource/d0e5565c-a737-42c2-8bca-540b9c955c79/download/ghs_pop_e2025_r2023a_54009_100_v1_0_prt.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Portugal: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-prt",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-prt",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-pt-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-pt-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Green area per capita (square meters per capita)",
+   "name": "green-area-per-capita-square-meters-per-capita",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/green-area-per-capita-square-meters-per-capita",
+   "resources": [
+    {
+     "name": "Green area per_capita (square meters per capita).xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/7babf915-12a0-4ceb-ad9c-7ee24b776614/resource/2c1c5e09-0bbe-482f-9703-ec7dfed62c79/download/green-area-per_capita-square-meters-per-capita.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Old age dependency ratio",
+   "name": "old-age-dependency-ratio",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/old-age-dependency-ratio",
+   "resources": [
+    {
+     "name": "Old_age_dependency_ratio.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/1598cce7-3d04-42a5-9a2f-b5ba0095cf2f/resource/5217ad45-f56f-43c7-992f-d4e327d13615/download/old_age_dependency_ratio.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.ine.pt/",
+  "status": 0,
+  "error": "URLError: <urlopen error _ssl.c:999: The handshake operation timed out>",
+  "pages": []
+ },
+ "verdict": {
+  "hdx_datasets": 11,
+  "hdx_machine_readable": 5,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 2,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

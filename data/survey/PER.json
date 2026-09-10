@@ -1,0 +1,596 @@
+{
+ "iso3": "PER",
+ "name": "Peru",
+ "tier_proposed": "B",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Peru",
+    "wikitext_bytes": 17928,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Peru",
+    "wikitext_bytes": 59312,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups",
+     "Language"
+    ],
+    "wikitables": 8,
+    "charts": [
+     "Historical populations",
+     "Pie chart",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=2|",
+       "rowspan=2|Total population<br>({{times}}1000)",
+       "colspan=3|Population percentage",
+       "aged 0–14",
+       "aged 15–64",
+       "aged 65+"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "width=\"80pt\" |Age group",
+       "width=\"80pt\" |Male",
+       "width=\"80pt\" |Female",
+       "width=\"80pt\" |Total",
+       "width=\"80pt\" |%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"70\"|Year",
+       "width=\"70\"|Population",
+       "width=\"70\"|Live births",
+       "width=\"70\"|Deaths",
+       "width=\"70\"|Natural increase",
+       "width=\"70\"|Crude birth rate",
+       "width=\"70\"|Crude death rate",
+       "width=\"70\"|Rate of natural increase",
+       "width=\"70\"|Crude migration rate",
+       "width=\"70\"|TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January—December 2024",
+       "January—December 2025",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{cite web |title=Estadísticas Vitales: Nacimientos, Defunciones, Matrimonios y Divorcios, 2024 |publisher=Instituto Nacional de Estadística e Informática |date=22 December 2025 |url=https://www.gob.pe/institucion/inei/colecciones/21800-poblacion-y-demografia |language=es}}</ref>",
+       "width=\"70pt\"|Period",
+       "width=\"70pt\"|Live births per year"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"70pt\"|Period",
+       "width=\"70pt\"|Live births per year",
+       "width=\"70pt\"|Deaths per year",
+       "width=\"70pt\"|Natural change per year",
+       "width=\"70pt\"|CBR*",
+       "width=\"70pt\"|CDR*",
+       "width=\"70pt\"|NC*",
+       "width=\"70pt\"|TFR*",
+       "width=\"70pt\"|IMR*",
+       "rowspan=2| Year"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Callao",
+    "found": true,
+    "title": "Callao",
+    "url": "https://en.wikipedia.org/wiki/Callao",
+    "wikitext_bytes": 38737,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Chincheros",
+    "found": true,
+    "title": "Ocobamba District, Chincheros",
+    "url": "https://en.wikipedia.org/wiki/Ocobamba_District%2C_Chincheros",
+    "wikitext_bytes": 3656,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Huancavelica",
+    "found": true,
+    "title": "Department of Huancavelica",
+    "url": "https://en.wikipedia.org/wiki/Department_of_Huancavelica",
+    "wikitext_bytes": 8411,
+    "infobox_params": [],
+    "sections": [
+     "Demographics",
+     "Languages"
+    ],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Moyobamba",
+    "found": true,
+    "title": "Estadio IPD de Moyobamba",
+    "url": "https://en.wikipedia.org/wiki/Estadio_IPD_de_Moyobamba",
+    "wikitext_bytes": 1908,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Quispicanchi",
+    "found": true,
+    "title": "Quispicanchi province",
+    "url": "https://en.wikipedia.org/wiki/Quispicanchi_province",
+    "wikitext_bytes": 7346,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Peru: Languages",
+   "name": "peru-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/peru-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_PER_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6a1815db-332c-4631-8707-f2f491185eae/resource/cbb7382a-a3fb-4576-b29a-4aecf0853e9c/download/clearglobal_language_use_per_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_PER_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6a1815db-332c-4631-8707-f2f491185eae/resource/df4aaa72-e393-4e1e-80c0-c596716ad01f/download/clearglobal_language_use_per_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_PER_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6a1815db-332c-4631-8707-f2f491185eae/resource/1496c127-41e3-40f0-b55b-6225de540a7c/download/clearglobal_language_use_per_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Peru: Road Surface Data",
+   "name": "peru-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/peru-road-surface-data",
+   "resources": [
+    {
+     "name": "Peru GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_per_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Peru GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_per_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Peru: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-peru",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-peru",
+   "resources": [
+    {
+     "name": "kontur_boundaries_PE_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_PE_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_PE_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_PE_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_PE_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_PE_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Peru - Accessibility Indicators",
+   "name": "peru-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/peru-accessibility-indicators",
+   "resources": [
+    {
+     "name": "PER_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/per/PER_education_access.gpkg"
+    },
+    {
+     "name": "PER_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/per/PER_education_access_long.csv"
+    },
+    {
+     "name": "PER_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/per/PER_education_access_wide.csv"
+    },
+    {
+     "name": "PER_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/per/PER_hospitals_access.gpkg"
+    },
+    {
+     "name": "PER_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/per/PER_hospitals_access_long.csv"
+    },
+    {
+     "name": "PER_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/per/PER_hospitals_access_wide.csv"
+    },
+    {
+     "name": "PER_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/per/PER_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "PER_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/per/PER_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Peru: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "peru-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/peru-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "per_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/4e74db39-87f1-4383-9255-eaf8ebceb0c9/resource/317f1c39-8417-4bde-a076-99bd37feefce/download/per_general_2020_csv.zip"
+    },
+    {
+     "name": "per_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/4e74db39-87f1-4383-9255-eaf8ebceb0c9/resource/41831c01-87e0-4791-ad03-b0764df74528/download/per_general_2020_geotiff.zip"
+    },
+    {
+     "name": "per_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/4e74db39-87f1-4383-9255-eaf8ebceb0c9/resource/ed2712e7-4668-45a2-b76f-eb819df9e0c1/download/per_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "per_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/4e74db39-87f1-4383-9255-eaf8ebceb0c9/resource/175528d1-0c99-4f70-add8-87bddd7c558a/download/per_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "per_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/4e74db39-87f1-4383-9255-eaf8ebceb0c9/resource/8cc100cf-68a4-4fda-a8e6-a63b99ad5b00/download/per_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "per_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/4e74db39-87f1-4383-9255-eaf8ebceb0c9/resource/0d1f976c-3dc3-4672-8091-cc0379abe55f/download/per_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "per_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/4e74db39-87f1-4383-9255-eaf8ebceb0c9/resource/dc7e01c1-c9b3-474f-954c-4a0fdd1a4252/download/per_men_2020_csv.zip"
+    },
+    {
+     "name": "per_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/4e74db39-87f1-4383-9255-eaf8ebceb0c9/resource/47b62f42-2a84-45d9-9ed0-c0e4ceb46835/download/per_men_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Peru - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-peru",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-peru",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Peru",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/bd880d29-99f9-488b-bb89-9f98eedab61c/resource/6d44dd9f-95c2-4478-a62a-d44021a354c8/download/social-protection-and-labor_per.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Peru - Population Counts",
+   "name": "worldpop-population-counts-for-peru",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-peru",
+   "resources": [
+    {
+     "name": "per_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/PER/per_ppp_2020.tif"
+    },
+    {
+     "name": "per_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/PER/per_ppp_2019.tif"
+    },
+    {
+     "name": "per_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/PER/per_ppp_2018.tif"
+    },
+    {
+     "name": "per_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/PER/per_ppp_2017.tif"
+    },
+    {
+     "name": "per_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/PER/per_ppp_2016.tif"
+    },
+    {
+     "name": "per_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/PER/per_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "per_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/PER/per_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "per_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/PER/per_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Peru: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "per-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/per-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/8c310726-cf90-4da2-b33e-10df550a029a/resource/6cd11970-e002-496d-85a9-ca1b27290c0d/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_per.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/8c310726-cf90-4da2-b33e-10df550a029a/resource/18af13cb-7d8b-4093-9f22-5e077c01badf/download/ghs_pop_e2025_r2023a_54009_100_v1_0_per.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Peru - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-pe-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-pe-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_PE",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6eca88ca-324c-4116-944a-23696be72d6a/resource/b0513015-4c1b-489b-9f18-bf7e8950850a/download/indicator_data_pe.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Peru - Floods  damage and needs assessment matrix",
+   "name": "peru-floods-dana-matrix-glide-number-fl2017-000014",
+   "org": "International Federation of Red Cross and Red Crescent Societies (IFRC)",
+   "url": "https://data.humdata.org/dataset/peru-floods-dana-matrix-glide-number-fl2017-000014",
+   "resources": [
+    {
+     "name": "DC_OP4_DANA.xlsx",
+     "format": "XLSX",
+     "url": "https://docs.google.com/spreadsheets/d/1oC0U_uzbeOuk2XBbagUY9Mwz0vkMaAoQ4nGd-7AknO0/edit?usp=sharing"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Peru: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-per",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-per",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-pe-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-pe-latest.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.inei.gob.pe/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.gob.pe/institucion/inei/tema/censos",
+    "status": 200,
+    "kind": "html",
+    "title": "Censos - Categorías - Instituto Nacional de Estadística e Informática - Plataforma del Estado Peruano",
+    "files": [
+     "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NTA3NjUsInB1ciI6ImJsb2JfaWQifX0=--26d5c60fb8bfd35da209c55ecd867d257368510e/PLAN_4_2016_ORGANIGRAMA_INEI.PDF"
+    ],
+    "mentions": []
+   },
+   {
+    "url": "https://www.gob.pe/institucion/inei/pages/14308-consultar-informacion-de-los-censos-realizados-por-el-inei",
+    "status": 200,
+    "kind": "html",
+    "title": "Consultar información de los censos realizados por el INEI - Servicio - Instituto Nacional de Estadística e Informática - Plataforma del Estado Peruano",
+    "files": [],
+    "mentions": [
+     "language",
+     "language__desktop",
+     "language__desktop__page",
+     "language__mobile",
+     "language__mobile__page",
+     "languages"
+    ]
+   },
+   {
+    "url": "https://www.gob.pe/14308-consultar-informacion-de-los-censos-realizados-por-el-inei",
+    "status": 200,
+    "kind": "html",
+    "title": "Consultar información de los censos realizados por el INEI - Servicio - Instituto Nacional de Estadística e Informática - Plataforma del Estado Peruano",
+    "files": [],
+    "mentions": [
+     "language",
+     "language__desktop",
+     "language__desktop__page",
+     "language__mobile",
+     "language__mobile__page",
+     "languages"
+    ]
+   }
+  ],
+  "title": "Instituto Nacional de Estadística e Informática - INEI - Plataforma del Estado Peruano",
+  "matching_links": 3
+ },
+ "verdict": {
+  "hdx_datasets": 11,
+  "hdx_machine_readable": 5,
+  "nso_files_found": 1,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

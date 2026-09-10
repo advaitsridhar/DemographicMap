@@ -1,0 +1,601 @@
+{
+ "iso3": "MDG",
+ "name": "Madagascar",
+ "tier_proposed": "D",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Madagascar",
+    "wikitext_bytes": 10386,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Madagascar",
+    "wikitext_bytes": 27833,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnicity",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 7,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\" |",
+       "rowspan=\"2\" | Total<br>population",
+       "colspan=\"3\" | Population percentages",
+       "aged 0–14",
+       "aged 15–64",
+       "aged 65+",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 39
+     },
+     {
+      "header": [
+       "Year",
+       "Projected population",
+       "style=\"width:80pt;\"|Period",
+       "style=\"width:80pt;\"|Live births per year",
+       "style=\"width:80pt;\"|Deaths per year",
+       "style=\"width:80pt;\"|Natural change per year",
+       "style=\"width:80pt;\"|CBR{{efn-lr|name=h}}",
+       "style=\"width:80pt;\"|CDR{{efn-lr|name=h}}",
+       "style=\"width:80pt;\"|NC{{efn-lr|name=h}}",
+       "style=\"width:80pt;\"|TFR{{efn-lr|name=h}}"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 42
+     },
+     {
+      "header": [
+       "style=\"width:80pt;\"|Period",
+       "style=\"width:80pt;\"|Live births per year",
+       "style=\"width:80pt;\"|Deaths per year",
+       "style=\"width:80pt;\"|Natural change per year",
+       "style=\"width:80pt;\"|CBR{{efn-lr|name=h}}",
+       "style=\"width:80pt;\"|CDR{{efn-lr|name=h}}",
+       "style=\"width:80pt;\"|NC{{efn-lr|name=h}}",
+       "style=\"width:80pt;\"|TFR{{efn-lr|name=h}}",
+       "style=\"width:80pt;\"|IMR{{efn-lr|name=h}}"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 37
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Region",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15–49 currently pregnant",
+       "style=\"width:100pt;\"| Mean number of children ever born to women age 40–49",
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Ambatofinandrahana",
+    "found": true,
+    "title": "Ambatofinandrahana",
+    "url": "https://en.wikipedia.org/wiki/Ambatofinandrahana",
+    "wikitext_bytes": 5925,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Ambatolampy",
+    "found": true,
+    "title": "Ambatolampy Tsimahafotsy",
+    "url": "https://en.wikipedia.org/wiki/Ambatolampy_Tsimahafotsy",
+    "wikitext_bytes": 4652,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Antananarivo Atsimondrano",
+    "found": true,
+    "title": "Antananarivo-Atsimondrano District",
+    "url": "https://en.wikipedia.org/wiki/Antananarivo-Atsimondrano_District",
+    "wikitext_bytes": 4757,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Antsalova",
+    "found": true,
+    "title": "Antsalova",
+    "url": "https://en.wikipedia.org/wiki/Antsalova",
+    "wikitext_bytes": 6266,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Bekily",
+    "found": true,
+    "title": "Tanandava, Bekily",
+    "url": "https://en.wikipedia.org/wiki/Tanandava%2C_Bekily",
+    "wikitext_bytes": 5316,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Madagascar - Elevation Model",
+   "name": "madagascar-elevation-model",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/madagascar-elevation-model",
+   "resources": [
+    {
+     "name": "mdg_msk_alt.zip",
+     "format": "ARC/INFO Grid",
+     "url": "https://data.humdata.org/dataset/89b6ca78-8a4a-4781-9dff-2749a45dd62c/resource/9bd76a2f-b72a-433d-af0f-21e26f7b1071/download/mdg_msk_alt.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Madagascar - Populated Places",
+   "name": "madagascar-settlements",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/madagascar-settlements",
+   "resources": [
+    {
+     "name": "mdg_pplp_places_nga_ocha.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/57202386-65f8-426f-8f51-be10c9f7c6ae/resource/09cc9db2-2aa7-4301-91b7-ae87f9f81c85/download/mdg_pplp_places_nga_ocha.zip"
+    },
+    {
+     "name": "mdg_pplp_places_nga_ocha_metadata.txt",
+     "format": "TXT",
+     "url": "https://data.humdata.org/dataset/57202386-65f8-426f-8f51-be10c9f7c6ae/resource/56ac7739-1aa9-4eb0-9edd-29aca9252c12/download/mdg_pplp_places_nga_ocha_metadata.txt"
+    },
+    {
+     "name": "mdg_pplp_places_nga_ocha_table.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/57202386-65f8-426f-8f51-be10c9f7c6ae/resource/ba6cc33a-53c2-4715-9143-2071b1236786/download/mdg_pplp_places_nga_ocha_table.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Madagascar: Road Surface Data",
+   "name": "madagascar-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/madagascar-road-surface-data",
+   "resources": [
+    {
+     "name": "Madagascar GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_mdg_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Madagascar GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_mdg_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Madagascar: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-madagascar",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-madagascar",
+   "resources": [
+    {
+     "name": "kontur_boundaries_MG_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_MG_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_MG_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_MG_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_MG_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_MG_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Madagascar - Accessibility Indicators",
+   "name": "madagascar-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/madagascar-accessibility-indicators",
+   "resources": [
+    {
+     "name": "MDG_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mdg/MDG_education_access.gpkg"
+    },
+    {
+     "name": "MDG_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mdg/MDG_education_access_long.csv"
+    },
+    {
+     "name": "MDG_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mdg/MDG_education_access_wide.csv"
+    },
+    {
+     "name": "MDG_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mdg/MDG_hospitals_access.gpkg"
+    },
+    {
+     "name": "MDG_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mdg/MDG_hospitals_access_long.csv"
+    },
+    {
+     "name": "MDG_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mdg/MDG_hospitals_access_wide.csv"
+    },
+    {
+     "name": "MDG_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mdg/MDG_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "MDG_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mdg/MDG_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Madagascar: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "highresolutionpopulationdensitymaps-mdg",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/highresolutionpopulationdensitymaps-mdg",
+   "resources": [
+    {
+     "name": "mdg_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/9e7ff424-7b9c-42cc-b869-5756fcad0956/resource/1fafdd04-8e0b-4c2a-b4dc-8f3ff39e3015/download/mdg_general_2020_geotiff.zip"
+    },
+    {
+     "name": "mdg_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/9e7ff424-7b9c-42cc-b869-5756fcad0956/resource/5725a196-7ffd-41d4-ae39-d1ff94cae6c1/download/mdg_general_2020_csv.zip"
+    },
+    {
+     "name": "mdg_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/9e7ff424-7b9c-42cc-b869-5756fcad0956/resource/d73293f2-fdb3-4f35-97a8-9117cf6abadb/download/mdg_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "mdg_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/9e7ff424-7b9c-42cc-b869-5756fcad0956/resource/a9651094-a1dc-4d59-b3d6-37fbec3d8a64/download/mdg_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "mdg_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/9e7ff424-7b9c-42cc-b869-5756fcad0956/resource/acc8f75a-ae32-4ef9-9c2b-1260fd14d751/download/mdg_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "mdg_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/9e7ff424-7b9c-42cc-b869-5756fcad0956/resource/6136e4a0-d916-4778-ad71-90c5935956ac/download/mdg_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "mdg_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/9e7ff424-7b9c-42cc-b869-5756fcad0956/resource/7232149d-1ff5-4205-a6bd-93f3ce42a642/download/mdg_men_2020_csv.zip"
+    },
+    {
+     "name": "mdg_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/9e7ff424-7b9c-42cc-b869-5756fcad0956/resource/cbc7ac7f-4ba1-4da2-bdec-cbca1e2bb02f/download/mdg_men_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Madagascar - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-madagascar",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-madagascar",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Madagascar",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/64565857-f9c2-4a26-afd5-d5f52753bd65/resource/31e506c2-a1dd-472c-8b07-cf3b61cd0af1/download/social-protection-and-labor_mdg.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Madagascar - Population Counts",
+   "name": "worldpop-population-counts-for-madagascar",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-madagascar",
+   "resources": [
+    {
+     "name": "mdg_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/MDG/mdg_ppp_2020.tif"
+    },
+    {
+     "name": "mdg_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/MDG/mdg_ppp_2019.tif"
+    },
+    {
+     "name": "mdg_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/MDG/mdg_ppp_2018.tif"
+    },
+    {
+     "name": "mdg_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/MDG/mdg_ppp_2017.tif"
+    },
+    {
+     "name": "mdg_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/MDG/mdg_ppp_2016.tif"
+    },
+    {
+     "name": "mdg_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/MDG/mdg_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "mdg_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/MDG/mdg_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "mdg_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/MDG/mdg_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Madagascar: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-mdg",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-mdg",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-mg-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-mg-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Madagascar - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-mg-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-mg-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_MG",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/16ecc8d8-1dea-43a2-8225-76760e81b1b1/resource/7fa823f7-e57e-4c86-898d-66c29e1e3f02/download/indicator_data_mg.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Madagascar: Level 1 Exposure Data",
+   "name": "madagascar-level-1-exposure-data",
+   "org": "Global Earthquake Model Foundation",
+   "url": "https://data.humdata.org/dataset/madagascar-level-1-exposure-data",
+   "resources": [
+    {
+     "name": "MDG_oed_exposure_20200811_hdx.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/378a8d99-6dda-40f3-9bfc-194133b8ea54/resource/4bafcf23-31ab-4ba7-967e-ff74a4d101f6/download/mdg_oed_exposure_20200811_hdx.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Madagascar: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "mdg-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/mdg-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/f7c3d5f3-8fc6-4d62-ba0b-3336a09177d8/resource/152a60a9-69af-4504-9886-153a9914fd8b/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_mdg.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/f7c3d5f3-8fc6-4d62-ba0b-3336a09177d8/resource/14d6ca35-2064-4e96-9422-7c05ba5e7d3e/download/ghs_pop_e2025_r2023a_54009_100_v1_0_mdg.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "SADC Population Estimates",
+   "name": "sadc-population-estimates-06-july-2018",
+   "org": "Regional Vulnerability Assessment & Analysis Programme (inactive)",
+   "url": "https://data.humdata.org/dataset/sadc-population-estimates-06-july-2018",
+   "resources": [
+    {
+     "name": "SADC-Population-Estimates-July -2017.xlsx",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/4e41d91f-e039-4457-840c-f3188fc879fc/resource/4fa4698f-f4d5-4b49-b06b-fa3cc6fd0b57/download/sadc-population-estimates-july-2017.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Pupils teachers ratio  - Ratios élèves enseignants",
+   "name": "pupils-teachers-ratio-ratios-eleeves-enseignants",
+   "org": "United Nations Economic Commission for Africa",
+   "url": "https://data.humdata.org/dataset/pupils-teachers-ratio-ratios-eleeves-enseignants",
+   "resources": [
+    {
+     "name": "1-7. Pupils teachers ratio  - Ratios élèves enseignants.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d8bb93c6-965a-472f-bd39-7c814d30a698/resource/d9767c75-ac2b-4176-8148-d61d5b204293/download/1-7.-pupils-teachers-ratio-ratios-eleeves-enseignants.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.instat.mg/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.instat.mg/statistiques/enquetes-et-recensements",
+    "status": 200,
+    "kind": "html",
+    "title": "INSTAT Madagascar - Institut National de la Statistique",
+    "files": [],
+    "mentions": [
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.instat.mg/thematique/population",
+    "status": 200,
+    "kind": "html",
+    "title": "INSTAT Madagascar - Institut National de la Statistique",
+    "files": [],
+    "mentions": [
+     "language"
+    ]
+   }
+  ],
+  "title": "INSTAT Madagascar - Institut National de la Statistique",
+  "matching_links": 2
+ },
+ "verdict": {
+  "hdx_datasets": 14,
+  "hdx_machine_readable": 7,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

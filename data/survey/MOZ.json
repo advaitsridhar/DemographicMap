@@ -1,0 +1,607 @@
+{
+ "iso3": "MOZ",
+ "name": "Mozambique",
+ "tier_proposed": "B",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Mozambique",
+    "wikitext_bytes": 17282,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "width=\"15\" |Affiliation",
+       "width=\"10\" |1997 census<ref>[http://www.ine.gov.mz/home_page/censos_dir/recenseamento_geral/ 1997 Census of Mozambique]</ref>",
+       "width=\"10\" |2007 census<ref name=\":0\">[http://www.ine.gov.mz/censo2007 2007 Census of Mozambique]</ref><ref name=\"The World Factbook - Mozambique\">",
+       "width=\"10\" |2009 DHS Survey<ref name=\"DHS 2009\">{{cite web|url=https://dhsprogram.com/pubs/pdf/AIS8/AIS8.pdf|title=Inquérito Nacional de Prevalência, Riscos Comportamentais e Informação sobre o HIV e SIDA em Moçambique (INSIDA), 2009|publisher=Ministério da Saúde & Instituto Nacional de Estatística|language=pt|page=32|access-date=20 April 2018}}</ref>",
+       "width=\"10\" |2010 Pew Forum Estimates<ref name=\"Pew Christians\">{{cite web|url=http://www.pewforum.org/2011/12/19/table-christian-population-as-percentages-of-total-population-by-country/|title=Table: Christian Population as Percentages of Total Population by Country|date=19 December 2011|publisher=Pew Research Center|access-date=16 April 2018}}</ref><ref name=\"Pew Muslims\">{{cite web|url=http://www.pewforum.org/2011/01/27/table-muslim-population-by-country/|title=Table: Muslim Population by Country|date=27 January 2011|publisher=Pew Research Center|access-date=16 April 2018}}</ref>",
+       "width=\"10\" |2015 DHS Survey<ref name=\"DHS 2015\">{{cite web|url=https://dhsprogram.com/pubs/pdf/AIS12/AIS12.pdf|title=Moçambique: Inquérito de Indicadores de Imunização, Malária e HIV/SIDA em Moçambique (IMASIDA), 2015|publisher=Ministério da Saúde & Instituto Nacional de Estatística|language=pt|page=40|access-date=20 April 2018}}</ref>",
+       "width=\"10\" |2017 census<ref>{{Cite web|url=https://www.ine.gov.mz/web/guest/d/indicadores-socio-demograficos-mocambique-20062022|title=Indicadores sócio-demográficos Moçambique|website=Instituto Nacional de Estatistica|access-date=19 October 2025}}</ref>",
+       "2022 Afrobarometer<ref name=\"p657\">{{cite web |date=2024 |title=Afrobarometer Round 9 survey in Mozambique, 2022 |url=https://www.afrobarometer.org/wp-content/uploads/2024/01/MOZ-R9-AB_Summary-of-Results-31jan24.pdf |access-date=2025-09-23 |website=Afrobarometer |pages=7-8}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 5
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Mozambique",
+    "wikitext_bytes": 27004,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 7,
+    "charts": [
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "! width=\"80\" |Total population<ref name=\"Mozambique\"/>",
+       "width=\"80\" |Population aged 0–14 (%)",
+       "width=\"80\" |Population aged 15–64 (%)",
+       "width=\"80\" |Population aged 65+ (%)",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\" |Mid-year population",
+       "style=\"width:80pt;\" |Live births",
+       "style=\"width:80pt;\" |Deaths",
+       "style=\"width:80pt;\" |Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)",
+       "style=\"width:80pt;\"|Total fertility rate (TFR)",
+       "style=\"width:80pt;\"|Infant mortality (per 1000 live births)",
+       "style=\"width:80pt;\"|Life expectancy (in years)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Province",
+       "style=\"width:100pt;\"| Total fertility rate<br />(2011)",
+       "Total fertility rate<br />(2015)",
+       "Total fertility rate<br />(2018)",
+       "Total fertility rate<br />(2022-23)",
+       "scope=\"col\" | Period",
+       "scope=\"col\" | Life expectancy in years<ref>{{Cite web|url=https://esa.un.org/unpd/wpp/DataQuery/|title=World Population Prospects - Population Division - United Nations|website=esa.un.org|access-date=2018-08-26}}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "scope=\"col\" | Period",
+       "scope=\"col\" | Life expectancy in years<ref>{{Cite web|url=https://esa.un.org/unpd/wpp/DataQuery/|title=World Population Prospects - Population Division - United Nations|website=esa.un.org|access-date=2018-08-26}}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |Ethnic",
+       "colspan=\"2\" |Census 2017",
+       "Number",
+       "%",
+       "Total",
+       "colspan=\"2\" |26,899,105"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 9
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Changara",
+    "found": true,
+    "title": "Changara District",
+    "url": "https://en.wikipedia.org/wiki/Changara_District",
+    "wikitext_bytes": 5797,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Chigubo",
+    "found": true,
+    "title": "Chigubo District",
+    "url": "https://en.wikipedia.org/wiki/Chigubo_District",
+    "wikitext_bytes": 6171,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Chinde",
+    "found": true,
+    "title": "Chinde District",
+    "url": "https://en.wikipedia.org/wiki/Chinde_District",
+    "wikitext_bytes": 674,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Cidade De Inhambane",
+    "found": true,
+    "title": "Inhambane",
+    "url": "https://en.wikipedia.org/wiki/Inhambane",
+    "wikitext_bytes": 14338,
+    "infobox_params": [
+     "blank_name",
+     "language"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   },
+   {
+    "shape_name": "Cidade De Maputo",
+    "found": true,
+    "title": "List of postos of Mozambique",
+    "url": "https://en.wikipedia.org/wiki/List_of_postos_of_Mozambique",
+    "wikitext_bytes": 30325,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Mozambique: Languages",
+   "name": "mozambique-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/mozambique-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_MOZ_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e84583de-0dcb-4841-b57f-4ff532c5349c/resource/f1c83642-b64e-433a-9e96-bf2236ff7c6d/download/clearglobal_language_use_moz_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_MOZ_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e84583de-0dcb-4841-b57f-4ff532c5349c/resource/e14e3833-ab02-4e2a-9ede-24a83dffa3b3/download/clearglobal_language_use_moz_admin1.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Mozambique: Road Surface Data",
+   "name": "mozambique-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/mozambique-road-surface-data",
+   "resources": [
+    {
+     "name": "Mozambique GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_moz_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Mozambique GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_moz_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Mozambique: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-mozambique",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-mozambique",
+   "resources": [
+    {
+     "name": "kontur_boundaries_MZ_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_MZ_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_MZ_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_MZ_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_MZ_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_MZ_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Census disaggregated gridded population estimates for Mozambique (2017), version 1.1",
+   "name": "gridded-population-estimates-for-mozambique-2017-census-v1-1",
+   "org": "GRID3",
+   "url": "https://data.humdata.org/dataset/gridded-population-estimates-for-mozambique-2017-census-v1-1",
+   "resources": [
+    {
+     "name": "MOZ_population_v1_1_gridded.tif",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/237"
+    },
+    {
+     "name": "MOZ_population_v1_1_agesex.zip",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/241"
+    },
+    {
+     "name": "MOZ_population_v1_1_mastergrid.tif",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/245"
+    },
+    {
+     "name": "MOZ_population_v1_1_README.pdf",
+     "format": "PDF",
+     "url": "https://wopr.worldpop.org/download/242"
+    },
+    {
+     "name": "MOZ_population_v1_1_sql.sql",
+     "format": "SQL",
+     "url": "https://wopr.worldpop.org/download/243"
+    },
+    {
+     "name": "MOZ_population_v1_1_tiles.zip",
+     "format": "PNG",
+     "url": "https://wopr.worldpop.org/download/244"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Mozambique - Subnational Administrative Boundaries",
+   "name": "cod-ab-moz",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-moz",
+   "resources": [
+    {
+     "name": "moz_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/5e8d83a5-1210-49be-b7d9-cf286dbc15df/resource/2f9ddab9-0bdb-4a19-bf1d-38204fd141b0/download/moz_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "moz_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/5e8d83a5-1210-49be-b7d9-cf286dbc15df/resource/ee532229-14eb-4c3d-9e55-c3f0f6fa402d/download/moz_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "moz_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/5e8d83a5-1210-49be-b7d9-cf286dbc15df/resource/f1d97232-4cb5-4083-b3cc-d192aa9bdcfe/download/moz_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "moz_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/5e8d83a5-1210-49be-b7d9-cf286dbc15df/resource/47ea3adb-8370-4aba-9f0f-bed6087199de/download/moz_admin_boundaries.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Mozambique - Accessibility Indicators",
+   "name": "mozambique-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/mozambique-accessibility-indicators",
+   "resources": [
+    {
+     "name": "MOZ_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/moz/MOZ_education_access.gpkg"
+    },
+    {
+     "name": "MOZ_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/moz/MOZ_education_access_long.csv"
+    },
+    {
+     "name": "MOZ_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/moz/MOZ_education_access_wide.csv"
+    },
+    {
+     "name": "MOZ_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/moz/MOZ_hospitals_access.gpkg"
+    },
+    {
+     "name": "MOZ_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/moz/MOZ_hospitals_access_long.csv"
+    },
+    {
+     "name": "MOZ_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/moz/MOZ_hospitals_access_wide.csv"
+    },
+    {
+     "name": "MOZ_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/moz/MOZ_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "MOZ_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/moz/MOZ_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Mozambique: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "highresolutionpopulationdensitymaps-moz",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/highresolutionpopulationdensitymaps-moz",
+   "resources": [
+    {
+     "name": "moz_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/fa47f9e0-ee19-4081-b325-f4672cada57d/resource/8debf6d1-970f-4c05-b075-e256e52b14b9/download/moz_general_2020_geotiff.zip"
+    },
+    {
+     "name": "moz_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/fa47f9e0-ee19-4081-b325-f4672cada57d/resource/b82f3bc2-a379-4230-a2e3-442a35b23ca7/download/moz_general_2020_csv.zip"
+    },
+    {
+     "name": "moz_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/fa47f9e0-ee19-4081-b325-f4672cada57d/resource/ee342b3a-d418-40a9-ae29-812fb118e648/download/moz_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "moz_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/fa47f9e0-ee19-4081-b325-f4672cada57d/resource/c73d781e-985c-48ab-ac5e-50a003fa52dc/download/moz_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "moz_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/fa47f9e0-ee19-4081-b325-f4672cada57d/resource/cb877103-6129-4fe1-ba92-f15ca0f03050/download/moz_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "moz_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/fa47f9e0-ee19-4081-b325-f4672cada57d/resource/a461bebf-5cc0-4cb1-9755-da1f9bd0328a/download/moz_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "moz_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/fa47f9e0-ee19-4081-b325-f4672cada57d/resource/67fff4d4-d94b-4736-b6c7-bf8e10b8b66d/download/moz_men_2020_csv.zip"
+    },
+    {
+     "name": "moz_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/fa47f9e0-ee19-4081-b325-f4672cada57d/resource/6624e88a-d394-4d15-8154-3f77c1d5a17f/download/moz_men_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Mozambique - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-mozambique",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-mozambique",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Mozambique",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a632c424-f6f7-4d61-aa22-507299724c37/resource/60a96252-23f4-4502-b870-8b0646538d46/download/social-protection-and-labor_moz.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Mozambique - Population Counts",
+   "name": "worldpop-population-counts-for-mozambique",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-mozambique",
+   "resources": [
+    {
+     "name": "moz_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/MOZ/moz_ppp_2020.tif"
+    },
+    {
+     "name": "moz_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/MOZ/moz_ppp_2019.tif"
+    },
+    {
+     "name": "moz_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/MOZ/moz_ppp_2018.tif"
+    },
+    {
+     "name": "moz_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/MOZ/moz_ppp_2017.tif"
+    },
+    {
+     "name": "moz_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/MOZ/moz_ppp_2016.tif"
+    },
+    {
+     "name": "moz_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/MOZ/moz_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "moz_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/MOZ/moz_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "moz_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/MOZ/moz_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Mozambique - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-mz-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-mz-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_MZ",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6eeba66d-e9a6-47b2-85f6-289fe96f1e8f/resource/0b02837f-4100-456e-8097-72318194c3be/download/indicator_data_mz.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Mozambique: Level 1 Exposure Data",
+   "name": "mozambique-level-1-exposure-data",
+   "org": "Global Earthquake Model Foundation",
+   "url": "https://data.humdata.org/dataset/mozambique-level-1-exposure-data",
+   "resources": [
+    {
+     "name": "MOZ_oed_exposure_20200811_hdx.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/953403ad-5a0e-4129-b237-d95490f9f455/resource/48542fd7-fbc5-4c61-999e-af3dce566f2f/download/moz_oed_exposure_20200811_hdx.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Mozambique: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "moz-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/moz-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/d12f44f8-553a-439f-9278-36c58726a954/resource/028fea7a-55dc-4ccf-86f0-033955d9abaf/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_moz.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/d12f44f8-553a-439f-9278-36c58726a954/resource/2c39db24-3968-49c1-9c06-4dca6afa68d3/download/ghs_pop_e2025_r2023a_54009_100_v1_0_moz.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "SADC Population Estimates",
+   "name": "sadc-population-estimates-06-july-2018",
+   "org": "Regional Vulnerability Assessment & Analysis Programme (inactive)",
+   "url": "https://data.humdata.org/dataset/sadc-population-estimates-06-july-2018",
+   "resources": [
+    {
+     "name": "SADC-Population-Estimates-July -2017.xlsx",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/4e41d91f-e039-4457-840c-f3188fc879fc/resource/4fa4698f-f4d5-4b49-b06b-fa3cc6fd0b57/download/sadc-population-estimates-july-2017.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.ine.gov.mz/",
+  "status": 0,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>",
+  "pages": []
+ },
+ "verdict": {
+  "hdx_datasets": 13,
+  "hdx_machine_readable": 7,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

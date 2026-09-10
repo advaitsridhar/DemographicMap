@@ -1,0 +1,710 @@
+{
+ "iso3": "ZMB",
+ "name": "Zambia",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "religion",
+    "ethnicity",
+    "language"
+   ],
+   "title": "2010 Census of Population and Housing -- National Analytical Report and Descriptive Tables (Volume 11 national; Volumes 1-10 provincial), with religion, ethnic group and predominant language of communication by province and district",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "province and district",
+   "geography_count": 72,
+   "matches_boundary_level": "admin1 (10 provinces, Muchinga included, matches the 10 drawn); admin2 does not match -- the 2010 frame has 72 districts and the boundary file draws 116 (post-2018 districts such as Ikelenge, Kanchibiya, Mushindano are splits)",
+   "url": "https://www.zamstats.gov.zm/",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://www.zamstats.gov.zm/",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "html",
+    "title": "Home - Zambia Statistics Agency",
+    "links_to_files": [],
+    "mentions": [
+     "census"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity",
+    "language"
+   ],
+   "title": "2022 Census of Population and Housing -- Summary Report / Analytical reports (if the items were retained), by province and district",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "province and district",
+   "geography_count": 116,
+   "matches_boundary_level": "admin1 (10) and admin2 (116 districts, the current frame the boundary file draws) -- if the fields were published",
+   "url": "https://www.zamstats.gov.zm/",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://www.zamstats.gov.zm/",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "html",
+    "title": "Home - Zambia Statistics Agency",
+    "links_to_files": [],
+    "mentions": [
+     "census"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Zambia",
+    "wikitext_bytes": 17009,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Zambia",
+    "wikitext_bytes": 26052,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 8,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "! style=\"width:80pt;\"|Total population<ref>{{cite web|last1=De Wulf|first1=Martin|title=Zambia 2015|url=https://populationpyramid.net/zambia/2015/|website=Population Pyramids of the World from 1950 to 2100}}</ref>",
+       "style=\"width:80pt;\"|Population aged 0–14 (%)",
+       "style=\"width:80pt;\"|Population aged 15–64 (%)",
+       "style=\"width:80pt;\"|Population aged 65+ (%)",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\" |Mid-year population",
+       "style=\"width:80pt;\" |Live births",
+       "style=\"width:80pt;\" |Deaths",
+       "style=\"width:80pt;\" |Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)",
+       "style=\"width:80pt;\"|Total fertility rate (TFR)",
+       "style=\"width:80pt;\"|Infant mortality (per 1000 live births)",
+       "style=\"width:80pt;\"|Life expectancy (in years)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=3| Total",
+       "colspan=3| Urban",
+       "colspan=3| Rural",
+       "{{abbr|CBR|Crude Birth Rate}}",
+       "{{abbr|TFR|Total Fertility Rate}}",
+       "{{abbr|WFR|Wanted Fertility Rate}}",
+       "{{abbr|CBR|Crude Birth Rate}}",
+       "{{abbr|TFR|Total Fertility Rate}}",
+       "{{abbr|WFR|Wanted Fertility Rate}}"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Province",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15-49 currently pregnant",
+       "style=\"width:100pt;\"| Mean number of children ever born to women age 40-49",
+       "style=\"width:100pt;\"| Religious Affiliation <ref>{{Cite report |title=2010 Census of population and housing |date=2010-12-01 |url=https://www.zamstats.gov.zm/phocadownload/2010_Census/2010%20Census%20of%20Population%20National%20Analytical%20Report.pdf |url-status=dead |publisher=Central Statistical Office |location=Lusaka |language=en |archive-url=https://web.archive.org/web/20190802193416/https://www.zamstats.gov.zm/phocadownload/2010_Census/2010%20Census%20of%20Population%20National%20Analytical%20Report.pdf |archive-date=2019-08-02}}</ref>{{Reference page|pages=19-20}}",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "Zambia (total) || 5.9",
+       "Period",
+       "Life expectancy in <br /> Years<ref>{{Cite web|url=https://esa.un.org/unpd/wpp/DataQuery/|title=World Population Prospects - Population Divi"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Religious Affiliation <ref>{{Cite report |title=2010 Census of population and housing |date=2010-12-01 |url=https://www.zamstats.gov.zm/phocadownload/2010_Census/2010%20Census%20of%20Population%20National%20Analytical%20Report.pdf |url-status=dead |publisher=Central Statistical Office |location=Lusaka |language=en |archive-url=https://web.archive.org/web/20190802193416/https://www.zamstats.gov.zm/phocadownload/2010_Census/2010%20Census%20of%20Population%20National%20Analytical%20Report.pdf |archive-date=2019-08-02}}</ref>{{Reference page|pages=19-20}}",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "Zambia (total) || 5.9",
+       "Period",
+       "Life expectancy in <br /> Years<ref>{{Cite web|url=https://esa.un.org/unpd/wpp/DataQuery/|title=World Population Prospects - Population Division - United Nations|website=esa.un.org|access-date=2018-08-26}}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in <br /> Years<ref>{{Cite web|url=https://esa.un.org/unpd/wpp/DataQuery/|title=World Population Prospects - Population Division - United Nations|website=esa.un.org|access-date=2018-08-26}}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Groups",
+       "Percentage"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Ikelenge",
+    "found": true,
+    "title": "Ikelenge District",
+    "url": "https://en.wikipedia.org/wiki/Ikelenge_District",
+    "wikitext_bytes": 4034,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Itezhi-Tezhi",
+    "found": true,
+    "title": "Itezhi-Tezhi (constituency)",
+    "url": "https://en.wikipedia.org/wiki/Itezhi-Tezhi_%28constituency%29",
+    "wikitext_bytes": 1767,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kanchibiya",
+    "found": true,
+    "title": "Kanchibiya",
+    "url": "https://en.wikipedia.org/wiki/Kanchibiya",
+    "wikitext_bytes": 1488,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Mbala",
+    "found": true,
+    "title": "Mbala Central",
+    "url": "https://en.wikipedia.org/wiki/Mbala_Central",
+    "wikitext_bytes": 2263,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Mulobezi",
+    "found": true,
+    "title": "Mulobezi (constituency)",
+    "url": "https://en.wikipedia.org/wiki/Mulobezi_%28constituency%29",
+    "wikitext_bytes": 2896,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Zambia: Languages",
+   "name": "zambia-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/zambia-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_ZMB_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/9b3033f1-9a6e-4052-94e1-6e35684d4ace/resource/4e6abe0b-05d7-4a7a-9589-e3b5d28e4f9f/download/clearglobal_language_use_zmb_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_ZMB_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/9b3033f1-9a6e-4052-94e1-6e35684d4ace/resource/66249c35-1109-4b1a-9fc1-113e1ab80329/download/clearglobal_language_use_zmb_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_ZMB_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/9b3033f1-9a6e-4052-94e1-6e35684d4ace/resource/ee9f834f-9a91-426a-b28d-8162761d2289/download/clearglobal_language_use_zmb_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Zambia: Road Surface Data",
+   "name": "zambia-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/zambia-road-surface-data",
+   "resources": [
+    {
+     "name": "Zambia GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_zmb_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Zambia GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_zmb_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Zambia: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-zambia",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-zambia",
+   "resources": [
+    {
+     "name": "kontur_boundaries_ZM_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_ZM_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_ZM_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_ZM_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_ZM_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_ZM_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Zambia - Subnational Administrative Boundaries",
+   "name": "cod-ab-zmb",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-zmb",
+   "resources": [
+    {
+     "name": "zmb_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/01c71cfd-32ff-4a32-a1dd-5909702c12db/resource/4b6d5411-2d6d-4c69-82c4-dbd7ce4a88f2/download/zmb_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "zmb_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/01c71cfd-32ff-4a32-a1dd-5909702c12db/resource/7e9c310d-b9d1-4f82-8ad5-09c1ce744482/download/zmb_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "zmb_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/01c71cfd-32ff-4a32-a1dd-5909702c12db/resource/bc27b2bb-34e1-42cf-95da-21d90abb0d11/download/zmb_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "zmb_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/01c71cfd-32ff-4a32-a1dd-5909702c12db/resource/ce1f0767-d702-41ea-9307-385c55b8bbf1/download/zmb_admin_boundaries.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Zambia - Subnational Population Statistics",
+   "name": "cod-ps-zmb",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-zmb",
+   "resources": [
+    {
+     "name": "ZMB_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/eade6bae-9be6-43f4-bbf0-75c49ccecb2e/resource/44b545cd-e9e8-4020-b525-46a130fa162d/download/zmb_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "zmb_admpop_2020.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/eade6bae-9be6-43f4-bbf0-75c49ccecb2e/resource/f2df3ff1-4d34-42a7-ba6a-3696e3127d0c/download/zmb_admpop_2020.xlsx"
+    },
+    {
+     "name": "zmb_admpop_adm0_2020_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/eade6bae-9be6-43f4-bbf0-75c49ccecb2e/resource/5061a588-fee0-444d-8a23-9927b9e83868/download/zmb_admpop_adm0_2020_v2.csv"
+    },
+    {
+     "name": "zmb_admpop_adm1_2020_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/eade6bae-9be6-43f4-bbf0-75c49ccecb2e/resource/ed9e753b-5dc6-4d96-9e9d-a44764d60280/download/zmb_admpop_adm1_2020_v2.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Zambia - Accessibility Indicators",
+   "name": "zambia-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/zambia-accessibility-indicators",
+   "resources": [
+    {
+     "name": "ZMB_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/zmb/ZMB_education_access.gpkg"
+    },
+    {
+     "name": "ZMB_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/zmb/ZMB_education_access_long.csv"
+    },
+    {
+     "name": "ZMB_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/zmb/ZMB_education_access_wide.csv"
+    },
+    {
+     "name": "ZMB_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/zmb/ZMB_hospitals_access.gpkg"
+    },
+    {
+     "name": "ZMB_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/zmb/ZMB_hospitals_access_long.csv"
+    },
+    {
+     "name": "ZMB_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/zmb/ZMB_hospitals_access_wide.csv"
+    },
+    {
+     "name": "ZMB_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/zmb/ZMB_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "ZMB_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/zmb/ZMB_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Zambia: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "highresolutionpopulationdensitymaps-zmb",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/highresolutionpopulationdensitymaps-zmb",
+   "resources": [
+    {
+     "name": "zmb_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0f8c218d-73f4-4d6b-b741-014f5d5a4e96/resource/f953c75d-7a68-4291-bac0-b49abd7eda40/download/zmb_general_2020_geotiff.zip"
+    },
+    {
+     "name": "zmb_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0f8c218d-73f4-4d6b-b741-014f5d5a4e96/resource/21f35c79-d26a-4c98-ba62-b9a5e2a23212/download/zmb_general_2020_csv.zip"
+    },
+    {
+     "name": "zmb_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0f8c218d-73f4-4d6b-b741-014f5d5a4e96/resource/3ca45979-8f89-4010-ad17-48b5976004b6/download/zmb_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "zmb_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0f8c218d-73f4-4d6b-b741-014f5d5a4e96/resource/84e361ce-1a32-4c4e-a28f-31c748b3a63d/download/zmb_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "zmb_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0f8c218d-73f4-4d6b-b741-014f5d5a4e96/resource/c99178c3-c8a8-415d-bad2-4142ec01acef/download/zmb_men_2020_csv.zip"
+    },
+    {
+     "name": "zmb_women_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0f8c218d-73f4-4d6b-b741-014f5d5a4e96/resource/a484d1b9-f1b0-43bb-aea8-012290c16075/download/zmb_women_2020_csv.zip"
+    },
+    {
+     "name": "zmb_women_of_reproductive_age_15_49_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0f8c218d-73f4-4d6b-b741-014f5d5a4e96/resource/f94b2626-70c9-4d4b-932d-90bf83e35b15/download/zmb_women_of_reproductive_age_15_49_2020_csv.zip"
+    },
+    {
+     "name": "zmb_youth_15_24_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/0f8c218d-73f4-4d6b-b741-014f5d5a4e96/resource/8eef0401-ea72-409b-8289-226ada239e3e/download/zmb_youth_15_24_2020_csv.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Zambia - Population Counts",
+   "name": "worldpop-population-counts-for-zambia",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-zambia",
+   "resources": [
+    {
+     "name": "zmb_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/ZMB/zmb_ppp_2020.tif"
+    },
+    {
+     "name": "zmb_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/ZMB/zmb_ppp_2019.tif"
+    },
+    {
+     "name": "zmb_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/ZMB/zmb_ppp_2018.tif"
+    },
+    {
+     "name": "zmb_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/ZMB/zmb_ppp_2017.tif"
+    },
+    {
+     "name": "zmb_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/ZMB/zmb_ppp_2016.tif"
+    },
+    {
+     "name": "zmb_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/ZMB/zmb_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "zmb_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/ZMB/zmb_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "zmb_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/ZMB/zmb_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "POMELO - Zambia High Resolution Population Density",
+   "name": "pomelo-zambia-high-resolution-population",
+   "org": "ETH Zürich, Photogrammetry and Remote Sensing",
+   "url": "https://data.humdata.org/dataset/pomelo-zambia-high-resolution-population",
+   "resources": [
+    {
+     "name": "zmb_pomelo.tiff",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/e65907b1-36c3-45eb-9d11-12cb03da8817/resource/c315dd19-1be0-42d2-94cd-3c7489a85e36/download/zmb_pomelo.tiff"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Zambia - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-zambia",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-zambia",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Zambia",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/23d3f6c9-fe9e-463b-a1e4-005ddc37defd/resource/2c3854dc-d511-47cd-9fb9-720d506ee749/download/social-protection-and-labor_zmb.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Zambia: Level 1 Exposure Data",
+   "name": "zambia-level-1-exposure-data",
+   "org": "Global Earthquake Model Foundation",
+   "url": "https://data.humdata.org/dataset/zambia-level-1-exposure-data",
+   "resources": [
+    {
+     "name": "ZMB_oed_exposure_20200811_hdx.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6dd5716d-b4d1-489c-800c-65b0dcb93b46/resource/e7f76c1c-6449-4e62-b238-cdc16ce23bec/download/zmb_oed_exposure_20200811_hdx.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Democratic Republic of the Congo and Zambia Gridded Population Dataset",
+   "name": "democratic-republic-of-the-congo-and-zambia-gridded-population-dataset",
+   "org": "U.S. Census Bureau",
+   "url": "https://data.humdata.org/dataset/democratic-republic-of-the-congo-and-zambia-gridded-population-dataset",
+   "resources": [
+    {
+     "name": "DRC_Zambia_gridded_population_2022.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/8b9ff9b4-9229-40ea-b9c9-cd2a36f6ccab/resource/b2ef365f-db0e-4c51-b28e-e306c462e9fd/download/drc_zambia_gridded_population_2022.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.zamstats.gov.zm/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.zamstats.gov.zm/census/",
+    "status": 200,
+    "kind": "html",
+    "title": "Census - Zambia Statistics Agency",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.zamstats.gov.zm/population-census/",
+    "status": 200,
+    "kind": "html",
+    "title": "Population Census - Zambia Statistics Agency",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.zamstats.gov.zm/economic-census/",
+    "status": 200,
+    "kind": "html",
+    "title": "Economic Census - Zambia Statistics Agency",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.zamstats.gov.zm/zamstats-hosts-malawi-national-statistical-office-for-census-knowledge-exchange/",
+    "status": 200,
+    "kind": "html",
+    "title": "Zamstats Hosts Malawi National Statistical Office for Census Knowledge Exchange - Zambia Statistics Agency",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.zamstats.gov.zm/population-and-social-statistics/",
+    "status": 200,
+    "kind": "html",
+    "title": "Population and Social Statistics - Zambia Statistics Agency",
+    "files": [
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/1999-Child-Labour-Report-Final.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/2008-Labourforce-Survey-Report-1st-September-2011.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/2008-Quarterly-Employment-Inquiry.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/2012-Child-Labour-Report.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/2012-Labour-Force-Report.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/2014-LFS-Report.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/2014_LFS_Presentations.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/2017-Labour-Force-Survey-Report.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/2018-Labour-Force-Survey-Report.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/2018-ZM_Child-Labour-Report-1.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/2019-Labour-Fource-Survey.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/2019-Q1-Labour-Force-Survey.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/2020-Labour-Force-Survey.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/2020-National-Skills-Survey.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/2021-Labour-Force-Survey-NHPP.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/2022-CPH-Institutional-Qre-FV_15June2022.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/2022-Census-Population-Housing-Qre_FV_5June2022-1.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/2022-Census-of-Population-and-Housing-Preliminary.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2023/12/ZM_2022-Labour-Force-Survey-Report_01.09.2023-1.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2024/01/2005-Zambia-HIV-AIDS-Survey-Key-Findings.pdf",
+     "http://www.zamstats.gov.zm/wp-content/uploads/2024/01/ZAMPHIA-2021-Final-Report.pdf",
+     "https://www.zamstats.gov.zm/Publications/Revised%202022%20Census%20of%20Population%20and%20Housing%20Summary%20Report%20Volume%20II.pdf",
+     "https://www.zamstats.gov.zm/wp-content/uploads/2023/12/1996-ZDHS-Report.pdf",
+     "https://www.zamstats.gov.zm/wp-content/uploads/2023/12/2001-02-ZDHS-Report.pdf",
+     "https://www.zamstats.gov.zm/wp-content/uploads/2023/12/2002-Zambia-DHS-EdData-Survey.pdf"
+    ],
+    "mentions": [
+     "census",
+     "religion"
+    ]
+   }
+  ],
+  "title": "Home - Zambia Statistics Agency",
+  "matching_links": 5
+ },
+ "verdict": {
+  "hdx_datasets": 12,
+  "hdx_machine_readable": 6,
+  "nso_files_found": 25,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "2/2",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

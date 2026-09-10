@@ -1,0 +1,585 @@
+{
+ "iso3": "VEN",
+ "name": "Venezuela",
+ "tier_proposed": "B",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Venezuela",
+    "wikitext_bytes": 23155,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 3,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Affiliation",
+       "colspan=\"2\"|% of Venezuela population"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Region",
+       "Early pioneer missions and denominations"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "Protestant or Evangelical branch",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 6
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Venezuela",
+    "wikitext_bytes": 57902,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Religion"
+    ],
+    "wikitables": 6,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "! width=\"70pt\"|Total population",
+       "width=\"70pt\"|Proportion<br />aged 0–14<br />(%)",
+       "width=\"70pt\"|Proportion<br />aged 15–64<br />(%)",
+       "width=\"70pt\"|Proportion<br />aged 65+<br />(%)",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Per cent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       ""
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"70\"|Year<br/><ref name=\"unstats.un.org\">{{cite web|url=http://unstats.un.org/unsd/demographic/products/dyb/dyb2.htm|title=United Nations Statistics Division – Demographic and Social Statistics|publisher=United Nations}}</ref><ref>{{cite web|url=http://unstats.un.org/unsd/demographic/products/vitstats/serATab3.pdf|title=3. Live births, deaths, and infant deaths, latest available year (2002–2016)|publisher=United Nations|access-date=3 October 2017}}</ref><ref>{{cite web |title=Demographic and Social Statistics |url=https://unstats.un.org/unsd/demographic-social/crvs/ |website=UN Statistics Division |access-date=29 July 2020}}</ref>",
+       "width=\"70\"|Population",
+       "width=\"70\"|Live births",
+       "width=\"70\"|Deaths",
+       "width=\"70\"|Natural increase",
+       "width=\"70\"|Crude birth rate",
+       "width=\"70\"|Crude death rate",
+       "width=\"70\"|Rate of natural increase",
+       "width=\"70\"|TFR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "rowspan=2|Period",
+       "rowspan=2|Live births<br />per year",
+       "rowspan=2|Deaths<br />per year",
+       "rowspan=2|Natural change<br />per year",
+       "rowspan=2|CBR*",
+       "rowspan=2|CDR*",
+       "rowspan=2|NC*",
+       "rowspan=2|TFR*",
+       "rowspan=2|IMR*",
+       "colspan=3|Life expectancy"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "Affiliation",
+       "colspan=\"2\"|% of Venezuela population",
+       "Total",
+       "{{percentage bar|100|c=grey}}"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Baralt",
+    "found": true,
+    "title": "Baralt Theatre",
+    "url": "https://en.wikipedia.org/wiki/Baralt_Theatre",
+    "wikitext_bytes": 11641,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Biruaca",
+    "found": true,
+    "title": "Biruaca",
+    "url": "https://en.wikipedia.org/wiki/Biruaca",
+    "wikitext_bytes": 840,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Boconó",
+    "found": true,
+    "title": "Boconó",
+    "url": "https://en.wikipedia.org/wiki/Bocon%C3%B3",
+    "wikitext_bytes": 7800,
+    "infobox_params": [
+     "blank1_name"
+    ],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Camaguán",
+    "found": true,
+    "title": "Camaguán",
+    "url": "https://en.wikipedia.org/wiki/Camagu%C3%A1n",
+    "wikitext_bytes": 9784,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Falcón",
+    "found": true,
+    "title": "Falcón",
+    "url": "https://en.wikipedia.org/wiki/Falc%C3%B3n",
+    "wikitext_bytes": 44602,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 1,
+    "verdict": "composition"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Venezuela: Languages",
+   "name": "venezuela-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/venezuela-languages",
+   "resources": [
+    {
+     "name": "metadata.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/39a09969-9c8f-4593-9228-7bf8dd801923/resource/2c5f693c-5275-4d23-88e3-60849d284892/download/metadata.pdf"
+    },
+    {
+     "name": "VE_lang_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/39a09969-9c8f-4593-9228-7bf8dd801923/resource/03fcb424-4149-49c2-9a3f-84536870ad12/download/ve_lang_admin0.csv"
+    },
+    {
+     "name": "VE_lang_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/39a09969-9c8f-4593-9228-7bf8dd801923/resource/a339f784-61e9-48ba-b245-16581e769042/download/ve_lang_admin1.csv"
+    },
+    {
+     "name": "VE_lang_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/39a09969-9c8f-4593-9228-7bf8dd801923/resource/1681f653-5c98-42ae-87b9-fdd118837f26/download/ve_lang_admin2.csv"
+    },
+    {
+     "name": "VE_lang_v01.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/39a09969-9c8f-4593-9228-7bf8dd801923/resource/648b4924-14c3-47d8-a323-e10795d026c1/download/ve_lang_v05.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Venezuela (Bolivarian Republic of): Road Surface Data",
+   "name": "venezuela-bolivarian-republic-of-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/venezuela-bolivarian-republic-of-road-surface-data",
+   "resources": [
+    {
+     "name": "Venezuela (bolivarian republic of) GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_ven_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Venezuela (bolivarian republic of) GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_ven_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Venezuela: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-venezuela",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-venezuela",
+   "resources": [
+    {
+     "name": "kontur_boundaries_VE_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_VE_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_VE_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_VE_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_VE_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_VE_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Migrants in Venezuela - Venezuelan Census",
+   "name": "migrants-in-venezuela",
+   "org": "Observatorio Latinoamericano de Desarrollo Sostenible",
+   "url": "https://data.humdata.org/dataset/migrants-in-venezuela",
+   "resources": [
+    {
+     "name": "Migrants in Venezuela in 2011.xls",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/0173f300-7cc0-4706-bc20-eb56ab5fde52/resource/b6deff2d-8873-47cf-b8d5-5162cf15e487/download/migrants-in-venezuela-in-2011.xls"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Venezuela (Bolivarian Republic of) - Subnational Population Statistics",
+   "name": "cod-ps-ven",
+   "org": "OCHA Venezuela",
+   "url": "https://data.humdata.org/dataset/cod-ps-ven",
+   "resources": [
+    {
+     "name": "VEN_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/5c74e336-3162-44da-8c52-d4818c31c37b/resource/dd55e35d-e6e2-4bd2-ae4f-a471e94e4651/download/ven_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "ven_admpop_2011_v2.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/5c74e336-3162-44da-8c52-d4818c31c37b/resource/88fdaeaf-61e8-465a-8830-1751f6d06b86/download/ven_admpop_2011_v2.xlsx"
+    },
+    {
+     "name": "ven_admpop_adm0_2011_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5c74e336-3162-44da-8c52-d4818c31c37b/resource/7e16d845-40dc-418d-87a2-4a5cce9b32c7/download/ven_admpop_adm0_2011_v2.csv"
+    },
+    {
+     "name": "ven_admpop_adm1_2011_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5c74e336-3162-44da-8c52-d4818c31c37b/resource/4b1de050-b5a5-48d9-aa54-5bc8ca96ef4b/download/ven_admpop_adm1_2011_v2.csv"
+    },
+    {
+     "name": "ven_admpop_adm2_2011_v3.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5c74e336-3162-44da-8c52-d4818c31c37b/resource/08faf516-e8cd-4834-8ac5-5a5ec081d0c3/download/ven_admpop_adm2_2011_v3.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Venezuela - Accessibility Indicators",
+   "name": "venezuela-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/venezuela-accessibility-indicators",
+   "resources": [
+    {
+     "name": "VEN_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ven/VEN_education_access.gpkg"
+    },
+    {
+     "name": "VEN_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ven/VEN_education_access_long.csv"
+    },
+    {
+     "name": "VEN_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ven/VEN_education_access_wide.csv"
+    },
+    {
+     "name": "VEN_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ven/VEN_hospitals_access.gpkg"
+    },
+    {
+     "name": "VEN_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ven/VEN_hospitals_access_long.csv"
+    },
+    {
+     "name": "VEN_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ven/VEN_hospitals_access_wide.csv"
+    },
+    {
+     "name": "VEN_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ven/VEN_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "VEN_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ven/VEN_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Venezuela, RB - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-venezuela-rb",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-venezuela-rb",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Venezuela, RB",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/65b9f3f7-f726-4ed4-82bd-c1c71e164910/resource/97876ddb-edf4-4c70-8c96-497ffdd4efe4/download/social-protection-and-labor_ven.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Venezuela Earthquake: Sentinel-1 Likelihood of Damaged Structures",
+   "name": "sentinel-1-likelihood-of-damaged-structures-experimental-for-the-venezuela-earthquake-june-2026",
+   "org": "Conflict Ecology",
+   "url": "https://data.humdata.org/dataset/sentinel-1-likelihood-of-damaged-structures-experimental-for-the-venezuela-earthquake-june-2026",
+   "resources": [
+    {
+     "name": "EMSR884_damage_confidence_20260701_v1.geojson",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/222eef8e-c4fe-46b2-a3d5-bb4b90cf872b/resource/31b7bc3d-8579-4ee3-a7ce-018129d31189/download/emsr884_damage_confidence_20260701_v1.geojson"
+    },
+    {
+     "name": "EMSR884_damage_confidence_20260701_v1.gpkg",
+     "format": "Geopackage",
+     "url": "https://data.humdata.org/dataset/222eef8e-c4fe-46b2-a3d5-bb4b90cf872b/resource/4466da86-384f-488f-812a-ae69f36a3582/download/emsr884_damage_confidence_20260701_v1.gpkg"
+    },
+    {
+     "name": "EMSR884_adm2_damage_pct_20260701_v1.gpkg",
+     "format": "Geopackage",
+     "url": "https://data.humdata.org/dataset/222eef8e-c4fe-46b2-a3d5-bb4b90cf872b/resource/89e21404-89b4-48a5-b413-257fa1ea463a/download/emsr884_adm2_damage_pct_20260701_v1.gpkg"
+    },
+    {
+     "name": "EMSR884_analyzed_area_20260701_v1.gpkg",
+     "format": "Geopackage",
+     "url": "https://data.humdata.org/dataset/222eef8e-c4fe-46b2-a3d5-bb4b90cf872b/resource/806e2d14-f9b4-4f8a-b341-f3b6810b1746/download/emsr884_analyzed_area_20260701_v1.gpkg"
+    },
+    {
+     "name": "EMSR884_analyzed_area_20260701_v1.gpkg",
+     "format": "Geopackage",
+     "url": "https://data.humdata.org/dataset/222eef8e-c4fe-46b2-a3d5-bb4b90cf872b/resource/b23efc7e-e12d-46a2-9389-b0baa23a1897/download/emsr884_analyzed_area_20260701_v1.gpkg"
+    },
+    {
+     "name": "EMSR884_analyzed_area_20260701_v1.geojson",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/222eef8e-c4fe-46b2-a3d5-bb4b90cf872b/resource/adb9539b-4538-443b-8efe-6bc6897e6d0b/download/emsr884_analyzed_area_20260701_v1.geojson"
+    },
+    {
+     "name": "EMSR884_damage_20260701_v1_slide_deck.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/222eef8e-c4fe-46b2-a3d5-bb4b90cf872b/resource/25b94500-c691-41a4-a56f-2936be204796/download/emsr884_damage_20260701_v1_slide_deck.pdf"
+    },
+    {
+     "name": "EMSR884_damage_20260701_v1_slide_deck_ES.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/222eef8e-c4fe-46b2-a3d5-bb4b90cf872b/resource/03b8825c-d891-4311-a4ef-c149c45a44ad/download/emsr884_damage_20260701_v1_slide_deck_es.pdf"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Venezuela (Bolivarian Republic of): Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "ven-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/ven-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/eb38978a-9e62-4c86-bf1f-1c1a66afa5d5/resource/27e23952-8ce3-4eb4-a430-1d9f20cbaa1e/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_ven.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/eb38978a-9e62-4c86-bf1f-1c1a66afa5d5/resource/cf1bb0b2-01b1-40ca-aea7-5d045bc028cc/download/ghs_pop_e2025_r2023a_54009_100_v1_0_ven.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Venezuela - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-ve-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-ve-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_VE",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/f88342af-9472-494a-88a4-57af5fefe3d3/resource/a5681f5f-6080-4a60-8557-94efd2b064a1/download/indicator_data_ve.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Venezuela (Bolivarian Republic of) - Population Counts",
+   "name": "worldpop-population-counts-for-venezuela-bolivarian-republic-of",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-venezuela-bolivarian-republic-of",
+   "resources": [
+    {
+     "name": "ven_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/VEN/ven_ppp_2020.tif"
+    },
+    {
+     "name": "ven_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/VEN/ven_ppp_2019.tif"
+    },
+    {
+     "name": "ven_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/VEN/ven_ppp_2018.tif"
+    },
+    {
+     "name": "ven_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/VEN/ven_ppp_2017.tif"
+    },
+    {
+     "name": "ven_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/VEN/ven_ppp_2016.tif"
+    },
+    {
+     "name": "ven_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/VEN/ven_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "ven_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/VEN/ven_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "ven_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/VEN/ven_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Venezuela (Bolivarian Republic of): WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-ven",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-ven",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-ve-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-ve-latest.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "http://www.ine.gov.ve/",
+  "status": 0,
+  "error": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+  "pages": []
+ },
+ "verdict": {
+  "hdx_datasets": 12,
+  "hdx_machine_readable": 6,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "1/5"
+ }
+}

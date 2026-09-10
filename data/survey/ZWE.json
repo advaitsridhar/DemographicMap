@@ -1,0 +1,733 @@
+{
+ "iso3": "ZWE",
+ "name": "Zimbabwe",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "IPUMS-International - Zimbabwe 1992, 2002, 2012 census samples",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "province and district",
+   "geography_count": null,
+   "matches_boundary_level": "admin1; admin2 partially",
+   "url": "https://international.ipums.org/",
+   "status": 200,
+   "content_type": "text/html",
+   "final_url": "https://international.ipums.org/international/",
+   "error": null,
+   "body": {
+    "bytes_read": 13024,
+    "kind": "html",
+    "title": "IPUMS International",
+    "links_to_files": [],
+    "mentions": [
+     "census"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Zimbabwe",
+    "wikitext_bytes": 14371,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Zimbabwe",
+    "wikitext_bytes": 29921,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 8,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Year",
+       "Black",
+       "White",
+       "Coloured",
+       "Asian",
+       "Year",
+       "Black",
+       "White",
+       "! style=\"width:80px;\"|Total population",
+       "style=\"width:80px;\"|Population aged 0–14 (%)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 33
+     },
+     {
+      "header": [
+       "Year",
+       "Black",
+       "White",
+       "! style=\"width:80px;\"|Total population",
+       "style=\"width:80px;\"|Population aged 0–14 (%)",
+       "style=\"width:80px;\"|Population aged 15–64 (%)",
+       "style=\"width:80px;\"|Population aged 65+ (%)",
+       "style=\"width:80pt;\"|Age group",
+       "style=\"width:80pt;\"|Male",
+       "style=\"width:80pt;\"|Female"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 32
+     },
+     {
+      "header": [
+       "! style=\"width:80px;\"|Total population",
+       "style=\"width:80px;\"|Population aged 0–14 (%)",
+       "style=\"width:80px;\"|Population aged 15–64 (%)",
+       "style=\"width:80px;\"|Population aged 65+ (%)",
+       "style=\"width:80pt;\"|Age group",
+       "style=\"width:80pt;\"|Male",
+       "style=\"width:80pt;\"|Female",
+       "style=\"width:80pt;\"|Total",
+       "style=\"width:80pt;\"|%",
+       "style=\"width:50px;\"|Age group"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 39
+     },
+     {
+      "header": [
+       "style=\"width:80pt;\"|Age group",
+       "style=\"width:80pt;\"|Male",
+       "style=\"width:80pt;\"|Female",
+       "style=\"width:80pt;\"|Total",
+       "style=\"width:80pt;\"|%",
+       "style=\"width:50px;\"|Age group",
+       "style=\"width:80pt;\"|Male",
+       "style=\"width:80px;\"|Female",
+       "style=\"width:80px;\"|Total",
+       "style=\"width:50px;\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [
+       "style=\"width:70px;\"|Period",
+       "style=\"width:80px;\"|Mid-year Population",
+       "style=\"width:70px;\"|Live births",
+       "style=\"width:70px;\"|Deaths",
+       "style=\"width:70px;\"|Natural change",
+       "style=\"width:70px;\"|CBR*",
+       "style=\"width:70px;\"|CDR*",
+       "style=\"width:70px;\"|NC*",
+       "style=\"width:70px;\"|TFR*",
+       "style=\"width:70px;\"|IMR*"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "style=\"width:70pt;\"| Year",
+       "style=\"width:50pt;\"| CBR (Total)",
+       "style=\"width:50pt;\"| TFR (Total)",
+       "style=\"width:50pt;\"| CBR (Urban)",
+       "style=\"width:50pt;\"| TFR (Urban)",
+       "style=\"width:50pt;\"| CBR (Rural)",
+       "style=\"width:50pt;\"| TFR (Rural)",
+       "style=\"width:100pt;\"| Province",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15–49 currently pregnant"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Province",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15–49 currently pregnant",
+       "style=\"width:100pt;\"| Mean number of children ever born to women age 40–49",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Beitbridge",
+    "found": true,
+    "title": "Beitbridge",
+    "url": "https://en.wikipedia.org/wiki/Beitbridge",
+    "wikitext_bytes": 14137,
+    "infobox_params": [
+     "language"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   },
+   {
+    "shape_name": "Buhera",
+    "found": true,
+    "title": "Buhera District",
+    "url": "https://en.wikipedia.org/wiki/Buhera_District",
+    "wikitext_bytes": 8435,
+    "infobox_params": [],
+    "sections": [
+     "Population"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Chipinge",
+    "found": true,
+    "title": "Chipinge District",
+    "url": "https://en.wikipedia.org/wiki/Chipinge_District",
+    "wikitext_bytes": 7853,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Gwanda",
+    "found": true,
+    "title": "Gwanda District",
+    "url": "https://en.wikipedia.org/wiki/Gwanda_District",
+    "wikitext_bytes": 3530,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Hwedza",
+    "found": true,
+    "title": "Wedza District",
+    "url": "https://en.wikipedia.org/wiki/Wedza_District",
+    "wikitext_bytes": 12337,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Zimbabwe: Languages",
+   "name": "zimbabwe-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/zimbabwe-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_ZWE_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/d18679f7-3aae-490e-81c4-a0d31466abe9/resource/53132fcc-3b92-428f-8b5a-7a15fd53b12d/download/clearglobal_language_use_zwe_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_ZWE_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/d18679f7-3aae-490e-81c4-a0d31466abe9/resource/22ca5cbb-053d-4b0e-9c11-d1db7c81f167/download/clearglobal_language_use_zwe_admin1.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Zimbabwe - Elevation Model",
+   "name": "zimbabwe-elevation-model",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/zimbabwe-elevation-model",
+   "resources": [
+    {
+     "name": "pa_srtm_dem_all.zip",
+     "format": "XML",
+     "url": "https://data.humdata.org/dataset/9948307c-73c0-4b48-b036-5b5372f6a71e/resource/d94934ea-2ab6-416e-bd55-c62096e7bd9c/download/pa_srtm_dem_all.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Zimbabwe - Health Institutions",
+   "name": "zimbabwe-health",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/zimbabwe-health",
+   "resources": [
+    {
+     "name": "zwe_health_facility_mohcw.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/18be64a7-4f9c-46a3-a8f4-5a84a3901dc3/resource/aec035fd-84af-4ffd-9bcb-72bd3bc159d8/download/zwe_health_facility_mohcw.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Zimbabwe - Populated Places",
+   "name": "zimbabwe-settlements",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/zimbabwe-settlements",
+   "resources": [
+    {
+     "name": "zwe_settlements_250k_cso.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/2d25b1dd-e35c-474b-8d74-5d705f19b12d/resource/1df5ef36-a689-4716-b793-faf9a2860614/download/zwe_settlements_250k_cso.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Zimbabwe: Road Surface Data",
+   "name": "zimbabwe-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/zimbabwe-road-surface-data",
+   "resources": [
+    {
+     "name": "Zimbabwe GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_zwe_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Zimbabwe GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_zwe_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Zimbabwe: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-zimbabwe",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-zimbabwe",
+   "resources": [
+    {
+     "name": "kontur_boundaries_ZW_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_ZW_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_ZW_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_ZW_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_ZW_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_ZW_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Zimbabwe - Subnational Administrative Boundaries",
+   "name": "cod-ab-zwe",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-zwe",
+   "resources": [
+    {
+     "name": "zwe_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/f5c4f4e4-a3c8-4d12-891f-d28d74ce04d5/resource/0de755e9-9c62-4d58-afaf-42bed7f56dac/download/zwe_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "zwe_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/f5c4f4e4-a3c8-4d12-891f-d28d74ce04d5/resource/cfcbb387-5acd-4869-ae33-45873e7bfb92/download/zwe_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "zwe_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/f5c4f4e4-a3c8-4d12-891f-d28d74ce04d5/resource/8e6f53f6-1969-450f-8767-16b940a2c233/download/zwe_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "zwe_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/f5c4f4e4-a3c8-4d12-891f-d28d74ce04d5/resource/dc49b48f-268a-4d5b-8aed-e6c65685614a/download/zwe_admin_boundaries.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Zimbabwe - Subnational Population Statistics",
+   "name": "cod-ps-zwe",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-zwe",
+   "resources": [
+    {
+     "name": "ZWE_CODPS_QA_2023.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/4acece15-fd70-455f-b1b7-c63cf0793352/resource/ad88b8fe-58d2-4b4a-9e4a-cb88da41c2a6/download/zwe_codps_qa_2023.pdf"
+    },
+    {
+     "name": "ZWE_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/4acece15-fd70-455f-b1b7-c63cf0793352/resource/bfd18896-4d3c-476c-a032-26eaca52403d/download/zwe_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "zwe_admpop_2023.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/4acece15-fd70-455f-b1b7-c63cf0793352/resource/93e5e75f-29eb-474b-91b4-8be676ca7969/download/zwe_admpop_2023.xlsx"
+    },
+    {
+     "name": "zwe_admpop_adm0_2023.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4acece15-fd70-455f-b1b7-c63cf0793352/resource/58ea973d-4ab3-4aee-8e3e-6347be70e892/download/zwe_admpop_adm0_2023.csv"
+    },
+    {
+     "name": "zwe_admpop_adm1_2023.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4acece15-fd70-455f-b1b7-c63cf0793352/resource/65bb7e44-aa18-4a5c-9da8-b145530478c2/download/zwe_admpop_adm1_2023.csv"
+    },
+    {
+     "name": "zwe_admpop_adm2_2023.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4acece15-fd70-455f-b1b7-c63cf0793352/resource/9ac14133-8f69-4edf-820f-042d0f93af25/download/zwe_admpop_adm2_2023.csv"
+    },
+    {
+     "name": "zwe_admpop_2022.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/4acece15-fd70-455f-b1b7-c63cf0793352/resource/5fe26eb2-8842-4f4d-b425-14ad3abc1b12/download/zwe_admpop_2022.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Zimbabwe: Baseline population",
+   "name": "zimbabwe-baseline-population-projection",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/zimbabwe-baseline-population-projection",
+   "resources": [
+    {
+     "name": "Zimbabwe Baseline Population.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/c04895fd-c97b-4eb5-a82d-6a99d5f67a9e/resource/a10e7b0b-e14e-4536-9b82-eb93ac2f5485/download/zimbabwe-baseline-population.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Zimbabwe - Accessibility Indicators",
+   "name": "zimbabwe-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/zimbabwe-accessibility-indicators",
+   "resources": [
+    {
+     "name": "ZWE_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/zwe/ZWE_education_access.gpkg"
+    },
+    {
+     "name": "ZWE_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/zwe/ZWE_education_access_long.csv"
+    },
+    {
+     "name": "ZWE_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/zwe/ZWE_education_access_wide.csv"
+    },
+    {
+     "name": "ZWE_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/zwe/ZWE_hospitals_access.gpkg"
+    },
+    {
+     "name": "ZWE_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/zwe/ZWE_hospitals_access_long.csv"
+    },
+    {
+     "name": "ZWE_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/zwe/ZWE_hospitals_access_wide.csv"
+    },
+    {
+     "name": "ZWE_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/zwe/ZWE_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "ZWE_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/zwe/ZWE_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Zimbabwe - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-zimbabwe",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-zimbabwe",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Zimbabwe",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6a588a67-278b-476e-8640-ff3f8a7c4da7/resource/0d903878-32e6-4cbc-a1d7-f56b5cc8e5a9/download/social-protection-and-labor_zwe.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Zimbabwe - Population Counts",
+   "name": "worldpop-population-counts-for-zimbabwe",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-zimbabwe",
+   "resources": [
+    {
+     "name": "zwe_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/ZWE/zwe_ppp_2020.tif"
+    },
+    {
+     "name": "zwe_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/ZWE/zwe_ppp_2019.tif"
+    },
+    {
+     "name": "zwe_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/ZWE/zwe_ppp_2018.tif"
+    },
+    {
+     "name": "zwe_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/ZWE/zwe_ppp_2017.tif"
+    },
+    {
+     "name": "zwe_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/ZWE/zwe_ppp_2016.tif"
+    },
+    {
+     "name": "zwe_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/ZWE/zwe_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "zwe_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/ZWE/zwe_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "zwe_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/ZWE/zwe_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Zimbabwe: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "highresolutionpopulationdensitymaps-zwe",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/highresolutionpopulationdensitymaps-zwe",
+   "resources": [
+    {
+     "name": "zwe_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/2c46e768-4512-4f7c-b6cc-4023f838dcff/resource/c3faed69-ef22-44f5-9e50-08a9a0968001/download/zwe_general_2020_geotiff.zip"
+    },
+    {
+     "name": "zwe_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/2c46e768-4512-4f7c-b6cc-4023f838dcff/resource/fa63035d-77d9-4d3e-9b6d-75e6be7ddfd1/download/zwe_general_2020_csv.zip"
+    },
+    {
+     "name": "zwe_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/2c46e768-4512-4f7c-b6cc-4023f838dcff/resource/0a5674b6-6476-40f4-906f-f3a651ce48dd/download/zwe_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "zwe_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/2c46e768-4512-4f7c-b6cc-4023f838dcff/resource/d4655893-7188-4658-8d8b-f7fd765519f2/download/zwe_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "zwe_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/2c46e768-4512-4f7c-b6cc-4023f838dcff/resource/e824bb3f-c4eb-4221-b2a9-f858505bd613/download/zwe_men_2020_csv.zip"
+    },
+    {
+     "name": "zwe_women_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/2c46e768-4512-4f7c-b6cc-4023f838dcff/resource/64b707e4-89bb-4d11-8a51-ed5c1bda5cc3/download/zwe_women_2020_csv.zip"
+    },
+    {
+     "name": "zwe_women_of_reproductive_age_15_49_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/2c46e768-4512-4f7c-b6cc-4023f838dcff/resource/5e7343a1-af3e-44df-86ed-26ce2e221478/download/zwe_women_of_reproductive_age_15_49_2020_csv.zip"
+    },
+    {
+     "name": "zwe_youth_15_24_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/2c46e768-4512-4f7c-b6cc-4023f838dcff/resource/1b34e98a-ff41-447a-bb58-0d66c9c9c580/download/zwe_youth_15_24_2020_csv.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Zimbabwe - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-zw-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-zw-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_ZW",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/083e17f5-3d5c-4225-b8bb-d26c4c42a111/resource/f54a1612-aec3-41ad-88f0-231afaf7e150/download/indicator_data_zw.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Zimbabwe: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-zwe",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-zwe",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-zw-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-zw-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Zimbabwe: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "zwe-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/zwe-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/9befff21-f81d-43f1-9fcb-15b09a5f9103/resource/ca0feb6a-149d-4dd0-afb1-a681bf37a8ee/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_zwe.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/9befff21-f81d-43f1-9fcb-15b09a5f9103/resource/a712437c-f0ce-46ea-a4c8-ec01a8041ee4/download/ghs_pop_e2025_r2023a_54009_100_v1_0_zwe.tif"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.zimstat.co.zw/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://zimstat.co.zw/demography-and-social-statistics-division/",
+    "status": 200,
+    "kind": "html",
+    "title": "Demography and Social Statistics Division - ZIMSTAT",
+    "files": [],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://zimstat.co.zw/population-census/",
+    "status": 200,
+    "kind": "html",
+    "title": "Population Census - ZIMSTAT",
+    "files": [
+     "https://www.zimstat.co.zw/wp-content/uploads//Census/2022_POPULATION_PROJECTION_REPORT.pdf",
+     "https://www.zimstat.co.zw/wp-content/uploads//Census/2022_Population_Distribution_by_District_Ward_SexandHouseholds_23012023.pdf",
+     "https://www.zimstat.co.zw/wp-content/uploads/Census/2022_PHC_Report_27012023_Final.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://zimstat.co.zw/economic-census/",
+    "status": 200,
+    "kind": "html",
+    "title": "Economic Census - ZIMSTAT",
+    "files": [
+     "https://www.zimstat.co.zw/wp-content/uploads/production/EconomicCensus/EC2025_PRESENTATION.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   }
+  ],
+  "title": "Home - ZIMSTAT",
+  "matching_links": 3
+ },
+ "verdict": {
+  "hdx_datasets": 16,
+  "hdx_machine_readable": 7,
+  "nso_files_found": 4,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "1/1",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

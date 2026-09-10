@@ -1,0 +1,641 @@
+{
+ "iso3": "TCD",
+ "name": "Chad",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "RGPH2 2009 -- Résultats globaux définitifs and thematic analysis volumes, tables by region (and department)",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "region (22 regions + N'Djamena at census time)",
+   "geography_count": 23,
+   "matches_boundary_level": "admin1 (23 drawn: Ennedi-Ouest, Hadjer-Lamis, Kanem, Logone Oriental, Mayo-Kebbi Est, Sila ... -- the post-2008 22-region + capital frame, renamed 'provinces' in 2018 with the same cut; note Ennedi was split into Ennedi-Est/Ouest in 2012, after the census, so the census may show 22 + N'Djamena = 23 only if Ennedi-Ouest is drawn from a re-issued table); admin2 (70 departments drawn) only partially -- the 2009 census reported ~61 departments and Chad has re-cut departments repeatedly since",
+   "url": "https://www.inseed.td/",
+   "status": 200,
+   "content_type": "text/html",
+   "final_url": "https://www.inseed.td/",
+   "error": null,
+   "body": {
+    "bytes_read": 3239,
+    "kind": "html",
+    "title": "INSEED - Institut National de la Statistique et des Études Économiques et Démographiques",
+    "links_to_files": [],
+    "mentions": [
+     "language"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Chad",
+    "wikitext_bytes": 29336,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 2,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\" |Religion",
+       "colspan=\"2\" |1964<ref name=\":3\">{{Cite book|last=Radončić|first=Edin|date=2013|others=Translated by Muhamed Durmić|title=World Almanac of the Demographic History of Muslims|journal=|publication-place=Sarajevo, Bosnia and Herzegovina|pages=212|isbn=978-9958-534-47-8|quote=According to this [1964] census, 1 035 450 people or 41.02% of the total of 2 524 370 people stated Islam as their religion.}}</ref>",
+       "colspan=\"2\" |1993<ref name=\"1993census\" />",
+       "colspan=\"2\" |2009<ref name=\"2009census\" />",
+       "#",
+       "%",
+       "#",
+       "%",
+       "#",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |",
+       "rowspan=\"2\" | Muslim",
+       "colspan=\"4\" | Christian",
+       "rowspan=\"2\" | Animist",
+       "rowspan=\"2\" | Other",
+       "rowspan=\"2\" | Unknown",
+       "rowspan=\"2\" | None",
+       "All",
+       "Catholic",
+       "Protestant"
+      ],
+      "place_column": false,
+      "composition_columns": 4,
+      "rows_hint": 6
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Chad",
+    "wikitext_bytes": 25834,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 8,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "rowspan=2|Year",
+       "rowspan=2|Total population",
+       "colspan=3|Population percentage in age bracket",
+       "aged 0–14",
+       "aged 15–64",
+       "aged 65+",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width="
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\" |Population",
+       "style=\"width:80pt;\" |Live births per year",
+       "style=\"width:80pt;\" |Deaths per year",
+       "style=\"width:80pt;\" |Natural change per year",
+       "style=\"width:80pt;\" |CBR{{efn-lr|name=h}}",
+       "style=\"width:80pt;\" |CDR{{efn-lr|name=h}}",
+       "style=\"width:80pt;\" |NC{{efn-lr|name=h}}",
+       "style=\"width:80pt;\" |TFR{{efn-lr|name=h}}",
+       "style=\"width:80pt;\" |IMR{{efn-lr|name=h}}",
+       "style=\"width:80pt;\" |Life expectancy (years)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 32
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Region",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15-49 currently pregnant",
+       "style=\"width:100pt;\"| Mean number of children ever born to women age 40–49",
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929",
+       "1930",
+       "1931",
+       "1932",
+       "1933"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Years",
+       "1935",
+       "1936",
+       "1937",
+       "1938",
+       "1939",
+       "1940",
+       "1941",
+       "1942",
+       "1943"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "Years",
+       "1945",
+       "1946",
+       "1947",
+       "1948",
+       "1949<ref name=\"ourworldindata.org\" />"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 2
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Barh-El-Gazel Sud",
+    "found": true,
+    "title": "Bahr el Gazel Sud",
+    "url": "https://en.wikipedia.org/wiki/Bahr_el_Gazel_Sud",
+    "wikitext_bytes": 703,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Barh-Sara",
+    "found": true,
+    "title": "Barh Sara",
+    "url": "https://en.wikipedia.org/wiki/Barh_Sara",
+    "wikitext_bytes": 864,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Dababa",
+    "found": true,
+    "title": "Dababa",
+    "url": "https://en.wikipedia.org/wiki/Dababa",
+    "wikitext_bytes": 1603,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kimiti",
+    "found": true,
+    "title": "Kimiti",
+    "url": "https://en.wikipedia.org/wiki/Kimiti",
+    "wikitext_bytes": 5892,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kouh Ouest",
+    "found": true,
+    "title": "Kouh-Ouest",
+    "url": "https://en.wikipedia.org/wiki/Kouh-Ouest",
+    "wikitext_bytes": 5783,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Chad: Road Surface Data",
+   "name": "chad-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/chad-road-surface-data",
+   "resources": [
+    {
+     "name": "Chad GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_tcd_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Chad GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_tcd_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Chad: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-chad",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-chad",
+   "resources": [
+    {
+     "name": "kontur_boundaries_TD_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_TD_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_TD_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_TD_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_TD_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_TD_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Chad - GIS geodatabase",
+   "name": "chad-gis-geodatabase",
+   "org": "OCHA Chad",
+   "url": "https://data.humdata.org/dataset/chad-gis-geodatabase",
+   "resources": [
+    {
+     "name": "TCD_GeoDB_OCHA_20170421.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/799f2c09-024c-41b6-b5c7-7c7ceff59c35/resource/6af25bff-5d00-470e-a591-07a22a90405b/download/tcd_geodb_ocha_20170421.gdb.zip"
+    },
+    {
+     "name": "TCD_GeoDB_OCHA_metadata.txt",
+     "format": "TXT",
+     "url": "https://data.humdata.org/dataset/799f2c09-024c-41b6-b5c7-7c7ceff59c35/resource/11d0f3f0-7d74-450c-8272-9310c1d40444/download/tcd_geodb_ocha_metadata.txt"
+    },
+    {
+     "name": "TCD_GeoDB_OCHA_20161101.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/799f2c09-024c-41b6-b5c7-7c7ceff59c35/resource/f0edeb7b-30ca-487c-8de6-bc63d0452d47/download/tcd_geodb_ocha_20161101.gdb.zip"
+    },
+    {
+     "name": "TCD_GeoDB_OCHA_20160619.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/799f2c09-024c-41b6-b5c7-7c7ceff59c35/resource/70743598-5dfc-4ed7-9424-53efb4470cb9/download/tcd_geodb_ocha_20160619.gdb.zip"
+    },
+    {
+     "name": "tcd_admbnda_adm1_ocha.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/799f2c09-024c-41b6-b5c7-7c7ceff59c35/resource/07da1c17-808a-40d5-98c5-bc0d74dfebec/download/tcd_admbnda_adm1_ocha.zip"
+    },
+    {
+     "name": "tcd_admbnda_adm2_ocha.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/799f2c09-024c-41b6-b5c7-7c7ceff59c35/resource/953aaf74-6a07-4170-978f-a20901e9b5a3/download/tcd_admbnda_adm2_ocha.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Chad - Accessibility Indicators",
+   "name": "chad-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/chad-accessibility-indicators",
+   "resources": [
+    {
+     "name": "TCD_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tcd/TCD_education_access.gpkg"
+    },
+    {
+     "name": "TCD_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tcd/TCD_education_access_long.csv"
+    },
+    {
+     "name": "TCD_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tcd/TCD_education_access_wide.csv"
+    },
+    {
+     "name": "TCD_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tcd/TCD_hospitals_access.gpkg"
+    },
+    {
+     "name": "TCD_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tcd/TCD_hospitals_access_long.csv"
+    },
+    {
+     "name": "TCD_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tcd/TCD_hospitals_access_wide.csv"
+    },
+    {
+     "name": "TCD_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tcd/TCD_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "TCD_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tcd/TCD_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Lake Chad Basin Dashboard",
+   "name": "lake-chad-basin-dashboard",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/lake-chad-basin-dashboard",
+   "resources": [
+    {
+     "name": "lcb_dashboard_data_July2019.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/2edb49da-9dd2-4ae1-99f3-485e68256e19/resource/12d37440-7dcc-43fd-86f6-73ce07d22f89/download/lcb_dashboard_data_july2019.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Lake Chad Basin Baseline Population",
+   "name": "lake-chad-basin-baseline-population",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/lake-chad-basin-baseline-population",
+   "resources": [
+    {
+     "name": "Lake_Chad_Basin_Estimated_Population_2017-02-23.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/75ed82f7-b03d-47e4-ba9b-c746412effe9/resource/020000e5-e7aa-4027-b58a-efe7396ff32e/download/lake_chad_basin_estimated_population_2017-02-23.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Chad: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "highresolutionpopulationdensitymaps-tcd",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/highresolutionpopulationdensitymaps-tcd",
+   "resources": [
+    {
+     "name": "tcd_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/99769693-aa51-406b-881d-dc35884bac45/resource/033ca651-b8dc-4ee1-87a5-7ef7aab2d6ad/download/tcd_general_2020_geotiff.zip"
+    },
+    {
+     "name": "tcd_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/99769693-aa51-406b-881d-dc35884bac45/resource/fe87be46-460f-4417-afdf-684d7627f3e7/download/tcd_general_2020_csv.zip"
+    },
+    {
+     "name": "tcd_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/99769693-aa51-406b-881d-dc35884bac45/resource/1bcb7440-edcf-4173-97a5-5ef224054c8b/download/tcd_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "tcd_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/99769693-aa51-406b-881d-dc35884bac45/resource/3fcb9fd5-c71e-4d75-972e-26abf1ed6e14/download/tcd_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "tcd_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/99769693-aa51-406b-881d-dc35884bac45/resource/eb5a5d65-3219-4c40-84ee-7ef38e57ffb6/download/tcd_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "tcd_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/99769693-aa51-406b-881d-dc35884bac45/resource/0764a746-2bc4-4ee6-afb7-f0002ab461e6/download/tcd_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "tcd_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/99769693-aa51-406b-881d-dc35884bac45/resource/8702d3ed-5f9e-404b-9135-a888fd7e8e5c/download/tcd_men_2020_csv.zip"
+    },
+    {
+     "name": "tcd_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/99769693-aa51-406b-881d-dc35884bac45/resource/83537b04-6853-402a-a3f7-ab142d4931ee/download/tcd_men_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Chad - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-chad",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-chad",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Chad",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/b8204bb2-eee7-4061-a59b-0cf11d2f3ff2/resource/fb378472-2656-4913-98f5-72c89c2a2189/download/social-protection-and-labor_tcd.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Chad - Population Counts",
+   "name": "worldpop-population-counts-for-chad",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-chad",
+   "resources": [
+    {
+     "name": "tcd_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/TCD/tcd_ppp_2020.tif"
+    },
+    {
+     "name": "tcd_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/TCD/tcd_ppp_2019.tif"
+    },
+    {
+     "name": "tcd_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/TCD/tcd_ppp_2018.tif"
+    },
+    {
+     "name": "tcd_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/TCD/tcd_ppp_2017.tif"
+    },
+    {
+     "name": "tcd_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/TCD/tcd_ppp_2016.tif"
+    },
+    {
+     "name": "tcd_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/TCD/tcd_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "tcd_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/TCD/tcd_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "tcd_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/TCD/tcd_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Chad: Level 1 Exposure Data",
+   "name": "chad-level-1-exposure-data",
+   "org": "Global Earthquake Model Foundation",
+   "url": "https://data.humdata.org/dataset/chad-level-1-exposure-data",
+   "resources": [
+    {
+     "name": "TCD_oed_exposure_20200811_hdx.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/9d9768a5-e5f9-4323-9a29-34e42d7968e8/resource/fd7c841b-ab4c-4083-aca8-d600a1f94f6b/download/tcd_oed_exposure_20200811_hdx.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Chad: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "tcd-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/tcd-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/a05b6a13-eac9-418a-9ee9-a411e6f1c945/resource/b4ef4efd-f3e3-411c-8a7a-45b38d83da52/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_tcd.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/a05b6a13-eac9-418a-9ee9-a411e6f1c945/resource/efe31d1f-351d-4911-a6f4-00a5b1adc6c2/download/ghs_pop_e2025_r2023a_54009_100_v1_0_tcd.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Who is Doing What Where in Lake Chad Basin",
+   "name": "who-is-doing-what-where-in-lake-chad-basin",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/who-is-doing-what-where-in-lake-chad-basin",
+   "resources": [
+    {
+     "name": "3w_lcb.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/00ac6b67-daa4-4cd8-96f8-6108dc36ae3a/resource/8f9a01e4-c135-4e00-9bfc-e46671a69994/download/3w_lcb.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.inseed.td/",
+  "status": 200,
+  "error": null,
+  "pages": [],
+  "title": "INSEED - Institut National de la Statistique et des Études Économiques et Démographiques",
+  "matching_links": 0
+ },
+ "verdict": {
+  "hdx_datasets": 12,
+  "hdx_machine_readable": 6,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "1/1",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}
