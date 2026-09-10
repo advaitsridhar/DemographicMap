@@ -1,6 +1,2 @@
-ireland: religion from SAP2022T2T4LEA22
-  166 areas, 4 categories
-ireland: ethnicity from SAP2022T2T2LEA22
-  166 areas, 7 categories
-  166 local electoral areas; names shared by more than one area: ['Athlone']
-  wrote data/processed/ireland_lea.json (490 kB)
+ibge_sidra: municipality (n6)
+  retry 1/4 after 2s :: https://servicodados.ibge.gov.br/api/v1/localidades/municipios :: <urlopen error [Errno 110] Connection timed out>
