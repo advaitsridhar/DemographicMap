@@ -8,16 +8,22 @@ abs: 2021 Census, LGA
   language: dataflow ABS,C21_G13_LGA,1.0.0
   religion rows 57630, ancestry rows 111870, language rows 394935
   dimensions seen: ['RELP', 'SEXP', 'REGION', 'REGION_TYPE', 'STATE', 'TIME_PERIOD']
-  using region='STATE' religion='RELP' ancestry='ANCP' language='LANP'
+  using region='REGION' religion='RELP' ancestry='ANCP' language='LANP'
   restricted SEXP='Persons' so the sexes are not counted twice
-  outermost level chosen by code tree for 9 regions
-  outermost level chosen by suffix (nothing summed to the total) for 8 regions
-  outermost level chosen by code tree less a duplicated parent for 1 regions
+  outermost level chosen by code tree for 562 regions
+  outermost level chosen by suffix (no total to check against) for 3 regions
+  outermost level chosen by suffix (nothing summed to the total) for 456 regions
+  outermost level chosen by code tree less a duplicated parent for 94 regions
+  outermost level chosen by code tree for 12 regions
+  outermost level chosen by suffix (no total to check against) for 3 regions
   restricted SEXP='Persons' so the sexes are not counted twice
   restricted ENGLP='Total' so its categories are not summed
-  outermost level chosen by code tree less a duplicated parent for 8 regions
-  outermost level chosen by suffix (nothing summed to the total) for 1 regions
-  population from the religion table's own total for 9 of 9 regions; they sum to 25,422,828
-  sanity: largest religion category is 47.6% of the sample region's total across 8 categories
-  wrote data/processed/australia_state.json (67 kB)
-  9 records
+  outermost level chosen by code tree less a duplicated parent for 354 regions
+  outermost level chosen by suffix (nothing summed to the total) for 109 regions
+  outermost level chosen by code tree for 97 regions
+  outermost level chosen by suffix (no total to check against) for 3 regions
+  outermost level chosen by suffix for 2 regions
+  population from the religion table's own total for 562 of 565 regions; they sum to 25,422,828
+  sanity: largest religion category is 53.6% of the sample region's total across 8 categories
+  wrote data/processed/australia_lga.json (4046 kB)
+  565 records
