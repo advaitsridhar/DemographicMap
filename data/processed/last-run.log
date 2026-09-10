@@ -1,29 +1,16 @@
-abs: 2021 Census, LGA
-  1227 dataflows in the ABS catalogue
-  dataflows containing G14: C21_G14_CED, C21_G14_LGA, C21_G14_POA, C21_G14_RA, C21_G14_SA2, C21_G14_SAL, C21_G14_SED, C21_G14_SUA, C21_G14_UCL
-  dataflows containing G08: C21_G08_CED, C21_G08_LGA, C21_G08_POA, C21_G08_RA, C21_G08_SA2, C21_G08_SAL, C21_G08_SED, C21_G08_SUA, C21_G08_UCL
-  dataflows containing G13: C21_G13_CED, C21_G13_LGA, C21_G13_POA, C21_G13_RA, C21_G13_SA2, C21_G13_SAL, C21_G13_SED, C21_G13_SUA, C21_G13_UCL
-  religion: dataflow ABS,C21_G14_LGA,1.0.0
-  ancestry: dataflow ABS,C21_G08_LGA,1.0.0
-  language: dataflow ABS,C21_G13_LGA,1.0.0
-  religion rows 57630, ancestry rows 111870, language rows 394935
-  dimensions seen: ['RELP', 'SEXP', 'REGION', 'REGION_TYPE', 'STATE', 'TIME_PERIOD']
-  using region='REGION' religion='RELP' ancestry='ANCP' language='LANP'
-  restricted SEXP='Persons' so the sexes are not counted twice
-  outermost level chosen by code tree for 562 regions
-  outermost level chosen by suffix (no total to check against) for 3 regions
-  outermost level chosen by suffix (nothing summed to the total) for 456 regions
-  outermost level chosen by code tree less a duplicated parent for 94 regions
-  outermost level chosen by code tree for 12 regions
-  outermost level chosen by suffix (no total to check against) for 3 regions
-  restricted SEXP='Persons' so the sexes are not counted twice
-  restricted ENGLP='Total' so its categories are not summed
-  outermost level chosen by code tree less a duplicated parent for 354 regions
-  outermost level chosen by suffix (nothing summed to the total) for 109 regions
-  outermost level chosen by code tree for 97 regions
-  outermost level chosen by suffix (no total to check against) for 3 regions
-  outermost level chosen by suffix for 2 regions
-  population from the religion table's own total for 562 of 565 regions; they sum to 25,422,828
-  sanity: largest religion category is 53.6% of the sample region's total across 8 categories
-  wrote data/processed/australia_lga.json (4046 kB)
-  565 records
+Ukraine: https://data.humdata.org/dataset/45c19756-9d0b-4673-9de4-fc47168c369a/resource/7f1ace67-fd49-4d2a-8b25-cc0561b5145b/download/ukraine_uscb_201905.xlsx
+  4,486,575 bytes
+  Language: 700 rows, 10 groups, denominator 'Total Population'
+    25 areas at level 1 built by adding up the level below
+    672 rows skipped: another level, or no area name
+    admin1: 48,121,632 against the country's own 48,121,632 -- exactly
+    3 of 27 areas do not reach their published total; the map shows the remainder as unaccounted:
+      KHERSONS’KA OBLAST’: groups come to 1,164,267 against a published 1,172,689 (+0.7%)
+      MYKOLAYIVS’KA OBLAST’: groups come to 1,253,868 against a published 1,262,899 (+0.7%)
+      KIROVOHRADS’KA OBLAST’: groups come to 1,118,568 against a published 1,125,704 (+0.6%)
+  Nationality-Language [NL_ETH_]: 700 rows, 134 groups, no published denominator
+    25 areas at level 1 built by adding up the level below
+    672 rows skipped: another level, or no area name
+    admin1: 48,186,051 against the country's own 48,186,051 -- exactly
+  wrote data/processed/ukraine_oblast.json (184 kB)
+  27 areas: 27 admin1
