@@ -13,7 +13,14 @@ this map draws: ``CSO Local Electoral Areas 2022``, 167 categories, which is
 
 * ``SAP2022T2T4LEA22`` religion -- titled, unhelpfully, just "Population".
   Searching table *titles* for "religion" returns nothing; the subject is a
-  dimension, not a name.
+  dimension, not a name. Four categories at this geography: Catholic, Other
+  religion, No religion, Not stated. That is coarse, and coarse in a way worth
+  stating on every record -- "Other religion" holds the Church of Ireland,
+  Presbyterians, Orthodox and Muslims together, so a filter for Christianity
+  reads an Irish area at its Catholic share and understates it by however many
+  non-Catholic Christians live there. The fuller classification exists for
+  counties and provinces; geoBoundaries draws neither at this level, so the
+  real choice is four categories across 166 areas or nothing at all.
 * ``SAP2022T2T2LEA22`` ethnicity -- eight categories, White Irish through
   Not stated.
 
@@ -154,6 +161,29 @@ def reader(dataset: dict[str, Any]):
     return at
 
 
+# What the four-way religion classification costs a reader, said on every
+# record rather than left to be inferred from a short list.
+NOTES = {
+    "religion": (
+        "At this geography the CSO publishes religion in four categories only "
+        "-- Catholic, Other religion, No religion, Not stated. \u2018Other "
+        "religion\u2019 therefore holds the Church of Ireland, Presbyterians, "
+        "Orthodox, Muslims and everyone else together, so a filter for "
+        "Christianity reads an Irish area at its **Catholic share alone** and "
+        "understates it. The fuller classification is published for counties "
+        "and provinces, which this map's second-level shapes are not."),
+    "ethnicity": (
+        "The CSO's eight-category ethnic or cultural background question. "
+        "White Irish Traveller is a distinct category here, as it is in "
+        "Northern Ireland's census."),
+}
+
+
+def note(field: str) -> str:
+    matrix = TABLES[field][0]
+    return f"{SOURCE}, {matrix}. Of all usual residents. {NOTES[field]}"
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -244,8 +274,7 @@ def main() -> int:
             if field == "religion" and total:
                 population = int(total)
             entry[field] = shares(counts, total=total) or gap(NOT_AVAILABLE)
-            entry[f"{field}_note"] = (
-                f"{SOURCE}, {TABLES[field][0]}. Of all usual residents.")
+            entry[f"{field}_note"] = note(field)
 
         # A name shared by two areas cannot identify either. Only Athlone is,
         # and its province is what separates them -- see the module docstring

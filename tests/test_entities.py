@@ -4527,3 +4527,26 @@ class IrelandsSeatCountIsNotItsName(unittest.TestCase):
         # declared away with it.
         self.assertIsNone(common.collection_policy("IRL", "religion"))
         self.assertIsNone(common.collection_policy("IRL", "ethnicity"))
+
+    def test_the_four_way_religion_cost_is_stated_on_every_record(self):
+        """Catholic is the only Christian denomination the CSO names here.
+
+        At local electoral area the classification is Catholic / Other
+        religion / No religion / Not stated, so "Other religion" holds the
+        Church of Ireland, Presbyterians, Orthodox and Muslims together and a
+        filter for Christianity reads an Irish area at its Catholic share. That
+        is a real understatement and belongs on the record, not in a commit
+        message nobody reading the map will see.
+        """
+        path = ROOT / "data" / "processed" / "ireland_lea.json"
+        if not path.exists():
+            self.skipTest("ireland_lea.json needs a network run to exist")
+        rows = json.loads(path.read_text(encoding="utf-8"))
+        self.assertEqual(len(rows), 166)
+        for row in rows:
+            self.assertIn("Catholic share alone", row["religion_note"])
+            groups = {g["group"] for g in row["religion"]}
+            self.assertEqual(groups, {"Catholic", "Other religion",
+                                      "No religion", "Not stated"}, row["name"])
+            total = sum(g["pct"] for g in row["religion"])
+            self.assertAlmostEqual(total, 100.0, delta=1.0, msg=row["name"])
