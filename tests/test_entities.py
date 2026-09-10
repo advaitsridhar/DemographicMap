@@ -4644,9 +4644,11 @@ class CzechiaReadsTheOpenDataLong(unittest.TestCase):
     def test_language_remainder_is_one_labelled_bar(self):
         from scripts.fetch_census import czechia
         groups = czechia.language({"Český jazyk": 800, "Slovenský jazyk": 50, "Nezjištěno": 100,
+                                   "Osoby se dvěma mateřskými jazyky": 25, "Jiný jazyk": 5,
                                    "Klingonský jazyk": 20},
                                   1000, "x")
-        self.assertEqual(groups[czechia.LANGUAGE_REMAINDER], 50)   # the unnamed 20 are in it
+        self.assertEqual(groups["Two mother tongues"], 25)
+        self.assertEqual(groups[czechia.LANGUAGE_REMAINDER], 5 + 20)   # the unnamed 20 join it
         self.assertNotIn("Klingonský jazyk", groups)
         self.assertEqual(groups["Not stated"], 100)
         with self.assertRaises(SystemExit):        # more rows than people

@@ -35,13 +35,15 @@ what it says. Nothing is dropped: a row not in the table is summed as
 "Other religion" and named in the log, and a territory whose rows do not sum
 to its population stops the build.
 
-Mother tongue (``jazyk1``, "s jedním mateřským jazykem") lists thirteen
-languages for people who named exactly one, and the not-stated. People who
-named two mother tongues, or a single language outside the thirteen, are in
-no row of that file; they are the territory's total less its rows, and are
-kept as one bar so labelled rather than renormalised away. The companion file
-``jazyk`` counts every mention ("Český celkem") and would sum past the
-population; it is not used.
+Mother tongue (``jazyk1``, "s jedním mateřským jazykem") lists, for the kraje
+and okresy, some sixty languages for people who named exactly one, a row for
+people who named two, a row for any other language, and the not-stated,
+which together partition the population (the municipal rows carry only
+thirteen languages and neither closing row, which is why the first run of
+this adapter computed a remainder). Anything the rows leave unaccounted for
+is added to the "Other language" bar rather than renormalised away. The
+companion file ``jazyk`` counts every mention ("Český celkem") and would sum
+past the population; it is not used.
 
 **Names.** ČSÚ writes the kraje as geoBoundaries does. Its okresy are Czech
 ("Praha-východ", "Brno-město", "Plzeň-sever") where the boundary file has
@@ -226,10 +228,17 @@ LANGUAGE = {
     "Urdský jazyk": "Urdu", "Paštský jazyk": "Pashto", "Ázerbájdžánský jazyk": "Azerbaijani",
     "Kyrgyzský jazyk": "Kyrgyz", "Turkmenský jazyk": "Turkmen", "Moldavský jazyk": "Moldovan",
     "Latinský jazyk": "Latin", "Esperanto": "Esperanto", "Znakový jazyk": "Sign language",
-    "Český znakový jazyk": "Czech Sign Language",
+    "Český znakový jazyk": "Czech Sign Language", "Ázerbájdžánský jazyk": "Azerbaijani",
+    "Paštunský jazyk": "Pashto", "Srbochorvatský jazyk": "Serbo-Croatian",
+    "Paňdžábský jazyk": "Punjabi", "Čečenský jazyk": "Chechen",
+    "Černohorský jazyk": "Montenegrin",
+    # The two rows that close the partition at the kraj and okres levels
+    # (the municipal rows carry neither).
+    "Osoby se dvěma mateřskými jazyky": "Two mother tongues",
+    "Jiný jazyk": "Other language",
     NOT_STATED: "Not stated",
 }
-LANGUAGE_REMAINDER = "Other language or two mother tongues"
+LANGUAGE_REMAINDER = "Other language"
 # Rows seen but not named above, reported once at the end of the run so
 # the next run can name them; until then they sit in the remainder bar,
 # which is exactly what "other language" means.
@@ -245,10 +254,10 @@ NOTES = {
                  "registered churches are summed as Other Christian or Other religion. "
                  "Believers of no church, no religious belief and Not stated are kept as "
                  "their own bars."),
-    "language": ("Mother tongue, SLDB 2021, for people who named exactly one of the "
-                 "thirteen languages ČSÚ publishes. People who named two mother tongues "
-                 "or a language outside those thirteen are the territory's total less its "
-                 "rows, kept as one bar so labelled."),
+    "language": ("Mother tongue, SLDB 2021, at the languages ČSÚ publishes for people "
+                 "who named exactly one; people who named two are the 'Two mother "
+                 "tongues' bar, and languages ČSÚ does not list singly are 'Other "
+                 "language'. Not stated is kept as its own bar."),
 }
 
 # Okresy by their kraj, in ČSÚ's own order (the file lists them so); the
@@ -363,9 +372,10 @@ def language(rows: dict[str, int], total: int, name: str) -> dict[str, int]:
         out[english] = out.get(english, 0) + n
     remainder = total - sum(out.values())
     if remainder < 0 or remainder > 0.25 * total:
-        raise SystemExit(f"czechia: {name} single-mother-tongue rows leave {remainder:,} "
+        raise SystemExit(f"czechia: {name} mother-tongue rows leave {remainder:,} "
                          f"of {total:,} unaccounted for; not the file this was written for")
-    out[LANGUAGE_REMAINDER] = remainder
+    if remainder:
+        out[LANGUAGE_REMAINDER] = out.get(LANGUAGE_REMAINDER, 0) + remainder
     return out
 
 
@@ -385,12 +395,15 @@ def build() -> list[dict[str, Any]]:
         if not total:
             raise SystemExit(f"czechia: {name} has no population row")
         fields: dict[str, Any] = {}
-        fields["ethnicity"] = shares(nationality(tables["ethnicity"][(cis, kod)]["rows"]),
-                                     total=total) or gap(NOT_AVAILABLE)
-        fields["religion"] = shares(religion(unit["rows"], total, name), total=total) \
-            or gap(NOT_AVAILABLE)
-        fields["language"] = shares(language(tables["language"][(cis, kod)]["rows"], total, name),
-                                    total=total) or gap(NOT_AVAILABLE)
+
+        def bars(groups: dict[str, int]) -> Any:
+            # Seventy-nine nationalities are listed for every okres; the
+            # ones nobody in it declared are not bars.
+            return shares({k: v for k, v in groups.items() if v}, total=total) \
+                or gap(NOT_AVAILABLE)
+        fields["ethnicity"] = bars(nationality(tables["ethnicity"][(cis, kod)]["rows"]))
+        fields["religion"] = bars(religion(unit["rows"], total, name))
+        fields["language"] = bars(language(tables["language"][(cis, kod)]["rows"], total, name))
         for key in ("ethnicity", "religion", "language"):
             fields[f"{key}_note"] = NOTES[key]
         if level == "admin1":
