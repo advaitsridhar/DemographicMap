@@ -69,6 +69,8 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # KNBS 2019 religion by county, from the openAFRICA mirror: knbs.or.ke
   # itself fails TLS verification on a clean client.
   soft python3 -m scripts.fetch_census.kenya
+  # INE Angola's 12 MB final report; the tables are read from word coordinates.
+  soft python3 -m scripts.fetch_census.angola
   # One MediaWiki API call; the NSO's own hosts refuse automated readers.
   soft python3 -m scripts.fetch_census.thailand
   # Census tables that reach us only as Wikipedia transcriptions (KAZ, KHM).

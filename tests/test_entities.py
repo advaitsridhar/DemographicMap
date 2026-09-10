@@ -5030,3 +5030,89 @@ class AbsLanguageTableListsAParentBesideItsChildren(unittest.TestCase):
                  ("Religious affiliation not stated", "_N"): 614, ("Total", "_T"): 1588}
         _, how = abs_.top_level(small, 1588)
         self.assertIn("nothing summed", how)
+
+
+class AngolaReadsFiguresByPosition(unittest.TestCase):
+    """The census report prints "34 492 888" with spaces and wraps each table
+    over two pages, so a row is read from word coordinates: digit groups
+    closer than a few points are one figure, a page counts for a column group
+    only when all 21 province rows carry exactly that group's number of
+    figures, the two groups must agree on the province's total, the 21
+    report provinces sum into the map's 18, and a mis-slotted column fails
+    the partition check rather than shipping.
+    """
+
+    @staticmethod
+    def row(name, figures, x=200):
+        words, nx = [], 100
+        for part in name.split():
+            words.append(f"{part}[{nx}-{nx + 5 * len(part)}]")
+            nx += 5 * len(part) + 3
+        for n in figures:
+            text = f"{n:,}".replace(",", " ")
+            for part in text.split(" "):
+                words.append(f"{part}[{x}-{x + 4 * len(part)}]")
+                x += 4 * len(part) + 2            # 2 pt between digit groups
+            x += 20                                # 20 pt between columns
+        return " ".join(words)
+
+    def page(self, labels, values):
+        from scripts.fetch_census import angola as a
+        lines = ["Província[100-140] e[142-146] área[148-160]"]
+        lines.append(self.row("Angola", [sum(v) for v in zip(*values.values())]))
+        lines.append("Províncias[100-140]")
+        for p in a.PROVINCES:
+            lines.append(self.row(p, values[p]))
+        lines.append("Urbana[100-130]")
+        for p in a.PROVINCES:
+            lines.append(self.row(p, [v // 2 for v in values[p]]))
+        return "\n".join(lines)
+
+    def test_parse_row_joins_digit_groups(self):
+        from scripts.fetch_census import angola as a
+        line = ("Cuanza-Norte[107-151] 619[226-238] 011[240-252] 356[278-290] 190[292-304] "
+                "15[342-350] 814[352-364] 754[414-426] 5[462-466] 614[468-480] 198[521-533] "
+                "210[575-587]")
+        self.assertEqual(a.parse_row(line),
+                         ("Cuanza-Norte", [619011, 356190, 15814, 754, 5614, 198, 210]))
+
+    def test_tables_merge_and_check(self):
+        from scripts.fetch_census import angola as a
+        pages = []
+        for field, spec in a.TABLES.items():
+            pages.append(f"{spec['heading']} - População por província")
+            per_province = {}
+            for i, p in enumerate(a.PROVINCES):
+                total = 10000 * (i + 1)
+                counts = {}
+                for labels in spec["groups"]:
+                    for j, label in enumerate(labels):
+                        if label != "TOTAL":
+                            counts[label] = 10 * (j + 1)
+                rest = total - sum(counts.values())
+                counts["Other" if "Other" in counts else "Not stated"] += rest
+                per_province[p] = (total, counts)
+            for labels in spec["groups"]:
+                pages.append(self.page(labels, {
+                    p: [t if l == "TOTAL" else c[l] for l in labels]
+                    for p, (t, c) in per_province.items()}))
+        text = a.PAGE_BREAK.join(pages)
+        records = a.build(text)
+        self.assertEqual(len(records), 18)
+        by = {r["name"]: r for r in records}
+        luanda = by["Luanda"]
+        # Luanda (5th, 50000) + Icolo e Bengo (20th, 200000)
+        self.assertEqual(sum(b["count"] for b in luanda["religion"]), 250000)
+        self.assertIn("Luanda and Icolo e Bengo", luanda["religion_note"])
+        self.assertEqual(by["Cuanza Norte"]["aliases"], ["Cuanza-Norte"])
+        self.assertEqual(sum(b["count"] for b in by["Cabinda"]["ethnicity"]), 10000)
+        self.assertNotIn("TOTAL", [b["group"] for b in by["Cabinda"]["language"]])
+        # A column read into the wrong slot breaks the partition and refuses.
+        with self.assertRaises(SystemExit):
+            a.bars("religion", "Bengo", {"TOTAL": 1000, "Catholic": 600, "Islam": 300})
+        # Totals that disagree between the two column groups refuse too.
+        first = pages.index(next(p for p in pages if p.startswith("Quadro 6.2"))) + 2
+        cabinda = next(l for l in pages[first].splitlines() if l.startswith("Cabinda"))
+        pages[first] = pages[first].replace(cabinda, cabinda.replace("10[", "11[", 1), 1)
+        with self.assertRaises(SystemExit):
+            a.build(a.PAGE_BREAK.join(pages))

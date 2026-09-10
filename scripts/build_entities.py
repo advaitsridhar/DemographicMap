@@ -84,6 +84,9 @@ ADAPTER_FILES = [
     # and now carry the 2019 census, and merge_adapter lets the count win the
     # religion field while the survey keeps any field the census did not ask.
     "kenya_county.json",
+    # Likewise after Afrobarometer: Angola's 18 provinces carried the survey
+    # and now carry the 2024 census for all three fields.
+    "angola_province.json",
     "thailand_province.json",
     "kazakhstan_region.json", "cambodia_province.json",
     "kazakhstan_oblast.json", "kazakhstan_district.json",
@@ -136,6 +139,9 @@ ADAPTER_HINTS: dict[str, str] = {
            "(python -m scripts.fetch_census.kazakhstan)",
     "KHM": "2019 census religion by province, transcribed on Wikipedia: "
            "python -m scripts.fetch_census.wiki_census --country KHM",
+    "AGO": "INE Censo 2024 final report (ethnic group, mother tongue, religion) by "
+           "province, read from the PDF's word coordinates: "
+           "python -m scripts.fetch_census.angola",
     "BIH": "BHAS Popis 2013 Book 2 tables (ethnicity, religion, mother tongue) by "
            "entity and canton: python -m scripts.fetch_census.bosnia",
     "IRL": "CSO Census 2022 via PxStat (SAPMAP religion and ethnicity by local "
