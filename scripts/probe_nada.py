@@ -66,13 +66,50 @@ def studies(base: str, keyword: str, limit: int) -> list[dict]:
 
 
 def variables(base: str, study: str) -> None:
-    """The variable list, which is what says whether a question was asked."""
-    url = f"{base.rstrip('/')}/index.php/api/catalog/{study}/variables"
-    print(f"\n=== NADA variables: study {study} ===")
+    """The variable list, which is what says whether a question was asked.
+
+    NADA's variable path is not the same across versions, and a guessed path
+    answers 400 -- which is a fact about the request, not about the survey.
+    So this asks the study record first and prints what it actually offers
+    before trying anything, then reports each candidate path separately: a 404
+    means "not here", a 400 means "not asked like that", and the difference
+    decides whether to try another shape or stop.
+    """
+    root = base.rstrip("/")
+    print(f"\n=== NADA study record: {study} ===")
     try:
-        payload = get(url)
+        record = get(f"{root}/index.php/api/catalog/{study}")
+        body = record.get("dataset") or record.get("result") or record
+        print(f"    top-level keys: {sorted(body)[:24]}")
+        for key in ("title", "idno", "nation", "year_start", "year_end"):
+            if body.get(key):
+                print(f"    {key}: {str(body[key])[:90]}")
+        for key in ("resources", "data_files", "variables", "var_count"):
+            value = body.get(key)
+            if isinstance(value, list):
+                print(f"    {key}: {len(value)} entry(ies)")
+                for item in value[:12]:
+                    if isinstance(item, dict):
+                        print(f"      {str(item.get('name') or item.get('file_id') or item)[:88]}")
+            elif value is not None:
+                print(f"    {key}: {value}")
     except Exception as err:                        # noqa: BLE001 -- reported
         print(f"    {type(err).__name__}: {err}")
+
+    print(f"\n=== NADA variables: study {study} ===")
+    payload = None
+    for path in (f"{root}/index.php/api/catalog/{study}/variables",
+                 f"{root}/index.php/api/catalog/variables/{study}",
+                 f"{root}/index.php/api/datasets/{study}/variables"):
+        try:
+            payload = get(path)
+            print(f"    answered: {path}")
+            break
+        except Exception as err:                    # noqa: BLE001 -- reported
+            print(f"    {type(err).__name__}: {err}  <- {path}")
+    if payload is None:
+        print("    no variable endpoint answered; the study record above is what"
+              " this catalogue offers a program")
         return
     rows = ((payload.get("result") or payload).get("variables")
             or (payload.get("result") or payload).get("rows") or [])
