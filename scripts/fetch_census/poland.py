@@ -106,6 +106,9 @@ COUNTY_ALIASES = {
     ("ŚLĄSKIE", "tarnogórski"): "Tarnowskie Góry County",
     ("ŚLĄSKIE", "wodzisławski"): "Wodzisław County",
     ("MAZOWIECKIE", "żyrardowski"): "Żyrardów County",
+    # Renamed in 2021, after the boundary file's vintage and before GUS's.
+    ("DOLNOŚLĄSKIE", "karkonoski"): "powiat jeleniogórski",
+    ("DOLNOŚLĄSKIE", "jeleniogórski"): "powiat karkonoski",
 }
 
 ETHNICITY = {
@@ -161,7 +164,9 @@ LANGUAGE = {
     "kazachski": "Kazakh", "mongolski": "Mongolian", "tatarski": "Tatar",
     "łotewski": "Latvian", "estoński": "Estonian", "irlandzki": "Irish",
     "islandzki": "Icelandic", "esperanto": "Esperanto",
-    "gwara góralska": "Goral dialect", "flamandzki": "Flemish",
+    # Flemish is Dutch in the group index, where one is the other's child;
+    # GUS counts them as two answers and they are summed here as one.
+    "gwara góralska": "Goral dialect", "flamandzki": "Dutch",
     "macedoński": "Macedonian", "słoweński": "Slovene",
     "afrykanerski": "Afrikaans", "suahili": "Swahili", "perski": "Persian",
     "urdu": "Urdu", "tamilski": "Tamil", "bengalski": "Bengali",

@@ -493,12 +493,18 @@ UKRAINE = Country(
     # even when most of them are probably right. The oblasts match one for one
     # and reconcile to the census's own national total exactly.
     levels={1: "admin1"},
-    # The Language sheet, not Nationality-Language. That second sheet is the
-    # cross-tabulation of the two -- 1,619 columns, every nationality against
-    # every native language -- which is a different and much larger claim than
-    # this map has a field for. The flat sheet is the one that answers "what
-    # is spoken here".
-    topics=(Topic("Language", "language"),),
+    # The Language sheet answers "what is spoken here". Nationality-Language
+    # is the cross-tabulation of the two, 1,619 columns of every nationality
+    # against every native language -- but its first block, NL_ETH_*, is the
+    # whole population of each nationality ("Whole Population, Ukrainians"
+    # in the census's own words, per the data dictionary), which is the
+    # nationality composition itself. The prefix reads that block and nothing
+    # else; the cells of the cross-tabulation stay unread.
+    topics=(Topic("Language", "language"),
+            Topic("Nationality-Language", "ethnicity", prefix="NL_ETH_",
+                  note=("Nationality (національність) as declared in the 2001 "
+                        "census, the only one independent Ukraine has held; "
+                        "read as a description of 2001."))),
     # Only the share bound moves, and only because 27 areas is a coarse
     # denominator: one oblast is 3.7% of the count, so three of them tripping
     # a 10% test says almost nothing about whether the sheet was understood.
