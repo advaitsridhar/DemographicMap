@@ -70,6 +70,7 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # itself fails TLS verification on a clean client.
   soft python3 -m scripts.fetch_census.kenya
   soft python3 -m scripts.fetch_census.malaysia --level both
+  soft python3 -m scripts.fetch_census.poland
   soft python3 -m scripts.fetch_census.statcan --level province
   soft python3 -m scripts.fetch_census.ibge_sidra --level state
   # 5,570 municipalities, and the reason the level is spelled out twice:

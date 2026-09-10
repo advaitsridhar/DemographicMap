@@ -4585,3 +4585,64 @@ class MalaysiaKeepsTheNonCitizenRow(unittest.TestCase):
         rows = self.ROWS + [dict(self.ROWS[-1], sex="both", ethnicity="orang_asli")]
         with self.assertRaises(SystemExit):
             malaysia.compositions(rows, ("state", "district"))
+
+
+class PolandCutsTheReligionTreeOnce(unittest.TestCase):
+    """GUS publishes religion as a seven-level classification tree, and the
+    composition is one cut through it: Christian branches at level 5, other
+    religions at level 4, no religion at level 3, the non-response at level
+    2. Reading any other level as well double-counts; reading none of the
+    level-2 rows renormalises away a fifth of Poland.
+    """
+
+    def rows(self):
+        def tr(voiv, powiat, code, level, label, count):
+            r = [voiv, powiat, code, str(level)] + [""] * 5 + [str(count), "1", "x", "x"]
+            r[4 + min(level - 1, 4)] = label
+            return tuple(r)
+        return [
+            ("Województwo", "Powiat", "Kod powiatu", "Poziom klasyfikacji",
+             "", "", "", "", "Grupa wyznań", "W liczbach", "", "", ""),
+            tr("DOLNOŚLĄSKIE", "bolesławiecki", "0201", 1, "Ogółem", 88435),
+            tr("", "", "0201", 2, "Udzielający odpowiedzi na pytanie o wyznanie", 69320),
+            tr("", "", "0201", 3, "należący do wyznania w tym:", 63683),
+            tr("", "", "0201", 4, "chrześcijaństwo", 63636),
+            tr("", "", "0201", 5, "katolicyzm", 63071),
+            tr("", "", "0201", 6, "Kościół katolicki", 63045),
+            tr("", "", "0201", 5, "protestantyzm i tradycja protestancka", 171),
+            tr("", "", "0201", 4, "islam", 10),
+            tr("", "", "0201", 3, "nienależący do żadnego wyznania", 5637),
+            tr("", "", "0201", 2, "Odmawiający odpowiedzi na pytanie o wyznanie", 19075),
+            tr("", "", "0201", 2, "Nie ustalono", 40),
+            tr("", "dzierżoniowski", "0202", 1, "Ogółem", 97721),
+            tr("", "", "0202", 5, "katolicyzm", 68363),
+        ]
+
+    def test_one_cut_and_the_non_response_kept(self):
+        from scripts.fetch_census import poland
+        rows = self.rows()
+
+        class Sheet:
+            def iter_rows(self, values_only=True):
+                return iter(rows)
+        poland.workbook = lambda field: {"TABL.4": Sheet()}
+        units = poland.units_tree("admin2")
+        first = units[("DOLNOŚLĄSKIE", "bolesławiecki")]
+        self.assertEqual(first["__total__"], 88435)
+        self.assertEqual(first["Catholic"], 63071)          # level 5, not 6 or 4
+        self.assertNotIn("Other Christian", first)
+        self.assertEqual(first["Not stated"], 19075 + 40)   # both level-2 rows
+        self.assertEqual(first["No religion"], 5637)
+        # The second powiat inherits the voivodeship its column left blank.
+        self.assertIn(("DOLNOŚLĄSKIE", "dzierżoniowski"), units)
+
+    def test_powiat_names_follow_the_boundary_file(self):
+        from scripts.fetch_census import poland
+        self.assertEqual(poland.powiat_names("DOLNOŚLĄSKIE", "bolesławiecki"),
+                         ("powiat bolesławiecki", []))
+        self.assertEqual(poland.powiat_names("ŚLĄSKIE", "bielski"),
+                         ("powiat bielski", ["Bielsko County"]))
+        self.assertEqual(poland.powiat_names("PODLASKIE", "bielski"),
+                         ("powiat bielski", []))
+        self.assertEqual(poland.powiat_names("DOLNOŚLĄSKIE", "m. Wrocław"), ("Wrocław", []))
+        self.assertEqual(poland.powiat_names("MAZOWIECKIE", "m. st. Warszawa"), ("Warszawa", []))

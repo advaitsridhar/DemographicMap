@@ -85,6 +85,7 @@ ADAPTER_FILES = [
     # religion field while the survey keeps any field the census did not ask.
     "kenya_county.json",
     "malaysia_state.json", "malaysia_district.json",
+    "poland_voivodeship.json", "poland_powiat.json",
     "myanmar_state.json", "ukraine_oblast.json", "car_prefecture.json",
     "mali_region.json", "drc_province.json", "russia_subject.json",
     "colombia_department.json", "jamaica_parish.json",
@@ -114,6 +115,9 @@ ADAPTER_HINTS: dict[str, str] = {
            "group, TS030 religion): python -m scripts.fetch_census.uk_nomis; "
            "Scotland and Northern Ireland have adapters of their own, "
            "scotland_census and northern_ireland",
+    "POL": "GUS NSP 2021 final tables (religion, national-ethnic identification, "
+           "home language) by voivodeship and powiat: "
+           "python -m scripts.fetch_census.poland",
     "MYS": "DOSM population estimates by ethnicity, OpenDOSM CSV by state and "
            "district: python -m scripts.fetch_census.malaysia --level both",
     "IRL": "CSO Census 2022 via PxStat (SAPMAP religion and ethnicity by local "
