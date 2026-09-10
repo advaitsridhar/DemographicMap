@@ -4671,6 +4671,51 @@ class CzechiaReadsTheOpenDataLong(unittest.TestCase):
             self.assertIn(okres, czechia.KRAJ_OF)
 
 
+class CroatiaReadsTheBilingualHeader(unittest.TestCase):
+    """DZS's census workbook names each category in a bilingual header cell
+    (Croatian over English) with a count and a percent column per category;
+    the categories are read from the header, the percent columns skipped, a
+    dash is zero, the country row is skipped, and a county's own row is the
+    one with no unit type. A row that does not sum to its total stops the
+    build.
+    """
+
+    ROWS = [
+        ("1.",), ("STANOVNIŠTVO PREMA NARODNOSTI",), (None,), (None,), (None,), (None,), (None,),
+        ("Županija", "Jedinica lokalne samouprave", "County of", "Local self-government unit",
+         "Grad/općina\nTown/Municipality", "Ukupno\nTotal", "Ukupno, %\nTotal, %",
+         "Hrvati\nCroats", "Hrvati, %\nCroats, %", "Srbi\nSerbs", "Srbi, %\nSerbs, %",
+         "Ostali\nOther", "Ostali, %\nOther, %", "Nepoznato\nUnknown", "Nepoznato, %\nUnknown, %"),
+        ("Republika Hrvatska", None, "Republic of Croatia", None, None, 100, 100, 90, 90, 5, 5, 3, 3, 2, 2),
+        ("Zagrebačka", None, "Zagreb", None, None, 100, 100, 90, 90, 5, 5, 3, 3, 2, 2),
+        ("Zagrebačka", "Grad", "Zagreb", "Town", "Dugo Selo", 60, 100, 55, 91.7, "-", "-", 3, 5, 2, 3.3),
+        ("Zagrebačka", "Općina", "Zagreb", "Municipality", "Bibinje", 40, 100, 35, 87.5, 5, 12.5, "-", "-", "-", "-"),
+    ]
+
+    def test_labels_units_and_dashes(self):
+        from scripts.fetch_census import croatia
+        labels, units = croatia.parse_sheet(self.ROWS)
+        self.assertEqual(labels, ["Croats", "Serbs", "Other", "Unknown"])
+        self.assertEqual([(u["type"], u["name"]) for u in units],
+                         [(None, None), ("Grad", "Dugo Selo"), ("Općina", "Bibinje")])
+        self.assertEqual(units[1]["counts"]["Serbs"], 0)
+        bars = croatia.bars("ethnicity", units[1])
+        self.assertEqual(bars[0], {"group": "Croatian", "pct": 91.7, "count": 55})
+        self.assertEqual([b["group"] for b in bars], ["Croatian", "Other", "Not stated"])
+
+    def test_a_row_that_does_not_sum_stops_the_build(self):
+        from scripts.fetch_census import croatia
+        _, units = croatia.parse_sheet(self.ROWS)
+        units[2]["counts"]["Croats"] = 10
+        with self.assertRaises(SystemExit):
+            croatia.bars("ethnicity", units[2])
+
+    def test_every_county_is_named_for_the_boundary_file(self):
+        from scripts.fetch_census import croatia
+        self.assertEqual(len(croatia.COUNTIES), 21)
+        self.assertEqual(croatia.COUNTIES["Grad Zagreb"], "City of Zagreb")
+
+
 class PolandCutsTheReligionTreeOnce(unittest.TestCase):
     """GUS publishes religion as a seven-level classification tree, and the
     composition is one cut through it: Christian branches at level 5, other

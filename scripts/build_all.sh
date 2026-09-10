@@ -73,6 +73,8 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.poland
   # Three ČSÚ open-data CSVs, 170 MB between them; no key.
   soft python3 -m scripts.fetch_census.czechia
+  # One 18 MB DZS workbook; no key.
+  soft python3 -m scripts.fetch_census.croatia
   soft python3 -m scripts.fetch_census.statcan
   soft python3 -m scripts.fetch_census.ibge_sidra --level state
   # 5,570 municipalities, and the reason the level is spelled out twice:

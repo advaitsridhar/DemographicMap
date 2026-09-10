@@ -229,6 +229,7 @@ LANGUAGE = {
     "Kyrgyzský jazyk": "Kyrgyz", "Turkmenský jazyk": "Turkmen", "Moldavský jazyk": "Moldovan",
     "Latinský jazyk": "Latin", "Esperanto": "Esperanto", "Znakový jazyk": "Sign language",
     "Český znakový jazyk": "Czech Sign Language", "Ázerbájdžánský jazyk": "Azerbaijani",
+    "Azerbájdžánský jazyk": "Azerbaijani",
     "Paštunský jazyk": "Pashto", "Srbochorvatský jazyk": "Serbo-Croatian",
     "Paňdžábský jazyk": "Punjabi", "Čečenský jazyk": "Chechen",
     "Černohorský jazyk": "Montenegrin",
