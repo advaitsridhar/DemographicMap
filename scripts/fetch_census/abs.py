@@ -234,32 +234,32 @@ def strip_total(label: str) -> str:
 
 
 def without_duplicated_parent(candidate: dict[str, float], total: float,
-                              tolerance: float) -> dict[str, float]:
-    """Drop the one category that is the sum of the others' excess.
+                              tolerance: float, groups: set[str]) -> dict[str, float]:
+    """Drop the one marked group whose children are also in the set.
 
     G13 lists "Other Languages Total" beside every language under it, and its
     code, "O_T", is no prefix of "3103" Italian or "52" Indo-Aryan, so the
-    code tree cannot see that it is their parent. Arithmetic can: the
-    categories over-count the published total by exactly that one row. A
-    candidate that is out by the value of one of its own members loses that
-    member, and only then; anything else is left for the next rule.
+    code tree cannot see that it is their parent. Arithmetic can: the set
+    over-counts the published total by that one row. Only a category the ABS
+    marks "... Total" is tried, and the one whose removal lands nearest the
+    total is taken -- by the same tolerance the rest of this module uses,
+    because the parent's own value and its children's sum differ by the
+    perturbation of every cell: in an LGA of 524 people the group read 96 and
+    its children 83, and a band on the parent's value found nothing.
     """
     excess = sum(candidate.values()) - total
     if excess <= tolerance:
         return candidate
-    # The parent's own value is the excess, give or take the perturbation of
-    # its children -- a few people, never the 60 the summing tolerance
-    # allows. In an LGA of 4,295 the excess was 65 and seven languages sat
-    # within 60 of it; a band of five percent of the excess, never under
-    # five people, names one row. Never the non-response or the grand
-    # total: dropping either would hide a missing category.
-    band = max(5.0, 0.05 * excess)
-    parents = [k for k, v in candidate.items() if abs(v - excess) <= band
-               and k.strip().lower() not in GRAND_TOTAL
-               and not any(tag in k.lower() for tag in KEEP_ALWAYS)]
-    if len(parents) != 1:
+    best: tuple[float, str] | None = None
+    for label in groups:
+        if label not in candidate:
+            continue
+        miss = abs(sum(candidate.values()) - candidate[label] - total)
+        if miss <= tolerance and (best is None or miss < best[0]):
+            best = (miss, label)
+    if best is None:
         return candidate
-    return {k: v for k, v in candidate.items() if k != parents[0]}
+    return {k: v for k, v in candidate.items() if k != best[1]}
 
 
 def collapse_hierarchy(counts: dict[str, float]) -> dict[str, float]:
@@ -294,6 +294,12 @@ def collapse_hierarchy(counts: dict[str, float]) -> dict[str, float]:
 # "7102" and so on -- numbered from "7", not from "7_T". Stripping the marker is
 # what makes a parent a prefix of its own children.
 CODE_TOTAL_SUFFIX = "_T"
+# A parent the codes and the marker both miss. G13's "Other" (code _O)
+# holds "Australian Indigenous Languages" (code 8): in the Northern
+# Territory the two read 40,850 and 36,082 and the block summed only with
+# the second inside the first, and the same in every LGA where both are
+# non-zero. Declared, because no rule could see it.
+CHILDREN_OF = {"_O": ("8",)}
 
 
 def branch_code(code: str) -> str:
@@ -329,11 +335,15 @@ def outermost_by_code(coded: dict[tuple[str, str], float]) -> dict[str, float]:
     # then summed. Every real group in these tables is written "... Total".
     branches = {b for b in (branch_code(code) for (label, code) in coded
                             if code and label.lower().endswith(TOTAL_SUFFIX)) if b}
+    hidden = {child for parent, children in CHILDREN_OF.items() if parent in codes
+              for child in children}
     out: dict[str, float] = {}
     for (label, code), value in coded.items():
         if not code or label.strip().lower() in GRAND_TOTAL:
             continue
         mine = branch_code(code)
+        if code in hidden:
+            continue                       # a declared child of a present code
         if any(mine != other and mine.startswith(other) for other in branches):
             continue                       # something sits above it
         out[strip_total(label)] = out.get(strip_total(label), 0.0) + value
@@ -374,7 +384,9 @@ def top_level(coded: dict[tuple[str, str], float], total: float | None
             return candidate, name
         if name != "code tree":
             continue                       # only where the structure is known
-        trimmed = without_duplicated_parent(candidate, total, tolerance)
+        groups = {strip_total(label) for (label, _) in coded
+                  if label.lower().endswith(TOTAL_SUFFIX)}
+        trimmed = without_duplicated_parent(candidate, total, tolerance, groups)
         if trimmed is not candidate and abs(sum(trimmed.values()) - total) <= tolerance:
             return trimmed, f"{name} less a duplicated parent"
     return suffix, "suffix (nothing summed to the total)"
