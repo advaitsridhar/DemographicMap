@@ -92,6 +92,43 @@ def laid_out(blob: bytes, tolerance: float = 2.0,
     return "\n".join(out)
 
 
+def fetch_blob(url: str) -> bytes:
+    import urllib.request
+
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "Mozilla/5.0 (compatible; DemographicMap/1.0; "
+                      "+https://github.com/advaitsridhar/DemographicMap)",
+        "Accept": "application/pdf,*/*",
+    })
+    with urllib.request.urlopen(req, timeout=90) as resp:
+        blob = resp.read()
+    log(f"  {len(blob):,} bytes")
+    return blob
+
+
+def tables_of(blob: bytes, numbers: list[int]) -> dict[int, list[list[list[str]]]]:
+    """{page number: [table, ...]} as pdfplumber finds them by the ruling lines.
+
+    A cell that wraps ("1638" over "558", or "80,3" over "7") is one cell to
+    pdfplumber and several fragments to any text reader, and a cell is the
+    thing to read when the table is drawn with lines. Newlines inside a cell
+    are kept so the caller can decide whether they split a word or a number.
+    """
+    import io
+
+    import pdfplumber
+
+    out: dict[int, list[list[list[str]]]] = {}
+    with pdfplumber.open(io.BytesIO(blob)) as pdf:
+        for number in numbers:
+            if not 1 <= number <= len(pdf.pages):
+                continue
+            page = pdf.pages[number - 1]
+            out[number] = [[[(c or "") for c in row] for row in table]
+                           for table in page.extract_tables()]
+    return out
+
+
 def fetch_text(url: str, layout: bool = False,
                boxes: bool = False) -> str:
     """A remote PDF as text, page by page, without keeping the file.
@@ -103,17 +140,9 @@ def fetch_text(url: str, layout: bool = False,
     repository and a system package does not.
     """
     import io
-    import urllib.request
     from pypdf import PdfReader
 
-    req = urllib.request.Request(url, headers={
-        "User-Agent": "Mozilla/5.0 (compatible; DemographicMap/1.0; "
-                      "+https://github.com/advaitsridhar/DemographicMap)",
-        "Accept": "application/pdf,*/*",
-    })
-    with urllib.request.urlopen(req, timeout=90) as resp:
-        blob = resp.read()
-    log(f"  {len(blob):,} bytes")
+    blob = fetch_blob(url)
     if layout:
         return laid_out(blob, boxes=boxes)
     reader = PdfReader(io.BytesIO(blob))
@@ -181,11 +210,26 @@ def main() -> int:
     ap.add_argument("--pages", default="",
                     help="comma-separated page numbers to print in full, "
                          "instead of searching for terms")
+    ap.add_argument("--tables", action="store_true",
+                    help="with --url and --pages, print the tables pdfplumber "
+                         "finds on those pages, one row per line, cells "
+                         "separated by ' | ' and a newline inside a cell shown "
+                         "as '⏎'")
     ap.add_argument("--context", type=int, default=0,
                     help="print only the rows naming a term, with this many "
                          "rows either side, instead of the page's opening")
     args = ap.parse_args()
 
+    if args.url and args.tables:
+        log(f"probe_pdf: {args.url}")
+        numbers = [int(n) for n in re.split(r"[,\s]+", args.pages) if n.strip()]
+        for number, tables in tables_of(fetch_blob(args.url), numbers).items():
+            log(f"\n--- page {number}: {len(tables)} table(s) " + "-" * 40)
+            for i, table in enumerate(tables):
+                log(f"  table {i + 1}: {len(table)} rows x {max(len(r) for r in table)} cols")
+                for row in table:
+                    log("    " + " | ".join(c.replace("\n", "⏎") for c in row))
+        return 0
     if args.url:
         log(f"probe_pdf: {args.url}")
         text = fetch_text(args.url, layout=args.layout, boxes=args.boxes)
