@@ -2697,6 +2697,57 @@ Southern Ndebele in South Africa, two different languages, and Sotho is used
 for both Sesotho and Sepedi. The Factbook's compounds are safe precisely
 because they only ever appear in the South African entry.
 
+### Japan and Turkey: 208 million, and two different kinds of empty
+
+Both are large, both are blank below the country line, and the reasons are not
+the same -- which is the point of measuring rather than assuming.
+
+**Japan does not ask.** The Kokusei Chosa records name, sex, date of birth,
+marital status, nationality, household relationship, dwelling, employment,
+industry, occupation and commuting. Religion and ethnicity were already
+declared here; **language** is now declared alongside them, because the census
+does not ask that either and 47 prefectures of empty language field were
+reading as "not fetched yet" rather than "never asked". Japan's published
+religion figures come from the Agency for Cultural Affairs' yearbook, where
+religious bodies report their own adherents and the total exceeds the
+population -- the same person counted by a shrine and a temple. That is not a
+composition and cannot be made into one.
+
+What Japan does publish by prefecture is **foreign residents by nationality**,
+and that is refused here for the reason Nigeria's, Sudan's, Libya's and
+Syria's `Nationality` sheets were refused: citizenship is not ethnicity, and
+published as one it would describe a country of 123 million as ethnically
+uniform. e-Stat itself is open and answers a program -- the Population Census
+database is right there -- so this is a limit of what was asked, not of access.
+
+**Turkey may ask, and cannot be read.** Four routes measured:
+
+* **HDX** carries about thirty Turkiye datasets and not one is a composition:
+  World Bank indicator series, FAO food prices, earthquake response, conflict
+  forecasts, geoBoundaries.
+* **`data.tuik.gov.tr`** times out; its `Kategori/GetKategori` path answers
+  3,685 bytes with no links, which is a fact about that path rather than about
+  TUIK -- it is a fragment endpoint, and a first probe that treated it as a
+  measurement would have been fiction.
+* **`www.tuik.gov.tr`** answers properly, 431 kB, and names the two places the
+  data would live: `biruni.tuik.gov.tr/medas` and its regional statistics
+  portal.
+* **MEDAS returns 66 kB and zero topic links**, because the catalogue tree is
+  built client-side. The regional portal answers 6.5 kB, a frame.
+
+So Turkey is **not** the Vietnam case, where a country publishes nationally and
+nothing below. It is the **Scotland and Northern Ireland** case: a statistical
+office whose database is a JavaScript application with an undocumented API
+behind it. Whether religion, ethnicity or mother tongue is in that tree is
+still unknown, and saying otherwise would be inventing a measurement. Turkey's
+census is widely reported to have dropped mother tongue and ethnicity after
+1965, which is a reason to expect the answer is no -- but expecting is not
+measuring, and no policy entry is written on an expectation.
+
+What would settle it: the network request MEDAS makes when a person opens its
+population and demography branch, captured from a browser. The same ask as
+Scotland's and NISRA's builders, and the same one-minute fix.
+
 ## Afrobarometer: the first sampled source, and the rules that keep it honest
 
 Every other figure on this map is a count. Afrobarometer Round 9 is a survey of

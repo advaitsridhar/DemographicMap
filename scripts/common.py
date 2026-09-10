@@ -96,6 +96,13 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
     "JPN": {
         "ethnicity": "Japan's census collects nationality, not ethnicity.",
         "religion": "Japan's census does not ask religion; published figures are religious-body self-reports that exceed the population.",
+        # The third field, added for the same reason as the other two: the
+        # Kokusei Chosa asks name, sex, date of birth, marital status,
+        # nationality, household relationship, dwelling, employment, industry,
+        # occupation and commuting. There is no language question, so the 47
+        # prefectures' empty language field was reading as "not fetched yet"
+        # when it is "never asked".
+        "language": "Japan's census does not ask language; it records nationality instead.",
     },
     "IND": {
         "ethnicity": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead.",
