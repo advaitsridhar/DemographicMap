@@ -240,7 +240,8 @@ class AnnexTablesAreReadBottomUp(unittest.TestCase):
 class DecomposedAccentsStillRead(unittest.TestCase):
     def test_religion_table_with_combining_marks(self):
         import unicodedata
-        text = "front\f" + unicodedata.normalize("NFD", TABLEAU_2_03)
+        text = ("LISTE DES TABLEAUX\nTableau 2.03 : Répartition ... selon la région ... 17\f"
+                + unicodedata.normalize("NFD", TABLEAU_2_03))
         got = mali.religion_rows(text)
         self.assertEqual(len(got), 20)
         self.assertEqual(got["Ségou"][0], 2208847)

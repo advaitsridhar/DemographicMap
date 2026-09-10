@@ -229,12 +229,16 @@ def religion_rows(text: str) -> dict[str, tuple[int, dict[str, float]]]:
     # is composed before any name is compared, and the header is checked
     # with the accents folded away.
     text = unicodedata.normalize("NFC", text)
-    page = next((p for p in text.split(PAGE_BREAK) if "Tableau 2.03" in p), None)
-    if page is None:
+    # The list of tables names Tableau 2.03 too; the table's page is the one
+    # that also carries its column heads.
+    head = re.compile(r"Musulman\s+Chretien\s+Animiste\s+Sans")
+    named = [p for p in text.split(PAGE_BREAK) if "Tableau 2.03" in p]
+    if not named:
         raise SystemExit("mali: no page carries 'Tableau 2.03'")
-    if not re.search(r"Musulman\s+Chretien\s+Animiste\s+Sans", fold(page)):
-        raise SystemExit("mali: Tableau 2.03's columns are not Musulman, Chrétien, "
-                         "Animiste, Sans religion, Autre religion")
+    page = next((p for p in named if head.search(fold(p))), None)
+    if page is None:
+        raise SystemExit("mali: no page naming Tableau 2.03 carries the columns Musulman, "
+                         "Chrétien, Animiste, Sans religion, Autre religion")
     row = re.compile(r"^(\S+(?: \S+)?)\s+" + r"\s+".join([r"(\d+,\d+)"] * 5)
                      + r"\s+100,00\s+([\d ]+\d)\s*$")
     out: dict[str, tuple[int, dict[str, float]]] = {}
