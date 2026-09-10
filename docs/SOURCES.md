@@ -2735,18 +2735,37 @@ database is right there -- so this is a limit of what was asked, not of access.
 * **MEDAS returns 66 kB and zero topic links**, because the catalogue tree is
   built client-side. The regional portal answers 6.5 kB, a frame.
 
-So Turkey is **not** the Vietnam case, where a country publishes nationally and
-nothing below. It is the **Scotland and Northern Ireland** case: a statistical
-office whose database is a JavaScript application with an undocumented API
-behind it. Whether religion, ethnicity or mother tongue is in that tree is
-still unknown, and saying otherwise would be inventing a measurement. Turkey's
-census is widely reported to have dropped mother tongue and ethnicity after
-1965, which is a reason to expect the answer is no -- but expecting is not
-measuring, and no policy entry is written on an expectation.
+That looked like the Scotland and Northern Ireland case -- a JavaScript
+application with an undocumented API -- and it was not. **MEDAS renders its
+subject list server-side**, as ninety-two `<option>` elements; only the
+*contents* of a subject load over JavaScript. A saved copy of the page carries
+the whole catalogue, and a link crawler saw none of it because there are no
+links to see.
 
-What would settle it: the network request MEDAS makes when a person opens its
-population and demography branch, captured from a browser. The same ask as
-Scotland's and NISRA's builders, and the same one-minute fix.
+**Ninety-two subjects, and not one is religion, ethnicity or mother tongue.**
+The list runs Address Based Population Registration System Results, births,
+deaths, marriages, divorces, life tables, family structure, labour force,
+education, health, poverty, income distribution, agriculture, industry,
+prices, foreign trade, tourism, road traffic, prisons, suicide, cinema,
+theatre, libraries. Turkey publishes a great deal by province. None of it is
+what this map needs.
+
+So Turkey is declared, and the declaration rests on that catalogue rather than
+on history. The history is the explanation rather than the evidence: the census
+last asked mother tongue and ethnicity in **1965**, and what replaced it is an
+address-based register, which records where a citizen lives rather than what
+they are.
+
+One trap worth recording, because it nearly produced three findings out of
+nothing. A first keyword pass matched `din` -- Turkish for religion -- and
+returned "Building Construction Cost Index", "Building Permit Statistics" and
+"Survey on Building and Dwelling Characteristics". All three are *Buil-din-g*.
+Matching on word boundaries returns nothing, which is the true answer.
+
+And the route that worked is worth keeping: **a saved page beat six probes.**
+`data.tuik.gov.tr` timed out, its `GetKategori` path answered 3,685 bytes of
+fragment, MEDAS answered 66 kB with zero links, and none of that settled
+anything. One right-click on a rendered page settled all of it.
 
 ## Afrobarometer: the first sampled source, and the rules that keep it honest
 

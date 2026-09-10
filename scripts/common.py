@@ -125,6 +125,18 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
                     "breakdown of the population by language: the first "
                     "excludes English speakers, the second counts an ability.",
     },
+    # Measured rather than recalled: MEDAS, TUIK's statistical database, lists
+    # 92 subjects and not one of them is religion, ethnicity or mother tongue.
+    # The catalogue runs from the address-based population register through
+    # births, deaths, marriages, life tables, labour force and prices to
+    # theatre and prisons. Turkey's census last asked mother tongue and
+    # ethnicity in 1965; what replaced it is an address register, which records
+    # where a citizen lives rather than what they are.
+    "TUR": {
+        "religion": "Turkey does not publish religion. Its statistical database lists 92 subjects and none is religion; population figures come from an address-based register.",
+        "ethnicity": "Turkey has not collected ethnicity since the 1965 census; its address-based register records residence and citizenship instead.",
+        "language": "Turkey has not collected mother tongue since the 1965 census.",
+    },
     "KOR": {"ethnicity": "South Korea's census does not collect ethnicity."},
     "NLD": {"ethnicity": "The Netherlands records migration background, not ethnicity."},
     "SWE": {"ethnicity": "Sweden records country of birth and citizenship, not ethnicity."},
