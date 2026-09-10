@@ -75,29 +75,37 @@ def tables(wikitext: str) -> list[list[list[str]]]:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("title")
+    ap.add_argument("title", nargs="+", help="one or more article titles")
     ap.add_argument("--rows", type=int, default=30)
     ap.add_argument("--table", type=int, default=0, help="1-based; 0 means every table")
     ap.add_argument("--width", type=int, default=32, help="characters per cell")
     args = ap.parse_args()
 
-    q = urllib.parse.urlencode({"action": "parse", "page": args.title, "prop": "wikitext",
+    for title in args.title:
+        show(title, args)
+    return 0
+
+
+def show(title: str, args: argparse.Namespace) -> None:
+    q = urllib.parse.urlencode({"action": "parse", "page": title, "prop": "wikitext",
                                 "format": "json", "formatversion": "2", "redirects": "1"})
     data = http_json(f"{API}?{q}", timeout=90)
     parsed = data.get("parse") or {}
     wikitext = parsed.get("wikitext") or ""
-    log(f"page: {parsed.get('title')!r}, {len(wikitext):,} bytes of wikitext")
+    log(f"\n===== page: {parsed.get('title')!r}, {len(wikitext):,} bytes of wikitext")
+    if not wikitext:
+        log(f"  {data.get('error') or 'no wikitext'}")
+        return
     found = tables(wikitext)
     log(f"  {len(found)} table(s)")
     for i, t in enumerate(found, 1):
         if args.table and i != args.table:
             continue
-        log(f"\n--- table {i}: {len(t)} rows ---")
+        log(f"--- table {i}: {len(t)} rows ---")
         for row in t[:args.rows]:
             log("  " + " | ".join(c[:args.width] for c in row))
         if len(t) > args.rows:
             log(f"  ... {len(t) - args.rows} more rows")
-    return 0
 
 
 if __name__ == "__main__":
