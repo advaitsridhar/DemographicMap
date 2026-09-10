@@ -85,6 +85,11 @@ PROVINCES = {
     "62": "Nunavut",
 }
 LEVELS = {"Province": "admin1", "Territory": "admin1", "Economic region": "admin2"}
+# geoBoundaries writes the bilingual form for some regions and truncates long
+# names with an asterisk; a unique prefix carries most of those, but
+# Manitoba's "North" is a prefix of its "North Central" as well, and was
+# refused as ambiguous. The bilingual form is declared for it.
+ALIASES = {"North": ["North / Nord"]}
 
 
 def depth(name: str) -> int:
@@ -205,6 +210,7 @@ def build() -> list[dict[str, Any]]:
         records.append(record(
             f"CAN-{geo['code']}", geo["name"], level=geo["level"], parent=parent,
             parent_name=parent_name, country="CAN", codes={"dguid": dguid},
+            aliases=ALIASES.get(geo["name"], []),
             population=(measure(int(geo["population"]), year=YEAR, source=SOURCE)
                         if geo.get("population") else gap(NOT_AVAILABLE)),
             sources=[{"field": "population/religion/ethnicity/language", "name": SOURCE,
