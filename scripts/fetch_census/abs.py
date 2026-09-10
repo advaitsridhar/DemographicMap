@@ -451,14 +451,20 @@ def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
         log(f"  outermost level chosen by {how} for {n} regions")
     # When no rule adds up, the categories themselves are the diagnosis, and a
     # log that only reports the verdict makes the next run a guess. One region
-    # is enough to show the shape of the classification.
-    if out and not any(how.startswith("code tree") for how in picked):
-        region, counts = next(iter(out.items()))
+    # per verdict is enough to show the shape of the classification -- and
+    # one per verdict rather than one per run, because 109 LGAs fell to the
+    # suffix rule for language while 354 did not, and the run's log showed
+    # neither what they looked like nor why.
+    shown: set[str] = set()
+    for region, counts in out.items():
         published = next((v for (label, _), v in counts.items()
                           if label.strip().lower() in GRAND_TOTAL), None)
-        log(f"  ! no rule partitioned {label_dim} for region {region}; "
-            f"published total {published}")
-        for (label, code), value in sorted(counts.items(), key=lambda kv: -kv[1])[:24]:
+        _, how = top_level(counts, published)
+        if how.startswith("code tree") or how in shown:
+            continue
+        shown.add(how)
+        log(f"  ! {how}: {label_dim} for region {region}; published total {published}")
+        for (label, code), value in sorted(counts.items(), key=lambda kv: -kv[1])[:28]:
             log(f"      {code!r:>10}  {value:>12,.0f}  {label}")
     return grouped, totals
 
