@@ -4927,6 +4927,24 @@ class KazakhstanSumsTheNewRegionsBack(unittest.TestCase):
         self.assertEqual(k.label("Саха(Якуты)"), "Yakut")
 
 
+class ParentIsResolvedByExactNameFirst(unittest.TestCase):
+    """norm() drops "Region", so "Almaty Region" and the city "Almaty" share a
+    key; a district row naming the region as its parent must be scoped to the
+    region, not to whichever of the two was keyed last.
+    """
+
+    def test_region_and_city_of_one_name(self):
+        region = {"id": "R", "name": "Almaty Region"}
+        city = {"id": "C", "name": "Almaty"}
+        admin1 = {be.norm("Almaty Region"): city, "almaty-city": city, "almaty-region": region}
+        shapes = {be.norm("Aksuskiy"): [{"id": "a1", "name": "Aksuskiy", "parent": "R"},
+                                        {"id": "a2", "name": "Aksuskiy", "parent": "P"}]}
+        entity, how = be.match_admin2({"name": "Аксуский район", "aliases": ["Aksuskiy"],
+                                       "parent_name": "Almaty Region"}, shapes, admin1)
+        self.assertEqual((entity or {}).get("id"), "a1")
+        self.assertTrue(how.endswith("+state"))
+
+
 class PolandCutsTheReligionTreeOnce(unittest.TestCase):
     """GUS publishes religion as a seven-level classification tree, and the
     composition is one cut through it: Christian branches at level 5, other

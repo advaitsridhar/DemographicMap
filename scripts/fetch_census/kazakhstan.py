@@ -138,6 +138,12 @@ RENAMED: dict[str, list[str]] = {
     "район Тереңкөл": ["Kachirskiy"],               # Kachiry District, renamed 2018
     "район Аққулы": ["Lebyazhinskiy"],              # Lebyazhye District, renamed 2018
     "Сырдарьинский район": ["Terenozekskiy"],       # its seat Terenozek names the shape
+    # City akimats the file draws under the district or city name they
+    # replaced: Semipalatinsk became Semey in 2007; Aksu's and Arys's rural
+    # districts were folded into their city akimats.
+    "Семей г.а.": ["Semipalatinskiy"],
+    "Аксу г.а.": ["Aksuskiy"],
+    "Арысь г.а.": ["Arysskiy"],
 }
 
 # Beyond the Rosstat table: the Bureau's spellings and its residual rows.

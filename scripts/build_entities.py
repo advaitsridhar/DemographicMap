@@ -746,8 +746,17 @@ def match_admin2(row: dict[str, Any], by_name: dict[str, list[dict[str, Any]]],
         # sharing a name with a municipio elsewhere -- Benito Juarez, also in
         # Quintana Roo; Cuauhtemoc, also in Chihuahua and Colima -- are refused
         # as ambiguous.
-        parent, _ = match_name({"name": parent_name,
-                                "aliases": row.get("parent_aliases") or []}, admin1)
+        # An exact name first: norm() drops the generic word, so "Almaty Region"
+        # and the city "Almaty" share one key and whichever was keyed last
+        # answered for both -- which scoped Almaty Region's districts to the
+        # city, where none of them are, and refused the two whose names repeat
+        # elsewhere (Aksuskiy, Zhambylskiy) as ambiguous.
+        wanted = " ".join(parent_name.split()).casefold()
+        parent = next((e for e in admin1.values()
+                       if " ".join((e.get("name") or "").split()).casefold() == wanted), None)
+        if parent is None:
+            parent, _ = match_name({"name": parent_name,
+                                    "aliases": row.get("parent_aliases") or []}, admin1)
         if parent is not None:
             scoped = settle(by_name, [row["name"], *row.get("aliases", [])],
                             parent["id"])
