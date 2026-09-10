@@ -1,0 +1,753 @@
+{
+ "iso3": "CUB",
+ "name": "Cuba",
+ "tier_proposed": "B",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Cuba",
+    "wikitext_bytes": 43114,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Cuba",
+    "wikitext_bytes": 55464,
+    "infobox_params": [],
+    "sections": [
+     "Language",
+     "Religion"
+    ],
+    "wikitables": 19,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "colspan=6 align=center bgcolor=#CCCCFF|Population and Area by region",
+       "scope=\"col\" | Province",
+       "scope=\"col\" | Area (km²)",
+       "scope=\"col\" | Area (%)",
+       "scope=\"col\" | Population",
+       "scope=\"col\" | Population (%)",
+       "scope=\"col\" | Density",
+       "scope=\"row\" style=\"text-align: left;\" | Cuba total",
+       "scope=\"row\" style=\"text-align: left;\" | Pinar del Río",
+       "scope=\"row\" style=\"text-align: left;\" | Havana"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "! width=\"70pt\"|Average population",
+       "width=\"70pt\"|Live births",
+       "width=\"70pt\"|Deaths",
+       "width=\"70pt\"|Natural change",
+       "width=\"70pt\"|Crude birth rate (per 1000)",
+       "width=\"70pt\"|Crude death rate (per 1000)",
+       "width=\"70pt\"|Natural change (per 1000)",
+       "width=\"70pt\"|Crude migration change (per 1000)",
+       "width=\"70pt\"|Total fertility rate",
+       "width=\"70pt\"|Infant mortality rate"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "Years",
+       "1900",
+       "1901",
+       "1902",
+       "1903",
+       "1904",
+       "1905",
+       "1906",
+       "1907",
+       "1908"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1910",
+       "1911",
+       "1912",
+       "1913",
+       "1914",
+       "1915",
+       "1916",
+       "1917",
+       "1918"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Years",
+       "1920",
+       "1921",
+       "1922",
+       "1923",
+       "1924",
+       "1925",
+       "1926",
+       "1927",
+       "1928"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1930",
+       "1931",
+       "1932",
+       "1933",
+       "1934",
+       "1935",
+       "1936",
+       "1937",
+       "1938"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1940",
+       "1941",
+       "1942",
+       "1943",
+       "1944",
+       "1945",
+       "1946",
+       "1947<ref name=\"ourworldindata.org\" />",
+       "width=\"50\"|Year"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "width=\"50\"|Year",
+       "width=\"50pt\"| White",
+       "width=\"50pt\"| Multiracial  (Mulatos/Mestizos)",
+       "width=\"50pt\"| Black",
+       "rowspan=\"2\" |Race",
+       "colspan=\"2\" |census 1774<ref>{{Cite web |title=El Color de la Piel según el Censo de Población y Viviendas |url=http://www.onei.gob.cu/sites/default/files/publicacion_completa_color_de_la_piel__0.pdf |archive-url=https://web.archive.org/web/20220121050600/http://www.onei.gob.cu/sites/default/files/publicacion_completa_color_de_la_piel__0.pdf |website=Cuba Statistics and Information |pages=17–18|archive-date=2022-01-21 }}</ref>",
+       "colspan=\"2\" |census 1792",
+       "colspan=\"2\" |census 1817",
+       "colspan=\"2\" |census 1827",
+       "colspan=\"2\" |census 1841"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |Race",
+       "colspan=\"2\" |census 1774<ref>{{Cite web |title=El Color de la Piel según el Censo de Población y Viviendas |url=http://www.onei.gob.cu/sites/default/files/publicacion_completa_color_de_la_piel__0.pdf |archive-url=https://web.archive.org/web/20220121050600/http://www.onei.gob.cu/sites/default/files/publicacion_completa_color_de_la_piel__0.pdf |website=Cuba Statistics and Information |pages=17–18|archive-date=2022-01-21 }}</ref>",
+       "colspan=\"2\" |census 1792",
+       "colspan=\"2\" |census 1817",
+       "colspan=\"2\" |census 1827",
+       "colspan=\"2\" |census 1841",
+       "colspan=\"2\" |census 1861",
+       "colspan=\"2\" |census 1877",
+       "colspan=\"2\" |census 1887",
+       "colspan=\"2\" |census 1899"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |Race",
+       "colspan=\"2\" |census 1919",
+       "colspan=\"2\" |census 1931",
+       "colspan=\"2\" |census 1943",
+       "colspan=\"2\" |census 1953",
+       "colspan=\"2\" |census 1981",
+       "colspan=\"2\" |census 2002",
+       "colspan=\"2\" |census 2012",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "width=\"50pt\"|Age group",
+       "width=\"50pt\"|Cuba 100% (percent of the population)",
+       "width=\"50pt\"|White 64,12% (percent in the race/percent in the age group)",
+       "width=\"50pt\"|Black 9,26% (percent in the race/percent in the age group)",
+       "width=\"50pt\"|Mulatto/Mestizo 26,62% (percent in the race/percent in the age group)",
+       "width=\"50\"|Age group",
+       "width=\"80\"|Cuba (percent of the population)",
+       "width=\"80\"|White (percent in the race/percent in the age group)",
+       "width=\"80\"|Black (percent in the race/percent in the age group)",
+       "width=\"80\"|Mulatto/Mestizo (percent in the race/percent in the age group)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"50\"|Age group",
+       "width=\"80\"|Cuba (percent of the population)",
+       "width=\"80\"|White (percent in the race/percent in the age group)",
+       "width=\"80\"|Black (percent in the race/percent in the age group)",
+       "width=\"80\"|Mulatto/Mestizo (percent in the race/percent in the age group)",
+       "colspan=9| Official census 1775-1899<ref>{{cite web|url=http://digital.tcl.sc.edu/cdm4/document.php?CISOROOT=/CCC&CISOPTR=1683&REC=5&CISOBOX=foreign|title=Report on the Census of Cuba, 1899 :: Census of Cuba 1899|website=Digital.tcl.sc.edu|access-date=2 November 2017}}</ref>",
+       "colspan=3|White",
+       "colspan=3|Non-white",
+       "Census",
+       "Number"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "colspan=9| Official census 1775-1899<ref>{{cite web|url=http://digital.tcl.sc.edu/cdm4/document.php?CISOROOT=/CCC&CISOPTR=1683&REC=5&CISOBOX=foreign|title=Report on the Census of Cuba, 1899 :: Census of Cuba 1899|website=Digital.tcl.sc.edu|access-date=2 November 2017}}</ref>",
+       "colspan=3|White",
+       "colspan=3|Non-white",
+       "Census",
+       "Number",
+       "Percentage",
+       "Number",
+       "Percentage"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Self-reported ancestry",
+       "European",
+       "African",
+       "Native American"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "N<ref name=\"biomedcentral.com\">Mendizabal et al (2008).[http://www.biomedcentral.com/1471-2148/8/213 Genetic origin, admixture, and asymmetry in maternal and paternal human lineages in Cuba]</ref>",
+       "E-M33",
+       "E-M75",
+       "E-M2",
+       "E1b1b-M35",
+       "E1b1b-M78",
+       "E1b1b-M81",
+       "E1b1b-M123",
+       "G",
+       "I"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "N<ref name=\"biomedcentral.com\"/>",
+       "L",
+       "U6",
+       "A",
+       "B",
+       "C",
+       "D",
+       "H",
+       "I1",
+       "J*"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 2
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Baraguá",
+    "found": true,
+    "title": "Constitution of Cuba",
+    "url": "https://en.wikipedia.org/wiki/Constitution_of_Cuba",
+    "wikitext_bytes": 36703,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Bejucal",
+    "found": true,
+    "title": "Bejucal",
+    "url": "https://en.wikipedia.org/wiki/Bejucal",
+    "wikitext_bytes": 8496,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Fomento",
+    "found": true,
+    "title": "Fomento",
+    "url": "https://en.wikipedia.org/wiki/Fomento",
+    "wikitext_bytes": 4711,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Jobabo",
+    "found": true,
+    "title": "Jobabo",
+    "url": "https://en.wikipedia.org/wiki/Jobabo",
+    "wikitext_bytes": 4420,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "La Habana Vieja",
+    "found": true,
+    "title": "Old Havana",
+    "url": "https://en.wikipedia.org/wiki/Old_Havana",
+    "wikitext_bytes": 14890,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "HOTOSM Cuba Schools",
+   "name": "hotosm-cuba-schools",
+   "org": "OCHA Latin America and the Caribbean (ROLAC)",
+   "url": "https://data.humdata.org/dataset/hotosm-cuba-schools",
+   "resources": [
+    {
+     "name": "cub_schools_shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/621c3991-7c5b-4e2e-9d12-fa3c6134b75c/resource/1c650b77-e324-44d8-b868-5792a216ad74/download/cub_schools_shp.zip"
+    },
+    {
+     "name": "cub_schools_gpkg.zip",
+     "format": "Geopackage",
+     "url": "https://data.humdata.org/dataset/621c3991-7c5b-4e2e-9d12-fa3c6134b75c/resource/2c15e88d-e361-4d24-b4f3-c43abd1735e9/download/cub_schools_gpkg.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Cuba: Road Surface Data",
+   "name": "cuba-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/cuba-road-surface-data",
+   "resources": [
+    {
+     "name": "Cuba GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_cub_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Cuba GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_cub_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Cuba: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-cuba",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-cuba",
+   "resources": [
+    {
+     "name": "kontur_boundaries_CU_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_CU_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_CU_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_CU_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_CU_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_CU_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Cuba - Subnational Population Statistics",
+   "name": "cod-ps-cub",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-cub",
+   "resources": [
+    {
+     "name": "cub_admpop_2024.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/b947bfba-cbde-454c-8ea8-3fd6ac075007/resource/3e055abd-7319-4821-bf8b-a620c372feb1/download/cub_admpop_2024.xlsx"
+    },
+    {
+     "name": "CUB-COD-PS-2024-Explanatory-Note.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/b947bfba-cbde-454c-8ea8-3fd6ac075007/resource/a7274069-dc85-43e9-82d4-6439475133eb/download/cub-cod-ps-2024-explanatory-note.pdf"
+    },
+    {
+     "name": "cub_admpop_adm0_2024.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/b947bfba-cbde-454c-8ea8-3fd6ac075007/resource/53929066-b0d1-4169-8d4e-7b478ad042cf/download/cub_admpop_adm0_2024.csv"
+    },
+    {
+     "name": "cub_admpop_adm1_2024.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/b947bfba-cbde-454c-8ea8-3fd6ac075007/resource/b9dea485-978e-4cad-87e8-2717d3878116/download/cub_admpop_adm1_2024.csv"
+    },
+    {
+     "name": "cub_adm_gazetteer.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/b947bfba-cbde-454c-8ea8-3fd6ac075007/resource/4ffdf245-6aec-42ab-a023-61301656132e/download/cub_adm_gazetteer.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Cuba - Accessibility Indicators",
+   "name": "cuba-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/cuba-accessibility-indicators",
+   "resources": [
+    {
+     "name": "CUB_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cub/CUB_education_access.gpkg"
+    },
+    {
+     "name": "CUB_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cub/CUB_education_access_long.csv"
+    },
+    {
+     "name": "CUB_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cub/CUB_primary_healthcare_access_long.csv"
+    },
+    {
+     "name": "CUB_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cub/CUB_hospitals_access_wide.csv"
+    },
+    {
+     "name": "CUB_primary_healthcare_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cub/CUB_primary_healthcare_access_wide.csv"
+    },
+    {
+     "name": "CUB_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cub/CUB_hospitals_access_long.csv"
+    },
+    {
+     "name": "CUB_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cub/CUB_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "CUB_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cub/CUB_hospitals_access.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Cuba - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-cuba",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-cuba",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Cuba",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/936c9c32-1373-43ec-a9d0-a902dd6380c6/resource/02522e73-38ff-474a-9fb6-30253db7c83b/download/social-protection-and-labor_cub.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Cuba - Population Counts",
+   "name": "worldpop-population-counts-for-cuba",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-cuba",
+   "resources": [
+    {
+     "name": "cub_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/CUB/cub_ppp_2020.tif"
+    },
+    {
+     "name": "cub_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/CUB/cub_ppp_2019.tif"
+    },
+    {
+     "name": "cub_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/CUB/cub_ppp_2018.tif"
+    },
+    {
+     "name": "cub_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/CUB/cub_ppp_2017.tif"
+    },
+    {
+     "name": "cub_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/CUB/cub_ppp_2016.tif"
+    },
+    {
+     "name": "cub_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/CUB/cub_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "cub_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/CUB/cub_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "cub_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/CUB/cub_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Cuba - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-cu-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-cu-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_CU",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/08301c8e-5aab-43ad-93a8-2e4379f9f8e0/resource/236a2280-c192-4be2-b124-f50dd442a4c2/download/indicator_data_cu.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Cuba: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "cub-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/cub-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/a37555b9-afd6-45bd-8ae7-88a95b59cac6/resource/2daabafd-6605-4806-9b78-3606676c2bad/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_cub.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/a37555b9-afd6-45bd-8ae7-88a95b59cac6/resource/ad8bb410-a59b-4d88-804f-48a4fe7c452e/download/ghs_pop_e2025_r2023a_54009_100_v1_0_cub.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Cuba: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-cub",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-cub",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-cu-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-cu-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Cuba - Population Exposure Wind Speed from Hurricane Matthew (UNOSAT, 2016-10-06.)",
+   "name": "unosat-cuba-popexposure-windspeed-matthew-20161006",
+   "org": "United Nations Satellite Centre (UNOSAT)",
+   "url": "https://data.humdata.org/dataset/unosat-cuba-popexposure-windspeed-matthew-20161006",
+   "resources": [
+    {
+     "name": "UNOSAT_Cuba_PopExposure_WindSpeed_Matthew_20161006",
+     "format": "SHP",
+     "url": "https://unosat-maps.web.cern.ch/unosat-maps/HT/TC20161003HTI/UNOSAT_Cuba_PopExposure_WindSpeed_Matthew_20161006.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Partial Assessment and 4W matrix ,Hurricane Matthew.",
+   "name": "assessment-4w-09-10-2016-hurricane-matthew-xlsx",
+   "org": "International Federation of Red Cross and Red Crescent Societies (IFRC)",
+   "url": "https://data.humdata.org/dataset/assessment-4w-09-10-2016-hurricane-matthew-xlsx",
+   "resources": [
+    {
+     "name": "Assessment_4W_09.10.2016_Hurricane_Matthew .xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/026419d3-7f73-4809-bf92-a1ea3dd1ffae/resource/6cc01358-c456-4e15-bfdf-8328e5162354/download/assessment_4w_09.10.2016_hurricane_matthew-.xlsx"
+    },
+    {
+     "name": "mathew_1.json",
+     "format": "JSON",
+     "url": "https://data.humdata.org/dataset/026419d3-7f73-4809-bf92-a1ea3dd1ffae/resource/97c8d1e3-e29b-4df2-8036-e5d4521f740a/download/mathew_1.json"
+    },
+    {
+     "name": "AssessmentHurricaneMatthew09102016.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/026419d3-7f73-4809-bf92-a1ea3dd1ffae/resource/b0ee4454-a7d6-42a0-af3c-89e79e9942c6/download/assessmenthurricanematthew09102016.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Partial Assessment and 4W matrix ,Hurricane Matthew.",
+   "name": "partial-assessment-and-4w-matrix-hurricane-matthew-as-of-09-10-2016",
+   "org": "International Federation of Red Cross and Red Crescent Societies (IFRC)",
+   "url": "https://data.humdata.org/dataset/partial-assessment-and-4w-matrix-hurricane-matthew-as-of-09-10-2016",
+   "resources": [
+    {
+     "name": "Assessment_4W_11.10.2016_Hurricane_Matthew.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/ff357012-1b20-4787-aa09-60c77bc3fa9f/resource/be452447-1b7f-4160-8cea-38a79890974a/download/assessment_4w_10.10.2016_hurricane_matthew.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.onei.gob.cu/",
+  "status": 0,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)>",
+  "pages": []
+ },
+ "verdict": {
+  "hdx_datasets": 13,
+  "hdx_machine_readable": 6,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

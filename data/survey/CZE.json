@@ -1,0 +1,1161 @@
+{
+ "iso3": "CZE",
+ "name": "Czechia",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity",
+    "language",
+    "religion"
+   ],
+   "title": "CZSO Verejna databaze (VDB, public database) -- SLDB 2021 tables by kraj / okres / ORP / obec with XLSX/CSV export",
+   "kind": "census",
+   "format": "table-builder (xlsx/csv export)",
+   "geography": "okres",
+   "geography_count": 77,
+   "matches_boundary_level": "admin2 and admin1",
+   "url": "https://vdb.czso.cz/",
+   "status": 200,
+   "content_type": "text/html",
+   "final_url": "https://vdb.czso.cz/",
+   "error": null,
+   "body": {
+    "bytes_read": 103,
+    "kind": "html",
+    "title": null,
+    "links_to_files": [],
+    "mentions": []
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in the Czech Republic",
+    "wikitext_bytes": 40153,
+    "infobox_params": [],
+    "sections": [
+     "Demographics",
+     "Religions"
+    ],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\"|Religion",
+       "style=\"text-align:center;\" colspan=\"2\"|1921",
+       "style=\"text-align:center;\" colspan=\"2\"|1930",
+       "style=\"text-align:center;\" colspan=\"2\"|1950",
+       "style=\"text-align:center;\" colspan=\"2\"|1991",
+       "style=\"text-align:center;\" colspan=\"2\"|2001",
+       "style=\"text-align:center;\" colspan=\"2\"|2011",
+       "style=\"text-align:center;\" colspan=\"2\"|2021",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of the Czech Republic",
+    "wikitext_bytes": 127739,
+    "infobox_params": [
+     "language"
+    ],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 19,
+    "charts": [
+     "historical populations"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Period",
+       "Life expectancy<br />in years",
+       "1860",
+       "1861",
+       "1862",
+       "1863",
+       "1864",
+       "1865",
+       "1866",
+       "1867"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "1860",
+       "1861",
+       "1862",
+       "1863",
+       "1864",
+       "1865",
+       "1866",
+       "1867",
+       "1868",
+       "1869"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "City",
+       "Population (2026)<ref>{{cite web |title=Population in municipalities as at 1. 1.|url=https://data.csu.gov.cz/datastat/data/VYBER/OBY02AT02|work=DataStat|publisher=Czech Statistical Office|date=2026-05-18}}</ref>",
+       "Area (km²)",
+       "Region",
+       "Greatest Generation (1901–1927)",
+       "Silent Generation (1928–1945)",
+       "Baby boomers (1946–1964)",
+       "Generation X (1965–1980)",
+       "Generation Y (1981–1996)",
+       "Generation Z (1997–2012)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Greatest Generation (1901–1927)",
+       "Silent Generation (1928–1945)",
+       "Baby boomers (1946–1964)",
+       "Generation X (1965–1980)",
+       "Generation Y (1981–1996)",
+       "Generation Z (1997–2012)",
+       "Generation Alpha<br />(2013–2024)",
+       "Generation Beta<br />(2025–)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\"|Average population (Mid-year)",
+       "style=\"width:80pt;\"|Live births",
+       "style=\"width:80pt;\"|Deaths",
+       "style=\"width:80pt;\"|Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)",
+       "style=\"width:80pt;\"|Crude migration rate (per 1000)",
+       "style=\"width:80pt;\"|Total fertility rates<ref>{{citation|url=https://ourworldindata.org/grapher/children-born-per-woman?year=1900&time=1800..2015&country=CZE|title=Total Fertility Rate around the world over the last centuries|author=Max Roser|date=2014|work=Our World in Data, Gapminder Foundation}}</ref>",
+       "style=\"width:80pt;\"|Female fertile population (15–49 years)<ref name=\"nationality\">{{Cite web |title=Demografická ročenka České republiky - data za rok 2024 |url=https://csu.gov.cz/produkty/demograficka-rocenka-ceske-republiky-2ncey2iey2 |access-date=2026-07-22 |website=Produkty |language=cs-cz}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Country",
+       "Births",
+       "scope=\"row\" colspan=\"2\"|Europe (excluding the Czech Republic) detail:",
+       "scope=\"row\" colspan=\"2\"|America detail:",
+       "scope=\"row\" colspan=\"2\"|Asia detail:",
+       "scope=\"row\"|Other",
+       "scope=\"row\"|Foreign",
+       "scope=\"row\"|National total",
+       "Country",
+       "Births"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 58
+     },
+     {
+      "header": [
+       "Country",
+       "Births",
+       "scope=\"row\" colspan=\"2\"|Europe (excluding the Czech Republic) detail:",
+       "scope=\"row\" colspan=\"2\"|America detail:",
+       "scope=\"row\" colspan=\"2\"|Asia detail:",
+       "scope=\"row\"|Other/undeclared",
+       "scope=\"row\"|Foreign",
+       "scope=\"row\"|National total",
+       "Period",
+       "Live births"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 39
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January–March 2025",
+       "January–March 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{Cite web|url=https://vdb.czso.cz/vdbvo2/faces/en/index.jsf?page=statistiky#katalog=34275|title=Preliminary data - population and population change\t|website=Population change - News Releases}}</ref>",
+       "Region",
+       "Population"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "Region",
+       "Population",
+       "Live births",
+       "Deaths",
+       "Natural change",
+       "Crude birth rate (per 1000)",
+       "Crude death rate (per 1000)",
+       "Natural change (per 1000)",
+       "Total fertility rates",
+       "Migration change"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 34
+     },
+     {
+      "header": [
+       "Districts",
+       "TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 77
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "Language",
+       "1880",
+       "1890",
+       "1900",
+       "1910",
+       "Total population",
+       "8,222,013",
+       "8,665,421",
+       "9,372,140",
+       "10,078,637"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic<br />group",
+       "colspan=\"2\" | census 1921 <sup>1</sup>",
+       "colspan=\"2\" | census 1930",
+       "colspan=\"2\" | census 1950",
+       "colspan=\"2\" | census 1961",
+       "colspan=\"2\" | census 1970",
+       "colspan=\"2\" | census 1980",
+       "colspan=\"2\" | census 1991",
+       "colspan=\"2\" | census 2001",
+       "colspan=\"2\" | census 2011<ref>{{cite web |title=Tab. 614a Obyvatelstvo podle věku, národnosti a pohlaví|url=https://vdb.czso.cz/vdbvo2/faces/cs/index.jsf?page=vystup-objekt&pvo=OBCR614A&z=T&f=TABULKA&katalog=30715&u=v1050__VUZEMI__97__19&v=v1051__null__null__null#fx=0&w=|publisher=Czech Statistical Office|access-date=24 April 2019|language=cs}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Year",
+       "Net Migration",
+       "Year",
+       "Immigrants",
+       "Emigrants",
+       "Net migration",
+       "Country",
+       "2016",
+       "2017",
+       "2018"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 33
+     },
+     {
+      "header": [
+       "Year",
+       "Immigrants",
+       "Emigrants",
+       "Net migration",
+       "Country",
+       "2016",
+       "2017",
+       "2018"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "Country",
+       "2016",
+       "2017",
+       "2018",
+       "Nationality",
+       "Population<br>(31 December 2024)<ref>{{cite web |title=Data on number of foreigners: R04 Foreigners in"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Nationality",
+       "Population<br>(31 December 2024)<ref>{{cite web |title=Data on number of foreigners: R04 Foreigners in the Czech Republic by citizenship in the years 1994–2022 (as at 31 December)|url=https://www.czso.cz/csu/cizinci/number-of-foreigners-data#rok|publisher=Czech Statistical Office|access-date=2023-12-18}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "style=\"text-align:center;\" colspan=\"2\"|1991",
+       "style=\"text-align:center;\" colspan=\"2\"|2001",
+       "style=\"text-align:center;\" colspan=\"2\"|2011",
+       "colspan=\"2\" |2021 [https://www.czso.cz/csu/scitani2021/religious-beliefs p]",
+       "number",
+       "%",
+       "number",
+       "%",
+       "number|| %",
+       "number"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Czechia",
+    "wikitext_bytes": 40153,
+    "infobox_params": [],
+    "sections": [
+     "Demographics",
+     "Religions"
+    ],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\"|Religion",
+       "style=\"text-align:center;\" colspan=\"2\"|1921",
+       "style=\"text-align:center;\" colspan=\"2\"|1930",
+       "style=\"text-align:center;\" colspan=\"2\"|1950",
+       "style=\"text-align:center;\" colspan=\"2\"|1991",
+       "style=\"text-align:center;\" colspan=\"2\"|2001",
+       "style=\"text-align:center;\" colspan=\"2\"|2011",
+       "style=\"text-align:center;\" colspan=\"2\"|2021",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Czechia",
+    "wikitext_bytes": 127739,
+    "infobox_params": [
+     "language"
+    ],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 19,
+    "charts": [
+     "historical populations"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Period",
+       "Life expectancy<br />in years",
+       "1860",
+       "1861",
+       "1862",
+       "1863",
+       "1864",
+       "1865",
+       "1866",
+       "1867"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "1860",
+       "1861",
+       "1862",
+       "1863",
+       "1864",
+       "1865",
+       "1866",
+       "1867",
+       "1868",
+       "1869"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "City",
+       "Population (2026)<ref>{{cite web |title=Population in municipalities as at 1. 1.|url=https://data.csu.gov.cz/datastat/data/VYBER/OBY02AT02|work=DataStat|publisher=Czech Statistical Office|date=2026-05-18}}</ref>",
+       "Area (km²)",
+       "Region",
+       "Greatest Generation (1901–1927)",
+       "Silent Generation (1928–1945)",
+       "Baby boomers (1946–1964)",
+       "Generation X (1965–1980)",
+       "Generation Y (1981–1996)",
+       "Generation Z (1997–2012)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Greatest Generation (1901–1927)",
+       "Silent Generation (1928–1945)",
+       "Baby boomers (1946–1964)",
+       "Generation X (1965–1980)",
+       "Generation Y (1981–1996)",
+       "Generation Z (1997–2012)",
+       "Generation Alpha<br />(2013–2024)",
+       "Generation Beta<br />(2025–)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\"|Average population (Mid-year)",
+       "style=\"width:80pt;\"|Live births",
+       "style=\"width:80pt;\"|Deaths",
+       "style=\"width:80pt;\"|Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)",
+       "style=\"width:80pt;\"|Crude migration rate (per 1000)",
+       "style=\"width:80pt;\"|Total fertility rates<ref>{{citation|url=https://ourworldindata.org/grapher/children-born-per-woman?year=1900&time=1800..2015&country=CZE|title=Total Fertility Rate around the world over the last centuries|author=Max Roser|date=2014|work=Our World in Data, Gapminder Foundation}}</ref>",
+       "style=\"width:80pt;\"|Female fertile population (15–49 years)<ref name=\"nationality\">{{Cite web |title=Demografická ročenka České republiky - data za rok 2024 |url=https://csu.gov.cz/produkty/demograficka-rocenka-ceske-republiky-2ncey2iey2 |access-date=2026-07-22 |website=Produkty |language=cs-cz}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Country",
+       "Births",
+       "scope=\"row\" colspan=\"2\"|Europe (excluding the Czech Republic) detail:",
+       "scope=\"row\" colspan=\"2\"|America detail:",
+       "scope=\"row\" colspan=\"2\"|Asia detail:",
+       "scope=\"row\"|Other",
+       "scope=\"row\"|Foreign",
+       "scope=\"row\"|National total",
+       "Country",
+       "Births"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 58
+     },
+     {
+      "header": [
+       "Country",
+       "Births",
+       "scope=\"row\" colspan=\"2\"|Europe (excluding the Czech Republic) detail:",
+       "scope=\"row\" colspan=\"2\"|America detail:",
+       "scope=\"row\" colspan=\"2\"|Asia detail:",
+       "scope=\"row\"|Other/undeclared",
+       "scope=\"row\"|Foreign",
+       "scope=\"row\"|National total",
+       "Period",
+       "Live births"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 39
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January–March 2025",
+       "January–March 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{Cite web|url=https://vdb.czso.cz/vdbvo2/faces/en/index.jsf?page=statistiky#katalog=34275|title=Preliminary data - population and population change\t|website=Population change - News Releases}}</ref>",
+       "Region",
+       "Population"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "Region",
+       "Population",
+       "Live births",
+       "Deaths",
+       "Natural change",
+       "Crude birth rate (per 1000)",
+       "Crude death rate (per 1000)",
+       "Natural change (per 1000)",
+       "Total fertility rates",
+       "Migration change"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 34
+     },
+     {
+      "header": [
+       "Districts",
+       "TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 77
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "Language",
+       "1880",
+       "1890",
+       "1900",
+       "1910",
+       "Total population",
+       "8,222,013",
+       "8,665,421",
+       "9,372,140",
+       "10,078,637"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic<br />group",
+       "colspan=\"2\" | census 1921 <sup>1</sup>",
+       "colspan=\"2\" | census 1930",
+       "colspan=\"2\" | census 1950",
+       "colspan=\"2\" | census 1961",
+       "colspan=\"2\" | census 1970",
+       "colspan=\"2\" | census 1980",
+       "colspan=\"2\" | census 1991",
+       "colspan=\"2\" | census 2001",
+       "colspan=\"2\" | census 2011<ref>{{cite web |title=Tab. 614a Obyvatelstvo podle věku, národnosti a pohlaví|url=https://vdb.czso.cz/vdbvo2/faces/cs/index.jsf?page=vystup-objekt&pvo=OBCR614A&z=T&f=TABULKA&katalog=30715&u=v1050__VUZEMI__97__19&v=v1051__null__null__null#fx=0&w=|publisher=Czech Statistical Office|access-date=24 April 2019|language=cs}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Year",
+       "Net Migration",
+       "Year",
+       "Immigrants",
+       "Emigrants",
+       "Net migration",
+       "Country",
+       "2016",
+       "2017",
+       "2018"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 33
+     },
+     {
+      "header": [
+       "Year",
+       "Immigrants",
+       "Emigrants",
+       "Net migration",
+       "Country",
+       "2016",
+       "2017",
+       "2018"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "Country",
+       "2016",
+       "2017",
+       "2018",
+       "Nationality",
+       "Population<br>(31 December 2024)<ref>{{cite web |title=Data on number of foreigners: R04 Foreigners in"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Nationality",
+       "Population<br>(31 December 2024)<ref>{{cite web |title=Data on number of foreigners: R04 Foreigners in the Czech Republic by citizenship in the years 1994–2022 (as at 31 December)|url=https://www.czso.cz/csu/cizinci/number-of-foreigners-data#rok|publisher=Czech Statistical Office|access-date=2023-12-18}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "style=\"text-align:center;\" colspan=\"2\"|1991",
+       "style=\"text-align:center;\" colspan=\"2\"|2001",
+       "style=\"text-align:center;\" colspan=\"2\"|2011",
+       "colspan=\"2\" |2021 [https://www.czso.cz/csu/scitani2021/religious-beliefs p]",
+       "number",
+       "%",
+       "number",
+       "%",
+       "number|| %",
+       "number"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Kroměříž",
+    "found": true,
+    "title": "List of World Heritage Sites in the Czech Republic",
+    "url": "https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_in_the_Czech_Republic",
+    "wikitext_bytes": 40235,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Liberec",
+    "found": true,
+    "title": "List of cities and towns in the Czech Republic",
+    "url": "https://en.wikipedia.org/wiki/List_of_cities_and_towns_in_the_Czech_Republic",
+    "wikitext_bytes": 42733,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 4,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Prague-West",
+    "found": true,
+    "title": "List of dams and reservoirs in the Czech Republic",
+    "url": "https://en.wikipedia.org/wiki/List_of_dams_and_reservoirs_in_the_Czech_Republic",
+    "wikitext_bytes": 3984,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Rakovnik",
+    "found": true,
+    "title": "List of airports in the Czech Republic",
+    "url": "https://en.wikipedia.org/wiki/List_of_airports_in_the_Czech_Republic",
+    "wikitext_bytes": 16401,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Semily",
+    "found": true,
+    "title": "Districts of the Czech Republic",
+    "url": "https://en.wikipedia.org/wiki/Districts_of_the_Czech_Republic",
+    "wikitext_bytes": 11919,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Czechia: Road Surface Data",
+   "name": "czechia-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/czechia-road-surface-data",
+   "resources": [
+    {
+     "name": "Czechia GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_cze_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Czechia GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_cze_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Czechia: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-czechia",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-czechia",
+   "resources": [
+    {
+     "name": "kontur_boundaries_CZ_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_CZ_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_CZ_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_CZ_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_CZ_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_CZ_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Czech Republic - Accessibility Indicators",
+   "name": "czech-republic-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/czech-republic-accessibility-indicators",
+   "resources": [
+    {
+     "name": "CZE_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cze/CZE_education_access.gpkg"
+    },
+    {
+     "name": "CZE_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cze/CZE_education_access_long.csv"
+    },
+    {
+     "name": "CZE_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cze/CZE_education_access_wide.csv"
+    },
+    {
+     "name": "CZE_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cze/CZE_hospitals_access.gpkg"
+    },
+    {
+     "name": "CZE_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cze/CZE_hospitals_access_long.csv"
+    },
+    {
+     "name": "CZE_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cze/CZE_hospitals_access_wide.csv"
+    },
+    {
+     "name": "CZE_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cze/CZE_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "CZE_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cze/CZE_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Czechia - Accessibility Indicators",
+   "name": "czechia-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/czechia-accessibility-indicators",
+   "resources": [
+    {
+     "name": "CZE_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cze/CZE_education_access.gpkg"
+    },
+    {
+     "name": "CZE_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cze/CZE_education_access_long.csv"
+    },
+    {
+     "name": "CZE_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cze/CZE_education_access_wide.csv"
+    },
+    {
+     "name": "CZE_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cze/CZE_hospitals_access.gpkg"
+    },
+    {
+     "name": "CZE_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cze/CZE_hospitals_access_long.csv"
+    },
+    {
+     "name": "CZE_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cze/CZE_hospitals_access_wide.csv"
+    },
+    {
+     "name": "CZE_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cze/CZE_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "CZE_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/cze/CZE_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Czechia - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-czechia",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-czechia",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Czechia",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/b605f06d-4e56-43be-970f-e34f5afbab22/resource/8252f456-17ef-4de2-87e6-8f1b567ede2b/download/social-protection-and-labor_cze.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Czechia - Population Counts",
+   "name": "worldpop-population-counts-for-czechia",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-czechia",
+   "resources": [
+    {
+     "name": "cze_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/CZE/cze_ppp_2020.tif"
+    },
+    {
+     "name": "cze_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/CZE/cze_ppp_2019.tif"
+    },
+    {
+     "name": "cze_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/CZE/cze_ppp_2018.tif"
+    },
+    {
+     "name": "cze_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/CZE/cze_ppp_2017.tif"
+    },
+    {
+     "name": "cze_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/CZE/cze_ppp_2016.tif"
+    },
+    {
+     "name": "cze_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/CZE/cze_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "cze_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/CZE/cze_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "cze_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/CZE/cze_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Czechia: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "czechia-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/czechia-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "cze_general_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/b0f6cd4c-cc17-4814-a854-ca650882ad92/resource/e7a2c68f-7a5a-49d2-9d01-e7da974e03d3/download/cze_general_2020_geotiff.zip"
+    },
+    {
+     "name": "cze_general_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/b0f6cd4c-cc17-4814-a854-ca650882ad92/resource/5e9854c1-d91e-4f44-b53f-a5d0a534c035/download/cze_general_2020_csv.zip"
+    },
+    {
+     "name": "cze_children_under_five_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/b0f6cd4c-cc17-4814-a854-ca650882ad92/resource/7179c252-821b-4a80-aea3-997594d97221/download/cze_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "cze_elderly_60_plus_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/b0f6cd4c-cc17-4814-a854-ca650882ad92/resource/273eadce-8161-412f-9acf-0333d69f38b0/download/cze_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "cze_men_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/b0f6cd4c-cc17-4814-a854-ca650882ad92/resource/8f974fb7-6f48-43a4-8b5b-de8105fdaecd/download/cze_men_2020_geotiff.zip"
+    },
+    {
+     "name": "cze_women_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/b0f6cd4c-cc17-4814-a854-ca650882ad92/resource/c662b688-3e2c-4fa6-bcdd-e8eb2a79b3d2/download/cze_women_2020_geotiff.zip"
+    },
+    {
+     "name": "cze_women_of_reproductive_age_15_49_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/b0f6cd4c-cc17-4814-a854-ca650882ad92/resource/57ad9cab-36a1-4e84-a2f2-76f6f8937011/download/cze_women_of_reproductive_age_15_49_2020_geotiff.zip"
+    },
+    {
+     "name": "cze_youth_15_24_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/b0f6cd4c-cc17-4814-a854-ca650882ad92/resource/5e07ba01-1b6a-4c26-88e8-b6feee0c902d/download/cze_youth_15_24_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Czech republic - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-cz-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-cz-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_CZ",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1743f2b5-2116-4dbb-87c9-beab5bb9eecd/resource/8a32da10-7918-4cea-9379-7729040ed3c7/download/indicator_data_cz.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Czechia: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "cze-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/cze-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/a5679ca9-cce2-4eef-a7ca-67623190fbe6/resource/3b749997-d9c9-4301-945b-4fdb2c042c53/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_cze.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/a5679ca9-cce2-4eef-a7ca-67623190fbe6/resource/48773fbc-aae7-419d-88c6-a2bcebaaaec7/download/ghs_pop_e2025_r2023a_54009_100_v1_0_cze.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Czechia: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-cze",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-cze",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-cz-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-cz-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Green area per capita (square meters per capita)",
+   "name": "green-area-per-capita-square-meters-per-capita",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/green-area-per-capita-square-meters-per-capita",
+   "resources": [
+    {
+     "name": "Green area per_capita (square meters per capita).xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/7babf915-12a0-4ceb-ad9c-7ee24b776614/resource/2c1c5e09-0bbe-482f-9703-ec7dfed62c79/download/green-area-per_capita-square-meters-per-capita.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Old age dependency ratio",
+   "name": "old-age-dependency-ratio",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/old-age-dependency-ratio",
+   "resources": [
+    {
+     "name": "Old_age_dependency_ratio.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/1598cce7-3d04-42a5-9a2f-b5ba0095cf2f/resource/5217ad45-f56f-43c7-992f-d4e327d13615/download/old_age_dependency_ratio.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.czso.cz/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://csu.gov.cz/caste-dotazy",
+    "status": 200,
+    "kind": "html",
+    "title": "Časté dotazy | Statistika",
+    "files": [],
+    "mentions": [
+     "language"
+    ]
+   }
+  ],
+  "title": "Český statistický úřad | Statistika",
+  "matching_links": 1
+ },
+ "verdict": {
+  "hdx_datasets": 12,
+  "hdx_machine_readable": 7,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "1/1",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

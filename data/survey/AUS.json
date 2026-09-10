@@ -1,0 +1,710 @@
+{
+ "iso3": "AUS",
+ "name": "Australia",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "language"
+   ],
+   "title": "2021 Census GCP table G13 -- Language used at home by proficiency in spoken English by sex (ABS Data API dataflow family C21_G13_{LGA|SA3|...}, resolved through the adapter's existing discover_dataflows() the same way C21_G14 and C21_G08 are)",
+   "kind": "census",
+   "format": "api (SDMX-JSON), no key",
+   "geography": "LGA (565 ABS regions; the boundary draws 547) with a STATE dimension for the states",
+   "geography_count": 565,
+   "matches_boundary_level": "admin2 and admin1 (states read off the LGA table's STATE dimension, as the religion build does)",
+   "url": "https://data.api.abs.gov.au/rest/dataflow/ABS?detail=allstubs",
+   "status": 200,
+   "content_type": "application/vnd.sdmx.structure+xml; version=2.1; charset=utf-8",
+   "final_url": "https://data.api.abs.gov.au/rest/dataflow/ABS?detail=allstubs",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "text/csv?",
+    "first_lines": [
+     "<?xml version=\"1.0\" encoding=\"utf-8\"?>",
+     "<!--NSI Web Service v8.19.9.0-->",
+     "<message:Structure xmlns:message=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message\" xmlns:structure=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure\" xmlns:common=\"http://www.sdmx"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Australia",
+    "wikitext_bytes": 108503,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=2 scope=\"col\" | Affiliation",
+       "colspan=2| 1986",
+       "colspan=2| 1996",
+       "colspan=2| 2006",
+       "colspan=2| 2011",
+       "colspan=2| 2016",
+       "colspan=2| 2021",
+       "scope=\"col\" | <small>Count ('000)</small>",
+       "scope=\"col\" | %",
+       "scope=\"col\" | <small>Count ('000)</small>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Australia",
+    "wikitext_bytes": 113379,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Language",
+     "Religion"
+    ],
+    "wikitables": 15,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "scope=\"col\" |Ages",
+       "scope=\"col\" |1901",
+       "scope=\"col\" |1911",
+       "scope=\"col\" |1921",
+       "scope=\"col\" |1931",
+       "scope=\"col\" |1941",
+       "scope=\"col\" |1951",
+       "scope=\"col\" |1961",
+       "scope=\"col\" |1971",
+       "scope=\"col\" |1981"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Years",
+       "1901",
+       "1911",
+       "1921",
+       "1951",
+       "1961",
+       "1971",
+       "1981",
+       "1991",
+       "2001"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "scope=\"col\" rowspan=2 | State/territory",
+       "scope=\"col\" rowspan=2 | Population<br />(June 2023 estimate)<ref>{{cite web| url = https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/latest-release | title = National, state and territory population, June 2023 |website= Australian Bureau of Statistics| date = December 14, 2023 }}</ref>",
+       "scope=\"col\" colspan=2 | Land area",
+       "scope=\"col\" colspan=2 | Population density",
+       "rowspan=\"2\" |% of total",
+       "rowspan=\"2\" scope=\"col\" | % of<br />population<br />living in capital",
+       "scope=\"col\" rowspan=2 | Notes",
+       "scope=\"col\" | km²",
+       "scope=\"col\" | mi²",
+       "scope=\"col\" | per km²"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "rowspan=2 {{vert header|1850s}}",
+       "1850",
+       "1851",
+       "1852",
+       "1853",
+       "1854",
+       "1855",
+       "1856",
+       "1857",
+       "1858"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "scope=\"col\" |",
+       "scope=\"col\" style=\"width:70pt;\"|Average population {{refn|group=\"N\"|June 1 from 1900 to 2016, since 2017 Dec 31}}",
+       "scope=\"col\" style=\"width:70pt;\"|Live births",
+       "scope=\"col\" style=\"width:70pt;\"|Deaths",
+       "scope=\"col\" style=\"width:70pt;\"|Natural change",
+       "scope=\"col\" style=\"width:70pt;\"|Crude birth rate (per 1,000)",
+       "scope=\"col\" style=\"width:70pt;\"|Crude death rate (per 1,000)",
+       "scope=\"col\" style=\"width:70pt;\"|Natural change (per 1,000)",
+       "scope=\"col\" style=\"width:70pt;\"|Crude migration change (per 1,000)",
+       "scope=\"col\" style=\"width:70pt;\"|Total<br />fertility<br />rate{{efn-ua|In fertility rates, 2.1 and above is a stable population and has been marked blue, 2 and below leads to an aging population and the result is that the population decreases. }}<ref name=\"ourworldindata.org\"/>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "State/territory",
+       "TFR",
+       "Country of birth mother",
+       "Numbers"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 59
+     },
+     {
+      "header": [
+       "State/territory",
+       "TFR",
+       "Country of birth mother",
+       "Numbers"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 79
+     },
+     {
+      "header": [
+       "Country of birth mother",
+       "Numbers"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 89
+     },
+     {
+      "header": [
+       "rowspan=2 {{vert header|1920s}}",
+       "!1921",
+       "1922",
+       "1923",
+       "1924",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />years",
+       "Period",
+       "Life expectancy in<br />years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |Ethnic origin",
+       "1947",
+       "1987",
+       "%",
+       "%",
+       "Europe",
+       "97.2%",
+       "92.9%",
+       "Asia",
+       "1.9%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "scope=\"col\" colspan=\"2\" | Source: Australian Bureau of Statistics (2025)<ref>{{cite web|url=https://www.abs.gov.au/statistics/people/population/migration-australia/2019-20/34120DO005_201920.xls|title=Table 5.1 Estimated resident population, by country of birth(a), Australia, as at 30 June, 1996 to 2025(b)(c)|publisher=Australian Bureau of Statistics|access-date=30 April 2025}}</ref>",
+       "scope=\"col\" | Place of birth",
+       "scope=\"col\" | Estimated resident population{{efn-ua|Only countries with 100,000 or more are listed here.}}"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "Date",
+       "Immigration ('000)",
+       "Emigration ('000)",
+       "Net migration ('000)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 49
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Religion",
+       "colspan=\"2\" | 2006",
+       "colspan=\"2\" | 2011",
+       "colspan=\"2\" | 2016",
+       "colspan=\"2\" | 2021",
+       "('000)",
+       "(%)",
+       "('000)",
+       "(%)",
+       "('000)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Capel",
+    "found": true,
+    "title": "Capel, Western Australia",
+    "url": "https://en.wikipedia.org/wiki/Capel%2C_Western_Australia",
+    "wikitext_bytes": 5699,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Coorow",
+    "found": true,
+    "title": "Coorow, Western Australia",
+    "url": "https://en.wikipedia.org/wiki/Coorow%2C_Western_Australia",
+    "wikitext_bytes": 5214,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Darwin Waterfront Precinct",
+    "found": true,
+    "title": "Darwin Waterfront Precinct",
+    "url": "https://en.wikipedia.org/wiki/Darwin_Waterfront_Precinct",
+    "wikitext_bytes": 3660,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Goondiwindi",
+    "found": true,
+    "title": "Goondiwindi",
+    "url": "https://en.wikipedia.org/wiki/Goondiwindi",
+    "wikitext_bytes": 41757,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Greater Dandenong",
+    "found": true,
+    "title": "City of Greater Dandenong",
+    "url": "https://en.wikipedia.org/wiki/City_of_Greater_Dandenong",
+    "wikitext_bytes": 17372,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 4,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Australia: Road Surface Data",
+   "name": "australia-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/australia-road-surface-data",
+   "resources": [
+    {
+     "name": "Australia GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_aus_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Australia GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_aus_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Australia: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-australia",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-australia",
+   "resources": [
+    {
+     "name": "kontur_boundaries_AU_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_AU_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_AU_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_AU_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_AU_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_AU_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Australia - Accessibility Indicators",
+   "name": "australia-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/australia-accessibility-indicators",
+   "resources": [
+    {
+     "name": "AUS_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/aus/AUS_education_access.gpkg"
+    },
+    {
+     "name": "AUS_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/aus/AUS_education_access_long.csv"
+    },
+    {
+     "name": "AUS_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/aus/AUS_education_access_wide.csv"
+    },
+    {
+     "name": "AUS_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/aus/AUS_hospitals_access.gpkg"
+    },
+    {
+     "name": "AUS_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/aus/AUS_hospitals_access_long.csv"
+    },
+    {
+     "name": "AUS_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/aus/AUS_hospitals_access_wide.csv"
+    },
+    {
+     "name": "AUS_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/aus/AUS_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "AUS_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/aus/AUS_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Australia - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-australia",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-australia",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Australia",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5c578773-8c54-4860-945d-7a530f31d0eb/resource/aa5d7fbe-8c8f-4758-b40b-bc6f3063a459/download/social-protection-and-labor_aus.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Australia - Population Counts",
+   "name": "worldpop-population-counts-for-australia",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-australia",
+   "resources": [
+    {
+     "name": "aus_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/AUS/aus_ppp_2020.tif"
+    },
+    {
+     "name": "aus_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/AUS/aus_ppp_2019.tif"
+    },
+    {
+     "name": "aus_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/AUS/aus_ppp_2018.tif"
+    },
+    {
+     "name": "aus_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/AUS/aus_ppp_2017.tif"
+    },
+    {
+     "name": "aus_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/AUS/aus_ppp_2016.tif"
+    },
+    {
+     "name": "aus_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/AUS/aus_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "aus_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/AUS/aus_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "aus_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/AUS/aus_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Australia: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "australia-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/australia-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "AUS_elderly_60_plus_2019-06-01_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5ac850be-31be-4b6d-848c-c477b89b1c85/resource/2f519769-1c2c-429c-80e3-c5547a94b1b4/download/aus_elderly_60_plus_2019-06-01_csv.zip"
+    },
+    {
+     "name": "AUS_men_2019-06-01_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5ac850be-31be-4b6d-848c-c477b89b1c85/resource/9d9a6648-d474-4663-ac76-21b0b294ea2c/download/aus_men_2019-06-01_csv.zip"
+    },
+    {
+     "name": "AUS_northeast_children_under_five_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/5ac850be-31be-4b6d-848c-c477b89b1c85/resource/df882ab4-90f3-461b-933b-7be88ca3508e/download/aus_northeast_children_under_five_2019-06-01_geotiff.zip"
+    },
+    {
+     "name": "AUS_northeast_elderly_60_plus_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/5ac850be-31be-4b6d-848c-c477b89b1c85/resource/b95d3746-7461-492f-a100-65320d246b7a/download/aus_northeast_elderly_60_plus_2019-06-01_geotiff.zip"
+    },
+    {
+     "name": "AUS_northeast_men_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/5ac850be-31be-4b6d-848c-c477b89b1c85/resource/bfb7809f-da79-4184-bba1-8e7c5c38beaa/download/aus_northeast_men_2019-06-01_geotiff.zip"
+    },
+    {
+     "name": "AUS_northeast_women_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/5ac850be-31be-4b6d-848c-c477b89b1c85/resource/fe5d0fc6-96a2-4bb9-9e61-fcff2eaf69f9/download/aus_northeast_women_2019-06-01_geotiff.zip"
+    },
+    {
+     "name": "AUS_northeast_women_of_reproductive_age_15_49_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/5ac850be-31be-4b6d-848c-c477b89b1c85/resource/719700f7-e449-482c-8315-4e98923867b8/download/aus_northeast_women_of_reproductive_age_15_49_2019-06-01_geotiff.zip"
+    },
+    {
+     "name": "AUS_northeast_youth_15_24_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/5ac850be-31be-4b6d-848c-c477b89b1c85/resource/56c3e808-b281-4712-b168-d8f3080e66be/download/aus_northeast_youth_15_24_2019-06-01_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Australia - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-au-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-au-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_AU",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/0ff91f99-2c2f-4f73-a152-a2e8d2fc80ef/resource/98b4803a-3e55-4c60-b7af-c6a5526c19c9/download/indicator_data_au.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Australia: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-aus",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-aus",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-au-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-au-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Australia: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "aus-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/aus-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/56b5d4f8-a9bd-4436-bc6d-a2c797c099b3/resource/9fdf964a-7950-4516-ba32-b035908e98ba/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_aus.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/56b5d4f8-a9bd-4436-bc6d-a2c797c099b3/resource/746f4216-95e6-4137-8892-453882088ec0/download/ghs_pop_e2025_r2023a_54009_100_v1_0_aus.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Green area per capita (square meters per capita)",
+   "name": "green-area-per-capita-square-meters-per-capita",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/green-area-per-capita-square-meters-per-capita",
+   "resources": [
+    {
+     "name": "Green area per_capita (square meters per capita).xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/7babf915-12a0-4ceb-ad9c-7ee24b776614/resource/2c1c5e09-0bbe-482f-9703-ec7dfed62c79/download/green-area-per_capita-square-meters-per-capita.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Old age dependency ratio",
+   "name": "old-age-dependency-ratio",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/old-age-dependency-ratio",
+   "resources": [
+    {
+     "name": "Old_age_dependency_ratio.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/1598cce7-3d04-42a5-9a2f-b5ba0095cf2f/resource/5217ad45-f56f-43c7-992f-d4e327d13615/download/old_age_dependency_ratio.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.abs.gov.au/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.abs.gov.au/census",
+    "status": 200,
+    "kind": "html",
+    "title": "Census | Australian Bureau of Statistics",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/latest-release",
+    "status": 200,
+    "kind": "html",
+    "title": "National, state and territory population, December 2025 | Australian Bureau of Statistics",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/dec-2025",
+    "status": 200,
+    "kind": "html",
+    "title": "National, state and territory population, December 2025 | Australian Bureau of Statistics",
+    "files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   }
+  ],
+  "title": "Australian Bureau of Statistics",
+  "matching_links": 3
+ },
+ "verdict": {
+  "hdx_datasets": 11,
+  "hdx_machine_readable": 6,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "1/1",
+  "machine_readable": [
+   "text/csv?"
+  ],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

@@ -1,0 +1,994 @@
+{
+ "iso3": "BEL",
+ "name": "Belgium",
+ "tier_proposed": "C",
+ "sources": [],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Belgium",
+    "wikitext_bytes": 50117,
+    "infobox_params": [],
+    "sections": [
+     "Religions"
+    ],
+    "wikitables": 3,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Religious<br>group",
+       "Population <br>% 1981<ref name=\"Eurel\">[http://www.eurel.info/spip.php?rubrique308&lang=fr Eurel-Données sociologiques et juridiques sur la religion en Europe]. Also: L. Voyé, K. Dobbelaere, K. Abts. ''Autres temps, autres mœurs''. Bruxelles, Ed. Racine-Campus, 2012.</ref>",
+       "Population <br>% 2009<ref name=\"Eurel\"/>",
+       "style=\"background:DarkOrchid; color:white\"| Christianity",
+       "style=\"background:#7D007D; color:white\"| <small>''Catholic Christianity''</small>",
+       "style=\"background:#BA55D3; color:white\"| <small>''Protestant Christianity and other Christians''</small>",
+       "style=\"background:Green; color:white;\"| Islam",
+       "style=\"background:Blue; color:white;\"| Judaism",
+       "style=\"background:Gold;\"| Buddhism",
+       "style=\"background:#F5F5DC;\"| Atheism"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "Religious<br>group",
+       "Population <br>% 2015<ref name=\"EB2015A\">{{cite web|url=https://data.europa.eu/data/datasets/s2077_83_4_437_eng?locale=en|via=European Data Portal (see Volume C: Country/socio-demographics: BE: Question SD3)|title=Special Eurobarometer 437: Discrimination in the EU in 2015|publisher=European Union: European Commission|date=October 2015|access-date=20 May 2023}}</ref>",
+       "Population <br>% 2018<ref name=\"EB2018\">{{cite web|url=https://data.europa.eu/data/datasets/s2220_90_4_484_eng?locale=en|via=European Data Portal (see Volume C: Country/socio-demographics: BE: Question SD3)|title=Special Eurobarometer 484: Perceptions of antisemitism|publisher=European Union: European Commission|date=22 January 2019|access-date=20 May 2023}}</ref>",
+       "Population <br>% 2019<ref name=\"EB2019\">{{cite web|url=https://data.europa.eu/data/datasets/s2251_91_4_493_eng?locale=en|via=European Data Portal (see Volume C: Country/socio-demographics: BE: Question SD3)|title=Special Eurobarometer 493: Discrimination in the EU (including LGBTI)|publisher=European Union: European Commission|date=October 2019|access-date=20 May 2023}}</ref>",
+       "Population <br>% 2021<ref name=\"EB2021\">{{cite web|url=https://data.europa.eu/data/datasets/s2237_95_2_516_eng?locale=en|via=European Data Portal (see Volume C: Country/socio-demographics: BE: Question D90.2.)|title=Special Eurobarometer 516 : European citizens' knowledge and attitudes towards science and technology|publisher=European Union: European Commission|date=September 2021|access-date=20 May 2023}}</ref>",
+       "style=\"background:DarkOrchid; color:white\"| Christianity",
+       "style=\"background:#7D007D; color:white\"| <small>''Catholic Christianity''</small>",
+       "style=\"background:#BA55D3; color:white\"| <small>''Protestant Christianity and other Christians''</small>",
+       "style=\"background:#9065CA; color:white\"| <small>''Orthodox Christianity''</small>",
+       "style=\"background:Green; color:white;\"| Islam"
+      ],
+      "place_column": false,
+      "composition_columns": 3,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Religious<br>group",
+       "2002",
+       "2004",
+       "2006"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 1
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Belgium",
+    "wikitext_bytes": 119204,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 33,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Years",
+       "1830",
+       "1831",
+       "1832",
+       "1833",
+       "1834",
+       "1835",
+       "1836",
+       "1837",
+       "1838"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1841",
+       "1842",
+       "1843",
+       "1844",
+       "1845",
+       "1846",
+       "1847",
+       "1848",
+       "1849"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1851",
+       "1852",
+       "1853",
+       "1854",
+       "1855",
+       "1856",
+       "1857",
+       "1858",
+       "1859"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1861",
+       "1862",
+       "1863",
+       "1864",
+       "1865",
+       "1866",
+       "1867",
+       "1868",
+       "1869"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Years",
+       "1871",
+       "1872",
+       "1873",
+       "1874",
+       "1875",
+       "1876",
+       "1877",
+       "1878",
+       "1879"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Years",
+       "1881",
+       "1882",
+       "1883",
+       "1884",
+       "1885",
+       "1886",
+       "1887",
+       "1888",
+       "1889"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "Years",
+       "1891",
+       "1892",
+       "1893",
+       "1894",
+       "1895",
+       "1896",
+       "1897",
+       "1898",
+       "1899<ref name=\"ourworldindata.org\" />"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 2
+     },
+     {
+      "header": [
+       "rowspan=2 style=\"vertical-align:middle;\"|province<br />or region",
+       "colspan=4|2020–2022",
+       "rowspan=2 style=\"vertical-align:middle;width:4em;border-left-width:2px;\"|{{tooltip|change 1|Change in overall life expectancy between periods}}",
+       "colspan=4|2021–2023",
+       "rowspan=2 style=\"vertical-align:middle;width:4em;border-left-width:2px;\"|change 2",
+       "colspan=4 style=\"border-left-width:2px;\"|2022–2024",
+       "style=\"vertical-align:middle;min-width:3em;\"|{{tooltip|overall|All population on average}}",
+       "style=\"vertical-align:middle;min-width:3em;\"|male",
+       "style=\"vertical-align:middle;min-width:3em;\"|female",
+       "style=\"vertical-align:middle;\"|{{tooltip|F <small>Δ</small> M|Difference in life expectancy for female and male}}"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "rowspan=2 style=\"vertical-align:middle;\"|Region",
+       "colspan=4|2023",
+       "colspan=9 style=\"border-left-width:2px;\"|Historical data",
+       "rowspan=2 style=\"border-left-width:2px; text-align:middle;\"|{{nobr|Recovery from}}<br />COVID-19:<br />2019→2023",
+       "style=\"vertical-align:middle;width:4em;\"|All",
+       "style=\"vertical-align:middle;width:3.5em;\"|Male",
+       "style=\"vertical-align:middle;width:3.5em;\"|Female",
+       "style=\"vertical-align:middle;min-width:2.5em;\"|{{tooltip|Sex<br />gap|Difference in life expectancy for female and male}}",
+       "style=\"border-left-width:2px; vertical-align:middle; width:4em; padding-left:1em;\"|2019",
+       "style=\"text-align:left;\"|{{tooltip|2019<br />→2020|Change of life expectancy from 2019 to 2020}}"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Years",
+       "1841",
+       "1842",
+       "1843",
+       "1844",
+       "1845",
+       "1846",
+       "1847",
+       "1848",
+       "1849"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "Years",
+       "1851",
+       "1852",
+       "1853",
+       "1854",
+       "1855",
+       "1856",
+       "1857",
+       "1858",
+       "1859"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "Years",
+       "1861",
+       "1862",
+       "1863",
+       "1864",
+       "1865",
+       "1866",
+       "1867",
+       "1868",
+       "1869"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "Years",
+       "1871",
+       "1872",
+       "1873",
+       "1874",
+       "1875",
+       "1876",
+       "1877",
+       "1878",
+       "1879"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "Years",
+       "1881",
+       "1882",
+       "1883",
+       "1884",
+       "1885",
+       "1886",
+       "1887",
+       "1888",
+       "1889"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Years",
+       "1891",
+       "1892",
+       "1893",
+       "1894",
+       "1895",
+       "1896",
+       "1897",
+       "1898",
+       "1899"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Years",
+       "1901",
+       "1902",
+       "1903",
+       "1904",
+       "1905",
+       "1906",
+       "1907",
+       "1908",
+       "1909"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "Years",
+       "1911",
+       "1912",
+       "1913",
+       "1919",
+       "1920<ref name=\":0\" />",
+       "Years",
+       "1921",
+       "1922",
+       "1923"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Years",
+       "1921",
+       "1922",
+       "1923",
+       "1924",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1931",
+       "1932",
+       "1933",
+       "1934",
+       "1935",
+       "1936",
+       "1937",
+       "1938",
+       "1939"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1941",
+       "1942",
+       "1943",
+       "1944",
+       "1945",
+       "1946",
+       "1947",
+       "1948",
+       "1949"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years",
+       "! width"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "! width=\"80pt\"|Average population (January 1)",
+       "width=\"80pt\"|Live births",
+       "width=\"80pt\"|Deaths",
+       "width=\"80pt\"|Natural change",
+       "width=\"80pt\"|Crude birth rate (per 1,000)",
+       "width=\"80pt\"|Crude death rate (per 1,000)",
+       "width=\"80pt\"|Natural change (per 1,000)",
+       "width=\"80pt\"|Crude migration change (per 1,000)",
+       "width=\"80pt\"|Total fertility rates{{refn|group=fn|In fertility rates, 2.1 and above is a stable population and has been marked blue, 2 and below leads to an aging population and the result is that the population decreases. }}<ref name=\"ourworldindata.org\"/><ref>{{citation |author=Max Roser |title=Total Fertility Rate around the world over the last centuries |date=2014 |work=Our World In Data, Gapminder Foundation |url=https://ourworldindata.org/grapher/children-born-per-woman?year=1800&country=BEL |access-date=7 August 2018 |archive-url=https://web.archive.org/web/20180807185751/https://ourworldindata.org/grapher/children-born-per-woman?year=1800&country=BEL |archive-date=7 August 2018 |url-status=dead}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January–March 2025",
+       "January–March 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{Cite web|url=https://statbel.fgov.be/en/themes/population/natality-and-fertility|title=Natality and fertility &#124; Statbel|website=statbel.fgov.be}}</ref><ref>{{Cite web|url=https://statbel.fgov.be/en/about-statbel/what-we-do/visualisations/mortality|title=Mortality &#124; Statbel|website=statbel.fgov.be}}</ref>",
+       "Province",
+       "TFR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "Province",
+       "TFR",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "wi"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "Year",
+       "Immigration",
+       "Emigration",
+       "Net migration"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 72
+     },
+     {
+      "header": [
+       "Country of origin",
+       "2013",
+       "2015",
+       "2017",
+       "2019",
+       "2020",
+       "2021",
+       "2022",
+       "2023",
+       "2024"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "rowspan=\"3\" |Group of origin",
+       "colspan=\"12\" |Year",
+       "colspan=\"2\" |2001<ref name=\":7\" />",
+       "colspan=\"2\" |2006<ref name=\":7\" />",
+       "colspan=\"2\" |2011<ref name=\":7\" />",
+       "colspan=\"2\" |2016<ref name=\":7\" />",
+       "colspan=\"2\" |2023<ref name=\":7\" />",
+       "colspan=\"2\" |2026<ref name=\":7\">{{Cite web |title=Origin {{!}} Statbel |url=https://statbel.fgov.be/en/themes/population/origin |access-date=2026-09-09 |website=statbel.fgov.be}}</ref>",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "rowspan=\"3\" |Place of Birth",
+       "colspan=\"2\" |Year",
+       "colspan=\"2\" |2011<ref>{{Cite web |title=CensusHub2 |url=https://ec.europa.eu/CensusHub2/query.do?step=selectHyperCube&qhc=false |access-date=2023-07-12 |website=ec.europa.eu}}</ref>",
+       "Number",
+       "%",
+       "Place of birth in reporting country",
+       "|-",
+       "Place of birth not in reporting country",
+       "|-",
+       "Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 35
+     },
+     {
+      "header": [
+       "Country",
+       "Number (2020)",
+       "% of population of foreign origin",
+       "% of total population"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [
+       "Continent",
+       "Naturalised Persons",
+       "Percentage of Total",
+       "Rank",
+       "Country",
+       "Number of Naturalised Persons"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "Rank",
+       "Country",
+       "Number of Naturalised Persons"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Antwerpen",
+    "found": true,
+    "title": "Gazet van Antwerpen",
+    "url": "https://en.wikipedia.org/wiki/Gazet_van_Antwerpen",
+    "wikitext_bytes": 5990,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Henegouwen",
+    "found": true,
+    "title": "Hainaut Province",
+    "url": "https://en.wikipedia.org/wiki/Hainaut_Province",
+    "wikitext_bytes": 14699,
+    "infobox_params": [
+     "demographics2_info1",
+     "demographics2_info2"
+    ],
+    "sections": [
+     "Language"
+    ],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Limburg",
+    "found": true,
+    "title": "Limburg (Belgium)",
+    "url": "https://en.wikipedia.org/wiki/Limburg_%28Belgium%29",
+    "wikitext_bytes": 33973,
+    "infobox_params": [
+     "demographics2_info1",
+     "demographics2_info2"
+    ],
+    "sections": [
+     "Language"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Luxemburg",
+    "found": true,
+    "title": "Luxembourg (Belgium)",
+    "url": "https://en.wikipedia.org/wiki/Luxembourg_%28Belgium%29",
+    "wikitext_bytes": 10778,
+    "infobox_params": [
+     "demographics2_info1",
+     "demographics2_info2"
+    ],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Namen",
+    "found": true,
+    "title": "Namur",
+    "url": "https://en.wikipedia.org/wiki/Namur",
+    "wikitext_bytes": 21344,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Belgium: Road Surface Data",
+   "name": "belgium-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/belgium-road-surface-data",
+   "resources": [
+    {
+     "name": "Belgium GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_bel_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Belgium GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_bel_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Belgium: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-belgium",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-belgium",
+   "resources": [
+    {
+     "name": "kontur_boundaries_BE_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_BE_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_BE_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_BE_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_BE_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_BE_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Belgium - Accessibility Indicators",
+   "name": "belgium-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/belgium-accessibility-indicators",
+   "resources": [
+    {
+     "name": "BEL_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bel/BEL_education_access.gpkg"
+    },
+    {
+     "name": "BEL_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bel/BEL_education_access_long.csv"
+    },
+    {
+     "name": "BEL_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bel/BEL_education_access_wide.csv"
+    },
+    {
+     "name": "BEL_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bel/BEL_hospitals_access.gpkg"
+    },
+    {
+     "name": "BEL_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bel/BEL_hospitals_access_long.csv"
+    },
+    {
+     "name": "BEL_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bel/BEL_hospitals_access_wide.csv"
+    },
+    {
+     "name": "BEL_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bel/BEL_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "BEL_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bel/BEL_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Belgium - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-belgium",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-belgium",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Belgium",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/904d7b5e-86cc-43a6-bbce-0d3dbe527f47/resource/0d19a7fc-205e-44b4-adff-6a5c654a8ee1/download/social-protection-and-labor_bel.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Belgium - Population Counts",
+   "name": "worldpop-population-counts-for-belgium",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-belgium",
+   "resources": [
+    {
+     "name": "bel_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/BEL/bel_ppp_2020.tif"
+    },
+    {
+     "name": "bel_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/BEL/bel_ppp_2019.tif"
+    },
+    {
+     "name": "bel_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/BEL/bel_ppp_2018.tif"
+    },
+    {
+     "name": "bel_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/BEL/bel_ppp_2017.tif"
+    },
+    {
+     "name": "bel_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/BEL/bel_ppp_2016.tif"
+    },
+    {
+     "name": "bel_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/BEL/bel_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "bel_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/BEL/bel_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "bel_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/BEL/bel_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Belgium: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "belgium-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/belgium-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "bel_general_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/1979ecab-8630-41f3-a826-b2dc71fe0bc4/resource/12305ae3-84cc-4ffe-97a8-f55b2c54dfb5/download/bel_general_2020_geotiff.zip"
+    },
+    {
+     "name": "bel_general_2020_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1979ecab-8630-41f3-a826-b2dc71fe0bc4/resource/80da0781-7c84-48fb-800d-75805f7a5c73/download/bel_general_2020_csv.zip"
+    },
+    {
+     "name": "bel_children_under_five_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/1979ecab-8630-41f3-a826-b2dc71fe0bc4/resource/315aa5ef-cecd-447c-b93a-030e03f22c30/download/bel_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "bel_elderly_60_plus_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/1979ecab-8630-41f3-a826-b2dc71fe0bc4/resource/6734ebec-4fa9-45e6-96f1-a44461c3f6bd/download/bel_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "bel_men_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/1979ecab-8630-41f3-a826-b2dc71fe0bc4/resource/989ce23c-0218-4da9-bf77-c1ad94a7257f/download/bel_men_2020_geotiff.zip"
+    },
+    {
+     "name": "bel_women_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/1979ecab-8630-41f3-a826-b2dc71fe0bc4/resource/7ee111b4-084d-4850-a177-c3b7bf2bdd75/download/bel_women_2020_geotiff.zip"
+    },
+    {
+     "name": "arm_women_of_reproductive_age_15_49_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/1979ecab-8630-41f3-a826-b2dc71fe0bc4/resource/83f300f1-2306-431c-9983-7533b26742ba/download/arm_women_of_reproductive_age_15_49_2020_geotiff.zip"
+    },
+    {
+     "name": "bel_youth_15_24_2020_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/1979ecab-8630-41f3-a826-b2dc71fe0bc4/resource/d7fedab8-90e5-464a-aa40-b5cbe28ec4dd/download/bel_youth_15_24_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Belgium - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-be-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-be-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_BE",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1ff957cb-c189-423d-b9d4-dd9bd469923e/resource/c0c74419-7272-493b-87f9-b3f2a00a0ff3/download/indicator_data_be.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Belgium: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "bel-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/bel-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/c8c34556-f83d-424f-84a2-4c564407f6c5/resource/b1e3a461-630a-4760-93d4-a404ce7778ec/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_bel.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/c8c34556-f83d-424f-84a2-4c564407f6c5/resource/c2374fc9-3837-4c3f-ac87-61d5eb16bf38/download/ghs_pop_e2025_r2023a_54009_100_v1_0_bel.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Belgium: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-bel",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-bel",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-be-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-be-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Green area per capita (square meters per capita)",
+   "name": "green-area-per-capita-square-meters-per-capita",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/green-area-per-capita-square-meters-per-capita",
+   "resources": [
+    {
+     "name": "Green area per_capita (square meters per capita).xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/7babf915-12a0-4ceb-ad9c-7ee24b776614/resource/2c1c5e09-0bbe-482f-9703-ec7dfed62c79/download/green-area-per_capita-square-meters-per-capita.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Old age dependency ratio",
+   "name": "old-age-dependency-ratio",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/old-age-dependency-ratio",
+   "resources": [
+    {
+     "name": "Old_age_dependency_ratio.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/1598cce7-3d04-42a5-9a2f-b5ba0095cf2f/resource/5217ad45-f56f-43c7-992f-d4e327d13615/download/old_age_dependency_ratio.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://statbel.fgov.be/",
+  "status": 200,
+  "error": null,
+  "pages": [],
+  "title": null,
+  "matching_links": 0
+ },
+ "verdict": {
+  "hdx_datasets": 11,
+  "hdx_machine_readable": 6,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/0",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

@@ -1,0 +1,727 @@
+{
+ "iso3": "GIN",
+ "name": "Guinea",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "IPUMS-International - Guinea 1983, 1996, 2014 census samples",
+   "kind": "census",
+   "format": "microdata (registration)",
+   "geography": "région and préfecture",
+   "geography_count": 34,
+   "matches_boundary_level": "admin1 (8) and admin2 (34)",
+   "url": "https://international.ipums.org/",
+   "status": 200,
+   "content_type": "text/html",
+   "final_url": "https://international.ipums.org/international/",
+   "error": null,
+   "body": {
+    "bytes_read": 13024,
+    "kind": "html",
+    "title": "IPUMS International",
+    "links_to_files": [],
+    "mentions": [
+     "census"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Guinea",
+    "wikitext_bytes": 16091,
+    "infobox_params": [],
+    "sections": [
+     "Religions"
+    ],
+    "wikitables": 2,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\" |Religion",
+       "colspan=\"2\" |1996 Census",
+       "colspan=\"2\" |2014 Census",
+       "Population",
+       "%",
+       "Population",
+       "%",
+       "style=\"background:#E0FFD0;\"|Islam",
+       "style=\"background:#E0F0FF;\"|Christianity",
+       "style=\"background:#f0e2af;\"|Traditional"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "{{Small|Region}}",
+       "style=\"background:#E0FFD0;\"|{{Small|Muslim}}",
+       "style=\"background:#E0F0FF;\"|{{Small|Christian}}",
+       "style=\"background:#f0e2af;\"|{{Small|Traditional}}",
+       "style=\"background:#F5F5F5;\"|{{Small|No religion}}",
+       "style=\"background:#DCDCDC;\"|{{Small|Other}}",
+       "<small>Boké</small>",
+       "<small>Conakry</small>",
+       "<small>Faranah</small>",
+       "<small>Kankan</small>"
+      ],
+      "place_column": true,
+      "composition_columns": 2,
+      "rows_hint": 9
+     }
+    ],
+    "place_by_composition_tables": 1
+   },
+   {
+    "title": "Demographics of Guinea",
+    "wikitext_bytes": 22030,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 6,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "! width=\"80\" |Total population",
+       "width=\"80\" |Population aged 0–14 (%)",
+       "width=\"80\" |Population aged 15–64 (%)",
+       "width=\"80\" |Population aged 65+ (%)",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\" |Mid-year population",
+       "style=\"width:80pt;\" |Live births",
+       "style=\"width:80pt;\" |Deaths",
+       "style=\"width:80pt;\" |Natural change",
+       "style=\"width:80pt;\" |Crude birth rate (per 1000)",
+       "style=\"width:80pt;\" |Crude death rate (per 1000)",
+       "style=\"width:80pt;\" |Natural change (per 1000)",
+       "style=\"width:80pt;\" |Total fertility rate (TFR)",
+       "style=\"width:80pt;\" |Infant mortality (per 1000 live births)",
+       "style=\"width:80pt;\" |Life expectancy (in years)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "style=\"width:50pt;\"| Year",
+       "style=\"width:50pt;\"| CBR (Total)",
+       "style=\"width:50pt;\"| TFR (Total)",
+       "style=\"width:50pt;\"| CBR (Urban)",
+       "style=\"width:50pt;\"| TFR (Urban)",
+       "style=\"width:50pt;\"| CBR (Rural)",
+       "style=\"width:50pt;\"| TFR (Rural)",
+       "style=\"width:100pt;\"| Administrative region",
+       "style=\"width:100pt;\"| Total fertility rate (2012)",
+       "style=\"width:100pt;\"| Total fertility rate (2018)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Administrative region",
+       "style=\"width:100pt;\"| Total fertility rate (2012)",
+       "style=\"width:100pt;\"| Total fertility rate (2018)",
+       "style=\"width:100pt;\"| Percentage of women age 15-49 currently pregnant (2012)",
+       "style=\"width:100pt;\"| Percentage of women age 15-49 currently pregnant (2018)",
+       "style=\"width:100pt;\"| Mean number of children ever born to women age 40-49 (2012)",
+       "style=\"width:100pt;\"| Mean number of children ever born to women age 40-49 (2018)",
+       "Period",
+       "Life expectancy in <br /> Years<ref>{{Cite web|url=https://esa.un.org/unpd/wpp/DataQuery/|title=World Population Prospects - Population Division - United Nations|website=esa.un.org|access-date=2018-08-26}}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in <br /> Years<ref>{{Cite web|url=https://esa.un.org/unpd/wpp/DataQuery/|title=World Population Prospects - Population Division - United Nations|website=esa.un.org|access-date=2018-08-26}}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 13
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Beyla",
+    "found": true,
+    "title": "Beyla Prefecture",
+    "url": "https://en.wikipedia.org/wiki/Beyla_Prefecture",
+    "wikitext_bytes": 4120,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Boke",
+    "found": true,
+    "title": "Boké Region",
+    "url": "https://en.wikipedia.org/wiki/Bok%C3%A9_Region",
+    "wikitext_bytes": 3752,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Dalaba",
+    "found": true,
+    "title": "Koba, Mamou",
+    "url": "https://en.wikipedia.org/wiki/Koba%2C_Mamou",
+    "wikitext_bytes": 3726,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Dubreka",
+    "found": true,
+    "title": "Dubréka Prefecture",
+    "url": "https://en.wikipedia.org/wiki/Dubr%C3%A9ka_Prefecture",
+    "wikitext_bytes": 4033,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Forecariah",
+    "found": true,
+    "title": "Forécariah Prefecture",
+    "url": "https://en.wikipedia.org/wiki/For%C3%A9cariah_Prefecture",
+    "wikitext_bytes": 4093,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "ethnicity",
+   "title": "Guinea-ethnicity",
+   "name": "http-www-axl-cefan-ulaval-ca-afrique-guinee_franco-htm",
+   "org": "American Red Cross (inactive)",
+   "url": "https://data.humdata.org/dataset/http-www-axl-cefan-ulaval-ca-afrique-guinee_franco-htm",
+   "resources": [
+    {
+     "name": "Guinea-ethnicity",
+     "format": "HTML",
+     "url": "http://Guinea-ethnicity"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Guinea: Languages",
+   "name": "guinea-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/guinea-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_GIN_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/0e0c217a-7764-41fc-bba9-ddbc1a40bb8f/resource/635e9c71-1f2c-432b-8652-c0bdba647b5e/download/clearglobal_language_use_gin_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_GIN_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/0e0c217a-7764-41fc-bba9-ddbc1a40bb8f/resource/0264c6da-f76b-4339-b707-5a8b07f0de84/download/clearglobal_language_use_gin_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_GIN_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/0e0c217a-7764-41fc-bba9-ddbc1a40bb8f/resource/0ab33c4b-052f-419d-b07f-1c8064d32347/download/clearglobal_language_use_gin_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Guinea languages",
+   "name": "guinea-languages-redcross",
+   "org": "American Red Cross (inactive)",
+   "url": "https://data.humdata.org/dataset/guinea-languages-redcross",
+   "resources": [
+    {
+     "name": "Guinea languages",
+     "format": "HTML",
+     "url": "https://www.axl.cefan.ulaval.ca/afrique/guinee_franco.htm"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Guinea Settlement",
+   "name": "guinea-settlement",
+   "org": "OCHA West and Central Africa (ROWCA)",
+   "url": "https://data.humdata.org/dataset/guinea-settlement",
+   "resources": [
+    {
+     "name": "gin_pplp_ocha_itos.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/4a2a4f3f-a7c2-475e-a122-7a857ffa747d/resource/9d8c1ddf-9edc-4b65-beed-21382dc8a1c5/download/gin_pplp_ocha_itos.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Guinea - Food Security",
+   "name": "guinea-food-security",
+   "org": "OCHA Guinea (inactive)",
+   "url": "https://data.humdata.org/dataset/guinea-food-security",
+   "resources": [
+    {
+     "name": "gin_fs_wfp2010.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/1b9da567-1e83-40b0-9953-6f57c396a23c/resource/a5135f3a-7ff9-46ca-b1cd-9d7ec8320d5c/download/gin_fs_wfp2010.xls"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Guinea: Road Surface Data",
+   "name": "guinea-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/guinea-road-surface-data",
+   "resources": [
+    {
+     "name": "Guinea GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_gin_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Guinea GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_gin_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Guinea: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-guinea",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-guinea",
+   "resources": [
+    {
+     "name": "kontur_boundaries_GN_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_GN_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_GN_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_GN_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_GN_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_GN_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "West African Health Centres - 3 word addresses",
+   "name": "west-african-health-centres",
+   "org": "what3words (inactive)",
+   "url": "https://data.humdata.org/dataset/west-african-health-centres",
+   "resources": [
+    {
+     "name": "Medical Centres with 3 word addresses",
+     "format": "Web App",
+     "url": "http://pertspider.cartodb.com/viz/525a4dd6-7650-11e4-a461-0e018d66dc29/public_map"
+    },
+    {
+     "name": "Medical Centres with 3 word addresses",
+     "format": "JSON",
+     "url": "https://pertspider.carto.com/api/v2/sql?q=select%20*%20from%20public.hdx_20data_20tw"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Guinea - Subnational Population Statistics",
+   "name": "cod-ps-gin",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-gin",
+   "resources": [
+    {
+     "name": "gin_admgz.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/944d6072-f333-4da5-87a7-7516f197a7c2/resource/21cb5503-027d-4954-8c86-da9087399a48/download/gin_admgz.xlsx"
+    },
+    {
+     "name": "GIN_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/944d6072-f333-4da5-87a7-7516f197a7c2/resource/e0e17130-2319-4001-ba12-2a39565c1155/download/gin_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "GIN-COD-PS-2024-Explanatory-Note.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/944d6072-f333-4da5-87a7-7516f197a7c2/resource/3ceb6e1c-036a-4626-a6aa-0a4655b736a7/download/gin-cod-ps-2024-explanatory-note.pdf"
+    },
+    {
+     "name": "gin_admpop_2024.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/944d6072-f333-4da5-87a7-7516f197a7c2/resource/c8073c2f-a0fe-449d-951e-658f2e1696a1/download/gin_admpop_2024.xlsx"
+    },
+    {
+     "name": "gin_admpop_adm0_2024.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/944d6072-f333-4da5-87a7-7516f197a7c2/resource/bed492d9-d94d-4f4e-bf19-86e7421fea4c/download/gin_admpop_adm0_2024.csv"
+    },
+    {
+     "name": "gin_admpop_adm1_2024.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/944d6072-f333-4da5-87a7-7516f197a7c2/resource/fb1cb97b-63ef-4f67-96d0-9ff07cc27012/download/gin_admpop_adm1_2024.csv"
+    },
+    {
+     "name": "gin_admpop_adm2_2024.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/944d6072-f333-4da5-87a7-7516f197a7c2/resource/c71ff241-76c6-4b36-a012-c808ddb0dd95/download/gin_admpop_adm2_2024.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Guinea-Population",
+   "name": "guinea-population",
+   "org": "American Red Cross (inactive)",
+   "url": "https://data.humdata.org/dataset/guinea-population",
+   "resources": [
+    {
+     "name": "Guinea-Population .xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/10af3343-15d1-49c5-8384-9b28da5aec4a/resource/37662b5d-96a7-4ea2-b1f4-2fd15baa07e1/download/guinea-population-.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Guinea - Accessibility Indicators",
+   "name": "guinea-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/guinea-accessibility-indicators",
+   "resources": [
+    {
+     "name": "GIN_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gin/GIN_education_access.gpkg"
+    },
+    {
+     "name": "GIN_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gin/GIN_education_access_long.csv"
+    },
+    {
+     "name": "GIN_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gin/GIN_education_access_wide.csv"
+    },
+    {
+     "name": "GIN_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gin/GIN_hospitals_access.gpkg"
+    },
+    {
+     "name": "GIN_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gin/GIN_hospitals_access_long.csv"
+    },
+    {
+     "name": "GIN_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gin/GIN_hospitals_access_wide.csv"
+    },
+    {
+     "name": "GIN_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gin/GIN_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "GIN_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/gin/GIN_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Guinea - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-guinea",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-guinea",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Guinea",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/da194adc-fea4-4e40-a93a-43b95fe15347/resource/54935fcb-97cc-470c-908d-be7f62b4e46a/download/social-protection-and-labor_gin.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Guinea - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-gn-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-gn-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_GN",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a52f01ba-abce-4622-b270-7d5e8ebfddd6/resource/80cb0568-114e-4cc9-a497-28634b8b5139/download/indicator_data_gn.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Guinea Ebola Community Care Centre",
+   "name": "ebola-community-care-centre",
+   "org": "UNMEER (inactive)",
+   "url": "https://data.humdata.org/dataset/ebola-community-care-centre",
+   "resources": [
+    {
+     "name": "ccc.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/b234742b-0089-46d2-bd86-43696afb0277/resource/b94a14c6-7ca5-4cf3-91ee-e1ecbab2bb71/download/ccc.xls"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Guinea - Population Counts",
+   "name": "worldpop-population-counts-for-guinea",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-guinea",
+   "resources": [
+    {
+     "name": "gin_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/GIN/gin_ppp_2020.tif"
+    },
+    {
+     "name": "gin_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/GIN/gin_ppp_2019.tif"
+    },
+    {
+     "name": "gin_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/GIN/gin_ppp_2018.tif"
+    },
+    {
+     "name": "gin_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/GIN/gin_ppp_2017.tif"
+    },
+    {
+     "name": "gin_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/GIN/gin_ppp_2016.tif"
+    },
+    {
+     "name": "gin_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/GIN/gin_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "gin_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/GIN/gin_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "gin_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/GIN/gin_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Guinea: Level 1 Exposure Data",
+   "name": "guinea-level-1-exposure-data",
+   "org": "Global Earthquake Model Foundation",
+   "url": "https://data.humdata.org/dataset/guinea-level-1-exposure-data",
+   "resources": [
+    {
+     "name": "GIN_oed_exposure_20200811_hdx.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/d5840650-0238-4fe2-88f2-37822fe8e148/resource/edf882ca-18ed-438d-9b6c-80bd23618878/download/gin_oed_exposure_20200811_hdx.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Guinea: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "highresolutionpopulationdensitymaps-gin",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/highresolutionpopulationdensitymaps-gin",
+   "resources": [
+    {
+     "name": "gin_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/a5d2ae5d-1ac9-42c6-bda6-82a530761555/resource/c14b24db-f3bd-4ed5-90e0-c40ef2876a89/download/gin_general_2020_geotiff.zip"
+    },
+    {
+     "name": "gin_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/a5d2ae5d-1ac9-42c6-bda6-82a530761555/resource/92d1b9f9-18b0-4d75-904a-1b3be7851b61/download/gin_general_2020_csv.zip"
+    },
+    {
+     "name": "gin_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/a5d2ae5d-1ac9-42c6-bda6-82a530761555/resource/5b975adc-425c-4274-890a-255dda32e627/download/gin_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "gin_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/a5d2ae5d-1ac9-42c6-bda6-82a530761555/resource/a7606db7-98a8-4fb8-b352-66096be689f4/download/gin_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "gin_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/a5d2ae5d-1ac9-42c6-bda6-82a530761555/resource/b289c3cd-24f6-4e3c-b965-bab8f8217a6b/download/gin_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "gin_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/a5d2ae5d-1ac9-42c6-bda6-82a530761555/resource/66430aaf-81a7-4b41-9280-9fef657a4426/download/gin_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "gin_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/a5d2ae5d-1ac9-42c6-bda6-82a530761555/resource/6ea9d0bf-1715-4d2c-9acf-acc54614486a/download/gin_men_2020_csv.zip"
+    },
+    {
+     "name": "gin_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/a5d2ae5d-1ac9-42c6-bda6-82a530761555/resource/403f329d-5152-4e2c-a5aa-e12ac0844359/download/gin_men_2020_geotiff.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.stat-guinee.org/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+    "status": 200,
+    "kind": "pdf",
+    "title": null,
+    "files": null,
+    "mentions": null
+   },
+   {
+    "url": "https://www.stat-guinee.org/index.php/actu/417-recensement-general-des-entreprises-le-dg-de-l-ins-rencontre-la-chambre-de-commerce-de-guinee",
+    "status": 200,
+    "kind": "html",
+    "title": "RECENSEMENT GÉNÉRAL DES ENTREPRISES : LE DG DE L’INS RENCONTRE LA CHAMBRE DE COMMERCE DE GUINÉE",
+    "files": [],
+    "mentions": []
+   },
+   {
+    "url": "https://www.stat-guinee.org/index.php/actu/411-restitution-et-analyse-des-resultats-du-recensement-pilote-du-rge-1",
+    "status": 200,
+    "kind": "html",
+    "title": "RESTITUTION ET ANALYSE DES RÉSULTATS DU RECENSEMENT PILOTE DU RGE-1",
+    "files": [],
+    "mentions": []
+   }
+  ],
+  "title": "Institut National de la Statistique",
+  "matching_links": 3
+ },
+ "verdict": {
+  "hdx_datasets": 17,
+  "hdx_machine_readable": 10,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 1,
+  "urls_answering": "1/1",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

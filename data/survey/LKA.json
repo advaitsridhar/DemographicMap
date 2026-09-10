@@ -1,0 +1,870 @@
+{
+ "iso3": "LKA",
+ "name": "Sri Lanka",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "Census of Population and Housing 2024 -- tables A2 (population by ethnicity and district) and A3 (population by religion and district); already built",
+   "kind": "census",
+   "format": "xlsx",
+   "geography": "district",
+   "geography_count": 25,
+   "matches_boundary_level": "admin2 (25/25 filled); admin1 provinces (9/9) summed from districts",
+   "url": "http://www.statistics.gov.lk/",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "http://www.statistics.gov.lk/",
+   "error": null,
+   "body": {
+    "bytes_read": 189829,
+    "kind": "html",
+    "title": "Department of Census and Statistics",
+    "links_to_files": [
+     "http://www.statistics.gov.lk/sdg/application/publications/book.pdf"
+    ],
+    "mentions": [
+     "census"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Sri Lanka",
+    "wikitext_bytes": 18064,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "rowspan=2|Province",
+       "colspan=2|Buddhism",
+       "colspan=2|Hinduism",
+       "colspan=2|Islam",
+       "colspan=2|Christianity",
+       "colspan=2|Others",
+       "colspan=2|Total",
+       "#",
+       "%",
+       "#"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Year",
+       "Population",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Sri Lanka",
+    "wikitext_bytes": 69662,
+    "infobox_params": [],
+    "sections": [
+     "Ethnicity",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 10,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Period<ref>{{Cite web |title=World Population Prospects – Population Division – United Nations |url=http://esa.un.org/unpd/wpp/index.htm |url-status=dead |archiveurl=https://web.archive.org/web/20110506065230/http://esa.un.org/unpd/wpp/index.htm |archivedate=6 May 2011 |website=esa.un.org}}</ref>",
+       "width=\"80pt\"|Live births per year",
+       "width=\"80pt\"|Deaths per year",
+       "width=\"80pt\"|Natural change per year",
+       "width=\"80pt\"|CBR<sup>1</sup>",
+       "width=\"80pt\"|CDR<sup>1</sup>",
+       "width=\"80pt\"|NC<sup>1</sup>",
+       "width=\"80pt\"|TFR<sup>1</sup>",
+       "width=\"80pt\"|IMR<sup>1</sup>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "width=\"70\"|Year",
+       "width=\"70\"|Population",
+       "width=\"70\"|Live births",
+       "width=\"70\"|Deaths",
+       "width=\"70\"|Natural change",
+       "width=\"70\"|Crude birth rate (per 1000)",
+       "width=\"70\"|Crude death rate (per 1000)",
+       "width=\"70\"|Natural change (per 1000)",
+       "width=\"70\"|Crude migration change (per 1000)",
+       "width=\"70\"|Total Fertility Rate"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January–June 2024",
+       "January–June 2025",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{Cite web |url=https://www.statistics.gov.lk/Population/StaticalInformation/VitalStatistics/MidYearPopulation_web_release2025Oct_En |access-date=2026-05-16 |website=www.statistics.gov.lk}}</ref>",
+       "rowspan=2 style=\"width:70pt;\"| Year<ref>{{cite web|url=http://microdata.worldbank.org/index.php/catalog/dhs#_r=&collection=&country=&dtype=&from=1890&page=14&ps=&sk=&sort_by=nation&sort_order=&to=2014&topic=&view=s&vk=|title=MEASURE DHS: Demographic and Health Surveys|website=microdata.worldbank.org|url-status=live|archive-url=https://web.archive.org/web/20160904173731/http://microdata.worldbank.org/index.php/catalog/dhs#_r=&collection=&country=&dtype=&from=1890&page=14&ps=&sk=&sort_by=nation&sort_order=&to=2014&topic=&view=s&vk=|archive-date=2016-09-04}}</ref><ref>{{Cite web |title=Census of Population and Housing – 2024 |url=https://www.statistics.gov.lk//Resource/en/Population/CPH_2024/CPH2024_Final_Eng.pdf |access-date=2026-04-11 |website=www.statistics.gov.lk}}</ref>",
+       "colspan=2| total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "rowspan=2 style=\"width:70pt;\"| Year<ref>{{cite web|url=http://microdata.worldbank.org/index.php/catalog/dhs#_r=&collection=&country=&dtype=&from=1890&page=14&ps=&sk=&sort_by=nation&sort_order=&to=2014&topic=&view=s&vk=|title=MEASURE DHS: Demographic and Health Surveys|website=microdata.worldbank.org|url-status=live|archive-url=https://web.archive.org/web/20160904173731/http://microdata.worldbank.org/index.php/catalog/dhs#_r=&collection=&country=&dtype=&from=1890&page=14&ps=&sk=&sort_by=nation&sort_order=&to=2014&topic=&view=s&vk=|archive-date=2016-09-04}}</ref><ref>{{Cite web |title=Census of Population and Housing – 2024 |url=https://www.statistics.gov.lk//Resource/en/Population/CPH_2024/CPH2024_Final_Eng.pdf |access-date=2026-04-11 |website=www.statistics.gov.lk}}</ref>",
+       "colspan=2| total",
+       "colspan=2| urban",
+       "colspan=2| rural",
+       "colspan=2| estate",
+       "style=\"width:50pt;\"| CBR",
+       "style=\"width:50pt;\"| TFR",
+       "style=\"width:50pt;\"| CBR",
+       "style=\"width:50pt;\"| TFR",
+       "style=\"width:50pt;\"| CBR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Period<ref>{{cite web|title=World Population Prospects – Population Division – United Nations|url=https://esa.un.org/unpd/wpp/DataQuery/|access-date=2017-07-15}}</ref>",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "rowspan=2|Year",
+       "colspan=2|Sinhalese",
+       "colspan=2|Sri Lankan Tamils{{Efn|name=IT|Indian Tamils were only classified as a separate ethnic group from 1911 onwards. Prior to this they were included with Sri Lankan Tamils.}}",
+       "colspan=2|Sri Lankan Moors{{Efn|name=IM|Indian Moors were only classified as a separate ethnic group from 1911 to 1971. Prior to 1911 they were included with Sri Lankan Moors. After 1971 they were included with Others.}}",
+       "colspan=2|Indian Tamils{{Efn|name=IT}}",
+       "colspan=2|Sri Lankan Malays",
+       "colspan=2|Burghers/<br />Eurasian",
+       "colspan=2|Indian Moors{{Efn|name=IM}}",
+       "colspan=2|Others",
+       "rowspan=2|Total<br />No."
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 3
+     },
+     {
+      "header": [
+       "rowspan=2|Year",
+       "colspan=2|Buddhist",
+       "colspan=2|Hindu",
+       "colspan=2|Muslim",
+       "colspan=2|Christian",
+       "colspan=2|Others",
+       "colspan=2|Total",
+       "width=\"70\"|No. || width=\"50\"|%",
+       "width=\"70\"|No. || width=\"50\"|%",
+       "width=\"70\"|No. || width=\"50\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 4,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Country of birth",
+       "Population (2017)",
+       "Time Period",
+       "Year",
+       "Net Migration",
+       "Mid-Year Population (‘000)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 31
+     },
+     {
+      "header": [
+       "Time Period",
+       "Year",
+       "Net Migration",
+       "Mid-Year Population (‘000)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Colombo District",
+    "found": true,
+    "title": "Colombo District",
+    "url": "https://en.wikipedia.org/wiki/Colombo_District",
+    "wikitext_bytes": 24837,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics1_info2",
+     "demographics1_info3",
+     "demographics1_info4",
+     "demographics1_info5",
+     "demographics2_info1",
+     "demographics2_info2",
+     "demographics2_info3",
+     "demographics2_info4",
+     "demographics2_info5"
+    ],
+    "sections": [
+     "Demographics",
+     "Population",
+     "Ethnicity",
+     "Religion"
+    ],
+    "wikitables": 4,
+    "charts": [
+     "Pie chart",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 4,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Hambantota District",
+    "found": true,
+    "title": "Hambantota District",
+    "url": "https://en.wikipedia.org/wiki/Hambantota_District",
+    "wikitext_bytes": 11034,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Kandy District",
+    "found": true,
+    "title": "Kandy District",
+    "url": "https://en.wikipedia.org/wiki/Kandy_District",
+    "wikitext_bytes": 10547,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups and religion"
+    ],
+    "wikitables": 2,
+    "charts": [
+     "Pie chart",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Kilinochchi District",
+    "found": true,
+    "title": "Kilinochchi District",
+    "url": "https://en.wikipedia.org/wiki/Kilinochchi_District",
+    "wikitext_bytes": 21616,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics1_info2",
+     "demographics1_info3",
+     "demographics1_info4",
+     "demographics1_info5",
+     "demographics2_info1",
+     "demographics2_info2",
+     "demographics2_info3",
+     "demographics2_info4",
+     "demographics2_info5"
+    ],
+    "sections": [
+     "Demographics",
+     "Population",
+     "Ethnicity",
+     "Religion"
+    ],
+    "wikitables": 3,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 3,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Kurunegala District",
+    "found": true,
+    "title": "Galgamuwa Electoral District",
+    "url": "https://en.wikipedia.org/wiki/Galgamuwa_Electoral_District",
+    "wikitext_bytes": 1839,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "religion",
+   "title": "Sri Lanka -  Population and Housing Census of  2012",
+   "name": "sri-lanka-census-of-population-and-housing-2012",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/sri-lanka-census-of-population-and-housing-2012",
+   "resources": [
+    {
+     "name": "lka_pop_censusproj2022_wfpocha.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/788f4aa4-2209-4cf8-aaa5-9970f5703f57/resource/035e7759-538f-4ed0-bed5-96aee6311f41/download/lka_pop_censusproj2022_wfpocha.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Sri Lanka - Lagoons",
+   "name": "sri-lanka-water-bodies-0",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/sri-lanka-water-bodies-0",
+   "resources": [
+    {
+     "name": "lka_laga_250k_sdlka.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/98c4254a-d998-4b24-86f5-50e335758c93/resource/32b12089-a707-4518-b56a-5668136137a6/download/lka_laga_250k_sdlka.zip"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Sri Lanka - Environment",
+   "name": "world-bank-environment-indicators-for-sri-lanka",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-environment-indicators-for-sri-lanka",
+   "resources": [
+    {
+     "name": "Environment Indicators for Sri Lanka",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/23658b5f-0186-45b3-9e90-78229dd1aee7/resource/9d1fc36a-9f3b-4e1a-94d4-5efa5628c047/download/environment_lka.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Sri Lanka - Food Prices",
+   "name": "wfp-food-prices-for-sri-lanka",
+   "org": "WFP - World Food Programme",
+   "url": "https://data.humdata.org/dataset/wfp-food-prices-for-sri-lanka",
+   "resources": [
+    {
+     "name": "Sri Lanka - Food Prices",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/0298c598-d312-4771-b564-f4ac4d831f05/resource/3638f0d6-9969-48cf-a919-1d879d037ec6/download/wfp_food_prices_lka.csv"
+    },
+    {
+     "name": "Sri Lanka - Markets",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/0298c598-d312-4771-b564-f4ac4d831f05/resource/7ba4fb0d-d941-4108-838f-c2d9478a5328/download/wfp_markets_lka.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Sri Lanka - Poverty",
+   "name": "world-bank-poverty-indicators-for-sri-lanka",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-poverty-indicators-for-sri-lanka",
+   "resources": [
+    {
+     "name": "Poverty Indicators for Sri Lanka",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/ff9a54fa-05d6-4d41-be49-20c2334de8d8/resource/c82478d7-9c4d-4776-9300-2a5082d5a856/download/poverty_lka.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Sri Lanka - Health",
+   "name": "world-bank-health-indicators-for-sri-lanka",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-health-indicators-for-sri-lanka",
+   "resources": [
+    {
+     "name": "Health Indicators for Sri Lanka",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/ae4f52a2-abaa-4177-8ba0-660b5ce29eb4/resource/4db39976-cbc1-4cb6-8556-1c770b274756/download/health_lka.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Sri Lanka - Subnational Administrative Boundaries",
+   "name": "cod-ab-lka",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-lka",
+   "resources": [
+    {
+     "name": "lka_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/0bedcaf3-88cd-4591-b9d5-5d3220e26abf/resource/3bc0e89f-92c9-42f7-86f6-062949cbf8f1/download/lka_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "lka_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/0bedcaf3-88cd-4591-b9d5-5d3220e26abf/resource/39b80702-0c9c-4525-8490-ba4b13080459/download/lka_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "lka_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/0bedcaf3-88cd-4591-b9d5-5d3220e26abf/resource/ac173fa4-dd42-4be4-aaed-a2e445525865/download/lka_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "lka_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/0bedcaf3-88cd-4591-b9d5-5d3220e26abf/resource/89f5e8ba-4385-48ad-a328-2006ab717ab3/download/lka_admin_boundaries.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Sri Lanka - Education",
+   "name": "world-bank-education-indicators-for-sri-lanka",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-education-indicators-for-sri-lanka",
+   "resources": [
+    {
+     "name": "Education Indicators for Sri Lanka",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/37a9ce34-ba19-47cf-8b68-62f895c30c17/resource/00a79f05-f4c7-4232-b1d8-470ade19611b/download/education_lka.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Sri Lanka - Railways",
+   "name": "sri-lanka-railways",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/sri-lanka-railways",
+   "resources": [
+    {
+     "name": "lka_rlwl_250k_sdlka.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/c3a49f85-e7c4-4213-a061-72ebb52a1fb4/resource/5b899339-2cf7-4c6a-90e1-aa7dce112968/download/lka_rlwl_250k_sdlka.zip"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Airports in Sri Lanka",
+   "name": "ourairports-lka",
+   "org": "OurAirports",
+   "url": "https://data.humdata.org/dataset/ourairports-lka",
+   "resources": [
+    {
+     "name": "List of airports in Sri Lanka (HXL tags)",
+     "format": "CSV",
+     "url": "https://ourairports.com/countries/LK/airports.hxl"
+    },
+    {
+     "name": "List of airports in Sri Lanka (no HXL tags)",
+     "format": "CSV",
+     "url": "https://ourairports.com/countries/LK/airports.csv"
+    }
+   ]
+  },
+  {
+   "term": "ethnicity",
+   "title": "Sri Lanka - CERF Allocations",
+   "name": "cerf-allocations-lka",
+   "org": "Central Emergency Response Fund",
+   "url": "https://data.humdata.org/dataset/cerf-allocations-lka",
+   "resources": [
+    {
+     "name": "LKA CERF Allocations.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/815c9e9b-3ad1-478b-9ebe-01cefdd90deb/resource/43b9b7c1-f3e0-4080-aed7-3bdba3405e22/download/lka-cerf-allocations.csv"
+    },
+    {
+     "name": "CERF Allocations.json",
+     "format": "JSON",
+     "url": "http://cerfgms-webapi.unocha.org/v1/hdxproject/all.json"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Sri Lanka - River and Streams",
+   "name": "sri-lanka-water-bodies-0-0",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/sri-lanka-water-bodies-0-0",
+   "resources": [
+    {
+     "name": "lka_rapidsl_rvr_250k_sdlka.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/cb9f7ddd-4379-4f0e-a809-93ff7f24a25d/resource/dc6a9a3a-ad4d-4fe1-8266-da4daf758e4e/download/lka_rapidsl_rvr_250k_sdlka.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Sri Lanka - Tanks and Reservoirs",
+   "name": "sri-lanka-water-bodies",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/sri-lanka-water-bodies",
+   "resources": [
+    {
+     "name": "lka_lakeresa_lake_250k_sdlka.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/083cdbe8-8b22-4a7e-8bcd-e710f1e7b101/resource/0b9bd702-dd50-4416-a952-c6805464839f/download/lka_lakeresa_lake_250k_sdlka.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Sri Lanka - Main Roads",
+   "name": "sri-lanka-roads",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/sri-lanka-roads",
+   "resources": [
+    {
+     "name": "lka_rdsl_250k_sdlka.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/71e40267-40d9-44a2-8f68-ed89bc8f244a/resource/b246dd18-a698-4f7a-9ec8-9384ca0a56d1/download/lka_rdsl_250k_sdlka.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Sri Lanka - Subnational Population Statistics",
+   "name": "cod-ps-lka",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-lka",
+   "resources": [
+    {
+     "name": "lka_codps_qa_2023.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/e982aec3-478e-4910-ae5c-072ae2cf6933/resource/38756917-b2a9-456c-8da9-21befd80cb40/download/lka_codps_qa_2023.pdf"
+    },
+    {
+     "name": "lka_admpop_2023.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e982aec3-478e-4910-ae5c-072ae2cf6933/resource/7ccd7053-1cf8-4abb-876c-d6a486c8a743/download/lka_admpop_2023.xlsx"
+    },
+    {
+     "name": "lka_admpop_2023.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e982aec3-478e-4910-ae5c-072ae2cf6933/resource/c92e4c52-117e-469d-9251-3a243f2b9511/download/lka_admpop_2023.xlsx"
+    },
+    {
+     "name": "lka_admpop_adm0_2023.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e982aec3-478e-4910-ae5c-072ae2cf6933/resource/c309ff4c-f435-4cad-85ea-97c39a963f90/download/lka_admpop_adm0_2023.csv"
+    },
+    {
+     "name": "lka_admpop_adm1_2023.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e982aec3-478e-4910-ae5c-072ae2cf6933/resource/62dbf08d-a2bb-42bd-bdb5-aa5b6903ea98/download/lka_admpop_adm1_2023.csv"
+    },
+    {
+     "name": "lka_admpop_adm2_2023.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e982aec3-478e-4910-ae5c-072ae2cf6933/resource/4405f46a-e4b3-4778-9290-131613a7ce71/download/lka_admpop_adm2_2023.csv"
+    },
+    {
+     "name": "lka_admpop_2022_v2.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e982aec3-478e-4910-ae5c-072ae2cf6933/resource/5e43e0da-675e-4efd-978c-3fa9a10c724e/download/lka_admpop_2022_v2.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Sri Lanka - Accessibility Indicators",
+   "name": "sri-lanka-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/sri-lanka-accessibility-indicators",
+   "resources": [
+    {
+     "name": "LKA_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/lka/LKA_primary_healthcare_access_long.csv"
+    },
+    {
+     "name": "LKA_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/lka/LKA_hospitals_access_wide.csv"
+    },
+    {
+     "name": "LKA_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/lka/LKA_education_access_long.csv"
+    },
+    {
+     "name": "LKA_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/lka/LKA_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "LKA_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/lka/LKA_education_access_wide.csv"
+    },
+    {
+     "name": "LKA_primary_healthcare_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/lka/LKA_primary_healthcare_access_wide.csv"
+    },
+    {
+     "name": "LKA_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/lka/LKA_hospitals_access_long.csv"
+    },
+    {
+     "name": "LKA_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/lka/LKA_education_access.gpkg"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "http://www.statistics.gov.lk/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.statistics.gov.lk/",
+    "status": 200,
+    "kind": "html",
+    "title": "Department of Census and Statistics",
+    "files": [
+     "http://www.statistics.gov.lk/sdg/application/publications/book.pdf"
+    ],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://www.statistics.gov.lk/PopHouSat/CPH2011/index.php",
+    "status": 404,
+    "error": null
+   },
+   {
+    "url": "https://www.statistics.gov.lk/Economic/Economic%20Census.html",
+    "status": 200,
+    "kind": "html",
+    "title": "Economic Census 2013/14 - DCS, Sri Lanka",
+    "files": [
+     "../Economic/EconomicCensusAgri/1 chapter.pdf",
+     "../Economic/EconomicCensusAgri/2 chapter.pdf",
+     "../Economic/EconomicCensusAgri/3 chapter.pdf",
+     "../Economic/EconomicCensusAgri/4 chapter.pdf",
+     "../Economic/EconomicCensusAgri/AgriCensusSH2.pdf",
+     "../Economic/Gazette.pdf",
+     "../Economic/Media Release Tamil.pdf",
+     "../Economic/New economic census-Agri.pdf",
+     "../Economic/Non agri.pdf",
+     "../Economic/Press Release-S.pdf",
+     "../Economic/Press Release-T.pdf",
+     "../Economic/Press briefing 13 08 22.pdf",
+     "../Economic/Press briefing sinhala.pdf",
+     "../Economic/Press briefing tamil.pdf",
+     "../Economic/new media press rel eco.pdf",
+     "../EconomicCensus/DCS_IndCondTtradeService_Atlas_2014_Final.pdf",
+     "FinalReport_ConstructionTrade&Services.pdf",
+     "FinalReport_FormalIndustries.pdf",
+     "FinalReport_Informal_NonAgri.pdf",
+     "Final_Report_Agri.pdf",
+     "Final_Report_Estate_Sector.pdf",
+     "Publications/Agri_GNLevel.pdf",
+     "Publications/Ampara SH2 Report.pdf",
+     "Publications/AnuradhapuraSH2 Report.pdf",
+     "Publications/Badulla SH2 Report.pdf"
+    ],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://www.statistics.gov.lk/Other_CensusandSurveys",
+    "status": 500,
+    "error": null
+   },
+   {
+    "url": "https://www.statistics.gov.lk/Health/StaticalInformation",
+    "status": 200,
+    "kind": "html",
+    "title": null,
+    "files": [],
+    "mentions": []
+   },
+   {
+    "url": "https://www.statistics.gov.lk/DashBoard/censusdashV1/",
+    "status": 200,
+    "kind": "html",
+    "title": "Census Data Portal",
+    "files": [],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://www.statistics.gov.lk/OtherCensusandSurveys/StaticalInformation",
+    "status": 200,
+    "kind": "html",
+    "title": null,
+    "files": [],
+    "mentions": []
+   },
+   {
+    "url": "https://www.statistics.gov.lk/Censuses",
+    "status": 200,
+    "kind": "html",
+    "title": "Department of Census and Statistics",
+    "files": [],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "http://www.statistics.gov.lk/Economic/Economic%20Census.html",
+    "status": 200,
+    "kind": "html",
+    "title": "Economic Census 2013/14 - DCS, Sri Lanka",
+    "files": [
+     "../Economic/EconomicCensusAgri/1 chapter.pdf",
+     "../Economic/EconomicCensusAgri/2 chapter.pdf",
+     "../Economic/EconomicCensusAgri/3 chapter.pdf",
+     "../Economic/EconomicCensusAgri/4 chapter.pdf",
+     "../Economic/EconomicCensusAgri/AgriCensusSH2.pdf",
+     "../Economic/Gazette.pdf",
+     "../Economic/Media Release Tamil.pdf",
+     "../Economic/New economic census-Agri.pdf",
+     "../Economic/Non agri.pdf",
+     "../Economic/Press Release-S.pdf",
+     "../Economic/Press Release-T.pdf",
+     "../Economic/Press briefing 13 08 22.pdf",
+     "../Economic/Press briefing sinhala.pdf",
+     "../Economic/Press briefing tamil.pdf",
+     "../Economic/new media press rel eco.pdf",
+     "../EconomicCensus/DCS_IndCondTtradeService_Atlas_2014_Final.pdf",
+     "FinalReport_ConstructionTrade&Services.pdf",
+     "FinalReport_FormalIndustries.pdf",
+     "FinalReport_Informal_NonAgri.pdf",
+     "Final_Report_Agri.pdf",
+     "Final_Report_Estate_Sector.pdf",
+     "Publications/Agri_GNLevel.pdf",
+     "Publications/Ampara SH2 Report.pdf",
+     "Publications/AnuradhapuraSH2 Report.pdf",
+     "Publications/Badulla SH2 Report.pdf"
+    ],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://www.statistics.gov.lk/Industry/StaticalInformation/CensusIndustry",
+    "status": 200,
+    "kind": "html",
+    "title": "Department of Census and Statistics",
+    "files": [],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://www.statistics.gov.lk/PublicEmployment/StaticalInformation/CensusReports",
+    "status": 200,
+    "kind": "html",
+    "title": "Department of Census and Statistics",
+    "files": [],
+    "mentions": [
+     "census"
+    ]
+   },
+   {
+    "url": "https://www.statistics.gov.lk/about_us/censusordanance",
+    "status": 200,
+    "kind": "html",
+    "title": "Department of Census and Statistics",
+    "files": [],
+    "mentions": [
+     "census"
+    ]
+   }
+  ],
+  "title": "Department of Census and Statistics",
+  "matching_links": 20
+ },
+ "verdict": {
+  "hdx_datasets": 16,
+  "hdx_machine_readable": 11,
+  "nso_files_found": 51,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "1/1",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "4/5"
+ }
+}

@@ -1,0 +1,1019 @@
+{
+ "iso3": "HUN",
+ "name": "Hungary",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity",
+    "language",
+    "religion"
+   ],
+   "title": "Nepszamlalas 2022 -- Teruleti adatok (territorial data): population by nationality, mother tongue, language spoken and religion, by varmegye (county), jaras (district) and telepules (settlement)",
+   "kind": "census",
+   "format": "xlsx",
+   "geography": "county (19 + Budapest) and district (174 jaras + 23 Budapest kerulet)",
+   "geography_count": 197,
+   "matches_boundary_level": "admin1 and admin2",
+   "url": "https://nepszamlalas2022.ksh.hu/",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://nepszamlalas2022.ksh.hu/",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "html",
+    "title": "Népszámlálás 2022",
+    "links_to_files": [],
+    "mentions": []
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Hungary",
+    "wikitext_bytes": 121437,
+    "infobox_params": [],
+    "sections": [
+     "Religions",
+     "Demographics"
+    ],
+    "wikitables": 7,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\"|Religion",
+       "colspan=\"2\"|1920",
+       "colspan=\"2\"|1930",
+       "colspan=\"2\"|1941",
+       "colspan=\"2\"|1949",
+       "colspan=\"2\"|1992",
+       "colspan=\"2\"|1998",
+       "colspan=\"2\"|2001",
+       "colspan=\"2\"|2011",
+       "colspan=\"2\"|2022"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 2
+     },
+     {
+      "header": [
+       "rowspan=\"2\"|Religion",
+       "style=\"text-align:center; background:#E0F0FF;\" colspan=\"2\"|Christianity",
+       "style=\"text-align:center; background:#E0F0FF;\" colspan=\"2\"|<small>Catholicism</small>",
+       "style=\"text-align:center; background:#E0F0FF;\" colspan=\"2\"|<small>Calvinism</small>",
+       "style=\"text-align:center; background:#E0F0FF;\" colspan=\"2\"|<small>Lutheranism</small>",
+       "style=\"text-align:center; background:#E0F0FF;\" colspan=\"2\"|<small>Orthodox Christianity</small>",
+       "style=\"text-align:center; background:#E0F0FF;\" colspan=\"2\"|<small>Other Christians</small>",
+       "style=\"text-align:center; background:#E0E0FF;\" colspan=\"2\"|Judaism",
+       "style=\"text-align:center; background:#FFE0E0;\" colspan=\"2\"|Other religions",
+       "style=\"text-align:center; background:#F5F5F5;\" colspan=\"2\"|Not religious"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 5
+     },
+     {
+      "header": [
+       "rowspan=\"2\"|Religion",
+       "colspan=\"2\"|<10",
+       "colspan=\"2\"|10–19",
+       "colspan=\"2\"|20–29",
+       "colspan=\"2\"|30–39",
+       "colspan=\"2\"|40–49",
+       "colspan=\"2\"|50–59",
+       "colspan=\"2\"|60–69",
+       "colspan=\"2\"|70–79",
+       "colspan=\"2\"|80–89"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "rowspan=\"2\"|Religion",
+       "colspan=\"2\"|Lower primary school",
+       "colspan=\"2\"|Upper primary school",
+       "colspan=\"2\"|Professional secondary school<br/><small>professional diploma</small>",
+       "colspan=\"2\"|General secondary school<br/><small>maturity diploma</small>",
+       "colspan=\"2\"|University or college",
+       "colspan=\"2\"|Person under 15<br/><small>school career underway</small>",
+       "Number",
+       "%",
+       "Number"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "rowspan=\"1\"|Type of belief",
+       "colspan=\"1\"|18–29",
+       "colspan=\"1\"|30–39",
+       "colspan=\"1\"|40–49",
+       "colspan=\"1\"|50–59",
+       "colspan=\"1\"|60+",
+       "Officially registered religious organisations (churches) in Hungary,<br/>according to the laws on churches of the Constitution of Hungary effective since 2012<ref>{{cite web|title=Bevett egyházak Magyarországon|trans-title=Registered churches in Hungary|website=Church Register|publisher=Hungarian Prime Minister's Office|url=https://egyhaz.me.gov.hu/}}</ref>{{efn-lg|name=2012-church-laws|The Constitution of Hungary adopted in the first half of 2011 and effective since early 2012 implemented new laws on religious organisations (2011 Act CCVI), including stricter criteria for their official registration with the status of incorporated \"church\" (''egyház''), which entails various privileges including the access to state funding. Thirty-two churches were registered according to the new laws, while many religious organisations which before 2012 had been granted official registration, lost their status and privileges once the new laws were implemented. Some of these organisations merged with larger ones which remained registered as incorporated churches (for instance, this was the case with various Buddhist groups), while others continued to operate under the laws on associations, as \"associations conducting religious activities\" but not as officially registered incorporated churches.<ref>{{cite web|title=Act CCVI of 2011 on the right to freedom of conscience and religion and the legal status of churches, denominations and religious communities of Hungary|number=Opinion No. 664|date=27 February 2012|publisher=Venice Commission, Council of Europe|location=Strasbourg|id=CDL-REF(2012)009|url=https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-REF%282012%29009-e|archive-url=https://web.archive.org/web/20230325050031/https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-REF%282012%29009-e|archive-date=25 March 2023|url-statu"
+      ],
+      "place_column": true,
+      "composition_columns": 1,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "Officially registered religious organisations (churches) in Hungary,<br/>according to the laws on churches of the Constitution of Hungary effective since 2012<ref>{{cite web|title=Bevett egyházak Magyarországon|trans-title=Registered churches in Hungary|website=Church Register|publisher=Hungarian Prime Minister's Office|url=https://egyhaz.me.gov.hu/}}</ref>{{efn-lg|name=2012-church-laws|The Constitution of Hungary adopted in the first half of 2011 and effective since early 2012 implemented new laws on religious organisations (2011 Act CCVI), including stricter criteria for their official registration with the status of incorporated \"church\" (''egyház''), which entails various privileges including the access to state funding. Thirty-two churches were registered according to the new laws, while many religious organisations which before 2012 had been granted official registration, lost their status and privileges once the new laws were implemented. Some of these organisations merged with larger ones which remained registered as incorporated churches (for instance, this was the case with various Buddhist groups), while others continued to operate under the laws on associations, as \"associations conducting religious activities\" but not as officially registered incorporated churches.<ref>{{cite web|title=Act CCVI of 2011 on the right to freedom of conscience and religion and the legal status of churches, denominations and religious communities of Hungary|number=Opinion No. 664|date=27 February 2012|publisher=Venice Commission, Council of Europe|location=Strasbourg|id=CDL-REF(2012)009|url=https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-REF%282012%29009-e|archive-url=https://web.archive.org/web/20230325050031/https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-REF%282012%29009-e|archive-date=25 March 2023|url-status=live}}</ref>{{sfn|Baer|2014|p=1}}}}<br/><small>In sequence according to the respective registration number</small>",
+       "Type"
+      ],
+      "place_column": true,
+      "composition_columns": 1,
+      "rows_hint": 5
+     },
+     {
+      "header": [
+       "Religious organisation",
+       "Type",
+       "Donation<br/><small>In million HUF</small>",
+       "Number of donors"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Hungary",
+    "wikitext_bytes": 152069,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups and language",
+     "Religion"
+    ],
+    "wikitables": 26,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 3,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "colspan=\"4\" |Population of Hungary over time with estimated percentages of ethnic Hungarians within Hungary",
+       "width=10%|Date",
+       "width=20%|Estimated Population",
+       "width=30%|Estimated Percentages of Hungarian people, with and without Inclusion of the Kingdom of Croatia",
+       "width=40%|Notes"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Year",
+       "Total Population<br/>(Hungary + Croatia–Slavonia)",
+       "Hungary Proper<br/>(excl. Croatia–Slavonia)",
+       "Croatia–Slavonia",
+       "Hungarians<br/>(absolute/%)",
+       "Romanians<br/>(absolute/%)",
+       "Slovaks<br/>(absolute/%)",
+       "Germans<br/>(absolute/%)",
+       "Croats/Serbs<br/>(absolute/%)",
+       "Other ethnicities"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Land",
+       "Mother tongues (1910 census)",
+       "Land",
+       "colspan=1 | Hungarian",
+       "colspan=1 | Romanian",
+       "colspan=1 | German",
+       "colspan=1 | Slovak",
+       "colspan=1 | Croatian",
+       "colspan=1 | Serbian",
+       "colspan=1 | Ruthenian"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Land",
+       "colspan=1 | Hungarian",
+       "colspan=1 | Romanian",
+       "colspan=1 | German",
+       "colspan=1 | Slovak",
+       "colspan=1 | Croatian",
+       "colspan=1 | Serbian",
+       "colspan=1 | Ruthenian",
+       "colspan=1 | Other",
+       "colspan=1 | Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1850",
+       "1851",
+       "1852",
+       "1853",
+       "1854",
+       "1855",
+       "1856",
+       "1857",
+       "1858"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1861",
+       "1862",
+       "1863",
+       "1864",
+       "1865",
+       "1866",
+       "1867",
+       "1868",
+       "1869"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "Years",
+       "1871",
+       "1872",
+       "1873",
+       "1874",
+       "1875",
+       "1876",
+       "1877",
+       "1878",
+       "1879"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "Years",
+       "1881",
+       "1882",
+       "1883",
+       "1884",
+       "1885",
+       "1886",
+       "1887",
+       "1888",
+       "1889"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 32
+     },
+     {
+      "header": [
+       "Years",
+       "1891",
+       "1892",
+       "1893",
+       "1894",
+       "1895",
+       "1896",
+       "1897",
+       "1898",
+       "1899"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 38
+     },
+     {
+      "header": [
+       "County",
+       "1980",
+       "1990",
+       "2001",
+       "2011",
+       "Period",
+       "Life expectancy in<br />Years<ref>{{Cite web |title=World Population Prospects – Population Division – United Nations |url=https://esa.un.org/unpd/wpp/DataQuery/ |access-date=2018-08-26 |website=esa.un.org}}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 35
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years<ref>{{Cite web |title=World Population Prospects – Population Division – United Nations |url=https://esa.un.org/unpd/wpp/DataQuery/ |access-date=2018-08-26 |website=esa.un.org}}</ref>",
+       "! width=\"80pt\" |Average population (January 1)",
+       "width=\"80pt\" |Live births",
+       "width=\"80pt\" |Deaths",
+       "width=\"80pt\" |Natural change",
+       "width=\"80pt\" |Crude birth rate (per 1000)",
+       "width=\"80pt\" |Crude death rate (per 1000)",
+       "width=\"80pt\" |Natural change (per 1000)",
+       "width=\"80pt\" |Crude migration change (per 1000)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "! width=\"80pt\" |Average population (January 1)",
+       "width=\"80pt\" |Live births",
+       "width=\"80pt\" |Deaths",
+       "width=\"80pt\" |Natural change",
+       "width=\"80pt\" |Crude birth rate (per 1000)",
+       "width=\"80pt\" |Crude death rate (per 1000)",
+       "width=\"80pt\" |Natural change (per 1000)",
+       "width=\"80pt\" |Crude migration change (per 1000)",
+       "width=\"80pt\" |Total fertility rates{{refn|group=fn|In fertility rates, 2.1 and above represents a stable or increasing population and have been marked blue, while 2.0 and below leads to an aging and, ultimately, declining population. }}<ref name=\"ourworldindata.org\" /><ref name=\"cia.gov\">{{citation |title=World Factbook EUROPE : HUNGARY |date=July 12, 2018 |url=https://www.cia.gov/the-world-factbook/countries/hungary/ |archive-url=https://web.archive.org/web/20210110102835/https://www.cia.gov/the-world-factbook/countries/hungary |url-status=dead |archive-date=January 10, 2021 |work=The World Factbook}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January–July 2025",
+       "January–July 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{cite web |url= http://www.ksh.hu/gyorstajekoztatok/#/en/list/nep |title=First Releases – Vital events |website= ksh.hu}}</ref><ref>{{Cite web|url=https://www.ksh.hu/stadat_files/nep/en/nep0064.html|title=22.2.1.1. Main indicator of vital events (monthly data)|website=www.ksh.hu}}</ref>",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "colspan=4 | Vital statistics as of 2016 <ref>{{cite web|url=https://www.ksh.hu/docs/eng/xstadat/xstadat_annual/i_wdsd007b.html|title=STADAT – 6.1.5. Main rates in vital statistics (2001–)|website=www.ksh.hu}}</ref>",
+       "County",
+       "Birth rate (‰)",
+       "Death rate (‰)",
+       "Natural increase",
+       "style=\"width:5%;\"| County",
+       "style=\"width:5%;\"| Hungarian",
+       "style=\"width:5%;\"| Bulgarian",
+       "style=\"width:5%;\"| Romani",
+       "style=\"width:5%;\"| Greek"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "style=\"width:5%;\"| County",
+       "style=\"width:5%;\"| Hungarian",
+       "style=\"width:5%;\"| Bulgarian",
+       "style=\"width:5%;\"| Romani",
+       "style=\"width:5%;\"| Greek",
+       "style=\"width:5%;\"| Croat",
+       "style=\"width:5%;\"| Polish",
+       "style=\"width:5%;\"| German",
+       "style=\"width:5%;\"| Armenian",
+       "style=\"width:5%;\"| Romanian"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic<br />group",
+       "colspan=\"2\" | estimation 1495",
+       "colspan=\"2\" | 1715",
+       "colspan=\"2\" | 1785",
+       "colspan=\"2\" | census 1880",
+       "colspan=\"2\" | census 1900",
+       "colspan=\"2\" | census 1910",
+       "colspan=\"2\" | census 1920",
+       "colspan=\"2\" | census 1930",
+       "Number"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic<br />group",
+       "colspan=\"2\" | census 1941",
+       "Number",
+       "%",
+       "rowspan=\"2\" | Ethnic<br />group",
+       "colspan=\"2\" | census 1949",
+       "colspan=\"2\" | census 1960",
+       "colspan=\"2\" | census 1970",
+       "colspan=\"2\" | census 1980",
+       "colspan=\"2\" | census 1990"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic<br />group",
+       "colspan=\"2\" | census 1949",
+       "colspan=\"2\" | census 1960",
+       "colspan=\"2\" | census 1970",
+       "colspan=\"2\" | census 1980",
+       "colspan=\"2\" | census 1990",
+       "Number",
+       "%",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic<br />group",
+       "colspan=\"2\" | census 2001",
+       "colspan=\"2\" | census 2011",
+       "colspan=\"2\" | census 2022",
+       "Number",
+       "%",
+       "Number",
+       "%",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Denominations",
+       "Population",
+       "% of total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Year",
+       "Foreign Immigrants",
+       "Foreign Emigrants",
+       "Net Migration (Foreigners)",
+       "Hungarian Returning Citizens",
+       "Hungarian Emigrants",
+       "Net Migration (Hungarians)",
+       "Total Net Migration",
+       "Country",
+       "2017"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "Country",
+       "2017",
+       "2018",
+       "2019",
+       "2020",
+       "2021",
+       "2022",
+       "2023",
+       "2024",
+       "2025"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "scope=\"col\" | Continent",
+       "scope=\"col\" | 2017<br>population",
+       "scope=\"col\" | % of total",
+       "scope=\"col\" | 2018<br>population",
+       "scope=\"col\" | % of total",
+       "scope=\"col\" | 2019<br>population",
+       "scope=\"col\" | % of total",
+       "scope=\"col\" | 2020<br>population",
+       "scope=\"col\" | % of total",
+       "scope=\"col\" | 2021<br>population"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "scope=\"col\" | Continent",
+       "scope=\"col\" | 2023<br>population",
+       "scope=\"col\" | % of total",
+       "scope=\"col\" | 2024<br>population",
+       "scope=\"col\" | % of total",
+       "scope=\"col\" | 2025<br>population",
+       "scope=\"col\" | % of total",
+       "scope=\"col\" | 2026<br>population",
+       "scope=\"col\" | % of total",
+       "Name"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "Name",
+       "Population (1949)",
+       "Population (1990)",
+       "Population (2011)",
+       "Population (2022)",
+       "Agglomeration",
+       "Status"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Debrecen",
+    "found": true,
+    "title": "Debrecen",
+    "url": "https://en.wikipedia.org/wiki/Debrecen",
+    "wikitext_bytes": 52229,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics1_info2",
+     "demographics1_info3",
+     "demographics1_info4",
+     "demographics1_info8",
+     "demographics2_info1",
+     "demographics2_info2",
+     "demographics2_info3",
+     "demographics2_info4",
+     "demographics2_info5",
+     "demographics2_info6",
+     "demographics2_info7",
+     "demographics2_info8"
+    ],
+    "sections": [
+     "Demographics",
+     "Languages",
+     "Ethnic groups",
+     "Religion"
+    ],
+    "wikitables": 2,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 4,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Hajdúnánás",
+    "found": true,
+    "title": "Hajdúnánás",
+    "url": "https://en.wikipedia.org/wiki/Hajd%C3%BAn%C3%A1n%C3%A1s",
+    "wikitext_bytes": 4392,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "III. kerület",
+    "found": true,
+    "title": "III. Kerületi TVE",
+    "url": "https://en.wikipedia.org/wiki/III._Ker%C3%BCleti_TVE",
+    "wikitext_bytes": 5450,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Polgard",
+    "found": false
+   },
+   {
+    "shape_name": "Sátoraljaújhely",
+    "found": true,
+    "title": "Sátoraljaújhely",
+    "url": "https://en.wikipedia.org/wiki/S%C3%A1toralja%C3%BAjhely",
+    "wikitext_bytes": 100182,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics1_info2",
+     "demographics1_info3",
+     "demographics1_info4",
+     "demographics1_info5",
+     "demographics1_info6",
+     "demographics1_info7",
+     "demographics1_info8",
+     "demographics1_info9",
+     "demographics2_info1",
+     "demographics2_info2",
+     "demographics2_info3",
+     "demographics2_info4",
+     "demographics2_info5",
+     "demographics2_info6",
+     "demographics2_info7"
+    ],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Hungary: Road Surface Data",
+   "name": "hungary-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/hungary-road-surface-data",
+   "resources": [
+    {
+     "name": "Hungary GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_hun_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Hungary GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_hun_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Hungary: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-hungary",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-hungary",
+   "resources": [
+    {
+     "name": "kontur_boundaries_HU_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_HU_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_HU_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_HU_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_HU_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_HU_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Hungary - Subnational Population Statistics",
+   "name": "cod-ps-hun",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-hun",
+   "resources": [
+    {
+     "name": "HUN_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/9e510d49-3fd8-465e-b6a8-63a111363933/resource/0d7a0bb6-1a52-4dd9-980d-d900a16c3f1f/download/hun_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "hun_admpop_2022_v01.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/9e510d49-3fd8-465e-b6a8-63a111363933/resource/0d68775a-785d-4a4b-92e8-07f68336db15/download/hun_admpop_2022_v01.xlsx"
+    },
+    {
+     "name": "hun_admpop_adm0_2022_v01.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/9e510d49-3fd8-465e-b6a8-63a111363933/resource/107ab52d-0aee-49dd-95ae-1211a683ffa2/download/hun_admpop_adm0_2022_v01.csv"
+    },
+    {
+     "name": "hun_admpop_adm1_2022_v01.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/9e510d49-3fd8-465e-b6a8-63a111363933/resource/85df1987-ba1e-42be-9402-c3ed3b987c80/download/hun_admpop_adm1_2022_v01.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Hungary - Accessibility Indicators",
+   "name": "hungary-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/hungary-accessibility-indicators",
+   "resources": [
+    {
+     "name": "HUN_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/hun/HUN_education_access.gpkg"
+    },
+    {
+     "name": "HUN_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/hun/HUN_education_access_long.csv"
+    },
+    {
+     "name": "HUN_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/hun/HUN_education_access_wide.csv"
+    },
+    {
+     "name": "HUN_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/hun/HUN_hospitals_access.gpkg"
+    },
+    {
+     "name": "HUN_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/hun/HUN_hospitals_access_long.csv"
+    },
+    {
+     "name": "HUN_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/hun/HUN_hospitals_access_wide.csv"
+    },
+    {
+     "name": "HUN_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/hun/HUN_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "HUN_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/hun/HUN_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Hungary - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-hungary",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-hungary",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Hungary",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6352244d-fa36-4c1b-9b3e-8a8ebb0cfe9c/resource/02dc05be-f42c-418c-babf-0cea49d66afd/download/social-protection-and-labor_hun.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Hungary - Population Counts",
+   "name": "worldpop-population-counts-for-hungary",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-hungary",
+   "resources": [
+    {
+     "name": "hun_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/HUN/hun_ppp_2020.tif"
+    },
+    {
+     "name": "hun_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/HUN/hun_ppp_2019.tif"
+    },
+    {
+     "name": "hun_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/HUN/hun_ppp_2018.tif"
+    },
+    {
+     "name": "hun_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/HUN/hun_ppp_2017.tif"
+    },
+    {
+     "name": "hun_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/HUN/hun_ppp_2016.tif"
+    },
+    {
+     "name": "hun_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/HUN/hun_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "hun_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/HUN/hun_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "hun_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/HUN/hun_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Hungary: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "hun-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/hun-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/f6e1e9a4-9247-40ab-9ede-ad11a54ac693/resource/e8279000-e098-41da-920c-ae36fdb39c44/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_hun.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/f6e1e9a4-9247-40ab-9ede-ad11a54ac693/resource/2de9beab-aab1-4423-9d25-e298163c38db/download/ghs_pop_e2025_r2023a_54009_100_v1_0_hun.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Hungary - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-hu-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-hu-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_HU",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/056d6ebd-f457-47d8-8999-c166362d6250/resource/083f6764-e1e0-46a3-8494-48d7a2de07c8/download/indicator_data_hu.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Hungary: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "hungary-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/hungary-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "hun_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8d02c382-f47b-4044-bf83-f351ba21ccec/resource/d440131c-99b6-41ed-b052-2a580876b7d5/download/hun_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "hun_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8d02c382-f47b-4044-bf83-f351ba21ccec/resource/54c228c2-12da-4e91-bd76-8882f56b8769/download/hun_general_2020_csv.zip"
+    },
+    {
+     "name": "hun_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8d02c382-f47b-4044-bf83-f351ba21ccec/resource/e68db44f-edd7-46c0-8ffb-6d40e2ad1a86/download/hun_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "hun_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8d02c382-f47b-4044-bf83-f351ba21ccec/resource/b6ee5f0d-5a38-412e-a84d-3649749392af/download/hun_men_2020_geotiff.zip"
+    },
+    {
+     "name": "hun_women_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8d02c382-f47b-4044-bf83-f351ba21ccec/resource/74658ed2-e054-46db-8129-50b881c07e30/download/hun_women_2020_geotiff.zip"
+    },
+    {
+     "name": "hun_women_of_reproductive_age_15_49_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8d02c382-f47b-4044-bf83-f351ba21ccec/resource/31860b3d-4a47-41c2-b9fa-896078a94c52/download/hun_women_of_reproductive_age_15_49_2020_geotiff.zip"
+    },
+    {
+     "name": "hun_youth_15_24_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8d02c382-f47b-4044-bf83-f351ba21ccec/resource/5122f0cb-d565-42df-8dd2-e7c5d6927354/download/hun_youth_15_24_2020_geotiff.zip"
+    },
+    {
+     "name": "hun_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8d02c382-f47b-4044-bf83-f351ba21ccec/resource/7de3c5fc-a09d-4447-8f6a-58f76d7bba43/download/hun_general_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Hungary: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-hun",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-hun",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-hu-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-hu-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Green area per capita (square meters per capita)",
+   "name": "green-area-per-capita-square-meters-per-capita",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/green-area-per-capita-square-meters-per-capita",
+   "resources": [
+    {
+     "name": "Green area per_capita (square meters per capita).xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/7babf915-12a0-4ceb-ad9c-7ee24b776614/resource/2c1c5e09-0bbe-482f-9703-ec7dfed62c79/download/green-area-per_capita-square-meters-per-capita.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Old age dependency ratio",
+   "name": "old-age-dependency-ratio",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/old-age-dependency-ratio",
+   "resources": [
+    {
+     "name": "Old_age_dependency_ratio.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/1598cce7-3d04-42a5-9a2f-b5ba0095cf2f/resource/5217ad45-f56f-43c7-992f-d4e327d13615/download/old_age_dependency_ratio.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.ksh.hu/",
+  "status": 200,
+  "error": null,
+  "pages": [],
+  "title": "K�zponti Statisztikai Hivatal",
+  "matching_links": 0
+ },
+ "verdict": {
+  "hdx_datasets": 12,
+  "hdx_machine_readable": 6,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "1/1",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "1/5"
+ }
+}

@@ -1,0 +1,713 @@
+{
+ "iso3": "KAZ",
+ "name": "Kazakhstan",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Численность населения Республики Казахстан по отдельным этносам на начало года (population by ethnic group at the start of the year), by region and by district/city -- annual series",
+   "kind": "register",
+   "format": "xlsx",
+   "geography": "region (oblast / city of republican significance) and district (район) / city",
+   "geography_count": 20,
+   "matches_boundary_level": "admin1 with a vintage caveat (16 drawn; the country had 14 oblasts + 2 cities before 2018, 17 units 2018-2022, 20 since June 2022 when Abai, Zhetysu and Ulytau were created); admin2 plausibly -- the workbooks list rayons under each oblast, and the boundary's 174 transliterated rayon names (Akzhaikskiy, Atbasarskiy ...) are the Russian adjectival forms that need a transliteration alias table",
+   "url": "https://stat.gov.kz/",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://stat.gov.kz/",
+   "error": null,
+   "body": {
+    "bytes_read": 207561,
+    "kind": "html",
+    "title": "Қазақстан Республикасы Стратегиялық жоспарлау және реформалар агенттігінің Ұлттық статистика бюросы - Басты бет",
+    "links_to_files": [],
+    "mentions": [
+     "census",
+     "language_id"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "religion",
+    "language"
+   ],
+   "title": "Итоги Национальной переписи населения 2021 года -- volumes on national composition, religious affiliation and command of languages, by region (in 2009 the corresponding volume was 'Национальный состав, вероисповедание и владения языками в Республике Казахстан')",
+   "kind": "census",
+   "format": "xlsx",
+   "geography": "region (17 units at census time: 14 oblasts + Nur-Sultan/Astana, Almaty, Shymkent)",
+   "geography_count": 17,
+   "matches_boundary_level": "admin1 (16 drawn vs 17 census units; expect one city or Turkistan/Shymkent to need attention)",
+   "url": "https://stat.gov.kz/",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://stat.gov.kz/",
+   "error": null,
+   "body": {
+    "bytes_read": 207561,
+    "kind": "html",
+    "title": "Қазақстан Республикасы Стратегиялық жоспарлау және реформалар агенттігінің Ұлттық статистика бюросы - Басты бет",
+    "links_to_files": [],
+    "mentions": [
+     "census",
+     "language_id"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Kazakhstan",
+    "wikitext_bytes": 34569,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\" |Region",
+       "colspan=\"2\" |Islam",
+       "colspan=\"2\" |Christianity",
+       "colspan=\"2\" |Other",
+       "colspan=\"2\" |No Religion",
+       "colspan=\"2\" |Undeclared",
+       "#",
+       "%",
+       "#",
+       "%"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Ethnic Group",
+       "Islam",
+       "Christianity",
+       "Judaism",
+       "Buddhism",
+       "Other",
+       "No Religion",
+       "Not Stated",
+       "Kazakhs",
+       "Russians"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 12
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Kazakhstan",
+    "wikitext_bytes": 57385,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups",
+     "Religion"
+    ],
+    "wikitables": 15,
+    "charts": [
+     "Bar box",
+     "Bar percent",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Year",
+       "Population (thousands)",
+       "Urban, %",
+       "Rural, %",
+       "Source"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age Group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age Group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "! width=\"80pt\"|Average population",
+       "width=\"80pt\"|Live births<sup>1</sup>",
+       "width=\"80pt\"|Deaths<sup>1</sup>",
+       "width=\"80pt\"|Natural change<sup>1</sup>",
+       "width=\"80pt\"|Crude birth rate (per 1000)",
+       "width=\"80pt\"|Crude death rate (per 1000)",
+       "width=\"80pt\"|Natural change (per 1000)",
+       "width=\"80pt\"|Crude migration change (per 1000)",
+       "width=\"80pt\"|Fertility rates",
+       "width=\"80pt\"|Life expectancy"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January—July 2025",
+       "January—July 2026",
+       "scope=\"row\" |Difference",
+       "colspan=\"4\" |Source:<ref>{{cite web |title=Bureau of National Statistics |url=https://stat.gov.kz/en/industries/social-statistics/demography/publications/}}</ref>",
+       "Region",
+       "CBR || TFR"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "Region",
+       "CBR || TFR",
+       "Republic of Kazakhstan",
+       "Abai",
+       "Aqmola",
+       "Aqtöbe",
+       "Almaty",
+       "Atyrau",
+       "Batys Qazaqstan",
+       "Jambyl"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "Year",
+       "Kazakh<br /> women",
+       "Russian<br /> women",
+       "Ukrainian<br /> women",
+       "Uzbek<br /> women",
+       "Years",
+       "1896",
+       "1897",
+       "1898",
+       "1899"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "Years",
+       "1896",
+       "1897",
+       "1898",
+       "1899",
+       "1900",
+       "1901",
+       "1902",
+       "1903",
+       "1904"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1906",
+       "1907",
+       "1908",
+       "1909",
+       "1910",
+       "1911",
+       "1912",
+       "1913",
+       "1914"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1916",
+       "1917",
+       "1918",
+       "1919",
+       "1920",
+       "1921",
+       "1922",
+       "1923",
+       "1924"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "Years",
+       "1926",
+       "1927",
+       "1928",
+       "1929",
+       "1930",
+       "1931",
+       "1932",
+       "1933",
+       "1934"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "Years",
+       "1936",
+       "1937",
+       "1938",
+       "1939",
+       "1940",
+       "1941",
+       "1942",
+       "1943",
+       "1944"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "Years",
+       "1946",
+       "1947",
+       "1948",
+       "1949<ref name=\"ourworldindata.org\" />",
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years",
+       "Year"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years",
+       "Year",
+       "Arrivals",
+       "Departures",
+       "Net migration"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "Year",
+       "Arrivals",
+       "Departures",
+       "Net migration"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Akzhaikskiy",
+    "found": false
+   },
+   {
+    "shape_name": "Atbasarskiy",
+    "found": false
+   },
+   {
+    "shape_name": "Irtyshskiy",
+    "found": false
+   },
+   {
+    "shape_name": "Kaztalovskiy",
+    "found": false
+   },
+   {
+    "shape_name": "Koksuskiy",
+    "found": false
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Kazakhstan: Road Surface Data",
+   "name": "kazakhstan-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/kazakhstan-road-surface-data",
+   "resources": [
+    {
+     "name": "Kazakhstan GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_kaz_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Kazakhstan GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_kaz_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Kazakhstan: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-kazakhstan",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-kazakhstan",
+   "resources": [
+    {
+     "name": "kontur_boundaries_KZ_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_KZ_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_KZ_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_KZ_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_KZ_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_KZ_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "INFORM subnational risk index 2021, Caucasus and Central Asia",
+   "name": "inform-subnational-risk-index-for-caucasus-and-central-asia",
+   "org": "United Nations Office for Disaster Risk Reduction (UNDRR)",
+   "url": "https://data.humdata.org/dataset/inform-subnational-risk-index-for-caucasus-and-central-asia",
+   "resources": [
+    {
+     "name": "INFORM CCA2021_infographic_30092021_ENG.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/59dc3d28-466d-440a-aaa9-3bab5e9ab011/resource/78e26e49-e505-48a5-81da-e921302b1e34/download/inform-cca2021_infographic_30092021_eng.pdf"
+    },
+    {
+     "name": "INFORM CCA2021_infographic_30092021_RUS.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/59dc3d28-466d-440a-aaa9-3bab5e9ab011/resource/494f543e-cbbd-48ff-86ef-3320d4af2c71/download/inform-cca2021_infographic_30092021_rus.pdf"
+    },
+    {
+     "name": "INFORM_CCA_2021_30092021_ENG.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/59dc3d28-466d-440a-aaa9-3bab5e9ab011/resource/c95876c0-11f4-430e-b3f1-8f8b439760ef/download/inform_cca_2021_30092021_eng.xlsx"
+    },
+    {
+     "name": "INFORM_CCA_2021_30092021_RUS.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/59dc3d28-466d-440a-aaa9-3bab5e9ab011/resource/a0352c16-8a36-4b07-981b-7f4bccaa67db/download/inform_cca_2021_30092021_rus.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Kazakhstan - Population Census 2009",
+   "name": "kazakhstan-population-census-2009",
+   "org": "OCHA ROCCA (inactive)",
+   "url": "https://data.humdata.org/dataset/kazakhstan-population-census-2009",
+   "resources": [
+    {
+     "name": "Kazakhstan - Population distribution by settlements and number of households.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/f4dfaeb7-4457-4e93-b402-db952c84fb43/resource/22ef8eea-c041-4e06-889e-eeef6ea01f78/download/kazakhstan-population-distribution-by-settlements-and-number-of-households.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Kazakhstan - Accessibility Indicators",
+   "name": "kazakhstan-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/kazakhstan-accessibility-indicators",
+   "resources": [
+    {
+     "name": "KAZ_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/kaz/KAZ_education_access.gpkg"
+    },
+    {
+     "name": "KAZ_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/kaz/KAZ_education_access_long.csv"
+    },
+    {
+     "name": "KAZ_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/kaz/KAZ_education_access_wide.csv"
+    },
+    {
+     "name": "KAZ_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/kaz/KAZ_hospitals_access.gpkg"
+    },
+    {
+     "name": "KAZ_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/kaz/KAZ_hospitals_access_long.csv"
+    },
+    {
+     "name": "KAZ_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/kaz/KAZ_hospitals_access_wide.csv"
+    },
+    {
+     "name": "KAZ_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/kaz/KAZ_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "KAZ_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/kaz/KAZ_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Kazakhstan - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-kazakhstan",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-kazakhstan",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Kazakhstan",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/2048dce2-91c3-40ed-b37b-2fecedde39ad/resource/753520d6-64ac-4e0c-82f4-fedf7b478452/download/social-protection-and-labor_kaz.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Kazakhstan - Population Counts",
+   "name": "worldpop-population-counts-for-kazakhstan",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-kazakhstan",
+   "resources": [
+    {
+     "name": "kaz_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/KAZ/kaz_ppp_2020.tif"
+    },
+    {
+     "name": "kaz_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/KAZ/kaz_ppp_2019.tif"
+    },
+    {
+     "name": "kaz_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/KAZ/kaz_ppp_2018.tif"
+    },
+    {
+     "name": "kaz_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/KAZ/kaz_ppp_2017.tif"
+    },
+    {
+     "name": "kaz_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/KAZ/kaz_ppp_2016.tif"
+    },
+    {
+     "name": "kaz_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/KAZ/kaz_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "kaz_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/KAZ/kaz_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "kaz_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/KAZ/kaz_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Kazakhstan: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "kazakhstan-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/kazakhstan-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "KAZ_children_under_five_2019-06-01_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6c7448f7-2f09-489d-b53a-65a0d3c26289/resource/9a28f3e7-eda4-4c75-8b12-db0edca329c4/download/kaz_children_under_five_2019-06-01_csv.zip"
+    },
+    {
+     "name": "KAZ_children_under_five_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/6c7448f7-2f09-489d-b53a-65a0d3c26289/resource/aced3550-2805-433f-8135-b396429bc05d/download/kaz_children_under_five_2019-06-01_geotiff.zip"
+    },
+    {
+     "name": "KAZ_elderly_60_plus_2019-06-01_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6c7448f7-2f09-489d-b53a-65a0d3c26289/resource/3a645380-890e-45ca-8629-97e38dd474dd/download/kaz_elderly_60_plus_2019-06-01_csv.zip"
+    },
+    {
+     "name": "KAZ_elderly_60_plus_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/6c7448f7-2f09-489d-b53a-65a0d3c26289/resource/0caad9ea-a3ae-47a8-91ef-1b81d9872355/download/kaz_elderly_60_plus_2019-06-01_geotiff.zip"
+    },
+    {
+     "name": "KAZ_men_2019-06-01_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6c7448f7-2f09-489d-b53a-65a0d3c26289/resource/ded21f0e-3326-4c2a-8f90-0b583c3c6b3f/download/kaz_men_2019-06-01_csv.zip"
+    },
+    {
+     "name": "KAZ_men_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/6c7448f7-2f09-489d-b53a-65a0d3c26289/resource/cc55def5-d4cb-497d-8d31-ae24d2644dbd/download/kaz_men_2019-06-01_geotiff.zip"
+    },
+    {
+     "name": "KAZ_women_2019-06-01_csv.zip",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/6c7448f7-2f09-489d-b53a-65a0d3c26289/resource/a930f84c-985e-4b73-a2e0-e03db17e896c/download/kaz_women_2019-06-01_csv.zip"
+    },
+    {
+     "name": "KAZ_women_2019-06-01_geotiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/6c7448f7-2f09-489d-b53a-65a0d3c26289/resource/e1ee9192-f2a6-4995-a67f-6f438299c72b/download/kaz_women_2019-06-01_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Kazakhstan: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-kaz",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-kaz",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-kz-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-kz-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Kazakhstan - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-kz-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-kz-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_KZ",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5843f0a9-6585-43e6-80f2-28b4c16daa1f/resource/caef34a8-2dcd-485a-8d7a-c2b6723b3430/download/indicator_data_kz.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Kazakhstan: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "kaz-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/kaz-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/68abdff7-1f62-4e7a-abb0-e77a2bcd9795/resource/36176a23-9cd8-4d2a-8452-9f8e529e4d18/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_kaz.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/68abdff7-1f62-4e7a-abb0-e77a2bcd9795/resource/b8575b8f-90e0-4b71-9485-11fc81f57e17/download/ghs_pop_e2025_r2023a_54009_100_v1_0_kaz.tif"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://stat.gov.kz/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://stat.gov.kz/industries/social-statistics/demography/",
+    "status": 200,
+    "kind": "html",
+    "title": "Салалар - Қазақстан Республикасы Стратегиялық жоспарлау және реформалар агенттігінің Ұлттық статистика бюросы",
+    "files": [],
+    "mentions": [
+     "language_id"
+    ]
+   }
+  ],
+  "title": "Қазақстан Республикасы Стратегиялық жоспарлау және реформалар агенттігінің Ұлттық статистика бюросы - Басты бет",
+  "matching_links": 1
+ },
+ "verdict": {
+  "hdx_datasets": 11,
+  "hdx_machine_readable": 6,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "2/2",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}
