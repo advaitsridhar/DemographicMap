@@ -1,71 +1,16 @@
-abs: 2021 Census, LGA
-  1227 dataflows in the ABS catalogue
-  dataflows containing G14: C21_G14_CED, C21_G14_LGA, C21_G14_POA, C21_G14_RA, C21_G14_SA2, C21_G14_SAL, C21_G14_SED, C21_G14_SUA, C21_G14_UCL
-  dataflows containing G08: C21_G08_CED, C21_G08_LGA, C21_G08_POA, C21_G08_RA, C21_G08_SA2, C21_G08_SAL, C21_G08_SED, C21_G08_SUA, C21_G08_UCL
-  dataflows containing G13: C21_G13_CED, C21_G13_LGA, C21_G13_POA, C21_G13_RA, C21_G13_SA2, C21_G13_SAL, C21_G13_SED, C21_G13_SUA, C21_G13_UCL
-  religion: dataflow ABS,C21_G14_LGA,1.0.0
-  ancestry: dataflow ABS,C21_G08_LGA,1.0.0
-  language: dataflow ABS,C21_G13_LGA,1.0.0
-  religion rows 57630, ancestry rows 111870, language rows 394935
-  dimensions seen: ['RELP', 'SEXP', 'REGION', 'REGION_TYPE', 'STATE', 'TIME_PERIOD']
-  using region='STATE' religion='RELP' ancestry='ANCP' language='LANP'
-  restricted SEXP='Persons' so the sexes are not counted twice
-  outermost level chosen by code tree for 9 regions
-  outermost level chosen by suffix (nothing summed to the total) for 9 regions
-  ! no rule partitioned ANCP for region 3; published total 10312367.0
-            '_T'    10,312,367  Total
-          '2101'     3,919,773  English
-          '1101'     3,449,202  Australian
-          '2201'     1,135,841  Irish
-            '_O'     1,130,020  Other
-          '2102'     1,053,998  Scottish
-            '_N'       708,346  Not stated
-          '2306'       619,387  German
-          '1102'       411,829  Australian Aboriginal
-          '6101'       320,107  Chinese
-          '3103'       305,062  Italian
-          '7106'       187,203  Indian
-          '2303'       161,615  Dutch
-          '5201'       147,692  Filipino
-          '1202'       134,443  New Zealander
-          '1201'       130,017  Maori
-          '1504'        70,454  Samoan
-          '9215'        70,453  South African
-          '2103'        69,332  Welsh
-          '5107'        67,692  Vietnamese
-          '2305'        66,233  French
-          '3307'        65,633  Polish
-          '3205'        65,360  Greek
-          '3106'        51,316  Spanish
-  restricted SEXP='Persons' so the sexes are not counted twice
-  restricted ENGLP='Total' so its categories are not summed
-  outermost level chosen by suffix (nothing summed to the total) for 9 regions
-  ! no rule partitioned LANP for region 4; published total 1781501.0
-            '_T'     1,781,501  Total
-             '1'     1,382,959  Speaks English only
-           'O_T'       317,291  Other Languages Total
-            '_N'        81,255  Not stated
-            '52'        60,899  Indo-Aryan: Total
-            '_O'        52,857  Other
-            '71'        43,938  Chinese: Total
-          '7104'        32,155  Chinese: Mandarin
-          '3103'        23,837  Italian
-          '3205'        21,874  Greek
-          '5107'        21,849  Vietnamese
-          '5207'        19,973  Indo-Aryan: Punjabi
-            '65'        15,314  Southeast Asian Austronesian languages: Total
-          '4202'        11,032  Arabic
-          '7101'        10,152  Chinese: Cantonese
-          '5203'         9,864  Indo-Aryan: Hindi
-          '5206'         9,650  Indo-Aryan: Nepali
-          '5202'         7,426  Indo-Aryan: Gujarati
-          '3106'         7,277  Spanish
-          '6511'         6,440  Southeast Asian Austronesian languages: Tagalog
-          '2306'         5,458  German
-          '4106'         5,397  Persian (excluding Dari)
-          '3307'         5,109  Polish
-          '5212'         5,025  Indo-Aryan: Urdu
-  population from the religion table's own total for 9 of 9 regions; they sum to 25,422,828
-  sanity: largest religion category is 47.6% of the sample region's total across 8 categories
-  wrote data/processed/australia_state.json (51 kB)
-  9 records
+Ukraine: https://data.humdata.org/dataset/45c19756-9d0b-4673-9de4-fc47168c369a/resource/7f1ace67-fd49-4d2a-8b25-cc0561b5145b/download/ukraine_uscb_201905.xlsx
+  4,486,575 bytes
+  Language: 700 rows, 10 groups, denominator 'Total Population'
+    25 areas at level 1 built by adding up the level below
+    672 rows skipped: another level, or no area name
+    admin1: 48,121,632 against the country's own 48,121,632 -- exactly
+    3 of 27 areas do not reach their published total; the map shows the remainder as unaccounted:
+      KHERSONS’KA OBLAST’: groups come to 1,164,267 against a published 1,172,689 (+0.7%)
+      MYKOLAYIVS’KA OBLAST’: groups come to 1,253,868 against a published 1,262,899 (+0.7%)
+      KIROVOHRADS’KA OBLAST’: groups come to 1,118,568 against a published 1,125,704 (+0.6%)
+  Nationality-Language [NL_ETH_]: 700 rows, 134 groups, no published denominator
+    25 areas at level 1 built by adding up the level below
+    672 rows skipped: another level, or no area name
+    admin1: 48,186,051 against the country's own 48,186,051 -- exactly
+  wrote data/processed/ukraine_oblast.json (216 kB)
+  27 areas: 27 admin1
