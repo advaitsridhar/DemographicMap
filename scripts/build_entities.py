@@ -80,6 +80,10 @@ ADAPTER_FILES = [
     "bangladesh_district.json",
     "south_africa_province.json",
     "philippines_province.json", "ethiopia_region.json",
+    # After Afrobarometer, which is first: Kenya's counties carried the survey
+    # and now carry the 2019 census, and merge_adapter lets the count win the
+    # religion field while the survey keeps any field the census did not ask.
+    "kenya_county.json",
     "myanmar_state.json", "ukraine_oblast.json", "car_prefecture.json",
     "mali_region.json", "drc_province.json", "russia_subject.json",
     "colombia_department.json", "jamaica_parish.json",
