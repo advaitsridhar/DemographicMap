@@ -4690,12 +4690,17 @@ class CroatiaReadsTheBilingualHeader(unittest.TestCase):
         ("Zagrebačka", None, "Zagreb", None, None, 100, 100, 90, 90, 5, 5, 3, 3, 2, 2),
         ("Zagrebačka", "Grad", "Zagreb", "Town", "Dugo Selo", 60, 100, 55, 91.7, "-", "-", 3, 5, 2, 3.3),
         ("Zagrebačka", "Općina", "Zagreb", "Municipality", "Bibinje", 40, 100, 35, 87.5, 5, 12.5, "-", "-", "-", "-"),
+        ("1) Footnote under the table", None, None, None, None, None),
     ]
 
     def test_labels_units_and_dashes(self):
         from scripts.fetch_census import croatia
         labels, units = croatia.parse_sheet(self.ROWS)
         self.assertEqual(labels, ["Croats", "Serbs", "Other", "Unknown"])
+        self.assertEqual(len(units), 3)                 # the footnote is not a unit
+        self.assertEqual(croatia.english("Ostali kršćani1)\nOther Christians1)"), "Other Christians")
+        self.assertEqual(croatia.bars("religion", {"county": "x", "name": None, "total": 10,
+                                                   "counts": {"Jews": 10}})[0]["group"], "Judaism")
         self.assertEqual([(u["type"], u["name"]) for u in units],
                          [(None, None), ("Grad", "Dugo Selo"), ("Općina", "Bibinje")])
         self.assertEqual(units[1]["counts"]["Serbs"], 0)

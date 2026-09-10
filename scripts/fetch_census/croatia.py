@@ -41,6 +41,7 @@ from __future__ import annotations
 
 import argparse
 import io
+import re
 from typing import Any
 
 from ._shared import (
@@ -89,23 +90,36 @@ UNIT_ALIASES = {
     "Općina Murter-Kornati": ["Opicina Muter-Kornati"],
     "Općina Pirovac": ["Opicina Pirovac"],
 }
-# The English half of a header cell, to the bar it is shown as. Ethnicity is
+# The English half of a header cell, to the bar it is shown as, per field:
+# "Jews" is an ethnicity on one sheet and a religion on another. Ethnicity is
 # shown in the adjective form the rest of the map uses; anything not listed
 # keeps the bureau's English.
 LABELS = {
-    "Croats": "Croatian", "Albanians": "Albanian", "Austrians": "Austrian",
-    "Bosniacs": "Bosniak", "Bosniaks": "Bosniak", "Bulgarians": "Bulgarian",
-    "Montenegrins": "Montenegrin", "Czechs": "Czech", "Hungarians": "Hungarian",
-    "Macedonians": "Macedonian", "Germans": "German", "Poles": "Polish", "Roma": "Roma",
-    "Romanians": "Romanian", "Russians": "Russian", "Ruthenians": "Rusyn",
-    "Slovaks": "Slovak", "Slovenians": "Slovene", "Slovenes": "Slovene", "Serbs": "Serbian",
-    "Italians": "Italian", "Turks": "Turkish", "Ukrainians": "Ukrainian",
-    "Vlachs": "Vlach", "Jews": "Jewish",
-    "Catholics": "Catholic", "Orthodox": "Orthodox", "Protestants": "Protestant",
-    "Other Christians": "Other Christian", "Muslims": "Islam", "Jewish": "Judaism",
-    "Eastern religions": "Eastern religions", "Agnostics and sceptics": "Agnostic",
-    "Not religious and atheists": "No religion", "Not religious or atheists": "No religion",
-    "Unknown": "Not stated", "Not declared": "Not declared", "Other": "Other",
+    "ethnicity": {
+        "Croats": "Croatian", "Albanians": "Albanian", "Austrians": "Austrian",
+        "Bosniacs": "Bosniak", "Bosniaks": "Bosniak", "Bulgarians": "Bulgarian",
+        "Montenegrins": "Montenegrin", "Czechs": "Czech", "Hungarians": "Hungarian",
+        "Macedonians": "Macedonian", "Germans": "German", "Poles": "Polish", "Roma": "Roma",
+        "Romanians": "Romanian", "Russians": "Russian", "Ruthenians": "Rusyn",
+        "Slovaks": "Slovak", "Slovenians": "Slovene", "Slovenes": "Slovene",
+        "Serbs": "Serbian", "Italians": "Italian", "Turks": "Turkish",
+        "Ukrainians": "Ukrainian", "Vlachs": "Vlach", "Jews": "Jewish", "Other": "Other",
+        "Regional affiliation": "Regional affiliation",
+        "Declared religion": "Religious affiliation given as ethnicity",
+        "Not classified": "Not classified", "Not declared": "Not declared",
+        "Unknown": "Not stated",
+    },
+    "religion": {
+        "Catholics": "Catholic", "Orthodox": "Orthodox", "Protestants": "Protestant",
+        "Other Christians": "Other Christian", "Muslims": "Islam", "Jews": "Judaism",
+        "Oriental religions": "Eastern religions", "Eastern religions": "Eastern religions",
+        "Other religions, movements and life philosophies": "Other religion",
+        "Agnostics and sceptics": "Agnostic", "Not religious and atheists": "No religion",
+        "Not declared": "Not declared", "Unknown": "Not stated",
+    },
+    "language": {
+        "Other languages": "Other", "Unknown": "Not stated",
+    },
 }
 NOTES = {
     "ethnicity": ("Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The "
@@ -121,10 +135,12 @@ NOTES = {
 
 
 def english(cell: Any) -> str:
-    """The English half of a bilingual header cell, else the whole cell."""
+    """The English half of a bilingual header cell, else the whole cell, less
+    a footnote mark ("Other Christians1)")."""
     text = str(cell or "").replace("\r", "").strip()
     parts = [p.strip() for p in text.split("\n") if p.strip()]
-    return parts[-1] if parts else ""
+    label = parts[-1] if parts else ""
+    return re.sub(r"\s*\d\)$", "", label).strip()
 
 
 def count(value: Any) -> int:
@@ -173,6 +189,9 @@ def parse_sheet(rows: list[tuple[Any, ...]]) -> tuple[list[str], list[dict[str, 
         county = str(row[0]).strip()
         if not county or county.startswith("Republika"):
             continue
+        if not isinstance(row[total_col], (int, float)) and \
+                not str(row[total_col] or "").strip().replace(".", "").isdigit():
+            continue                      # a footnote below the table, not a unit
         kind = str(row[1] or "").strip() or None
         name = str(row[4] or "").strip() or None
         if (kind is None) != (name is None):
@@ -192,7 +211,7 @@ def sheet_rows(workbook: Any, name: str) -> list[tuple[Any, ...]]:
 def bars(field: str, unit: dict[str, Any]) -> Any:
     groups: dict[str, int] = {}
     for label, n in unit["counts"].items():
-        shown = LABELS.get(label, label)
+        shown = LABELS[field].get(label, label)
         groups[shown] = groups.get(shown, 0) + n
     total = unit["total"]
     summed = sum(groups.values())
