@@ -1,4 +1,14 @@
-thailand: religion by province, NSO, 2000 Population and Housing Census, provincial final reports
-  'Nationality, religion, and language data for the provinces of Thailand': 30,739 bytes of wikitext
-  76 provinces with a 2000 religion
-  wrote data/processed/thailand_province.json (117 kB)
+bosnia: Popis 2013, Book 2, entities and cantons
+  K2_T2_B.xlsx (ethnicity): 17,482 bytes
+    18 categories: ['Bosniak', 'Serb', 'Croat', 'Bosnian', 'Romani', 'Muslim', 'Bosnian and Herzegovinian', 'Albanian', 'Yugoslav', 'Ukrainian', 'Montenegrin', 'Turk', 'Slovenian', 'Orthodox', 'Macedonian', 'Others', 'Undeclared', 'Unknown']
+    14 territories: BOSNA I HERCEGOVINA, FEDERACIJA BOSNE I HERCEGOVINE, UNSKO-SANSKI KANTON, POSAVSKI KANTON, TUZLANSKI KANTON, ZENIČKO-DOBOJSKI KANTON, BOSANSKO-PODRINJSKI KANTON, SREDNJOBOSANSKI KANTON, HERCEGOVAČKO-NERETVANSKI KANTON, ZAPADNOHERCEGOVAČKI KANTON, KANTON SARAJEVO, KANTON 10, REPUBLIKA SRPSKA, BRČKO DISTRIKT BOSNE I HERCEGOVINE
+  K2_T5_B.xlsx (religion): 16,952 bytes
+    20 categories: ['Islam', 'Orthodox', 'Catholic', 'Muslim', 'Roman Catholic', 'Serbian', "Jehovah's Witnesses", 'Greek Catholic', 'Protestant', 'Romani', 'Christian', 'Bosniak', 'Croat', 'Adventist', 'Bosnian', 'Agnostic', 'Atheist', 'Others', 'Undeclared', 'Unknown']
+    14 territories: BOSNA I HERCEGOVINA, FEDERACIJA BOSNE I HERCEGOVINE, UNSKO-SANSKI KANTON, POSAVSKI KANTON, TUZLANSKI KANTON, ZENIČKO-DOBOJSKI KANTON, BOSANSKO-PODRINJSKI KANTON, SREDNJOBOSANSKI KANTON, HERCEGOVAČKO-NERETVANSKI KANTON, ZAPADNOHERCEGOVAČKI KANTON, KANTON SARAJEVO, KANTON 10, REPUBLIKA SRPSKA, BRČKO DISTRIKT BOSNE I HERCEGOVINE
+  K2_T6_B.xlsx (language): 15,103 bytes
+    17 categories: ['Bosnian', 'Serbian', 'Croatian', 'Serbo-Croatian', 'Romani', 'Albanian', 'Bosnian-Croatian-Serbian', 'Turkish', 'Croato-Serbian', 'Bosniak', 'Ukrainian', 'Bosnian-Serbian-Croatian', 'Bosnian-Croatian', 'Bosnian-Herzegovinian', 'German', 'Other', 'Unknown']
+    14 territories: BOSNA I HERCEGOVINA, FEDERACIJA BOSNE I HERCEGOVINE, UNSKO-SANSKI KANTON, POSAVSKI KANTON, TUZLANSKI KANTON, ZENIČKO-DOBOJSKI KANTON, BOSANSKO-PODRINJSKI KANTON, SREDNJOBOSANSKI KANTON, HERCEGOVAČKO-NERETVANSKI KANTON, ZAPADNOHERCEGOVAČKI KANTON, KANTON SARAJEVO, KANTON 10, REPUBLIKA SRPSKA, BRČKO DISTRIKT BOSNE I HERCEGOVINE
+  admin1: 3 records
+  wrote data/processed/bosnia_entity.json (21 kB)
+  admin2: 12 records
+  wrote data/processed/bosnia_canton.json (81 kB)
