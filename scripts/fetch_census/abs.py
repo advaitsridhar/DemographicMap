@@ -6,6 +6,9 @@ The ABS Data API serves census tables as SDMX-JSON dataflows.  This pulls:
 * ``C21_G14_LGA`` religious affiliation
 * ``C21_G08_LGA`` ancestry (multi-response: people may report two ancestries,
   so shares sum above 100% and are labelled as responses, not persons)
+* ``C21_G13_LGA`` language used at home, cross-tabulated with proficiency in
+  spoken English and sex; the total of both is read, so it is one answer per
+  person and partitions the population
 
 Population comes out of the religion table rather than from a table of its own.
 G14 carries its own total, and religion is asked of everyone -- the question is
@@ -45,7 +48,8 @@ REGION_TYPE = {"state": "LGA", "lga": "LGA", "sa3": "SA3"}
 REGION_DIMENSION = {"state": "STATE"}
 ASGS_LEVEL = {"state": "STE", "lga": "LGA", "sa3": "SA3"}
 # Census 2021 table numbers: G14 religious affiliation, G08 ancestry.
-DATAFLOW_HINTS = {"religion": "C21_G14_{r}", "ancestry": "C21_G08_{r}"}
+DATAFLOW_HINTS = {"religion": "C21_G14_{r}", "ancestry": "C21_G08_{r}",
+                  "language": "C21_G13_{r}"}
 
 
 def discover_dataflows(region: str) -> dict[str, tuple[str, str, str]]:
@@ -73,13 +77,13 @@ def discover_dataflows(region: str) -> dict[str, tuple[str, str, str]]:
     # them so a failed CI run documents the real naming scheme.
     # The G14/G08 sets are small; print them completely -- run 3's broad sample
     # was drowned in sixty CENSUS2011_B* ids before reaching the C21 block.
-    for table in ("G14", "G08"):
+    for table in ("G14", "G08", "G13"):
         ids = sorted(f[0] for f in flows if table in f[0].upper())
         if ids:
             log(f"  dataflows containing {table}: " + ", ".join(ids[:40]))
 
     out: dict[str, tuple[str, str, str]] = {}
-    table_of = {"religion": "G14", "ancestry": "G08"}
+    table_of = {"religion": "G14", "ancestry": "G08", "language": "G13"}
     for field, pattern in DATAFLOW_HINTS.items():
         wanted = pattern.format(r=region).upper()
         table = table_of[field]
@@ -156,7 +160,13 @@ TIME_HINTS = ("TIME", "TIME_PERIOD", "FREQ", "MEASURE", "UNIT", "OBS")
 CHARACTERISTIC_HINTS = {
     "religion": ("RELIGION", "RELIGP", "RLGP", "RELIG"),
     "ancestry": ("ANCP", "ANCESTRY", "ANC"),
+    "language": ("LANP", "LANGUAGE", "LANG"),
 }
+# G13 carries a third dimension, proficiency in spoken English, beside sex.
+# A cross-tabulation summed over every cell counts each person once per
+# proficiency category as well as once per sex; only the total of each
+# extra dimension is a count of people.
+TOTAL_VALUES = ("persons", "total", "all persons", "total persons")
 
 
 def dimension_ids(rows: list[tuple[dict[str, str], float]]) -> list[str]:
@@ -335,6 +345,27 @@ def sole_sex_dimension(rows: list[tuple[dict[str, str], float]]) -> tuple[str, s
     return None
 
 
+def restrict_extra_dimensions(rows: list[tuple[dict[str, str], float]],
+                              keep: tuple[str, ...]
+                              ) -> list[tuple[dict[str, str], float]]:
+    """Keep only the Total of every dimension that is not the region, the
+    characteristic or time. G13's proficiency-in-English dimension is why:
+    without this, every language was counted once per proficiency level and
+    the shares summed to several hundred percent."""
+    for did in dimension_ids(rows):
+        if did in keep or any(h in did.upper() for h in REGION_HINTS + TIME_HINTS):
+            continue
+        values = {lab.get(did) for lab, _ in rows if lab.get(did)}
+        if len(values) < 2:
+            continue
+        total = next((v for v in values if v.strip().lower() in TOTAL_VALUES), None)
+        if total is None:
+            continue
+        rows = [(lab, val) for lab, val in rows if lab.get(did) == total]
+        log(f"  restricted {did}={total!r} so its categories are not summed")
+    return rows
+
+
 def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
                     region_dim: str = "REGION"
                     ) -> tuple[dict[str, dict[str, float]], dict[str, float]]:
@@ -349,6 +380,7 @@ def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
         key, value = sex
         rows = [(lab, val) for lab, val in rows if lab.get(key) == value]
         log(f"  restricted {key}={value!r} so the sexes are not counted twice")
+    rows = restrict_extra_dimensions(rows, (label_dim, region_dim))
 
     # Keyed on (label, code): the code is what says whether a category sits
     # under another one, and keying on the label alone threw it away before
@@ -407,15 +439,19 @@ def main() -> int:
         return 1
     religion_rows = unpack(sdmx(flows["religion"])) if "religion" in flows else []
     ancestry_rows = unpack(sdmx(flows["ancestry"])) if "ancestry" in flows else []
+    language_rows = unpack(sdmx(flows["language"])) if "language" in flows else []
 
-    log(f"  religion rows {len(religion_rows)}, ancestry rows {len(ancestry_rows)}")
+    log(f"  religion rows {len(religion_rows)}, ancestry rows {len(ancestry_rows)}, "
+        f"language rows {len(language_rows)}")
     log(f"  dimensions seen: {dimension_ids(religion_rows or ancestry_rows)}")
 
     region_dim = (REGION_DIMENSION.get(args.level)
                   or pick_region_dimension(religion_rows or ancestry_rows))
     religion_dim = pick_dimension(religion_rows, "religion")
     ancestry_dim = pick_dimension(ancestry_rows, "ancestry")
-    log(f"  using region={region_dim!r} religion={religion_dim!r} ancestry={ancestry_dim!r}")
+    language_dim = pick_dimension(language_rows, "language")
+    log(f"  using region={region_dim!r} religion={religion_dim!r} "
+        f"ancestry={ancestry_dim!r} language={language_dim!r}")
 
     religion, persons = (group_by_region(religion_rows, religion_dim, region_dim)
                          if religion_dim else ({}, {}))
@@ -423,8 +459,12 @@ def main() -> int:
     # so it is never a population and is discarded here.
     ancestry, _ = (group_by_region(ancestry_rows, ancestry_dim, region_dim)
                    if ancestry_dim else ({}, {}))
+    language, _ = (group_by_region(language_rows, language_dim, region_dim)
+                   if language_dim else ({}, {}))
     if religion_rows and not religion:
         log("  ! religion rows returned but none grouped -- dimension detection failed")
+    if language_rows and not language:
+        log("  ! language rows returned but none grouped -- dimension detection failed")
 
     names = {}
     for labels, _ in religion_rows + ancestry_rows:
@@ -445,9 +485,10 @@ def main() -> int:
 
     src = "Australian Bureau of Statistics, Census of Population and Housing 2021"
     records: list[dict[str, Any]] = []
-    for code in sorted(set(religion) | set(ancestry)):
+    for code in sorted(set(religion) | set(ancestry) | set(language)):
         rel = {k: v for k, v in religion.get(code, {}).items() if not k.lower().startswith("total")}
         anc = {k: v for k, v in ancestry.get(code, {}).items() if not k.lower().startswith("total")}
+        lan = {k: v for k, v in language.get(code, {}).items() if not k.lower().startswith("total")}
         records.append(record(
             f"AUS-{code}", names.get(code, code),
             level="admin1" if args.level == "state" else "admin2",
@@ -460,11 +501,15 @@ def main() -> int:
             ancestry=shares(anc) or gap(NOT_AVAILABLE),
             ancestry_note="ABS ancestry is multi-response (up to two per person), so shares "
                           "are of responses and sum above 100%.",
+            language=shares(lan) or gap(NOT_AVAILABLE),
+            language_note="ABS 2021 language used at home (G13), one answer per person, "
+                          "at the outermost level of the ABS classification; 'not stated' "
+                          "is retained as its own category.",
             ethnicity=gap(NOT_COLLECTED,
                           "Australia's census does not ask ethnicity. It asks ancestry and "
                           "country of birth, plus a separate Aboriginal and Torres Strait "
                           "Islander status question."),
-            sources=[{"field": "population/religion/ancestry", "name": src,
+            sources=[{"field": "population/religion/ancestry/language", "name": src,
                       "url": "https://data.api.abs.gov.au/",
                       "license": "CC BY 4.0"}],
         ))
