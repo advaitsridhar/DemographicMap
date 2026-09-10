@@ -47,7 +47,7 @@ def get(url: str) -> dict:
         return json.loads(resp.read().decode("utf-8", "replace"))
 
 
-def studies(base: str, keyword: str, limit: int) -> list[dict]:
+def studies(base: str, keyword: str, limit: int, raw: bool = False) -> list[dict]:
     url = f"{base.rstrip('/')}/index.php/api/catalog/search?" + \
         urllib.parse.urlencode({"sk": keyword, "ps": limit})
     print(f"\n=== NADA search: {keyword!r} at {base} ===")
@@ -59,6 +59,14 @@ def studies(base: str, keyword: str, limit: int) -> list[dict]:
     result = payload.get("result") or payload
     rows = result.get("rows") or result.get("study") or []
     print(f"    {result.get('found', len(rows))} study/studies, showing {len(rows)}")
+    if rows and raw:
+        # Every identifier the catalogue publishes for a study, printed once.
+        # The detail endpoints refuse the numeric id with 400, and which field
+        # they do want is not guessable from the outside -- so read the record
+        # rather than try a fifth URL shape.
+        print("    --- first row, verbatim ---")
+        print("    " + json.dumps(rows[0], indent=2)[:2000].replace("\n", "\n    "))
+        print("    --- end ---")
     for row in rows:
         print(f"    id={str(row.get('id','?')):<6} {str(row.get('year_end') or row.get('year_start') or '?'):<6} "
               f"{str(row.get('title',''))[:90]}")
@@ -137,13 +145,15 @@ def main() -> int:
     ap.add_argument("--keyword", default="", help="search term; repeatable via commas")
     ap.add_argument("--study", default="", help="a study id; list its variables and stop")
     ap.add_argument("--limit", type=int, default=50)
+    ap.add_argument("--raw", action="store_true",
+                    help="dump the first search row verbatim, to see what identifiers exist")
     args = ap.parse_args()
 
     if args.study:
         variables(args.base, args.study)
         return 0
     for keyword in (args.keyword or "census,demographic,household,living").split(","):
-        studies(args.base, keyword.strip(), args.limit)
+        studies(args.base, keyword.strip(), args.limit, args.raw)
     return 0
 
 
