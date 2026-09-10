@@ -123,6 +123,7 @@ NOTES = {
 }
 
 WORD = re.compile(r"(\S+?)\[(\d+)-(\d+)\]")
+BOX = re.compile(r"\[\d+-\d+\]")
 GAP = 4.5          # points; digit groups of one figure sit closer than this
 
 
@@ -174,9 +175,13 @@ def read_tables(text: str) -> dict[str, dict[str, dict[str, int]]]:
     pages = text.split(PAGE_BREAK)
     out: dict[str, dict[str, dict[str, int]]] = {}
     for field, spec in TABLES.items():
-        start = next((i for i, p in enumerate(pages) if spec["heading"] in p), None)
+        # The heading's words carry their boxes ("Quadro[192-224] 6.1[226-239]"),
+        # and the list of tables names every heading too, so the table's page
+        # is the first that carries the heading and a province row of figures.
+        start = next((i for i, p in enumerate(pages)
+                      if spec["heading"] in BOX.sub("", p) and province_rows(p)), None)
         if start is None:
-            raise SystemExit(f"angola: no page carries {spec['heading']!r}")
+            raise SystemExit(f"angola: no page carries {spec['heading']!r} and province rows")
         counts: dict[str, dict[str, int]] = {p: {} for p in PROVINCES}
         page = start
         for labels in spec["groups"]:

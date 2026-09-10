@@ -5056,9 +5056,10 @@ class AngolaReadsFiguresByPosition(unittest.TestCase):
             x += 20                                # 20 pt between columns
         return " ".join(words)
 
-    def page(self, labels, values):
+    def page(self, heading, labels, values):
         from scripts.fetch_census import angola as a
-        lines = ["Província[100-140] e[142-146] área[148-160]"]
+        lines = ["Quadro[100-130] " + heading.split()[1] + "[132-145] -[147-150] População[152-190]",
+                 "Província[100-140] e[142-146] área[148-160]"]
         lines.append(self.row("Angola", [sum(v) for v in zip(*values.values())]))
         lines.append("Províncias[100-140]")
         for p in a.PROVINCES:
@@ -5080,7 +5081,7 @@ class AngolaReadsFiguresByPosition(unittest.TestCase):
         from scripts.fetch_census import angola as a
         pages = []
         for field, spec in a.TABLES.items():
-            pages.append(f"{spec['heading']} - População por província")
+            pages.append("Lista de quadros\n" + spec["heading"] + " - População por província")
             per_province = {}
             for i, p in enumerate(a.PROVINCES):
                 total = 10000 * (i + 1)
@@ -5093,7 +5094,7 @@ class AngolaReadsFiguresByPosition(unittest.TestCase):
                 counts["Other" if "Other" in counts else "Not stated"] += rest
                 per_province[p] = (total, counts)
             for labels in spec["groups"]:
-                pages.append(self.page(labels, {
+                pages.append(self.page(spec["heading"], labels, {
                     p: [t if l == "TOTAL" else c[l] for l in labels]
                     for p, (t, c) in per_province.items()}))
         text = a.PAGE_BREAK.join(pages)
