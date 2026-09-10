@@ -84,6 +84,7 @@ ADAPTER_FILES = [
     # and now carry the 2019 census, and merge_adapter lets the count win the
     # religion field while the survey keeps any field the census did not ask.
     "kenya_county.json",
+    "thailand_province.json",
     "malaysia_state.json", "malaysia_district.json",
     "poland_voivodeship.json", "poland_powiat.json",
     "czechia_kraj.json", "czechia_okres.json",
@@ -167,8 +168,9 @@ ADAPTER_GAPS: dict[str, str] = {
            "each for the country as a whole rather than by province. No "
            "provincial table exists to fetch.",
     "THA": "The statistical office refuses automated readers on every host "
-           "tried, and by the account of the one dataset that compiles it, "
-           "Thailand has made census language data public only once, for 2000.",
+           "tried. Religion by province is the 2000 census, read from its "
+           "provincial final reports as transcribed on Wikipedia; language was "
+           "made public once, for 2000, in a file that is not a composition.",
 }
 
 EUROSTAT_HINT = ("Eurostat NUTS population and median age: "

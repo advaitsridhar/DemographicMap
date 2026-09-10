@@ -69,6 +69,8 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # KNBS 2019 religion by county, from the openAFRICA mirror: knbs.or.ke
   # itself fails TLS verification on a clean client.
   soft python3 -m scripts.fetch_census.kenya
+  # One MediaWiki API call; the NSO's own hosts refuse automated readers.
+  soft python3 -m scripts.fetch_census.thailand
   soft python3 -m scripts.fetch_census.malaysia --level both
   soft python3 -m scripts.fetch_census.poland
   # Three ČSÚ open-data CSVs, 170 MB between them; no key.

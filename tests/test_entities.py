@@ -4723,6 +4723,60 @@ class CroatiaReadsTheBilingualHeader(unittest.TestCase):
         self.assertEqual(croatia.unit_aliases("Grad Cres"), ["Otok Cres"])
 
 
+class ThailandReadsTheTranscribedReports(unittest.TestCase):
+    """The Wikipedia table transcribes each province's 2000 final report: a
+    header row separated by "||", a province link with a <ref> citing the
+    NSO PDF, shares with and without their "%", and N/A where the report gave
+    nothing. The three shares leave a remainder that is published as one group;
+    a faith the report did not give is absent; a changed column order refuses.
+    """
+
+    WIKITEXT = (
+        "intro\n{| class=\"wikitable sortable\"\n|+\'\'\'caption\'\'\'\n|-\n"
+        "!province name||% [[Thai nationality law|Thai nationals]] in 1970||% Thai nationals in 2000"
+        "||[[Buddhist]] % in 1990||[[Buddhist]] % in 2000||[[Muslim]] % in 1990||Muslim % in 2000"
+        "||[[Christianity|Christian]] % in 1990||Christian % in 2000"
+        "||Linguistic minorities in 1990||Linguistic minorities in 2000\n|-\n"
+        "|[[Yala province|Yala]]<ref>{{cite web|url=http://web.nso.go.th/pop2000/finalrep/yalafn.pdf "
+        "|title=Data}}</ref>||97.3%||99.8%||35.9%||31.0%||63.8%||68.9%||N/A||N/A||Malay (62.4%)||Malay (66.1%)\n|-\n"
+        "|[[Sisaket province|Sisaket]]<ref>{{cite web |url=http://web.nso.go.th/pop2000/finalrep/sisaketfn.pdf "
+        "|archive-url=https://web.archive.org/x }}</ref>||[[N/A]]||99.5||99.6%||99.5||0.1%||0.1%||N/A||0.3||N/A||N/A\n|-\n"
+        "|[[Bangkok]]<ref>{{cite web|url=http://web.nso.go.th/pop2000/finalrep/bangkok1.pdf}}</ref>"
+        "||94.8%||99.0%||95.1%||94.5%||4.0%||4.1%||0.7%||1.0%||English (0.1%)||English (0.7%)\n"
+        "|}\nafter"
+    )
+
+    def test_shares_remainder_names_and_the_cited_report(self):
+        from scripts.fetch_census import thailand
+        records = thailand.build(self.WIKITEXT)
+        by = {r["name"]: r for r in records}
+        self.assertEqual(sorted(by), ["Bangkok", "Sisaket Province", "Yala Province"])
+        yala = by["Yala Province"]
+        self.assertEqual(yala["religion"], [{"group": "Islam", "pct": 68.9},
+                                            {"group": "Buddhism", "pct": 31.0},
+                                            {"group": "Other or not stated", "pct": 0.1}])
+        self.assertEqual(yala["sources"][0]["url"], "http://web.nso.go.th/pop2000/finalrep/yalafn.pdf")
+        self.assertEqual(yala["aliases"], ["Yala"])
+        self.assertEqual(by["Bangkok"]["aliases"], [])
+        self.assertIn("Si Sa Ket Province", by["Sisaket Province"]["aliases"])
+        sisaket = {b["group"]: b["pct"] for b in by["Sisaket Province"]["religion"]}
+        self.assertEqual(sisaket, {"Buddhism": 99.5, "Islam": 0.1, "Christianity": 0.3,
+                                   "Other or not stated": 0.1})
+        self.assertNotIn("Christianity", {b["group"] for b in yala["religion"]})
+        self.assertEqual(thailand.percent("[[N/A]]"), None)
+        self.assertEqual(thailand.plain("% [[Buddhist]] % in 1990<ref>x</ref>"), "Buddhist in 1990")
+
+    def test_a_reordered_table_refuses(self):
+        from scripts.fetch_census import thailand
+        swapped = self.WIKITEXT.replace("[[Buddhist]] % in 2000||[[Muslim]] % in 1990",
+                                        "[[Muslim]] % in 1990||[[Buddhist]] % in 2000")
+        with self.assertRaises(SystemExit):
+            thailand.build(swapped)
+        with self.assertRaises(SystemExit):
+            thailand.build(self.WIKITEXT.replace("||35.9%||31.0%||63.8%||68.9%",
+                                                 "||35.9%||81.0%||63.8%||68.9%"))
+
+
 class PolandCutsTheReligionTreeOnce(unittest.TestCase):
     """GUS publishes religion as a seven-level classification tree, and the
     composition is one cut through it: Christian branches at level 5, other
