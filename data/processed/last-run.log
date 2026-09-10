@@ -1,14 +1,23 @@
-poland: admin1
-/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
-  warn("""Cannot parse header or footer so it will be ignored""")
-  ethnicity: 16 units
-  language: 16 units
-  religion: 17 units
-  16 records
-  wrote data/processed/poland_voivodeship.json (258 kB)
-poland: admin2
-  ethnicity: 380 units
-  language: 380 units
-  religion: 380 units
-  380 records
-  wrote data/processed/poland_powiat.json (3304 kB)
+abs: 2021 Census, LGA
+  1227 dataflows in the ABS catalogue
+  dataflows containing G14: C21_G14_CED, C21_G14_LGA, C21_G14_POA, C21_G14_RA, C21_G14_SA2, C21_G14_SAL, C21_G14_SED, C21_G14_SUA, C21_G14_UCL
+  dataflows containing G08: C21_G08_CED, C21_G08_LGA, C21_G08_POA, C21_G08_RA, C21_G08_SA2, C21_G08_SAL, C21_G08_SED, C21_G08_SUA, C21_G08_UCL
+  dataflows containing G13: C21_G13_CED, C21_G13_LGA, C21_G13_POA, C21_G13_RA, C21_G13_SA2, C21_G13_SAL, C21_G13_SED, C21_G13_SUA, C21_G13_UCL
+  religion: dataflow ABS,C21_G14_LGA,1.0.0
+  ancestry: dataflow ABS,C21_G08_LGA,1.0.0
+  language: dataflow ABS,C21_G13_LGA,1.0.0
+  religion rows 57630, ancestry rows 111870, language rows 394935
+  dimensions seen: ['RELP', 'SEXP', 'REGION', 'REGION_TYPE', 'STATE', 'TIME_PERIOD']
+  using region='STATE' religion='RELP' ancestry='ANCP' language='LANP'
+  restricted SEXP='Persons' so the sexes are not counted twice
+  outermost level chosen by code tree for 9 regions
+  outermost level chosen by suffix (nothing summed to the total) for 8 regions
+  outermost level chosen by code tree less a duplicated parent for 1 regions
+  restricted SEXP='Persons' so the sexes are not counted twice
+  restricted ENGLP='Total' so its categories are not summed
+  outermost level chosen by code tree less a duplicated parent for 8 regions
+  outermost level chosen by suffix (nothing summed to the total) for 1 regions
+  population from the religion table's own total for 9 of 9 regions; they sum to 25,422,828
+  sanity: largest religion category is 47.6% of the sample region's total across 8 categories
+  wrote data/processed/australia_state.json (67 kB)
+  9 records
