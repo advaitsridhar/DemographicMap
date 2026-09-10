@@ -4550,3 +4550,38 @@ class IrelandsSeatCountIsNotItsName(unittest.TestCase):
                                       "No religion", "Not stated"}, row["name"])
             total = sum(g["pct"] for g in row["religion"])
             self.assertAlmostEqual(total, 100.0, delta=1.0, msg=row["name"])
+
+
+class MalaysiaKeepsTheNonCitizenRow(unittest.TestCase):
+    """OpenDOSM's ethnicity dimension has six categories, and one of them is
+    citizenship. Dropping it would hand a fifth of Sabah's east coast to the
+    other five bars; the adapter keeps it, named for what it is, and reads the
+    latest year of a series that runs from 2020.
+    """
+
+    ROWS = [
+        {"state": "Johor", "district": "Batu Pahat", "date": date, "sex": sex,
+         "age": "overall", "ethnicity": eth, "population": value}
+        for date in ("2020-01-01", "2024-01-01")
+        for sex, scale in (("both", 1.0), ("male", 0.5))
+        for eth, value in (("overall", "49.0"), ("bumi_malay", "29.4"),
+                           ("bumi_other", "0.4"), ("chinese", "12.1"),
+                           ("indian", "0.6"), ("other_citizen", "0.3"),
+                           ("other_noncitizen", "6.1"))
+    ]
+
+    def test_latest_year_both_sexes_all_ages_in_persons(self):
+        from scripts.fetch_census import malaysia
+        date, comps = malaysia.compositions(self.ROWS, ("state", "district"))
+        self.assertEqual(date, "2024-01-01")
+        counts = comps[("Johor", "Batu Pahat")]
+        self.assertEqual(counts["__total__"], 49000)
+        self.assertEqual(counts["Non-Malaysian citizen"], 6100)
+        self.assertEqual(malaysia.check("Batu Pahat", counts), 49000)
+        self.assertNotIn("overall", counts)
+
+    def test_an_unknown_category_stops_the_run(self):
+        from scripts.fetch_census import malaysia
+        rows = self.ROWS + [dict(self.ROWS[-1], ethnicity="orang_asli")]
+        with self.assertRaises(SystemExit):
+            malaysia.compositions(rows, ("state", "district"))

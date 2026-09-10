@@ -84,6 +84,7 @@ ADAPTER_FILES = [
     # and now carry the 2019 census, and merge_adapter lets the count win the
     # religion field while the survey keeps any field the census did not ask.
     "kenya_county.json",
+    "malaysia_state.json", "malaysia_district.json",
     "myanmar_state.json", "ukraine_oblast.json", "car_prefecture.json",
     "mali_region.json", "drc_province.json", "russia_subject.json",
     "colombia_department.json", "jamaica_parish.json",
@@ -113,6 +114,8 @@ ADAPTER_HINTS: dict[str, str] = {
            "group, TS030 religion): python -m scripts.fetch_census.uk_nomis; "
            "Scotland and Northern Ireland have adapters of their own, "
            "scotland_census and northern_ireland",
+    "MYS": "DOSM population estimates by ethnicity, OpenDOSM CSV by state and "
+           "district: python -m scripts.fetch_census.malaysia --level both",
     "IRL": "CSO Census 2022 via PxStat (SAPMAP religion and ethnicity by local "
            "electoral area): python -m scripts.fetch_census.ireland",
     "DEU": "Zensus 2022 religion by Land, three categories from the church-tax "
