@@ -48,6 +48,10 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # Race, language and age come from the ACS API; religion cannot, because the
   # census is barred from asking. It is read from the 2020 U.S. Religion Census
   # workbook in data/raw/us/, picked up automatically when present.
+  # Reads a committed extract rather than the network, so it needs no key
+  # and cannot fail on an unreachable host -- but it is still an adapter
+  # and its output belongs in data/processed with the rest.
+  soft python3 -m scripts.fetch_census.afrobarometer
   soft python3 -m scripts.fetch_census.us_acs --level state
   soft python3 -m scripts.fetch_census.us_acs --level county
   soft python3 -m scripts.fetch_census.uk_nomis --level district

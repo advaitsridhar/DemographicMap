@@ -2506,6 +2506,73 @@ Southern Ndebele in South Africa, two different languages, and Sotho is used
 for both Sesotho and Sepedi. The Factbook's compounds are safe precisely
 because they only ever appear in the South African entry.
 
+## Afrobarometer: the first sampled source, and the rules that keep it honest
+
+Every other figure on this map is a count. Afrobarometer Round 9 is a survey of
+**53,444 people across 39 African countries**, and it carries exactly the three
+things this map wants: the region a respondent was interviewed in, Q95 "What is
+your religion, if any?", and Q84a "What is your ethnic community, cultural group
+or tribe?". For **36 of those countries there is nothing else at all**, which is
+why it is here.
+
+It is also, on its own terms, a national instrument. A region is a sampling
+stratum rather than an estimation domain, and the arithmetic is not close: the
+median region holds 72 respondents and the thinnest holds 8. Measured, not
+estimated, from the release itself:
+
+| country | n | regions | median/region | thinnest |
+|---|---|---|---|---|
+| Ethiopia | 2,400 | 13 | 112 | 104 |
+| Kenya | 2,400 | 47 | 40 | **8** |
+| Nigeria | 1,600 | 37 | 40 | 24 |
+| Cote d'Ivoire | 1,200 | 33 | 24 | **8** |
+
+A share from 40 respondents carries roughly ±15 points before any design
+effect and ±22 after one; from 8, ±49. Afrobarometer clusters by enumeration
+area, which is worst for exactly these two questions, because religion and
+ethnicity are the most spatially clustered things a survey can ask.
+
+So three rules, none of them invented here:
+
+* **Under 25 respondents a region is dropped, not estimated.** That is the
+  Demographic and Health Surveys' own suppression threshold, and using the
+  field's convention keeps this comparable to how the source is normally read.
+  442 of 519 regions survive it.
+* **Between 25 and 49 the region says it is imprecise**, which is what DHS's
+  parentheses mean. 117 regions carry that.
+* **A question never asked is `not_collected`, never a composition.** The code
+  is `9994`, and it is the whole of a country when it appears: Mauritania was
+  not asked about religion, and Sudan, Tunisia and the Seychelles were not
+  asked about ethnicity. Mauritania still gets its ethnicity, because
+  `merge_adapter` works field by field.
+
+And one rule about precedence. `afrobarometer_region.json` is **first** in
+`ADAPTER_FILES`, which is the lowest authority, because three of the 39
+countries already have counts: Ethiopia's 11 regions and 72 zones, Mali's 9
+regions, South Africa's 9 provinces. A survey estimate silently replacing a
+census figure is the invisible kind of wrong this project exists to avoid, and
+ordering is what prevents it.
+
+**What the codebook cost.** The value labels are parsed from the published
+codebook rather than typed, and three parsing faults were caught by checking
+the parse against the data rather than by reading the output. Label 821 arrived
+as `New` instead of `New Apostolic Church`, because the codebook wraps a label
+across lines. Label 9994 arrived as `Not asked in the` -- the code the
+not-collected rule matches on, so the rule would have failed open and given
+Mauritania a religion. And country 40 arrived as `Zimbabwe Note: Assigned by
+data managers`, because that block ends with `Note:` rather than `Source:`.
+None would have raised an error.
+
+**Aliases, not new groups.** Afrobarometer offers a respondent a brotherhood
+rather than a faith, and in Senegal most take it, so `canonical_groups.py` now
+folds Mouridiya, Tijaniya, Qadiriya, Ismaeli and Ançardine into Islam -- a
+filter for Islam that omitted the orders would show Senegal as barely Muslim.
+Its named churches fold into Christianity the same way, the Zionist Christian
+Church among them, which is South Africa's largest single denomination. One
+label is deliberately left alone: **Faith of Unity** is a Ugandan new religious
+movement rather than a Christian denomination, and it keeps its own name rather
+than being folded on a guess.
+
 ## One ISO code, several places
 
 Six ISO3 codes carry more than one Factbook profile, because the Factbook
