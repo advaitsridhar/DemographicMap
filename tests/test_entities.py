@@ -4632,18 +4632,22 @@ class CzechiaReadsTheOpenDataLong(unittest.TestCase):
         self.assertEqual(groups["Roman Catholic"], 100)
         self.assertEqual(groups["Catholic (unspecified)"], 50)  # and stays apart
 
-    def test_a_religion_row_outside_the_table_or_a_bad_sum_stops_the_build(self):
+    def test_a_religion_row_outside_the_table_is_other_and_a_bad_sum_stops_the_build(self):
         from scripts.fetch_census import czechia
-        with self.assertRaises(SystemExit):
-            czechia.religion({"Bez náboženské víry": 600, "Církev jedi rytířů": 400}, 1000, "x")
+        groups = czechia.religion({"Bez náboženské víry": 600, "Církev jedi rytířů": 400},
+                                  1000, "x")
+        self.assertEqual(groups["Other religion"], 400)
+        self.assertEqual(czechia.UNNAMED["religion"]["Církev jedi rytířů"], 400)
         with self.assertRaises(SystemExit):
             czechia.religion({"Bez náboženské víry": 600, "Neuvedeno": 100}, 1000, "x")
 
     def test_language_remainder_is_one_labelled_bar(self):
         from scripts.fetch_census import czechia
-        groups = czechia.language({"Český jazyk": 800, "Slovenský jazyk": 50, "Nezjištěno": 100},
+        groups = czechia.language({"Český jazyk": 800, "Slovenský jazyk": 50, "Nezjištěno": 100,
+                                   "Klingonský jazyk": 20},
                                   1000, "x")
-        self.assertEqual(groups[czechia.LANGUAGE_REMAINDER], 50)
+        self.assertEqual(groups[czechia.LANGUAGE_REMAINDER], 50)   # the unnamed 20 are in it
+        self.assertNotIn("Klingonský jazyk", groups)
         self.assertEqual(groups["Not stated"], 100)
         with self.assertRaises(SystemExit):        # more rows than people
             czechia.language({"Český jazyk": 1100}, 1000, "x")
@@ -4653,8 +4657,7 @@ class CzechiaReadsTheOpenDataLong(unittest.TestCase):
         groups = czechia.nationality({"Česká celkem": 700, "Moravská celkem": 100,
                                       "Jiná celkem": 5})
         self.assertEqual(groups, {"Czech": 700, "Moravian": 100, "Other": 5})
-        with self.assertRaises(SystemExit):
-            czechia.nationality({"Marťanská celkem": 1})
+        self.assertEqual(czechia.nationality({"Marťanská celkem": 1}), {"Other": 1})
 
     def test_every_okres_has_a_kraj_and_the_english_spellings_are_aliases(self):
         from scripts.fetch_census import czechia

@@ -31,8 +31,9 @@ an English name that means something on a world map; the rest are summed as
 "Other Christian" or "Other religion" by what they are; a written "catholic"
 is kept apart from the Roman Catholic Church's own count; a written "atheism"
 or "agnosticism" is counted with the tick-box "no religious belief", which is
-what it says. Nothing is dropped: a row not in the table stops the build, and
-so does a territory whose rows do not sum to its population.
+what it says. Nothing is dropped: a row not in the table is summed as
+"Other religion" and named in the log, and a territory whose rows do not sum
+to its population stops the build.
 
 Mother tongue (``jazyk1``, "s jedním mateřským jazykem") lists thirteen
 languages for people who named exactly one, and the not-stated. People who
@@ -204,9 +205,35 @@ LANGUAGE = {
     "Ukrajinský jazyk": "Ukrainian", "Vietnamský jazyk": "Vietnamese",
     "Maďarský jazyk": "Hungarian", "Čínský jazyk": "Chinese", "Romský jazyk": "Romani",
     "Moravský jazyk": "Moravian", "Slezský jazyk": "Silesian",
+    # The kraje and okresy list languages the municipal rows do not.
+    "Francouzský jazyk": "French", "Italský jazyk": "Italian", "Španělský jazyk": "Spanish",
+    "Bulharský jazyk": "Bulgarian", "Rumunský jazyk": "Romanian", "Řecký jazyk": "Greek",
+    "Arabský jazyk": "Arabic", "Mongolský jazyk": "Mongolian", "Srbský jazyk": "Serbian",
+    "Chorvatský jazyk": "Croatian", "Běloruský jazyk": "Belarusian",
+    "Kazašský jazyk": "Kazakh", "Turecký jazyk": "Turkish", "Japonský jazyk": "Japanese",
+    "Korejský jazyk": "Korean", "Portugalský jazyk": "Portuguese",
+    "Nizozemský jazyk": "Dutch", "Švédský jazyk": "Swedish", "Hebrejský jazyk": "Hebrew",
+    "Arménský jazyk": "Armenian", "Gruzínský jazyk": "Georgian", "Perský jazyk": "Persian",
+    "Kurdský jazyk": "Kurdish", "Rusínský jazyk": "Rusyn", "Lužickosrbský jazyk": "Sorbian",
+    "Makedonský jazyk": "Macedonian", "Litevský jazyk": "Lithuanian",
+    "Lotyšský jazyk": "Latvian", "Norský jazyk": "Norwegian", "Dánský jazyk": "Danish",
+    "Finský jazyk": "Finnish", "Hindský jazyk": "Hindi", "Uzbecký jazyk": "Uzbek",
+    "Tádžický jazyk": "Tajik", "Albánský jazyk": "Albanian", "Slovinský jazyk": "Slovene",
+    "Bosenský jazyk": "Bosnian", "Estonský jazyk": "Estonian", "Islandský jazyk": "Icelandic",
+    "Irský jazyk": "Irish", "Katalánský jazyk": "Catalan", "Thajský jazyk": "Thai",
+    "Filipínský jazyk": "Filipino", "Indonéský jazyk": "Indonesian",
+    "Malajský jazyk": "Malay", "Nepálský jazyk": "Nepali", "Bengálský jazyk": "Bengali",
+    "Urdský jazyk": "Urdu", "Paštský jazyk": "Pashto", "Ázerbájdžánský jazyk": "Azerbaijani",
+    "Kyrgyzský jazyk": "Kyrgyz", "Turkmenský jazyk": "Turkmen", "Moldavský jazyk": "Moldovan",
+    "Latinský jazyk": "Latin", "Esperanto": "Esperanto", "Znakový jazyk": "Sign language",
+    "Český znakový jazyk": "Czech Sign Language",
     NOT_STATED: "Not stated",
 }
 LANGUAGE_REMAINDER = "Other language or two mother tongues"
+# Rows seen but not named above, reported once at the end of the run so
+# the next run can name them; until then they sit in the remainder bar,
+# which is exactly what "other language" means.
+UNNAMED: dict[str, dict[str, int]] = {"ethnicity": {}, "religion": {}, "language": {}}
 NOTES = {
     "ethnicity": ("Nationality (národnost), SLDB 2021. Answering was voluntary and about a "
                   "third of the country left it blank; a person could declare two "
@@ -303,7 +330,8 @@ def nationality(rows: dict[str, int]) -> dict[str, int]:
         stem = label[:-len(" celkem")] if label.endswith(" celkem") else label
         english = NATIONALITY.get(stem)
         if english is None:
-            raise SystemExit(f"czechia: nationality {label!r} has no English name here")
+            UNNAMED["ethnicity"][label] = UNNAMED["ethnicity"].get(label, 0) + n
+            english = "Other"
         out[english] = out.get(english, 0) + n
     return out
 
@@ -313,7 +341,8 @@ def religion(rows: dict[str, int], total: int, name: str) -> dict[str, int]:
     for label, n in rows.items():
         english = RELIGION.get(label)
         if english is None:
-            raise SystemExit(f"czechia: religion row {label!r} is not in RELIGION")
+            UNNAMED["religion"][label] = UNNAMED["religion"].get(label, 0) + n
+            english = "Other religion"
         out[english] = out.get(english, 0) + n
     summed = sum(out.values())
     if abs(summed - total) > max(0.005 * total, 20):
@@ -327,7 +356,10 @@ def language(rows: dict[str, int], total: int, name: str) -> dict[str, int]:
     for label, n in rows.items():
         english = LANGUAGE.get(label)
         if english is None:
-            raise SystemExit(f"czechia: language row {label!r} is not in LANGUAGE")
+            # A single language not named above belongs in the remainder bar,
+            # which the subtraction below puts it in.
+            UNNAMED["language"][label] = UNNAMED["language"].get(label, 0) + n
+            continue
         out[english] = out.get(english, 0) + n
     remainder = total - sum(out.values())
     if remainder < 0 or remainder > 0.25 * total:
@@ -384,6 +416,11 @@ def build() -> list[dict[str, Any]]:
     log(f"  {by_level}")
     if by_level != EXPECTED:
         raise SystemExit(f"czechia: expected {EXPECTED}, read {by_level}")
+    for field, seen in UNNAMED.items():
+        for label, n in sorted(seen.items(), key=lambda kv: -kv[1]):
+            log(f"  ! {field} row {label!r} has no English name here: {n:,} people "
+                f"summed across territories, shown as "
+                f"{'the remainder bar' if field == 'language' else 'Other'}")
     sample = next(r for r in records if r["level"] == "admin1")
     for key in ("ethnicity", "religion", "language"):
         top = sample[key][0] if isinstance(sample[key], list) and sample[key] else None
