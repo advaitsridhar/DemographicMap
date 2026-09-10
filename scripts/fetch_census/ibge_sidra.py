@@ -49,14 +49,38 @@ RELIGION_VARIANTS = [
 ]
 
 
-def sidra(table: dict[str, Any], level_code: str) -> list[dict[str, str]]:
-    url = (f"{SIDRA}/t/{table['table']}/{level_code}/all"
+def sidra(table: dict[str, Any], level_code: str, *, within_state: str | None = None
+          ) -> list[dict[str, str]]:
+    # "n6/all" is every municipality in the country; "n6/in n3 33" is every
+    # municipality inside one state. The second exists for the case below.
+    scope = f"{level_code}/in n3 {within_state}" if within_state else f"{level_code}/all"
+    url = (f"{SIDRA}/t/{table['table']}/{scope}"
            f"/v/{table['variable']}/p/{table['period']}")
     if table["classification"]:
         url += f"/c{table['classification']}/all"
     rows = http_json(url, timeout=300)
     # SIDRA returns the column dictionary as row 0.
     return rows[1:] if len(rows) > 1 else []
+
+
+def sidra_by_state(table: dict[str, Any], level_code: str) -> list[dict[str, str]]:
+    """The same table, asked for one state at a time and joined.
+
+    Religion by municipality is 5,570 municipalities across some twenty
+    categories, and SIDRA answers 400 to that request whole while answering
+    the same table for 27 states and the same municipalities for six colour
+    or race categories. That is the shape of a size limit, not a missing
+    table -- and for a long time every municipality in Brazil carried "IBGE
+    2022 religion table not returned for this locality", which named the
+    wrong thing as missing. Twenty-seven state-scoped requests return exactly
+    the rows one request would have, and nothing is reconstructed: each
+    municipality's row arrives once, from its own state's answer.
+    """
+    states = http_json(LOCALITIES.format(kind="estados"), timeout=180)
+    out: list[dict[str, str]] = []
+    for state in sorted(states, key=lambda s: str(s["id"])):
+        out.extend(sidra(table, level_code, within_state=str(state["id"])))
+    return out
 
 
 def collect(rows: list[dict[str, str]], code_key: str, label_key: str | None) -> dict[str, dict[str, float]]:
@@ -144,6 +168,18 @@ def main() -> int:
                 break
         except Exception as exc:
             log(f"  religion variant v/{variant['variable']} failed ({exc})")
+            # A 400 on the whole-country municipal request is SIDRA's size
+            # limit, not a wrong variable: the same variant answers for
+            # states. Ask state by state before trying the next spelling.
+            if level_code == "n6" and "400" in str(exc):
+                try:
+                    religion = collect(sidra_by_state(variant, level_code), "D1C", "D4N")
+                    if religion:
+                        log(f"  religion: table {variant['table']} v/{variant['variable']} "
+                            f"answered state by state ({len(religion)} municipalities)")
+                        break
+                except Exception as exc2:
+                    log(f"  religion variant v/{variant['variable']} by state failed ({exc2})")
     if not religion:
         log("  religion unavailable from every variant; marking not_available")
 
