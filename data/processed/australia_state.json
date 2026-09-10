@@ -140,9 +140,9 @@
         "count": 28019
       },
       {
-        "group": "French",
+        "group": "Persian (excluding Dari)",
         "pct": 0.3,
-        "count": 23575
+        "count": 26783
       },
       {
         "group": "Turkish",
@@ -155,9 +155,9 @@
         "count": 28060
       },
       {
-        "group": "Persian (excluding Dari)",
+        "group": "Serbian",
         "pct": 0.3,
-        "count": 26783
+        "count": 22898
       },
       {
         "group": "Croatian",
@@ -170,19 +170,9 @@
         "count": 20841
       },
       {
-        "group": "Serbian",
+        "group": "French",
         "pct": 0.3,
-        "count": 22898
-      },
-      {
-        "group": "Japanese",
-        "pct": 0.2,
-        "count": 18043
-      },
-      {
-        "group": "German",
-        "pct": 0.2,
-        "count": 20175
+        "count": 23575
       },
       {
         "group": "Russian",
@@ -198,6 +188,16 @@
         "group": "Samoan",
         "pct": 0.2,
         "count": 17322
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.2,
+        "count": 18043
+      },
+      {
+        "group": "German",
+        "pct": 0.2,
+        "count": 20175
       },
       {
         "group": "Polish",
@@ -518,6 +518,11 @@
         "count": 43193
       },
       {
+        "group": "Macedonian",
+        "pct": 0.5,
+        "count": 29358
+      },
+      {
         "group": "Turkish",
         "pct": 0.5,
         "count": 34837
@@ -526,11 +531,6 @@
         "group": "Tamil",
         "pct": 0.5,
         "count": 34096
-      },
-      {
-        "group": "Macedonian",
-        "pct": 0.5,
-        "count": 29358
       },
       {
         "group": "Malayalam",
@@ -553,9 +553,9 @@
         "count": 16801
       },
       {
-        "group": "Russian",
+        "group": "Serbian",
         "pct": 0.3,
-        "count": 18221
+        "count": 17821
       },
       {
         "group": "German",
@@ -563,19 +563,19 @@
         "count": 16529
       },
       {
-        "group": "Khmer",
-        "pct": 0.3,
-        "count": 17535
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.3,
-        "count": 17821
-      },
-      {
         "group": "French",
         "pct": 0.3,
         "count": 18557
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 18221
+      },
+      {
+        "group": "Khmer",
+        "pct": 0.3,
+        "count": 17535
       },
       {
         "group": "Thai",
@@ -583,14 +583,14 @@
         "count": 14732
       },
       {
-        "group": "Samoan",
-        "pct": 0.2,
-        "count": 13161
-      },
-      {
         "group": "Polish",
         "pct": 0.2,
         "count": 13658
+      },
+      {
+        "group": "Samoan",
+        "pct": 0.2,
+        "count": 13161
       },
       {
         "group": "Japanese",
@@ -598,14 +598,14 @@
         "count": 12318
       },
       {
-        "group": "Portuguese",
-        "pct": 0.1,
-        "count": 9204
-      },
-      {
         "group": "Afrikaans",
         "pct": 0.1,
         "count": 6048
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1,
+        "count": 9204
       },
       {
         "group": "Australian Indigenous Languages",
@@ -911,19 +911,14 @@
         "count": 21896
       },
       {
-        "group": "German",
-        "pct": 0.3,
-        "count": 15277
-      },
-      {
         "group": "Malayalam",
         "pct": 0.3,
         "count": 12985
       },
       {
-        "group": "Portuguese",
+        "group": "German",
         "pct": 0.3,
-        "count": 14962
+        "count": 15277
       },
       {
         "group": "Arabic",
@@ -936,14 +931,19 @@
         "count": 17911
       },
       {
+        "group": "Italian",
+        "pct": 0.3,
+        "count": 17987
+      },
+      {
         "group": "Afrikaans",
         "pct": 0.3,
         "count": 15006
       },
       {
-        "group": "Italian",
+        "group": "Portuguese",
         "pct": 0.3,
-        "count": 17987
+        "count": 14962
       },
       {
         "group": "Samoan",
@@ -951,9 +951,9 @@
         "count": 16611
       },
       {
-        "group": "Thai",
+        "group": "Persian (excluding Dari)",
         "pct": 0.2,
-        "count": 10679
+        "count": 8491
       },
       {
         "group": "French",
@@ -966,14 +966,34 @@
         "count": 10479
       },
       {
-        "group": "Persian (excluding Dari)",
+        "group": "Thai",
         "pct": 0.2,
-        "count": 8491
+        "count": 10679
       },
       {
         "group": "Russian",
         "pct": 0.1,
         "count": 7739
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.1,
+        "count": 3919
+      },
+      {
+        "group": "Khmer",
+        "pct": 0.1,
+        "count": 2874
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 7333
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.1,
+        "count": 5249
       },
       {
         "group": "Polish",
@@ -984,26 +1004,6 @@
         "group": "Turkish",
         "pct": 0.1,
         "count": 2814
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.1,
-        "count": 5249
-      },
-      {
-        "group": "Khmer",
-        "pct": 0.1,
-        "count": 2874
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.1,
-        "count": 3919
-      },
-      {
-        "group": "Tamil",
-        "pct": 0.1,
-        "count": 7333
       },
       {
         "group": "Macedonian",
@@ -1324,24 +1324,19 @@
         "count": 5458
       },
       {
-        "group": "Khmer",
-        "pct": 0.3,
-        "count": 4578
-      },
-      {
         "group": "Malayalam",
         "pct": 0.3,
         "count": 4817
       },
       {
+        "group": "Khmer",
+        "pct": 0.3,
+        "count": 4578
+      },
+      {
         "group": "Polish",
         "pct": 0.3,
         "count": 5109
-      },
-      {
-        "group": "French",
-        "pct": 0.2,
-        "count": 2740
       },
       {
         "group": "Serbian",
@@ -1367,6 +1362,11 @@
         "group": "Russian",
         "pct": 0.2,
         "count": 3542
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 2740
       },
       {
         "group": "Croatian",
@@ -1399,14 +1399,14 @@
         "count": 576
       },
       {
-        "group": "Samoan",
-        "pct": 0.0,
-        "count": 228
-      },
-      {
         "group": "Turkish",
         "pct": 0.0,
         "count": 865
+      },
+      {
+        "group": "Samoan",
+        "pct": 0.0,
+        "count": 228
       }
     ],
     "ethnicity": {
@@ -1712,6 +1712,11 @@
         "count": 12954
       },
       {
+        "group": "French",
+        "pct": 0.4,
+        "count": 9735
+      },
+      {
         "group": "Australian Indigenous Languages",
         "pct": 0.4,
         "count": 11496
@@ -1722,19 +1727,14 @@
         "count": 9723
       },
       {
-        "group": "French",
-        "pct": 0.4,
-        "count": 9735
+        "group": "Persian (excluding Dari)",
+        "pct": 0.3,
+        "count": 7585
       },
       {
         "group": "German",
         "pct": 0.3,
         "count": 8885
-      },
-      {
-        "group": "Persian (excluding Dari)",
-        "pct": 0.3,
-        "count": 7585
       },
       {
         "group": "Korean",
@@ -1747,29 +1747,14 @@
         "count": 8228
       },
       {
-        "group": "Thai",
-        "pct": 0.3,
-        "count": 7755
-      },
-      {
         "group": "Tamil",
         "pct": 0.3,
         "count": 8728
       },
       {
-        "group": "Serbian",
-        "pct": 0.2,
-        "count": 5572
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.2,
-        "count": 5105
-      },
-      {
-        "group": "Polish",
-        "pct": 0.2,
-        "count": 5700
+        "group": "Thai",
+        "pct": 0.3,
+        "count": 7755
       },
       {
         "group": "Macedonian",
@@ -1777,14 +1762,29 @@
         "count": 5891
       },
       {
+        "group": "Greek",
+        "pct": 0.2,
+        "count": 4492
+      },
+      {
         "group": "Japanese",
         "pct": 0.2,
         "count": 6079
       },
       {
-        "group": "Greek",
+        "group": "Serbian",
         "pct": 0.2,
-        "count": 4492
+        "count": 5572
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 5700
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.2,
+        "count": 5105
       },
       {
         "group": "Russian",
@@ -2080,14 +2080,14 @@
         "count": 2295
       },
       {
-        "group": "Vietnamese",
-        "pct": 0.3,
-        "count": 1454
-      },
-      {
         "group": "Spanish",
         "pct": 0.3,
         "count": 1571
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.3,
+        "count": 1454
       },
       {
         "group": "German",
@@ -2100,29 +2100,14 @@
         "count": 951
       },
       {
-        "group": "Arabic",
-        "pct": 0.2,
-        "count": 977
-      },
-      {
         "group": "Greek",
         "pct": 0.2,
         "count": 1126
       },
       {
-        "group": "Korean",
-        "pct": 0.1,
-        "count": 684
-      },
-      {
-        "group": "Tamil",
-        "pct": 0.1,
-        "count": 444
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.1,
-        "count": 625
+        "group": "Arabic",
+        "pct": 0.2,
+        "count": 977
       },
       {
         "group": "Thai",
@@ -2140,14 +2125,19 @@
         "count": 578
       },
       {
-        "group": "Afrikaans",
-        "pct": 0.1,
-        "count": 644
-      },
-      {
         "group": "French",
         "pct": 0.1,
         "count": 823
+      },
+      {
+        "group": "Korean",
+        "pct": 0.1,
+        "count": 684
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 0.1,
+        "count": 644
       },
       {
         "group": "Polish",
@@ -2155,9 +2145,19 @@
         "count": 612
       },
       {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 444
+      },
+      {
         "group": "Portuguese",
         "pct": 0.1,
         "count": 475
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.1,
+        "count": 625
       },
       {
         "group": "Persian (excluding Dari)",
@@ -2180,14 +2180,14 @@
         "count": 84
       },
       {
-        "group": "Samoan",
-        "pct": 0.0,
-        "count": 54
-      },
-      {
         "group": "Macedonian",
         "pct": 0.0,
         "count": 24
+      },
+      {
+        "group": "Samoan",
+        "pct": 0.0,
+        "count": 54
       },
       {
         "group": "Australian Indigenous Languages",
@@ -2766,9 +2766,9 @@
         "count": 3865
       },
       {
-        "group": "Malayalam",
+        "group": "Korean",
         "pct": 0.6,
-        "count": 2769
+        "count": 2809
       },
       {
         "group": "Italian",
@@ -2776,9 +2776,9 @@
         "count": 2813
       },
       {
-        "group": "Korean",
+        "group": "Malayalam",
         "pct": 0.6,
-        "count": 2809
+        "count": 2769
       },
       {
         "group": "Greek",
@@ -2826,14 +2826,14 @@
         "count": 1296
       },
       {
-        "group": "Macedonian",
-        "pct": 0.2,
-        "count": 764
-      },
-      {
         "group": "Afrikaans",
         "pct": 0.2,
         "count": 719
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.2,
+        "count": 764
       },
       {
         "group": "Polish",
@@ -2861,14 +2861,14 @@
         "count": 391
       },
       {
-        "group": "Samoan",
-        "pct": 0.1,
-        "count": 543
-      },
-      {
         "group": "Australian Indigenous Languages",
         "pct": 0.1,
         "count": 291
+      },
+      {
+        "group": "Samoan",
+        "pct": 0.1,
+        "count": 543
       }
     ],
     "ethnicity": {
@@ -3154,6 +3154,11 @@
         "count": 9
       },
       {
+        "group": "Greek",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
         "group": "Afrikaans",
         "pct": 0.2,
         "count": 4
@@ -3169,11 +3174,6 @@
         "count": 6
       },
       {
-        "group": "Greek",
-        "pct": 0.2,
-        "count": 4
-      },
-      {
         "group": "French",
         "pct": 0.2,
         "count": 4
@@ -3185,6 +3185,11 @@
       },
       {
         "group": "Malayalam",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Arabic",
         "pct": 0.0,
         "count": 0
       },
@@ -3209,17 +3214,12 @@
         "count": 0
       },
       {
-        "group": "Portuguese",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Samoan",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Turkish",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Portuguese",
         "pct": 0.0,
         "count": 0
       },
@@ -3229,12 +3229,12 @@
         "count": 0
       },
       {
-        "group": "Macedonian",
+        "group": "Samoan",
         "pct": 0.0,
         "count": 0
       },
       {
-        "group": "Arabic",
+        "group": "Macedonian",
         "pct": 0.0,
         "count": 0
       },
@@ -3259,12 +3259,12 @@
         "count": 0
       },
       {
-        "group": "Polish",
+        "group": "Khmer",
         "pct": 0.0,
         "count": 0
       },
       {
-        "group": "Khmer",
+        "group": "Polish",
         "pct": 0.0,
         "count": 0
       }
