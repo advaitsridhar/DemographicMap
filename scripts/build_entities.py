@@ -88,7 +88,11 @@ ADAPTER_FILES = [
     "germany_land.json", "germany_regierungsbezirk.json",
     "canada_province.json", "canada_census_division.json",
     "australia_state.json", "australia_lga.json",
-    "uk_lad.json", "uk_county.json", "us_state.json", "us_county.json",
+    "uk_lad.json", "uk_county.json",
+    # Scotland's councils are shapes the ONS census cannot reach: it covers
+    # England and Wales. No overlap with the two files above, so the order
+    # between them never arises.
+    "scotland_council.json", "us_state.json", "us_county.json",
 ]
 
 # Where a real adapter exists for a country's subnational demographics. Shown in

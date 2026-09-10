@@ -59,6 +59,8 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # districts below it, and Nomis publishes both. Without this, 150 rows
   # have no shape and the counties that do have one carry nothing.
   soft python3 -m scripts.fetch_census.uk_nomis --level county
+  # Reads three committed CSVs; no network, no key.
+  soft python3 -m scripts.fetch_census.scotland_census
   soft python3 -m scripts.fetch_census.statcan --level province
   soft python3 -m scripts.fetch_census.ibge_sidra --level state
   # 5,570 municipalities, and the reason the level is spelled out twice:

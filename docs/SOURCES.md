@@ -1702,6 +1702,50 @@ published: half a county under the county's name is worse than an empty shape.
 A merged row does not claim a single ONS code -- there is no published unit
 behind it -- so it carries the codes it was added up from instead.
 
+### Scotland: filled from 2011, because 2022 is still behind the builder
+
+The section below records Scotland as blocked, and that finding was right about
+the thing it measured and wrong about the country. **The block is on the 2022
+census**, whose results National Records of Scotland publishes through a
+flexible table builder; the only file that release links is a bulletin's chart
+data. None of that applies to **2011**, whose Key Statistics were published as
+ordinary CSVs, one row per council area, and which nobody here had looked for.
+
+So Scotland's 32 council areas are filled: `KS209SCb` religion, `KS201SC`
+ethnic group, `KS206SC` language. All three reconcile exactly against their own
+published totals -- 5,295,403 people, which is what dates them, Scotland having
+counted 5.44 million in 2022.
+
+**The cost is the year, and it is stamped rather than smoothed.** England and
+Wales are read from the 2021 census; Scotland is now 2011. A reader comparing
+Glasgow with Manchester is comparing a decade apart, and every Scottish figure
+says so in its note.
+
+Two ways to read these tables wrong, both silent, both guarded by a test:
+
+* **Ethnicity nests.** `KS201SC` carries six top-level groups summing exactly
+  to the population, and eighteen detail columns beneath them summing to the
+  same total again. Adding both counts 4.4 million White Scottish people as
+  White as well. This reads the **leaves** -- detail where a group has it, the
+  group itself where it has none -- because "White" alone says nothing about a
+  country where the split between Scottish, Other British, Polish and Irish is
+  the whole interest. Glasgow reads Scottish 78.6%, not White 86.6%.
+* **Language asks three questions.** Proficiency in spoken English splits the
+  population three ways; "Can speak Gaelic" and "Can speak Scots" are counts of
+  an ability rather than shares of anything. Only *language used at home*
+  partitions its universe, and that universe is people aged 3 and over, smaller
+  than the population the other two tables use. Na h-Eileanan Siar reads Gaelic
+  **40.4%** at home, which is the check that the right block was read: pick the
+  wrong one and the Gaelic heartland reads as a rounding error.
+
+Two councils needed a name declaration, and neither side is wrong: NRS writes
+`Edinburgh, City of` where the boundary file writes `City of Edinburgh`, and
+`Eilean Siar` where it writes the Gaelic `Na h-Eileanan Siar`. Source-side
+aliases, the same shape as Rhondda Cynon Taf.
+
+**Northern Ireland's 11 districts remain blocked**, and 45 empty UK shapes
+become 13.
+
 ### Scotland and Northern Ireland: published, and behind a table builder
 
 Reading the UK census at Nomis' county tier took its second-order coverage from

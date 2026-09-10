@@ -4264,3 +4264,63 @@ class ASurveyIsNotACount(unittest.TestCase):
         for label in ("Christian only", "Zionist Christian Church", "Coptic",
                       "New Apostolic Church", "Dutch Reformed"):
             self.assertEqual(table.get(cg.key(label)), "Christianity", label)
+
+
+class ScotlandsCensusNestsAndAsksThreeQuestions(unittest.TestCase):
+    """Two ways to read Scotland's key statistics wrong, both silent.
+
+    KS201SC publishes six ethnic groups and eighteen columns of detail beneath
+    them, and both levels sum to the population; adding them together counts
+    4.4 million White Scottish people as White as well. KS206SC asks three
+    different questions of the same people, and only one of them partitions
+    anything.
+    """
+
+    def rows(self):
+        path = ROOT / "data" / "processed" / "scotland_council.json"
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    def test_all_thirty_two_council_areas_are_present(self):
+        self.assertEqual(len(self.rows()), 32)
+
+    def test_no_composition_double_counts_its_own_parent(self):
+        for row in self.rows():
+            for field in ("religion", "ethnicity", "language"):
+                value = row.get(field)
+                if not isinstance(value, list) or not value:
+                    continue
+                total = sum(g["pct"] for g in value)
+                self.assertAlmostEqual(
+                    total, 100.0, delta=1.0,
+                    msg=f"{row['name']} {field} sums to {total}, not ~100")
+
+    def test_ethnicity_reads_the_leaves_not_the_headings(self):
+        """"White" alone says nothing about Scotland; the split is the point."""
+        glasgow = next(r for r in self.rows() if r["name"] == "Glasgow City")
+        groups = {g["group"] for g in glasgow["ethnicity"]}
+        self.assertIn("Scottish", groups)
+        self.assertNotIn("White", groups)
+
+    def test_language_reads_the_one_block_that_is_a_composition(self):
+        """Proficiency and "can speak Gaelic" are other questions entirely."""
+        western = next(r for r in self.rows() if r["name"] == "Na h-Eileanan Siar")
+        groups = {g["group"]: g["pct"] for g in western["language"]}
+        self.assertIn("English only", groups)
+        self.assertNotIn("Speaks well or very well", groups)
+        # The Gaelic heartland: if this is small the wrong block was read.
+        self.assertGreater(groups.get("Gaelic", 0), 30.0)
+
+    def test_every_figure_is_stamped_2011_and_says_so(self):
+        """England and Wales are 2021; a reader comparing them must be told."""
+        for row in self.rows():
+            self.assertEqual(row["population"]["year"], 2011)
+            self.assertIn("2011", row["religion_note"])
+            self.assertIn("spans ten years", row["religion_note"])
+
+    def test_the_two_renamed_councils_match_shapes_that_exist(self):
+        shapes = {r["name"] for r in
+                  json.loads((ROOT / "site" / "data" / "admin2" / "GBR.json")
+                             .read_text(encoding="utf-8"))}
+        for name in ("City of Edinburgh", "Na h-Eileanan Siar"):
+            self.assertIn(name, shapes)
+            self.assertIn(name, {r["name"] for r in self.rows()})

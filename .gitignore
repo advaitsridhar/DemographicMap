@@ -43,6 +43,11 @@ data/raw/*
 !data/raw/afrobarometer/
 !data/raw/afrobarometer/*.csv.gz
 !data/raw/afrobarometer/*.json
+# Scotland's Census 2011 key statistics by council area, as published by
+# National Records of Scotland. Three small CSVs; the 2022 equivalents are
+# still behind a table builder, so these are what the map has.
+!data/raw/scotland/
+!data/raw/scotland/*.csv
 data/processed/http_cache/
 
 # Intermediate tiling artefacts
