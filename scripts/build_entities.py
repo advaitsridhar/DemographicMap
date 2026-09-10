@@ -50,6 +50,12 @@ BOUNDARIES = RAW / "boundaries"
 
 # Adapter outputs, in increasing order of authority: later files win.
 ADAPTER_FILES = [
+    # First, which is lowest authority: Afrobarometer is a survey and every
+    # other file here is a count. Ethiopia, Mali and South Africa already carry
+    # census figures and must keep them, and because merge_adapter works field
+    # by field this still fills a field a census left empty without touching
+    # one it filled.
+    "afrobarometer_region.json",
     "wikidata_admin1.json", "wikidata_admin2.json",
     "eurostat_nuts2.json", "eurostat_nuts3.json",
     "india_state.json", "india_district.json",

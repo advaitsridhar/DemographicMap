@@ -36,6 +36,13 @@ data/raw/*
 # build cannot re-derive religion for a single county.
 !data/raw/us/
 !data/raw/us/*.xlsx
+# Afrobarometer R9. The published release is a 24 MB workbook of 400-odd
+# columns; what is committed is the five-column extract the adapter reads,
+# re-derivable with --extract. Without these two lines a clean checkout
+# builds with no Afrobarometer at all and says nothing about it.
+!data/raw/afrobarometer/
+!data/raw/afrobarometer/*.csv.gz
+!data/raw/afrobarometer/*.json
 data/processed/http_cache/
 
 # Intermediate tiling artefacts

@@ -4169,3 +4169,98 @@ class ACountyAbolishedBetweenCensusAndBoundaryFile(unittest.TestCase):
         from scripts.fetch_census import uk_nomis
         name, parts = uk_nomis.MERGED_AUTHORITIES["E06000061+E06000062"]
         self.assertEqual(parts, ("E06000061", "E06000062"))
+
+
+class ASurveyIsNotACount(unittest.TestCase):
+    """Afrobarometer is the first sampled source on this map.
+
+    A census figure and a survey estimate look identical once they are both a
+    percentage, so the rules that keep them apart are the ones worth pinning
+    down: what is too thin to publish, what was never asked, and which source
+    wins where both have something to say.
+    """
+
+    def adapter(self):
+        from scripts.fetch_census import afrobarometer
+        return afrobarometer
+
+    def rows(self):
+        path = ROOT / "data" / "processed" / "afrobarometer_region.json"
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    def test_no_region_thinner_than_the_suppression_threshold_is_published(self):
+        """25 is the DHS threshold, and a note must say how thin a cell is."""
+        ab = self.adapter()
+        self.assertEqual(ab.MIN_SAMPLE, 25)
+        for row in self.rows():
+            note = row.get("religion_note") or row.get("ethnicity_note") or ""
+            found = re.search(r"This region: (\d+) respondents", note)
+            if found:
+                self.assertGreaterEqual(int(found.group(1)), ab.MIN_SAMPLE)
+
+    def test_a_thin_region_says_so_rather_than_reading_as_precise(self):
+        marked = 0
+        for row in self.rows():
+            note = row.get("religion_note") or row.get("ethnicity_note") or ""
+            found = re.search(r"This region: (\d+) respondents", note)
+            if found and int(found.group(1)) < 50:
+                self.assertIn("imprecise", note)
+                marked += 1
+        self.assertGreater(marked, 0, "no low-precision region found to check")
+
+    def test_a_question_never_asked_is_not_collected_and_never_a_composition(self):
+        """Mauritania was not asked about religion; it must not acquire one."""
+        for row in self.rows():
+            if row["parent"] == "MRT":
+                self.assertEqual(row["religion"], {"status": "not_collected"})
+                self.assertIsInstance(row["ethnicity"], list)
+        for iso in ("SDN", "TUN", "SYC"):
+            for row in self.rows():
+                if row["parent"] == iso:
+                    self.assertEqual(row["ethnicity"], {"status": "not_collected"})
+
+    def test_every_record_states_that_it_is_a_survey_estimate(self):
+        for row in self.rows():
+            notes = [row.get(f"{f}_note", "") for f in ("religion", "ethnicity")]
+            joined = " ".join(n for n in notes if n)
+            if any(isinstance(row.get(f), list) for f in ("religion", "ethnicity")):
+                self.assertIn("survey estimates, not", joined)
+
+    def test_the_survey_ranks_below_every_census_adapter(self):
+        """A 40-respondent estimate must never overwrite a counted figure."""
+        self.assertEqual(be.ADAPTER_FILES[0], "afrobarometer_region.json")
+
+    def test_congo_brazzaville_is_not_the_other_congo(self):
+        ab = self.adapter()
+        self.assertEqual(ab.ISO3["8"], "COG")
+        self.assertNotIn("COD", ab.ISO3.values())
+
+    def test_the_committed_extract_is_actually_committed(self):
+        """data/raw/* has silently un-tracked a source before now.
+
+        Twenty of the Census of India workbooks were missing for exactly this
+        reason and a clean checkout rebuilt mother tongue from sixteen states
+        without saying so. A negation the adapter depends on is worth a test.
+        """
+        import subprocess
+        for name in ("r9_extract.csv.gz", "r9_labels.json"):
+            path = f"data/raw/afrobarometer/{name}"
+            listed = subprocess.run(["git", "ls-files", "--error-unmatch", path],
+                                    cwd=ROOT, capture_output=True, text=True)
+            self.assertEqual(listed.returncode, 0,
+                             f"{path} is not tracked; a clean checkout loses it")
+
+    def test_the_brotherhoods_reach_islam(self):
+        """A filter for Islam that omits Senegal's orders shows a false map."""
+        import canonical_groups as cg
+        table = cg.lookup("religion")
+        for label in ("Muslim only", "Sunni only", "Tijaniya Brotherhood",
+                      "Mouridiya Brotherhood", "Qadiriya", "Ismaeli"):
+            self.assertEqual(table.get(cg.key(label)), "Islam", label)
+
+    def test_the_named_churches_reach_christianity(self):
+        import canonical_groups as cg
+        table = cg.lookup("religion")
+        for label in ("Christian only", "Zionist Christian Church", "Coptic",
+                      "New Apostolic Church", "Dutch Reformed"):
+            self.assertEqual(table.get(cg.key(label)), "Christianity", label)

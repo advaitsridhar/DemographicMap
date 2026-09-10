@@ -87,11 +87,34 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "Awakening Churches/Christian Revival", "Apostolic Sect",
         "Universal Kingdom of God", "Worship Centre",
         "Jehovah's Witness and Church of Jesus Christ", "Latter Day Saints",
+        # Afrobarometer's denominations. "Christian only" is its label for a
+        # respondent who named no sub-group, and the rest are churches large
+        # enough in one country to have earned their own code: the Zionist
+        # Christian Church is South Africa's largest single denomination, and
+        # Fifohazana is a Malagasy revival movement inside the Protestant
+        # churches. Eglise du Christianisme Céleste is Celestial Church of
+        # Christ, in Benin and Nigeria.
+        "Christian only", "Coptic", "Quaker/Friends", "Quaker", "Friends",
+        "Independent", "African Independent Church", "Jehovah's Witness",
+        "Jehovah’s Witness", "Dutch Reformed", "Church of Christ",
+        "Zionist Christian Church", "Eglise Du Christianisme Céleste",
+        "Celestial Church of Christ", "Fifohazana", "Morovian", "Moravian",
+        "United Church of Zambia or UCZ", "United Church of Zambia",
+        "New Apostolic Church", "Christian mission in many lands (CMML)",
     ),
     "Islam": (
         "Islam", "Muslim", "Muslims", "Musalman", "Musulman", "Islamic",
         "Sunni", "Sunni Muslim", "Shia", "Shia Muslim", "Shi'a",
         "Ahmadiyya", "Ibadhi",
+        # Afrobarometer offers a respondent the brotherhood rather than the
+        # faith, and in Senegal most take it: a filter for Islam that omits
+        # the Mouride and Tijani orders shows a country as barely Muslim.
+        # "Muslim only" and "Sunni only" are its labels for a respondent who
+        # named no sub-group at all, which is the plainest Muslim answer there
+        # is and must not be stranded under its own name.
+        "Muslim only", "Sunni only", "Ismaeli", "Ismaili",
+        "Mouridiya Brotherhood", "Mouride", "Tijaniya Brotherhood", "Tijani",
+        "Qadiriya", "Qadiriya Brotherhood", "Ançardine",
     ),
     "Hinduism": ("Hindu", "Hinduism", "Hindus"),
     "Buddhism": ("Buddhist", "Buddhism", "Bouddha", "Buddhists"),
@@ -127,6 +150,7 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "Traditional African", "Traditional African religion",
         "or other traditional African religions",
         "Shaman", "shamanist", "Badimo", "Modekngei", "Mana",
+        "Traditional/Ethnic religion", "Traditional/ethnic religion",
     ),
     # Maori churches. Stats NZ classifies these apart from Christian and this
     # follows it: Ratana and Ringatu are Christian in origin but are counted,
