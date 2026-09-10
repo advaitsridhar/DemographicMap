@@ -4582,6 +4582,6 @@ class MalaysiaKeepsTheNonCitizenRow(unittest.TestCase):
 
     def test_an_unknown_category_stops_the_run(self):
         from scripts.fetch_census import malaysia
-        rows = self.ROWS + [dict(self.ROWS[-1], ethnicity="orang_asli")]
+        rows = self.ROWS + [dict(self.ROWS[-1], sex="both", ethnicity="orang_asli")]
         with self.assertRaises(SystemExit):
             malaysia.compositions(rows, ("state", "district"))
