@@ -1,0 +1,137 @@
+{
+  "iso3": "UGA",
+  "name": "Uganda",
+  "researched_at": "2026-09-10",
+  "nso": {
+    "name": "Uganda Bureau of Statistics (UBOS)",
+    "url": "https://www.ubos.org/",
+    "alt_urls": ["https://statistics.ubos.org/", "https://statistics.ubos.org/nphc/", "https://www.ubos.org/census-2024/", "https://www.ubos.org/data-portals-2/"]
+  },
+  "latest_census": {
+    "year": 2024,
+    "asks": {"religion": true, "ethnicity": true, "language": null},
+    "published_subnationally": {"religion": null, "ethnicity": null, "language": null},
+    "notes": "National Population and Housing Census 2024 (NPHC 2024). Religion: asked and published nationally -- UBOS on X: 'Catholics form the larger percentage at 37.4% followed by Anglicans at 30.0%. Pentecostals have increased to 14.7% from 11.1%'; ~82% Christian, ~13% Muslim. Ethnicity (tribe): asked and published nationally -- 'Demographics of Uganda' snippet cites 2024 shares (Baganda 15.3%, Banyankore 9.2%, Basoga 8.1%, Iteso 6.9%, Bakiga 6.4%, Langi 5.9%, Bagisu 4.6%, Acholi 4.2%). Caveat: 'In October 2024, UBOS acknowledged errors in the 2024 census results, particularly regarding population figures by tribe and religion' (Independent, SoftPower 'UBOS Explains Data Mismatch on Tribes'), while stating 'there was no error in the number of Catholics, Anglicans, and Muslims' -- any table read from the Final Report needs the corrected version. Language: no result addressed a language question; the check was refused (session search budget exhausted). Subnational: UBOS announced 'district, county/division, and subcounty/town council statistics from the 2024 NPHC' (June 2025) with 'subcounty Excel tables', sub-regional profile reports and 'the anonymised micro dataset'; whether those Excel tables carry religion/tribe columns is not verified. Uganda is NOT in the US Census Bureau subnational series (SOURCES.md)."
+  },
+  "earlier_census": {
+    "year": 2014,
+    "asks": {"religion": true, "ethnicity": true, "language": null},
+    "published_subnationally": {"religion": null, "ethnicity": null, "language": null},
+    "notes": "Main Report (PDF) gives national religion ('Catholics ... close to 40 percent ... Anglicans with 32 percent and Moslems with about 14 percent'). UBOS 'Area Specific Profiles' exist per district as PDFs (e.g. APAC.pdf, SHEEMA.pdf, BUSIA.pdf) covering 'the national, district and sub-county levels'; whether each profile tabulates religion and ethnicity was not visible in snippets. The questionnaire is on UNSD (https://unstats.un.org/unsd/demographic/sources/census/quest/UGA2014enHh.pdf) and would settle which fields were asked, including language."
+  },
+  "already_in_map": "admin1 (4 regions) 2/4 filled for religion and ethnicity from Afrobarometer Round 9 (a survey; the 'Faith of Unity' label note in SOURCES.md's Afrobarometer section is Ugandan). admin2 (151) holds nothing.",
+  "boundary_level_warning": "The packet's 151 admin2 shapes do not obviously correspond to one Ugandan level. Of the eight sample names, Dokolo, Kazo, Ntoroko and Soroti are districts, but Bujenje (a county of Masindi District per mindat/GFW), Jie and Pian (counties of Karamoja) are counties, and Rwampara was a county of Mbarara until it became a district in July 2019 (Wikipedia snippet). Before any join, identify which vintage/level the 151 are; the NPHC 2024 release is at district and county/division level, so a matching level exists but names must be matched to the right one.",
+  "subnational_sources": [
+    {
+      "fields": ["religion", "ethnicity"],
+      "title": "NPHC 2024 district, county/division and subcounty/town council statistics (subcounty Excel tables, sub-regional profiles, Data Explorer, Map Explorer)",
+      "url": "https://statistics.ubos.org/nphc/",
+      "mirrors": [
+        "https://www.ubos.org/release-of-area-district-county-division-and-subcounty-town-council-statistics-from-national-population-and-housing-census-nphc-2024/",
+        "https://pmldaily.com/news/2025/06/ubos-releases-district-level-data-from-2024-census.html",
+        "https://www.ubos.org/nphc-2024-census-page/"
+      ],
+      "publisher": "UBOS",
+      "kind": "census",
+      "format": "xlsx (subcounty tables), html (Data Explorer / Map Explorer), pdf (profiles)",
+      "geography": "district, county/division, subcounty/town council (down to parish per PML Daily)",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 plausibly (district or county level exists) -- see boundary_level_warning; admin1 (4 regions) would need summing",
+      "year": 2024,
+      "confidence": "medium",
+      "evidence": "UBOS page title: 'Release Of Area (District, County/Division and Subcounty/Town Council) Statistics From NPHC 2024'; portal snippet: 'download the full National report and all sub-regional profiles ... get the subcounty Excel tables and population projections, or access the anonymised micro dataset'; PML Daily: 'UBOS releases district-level data from 2024 census'. Whether religion and tribe are among the tabulated variables in the Excel is NOT confirmed -- the check ('statistics.ubos.org nphc 2024 subcounty excel tables religion ethnicity') was refused (budget)."
+    },
+    {
+      "fields": ["religion", "ethnicity"],
+      "title": "Karamoja Sub-Region Census 2024 Profile Report (example of the sub-regional profile series)",
+      "url": "https://statistics.ubos.org/nphc/reports/Karamoja-Sub-Region-Census-2024-Profile-Report.pdf",
+      "publisher": "UBOS",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "district, county and subcounty within one sub-region",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 plausibly (counties such as Jie and Pian are in Karamoja)",
+      "year": 2024,
+      "confidence": "medium that the series exists; fields unverified",
+      "evidence": "Snippet: 'County and Subcounty profiles for all Districts in Karamoja Sub Region based on the National Population and Housing Census 2024'. Religion/tribe content not shown."
+    },
+    {
+      "fields": ["religion", "ethnicity"],
+      "title": "National Population and Housing Census 2024 - Final Report - Volume I (Main)",
+      "url": "https://www.ubos.org/wp-content/uploads/2024/12/National-Population-and-Housing-Census-2024-Final-Report-Volume-1-Main.pdf",
+      "mirrors": [
+        "https://www.ubos.org/uganda-bureau-of-statistics-2024-the-national-population-and-housing-census-2024-final-report-volume-i-main/",
+        "https://nwoya.go.ug/sites/default/files/National-Population-and-Housing-Census-2024-Final-Report-Volume-1-Main.pdf"
+      ],
+      "publisher": "UBOS",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "national; region/district tables unverified",
+      "geography_count": null,
+      "matches_boundary_level": "admin1 (4 regions) if regional tables exist; unverified",
+      "year": 2024,
+      "confidence": "high that it exists; low for subnational religion/tribe tables",
+      "evidence": "Published December 2024; UBOS later 'admitted having errors in final report' on tribe and religion figures -- use the corrected edition."
+    },
+    {
+      "fields": ["religion", "ethnicity"],
+      "title": "National Population and Housing Census 2014 - Area Specific Profiles (one PDF per district) and Main Report",
+      "url": "https://www.ubos.org/wp-content/uploads/publications/2014CensusProfiles/APAC.pdf",
+      "mirrors": [
+        "https://www.ubos.org/wp-content/uploads/publications/2014CensusProfiles/SHEEMA.pdf",
+        "https://www.ubos.org/wp-content/uploads/publications/2014CensusProfiles/BUSIA.pdf",
+        "https://www.ubos.org/wp-content/uploads/publications/03_20182014_National_Census_Main_Report.pdf"
+      ],
+      "publisher": "UBOS",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "district (one profile each) with sub-county detail",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 for the shapes that are 2014-era districts; not for county-named shapes",
+      "year": 2014,
+      "confidence": "medium that profiles exist per district; low that they tabulate religion/ethnicity",
+      "evidence": "Snippet: the profiles 'provided information on the characteristics of the population and households at the national, district and sub-county levels'. A Wikipedia 'Islam in Uganda' result was summarised as carrying district-level Muslim shares from 2014, which would have to derive from these profiles, but that is the search engine's summary, not a seen table."
+    }
+  ],
+  "secondary_routes": {
+    "hdx": "Not searched -- the query 'data.humdata.org Uganda census 2024 UBOS dataset district' was refused (budget).",
+    "ipums": null,
+    "us_census_bureau": "Not in the series (SOURCES.md).",
+    "open_data_portal": "UBOS 'Data Portals' page lists ArcGIS Online, the UBOS Microdata Archive, data-visualisation tools and an 'NSO Open Data portal' (https://www.ubos.org/data-portals-2/); the 2024 anonymised microdata is offered on the NPHC portal (registration likely)."
+  },
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Uganda", "url": "https://en.wikipedia.org/wiki/Religion_in_Uganda", "appears_to_contain": "surfaced for both the 2024 and 2014 district queries; snippets show national shares only; a by-district table unverified"},
+      {"title": "Demographics of Uganda", "url": "https://en.wikipedia.org/wiki/Demographics_of_Uganda", "appears_to_contain": "2024 census national ethnic shares in snippet; no by-district ethnic table article surfaced ('Category:Ethnic groups in Uganda' and 'Culture of Uganda' came up instead)"}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Bujenje", "search_hit_title": null, "url": null, "note": "no English Wikipedia article surfaced; only mindat ('Bujenje, Bwijanga, Bujenje County, Masindi District') and Global Forest Watch -- it is a county, not a district; not worth a Wikipedia read"},
+      {"shape_name": "Ntoroko", "search_hit_title": "Ntoroko District", "url": "https://en.wikipedia.org/wiki/Ntoroko_District", "note": "article exists; snippet: 2014 population 67,005, second least populated district; the town article lists ethnic groups qualitatively (Batooro, Bakonzo, Bamba, Babwisi, Alur, Lendu...) with no figures"},
+      {"shape_name": "Rwampara", "search_hit_title": "Rwampara district", "url": "https://en.wikipedia.org/wiki/Rwampara_district", "note": "article exists; snippet: carved out of Mbarara District in July 2019, 2014 population estimate 270,465 -- no composition"}
+    ]
+  },
+  "tier": "B",
+  "tier_reason": "Counts exist: the 2024 census asked religion and tribe, and UBOS has released statistics at district, county/division and subcounty level including 'subcounty Excel tables' on statistics.ubos.org/nphc. But no snippet confirms that religion or tribe are among the tabulated variables in those Excel files (the official main report is a PDF with acknowledged tribe/religion errors), and the boundary's 151 admin2 units mix district and county names, so the geography match is unresolved. If the Excel tables carry religion/tribe by district or county, this becomes A.",
+  "replaces_existing": true,
+  "recommended_action": "Open https://statistics.ubos.org/nphc/ and download the subcounty/district Excel tables; check for religion and tribe columns. If present, aggregate to the 4 regions for admin1 (superseding the Afrobarometer estimate for 2 regions and filling the other 2) and join to admin2 after first establishing what the 151 boundary units are (compare against UBOS's district list and its county/division list; Bujenje, Jie and Pian are counties, Rwampara has been a district only since July 2019). If the Excel lacks those variables, fall back to the sub-regional profile PDFs (Karamoja example) or the 2014 Area Specific Profiles, both B-grade. Use only the corrected Final Report figures for tribe and religion. Check the UNSD 2014 questionnaire for a language question before declaring language not_collected.",
+  "searches_run": [
+    "Uganda 2024 census religion by district UBOS main report",
+    "Uganda 2014 census ethnicity by district UBOS Area Specific Profiles",
+    "Uganda census 2024 final report district level religion ethnicity tables volume",
+    "Uganda 2014 census main report religion by district table UBOS",
+    "UBOS explorer census 2024 district data portal open data Uganda",
+    "Uganda ethnic groups by district wikipedia census table",
+    "\"Bujenje\" Uganda wikipedia",
+    "\"Ntoroko\" Uganda wikipedia",
+    "\"Rwampara\" Uganda wikipedia"
+  ],
+  "not_found": [
+    "confirmation that the NPHC 2024 subcounty/district Excel tables include religion or tribe (search refused -- session search budget exhausted)",
+    "a 2024 or 2014 religion-by-district table seen directly in any snippet",
+    "whether the 2024 (or 2014) census asked language (search refused -- budget)",
+    "an HDX dataset for the Uganda census (search refused -- budget)",
+    "a Wikipedia list article with religion or ethnicity by district",
+    "a Wikipedia article for the admin2 shape 'Bujenje'"
+  ],
+  "summary": "Uganda's 2024 census asked religion and tribe; national results are published (37.4% Catholic, 30.0% Anglican, 14.7% Pentecostal, ~13% Muslim; Baganda 15.3% and so on), with UBOS having acknowledged and corrected errors in the tribe and religion tables of the December 2024 Final Report. In June 2025 UBOS released statistics at district, county/division and subcounty level on statistics.ubos.org/nphc, including subcounty Excel tables and sub-regional profile PDFs, which is the route to fill both the 4 regions (replacing the Afrobarometer survey estimate) and admin2 -- but whether those Excel tables tabulate religion and tribe could not be confirmed before the search budget ran out, and the 2014 fallback is per-district PDF profiles. Separately, the boundary file's 151 admin2 shapes mix district names with county names (Bujenje, Jie, Pian), so the join level must be established before any table is matched. Tier B pending that verification; likely A if the Excel carries the fields."
+}

@@ -1,0 +1,148 @@
+{
+  "iso3": "PAK",
+  "name": "Pakistan",
+  "researched_at": "2026-09-10",
+  "nso": {"name": "Pakistan Bureau of Statistics (PBS)", "url": "https://www.pbs.gov.pk/digital-census/detailed-results"},
+  "latest_census": {
+    "year": 2023,
+    "asks": {"religion": true, "ethnicity": false, "language": true},
+    "notes": "7th Population and Housing Census 2023 ('first-ever digital census'). Religion and mother tongue are asked; there is no ethnicity question (mother tongue is the local proxy). Both are published subnationally: Table 9 'Population by sex, religion and rural/urban' and Table 11 'Population by mother tongue, sex and rural/urban' are issued per province by province/division/district/tehsil as PDFs on pbs.gov.pk/digital-census/detailed-results; District Census Reports 2023 carry Table 3.6 (% by religion) and 3.7 (% by mother tongue); the National Census Report 2023 has Tables 4.13/4.14 for 2017 vs 2023. AJK and Gilgit-Baltistan were enumerated (10 census districts each per PBS 'Number of Census Areas 2023'), but geo-ref.net notes their datasets were 'not complete ... partially included only as 2017 data'. The repo already reads Table 9 (religion, 114/126 districts) and takes mother tongue from the 2017 USCB workbook."
+  },
+  "subnational_sources": [
+    {
+      "fields": ["religion", "language"],
+      "title": "PakPC2023: Pakistan Population Census 2023 (CRAN package; dataset PakPC2023PakDist with TABLE_09 religion and TABLE_11 mother tongue by district)",
+      "url": "https://cran.r-project.org/web/packages/PakPC2023/PakPC2023.pdf",
+      "publisher": "Muhammad Yaseen (myaseen208) on CRAN, repackaging PBS tables; GitHub https://github.com/myaseen208/PakPC2023 ; docs https://rdrr.io/cran/PakPC2023/man/PakPC2023PakDist.html",
+      "kind": "census",
+      "format": "R data (.rda in the CRAN source tarball; readable with R or pyreadr) -- keyless, versioned (package dated 2025-07-21)",
+      "geography": "district (also province/division/tehsil tables in the package)",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 (126 shapes; the repo's PDF read of the same Table 9 already joins 114) and admin1 by aggregation",
+      "year": 2023,
+      "confidence": "high",
+      "evidence": "Snippets: 'PakPC2023PakDist is the district-level data from Pakistan Population Census 2023' containing 'TABLE_09: Population by sex, religion and rural/urban' and 'TABLE_11: Population by mother tongue, sex and rural/urban'. Machine-readable copy of the official tables; whether it includes AJK, GB and Islamabad rows is not visible in the snippet."
+    },
+    {
+      "fields": ["religion", "language"],
+      "title": "pakistan_census_2023_tables -- PBS 'District Wise' PDF tables converted to Excel (GitHub, fahad-mirza)",
+      "url": "https://github.com/fahad-mirza/pakistan_census_2023_tables",
+      "publisher": "GitHub user Fahad Mirza (converted with Stata from the PBS PDFs)",
+      "kind": "census",
+      "format": "xlsx",
+      "geography": "district (and tehsil)",
+      "geography_count": null,
+      "matches_boundary_level": "admin2",
+      "year": 2023,
+      "confidence": "medium",
+      "evidence": "Snippet: 'Converted tables shared by Pakistan Bureau of Statistics on the Population Census 2023 from PDF to Excel Format ... a conversion of the District Wise PDF files ... cleaned and processed using Stata'; original PDFs at https://www.pbs.gov.pk/digital-census/detailed-results . Which tables are included is not visible; Tables 9 and 11 are part of the District Wise series."
+    },
+    {
+      "fields": ["language"],
+      "title": "Table 11: Population by mother tongue, sex and rural/urban, Census 2023 (one PDF per province; province/division/district/tehsil)",
+      "url": "https://www.pbs.gov.pk/digital-census/detailed-results",
+      "publisher": "Pakistan Bureau of Statistics",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "district (with divisions and tehsils interleaved, as in Table 9)",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 and admin1",
+      "year": 2023,
+      "confidence": "high",
+      "evidence": "Snippet: 'TABLE_11 which contains Population by mother tongue, sex and rural/urban data broken down by province, division, district, and tehsil'. The official 2023 count of the field the repo currently fills from the 2017 USCB workbook; the existing Table 9 reader (scripts/fetch_census/pakistan.py, BASE .../census_tables/tables/) should extend to it -- e.g. the religion file pattern seen in results is https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf ."
+    },
+    {
+      "fields": ["religion", "language"],
+      "title": "District Census Report 2023 - Islamabad (Table 3.6 % by religion, Table 3.7 % by mother tongue)",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/District-Census-Report-2023-Islamabad.pdf",
+      "publisher": "Pakistan Bureau of Statistics",
+      "kind": "census",
+      "format": "pdf (percentages)",
+      "geography": "district (Islamabad Capital Territory)",
+      "geography_count": 1,
+      "matches_boundary_level": "admin2 and admin1 ('Islamabad Capital Territory' is in both sample lists and currently has no religion figure)",
+      "year": 2023,
+      "confidence": "high",
+      "evidence": "Snippet: 'District Census Reports for 2023 include tables on Percentage of Population by Religion and Rural/Urban (Table 3.6) and Percentage of Population by Mother Tongue (Table 3.7)'. docs/SOURCES.md records Islamabad's Table 9 as absent from both paths the adapter uses; the DCR is a third path that carries it. Companion: Provincial Census Report 2023 Balochistan https://www.pbs.gov.pk/wp-content/uploads/2020/07/Provincial-Census-Report-2023-Balochistan-1.pdf ; National Census Report 2023 https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf ."
+    },
+    {
+      "fields": ["religion", "language"],
+      "title": "Population Census 2023 Demographic and Housing Characteristics Dashboard",
+      "url": "https://census23.pbos.gov.pk/",
+      "publisher": "Pakistan Bureau of Statistics",
+      "kind": "census",
+      "format": "interactive dashboard (any underlying API unverified)",
+      "geography": "province/district (unverified)",
+      "geography_count": null,
+      "matches_boundary_level": "unknown",
+      "year": 2023,
+      "confidence": "low",
+      "evidence": "Snippet: 'interactive Demographic and Housing Characteristics Dashboard that offers comprehensive overview of key indicators'. Listed because a dashboard sometimes fronts a JSON endpoint; not evidence of one."
+    },
+    {
+      "fields": ["language"],
+      "title": "Pakistan: Languages (HDX) -- PK_lang_admin2_V01.csv.xlsx",
+      "url": "https://data.humdata.org/dataset/pakistan-languages",
+      "publisher": "HDX (resource https://data.humdata.org/dataset/pakistan-languages/resource/25fbca7c-a662-437c-9223-d9ed073f88a2 )",
+      "kind": "census",
+      "format": "csv/xlsx",
+      "geography": "district (admin2) and province (admin1)",
+      "geography_count": null,
+      "matches_boundary_level": "admin2 and admin1",
+      "year": 2017,
+      "confidence": "medium",
+      "evidence": "Snippet: 'drawn from the 2017 government census and the MICS ... percentage of the population by native language ... representative at the district (admin 2) and province (admin 1) level'. Same 2017 vintage as the USCB workbook already used, partly survey-mixed; superseded by 2023 Table 11."
+    },
+    {
+      "fields": ["population only"],
+      "title": "Azad Jammu & Kashmir At A Glance 2023 - District-wise Population (AJK P&D Department)",
+      "url": "https://www.pndajk.gov.pk/uploadfiles/downloads/AJK%20at%20a%20Glance%202023.pdf",
+      "publisher": "Planning & Development Department, AJK",
+      "kind": "census",
+      "format": "pdf",
+      "geography": "district (10)",
+      "geography_count": 10,
+      "matches_boundary_level": "admin2 (AJK districts) and admin1 (Azad Kashmir)",
+      "year": 2023,
+      "confidence": "low",
+      "evidence": "Title only; religion/mother tongue not evidenced. Recorded because AJK and GB are the admin1 shapes still empty; PBS 'Number of Census Areas 2023' (https://www.pbs.gov.pk/wp-content/uploads/2020/07/Number-of-Census-Areas-2023.pdf) shows 10 census districts each for GB and AJK, and geo-ref.net (http://www.geo-ref.net/pdf/pakistan.pdf) says their data 'was not complete ... partially included only as 2017 data'."
+    }
+  ],
+  "wikipedia": {
+    "country_list_articles": [
+      {"title": "Religion in Pakistan", "url": "https://en.wikipedia.org/wiki/Religion_in_Pakistan",
+       "appears_to_contain": "2023 census national shares (Islam 96.3%, Hinduism 2.17%, Christianity 1.37%) and a historical 1901-2023 table; a district table was not evident in the snippet. Companion articles surfaced: 'Hinduism in Sindh', 'Hinduism in Pakistan', 'Christianity in Pakistan', '2023 Pakistani census' (https://en.wikipedia.org/wiki/2023_Pakistani_census)"},
+      {"title": "Languages of Pakistan", "url": "https://en.wikipedia.org/wiki/Languages_of_Pakistan",
+       "appears_to_contain": "surfaced in the PakPC2023 search; snippet not specific; unverified whether it tabulates by district"}
+    ],
+    "admin2_samples": [
+      {"shape_name": "Musakhel", "search_hit_title": null, "url": null,
+       "note": "NOT SEARCHED: session WebSearch budget exhausted. Runner: search '\"Musakhel\" Balochistan Pakistan wikipedia'."},
+      {"shape_name": "Nushki", "search_hit_title": null, "url": null,
+       "note": "NOT SEARCHED (budget exhausted)."},
+      {"shape_name": "Jafarabad", "search_hit_title": null, "url": null,
+       "note": "NOT SEARCHED (budget exhausted). Jafarabad was split in 2021-22 (Usta Muhammad carved out) -- one of the Balochistan boundary-vintage cases SOURCES.md mentions."}
+    ]
+  },
+  "tier": "A",
+  "tier_reason": "The 2023 census counts religion and mother tongue and publishes both by district; beyond the PBS PDFs the repo already parses, two keyless machine-readable copies exist (CRAN PakPC2023 .rda with TABLE_09/TABLE_11 by district; a GitHub XLSX conversion of the District Wise PDFs), at a geography that already joins 114 of 126 admin2 shapes.",
+  "replaces_existing": true,
+  "recommended_action": "1) Language: replace the 2017 USCB mother-tongue workbook with 2023 Table 11 -- official PDF via the existing pakistan.py reader (same layout as Table 9), cross-checked against PakPC2023's TABLE_11; this supersedes 114 district rows and 5 province rows. 2) Religion: keep the PDF-parsed Table 9 as the publication and use PakPC2023 TABLE_09 only as a reconciliation check -- the repo's agreement rule would send both to a gap on a one-person difference, so do not add it as a second source. 3) Islamabad: read Table 3.6/3.7 of the District Census Report 2023 (percentages) to fill ICT religion and language at admin1 and admin2. 4) AJK and GB: still no religion/mother-tongue table found; check whether PakPC2023 carries their districts before declaring them absent for 2023. 5) Run the three admin2 Wikipedia sample searches not run here.",
+  "searches_run": [
+    "Pakistan 2023 census district tables religion mother tongue pbs.gov.pk Table 9 Table 11 PDF",
+    "Pakistan 2023 census results mother tongue by district excel download pbs.gov.pk",
+    "github fahad-mirza pakistan_census_2023_tables TABLE_9 religion TABLE_11 mother tongue district xlsx",
+    "PakPC2023 R package PakPC2023PakDist variables religion mother tongue district",
+    "Gilgit-Baltistan Azad Jammu Kashmir 2023 census results religion mother tongue district tables",
+    "\"Religion in Pakistan\" wikipedia table by district 2023 census OR \"Languages of Pakistan\" wikipedia by district",
+    "HDX data.humdata.org Pakistan census 2023 district religion language"
+  ],
+  "not_found": [
+    "a PBS-published XLSX/CSV or API for the 2023 tables (only PDFs and a dashboard on the official side)",
+    "Table 9 / Table 11 for Azad Kashmir and Gilgit-Baltistan (only population totals and a note that their 2023 data was incomplete)",
+    "any 2023 census data on HDX (HDX carries the 2017 languages table and 2017 population statistics)",
+    "an ethnicity question in the 2023 census (mother tongue is the proxy; ethnicity stays unfilled)",
+    "NOT RUN (WebSearch budget exhausted): '\"Musakhel\" Balochistan Pakistan wikipedia', '\"Nushki\" district Pakistan wikipedia', '\"Jafarabad\" district Balochistan Pakistan wikipedia', 'pbs.gov.pk census_tables tables table_11 districts pdf ... table_9 gb OR ajk OR islamabad'"
+  ],
+  "summary": "Pakistan's 2023 census counts religion (Table 9) and mother tongue (Table 11) and publishes both by province, division, district and tehsil as PDFs on pbs.gov.pk/digital-census/detailed-results; the repo already parses Table 9 for 114 of 126 districts but still takes language from the 2017 USCB workbook. The 2023 Table 11 PDFs are the direct upgrade, and two keyless machine-readable copies now exist to check against: the CRAN package PakPC2023 (PakPC2023PakDist with TABLE_09 and TABLE_11 by district, dated July 2025) and a GitHub XLSX conversion of the District Wise PDFs. The District Census Report 2023 for Islamabad carries religion and mother-tongue percentages (Tables 3.6/3.7), a third PBS path that fills the ICT gap the adapter recorded. AJK and Gilgit-Baltistan were enumerated (10 census districts each) but no religion or mother-tongue table for them surfaced and one source says their 2023 data was incomplete. Ethnicity is not asked. The three admin2 Wikipedia sample checks were not run because the session's search budget ran out."
+}
