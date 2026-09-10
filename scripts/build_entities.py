@@ -93,6 +93,9 @@ ADAPTER_FILES = [
     # census cannot reach: it covers England and Wales. Neither overlaps the
     # two files above or each other, so the order between them never arises.
     "scotland_council.json", "northern_ireland_district.json",
+    # The other island. No overlap with anything above: the CSO's areas are in
+    # the Republic and every UK file stops at the border.
+    "ireland_lea.json",
     "us_state.json", "us_county.json",
 ]
 
@@ -106,6 +109,8 @@ ADAPTER_HINTS: dict[str, str] = {
            "group, TS030 religion): python -m scripts.fetch_census.uk_nomis; "
            "Scotland and Northern Ireland have adapters of their own, "
            "scotland_census and northern_ireland",
+    "IRL": "CSO Census 2022 via PxStat (SAPMAP religion and ethnicity by local "
+           "electoral area): python -m scripts.fetch_census.ireland",
     "DEU": "Zensus 2022 religion by Land, three categories from the church-tax "
            "register (needs a free ergebnisse.zensus2022.de account): "
            "python -m scripts.fetch_census.germany",
@@ -212,7 +217,19 @@ FOLD = str.maketrans({
 # the adapter now fixes by asking the office for its own local name.
 GENERIC = (r"\b(province|state|region|district|county|prefecture|governorate|"
            r"oblast|department|municipality|city|autonomous|"
-           r"territory|of|the|and)\b")
+           r"territory|of|the|and)\b"
+           # A seat count is not a name. geoBoundaries writes Ireland's local
+           # electoral areas as "ADARE-RATHKEALE LEA-6", where the 6 is how
+           # many councillors the area returns -- it is not part of what the
+           # place is called, and the CSO does not write it. Left in, every one
+           # of the 166 rows Ireland's census publishes misses its shape.
+           #
+           # Scoped to LEA followed by digits, and measured before it was
+           # added: across both CGAZ levels that pattern appears on 166 shapes,
+           # all Irish, and on nothing else in the world. The one real place
+           # named Lea -- a township in the United States -- has no number
+           # after it and is untouched.
+           r"|\blea[-\s]*\d+\b")
 
 
 def norm(text: str | None) -> str:

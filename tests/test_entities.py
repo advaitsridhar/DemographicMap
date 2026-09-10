@@ -4473,3 +4473,57 @@ class TheUKCensusPublishesEthnicityAtTwoLevels(unittest.TestCase):
             ["White: Irish", "Other ethnic group"])
         # A group with no detail keeps its own row rather than vanishing.
         self.assertEqual(leaves(["Chinese", "Roma"]), ["Chinese", "Roma"])
+
+
+class IrelandsSeatCountIsNotItsName(unittest.TestCase):
+    """geoBoundaries writes "ADARE-RATHKEALE LEA-6" and the CSO writes
+    "Adare-Rathkeale, Limerick". The 6 is how many councillors the area
+    returns; left in the comparison, all 166 rows miss their shape.
+    """
+
+    def test_the_seat_count_is_stripped_from_both_sides(self):
+        self.assertEqual(be.norm("ADARE-RATHKEALE LEA-6"),
+                         be.norm("Adare-Rathkeale"))
+        self.assertEqual(be.norm("BALLINAMORE-LEA-6"), be.norm("Ballinamore"))
+        self.assertEqual(be.norm("GRAIGUECULLEN -PORTARLINGTON-LEA-6"),
+                         be.norm("Graiguecullen -Portarlington"))
+
+    def test_a_place_actually_called_lea_survives(self):
+        """The rule is LEA followed by digits, not the word on its own.
+
+        There is one real Lea among the world's shapes, a township in the
+        United States, and a rule that ate it would be trading 166 matches for
+        a silent deletion.
+        """
+        self.assertEqual(be.norm("Lea"), "lea")
+        self.assertEqual(be.norm("Leamington"), "leamington")
+        self.assertEqual(be.norm("Lea County"), "lea")
+
+    def test_every_irish_shape_name_still_identifies_one_place(self):
+        """Stripping a suffix can merge two names, and here it merges one pair.
+
+        Athlone straddles the Shannon, so the town has two local electoral
+        areas either side of a county boundary. That collision is real and is
+        handled by the province each row states; what this checks is that it is
+        the *only* one, because a second undetected pair would silently give
+        one area another's figures.
+        """
+        shapes = json.loads((ROOT / "site" / "data" / "admin2" / "IRL.json")
+                            .read_text(encoding="utf-8"))
+        keys: dict[str, list[str]] = {}
+        for shape in shapes:
+            keys.setdefault(be.norm(shape["name"]), []).append(shape["name"])
+        shared = {k: v for k, v in keys.items() if len(v) > 1}
+        self.assertEqual(sorted(shared), ["athlone"], shared)
+
+    def test_ireland_declares_why_it_has_no_language(self):
+        """Asked, and not as a composition -- which is not the same as unasked."""
+        import common
+        reason = common.collection_policy("IRL", "language")
+        self.assertIsNotNone(reason)
+        self.assertIn("foreign languages", reason)
+        self.assertIn("counts an ability", reason)
+        # Religion and ethnicity come from the same census and must not be
+        # declared away with it.
+        self.assertIsNone(common.collection_policy("IRL", "religion"))
+        self.assertIsNone(common.collection_policy("IRL", "ethnicity"))

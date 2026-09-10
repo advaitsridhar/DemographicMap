@@ -107,6 +107,17 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
     "CHN": {
         "religion": "China's census does not ask religion; it records the 56 official nationalities (minzu) instead.",
     },
+    # Ireland asks about language twice and neither answer is a composition.
+    # Census 2022 publishes "Speakers of foreign languages" -- a count of only
+    # those people, split by which language, with English absent from it
+    # entirely -- and "Ability to Speak Irish", which is a skill, not a
+    # language spoken. Religion and ethnicity are read from the same census.
+    "IRL": {
+        "language": "Ireland's census asks which foreign languages a person "
+                    "speaks and whether they can speak Irish. Neither is a "
+                    "breakdown of the population by language: the first "
+                    "excludes English speakers, the second counts an ability.",
+    },
     "KOR": {"ethnicity": "South Korea's census does not collect ethnicity."},
     "NLD": {"ethnicity": "The Netherlands records migration background, not ethnicity."},
     "SWE": {"ethnicity": "Sweden records country of birth and citizenship, not ethnicity."},
