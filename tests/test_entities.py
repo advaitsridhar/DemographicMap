@@ -4892,6 +4892,41 @@ class WikiCensusReadsATranscribedTable(unittest.TestCase):
             w.build("KHM", w.SPECS["KHM"], self.KHM.replace("|| 70.4 ||", "|| 90.4 ||"))
 
 
+class KazakhstanSumsTheNewRegionsBack(unittest.TestCase):
+    """The Bureau's workbook has 20 regions in the 2022 layout; the map draws
+    16 in the 2017 one. The four carved-out regions are summed back into the
+    ones they came from, a column is checked against its own total, the
+    city columns' two spellings are one city, and a district keeps its
+    Cyrillic name with a transliteration and any renamed shape as aliases.
+    """
+
+    def test_parse_merge_and_names(self):
+        from scripts.fetch_census import kazakhstan as k
+        rows = [("2.Численность",), (None, None, None, None, None, "человек"),
+                ("№", "Код", "Этносы", "Республика", "В том числе"),
+                (None, None, None, None, "Абай", "Восточно-Казахстанская", "г. Астана"),
+                (1, "000", "Всего", 130, 30, 70, 30),
+                (2, "005", "Казахи", 100, 20, 60, 20),
+                (3, "001", "Русские", 25, 10, 8, 7),
+                (4, "190", "Не указавшие", 5, "-", 2, 3)]
+        units, counts = k.parse_sheet(rows)
+        self.assertEqual(units, ["Абай", "Восточно-Казахстанская", "г.Астана"])
+        self.assertEqual(counts["Абай"], {"Всего": 30, "Казахи": 20, "Русские": 10, "Не указавшие": 0})
+        merged = k.merged({**{c: {"Всего": 1, "Казахи": 1} for c in k.REGIONS}, **counts})
+        self.assertEqual(merged["East Kazakhstan Region"]["Всего"], 100)
+        self.assertEqual(merged["East Kazakhstan Region"]["Казахи"], 80)
+        self.assertEqual(len(merged), 16)
+        bars = k.bars("x", counts["Восточно-Казахстанская"])
+        self.assertEqual(bars[0], {"group": "Kazakh", "pct": 85.7, "count": 60})
+        self.assertEqual([b["group"] for b in bars], ["Kazakh", "Russian", "Not stated"])
+        with self.assertRaises(SystemExit):
+            k.bars("x", {"Всего": 100, "Казахи": 50})
+        self.assertEqual(k.transliterate(k.bare("Щербактинский район")), "Shcherbaktinskiy")
+        self.assertEqual(k.transliterate(k.bare("Кокшетау г.а.")), "Kokshetau")
+        self.assertEqual(k.RENAMED["район Бәйтерек"], ["Zelenovskiy"])
+        self.assertEqual(k.label("Саха(Якуты)"), "Yakut")
+
+
 class PolandCutsTheReligionTreeOnce(unittest.TestCase):
     """GUS publishes religion as a seven-level classification tree, and the
     composition is one cut through it: Christian branches at level 5, other

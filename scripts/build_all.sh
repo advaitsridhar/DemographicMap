@@ -73,6 +73,8 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.thailand
   # Census tables that reach us only as Wikipedia transcriptions (KAZ, KHM).
   soft python3 -m scripts.fetch_census.wiki_census
+  # Reads the committed BNS workbook under data/raw/kazakhstan; no network.
+  soft python3 -m scripts.fetch_census.kazakhstan
   soft python3 -m scripts.fetch_census.malaysia --level both
   soft python3 -m scripts.fetch_census.poland
   # Three ČSÚ open-data CSVs, 170 MB between them; no key.

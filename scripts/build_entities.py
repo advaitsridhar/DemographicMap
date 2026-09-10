@@ -86,6 +86,7 @@ ADAPTER_FILES = [
     "kenya_county.json",
     "thailand_province.json",
     "kazakhstan_region.json", "cambodia_province.json",
+    "kazakhstan_oblast.json", "kazakhstan_district.json",
     "malaysia_state.json", "malaysia_district.json",
     "poland_voivodeship.json", "poland_powiat.json",
     "czechia_kraj.json", "czechia_okres.json",
@@ -129,8 +130,10 @@ ADAPTER_HINTS: dict[str, str] = {
            "by kraj and okres: python -m scripts.fetch_census.czechia",
     "HRV": "DZS Popis 2021 workbook (ethnicity, religion, mother tongue) by "
            "županija and grad/općina: python -m scripts.fetch_census.croatia",
-    "KAZ": "2021 census religion by region, transcribed on Wikipedia: "
-           "python -m scripts.fetch_census.wiki_census --country KAZ",
+    "KAZ": "2021 census religion by region, transcribed on Wikipedia "
+           "(python -m scripts.fetch_census.wiki_census --country KAZ); ethnicity by "
+           "region and district from the Bureau's start-of-2025 workbook "
+           "(python -m scripts.fetch_census.kazakhstan)",
     "KHM": "2019 census religion by province, transcribed on Wikipedia: "
            "python -m scripts.fetch_census.wiki_census --country KHM",
     "BIH": "BHAS Popis 2013 Book 2 tables (ethnicity, religion, mother tongue) by "
