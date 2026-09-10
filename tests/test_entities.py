@@ -3060,6 +3060,7 @@ class UscbReader(unittest.TestCase):
         self.assertEqual(topics["language"].prefix, "")
         self.assertEqual(topics["ethnicity"].sheet, "Nationality-Language")
         self.assertEqual(topics["ethnicity"].prefix, "NL_ETH_")
+        self.assertEqual(topics["ethnicity"].label_prefix, "Ethnicity/nationality,")
         self.assertTrue(self.uscb.mine("NL_ETH_UKR", "NL_ETH_"))
         self.assertFalse(self.uscb.mine("NL_RUS_UKR", "NL_ETH_"))
 

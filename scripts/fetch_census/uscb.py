@@ -169,6 +169,10 @@ class Topic:
     # columns are still whatever is left after the geography -- which is what
     # keeps Ethiopia working, whose ethnic-group columns are not named "ETH_".
     prefix: str = ""
+    # What every alias in the block begins with, and the chart should not.
+    # Ukraine's nationality columns are aliased "Ethnicity/nationality,
+    # Ukrainian"; the group is Ukrainian.
+    label_prefix: str = ""
     year: int | None = None
     source: str = ""
     note: str = ""
@@ -502,6 +506,7 @@ UKRAINE = Country(
     # else; the cells of the cross-tabulation stay unread.
     topics=(Topic("Language", "language"),
             Topic("Nationality-Language", "ethnicity", prefix="NL_ETH_",
+                  label_prefix="Ethnicity/nationality,",
                   note=("Nationality (національність) as declared in the 2001 "
                         "census, the only one independent Ukraine has held; "
                         "read as a description of 2001."))),
@@ -1285,6 +1290,10 @@ def read(book, country: Country,
     else:
         total = denominator(names, aliases, topic.prefix)
     found = groups(names, aliases, total, by_sex, topic.prefix)
+    if topic.label_prefix:
+        found = {i: (label[len(topic.label_prefix):].strip()
+                     if label.startswith(topic.label_prefix) else label)
+                 for i, label in found.items()}
     if not found:
         raise SystemExit(
             f"{country.iso3} {topic.sheet}: no group columns to read"
