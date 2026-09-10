@@ -222,10 +222,19 @@ def main() -> int:
     rows = datasets(payload)
     print(f"  {len(rows)} datasets in the collection")
 
+    # An empty --search means every table, not no table. The first version read
+    # it as "match none", and a run that asked "what is published at this
+    # geography at all" answered zero -- which looks like a finding about the
+    # CSO and is a statement about an empty list.
     needles = [term.strip().lower() for term in args.search.split(",") if term.strip()]
     place = (args.geography or "").lower()
     matches = [r for r in rows
-               if any(n in r["label"].lower() for n in needles)
+               if (not needles
+                   or any(n in r["label"].lower() for n in needles)
+                   # A subject can be a dimension rather than a title: a table
+                   # called "Usually Resident Population" may break down by
+                   # Religion without saying so in its name.
+                   or any(n in d["label"].lower() for n in needles for d in r["dims"]))
                and (not place or any(place in d["label"].lower() for d in r["dims"]))]
     matches.sort(key=lambda r: r["matrix"])
 
