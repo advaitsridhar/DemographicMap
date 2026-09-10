@@ -92,7 +92,7 @@ ADAPTER_FILES = [
     "bahamas_island.json",
     "brazil_state.json", "brazil_municipality.json",
     "germany_land.json", "germany_regierungsbezirk.json",
-    "canada_province.json", "canada_census_division.json",
+    "canada_province.json", "canada_economic_region.json",
     "australia_state.json", "australia_lga.json",
     "uk_lad.json", "uk_county.json",
     # Scotland's councils and Northern Ireland's districts are shapes the ONS
@@ -126,7 +126,7 @@ ADAPTER_HINTS: dict[str, str] = {
            "register (needs a free ergebnisse.zensus2022.de account): "
            "python -m scripts.fetch_census.germany",
     "CAN": "Statistics Canada 2021 Census Profile (religion, visible minority, language): "
-           "python -m scripts.fetch_census.statcan --level census_division",
+           "python -m scripts.fetch_census.statcan",
     "BRA": "IBGE SIDRA 2022 census (population, cor ou raça, religion): "
            "python -m scripts.fetch_census.ibge_sidra --level municipality",
     "AUS": "ABS 2021 Census (religion, ancestry): "
