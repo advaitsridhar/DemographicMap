@@ -1,11 +1,6 @@
-czechia: SLDB 2021 open data, kraje and okresy
-  ethnicity: 76,109,588 bytes
-  religion: 80,039,394 bytes
-  language: 13,944,413 bytes
-  {'admin1': 14, 'admin2': 77}
-  ! language row 'Azerbájdžánský jazyk' has no English name here: 600 people summed across territories, shown as the remainder bar
-  Hlavní město Praha ethnicity: 79 bars, largest Czech 61.7%
-  Hlavní město Praha religion: 23 bars, largest No religion 49.6%
-  Hlavní město Praha language: 57 bars, largest Czech 76.2%
-  wrote data/processed/czechia_kraj.json (213 kB)
-  wrote data/processed/czechia_okres.json (812 kB)
+croatia: Popis 2021, counties and towns/municipalities
+  18,279,747 bytes
+  sheet 1. (ethnicity): 29 categories: ['Croats', 'Albanians', 'Austrians', 'Bosniacs', 'Bulgarians', 'Montenegrins', 'Czechs', 'Hungarians', 'Macedonians', 'Germans', 'Poles', 'Roma', 'Romanians', 'Russians', 'Ruthenians', 'Slovaks', 'Slovenians', 'Serbs', 'Italians', 'Turks', 'Ukrainians', 'Vlachs', 'Jews', 'Other', 'Regional affiliation', 'Declared religion', 'Not classified', 'Not declared', 'Unknown']
+  sheet 2. (religion): 13 categories: ['Catholics', 'Orthodox', 'Protestants', 'Other Christians1)', 'Other Christians, %1)', 'Muslims', 'Jews', 'Oriental religions', 'Other religions, movements and life philosophies', 'Agnostics and sceptics', 'Not religious and atheists', 'Not declared', 'Unknown']
+  sheet 4. (language): 26 categories: ['Croatian', 'Croato-Serbian', 'Albanian', 'Bosnian', 'Bulgarian', 'Montenegrin', 'Czech', 'Hungarian', 'Macedonian', 'German', 'Polish', 'Romani', 'Romanian', 'Russian', 'Ruthenian', 'Slovak', 'Slovenian', 'Serbian', 'Serbo-Croatian', 'Italian', 'Turkish', 'Ukrainian', 'Vlach', 'Hebrew', 'Other languages', 'Unknown']
+croatia: religion lists different units from ethnicity (595 vs 593)
