@@ -1,0 +1,670 @@
+{
+ "iso3": "DZA",
+ "name": "Algeria",
+ "tier_proposed": "C",
+ "sources": [
+  {
+   "fields": [
+    "language"
+   ],
+   "title": "Répartition des berbérophones algériens (au recensement de 1966)",
+   "kind": "census",
+   "format": "html / pdf (journal article)",
+   "geography": "1966 départements (the wilayas of the time) and daïras",
+   "geography_count": null,
+   "matches_boundary_level": "neither (the 1966 division set is far smaller than the 48 wilayas the boundary file draws; counts not stated in any snippet)",
+   "url": "https://www.persee.fr/doc/tigr_0048-7163_1994_num_85_1_1308",
+   "status": 200,
+   "content_type": "text/html;charset=UTF-8",
+   "final_url": "https://www.persee.fr/doc/tigr_0048-7163_1994_num_85_1_1308",
+   "error": null,
+   "body": {
+    "bytes_read": 90903,
+    "kind": "html",
+    "title": "Répartition des berbérophones algériens (au recensement de 1966) - Persée",
+    "links_to_files": [],
+    "mentions": [
+     "census",
+     "language",
+     "languageid",
+     "languages"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "Arab Barometer - Algeria (survey waves; religiosity and religion questions)",
+   "kind": "survey",
+   "format": "microdata download from arabbarometer.org (access terms not established); reports pdf",
+   "geography": "governorate/wilaya used as a sampling stratum",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 by name of level only, if the stratum is released in the public file (not established)",
+   "url": "https://www.arabbarometer.org/countries/algeria/",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://www.arabbarometer.org/countries/algeria/",
+   "error": null,
+   "body": {
+    "bytes_read": 100013,
+    "kind": "html",
+    "title": "Algeria &#8211; Arab Barometer",
+    "links_to_files": [
+     "https://www.arabbarometer.org/wp-content/uploads/ABVII_Algeria_Report-EN.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/ABVII_Climate_Change_Report-EN.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/ABV_Algeria_Protests_Public-Opinion_Arab-Barometer_2019-1.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/ABV_Algeria_Report_Public-Opinion_Arab-Barometer_2019.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/ABV_Health_Report_FINAL_Public-Opinion-2019.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/ABV_Migration_Report_Public-Opinion_Arab-Barometer_2019.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/ABV_Youth_Report_Public-Opinion_Middle-East-North-Africa_2019-1.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/AB_Civic_Engagement_public-opinion-2019-1.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/AB_Media_Report_Final_Public-Opinion-2019-5.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/AB_WomenFinal-version05122018.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/AB_Women_August2019_Public-Opinion_Arab-Barometer.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/Algeria-Arab-Barometer-Public-Opinion-2021-ENG.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/Algeria_Public-Opinion_Survey_2014.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/Algeria_Public_Opinion_Survey_2006.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/Algeria_Public_Opinion_Survey_2016.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/Algeria_Public_Opinion_Survey_Education_2016.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/Democracy_Public-Opinion_Middle-east_North-Africa_2018.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/PublicOpinion_CivicEngagement_MiddleEast_NorthAfrica_2018-1.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/Sexual-Harassement-Domestic-Violence-Arab-Citizens-Public-Opinion-2019.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/environment-10-17-19-jcg.pdf",
+     "https://www.arabbarometer.org/wp-content/uploads/social-capital-public-opinion-2019.pdf"
+    ],
+    "mentions": [
+     "language",
+     "religion"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Langues en Algérie (fr)",
+    "wikitext_bytes": 0,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Algeria",
+    "wikitext_bytes": 44400,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 9,
+    "charts": [
+     "Historical populations",
+     "Pie chart",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "! width=\"70\" |Average population (1 Jan)",
+       "width=\"70\" |Live births",
+       "width=\"70\" |Deaths",
+       "width=\"70\" |Natural change",
+       "width=\"70\" |Crude birth rate (per 1000)",
+       "width=\"70\" |Crude death rate (per 1000)",
+       "width=\"70\" |Natural change (per 1000)",
+       "width=\"70\" |Crude migration rate (per 1000)",
+       "width=\"70\" |Total fertility rate",
+       "width=\"70\" |Male life expectancy"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 31
+     },
+     {
+      "header": [
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929",
+       "1930",
+       "1931",
+       "1932",
+       "1933"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "Years",
+       "1935",
+       "1936",
+       "1937",
+       "1938",
+       "1939",
+       "1940",
+       "1941",
+       "1942",
+       "1943"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "Years",
+       "1945",
+       "1946",
+       "1947",
+       "1948",
+       "1949<ref name=\"ourworldindata.org\" />",
+       "Period",
+       "Life expectancy in <br /> Years<ref>{{Cite web|url=https://esa.un.org/unpd/wpp/DataQuery/|title=World Population Prospects - Population Division - United Nations|website=esa.un.org|access-date=26 August 2018|archive-url=https://web.archive.org/web/20160919061238/https://esa.un.org/unpd/wpp/DataQuery/|archive-date=19 September 2016|url-status=dead}}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in <br /> Years<ref>{{Cite web|url=https://esa.un.org/unpd/wpp/DataQuery/|title=World Population Prospects - Population Division - United Nations|website=esa.un.org|access-date=26 August 2018|archive-url=https://web.archive.org/web/20160919061238/https://esa.un.org/unpd/wpp/DataQuery/|archive-date=19 September 2016|url-status=dead}}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Population",
+       "Nb",
+       "E1a",
+       "E1b1a",
+       "E1b1b1a",
+       "E1b1b1b",
+       "E1b1b1c",
+       "F",
+       "K",
+       "J1"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Standard Algerian Berber",
+    "wikitext_bytes": 5641,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Algeria",
+    "wikitext_bytes": 25958,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Annaba",
+    "found": true,
+    "title": "Annaba",
+    "url": "https://en.wikipedia.org/wiki/Annaba",
+    "wikitext_bytes": 31171,
+    "infobox_params": [
+     "blank_name",
+     "language"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "historical populations"
+    ],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   },
+   {
+    "shape_name": "El Bayadh",
+    "found": true,
+    "title": "El Bayadh",
+    "url": "https://en.wikipedia.org/wiki/El_Bayadh",
+    "wikitext_bytes": 8021,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Guelma",
+    "found": true,
+    "title": "ES Guelma",
+    "url": "https://en.wikipedia.org/wiki/ES_Guelma",
+    "wikitext_bytes": 2702,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Medea",
+    "found": true,
+    "title": "Olympique de Médéa",
+    "url": "https://en.wikipedia.org/wiki/Olympique_de_M%C3%A9d%C3%A9a",
+    "wikitext_bytes": 6589,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Mila",
+    "found": true,
+    "title": "Mila (city)",
+    "url": "https://en.wikipedia.org/wiki/Mila_%28city%29",
+    "wikitext_bytes": 12481,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Algeria: Road Surface Data",
+   "name": "algeria-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/algeria-road-surface-data",
+   "resources": [
+    {
+     "name": "Algeria GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_dza_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Algeria GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_dza_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Algeria: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-algeria",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-algeria",
+   "resources": [
+    {
+     "name": "kontur_boundaries_DZ_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_DZ_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_DZ_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_DZ_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_DZ_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_DZ_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Algeria - Accessibility Indicators",
+   "name": "algeria-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/algeria-accessibility-indicators",
+   "resources": [
+    {
+     "name": "DZA_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/dza/DZA_education_access.gpkg"
+    },
+    {
+     "name": "DZA_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/dza/DZA_education_access_long.csv"
+    },
+    {
+     "name": "DZA_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/dza/DZA_education_access_wide.csv"
+    },
+    {
+     "name": "DZA_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/dza/DZA_hospitals_access.gpkg"
+    },
+    {
+     "name": "DZA_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/dza/DZA_hospitals_access_long.csv"
+    },
+    {
+     "name": "DZA_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/dza/DZA_hospitals_access_wide.csv"
+    },
+    {
+     "name": "DZA_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/dza/DZA_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "DZA_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/dza/DZA_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Algeria - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-algeria",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-algeria",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Algeria",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/3c42dfad-eb23-4fec-ae84-356ba76c677a/resource/a97f07cf-c362-44da-881a-77ff2b4423d4/download/social-protection-and-labor_dza.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Algeria: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "highresolutionpopulationdensitymaps-dza",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/highresolutionpopulationdensitymaps-dza",
+   "resources": [
+    {
+     "name": "dza_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/e86baac1-074a-448b-8e53-3a94eadf2fb9/resource/7e58fbb0-2ca3-4ec3-935e-56df40b01395/download/dza_general_2020_geotiff.zip"
+    },
+    {
+     "name": "dza_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/e86baac1-074a-448b-8e53-3a94eadf2fb9/resource/45621e43-a578-4dca-9381-52b265da35cd/download/dza_general_2020_csv.zip"
+    },
+    {
+     "name": "dza_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/e86baac1-074a-448b-8e53-3a94eadf2fb9/resource/846058d6-eba3-469b-a4a8-8751fde5e491/download/dza_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "dza_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/e86baac1-074a-448b-8e53-3a94eadf2fb9/resource/2280c9bc-000a-4930-a3fd-65e8c97f8799/download/dza_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "dza_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/e86baac1-074a-448b-8e53-3a94eadf2fb9/resource/cdc57f79-0c4d-4b5f-b4f1-9862c3c24465/download/dza_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "dza_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/e86baac1-074a-448b-8e53-3a94eadf2fb9/resource/07878d7c-10e1-43fa-a6ba-7ecb03a3eb00/download/dza_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "dza_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/e86baac1-074a-448b-8e53-3a94eadf2fb9/resource/66cb4ddc-4535-462a-abc5-4ef86d86779b/download/dza_men_2020_csv.zip"
+    },
+    {
+     "name": "dza_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/e86baac1-074a-448b-8e53-3a94eadf2fb9/resource/5e848ae5-a4c1-458f-af1e-2c400456c646/download/dza_men_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Algeria - Population Counts",
+   "name": "worldpop-population-counts-for-algeria",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-algeria",
+   "resources": [
+    {
+     "name": "dza_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/DZA/dza_ppp_2020.tif"
+    },
+    {
+     "name": "dza_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/DZA/dza_ppp_2019.tif"
+    },
+    {
+     "name": "dza_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/DZA/dza_ppp_2018.tif"
+    },
+    {
+     "name": "dza_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/DZA/dza_ppp_2017.tif"
+    },
+    {
+     "name": "dza_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/DZA/dza_ppp_2016.tif"
+    },
+    {
+     "name": "dza_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/DZA/dza_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "dza_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/DZA/dza_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "dza_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/DZA/dza_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Algeria - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-dz-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-dz-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_DZ",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/11eb7081-cffa-44ef-9cf8-31ca0a547828/resource/e594d5e8-278d-4153-846b-93cd53fdd4a8/download/indicator_data_dz.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Algeria: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "dza-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/dza-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/51bacc5e-9a6d-46c0-a08e-d82d4007de21/resource/f8faabfd-9b79-4366-83d7-bf53086e39bc/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_dza.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/51bacc5e-9a6d-46c0-a08e-d82d4007de21/resource/afce12fc-fdc2-458e-9370-e5f472763fa6/download/ghs_pop_e2025_r2023a_54009_100_v1_0_dza.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Algeria: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-dza",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-dza",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-dz-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-dz-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Total mid-year population - Population totale au milieu de l'année",
+   "name": "total-mid-year-population-population-totale-au-milieu-de-l-annee",
+   "org": "United Nations Economic Commission for Africa",
+   "url": "https://data.humdata.org/dataset/total-mid-year-population-population-totale-au-milieu-de-l-annee",
+   "resources": [
+    {
+     "name": "total-mid-year-population(2006-2015).xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/c9434245-74f0-40c3-a581-52a5cb7a8c70/resource/51948a09-c97c-4f71-b26a-247100ac200b/download/total-mid-year-population2006-2015.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Gross enrolment ratio in primary  - Taux brut de scolarisation au primaire",
+   "name": "gross-enrolment-ratio-in-primary-taux-brut-de-scolarisation-au-primaire",
+   "org": "United Nations Economic Commission for Africa",
+   "url": "https://data.humdata.org/dataset/gross-enrolment-ratio-in-primary-taux-brut-de-scolarisation-au-primaire",
+   "resources": [
+    {
+     "name": "Gross enrolment ratio in primary  - Taux brut de scolarisation au primaire.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/09c526d1-7013-406b-8b82-a79ea3a5c83b/resource/2e806fc2-c897-46fd-92c8-31de9540599e/download/gross-enrolment-ratio-in-primary-taux-brut-de-scolarisation-au-primaire.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Agricultural and Food Production Index – Indice de la production agricole et alimentaire",
+   "name": "agricultural-and-food-production-index-indice-de-la-production-agricole-et-alimentaire",
+   "org": "United Nations Economic Commission for Africa",
+   "url": "https://data.humdata.org/dataset/agricultural-and-food-production-index-indice-de-la-production-agricole-et-alimentaire",
+   "resources": [
+    {
+     "name": "Agricultural and Food Production Index – Indice de la production agricole et alimentaire.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/8aca8a6f-10a7-48e3-ae2c-807117303649/resource/d6f0ab59-3fa0-456e-9711-da2f2e9021f1/download/agricultural-and-food-production-index-indice-de-la-production-agricole-et-alimentaire.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.ons.dz/collections/Avant%20propos.html",
+  "status": 0,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>",
+  "pages": []
+ },
+ "verdict": {
+  "hdx_datasets": 12,
+  "hdx_machine_readable": 6,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "2/2",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

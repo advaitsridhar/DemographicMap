@@ -1,0 +1,858 @@
+{
+ "iso3": "NGA",
+ "name": "Nigeria",
+ "tier_proposed": "C",
+ "sources": [
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "Nigeria Demographic and Health Survey 2023-24 (Key Indicators Report PR157; final report announced for 2025)",
+   "kind": "survey",
+   "format": "pdf",
+   "geography": "state + FCT",
+   "geography_count": 37,
+   "matches_boundary_level": "admin1",
+   "url": "https://dhsprogram.com/pubs/pdf/PR157/PR157.pdf",
+   "status": 200,
+   "content_type": "application/pdf",
+   "final_url": "https://dhsprogram.com/pubs/pdf/PR157/PR157.pdf",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "pdf",
+    "pages_hint": 97
+   }
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "Nigeria 2021 Multiple Indicator Cluster Survey (MICS) Survey Findings Report",
+   "kind": "survey",
+   "format": "pdf",
+   "geography": "state + FCT (37 strata)",
+   "geography_count": 37,
+   "matches_boundary_level": "admin1",
+   "url": "https://mics.unicef.org/sites/mics/files/Nigeria%202021_MICS_SFR_English.pdf",
+   "status": 403,
+   "content_type": null,
+   "final_url": null,
+   "error": null
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Nigeria",
+    "wikitext_bytes": 83533,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Nigeria",
+    "wikitext_bytes": 68846,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Religion"
+    ],
+    "wikitables": 13,
+    "charts": [
+     "Historical populations",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "width=\"50\"|Age",
+       "width=\"80\" |Population",
+       "width=\"80\" |Percent",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age",
+       "width=\"80\" |Population"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 31
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age",
+       "width=\"80\" |Population",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [
+       "width=\"50\"|Age",
+       "width=\"80\" |Population",
+       "width=\"50\"|Percent",
+       "width=\"50\"|Age",
+       "width=\"80\" |Population",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 33
+     },
+     {
+      "header": [
+       "width=\"50\"|Age",
+       "width=\"80\" |Population",
+       "width=\"50\"|Percent",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 33
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"70\" |Year",
+       "Population",
+       "width=\"70\" |Live births per year",
+       "width=\"70\" |Deaths per year",
+       "width=\"70\" |Natural change per year",
+       "width=\"70\" |CBR*",
+       "width=\"70\" |CDR*",
+       "width=\"70\" |NC*",
+       "width=\"70\" |TFR*",
+       "width=\"70\" |IMR*"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 32
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "width=\"70\"|Year",
+       "width=\"90\" |TFR",
+       "Variable",
+       "width=\"50\" |TFR (Wanted TFR) (2003)",
+       "width=\"50\" |TFR (Wanted TFR) (2008)",
+       "width=\"50\" |TFR (Wanted TFR) (2013)",
+       "width=\"50\" |TFR (Wanted TFR) (2018)",
+       "width=\"50\" |TFR (Wanted TFR) (2023-24)",
+       "style=\"width:100pt;\"| State",
+       "style=\"width:100pt;\" data-sort-type=number | Total fertility rate"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [
+       "Variable",
+       "width=\"50\" |TFR (Wanted TFR) (2003)",
+       "width=\"50\" |TFR (Wanted TFR) (2008)",
+       "width=\"50\" |TFR (Wanted TFR) (2013)",
+       "width=\"50\" |TFR (Wanted TFR) (2018)",
+       "width=\"50\" |TFR (Wanted TFR) (2023-24)",
+       "style=\"width:100pt;\"| State",
+       "style=\"width:100pt;\" data-sort-type=number | Total fertility rate",
+       "style=\"width:100pt;\" data-sort-type=number | Percentage of women age 15–49 currently pregnant",
+       "style=\"width:100pt;\" data-sort-type=number | Mean number of children ever born to women age 40–49"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| State",
+       "style=\"width:100pt;\" data-sort-type=number | Total fertility rate",
+       "style=\"width:100pt;\" data-sort-type=number | Percentage of women age 15–49 currently pregnant",
+       "style=\"width:100pt;\" data-sort-type=number | Mean number of children ever born to women age 40–49",
+       "rowspan=2| Variable",
+       "colspan=7| TFR",
+       "width=\"50\"|2008",
+       "width=\"50\"|2011*",
+       "width=\"50\"|2013",
+       "width=\"50\"|2016*"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 43
+     },
+     {
+      "header": [
+       "rowspan=2| Variable",
+       "colspan=7| TFR",
+       "width=\"50\"|2008",
+       "width=\"50\"|2011*",
+       "width=\"50\"|2013",
+       "width=\"50\"|2016*",
+       "width=\"50\"|2018",
+       "width=\"50\"|2021*",
+       "width=\"50\"|2024"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "Year",
+       "1982",
+       "1990",
+       "1994",
+       "1999",
+       "2003",
+       "2007",
+       "2008",
+       "2011",
+       "2012"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Brass",
+    "found": true,
+    "title": "Brass, Nigeria",
+    "url": "https://en.wikipedia.org/wiki/Brass%2C_Nigeria",
+    "wikitext_bytes": 9048,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Dala",
+    "found": true,
+    "title": "Dala, Nigeria",
+    "url": "https://en.wikipedia.org/wiki/Dala%2C_Nigeria",
+    "wikitext_bytes": 7285,
+    "infobox_params": [],
+    "sections": [
+     "Religion"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Gboko",
+    "found": true,
+    "title": "Anglican Diocese of Gboko",
+    "url": "https://en.wikipedia.org/wiki/Anglican_Diocese_of_Gboko",
+    "wikitext_bytes": 1052,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Iwajowa",
+    "found": true,
+    "title": "Nigerian National Assembly delegation from Oyo",
+    "url": "https://en.wikipedia.org/wiki/Nigerian_National_Assembly_delegation_from_Oyo",
+    "wikitext_bytes": 15832,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 6,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kiri Kasama",
+    "found": true,
+    "title": "Kiri Kasama",
+    "url": "https://en.wikipedia.org/wiki/Kiri_Kasama",
+    "wikitext_bytes": 2878,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "religion",
+   "title": "Online Research on African Lifestyles and Outlook",
+   "name": "http-www-voicesafrica-com-clients",
+   "org": "Voices Africa Ltd. (inactive)",
+   "url": "https://data.humdata.org/dataset/http-www-voicesafrica-com-clients",
+   "resources": [
+    {
+     "name": "Voices Africa Online Research on African Lifestyles and Outlook - Maisha Data",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/21220488-f6ea-48d6-b7d4-2f7c92aad543/resource/774bb0af-6821-487b-a7b3-dc58077d4cae/download/maisha-data.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Nigeria: Languages",
+   "name": "nigeria-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/nigeria-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_NGA_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/74f5d2a6-1e0a-4d55-8f76-deedd6d145e9/resource/77960885-e845-4783-a98f-6c53095ed0e8/download/clearglobal_language_use_nga_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_NGA_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/74f5d2a6-1e0a-4d55-8f76-deedd6d145e9/resource/4cae7370-7124-420e-9629-d5e9bc4e3ca9/download/clearglobal_language_use_nga_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_NGA_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/74f5d2a6-1e0a-4d55-8f76-deedd6d145e9/resource/b3db65a8-72fb-4e87-b1ba-58fd83ea591b/download/clearglobal_language_use_nga_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Nigeria - Settlements",
+   "name": "nigeria-settlements-villages-towns-cities",
+   "org": "OCHA Nigeria",
+   "url": "https://data.humdata.org/dataset/nigeria-settlements-villages-towns-cities",
+   "resources": [
+    {
+     "name": "nga_plp_nga.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/608e022a-7bdb-4668-b6a0-0e7f668dfb40/resource/f1a05fb0-76dd-471a-bcce-5143e5ccc5aa/download/nga-plp-nga.zip"
+    },
+    {
+     "name": "NGA_pcode_rowca_20150127_2.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/608e022a-7bdb-4668-b6a0-0e7f668dfb40/resource/729bf516-1a9a-4266-bf0d-fef3ae97a88f/download/nga-pcode-rowca-20150127-2.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Nigeria - Roads",
+   "name": "nigeria-roads",
+   "org": "OCHA Nigeria",
+   "url": "https://data.humdata.org/dataset/nigeria-roads",
+   "resources": [
+    {
+     "name": "nga roads.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/82eb9181-a1ab-4c6c-8a9c-e922cc0dfcff/resource/7fde3d05-27ea-49ff-869e-bd7a29db971e/download/nga-roads-shp.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Nigeria - Water Courses",
+   "name": "nigeria-water-courses-cod",
+   "org": "OCHA Nigeria",
+   "url": "https://data.humdata.org/dataset/nigeria-water-courses-cod",
+   "resources": [
+    {
+     "name": "NGA_river_line_dcw.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/8e5fe191-8328-45b6-99b8-99652c53159c/resource/ebd8e424-bd5b-430d-8e41-db9edaa4bea4/download/nga-river-line-dcw-shp.zip"
+    },
+    {
+     "name": "NGA_river_poly_dcw.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/8e5fe191-8328-45b6-99b8-99652c53159c/resource/67ae81f2-dbc2-46eb-b818-13a4787a3751/download/nga-river-poly-dcw-shp.zip"
+    },
+    {
+     "name": "NGA_river_line_esri.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/8e5fe191-8328-45b6-99b8-99652c53159c/resource/9df5fb63-28ef-465b-9520-75fddbfd5356/download/nga-river-line-esri-shp.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Nigeria: Road Surface Data",
+   "name": "nigeria-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/nigeria-road-surface-data",
+   "resources": [
+    {
+     "name": "Nigeria GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_nga_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Nigeria GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_nga_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Nigeria: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-nigeria",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-nigeria",
+   "resources": [
+    {
+     "name": "kontur_boundaries_NG_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_NG_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_NG_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_NG_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_NG_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_NG_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "West African Health Centres - 3 word addresses",
+   "name": "west-african-health-centres",
+   "org": "what3words (inactive)",
+   "url": "https://data.humdata.org/dataset/west-african-health-centres",
+   "resources": [
+    {
+     "name": "Medical Centres with 3 word addresses",
+     "format": "Web App",
+     "url": "http://pertspider.cartodb.com/viz/525a4dd6-7650-11e4-a461-0e018d66dc29/public_map"
+    },
+    {
+     "name": "Medical Centres with 3 word addresses",
+     "format": "JSON",
+     "url": "https://pertspider.carto.com/api/v2/sql?q=select%20*%20from%20public.hdx_20data_20tw"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Nigeria - Subnational Population Statistics",
+   "name": "cod-ps-nga",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-nga",
+   "resources": [
+    {
+     "name": "nga_admpop_2022.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/a7c3de5e-ff27-4746-99cd-05f2ad9b1066/resource/d3a631f1-d9e1-430c-a10e-ff34be40410d/download/nga_admpop_2022.xlsx"
+    },
+    {
+     "name": "nga_admgz.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/a7c3de5e-ff27-4746-99cd-05f2ad9b1066/resource/8e299f2b-b941-468e-a376-03f5303ba698/download/nga_admgz.xlsx"
+    },
+    {
+     "name": "nga_codps_qa_2023.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/a7c3de5e-ff27-4746-99cd-05f2ad9b1066/resource/562e7757-0683-4d61-87bd-a7c94af2ee38/download/nga_codps_qa_2023.pdf"
+    },
+    {
+     "name": "nga_admpop_adm0_2022.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a7c3de5e-ff27-4746-99cd-05f2ad9b1066/resource/4710c51c-813b-481f-bb4e-ffb593e6f126/download/nga_admpop_adm0_2022.csv"
+    },
+    {
+     "name": "nga_admpop_adm1_2022.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a7c3de5e-ff27-4746-99cd-05f2ad9b1066/resource/d9fc551a-b5e4-4bed-9d0d-b047b6961817/download/nga_admpop_adm1_2022.csv"
+    },
+    {
+     "name": "nga_admpop_2020.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/a7c3de5e-ff27-4746-99cd-05f2ad9b1066/resource/3597a93e-3b1d-4d06-ad2c-109c84a951b6/download/nga_admpop_2020.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Nigeria Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys",
+   "name": "nigeria-subnational-boundaries-and-tabular-data",
+   "org": "U.S. Census Bureau",
+   "url": "https://data.humdata.org/dataset/nigeria-subnational-boundaries-and-tabular-data",
+   "resources": [
+    {
+     "name": "Nigeria.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/1caa305c-2d52-4361-a1bc-ce9b850859c6/resource/6694f84b-311a-48cb-81e1-156a24d19e27/download/nigeria.gdb.zip"
+    },
+    {
+     "name": "Nigeria_uscb_202001.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/1caa305c-2d52-4361-a1bc-ce9b850859c6/resource/6b9d8931-46b7-4a93-8d30-fa466e87b668/download/nigeria_uscb_202001.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Nigeria: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "highresolutionpopulationdensitymaps-nga",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/highresolutionpopulationdensitymaps-nga",
+   "resources": [
+    {
+     "name": "nga_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/62ec6c48-2f23-476b-8c1e-e924ad79908d/resource/ec1ac1b2-616e-43a7-ba8c-29eaf3479f24/download/nga_general_2020_csv.zip"
+    },
+    {
+     "name": "nga_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/62ec6c48-2f23-476b-8c1e-e924ad79908d/resource/6eff0694-8fda-4329-8ed3-c81b000b88d4/download/nga_general_2020_geotiff.zip"
+    },
+    {
+     "name": "nga_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/62ec6c48-2f23-476b-8c1e-e924ad79908d/resource/bf7f28a8-e49a-4d2a-99e4-354bc783eb6d/download/nga_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "nga_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/62ec6c48-2f23-476b-8c1e-e924ad79908d/resource/24a86279-ba51-410a-9e5e-443aecbb0edb/download/nga_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "nga_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/62ec6c48-2f23-476b-8c1e-e924ad79908d/resource/e5006c78-ee45-4ec5-866b-edf22e07ccb0/download/nga_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "nga_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/62ec6c48-2f23-476b-8c1e-e924ad79908d/resource/663b8642-517a-4203-98f2-6e47da477376/download/nga_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "nga_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/62ec6c48-2f23-476b-8c1e-e924ad79908d/resource/56b75eea-196a-4597-a561-77d1e226a5de/download/nga_men_2020_csv.zip"
+    },
+    {
+     "name": "nga_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/62ec6c48-2f23-476b-8c1e-e924ad79908d/resource/c0d13bc5-16eb-4885-953a-5e232de1bb0c/download/nga_men_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Nigeria - Accessibility Indicators",
+   "name": "nigeria-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/nigeria-accessibility-indicators",
+   "resources": [
+    {
+     "name": "NGA_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/nga/NGA_education_access.gpkg"
+    },
+    {
+     "name": "NGA_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/nga/NGA_education_access_long.csv"
+    },
+    {
+     "name": "NGA_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/nga/NGA_education_access_wide.csv"
+    },
+    {
+     "name": "NGA_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/nga/NGA_hospitals_access.gpkg"
+    },
+    {
+     "name": "NGA_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/nga/NGA_hospitals_access_long.csv"
+    },
+    {
+     "name": "NGA_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/nga/NGA_hospitals_access_wide.csv"
+    },
+    {
+     "name": "NGA_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/nga/NGA_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "NGA_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/nga/NGA_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Nigeria - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-nigeria",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-nigeria",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Nigeria",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/d31fb623-ab4d-4654-b7e8-f38e9922657a/resource/107172ba-817d-48b0-ac76-ea6c50a37d3f/download/social-protection-and-labor_nga.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Cash activities in Far North - Nigeria",
+   "name": "cash-activities-in-far-north-nigeria",
+   "org": "OCHA Nigeria",
+   "url": "https://data.humdata.org/dataset/cash-activities-in-far-north-nigeria",
+   "resources": [
+    {
+     "name": "ocha_nigeria_ne_cash_activities_May-Nov 2017-distributed.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/9d2b5ac9-b944-4b59-ab4d-17c78c50f6b4/resource/a1a8ac08-807d-4bfb-9d97-2415134f21f1/download/ocha_nigeria_ne_cash_activities_nov-2017-distributed.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Nigeria - Population Counts",
+   "name": "worldpop-population-counts-for-nigeria",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-nigeria",
+   "resources": [
+    {
+     "name": "nga_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/NGA/nga_ppp_2020.tif"
+    },
+    {
+     "name": "nga_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/NGA/nga_ppp_2019.tif"
+    },
+    {
+     "name": "nga_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/NGA/nga_ppp_2018.tif"
+    },
+    {
+     "name": "nga_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/NGA/nga_ppp_2017.tif"
+    },
+    {
+     "name": "nga_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/NGA/nga_ppp_2016.tif"
+    },
+    {
+     "name": "nga_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/NGA/nga_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "nga_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/NGA/nga_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "nga_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/NGA/nga_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bottom-up gridded population estimates for Nigeria, version 2.1",
+   "name": "bottom-up-gridded-population-estimates-for-nigeria-version-2-1",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/bottom-up-gridded-population-estimates-for-nigeria-version-2-1",
+   "resources": [
+    {
+     "name": "NGA_population_v2_1_README.pdf",
+     "format": "PDF",
+     "url": "https://wopr.worldpop.org/download/554"
+    },
+    {
+     "name": "NGA_population_v2_1_agegender.zip",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/555"
+    },
+    {
+     "name": "NGA_population_v2_1_gridded.zip",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/556"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bottom-up gridded population estimates for Nigeria, version 1.2",
+   "name": "bottom-up-gridded-population-estimates-for-nigeria",
+   "org": "GRID3",
+   "url": "https://data.humdata.org/dataset/bottom-up-gridded-population-estimates-for-nigeria",
+   "resources": [
+    {
+     "name": "NGA_population_v1_2_gridded.zip",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/1"
+    },
+    {
+     "name": "NGA_population_v1_2_agesex.zip",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/7"
+    },
+    {
+     "name": "NGA_population_v1_2_admin.zip",
+     "format": "SHP",
+     "url": "https://wopr.worldpop.org/download/2"
+    },
+    {
+     "name": "NGA_population_v1_2_mastergrid.tif",
+     "format": "GeoTIFF",
+     "url": "https://wopr.worldpop.org/download/6"
+    },
+    {
+     "name": "NGA_population_v1_2_methods.zip",
+     "format": "PDF",
+     "url": "https://wopr.worldpop.org/download/236"
+    },
+    {
+     "name": "NGA_population_v1_2_README.pdf",
+     "format": "PDF",
+     "url": "https://wopr.worldpop.org/download/3"
+    },
+    {
+     "name": "NGA_population_v1_2_sql.sql",
+     "format": "SQL",
+     "url": "https://wopr.worldpop.org/download/4"
+    },
+    {
+     "name": "NGA_population_v1_2_tiles.zip",
+     "format": "PNG",
+     "url": "https://wopr.worldpop.org/download/5"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Nigeria: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "nga-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/nga-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/602ed5a2-244d-4f51-bdb4-27c48373db8a/resource/e74b095f-9201-4fd7-9c3b-d9040d857a7d/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_nga.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/602ed5a2-244d-4f51-bdb4-27c48373db8a/resource/2ac6cfda-1c7e-49e3-8a82-de9b4c48f7f8/download/ghs_pop_e2025_r2023a_54009_100_v1_0_nga.tif"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.nigerianstat.gov.ng/",
+  "status": 200,
+  "error": null,
+  "pages": [],
+  "title": "Home | National Bureau of Statistics",
+  "matching_links": 0
+ },
+ "verdict": {
+  "hdx_datasets": 18,
+  "hdx_machine_readable": 9,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "1/2",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

@@ -1,0 +1,1360 @@
+{
+ "iso3": "PHL",
+ "name": "Philippines",
+ "tier_proposed": "D",
+ "sources": [
+  {
+   "fields": [
+    "religion",
+    "ethnicity"
+   ],
+   "title": "Philippines Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Censuses (Philippines_uscb_202402.xlsx)",
+   "kind": "census",
+   "format": "xlsx",
+   "geography": "region (17) and province / highly urbanized city (116)",
+   "geography_count": 116,
+   "matches_boundary_level": "admin1 (17 = 17, all joined) and admin2 (116 rows vs 86 shapes: 82 joined, 33 declared shapeless because geoBoundaries folds HUCs into provinces and draws Metro Manila as numbered districts, 1 unmatched)",
+   "url": "https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15",
+   "status": 202,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15",
+   "error": null
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Philippines",
+    "wikitext_bytes": 102283,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 2,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "scope=\"col\" | Affiliation",
+       "scope=\"col\" | Number (2010)",
+       "scope=\"col\" | Percentage (2010)",
+       "scope=\"col\" | Number (2020)",
+       "scope=\"col\" | Percentage (2020)",
+       "scope=\"row\" | Catholic{{efn|name=2020CatholicCharismatic|excluding Catholic Charismatic numbering 74,096 persons (0.07%)}}",
+       "scope=row | Islam",
+       "scope=row | Evangelical (PCEC-affiliated and other Evangelicals){{efn|The PCEC reports to have 55,000 churches nationwide.<ref>[https://pcec.org.ph/ Philippine Council of Evangelical Churches]</ref>}}",
+       "scope=row | Protestant (NCCP-affiliated and other Protestants){{efn|Member churches of the NCCP include the Apostolic Catholic Church (Philippines), Convention of Philippine Baptist Churches, Episcopal Church in the Philippines, IEMELIF, Philippine Independent Church (Aglipay), Iglesia Unida Ekyumenikal, Lutheran Church in the Philippines, The Salvation Army, United Church of Christ in the Philippines, and the United Methodist Church.<ref>[https://nccphilippines.org/ National Council of Churches in the Philippines]</ref>}}",
+       "scope=row | Iglesia ni Cristo (INC)"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "Region",
+       "Congregations",
+       "Average per ecclesiastical district",
+       "House churches, group worship services (GWS), and church extensions (Ext.)",
+       "Average per ecclesiastical district",
+       "Total (congregations and groups)",
+       "Percent share of all INC congregations"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 7
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Philippines",
+    "wikitext_bytes": 171380,
+    "infobox_params": [
+     "language"
+    ],
+    "sections": [
+     "Ethnic groups and modern immigrants in the Philippines",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 49,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Location",
+       "1603",
+       "1636",
+       "1642",
+       "1644",
+       "1654",
+       "1655",
+       "1670",
+       "1672"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "Province",
+       "Native Tributes",
+       "Spanish Mestizo Tributes",
+       "All Tributes{{efn|Including others such as Latin-Americans and Chinese-Mestizos, pure Chinese paid tribute but were not Philippine citizens as they were transients who returned to China, and Spaniards were exempt}}"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "Provinces",
+       "Pueblos",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Negrito Families",
+       "Chinese Filipino Families",
+       "Total",
+       "! 31,737",
+       "1,249",
+       "1,198"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 37
+     },
+     {
+      "header": [
+       "Provinces",
+       "Pueblos",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Negrito Families",
+       "Chinese Filipino Families",
+       "Total",
+       "! 266",
+       "8",
+       "!"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 37
+     },
+     {
+      "header": [
+       "Provinces",
+       "Pueblos",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Negrito Families",
+       "Chinese Filipino Families",
+       "Total",
+       "! 912",
+       "1",
+       "!"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 41
+     },
+     {
+      "header": [
+       "Provinces",
+       "Pueblos",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Negrito Families",
+       "Chinese Filipino Families",
+       "Total",
+       "! 4,408",
+       "116",
+       "!"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 44
+     },
+     {
+      "header": [
+       "Provinces",
+       "Pueblos",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Chinese Filipino Families",
+       "Total",
+       "(Across the Province)",
+       "'''24,963'''",
+       "'''50'''",
+       "'''40'''"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 47
+     },
+     {
+      "header": [
+       "Provinces",
+       "Pueblos",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Moreno Filipino Families",
+       "Negro (Black) Filipino Families",
+       "Chinese Filipino Families",
+       "Total",
+       "! '''10,152'''",
+       "'''92'''"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 47
+     },
+     {
+      "header": [
+       "Provinces",
+       "Pueblos",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Chinese Filipino Families",
+       "Total",
+       "! '''40,629'''",
+       "'''40'''",
+       "'''2'''",
+       "Provinces"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 57
+     },
+     {
+      "header": [
+       "Provinces",
+       "Pueblos",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Converted Negro Families",
+       "Chinese Filipino Families",
+       "Total",
+       "! '''54,360'''",
+       "'''233'''",
+       "'''5'''"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 55
+     },
+     {
+      "header": [
+       "Province",
+       "Pueblo",
+       "Native Families",
+       "Spanish Filipino Families",
+       "scope=\"row\" | TOTAL",
+       "Province",
+       "Pueblo",
+       "Native Families",
+       "Spanish Filipino Families",
+       "scope=\"row\" | TOTAL"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 48
+     },
+     {
+      "header": [
+       "Province",
+       "Pueblo",
+       "Native Families",
+       "Spanish Filipino Families",
+       "scope=\"row\" | TOTAL",
+       "Province",
+       "Pueblo",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Lacandula Families"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 51
+     },
+     {
+      "header": [
+       "Province",
+       "Pueblo",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Lacandula Families",
+       "Negro Filipinos",
+       "Chinese Filipinos",
+       "scope=\"row\" | TOTAL",
+       "Province",
+       "Pueblo"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 54
+     },
+     {
+      "header": [
+       "Province",
+       "Pueblo",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Lacandula Families",
+       "Negro Filipino families",
+       "Chinese Filipino families",
+       "scope=\"row\" | TOTAL",
+       "Province",
+       "Pueblo"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 37
+     },
+     {
+      "header": [
+       "Province",
+       "Pueblo",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Lacandula Families",
+       "Negro Filipino families",
+       "Chinese Filipino families",
+       "scope=\"row\" | TOTAL",
+       "Province",
+       "Pueblo"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 34
+     },
+     {
+      "header": [
+       "Province",
+       "Pueblo",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Lacandula Families",
+       "Negro Filipino families",
+       "Morenos",
+       "Chinese Filipino families",
+       "scope=\"row\" | TOTAL",
+       "Province"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 43
+     },
+     {
+      "header": [
+       "Province",
+       "Pueblo",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Lacandula Families",
+       "Negro Filipino families",
+       "Chinese Filipino families",
+       "scope=\"row\" | TOTAL",
+       "Province",
+       "Pueblo"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 44
+     },
+     {
+      "header": [
+       "Province",
+       "Pueblo",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Lacandula Families",
+       "Negro Filipino families",
+       "Chinese Filipino families",
+       "scope=\"row\" | TOTAL",
+       "Province",
+       "Pueblo"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 52
+     },
+     {
+      "header": [
+       "Province",
+       "Pueblo",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Lacandula Families",
+       "Negro Filipino families",
+       "Chinese Filipino families",
+       "scope=\"row\" | TOTAL",
+       "Province",
+       "Pueblo"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 54
+     },
+     {
+      "header": [
+       "Province",
+       "Pueblo",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Lacandula Families",
+       "Negro Filipino families",
+       "Chinese Filipino families",
+       "scope=\"row\" | TOTALS",
+       "Province",
+       "Pueblo"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 56
+     },
+     {
+      "header": [
+       "Province",
+       "Pueblo",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Lacandula Families",
+       "Negro Filipino families",
+       "Morenos",
+       "Chinese Filipino families",
+       "scope=\"row\" | TOTAL",
+       "Province"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 48
+     },
+     {
+      "header": [
+       "Province",
+       "Pueblo",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Lacandula Families",
+       "Negro Filipino families",
+       "Chinese Filipino families",
+       "scope=\"row\" | TOTALES",
+       "Provinces",
+       "Pueblos"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 35
+     },
+     {
+      "header": [
+       "Provinces",
+       "Pueblos",
+       "Native Citizens",
+       "Spanish Citizen",
+       "Province",
+       "Pueblo",
+       "Number of Native Families",
+       "Number of Spanish Filipino Families",
+       "Lacandula Families",
+       "Negro Filipino families"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "Province",
+       "Pueblo",
+       "Number of Native Families",
+       "Number of Spanish Filipino Families",
+       "Lacandula Families",
+       "Negro Filipino families",
+       "Morenos",
+       "Chinese Filipino families",
+       "scope=\"row\" | TOTAL",
+       "Province"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "Province",
+       "Pueblo",
+       "Number of Native Families",
+       "Number of Spanish Filipino Families",
+       "Lacandula Families",
+       "Negro Filipino families",
+       "Morenos",
+       "Chinese Filipino families",
+       "scope=\"row\" | TOTAL",
+       "Provinces"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "Provinces",
+       "Pueblos",
+       "Native Families",
+       "Spanish Filipino Families",
+       "Negrito Families",
+       "Chinese Filipino Families",
+       "Provinces",
+       "Pueblos",
+       "Native Citizens",
+       "Spanish Filipino Soldiers"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "Provinces",
+       "Pueblos",
+       "Native Citizens",
+       "Spanish Filipino Soldiers",
+       "Kapampangan Soldiers",
+       "Spanish and Mexican Citizens"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 2
+     },
+     {
+      "header": [
+       "! width=\"70pt\"|Average population",
+       "width=\"80pt\"|Live births",
+       "width=\"80pt\"|Deaths",
+       "width=\"80pt\"|Natural change",
+       "width=\"70pt\"|Crude birth rate (per 1000)",
+       "width=\"70pt\"|Crude death rate (per 1000)",
+       "width=\"70pt\"|Natural change (per 1000)",
+       "width=\"70pt\"|Crude migration change (per 1000)",
+       "width=\"70pt\" |Total fertility rate",
+       "width=\"70pt\"|Infant mortality rate (per 1000 births)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January - November 2024",
+       "January - November 2025",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{cite web |title=Birth, Marriage, and Death Statistics for 2024 (Provisional, as of 30 April 2025) |url=https://psa.gov.ph/statistics/vital-statistics/index |website=Philippine Statistics Authority |date=26 June 2025| access-date=27 May 2026}}</ref>",
+       "width=\"80pt\"|Period",
+       "width=\"80pt\"|Live births per year"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Period",
+       "width=\"80pt\"|Live births per year",
+       "width=\"80pt\"|Deaths per year",
+       "width=\"80pt\"|Natural change per year",
+       "width=\"80pt\"|CBR<sup>1</sup>",
+       "width=\"80pt\"|CDR<sup>1</sup>",
+       "width=\"80pt\"|NC<sup>1</sup>",
+       "width=\"80pt\"|TFR<sup>1</sup>",
+       "width=\"80pt\"|IMR<sup>1</sup>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "style=\"width:50pt;\"| Year",
+       "style=\"width:50pt;\"| CBR (total)",
+       "style=\"width:50pt;\"| TFR (total)",
+       "style=\"width:50pt;\"| CBR (urban)",
+       "style=\"width:50pt;\"| TFR (urban)",
+       "style=\"width:50pt;\"| CBR (rural)",
+       "style=\"width:50pt;\"| TFR (rural)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Reporting <br />year",
+       "data-sort-type=\"number\" | % of women in live-in relationship",
+       "% increase in women in live-in relationship",
+       "% of women in marriages",
+       "% change in women in marriages",
+       "style=\"width:100pt;\"| PSA sources",
+       "style=\"width:100pt;\"| Reporting <br />year",
+       "style=\"width:100pt;\"| Nationwide % of illegitimate children born every year",
+       "style=\"width:100pt;\"| Nationwide % increase in illegitimate children compared to previous year",
+       "style=\"width:100pt;\"| % of illegitimate children born in NCR every year"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Reporting <br />year",
+       "style=\"width:100pt;\"| Nationwide % of illegitimate children born every year",
+       "style=\"width:100pt;\"| Nationwide % increase in illegitimate children compared to previous year",
+       "style=\"width:100pt;\"| % of illegitimate children born in NCR every year",
+       "style=\"width:100pt;\"| % of illegitimate children born in ARMM every year",
+       "style=\"width:100pt;\"| PSA sources"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in years",
+       "Period",
+       "Life expectancy in years",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "style=\"width:150pt;\"| Region",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15–49 currently pregnant",
+       "style=\"width:100pt;\"| Mean number of children ever born to women age 40–49",
+       "Years",
+       "1800",
+       "1801",
+       "1802",
+       "1803",
+       "1804"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "Years",
+       "1800",
+       "1801",
+       "1802",
+       "1803",
+       "1804",
+       "1805",
+       "1806",
+       "1807",
+       "1808"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1810",
+       "1811",
+       "1812",
+       "1813",
+       "1814",
+       "1815",
+       "1816",
+       "1817",
+       "1818"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1820",
+       "1821",
+       "1822",
+       "1823",
+       "1824",
+       "1825",
+       "1826",
+       "1827",
+       "1828"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1830",
+       "1831",
+       "1832",
+       "1833",
+       "1834",
+       "1835",
+       "1836",
+       "1837",
+       "1838"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1840",
+       "1841",
+       "1842",
+       "1843",
+       "1844",
+       "1845",
+       "1846",
+       "1847",
+       "1848"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1850",
+       "1851",
+       "1852",
+       "1853",
+       "1854",
+       "1855",
+       "1856",
+       "1857",
+       "1858"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1860",
+       "1861",
+       "1862",
+       "1863",
+       "1864",
+       "1865",
+       "1866",
+       "1867",
+       "1868"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Years",
+       "1870",
+       "1871",
+       "1872",
+       "1873",
+       "1874",
+       "1875",
+       "1876",
+       "1877",
+       "1878"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Years",
+       "1880",
+       "1881",
+       "1882",
+       "1883",
+       "1884",
+       "1885",
+       "1886",
+       "1887",
+       "1888"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "Years",
+       "1890",
+       "1891",
+       "1892",
+       "1893",
+       "1894",
+       "1895",
+       "1896",
+       "1897",
+       "1898"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 2
+     },
+     {
+      "header": [
+       "Country",
+       "2015",
+       "2020<ref>{{Cite web |title=Population and Housing {{!}} Philippine Statistics Authority |url=https://psa.gov.ph/statistics/population-and-housing/node/1684059982 |access-date=2026-08-14 |website=psa.gov.ph}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 64
+     },
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align:left;\" | Affiliation",
+       "scope=\"col\" style=\"text-align:center;\" colspan=\"3\" | Number",
+       "scope=\"row\" style=\"text-align:left;background-color:initial;\" | {{nowrap|Roman Catholic, ''including Catholic Charismatic''}}",
+       "scope=\"row\" style=\"text-align:left;background-color:initial;\" | Islam",
+       "scope=\"row\" style=\"text-align:left;background-color:initial;\" | {{nowrap|Evangelicals (PCEC)}}",
+       "scope=\"row\" style=\"text-align:left;background-color:initial;\" | {{nowrap|Iglesia ni Cristo}}",
+       "scope=\"row\" style=\"text-align:left;background-color:initial;\" | {{nowrap|''Non-Roman Catholic and Protestant'' (NCCP)}}",
+       "scope=\"row\" style=\"text-align:left;background-color:initial;\" | Aglipayan",
+       "scope=\"row\" style=\"text-align:left;background-color:initial;\" | {{nowrap|Seventh-day Adventist}}",
+       "scope=\"row\" style=\"text-align:left;background-color:initial;\" | {{nowrap|Bible Baptist Church}}"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 10
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Agusan del Norte",
+    "found": true,
+    "title": "Agusan del Norte",
+    "url": "https://en.wikipedia.org/wiki/Agusan_del_Norte",
+    "wikitext_bytes": 33190,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics1_info2",
+     "demographics1_info3",
+     "demographics1_info4",
+     "demographics1_info5"
+    ],
+    "sections": [
+     "Demographics",
+     "Religion"
+    ],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Bataan",
+    "found": true,
+    "title": "Bataan Death March",
+    "url": "https://en.wikipedia.org/wiki/Bataan_Death_March",
+    "wikitext_bytes": 50732,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Cavite",
+    "found": true,
+    "title": "Cavite",
+    "url": "https://en.wikipedia.org/wiki/Cavite",
+    "wikitext_bytes": 142643,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics1_info2",
+     "demographics1_info3",
+     "demographics1_info4",
+     "demographics1_info5",
+     "demographics2_info1",
+     "demographics2_info2",
+     "demographics2_info3",
+     "demographics2_info4",
+     "demographics2_info5",
+     "demographics2_info6",
+     "demographics2_info7"
+    ],
+    "sections": [
+     "Demographics",
+     "Religion",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 5,
+    "charts": [
+     "bar box"
+    ],
+    "composition_blocks": 3,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Ilocos Norte",
+    "found": true,
+    "title": "Legislative districts of Ilocos Norte",
+    "url": "https://en.wikipedia.org/wiki/Legislative_districts_of_Ilocos_Norte",
+    "wikitext_bytes": 7178,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Isabela",
+    "found": true,
+    "title": "Isabela (province)",
+    "url": "https://en.wikipedia.org/wiki/Isabela_%28province%29",
+    "wikitext_bytes": 172857,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics1_info2",
+     "demographics1_info3",
+     "demographics1_info4",
+     "demographics1_info5"
+    ],
+    "sections": [
+     "Demographics",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 4,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "religion",
+   "title": "Philippines Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Censuses",
+   "name": "philippines-subnational-population-and-housing-data-tables",
+   "org": "U.S. Census Bureau",
+   "url": "https://data.humdata.org/dataset/philippines-subnational-population-and-housing-data-tables",
+   "resources": [
+    {
+     "name": "Philippines.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15/resource/f7835bf0-8168-4f4e-9961-108167c381a1/download/philippines.gdb.zip"
+    },
+    {
+     "name": "Philippines_uscb_202402.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15/resource/5acff37e-0c02-4d89-bbd2-1825ee98916c/download/philippines_uscb_202402.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Philippines: Languages",
+   "name": "philippines-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/philippines-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_PHL_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4383caa9-b4e0-4608-80f6-2b74482fe8bd/resource/4be33233-b7bf-40bf-9487-e43920e338e1/download/clearglobal_language_use_phl_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_PHL_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4383caa9-b4e0-4608-80f6-2b74482fe8bd/resource/323edea7-13fa-452e-bd9d-20183e27a7f3/download/clearglobal_language_use_phl_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_PHL_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4383caa9-b4e0-4608-80f6-2b74482fe8bd/resource/92296205-a0ae-4c13-a412-3527b38ad53e/download/clearglobal_language_use_phl_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Philippines - Water Courses (Rivers)",
+   "name": "philippines-water-courses",
+   "org": "OCHA Philippines",
+   "url": "https://data.humdata.org/dataset/philippines-water-courses",
+   "resources": [
+    {
+     "name": "phl_rivl_250k_NAMRIA.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/b4f3d978-000b-4a46-94ca-253ab0ce6cf4/resource/2a131cb9-a90d-49a6-9780-90e4f0a5eb33/download/phl_rivl_250k_namria.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Philippines: Road Surface Data",
+   "name": "philippines-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/philippines-road-surface-data",
+   "resources": [
+    {
+     "name": "Philippines GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_phl_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Philippines GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_phl_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Philippines - Built Up Areas",
+   "name": "philippines-other-0-0-0-0-0-0-0-0-0-0-0-0-0-0",
+   "org": "OCHA Philippines",
+   "url": "https://data.humdata.org/dataset/philippines-other-0-0-0-0-0-0-0-0-0-0-0-0-0-0",
+   "resources": [
+    {
+     "name": "Builtup2010_NAMRIA.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/f9f57fba-4992-4a4d-a04e-df5b14c71c78/resource/df4c3869-d685-4d0e-82e7-ab5fc4f2077a/download/builtup2010_namria.zip"
+    },
+    {
+     "name": "Builtup2010_NAMRIA-Original.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/f9f57fba-4992-4a4d-a04e-df5b14c71c78/resource/4b4c1c7d-3e95-4735-bada-1f73de276e62/download/builtup2010_namria-original.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "PHILIPPINES: 2020 Significant events",
+   "name": "philippines-2020-significant-events",
+   "org": "OCHA Philippines",
+   "url": "https://data.humdata.org/dataset/philippines-2020-significant-events",
+   "resources": [
+    {
+     "name": "Philippines_2020 Significant events.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/6a6dc47a-ee7d-4421-8f93-559f9b166fdc/resource/f423f5f9-c980-4a74-95d5-a1e4ac3820a2/download/philippines_2020-significant-events.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Philippines -  Typhoon Haiyan flood extent",
+   "name": "philippines-other-0-0-0-0-0-0-0-0-0",
+   "org": "OCHA Philippines",
+   "url": "https://data.humdata.org/dataset/philippines-other-0-0-0-0-0-0-0-0-0",
+   "resources": [
+    {
+     "name": "09NOV13_e1100.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/709b40fa-419f-4184-8ebe-e9311e7341d5/resource/d5db58db-9c67-4e01-b90c-a6e360c9c5e6/download/09nov13_e1100.zip"
+    },
+    {
+     "name": "09NOV13_e1800_FullExtent.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/709b40fa-419f-4184-8ebe-e9311e7341d5/resource/7d7b8935-c56c-4d66-9636-49b131177ac2/download/09nov13_e1800_fullextent.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Philippines - Affected Persons Locations",
+   "name": "philippines-affected-persons-locations",
+   "org": "OCHA Philippines",
+   "url": "https://data.humdata.org/dataset/philippines-affected-persons-locations",
+   "resources": [
+    {
+     "name": "Priority Municipalities within Yolanda 50km Radius DSWD.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/b57e5751-7222-4ece-9c94-9b9986f275b7/resource/e21c06da-ad0d-4b72-aaa2-7387e066d00c/download/priority-municipalities-within-yolanda-50km-radius-dswd.xls"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Philippines - Typhoon Haiyan Storm Path",
+   "name": "philippines-other-0-0-0-0-0-0-0-0",
+   "org": "OCHA Philippines",
+   "url": "https://data.humdata.org/dataset/philippines-other-0-0-0-0-0-0-0-0",
+   "resources": [
+    {
+     "name": "Yoanda Path .zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/382df6cd-c068-47bb-a3a9-ca7ada4bcd23/resource/fc1fa88d-af73-40ff-8868-eb123834785e/download/yoanda-path-.zip"
+    },
+    {
+     "name": "Yolanda Path Line .zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/382df6cd-c068-47bb-a3a9-ca7ada4bcd23/resource/947e29aa-4dbb-4f8a-8b41-fcba5b8288d9/download/yolanda-path-line-.zip"
+    },
+    {
+     "name": "GDACS Event Time Line.zip",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/382df6cd-c068-47bb-a3a9-ca7ada4bcd23/resource/9ed99065-71c1-4a0a-9368-204844bab220/download/gdacs-event-time-line.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Philippines: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-philippines",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-philippines",
+   "resources": [
+    {
+     "name": "kontur_boundaries_PH_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_PH_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_PH_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_PH_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_PH_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_PH_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Philippines - Barangays within affected municipalities (Typhoon Haiyan)",
+   "name": "philippines-affected-persons-locations-0",
+   "org": "OCHA Philippines",
+   "url": "https://data.humdata.org/dataset/philippines-affected-persons-locations-0",
+   "resources": [
+    {
+     "name": "Typhoon Haiyan Affected Barangays.zip",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/941248ab-1281-4064-94fb-e630aa67340a/resource/cbe8b279-a3f6-4ebe-934d-52da1aad9737/download/typhoon-haiyan-affected-barangays.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Philippines functional difficulty census 2020",
+   "name": "philippines-functional-difficulty-census-2020",
+   "org": "OCHA Philippines",
+   "url": "https://data.humdata.org/dataset/philippines-functional-difficulty-census-2020",
+   "resources": [
+    {
+     "name": "HH Functional Difficulty Severity Age Group Mun Census2020.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/3895185b-e959-4c57-b6c6-2c1edbe2f439/resource/99744acf-5ee2-4a5b-b2fa-d13f60be1ede/download/hh-functional-difficulty-severity-age-group-mun-census2020.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Philippines 2015 Census Population by Admin4(Barangay)",
+   "name": "philippines-2015-census-population-admin4-single-age",
+   "org": "OCHA Philippines",
+   "url": "https://data.humdata.org/dataset/philippines-2015-census-population-admin4-single-age",
+   "resources": [
+    {
+     "name": "180816_philippines-population-barangay-admin-4_2015 single age.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/841c1c45-1a12-43a3-b5a9-8aaefd9afc57/resource/481a7ae3-01c0-48f8-b591-85cfdaa4841a/download/180816_philippines-population-barangay-admin-4_2015-single-age.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Philippines - Population by Single-Year Age, Sex and Admin4(Barangay), Census 2020",
+   "name": "popn-single-year-age-sex-and-barangay-census-2020",
+   "org": "OCHA Philippines",
+   "url": "https://data.humdata.org/dataset/popn-single-year-age-sex-and-barangay-census-2020",
+   "resources": [
+    {
+     "name": "2020 Census Total Popn_Single Age_MaleFemale_Admin4.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/11530271-63a5-4749-8c11-bc5de0bf6a8f/resource/444f71d1-41f3-474e-a93e-df6cfe8ad642/download/2020-census-total-popn_single-age_malefemale_admin4.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Philippines - Households by Main Source of Drinking Water Census 2020",
+   "name": "hh-by-main-source-of-drinking-water-census-2020",
+   "org": "OCHA Philippines",
+   "url": "https://data.humdata.org/dataset/hh-by-main-source-of-drinking-water-census-2020",
+   "resources": [
+    {
+     "name": "HH Drinking Water Source Admin3 Census2020.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/6a285862-d8de-4def-9563-0d8ac94f4e3c/resource/e6ce2adb-9d2f-4733-b396-f2b967d77dd8/download/hh-drinking-water-source-admin3-census2020.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Philippines:  Total Population by Barangay",
+   "name": "2020-census-total-population-by-barangay_admin4",
+   "org": "OCHA Philippines",
+   "url": "https://data.humdata.org/dataset/2020-census-total-population-by-barangay_admin4",
+   "resources": [
+    {
+     "name": "2020 Census Total Popn Brgy_Adm4_New Pcode.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/186f5609-e970-4165-86a0-a87a770532e2/resource/dd6fb33a-a91b-450c-a0f8-0b760a75458e/download/2020-census-total-popn-brgy_adm4_new-pcode.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Philippines : 2020 Census Popn by Sex, Age group and mun admin3",
+   "name": "2020-census-popn-by-sex-age-group-and-mun-admin3",
+   "org": "OCHA Philippines",
+   "url": "https://data.humdata.org/dataset/2020-census-popn-by-sex-age-group-and-mun-admin3",
+   "resources": [
+    {
+     "name": "2020 CPH Sex_Age group Popn Mun_Admin3 New Pcode.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/c1edf0c5-58c8-4d39-b566-937b1ad7907f/resource/bd5a42c1-2b36-4e1a-8ba8-9e231f0796e2/download/2020-cph-sex_age-group-popn-mun_admin3-new-pcode.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Philippines: Housing Walls and Roof Construction Materials Census 2020 by Admin3 (Municipality)",
+   "name": "housing-walls-and-roof-construction-materials-census-2020-by-admin3-municipality",
+   "org": "OCHA Philippines",
+   "url": "https://data.humdata.org/dataset/housing-walls-and-roof-construction-materials-census-2020-by-admin3-municipality",
+   "resources": [
+    {
+     "name": "Housing_Roof_Wall_Census2020.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d2098d7b-23f5-4da2-a17d-3c56674fbd49/resource/08b6441c-d3cc-4d36-8c04-fdc37fa274e2/download/housing_roof_wall_census2020.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Philippines: Households by Kind of Toilet Facility City/Municipality (admin3) Census 2020",
+   "name": "households-by-kind-of-toilet-facility-admin3-census-2020",
+   "org": "OCHA Philippines",
+   "url": "https://data.humdata.org/dataset/households-by-kind-of-toilet-facility-admin3-census-2020",
+   "resources": [
+    {
+     "name": "HH Toilet Facility Admin3 Census2020.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d1cef374-f47f-429d-836f-cf84ce4e48ba/resource/de5cdc44-7154-4666-922b-2e87dc93dcd3/download/hh-toilet-facility-admin3-census2020.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Philippines - Subnational Administrative Boundaries",
+   "name": "cod-ab-phl",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-phl",
+   "resources": [
+    {
+     "name": "phl_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/caf116df-f984-4deb-85ca-41b349d3f313/resource/3fa0dbcf-e07d-4506-9821-ba15baa6da07/download/phl_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "phl_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/caf116df-f984-4deb-85ca-41b349d3f313/resource/4e4067d6-3fc8-4d2c-91ea-330c3d4f8e8e/download/phl_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "phl_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/caf116df-f984-4deb-85ca-41b349d3f313/resource/0120c30e-ba8b-487d-83f5-a664eddd3a8e/download/phl_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "phl_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/caf116df-f984-4deb-85ca-41b349d3f313/resource/159ffd3d-679f-431c-812f-b6d6f957045e/download/phl_admin_boundaries.xlsx"
+    }
+   ]
+  }
+ ],
+ "verdict": {
+  "hdx_datasets": 20,
+  "hdx_machine_readable": 15,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/1",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "1/5"
+ }
+}

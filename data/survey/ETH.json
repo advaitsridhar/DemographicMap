@@ -1,0 +1,1019 @@
+{
+ "iso3": "ETH",
+ "name": "Ethiopia",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "religion",
+    "ethnicity",
+    "language"
+   ],
+   "title": "Ethiopia Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys",
+   "kind": "census",
+   "format": "xlsx",
+   "geography": "first-order areas (regions) and zones",
+   "geography_count": 93,
+   "matches_boundary_level": "admin2 (93 USCB zones vs 74 boundary zones; 72 already joined) and admin1 (13 areas vs 11 shapes; 11 already joined)",
+   "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+   "status": 202,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+   "error": null
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity",
+    "language"
+   ],
+   "title": "2007 Population and Housing Census of Ethiopia - national report (Summary and Statistical Report)",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "region (and zone in the regional volumes)",
+   "geography_count": null,
+   "matches_boundary_level": "admin1",
+   "url": "https://ess.gov.et/wp-content/uploads/2026/06/national-population-and-housing-census-report-2007.pdf",
+   "status": 200,
+   "content_type": "application/pdf",
+   "final_url": "https://ess.gov.et/wp-content/uploads/2026/06/national-population-and-housing-census-report-2007.pdf",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "pdf"
+   }
+  },
+  {
+   "fields": [
+    "religion",
+    "ethnicity",
+    "language"
+   ],
+   "title": "Ethiopia - The 2007 Population and Housing Census of Ethiopia - IPUMS Subset",
+   "kind": "census",
+   "format": "microdata (registration required)",
+   "geography": "region and zone (IPUMS geography variables)",
+   "geography_count": null,
+   "matches_boundary_level": "admin1/admin2 via IPUMS GEO variables (unverified)",
+   "url": "https://microdata.worldbank.org/index.php/catalog/2747",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://microdata.worldbank.org/index.php/catalog/2747",
+   "error": null,
+   "body": {
+    "bytes_read": 81546,
+    "kind": "html",
+    "title": "Ethiopia - The 2007 Population and Housing Census of Ethiopia - IPUMS Subset",
+    "links_to_files": [
+     "https://international.ipums.org/international/resources/misc_docs/migCrosswalk_names.pdf"
+    ],
+    "mentions": [
+     "census",
+     "ethnic",
+     "ethnicity",
+     "language",
+     "mother tongue",
+     "religion"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "Ethiopia Demographic and Health Survey 2024-25 Key Indicators Report",
+   "kind": "survey",
+   "format": "pdf",
+   "geography": "region",
+   "geography_count": null,
+   "matches_boundary_level": "admin1",
+   "url": "https://ess.gov.et/wp-content/uploads/2026/01/edhs-2024-25-kir-01172026.pdf",
+   "status": 200,
+   "content_type": "application/pdf",
+   "final_url": "https://ess.gov.et/wp-content/uploads/2026/01/edhs-2024-25-kir-01172026.pdf",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "pdf"
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Demographics of Ethiopia",
+    "wikitext_bytes": 38609,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 10,
+    "charts": [
+     "Historical populations",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "! style=\"width:80pt;\"|Total population",
+       "style=\"width:80pt;\"|Population aged 0–14 (%)",
+       "style=\"width:80pt;\"|Population aged 15–64 (%)",
+       "style=\"width:80pt;\"|Population aged 65+ (%)",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align: left;\" |Year",
+       "style=\"width:70pt;\"|Population (thousands)",
+       "style=\"width:70pt;\"|Live births (thousands)",
+       "style=\"width:70pt;\"|Deaths (thousands)",
+       "style=\"width:70pt;\"|Natural change  (thousands)",
+       "style=\"width:70pt;\"|CBR",
+       "style=\"width:70pt;\"|CDR",
+       "style=\"width:70pt;\"|NC",
+       "style=\"width:70pt;\"|TFR",
+       "style=\"width:70pt;\"|IMR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "width=\"150pt\"|Region",
+       "width=\"70pt\"|Urban TFR",
+       "width=\"70pt\"|Rural TFR",
+       "width=\"70pt\"|Total TFR (U+R)",
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929<ref name=\"ourworldindata.org\">{{Cite web |last=Our World in Data |title=Children born per woman |url=https://ourworldindata.org/grapher/children-born-per-woman?year=1800 |url-status=dead |archive-url=https://web.archive.org/web/20180630195909/https://ourworldindata.org/grapher/children-born-per-woman?year=1800|archive-date=30 June 2018 |access-date=May 28, 2026}}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929<ref name=\"ourworldindata.org\">{{Cite web |last=Our World in Data |title=Children born per woman |url=https://ourworldindata.org/grapher/children-born-per-woman?year=1800 |url-status=dead |archive-url=https://web.archive.org/web/20180630195909/https://ourworldindata.org/grapher/children-born-per-woman?year=1800|archive-date=30 June 2018 |access-date=May 28, 2026}}</ref>",
+       "Years",
+       "1930",
+       "1931",
+       "1932"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1930",
+       "1931",
+       "1932",
+       "1933",
+       "1934",
+       "1935",
+       "1936",
+       "1937",
+       "1938"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1940",
+       "1941",
+       "1942",
+       "1943",
+       "1944",
+       "1945",
+       "1946",
+       "1947",
+       "1948"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=3| Crude birth rate (CBR)",
+       "colspan=3| Total fertility rate (TFR)",
+       "colspan=3| Wanted fertility rate (WFR)",
+       "total",
+       "urban",
+       "rural",
+       "total",
+       "urban",
+       "rural"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\"| Region",
+       "style=\"width:100pt;\"| Total fertility rate",
+       "style=\"width:100pt;\"| Percentage of women age 15–49 currently pregnant",
+       "style=\"width:100pt;\"| Mean number of children ever born to women age 40–49"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 12
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "List of ethnic groups in Ethiopia",
+    "wikitext_bytes": 13938,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic Groups in Ethiopian censuses"
+    ],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic<br />group",
+       "rowspan=\"2\" | Linguistic",
+       "colspan=\"2\" | Census<br />  1994<ref>United nations Demographic Yearbook Special Census Topics. Volume 2b Table 4  [http://unstats.un.org/unsd/demographic/products/dyb/dybcens.htm]</ref>",
+       "colspan=\"2\" | Census<br /> 2007<ref>{{Cite web |date=2007 |title=Ethiopian Census First Draft |url=http://www.csa.gov.et/pdf/Cen2007_firstdraft.pdf |url-status=dead |archive-url=https://web.archive.org/web/20090305231227/http://www.csa.gov.et/pdf/Cen2007_firstdraft.pdf |archive-date=5 March 2009 |access-date=3 June 2022 |website=Central Statistics Agency}}</ref>",
+       "Number",
+       "%",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "Ethnic Group",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 11
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "List of Ethiopian regional states by population",
+    "wikitext_bytes": 3469,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Region",
+       "1994 Census<ref>{{cite web |title=Census 1994 |url=http://www.statsethiopia.gov.et/census-1994/ |website=Ethiopian Statistical Service |publisher=Government of Ethiopia |access-date=19 August 2023}}</ref>",
+       "2007 Census<ref>{{cite web |title=Census 2007 |url=http://www.statsethiopia.gov.et/census-2007-2/ |website=Ethiopian Statistical Service |publisher=Government of Ethiopia |access-date=12 October 2023 }}{{Dead link|date=April 2026 |bot=InternetArchiveBot }}</ref>",
+       "2023 Worldometer<ref>{{Cite web |title=Population Size by Sex, Region, Zone and Wereda: July 2023 |url=http://www.statsethiopia.gov.et/wp-content/uploads/2023/08/Population-of-Zones-and-Weredas-Projected-as-of-July-2023.pdf |access-date=12 October 2023 |website=Ethiopian Statistical Service |archive-date=24 August 2023 |archive-url=https://web.archive.org/web/20230824135816/http://www.statsethiopia.gov.et/wp-content/uploads/2023/08/Population-of-Zones-and-Weredas-Projected-as-of-July-2023.pdf |url-status=dead }}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 15
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Ethiopia",
+    "wikitext_bytes": 40464,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 3,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\"| Year",
+       "colspan=\"4\"| Christians",
+       "rowspan=\"2\"| Muslims",
+       "rowspan=\"2\"| Traditional faiths",
+       "rowspan=\"2\"| Other",
+       "Total",
+       "Ethiopian Orthodox",
+       "Protestants",
+       "Catholics",
+       "rowspan=\"2\"| Year"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "rowspan=\"2\"| Year",
+       "colspan=\"4\"| Christians",
+       "rowspan=\"2\"| Muslims",
+       "rowspan=\"2\"| Traditional faiths",
+       "rowspan=\"2\"| Other",
+       "Total",
+       "Ethiopian Orthodox",
+       "Protestants",
+       "Catholics",
+       "! 1994"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "! 1994",
+       "2007",
+       "1994",
+       "2007",
+       "1994",
+       "2007",
+       "1994",
+       "2007",
+       "1994",
+       "2007"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Agnuak",
+    "found": false
+   },
+   {
+    "shape_name": "Awi/Agew",
+    "found": true,
+    "title": "Army of the Ethiopian Empire",
+    "url": "https://en.wikipedia.org/wiki/Army_of_the_Ethiopian_Empire",
+    "wikitext_bytes": 58045,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Central",
+    "found": true,
+    "title": "Ethiopian Statistical Service",
+    "url": "https://en.wikipedia.org/wiki/Ethiopian_Statistical_Service",
+    "wikitext_bytes": 5856,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Gamo Gofa",
+    "found": true,
+    "title": "Gamo-Gofa-Dawro language",
+    "url": "https://en.wikipedia.org/wiki/Gamo-Gofa-Dawro_language",
+    "wikitext_bytes": 12105,
+    "infobox_params": [
+     "ethnicity"
+    ],
+    "sections": [],
+    "wikitables": 8,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   },
+   {
+    "shape_name": "Horo Guduru",
+    "found": true,
+    "title": "Horo Guduru Welega Zone",
+    "url": "https://en.wikipedia.org/wiki/Horo_Guduru_Welega_Zone",
+    "wikitext_bytes": 2894,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "religion",
+   "title": "Ethiopia Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys",
+   "name": "ethiopia-subnational-boundaries-and-tabular-data",
+   "org": "U.S. Census Bureau",
+   "url": "https://data.humdata.org/dataset/ethiopia-subnational-boundaries-and-tabular-data",
+   "resources": [
+    {
+     "name": "Ethiopia.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/71e2b4e4-6e3d-4cc9-90c3-51551dbc7043/download/ethiopia.gdb.zip"
+    },
+    {
+     "name": "Ethiopia_uscb_202308.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/ethiopia_uscb_202308.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "ethnicity",
+   "title": "Ethiopia - KPC (KAP) Survey Report Shire, Adi-Harush camp - 2017",
+   "name": "unhcr-eth-kap-2017-shire-adiharush-v2-1",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-eth-kap-2017-shire-adiharush-v2-1",
+   "resources": [
+    {
+     "name": "Ethiopia - KPC (KAP) Survey Report Shire, Adi-Harush camp - 2017",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/153/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/153/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "ethnicity",
+   "title": "Ethiopia - KPC (KAP) Survey Report Shire, Hitsats camp - 2017",
+   "name": "unhcr-eth-kap-2017-shire-histast-v2-1",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-eth-kap-2017-shire-histast-v2-1",
+   "resources": [
+    {
+     "name": "Ethiopia - KPC (KAP) Survey Report Shire, Hitsats camp - 2017",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/154/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/154/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "ethnicity",
+   "title": "Regional Intention Survey of South Sudanese Refugees in Central African Republic, Democratic Republic of The Congo, Ethiopia, Kenya, Sudan and Uganda (June 2019)",
+   "name": "unhcr-ssd-2019-reg-intentionsurv-v2-1",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-ssd-2019-reg-intentionsurv-v2-1",
+   "resources": [
+    {
+     "name": "Regional Intention Survey of South Sudanese Refugees in Central African Republic, Democratic Republic of The Congo, Ethiopia, Kenya, Sudan and Uganda (June 2019)",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/224/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/224/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ethiopia: Languages",
+   "name": "ethiopia-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/ethiopia-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_ETH_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/b980994e-7b47-4738-8a79-fdffd44a7b53/resource/492de97d-d950-41f4-8af8-963a93b5ff25/download/clearglobal_language_use_eth_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_ETH_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/b980994e-7b47-4738-8a79-fdffd44a7b53/resource/7eec7ce2-e2bf-4ad6-869d-c5e07cdd250f/download/clearglobal_language_use_eth_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_ETH_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/b980994e-7b47-4738-8a79-fdffd44a7b53/resource/e4af6fed-2898-4b49-b4ee-79ceb1be2635/download/clearglobal_language_use_eth_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ethiopia: Settlements",
+   "name": "ethiopia-settlements",
+   "org": "OCHA Ethiopia",
+   "url": "https://data.humdata.org/dataset/ethiopia-settlements",
+   "resources": [
+    {
+     "name": "ETH_PopulatedAreas2022.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/4f158439-f0e0-4bbb-a620-9897facf24a6/resource/2f57663b-ffe5-4c31-850e-92d7f69e1a15/download/eth_populatedareas.zip"
+    },
+    {
+     "name": "ETH_CapitalTowns 2021 Shape files",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/4f158439-f0e0-4bbb-a620-9897facf24a6/resource/2e02f0cf-b076-4b3f-a10a-e742babc2878/download/eth_capitaltowns-2021-shape-files.zip"
+    },
+    {
+     "name": "ETH_CapitalTowns 2021",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/4f158439-f0e0-4bbb-a620-9897facf24a6/resource/63143067-46e0-4fb5-b131-d83ee45122ab/download/eth_capitaltowns-2021.xlsx"
+    },
+    {
+     "name": "eth_pplp_multiplesources_20160205.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/4f158439-f0e0-4bbb-a620-9897facf24a6/resource/72787b5b-69d5-4d55-a832-4e4533a2f2d0/download/eth_pplp_multiplesources_20160205.zip"
+    },
+    {
+     "name": "ETH_PopulatedPlaces_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/4f158439-f0e0-4bbb-a620-9897facf24a6/resource/e837457c-3944-4ea2-b0d1-e741f18b5da9/download/eth_populatedplaces_tabulardata.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ethiopia - Elevation Model",
+   "name": "ethiopia-elevation-model",
+   "org": "OCHA Ethiopia",
+   "url": "https://data.humdata.org/dataset/ethiopia-elevation-model",
+   "resources": [
+    {
+     "name": "eth_dem_90m.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/afcf2557-61b4-4589-8092-b32993c4b3fe/resource/9b93a14e-c6d7-46ce-86de-0a3f5eb23918/download/ethdem90m.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ethiopia: Road Surface Data",
+   "name": "ethiopia-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/ethiopia-road-surface-data",
+   "resources": [
+    {
+     "name": "Ethiopia GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_eth_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Ethiopia GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_eth_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ethiopia - Location of Health Facilities",
+   "name": "ethiopia-health",
+   "org": "OCHA Ethiopia",
+   "url": "https://data.humdata.org/dataset/ethiopia-health",
+   "resources": [
+    {
+     "name": "Ethiopia - Location of Health Facilities",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/679984dc-2e48-42a5-9a2d-9135d8aad307/resource/edc6b359-054f-4027-b1af-2e8d34a0b28f/download/health_facility.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ethiopia - Hot Spot Woredas",
+   "name": "ethiopia-nutrition-0",
+   "org": "OCHA Ethiopia",
+   "url": "https://data.humdata.org/dataset/ethiopia-nutrition-0",
+   "resources": [
+    {
+     "name": "Eth_Hotspot_Woredas_Mar2016.xls",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/7cc9a5cc-91e8-4f3e-9b53-d4b399d775b0/resource/8b4e2e45-30da-4817-bc5f-a9ad58b82b2e/download/eth_hotspot_woredas_mar2016.xls"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ethiopia: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-ethiopia",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-ethiopia",
+   "resources": [
+    {
+     "name": "kontur_boundaries_ET_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_ET_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_ET_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_ET_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_ET_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_ET_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ethiopia - Nutrition hotspot woredas (2015)",
+   "name": "ethiopia-nutrition",
+   "org": "OCHA Ethiopia",
+   "url": "https://data.humdata.org/dataset/ethiopia-nutrition",
+   "resources": [
+    {
+     "name": "nutrition_hotspot_may2015.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/65985dc6-1079-470f-a7a8-59a6b36a5ce2/resource/8dfd43b1-856c-46d8-867f-33b01645639d/download/nutrition_hotspot_may2015.xls"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ethiopia - Nutrition Hot Spot Woredas (June 2011)",
+   "name": "ethiopia-other-0",
+   "org": "OCHA Ethiopia",
+   "url": "https://data.humdata.org/dataset/ethiopia-other-0",
+   "resources": [
+    {
+     "name": "Nutrition Hotspot Woredas - June 2011",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/7ee87c5c-78ad-4583-8304-90e60c9fddd1/resource/e2b2d334-bf6c-482f-a814-53c5c2458d19/download/nutritionhotspotjune2011.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ethiopia - Facebook Users",
+   "name": "ethiopia-facebook-users",
+   "org": "3iS",
+   "url": "https://data.humdata.org/dataset/ethiopia-facebook-users",
+   "resources": [
+    {
+     "name": "Ethiopia - Users on Facebook.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/a10ca0f4-a43b-4496-b3b2-196dc9d4539c/resource/68e37e77-b709-449c-b771-e909e40b7ed3/download/ethiopia-users-on-facebook.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ethiopia - Accessibility Indicators",
+   "name": "ethiopia-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/ethiopia-accessibility-indicators",
+   "resources": [
+    {
+     "name": "ETH_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/eth/ETH_education_access.gpkg"
+    },
+    {
+     "name": "ETH_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/eth/ETH_education_access_long.csv"
+    },
+    {
+     "name": "ETH_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/eth/ETH_education_access_wide.csv"
+    },
+    {
+     "name": "ETH_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/eth/ETH_hospitals_access.gpkg"
+    },
+    {
+     "name": "ETH_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/eth/ETH_hospitals_access_long.csv"
+    },
+    {
+     "name": "ETH_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/eth/ETH_hospitals_access_wide.csv"
+    },
+    {
+     "name": "ETH_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/eth/ETH_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "ETH_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/eth/ETH_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ethiopia: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "ethiopia-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/ethiopia-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "eth_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/6aad43ea-78c5-44b4-827a-505d8d1e83cf/resource/d0bc125e-aaf3-4d14-b4c7-148ae0800ec9/download/eth_general_2020_geotiff.zip"
+    },
+    {
+     "name": "eth_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/6aad43ea-78c5-44b4-827a-505d8d1e83cf/resource/e7629a56-cf23-4183-b0f3-2852c432a70e/download/eth_general_2020_csv.zip"
+    },
+    {
+     "name": "eth_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/6aad43ea-78c5-44b4-827a-505d8d1e83cf/resource/b37c8521-5da2-4f4c-88c2-15e0ef52dc87/download/eth_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "eth_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/6aad43ea-78c5-44b4-827a-505d8d1e83cf/resource/ec46af15-4116-40b9-8ba3-f862d2af9b19/download/eth_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "eth_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/6aad43ea-78c5-44b4-827a-505d8d1e83cf/resource/5cc69576-d23d-4951-8a5a-0ed696e7ea09/download/eth_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "eth_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/6aad43ea-78c5-44b4-827a-505d8d1e83cf/resource/4b81377a-74db-426b-a8a1-5177d6ab1b2d/download/eth_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "eth_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/6aad43ea-78c5-44b4-827a-505d8d1e83cf/resource/00f670b9-bc97-4eba-9930-3b1dde2c614c/download/eth_men_2020_csv.zip"
+    },
+    {
+     "name": "eth_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/6aad43ea-78c5-44b4-827a-505d8d1e83cf/resource/68b93d62-bd4f-4535-a5d7-b29708dc371e/download/eth_men_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ethiopia Surface Area",
+   "name": "ethiopia-surface-area",
+   "org": "OCHA Regional Office for Southern and Eastern Africa (ROSEA)",
+   "url": "https://data.humdata.org/dataset/ethiopia-surface-area",
+   "resources": [
+    {
+     "name": "Ethiopia-Surface Area.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e433e76b-52d9-489c-ac85-9f6c19f17f38/resource/cee75444-c65e-434a-b001-0f1a0a6dceb9/download/ethiopia-surface-area.csv"
+    },
+    {
+     "name": "Ethiopia-Surface Area.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e433e76b-52d9-489c-ac85-9f6c19f17f38/resource/eab7bfe7-c801-4b3a-9d7b-b42460f36e2b/download/ethiopia-surface-area.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ethiopia - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-ethiopia",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-ethiopia",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Ethiopia",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a4f692c0-9680-4b17-9251-b6301bc45538/resource/be51710f-a2cc-40e9-8a62-b63c8a04c074/download/social-protection-and-labor_eth.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ethiopia: IRC Ethiopia Sub Grantee Projects by Sectors and Donors",
+   "name": "irc-ethiopia-sub-grantee-projects-by-sectors-and-donors",
+   "org": "International Rescue Committee Ethiopia",
+   "url": "https://data.humdata.org/dataset/irc-ethiopia-sub-grantee-projects-by-sectors-and-donors",
+   "resources": [
+    {
+     "name": "IRCsubgranteeJun2024.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/497b8b27-fa28-409b-8536-7cdf3da0d742/resource/45963c0c-61bc-4a53-a746-1714fda8256a/download/ircsubgranteejun2024.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ethiopia - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-et-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-et-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_ET",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4e750655-beb9-4ada-a368-73b5e2b25bca/resource/8fa9ba1b-3476-4c35-8632-e7757510ca88/download/indicator_data_et.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ethiopia: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "eth-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/eth-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/9a981f05-8f53-46c1-980b-a4d99c996411/resource/0db87fb5-b454-44d3-bc80-fd13aab96011/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_eth.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/9a981f05-8f53-46c1-980b-a4d99c996411/resource/e0cae2df-b76b-4bd5-aeb1-bdefbf6c1a57/download/ghs_pop_e2025_r2023a_54009_100_v1_0_eth.tif"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://ess.gov.et/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://ess.gov.et/Population/",
+    "status": 200,
+    "kind": "html",
+    "title": "Population (surveys) | Ethiopian Statistics Services",
+    "files": [
+     "https://ess.gov.et/wp-content/uploads/2005/10/dhs_survey_report_2005.pdf",
+     "https://ess.gov.et/wp-content/uploads/2024/06/Ethiopia-Demographic-Health-Survey-Report-Key-Findings-2016.pdf",
+     "https://ess.gov.et/wp-content/uploads/2026/01/edhs-2024-25-kir-01172026.pdf",
+     "https://ess.gov.et/wp-content/uploads/2026/02/2016-ethiopian-dhs-final-report.pdf",
+     "https://ess.gov.et/wp-content/uploads/2026/07/2011-ethiopia-dhs-final-report.pdf",
+     "https://ess.gov.et/wp-content/uploads/2026/07/dhs_survey_report_2000.pdf",
+     "https://ess.gov.et/wp-content/uploads/2026/07/ethiopia-demographic-and-health-survey-edhs-2024_25-detail-report.pdf",
+     "https://ess.gov.et/wp-content/uploads/2026/07/ethiopia-demographic-and-health-survey-edhs-2024_25-summary-report.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://ess.gov.et/population-census/",
+    "status": 200,
+    "kind": "html",
+    "title": "Population (census) | Ethiopian Statistics Services",
+    "files": [
+     "https://ess.gov.et/wp-content/uploads/1994/09/Population-and-Housing-Census-1994-Addis-Ababa-Region-Analytical-Report.pdf",
+     "https://ess.gov.et/wp-content/uploads/2023/09/Population-of-Zones-and-Weredas-Projected-as-of-July-2023.pdf",
+     "https://ess.gov.et/wp-content/uploads/2024/06/analytical-report-on-housing-characteristics-2007.pdf",
+     "https://ess.gov.et/wp-content/uploads/2026/04/projected_population-2025-g.c.pdf",
+     "https://ess.gov.et/wp-content/uploads/2026/06/national-population-and-housing-census-report-2007.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://ess.gov.et/agriculture-census/",
+    "status": 200,
+    "kind": "html",
+    "title": "Agriculture (census) | Ethiopian Statistics Services",
+    "files": [
+     "https://ess.gov.et/wp-content/uploads/2026/07/national-area-production.pdf",
+     "https://ess.gov.et/wp-content/uploads/2026/07/national-demography.pdf",
+     "https://ess.gov.et/wp-content/uploads/2026/07/national-farm-practices.pdf",
+     "https://ess.gov.et/wp-content/uploads/2026/07/national-implement.pdf",
+     "https://ess.gov.et/wp-content/uploads/2026/07/national-land-use.pdf",
+     "https://ess.gov.et/wp-content/uploads/2026/07/national-livestock.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://ess.gov.et/wp-content/uploads/2026/07/ethiopia-demographic-and-health-survey-edhs-2024_25-summary-report.pdf",
+    "status": 200,
+    "kind": "pdf",
+    "title": null,
+    "files": null,
+    "mentions": null
+   },
+   {
+    "url": "https://ess.gov.et/wp-content/uploads/2026/07/ethiopia-demographic-and-health-survey-edhs-2024_25-detail-report.pdf",
+    "status": 200,
+    "kind": "pdf",
+    "title": null,
+    "files": null,
+    "mentions": null
+   },
+   {
+    "url": "https://ess.gov.et/wp-content/uploads/2026/01/edhs-2024-25-kir-01172026.pdf",
+    "status": 200,
+    "kind": "pdf",
+    "title": null,
+    "files": null,
+    "mentions": null
+   }
+  ],
+  "title": "Ethiopian Statistical Service | Official Statistics &amp; Data For Ethiopia | Ethiopian Statistics Services",
+  "matching_links": 6
+ },
+ "verdict": {
+  "hdx_datasets": 21,
+  "hdx_machine_readable": 10,
+  "nso_files_found": 19,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "3/4",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

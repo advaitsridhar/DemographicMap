@@ -1,0 +1,1083 @@
+{
+ "iso3": "POL",
+ "name": "Poland",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity",
+    "language",
+    "religion"
+   ],
+   "title": "Tablice z ostatecznymi danymi w zakresie przynależności narodowo-etnicznej, języka używanego w domu oraz przynależności do wyznania religijnego (NSP 2021, wyniki ostateczne)",
+   "kind": "census",
+   "format": "xlsx",
+   "geography": "województwo / powiat / gmina",
+   "geography_count": 380,
+   "matches_boundary_level": "admin1 and admin2",
+   "url": "https://stat.gov.pl/spisy-powszechne/nsp-2021/nsp-2021-wyniki-ostateczne/tablice-z-ostatecznymi-danymi-w-zakresie-przynaleznosci-narodowo-etnicznej-jezyka-uzywanego-w-domu-oraz-przynaleznosci-do-wyznania-religijnego,10,1.html",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://stat.gov.pl/spisy-powszechne/nsp-2021/nsp-2021-wyniki-ostateczne/tablice-z-ostatecznymi-danymi-w-zakresie-przynaleznosci-narodowo-etnicznej-jezyka-uzywanego-w-domu-oraz-przynaleznosci-do-wyznania-religijnego,10,1.html",
+   "error": null,
+   "body": {
+    "bytes_read": 53969,
+    "kind": "html",
+    "title": "Główny Urząd Statystyczny / Spisy Powszechne / NSP 2021 / NSP 2021 - wyniki ostateczne / Tablice z ostatecznymi danymi w zakresie przynależności narodowo-etnicz",
+    "links_to_files": [
+     "/download/gfx/portalinformacyjny/pl/defaultaktualnosci/6536/10/1/1/jezyk_uzywany_w_domu_-_dane_nsp_2021_dla_kraju_i_jednostek_podzialu_terytorialnego.xlsx",
+     "/download/gfx/portalinformacyjny/pl/defaultaktualnosci/6536/10/1/1/przynaleznosc_narodowo-etniczna_-_dane_nsp_2021_dla_kraju_i_jednostek_podzialu_terytorialnego_v2.xlsx",
+     "/download/gfx/portalinformacyjny/pl/defaultaktualnosci/6536/10/1/1/przynaleznosc_wyznaniowa_-_dane_nsp_2021_dla_kraju_i_jednostek_podzialu_terytorialnego_1.xlsx",
+     "/download/gfx/portalinformacyjny/pl/defaultaktualnosci/6536/10/1/1/wyniki_ostateczne_nsp2021_narodowsc_jezyk_wyznanie_2023_11_29.xlsx",
+     "/files/gfx/portalinformacyjny/pl/defaultaktualnosci/6536/10/1/1/wyniki_ostateczne_nsp2021_nar_jezyk_wyznanie_29_09_202_2.xlsx"
+    ],
+    "mentions": []
+   }
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "language"
+   ],
+   "title": "Wyniki Narodowego Spisu Powszechnego Ludności i Mieszkań 2021 - mniejszości narodowe i etniczne oraz język regionalny",
+   "kind": "census",
+   "format": null,
+   "geography": null,
+   "geography_count": null,
+   "matches_boundary_level": null,
+   "url": "https://www.gov.pl/web/mniejszosci-narodowe-i-etniczne/wyniki-narodowego-spisu-powszechnego-ludnosci-i-mieszkan-2021---mniejszosci-narodowe-i-etniczne-oraz-jezyk-regionalny",
+   "status": 200,
+   "content_type": "text/html;charset=UTF-8",
+   "final_url": "https://www.gov.pl/web/mniejszosci-narodowe-i-etniczne/wyniki-narodowego-spisu-powszechnego-ludnosci-i-mieszkan-2021---mniejszosci-narodowe-i-etniczne-oraz-jezyk-regionalny",
+   "error": null,
+   "body": {
+    "bytes_read": 28073,
+    "kind": "html",
+    "title": "Wyniki Narodowego Spisu Powszechnego Ludności i Mieszkań 2021 - mniejszości narodowe i etniczne oraz język regionalny - Mniejszości Narodowe i Etniczne - Portal",
+    "links_to_files": [
+     "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5670/22/1/1/struktura_narodowo-etniczna.pdf"
+    ],
+    "mentions": []
+   }
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "language",
+    "religion"
+   ],
+   "title": "Bank Danych Lokalnych (BDL) and BDL REST API",
+   "kind": "census",
+   "format": "api",
+   "geography": "gmina / powiat / województwo",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 and admin2",
+   "url": "https://api.stat.gov.pl/Home/BdlApi",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://api.stat.gov.pl/Home/BdlApi",
+   "error": null,
+   "body": {
+    "bytes_read": 95782,
+    "kind": "html",
+    "title": "Portal API GUS - API BDL",
+    "links_to_files": [
+     "/Content/files/bdl/Opis_metod_API_BDL_v1.pdf"
+    ],
+    "mentions": []
+   }
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "Religious denominations in Poland 2019-2021 (Wyznania religijne w Polsce)",
+   "kind": "register",
+   "format": "pdf",
+   "geography": null,
+   "geography_count": null,
+   "matches_boundary_level": null,
+   "url": "https://stat.gov.pl/en/topics/other-studies/religious-denominations/religious-denominations-in-poland-2019-2021,1,3.html",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://stat.gov.pl/en/topics/other-studies/religious-denominations/religious-denominations-in-poland-2019-2021,1,3.html",
+   "error": null,
+   "body": {
+    "bytes_read": 48425,
+    "kind": "html",
+    "title": "Statistics Poland / Topics / Other studies / Religious denominations / Religious denominations in Poland 2019-2021",
+    "links_to_files": [
+     "/download/gfx/portalinformacyjny/en/defaultaktualnosci/3632/1/3/1/religious_denominations_in_poland_2019-2021.pdf"
+    ],
+    "mentions": [
+     "census",
+     "religion"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Poland",
+    "wikitext_bytes": 31879,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\"| Religion",
+       "colspan=\"2\"|2011 census<ref>{{cite web|url=https://stat.gov.pl/spisy-powszechne/nsp-2011/nsp-2011-wyniki/wybrane-tablice-dotyczace-przynaleznosci-narodowo-etnicznej-jezyka-i-wyznania-nsp-2011,8,1.html|title=Wybrane tablice dotyczące przynależności narodowo-etnicznej, języka i wyznania - NSP 2011 |date=24 April 2014|access-date=13 April 2021|publisher=Statistics Poland}}</ref>",
+       "colspan=\"2\"|2021 census<ref name=\"nsp-2021\">{{cite web |date=28 September 2023 |title=Tablice z ostatecznymi danymi w zakresie przynależności narodowo-etnicznej, języka używanego w domu oraz przynależności do wyznania religijnego - NSP 2021 |url=https://stat.gov.pl/spisy-powszechne/nsp-2021/nsp-2021-wyniki-ostateczne/tablice-z-ostatecznymi-danymi-w-zakresie-przynaleznosci-narodowo-etnicznej-jezyka-uzywanego-w-domu-oraz-przynaleznosci-do-wyznania-religijnego,10,1.html |access-date=28 September 2023 |publisher=Statistics Poland}}</ref>",
+       "Number",
+       "%",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "width=\"350\" |Denomination",
+       "width=\"75\" |Members",
+       "width=\"450\" |Leadership"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "2021 Polish census",
+    "wikitext_bytes": 6681,
+    "infobox_params": [],
+    "sections": [
+     "Religions",
+     "Ethnic groups"
+    ],
+    "wikitables": 3,
+    "charts": [],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Religious affiliation",
+       "Percentage (%)",
+       "Declared ethnicity || 2021"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 39
+     },
+     {
+      "header": [
+       "Declared ethnicity || 2021",
+       "Declared language || 2021"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 41
+     },
+     {
+      "header": [
+       "Declared language || 2021"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Poland",
+    "wikitext_bytes": 133366,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 30,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "Area",
+       "style=\"font-size:85%\" | ESPON&nbsp;<ref>{{cite web|url=http://www.espon.eu/mmp/online/website/content/projects/261/420/index_EN.html|title=Project 1.4.3|date=28 July 2009|access-date=31 August 2017|url-status=dead|archive-url=https://web.archive.org/web/20090728052348/http://www.espon.eu/mmp/online/website/content/projects/261/420/index_EN.html|archive-date=28 July 2009}}</ref>",
+       "style=\"font-size:85%\" | Eurostat LUZ&nbsp;<ref>{{cite web |url=http://www.urbanaudit.org/DataAccessed.aspx |title=Urban Audit - Data that can be accessed |access-date=2010-09-05 |url-status=dead |archive-url=https://web.archive.org/web/20110406130058/http://www.urbanaudit.org/DataAccessed.aspx |archive-date=2011-04-06 }}</ref>",
+       "style=\"font-size:85%\" | Ministry of Regional Development<ref>{{cite web |url=http://www.funduszestrukturalne.gov.pl/informator/npr2/dokumenty%20strategiczne/kpzk.pdf |title=Zaktualizowana Koncepcja Przestrzennego Zagospodarowania Kraju |access-date=2016-01-19 |url-status=dead |archive-url=https://web.archive.org/web/20100331083749/http://www.funduszestrukturalne.gov.pl/informator/npr2/dokumenty%20strategiczne/kpzk.pdf |archive-date=2010-03-31 }}</ref>",
+       "style=\"font-size:85%\" | United Nations&nbsp;<ref>{{cite web|url=https://www.un.org/esa/population/publications/wup2003/2003WUPHighlights.pdf |title=World Urbanization Prospects|publisher=United Nations - Department of Economic and Social Affairs / Population Division, The 2003 Revision (data of 2000)|access-date=31 August 2017}}</ref>",
+       "style=\"font-size:85%\" | Demographia.com<ref>{{cite web|url=http://www.demographia.com/db-worldua.pdf|title=World Urban Areas|website=Demographia.com|access-date=31 August 2017}}</ref>",
+       "style=\"font-size:85%\" | Citypopulation.de<ref>{{cite web|url=http://www.citypopulation.de/world/Agglomerations.html|title=Major Agglomerations of the World - Population Statistics and Maps|website=Citypopulation.de|access-date=31 August 2017}}</ref>",
+       "style=\"font-size:85%\" | Scientific study&nbsp;by {{ill|T.&nbsp;Markowski|pl|Tadeusz Markowski (ekonomista)}}<ref>{{cite web |url=http://www.mrr.gov.pl/polityka_regionalna/SRPW_2020/Dokumenty%20i%20ekspertyzy/Documents/17d0ccd2c3f14ed3893369e56d59849cMarkowski.pdf |title=Funkcje metropolitalne pięciu stolic województw wschodnich |access-date=2009-03-26 |url-status=dead |archive-url=https://web.archive.org/web/20090326031232/http://www.mrr.gov.pl/polityka_regionalna/SRPW_2020/Dokumenty%20i%20ekspertyzy/Documents/17d0ccd2c3f14ed3893369e56d59849cMarkowski.pdf |archive-date=2009-03-26 }}</ref>",
+       "style=\"font-size:85%\" | Scientific study by Swianiewicz, Klimska&nbsp;<ref>{{cite web |url=http://www.wgsr.uw.edu.pl/pub/uploads/pis05/Swianiewicz_1a.pdf |title=Spoleczne i polityczne zróżnicowanie aglomeracji w"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 0
+     },
+     {
+      "header": [
+       "<small>Voivodeship</small>",
+       "<small>Capital</small>",
+       "<small>Area (km<sup>2</sup>)</small>",
+       "<small>Official population (2021)</small>",
+       "<small>Population density (ppl/km<sup>2</sup>)</small>",
+       "<small>Foreigners (2021)</small>",
+       "<small>Ukrainian refugees (2022)</small>",
+       "<small>Population density with foreigners (ppl/km<sup>2</sup>)</small>",
+       "align=\"left\" | <small>Lower Silesian</small>",
+       "<small>Kuyavian-Pomeranian</small>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "Years",
+       "1800",
+       "1801",
+       "1802",
+       "1803",
+       "1804",
+       "1805",
+       "1806",
+       "1807",
+       "1808"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Years",
+       "1811",
+       "1812",
+       "1813",
+       "1814",
+       "1815",
+       "1816",
+       "1817",
+       "1818",
+       "1819"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1821",
+       "1822",
+       "1823",
+       "1824",
+       "1825",
+       "1826",
+       "1827",
+       "1828",
+       "1829"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1831",
+       "1832",
+       "1833",
+       "1834",
+       "1835",
+       "1836",
+       "1837",
+       "1838",
+       "1839"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1841",
+       "1842",
+       "1843",
+       "1844",
+       "1845",
+       "1846",
+       "1847",
+       "1848",
+       "1849"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1851",
+       "1852",
+       "1853",
+       "1854",
+       "1855",
+       "1856",
+       "1857",
+       "1858",
+       "1859"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1861",
+       "1862",
+       "1863",
+       "1864",
+       "1865",
+       "1866",
+       "1867",
+       "1868",
+       "1869"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1871",
+       "1872",
+       "1873",
+       "1874",
+       "1875",
+       "1876",
+       "1877",
+       "1878",
+       "1879"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1881",
+       "1882",
+       "1883",
+       "1884",
+       "1885",
+       "1886",
+       "1887",
+       "1888",
+       "1889"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Years",
+       "1891",
+       "1892",
+       "1893",
+       "1894",
+       "1895",
+       "1896",
+       "1897",
+       "1898",
+       "1899"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "Years",
+       "1901",
+       "1902",
+       "1903",
+       "1904",
+       "1905",
+       "1906",
+       "1907",
+       "1908",
+       "1909"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 5
+     },
+     {
+      "header": [
+       "Years",
+       "1911",
+       "1912",
+       "1913",
+       "1914",
+       "1915",
+       "1916",
+       "1917",
+       "1918",
+       "1919"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "width=\"10%\" |Year <ref>{{cite web|url=http://www.ined.fr/fr/pop_chiffres/pays_developpes/base_pays_developpes/|title=Démographie des pays développés|website=Ined.fr|access-date=20 June 2015|archive-url=https://web.archive.org/web/20140702194706/http://www.ined.fr/fr/pop_chiffres/pays_developpes/base_pays_developpes/|archive-date=2 July 2014|url-status=dead}}</ref>",
+       "width=\"20pt\" |Average population",
+       "width=\"50pt\" |Live births",
+       "width=\"50pt\" |Deaths",
+       "width=\"50pt\" |Natural change",
+       "width=\"50pt\" |Crude birth rate (per 1000)",
+       "width=\"50pt\" |Crude death rate (per 1000)",
+       "width=\"50pt\" |Natural change (per 1000)",
+       "width=\"50pt\" |Total fertility rates{{refn|group=fn|In fertility rates, 2.1 and above is a stable population and has been marked blue, 2 and below leads to an aging population and the result is that the population decreases. }}<ref name=\"ourworldindata.org\" />"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "! width=\"80pt\" |Average population (December 31)",
+       "width=\"80pt\" |Live births",
+       "width=\"80pt\" |Deaths",
+       "width=\"80pt\" |Natural change",
+       "width=\"80pt\" |Crude birth rate (per 1000)",
+       "width=\"80pt\" |Crude death rate (per 1000)",
+       "width=\"80pt\" |Natural change (per 1000)",
+       "width=\"80pt\" |Crude migration change  (per 1000)",
+       "width=\"80pt\" |Crude population change (per 1000)",
+       "width=\"80pt\" |Total fertility rates"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January—June 2025",
+       "January—June 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{Cite web|url=https://stat.gov.pl/en/topics/other-studies/informations-on-socio-economic-situation/|title=Informations on socio-economic situation|website=stat.gov.pl}}</ref>",
+       "voivodeship",
+       "TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "voivodeship",
+       "TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "Nationality",
+       "Resident population",
+       "Year",
+       "Immigration",
+       "Emigration",
+       "Net Migration"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 32
+     },
+     {
+      "header": [
+       "Year",
+       "Immigration",
+       "Emigration",
+       "Net Migration",
+       "Country",
+       "2011 (Men/Women)",
+       "2012 (Men/Women)",
+       "2013 (Men/Women)",
+       "2014 (Men/Women)",
+       "2015 (Men/Women)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "Country",
+       "2011 (Men/Women)",
+       "2012 (Men/Women)",
+       "2013 (Men/Women)",
+       "2014 (Men/Women)",
+       "2015 (Men/Women)",
+       "2016 (Men/Women)",
+       "2017 (Men/Women)",
+       "2018 (Men/Women)",
+       "2019 (Men/Women)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "Country",
+       "2018",
+       "2019",
+       "2020",
+       "2021",
+       "2022",
+       "Total ||1,582,225 || 1,640,083 || 1,519,599",
+       "2,065,416",
+       "1,054,640",
+       "Country"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "Country",
+       "2018",
+       "2019",
+       "2020",
+       "Others ||35|| 97 || 175",
+       "Total ||121,436|| 131,446 || 137,403"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Population background",
+       "%<sup>1</sup>",
+       "Population (1st declaration)",
+       "Population (any declaration)",
+       "rowspan=\"2\" |Ethnicity",
+       "colspan=\"2\" |1921",
+       "colspan=\"2\" |1931",
+       "colspan=\"2\" |1946",
+       "colspan=\"2\" |2002",
+       "colspan=\"2\" |2011<sup>1</sup>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |Ethnicity",
+       "colspan=\"2\" |1921",
+       "colspan=\"2\" |1931",
+       "colspan=\"2\" |1946",
+       "colspan=\"2\" |2002",
+       "colspan=\"2\" |2011<sup>1</sup>",
+       "colspan=\"2\" |2021<sup>1</sup>",
+       "Number",
+       "%",
+       "Number"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "Census year",
+       "colspan=\"3\" |2002 census",
+       "colspan=\"3\" |2011 census",
+       "colspan=\"3\" |2021 census",
+       "Voivodeship",
+       "Polish ethnicity",
+       "Non-Polish ethnicity",
+       "Not reported or no ethnicity",
+       "Polish ethnicity (including mixed)",
+       "Only non-Polish ethnicity"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "! colspan=\"2\" |Percentage of population",
+       "colspan=\"2\" |Number of adherents",
+       "Denomination",
+       "2011 census",
+       "2021 census",
+       "2011 census",
+       "2021 census"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 21
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Białystok",
+    "found": true,
+    "title": "Białystok",
+    "url": "https://en.wikipedia.org/wiki/Bia%C5%82ystok",
+    "wikitext_bytes": 169163,
+    "infobox_params": [
+     "blank_name",
+     "language"
+    ],
+    "sections": [
+     "Demographics",
+     "Religion"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Siemianowice Śląskie",
+    "found": true,
+    "title": "Siemianowice Śląskie",
+    "url": "https://en.wikipedia.org/wiki/Siemianowice_%C5%9Al%C4%85skie",
+    "wikitext_bytes": 13902,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "powiat brodnicki",
+    "found": true,
+    "title": "Brodnica County",
+    "url": "https://en.wikipedia.org/wiki/Brodnica_County",
+    "wikitext_bytes": 5385,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "powiat brzozowski",
+    "found": true,
+    "title": "Brzozów County",
+    "url": "https://en.wikipedia.org/wiki/Brzoz%C3%B3w_County",
+    "wikitext_bytes": 4306,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "powiat gostyniński",
+    "found": true,
+    "title": "Gostynin County",
+    "url": "https://en.wikipedia.org/wiki/Gostynin_County",
+    "wikitext_bytes": 3658,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Poland: Road Surface Data",
+   "name": "poland-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/poland-road-surface-data",
+   "resources": [
+    {
+     "name": "Poland GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_pol_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Poland GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_pol_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Poland: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-poland",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-poland",
+   "resources": [
+    {
+     "name": "kontur_boundaries_PL_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_PL_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_PL_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_PL_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_PL_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_PL_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Poland - Accessibility Indicators",
+   "name": "poland-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/poland-accessibility-indicators",
+   "resources": [
+    {
+     "name": "POL_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/pol/POL_education_access.gpkg"
+    },
+    {
+     "name": "POL_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/pol/POL_education_access_long.csv"
+    },
+    {
+     "name": "POL_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/pol/POL_education_access_wide.csv"
+    },
+    {
+     "name": "POL_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/pol/POL_hospitals_access.gpkg"
+    },
+    {
+     "name": "POL_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/pol/POL_hospitals_access_long.csv"
+    },
+    {
+     "name": "POL_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/pol/POL_hospitals_access_wide.csv"
+    },
+    {
+     "name": "POL_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/pol/POL_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "POL_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/pol/POL_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Poland: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "poland-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/poland-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "pol_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/d3bb62ab-b94d-4042-8e76-821fe17ce562/resource/ed62c3bd-7b38-49ec-9d42-80f28ee07f89/download/pol_general_2020_geotiff.zip"
+    },
+    {
+     "name": "pol_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/d3bb62ab-b94d-4042-8e76-821fe17ce562/resource/9dc916a5-969c-4561-8c5c-23c96f9fedb0/download/pol_general_2020_csv.zip"
+    },
+    {
+     "name": "pol_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/d3bb62ab-b94d-4042-8e76-821fe17ce562/resource/a8750a7f-a5ea-4d86-a243-a2abc88f5ac4/download/pol_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "pol_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/d3bb62ab-b94d-4042-8e76-821fe17ce562/resource/459cc993-99b3-45cc-beda-706227ff74aa/download/pol_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "pol_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/d3bb62ab-b94d-4042-8e76-821fe17ce562/resource/462c981f-80dd-4707-a908-74ec05885948/download/pol_men_2020_geotiff.zip"
+    },
+    {
+     "name": "pol_women_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/d3bb62ab-b94d-4042-8e76-821fe17ce562/resource/97a8092c-0cbf-41e5-b2d6-fbc88eb51bed/download/pol_women_2020_geotiff.zip"
+    },
+    {
+     "name": "pol_women_of_reproductive_age_15_49_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/d3bb62ab-b94d-4042-8e76-821fe17ce562/resource/825dfa10-8cb1-4d89-82f5-103d976e5d1b/download/pol_women_of_reproductive_age_15_49_2020_geotiff.zip"
+    },
+    {
+     "name": "pol_youth_15_24_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/d3bb62ab-b94d-4042-8e76-821fe17ce562/resource/3f02cacd-534c-48f5-9a0b-5984631dd563/download/pol_youth_15_24_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Poland - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-poland",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-poland",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Poland",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/d9d3db4b-f499-4c8c-b40a-d10163cc9c6f/resource/5ac02b26-6770-481b-b1cd-4076cc37a4f0/download/social-protection-and-labor_pol.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Poland - Population Counts",
+   "name": "worldpop-population-counts-for-poland",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-poland",
+   "resources": [
+    {
+     "name": "pol_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/POL/pol_ppp_2020.tif"
+    },
+    {
+     "name": "pol_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/POL/pol_ppp_2019.tif"
+    },
+    {
+     "name": "pol_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/POL/pol_ppp_2018.tif"
+    },
+    {
+     "name": "pol_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/POL/pol_ppp_2017.tif"
+    },
+    {
+     "name": "pol_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/POL/pol_ppp_2016.tif"
+    },
+    {
+     "name": "pol_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/POL/pol_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "pol_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/POL/pol_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "pol_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/POL/pol_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Poland - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-pl-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-pl-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_PL",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/24a0b2d7-64ab-4d4d-b480-97a44e655e72/resource/538d3a38-e375-4d20-9e73-a1ec8da82600/download/indicator_data_pl.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Poland: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "pol-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/pol-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/77188ef2-4b8e-40b4-91f9-6adc070c09f3/resource/7c909d75-5e01-4b78-b028-7a854adfd61c/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_pol.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/77188ef2-4b8e-40b4-91f9-6adc070c09f3/resource/831ab116-d593-46bd-bb52-2fd8623c08ba/download/ghs_pop_e2025_r2023a_54009_100_v1_0_pol.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Poland: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-pol",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-pol",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-pl-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-pl-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Green area per capita (square meters per capita)",
+   "name": "green-area-per-capita-square-meters-per-capita",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/green-area-per-capita-square-meters-per-capita",
+   "resources": [
+    {
+     "name": "Green area per_capita (square meters per capita).xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/7babf915-12a0-4ceb-ad9c-7ee24b776614/resource/2c1c5e09-0bbe-482f-9703-ec7dfed62c79/download/green-area-per_capita-square-meters-per-capita.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Old age dependency ratio",
+   "name": "old-age-dependency-ratio",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/old-age-dependency-ratio",
+   "resources": [
+    {
+     "name": "Old_age_dependency_ratio.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/1598cce7-3d04-42a5-9a2f-b5ba0095cf2f/resource/5217ad45-f56f-43c7-992f-d4e327d13615/download/old_age_dependency_ratio.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://stat.gov.pl/",
+  "status": 200,
+  "error": null,
+  "pages": [],
+  "title": "Główny Urząd Statystyczny | GUS - Portal Informacyjny",
+  "matching_links": 0
+ },
+ "verdict": {
+  "hdx_datasets": 11,
+  "hdx_machine_readable": 5,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "4/4",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "1/5"
+ }
+}

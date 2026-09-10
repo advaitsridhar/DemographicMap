@@ -1,0 +1,698 @@
+{
+ "iso3": "RUS",
+ "name": "Russia",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity",
+    "language"
+   ],
+   "title": "Итоги ВПН-2020. Том 5. Национальный состав и владение языками (table 1 national composition; table 6 native language)",
+   "kind": "census",
+   "format": "xlsx",
+   "geography": "federal subject",
+   "geography_count": 83,
+   "matches_boundary_level": "admin1",
+   "url": "https://rosstat.gov.ru/vpn/2020",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>"
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "language"
+   ],
+   "title": "Мосстат -- Всероссийская перепись населения 2020 года (Moscow territorial office results page)",
+   "kind": "census",
+   "format": null,
+   "geography": "municipal formation (Moscow)",
+   "geography_count": null,
+   "matches_boundary_level": null,
+   "url": "https://77.rosstat.gov.ru/folder/210976",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>"
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "2021 Russian census",
+    "wikitext_bytes": 90245,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups of Russia in the 2021 Census"
+    ],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"3\"| Federal subject",
+       "colspan=\"3\" | Provisional population results<br>on 1 October 2021 (thousands)",
+       "rowspan=\"3\" | 2021 compared to 2010** <br><small>(total population % change)</small>",
+       "colspan=\"4\" | In the total number of population, %",
+       "rowspan=\"2\" |total<br>population",
+       "colspan=\"2\" | including",
+       "colspan=\"2\" | 2021",
+       "colspan=\"2\" | 2010**",
+       "urban",
+       "rural"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "colspan=\"3\" |Categories",
+       "colspan=\"3\" |Year",
+       "colspan=\"1\" rowspan=\"2\" |Ethnic<br />group<ref>[http://demoscope.ru/weekly/ssp/census_types.php?ct=6 Demoskop Weekly No 543-544] {{webarchive |url=https://web.archive.org/web/20131012173257/http://demoscope.ru/weekly/ssp/census_types.php?ct=6 |date=October 12, 2013}}</ref>",
+       "colspan=\"1\" rowspan=\"2\" |Language<br />family",
+       "colspan=\"1\" rowspan=\"2\" |Main<br />area",
+       "colspan=\"3\" |2021 Census<ref name=\"census2021\">{{cite web|title=Национальный состав населения|url=https://rosstat.gov.ru/storage/mediabank/Tom5_tab1_VPN-2020.xlsx|publisher=Federal State Statistics Service|accessdate=30 December 2022}}</ref>",
+       "Number",
+       "% of total population",
+       "% of those who declared ethnicity"
+      ],
+      "place_column": true,
+      "composition_columns": 1,
+      "rows_hint": 17
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Russia",
+    "wikitext_bytes": 153290,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 11,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"19\" |TFR",
+       "colspan=\"10\" |Years",
+       "1840",
+       "1841",
+       "1842",
+       "1843",
+       "1844",
+       "1845",
+       "1846",
+       "1847"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Years",
+       "1941",
+       "1942",
+       "1943",
+       "1944",
+       "1945<ref name=\"ourworldindata.org\" />",
+       "scope=\"col\" |Years",
+       "scope=\"col\" |1801–1810",
+       "scope=\"col\" |1811–1820",
+       "scope=\"col\" |1821–1830"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "scope=\"col\" |Years",
+       "scope=\"col\" |1801–1810",
+       "scope=\"col\" |1811–1820",
+       "scope=\"col\" |1821–1830",
+       "scope=\"col\" |1831–1840",
+       "scope=\"col\" |1841–1850",
+       "scope=\"col\" |1851–1860<ref name=\"demreview.hse.ru\">{{cite web| url = http://www.demoscope.ru/weekly/knigi/rashyn/rashyn.pdf| title = А. Г. Рашин. Население России за 100 лет (1811—1913 гг.). Статистические очерки. Раздел первый. Масштабы и темпы динамики численности населения России за 1811—1913 гг. Глава первая. Динамика общей численности населения России за 1811—1913 гг. страница 38| access-date = 6 May 2019| archive-date = 27 November 2019| archive-url = https://web.archive.org/web/20191127143809/http://www.demoscope.ru/weekly/knigi/rashyn/rashyn.pdf| url-status = live}}</ref>",
+       "scope=\"col\" |Years",
+       "scope=\"col\" |1861–1870",
+       "scope=\"col\" |1871–1880"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "scope=\"col\" |Years",
+       "scope=\"col\" |1861–1870",
+       "scope=\"col\" |1871–1880",
+       "scope=\"col\" |1881–1890",
+       "scope=\"col\" |1891–1900",
+       "scope=\"col\" |1901–1910",
+       "scope=\"col\" |1911–1914",
+       "scope=\"col\" |18th century<br />(only Orthodox)",
+       "scope=\"col\" |1801–1860<br />(only Orthodox)<ref name=\"demreview.hse.ru\"/>",
+       "width=\"80pt\"|Age group"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "Year",
+       "Average population",
+       "Live births",
+       "Deaths",
+       "Natural change",
+       "Crude birth rate (per 1,000)",
+       "Crude death rate (per 1,000)",
+       "Natural change (per 1,000)",
+       "Total fertility rate"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [
+       "rowspan=2|",
+       "rowspan=2| Average population<ref name=\"autogenerated1927\">E.Andreev, L.Darski, T. Kharkova \"Histoire démographique de la Russie. 1927–1959\"</ref>",
+       "rowspan=2| Live births",
+       "rowspan=2| Deaths",
+       "rowspan=2| Natural change",
+       "rowspan=2| Crude birth rate (per 1,000)",
+       "rowspan=2| Crude death rate (per 1,000)",
+       "rowspan=2| Natural change (per 1,000)",
+       "rowspan=2| Crude migration change (per 1,000)",
+       "rowspan=2| Total fertility rate"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 0
+     },
+     {
+      "header": [
+       "! style=\"width:50pt;\"|Urban live births",
+       "style=\"width:50pt;\"|Urban deaths",
+       "style=\"width:50pt;\"|Urban natural change",
+       "style=\"width:40pt;\"|Urban crude birth rate (per 1,000)",
+       "style=\"width:40pt;\"|Urban crude death rate (per 1,000)",
+       "style=\"width:40pt;\"|Urban natural change (per 1,000)",
+       "style=\"width:50pt;\"|Rural live births",
+       "style=\"width:50pt;\"|Rural deaths",
+       "style=\"width:50pt;\"|Rural natural change",
+       "style=\"width:40pt;\"|Rural crude birth rate (per 1,000)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January—May 2025",
+       "January—May 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{Cite web |date=14 March 2025 |title=Естественное движение населения в разрезе субъектов российской федерации за январь 2025 года |url=https://rosstat.gov.ru/storage/mediabank/EDN_01-2025.htm |access-date=14 March 2025 |website=Rosstat |archive-date=18 March 2025 |archive-url=https://web.archive.org/web/20250318125854/https://rosstat.gov.ru/storage/mediabank/EDN_01-2025.htm |url-status=live }}</ref>",
+       "Federal subject",
+       "2015"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 32
+     },
+     {
+      "header": [
+       "Federal subject",
+       "2015",
+       "2025"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 67
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Всероссийская перепись населения (2020—2021) — Википедия",
+    "wikitext_bytes": 0,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Russia",
+    "wikitext_bytes": 126871,
+    "infobox_params": [],
+    "sections": [
+     "Demographics",
+     "Ethnic religions, paganism and Tengrism"
+    ],
+    "wikitables": 11,
+    "charts": [],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\"|Religion",
+       "Number",
+       "%",
+       "Total population || colspan=\"2\"| 142,800,000",
+       "rowspan=\"2\"|Religion",
+       "colspan=\"2\"|1998{{sfn|Balzer|2015|p=12: reports data from a research held by the Russian Ministry of Education in 1998}}",
+       "colspan=\"2\"|2012<ref name=\"ArenaAtlas2012\"/>",
+       "Number",
+       "%",
+       "Number"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [
+       "rowspan=\"2\"|Religion",
+       "colspan=\"2\"|1998{{sfn|Balzer|2015|p=12: reports data from a research held by the Russian Ministry of Education in 1998}}",
+       "colspan=\"2\"|2012<ref name=\"ArenaAtlas2012\"/>",
+       "Number",
+       "%",
+       "Number",
+       "%",
+       "Total population || colspan=\"2\"| 147,671,000 || colspan=\"2\"| 142,800,000",
+       "colspan=\"10\" |Religious affiliation 2017–2025<ref name=\"wciom\">{{cite web|url=https://wciom.ru/analytical-reviews/analiticheskii-obzor/religija-i-obshchestvo-monitoring-09062025|title=Религия и общество: мониторинг|trans-title=Religion and Society: monitoring|publisher=Russian Public Opinion Research Center (VCIOM)|language=ru|date=2025-06-09|accessdate=2025-06-16}}</ref>",
+       ""
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "colspan=\"10\" |Religious affiliation 2017–2025<ref name=\"wciom\">{{cite web|url=https://wciom.ru/analytical-reviews/analiticheskii-obzor/religija-i-obshchestvo-monitoring-09062025|title=Религия и общество: мониторинг|trans-title=Religion and Society: monitoring|publisher=Russian Public Opinion Research Center (VCIOM)|language=ru|date=2025-06-09|accessdate=2025-06-16}}</ref>",
+       "",
+       "2017",
+       "2018",
+       "2019",
+       "2020",
+       "2021",
+       "2022",
+       "2023",
+       "2024"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "colspan=\"13\" |Religious affiliation 1997–2024",
+       "",
+       "1997<ref name=\"FOM2014\">{{cite web|title=Воцерковленность православных|url=https://fom.ru/TSennosti/11587|publisher=Фонд Общественное Мнение, ФОМ (Public Opinion Foundation)|language=ru|date=3 July 2014|access-date=10 June 2024}}</ref>",
+       "2000<ref name=\"FOM2014\"/>",
+       "2005<ref name=\"FOM2014\"/>",
+       "2010<ref name=\"FOM2014\"/>",
+       "2014<ref name=\"FOM2014\"/>",
+       "2018<ref>{{cite web|title=Раскол в православной церкви|url=https://fom.ru/TSennosti/14128|publisher=Фонд Общественное Мнение, ФОМ (Public Opinion Foundation)|language=ru|date=15 November 2018|access-date=10 June 2024}}</ref>",
+       "2019<ref>{{cite web|title=Великий пост и Пасха|url=https://fom.ru/TSennosti/14200|publisher=Фонд Общественное Мнение, ФОМ (Public Opinion Foundation)|language=ru|date=26 April 2019|access-date=10 June 2024}}</ref>",
+       "2020<ref>{{cite web|title=Великий пост|url=https://fom.ru/TSennosti/14370|publisher=Фонд Общественное Мнение, ФОМ (Public Opinion Foundation)|language=ru|date=31 March 2020|access-date=10 June 2024}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |",
+       "colspan=\"6\" |Religious affiliation (2024)<ref name=\"FOM2024\"/><ref>{{cite web|title=Русская православная церковь",
+       "style=\"width: 75px;\" |Orthodoxy",
+       "style=\"width: 75px;\" |No religion",
+       "style=\"width: 75px;\" |Islam",
+       "style=\"width: 75px;\" |Other Christianity",
+       "style=\"width: 75px;\" |Other religions",
+       "style=\"width: 75px;\" |Undeclared",
+       "colspan=\"7\" |'''Gender'''",
+       "colspan=\"7\" |'''Age'''"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "!style=\"background:#E0F0FF;\"|Russian Orthodox",
+       "style=\"background:#E0F0FF;\"|Other Orthodox",
+       "style=\"background:#E0F0FF;\"|Old Believers",
+       "style=\"background:#E0F0FF;\"|Protestants",
+       "style=\"background:#E0F0FF;\"|Catholics",
+       "style=\"background:#E0F0FF;\"|Pentecostals",
+       "style=\"background:#E0F0FF;\"|Simply Christians",
+       "style=\"background:#F0E0FF;\"|Unaffiliated Believers",
+       "style=\"background:#DCDCDC;\"|Atheists",
+       "style=\"background:#E0FFD0;\"|Simply Muslims"
+      ],
+      "place_column": false,
+      "composition_columns": 4,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "!style=\"background:#E0F0FF;\"|Russian Orthodox",
+       "style=\"background:#E0F0FF;\"|Other Orthodox",
+       "style=\"background:#E0F0FF;\"|Old Believers",
+       "style=\"background:#E0F0FF;\"|Protestants",
+       "style=\"background:#E0F0FF;\"|Catholics",
+       "style=\"background:#E0F0FF;\"|Pentecostals",
+       "style=\"background:#E0F0FF;\"|Simply Christians",
+       "style=\"background:#F0E0FF;\"|Unaffiliated Believers",
+       "style=\"background:#DCDCDC;\"|Atheists",
+       "style=\"background:#E0FFD0;\"|Simply Muslims"
+      ],
+      "place_column": false,
+      "composition_columns": 4,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "!style=\"background:#E0F0FF;\"|Russian Orthodox",
+       "style=\"background:#E0F0FF;\"|Other Orthodox",
+       "style=\"background:#E0F0FF;\"|Old Believers",
+       "style=\"background:#E0F0FF;\"|Protestants",
+       "style=\"background:#E0F0FF;\"|Catholics",
+       "style=\"background:#E0F0FF;\"|Pentecostals",
+       "style=\"background:#E0F0FF;\"|Simply Christians",
+       "style=\"background:#F0E0FF;\"|Unaffiliated Believers",
+       "style=\"background:#DCDCDC;\"|Atheists",
+       "style=\"background:#E0FFD0;\"|Simply Muslims"
+      ],
+      "place_column": false,
+      "composition_columns": 4,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "!style=\"background:#E0F0FF;\"|Russian Orthodox",
+       "style=\"background:#E0F0FF;\"|Other Orthodox",
+       "style=\"background:#E0F0FF;\"|Old Believers",
+       "style=\"background:#E0F0FF;\"|Protestants",
+       "style=\"background:#E0F0FF;\"|Catholics",
+       "style=\"background:#E0F0FF;\"|Pentecostals",
+       "style=\"background:#E0F0FF;\"|Simply Christians",
+       "style=\"background:#F0E0FF;\"|Unaffiliated Believers",
+       "style=\"background:#DCDCDC;\"|Atheists",
+       "style=\"background:#E0FFD0;\"|Simply Muslims"
+      ],
+      "place_column": false,
+      "composition_columns": 4,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "!style=\"background:#E0F0FF;\"|Russian Orthodox",
+       "style=\"background:#E0F0FF;\"|Other Orthodox",
+       "style=\"background:#E0F0FF;\"|Old Believers",
+       "style=\"background:#E0F0FF;\"|Protestants",
+       "style=\"background:#E0F0FF;\"|Catholics",
+       "style=\"background:#E0F0FF;\"|Pentecostals",
+       "style=\"background:#E0F0FF;\"|Simply Christians",
+       "style=\"background:#F0E0FF;\"|Unaffiliated Believers",
+       "style=\"background:#DCDCDC;\"|Atheists",
+       "style=\"background:#E0FFD0;\"|Simply Muslims"
+      ],
+      "place_column": false,
+      "composition_columns": 4,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "Percent of Russians who",
+       "Regularly",
+       "Sometimes",
+       "Never",
+       "No answer"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Anapa Urban Okrug",
+    "found": true,
+    "title": "Anapsky District",
+    "url": "https://en.wikipedia.org/wiki/Anapsky_District",
+    "wikitext_bytes": 3232,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Belgorodsky District",
+    "found": true,
+    "title": "Petrovka, Belgorodsky District, Belgorod Oblast",
+    "url": "https://en.wikipedia.org/wiki/Petrovka%2C_Belgorodsky_District%2C_Belgorod_Oblast",
+    "wikitext_bytes": 2282,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Kashira Urban Okrug",
+    "found": true,
+    "title": "Domodedovo (town)",
+    "url": "https://en.wikipedia.org/wiki/Domodedovo_%28town%29",
+    "wikitext_bytes": 10922,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Pavlovsky District",
+    "found": true,
+    "title": "Pavlovo, Pavlovsky District, Nizhny Novgorod Oblast",
+    "url": "https://en.wikipedia.org/wiki/Pavlovo%2C_Pavlovsky_District%2C_Nizhny_Novgorod_Oblast",
+    "wikitext_bytes": 5051,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Shchuchansky District",
+    "found": true,
+    "title": "Shchuchye, Shchuchansky District, Kurgan Oblast",
+    "url": "https://en.wikipedia.org/wiki/Shchuchye%2C_Shchuchansky_District%2C_Kurgan_Oblast",
+    "wikitext_bytes": 7186,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Russia: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-russia",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-russia",
+   "resources": [
+    {
+     "name": "kontur_boundaries_RU_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_RU_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_RU_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_RU_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_RU_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_RU_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Russia - Accessibility Indicators",
+   "name": "russia-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/russia-accessibility-indicators",
+   "resources": [
+    {
+     "name": "RUS_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rus/RUS_education_access.gpkg"
+    },
+    {
+     "name": "RUS_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rus/RUS_education_access_long.csv"
+    },
+    {
+     "name": "RUS_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/rus/RUS_education_access_wide.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Russia - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-ru-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-ru-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_RU",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5d3216b5-9f02-4be1-bc98-5bb11df74522/resource/1a795cb6-8689-49c0-88fa-2db5990851ae/download/indicator_data_ru.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "COVID-19 Cases Data in Russia",
+   "name": "covid-19-cases-data-in-russia",
+   "org": "Infoculture",
+   "url": "https://data.humdata.org/dataset/covid-19-cases-data-in-russia",
+   "resources": [
+    {
+     "name": "COVID-19 Cases Data",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/ca5f6ac0-035b-47eb-b118-7a0a3357e71a/resource/4c36749a-00ba-462b-978e-3e6df77a09a2/download/stopcoronarf.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Russian Federation - Population Counts",
+   "name": "worldpop-population-counts-for-russian-federation",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-russian-federation",
+   "resources": [
+    {
+     "name": "rus_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/RUS/rus_ppp_2020.tif"
+    },
+    {
+     "name": "rus_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/RUS/rus_ppp_2019.tif"
+    },
+    {
+     "name": "rus_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/RUS/rus_ppp_2018.tif"
+    },
+    {
+     "name": "rus_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/RUS/rus_ppp_2017.tif"
+    },
+    {
+     "name": "rus_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/RUS/rus_ppp_2016.tif"
+    },
+    {
+     "name": "rus_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/RUS/rus_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "rus_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/RUS/rus_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "rus_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/RUS/rus_ppp_2018_UNadj.tif"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://rosstat.gov.ru/vpn/2020",
+  "status": 0,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>",
+  "pages": []
+ },
+ "verdict": {
+  "hdx_datasets": 5,
+  "hdx_machine_readable": 3,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "0/2",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

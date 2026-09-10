@@ -1,0 +1,926 @@
+{
+ "iso3": "THA",
+ "name": "Thailand",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "religion",
+    "language",
+    "nationality"
+   ],
+   "title": "Nationality, religion, and language data for the provinces of Thailand",
+   "kind": "other",
+   "format": "html",
+   "geography": "province (changwat)",
+   "geography_count": null,
+   "matches_boundary_level": "admin1",
+   "url": "https://en.wikipedia.org/wiki/Nationality,_religion,_and_language_data_for_the_provinces_of_Thailand",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://en.wikipedia.org/wiki/Nationality,_religion,_and_language_data_for_the_provinces_of_Thailand",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "html",
+    "title": "Nationality, religion, and language data for the provinces of Thailand - Wikipedia",
+    "links_to_files": [
+     "http://web.nso.go.th/pop2000/finalrep/amnatchafn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/angthongfn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/ayuthayafn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/bangkok1.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/burirumfn1.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/chacheongfn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/chainatfn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/chaiphumfn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/chanburifn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/cheingmaifn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/cheingraifn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/chonburifn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/chumphonfn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/kalasinfn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/kampangfn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/kanchanafn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/khonkhaen.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/krabifn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/lampangfn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/lamphunfn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/loeifn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/lopburifn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/maehongfn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/mahakamfn.pdf",
+     "http://web.nso.go.th/pop2000/finalrep/mukdafn.pdf"
+    ],
+    "mentions": [
+     "census",
+     "ethnic",
+     "ethnic_groups_in_thailand",
+     "language",
+     "languages",
+     "languages_of_india",
+     "languages_of_thailand",
+     "religion"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "religion",
+    "language",
+    "nationality"
+   ],
+   "title": "Thailand - Population and Housing Census 2010 (IHSN metadata record; NSO provincial reports)",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "province (changwat)",
+   "geography_count": null,
+   "matches_boundary_level": "admin1",
+   "url": "https://catalog.ihsn.org/index.php/catalog/4405",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://catalog.ihsn.org/index.php/catalog/4405",
+   "error": null,
+   "body": {
+    "bytes_read": 39001,
+    "kind": "html",
+    "title": "Thailand - Population and Housing Census 2010",
+    "links_to_files": [],
+    "mentions": [
+     "census",
+     "language",
+     "languages",
+     "religion"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "unknown"
+   ],
+   "title": "ผลการสำรวจ (สำมะโนประชากรและเคหะ) -- Government Data Catalog entry for census results",
+   "kind": "census",
+   "format": null,
+   "geography": null,
+   "geography_count": null,
+   "matches_boundary_level": null,
+   "url": "https://gdcatalog.go.th/dataset/gdpublish-0404-01-0021",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://gdcatalog.go.th/dataset/gdpublish-0404-01-0021",
+   "error": null,
+   "body": {
+    "bytes_read": 63840,
+    "kind": "html",
+    "title": "ผลการสำรวจโครงการสำมะโนประชากรและเคหะ - ชุดข้อมูล - Government Data Catalog : GD Catalog",
+    "links_to_files": [
+     "https://catalogapi.nso.go.th/api/doc/department/D10/SD10_04/SD10_04_165_1.pdf",
+     "https://catalogapi.nso.go.th/api/doc/department/D10/SD10_04/SD10_04_165_2.pdf",
+     "https://gdcatalog.go.th/dataset/50d3e012-1711-47ee-9833-04176c4308b7.json"
+    ],
+    "mentions": []
+   }
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "จำนวนผู้นับถือศาสนาจากการสำรวจ (Number of religious adherents, from survey)",
+   "kind": "survey",
+   "format": "csv",
+   "geography": "unclear -- snippet says 'national and regional (provincial) level'",
+   "geography_count": null,
+   "matches_boundary_level": null,
+   "url": "https://data.go.th/dataset/os_04_00001",
+   "status": 403,
+   "content_type": null,
+   "final_url": null,
+   "error": null
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Nationality, religion, and language data for the provinces of Thailand",
+    "wikitext_bytes": 30739,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "province name||% Thai nationals in 1970||% Thai nationals in 2000||Buddhist % in 1990||Buddhist % in 2000||Muslim % in 1990||Muslim % in 2000||Christian % in 1990||Christian % in 2000||Linguistic minorities in 1990||Linguistic minorities in 2000"
+      ],
+      "place_column": true,
+      "composition_columns": 1,
+      "rows_hint": 9
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Thailand",
+    "wikitext_bytes": 79206,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 15,
+    "charts": [],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "style=\"width:50pt;\"| Year",
+       "style=\"width:50pt;\"| Population",
+       "style=\"width:50pt;\"| Live births",
+       "style=\"width:50pt;\"| Deaths",
+       "style=\"width:50pt;\"| Natural change",
+       "style=\"width:50pt;\"| Crude birth rate (per 1000)",
+       "style=\"width:50pt;\"| Crude death rate (per 1000)",
+       "style=\"width:50pt;\"| Natural change (per 1000)",
+       "style=\"width:50pt;\"| Crude migration change (per 1000)",
+       "style=\"width:50pt;\" | Total Fertility Rate"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January—August 2025",
+       "January—August 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{cite web |title=Population statistics of the civil registration (monthly) |url=https://stat.bora.dopa.go.th/stat/statnew/statMONTH/statmonth/#/mainpage}}</ref>",
+       "style=\"width:50pt;\"|Period",
+       "style=\"width:60pt;\"|Live<br>births"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "style=\"width:50pt;\"|Period",
+       "style=\"width:60pt;\"|Live<br>births",
+       "style=\"width:60pt;\"|Deaths",
+       "style=\"width:60pt;\"|Natural<br>change",
+       "style=\"width:30pt;\"|CBR<sup>1</sup>",
+       "style=\"width:30pt;\"|CDR<sup>1</sup>",
+       "style=\"width:30pt;\"|NC<sup>1</sup>",
+       "style=\"width:30pt;\"|TFR<sup>1</sup>",
+       "style=\"width:30pt;\"|IMR<sup>1</sup>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "Province",
+       "TFR",
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929",
+       "1930",
+       "1931"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 77
+     },
+     {
+      "header": [
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929",
+       "1930",
+       "1931",
+       "1932",
+       "1933"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Years",
+       "1935",
+       "1936",
+       "1937",
+       "1938",
+       "1939",
+       "1940",
+       "1941",
+       "1942",
+       "1943"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "Years",
+       "1945",
+       "1946",
+       "1947",
+       "1948",
+       "1949<ref name=\"ourworldindata.org\" />",
+       "Period",
+       "Life<br>expectancy<br />(years)",
+       "Period",
+       "Life<br>expectancy<br />(years)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "Period",
+       "Life<br>expectancy<br />(years)",
+       "Period",
+       "Life<br>expectancy<br />(years)",
+       "Region",
+       "2005–06",
+       "1995–96",
+       "1985–86"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "Region",
+       "2005–06",
+       "1995–96",
+       "1985–86"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Language",
+       "Speakers",
+       "Language Family"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Language",
+       "Language family",
+       "No. of speakers"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 13
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [
+       "scope=\"col\" | Region",
+       "scope=\"col\" | Population",
+       "scope=\"col\" | Percentage",
+       "style=\"text-align: left\" | Total population"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 14
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Thailand",
+    "wikitext_bytes": 83935,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 3,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\" | Religion",
+       "colspan=\"2\" | Census 2010<ref name=\"2010census\">{{cite web|url=http://web.nso.go.th/en/census/poph/data/090913_StatisticalTables_10.pdf|title=Population by religion, region and area, 2010|publisher=NSO|access-date=10 January 2018}}</ref>",
+       "colspan=\"2\" | Pilot Census 2015<ref name=\"2015census\">{{cite web|url=http://web.nso.go.th/en/survey/popchan/data/2015-2016-Statistical%20tables%20PDF.pdf|title=Population by religion, region and area, 2015|publisher=NSO|access-date=10 January 2018}}</ref>",
+       "colspan=\"2\" | Pilot Census 2018<ref name=\"2018census\"/>",
+       "Population",
+       "%",
+       "Population",
+       "%",
+       "Population",
+       "%"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "rowspan=2|Religion",
+       "colspan=2|Bangkok",
+       "colspan=2|Central Region",
+       "colspan=2|Northern Region",
+       "colspan=2|Northeastern Region",
+       "colspan=2|Southern Region",
+       "#",
+       "%",
+       "#",
+       "%"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "rowspan=2 | Religion",
+       "colspan=2 style=\"background:#FFFFC0;\" |Buddhism",
+       "colspan=2 style=\"background:#E0FFC0;\" |Islam",
+       "colspan=2 style=\"background:#E0F0FF;\" |Christianity",
+       "colspan=2 style=\"background:#FFE0C0;\" |Hinduism",
+       "colspan=2 style=\"background:#FFD0C0;\" |Confucianism",
+       "colspan=2 style=\"background:#F0F0C0;\" |Sikhism",
+       "colspan=2 style=\"background:#F0E0F0;\" |Other religions",
+       "colspan=2 style=\"background:Gainsboro;\" |Not religious",
+       "colspan=2 | Unknown"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Chiang Kham",
+    "found": true,
+    "title": "Chiang Kham district",
+    "url": "https://en.wikipedia.org/wiki/Chiang_Kham_district",
+    "wikitext_bytes": 4635,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Chiang Khan",
+    "found": true,
+    "title": "Chiang Khan district",
+    "url": "https://en.wikipedia.org/wiki/Chiang_Khan_district",
+    "wikitext_bytes": 5075,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Doi Saket",
+    "found": true,
+    "title": "Doi Saket district",
+    "url": "https://en.wikipedia.org/wiki/Doi_Saket_district",
+    "wikitext_bytes": 4302,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Mueang Nan",
+    "found": true,
+    "title": "Mueang Nan district",
+    "url": "https://en.wikipedia.org/wiki/Mueang_Nan_district",
+    "wikitext_bytes": 5030,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Phayu",
+    "found": true,
+    "title": "Phayu district",
+    "url": "https://en.wikipedia.org/wiki/Phayu_district",
+    "wikitext_bytes": 3845,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Thailand: Languages",
+   "name": "thailand-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/thailand-languages",
+   "resources": [
+    {
+     "name": "th_lang_metadata_v01.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/5fada7f4-9c2a-42eb-8210-620469d217c4/resource/fbbf0cb1-7004-4dde-b69e-455675c4d2db/download/th_lang_metadata_v01.pdf"
+    },
+    {
+     "name": "th_lang_v01.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/5fada7f4-9c2a-42eb-8210-620469d217c4/resource/3661aacd-d9b7-4eb0-8167-681ac13d4042/download/th_lang_v01.xlsx"
+    },
+    {
+     "name": "th_lang_admin0_v01.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5fada7f4-9c2a-42eb-8210-620469d217c4/resource/d3760897-beb0-4b9f-b702-7d363721f2d2/download/th_lang_admin0_v01.csv"
+    },
+    {
+     "name": "th_lang_admin1_v01.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5fada7f4-9c2a-42eb-8210-620469d217c4/resource/9dd74ec9-8208-4ec7-8caa-4bf0eb5fd9cb/download/th_lang_admin1_v01.csv"
+    },
+    {
+     "name": "th_lang_admin2_v01.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5fada7f4-9c2a-42eb-8210-620469d217c4/resource/927f95c2-1658-4bec-8a7e-0450d49308e9/download/th_lang_admin2_v01.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Thailand - Subnational Administrative Boundaries",
+   "name": "cod-ab-tha",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-tha",
+   "resources": [
+    {
+     "name": "tha_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/d24bdc45-eb4c-4e3d-8b16-44db02667c27/resource/ccbf3740-0638-48ea-b612-cdb61ef5462c/download/tha_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "tha_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/d24bdc45-eb4c-4e3d-8b16-44db02667c27/resource/10dde461-b781-4904-9559-7deb3e960913/download/tha_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "tha_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/d24bdc45-eb4c-4e3d-8b16-44db02667c27/resource/89a09f13-7b83-458a-9531-4f2418613065/download/tha_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "tha_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d24bdc45-eb4c-4e3d-8b16-44db02667c27/resource/a925b917-01ae-48c4-9279-7efe680a6b11/download/tha_admin_boundaries.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Thailand - Inland Waters",
+   "name": "thailand-water-bodies-water-courses",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/thailand-water-bodies-water-courses",
+   "resources": [
+    {
+     "name": "water.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/3ac857b6-8672-4ec3-901f-7308bbee7ac6/resource/dc3d6ec0-5178-4d65-b031-6c3c0c174873/download/water.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Thailand - Roads",
+   "name": "thailand-roads",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/thailand-roads",
+   "resources": [
+    {
+     "name": "trans.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/b6706d04-a4d8-4e62-bc9f-7c563b30c802/resource/28da93ea-78e3-41a3-89e3-0bfdb8afb8a5/download/trans.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Thailand: Road Surface Data",
+   "name": "thailand-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/thailand-road-surface-data",
+   "resources": [
+    {
+     "name": "Thailand GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_tha_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Thailand GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_tha_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Thailand: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-thailand",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-thailand",
+   "resources": [
+    {
+     "name": "kontur_boundaries_TH_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_TH_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_TH_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_TH_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_TH_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_TH_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Thailand - Subnational Population Statistics",
+   "name": "cod-ps-tha",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-tha",
+   "resources": [
+    {
+     "name": "THA_CODPS_QA_2023.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/a5d0b682-1644-4a2d-a9d7-90f1a0fdc959/resource/1d2f13ad-4594-4f8d-9c18-dbc5b831b556/download/tha_codps_qa_2023.pdf"
+    },
+    {
+     "name": "tha_admpop_2023.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/a5d0b682-1644-4a2d-a9d7-90f1a0fdc959/resource/4e846e04-3b31-4413-b615-eeff6b8dcd4c/download/tha_admpop_2023.xlsx"
+    },
+    {
+     "name": "THA_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/a5d0b682-1644-4a2d-a9d7-90f1a0fdc959/resource/b9cd9c84-d294-475a-a9ed-d1f4bdaf69a3/download/tha_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "tha_admpop_adm0_2023.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a5d0b682-1644-4a2d-a9d7-90f1a0fdc959/resource/91cfa72d-3495-4e21-b485-2683d40d08cc/download/tha_admpop_adm0_2023.csv"
+    },
+    {
+     "name": "tha_admpop_adm1_2023.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a5d0b682-1644-4a2d-a9d7-90f1a0fdc959/resource/6d582086-baab-4500-85a2-354983a24bd5/download/tha_admpop_adm1_2023.csv"
+    },
+    {
+     "name": "tha_admpop_adm2_2023.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a5d0b682-1644-4a2d-a9d7-90f1a0fdc959/resource/8c882b9b-c17c-426e-a333-193a6f97f98c/download/tha_admpop_adm2_2023.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Thailand - Accessibility Indicators",
+   "name": "thailand-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/thailand-accessibility-indicators",
+   "resources": [
+    {
+     "name": "THA_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tha/THA_education_access.gpkg"
+    },
+    {
+     "name": "THA_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tha/THA_education_access_long.csv"
+    },
+    {
+     "name": "THA_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tha/THA_education_access_wide.csv"
+    },
+    {
+     "name": "THA_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tha/THA_hospitals_access.gpkg"
+    },
+    {
+     "name": "THA_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tha/THA_hospitals_access_long.csv"
+    },
+    {
+     "name": "THA_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tha/THA_hospitals_access_wide.csv"
+    },
+    {
+     "name": "THA_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tha/THA_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "THA_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/tha/THA_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Thailand: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "thailand-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/thailand-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "tha_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/1ec16b2b-2a1d-4cf7-b766-0460b27b89ea/resource/b9ae968a-f77a-481f-b7de-391f7bc95e20/download/tha_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "tha_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/1ec16b2b-2a1d-4cf7-b766-0460b27b89ea/resource/70d5a1b4-2654-4bc4-a0a4-3b538dafd42a/download/tha_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "tha_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/1ec16b2b-2a1d-4cf7-b766-0460b27b89ea/resource/617e0ca2-36d8-4ae6-b23f-66139215dc10/download/tha_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "tha_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/1ec16b2b-2a1d-4cf7-b766-0460b27b89ea/resource/12a0675a-d844-4eae-82bd-4d09b00f944e/download/tha_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "tha_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/1ec16b2b-2a1d-4cf7-b766-0460b27b89ea/resource/62a36c1b-c98f-4127-ab8d-5d85986e5abc/download/tha_men_2020_csv.zip"
+    },
+    {
+     "name": "tha_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/1ec16b2b-2a1d-4cf7-b766-0460b27b89ea/resource/2a500fbf-66fd-428a-81e5-6458cd953eac/download/tha_men_2020_geotiff.zip"
+    },
+    {
+     "name": "tha_women_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/1ec16b2b-2a1d-4cf7-b766-0460b27b89ea/resource/b5bf48fe-3fef-4935-b134-aa25763ac122/download/tha_women_2020_csv.zip"
+    },
+    {
+     "name": "tha_women_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/1ec16b2b-2a1d-4cf7-b766-0460b27b89ea/resource/5c3fed1f-af19-45ec-a885-df8a7b61cecd/download/tha_women_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Thailand - Population Counts",
+   "name": "worldpop-population-counts-for-thailand",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-thailand",
+   "resources": [
+    {
+     "name": "tha_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/THA/tha_ppp_2020.tif"
+    },
+    {
+     "name": "tha_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/THA/tha_ppp_2019.tif"
+    },
+    {
+     "name": "tha_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/THA/tha_ppp_2018.tif"
+    },
+    {
+     "name": "tha_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/THA/tha_ppp_2017.tif"
+    },
+    {
+     "name": "tha_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/THA/tha_ppp_2016.tif"
+    },
+    {
+     "name": "tha_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/THA/tha_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "tha_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/THA/tha_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "tha_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/THA/tha_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Thailand - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-thailand",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-thailand",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Thailand",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/dd8313c9-9c4f-4899-9f48-3804629af92c/resource/62d2fb9b-3478-4902-b235-8d2d45e8a916/download/social-protection-and-labor_tha.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Thailand: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "tha-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/tha-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/b7300061-19f0-4ba8-a562-c80024b60122/resource/17b5be69-449d-49e0-b8db-d0edceffa33e/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_tha.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/b7300061-19f0-4ba8-a562-c80024b60122/resource/40342fa9-1f9a-41cd-a677-e9037a37ed5d/download/ghs_pop_e2025_r2023a_54009_100_v1_0_tha.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Thailand: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-tha",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-tha",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-th-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-th-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Thailand - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-th-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-th-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_TH",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4c0cc9f6-6d26-4c0f-b810-5193eeecdef2/resource/b04324d1-aa2b-4ecd-b1f2-6472b86fcfc2/download/indicator_data_th.csv"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.nso.go.th/nsoweb/index?set_lang=en",
+  "status": 418,
+  "error": null,
+  "pages": []
+ },
+ "verdict": {
+  "hdx_datasets": 14,
+  "hdx_machine_readable": 6,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "3/4",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

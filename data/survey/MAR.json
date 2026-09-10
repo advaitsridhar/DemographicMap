@@ -1,0 +1,767 @@
+{
+ "iso3": "MAR",
+ "name": "Morocco",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "language"
+   ],
+   "title": "Plateforme de diffusion du RGPH 2024 (interactive results platform, Apache Superset)",
+   "kind": "census",
+   "format": "table-builder",
+   "geography": "région / province-préfecture (levels inferred; not confirmed)",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 (12 regions vs 11 drawn) -- see notes",
+   "url": "https://resultats2024.rgphapps.ma/",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://resultats2024.rgphapps.ma/superset/dashboard/0fbd169b-19e1-4338-a344-e58bb9a02a4d/?permalink_key=pmo6qLqylzY&standalone=true",
+   "error": null,
+   "body": {
+    "bytes_read": 12478,
+    "kind": "html",
+    "title": "Résultats RGPH 2024",
+    "links_to_files": [],
+    "mentions": [
+     "language_pack",
+     "languages"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "language"
+   ],
+   "title": "RGPH 2024 | Téléchargements (regional/provincial result publications)",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "région / province",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 / admin2 (provinces: Morocco has 75 provinces-préfectures; packet draws 72)",
+   "url": "https://www.hcp.ma/downloads/RGPH-2024_t22752.html",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://www.hcp.ma/downloads/RGPH-2024_t22752.html",
+   "error": null,
+   "body": {
+    "bytes_read": 165221,
+    "kind": "html",
+    "title": "RGPH 2024 | Téléchargements | Site institutionnel du Haut-Commissariat au Plan du Royaume du Maroc",
+    "links_to_files": [],
+    "mentions": []
+   }
+  },
+  {
+   "fields": [
+    "language"
+   ],
+   "title": "Indicateurs démographiques et socioéconomiques du Royaume du Maroc selon les résultats du RGPH 2024",
+   "kind": "census",
+   "format": null,
+   "geography": null,
+   "geography_count": null,
+   "matches_boundary_level": null,
+   "url": "https://www.hcp.ma/Indicateurs-demographiques-et-socioeconomiques-du-Royaume-du-Maroc-selon-les-resultats-du-RGPH-2024_a4022.html",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://www.hcp.ma/Indicateurs-demographiques-et-socioeconomiques-du-Royaume-du-Maroc-selon-les-resultats-du-RGPH-2024_a4022.html",
+   "error": null,
+   "body": {
+    "bytes_read": 39316,
+    "kind": "html",
+    "title": "Indicateurs démographiques et socioéconomiques du Royaume du Maroc selon les résultats du RGPH 2024",
+    "links_to_files": [],
+    "mentions": []
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Languages of Morocco",
+    "wikitext_bytes": 47899,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 5,
+    "charts": [
+     "Pie chart",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "scope=\"col\" |Region",
+       "scope=\"col\" |Moroccan Arabic",
+       "scope=\"col\" |Total population",
+       "scope=\"col\" |% of Moroccan Arabic",
+       "scope=\"col\" |Region",
+       "scope=\"col\" |Hassaniya Arabic",
+       "scope=\"col\" |Total population",
+       "scope=\"col\" |% of Hassaniya Arabic"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "scope=\"col\" |Region",
+       "scope=\"col\" |Hassaniya Arabic",
+       "scope=\"col\" |Total population",
+       "scope=\"col\" |% of Hassaniya Arabic"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Most widely spoken Berber languages in Morocco",
+       "Male",
+       "Female",
+       "Total",
+       "scope=\"col\" |Region",
+       "scope=\"col\" |Tashelhit",
+       "scope=\"col\" |Tamazight",
+       "scope=\"col\" |Tarifit",
+       "scope=\"col\" |% of Berber speakers",
+       "Number of Berber speakers"
+      ],
+      "place_column": true,
+      "composition_columns": 3,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "scope=\"col\" |Region",
+       "scope=\"col\" |Tashelhit",
+       "scope=\"col\" |Tamazight",
+       "scope=\"col\" |Tarifit",
+       "scope=\"col\" |% of Berber speakers",
+       "Number of Berber speakers",
+       "scope=\"col\" |Total population",
+       "scope=\"col\" |Region",
+       "scope=\"col\" |% of native Berber speakers"
+      ],
+      "place_column": true,
+      "composition_columns": 3,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "scope=\"col\" |Region",
+       "scope=\"col\" |% of native Berber speakers"
+      ],
+      "place_column": true,
+      "composition_columns": 1,
+      "rows_hint": 13
+     }
+    ],
+    "place_by_composition_tables": 2
+   },
+   {
+    "title": "Religion in Morocco",
+    "wikitext_bytes": 23853,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Morocco",
+    "wikitext_bytes": 51360,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups",
+     "Languages"
+    ],
+    "wikitables": 10,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "! width=\"80pt\"|Average population",
+       "width=\"80pt\"|Live births",
+       "width=\"80pt\"|Deaths",
+       "width=\"80pt\"|Natural change",
+       "width=\"80pt\"|Crude birth rate (per 1,000)",
+       "width=\"80pt\"|Crude death rate (per 1,000)",
+       "width=\"80pt\"|Natural change (per 1,000)",
+       "width=\"80pt\"|Fertility rates"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "rowspan=2| Year<ref>{{cite web|url=http://www.dhsprogram.com/|title=The DHS Program – Quality information to plan, monitor and improve population, health, and nutrition programs|website=www.dhsprogram.com}}</ref>",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Chtouka-Ait Baha Province",
+    "found": true,
+    "title": "Chtouka Aït Baha Province",
+    "url": "https://en.wikipedia.org/wiki/Chtouka_A%C3%AFt_Baha_Province",
+    "wikitext_bytes": 4797,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Essaouira Province",
+    "found": true,
+    "title": "Ait Daoud",
+    "url": "https://en.wikipedia.org/wiki/Ait_Daoud",
+    "wikitext_bytes": 2745,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Province d'El Hajeb إقليم الحاجب",
+    "found": true,
+    "title": "El Hajeb Province",
+    "url": "https://en.wikipedia.org/wiki/El_Hajeb_Province",
+    "wikitext_bytes": 6080,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Province de Boulemane إقليم بولمان",
+    "found": true,
+    "title": "Boulemane Province",
+    "url": "https://en.wikipedia.org/wiki/Boulemane_Province",
+    "wikitext_bytes": 6152,
+    "infobox_params": [],
+    "sections": [
+     "Population"
+    ],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Province de Jerada إقليم جرادة",
+    "found": true,
+    "title": "Jerada Province",
+    "url": "https://en.wikipedia.org/wiki/Jerada_Province",
+    "wikitext_bytes": 4904,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Morocco: Languages",
+   "name": "morocco-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/morocco-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_MAR_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/19b891eb-cc7d-44bd-94ea-b20eacccfce3/resource/baf4cafa-e738-4135-b60f-8dc9d26bda78/download/clearglobal_language_use_mar_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_MAR_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/19b891eb-cc7d-44bd-94ea-b20eacccfce3/resource/82c436cd-0879-4be9-9187-00d6cc9a8185/download/clearglobal_language_use_mar_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_MAR_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/19b891eb-cc7d-44bd-94ea-b20eacccfce3/resource/017091ee-bd1f-4624-b4ae-6270b3daedec/download/clearglobal_language_use_mar_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Morocco - River Network",
+   "name": "morocco-river-network",
+   "org": "OCHA Middle East and North Africa (ROMENA)",
+   "url": "https://data.humdata.org/dataset/morocco-river-network",
+   "resources": [
+    {
+     "name": "River Network",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/c3bf1c4e-aa5d-42f1-b742-4d02eeae9efe/resource/436ff05b-6f47-4a91-9a72-f5cf23330d14/download/mar_watrcrsl_rvr_3m_arcworld.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Morocco: Road Surface Data",
+   "name": "morocco-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/morocco-road-surface-data",
+   "resources": [
+    {
+     "name": "Morocco GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_mar_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Morocco GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_mar_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Morocco: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-morocco",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-morocco",
+   "resources": [
+    {
+     "name": "kontur_boundaries_MA_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_MA_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_MA_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_MA_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_MA_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_MA_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Morocco - Accessibility Indicators",
+   "name": "morocco-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/morocco-accessibility-indicators",
+   "resources": [
+    {
+     "name": "MAR_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mar/MAR_education_access.gpkg"
+    },
+    {
+     "name": "MAR_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mar/MAR_education_access_long.csv"
+    },
+    {
+     "name": "MAR_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mar/MAR_education_access_wide.csv"
+    },
+    {
+     "name": "MAR_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mar/MAR_hospitals_access.gpkg"
+    },
+    {
+     "name": "MAR_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mar/MAR_hospitals_access_long.csv"
+    },
+    {
+     "name": "MAR_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mar/MAR_hospitals_access_wide.csv"
+    },
+    {
+     "name": "MAR_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mar/MAR_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "MAR_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/mar/MAR_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Morocco - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-morocco",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-morocco",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Morocco",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/14f220fd-3f90-4029-80bb-89d818087fbb/resource/f13cc55a-ebb2-4f52-bfd9-8d3402bb746f/download/social-protection-and-labor_mar.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Morocco - Population Counts",
+   "name": "worldpop-population-counts-for-morocco",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-morocco",
+   "resources": [
+    {
+     "name": "mar_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/MAR/mar_ppp_2020.tif"
+    },
+    {
+     "name": "mar_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/MAR/mar_ppp_2019.tif"
+    },
+    {
+     "name": "mar_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/MAR/mar_ppp_2018.tif"
+    },
+    {
+     "name": "mar_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/MAR/mar_ppp_2017.tif"
+    },
+    {
+     "name": "mar_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/MAR/mar_ppp_2016.tif"
+    },
+    {
+     "name": "mar_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/MAR/mar_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "mar_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/MAR/mar_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "mar_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/MAR/mar_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Morocco - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-ma-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-ma-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_MA",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4de3cd69-8f2f-4ba5-9c78-5f65dac72ff3/resource/f14fbdec-87a7-418f-8791-d19fc55980c8/download/indicator_data_ma.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Morocco: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "mar-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/mar-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/e0a2038d-f54a-4880-88d6-9045c7a63b76/resource/d03f2443-419e-4227-8c33-9dd1aadfbc5b/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_mar.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/e0a2038d-f54a-4880-88d6-9045c7a63b76/resource/2e8ef800-df25-42af-acea-b65dae87c59c/download/ghs_pop_e2025_r2023a_54009_100_v1_0_mar.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Morocco: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-mar",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-mar",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-ma-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-ma-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Africa Millennium Development Goals",
+   "name": "africa-millennium-development-goals",
+   "org": "African Development Bank Group (inactive)",
+   "url": "https://data.humdata.org/dataset/africa-millennium-development-goals",
+   "resources": [
+    {
+     "name": "Africa Millennium Development Goals.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/20e09bcd-0544-4058-85c7-b50aaec69804/resource/16fab191-570c-4c59-b6d2-f0507e9b30ff/download/africa-millennium-development-goals.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Africa Total Migrants",
+   "name": "total-migrants-total-migrants",
+   "org": "United Nations Economic Commission for Africa",
+   "url": "https://data.humdata.org/dataset/total-migrants-total-migrants",
+   "resources": [
+    {
+     "name": "POPULATION-migration.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/c8463852-56d5-4e7e-8fba-85bf97370a31/resource/582e2c94-d2f0-44d1-873e-3c72f98167af/download/population-migration.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Adult Illiteracy Rate ( % ) - Taux d'analphabetisme des adultes (% )",
+   "name": "adult-illiteracy-rate-taux-d-analphabetisme-des-adultes",
+   "org": "United Nations Economic Commission for Africa",
+   "url": "https://data.humdata.org/dataset/adult-illiteracy-rate-taux-d-analphabetisme-des-adultes",
+   "resources": [
+    {
+     "name": "Adult literacy.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/6dc29b21-61a5-4e8b-8af2-188e4c7b22dd/resource/94c40c1a-e800-423e-bc2d-01a264a5ed0f/download/adult-litracy.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.hcp.ma/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.hcp.ma/Population-demographie_r513.html",
+    "status": 200,
+    "kind": "html",
+    "title": "Population &amp; démographie | Site institutionnel du Haut-Commissariat au Plan du Royaume du Maroc",
+    "files": [],
+    "mentions": []
+   },
+   {
+    "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
+    "status": 200,
+    "kind": "html",
+    "title": "Population légale du Royaume du Maroc répartie par régions, provinces et préfectures et communes selon les résultats du Recensement général de la population et ",
+    "files": [],
+    "mentions": []
+   },
+   {
+    "url": "https://www.hcp.ma/Visualiser-les-donnees-du-RGPH-2014-en-cartes_a2891.html",
+    "status": 200,
+    "kind": "html",
+    "title": "Visualiser les données du RGPH 2014 en cartes",
+    "files": [],
+    "mentions": []
+   }
+  ],
+  "title": "Site institutionnel du Haut-Commissariat au Plan du Royaume du Maroc",
+  "matching_links": 3
+ },
+ "verdict": {
+  "hdx_datasets": 13,
+  "hdx_machine_readable": 7,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 2,
+  "urls_answering": "3/3",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

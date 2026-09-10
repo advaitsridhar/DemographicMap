@@ -1,0 +1,1370 @@
+{
+ "iso3": "UKR",
+ "name": "Ukraine",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Ukraine - Subnational Boundaries and Tabular Data (U.S. Census Bureau extraction of the 2001 census), sheet 'Nationality-Language'",
+   "kind": "census",
+   "format": "xlsx",
+   "geography": "rayon and city council (oblast rows blank; summed into oblast by the existing reader)",
+   "geography_count": 661,
+   "matches_boundary_level": "admin1 (after sum_into=1, as the language field already does); admin2 (494 old raions) previously measured unjoinable by name -- 58 of 663 matched",
+   "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+   "status": 202,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+   "error": null
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "2001 census | English version | Results | General results of the census | National composition of population (one page per region)",
+   "kind": "census",
+   "format": "html",
+   "geography": "region (oblast, AR Crimea, Kyiv city, Sevastopol city)",
+   "geography_count": 27,
+   "matches_boundary_level": "admin1",
+   "url": "http://2001.ukrcensus.gov.ua/eng/results/general/nationality/",
+   "status": 200,
+   "content_type": "text/html",
+   "final_url": "http://2001.ukrcensus.gov.ua/eng/results/general/nationality/",
+   "error": null,
+   "body": {
+    "bytes_read": 121751,
+    "kind": "html",
+    "title": "������������� ������� ��������� 2001&nbsp;|&nbsp;English version&nbsp;|&nbsp;Results&nbsp;|&nbsp;General results of the census&nbsp;|&nbsp;National composition ",
+    "links_to_files": [],
+    "mentions": [
+     "census",
+     "ethnic",
+     "language"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "language"
+   ],
+   "title": "2001 census | Results | Linguistic composition of the population",
+   "kind": "census",
+   "format": "html",
+   "geography": "region (oblast)",
+   "geography_count": 27,
+   "matches_boundary_level": "admin1",
+   "url": "http://2001.ukrcensus.gov.ua/eng/results/general/language/",
+   "status": 200,
+   "content_type": "text/html",
+   "final_url": "http://2001.ukrcensus.gov.ua/eng/results/general/language/",
+   "error": null,
+   "body": {
+    "bytes_read": 28343,
+    "kind": "html",
+    "title": "������������� ������� ��������� 2001&nbsp;|&nbsp;English version&nbsp;|&nbsp;Results&nbsp;|&nbsp;General results of the census&nbsp;|&nbsp;Linguistic compositio",
+    "links_to_files": [],
+    "mentions": [
+     "census",
+     "language",
+     "languages",
+     "mother tongue"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "language"
+   ],
+   "title": "Ukraine - All-Ukrainian Population Census 2001 - IPUMS Subset (World Bank Microdata Library catalog 2111; variable GEO2_UA = raion)",
+   "kind": "census",
+   "format": "microdata (registration required)",
+   "geography": "raion (GEO2_UA, 'second level administrative units, after regions')",
+   "geography_count": null,
+   "matches_boundary_level": "admin2 in principle (494 old raions) but by IPUMS geography codes, not names; unverified",
+   "url": "https://microdata.worldbank.org/index.php/catalog/2111/variable/GEO2_UA",
+   "status": 404,
+   "content_type": null,
+   "final_url": null,
+   "error": null
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "2001 Ukrainian census",
+    "wikitext_bytes": 22832,
+    "infobox_params": [],
+    "sections": [
+     "Languages"
+    ],
+    "wikitables": 4,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Region",
+       "Population, 2001<br>(thousands)",
+       "Population, 1989<br>(thousands) || Change<br>(percent)",
+       "Region",
+       "Urban Population<br>(thousand"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "Region",
+       "Urban Population<br>(thousands)",
+       "Rural Population<br>(thousands) || Urban Population<br>(percent)",
+       "Rural Population<br>(percent)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "Region",
+       "Male<br>(thousands)",
+       "Female<br>(thousands) || Male<br>(percent)",
+       "Female<br>(percent)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "Region",
+       "Population, 2001<br>(thousands)",
+       "Population, 2001<br>(percent) || Population, 1989<br>(percent)",
+       "Change<br>(percent)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 19
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Ukraine",
+    "wikitext_bytes": 153319,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 18,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "! style=\"width:70pt;\"|Average population",
+       "style=\"width:70pt;\"|Live births",
+       "style=\"width:70pt;\"|Deaths",
+       "style=\"width:70pt;\"|Natural change",
+       "style=\"width:70pt;\"|Crude birth rate (per 1,000)",
+       "style=\"width:70pt;\"|Crude death rate (per 1,000)",
+       "style=\"width:70pt;\"|Natural change (per 1,000)",
+       "style=\"width:70pt;\"|Total fertility rates",
+       "<ref name=\"Vallin\">{{cite web|title=The Crisis of the 1930s|url=https://www.demogr.mpg.de/books/drm/009/2.pdf}}</ref>",
+       "style=\"width:70pt;\"|Average population"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "<ref name=\"Vallin\">{{cite web|title=The Crisis of the 1930s|url=https://www.demogr.mpg.de/books/drm/009/2.pdf}}</ref>",
+       "style=\"width:70pt;\"|Average population",
+       "style=\"width:70pt;\"|Live births",
+       "style=\"width:70pt;\"|Deaths",
+       "style=\"width:70pt;\"|Natural change",
+       "style=\"width:70pt;\"|Crude birth rate (per 1,000)",
+       "style=\"width:70pt;\"|Crude death rate (per 1,000)",
+       "style=\"width:70pt;\"|Natural change (per 1,000)",
+       "style=\"width:50pt;\"|Fertility rates",
+       "style=\"width:50pt;\"|Life Expectancy (male)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "! style=\"width:40pt;\"| Average population<br />",
+       "style=\"width:60pt;\"| Live births",
+       "style=\"width:60pt;\"| Deaths",
+       "style=\"width:60pt;\"| Natural change",
+       "style=\"width:50pt;\"| Crude birth rate (per 1,000)",
+       "style=\"width:50pt;\"| Crude death rate (per 1,000)",
+       "style=\"width:50pt;\"| Natural change (per 1,000)",
+       "style=\"width:50pt;\"| Crude migration rate (per 1,000)",
+       "style=\"width:50pt;\"| Fertility rates",
+       "style=\"width:50pt;\"| Urban fertility"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "! style=\"width:50pt;\"|Urban live births",
+       "style=\"width:50pt;\"|Urban deaths",
+       "style=\"width:50pt;\"|Urban natural change",
+       "style=\"width:40pt;\"|Urban crude birth rate (per 1,000)",
+       "style=\"width:40pt;\"|Urban crude death rate (per 1,000)",
+       "style=\"width:40pt;\"|Urban natural change (per 1,000)",
+       "style=\"width:50pt;\"|Rural live births",
+       "style=\"width:50pt;\"|Rural deaths",
+       "style=\"width:50pt;\"|Rural natural change",
+       "style=\"width:40pt;\"|Rural crude birth rate (per 1,000)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January-June 2025",
+       "January-June 2026",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{cite web | title=Ukraine Vital Statistics 2025 | url=https://minjust.gov.ua/files/general/2026/01/19/20260119233306-25.xlsx | access-date=2026-01-20}}</ref>",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "Name of Oblast",
+       "Population as of Dec 2021",
+       "According to the electronic census on December 1, 2019",
+       "Number of births by oblast for January–November",
+       "Birth/2016",
+       "Birth/2015",
+       "Death/2016",
+       "Death/2015"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 35
+     },
+     {
+      "header": [
+       "Number of births by oblast for January–November",
+       "Birth/2016",
+       "Birth/2015",
+       "Death/2016",
+       "Death/2015"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "Number of births by oblast",
+       "Birth/2014",
+       "Birth/2013",
+       "Birth/2012",
+       "Birth/2011",
+       "Death/2014",
+       "Death/2013",
+       "Death/2012",
+       "Death/2011"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Birth rate by oblast",
+       "Birth/2014",
+       "Birth/2013",
+       "Birth/2012",
+       "Birth/2011",
+       "Death/2014",
+       "Death/2013",
+       "Death/2012",
+       "Death/2011"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Infant mortality by oblast",
+       "Death/2012",
+       "Death/2011",
+       "Death/2010",
+       "Death/2009"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "Infant mortality per 1,000 by Oblast",
+       "Death/2012",
+       "Death/2011",
+       "Death/2010",
+       "Death/2009"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "Children born per woman by oblast",
+       "Total fertility rate/2020",
+       "Total fertility rate/2012",
+       "Total fertility rate/2011",
+       "Total fertility rate/2010"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "Birth rate in",
+       "Birth/2012",
+       "Birth/2011",
+       "Birth/2010",
+       "Birth/2009",
+       "Birth/2007",
+       "Birth/2005",
+       "Birth/2003"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "Death rate in",
+       "Death/2012",
+       "Death/2011",
+       "Death/2010",
+       "Death/2009",
+       "Death/2007",
+       "Death/2005",
+       "Death/2003"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic<br />group",
+       "colspan=\"2\" | census 1926<sup>1</sup>",
+       "colspan=\"2\" | census 1939<sup>2</sup>",
+       "Number",
+       "%",
+       "Number",
+       "%",
+       "style=\"text-align:left;\"| Total",
+       "colspan=\"2\" | 29,018,187",
+       "colspan=\"2\" | 30,946,218"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic<br />group",
+       "colspan=\"2\" | census 1959<sup>1</sup>",
+       "colspan=\"2\" | census 1970<sup>2</sup>",
+       "colspan=\"2\" | census 1979<sup>3</sup>",
+       "colspan=\"2\" | census 1989<sup>4</sup>",
+       "colspan=\"2\" | census 2001<sup>5</sup>",
+       "Number",
+       "%",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 22
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Russians in Ukraine",
+    "wikitext_bytes": 85232,
+    "infobox_params": [],
+    "sections": [
+     "Language",
+     "Demographics",
+     "Religion"
+    ],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Census year || Total population<br />of Ukraine || Russians || %",
+       "1926",
+       "1939",
+       "1959",
+       "1970",
+       "1979",
+       "1989",
+       "2001"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "scope=\"col\" | Oblast",
+       "scope=\"col\" | Number in 2001<ref>{{Cite web |title=Всеукраїнський перепис населення 2001 - English version - Results - General results of the census - National composition of population |url=http://2001.ukrcensus.gov.ua/eng/results/general/nationality/ |access-date=23 October 2014}}</ref>",
+       "scope=\"col\" | Percent in 2001",
+       "scope=\"row\" | Donetsk Oblast",
+       "scope=\"row\" | Dnipropetrovsk Oblast",
+       "scope=\"row\" | Kyiv",
+       "scope=\"row\" | Kharkiv Oblast",
+       "scope=\"row\" | Lviv Oblast",
+       "scope=\"row\" | Odesa Oblast",
+       "scope=\"row\" | Luhansk Oblast"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 27
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "List of raions of Ukraine (1966-2020)",
+    "wikitext_bytes": 66193,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 28,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Ukrainian",
+       "Ukrainian translit.",
+       "English",
+       "Comment"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 2
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 25
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [
+       "#",
+       "Name",
+       "Year",
+       "Area<br>(km²)",
+       "Population",
+       "Density"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "#",
+       "Name",
+       "Year",
+       "Area<br>(km²)",
+       "Population",
+       "Density",
+       "#",
+       "Name",
+       "Year",
+       "Area<br>(km²)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "#",
+       "Name",
+       "Year",
+       "Area<br>(km²)",
+       "Population",
+       "Density"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Ukraine",
+    "wikitext_bytes": 83015,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 10,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "colspan = 14| Changes over time and region in the proportions of people in Ukraine identifying themselves as believers, etc.<ref name=Razumkov2016/><ref name=Razumkov2018/>",
+       "rowspan=2 | ''Whether you attend church or not, who do you think you are?''",
+       "colspan = 7| Ukraine",
+       "colspan = 5| 2016 survey split by region",
+       "| 2000",
+       "| 2010",
+       "| 2013",
+       "| 2014",
+       "| 2016",
+       "| 2017"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "colspan=10| Whether you attend church or not, who do you think you are? % of respondents",
+       "|",
+       "width=60| Ukraine<ref name=Razumkov2016/>",
+       "width=60| <small>Ukrainian Orthodox Church (Moscow Patriarchate)</small><ref name=\"CrossTab2016\">{{citation|url=http://www.razumkov.org.ua/upload/1464081325_file.pdf |title= Релігія і Церква в українському суспільстві: конфесійний розподіл, Результати соціологічного дослідження|trans-title=Religion and Church in Ukrainian society, denominational division. The results of sociological research|page=9|publisher=Razumkov Center|date=2016}}<br>Survey conducted from 25 to 30 March 2016 in all regions of Ukraine except Crimea and the occupied territories of Donetsk and Lugansk regions. Polled 2,018 respondents aged 18 years and over. The error margin does not exceed 2.3%.</ref>",
+       "width=60| <small> Ukrainian Orthodox Church (Kyiv Patriarchate)</small><ref name=CrossTab2016/>",
+       "width=60| <small> Other Orthodox</small><ref name=CrossTab2016/>",
+       "width=60| <small> Ukrainian Greek Catholic Church</small><ref name=CrossTab2016/>",
+       "width=60| <small> Just Christian</small><ref name=CrossTab2016/>",
+       "width=60| <small>Other denominations</small><ref name=CrossTab2016/>",
+       "width=60| <small>Do not belong to any religion</small><ref name=CrossTab2016/>"
+      ],
+      "place_column": true,
+      "composition_columns": 5,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "|",
+       "| 2000<ref name=2013Journal/><ref name=2014Report/><ref name=2016Report/>",
+       "| 2005<ref name=2013Journal/><ref name=2014Report/><ref name=2016Report/>",
+       "| Nov 2010<ref name=2013Journal/><ref name=2014Report/><ref name=2016Report/>",
+       "| Mar 2013<ref name=\"2013Journal\">[http://razumkov.org.ua/uploads/journal/ukr/NSD138_2013_ukr.pdf 2013 Journal]</ref><ref name=2014Report/><ref name=2016Report/><ref>{{cite web|url=http://old.razumkov.org.ua/ukr/poll.php?poll_id=908|title=Опитування: До якої релігії Ви себе відносите? (2013) // Центр Разумкова|first=Sparkle Design|last=Studio|website=old.razumkov.org.ua|access-date=May 2, 2017|archive-date=August 1, 2018|archive-url=https://web.archive.org/web/20180801155213/http://old.razumkov.org.ua/ukr/poll.php?poll_id=908|url-status=dead}}</ref>",
+       "| Apr 2014<ref name=\"2014Report\">[http://old.razumkov.org.ua/upload/1400155420_file.pdf 2014 Report] {{Webarchive|url=https://web.archive.org/web/20180909150630/http://old.razumkov.org.ua/upload/1400155420_file.pdf |date=September 9, 2018 }}, [http://old.razumkov.org.ua/upload/2014_Khyga_Religiya_5nnn_site.pdf 2014 Report 2] </ref><ref name=2016Report/>",
+       "| Feb 2015<ref>{{cite web|url=http://infolight.org.ua/content/religiyni-vpodobannya-naselennya-ukrayiny|title=Релігійні вподобання населення України|date=May 26, 2015}}</ref>",
+       "July 2015<ref name=\"Pew2017\">{{cite web|url=http://assets.pewresearch.org/wp-content/uploads/sites/11/2017/05/10104119/CEUP-FULL-REPORT.pdf|title=Religious Belief and National Belonging in Central and Eastern Europe|date=10 May 2017|publisher=Pew Research Center|access-date=2017-05-13|url-status = dead|archive-url=https://web.archive.org/web/20170513130508/http://assets.pewresearch.org/wp-content/uploads/sites/11/2017/05/10104119/CEUP-FULL-REPORT.pdf|archive-date=May 13, 2017|df=mdy-all}}</ref>",
+       "| Mar 2016<ref name=\"2016Report\">{{Cite web |url=http://old.razumkov.org.ua/upload/Religiya_200516_A4.compressed.pdf |title=2016 Report |access-date=April 16, 2017 |archive-date=April 22, 2017 |archive-url=https://web.archive.org/web/20170422181327/http://old.razumkov.org.ua/upload/Religiya_200516_A4.compressed.pdf |url-status=dead }}</ref>",
+       "| Nov 2016<ref>{{Cite web |url=http://old.razumkov.org.ua/upload/Newsletter_42.pdf |title=2016 newsletter |access-date=May 2, 2017 |archive-date=September 9, 2018 |archive-url=https://web.archive.org/web/20180909185001/http://old.razumkov.org.ua/upload/Newsletter_42.pdf |url-status=dead }}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 3
+     },
+     {
+      "header": [
+       "rowspan=\"1\"|Religion",
+       "colspan=\"1\"|West{{efn|name=WestRegion|<u>West:</u> Chernivtsi, Ivano-Frankivsk, Lviv, Rivne, Ternopil, Volyn and Zakarpattia Oblasts.}}",
+       "colspan=\"1\"|Center{{efn|name=CenterRegion|<u>Center:</u> Cherkasy, Chernihiv, Khmelnytsky, Kirovohrad, Poltava, Sumy, Vinnytsia, Zhytomyr,  and Kyiv Oblasts, and the self-governing city of Kyiv.}}",
+       "colspan=\"1\"|South{{efn|name=SouthRegion|<u>South:</u> Kherson, Mykolaiv, and Odesa Oblasts.}}",
+       "colspan=\"1\"|East{{efn|name=EastRegion|<u>East:</u> Dnipropetrovsk, Kharkiv, and Zaporizhzhia Oblasts.}}",
+       "colspan=\"1\"|Donbas{{efn|name=DonbasRegion|<u>Donbas:</u> Donetsk and Luhansk Oblasts (excluding the occupied areas).}}"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Oblast",
+       "|Region{{efn|name=RegionExplanation|Region as defined in other surveys by the Razumkov Center.<ref name=Razumkov2016/>}}",
+       "|Orthodox",
+       "|Greek Catholic",
+       "|Latin Catholic",
+       "|Protestant",
+       "|Christian",
+       "|Not religious",
+       "|Difficult to answer"
+      ],
+      "place_column": true,
+      "composition_columns": 5,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "rowspan=\"1\"|Type of Orthodoxy",
+       "colspan=\"1\"|% of Orthodox",
+       "colspan=\"1\"|% of total population",
+       "|",
+       "|2000",
+       "|2005",
+       "|2010",
+       "|2013",
+       "|2014",
+       "|2016"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "|",
+       "|2000",
+       "|2005",
+       "|2010",
+       "|2013",
+       "|2014",
+       "|2016",
+       "|2018",
+       "|Religion",
+       "|2020"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "|Religion",
+       "|2020",
+       "|2021",
+       "|2022",
+       "rowspan=\"1\"|Religion",
+       "colspan=\"1\"|West{{efn|name=WestRegion2|<u>West:</u> Chernivtsi, Ivano-Frankivsk, Khmelnytsky, Lviv, Rivne, Ternopil, Volyn and Zakarpattia Oblasts.}}",
+       "colspan=\"1\"|Center{{efn|name=CenterRegion2|<u>Center:</u> Cherkasy, Chernihiv, Kirovohrad, Poltava, Sumy, Vinnytsia, Zhytomyr,  and Kyiv Oblasts, and the self-governing city of Kyiv.}}",
+       "colspan=\"1\"|South{{efn|name=SouthRegion2|<u>South:</u> Dnipropetrovsk, Kherson, Mykolaiv, Odesa and Zaporizhzhia Oblasts}}",
+       "colspan=\"1\"|East{{efn|name=EastRegion2|<u>East:</u> Donetsk, Kharkiv, and Luhansk Oblasts."
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "rowspan=\"1\"|Religion",
+       "colspan=\"1\"|West{{efn|name=WestRegion2|<u>West:</u> Chernivtsi, Ivano-Frankivsk, Khmelnytsky, Lviv, Rivne, Ternopil, Volyn and Zakarpattia Oblasts.}}",
+       "colspan=\"1\"|Center{{efn|name=CenterRegion2|<u>Center:</u> Cherkasy, Chernihiv, Kirovohrad, Poltava, Sumy, Vinnytsia, Zhytomyr,  and Kyiv Oblasts, and the self-governing city of Kyiv.}}",
+       "colspan=\"1\"|South{{efn|name=SouthRegion2|<u>South:</u> Dnipropetrovsk, Kherson, Mykolaiv, Odesa and Zaporizhzhia Oblasts}}",
+       "colspan=\"1\"|East{{efn|name=EastRegion2|<u>East:</u> Donetsk, Kharkiv, and Luhansk Oblasts.}}",
+       "rowspan=\"1\"|Religion",
+       "colspan=\"1\"|Ukrainian-speaking Ukraini"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "rowspan=\"1\"|Religion",
+       "colspan=\"1\"|Ukrainian-speaking Ukrainians",
+       "colspan=\"1\"|Bilingual Ukrainians",
+       "colspan=\"1\"|Russian-speaking Ukrainians",
+       "colspan=\"1\"|Russian-speaking Russians"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     }
+    ],
+    "place_by_composition_tables": 2
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Dovzhansk",
+    "found": true,
+    "title": "Sverdlovsk, Ukraine",
+    "url": "https://en.wikipedia.org/wiki/Sverdlovsk%2C_Ukraine",
+    "wikitext_bytes": 15967,
+    "infobox_params": [
+     "blank_name"
+    ],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Hrebinka",
+    "found": true,
+    "title": "Hrebinka",
+    "url": "https://en.wikipedia.org/wiki/Hrebinka",
+    "wikitext_bytes": 8236,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Myronivka",
+    "found": true,
+    "title": "Myronivka",
+    "url": "https://en.wikipedia.org/wiki/Myronivka",
+    "wikitext_bytes": 12252,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Novi Sanzhary",
+    "found": true,
+    "title": "Novi Sanzhary",
+    "url": "https://en.wikipedia.org/wiki/Novi_Sanzhary",
+    "wikitext_bytes": 6823,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Pokrovsk",
+    "found": true,
+    "title": "Pokrovsk",
+    "url": "https://en.wikipedia.org/wiki/Pokrovsk",
+    "wikitext_bytes": 42310,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 1,
+    "charts": [
+     "historical populations"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "ethnicity",
+   "title": "Ukraine Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys",
+   "name": "ukraine-subnational-boundaries-and-tabular-data",
+   "org": "U.S. Census Bureau",
+   "url": "https://data.humdata.org/dataset/ukraine-subnational-boundaries-and-tabular-data",
+   "resources": [
+    {
+     "name": "Ukraine.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/45c19756-9d0b-4673-9de4-fc47168c369a/resource/134a344c-0d1c-4055-a5f3-1336f25b5655/download/ukraine.gdb.zip"
+    },
+    {
+     "name": "Ukraine_uscb_201905.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/45c19756-9d0b-4673-9de4-fc47168c369a/resource/7f1ace67-fd49-4d2a-8b25-cc0561b5145b/download/ukraine_uscb_201905.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ukraine: Languages",
+   "name": "ukraine-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/ukraine-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_UKR_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/f966a108-4bfe-4ec6-b4c2-42526d99e076/resource/5fbcc8ab-157e-44ab-80d8-eb2f85bf156e/download/clearglobal_language_use_ukr_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_UKR_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/f966a108-4bfe-4ec6-b4c2-42526d99e076/resource/2f8a4883-93b4-4e35-884d-37a5aa1baf52/download/clearglobal_language_use_ukr_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_UKR_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/f966a108-4bfe-4ec6-b4c2-42526d99e076/resource/f2f4e4c9-e62d-44e4-98c8-41cfab62e68f/download/clearglobal_language_use_ukr_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ukraine: Road Surface Data",
+   "name": "ukraine-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/ukraine-road-surface-data",
+   "resources": [
+    {
+     "name": "Ukraine GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_ukr_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Ukraine GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_ukr_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Education Cluster Strategy 2024 (Ukraine)",
+   "name": "education-cluster-strategy-2024-ukraine",
+   "org": "Ukraine Education Cluster",
+   "url": "https://data.humdata.org/dataset/education-cluster-strategy-2024-ukraine",
+   "resources": [
+    {
+     "name": "HNRP2024 Objectives  Activities (Education Cluster).xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/6942dc63-bf4a-4883-8f76-2be699c89636/resource/0044d262-c374-466a-913f-f13945adc173/download/hnrp2024-objectives-activities-education-cluster.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ukraine - Subnational Administrative Boundaries - enhanced metadata demonstration",
+   "name": "ukraine-subnational-administrative-boundaries-enhanced-metadata-demonstration",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/ukraine-subnational-administrative-boundaries-enhanced-metadata-demonstration",
+   "resources": [
+    {
+     "name": "ukr_demo_20250129.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/a01f98f8-4c0f-4085-ba92-b12ca6af34bb/resource/e398c497-e855-4bb2-a80c-49cd7390f28c/download/ukr_demo_20250129.zip"
+    },
+    {
+     "name": "ukr_admgz_sspe_20240415.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/a01f98f8-4c0f-4085-ba92-b12ca6af34bb/resource/a8a59291-12ba-4ae3-8d32-cfd60de8060d/download/ukr_admgz_sspe_20240415.xlsx"
+    },
+    {
+     "name": "ukr_metadata_demonstration.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/a01f98f8-4c0f-4085-ba92-b12ca6af34bb/resource/5729054d-a774-43e6-bd6f-4cfeed7ed4e8/download/ukr_metadata_demonstration.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Ukraine: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-ukraine",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-ukraine",
+   "resources": [
+    {
+     "name": "kontur_boundaries_UA_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_UA_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_UA_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_UA_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_UA_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_UA_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ukraine - Subnational Population Statistics",
+   "name": "legacy-cod-ps-ukr",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/legacy-cod-ps-ukr",
+   "resources": [
+    {
+     "name": "UKR_gazetteer_v01.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/3a1dda7a-f4a5-4e69-9d48-f8149c002068/resource/d704e9e1-7f01-4001-823e-0b1011a77a12/download/ukr_gazetteer_v01.xlsx"
+    },
+    {
+     "name": "UKR_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/3a1dda7a-f4a5-4e69-9d48-f8149c002068/resource/9e6eb0fb-2d64-44a6-8691-f6959ba85087/download/ukr_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "ukr_admpop_2022.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/3a1dda7a-f4a5-4e69-9d48-f8149c002068/resource/ab307012-08ff-42c6-b794-3b9c5c0594a1/download/ukr_admpop_2022.xlsx"
+    },
+    {
+     "name": "ukr_admpop_adm0_2022.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/3a1dda7a-f4a5-4e69-9d48-f8149c002068/resource/68e74d65-1d00-43db-824c-0e5da637b49b/download/ukr_admpop_adm0_2022.csv"
+    },
+    {
+     "name": "ukr_admpop_adm1_2022.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/3a1dda7a-f4a5-4e69-9d48-f8149c002068/resource/103f59bc-c64c-481f-9b52-df1c65c52615/download/ukr_admpop_adm1_2022.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ukraine: Subnational Population Statistics",
+   "name": "cod-ps-ukr",
+   "org": "OCHA Ukraine",
+   "url": "https://data.humdata.org/dataset/cod-ps-ukr",
+   "resources": []
+  },
+  {
+   "term": "census",
+   "title": "Ukraine - Subnational Population Statistics",
+   "name": "ukraine-administrative-levels-0-2-population-statistics",
+   "org": "OCHA Ukraine",
+   "url": "https://data.humdata.org/dataset/ukraine-administrative-levels-0-2-population-statistics",
+   "resources": [
+    {
+     "name": "ukr_pop_SSS2018.xls",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d6546fa8-d651-4638-92b2-fab69f8e425a/resource/ca7b6f60-f707-4421-a193-8d308083d099/download/ukr_pop_sss2018.xls"
+    },
+    {
+     "name": "ukr_pop_adm0_table.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/d6546fa8-d651-4638-92b2-fab69f8e425a/resource/11899d5b-dc14-4251-9a61-df9efde9bb83/download/ukr_pop_adm0_table.csv"
+    },
+    {
+     "name": "ukr_pop_adm1_table.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/d6546fa8-d651-4638-92b2-fab69f8e425a/resource/4f8bdd3e-5bb9-45c7-b28d-95ec46ba8a38/download/ukr_pop_adm1_table.csv"
+    },
+    {
+     "name": "ukr_pop_adm2_table.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/d6546fa8-d651-4638-92b2-fab69f8e425a/resource/61ce2da4-217e-4760-b868-e4c70cbd5b80/download/ukr_pop_adm2_table.csv"
+    },
+    {
+     "name": "ukr_adminboundaries_tabulardata.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/d6546fa8-d651-4638-92b2-fab69f8e425a/resource/c5f35b24-6e51-4da0-a2ac-3b77c4620e06/download/ukr_adminboundaries_tabulardata.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ukraine - Accessibility Indicators",
+   "name": "ukraine-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/ukraine-accessibility-indicators",
+   "resources": [
+    {
+     "name": "UKR_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ukr/UKR_education_access.gpkg"
+    },
+    {
+     "name": "UKR_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ukr/UKR_education_access_long.csv"
+    },
+    {
+     "name": "UKR_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ukr/UKR_education_access_wide.csv"
+    },
+    {
+     "name": "UKR_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ukr/UKR_hospitals_access.gpkg"
+    },
+    {
+     "name": "UKR_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ukr/UKR_hospitals_access_long.csv"
+    },
+    {
+     "name": "UKR_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ukr/UKR_hospitals_access_wide.csv"
+    },
+    {
+     "name": "UKR_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ukr/UKR_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "UKR_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ukr/UKR_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ukraine - Population Counts",
+   "name": "worldpop-population-counts-for-ukraine",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-ukraine",
+   "resources": [
+    {
+     "name": "ukr_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/UKR/ukr_ppp_2020.tif"
+    },
+    {
+     "name": "ukr_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/UKR/ukr_ppp_2019.tif"
+    },
+    {
+     "name": "ukr_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/UKR/ukr_ppp_2018.tif"
+    },
+    {
+     "name": "ukr_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/UKR/ukr_ppp_2017.tif"
+    },
+    {
+     "name": "ukr_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/UKR/ukr_ppp_2016.tif"
+    },
+    {
+     "name": "ukr_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/UKR/ukr_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "ukr_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/UKR/ukr_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "ukr_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/UKR/ukr_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ukraine: Baseline Population in Donetska and Luhanska Oblasts",
+   "name": "ukraine-baseline-population-data",
+   "org": "OCHA Ukraine",
+   "url": "https://data.humdata.org/dataset/ukraine-baseline-population-data",
+   "resources": [
+    {
+     "name": "UKR_Population Baseline_SADD_2022.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/a6c018c9-d1fd-433c-a9a9-67c8d569a2e1/resource/5722fb9c-6dd5-485f-87d6-84421b337288/download/ukr_2022_population-baseline_sadd.xlsx"
+    },
+    {
+     "name": "UKR_Population Baseline_SAAD_2021.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/a6c018c9-d1fd-433c-a9a9-67c8d569a2e1/resource/6431c2b3-f920-442f-bab4-711134a6defd/download/2021-06-29-population-baseline-with-saad.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ukraine - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-ukraine",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-ukraine",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Ukraine",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/8f49b41e-e3da-48da-b02a-88b9b1ecf2e0/resource/779de488-b9ba-478b-996b-4c802ca52ffa/download/social-protection-and-labor_ukr.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Ukraine: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "ukr-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/ukr-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/15d74fa8-5c8f-40b6-97fc-5c6b2546bbb6/resource/fe9f9c58-aa4d-46a5-8219-b1b70bdb8a4d/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_ukr.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/15d74fa8-5c8f-40b6-97fc-5c6b2546bbb6/resource/318e90fa-1f68-4a86-8c6b-0a78a17d2627/download/ghs_pop_e2025_r2023a_54009_100_v1_0_ukr.tif"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.ukrcensus.gov.ua/eng/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.ukrcensus.gov.ua/eng/notice/news.php",
+    "status": 200,
+    "kind": "html",
+    "title": "All-Ukrainian population census| News",
+    "files": [
+     "../../../eng/laws/2012/program_en.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "http://www.ukrcensus.gov.ua/agr/",
+    "status": 200,
+    "kind": "html",
+    "title": null,
+    "files": [],
+    "mentions": []
+   },
+   {
+    "url": "https://www.ukrcensus.gov.ua/eng/laws/2012/program_en.pdf",
+    "status": 200,
+    "kind": "pdf",
+    "title": null,
+    "files": null,
+    "mentions": null
+   },
+   {
+    "url": "https://www.ukrcensus.gov.ua/eng/notice/news.php?type=2&id1=23",
+    "status": 200,
+    "kind": "html",
+    "title": "All-Ukrainian population census| News",
+    "files": [],
+    "mentions": [
+     "census",
+     "ethnic",
+     "language"
+    ]
+   }
+  ],
+  "title": "All-Ukrainian population census|",
+  "matching_links": 4
+ },
+ "verdict": {
+  "hdx_datasets": 14,
+  "hdx_machine_readable": 9,
+  "nso_files_found": 1,
+  "wikipedia_list_tables_by_place": 2,
+  "urls_answering": "2/4",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "2/5"
+ }
+}

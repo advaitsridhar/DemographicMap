@@ -1,0 +1,784 @@
+{
+ "iso3": "AFG",
+ "name": "Afghanistan",
+ "tier_proposed": "C",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity",
+    "religion"
+   ],
+   "title": "Afghanistan Population Census 1979 (GHDx / IHSN records)",
+   "kind": "census",
+   "format": "unknown (catalogue records only; no table or file surfaced)",
+   "geography": "province (1979 provinces)",
+   "geography_count": null,
+   "matches_boundary_level": "neither established (1979 province set differs from today's 34; 398 districts did not exist in that form)",
+   "url": "https://ghdx.healthdata.org/record/afghanistan-population-census-1979",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://ghdx.healthdata.org/record/afghanistan-population-census-1979",
+   "error": null,
+   "body": {
+    "bytes_read": 34529,
+    "kind": "html",
+    "title": "Afghanistan Population Census 1979 | GHDx",
+    "links_to_files": [],
+    "mentions": [
+     "census",
+     "ethnicity",
+     "religion"
+    ]
+   }
+  },
+  {
+   "fields": [],
+   "title": "Socio-Demographic and Economic Survey (SDES), provincial reports (Ghor, Kabul, Bamiyan, Daykundi, Kapisa, Parwan, Balkh and others)",
+   "kind": "survey",
+   "format": "pdf (one report per province)",
+   "geography": "province, district and village",
+   "geography_count": 13,
+   "matches_boundary_level": "partial admin1 (13 of 34 provinces) and their districts (admin2)",
+   "url": "https://afghanistan.unfpa.org/sites/default/files/pub-pdf/SDES-Ghor-English-Low-Resolution-Version.pdf",
+   "status": 200,
+   "content_type": "application/pdf",
+   "final_url": "https://afghanistan.unfpa.org/sites/default/files/pub-pdf/SDES-Ghor-English-Low-Resolution-Version.pdf",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "pdf"
+   }
+  },
+  {
+   "fields": [],
+   "title": "Afghanistan - Subnational Demographic and Health Data (DHS on HDX)",
+   "kind": "survey",
+   "format": "csv",
+   "geography": "province (DHS regions)",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 (expected for DHS regions; unverified)",
+   "url": "https://data.humdata.org/dataset/dhs-subnational-data-for-afghanistan",
+   "status": 202,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://data.humdata.org/dataset/dhs-subnational-data-for-afghanistan",
+   "error": null
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "File:Map of Ethnic Groups in Afghanistan, by district.svg (Wikimedia Commons)",
+   "kind": "other",
+   "format": "svg map",
+   "geography": "district",
+   "geography_count": null,
+   "matches_boundary_level": "admin2 (by name of level only; a map, not a table)",
+   "url": "https://commons.wikimedia.org/wiki/File:Map_of_Ethnic_Groups_in_Afghanistan,_by_district.svg",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://commons.wikimedia.org/wiki/File:Map_of_Ethnic_Groups_in_Afghanistan,_by_district.svg",
+   "error": null,
+   "body": {
+    "bytes_read": 107545,
+    "kind": "html",
+    "title": "File:Map of Ethnic Groups in Afghanistan, by district.svg - Wikimedia Commons",
+    "links_to_files": [
+     "http://www.aims.org.af/afg/dist_profiles/unhcr_district_profiles/centra/ghazni/jaghatu.pdf",
+     "https://commons.wikimedia.org/wiki/Special:EntityData/M6070648.json"
+    ],
+    "mentions": [
+     "ethnic",
+     "ethnicmap1",
+     "language",
+     "languageselect"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Ethnicity in Afghanistan (redirect target of 'Tribes in Afghanistan')",
+    "wikitext_bytes": 0,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Ethnic groups in Afghanistan (Grokipedia mirror, not Wikipedia)",
+    "wikitext_bytes": 0,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Afghanistan",
+    "wikitext_bytes": 29196,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Afghanistan",
+    "wikitext_bytes": 68511,
+    "infobox_params": [],
+    "sections": [
+     "Ethnicity",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 13,
+    "charts": [
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 3,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"90pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\" | Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"50\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\" | Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\" | Female",
+       "width=\"80\" | Total",
+       "width=\"50\" | Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "! Population",
+       "Live births",
+       "Deaths",
+       "Natural change",
+       "Crude birth rate (per 1000)",
+       "Crude death rate (per 1000)",
+       "Natural Change (per 1000)",
+       "Crude Migration rate<br/>(per 1000)",
+       "Total fertility rate",
+       "Life expectancy<br/>(in years)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929",
+       "1930",
+       "1931",
+       "1932",
+       "1933"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "Years",
+       "1935",
+       "1936",
+       "1937",
+       "1938",
+       "1939",
+       "1940",
+       "1941",
+       "1942",
+       "1943"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 30
+     },
+     {
+      "header": [
+       "Years",
+       "1945",
+       "1946",
+       "1947",
+       "1948",
+       "1949<ref name=\"ourworldindata.org\" />",
+       "style=\"width:100pt;\" rowspan=2 | Province",
+       "colspan=2 | TFR",
+       "2015",
+       "2023"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 38
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\" rowspan=2 | Province",
+       "colspan=2 | TFR",
+       "2015",
+       "2023"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 36
+     },
+     {
+      "header": [
+       "rowspan=2 | year",
+       "colspan=3 | crude birth rate (CBR)",
+       "colspan=3 | total fertility rate (TFR)",
+       "colspan=3 | wanted fertility rate (WFR)",
+       "total",
+       "urban",
+       "rural",
+       "total",
+       "urban",
+       "rural"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years",
+       "style=\"background:#ddf; width:10%;\" | Ethnic group",
+       "style=\"background:#ddf; width:10%;\" | Image",
+       "style=\"background:#ddf; width:15%;\" | {{small|Estimate based on native mother tongue}}<ref>{{Cite web |title=gulf2000.columbia.edu/images/maps/Afghanistan_Languages_summary |url=https://gulf2000.columbia.edu/images/maps/Afghanistan_Languages_summary_lg.png}}</ref><ref>{{Cite web |date=2013-10-14 |title=The World Factbook |url=https://www.cia.gov/library/publications/the-world-factbook/fields/2075.html?countryName=Afghanistan&countryCode=af&regionCode=sas&#af |access-date=2025-04-29 |archive-url=https://web.archive.org/web/20131014200908/https://www.cia.gov/library/publications/the-world-factbook/fields/2075.html?countryName=Afghanistan&countryCode=af&regionCode=sas&#af |archive-date=14 October 2013}}</ref>",
+       "style=\"background:#ddf; width:15%;\" | The World Factbook<ref>{{cite web |url=https://www.cia.gov/library/publications/the-world-factbook/fields/2075.html?countryName=Afghanistan&countryCode=af&regionCode=sas&#af |title=The World Factbook |website=cia.gov |access-date=11 January 2022 |archive-url=https://web.archive.org/web/20131014200908/https://www.cia.gov/library/publications/the-world-factbook/fields/2075.html?countryName=Afghanistan&countryCode=af&regionCode=sas&#af |archive-date=14 October 2013 |url-status=dead}}</ref><ref>{{Cite web |title=CIA WORLD FACTBOOK 1992 via the Libraries of the Univ. of Missouri-St. Louis |url=https://www.umsl.edu/services/govdocs/wofact92/wf930006.tx"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "style=\"background:#ddf; width:10%;\" | Ethnic group",
+       "style=\"background:#ddf; width:10%;\" | Image",
+       "style=\"background:#ddf; width:15%;\" | {{small|Estimate based on native mother tongue}}<ref>{{Cite web |title=gulf2000.columbia.edu/images/maps/Afghanistan_Languages_summary |url=https://gulf2000.columbia.edu/images/maps/Afghanistan_Languages_summary_lg.png}}</ref><ref>{{Cite web |date=2013-10-14 |title=The World Factbook |url=https://www.cia.gov/library/publications/the-world-factbook/fields/2075.html?countryName=Afghanistan&countryCode=af&regionCode=sas&#af |access-date=2025-04-29 |archive-url=https://web.archive.org/web/20131014200908/https://www.cia.gov/library/publications/the-world-factbook/fields/2075.html?countryName=Afghanistan&countryCode=af&regionCode=sas&#af |archive-date=14 October 2013}}</ref>",
+       "style=\"background:#ddf; width:15%;\" | The World Factbook<ref>{{cite web |url=https://www.cia.gov/library/publications/the-world-factbook/fields/2075.html?countryName=Afghanistan&countryCode=af&regionCode=sas&#af |title=The World Factbook |website=cia.gov |access-date=11 January 2022 |archive-url=https://web.archive.org/web/20131014200908/https://www.cia.gov/library/publications/the-world-factbook/fields/2075.html?countryName=Afghanistan&countryCode=af&regionCode=sas&#af |archive-date=14 October 2013 |url-status=dead}}</ref><ref>{{Cite web |title=CIA WORLD FACTBOOK 1992 via the Libraries of the Univ. of Missouri-St. Louis |url=https://www.umsl.edu/services/govdocs/wofact92/wf930006.txt|archive-url=https://web.archive.org/web/19991009201426/https://www.umsl.edu/services/govdocs/wofact92/wf930006.txt |archive-date=9 October 1999 }}</ref>",
+       "Library of Congress Country Studies<ref>{{Cite web |title=Library of Congress Country Studies. |url=https://lcweb2.loc.gov/cgi-bin/query/r?frd%2Fcstdy%3A%40field%28DOCID+af0037%29 |archive-url=https://web.archive.org/web/20090110132651/https://lcweb2.loc.gov/cgi-bin/query/r?frd%2Fcstdy%3A%40field%28DOCID+af0037%29 |archive-date=10 January 2009}}</ref>",
+       "Gulf/2000 Project<ref>{{Cite web |title=The Gulf/2000 Project - SIPA - COLUMBIA UNIVERSITY |url=https://gulf2000.columbia.edu/maps.shtml |access-date=2025-04-29 |website=gulf2000.columbia.edu}}</ref><ref>{{Cite web |title=gulf2000.columbia.edu/images/maps/Afghanistan_Ethnic_summary |url=https://gulf2000.columbia.edu/images/maps/Afghanistan_Ethnic_summary_lg.png}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 3
+     },
+     {
+      "header": [
+       "style=\"background:#ddf; width:15%;\" | Ethnic group",
+       "style=\"background:#ddf; width:8.5%;\" | {{small|\"Afghanistan: Where Things Stand\" (2004)}}<ref name=\"ABCBBCARD\"/><br />{{small|\"A survey of the Afghan people\" (2004)}}<ref name=\"AsiaFoundation\"/>",
+       "style=\"background:#ddf; width:8.5%;\" | {{small|\"Afghanistan: Where Things Stand\" (2005)}}<ref name=\"ABCBBCARD\"/>",
+       "style=\"background:#ddf; width:8.5%;\" | {{small|\"Afghanistan: Where Things Stand\" (2006)}}<ref name=\"ABCBBCARD\"/>",
+       "style=\"background:#ddf; width:8.5%;\" | {{small|\"Afghanistan: Where Things Stand\" (2007)}}<ref name=\"ABCBBCARD\"/>",
+       "style=\"background:#ddf; width:8.5%;\" | {{small|\"A survey of the Afghan people\" (2007)}}<ref name=\"AsiaFoundation\"/>",
+       "style=\"background:#ddf; width:8.5%;\" | {{small|\"Afghanistan: Where Things Stand\" (2009)}}<ref name=\"ABCBBCARD\"/>",
+       "style=\"background:#ddf; width:8.5%;\" | {{small|\"A survey of the Afghan people\" (2012)}}<ref name=\"AsiaFoundation\"/>",
+       "style=\"background:#ddf; width:8.5%;\" | {{small|\"A survey of the Afghan people\" (2014)}}<ref name=\"AsiaFoundation\"/>",
+       "style=\"background:#ddf; width:8.5%;\" | {{small|\"A survey of the Afghan people\" (2018)}}<ref name=\"AsiaFoundation\"/>"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "style=\"background:#ddf; width:30%;\" | Language",
+       "style=\"background:#ddf; width:20%;\" | {{small|Recent estimate<br />including both L1<br />and L2 speakers}}<ref name=\"Languages\">{{Cite web|url=https://www.cia.gov/the-world-factbook/field/languages|archive-url=https://web.archive.org/web/20260107183809/https://www.cia.gov/the-world-factbook/field/languages|url-status=dead|archive-date=7 January 2026|title=Languages – The World Factbook|website=www.cia.gov}}</ref>",
+       "style=\"background:#ddf; width:20%;\" | {{small|Pre-1992 estimates}}<ref name=\"CIA-1991\">{{cite web |date=15 October 1991 |title=The World Factbok – Afghanistan |url=https://www.umsl.edu/services/govdocs/wofact90/world12.txt |url-status=live |archive-url=https://web.archive.org/web/20110427053700/https://www.umsl.edu/services/govdocs/wofact90/world12.txt |archive-date=27 April 2011 |access-date=20 March 2011 |work=The World Factbook/Central Intelligence Agency |publisher=University of Missouri |quote=''Ethnic divisions: 50% Pashtun, 25% Tajik, 9% Uzbek, 12–15% Hazara[,] minor ethnic groups include Chahar Aimaks, Turkmen, Baloch, and others […] Language: 50% Pashtu, 35% Afghan Persian (Dari), 11% Turkic languages (primarily Uzbek and Turkmen), 4% thirty minor languages (primarily Balochi and Pashai)[,] much bilingualism''}}</ref><ref name=\"Iranica-Afghanistan-lang\">{{cite web|url=https://www.iranicaonline.org/articles/afghanistan-v-languages|title=AFGHANISTAN v. Languages|quote='' Official languages. Paṧtō (1) promoted to the status of official language by royal decree in 1936, is the native tongue of 50 to 55 percent of Afghans; as a second language it is spoken by less than 10 percent of the population. The Paṧtō-speaking areas are located in the east, the south, and the southwest of the country. Important colonies of nāqelīn (displaced populations) have settled in Bactria. Persian (2) is the language most spoken in Afghanistan. The native tongue of twenty five percent of the population, it is split into numerous dialects.''|work=Ch. M. Kieffer|publisher=Encyclopædia Iranica|date= 15 December 1983 |access-date=2025-01-16|url-status=live|archive-url=https://web.archive.org/web/20110429162829/http://www.iranicaonline.org/articles/afghanistan-v-languages|archive-date=29 April 2011}}</ref><ref name=\"Ethnologue\">{{Cite web|url=https://www.ethnologue.com/14/show_country.asp?name=Afghanistan |title=Languages of Afghanistan |work=SIL International |publisher=Ethnologue: Languages of the World |access-date=18 September 2010 |url-status=dead |archive-url=https://web.archive.org/web/20090130093407/http://www.ethnologue.com/14/show_country.asp?name=Afghanistan |archive-date=30 January 2009 }}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 2,
+      "rows_hint": 3
+     },
+     {
+      "header": [
+       "style=\"background:#ddf; width:15%;\" | Religion",
+       "style=\"background:#ddf; width:10%;\" | {{small|\"A survey of the Afghan people\" (2004)}}<ref name=\"AsiaFoundation\" />",
+       "style=\"background:#ddf; width:10%;\" | {{small|\"A survey of the Afghan people\" (2006)}}<ref name=\"AsiaFoundation\" />",
+       "style=\"background:#ddf; width:10%;\" | {{small|\"A survey of the Afghan people\" (2007)}}<ref name=\"AsiaFoundation\" />",
+       "style=\"background:#ddf; width:10%;\" | {{small|\"A survey of the Afghan people\" (2008)}}<ref name=\"AsiaFoundation\" />",
+       "style=\"background:#ddf; width:10%;\" | {{small|\"A survey of the Afghan people\" (2009)}}<ref name=\"AsiaFoundation\" />",
+       "style=\"background:#ddf; width:10%;\" | {{small|\"A survey of the Afghan people\" (2010)}}<ref name=\"AsiaFoundation\" />",
+       "style=\"background:#ddf; width:10%;\" | {{small|\"A survey of the Afghan people\" (2011)}}<ref name=\"AsiaFoundation\" />",
+       "style=\"background:#ddf; width:10%;\" | {{small|\"A survey of the Afghan people\" (2012)}}<ref name=\"AsiaFoundation\" />"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Bargi Matal",
+    "found": true,
+    "title": "Barg-i Matal District",
+    "url": "https://en.wikipedia.org/wiki/Barg-i_Matal_District",
+    "wikitext_bytes": 5812,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Dawlatabad",
+    "found": true,
+    "title": "Dawlatabad District",
+    "url": "https://en.wikipedia.org/wiki/Dawlatabad_District",
+    "wikitext_bytes": 6815,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Daychopan",
+    "found": true,
+    "title": "Dey Chopan District",
+    "url": "https://en.wikipedia.org/wiki/Dey_Chopan_District",
+    "wikitext_bytes": 3007,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Dila",
+    "found": true,
+    "title": "Dila District, Afghanistan",
+    "url": "https://en.wikipedia.org/wiki/Dila_District%2C_Afghanistan",
+    "wikitext_bytes": 9635,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Khanabad",
+    "found": true,
+    "title": "Khan Abad District",
+    "url": "https://en.wikipedia.org/wiki/Khan_Abad_District",
+    "wikitext_bytes": 4697,
+    "infobox_params": [
+     "blank1_name",
+     "blank_name"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Afghanistan - Subnational Administrative Boundaries",
+   "name": "cod-ab-afg",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-afg",
+   "resources": [
+    {
+     "name": "afg_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/4c303d7b-8eae-4a5a-a3aa-b2331fa39d74/resource/361330e2-15f7-4bde-ad08-8bf9e37b5c41/download/afg_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "afg_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/4c303d7b-8eae-4a5a-a3aa-b2331fa39d74/resource/84b6e7e1-e907-488a-9a37-47b707145468/download/afg_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "afg_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/4c303d7b-8eae-4a5a-a3aa-b2331fa39d74/resource/330aad34-2254-4622-afac-e98ace1524ae/download/afg_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "afg_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/4c303d7b-8eae-4a5a-a3aa-b2331fa39d74/resource/45f2ff90-13c0-46bf-a46e-7d443e9b9fdd/download/afg_admin_boundaries.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Afghanistan: Road Surface Data",
+   "name": "afghanistan-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/afghanistan-road-surface-data",
+   "resources": [
+    {
+     "name": "Afghanistan GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_afg_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Afghanistan GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_afg_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Afghanistan: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-afghanistan",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-afghanistan",
+   "resources": [
+    {
+     "name": "kontur_boundaries_AF_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_AF_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_AF_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_AF_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_AF_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_AF_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Afghanistan - Subnational Population Statistics",
+   "name": "cod-ps-afg",
+   "org": "OCHA Afghanistan",
+   "url": "https://data.humdata.org/dataset/cod-ps-afg",
+   "resources": [
+    {
+     "name": "afg_admgz.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/79484094-6e4a-4fbd-9152-66b42a9b32e0/resource/0712e350-50a1-4a43-bb17-a1b9ba1d2dd8/download/afg_admgz.xlsx"
+    },
+    {
+     "name": "afg_admpop_adm2_2026.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/79484094-6e4a-4fbd-9152-66b42a9b32e0/resource/004ec841-8fb7-489b-bd02-41a2d1267f95/download/afg_admpop_adm2_2026.csv"
+    },
+    {
+     "name": "afg_admpop_adm1_2026.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/79484094-6e4a-4fbd-9152-66b42a9b32e0/resource/90ba48e4-648f-4efc-97df-54fe05132e5e/download/afg_admpop_adm1_2026.csv"
+    },
+    {
+     "name": "afg_admgz.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/79484094-6e4a-4fbd-9152-66b42a9b32e0/resource/9cc38cd9-579e-438b-81ce-fb0e795526f3/download/afg_admgz.xlsx"
+    },
+    {
+     "name": "afg_admpop_2021_v2.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/79484094-6e4a-4fbd-9152-66b42a9b32e0/resource/6ee580c6-26f2-4eb1-82ba-5a7bac30f2ce/download/afg_admpop_2021_v2.xlsx"
+    },
+    {
+     "name": "afg_popadm_adm0_2021_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/79484094-6e4a-4fbd-9152-66b42a9b32e0/resource/73ec73cc-de29-4263-979e-4dbe6944820f/download/afg_popadm_adm0_2021_v2.csv"
+    },
+    {
+     "name": "afg_admpop_adm1_2021_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/79484094-6e4a-4fbd-9152-66b42a9b32e0/resource/ff845676-6d74-418b-910f-1e64788a1d67/download/afg_admpop_adm1_2021_v2.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Afghanistan - Subnational Population Statistics",
+   "name": "legacy-cod-ps-afg",
+   "org": "OCHA Afghanistan",
+   "url": "https://data.humdata.org/dataset/legacy-cod-ps-afg",
+   "resources": [
+    {
+     "name": "afg_admpop_adm0_1_2021_v2.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/17acb541-9431-409a-80a8-50eda7e8ebab/resource/2617fc21-4d6f-484a-96ed-fa9ef5b88abc/download/afg_admpop_adm0_1_2021_v2.xlsx"
+    },
+    {
+     "name": "afg_admgz.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/17acb541-9431-409a-80a8-50eda7e8ebab/resource/dc7a5656-d557-404f-8b1d-494c7bbd0112/download/afg_admgz.xlsx"
+    },
+    {
+     "name": "afg_popadm_adm0_2021_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/17acb541-9431-409a-80a8-50eda7e8ebab/resource/e6e0195f-704a-4797-bc2c-f74058821346/download/afg_popadm_adm0_2021_v2.csv"
+    },
+    {
+     "name": "afg_admpop_adm1_2021_v2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/17acb541-9431-409a-80a8-50eda7e8ebab/resource/043ba4c6-1a52-4649-800c-710a3024daa2/download/afg_admpop_adm1_2021_v2.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Afghanistan - Conflict Induced Displacements",
+   "name": "afghanistan-conflict-induced-displacements",
+   "org": "OCHA Afghanistan",
+   "url": "https://data.humdata.org/dataset/afghanistan-conflict-induced-displacements",
+   "resources": [
+    {
+     "name": "afghanistan_conflict_displacements_2026.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/7695bdab-40cc-42ee-ab66-ddad667ee771/resource/68b7d855-add3-4705-8afb-1df65b4a2d65/download/afghanistan_conflict_displacements_2026.xlsx"
+    },
+    {
+     "name": "afghanistan_conflict_displacements_2026.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/7695bdab-40cc-42ee-ab66-ddad667ee771/resource/83cfb940-b848-4e26-a9e3-7f318de51b39/download/afghanistan_conflict_displacements_2026.csv"
+    },
+    {
+     "name": "afghanistan_conflict_displacements_2025.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/7695bdab-40cc-42ee-ab66-ddad667ee771/resource/a14afbc7-2b59-42e9-8642-abd9a7169ceb/download/afghanistan_conflict_displacements_2025.xlsx"
+    },
+    {
+     "name": "afghanistan_conflict_displacements_2025.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/7695bdab-40cc-42ee-ab66-ddad667ee771/resource/86fbf0be-1f1a-4194-8d4f-a722706041d4/download/afghanistan_conflict_displacements_2025.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Afghanistan - Accessibility Indicators",
+   "name": "afghanistan-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/afghanistan-accessibility-indicators",
+   "resources": [
+    {
+     "name": "AFG_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/afg/AFG_education_access.gpkg"
+    },
+    {
+     "name": "AFG_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/afg/AFG_education_access_long.csv"
+    },
+    {
+     "name": "AFG_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/afg/AFG_education_access_wide.csv"
+    },
+    {
+     "name": "AFG_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/afg/AFG_hospitals_access.gpkg"
+    },
+    {
+     "name": "AFG_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/afg/AFG_hospitals_access_long.csv"
+    },
+    {
+     "name": "AFG_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/afg/AFG_hospitals_access_wide.csv"
+    },
+    {
+     "name": "AFG_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/afg/AFG_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "AFG_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/afg/AFG_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Afghanistan - Voluntary Repatriation, 2013",
+   "name": "unhcr-afg-2013-vol-rep",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-afg-2013-vol-rep",
+   "resources": [
+    {
+     "name": "Afghanistan - Voluntary Repatriation, 2013",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/605/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/605/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Afghanistan - Voluntary Repatriation, 2016",
+   "name": "unhcr-afg-2016-vol-rep",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-afg-2016-vol-rep",
+   "resources": [
+    {
+     "name": "Afghanistan - Voluntary Repatriation, 2016",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/601/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/601/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Afghanistan - Voluntary Repatriation, 2020",
+   "name": "unhcr-afg-2020-vol-rep",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-afg-2020-vol-rep",
+   "resources": [
+    {
+     "name": "Afghanistan - Voluntary Repatriation, 2020",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/594/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/594/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Afghanistan - Voluntary Repatriation, 2015",
+   "name": "unhcr-afg-2015-vol-rep",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-afg-2015-vol-rep",
+   "resources": [
+    {
+     "name": "Afghanistan - Voluntary Repatriation, 2015",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/599/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/599/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Afghanistan - Voluntary Repatriation 2022",
+   "name": "unhcr-afg-2022-volrep-anon-data-v2-1",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-afg-2022-volrep-anon-data-v2-1",
+   "resources": [
+    {
+     "name": "Afghanistan - Voluntary Repatriation 2022",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/878/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/878/pdf-documentation"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Afghanistan - Voluntary Repatriation 2021",
+   "name": "unhcr-afg-2021-volrep-anon-data-v2-1",
+   "org": "UNHCR - The UN Refugee Agency",
+   "url": "https://data.humdata.org/dataset/unhcr-afg-2021-volrep-anon-data-v2-1",
+   "resources": [
+    {
+     "name": "Afghanistan - Voluntary Repatriation 2021",
+     "format": "Web App",
+     "url": "https://microdata.unhcr.org/index.php/auth/login/?destination=catalog/776/get-microdata"
+    },
+    {
+     "name": "Codebook",
+     "format": "PDF",
+     "url": "https://microdata.unhcr.org/index.php/catalog/776/pdf-documentation"
+    }
+   ]
+  }
+ ],
+ "verdict": {
+  "hdx_datasets": 13,
+  "hdx_machine_readable": 5,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "3/4",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

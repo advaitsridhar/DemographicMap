@@ -1,0 +1,577 @@
+{
+ "iso3": "SAU",
+ "name": "Saudi Arabia",
+ "tier_proposed": "C",
+ "sources": [
+  {
+   "fields": [],
+   "title": "Saudi Census 2022 portal -- population by age, citizenship (Saudi/non-Saudi) and gender at administrative region, governorate and city level",
+   "kind": "census",
+   "format": "table-builder",
+   "geography": "administrative region (13) / governorate / city",
+   "geography_count": 13,
+   "matches_boundary_level": "admin1 (13) and plausibly admin2 (governorates; packet draws 147)",
+   "url": "https://portal.saudicensus.sa/portal",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>"
+  },
+  {
+   "fields": [],
+   "title": "Population by age, citizenship, gender and governorate (2022) -- RCRC Open Data Portal",
+   "kind": "census",
+   "format": "csv",
+   "geography": "governorate",
+   "geography_count": null,
+   "matches_boundary_level": "admin2 (scope may be Riyadh region only -- unconfirmed)",
+   "url": "https://opendata.rcrc.gov.sa/explore/dataset/population-by-age-citizenship-gender-and-governorate-2022/",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://opendata.rcrc.gov.sa/explore/assets/population-by-age-citizenship-gender-and-governorate-2022/",
+   "error": null,
+   "body": {
+    "bytes_read": 96755,
+    "kind": "html",
+    "title": "Population by age, citizenship, gender and governorate (2022) &mdash; RCRC Open Data Portal",
+    "links_to_files": [
+     "https://sdaia.gov.sa/ar/SDAIA/about/Documents/Open%20Data%20Policy.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language",
+     "languagecode",
+     "languages"
+    ]
+   }
+  },
+  {
+   "fields": [],
+   "title": "Saudi Arabia: Population by nationality (Saudi/non-Saudi) and administrative region (governorate) of residence (2022) -- GLMM",
+   "kind": "census",
+   "format": "html",
+   "geography": "administrative region",
+   "geography_count": 13,
+   "matches_boundary_level": "admin1",
+   "url": "https://gulfmigration.grc.net/saudi-arabia-population-by-nationality-saudi-non-saudi-and-administrative-region-governorate-of-residence-2022/",
+   "status": 406,
+   "content_type": null,
+   "final_url": null,
+   "error": null
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Saudi Arabia",
+    "wikitext_bytes": 44249,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Saudi Arabia",
+    "wikitext_bytes": 48172,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 7,
+    "charts": [
+     "Historical populations",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Age Group",
+       "Male",
+       "Female",
+       "Total",
+       "%",
+       "Age group",
+       "Male",
+       "Female",
+       "Total",
+       "Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "style=\"width:50px;\"|Year",
+       "style=\"width:70px;\"|Population",
+       "style=\"width:70px;\"|Live births",
+       "style=\"width:70px;\"|Deaths",
+       "style=\"width:70px;\"|Natural change",
+       "style=\"width:70px;\"|Crude birth rate (per 1000)",
+       "style=\"width:70px;\"|Crude death rate (per 1000)",
+       "style=\"width:70px;\"|Natural change (per 1000)",
+       "style=\"width:70px;\"|Total Fertility Rate (TFR)",
+       "style=\"width:70px;\"|Saudi TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\" |Mid-year population",
+       "style=\"width:80pt;\" |Live births",
+       "style=\"width:80pt;\" |Deaths",
+       "style=\"width:80pt;\" |Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)",
+       "style=\"width:80pt;\"|Crude migration rate (per 1000)",
+       "style=\"width:80pt;\"|Total fertility rate (TFR)",
+       "style=\"width:80pt;\"|Infant mortality (per 1000 live births)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 28
+     },
+     {
+      "header": [
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929",
+       "1930",
+       "1931",
+       "1932",
+       "1933"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Years",
+       "1935",
+       "1936",
+       "1937",
+       "1938",
+       "1939",
+       "1940",
+       "1941",
+       "1942",
+       "1943"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "Years",
+       "1945",
+       "1946",
+       "1947",
+       "1948",
+       "1949<ref name=\"ourworldindata.org\" />"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 2
+     },
+     {
+      "header": [
+       "Rank",
+       "Country",
+       "Population"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 76
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Adam",
+    "found": true,
+    "title": "Tomb of Eve",
+    "url": "https://en.wikipedia.org/wiki/Tomb_of_Eve",
+    "wikitext_bytes": 8723,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Al Taif",
+    "found": true,
+    "title": "Taif",
+    "url": "https://en.wikipedia.org/wiki/Taif",
+    "wikitext_bytes": 49561,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics1_info2",
+     "demographics1_info3"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "An Nabhaniyah",
+    "found": true,
+    "title": "List of governorates of Saudi Arabia",
+    "url": "https://en.wikipedia.org/wiki/List_of_governorates_of_Saudi_Arabia",
+    "wikitext_bytes": 13479,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 13,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Ar Rass",
+    "found": true,
+    "title": "Al-Hazem FC",
+    "url": "https://en.wikipedia.org/wiki/Al-Hazem_FC",
+    "wikitext_bytes": 12881,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "As Sulaymi",
+    "found": true,
+    "title": "Banu Sulaym",
+    "url": "https://en.wikipedia.org/wiki/Banu_Sulaym",
+    "wikitext_bytes": 14600,
+    "infobox_params": [
+     "ethnicity",
+     "religion"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "religion",
+   "title": "Saudi Arabia - Poverty",
+   "name": "world-bank-poverty-indicators-for-saudi-arabia",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-poverty-indicators-for-saudi-arabia",
+   "resources": [
+    {
+     "name": "Poverty Indicators for Saudi Arabia",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/0f6928ed-5e10-4c9d-a3cc-c8fbda78ece6/resource/b5ce2069-43fd-44a5-89a5-35e2e4cb4c94/download/poverty_sau.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Saudi Arabia - Education",
+   "name": "world-bank-education-indicators-for-saudi-arabia",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-education-indicators-for-saudi-arabia",
+   "resources": [
+    {
+     "name": "Education Indicators for Saudi Arabia",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/f98a0732-d8f6-4489-9e5b-49f6a9f08d00/resource/ae741e2d-ea79-43b4-80ac-d10d9be6c30c/download/education_sau.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Saudi Arabia - Trade",
+   "name": "world-bank-trade-indicators-for-saudi-arabia",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-trade-indicators-for-saudi-arabia",
+   "resources": [
+    {
+     "name": "Trade Indicators for Saudi Arabia",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/359473c4-ee24-4619-8f0f-30f3fbf3b5c0/resource/720ff98d-6814-4b99-9b59-f1aced977f75/download/trade_sau.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Saudi Arabia - Conflict Events",
+   "name": "saudi-arabia-acled-conflict-data",
+   "org": "Armed Conflict Location & Event Data Project (ACLED)",
+   "url": "https://data.humdata.org/dataset/saudi-arabia-acled-conflict-data",
+   "resources": [
+    {
+     "name": "saudi arabia_political_violence_events_and_fatalities_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/aa8bc7da-7ebd-40a5-857d-fc30e56a87bf/resource/2bb0c1ac-1cd4-4851-a0b4-461df6d009da/download/saudi-arabia_political_violence_events_and_fatalities_by_month-year_as-of-10sep2026.xlsx"
+    },
+    {
+     "name": "saudi arabia_civilian_targeting_events_and_fatalities_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/aa8bc7da-7ebd-40a5-857d-fc30e56a87bf/resource/ec3d6e70-7a71-4f11-9b04-78e4bc012459/download/saudi-arabia_civilian_targeting_events_and_fatalities_by_month-year_as-of-10sep2026.xlsx"
+    },
+    {
+     "name": "saudi arabia_demonstration_events_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/aa8bc7da-7ebd-40a5-857d-fc30e56a87bf/resource/12aa9dee-8205-4359-b7de-dbc9996622f7/download/saudi-arabia_demonstration_events_by_month-year_as-of-10sep2026.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Saudi Arabia - Subnational Administrative Boundaries",
+   "name": "cod-ab-sau",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-sau",
+   "resources": [
+    {
+     "name": "sau_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/41ce9023-1d21-4549-a485-94316200aba0/resource/c60e02ad-9257-4a3a-ba2c-d757d574c685/download/sau_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "sau_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/41ce9023-1d21-4549-a485-94316200aba0/resource/cbe8dbc9-4d5d-462f-9333-bf3cc163b3cc/download/sau_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "sau_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/41ce9023-1d21-4549-a485-94316200aba0/resource/99111dda-821b-47ba-ac47-771c9ed5184a/download/sau_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "sau_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/41ce9023-1d21-4549-a485-94316200aba0/resource/9c0b15b0-348b-4058-a604-293a0768f536/download/sau_admin_boundaries.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Saudi Arabia Healthsites",
+   "name": "saudi-arabia-healthsites",
+   "org": "Global Healthsites Mapping Project",
+   "url": "https://data.humdata.org/dataset/saudi-arabia-healthsites",
+   "resources": [
+    {
+     "name": "saudi-arabia-healthsites-geojson",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/ebb8edfa-9820-4257-b6f9-0715d1fec79e/resource/0ab9751d-0679-4339-8aa3-25b70f28724b/download/saudi-arabia.geojson"
+    },
+    {
+     "name": "saudi-arabia-healthsites-csv-with-hxl-tags",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/ebb8edfa-9820-4257-b6f9-0715d1fec79e/resource/b53438ac-b132-4243-bf6f-cbaaed0aaaf7/download/saudi-arabia_hxl.csv"
+    },
+    {
+     "name": "saudi-arabia-healthsites-shp",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/ebb8edfa-9820-4257-b6f9-0715d1fec79e/resource/fc9b1461-3566-4259-9d9d-cbe69b08a43e/download/saudi-arabia-shapefiles.zip"
+    },
+    {
+     "name": "saudi-arabia-healthsites-csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/ebb8edfa-9820-4257-b6f9-0715d1fec79e/resource/8fd6b08b-2085-4a52-b541-624ffa94fa84/download/saudi-arabia.csv"
+    },
+    {
+     "name": "saudi-arabia-healthsites-hxl-geojson",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/ebb8edfa-9820-4257-b6f9-0715d1fec79e/resource/f7583330-76c5-439f-ab2e-9eb46b3b5a7a/download/saudi-arabia_hxl.geojson"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Saudi Arabia - Gender",
+   "name": "world-bank-gender-indicators-for-saudi-arabia",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-gender-indicators-for-saudi-arabia",
+   "resources": [
+    {
+     "name": "Gender Indicators for Saudi Arabia",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/ee290aff-2dba-44c6-9e58-178b09b39632/resource/dbaf2bd9-1554-401b-a4a7-795d15836675/download/gender_sau.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Saudi Arabia - Infrastructure",
+   "name": "world-bank-infrastructure-indicators-for-saudi-arabia",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-infrastructure-indicators-for-saudi-arabia",
+   "resources": [
+    {
+     "name": "Infrastructure Indicators for Saudi Arabia",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/541a8dde-26d7-4141-9f5f-684859e7d6d5/resource/7c21b35d-657c-4a25-a8ee-8ee743dff495/download/infrastructure_sau.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Saudi Arabia - Education Indicators",
+   "name": "unesco-data-for-saudi-arabia",
+   "org": "UNESCO",
+   "url": "https://data.humdata.org/dataset/unesco-data-for-saudi-arabia",
+   "resources": [
+    {
+     "name": "SDG 4 Global and Thematic data",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/3951ec19-9c26-4d5d-a7c6-2d00316863d6/resource/fa0faca0-3445-4c6a-81d9-5ac07457f704/download/sdg_data_sau.csv"
+    },
+    {
+     "name": "SDG 4 Global and Thematic indicator list",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/3951ec19-9c26-4d5d-a7c6-2d00316863d6/resource/40c3cac5-29ef-4a9a-a7ee-74c0621c5252/download/sdg_indicatorlist_sau.csv"
+    },
+    {
+     "name": "SDG 4 Global and Thematic metadata",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/3951ec19-9c26-4d5d-a7c6-2d00316863d6/resource/0d715a0a-6f34-4e16-b199-8aed6d3db47d/download/sdg_metadata_sau.csv"
+    },
+    {
+     "name": "Other Policy Relevant Indicators data",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/3951ec19-9c26-4d5d-a7c6-2d00316863d6/resource/bd578cf6-bc93-43dc-807e-7102e7d38654/download/opri_data_sau.csv"
+    },
+    {
+     "name": "Other Policy Relevant Indicators indicator list",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/3951ec19-9c26-4d5d-a7c6-2d00316863d6/resource/b518403f-aa4d-4926-b661-b174bfdd1dc5/download/opri_indicatorlist_sau.csv"
+    },
+    {
+     "name": "Other Policy Relevant Indicators metadata",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/3951ec19-9c26-4d5d-a7c6-2d00316863d6/resource/4feef6eb-94d3-464a-be8b-0399218c3a4c/download/opri_metadata_sau.csv"
+    },
+    {
+     "name": "Demographic and Socio-economic data",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/3951ec19-9c26-4d5d-a7c6-2d00316863d6/resource/137c375f-4934-403c-a3ee-267002985d3d/download/dem_data_sau.csv"
+    },
+    {
+     "name": "Demographic and Socio-economic indicator list",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/3951ec19-9c26-4d5d-a7c6-2d00316863d6/resource/83e92b73-9089-4c55-b7a9-44b14e99652d/download/dem_indicatorlist_sau.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Saudi Arabia - Subnational Population Statistics",
+   "name": "cod-ps-sau",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-sau",
+   "resources": [
+    {
+     "name": "sau_admpop_2022.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/4f40ced2-b095-4489-bd1c-52e785ed6c2f/resource/da0a1e29-dcca-4c65-a1a0-d1203de91012/download/sau_admpop_2022.xlsx"
+    },
+    {
+     "name": "SAU-COD-PS-2024-Explanatory-Note.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/4f40ced2-b095-4489-bd1c-52e785ed6c2f/resource/ca96600f-cf61-4a9c-8605-a015c15f4660/download/sau-cod-ps-2024-explanatory-note.pdf"
+    },
+    {
+     "name": "sau_admgz.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/4f40ced2-b095-4489-bd1c-52e785ed6c2f/resource/cf9aff07-e1e6-455a-8fca-f2fd2b05df44/download/sau_admgz.xlsx"
+    },
+    {
+     "name": "sau_admpop_adm1_2022.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4f40ced2-b095-4489-bd1c-52e785ed6c2f/resource/e5e20775-057c-446b-aa4d-aab2dc5a79db/download/sau_admpop_adm1_2022.csv"
+    },
+    {
+     "name": "sau_admpop_adm0_2022.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/4f40ced2-b095-4489-bd1c-52e785ed6c2f/resource/13914f3b-4ba0-4de5-ab43-77cb29dfce03/download/sau_admpop_adm0_2022.csv"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.stats.gov.sa/en/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.stats.gov.sa/statistics?index=119025&amp;subindex=124141",
+    "status": 200,
+    "kind": "html",
+    "title": "فئات الإحصاءات",
+    "files": [],
+    "mentions": [
+     "language",
+     "languageid"
+    ]
+   },
+   {
+    "url": "https://www.stats.gov.sa/statistics?index=119025&amp;subindex=127380",
+    "status": 200,
+    "kind": "html",
+    "title": "فئات الإحصاءات",
+    "files": [],
+    "mentions": [
+     "language",
+     "languageid"
+    ]
+   },
+   {
+    "url": "https://www.stats.gov.sa/en/c/portal/update_language?redirect=%2Fen%2F&amp;groupId=20117&amp;privateLayout=false&amp;layoutId=688&amp;languageId=ar_SA",
+    "status": 200,
+    "kind": "html",
+    "title": "الهيئة العامة للإحصاء",
+    "files": [],
+    "mentions": [
+     "language",
+     "languageid"
+    ]
+   }
+  ],
+  "title": "General Authority for Statistics",
+  "matching_links": 3
+ },
+ "verdict": {
+  "hdx_datasets": 10,
+  "hdx_machine_readable": 10,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "1/3",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

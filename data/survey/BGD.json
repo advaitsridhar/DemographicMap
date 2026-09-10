@@ -1,0 +1,1155 @@
+{
+ "iso3": "BGD",
+ "name": "Bangladesh",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Population and Housing Census 2022 -- national report PDF(s) carrying 'ethnic population by sex and district'",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "zila (district)",
+   "geography_count": 64,
+   "matches_boundary_level": "admin2",
+   "url": "https://file.portal.gov.bd/uploads/34bdd5b8-5c48-4624-a299-4a1b43862f9a//659/d2c/7e3/659d2c7e3f35e896330676.pdf",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error timed out>"
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Bangladesh : Population and Housing Census Dataset (BBS Census 2022 indicators workbook, Admin 02) -- possible ethnic sheet, unverified",
+   "kind": "census",
+   "format": "xlsx",
+   "geography": "zila (district)",
+   "geography_count": 64,
+   "matches_boundary_level": "admin2",
+   "url": "https://data.humdata.org/dataset/populationa-and-housing-census-dataset",
+   "status": 202,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://data.humdata.org/dataset/populationa-and-housing-census-dataset",
+   "error": null
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Ethnic Population by Category, Sex and Division, 2022",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "division",
+   "geography_count": 8,
+   "matches_boundary_level": "admin1",
+   "url": "https://en.wikipedia.org/wiki/2022_Bangladeshi_census",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://en.wikipedia.org/wiki/2022_Bangladeshi_census",
+   "error": null,
+   "body": {
+    "bytes_read": 152792,
+    "kind": "html",
+    "title": "2022 Bangladeshi census - Wikipedia",
+    "links_to_files": [
+     "http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/NRV-1Report2011.pdf",
+     "https://bbs.portal.gov.bd/sites/default/files/files/bbs.portal.gov.bd/page/b343a8b4_956b_45ca_872f_4cf9b2f1a6e0/2024-01-31-15-51-b53c55dd692233ae401ba013060b9cbb.pdf",
+     "https://web.archive.org/web/20220404115714/http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/NRV-1Report2011.pdf",
+     "https://web.archive.org/web/20240925220139/https://bbs.portal.gov.bd/sites/default/files/files/bbs.portal.gov.bd/page/b343a8b4_956b_45ca_872f_4cf9b2f1a6e0/2024-01-31-15-51-b53c55dd692233ae401ba013060b9cbb.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language",
+     "language_text",
+     "languages",
+     "religion"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "2022 Bangladeshi census",
+    "wikitext_bytes": 10295,
+    "infobox_params": [],
+    "sections": [
+     "Religion"
+    ],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "colspan=2|Population (Enumerated)",
+       "Total Population||165,158,616",
+       "colspan=2|Inhabitants",
+       "colspan=2|Source:<ref name=\":0\">{{cite web |title=Population and Housing Census 2022 |url=https://bbs.portal.gov.bd/sites/default/files/files/bbs.portal.gov.bd/page/b343a8b4_956b_45ca_872f_4cf9b2f1a6e0/2024-01-31-15-51-b53c55dd692233ae401ba013060b9cbb.pdf |website=bbs.portal.gov.bd |publisher=Bangladesh Bureau of Statistics|archive-url=https://web.archive.org/web/20240925220139/https://bbs.portal.gov.bd/sites/default/files/files/bbs.portal.gov.bd/page/b343a8b4_956b_45ca_872f_4cf9b2f1a6e0/2024-01-31-15-51-b53c55dd692233ae401ba013060b9cbb.pdf |archive-date=25 September 2024 }}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Hinduism in Bangladesh",
+    "wikitext_bytes": 123411,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 9,
+    "charts": [
+     "Historical populations"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Year",
+       "Percentage (%)",
+       "Hindu Population",
+       "Total population",
+       "Notes",
+       "1901",
+       "1911",
+       "1921",
+       "1931",
+       "1941"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "Division",
+       "Hindu Population",
+       "Total population",
+       "Percentage (%)",
+       "District",
+       "Hindu population",
+       "Total population",
+       "Percentage (%)"
+      ],
+      "place_column": true,
+      "composition_columns": 2,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "District",
+       "Hindu population",
+       "Total population",
+       "Percentage (%)"
+      ],
+      "place_column": true,
+      "composition_columns": 1,
+      "rows_hint": 32
+     },
+     {
+      "header": [
+       "Upazila",
+       "District",
+       "Percentage of Hinduism<ref>{{cite web |url=https://bbs.portal.gov.bd/site/page/b432a7e5-8b4d-4dac-a76c-a9be4e85828c |title=বাংলাদেশ পরিসংখ্যান ব্যুরো}}</ref>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 35
+     },
+     {
+      "header": [
+       "District",
+       "Upazila",
+       "Unions"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 34
+     },
+     {
+      "header": [
+       "Year",
+       "Percent",
+       "Increase"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Year",
+       "Total Population",
+       "Hindu population",
+       "Percentage",
+       "colspan=\"100%\" |Source:<ref name=\"pewforum.org\" /><ref>{{Cite journal |last1=Alam |first1=Nurul |last2=Barkat-e-Khuda |year=2011 |title=Demographics of Muslims and Non-Muslims in Bangladesh |url=https://www.researchgate.net/publication/330337328 |journal=Demography India |volume=40 |issue=1 |pages=163–174 |via=ResearchGate}}</ref><ref>{{Cite web |title=Religions in Bangladesh {{!}} PEW-GRF |url=http://www.globalreligiousfutures.org/countries/bangladesh/religious_demography#/?affiliations_religion_id=0&affiliations_year=2030 |access-date=2021-04-22 |website=globalreligiousfutures.org |archive-date=9 April 2022 |archive-url=https://web.archive.org/web/20220409172932/http://www.globalreligiousfutures.org/countries/bangladesh/religious_demography#/?affiliations_religion_id=0&affiliations_year=2030 |url-status=live}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Source/claimed by",
+       "Population (%)",
+       "Year of claimed",
+       "Reference"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "scope=\"col\" | Census Year",
+       "scope=\"col\" | Percentage of Hindus (%)",
+       "scope=\"col\" | Decline (%)",
+       "scope=\"col\" | Cumulative Decline (%)",
+       "scope=\"col\" | Comment <ref name=\"Hindgen1\">[https://cohna.org/bangladeshi-hindus-genocide/], CoHNA, accessed 14 Feb 2025.</ref><ref name=hingen2>[https://indianexpress.com/article/explained/explained-global/what-is-the-status-of-hindus-in-bangladesh-9514699/ The genocide in Bangladesh], Indian Express, 2 December 2024.</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     }
+    ],
+    "place_by_composition_tables": 1
+   },
+   {
+    "title": "Languages of Bangladesh",
+    "wikitext_bytes": 20018,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Language",
+       "Population"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Bangladesh",
+    "wikitext_bytes": 73434,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Population",
+     "Ethnic group",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 16,
+    "charts": [
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Census date",
+       "Census population <br /> (millions)",
+       "Adjusted population  <br />(millions)",
+       "rowspan=2 width=\"80pt\"|Year<ref name=\"WPP 2017\">{{cite web |url=https://population.un.org/wpp/DataQuery/ |title=World Population Prostpects 2019 |website=Population Division of the Department of Economic and Social Affairs of the United Nations Secretariat |access-date=30 October 2011 |archive-url=https://web.archive.org/web/20110506065230/http://esa.un.org/unpd/wpp/index.htm |archive-date=6 May 2011 |url-status=dead}}</ref>",
+       "rowspan=2 width=\"80pt\"|Total population (millions)",
+       "colspan=3 |Population percentage",
+       "aged 0–14",
+       "aged 15–64",
+       "aged 65+"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 32
+     },
+     {
+      "header": [
+       "rowspan=2 width=\"80pt\"|Year<ref name=\"WPP 2017\">{{cite web |url=https://population.un.org/wpp/DataQuery/ |title=World Population Prostpects 2019 |website=Population Division of the Department of Economic and Social Affairs of the United Nations Secretariat |access-date=30 October 2011 |archive-url=https://web.archive.org/web/20110506065230/http://esa.un.org/unpd/wpp/index.htm |archive-date=6 May 2011 |url-status=dead}}</ref>",
+       "rowspan=2 width=\"80pt\"|Total population (millions)",
+       "colspan=3 |Population percentage",
+       "aged 0–14",
+       "aged 15–64",
+       "aged 65+"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "wid"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Per cent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "width=\"100pt\"|Age range (years)",
+       "width=\"100pt\"|Sex ratio (males/females) (2015 est.)<ref name=\"CIA World Factbook 2015\">{{cite web |title=The World Factbook: Bangladesh: People and Society |url=https://www.cia.gov/the-world-factbook/countries/bangladesh/ |publisher=Central Intelligence Agency |access-date=17 September 2016 |archive-date=30 July 2021 |archive-url=https://web.archive.org/web/20210730024842/https://www.cia.gov/the-world-factbook/countries/bangladesh/ |url-status=dead }}</ref>",
+       "style=\"width:80pt;\"|Year",
+       "style=\"width:80pt;\"|Mid-year population",
+       "style=\"width:80pt;\"|Live births",
+       "style=\"width:80pt;\"|Deaths",
+       "style=\"width:80pt;\"|Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "style=\"width:80pt;\"|Year",
+       "style=\"width:80pt;\"|Mid-year population",
+       "style=\"width:80pt;\"|Live births",
+       "style=\"width:80pt;\"|Deaths",
+       "style=\"width:80pt;\"|Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1000)",
+       "style=\"width:80pt;\"|Natural change (per 1000)",
+       "style=\"width:80pt;\"|Crude migration rate (per 1000)",
+       "style=\"width:80pt;\"|Total fertility rate (TFR)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "style=\"width:30pt;\" rowspan=2| Year",
+       "style=\"width:50pt;\" rowspan=2| Population",
+       "style=\"width:50pt;\" rowspan=2| Live births",
+       "style=\"width:50pt;\" rowspan=2| Deaths",
+       "style=\"width:50pt;\" rowspan=2| Natural change",
+       "style=\"width:50pt;\"| Crude birth rate (per 1000)",
+       "style=\"width:50pt;\"| Crude death rate (per 1000)",
+       "style=\"width:50pt;\"| Natural change (per 1000)",
+       "style=\"width:50pt;\"| Fertility rate",
+       "colspan=4| National<br />(urban/rural)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Years",
+       "1926",
+       "1927",
+       "1928",
+       "1929",
+       "1930",
+       "1931",
+       "1932",
+       "1933",
+       "1934"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "Years",
+       "1936",
+       "1937",
+       "1938",
+       "1939",
+       "1940",
+       "1941",
+       "1942",
+       "1943",
+       "1944"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Years",
+       "1946",
+       "1947",
+       "1948",
+       "1949<ref name=\"ourworldindata.org\" />",
+       "style=\"width:50pt;\"| Division",
+       "style=\"width:50pt;\"| TFR (total fertility rate)",
+       "style=\"width:50pt;\"| Crude birth rate",
+       "style=\"width:50pt;\"| Death rate",
+       "Year(s)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "style=\"width:50pt;\"| Division",
+       "style=\"width:50pt;\"| TFR (total fertility rate)",
+       "style=\"width:50pt;\"| Crude birth rate",
+       "style=\"width:50pt;\"| Death rate",
+       "Year(s)",
+       "Total fertility rate (TFR)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "Year(s)",
+       "Total fertility rate (TFR)",
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "! style=\"background:Green;\"| Islam",
+       "style=\"background:Orange;\"| Hinduism",
+       "style=\"background:Yellow;\"| Buddhism",
+       "style=\"background:DodgerBlue;\"| Christianity",
+       "style=\"background:wheat;\"| Other religions/<br />No religion",
+       "1951<ref name=\"bangladeshgov\">{{cite web |url=http://hrcbmdfw.org/files/22/population_data/entry489.aspx |title=Bangladesh- Population census 1991: Religious Composition 1901–1991 |date=2 August 2016 |website=Bangladeshgov.org |access-date=2 August 2016 |archive-date=18 August 2016 |archive-url=https://web.archive.org/web/20160818162638/http://hrcbmdfw.org/files/22/population_data/entry489.aspx |url-status=dead }}</ref>",
+       "1961<ref name=\"bangladeshgov\"/>",
+       "1974<ref name=\"bangladeshgov\"/>",
+       "1981<ref name=\"bangladeshgov\"/>",
+       "1991<ref name=\"bangladeshgov\"/>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Country/territory of origin",
+       "Population",
+       "Country",
+       "Population"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "Country",
+       "Population"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Nhila Union",
+    "wikitext_bytes": 3526,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Bangladesh",
+    "wikitext_bytes": 55107,
+    "infobox_params": [],
+    "sections": [
+     "Religions"
+    ],
+    "wikitables": 2,
+    "charts": [
+     "Pie chart",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Religion",
+       "Population",
+       "Percentage",
+       "Total",
+       "165,158,616",
+       "100%",
+       "colspan=\"6\" |Religion in Bangladesh (1901-2022)",
+       "! style=\"background:Green;\" |Islam",
+       "style=\"background:Orange;\" |Hinduism",
+       "style=\"background:Yellow;\" |Buddhism"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "colspan=\"6\" |Religion in Bangladesh (1901-2022)",
+       "! style=\"background:Green;\" |Islam",
+       "style=\"background:Orange;\" |Hinduism",
+       "style=\"background:Yellow;\" |Buddhism",
+       "style=\"background:DodgerBlue;\" |Christianity",
+       "style=\"background:wheat;\" |Others",
+       "1901",
+       "1911",
+       "1921",
+       "1931"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 17
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Bagerhat",
+    "found": true,
+    "title": "Bagerhat District",
+    "url": "https://en.wikipedia.org/wiki/Bagerhat_District",
+    "wikitext_bytes": 17577,
+    "infobox_params": [],
+    "sections": [
+     "Demographics",
+     "Religion"
+    ],
+    "wikitables": 1,
+    "charts": [
+     "Historical populations",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Barguna",
+    "found": true,
+    "title": "Barguna District",
+    "url": "https://en.wikipedia.org/wiki/Barguna_District",
+    "wikitext_bytes": 27736,
+    "infobox_params": [],
+    "sections": [
+     "Demographics",
+     "Religion"
+    ],
+    "wikitables": 3,
+    "charts": [
+     "Historical populations",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Bogra",
+    "found": true,
+    "title": "Bogra District",
+    "url": "https://en.wikipedia.org/wiki/Bogra_District",
+    "wikitext_bytes": 25725,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 1,
+    "charts": [
+     "Historical populations",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Dhaka",
+    "found": true,
+    "title": "Dhaka",
+    "url": "https://en.wikipedia.org/wiki/Dhaka",
+    "wikitext_bytes": 231657,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics2_info1",
+     "demographics2_info2"
+    ],
+    "sections": [
+     "Demographics",
+     "Population",
+     "Ethnicity",
+     "Language",
+     "Religion"
+    ],
+    "wikitables": 2,
+    "charts": [
+     "Historical populations",
+     "Pie chart",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 5,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Gopalganj",
+    "found": true,
+    "title": "Gopalganj District, Bangladesh",
+    "url": "https://en.wikipedia.org/wiki/Gopalganj_District%2C_Bangladesh",
+    "wikitext_bytes": 23676,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 1,
+    "charts": [
+     "Historical populations",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "religion",
+   "title": "Bangladesh Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Censuses and Surveys",
+   "name": "bangladesh-subnational-boundaries-and-tabular-data",
+   "org": "U.S. Census Bureau",
+   "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
+   "resources": [
+    {
+     "name": "Bangladesh.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/862d607b-a195-4f69-b0cb-bd2fe6ac858f/resource/b01a071f-f35a-4a6a-adc4-b01b25ef8902/download/bangladesh.gdb.zip"
+    },
+    {
+     "name": "Bangladesh_uscb_202107.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/862d607b-a195-4f69-b0cb-bd2fe6ac858f/resource/1fdc9232-9fb4-49d2-b66a-b7a375472f72/download/bangladesh_uscb_202107.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bangladesh - Rivers",
+   "name": "bangladesh-water-courses",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/bangladesh-water-courses",
+   "resources": [
+    {
+     "name": "bgd_watcrsa_1m_iscgm.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/0950e7df-b9eb-4fd3-b89c-a749fd8b69a1/resource/b0aa25f3-575d-47e5-8f7c-10d57a2ef2cd/download/bgd_watcrsa_1m_iscgm.zip"
+    },
+    {
+     "name": "bgd_hyd_rivers_lged.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/0950e7df-b9eb-4fd3-b89c-a749fd8b69a1/resource/7f834bdb-b8f7-4f74-bf16-879fb7b72fc2/download/bgd_hyd_rivers_lged.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bangladesh - Roads",
+   "name": "bangladesh-roads",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/bangladesh-roads",
+   "resources": [
+    {
+     "name": "bgd_trs_roads_lged.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/2c29f508-b78b-4d84-98f6-04d78219f1cf/resource/fe3903eb-cf76-4283-b6ca-e929dfacc606/download/bgd_trs_roads_lged.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bangladesh - Waterbodies",
+   "name": "bangladesh-water-bodies",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/bangladesh-water-bodies",
+   "resources": [
+    {
+     "name": "bgd_hyd_wetlands_lged.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/26f813b8-e3b3-4e2c-87e8-59eb19af09b5/resource/aef30db0-c8e4-412b-aaba-7724ff300d03/download/bgd_hyd_wetlands_lged.zip"
+    },
+    {
+     "name": "bgd_hyd_ponds_lged.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/26f813b8-e3b3-4e2c-87e8-59eb19af09b5/resource/250fbda8-9074-48b4-805b-566565b7539c/download/bgd_hyd_ponds_lged.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bangladesh - Railroads",
+   "name": "bangladesh-railways",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/bangladesh-railways",
+   "resources": [
+    {
+     "name": "bgd_trs_railways_lged.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/666b5367-bfac-4447-a8e8-dc86a85349f3/resource/79cbc4e2-8cd7-438f-bcfe-61838d7f5937/download/bgd_trs_railways_lged.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bangladesh - Contour Lines",
+   "name": "bangladesh-contour-lines",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/bangladesh-contour-lines",
+   "resources": [
+    {
+     "name": "bgd_Elevation.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/b32fe91b-7f7b-4801-86ef-7e03e87a1bf6/resource/10eede1d-78f1-494f-b75f-17bc43b6cdca/download/bgd_elevation.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bangladesh - 2001 Census",
+   "name": "bangladesh-other-0",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/bangladesh-other-0",
+   "resources": [
+    {
+     "name": "2001_census_upazila.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/3c8e6cf4-ab8b-47b1-8c2a-558e8be21300/resource/523c089c-6890-4799-a937-b583e9b8a571/download/2001_census_upazila.xls"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bangladesh - Settlements",
+   "name": "bangladesh-settlements-0",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/bangladesh-settlements-0",
+   "resources": [
+    {
+     "name": "bgd_majtowns.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/3af43b7a-c402-4f29-a023-15042b64cfb9/resource/e0b2dd54-6964-47f6-80f4-3d39c289c523/download/bgd_majtowns.zip"
+    },
+    {
+     "name": "bgd_phy_settlements_lged.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/3af43b7a-c402-4f29-a023-15042b64cfb9/resource/9410dfea-0641-411c-8b74-d967d7c586c2/download/bgd_phy_settlements_lged.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bangladesh: Road Surface Data",
+   "name": "bangladesh-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/bangladesh-road-surface-data",
+   "resources": [
+    {
+     "name": "Bangladesh GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_bgd_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Bangladesh GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_bgd_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bangladesh - Airports and Helipads",
+   "name": "bangladesh-aerodromes",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/bangladesh-aerodromes",
+   "resources": [
+    {
+     "name": "bgd_trs_airports_lged.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/eede4b5e-b2a3-4db2-ae02-84aa776ff8ae/resource/6b0daa05-2911-47b0-a550-a751cc85d01f/download/bgd_trs_airports_lged.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Bangladesh: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-bangladesh",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-bangladesh",
+   "resources": [
+    {
+     "name": "kontur_boundaries_BD_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_BD_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_BD_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_BD_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_BD_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_BD_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bangladesh : Population and Housing Census Dataset",
+   "name": "populationa-and-housing-census-dataset",
+   "org": "UN in Bangladesh",
+   "url": "https://data.humdata.org/dataset/populationa-and-housing-census-dataset",
+   "resources": [
+    {
+     "name": "Indicator Definition_Bangladesh_BBS_Population and Housing Census dataset_Admin 02.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/a6fedebe-72fe-4fc2-8657-1580acfa32c6/resource/039caab2-cde2-4093-a199-c712114789d6/download/indicator-definition_bangladesh_bbs_population-and-housing-census-dataset_admin-02.xlsx"
+    },
+    {
+     "name": "Bangladesh_BBS_Population and Housing Census dataset_2022_Admin 02.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/a6fedebe-72fe-4fc2-8657-1580acfa32c6/resource/72eaaa6c-6a30-4efd-bad9-02133b316ea8/download/bangladesh_bbs_population-and-housing-census-dataset_2022_admin-02.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bangladesh - Subnational Administrative Boundaries",
+   "name": "cod-ab-bgd",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-bgd",
+   "resources": [
+    {
+     "name": "bgd_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/401d3fae-4262-48c9-891f-461fd776d49b/resource/277b50e7-a354-48f9-81a6-a8614121b9ec/download/bgd_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "bgd_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/401d3fae-4262-48c9-891f-461fd776d49b/resource/05d85fe2-40c0-4b57-b1b5-be9c36a592fb/download/bgd_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "bgd_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/401d3fae-4262-48c9-891f-461fd776d49b/resource/cec2abe3-d8b7-4025-9362-9f7e780f2a07/download/bgd_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "bgd_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/401d3fae-4262-48c9-891f-461fd776d49b/resource/5f7e534d-9b06-442e-a706-083789bff2c9/download/bgd_admin_boundaries.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bangladesh - Subnational Population Statistics",
+   "name": "cod-ps-bgd",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-bgd",
+   "resources": [
+    {
+     "name": "BGD_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/a211d3bc-9273-4b22-89c5-e55eaf91a62b/download/bgd_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "bgd_admpop_2022.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/d3ee1ccb-9efb-412f-9323-cd4dc9606f7d/download/bgd_admpop_2022.xlsx"
+    },
+    {
+     "name": "bgd_admpop_adm0_2022.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/1c543545-dae9-48ee-8b3c-33a15e9e3df6/download/bgd_admpop_adm0_2022.csv"
+    },
+    {
+     "name": "bgd_admpop_adm1_2022.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/333171ff-5d91-4074-a7be-ca43e1dfb8a1/download/bgd_admpop_adm1_2022.csv"
+    },
+    {
+     "name": "bgd_admpop_adm2_2022.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/43bfa9fd-f571-4973-9f31-91093e1e6142/download/bgd_admpop_adm2_2022.csv"
+    },
+    {
+     "name": "bgd_admpop_adm3_2022.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/f23d4da2-e473-4960-9d94-37df92c8d044/download/bgd_admpop_adm3_2022.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bangladesh - Accessibility Indicators",
+   "name": "bangladesh-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/bangladesh-accessibility-indicators",
+   "resources": [
+    {
+     "name": "BGD_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bgd/BGD_education_access.gpkg"
+    },
+    {
+     "name": "BGD_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bgd/BGD_education_access_long.csv"
+    },
+    {
+     "name": "BGD_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bgd/BGD_education_access_wide.csv"
+    },
+    {
+     "name": "BGD_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bgd/BGD_hospitals_access.gpkg"
+    },
+    {
+     "name": "BGD_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bgd/BGD_hospitals_access_long.csv"
+    },
+    {
+     "name": "BGD_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bgd/BGD_hospitals_access_wide.csv"
+    },
+    {
+     "name": "BGD_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bgd/BGD_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "BGD_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/bgd/BGD_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bangladesh: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "bangladesh-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/bangladesh-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "bgd_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8c5e9740-68aa-446e-9e28-9803d5c0b39c/resource/f8cb147b-c288-402d-b98f-f0cfa7457009/download/bgd_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "bgd_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8c5e9740-68aa-446e-9e28-9803d5c0b39c/resource/94880740-601a-4b4d-9c07-14455996e652/download/bgd_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "bgd_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8c5e9740-68aa-446e-9e28-9803d5c0b39c/resource/f9f2193e-ed65-4d4a-bb2e-9815893c4290/download/bgd_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "bgd_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8c5e9740-68aa-446e-9e28-9803d5c0b39c/resource/9323109b-c593-4b5d-85ec-c0f07c195eea/download/bgd_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "bgd_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8c5e9740-68aa-446e-9e28-9803d5c0b39c/resource/709a4200-3007-4872-92b2-e152f5feddd8/download/bgd_men_2020_csv.zip"
+    },
+    {
+     "name": "bgd_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8c5e9740-68aa-446e-9e28-9803d5c0b39c/resource/97028aa6-fe50-4248-9dc1-3d0fc67f4ff1/download/bgd_men_2020_geotiff.zip"
+    },
+    {
+     "name": "bgd_women_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8c5e9740-68aa-446e-9e28-9803d5c0b39c/resource/8e8754b1-0302-4ddc-bf11-c80702e02760/download/bgd_women_2020_csv.zip"
+    },
+    {
+     "name": "bgd_women_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8c5e9740-68aa-446e-9e28-9803d5c0b39c/resource/30215ebc-1419-4d5c-b7b0-8598efe09f96/download/bgd_women_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bangladesh - Population Counts",
+   "name": "worldpop-population-counts-for-bangladesh",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-bangladesh",
+   "resources": [
+    {
+     "name": "bgd_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/BGD/bgd_ppp_2020.tif"
+    },
+    {
+     "name": "bgd_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/BGD/bgd_ppp_2019.tif"
+    },
+    {
+     "name": "bgd_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/BGD/bgd_ppp_2018.tif"
+    },
+    {
+     "name": "bgd_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/BGD/bgd_ppp_2017.tif"
+    },
+    {
+     "name": "bgd_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/BGD/bgd_ppp_2016.tif"
+    },
+    {
+     "name": "bgd_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/BGD/bgd_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "bgd_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/BGD/bgd_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "bgd_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/BGD/bgd_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bangladesh - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-bangladesh",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-bangladesh",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Bangladesh",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/11e67eaa-4127-4d70-bf51-bf5a815496e5/resource/a6fb1b7e-5da2-47cf-9dc6-38c7931ee2b7/download/social-protection-and-labor_bgd.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Bangladesh: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-bgd",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-bgd",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-bd-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-bd-latest.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+  "status": 0,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>",
+  "pages": []
+ },
+ "verdict": {
+  "hdx_datasets": 19,
+  "hdx_machine_readable": 7,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 1,
+  "urls_answering": "1/3",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "5/5"
+ }
+}

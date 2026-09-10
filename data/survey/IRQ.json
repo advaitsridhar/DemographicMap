@@ -1,0 +1,834 @@
+{
+ "iso3": "IRQ",
+ "name": "Iraq",
+ "tier_proposed": "C",
+ "sources": [
+  {
+   "fields": [],
+   "title": "COSIT Annual Abstract of Statistics 2024, Part Two 1-2 Population Census (تعداد السكان)",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "governorate, urban/rural",
+   "geography_count": 18,
+   "matches_boundary_level": "admin1",
+   "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf",
+   "status": 200,
+   "content_type": "application/pdf",
+   "final_url": "https://cosit.gov.iq/documents/AAS2024/02.pdf",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "pdf",
+    "pages_hint": 39
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Governorates of Iraq",
+    "wikitext_bytes": 23548,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 3,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Governorate",
+       "Postal<br />code || ISO<br />code",
+       "Total area <br />in square miles",
+       "Total area <br />in km<sup>2</sup>",
+       "Population <br />1 July 2018<ref>{{citation|title=Original PDF|url=http://dx.doi.org/10.15438/rr.5.1.7|access-date=2021-05-10|doi=10.15438/rr.5.1.7|doi-broken-date=6 July 2025 |archive-date=19 May 2018|archive-url=https://web.archive.org/web/20180519204819/http://dx.doi.org/10.15438/rr.5.1.7|url-status=live}}</ref>",
+       "Population <br />Density <br />in square miles",
+       "Population <br />Density <br />in km<sup>2</sup>",
+       "Capital"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "Governorate",
+       "Today part of",
+       "style=\"width:110px;\"|Flag",
+       "style=\"width:250px;\" |Use",
+       "style=\"width:250px;\"|Description"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "style=\"width:110px;\"|Flag",
+       "style=\"width:250px;\" |Use",
+       "style=\"width:250px;\"|Description"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Iraqis",
+    "wikitext_bytes": 39340,
+    "infobox_params": [
+     "languages",
+     "religions"
+    ],
+    "sections": [
+     "Languages",
+     "Demographics",
+     "Ethnicities",
+     "Religions"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 3,
+    "verdict": "composition",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Iraq",
+    "wikitext_bytes": 33276,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnicity",
+     "Languages",
+     "Religions"
+    ],
+    "wikitables": 8,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align: left;\" |Year<ref>{{Cite web|url=https://population.un.org/wpp/|title=World Population Prospects|website=population.un.org}}</ref>",
+       "width=\"80pt\"|Live births per year",
+       "width=\"80pt\"|Deaths per year",
+       "width=\"80pt\"|Natural change",
+       "width=\"80pt\"|CBR<sup>1</sup>",
+       "width=\"80pt\"|CDR<sup>1</sup>",
+       "width=\"80pt\"|NC<sup>1</sup>",
+       "width=\"80pt\" |IMR<sup>1</sup>",
+       "width=\"80pt\"|Total fertility rate",
+       "width=\"80pt\"|Life expectancy (years)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 31
+     },
+     {
+      "header": [
+       "width=\"50\"|Age groups<ref>{{cite web |url=http://cosit.gov.iq/en/population-manpower-staatistics/life |title=الجهاز المركزي للاحصاء - Demographic Statistics |access-date=2014-03-05 |url-status=dead |archive-url=https://web.archive.org/web/20140305055657/http://cosit.gov.iq/en/population-manpower-staatistics/life |archive-date=2014-03-05 }}</ref><ref>{{Cite web|url=http://www.childinfo.org/files/MICS3_Iraq_FinalReport_2006_eng.pdf|title=UNICEF DATA - Child Statistics}}</ref>",
+       "width=\"50pt\"|1997",
+       "width=\"50pt\"|2006",
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929",
+       "1930"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "Years",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929",
+       "1930",
+       "1931",
+       "1932",
+       "1933"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Years",
+       "1935",
+       "1936",
+       "1937",
+       "1938",
+       "1939",
+       "1940",
+       "1941",
+       "1942",
+       "1943"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Years",
+       "1945",
+       "1946",
+       "1947",
+       "1948",
+       "1949<ref name=\"ourworldindata.org\" />",
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 7
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Iraq",
+    "wikitext_bytes": 42948,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Ain Al-Tamur",
+    "found": true,
+    "title": "Iraq",
+    "url": "https://en.wikipedia.org/wiki/Iraq",
+    "wikitext_bytes": 254041,
+    "infobox_params": [
+     "ethnic_groups",
+     "official_languages",
+     "religion"
+    ],
+    "sections": [
+     "Demographics",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 4,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Al-Amara",
+    "found": true,
+    "title": "Iraq",
+    "url": "https://en.wikipedia.org/wiki/Iraq",
+    "wikitext_bytes": 254041,
+    "infobox_params": [
+     "ethnic_groups",
+     "official_languages",
+     "religion"
+    ],
+    "sections": [
+     "Demographics",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 4,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Al-Hamza",
+    "found": true,
+    "title": "Iraq",
+    "url": "https://en.wikipedia.org/wiki/Iraq",
+    "wikitext_bytes": 254041,
+    "infobox_params": [
+     "ethnic_groups",
+     "official_languages",
+     "religion"
+    ],
+    "sections": [
+     "Demographics",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 4,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Balad",
+    "found": true,
+    "title": "Iraq",
+    "url": "https://en.wikipedia.org/wiki/Iraq",
+    "wikitext_bytes": 254041,
+    "infobox_params": [
+     "ethnic_groups",
+     "official_languages",
+     "religion"
+    ],
+    "sections": [
+     "Demographics",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 4,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Duhok",
+    "found": true,
+    "title": "Iraq",
+    "url": "https://en.wikipedia.org/wiki/Iraq",
+    "wikitext_bytes": 254041,
+    "infobox_params": [
+     "ethnic_groups",
+     "official_languages",
+     "religion"
+    ],
+    "sections": [
+     "Demographics",
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 4,
+    "verdict": "composition"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Iraq: Languages",
+   "name": "iraq-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/iraq-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_IRQ_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1b95520e-2b5f-4620-b1e2-03d959d51ff2/resource/0ad90e24-da2c-4b83-91cf-a552771a3c36/download/clearglobal_language_use_irq_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_IRQ_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1b95520e-2b5f-4620-b1e2-03d959d51ff2/resource/cc194cfe-998f-4a26-9789-3ba210a47354/download/clearglobal_language_use_irq_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_IRQ_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/1b95520e-2b5f-4620-b1e2-03d959d51ff2/resource/a9473d61-4afc-49de-b324-bf438e40bfab/download/clearglobal_language_use_irq_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Iraq - Roads Network",
+   "name": "iraq-roads",
+   "org": "OCHA Iraq (inactive)",
+   "url": "https://data.humdata.org/dataset/iraq-roads",
+   "resources": [
+    {
+     "name": "roads_polyline.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/90d4b668-29b8-497a-9476-26d692bf1190/resource/b1e5babb-884a-4dd4-9105-54f0bf2e8cdb/download/roads_polyline.zip"
+    },
+    {
+     "name": "primary_routes.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/90d4b668-29b8-497a-9476-26d692bf1190/resource/4c7bda4e-b637-4dc9-84b6-916fa93cfcf3/download/primary_routes.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Iraq: Road Surface Data",
+   "name": "iraq-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/iraq-road-surface-data",
+   "resources": [
+    {
+     "name": "Iraq GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_irq_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Iraq GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_irq_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Iraq - Water Courses (Rivers and Streams)",
+   "name": "iraq-water-courses",
+   "org": "OCHA Iraq (inactive)",
+   "url": "https://data.humdata.org/dataset/iraq-water-courses",
+   "resources": [
+    {
+     "name": "river_line.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/9f04c93c-6696-45ef-bc12-b747daa1b4a5/resource/d5c07f5a-36ad-4ab3-a247-f246e1db1625/download/river_line.zip"
+    },
+    {
+     "name": "river_poly.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/9f04c93c-6696-45ef-bc12-b747daa1b4a5/resource/dddcd46a-7a77-45ad-9b0b-14fe9d771a99/download/river_poly.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Iraq - Water Bodies (Lakes and Ponds)",
+   "name": "iraq-water-bodies",
+   "org": "OCHA Iraq (inactive)",
+   "url": "https://data.humdata.org/dataset/iraq-water-bodies",
+   "resources": [
+    {
+     "name": "water_bodies_0.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/3506058f-565a-4ad3-8498-ac2e32dfe2ef/resource/cefb9e0b-9d2a-408a-b726-43f985e6bf59/download/water_bodies_0.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Iraq: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-iraq",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-iraq",
+   "resources": [
+    {
+     "name": "kontur_boundaries_IQ_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_IQ_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_IQ_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_IQ_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_IQ_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_IQ_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Iraq - Standard naming, GPS coordinates and P-codes for IDP Camps",
+   "name": "iraq-affected-persons-locations-0",
+   "org": "OCHA Iraq (inactive)",
+   "url": "https://data.humdata.org/dataset/iraq-affected-persons-locations-0",
+   "resources": [
+    {
+     "name": "IRQ_pIDP_FOD_camps_cc_cs_CCCM_20141123.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/40b615d8-3cd4-4257-9fdd-5cf5689fec00/resource/31a5e793-550a-4e5b-85bc-968af1fc531c/download/irq_pidp_fod_camps_cc_cs_cccm_20141123.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Iraq - Affected Persons Locations(Jun to July 2014)",
+   "name": "iraq-affected-persons-locations-0-0-0-0-0",
+   "org": "OCHA Iraq (inactive)",
+   "url": "https://data.humdata.org/dataset/iraq-affected-persons-locations-0-0-0-0-0",
+   "resources": [
+    {
+     "name": "140702_DTM Map New Displacement - June 2014.rar",
+     "format": "KMZ",
+     "url": "https://data.humdata.org/dataset/8fe76e4a-10ea-49ef-ac4f-55b7f850b577/resource/22e68553-2ce0-46b4-8f0a-4455e7a43ec6/download/140702_dtm-map-new-displacement-june-2014.rar"
+    },
+    {
+     "name": "DTM-IOM_Baseline-Master-02-7-2014_for release all displacement 2014.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/8fe76e4a-10ea-49ef-ac4f-55b7f850b577/resource/ff0de12c-e773-42e0-85bd-cd8a144b2cfe/download/dtm-iom_baseline-master-02-7-2014_for-release-all-displacement-2014.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Iraq - Affected Persons Locations(DTM)  24 August 2014",
+   "name": "iraq-affected-persons-locations-0-0-0",
+   "org": "OCHA Iraq (inactive)",
+   "url": "https://data.humdata.org/dataset/iraq-affected-persons-locations-0-0-0",
+   "resources": [
+    {
+     "name": "28082014 Master List Final.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/a3e9f858-cc09-431d-b4c8-e070e57ad394/resource/87e4fbb3-0252-4fae-8799-e6ec1faf2ea3/download/28082014-master-list-final.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Iraq - Affected Persons Locations (DTM)  7 August 2014",
+   "name": "iraq-affected-persons-locations-0-0-0-0",
+   "org": "OCHA Iraq (inactive)",
+   "url": "https://data.humdata.org/dataset/iraq-affected-persons-locations-0-0-0-0",
+   "resources": [
+    {
+     "name": "20140807MasterList.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/2577c4ac-8fb5-4f8d-937a-f3fe9ccc4e9d/resource/229501ce-d887-48a6-85ae-53f1ce25087f/download/20140807masterlist.xlsx"
+    },
+    {
+     "name": "DTM20140716_COD_Bdry.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/2577c4ac-8fb5-4f8d-937a-f3fe9ccc4e9d/resource/f554fcdd-4516-4d4b-baea-70bb74802859/download/dtm20140716_cod_bdry.xlsx"
+    },
+    {
+     "name": "20140807_IOM_DTM_KMZ.zip",
+     "format": "KMZ",
+     "url": "https://data.humdata.org/dataset/2577c4ac-8fb5-4f8d-937a-f3fe9ccc4e9d/resource/d7026a95-57b9-4bce-8f72-ec4b651e37a0/download/20140807_iom_dtm_kmz.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Iraq Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys",
+   "name": "iraq-subnational-boundaries-and-tabular-data",
+   "org": "U.S. Census Bureau",
+   "url": "https://data.humdata.org/dataset/iraq-subnational-boundaries-and-tabular-data",
+   "resources": [
+    {
+     "name": "Iraq.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/e5082250-045d-4af6-83af-eddd840b4726/resource/2246d4c4-5980-4517-937e-bb4f196cc4ad/download/iraq.gdb.zip"
+    },
+    {
+     "name": "Iraq_uscb_201905.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e5082250-045d-4af6-83af-eddd840b4726/resource/a06269f8-5d12-4c52-a2ae-316c63f11a64/download/iraq_uscb_201905.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Iraq - Accessibility Indicators",
+   "name": "iraq-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/iraq-accessibility-indicators",
+   "resources": [
+    {
+     "name": "IRQ_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/irq/IRQ_education_access.gpkg"
+    },
+    {
+     "name": "IRQ_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/irq/IRQ_education_access_long.csv"
+    },
+    {
+     "name": "IRQ_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/irq/IRQ_education_access_wide.csv"
+    },
+    {
+     "name": "IRQ_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/irq/IRQ_hospitals_access.gpkg"
+    },
+    {
+     "name": "IRQ_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/irq/IRQ_hospitals_access_long.csv"
+    },
+    {
+     "name": "IRQ_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/irq/IRQ_hospitals_access_wide.csv"
+    },
+    {
+     "name": "IRQ_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/irq/IRQ_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "IRQ_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/irq/IRQ_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Iraq: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "iraq-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/iraq-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "irq_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8ed6a074-e44e-4480-a405-8d6d4d4f672a/resource/89fdce6b-b8ed-4cfd-88e8-0d0c34209595/download/irq_general_2020_geotiff.zip"
+    },
+    {
+     "name": "irq_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8ed6a074-e44e-4480-a405-8d6d4d4f672a/resource/426749b1-38fc-4282-baf7-ea23aab8df39/download/irq_general_2020_csv.zip"
+    },
+    {
+     "name": "irq_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8ed6a074-e44e-4480-a405-8d6d4d4f672a/resource/5894440e-7bc7-4740-9b0a-fafcbea92a3c/download/irq_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "irq_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8ed6a074-e44e-4480-a405-8d6d4d4f672a/resource/def6b223-7706-4b6c-a94c-fd3fbb46ce2a/download/irq_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "irq_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8ed6a074-e44e-4480-a405-8d6d4d4f672a/resource/f5bcb346-36ca-41ed-a98a-e2307c395057/download/irq_men_2020_geotiff.zip"
+    },
+    {
+     "name": "irq_women_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8ed6a074-e44e-4480-a405-8d6d4d4f672a/resource/6776120a-15ef-41de-84a3-bee6564be578/download/irq_women_2020_geotiff.zip"
+    },
+    {
+     "name": "irq_women_of_reproductive_age_15_49_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8ed6a074-e44e-4480-a405-8d6d4d4f672a/resource/fcd5f0f5-c221-4ad9-943a-23829b49ab3e/download/irq_women_of_reproductive_age_15_49_2020_geotiff.zip"
+    },
+    {
+     "name": "irq_youth_15_24_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/8ed6a074-e44e-4480-a405-8d6d4d4f672a/resource/c795cff9-9213-4995-996b-b0b43b464c0b/download/irq_youth_15_24_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Iraq - Erbil Urban Profiling Exercise",
+   "name": "erbil-urban-profiling-exercise",
+   "org": "Joint IDP Profiling Service (JIPS)",
+   "url": "https://data.humdata.org/dataset/erbil-urban-profiling-exercise",
+   "resources": [
+    {
+     "name": "KRI-Erbil_Dataset_hdx.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/f1c449f5-c6ee-4967-bfb8-3b74e16de871/resource/0bc72481-607d-41fb-a972-8a23b443ec29/download/kri-erbil_dataset_hdx.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Iraq - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-iraq",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-iraq",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Iraq",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/9a87ddb2-291b-454a-86af-5f364768de06/resource/0252a4af-1c27-4cc0-8064-e4c79767e92c/download/social-protection-and-labor_irq.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Iraq - Population Counts",
+   "name": "worldpop-population-counts-for-iraq",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-iraq",
+   "resources": [
+    {
+     "name": "irq_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/IRQ/irq_ppp_2020.tif"
+    },
+    {
+     "name": "irq_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/IRQ/irq_ppp_2019.tif"
+    },
+    {
+     "name": "irq_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/IRQ/irq_ppp_2018.tif"
+    },
+    {
+     "name": "irq_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/IRQ/irq_ppp_2017.tif"
+    },
+    {
+     "name": "irq_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/IRQ/irq_ppp_2016.tif"
+    },
+    {
+     "name": "irq_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/IRQ/irq_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "irq_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/IRQ/irq_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "irq_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/IRQ/irq_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Iraq - Duhok Urban Profiling Exercise",
+   "name": "duhok-urban-profiling-exercise",
+   "org": "Joint IDP Profiling Service (JIPS)",
+   "url": "https://data.humdata.org/dataset/duhok-urban-profiling-exercise",
+   "resources": [
+    {
+     "name": "KRI-Duhok_Dataset_HDX.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/dc17a472-92bb-4553-b090-6bb3bd4a351d/resource/f1b99fc8-b2f4-45be-b1bf-19b456631efc/download/kri-duhok_dataset_hdx.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Iraq - Sulaymaniyah Urban Profiling Exercise",
+   "name": "sulaymaniyah-urban-profiling-exercise",
+   "org": "Joint IDP Profiling Service (JIPS)",
+   "url": "https://data.humdata.org/dataset/sulaymaniyah-urban-profiling-exercise",
+   "resources": [
+    {
+     "name": "KRI-Sulaymaniyah_Dataset_HDX.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/91981b90-97ea-45f3-b525-0e3c0556eefa/resource/bf4cc63d-bec7-463a-b246-0919670b0a5d/download/kri-sulaymaniyah_dataset_hdx.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Iraq - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-iq-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-iq-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_IQ",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/032f2ef1-a766-4c53-b16f-dd9f9c98f984/resource/30d1f7f6-3959-4ba4-a46c-bb9c84963df1/download/indicator_data_iq.csv"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://cosit.gov.iq/",
+  "status": 200,
+  "error": null,
+  "pages": [],
+  "title": "هيأة الاحصاء ونظم المعلومات الجغرافية - هيأة الإحصاء ونظم المعلومات الجغرافية",
+  "matching_links": 0
+ },
+ "verdict": {
+  "hdx_datasets": 19,
+  "hdx_machine_readable": 12,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "1/1",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "5/5"
+ }
+}

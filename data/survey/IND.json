@@ -1,0 +1,1150 @@
+{
+ "iso3": "IND",
+ "name": "India",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "Population by Religious Community, 2011 - India (Open Government Data Platform India)",
+   "kind": "census",
+   "format": "csv/xls download from the OGD resource page (API access on data.gov.in normally needs a key -- unverified for this resource)",
+   "geography": "state, district and tehsil rows in one table (2011: 640 districts)",
+   "geography_count": 640,
+   "matches_boundary_level": "admin2 (640 census districts vs 735 shapes; the repo already joins 637 from the same 2011 table) and admin1 by aggregation",
+   "url": "https://www.data.gov.in/resource/population-religious-community-2011-india",
+   "status": 403,
+   "content_type": null,
+   "final_url": null,
+   "error": null
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "C-01: Population by religious community - 2011 (NADA catalogue, one XLS workbook per state plus an all-India workbook)",
+   "kind": "census",
+   "format": "xls (one workbook per state; direct download links exist, e.g. https://censusindia.gov.in/nada/index.php/catalog/11382/download/14495/DDW27C-01%20MDDS.XLS for Maharashtra)",
+   "geography": "state, district, sub-district (MDDS codes)",
+   "geography_count": 640,
+   "matches_boundary_level": "admin2 (district) and admin1 (state)",
+   "url": "https://censusindia.gov.in/nada/index.php/catalog/11361",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>"
+  },
+  {
+   "fields": [
+    "ethnicity (proxy only: Scheduled Tribe population by religious community -- a legal-category cross-tab, not an ethnic composition)"
+   ],
+   "title": "ST-14: Scheduled tribe population by religious community (district level) - 2011",
+   "kind": "census",
+   "format": "xls (one catalogue entry per district, e.g. PC11_ST14-{state}-{district})",
+   "geography": "district",
+   "geography_count": 640,
+   "matches_boundary_level": "admin2",
+   "url": "https://censusindia.gov.in/nada/index.php/catalog/12492",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>"
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "india-districts-census-2011.csv (nishusharma1608/India-Census-2011-Analysis) -- the community extract the repo currently reads",
+   "kind": "census",
+   "format": "csv",
+   "geography": "district",
+   "geography_count": 640,
+   "matches_boundary_level": "admin2",
+   "url": "https://github.com/nishusharma1608/India-Census-2011-Analysis/blob/master/india-districts-census-2011.csv",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://github.com/nishusharma1608/India-Census-2011-Analysis/blob/master/india-districts-census-2011.csv",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "html",
+    "title": "India-Census-2011-Analysis/india-districts-census-2011.csv at master · nishusharma1608/India-Census-2011-Analysis · GitHub",
+    "links_to_files": [
+     "/login?return_to=https%3A%2F%2Fgithub.com%2Fnishusharma1608%2FIndia-Census-2011-Analysis%2Fblob%2Fmaster%2Findia-districts-census-2011.csv",
+     "/manifest.json"
+    ],
+    "mentions": [
+     "census"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "Religious demography of Indian states and territories (Pew Research Center, 2021)",
+   "kind": "other",
+   "format": "html",
+   "geography": "state/UT",
+   "geography_count": null,
+   "matches_boundary_level": "admin1",
+   "url": "https://www.pewresearch.org/religion/2021/09/21/religious-demography-of-indian-states-and-territories/",
+   "status": 403,
+   "content_type": null,
+   "final_url": null,
+   "error": null
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in India",
+    "wikitext_bytes": 125062,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 3,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Religion{{NoteTag|Major denominations with over 1 million adherents.}}",
+       "Population",
+       "{{Tooltip|%|Percentage of total population}}",
+       "Total",
+       "1,210,854,977",
+       "{{percentage bar|100}}",
+       "rowspan=2 | Religious group",
+       "colspan=7 | Population % (of total population) as per census",
+       "rowspan=2 | {{Tooltip|Change in growth rate since 1951 |[(% in 2011)-(% in 1951)}/(% in 1951)]*100}}",
+       "1951"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "rowspan=2 | Religious group",
+       "colspan=7 | Population % (of total population) as per census",
+       "rowspan=2 | {{Tooltip|Change in growth rate since 1951 |[(% in 2011)-(% in 1951)}/(% in 1951)]*100}}",
+       "1951",
+       "1961",
+       "1971",
+       "1981",
+       "1991",
+       "2001",
+       "2011"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Religious<br />group",
+       "rowspan=\"2\" | Population (2011)<br />%",
+       "rowspan=\"2\" | Growth<br />(2001–2011)<ref>{{cite web|url=http://www.hindustantimes.com/india/muslim-population-grows-marginally-faster-census-2011-data/story-yAhd2F6z57ezaFWiwwYU7H.html|title=Muslim population grows marginally faster: Census 2011 data|author=Aloke Tikku|access-date=18 October 2016|date=26 August 2015|work=Hindustan Times}}</ref><ref>{{cite news|url=http://indianexpress.com/article/india/india-others/indias-population-121-09-crores-hindus-79-8-pc-muslims-14-2-pc-census/|title=Census 2011: Hindus dip to below 80 per cent of population; Muslim share up, slows down|date=26 August 2015|newspaper=The Indian Express|access-date=20 July 2016}}</ref>",
+       "colspan=\"4\" | Sex ratio (2011)<br>(females per 1000 males)",
+       "rowspan=\"2\" | Literacy (2011)<br />(%)<ref>{{cite web|url=http://www.hindustantimes.com/punjab/jains-most-literate-in-north-muslims-the-least/story-iKno2PywCvEZbGmguNFg2N.html|title=Jains most literate in North, Muslims the least|work=Hindustan Times |date=4 January 2016|access-date=20 July 2016}}</ref>",
+       "rowspan=\"2\" | Work participation (2011)<br />(%)<ref name=\"dnaindia.com\"/><ref>{{cite news|url=http://timesofindia.indiatimes.com/india/Only-33-of-Muslims-work-lowest-among-all-religions/articleshow/50433358.cms|title=Only 33% of Muslims work, lowest among all religions - Times of India|website=The Times of India|access-date=20 July 2016}}</ref>",
+       "total<ref name=\"dnaindia.com\">{{cite web|url=http://www.dnaindia.com/india/report-census-2011-sikhs-jains-have-the-worst-sex-ratio-2161061|title=Census 2011: Sikhs, Jains have the worst sex ratio - Latest News & Updates at Daily News & Analysis|date=31 December 2015|access-date=20 July 2016}}</ref>",
+       "rural",
+       "urban",
+       "child<ref>{{cite web|url=http://epaperbeta.timesofindia.com/Article.aspx?eid=31808&articlexml=Sex-ratio-dips-Jains-Sikhs-buck-trend-31122015001049|title=The Times Group|access-date=20 July 2016|archive-date=25 December 2018|archive-url=https://web.archive.org/web/20181225050842/http://epaperbeta.timesofindia.com/Article.aspx?eid=31808&articlexml=Sex-ratio-dips-Jains-Sikhs-buck-trend-31122015001049|url-status=dead}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 3
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "2011 census of India",
+    "wikitext_bytes": 74250,
+    "infobox_params": [],
+    "sections": [
+     "Population"
+    ],
+    "wikitables": 5,
+    "charts": [],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "rowspan=2| State / <br /> Union Territory (UT)",
+       "rowspan=2| Capital",
+       "rowspan=2| Type",
+       "colspan=2| Population",
+       "rowspan=2| Males",
+       "rowspan=2| Females",
+       "rowspan=2| Sex<br />Ratio <br /><ref name=\"2011 Provisional population tables\">{{cite web|url=http://www.censusindia.gov.in/2011-prov-results/data_files/india/Final%20PPT%202011_progresstables.pdf |title=Population |work=Government of India (2011) |publisher=Census of India |url-status=dead |archive-url=https://web.archive.org/web/20120112151910/http://www.censusindia.gov.in/2011-prov-results/data_files/india/Final%20PPT%202011_progresstables.pdf |archive-date=12 January 2012 }}</ref>",
+       "rowspan=2| Literacy<br />rate (%)<!-- (%) -->",
+       "colspan=2| Population",
+       "rowspan=2| Area<ref name=\"Area of India/state/district\">{{cite web|url=http://www.censusindia.gov.in/Census_Data_2001/Census_Data_Online/Administrative_Divisions/Area_of_India.aspx|title=Area ofIndia/state/district|work=Government of India (2001)|publisher=Census of India|access-date=27 October 2008|archive-date=25 December 2018|archive-url=https://web.archive.org/web/20181225050954/http://www.censusindia.gov.in/Census_Data_2001/Census_Data_Online/CensusDataOnline_Login.aspx|url-status=live}}</ref> <br /> (km<sup>2</sup>)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 2
+     },
+     {
+      "header": [
+       "Year",
+       "Hindus",
+       "Muslims",
+       "Christians",
+       "Sikhs",
+       "Buddhists",
+       "Jains",
+       "Zoroastrians",
+       "Atheists or<br>other religion"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Language",
+       "colspan=\"2\" | First language<br />speakers",
+       "rowspan=\"2\" | Second language<br />speakers",
+       "rowspan=\"2\" | Third language<br />speakers",
+       "colspan=\"2\" | Total speakers",
+       "num.<ref name=\"1971-2001\">{{cite web|url=http://www.censusindia.gov.in/2011Census/C-16_25062018_NEW.pdf|title=Comparative Speakers'strength of Scheduled Languages - 1971, 1981, 1991, 2001 and 2011 |work=Census of India 2011 - Paper 1 of 2018 - Language - India, States and Union Territories (Table C-16) |publisher=Census of India  |access-date=27 June 2018|archive-date=27 June 2018|archive-url=https://web.archive.org/web/20180627064326/http://www.censusindia.gov.in/2011Census/C-16_25062018_NEW.pdf|url-status=live}}</ref>",
+       "% of total pop.",
+       "num.<ref name=\"fulllangdatacensus 2011\">{{cite news |url=https://www.hindustantimes.com/india-news/how-languagesintersect-in-india/story-g3nzNwFppYV7XvCumRzlYL.html |title=How languages intersect in India |work=Hindustan Times |date=22 November 2018 |first1=Vijdan Mohammad |last1=Kawoosa |access-date=26 November 2018 |archive-date=22 November 2018 |archive-url=https://web.archive.org/web/20181122091352/https://www.hindustantimes.com/india-news/how-languagesintersect-in-india/story-g3nzNwFppYV7XvCumRzlYL.html |url-status=live }}</ref><ref>{{Cite web |url=https://www.hindustantimes.com/static/iframes/language_probability_interactive/index.html |title=How many Indians can you talk to? |work=Hindustan Times |access-date=26 November 2018 |archive-date=22 November 2018 |archive-url=https://web.archive.org/web/20181122133636/https://www.hindustantimes.com/static/iframes/language_probability_interactive/index.html |url-status=live }}</ref>",
+       "% of total pop."
+      ],
+      "place_column": false,
+      "composition_columns": 5,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "colspan=\"5\" |Effective literacy rate (1901–2011){{Citation needed|date=February 2013}}<ref>{{Cite web |date=2016-10-13 |title=Census 2011: Literacy Rate and Sex Ratio in India Since 1901 to 2011 |url=https://www.jagranjosh.com/general-knowledge/census-2011-literacy-rate-and-sex-ratio-in-india-since-1901-to-2011-1476359944-1 |access-date=2024-07-27 |website=Jagranjosh |language=en}}</ref>",
+       "S.No.",
+       "Census year",
+       "Total (%)",
+       "Male (%)",
+       "Female (%)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of India",
+    "wikitext_bytes": 215272,
+    "infobox_params": [],
+    "sections": [
+     "Languages",
+     "Ethnic groups",
+     "Religion"
+    ],
+    "wikitables": 30,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 3,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=\"2\" scope=\"col\" | Year",
+       "colspan=\"2\" | Maddison (2001)<ref name=\"maddison\">Angus Maddison (2001), ''The World Economy: A Millennial Perspective'', [http://theunbrokenwindow.com/Development/MADDISON%20The%20World%20Economy--A%20Millennial.pdf#page=242 pages 241–242] {{Webarchive|url=https://web.archive.org/web/20201111170118/http://theunbrokenwindow.com/Development/MADDISON%20The%20World%20Economy--A%20Millennial.pdf#page=242 |date=11 November 2020 }}, OECD Development Centre</ref>",
+       "colspan=\"2\" | Clark (1967)<ref>{{cite book|author=Colin Clark|title=Population Growth and Land Use|publisher=Springer Science+Business Media|year=1977|page=64|url=https://books.google.com/books?id=0KKvCwAAQBAJ&pg=PA64|isbn=9781349157754}}</ref><ref name=\"maddison236\">Angus Maddison (2001), ''The World Economy: A Millennial Perspective'', [http://theunbrokenwindow.com/Development/MADDISON%20The%20World%20Economy--A%20Millennial.pdf#page=237 page 236] {{Webarchive|url=https://web.archive.org/web/20201111170118/http://theunbrokenwindow.com/Development/MADDISON%20The%20World%20Economy--A%20Millennial.pdf#page=237 |date=11 November 2020 }}, OECD Development Centre</ref><ref>John D. Durand, 1974, [http://repository.upenn.edu/cgi/viewcontent.cgi?article=1009&context=psc_penn_papers Historical Estimates of World Population: An Evaluation], University of Pennsylvania, Population Center, Analytical and Technical Reports, Number 10, page 9</ref>",
+       "colspan=\"2\" | Biraben (1979)<ref name=\"maddison236\"/><ref>{{cite book|title=Structure, Culture, and History: Recent Issues in Social Theory|author=Sing C. Chew, J. David Knottnerus|publisher=Rowman & Littlefield|year=2002|page=185|url=https://books.google.com/books?id=3WzXroSxMb0C&pg=PA185|isbn=9780847698370}}</ref><ref>{{cite book|title=Demography: Analysis and Synthesis|author=Guillaume Wunsch, Graziella Caselli, Jacques Vallin|publisher=Academic Press|year=2005|chapter=Population in Time and Space|page=34|isbn=978-0-12-765660-1 |chapter-url=https://books.google.com/books?id=nmgNXoiAiU4C&pg=RA2-PA34}}</ref>",
+       "colspan=\"2\" | Durand (1974)<ref>John D. Durand, 1974, [http://repository.upenn.edu/cgi/viewcontent.cgi?article=1009&context=psc_penn_papers Historical Estimates of World Population: An Evaluation], University of Pennsylvania, Population Center, Analytical and Technical Reports, Number 10, page 10</ref><ref name=\"maddison236\"/>",
+       "colspan=\"2\" | McEvedy (1978)<ref>{{cite book |author1=Colin McEvedy |author-link1=Colin McEvedy |author2=Richard Jones |date=1978 |title=Atlas of World Population History |publisher=Facts on File |location=New York |pages=182–185 |url=http://www.arabgeographers.net/up/uploads/14299936761.pdf#page=92 |archive-date=12 November 2020 |access-date=8 August"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 1
+     },
+     {
+      "header": [
+       "Era",
+       "Year",
+       "Estimated Population",
+       "Growth Rate (%)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 42
+     },
+     {
+      "header": [
+       "Years",
+       "1880",
+       "1881",
+       "1882",
+       "1883",
+       "1884",
+       "1885",
+       "1886",
+       "1887",
+       "1888"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Years",
+       "1921",
+       "1922",
+       "1923",
+       "1924",
+       "1925",
+       "1926",
+       "1927",
+       "1928",
+       "1929"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1881",
+       "1891",
+       "1901",
+       "1905",
+       "1911",
+       "1915",
+       "1921",
+       "1925",
+       "1931"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align: left;\" | Census year",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Population",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Growth (%)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Language",
+       "Language Family",
+       "Speakers (1971)",
+       "Speakers (1981)",
+       "Speakers (1991)",
+       "Speakers (2001)",
+       "Speakers (2011)"
+      ],
+      "place_column": false,
+      "composition_columns": 5,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align: left;\" |Year",
+       "scope=\"col\" style=\"text-align: center; width: 70pt;\" data-sort-type=\"number\" |Mid-year population",
+       "scope=\"col\" style=\"text-align: center; width: 70pt;\" data-sort-type=\"number\" | Births per year",
+       "scope=\"col\" style=\"text-align: center; width: 70pt;\" data-sort-type=\"number\" | Deaths per year",
+       "scope=\"col\" style=\"text-align: center; width: 70pt;\" data-sort-type=\"number\" | Annual change in population",
+       "scope=\"col\" style=\"text-align: center; width: 60pt;\" data-sort-type=\"number\" | Crude birth rate<br />(per 1000)",
+       "scope=\"col\" style=\"text-align: center; width: 60pt;\" data-sort-type=\"number\" | Crude death rate<br />(per 1000)",
+       "scope=\"col\" style=\"text-align: center; width: 60pt;\" data-sort-type=\"number\" | Natural change<br />(per 1000)",
+       "scope=\"col\" style=\""
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 1
+     },
+     {
+      "header": [
+       "States and UTs",
+       "1901–11",
+       "1911–21",
+       "1921–31",
+       "1931–41",
+       "1941–51",
+       "1951–61",
+       "1961–71",
+       "1971–81",
+       "1981–91"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align: left;\" | Year",
+       "scope=\"col\" style=\"text-align: right; width: 70pt;\" data-sort-type=\"number\" | Average population<br />",
+       "scope=\"col\" style=\"text-align: right; width: 70pt;\" data-sort-type=\"number\" | Live births<sup>1</sup>",
+       "scope=\"col\" style=\"text-align: right; width: 70pt;\" data-sort-type=\"number\" | Deaths<sup>1</sup>",
+       "scope=\"col\" style=\"text-align: right; width: 70pt;\" data-sort-type=\"number\" | Natural change",
+       "scope=\"col\" style=\"text-align: right; width: 70pt;\" data-sort-type=\"number\" | Crude birth rate<br />(per 1000)",
+       "scope=\"col\" style=\"text-align: right; width: 70pt;\" data-sort-type=\"number\" | Crude death rate<br />(per 1000)",
+       "scope=\"col\" style=\"text-align: right; width: 70pt;\" data-sort-type=\"number\" | Natural change<br />(per 1000)",
+       "scope=\"col\" style=\"text-align: right; width: 70pt;\" data-sort-type=\"number\" | Total fertility rate"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy at birth",
+       "Life expectancy at age 15",
+       "Life expectancy at age 65",
+       "Life expectancy at age 80",
+       "rowspan=2 | Year",
+       "colspan=2 | Total",
+       "colspan=2 | Urban",
+       "colspan=2 | Rural",
+       "CBR"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 29
+     },
+     {
+      "header": [
+       "rowspan=2 | Year",
+       "colspan=2 | Total",
+       "colspan=2 | Urban",
+       "colspan=2 | Rural",
+       "CBR",
+       "TFR<sup>1</sup>",
+       "CBR",
+       "TFR<sup>1</sup>",
+       "CBR",
+       "TFR<sup>1</sup>"
+      ],
+      "place_column": false,
+      "composition_columns": 5,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "Year",
+       "Hindu",
+       "Muslim",
+       "Christian",
+       "Sikh",
+       "Buddhist/<br />Neo-Buddhist",
+       "Jain",
+       "Other",
+       "rowspan=2 | State (Population 2011)",
+       "colspan=2 | Total"
+      ],
+      "place_column": true,
+      "composition_columns": 5,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "rowspan=2 | State (Population 2011)",
+       "colspan=2 | Total",
+       "colspan=2 | Urban",
+       "colspan=2 | Rural",
+       "CBR",
+       "TFR<sup>1</sup>",
+       "CBR",
+       "TFR<sup>1</sup>",
+       "CBR",
+       "TFR<sup>1</sup>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "rowspan=2 | State (Population 2011)",
+       "colspan=2 | Total",
+       "colspan=2 | Urban",
+       "colspan=2 | Rural",
+       "CBR",
+       "TFR<sup>1</sup>",
+       "CBR",
+       "TFR<sup>1</sup>",
+       "CBR",
+       "TFR<sup>1</sup>"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align: left;\" rowspan=\"2\" | State or UT",
+       "scope=\"col\" colspan=\"3\" | Birth rate",
+       "scope=\"col\" colspan=\"3\" | Death rate",
+       "scope=\"col\" colspan=\"3\" | Natural growth rate",
+       "scope=\"col\" colspan=\"3\" | Infant mortality rate",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Total",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Rural",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Urban",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Total",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Rural"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align: left;\" | Year",
+       "scope=\"col\" style=\"text-align: right;\" | Male",
+       "scope=\"col\" style=\"text-align: right;\" | Female",
+       "Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align: left;\" | Category",
+       "scope=\"col\" style=\"text-align: left;\" | Global ranking",
+       "scope=\"col\" style=\"text-align: left;\" | References",
+       "scope=\"col\" style=\"text-align: left;\" | Census year",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Population",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Change (%)",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Rank",
+       "scope=\"col\" styl"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align: left;\" | Census year",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Population",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Change (%)",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Rank",
+       "scope=\"col\" style=\"text-align: left; width: 120px;\" | State/UT",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Population<ref>{{cite web | url = http://www.census2011.co.in/states.php | title = List of states with Population, Sex Ratio and Literacy Census 2011 | publisher = 2011 Census of India | access-date = 23 January 2013 }}</ref>",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Percent (%)",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Male",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Female",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Difference between male and female"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Rank",
+       "scope=\"col\" style=\"text-align: left; width: 120px;\" | State/UT",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Population<ref>{{cite web | url = http://www.census2011.co.in/states.php | title = List of states with Population, Sex Ratio and Literacy Census 2011 | publisher = 2011 Census of India | access-date = 23 January 2013 }}</ref>",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Percent (%)",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Male",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Female",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Difference between male and female",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Sex ratio",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Rural<ref name=\"Rural Urban distribution\">{{cite web |title=Provisional Population Totals |url=http://censusindia.gov.in/2011-prov-results/paper2/prov_results_paper2_india.html |archive-url=https://web.archive.org/web/20131113183243/http://www.censusindia.gov.in/2011-prov-results/paper2/data_files/india/paper2_1.pdf |archive-date=13 November 2013 |access-date=23 July 2011 |work=Government of India (2011) |publisher=Census of India}}</ref>",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Urban<ref name=\"Rural Urban distribution\" />"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 3
+     },
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align: left;\" data-sort-type=\"number\" | State or UT code",
+       "scope=\"col\" style=\"text-align: left;\" | State or UT",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Overall (%)",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Male (%)",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Female (%)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 27
+     },
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align: left;\" | Age group",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Male",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Female",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Total",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Percentage (%)",
+       "Cumulative percentage"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align: left;\" data-sort-type=\"number\" | State or UT code",
+       "scope=\"col\" style=\"text-align: left;\" | State or UT",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Total",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Male",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Female",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Difference"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align: left;\" data-sort-type=\"number\" | State or UT code",
+       "scope=\"col\" style=\"text-align: left;\" | State or UT",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Total",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Male",
+       "scope=\"col\" style=\"text-align: right;\" data-sort-type=\"number\" | Female"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "scope=\"col\" style=\"text-align: left;\" | Religion",
+       "scope=\"col\" style=\"text-align: right;\" | Population",
+       "scope=\"col\" style=\"text-align: right;\" | Percentage (%)",
+       "Year",
+       "style=\"background:#FFE0C0;\" | Hindus",
+       "style=\"background:#E0FFC0;\" | Muslims",
+       "style=\"background:#E0F0FF;\" | Christians",
+       "style=\"background:#F0F0C0;\" | Sikhs",
+       "style=\"background:#FFFFC0;\" | Buddhists",
+       "style=\"background:#FFE0E0;\" | Jainis"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "Year",
+       "style=\"background:#FFE0C0;\" | Hindus",
+       "style=\"background:#E0FFC0;\" | Muslims",
+       "style=\"background:#E0F0FF;\" | Christians",
+       "style=\"background:#F0F0C0;\" | Sikhs",
+       "style=\"background:#FFFFC0;\" | Buddhists",
+       "style=\"background:#FFE0E0;\" | Jainis",
+       "style=\"background:#F0E0C0;\" | Zoroastrians",
+       "style=\"background:#F0E0F0;\" | Others/<br />Religion not specified",
+       "rowspan=2 | Religious<br />group"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "rowspan=2 | Religious<br />group",
+       "rowspan=2 | Population (2011)<br />%",
+       "rowspan=2 | Growth<br />(2001–2011)<ref>{{cite web|url=http://www.hindustantimes.com/india/muslim-population-grows-marginally-faster-census-2011-data/story-yAhd2F6z57ezaFWiwwYU7H.html|title=Muslim population grows marginally faster: Census 2011 data|author=Aloke Tikku|access-date=18 October 2016|date=26 August 2015|work=Hindustan Times}}</ref><ref>{{cite web|url=http://indianexpress.com/article/india/india-others/indias-population-121-09-crores-hindus-79-8-pc-muslims-14-2-pc-census/|title=Census 2011: Hindus dip to below 80 per cent of population; Muslim share up, slows down|date=26 August 2015|work=The Indian Express|access-date=20 July 2016}}</ref>",
+       "colspan=4 | Sex ratio (2011)",
+       "rowspan=2 | Literacy (2011)<br />(%)<ref>{{cite web|url=http://www.hindustantimes.com/punjab/jains-most-literate-in-north-muslims-the-least/story-iKno2PywCvEZbGmguNFg2N.html|title=Jains most literate in North, Muslims the least|work=Hindustan Times |date=4 January 2016|access-date=20 July 2016}}</ref>",
+       "rowspan=2 | Work participation (2011)<br />(%)<ref name=\"dnaindia.com\" /><ref>{{cite news|url=http://timesofindia.indiatimes.com/india/Only-33-of-Muslims-work-lowest-among-all-religions/articleshow/50433358.cms|title=Only 33% of Muslims work, lowest among all religions|website=The Times of India|date=4 January 2016 |access-date=20 July 2016}}</ref>",
+       "total<ref name=\"dnaindia.com\">{{cite web|url=http://www.dnaindia.com/india/report-census-2011-sikhs-jains-have-the-worst-sex-ratio-2161061|title=Census 2011: Sikhs, Jains have the worst sex ratio & Updates at Daily News & Analysis|date=31 December 2015|access-date=20 July 2016}}</ref>",
+       "rural",
+       "urban",
+       "child<ref>{{cite web|url=http://epaperbeta.timesofindia.com/Article.aspx?eid=31808&articlexml=Sex-ratio-dips-Jains-Sikhs-buck-trend-31122015001049|title=The Times Group|access-date=20 July 2016|url-status=dead|archive-url=https://web.archive.org/web/20160512160719/http://epaperbeta.timesofindia.com/Article.aspx?eid=31808&articlexml=Sex-ratio-dips-Jains-Sikhs-buck-trend-31122015001049|archive-date=12 May 2016}}</ref>"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 3
+     },
+     {
+      "header": [
+       "Caste/Tribe",
+       "Population",
+       "Percentage",
+       "Notes"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     }
+    ],
+    "place_by_composition_tables": 1
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Ernakulam",
+    "found": true,
+    "title": "Ernakulam",
+    "url": "https://en.wikipedia.org/wiki/Ernakulam",
+    "wikitext_bytes": 29311,
+    "infobox_params": [
+     "demographics1_info1"
+    ],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Haveri",
+    "found": true,
+    "title": "Haveri Assembly constituency",
+    "url": "https://en.wikipedia.org/wiki/Haveri_Assembly_constituency",
+    "wikitext_bytes": 34071,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Imphal East",
+    "found": true,
+    "title": "Imphal East district",
+    "url": "https://en.wikipedia.org/wiki/Imphal_East_district",
+    "wikitext_bytes": 18245,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics1_info2"
+    ],
+    "sections": [
+     "Demographics",
+     "Population",
+     "Languages"
+    ],
+    "wikitables": 2,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition"
+   },
+   {
+    "shape_name": "Kaimur (Bhabua)",
+    "found": true,
+    "title": "Patna division",
+    "url": "https://en.wikipedia.org/wiki/Patna_division",
+    "wikitext_bytes": 5918,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Lohardaga",
+    "found": true,
+    "title": "Lohardaga Assembly constituency",
+    "url": "https://en.wikipedia.org/wiki/Lohardaga_Assembly_constituency",
+    "wikitext_bytes": 19035,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "India: Languages",
+   "name": "india-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/india-languages",
+   "resources": [
+    {
+     "name": "in_lang_metadata_v01.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/61a9df6a-c1fa-4885-9c3f-e00666ec859c/resource/88a9f6fc-9bf3-4cf6-b463-dbaaf14bfc09/download/in_lang_metadata_v01.pdf"
+    },
+    {
+     "name": "in_lang_v01.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/61a9df6a-c1fa-4885-9c3f-e00666ec859c/resource/190a6c31-aa1d-4b35-9939-094e5870eeb3/download/in_lang_v01.xlsx"
+    },
+    {
+     "name": "in_lang_admin2_v01.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/61a9df6a-c1fa-4885-9c3f-e00666ec859c/resource/00435a30-0544-4b5e-ac86-b704bcf6ed25/download/in_lang_admin2_v01.csv"
+    },
+    {
+     "name": "in_lang_admin1_v01.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/61a9df6a-c1fa-4885-9c3f-e00666ec859c/resource/a6a31c2f-20a9-4f25-81f6-12ae60000bcd/download/in_lang_admin1_v01.csv"
+    },
+    {
+     "name": "in_lang_admin0_v01.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/61a9df6a-c1fa-4885-9c3f-e00666ec859c/resource/3a7e4424-fa1c-467a-9b70-d2ff58dd3fc2/download/in_lang_admin0_v01.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "India: Road Surface Data",
+   "name": "india-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/india-road-surface-data",
+   "resources": [
+    {
+     "name": "India GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_ind_roadsurface_lines.geojson"
+    },
+    {
+     "name": "India GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_ind_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "India: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-india",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-india",
+   "resources": [
+    {
+     "name": "kontur_boundaries_IN_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_IN_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_IN_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_IN_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_IN_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_IN_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "India - Accessibility Indicators",
+   "name": "india-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/india-accessibility-indicators",
+   "resources": [
+    {
+     "name": "IND_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ind/IND_education_access.gpkg"
+    },
+    {
+     "name": "IND_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ind/IND_education_access_long.csv"
+    },
+    {
+     "name": "IND_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ind/IND_education_access_wide.csv"
+    },
+    {
+     "name": "IND_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ind/IND_hospitals_access.gpkg"
+    },
+    {
+     "name": "IND_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ind/IND_hospitals_access_long.csv"
+    },
+    {
+     "name": "IND_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ind/IND_hospitals_access_wide.csv"
+    },
+    {
+     "name": "IND_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ind/IND_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "IND_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ind/IND_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "India: High Resolution Population Density Maps",
+   "name": "india-high-resolution-population-density-maps",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/india-high-resolution-population-density-maps",
+   "resources": [
+    {
+     "name": "ind_general_2025_tif.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/cc8e4cb3-7900-438a-a245-ae784da8be6b/resource/1f16907f-4e83-4818-89cd-96290f378d59/download/ind_general_2025_tif.zip"
+    },
+    {
+     "name": "ind_children_under_five_2025_proportion_allocated_20205.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/cc8e4cb3-7900-438a-a245-ae784da8be6b/resource/2e46af8f-8969-4039-bce4-2fa5c5326525/download/ind_children_under_five_2025_proportion_allocated_20205.zip"
+    },
+    {
+     "name": "ind_women_of_reproductive_age_15_49_proportion_allocated_2025.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/cc8e4cb3-7900-438a-a245-ae784da8be6b/resource/c141a543-9afd-42a6-92a3-4c8d49167d58/download/ind_women_of_reproductive_age_15_49_proportion_allocated_20205.zip"
+    },
+    {
+     "name": "ind_youth_15_24_proportion_allocated_2025.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/cc8e4cb3-7900-438a-a245-ae784da8be6b/resource/813c3c08-dace-474b-b39e-281aaa43cdd3/download/ind_youth_15_24_proportion_allocated_20205.zip"
+    },
+    {
+     "name": "ind_elderly_60_plus_proportion_allocated_2025.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/cc8e4cb3-7900-438a-a245-ae784da8be6b/resource/e0e9ea60-00d4-4032-9080-78c3db0f1a5e/download/ind_elderly_60_plus_proportion_allocated_20205.zip"
+    },
+    {
+     "name": "ind_female_2025_tiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/cc8e4cb3-7900-438a-a245-ae784da8be6b/resource/cd9b6c23-23f6-4e8b-9b56-85ef9e08e425/download/ind_female_2025_tiff.zip"
+    },
+    {
+     "name": "ind_male_2025_tiff.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/cc8e4cb3-7900-438a-a245-ae784da8be6b/resource/8c1cc360-1de9-4635-ada0-9de376d154a9/download/ind_male_2025_tiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Pakistan & India: High Resolution Population Density Maps",
+   "name": "pakistan-india_all-files-high-resolution-population-density-maps",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/pakistan-india_all-files-high-resolution-population-density-maps",
+   "resources": [
+    {
+     "name": "population_ind_pak_general.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/2c8cfe67-448f-4a27-94b3-aaa944598cba/resource/e3dbe673-4117-4243-93a8-3366c6e6396b/download/population_ind_pak_general.zip"
+    },
+    {
+     "name": "population_ind_pak_women.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/2c8cfe67-448f-4a27-94b3-aaa944598cba/resource/ae9d489f-0808-4a1f-b3be-4d08ad2f1fa5/download/population_ind_pak_women.zip"
+    },
+    {
+     "name": "population_ind_pak_children_under_five.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/2c8cfe67-448f-4a27-94b3-aaa944598cba/resource/34198f61-8b4e-4622-a4d7-929e88b5a2d9/download/population_ind_pak_children_under_five.zip"
+    },
+    {
+     "name": "population_ind_pak_men.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/2c8cfe67-448f-4a27-94b3-aaa944598cba/resource/d61aa052-1fd8-47a1-bc87-a1ca14a115ff/download/population_ind_pak_men.zip"
+    },
+    {
+     "name": "population_ind_pak_women_of_reproductive_age_15_49.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/2c8cfe67-448f-4a27-94b3-aaa944598cba/resource/af46c07b-e8a7-4aba-9fd2-72ef189c19f7/download/population_ind_pak_women_of_reproductive_age_15_49.zip"
+    },
+    {
+     "name": "population_ind_pak_youth_15_24.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/2c8cfe67-448f-4a27-94b3-aaa944598cba/resource/925bb929-d535-48f3-a94e-3a9cef0fed93/download/population_ind_pak_youth_15_24.zip"
+    },
+    {
+     "name": "population_ind_pak_elderly_60_plus.zip",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/2c8cfe67-448f-4a27-94b3-aaa944598cba/resource/14377c01-d4b8-4492-b478-6bc1da6faa46/download/population_ind_pak_elderly_60_plus.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "India: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "ind-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/ind-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/b93f8372-aca1-4632-b6ad-5d09626e263b/resource/288febdc-1105-4c31-9ebb-467be3795f24/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_ind.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/b93f8372-aca1-4632-b6ad-5d09626e263b/resource/2ffa5ab4-0c89-496f-a1b9-abc11805929c/download/ghs_pop_e2025_r2023a_54009_100_v1_0_ind.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "India - Population Counts",
+   "name": "worldpop-population-counts-for-india",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-india",
+   "resources": [
+    {
+     "name": "ind_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/IND/ind_ppp_2020.tif"
+    },
+    {
+     "name": "ind_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/IND/ind_ppp_2019.tif"
+    },
+    {
+     "name": "ind_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/IND/ind_ppp_2018.tif"
+    },
+    {
+     "name": "ind_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/IND/ind_ppp_2017.tif"
+    },
+    {
+     "name": "ind_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/IND/ind_ppp_2016.tif"
+    },
+    {
+     "name": "ind_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/IND/ind_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "ind_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/IND/ind_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "ind_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/IND/ind_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "India - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-india",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-india",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for India",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a2fa1424-698d-4153-a8fb-b7cadc19e9ba/resource/a6348952-91dd-4fb4-9619-1cbf4ca74e96/download/social-protection-and-labor_ind.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "India - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-in-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-in-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_IN",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/b7f5256a-13ff-4467-a829-9f0eeaaad0ef/resource/4a001d27-1280-4c1d-8e56-ee8dcff8ea2d/download/indicator_data_in.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "India: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-ind",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-ind",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-in-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-in-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "4W Mapping Wayanad Kerela",
+   "name": "4w-mapping-wayanad-kerela",
+   "org": "Fields Data",
+   "url": "https://data.humdata.org/dataset/4w-mapping-wayanad-kerela",
+   "resources": [
+    {
+     "name": "Kerela.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/92125a1a-5797-4e3d-aed8-73e9838b39c3/resource/fb31450c-b6e3-4660-a75f-44fcec5e0372/download/kerela.xlsx"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://censusindia.gov.in/",
+  "status": 0,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>",
+  "pages": []
+ },
+ "verdict": {
+  "hdx_datasets": 12,
+  "hdx_machine_readable": 5,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 1,
+  "urls_answering": "1/5",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "1/5"
+ }
+}

@@ -1,0 +1,1214 @@
+{
+ "iso3": "ZAF",
+ "name": "South Africa",
+ "tier_proposed": "B",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity",
+    "language",
+    "religion"
+   ],
+   "title": "Stats SA SuperWEB2 data portal -- Census 2022 (province / district municipality / local municipality tables; 'Census 2022 Special District Layer Product')",
+   "kind": "census",
+   "format": "table-builder",
+   "geography": "district municipality (also local municipality and, per the how-to, ward)",
+   "geography_count": 52,
+   "matches_boundary_level": "admin2",
+   "url": "https://openup.org.za/blog/how-to-quickly-download-ward-level-data-using-statssas-superweb2",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://openup.org.za/blog/how-to-quickly-download-ward-level-data-using-statssas-superweb2",
+   "error": null,
+   "body": {
+    "bytes_read": 52119,
+    "kind": "html",
+    "title": "How to quickly download ward level data using StatsSA&#x27;s SuperWEB2 | OpenUp Blog",
+    "links_to_files": [
+     "https://cdn.prod.website-files.com/5d6298cd18659ff156042e30/61fcbf6092b74d161cf11249_2022_public_privacy_policy.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language",
+     "languages"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "language",
+    "religion"
+   ],
+   "title": "South African Census 2022, 10% Sample (microdata)",
+   "kind": "census",
+   "format": "other (microdata; registration)",
+   "geography": "district municipality and local municipality identifiers on each record",
+   "geography_count": null,
+   "matches_boundary_level": "admin2",
+   "url": "https://www.datafirst.uct.ac.za/dataportal/index.php/catalog/982",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://www.datafirst.uct.ac.za/dataportal/index.php/catalog/982",
+   "error": null,
+   "body": {
+    "bytes_read": 50677,
+    "kind": "html",
+    "title": "South Africa - South African Census 2022",
+    "links_to_files": [],
+    "mentions": [
+     "census",
+     "language",
+     "religion"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "unknown"
+   ],
+   "title": "Census 2022 Municipal fact sheet",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "municipality",
+   "geography_count": null,
+   "matches_boundary_level": null,
+   "url": "https://census.statssa.gov.za/assets/documents/2022/Census_2022_Municipal_factsheet-Web.pdf",
+   "status": 200,
+   "content_type": "application/pdf",
+   "final_url": "https://census.statssa.gov.za/assets/documents/2022/Census_2022_Municipal_factsheet-Web.pdf",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "pdf"
+   }
+  },
+  {
+   "fields": [
+    "unknown"
+   ],
+   "title": "South Africa - Census Administrative & Service Provision District Profiles 2022",
+   "kind": "census",
+   "format": "xlsx",
+   "geography": "district municipality",
+   "geography_count": null,
+   "matches_boundary_level": "admin2",
+   "url": "https://www.datafirst.uct.ac.za/dataportal/index.php/catalog/1131",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://www.datafirst.uct.ac.za/dataportal/index.php/catalog/1131",
+   "error": null,
+   "body": {
+    "bytes_read": 59078,
+    "kind": "html",
+    "title": "South Africa - Census Administrative & Service Provision District Profiles 2022",
+    "links_to_files": [],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "2022 South African census",
+    "wikitext_bytes": 18386,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 4,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "data-sort-type=\"number\" | Rank",
+       "Group",
+       "2011 Census",
+       "2022 Census",
+       "data-sort-type=\"number\" | Change",
+       "data-sort-type=\"number\" | Percent<br />change",
+       "colspan=2 | Total population",
+       "{{formatnum:51770560}}",
+       "{{formatnum:61988314}}",
+       "{{formatnum:10217755}} {{increase}}"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "First language",
+       "WC",
+       "EC",
+       "data-sort-type=\"number\" |NC",
+       "data-sort-type=\"number\" |FS",
+       "KZN",
+       "NW",
+       "GP",
+       "MP",
+       "LP"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "data-sort-type=\"number\" | Rank",
+       "Gender",
+       "2011 Census",
+       "2022 Census",
+       "data-sort-type=\"number\" | Change",
+       "data-sort-type=\"number\" | Percent<br />change",
+       "data-sort-type=\"number\" |Rank",
+       "Province",
+       "2011 Census",
+       "2022 Census"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "data-sort-type=\"number\" |Rank",
+       "Province",
+       "2011 Census",
+       "2022 Census",
+       "data-sort-type=\"number\" |Change",
+       "data-sort-type=\"number\" |Percent",
+       "colspan=\"2\" |Total population",
+       "{{formatnum:51770560}}",
+       "62,027,602",
+       "10,257,041 {{increase}}"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 10
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in South Africa",
+    "wikitext_bytes": 55101,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 3,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 1,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "style=\"width:100pt;\" | Province<ref name=\"2022 census3\"/>",
+       "style=\"width:50pt;\" |Christianity",
+       "style=\"width:50pt;\" |Traditional African",
+       "style=\"width:50pt;\" |No religion",
+       "style=\"width:50pt;\" |Islam",
+       "style=\"width:50pt;\" |Hinduism",
+       "style=\"width:50pt;\" |Other",
+       "style=\"width:100pt;\" | Ethnicity<ref name=\"2022 census3\"/>",
+       "style=\"width:50pt;\" |Christianity",
+       "style=\"width:50pt;\" |Traditional African"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "style=\"width:100pt;\" | Ethnicity<ref name=\"2022 census3\"/>",
+       "style=\"width:50pt;\" |Christianity",
+       "style=\"width:50pt;\" |Traditional African",
+       "style=\"width:50pt;\" |No religion",
+       "style=\"width:50pt;\" |Islam",
+       "style=\"width:50pt;\" |Hinduism",
+       "style=\"width:50pt;\" |Other"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "rowspan=\"2\"|Religion<ref name=censusjoint />",
+       "rowspan=\"2\"|Denomination",
+       "colspan=\"2\"|1996",
+       "colspan=\"2\"|2001",
+       "rowspan=\"2\"|%",
+       "colspan=\"2\"|2016<ref name=\"official-guide-za2018-2019\">{{Cite web",
+       "rowspan=\"2\"|%",
+       "Adherents",
+       "%",
+       "Adherents"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 20
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of South Africa",
+    "wikitext_bytes": 123697,
+    "infobox_params": [],
+    "sections": [
+     "Population",
+     "Ethnic groups",
+     "Languages",
+     "Religion",
+     "Population",
+     "Ethnic groups",
+     "Languages"
+    ],
+    "wikitables": 32,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "{{diagonal split header|Pop.<br /> Group|Colony}}",
+       "Total",
+       "Percent",
+       "{{diagonal split header|Pop. Group|Province}}",
+       "Total",
+       "Percent"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "{{diagonal split header|Pop. Group|Province}}",
+       "Total",
+       "Percent",
+       "rowspan=\"2\" |Year",
+       "colspan=\"2\" style=\"background:gainsboro\"|Black Africans",
+       "colspan=\"2\" style=\"background:white\" |Whites",
+       "colspan=\"2\" style=\"background:#eeeee0\" |Coloureds",
+       "colspan=\"2\" style=\"background:beige\"|Asians",
+       "colspan=\"2\" style=\"background:honeydew\" |Total",
+       "style=\"background:gainsboro\"|Popu-<br />lation"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |Year",
+       "colspan=\"2\" style=\"background:gainsboro\"|Black Africans",
+       "colspan=\"2\" style=\"background:white\" |Whites",
+       "colspan=\"2\" style=\"background:#eeeee0\" |Coloureds",
+       "colspan=\"2\" style=\"background:beige\"|Asians",
+       "colspan=\"2\" style=\"background:honeydew\" |Total",
+       "style=\"background:gainsboro\"|Popu-<br />lation",
+       "style=\"background:gainsboro\"|%",
+       "style=\"background:white\" |Popu-<br />lation",
+       "style=\"background:white\" |%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "{{diagonal split header 2| Province ↓ | Population<br /> Group<br /> →}}",
+       "Black African",
+       "White",
+       "Coloured",
+       "Indian/<br />Asian",
+       "Other",
+       "Total",
+       "''% of<br /> S.A.''"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "{{diagonal split header|Pop. Group|Province}}",
+       "Eastern Cape",
+       "Free State",
+       "Gauteng",
+       "KwaZulu-Natal",
+       "Limpopo",
+       "Mpumalanga",
+       "Northern Cape",
+       "North West",
+       "Western Cape"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "{{diagonal split header|Pop. Group|Province}}",
+       "Eastern Cape",
+       "Free State",
+       "Gauteng",
+       "KwaZulu-Natal",
+       "Limpopo",
+       "Mpumalanga",
+       "Northern Cape",
+       "North West",
+       "Western Cape"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "{{diagonal split header|Pop. Group|Province}}",
+       "Eastern Cape",
+       "Free State",
+       "Gauteng",
+       "KwaZulu-Natal",
+       "Limpopo",
+       "Mpumalanga",
+       "Northern Cape",
+       "North West",
+       "Western Cape"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "rowspan=2 style=\"width:6%;\"|Year",
+       "rowspan=2 style=\"width:12%;\"|Total population",
+       "colspan=3| Percentage in age bracket",
+       "under 15 years old",
+       "15 to 64 years old",
+       "at least 65 years old"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "! style=\"width:80pt;\"|Average population",
+       "style=\"width:80pt;\"|Live births",
+       "style=\"width:80pt;\"|Deaths",
+       "style=\"width:80pt;\"|Natural change",
+       "style=\"width:80pt;\"|Crude birth rate (per 1,000)",
+       "style=\"width:80pt;\"|Crude death rate (per 1,000)",
+       "style=\"width:80pt;\"|Natural change (per 1,000)",
+       "style=\"width:80pt;\"|Total fertility rates"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Province",
+       "2021–2026 (est.)",
+       "style=\"width:12%;\"|Period",
+       "style=\"width:11%;\"|Live births per year",
+       "style=\"width:11%;\"|Deaths per year",
+       "style=\"width:11%;\"|Natural Increase per year",
+       "style=\"width:11%;\"|Crude Birth Rate <br />(per 1,000 per year)",
+       "style=\"width:11%;\"|Crude Death Rate <br />(per 1,000 per year)",
+       "style=\"width:11%;\"|Natural Increase <br />(per 1,000 per year)",
+       "style=\"width:11%;\"|Total Fertility Rate (over av'ge woman's life)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "style=\"width:12%;\"|Period",
+       "style=\"width:11%;\"|Live births per year",
+       "style=\"width:11%;\"|Deaths per year",
+       "style=\"width:11%;\"|Natural Increase per year",
+       "style=\"width:11%;\"|Crude Birth Rate <br />(per 1,000 per year)",
+       "style=\"width:11%;\"|Crude Death Rate <br />(per 1,000 per year)",
+       "style=\"width:11%;\"|Natural Increase <br />(per 1,000 per year)",
+       "style=\"width:11%;\"|Total Fertility Rate (over av'ge woman's life)",
+       "style=\"width:11%;\"|Infant Mortality Rate (per 100,000 live births)",
+       "style=\"width:70px;\"|Age group"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "style=\"width:70px;\"|Age group",
+       "style=\"width:80px;\"|Male",
+       "style=\"width:30px|Female percent",
+       "style=\"width:80px;\"|Female",
+       "style=\"width:80px;\"|Total",
+       "style=\"width:50px;\"|Percent of RSA",
+       "style=\"width:10%;\"| Age group",
+       "style=\"width:7%;\"| Male",
+       "style=\"width:3%;\"| Female percent",
+       "style=\"width:7%;\"| Female"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "style=\"width:10%;\"| Age group",
+       "style=\"width:7%;\"| Male",
+       "style=\"width:3%;\"| Female percent",
+       "style=\"width:7%;\"| Female",
+       "style=\"width:8%;\"| Total",
+       "style=\"width:3%;\"| Percent of RSA"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "style=\"width:70px;\"|Number of children 0–14",
+       "style=\"width:70pt;\"|Number of women 15–49",
+       "style=\"width:70px;\"|Proportion",
+       "style=\"width:70px;\"|Fertility Rate",
+       "style=\"width:70px;\"|Age group",
+       "style=\"width:80px;\"|Male",
+       "style=\"width:30px|Female percent",
+       "style=\"width:80px;\"|Female",
+       "style=\"width:80px;\"|Total",
+       "style=\"width:50px;\"|Percent of RSA"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "style=\"width:70px;\"|Age group",
+       "style=\"width:80px;\"|Male",
+       "style=\"width:30px|Female percent",
+       "style=\"width:80px;\"|Female",
+       "style=\"width:80px;\"|Total",
+       "style=\"width:50px;\"|Percent of RSA",
+       "style=\"width:10%;\"| Age group",
+       "style=\"width:7%;\"| Male",
+       "style=\"width:3%;\"| Female percent",
+       "style=\"width:7%;\"| Female"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "style=\"width:10%;\"| Age group",
+       "style=\"width:7%;\"| Male",
+       "style=\"width:3%;\"| Female percent",
+       "style=\"width:7%;\"| Female",
+       "style=\"width:8%;\"| Total",
+       "style=\"width:3%;\"| Percent of RSA"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "rowspan=\"2\" |Population Group",
+       "colspan=\"2\" |Male",
+       "colspan=\"2\" |Female",
+       "colspan=\"2\" |Total",
+       "Number",
+       "% Distribution of Males",
+       "Number",
+       "% Distribution of Females",
+       "Number",
+       "% Distribution of Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "rowspan=2 style=\"background:#f0f0f0;\"|Age group",
+       "colspan=2 style=\"background:honeydew;\"|All races",
+       "colspan=2 style=\"background:gainsboro;\"|Black African",
+       "colspan=2 style=\"background:#eee;\"|Coloured",
+       "colspan=2 style=\"background:white;\"|White",
+       "colspan=2 style=\"background:beige;\"|Indian or other Asian",
+       "colspan=2 style=\"background:aliceblue;\"|Others",
+       "style=\"background:honeydew;\"| #",
+       "style=\"background:honeydew;\"| %",
+       "style=\"background:gainsboro;\"| #"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "rowspan=2 style=\"background:#f0f0f0; width:60px\"|Age group",
+       "colspan=2 style=\"background:honeydew;\"|All races",
+       "colspan=2 style=\"background:gainsboro;\"|Black African",
+       "colspan=2 style=\"background:#eee;\"|Coloured",
+       "colspan=2 style=\"background:white;\"|White",
+       "colspan=2 style=\"background:beige;\"|Indian or other Asian",
+       "style=\"background:honeydew;\"| #",
+       "style=\"background:honeydew;\"| %",
+       "style=\"background:gainsboro;\"| #",
+       "style=\"background:gainsboro;\"| %"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "rowspan=2 style=\"background:#f0f0f0;\"|Age group",
+       "colspan=2 style=\"background:honeydew;\"|All races",
+       "colspan=2 style=\"background:gainsboro;\"|Black African",
+       "colspan=2 style=\"background:#eee;\"|Coloured",
+       "colspan=2 style=\"background:white;\"|White",
+       "colspan=2 style=\"background:beige;\"|Indian or other Asian",
+       "style=\"background:honeydew;\"| #",
+       "style=\"background:honeydew;\"| %",
+       "style=\"background:gainsboro;\"| #",
+       "style=\"background:gainsboro;\"| %"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "rowspan=2 style=\"background:#f0f0f0;\"|Age group",
+       "rowspan=2 style=\"background:honeydew;\"|All races",
+       "colspan=2 style=\"background:gainsboro;\"|Black African",
+       "colspan=2 style=\"background:#eee;\"|Coloured",
+       "colspan=2 style=\"background:white;\"|White",
+       "colspan=2 style=\"background:beige;\"|Indian or other Asian",
+       "style=\"background:gainsboro;\"| #",
+       "style=\"background:gainsboro;\"| %",
+       "style=\"background:#eee;\"| #",
+       "style=\"background:#eee;\"| %"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "rowspan=2 style=\"background:#f0f0f0;\"|Age group",
+       "colspan=2 style=\"background:honeydew;\"|All races",
+       "colspan=2 style=\"background:gainsboro;\"|Black African",
+       "colspan=2 style=\"background:#eee;\"|Coloured",
+       "colspan=2 style=\"background:white;\"|White",
+       "colspan=2 style=\"background:beige;\"|Indian or other Asian",
+       "style=\"background:honeydew;\"| #",
+       "style=\"background:honeydew;\"| %",
+       "style=\"background:gainsboro;\"| #",
+       "style=\"background:gainsboro;\"| %"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "rowspan=2 style=\"background:#f0f0f0;\"|Age group",
+       "colspan=2 style=\"background:honeydew;\"|All races",
+       "colspan=2 style=\"background:gainsboro;\"|Black African",
+       "colspan=2 style=\"background:#eee;\"|Coloured",
+       "colspan=2 style=\"background:white;\"|White",
+       "colspan=2 style=\"background:beige;\"|Indian or other Asian",
+       "style=\"background:honeydew;\"| #",
+       "style=\"background:honeydew;\"| %",
+       "style=\"background:gainsboro;\"| #",
+       "style=\"background:gainsboro;\"| %"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "rowspan=2 style=\"background:#f0f0f0;\"|Age group",
+       "rowspan=2 style=\"background:honeydew;\"|All races",
+       "colspan=2 style=\"background:gainsboro;\"|Black African",
+       "colspan=2 style=\"background:#eee;\"|Coloured",
+       "colspan=2 style=\"background:white;\"|White",
+       "colspan=2 style=\"background:beige;\"|Indian or other Asian",
+       "style=\"background:gainsboro;\"| #",
+       "style=\"background:gainsboro;\"| %",
+       "style=\"background:#eee;\"| #",
+       "style=\"background:#eee;\"| %"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "rowspan=2 style=\"background:#f0f0f0;\"|Age group",
+       "colspan=2 style=\"background:honeydew;\"|All races",
+       "colspan=2 style=\"background:gainsboro;\"|Black African",
+       "colspan=2 style=\"background:#eee;\"|Coloured",
+       "colspan=2 style=\"background:white;\"|White",
+       "colspan=2 style=\"background:beige;\"|Indian or other Asian",
+       "colspan=2 style=\"background:mint;\"|Other",
+       "style=\"background:honeydew;\"| #",
+       "style=\"background:honeydew;\"| %",
+       "style=\"background:gainsboro;\"| #"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "rowspan=2 style=\"background:#f0f0f0;\"|Age group",
+       "colspan=2 style=\"background:honeydew;\"|All races",
+       "colspan=2 style=\"background:gainsboro;\"|Black African",
+       "colspan=2 style=\"background:#eee;\"|Coloured",
+       "colspan=2 style=\"background:white;\"|White",
+       "colspan=2 style=\"background:beige;\"|Indian or other Asian",
+       "colspan=2 style=\"background:mint;\"|Other",
+       "style=\"background:honeydew;\"| #",
+       "style=\"background:honeydew;\"| %",
+       "style=\"background:gainsboro;\"| #"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 20
+     },
+     {
+      "header": [
+       "rowspan=2 style=\"background:#f0f0f0;\"|Age group",
+       "rowspan=2 style=\"background:honeydew;\"|All races",
+       "colspan=2 style=\"background:gainsboro;\"|Black African",
+       "colspan=2 style=\"background:#eee;\"|Coloured",
+       "colspan=2 style=\"background:white;\"|White",
+       "colspan=2 style=\"background:beige;\"|Indian or other Asian",
+       "colspan=2 style=\"background:mint;\"|Other",
+       "style=\"background:gainsboro;\"| #",
+       "style=\"background:gainsboro;\"| %",
+       "style=\"background:#eee;\"| #"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "colspan=2| Total",
+       "colspan=2| Urban",
+       "colspan=2| Rural",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR",
+       "CBR",
+       "TFR"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "style=\"width:50pt;\"| Year",
+       "style=\"width:50pt;\"| Total",
+       "style=\"width:50pt;\"| Black African",
+       "style=\"width:50pt;\"| White",
+       "style=\"width:50pt;\"| Coloured",
+       "style=\"width:50pt;\"| Indian/Asian",
+       "Period",
+       "Life expectancy<br />(years)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy<br />(years)"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 15
+     },
+     {
+      "header": [
+       "scope=\"col\" colspan=\"4\" | Source: 2022 South African census<ref name=\"census 2022 stats sa\" />",
+       "scope=\"col\" | Place of birth",
+       "data-sort-type=\"number\" | Population, 2011",
+       "data-sort-type=\"number\" | Population, 2022",
+       "data-sort-type=\"number\" | Difference",
+       "style=\"width:80px;\"|Year",
+       "style=\"width:80pt;\"|African",
+       "style=\"width:80px;\"|Asian",
+       "style=\""
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "style=\"width:80px;\"|Year",
+       "style=\"width:80pt;\"|African",
+       "style=\"width:80px;\"|Asian",
+       "style=\"width:80px;\"|White"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Amathole",
+    "found": true,
+    "title": "Amathole Marine Protected Area",
+    "url": "https://en.wikipedia.org/wiki/Amathole_Marine_Protected_Area",
+    "wikitext_bytes": 16287,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Bojanala",
+    "found": true,
+    "title": "Kgetlengrivier Local Municipality",
+    "url": "https://en.wikipedia.org/wiki/Kgetlengrivier_Local_Municipality",
+    "wikitext_bytes": 7832,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics1_info2",
+     "demographics1_info3",
+     "demographics1_info4",
+     "demographics2_info1",
+     "demographics2_info2",
+     "demographics2_info3",
+     "demographics2_info4",
+     "demographics2_info5"
+    ],
+    "sections": [
+     "Languages"
+    ],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Central Karoo",
+    "found": true,
+    "title": "2006 South African municipal elections",
+    "url": "https://en.wikipedia.org/wiki/2006_South_African_municipal_elections",
+    "wikitext_bytes": 18304,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "O.R.Tambo",
+    "found": true,
+    "title": "O. R. Tambo International Airport",
+    "url": "https://en.wikipedia.org/wiki/O._R._Tambo_International_Airport",
+    "wikitext_bytes": 94326,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Sedibeng",
+    "found": true,
+    "title": "Midvaal Local Municipality",
+    "url": "https://en.wikipedia.org/wiki/Midvaal_Local_Municipality",
+    "wikitext_bytes": 12084,
+    "infobox_params": [
+     "demographics1_info1",
+     "demographics1_info2",
+     "demographics1_info3",
+     "demographics1_info4",
+     "demographics2_info1",
+     "demographics2_info2",
+     "demographics2_info3",
+     "demographics2_info4",
+     "demographics2_info5"
+    ],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "religion",
+   "title": "South Africa - Poverty",
+   "name": "world-bank-poverty-indicators-for-south-africa",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-poverty-indicators-for-south-africa",
+   "resources": [
+    {
+     "name": "Poverty Indicators for South Africa",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/b5ff50a0-688e-4337-a829-c7cb20939d67/resource/eb85d804-a48d-4236-925b-f9bc7f0d4d06/download/poverty_zaf.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Africa - Subnational Administrative Boundaries",
+   "name": "cod-ab-zaf",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-zaf",
+   "resources": [
+    {
+     "name": "zaf_admin_boundaries.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/061d4492-56e8-458c-a3fb-e7950991adf0/resource/69c947ad-dc17-416c-bafa-b66fb523c322/download/zaf_admin_boundaries.gdb.zip"
+    },
+    {
+     "name": "zaf_admin_boundaries.shp.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/061d4492-56e8-458c-a3fb-e7950991adf0/resource/019208d9-75e0-4aa9-9cc8-ef45f6b8dd54/download/zaf_admin_boundaries.shp.zip"
+    },
+    {
+     "name": "zaf_admin_boundaries.geojson.zip",
+     "format": "GeoJSON",
+     "url": "https://data.humdata.org/dataset/061d4492-56e8-458c-a3fb-e7950991adf0/resource/37175ff4-41a3-4753-a2c3-ced24142a96c/download/zaf_admin_boundaries.geojson.zip"
+    },
+    {
+     "name": "zaf_admin_boundaries.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/061d4492-56e8-458c-a3fb-e7950991adf0/resource/c4e8796f-7a74-443f-8201-ac07e4911bb1/download/zaf_admin_boundaries.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Africa - Infrastructure",
+   "name": "world-bank-infrastructure-indicators-for-south-africa",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-infrastructure-indicators-for-south-africa",
+   "resources": [
+    {
+     "name": "Infrastructure Indicators for South Africa",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/a27907ac-9f66-4810-9fd9-3c55d69bc177/resource/63d2b7f2-6ebe-40ec-b107-e45417ea0f99/download/infrastructure_zaf.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Africa - Education",
+   "name": "world-bank-education-indicators-for-south-africa",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-education-indicators-for-south-africa",
+   "resources": [
+    {
+     "name": "Education Indicators for South Africa",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/f41925f8-5704-4492-abdd-aff8302b6015/resource/3877f665-adc7-41c8-89e5-085b1b10e1e5/download/education_zaf.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Africa - Health",
+   "name": "world-bank-health-indicators-for-south-africa",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-health-indicators-for-south-africa",
+   "resources": [
+    {
+     "name": "Health Indicators for South Africa",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/9074a0c3-5748-4ee0-bc61-9cbb3437d902/resource/ef56a8af-e95e-4db8-a17b-6cca46f78fd6/download/health_zaf.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Africa - Conflict Events",
+   "name": "south-africa-acled-conflict-data",
+   "org": "Armed Conflict Location & Event Data Project (ACLED)",
+   "url": "https://data.humdata.org/dataset/south-africa-acled-conflict-data",
+   "resources": [
+    {
+     "name": "south africa_political_violence_events_and_fatalities_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/fcbb990b-bed4-4421-8240-472429b2d3dc/resource/2f9832f7-70d6-4ad8-b7a2-dc79040879ef/download/south-africa_political_violence_events_and_fatalities_by_month-year_as-of-10sep2026.xlsx"
+    },
+    {
+     "name": "south africa_civilian_targeting_events_and_fatalities_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/fcbb990b-bed4-4421-8240-472429b2d3dc/resource/deeca6df-ce87-48db-bd5c-fbb6585f9926/download/south-africa_civilian_targeting_events_and_fatalities_by_month-year_as-of-10sep2026.xlsx"
+    },
+    {
+     "name": "south africa_demonstration_events_by_month-year",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/fcbb990b-bed4-4421-8240-472429b2d3dc/resource/3cba9e9f-5ae7-43dc-a59a-a52d1586cdab/download/south-africa_demonstration_events_by_month-year_as-of-10sep2026.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Africa - Food Prices",
+   "name": "wfp-food-prices-for-south-africa",
+   "org": "WFP - World Food Programme",
+   "url": "https://data.humdata.org/dataset/wfp-food-prices-for-south-africa",
+   "resources": [
+    {
+     "name": "South Africa - Food Prices",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/7fb6fbc6-69b7-4b90-ace1-ca04dc6d53ac/resource/33de764b-6359-4a65-8df6-75281ade843d/download/wfp_food_prices_zaf.csv"
+    },
+    {
+     "name": "South Africa - Markets",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/7fb6fbc6-69b7-4b90-ace1-ca04dc6d53ac/resource/a3b4bbc8-699f-4f8d-ab8c-2a884f840f59/download/wfp_markets_zaf.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "Airports in South Africa",
+   "name": "ourairports-zaf",
+   "org": "OurAirports",
+   "url": "https://data.humdata.org/dataset/ourairports-zaf",
+   "resources": [
+    {
+     "name": "List of airports in South Africa (HXL tags)",
+     "format": "CSV",
+     "url": "https://ourairports.com/countries/ZA/airports.hxl"
+    },
+    {
+     "name": "List of airports in South Africa (no HXL tags)",
+     "format": "CSV",
+     "url": "https://ourairports.com/countries/ZA/airports.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Africa: Languages",
+   "name": "south-africa-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/south-africa-languages",
+   "resources": [
+    {
+     "name": "clearglobal_language_use_ZAF_admin0.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5f794f52-8e04-414d-8379-ac444c828f33/resource/bc98e037-110b-4443-b044-0a82ab52026b/download/clearglobal_language_use_zaf_admin0.csv"
+    },
+    {
+     "name": "clearglobal_language_use_ZAF_admin1.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5f794f52-8e04-414d-8379-ac444c828f33/resource/7b0d935e-330d-4611-8075-aebd0d6710a1/download/clearglobal_language_use_zaf_admin1.csv"
+    },
+    {
+     "name": "clearglobal_language_use_ZAF_admin2.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/5f794f52-8e04-414d-8379-ac444c828f33/resource/f7a6922f-f7a4-4814-9833-37b1701e3193/download/clearglobal_language_use_zaf_admin2.csv"
+    }
+   ]
+  },
+  {
+   "term": "religion",
+   "title": "South Africa - Subnational Population Statistics",
+   "name": "cod-ps-zaf",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-zaf",
+   "resources": [
+    {
+     "name": "ZAF_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e0289b5d-8f32-4869-b14d-c599e630cab4/resource/06a4a660-437f-47a3-87ae-326304364c73/download/zaf_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "zaf_admpop_2020.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e0289b5d-8f32-4869-b14d-c599e630cab4/resource/05c0dbe3-8820-4145-b6d4-f61199a5edde/download/zaf_admpop_2020.xlsx"
+    },
+    {
+     "name": "zaf_admpop_adm0_2020.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e0289b5d-8f32-4869-b14d-c599e630cab4/resource/d573ad05-4a22-42ff-912a-6531c267dc65/download/zaf_admpop_adm0_2020.csv"
+    },
+    {
+     "name": "zaf_admpop_adm1_2020.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e0289b5d-8f32-4869-b14d-c599e630cab4/resource/32a6c801-94bd-4dee-8df8-19ba26a493d1/download/zaf_admpop_adm1_2020.csv"
+    },
+    {
+     "name": "zaf_admpop_adm2_2020.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/e0289b5d-8f32-4869-b14d-c599e630cab4/resource/76292912-d597-4c2a-9cca-dceffd6ff236/download/zaf_admpop_adm2_2020.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "South Africa: Road Surface Data",
+   "name": "south-africa-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/south-africa-road-surface-data",
+   "resources": [
+    {
+     "name": "South africa GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_zaf_roadsurface_lines.geojson"
+    },
+    {
+     "name": "South africa GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_zaf_roadsurface_lines.gpkg"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.statssa.gov.za/",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.statssa.gov.za/?page_id=3839",
+    "status": 200,
+    "kind": "html",
+    "title": "2011 Census | Statistics South Africa",
+    "files": [
+     " https://www.statssa.gov.za/wp-content/uploads/2022/09/Stats-SA-PAIA-manual-2022.pdf",
+     "https://www.statssa.gov.za/wp-content/uploads/2013/07/NDP-2030-Our-future-make-it-work.pdf",
+     "https://www.statssa.gov.za/wp-content/uploads/2022/06/Approved_Language_Policy_2018.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.statssa.gov.za/?page_id=3955",
+    "status": 200,
+    "kind": "html",
+    "title": "2011 Census products | Statistics South Africa",
+    "files": [
+     " https://www.statssa.gov.za/wp-content/uploads/2022/09/Stats-SA-PAIA-manual-2022.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/Agricultural_Households.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/Census_2011_Census_in_brief.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/Census_2011_Fact_sheet.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/Census_2011_How_the_count_was_done.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/Census_2011_Key_results.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/Census_2011_Metadata.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/Census_2011_Methodology_and_Highlights_of_key_results.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/Census_2011_Municipal_fact_sheet.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/Census_2011_PES.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/Census_2011_Product_list.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/Census_2011_Statistical release.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/Census_2011_Total_population_poster.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/Data_quality_report_Final_12 November.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/EC_Municipal_Report.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/Errata_for_Census_2011_Municipal report.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/FS_Municipal_Report.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/GP_Municipal_Report.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/KZN_Municipal_Report.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/LP_Municipal_Report.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/Lerato.zip",
+     "https://www.statssa.gov.za/census/census_2011/census_products/MP_Municipal_Report.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/NC_Municipal_Report.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/NW_Municipal_Report.pdf",
+     "https://www.statssa.gov.za/census/census_2011/census_products/NW_Municipal_Report.pdf.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.statssa.gov.za/?page_id=3892",
+    "status": 200,
+    "kind": "html",
+    "title": "2001 Census | Statistics South Africa",
+    "files": [
+     " https://www.statssa.gov.za/wp-content/uploads/2022/09/Stats-SA-PAIA-manual-2022.pdf",
+     "https://www.statssa.gov.za/wp-content/uploads/2013/07/NDP-2030-Our-future-make-it-work.pdf",
+     "https://www.statssa.gov.za/wp-content/uploads/2022/06/Approved_Language_Policy_2018.pdf"
+    ],
+    "mentions": [
+     "census",
+     "language"
+    ]
+   },
+   {
+    "url": "https://www.statssa.gov.za/publications/P0302/P03022026.pdf",
+    "status": 200,
+    "kind": "pdf",
+    "title": null,
+    "files": null,
+    "mentions": null
+   },
+   {
+    "url": "https://www.statssa.gov.za/wp-content/uploads/2022/06/Approved_Language_Policy_2018.pdf",
+    "status": 200,
+    "kind": "pdf",
+    "title": null,
+    "files": null,
+    "mentions": null
+   }
+  ],
+  "title": "Statistics South Africa | Improving Lives Through Data Ecosystems",
+  "matching_links": 5
+ },
+ "verdict": {
+  "hdx_datasets": 11,
+  "hdx_machine_readable": 10,
+  "nso_files_found": 31,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "4/4",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

@@ -1,0 +1,935 @@
+{
+ "iso3": "COL",
+ "name": "Colombia",
+ "tier_proposed": "C",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "DANE - Autorreconocimiento étnico (Geovisor de Autorreconocimiento Étnico, CNPV 2018) with xlsx/xls downloads",
+   "kind": "census",
+   "format": "xlsx / table-builder (geovisor)",
+   "geography": "department and municipality (geovisor); the xlsx files surfaced are described for indigenous peoples",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 and admin2 (expected, since the geovisor is municipal; count not stated in any snippet)",
+   "url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/enfoque-diferencial-e-interseccional/autorreconocimiento-etnico",
+   "status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "final_url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/enfoque-diferencial-e-interseccional/autorreconocimiento-etnico",
+   "error": null,
+   "body": {
+    "bytes_read": 115553,
+    "kind": "html",
+    "title": "DANE - Autorreconocimiento étnico",
+    "links_to_files": [
+     "/files/censo2005/etnia/sys/Afro_indicadores_sociodemograficos_censo2005.pdf",
+     "/files/censo2005/etnia/sys/colombia_nacion.pdf",
+     "/files/censo2005/etnia/sys/cuantos_somos.pdf",
+     "/files/censo2005/etnia/sys/jovenes_afrocolombianos.pdf",
+     "/files/censo2005/etnia/sys/visibilidad_estadistica_etnicos.pdf",
+     "/files/censo2018/estudios-poscensales/02-poscensales-tiempos-de-vida.pdf",
+     "/files/censo2018/estudios-poscensales/05-condiciones-de-vida-y-pobreza-multidimensional-indigenas-afrodescendientes-colombia.pdf",
+     "/files/censo2018/estudios-poscensales/06-analisis-dinamica-intercensal-autorreconocimiento-NARP-UNFPA.pdf",
+     "/files/censo2018/estudios-poscensales/10-desiguladades_poblacionales_y_migratorias_de_los_pueblos_indigenas_de_colombia.pdf",
+     "/files/investigaciones/boletines/grupos-etnicos/CIDH_poblaci%C3%B3n_narp.pdf",
+     "/files/investigaciones/boletines/grupos-etnicos/CIDH_población_narp.pdf",
+     "/files/investigaciones/boletines/grupos-etnicos/Tabla-pueblos-indigenas.xls",
+     "/files/investigaciones/boletines/grupos-etnicos/VIsor_NARP_Departamento.xlsx",
+     "/files/investigaciones/boletines/grupos-etnicos/Visor-TCCN.xlsx",
+     "/files/investigaciones/boletines/grupos-etnicos/comunicado-grupos-etnicos-2019.pdf",
+     "/files/investigaciones/boletines/grupos-etnicos/comunicado-grupos-etnicos-poblacion-NARP-2019-debate-ctrl-politico-camara-rep.pdf",
+     "/files/investigaciones/boletines/grupos-etnicos/comunicado-grupos-etnicos-poblacion-gitana-rrom-2019.pdf",
+     "/files/investigaciones/boletines/grupos-etnicos/cp-sistema-informacion-wayuu.pdf",
+     "/files/investigaciones/boletines/grupos-etnicos/especial-nacimientos-y-defunciones-pueblo-wayuu.pdf",
+     "/files/investigaciones/boletines/grupos-etnicos/infografía-grupos-etnicos-2019.pdf",
+     "/files/investigaciones/boletines/grupos-etnicos/informe-resultados-comunidades-narp-cnpv2018.pdf",
+     "/files/investigaciones/boletines/grupos-etnicos/presentacion-grupos-etnicos-2019.pdf",
+     "/files/investigaciones/boletines/grupos-etnicos/presentacion-grupos-etnicos-conf-reg-poblacion-y-desarrollo-2020-sep.pdf",
+     "/files/investigaciones/boletines/grupos-etnicos/presentacion-grupos-etnicos-poblacion-NARP-2019-debate-ctrl-politico-camara-rep.pdf",
+     "/files/investigaciones/boletines/grupos-etnicos/presentacion-grupos-etnicos-poblacion-NARP-2019.pdf"
+    ],
+    "mentions": [
+     "language",
+     "languages"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "language"
+   ],
+   "title": "Colombia - Censo Nacional de Población y Vivienda - CNPV - 2018 (DANE microdata catalog)",
+   "kind": "census",
+   "format": "microdata (person-level files; DANE anonymised microdata is normally downloadable, registration not established)",
+   "geography": "municipality (DIVIPOLA codes)",
+   "geography_count": null,
+   "matches_boundary_level": "admin2 by code, admin1 by aggregation (expected; not verified)",
+   "url": "https://microdatos.dane.gov.co/index.php/catalog/643",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://microdatos.dane.gov.co/index.php/catalog/643",
+   "error": null,
+   "body": {
+    "bytes_read": 185118,
+    "kind": "html",
+    "title": "Colombia - Censo Nacional de Población y Vivienda - CNPV - 2018",
+    "links_to_files": [],
+    "mentions": [
+     "census"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "language"
+   ],
+   "title": "Población indígena [department/city] - Resultados del CNPV 2018 (DANE territorial presentations; e.g. Cauca, Montería, Amazonas resguardos)",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "department (one PDF per department/city)",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 (per-department PDFs; not a single table)",
+   "url": "https://www.dane.gov.co/files/censo2018/informacion-tecnica/presentaciones-territorio/190814-CNPV-presentacion-Resultados-etnicos-Cauca.pdf",
+   "status": 200,
+   "content_type": "application/pdf",
+   "final_url": "https://www.dane.gov.co/files/censo2018/informacion-tecnica/presentaciones-territorio/190814-CNPV-presentacion-Resultados-etnicos-Cauca.pdf",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "pdf",
+    "pages_hint": 47
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religion in Colombia",
+    "wikitext_bytes": 23353,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Freedom of religion in Colombia",
+    "wikitext_bytes": 7167,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Censo de Colombia de 2018 (es)",
+    "wikitext_bytes": 0,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Colombia",
+    "wikitext_bytes": 99586,
+    "infobox_params": [],
+    "sections": [
+     "Ethnicity",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 13,
+    "charts": [
+     "Historical populations",
+     "Pie chart",
+     "bar box",
+     "bar percent"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "rowspan=2| Year",
+       "rowspan=2| Total population<br />({{times}}1000)",
+       "colspan=3| Population percentage in age bracket",
+       "0–14",
+       "15–64",
+       "65+"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 16
+     },
+     {
+      "header": [
+       "colspan=2 style=\"vertical-align: middle\"| Rank",
+       "rowspan=2 style=\"vertical-align: middle\"| Department",
+       "colspan=2 style=\"vertical-align: middle\"| Census population",
+       "colspan=2 style=\"vertical-align: middle\"| Change, 2005–2018",
+       "rowspan=2 style=\"vertical-align: middle\"| Percent of the total Colombia population, 2018<ref group=\"note\">Because of rounding of the individual percentages, the entries in this column may not sum to 100%.</ref>",
+       "colspan=2 style=\"vertical-align: middle\"| Population density",
+       "colspan=2 style=\"vertical-align: middle\"| 2026 population projection",
+       "Current",
+       "2005",
+       "2018"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "Rank",
+       "Place name",
+       "2026 projections",
+       "Birth rate",
+       "Death rate",
+       "Natural growth"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 49
+     },
+     {
+      "header": [
+       "rowspan=2 |Year<br /><ref>{{cite web |title=Estimaciones del cambio demográfico |url=https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/estimaciones-del-cambio-demografico |website=DANE |access-date=19 August 2025}}</ref>",
+       "rowspan=2 |Population",
+       "rowspan=2 |Live<br />births<br /><ref>{{cite web |title=Estadísticas vitales |url=https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/nacimientos-y-defunciones |website=DANE |access-date=19 August 2025}}</ref><ref>Anuario estadístico 1928",
+       "rowspan=2 |Deaths",
+       "rowspan=2 |Natural<br />increase",
+       "colspan=2 |Crude rate",
+       "rowspan=2 |Natural change (per 1000)",
+       "rowspan=2 |Crude migration change (per 1000)",
+       "rowspan=2 |TFR",
+       "rowspan=\"2\" |Tempo effect adjusted fertility rate"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "Period",
+       "Live births",
+       "Deaths",
+       "Natural increase",
+       "January–July 2024",
+       "January–July 2025",
+       "Difference",
+       "colspan=\"4\" style=\"text-align: center;\" | Source:<ref>{{cite web|title=Nacimientos y Defunciones|url=http://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/nacimientos-y-defunciones|publisher=Departamento Administrativo Nacional de Estadística - DANE|access-date=25 September 2025}}</ref>",
+       "Year",
+       "width=\"80pt\"|Average population"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "Year",
+       "width=\"80pt\"|Average population",
+       "width=\"80pt\"|Live births",
+       "width=\"80pt\"|Deaths",
+       "width=\"80pt\"|Natural change",
+       "width=\"80pt\"|Crude birth rate (per 1000)",
+       "width=\"80pt\"|Crude death rate (per 1000)",
+       "width=\"80pt\"|Natural change (per 1000)",
+       "width=\"80pt\"|Curde migration change (per 1000)",
+       "width=\"80pt\"|Total fertility rate"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "rowspan=2 | Department (2025)",
+       "colspan=\"3\" | '''Fertility Rate**'''",
+       "rowspan=\"2\" | Crude birth rate",
+       "rowspan=2 | Crude death rate",
+       "rowspan=2 | Rate of natural increase",
+       "rowspan=2 | Registered births",
+       "rowspan=2 | Registered deaths",
+       "rowspan=\"2\" | Natural increase",
+       "rowspan=\"2\" | Life expectancy 2025 <ref>{{cite web |title=Principales Indicadores – cambio demográfico nacional 2020–2070 y departamental 2020–2050 con base en el CNPV 2018 |url=https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/estimaciones-del-cambio-demografico |website=DANE |access-date=3 August 2023}}</ref>",
+       "Total<br />(2024)"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "Years",
+       "1920",
+       "1921",
+       "1922",
+       "1923",
+       "1924",
+       "1925",
+       "1926",
+       "1927",
+       "1928"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 6
+     },
+     {
+      "header": [
+       "Years",
+       "1930",
+       "1931",
+       "1932",
+       "1933",
+       "1934",
+       "1935",
+       "1936",
+       "1937",
+       "1938"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 4
+     },
+     {
+      "header": [
+       "Years",
+       "1940",
+       "1941",
+       "1942",
+       "1943",
+       "1944",
+       "1945",
+       "1946",
+       "1947",
+       "1948"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 2
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Country of birth",
+       "colspan=\"2\" |2018<ref>{{cite web |title=Cruce de variables – Cruce de combinados – País de nacimiento |url=http://systema59.dane.gov.co/bincol/RpWebEngine.exe/Portal?BASE=CNPVBASE4V2&lang=esp |website=REDATAM – DANE |access-date=31 December 2022}}</ref>",
+       "Number",
+       "%",
+       "rowspan=\"2\" | Country of residency",
+       "colspan=\"2\" |2020<ref>{{cite web |title=Estudio de Caracterización de los Usuarios que atiende cada uno de los Consulados de Colombia en el Exterior |url=https://www.cancilleria.gov.co/sites/default/files/FOTOS2020/estudio_de_caracterizacion_de_los_usuarios_que_atiende_cada_uno_de_los_consulados_de_colombia_en_el_exterior._version_boton_de_transparencia_27nov20.pdf |website=Cancillería de Colombia |access-date=4 January 2023}}</ref>",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 26
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Country of residency",
+       "colspan=\"2\" |2020<ref>{{cite web |title=Estudio de Caracterización de los Usuarios que atiende cada uno de los Consulados de Colombia en el Exterior |url=https://www.cancilleria.gov.co/sites/default/files/FOTOS2020/estudio_de_caracterizacion_de_los_usuarios_que_atiende_cada_uno_de_los_consulados_de_colombia_en_el_exterior._version_boton_de_transparencia_27nov20.pdf |website=Cancillería de Colombia |access-date=4 January 2023}}</ref>",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 43
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Briceño",
+    "found": true,
+    "title": "The Road to Love (TV series)",
+    "url": "https://en.wikipedia.org/wiki/The_Road_to_Love_%28TV_series%29",
+    "wikitext_bytes": 5865,
+    "infobox_params": [
+     "language"
+    ],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "infobox-only"
+   },
+   {
+    "shape_name": "Curití",
+    "found": true,
+    "title": "Curití",
+    "url": "https://en.wikipedia.org/wiki/Curit%C3%AD",
+    "wikitext_bytes": 3120,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "El Carmen De Viboral",
+    "found": true,
+    "title": "El Carmen de Viboral",
+    "url": "https://en.wikipedia.org/wiki/El_Carmen_de_Viboral",
+    "wikitext_bytes": 8844,
+    "infobox_params": [],
+    "sections": [
+     "Demographics"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Jericó",
+    "found": true,
+    "title": "Jericó, Antioquia",
+    "url": "https://en.wikipedia.org/wiki/Jeric%C3%B3%2C_Antioquia",
+    "wikitext_bytes": 6257,
+    "infobox_params": [],
+    "sections": [
+     "Religion"
+    ],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Marinilla",
+    "found": true,
+    "title": "Marinilla",
+    "url": "https://en.wikipedia.org/wiki/Marinilla",
+    "wikitext_bytes": 3853,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "ethnicity",
+   "title": "Demographic Ethnic Data on Colombia",
+   "name": "demographic-ethnic-data-on-colombia",
+   "org": "OCHA Colombia",
+   "url": "https://data.humdata.org/dataset/demographic-ethnic-data-on-colombia",
+   "resources": [
+    {
+     "name": "Ethnic group data on Colombia.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/54083071-5bf5-48cf-b6cc-35d8e9907bfe/resource/23443b2c-1683-4d4a-a67b-7ccec0e69c2c/download/etnia2-demografia.xls"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Colombia: Languages",
+   "name": "colombia-languages",
+   "org": "CLEAR Global (previously Translators without Borders)",
+   "url": "https://data.humdata.org/dataset/colombia-languages",
+   "resources": [
+    {
+     "name": "co_lang_metadata_v01.pdf",
+     "format": "PDF",
+     "url": "https://data.humdata.org/dataset/118e0e9e-209c-43fe-8f06-62abe229f5a2/resource/15ad6eab-3ef4-4124-a3b8-e7ab0c3ad30f/download/co_lang_metadata_v01.pdf"
+    },
+    {
+     "name": "co_lang_v01.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/118e0e9e-209c-43fe-8f06-62abe229f5a2/resource/57a4d991-f760-472f-9312-868c10498bc1/download/co_lang_v01.xlsx"
+    },
+    {
+     "name": "co_lang_admin0_v01.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/118e0e9e-209c-43fe-8f06-62abe229f5a2/resource/d445793a-81b1-4544-8e61-401c3439f054/download/co_lang_admin0_v01.csv"
+    },
+    {
+     "name": "co_lang_admin1_v01.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/118e0e9e-209c-43fe-8f06-62abe229f5a2/resource/63d17bba-6441-48ca-95f2-fc2ff14604df/download/co_lang_admin1_v01.csv"
+    },
+    {
+     "name": "co_lang_admin2_v01.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/118e0e9e-209c-43fe-8f06-62abe229f5a2/resource/44f00e5e-3261-4e4f-a41e-50462e31d637/download/co_lang_admin2_v01.csv"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Colombia: Road Surface Data",
+   "name": "colombia-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/colombia-road-surface-data",
+   "resources": [
+    {
+     "name": "Colombia GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_col_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Colombia GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_col_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Colombia: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-colombia",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-colombia",
+   "resources": [
+    {
+     "name": "kontur_boundaries_CO_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_CO_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_CO_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_CO_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_CO_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_CO_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Colombia - Subnational Administrative Boundaries",
+   "name": "cod-ab-col",
+   "org": "OCHA Field Information Services Section (FISS)",
+   "url": "https://data.humdata.org/dataset/cod-ab-col",
+   "resources": [
+    {
+     "name": "MGN2024_URB_SECCION.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/50ea7fee-f9af-45a7-8a52-abb9c790a0b6/resource/86ec6413-73a7-402b-97ae-023f5d3bc861/download/mgn2024_urb_seccion.zip"
+    },
+    {
+     "name": "Admin 3 level-vereda.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/50ea7fee-f9af-45a7-8a52-abb9c790a0b6/resource/a1e393e9-098a-48a7-8fee-9b6ee8e8447c/download/shp_crveredas_2024.zip"
+    },
+    {
+     "name": "COL_AdminBoundaries_TabularData.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/50ea7fee-f9af-45a7-8a52-abb9c790a0b6/resource/2a98acd7-6a3f-4deb-9f1b-e00d8d4c709d/download/col_adminboundaries_tabulardata.xlsx"
+    },
+    {
+     "name": "COL Administrative Divisions Shapefiles.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/50ea7fee-f9af-45a7-8a52-abb9c790a0b6/resource/32fba556-0109-4d1c-84cb-c8abddf7775b/download/col-administrative-divisions-shapefiles.zip"
+    },
+    {
+     "name": "COL Administrative Divisions EMF.zip",
+     "format": "EMF",
+     "url": "https://data.humdata.org/dataset/50ea7fee-f9af-45a7-8a52-abb9c790a0b6/resource/2afc04d1-ae50-4ecb-a880-e203601c87d8/download/col-administrative-divisions-emf.zip"
+    },
+    {
+     "name": "COL Administrative Divisions Geodatabase.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/50ea7fee-f9af-45a7-8a52-abb9c790a0b6/resource/da4a3090-43d7-4f0b-8b51-2de9718f69c4/download/col-administrative-divisions-geodatabase.zip"
+    },
+    {
+     "name": "MGN2024_RUR_SECCION.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/50ea7fee-f9af-45a7-8a52-abb9c790a0b6/resource/f987b136-0ac1-464d-9607-9eb8129fedc0/download/mgn2024_rur_seccion.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Colombia Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys",
+   "name": "colombia-subnational-boundaries-and-tabular-data",
+   "org": "U.S. Census Bureau",
+   "url": "https://data.humdata.org/dataset/colombia-subnational-boundaries-and-tabular-data",
+   "resources": [
+    {
+     "name": "Colombia.gdb.zip",
+     "format": "Geodatabase",
+     "url": "https://data.humdata.org/dataset/e72c805d-40e1-4fa1-b32d-0bc77c2bf903/resource/10108ba6-2229-421a-ba5f-e974751dbc31/download/colombia.gdb.zip"
+    },
+    {
+     "name": "Colombia_uscb_202210.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e72c805d-40e1-4fa1-b32d-0bc77c2bf903/resource/5469e274-3f70-4288-8dc0-cd852629ac4c/download/colombia_uscb_202210.xlsx"
+    },
+    {
+     "name": "Colombia_5yr_age_sex_2015-2030_508_uscb_nov2022.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/e72c805d-40e1-4fa1-b32d-0bc77c2bf903/resource/58d737d0-5314-4fb2-9d53-138a70dc93ae/download/colombia_5yr_age_sex_2015-2030_508_uscb_nov2022.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Multi-sector municipal data from 1993 census",
+   "name": "multi-sector-municipal-data-from-1993-census",
+   "org": "OCHA Colombia",
+   "url": "https://data.humdata.org/dataset/multi-sector-municipal-data-from-1993-census",
+   "resources": [
+    {
+     "name": "InfoNacional.xls",
+     "format": "XLS",
+     "url": "https://data.humdata.org/dataset/6593730e-be03-4cfa-a20c-81d31067d34f/resource/e48bc3da-af54-4013-af59-e9abad2ed1c2/download/infonacional.xls"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Colombia - Accessibility Indicators",
+   "name": "colombia-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/colombia-accessibility-indicators",
+   "resources": [
+    {
+     "name": "COL_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/col/COL_education_access.gpkg"
+    },
+    {
+     "name": "COL_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/col/COL_education_access_long.csv"
+    },
+    {
+     "name": "COL_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/col/COL_education_access_wide.csv"
+    },
+    {
+     "name": "COL_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/col/COL_hospitals_access.gpkg"
+    },
+    {
+     "name": "COL_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/col/COL_hospitals_access_long.csv"
+    },
+    {
+     "name": "COL_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/col/COL_hospitals_access_wide.csv"
+    },
+    {
+     "name": "COL_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/col/COL_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "COL_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/col/COL_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Colombia - Índices de Penetración ( 2014)",
+   "name": "indices-de-penetracion-colombia-2014",
+   "org": "OCHA Colombia",
+   "url": "https://data.humdata.org/dataset/indices-de-penetracion-colombia-2014",
+   "resources": [
+    {
+     "name": "Índices de penetracion.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/298c8906-0a65-458a-87fc-77911b7d6fcc/resource/4d133fda-110d-4e0b-84c2-172f39747f81/download/indices-de-penetracion.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Colombia - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-colombia",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-colombia",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Colombia",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/0fa758d9-ad52-49b9-8e9e-ff706473c67f/resource/39b8d71f-bb35-4d52-9a71-839ce8e56ef6/download/social-protection-and-labor_col.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Colombia: Desnutrición Aguda Infantil",
+   "name": "tasa-de-desnutricion-aguda-en-menores-de-5-anos-2020",
+   "org": "OCHA Colombia",
+   "url": "https://data.humdata.org/dataset/tasa-de-desnutricion-aguda-en-menores-de-5-anos-2020",
+   "resources": [
+    {
+     "name": "Desnutrición Aguda_HDX_2022.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/52f9f9b5-ac70-4cae-89f0-58fb9c0704ca/resource/f8e6e090-fa9a-41df-b561-267d8728af38/download/desnutricion-aguda_hdx_2022.xlsx"
+    },
+    {
+     "name": "Desnutrición Aguda_HDX_2020.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/52f9f9b5-ac70-4cae-89f0-58fb9c0704ca/resource/b7f9acb5-5430-4024-bbae-e23e264062e7/download/tasa-de-desnutricion-aguda-menores-de-5-anos-2020.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Colombia: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "colombia-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/colombia-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "col_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/2f865527-b7bf-466c-b620-c12b8d07a053/resource/357c91e0-c5fb-4ae2-ad9d-00805e5a075d/download/col_general_2020_csv.zip"
+    },
+    {
+     "name": "col_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/2f865527-b7bf-466c-b620-c12b8d07a053/resource/5f2b08e4-2e7a-4716-a07e-a61a06321aa1/download/col_general_2020_geotiff.zip"
+    },
+    {
+     "name": "col_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/2f865527-b7bf-466c-b620-c12b8d07a053/resource/e8422e0d-0c1a-4aff-b790-76fffa8e09a6/download/col_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "col_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/2f865527-b7bf-466c-b620-c12b8d07a053/resource/d6425b9a-1be9-40d4-a909-bc06672575fb/download/col_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "col_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/2f865527-b7bf-466c-b620-c12b8d07a053/resource/3e871e9d-d9fa-4d52-af47-43cae54c7a6d/download/col_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "col_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/2f865527-b7bf-466c-b620-c12b8d07a053/resource/0e7794c4-b248-47a0-9518-4bc969881dc8/download/col_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "col_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/2f865527-b7bf-466c-b620-c12b8d07a053/resource/c17bbd22-6c4d-493d-9d32-2596650acd39/download/col_men_2020_csv.zip"
+    },
+    {
+     "name": "col_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/2f865527-b7bf-466c-b620-c12b8d07a053/resource/6d9c86fd-db3f-4f25-9b37-3c0bb8a1ece5/download/col_men_2020_geotiff.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/censo-nacional-de-poblacion-y-vivenda-2018",
+  "status": 200,
+  "error": null,
+  "pages": [
+   {
+    "url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/censo-nacional-de-poblacion-y-vivenda-2018",
+    "status": 200,
+    "kind": "html",
+    "title": "DANE - Censo Nacional de Población y Vivienda 2018",
+    "files": [
+     "/files/Transparencia/Registro-de-activos-de-informacion.xlsx",
+     "/files/censo2018/informacion-tecnica/CNPV-2018-lecciones-aprendidas-NTCE-PE-1000.pdf",
+     "/files/censo2018/informacion-tecnica/HOGARES_Cuadros_CNPV_2018.XLSX",
+     "/files/censo2018/informacion-tecnica/PERSONAS_DEMOGRAFICO_Cuadros_CNPV_2018.xlsx",
+     "/files/censo2018/informacion-tecnica/PERSONAS_SOCIAL_Cuadros_CNPV_2018.XLSX",
+     "/files/censo2018/informacion-tecnica/VIVIENDAS_Cuadros_CNPV_2018.XLSX"
+    ],
+    "mentions": [
+     "language",
+     "languages"
+    ]
+   },
+   {
+    "url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/censo-nacional-de-poblacion-y-vivenda-2018/cuantos-somos",
+    "status": 200,
+    "kind": "html",
+    "title": "DANE - ¿Cuántos somos?",
+    "files": [
+     "/files/censo2018/infografias/info-CNPC-2018total-nal-colombia.pdf"
+    ],
+    "mentions": [
+     "language",
+     "languages"
+    ]
+   },
+   {
+    "url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/censo-nacional-de-poblacion-y-vivenda-2018/donde-estamos",
+    "status": 200,
+    "kind": "html",
+    "title": "DANE - ¿Dónde estamos?",
+    "files": [
+     "/files/censo2018/infografias/info-CNPC-2018total-nal-colombia.pdf",
+     "https://geoportal.dane.gov.co/descargas/descarga_mgn/instructivousomgn2018integradocnpv.pdf"
+    ],
+    "mentions": [
+     "language",
+     "languages"
+    ]
+   },
+   {
+    "url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/censo-nacional-de-poblacion-y-vivenda-2018/como-vivimos",
+    "status": 200,
+    "kind": "html",
+    "title": "DANE - ¿Cómo vivimos?",
+    "files": [
+     "/files/censo2018/infografias/info-CNPC-2018total-nal-colombia.pdf"
+    ],
+    "mentions": [
+     "language",
+     "languages"
+    ]
+   },
+   {
+    "url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/censo-nacional-de-poblacion-y-vivenda-2018/informacion-tecnica",
+    "status": 200,
+    "kind": "html",
+    "title": "DANE - Información técnica CNPV",
+    "files": [
+     "/files/censo2018/estudios-poscensales/01-poscensales-fecundidad-en-la-ninez-adolescencia.pdf",
+     "/files/censo2018/estudios-poscensales/02-poscensales-tiempos-de-vida.pdf",
+     "/files/censo2018/estudios-poscensales/05-condiciones-de-vida-y-pobreza-multidimensional-indigenas-afrodescendientes-colombia.pdf",
+     "/files/censo2018/estudios-poscensales/06-analisis-dinamica-intercensal-autorreconocimiento-NARP-UNFPA.pdf",
+     "/files/censo2018/estudios-poscensales/07-caracterizacion-sociodemografica-subregion-PDET-macarena-guaviare.pdf",
+     "/files/censo2018/estudios-poscensales/08-heterogeneidad-de-los-estratos.pdf",
+     "/files/censo2018/estudios-poscensales/09-sociedad_parejas_del_mismo_sexoColombia.pdf",
+     "/files/censo2018/estudios-poscensales/10-desiguladades_poblacionales_y_migratorias_de_los_pueblos_indigenas_de_colombia.pdf",
+     "/files/censo2018/estudios-poscensales/11-integracion_de_la_poblacion_venezolana_en_colombia.pdf",
+     "/files/censo2018/estudios-poscensales/12-Caracterizacion-discapacidad-censos-200-2018-Colombia.pdf",
+     "/files/censo2018/estudios-poscensales/13-Valoracion-fases-transicion-demografica-nivel-dep-datos-CNVP-2018.pdf",
+     "/files/censo2018/estudios-poscensales/14-Integracion-poblacion-venezolana-Colombia.pdf",
+     "/files/censo2018/estudios-poscensales/15-Migraciones-Exteriores-Colombia.pdf",
+     "/files/censo2018/estudios-poscensales1/03-Adolescencia_Juventud_Libardo_Sarmiento.pdf",
+     "/files/censo2018/estudios-poscensales1/04-Poblacion _infantil_adolescente_f.pdf",
+     "/files/censo2018/informacion-tecnica/CNPV-2018-NBI.xlsx",
+     "/files/censo2018/informacion-tecnica/CNPV-2018-Poblacion-Ajustada-por-Cobertura.xls",
+     "/files/censo2018/informacion-tecnica/CNPV-2018-VIHOPE-v2.xls",
+     "/files/censo2018/informacion-tecnica/CNPV-2018-VIHOPE-v3.xls",
+     "/files/censo2018/informacion-tecnica/CNPV-2018-VIHOPE.xls",
+     "/files/censo2018/informacion-tecnica/CNPV-2018-informe-comite-expertos-internacional.pdf",
+     "/files/censo2018/informacion-tecnica/CNPV-2018-informe-comite-expertos-nacional.pdf",
+     "/files/censo2018/informacion-tecnica/CNPV-2018-manual-conceptos.pdf",
+     "/files/censo2018/informacion-tecnica/Cuestionario-No-residencial.pdf",
+     "/files/censo2018/informacion-tecnica/Cuestionario_Hogares.pdf"
+    ],
+    "mentions": [
+     "language",
+     "languages"
+    ]
+   },
+   {
+    "url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/censo-nacional-de-poblacion-y-vivenda-2018/herramientas",
+    "status": 200,
+    "kind": "html",
+    "title": "DANE - Herramientas CNPV",
+    "files": [
+     "/files/censo2018/herramientas/biblioteca-historia-censos/Informacion_Historica_Censos_Poblacion.zip"
+    ],
+    "mentions": [
+     "language",
+     "languages"
+    ]
+   },
+   {
+    "url": "https://www.dane.gov.co/files/censo2018/informacion-tecnica/PERSONAS_DEMOGRAFICO_Cuadros_CNPV_2018.xlsx",
+    "status": 200,
+    "kind": "zip/xlsx",
+    "title": null,
+    "files": null,
+    "mentions": null
+   },
+   {
+    "url": "https://www.dane.gov.co/files/censo2018/informacion-tecnica/PERSONAS_SOCIAL_Cuadros_CNPV_2018.XLSX",
+    "status": 200,
+    "kind": "zip/xlsx",
+    "title": null,
+    "files": null,
+    "mentions": null
+   },
+   {
+    "url": "https://www.dane.gov.co/files/censo2018/informacion-tecnica/HOGARES_Cuadros_CNPV_2018.XLSX",
+    "status": 200,
+    "kind": "zip/xlsx",
+    "title": null,
+    "files": null,
+    "mentions": null
+   },
+   {
+    "url": "https://www.dane.gov.co/files/censo2018/informacion-tecnica/VIVIENDAS_Cuadros_CNPV_2018.XLSX",
+    "status": 200,
+    "kind": "zip/xlsx",
+    "title": null,
+    "files": null,
+    "mentions": null
+   },
+   {
+    "url": "https://www.dane.gov.co/files/censo2018/informacion-tecnica/CNPV-2018-lecciones-aprendidas-NTCE-PE-1000.pdf",
+    "status": 200,
+    "kind": "pdf",
+    "title": null,
+    "files": null,
+    "mentions": null
+   }
+  ],
+  "title": "DANE - Censo Nacional de Población y Vivienda 2018",
+  "matching_links": 11
+ },
+ "verdict": {
+  "hdx_datasets": 12,
+  "hdx_machine_readable": 9,
+  "nso_files_found": 36,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "3/3",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

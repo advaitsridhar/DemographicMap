@@ -1,0 +1,870 @@
+{
+ "iso3": "VNM",
+ "name": "Vietnam",
+ "tier_proposed": "D",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Muong people (English Wikipedia) -- carries 2019 per-province counts, which implies a published province x ethnic-group table",
+   "kind": "other",
+   "format": "html",
+   "geography": "province (tinh / thanh pho)",
+   "geography_count": null,
+   "matches_boundary_level": "admin1 (2019 geography = 63 provinces; packet draws 64 shapes -- one extra to identify)",
+   "url": "https://en.wikipedia.org/wiki/Muong_people",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://en.wikipedia.org/wiki/Muong_people",
+   "error": null,
+   "body": {
+    "bytes_read": 231195,
+    "kind": "html",
+    "title": "Muong people - Wikipedia",
+    "links_to_files": [
+     "https://www.folklore.ee/folklore/vol75/grigoreva.pdf",
+     "https://www.gso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+     "https://www.hse.ru/data/2015/12/29/1136288715/118HUM2015.pdf"
+    ],
+    "mentions": [
+     "census",
+     "ethnic",
+     "ethnic_groups",
+     "ethnic_groups_in_laos",
+     "ethnic_groups_in_laos_by_language_family2566",
+     "ethnic_groups_in_vietnam",
+     "ethnic_groups_of_vietnam4802",
+     "ethnically",
+     "ethnicity",
+     "language",
+     "language_family",
+     "language_sources_",
+     "language_text",
+     "languages",
+     "religion"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "religion"
+   ],
+   "title": "Ket qua toan bo Tong dieu tra dan so va nha o nam 2019 (complete results, Vietnamese-language volume)",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "province (unverified)",
+   "geography_count": 63,
+   "matches_boundary_level": "admin1 if a province cut exists (63 vs 64 shapes)",
+   "url": "https://www.gso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error timed out>"
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Figures on Ethnic Minority Women and Men in Viet Nam (UN Women, 2021)",
+   "kind": "other",
+   "format": "pdf",
+   "geography": null,
+   "geography_count": null,
+   "matches_boundary_level": null,
+   "url": "https://asiapacific.unwomen.org/sites/default/files/Field%20Office%20ESEAsia/Docs/Publications/2021/10/vn-UNWM_Figures-on-53-EMs_ENGLISH_FINAL.pdf",
+   "status": 403,
+   "content_type": null,
+   "final_url": null,
+   "error": null
+  },
+  {
+   "fields": [
+    "religion"
+   ],
+   "title": "Danh sach ton giao Viet Nam xep theo dan so va gioi tinh (Vietnamese Wikipedia)",
+   "kind": "other",
+   "format": "html",
+   "geography": "national",
+   "geography_count": 1,
+   "matches_boundary_level": "none",
+   "url": "https://vi.wikipedia.org/wiki/Danh_s%C3%A1ch_t%C3%B4n_gi%C3%A1o_Vi%E1%BB%87t_Nam_x%E1%BA%BFp_theo_d%C3%A2n_s%E1%BB%91_v%C3%A0_gi%E1%BB%9Bi_t%C3%ADnh",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://vi.wikipedia.org/wiki/Danh_s%C3%A1ch_t%C3%B4n_gi%C3%A1o_Vi%E1%BB%87t_Nam_x%E1%BA%BFp_theo_d%C3%A2n_s%E1%BB%91_v%C3%A0_gi%E1%BB%9Bi_t%C3%ADnh",
+   "error": null,
+   "body": {
+    "bytes_read": 98999,
+    "kind": "html",
+    "title": "Danh sách tôn giáo Việt Nam xếp theo dân số và giới tính – Wikipedia tiếng Việt",
+    "links_to_files": [],
+    "mentions": [
+     "language",
+     "religion"
+    ]
+   }
+  },
+  {
+   "fields": [
+    "ethnicity",
+    "religion"
+   ],
+   "title": "Population and Census -- Open Development Vietnam (topic page)",
+   "kind": "other",
+   "format": "html",
+   "geography": null,
+   "geography_count": null,
+   "matches_boundary_level": null,
+   "url": "https://vietnam.opendevelopmentmekong.net/topics/vietnams-population-and-census/",
+   "status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://vietnam.opendevelopmentmekong.net/topics/vietnams-population-and-census/",
+   "error": null,
+   "body": {
+    "bytes_read": 169815,
+    "kind": "html",
+    "title": "Population and Census - Open Development Vietnam",
+    "links_to_files": [],
+    "mentions": [
+     "census",
+     "ethnic",
+     "language",
+     "languages",
+     "religion"
+    ]
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Demographics of Vietnam",
+    "wikitext_bytes": 70348,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 15,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Year",
+       "Total population (excluding Champa and Khmer polities)",
+       "Notes",
+       "rowspan=2| Year<ref name=\"WPP 2010\">[http://esa.un.org/unpd/wpp/index.htm Population Division of the Department of Economic and Social Affairs of the United Nations Secretariat, W"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "rowspan=2| Year<ref name=\"WPP 2010\">[http://esa.un.org/unpd/wpp/index.htm Population Division of the Department of Economic and Social Affairs of the United Nations Secretariat, World Population Prospects: The 2010 Revision] {{webarchive |url=https://web.archive.org/web/20110506065230/http://esa.un.org/unpd/wpp/index.htm |date=May 6, 2011 }}</ref>",
+       "rowspan=2| Total population",
+       "colspan=3| Population in age bracket",
+       "aged 0–14",
+       "aged 15–64",
+       "aged 65+",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 22
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"50pt\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"50pt\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"50pt\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "width=\"80\" |Period<ref name=\"WPP 2010\"/>",
+       "width=\"80\" |Live births per year",
+       "width=\"80\" |Deaths per year",
+       "width=\"80\" |Natural change per year",
+       "width=\"80\" |CBR<sup>1</sup>",
+       "width=\"80\" |CDR<sup>1</sup>",
+       "width=\"80\" |NC<sup>1</sup>",
+       "width=\"80\" |TFR<sup>1</sup>",
+       "width=\"80\" |IMR<sup>1</sup>"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 14
+     },
+     {
+      "header": [
+       "! width=\"50pt\" |Average population",
+       "width=\"50pt\" |Live births",
+       "width=\"50pt\" |Deaths",
+       "width=\"50pt\" |Natural change",
+       "width=\"50pt\" |Crude birth rate (per 1000)",
+       "width=\"50pt\" |Crude death rate (per 1000)",
+       "width=\"50pt\" |Natural change (per 1000)",
+       "width=\"50pt\" |Crude migration change (per 1000)",
+       "width=\"50pt\" |Total fertility rate"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 34
+     },
+     {
+      "header": [
+       "Province",
+       "2005",
+       "2007",
+       "2008",
+       "2009",
+       "2010",
+       "2011",
+       "2012",
+       "2013",
+       "2014"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "Years",
+       "1900",
+       "1901",
+       "1902",
+       "1903",
+       "1904",
+       "1905",
+       "1906",
+       "1907",
+       "1908"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1910",
+       "1911",
+       "1912",
+       "1913",
+       "1914",
+       "1915",
+       "1916",
+       "1917",
+       "1918"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 11
+     },
+     {
+      "header": [
+       "Years",
+       "1920",
+       "1921",
+       "1922",
+       "1923",
+       "1924",
+       "1925",
+       "1926",
+       "1927",
+       "1928"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "Years",
+       "1930",
+       "1931",
+       "1932",
+       "1933",
+       "1934",
+       "1935",
+       "1936",
+       "1937",
+       "1938"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     },
+     {
+      "header": [
+       "Years",
+       "1940",
+       "1941",
+       "1942",
+       "1943",
+       "1944",
+       "1945",
+       "1946",
+       "1947",
+       "1948"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 8
+     },
+     {
+      "header": [
+       "Period",
+       "Life expectancy in<br />Years",
+       "Period",
+       "Life expectancy in<br />Years",
+       "rowspan=\"2\" | Ethnic<br />group",
+       "rowspan=\"2\" | Language <br />family",
+       "colspan=\"2\" | census 1989<ref>{{cite book |title=1993 Demographic yearbook |date=1995 |publisher=Nations Unies |location=New York |isbn=92-1-051084-4 |edition=45th |url=https://unstats.un.org/unsd/demographic-social/products/dyb/dybsets/1993%20DYB.pdf |access-date=20 August 2025 |archive-url=https:/"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 7
+     },
+     {
+      "header": [
+       "rowspan=\"2\" | Ethnic<br />group",
+       "rowspan=\"2\" | Language <br />family",
+       "colspan=\"2\" | census 1989<ref>{{cite book |title=1993 Demographic yearbook |date=1995 |publisher=Nations Unies |location=New York |isbn=92-1-051084-4 |edition=45th |url=https://unstats.un.org/unsd/demographic-social/products/dyb/dybsets/1993%20DYB.pdf |access-date=20 August 2025 |archive-url=https://web.archive.org/web/20250213142314/https://unstats.un.org/unsd/demographic-social/products/dyb/dybsets/1993%20DYB.pdf |archive-date=13 February 2025 |language=en, fr |url-status=live}}</ref>",
+       "colspan=\"2\" | census 1999<ref>{{cite web |title=Population and Housing Census Vietnam 1999 |url=http://www.gso.gov.vn/default_en.aspx?tabid=476&idmid=4&ItemID=1841 |website=gso.gov.vn |access-date=20 August 2025 |archive-url=https://web.archive.org/web/20200717230624/http://www.gso.gov.vn/default_en.aspx?tabid=476&idmid=4&ItemID=1841 |archive-date=17 July 2020 |url-status=dead}}</ref>",
+       "colspan=\"2\" | census 2009<ref>{{cite web |title=The 2009 Vietnam Population and Housing census: Completed results |url=http://www.gso.gov.vn/default_en.aspx?tabid=476&idmid=4&ItemID=10802 |website=gso.gov.vn |access-date=20 August 2025 |archive-url=https://web.archive.org/web/20160303203549/http://www.gso.gov.vn/default_en.aspx?tabid=476&idmid=4&ItemID=10802 |archive-date=3 March 2016 |url-status=dead}}</ref>",
+       "colspan=\"2\" | census 2019<ref name=\"Census2019\">{{cite web|url=https://drive.google.com/file/d/1YK6iY-j0AfZTuip28Py2Gmz5P8zw04Rn/view?usp=sharing|title=Report on Results of the 2019 Census |publisher=General Statistics Office of Vietnam |access-date=1 May 2020 |language=vi}}</ref>",
+       "Number",
+       "%",
+       "Number",
+       "%"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 7
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Tong dieu tra dan so va nha o nam 2019 (Viet Nam) (vi)",
+    "wikitext_bytes": 0,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Vietnam",
+    "wikitext_bytes": 62671,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "colspan=\"2\" | Religious<br />group",
+       "% Population <br />2009<ref>[http://www.gso.gov.vn/default.aspx?tabid=512&idmid=5&ItemID=10798 Full results of the 2009 Population and Housing Census of Vietnam, part #1].</ref>",
+       "% Population <br />2010<ref>{{cite web|url=https://www.pewresearch.org/topic/religion/religious-demographics/pew-templeton-global-religious-futures-project/|title=Pew-Templeton Global Religious Futures Project – Research and data from Pew Research Center |date=25 June 2025 }}</ref>",
+       "% Population <br />2014<ref name=\"2014data\">Vietnamese Government Committee for Religious Affairs (2014). Cited in the UN Office of the High Commissioner for Human Rights. [http://www.ohchr.org/EN/NewsEvents/Pages/DisplayNews.aspx?NewsID=14914&LangID=E \"Press Statement on the visit to the Socialist Republic of Viet Nam by the Special Rapporteur on freedom of religion or belief\"]. Hanoi, Viet Nam 31 July 2014. [http://www.ohchr.org/Documents/Issues/Religion/StatementVietnameseVersion31July2014.pdf Vietnamese].</ref>",
+       "% Population <br />2018<ref name=\"RIRF\">Vietnamese Government Committee for Religious Affairs (2023). Cited in the US {{cite web |author=Office of International Religious Freedom |year=2023 |title=Report on International Religious Freedom: Vietnam |url=https://www.state.gov/reports/2023-report-on-international-religious-freedom/vietnam/ |publisher=US Department of State}}</ref>",
+       "% Population <br />2019<ref name=\"Census2019\">{{Cite web |title=Completed results of the 2019 Viet Nam population and housing census |url=https://www.gso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf|date=2020|website=General Statistics Office of Vietnam|archive-url=https://web.archive.org/web/20251006043133/https://www.gso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf|archive-date=6 October 2025|page=211}}</ref>",
+       "% Population <br />2023",
+       "colspan=\"2\" style=\"background:Red; color:black;\"| Vietnamese folk religion",
+       "colspan=\"2\" style=\"background:#e3ffff;color:black;\"|Non-religion/atheism",
+       "colspan=\"2\" style=\"background:#ffdab0;\"| Buddhism"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 5
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Hoang Mai",
+    "found": true,
+    "title": "Hoàng Mai (town)",
+    "url": "https://en.wikipedia.org/wiki/Ho%C3%A0ng_Mai_%28town%29",
+    "wikitext_bytes": 4361,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Huong Thuy",
+    "found": true,
+    "title": "Hương Thủy",
+    "url": "https://en.wikipedia.org/wiki/H%C6%B0%C6%A1ng_Th%E1%BB%A7y",
+    "wikitext_bytes": 4177,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Huyen Hong Ngu",
+    "found": true,
+    "title": "Hồng Ngự district",
+    "url": "https://en.wikipedia.org/wiki/H%E1%BB%93ng_Ng%E1%BB%B1_district",
+    "wikitext_bytes": 5938,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Ia Pa",
+    "found": true,
+    "title": "Ia Pa district",
+    "url": "https://en.wikipedia.org/wiki/Ia_Pa_district",
+    "wikitext_bytes": 3371,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Krong Buk",
+    "found": true,
+    "title": "Krông Buk district",
+    "url": "https://en.wikipedia.org/wiki/Kr%C3%B4ng_Buk_district",
+    "wikitext_bytes": 4915,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Viet Nam: Road Surface Data",
+   "name": "viet-nam-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/viet-nam-road-surface-data",
+   "resources": [
+    {
+     "name": "Viet nam GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_vnm_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Viet nam GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_vnm_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Viet Nam: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-viet-nam",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-viet-nam",
+   "resources": [
+    {
+     "name": "kontur_boundaries_VN_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_VN_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_VN_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_VN_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_VN_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_VN_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Viet Nam - Roads",
+   "name": "viet-nam-roads",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/viet-nam-roads",
+   "resources": [
+    {
+     "name": "vnm_rdsl_2015_OSM.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/2992f9c1-9a2f-431e-bc34-a243f267a6f8/resource/39c6fc29-b88b-465b-9a72-50249c81b4d4/download/vnm_rdsl_2015_osm.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Viet Nam - Railroads",
+   "name": "viet-nam-railways",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/viet-nam-railways",
+   "resources": [
+    {
+     "name": "vnm_rlwl_2015_OSM.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/2b486519-44ff-4b37-9c5c-bf76d3f46a64/resource/18840162-b8ef-492d-a7ff-0bcea5b0449c/download/vnm_rlwl_2015_osm.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Viet Nam - Settlements",
+   "name": "viet-nam-settlements",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/viet-nam-settlements",
+   "resources": [
+    {
+     "name": "vnm_pplp_2015_OSM.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/f38e99dc-d125-4835-afb4-3436abc0f17d/resource/26196637-81ed-4290-b27e-4473afa6c4eb/download/vnm_pplp_2015_osm.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Viet Nam - Airports and Airfields",
+   "name": "viet-nam-aerodromes",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/viet-nam-aerodromes",
+   "resources": [
+    {
+     "name": "vnm_airdrmp_1m_iscgm.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/5d885087-7ea9-486d-b45d-a8632415d405/resource/c360aaf4-30b8-47f3-8d81-3a705807071c/download/vnm_airdrmp_1m_iscgm.zip"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Viet Nam - Health Facilities",
+   "name": "viet-nam-health",
+   "org": "OCHA Regional Office for Asia and the Pacific (ROAP)",
+   "url": "https://data.humdata.org/dataset/viet-nam-health",
+   "resources": [
+    {
+     "name": "vnm_hltfacp_2015_OSM.zip",
+     "format": "SHP",
+     "url": "https://data.humdata.org/dataset/923beaf2-d017-4fad-b83f-5bbc0dff01b1/resource/2f819461-6848-483e-8c47-5117a2b324c9/download/vnm_hltfacp_2015_osm.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Vietnam - Accessibility Indicators",
+   "name": "vietnam-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/vietnam-accessibility-indicators",
+   "resources": [
+    {
+     "name": "VNM_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/vnm/VNM_education_access.gpkg"
+    },
+    {
+     "name": "VNM_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/vnm/VNM_education_access_long.csv"
+    },
+    {
+     "name": "VNM_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/vnm/VNM_education_access_wide.csv"
+    },
+    {
+     "name": "VNM_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/vnm/VNM_hospitals_access.gpkg"
+    },
+    {
+     "name": "VNM_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/vnm/VNM_hospitals_access_long.csv"
+    },
+    {
+     "name": "VNM_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/vnm/VNM_hospitals_access_wide.csv"
+    },
+    {
+     "name": "VNM_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/vnm/VNM_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "VNM_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/vnm/VNM_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Viet Nam: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "vnm-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/vnm-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/aecd23d5-2319-4ae5-9dde-bbaaba22ed86/resource/18892297-3c0c-4fb9-8af5-ad66c0435cab/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_vnm.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/aecd23d5-2319-4ae5-9dde-bbaaba22ed86/resource/07e33d73-6f1f-46d1-b116-a3ad534fc6a7/download/ghs_pop_e2025_r2023a_54009_100_v1_0_vnm.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Viet Nam: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-vnm",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-vnm",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-vn-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-vn-latest.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Viet Nam - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-viet-nam",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-viet-nam",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Viet Nam",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/3dde9690-abda-42f7-b191-119cb67e7c00/resource/1efdddc4-996c-4b78-b47c-c3bcd7f14752/download/social-protection-and-labor_vnm.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Viet Nam SDG Data",
+   "name": "viet-nam-sdg-data",
+   "org": "United Nations Development Coordination Office (inactive)",
+   "url": "https://data.humdata.org/dataset/viet-nam-sdg-data",
+   "resources": [
+    {
+     "name": "vsdg_table_eng.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/773da787-b75b-4588-838a-7b5078e71d38/resource/7c186233-ecf6-4f7e-9734-9220ef0a0319/download/vsdg_table_eng.xlsx"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Viet Nam - Population Counts",
+   "name": "worldpop-population-counts-for-viet-nam",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-viet-nam",
+   "resources": [
+    {
+     "name": "vnm_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/VNM/vnm_ppp_2020.tif"
+    },
+    {
+     "name": "vnm_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/VNM/vnm_ppp_2019.tif"
+    },
+    {
+     "name": "vnm_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/VNM/vnm_ppp_2018.tif"
+    },
+    {
+     "name": "vnm_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/VNM/vnm_ppp_2017.tif"
+    },
+    {
+     "name": "vnm_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/VNM/vnm_ppp_2016.tif"
+    },
+    {
+     "name": "vnm_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/VNM/vnm_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "vnm_ppp_2019_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/VNM/vnm_ppp_2019_UNadj.tif"
+    },
+    {
+     "name": "vnm_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/VNM/vnm_ppp_2018_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Viet nam - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-vn-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-vn-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_VN",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/3d4dd26d-5489-40c4-8fab-0b4301dc8484/resource/d96f004f-fbee-47f9-b6fd-ba64c09fb7c9/download/indicator_data_vn.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Vietnam: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "vietnam-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/vietnam-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "vnm_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/191b04c5-3dc7-4c2a-8e00-9c0bdfdfbf9d/resource/b60dab07-0a27-47f3-894d-02e9fbee6473/download/vnm_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "vnm_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/191b04c5-3dc7-4c2a-8e00-9c0bdfdfbf9d/resource/a2ca47a3-b7d7-4a39-a605-161d4790c6f9/download/vnm_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "vnm_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/191b04c5-3dc7-4c2a-8e00-9c0bdfdfbf9d/resource/77edfcc3-d037-4233-9b16-7ebb684b4752/download/vnm_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "vnm_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/191b04c5-3dc7-4c2a-8e00-9c0bdfdfbf9d/resource/61b6a396-ffcc-4710-a453-174914822164/download/vnm_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "vnm_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/191b04c5-3dc7-4c2a-8e00-9c0bdfdfbf9d/resource/e0d42fbb-2436-4f3e-afd1-83d1ac6314b2/download/vnm_men_2020_csv.zip"
+    },
+    {
+     "name": "vnm_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/191b04c5-3dc7-4c2a-8e00-9c0bdfdfbf9d/resource/76990cd9-a2dc-44e6-809c-492698b090c0/download/vnm_men_2020_geotiff.zip"
+    },
+    {
+     "name": "vnm_women_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/191b04c5-3dc7-4c2a-8e00-9c0bdfdfbf9d/resource/0bd525fa-3f63-447b-9afa-3d5075657ce4/download/vnm_women_2020_csv.zip"
+    },
+    {
+     "name": "vnm_women_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/191b04c5-3dc7-4c2a-8e00-9c0bdfdfbf9d/resource/5bd99468-ea44-4a50-b64b-54343b182842/download/vnm_women_2020_geotiff.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.nso.gov.vn/en/",
+  "status": 0,
+  "error": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
+  "pages": []
+ },
+ "verdict": {
+  "hdx_datasets": 15,
+  "hdx_machine_readable": 4,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "3/5",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}

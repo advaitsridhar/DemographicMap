@@ -1,0 +1,793 @@
+{
+ "iso3": "ARG",
+ "name": "Argentina",
+ "tier_proposed": "A",
+ "sources": [
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Censo 2022 - Resultados definitivos por provincia (one page per jurisdiction, e.g. 'Córdoba - Censo Nacional de Población, Hogares y Viviendas'), including 'Población que se reconoce indígena o descendiente de pueblos indígenas u originarios' by departamento",
+   "kind": "census",
+   "format": "xlsx (plus PDF thematic publications)",
+   "geography": "departamento / partido (CABA: comunas)",
+   "geography_count": null,
+   "matches_boundary_level": "admin2 (boundary draws 525 departments; count on the pages not seen)",
+   "url": "https://censo.gob.ar/index.php/datos_definitivos_cordoba/",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>"
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Población indígena - Censo Nacional de Población, Hogares y Viviendas 2022 (thematic report, March 2024)",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "provincia / jurisdicción",
+   "geography_count": 24,
+   "matches_boundary_level": "admin1 (boundary draws 23; the census reports 24 jurisdictions -- 23 provinces plus the Ciudad Autónoma de Buenos Aires -- so one row will not place unless CABA is folded into Buenos Aires)",
+   "url": "https://censo.gob.ar/wp-content/uploads/2024/03/censo2022_poblacion_indigena.pdf",
+   "status": 0,
+   "content_type": null,
+   "final_url": null,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>"
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Población afrodescendiente - Censo Nacional de Población, Hogares y Viviendas 2022 (thematic report)",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "provincia / jurisdicción",
+   "geography_count": 24,
+   "matches_boundary_level": "admin1 (same CABA caveat)",
+   "url": "https://www.indec.gob.ar/ftp/cuadros/poblacion/censo2022_poblacion_afrodescendiente.pdf",
+   "status": 200,
+   "content_type": "application/pdf",
+   "final_url": "https://www.indec.gob.ar/ftp/cuadros/poblacion/censo2022_poblacion_afrodescendiente.pdf",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "pdf"
+   }
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "REDATAM online processing of Censo 2022 (redarg/CENSOS/CPV2022)",
+   "kind": "census",
+   "format": "table-builder (no API found)",
+   "geography": "departamento",
+   "geography_count": null,
+   "matches_boundary_level": "admin2",
+   "url": "https://redatam.indec.gob.ar/redarg/CENSOS/CPV2022/Docs/Redatam_aspectos_metodologicos.pdf",
+   "status": 200,
+   "content_type": "application/pdf",
+   "final_url": "https://redatam.indec.gob.ar/redarg/CENSOS/CPV2022/Docs/Redatam_aspectos_metodologicos.pdf",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "pdf"
+   }
+  },
+  {
+   "fields": [
+    "ethnicity"
+   ],
+   "title": "Provincial statistics offices' Censo 2022 reports (mirrors of INDEC): Salta 'Informe Censo Población indígena'; San Luis 'Migración externa e interna / Población afrodescendiente / Población indígena'",
+   "kind": "census",
+   "format": "pdf",
+   "geography": "province-specific (likely departamento within the province)",
+   "geography_count": null,
+   "matches_boundary_level": "admin2 (partial: one province each)",
+   "url": "https://estadisticas.salta.gov.ar/web/archivos/informes/censo2022/23.%20Informe_Censo_Poblacion%20indigena.pdf",
+   "status": 200,
+   "content_type": "application/pdf",
+   "final_url": "https://estadisticas.salta.gov.ar/web/archivos/informes/censo2022/23.%20Informe_Censo_Poblacion%20indigena.pdf",
+   "error": null,
+   "body": {
+    "bytes_read": 262144,
+    "kind": "pdf",
+    "pages_hint": 5
+   }
+  }
+ ],
+ "wikipedia": {
+  "list_articles": [
+   {
+    "title": "Religión en Argentina (es)",
+    "wikitext_bytes": 0,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Pueblos indígenas de Argentina (es)",
+    "wikitext_bytes": 0,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Censo argentino de 2022 (es)",
+    "wikitext_bytes": 0,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Religion in Argentina",
+    "wikitext_bytes": 36906,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 1,
+    "charts": [
+     "Pie chart"
+    ],
+    "composition_blocks": 0,
+    "verdict": "none",
+    "tables": [
+     {
+      "header": [
+       "Affiliation",
+       "colspan=\"2\" |% of Population"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 10
+     }
+    ],
+    "place_by_composition_tables": 0
+   },
+   {
+    "title": "Demographics of Argentina",
+    "wikitext_bytes": 99162,
+    "infobox_params": [],
+    "sections": [
+     "Ethnic groups",
+     "Languages",
+     "Religion"
+    ],
+    "wikitables": 15,
+    "charts": [
+     "Historical populations",
+     "Pie chart"
+    ],
+    "composition_blocks": 2,
+    "verdict": "composition",
+    "tables": [
+     {
+      "header": [
+       "Years",
+       "Total fertility rates<br />(children/woman)",
+       "Crude birth rates",
+       "Age<br />0–14",
+       "Age<br />15–29",
+       "Age<br />30–44",
+       "Age<br />45–59",
+       "Age<br />60–74",
+       "Age<br />75+"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "Flag",
+       "Province/District",
+       "Capital",
+       "Population<br />{{smaller|(2023)<ref name=c22/>}}",
+       "| Rank",
+       "width=\"30px\"| Density {{smaller|(/km<sup>2</sup>)<ref name=c22/>}}",
+       "width=\"30px\"| {{smaller|Avg. growth from 2010 census<ref name=censo2010/><ref name=c22/>}}",
+       "width=\"30px\"| Births {{smaller|(2024)<ref name=deis/>}}",
+       "| Rate",
+       "width=\"30px\"| Deaths {{smaller|(2024)<ref name=deis/>}}"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 12
+     },
+     {
+      "header": [
+       "rowspan=2| Year",
+       "rowspan=2| Total population",
+       "colspan=3| Population percentage in age bracket",
+       "aged 0–14",
+       "aged 15–64",
+       "aged 65+",
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 25
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 24
+     },
+     {
+      "header": [
+       "width=\"80pt\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80pt\"|Female",
+       "width=\"80pt\"|Total",
+       "width=\"80pt\"|%",
+       "width=\"50\"|Age group",
+       "width=\"80pt\"|Male",
+       "width=\"80\"|Female",
+       "width=\"80\"|Total",
+       "width=\"50\"|Percent"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "! width=\"60pt\"|Average population (June 30)",
+       "width=\"60pt\"|Live births",
+       "width=\"60pt\"|Deaths",
+       "width=\"60pt\"|Natural change",
+       "width=\"60pt\"|Crude birth rate<br />{{smaller|(per 1000)}}",
+       "width=\"60pt\"|Crude death rate<br />{{smaller|(per 1000)}}",
+       "width=\"60pt\"|Natural change<br />{{smaller|(per 1000)}}",
+       "width=\"60pt\"|Crude migration<br />{{smaller|(per 1000)}}",
+       "width=\"60pt\"|Total fertility rate<ref>{{citation|url=http://www.eurosur.org/FLACSO/mujeres/argentina/demo-3.htm|title=Fecundidad|work=European Border Surveillance System|access-date=4 August 2018|archive-date=27 February 2021|archive-url=https://web.archive.org/web/20210227003015/http://www.eurosur.org/FLACSO/mujeres/argentina/demo-3.htm}}</ref>",
+       "width=\"60pt\"|Infant mortality rate"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 17
+     },
+     {
+      "header": [
+       "province",
+       "TFR",
+       "Years",
+       "1869",
+       "1870",
+       "1871",
+       "1872",
+       "1873",
+       "1874",
+       "1875"
+      ],
+      "place_column": true,
+      "composition_columns": 0,
+      "rows_hint": 29
+     },
+     {
+      "header": [
+       "Years",
+       "1869",
+       "1870",
+       "1871",
+       "1872",
+       "1873",
+       "1874",
+       "1875",
+       "1876",
+       "1877"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 9
+     },
+     {
+      "header": [
+       "Years",
+       "1879",
+       "1880",
+       "1881",
+       "1882",
+       "1883",
+       "1884",
+       "1885",
+       "1886",
+       "1887"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 13
+     },
+     {
+      "header": [
+       "Years",
+       "1889",
+       "1890",
+       "1891",
+       "1892",
+       "1893",
+       "1894",
+       "1895",
+       "1896",
+       "1897"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 18
+     },
+     {
+      "header": [
+       "Years",
+       "1899",
+       "1900",
+       "1901",
+       "1902",
+       "1903",
+       "1904",
+       "1905",
+       "1906",
+       "1907"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 23
+     },
+     {
+      "header": [
+       "Years",
+       "1909<ref name=\"ourworldindata.org\" />",
+       "rowspan=2|Period",
+       "rowspan=2|Live births<br />per year",
+       "rowspan=2|Deaths<br />per year",
+       "rowspan=2|Natural change<br />per year",
+       "rowspan=2|CBR*",
+       "rowspan=2|CDR*",
+       "rowspan=2|NC*",
+       "rowspan=2|TFR*"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 21
+     },
+     {
+      "header": [
+       "rowspan=2|Period",
+       "rowspan=2|Live births<br />per year",
+       "rowspan=2|Deaths<br />per year",
+       "rowspan=2|Natural change<br />per year",
+       "rowspan=2|CBR*",
+       "rowspan=2|CDR*",
+       "rowspan=2|NC*",
+       "rowspan=2|TFR*",
+       "rowspan=2|IMR*",
+       "colspan=3|Life expectancy"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     },
+     {
+      "header": [
+       "width=\"100pt\" rowspan=\"2\" | Ethnic<br />group",
+       "colspan=\"2\" | Survey 2004–2005",
+       "width=\"100pt\" | Number",
+       "width=\"100pt\" | %"
+      ],
+      "place_column": false,
+      "composition_columns": 1,
+      "rows_hint": 33
+     },
+     {
+      "header": [
+       "rowspan=2|Rank<br />(2022)|| rowspan=2|Country of birth || colspan=4|Census dates",
+       "2022<ref>{{cite web |title=Censo Nacional de Población, Hogares y Viviendas 2022. Migraciones internacionales e internas. Edición ampliada. Abril de 2024 |url=https://www.indec.gob.ar/indec/web/Nivel4-Tema-2-41-165 |website=INDEC |access-date=30 August 2024}}</ref>",
+       "2010",
+       "2001",
+       "1991"
+      ],
+      "place_column": false,
+      "composition_columns": 0,
+      "rows_hint": 19
+     }
+    ],
+    "place_by_composition_tables": 0
+   }
+  ],
+  "admin2_samples": [
+   {
+    "shape_name": "Anelo",
+    "found": true,
+    "title": "Añelo Department",
+    "url": "https://en.wikipedia.org/wiki/A%C3%B1elo_Department",
+    "wikitext_bytes": 2333,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Castellanos",
+    "found": true,
+    "title": "Taty Castellanos",
+    "url": "https://en.wikipedia.org/wiki/Taty_Castellanos",
+    "wikitext_bytes": 23751,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 2,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "General Paz",
+    "found": true,
+    "title": "Avenida General Paz",
+    "url": "https://en.wikipedia.org/wiki/Avenida_General_Paz",
+    "wikitext_bytes": 7339,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "General San Martín",
+    "found": true,
+    "title": "General San Martín Partido",
+    "url": "https://en.wikipedia.org/wiki/General_San_Mart%C3%ADn_Partido",
+    "wikitext_bytes": 6397,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   },
+   {
+    "shape_name": "Río Senguer",
+    "found": true,
+    "title": "Alto Río Senguer Airport",
+    "url": "https://en.wikipedia.org/wiki/Alto_R%C3%ADo_Senguer_Airport",
+    "wikitext_bytes": 1683,
+    "infobox_params": [],
+    "sections": [],
+    "wikitables": 0,
+    "charts": [],
+    "composition_blocks": 0,
+    "verdict": "none"
+   }
+  ]
+ },
+ "hdx": [
+  {
+   "term": "language",
+   "title": "Argentina: Road Surface Data",
+   "name": "argentina-road-surface-data",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/argentina-road-surface-data",
+   "resources": [
+    {
+     "name": "Argentina GeoJSON Resource",
+     "format": "GeoJSON",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_arg_roadsurface_lines.geojson"
+    },
+    {
+     "name": "Argentina GeoPackage Resource",
+     "format": "Geopackage",
+     "url": "https://downloads.ohsome.org/hdx/mapillary_road_surface/heigit_arg_roadsurface_lines.gpkg"
+    }
+   ]
+  },
+  {
+   "term": "language",
+   "title": "Argentina: Administrative Division with Aggregated Population",
+   "name": "kontur-boundaries-argentina",
+   "org": "Kontur",
+   "url": "https://data.humdata.org/dataset/kontur-boundaries-argentina",
+   "resources": [
+    {
+     "name": "kontur_boundaries_AR_20220407.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_boundaries_AR_20220407.gpkg.gz"
+    },
+    {
+     "name": "kontur_boundaries_AR_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_boundaries_AR_20230628.gpkg.gz"
+    },
+    {
+     "name": "kontur_topology_boundaries_AR_20230628.gpkg",
+     "format": "Geopackage",
+     "url": "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_topology_boundaries_AR_20230628.gpkg.gz"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Argentina - Subnational Population Statistics",
+   "name": "cod-ps-arg",
+   "org": "UNFPA",
+   "url": "https://data.humdata.org/dataset/cod-ps-arg",
+   "resources": [
+    {
+     "name": "arg_admgz.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/fb0f0b1d-c8a3-4f51-86d7-662bbdb9948c/resource/a6df4622-bda4-43ff-a2c6-de0b7dcc848d/download/arg_admgz.xlsx"
+    },
+    {
+     "name": "arc_admpop_2021.xlsx",
+     "format": "XLSX",
+     "url": "https://data.humdata.org/dataset/fb0f0b1d-c8a3-4f51-86d7-662bbdb9948c/resource/9b00b2a6-4067-45a2-aedb-d61b201e2c2d/download/arc_admpop_2021.xlsx"
+    },
+    {
+     "name": "arg_admpop_adm0_2021.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fb0f0b1d-c8a3-4f51-86d7-662bbdb9948c/resource/5136d104-6f80-4de6-82c4-91b846374022/download/arg_admpop_adm0_2021.csv"
+    },
+    {
+     "name": "arg_admpop_adm1_2021.csv",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/fb0f0b1d-c8a3-4f51-86d7-662bbdb9948c/resource/8d50a319-0726-4657-a9fa-a48658ef59ea/download/arg_admpop_adm1_2021.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Argentina - Population Counts",
+   "name": "worldpop-population-counts-for-argentina",
+   "org": "WorldPop",
+   "url": "https://data.humdata.org/dataset/worldpop-population-counts-for-argentina",
+   "resources": [
+    {
+     "name": "arg_ppp_2020.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/ARG/arg_ppp_2020.tif"
+    },
+    {
+     "name": "arg_ppp_2019.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2019/ARG/arg_ppp_2019.tif"
+    },
+    {
+     "name": "arg_ppp_2018.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/ARG/arg_ppp_2018.tif"
+    },
+    {
+     "name": "arg_ppp_2017.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/ARG/arg_ppp_2017.tif"
+    },
+    {
+     "name": "arg_ppp_2016.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2016/ARG/arg_ppp_2016.tif"
+    },
+    {
+     "name": "arg_ppp_2020_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/ARG/arg_ppp_2020_UNadj.tif"
+    },
+    {
+     "name": "arg_ppp_2018_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2018/ARG/arg_ppp_2018_UNadj.tif"
+    },
+    {
+     "name": "arg_ppp_2017_UNadj.tif",
+     "format": "GeoTIFF",
+     "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020/2017/ARG/arg_ppp_2017_UNadj.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Argentina - Social Protection and Labor",
+   "name": "world-bank-social-protection-and-labor-indicators-for-argentina",
+   "org": "World Bank Group",
+   "url": "https://data.humdata.org/dataset/world-bank-social-protection-and-labor-indicators-for-argentina",
+   "resources": [
+    {
+     "name": "Social Protection and Labor Indicators for Argentina",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/05c13b98-6070-4b74-99a1-282d990f67e7/resource/88873a36-a122-49ba-8900-fd8b82789091/download/social-protection-and-labor_arg.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Argentina - Accessibility Indicators",
+   "name": "argentina-accessibility-indicators",
+   "org": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+   "url": "https://data.humdata.org/dataset/argentina-accessibility-indicators",
+   "resources": [
+    {
+     "name": "ARG_education_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/arg/ARG_education_access.gpkg"
+    },
+    {
+     "name": "ARG_education_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/arg/ARG_education_access_long.csv"
+    },
+    {
+     "name": "ARG_education_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/arg/ARG_education_access_wide.csv"
+    },
+    {
+     "name": "ARG_hospitals_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/arg/ARG_hospitals_access.gpkg"
+    },
+    {
+     "name": "ARG_hospitals_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/arg/ARG_hospitals_access_long.csv"
+    },
+    {
+     "name": "ARG_hospitals_access_wide.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/arg/ARG_hospitals_access_wide.csv"
+    },
+    {
+     "name": "ARG_primary_healthcare_access.gpkg",
+     "format": "Geopackage",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/arg/ARG_primary_healthcare_access.gpkg"
+    },
+    {
+     "name": "ARG_primary_healthcare_access_long.csv",
+     "format": "CSV",
+     "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/arg/ARG_primary_healthcare_access_long.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Argentina: High Resolution Population Density Maps + Demographic Estimates",
+   "name": "argentina-high-resolution-population-density-maps-demographic-estimates",
+   "org": "AI for Good at Meta",
+   "url": "https://data.humdata.org/dataset/argentina-high-resolution-population-density-maps-demographic-estimates",
+   "resources": [
+    {
+     "name": "arg_general_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/6cf49080-1226-4eda-8700-a0093cbdfe4d/resource/5c62de88-0fa2-4b6f-81dc-e8c3bdb05cb6/download/arg_general_2020_geotiff.zip"
+    },
+    {
+     "name": "arg_general_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/6cf49080-1226-4eda-8700-a0093cbdfe4d/resource/5737d87f-e17f-4c82-b1bd-d589ed631318/download/arg_general_2020_csv.zip"
+    },
+    {
+     "name": "arg_children_under_five_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/6cf49080-1226-4eda-8700-a0093cbdfe4d/resource/1795ad97-e06a-4ca4-83aa-32ab612f55ba/download/arg_children_under_five_2020_csv.zip"
+    },
+    {
+     "name": "arg_children_under_five_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/6cf49080-1226-4eda-8700-a0093cbdfe4d/resource/1f1e657f-5de3-4791-91d2-eeb66d24d3ff/download/arg_children_under_five_2020_geotiff.zip"
+    },
+    {
+     "name": "arg_elderly_60_plus_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/6cf49080-1226-4eda-8700-a0093cbdfe4d/resource/8f1d9473-90f0-441f-b464-c76960e9e130/download/arg_elderly_60_plus_2020_csv.zip"
+    },
+    {
+     "name": "arg_elderly_60_plus_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/6cf49080-1226-4eda-8700-a0093cbdfe4d/resource/b081ed8f-39f3-4339-9335-f3328fec0b50/download/arg_elderly_60_plus_2020_geotiff.zip"
+    },
+    {
+     "name": "arg_men_2020_csv.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/6cf49080-1226-4eda-8700-a0093cbdfe4d/resource/b89a0468-6591-46ff-b180-f81fc2237482/download/arg_men_2020_csv.zip"
+    },
+    {
+     "name": "arg_men_2020_geotiff.zip",
+     "format": "zip",
+     "url": "https://data.humdata.org/dataset/6cf49080-1226-4eda-8700-a0093cbdfe4d/resource/d6a36b44-6eb8-4bb7-a33d-bee540070c9b/download/arg_men_2020_geotiff.zip"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Argentina - Demographic, Health, Education and Transport indicators",
+   "name": "unhabitat-ar-indicators",
+   "org": "United Nations Human Settlements Programmes, Data and Analytics Section",
+   "url": "https://data.humdata.org/dataset/unhabitat-ar-indicators",
+   "resources": [
+    {
+     "name": "Indicators_data_AR",
+     "format": "CSV",
+     "url": "https://data.humdata.org/dataset/7b72d961-1b0d-448e-b9ff-01bc0cc44e63/resource/791b1b1b-a89d-452d-8dd3-23d1b80fe9b9/download/indicator_data_ar.csv"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Argentina: Copernicus Global Human Settlement Layer (GHSL)",
+   "name": "arg-ghsl",
+   "org": "Copernicus",
+   "url": "https://data.humdata.org/dataset/arg-ghsl",
+   "resources": [
+    {
+     "name": "GHS Built-up Surface",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/0dcfc793-13f1-41c7-ae18-b5cf3ced5e2e/resource/7dac481b-ed1c-4b68-9736-fafc51a8524b/download/ghs_built_s_e2025_r2023a_54009_100_v1_0_arg.tif"
+    },
+    {
+     "name": "GHS Population Grid",
+     "format": "GeoTIFF",
+     "url": "https://data.humdata.org/dataset/0dcfc793-13f1-41c7-ae18-b5cf3ced5e2e/resource/aff44d40-075c-4cfb-ad4a-662f035b31a1/download/ghs_pop_e2025_r2023a_54009_100_v1_0_arg.tif"
+    }
+   ]
+  },
+  {
+   "term": "census",
+   "title": "Argentina: WOF Administrative Subdivisions and Human Settlements",
+   "name": "whosonfirst-data-admin-arg",
+   "org": "Who's On First",
+   "url": "https://data.humdata.org/dataset/whosonfirst-data-admin-arg",
+   "resources": [
+    {
+     "name": "whosonfirst-data-admin-ar-latest.zip",
+     "format": "SHP",
+     "url": "https://data.geocode.earth/wof/dist/shapefile/whosonfirst-data-admin-ar-latest.zip"
+    }
+   ]
+  }
+ ],
+ "nso_crawl": {
+  "url": "https://www.indec.gob.ar/",
+  "status": 200,
+  "error": null,
+  "pages": [],
+  "title": "INDEC: Instituto Nacional de Estadística y Censos de la República Argentina",
+  "matching_links": 0
+ },
+ "verdict": {
+  "hdx_datasets": 10,
+  "hdx_machine_readable": 4,
+  "nso_files_found": 0,
+  "wikipedia_list_tables_by_place": 0,
+  "urls_answering": "3/5",
+  "machine_readable": [],
+  "wikipedia_admin2_with_composition": "0/5"
+ }
+}
