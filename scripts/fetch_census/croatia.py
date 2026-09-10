@@ -88,11 +88,36 @@ COUNTIES = {
     "Međimurska": "Međimurje",
     "Grad Zagreb": "City of Zagreb",
 }
-# The boundary file's misspellings, declared so the shapes still match.
+# The boundary file's spellings where they differ from the bureau's: its
+# misspellings, its hyphen spacing, and two islands each drawn as one shape
+# that is exactly one town (Cres is all of Grad Cres, Lošinj all of Grad
+# Mali Lošinj). Istria's bilingual names ("Grad Buje – Buie") are aliased
+# generically to their Croatian half.
 UNIT_ALIASES = {
     "Općina Murter-Kornati": ["Opicina Muter-Kornati"],
     "Općina Pirovac": ["Opicina Pirovac"],
+    "Grad Ivanić-Grad": ["Grad Ivanić Grad"],
+    "Općina Budinščina": ["Općina Budinšćina"],
+    "Općina Hrašćina": ["Općina Hraščina"],
+    "Općina Lobor": ["Grad Lobor"],
+    "Općina Zagorska Sela": ["Općina Zagorska sela"],
+    "Općina Donji Kukuruzari": ["Općina Donji Kukuzari"],
+    "Općina Hrvatska Dubica": ["Općina Hvratska Dubica"],
+    "Općina Velika Pisanica": ["Općina Veliki Pisanica"],
+    "Općina Malinska-Dubašnica": ["Općina Malinska - Dubašnica"],
+    "Općina Okučani": ["Općina Okućani"],
+    "Općina Magadenovac": ["Općina Magdenovac"],
+    "Općina Kaštelir-Labinci – Castelliere-S. Domenica": ["Općina Kaštelir - Labinci"],
+    "Grad Cres": ["Otok Cres"],
+    "Grad Mali Lošinj": ["Otok Losinj"],
 }
+
+
+def unit_aliases(shown: str) -> list[str]:
+    out = list(UNIT_ALIASES.get(shown, []))
+    if " – " in shown:
+        out.append(shown.split(" – ")[0].strip())
+    return out
 # The English half of a header cell, to the bar it is shown as, per field:
 # "Jews" is an ethnicity on one sheet and a religion on another. Ethnicity is
 # shown in the adjective form the rest of the map uses; anything not listed
@@ -117,7 +142,7 @@ LABELS = {
         "Other Christians": "Other Christian", "Muslims": "Islam", "Jews": "Judaism",
         "Oriental religions": "Eastern religions", "Eastern religions": "Eastern religions",
         "Other religions, movements and life philosophies": "Other religion",
-        "Agnostics and sceptics": "Agnostic", "Not religious and atheists": "No religion",
+        "Agnostics and sceptics": "Agnostics and sceptics", "Not religious and atheists": "No religion",
         "Not declared": "Not declared", "Unknown": "Not stated",
     },
     "language": {
@@ -272,7 +297,7 @@ def build() -> list[dict[str, Any]]:
         else:
             shown = f"{kind} {name}"
             shapes.append((shown, "admin2", county_id, COUNTIES[county],
-                           f"{county_id}-{slugify(shown)}", UNIT_ALIASES.get(shown, [])))
+                           f"{county_id}-{slugify(shown)}", unit_aliases(shown)))
         for shown, level, parent, parent_name, entity_id, aliases in shapes:
             records.append(record(
                 entity_id, shown, level=level, parent=parent, parent_name=parent_name,

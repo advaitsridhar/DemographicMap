@@ -4719,6 +4719,8 @@ class CroatiaReadsTheBilingualHeader(unittest.TestCase):
         from scripts.fetch_census import croatia
         self.assertEqual(len(croatia.COUNTIES), 21)
         self.assertEqual(croatia.COUNTIES["Grad Zagreb"], "City of Zagreb")
+        self.assertEqual(croatia.unit_aliases("Grad Buje – Buie"), ["Grad Buje"])
+        self.assertEqual(croatia.unit_aliases("Grad Cres"), ["Otok Cres"])
 
 
 class PolandCutsTheReligionTreeOnce(unittest.TestCase):
