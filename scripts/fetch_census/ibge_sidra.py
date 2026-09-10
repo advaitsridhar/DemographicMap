@@ -9,7 +9,13 @@ with ``n3`` = state (UF) and ``n6`` = municipality.  Tables used:
 
 * **9514** resident population by sex and age (2022 Census)
 * **9605** population by colour or race (cor ou raça)
-* **10086** population by religion (2022 Census, released June 2025)
+* **9537** persons aged 10 and over by religion (2022 Census, released
+  June 2025). Religion was asked of persons aged 10 and over, so this is a
+  count of that universe, not of all residents; the note on every record
+  says so. Table 10086, which this adapter read before, is a fertility table
+  (women aged 12 and over who have had live births, by religion) -- it
+  answered numbers, and numbers that answer look like the right ones. The
+  catalogue was asked (scripts/probe_sidra.py) before this id replaced it.
 
 Brazil's *cor ou raça* is self-declared skin colour, not ethnicity: the
 categories (branca, preta, parda, amarela, indígena) do not map onto US race or
@@ -39,14 +45,16 @@ TABLES = {
     "population": {"table": "9514", "variable": "93", "classification": None, "period": "2022"},
     "colour_race": {"table": "9605", "variable": "93", "classification": "86", "period": "2022"},
 }
-# The 2022-census religion table's variable id was guessed and 400ed on the
-# first live run, so try the plausible spellings in order and keep the first
-# that answers; a wrong guess now fails fast instead of retrying for 30s.
+# Table 9537 is cross-tabulated by sex (c2) and age group (c58) as well as
+# religion (c133). SIDRA returns the Total category of any classification the
+# URL leaves out, so naming c133 alone asks for both sexes and all ages.
+# Variable 140 is the count of persons aged 10 and over. Kept as a list so a
+# second spelling can be tried without restructuring the loop below.
 RELIGION_VARIANTS = [
-    {"table": "10086", "variable": "93", "classification": "133", "period": "2022"},
-    {"table": "10086", "variable": "1000093", "classification": "133", "period": "2022"},
-    {"table": "10086", "variable": "allxp", "classification": "133", "period": "2022"},
+    {"table": "9537", "variable": "140", "classification": "133", "period": "2022"},
 ]
+RELIGION_UNIVERSE = ("Religion was asked of persons aged 10 and over (IBGE table 9537); "
+                     "shares are of that universe, not of all residents.")
 
 
 def sidra(table: dict[str, Any], level_code: str, *, within_state: str | None = None
@@ -219,6 +227,7 @@ def main() -> int:
                             "shown in English; 'Pardo' keeps Brazil's own term rather than "
                             "becoming 'Mixed', which is a different question asked elsewhere."),
             religion=shares(gvals) or gap(NOT_AVAILABLE, "IBGE 2022 religion table not returned for this locality."),
+            religion_note=RELIGION_UNIVERSE if gvals else None,
             sources=[{"field": "population/colour-race/religion", "name": src,
                       "url": f"{SIDRA}/t/{TABLES['colour_race']['table']}",
                       "license": "IBGE open data"}],

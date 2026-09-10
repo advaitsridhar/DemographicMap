@@ -830,6 +830,7 @@ BRAZIL_RELIGION: dict[str, str] = {
     "Evangélicas":                "Evangelical",
     "Espírita":                   "Spiritism",
     "Umbanda e Candomblé":        "Umbanda and Candomblé",
+    "Tradições indígenas":        "Indigenous traditions",
     "Outras religiosidades":      "Other religions",
     "Sem religião":               "No religion",
     "Sem declaração":             "Not stated",

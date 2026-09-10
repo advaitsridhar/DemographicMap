@@ -45,7 +45,7 @@ def get(url: str) -> Any:
     return json.loads(data.decode("utf-8"))
 
 
-def describe(table: str) -> None:
+def describe(table: str, full: int = 8) -> None:
     meta = get(f"{BASE}/{table}/metadados")
     print(f"\n== table {meta.get('id')}: {meta.get('nome')}")
     print(f"   survey: {(meta.get('pesquisa') or '')}  |  subject: {(meta.get('assunto') or '')}")
@@ -59,8 +59,11 @@ def describe(table: str) -> None:
     print("   classifications:")
     for c in meta.get("classificacoes") or []:
         cats = c.get("categorias") or []
-        names = [k.get("nome") for k in cats[:8]]
-        print(f"     c{c.get('id')} {c.get('nome')} -- {len(cats)} categories: {names}")
+        print(f"     c{c.get('id')} {c.get('nome')} -- {len(cats)} categories:")
+        # Every category, with its id: the adapter names categories by id in
+        # the URL and translates them by name, and both have to be exact.
+        for k in cats[:full]:
+            print(f"        {k.get('id'):<8} {k.get('nome')}")
 
 
 def main() -> int:
@@ -70,10 +73,12 @@ def main() -> int:
     ap.add_argument("--survey", default="CD", help="pesquisa code; CD = Censo Demográfico")
     ap.add_argument("--table", action="append", default=[], help="describe this table id")
     ap.add_argument("--limit", type=int, default=25)
+    ap.add_argument("--categories", type=int, default=8,
+                    help="how many categories of each classification to list")
     args = ap.parse_args()
 
     for table in args.table:
-        describe(table)
+        describe(table, args.categories)
 
     if args.match:
         q = urllib.parse.urlencode({"pesquisa": args.survey})
