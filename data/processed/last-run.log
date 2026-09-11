@@ -1,37 +1,35 @@
-pakistan: Bureau of Statistics, Census 2023 Table 9
-  Khyber Pakhtunkhwa
-    2,255,958 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
-    35 districts, 123 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 35 districts add up to the province
-    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
-    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
-  Punjab
-    2,592,933 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_punjab_districts.pdf
-    36 districts, 145 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 36 districts add up to the province
-  Sindh
-    2,399,774 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_sindh_districts.pdf
-    30 districts, 0 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 30 districts add up to the province
-    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
-  Balochistan
-    2,698,658 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_balochistan_districts.pdf
-    34 districts, 80 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 34 districts add up to the province
-  Islamabad Capital Territory
-    36,012 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_islamabad.pdf
-    1 districts, 1 tehsils passed over
-    one district, and it is the territory: the table prints no separate territory row
-    every district's religions sum to its own printed total
-    and the 1 districts add up to the province
-  Azad Jammu and Kashmir
-  Gilgit-Baltistan
-  NOT PUBLISHED (enumerated apart from the census proper) -- Azad Jammu and Kashmir: table_9_ajk.pdf: HTTPError HTTP Error 404: Not Found; table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  NOT PUBLISHED (enumerated apart from the census proper) -- Gilgit-Baltistan: table_9_gb.pdf: HTTPError HTTP Error 404: Not Found; table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  Azad Jammu and Kashmir, from the territory's own yearbook
-    9,083,563 bytes from https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf
-AJ&K Table 15.24 is on page 15 and this read 0 of 10 districts and no AJ&K row: 
+probe_estat: ESTAT_API found, 40 characters
+
+== 信者 -- tables
+  getStatsList?searchWord=%E4%BF%A1%E8%80%85&limit=40&lang=J
+    -> 30 match(es), 30 listed
+    0003282962 | [00401101] 宗教統計調査 | 文化庁 | 全国社寺教会等宗教団体・教師・信者数　（１）系統別　教師・信者数 | survey 202404-202503 | area 該当なし (no area dimension) | 735 cells
+    0003282963 | [00401101] 宗教統計調査 | 文化庁 | 全国社寺教会等宗教団体・教師・信者数　（２）都道府県別　教師・信者数 | survey 202404-202503 | area 該当なし (no area dimension) | 18977 cells
+    0003283224 | [00401101] 宗教統計調査 | 文化庁 | 包括宗教団体の被包括宗教団体・教師・信者数(系統別・所轄庁別)　教師・信者数 | survey 202404-202503 | area 該当なし (no area dimension) | 1838 cells
+    0003283201 | [00401101] 宗教統計調査 | 文化庁 | 単立宗教法人・教師・信者数　教師・信者数 | survey 202404-202503 | area 該当なし (no area dimension) | 350 cells
+    0003283236 | [00401101] 宗教統計調査 | 文化庁 | 包括宗教団体別被包括宗教団体・教師・信者数　文部科学大臣所轄包括宗教法人　教師・信者数 | survey 202404-202503 | area 該当なし (no area dimension) | 23910 cells
+    0003283592 | [00401101] 宗教統計調査 | 文化庁 | 包括宗教団体別被包括宗教団体・教師・信者数　都道府県知事所轄包括宗教法人　教師・信者数 | survey 202404-202503 | area 該当なし (no area dimension) | 1702 cells
+    0003284420 | [00401101] 宗教統計調査 | 文化庁 | 包括宗教団体別被包括宗教団体・教師・信者数　その他　教師・信者数 | survey 202404-202503 | area 該当なし (no area dimension) | 4531 cells
+    0003282941 | [00401101] 宗教統計調査 | 文化庁 | 系統別単位宗教団体・教師・信者数　教師・信者数 | survey 202404-202503 | area 該当なし (no area dimension) | 4800 cells
+    0000010107 | [00200502] 社会・人口統計体系 | 総務省 | Ｇ　文化・スポーツ | survey 0 | area 全国 (Japan as a whole) | 104736 cells
+    0000010107 | [00200502] 社会・人口統計体系 | 総務省 | Ｇ　文化・スポーツ | survey 0 | area 都道府県 (prefecture) | 104736 cells
+    0003284680 | [00401101] 宗教統計調査 | 文化庁 | 主要数値の推移　教師・信者数 | survey 202404-202503 | area 該当なし (no area dimension) | 38 cells
+    0003163951 | [00200356] 通信利用動向調査 | 総務省 | 問６（１）補問１　パソコン又は携帯電話からのインターネット利用の際の迷惑メール受信頻度_単一回答（対象：パソコン又は携帯電話での迷惑メール受信者） 本人が世帯主/非世帯主 平成17年以前 | survey 0 | area 該当なし (no area dimension) | 132 cells
+    0003163952 | [00200356] 通信利用動向調査 | 総務省 | 問６（１）補問１　パソコン又は携帯電話からのインターネット利用の際の迷惑メール受信頻度_単一回答（対象：パソコン又は携帯電話での迷惑メール受信者） 世帯人数 平成17年以前 | survey 0 | area 該当なし (no area dimension) | 352 cells
+    0003163953 | [00200356] 通信利用動向調査 | 総務省 | 問６（１）補問１　パソコン又は携帯電話からのインターネット利用の際の迷惑メール受信頻度_単一回答（対象：パソコン又は携帯電話での迷惑メール受信者） 世帯主年齢 平成17年以前 | survey 0 | area 該当なし (no area dimension) | 484 cells
+    0003163970 | [00200356] 通信利用動向調査 | 総務省 | 問６（１）補問１　パソコン又は携帯電話からのインターネット利用の際の迷惑メール受信頻度_単一回答（対象：パソコン又は携帯電話での迷惑メール受信者） 都市区分 平成17年以前 | survey 0 | area 該当なし (no area dimension) | 176 cells
+    0003163971 | [00200356] 通信利用動向調査 | 総務省 | 問６（１）補問１　パソコン又は携帯電話からのインターネット利用の際の迷惑メール受信頻度_単一回答（対象：パソコン又は携帯電話での迷惑メール受信者） 世帯主性別 平成17年以前 | survey 0 | area 該当なし (no area dimension) | 132 cells
+    0003163988 | [00200356] 通信利用動向調査 | 総務省 | 問６（１）補問１　パソコン又は携帯電話からのインターネット利用の際の迷惑メール受信頻度_単一回答（対象：パソコン又は携帯電話での迷惑メール受信者） 本人の性別 平成17年以前 | survey 0 | area 該当なし (no area dimension) | 132 cells
+    0003163989 | [00200356] 通信利用動向調査 | 総務省 | 問６（１）補問１　パソコン又は携帯電話からのインターネット利用の際の迷惑メール受信頻度_単一回答（対象：パソコン又は携帯電話での迷惑メール受信者） 世帯類型 平成17年以前 | survey 0 | area 該当なし (no area dimension) | 352 cells
+    0003163990 | [00200356] 通信利用動向調査 | 総務省 | 問６（１）補問１　パソコン又は携帯電話からのインターネット利用の際の迷惑メール受信頻度_単一回答（対象：パソコン又は携帯電話での迷惑メール受信者） 迷惑メール対策状況別 平成17年以前 | survey 0 | area 該当なし (no area dimension) | 396 cells
+    0003164003 | [00200356] 通信利用動向調査 | 総務省 | 問６（１）補問１　パソコン又は携帯電話からのインターネット利用の際の迷惑メール受信頻度_単一回答（対象：パソコン又は携帯電話での迷惑メール受信者） 本人の年齢 平成17年以前 | survey 0 | area 該当なし (no area dimension) | 660 cells
+    0003164004 | [00200356] 通信利用動向調査 | 総務省 | 問６（１）補問１　パソコン又は携帯電話からのインターネット利用の際の迷惑メール受信頻度_単一回答（対象：パソコン又は携帯電話での迷惑メール受信者） 所属世帯年収 平成17年以前 | survey 0 | area 該当なし (no area dimension) | 440 cells
+    0003171022 | [00200356] 通信利用動向調査 | 総務省 | 問６（１）補問１　パソコン又は携帯電話からのインターネット利用の際の迷惑メール受信頻度_単一回答（対象：パソコン又は携帯電話での迷惑メール受信者） ブロードバンド/ナローバンド 平成17年以前 | survey 0 | area 該当なし (no area dimension) | 66 cells
+    0003280702 | [00401101] 宗教統計調査 | 文化庁 | 全国社寺教会等宗教団体・教師・信者数　（１）系統別　団体数 | survey 202404-202503 | area 該当なし (no area dimension) | 1260 cells
+    0003282740 | [00401101] 宗教統計調査 | 文化庁 | 全国社寺教会等宗教団体・教師・信者数　（２）都道府県別　団体数 | survey 202404-202503 | area 該当なし (no area dimension) | 33408 cells
+    0003282940 | [00401101] 宗教統計調査 | 文化庁 | 系統別単位宗教団体・教師・信者数　団体数 | survey 202404-202503 | area 該当なし (no area dimension) | 4800 cells
+    0003283223 | [00401101] 宗教統計調査 | 文化庁 | 包括宗教団体の被包括宗教団体・教師・信者数(系統別・所轄庁別)　団体数 | survey 202404-202503 | area 該当なし (no area dimension) | 3240 cells
+    0003283200 | [00401101] 宗教統計調査 | 文化庁 | 単立宗教法人・教師・信者数　宗教法人 | survey 202404-202503 | area 該当なし (no area dimension) | 300 cells
+    0003283235 | [00401101] 宗教統計調査 | 文化庁 | 包括宗教団体別被包括宗教団体・教師・信者数　文部科学大臣所轄包括宗教法人　宗教法人 | survey 202404-202503 | area 該当なし (no area dimension) | 46074 cells
+    0003283591 | [00401101] 宗教統計調査 | 文化庁 | 包括宗教団体別被包括宗教団体・教師・信者数　都道府県知事所轄包括宗教法人　宗教法人 | survey 202404-202503 | area 該当なし (no area dimension) | 3474 cells
+    0003283599 | [00401101] 宗教統計調査 | 文化庁 | 包括宗教団体別被包括宗教団体・教師・信者数　その他　宗教法人 | survey 202404-202503 | area 該当なし (no area dimension) | 9588 cells
