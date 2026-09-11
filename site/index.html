@@ -53,26 +53,32 @@
     </div>
     <p id="filter-summary" class="filter-summary"></p>
 
-    <section class="filter-section">
-      <h3>On the map now</h3>
-      <div id="legend" aria-live="polite"></div>
-      <p id="blank-note" class="control-note" hidden></p>
+    <section class="filter-section" id="field-section" hidden>
+      <h3 id="field-label">Topic
+        <button type="button" class="info" data-info="topic"
+                aria-label="About comparing topics across borders">i</button>
+      </h3>
+      <div id="field-options" class="segmented" role="radiogroup" aria-labelledby="field-label"></div>
     </section>
 
     <section class="filter-section">
-      <h3 id="metric-label">Colour by</h3>
+      <h3 id="metric-label">View</h3>
       <div id="metric-options" class="option-list" role="radiogroup" aria-labelledby="metric-label"></div>
     </section>
 
-    <section class="filter-section" id="field-section" hidden>
-      <h3 id="field-label">Which composition</h3>
-      <div id="field-options" class="segmented" role="radiogroup" aria-labelledby="field-label"></div>
-      <p class="control-note">Religion, language and ethnicity are separate census
-         questions. Categories are comparable within a country, not across a border.</p>
+    <section class="filter-section" id="depth-section" hidden>
+      <h3 id="depth-label">Categories
+        <button type="button" class="info" data-info="depth"
+                aria-label="About broad families and reported categories">i</button>
+      </h3>
+      <div id="depth-options" class="segmented" role="radiogroup" aria-labelledby="depth-label"></div>
     </section>
 
     <section class="filter-section" id="group-section" hidden>
-      <h3 id="group-label">Group to map</h3>
+      <h3 id="group-label">Group
+        <button type="button" class="info" data-info="group"
+                aria-label="About choosing a group">i</button>
+      </h3>
       <div class="group-search">
         <label class="visually-hidden" for="group-search">Search groups</label>
         <input id="group-search" type="search" autocomplete="off" spellcheck="false"
@@ -80,8 +86,17 @@
                aria-controls="group-list" aria-describedby="group-count">
       </div>
       <p id="group-count" class="control-note" role="status" aria-live="polite"></p>
-      <div id="group-list" class="group-list" role="listbox" aria-labelledby="group-label"></div>
+      <div id="group-list" class="group-list" role="tree" aria-labelledby="group-label"></div>
       <p id="group-reach" class="control-note" hidden></p>
+    </section>
+
+    <section class="filter-section">
+      <h3>Legend
+        <button type="button" class="info" data-info="legend"
+                aria-label="About what the colours mean">i</button>
+      </h3>
+      <div id="legend" aria-live="polite"></div>
+      <p id="blank-note" class="control-note" hidden></p>
     </section>
 
     <section class="filter-section">

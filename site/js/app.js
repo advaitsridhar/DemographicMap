@@ -13,6 +13,8 @@
     metricOptions: document.getElementById("metric-options"),
     fieldSection: document.getElementById("field-section"),
     fieldOptions: document.getElementById("field-options"),
+    depthSection: document.getElementById("depth-section"),
+    depthOptions: document.getElementById("depth-options"),
     groupSection: document.getElementById("group-section"),
     groupSearch: document.getElementById("group-search"),
     groupCount: document.getElementById("group-count"),
@@ -50,6 +52,12 @@
     groupByField: {},
     groupIndex: null,      // site/data/groups.json, once it lands
     groupQuery: "",
+    // How finely the "most populous group" map reads a composition: the top
+    // of each tree, or the finest canonical name a source wrote.
+    depth: "family",
+    // Which parents the group tree is showing the children of. Expanding is
+    // per field, because the fields are three different trees.
+    openBranches: {},
     level: 0,
     panelOpen: true,
     selected: null,
@@ -143,6 +151,109 @@
     if (map) map.resize();
   }
 
+  /* ---------------------------------------------------------- info bubbles */
+
+  /* The long caveats, moved off the page and behind an "i".
+   *
+   * Every one of these was a paragraph sitting permanently under the control
+   * it described. They are all true and worth saying once, and none of them is
+   * worth the four lines of panel it took to say on every visit -- the effect
+   * was a filter panel that read as a document, where the controls were the
+   * things between the prose. Behind a bubble they are one keystroke or one
+   * hover away, next to the thing they are about, and the panel is a panel.
+   *
+   * Hover opens it and so does focus, because hover alone is unreachable by
+   * keyboard and unusable on a touchscreen; click pins it open so a reader can
+   * select the text.
+   */
+  const INFO = {
+    topic:
+      "Religion, language and ethnicity are three separate census questions, " +
+      "and the ethnicity one is not the same question everywhere: US race, " +
+      "Brazilian cor ou raça, UK ethnic group, Australian ancestry and " +
+      "Chinese minzu have different answer sets. Categories are comparable " +
+      "within a country and often not across a border.",
+    depth:
+      "Broad families use the top of each tree — Christianity, Islam, " +
+      "Indo-European languages — which means the same distinction in every " +
+      "country. As reported splits them as far as each source does, so " +
+      "Catholic, Protestant and Orthodox separate wherever a census counted " +
+      "them and stay together where it did not.",
+    group:
+      "Picking a family counts every group inside it, so Christianity finds " +
+      "the censuses that only ever say Roman Catholic. Open a family to pick " +
+      "one of its parts instead. Blank on the map means the figure is " +
+      "missing at that level, never that the share is zero.",
+  };
+
+  let infoOpen = null;
+
+  function closeInfo() {
+    if (!infoOpen) return;
+    infoOpen.button.setAttribute("aria-expanded", "false");
+    infoOpen.bubble.remove();
+    infoOpen = null;
+  }
+
+  function openInfo(button, pinned) {
+    // Either a key into the table above, for the fixed controls, or the text
+    // itself, for the notes the sidebar builds per record.
+    const text = button.dataset.infoText || INFO[button.dataset.info];
+    if (!text) return;
+    if (infoOpen && infoOpen.button === button) {
+      if (pinned) infoOpen.pinned = true;
+      return;
+    }
+    closeInfo();
+    const bubble = document.createElement("div");
+    bubble.className = "info-bubble";
+    bubble.setAttribute("role", "note");
+    bubble.textContent = text;
+    document.body.appendChild(bubble);
+    const box = button.getBoundingClientRect();
+    // Placed below the button and nudged back inside the viewport rather than
+    // anchored to the panel: at phone width the panel is narrower than the
+    // bubble needs to be.
+    bubble.style.top = `${Math.round(box.bottom + 6)}px`;
+    const width = bubble.getBoundingClientRect().width;
+    const left = Math.min(Math.max(8, box.left - 8),
+                          window.innerWidth - width - 8);
+    bubble.style.left = `${Math.round(left)}px`;
+    button.setAttribute("aria-expanded", "true");
+    infoOpen = { button, bubble, pinned: Boolean(pinned) };
+  }
+
+  /* Delegated rather than bound per button, because most of these buttons do
+   * not exist yet: the sidebar rebuilds its panels on every selection, and a
+   * listener attached at startup would only ever cover the filter panel. */
+  function wireInfo() {
+    const at = (event) => event.target.closest("[data-info], [data-info-text]");
+    document.addEventListener("mouseover", (event) => {
+      const button = at(event);
+      if (button) openInfo(button, false);
+      else if (infoOpen && !infoOpen.pinned) closeInfo();
+    });
+    document.addEventListener("focusin", (event) => {
+      const button = at(event);
+      if (button) openInfo(button, false);
+      else if (infoOpen && !infoOpen.pinned) closeInfo();
+    });
+    document.addEventListener("click", (event) => {
+      const button = at(event);
+      if (!button) return;
+      event.preventDefault();
+      if (infoOpen && infoOpen.button === button && infoOpen.pinned) closeInfo();
+      else openInfo(button, true);
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeInfo();
+    });
+    document.addEventListener("click", (event) => {
+      if (infoOpen && !event.target.closest("[data-info]")) closeInfo();
+    });
+    window.addEventListener("scroll", closeInfo, true);
+  }
+
   /* ------------------------------------------------------ choice controls */
 
   /* The four choice lists share one keyboard contract: a single tab stop,
@@ -205,6 +316,21 @@
            `</button>`;
   }
 
+  /* How finely the most-populous-group map reads a composition.
+   *
+   * Two settings rather than a slider down the tree, because the tree is only
+   * two or three deep and the two ends are the two questions people ask.
+   * Families is the comparable one: Christianity against Islam against
+   * Hinduism, the same distinction in every country. As reported is the
+   * interesting one: it splits Catholic from Protestant from Orthodox
+   * wherever a census bothered to, which is what makes Europe look like
+   * itself rather than like one blue sheet.
+   */
+  const DEPTHS = [
+    ["family", "Broad families"],
+    ["group", "As reported"],
+  ];
+
   const DETAIL_LEVELS = [
     ["auto", "Follow zoom", "Countries, then first-level, then second-level as you zoom in."],
     ["0", "Countries", "One shade per country at every zoom."],
@@ -242,6 +368,18 @@
     });
     markChoice(els.fieldOptions, state.field);
 
+    els.depthOptions.innerHTML = DEPTHS
+      .map(([value, label]) => `<button type="button" role="radio" class="seg" data-value="${esc(value)}"
+                               aria-checked="false" tabindex="-1">${esc(label)}</button>`)
+      .join("");
+    wireChoice(els.depthOptions, (value) => {
+      state.depth = value;
+      markChoice(els.depthOptions, value);
+      renderSummary();
+      refreshColors();
+    });
+    markChoice(els.depthOptions, state.depth);
+
     els.detailOptions.innerHTML = DETAIL_LEVELS
       .map(([value, label, hint]) => optionHTML("radio", "opt", value, label, hint)).join("");
     wireChoice(els.detailOptions, (value) => {
@@ -263,6 +401,22 @@
       event.preventDefault();
       first.focus();
     });
+
+    // Opening a branch is not choosing it, so the twist is handled before the
+    // choice wiring gets a look at the click.
+    els.groupList.addEventListener("click", (event) => {
+      const twist = event.target.closest("[data-branch]");
+      if (!twist || !els.groupList.contains(twist)) return;
+      event.stopPropagation();
+      const open = state.openBranches[state.field] || (state.openBranches[state.field] = {});
+      open[twist.dataset.branch] = !open[twist.dataset.branch];
+      renderGroupList();
+      // Keep the keyboard where it was: the row is redrawn, so the old node
+      // is gone and focus would otherwise fall back to the document.
+      const again = els.groupList.querySelector(
+        `[data-branch="${CSS.escape(twist.dataset.branch)}"]`);
+      if (again) again.focus();
+    }, true);
 
     wireChoice(els.groupList, (value) => {
       state.group = value || null;
@@ -292,6 +446,7 @@
       els.filtersToggle.focus();
     });
 
+    wireInfo();
     setPanel(panelDefault());
     syncSections();
   }
@@ -306,6 +461,7 @@
   function syncSections() {
     const metric = window.Metrics.METRICS[state.metric];
     els.fieldSection.hidden = !metric.needsField;
+    els.depthSection.hidden = !metric.needsDepth;
     els.groupSection.hidden = !metric.needsGroup;
     if (metric.needsGroup) {
       renderGroupList();
@@ -345,49 +501,106 @@
    * the same question over India offered "Muslim"; neither said the other
    * existed. The index is built over every record, so one entry stands for
    * both and the map answers for every country that reports it.
+   *
+   * It is a tree rather than a list because the flat version could not ask the
+   * question a reader actually has. Ethnicity alone carried 1,808 entries in
+   * one scroll, and the traditions inside Christianity -- 6,144 records saying
+   * "Roman Catholic" -- were not in it at all, having been folded out of sight
+   * into their family. Now the families are the top level and open to show
+   * what is inside them, and picking either level works: a parent shades every
+   * unit that reports any of its children.
    */
-  function sortedGroups() {
-    const entry = state.groupIndex && state.groupIndex[state.field];
-    const all = (entry && entry.groups) || [];
-    const query = state.groupQuery.toLowerCase();
-    // Matched against the labels a census actually used as well as the
-    // canonical name, so typing "Muslim" finds Islam rather than nothing.
-    const matched = query
-      ? all.filter((g) => [g.name, ...(g.labels || [])].join(" ").toLowerCase().includes(query))
-      : all.slice();
-    /* Reach first, and residuals last whatever their reach.
-     *
-     * The index is ordered by unit count, which is the wrong first answer for
-     * a worldwide filter: "Unaffiliated or not reported" is 3,130 US counties
-     * in one country, and it outranked Islam's 124 countries. How many
-     * countries report a group is what makes it comparable across a border, so
-     * that is the sort.
-     */
-    matched.sort((a, b) =>
-      ((a.residual ? 1 : 0) - (b.residual ? 1 : 0)) ||
-      (b.countries.length - a.countries.length) ||
-      (b.units - a.units) ||
-      a.name.localeCompare(b.name));
-    return matched;
+  function groupsOf(field) {
+    const entry = state.groupIndex && state.groupIndex[field];
+    return (entry && entry.groups) || [];
   }
 
-  function groupOptionHTML(group) {
+  function groupByName(field, name) {
+    return groupsOf(field).find((g) => g.name === name) || null;
+  }
+
+  /* Reach first, and residuals last whatever their reach.
+   *
+   * The index is ordered by unit count, which is the wrong first answer for
+   * a worldwide filter: "Unaffiliated or not reported" is 3,130 US counties
+   * in one country, and it outranked Islam's 124 countries. How many
+   * countries report a group is what makes it comparable across a border, so
+   * that is the sort.
+   */
+  function byReach(a, b) {
+    return ((a.residual ? 1 : 0) - (b.residual ? 1 : 0)) ||
+           (b.countries.length - a.countries.length) ||
+           (b.units - a.units) ||
+           a.name.localeCompare(b.name);
+  }
+
+  function matchesQuery(group, query) {
+    return [group.name, ...(group.labels || [])].join(" ").toLowerCase()
+      .includes(query);
+  }
+
+  /* The rows to draw, in order, each with its depth.
+   *
+   * With no search this is the tree: every top-level family, and the children
+   * of whichever branches are open. With a search it is a flat list of hits,
+   * each carrying the family it belongs to so "Catholicism" does not arrive
+   * unexplained -- typing "catholic" should show where the answer sits, not
+   * just that it exists.
+   */
+  function visibleRows() {
+    const all = groupsOf(state.field);
+    const query = state.groupQuery.toLowerCase();
+    if (query) {
+      return all.filter((g) => matchesQuery(g, query)).sort(byReach)
+                .slice(0, GROUP_LIMIT)
+                .map((g) => ({ group: g, depth: 0, flat: true }));
+    }
+    const open = state.openBranches[state.field] || {};
+    const rows = [];
+    const walk = (parents, depth) => {
+      for (const group of parents.sort(byReach)) {
+        rows.push({ group, depth });
+        const kids = (group.children || [])
+          .map((name) => groupByName(state.field, name))
+          .filter(Boolean);
+        if (kids.length && open[group.name]) walk(kids, depth + 1);
+      }
+    };
+    walk(all.filter((g) => !g.parent), 0);
+    return rows.slice(0, GROUP_LIMIT);
+  }
+
+  function groupRowHTML(row) {
+    const group = row.group;
     const countries = group.countries.length;
     const areas = `${number(group.units)} area${group.units === 1 ? "" : "s"}`;
     const reach = countries === 1 ? `1 country · ${areas}`
                                   : `${number(countries)} countries · ${areas}`;
-    // The source labels folded into this one entry, so the reader can see that
-    // choosing "Christianity" also answers for the census that said "Catholic".
-    const labels = group.labels || [];
-    const folded = labels.length > 1
-      ? `<span class="g-labels">${esc(labels.slice(0, 4).join(", "))}` +
-        (labels.length > 4 ? ` +${labels.length - 4} more` : "") + `</span>`
-      : "";
-    return `<button type="button" role="option" class="g-opt" data-value="${esc(group.name)}"
-                    aria-selected="false" tabindex="-1">
-              <span class="g-name">${esc(group.name)}</span>
-              <span class="g-reach">${esc(reach)}</span>${folded}
-            </button>`;
+    const kids = (group.children || []).length;
+    const open = (state.openBranches[state.field] || {})[group.name];
+    // The twist is a button of its own, beside the row rather than inside it:
+    // opening a branch and choosing it are two different intentions, and a
+    // reader who wants Christianity whole must not have to avoid the arrow.
+    const twist = kids && !row.flat
+      ? `<button type="button" class="g-twist" data-branch="${esc(group.name)}"
+                 aria-expanded="${open ? "true" : "false"}"
+                 aria-label="${open ? "Hide" : "Show"} the ${kids} groups inside ${esc(group.name)}"
+                 tabindex="-1">${open ? "▾" : "▸"}</button>`
+      : `<span class="g-twist g-twist-empty" aria-hidden="true"></span>`;
+    // Where a search flattened the tree, the family says what the hit is part
+    // of. A bare "Sunni Islam" in a list of religions is fine; a bare
+    // "Cushitic languages" is not.
+    const family = row.flat && group.parent
+      ? `<span class="g-parent">in ${esc(group.parent)}</span>` : "";
+    const swatch = group.hue
+      ? `<span class="g-swatch" style="background:${esc(group.hue)}" aria-hidden="true"></span>`
+      : `<span class="g-swatch g-swatch-none" aria-hidden="true"></span>`;
+    return `<div class="g-row" style="--g-depth:${row.depth}">${twist}
+      <button type="button" role="treeitem" class="g-opt" data-value="${esc(group.name)}"
+              aria-selected="false" tabindex="-1">
+        ${swatch}<span class="g-name">${esc(group.name)}</span>
+        <span class="g-reach">${esc(reach)}</span>${family}
+      </button></div>`;
   }
 
   const RESIDUAL_HEAD =
@@ -403,20 +616,18 @@
       renderSummary();
       return;
     }
-    const matched = sortedGroups();
-    const shown = matched.slice(0, GROUP_LIMIT);
-    // Whatever is selected stays in the list even when the search excludes it:
+    const rows = visibleRows();
+    // Whatever is selected stays reachable even when the search excludes it:
     // dropping it would colour the map by something the picker denied was
     // selected. It goes at the foot under its own heading rather than at the
     // top -- typing "Muslim" and being shown Christianity first, because that
     // was the last choice, reads as a search that does not work.
     let stray = null;
-    if (state.group && !shown.some((g) => g.name === state.group)) {
-      const entry = state.groupIndex[state.field] || {};
-      stray = (entry.groups || []).find((g) => g.name === state.group) || null;
+    if (state.group && !rows.some((r) => r.group.name === state.group)) {
+      stray = groupByName(state.field, state.group);
     }
 
-    if (!shown.length && !stray) {
+    if (!rows.length && !stray) {
       els.groupList.innerHTML =
         `<p class="group-empty">No ${esc(fieldLabel().toLowerCase())} group matches ` +
         `“${esc(state.groupQuery)}”. Try a census's own word — “Muslim”, “te reo”, “Pardo”.</p>`;
@@ -424,50 +635,46 @@
       renderSummary();
       return;
     }
-    // A search that matches nothing still has to show what is on the map.
-    if (!shown.length) {
-      els.groupList.innerHTML = groupOptionHTML(stray);
-      els.groupCount.textContent =
-        `Nothing matches “${state.groupQuery}”. Still on the map: ${state.group}.`;
-      markChoice(els.groupList, state.group);
-      describeReach();
-      renderSummary();
-      return;
-    }
 
     const html = [];
     let residualOpen = false;
-    for (const group of shown) {
-      if (group.residual && !residualOpen) {
+    for (const row of rows) {
+      if (row.group.residual && !row.depth && !residualOpen) {
         residualOpen = true;
         html.push(`<div role="group" aria-label="Residual answers: other, and not stated">` +
                   RESIDUAL_HEAD);
       }
-      html.push(groupOptionHTML(group));
+      html.push(groupRowHTML(row));
     }
     if (residualOpen) html.push("</div>");
     if (stray) {
       html.push(`<div role="group" aria-label="Still on the map">` +
                 `<p class="group-divider"><strong>Still on the map</strong>` +
-                `<span>Outside the search above, and shading the map until you ` +
+                `<span>Outside the list above, and shading the map until you ` +
                 `pick something else.</span></p>` +
-                groupOptionHTML(stray) + `</div>`);
+                groupRowHTML({ group: stray, depth: 0, flat: true }) + `</div>`);
     }
     els.groupList.innerHTML = html.join("");
 
-    els.groupCount.textContent = shown.length < matched.length
-      ? `Showing the ${number(shown.length)} most widely reported of ` +
-        `${number(matched.length)} — search to narrow.`
-      : `${number(matched.length)} group${matched.length === 1 ? "" : "s"}` +
-        (state.groupQuery
-          ? `${matched.length === 1 ? " matches" : " match"} “${state.groupQuery}”.`
-          : ", most widely reported first.");
+    const total = state.groupQuery
+      ? groupsOf(state.field).filter((g) => matchesQuery(g, state.groupQuery.toLowerCase())).length
+      : groupsOf(state.field).length;
+    // Counted as "families that have anything inside them" rather than as
+    // top-level entries: most top-level entries are a single group nobody
+    // else reports, and saying "208 families" of those reads as a promise of
+    // structure that is not there.
+    const branching = groupsOf(state.field).filter((g) => (g.children || []).length).length;
+    els.groupCount.textContent = state.groupQuery
+      ? `${number(rows.length)} of ${number(total)} match “${state.groupQuery}”.`
+      : `${number(total)} groups, widest reach first. ` +
+        `${number(branching)} of them open to show what is inside.`;
 
     // Nothing chosen yet, or the field just changed: take the widest-reported
     // real group rather than leaving the map uncoloured with a full list beside
     // it. Never a residual -- "Other religions" is not an opening answer.
-    if (!stray && (!state.group || !shown.some((g) => g.name === state.group))) {
-      state.group = (shown.find((g) => !g.residual) || shown[0]).name;
+    if (!stray && (!state.group || !rows.some((r) => r.group.name === state.group))) {
+      const first = rows.find((r) => !r.group.residual) || rows[0];
+      state.group = first.group.name;
       state.groupByField[state.field] = state.group;
     }
     markChoice(els.groupList, state.group);
@@ -487,6 +694,10 @@
     const metric = window.Metrics.METRICS[state.metric];
     const chips = [{ text: metric.label }];
     if (metric.needsField) chips.push({ text: fieldLabel() });
+    if (metric.needsDepth) {
+      const depth = DEPTHS.find((d) => d[0] === state.depth);
+      if (depth) chips.push({ text: depth[1] });
+    }
     if (metric.needsGroup && state.group) chips.push({ text: state.group, key: true });
     const pinned = window.WorldMap.getPinnedLevel();
     chips.push({
@@ -628,6 +839,42 @@
     let html;
     if (!legend || legend.type === "empty") {
       html = `<p class="control-note">No values at this level yet.</p>`;
+    } else if (legend.type === "group") {
+      /* A colour per group, in the order they lead the most units, with one
+       * shared ramp underneath explaining the shade.
+       *
+       * Capped at twelve entries and a "+N more" line rather than scrolled:
+       * the tail of a group legend is groups that lead one district each, and
+       * a reader who needs those is reading the map, not the key. Every unit
+       * names its own group on hover, so nothing is unreachable.
+       */
+      const items = legend.items.slice(0, legend.shown);
+      const rest = legend.items.length - items.length;
+      html =
+        `<ul class="legend-groups">` + items.map((item) =>
+          `<li>
+             <span class="legend-swatch" style="background:${window.Palette.group(item.hue, item.peak)}"></span>
+             <span class="legend-group-name">${esc(item.name)}</span>
+             <span class="legend-group-count">${number(item.units)}</span>
+           </li>`).join("") +
+        (rest > 0
+          ? `<li class="legend-more">+${number(rest)} more group${rest === 1 ? "" : "s"} lead somewhere</li>`
+          : "") +
+        `</ul>
+         <div class="legend-shade">
+           <span class="legend-shade-label">Share of the leading group</span>
+           <div class="legend-scale" role="img"
+                aria-label="Paler is a smaller share, darker is a larger one">
+             ${window.Palette.groupRamp("#6b6b6b", 5).map((c) => `<span style="background:${c}"></span>`).join("")}
+           </div>
+           <div class="legend-ends"><span>${legend.floor}% or less</span><span>100%</span></div>
+         </div>` +
+        (legend.missing
+          ? `<div class="legend-item">
+               <span class="legend-swatch" style="background:${legend.missingColor}"></span>
+               <span>No figure for ${number(legend.missing)} unit${legend.missing === 1 ? "" : "s"}</span>
+             </div>`
+          : "");
     } else if (legend.type === "status") {
       html = legend.items.map((item) =>
         `<div class="legend-item">
@@ -659,7 +906,8 @@
     const levelId = window.WorldMap.levelId(level);
     const records = currentRecords();
     const result = window.Metrics.paint(records, state.metric,
-                                        { field: state.field, group: state.group });
+                                        { field: state.field, group: state.group,
+                                          depth: state.depth });
     window.WorldMap.applyColors(levelId, result.colors);
     renderLegend(result.legend);
     updateLevelNote(level, records.length);
@@ -667,10 +915,18 @@
 
   function updateLevelNote(level, count) {
     const names = ["countries", "first-level divisions", "second-level divisions"];
+    els.levelNote.textContent = `${number(count)} ${names[level]} loaded`;
+    // The paragraph explaining how the current view encodes its numbers used
+    // to sit here, under a control it is not about. It belongs to the legend,
+    // and behind the legend's own "i": it is a thing to read once.
     const metric = window.Metrics.METRICS[state.metric];
-    const parts = [number(count) + " " + names[level] + " loaded"];
-    if (metric.note) parts.push(metric.note);
-    els.levelNote.textContent = parts.join(" — ");
+    const dot = document.querySelector('[data-info="legend"]');
+    if (dot) {
+      dot.dataset.infoText = metric.note
+        ? `${metric.note} Colours are resolved from the data each time you ` +
+          `change a control, so the key always describes what is on screen.`
+        : "";
+    }
   }
 
   /* ------------------------------------------------------------ selection */
@@ -731,16 +987,21 @@
     const bits = [];
     if (record) {
       const metric = window.Metrics.METRICS[state.metric];
-      const value = metric.evaluate(record, { field: state.field, group: state.group });
+      const opts = { field: state.field, group: state.group, depth: state.depth };
+      const value = metric.evaluate(record, opts);
       if (metric.kind === "status") {
         const s = window.Palette.status(value);
         const field = window.Metrics.FIELDS.find((f) => f.key === state.field);
         bits.push(s.icon + " " + s.label + " — " + (field ? field.label.toLowerCase() : state.field));
       } else if (Number.isFinite(value)) {
         const shown = metric.display
-          ? metric.display(record, { field: state.field, group: state.group })
+          ? metric.display(record, opts)
           : (metric.format ? metric.format(value) : value);
         bits.push(metric.label + ": " + shown);
+      } else if (metric.kind === "group") {
+        // The group map's value is a name, which is not a finite number, so
+        // it has to be asked for before the "no value" branch claims it.
+        bits.push(metric.display(record, opts));
       } else {
         bits.push(metric.label + ": no value");
       }

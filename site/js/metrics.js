@@ -33,21 +33,91 @@ window.Metrics = (function () {
   // country-local: "Islam" would find Sri Lanka and miss the places that say
   // "Muslim".
   let canonical = {};
+  // field -> canonical name -> its ancestors, nearest first and itself first.
+  // This is what makes one row answer for several questions: a "Roman
+  // Catholic" row is a Catholic row, a Christian row, and nothing else.
+  let lineage = {};
+  let byName = {};
 
   function setGroupIndex(index) {
     canonical = {};
+    lineage = {};
+    byName = {};
     for (const [field, entry] of Object.entries(index || {})) {
       const map = new Map();
+      const index2 = new Map();
       for (const group of entry.groups || []) {
+        index2.set(group.name, group);
         for (const label of group.labels || []) map.set(label, group.name);
       }
       canonical[field] = map;
+      byName[field] = index2;
+      const trail = new Map();
+      for (const group of entry.groups || []) {
+        const seen = [];
+        let at = group;
+        // Guarded against a cycle in the shipped file rather than trusted:
+        // a parent loop would otherwise hang the first paint.
+        while (at && seen.indexOf(at.name) < 0) {
+          seen.push(at.name);
+          at = at.parent ? index2.get(at.parent) : null;
+        }
+        trail.set(group.name, seen);
+      }
+      lineage[field] = trail;
     }
   }
 
   function canonicalName(field, label) {
     const map = canonical[field];
     return (map && map.get(label)) || label;
+  }
+
+  /** A canonical name and every group it counts into, itself first. */
+  function ancestry(field, name) {
+    const trail = lineage[field];
+    return (trail && trail.get(name)) || [name];
+  }
+
+  /** The top of a name's tree: what it is on a map of broad families. */
+  function familyOf(field, name) {
+    const trail = ancestry(field, name);
+    return trail[trail.length - 1];
+  }
+
+  function groupEntry(field, name) {
+    const map = byName[field];
+    return (map && map.get(name)) || null;
+  }
+
+  /** The colour a group carries wherever it is largest. */
+  function hueOf(field, name) {
+    for (const step of ancestry(field, name)) {
+      const entry = groupEntry(field, step);
+      if (entry && entry.hue) return entry.hue;
+    }
+    return null;
+  }
+
+  /* One record's rows added into canonical groups, at a chosen depth.
+   *
+   * `level` is "family" for the top of each tree -- Christianity, Islam,
+   * Indo-European languages -- and "group" for the finest canonical name a
+   * source wrote, which is Catholicism where a census said Catholic and
+   * Christianity where it said Christian. Nothing is counted twice either
+   * way: each row lands in exactly one bucket.
+   */
+  function tally(record, field, level) {
+    const value = record[field];
+    const out = new Map();
+    if (!Array.isArray(value)) return out;
+    for (const row of value) {
+      if (typeof row.pct !== "number") continue;
+      const name = canonicalName(field, row.group);
+      const key = level === "family" ? familyOf(field, name) : name;
+      out.set(key, (out.get(key) || 0) + row.pct);
+    }
+    return out;
   }
 
   function shareOf(record, field, group) {
@@ -67,7 +137,11 @@ window.Metrics = (function () {
     const matched = [];
     for (const row of value) {
       if (typeof row.pct !== "number") continue;
-      if (canonicalName(field, row.group) !== group) continue;
+      // Counted through the tree, not by name: asking for Christianity over
+      // Poland has to find the "Roman Catholic" rows that never say the word,
+      // and asking for Catholicism must not also collect the Protestants
+      // beside them.
+      if (ancestry(field, canonicalName(field, row.group)).indexOf(group) < 0) continue;
       total = (total || 0) + row.pct;
       approximate = approximate || Boolean(row.bound || row.range);
       matched.push(row);
@@ -102,14 +176,63 @@ window.Metrics = (function () {
     return `${detail.approximate ? "about " : ""}${window.Fmt.pct(detail.value)}`;
   }
 
-  function dominant(record, field) {
-    const value = record[field];
-    if (!Array.isArray(value) || !value.length) return null;
-    const best = value.reduce((a, b) => ((b.pct || 0) > (a.pct || 0) ? b : a));
-    return best.group || null;
+  /* The largest group in one unit, at the chosen depth of the tree.
+   *
+   * Residuals are skipped where anything else is available. "Not stated" leads
+   * 1,803 US counties on the religion question, and a map that paints them all
+   * one colour for it answers "which religion is largest here" with "we did not
+   * ask" -- true, and not the question. The residual still wins where it is the
+   * only thing a unit reports, because then it is the whole answer; the readout
+   * says so either way.
+   */
+  function dominant(record, field, level) {
+    const totals = tally(record, field, level || "family");
+    if (!totals.size) return null;
+    let best = null;
+    let bestResidual = null;
+    for (const [name, pct] of totals) {
+      const entry = groupEntry(field, name);
+      const slot = entry && entry.residual ? "bestResidual" : "best";
+      const held = slot === "best" ? best : bestResidual;
+      if (!held || pct > held.pct) {
+        const found = { group: name, pct, residual: Boolean(entry && entry.residual) };
+        if (slot === "best") best = found; else bestResidual = found;
+      }
+    }
+    return best || bestResidual;
   }
 
   const METRICS = {
+    /* The map the reference atlases draw: hue for which group leads, shade
+     * for by how much.
+     *
+     * It is the one view that answers the question at a glance for the whole
+     * world rather than one group at a time, and it is the one that most
+     * needs to say out loud what it is doing. Two units of the same colour
+     * are not necessarily comparable: the categories are each country's own,
+     * and a plurality of 28% and a majority of 96% are both "largest".
+     */
+    group: {
+      label: "Most populous group",
+      kind: "group",
+      needsField: true,
+      needsDepth: true,
+      hint: "One colour per group, darker where its share is larger.",
+      blank: "Grey areas publish no composition for this field at this level.",
+      note: "Each unit takes the colour of its largest group and the shade of " +
+            "that group's share, from 25% up. Categories are each country's own, " +
+            "so a border can be a change of question rather than of population.",
+      evaluate(record, opts) {
+        const top = dominant(record, opts.field, opts.depth);
+        return top ? top.group : null;
+      },
+      display(record, opts) {
+        const top = dominant(record, opts.field, opts.depth);
+        if (!top) return "—";
+        return `${top.group} ${window.Fmt.pct(top.pct)}` +
+               (top.residual ? " (no group named)" : "");
+      },
+    },
     coverage: {
       label: "Data coverage",
       kind: "status",
@@ -143,12 +266,12 @@ window.Metrics = (function () {
       format: (n) => `${Math.round(n * 10) / 10} yrs`,
     },
     largest_share: {
-      label: "Share of the largest group",
+      label: "How concentrated",
       kind: "sequential",
       scale: "linear",
       needsField: true,
       domain: [0, 100],
-      hint: "How concentrated the composition is — the share held by the single largest group.",
+      hint: "The share held by the single largest group, whichever it is.",
       blank: "Grey areas publish no composition for this field at this level.",
       note: "How concentrated the chosen composition is: the percentage held by the " +
             "single largest group. High values mean one group dominates.",
@@ -179,10 +302,14 @@ window.Metrics = (function () {
     },
   };
 
+  // Short enough to sit in a three-way control without truncating. The longer
+  // "Ethnicity / race" was ellipsed to "Ethnicity / ra…", which is worse than
+  // the shorter word: the caveat about race and ethnicity being different
+  // questions belongs in the topic note, where there is room to say it.
   const FIELDS = [
     { key: "religion", label: "Religion" },
     { key: "language", label: "Language" },
-    { key: "ethnicity", label: "Ethnicity / race" },
+    { key: "ethnicity", label: "Ethnicity" },
   ];
 
   /** Compute colours for a set of records under one metric. */
@@ -197,6 +324,41 @@ window.Metrics = (function () {
         out.set(record.id, Palette.status(state).color);
       }
       return { colors: out, legend: statusLegend(), metric };
+    }
+
+    if (metric.kind === "group") {
+      // Tallied while colouring so the legend can be ordered by how much of
+      // the map each group actually leads. A legend in alphabetical order,
+      // or in the index's order, buries the four colours that cover half the
+      // world under thirty that cover a district each.
+      const led = new Map();
+      let missing = 0;
+      for (const record of records) {
+        const top = dominant(record, opts.field, opts.depth);
+        if (!top) { out.set(record.id, Palette.neutral()); missing += 1; continue; }
+        const hue = hueOf(opts.field, top.group);
+        out.set(record.id, Palette.group(hue, top.pct));
+        const seen = led.get(top.group) ||
+          { name: top.group, hue, units: 0, residual: top.residual, peak: 0 };
+        seen.units += 1;
+        seen.peak = Math.max(seen.peak, top.pct);
+        led.set(top.group, seen);
+      }
+      const items = Array.from(led.values())
+        .sort((a, b) => b.units - a.units || a.name.localeCompare(b.name));
+      return {
+        colors: out,
+        legend: {
+          type: "group",
+          items,
+          shown: Math.min(items.length, 12),
+          missing,
+          missingColor: Palette.neutral(),
+          floor: Palette.SHARE_FLOOR,
+          note: metric.note,
+        },
+        metric,
+      };
     }
 
     const values = [];
@@ -264,6 +426,6 @@ window.Metrics = (function () {
   }
 
   return { METRICS, FIELDS, paint, topGroups, dominant, largestShare, shareOf,
-           shareDetail, largestShareDetail,
-           setGroupIndex, canonicalName };
+           shareDetail, largestShareDetail, tally,
+           setGroupIndex, canonicalName, ancestry, familyOf, hueOf, groupEntry };
 })();

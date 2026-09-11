@@ -198,7 +198,7 @@ copy-paste.
 
 ### Colour
 
-Three palettes, one job each, following the project's data-viz tokens in
+Four palettes, one job each, following the project's data-viz tokens in
 `site/js/palette.js`:
 
 - **Sequential** (one blue hue, light→dark) for every numeric choropleth.
@@ -206,13 +206,42 @@ Three palettes, one job each, following the project's data-viz tokens in
   not-collected — so a gap never rests on hue alone.
 - **Categorical** (eight fixed slots, never cycled) only in the sidebar composition
   charts, where every segment also carries a text label and a percentage.
+- **Group** (hue for identity, lightness for magnitude) for the most-populous-group
+  map. A group's hue comes from its place in the tree below, so Islam is one green
+  everywhere and Catholicism and Protestantism are two traditions of one religion
+  rather than two unrelated colours; the shade carries the leading group's share,
+  from 25% up.
 
-There is deliberately **no "dominant religion" categorical choropleth**.
-Colour-vision-safe separation across all pairs of an eight-hue set is not
-achievable, and a map has no room for the direct labels that make the sidebar
-charts safe. The same question is answered by faceting: pick one group and read
-its share on a single sequential ramp ("Share of one group" in the filter
-panel's **Colour by** list).
+The group map was ruled out here once, on the grounds that colour-vision-safe
+separation across an eight-hue set is not achievable and a map has no room for
+the direct labels that make the sidebar charts safe. Both halves are now
+answered rather than waived. Hues come from the group tree, which keeps the
+count at the top of each field in single figures and makes the confusable pairs
+relatives rather than strangers — mistaking Sunni for Shia costs a reader far
+less than mistaking Islam for Buddhism. And the map does have room for a label:
+every unit names its group and share on hover, the legend names each colour in
+the order it leads the most units, and the panel names it again on selection.
+
+### Groups are a tree
+
+`scripts/canonical_groups.py` says which source labels mean the same thing and
+which of those sit inside which. `Roman Catholic` is its own group under
+`Christianity`; `Mandarin` sits under `Chinese` under `Sino-Tibetan languages`.
+Three things follow:
+
+- **Either level can be asked for.** Picking Christianity over Poland counts the
+  `Roman Catholic` rows that never say the word; picking Catholicism counts only
+  those. Rolling up is sound because no source publishes a level beside its own
+  parent, and `check_no_double_counting` stops the build if one starts to.
+- **A family label beside a tradition sums rather than doubles.** Afrobarometer
+  offers "Christian only" to a respondent who names no denomination, so Tanzania's
+  Mbeya carries Christian 39.4 beside Roman Catholic 29.1; both are answers one
+  person gave once. Of 1,824 shipped records shaped like that, none is a total row
+  restated.
+- **The picker is a tree.** Families first, widest reach first, open to show what
+  is inside. `site/data/groups.json` carries each group's parent, children, colour,
+  and reach counted both for the group alone and for its whole subtree — the
+  picker shows the second, because that is what picking it shades.
 
 ---
 
