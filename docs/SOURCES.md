@@ -897,7 +897,7 @@ When Jagtial, Peddapalli and Rajanna Sircilla were carved out of Karimnagar in
 2016, three new shapes appeared on the map with no figures and an explicit
 reason. The fourth shape kept the name Karimnagar, kept the 2011 census row,
 and lost three quarters of its ground: 2,132 km² of the 9,103 km² the census
-measured. It went on showing 3,776,269 people, 85.6% Hindu, sourced and dated,
+measured. It went on showing 3,776,269 people, 92.4% Hindu, sourced and dated,
 on a district that holds about a quarter of them. The blanks beside it were
 honest about what was not known. The number was not, and nothing on the panel
 said so.
@@ -1097,6 +1097,14 @@ are enumerated apart from the census proper and their Table 9 is not published
 at either path the office uses. They are named in the run's log as absent
 territories rather than as failed fetches, and the four provinces -- 238 of
 Pakistan's 241 million people -- are required before anything is written.
+
+> **This paragraph was one third wrong and stayed wrong for two rounds.**
+> Islamabad's Table 9 is published, at `table_9_islamabad.pdf`, and was being
+> asked for under a name the office does not use. It now reads, and so does
+> the 2023 mother-tongue table this section's last paragraph leaves open. Azad
+> Jammu and Kashmir's religion comes from its own government's yearbook.
+> Gilgit-Baltistan is the only one of the three still empty. See *Pakistan's
+> last three divisions* below, which measures all of it.
 
 **Joining, and three different kinds of miss.** Of 126 units, 114 join and
 carry 96.7% of the people.
@@ -3514,9 +3522,9 @@ Aires Province, come out inside the Autonomous City. A rule that refused every
 parent disagreement would have deleted all of them.
 
 **Yanam is under Andhra Pradesh, and it is the boundary file saying so.** The
-map lists Yanam as a district of Andhra Pradesh. It is not one: it is a 30 km²
-enclave of Puducherry, 600 km from the rest of that union territory, entirely
-surrounded by East Godavari district. The census adapter has it right — its row
+map lists Yanam as a district of Andhra Pradesh. It is not one: it is an enclave of
+Puducherry, 600 km from the rest of that union territory, entirely surrounded
+by East Godavari district. The census adapter has it right — its row
 says Puducherry, and Puducherry's state total of 1,247,953 includes Yanam's
 55,626 people. The parent on the map comes from the shapes, and CGAZ's shapes
 disagree with each other about this one. Its ADM1 polygon for Andhra Pradesh is

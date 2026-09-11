@@ -93,16 +93,20 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
     "DEU": {
         "ethnicity": "Germany does not collect ethnicity. The census records citizenship and migration background; religion comes from church-tax registration, not fine-grained self-ID.",
     },
+    # Measured against e-Stat's catalogue rather than against the census
+    # questionnaire alone -- see docs/SOURCES.md. The catalogue is the reason
+    # each of these three is a declaration and not a gap: the API was asked, it
+    # answered, and what it holds is not a composition.
     "JPN": {
-        "ethnicity": "Japan's census collects nationality, not ethnicity.",
-        "religion": "Japan's census does not ask religion; published figures are religious-body self-reports that exceed the population.",
+        "ethnicity": "Japan's census collects nationality, not ethnicity. The eight tables in e-Stat carrying the word for ethnic group are museum holdings and prison nationality counts.",
+        "religion": "Japan's census does not ask religion. The one official religion statistic counts adherents as religious bodies report them -- 175.1 million against 123.8 million people, and from 0.5 to 3.2 times a prefecture's population depending on where the corporations are registered.",
         # The third field, added for the same reason as the other two: the
         # Kokusei Chosa asks name, sex, date of birth, marital status,
         # nationality, household relationship, dwelling, employment, industry,
         # occupation and commuting. There is no language question, so the 47
         # prefectures' empty language field was reading as "not fetched yet"
         # when it is "never asked".
-        "language": "Japan's census does not ask language; it records nationality instead.",
+        "language": "Japan's census does not ask language; it records nationality instead. The only mother-tongue tables e-Stat holds count schoolchildren who need help with Japanese.",
     },
     "IND": {
         "ethnicity": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead.",
