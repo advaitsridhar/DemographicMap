@@ -1,6 +1,5 @@
-ireland: religion from SAP2022T2T4LEA22
-  166 areas, 4 categories
-ireland: ethnicity from SAP2022T2T2LEA22
-  166 areas, 7 categories
-  166 local electoral areas; names shared by more than one area: ['Athlone']
-  wrote data/processed/ireland_lea.json (499 kB)
+malaysia: ethnicity by state and district, OpenDOSM
+  states: 16 at 2026-01-01
+  wrote data/processed/malaysia_state.json (31 kB)
+  districts: 160 at 2025-01-01
+  wrote data/processed/malaysia_district.json (312 kB)
