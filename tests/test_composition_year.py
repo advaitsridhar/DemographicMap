@@ -55,13 +55,11 @@ UNDATED_BY_DESIGN = {
 # that is NOT listed here must be dated -- that is what keeps a new adapter
 # from shipping undated and quietly joining the backlog.
 AWAITING_AN_ADAPTER_RUN = {
-    "admin0.json",                  # fetch_factbook
-    "australia_lga.json", "australia_state.json",
-    "brazil_municipality.json", "brazil_state.json",
-    "cambodia_province.json",       # wiki_census
-    "kazakhstan_region.json",       # wiki_census
-    "uk_county.json", "uk_lad.json",
-    "us_county.json", "us_state.json",
+    "admin0.json",                                  # fetch_factbook
+    "australia_lga.json", "australia_state.json",   # abs
+    "brazil_municipality.json", "brazil_state.json",  # ibge_sidra
+    "uk_county.json",                               # uk_nomis --level county
+    "us_county.json", "us_state.json",              # us_acs
 }
 
 
