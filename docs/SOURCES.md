@@ -2370,6 +2370,45 @@ gap until one exists -- 284 million people uncoloured, with the reason written
 down, rather than a figure assembled from somewhere it should not have come
 from.
 
+Re-confirmed on 11 September 2026 against a *regency* site rather than a
+provincial one: `metrokota.bps.go.id` answers **HTTP 403** to the runner
+exactly as the provincial hosts do, so the block is the estate's and not one
+tier of it. Two further probes that day were wasted and are recorded so the
+next reader does not repeat them: `data.humdata.org`'s search page is rendered
+in the browser, and its CKAN API returns JSON, so `probe_links` -- which
+extracts links from HTML -- reports "0 matching links" for both and that is a
+fact about the tool, not about HDX. The HDX bullet above already stood on a
+real check.
+
+**What the owner's manual downloads showed.** Five BPS CSVs were supplied on
+the same day, and they resolve two questions.
+
+* *Jumlah Penduduk Menurut Kecamatan dan Agama yang dianut, 2025* is the right
+  table in the right shape -- counts, six religions, at **sub-district** level,
+  finer than the kabupaten this section is waiting for. The copy supplied
+  covers one kota: Metro, in Lampung, five kecamatan and 173,746 people against
+  ~7,200 kecamatan and 284 million. It confirms the table is published per
+  regency and is reachable by a person in a browser; it does not make the
+  estate reachable by a reader.
+* The four language tables are **not** usable, and the reason is about the
+  question rather than the coverage. *Bahasa yang Pertama Kali Dikuasai* is a
+  clean three-way partition of all 38 provinces summing to 100.00, but its
+  categories are Bahasa Indonesia / Bahasa Daerah / Bahasa Asing -- a *kind* of
+  language, not a language. Knowing that Central Java is 92.84% "a regional
+  language" is not knowing it is Javanese, and this map's language field holds
+  named groups. *Kemampuan Berbahasa Indonesia* measures a skill rather than a
+  composition; *Penggunaan Bahasa Daerah* by age has no geography; the same by
+  province is a binary use/do-not-use, a different question again. The owner
+  decided on 11 September 2026 to leave Indonesia's language field an explicit
+  gap rather than fill it with a composition of language types.
+
+**The route that would work.** BPS publishes the religion table per province,
+one table covering that province's kabupaten, and a person in a browser can
+download it -- which is how the Metro file arrived. Thirty-four downloads would
+close a 284-million-person gap at kabupaten level without a key and without
+pretending to be a browser. That is a smaller ask than it looks and it is the
+first thing to try if the WebAPI key does not materialise.
+
 Two of those bullets were mistakes before they were findings, and both are the
 same mistake. `sp2010.bps.go.id` was described in this repository as serving
 the 2010 tables in plain HTML before anyone had checked that it served
