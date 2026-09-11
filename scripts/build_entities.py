@@ -910,6 +910,16 @@ ROLLUP_DRIFT_CAP = 0.20
 # religion row -- stays refused, and says so with the figure.
 COUNTRY_MIN_COVERAGE = 0.98
 
+# How much of a summed figure's population must share one year before that
+# year is stamped on it. The same 98%, for the same reason: a date is a claim
+# about the whole record, so it is allowed only when nearly the whole record
+# supports it. Pakistan is the case -- four provinces and Islamabad from the
+# 2023 census and Azad Kashmir from 2017, which is 1.65% of the people -- and
+# leaving that undated served nobody: the figure is a 2023 one with a stated
+# exception, and a blank where the year goes reads as an omission. A country
+# genuinely split between two censuses stays undated, and the note lists them.
+YEAR_MAJORITY = 0.98
+
 
 def published(value: Any) -> float | None:
     """A measured number, or None for a gap marker or anything else."""
@@ -989,6 +999,28 @@ def implied_total(groups: list[dict[str, Any]]) -> float | None:
         if best is None or count > best[0]:
             best = (count, count / (pct / 100.0))
     return best[1] if best else None
+
+
+def year_weights(children: list[dict[str, Any]], field: str
+                 ) -> tuple[dict[int, float], float]:
+    """Population behind each year the children stamp, and the total behind all.
+
+    Weighted by people rather than by counting divisions, because a date
+    describes the figure and the figure is a sum of people: one small division
+    on an older census should not take the date off a national count, and one
+    large one should not keep it.
+    """
+    weight: dict[int, float] = {}
+    total = 0.0
+    for child in children:
+        if not isinstance(child.get(field), list):
+            continue
+        pop = published(child.get("population")) or 0.0
+        total += pop
+        year = child.get(f"{field}_year")
+        if isinstance(year, int):
+            weight[year] = weight.get(year, 0.0) + pop
+    return weight, total
 
 
 def covered_share(children: list[dict[str, Any]], field: str) -> float | None:
@@ -1170,6 +1202,17 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # undated -- but a blank where a year belongs reads as an omission rather
     # than as the mixture it is.
     years = {c.get(f"{field}_year") for c in children} - {None}
+    weight, weighed = year_weights(children, field)
+    # The year nearly everyone in this sum was counted in, where there is one.
+    dated = None
+    if len(years) > 1 and weighed > 0:
+        best = max(weight, key=lambda y: weight[y])
+        if weight[best] / weighed >= YEAR_MAJORITY:
+            dated = best
+    aside = sorted((y, n) for y, n in (
+        (c.get(f"{field}_year"), c.get("name", c.get("id", "?")))
+        for c in children if isinstance(c.get(field), list))
+        if y is not None and y != dated)
 
     counts: dict[str, float] = {}
     denominator = 0.0
@@ -1261,7 +1304,10 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
            ", so their counts are those shares taken of their own published "
            "populations." if derived else "")
         + disagrees + displaced + left_out
-        + (f" The divisions do not all report the same year"
+        + (f" Dated {dated} because that is when all but"
+           f" {', '.join(f'{n} ({y})' for y, n in aside)} were counted."
+           if dated is not None else
+           f" The divisions do not all report the same year"
            f" ({', '.join(str(y) for y in sorted(years))}),"
            f" so this figure carries no single date."
            if len(years) > 1 else
@@ -1282,6 +1328,8 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # figure was summed from. The alternative is a date that looks checked.
     if len(years) == 1:
         parent[f"{field}_year"] = years.pop()
+    elif len(years) > 1 and dated is not None:
+        parent[f"{field}_year"] = dated
     else:
         parent.pop(f"{field}_year", None)
 

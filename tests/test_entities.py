@@ -1330,14 +1330,35 @@ class TheYearBelongsToTheFigure(unittest.TestCase):
         got = self.roll(self.parent(2021), self.kids(2000))
         self.assertEqual(got["religion_year"], 2000)
 
-    def test_an_undated_sum_says_why_on_the_record(self):
-        # A blank where a year belongs reads as an omission. Pakistan is the
-        # case: four provinces and Islamabad from the 2023 census, Azad Kashmir
-        # from 2017, so the sum is genuinely undated rather than unfinished.
+    def test_a_lone_old_division_does_not_take_the_date_off_the_rest(self):
+        # Pakistan: four provinces and Islamabad from the 2023 census, Azad
+        # Kashmir from 2017 and 1.65% of the people. The figure is a 2023 one
+        # with a stated exception, and a blank where the year goes reads as an
+        # omission rather than as the mixture it is.
+        kids = [self.child("North", 990, {"Alpha": 800, "Beta": 190}, 2023),
+                self.child("South", 10, {"Alpha": 8, "Beta": 2}, 2017)]
+        got = self.roll(self.parent(2021), kids)
+        self.assertEqual(2023, got["religion_year"])
+        self.assertIn("Dated 2023 because that is when all but South (2017) "
+                      "were counted.", got["religion_note"])
+
+    def test_a_country_split_between_two_censuses_stays_undated(self):
+        # Half and half is not "2023 with an exception", and stamping the
+        # larger half would be a date that looks checked.
         kids = [self.child("North", 600, {"Alpha": 500, "Beta": 100}, 2023),
                 self.child("South", 400, {"Alpha": 300, "Beta": 100}, 2017)]
-        note = self.roll(self.parent(2021), kids)["religion_note"]
-        self.assertIn("do not all report the same year (2017, 2023)", note)
+        got = self.roll(self.parent(2021), kids)
+        self.assertIsNone(got.get("religion_year"))
+        self.assertIn("do not all report the same year (2017, 2023)",
+                      got["religion_note"])
+
+    def test_the_weight_is_people_not_divisions(self):
+        # One large division on an older census should take the date off the
+        # sum; two tiny ones should not keep it.
+        kids = [self.child("North", 600, {"Alpha": 500, "Beta": 100}, 2017),
+                self.child("A", 200, {"Alpha": 150, "Beta": 50}, 2023),
+                self.child("B", 200, {"Alpha": 150, "Beta": 50}, 2023)]
+        self.assertIsNone(self.roll(self.parent(2021), kids).get("religion_year"))
 
     def test_children_with_no_year_at_all_say_that_instead(self):
         note = self.roll(self.parent(2021), self.kids())["religion_note"]
