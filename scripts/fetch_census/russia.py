@@ -525,6 +525,7 @@ def main() -> int:
                 continue
             values[field] = englished(
                 field, shares(got["counts"], total=got["published"] or None))
+            values[f"{field}_year"] = YEAR
         records.append(record(
             code, sheet, level="admin1", parent="RUS",
             country="RUS", iso_3166_2=code,

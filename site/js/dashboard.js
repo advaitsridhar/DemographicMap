@@ -389,13 +389,15 @@ window.Dashboard = (function () {
     html.push(compositionPanel("Language", record.language, record.language_note, record.language_year));
     html.push(compositionPanel("Ethnicity", record.ethnicity, record.ethnicity_note, record.ethnicity_year));
     if (record.ancestry) {
-      html.push(compositionPanel("Ancestry", record.ancestry, record.ancestry_note));
+      html.push(compositionPanel("Ancestry", record.ancestry, record.ancestry_note,
+                                 record.ancestry_year));
     }
     if (record.scheduled_groups) {
       // India's constitutional-schedule classification. Shown as its own panel
       // rather than under "Ethnicity", which India does not collect.
       html.push(compositionPanel("Scheduled Caste / Tribe", record.scheduled_groups,
-                                 record.scheduled_groups_note));
+                                 record.scheduled_groups_note,
+                                 record.scheduled_groups_year));
     }
     html.push(hintPanel(record));
     html.push(childrenPanel(record));

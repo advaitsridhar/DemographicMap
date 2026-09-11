@@ -31,7 +31,8 @@ import argparse
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, gap, http_json, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, PROCESSED, dated, gap, http_json, log, measure, record, shares,
+    write_json,
 )
 
 # After ._shared, which is what puts scripts/ on the path.
@@ -41,9 +42,15 @@ SIDRA = "https://apisidra.ibge.gov.br/values"
 LOCALITIES = "https://servicodados.ibge.gov.br/api/v1/localidades/{kind}"
 LEVELS = {"state": ("n3", "estados", "admin1"), "municipality": ("n6", "municipios", "admin2")}
 
+# Every table below is asked for the same census, and the year stamped on the
+# figures is that one -- so it is written once and the periods are read off it,
+# rather than three literals that can drift apart from the stamp.
+YEAR = 2022
 TABLES = {
-    "population": {"table": "9514", "variable": "93", "classification": None, "period": "2022"},
-    "colour_race": {"table": "9605", "variable": "93", "classification": "86", "period": "2022"},
+    "population": {"table": "9514", "variable": "93", "classification": None,
+                   "period": str(YEAR)},
+    "colour_race": {"table": "9605", "variable": "93", "classification": "86",
+                    "period": str(YEAR)},
 }
 # Table 9537 is cross-tabulated by sex (c2) and age group (c58) as well as
 # religion (c133). SIDRA returns the Total category of any classification the
@@ -51,7 +58,7 @@ TABLES = {
 # Variable 140 is the count of persons aged 10 and over. Kept as a list so a
 # second spelling can be tried without restructuring the loop below.
 RELIGION_VARIANTS = [
-    {"table": "9537", "variable": "140", "classification": "133", "period": "2022"},
+    {"table": "9537", "variable": "140", "classification": "133", "period": str(YEAR)},
 ]
 RELIGION_UNIVERSE = ("Religion was asked of persons aged 10 and over (IBGE table 9537); "
                      "shares are of that universe, not of all residents.")
@@ -193,7 +200,7 @@ def main() -> int:
     if not religion:
         log("  religion unavailable from every variant; marking not_available")
 
-    src = "IBGE, Censo Demográfico 2022 (SIDRA)"
+    src = f"IBGE, Censo Demográfico {YEAR} (SIDRA)"
     records: list[dict[str, Any]] = []
     for code, place in places.items():
         name = place.get("nome")
@@ -215,18 +222,22 @@ def main() -> int:
                                         if k != "__total__"})
         gvals = englished("religion", {k: v for k, v in religion.get(code, {}).items()
                                        if k != "__total__"})
+        race_rows, faith_rows = shares(rvals), shares(gvals)
         records.append(record(
             f"BRA-{code}", name, level=level, parent=parent,
             parent_name=parent_name,
             codes={"ibge": code},
-            population=measure(int(total), year=2022, source=src) if total else gap(NOT_AVAILABLE),
-            ethnicity=shares(rvals) or gap(NOT_AVAILABLE),
+            population=measure(int(total), year=YEAR, source=src) if total else gap(NOT_AVAILABLE),
+            ethnicity=race_rows or gap(NOT_AVAILABLE),
+            ethnicity_year=dated(race_rows, YEAR),
             ethnicity_note=("IBGE 'cor ou raça' is self-declared skin colour (branca, preta, "
                             "parda, amarela, indígena) and is not equivalent to ethnicity "
                             "classifications used elsewhere in this dataset. The labels are "
                             "shown in English; 'Pardo' keeps Brazil's own term rather than "
                             "becoming 'Mixed', which is a different question asked elsewhere."),
-            religion=shares(gvals) or gap(NOT_AVAILABLE, "IBGE 2022 religion table not returned for this locality."),
+            religion=faith_rows or gap(
+                NOT_AVAILABLE, f"IBGE {YEAR} religion table not returned for this locality."),
+            religion_year=dated(faith_rows, YEAR),
             religion_note=RELIGION_UNIVERSE if gvals else None,
             sources=[{"field": "population/colour-race/religion", "name": src,
                       "url": f"{SIDRA}/t/{TABLES['colour_race']['table']}",

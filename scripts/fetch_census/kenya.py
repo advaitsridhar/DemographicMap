@@ -43,7 +43,8 @@ import re
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, PROCESSED, dated, gap, http_get, log, measure, record, shares,
+    write_json,
 )
 
 OUT = "kenya_county.json"
@@ -109,12 +110,14 @@ def main() -> int:
             raise SystemExit(f"kenya: {raw} sums to {summed:,} against a published "
                              f"{total:,}; the columns chosen are wrong")
         name = title(raw)
+        rows = shares(counts, total=total)
         records.append(record(
             f"KEN-{name.replace(' ', '_').replace('/', '_')}", name,
             level="admin1", parent="KEN", country="KEN",
             aliases=ALIASES.get(name, []),
             population=measure(total, year=YEAR, source=SOURCE) if total else gap(NOT_AVAILABLE),
-            religion=shares(counts, total=total) or gap(NOT_AVAILABLE),
+            religion=rows or gap(NOT_AVAILABLE),
+            religion_year=dated(rows, YEAR),
             religion_note=(f"{SOURCE}. A census count of all residents, replacing the "
                            f"Afrobarometer survey estimate this county carried before. "
                            f"'Protestant' and 'Evangelical Churches' are KNBS's own "

@@ -45,7 +45,8 @@ import zipfile
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, PROCESSED, dated, gap, http_get, log, measure, record, shares,
+    write_json,
 )
 
 URL = ("https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/"
@@ -201,6 +202,7 @@ def build() -> list[dict[str, Any]]:
                 raise SystemExit(f"statcan: {geo['name']} {key} leaves sum to {summed:,.0f} "
                                  f"against the block total {total:,.0f}")
             fields[key] = shares(groups, total=total) or gap(NOT_AVAILABLE)
+            fields[f"{key}_year"] = dated(fields[key], YEAR)
             fields[f"{key}_note"] = NOTES[key]
         if geo["level"] == "admin1":
             parent, parent_name = "CAN", None

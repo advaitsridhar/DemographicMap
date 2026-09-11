@@ -32,10 +32,11 @@ import argparse
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, gap, http_get, log, measure,
+    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, dated, gap, http_get, log, measure,
     record, shares, write_json,
 )
 
+YEAR = 2021                       # the census every C21_* dataflow below reads
 API = "https://data.api.abs.gov.au/rest/data/{agency},{dataflow},{version}/{key}"
 CATALOGUE = "https://data.api.abs.gov.au/rest/dataflow/ABS?detail=allstubs"
 # The ABS publishes no state-level census table: the catalogue offers CED, LGA,
@@ -556,27 +557,31 @@ def main() -> int:
         log(f"  sanity: largest religion category is {100 * biggest / total:.1f}% of the "
             f"sample region's total across {len(sample)} categories")
 
-    src = "Australian Bureau of Statistics, Census of Population and Housing 2021"
+    src = f"Australian Bureau of Statistics, Census of Population and Housing {YEAR}"
     records: list[dict[str, Any]] = []
     for code in sorted(set(religion) | set(ancestry) | set(language)):
         rel = {k: v for k, v in religion.get(code, {}).items() if not k.lower().startswith("total")}
         anc = {k: v for k, v in ancestry.get(code, {}).items() if not k.lower().startswith("total")}
         lan = {LANGUAGE_LABELS.get(k, k): v for k, v in language.get(code, {}).items()
                if not k.lower().startswith("total")}
+        rel_rows, anc_rows, lan_rows = shares(rel), shares(anc), shares(lan)
         records.append(record(
             f"AUS-{code}", names.get(code, code),
             level="admin1" if args.level == "state" else "admin2",
             parent="AUS", codes={"asgs": code, "asgs_level": ASGS_LEVEL[args.level]},
-            population=(measure(int(round(persons[code])), year=2021, source=src)
+            population=(measure(int(round(persons[code])), year=YEAR, source=src)
                         if persons.get(code) else gap(NOT_AVAILABLE)),
-            religion=shares(rel) or gap(NOT_AVAILABLE),
-            religion_note="ABS 2021 religious affiliation; the question is voluntary and "
+            religion=rel_rows or gap(NOT_AVAILABLE),
+            religion_year=dated(rel_rows, YEAR),
+            religion_note=f"ABS {YEAR} religious affiliation; the question is voluntary and "
                           "'not stated' is retained as its own category.",
-            ancestry=shares(anc) or gap(NOT_AVAILABLE),
+            ancestry=anc_rows or gap(NOT_AVAILABLE),
+            ancestry_year=dated(anc_rows, YEAR),
             ancestry_note="ABS ancestry is multi-response (up to two per person), so shares "
                           "are of responses and sum above 100%.",
-            language=shares(lan) or gap(NOT_AVAILABLE),
-            language_note="ABS 2021 language used at home (G13), one answer per person, "
+            language=lan_rows or gap(NOT_AVAILABLE),
+            language_year=dated(lan_rows, YEAR),
+            language_note=f"ABS {YEAR} language used at home (G13), one answer per person, "
                           "at the outermost level of the ABS classification; 'not stated' "
                           "is retained as its own category.",
             ethnicity=gap(NOT_COLLECTED,

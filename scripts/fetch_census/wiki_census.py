@@ -162,7 +162,10 @@ def build(iso3: str, spec: dict[str, Any], wikitext: str) -> list[dict[str, Any]
             sources=[{"field": field, "name": spec["source"],
                       "url": f"https://en.wikipedia.org/wiki/{spec['title'].replace(' ', '_')}",
                       "license": spec["licence"]}],
-            **{field: shares, f"{field}_note": f"{spec['source']}. {spec['note']}"},
+            # ``shares`` is non-empty by the check above, so the year always
+            # has a figure to describe.
+            **{field: shares, f"{field}_year": spec["year"],
+               f"{field}_note": f"{spec['source']}. {spec['note']}"},
         ))
     return records
 

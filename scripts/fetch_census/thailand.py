@@ -168,6 +168,7 @@ def build(wikitext: str) -> list[dict[str, Any]]:
             f"THA-{bare.replace(' ', '_')}", name,
             level="admin1", parent="THA", country="THA", aliases=aliases,
             religion=bars,
+            religion_year=YEAR,
             religion_note=(f"{SOURCE}, {COMPILED_BY}. Shares as printed in the "
                            f"provincial report; '{REMAINDER}' is what the three named "
                            f"faiths leave of 100%. A faith the report did not give "

@@ -63,7 +63,8 @@ import io
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, PROCESSED, dated, gap, http_get, log, measure, record, shares,
+    write_json,
 )
 
 PAGE = "https://csu.gov.cz/produkty/vysledky-scitani-2021-otevrena-data"
@@ -406,6 +407,7 @@ def build() -> list[dict[str, Any]]:
         fields["religion"] = bars(religion(unit["rows"], total, name))
         fields["language"] = bars(language(tables["language"][(cis, kod)]["rows"], total, name))
         for key in ("ethnicity", "religion", "language"):
+            fields[f"{key}_year"] = dated(fields[key], YEAR)
             fields[f"{key}_note"] = NOTES[key]
         if level == "admin1":
             parent, parent_name, aliases = "CZE", None, []

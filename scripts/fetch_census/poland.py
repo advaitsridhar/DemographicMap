@@ -51,7 +51,8 @@ import re
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, PROCESSED, dated, gap, http_get, log, measure, record, shares,
+    write_json,
 )
 
 PAGE = ("https://stat.gov.pl/spisy-powszechne/nsp-2021/nsp-2021-wyniki-ostateczne/"
@@ -396,6 +397,7 @@ def build(level: str) -> list[dict[str, Any]]:
                 continue
             groups, total = englished(field, counts)
             values[field] = shares(groups, total=total) or gap(NOT_AVAILABLE)
+            values[f"{field}_year"] = dated(values[field], YEAR)
             values[f"{field}_note"] = NOTES[field]
         rel = fields["religion"].get((voiv, raw))
         if rel:
@@ -406,6 +408,7 @@ def build(level: str) -> list[dict[str, Any]]:
                 raise SystemExit(f"poland: {raw} religion sums to {summed:,} against "
                                  f"{rtotal:,}; the cut through the tree is wrong")
             values["religion"] = shares(groups, total=rtotal) or gap(NOT_AVAILABLE)
+            values["religion_year"] = dated(values["religion"], YEAR)
             values["religion_note"] = NOTES["religion"]
             total = total or rtotal
         else:

@@ -44,7 +44,8 @@ import re
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, PROCESSED, dated, gap, http_get, log, measure, record, shares,
+    write_json,
 )
 
 STATE_URL = "https://storage.dosm.gov.my/population/population_state.csv"
@@ -146,12 +147,13 @@ def build_states() -> list[dict[str, Any]]:
     records = []
     for (state,), counts in sorted(comps.items()):
         total = check(state, counts)
+        rows = shares({k: v for k, v in counts.items() if k != "__total__"}, total=total)
         records.append(record(
             f"MYS-{slug(state)}", state, level="admin1", parent="MYS", country="MYS",
             aliases=STATE_ALIASES.get(state, []),
             population=measure(total, year=year, source=SOURCE) if total else gap(NOT_AVAILABLE),
-            ethnicity=shares({k: v for k, v in counts.items() if k != "__total__"}, total=total)
-            or gap(NOT_AVAILABLE),
+            ethnicity=rows or gap(NOT_AVAILABLE),
+            ethnicity_year=dated(rows, year),
             ethnicity_note=NOTE,
             sources=[{"field": "population/ethnicity", "name": f"{SOURCE} ({year})",
                       "url": PAGES["state"], "license": LICENCE}],
@@ -168,13 +170,14 @@ def build_districts() -> list[dict[str, Any]]:
     records = []
     for (state, district), counts in sorted(comps.items()):
         total = check(f"{state}/{district}", counts)
+        rows = shares({k: v for k, v in counts.items() if k != "__total__"}, total=total)
         records.append(record(
             f"MYS-{slug(state)}-{slug(district)}", district, level="admin2",
             parent=f"MYS-{slug(state)}", parent_name=state, country="MYS",
             aliases=DISTRICT_ALIASES.get(district, []),
             population=measure(total, year=year, source=SOURCE) if total else gap(NOT_AVAILABLE),
-            ethnicity=shares({k: v for k, v in counts.items() if k != "__total__"}, total=total)
-            or gap(NOT_AVAILABLE),
+            ethnicity=rows or gap(NOT_AVAILABLE),
+            ethnicity_year=dated(rows, year),
             ethnicity_note=NOTE,
             sources=[{"field": "population/ethnicity", "name": f"{SOURCE} ({year})",
                       "url": PAGES["district"], "license": LICENCE}],
