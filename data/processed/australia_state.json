@@ -135,24 +135,9 @@
         "count": 30243
       },
       {
-        "group": "Croatian",
+        "group": "Thai",
         "pct": 0.3,
-        "count": 20420
-      },
-      {
-        "group": "French",
-        "pct": 0.3,
-        "count": 23575
-      },
-      {
-        "group": "Macedonian",
-        "pct": 0.3,
-        "count": 28060
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.3,
-        "count": 20841
+        "count": 28019
       },
       {
         "group": "Persian (excluding Dari)",
@@ -160,19 +145,54 @@
         "count": 26783
       },
       {
+        "group": "Turkish",
+        "pct": 0.3,
+        "count": 23812
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.3,
+        "count": 28060
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 23575
+      },
+      {
         "group": "Serbian",
         "pct": 0.3,
         "count": 22898
       },
       {
-        "group": "Thai",
+        "group": "Croatian",
         "pct": 0.3,
-        "count": 28019
+        "count": 20420
       },
       {
-        "group": "Turkish",
+        "group": "Malayalam",
         "pct": 0.3,
-        "count": 23812
+        "count": 20841
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 20030
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.2,
+        "count": 18043
+      },
+      {
+        "group": "Khmer",
+        "pct": 0.2,
+        "count": 12643
+      },
+      {
+        "group": "Persian (excluding Dari)",
+        "pct": 0.3,
+        "count": 26783
       },
       {
         "group": "German",
@@ -226,6 +246,7 @@
       "asgs": "1",
       "asgs_level": "STE"
     },
+    "religion_year": 2021,
     "religion_note": "ABS 2021 religious affiliation; the question is voluntary and 'not stated' is retained as its own category.",
     "ancestry": [
       {
@@ -389,7 +410,9 @@
         "count": 42164
       }
     ],
+    "ancestry_year": 2021,
     "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_year": 2021,
     "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
@@ -538,6 +561,21 @@
         "count": 19254
       },
       {
+        "group": "Korean",
+        "pct": 0.3,
+        "count": 16801
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.3,
+        "count": 17821
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 18221
+      },
+      {
         "group": "French",
         "pct": 0.3,
         "count": 18557
@@ -553,34 +591,14 @@
         "count": 17535
       },
       {
-        "group": "Korean",
-        "pct": 0.3,
-        "count": 16801
-      },
-      {
-        "group": "Persian (excluding Dari)",
-        "pct": 0.3,
-        "count": 22390
-      },
-      {
-        "group": "Russian",
-        "pct": 0.3,
-        "count": 18221
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.3,
-        "count": 17821
-      },
-      {
-        "group": "Japanese",
-        "pct": 0.2,
-        "count": 12318
-      },
-      {
         "group": "Polish",
         "pct": 0.2,
         "count": 13658
+      },
+      {
+        "group": "Thai",
+        "pct": 0.2,
+        "count": 14732
       },
       {
         "group": "Samoan",
@@ -619,6 +637,7 @@
       "asgs": "2",
       "asgs_level": "STE"
     },
+    "religion_year": 2021,
     "religion_note": "ABS 2021 religious affiliation; the question is voluntary and 'not stated' is retained as its own category.",
     "ancestry": [
       {
@@ -782,7 +801,9 @@
         "count": 40850
       }
     ],
+    "ancestry_year": 2021,
     "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_year": 2021,
     "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
@@ -896,29 +917,14 @@
         "count": 21896
       },
       {
-        "group": "Afrikaans",
-        "pct": 0.3,
-        "count": 15006
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.3,
-        "count": 16146
-      },
-      {
         "group": "German",
         "pct": 0.3,
         "count": 15277
       },
       {
-        "group": "Italian",
-        "pct": 0.3,
-        "count": 17987
-      },
-      {
         "group": "Japanese",
         "pct": 0.3,
-        "count": 17911
+        "count": 15277
       },
       {
         "group": "Malayalam",
@@ -926,14 +932,34 @@
         "count": 12985
       },
       {
+        "group": "Arabic",
+        "pct": 0.3,
+        "count": 16146
+      },
+      {
+        "group": "Italian",
+        "pct": 0.3,
+        "count": 17987
+      },
+      {
         "group": "Portuguese",
         "pct": 0.3,
         "count": 14962
       },
       {
+        "group": "Afrikaans",
+        "pct": 0.3,
+        "count": 15006
+      },
+      {
         "group": "Samoan",
         "pct": 0.3,
         "count": 16611
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 7739
       },
       {
         "group": "French",
@@ -949,11 +975,6 @@
         "group": "Persian (excluding Dari)",
         "pct": 0.2,
         "count": 8491
-      },
-      {
-        "group": "Russian",
-        "pct": 0.2,
-        "count": 7739
       },
       {
         "group": "Thai",
@@ -973,12 +994,12 @@
       {
         "group": "Polish",
         "pct": 0.1,
-        "count": 5604
+        "count": 7333
       },
       {
-        "group": "Serbian",
+        "group": "Turkish",
         "pct": 0.1,
-        "count": 5249
+        "count": 2814
       },
       {
         "group": "Tamil",
@@ -986,9 +1007,9 @@
         "count": 7333
       },
       {
-        "group": "Turkish",
+        "group": "Serbian",
         "pct": 0.1,
-        "count": 2814
+        "count": 5249
       },
       {
         "group": "Macedonian",
@@ -1012,6 +1033,7 @@
       "asgs": "3",
       "asgs_level": "STE"
     },
+    "religion_year": 2021,
     "religion_note": "ABS 2021 religious affiliation; the question is voluntary and 'not stated' is retained as its own category.",
     "ancestry": [
       {
@@ -1175,7 +1197,9 @@
         "count": 6668
       }
     ],
+    "ancestry_year": 2021,
     "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_year": 2021,
     "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
@@ -1314,11 +1338,6 @@
         "count": 4817
       },
       {
-        "group": "Persian (excluding Dari)",
-        "pct": 0.3,
-        "count": 5397
-      },
-      {
         "group": "Polish",
         "pct": 0.3,
         "count": 5109
@@ -1344,14 +1363,14 @@
         "count": 3678
       },
       {
+        "group": "French",
+        "pct": 0.2,
+        "count": 2740
+      },
+      {
         "group": "Russian",
         "pct": 0.2,
         "count": 3542
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.2,
-        "count": 4299
       },
       {
         "group": "Tamil",
@@ -1359,7 +1378,12 @@
         "count": 3328
       },
       {
-        "group": "Japanese",
+        "group": "Croatian",
+        "pct": 0.2,
+        "count": 2896
+      },
+      {
+        "group": "Thai",
         "pct": 0.1,
         "count": 2282
       },
@@ -1405,6 +1429,7 @@
       "asgs": "4",
       "asgs_level": "STE"
     },
+    "religion_year": 2021,
     "religion_note": "ABS 2021 religious affiliation; the question is voluntary and 'not stated' is retained as its own category.",
     "ancestry": [
       {
@@ -1568,7 +1593,9 @@
         "count": 1131
       }
     ],
+    "ancestry_year": 2021,
     "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_year": 2021,
     "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
@@ -1707,6 +1734,11 @@
         "count": 8885
       },
       {
+        "group": "Persian (excluding Dari)",
+        "pct": 0.3,
+        "count": 7585
+      },
+      {
         "group": "Korean",
         "pct": 0.3,
         "count": 6968
@@ -1732,16 +1764,6 @@
         "count": 7755
       },
       {
-        "group": "Croatian",
-        "pct": 0.2,
-        "count": 5105
-      },
-      {
-        "group": "Greek",
-        "pct": 0.2,
-        "count": 4492
-      },
-      {
         "group": "Japanese",
         "pct": 0.2,
         "count": 6079
@@ -1752,9 +1774,14 @@
         "count": 5891
       },
       {
-        "group": "Polish",
+        "group": "Serbian",
         "pct": 0.2,
-        "count": 5700
+        "count": 5891
+      },
+      {
+        "group": "Greek",
+        "pct": 0.2,
+        "count": 4492
       },
       {
         "group": "Serbian",
@@ -1765,6 +1792,11 @@
         "group": "Khmer",
         "pct": 0.1,
         "count": 1602
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 5700
       },
       {
         "group": "Russian",
@@ -1798,6 +1830,7 @@
       "asgs": "5",
       "asgs_level": "STE"
     },
+    "religion_year": 2021,
     "religion_note": "ABS 2021 religious affiliation; the question is voluntary and 'not stated' is retained as its own category.",
     "ancestry": [
       {
@@ -1961,7 +1994,9 @@
         "count": 6611
       }
     ],
+    "ancestry_year": 2021,
     "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_year": 2021,
     "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
@@ -2087,22 +2122,17 @@
       {
         "group": "Italian",
         "pct": 0.2,
-        "count": 951
+        "count": 977
       },
       {
-        "group": "Afrikaans",
+        "group": "Thai",
         "pct": 0.1,
-        "count": 644
+        "count": 626
       },
       {
-        "group": "French",
+        "group": "Russian",
         "pct": 0.1,
-        "count": 823
-      },
-      {
-        "group": "Japanese",
-        "pct": 0.1,
-        "count": 578
+        "count": 374
       },
       {
         "group": "Korean",
@@ -2110,9 +2140,39 @@
         "count": 684
       },
       {
+        "group": "Japanese",
+        "pct": 0.1,
+        "count": 578
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 0.1,
+        "count": 644
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 578
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 612
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1,
+        "count": 684
+      },
+      {
         "group": "Malayalam",
         "pct": 0.1,
         "count": 625
+      },
+      {
+        "group": "French",
+        "pct": 0.1,
+        "count": 823
       },
       {
         "group": "Persian (excluding Dari)",
@@ -2155,11 +2215,6 @@
         "count": 84
       },
       {
-        "group": "Macedonian",
-        "pct": 0.0,
-        "count": 24
-      },
-      {
         "group": "Samoan",
         "pct": 0.0,
         "count": 54
@@ -2170,9 +2225,9 @@
         "count": 151
       },
       {
-        "group": "Turkish",
+        "group": "Macedonian",
         "pct": 0.0,
-        "count": 86
+        "count": 24
       }
     ],
     "ethnicity": {
@@ -2191,6 +2246,7 @@
       "asgs": "6",
       "asgs_level": "STE"
     },
+    "religion_year": 2021,
     "religion_note": "ABS 2021 religious affiliation; the question is voluntary and 'not stated' is retained as its own category.",
     "ancestry": [
       {
@@ -2354,7 +2410,9 @@
         "count": 404
       }
     ],
+    "ancestry_year": 2021,
     "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_year": 2021,
     "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
@@ -2518,9 +2576,19 @@
         "count": 337
       },
       {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 150
+      },
+      {
         "group": "Japanese",
         "pct": 0.1,
         "count": 217
+      },
+      {
+        "group": "Samoan",
+        "pct": 0.1,
+        "count": 150
       },
       {
         "group": "Khmer",
@@ -2538,12 +2606,7 @@
         "count": 150
       },
       {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
-        "group": "Macedonian",
+        "group": "Polish",
         "pct": 0.0,
         "count": 20
       },
@@ -2563,9 +2626,9 @@
         "count": 43
       },
       {
-        "group": "Turkish",
+        "group": "Croatian",
         "pct": 0.0,
-        "count": 73
+        "count": 25
       }
     ],
     "ethnicity": {
@@ -2584,6 +2647,7 @@
       "asgs": "7",
       "asgs_level": "STE"
     },
+    "religion_year": 2021,
     "religion_note": "ABS 2021 religious affiliation; the question is voluntary and 'not stated' is retained as its own category.",
     "ancestry": [
       {
@@ -2747,7 +2811,9 @@
         "count": 263
       }
     ],
+    "ancestry_year": 2021,
     "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_year": 2021,
     "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
@@ -2856,14 +2922,9 @@
         "count": 3865
       },
       {
-        "group": "Spanish",
-        "pct": 0.9,
-        "count": 4119
-      },
-      {
-        "group": "Greek",
+        "group": "Malayalam",
         "pct": 0.6,
-        "count": 2525
+        "count": 2769
       },
       {
         "group": "Italian",
@@ -2874,11 +2935,6 @@
         "group": "Korean",
         "pct": 0.6,
         "count": 2809
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.6,
-        "count": 2769
       },
       {
         "group": "Croatian",
@@ -2977,6 +3033,7 @@
       "asgs": "8",
       "asgs_level": "STE"
     },
+    "religion_year": 2021,
     "religion_note": "ABS 2021 religious affiliation; the question is voluntary and 'not stated' is retained as its own category.",
     "ancestry": [
       {
@@ -3140,7 +3197,9 @@
         "count": 2112
       }
     ],
+    "ancestry_year": 2021,
     "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_year": 2021,
     "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   },
   {
@@ -3274,7 +3333,12 @@
         "count": 0
       },
       {
-        "group": "Croatian",
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Tamil",
         "pct": 0.0,
         "count": 0
       },
@@ -3284,42 +3348,7 @@
         "count": 0
       },
       {
-        "group": "Japanese",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Khmer",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Korean",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Macedonian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Persian (excluding Dari)",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Portuguese",
+        "group": "Samoan",
         "pct": 0.0,
         "count": 0
       },
@@ -3329,7 +3358,27 @@
         "count": 0
       },
       {
-        "group": "Samoan",
+        "group": "Portuguese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Persian (excluding Dari)",
         "pct": 0.0,
         "count": 0
       },
@@ -3344,12 +3393,17 @@
         "count": 0
       },
       {
-        "group": "Turkish",
+        "group": "Polish",
         "pct": 0.0,
         "count": 0
       },
       {
-        "group": "Vietnamese",
+        "group": "Japanese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Khmer",
         "pct": 0.0,
         "count": 0
       }
@@ -3370,6 +3424,7 @@
       "asgs": "9",
       "asgs_level": "STE"
     },
+    "religion_year": 2021,
     "religion_note": "ABS 2021 religious affiliation; the question is voluntary and 'not stated' is retained as its own category.",
     "ancestry": [
       {
@@ -3533,7 +3588,9 @@
         "count": 0
       }
     ],
+    "ancestry_year": 2021,
     "ancestry_note": "ABS ancestry is multi-response (up to two per person), so shares are of responses and sum above 100%.",
+    "language_year": 2021,
     "language_note": "ABS 2021 language used at home (G13), one answer per person, at the outermost level of the ABS classification; 'not stated' is retained as its own category."
   }
 ]
