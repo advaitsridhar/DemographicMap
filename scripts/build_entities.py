@@ -936,7 +936,8 @@ def implied_total(groups: list[dict[str, Any]]) -> float | None:
 def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                   field: str, *, level: str = "second-level",
                   over_published: bool = False,
-                  whole_country: bool = False) -> str | None:
+                  whole_country: bool = False,
+                  complete: bool | None = None) -> str | None:
     """Fill a parent's composition by summing a complete set of its children.
 
     Ladakh is the case this exists for. It became a union territory in 2019, so
@@ -986,17 +987,38 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         return (f"{len(missing)} of {len(children)} children have no {field}"
                 if len(missing) < len(children) else None)
 
+    # The population comparison below is a control on one thing: whether these
+    # are all the children. ``whole_country`` establishes that directly and
+    # more strongly, so where it holds, children without a published
+    # population no longer stop the sum -- they only cost it its control.
+    # Burkina Faso is the case the change was made for: all thirteen regions
+    # carry the census religion and not one carries a population, so a country
+    # whose composition was fully determined was published as a gap.
+    # Two different permissions, kept apart because they cost different
+    # things. ``complete`` says these are certainly all the children, which is
+    # what lets the sum happen without a population to check it against.
+    # ``whole_country`` additionally lets the sum stand when the parent's own
+    # published population disagrees with it -- a stronger step, since it
+    # overrules a figure somebody published, and one the country-level pass
+    # deliberately does not take.
+    if complete is None:
+        complete = whole_country
     kid_pop = [published(c.get("population")) for c in children]
-    if any(v is None for v in kid_pop):
-        return f"{field}: {sum(v is None for v in kid_pop)} children have no population"
-    total_pop = sum(kid_pop)                                    # type: ignore[arg-type]
-    if not total_pop:
+    unpriced = sum(v is None for v in kid_pop)
+    if unpriced and not complete:
+        return f"{field}: {unpriced} children have no population"
+    total_pop = sum(v for v in kid_pop if v is not None)
+    if not total_pop and not complete:
         return f"{field}: the children have no population between them"
 
     disagrees = ""
     own = published(parent.get("population"))
+    if unpriced or not total_pop:
+        # No usable control, and none needed: every shape at this level in the
+        # country carries the field, so the children partition it.
+        own = None
     if own is None:
-        if not whole_country:
+        if not complete:
             return f"{field}: no published population to check the sum against"
     else:
         limit = allowance(vintage(parent.get("population")),
@@ -1021,12 +1043,37 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
 
     counts: dict[str, float] = {}
     denominator = 0.0
+    # Children whose shares had to be priced against their own population
+    # because the source published no counts. Named in the note: a sum of
+    # derived numbers is a weaker claim than a sum of published ones.
+    derived: list[str] = []
     for child in children:
         share = implied_total(child[field])
+        rows = child[field]
+        priced = all(isinstance(r.get("count"), (int, float)) for r in rows)
+        if not priced:
+            # A composition of percentages and a published population is
+            # enough: the count each share stands for is the share of that
+            # population, which is the same arithmetic the source would have
+            # done. It is only refused where the population is missing too,
+            # because then there is no number to take a percentage of.
+            #
+            # The base is taken to be the whole population, which is why this
+            # runs only when no counts exist: where a source counts a subset
+            # -- Mexico's indigenous-language question asks people aged three
+            # and over -- it publishes counts, and implied_total backs the
+            # real base out of them instead.
+            pop = published(child.get("population"))
+            if pop is None:
+                return f"{field}: a child publishes shares with no counts"
+            rows = [dict(r, count=(r["pct"] / 100.0) * pop)
+                    for r in rows if isinstance(r.get("pct"), (int, float))]
+            share = implied_total(rows)
+            derived.append(child.get("name", child.get("id", "")))
         if share is None:
             return f"{field}: a child publishes shares with no counts"
         denominator += share
-        for row in child[field]:
+        for row in rows:
             count = row.get("count")
             if not isinstance(count, (int, float)):
                 return f"{field}: a child publishes shares with no counts"
@@ -1062,16 +1109,27 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         f"{'s' if many else ''};"
         + (" no source publishes this figure for the unit itself."
            if not displaced else "")
-        + f" {'Their' if many else 'Its'} population"
-        f"{'s total' if many else ' is'} {total_pop:,.0f}"
         # A unit with no published population of its own was filled because
         # every shape at this level in the country carries the field, so the
-        # note says that rather than comparing against a figure there isn't.
-        + (f" against a published {own:,.0f} for the unit."
+        # note says that rather than comparing against a figure there isn't --
+        # and where the children themselves carry no population, it says that
+        # instead of printing a total nobody published.
+        + (f" {'Their' if many else 'Its'} population"
+           f"{'s total' if many else ' is'} {total_pop:,.0f}"
+           f" against a published {own:,.0f} for the unit."
            if own is not None else
-           ", and no source publishes a population for the unit to check that "
-           "against; it was summed because every division at this level in the "
-           "country has these figures, so these are all of its children.")
+           (f" {'they publish' if many else 'it publishes'} no population of "
+            f"{'their' if many else 'its'} own, and"
+            if unpriced else
+            f" {'Their' if many else 'Its'} population"
+            f"{'s total' if many else ' is'} {total_pop:,.0f}, and")
+           + " no source publishes a population for the unit to check that "
+             "against; it was summed because every division at this level in "
+             "the country has these figures, so these are all of its children.")
+        + (f" {len(derived)} of them publish shares and no counts"
+           f"{' (' + ', '.join(sorted(derived)[:3]) + ')' if len(derived) <= 3 else ''}"
+           ", so their counts are those shares taken of their own published "
+           "populations." if derived else "")
         + disagrees + displaced)
     years = {c.get(f"{field}_year") for c in children} - {None}
     if len(years) == 1:
@@ -1103,6 +1161,12 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # derivation and tell a reader less about the same figure.
     child_year = common_year(children)
     own_year = vintage(parent.get("population"))
+    if unpriced or not total_pop:
+        # Nothing to fill a population from: some child never published one,
+        # so their total is a partial sum and stamping it on the parent would
+        # publish a count of part of a place as the whole of it.
+        return None
+    own = published(parent.get("population"))
     if child_year and (own is None or (round(total_pop) != round(own)
                                        and (own_year is None
                                             or own_year <= child_year))):
@@ -1169,8 +1233,14 @@ def roll_up_countries(admin0: list[dict[str, Any]],
             continue
         for field in ROLLUP_FIELDS:
             before = country.get(field)
+            # Every first-level division of the country is in `children`, and
+            # the check above has already refused the field unless all of them
+            # carry it, so these are certainly all of them. That is enough to
+            # sum without child populations; it is not enough to overrule the
+            # country's own published population, which stays gated at 2%.
             why = roll_up_field(country, children, field,
-                                level="first-level", over_published=True)
+                                level="first-level", over_published=True,
+                                complete=True)
             if why:
                 refused.append(f"{iso3}: {why}")
             elif country.get(field) is not before:
@@ -1431,6 +1501,9 @@ def group_index(admin0: list[dict[str, Any]],
     for field in ("religion", "language", "ethnicity"):
         units: dict[str, int] = {}
         countries: dict[str, set[str]] = {}
+        # The same two tallies taken over each group's whole subtree, which is
+        # what a reader gets when they pick it.
+        rolled_up: dict[str, dict[str, Any]] = {}
         labels: dict[str, set[str]] = {}
         bases: dict[str, str] = {}
         conflicts: set[str] = set()
@@ -1469,13 +1542,31 @@ def group_index(admin0: list[dict[str, Any]],
                     name = table.get(canonical_groups.key(raw), raw)
                     labels.setdefault(name, set()).add(raw)
                     here.add(name)
+                # A record counts once for every group it names and once for
+                # each of their ancestors, never twice for either. Poland's
+                # powiaty say "Roman Catholic" and no more, so Christianity's
+                # own tally there is nil and its rolled-up tally is 380: the
+                # picker has to offer the second number, because a reader who
+                # asks for Christianity will get those 380 shaded.
+                rolled: set[str] = set()
+                for name in here:
+                    rolled.update(canonical_groups.ancestry(field, name))
                 for name in here:
                     units[name] = units.get(name, 0) + 1
                     countries.setdefault(name, set()).add(code)
+                for name in rolled:
                     at = per_level[level_name].setdefault(
-                        name, {"units": 0, "countries": set()})
+                        name, {"units": 0, "countries": set(),
+                               "own_units": 0, "own_countries": set()})
                     at["units"] += 1
                     at["countries"].add(code)
+                    if name in here:
+                        at["own_units"] += 1
+                        at["own_countries"].add(code)
+                    total = rolled_up.setdefault(
+                        name, {"units": 0, "countries": set()})
+                    total["units"] += 1
+                    total["countries"].add(code)
 
         if conflicts:
             # Rolling children into a parent is only sound while no source
@@ -1484,17 +1575,35 @@ def group_index(admin0: list[dict[str, Any]],
             raise SystemExit(f"{field}: parent and child reported together in "
                              f"{sorted(conflicts)[:5]}")
 
+        # Every name the tree reaches, not only the ones a source wrote. A
+        # parent nobody spells -- Christianity across Poland, Sino-Tibetan
+        # languages anywhere -- is still a group a reader can pick, and it has
+        # to be in the list to be picked.
+        names = set(units) | set(rolled_up)
+        kids = canonical_groups.children(field)
         index[field] = {
             "groups": [
                 {"name": name,
-                 "units": units[name],
-                 "countries": sorted(c for c in countries[name] if len(c) == 3),
-                 "labels": sorted(labels[name]),
+                 # What picking this shades: the group and everything under it.
+                 "units": rolled_up.get(name, {}).get("units", 0),
+                 "countries": sorted(
+                     c for c in rolled_up.get(name, {}).get("countries", ())
+                     if len(c) == 3),
+                 # What sources actually wrote under this exact name, which is
+                 # a different and smaller thing for any parent.
+                 "own_units": units.get(name, 0),
+                 "parent": canonical_groups.parent_of(field, name),
+                 "children": [k for k in kids.get(name, []) if k in names],
+                 "depth": len(canonical_groups.ancestry(field, name)) - 1,
+                 "hue": canonical_groups.hue(field, name),
+                 "labels": sorted(labels.get(name, ())),
                  # A residual is an answer's absence, not an answer. The
                  # picker still lists it -- dropping it would hide a fifth of
                  # some populations -- but sorts it last and says so.
                  "residual": canonical_groups.is_residual(name),
-                 "canonical": len(labels[name]) > 1 or name in canonical_groups.TABLES[field],
+                 "canonical": len(labels.get(name, ())) > 1
+                              or name in canonical_groups.TABLES[field]
+                              or name in kids,
                  "levels": {
                      level_name: {
                          "units": per_level[level_name][name]["units"],
@@ -1504,7 +1613,9 @@ def group_index(admin0: list[dict[str, Any]],
                      }
                      for level_name, _ in levels if name in per_level[level_name]
                  }}
-                for name in sorted(units, key=lambda n: (-units[n], n))
+                for name in sorted(
+                    names,
+                    key=lambda n: (-rolled_up.get(n, {}).get("units", 0), n))
             ],
             "bases": bases,
         }

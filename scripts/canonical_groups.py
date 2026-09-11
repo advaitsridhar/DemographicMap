@@ -35,118 +35,166 @@ from typing import Any, Iterable
 
 # canonical name -> the source labels that mean it
 RELIGION: dict[str, tuple[str, ...]] = {
+    # --- Christianity and its traditions -----------------------------------
+    #
+    # The tradition names below are groups in their own right, each a child of
+    # Christianity in PARENT. That is what lets a reader ask for Catholicism
+    # across 119 countries, or for Christianity whole and have every
+    # denomination counted into it. Before the split they were all folded into
+    # "Christianity" on sight, so the map could answer the second question and
+    # not the first, and 6,144 records saying "Roman Catholic" were invisible
+    # to the filter.
+    #
+    # Rolling up stays sound because no source publishes a tradition beside
+    # the Christian total it belongs to; the guard in canonicalise enforces it.
     "Christianity": (
+        # Only the labels that name no tradition. A census that offers
+        # "Christian" against "Catholic" means people who said just
+        # "Christian", and that answer belongs at the family level rather than
+        # inside one of its children.
         "Christian", "Christianity", "Christians", "Chretien", "Chrétien",
-        # Denominations and traditions. No source publishes both a Christian
-        # total and its denominations -- the guard below enforces that -- so
-        # these roll up rather than double.
+        "Christian (unspecified)", "Christian nfd", "Christian, unspecified",
+        "Other Christian", "Other Christians", "other Christians",
+        "Other Christian religions", "Other Christian denominations",
+        # Afrobarometer's label for a respondent who named no denomination.
+        "Christian only",
+        # A person of both traditions, and a church that belongs to neither:
+        # both are Christian answers that no child can hold.
+        "Protestant (Mixed)", "Mixed Catholic / Protestant",
+        "Non-denominational Christian", "Christian Fellowship Church",
+        "Independent", "African Independent Church",
+    ),
+    "Catholicism": (
         "Catholic", "Roman Catholic", "Catholicism", "Catholics",
         "Católica Apostólica Romana", "Catholique", "Catolica",
+        "Catholic (unspecified)", "Greek Catholic",
+        # The Philippines counts the Charismatic renewal separately and says
+        # so in the column head; both are Catholics.
+        "Roman Catholic, excluding Catholic Charismatics",
+        "Catholic Charismatic", "Roman Catholic Charismatic",
+    ),
+    "Protestantism": (
         "Protestant", "Protestants", "Protestante", "Evangélicas",
         "Protestant and evangelical", "other Protestant",
+        "Protestant (unspecified)",
         "Evangelical", "Evangelical Christian", "Evangelical Lutheran",
         "Evangelical, Born Again and Fundamentalist", "Evangelical/Protestant",
-        "Orthodox", "Orthodox Christian", "Eastern Orthodox",
-        "Eastern Orthodox Christian", "Greek Orthodox", "Russian Orthodox",
-        "Serbian Orthodox", "Romanian Orthodox", "Ethiopian Orthodox",
-        "Armenian Orthodox", "Coptic Orthodox", "Syrian Orthodox",
+        "Evangelical Reformist", "Protestant Evangelical",
+        "Evangelical and Pentecostal", "Evangelical or Protestant",
+        "Protestant/Anglican",
         "Anglican", "Church of England", "Episcopal",
         "Baptist", "Methodist", "Presbyterian",
         "Presbyterian, Congregational and Reformed", "Reformed",
         "Lutheran", "Pentecostal", "Adventist", "Seventh Day Adventist",
-        "Seventh-day Adventist", "Congregational", "Moravian", "Mennonite",
-        "New Apostolic", "Apostolic", "Kimbanguist", "Quaker",
-        # Two bodies most offices count as Christian and a few list apart.
-        # They are folded here because the alternative -- a "Jehovah's Witness"
-        # group reaching 27 countries and a "Christianity" group that omits
-        # them -- describes the same people twice under different headings.
-        "Jehovah's Witness", "Jehovah's Witnesses", "Jehovah Witness",
-        "Latter-day Saints", "Church of Jesus Christ",
+        "Seventh-day Adventist", "Congregational", "Moravian", "Morovian",
+        "Mennonite", "New Apostolic", "Apostolic", "Kimbanguist",
+        "Quaker", "Quaker/Friends", "Friends",
+        "Calvinist", "Reformed Christian", "Protestant Reformed",
+        "Assembly of God", "Salvation Army", "Salutiste",
+        "Dutch Reformed", "Church of Christ", "Brethren",
         # Czechia's churches, and its census write-ins that name a tradition
-        # but no church; ČSÚ lists those beside the churches, and this
-        # project keeps a written "catholic" apart from the Roman Catholic
-        # Church's count.
+        # but no church.
         "Evangelical Church of Czech Brethren", "Czechoslovak Hussite",
-        "Catholic (unspecified)", "Protestant (unspecified)",
-        "Christian (unspecified)",
-        "Church of Jesus Christ of Latter-day Saints", "Mormon",
-        "Other Christian", "Other Christians", "other Christians",
-        "Other Christian religions", "Christian nfd", "Christian, unspecified",
         # National and regional churches, each named only by its own country's
-        # entry. Folding them is what lets a map of Christianity include
-        # Iceland, Norway, Armenia and Kiribati at all -- unfolded, each is a
-        # one-country group and the country reads as having no Christians.
+        # entry. Folding them is what lets a map of Protestantism include
+        # Iceland, Norway and Kiribati at all -- unfolded, each is a
+        # one-country group and the country reads as having no Protestants.
         "Church of Norway", "Church of Sweden", "Church of Iceland",
+        "Church of Scotland",
         "Evangelical Lutheran Church of Iceland",
         "Independent Congregation of Reykjavik",
         "Independent Congregation of Hafnarfjordur",
         "Evangelical Church of the Augsburg Confession",
-        "Armenian Apostolic", "Armenian Apostolic Christian",
-        "Christian Orthodox", "Old Believer", "Greek Catholic",
-        "Calvinist", "Reformed Christian", "Protestant Reformed",
-        "Evangelical Reformist", "Protestant Evangelical",
-        "Evangelical and Pentecostal", "Evangelical or Protestant",
-        "Evangelical/Protestant", "Protestant/Anglican",
-        "Assembly of God", "Salvation Army", "Salutiste",
-        "Iglesia ni Cristo", "Kiribati Protestant Church",
-        "Kiribati Uniting Church", "Congregational Christian Church",
-        "Ekalesia Niue", "Church of Jesus Christ in Madagascar/Malagasy",
+        "Kiribati Protestant Church", "Kiribati Uniting Church",
+        "Congregational Christian Church", "Ekalesia Niue",
+        "Church of Jesus Christ in Madagascar/Malagasy Lutheran Church/Anglican Church",
         "Awakening Churches/Christian Revival", "Apostolic Sect",
         "Universal Kingdom of God", "Worship Centre",
-        "Jehovah's Witness and Church of Jesus Christ", "Latter Day Saints",
-        # Afrobarometer's denominations. "Christian only" is its label for a
-        # respondent who named no sub-group, and the rest are churches large
-        # enough in one country to have earned their own code: the Zionist
-        # Christian Church is South Africa's largest single denomination, and
-        # Fifohazana is a Malagasy revival movement inside the Protestant
-        # churches. Eglise du Christianisme Céleste is Celestial Church of
-        # Christ, in Benin and Nigeria.
-        "Christian only", "Coptic", "Quaker/Friends", "Quaker", "Friends",
-        "Independent", "African Independent Church", "Jehovah's Witness",
-        "Jehovah’s Witness", "Dutch Reformed", "Church of Christ",
+        "United Church", "United Church of Zambia or UCZ",
+        "United Church of Zambia", "New Apostolic Church",
+        "Christian mission in many lands (CMML)",
+        # Afrobarometer churches large enough in one country to have earned
+        # their own code. The Zionist Christian Church is South Africa's
+        # largest single denomination and Fifohazana is a Malagasy revival
+        # movement inside the Protestant churches; Eglise du Christianisme
+        # Céleste is the Celestial Church of Christ, in Benin and Nigeria.
         "Zionist Christian Church", "Eglise Du Christianisme Céleste",
-        "Celestial Church of Christ", "Fifohazana", "Morovian", "Moravian",
-        "United Church of Zambia or UCZ", "United Church of Zambia",
-        "New Apostolic Church", "Christian mission in many lands (CMML)",
+        "Celestial Church of Christ", "Fifohazana",
         # NISRA's MS-B20, which names every denomination Northern Ireland
-        # counted at a thousand people or more. Four of them are the province's
-        # largest churches and would otherwise each be a one-country group in a
-        # filter that showed Northern Ireland as almost wholly non-Christian.
-        # "Mixed Catholic / Protestant" is a person of both, which is still a
-        # Christian answer; "Non-denominational Christian" is B20's "Non
-        # Denominational", spelled out by the adapter because the bare words say
-        # nothing about which religion they are non-denominational within.
+        # counted at a thousand people or more.
         "Presbyterian Church in Ireland", "Church of Ireland",
         "Methodist Church in Ireland", "Independent Methodist",
         "Free Presbyterian", "Reformed Presbyterian",
-        "Non-Subscribing Presbyterian", "Brethren", "Congregational Church",
-        "Christian Fellowship Church", "Orthodox Church",
-        "Romanian Orthodox Church", "Protestant (Mixed)",
-        "Mixed Catholic / Protestant", "Non-denominational Christian",
-        "Church of Jesus Christ of Latter Day Saints (Mormons)",
-        "Other Christian denominations",
-        # KNBS's 2019 categories. "Evangelical Churches" and "African
-        # Instituted Churches" are Kenya's two largest Christian groupings
-        # after Protestant and Catholic; unfolded, a filter for Christianity
-        # would show a country that is 85% Christian at about 55%.
+        "Non-Subscribing Presbyterian", "Congregational Church",
+        # KNBS's 2019 categories: Kenya's two largest Christian groupings
+        # after Protestant and Catholic.
         "Evangelical Churches", "African Instituted Churches",
+        # The Philippines' two largest non-Catholic churches. Both are
+        # restorationist rather than Reformation Protestant, and both are
+        # counted here for the same reason the national churches above are:
+        # alone, each is a one-country group.
+        "Iglesia ni Cristo", "Aglipay",
+        "United Church of Christ in the Philippines",
     ),
+    "Orthodoxy": (
+        "Orthodox", "Orthodox Christian", "Eastern Orthodox",
+        "Eastern Orthodox Christian", "Christian Orthodox", "Orthodox Church",
+        "Greek Orthodox", "Russian Orthodox", "Serbian Orthodox",
+        "Romanian Orthodox", "Romanian Orthodox Church", "Ethiopian Orthodox",
+        "Old Believer",
+        # Oriental Orthodox: in communion with each other rather than with
+        # Constantinople, and counted as Orthodox by every office that names
+        # them.
+        "Armenian Orthodox", "Armenian Apostolic",
+        "Armenian Apostolic Christian", "Coptic Orthodox", "Coptic",
+        "Syrian Orthodox",
+    ),
+    # Two bodies most offices count as Christian and a few list apart. They
+    # are children of Christianity rather than folded into it: each is large
+    # enough to ask about on its own -- 2,425 and 2,114 records -- and a
+    # reader who wants the Christian total still gets them.
+    "Jehovah's Witnesses": (
+        "Jehovah's Witness", "Jehovah's Witnesses", "Jehovah Witness",
+        "Jehovah’s Witness", "Jehovah's Witnesses and Bible Students",
+        "Jehovah's Witness and Church of Jesus Christ",
+    ),
+    "Latter-day Saints": (
+        "Latter-day Saints", "Latter Day Saints", "Church of Jesus Christ",
+        "Church of Jesus Christ of Latter-day Saints", "Mormon",
+        "Church of Jesus Christ of Latter Day Saints (Mormons)",
+    ),
+    # --- Islam and its branches --------------------------------------------
     "Islam": (
         "Islam", "Muslim", "Muslims", "Musalman", "Musulman", "Islamic",
-        "Sunni", "Sunni Muslim", "Shia", "Shia Muslim", "Shi'a",
-        "Ahmadiyya", "Ibadhi",
-        # Afrobarometer offers a respondent the brotherhood rather than the
-        # faith, and in Senegal most take it: a filter for Islam that omits
-        # the Mouride and Tijani orders shows a country as barely Muslim.
-        # "Muslim only" and "Sunni only" are its labels for a respondent who
-        # named no sub-group at all, which is the plainest Muslim answer there
-        # is and must not be stranded under its own name.
-        "Muslim only", "Sunni only", "Ismaeli", "Ismaili",
+        # Afrobarometer's label for a respondent who named no branch, which is
+        # the plainest Muslim answer there is.
+        "Muslim only",
+    ),
+    "Sunni Islam": (
+        "Sunni", "Sunni Muslim", "Sunni only",
+        # The Sufi orders. Afrobarometer offers a Senegalese respondent the
+        # brotherhood rather than the faith and most take it, so a filter for
+        # Islam that omits them shows the country as barely Muslim.
         "Mouridiya Brotherhood", "Mouride", "Tijaniya Brotherhood", "Tijani",
         "Qadiriya", "Qadiriya Brotherhood", "Ançardine",
     ),
+    "Shia Islam": (
+        "Shia", "Shia Muslim", "Shi'a", "Ismaeli", "Ismaili",
+    ),
+    "Ibadi Islam": ("Ibadhi", "Ibadi"),
+    # Pakistan counts Ahmadis separately and by law does not count them as
+    # Muslim; most of the world's offices do. The group is kept under Islam
+    # and named, which is the only arrangement that neither erases the
+    # community nor overwrites the census that separated it.
+    "Ahmadiyya": ("Ahmadiyya", "Ahmadi", "Ahmadis", "Qadiani"),
+    # --- everything else ----------------------------------------------------
     "Hinduism": ("Hindu", "Hinduism", "Hindus"),
-    "Buddhism": ("Buddhist", "Buddhism", "Bouddha", "Buddhists"),
+    "Buddhism": ("Buddhist", "Buddhism", "Bouddha", "Buddhists",
+                 # The Factbook's word for the Vajrayana of Bhutan,
+                 # Mongolia and Kalmykia. Left alone it led three
+                 # countries under its own name on a map whose
+                 # Buddhist colour they should have carried.
+                 "Lamaistic Buddhist", "Lamaistic", "Lamaism"),
     "Judaism": ("Jewish", "Judaism", "Jew", "Jews"),
     "Sikhism": ("Sikh", "Sikhism", "Sikha", "Sikhs"),
     "Jainism": ("Jain", "Jainism", "Jains"),
@@ -180,6 +228,8 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "or other traditional African religions",
         "Shaman", "shamanist", "Badimo", "Modekngei", "Mana",
         "Traditional/Ethnic religion", "Traditional/ethnic religion",
+        # Brazil's 2022 column for the religions of its indigenous peoples.
+        "Indigenous traditions",
     ),
     # Maori churches. Stats NZ classifies these apart from Christian and this
     # follows it: Ratana and Ringatu are Christian in origin but are counted,
@@ -191,30 +241,44 @@ RELIGION: dict[str, tuple[str, ...]] = {
     "No religion": (
         "No religion", "No religion / secular", "Sem religião", "none",
         "None", "Secular Other Spiritual and No Religious Affiliation",
-        "Sin religión", "irreligion", "secular",
+        "Sin religión", "irreligion", "secular", "Non-religious",
+        "No religion and secular perspectives",
         # Answers that all mean "not religious". A person filtering for "No
         # religion" and missing the twelve countries whose Factbook entry says
         # "atheist" is being shown a false map, and each of these is an
         # unambiguous statement about the respondent -- unlike the mixed
         # buckets listed under "Not stated" and the ones excluded entirely.
-        "atheist", "Atheist", "atheism", "agnostic", "Agnostic",
-        "agnostic/atheist", "unaffiliated", "Unaffiliated",
-        "non-believers", "non-believer", "non-believer/agnostic",
-        "no religious affiliation", "not religious",
-        "agnostic or atheist", "none/atheist", "nonbeliever/agnostic",
-        "atheist or agnostic", "agnosticism",
+        "unaffiliated", "Unaffiliated",
+        "non-believers", "non-believer", "no religious affiliation",
+        "not religious",
+        # Labels that weld the two positions below into one figure. They
+        # cannot be split, so they stay at the level that contains both.
+        "agnostic/atheist", "agnostic or atheist", "none/atheist",
+        "nonbeliever/agnostic", "atheist or agnostic", "non-believer/agnostic",
     ),
+    # Two positions several censuses count separately and side by side, and
+    # which are therefore groups of their own rather than spellings of the one
+    # above. Croatia is the case: its 2021 census prints "Atheists and
+    # non-believers" beside "Agnostics and sceptics", two disjoint answers that
+    # sum into the non-religious rather than restating it. As children they
+    # sum; folded together they tripped the guard that stops a group being
+    # counted twice, which was the guard being right.
+    "Atheism": ("atheist", "Atheist", "atheism", "Atheists",
+                "Atheists and non-believers"),
+    "Agnosticism": ("agnostic", "Agnostic", "agnosticism", "Agnostics",
+                    "Agnostics and sceptics"),
     "Not stated": (
         "Not stated", "Not answered", "Religious affiliation not stated",
         "Sem declaração", "Não sabe", "unspecified", "no response",
         "no answer", "unknown", "refused to answer", "not reported",
         "Object to answering", "Not elsewhere included", "declined to answer",
         "don't know/no answer", "don't know/refused", "do not know",
-        "Religion not stated", "Don't know",
+        "Religion not stated", "Don't know", "Does not know", "Not declared",
     ),
     "Other religions": (
         "Other", "Other religion", "Other religions", "Other Religions",
         "Outras religiosidades", "other religions", "Otras religiones",
+        "Other religious affiliations",
     ),
 }
 
@@ -877,6 +941,592 @@ def translate_russian(field: str, label: str) -> str | None:
     return translate("Rosstat", field, label)
 
 
+# ---------------------------------------------------------------------------
+# The hierarchy
+# ---------------------------------------------------------------------------
+#
+# Canonical names above say which labels mean the same thing. This says which
+# of those names sit inside which, and it is what lets one map answer two
+# questions: "where are Catholics" and "where are Christians", off the same
+# rows, without a source ever being asked for both.
+#
+# Three properties are load-bearing.
+#
+# **A child's share is part of its parent's.** Selecting a parent sums every
+# descendant's rows, so Christianity over Poland counts a "Roman Catholic"
+# row that never says the word Christian. This is only sound because no
+# source publishes a level beside its own parent; ``check_no_double_counting``
+# stops the build if one starts to.
+#
+# **A family is a defensible cross-border statement, a leaf often is not.**
+# Two countries that both report Catholics are reporting the same thing. Two
+# that both report "White" are not, quite -- so the ethnicity tree puts the
+# census race-like categories in a family of their own, apart from the named
+# peoples, rather than pretending one rolls into the other.
+#
+# **An unmapped name is a top-level group.** Nothing is lost by being absent
+# from this table; it just has no parent to be counted into.
+
+# child canonical name -> parent canonical name, per field.
+PARENT: dict[str, dict[str, str]] = {
+    "religion": {
+        "Catholicism": "Christianity",
+        "Protestantism": "Christianity",
+        "Orthodoxy": "Christianity",
+        "Jehovah's Witnesses": "Christianity",
+        "Latter-day Saints": "Christianity",
+        "Sunni Islam": "Islam",
+        "Shia Islam": "Islam",
+        "Ibadi Islam": "Islam",
+        "Ahmadiyya": "Islam",
+        "Atheism": "No religion",
+        "Agnosticism": "No religion",
+    },
+    # Genealogical classification, as the standard references give it. A
+    # family is one hue on the map and closely related languages are shades of
+    # it, which is why the branch level exists between the two: Slavic
+    # languages should look like each other and not like Hindi, though both
+    # are Indo-European.
+    "language": {
+        # -- Indo-European
+        "Germanic languages": "Indo-European languages",
+        "Romance languages": "Indo-European languages",
+        "Slavic languages": "Indo-European languages",
+        "Indo-Aryan languages": "Indo-European languages",
+        "Iranian languages": "Indo-European languages",
+        "Baltic languages": "Indo-European languages",
+        "Celtic languages": "Indo-European languages",
+        "Greek": "Indo-European languages",
+        "Albanian": "Indo-European languages",
+        "Armenian": "Indo-European languages",
+        "English": "Germanic languages",
+        "German": "Germanic languages",
+        "Dutch": "Germanic languages",
+        "Afrikaans": "Germanic languages",
+        "Swedish": "Germanic languages",
+        "Norwegian": "Germanic languages",
+        "Danish": "Germanic languages",
+        "Icelandic": "Germanic languages",
+        "Faroese": "Germanic languages",
+        "Yiddish": "Germanic languages",
+        "Frisian": "Germanic languages",
+        "Luxembourgish": "Germanic languages",
+        "Spanish": "Romance languages",
+        "Portuguese": "Romance languages",
+        "French": "Romance languages",
+        "Italian": "Romance languages",
+        "Romanian": "Romance languages",
+        "Catalan": "Romance languages",
+        "Galician": "Romance languages",
+        "Romansh": "Romance languages",
+        "Moldovan": "Romance languages",
+        "Russian": "Slavic languages",
+        "Ukrainian": "Slavic languages",
+        "Belarusian": "Slavic languages",
+        "Polish": "Slavic languages",
+        "Czech": "Slavic languages",
+        "Slovak": "Slavic languages",
+        "Bulgarian": "Slavic languages",
+        "Macedonian": "Slavic languages",
+        "Serbian": "Slavic languages",
+        "Croatian": "Slavic languages",
+        "Bosnian": "Slavic languages",
+        "Montenegrin": "Slavic languages",
+        "Serbo-Croatian": "Slavic languages",
+        "Slovenian": "Slavic languages",
+        "Slovene": "Slavic languages",
+        "Sorbian": "Slavic languages",
+        "Hindi": "Indo-Aryan languages",
+        "Urdu": "Indo-Aryan languages",
+        "Bengali": "Indo-Aryan languages",
+        "Panjabi": "Indo-Aryan languages",
+        "Marathi": "Indo-Aryan languages",
+        "Gujarati": "Indo-Aryan languages",
+        "Nepali": "Indo-Aryan languages",
+        "Sindhi": "Indo-Aryan languages",
+        "Odia": "Indo-Aryan languages",
+        "Assamese": "Indo-Aryan languages",
+        "Kashmiri": "Indo-Aryan languages",
+        "Maithili": "Indo-Aryan languages",
+        "Bhojpuri": "Indo-Aryan languages",
+        "Sinhala": "Indo-Aryan languages",
+        "Dhivehi": "Indo-Aryan languages",
+        "Romani": "Indo-Aryan languages",
+        "Persian": "Iranian languages",
+        "Persian (excluding Dari)": "Iranian languages",
+        "Dari": "Iranian languages",
+        "Pashto": "Iranian languages",
+        "Kurdish": "Iranian languages",
+        "Tajik": "Iranian languages",
+        "Balochi": "Iranian languages",
+        "Ossetian": "Iranian languages",
+        "Lithuanian": "Baltic languages",
+        "Latvian": "Baltic languages",
+        "Irish": "Celtic languages",
+        "Welsh": "Celtic languages",
+        "Scottish Gaelic": "Celtic languages",
+        "Breton": "Celtic languages",
+        # -- Afro-Asiatic
+        "Semitic languages": "Afro-Asiatic languages",
+        "Berber languages": "Afro-Asiatic languages",
+        "Cushitic languages": "Afro-Asiatic languages",
+        "Chadic languages": "Afro-Asiatic languages",
+        "Arabic": "Semitic languages",
+        "Hebrew": "Semitic languages",
+        "Amharic": "Semitic languages",
+        "Tigrinya": "Semitic languages",
+        "Maltese": "Semitic languages",
+        "Assyrian Neo-Aramaic": "Semitic languages",
+        "Tamazight": "Berber languages",
+        "Kabyle": "Berber languages",
+        "Somali": "Cushitic languages",
+        "Oromo": "Cushitic languages",
+        "Afar": "Cushitic languages",
+        "Sidamo": "Cushitic languages",
+        "Hausa": "Chadic languages",
+        # -- Sino-Tibetan
+        "Chinese": "Sino-Tibetan languages",
+        "Chinese (incl. Mandarin, Cantonese)": "Sino-Tibetan languages",
+        "Mandarin": "Chinese",
+        "Cantonese": "Chinese",
+        "Hokkien": "Chinese",
+        "Hakka": "Chinese",
+        "Burmese": "Sino-Tibetan languages",
+        "Tibetan": "Sino-Tibetan languages",
+        "Karen": "Sino-Tibetan languages",
+        # -- Turkic
+        "Turkish": "Turkic languages",
+        "Azerbaijani": "Turkic languages",
+        "Kazakh": "Turkic languages",
+        "Uzbek": "Turkic languages",
+        "Kyrgyz": "Turkic languages",
+        "Turkmen": "Turkic languages",
+        "Tatar": "Turkic languages",
+        "Bashkir": "Turkic languages",
+        "Chuvash": "Turkic languages",
+        "Uyghur": "Turkic languages",
+        "Yakut": "Turkic languages",
+        "Karakalpak": "Turkic languages",
+        "Gagauz": "Turkic languages",
+        # -- Austronesian
+        "Malay": "Austronesian languages",
+        "Indonesian": "Austronesian languages",
+        "Javanese": "Austronesian languages",
+        "Tagalog": "Austronesian languages",
+        "Tagalog (incl. Filipino)": "Austronesian languages",
+        "Cebuano": "Austronesian languages",
+        "Ilocano": "Austronesian languages",
+        "Malagasy": "Austronesian languages",
+        "Samoan": "Austronesian languages",
+        "Tongan": "Austronesian languages",
+        "Fijian": "Austronesian languages",
+        "Māori": "Austronesian languages",
+        "Maori": "Austronesian languages",
+        "Hawaiian": "Austronesian languages",
+        "Chamorro": "Austronesian languages",
+        "Tetum": "Austronesian languages",
+        "Southeast Asian Austronesian languages": "Austronesian languages",
+        # -- Niger-Congo, where offices name an individual language
+        "Swahili": "Niger-Congo languages",
+        "Shona": "Niger-Congo languages",
+        "isiZulu": "Niger-Congo languages",
+        "isiXhosa": "Niger-Congo languages",
+        "Sesotho": "Niger-Congo languages",
+        "Setswana": "Niger-Congo languages",
+        "Sepedi": "Niger-Congo languages",
+        "Xitsonga": "Niger-Congo languages",
+        "Tshivenda": "Niger-Congo languages",
+        "siSwati": "Niger-Congo languages",
+        "isiNdebele": "Niger-Congo languages",
+        "Lingala": "Niger-Congo languages",
+        "Kikongo": "Niger-Congo languages",
+        "Tshiluba": "Niger-Congo languages",
+        "Wolof": "Niger-Congo languages",
+        "Fula": "Niger-Congo languages",
+        "Yoruba": "Niger-Congo languages",
+        "Igbo": "Niger-Congo languages",
+        "Akan": "Niger-Congo languages",
+        "Ewe": "Niger-Congo languages",
+        "Bambara": "Niger-Congo languages",
+        "Kinyarwanda": "Niger-Congo languages",
+        "Kirundi": "Niger-Congo languages",
+        "Luganda": "Niger-Congo languages",
+        "Chichewa": "Niger-Congo languages",
+        "Bemba": "Niger-Congo languages",
+        "Umbundu": "Niger-Congo languages",
+        "Kimbundu": "Niger-Congo languages",
+        "Mooré": "Niger-Congo languages",
+        "Dioula": "Niger-Congo languages",
+        # -- the rest of the families
+        "Tamil": "Dravidian languages",
+        "Telugu": "Dravidian languages",
+        "Malayalam": "Dravidian languages",
+        "Kannada": "Dravidian languages",
+        "Vietnamese": "Austroasiatic languages",
+        "Khmer": "Austroasiatic languages",
+        "Santali": "Austroasiatic languages",
+        "Thai": "Tai-Kadai languages",
+        "Lao": "Tai-Kadai languages",
+        "Finnish": "Uralic languages",
+        "Estonian": "Uralic languages",
+        "Hungarian": "Uralic languages",
+        "Sami": "Uralic languages",
+        "Georgian": "Kartvelian languages",
+        "Chechen": "Northeast Caucasian languages",
+        "Avar": "Northeast Caucasian languages",
+        "Dargin": "Northeast Caucasian languages",
+        "Mongolian": "Mongolic languages",
+        "Buryat": "Mongolic languages",
+        "Japanese": "Japonic languages",
+        "Korean": "Koreanic languages",
+        "Papiamento": "Creole languages",
+        "Creole": "Creole languages",
+        "Haitian Creole": "Creole languages",
+        "Tok Pisin": "Creole languages",
+        "Bislama": "Creole languages",
+        "Sranan Tongo": "Creole languages",
+        "Cape Verdean Creole": "Creole languages",
+        "Mauritian Creole": "Creole languages",
+        "Seychellois Creole": "Creole languages",
+        "Quechua": "Indigenous American languages",
+        "Aymara": "Indigenous American languages",
+        "Guarani": "Indigenous American languages",
+        "Nahuatl": "Indigenous American languages",
+        "Maya": "Indigenous American languages",
+        "Navajo": "Indigenous American languages",
+        "Inuktitut": "Indigenous American languages",
+        "Cree": "Indigenous American languages",
+        "Greenlandic": "Indigenous American languages",
+        "Speaks an indigenous language": "Indigenous American languages",
+        "Australian Aboriginal languages": "Indigenous Australian languages",
+        "Sign language": "Sign languages",
+        "Auslan": "Sign languages",
+    },
+    # Ethnicity's tree is the shallowest of the three, on purpose.
+    #
+    # A named people and a census race category are different kinds of answer,
+    # and most of the incomparability this map warns about lives in the
+    # difference. Brazil's *pardo*, the United States' "White (non-Hispanic)"
+    # and the United Kingdom's "White British" are answers to three different
+    # questions; Yoruba, Croat and Uzbek are ethnonyms that mean the same kind
+    # of thing wherever they are asked. So the top level separates the two,
+    # and the peoples are grouped by the region their ethnonyms come from --
+    # which is what makes related groups look alike on a map without claiming
+    # they are one group.
+    "ethnicity": {
+        # The census race and origin categories. Each country's own wording is
+        # kept as its own group and given the cross-walk category as a parent,
+        # rather than being renamed into it: "White (non-Hispanic)" is what the
+        # United States asked and is what its records should say, while a
+        # reader who wants every White answer on one map can have that too.
+        "White (non-Hispanic)": "White",
+        "White British": "White",
+        "White: English, Welsh, Scottish, Northern Irish or British": "White",
+        "White Irish": "White",
+        "White: Irish": "White",
+        "White Other": "White",
+        "White: Other White": "White",
+        "White European": "White",
+        "Caucasian": "White",
+        "Black or African American (non-Hispanic)": "Black",
+        "Black African": "Black",
+        "Black Caribbean": "Black",
+        "Black or African American": "Black",
+        "African": "Black",
+        "Asian (non-Hispanic)": "Asian",
+        "Asian or Asian British": "Asian",
+        "Two or more races (non-Hispanic)": "Mixed or multiple",
+        "Mixed": "Mixed or multiple",
+        "Mixed or Multiple ethnic groups": "Mixed or multiple",
+        "Two or more races": "Mixed or multiple",
+        "Coloured": "Mixed or multiple",
+        "Mestizo": "Mixed or multiple",
+        "Hispanic or Latino (any race)": "Hispanic or Latino",
+        "Native Hawaiian and Other Pacific Islander (non-Hispanic)":
+            "Pacific Islander",
+        "American Indian and Alaska Native (non-Hispanic)": "Indigenous",
+        "Indigenous People": "Indigenous",
+        "Aboriginal and Torres Strait Islander": "Indigenous",
+        "Indigenous Peoples": "Indigenous",
+        "Amerindian": "Indigenous",
+        "White": "Census race and origin categories",
+        "Black": "Census race and origin categories",
+        "Asian": "Census race and origin categories",
+        "Pardo": "Census race and origin categories",
+        "Mixed or multiple": "Census race and origin categories",
+        "Hispanic or Latino": "Census race and origin categories",
+        "Pacific Islander": "Census race and origin categories",
+        "Indigenous": "Census race and origin categories",
+        "Afro-descendant": "Census race and origin categories",
+        "Middle Eastern or North African": "Census race and origin categories",
+        "European peoples": "Named peoples",
+        "African peoples": "Named peoples",
+        "Asian peoples": "Named peoples",
+        "Middle Eastern and North African peoples": "Named peoples",
+        "Indigenous peoples of the Americas": "Named peoples",
+        "Pacific peoples": "Named peoples",
+    },
+}
+
+# The ethnonyms, by the region their name comes from.
+#
+# This is a hue source and nothing more. Nobody selects "European peoples" on
+# the map; what it does is make Serb and Croat neighbouring shades of one
+# colour and Kazakh and Uzbek shades of another, which is how a reader sees
+# regions rather than confetti. A people missing from here keeps its own name
+# and takes a colour of its own, so the list being incomplete costs nothing
+# but the resemblance.
+_ETHNIC_REGIONS: dict[str, tuple[str, ...]] = {
+    "European peoples": (
+        "German", "Russian", "Ukrainian", "Polish", "Italian", "Czech",
+        "Croatian", "Serbian", "Belarusian", "Hungarian", "Slovak",
+        "Lithuanian", "French", "Greek", "Spanish", "Bulgarian", "Slovene",
+        "Slovenian", "Romanian", "Macedonian", "Bosniak", "Irish", "English",
+        "Austrian", "Dutch", "Albanian", "Silesian", "Swiss", "Swedish",
+        "Norwegian", "Belgian", "Moldovan", "Scottish", "Danish", "Finnish",
+        "Portuguese", "Welsh", "Latvian", "Estonian", "Montenegrin",
+        "Romani", "Jewish", "Karaim", "Rusyn", "Kashubian", "Sorbian",
+        "Gagauz", "Icelandic", "Luxembourgish", "Maltese", "Basque",
+        "Catalan", "Galician", "Sami", "Faroese", "Frisian", "Cornish",
+        "Manx", "Vlach", "Aromanian", "Yugoslav", "Bosnian", "Ruthenian",
+        "American", "Canadian", "Australian", "New Zealander", "Afrikaner",
+    ),
+    "Asian peoples": (
+        "Chinese", "Korean", "Japanese", "Indian", "Kazakh", "Uzbek",
+        "Vietnamese", "Filipino", "Thai", "Malay", "Indonesian", "Kyrgyz",
+        "Tajik", "Turkmen", "Tatar", "Bashkir", "Chuvash", "Uyghur",
+        "Mongolian", "Buryat", "Yakut", "Nepali", "Bengali", "Sinhalese",
+        "Tamil", "Punjabi", "Pashtun", "Baloch", "Hazara", "Sindhi",
+        "Karakalpak", "Dungan", "Kalmyk", "Tuvan", "Khmer", "Lao",
+        "Burman", "Shan", "Karen", "Rakhine", "Mon", "Chin", "Kachin",
+        "Javanese", "Sundanese", "Hmong", "Tibetan",
+    ),
+    "African peoples": (
+        "Yoruba", "Igbo", "Hausa", "Fulani", "Akan", "Ewe", "Wolof",
+        "Serer", "Bambara", "Malinke", "Soninke", "Dogon", "Mossi",
+        "Bobo", "Senufo", "Lobi", "Gurunsi", "Zulu", "Xhosa", "Sotho",
+        "Tswana", "Tsonga", "Venda", "Swazi", "Ndebele", "Shona",
+        "Kikuyu", "Luhya", "Luo", "Kalenjin", "Kamba", "Kisii", "Meru",
+        "Somali", "Oromo", "Amhara", "Tigray", "Sidama", "Afar",
+        "Baganda", "Banyankole", "Basoga", "Bakiga", "Iteso", "Langi",
+        "Acholi", "Lugbara", "Chagga", "Sukuma", "Nyamwezi", "Makonde",
+        "Bemba", "Tonga", "Lozi", "Chewa", "Ngoni", "Lunda", "Luvale",
+        "Kongo", "Luba", "Mongo", "Lulua", "Ovimbundu", "Ambundu",
+        "Bakongo", "Fang", "Bamileke", "Beti", "Duala", "Tikar",
+        "Kanuri", "Tiv", "Ijaw", "Ibibio", "Nupe", "Berber", "Bissa",
+        "Gourmantche", "Peulh", "Dagomba", "Ga", "Mande", "Kru", "Temne",
+        "Mende", "Limba", "Kpelle", "Bassa", "Gio", "Krahn", "Sara",
+        "Zaghawa", "Dinka", "Nuer", "Shilluk", "Azande", "Bari",
+    ),
+    "Middle Eastern and North African peoples": (
+        "Arab", "Arabs", "Turkish", "Turk", "Kurdish", "Kurd", "Persian",
+        "Armenian", "Georgian", "Azerbaijani", "Assyrian", "Chechen",
+        "Avar", "Dargin", "Lezgin", "Ingush", "Ossetian", "Kabardian",
+        "Circassian", "Druze", "Copt", "Amazigh", "Tuareg", "Beja",
+    ),
+    "Indigenous peoples of the Americas": (
+        "Quechua", "Aymara", "Guarani", "Mapuche", "Nahua", "Maya",
+        "Zapotec", "Mixtec", "Otomi", "Totonac", "Purepecha", "Navajo",
+        "Cherokee", "Sioux", "Ojibwe", "Cree", "Inuit", "Métis",
+        "Wayuu", "Nasa", "Embera", "Raizal", "Palenquero", "Miskito",
+        "Garifuna", "Kichwa", "Shuar", "Aimara",
+    ),
+    "Pacific peoples": (
+        "Māori", "Samoan", "Tongan", "Fijian", "Cook Islands Maori",
+        "Niuean", "Tokelauan", "Tuvaluan", "i-Kiribati", "Ni-Vanuatu",
+        "Papuan", "Chamorro", "Palauan", "Marshallese", "Chuukese",
+        "Pohnpeian", "Yapese", "Kosraean", "Nauruan", "Hawaiian",
+        "Pacific Peoples", "Pacific Islander",
+    ),
+}
+for _region, _peoples in _ETHNIC_REGIONS.items():
+    for _people in _peoples:
+        PARENT["ethnicity"].setdefault(_people, _region)
+
+# Base colour for a group on the "most populous group" map, where hue is the
+# group's identity and lightness is how large its share is.
+#
+# Only the top of each tree is listed. A child takes its parent's hue and is
+# told apart by a rotation the frontend applies, so Catholicism and
+# Protestantism are recognisably two traditions of one religion rather than
+# two unrelated colours -- the arrangement the printed religion maps use, and
+# the reason a reader can tell Latin America from northern Europe at a glance.
+#
+# Chosen for separation under the three common forms of colour-blindness as
+# well as in full colour. They are never the only thing carrying identity:
+# every unit names its group on hover, the legend names each colour, and the
+# panel names it again.
+HUE: dict[str, dict[str, str]] = {
+    "religion": {
+        "Christianity": "#3b6fd4",
+        "Catholicism": "#c0392b",
+        "Protestantism": "#3b6fd4",
+        "Orthodoxy": "#7d3c98",
+        "Latter-day Saints": "#5dade2",
+        "Jehovah's Witnesses": "#2e86c1",
+        "Islam": "#1e8449",
+        "Sunni Islam": "#1e8449",
+        "Shia Islam": "#52be80",
+        "Ahmadiyya": "#82e0aa",
+        "Ibadi Islam": "#0e6251",
+        "Hinduism": "#e67e22",
+        "Buddhism": "#d4ac0d",
+        "Judaism": "#5d6d7e",
+        "Sikhism": "#d35400",
+        "Jainism": "#b9770e",
+        "Folk and traditional religion": "#8d6e63",
+        "Spiritism and Afro-Brazilian religions": "#a569bd",
+        "Māori religions": "#af7ac5",
+        "Shinto": "#e59866",
+        "Taoism": "#dc7633",
+        "Confucianism": "#ca6f1e",
+        "Zoroastrianism": "#b7950b",
+        "Baha'i": "#f5b041",
+        "Druze": "#48c9b0",
+        "Rastafarian": "#58d68d",
+        "No religion": "#95a5a6",
+        "Atheism": "#7f8c8d",
+        "Agnosticism": "#aab7b8",
+        "Other religions": "#c39bd3",
+        "Not stated": "#bdc3c7",
+        "Unaffiliated or not reported": "#aeb6bf",
+    },
+    "language": {
+        "Indo-European languages": "#c0392b",
+        "Germanic languages": "#2e86c1",
+        "Romance languages": "#c0392b",
+        "Slavic languages": "#7d3c98",
+        "Indo-Aryan languages": "#e67e22",
+        "Iranian languages": "#b9770e",
+        "Baltic languages": "#5499c7",
+        "Celtic languages": "#16a085",
+        "Greek": "#5dade2",
+        "Albanian": "#a04000",
+        "Armenian": "#922b21",
+        "Afro-Asiatic languages": "#b7950b",
+        "Semitic languages": "#b7950b",
+        "Berber languages": "#d4ac0d",
+        "Cushitic languages": "#9a7d0a",
+        "Chadic languages": "#7d6608",
+        "Sino-Tibetan languages": "#1e8449",
+        "Chinese": "#1e8449",
+        "Turkic languages": "#8e44ad",
+        "Austronesian languages": "#48c9b0",
+        "Niger-Congo languages": "#52be80",
+        "Dravidian languages": "#e74c3c",
+        "Austroasiatic languages": "#17a589",
+        "Tai-Kadai languages": "#f39c12",
+        "Uralic languages": "#5d6d7e",
+        "Kartvelian languages": "#76448a",
+        "Northeast Caucasian languages": "#6c3483",
+        "Mongolic languages": "#a569bd",
+        "Japonic languages": "#d98880",
+        "Koreanic languages": "#cd6155",
+        "Creole languages": "#af7ac5",
+        "Indigenous American languages": "#e59866",
+        "Indigenous Australian languages": "#ba4a00",
+        "Sign languages": "#85929e",
+        "Other languages": "#c39bd3",
+        "Language not stated": "#bdc3c7",
+    },
+    "ethnicity": {
+        "Census race and origin categories": "#5499c7",
+        "White": "#5dade2",
+        "Black": "#8e44ad",
+        "Asian": "#e67e22",
+        "Pardo": "#d98880",
+        "Mixed or multiple": "#c39bd3",
+        "Hispanic or Latino": "#e59866",
+        "Pacific Islander": "#48c9b0",
+        "Indigenous": "#b9770e",
+        "Afro-descendant": "#7d3c98",
+        "Middle Eastern or North African": "#b7950b",
+        "Named peoples": "#1e8449",
+        "European peoples": "#c0392b",
+        "African peoples": "#1e8449",
+        "Asian peoples": "#e74c3c",
+        "Middle Eastern and North African peoples": "#d4ac0d",
+        "Indigenous peoples of the Americas": "#a04000",
+        "Pacific peoples": "#17a589",
+        "Other ethnicity": "#c39bd3",
+        "Ethnicity not stated": "#bdc3c7",
+    },
+}
+
+
+def parent_of(field: str, name: str) -> str | None:
+    """The group ``name`` rolls up into, or None when it is top level."""
+    return PARENT.get(field, {}).get(name)
+
+
+def ancestry(field: str, name: str) -> list[str]:
+    """``name`` and every group above it, nearest first.
+
+    Guarded against a cycle rather than trusting the table: a typo that made
+    two groups each other's parent would otherwise hang the build.
+    """
+    trail = [name]
+    seen = {name}
+    while True:
+        up = parent_of(field, trail[-1])
+        if up is None or up in seen:
+            return trail
+        trail.append(up)
+        seen.add(up)
+
+
+def family(field: str, name: str) -> str:
+    """The top of ``name``'s tree: its hue on the most-populous-group map."""
+    return ancestry(field, name)[-1]
+
+
+def children(field: str) -> dict[str, list[str]]:
+    """parent -> its direct children, for one field."""
+    out: dict[str, list[str]] = {}
+    for child, up in PARENT.get(field, {}).items():
+        out.setdefault(up, []).append(child)
+    for kids in out.values():
+        kids.sort()
+    return out
+
+
+def roll_up(counts: dict[str, float], field: str,
+            ) -> dict[str, float]:
+    """Add every group's share into each of its ancestors.
+
+    The result holds both levels: ``{"Catholicism": 30, "Christianity": 30}``
+    from one Catholic row, so a caller can read either without summing twice.
+    A parent's own rows are already in it -- a source that says "Christian"
+    beside "Catholic" means people who named the religion and no tradition,
+    and the two are disjoint answers to one question.
+
+    Measured before it was relied on: of 1,824 shipped records that carry a
+    family label beside one of its traditions, none is a total row restated.
+    Afrobarometer is the pattern -- a respondent who answered "Christian only"
+    is counted once, under Christianity, and never again under a denomination
+    they did not name.
+    """
+    out: dict[str, float] = {}
+    for name, value in counts.items():
+        for step in ancestry(field, name):
+            out[step] = out.get(step, 0.0) + value
+    return out
+
+
+def share_of(counts: dict[str, float], field: str, group: str) -> float:
+    """One group's share, its descendants included."""
+    return roll_up(counts, field).get(group, 0.0)
+
+
+def hue(field: str, name: str) -> str | None:
+    """The group's own colour, or the nearest one above it."""
+    table = HUE.get(field, {})
+    for step in ancestry(field, name):
+        if step in table:
+            return table[step]
+    return None
+
+
 # Groups that are the absence of an answer rather than an answer: a residual
 # "other", or a non-response. They are real and must be shown -- a bar that
 # quietly drops 20% of a population is the failure this project cares about
@@ -886,6 +1536,17 @@ RESIDUAL: frozenset[str] = frozenset({
     "Other religions", "Not stated", "Unaffiliated or not reported",
     "Other languages", "Language not stated",
     "Other ethnicity", "Ethnicity not stated",
+    # Labels that weld a real answer to a non-answer. They are deliberately
+    # merged into nothing -- there is no honest place to put "other or none"
+    # -- and they are just as deliberately marked here, because a map that
+    # colours a country for its largest group must not answer "which religion
+    # is largest" with a bucket that is partly the absence of an answer.
+    "other or none", "Other, none, or not stated", "none or unspecified",
+    "none/unspecified", "none or refused", "other/none/unspecified",
+    "other or not stated", "none or not stated", "Other and unspecified",
+    "Other or unspecified", "other/not stated", "Other/not stated",
+    "No ethnic group", "Unknown ethnicity", "Not declared",
+    "Some other race (non-Hispanic)", "Other and unspecified languages",
 })
 
 

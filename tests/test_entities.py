@@ -2526,8 +2526,17 @@ class SouthAfricaLabels(unittest.TestCase):
     def test_the_traditional_african_column_folds_with_the_rest(self):
         self.assertEqual(self.name("religion", "Traditional African"),
                          "Folk and traditional religion")
+        # Census 2022 prints these as three columns side by side, so they are
+        # three groups that sum into the non-religious rather than three names
+        # for one. Asking for "No religion" still counts all of them.
+        import canonical_groups as cg
+        self.assertEqual(self.name("religion", "Atheism"), "Atheism")
+        self.assertEqual(self.name("religion", "Agnosticism"), "Agnosticism")
+        self.assertEqual(self.name("religion", "No religious affiliation"),
+                         "No religion")
         for label in ("Atheism", "Agnosticism", "No religious affiliation"):
-            self.assertEqual(self.name("religion", label), "No religion")
+            self.assertEqual(cg.family("religion", self.name("religion", label)),
+                             "No religion", label)
 
 
 class GapReasons(unittest.TestCase):
@@ -4259,19 +4268,26 @@ class ASurveyIsNotACount(unittest.TestCase):
                              f"{path} is not tracked; a clean checkout loses it")
 
     def test_the_brotherhoods_reach_islam(self):
-        """A filter for Islam that omits Senegal's orders shows a false map."""
+        """A filter for Islam that omits Senegal's orders shows a false map.
+
+        Each reaches Islam through the branch it belongs to now that the tree
+        has one, which is what a reader asking for Sunni Islam needs; asking
+        for Islam still counts every one of them.
+        """
         import canonical_groups as cg
         table = cg.lookup("religion")
         for label in ("Muslim only", "Sunni only", "Tijaniya Brotherhood",
                       "Mouridiya Brotherhood", "Qadiriya", "Ismaeli"):
-            self.assertEqual(table.get(cg.key(label)), "Islam", label)
+            name = table.get(cg.key(label))
+            self.assertEqual(cg.family("religion", name), "Islam", label)
 
     def test_the_named_churches_reach_christianity(self):
         import canonical_groups as cg
         table = cg.lookup("religion")
         for label in ("Christian only", "Zionist Christian Church", "Coptic",
                       "New Apostolic Church", "Dutch Reformed"):
-            self.assertEqual(table.get(cg.key(label)), "Christianity", label)
+            name = table.get(cg.key(label))
+            self.assertEqual(cg.family("religion", name), "Christianity", label)
 
 
 class ScotlandsCensusNestsAndAsksThreeQuestions(unittest.TestCase):
@@ -4411,10 +4427,11 @@ class NorthernIrelandAsksTwoReligionQuestions(unittest.TestCase):
                       "Brethren", "Non-denominational Christian",
                       "Mixed Catholic / Protestant",
                       "Other Christian denominations"):
-            self.assertEqual(table.get(cg.key(label)), "Christianity", label)
+            name = table.get(cg.key(label))
+            self.assertEqual(cg.family("religion", name), "Christianity", label)
         belfast = next(r for r in self.rows() if r["name"] == "Belfast")
         folded = cg.canonicalise(belfast["religion"], "religion")
-        self.assertGreater(folded["Christianity"], 70.0)
+        self.assertGreater(cg.share_of(folded, "religion", "Christianity"), 70.0)
         self.assertEqual(cg.check_no_double_counting(belfast["religion"],
                                                      "religion"), [])
 
@@ -5117,3 +5134,86 @@ class AngolaReadsFiguresByPosition(unittest.TestCase):
         pages[first] = pages[first].replace(cabinda, cabinda.replace("10[", "11[", 1), 1)
         with self.assertRaises(SystemExit):
             a.build(a.PAGE_BREAK.join(pages))
+
+
+class RollingUpWithoutAPopulationToCheckAgainst(unittest.TestCase):
+    """What a sum needs, and what it only wants.
+
+    A parent's composition is summed from its children when the children are
+    known to be all of them. The population comparison is a proxy for exactly
+    that question, so where completeness is established another way it is a
+    control the sum can do without -- and Burkina Faso is the case that made
+    the difference matter: all thirteen regions carry the 2019 census religion
+    and not one carries a population, so a country whose composition was fully
+    determined was published as a gap.
+
+    What the relaxation may not do is publish a population. A partial sum of
+    children's populations stamped on the parent would be a count of part of a
+    place presented as the whole of it.
+    """
+
+    @staticmethod
+    def kids(**extra):
+        rows = [{"group": "Islam", "pct": 60.0, "count": 600},
+                {"group": "Christian", "pct": 40.0, "count": 400}]
+        return [dict({"name": f"Region {i}", "religion": rows}, **extra)
+                for i in range(1, 4)]
+
+    def test_children_without_populations_are_summed_when_complete(self):
+        import build_entities as be
+        parent = {"name": "Country"}
+        why = be.roll_up_field(parent, self.kids(), "religion", complete=True)
+        self.assertIsNone(why)
+        self.assertEqual({g["group"]: g["pct"] for g in parent["religion"]},
+                         {"Islam": 60.0, "Christian": 40.0})
+        self.assertIn("no population", parent["religion_note"])
+
+    def test_children_without_populations_are_refused_when_not_complete(self):
+        import build_entities as be
+        parent = {"name": "Country"}
+        why = be.roll_up_field(parent, self.kids(), "religion")
+        self.assertIn("children have no population", why or "")
+        self.assertNotIn("religion", parent)
+
+    def test_a_summed_parent_is_never_given_a_partial_population(self):
+        import build_entities as be
+        parent = {"name": "Country"}
+        children = self.kids()
+        children[0]["population"] = {"value": 1000, "year": 2019}
+        be.roll_up_field(parent, children, "religion", complete=True)
+        self.assertNotIn("population", parent)
+
+    def test_shares_without_counts_are_priced_against_the_childs_population(self):
+        """A composition of percentages and a published population is enough.
+
+        Korea's seventeen provinces carry survey shares and no counts. Summed
+        this way they come to 51,466,331 people against a published
+        51,486,343 for the country, which is the check that the arithmetic is
+        the same one the source would have done.
+        """
+        import build_entities as be
+        parent = {"name": "Country", "population": {"value": 1000, "year": 2020}}
+        children = [
+            {"name": "A", "population": {"value": 600, "year": 2020},
+             "religion": [{"group": "Islam", "pct": 50.0},
+                          {"group": "Christian", "pct": 50.0}]},
+            {"name": "B", "population": {"value": 400, "year": 2020},
+             "religion": [{"group": "Islam", "pct": 25.0},
+                          {"group": "Christian", "pct": 75.0}]},
+        ]
+        why = be.roll_up_field(parent, children, "religion")
+        self.assertIsNone(why)
+        got = {g["group"]: g["pct"] for g in parent["religion"]}
+        # 300 + 100 Muslims of 1,000 people.
+        self.assertEqual(got["Islam"], 40.0)
+        self.assertEqual(got["Christian"], 60.0)
+        self.assertIn("shares and no counts", parent["religion_note"])
+
+    def test_shares_without_counts_or_a_population_are_still_refused(self):
+        import build_entities as be
+        parent = {"name": "Country", "population": {"value": 1000, "year": 2020}}
+        children = [{"name": "A", "population": {"value": 1000, "year": 2020},
+                     "religion": [{"group": "Islam", "pct": 100.0}]}]
+        del children[0]["population"]
+        why = be.roll_up_field(parent, children, "religion", complete=True)
+        self.assertIn("shares with no counts", why or "")

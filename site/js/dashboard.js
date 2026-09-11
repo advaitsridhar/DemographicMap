@@ -74,16 +74,54 @@ window.Dashboard = (function () {
     return { shown, folded: tail.length };
   }
 
+  /* The "i" that carries a note.
+   *
+   * Every composition used to print its note as a paragraph under the bar.
+   * They run to several hundred words between them -- Switzerland's says the
+   * survey lets a person name three languages, Zimbabwe's gives the universe
+   * of the mother-tongue table, a summed one names the divisions it came from
+   * -- and stacked three deep they pushed the figures off the screen on a
+   * laptop. They are worth keeping every word of and not worth reading every
+   * time, which is what a bubble is for.
+   */
+  function infoDot(text, label) {
+    if (!text) return "";
+    return `<button type="button" class="info" data-info-text="${esc(text)}"
+                    aria-label="${esc(label)}">i</button>`;
+  }
+
+  /* One word for how the shares relate to the population, where they do not
+   * simply partition it.
+   *
+   * This is the part of the note that changes how the bar should be read, so
+   * it stays on the page as a chip while the rest goes behind the bubble. A
+   * reader who sees six ethnic groups totalling 114% and no explanation is
+   * looking at what appears to be an error.
+   */
+  function basisChip(total, value) {
+    if (!value.length) return "";
+    if (total > 105) {
+      return `<span class="chip-basis" title="Shares sum to ${window.Fmt.pct(total)}">
+                more than one answer allowed</span>`;
+    }
+    if (total < 95) {
+      return `<span class="chip-basis chip-basis-partial"
+                    title="Shares sum to ${window.Fmt.pct(total)}">
+                describes ${window.Fmt.pct(total)} of the population</span>`;
+    }
+    return "";
+  }
+
   function compositionPanel(title, value, note, year) {
     // A reference year only belongs on a value. Printing one beside "not
     // collected" implies a measurement that was never taken.
     const showYear = year && !isGap(value);
-    const parts = [`<section class="panel"><div class="panel-head"><h3>${esc(title)}</h3>` +
+    const parts = [`<section class="panel"><div class="panel-head">` +
+                   `<h3>${esc(title)}${infoDot(note, `About the ${title.toLowerCase()} figures`)}</h3>` +
                    (showYear ? `<span class="panel-year">${esc(year)}</span>` : "") + `</div>`];
 
     if (isGap(value)) {
       parts.push(gapBlock(value, title));
-      if (note) parts.push(`<p class="note">${esc(note)}</p>`);
       return parts.join("") + "</section>";
     }
 
@@ -117,6 +155,8 @@ window.Dashboard = (function () {
         (short ? `, not accounted for ${pct(100 - total)}` : "");
       parts.push(`<div class="stack-bar" role="img"
         aria-label="${esc(label)}">${segments}${remainder}</div>`);
+      const chip = basisChip(total, shown);
+      if (chip) parts.push(`<p class="basis-line">${chip}</p>`);
 
       parts.push(`<ul class="composition-list">` + shown.map((row, i) =>
         `<li><span class="swatch" style="background:${window.Palette.categorical(i)}" aria-hidden="true"></span>
@@ -135,11 +175,6 @@ window.Dashboard = (function () {
         aria-hidden="true">▲</span> Named without published shares:
         ${esc(unlabelled.slice(0, 10).join(", "))}.</p>`);
     }
-    if (Math.abs(total - 100) > 4 && shown.length) {
-      parts.push(`<p class="note">Shares total ${pct(total)}, not 100% — categories may
-        overlap, exclude non-responses, or come from a multi-response question.</p>`);
-    }
-    if (note) parts.push(`<p class="note">${esc(note)}</p>`);
     return parts.join("") + "</section>";
   }
 

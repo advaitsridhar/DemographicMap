@@ -23,12 +23,39 @@ class Synonyms(unittest.TestCase):
         self.assertEqual(got, {"Islam": 10.0})
         self.assertEqual(cg.canonicalise(rows(("Islam", 10.0)), "religion"), got)
 
-    def test_denominations_roll_up_into_their_religion(self):
-        # The US reports traditions where Australia reports "Christianity".
+    def test_denominations_keep_their_own_name_and_roll_up(self):
+        # The US reports traditions where Australia reports "Christianity", and
+        # the map has to answer both questions off these rows: which of these
+        # people are Catholic, and how many are Christian at all.
         got = cg.canonicalise(rows(("Protestant", 30.0), ("Catholic", 15.0),
                                    ("Orthodox Christian", 2.0),
                                    ("Latter-day Saints", 1.0)), "religion")
-        self.assertEqual(got, {"Christianity": 48.0})
+        self.assertEqual(got, {"Protestantism": 30.0, "Catholicism": 15.0,
+                               "Orthodoxy": 2.0, "Latter-day Saints": 1.0})
+        self.assertEqual(cg.share_of(got, "religion", "Christianity"), 48.0)
+        self.assertEqual(cg.share_of(got, "religion", "Catholicism"), 15.0)
+
+    def test_a_family_label_beside_a_tradition_sums_rather_than_doubles(self):
+        """"Christian" next to "Roman Catholic" is two disjoint answers.
+
+        Afrobarometer offers "Christian only" to a respondent who names no
+        denomination, so Tanzania's Mbeya carries Christian 39.4 beside Roman
+        Catholic 29.1 and nine other churches. Both are answers one person
+        gave once, and the region's Christian share is their sum.
+        """
+        got = cg.canonicalise(rows(("Christian", 39.4), ("Roman Catholic", 29.1),
+                                   ("Lutheran", 2.7)), "religion")
+        self.assertAlmostEqual(cg.share_of(got, "religion", "Christianity"), 71.2)
+
+    def test_a_group_rolls_up_through_every_level(self):
+        # Language nests two deep: a Mandarin speaker is a Chinese speaker and
+        # a Sino-Tibetan one, and asking for any of the three must work.
+        got = cg.canonicalise(rows(("Mandarin", 12.0), ("Cantonese", 3.0)),
+                              "language")
+        self.assertEqual(cg.share_of(got, "language", "Mandarin"), 12.0)
+        self.assertEqual(cg.share_of(got, "language", "Chinese"), 15.0)
+        self.assertEqual(
+            cg.share_of(got, "language", "Sino-Tibetan languages"), 15.0)
 
     def test_unmapped_labels_keep_their_own_name(self):
         # Nothing is dropped for want of a mapping: an unlisted group stays
@@ -79,11 +106,13 @@ class Synonyms(unittest.TestCase):
 
 
 class DoubleCounting(unittest.TestCase):
-    def test_parent_beside_its_own_child_is_reported(self):
-        # If a source ever published both levels, rolling up would double it.
+    def test_two_labels_for_one_group_in_one_record_are_reported(self):
+        # Reaching one canonical name by its own name and by a second label
+        # that folds into it means the source published a group twice, and
+        # summing would double it.
         bad = cg.check_no_double_counting(
-            rows(("Christianity", 60.0), ("Catholic", 25.0)), "religion")
-        self.assertEqual(bad, ["Christianity"])
+            rows(("Catholicism", 60.0), ("Roman Catholic", 25.0)), "religion")
+        self.assertEqual(bad, ["Catholicism"])
 
     def test_the_same_label_twice_is_not_a_conflict(self):
         # The Factbook lists Bissa twice for Burkina Faso. Summing is right.
@@ -110,11 +139,13 @@ class DoubleCounting(unittest.TestCase):
             rows(("Other religion", 0.5), ("Other Religions", 0.1)), "religion")
         self.assertAlmostEqual(got["Other religions"], 0.6)
 
-    def test_a_real_parent_is_still_caught_when_a_residual_is_present(self):
+    def test_a_real_duplicate_is_still_caught_when_a_residual_is_present(self):
+        # Two catch-alls in one record are fine; a group published twice in
+        # the same record is not, and the residual must not mask it.
         bad = cg.check_no_double_counting(
-            rows(("Christianity", 60.0), ("Catholic", 25.0),
+            rows(("Catholicism", 60.0), ("Roman Catholic", 25.0),
                  ("Other religion", 0.5), ("Other Religions", 0.1)), "religion")
-        self.assertEqual(bad, ["Christianity"])
+        self.assertEqual(bad, ["Catholicism"])
 
 
 if __name__ == "__main__":
@@ -128,10 +159,10 @@ class CaseFolding(unittest.TestCase):
                               "religion")
         self.assertEqual(got, {"No religion": 15.0})
 
-    def test_a_parent_beside_its_child_is_still_caught_across_cases(self):
+    def test_a_duplicated_group_is_still_caught_across_cases(self):
         bad = cg.check_no_double_counting(
-            rows(("christianity", 60.0), ("Catholic", 25.0)), "religion")
-        self.assertEqual(bad, ["Christianity"])
+            rows(("catholicism", 60.0), ("Roman Catholic", 25.0)), "religion")
+        self.assertEqual(bad, ["Catholicism"])
 
     def test_the_same_label_in_two_cases_is_not_a_conflict(self):
         self.assertEqual(

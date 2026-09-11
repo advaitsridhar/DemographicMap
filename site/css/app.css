@@ -246,7 +246,16 @@ html, body {
 }
 .opt .opt-name { font-size: .82rem; font-weight: 600; }
 .opt[aria-checked="true"] .opt-name { color: var(--accent); }
-.opt .opt-hint { font-size: .69rem; color: var(--ink-muted); line-height: 1.4; }
+/* The sentence under a choice explains the one you are on, not the five you
+   are not. Six of them at once ran the list to 300px and pushed the legend --
+   the thing that says what the colours mean -- below the fold on a laptop.
+   Hovering brings a hint back for the option under the pointer, so the list
+   is still browsable without choosing. */
+.opt .opt-hint {
+  font-size: .69rem; color: var(--ink-muted); line-height: 1.4; display: none;
+}
+.opt[aria-checked="true"] .opt-hint, .opt:hover .opt-hint,
+.opt:focus-visible .opt-hint { display: block; }
 
 /* Three mutually exclusive fields read better side by side than stacked: they
    are alternatives of one kind, not a menu of different things. */
@@ -279,13 +288,40 @@ html, body {
   border: 1px solid var(--hairline); border-radius: var(--radius-sm);
   padding: .2rem;
 }
+/* A row is the twist and the choice side by side. Indenting the row rather
+   than the button keeps the whole hit area aligned with its level, so a child
+   never looks like it starts where its parent's label does. */
+.g-row {
+  display: grid; grid-template-columns: 1.1rem 1fr; align-items: start;
+  padding-left: calc(var(--g-depth, 0) * .85rem);
+}
+.g-twist {
+  font: inherit; font-size: .7rem; line-height: 1.9;
+  cursor: pointer; padding: 0; color: var(--ink-muted);
+  background: transparent; border: none; border-radius: 3px;
+}
+.g-twist:hover { color: var(--ink-primary); background: var(--surface-sunken); }
+.g-twist:focus-visible { outline: 2px solid var(--accent); outline-offset: -1px; }
+.g-twist-empty { cursor: default; }
+
 .g-opt {
-  display: grid; gap: .05rem; text-align: left;
+  display: grid; gap: .05rem; text-align: left; min-width: 0;
+  grid-template-columns: auto 1fr; grid-template-areas: "swatch name" ". reach" ". parent";
   font: inherit; cursor: pointer;
   padding: .32rem .45rem;
   background: transparent; color: var(--ink-secondary);
   border: 1px solid transparent; border-radius: 4px;
 }
+.g-name { grid-area: name; }
+.g-reach { grid-area: reach; }
+.g-parent { grid-area: parent; font-size: .66rem; color: var(--ink-muted); font-style: italic; }
+/* The colour this group carries on the most-populous-group map, so the two
+   controls are visibly the same vocabulary. */
+.g-swatch {
+  grid-area: swatch; width: .55rem; height: .55rem; margin: .28rem .4rem 0 0;
+  border-radius: 2px; box-shadow: inset 0 0 0 1px var(--border-ring);
+}
+.g-swatch-none { background: var(--axis); }
 .g-opt:hover { background: var(--surface-sunken); }
 .g-opt:focus-visible { outline: 2px solid var(--accent); outline-offset: -1px; }
 .g-opt[aria-selected="true"] {
@@ -542,3 +578,57 @@ dialog p, dialog li { font-size: .8rem; line-height: 1.6; color: var(--ink-secon
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
 }
+
+
+/* ------------------------------------------------------------- info bubbles */
+
+/* The "i" beside a heading. Small, quiet, and the same size as the heading it
+   sits in, so it reads as punctuation rather than as another control. */
+.info {
+  display: inline-grid; place-items: center;
+  width: 1.05em; height: 1.05em; margin-left: .35em; padding: 0;
+  font: inherit; font-size: .95em; font-style: italic; font-weight: 700;
+  line-height: 1; text-transform: none; cursor: help;
+  color: var(--ink-muted); background: transparent;
+  border: 1px solid var(--axis); border-radius: 50%;
+}
+.info:hover, .info[aria-expanded="true"] { color: var(--accent); border-color: var(--accent); }
+.info:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.info-bubble {
+  position: fixed; z-index: 60; max-width: min(30rem, calc(100vw - 1rem));
+  padding: .55rem .7rem;
+  font-size: .74rem; line-height: 1.5; color: var(--ink-primary);
+  background: var(--surface-1);
+  border: 1px solid var(--hairline); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+}
+
+/* ------------------------------------------------- most-populous-group key */
+
+.legend-groups { list-style: none; margin: 0 0 .5rem; padding: 0; display: grid; gap: .12rem; }
+.legend-groups li {
+  display: grid; grid-template-columns: auto 1fr auto; gap: .4rem; align-items: center;
+  font-size: .74rem; color: var(--ink-secondary);
+}
+.legend-group-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.legend-group-count { font-size: .67rem; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+.legend-more { font-size: .67rem; color: var(--ink-muted); font-style: italic; }
+.legend-shade { display: grid; gap: .15rem; margin-top: .3rem; }
+.legend-shade-label { font-size: .67rem; color: var(--ink-muted); }
+
+/* The one fact from a composition note that changes how the bar is read, kept
+   on the page while the rest of the note goes behind the "i". */
+.basis-line { margin: .3rem 0 0; }
+.chip-basis {
+  display: inline-block; padding: .1rem .4rem;
+  font-size: .66rem; font-weight: 600; letter-spacing: .01em;
+  color: var(--ink-secondary); background: var(--surface-sunken);
+  border: 1px solid var(--hairline); border-radius: 999px;
+}
+.chip-basis-partial { color: var(--status-serious); border-color: var(--status-serious); }
+
+/* A heading that carries an "i" has to lay the two out on one line without the
+   button inheriting the heading's letter-spacing. */
+.filter-section > h3, .panel-head h3 { display: flex; align-items: center; }
+.panel-head h3 .info { letter-spacing: 0; }
