@@ -1254,9 +1254,24 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
            ", so their counts are those shares taken of their own published "
            "populations." if derived else "")
         + disagrees + displaced + left_out)
+    # The year belongs to the figure, not to the record, so it is rewritten
+    # with it. Thailand is what made this matter: its 76 provinces carry the
+    # 2000 census and stamp no year at all, so the sum inherited the 2021 the
+    # Factbook estimate had been wearing, and the country's panel dated a
+    # quarter-century-old count to five years ago. Britain and Poland were the
+    # same fault pointing the other way -- 2021 census children under an
+    # inherited 2011.
+    #
+    # Where the children do not agree on a year the stamp is dropped rather
+    # than guessed. That costs the roughly two dozen countries whose displaced
+    # figure happened to cite the same census their divisions did; it costs
+    # them a label that was right by luck, and the note still says what the
+    # figure was summed from. The alternative is a date that looks checked.
     years = {c.get(f"{field}_year") for c in children} - {None}
     if len(years) == 1:
         parent[f"{field}_year"] = years.pop()
+    else:
+        parent.pop(f"{field}_year", None)
 
     # A unit whose composition was just summed from a complete set of children
     # should carry their population too, when it has none, an older one, or one

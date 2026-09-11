@@ -771,14 +771,25 @@
     els.miniNote.hidden = !blank;
   }
 
+  // What a census or survey does by asking, which is nearly every figure on
+  // this map. A basis equal to this is not worth a sentence.
+  const ORDINARY_BASIS = "self-identification";
+
+  // Bases that need more than their own name to be understood. Anything not
+  // listed still gets a sentence, in the basis's own words.
+  const BASIS_WORDS = {
+    adherents: "count adherents reported by religious bodies rather than " +
+               "answers people gave",
+  };
+
   /* What the current filter actually covers, said out loud.
    *
    * A worldwide filter invites a worldwide reading, and most of these groups
    * are not reported worldwide. A map of Sikhism shaded in six countries and
    * blank everywhere else means "six countries publish this", not "nobody else
-   * has any" -- and where a country measured it a different way, as the US
-   * counts religious adherents reported by bodies rather than answers people
-   * gave, comparing its shade with its neighbours' is comparing two questions.
+   * has any" -- and where a country measured it a different way, counting
+   * adherents on religious bodies' rolls rather than answers people gave,
+   * comparing its shade with its neighbours' is comparing two questions.
    */
   function describeReach() {
     const metric = window.Metrics.METRICS[state.metric];
@@ -841,17 +852,31 @@
     } else if (labels.length > 1) {
       parts.push(`Combines: ${labels.join(", ")}.`);
     }
-    // Only the sub-national records carry a basis: the US county and state
-    // figures count adherents reported by religious bodies, while the country
-    // row beside them is the Factbook's self-identification. Saying "the USA
-    // measures this as adherents" would be wrong about the country shape the
-    // reader is looking at, so the sentence names the level it applies to.
+    // A basis says what a figure counts, and is worth a sentence only when it
+    // is not the thing every other figure on the map already counts. A census
+    // or survey asks people what they are, so "self-identification" is the
+    // ordinary case and naming it would tell a reader nothing.
+    //
+    // This sentence was written for the other kind and hard-coded it: the 2020
+    // Religion Census counted adherents reported by religious bodies, so the
+    // American figures were not on the same footing as the rest and the panel
+    // said so. PRRI's survey has since replaced those figures, and the
+    // sentence went on interpolating the new basis into the old wording --
+    // telling readers that self-identification was "reported by religious
+    // bodies rather than answers people gave", which is the opposite of what
+    // a survey is. The words now come from the basis rather than from the
+    // source that happened to be there when they were written.
     for (const [iso, basis] of Object.entries((entry && entry.bases) || {})) {
-      if (!group.countries.includes(iso)) continue;
+      if (basis === ORDINARY_BASIS || !group.countries.includes(iso)) continue;
       const record = window.DataStore.country(iso);
-      parts.push(`Within ${record ? record.name : iso}, state and county figures ` +
-                 `count ${basis} reported by religious bodies rather than answers ` +
-                 `people gave, so they are not on the same footing as the rest.`);
+      const said = BASIS_WORDS[basis] ||
+                   `count ${basis} rather than answers people gave`;
+      // Named down to the level it applies to: the country shape beside these
+      // need not be measured the same way, and "the USA counts adherents"
+      // would be wrong about the shape the reader is actually looking at.
+      parts.push(`Within ${record ? record.name : iso}, the figures below the ` +
+                 `country ${said}, so they are not on the same footing as the ` +
+                 `rest.`);
     }
     els.groupReach.innerHTML = esc(parts.join(" ")) + folded;
     els.groupReach.hidden = false;

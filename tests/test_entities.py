@@ -1282,6 +1282,69 @@ class ACountryMostOfWhosePartsPublish(unittest.TestCase):
                                       if isinstance(v, list)])
 
 
+class TheYearBelongsToTheFigure(unittest.TestCase):
+    """A stamp does not outlive the value it described.
+
+    Thailand is the case. Its 76 provinces carry the 2000 census and stamp no
+    year at all, so the country's sum inherited the 2021 that the Factbook
+    estimate it replaced had been wearing, and the panel dated a
+    quarter-century-old count to five years ago. Britain and Poland were the
+    same fault pointing the other way: 2021 census children under an inherited
+    2011.
+    """
+
+    def parent(self, year=2021):
+        return {"id": "XXX", "codes": {"iso3": "XXX"}, "name": "Somewhere",
+                "population": {"value": 1000, "year": 2025},
+                "religion": [{"group": "Alpha", "pct": 90.0, "count": 900},
+                             {"group": "other", "pct": 10.0, "count": 100}],
+                "religion_year": year, "sources": []}
+
+    def child(self, name, pop, groups, year=None):
+        total = sum(groups.values())
+        row = {"id": name, "name": name, "parent": "XXX",
+               "population": {"value": pop, "year": 2025},
+               "religion": [{"group": g, "pct": round(100 * c / total, 1),
+                             "count": c} for g, c in groups.items()],
+               "sources": []}
+        if year is not None:
+            row["religion_year"] = year
+        return row
+
+    def roll(self, parent, kids):
+        be.roll_up_countries([parent], {"XXX": kids})
+        return parent
+
+    def kids(self, year=None):
+        return [self.child("North", 600, {"Alpha": 500, "Beta": 100}, year),
+                self.child("South", 400, {"Alpha": 300, "Beta": 100}, year)]
+
+    def test_children_that_agree_date_the_sum(self):
+        got = self.roll(self.parent(2021), self.kids(2000))
+        self.assertEqual(got["religion_year"], 2000)
+
+    def test_children_that_say_nothing_leave_it_undated(self):
+        got = self.roll(self.parent(2021), self.kids())
+        self.assertEqual([g["group"] for g in got["religion"]],
+                         ["Alpha", "Beta"])
+        self.assertIsNone(got.get("religion_year"))
+
+    def test_children_that_disagree_leave_it_undated(self):
+        kids = [self.child("North", 600, {"Alpha": 500, "Beta": 100}, 2011),
+                self.child("South", 400, {"Alpha": 300, "Beta": 100}, 2021)]
+        self.assertIsNone(self.roll(self.parent(2021), kids).get("religion_year"))
+
+    def test_a_refused_sum_keeps_the_year_of_what_it_still_holds(self):
+        # Nothing was replaced, so nothing is misdated. Wales' children sum to
+        # three times its population and stay refused.
+        parent = self.parent(2021)
+        parent["population"] = {"value": 10_000, "year": 2025}
+        got = self.roll(parent, self.kids())
+        self.assertEqual([g["group"] for g in got["religion"]],
+                         ["Alpha", "other"])
+        self.assertEqual(got["religion_year"], 2021)
+
+
 class CoveredShare(unittest.TestCase):
     """How much of the children's population the publishing ones carry."""
 
