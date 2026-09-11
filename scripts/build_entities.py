@@ -87,6 +87,9 @@ ADAPTER_FILES = [
     # Likewise after Afrobarometer: Angola's 18 provinces carried the survey
     # and now carry the 2024 census for all three fields.
     "angola_province.json",
+    # Likewise: Zimbabwe's provinces and Burkina Faso's regions carried the
+    # survey and now carry their census for the fields it publishes by region.
+    "zimbabwe_province.json", "burkina_region.json",
     "thailand_province.json",
     "kazakhstan_region.json", "cambodia_province.json",
     "kazakhstan_oblast.json", "kazakhstan_district.json",
@@ -149,6 +152,10 @@ ADAPTER_HINTS: dict[str, str] = {
     "MLI": "INSTAT RGPH5 2022 thematic report on cultural characteristics (religion, "
            "ethnie, langue maternelle) by region, its 20 regions summed into the 9 "
            "shapes: python -m scripts.fetch_census.mali",
+    "ZWE": "ZIMSTAT 2022 census report (religion, mother tongue) by province: "
+           "python -m scripts.fetch_census.zimbabwe",
+    "BFA": "INSD RGPH 2019 table volume (religion) by region: "
+           "python -m scripts.fetch_census.burkina",
     "AGO": "INE Censo 2024 final report (ethnic group, mother tongue, religion) by "
            "province, read from the PDF's word coordinates: "
            "python -m scripts.fetch_census.angola",
