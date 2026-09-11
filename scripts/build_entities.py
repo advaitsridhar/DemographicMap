@@ -56,6 +56,10 @@ ADAPTER_FILES = [
     # by field this still fills a field a census left empty without touching
     # one it filled.
     "afrobarometer_region.json",
+    # Korea's pooled web-panel survey is the same kind of thing: a survey
+    # that fills provinces no census file reaches, and that a census file
+    # later in this list replaces field by field.
+    "korea_survey_province.json",
     "wikidata_admin1.json", "wikidata_admin2.json",
     "eurostat_nuts2.json", "eurostat_nuts3.json",
     "india_state.json", "india_district.json",
@@ -156,6 +160,9 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.zimbabwe",
     "BFA": "INSD RGPH 2019 table volume (religion) by region: "
            "python -m scripts.fetch_census.burkina",
+    "KOR": "Hankook Research 2025 pooled survey (religion) by residence region, each "
+           "of the seven regions' figure carried by its provinces: "
+           "python -m scripts.fetch_census.korea_survey",
     "AGO": "INE Censo 2024 final report (ethnic group, mother tongue, religion) by "
            "province, read from the PDF's word coordinates: "
            "python -m scripts.fetch_census.angola",
@@ -210,9 +217,6 @@ ADAPTER_GAPS: dict[str, str] = {
            "standard client can read a page (an EOF in the protocol, measured "
            "on the runner), and this project does not turn verification off. "
            "The data exists and is not reachable from here.",
-    "KOR": "The 2015 census asked religion and KOSIS publishes it by province, "
-           "but only through an API that needs a registered key; the article "
-           "that might have transcribed it carries national figures only.",
     "EGY": "CAPMAS collected religion in the 2017 census and has not published "
            "it, nationally or by governorate; the last published figures are "
            "the 2006 census, national only. The data exists and is withheld.",

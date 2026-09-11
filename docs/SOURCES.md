@@ -90,6 +90,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Peru | INEI, Censos Nacionales 2017, *Perú: Perfil Sociodemográfico* (Lib1539): Cuadro 2.64 (lengua materna aprendida en la niñez by department), Cuadros 2.78 to 2.81 (population professing the Catholic faith, the Evangelical faith, another religion, none, by department) | department | Fills a country that had nothing: 26/26 (24 departments, Callao, and Lima as its two shapes, Provincia de Lima and Región Lima, with the book's whole-Lima row used as a check). Mother tongue is of the population aged 5 and over, religion of 12 and over. Figures are printed with spaces for thousands and two of the religion tables in a font pdfplumber reads letter by letter, so each row is read from word positions: tokens closer than 4.5 pt are one cell, and a department is recognised by the letters of its name. Checks: every printed share against its count and total, the four religion tables agreeing on each department's total and summing to it, the two halves of the language table summing to the total. Ethnic self-perception is printed by department only as four graphics and is not read. `scripts/fetch_census/peru.py`. |
 | Zimbabwe | ZIMSTAT, 2022 Population and Housing Census Report: Table 2.14(c) (religion by province, both sexes) and Table 2.17 (mother tongue by province) | province | Replaces the Afrobarometer survey rows for religion on all 10 provinces and adds mother tongue; ethnicity stays the survey's, since the report prints it for the country only (Table 2.15). Comma-thousand counts read as text; each religion row sums to its printed total, each language row sums across provinces to its printed total, and each province's languages sum to the printed province total. The mother-tongue table covers 13,913,253 of 15,178,957 residents and the page does not state its age floor. `scripts/fetch_census/zimbabwe.py`. |
 | Burkina Faso | INSD, 5e RGPH 2019, *Volume des tableaux statistiques*, Tableau I.22 (population résidente par région selon la religion, en %, with each region's population) | region | Replaces the Afrobarometer survey rows for religion on all 13 regions. Shares to one decimal applied to the region's printed population; the thirteen populations must equal the printed national 18,171,751 and the national shares rebuilt from the regions must agree with the printed ones. The volume prints the principal language spoken by milieu only and no ethnicity, so those fields are untouched. `scripts/fetch_census/burkina.py`. |
+| South Korea | Hankook Research, *2025 Religion Perception Survey* (Weekly Report No. 358-3, 3 December 2025), page 8: religion by residence region, the religion question pooled from the 22 waves of the biweekly "Yeoron sok-ui Yeoron" web panel, January to November 2025 (23,000 adults aged 18 and over, weighted by region, sex and age) | province | A survey, not a census, and the map's one stated exception to the rule that a figure coarser than the shape is not spread: the report's seven residence regions cover the seventeen provinces, and each province carries its region's figure by the map owner's decision, with the note naming the region and how many provinces share it. Whole percentages, 2025 column; "other religions" is the printed "has a religion" less Protestant, Catholic and Buddhist. Lowest authority for Korea: the 2015 census (KOSIS, keyed API) replaces it when read. `scripts/fetch_census/korea_survey.py`. |
 | Czechia | ČSÚ SLDB 2021 open data (`sldb2021_narodnost.csv`, `sldb2021_vira.csv`, `sldb2021_jazyk1.csv`) | kraj, okres | Nationality is voluntary and allows two answers; the file counts every declaration and has no not-stated row, so it is carried as multi-response. Religious belief partitions the population across 78 rows, registered churches and write-in beliefs alike; a written "catholic" is kept apart from the Roman Catholic Church's count and a written "atheism" counts with no religious belief. Mother tongue is read from the single-mother-tongue file, and people with two mother tongues or a language outside its thirteen are the total less its rows, kept as one labelled bar. Okresy are named in Czech where geoBoundaries has English (Praha-východ / Prague-East), carried as aliases; the okres-to-kraj table is in the adapter because the rows do not carry it. |
 | Croatia | DZS Popis 2021 final results, workbook `popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx` (sheets 1, 2, 4) | županija, grad/općina | One layout for all three tables: a bilingual header (Croatian over English) with a count and a percent column per category, read from the header rather than declared; county rows interleaved with their towns and municipalities; a dash is zero. Each table partitions the population, Other, Not declared and Unknown included, and a row that does not sum to its total stops the build. Counties are named as geoBoundaries names them in English, with the Croatian as an alias; units are composed as the bureau writes them, type first ("Grad Samobor", "Općina Bibinje"). The workbook lists the City of Zagreb by its 17 city districts, which are skipped, the city coming from its own county row. The boundary file's spellings (a dozen typos, Istria's bilingual names, two islands each drawn as one town) are declared as aliases; 545 shapes for 556 units, 543 matched. |
 | Bosnia and Herzegovina | BHAS Popis 2013, Book 2 workbooks `K2_T2_B` (ethnicity), `K2_T5_B` (religion), `K2_T6_B` (mother tongue) under `popis.gov.ba/popis2013/doc/Knjiga2/BOS/` | entity, canton | One layout for all three: Level, Area (Bosnian over English), Sex, Total, then the categories; the Total row of each territory is read and matched by its Bosnian name. The two entities and Brčko District are published at both levels, since geoBoundaries draws Republika Srpska and Brčko as their own second-level shapes beside the ten cantons: 3/3 and 12/12. The bureau's 'Islamska' and 'Muslimanska' religion columns are summed into Islam (both are Islam; the build refuses a group beside its parent) and the note says so; ethnonyms given as a religion, and 'Orthodox' given as an ethnicity, are kept and marked. A row that does not sum to its Total refuses. Republika Srpska's institute published a different reading of the same count; these are the Agency's figures. `scripts/fetch_census/bosnia.py`. |
@@ -3381,7 +3382,9 @@ the Wikipedia transcriptions above, ended in declarations rather than files:
   language were already declared not collected.
 * **South Korea** -- the 2015 census asked religion and KOSIS publishes it by
   province, behind an API that needs a registered key; *Religion in South
-  Korea* carries the national series only. A `gap_reason`, not a policy.
+  Korea* carries the national series only. Declared a gap at first; the
+  survey below has since filled the provinces, and the census replaces it
+  when the key exists.
 * **Egypt** -- CAPMAS collected religion in 2017 and has published nothing
   by governorate since 2006. Collected and withheld is a `gap_reason`, not
   `not_collected`.
@@ -3391,6 +3394,39 @@ the Wikipedia transcriptions above, ended in declarations rather than files:
   as what does exist.
 * **Venezuela** -- the 2011 census asked indigenous and Afro-descendant
   self-recognition and not religion; `not_collected` for religion only.
+
+### South Korea: a survey, spread by decision
+
+Hankook Research's weekly report No. 358-3 (3 December 2025) pools the
+religion question from the 22 waves of its biweekly web panel run January
+to November 2025 -- 23,000 adults aged 18 and over, weighted by region, sex
+and age to the resident register -- and prints it on page 8 by seven
+residence regions: Seoul; Incheon/Gyeonggi; Daejeon/Sejong/Chungcheong;
+Gwangju/Jeolla; Daegu/Gyeongbuk; Busan/Ulsan/Gyeongnam; Gangwon/Jeju. The
+reader takes the 2025 column (Protestant, Catholic, Buddhist, has a
+religion, no religion, whole percentages), derives "other religions" as the
+printed "has a religion" less the three named faiths (it must land between 0
+and 3), requires "has" and "none" to make 100 in every row, and rebuilds the
+printed national row from the seven regions weighted by their share of the
+adult population as the report prints it on page 10, within one point.
+
+**The exception, stated.** The seven regions are coarser than the seventeen
+provinces, and the map's rule elsewhere (the Bahamas, India's split
+districts) is that a coarser figure is not spread across the shapes it
+covers. The owner decided on 11 September 2026 that Korea carries the survey
+anyway, because nothing finer is reachable: each province holds its region's
+figure and its note says which region and how many provinces share it, so a
+reader of Sejong sees that its figure is the Daejeon/Sejong/Chungcheong one.
+The file sits beside Afrobarometer at the bottom of the authority order, and
+the 2015 census (KOSIS, once a key exists) replaces it field by field.
+
+Two limits worth keeping in view: it is a survey of adults, so it is not a
+population composition, and a web panel: the report itself prints the 2015
+census beside its series, which reads Catholics at 11% against the census's
+8%. The report is Hankook Research's copyright, which permits research
+citation of a small part with attribution and forbids redistribution; seven
+rows of one table are read from the PDF at the pollster's own URL, and the
+PDF is not stored.
 
 ### The African census sweep: reached, and not
 
