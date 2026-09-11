@@ -31,8 +31,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import scripts.fetch_census.us_prri as us_prri  # noqa: E402
 from scripts.fetch_census.us_prri import (  # noqa: E402
-    CHARTS, COLLAPSE, COLUMNS, EXCLUDED, STRUCTURAL, build, censored,
-    check_national, check_population, check_sums, collapse, cross_check,
+    CHARTS, CHRISTIAN, CHRISTIAN_CATEGORIES, COLLAPSE, COLUMNS, EXCLUDED,
+    PUBLISHED_CATEGORY, STRUCTURAL, build, censored,
+    check_collapse, check_national, check_population, check_sums, collapse,
+    cross_check,
     looks_like_key, normalise, read_table, split_rows,
 )
 
@@ -381,12 +383,62 @@ class Sums(unittest.TestCase):
             check_sums(nodes)
 
 
+class Collapse(unittest.TestCase):
+    """The exact check on the mapping, which replaced a fuzzy numeric one.
+
+    PRRI's 66% Christian includes Latter-day Saints, Jehovah's Witnesses and
+    Orthodox Christians -- footnote [1] puts all three inside the 41% who are
+    white Christians and footnote [2] inside the 25% who are Christians of
+    colour, and 41 + 25 = 66. This map's Christianity subtree includes them
+    too, so the two definitions agree and the roll-up compares like with like.
+    """
+
+    def test_the_shipped_mapping_agrees_with_prri(self):
+        check_collapse()
+
+    def test_every_christian_category_is_one_of_prris(self):
+        self.assertTrue(CHRISTIAN_CATEGORIES <= set(COLLAPSE))
+
+    def test_prri_counts_the_three_small_churches_as_christian(self):
+        """The thing that looks like a discrepancy from a distance."""
+        for category in ("Latter-day Saint (Mormon)", "Jehovah's Witness",
+                         "Orthodox Christian"):
+            self.assertIn(category, CHRISTIAN_CATEGORIES)
+            self.assertIn(COLLAPSE[category], CHRISTIAN)
+
+    def test_refuses_a_christian_category_filed_outside_christianity(self):
+        """Catches the one-point mistakes a published-figure tolerance never
+        could: moving Orthodox Christians out shifts the national total by
+        0.6 points, far inside any band that would tolerate vintage drift."""
+        with mock.patch.dict(us_prri.COLLAPSE,
+                             {"Orthodox Christian": "Other religions"}):
+            with self.assertRaises(SystemExit) as cm:
+                check_collapse()
+        self.assertIn("Orthodox Christian", str(cm.exception))
+
+    def test_refuses_a_non_christian_category_filed_inside_christianity(self):
+        with mock.patch.dict(us_prri.COLLAPSE, {"Muslim": "Protestantism"}):
+            with self.assertRaises(SystemExit) as cm:
+                check_collapse()
+        self.assertIn("overstate", str(cm.exception))
+
+    def test_refuses_a_christian_node_no_category_can_fill(self):
+        with mock.patch.object(us_prri, "CHRISTIAN",
+                               us_prri.CHRISTIAN | {"Coptic Orthodoxy"}):
+            with self.assertRaises(SystemExit) as cm:
+                check_collapse()
+        self.assertIn("Coptic Orthodoxy", str(cm.exception))
+
+
 class National(unittest.TestCase):
-    """PRRI's own published totals, as the check on the collapse."""
+    """The roll-up is reported against PRRI's figures, and gated only on bands
+    no difference of vintage could reach. See check_national for why."""
 
     def setUp(self):
-        # A composition weighted to land on Christian 66 / unaffiliated 27 /
-        # non-Christian 6. Invented; only the three totals mean anything.
+        self.shares = {"01001": {"White Evangelical Protestant": 13.0,
+                                 "White Catholic": 22.0,
+                                 "Religiously Unaffiliated": 28.0,
+                                 "Muslim": 1.0}}
         self.nodes = {
             "01001": {"Protestantism": 40.0, "Catholicism": 22.0,
                       "Latter-day Saints": 1.5, "Orthodoxy": 0.5,
@@ -397,22 +449,39 @@ class National(unittest.TestCase):
         self.pops = {"01001": 44335.0}
 
     def test_accepts_a_rollup_matching_the_published_figures(self):
-        check_national(self.nodes, self.pops)
+        check_national(self.shares, self.nodes, self.pops)
 
-    def test_refuses_a_category_collapsed_into_the_wrong_node(self):
-        """The sums stay at 100 however the eighteen are filed. Only the
-        published national totals notice that Catholics became Muslims."""
+    def test_accepts_the_gap_the_real_data_shows(self):
+        """The first real run put Christians at 70.1% against a published 66%,
+        with Catholicism exact and the deviation a transfer between
+        Protestantism and the unaffiliated. That is vintage, not mis-filing,
+        and it must not stop the run."""
+        nodes = {"01001": {"Protestantism": 44.7, "Catholicism": 22.0,
+                           "No religion": 23.1, "Other religions": 1.8,
+                           "Judaism": 1.8, "Latter-day Saints": 1.8,
+                           "Buddhism": 1.0, "Islam": 1.0,
+                           "Jehovah's Witnesses": 0.9, "Hinduism": 0.8,
+                           "Orthodoxy": 0.6}}
+        check_national(self.shares, nodes, self.pops)
+
+    def test_refuses_a_gross_mis_collapse(self):
+        """Filing Catholicism as a non-Christian religion puts the
+        non-Christian share at 28% and Christians at 48%; both are far past
+        anything vintage explains."""
         nodes = {f: dict(g) for f, g in self.nodes.items()}
         for groups in nodes.values():
             groups["Islam"] = groups.pop("Catholicism") + groups["Islam"]
         with self.assertRaises(SystemExit) as cm:
-            check_national(nodes, self.pops)
-        self.assertIn("Christian", str(cm.exception))
+            check_national(self.shares, nodes, self.pops)
+        self.assertIn("sanity band", str(cm.exception))
 
     def test_refuses_when_no_county_has_a_population(self):
         with self.assertRaises(SystemExit) as cm:
-            check_national(self.nodes, {})
+            check_national(self.shares, self.nodes, {})
         self.assertIn("cannot be weighted", str(cm.exception))
+
+    def test_published_categories_are_all_real_categories(self):
+        self.assertTrue(set(PUBLISHED_CATEGORY) <= set(COLLAPSE))
 
 
 class Population(unittest.TestCase):

@@ -82,6 +82,38 @@ usually a FIPS that was reassigned. Connecticut is the live case -- the state
 replaced its eight counties with nine planning regions in 2022 -- and a
 mismatch there must be reported, not absorbed.
 
+**What the national roll-up is and is not checked against.** PRRI's published
+national figures -- 66% Christian, 27% unaffiliated, 6% non-Christian -- are
+the article's, for 2023. The table is year 2024, and it is a modelled
+small-area estimate rather than the direct survey estimate the article quotes.
+The first real run put Christians at 70.1% against that 66% and refused, which
+was the check working as designed and reaching the wrong conclusion: the
+collapse was right and the comparison was unsound.
+
+The arithmetic says so plainly. Catholicism rolls up to 22.0% against a
+published 22%, every non-Christian group lands within 0.2 points, and the whole
+deviation is a near-exact transfer of about four points between Protestantism
+(+4.7) and the religiously unaffiliated (-3.9). A category filed under the
+wrong node moves a whole named quantity cleanly between two nodes and would
+disturb Catholicism on the way; this does not. It is a difference of vintage
+and method, not of filing.
+
+So the aggregate is reported and not gated. What is gated instead is the thing
+that can be checked exactly: ``check_collapse`` compares this adapter's mapping
+against the membership PRRI enumerates in its own footnotes, with no tolerance
+at all, and catches any category crossing the Christian boundary in either
+direction -- including the one-point ones a published-figure tolerance could
+never have seen. A published figure the data cannot be expected to reproduce is
+not a check; it is a false alarm standing in the way of every future run.
+
+One thing that is *not* in doubt: PRRI counts Latter-day Saints, Jehovah's
+Witnesses and Orthodox Christians as Christian. Footnote [1] places all three
+inside the 41% who are white Christians and footnote [2] places them inside the
+25% who are Christians of color, and 41 + 25 = 66. This map's Christianity
+subtree contains them too, so the two definitions agree. It is recorded here
+because from a distance it looks like the kind of discrepancy somebody fixes by
+moving a tree node.
+
 **A key column is not just a column of numbers.** The probe caught this: the
 table's ``year`` column is ``2024`` in every row, which looks exactly like a
 county FIPS code to any test that only asks "are these four or five digits
@@ -241,8 +273,67 @@ NATIONAL: dict[str, float] = {
     "No religion": 27.0,
     "Non-Christian": 6.0,
 }
+
+# Which of PRRI's own categories its "Christian" aggregate contains. This is
+# not a judgement call; the article's first two footnotes enumerate it.
+#
+#   "[1] Among the 41% of Americans who identify as white Christians, 13% are
+#   white evangelical Protestants, 13% are white mainline/non-evangelical
+#   Protestants, 12% are white Catholics, and small percentages identify as
+#   Latter-day Saints (1%), Jehovah's Witnesses (<0.5%), or Orthodox
+#   Christians (<0.5%). [2] Among the one-quarter of Americans who identify as
+#   Christians of color (25%), one in ten are Black Protestants (8%) and
+#   Hispanic Catholics (8%), 4% are Hispanic Protestants, 2% are other
+#   Protestants of color, 2% are other Catholics of color, and just 1% are
+#   Jehovah's Witnesses, Latter-day Saints, or Orthodox Christians."
+#
+# 41 + 25 = 66, and Latter-day Saints, Jehovah's Witnesses and Orthodox
+# Christians sit inside both halves. So PRRI's 66% counts them as Christian and
+# so does this map's Christianity subtree: the two agree. Worth stating,
+# because from a distance it looks like the kind of discrepancy somebody fixes
+# by moving a tree node.
+CHRISTIAN_CATEGORIES = {
+    "White Evangelical Protestant", "White Mainline/Non-evangelical Protestant",
+    "White Catholic", "Black Protestant", "Hispanic Catholic",
+    "Hispanic Protestant", "Other Protestant of Color", "Other Catholic of Color",
+    "Latter-day Saint (Mormon)", "Jehovah's Witness", "Orthodox Christian",
+}
 CHRISTIAN = {"Protestantism", "Catholicism", "Orthodoxy", "Latter-day Saints",
              "Jehovah's Witnesses"}
+
+# Per-category national figures from the same three footnotes, for the ones the
+# article states individually. Latter-day Saints, Jehovah's Witnesses, Orthodox
+# Christians and other non-Christian religions are given only as "<0.5%" or
+# pooled into "just 1%", so there is no figure to compare them against and they
+# are deliberately absent rather than guessed at.
+PUBLISHED_CATEGORY: dict[str, float] = {
+    "White Evangelical Protestant": 13.0,
+    "White Mainline/Non-evangelical Protestant": 13.0,
+    "White Catholic": 12.0,
+    "Black Protestant": 8.0,
+    "Hispanic Catholic": 8.0,
+    "Hispanic Protestant": 4.0,
+    "Other Protestant of Color": 2.0,
+    "Other Catholic of Color": 2.0,
+    "Jewish": 2.0,
+    "Muslim": 1.0,
+    "Buddhist": 1.0,
+    "Hindu": 1.0,
+    "Unitarian Universalist": 0.5,
+    "Religiously Unaffiliated": 27.0,
+}
+
+# Bands wide enough that a year of vintage drift cannot trip them and narrow
+# enough that a gross mis-collapse must. Centred on PRRI's published 66/27/6:
+# filing Catholicism as a non-Christian religion would put the non-Christian
+# share at 28% and the Christian share at 48%, and both would stop the run.
+# A sanity floor, not a validation of the figures -- the exact check on the
+# collapse is check_collapse, which needs no tolerance at all.
+SANITY: dict[str, tuple[float, float]] = {
+    "Christian": (50.0, 80.0),
+    "No religion": (15.0, 40.0),
+    "Non-Christian": (2.0, 15.0),
+}
 
 # How far a county's eighteen shares may sit from 100 before the run stops.
 # The real table is close: Autauga sums to 100.2, Bullock to 100.0. Eighteen
@@ -259,11 +350,11 @@ SUM_TOLERANCE = 5.0
 MEDIAN_SUM_TOLERANCE = 1.5
 
 # The national roll-up is weighted by the table's own Population column, which
-# is PRRI's own denominator and so the right weight for PRRI's own shares. The
-# article rounds its national figures to whole percents and they sum to 99, so
-# two and a half points is wide enough to be fair to them and still far
-# narrower than the error any mis-assembled category table would produce.
-NATIONAL_TOLERANCE = 2.5
+# is PRRI's own denominator and so the right weight for PRRI's own shares.
+# There is deliberately no published-figure tolerance here any more: the
+# roll-up is checked against SANITY above, and the mapping itself is checked
+# exactly by check_collapse. See check_national for why a tolerance against a
+# published aggregate was the wrong instrument.
 
 # US counties and county equivalents. The probe found 3,142 rows; the expected
 # range is stated rather than inferred so that a table which quietly lost a
@@ -552,75 +643,159 @@ def collapse(counties: dict[str, dict[str, Any]]) -> dict[str, dict[str, float]]
     return out
 
 
-def check_sums(counties: dict[str, dict[str, float]]) -> None:
-    """Each county's shares must account for its whole adult population."""
+def check_sums(counties: dict[str, dict[str, float]],
+               names: dict[str, str] | None = None) -> None:
+    """Each county's shares must account for its whole adult population.
+
+    The worst few are named, not just counted. The first real run came back
+    with a worst county 4.7 points from 100 against a median of 0.1, which is
+    inside the band but is not nothing: one county behaving unlike the other
+    three thousand is either a real outlier in PRRI's model or a row read
+    oddly, and those look identical in a summary statistic.
+    """
     misses = sorted(((abs(sum(groups.values()) - 100.0), fips)
                      for fips, groups in counties.items()), reverse=True)
     worst, worst_fips = misses[0]
+    median = misses[len(misses) // 2][0]
+    names = names or {}
+    # Diagnostics before the refusals, so a run that stops still says which
+    # counties it stopped on.
+    log(f"  sums: worst county {worst:.1f}pp from 100, median {median:.1f}pp")
+    log("    furthest from 100 -- " + "; ".join(
+        f"{fips} {names.get(fips, '?')} {sum(counties[fips].values()):.1f}%"
+        for _, fips in misses[:5]))
     if worst > SUM_TOLERANCE:
         raise SystemExit(
             f"us_prri: county {worst_fips} sums to "
             f"{sum(counties[worst_fips].values()):.1f}%, {worst:.1f} points "
             f"from 100 against a tolerance of {SUM_TOLERANCE}; a column is "
             f"missing, duplicated, or is not a percentage")
-    median = misses[len(misses) // 2][0]
     if median > MEDIAN_SUM_TOLERANCE:
         raise SystemExit(
             f"us_prri: the typical county is {median:.1f} points from 100 "
             f"(tolerance {MEDIAN_SUM_TOLERANCE}); that is a systematic gap, "
             f"not rounding -- one of the eighteen columns is absent")
-    log(f"  sums: worst county {worst:.1f}pp from 100, median {median:.1f}pp")
 
 
-def check_national(counties: dict[str, dict[str, float]],
-                   populations: dict[str, float]) -> None:
-    """The roll-up must reproduce the three figures PRRI publishes nationally.
+def check_collapse() -> None:
+    """PRRI's Christian categories must land in this map's Christian nodes.
 
-    This is the invariant that would catch a category mapped to the wrong node:
-    the per-county sums stay at 100 however the eighteen are filed, and only a
-    comparison against a published total notices that Catholics were counted as
-    Protestants.
+    This replaced a numeric check and is strictly the stronger of the two.
+    Comparing a national roll-up against a published aggregate can only notice
+    a mis-collapse big enough to move the total further than the tolerance, so
+    it was blind to a one-point category going astray and, worse, it could be
+    silenced by widening the band. This compares the mapping itself against the
+    membership PRRI enumerates in its own footnotes: exact, no tolerance,
+    indifferent to what vintage the data is, and it catches every crossing of
+    the Christian boundary in either direction.
     """
+    misfiled = sorted(c for c in CHRISTIAN_CATEGORIES if COLLAPSE[c] not in CHRISTIAN)
+    if misfiled:
+        raise SystemExit(
+            f"us_prri: PRRI counts {misfiled} as Christian (article footnotes "
+            f"1 and 2) but this adapter collapses them outside the Christian "
+            f"nodes {sorted(CHRISTIAN)}; the roll-up would understate "
+            f"Christianity and the map would file those people wrongly")
+    leaked = sorted(c for c, node in COLLAPSE.items()
+                    if node in CHRISTIAN and c not in CHRISTIAN_CATEGORIES)
+    if leaked:
+        raise SystemExit(
+            f"us_prri: {leaked} collapse into a Christian node but PRRI does "
+            f"not count them as Christian; the roll-up would overstate "
+            f"Christianity")
+    missing = sorted(CHRISTIAN - {COLLAPSE[c] for c in CHRISTIAN_CATEGORIES})
+    if missing:
+        raise SystemExit(
+            f"us_prri: the Christian nodes {missing} receive no PRRI category, "
+            f"so CHRISTIAN names something this table cannot fill")
+    log(f"  collapse: PRRI's {len(CHRISTIAN_CATEGORIES)} Christian categories "
+        f"all land in {sorted(CHRISTIAN)}")
+
+
+def national(values: dict[str, dict[str, float]],
+             populations: dict[str, float]) -> dict[str, float]:
+    """Population-weighted national shares of whatever is keyed by county."""
     weighted: dict[str, float] = {}
     total = 0.0
-    for fips, groups in counties.items():
+    for fips, groups in values.items():
         pop = populations.get(fips)
         if not pop:
             continue
         total += pop
-        for node, pct in groups.items():
-            weighted[node] = weighted.get(node, 0.0) + pct * pop
+        for key, pct in groups.items():
+            weighted[key] = weighted.get(key, 0.0) + pct * pop
     if not total:
         raise SystemExit(
             "us_prri: no county carried a population, so the national roll-up "
-            "cannot be weighted and the published figures cannot be checked")
+            "cannot be weighted and nothing can be compared against it")
+    return {key: value / total for key, value in weighted.items()}
 
-    share = {node: value / total for node, value in weighted.items()}
+
+def check_national(shares: dict[str, dict[str, float]],
+                   nodes: dict[str, dict[str, float]],
+                   populations: dict[str, float]) -> None:
+    """Report the national roll-up, and refuse only what is genuinely wrong.
+
+    **Why this does not gate on PRRI's published 66/27/6.** It used to, and the
+    first real run refused: the roll-up put Christians at 70.1% against a
+    published 66%. That gap is not a mis-collapse. Catholicism rolls up to
+    22.0% against a published 22%, every non-Christian group lands within 0.2
+    points, and the entire deviation is a near-exact transfer of about four
+    points between Protestantism (+4.7) and the religiously unaffiliated
+    (-3.9). A category filed under the wrong node moves a whole named quantity
+    -- 2, 4, 8 or 12 points -- cleanly from one node to another, and would
+    disturb Catholicism on the way. This does not.
+
+    What it is instead is a mismatch of vintage and method. The published
+    figures are the article's, for 2023; the table's own year column says 2024,
+    and it is a modelled small-area estimate rather than the direct survey
+    estimate the article quotes. A 2023 headline cannot validate a 2024 model
+    to within two and a half points, and pretending otherwise would leave a
+    permanent false alarm in front of every future run.
+
+    The honest response is not to widen the band until the gap fits, which
+    would disarm the check for the very thing it was meant to catch. It is to
+    check the mapping exactly where that is possible -- check_collapse does
+    that, against PRRI's own enumeration -- and here to report the comparison
+    in full while refusing only on bands no vintage drift could reach.
+    """
+    by_category = national(shares, populations)
+    by_node = national(nodes, populations)
+
+    log("  national roll-up by node: " + ", ".join(
+        f"{k} {v:.1f}%" for k, v in sorted(by_node.items(), key=lambda kv: -kv[1])))
+    log("  against PRRI's published 2023 figures (the data year may differ, so "
+        "a difference here is not by itself an error):")
+    for category, published in sorted(PUBLISHED_CATEGORY.items(),
+                                      key=lambda kv: -kv[1]):
+        got = by_category.get(category)
+        if got is None:
+            continue
+        log(f"      {category:44} {got:5.1f}%  published {published:4.1f}  "
+            f"{got - published:+5.1f}")
+    unpublished = sorted(set(by_category) - set(PUBLISHED_CATEGORY))
+    log(f"      (no published figure for {unpublished}; the article gives "
+        f"those only as '<0.5%' or pooled)")
+
     rolled = {
-        "Christian": sum(v for k, v in share.items() if k in CHRISTIAN),
-        "No religion": share.get("No religion", 0.0),
-        "Non-Christian": sum(v for k, v in share.items()
+        "Christian": sum(v for k, v in by_node.items() if k in CHRISTIAN),
+        "No religion": by_node.get("No religion", 0.0),
+        "Non-Christian": sum(v for k, v in by_node.items()
                              if k not in CHRISTIAN and k != "No religion"),
     }
-    # Logged before the check, not after, so a refusal comes with the whole
-    # picture: which node holds what is the difference between "the collapse is
-    # wrong" and "the tolerance is too tight", and only one of those is a bug.
-    log("  national roll-up by node: " + ", ".join(
-        f"{k} {v:.1f}%" for k, v in sorted(share.items(), key=lambda kv: -kv[1])))
-    for label, published in NATIONAL.items():
+    log("  aggregates: " + ", ".join(
+        f"{k} {rolled[k]:.1f}% (2023 published {v:.0f}%)"
+        for k, v in NATIONAL.items()))
+
+    for label, (low, high) in SANITY.items():
         got = rolled[label]
-        if abs(got - published) > NATIONAL_TOLERANCE:
+        if not low <= got <= high:
             raise SystemExit(
-                f"us_prri: the county roll-up puts {label} at {got:.1f}% "
-                f"against PRRI's published {published:.0f}%, outside the "
-                f"{NATIONAL_TOLERANCE} point tolerance. Most likely the "
-                f"categories are not being collapsed into the right nodes -- "
-                f"check the per-node roll-up logged above. Note the published "
-                f"anchors are the article's 2023 figures while the table is a "
-                f"later vintage, so a miss of a point or so is vintage and a "
-                f"miss of ten is a mapping error.")
-    log("  national roll-up: " + ", ".join(
-        f"{k} {rolled[k]:.1f}% (published {v:.0f}%)" for k, v in NATIONAL.items()))
+                f"us_prri: the county roll-up puts {label} at {got:.1f}%, "
+                f"outside the sanity band {low}-{high}. That is far past what "
+                f"a difference of vintage could explain, so the categories are "
+                f"not being collapsed into the right nodes -- read the per-node "
+                f"roll-up logged above to see which one moved.")
 
 
 def check_population(counties: dict[str, dict[str, Any]],
@@ -862,11 +1037,15 @@ def main() -> int:
     else:
         log("  cross-check skipped; the one-table claim is untested this run")
 
+    check_collapse()
     check_population(counties, universe)
     nodes = collapse(counties)
-    check_sums(nodes)
-    check_national(nodes, {f: r["population"] for f, r in counties.items()
-                           if r.get("population")})
+    names = {f: r["name"] for f, r in counties.items()}
+    check_sums(nodes, names)
+    populations = {f: r["population"] for f, r in counties.items()
+                   if r.get("population")}
+    check_national({f: r["shares"] for f, r in counties.items()},
+                   nodes, populations)
 
     records = build(nodes, universe, year=year,
                     prri_names={f: r["name"] for f, r in counties.items()})
