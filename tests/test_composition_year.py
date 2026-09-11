@@ -56,12 +56,10 @@ UNDATED_BY_DESIGN = {
 # from shipping undated and quietly joining the backlog.
 AWAITING_AN_ADAPTER_RUN = {
     "admin0.json",                  # fetch_factbook
-    "angola_province.json",
     "australia_lga.json", "australia_state.json",
     "brazil_municipality.json", "brazil_state.json",
     "cambodia_province.json",       # wiki_census
     "kazakhstan_region.json",       # wiki_census
-    "thailand_province.json",
     "uk_county.json", "uk_lad.json",
     "us_county.json", "us_state.json",
 }
