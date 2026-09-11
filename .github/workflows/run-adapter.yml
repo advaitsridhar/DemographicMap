@@ -77,6 +77,12 @@ jobs:
           # free account that opens them.
           ZENSUS_USER: ${{ secrets.ZENSUS_USER }}
           ZENSUS_PASSWORD: ${{ secrets.ZENSUS_PASSWORD }}
+          # Japan's e-Stat answers nothing without an application id -- it is
+          # free, and it is the only credential the portal asks for. It goes in
+          # the environment with the rest so it never reaches a command line,
+          # and scripts/probe_estat.py scrubs it out of everything it prints,
+          # because a probe's product is a log that gets committed.
+          ESTAT_API: ${{ secrets.ESTAT_API }}
 
         # xargs rather than an unquoted expansion: the command is a dispatch
         # input, and a URL with a query string carries "&", which bash reads as

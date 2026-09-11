@@ -1203,6 +1203,13 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                          "this level in the country carries these figures, so "
                          "these are certainly all of its children.")
 
+    # Computed before the note, because a sum that carries no date owes the
+    # reader the reason. Pakistan is the case: four provinces and Islamabad
+    # from the 2023 census, Azad Kashmir from 2017, so the sum is genuinely
+    # undated -- but a blank where a year belongs reads as an omission rather
+    # than as the mixture it is.
+    years = {c.get(f"{field}_year") for c in children} - {None}
+
     counts: dict[str, float] = {}
     denominator = 0.0
     # Children whose shares had to be priced against their own population
@@ -1292,7 +1299,13 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
            f"{' (' + ', '.join(sorted(derived)[:3]) + ')' if len(derived) <= 3 else ''}"
            ", so their counts are those shares taken of their own published "
            "populations." if derived else "")
-        + disagrees + displaced + left_out)
+        + disagrees + displaced + left_out
+        + (f" The divisions do not all report the same year"
+           f" ({', '.join(str(y) for y in sorted(years))}),"
+           f" so this figure carries no single date."
+           if len(years) > 1 else
+           " The divisions do not date their figures, so neither does this."
+           if not years else ""))
     # The year belongs to the figure, not to the record, so it is rewritten
     # with it. Thailand is what made this matter: its 76 provinces carry the
     # 2000 census and stamp no year at all, so the sum inherited the 2021 the
@@ -1306,7 +1319,6 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # figure happened to cite the same census their divisions did; it costs
     # them a label that was right by luck, and the note still says what the
     # figure was summed from. The alternative is a date that looks checked.
-    years = {c.get(f"{field}_year") for c in children} - {None}
     if len(years) == 1:
         parent[f"{field}_year"] = years.pop()
     else:

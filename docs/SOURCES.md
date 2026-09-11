@@ -104,7 +104,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Mexico | INEGI Censo de Población y Vivienda 2020, ITER | state, municipality | Religion, indigenous-language speaking and Afro-descendant identification for 2,453 of 2,457 municipios. All from the *cuestionario básico*, so these are counts, not sample estimates. |
 | New Zealand | Stats NZ 2023 Census via Aotearoa Data Explorer (SDMX) | region, territorial authority | Ethnicity, languages spoken and religious affiliation for all 88 territorial authorities and Auckland local boards. All three are multi-response, so shares are of people who named a group, not slices of a whole. Needs an API key. |
 | Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. All 7 provinces and 66 of 77 districts — the boundary file's district names do not all sit on the right polygons. |
-| India | Census 2011 tables C-01, C-01 Appendix, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. The Appendix names the religions inside "Other religions and persuasions" (Donyi-Polo, Sarna, Sanamahi …) for states only. 637 of 735 district shapes carry figures; the other 98 are districts the census never enumerated and each says so. |
+| India | Census 2011 tables C-01, C-01 Appendix, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. The Appendix names the religions inside "Other religions and persuasions" (Donyi-Polo, Sarna, Sanamahi …) for states only. 562 of 735 district shapes carry figures. The other 173 each say why: 98 are districts the census never enumerated, and 75 are districts that have since lost territory, so the 2011 row counts people who no longer live in the shape. Telangana and Ladakh have state figures summed from the ten and two districts the census did enumerate, and Andhra Pradesh and Jammu and Kashmir carry the residual rather than the undivided state. |
 
 ### New Zealand: the geography that already fitted
 
@@ -812,19 +812,23 @@ workbooks, checked into `data/raw/india/c16/` because there is no API to fetch
 them from — `scripts/fetch_census/india_language.py` reads whatever is present.
 
 The all-India workbook (`DDWC16STMTMDDS0000.XLSX`) carries every state, so all 34
-states enumerated in 2011 have a mother-tongue composition. All 35 per-state
-workbooks are present, giving 637 of 735 districts. The 98 without a figure are
+states enumerated in 2011 have a mother-tongue composition, and Telangana and
+Ladakh have one summed from their districts' rows. All 35 per-state workbooks
+are present, giving 562 of 735 districts. The 173 without a figure are
 census-vintage gaps, not missing files: **91** are districts created after 2011,
-**6** are the successors of the three districts that have been subdivided since,
-and **1** is not a district at all — geoBoundaries draws a feature in Jammu and
+**75** are districts that have lost territory to one of those 91, **6** are the
+successors of the three districts that have been subdivided since, and **1** is
+not a district at all — geoBoundaries draws a feature in Jammu and
 Kashmir named, literally, "DATA NOT AVAILABLE", which is 268 disjoint fragments
-totalling about 390 km², the slivers between the district polygons. All 98 carry
+totalling about 390 km², the slivers between the district polygons. All 173 carry
 an explicit reason on population, religion and language; the 91 name the year
 they were created and the 2011 district they were carved from
 (`CREATED_AFTER_2011`, checked against the census's own district list on every
-run). Nothing is carried down into them — a new district is a *part* of an old
-one, and the rule that a figure coarser than the shape is not spread across the
-shape's members applies.
+run), and the 75 name what was taken out of them and how much ground they have
+left (`LOST_TERRITORY_SINCE_2011`, checked against `CREATED_AFTER_2011`).
+Nothing is carried down into any of them — a new district is a *part* of an old
+one, the district that kept the name is another part, and the rule that a figure
+coarser than the shape is not spread across the shape's members applies to both.
 
 **Not the `DDWC16TOWN...` files.** The catalogue also publishes a town-level
 C-16 whose filename differs only by that infix. It enumerates urban population
@@ -873,13 +877,164 @@ primary record rather than a derivative.
 
 * ~109 of 735 present-day districts did not exist in 2011 and carry no census
   figure.
-* Four 2011 districts have since been subdivided (Jaintia Hills, Karbi Anglong,
-  Warangal, and Hyderabad's reorganisation). Their figures are **not** spread
-  across the successor districts -- the census never measured those areas
-  separately, and apportioning them would be an estimate presented as a
-  measurement. The successors carry an explicit gap saying so.
-* Telangana (2014) and Ladakh (2019) postdate the census entirely, so they have
-  no state-level figure even though their districts do.
+* Three 2011 districts have since been subdivided so thoroughly that their
+  names survive on no shape at all (Jaintia Hills, Karbi Anglong, Warangal).
+  Their figures are **not** spread across the successor districts -- the census
+  never measured those areas separately, and apportioning them would be an
+  estimate presented as a measurement. The successors carry an explicit gap
+  saying so.
+* 75 more lost territory without losing their names, and are the subject of the
+  next section.
+* Telangana (2014) and Ladakh (2019) postdate the census entirely. They now
+  carry a figure summed from the districts the census did enumerate, and the
+  states they were separated from carry the residual; see below.
+
+### The district that keeps the name is a fragment too
+
+This is the error that took longest to see, because it looked exactly like data.
+
+When Jagtial, Peddapalli and Rajanna Sircilla were carved out of Karimnagar in
+2016, three new shapes appeared on the map with no figures and an explicit
+reason. The fourth shape kept the name Karimnagar, kept the 2011 census row,
+and lost three quarters of its ground: 2,132 km² of the 9,103 km² the census
+measured. It went on showing 3,776,269 people, 92.4% Hindu, sourced and dated,
+on a district that holds about a quarter of them. The blanks beside it were
+honest about what was not known. The number was not, and nothing on the panel
+said so.
+
+`SUBDIVIDED_SINCE_2011` had the principle right and applied it to three
+districts only. Warangal's six successors carry no figure because the census
+measured the undivided district and the map cannot split it. **Karimnagar is
+the same case**; the only difference is that one of its fragments kept the
+name. `LOST_TERRITORY_SINCE_2011` now says so for every one of them.
+
+**How many, and where.** Measured against the CGAZ shapes this map draws with
+-- each district's area against its own area plus the area of every shape
+`CREATED_AFTER_2011` declares was carved out of it -- 75 districts in 16 states
+were in that position, carrying 172 million people's worth of 2011 figures:
+
+| state | districts | state | districts |
+|---|---|---|---|
+| Gujarat | 10 | Tripura, Mizoram, Delhi, Meghalaya | 3 each |
+| Telangana, Arunachal Pradesh | 8 each | Punjab, Madhya Pradesh | 2 each |
+| Manipur | 7 | Maharashtra | 1 |
+| Chhattisgarh | 6 | | |
+| Tamil Nadu, Uttar Pradesh, Assam | 5 each | | |
+| West Bengal | 4 | | |
+
+The worst were Mahbubnagar (18% of its 2011 ground, 4,053,028 people),
+Karimnagar (23%), Raipur (25%), Adilabad (25%), Medak (26%) and Durg (27%).
+The largest single figure in the wrong place was Thane's 11,060,148, on 44% of
+the district Palghar was taken out of in 2014.
+
+**Why there is no "close enough" threshold.** The obvious softening -- keep the
+figure where the district lost only a little -- cannot be done honestly with
+what is measurable here. The measurement is of *territory* and the error is in
+*people*, and the two do not track each other in the same direction twice:
+Rangareddy kept 52% of its ground, and of the two districts taken out of it the
+one that took least land took most people -- Medchal-Malkajgiri is 1,067 km² of
+built-up Hyderabad fringe against Vikarabad's 3,621 km² of farmland. Upper
+Subansiri kept 90% of its ground and what it lost is high Himalaya with almost
+nobody in it. A threshold set anywhere between the two would be a guess wearing
+a tolerance's clothes.
+
+What area *can* settle is the binary question, and the measurement turns out to
+be unambiguous about it: every district in the table retained between 18% and
+90% of its 2011 extent, and every other Indian district retained 100%. There is
+nothing in the gap to draw a line through, so the line is not drawn on area at
+all -- it is "did a district get carved out of this one", which
+`CREATED_AFTER_2011` already declares. `check_lost_territory` requires the two
+tables to be exact mirrors of each other on every run: a predecessor named
+there without a measurement here would leave a shape wearing the undivided
+figure, and a measurement here with no predecessor there would delete a good
+one.
+
+**What is kept.** Hyderabad, and it is the check that the rule is not simply
+deleting everything. The 2016 reorganisation created Medchal-Malkajgiri out of
+Ranga Reddy, not out of Hyderabad, and left Hyderabad district alone; no entry
+in `CREATED_AFTER_2011` names it, so nothing was carved out of it and its
+figure stands. The Registrar General's own C-01 workbook lists 16 tehsils under
+Hyderabad in 2011, and the present-day district has the same 16 mandals. Of
+Telangana's nine districts that had figures, that is the one that survives.
+
+The area measurement is *not* what settles Hyderabad, and it is worth saying
+why. CGAZ draws the district at about 281 km² where the census gives 217 —
+Hyderabad's published density of 18,172 people per km² over 3,943,323 people —
+a 30% overshoot that is simplification on the smallest shape in the state
+rather than a boundary change. Area is used for the districts that lost ground
+because there it is answering a large question with a large margin; for a
+district that lost none, the evidence is that none was taken.
+
+**The extract was checked against the Registrar General's own workbook.** The
+same exercise made it possible to test the community CSV mirror this adapter
+reads against the official C-01 file for Andhra Pradesh, which is not where the
+mirror came from. All 23 districts agree in all nine columns — population and
+the eight religions — with no disagreement anywhere, and the workbook's 1,128
+tehsil rows sum to its district rows to the person. `NATIONAL_CONTROLS` already
+checked the mirror against the published national totals on every run; this
+checks a whole state of it against the primary document.
+
+**The route that would fill them, and why it is not taken.** C-01 *is*
+published below district level: the Registrar General's own workbook for
+Andhra Pradesh (`DDW28C01_MDDS.XLS`) carries 1,128 tehsil rows beside its 23
+district rows, and they sum to the district totals to the person. C-16 is
+published the same way. A modern district made of whole 2011 mandals could
+therefore be summed rather than estimated. What does not exist is the other
+half of that join: the census publishes no concordance from 2011 sub-districts
+to present-day districts, and the 2016 reorganisation did not only reallocate
+mandals but split some of them, so a hand-written mapping would not be a
+partition even if every line of it were right. Writing one out would invent
+precisely the thing the sub-district tables were meant to supply.
+
+### Telangana, Ladakh, and summing a state from its districts
+
+The mirror of the same problem, one level up, and here the fix adds figures
+rather than removing them.
+
+Telangana's state row read *not available*: "the 2011 census enumerated that
+territory as part of Andhra Pradesh, so no census figure exists for Telangana
+as such". That is true of the published tables and false of the census. Every
+person in Telangana was counted in 2011, in one of ten district rows — 532
+Adilabad through 541 Khammam — which partition the territory exactly. Ten
+disjoint measurements that exhaust a territory sum to a measurement of it.
+Nothing is apportioned and nothing is estimated.
+
+Andhra Pradesh had the matching error and it was the invisible kind. Its state
+row carried 84,580,777 people and 88.5% Hindu — undivided Andhra Pradesh,
+Telangana included — on the shape of the residual state. The thirteen districts
+that stayed hold 49,386,799 people and are 90.9% Hindu and 7.3% Muslim, against
+Telangana's 85.1% and 12.7%. The undivided figure described neither. Jammu and
+Kashmir and Ladakh were the same pair, smaller: Ladakh's two districts are 2.2%
+of the old state's people and a quarter of its area.
+
+| | summed | published | check |
+|---|---|---|---|
+| Telangana | 35,193,978 | 35,193,978 | Wikidata gives the same, independently |
+| Andhra Pradesh (residual) | 49,386,799 | 49,386,799 | |
+| Ladakh | 274,289 | 274,289 | |
+| Jammu and Kashmir (residual) | 12,267,013 | 12,541,302 − 274,289 | |
+
+Both halves must add back to the undivided state in **every** column, and each
+half's population must equal the published figure to the person, or nothing is
+emitted. The same split runs over C-16 for mother tongue, and the two tables
+are kept apart deliberately: they have different district columns, and a split
+right in one and wrong in the other is the failure neither file can see alone.
+`SPLIT_STATES` carries both the district names and the census's district codes
+because the religion extract keys on the name and the language workbooks key on
+the code.
+
+**The 190,304 people the sum cannot lose.** Seven mandals of Khammam —
+Burgampahad, Chintur, Kukunoor, Kunavaram, Vararamachandrapuram, Velairpadu and
+part of Bhadrachalam — were moved to Andhra Pradesh by ordinance on 29 May
+2014, four days before Telangana existed, to put the Polavaram project on one
+side of the border. They are inside the ten districts and outside the
+present-day state, which is why the Registrar General's figure for Telangana as
+it now stands is **35,003,674** and the ten districts hold 190,304 more. That
+0.5% is stated on the record rather than removed, because removing it would
+mean subtracting six whole mandals (208,421 people in the official
+sub-district table) to land on 34,985,557 — a number nobody published, 18,117
+people from the one they did, and wrong by an amount the note could not state.
+A visible 0.5% beats an invisible one.
 
 ### Pakistan: a table that exists only as a document
 
@@ -943,6 +1098,14 @@ are enumerated apart from the census proper and their Table 9 is not published
 at either path the office uses. They are named in the run's log as absent
 territories rather than as failed fetches, and the four provinces -- 238 of
 Pakistan's 241 million people -- are required before anything is written.
+
+> **This paragraph was one third wrong and stayed wrong for two rounds.**
+> Islamabad's Table 9 is published, at `table_9_islamabad.pdf`, and was being
+> asked for under a name the office does not use. It now reads, and so does
+> the 2023 mother-tongue table this section's last paragraph leaves open. Azad
+> Jammu and Kashmir's religion comes from its own government's yearbook.
+> Gilgit-Baltistan is the only one of the three still empty. See *Pakistan's
+> last three divisions* below, which measures all of it.
 
 **Joining, and three different kinds of miss.** Of 126 units, 114 join and
 carry 96.7% of the people.
@@ -1098,6 +1261,11 @@ Table 9 for none of the three, at either of the two paths the Bureau uses. Not
 a fetch that went wrong: a fact about what the Bureau publishes under the
 census proper.
 
+> Two of those three have since moved. Islamabad's Table 9 and Table 11 are
+> both published and both now read; Azad Kashmir has religion from its own
+> government. Mother tongue for Azad Kashmir and Gilgit-Baltistan is still
+> exactly this: eleven blanks, and the section below says what was asked.
+
 **Is 2017 the most current this can be?** No, and that is worth stating
 plainly rather than leaving implied. PBS completed the 7th census in 2023 and
 publishes its tables as per-province PDFs; `pakistan.py` already reads Table 9
@@ -1105,19 +1273,225 @@ publishes its tables as per-province PDFs; `pakistan.py` already reads Table 9
 publishes a mother-tongue table in the same series, and under which number --
 2017's was Table 11, and a table number is not a thing to guess at, because a
 guessed URL that 404s and a table that was never published are the same
-observation. The route to settle it is reconnaissance, not assumption:
+observation.
 
-```
-scripts.probe_links https://www.pbs.gov.pk/census-2023-tables --match pdf --limit 80
-scripts.fetch_census.uscb --inspect pakistan-subnational-population-and-housing-data-tables
-```
+**It is Table 11, and it is published.** Asked on the runner, the office
+answers 200 to `table_11_kp_districts.pdf` (3.4 MB),
+`table_11_punjab_districts.pdf` (3.5 MB), `table_11_sindh_districts.pdf`
+(3.2 MB), `table_11_balochistan_districts.pdf` (3.6 MB) and
+`table_11_islamabad.pdf` (45,805 bytes) -- the same five areas and the same
+naming scheme as Table 9, down to Islamabad dropping the word "districts". It
+answers 404 to `table_11_ajk.pdf` and `table_11_gb.pdf`. So the 2023 round
+does publish mother tongue by district, for 240 million of Pakistan's people,
+and the figures on this map are 2017.
 
-The first says what the 2023 index actually links to. The second says whether
-the Census Bureau's extraction is still the 2017 census or has been reissued --
-its metadata sheet carries the census year, and the file's own date is an
-extraction date that has been mistaken for it before. Until one of those
-answers, 2017 is the most recent mother tongue this project can show, and the
-records say 2017.
+**Wiring it is not a matter of adding a file, which is why it has not been
+done here.** `pakistan_district.json` and `pakistan_language.json` currently
+share 114 district shapes without colliding, because neither publishes a field
+the other does: one carries population and religion, the other language.
+Putting 2023 mother tongue into the first would give both a real `language`
+on one shape, and `conflicting()` in `build_entities.py` counts two real
+values that differ as a conflict -- which would send Pakistan's language to a
+gap on every district that currently has one. The 2023 table is a
+*replacement* for the 2017 route, not an addition beside it: it means
+retiring `PAKISTAN` from `uscb.py` and reading Table 11 the way Table 9 is
+read, with the same reconciliations. That is a day's work with a real payoff
+-- 2023 figures, and Islamabad's mother tongue from the census rather than
+from a Census Bureau extraction -- and it is left measured rather than
+half-done.
+
+The other half of the old plan is answered too:
+`scripts.fetch_census.uscb --inspect pakistan-subnational-population-and-housing-data-tables`
+was the second route named here, to say whether the Census Bureau's workbook
+had been reissued off the 2023 round. It does not need running to settle the
+question the 2023 tables now answer directly.
+
+### Pakistan's last three divisions: a filename, a yearbook, and one real absence
+
+Seven first-level units, four of them full since the 2023 census landed and
+three of them blank. The three were blank for three different reasons, and
+the file said they were blank for one.
+
+**Everything below was measured on the runner.** Each line is a URL asked for
+and what the host answered; nothing here is inferred from a search result.
+
+| asked | answered |
+| --- | --- |
+| `…/census_tables/tables/table_9_islamabad.pdf` | **200**, application/pdf, 36,012 bytes |
+| `…/census_tables/tables/table_9_islamabad_districts.pdf` | 404 |
+| `…/census_tables/tables/table_9_ict_districts.pdf` | 404 |
+| `…/census_tables/tables/table_11_islamabad.pdf` | **200**, 45,805 bytes |
+| `…/census_tables/tables/table_11_{kp,punjab,sindh,balochistan}_districts.pdf` | **200**, 3.2–3.6 MB each |
+| `…/census_tables/tables/table_9_{ajk,gb}.pdf` | 404 |
+| `…/census_tables/tables/table_9_{ajk,gb}_districts.pdf` | 404 |
+| `…/census_tables/tables/table_9_{gilgit_baltistan,azad_jammu_kashmir}.pdf` | 404 |
+| `…/census_tables/tables/table_11_{ajk,gb}.pdf` | 404 |
+| `…/population/2023/tables/table_9_{islamabad,punjab,ajk,gb,kp}.xlsx` | 404, all five |
+| `www.pbs.gov.pk/census-2023-tables` | **404**, three times |
+| `www.pbs.gov.pk/census-2023`, `/census_tables`, `/digital-census/detailed-results` | 404 |
+| `www.pbs.gov.pk/…/National-Census-Report-2023.pdf` | 200, 12.1 MB |
+| `www.pbs.gov.pk/…/District-Census-Report-2023-Islamabad.pdf` | 200, 4.7 MB |
+| `www.pbos.gov.pk/page/population-census` | **TLS: certificate has expired** |
+| `census23.pbos.gov.pk/` | timed out at 40s |
+| `pndajk.gov.pk/…/AJ&K Statistical Year Book 2023(1).pdf` | **200**, and carries the religion table below |
+| `www.pndajk.gov.pk/…/Statistical Year Book 2020.pdf` | 200, no mother-tongue table |
+| `www.pndajk.gov.pk/…/AJK At a Glance 2025.pdf` | 200, 4.9 MB, no religion and no mother tongue |
+| `www.pnd.gog.pk/pages/downloads` | 200, eight PDFs, listed below |
+| `en.wikipedia.org` "Gilgit-Baltistan" via the MediaWiki API | 200, two wikitables, neither a composition |
+| `alfgb.gbit.gov.pk/storage/downloads/…` | TLS: `TLSV1_ALERT_INTERNAL_ERROR` |
+
+**`www.pbs.gov.pk` did not block anything.** It answered a plain
+`DemographicMap/1.0` client on every request above, 404 where the file is not
+there and 200 where it is. The two hosts that are closed are closed by their
+certificates -- `www.pbos.gov.pk` serves an expired one and `alfgb.gbit.gov.pk`
+fails the handshake outright -- and neither is a thing to work around. An
+expired certificate is not an incomplete chain: the AIA `caIssuers` trick that
+`india_census.py` uses completes a chain the server forgot to send, and there
+is nothing to complete here.
+
+#### Islamabad was behind a filename
+
+`table_9_islamabad.pdf`. The four provinces are `table_9_<slug>_districts.pdf`,
+this module read "districts" as part of the scheme, and the office drops the
+word for the capital, which has no districts under it, being one. Both names
+this module tried came back 404 -- and a 404 from a name the office does not
+use looks exactly like a 404 from a table that was never written. Islamabad
+spent two census rounds filed under "enumerated apart, not published", which
+was true of the other two and never of it.
+
+The file is one page and prints one district, `ISLAMABAD DISTRICT`, followed
+by `ISLAMABAD TEHSIL` repeating the same figures. So it has no territory row
+above its districts, and the territory row is the Malakand check -- the one
+control that catches a unit the reader never noticed, worth 825,377 people in
+Khyber Pakhtunkhwa. `ONE_DISTRICT` in `pakistan.py` names the province where
+that row is redundant rather than letting a missing row pass anywhere it turns
+up, and the declaration pays for the check it removes: exactly one district
+must be read, or the province is refused.
+
+Islamabad now carries **2,283,244 people, Muslim 95.6%, Christian 4.3%,
+Ahmadi 0.1%, Hindu 0.0%** -- the largest Christian share of any first-level
+unit in Pakistan, against Punjab's 1.9% and Khyber Pakhtunkhwa's 0.3%, and
+2.9% of the country's Christians in 0.9% of its people. Its row also breaks three figures across two words each (45, 60 and
+10) and sets the tightest column gap either province offered, **12 points**
+between `,283,244` and the `2` of `2,181,663`, against the 13 this file
+records as the minimum. `GAP` is 4, so the margin is 4 against 12; a rule
+tuned any closer to the gap it had seen would have joined two columns here.
+
+#### Azad Jammu and Kashmir: religion from its own government
+
+The Bureau publishes no Table 9 for it. Its own does. The **AJ&K Statistical
+Year Book 2023**, from the Bureau of Statistics, P&DD, Azad Government of the
+State of Jammu & Kashmir, reprints two religion tables from the **2017**
+census: 15.23 for the territory rural and urban, and **15.24 by district**.
+That is a Pakistan Bureau of Statistics table reprinted by the territory's
+government, which is the same standard `wiki_census.py` holds a Wikipedia
+transcription to, met by a government publication instead.
+
+15.24 is the one read, because it is the one that can be checked. Its ten
+districts sum to its own AJ&K row in **all seven columns, to the person**:
+
+| | Muslim | Hindu | Christian | Ahmadi | Sch. Caste | Other | Total |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| ten districts summed | 4,025,737 | 14 | 2,934 | 3,402 | 60 | 270 | 4,032,363 |
+| the printed AJ&K row | 4,025,737 | 14 | 2,934 | 3,402 | 60 | 270 | 4,032,363 |
+
+A territory-level table alone would have had no such control, which is why
+15.23 is not the one taken.
+
+**One discrepancy, carried rather than hidden.** Poonch's religions sum to 54
+more than the total printed beside them, and the AJ&K row's own parts exceed
+its own total by the same 54 -- which is exactly the gap between 15.24's
+Muslims (4,025,737) and 15.23's (4,025,683, being 3,325,839 rural plus 699,844
+urban). The yearbook disagrees with itself about 54 Muslims in Poonch out of
+four million people, and says so twice. It is 0.011% of Poonch, it moves no
+share this map prints, and the run names it in the log.
+
+**The districts are not published as records.** geoBoundaries draws Azad
+Kashmir as a *single* second-level unit where the yearbook counts ten, so ten
+rows would reach one shape: nine would lose and the tenth would put a
+district's figures on the whole territory, looking entirely normal while being
+wrong by four fifths. The territory's row goes on the territory's shape. This
+also answers a question worth asking outright -- AJK is drawn as one admin2
+unit because the boundary file draws one, not because a join is failing.
+
+The territory's population becomes **4,032,363 (2017 census)**, replacing a
+**2008** Wikidata figure of 4,567,982.
+
+#### Gilgit-Baltistan is the one real absence
+
+Nothing found for it, and the routes are worth naming so nobody walks them
+again.
+
+* **The Bureau's census tables.** Six filenames, six 404s, listed above.
+* **Its own Planning & Development Department**, `www.pnd.gog.pk/pages/downloads`,
+  publishes eight PDFs: *GB At a Glance 2025*, *GB MICS 2024-25* in two
+  reports, an investment brochure, and four Annual Development Programmes. **GB
+  At a Glance 2025 contains district tables drawn from the 2023 census and the
+  words "religion", "tongue", "Muslim" and "Shia" on no page of it.**
+* **GB-MICS** does carry language, and it is not the same question. Its
+  background table reads Balti 28.4%, Burushaski 11.4%, Khowar 5.2%, Wakhi
+  0.9%, Other 6.2%, against weighted and unweighted respondent counts in the
+  hundreds and low thousands -- a survey's *respondents* by language, not a
+  population by mother tongue, and territory-wide rather than by district.
+  Publishing that beside four provinces of census mother tongue, in the same
+  field, is the mismatch this project exists to refuse. It is a real official
+  survey and a usable source for someone willing to mark the basis
+  (`{field}_basis`, as `us_prri.py` does) and to establish the universe from
+  the report rather than from its table of contents; it is recorded here and
+  not wired.
+* **`mics.unicef.org` was not asked**, and does not need to be: this
+  repository has already recorded it as blocking non-browser clients, and the
+  GB government serves the same reports itself.
+* **The Pamir Times article** (`pamirtimes.net`, December 2023) that circulates
+  household counts by language for GB cites GB-MICS 2017 for them. A regional
+  news outlet is not a source this project cites; what it points at is, and
+  what it points at is the survey above.
+* **Wikipedia carries no table to transcribe.** `wiki_census.py` exists for
+  exactly this case -- a census table that reaches this project only as an
+  encyclopaedia's copy of it -- and the article does not have one. "Gilgit-
+  Baltistan" holds two wikitables: the ten districts with area, capital and a
+  2023 population (1,709,049 in total), and a *ranked list* of languages,
+  "Rank | Language | Detail", whose cells are prose -- "It is a Dardic
+  language spoken in..." -- with no percentage and no count anywhere in it.
+  There is nothing for a spec to read: `wiki_census` needs share columns and
+  refuses a table it cannot add up, which is the property that makes the route
+  safe. Recorded so the next person does not open the article hoping.
+* **That district table is a population route, though, and GB's population on
+  this map is a 2011 Wikidata figure of 1,155,755 against a 2023 census
+  1,709,049 -- a third too low.** The better source for it is not Wikipedia:
+  *GB At a Glance 2025*, on the territory's own P&DD host, carries district
+  tables from the same census. Neither is read here.
+* **The census's own category scheme is the deeper problem.** Pakistan's
+  mother-tongue question names nine tongues and an "Other", and Shina, Balti
+  and Burushaski -- which is to say nearly all of Gilgit-Baltistan -- are in
+  the Other. So even a Table 11 for the territory would not name a single one
+  of its languages. A census figure with a category scheme that cannot see the
+  population is a different problem from no census figure, and for GB the
+  answer happens to be both.
+
+The run reads the yearbook's table on PDF page 209 -- the caption is also on page 15, in the contents, and a page carrying the caption with no district rows under it is a mention of the table rather than the table.
+
+Gilgit-Baltistan's two first-level fields and its ten districts therefore
+carry an explicit `not_available` with a note naming what was asked, rather
+than an empty field that reads as an adapter nobody has run. `not_available`
+and not `not_collected`: Pakistan does ask religion and mother tongue, and
+asked them there in 2023. It is the publication that is missing, not the
+question.
+
+#### What it moved
+
+| | before | after |
+| --- | --- | --- |
+| Islamabad Capital Territory | no population, no religion | 2,283,244; religion 2023 |
+| Azad Jammu and Kashmir | no religion; population 4,567,982, a **2008** Wikidata figure | religion 2017 (Muslim 99.8%, Ahmadi 3,402, Christian 2,934); population 4,032,363, the 2017 census |
+| Gilgit-Baltistan | empty | declared, with the routes named |
+| Pakistan's religion roll-up | refused, and **unmeasurable** -- Islamabad had neither the field nor a population, so `covered_share` could not answer at all | measurable, at **99.5%**: only Gilgit-Baltistan's 1.2 million are outside it, against a `COUNTRY_MIN_COVERAGE` of 98% |
+| Pakistan's language roll-up | refused at 97.65% | still refused: Azad Kashmir and Gilgit-Baltistan have no mother tongue, and 2.1% of the country is more than the bound allows |
+
+The language roll-up is the one thing still blocked, and the two ways to
+unblock it are both named above: read the 2023 Table 11 (which replaces the
+2017 route rather than joining it), or find a mother tongue for the two
+territories, where every route measured so far is closed.
 
 ### Central African Republic: three fields, and a table that counts two things
 
@@ -2978,23 +3352,133 @@ because they only ever appear in the South African entry.
 Both are large, both are blank below the country line, and the reasons are not
 the same -- which is the point of measuring rather than assuming.
 
-**Japan does not ask.** The Kokusei Chosa records name, sex, date of birth,
-marital status, nationality, household relationship, dwelling, employment,
-industry, occupation and commuting. Religion and ethnicity were already
-declared here; **language** is now declared alongside them, because the census
-does not ask that either and 47 prefectures of empty language field were
-reading as "not fetched yet" rather than "never asked". Japan's published
-religion figures come from the Agency for Cultural Affairs' yearbook, where
-religious bodies report their own adherents and the total exceeds the
-population -- the same person counted by a shrine and a temple. That is not a
-composition and cannot be made into one.
+**Japan does not ask, and that is now a fact about the catalogue.** The
+Kokusei Chosa records name, sex, date of birth, marital status, nationality,
+household relationship, dwelling, employment, industry, occupation and
+commuting. Religion, ethnicity and language are all three declared here, and
+all three used to rest on reading that questionnaire -- which settles the
+census and not the country. e-Stat is the portal for *every* Japanese
+government statistic, so a question a census declines can still be asked by an
+agency survey, and nobody here had looked. The catalogue has now been asked,
+with a free application id in `ESTAT_API` and `scripts/probe_estat.py` against
+e-Stat's REST API 3.0: `getStatsList` for what exists, `getMetaInfo` for what
+each table is cut by, `getStatsData` for the figures.
 
-What Japan does publish by prefecture is **foreign residents by nationality**,
-and that is refused here for the reason Nigeria's, Sudan's, Libya's and
-Syria's `Nationality` sheets were refused: citizenship is not ethnicity, and
-published as one it would describe a country of 123 million as ethnically
-uniform. e-Stat itself is open and answers a program -- the Population Census
-database is right there -- so this is a limit of what was asked, not of access.
+**Counted, not recalled.** e-Stat says how many tables carry a word before it
+says which ones, and both numbers are worth having: the surveys say who asks,
+the tables say how much of the catalogue is involved.
+
+| word | tables | surveys | what they are |
+| --- | --- | --- | --- |
+| 宗教 religion | 5,603 | 39 | almost all of it economic: 宗教 is an industry class in the Economic Census, the establishment statistics and the national accounts. Exactly one survey is demography -- **宗教統計調査**, 00401101, the Agency for Cultural Affairs |
+| 信者 believers | 30 | 3 | seventeen of them are that survey's own tables and one is a 社会・人口統計体系 indicator table; the other eleven are 通信利用動向調査 tables about how often a household receives spam mail, where 信者 is the tail of 受信者 and 送信者 |
+| 信徒 believers, the other word | 0 | 0 | nothing at all |
+| 民族 ethnicity | 8 | 2 | six 社会教育調査 tables of *museum holdings*, where 民族資料 is a shelf of ethnographic objects, and two 矯正統計調査 tables counting foreign prisoners by nationality |
+| 言語 language | 636 | 14 | 学校基本調査 counts of graduate schools (言語文化研究科 and its kin) and ICD-10 tables in 人口動態調査 and 患者調査, where 言語 is a speech disorder |
+| 母語 mother tongue | 2 | 1 | one MEXT survey of schoolchildren -- below |
+| アイヌ Ainu | 13 | 3 | prosecution statistics, human-rights infringement cases, and the national forest yearbook. None of the three counts a population |
+| 国籍 nationality | 2,280 | 26 | the census, the migration report, immigration and residence statistics |
+| 外国人 foreign residents | 2,017 | 30 | likewise |
+
+The one apparent second source is not one. 社会・人口統計体系 (00200502) also
+carries the word, in table `0000010107`, Ｇ　文化・スポーツ, published by
+prefecture -- but that is a compilation: 248 indicators per prefecture going
+back to 1975, assembled from other statistics rather than collected. The only
+statistic in the catalogue that asks anybody about religion is 宗教統計調査, so
+any believer count anywhere in e-Stat is that survey's figure wearing another
+table's number.
+
+Asked in English the same catalogue answers differently and worse. `ethnic`
+matches **no survey at all**; `religion` matches eleven, none of them
+宗教統計調査, because the Agency for Cultural Affairs publishes no English
+title for it. An English-only sweep would have reported Japan as having no
+religion statistic -- the right conclusion reached by missing the evidence,
+which is the failure this file exists to prevent.
+
+**Religion: the table exists, the API serves it, and it is not a composition.**
+宗教統計調査 is published as 19 tables, two of them by prefecture: `0003282740`
+(団体数, organisations) and **`0003282963`** -- 全国社寺教会等宗教団体・教師・
+信者数（２）都道府県別　教師・信者数, 18,977 cells, cut by 都道府県 (48 codes),
+by 教師 / 信者, and by 宗教系統: 神道系, 仏教系, キリスト教系, 諸教. It carries
+every year from 2008年度 to 2025年度. The figures are there, by prefecture, in a
+machine-readable series eighteen years long, and they still cannot go on this
+map. The reason is arithmetic, and every number below is from `0003282963` at
+2025年度 (as of 31 December 2024), with population from e-Stat's own
+社会・人口統計体系, table `0000010101`, item `A1101_総人口` at 2024年度:
+
+* **175,054,047 believers against 123,802,000 people: 1.41 per person.** The
+  table does not partition a population. It counts memberships, and the same
+  person is counted by a shrine and by a temple.
+* It does not partition itself either. Its own 全国 row is 175,054,047 and its
+  47 prefecture rows sum to **175,044,047** -- ten thousand apart, all of the
+  difference in 仏教系 (80,463,918 nationally against 80,453,918 summed).
+* The excess is not uniform, which is what would have made it survivable. The
+  ratio runs from **0.54 in Kanagawa to 3.19 in Kyoto**, a 5.9-fold spread:
+  Kyoto 3.19, Tokyo 3.09, Nagano 2.99, Shimane 2.84 at one end; Kanagawa 0.54,
+  Chiba 0.56, Okinawa 0.61 at the other.
+* The mechanism is visible in one pair. **Tokyo reports 35,352,899 Buddhist
+  believers -- 43.9% of every Buddhist in Japan, in a prefecture holding 11.5%
+  of the people** -- against Kanagawa's 1,762,105, which is 2.2% of the
+  Buddhists in 7.5% of the people. A religious corporation reports its whole
+  membership against the prefecture where it is *registered*, and the head
+  temples are in Tokyo. Kyoto is the same artefact from the other side: its
+  3.19 is Shinto (6,211,472) while its Buddhist count is 1,521,269, which is
+  1.9% of the national figure in 2.0% of the population.
+
+Read as shares -- which is what this map would do with them -- those rows put
+**80.8% Buddhist and 16.5% Shinto on Tokyo**, 18.9% and 77.2% on Kyoto, 35.5%
+and 48.2% on Kanagawa, and 90.4% Shinto on Okinawa. That is not a map of what
+people believe. It is a map of where religious head offices are registered, and
+it would be drawn in the same colours as Germany's church-tax register and
+India's census, with nothing on the panel to say it means something else.
+
+`religion_basis: "adherents"` does not rescue it. That field exists for a
+figure that counts adherents rather than answers and *still partitions a
+population* -- the 2020 U.S. Religion Census, which `us_acs.py` labels that way,
+reaches about half the population and never exceeds it. A figure that sums to
+141% of the people partitions nothing, and no basis label makes it do so. So
+religion stays `not_collected`, and the declaration now rests on a table id
+rather than on a yearbook's narrative.
+
+**Ethnicity: eight tables, and not one of them is about anyone's ethnicity.**
+Six belong to 社会教育調査 and count what museums hold -- 民族資料, ethnographic
+objects on a shelf. Two belong to 矯正統計調査 and count foreign prisoners by
+nationality. This is the trap Turkey set below, in Japanese: a keyword pass
+that reported "8 matches for ethnicity" would have been counting museum
+inventories. Nothing in e-Stat asks a person what they are, and the English
+`ethnic` matches nothing at all.
+
+What Japan does publish by prefecture is **nationality** -- the census's 国籍別
+tables, 在留外国人統計 (00250012) and 出入国管理統計 (00250011) -- and that is
+refused here for the reason Nigeria's, Sudan's, Libya's and Syria's
+`Nationality` sheets were refused: citizenship is not ethnicity, and published
+as one it would describe a country of 123 million as ethnically uniform. The
+catalogue confirms the refusal rather than changing it: 2,280 tables carry
+国籍 and every one of them is a passport.
+
+**Language: two tables, and the denominator is a support need.** 母語 matches
+exactly two tables in the whole of e-Stat -- `0003328485` for the country and
+`0003328491` by prefecture -- and both belong to MEXT's 日本語指導が必要な
+児童生徒の受入状況等に関する調査. The prefecture table is cut by 都道府県 (48
+codes) and by nine categories (合計, 英語, 韓国・朝鮮語, スペイン語, 中国語,
+フィリピノ語, ベトナム語, ポルトガル語, その他) for 2012, 2014 and 2016年度 and
+no later. Its universe, at 2016年度, is **34,335 children**: foreign-national
+pupils in public schools who need help with Japanese, 0.03% of the population,
+2,932 of them in Tokyo. Two further tables (`0003328486`, `0003328492`) do the
+same for Japanese-national pupils. These are a real count of a real thing and
+they are not a language composition: the denominator is a support need, and
+every child who speaks Japanese at home is outside it. Language stays
+`not_collected`, and the 636 tables matching 言語 are graduate schools and
+speech disorders.
+
+**Access was never the problem.** e-Stat answered every request made of it:
+`getStatsList`, `getMetaInfo` and `getStatsData` all return JSON to a plain
+client over TLS, the application id is free, and the eighteen-year religion
+series came back in one call. The key reaches the runner as a repository
+secret, never a command line, and `probe_estat.scrub()` takes it out of every
+line the probe prints -- URLs, echoed parameters, error bodies -- because a
+probe whose product is a committed log cannot rely on remembering. What is
+missing from Japan is not access and not effort. It is the question.
 
 **Turkey may ask, and cannot be read.** Four routes measured:
 
@@ -3257,6 +3741,21 @@ polygon contains its centroid, so Hurlingham, Lanús and Morón, all in Buenos
 Aires Province, come out inside the Autonomous City. A rule that refused every
 parent disagreement would have deleted all of them.
 
+**Yanam is under Andhra Pradesh, and it is the boundary file saying so.** The
+map lists Yanam as a district of Andhra Pradesh. It is not one: it is an enclave of
+Puducherry, 600 km from the rest of that union territory, entirely surrounded
+by East Godavari district. The census adapter has it right — its row
+says Puducherry, and Puducherry's state total of 1,247,953 includes Yanam's
+55,626 people. The parent on the map comes from the shapes, and CGAZ's shapes
+disagree with each other about this one. Its ADM1 polygon for Andhra Pradesh is
+not cut to exclude the enclave: it covers 66% of the ADM2 Yanam feature and
+contains its representative point. CGAZ's Puducherry ADM1 *does* carry a Yanam
+part, and that part overlaps only 34% of the ADM2 feature. Two CGAZ levels drawn
+from different sources, neither one hole matching the other, so a
+point-in-polygon test lands in the state that surrounds it rather than the one
+that administers it. Nothing here can fix that without asserting a boundary the
+file does not draw, so it is reported rather than overridden.
+
 **Where there is no coordinate, nothing is refused.** India's district figures
 are from the 2011 census, so they name the states of 2011: Adilabad and
 Nizamabad say Andhra Pradesh where the boundary file says Telangana, Leh and
@@ -3360,6 +3859,13 @@ India's district figures never published a row for it — while publishing both
 of its districts. A territory whose every constituent part is measured should
 not read as unmeasured, so `build_entities.py` sums one when it can.
 
+Ladakh is now summed in the adapter instead, from the census's own rows rather
+than from whichever of its districts happen to reach a shape — see *Telangana,
+Ladakh, and summing a state from its districts* above. It is kept here as the
+case that shaped this function, and because the control it was built on is the
+same one: the sum has to meet a population nobody involved in the sum
+published.
+
 **The control is the parent's own published population.** Leh (133,487) and
 Kargil (140,802) sum to 274,289, which is exactly the population Wikidata gives
 Ladakh — and Wikidata is not where the district figures came from, so the two
@@ -3378,8 +3884,13 @@ were filled and eleven were not:
   Whatever those two numbers count, it is not the same people.
 * **England, Telangana, Singapore's five regions, American Samoa.** Partial
   coverage — 9 of England's 150 children have no religion, 24 of Telangana's 33
-  have none. This is the dangerous case, because the sum would look whole and
-  describe only part of the territory.
+  had none. This is the dangerous case, because the sum would look whole and
+  describe only part of the territory. Telangana's refusal was right for the
+  wrong reason: the nine that *did* carry figures were eight mis-matches and
+  Hyderabad, so a sum over them would have counted 31.7 million people across a
+  third of the state. It now has 32 gaps out of 33 and a state figure summed
+  from the census's own ten district rows, which is the honest form of the same
+  arithmetic.
 
 **Percentages are recomputed against the denominator the children used, not
 against population.** Mexico publishes indigenous-language shares of the

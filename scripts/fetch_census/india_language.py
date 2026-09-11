@@ -52,8 +52,8 @@ from ._shared import (
     NOT_AVAILABLE, PROCESSED, RAW, gap, log, record, shares, write_json,
 )
 from .india_census import (
-    CATALOG, DISTRICT_ALIASES, STATE_ALIASES, SUBDIVIDED_SINCE_2011,
-    subdivided_reason,
+    CATALOG, DISTRICT_ALIASES, SPLIT_STATES, STATE_ALIASES, SUBDIVIDED_SINCE_2011,
+    lost_territory, lost_territory_reason, split_note, subdivided_reason,
 )
 
 WORKBOOKS = RAW / "india" / "c16"
@@ -279,10 +279,83 @@ def state_names(units: dict[tuple[str, str], dict[str, Any]]) -> dict[str, str]:
     return out
 
 
+def split_state_rows(units: dict[tuple[str, str], dict[str, Any]],
+                     states: dict[str, str]) -> list[dict[str, Any]]:
+    """Mother tongue for the states the census never named, and their remainders.
+
+    The same arithmetic ``india_census.split_states`` does for religion, on the
+    other table, and the two are worth keeping apart rather than sharing code:
+    C-16 and C-01 are different publications with different district columns,
+    and a split that is right in one and wrong in the other is the failure
+    neither file can see by itself. What ties them together is that both must
+    reproduce the same population -- ``SPLIT_STATES`` carries it, and a
+    workbook that disagrees stops the run here exactly as the extract does
+    there.
+    """
+    out: list[dict[str, Any]] = []
+    problems: list[str] = []
+    for new_state, split in SPLIT_STATES.items():
+        parent_unit = units.get((split.state_code, "000"))
+        if parent_unit is None:
+            continue                       # that state's workbook is not present
+        members = collections.Counter()
+        for code in split.codes:
+            unit = units.get((split.state_code, f"{code:03d}"))
+            if unit is None:
+                problems.append(f"{new_state}: no C-16 row for district "
+                                f"{code:03d} of {split.parent}")
+                continue
+            members.update(unit["counts"])
+        residual = collections.Counter(parent_unit["counts"])
+        residual.subtract(members)
+        total = sum(members.values())
+        if total != split.population:
+            problems.append(f"{new_state}: its C-16 district rows sum to "
+                            f"{total:,} against a published {split.population:,}")
+        if sum(residual.values()) != split.residual:
+            problems.append(
+                f"{split.parent}: what is left after {new_state} sums to "
+                f"{sum(residual.values()):,} against a published {split.residual:,}")
+        if any(v < 0 for v in residual.values()):
+            problems.append(f"{split.parent}: taking {new_state} out leaves a "
+                            f"negative count for a language, so the district "
+                            f"rows do not sit inside the state row")
+        kept = sum(1 for (code, district) in units
+                   if code == split.state_code and district != "000") \
+            - len(split.codes)
+        for name, counts, residual_ in ((new_state, members, False),
+                                        (split.parent, +residual, True)):
+            groups = composition(counts)
+            out.append(record(
+                f"IND-S-{name.replace(' ', '-')}", name, level="admin1",
+                parent="IND", codes={"census2011_state": split.state_code},
+                language=groups or gap(NOT_AVAILABLE),
+                language_note=(
+                    language_note(groups, len(counts))
+                    + " " + split_note(new_state, split, residual=residual_,
+                                       total=sum(counts.values()),
+                                       undivided=sum(parent_unit["counts"].values()),
+                                       kept=kept)),
+                language_year=2011,
+                sources=[{"field": "language", "name": SOURCE, "url": CATALOG,
+                          "year": 2011,
+                          "license": "Government of India open data (GODL-India)"}],
+            ))
+    if problems:
+        raise SystemExit(
+            "india_language: the state splits do not reproduce the census's "
+            "own figures, so nothing is being emitted:\n  - "
+            + "\n  - ".join(problems))
+    return out
+
+
 def build(units: dict[tuple[str, str], dict[str, Any]], level: str
           ) -> list[dict[str, Any]]:
     states = state_names(units)
+    shrunken = lost_territory()
     out = []
+    if level == "state":
+        out.extend(split_state_rows(units, states))
     for (state_code, district_code), unit in sorted(units.items()):
         is_state = district_code == "000"
         if state_code == "00" or is_state != (level == "state"):
@@ -290,6 +363,33 @@ def build(units: dict[tuple[str, str], dict[str, Any]], level: str
 
         raw_name = " ".join(unit["name"].split())
         key = raw_name.lower()
+        state_2011 = (states.get(state_code) or "").casefold()
+        shrink = shrunken.get((state_2011, key)) if not is_state else None
+        if shrink:
+            # The shape still carries this district's name and no longer
+            # carries its territory. india_census.py emits the same id with
+            # the same reason; both files have to, because whichever runs last
+            # decides what the record says and a gap that has lost its reason
+            # is indistinguishable from one nobody thought about.
+            share, successors = shrink
+            reason = lost_territory_reason(DISTRICT_ALIASES.get(key, raw_name),
+                                           share, successors)
+            out.append(record(
+                f"IND-D{district_code}", DISTRICT_ALIASES.get(key, raw_name),
+                level="admin2", parent="IND", parent_name=states.get(state_code),
+                codes={"census2011_state": state_code,
+                       "census2011_district": district_code},
+                population=gap(NOT_AVAILABLE, reason),
+                religion=gap(NOT_AVAILABLE, reason),
+                language=gap(NOT_AVAILABLE, reason),
+                # Sex ratio too, though this file never fills it. A bare gap
+                # here would land on india_census's explained one when the two
+                # records merge -- gap does not overwrite a value, but it does
+                # overwrite another gap, and the later file wins.
+                sex_ratio=gap(NOT_AVAILABLE, reason),
+                sources=[{"field": "note", "name": SOURCE, "url": CATALOG}],
+            ))
+            continue
         if not is_state and key in SUBDIVIDED_SINCE_2011:
             # One census row, several present-day districts. Splitting a language
             # composition across successors would be an estimate wearing the
@@ -317,6 +417,11 @@ def build(units: dict[tuple[str, str], dict[str, Any]], level: str
             continue
 
         if is_state:
+            if state_code in {s.state_code for s in SPLIT_STATES.values()}:
+                # Emitted above, as the two states its districts now make up.
+                # Left here as well it would write a second record under the
+                # residual state's id, carrying the undivided state's languages.
+                continue
             name = raw_name.title().replace(" And ", " and ").replace(" Of ", " of ")
             name = STATE_ALIASES.get(raw_name.lower(), name)
             entity_id = f"IND-S-{name.replace(' ', '-')}"
