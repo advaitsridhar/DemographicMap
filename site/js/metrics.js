@@ -378,6 +378,13 @@ window.Metrics = (function () {
       return { colors: out, legend: { type: "empty", metric }, metric };
     }
 
+    // A share-of-one-group map is drawn in that group's own colour, so the
+    // map answers "which group" and "how much" with one look and matches the
+    // swatch beside the group in the picker. Every other sequential metric --
+    // population, median age -- has no group and keeps the neutral blue ramp.
+    const groupHue = metric.needsGroup && opts.group
+      ? hueOf(opts.field, opts.group) : null;
+
     values.sort((a, b) => a - b);
     const domain = metric.domain || [values[0], values[values.length - 1]];
     // Percentiles rather than min/max: one Tokyo-sized outlier should not flatten
@@ -398,7 +405,8 @@ window.Metrics = (function () {
     for (const record of records) {
       const value = metric.evaluate(record, opts);
       if (Number.isFinite(value)) {
-        out.set(record.id, Palette.sequential(project(value)));
+        out.set(record.id, groupHue ? Palette.group(groupHue, value, 0)
+                                    : Palette.sequential(project(value)));
       } else {
         // Neutral grey, not a status colour: on a sequential map the status
         // palette would read as a value at one end of the ramp.
@@ -411,7 +419,7 @@ window.Metrics = (function () {
       colors: out,
       legend: {
         type: "ramp",
-        stops: Palette.ramp(),
+        stops: groupHue ? Palette.groupRamp(groupHue, 11, 0) : Palette.ramp(),
         low: metric.format ? metric.format(low) : String(low),
         high: metric.format ? metric.format(high) : String(high),
         missing,

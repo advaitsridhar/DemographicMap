@@ -12,9 +12,13 @@ window.Dashboard = (function () {
 
   const { escape: esc, isGap, gapStatus, valueOf, number } = window.Fmt;
 
-  /** Percentage with the Factbook's "<1%" upper bounds kept as bounds. */
+  /** Percentage with the Factbook's "<1%" upper bounds kept as bounds.
+   *
+   * One decimal always: these are the figures in a column, and the column has
+   * to be seen to add up.
+   */
   function pct(value, row) {
-    const text = window.Fmt.pct(value);
+    const text = window.Fmt.pct1(value);
     return row && row.bound ? `${row.bound}${text}` : text;
   }
   let onNavigate = () => {};
@@ -61,6 +65,58 @@ window.Dashboard = (function () {
     return factCard(label, format ? format(raw) : raw, meta.join(" · "));
   }
 
+  /* Make a partition's displayed percentages add to exactly 100.0.
+   *
+   * Shares arrive rounded to one decimal, so a set that partitions a
+   * population lands on 99.9 or 100.1 about a fifth of the time: 95.6% of the
+   * 39,858 partition-like compositions shipped here are within a tenth of 100,
+   * and the difference is rounding, not a missing category. Printing a column
+   * that visibly fails to add up is the kind of thing a reader is right to
+   * distrust, so the tenths are put back.
+   *
+   * Only rounding is corrected. A sum more than half a point from 100 is a
+   * real shortfall -- the Philippines omits some categories, so its provinces
+   * come to 99.1 -- and those keep their true widths with the gap drawn as an
+   * explicit unaccounted segment, because inventing the missing 0.9 would be
+   * the one claim the data cannot support. Multi-response sets, which sum past
+   * 100 on purpose, are never touched.
+   *
+   * The tenths go to the largest groups first, which is where the absolute
+   * rounding error is largest and where one tenth is the smallest relative
+   * change.
+   */
+  const ROUNDING_SLACK = 0.5;
+
+  function toHundred(rows) {
+    const usable = rows.filter((r) => typeof r.pct === "number");
+    const total = usable.reduce((sum, r) => sum + r.pct, 0);
+    if (!usable.length || Math.abs(total - 100) > ROUNDING_SLACK || total === 100) {
+      return { rows, adjusted: 0 };
+    }
+    // Worked in tenths so the arithmetic is exact: 0.1 + 0.2 !== 0.3 in binary
+    // floating point, and this is a function about the last decimal place.
+    const tenths = usable.map((r) => Math.round(r.pct * 10));
+    let diff = 1000 - tenths.reduce((a, b) => a + b, 0);
+    const order = usable.map((r, i) => i)
+                        .sort((a, b) => tenths[b] - tenths[a]);
+    let at = 0;
+    while (diff !== 0 && at < order.length * 10) {
+      const i = order[at % order.length];
+      // Never push a group below zero or turn a real group into nothing.
+      if (diff > 0 || tenths[i] > 1) {
+        tenths[i] += diff > 0 ? 1 : -1;
+        diff += diff > 0 ? -1 : 1;
+      }
+      at += 1;
+    }
+    const fixed = new Map();
+    usable.forEach((r, i) => fixed.set(r, tenths[i] / 10));
+    return {
+      rows: rows.map((r) => (fixed.has(r) ? { ...r, pct: fixed.get(r) } : r)),
+      adjusted: Math.abs(Math.round((100 - total) * 10)),
+    };
+  }
+
   /** Fold a composition down to at most eight named slots plus "Other". */
   function foldGroups(rows) {
     const MAX = window.Palette.MAX_CATEGORIES;
@@ -69,8 +125,11 @@ window.Dashboard = (function () {
     if (usable.length <= MAX) return { shown: usable, folded: 0 };
     const shown = usable.slice(0, MAX - 1);
     const tail = usable.slice(MAX - 1);
-    const rest = tail.reduce((sum, r) => sum + r.pct, 0);
-    shown.push({ group: "Other groups", pct: Math.round(rest * 10) / 10, _folded: tail.length });
+    // Summed in tenths and taken as the exact remainder, so folding a tail of
+    // forty groups into one row cannot move the column's total: rounding each
+    // and adding them put Madhya Pradesh's languages back to 100.1.
+    const rest = tail.reduce((sum, r) => sum + Math.round(r.pct * 10), 0);
+    shown.push({ group: "Other groups", pct: rest / 10, _folded: tail.length });
     return { shown, folded: tail.length };
   }
 
@@ -101,15 +160,33 @@ window.Dashboard = (function () {
   function basisChip(total, value) {
     if (!value.length) return "";
     if (total > 105) {
-      return `<span class="chip-basis" title="Shares sum to ${window.Fmt.pct(total)}">
+      return `<span class="chip-basis" title="Shares sum to ${window.Fmt.pct1(total)}">
                 more than one answer allowed</span>`;
     }
     if (total < 95) {
       return `<span class="chip-basis chip-basis-partial"
-                    title="Shares sum to ${window.Fmt.pct(total)}">
-                describes ${window.Fmt.pct(total)} of the population</span>`;
+                    title="Shares sum to ${window.Fmt.pct1(total)}">
+                describes ${window.Fmt.pct1(total)} of the population</span>`;
     }
     return "";
+  }
+
+  /* The note, plus a sentence when the last decimal place was moved.
+   *
+   * A reader comparing this panel with the source has to be able to find out
+   * why a figure is a tenth different, and "the totals were made to add up" is
+   * the whole answer.
+   */
+  function noteFor(title, value, note) {
+    if (!Array.isArray(value)) return note;
+    const squared = toHundred(value);
+    if (!squared.adjusted) return note;
+    const tenths = squared.adjusted === 1 ? "a tenth of a point"
+                                          : `${squared.adjusted} tenths of a point`;
+    const said = `Shares are published rounded to one decimal and came to ` +
+      `${tenths} off 100%; the difference is rounding, and it has been put ` +
+      `back into the largest groups so the column adds up.`;
+    return note ? `${note} ${said}` : said;
   }
 
   function compositionPanel(title, value, note, year) {
@@ -117,7 +194,8 @@ window.Dashboard = (function () {
     // collected" implies a measurement that was never taken.
     const showYear = year && !isGap(value);
     const parts = [`<section class="panel"><div class="panel-head">` +
-                   `<h3>${esc(title)}${infoDot(note, `About the ${title.toLowerCase()} figures`)}</h3>` +
+                   `<h3>${esc(title)}${infoDot(noteFor(title, value, note),
+                                   `About the ${title.toLowerCase()} figures`)}</h3>` +
                    (showYear ? `<span class="panel-year">${esc(year)}</span>` : "") + `</div>`];
 
     if (isGap(value)) {
@@ -125,9 +203,11 @@ window.Dashboard = (function () {
       return parts.join("") + "</section>";
     }
 
-    const { shown } = foldGroups(value);
+    const squared = toHundred(value);
+    const value2 = squared.rows;
+    const { shown } = foldGroups(value2);
     const total = shown.reduce((sum, r) => sum + r.pct, 0);
-    const unlabelled = value.filter((r) => r.pct == null).map((r) => r.group);
+    const unlabelled = value2.filter((r) => r.pct == null).map((r) => r.group);
 
     if (shown.length) {
       // Shares that fall short of 100% keep their true widths, and the shortfall
@@ -165,8 +245,11 @@ window.Dashboard = (function () {
 
       parts.push(`<details class="table-toggle"><summary>Table view</summary>
         <table class="data-table"><thead><tr><th>Group</th><th>Share</th></tr></thead><tbody>` +
-        value.filter((r) => typeof r.pct === "number")
-             .map((r) => `<tr><td>${esc(r.group)}</td><td>${pct(r.pct, r)}</td></tr>`).join("") +
+        value2.filter((r) => typeof r.pct === "number")
+              .map((r) => `<tr><td>${esc(r.group)}</td><td>${pct(r.pct, r)}</td></tr>`).join("") +
+        `<tr class="total-row"><th scope="row">Total</th><th>` +
+        `${window.Fmt.pct1(value2.reduce((sum, r) =>
+            sum + (typeof r.pct === "number" ? r.pct : 0), 0))}</th></tr>` +
         `</tbody></table></details>`);
     }
 

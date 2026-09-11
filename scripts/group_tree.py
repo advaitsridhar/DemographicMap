@@ -1135,159 +1135,213 @@ if __name__ == "__main__":
 # colour-blindness. They are never the only thing carrying identity: every
 # unit names its group on hover, the legend names each colour, and the panel
 # names it again.
+# One base colour per tier-1 node, spread around the wheel so the bands are
+# told apart at a glance, and a computed variation per family inside each band.
+#
+# The bases were hand-picked rather than generated: the ones that colour most
+# of the map get the widest separation, and the rare ones take the muted slots,
+# so the four or five colours a reader actually has to hold apart are the four
+# or five furthest apart. They are drawn from the Okabe-Ito colour-blind-safe
+# set where it stretches far enough.
+#
+# Families are *not* hand-coloured. Each takes its band's hue rotated by its
+# position among its siblings, which guarantees no two siblings share a colour
+# and spaces them as widely as the band allows. Hand-assigning them produced
+# eight greens nobody could separate; a rotation is both wider and stable,
+# since the order comes from the table rather than from the data.
 TIER_HUE: dict[str, dict[str, str]] = {
     "religion": {
-        "Abrahamic religions": "#3b6fd4",
-        "Indian religions": "#e67e22",
-        "East Asian religions": "#d4ac0d",
-        "African diaspora religions": "#a569bd",
-        "Folk and traditional religions": "#8d6e63",
-        "Other and new religions": "#c39bd3",
-        "No religion": "#95a5a6",
-        "Not stated": "#bdc3c7",
+        "Abrahamic religions": "#0072B2",
+        "Indian religions": "#E69F00",
+        "East Asian religions": "#CC79A7",
+        "African diaspora religions": "#8B4A9C",
+        "Folk and traditional religions": "#7A5230",
+        "Other and new religions": "#00A0B0",
+        "No religion": "#7F8C8D",
+        "Not stated": "#B0B7BC",
     },
     "language": {
-        # Families first, then the branches that need to be told apart inside
-        # the big ones.
-        "Indo-European languages": "#c0392b",
-        "Germanic languages": "#2e86c1",
-        "Romance languages": "#c0392b",
-        "Slavic languages": "#7d3c98",
-        "Indo-Aryan languages": "#e67e22",
-        "Iranian languages": "#b9770e",
-        "Baltic languages": "#5499c7",
-        "Celtic languages": "#16a085",
-        "Hellenic languages": "#5dade2",
-        "Albanian languages": "#a04000",
-        "Armenian languages": "#922b21",
-        "Afro-Asiatic languages": "#b7950b",
-        "Semitic languages": "#b7950b",
-        "Berber languages": "#d4ac0d",
-        "Cushitic languages": "#9a7d0a",
-        "Chadic languages": "#7d6608",
-        "Omotic languages": "#af8f1a",
-        "Sino-Tibetan languages": "#1e8449",
-        "Sinitic languages": "#1e8449",
-        "Tibeto-Burman languages": "#48c9b0",
-        "Niger-Congo languages": "#52be80",
-        "Bantu languages": "#52be80",
-        "Volta-Niger languages": "#28b463",
-        "Kwa languages": "#7dcea0",
-        "Mande languages": "#1d8348",
-        "Atlantic languages": "#82e0aa",
-        "Gur languages": "#239b56",
-        "Adamawa-Ubangi languages": "#0e6251",
-        "Nilo-Saharan languages": "#117864",
-        "Nilotic languages": "#117864",
-        "Central Sudanic languages": "#0b5345",
-        "Surmic and Koman languages": "#45b39d",
-        "Turkic languages": "#8e44ad",
-        "Uralic languages": "#5d6d7e",
-        "Caucasian languages": "#6c3483",
-        "Altaic and Siberian languages": "#a569bd",
-        "Austronesian languages": "#17a589",
-        "Malayo-Polynesian languages": "#17a589",
-        "Oceanic languages": "#48c9b0",
-        "Dravidian languages": "#e74c3c",
-        "Austroasiatic languages": "#d98880",
-        "Tai-Kadai languages": "#f39c12",
-        "Hmong-Mien languages": "#e59866",
-        "Japonic languages": "#cd6155",
-        "Koreanic languages": "#c0392b",
-        "Papuan languages": "#ba4a00",
-        "Indigenous languages of the Americas": "#e59866",
-        "Indigenous languages of Australia": "#ba4a00",
-        "Creole and contact languages": "#af7ac5",
-        "Sign languages": "#85929e",
-        "Language isolates": "#7f8c8d",
-        "Other and unspecified languages": "#bdc3c7",
+        "Indo-European languages": "#D55E00",
+        "Sino-Tibetan languages": "#009E73",
+        "Niger-Congo languages": "#4CAF50",
+        "Afro-Asiatic languages": "#B8860B",
+        "Austronesian languages": "#00A0B0",
+        "Turkic languages": "#7B2FBE",
+        "Uralic languages": "#0072B2",
+        "Dravidian languages": "#C2185B",
+        "Austroasiatic languages": "#00897B",
+        "Tai-Kadai languages": "#E69F00",
+        "Japonic languages": "#CC79A7",
+        "Koreanic languages": "#8B4A9C",
+        "Indigenous languages of the Americas": "#A0522D",
+        "Indigenous languages of Australia": "#8D4E85",
+        "Nilo-Saharan languages": "#2E7D32",
+        "Caucasian languages": "#5D3FD3",
+        "Altaic and Siberian languages": "#6A5ACD",
+        "Hmong-Mien languages": "#D81B60",
+        "Papuan languages": "#00695C",
+        "Creole and contact languages": "#56B4E9",
+        "Sign languages": "#667788",
+        "Language isolates": "#8A7A6D",
+        "Other and unspecified languages": "#B0B7BC",
     },
     "ethnicity": {
-        # Tier 1: the ancestry bands.
-        "African ancestry": "#1e8449",
-        "European ancestry": "#c0392b",
-        "Middle Eastern and North African ancestry": "#b7950b",
-        "Turkic and Central Asian ancestry": "#8e44ad",
-        "South Asian ancestry": "#e67e22",
-        "East and Southeast Asian ancestry": "#e74c3c",
-        "Indigenous American ancestry": "#a04000",
-        "Pacific ancestry": "#17a589",
-        "Mixed or multiple ancestry": "#c39bd3",
-        "Stated as a nationality": "#5d6d7e",
-        "Jewish": "#5499c7",
-        "Romani": "#af7ac5",
-        "Other or not stated ancestry": "#bdc3c7",
-        # Tier 2: a variation inside each band, so families read apart.
-        "Bantu peoples": "#1e8449",
-        "West African peoples": "#52be80",
-        "Nilotic peoples": "#117864",
-        "Horn of Africa peoples": "#45b39d",
-        "Central African peoples": "#0b5345",
-        "Malagasy peoples": "#7dcea0",
-        "Khoisan peoples": "#239b56",
-        "Afro-descendant peoples of the Americas": "#28b463",
-        "Black or African (census category)": "#186a3b",
-        "Germanic peoples": "#2e86c1",
-        "Romance peoples": "#c0392b",
-        "Slavic peoples": "#7d3c98",
-        "Baltic peoples": "#5499c7",
-        "Greek and Albanian peoples": "#a04000",
-        "Finnic and Ugric peoples": "#5d6d7e",
-        "White or European (census category)": "#5dade2",
-        "Arab peoples": "#b7950b",
-        "Iranian peoples": "#b9770e",
-        "Berber peoples": "#d4ac0d",
-        "Caucasian peoples": "#9a7d0a",
-        "Armenian peoples": "#922b21",
-        "Assyrian and Aramean peoples": "#7d6608",
-        "Middle Eastern or North African (census category)": "#af8f1a",
-        "Turkic peoples": "#8e44ad",
-        "Indo-Aryan peoples": "#e67e22",
-        "Dravidian peoples": "#e74c3c",
-        "Himalayan and Tibeto-Burman peoples": "#d98880",
-        "Han and Sinitic peoples": "#cd6155",
-        "Japanese peoples": "#e59866",
-        "Korean peoples": "#d35400",
-        "Mongolic and Siberian peoples": "#a569bd",
-        "Mainland Southeast Asian peoples": "#f39c12",
-        "Malay and Indonesian peoples": "#48c9b0",
-        "Philippine peoples": "#16a085",
-        "Asian (census category)": "#ba4a00",
-        "Indigenous peoples of North America": "#a04000",
-        "Indigenous peoples of Mesoamerica and the Caribbean": "#ca6f1e",
-        "Indigenous peoples of South America": "#873600",
-        "Indigenous (census category)": "#e59866",
-        "Polynesian peoples": "#17a589",
-        "Melanesian peoples": "#0e6251",
-        "Micronesian peoples": "#76d7c4",
-        "Aboriginal and Torres Strait Islander peoples": "#138d75",
-        "Pacific Islander (census category)": "#45b39d",
-        "Mixed or multiple (census category)": "#c39bd3",
-        "Hispanic or Latino (census category)": "#af7ac5",
-        "Settler-nation identities": "#5d6d7e",
-        "Other national identities": "#85929e",
-        "Unclassified ethnicity answers": "#bdc3c7",
-        "Unclassified language answers": "#bdc3c7",
+        "African ancestry": "#009E73",
+        "European ancestry": "#D55E00",
+        "East and Southeast Asian ancestry": "#CC79A7",
+        "Mixed or multiple ancestry": "#56B4E9",
+        "Indigenous American ancestry": "#E69F00",
+        "Pacific ancestry": "#00A0B0",
+        "Middle Eastern and North African ancestry": "#B8860B",
+        "Romani": "#8B4A9C",
+        "Turkic and Central Asian ancestry": "#5D3FD3",
+        "South Asian ancestry": "#A0522D",
+        "Jewish": "#0072B2",
+        "Stated as a nationality": "#667788",
+        "Other or not stated ancestry": "#B0B7BC",
+    },
+}
+
+# Families whose colour is a convention rather than a free choice.
+#
+# Checked before the rotation below, and the reason it exists: deriving every
+# family from its band turned the whole religion map into one blue, because
+# Christianity, Islam and Judaism are all Abrahamic. Catholic red, Protestant
+# blue, Orthodox purple, Islamic green, Hindu saffron and Buddhist gold are
+# what the printed religion atlases use and what a reader arrives expecting,
+# and a map that spends that recognition to be internally tidy has made a bad
+# trade. Language and ethnicity have no such conventions, so their families
+# take the rotation and keep their bands legible instead.
+FAMILY_HUE: dict[str, dict[str, str]] = {
+    "religion": {
+        "Christianity": "#2E5FA3",
+        "Catholicism": "#B03A2E",
+        "Protestantism": "#2E86C1",
+        "Orthodoxy": "#7D3C98",
+        "Latter-day Saints": "#5DADE2",
+        "Jehovah's Witnesses": "#48C9B0",
+        "Islam": "#1E8449",
+        "Sunni Islam": "#1E8449",
+        "Shia Islam": "#7DCEA0",
+        "Ibadi Islam": "#0B5345",
+        "Ahmadiyya": "#A9DFBF",
+        "Judaism": "#5D6D7E",
+        "Hinduism": "#E67E22",
+        "Buddhism": "#D4AC0D",
+        "Sikhism": "#D35400",
+        "Jainism": "#B9770E",
+        "Baha'i": "#F5B041",
+        "Druze": "#16A085",
+        "Zoroastrianism": "#B7950B",
+        "Folk and traditional religion": "#7A5230",
+        "Māori religions": "#AF7AC5",
+        "Spiritism and Afro-Brazilian religions": "#8B4A9C",
+        "Shinto": "#E59866",
+        "Taoism": "#DC7633",
+        "Confucianism": "#CA6F1E",
+        "Rastafarian": "#58D68D",
+        "No religion": "#7F8C8D",
+        "Atheism": "#5D6D7E",
+        "Agnosticism": "#AAB7B8",
+        "Other religions": "#00A0B0",
+        "Not stated": "#B0B7BC",
+        "Unaffiliated or not reported": "#95A5A6",
     },
 }
 
 
-def hue(field: str, name: str) -> str | None:
-    """The colour ``name`` carries, or the nearest one above it in the tree."""
-    import canonical_groups
-    table = TIER_HUE.get(field, {})
-    own = canonical_groups.HUE.get(field, {})
+# How far a family's hue is turned from its band's, by its position among its
+# siblings.
+#
+# The order goes to the extremes first and then fills in, so a band with three
+# families uses the whole span and one with nine still spaces them evenly. The
+# span is capped at 30 degrees in each direction for a reason found by trying
+# a wider one: at +/-66 a saturated base flew across the wheel -- African
+# ancestry's teal-green turned into a deep blue for Malagasy peoples -- and the
+# band stopped reading as one region, which is the thing it is for. Within 30
+# degrees the families are still plainly different colours and southern Africa
+# still looks like southern Africa.
+#
+# Saturation alternates with the same index, which buys a second axis of
+# separation without touching lightness -- lightness belongs to the share.
+_ROTATION = (0, 30, -30, 15, -15, 22, -22, 8, -8, 26, -26, 12, -12)
+_SATURATION = (1.0, 0.72, 1.0, 0.78, 0.94, 0.68, 1.0, 0.84, 0.9, 0.74, 1.0)
+
+
+def _hex_to_hls(hex_colour: str) -> tuple[float, float, float]:
+    import colorsys
+    n = int(hex_colour.lstrip("#"), 16)
+    return colorsys.rgb_to_hls(((n >> 16) & 255) / 255,
+                               ((n >> 8) & 255) / 255, (n & 255) / 255)
+
+
+def _hls_to_hex(h: float, l: float, s: float) -> str:
+    import colorsys
+    r, g, b = colorsys.hls_to_rgb(h % 1.0, max(0.0, min(1.0, l)),
+                                  max(0.0, min(1.0, s)))
+    return "#%02x%02x%02x" % (round(r * 255), round(g * 255), round(b * 255))
+
+
+def _siblings(field: str, parent: str) -> list[str]:
+    """A band's families, in table order, so a colour never moves on a rebuild."""
+    table = {"religion": (RELIGION_TRADITION,),
+             "language": (LANGUAGE_FAMILY,),
+             "ethnicity": (ETHNIC_ANCESTRY,)}.get(field, ())
+    for source in table:
+        if parent in source:
+            return [k for k in source[parent] if k != parent]
+    return []
+
+
+def ancestry(field: str, name: str) -> list[str]:
+    """``name`` and every group above it, nearest first, guarded for cycles."""
+    trail = [name]
     seen = {name}
-    at: str | None = name
-    while at is not None:
-        if at in own:
-            return own[at]
-        if at in table:
-            return table[at]
-        at = parent_of(field, at)
-        if at in seen:
-            return None
-        seen.add(at)
+    while True:
+        up = parent_of(field, trail[-1])
+        if up is None or up in seen:
+            return trail
+        trail.append(up)
+        seen.add(up)
+
+
+def hue(field: str, name: str) -> str | None:
+    """The colour ``name`` carries.
+
+    A tier-1 node has its own. A family takes its band's hue turned by its
+    position among the band's other families, and lightened a little so the
+    band still reads as one region. Anything deeper takes its family's, since
+    the map shades it by share rather than by identity.
+    """
+    fixed = FAMILY_HUE.get(field, {})
+    if name in fixed:
+        return fixed[name]
+    table = TIER_HUE.get(field, {})
+    if name in table:
+        return table[name]
+    trail = ancestry(field, name)
+    # A group below a family with a conventional colour takes that colour: a
+    # census that names one Catholic order is still drawn Catholic red.
+    for step in trail:
+        if step in fixed:
+            return fixed[step]
+    for i, step in enumerate(trail):
+        if step not in table:
+            continue
+        if i == 0:
+            return table[step]
+        # The family directly under this band is the one whose position sets
+        # the turn; a group below it inherits the same colour.
+        family = trail[i - 1]
+        kin = _siblings(field, step)
+        try:
+            turn = _ROTATION[kin.index(family) % len(_ROTATION)]
+        except ValueError:
+            turn = 0
+        h, l, sat = _hex_to_hls(table[step])
+        index = kin.index(family) if family in kin else 0
+        scale = _SATURATION[index % len(_SATURATION)]
+        return _hls_to_hex(h + turn / 360.0, min(0.60, l + 0.05), sat * scale)
     return None
 
 

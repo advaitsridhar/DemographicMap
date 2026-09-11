@@ -121,26 +121,45 @@ window.Palette = (function () {
    */
   const SHARE_FLOOR = 25;
 
-  function group(hex, share) {
+  /* A group's colour at a given share.
+   *
+   * Hue stays the group's; lightness carries the magnitude, and it has to go
+   * genuinely dark at the top or the encoding inverts. The first version ran
+   * lightness from 0.82 down to 0.38 while pushing saturation up to 0.95,
+   * which for a dark base hue produced a *lighter* colour the larger the
+   * share: Saudi Arabia at 90% Arab came out #d1ab0e against a base #b7950b.
+   * The band now ends below every base hue's own lightness, and saturation
+   * barely moves, so "darker" means "more" for every hue in the table.
+   *
+   * Below `floor` every share is drawn at the palest step rather than fading
+   * out, because a plurality of 26% is a fact about the place and not a
+   * near-absence. Dark mode runs the band the other way: there, more of a
+   * group means a brighter shape against a dark ground.
+   */
+  function group(hex, share, floor) {
     if (!hex) return NEUTRAL[mode()];
     const [h, s] = hexToHsl(hex);
+    // The floor is 25 for the most-populous-group map, where nothing can lead
+    // with less, and 0 for a single group's share, where 3% is a real answer
+    // that must not be drawn as the same near-white as 0%.
+    const base = Number.isFinite(floor) ? floor : SHARE_FLOOR;
     const t = Math.max(0, Math.min(1,
-      ((Number.isFinite(share) ? share : 100) - SHARE_FLOOR) / (100 - SHARE_FLOOR)));
+      ((Number.isFinite(share) ? share : 100) - base) / Math.max(1, 100 - base)));
     const dark = mode() === "dark";
-    const light = dark ? 0.30 + t * 0.38 : 0.82 - t * 0.44;
-    // A grey base stays grey. Floor-ing saturation at 0.25 turned the legend's
-    // neutral share ramp -- drawn from a grey so it stands for every group at
-    // once -- into a row of pinks, because hue 0 of a colourless input is red.
-    const sat = s < 0.02 ? 0
-      : Math.max(0.25, Math.min(0.95, s * (dark ? 0.75 + t * 0.35 : 0.55 + t * 0.5)));
+    // Light mode: 0.88 (a tint) down to 0.22 (a deep shade).
+    // Dark mode: 0.30 (barely off the ground) up to 0.72 (a bright fill).
+    const light = dark ? 0.30 + t * 0.42 : 0.88 - t * 0.66;
+    const grey = s < 0.02;
+    const sat = grey ? 0 : Math.max(0.3, Math.min(0.9, s * (0.85 + t * 0.3)));
     return hslToHex(h, sat, light);
   }
 
   /** The steps of one group's share ramp, palest first, for a legend. */
-  function groupRamp(hex, steps) {
+  function groupRamp(hex, steps, floor) {
     const n = steps || 5;
+    const base = Number.isFinite(floor) ? floor : SHARE_FLOOR;
     return Array.from({ length: n },
-      (_, i) => group(hex, SHARE_FLOOR + (i / (n - 1)) * (100 - SHARE_FLOOR)));
+      (_, i) => group(hex, base + (i / (n - 1)) * (100 - base), base));
   }
 
   function ramp() { return SEQUENTIAL[mode()].slice(); }

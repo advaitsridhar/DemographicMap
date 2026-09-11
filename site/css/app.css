@@ -632,3 +632,11 @@ dialog p, dialog li { font-size: .8rem; line-height: 1.6; color: var(--ink-secon
    button inheriting the heading's letter-spacing. */
 .filter-section > h3, .panel-head h3 { display: flex; align-items: center; }
 .panel-head h3 .info { letter-spacing: 0; }
+
+/* The table view's total, which exists so a reader can see the column adds up
+   rather than take it on trust. */
+.data-table .total-row th {
+  padding-top: .3rem; border-top: 1px solid var(--hairline);
+  font-size: .7rem; color: var(--ink-secondary); text-align: left;
+}
+.data-table .total-row th:last-child { text-align: right; font-variant-numeric: tabular-nums; }
