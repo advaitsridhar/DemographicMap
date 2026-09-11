@@ -1,7 +1,31 @@
-india_census: Census 2011, level=state
-  validated against published national totals: 640 districts, 1,210,854,977 people
-  C-01 Appendix: https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx
-  C-01 Appendix: 35 states, 83 named religions, 7,788,066 of the 7,937,734 people in 'Other religions and persuasions'
-  wrote data/processed/india_state.json (165 kB)
-  37 records, 35 with religion shares, 2 explicit gaps carrying their reason
-  groups beyond C-01's eight columns (20): ADI DHARM, Addi Bassi, Adim dhamm, Animist, Atheist, Doni Polo / Sidonyi Polo, Gond / Gondi, Heraka, Khasi, Nani Intiya, Niamtre, Nocte, Other religions (not separately named), Rangfra, Sanamahi, Sari Dharma, Sarna, Songsarek, Tribal Religion, Yumasam
+us_prri: religion by county, PRRI Census of American Religion
+  excluding mL9BH and the diversity_index column (The Religious Diversity Index, By County -- a 0-1 concentration score rather than a percentage of anybody)
+  d76SP v7: https://datawrapper.dwcdn.net/d76SP/7/dataset.csv
+  3142 counties, data year 2024
+  CLuyf v4: https://datawrapper.dwcdn.net/CLuyf/4/dataset.csv
+  cross-check: CLuyf matches d76SP across 3142 counties
+  collapse: PRRI's 11 Christian categories all land in ['Catholicism', "Jehovah's Witnesses", 'Latter-day Saints', 'Orthodoxy', 'Protestantism']
+  population: median 0.74 of the ACS resident count (an adult base, as expected)
+  sums: worst county 4.7pp from 100, median 0.1pp
+    furthest from 100 -- 37183 Wake County, NC 95.3%; 36081 Queens County, NY 96.1%; 25017 Middlesex County, MA 97.4%; 06071 San Bernardino County, CA 97.4%; 48439 Tarrant County, TX 98.0%
+  national roll-up by node: Protestantism 44.7%, No religion 23.1%, Catholicism 22.0%, Other religions 1.8%, Judaism 1.8%, Latter-day Saints 1.8%, Buddhism 1.0%, Islam 1.0%, Jehovah's Witnesses 0.9%, Hinduism 0.8%, Orthodoxy 0.6%
+  against PRRI's published 2023 figures (the data year may differ, so a difference here is not by itself an error):
+      Religiously Unaffiliated                      23.1%  published 27.0   -3.9
+      White Evangelical Protestant                  16.1%  published 13.0   +3.1
+      White Mainline/Non-evangelical Protestant     14.1%  published 13.0   +1.1
+      White Catholic                                12.1%  published 12.0   +0.1
+      Black Protestant                               7.5%  published  8.0   -0.5
+      Hispanic Catholic                              8.0%  published  8.0   -0.0
+      Hispanic Protestant                            4.0%  published  4.0   -0.0
+      Other Protestant of Color                      3.0%  published  2.0   +1.0
+      Other Catholic of Color                        2.0%  published  2.0   -0.0
+      Jewish                                         1.8%  published  2.0   -0.2
+      Muslim                                         1.0%  published  1.0   -0.0
+      Buddhist                                       1.0%  published  1.0   +0.0
+      Hindu                                          0.8%  published  1.0   -0.2
+      Unitarian Universalist                         0.5%  published  0.5   +0.0
+      (no published figure for ["Jehovah's Witness", 'Latter-day Saint (Mormon)', 'Orthodox Christian', 'Other Non-Christian Religious']; the article gives those only as '<0.5%' or pooled)
+  aggregates: Christian 70.1% (2023 published 66%), No religion 23.1% (2023 published 27%), Non-Christian 6.5% (2023 published 6%)
+  9 counties the ACS universe does not carry, matched to the shape the boundary file draws: Valdez-Cordova, Alaska, Fairfield, Connecticut, Hartford, Connecticut, Litchfield, Connecticut, Middlesex, Connecticut, New Haven, Connecticut, New London, Connecticut, Tolland, Connecticut, Windham, Connecticut
+  3142 counties written
+  wrote data/processed/us_prri_county.json (9526 kB)

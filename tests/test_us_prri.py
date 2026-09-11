@@ -631,3 +631,64 @@ class Normalise(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CountiesTheUniverseDoesNotCarry(unittest.TestCase):
+    """Connecticut, where the survey and the shapes agree and the list between
+    them does not.
+
+    The ACS county list moved to Connecticut's nine planning regions when the
+    state replaced its counties in 2022. The boundary file still draws the
+    eight old counties and PRRI still reports them, so joining through the ACS
+    list dropped 3.6 million people -- not because anything disagreed about
+    the ground, but because the intermediary had moved on.
+    """
+
+    def setUp(self):
+        self.n = 3_100
+        self.nodes = nodes_for(self.n)
+        # The condition under test is a universe that does NOT list these,
+        # which is exactly what the ACS list does for Connecticut. The generic
+        # fixture invents a county at every FIPS, so the declared ones are
+        # taken back out or the code path never runs.
+        self.universe = [row for row in universe(self.n)
+                         if (row.get("codes") or {}).get("geoid")
+                         not in us_prri.OUTSIDE_UNIVERSE]
+
+    def test_a_declared_county_is_emitted_against_its_shape(self):
+        nodes = dict(self.nodes)
+        nodes["09001"] = {"Protestantism": 40.0, "Catholicism": 30.0,
+                          "No religion": 30.0}
+        got = build(nodes, self.universe, year=2024,
+                    prri_names={"09001": "Fairfield County, CT"})
+        fairfield = [r for r in got if r["id"] == "USA-09001"]
+        self.assertEqual(len(fairfield), 1)
+        self.assertEqual(fairfield[0]["name"], "Fairfield")
+        # The state has to travel with it: the build matches a second-level
+        # name inside its parent, and "Middlesex" is a county in Connecticut
+        # and another in Massachusetts.
+        self.assertEqual(fairfield[0]["parent_name"], "Connecticut")
+        self.assertEqual(fairfield[0]["codes"]["geoid"], "09001")
+
+    def test_the_name_check_is_not_run_against_a_declared_shape(self):
+        """PRRI writes "Fairfield County, CT"; the boundary file writes
+        "Fairfield". They are the same county, and the declaration is what
+        says so -- so the check that refuses a FIPS whose two names disagree
+        must not fire on one it was told about."""
+        nodes = dict(self.nodes)
+        nodes["09005"] = {"Protestantism": 100.0}
+        got = build(nodes, self.universe, year=2024,
+                    prri_names={"09005": "Litchfield County, CT"})
+        self.assertTrue(any(r["id"] == "USA-09005" for r in got))
+
+    def test_every_declared_county_names_a_shape_and_a_state(self):
+        for fips, (shape, state) in us_prri.OUTSIDE_UNIVERSE.items():
+            self.assertRegex(fips, r"^\d{5}$")
+            self.assertTrue(shape and state, fips)
+
+    def test_an_undeclared_missing_county_is_still_left_out(self):
+        """The declaration is the whole permission; nothing else gets through."""
+        nodes = dict(self.nodes)
+        nodes["99999"] = {"Protestantism": 100.0}
+        got = build(nodes, self.universe, year=2024)
+        self.assertFalse(any(r["id"] == "USA-99999" for r in got))

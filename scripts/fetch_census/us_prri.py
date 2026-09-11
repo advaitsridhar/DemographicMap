@@ -826,6 +826,37 @@ def check_population(counties: dict[str, dict[str, Any]],
         f"(an adult base, as expected)")
 
 
+
+# PRRI counties the ACS universe does not carry, and the shape each one is.
+#
+# The universe this joins onto is the American Community Survey's county list,
+# which moved to Connecticut's nine planning regions when the state replaced
+# its counties in 2022. The boundary file did not: it still draws the eight
+# old counties, and PRRI still reports them. So for Connecticut the *survey*
+# and the *shapes* agree with each other and disagree with the universe in
+# between, and the join through that universe dropped 3.6 million people.
+#
+# Declared rather than derived, because inventing a bridge between two county
+# vintages is exactly what must not happen here. Every line below is one
+# county that PRRI reports, that the boundary file draws under that name, and
+# that the ACS list does not mention. Alaska's Valdez-Cordova is the same
+# story from a different year: dissolved into Chugach and Copper River in
+# 2019, still in PRRI, still drawn by the boundary file.
+#
+# These are matched by name inside their state rather than by FIPS, which is
+# what the build's own matcher does for every other country.
+OUTSIDE_UNIVERSE: dict[str, tuple[str, str]] = {
+    "09001": ("Fairfield", "Connecticut"),
+    "09003": ("Hartford", "Connecticut"),
+    "09005": ("Litchfield", "Connecticut"),
+    "09007": ("Middlesex", "Connecticut"),
+    "09009": ("New Haven", "Connecticut"),
+    "09011": ("New London", "Connecticut"),
+    "09013": ("Tolland", "Connecticut"),
+    "09015": ("Windham", "Connecticut"),
+    "02261": ("Valdez-Cordova", "Alaska"),
+}
+
 def build(counties: dict[str, dict[str, float]],
           universe: list[dict[str, Any]],
           *, year: int,
@@ -837,12 +868,18 @@ def build(counties: dict[str, dict[str, float]],
     records: list[dict[str, Any]] = []
     unmatched: list[str] = []
     renamed: list[str] = []
+    declared: list[str] = []
     for fips in sorted(counties):
         home = by_fips.get(fips)
+        if home is None and fips in OUTSIDE_UNIVERSE:
+            shape, state = OUTSIDE_UNIVERSE[fips]
+            home = {"name": shape, "parent": "USA", "parent_name": state,
+                    "codes": {"geoid": fips}}
+            declared.append(f"{shape}, {state}")
         if home is None:
             unmatched.append(fips)
             continue
-        if prri_names and fips in prri_names:
+        if prri_names and fips in prri_names and fips not in OUTSIDE_UNIVERSE:
             if normalise(prri_names[fips]) != normalise(home.get("name", "")):
                 renamed.append(f"{fips} PRRI {prri_names[fips]!r} "
                                f"vs map {home.get('name')!r}")
@@ -855,6 +892,7 @@ def build(counties: dict[str, dict[str, float]],
             f"USA-{fips}", home["name"],
             level="admin2", parent=home.get("parent", "USA"), country="USA",
             codes=home.get("codes"),
+            parent_name=home.get("parent_name"),
             religion=rows or gap(NOT_AVAILABLE),
             religion_year=year,
             religion_basis="self-identification",
@@ -885,6 +923,10 @@ def build(counties: dict[str, dict[str, float]],
             f"us_prri: {len(renamed)} FIPS codes name a different county in "
             f"PRRI than on the map, so the join would be silently wrong; "
             f"first few: {renamed[:5]}")
+    if declared:
+        log(f"  {len(declared)} counties the ACS universe does not carry, "
+            f"matched to the shape the boundary file draws: "
+            f"{', '.join(declared)}")
     if unmatched:
         log(f"  {len(unmatched)} PRRI counties have no shape on the map "
             f"(first few {unmatched[:8]}); left out rather than forced")
