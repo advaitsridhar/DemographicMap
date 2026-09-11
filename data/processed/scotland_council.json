@@ -142,14 +142,14 @@
         "count": 3384
       },
       {
-        "group": "Irish",
-        "pct": 1.0,
-        "count": 2213
-      },
-      {
         "group": "Chinese, Chinese Scottish or Chinese British",
         "pct": 1.0,
         "count": 2187
+      },
+      {
+        "group": "Irish",
+        "pct": 1.0,
+        "count": 2213
       },
       {
         "group": "Other Asian",
@@ -182,9 +182,9 @@
         "count": 448
       },
       {
-        "group": "Gypsy/Traveller",
+        "group": "Black, Black Scottish or Black British",
         "pct": 0.1,
-        "count": 279
+        "count": 214
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -192,9 +192,9 @@
         "count": 296
       },
       {
-        "group": "Black, Black Scottish or Black British",
+        "group": "Gypsy/Traveller",
         "pct": 0.1,
-        "count": 214
+        "count": 279
       },
       {
         "group": "Other African",
@@ -371,9 +371,9 @@
         "count": 749
       },
       {
-        "group": "Indian, Indian Scottish or Indian British",
+        "group": "African, African Scottish or African British",
         "pct": 0.2,
-        "count": 473
+        "count": 487
       },
       {
         "group": "Chinese, Chinese Scottish or Chinese British",
@@ -381,19 +381,14 @@
         "count": 424
       },
       {
-        "group": "African, African Scottish or African British",
+        "group": "Indian, Indian Scottish or Indian British",
         "pct": 0.2,
-        "count": 487
+        "count": 473
       },
       {
-        "group": "Gypsy/Traveller",
+        "group": "Arab, Arab Scottish or Arab British",
         "pct": 0.1,
-        "count": 175
-      },
-      {
-        "group": "Pakistani, Pakistani Scottish or Pakistani British",
-        "pct": 0.1,
-        "count": 253
+        "count": 131
       },
       {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
@@ -406,9 +401,9 @@
         "count": 159
       },
       {
-        "group": "Arab, Arab Scottish or Arab British",
+        "group": "Gypsy/Traveller",
         "pct": 0.1,
-        "count": 131
+        "count": 175
       },
       {
         "group": "Other ethnic group",
@@ -416,14 +411,19 @@
         "count": 163
       },
       {
-        "group": "Other African",
-        "pct": 0.0,
-        "count": 3
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.1,
+        "count": 253
       },
       {
         "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
         "count": 76
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 3
       },
       {
         "group": "Other Caribbean or Black",
@@ -585,6 +585,11 @@
         "count": 530
       },
       {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 264
+      },
+      {
         "group": "Gypsy/Traveller",
         "pct": 0.2,
         "count": 189
@@ -595,24 +600,14 @@
         "count": 264
       },
       {
-        "group": "Pakistani, Pakistani Scottish or Pakistani British",
-        "pct": 0.2,
-        "count": 266
-      },
-      {
-        "group": "Chinese, Chinese Scottish or Chinese British",
-        "pct": 0.2,
-        "count": 264
-      },
-      {
         "group": "Other Asian",
         "pct": 0.2,
         "count": 211
       },
       {
-        "group": "Indian, Indian Scottish or Indian British",
-        "pct": 0.1,
-        "count": 163
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.2,
+        "count": 266
       },
       {
         "group": "African, African Scottish or African British",
@@ -625,14 +620,19 @@
         "count": 96
       },
       {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.1,
+        "count": 163
+      },
+      {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
         "pct": 0.0,
         "count": 17
       },
       {
-        "group": "Other African",
+        "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
-        "count": 1
+        "count": 18
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -640,9 +640,9 @@
         "count": 52
       },
       {
-        "group": "Black, Black Scottish or Black British",
+        "group": "Other African",
         "pct": 0.0,
-        "count": 18
+        "count": 1
       },
       {
         "group": "Other Caribbean or Black",
@@ -767,14 +767,14 @@
         "count": 1278
       },
       {
-        "group": "Scots",
-        "pct": 0.5,
-        "count": 395
-      },
-      {
         "group": "Polish",
         "pct": 0.5,
         "count": 437
+      },
+      {
+        "group": "Scots",
+        "pct": 0.5,
+        "count": 395
       },
       {
         "group": "British Sign Language",
@@ -824,21 +824,6 @@
         "count": 161
       },
       {
-        "group": "Gypsy/Traveller",
-        "pct": 0.1,
-        "count": 96
-      },
-      {
-        "group": "Pakistani, Pakistani Scottish or Pakistani British",
-        "pct": 0.1,
-        "count": 102
-      },
-      {
-        "group": "Indian, Indian Scottish or Indian British",
-        "pct": 0.1,
-        "count": 115
-      },
-      {
         "group": "African, African Scottish or African British",
         "pct": 0.1,
         "count": 113
@@ -849,14 +834,29 @@
         "count": 52
       },
       {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 96
+      },
+      {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.1,
+        "count": 115
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.1,
+        "count": 102
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
         "pct": 0.0,
         "count": 41
-      },
-      {
-        "group": "Other African",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Black, Black Scottish or Black British",
@@ -864,14 +864,14 @@
         "count": 13
       },
       {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
         "group": "Other Caribbean or Black",
         "pct": 0.0,
         "count": 13
-      },
-      {
-        "group": "Arab, Arab Scottish or Arab British",
-        "pct": 0.0,
-        "count": 32
       },
       {
         "group": "Other ethnic group",
@@ -1038,14 +1038,9 @@
         "count": 312
       },
       {
-        "group": "Mixed or multiple ethnic groups",
+        "group": "African, African Scottish or African British",
         "pct": 0.2,
-        "count": 128
-      },
-      {
-        "group": "Indian, Indian Scottish or Indian British",
-        "pct": 0.2,
-        "count": 80
+        "count": 86
       },
       {
         "group": "Chinese, Chinese Scottish or Chinese British",
@@ -1053,9 +1048,14 @@
         "count": 90
       },
       {
-        "group": "African, African Scottish or African British",
+        "group": "Indian, Indian Scottish or Indian British",
         "pct": 0.2,
-        "count": 86
+        "count": 80
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.2,
+        "count": 128
       },
       {
         "group": "Gypsy/Traveller",
@@ -1068,19 +1068,14 @@
         "count": 48
       },
       {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
         "pct": 0.0,
         "count": 6
-      },
-      {
-        "group": "Other African",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
-        "group": "Caribbean, Caribbean Scottish or Caribbean British",
-        "pct": 0.0,
-        "count": 14
       },
       {
         "group": "Black, Black Scottish or Black British",
@@ -1088,14 +1083,19 @@
         "count": 7
       },
       {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "Other Caribbean or Black",
         "pct": 0.0,
         "count": 0
-      },
-      {
-        "group": "Arab, Arab Scottish or Arab British",
-        "pct": 0.0,
-        "count": 4
       },
       {
         "group": "Other ethnic group",
@@ -1262,19 +1262,24 @@
         "count": 413
       },
       {
-        "group": "Indian, Indian Scottish or Indian British",
-        "pct": 0.2,
-        "count": 301
-      },
-      {
         "group": "Chinese, Chinese Scottish or Chinese British",
         "pct": 0.2,
         "count": 279
       },
       {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.2,
+        "count": 301
+      },
+      {
         "group": "Other Asian",
         "pct": 0.2,
         "count": 230
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.1,
+        "count": 125
       },
       {
         "group": "Gypsy/Traveller",
@@ -1287,9 +1292,9 @@
         "count": 167
       },
       {
-        "group": "African, African Scottish or African British",
-        "pct": 0.1,
-        "count": 125
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 59
       },
       {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
@@ -1297,9 +1302,9 @@
         "count": 55
       },
       {
-        "group": "Other African",
+        "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
-        "count": 2
+        "count": 16
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -1307,19 +1312,14 @@
         "count": 51
       },
       {
-        "group": "Black, Black Scottish or Black British",
+        "group": "Other African",
         "pct": 0.0,
-        "count": 16
+        "count": 2
       },
       {
         "group": "Other Caribbean or Black",
         "pct": 0.0,
         "count": 5
-      },
-      {
-        "group": "Arab, Arab Scottish or Arab British",
-        "pct": 0.0,
-        "count": 59
       },
       {
         "group": "Other ethnic group",
@@ -1471,14 +1471,14 @@
         "count": 3393
       },
       {
-        "group": "Polish",
-        "pct": 1.4,
-        "count": 1990
-      },
-      {
         "group": "Pakistani, Pakistani Scottish or Pakistani British",
         "pct": 1.4,
         "count": 2047
+      },
+      {
+        "group": "Polish",
+        "pct": 1.4,
+        "count": 1990
       },
       {
         "group": "Indian, Indian Scottish or Indian British",
@@ -1486,19 +1486,24 @@
         "count": 1417
       },
       {
-        "group": "Irish",
-        "pct": 0.9,
-        "count": 1369
-      },
-      {
         "group": "Chinese, Chinese Scottish or Chinese British",
         "pct": 0.9,
         "count": 1274
       },
       {
+        "group": "Irish",
+        "pct": 0.9,
+        "count": 1369
+      },
+      {
         "group": "African, African Scottish or African British",
         "pct": 0.8,
         "count": 1163
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.5,
+        "count": 693
       },
       {
         "group": "Mixed or multiple ethnic groups",
@@ -1511,19 +1516,9 @@
         "count": 790
       },
       {
-        "group": "Arab, Arab Scottish or Arab British",
-        "pct": 0.5,
-        "count": 693
-      },
-      {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
         "pct": 0.2,
         "count": 310
-      },
-      {
-        "group": "Gypsy/Traveller",
-        "pct": 0.1,
-        "count": 98
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -1531,19 +1526,24 @@
         "count": 167
       },
       {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 98
+      },
+      {
         "group": "Other ethnic group",
         "pct": 0.1,
         "count": 153
       },
       {
-        "group": "Other African",
-        "pct": 0.0,
-        "count": 7
-      },
-      {
         "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
         "count": 66
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 7
       },
       {
         "group": "Other Caribbean or Black",
@@ -1705,9 +1705,9 @@
         "count": 315
       },
       {
-        "group": "Polish",
+        "group": "Indian, Indian Scottish or Indian British",
         "pct": 0.2,
-        "count": 230
+        "count": 189
       },
       {
         "group": "Mixed or multiple ethnic groups",
@@ -1720,14 +1720,9 @@
         "count": 272
       },
       {
-        "group": "Indian, Indian Scottish or Indian British",
+        "group": "Polish",
         "pct": 0.2,
-        "count": 189
-      },
-      {
-        "group": "Other Asian",
-        "pct": 0.1,
-        "count": 123
+        "count": 230
       },
       {
         "group": "African, African Scottish or African British",
@@ -1735,9 +1730,14 @@
         "count": 72
       },
       {
-        "group": "Gypsy/Traveller",
+        "group": "Other Asian",
+        "pct": 0.1,
+        "count": 123
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
         "pct": 0.0,
-        "count": 60
+        "count": 59
       },
       {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
@@ -1745,9 +1745,9 @@
         "count": 10
       },
       {
-        "group": "Other African",
+        "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
-        "count": 5
+        "count": 23
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -1755,19 +1755,19 @@
         "count": 41
       },
       {
-        "group": "Black, Black Scottish or Black British",
+        "group": "Gypsy/Traveller",
         "pct": 0.0,
-        "count": 23
+        "count": 60
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 5
       },
       {
         "group": "Other Caribbean or Black",
         "pct": 0.0,
         "count": 6
-      },
-      {
-        "group": "Arab, Arab Scottish or Arab British",
-        "pct": 0.0,
-        "count": 59
       },
       {
         "group": "Other ethnic group",
@@ -1929,14 +1929,14 @@
         "count": 1126
       },
       {
-        "group": "Pakistani, Pakistani Scottish or Pakistani British",
-        "pct": 0.7,
-        "count": 752
-      },
-      {
         "group": "Chinese, Chinese Scottish or Chinese British",
         "pct": 0.7,
         "count": 701
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.7,
+        "count": 752
       },
       {
         "group": "Mixed or multiple ethnic groups",
@@ -1959,19 +1959,14 @@
         "count": 170
       },
       {
-        "group": "Polish",
-        "pct": 0.1,
-        "count": 144
-      },
-      {
         "group": "Other ethnic group",
         "pct": 0.1,
         "count": 136
       },
       {
-        "group": "Gypsy/Traveller",
-        "pct": 0.0,
-        "count": 27
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 144
       },
       {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
@@ -1979,9 +1974,9 @@
         "count": 44
       },
       {
-        "group": "Other African",
+        "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
-        "count": 3
+        "count": 16
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -1989,9 +1984,14 @@
         "count": 48
       },
       {
-        "group": "Black, Black Scottish or Black British",
+        "group": "Gypsy/Traveller",
         "pct": 0.0,
-        "count": 16
+        "count": 27
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 3
       },
       {
         "group": "Other Caribbean or Black",
@@ -2106,14 +2106,14 @@
         "count": 2627
       },
       {
-        "group": "Scots",
-        "pct": 0.7,
-        "count": 714
-      },
-      {
         "group": "Polish",
         "pct": 0.7,
         "count": 710
+      },
+      {
+        "group": "Scots",
+        "pct": 0.7,
+        "count": 714
       },
       {
         "group": "British Sign Language",
@@ -2158,19 +2158,14 @@
         "count": 363
       },
       {
-        "group": "Pakistani, Pakistani Scottish or Pakistani British",
-        "pct": 0.3,
-        "count": 288
-      },
-      {
         "group": "Indian, Indian Scottish or Indian British",
         "pct": 0.3,
         "count": 275
       },
       {
-        "group": "Chinese, Chinese Scottish or Chinese British",
-        "pct": 0.2,
-        "count": 209
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.3,
+        "count": 288
       },
       {
         "group": "African, African Scottish or African British",
@@ -2178,14 +2173,9 @@
         "count": 177
       },
       {
-        "group": "Other Asian",
-        "pct": 0.1,
-        "count": 140
-      },
-      {
-        "group": "Caribbean, Caribbean Scottish or Caribbean British",
-        "pct": 0.1,
-        "count": 59
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 209
       },
       {
         "group": "Arab, Arab Scottish or Arab British",
@@ -2193,9 +2183,14 @@
         "count": 74
       },
       {
-        "group": "Gypsy/Traveller",
-        "pct": 0.0,
-        "count": 13
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.1,
+        "count": 59
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.1,
+        "count": 140
       },
       {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
@@ -2203,14 +2198,19 @@
         "count": 43
       },
       {
-        "group": "Other African",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
         "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
         "count": 29
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "Other Caribbean or Black",
@@ -2335,14 +2335,14 @@
         "count": 264
       },
       {
-        "group": "Gaelic",
-        "pct": 0.2,
-        "count": 189
-      },
-      {
         "group": "British Sign Language",
         "pct": 0.2,
         "count": 133
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.2,
+        "count": 189
       },
       {
         "group": "Polish",
@@ -2372,14 +2372,14 @@
         "count": 1390
       },
       {
-        "group": "Other White",
-        "pct": 1.2,
-        "count": 1048
-      },
-      {
         "group": "Indian, Indian Scottish or Indian British",
         "pct": 1.2,
         "count": 1061
+      },
+      {
+        "group": "Other White",
+        "pct": 1.2,
+        "count": 1048
       },
       {
         "group": "Chinese, Chinese Scottish or Chinese British",
@@ -2417,19 +2417,14 @@
         "count": 107
       },
       {
-        "group": "Gypsy/Traveller",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
         "pct": 0.0,
         "count": 14
       },
       {
-        "group": "Other African",
+        "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
-        "count": 8
+        "count": 12
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -2437,9 +2432,14 @@
         "count": 25
       },
       {
-        "group": "Black, Black Scottish or Black British",
+        "group": "Gypsy/Traveller",
         "pct": 0.0,
-        "count": 12
+        "count": 16
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 8
       },
       {
         "group": "Other Caribbean or Black",
@@ -2564,14 +2564,14 @@
         "count": 2543
       },
       {
-        "group": "Gaelic",
-        "pct": 0.2,
-        "count": 867
-      },
-      {
         "group": "British Sign Language",
         "pct": 0.2,
         "count": 1021
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.2,
+        "count": 867
       }
     ],
     "ethnicity": [
@@ -2621,14 +2621,14 @@
         "count": 4583
       },
       {
-        "group": "Mixed or multiple ethnic groups",
-        "pct": 0.9,
-        "count": 4087
-      },
-      {
         "group": "African, African Scottish or African British",
         "pct": 0.9,
         "count": 4364
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.9,
+        "count": 4087
       },
       {
         "group": "Arab, Arab Scottish or Arab British",
@@ -2646,9 +2646,9 @@
         "count": 1103
       },
       {
-        "group": "Gypsy/Traveller",
+        "group": "Black, Black Scottish or Black British",
         "pct": 0.1,
-        "count": 388
+        "count": 403
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -2656,9 +2656,9 @@
         "count": 505
       },
       {
-        "group": "Black, Black Scottish or Black British",
+        "group": "Gypsy/Traveller",
         "pct": 0.1,
-        "count": 403
+        "count": 388
       },
       {
         "group": "Other African",
@@ -2820,11 +2820,6 @@
         "count": 126
       },
       {
-        "group": "Polish",
-        "pct": 0.2,
-        "count": 60
-      },
-      {
         "group": "Mixed or multiple ethnic groups",
         "pct": 0.2,
         "count": 67
@@ -2835,9 +2830,9 @@
         "count": 51
       },
       {
-        "group": "Pakistani, Pakistani Scottish or Pakistani British",
-        "pct": 0.1,
-        "count": 26
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 60
       },
       {
         "group": "Indian, Indian Scottish or Indian British",
@@ -2845,19 +2840,9 @@
         "count": 41
       },
       {
-        "group": "Gypsy/Traveller",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Chinese, Chinese Scottish or Chinese British",
-        "pct": 0.0,
-        "count": 12
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.1,
+        "count": 26
       },
       {
         "group": "African, African Scottish or African British",
@@ -2865,14 +2850,14 @@
         "count": 7
       },
       {
-        "group": "Other African",
+        "group": "Arab, Arab Scottish or Arab British",
         "pct": 0.0,
-        "count": 0
+        "count": 6
       },
       {
-        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
         "pct": 0.0,
-        "count": 9
+        "count": 12
       },
       {
         "group": "Black, Black Scottish or Black British",
@@ -2880,14 +2865,29 @@
         "count": 1
       },
       {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Gypsy/Traveller",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
         "group": "Other Caribbean or Black",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Arab, Arab Scottish or Arab British",
-        "pct": 0.0,
-        "count": 6
       },
       {
         "group": "Other ethnic group",
@@ -3039,14 +3039,14 @@
         "count": 1473
       },
       {
-        "group": "Polish",
-        "pct": 0.7,
-        "count": 1080
-      },
-      {
         "group": "Pakistani, Pakistani Scottish or Pakistani British",
         "pct": 0.7,
         "count": 1148
+      },
+      {
+        "group": "Polish",
+        "pct": 0.7,
+        "count": 1080
       },
       {
         "group": "Irish",
@@ -3059,14 +3059,29 @@
         "count": 413
       },
       {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 275
+      },
+      {
         "group": "Mixed or multiple ethnic groups",
         "pct": 0.2,
         "count": 334
       },
       {
-        "group": "Chinese, Chinese Scottish or Chinese British",
-        "pct": 0.2,
-        "count": 275
+        "group": "African, African Scottish or African British",
+        "pct": 0.1,
+        "count": 205
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.1,
+        "count": 78
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.1,
+        "count": 92
       },
       {
         "group": "Gypsy/Traveller",
@@ -3079,21 +3094,6 @@
         "count": 226
       },
       {
-        "group": "African, African Scottish or African British",
-        "pct": 0.1,
-        "count": 205
-      },
-      {
-        "group": "Caribbean, Caribbean Scottish or Caribbean British",
-        "pct": 0.1,
-        "count": 92
-      },
-      {
-        "group": "Arab, Arab Scottish or Arab British",
-        "pct": 0.1,
-        "count": 78
-      },
-      {
         "group": "Other ethnic group",
         "pct": 0.1,
         "count": 137
@@ -3104,14 +3104,14 @@
         "count": 11
       },
       {
-        "group": "Other African",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
         "count": 17
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 0
       },
       {
         "group": "Other Caribbean or Black",
@@ -3273,24 +3273,24 @@
         "count": 2260
       },
       {
-        "group": "Pakistani, Pakistani Scottish or Pakistani British",
-        "pct": 0.5,
-        "count": 1902
-      },
-      {
         "group": "Chinese, Chinese Scottish or Chinese British",
         "pct": 0.5,
         "count": 1735
       },
       {
-        "group": "Mixed or multiple ethnic groups",
-        "pct": 0.3,
-        "count": 1257
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.5,
+        "count": 1902
       },
       {
         "group": "Indian, Indian Scottish or Indian British",
         "pct": 0.3,
         "count": 1066
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.3,
+        "count": 1257
       },
       {
         "group": "Other Asian",
@@ -3303,9 +3303,9 @@
         "count": 684
       },
       {
-        "group": "Gypsy/Traveller",
+        "group": "Arab, Arab Scottish or Arab British",
         "pct": 0.1,
-        "count": 316
+        "count": 299
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -3313,9 +3313,9 @@
         "count": 234
       },
       {
-        "group": "Arab, Arab Scottish or Arab British",
+        "group": "Gypsy/Traveller",
         "pct": 0.1,
-        "count": 299
+        "count": 316
       },
       {
         "group": "Other ethnic group",
@@ -3328,14 +3328,14 @@
         "count": 118
       },
       {
-        "group": "Other African",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
         "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
         "count": 141
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 20
       },
       {
         "group": "Other Caribbean or Black",
@@ -3537,14 +3537,14 @@
         "count": 1170
       },
       {
-        "group": "Gypsy/Traveller",
-        "pct": 0.1,
-        "count": 407
-      },
-      {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
         "pct": 0.1,
         "count": 458
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.1,
+        "count": 820
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -3552,9 +3552,9 @@
         "count": 783
       },
       {
-        "group": "Black, Black Scottish or Black British",
+        "group": "Gypsy/Traveller",
         "pct": 0.1,
-        "count": 820
+        "count": 407
       },
       {
         "group": "Other African",
@@ -3726,19 +3726,29 @@
         "count": 664
       },
       {
-        "group": "Indian, Indian Scottish or Indian British",
-        "pct": 0.2,
-        "count": 462
-      },
-      {
         "group": "Chinese, Chinese Scottish or Chinese British",
         "pct": 0.2,
         "count": 379
       },
       {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.2,
+        "count": 462
+      },
+      {
         "group": "Other Asian",
         "pct": 0.2,
         "count": 574
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.1,
+        "count": 202
+      },
+      {
+        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "pct": 0.1,
+        "count": 217
       },
       {
         "group": "Gypsy/Traveller",
@@ -3751,24 +3761,9 @@
         "count": 234
       },
       {
-        "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
-        "pct": 0.1,
-        "count": 217
-      },
-      {
-        "group": "African, African Scottish or African British",
-        "pct": 0.1,
-        "count": 202
-      },
-      {
-        "group": "Other African",
+        "group": "Arab, Arab Scottish or Arab British",
         "pct": 0.0,
-        "count": 6
-      },
-      {
-        "group": "Caribbean, Caribbean Scottish or Caribbean British",
-        "pct": 0.0,
-        "count": 111
+        "count": 105
       },
       {
         "group": "Black, Black Scottish or Black British",
@@ -3776,14 +3771,19 @@
         "count": 82
       },
       {
-        "group": "Other Caribbean or Black",
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 111
+      },
+      {
+        "group": "Other African",
         "pct": 0.0,
         "count": 6
       },
       {
-        "group": "Arab, Arab Scottish or Arab British",
+        "group": "Other Caribbean or Black",
         "pct": 0.0,
-        "count": 105
+        "count": 6
       },
       {
         "group": "Other ethnic group",
@@ -3945,6 +3945,11 @@
         "count": 256
       },
       {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 196
+      },
+      {
         "group": "Mixed or multiple ethnic groups",
         "pct": 0.2,
         "count": 179
@@ -3955,14 +3960,9 @@
         "count": 171
       },
       {
-        "group": "Chinese, Chinese Scottish or Chinese British",
-        "pct": 0.2,
-        "count": 196
-      },
-      {
-        "group": "Polish",
+        "group": "African, African Scottish or African British",
         "pct": 0.1,
-        "count": 112
+        "count": 89
       },
       {
         "group": "Other Asian",
@@ -3970,14 +3970,14 @@
         "count": 120
       },
       {
-        "group": "African, African Scottish or African British",
+        "group": "Polish",
         "pct": 0.1,
-        "count": 89
+        "count": 112
       },
       {
-        "group": "Gypsy/Traveller",
+        "group": "Arab, Arab Scottish or Arab British",
         "pct": 0.0,
-        "count": 8
+        "count": 16
       },
       {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
@@ -3985,9 +3985,9 @@
         "count": 5
       },
       {
-        "group": "Other African",
+        "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
-        "count": 1
+        "count": 11
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -3995,19 +3995,19 @@
         "count": 23
       },
       {
-        "group": "Black, Black Scottish or Black British",
+        "group": "Gypsy/Traveller",
         "pct": 0.0,
-        "count": 11
+        "count": 8
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Other Caribbean or Black",
         "pct": 0.0,
         "count": 9
-      },
-      {
-        "group": "Arab, Arab Scottish or Arab British",
-        "pct": 0.0,
-        "count": 16
       },
       {
         "group": "Other ethnic group",
@@ -4179,9 +4179,9 @@
         "count": 210
       },
       {
-        "group": "Indian, Indian Scottish or Indian British",
+        "group": "African, African Scottish or African British",
         "pct": 0.2,
-        "count": 180
+        "count": 157
       },
       {
         "group": "Chinese, Chinese Scottish or Chinese British",
@@ -4189,19 +4189,14 @@
         "count": 130
       },
       {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.2,
+        "count": 180
+      },
+      {
         "group": "Other Asian",
         "pct": 0.2,
         "count": 188
-      },
-      {
-        "group": "African, African Scottish or African British",
-        "pct": 0.2,
-        "count": 157
-      },
-      {
-        "group": "Gypsy/Traveller",
-        "pct": 0.1,
-        "count": 72
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -4209,9 +4204,19 @@
         "count": 65
       },
       {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 72
+      },
+      {
         "group": "Other ethnic group",
         "pct": 0.1,
         "count": 53
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 41
       },
       {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
@@ -4219,24 +4224,19 @@
         "count": 41
       },
       {
-        "group": "Other African",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
         "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
         "count": 27
       },
       {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
         "group": "Other Caribbean or Black",
         "pct": 0.0,
         "count": 7
-      },
-      {
-        "group": "Arab, Arab Scottish or Arab British",
-        "pct": 0.0,
-        "count": 41
       }
     ],
     "sources": [
@@ -4393,9 +4393,19 @@
         "count": 430
       },
       {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.2,
+        "count": 164
+      },
+      {
         "group": "Mixed or multiple ethnic groups",
         "pct": 0.2,
         "count": 232
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.2,
+        "count": 169
       },
       {
         "group": "Pakistani, Pakistani Scottish or Pakistani British",
@@ -4403,14 +4413,9 @@
         "count": 149
       },
       {
-        "group": "Chinese, Chinese Scottish or Chinese British",
-        "pct": 0.2,
-        "count": 164
-      },
-      {
-        "group": "Other Asian",
-        "pct": 0.2,
-        "count": 169
+        "group": "African, African Scottish or African British",
+        "pct": 0.1,
+        "count": 78
       },
       {
         "group": "Gypsy/Traveller",
@@ -4423,9 +4428,9 @@
         "count": 101
       },
       {
-        "group": "African, African Scottish or African British",
-        "pct": 0.1,
-        "count": 78
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 26
       },
       {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
@@ -4433,9 +4438,9 @@
         "count": 16
       },
       {
-        "group": "Other African",
+        "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
-        "count": 10
+        "count": 11
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -4443,19 +4448,14 @@
         "count": 43
       },
       {
-        "group": "Black, Black Scottish or Black British",
+        "group": "Other African",
         "pct": 0.0,
-        "count": 11
+        "count": 10
       },
       {
         "group": "Other Caribbean or Black",
         "pct": 0.0,
         "count": 3
-      },
-      {
-        "group": "Arab, Arab Scottish or Arab British",
-        "pct": 0.0,
-        "count": 26
       },
       {
         "group": "Other ethnic group",
@@ -4612,14 +4612,9 @@
         "count": 948
       },
       {
-        "group": "Polish",
+        "group": "Chinese, Chinese Scottish or Chinese British",
         "pct": 0.2,
-        "count": 247
-      },
-      {
-        "group": "Mixed or multiple ethnic groups",
-        "pct": 0.2,
-        "count": 319
+        "count": 315
       },
       {
         "group": "Indian, Indian Scottish or Indian British",
@@ -4627,19 +4622,14 @@
         "count": 328
       },
       {
-        "group": "Chinese, Chinese Scottish or Chinese British",
+        "group": "Mixed or multiple ethnic groups",
         "pct": 0.2,
-        "count": 315
+        "count": 319
       },
       {
-        "group": "Pakistani, Pakistani Scottish or Pakistani British",
-        "pct": 0.1,
-        "count": 108
-      },
-      {
-        "group": "Other Asian",
-        "pct": 0.1,
-        "count": 175
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 247
       },
       {
         "group": "African, African Scottish or African British",
@@ -4647,9 +4637,19 @@
         "count": 80
       },
       {
-        "group": "Gypsy/Traveller",
+        "group": "Other Asian",
+        "pct": 0.1,
+        "count": 175
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.1,
+        "count": 108
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
         "pct": 0.0,
-        "count": 58
+        "count": 61
       },
       {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
@@ -4657,9 +4657,9 @@
         "count": 22
       },
       {
-        "group": "Other African",
+        "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
-        "count": 3
+        "count": 14
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -4667,19 +4667,19 @@
         "count": 47
       },
       {
-        "group": "Black, Black Scottish or Black British",
+        "group": "Gypsy/Traveller",
         "pct": 0.0,
-        "count": 14
+        "count": 58
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 3
       },
       {
         "group": "Other Caribbean or Black",
         "pct": 0.0,
         "count": 4
-      },
-      {
-        "group": "Arab, Arab Scottish or Arab British",
-        "pct": 0.0,
-        "count": 61
       },
       {
         "group": "Other ethnic group",
@@ -4831,14 +4831,14 @@
         "count": 4394
       },
       {
-        "group": "Polish",
-        "pct": 0.9,
-        "count": 3009
-      },
-      {
         "group": "Pakistani, Pakistani Scottish or Pakistani British",
         "pct": 0.9,
         "count": 3003
+      },
+      {
+        "group": "Polish",
+        "pct": 0.9,
+        "count": 3009
       },
       {
         "group": "Other White",
@@ -4846,24 +4846,24 @@
         "count": 1823
       },
       {
-        "group": "Indian, Indian Scottish or Indian British",
-        "pct": 0.3,
-        "count": 997
-      },
-      {
         "group": "Chinese, Chinese Scottish or Chinese British",
         "pct": 0.3,
         "count": 898
       },
       {
-        "group": "Mixed or multiple ethnic groups",
-        "pct": 0.2,
-        "count": 708
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.3,
+        "count": 997
       },
       {
         "group": "African, African Scottish or African British",
         "pct": 0.2,
         "count": 523
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.2,
+        "count": 708
       },
       {
         "group": "Gypsy/Traveller",
@@ -4876,19 +4876,14 @@
         "count": 445
       },
       {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 134
+      },
+      {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
         "pct": 0.0,
         "count": 42
-      },
-      {
-        "group": "Other African",
-        "pct": 0.0,
-        "count": 9
-      },
-      {
-        "group": "Caribbean, Caribbean Scottish or Caribbean British",
-        "pct": 0.0,
-        "count": 83
       },
       {
         "group": "Black, Black Scottish or Black British",
@@ -4896,14 +4891,19 @@
         "count": 77
       },
       {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 83
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
         "group": "Other Caribbean or Black",
         "pct": 0.0,
         "count": 11
-      },
-      {
-        "group": "Arab, Arab Scottish or Arab British",
-        "pct": 0.0,
-        "count": 134
       },
       {
         "group": "Other ethnic group",
@@ -5070,17 +5070,17 @@
         "count": 39
       },
       {
-        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "group": "African, African Scottish or African British",
         "pct": 0.1,
-        "count": 15
+        "count": 13
       },
       {
-        "group": "Indian, Indian Scottish or Indian British",
+        "group": "Chinese, Chinese Scottish or Chinese British",
         "pct": 0.1,
         "count": 18
       },
       {
-        "group": "Chinese, Chinese Scottish or Chinese British",
+        "group": "Indian, Indian Scottish or Indian British",
         "pct": 0.1,
         "count": 18
       },
@@ -5090,14 +5090,14 @@
         "count": 31
       },
       {
-        "group": "African, African Scottish or African British",
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
         "pct": 0.1,
-        "count": 13
+        "count": 15
       },
       {
-        "group": "Gypsy/Traveller",
+        "group": "Arab, Arab Scottish or Arab British",
         "pct": 0.0,
-        "count": 3
+        "count": 6
       },
       {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
@@ -5105,9 +5105,9 @@
         "count": 7
       },
       {
-        "group": "Other African",
+        "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
-        "count": 0
+        "count": 1
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -5115,19 +5115,19 @@
         "count": 3
       },
       {
-        "group": "Black, Black Scottish or Black British",
+        "group": "Gypsy/Traveller",
         "pct": 0.0,
-        "count": 1
+        "count": 3
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 0
       },
       {
         "group": "Other Caribbean or Black",
         "pct": 0.0,
         "count": 0
-      },
-      {
-        "group": "Arab, Arab Scottish or Arab British",
-        "pct": 0.0,
-        "count": 6
       },
       {
         "group": "Other ethnic group",
@@ -5294,6 +5294,11 @@
         "count": 585
       },
       {
+        "group": "Chinese, Chinese Scottish or Chinese British",
+        "pct": 0.3,
+        "count": 461
+      },
+      {
         "group": "Gypsy/Traveller",
         "pct": 0.3,
         "count": 415
@@ -5304,19 +5309,9 @@
         "count": 471
       },
       {
-        "group": "Chinese, Chinese Scottish or Chinese British",
-        "pct": 0.3,
-        "count": 461
-      },
-      {
         "group": "Other Asian",
         "pct": 0.3,
         "count": 402
-      },
-      {
-        "group": "Pakistani, Pakistani Scottish or Pakistani British",
-        "pct": 0.2,
-        "count": 331
       },
       {
         "group": "African, African Scottish or African British",
@@ -5324,14 +5319,19 @@
         "count": 228
       },
       {
-        "group": "Caribbean, Caribbean Scottish or Caribbean British",
-        "pct": 0.1,
-        "count": 96
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.2,
+        "count": 331
       },
       {
         "group": "Arab, Arab Scottish or Arab British",
         "pct": 0.1,
         "count": 193
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.1,
+        "count": 96
       },
       {
         "group": "Other ethnic group",
@@ -5344,14 +5344,14 @@
         "count": 73
       },
       {
-        "group": "Other African",
-        "pct": 0.0,
-        "count": 4
-      },
-      {
         "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
         "count": 43
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 4
       },
       {
         "group": "Other Caribbean or Black",
@@ -5476,14 +5476,14 @@
         "count": 715
       },
       {
-        "group": "Gaelic",
-        "pct": 0.2,
-        "count": 282
-      },
-      {
         "group": "British Sign Language",
         "pct": 0.2,
         "count": 349
+      },
+      {
+        "group": "Gaelic",
+        "pct": 0.2,
+        "count": 282
       }
     ],
     "ethnicity": [
@@ -5513,14 +5513,14 @@
         "count": 1298
       },
       {
-        "group": "Pakistani, Pakistani Scottish or Pakistani British",
-        "pct": 0.6,
-        "count": 965
-      },
-      {
         "group": "Indian, Indian Scottish or Indian British",
         "pct": 0.6,
         "count": 1028
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.6,
+        "count": 965
       },
       {
         "group": "Chinese, Chinese Scottish or Chinese British",
@@ -5553,19 +5553,14 @@
         "count": 117
       },
       {
-        "group": "Gypsy/Traveller",
-        "pct": 0.0,
-        "count": 70
-      },
-      {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
         "pct": 0.0,
         "count": 19
       },
       {
-        "group": "Other African",
+        "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
-        "count": 22
+        "count": 47
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -5573,9 +5568,14 @@
         "count": 64
       },
       {
-        "group": "Black, Black Scottish or Black British",
+        "group": "Gypsy/Traveller",
         "pct": 0.0,
-        "count": 47
+        "count": 70
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 22
       },
       {
         "group": "Other Caribbean or Black",
@@ -5690,14 +5690,14 @@
         "count": 2410
       },
       {
-        "group": "Scots",
-        "pct": 1.1,
-        "count": 1219
-      },
-      {
         "group": "Polish",
         "pct": 1.1,
         "count": 1161
+      },
+      {
+        "group": "Scots",
+        "pct": 1.1,
+        "count": 1219
       },
       {
         "group": "British Sign Language",
@@ -5742,9 +5742,9 @@
         "count": 316
       },
       {
-        "group": "Indian, Indian Scottish or Indian British",
+        "group": "African, African Scottish or African British",
         "pct": 0.2,
-        "count": 184
+        "count": 198
       },
       {
         "group": "Chinese, Chinese Scottish or Chinese British",
@@ -5752,24 +5752,14 @@
         "count": 200
       },
       {
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.2,
+        "count": 184
+      },
+      {
         "group": "Other Asian",
         "pct": 0.2,
         "count": 180
-      },
-      {
-        "group": "African, African Scottish or African British",
-        "pct": 0.2,
-        "count": 198
-      },
-      {
-        "group": "Gypsy/Traveller",
-        "pct": 0.1,
-        "count": 64
-      },
-      {
-        "group": "Pakistani, Pakistani Scottish or Pakistani British",
-        "pct": 0.1,
-        "count": 124
       },
       {
         "group": "Arab, Arab Scottish or Arab British",
@@ -5777,9 +5767,19 @@
         "count": 63
       },
       {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 64
+      },
+      {
         "group": "Other ethnic group",
         "pct": 0.1,
         "count": 60
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.1,
+        "count": 124
       },
       {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
@@ -5787,9 +5787,9 @@
         "count": 45
       },
       {
-        "group": "Other African",
+        "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
-        "count": 9
+        "count": 30
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -5797,9 +5797,9 @@
         "count": 53
       },
       {
-        "group": "Black, Black Scottish or Black British",
+        "group": "Other African",
         "pct": 0.0,
-        "count": 30
+        "count": 9
       },
       {
         "group": "Other Caribbean or Black",
@@ -5961,14 +5961,14 @@
         "count": 164
       },
       {
-        "group": "Mixed or multiple ethnic groups",
-        "pct": 0.3,
-        "count": 72
-      },
-      {
         "group": "Chinese, Chinese Scottish or Chinese British",
         "pct": 0.3,
         "count": 73
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.3,
+        "count": 72
       },
       {
         "group": "Other Asian",
@@ -5981,9 +5981,9 @@
         "count": 45
       },
       {
-        "group": "Indian, Indian Scottish or Indian British",
+        "group": "African, African Scottish or African British",
         "pct": 0.1,
-        "count": 21
+        "count": 22
       },
       {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
@@ -5991,9 +5991,24 @@
         "count": 18
       },
       {
-        "group": "African, African Scottish or African British",
+        "group": "Indian, Indian Scottish or Indian British",
         "pct": 0.1,
-        "count": 22
+        "count": 21
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Black, Black Scottish or Black British",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 5
       },
       {
         "group": "Gypsy/Traveller",
@@ -6006,24 +6021,9 @@
         "count": 1
       },
       {
-        "group": "Caribbean, Caribbean Scottish or Caribbean British",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
-        "group": "Black, Black Scottish or Black British",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
         "group": "Other Caribbean or Black",
         "pct": 0.0,
         "count": 2
-      },
-      {
-        "group": "Arab, Arab Scottish or Arab British",
-        "pct": 0.0,
-        "count": 9
       },
       {
         "group": "Other ethnic group",
@@ -6180,19 +6180,14 @@
         "count": 906
       },
       {
-        "group": "Polish",
-        "pct": 0.3,
-        "count": 381
-      },
-      {
         "group": "Mixed or multiple ethnic groups",
         "pct": 0.3,
         "count": 282
       },
       {
-        "group": "Indian, Indian Scottish or Indian British",
-        "pct": 0.2,
-        "count": 278
+        "group": "Polish",
+        "pct": 0.3,
+        "count": 381
       },
       {
         "group": "Chinese, Chinese Scottish or Chinese British",
@@ -6200,19 +6195,9 @@
         "count": 276
       },
       {
-        "group": "Gypsy/Traveller",
-        "pct": 0.1,
-        "count": 98
-      },
-      {
-        "group": "Pakistani, Pakistani Scottish or Pakistani British",
-        "pct": 0.1,
-        "count": 159
-      },
-      {
-        "group": "Other Asian",
-        "pct": 0.1,
-        "count": 169
+        "group": "Indian, Indian Scottish or Indian British",
+        "pct": 0.2,
+        "count": 278
       },
       {
         "group": "African, African Scottish or African British",
@@ -6220,19 +6205,29 @@
         "count": 91
       },
       {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 98
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.1,
+        "count": 169
+      },
+      {
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "pct": 0.1,
+        "count": 159
+      },
+      {
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
         "pct": 0.0,
         "count": 13
-      },
-      {
-        "group": "Other African",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
-        "group": "Caribbean, Caribbean Scottish or Caribbean British",
-        "pct": 0.0,
-        "count": 27
       },
       {
         "group": "Black, Black Scottish or Black British",
@@ -6240,14 +6235,19 @@
         "count": 17
       },
       {
-        "group": "Other Caribbean or Black",
+        "group": "Caribbean, Caribbean Scottish or Caribbean British",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Other African",
         "pct": 0.0,
         "count": 2
       },
       {
-        "group": "Arab, Arab Scottish or Arab British",
+        "group": "Other Caribbean or Black",
         "pct": 0.0,
-        "count": 51
+        "count": 2
       },
       {
         "group": "Other ethnic group",
@@ -6409,19 +6409,24 @@
         "count": 2117
       },
       {
-        "group": "Polish",
-        "pct": 0.4,
-        "count": 1140
-      },
-      {
         "group": "Indian, Indian Scottish or Indian British",
         "pct": 0.4,
         "count": 1344
       },
       {
+        "group": "Polish",
+        "pct": 0.4,
+        "count": 1140
+      },
+      {
         "group": "Chinese, Chinese Scottish or Chinese British",
         "pct": 0.3,
         "count": 1012
+      },
+      {
+        "group": "African, African Scottish or African British",
+        "pct": 0.2,
+        "count": 637
       },
       {
         "group": "Mixed or multiple ethnic groups",
@@ -6434,19 +6439,14 @@
         "count": 590
       },
       {
-        "group": "African, African Scottish or African British",
-        "pct": 0.2,
-        "count": 637
+        "group": "Arab, Arab Scottish or Arab British",
+        "pct": 0.1,
+        "count": 232
       },
       {
         "group": "Gypsy/Traveller",
         "pct": 0.1,
         "count": 203
-      },
-      {
-        "group": "Arab, Arab Scottish or Arab British",
-        "pct": 0.1,
-        "count": 232
       },
       {
         "group": "Other ethnic group",
@@ -6459,9 +6459,9 @@
         "count": 93
       },
       {
-        "group": "Other African",
+        "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
-        "count": 27
+        "count": 67
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -6469,9 +6469,9 @@
         "count": 108
       },
       {
-        "group": "Black, Black Scottish or Black British",
+        "group": "Other African",
         "pct": 0.0,
-        "count": 67
+        "count": 27
       },
       {
         "group": "Other Caribbean or Black",
@@ -6586,14 +6586,14 @@
         "count": 3880
       },
       {
-        "group": "Scots",
-        "pct": 0.6,
-        "count": 546
-      },
-      {
         "group": "Polish",
         "pct": 0.6,
         "count": 488
+      },
+      {
+        "group": "Scots",
+        "pct": 0.6,
+        "count": 546
       },
       {
         "group": "Gaelic",
@@ -6643,14 +6643,14 @@
         "count": 443
       },
       {
-        "group": "Mixed or multiple ethnic groups",
-        "pct": 0.4,
-        "count": 323
-      },
-      {
         "group": "Indian, Indian Scottish or Indian British",
         "pct": 0.4,
         "count": 349
+      },
+      {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.4,
+        "count": 323
       },
       {
         "group": "Pakistani, Pakistani Scottish or Pakistani British",
@@ -6663,9 +6663,9 @@
         "count": 183
       },
       {
-        "group": "Gypsy/Traveller",
+        "group": "Arab, Arab Scottish or Arab British",
         "pct": 0.1,
-        "count": 68
+        "count": 113
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -6673,9 +6673,9 @@
         "count": 46
       },
       {
-        "group": "Arab, Arab Scottish or Arab British",
+        "group": "Gypsy/Traveller",
         "pct": 0.1,
-        "count": 113
+        "count": 68
       },
       {
         "group": "Other ethnic group",
@@ -6688,14 +6688,14 @@
         "count": 20
       },
       {
-        "group": "Other African",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
         "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
         "count": 22
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 5
       },
       {
         "group": "Other Caribbean or Black",
@@ -6857,9 +6857,9 @@
         "count": 382
       },
       {
-        "group": "Pakistani, Pakistani Scottish or Pakistani British",
+        "group": "African, African Scottish or African British",
         "pct": 0.3,
-        "count": 251
+        "count": 259
       },
       {
         "group": "Indian, Indian Scottish or Indian British",
@@ -6867,14 +6867,9 @@
         "count": 277
       },
       {
-        "group": "African, African Scottish or African British",
+        "group": "Pakistani, Pakistani Scottish or Pakistani British",
         "pct": 0.3,
-        "count": 259
-      },
-      {
-        "group": "Mixed or multiple ethnic groups",
-        "pct": 0.2,
-        "count": 178
+        "count": 251
       },
       {
         "group": "Chinese, Chinese Scottish or Chinese British",
@@ -6882,14 +6877,14 @@
         "count": 160
       },
       {
+        "group": "Mixed or multiple ethnic groups",
+        "pct": 0.2,
+        "count": 178
+      },
+      {
         "group": "Other Asian",
         "pct": 0.2,
         "count": 152
-      },
-      {
-        "group": "Gypsy/Traveller",
-        "pct": 0.1,
-        "count": 102
       },
       {
         "group": "Arab, Arab Scottish or Arab British",
@@ -6897,14 +6892,19 @@
         "count": 62
       },
       {
+        "group": "Gypsy/Traveller",
+        "pct": 0.1,
+        "count": 102
+      },
+      {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
         "pct": 0.0,
         "count": 5
       },
       {
-        "group": "Other African",
+        "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
-        "count": 2
+        "count": 8
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -6912,9 +6912,9 @@
         "count": 19
       },
       {
-        "group": "Black, Black Scottish or Black British",
+        "group": "Other African",
         "pct": 0.0,
-        "count": 8
+        "count": 2
       },
       {
         "group": "Other Caribbean or Black",
@@ -7091,9 +7091,9 @@
         "count": 641
       },
       {
-        "group": "Mixed or multiple ethnic groups",
+        "group": "African, African Scottish or African British",
         "pct": 0.3,
-        "count": 534
+        "count": 445
       },
       {
         "group": "Chinese, Chinese Scottish or Chinese British",
@@ -7101,9 +7101,9 @@
         "count": 498
       },
       {
-        "group": "African, African Scottish or African British",
+        "group": "Mixed or multiple ethnic groups",
         "pct": 0.3,
-        "count": 445
+        "count": 534
       },
       {
         "group": "Other Asian",
@@ -7121,19 +7121,14 @@
         "count": 114
       },
       {
-        "group": "Gypsy/Traveller",
-        "pct": 0.0,
-        "count": 79
-      },
-      {
         "group": "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
         "pct": 0.0,
         "count": 11
       },
       {
-        "group": "Other African",
+        "group": "Black, Black Scottish or Black British",
         "pct": 0.0,
-        "count": 12
+        "count": 50
       },
       {
         "group": "Caribbean, Caribbean Scottish or Caribbean British",
@@ -7141,9 +7136,14 @@
         "count": 50
       },
       {
-        "group": "Black, Black Scottish or Black British",
+        "group": "Gypsy/Traveller",
         "pct": 0.0,
-        "count": 50
+        "count": 79
+      },
+      {
+        "group": "Other African",
+        "pct": 0.0,
+        "count": 12
       },
       {
         "group": "Other Caribbean or Black",

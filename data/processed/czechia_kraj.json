@@ -58,14 +58,14 @@
         "count": 11855
       },
       {
-        "group": "Christian (unspecified)",
-        "pct": 0.6,
-        "count": 7564
-      },
-      {
         "group": "Believer, church not named",
         "pct": 0.6,
         "count": 7630
+      },
+      {
+        "group": "Christian (unspecified)",
+        "pct": 0.6,
+        "count": 7564
       },
       {
         "group": "Evangelical Church of Czech Brethren",
@@ -73,14 +73,14 @@
         "count": 5507
       },
       {
-        "group": "Other Christian",
-        "pct": 0.3,
-        "count": 3999
-      },
-      {
         "group": "Czechoslovak Hussite",
         "pct": 0.3,
         "count": 3949
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.3,
+        "count": 3999
       },
       {
         "group": "Greek Catholic",
@@ -98,19 +98,9 @@
         "count": 2693
       },
       {
-        "group": "Seventh-day Adventist",
+        "group": "Buddhism",
         "pct": 0.1,
-        "count": 778
-      },
-      {
-        "group": "Lutheran",
-        "pct": 0.1,
-        "count": 753
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.1,
-        "count": 946
+        "count": 1541
       },
       {
         "group": "Jehovah's Witnesses",
@@ -118,19 +108,29 @@
         "count": 1680
       },
       {
-        "group": "Buddhism",
+        "group": "Judaism",
         "pct": 0.1,
-        "count": 1541
+        "count": 946
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.0,
-        "count": 134
+        "group": "Lutheran",
+        "pct": 0.1,
+        "count": 753
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 0.1,
+        "count": 778
       },
       {
         "group": "Hinduism",
         "pct": 0.0,
         "count": 543
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.0,
+        "count": 134
       },
       {
         "group": "Sikhism",
@@ -190,6 +190,11 @@
         "count": 3744
       },
       {
+        "group": "Bulgarian",
+        "pct": 0.2,
+        "count": 2374
+      },
+      {
         "group": "French",
         "pct": 0.2,
         "count": 2047
@@ -200,49 +205,14 @@
         "count": 2028
       },
       {
-        "group": "Spanish",
-        "pct": 0.2,
-        "count": 2809
-      },
-      {
         "group": "Polish",
         "pct": 0.2,
         "count": 2607
       },
       {
-        "group": "Bulgarian",
+        "group": "Spanish",
         "pct": 0.2,
-        "count": 2374
-      },
-      {
-        "group": "German",
-        "pct": 0.1,
-        "count": 1754
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.1,
-        "count": 1767
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.1,
-        "count": 1841
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.1,
-        "count": 665
-      },
-      {
-        "group": "Greek",
-        "pct": 0.1,
-        "count": 705
-      },
-      {
-        "group": "Moldovan",
-        "pct": 0.1,
-        "count": 668
+        "count": 2809
       },
       {
         "group": "Arabic",
@@ -250,14 +220,29 @@
         "count": 1804
       },
       {
-        "group": "Serbian",
-        "pct": 0.1,
-        "count": 1653
-      },
-      {
         "group": "Armenian",
         "pct": 0.1,
         "count": 804
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.1,
+        "count": 665
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 1754
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 705
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 1841
       },
       {
         "group": "Japanese",
@@ -275,44 +260,24 @@
         "count": 769
       },
       {
+        "group": "Moldovan",
+        "pct": 0.1,
+        "count": 668
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.1,
+        "count": 1767
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.1,
+        "count": 1653
+      },
+      {
         "group": "Turkish",
         "pct": 0.1,
         "count": 1037
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 215
-      },
-      {
-        "group": "Mongolian",
-        "pct": 0.0,
-        "count": 606
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 493
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 159
-      },
-      {
-        "group": "Romani",
-        "pct": 0.0,
-        "count": 356
-      },
-      {
-        "group": "Moravian",
-        "pct": 0.0,
-        "count": 139
-      },
-      {
-        "group": "Silesian",
-        "pct": 0.0,
-        "count": 23
       },
       {
         "group": "Albanian",
@@ -325,19 +290,44 @@
         "count": 350
       },
       {
+        "group": "Belarusian",
+        "pct": 0.0,
+        "count": 215
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.0,
+        "count": 197
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.0,
+        "count": 493
+      },
+      {
         "group": "Chechen",
         "pct": 0.0,
         "count": 59
       },
       {
-        "group": "Montenegrin",
+        "group": "Dutch",
         "pct": 0.0,
-        "count": 18
+        "count": 431
       },
       {
         "group": "Georgian",
         "pct": 0.0,
         "count": 407
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 276
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.0,
+        "count": 432
       },
       {
         "group": "Kazakh",
@@ -350,19 +340,69 @@
         "count": 153
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 135
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 78
       },
       {
-        "group": "Dutch",
+        "group": "Lithuanian",
         "pct": 0.0,
-        "count": 431
+        "count": 135
+      },
+      {
+        "group": "Mongolian",
+        "pct": 0.0,
+        "count": 606
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.0,
+        "count": 139
+      },
+      {
+        "group": "Pashto",
+        "pct": 0.0,
+        "count": 85
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 451
+      },
+      {
+        "group": "Punjabi",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 356
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 159
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 260
+      },
+      {
+        "group": "Silesian",
+        "pct": 0.0,
+        "count": 23
       },
       {
         "group": "Slovene",
@@ -380,54 +420,14 @@
         "count": 16
       },
       {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 582
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 56
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 276
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 432
-      },
-      {
-        "group": "Bengali",
-        "pct": 0.0,
-        "count": 197
-      },
-      {
-        "group": "Punjabi",
-        "pct": 0.0,
-        "count": 68
-      },
-      {
-        "group": "Pashto",
-        "pct": 0.0,
-        "count": 85
-      },
-      {
-        "group": "Persian",
-        "pct": 0.0,
-        "count": 451
-      },
-      {
         "group": "Urdu",
         "pct": 0.0,
         "count": 128
       },
       {
-        "group": "Sign language",
+        "group": "Uzbek",
         "pct": 0.0,
-        "count": 260
+        "count": 582
       }
     ],
     "ethnicity": [
@@ -492,19 +492,24 @@
         "count": 2371
       },
       {
-        "group": "Czechoslovak",
-        "pct": 0.2,
-        "count": 2300
-      },
-      {
         "group": "Chinese",
         "pct": 0.2,
         "count": 2658
       },
       {
+        "group": "Czechoslovak",
+        "pct": 0.2,
+        "count": 2300
+      },
+      {
         "group": "French",
         "pct": 0.2,
         "count": 2048
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.2,
+        "count": 2779
       },
       {
         "group": "Indian",
@@ -515,11 +520,6 @@
         "group": "Italian",
         "pct": 0.2,
         "count": 2217
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.2,
-        "count": 2779
       },
       {
         "group": "Polish",
@@ -552,9 +552,19 @@
         "count": 934
       },
       {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 1059
+      },
+      {
         "group": "Japanese",
         "pct": 0.1,
         "count": 744
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 1299
       },
       {
         "group": "Kazakh",
@@ -582,19 +592,14 @@
         "count": 1775
       },
       {
-        "group": "Greek",
+        "group": "Serbian",
         "pct": 0.1,
-        "count": 1059
+        "count": 1769
       },
       {
         "group": "Silesian",
         "pct": 0.1,
         "count": 945
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.1,
-        "count": 1769
       },
       {
         "group": "Spanish",
@@ -612,11 +617,6 @@
         "count": 981
       },
       {
-        "group": "Jewish",
-        "pct": 0.1,
-        "count": 1299
-      },
-      {
         "group": "Afghan",
         "pct": 0.0,
         "count": 115
@@ -627,11 +627,6 @@
         "count": 368
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 649
-      },
-      {
         "group": "Arab",
         "pct": 0.0,
         "count": 382
@@ -640,6 +635,11 @@
         "group": "Australian",
         "pct": 0.0,
         "count": 368
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 401
       },
       {
         "group": "Basque",
@@ -657,19 +657,34 @@
         "count": 508
       },
       {
+        "group": "Canadian",
+        "pct": 0.0,
+        "count": 585
+      },
+      {
+        "group": "Catalan",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
         "group": "Chechen",
         "pct": 0.0,
         "count": 89
       },
       {
-        "group": "Montenegrin",
-        "pct": 0.0,
-        "count": 88
-      },
-      {
         "group": "Danish",
         "pct": 0.0,
         "count": 134
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 471
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 649
       },
       {
         "group": "Estonian",
@@ -682,6 +697,11 @@
         "count": 175
       },
       {
+        "group": "Flemish",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
         "group": "Galician",
         "pct": 0.0,
         "count": 3
@@ -690,6 +710,11 @@
         "group": "Georgian",
         "pct": 0.0,
         "count": 553
+      },
+      {
+        "group": "Icelandic",
+        "pct": 0.0,
+        "count": 29
       },
       {
         "group": "Iraqi",
@@ -702,21 +727,6 @@
         "count": 410
       },
       {
-        "group": "Icelandic",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Canadian",
-        "pct": 0.0,
-        "count": 585
-      },
-      {
-        "group": "Catalan",
-        "pct": 0.0,
-        "count": 33
-      },
-      {
         "group": "Kurdish",
         "pct": 0.0,
         "count": 80
@@ -727,19 +737,14 @@
         "count": 408
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 191
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 168
       },
       {
-        "group": "Sorbian",
+        "group": "Lithuanian",
         "pct": 0.0,
-        "count": 19
+        "count": 191
       },
       {
         "group": "Mongolian",
@@ -747,9 +752,9 @@
         "count": 603
       },
       {
-        "group": "Dutch",
+        "group": "Montenegrin",
         "pct": 0.0,
-        "count": 471
+        "count": 88
       },
       {
         "group": "Norwegian",
@@ -767,11 +772,6 @@
         "count": 273
       },
       {
-        "group": "Austrian",
-        "pct": 0.0,
-        "count": 401
-      },
-      {
         "group": "Rusyn",
         "pct": 0.0,
         "count": 639
@@ -787,9 +787,9 @@
         "count": 212
       },
       {
-        "group": "Syrian",
+        "group": "Sorbian",
         "pct": 0.0,
-        "count": 341
+        "count": 19
       },
       {
         "group": "Swedish",
@@ -800,6 +800,11 @@
         "group": "Swiss",
         "pct": 0.0,
         "count": 297
+      },
+      {
+        "group": "Syrian",
+        "pct": 0.0,
+        "count": 341
       },
       {
         "group": "Tajik",
@@ -820,11 +825,6 @@
         "group": "Welsh",
         "pct": 0.0,
         "count": 21
-      },
-      {
-        "group": "Flemish",
-        "pct": 0.0,
-        "count": 5
       }
     ],
     "sources": [
@@ -897,19 +897,14 @@
         "count": 23115
       },
       {
-        "group": "Other religion",
-        "pct": 0.5,
-        "count": 7028
-      },
-      {
         "group": "Orthodox",
         "pct": 0.5,
         "count": 6840
       },
       {
-        "group": "Christian (unspecified)",
-        "pct": 0.4,
-        "count": 6285
+        "group": "Other religion",
+        "pct": 0.5,
+        "count": 7028
       },
       {
         "group": "Believer, church not named",
@@ -917,9 +912,9 @@
         "count": 5618
       },
       {
-        "group": "Other Christian",
-        "pct": 0.2,
-        "count": 3291
+        "group": "Christian (unspecified)",
+        "pct": 0.4,
+        "count": 6285
       },
       {
         "group": "Czechoslovak Hussite",
@@ -930,6 +925,11 @@
         "group": "Evangelical Church of Czech Brethren",
         "pct": 0.2,
         "count": 3459
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.2,
+        "count": 3291
       },
       {
         "group": "Protestant (unspecified)",
@@ -947,9 +947,24 @@
         "count": 1597
       },
       {
-        "group": "Seventh-day Adventist",
+        "group": "Buddhism",
         "pct": 0.0,
-        "count": 529
+        "count": 696
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0,
+        "count": 313
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 561
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 212
       },
       {
         "group": "Latter-day Saints",
@@ -962,24 +977,9 @@
         "count": 229
       },
       {
-        "group": "Judaism",
+        "group": "Seventh-day Adventist",
         "pct": 0.0,
-        "count": 212
-      },
-      {
-        "group": "Islam",
-        "pct": 0.0,
-        "count": 561
-      },
-      {
-        "group": "Buddhism",
-        "pct": 0.0,
-        "count": 696
-      },
-      {
-        "group": "Hinduism",
-        "pct": 0.0,
-        "count": 313
+        "count": 529
       },
       {
         "group": "Sikhism",
@@ -1029,6 +1029,11 @@
         "count": 2210
       },
       {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 1392
+      },
+      {
         "group": "English",
         "pct": 0.1,
         "count": 1587
@@ -1037,11 +1042,6 @@
         "group": "German",
         "pct": 0.1,
         "count": 716
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.1,
-        "count": 815
       },
       {
         "group": "Hungarian",
@@ -1054,94 +1054,24 @@
         "count": 822
       },
       {
-        "group": "Bulgarian",
-        "pct": 0.1,
-        "count": 1392
-      },
-      {
         "group": "Other language",
         "pct": 0.1,
         "count": 764
       },
       {
-        "group": "French",
-        "pct": 0.0,
-        "count": 324
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 291
-      },
-      {
-        "group": "Spanish",
-        "pct": 0.0,
-        "count": 398
-      },
-      {
-        "group": "Chinese",
-        "pct": 0.0,
-        "count": 507
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 147
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 103
-      },
-      {
-        "group": "Moldovan",
-        "pct": 0.0,
-        "count": 533
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 69
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.0,
-        "count": 444
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 93
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 591
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 75
-      },
-      {
-        "group": "Romani",
-        "pct": 0.0,
-        "count": 445
-      },
-      {
-        "group": "Moravian",
-        "pct": 0.0,
-        "count": 94
-      },
-      {
-        "group": "Silesian",
-        "pct": 0.0,
-        "count": 10
+        "group": "Romanian",
+        "pct": 0.1,
+        "count": 815
       },
       {
         "group": "Albanian",
         "pct": 0.0,
         "count": 91
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 444
       },
       {
         "group": "Armenian",
@@ -1154,19 +1084,69 @@
         "count": 62
       },
       {
+        "group": "Belarusian",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.0,
+        "count": 93
+      },
+      {
         "group": "Chechen",
         "pct": 0.0,
         "count": 3
       },
       {
-        "group": "Montenegrin",
+        "group": "Chinese",
         "pct": 0.0,
-        "count": 3
+        "count": 507
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 147
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 173
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 324
       },
       {
         "group": "Georgian",
         "pct": 0.0,
         "count": 60
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 291
       },
       {
         "group": "Japanese",
@@ -1189,14 +1169,14 @@
         "count": 34
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 54
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 17
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 54
       },
       {
         "group": "Macedonian",
@@ -1204,14 +1184,74 @@
         "count": 170
       },
       {
-        "group": "Dutch",
+        "group": "Moldovan",
         "pct": 0.0,
-        "count": 173
+        "count": 533
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.0,
+        "count": 94
+      },
+      {
+        "group": "Pashto",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 57
+      },
+      {
+        "group": "Punjabi",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 445
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 591
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 202
+      },
+      {
+        "group": "Silesian",
+        "pct": 0.0,
+        "count": 10
       },
       {
         "group": "Slovene",
         "pct": 0.0,
         "count": 32
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 398
       },
       {
         "group": "Tajik",
@@ -1229,54 +1269,14 @@
         "count": 5
       },
       {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 81
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 9
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 30
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 59
-      },
-      {
-        "group": "Bengali",
-        "pct": 0.0,
-        "count": 34
-      },
-      {
-        "group": "Punjabi",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
-        "group": "Pashto",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
-        "group": "Persian",
-        "pct": 0.0,
-        "count": 57
-      },
-      {
         "group": "Urdu",
         "pct": 0.0,
         "count": 37
       },
       {
-        "group": "Sign language",
+        "group": "Uzbek",
         "pct": 0.0,
-        "count": 202
+        "count": 81
       }
     ],
     "ethnicity": [
@@ -1296,14 +1296,14 @@
         "count": 16199
       },
       {
-        "group": "Other",
-        "pct": 0.3,
-        "count": 4382
-      },
-      {
         "group": "Moravian",
         "pct": 0.3,
         "count": 4921
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 4382
       },
       {
         "group": "Russian",
@@ -1336,6 +1336,11 @@
         "count": 1959
       },
       {
+        "group": "German",
+        "pct": 0.1,
+        "count": 1863
+      },
+      {
         "group": "Hungarian",
         "pct": 0.1,
         "count": 1725
@@ -1349,11 +1354,6 @@
         "group": "Mongolian",
         "pct": 0.1,
         "count": 829
-      },
-      {
-        "group": "German",
-        "pct": 0.1,
-        "count": 1863
       },
       {
         "group": "Polish",
@@ -1381,11 +1381,6 @@
         "count": 90
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 325
-      },
-      {
         "group": "Arab",
         "pct": 0.0,
         "count": 51
@@ -1401,6 +1396,11 @@
         "count": 133
       },
       {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 185
+      },
+      {
         "group": "Azerbaijani",
         "pct": 0.0,
         "count": 95
@@ -1411,14 +1411,14 @@
         "count": 1
       },
       {
-        "group": "Belgian",
-        "pct": 0.0,
-        "count": 96
-      },
-      {
         "group": "Belarusian",
         "pct": 0.0,
         "count": 658
+      },
+      {
+        "group": "Belgian",
+        "pct": 0.0,
+        "count": 96
       },
       {
         "group": "Bosniak",
@@ -1431,14 +1431,19 @@
         "count": 704
       },
       {
+        "group": "Canadian",
+        "pct": 0.0,
+        "count": 211
+      },
+      {
+        "group": "Catalan",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
         "group": "Chechen",
         "pct": 0.0,
         "count": 16
-      },
-      {
-        "group": "Montenegrin",
-        "pct": 0.0,
-        "count": 5
       },
       {
         "group": "Chinese",
@@ -1446,9 +1451,24 @@
         "count": 476
       },
       {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 242
+      },
+      {
         "group": "Danish",
         "pct": 0.0,
         "count": 38
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 230
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 325
       },
       {
         "group": "Estonian",
@@ -1459,6 +1479,11 @@
         "group": "Finnish",
         "pct": 0.0,
         "count": 42
+      },
+      {
+        "group": "Flemish",
+        "pct": 0.0,
+        "count": 4
       },
       {
         "group": "French",
@@ -1476,9 +1501,14 @@
         "count": 83
       },
       {
-        "group": "Croatian",
+        "group": "Greek",
         "pct": 0.0,
-        "count": 242
+        "count": 277
+      },
+      {
+        "group": "Icelandic",
+        "pct": 0.0,
+        "count": 13
       },
       {
         "group": "Indian",
@@ -1496,11 +1526,6 @@
         "count": 101
       },
       {
-        "group": "Icelandic",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
         "group": "Italian",
         "pct": 0.0,
         "count": 529
@@ -1511,14 +1536,9 @@
         "count": 127
       },
       {
-        "group": "Canadian",
+        "group": "Jewish",
         "pct": 0.0,
-        "count": 211
-      },
-      {
-        "group": "Catalan",
-        "pct": 0.0,
-        "count": 4
+        "count": 278
       },
       {
         "group": "Kazakh",
@@ -1541,19 +1561,14 @@
         "count": 64
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 62
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 44
       },
       {
-        "group": "Sorbian",
+        "group": "Lithuanian",
         "pct": 0.0,
-        "count": 9
+        "count": 62
       },
       {
         "group": "Macedonian",
@@ -1561,9 +1576,9 @@
         "count": 168
       },
       {
-        "group": "Dutch",
+        "group": "Montenegrin",
         "pct": 0.0,
-        "count": 230
+        "count": 5
       },
       {
         "group": "Norwegian",
@@ -1581,24 +1596,19 @@
         "count": 51
       },
       {
-        "group": "Austrian",
-        "pct": 0.0,
-        "count": 185
-      },
-      {
         "group": "Rusyn",
         "pct": 0.0,
         "count": 309
       },
       {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 277
-      },
-      {
         "group": "Scottish",
         "pct": 0.0,
         "count": 37
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 625
       },
       {
         "group": "Silesian",
@@ -1611,14 +1621,9 @@
         "count": 56
       },
       {
-        "group": "Serbian",
+        "group": "Sorbian",
         "pct": 0.0,
-        "count": 625
-      },
-      {
-        "group": "Syrian",
-        "pct": 0.0,
-        "count": 86
+        "count": 9
       },
       {
         "group": "Spanish",
@@ -1634,6 +1639,11 @@
         "group": "Swiss",
         "pct": 0.0,
         "count": 140
+      },
+      {
+        "group": "Syrian",
+        "pct": 0.0,
+        "count": 86
       },
       {
         "group": "Tajik",
@@ -1659,16 +1669,6 @@
         "group": "Welsh",
         "pct": 0.0,
         "count": 4
-      },
-      {
-        "group": "Flemish",
-        "pct": 0.0,
-        "count": 4
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 278
       }
     ],
     "sources": [
@@ -1756,17 +1756,17 @@
         "count": 2578
       },
       {
-        "group": "Other Christian",
-        "pct": 0.2,
-        "count": 1376
-      },
-      {
         "group": "Czechoslovak Hussite",
         "pct": 0.2,
         "count": 1189
       },
       {
         "group": "Orthodox",
+        "pct": 0.2,
+        "count": 1376
+      },
+      {
+        "group": "Other Christian",
         "pct": 0.2,
         "count": 1376
       },
@@ -1786,14 +1786,9 @@
         "count": 568
       },
       {
-        "group": "Seventh-day Adventist",
+        "group": "Buddhism",
         "pct": 0.0,
-        "count": 277
-      },
-      {
-        "group": "Latter-day Saints",
-        "pct": 0.0,
-        "count": 16
+        "count": 279
       },
       {
         "group": "Greek Catholic",
@@ -1801,14 +1796,9 @@
         "count": 238
       },
       {
-        "group": "Lutheran",
+        "group": "Hinduism",
         "pct": 0.0,
-        "count": 42
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.0,
-        "count": 45
+        "count": 93
       },
       {
         "group": "Islam",
@@ -1816,14 +1806,24 @@
         "count": 135
       },
       {
-        "group": "Buddhism",
+        "group": "Judaism",
         "pct": 0.0,
-        "count": 279
+        "count": 45
       },
       {
-        "group": "Hinduism",
+        "group": "Latter-day Saints",
         "pct": 0.0,
-        "count": 93
+        "count": 16
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 0.0,
+        "count": 277
       },
       {
         "group": "Sikhism",
@@ -1878,109 +1878,24 @@
         "count": 570
       },
       {
-        "group": "Polish",
-        "pct": 0.1,
-        "count": 470
-      },
-      {
         "group": "Hungarian",
         "pct": 0.1,
         "count": 359
       },
       {
-        "group": "French",
-        "pct": 0.0,
-        "count": 73
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 82
-      },
-      {
-        "group": "Spanish",
-        "pct": 0.0,
-        "count": 143
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 181
-      },
-      {
-        "group": "Chinese",
-        "pct": 0.0,
-        "count": 150
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 36
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Moldovan",
-        "pct": 0.0,
-        "count": 176
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 30
-      },
-      {
-        "group": "Mongolian",
-        "pct": 0.0,
-        "count": 256
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 249
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.0,
-        "count": 63
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 39
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 139
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Romani",
-        "pct": 0.0,
-        "count": 248
-      },
-      {
-        "group": "Moravian",
-        "pct": 0.0,
-        "count": 65
-      },
-      {
-        "group": "Silesian",
-        "pct": 0.0,
-        "count": 2
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 470
       },
       {
         "group": "Albanian",
         "pct": 0.0,
         "count": 65
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 63
       },
       {
         "group": "Armenian",
@@ -1993,19 +1908,74 @@
         "count": 3
       },
       {
+        "group": "Belarusian",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 249
+      },
+      {
         "group": "Chechen",
         "pct": 0.0,
         "count": 1
       },
       {
-        "group": "Montenegrin",
+        "group": "Chinese",
         "pct": 0.0,
-        "count": 1
+        "count": 150
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 73
       },
       {
         "group": "Georgian",
         "pct": 0.0,
         "count": 9
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 82
       },
       {
         "group": "Japanese",
@@ -2028,14 +1998,14 @@
         "count": 1
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 3
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 11
       },
       {
         "group": "Macedonian",
@@ -2043,49 +2013,29 @@
         "count": 28
       },
       {
-        "group": "Dutch",
+        "group": "Moldovan",
         "pct": 0.0,
-        "count": 71
+        "count": 176
       },
       {
-        "group": "Slovene",
+        "group": "Mongolian",
         "pct": 0.0,
-        "count": 5
+        "count": 256
       },
       {
-        "group": "Turkish",
-        "pct": 0.0,
-        "count": 48
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 7
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Bengali",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
-        "group": "Punjabi",
+        "group": "Montenegrin",
         "pct": 0.0,
         "count": 1
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.0,
+        "count": 65
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 298
       },
       {
         "group": "Pashto",
@@ -2098,9 +2048,34 @@
         "count": 18
       },
       {
-        "group": "Urdu",
+        "group": "Punjabi",
         "pct": 0.0,
-        "count": 4
+        "count": 1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 248
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 181
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 139
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 7
       },
       {
         "group": "Sign language",
@@ -2108,9 +2083,34 @@
         "count": 58
       },
       {
-        "group": "Other language",
+        "group": "Silesian",
         "pct": 0.0,
-        "count": 298
+        "count": 2
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 143
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 14
       }
     ],
     "ethnicity": [
@@ -2140,14 +2140,14 @@
         "count": 2124
       },
       {
-        "group": "Other",
-        "pct": 0.2,
-        "count": 1390
-      },
-      {
         "group": "German",
         "pct": 0.2,
         "count": 1033
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 1390
       },
       {
         "group": "Roma",
@@ -2195,11 +2195,6 @@
         "count": 202
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 80
-      },
-      {
         "group": "Arab",
         "pct": 0.0,
         "count": 13
@@ -2215,19 +2210,24 @@
         "count": 48
       },
       {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 243
+      },
+      {
         "group": "Azerbaijani",
         "pct": 0.0,
         "count": 12
       },
       {
-        "group": "Belgian",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
         "group": "Belarusian",
         "pct": 0.0,
         "count": 169
+      },
+      {
+        "group": "Belgian",
+        "pct": 0.0,
+        "count": 17
       },
       {
         "group": "Bosniak",
@@ -2245,14 +2245,19 @@
         "count": 241
       },
       {
+        "group": "Canadian",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Catalan",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "Chechen",
         "pct": 0.0,
         "count": 3
-      },
-      {
-        "group": "Montenegrin",
-        "pct": 0.0,
-        "count": 4
       },
       {
         "group": "Chinese",
@@ -2260,9 +2265,24 @@
         "count": 134
       },
       {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
         "group": "Danish",
         "pct": 0.0,
         "count": 3
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 92
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 80
       },
       {
         "group": "Estonian",
@@ -2290,9 +2310,14 @@
         "count": 13
       },
       {
-        "group": "Croatian",
+        "group": "Greek",
         "pct": 0.0,
-        "count": 60
+        "count": 30
+      },
+      {
+        "group": "Icelandic",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "Indian",
@@ -2305,11 +2330,6 @@
         "count": 27
       },
       {
-        "group": "Icelandic",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
         "group": "Italian",
         "pct": 0.0,
         "count": 143
@@ -2320,14 +2340,9 @@
         "count": 45
       },
       {
-        "group": "Canadian",
+        "group": "Jewish",
         "pct": 0.0,
         "count": 49
-      },
-      {
-        "group": "Catalan",
-        "pct": 0.0,
-        "count": 1
       },
       {
         "group": "Kazakh",
@@ -2350,19 +2365,14 @@
         "count": 3
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 13
       },
       {
-        "group": "Sorbian",
+        "group": "Lithuanian",
         "pct": 0.0,
-        "count": 2
+        "count": 15
       },
       {
         "group": "Macedonian",
@@ -2380,9 +2390,9 @@
         "count": 272
       },
       {
-        "group": "Dutch",
+        "group": "Montenegrin",
         "pct": 0.0,
-        "count": 92
+        "count": 4
       },
       {
         "group": "Norwegian",
@@ -2400,11 +2410,6 @@
         "count": 8
       },
       {
-        "group": "Austrian",
-        "pct": 0.0,
-        "count": 243
-      },
-      {
         "group": "Romanian",
         "pct": 0.0,
         "count": 211
@@ -2415,14 +2420,14 @@
         "count": 47
       },
       {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 30
-      },
-      {
         "group": "Scottish",
         "pct": 0.0,
         "count": 11
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 148
       },
       {
         "group": "Silesian",
@@ -2435,14 +2440,9 @@
         "count": 13
       },
       {
-        "group": "Serbian",
+        "group": "Sorbian",
         "pct": 0.0,
-        "count": 148
-      },
-      {
-        "group": "Syrian",
-        "pct": 0.0,
-        "count": 14
+        "count": 2
       },
       {
         "group": "Spanish",
@@ -2460,6 +2460,11 @@
         "count": 60
       },
       {
+        "group": "Syrian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
         "group": "Tajik",
         "pct": 0.0,
         "count": 2
@@ -2473,11 +2478,6 @@
         "group": "Uzbek",
         "pct": 0.0,
         "count": 22
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 49
       }
     ],
     "sources": [
@@ -2560,14 +2560,19 @@
         "count": 2658
       },
       {
+        "group": "Orthodox",
+        "pct": 0.4,
+        "count": 2535
+      },
+      {
         "group": "Other religion",
         "pct": 0.4,
         "count": 2594
       },
       {
-        "group": "Orthodox",
-        "pct": 0.4,
-        "count": 2535
+        "group": "Evangelical Church of Czech Brethren",
+        "pct": 0.2,
+        "count": 924
       },
       {
         "group": "Other Christian",
@@ -2575,9 +2580,9 @@
         "count": 1156
       },
       {
-        "group": "Evangelical Church of Czech Brethren",
-        "pct": 0.2,
-        "count": 924
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 312
       },
       {
         "group": "Czechoslovak Hussite",
@@ -2595,19 +2600,24 @@
         "count": 582
       },
       {
-        "group": "Buddhism",
-        "pct": 0.1,
-        "count": 312
-      },
-      {
         "group": "Protestant (unspecified)",
         "pct": 0.1,
         "count": 564
       },
       {
-        "group": "Seventh-day Adventist",
+        "group": "Hinduism",
         "pct": 0.0,
-        "count": 203
+        "count": 66
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 163
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 67
       },
       {
         "group": "Latter-day Saints",
@@ -2620,19 +2630,9 @@
         "count": 76
       },
       {
-        "group": "Judaism",
+        "group": "Seventh-day Adventist",
         "pct": 0.0,
-        "count": 67
-      },
-      {
-        "group": "Islam",
-        "pct": 0.0,
-        "count": 163
-      },
-      {
-        "group": "Hinduism",
-        "pct": 0.0,
-        "count": 66
+        "count": 203
       },
       {
         "group": "Sikhism",
@@ -2687,16 +2687,6 @@
         "count": 710
       },
       {
-        "group": "Polish",
-        "pct": 0.1,
-        "count": 672
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.1,
-        "count": 750
-      },
-      {
         "group": "Hungarian",
         "pct": 0.1,
         "count": 501
@@ -2707,94 +2697,24 @@
         "count": 457
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 272
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 672
       },
       {
-        "group": "French",
-        "pct": 0.0,
-        "count": 84
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 99
-      },
-      {
-        "group": "Spanish",
-        "pct": 0.0,
-        "count": 108
-      },
-      {
-        "group": "Chinese",
-        "pct": 0.0,
-        "count": 82
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 58
-      },
-      {
-        "group": "Moldovan",
-        "pct": 0.0,
-        "count": 187
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 31
-      },
-      {
-        "group": "Mongolian",
-        "pct": 0.0,
-        "count": 287
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.0,
-        "count": 144
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 100
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Romani",
-        "pct": 0.0,
-        "count": 239
-      },
-      {
-        "group": "Moravian",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Silesian",
-        "pct": 0.0,
-        "count": 1
+        "group": "Romanian",
+        "pct": 0.1,
+        "count": 750
       },
       {
         "group": "Albanian",
         "pct": 0.0,
         "count": 49
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 144
       },
       {
         "group": "Armenian",
@@ -2807,9 +2727,69 @@
         "count": 12
       },
       {
+        "group": "Belarusian",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 82
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 272
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 84
+      },
+      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 27
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 99
       },
       {
         "group": "Japanese",
@@ -2832,14 +2812,14 @@
         "count": 7
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 31
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 7
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 31
       },
       {
         "group": "Macedonian",
@@ -2847,49 +2827,19 @@
         "count": 7
       },
       {
-        "group": "Dutch",
+        "group": "Moldovan",
         "pct": 0.0,
-        "count": 71
+        "count": 187
       },
       {
-        "group": "Slovene",
+        "group": "Mongolian",
         "pct": 0.0,
-        "count": 4
+        "count": 287
       },
       {
-        "group": "Turkish",
+        "group": "Moravian",
         "pct": 0.0,
-        "count": 64
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 47
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 7
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Bengali",
-        "pct": 0.0,
-        "count": 24
-      },
-      {
-        "group": "Punjabi",
-        "pct": 0.0,
-        "count": 4
+        "count": 20
       },
       {
         "group": "Pashto",
@@ -2902,14 +2852,64 @@
         "count": 41
       },
       {
-        "group": "Urdu",
+        "group": "Punjabi",
         "pct": 0.0,
-        "count": 5
+        "count": 4
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 239
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 100
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 7
       },
       {
         "group": "Sign language",
         "pct": 0.0,
         "count": 88
+      },
+      {
+        "group": "Silesian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 108
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 47
       }
     ],
     "ethnicity": [
@@ -2934,14 +2934,14 @@
         "count": 3624
       },
       {
-        "group": "Other",
-        "pct": 0.3,
-        "count": 1559
-      },
-      {
         "group": "German",
         "pct": 0.3,
         "count": 1575
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 1559
       },
       {
         "group": "Bulgarian",
@@ -3014,11 +3014,6 @@
         "count": 150
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 50
-      },
-      {
         "group": "Arab",
         "pct": 0.0,
         "count": 19
@@ -3032,6 +3027,11 @@
         "group": "Australian",
         "pct": 0.0,
         "count": 27
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 60
       },
       {
         "group": "Azerbaijani",
@@ -3054,12 +3054,12 @@
         "count": 115
       },
       {
-        "group": "Chechen",
+        "group": "Canadian",
         "pct": 0.0,
-        "count": 1
+        "count": 35
       },
       {
-        "group": "Montenegrin",
+        "group": "Chechen",
         "pct": 0.0,
         "count": 1
       },
@@ -3069,9 +3069,24 @@
         "count": 73
       },
       {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 70
+      },
+      {
         "group": "Danish",
         "pct": 0.0,
         "count": 2
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 50
       },
       {
         "group": "Estonian",
@@ -3094,9 +3109,14 @@
         "count": 29
       },
       {
-        "group": "Croatian",
+        "group": "Greek",
         "pct": 0.0,
-        "count": 70
+        "count": 76
+      },
+      {
+        "group": "Icelandic",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Indian",
@@ -3114,11 +3134,6 @@
         "count": 37
       },
       {
-        "group": "Icelandic",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
         "group": "Italian",
         "pct": 0.0,
         "count": 139
@@ -3129,9 +3144,9 @@
         "count": 47
       },
       {
-        "group": "Canadian",
+        "group": "Jewish",
         "pct": 0.0,
-        "count": 35
+        "count": 38
       },
       {
         "group": "Kazakh",
@@ -3154,19 +3169,14 @@
         "count": 14
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 38
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 26
       },
       {
-        "group": "Sorbian",
+        "group": "Lithuanian",
         "pct": 0.0,
-        "count": 1
+        "count": 38
       },
       {
         "group": "Macedonian",
@@ -3179,9 +3189,9 @@
         "count": 275
       },
       {
-        "group": "Dutch",
+        "group": "Montenegrin",
         "pct": 0.0,
-        "count": 68
+        "count": 1
       },
       {
         "group": "Norwegian",
@@ -3199,24 +3209,19 @@
         "count": 42
       },
       {
-        "group": "Austrian",
-        "pct": 0.0,
-        "count": 60
-      },
-      {
         "group": "Rusyn",
         "pct": 0.0,
         "count": 77
       },
       {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 76
-      },
-      {
         "group": "Scottish",
         "pct": 0.0,
         "count": 3
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 104
       },
       {
         "group": "Silesian",
@@ -3229,14 +3234,9 @@
         "count": 10
       },
       {
-        "group": "Serbian",
+        "group": "Sorbian",
         "pct": 0.0,
-        "count": 104
-      },
-      {
-        "group": "Syrian",
-        "pct": 0.0,
-        "count": 55
+        "count": 1
       },
       {
         "group": "Spanish",
@@ -3252,6 +3252,11 @@
         "group": "Swiss",
         "pct": 0.0,
         "count": 36
+      },
+      {
+        "group": "Syrian",
+        "pct": 0.0,
+        "count": 55
       },
       {
         "group": "Tajik",
@@ -3277,11 +3282,6 @@
         "group": "Welsh",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 38
       }
     ],
     "sources": [
@@ -3359,9 +3359,9 @@
         "count": 1549
       },
       {
-        "group": "Other religion",
+        "group": "Believer, church not named",
         "pct": 0.4,
-        "count": 1048
+        "count": 1010
       },
       {
         "group": "Christian (unspecified)",
@@ -3369,14 +3369,9 @@
         "count": 1126
       },
       {
-        "group": "Believer, church not named",
+        "group": "Other religion",
         "pct": 0.4,
-        "count": 1010
-      },
-      {
-        "group": "Other Christian",
-        "pct": 0.2,
-        "count": 689
+        "count": 1048
       },
       {
         "group": "Evangelical Church of Czech Brethren",
@@ -3389,9 +3384,19 @@
         "count": 627
       },
       {
+        "group": "Other Christian",
+        "pct": 0.2,
+        "count": 689
+      },
+      {
         "group": "Protestant (unspecified)",
         "pct": 0.2,
         "count": 652
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 250
       },
       {
         "group": "Czechoslovak Hussite",
@@ -3409,14 +3414,14 @@
         "count": 146
       },
       {
-        "group": "Buddhism",
-        "pct": 0.1,
-        "count": 250
+        "group": "Hinduism",
+        "pct": 0.0,
+        "count": 20
       },
       {
-        "group": "Seventh-day Adventist",
+        "group": "Judaism",
         "pct": 0.0,
-        "count": 116
+        "count": 48
       },
       {
         "group": "Latter-day Saints",
@@ -3429,14 +3434,9 @@
         "count": 10
       },
       {
-        "group": "Judaism",
+        "group": "Seventh-day Adventist",
         "pct": 0.0,
-        "count": 48
-      },
-      {
-        "group": "Hinduism",
-        "pct": 0.0,
-        "count": 20
+        "count": 116
       }
     ],
     "language": [
@@ -3486,14 +3486,9 @@
         "count": 486
       },
       {
-        "group": "Polish",
+        "group": "Bulgarian",
         "pct": 0.1,
-        "count": 281
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.1,
-        "count": 151
+        "count": 217
       },
       {
         "group": "Mongolian",
@@ -3501,9 +3496,9 @@
         "count": 269
       },
       {
-        "group": "Bulgarian",
+        "group": "Polish",
         "pct": 0.1,
-        "count": 217
+        "count": 281
       },
       {
         "group": "Romani",
@@ -3511,79 +3506,19 @@
         "count": 140
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 99
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 39
-      },
-      {
-        "group": "Spanish",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Chinese",
-        "pct": 0.0,
-        "count": 59
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 75
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 9
-      },
-      {
-        "group": "Moldovan",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 9
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.0,
-        "count": 96
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 76
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Moravian",
-        "pct": 0.0,
-        "count": 14
+        "group": "Romanian",
+        "pct": 0.1,
+        "count": 151
       },
       {
         "group": "Albanian",
         "pct": 0.0,
         "count": 102
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 96
       },
       {
         "group": "Armenian",
@@ -3596,9 +3531,69 @@
         "count": 9
       },
       {
+        "group": "Belarusian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 99
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 8
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 39
       },
       {
         "group": "Japanese",
@@ -3621,14 +3616,14 @@
         "count": 1
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 9
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 8
       },
       {
         "group": "Macedonian",
@@ -3636,44 +3631,19 @@
         "count": 21
       },
       {
-        "group": "Dutch",
+        "group": "Moldovan",
         "pct": 0.0,
         "count": 25
       },
       {
-        "group": "Slovene",
+        "group": "Moravian",
         "pct": 0.0,
-        "count": 2
+        "count": 14
       },
       {
-        "group": "Turkish",
+        "group": "Other language",
         "pct": 0.0,
-        "count": 23
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
-        "group": "Bengali",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
-        "group": "Punjabi",
-        "pct": 0.0,
-        "count": 2
+        "count": 115
       },
       {
         "group": "Pashto",
@@ -3686,14 +3656,44 @@
         "count": 11
       },
       {
+        "group": "Punjabi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
         "group": "Sign language",
         "pct": 0.0,
         "count": 30
       },
       {
-        "group": "Other language",
+        "group": "Slovene",
         "pct": 0.0,
-        "count": 115
+        "count": 2
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 12
       }
     ],
     "ethnicity": [
@@ -3793,11 +3793,6 @@
         "count": 73
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 30
-      },
-      {
         "group": "Arab",
         "pct": 0.0,
         "count": 26
@@ -3813,19 +3808,24 @@
         "count": 25
       },
       {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
         "group": "Azerbaijani",
         "pct": 0.0,
         "count": 21
       },
       {
-        "group": "Belgian",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
         "group": "Belarusian",
         "pct": 0.0,
         "count": 121
+      },
+      {
+        "group": "Belgian",
+        "pct": 0.0,
+        "count": 8
       },
       {
         "group": "Bosniak",
@@ -3838,14 +3838,34 @@
         "count": 63
       },
       {
+        "group": "Canadian",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
         "group": "Chinese",
         "pct": 0.0,
         "count": 36
       },
       {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 87
+      },
+      {
         "group": "Danish",
         "pct": 0.0,
         "count": 2
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 30
       },
       {
         "group": "Estonian",
@@ -3858,6 +3878,11 @@
         "count": 5
       },
       {
+        "group": "Flemish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "French",
         "pct": 0.0,
         "count": 43
@@ -3868,9 +3893,14 @@
         "count": 15
       },
       {
-        "group": "Croatian",
+        "group": "Greek",
         "pct": 0.0,
-        "count": 87
+        "count": 39
+      },
+      {
+        "group": "Icelandic",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Indian",
@@ -3888,11 +3918,6 @@
         "count": 18
       },
       {
-        "group": "Icelandic",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
         "group": "Italian",
         "pct": 0.0,
         "count": 76
@@ -3903,9 +3928,9 @@
         "count": 3
       },
       {
-        "group": "Canadian",
+        "group": "Jewish",
         "pct": 0.0,
-        "count": 29
+        "count": 60
       },
       {
         "group": "Kazakh",
@@ -3928,19 +3953,14 @@
         "count": 11
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 20
       },
       {
-        "group": "Sorbian",
+        "group": "Lithuanian",
         "pct": 0.0,
-        "count": 2
+        "count": 17
       },
       {
         "group": "Macedonian",
@@ -3951,11 +3971,6 @@
         "group": "Moldovan",
         "pct": 0.0,
         "count": 83
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 26
       },
       {
         "group": "Norwegian",
@@ -3973,24 +3988,19 @@
         "count": 5
       },
       {
-        "group": "Austrian",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
         "group": "Rusyn",
         "pct": 0.0,
         "count": 52
       },
       {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 39
-      },
-      {
         "group": "Scottish",
         "pct": 0.0,
         "count": 2
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 82
       },
       {
         "group": "Silesian",
@@ -4003,14 +4013,9 @@
         "count": 4
       },
       {
-        "group": "Serbian",
+        "group": "Sorbian",
         "pct": 0.0,
-        "count": 82
-      },
-      {
-        "group": "Syrian",
-        "pct": 0.0,
-        "count": 21
+        "count": 2
       },
       {
         "group": "Spanish",
@@ -4028,6 +4033,11 @@
         "count": 26
       },
       {
+        "group": "Syrian",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
         "group": "Turkish",
         "pct": 0.0,
         "count": 30
@@ -4041,16 +4051,6 @@
         "group": "Welsh",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Flemish",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 60
       }
     ],
     "sources": [
@@ -4123,24 +4123,24 @@
         "count": 8356
       },
       {
-        "group": "Other religion",
-        "pct": 0.4,
-        "count": 3096
-      },
-      {
         "group": "Christian (unspecified)",
         "pct": 0.4,
         "count": 2905
       },
       {
-        "group": "Orthodox",
-        "pct": 0.3,
-        "count": 2534
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 3096
       },
       {
         "group": "Believer, church not named",
         "pct": 0.3,
         "count": 2182
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.3,
+        "count": 2534
       },
       {
         "group": "Other Christian",
@@ -4158,14 +4158,14 @@
         "count": 1000
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 0.1,
-        "count": 1015
-      },
-      {
         "group": "Islam",
         "pct": 0.1,
         "count": 428
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.1,
+        "count": 1015
       },
       {
         "group": "Protestant (unspecified)",
@@ -4173,14 +4173,9 @@
         "count": 796
       },
       {
-        "group": "Seventh-day Adventist",
+        "group": "Buddhism",
         "pct": 0.0,
-        "count": 213
-      },
-      {
-        "group": "Latter-day Saints",
-        "pct": 0.0,
-        "count": 13
+        "count": 384
       },
       {
         "group": "Greek Catholic",
@@ -4188,9 +4183,9 @@
         "count": 363
       },
       {
-        "group": "Lutheran",
+        "group": "Hinduism",
         "pct": 0.0,
-        "count": 48
+        "count": 135
       },
       {
         "group": "Judaism",
@@ -4198,14 +4193,19 @@
         "count": 106
       },
       {
-        "group": "Buddhism",
+        "group": "Latter-day Saints",
         "pct": 0.0,
-        "count": 384
+        "count": 13
       },
       {
-        "group": "Hinduism",
+        "group": "Lutheran",
         "pct": 0.0,
-        "count": 135
+        "count": 48
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 0.0,
+        "count": 213
       },
       {
         "group": "Sikhism",
@@ -4255,11 +4255,6 @@
         "count": 1537
       },
       {
-        "group": "Polish",
-        "pct": 0.1,
-        "count": 1069
-      },
-      {
         "group": "Hungarian",
         "pct": 0.1,
         "count": 667
@@ -4270,104 +4265,29 @@
         "count": 715
       },
       {
-        "group": "Romani",
-        "pct": 0.1,
-        "count": 595
-      },
-      {
         "group": "Other language",
         "pct": 0.1,
         "count": 409
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 329
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 1069
       },
       {
-        "group": "French",
-        "pct": 0.0,
-        "count": 80
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 62
-      },
-      {
-        "group": "Spanish",
-        "pct": 0.0,
-        "count": 123
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 336
-      },
-      {
-        "group": "Chinese",
-        "pct": 0.0,
-        "count": 128
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 60
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 31
-      },
-      {
-        "group": "Moldovan",
-        "pct": 0.0,
-        "count": 63
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 53
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 315
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.0,
-        "count": 353
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 51
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 90
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 32
-      },
-      {
-        "group": "Moravian",
-        "pct": 0.0,
-        "count": 40
-      },
-      {
-        "group": "Silesian",
-        "pct": 0.0,
-        "count": 2
+        "group": "Romani",
+        "pct": 0.1,
+        "count": 595
       },
       {
         "group": "Albanian",
         "pct": 0.0,
         "count": 62
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 353
       },
       {
         "group": "Armenian",
@@ -4380,14 +4300,79 @@
         "count": 11
       },
       {
+        "group": "Belarusian",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 315
+      },
+      {
         "group": "Chechen",
         "pct": 0.0,
         "count": 2
       },
       {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 128
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 329
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 80
+      },
+      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 51
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 62
       },
       {
         "group": "Japanese",
@@ -4410,14 +4395,14 @@
         "count": 13
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 2
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 14
       },
       {
         "group": "Macedonian",
@@ -4425,14 +4410,64 @@
         "count": 23
       },
       {
-        "group": "Dutch",
+        "group": "Moldovan",
         "pct": 0.0,
-        "count": 62
+        "count": 63
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Punjabi",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 336
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 90
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 105
+      },
+      {
+        "group": "Silesian",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "Slovene",
         "pct": 0.0,
         "count": 10
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 123
       },
       {
         "group": "Turkish",
@@ -4445,49 +4480,14 @@
         "count": 2
       },
       {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 7
-      },
-      {
-        "group": "Bengali",
-        "pct": 0.0,
-        "count": 9
-      },
-      {
-        "group": "Punjabi",
-        "pct": 0.0,
-        "count": 4
-      },
-      {
-        "group": "Persian",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
         "group": "Urdu",
         "pct": 0.0,
         "count": 17
       },
       {
-        "group": "Sign language",
+        "group": "Uzbek",
         "pct": 0.0,
-        "count": 105
+        "count": 8
       }
     ],
     "ethnicity": [
@@ -4582,11 +4582,6 @@
         "count": 200
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 123
-      },
-      {
         "group": "Arab",
         "pct": 0.0,
         "count": 96
@@ -4602,19 +4597,24 @@
         "count": 50
       },
       {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 66
+      },
+      {
         "group": "Azerbaijani",
         "pct": 0.0,
         "count": 29
       },
       {
-        "group": "Belgian",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
         "group": "Belarusian",
         "pct": 0.0,
         "count": 366
+      },
+      {
+        "group": "Belgian",
+        "pct": 0.0,
+        "count": 27
       },
       {
         "group": "Bosniak",
@@ -4632,14 +4632,14 @@
         "count": 328
       },
       {
+        "group": "Canadian",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
         "group": "Chechen",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Montenegrin",
-        "pct": 0.0,
-        "count": 4
       },
       {
         "group": "Chinese",
@@ -4647,9 +4647,24 @@
         "count": 113
       },
       {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 90
+      },
+      {
         "group": "Danish",
         "pct": 0.0,
         "count": 16
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 70
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 123
       },
       {
         "group": "Estonian",
@@ -4662,6 +4677,11 @@
         "count": 10
       },
       {
+        "group": "Flemish",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
         "group": "French",
         "pct": 0.0,
         "count": 124
@@ -4672,9 +4692,14 @@
         "count": 45
       },
       {
-        "group": "Croatian",
+        "group": "Greek",
         "pct": 0.0,
-        "count": 90
+        "count": 82
+      },
+      {
+        "group": "Icelandic",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Indian",
@@ -4692,11 +4717,6 @@
         "count": 30
       },
       {
-        "group": "Icelandic",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
         "group": "Italian",
         "pct": 0.0,
         "count": 166
@@ -4707,9 +4727,9 @@
         "count": 40
       },
       {
-        "group": "Canadian",
+        "group": "Jewish",
         "pct": 0.0,
-        "count": 40
+        "count": 86
       },
       {
         "group": "Kazakh",
@@ -4732,19 +4752,14 @@
         "count": 27
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 8
       },
       {
-        "group": "Sorbian",
+        "group": "Lithuanian",
         "pct": 0.0,
-        "count": 10
+        "count": 17
       },
       {
         "group": "Macedonian",
@@ -4757,9 +4772,9 @@
         "count": 141
       },
       {
-        "group": "Dutch",
+        "group": "Montenegrin",
         "pct": 0.0,
-        "count": 70
+        "count": 4
       },
       {
         "group": "Norwegian",
@@ -4777,24 +4792,19 @@
         "count": 10
       },
       {
-        "group": "Austrian",
-        "pct": 0.0,
-        "count": 66
-      },
-      {
         "group": "Rusyn",
         "pct": 0.0,
         "count": 95
       },
       {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 82
-      },
-      {
         "group": "Scottish",
         "pct": 0.0,
         "count": 8
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 104
       },
       {
         "group": "Silesian",
@@ -4807,14 +4817,9 @@
         "count": 18
       },
       {
-        "group": "Serbian",
+        "group": "Sorbian",
         "pct": 0.0,
-        "count": 104
-      },
-      {
-        "group": "Syrian",
-        "pct": 0.0,
-        "count": 48
+        "count": 10
       },
       {
         "group": "Spanish",
@@ -4830,6 +4835,11 @@
         "group": "Swiss",
         "pct": 0.0,
         "count": 29
+      },
+      {
+        "group": "Syrian",
+        "pct": 0.0,
+        "count": 48
       },
       {
         "group": "Tajik",
@@ -4850,16 +4860,6 @@
         "group": "Uzbek",
         "pct": 0.0,
         "count": 15
-      },
-      {
-        "group": "Flemish",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 86
       }
     ],
     "sources": [
@@ -4942,14 +4942,9 @@
         "count": 1614
       },
       {
-        "group": "Other Christian",
+        "group": "Believer, church not named",
         "pct": 0.3,
-        "count": 1508
-      },
-      {
-        "group": "Czechoslovak Hussite",
-        "pct": 0.3,
-        "count": 1479
+        "count": 1457
       },
       {
         "group": "Christian (unspecified)",
@@ -4957,19 +4952,19 @@
         "count": 1391
       },
       {
-        "group": "Believer, church not named",
+        "group": "Czechoslovak Hussite",
         "pct": 0.3,
-        "count": 1457
+        "count": 1479
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.3,
+        "count": 1508
       },
       {
         "group": "Evangelical Church of Czech Brethren",
         "pct": 0.2,
         "count": 924
-      },
-      {
-        "group": "Seventh-day Adventist",
-        "pct": 0.1,
-        "count": 286
       },
       {
         "group": "Greek Catholic",
@@ -4987,24 +4982,9 @@
         "count": 584
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.0,
-        "count": 24
-      },
-      {
-        "group": "Lutheran",
-        "pct": 0.0,
-        "count": 46
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.0,
-        "count": 62
-      },
-      {
-        "group": "Islam",
-        "pct": 0.0,
-        "count": 167
+        "group": "Seventh-day Adventist",
+        "pct": 0.1,
+        "count": 286
       },
       {
         "group": "Buddhism",
@@ -5015,6 +4995,26 @@
         "group": "Hinduism",
         "pct": 0.0,
         "count": 85
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 167
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.0,
+        "count": 46
       },
       {
         "group": "Sikhism",
@@ -5049,9 +5049,9 @@
         "count": 3924
       },
       {
-        "group": "Russian",
+        "group": "Mongolian",
         "pct": 0.3,
-        "count": 1095
+        "count": 1477
       },
       {
         "group": "Polish",
@@ -5059,19 +5059,24 @@
         "count": 1400
       },
       {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 1095
+      },
+      {
         "group": "Vietnamese",
         "pct": 0.3,
         "count": 1421
       },
       {
-        "group": "Mongolian",
-        "pct": 0.3,
-        "count": 1477
-      },
-      {
         "group": "German",
         "pct": 0.2,
         "count": 705
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 365
       },
       {
         "group": "English",
@@ -5084,89 +5089,19 @@
         "count": 385
       },
       {
-        "group": "Bulgarian",
-        "pct": 0.1,
-        "count": 365
-      },
-      {
         "group": "Romani",
         "pct": 0.1,
         "count": 310
       },
       {
-        "group": "French",
+        "group": "Albanian",
         "pct": 0.0,
-        "count": 45
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 36
-      },
-      {
-        "group": "Spanish",
-        "pct": 0.0,
-        "count": 63
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 177
-      },
-      {
-        "group": "Chinese",
-        "pct": 0.0,
-        "count": 92
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 34
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 28
-      },
-      {
-        "group": "Moldovan",
-        "pct": 0.0,
-        "count": 203
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 12
+        "count": 55
       },
       {
         "group": "Arabic",
         "pct": 0.0,
         "count": 104
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 45
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 52
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Moravian",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
-        "group": "Albanian",
-        "pct": 0.0,
-        "count": 55
       },
       {
         "group": "Armenian",
@@ -5179,14 +5114,69 @@
         "count": 3
       },
       {
+        "group": "Belarusian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
         "group": "Chechen",
         "pct": 0.0,
         "count": 4
       },
       {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 92
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 27
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 36
       },
       {
         "group": "Japanese",
@@ -5209,14 +5199,14 @@
         "count": 13
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 3
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 21
       },
       {
         "group": "Macedonian",
@@ -5224,54 +5214,19 @@
         "count": 36
       },
       {
-        "group": "Dutch",
+        "group": "Moldovan",
         "pct": 0.0,
-        "count": 62
+        "count": 203
       },
       {
-        "group": "Slovene",
+        "group": "Moravian",
         "pct": 0.0,
-        "count": 4
+        "count": 27
       },
       {
-        "group": "Tajik",
+        "group": "Other language",
         "pct": 0.0,
-        "count": 1
-      },
-      {
-        "group": "Turkish",
-        "pct": 0.0,
-        "count": 40
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Bengali",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
-        "group": "Punjabi",
-        "pct": 0.0,
-        "count": 1
+        "count": 201
       },
       {
         "group": "Pashto",
@@ -5284,9 +5239,29 @@
         "count": 10
       },
       {
-        "group": "Urdu",
+        "group": "Punjabi",
         "pct": 0.0,
-        "count": 8
+        "count": 1
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 177
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 3
       },
       {
         "group": "Sign language",
@@ -5294,9 +5269,34 @@
         "count": 67
       },
       {
-        "group": "Other language",
+        "group": "Slovene",
         "pct": 0.0,
-        "count": 201
+        "count": 4
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 63
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 12
       }
     ],
     "ethnicity": [
@@ -5351,14 +5351,14 @@
         "count": 744
       },
       {
-        "group": "Other",
-        "pct": 0.2,
-        "count": 987
-      },
-      {
         "group": "Moravian",
         "pct": 0.2,
         "count": 1053
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 987
       },
       {
         "group": "Bulgarian",
@@ -5396,11 +5396,6 @@
         "count": 146
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 46
-      },
-      {
         "group": "Arab",
         "pct": 0.0,
         "count": 18
@@ -5416,19 +5411,24 @@
         "count": 31
       },
       {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
         "group": "Azerbaijani",
         "pct": 0.0,
         "count": 4
       },
       {
-        "group": "Belgian",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
         "group": "Belarusian",
         "pct": 0.0,
         "count": 116
+      },
+      {
+        "group": "Belgian",
+        "pct": 0.0,
+        "count": 13
       },
       {
         "group": "Bosniak",
@@ -5441,14 +5441,19 @@
         "count": 120
       },
       {
+        "group": "Canadian",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Catalan",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
         "group": "Chechen",
         "pct": 0.0,
         "count": 2
-      },
-      {
-        "group": "Montenegrin",
-        "pct": 0.0,
-        "count": 5
       },
       {
         "group": "Chinese",
@@ -5456,9 +5461,24 @@
         "count": 88
       },
       {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
         "group": "Danish",
         "pct": 0.0,
         "count": 5
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 46
       },
       {
         "group": "Estonian",
@@ -5481,9 +5501,9 @@
         "count": 27
       },
       {
-        "group": "Croatian",
+        "group": "Greek",
         "pct": 0.0,
-        "count": 55
+        "count": 67
       },
       {
         "group": "Indian",
@@ -5511,14 +5531,9 @@
         "count": 32
       },
       {
-        "group": "Canadian",
+        "group": "Jewish",
         "pct": 0.0,
-        "count": 55
-      },
-      {
-        "group": "Catalan",
-        "pct": 0.0,
-        "count": 5
+        "count": 43
       },
       {
         "group": "Kazakh",
@@ -5541,19 +5556,14 @@
         "count": 20
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 5
       },
       {
-        "group": "Sorbian",
+        "group": "Lithuanian",
         "pct": 0.0,
-        "count": 8
+        "count": 16
       },
       {
         "group": "Macedonian",
@@ -5561,9 +5571,9 @@
         "count": 44
       },
       {
-        "group": "Dutch",
+        "group": "Montenegrin",
         "pct": 0.0,
-        "count": 69
+        "count": 5
       },
       {
         "group": "Norwegian",
@@ -5581,11 +5591,6 @@
         "count": 13
       },
       {
-        "group": "Austrian",
-        "pct": 0.0,
-        "count": 45
-      },
-      {
         "group": "Romanian",
         "pct": 0.0,
         "count": 157
@@ -5596,14 +5601,14 @@
         "count": 95
       },
       {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 67
-      },
-      {
         "group": "Scottish",
         "pct": 0.0,
         "count": 7
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 62
       },
       {
         "group": "Silesian",
@@ -5616,14 +5621,9 @@
         "count": 7
       },
       {
-        "group": "Serbian",
+        "group": "Sorbian",
         "pct": 0.0,
-        "count": 62
-      },
-      {
-        "group": "Syrian",
-        "pct": 0.0,
-        "count": 31
+        "count": 8
       },
       {
         "group": "Spanish",
@@ -5639,6 +5639,11 @@
         "group": "Swiss",
         "pct": 0.0,
         "count": 37
+      },
+      {
+        "group": "Syrian",
+        "pct": 0.0,
+        "count": 31
       },
       {
         "group": "Tajik",
@@ -5664,11 +5669,6 @@
         "group": "Welsh",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 43
       }
     ],
     "sources": [
@@ -5746,9 +5746,9 @@
         "count": 2757
       },
       {
-        "group": "Other religion",
+        "group": "Believer, church not named",
         "pct": 0.4,
-        "count": 2336
+        "count": 2324
       },
       {
         "group": "Christian (unspecified)",
@@ -5756,19 +5756,19 @@
         "count": 2098
       },
       {
-        "group": "Believer, church not named",
+        "group": "Other religion",
         "pct": 0.4,
-        "count": 2324
-      },
-      {
-        "group": "Other Christian",
-        "pct": 0.3,
-        "count": 1465
+        "count": 2336
       },
       {
         "group": "Evangelical Church of Czech Brethren",
         "pct": 0.3,
         "count": 1373
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.3,
+        "count": 1465
       },
       {
         "group": "Orthodox",
@@ -5781,39 +5781,14 @@
         "count": 845
       },
       {
-        "group": "Seventh-day Adventist",
-        "pct": 0.1,
-        "count": 414
-      },
-      {
         "group": "Jehovah's Witnesses",
         "pct": 0.1,
         "count": 668
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.0,
-        "count": 64
-      },
-      {
-        "group": "Greek Catholic",
-        "pct": 0.0,
-        "count": 256
-      },
-      {
-        "group": "Lutheran",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.0,
-        "count": 38
-      },
-      {
-        "group": "Islam",
-        "pct": 0.0,
-        "count": 151
+        "group": "Seventh-day Adventist",
+        "pct": 0.1,
+        "count": 414
       },
       {
         "group": "Buddhism",
@@ -5821,9 +5796,34 @@
         "count": 219
       },
       {
+        "group": "Greek Catholic",
+        "pct": 0.0,
+        "count": 256
+      },
+      {
         "group": "Hinduism",
         "pct": 0.0,
         "count": 61
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 151
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.0,
+        "count": 29
       },
       {
         "group": "Sikhism",
@@ -5893,89 +5893,14 @@
         "count": 285
       },
       {
-        "group": "French",
+        "group": "Albanian",
         "pct": 0.0,
         "count": 32
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 43
-      },
-      {
-        "group": "Spanish",
-        "pct": 0.0,
-        "count": 76
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 99
-      },
-      {
-        "group": "Chinese",
-        "pct": 0.0,
-        "count": 62
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 32
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 54
-      },
-      {
-        "group": "Moldovan",
-        "pct": 0.0,
-        "count": 102
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 110
       },
       {
         "group": "Arabic",
         "pct": 0.0,
         "count": 156
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 32
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 86
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Romani",
-        "pct": 0.0,
-        "count": 217
-      },
-      {
-        "group": "Moravian",
-        "pct": 0.0,
-        "count": 40
-      },
-      {
-        "group": "Albanian",
-        "pct": 0.0,
-        "count": 32
       },
       {
         "group": "Armenian",
@@ -5988,19 +5913,74 @@
         "count": 52
       },
       {
+        "group": "Belarusian",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 110
+      },
+      {
         "group": "Chechen",
         "pct": 0.0,
         "count": 2
       },
       {
-        "group": "Montenegrin",
+        "group": "Chinese",
         "pct": 0.0,
-        "count": 1
+        "count": 62
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 87
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 32
       },
       {
         "group": "Georgian",
         "pct": 0.0,
         "count": 28
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 43
       },
       {
         "group": "Japanese",
@@ -6023,14 +6003,14 @@
         "count": 5
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 6
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 11
       },
       {
         "group": "Macedonian",
@@ -6038,44 +6018,24 @@
         "count": 26
       },
       {
-        "group": "Dutch",
+        "group": "Moldovan",
         "pct": 0.0,
-        "count": 87
+        "count": 102
       },
       {
-        "group": "Slovene",
+        "group": "Montenegrin",
         "pct": 0.0,
-        "count": 2
+        "count": 1
       },
       {
-        "group": "Turkish",
+        "group": "Moravian",
         "pct": 0.0,
-        "count": 30
+        "count": 40
       },
       {
-        "group": "Uzbek",
+        "group": "Other language",
         "pct": 0.0,
-        "count": 6
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
-        "group": "Bengali",
-        "pct": 0.0,
-        "count": 4
+        "count": 173
       },
       {
         "group": "Pashto",
@@ -6088,9 +6048,29 @@
         "count": 67
       },
       {
-        "group": "Urdu",
+        "group": "Romani",
         "pct": 0.0,
-        "count": 14
+        "count": 217
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 99
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 86
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 5
       },
       {
         "group": "Sign language",
@@ -6098,9 +6078,29 @@
         "count": 89
       },
       {
-        "group": "Other language",
+        "group": "Slovene",
         "pct": 0.0,
-        "count": 173
+        "count": 2
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 6
       }
     ],
     "ethnicity": [
@@ -6135,14 +6135,14 @@
         "count": 880
       },
       {
-        "group": "Other",
-        "pct": 0.2,
-        "count": 1260
-      },
-      {
         "group": "German",
         "pct": 0.2,
         "count": 1293
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 1260
       },
       {
         "group": "Polish",
@@ -6190,11 +6190,6 @@
         "count": 144
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 66
-      },
-      {
         "group": "Arab",
         "pct": 0.0,
         "count": 45
@@ -6210,19 +6205,24 @@
         "count": 34
       },
       {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
         "group": "Azerbaijani",
         "pct": 0.0,
         "count": 31
       },
       {
-        "group": "Belgian",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
         "group": "Belarusian",
         "pct": 0.0,
         "count": 189
+      },
+      {
+        "group": "Belgian",
+        "pct": 0.0,
+        "count": 21
       },
       {
         "group": "Bosniak",
@@ -6240,14 +6240,19 @@
         "count": 114
       },
       {
+        "group": "Canadian",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Catalan",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "Chechen",
         "pct": 0.0,
         "count": 4
-      },
-      {
-        "group": "Montenegrin",
-        "pct": 0.0,
-        "count": 6
       },
       {
         "group": "Chinese",
@@ -6255,9 +6260,24 @@
         "count": 52
       },
       {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
         "group": "Danish",
         "pct": 0.0,
         "count": 7
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 94
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 66
       },
       {
         "group": "Estonian",
@@ -6268,6 +6288,11 @@
         "group": "Finnish",
         "pct": 0.0,
         "count": 9
+      },
+      {
+        "group": "Flemish",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "French",
@@ -6285,9 +6310,14 @@
         "count": 26
       },
       {
-        "group": "Croatian",
+        "group": "Greek",
         "pct": 0.0,
-        "count": 68
+        "count": 136
+      },
+      {
+        "group": "Icelandic",
+        "pct": 0.0,
+        "count": 3
       },
       {
         "group": "Indian",
@@ -6305,11 +6335,6 @@
         "count": 37
       },
       {
-        "group": "Icelandic",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
         "group": "Italian",
         "pct": 0.0,
         "count": 90
@@ -6320,14 +6345,9 @@
         "count": 36
       },
       {
-        "group": "Canadian",
+        "group": "Jewish",
         "pct": 0.0,
-        "count": 52
-      },
-      {
-        "group": "Catalan",
-        "pct": 0.0,
-        "count": 1
+        "count": 45
       },
       {
         "group": "Kazakh",
@@ -6350,19 +6370,14 @@
         "count": 3
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 12
       },
       {
-        "group": "Sorbian",
+        "group": "Lithuanian",
         "pct": 0.0,
-        "count": 2
+        "count": 13
       },
       {
         "group": "Macedonian",
@@ -6375,9 +6390,9 @@
         "count": 160
       },
       {
-        "group": "Dutch",
+        "group": "Montenegrin",
         "pct": 0.0,
-        "count": 94
+        "count": 6
       },
       {
         "group": "Norwegian",
@@ -6395,11 +6410,6 @@
         "count": 21
       },
       {
-        "group": "Austrian",
-        "pct": 0.0,
-        "count": 44
-      },
-      {
         "group": "Romanian",
         "pct": 0.0,
         "count": 85
@@ -6410,14 +6420,14 @@
         "count": 64
       },
       {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 136
-      },
-      {
         "group": "Scottish",
         "pct": 0.0,
         "count": 4
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 98
       },
       {
         "group": "Silesian",
@@ -6430,14 +6440,9 @@
         "count": 6
       },
       {
-        "group": "Serbian",
+        "group": "Sorbian",
         "pct": 0.0,
-        "count": 98
-      },
-      {
-        "group": "Syrian",
-        "pct": 0.0,
-        "count": 29
+        "count": 2
       },
       {
         "group": "Spanish",
@@ -6455,6 +6460,11 @@
         "count": 23
       },
       {
+        "group": "Syrian",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
         "group": "Tajik",
         "pct": 0.0,
         "count": 1
@@ -6468,16 +6478,6 @@
         "group": "Uzbek",
         "pct": 0.0,
         "count": 15
-      },
-      {
-        "group": "Flemish",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 45
       }
     ],
     "sources": [
@@ -6555,14 +6555,14 @@
         "count": 2897
       },
       {
-        "group": "Christian (unspecified)",
-        "pct": 0.5,
-        "count": 2385
-      },
-      {
         "group": "Believer, church not named",
         "pct": 0.5,
         "count": 2523
+      },
+      {
+        "group": "Christian (unspecified)",
+        "pct": 0.5,
+        "count": 2385
       },
       {
         "group": "Other religion",
@@ -6580,19 +6580,14 @@
         "count": 1709
       },
       {
-        "group": "Other Christian",
-        "pct": 0.2,
-        "count": 1197
-      },
-      {
         "group": "Czechoslovak Hussite",
         "pct": 0.2,
         "count": 1242
       },
       {
-        "group": "Seventh-day Adventist",
-        "pct": 0.1,
-        "count": 306
+        "group": "Other Christian",
+        "pct": 0.2,
+        "count": 1197
       },
       {
         "group": "Jehovah's Witnesses",
@@ -6600,29 +6595,9 @@
         "count": 395
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Greek Catholic",
-        "pct": 0.0,
-        "count": 217
-      },
-      {
-        "group": "Lutheran",
-        "pct": 0.0,
-        "count": 34
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.0,
-        "count": 34
-      },
-      {
-        "group": "Islam",
-        "pct": 0.0,
-        "count": 118
+        "group": "Seventh-day Adventist",
+        "pct": 0.1,
+        "count": 306
       },
       {
         "group": "Buddhism",
@@ -6630,9 +6605,34 @@
         "count": 196
       },
       {
+        "group": "Greek Catholic",
+        "pct": 0.0,
+        "count": 217
+      },
+      {
         "group": "Hinduism",
         "pct": 0.0,
         "count": 53
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 118
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.0,
+        "count": 34
       },
       {
         "group": "Sikhism",
@@ -6667,6 +6667,11 @@
         "count": 3074
       },
       {
+        "group": "Mongolian",
+        "pct": 0.2,
+        "count": 785
+      },
+      {
         "group": "Russian",
         "pct": 0.2,
         "count": 810
@@ -6677,9 +6682,9 @@
         "count": 1148
       },
       {
-        "group": "Mongolian",
-        "pct": 0.2,
-        "count": 785
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 392
       },
       {
         "group": "Polish",
@@ -6692,104 +6697,19 @@
         "count": 303
       },
       {
-        "group": "Bulgarian",
-        "pct": 0.1,
-        "count": 392
-      },
-      {
         "group": "Serbian",
         "pct": 0.1,
         "count": 262
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 230
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 36
-      },
-      {
-        "group": "German",
-        "pct": 0.0,
-        "count": 178
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 36
-      },
-      {
-        "group": "Spanish",
-        "pct": 0.0,
-        "count": 60
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 252
-      },
-      {
-        "group": "Chinese",
-        "pct": 0.0,
-        "count": 76
-      },
-      {
-        "group": "Croatian",
+        "group": "Albanian",
         "pct": 0.0,
         "count": 31
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Moldovan",
-        "pct": 0.0,
-        "count": 87
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 8
       },
       {
         "group": "Arabic",
         "pct": 0.0,
         "count": 92
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 33
-      },
-      {
-        "group": "Romani",
-        "pct": 0.0,
-        "count": 221
-      },
-      {
-        "group": "Moravian",
-        "pct": 0.0,
-        "count": 171
-      },
-      {
-        "group": "Silesian",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
-        "group": "Albanian",
-        "pct": 0.0,
-        "count": 31
       },
       {
         "group": "Armenian",
@@ -6802,9 +6722,79 @@
         "count": 30
       },
       {
+        "group": "Belarusian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 230
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 29
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 178
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 252
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 36
       },
       {
         "group": "Japanese",
@@ -6827,12 +6817,12 @@
         "count": 1
       },
       {
-        "group": "Lithuanian",
+        "group": "Latvian",
         "pct": 0.0,
         "count": 2
       },
       {
-        "group": "Latvian",
+        "group": "Lithuanian",
         "pct": 0.0,
         "count": 2
       },
@@ -6842,14 +6832,59 @@
         "count": 70
       },
       {
-        "group": "Dutch",
+        "group": "Moldovan",
         "pct": 0.0,
-        "count": 37
+        "count": 87
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.0,
+        "count": 171
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 136
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 221
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Silesian",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "Slovene",
         "pct": 0.0,
         "count": 2
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 60
       },
       {
         "group": "Turkish",
@@ -6862,49 +6897,14 @@
         "count": 1
       },
       {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
-        "group": "Bengali",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
-        "group": "Persian",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
         "group": "Urdu",
         "pct": 0.0,
         "count": 1
       },
       {
-        "group": "Sign language",
+        "group": "Uzbek",
         "pct": 0.0,
-        "count": 52
-      },
-      {
-        "group": "Other language",
-        "pct": 0.0,
-        "count": 136
+        "count": 19
       }
     ],
     "ethnicity": [
@@ -6929,14 +6929,14 @@
         "count": 3029
       },
       {
-        "group": "Other",
-        "pct": 0.2,
-        "count": 1104
-      },
-      {
         "group": "Mongolian",
         "pct": 0.2,
         "count": 784
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 1104
       },
       {
         "group": "Roma",
@@ -6964,14 +6964,14 @@
         "count": 656
       },
       {
-        "group": "Hungarian",
-        "pct": 0.1,
-        "count": 323
-      },
-      {
         "group": "German",
         "pct": 0.1,
         "count": 430
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 323
       },
       {
         "group": "Polish",
@@ -6999,11 +6999,6 @@
         "count": 137
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 73
-      },
-      {
         "group": "Arab",
         "pct": 0.0,
         "count": 11
@@ -7019,19 +7014,24 @@
         "count": 37
       },
       {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
         "group": "Azerbaijani",
         "pct": 0.0,
         "count": 16
       },
       {
-        "group": "Belgian",
-        "pct": 0.0,
-        "count": 9
-      },
-      {
         "group": "Belarusian",
         "pct": 0.0,
         "count": 143
+      },
+      {
+        "group": "Belgian",
+        "pct": 0.0,
+        "count": 9
       },
       {
         "group": "Bosniak",
@@ -7044,14 +7044,19 @@
         "count": 110
       },
       {
+        "group": "Canadian",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Catalan",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "Chechen",
         "pct": 0.0,
         "count": 2
-      },
-      {
-        "group": "Montenegrin",
-        "pct": 0.0,
-        "count": 5
       },
       {
         "group": "Chinese",
@@ -7059,14 +7064,34 @@
         "count": 43
       },
       {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
         "group": "Danish",
         "pct": 0.0,
         "count": 3
       },
       {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 73
+      },
+      {
         "group": "Finnish",
         "pct": 0.0,
         "count": 4
+      },
+      {
+        "group": "Flemish",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "French",
@@ -7079,9 +7104,14 @@
         "count": 34
       },
       {
-        "group": "Croatian",
+        "group": "Greek",
         "pct": 0.0,
-        "count": 51
+        "count": 56
+      },
+      {
+        "group": "Icelandic",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "Indian",
@@ -7099,11 +7129,6 @@
         "count": 41
       },
       {
-        "group": "Icelandic",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
         "group": "Italian",
         "pct": 0.0,
         "count": 93
@@ -7114,14 +7139,9 @@
         "count": 35
       },
       {
-        "group": "Canadian",
+        "group": "Jewish",
         "pct": 0.0,
-        "count": 39
-      },
-      {
-        "group": "Catalan",
-        "pct": 0.0,
-        "count": 1
+        "count": 34
       },
       {
         "group": "Kazakh",
@@ -7144,14 +7164,14 @@
         "count": 1
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 4
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 8
       },
       {
         "group": "Macedonian",
@@ -7164,9 +7184,9 @@
         "count": 107
       },
       {
-        "group": "Dutch",
+        "group": "Montenegrin",
         "pct": 0.0,
-        "count": 46
+        "count": 5
       },
       {
         "group": "Norwegian",
@@ -7184,11 +7204,6 @@
         "count": 8
       },
       {
-        "group": "Austrian",
-        "pct": 0.0,
-        "count": 41
-      },
-      {
         "group": "Romanian",
         "pct": 0.0,
         "count": 182
@@ -7199,14 +7214,14 @@
         "count": 66
       },
       {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 56
-      },
-      {
         "group": "Scottish",
         "pct": 0.0,
         "count": 8
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 162
       },
       {
         "group": "Silesian",
@@ -7217,16 +7232,6 @@
         "group": "Slovene",
         "pct": 0.0,
         "count": 12
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 162
-      },
-      {
-        "group": "Syrian",
-        "pct": 0.0,
-        "count": 13
       },
       {
         "group": "Spanish",
@@ -7242,6 +7247,11 @@
         "group": "Swiss",
         "pct": 0.0,
         "count": 23
+      },
+      {
+        "group": "Syrian",
+        "pct": 0.0,
+        "count": 13
       },
       {
         "group": "Tajik",
@@ -7267,16 +7277,6 @@
         "group": "Welsh",
         "pct": 0.0,
         "count": 2
-      },
-      {
-        "group": "Flemish",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 34
       }
     ],
     "sources": [
@@ -7374,19 +7374,14 @@
         "count": 1331
       },
       {
-        "group": "Other Christian",
-        "pct": 0.2,
-        "count": 822
-      },
-      {
         "group": "Orthodox",
         "pct": 0.2,
         "count": 911
       },
       {
-        "group": "Seventh-day Adventist",
-        "pct": 0.1,
-        "count": 249
+        "group": "Other Christian",
+        "pct": 0.2,
+        "count": 822
       },
       {
         "group": "Czechoslovak Hussite",
@@ -7399,29 +7394,9 @@
         "count": 532
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.0,
-        "count": 53
-      },
-      {
-        "group": "Greek Catholic",
-        "pct": 0.0,
-        "count": 153
-      },
-      {
-        "group": "Lutheran",
-        "pct": 0.0,
-        "count": 26
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Islam",
-        "pct": 0.0,
-        "count": 70
+        "group": "Seventh-day Adventist",
+        "pct": 0.1,
+        "count": 249
       },
       {
         "group": "Buddhism",
@@ -7429,9 +7404,34 @@
         "count": 166
       },
       {
+        "group": "Greek Catholic",
+        "pct": 0.0,
+        "count": 153
+      },
+      {
         "group": "Hinduism",
         "pct": 0.0,
         "count": 32
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 70
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.0,
+        "count": 26
       },
       {
         "group": "Sikhism",
@@ -7471,16 +7471,6 @@
         "count": 853
       },
       {
-        "group": "Russian",
-        "pct": 0.1,
-        "count": 563
-      },
-      {
-        "group": "Polish",
-        "pct": 0.1,
-        "count": 256
-      },
-      {
         "group": "Mongolian",
         "pct": 0.1,
         "count": 427
@@ -7491,104 +7481,24 @@
         "count": 608
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 146
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 256
       },
       {
-        "group": "French",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
-        "group": "German",
-        "pct": 0.0,
-        "count": 134
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 30
-      },
-      {
-        "group": "Spanish",
-        "pct": 0.0,
-        "count": 37
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 94
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 174
-      },
-      {
-        "group": "Chinese",
-        "pct": 0.0,
-        "count": 44
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Moldovan",
-        "pct": 0.0,
-        "count": 83
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 230
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 170
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Romani",
-        "pct": 0.0,
-        "count": 124
-      },
-      {
-        "group": "Silesian",
-        "pct": 0.0,
-        "count": 1
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 563
       },
       {
         "group": "Albanian",
         "pct": 0.0,
         "count": 34
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 35
       },
       {
         "group": "Armenian",
@@ -7601,9 +7511,79 @@
         "count": 1
       },
       {
+        "group": "Belarusian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 230
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 146
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 29
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 134
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 174
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 30
       },
       {
         "group": "Japanese",
@@ -7621,12 +7601,12 @@
         "count": 1
       },
       {
-        "group": "Lithuanian",
+        "group": "Latvian",
         "pct": 0.0,
         "count": 2
       },
       {
-        "group": "Latvian",
+        "group": "Lithuanian",
         "pct": 0.0,
         "count": 2
       },
@@ -7636,44 +7616,14 @@
         "count": 9
       },
       {
-        "group": "Dutch",
+        "group": "Moldovan",
         "pct": 0.0,
-        "count": 41
+        "count": 83
       },
       {
-        "group": "Slovene",
+        "group": "Other language",
         "pct": 0.0,
-        "count": 4
-      },
-      {
-        "group": "Turkish",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 9
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
-        "group": "Punjabi",
-        "pct": 0.0,
-        "count": 1
+        "count": 113
       },
       {
         "group": "Pashto",
@@ -7686,14 +7636,64 @@
         "count": 12
       },
       {
+        "group": "Punjabi",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 124
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 94
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 170
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "Sign language",
         "pct": 0.0,
         "count": 42
       },
       {
-        "group": "Other language",
+        "group": "Silesian",
         "pct": 0.0,
-        "count": 113
+        "count": 1
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 9
       }
     ],
     "ethnicity": [
@@ -7738,6 +7738,11 @@
         "count": 745
       },
       {
+        "group": "German",
+        "pct": 0.1,
+        "count": 274
+      },
+      {
         "group": "Hungarian",
         "pct": 0.1,
         "count": 253
@@ -7746,11 +7751,6 @@
         "group": "Mongolian",
         "pct": 0.1,
         "count": 406
-      },
-      {
-        "group": "German",
-        "pct": 0.1,
-        "count": 274
       },
       {
         "group": "Roma",
@@ -7778,11 +7778,6 @@
         "count": 97
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 45
-      },
-      {
         "group": "Arab",
         "pct": 0.0,
         "count": 8
@@ -7798,6 +7793,11 @@
         "count": 29
       },
       {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
         "group": "Azerbaijani",
         "pct": 0.0,
         "count": 4
@@ -7808,14 +7808,14 @@
         "count": 1
       },
       {
-        "group": "Belgian",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
         "group": "Belarusian",
         "pct": 0.0,
         "count": 97
+      },
+      {
+        "group": "Belgian",
+        "pct": 0.0,
+        "count": 15
       },
       {
         "group": "Bosniak",
@@ -7833,6 +7833,11 @@
         "count": 210
       },
       {
+        "group": "Canadian",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
         "group": "Chechen",
         "pct": 0.0,
         "count": 1
@@ -7843,9 +7848,24 @@
         "count": 51
       },
       {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
         "group": "Danish",
         "pct": 0.0,
         "count": 3
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 45
       },
       {
         "group": "Finnish",
@@ -7863,9 +7883,14 @@
         "count": 38
       },
       {
-        "group": "Croatian",
+        "group": "Greek",
         "pct": 0.0,
-        "count": 45
+        "count": 44
+      },
+      {
+        "group": "Icelandic",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Indian",
@@ -7883,11 +7908,6 @@
         "count": 21
       },
       {
-        "group": "Icelandic",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
         "group": "Italian",
         "pct": 0.0,
         "count": 72
@@ -7898,9 +7918,9 @@
         "count": 9
       },
       {
-        "group": "Canadian",
+        "group": "Jewish",
         "pct": 0.0,
-        "count": 21
+        "count": 18
       },
       {
         "group": "Kazakh",
@@ -7918,19 +7938,14 @@
         "count": 1
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 2
       },
       {
-        "group": "Sorbian",
+        "group": "Lithuanian",
         "pct": 0.0,
-        "count": 1
+        "count": 3
       },
       {
         "group": "Macedonian",
@@ -7941,11 +7956,6 @@
         "group": "Moldovan",
         "pct": 0.0,
         "count": 118
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 51
       },
       {
         "group": "Norwegian",
@@ -7968,11 +7978,6 @@
         "count": 2
       },
       {
-        "group": "Austrian",
-        "pct": 0.0,
-        "count": 53
-      },
-      {
         "group": "Romanian",
         "pct": 0.0,
         "count": 96
@@ -7983,14 +7988,14 @@
         "count": 55
       },
       {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 44
-      },
-      {
         "group": "Scottish",
         "pct": 0.0,
         "count": 13
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 151
       },
       {
         "group": "Silesian",
@@ -8003,14 +8008,9 @@
         "count": 8
       },
       {
-        "group": "Serbian",
+        "group": "Sorbian",
         "pct": 0.0,
-        "count": 151
-      },
-      {
-        "group": "Syrian",
-        "pct": 0.0,
-        "count": 2
+        "count": 1
       },
       {
         "group": "Spanish",
@@ -8026,6 +8026,11 @@
         "group": "Swiss",
         "pct": 0.0,
         "count": 17
+      },
+      {
+        "group": "Syrian",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "Tajik",
@@ -8051,11 +8056,6 @@
         "group": "Welsh",
         "pct": 0.0,
         "count": 3
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 18
       }
     ],
     "sources": [
@@ -8128,14 +8128,14 @@
         "count": 32097
       },
       {
-        "group": "Christian (unspecified)",
-        "pct": 0.9,
-        "count": 11340
-      },
-      {
         "group": "Believer, church not named",
         "pct": 0.9,
         "count": 10430
+      },
+      {
+        "group": "Christian (unspecified)",
+        "pct": 0.9,
+        "count": 11340
       },
       {
         "group": "Other religion",
@@ -8148,11 +8148,6 @@
         "count": 4206
       },
       {
-        "group": "Other Christian",
-        "pct": 0.3,
-        "count": 3027
-      },
-      {
         "group": "Czechoslovak Hussite",
         "pct": 0.3,
         "count": 3045
@@ -8163,14 +8158,19 @@
         "count": 3657
       },
       {
+        "group": "Other Christian",
+        "pct": 0.3,
+        "count": 3027
+      },
+      {
         "group": "Protestant (unspecified)",
         "pct": 0.2,
         "count": 2649
       },
       {
-        "group": "Seventh-day Adventist",
+        "group": "Buddhism",
         "pct": 0.1,
-        "count": 993
+        "count": 675
       },
       {
         "group": "Greek Catholic",
@@ -8178,19 +8178,29 @@
         "count": 656
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 0.1,
-        "count": 1034
-      },
-      {
         "group": "Islam",
         "pct": 0.1,
         "count": 696
       },
       {
-        "group": "Buddhism",
+        "group": "Jehovah's Witnesses",
         "pct": 0.1,
-        "count": 675
+        "count": 1034
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 0.1,
+        "count": 993
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0,
+        "count": 280
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 143
       },
       {
         "group": "Latter-day Saints",
@@ -8201,16 +8211,6 @@
         "group": "Lutheran",
         "pct": 0.0,
         "count": 300
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.0,
-        "count": 143
-      },
-      {
-        "group": "Hinduism",
-        "pct": 0.0,
-        "count": 280
       },
       {
         "group": "Sikhism",
@@ -8240,14 +8240,14 @@
         "count": 20162
       },
       {
-        "group": "Ukrainian",
-        "pct": 0.7,
-        "count": 7851
-      },
-      {
         "group": "Moravian",
         "pct": 0.7,
         "count": 8529
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.7,
+        "count": 7851
       },
       {
         "group": "Russian",
@@ -8260,6 +8260,16 @@
         "count": 3480
       },
       {
+        "group": "Arabic",
+        "pct": 0.1,
+        "count": 778
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 656
+      },
+      {
         "group": "English",
         "pct": 0.1,
         "count": 1573
@@ -8270,9 +8280,14 @@
         "count": 624
       },
       {
-        "group": "Spanish",
+        "group": "Hungarian",
         "pct": 0.1,
-        "count": 610
+        "count": 892
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 1168
       },
       {
         "group": "Polish",
@@ -8285,89 +8300,9 @@
         "count": 599
       },
       {
-        "group": "Hungarian",
+        "group": "Spanish",
         "pct": 0.1,
-        "count": 892
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.1,
-        "count": 656
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.1,
-        "count": 778
-      },
-      {
-        "group": "Other language",
-        "pct": 0.1,
-        "count": 1168
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 237
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 463
-      },
-      {
-        "group": "Chinese",
-        "pct": 0.0,
-        "count": 242
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 177
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 434
-      },
-      {
-        "group": "Moldovan",
-        "pct": 0.0,
-        "count": 177
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 34
-      },
-      {
-        "group": "Mongolian",
-        "pct": 0.0,
-        "count": 421
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 225
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 385
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 42
-      },
-      {
-        "group": "Romani",
-        "pct": 0.0,
-        "count": 315
-      },
-      {
-        "group": "Silesian",
-        "pct": 0.0,
-        "count": 9
+        "count": 610
       },
       {
         "group": "Albanian",
@@ -8385,19 +8320,69 @@
         "count": 40
       },
       {
+        "group": "Belarusian",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.0,
+        "count": 225
+      },
+      {
         "group": "Chechen",
         "pct": 0.0,
         "count": 22
       },
       {
-        "group": "Montenegrin",
+        "group": "Chinese",
         "pct": 0.0,
-        "count": 3
+        "count": 242
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 177
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 116
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 237
       },
       {
         "group": "Georgian",
         "pct": 0.0,
         "count": 34
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 434
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.0,
+        "count": 152
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 463
       },
       {
         "group": "Japanese",
@@ -8420,14 +8405,14 @@
         "count": 4
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 32
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 14
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 32
       },
       {
         "group": "Macedonian",
@@ -8435,9 +8420,64 @@
         "count": 121
       },
       {
-        "group": "Dutch",
+        "group": "Moldovan",
         "pct": 0.0,
-        "count": 116
+        "count": 177
+      },
+      {
+        "group": "Mongolian",
+        "pct": 0.0,
+        "count": 421
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Pashto",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 107
+      },
+      {
+        "group": "Punjabi",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 315
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 385
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 198
+      },
+      {
+        "group": "Silesian",
+        "pct": 0.0,
+        "count": 9
       },
       {
         "group": "Slovene",
@@ -8460,54 +8500,14 @@
         "count": 3
       },
       {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 48
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 152
-      },
-      {
-        "group": "Bengali",
-        "pct": 0.0,
-        "count": 45
-      },
-      {
-        "group": "Punjabi",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
-        "group": "Pashto",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Persian",
-        "pct": 0.0,
-        "count": 107
-      },
-      {
         "group": "Urdu",
         "pct": 0.0,
         "count": 41
       },
       {
-        "group": "Sign language",
+        "group": "Uzbek",
         "pct": 0.0,
-        "count": 198
+        "count": 11
       }
     ],
     "ethnicity": [
@@ -8562,9 +8562,14 @@
         "count": 1410
       },
       {
-        "group": "Italian",
+        "group": "German",
         "pct": 0.1,
-        "count": 649
+        "count": 1139
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 735
       },
       {
         "group": "Hungarian",
@@ -8572,9 +8577,9 @@
         "count": 1120
       },
       {
-        "group": "German",
+        "group": "Italian",
         "pct": 0.1,
-        "count": 1139
+        "count": 649
       },
       {
         "group": "Polish",
@@ -8585,11 +8590,6 @@
         "group": "Roma",
         "pct": 0.1,
         "count": 1598
-      },
-      {
-        "group": "Greek",
-        "pct": 0.1,
-        "count": 735
       },
       {
         "group": "Silesian",
@@ -8612,11 +8612,6 @@
         "count": 517
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 215
-      },
-      {
         "group": "Arab",
         "pct": 0.0,
         "count": 163
@@ -8632,6 +8627,11 @@
         "count": 114
       },
       {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 414
+      },
+      {
         "group": "Azerbaijani",
         "pct": 0.0,
         "count": 73
@@ -8642,14 +8642,14 @@
         "count": 7
       },
       {
-        "group": "Belgian",
-        "pct": 0.0,
-        "count": 74
-      },
-      {
         "group": "Belarusian",
         "pct": 0.0,
         "count": 469
+      },
+      {
+        "group": "Belgian",
+        "pct": 0.0,
+        "count": 74
       },
       {
         "group": "Bosniak",
@@ -8662,14 +8662,19 @@
         "count": 497
       },
       {
+        "group": "Canadian",
+        "pct": 0.0,
+        "count": 144
+      },
+      {
+        "group": "Catalan",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
         "group": "Chechen",
         "pct": 0.0,
         "count": 24
-      },
-      {
-        "group": "Montenegrin",
-        "pct": 0.0,
-        "count": 20
       },
       {
         "group": "Chinese",
@@ -8677,9 +8682,24 @@
         "count": 179
       },
       {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 348
+      },
+      {
         "group": "Danish",
         "pct": 0.0,
         "count": 16
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 130
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 215
       },
       {
         "group": "Estonian",
@@ -8690,6 +8710,11 @@
         "group": "Finnish",
         "pct": 0.0,
         "count": 37
+      },
+      {
+        "group": "Flemish",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "French",
@@ -8707,9 +8732,9 @@
         "count": 48
       },
       {
-        "group": "Croatian",
+        "group": "Icelandic",
         "pct": 0.0,
-        "count": 348
+        "count": 11
       },
       {
         "group": "Indian",
@@ -8727,24 +8752,14 @@
         "count": 106
       },
       {
-        "group": "Icelandic",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
         "group": "Japanese",
         "pct": 0.0,
         "count": 153
       },
       {
-        "group": "Canadian",
+        "group": "Jewish",
         "pct": 0.0,
-        "count": 144
-      },
-      {
-        "group": "Catalan",
-        "pct": 0.0,
-        "count": 13
+        "count": 218
       },
       {
         "group": "Kazakh",
@@ -8767,19 +8782,14 @@
         "count": 15
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 45
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 29
       },
       {
-        "group": "Sorbian",
+        "group": "Lithuanian",
         "pct": 0.0,
-        "count": 3
+        "count": 45
       },
       {
         "group": "Macedonian",
@@ -8797,9 +8807,9 @@
         "count": 440
       },
       {
-        "group": "Dutch",
+        "group": "Montenegrin",
         "pct": 0.0,
-        "count": 130
+        "count": 20
       },
       {
         "group": "Norwegian",
@@ -8817,11 +8827,6 @@
         "count": 97
       },
       {
-        "group": "Austrian",
-        "pct": 0.0,
-        "count": 414
-      },
-      {
         "group": "Romanian",
         "pct": 0.0,
         "count": 535
@@ -8837,19 +8842,19 @@
         "count": 27
       },
       {
-        "group": "Slovene",
-        "pct": 0.0,
-        "count": 42
-      },
-      {
         "group": "Serbian",
         "pct": 0.0,
         "count": 402
       },
       {
-        "group": "Syrian",
+        "group": "Slovene",
         "pct": 0.0,
-        "count": 135
+        "count": 42
+      },
+      {
+        "group": "Sorbian",
+        "pct": 0.0,
+        "count": 3
       },
       {
         "group": "Spanish",
@@ -8865,6 +8870,11 @@
         "group": "Swiss",
         "pct": 0.0,
         "count": 110
+      },
+      {
+        "group": "Syrian",
+        "pct": 0.0,
+        "count": 135
       },
       {
         "group": "Tajik",
@@ -8890,16 +8900,6 @@
         "group": "Welsh",
         "pct": 0.0,
         "count": 5
-      },
-      {
-        "group": "Flemish",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 218
       }
     ],
     "sources": [
@@ -8972,14 +8972,14 @@
         "count": 11992
       },
       {
-        "group": "Christian (unspecified)",
-        "pct": 0.7,
-        "count": 4430
-      },
-      {
         "group": "Believer, church not named",
         "pct": 0.7,
         "count": 4048
+      },
+      {
+        "group": "Christian (unspecified)",
+        "pct": 0.7,
+        "count": 4430
       },
       {
         "group": "Other religion",
@@ -8987,14 +8987,14 @@
         "count": 2424
       },
       {
-        "group": "Other Christian",
-        "pct": 0.3,
-        "count": 1601
-      },
-      {
         "group": "Czechoslovak Hussite",
         "pct": 0.3,
         "count": 1731
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.3,
+        "count": 1601
       },
       {
         "group": "Evangelical Church of Czech Brethren",
@@ -9007,11 +9007,6 @@
         "count": 1197
       },
       {
-        "group": "Seventh-day Adventist",
-        "pct": 0.1,
-        "count": 472
-      },
-      {
         "group": "Jehovah's Witnesses",
         "pct": 0.1,
         "count": 609
@@ -9022,29 +9017,9 @@
         "count": 776
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.0,
-        "count": 37
-      },
-      {
-        "group": "Greek Catholic",
-        "pct": 0.0,
-        "count": 205
-      },
-      {
-        "group": "Lutheran",
-        "pct": 0.0,
-        "count": 96
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.0,
-        "count": 62
-      },
-      {
-        "group": "Islam",
-        "pct": 0.0,
-        "count": 133
+        "group": "Seventh-day Adventist",
+        "pct": 0.1,
+        "count": 472
       },
       {
         "group": "Buddhism",
@@ -9052,9 +9027,34 @@
         "count": 221
       },
       {
+        "group": "Greek Catholic",
+        "pct": 0.0,
+        "count": 205
+      },
+      {
         "group": "Hinduism",
         "pct": 0.0,
         "count": 107
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 133
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.0,
+        "count": 96
       },
       {
         "group": "Sikhism",
@@ -9109,9 +9109,9 @@
         "count": 373
       },
       {
-        "group": "Russian",
+        "group": "Other language",
         "pct": 0.1,
-        "count": 842
+        "count": 425
       },
       {
         "group": "Polish",
@@ -9124,99 +9124,19 @@
         "count": 350
       },
       {
-        "group": "Other language",
+        "group": "Russian",
         "pct": 0.1,
-        "count": 425
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 59
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 82
-      },
-      {
-        "group": "Spanish",
-        "pct": 0.0,
-        "count": 119
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 164
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 287
-      },
-      {
-        "group": "Chinese",
-        "pct": 0.0,
-        "count": 96
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 60
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 146
-      },
-      {
-        "group": "Moldovan",
-        "pct": 0.0,
-        "count": 58
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
-        "group": "Mongolian",
-        "pct": 0.0,
-        "count": 64
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 113
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.0,
-        "count": 73
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 79
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Silesian",
-        "pct": 0.0,
-        "count": 12
+        "count": 842
       },
       {
         "group": "Albanian",
         "pct": 0.0,
         "count": 66
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 73
       },
       {
         "group": "Armenian",
@@ -9229,14 +9149,74 @@
         "count": 10
       },
       {
-        "group": "Montenegrin",
+        "group": "Belarusian",
         "pct": 0.0,
-        "count": 8
+        "count": 5
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 113
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 96
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 59
       },
       {
         "group": "Georgian",
         "pct": 0.0,
         "count": 6
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 146
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 287
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 82
       },
       {
         "group": "Japanese",
@@ -9254,12 +9234,12 @@
         "count": 12
       },
       {
-        "group": "Lithuanian",
+        "group": "Latvian",
         "pct": 0.0,
         "count": 4
       },
       {
-        "group": "Latvian",
+        "group": "Lithuanian",
         "pct": 0.0,
         "count": 4
       },
@@ -9269,49 +9249,19 @@
         "count": 49
       },
       {
-        "group": "Dutch",
+        "group": "Moldovan",
         "pct": 0.0,
-        "count": 27
+        "count": 58
       },
       {
-        "group": "Slovene",
+        "group": "Mongolian",
         "pct": 0.0,
-        "count": 6
+        "count": 64
       },
       {
-        "group": "Turkish",
+        "group": "Montenegrin",
         "pct": 0.0,
-        "count": 33
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 23
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 31
-      },
-      {
-        "group": "Bengali",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
-        "group": "Punjabi",
-        "pct": 0.0,
-        "count": 6
+        "count": 8
       },
       {
         "group": "Pashto",
@@ -9324,14 +9274,64 @@
         "count": 32
       },
       {
-        "group": "Urdu",
+        "group": "Punjabi",
         "pct": 0.0,
-        "count": 7
+        "count": 6
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 164
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 79
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Sign language",
         "pct": 0.0,
         "count": 83
+      },
+      {
+        "group": "Silesian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 119
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 10
       }
     ],
     "ethnicity": [
@@ -9386,14 +9386,19 @@
         "count": 885
       },
       {
-        "group": "Hungarian",
-        "pct": 0.1,
-        "count": 349
-      },
-      {
         "group": "German",
         "pct": 0.1,
         "count": 906
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 390
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 349
       },
       {
         "group": "Polish",
@@ -9404,11 +9409,6 @@
         "group": "Russian",
         "pct": 0.1,
         "count": 432
-      },
-      {
-        "group": "Greek",
-        "pct": 0.1,
-        "count": 390
       },
       {
         "group": "Afghan",
@@ -9426,11 +9426,6 @@
         "count": 248
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 87
-      },
-      {
         "group": "Arab",
         "pct": 0.0,
         "count": 20
@@ -9446,6 +9441,11 @@
         "count": 31
       },
       {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 73
+      },
+      {
         "group": "Azerbaijani",
         "pct": 0.0,
         "count": 12
@@ -9456,14 +9456,14 @@
         "count": 4
       },
       {
-        "group": "Belgian",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
         "group": "Belarusian",
         "pct": 0.0,
         "count": 92
+      },
+      {
+        "group": "Belgian",
+        "pct": 0.0,
+        "count": 20
       },
       {
         "group": "Bosniak",
@@ -9481,9 +9481,14 @@
         "count": 106
       },
       {
-        "group": "Montenegrin",
+        "group": "Canadian",
         "pct": 0.0,
-        "count": 13
+        "count": 70
+      },
+      {
+        "group": "Catalan",
+        "pct": 0.0,
+        "count": 4
       },
       {
         "group": "Chinese",
@@ -9491,9 +9496,24 @@
         "count": 72
       },
       {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 153
+      },
+      {
         "group": "Danish",
         "pct": 0.0,
         "count": 2
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 87
       },
       {
         "group": "Estonian",
@@ -9504,6 +9524,11 @@
         "group": "Finnish",
         "pct": 0.0,
         "count": 6
+      },
+      {
+        "group": "Flemish",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "French",
@@ -9521,9 +9546,9 @@
         "count": 19
       },
       {
-        "group": "Croatian",
+        "group": "Icelandic",
         "pct": 0.0,
-        "count": 153
+        "count": 2
       },
       {
         "group": "Indian",
@@ -9541,11 +9566,6 @@
         "count": 36
       },
       {
-        "group": "Icelandic",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
         "group": "Italian",
         "pct": 0.0,
         "count": 167
@@ -9556,14 +9576,9 @@
         "count": 45
       },
       {
-        "group": "Canadian",
+        "group": "Jewish",
         "pct": 0.0,
-        "count": 70
-      },
-      {
-        "group": "Catalan",
-        "pct": 0.0,
-        "count": 4
+        "count": 79
       },
       {
         "group": "Kazakh",
@@ -9586,14 +9601,14 @@
         "count": 6
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 6
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 8
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 6
       },
       {
         "group": "Macedonian",
@@ -9611,9 +9626,9 @@
         "count": 77
       },
       {
-        "group": "Dutch",
+        "group": "Montenegrin",
         "pct": 0.0,
-        "count": 40
+        "count": 13
       },
       {
         "group": "Norwegian",
@@ -9631,11 +9646,6 @@
         "count": 20
       },
       {
-        "group": "Austrian",
-        "pct": 0.0,
-        "count": 73
-      },
-      {
         "group": "Romanian",
         "pct": 0.0,
         "count": 148
@@ -9651,19 +9661,14 @@
         "count": 16
       },
       {
-        "group": "Slovene",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
         "group": "Serbian",
         "pct": 0.0,
         "count": 98
       },
       {
-        "group": "Syrian",
+        "group": "Slovene",
         "pct": 0.0,
-        "count": 3
+        "count": 16
       },
       {
         "group": "Spanish",
@@ -9681,6 +9686,11 @@
         "count": 18
       },
       {
+        "group": "Syrian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
         "group": "Turkish",
         "pct": 0.0,
         "count": 45
@@ -9694,16 +9704,6 @@
         "group": "Welsh",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Flemish",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 79
       }
     ],
     "sources": [
@@ -9776,14 +9776,14 @@
         "count": 23079
       },
       {
-        "group": "Christian (unspecified)",
-        "pct": 1.4,
-        "count": 7885
-      },
-      {
         "group": "Believer, church not named",
         "pct": 1.4,
         "count": 7651
+      },
+      {
+        "group": "Christian (unspecified)",
+        "pct": 1.4,
+        "count": 7885
       },
       {
         "group": "Evangelical Church of Czech Brethren",
@@ -9806,11 +9806,6 @@
         "count": 1553
       },
       {
-        "group": "Seventh-day Adventist",
-        "pct": 0.1,
-        "count": 424
-      },
-      {
         "group": "Czechoslovak Hussite",
         "pct": 0.1,
         "count": 739
@@ -9826,29 +9821,9 @@
         "count": 656
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.0,
-        "count": 76
-      },
-      {
-        "group": "Greek Catholic",
-        "pct": 0.0,
-        "count": 167
-      },
-      {
-        "group": "Lutheran",
-        "pct": 0.0,
-        "count": 79
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.0,
-        "count": 31
-      },
-      {
-        "group": "Islam",
-        "pct": 0.0,
-        "count": 91
+        "group": "Seventh-day Adventist",
+        "pct": 0.1,
+        "count": 424
       },
       {
         "group": "Buddhism",
@@ -9856,9 +9831,34 @@
         "count": 203
       },
       {
+        "group": "Greek Catholic",
+        "pct": 0.0,
+        "count": 167
+      },
+      {
         "group": "Hinduism",
         "pct": 0.0,
         "count": 92
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.0,
+        "count": 79
       }
     ],
     "language": [
@@ -9893,9 +9893,9 @@
         "count": 1329
       },
       {
-        "group": "Russian",
+        "group": "Mongolian",
         "pct": 0.1,
-        "count": 518
+        "count": 360
       },
       {
         "group": "Polish",
@@ -9903,114 +9903,24 @@
         "count": 394
       },
       {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 518
+      },
+      {
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 702
       },
       {
-        "group": "Mongolian",
-        "pct": 0.1,
-        "count": 360
-      },
-      {
-        "group": "English",
+        "group": "Albanian",
         "pct": 0.0,
-        "count": 218
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 31
-      },
-      {
-        "group": "German",
-        "pct": 0.0,
-        "count": 112
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 94
-      },
-      {
-        "group": "Spanish",
-        "pct": 0.0,
-        "count": 75
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 129
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 171
-      },
-      {
-        "group": "Chinese",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 39
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Moldovan",
-        "pct": 0.0,
-        "count": 61
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 76
+        "count": 27
       },
       {
         "group": "Arabic",
         "pct": 0.0,
         "count": 65
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 100
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
-        "group": "Romani",
-        "pct": 0.0,
-        "count": 140
-      },
-      {
-        "group": "Silesian",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
-        "group": "Albanian",
-        "pct": 0.0,
-        "count": 27
       },
       {
         "group": "Armenian",
@@ -10023,39 +9933,39 @@
         "count": 2
       },
       {
+        "group": "Belarusian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
         "group": "Chechen",
         "pct": 0.0,
         "count": 1
       },
       {
-        "group": "Georgian",
+        "group": "Chinese",
         "pct": 0.0,
-        "count": 6
+        "count": 21
       },
       {
-        "group": "Japanese",
+        "group": "Croatian",
         "pct": 0.0,
-        "count": 6
-      },
-      {
-        "group": "Kazakh",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 6
-      },
-      {
-        "group": "Macedonian",
-        "pct": 0.0,
-        "count": 22
+        "count": 39
       },
       {
         "group": "Dutch",
@@ -10063,19 +9973,29 @@
         "count": 28
       },
       {
-        "group": "Slovene",
+        "group": "English",
         "pct": 0.0,
-        "count": 4
+        "count": 218
       },
       {
-        "group": "Turkish",
+        "group": "French",
         "pct": 0.0,
-        "count": 22
+        "count": 31
       },
       {
-        "group": "Serbo-Croatian",
+        "group": "Georgian",
         "pct": 0.0,
-        "count": 3
+        "count": 6
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 112
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 21
       },
       {
         "group": "Hebrew",
@@ -10088,9 +10008,49 @@
         "count": 11
       },
       {
-        "group": "Bengali",
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 171
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 94
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Lithuanian",
         "pct": 0.0,
         "count": 3
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Moldovan",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 265
       },
       {
         "group": "Pashto",
@@ -10103,9 +10063,29 @@
         "count": 13
       },
       {
-        "group": "Urdu",
+        "group": "Romani",
         "pct": 0.0,
-        "count": 4
+        "count": 140
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 129
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 100
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 3
       },
       {
         "group": "Sign language",
@@ -10113,9 +10093,29 @@
         "count": 88
       },
       {
-        "group": "Other language",
+        "group": "Silesian",
         "pct": 0.0,
-        "count": 265
+        "count": 8
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 4
       }
     ],
     "ethnicity": [
@@ -10195,11 +10195,6 @@
         "count": 193
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 66
-      },
-      {
         "group": "Arab",
         "pct": 0.0,
         "count": 11
@@ -10215,6 +10210,11 @@
         "count": 31
       },
       {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
         "group": "Azerbaijani",
         "pct": 0.0,
         "count": 2
@@ -10225,14 +10225,14 @@
         "count": 1
       },
       {
-        "group": "Belgian",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
         "group": "Belarusian",
         "pct": 0.0,
         "count": 111
+      },
+      {
+        "group": "Belgian",
+        "pct": 0.0,
+        "count": 18
       },
       {
         "group": "Bosniak",
@@ -10250,14 +10250,39 @@
         "count": 73
       },
       {
+        "group": "Canadian",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Catalan",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "Chinese",
         "pct": 0.0,
         "count": 20
       },
       {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
         "group": "Danish",
         "pct": 0.0,
         "count": 3
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 66
       },
       {
         "group": "Estonian",
@@ -10270,6 +10295,11 @@
         "count": 9
       },
       {
+        "group": "Flemish",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
         "group": "French",
         "pct": 0.0,
         "count": 62
@@ -10280,9 +10310,19 @@
         "count": 5
       },
       {
-        "group": "Croatian",
+        "group": "German",
         "pct": 0.0,
-        "count": 56
+        "count": 267
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 228
       },
       {
         "group": "Indian",
@@ -10310,14 +10350,9 @@
         "count": 18
       },
       {
-        "group": "Canadian",
+        "group": "Jewish",
         "pct": 0.0,
-        "count": 62
-      },
-      {
-        "group": "Catalan",
-        "pct": 0.0,
-        "count": 1
+        "count": 25
       },
       {
         "group": "Kazakh",
@@ -10340,19 +10375,14 @@
         "count": 2
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 4
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 9
       },
       {
-        "group": "Hungarian",
+        "group": "Lithuanian",
         "pct": 0.0,
-        "count": 228
+        "count": 4
       },
       {
         "group": "Macedonian",
@@ -10363,16 +10393,6 @@
         "group": "Moldovan",
         "pct": 0.0,
         "count": 96
-      },
-      {
-        "group": "German",
-        "pct": 0.0,
-        "count": 267
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 31
       },
       {
         "group": "Norwegian",
@@ -10390,11 +10410,6 @@
         "count": 6
       },
       {
-        "group": "Austrian",
-        "pct": 0.0,
-        "count": 61
-      },
-      {
         "group": "Romanian",
         "pct": 0.0,
         "count": 110
@@ -10405,14 +10420,14 @@
         "count": 39
       },
       {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 75
-      },
-      {
         "group": "Scottish",
         "pct": 0.0,
         "count": 5
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 103
       },
       {
         "group": "Silesian",
@@ -10423,16 +10438,6 @@
         "group": "Slovene",
         "pct": 0.0,
         "count": 8
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 103
-      },
-      {
-        "group": "Syrian",
-        "pct": 0.0,
-        "count": 10
       },
       {
         "group": "Spanish",
@@ -10450,6 +10455,11 @@
         "count": 32
       },
       {
+        "group": "Syrian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
         "group": "Turkish",
         "pct": 0.0,
         "count": 29
@@ -10458,16 +10468,6 @@
         "group": "Walloon",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Flemish",
-        "pct": 0.0,
-        "count": 6
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 25
       }
     ],
     "sources": [
@@ -10545,6 +10545,11 @@
         "count": 10463
       },
       {
+        "group": "Believer, church not named",
+        "pct": 0.8,
+        "count": 9490
+      },
+      {
         "group": "Lutheran",
         "pct": 0.8,
         "count": 9279
@@ -10553,11 +10558,6 @@
         "group": "Protestant (unspecified)",
         "pct": 0.8,
         "count": 8876
-      },
-      {
-        "group": "Believer, church not named",
-        "pct": 0.8,
-        "count": 9490
       },
       {
         "group": "Other Christian",
@@ -10575,11 +10575,6 @@
         "count": 2918
       },
       {
-        "group": "Seventh-day Adventist",
-        "pct": 0.2,
-        "count": 1902
-      },
-      {
         "group": "Czechoslovak Hussite",
         "pct": 0.2,
         "count": 1888
@@ -10590,29 +10585,14 @@
         "count": 2266
       },
       {
+        "group": "Seventh-day Adventist",
+        "pct": 0.2,
+        "count": 1902
+      },
+      {
         "group": "Orthodox",
         "pct": 0.1,
         "count": 1146
-      },
-      {
-        "group": "Latter-day Saints",
-        "pct": 0.0,
-        "count": 46
-      },
-      {
-        "group": "Greek Catholic",
-        "pct": 0.0,
-        "count": 388
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.0,
-        "count": 78
-      },
-      {
-        "group": "Islam",
-        "pct": 0.0,
-        "count": 302
       },
       {
         "group": "Buddhism",
@@ -10620,9 +10600,29 @@
         "count": 415
       },
       {
+        "group": "Greek Catholic",
+        "pct": 0.0,
+        "count": 388
+      },
+      {
         "group": "Hinduism",
         "pct": 0.0,
         "count": 144
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 302
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.0,
+        "count": 46
       },
       {
         "group": "Sikhism",
@@ -10667,16 +10667,6 @@
         "count": 589
       },
       {
-        "group": "Russian",
-        "pct": 0.1,
-        "count": 1085
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.1,
-        "count": 1364
-      },
-      {
         "group": "Hungarian",
         "pct": 0.1,
         "count": 899
@@ -10687,99 +10677,29 @@
         "count": 891
       },
       {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 1085
+      },
+      {
         "group": "Silesian",
         "pct": 0.1,
         "count": 668
       },
       {
-        "group": "French",
-        "pct": 0.0,
-        "count": 91
-      },
-      {
-        "group": "German",
-        "pct": 0.0,
-        "count": 581
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 132
-      },
-      {
-        "group": "Spanish",
-        "pct": 0.0,
-        "count": 202
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 68
-      },
-      {
-        "group": "Chinese",
-        "pct": 0.0,
-        "count": 125
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 72
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 375
-      },
-      {
-        "group": "Moldovan",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
-        "group": "Mongolian",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 309
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.0,
-        "count": 185
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 171
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 31
-      },
-      {
-        "group": "Romani",
-        "pct": 0.0,
-        "count": 580
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 1364
       },
       {
         "group": "Albanian",
         "pct": 0.0,
         "count": 67
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 185
       },
       {
         "group": "Armenian",
@@ -10792,9 +10712,74 @@
         "count": 15
       },
       {
+        "group": "Belarusian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 309
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 125
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 72
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
         "group": "Georgian",
         "pct": 0.0,
         "count": 13
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 581
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 375
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 132
       },
       {
         "group": "Japanese",
@@ -10817,14 +10802,14 @@
         "count": 2
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 5
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.0,
+        "count": 10
       },
       {
         "group": "Macedonian",
@@ -10832,54 +10817,19 @@
         "count": 77
       },
       {
-        "group": "Dutch",
+        "group": "Moldovan",
         "pct": 0.0,
-        "count": 35
+        "count": 14
       },
       {
-        "group": "Slovene",
+        "group": "Mongolian",
         "pct": 0.0,
-        "count": 11
+        "count": 22
       },
       {
-        "group": "Tajik",
+        "group": "Other language",
         "pct": 0.0,
-        "count": 1
-      },
-      {
-        "group": "Turkish",
-        "pct": 0.0,
-        "count": 68
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 4
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 6
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 42
-      },
-      {
-        "group": "Bengali",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Punjabi",
-        "pct": 0.0,
-        "count": 2
+        "count": 432
       },
       {
         "group": "Pashto",
@@ -10892,9 +10842,34 @@
         "count": 30
       },
       {
-        "group": "Urdu",
+        "group": "Punjabi",
         "pct": 0.0,
-        "count": 5
+        "count": 2
+      },
+      {
+        "group": "Romani",
+        "pct": 0.0,
+        "count": 580
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 171
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.0,
+        "count": 3
       },
       {
         "group": "Sign language",
@@ -10902,9 +10877,34 @@
         "count": 122
       },
       {
-        "group": "Other language",
+        "group": "Slovene",
         "pct": 0.0,
-        "count": 432
+        "count": 11
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 202
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 4
       }
     ],
     "ethnicity": [
@@ -10934,14 +10934,14 @@
         "count": 23514
       },
       {
-        "group": "Other",
-        "pct": 0.3,
-        "count": 3678
-      },
-      {
         "group": "German",
         "pct": 0.3,
         "count": 3284
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 3678
       },
       {
         "group": "Roma",
@@ -10964,6 +10964,11 @@
         "count": 1340
       },
       {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 1011
+      },
+      {
         "group": "Hungarian",
         "pct": 0.1,
         "count": 1037
@@ -10972,11 +10977,6 @@
         "group": "Russian",
         "pct": 0.1,
         "count": 696
-      },
-      {
-        "group": "Greek",
-        "pct": 0.1,
-        "count": 1011
       },
       {
         "group": "Ukrainian",
@@ -10999,11 +10999,6 @@
         "count": 448
       },
       {
-        "group": "English",
-        "pct": 0.0,
-        "count": 183
-      },
-      {
         "group": "Arab",
         "pct": 0.0,
         "count": 31
@@ -11019,19 +11014,24 @@
         "count": 62
       },
       {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 90
+      },
+      {
         "group": "Azerbaijani",
         "pct": 0.0,
         "count": 17
       },
       {
-        "group": "Belgian",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
         "group": "Belarusian",
         "pct": 0.0,
         "count": 124
+      },
+      {
+        "group": "Belgian",
+        "pct": 0.0,
+        "count": 25
       },
       {
         "group": "Bosniak",
@@ -11049,14 +11049,19 @@
         "count": 334
       },
       {
-        "group": "Chechen",
+        "group": "Canadian",
+        "pct": 0.0,
+        "count": 107
+      },
+      {
+        "group": "Catalan",
         "pct": 0.0,
         "count": 4
       },
       {
-        "group": "Montenegrin",
+        "group": "Chechen",
         "pct": 0.0,
-        "count": 19
+        "count": 4
       },
       {
         "group": "Chinese",
@@ -11064,9 +11069,24 @@
         "count": 84
       },
       {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 155
+      },
+      {
         "group": "Danish",
         "pct": 0.0,
         "count": 4
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 183
       },
       {
         "group": "Estonian",
@@ -11079,6 +11099,11 @@
         "count": 15
       },
       {
+        "group": "Flemish",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
         "group": "French",
         "pct": 0.0,
         "count": 162
@@ -11089,9 +11114,9 @@
         "count": 28
       },
       {
-        "group": "Croatian",
+        "group": "Icelandic",
         "pct": 0.0,
-        "count": 155
+        "count": 3
       },
       {
         "group": "Indian",
@@ -11109,11 +11134,6 @@
         "count": 82
       },
       {
-        "group": "Icelandic",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
         "group": "Italian",
         "pct": 0.0,
         "count": 317
@@ -11124,14 +11144,9 @@
         "count": 28
       },
       {
-        "group": "Canadian",
+        "group": "Jewish",
         "pct": 0.0,
-        "count": 107
-      },
-      {
-        "group": "Catalan",
-        "pct": 0.0,
-        "count": 4
+        "count": 77
       },
       {
         "group": "Kazakh",
@@ -11154,19 +11169,14 @@
         "count": 3
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
         "group": "Latvian",
         "pct": 0.0,
         "count": 6
       },
       {
-        "group": "Sorbian",
+        "group": "Lithuanian",
         "pct": 0.0,
-        "count": 2
+        "count": 16
       },
       {
         "group": "Macedonian",
@@ -11184,9 +11194,9 @@
         "count": 53
       },
       {
-        "group": "Dutch",
+        "group": "Montenegrin",
         "pct": 0.0,
-        "count": 40
+        "count": 19
       },
       {
         "group": "Norwegian",
@@ -11204,11 +11214,6 @@
         "count": 26
       },
       {
-        "group": "Austrian",
-        "pct": 0.0,
-        "count": 90
-      },
-      {
         "group": "Romanian",
         "pct": 0.0,
         "count": 91
@@ -11224,19 +11229,19 @@
         "count": 10
       },
       {
-        "group": "Slovene",
-        "pct": 0.0,
-        "count": 26
-      },
-      {
         "group": "Serbian",
         "pct": 0.0,
         "count": 193
       },
       {
-        "group": "Syrian",
+        "group": "Slovene",
         "pct": 0.0,
-        "count": 16
+        "count": 26
+      },
+      {
+        "group": "Sorbian",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "Spanish",
@@ -11252,6 +11257,11 @@
         "group": "Swiss",
         "pct": 0.0,
         "count": 48
+      },
+      {
+        "group": "Syrian",
+        "pct": 0.0,
+        "count": 16
       },
       {
         "group": "Tajik",
@@ -11277,16 +11287,6 @@
         "group": "Welsh",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Flemish",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 77
       }
     ],
     "sources": [
