@@ -1330,6 +1330,24 @@ class TheYearBelongsToTheFigure(unittest.TestCase):
         got = self.roll(self.parent(2021), self.kids(2000))
         self.assertEqual(got["religion_year"], 2000)
 
+    def test_an_undated_sum_says_why_on_the_record(self):
+        # A blank where a year belongs reads as an omission. Pakistan is the
+        # case: four provinces and Islamabad from the 2023 census, Azad Kashmir
+        # from 2017, so the sum is genuinely undated rather than unfinished.
+        kids = [self.child("North", 600, {"Alpha": 500, "Beta": 100}, 2023),
+                self.child("South", 400, {"Alpha": 300, "Beta": 100}, 2017)]
+        note = self.roll(self.parent(2021), kids)["religion_note"]
+        self.assertIn("do not all report the same year (2017, 2023)", note)
+
+    def test_children_with_no_year_at_all_say_that_instead(self):
+        note = self.roll(self.parent(2021), self.kids())["religion_note"]
+        self.assertIn("do not date their figures", note)
+
+    def test_a_sum_that_is_dated_explains_nothing(self):
+        note = self.roll(self.parent(2021), self.kids(2000))["religion_note"]
+        self.assertNotIn("do not date", note)
+        self.assertNotIn("same year", note)
+
     def test_children_that_say_nothing_leave_it_undated(self):
         got = self.roll(self.parent(2021), self.kids())
         self.assertEqual([g["group"] for g in got["religion"]],
