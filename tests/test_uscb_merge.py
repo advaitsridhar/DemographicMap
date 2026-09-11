@@ -1,8 +1,9 @@
 """Census areas that share one boundary shape, summed into it.
 
-Two real cases, and the figures here are the adapter's own output for them --
-``data/processed/pakistan_language.json`` and ``data/processed/ethiopia_region.json``,
-which is what ``uscb.read()`` printed when it last ran against the workbooks:
+Two real cases. Every figure and every area name here is the adapter's own
+output for them -- ``data/processed/pakistan_language.json`` and
+``data/processed/ethiopia_region.json``, which is what the reader printed when
+it last ran against the workbooks:
 
 * **Karachi.** The 2017 census counts six districts; geoBoundaries draws one
   shape. All six reached no shape, so Karachi -- 16.0 million people, the
@@ -14,17 +15,27 @@ which is what ``uscb.read()`` printed when it last ran against the workbooks:
 
 Addis Ababa is also the control. Its ten sub-cities come to 2,739,551 against
 a region row of 2,739,551 -- the source's own arithmetic saying these ten are
-all of it -- so the test asserts the assembly against a figure this project did
-not compute.
+all of it -- so the assembly is asserted against a figure this project did not
+compute.
+
+**Why these tests go through ``read()`` and not straight into ``combine()``.**
+The first version of them did the latter, handing ``combine()`` a mapping this
+file had built, whose area names this file had chosen. It passed, and the
+adapter then merged nothing in either country on the runner: the workbooks
+print "KARACHI CENTRAL DISTRICT" where the config says "Karachi Central
+District", and a test that writes both sides itself cannot see a disagreement
+between them. So the fixture is now a sheet, every test reads it the way a run
+reads it, and the sheet is read in both spellings -- see ``CASES``.
 
 The workbooks themselves are not in the repository (they are fetched from HDX
-at run time), so the sheet used by the end-to-end test is built to the schema
-the module documents: the geography column names are quoted from ``uscb``'s own
-``GEOGRAPHY`` set, the labels in the second header row are the ones the adapter
-publishes, and the figures and area names are the real ones above. The exact
-spelling of a group column's identifier is the one thing reconstructed, and it
-is the one thing nothing here depends on -- ``groups()`` takes the label from
-the second header row, not from the name.
+at run time). The geography column names below are quoted from ``uscb``'s own
+``GEOGRAPHY`` set and the group labels are the ones the adapter publishes; the
+group columns' identifiers are the one thing reconstructed, and the one thing
+nothing depends on, because ``groups()`` takes the label from the second header
+row rather than from the name. Ethiopia's religion sheet is really reported by
+sex and its fixture here is not: ``check_sexes`` is a different guard with its
+own reason, and splitting these figures by sex to satisfy it would mean
+inventing numbers.
 """
 
 import dataclasses
@@ -39,8 +50,20 @@ sys.path.insert(0, str(ROOT))
 from scripts.fetch_census import uscb  # noqa: E402
 
 
-# Table 11, population by mother tongue, for the six districts of Karachi.
-# Counts as data/processed/pakistan_language.json carries them.
+# The two spellings a sheet has been seen in. Pakistan's Table 11 prints its
+# areas in capitals -- the run's own log names "ASTORE DISTRICT, AZAD KASHMIR,
+# BAGH DISTRICT" among the areas it found -- and the declarations are written
+# the way `record()` publishes them, which is `str.title()` of that. Both are
+# read here because which case a given workbook uses is not something this
+# project should have to know, and the run that did know produced a silent
+# no-op.
+CASES = {"as the sheet prints it": str.upper,
+         "as the record spells it": lambda text: text}
+
+
+# Table 11, population by mother tongue, for the six districts of Karachi,
+# for Badin -- a district of Sindh that is not part of it -- and for Sindh's
+# own row, which is what the assembly is checked against.
 LANGUAGES = ("Urdu", "Punjabi", "Sindhi", "Pushto", "Balochi", "Kashmiri",
              "Sareiki", "Hindko", "Brahvi", "Other language")
 
@@ -58,14 +81,14 @@ KARACHI = {
     "Malir District":
         (248518, 232396, 603739, 372665, 157421, 7898, 76203, 131465, 24337, 69704),
 }
-
-# Badin, a district of Sindh that is not part of Karachi, from the same table.
 BADIN = (14982, 62221, 1698882, 5792, 1908, 124, 8997, 5070, 4093, 2889)
+SINDH = (8707714, 2542913, 29476764, 2613790, 956516, 69836, 1067751, 753736,
+         350014, 1315476)
 
 # The 2007 census's religion sheet for Addis Ababa's ten sub-cities, and the
-# region's own printed row beneath them. Six groups rather than the language
-# sheet's ninety, because the merge does not care which field it is folding and
-# a fixture that fits on a screen can be read.
+# region's own printed row. Six groups rather than the language sheet's ninety,
+# because the merge does not care which field it is folding and a fixture that
+# fits on a screen can be read.
 RELIGIONS = ("Orthodox", "Protestant", "Catholic", "Islamic", "Traditional",
              "Other religion")
 
@@ -81,223 +104,254 @@ ADDIS = {
     "Nefas Silk Lafto": (237376, 30968, 1428, 43689, 168, 2654),
     "Yeka": (292847, 25503, 1189, 23582, 168, 3375),
 }
-
-# The region's own row in the same sheet, which the ten must come to.
 ADDIS_REGION = (2045445, 212907, 13202, 444025, 1377, 22595)
-
-
-def areas(table: dict[str, tuple[int, ...]], labels: tuple[str, ...],
-          parent: str, level: int,
-          published: dict[str, float] | None = None
-          ) -> dict[tuple[str, str], dict]:
-    """The mapping ``read()`` returns, for one sheet's worth of areas."""
-    out = {}
-    for name, figures in table.items():
-        counts = {label: float(value)
-                  for label, value in zip(labels, figures) if value}
-        total = sum(counts.values())
-        out[(parent, name)] = {
-            "level": level, "parent": parent, "name": name,
-            "counts": counts,
-            "published": (published or {}).get(name, total),
-            "summed": total}
-    return out
-
-
-def pakistan(**over) -> dict[tuple[str, str], dict]:
-    return areas(KARACHI, LANGUAGES, "Sindh", 3, **over)
-
-
-def ethiopia() -> dict[tuple[str, str], dict]:
-    out = areas(ADDIS, RELIGIONS, "Ādīs Ābeba", 2)
-    # The region's own row, keyed as read() keys a first-order area.
-    counts = {label: float(v) for label, v in zip(RELIGIONS, ADDIS_REGION)}
-    out[("", "Ādīs Ābeba")] = {
-        "level": 1, "parent": "", "name": "Ādīs Ābeba", "counts": counts,
-        "published": sum(counts.values()), "summed": sum(counts.values())}
-    return out
-
 
 LANGUAGE = uscb.Topic("Mother Tongue", "language", prefix="LNG_")
 RELIGION = uscb.Topic("Religion", "religion")
 
 
-class Merging(unittest.TestCase):
+class Book:
+    """Just enough of an openpyxl workbook for ``sheet_rows()``."""
 
-    def test_karachi_is_summed_into_one_area(self):
-        found = pakistan()
-        uscb.combine(uscb.PAKISTAN, LANGUAGE, found)
+    def __init__(self, name: str, rows: list[list]):
+        self.sheetnames = [name]
+        self._rows = rows
 
-        self.assertIn(("Sindh", "Karachi"), found)
-        for part in KARACHI:
-            self.assertNotIn(("Sindh", part), found,
-                             "a part that has been summed must not also "
-                             "remain as an area of its own")
+    def __getitem__(self, _name):
+        rows = self._rows
+
+        class Sheet:
+            @staticmethod
+            def iter_rows(values_only=True):
+                return iter(rows)
+        return Sheet()
+
+
+def pakistan_sheet(case=str.upper, province: str = "Sindh") -> Book:
+    """Table 11 as the workbook lays it out: province at level 1, districts
+    at level 3, with the divisions at level 2 that this map does not read."""
+    names = ["AREA_NAME", "ADM1_NAME", "ADM2_NAME", "ADM3_NAME", "ADM_LEVEL"]
+    aliases = ["", "", "", "", ""]
+    for index, label in enumerate(LANGUAGES):
+        names.append(f"LNG_G{index:02d}")
+        aliases.append(label)
+    names.append("LNG_TOTAL")
+    aliases.append("Total population")
+    rows = [names, aliases]
+
+    rows.append([case(province), case(province), "", "", 1,
+                 *SINDH, sum(SINDH)])
+    for name, figures in KARACHI.items():
+        rows.append([case(name), case(province), case("Karachi Division"),
+                     case(name), 3, *figures, sum(figures)])
+    rows.append([case("Badin District"), case(province),
+                 case("Hyderabad Division"), case("Badin District"), 3,
+                 *BADIN, sum(BADIN)])
+    return Book("Mother Tongue", rows)
+
+
+def ethiopia_sheet(case=str.upper) -> Book:
+    """The religion sheet: region at level 1, sub-cities at level 2, and no
+    published denominator -- Ethiopia's workbook has no such column."""
+    names = ["AREA_NAME", "ADM1_NAME", "ADM2_NAME", "ADM_LEVEL"]
+    aliases = ["", "", "", ""]
+    for index, label in enumerate(RELIGIONS):
+        names.append(f"RLG_G{index:02d}")
+        aliases.append(label)
+    rows = [names, aliases]
+    region = "Ādīs Ābeba"
+    rows.append([case(region), case(region), "", 1, *ADDIS_REGION])
+    for name, figures in ADDIS.items():
+        rows.append([case(name), case(region), case(name), 2, *figures])
+    return Book("Religion", rows)
+
+
+def read_and_combine(book, country, topic):
+    found = uscb.read(book, country, topic)
+    uscb.combine(country, topic, found)
+    return found
+
+
+class Karachi(unittest.TestCase):
+    """Six districts, one shape, read off the sheet in either spelling."""
+
+    def test_the_six_become_one_area(self):
+        for label, case in CASES.items():
+            with self.subTest(label):
+                found = read_and_combine(pakistan_sheet(case),
+                                         uscb.PAKISTAN, LANGUAGE)
+                self.assertIn(("Sindh", "Karachi"), found,
+                              "no assembled Karachi; the declaration reached "
+                              "none of the sheet's areas")
+                karachi = found[("Sindh", "Karachi")]
+                self.assertEqual(karachi["assembled"], tuple(KARACHI))
+                self.assertEqual(karachi["level"], 3)
+                self.assertEqual(karachi["summed"], 16024894)
+                self.assertEqual(karachi["published"], 16024894)
+
+    def test_every_language_adds_up_and_none_is_invented(self):
+        found = read_and_combine(pakistan_sheet(), uscb.PAKISTAN, LANGUAGE)
         karachi = found[("Sindh", "Karachi")]
-        self.assertEqual(karachi["level"], 3)
-        self.assertEqual(karachi["assembled"], tuple(KARACHI))
-
-        # Every language adds up across the six, and nothing is invented: the
-        # merged area's groups are exactly the groups the parts had.
+        self.assertEqual(sorted(karachi["counts"]), sorted(LANGUAGES))
         for index, label in enumerate(LANGUAGES):
             self.assertEqual(karachi["counts"][label],
-                             sum(f[index] for f in KARACHI.values()),
-                             label)
-        self.assertEqual(karachi["summed"], 16024894)
-        self.assertEqual(karachi["published"], 16024894)
+                             sum(f[index] for f in KARACHI.values()), label)
 
-    def test_karachi_shares_sum_to_a_hundred(self):
-        found = pakistan()
-        uscb.combine(uscb.PAKISTAN, LANGUAGE, found)
+    def test_the_parts_do_not_survive_the_fold(self):
+        found = read_and_combine(pakistan_sheet(), uscb.PAKISTAN, LANGUAGE)
+        # Folded, because an area the fold did not touch keeps the sheet's own
+        # spelling and only the assembled one carries the declaration's.
+        left = sorted(uscb.spelling(uscb.PAKISTAN, *key)[1] for key in found)
+        self.assertEqual(left, ["Badin District", "Karachi", "Sindh"],
+                         "a part that has been summed must not also remain "
+                         "as an area of its own")
+
+    def test_the_shares_sum_to_a_hundred(self):
+        found = read_and_combine(pakistan_sheet(), uscb.PAKISTAN, LANGUAGE)
         row = found[("Sindh", "Karachi")]
         published = uscb.shares(row["counts"], total=row["published"])
         self.assertAlmostEqual(sum(g["pct"] for g in published), 100.0,
                                delta=0.15)
-        # Urdu first, as it is in every one of the six districts but Malir.
         self.assertEqual(published[0]["group"], "Urdu")
         self.assertEqual(published[0]["count"], 6779142)
 
-    def test_addis_matches_the_region_the_source_prints(self):
-        """The control the file supplies itself."""
-        found = ethiopia()
-        uscb.combine(uscb.ETHIOPIA, RELIGION, found)
+    def test_the_folded_sheet_still_reconciles(self):
+        found = read_and_combine(pakistan_sheet(), uscb.PAKISTAN, LANGUAGE)
+        uscb.check_total(uscb.PAKISTAN, LANGUAGE, found)     # no SystemExit
 
+
+class AddisAbaba(unittest.TestCase):
+    """Ten sub-cities, one shape, and the region row that proves the ten."""
+
+    def test_the_ten_become_one_area(self):
+        for label, case in CASES.items():
+            with self.subTest(label):
+                found = read_and_combine(ethiopia_sheet(case),
+                                         uscb.ETHIOPIA, RELIGION)
+                self.assertIn(("Ādīs Ābeba", "Ādīs Ābeba"), found,
+                              "no assembled Addis Ababa; the declaration "
+                              "reached none of the sheet's areas")
+                assembled = found[("Ādīs Ābeba", "Ādīs Ābeba")]
+                self.assertEqual(assembled["level"], 2,
+                                 "the assembly stays at the level of its parts")
+                self.assertEqual(assembled["summed"], 2739551.0)
+
+    def test_the_assembly_equals_the_region_the_source_prints(self):
+        found = read_and_combine(ethiopia_sheet(), uscb.ETHIOPIA, RELIGION)
         assembled = found[("Ādīs Ābeba", "Ādīs Ābeba")]
-        region = found[("", "Ādīs Ābeba")]
+        region = next(row for key, row in found.items()
+                      if row["level"] == 1)
         self.assertEqual(assembled["counts"], region["counts"])
-        self.assertEqual(assembled["summed"], 2739551.0)
-        self.assertEqual(assembled["level"], 2,
-                         "the assembly stays at the level of its parts")
-        self.assertEqual(region["level"], 1,
-                         "and the region's own row is untouched")
+        self.assertIsNone(assembled["published"],
+                          "Ethiopia's sheet publishes no denominator, and a "
+                          "denominator must not be invented from the parts")
 
-    def test_a_sheet_without_the_parts_is_left_alone(self):
-        """A workbook whose sheet does not list the parts merges nothing."""
-        found = {("Sindh", "Badin District"): {
-            "level": 3, "parent": "Sindh", "name": "Badin District",
-            "counts": {"Sindhi": 1.0}, "published": 1.0, "summed": 1.0}}
-        uscb.combine(uscb.PAKISTAN, LANGUAGE, found)
-        self.assertEqual(list(found), [("Sindh", "Badin District")])
+    def test_no_sub_city_is_left_as_a_record_of_its_own(self):
+        """The regression the runner found: sub-cities out of `no_shape` and
+        into nothing, matching no shape with nothing saying why."""
+        found = read_and_combine(ethiopia_sheet(), uscb.ETHIOPIA, RELIGION)
+        for sub in ADDIS:
+            self.assertNotIn(("Ādīs Ābeba", sub), found, sub)
+        self.assertEqual(len(found), 2, sorted(found))
 
 
 class Refusals(unittest.TestCase):
     """Every one of these is a way for a wrong merge to look like a right one."""
 
-    def test_a_missing_part_is_refused(self):
-        found = pakistan()
-        del found[("Sindh", "Malir District")]
+    def test_a_declaration_that_matches_nothing_is_refused(self):
+        """The silent failure: a full, reconciled read that merged nothing."""
+        country = dataclasses.replace(
+            uscb.PAKISTAN,
+            merged={("Sindh", "Karachi"): ("Karachi Centre District",)})
         with self.assertRaises(SystemExit) as caught:
-            uscb.combine(uscb.PAKISTAN, LANGUAGE, found)
+            read_and_combine(pakistan_sheet(), country, LANGUAGE)
+        message = str(caught.exception)
+        self.assertIn("not one of them is in the sheet", message)
+        # And it says what the sheet does have, which is where the answer is.
+        self.assertIn("Karachi Central District", message)
+
+    def test_a_declaration_whose_parent_matches_nothing_is_refused(self):
+        """What actually happened: the key was compared against a spelling no
+        cell in the sheet carries."""
+        country = dataclasses.replace(
+            uscb.PAKISTAN,
+            merged={("Sind", "Karachi"): uscb.PAKISTAN.merged[
+                ("Sindh", "Karachi")]})
+        with self.assertRaises(SystemExit) as caught:
+            read_and_combine(pakistan_sheet(), country, LANGUAGE)
+        self.assertIn("no areas under Sind at all", str(caught.exception))
+
+    def test_a_missing_part_is_refused(self):
+        book = pakistan_sheet()
+        book._rows = [r for r in book._rows
+                      if str(r[0]).upper() != "MALIR DISTRICT"]
+        with self.assertRaises(SystemExit) as caught:
+            read_and_combine(book, uscb.PAKISTAN, LANGUAGE)
         self.assertIn("Malir District", str(caught.exception))
-        # And the five that are there are still five areas, not one wrong one.
-        self.assertIn(("Sindh", "Korangi District"), found)
+        self.assertIn("part of an area's people", str(caught.exception))
 
     def test_an_assembled_area_the_sheet_also_prints_is_refused(self):
-        found = pakistan()
-        found[("Sindh", "Karachi")] = {
-            "level": 3, "parent": "Sindh", "name": "Karachi",
-            "counts": {"Urdu": 1.0}, "published": 1.0, "summed": 1.0}
+        book = pakistan_sheet()
+        book._rows.append(["KARACHI", "SINDH", "KARACHI DIVISION", "KARACHI",
+                           3, *BADIN, sum(BADIN)])
         with self.assertRaises(SystemExit) as caught:
-            uscb.combine(uscb.PAKISTAN, LANGUAGE, found)
+            read_and_combine(book, uscb.PAKISTAN, LANGUAGE)
         self.assertIn("twice", str(caught.exception))
 
     def test_parts_at_two_levels_are_refused(self):
-        found = pakistan()
-        found[("Sindh", "Malir District")]["level"] = 2
+        found = uscb.read(pakistan_sheet(), uscb.PAKISTAN, LANGUAGE)
+        found[("SINDH", "MALIR DISTRICT")]["level"] = 1
         with self.assertRaises(SystemExit) as caught:
             uscb.combine(uscb.PAKISTAN, LANGUAGE, found)
         self.assertIn("two levels", str(caught.exception))
 
     def test_a_half_published_denominator_is_refused(self):
-        found = pakistan()
-        found[("Sindh", "Malir District")]["published"] = None
+        found = uscb.read(pakistan_sheet(), uscb.PAKISTAN, LANGUAGE)
+        found[("SINDH", "MALIR DISTRICT")]["published"] = None
         with self.assertRaises(SystemExit) as caught:
             uscb.combine(uscb.PAKISTAN, LANGUAGE, found)
         self.assertIn("denominator", str(caught.exception))
 
-    def test_no_denominator_anywhere_is_allowed(self):
-        """Ethiopia publishes none, and that is not the same fault."""
-        found = ethiopia()
-        for row in found.values():
-            row["published"] = None
-        uscb.combine(uscb.ETHIOPIA, RELIGION, found)
-        self.assertIsNone(found[("Ādīs Ābeba", "Ādīs Ābeba")]["published"])
-        self.assertEqual(found[("Ādīs Ābeba", "Ādīs Ābeba")]["summed"],
-                         2739551.0)
-
     def test_a_part_also_declared_absent_is_refused(self):
-        """Two declarations that contradict each other."""
         country = dataclasses.replace(
             uscb.PAKISTAN,
             no_shape=frozenset((("Sindh", "Malir District"),)))
         with self.assertRaises(SystemExit) as caught:
-            uscb.combine(country, LANGUAGE, pakistan())
+            read_and_combine(pakistan_sheet(), country, LANGUAGE)
         self.assertIn("Malir District", str(caught.exception))
         self.assertIn("no_shape", str(caught.exception))
 
     def test_an_assembly_larger_than_its_parent_is_refused(self):
-        found = ethiopia()
-        found[("Ādīs Ābeba", "Yeka")]["counts"]["Orthodox"] += 1_000_000
-        found[("Ādīs Ābeba", "Yeka")]["published"] += 1_000_000
+        found = uscb.read(pakistan_sheet(), uscb.PAKISTAN, LANGUAGE)
+        row = found[("SINDH", "MALIR DISTRICT")]
+        row["counts"]["Urdu"] += 40_000_000
+        row["published"] += 40_000_000
         with self.assertRaises(SystemExit) as caught:
-            uscb.combine(uscb.ETHIOPIA, RELIGION, found)
+            uscb.combine(uscb.PAKISTAN, LANGUAGE, found)
         self.assertIn("not all inside", str(caught.exception))
-
-
-class Sheet(unittest.TestCase):
-    """The same merge, reached the way a run reaches it: through ``read()``."""
-
-    def sheet(self) -> list[list]:
-        names = ["AREA_NAME", "ADM1_NAME", "ADM2_NAME", "ADM3_NAME",
-                 "ADM_LEVEL"]
-        aliases = ["", "", "", "", ""]
-        for index, label in enumerate(LANGUAGES):
-            names.append(f"LNG_G{index:02d}")
-            aliases.append(label)
-        names.append("LNG_TOTAL")
-        aliases.append("Total population")
-        rows = [names, aliases]
-        for name, figures in KARACHI.items():
-            rows.append([name, "Sindh", "Karachi Division", name, 3,
-                         *figures, sum(figures)])
-        # One district that is not part of Karachi, to show the fold reaches
-        # only what it is declared to reach. Badin's figures, like the rest,
-        # are the adapter's own output for the real sheet.
-        rows.append(["Badin District", "Sindh", "Hyderabad Division",
-                     "Badin District", 3, *BADIN, sum(BADIN)])
-        return rows
-
-    def read(self):
-        rows = self.sheet()
-
-        class Book:
-            sheetnames = ["Mother Tongue"]
-
-            def __getitem__(self, _name):
-                class Sheet_:
-                    @staticmethod
-                    def iter_rows(values_only=True):
-                        return iter(rows)
-                return Sheet_()
-
-        found = uscb.read(Book(), uscb.PAKISTAN, LANGUAGE)
-        uscb.combine(uscb.PAKISTAN, LANGUAGE, found)
-        return found
-
-    def test_the_sheet_folds_to_karachi_and_badin(self):
-        found = self.read()
-        self.assertEqual(sorted(found),
-                         [("Sindh", "Badin District"), ("Sindh", "Karachi")])
-        self.assertEqual(found[("Sindh", "Karachi")]["summed"], 16024894)
-
-    def test_the_folded_sheet_still_reconciles(self):
-        """check_total is the reconciliation, and an assembly must face it."""
-        found = self.read()
-        uscb.check_total(uscb.PAKISTAN, LANGUAGE, found)     # no SystemExit
 
 
 class Declarations(unittest.TestCase):
     """What the configs claim, checked against each other rather than trusted."""
+
+    def test_every_declared_name_is_spelt_the_way_records_are(self):
+        """The invariant the fold rests on.
+
+        `record()` publishes `str.title()` of the sheet's cell, and `aliases`,
+        `no_shape` and `merged` are all written in that spelling. A
+        declaration written any other way matches nothing, which is what
+        happened, so it is asserted rather than assumed.
+        """
+        for country in uscb.COUNTRIES.values():
+            declared = []
+            for (parent, name), parts in country.merged.items():
+                declared += [parent, name, *parts]
+            for (parent, name) in country.no_shape:
+                declared += [parent, name]
+            for text in declared:
+                self.assertEqual(text, " ".join(text.split()).title(),
+                                 f"{country.iso3}: {text!r} is not written "
+                                 "the way record() spells an area")
 
     def test_no_area_is_both_absent_and_a_part(self):
         for country in uscb.COUNTRIES.values():
@@ -331,6 +385,25 @@ class Declarations(unittest.TestCase):
 
     def test_the_region_alias_reaches_the_boundary_name(self):
         self.assertIn("Region 14", uscb.ETHIOPIA.aliases["Ādīs Ābeba"])
+
+
+class Spelling(unittest.TestCase):
+
+    def test_case_and_padding_fold_to_one_key(self):
+        fold = uscb.spelling
+        self.assertEqual(fold(uscb.PAKISTAN, "SINDH", "KARACHI WEST DISTRICT"),
+                         ("Sindh", "Karachi West District"))
+        self.assertEqual(fold(uscb.PAKISTAN, "Sindh", "Karachi West District"),
+                         ("Sindh", "Karachi West District"))
+        self.assertEqual(fold(uscb.PAKISTAN, " Sindh ", "Karachi  West "
+                                                        "District"),
+                         ("Sindh", "Karachi West District"))
+
+    def test_an_empty_parent_reads_as_the_country(self):
+        """A first-order row has no parent cell, and `no_shape` names the
+        country there. The fold has to agree with it."""
+        self.assertEqual(uscb.spelling(uscb.PAKISTAN, "", "PUNJAB"),
+                         ("Pakistan", "Punjab"))
 
 
 if __name__ == "__main__":

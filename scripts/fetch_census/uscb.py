@@ -1481,6 +1481,34 @@ def read(book, country: Country,
     return out
 
 
+def spelling(country: Country, parent: str, name: str) -> tuple[str, str]:
+    """A (parent, area) pair written the way a Country's declarations write it.
+
+    Every declaration in a `Country` -- `aliases`, `no_shape` and `merged` --
+    is written in the spelling the records carry, which is the sheet's own
+    cell put through `str.title()`: that is what `record()` publishes and what
+    those three are read against. The sheets are not consistent about case.
+    Pakistan's Table 11 prints "KARACHI CENTRAL DISTRICT"; the declaration
+    says "Karachi Central District", because that is what came out the other
+    end.
+
+    This is not a hypothetical tidiness. `combine()` compared the raw cell for
+    exactly one run, and the raw cell is the one spelling no declaration in
+    this module is written in: it matched nothing in either country, assembled
+    nothing, and reported a clean read of 141 areas every one of which
+    reconciled against its published total. `aliases` and `no_shape` went on
+    working through the same run, which is why the miss looked like a Pakistan
+    problem rather than the one-line difference it was -- so the fold lives
+    here, named, in one place, instead of being spelt out at each use.
+
+    Whitespace is collapsed with it. A cell padded or double-spaced is the
+    same area, and `match_admin2` in the build already folds parent names that
+    way for the same reason.
+    """
+    return (" ".join(parent.split()).title() or country.name,
+            " ".join(name.split()).title())
+
+
 def combine(country: Country, topic: Topic,
             areas: dict[tuple[str, str], dict[str, Any]]) -> None:
     """Fold the census areas that share one boundary shape into that shape.
@@ -1495,6 +1523,12 @@ def combine(country: Country, topic: Topic,
     Every check here refuses rather than repairs, because each of them is a
     way for this to look like it worked:
 
+    * **Nothing matched at all.** The quietest one, and the one that actually
+      happened. A declaration that reaches none of the sheet's areas used to
+      be passed over on the theory that the sheet might not carry them; what
+      it really means is that the two are spelt differently, and the run then
+      reports a full and reconciled read while doing none of the work it was
+      configured to do. A declared merge fires or the run stops.
     * **A part missing.** The dangerous one. Five districts summed onto a
       shape that is six would put four fifths of Karachi's people on all of
       Karachi and report nothing wrong -- the shares would still add to 100%,
@@ -1518,24 +1552,44 @@ def combine(country: Country, topic: Topic,
     of exactly 2,739,551, which is the source's own arithmetic agreeing that
     these ten are all of it.
     """
+    # The sheet's own keys, indexed by the spelling the declarations use.
+    spelt = {}
+    for key in areas:
+        spelt.setdefault(spelling(country, *key), key)
+
     for (parent, name), parts in sorted(country.merged.items()):
-        keys = [(parent, part) for part in parts]
-        here = [key for key in keys if key in areas]
+        keys = [spelt.get((parent, part)) for part in parts]
+        here = [key for key in keys if key is not None]
         if not here:
-            continue                       # this sheet does not list them
+            # Named with what the sheet does have under that parent, because
+            # the difference is usually one look: "KARACHI CENTRAL DISTRICT"
+            # beside "Karachi Central District" says everything a paragraph
+            # of explanation would.
+            siblings = sorted(area for (its_parent, area) in spelt
+                              if its_parent == parent)
+            raise SystemExit(
+                f"{country.iso3} {topic.sheet}: {name} is declared as "
+                f"{', '.join(parts)} under {parent}, and not one of them is "
+                "in the sheet. " + (
+                    f"Under {parent} the sheet has: "
+                    + ", ".join(siblings[:8])
+                    + (" ..." if len(siblings) > 8 else "")
+                    if siblings else
+                    f"The sheet has no areas under {parent} at all; the "
+                    "parent is spelt differently or sits at another level."))
         if len(here) != len(keys):
-            absent = [part for (_p, part) in keys if (_p, part) not in areas]
+            absent = [part for part, key in zip(parts, keys) if key is None]
             raise SystemExit(
                 f"{country.iso3} {topic.sheet}: {name} under {parent} is "
                 f"{', '.join(parts)} and {', '.join(absent)} "
                 f"{'is' if len(absent) == 1 else 'are'} not in the sheet; "
                 "refusing to put part of an area's people on all of it")
-        if (parent, name) in areas:
+        if (parent, name) in spelt:
             raise SystemExit(
                 f"{country.iso3} {topic.sheet}: {name} under {parent} is "
                 "both printed in the sheet and assembled from its parts "
                 "here, so its people would be counted twice")
-        clash = [part for (_p, part) in keys
+        clash = [part for part in parts
                  if (parent or country.name, part) in country.no_shape]
         if clash:
             raise SystemExit(
@@ -1563,7 +1617,9 @@ def combine(country: Country, topic: Topic,
         total = None if published[0] is None else sum(published)
         summed = sum(counts.values())
 
-        whole = areas.get(("", parent))
+        # The parent's own row, found by the same fold: a first-order area
+        # has an empty parent cell, which `spelling()` reads as the country.
+        whole = areas.get(spelt.get((country.name, parent)))
         if whole and whole["published"] and total \
                 and total > whole["published"] * 1.001:
             raise SystemExit(
