@@ -1,4 +1,8 @@
-thailand: religion by province, NSO, 2000 Population and Housing Census, provincial final reports
-  'Nationality, religion, and language data for the provinces of Thailand': 30,739 bytes of wikitext
-  76 provinces with a 2000 religion
-  wrote data/processed/thailand_province.json (119 kB)
+wiki_census KAZ: Bureau of National Statistics of Kazakhstan, 2021 National Population Census, religious affiliation by region
+  'Religion in Kazakhstan': 34,569 bytes of wikitext
+  16 admin1 records; not matched by design: ['Turkistan Region']
+  wrote data/processed/kazakhstan_region.json (26 kB)
+wiki_census KHM: National Institute of Statistics of Cambodia, General Population Census of Cambodia 2019, religion by province
+  'Religion in Cambodia': 31,214 bytes of wikitext
+  25 admin1 records
+  wrote data/processed/cambodia_province.json (38 kB)
