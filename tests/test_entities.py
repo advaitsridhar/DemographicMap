@@ -2322,6 +2322,152 @@ class PakistanCells(unittest.TestCase):
                       candidates)
 
 
+class AjkYearbookReligion(unittest.TestCase):
+    """Table 15.24, off page 175 of the AJ&K Statistical Year Book 2023.
+
+    The rows below are real, read with probe_pdf --boxes. This table is a
+    census table the Bureau of Statistics does not publish for the territory
+    and the territory's own government does, which is why it is here at all.
+
+    Table 15.23 sits on the same page, splitting the same territory rural and
+    urban, and is not read: its rows are seven cells wide too, so what keeps
+    the two apart is the row label and nothing else.
+    """
+
+    ROWS = [
+        "Kotli[81-99] 771,535[155-182] -[210-213] 173[251-264] 2,272[311-329] "
+        "16[382-390] 21[440-448] 774,017[494-521]",
+        "Mirpur[81-107] 453,803[155-182] 2[209-214] 1,691[245-264] "
+        "1,007[311-329] 15[382-390] 23[440-448] 456,541[494-521]",
+        "Bhimber[81-113] 417,845[155-182] 2[209-214] 623[251-264] 37[321-329] "
+        "3[386-390] 33[440-448] 418,543[494-521]",
+    ]
+    WHOLE = ("AJ&K[81-107] 4,025,737[148-182] 14[205-214] 2,934[245-264] "
+             "3,402[311-329] 60[382-390] 270[436-448] 4,032,363[488-521]")
+    # Table 15.23's own AJ&K line, from the same page. Seven cells, and 54
+    # Muslims fewer than 15.24 prints for the same territory.
+    RURAL_URBAN = ("All[49-60] Sexes[62-83] 4,025,683[148-182] 14[205-214] "
+                   "2,934[245-264] 3,402[311-329] 60[382-390] 270[436-448] "
+                   "4,032,363[488-521]")
+
+    # The whole table as it is printed, for the checks. Muslim, Hindu,
+    # Christian, Ahmadi, Scheduled Castes, Other religion, TOTAL.
+    PRINTED = {
+        "Muzaffarabad": [650_820, 4, 257, 60, 4, 9, 651_154],
+        "Neelum": [189_783, 0, 2, 0, 0, 0, 189_785],
+        "Jhelum Valley": [226_415, 0, 39, 17, 1, 24, 226_496],
+        "Bagh": [371_780, 4, 73, 0, 15, 29, 371_901],
+        "Haveli": [146_199, 0, 2, 0, 2, 17, 146_220],
+        "Poonch": [499_782, 2, 74, 2, 4, 16, 499_826],
+        "Sudhnoti": [297_775, 0, 0, 7, 0, 98, 297_880],
+        "Kotli": [771_535, 0, 173, 2_272, 16, 21, 774_017],
+        "Mirpur": [453_803, 2, 1_691, 1_007, 15, 23, 456_541],
+        "Bhimber": [417_845, 2, 623, 37, 3, 33, 418_543],
+    }
+    TERRITORY = [4_025_737, 14, 2_934, 3_402, 60, 270, 4_032_363]
+
+    def setUp(self):
+        from scripts.fetch_census import pakistan
+        self.pk = pakistan
+
+    def read(self, spec):
+        return dict(zip(self.pk.AJK_COLUMNS,
+                        self.pk.values(PakistanCells.row(spec), "AJ&K", "row",
+                                       self.pk.AJK_COLUMNS)))
+
+    def table(self, **changes):
+        found = {name: dict(zip(self.pk.AJK_COLUMNS, counts))
+                 for name, counts in self.PRINTED.items()}
+        for name, counts in changes.items():
+            found[name.replace("_", " ")] = dict(zip(self.pk.AJK_COLUMNS, counts))
+        return found, dict(zip(self.pk.AJK_COLUMNS, self.TERRITORY))
+
+    def test_a_row_of_this_table_is_seven_cells_not_nine(self):
+        # The same counting rule against a different table. Read with Table
+        # 9's nine columns these rows would all be refused, which is the point
+        # of passing the width in rather than assuming one.
+        for spec in self.ROWS + [self.WHOLE]:
+            self.assertEqual(len(self.pk.printed(PakistanCells.row(spec))), 7)
+        with self.assertRaises(SystemExit):
+            self.pk.values(PakistanCells.row(self.WHOLE), "AJ&K", "row")
+
+    def test_kotli_reads_as_the_page_prints_it(self):
+        got = self.read(self.ROWS[0])
+        self.assertEqual(got["Muslim"], 771_535)
+        self.assertEqual(got["Hindu"], 0)          # the office's dash
+        self.assertEqual(got["Ahmadi"], 2_272)
+        self.assertEqual(got["TOTAL"], 774_017)
+        self.assertEqual(sum(v for k, v in got.items() if k != "TOTAL"),
+                         got["TOTAL"])
+
+    def test_the_territory_row_is_the_districts_column_by_column(self):
+        found, whole = self.table()
+        for column in self.pk.AJK_COLUMNS:
+            self.assertEqual(sum(c[column] for c in found.values()),
+                             whole[column], column)
+        self.pk.ajk_check(found, whole)
+
+    def test_a_district_missing_moves_a_column_and_is_refused(self):
+        found, whole = self.table()
+        del found["Neelum"]
+        with self.assertRaises(SystemExit) as caught:
+            self.pk.ajk_check(found, whole)
+        self.assertIn("+189,783", str(caught.exception))
+
+    def test_the_yearbooks_own_54_person_disagreement_is_tolerated(self):
+        # Poonch's religions sum to 54 more than its printed total, and the
+        # AJ&K row's parts exceed its own total by the same 54 -- which is
+        # exactly the gap between 15.24's Muslims and 15.23's. It is 0.011% of
+        # Poonch, it moves no share this map prints, and it is the table's own
+        # arithmetic rather than a misread: the columns still add up.
+        found, whole = self.table()
+        parts = sum(v for k, v in found["Poonch"].items() if k != "TOTAL")
+        self.assertEqual(parts - found["Poonch"]["TOTAL"], 54)
+        self.assertEqual(self.read(self.WHOLE)["Muslim"]
+                         - self.read(self.RURAL_URBAN)["Muslim"], 54)
+        self.pk.ajk_check(found, whole)           # tolerated, and logged
+
+    def test_a_district_off_by_more_than_a_tenth_of_a_percent_is_refused(self):
+        found, whole = self.table()
+        found["Poonch"] = dict(found["Poonch"])
+        found["Poonch"]["TOTAL"] -= 5_000
+        whole = dict(whole)
+        whole["TOTAL"] -= 5_000
+        with self.assertRaises(SystemExit) as caught:
+            self.pk.ajk_check(found, whole)
+        self.assertIn("religions sum to", str(caught.exception))
+
+    def test_the_records_are_the_territory_on_the_shape_drawn_for_it(self):
+        # Ten districts and one second-level shape. Publishing the districts
+        # would send nine rows to nothing and put the tenth's figures on the
+        # whole territory.
+        found, whole = self.table()
+        rows = self.pk.ajk_records(found, whole)
+        self.assertEqual([(r["level"], r["name"]) for r in rows],
+                         [("admin1", "Azad Jammu and Kashmir"),
+                          ("admin2", "Azad Kashmir")])
+        for row in rows:
+            self.assertEqual(row["population"]["value"], 4_032_363)
+            self.assertEqual(row["population"]["year"], 2017)
+            self.assertEqual(row["religion_year"], 2017)
+            leading = row["religion"][0]
+            self.assertEqual(leading["group"], "Muslim")
+            self.assertEqual(leading["count"], 4_025_737)
+            self.assertGreater(leading["pct"], 99.0)
+            # Mother tongue is the field this source does not carry, and it
+            # says so rather than going out empty.
+            self.assertIn("tongue", row["language"]["note"])
+
+    def test_the_source_names_the_census_and_not_the_yearbooks_year(self):
+        # The yearbook is 2023 and the table is the 2017 census. Reading the
+        # cover instead of the source line is how a six-year-old figure gets
+        # stamped as current.
+        self.assertIn("2017", self.pk.AJK_SOURCE)
+        self.assertIn("Pakistan Bureau of Statistics", self.pk.AJK_SOURCE)
+        self.assertIn("Year Book 2023", self.pk.AJK_SOURCE)
+        self.assertEqual(self.pk.AJK_YEAR, 2017)
+
+
 class PakistanDeclaresWhatIsNotPublished(unittest.TestCase):
     """Azad Jammu and Kashmir and Gilgit-Baltistan, said rather than left out.
 

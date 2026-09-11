@@ -200,6 +200,65 @@ TERRITORY_GAP = (
     "round is no better: its subnational workbook lists both territories and "
     "leaves them blank. The question was asked; the answer is unpublished.")
 
+# Azad Jammu and Kashmir's own government publishes what the Bureau's census
+# tables do not. The AJ&K Statistical Year Book 2023 carries two religion
+# tables from the 2017 census -- 15.23 for the territory rural and urban, and
+# 15.24 by district -- and 15.24 is read here because it is the one that can be
+# checked: its ten districts sum to its own territory row, column by column.
+#
+# This is the territory's Bureau of Statistics reprinting a Pakistan Bureau of
+# Statistics census table, which is why the record names the census as its
+# source and the yearbook as where it was read. The same standard the
+# Wikipedia-transcription route in wiki_census.py is held to, met by a
+# government publication rather than by an encyclopaedia.
+#
+# 2017 and not 2023: the yearbook is dated 2023 and its religion tables cite
+# the 2017 census, which is the year the records carry. A publication date is
+# not a reference year, and reading the cover instead of the source line is
+# how a nineteen-year-old figure gets stamped as current.
+AJK_BOOK = ("https://pndajk.gov.pk/uploadfiles/downloads/"
+            "AJ&K%20Statistical%20Year%20Book%202023(1).pdf")
+AJK_SOURCE = ("Pakistan Bureau of Statistics, Population and Housing Census "
+              "2017, Table: District wise Population of AJ&K by Religion, as "
+              "printed in the AJ&K Statistical Year Book 2023 (Bureau of "
+              "Statistics, P&DD, Azad Government of the State of Jammu & "
+              "Kashmir)")
+AJK_LICENCE = "Azad Government of the State of Jammu & Kashmir, P&DD"
+AJK_YEAR = 2017
+AJK_TABLE = re.compile(r"District\s*wise\s*Population\s*of\s*AJ&K\s*by\s*"
+                       r"Religion", re.I)
+AJK_WHOLE = "AJ&K"
+# The printed order, which is not Table 9's: there the total comes first and
+# here it comes last. The names are this project's, so that the AJ&K rows and
+# the four provinces' land in the same groups -- the yearbook writes
+# "Qadiani/Ahmadi" and "Scheduled Caste" for what Table 9 calls Ahmadi and
+# Scheduled Castes.
+AJK_COLUMNS = ["Muslim", "Hindu", "Christian", "Ahmadi", "Scheduled Castes",
+               "Other religion", "TOTAL"]
+AJK_DISTRICTS = ("Muzaffarabad", "Neelum", "Jhelum Valley", "Bagh", "Haveli",
+                 "Poonch", "Sudhnoti", "Kotli", "Mirpur", "Bhimber")
+
+AJK_NOTE = (
+    "Population and Housing Census 2017, as reprinted by the AJ&K Bureau of "
+    "Statistics in its Statistical Year Book 2023. Azad Jammu and Kashmir is "
+    "enumerated apart from the census proper -- its people are outside the "
+    "241.5 million Pakistan reports -- and the Bureau of Statistics publishes "
+    "no Table 9 for it, so this comes from the territory's own government "
+    "rather than from the same file as the four provinces. The categories are "
+    "the census's own: Ahmadis are counted separately from Muslims and "
+    "Scheduled Castes separately from Hindus.")
+AJK_ONE_SHAPE = (
+    "geoBoundaries draws one second-level unit for the whole territory where "
+    "the yearbook counts ten districts, so this is the territory's figure on "
+    "the territory's shape rather than any one district's.")
+AJK_LANGUAGE_GAP = (
+    "Mother tongue is the field Azad Jammu and Kashmir still has no source "
+    "for. The Bureau of Statistics publishes no Table 11 for it, the U.S. "
+    "Census Bureau's workbook of the 2017 census lists the territory and "
+    "leaves it blank, and the AJ&K Statistical Year Book 2023 -- which does "
+    "print the census's religion table -- contains the word 'tongue' on no "
+    "page of it.")
+
 # The name each territory is drawn under, and the second-level units inside it.
 # Both lists are geoBoundaries' own spellings, because a declaration that
 # reaches no shape declares nothing -- and the districts are what the map
@@ -351,19 +410,26 @@ def printed(cells: list[Cell]) -> list[int]:
     return [0 if digits is None else int(digits) for _right, digits in out]
 
 
-def values(cells: list[Cell], province: str, where: str) -> list[int] | None:
-    """One row's figures, or None if the row carries none."""
+def values(cells: list[Cell], province: str, where: str,
+           columns: list[str] = COLUMNS) -> list[int] | None:
+    """One row's figures, or None if the row carries none.
+
+    ``columns`` because two tables are read here and they are not the same
+    width: the Bureau's Table 9 prints nine cells to a row and the AJ&K
+    yearbook's Table 15.24 prints seven. What does not change is that the row
+    is counted rather than positioned, and a row of the wrong width is refused.
+    """
     figures = printed(cells)
     if not figures:
         return None
-    if len(figures) != len(COLUMNS):
+    if len(figures) != len(columns):
         # Refused rather than padded or truncated. A row with the wrong
         # number of cells is a row this reader has misread, and guessing
         # which end to trim is how a district ends up with another
         # district's religions while every total still adds up.
         raise SystemExit(
             f"{province}: {where} has {len(figures)} cells where the table "
-            f"has {len(COLUMNS)}: {figures}")
+            f"has {len(columns)}: {figures}")
     return figures
 
 
@@ -550,6 +616,131 @@ def fetch(candidates: tuple[str, ...]) -> tuple[bytes, str]:
     raise LookupError("; ".join(failures))
 
 
+def ajk_table(blob: bytes) -> tuple[dict[str, dict[str, int]], dict[str, int]]:
+    """Table 15.24 of the AJ&K yearbook: ten districts and the territory row.
+
+    Two things make this harder than it looks, and both are about *finding*
+    the table rather than reading it.
+
+    A five-hundred-page yearbook says "Muzaffarabad" on a hundred and eleven
+    pages, most of them about wheat. A reader that took any row beginning with
+    a district name would meet an agriculture table of six columns, refuse it
+    for having the wrong width, and stop the run over a vegetable yield. So
+    the table is found by its own caption, and only its page is read.
+
+    And a caption that is not there at all is not a misread. The yearbook is
+    reissued annually and this table could move or go; if no page carries the
+    caption this raises LookupError, which puts Azad Jammu and Kashmir back
+    where it was before -- a declared gap saying what is not published -- and
+    a caption that *is* there but does not yield ten districts is a misread
+    and refuses outright. The two failures must not be one failure.
+    """
+    for number, rows in enumerate(words_by_row(blob), start=1):
+        page = [(" ".join(t for _a, _b, t in cells), cells) for cells in rows]
+        if not any(AJK_TABLE.search(line) for line, _cells in page):
+            continue
+        found: dict[str, dict[str, int]] = {}
+        whole: dict[str, int] = {}
+        for line, cells in page:
+            name = next((d for d in AJK_DISTRICTS
+                         if line.startswith(f"{d} ")), None)
+            if name is None and not line.startswith(f"{AJK_WHOLE} "):
+                continue
+            figures = values(cells, "Azad Jammu and Kashmir",
+                             name or AJK_WHOLE, AJK_COLUMNS)
+            if not figures:
+                continue
+            if name is None:
+                whole = dict(zip(AJK_COLUMNS, figures))
+            elif name not in found:
+                found[name] = dict(zip(AJK_COLUMNS, figures))
+        if len(found) != len(AJK_DISTRICTS) or not whole:
+            raise SystemExit(
+                f"AJ&K Table 15.24 is on page {number} and this read "
+                f"{len(found)} of {len(AJK_DISTRICTS)} districts"
+                + ("" if whole else " and no AJ&K row")
+                + ": " + ", ".join(sorted(found)))
+        log(f"    Table 15.24 on page {number}: {len(found)} districts")
+        return found, whole
+    raise LookupError("no page carries Table 15.24's caption")
+
+
+def ajk_check(found: dict[str, dict[str, int]], whole: dict[str, int]) -> None:
+    """The controls the page supplies, and the one place it does not add up.
+
+    Column by column, the ten districts sum to the AJ&K row exactly -- all
+    seven of them, to the person. That is the control that matters, because a
+    district read wrong or missed would move one of those sums.
+
+    Row by row, nine of the ten districts' religions sum to the total printed
+    beside them and Poonch's sum to 54 more, which is also the amount by which
+    the AJ&K row's own parts exceed its own total. The other religion table in
+    the same yearbook, 15.23, splits AJ&K rural and urban and its Muslims come
+    to 4,025,683 against 15.24's 4,025,737 -- the same 54. So the yearbook
+    disagrees with itself about 54 Muslims in Poonch, out of four million
+    people, and says so twice. It is logged rather than silently carried: 54
+    is 0.011% of Poonch and moves no share this map prints, but a reader who
+    adds the row up deserves to find the discrepancy named rather than to
+    discover it.
+    """
+    for column in AJK_COLUMNS:
+        summed = sum(counts[column] for counts in found.values())
+        if summed != whole[column]:
+            raise SystemExit(
+                f"AJ&K: the ten districts hold {summed:,} under {column} "
+                f"against the {whole[column]:,} printed for the territory — "
+                f"{whole[column] - summed:+,}")
+    log(f"    all {len(AJK_COLUMNS)} columns sum to the printed AJ&K row")
+
+    for name, counts in sorted(found.items()):
+        total = counts["TOTAL"]
+        parts = sum(v for k, v in counts.items() if k != "TOTAL")
+        if parts == total:
+            continue
+        if abs(parts - total) > max(1, 0.001 * total):
+            raise SystemExit(
+                f"AJ&K: {name}'s religions sum to {parts:,} against a printed "
+                f"{total:,}")
+        log(f"    {name}: religions sum to {parts - total:+,} against its own "
+            f"printed total, which the yearbook's own 15.23 also shows")
+
+
+def ajk_records(found: dict[str, dict[str, int]],
+                whole: dict[str, int]) -> list[dict[str, Any]]:
+    """Azad Jammu and Kashmir, and the one second-level shape drawn for it.
+
+    Both from the printed territory row, which the check above has just shown
+    equals the ten districts column for column. The districts themselves are
+    not published as records: geoBoundaries draws Azad Kashmir as a single
+    second-level unit, so ten rows would reach one shape, nine of them would
+    lose, and the tenth would put a district's figures on the whole territory
+    -- the Karachi failure in reverse and far worse, because it would look
+    entirely normal.
+    """
+    total = whole["TOTAL"]
+    parts = {k: v for k, v in whole.items() if k != "TOTAL"}
+    cite = [{"field": "population/religion", "name": AJK_SOURCE,
+             "url": AJK_BOOK, "license": AJK_LICENCE}]
+    return [
+        record("PAK-ajk", "Azad Jammu and Kashmir", level="admin1",
+               parent="PAK", aliases=["Azad Kashmir"],
+               population=measure(total, year=AJK_YEAR, source=AJK_SOURCE),
+               religion=shares(parts, total=total) or gap(NOT_AVAILABLE),
+               religion_year=AJK_YEAR, religion_note=AJK_NOTE,
+               language=gap(NOT_AVAILABLE, AJK_LANGUAGE_GAP),
+               sources=list(cite)),
+        record("PAK-ajk-azad-kashmir", "Azad Kashmir", level="admin2",
+               parent="PAK", parent_name="Azad Jammu and Kashmir",
+               parent_aliases=["Azad Kashmir"],
+               population=measure(total, year=AJK_YEAR, source=AJK_SOURCE),
+               religion=shares(parts, total=total) or gap(NOT_AVAILABLE),
+               religion_year=AJK_YEAR,
+               religion_note=AJK_NOTE + " " + AJK_ONE_SHAPE,
+               language=gap(NOT_AVAILABLE, AJK_LANGUAGE_GAP),
+               sources=list(cite)),
+    ]
+
+
 def declared_gaps(absent: dict[str, list[tuple[str, str]]]) -> list[dict[str, Any]]:
     """Records for the territories the census tables do not reach.
 
@@ -671,6 +862,34 @@ def main() -> int:
         raise SystemExit(f"{len(absent[REQUIRED])} of Pakistan's four "
                          "provinces were not read; refusing to write a "
                          "partial Pakistan")
+
+    # Azad Jammu and Kashmir, from its own government, where the Bureau's
+    # series stops. Only when the Bureau's series did stop: if a Table 9 for
+    # the territory ever appears, that is the same office as the four
+    # provinces reading the same question, and it wins without a rule needing
+    # to be written for it.
+    if any(slug == "ajk" for slug, _line in absent[APART]):
+        log("  Azad Jammu and Kashmir, from the territory's own yearbook")
+        try:
+            blob, url = fetch((AJK_BOOK,))
+        except LookupError as err:
+            log(f"    NOT READ -- {err}")
+        else:
+            log(f"    {len(blob):,} bytes from {url}")
+            try:
+                found, whole = ajk_table(blob)
+            except LookupError as err:
+                # The yearbook is reissued every year. A table that is no
+                # longer in it leaves the territory declared rather than
+                # stopping the run, which is where it was before this route
+                # existed.
+                log(f"    NOT READ -- {err}")
+            else:
+                ajk_check(found, whole)
+                records.extend(ajk_records(found, whole))
+                absent[APART] = [(slug, line) for slug, line in absent[APART]
+                                 if slug != "ajk"]
+
     records.extend(declared_gaps(absent))
     out = args.out or PROCESSED / "pakistan_district.json"
     write_json(out, records)
