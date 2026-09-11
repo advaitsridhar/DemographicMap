@@ -1,14 +1,10 @@
-poland: admin1
-/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
-  warn("""Cannot parse header or footer so it will be ignored""")
-  ethnicity: 16 units
-  language: 16 units
-  religion: 17 units
-  16 records
-  wrote data/processed/poland_voivodeship.json (259 kB)
-poland: admin2
-  ethnicity: 380 units
-  language: 380 units
-  religion: 380 units
-  380 records
-  wrote data/processed/poland_powiat.json (3335 kB)
+czechia: SLDB 2021 open data, kraje and okresy
+  ethnicity: 76,109,588 bytes
+  religion: 80,039,394 bytes
+  language: 13,944,413 bytes
+  {'admin1': 14, 'admin2': 77}
+  Hlavní město Praha ethnicity: 79 bars, largest Czech 61.7%
+  Hlavní město Praha religion: 23 bars, largest No religion 49.6%
+  Hlavní město Praha language: 58 bars, largest Czech 76.2%
+  wrote data/processed/czechia_kraj.json (215 kB)
+  wrote data/processed/czechia_okres.json (818 kB)
