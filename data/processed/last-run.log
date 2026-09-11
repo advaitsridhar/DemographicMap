@@ -1,14 +1,7 @@
 india_census: Census 2011, level=state
   validated against published national totals: 640 districts, 1,210,854,977 people
   C-01 Appendix: https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx
-C-01 Appendix: it does not agree with C-01, so it is not being used:
-  - State - JAMMU & KASHMIR: no state of that name in the C-01 extract, so its bucket cannot be checked
-  - State - HIMACHAL PRADESH: no state of that name in the C-01 extract, so its bucket cannot be checked
-  - State - PUNJAB: no state of that name in the C-01 extract, so its bucket cannot be checked
-  - State - CHANDIGARH: no state of that name in the C-01 extract, so its bucket cannot be checked
-  - State - UTTARAKHAND: no state of that name in the C-01 extract, so its bucket cannot be checked
-  - State - HARYANA: no state of that name in the C-01 extract, so its bucket cannot be checked
-  - State - NCT OF DELHI: no state of that name in the C-01 extract, so its bucket cannot be checked
-  - State - RAJASTHAN: no state of that name in the C-01 extract, so its bucket cannot be checked
-  - State - UTTAR PRADESH: no state of that name in the C-01 extract, so its bucket cannot be checked
-  - State - BIHAR: no state of that name in the C-01 extract, so its bucket cannot be checked
+  C-01 Appendix: 35 states, 83 named religions, 7,788,066 of the 7,937,734 people in 'Other religions and persuasions'
+  wrote data/processed/india_state.json (165 kB)
+  37 records, 35 with religion shares, 2 explicit gaps carrying their reason
+  groups beyond C-01's eight columns (20): ADI DHARM, Addi Bassi, Adim dhamm, Animist, Atheist, Doni Polo / Sidonyi Polo, Gond / Gondi, Heraka, Khasi, Nani Intiya, Niamtre, Nocte, Other religions (not separately named), Rangfra, Sanamahi, Sari Dharma, Sarna, Songsarek, Tribal Religion, Yumasam

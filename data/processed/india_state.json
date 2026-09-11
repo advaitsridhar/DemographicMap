@@ -56,7 +56,7 @@
         "count": 338
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.1,
         "count": 564
       },
@@ -82,12 +82,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "ANDAMAN AND NICOBAR ISLANDS"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 564 people here -- 0.1% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 5 religions in this state; the 5 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -160,7 +168,7 @@
         "count": 36692
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 9547
       }
@@ -181,12 +189,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "ANDHRA PRADESH"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 9,547 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 23 religions in this state; the 23 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -239,9 +255,9 @@
         "count": 401876
       },
       {
-        "group": "Other religions",
-        "pct": 26.2,
-        "count": 362553
+        "group": "Doni Polo / Sidonyi Polo",
+        "pct": 23.5,
+        "count": 324604
       },
       {
         "group": "Buddhist",
@@ -254,9 +270,29 @@
         "count": 27045
       },
       {
+        "group": "Tribal Religion",
+        "pct": 1.1,
+        "count": 14663
+      },
+      {
+        "group": "Rangfra",
+        "pct": 0.8,
+        "count": 10598
+      },
+      {
         "group": "Not stated",
         "pct": 0.5,
         "count": 6648
+      },
+      {
+        "group": "Other religions (not separately named)",
+        "pct": 0.5,
+        "count": 6657
+      },
+      {
+        "group": "Nani Intiya",
+        "pct": 0.3,
+        "count": 4528
       },
       {
         "group": "Sikh",
@@ -267,6 +303,11 @@
         "group": "Jain",
         "pct": 0.1,
         "count": 771
+      },
+      {
+        "group": "Nocte",
+        "pct": 0.1,
+        "count": 1503
       }
     ],
     "language": {
@@ -285,12 +326,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "ARUNACHAL PRADESH"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 362,553 people here -- 26.2% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. The largest here is Doni Polo / Sidonyi Polo: 324,604 people, 23.5% of the state and 90% of the residual. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 27 religions in this state; the 22 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -363,7 +412,7 @@
         "count": 25949
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.1,
         "count": 27118
       }
@@ -384,12 +433,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "ASSAM"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 27,118 people here -- 0.1% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 29 religions in this state; the 29 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -467,7 +524,7 @@
         "count": 18914
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 13437
       }
@@ -488,12 +545,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "BIHAR"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 13,437 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 24 religions in this state; the 24 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -571,7 +636,7 @@
         "count": 1014
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 246
       }
@@ -592,12 +657,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "CHANDIGARH"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 246 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 7 religions in this state; the 7 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -650,9 +723,9 @@
         "count": 490542
       },
       {
-        "group": "Other religions",
-        "pct": 1.9,
-        "count": 494594
+        "group": "Gond / Gondi",
+        "pct": 1.4,
+        "count": 368438
       },
       {
         "group": "Sikh",
@@ -670,9 +743,24 @@
         "count": 61510
       },
       {
+        "group": "Adim dhamm",
+        "pct": 0.2,
+        "count": 57011
+      },
+      {
+        "group": "Other religions (not separately named)",
+        "pct": 0.2,
+        "count": 40734
+      },
+      {
         "group": "Not stated",
         "pct": 0.1,
         "count": 23262
+      },
+      {
+        "group": "ADI DHARM",
+        "pct": 0.1,
+        "count": 28411
       }
     ],
     "language": {
@@ -691,12 +779,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "CHHATTISGARH"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 494,594 people here -- 1.9% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. The largest here is Gond / Gondi: 368,438 people, 1.4% of the state and 74% of the residual. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 23 religions in this state; the 20 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -769,14 +865,14 @@
         "count": 217
       },
       {
-        "group": "Other religions",
-        "pct": 0.1,
-        "count": 293
-      },
-      {
         "group": "Not stated",
         "pct": 0.1,
         "count": 487
+      },
+      {
+        "group": "Other religions (not separately named)",
+        "pct": 0.1,
+        "count": 293
       }
     ],
     "language": {
@@ -795,12 +891,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "DADRA AND NAGAR HAVELI"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 293 people here -- 0.1% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 5 religions in this state; the 5 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -878,7 +982,7 @@
         "count": 245
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 79
       }
@@ -899,12 +1003,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "DAMAN AND DIU"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 79 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 1 religions in this state; the 1 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -982,7 +1094,7 @@
         "count": 1109
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 258
       }
@@ -1003,12 +1115,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "GOA"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 258 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 10 religions in this state; the 10 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -1086,7 +1206,7 @@
         "count": 57902
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 16480
       }
@@ -1107,12 +1227,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "GUJARAT"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 16,480 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 17 religions in this state; the 17 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -1190,7 +1318,7 @@
         "count": 7514
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 2548
       }
@@ -1211,12 +1339,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "HARYANA"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 2,548 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 13 religions in this state; the 13 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -1289,7 +1425,7 @@
         "count": 1805
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 856
       }
@@ -1310,12 +1446,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "HIMACHAL PRADESH"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 856 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 8 religions in this state; the 8 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -1393,7 +1537,7 @@
         "count": 2490
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 1508
       }
@@ -1414,12 +1558,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "JAMMU AND KASHMIR"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 1,508 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 4 religions in this state; the 4 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -1472,9 +1624,9 @@
         "count": 4793994
       },
       {
-        "group": "Other religions",
-        "pct": 12.8,
-        "count": 4235786
+        "group": "Sarna",
+        "pct": 12.5,
+        "count": 4131282
       },
       {
         "group": "Christian",
@@ -1490,6 +1642,16 @@
         "group": "Not stated",
         "pct": 0.2,
         "count": 68343
+      },
+      {
+        "group": "Other religions (not separately named)",
+        "pct": 0.2,
+        "count": 62082
+      },
+      {
+        "group": "Addi Bassi",
+        "pct": 0.1,
+        "count": 42422
       },
       {
         "group": "Buddhist",
@@ -1518,12 +1680,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "JHARKHAND"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 4,235,786 people here -- 12.8% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. The largest here is Sarna: 4,131,282 people, 12.5% of the state and 98% of the residual. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 33 religions in this state; the 31 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -1601,7 +1771,7 @@
         "count": 28773
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 11263
       }
@@ -1622,12 +1792,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "KARNATAKA"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 11,263 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 33 religions in this state; the 33 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -1705,7 +1883,7 @@
         "count": 4489
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 7618
       }
@@ -1726,12 +1904,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "KERALA"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 7,618 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 15 religions in this state; the 15 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -1809,7 +1995,7 @@
         "count": 11
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 7
       }
@@ -1830,12 +2016,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "LAKSHADWEEP"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 7 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 2 religions in this state; the 2 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -1888,9 +2082,9 @@
         "count": 567028
       },
       {
-        "group": "Other religions",
+        "group": "Gond / Gondi",
         "pct": 0.8,
-        "count": 599594
+        "count": 584884
       },
       {
         "group": "Christian",
@@ -1911,6 +2105,11 @@
         "group": "Not stated",
         "pct": 0.1,
         "count": 97625
+      },
+      {
+        "group": "Other religions (not separately named)",
+        "pct": 0.0,
+        "count": 14710
       }
     ],
     "language": {
@@ -1929,12 +2128,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "MADHYA PRADESH"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 599,594 people here -- 0.8% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. The largest here is Gond / Gondi: 584,884 people, 0.8% of the state and 98% of the residual. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 33 religions in this state; the 32 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -2012,7 +2219,7 @@
         "count": 223247
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.2,
         "count": 178965
       }
@@ -2033,12 +2240,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "MAHARASHTRA"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 178,965 people here -- 0.2% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 47 religions in this state; the 47 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -2096,9 +2311,9 @@
         "count": 239836
       },
       {
-        "group": "Other religions",
-        "pct": 8.2,
-        "count": 233767
+        "group": "Sanamahi",
+        "pct": 7.8,
+        "count": 222315
       },
       {
         "group": "Not stated",
@@ -2109,6 +2324,16 @@
         "group": "Buddhist",
         "pct": 0.2,
         "count": 7084
+      },
+      {
+        "group": "Heraka",
+        "pct": 0.2,
+        "count": 6444
+      },
+      {
+        "group": "Other religions (not separately named)",
+        "pct": 0.2,
+        "count": 5008
       },
       {
         "group": "Sikh",
@@ -2137,12 +2362,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "MANIPUR"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 233,767 people here -- 8.2% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. The largest here is Sanamahi: 222,315 people, 7.8% of the state and 95% of the residual. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 16 religions in this state; the 14 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -2195,14 +2428,24 @@
         "count": 342078
       },
       {
-        "group": "Other religions",
-        "pct": 8.7,
-        "count": 258271
+        "group": "Khasi",
+        "pct": 4.7,
+        "count": 138480
       },
       {
         "group": "Muslim",
         "pct": 4.4,
         "count": 130399
+      },
+      {
+        "group": "Niamtre",
+        "pct": 2.8,
+        "count": 84258
+      },
+      {
+        "group": "Songsarek",
+        "pct": 0.7,
+        "count": 19803
       },
       {
         "group": "Buddhist",
@@ -2213,6 +2456,16 @@
         "group": "Not stated",
         "pct": 0.3,
         "count": 9578
+      },
+      {
+        "group": "Atheist",
+        "pct": 0.3,
+        "count": 9089
+      },
+      {
+        "group": "Other religions (not separately named)",
+        "pct": 0.2,
+        "count": 6641
       },
       {
         "group": "Sikh",
@@ -2241,12 +2494,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "MEGHALAYA"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 258,271 people here -- 8.7% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. The largest here is Khasi: 138,480 people, 4.7% of the state and 54% of the residual. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 25 religions in this state; the 21 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -2309,14 +2570,14 @@
         "count": 14832
       },
       {
-        "group": "Other religions",
-        "pct": 0.1,
-        "count": 808
-      },
-      {
         "group": "Not stated",
         "pct": 0.1,
         "count": 1026
+      },
+      {
+        "group": "Other religions (not separately named)",
+        "pct": 0.1,
+        "count": 808
       },
       {
         "group": "Sikh",
@@ -2345,12 +2606,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "MIZORAM"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 808 people here -- 0.1% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 9 religions in this state; the 9 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -2413,11 +2682,6 @@
         "count": 6759
       },
       {
-        "group": "Other religions",
-        "pct": 0.2,
-        "count": 3214
-      },
-      {
         "group": "Sikh",
         "pct": 0.1,
         "count": 1890
@@ -2431,6 +2695,16 @@
         "group": "Not stated",
         "pct": 0.1,
         "count": 2316
+      },
+      {
+        "group": "Heraka",
+        "pct": 0.1,
+        "count": 2475
+      },
+      {
+        "group": "Other religions (not separately named)",
+        "pct": 0.0,
+        "count": 739
       }
     ],
     "language": {
@@ -2449,12 +2723,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "NAGALAND"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 3,214 people here -- 0.2% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. The largest here is Heraka: 2,475 people, 0.1% of the state and 77% of the residual. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 15 religions in this state; the 14 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -2527,7 +2809,7 @@
         "count": 13606
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 2197
       }
@@ -2548,12 +2830,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "NCT OF DELHI"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 2,197 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 14 religions in this state; the 14 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -2606,9 +2896,9 @@
         "count": 911670
       },
       {
-        "group": "Other religions",
-        "pct": 1.1,
-        "count": 478317
+        "group": "Sarna",
+        "pct": 1.0,
+        "count": 403350
       },
       {
         "group": "Not stated",
@@ -2619,6 +2909,16 @@
         "group": "Sikh",
         "pct": 0.1,
         "count": 21991
+      },
+      {
+        "group": "ADI DHARM",
+        "pct": 0.1,
+        "count": 53711
+      },
+      {
+        "group": "Other religions (not separately named)",
+        "pct": 0.1,
+        "count": 21256
       },
       {
         "group": "Buddhist",
@@ -2647,12 +2947,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "ORISSA"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 478,317 people here -- 1.1% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. The largest here is Sarna: 403,350 people, 1.0% of the state and 84% of the residual. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 27 religions in this state; the 25 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -2730,7 +3038,7 @@
         "count": 451
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 168
       }
@@ -2751,12 +3059,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "PONDICHERRY"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 168 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 3 religions in this state; the 3 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -2829,7 +3145,7 @@
         "count": 33237
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 10886
       }
@@ -2850,12 +3166,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "PUNJAB"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 10,886 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 20 religions in this state; the 20 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -2928,7 +3252,7 @@
         "count": 12185
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 4676
       }
@@ -2949,12 +3273,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "RAJASTHAN"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 4,676 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 18 religions in this state; the 18 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -3012,14 +3344,19 @@
         "count": 60522
       },
       {
-        "group": "Other religions",
-        "pct": 2.7,
-        "count": 16300
+        "group": "Yumasam",
+        "pct": 2.0,
+        "count": 12331
       },
       {
         "group": "Muslim",
         "pct": 1.6,
         "count": 9867
+      },
+      {
+        "group": "Animist",
+        "pct": 0.5,
+        "count": 3300
       },
       {
         "group": "Sikh",
@@ -3035,6 +3372,11 @@
         "group": "Jain",
         "pct": 0.1,
         "count": 314
+      },
+      {
+        "group": "Other religions (not separately named)",
+        "pct": 0.1,
+        "count": 669
       }
     ],
     "language": {
@@ -3053,12 +3395,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "SIKKIM"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 16,300 people here -- 2.7% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. The largest here is Yumasam: 12,331 people, 2.0% of the state and 76% of the residual. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 16 religions in this state; the 14 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -3136,7 +3486,7 @@
         "count": 11186
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 7414
       }
@@ -3157,12 +3507,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "TAMIL NADU"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 7,414 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 17 religions in this state; the 17 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -3240,7 +3598,7 @@
         "count": 860
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 1514
       }
@@ -3261,12 +3619,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "TRIPURA"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 1,514 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 12 religions in this state; the 12 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -3344,7 +3710,7 @@
         "count": 213267
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 13598
       }
@@ -3365,12 +3731,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "UTTAR PRADESH"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 13,598 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 26 religions in this state; the 26 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -3448,7 +3822,7 @@
         "count": 11608
       },
       {
-        "group": "Other religions",
+        "group": "Other religions (not separately named)",
         "pct": 0.0,
         "count": 993
       }
@@ -3469,12 +3843,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "UTTARAKHAND"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 993 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 6 religions in this state; the 6 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -3527,14 +3909,19 @@
         "count": 24654825
       },
       {
-        "group": "Other religions",
-        "pct": 1.0,
-        "count": 942297
-      },
-      {
         "group": "Christian",
         "pct": 0.7,
         "count": 658618
+      },
+      {
+        "group": "Sari Dharma",
+        "pct": 0.6,
+        "count": 506350
+      },
+      {
+        "group": "Sarna",
+        "pct": 0.4,
+        "count": 403250
       },
       {
         "group": "Buddhist",
@@ -3555,6 +3942,11 @@
         "group": "Jain",
         "pct": 0.1,
         "count": 60141
+      },
+      {
+        "group": "Other religions (not separately named)",
+        "pct": 0.0,
+        "count": 32697
       }
     ],
     "language": {
@@ -3573,12 +3965,20 @@
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
         "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      },
+      {
+        "field": "religion",
+        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "Published for India and the states only; the table's district column is zero on every row."
       }
     ],
     "codes": {
       "census2011_state_name": "WEST BENGAL"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 942,297 people here -- 1.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. The largest here is Sari Dharma: 506,350 people, 0.6% of the state and 54% of the residual. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 42 religions in this state; the 40 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
