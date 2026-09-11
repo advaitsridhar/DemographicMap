@@ -1,33 +1,37 @@
-us_prri: religion by county, PRRI Census of American Religion
-  excluding mL9BH and the diversity_index column (The Religious Diversity Index, By County -- a 0-1 concentration score rather than a percentage of anybody)
-  d76SP v7: https://datawrapper.dwcdn.net/d76SP/7/dataset.csv
-  3142 counties, data year 2024
-  CLuyf v4: https://datawrapper.dwcdn.net/CLuyf/4/dataset.csv
-  cross-check: CLuyf matches d76SP across 3142 counties
-  collapse: PRRI's 11 Christian categories all land in ['Catholicism', "Jehovah's Witnesses", 'Latter-day Saints', 'Orthodoxy', 'Protestantism']
-  population: median 0.74 of the ACS resident count (an adult base, as expected)
-  sums: worst county 4.7pp from 100, median 0.1pp
-    furthest from 100 -- 37183 Wake County, NC 95.3%; 36081 Queens County, NY 96.1%; 25017 Middlesex County, MA 97.4%; 06071 San Bernardino County, CA 97.4%; 48439 Tarrant County, TX 98.0%
-  national roll-up by node: Protestantism 44.7%, No religion 23.1%, Catholicism 22.0%, Other religions 1.8%, Judaism 1.8%, Latter-day Saints 1.8%, Buddhism 1.0%, Islam 1.0%, Jehovah's Witnesses 0.9%, Hinduism 0.8%, Orthodoxy 0.6%
-  against PRRI's published 2023 figures (the data year may differ, so a difference here is not by itself an error):
-      Religiously Unaffiliated                      23.1%  published 27.0   -3.9
-      White Evangelical Protestant                  16.1%  published 13.0   +3.1
-      White Mainline/Non-evangelical Protestant     14.1%  published 13.0   +1.1
-      White Catholic                                12.1%  published 12.0   +0.1
-      Black Protestant                               7.5%  published  8.0   -0.5
-      Hispanic Catholic                              8.0%  published  8.0   -0.0
-      Hispanic Protestant                            4.0%  published  4.0   -0.0
-      Other Protestant of Color                      3.0%  published  2.0   +1.0
-      Other Catholic of Color                        2.0%  published  2.0   -0.0
-      Jewish                                         1.8%  published  2.0   -0.2
-      Muslim                                         1.0%  published  1.0   -0.0
-      Buddhist                                       1.0%  published  1.0   +0.0
-      Hindu                                          0.8%  published  1.0   -0.2
-      Unitarian Universalist                         0.5%  published  0.5   +0.0
-      (no published figure for ["Jehovah's Witness", 'Latter-day Saint (Mormon)', 'Orthodox Christian', 'Other Non-Christian Religious']; the article gives those only as '<0.5%' or pooled)
-  aggregates: Christian 70.1% (2023 published 66%), No religion 23.1% (2023 published 27%), Non-Christian 6.5% (2023 published 6%)
-  9 counties the ACS universe does not carry, matched to the shape the boundary file draws: Valdez-Cordova, Alaska, Fairfield, Connecticut, Hartford, Connecticut, Litchfield, Connecticut, Middlesex, Connecticut, New Haven, Connecticut, New London, Connecticut, Tolland, Connecticut, Windham, Connecticut
-  3142 counties written
-  51 states summed from those counties
-  across PRRI's whole universe: Protestantism 44.7%, No religion 23.1%, Catholicism 22.0%, Other religions 1.8% -- not written; the build sums the country from the states, where it can say which territories are outside the answer
-  wrote data/processed/us_prri_county.json (9687 kB)
+pakistan: Bureau of Statistics, Census 2023 Table 9
+  Khyber Pakhtunkhwa
+    2,255,958 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
+    35 districts, 123 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 35 districts add up to the province
+    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
+    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
+  Punjab
+    2,592,933 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_punjab_districts.pdf
+    36 districts, 145 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 36 districts add up to the province
+  Sindh
+    2,399,774 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_sindh_districts.pdf
+    30 districts, 0 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 30 districts add up to the province
+    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
+  Balochistan
+    2,698,658 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_balochistan_districts.pdf
+    34 districts, 80 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 34 districts add up to the province
+  Islamabad Capital Territory
+    36,012 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_islamabad.pdf
+    1 districts, 1 tehsils passed over
+    one district, and it is the territory: the table prints no separate territory row
+    every district's religions sum to its own printed total
+    and the 1 districts add up to the province
+  Azad Jammu and Kashmir
+  Gilgit-Baltistan
+  NOT PUBLISHED (enumerated apart from the census proper) -- Azad Jammu and Kashmir: table_9_ajk.pdf: HTTPError HTTP Error 404: Not Found; table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
+  NOT PUBLISHED (enumerated apart from the census proper) -- Gilgit-Baltistan: table_9_gb.pdf: HTTPError HTTP Error 404: Not Found; table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
+  13 records declaring what is not published, rather than leaving the field empty
+  wrote data/processed/pakistan_district.json (311 kB)
+  138 districts and 7 provinces
