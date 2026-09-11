@@ -11138,6 +11138,62 @@
     "sex_ratio": {
       "status": "not_available"
     },
+    "religion": [
+      {
+        "group": "Twelver Shi'a Islam",
+        "pct": 39.85
+      },
+      {
+        "group": "Sunni Islam",
+        "pct": 30.05
+      },
+      {
+        "group": "Isma'ili Shi'a Islam",
+        "pct": 24.0
+      },
+      {
+        "group": "Nurbakhshia Islam",
+        "pct": 6.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PILDAT (Pakistan Institute of Legislative Development and Transparency), Sectarian Conflict in Gilgit-Baltistan, background paper, May 2011",
+        "url": "https://web.archive.org/web/20130927213540/http://www.pildat.org/publications/publication/Conflict_Management/GB-SectarianConflit-BackgroundPaperEng-May2011.pdf",
+        "year": 2011
+      }
+    ],
+    "religion_year": 2011,
+    "religion_note": "Not a census. Pakistan's Bureau of Statistics publishes no religion table for Gilgit-Baltistan at all, so this is PILDAT's estimate of the territory's sectarian composition, from a 2011 background paper on sectarian conflict. The four shares are as that paper gives them and sum to 100%. They describe a population taken to be entirely Muslim, which the last census to count religion here bears out: the 1941 Census of India returned 99.7% Muslim across Gilgit Agency, Gilgit Leased, Skardu and Astore. Gilgit-Baltistan is the only Shia-plurality region of a Sunni-majority country and the figures are territory-wide: its districts differ sharply from each other and from this average, and no source breaks it down, so none of them carries this figure.",
+    "religion_basis": "sectarian affiliation"
+  },
+  {
+    "id": "PAK-gb",
+    "level": "admin1",
+    "name": "Gilgit-Baltistan",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
     "religion": {
       "status": "not_available",
       "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper -- their people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 (religion) or Table 11 (mother tongue) for either: the four provinces and Islamabad have both and these two have neither, at any path the office uses. Their own Planning & Development departments publish district tables from the same census, and those carry population without ever naming a religion or a mother tongue. The 2017 round is no better: its subnational workbook lists both territories and leaves them blank. The question was asked; the answer is unpublished."
