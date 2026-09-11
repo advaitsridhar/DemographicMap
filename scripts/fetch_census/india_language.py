@@ -382,6 +382,11 @@ def build(units: dict[tuple[str, str], dict[str, Any]], level: str
                 population=gap(NOT_AVAILABLE, reason),
                 religion=gap(NOT_AVAILABLE, reason),
                 language=gap(NOT_AVAILABLE, reason),
+                # Sex ratio too, though this file never fills it. A bare gap
+                # here would land on india_census's explained one when the two
+                # records merge -- gap does not overwrite a value, but it does
+                # overwrite another gap, and the later file wins.
+                sex_ratio=gap(NOT_AVAILABLE, reason),
                 sources=[{"field": "note", "name": SOURCE, "url": CATALOG}],
             ))
             continue

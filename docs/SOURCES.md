@@ -950,10 +950,28 @@ one.
 
 **What is kept.** Hyderabad, and it is the check that the rule is not simply
 deleting everything. The 2016 reorganisation created Medchal-Malkajgiri out of
-Ranga Reddy, not out of Hyderabad, and left Hyderabad district's sixteen
-mandals alone; no entry in `CREATED_AFTER_2011` names it, so nothing was
-carved out of it and its figure stands. Of Telangana's nine districts that had
-figures, that is the one that survives.
+Ranga Reddy, not out of Hyderabad, and left Hyderabad district alone; no entry
+in `CREATED_AFTER_2011` names it, so nothing was carved out of it and its
+figure stands. The Registrar General's own C-01 workbook lists 16 tehsils under
+Hyderabad in 2011, and the present-day district has the same 16 mandals. Of
+Telangana's nine districts that had figures, that is the one that survives.
+
+The area measurement is *not* what settles Hyderabad, and it is worth saying
+why. CGAZ draws the district at about 281 km² where the census gives 217 —
+Hyderabad's published density of 18,172 people per km² over 3,943,323 people —
+a 30% overshoot that is simplification on the smallest shape in the state
+rather than a boundary change. Area is used for the districts that lost ground
+because there it is answering a large question with a large margin; for a
+district that lost none, the evidence is that none was taken.
+
+**The extract was checked against the Registrar General's own workbook.** The
+same exercise made it possible to test the community CSV mirror this adapter
+reads against the official C-01 file for Andhra Pradesh, which is not where the
+mirror came from. All 23 districts agree in all nine columns — population and
+the eight religions — with no disagreement anywhere, and the workbook's 1,128
+tehsil rows sum to its district rows to the person. `NATIONAL_CONTROLS` already
+checked the mirror against the published national totals on every run; this
+checks a whole state of it against the primary document.
 
 **The route that would fill them, and why it is not taken.** C-01 *is*
 published below district level: the Registrar General's own workbook for
@@ -3114,23 +3132,125 @@ because they only ever appear in the South African entry.
 Both are large, both are blank below the country line, and the reasons are not
 the same -- which is the point of measuring rather than assuming.
 
-**Japan does not ask.** The Kokusei Chosa records name, sex, date of birth,
-marital status, nationality, household relationship, dwelling, employment,
-industry, occupation and commuting. Religion and ethnicity were already
-declared here; **language** is now declared alongside them, because the census
-does not ask that either and 47 prefectures of empty language field were
-reading as "not fetched yet" rather than "never asked". Japan's published
-religion figures come from the Agency for Cultural Affairs' yearbook, where
-religious bodies report their own adherents and the total exceeds the
-population -- the same person counted by a shrine and a temple. That is not a
-composition and cannot be made into one.
+**Japan does not ask, and that is now a fact about the catalogue.** The
+Kokusei Chosa records name, sex, date of birth, marital status, nationality,
+household relationship, dwelling, employment, industry, occupation and
+commuting. Religion, ethnicity and language are all three declared here, and
+all three used to rest on reading that questionnaire -- which settles the
+census and not the country. e-Stat is the portal for *every* Japanese
+government statistic, so a question a census declines can still be asked by an
+agency survey, and nobody here had looked. The catalogue has now been asked,
+with a free application id in `ESTAT_API` and `scripts/probe_estat.py` against
+e-Stat's REST API 3.0: `getStatsList` for what exists, `getMetaInfo` for what
+each table is cut by, `getStatsData` for the figures.
 
-What Japan does publish by prefecture is **foreign residents by nationality**,
-and that is refused here for the reason Nigeria's, Sudan's, Libya's and
-Syria's `Nationality` sheets were refused: citizenship is not ethnicity, and
-published as one it would describe a country of 123 million as ethnically
-uniform. e-Stat itself is open and answers a program -- the Population Census
-database is right there -- so this is a limit of what was asked, not of access.
+**Counted, not recalled.** e-Stat says how many tables carry a word before it
+says which ones, and both numbers are worth having: the surveys say who asks,
+the tables say how much of the catalogue is involved.
+
+| word | tables | surveys | what they are |
+| --- | --- | --- | --- |
+| 宗教 religion | 5,603 | 39 | almost all of it economic: 宗教 is an industry class in the Economic Census, the establishment statistics and the national accounts. Exactly one survey is demography -- **宗教統計調査**, 00401101, the Agency for Cultural Affairs |
+| 信者 believers | 30 | 3 | that survey, plus two that use the word for something else |
+| 信徒 believers, the other word | 0 | 0 | nothing at all |
+| 民族 ethnicity | 8 | 2 | six 社会教育調査 tables of *museum holdings*, where 民族資料 is a shelf of ethnographic objects, and two 矯正統計調査 tables counting foreign prisoners by nationality |
+| 言語 language | 636 | 14 | 学校基本調査 counts of graduate schools (言語文化研究科 and its kin) and ICD-10 tables in 人口動態調査 and 患者調査, where 言語 is a speech disorder |
+| 母語 mother tongue | 2 | 1 | one MEXT survey of schoolchildren -- below |
+| アイヌ Ainu | 13 | 3 | prosecution statistics, human-rights infringement cases, and the national forest yearbook. None of the three counts a population |
+| 国籍 nationality | 2,280 | 26 | the census, the migration report, immigration and residence statistics |
+| 外国人 foreign residents | 2,017 | 30 | likewise |
+
+Asked in English the same catalogue answers differently and worse. `ethnic`
+matches **no survey at all**; `religion` matches eleven, none of them
+宗教統計調査, because the Agency for Cultural Affairs publishes no English
+title for it. An English-only sweep would have reported Japan as having no
+religion statistic -- the right conclusion reached by missing the evidence,
+which is the failure this file exists to prevent.
+
+**Religion: the table exists, the API serves it, and it is not a composition.**
+宗教統計調査 is published as 19 tables, two of them by prefecture: `0003282740`
+(団体数, organisations) and **`0003282963`** -- 全国社寺教会等宗教団体・教師・
+信者数（２）都道府県別　教師・信者数, 18,977 cells, cut by 都道府県 (48 codes),
+by 教師 / 信者, and by 宗教系統: 神道系, 仏教系, キリスト教系, 諸教. It carries
+every year from 2008年度 to 2025年度. The figures are there, by prefecture, in a
+machine-readable series eighteen years long, and they still cannot go on this
+map. The reason is arithmetic, and every number below is from `0003282963` at
+2025年度 (as of 31 December 2024), with population from e-Stat's own
+社会・人口統計体系, table `0000010101`, item `A1101_総人口` at 2024年度:
+
+* **175,054,047 believers against 123,802,000 people: 1.41 per person.** The
+  table does not partition a population. It counts memberships, and the same
+  person is counted by a shrine and by a temple.
+* It does not partition itself either. Its own 全国 row is 175,054,047 and its
+  47 prefecture rows sum to **175,044,047** -- ten thousand apart, all of the
+  difference in 仏教系 (80,463,918 nationally against 80,453,918 summed).
+* The excess is not uniform, which is what would have made it survivable. The
+  ratio runs from **0.54 in Kanagawa to 3.19 in Kyoto**, a 5.9-fold spread:
+  Kyoto 3.19, Tokyo 3.09, Nagano 2.99, Shimane 2.84 at one end; Kanagawa 0.54,
+  Chiba 0.56, Okinawa 0.61 at the other.
+* The mechanism is visible in one pair. **Tokyo reports 35,352,899 Buddhist
+  believers -- 43.9% of every Buddhist in Japan, in a prefecture holding 11.5%
+  of the people** -- against Kanagawa's 1,762,105, which is 2.2% of the
+  Buddhists in 7.5% of the people. A religious corporation reports its whole
+  membership against the prefecture where it is *registered*, and the head
+  temples are in Tokyo. Kyoto is the same artefact from the other side: its
+  3.19 is Shinto (6,211,472) while its Buddhist count is 1,521,269, which is
+  1.9% of the national figure in 2.0% of the population.
+
+Read as shares -- which is what this map would do with them -- those rows put
+**80.8% Buddhist and 16.5% Shinto on Tokyo**, 18.9% and 77.2% on Kyoto, 35.5%
+and 48.2% on Kanagawa, and 90.4% Shinto on Okinawa. That is not a map of what
+people believe. It is a map of where religious head offices are registered, and
+it would be drawn in the same colours as Germany's church-tax register and
+India's census, with nothing on the panel to say it means something else.
+
+`religion_basis: "adherents"` does not rescue it. That field exists for a
+figure that counts adherents rather than answers and *still partitions a
+population* -- the 2020 U.S. Religion Census, which `us_acs.py` labels that way,
+reaches about half the population and never exceeds it. A figure that sums to
+141% of the people partitions nothing, and no basis label makes it do so. So
+religion stays `not_collected`, and the declaration now rests on a table id
+rather than on a yearbook's narrative.
+
+**Ethnicity: eight tables, and not one of them is about anyone's ethnicity.**
+Six belong to 社会教育調査 and count what museums hold -- 民族資料, ethnographic
+objects on a shelf. Two belong to 矯正統計調査 and count foreign prisoners by
+nationality. This is the trap Turkey set below, in Japanese: a keyword pass
+that reported "8 matches for ethnicity" would have been counting museum
+inventories. Nothing in e-Stat asks a person what they are, and the English
+`ethnic` matches nothing at all.
+
+What Japan does publish by prefecture is **nationality** -- the census's 国籍別
+tables, 在留外国人統計 (00250012) and 出入国管理統計 (00250011) -- and that is
+refused here for the reason Nigeria's, Sudan's, Libya's and Syria's
+`Nationality` sheets were refused: citizenship is not ethnicity, and published
+as one it would describe a country of 123 million as ethnically uniform. The
+catalogue confirms the refusal rather than changing it: 2,280 tables carry
+国籍 and every one of them is a passport.
+
+**Language: two tables, and the denominator is a support need.** 母語 matches
+exactly two tables in the whole of e-Stat -- `0003328485` for the country and
+`0003328491` by prefecture -- and both belong to MEXT's 日本語指導が必要な
+児童生徒の受入状況等に関する調査. The prefecture table is cut by 都道府県 (48
+codes) and by nine categories (合計, 英語, 韓国・朝鮮語, スペイン語, 中国語,
+フィリピノ語, ベトナム語, ポルトガル語, その他) for 2012, 2014 and 2016年度 and
+no later. Its universe, at 2016年度, is **34,335 children**: foreign-national
+pupils in public schools who need help with Japanese, 0.03% of the population,
+2,932 of them in Tokyo. Two further tables (`0003328486`, `0003328492`) do the
+same for Japanese-national pupils. These are a real count of a real thing and
+they are not a language composition: the denominator is a support need, and
+every child who speaks Japanese at home is outside it. Language stays
+`not_collected`, and the 636 tables matching 言語 are graduate schools and
+speech disorders.
+
+**Access was never the problem.** e-Stat answered every request made of it:
+`getStatsList`, `getMetaInfo` and `getStatsData` all return JSON to a plain
+client over TLS, the application id is free, and the eighteen-year religion
+series came back in one call. The key reaches the runner as a repository
+secret, never a command line, and `probe_estat.scrub()` takes it out of every
+line the probe prints -- URLs, echoed parameters, error bodies -- because a
+probe whose product is a committed log cannot rely on remembering. What is
+missing from Japan is not access and not effort. It is the question.
 
 **Turkey may ask, and cannot be read.** Four routes measured:
 

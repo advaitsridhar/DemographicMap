@@ -1613,7 +1613,7 @@ def split_states(rows: list[dict[str, str]],
     out: dict[str, list[tuple[str, collections.Counter, str]]] = {}
     by_parent: dict[str, list[tuple[str, StateSplit]]] = collections.defaultdict(list)
     for new_state, split in SPLIT_STATES.items():
-        by_parent[split.parent.casefold()].append((new_state, split))
+        by_parent[state_key(split.parent)].append((new_state, split))
         if STATE_IN_2011.get(new_state) != split.parent:
             problems.append(
                 f"{new_state} is split from {split.parent} here and "
@@ -1674,7 +1674,17 @@ def split_states(rows: list[dict[str, str]],
                     f"{parent}: the parts sum to {total:,} in column {col} "
                     f"against {counts[col]:,} for the undivided state")
         only = splits[0][1]
-        if len(splits) == 1 and residual_counts["Population"] != only.residual:
+        if len(splits) > 1:
+            # ``residual`` is one number and means "what is left after this
+            # split", so two splits of one state make it ambiguous. Refusing is
+            # the honest response; quietly skipping the check would leave the
+            # residual as the only figure here nothing is measured against.
+            problems.append(
+                f"{parent} is split {len(splits)} ways ("
+                + ", ".join(name for name, _ in splits)
+                + "), and each split declares its own residual, so there is no "
+                  "single published figure to check the remainder against")
+        elif residual_counts["Population"] != only.residual:
             problems.append(
                 f"{parent}: what is left after {splits[0][0]} is "
                 f"{residual_counts['Population']:,} people against a published "

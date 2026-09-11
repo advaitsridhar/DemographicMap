@@ -377,7 +377,13 @@ itself, as CC BY requires.
 
 - **The Factbook is frozen.** It was retired in February 2026, so country figures are
   a snapshot. Every field carries its own reference year so the staleness is visible.
-- **India's subnational data is from 2011.** The next census was postponed repeatedly.
+- **India's subnational data is from 2011.** The next census was postponed repeatedly,
+  and the districts have moved since: 91 of the 735 shapes are districts the census
+  never enumerated, and 75 more are districts that have lost territory to one of
+  those 91, so the 2011 row counts people who no longer live in the shape. Neither
+  carries a figure, and each says why. Telangana and Ladakh, which postdate the
+  census entirely, carry a state figure summed from the ten and the two districts it
+  did enumerate.
 - **Indonesia's ethnicity and religion data is from 2010** — the 2020 census dropped
   both questions.
 - **The 2020 U.S. Religion Census counts adherents**, reported by 372 religious

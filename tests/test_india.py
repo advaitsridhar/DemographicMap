@@ -855,6 +855,17 @@ class DistrictsThatLostTheirGround(unittest.TestCase):
             [name for name, _ in
              india_census.LOST_TERRITORY_SINCE_2011.get("Telangana", ())])
 
+    def test_the_eight_telangana_districts_that_were_cut_down(self):
+        # The nine Telangana shapes that carried 2011 figures, settled one by
+        # one: eight are fragments of the district whose figure they wore, and
+        # Hyderabad is not. Named here rather than counted, because the count
+        # is the same whichever eight they are.
+        self.assertEqual(
+            {"Adilabad", "Karimnagar", "Khammam", "Mahbubnagar", "Medak",
+             "Nalgonda", "Nizamabad", "Rangareddy"},
+            {name for name, _
+             in india_census.LOST_TERRITORY_SINCE_2011["Telangana"]})
+
     def test_every_predecessor_still_standing_is_measured(self):
         # The real tables, against each other. A district carved out of X
         # without X being measured here leaves X wearing the undivided figure,
