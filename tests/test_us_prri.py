@@ -692,3 +692,79 @@ class CountiesTheUniverseDoesNotCarry(unittest.TestCase):
         nodes["99999"] = {"Protestantism": 100.0}
         got = build(nodes, self.universe, year=2024)
         self.assertFalse(any(r["id"] == "USA-99999" for r in got))
+
+
+class StatesAndTheNation(unittest.TestCase):
+    """A source that fills one level and leaves the others makes the map
+    contradict itself.
+
+    Before this, the United States read as PRRI 2024 at county level, the 2020
+    Religion Census at state level and a 2014 Factbook estimate nationally --
+    three answers to one question, the two coarser ones from the source that
+    had just been superseded. Zooming out changed the figures and nothing said
+    why.
+    """
+
+    def setUp(self):
+        self.n = 3_100
+        self.nodes = nodes_for(self.n)
+        self.universe = universe(self.n)
+        self.pops = {fips: 1_000.0 for fips in self.nodes}
+
+    def wider(self, **kw):
+        return us_prri.aggregate(self.nodes, self.pops, self.universe,
+                                 year=2024, **kw)
+
+    def test_a_state_and_a_nation_come_back(self):
+        got = self.wider()
+        states = [r for r in got if r["level"] == "admin1"]
+        nation = [r for r in got if r["level"] == "admin0"]
+        self.assertEqual(len(nation), 1)
+        self.assertTrue(states)
+        self.assertEqual(nation[0]["id"], "USA")
+        self.assertEqual(nation[0]["religion_year"], 2024)
+
+    def test_a_state_is_the_weighted_mean_of_its_counties(self):
+        """Equal weights, so the state is the plain mean -- and the check is
+        that it is the mean of *its own* counties and not of all of them."""
+        nodes = {"01001": {"Protestantism": 80.0, "No religion": 20.0},
+                 "01003": {"Protestantism": 60.0, "No religion": 40.0},
+                 "02001": {"Protestantism": 10.0, "No religion": 90.0}}
+        pops = {"01001": 100.0, "01003": 100.0, "02001": 100.0}
+        got = us_prri.aggregate(nodes, pops, self.universe, year=2024)
+        alabama = next(r for r in got if r["id"] == "USA-01")
+        shares = {g["group"]: g["pct"] for g in alabama["religion"]}
+        self.assertEqual(shares["Protestantism"], 70.0)
+        self.assertEqual(shares["No religion"], 30.0)
+
+    def test_population_weights_are_used_not_a_plain_average(self):
+        nodes = {"01001": {"Protestantism": 100.0},
+                 "01003": {"No religion": 100.0}}
+        pops = {"01001": 900.0, "01003": 100.0}
+        got = us_prri.aggregate(nodes, pops, self.universe, year=2024)
+        alabama = next(r for r in got if r["id"] == "USA-01")
+        shares = {g["group"]: g["pct"] for g in alabama["religion"]}
+        self.assertEqual(shares["Protestantism"], 90.0)
+
+    def test_counties_with_no_population_between_them_refuse(self):
+        """Weighting by nothing would produce a figure with no basis."""
+        nodes = {"01001": {"Protestantism": 100.0}}
+        with self.assertRaises(SystemExit) as cm:
+            us_prri.aggregate(nodes, {"01001": 0.0}, self.universe, year=2024)
+        self.assertIn("no population", str(cm.exception))
+
+    def test_the_note_says_the_figure_was_summed(self):
+        got = self.wider()
+        nation = next(r for r in got if r["level"] == "admin0")
+        self.assertIn("Summed from the", nation["religion_note"])
+        self.assertIn("weighted by", nation["religion_note"])
+
+    def test_the_nation_is_every_county_not_every_state_averaged(self):
+        """Averaging states would give Wyoming the weight of California."""
+        nodes = {"01001": {"Protestantism": 100.0},
+                 "02001": {"No religion": 100.0}}
+        pops = {"01001": 9_000.0, "02001": 1_000.0}
+        got = us_prri.aggregate(nodes, pops, self.universe, year=2024)
+        nation = next(r for r in got if r["level"] == "admin0")
+        shares = {g["group"]: g["pct"] for g in nation["religion"]}
+        self.assertEqual(shares["Protestantism"], 90.0)

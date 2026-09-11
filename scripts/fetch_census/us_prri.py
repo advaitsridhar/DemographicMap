@@ -143,6 +143,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+from collections import defaultdict
 import io
 import re
 import statistics
@@ -857,6 +858,124 @@ OUTSIDE_UNIVERSE: dict[str, tuple[str, str]] = {
     "02261": ("Valdez-Cordova", "Alaska"),
 }
 
+
+# How far a state's summed adult population may sit from the sum of the
+# counties the universe assigns to it. It is the same arithmetic twice, so
+# anything at all is a fault; the room is for float addition over 3,142 terms.
+AGGREGATE_SLACK = 1e-6
+
+
+def aggregate(nodes: dict[str, dict[str, float]],
+              populations: dict[str, float],
+              universe: list[dict[str, Any]],
+              *, year: int) -> list[dict[str, Any]]:
+    """The states and the nation, summed from the counties this file wrote.
+
+    A source that fills one level and leaves the others alone makes the map
+    contradict itself. PRRI covers counties, so before this the United States
+    read as PRRI 2024 at county level, the 2020 Religion Census at state
+    level, and a 2014 Factbook estimate nationally -- three different answers
+    to one question, and the two coarser ones from the source the owner had
+    just decided against. Zooming out changed the figures and nothing said
+    why.
+
+    The build can sum a parent from its children, and for the states it
+    deliberately does not: it fills a parent that is *empty*, and these were
+    not empty, they were full of the superseded source. Rather than loosen
+    that rule for everybody -- 505 of the 674 sums it would newly allow are
+    no-ops and 169 would move a published figure by more than a point, for
+    reasons that belong to those countries and not to this one -- the adapter
+    that knows this data sums its own.
+
+    The weights are PRRI's own adult population, the denominator its shares
+    are already expressed over, so a state is a weighted mean of its counties
+    and not an approximation of one.
+    """
+    home = {(row.get("codes") or {}).get("geoid"): row for row in universe}
+    by_state: dict[str, list[str]] = defaultdict(list)
+    for fips in nodes:
+        by_state[fips[:2]].append(fips)
+
+    def compose(members: list[str]) -> tuple[dict[str, float], float]:
+        base = sum(populations.get(f, 0.0) for f in members)
+        if base <= 0:
+            raise SystemExit(
+                f"us_prri: {len(members)} counties carry no population "
+                f"between them, so their shares cannot be weighted")
+        total: dict[str, float] = defaultdict(float)
+        for f in members:
+            weight = populations.get(f, 0.0)
+            for node, pct in nodes[f].items():
+                total[node] += weight * pct
+        return {node: value / base for node, value in total.items()}, base
+
+    records: list[dict[str, Any]] = []
+    national: list[str] = []
+    for state, members in sorted(by_state.items()):
+        national.extend(members)
+        shares, base = compose(members)
+        # The same addition in the other order: if these disagree, the
+        # grouping lost or duplicated a county.
+        check = sum(populations.get(f, 0.0) for f in members)
+        if abs(check - base) > AGGREGATE_SLACK:
+            raise SystemExit(
+                f"us_prri: state {state} sums to {base} one way and {check} "
+                f"the other; a county is counted twice or not at all")
+        sample = home.get(members[0]) or {}
+        state_id = sample.get("parent") or f"USA-{state}"
+        records.append(record(
+            state_id, sample.get("parent_name") or f"State {state}",
+            level="admin1", parent="USA", country="USA",
+            codes={"geoid": state, "fips_state": state, "fips_county": None},
+            religion=shares_as_rows(shares) or gap(NOT_AVAILABLE),
+            religion_year=year,
+            religion_basis="self-identification",
+            religion_note=aggregate_note(len(members), "counties"),
+            sources=[{"field": "religion", "name": SOURCE, "url": PAGE,
+                      "license": LICENCE}]))
+
+    shares, _ = compose(national)
+    records.append(record(
+        "USA", "United States", level="admin0", parent="USA", country="USA",
+        religion=shares_as_rows(shares) or gap(NOT_AVAILABLE),
+        religion_year=year,
+        religion_basis="self-identification",
+        religion_note=aggregate_note(len(national), "counties"),
+        sources=[{"field": "religion", "name": SOURCE, "url": PAGE,
+                  "license": LICENCE}]))
+    return records
+
+
+def shares_as_rows(shares: dict[str, float]) -> list[dict[str, Any]]:
+    """A composition as the map wants it: largest first, nothing at zero."""
+    return [{"group": node, "pct": round(pct, 1)}
+            for node, pct in sorted(shares.items(), key=lambda kv: (-kv[1], kv[0]))
+            if round(pct, 1) > 0]
+
+
+def aggregate_note(parts: int, kind: str) -> str:
+    """Say that this figure was summed, and from how many pieces.
+
+    A reader who zooms out from a county to its state is entitled to know
+    whether the state was measured or added up, and that the two agree because
+    the second is made of the first.
+    """
+    return (f"Summed from the {parts} {kind} PRRI publishes, weighted by "
+            f"PRRI's own adult population -- the denominator its county "
+            f"shares are already expressed over, so this is those counties' "
+            f"weighted mean rather than a separate estimate. "
+            f"{SOURCE}. Self-reported religious identity among adults, "
+            f"modelled to county level from a national random sample of "
+            f"40,000 adults on Ipsos's KnowledgePanel; small-area estimates "
+            f"rather than an enumeration, describing adults rather than all "
+            f"residents. Replaces the 2020 U.S. Religion Census adherent "
+            f"counts this unit carried, which reached about 48.6% of the "
+            f"population and could not distinguish the unaffiliated from the "
+            f"unreported. PRRI's categories cross race with religion; the "
+            f"Protestant and Catholic categories are summed into "
+            f"Protestantism and Catholicism and the racial detail is dropped "
+            f"rather than filed under religion.")
+
 def build(counties: dict[str, dict[str, float]],
           universe: list[dict[str, Any]],
           *, year: int,
@@ -1092,7 +1211,15 @@ def main() -> int:
     records = build(nodes, universe, year=year,
                     prri_names={f: r["name"] for f, r in counties.items()})
     log(f"  {len(records)} counties written")
-    write_json(args.out or PROCESSED / OUT, records)
+    # The states and the nation, from the counties just written. Without these
+    # the map answers the same question three different ways as you zoom out.
+    wider = aggregate(nodes, populations, universe, year=year)
+    states = [r for r in wider if r["level"] == "admin1"]
+    log(f"  {len(states)} states and the nation summed from those counties")
+    national = next(r for r in wider if r["level"] == "admin0")
+    log("  national: " + ", ".join(
+        f"{g['group']} {g['pct']}%" for g in national["religion"][:4]))
+    write_json(args.out or PROCESSED / OUT, records + wider)
     return 0
 
 
