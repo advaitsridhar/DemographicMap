@@ -2573,15 +2573,41 @@ class PakistanDeclaresWhatIsNotPublished(unittest.TestCase):
         # publication, and not_collected would say the state never asked.
         for row in self.absent("ajk", "gb"):
             for field in ("religion", "language"):
+                if isinstance(row.get(field), list):
+                    continue          # Gilgit-Baltistan's religion, below
                 self.assertEqual(row[field]["status"], "not_available")
                 self.assertIn("publishes no Table 9", row[field]["note"])
 
-    def test_the_declaration_carries_no_figure_of_its_own(self):
+    def test_gilgit_baltistan_carries_its_one_non_census_figure(self):
+        # The territory row, and only it: PILDAT estimates the sects for the
+        # whole of Gilgit-Baltistan and the districts differ sharply from that
+        # average, so they keep the declaration.
+        rows = {r["name"]: r for r in self.absent("gb")}
+        gb = rows["Gilgit-Baltistan"]
+        self.assertEqual(round(sum(g["pct"] for g in gb["religion"]), 2), 100.0)
+        self.assertTrue(gb["religion_note"].startswith("Not a census."))
+        self.assertIn("PILDAT", " ".join(str(x.get("name"))
+                                         for x in gb["sources"]))
+        for name in ("Skardu", "Hunza", "Diamer"):
+            self.assertEqual(rows[name]["religion"]["status"], "not_available")
+
+    def test_shares_that_stop_partitioning_refuse_the_run(self):
+        # Declared rather than read, so a typo here is a thing nothing else
+        # could catch.
+        with mock.patch.dict(self.pk.GB_SECTS, {"Sunni Islam": 31.05}):
+            with self.assertRaises(SystemExit) as cm:
+                self.pk.gb_religion()
+        self.assertIn("sum to 101.0, not 100", str(cm.exception))
+
+    def test_the_declaration_carries_no_census_figure_of_its_own(self):
         # Including population: Wikidata supplies one for both territories and
         # a gap marker must never displace a real value, whichever order the
-        # two files merge in.
+        # two files merge in. Gilgit-Baltistan's religion is the one field
+        # here that is not a gap, and it is not the census's.
         for row in self.absent("ajk", "gb"):
             for field in ("population", "religion", "language", "ethnicity"):
+                if isinstance(row.get(field), list):
+                    continue
                 self.assertIn("status", row[field])
 
     def test_azad_kashmir_is_declared_under_the_name_the_map_draws_it_by(self):

@@ -765,8 +765,14 @@ GB_NOTE = (
     "breaks it down, so none of them carries this figure.")
 
 
-def gb_records() -> list[dict[str, Any]]:
-    """Gilgit-Baltistan's territory row, and nothing below it."""
+def gb_religion() -> dict[str, Any]:
+    """The religion fields for Gilgit-Baltistan's territory row.
+
+    Returned as fields rather than as a record of its own, because
+    ``declared_gaps`` already writes a record under this id and two records
+    for one id is how a value gets quietly replaced by the gap that was meant
+    to stand in for it. One id, one record, one place that decides.
+    """
     total = round(sum(GB_SECTS.values()), 2)
     if total != 100.0:
         raise SystemExit(
@@ -774,16 +780,14 @@ def gb_records() -> list[dict[str, Any]]:
             f"100. A composition that does not partition its population is "
             f"not one, and this one is declared rather than read, so a wrong "
             f"figure here would be a typo nothing else could catch")
-    return [record(
-        "PAK-gb", "Gilgit-Baltistan", level="admin1", parent="PAK",
-        religion=[{"group": name, "pct": pct}
-                  for name, pct in sorted(GB_SECTS.items(),
-                                          key=lambda kv: -kv[1])],
-        religion_year=GB_YEAR, religion_note=GB_NOTE,
-        religion_basis="sectarian affiliation",
-        sources=[{"field": "religion", "name": GB_SOURCE, "url": GB_URL,
-                  "year": GB_YEAR}],
-    )]
+    return {
+        "religion": [{"group": name, "pct": pct}
+                     for name, pct in sorted(GB_SECTS.items(),
+                                             key=lambda kv: -kv[1])],
+        "religion_year": GB_YEAR,
+        "religion_note": GB_NOTE,
+        "religion_basis": "sectarian affiliation",
+    }
 
 
 def ajk_records(found: dict[str, dict[str, int]],
@@ -842,11 +846,23 @@ def declared_gaps(absent: dict[str, list[tuple[str, str]]]) -> list[dict[str, An
         province, alias, inside = TERRITORIES[slug]
         source = [{"field": "note", "name": SOURCE, "url": URL,
                    "license": LICENCE}]
+        # Gilgit-Baltistan is the one territory with a religion figure from
+        # somewhere other than the census, so its territory row carries that
+        # and the districts below it keep the gap: the estimate is for the
+        # whole and its districts differ sharply from the average.
+        territory = dict(source=list(source))
+        if slug == "gb":
+            territory["fields"] = gb_religion()
+            territory["source"] = list(source) + [
+                {"field": "religion", "name": GB_SOURCE, "url": GB_URL,
+                 "year": GB_YEAR}]
+        fields = territory.get("fields") or {
+            "religion": gap(NOT_AVAILABLE, TERRITORY_GAP)}
         out.append(record(
             f"PAK-{slug}", province, level="admin1", parent="PAK",
             aliases=list(alias),
-            religion=gap(NOT_AVAILABLE, TERRITORY_GAP),
-            language=gap(NOT_AVAILABLE, TERRITORY_GAP), sources=list(source)))
+            language=gap(NOT_AVAILABLE, TERRITORY_GAP),
+            sources=territory["source"], **fields))
         for name in inside:
             out.append(record(
                 f"PAK-{slug}-{name.lower().replace(' ', '-')}", name,
@@ -971,7 +987,6 @@ def main() -> int:
                 absent[APART] = [(slug, line) for slug, line in absent[APART]
                                  if slug != "ajk"]
 
-    records.extend(gb_records())
     records.extend(declared_gaps(absent))
     out = args.out or PROCESSED / "pakistan_district.json"
     write_json(out, records)
