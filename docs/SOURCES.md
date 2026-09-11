@@ -1337,6 +1337,7 @@ and what the host answered; nothing here is inferred from a search result.
 | `www.pndajk.gov.pk/…/Statistical Year Book 2020.pdf` | 200, no mother-tongue table |
 | `www.pndajk.gov.pk/…/AJK At a Glance 2025.pdf` | 200, 4.9 MB, no religion and no mother tongue |
 | `www.pnd.gog.pk/pages/downloads` | 200, eight PDFs, listed below |
+| `en.wikipedia.org` "Gilgit-Baltistan" via the MediaWiki API | 200, two wikitables, neither a composition |
 | `alfgb.gbit.gov.pk/storage/downloads/…` | TLS: `TLSV1_ALERT_INTERNAL_ERROR` |
 
 **`www.pbs.gov.pk` did not block anything.** It answered a plain
@@ -1368,9 +1369,9 @@ up, and the declaration pays for the check it removes: exactly one district
 must be read, or the province is refused.
 
 Islamabad now carries **2,283,244 people, Muslim 95.6%, Christian 4.3%,
-Ahmadi 0.1%, Hindu 0.0%** — the largest Christian share of any first-level
-unit in Pakistan, and a fifth of the country's Christians in 0.9% of its
-people. Its row also breaks three figures across two words each (45, 60 and
+Ahmadi 0.1%, Hindu 0.0%** -- the largest Christian share of any first-level
+unit in Pakistan, against Punjab's 1.9% and Khyber Pakhtunkhwa's 0.3%, and
+2.9% of the country's Christians in 0.9% of its people. Its row also breaks three figures across two words each (45, 60 and
 10) and sets the tightest column gap either province offered, **12 points**
 between `,283,244` and the `2` of `2,181,663`, against the 13 this file
 records as the minimum. `GAP` is 4, so the margin is 4 against 12; a rule
@@ -1445,6 +1446,21 @@ again.
   household counts by language for GB cites GB-MICS 2017 for them. A regional
   news outlet is not a source this project cites; what it points at is, and
   what it points at is the survey above.
+* **Wikipedia carries no table to transcribe.** `wiki_census.py` exists for
+  exactly this case -- a census table that reaches this project only as an
+  encyclopaedia's copy of it -- and the article does not have one. "Gilgit-
+  Baltistan" holds two wikitables: the ten districts with area, capital and a
+  2023 population (1,709,049 in total), and a *ranked list* of languages,
+  "Rank | Language | Detail", whose cells are prose -- "It is a Dardic
+  language spoken in..." -- with no percentage and no count anywhere in it.
+  There is nothing for a spec to read: `wiki_census` needs share columns and
+  refuses a table it cannot add up, which is the property that makes the route
+  safe. Recorded so the next person does not open the article hoping.
+* **That district table is a population route, though, and GB's population on
+  this map is a 2011 Wikidata figure of 1,155,755 against a 2023 census
+  1,709,049 -- a third too low.** The better source for it is not Wikipedia:
+  *GB At a Glance 2025*, on the territory's own P&DD host, carries district
+  tables from the same census. Neither is read here.
 * **The census's own category scheme is the deeper problem.** Pakistan's
   mother-tongue question names nine tongues and an "Other", and Shina, Balti
   and Burushaski -- which is to say nearly all of Gilgit-Baltistan -- are in
@@ -1452,6 +1468,8 @@ again.
   of its languages. A census figure with a category scheme that cannot see the
   population is a different problem from no census figure, and for GB the
   answer happens to be both.
+
+The run reads the yearbook's table on PDF page 209 -- the caption is also on page 15, in the contents, and a page carrying the caption with no district rows under it is a mention of the table rather than the table.
 
 Gilgit-Baltistan's two first-level fields and its ten districts therefore
 carry an explicit `not_available` with a note naming what was asked, rather
@@ -1465,7 +1483,7 @@ question.
 | | before | after |
 | --- | --- | --- |
 | Islamabad Capital Territory | no population, no religion | 2,283,244; religion 2023 |
-| Azad Jammu and Kashmir | no religion; population 2008 (Wikidata) | religion 2017; population 4,032,363 (2017) |
+| Azad Jammu and Kashmir | no religion; population 4,567,982, a **2008** Wikidata figure | religion 2017 (Muslim 99.8%, Ahmadi 3,402, Christian 2,934); population 4,032,363, the 2017 census |
 | Gilgit-Baltistan | empty | declared, with the routes named |
 | Pakistan's religion roll-up | refused, and **unmeasurable** -- Islamabad had neither the field nor a population, so `covered_share` could not answer at all | measurable, at **99.5%**: only Gilgit-Baltistan's 1.2 million are outside it, against a `COUNTRY_MIN_COVERAGE` of 98% |
 | Pakistan's language roll-up | refused at 97.65% | still refused: Azad Kashmir and Gilgit-Baltistan have no mother tongue, and 2.1% of the country is more than the bound allows |
