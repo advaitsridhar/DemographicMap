@@ -1,8 +1,6 @@
-wiki_census KAZ: Bureau of National Statistics of Kazakhstan, 2021 National Population Census, religious affiliation by region
-  'Religion in Kazakhstan': 34,569 bytes of wikitext
-  16 admin1 records; not matched by design: ['Turkistan Region']
-  wrote data/processed/kazakhstan_region.json (26 kB)
-wiki_census KHM: National Institute of Statistics of Cambodia, General Population Census of Cambodia 2019, religion by province
-  'Religion in Cambodia': 31,214 bytes of wikitext
-  25 admin1 records
-  wrote data/processed/cambodia_province.json (38 kB)
+uk_nomis: district (TYPE154)
+uk_nomis: TS021 Ethnic group (NM_2041_1)
+uk_nomis: TS030 Religion (NM_2049_1)
+  wrote data/processed/uk_lad.json (1439 kB)
+  330 records
+  330 local authority records
