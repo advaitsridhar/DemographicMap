@@ -1442,6 +1442,28 @@ class ADivisionCountingSomethingElse(unittest.TestCase):
                       "others count", note)
         self.assertIn("its own record carries that figure", note)
 
+    def test_which_basis_is_usual_does_not_depend_on_the_hash_seed(self):
+        # CI and a local run disagreed about which of two equally-sized
+        # divisions was the odd one out, because the first version picked the
+        # commonest basis out of a set and a tie resolved by iteration order.
+        # People decide it now, and a genuine tie is broken on the name.
+        kids = self.kids()
+        for _ in range(8):
+            parent = self.parent()
+            be.roll_up_countries([parent], {"XXX": [dict(k) for k in kids]})
+            self.assertEqual({g["group"] for g in parent["religion"]},
+                             {"Muslim", "Hindu"})
+
+    def test_the_bigger_division_sets_the_usual_basis(self):
+        # Counting divisions would make a two-district territory outvote a
+        # province; counting people does not.
+        kids = [self.child("Big", 980, {"Muslim": 880, "Hindu": 100}),
+                self.child("A", 10, {"Twelver Shia Islam": 10}, basis="sect"),
+                self.child("B", 10, {"Sunni Islam": 10}, basis="sect")]
+        got = self.roll(self.parent(), kids)
+        self.assertEqual({g["group"] for g in got["religion"]},
+                         {"Muslim", "Hindu"})
+
     def test_divisions_that_agree_are_all_added_in(self):
         # The ordinary case, and the one that must not change: a basis shared
         # by every division is not a difference. The United States is this --

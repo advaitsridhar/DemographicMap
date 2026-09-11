@@ -1113,9 +1113,21 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # So a division counting something its siblings do not is left out and
     # named, exactly as one that publishes nothing is. Its own record keeps the
     # detail, which is where that detail is true.
-    bases = [c.get(f"{field}_basis") for c in children
-             if isinstance(c.get(field), list)]
-    usual = max(set(bases), key=bases.count) if bases else None
+    # Which basis is the usual one is decided by people, not by counting
+    # divisions -- the same weighting the year rule uses, and for the same
+    # reason: one small division answering differently should not make the
+    # rest the exception. Ties are broken on the name so the answer does not
+    # depend on the hash seed; this was found by CI disagreeing with a local
+    # run about which of two equally-sized divisions was the odd one out.
+    weight: dict[Any, float] = {}
+    for child in children:
+        if isinstance(child.get(field), list):
+            basis = child.get(f"{field}_basis")
+            weight[basis] = weight.get(basis, 0.0) + (
+                published(child.get("population")) or 0.0)
+    usual = (max(sorted(weight, key=lambda b: (b is not None, str(b))),
+                 key=lambda b: weight[b])
+             if weight else None)
     apart = [c for c in children if isinstance(c.get(field), list)
              and c.get(f"{field}_basis") != usual]
     if apart:
