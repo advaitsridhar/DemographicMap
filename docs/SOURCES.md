@@ -931,11 +931,12 @@ the district Palghar was taken out of in 2014.
 figure where the district lost only a little -- cannot be done honestly with
 what is measurable here. The measurement is of *territory* and the error is in
 *people*, and the two do not track each other in the same direction twice:
-Rangareddy kept 52% of its ground and lost Medchal-Malkajgiri, a small dense
-suburb of Hyderabad holding close to half its population; Upper Subansiri kept
-90% of its ground and the part it lost is high Himalaya with almost nobody in
-it. A threshold set anywhere between them would be a guess wearing a
-tolerance's clothes.
+Rangareddy kept 52% of its ground, and of the two districts taken out of it the
+one that took least land took most people -- Medchal-Malkajgiri is 1,067 km² of
+built-up Hyderabad fringe against Vikarabad's 3,621 km² of farmland. Upper
+Subansiri kept 90% of its ground and what it lost is high Himalaya with almost
+nobody in it. A threshold set anywhere between the two would be a guess wearing
+a tolerance's clothes.
 
 What area *can* settle is the binary question, and the measurement turns out to
 be unambiguous about it: every district in the table retained between 18% and
