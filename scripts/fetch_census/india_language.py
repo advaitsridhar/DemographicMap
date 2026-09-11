@@ -52,8 +52,10 @@ from ._shared import (
     NOT_AVAILABLE, PROCESSED, RAW, gap, log, record, shares, write_json,
 )
 from .india_census import (
-    CATALOG, DISTRICT_ALIASES, SPLIT_STATES, STATE_ALIASES, SUBDIVIDED_SINCE_2011,
-    lost_territory, lost_territory_reason, split_note, subdivided_reason,
+    CATALOG, CREATED_AFTER_2011, DISTRICT_ALIASES, NEW_DISTRICT_ALIASES,
+    SPLIT_STATES, STATE_ALIASES, STATE_IN_2011, SUBDIVIDED_SINCE_2011,
+    created_reason, inherited_note, lost_territory, lost_territory_reason,
+    split_note, subdivided_reason, without_counts,
 )
 
 WORKBOOKS = RAW / "india" / "c16"
@@ -353,6 +355,9 @@ def build(units: dict[tuple[str, str], dict[str, Any]], level: str
           ) -> list[dict[str, Any]]:
     states = state_names(units)
     shrunken = lost_territory()
+    # (2011 state, 2011 district) -> its mother-tongue counts, so a district
+    # carved out of it after the census can inherit its shares.
+    measured: dict[tuple[str, str], dict[str, float]] = {}
     out = []
     if level == "state":
         out.extend(split_state_rows(units, states))
@@ -372,23 +377,23 @@ def build(units: dict[tuple[str, str], dict[str, Any]], level: str
             # decides what the record says and a gap that has lost its reason
             # is indistinguishable from one nobody thought about.
             share, successors = shrink
-            reason = lost_territory_reason(DISTRICT_ALIASES.get(key, raw_name),
+            caveat = lost_territory_reason(DISTRICT_ALIASES.get(key, raw_name),
                                            share, successors)
+            groups = composition(unit["counts"])
             out.append(record(
                 f"IND-D{district_code}", DISTRICT_ALIASES.get(key, raw_name),
                 level="admin2", parent="IND", parent_name=states.get(state_code),
                 codes={"census2011_state": state_code,
                        "census2011_district": district_code},
-                population=gap(NOT_AVAILABLE, reason),
-                religion=gap(NOT_AVAILABLE, reason),
-                language=gap(NOT_AVAILABLE, reason),
-                # Sex ratio too, though this file never fills it. A bare gap
-                # here would land on india_census's explained one when the two
-                # records merge -- gap does not overwrite a value, but it does
-                # overwrite another gap, and the later file wins.
-                sex_ratio=gap(NOT_AVAILABLE, reason),
-                sources=[{"field": "note", "name": SOURCE, "url": CATALOG}],
+                language=groups or gap(NOT_AVAILABLE),
+                language_note=(language_note(groups, len(unit["counts"]))
+                               + " " + caveat),
+                language_year=2011,
+                sources=[{"field": "language", "name": SOURCE, "url": CATALOG,
+                          "year": 2011,
+                          "license": "Government of India open data (GODL-India)"}],
             ))
+            measured[(states.get(state_code, "").casefold(), key)] = unit["counts"]
             continue
         if not is_state and key in SUBDIVIDED_SINCE_2011:
             # One census row, several present-day districts. Splitting a language
@@ -433,6 +438,9 @@ def build(units: dict[tuple[str, str], dict[str, Any]], level: str
                      "census2011_district": district_code}
 
         groups = composition(unit["counts"])
+        if not is_state:
+            measured[(states.get(state_code, "").casefold(),
+                      raw_name.casefold())] = unit["counts"]
         out.append(record(
             entity_id, name, level="admin1" if is_state else "admin2", parent="IND",
             parent_name=None if is_state else states.get(state_code),
@@ -444,6 +452,58 @@ def build(units: dict[tuple[str, str], dict[str, Any]], level: str
                       "year": 2011,
                       "license": "Government of India open data (GODL-India)"}],
         ))
+    if level == "district":
+        out.extend(new_districts(measured))
+    return out
+
+
+def new_districts(measured: dict[tuple[str, str], dict[str, float]]
+                  ) -> list[dict[str, Any]]:
+    """Post-2011 districts, carrying their predecessor's mother tongue.
+
+    The same estimate india_census.py makes for religion, made here for
+    language and for the same reason: the census never enumerated these, and
+    the owner would rather see the composition of the ground they were cut out
+    of than a hole. Shares only -- the speaker counts belong to the district
+    the census measured.
+
+    Both files emit a record under this id, so both have to agree about what
+    it says. A file that still wrote a bare gap here would land it on the
+    other's figure on merge and undo the whole thing.
+    """
+    out: list[dict[str, Any]] = []
+    for state, entries in CREATED_AFTER_2011.items():
+        state_2011 = STATE_IN_2011.get(state, state)
+        for name, year, predecessors in entries:
+            parts = [measured.get((state_2011.casefold(), p.casefold()))
+                     for p in predecessors]
+            alias = NEW_DISTRICT_ALIASES.get(name)
+            entity_id = (f"IND-NEW-{state.replace(' ', '-')}"
+                         f"-{name.replace(' ', '-')}")
+            if any(part is None for part in parts):
+                out.append(record(
+                    entity_id, name, level="admin2", parent="IND",
+                    parent_name=state, aliases=[alias] if alias else None,
+                    language=gap(NOT_AVAILABLE,
+                                 created_reason(name, year, predecessors)),
+                    sources=[{"field": "note", "name": SOURCE, "url": CATALOG}],
+                ))
+                continue
+            whole: dict[str, float] = {}
+            for part in parts:
+                for label, count in part.items():
+                    whole[label] = whole.get(label, 0) + count
+            groups = without_counts(composition(whole))
+            out.append(record(
+                entity_id, name, level="admin2", parent="IND",
+                parent_name=state, aliases=[alias] if alias else None,
+                language=groups or gap(NOT_AVAILABLE),
+                language_note=inherited_note(name, year, predecessors),
+                language_year=2011,
+                sources=[{"field": "language", "name": SOURCE, "url": CATALOG,
+                          "year": 2011,
+                          "license": "Government of India open data (GODL-India)"}],
+            ))
     return out
 
 
