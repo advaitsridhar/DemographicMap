@@ -361,10 +361,17 @@ class IndiaCensusValidation(unittest.TestCase):
         for parent, successors in self.india.SUBDIVIDED_SINCE_2011.items():
             self.assertGreater(len(successors), 1, parent)
 
-    def test_post_2011_states_carry_a_reason(self):
-        for name, reason in self.india.FORMED_AFTER_2011.items():
-            self.assertGreater(len(reason), 80, name)
-            self.assertIn("2011 census", reason)
+    def test_post_2011_states_are_summed_from_whole_2011_districts(self):
+        # The only honest way to give a state the census never named a figure:
+        # its territory has to be a whole number of districts the census did
+        # enumerate, each named here and each checked against the census's own
+        # list on every run.
+        for name, split in self.india.SPLIT_STATES.items():
+            self.assertGreater(len(split.districts), 1, name)
+            self.assertEqual(len(split.districts), len(split.codes), name)
+            self.assertEqual(split.parent, self.india.STATE_IN_2011[name])
+            self.assertGreater(split.population, 0, name)
+            self.assertGreater(split.residual, split.population // 100, name)
 
 
 class AbsHierarchyCollapse(unittest.TestCase):
@@ -2036,6 +2043,27 @@ class PakistanCells(unittest.TestCase):
     ABBOTTABAD = ("ALL[47-58] SEXES[60-81] 1397587[155-179] 1391394[204-228] "
                   "5818[263-277] 97[316-323] 21[361-368] 17[416-423] "
                   "43[451-458] 6[496-499] 191[523-534]")
+    # Islamabad, off page 1 of table_9_islamabad.pdf, which is the whole file:
+    # the territory is one district and the table prints it once. Three of its
+    # nine cells arrive as two words each -- 45, 60 and 10 -- and two more have
+    # a leading digit split off, which is every way this document breaks a
+    # figure occurring in a single row.
+    #
+    # It also sets the tightest column gap either province offered: 12 points,
+    # between ,283,244 and the 2 of 2,181,663, against the 13 the module's
+    # docstring had measured. GAP is 4, so the margin is 4 against 12 rather
+    # than 4 against 13, and a rule tuned any closer to the gap it had seen
+    # would have joined two columns here into one unreadable number.
+    ISLAMABAD = ("ALL[49-60] SEXES[62-83] 2[145-149] ,283,244[149-173] "
+                 "2[185-189] ,181,663[189-213] 97,281[241-260] 839[300-311] "
+                 "2,398[347-363] 4[419-423] 5[423-426] 6[456-459] 0[459-462] "
+                 "1[491-494] 0[494-497] 948[529-540]")
+    # The same figures as the ISLAMABAD TEHSIL block beneath it prints them,
+    # unsplit. The file states its own answer twice, in two spellings.
+    ISLAMABAD_TEHSIL = ("ALL[49-60] SEXES[62-83] 2,283,244[145-173] "
+                        "2,181,663[185-213] 97,281[241-260] 839[300-311] "
+                        "2,398[347-363] 45[419-426] 60[456-462] 10[491-497] "
+                        "948[529-540]")
 
     @staticmethod
     def row(spec):
@@ -2106,6 +2134,26 @@ class PakistanCells(unittest.TestCase):
         self.assertEqual(got["Muslim"], 1_391_394)
         self.assertEqual(got["Parsi"], 6)
 
+    def test_islamabad_reads_the_same_as_the_tehsil_row_that_repeats_it(self):
+        # The district block splits 45, 60 and 10 into single digits and the
+        # tehsil block beneath it does not. They are one row of one table
+        # printed twice, so the reader has to make them one answer -- and the
+        # file, not this test, is what says which answer is right.
+        self.assertEqual(self.read(self.ISLAMABAD),
+                         self.read(self.ISLAMABAD_TEHSIL))
+
+    def test_islamabad_reads_as_the_page_prints_it(self):
+        got = self.read(self.ISLAMABAD)
+        self.assertEqual(got["TOTAL"], 2_283_244)
+        self.assertEqual(got["Muslim"], 2_181_663)
+        self.assertEqual(got["Christian"], 97_281)
+        # The three that arrive as two words each.
+        self.assertEqual(got["Scheduled Castes"], 45)
+        self.assertEqual(got["Sikh"], 60)
+        self.assertEqual(got["Parsi"], 10)
+        total = got.pop("TOTAL")
+        self.assertEqual(sum(got.values()), total)
+
     def test_a_row_with_the_wrong_number_of_cells_is_refused(self):
         # Refused rather than padded or truncated: guessing which end to trim
         # is how a district ends up with another district's religions while
@@ -2169,6 +2217,43 @@ class PakistanCells(unittest.TestCase):
             self.pk.check("Punjab", {"ATTOCK": self.reconciling()}, [])
         self.assertIn("no province row", str(caught.exception))
 
+    def test_a_territory_that_is_one_district_is_its_own_province_row(self):
+        # Islamabad's file prints no territory row because there is nothing
+        # for it to be a total of: the first ALL SEXES line in the file is
+        # already inside ISLAMABAD DISTRICT.
+        found = {"ISLAMABAD": self.reconciling()}
+        whole = self.pk.province_row("ict", "Islamabad Capital Territory",
+                                     found, [])
+        self.assertEqual(whole[0], 2_133_005)
+        self.pk.check("Islamabad Capital Territory", found, whole)
+
+    def test_the_fallback_reaches_only_the_province_it_is_declared_for(self):
+        # The refusal above is the Malakand check, and it is the one thing
+        # that catches a unit this reader never noticed. A province that has
+        # simply lost its row must not be handed its own districts as the
+        # total they are supposed to be checked against.
+        self.assertEqual(
+            self.pk.province_row("punjab", "Punjab",
+                                 {"ATTOCK": self.reconciling()}, []),
+            [])
+
+    def test_a_declared_single_district_that_reads_two_is_refused(self):
+        # The declaration says the province row is redundant *because* the
+        # province is one district. Two districts and no row to add them up
+        # against is the case it claims cannot happen.
+        with self.assertRaises(SystemExit) as caught:
+            self.pk.province_row("ict", "Islamabad Capital Territory",
+                                 {"ISLAMABAD": self.reconciling(),
+                                  "RAWALPINDI": self.reconciling()}, [])
+        self.assertIn("declared as a single district", str(caught.exception))
+
+    def test_a_province_row_that_is_printed_is_used_as_printed(self):
+        printed = self.province(2_133_005)
+        self.assertIs(
+            self.pk.province_row("ict", "Islamabad Capital Territory",
+                                 {"ISLAMABAD": self.reconciling()}, printed),
+            printed)
+
     def cell(self, total):
         return dict(zip(self.pk.COLUMNS,
                         [total, total - 3, 1, 1, 0, 0, 1, 0, 0]))
@@ -2211,12 +2296,101 @@ class PakistanCells(unittest.TestCase):
         # was renamed and the two share no word.
         self.assertEqual(self.pk.ALIASES["Shaheed Benazirabad"], ("Nawabshah",))
 
-    def test_the_four_provinces_are_required_and_the_territories_are_not(self):
-        # Azad Jammu and Kashmir and Gilgit-Baltistan are enumerated apart from
-        # the census proper, so their absence is a fact about what Pakistan
-        # publishes. The four provinces are 240 of its 241 million people.
-        required = {slug for slug, (_n, req, _u) in self.pk.PROVINCES.items() if req}
-        self.assertEqual(required, {"kp", "punjab", "sindh", "balochistan"})
+    def test_an_absent_file_means_three_different_things(self):
+        # One wording for all three is what kept Islamabad missing: its table
+        # is published and was being asked for under the wrong name, and the
+        # log called that the same thing as Azad Jammu and Kashmir, whose
+        # table does not exist. The four provinces are 238 of Pakistan's 241
+        # million people and stop the run outright.
+        standing = {slug: how for slug, (_n, how, _u) in self.pk.PROVINCES.items()}
+        self.assertEqual({s for s, how in standing.items() if how == self.pk.REQUIRED},
+                         {"kp", "punjab", "sindh", "balochistan"})
+        self.assertEqual(standing["ict"], self.pk.PUBLISHED)
+        self.assertEqual({s for s, how in standing.items() if how == self.pk.APART},
+                         {"ajk", "gb"})
+
+    def test_the_capitals_table_is_asked_for_by_the_name_the_office_uses(self):
+        # table_9_islamabad.pdf answered 200 with 36,012 bytes on the runner;
+        # table_9_islamabad_districts.pdf, which the provinces' scheme implies
+        # and which this module asked for alone, answers 404. The old name is
+        # kept behind the real one rather than deleted -- it costs one request
+        # if the office ever regularises the scheme.
+        candidates = self.pk.PROVINCES["ict"][2]
+        self.assertTrue(candidates[0].endswith("/table_9_islamabad.pdf"),
+                        candidates[0])
+        self.assertIn(f"{self.pk.BASE}/table_9_islamabad_districts.pdf",
+                      candidates)
+
+
+class PakistanDeclaresWhatIsNotPublished(unittest.TestCase):
+    """Azad Jammu and Kashmir and Gilgit-Baltistan, said rather than left out.
+
+    Six filenames were tried for each on the runner and the office answered
+    404 to all twelve, while the four provinces and Islamabad answered 200.
+    Their own Planning and Development departments publish district tables
+    from the same census and neither booklet contains the word religion.
+
+    So the two territories are a fact about what Pakistan publishes, and an
+    empty field cannot say that: on this map an empty field means an adapter
+    nobody has run.
+    """
+
+    def setUp(self):
+        from scripts.fetch_census import pakistan
+        self.pk = pakistan
+        self.nothing = {pakistan.REQUIRED: [], pakistan.PUBLISHED: [],
+                        pakistan.APART: []}
+
+    def absent(self, *slugs):
+        run = {key: list(value) for key, value in self.nothing.items()}
+        run[self.pk.APART] = [(slug, f"{slug}: 404") for slug in slugs]
+        return self.pk.declared_gaps(run)
+
+    def test_a_territory_the_office_did_publish_gets_no_declaration(self):
+        # Written from the run's own failed lookups rather than from a list,
+        # so a territory that starts being published loses its declaration by
+        # the same observation that fills it. The two cannot disagree.
+        self.assertEqual(self.absent(), [])
+        self.assertEqual({r["name"] for r in self.absent("gb")},
+                         {"Gilgit-Baltistan", "Astore", "Diamer", "Ghanche",
+                          "Ghizer", "Gilgit", "Hunza", "Kharmang", "Nagar",
+                          "Shigar", "Skardu"})
+
+    def test_the_gap_says_not_available_and_not_not_collected(self):
+        # Pakistan does ask religion and mother tongue, and asked them here:
+        # the 2023 count covered both territories. What is missing is the
+        # publication, and not_collected would say the state never asked.
+        for row in self.absent("ajk", "gb"):
+            for field in ("religion", "language"):
+                self.assertEqual(row[field]["status"], "not_available")
+                self.assertIn("publishes no Table 9", row[field]["note"])
+
+    def test_the_declaration_carries_no_figure_of_its_own(self):
+        # Including population: Wikidata supplies one for both territories and
+        # a gap marker must never displace a real value, whichever order the
+        # two files merge in.
+        for row in self.absent("ajk", "gb"):
+            for field in ("population", "religion", "language", "ethnicity"):
+                self.assertIn("status", row[field])
+
+    def test_azad_kashmir_is_declared_under_the_name_the_map_draws_it_by(self):
+        # geoBoundaries draws one second-level unit for the whole territory
+        # and calls it Azad Kashmir; its Bureau of Statistics counts ten
+        # districts, which have no shapes here to land on. A declaration that
+        # reaches no shape declares nothing, so the record follows the
+        # boundary file and the note explains the ten.
+        rows = {(r["level"], r["name"]): r for r in self.absent("ajk")}
+        self.assertEqual(set(rows), {("admin1", "Azad Jammu and Kashmir"),
+                                     ("admin2", "Azad Kashmir")})
+        self.assertIn("Azad Kashmir",
+                      rows[("admin1", "Azad Jammu and Kashmir")]["aliases"])
+        self.assertEqual(rows[("admin2", "Azad Kashmir")]["parent_name"],
+                         "Azad Jammu and Kashmir")
+
+    def test_every_declared_district_names_its_territory_as_parent(self):
+        for row in self.absent("gb"):
+            if row["level"] == "admin2":
+                self.assertEqual(row["parent_name"], "Gilgit-Baltistan")
 
 
 class BangladeshZila(unittest.TestCase):
