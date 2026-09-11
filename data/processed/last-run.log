@@ -1,8 +1,9 @@
-wiki_census KAZ: Bureau of National Statistics of Kazakhstan, 2021 National Population Census, religious affiliation by region
-  'Religion in Kazakhstan': 34,569 bytes of wikitext
-  16 admin1 records; not matched by design: ['Turkistan Region']
-  wrote data/processed/kazakhstan_region.json (26 kB)
-wiki_census KHM: National Institute of Statistics of Cambodia, General Population Census of Cambodia 2019, religion by province
-  'Religion in Cambodia': 31,214 bytes of wikitext
-  25 admin1 records
-  wrote data/processed/cambodia_province.json (38 kB)
+mali: INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population
+  17,708,018 bytes
+  70 pages
+  annex tables on pages ethnicity 55, language 56
+  religion: 20 regions, 21,347,586 people
+  ethnicity: 20 regions, 21,200,119 people
+  language: 20 regions, 19,144,632 people
+  9 shapes
+  wrote data/processed/mali_rgph5_region.json (66 kB)
