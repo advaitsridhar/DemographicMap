@@ -77,6 +77,8 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.peru
   soft python3 -m scripts.fetch_census.zimbabwe
   soft python3 -m scripts.fetch_census.burkina
+  # A survey, read from one page of the pollster's own report.
+  soft python3 -m scripts.fetch_census.korea_survey
   # One MediaWiki API call; the NSO's own hosts refuse automated readers.
   soft python3 -m scripts.fetch_census.thailand
   # Census tables that reach us only as Wikipedia transcriptions (KAZ, KHM).
