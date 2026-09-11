@@ -891,10 +891,31 @@ def aggregate(nodes: dict[str, dict[str, float]],
     are already expressed over, so a state is a weighted mean of its counties
     and not an approximation of one.
     """
-    home = {(row.get("codes") or {}).get("geoid"): row for row in universe}
+    # The state each county belongs to, taken from every row in the universe
+    # rather than from the one county being written. Connecticut is why. The
+    # ACS retired its eight counties for nine planning regions in 2022 and PRRI
+    # still publishes the eight, so not one Connecticut geoid in this file
+    # appears in the universe -- and reading the state's name off the first
+    # such county produced "State 09", a record that matched no shape, left
+    # Connecticut wearing the superseded study, and mixed two sources' labels
+    # into the national sum. The FIPS prefix is the thing both files agree on
+    # whatever they call the pieces.
+    named: dict[str, tuple[str, str]] = {}
+    for row in universe:
+        state = (row.get("codes") or {}).get("fips_state")
+        if state and row.get("parent") and row.get("parent_name"):
+            named.setdefault(state, (row["parent"], row["parent_name"]))
     by_state: dict[str, list[str]] = defaultdict(list)
     for fips in nodes:
         by_state[fips[:2]].append(fips)
+    nameless = sorted(set(by_state) - set(named))
+    if nameless:
+        # A state written under a made-up name joins no shape and is invisible
+        # -- the failure this whole file is careful about. Say it instead.
+        raise SystemExit(
+            f"us_prri: {len(nameless)} states have no name in the universe "
+            f"({', '.join(nameless)}); a state written as 'State NN' would "
+            f"match no boundary and disappear")
 
     def compose(members: list[str]) -> tuple[dict[str, float], float]:
         base = sum(populations.get(f, 0.0) for f in members)
@@ -921,10 +942,9 @@ def aggregate(nodes: dict[str, dict[str, float]],
             raise SystemExit(
                 f"us_prri: state {state} sums to {base} one way and {check} "
                 f"the other; a county is counted twice or not at all")
-        sample = home.get(members[0]) or {}
-        state_id = sample.get("parent") or f"USA-{state}"
+        state_id, state_name = named[state]
         records.append(record(
-            state_id, sample.get("parent_name") or f"State {state}",
+            state_id, state_name,
             level="admin1", parent="USA", country="USA",
             codes={"geoid": state, "fips_state": state, "fips_county": None},
             religion=shares_as_rows(shares, base) or gap(NOT_AVAILABLE),

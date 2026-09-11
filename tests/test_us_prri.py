@@ -104,6 +104,7 @@ def universe(n: int, *, names: dict[str, str] | None = None,
         out.append({
             "id": f"USA-{fips}", "name": names.get(fips, f"County {i}"),
             "parent": f"USA-{fips[:2]}",
+            "parent_name": f"Region {fips[:2]}",
             "codes": {"geoid": fips, "fips_state": fips[:2],
                       "fips_county": fips[2:]},
             "population": {"value": population},
@@ -754,6 +755,65 @@ class StatesAndTheNation(unittest.TestCase):
         note = self.wider()[0]["religion_note"]
         self.assertIn("Summed from the", note)
         self.assertIn("weighted by", note)
+
+
+class AStateWhoseCountiesTheUniverseRenamed(unittest.TestCase):
+    """Connecticut, and the way a bad join hides rather than fails.
+
+    The ACS retired Connecticut's eight counties for nine planning regions in
+    2022; PRRI still reports the eight and the boundary file still draws them.
+    So not one Connecticut geoid in PRRI appears in the county universe, and
+    reading the state's name off the first of its counties gave "State 09" --
+    a record that matched no shape, silently left Connecticut wearing the 2020
+    study PRRI had replaced, and put two sources' labels into the national sum
+    (Catholicism from PRRI's fifty states and Catholic from Connecticut's).
+
+    Nothing failed. The build's double-counting check caught it four steps
+    later, by which time the only symptom was a country carrying a religion
+    and its own parent.
+    """
+
+    def universe(self):
+        """Connecticut as the ACS has it: planning regions, new geoids."""
+        return [{"id": "USA-09110", "name": "Capitol Planning Region",
+                 "parent": "USA-09", "parent_name": "Connecticut",
+                 "codes": {"geoid": "09110", "fips_state": "09",
+                           "fips_county": "110"},
+                 "population": {"value": 980_000}},
+                {"id": "USA-09120", "name": "Greater Bridgeport",
+                 "parent": "USA-09", "parent_name": "Connecticut",
+                 "codes": {"geoid": "09120", "fips_state": "09",
+                           "fips_county": "120"},
+                 "population": {"value": 325_000}}]
+
+    def nodes(self):
+        """PRRI as it has it: the old counties, none of them in the universe."""
+        return {"09001": {"Catholicism": 40.0, "Protestantism": 60.0},
+                "09003": {"Catholicism": 20.0, "Protestantism": 80.0}}
+
+    def test_the_state_is_named_from_the_universes_other_rows(self):
+        got = us_prri.aggregate(self.nodes(),
+                                {"09001": 500.0, "09003": 500.0},
+                                self.universe(), year=2024)
+        self.assertEqual([r["name"] for r in got], ["Connecticut"])
+        self.assertEqual(got[0]["id"], "USA-09")
+
+    def test_the_figures_are_still_the_counties_own(self):
+        got = us_prri.aggregate(self.nodes(),
+                                {"09001": 500.0, "09003": 500.0},
+                                self.universe(), year=2024)
+        shares = {g["group"]: g["pct"] for g in got[0]["religion"]}
+        self.assertEqual(shares, {"Protestantism": 70.0, "Catholicism": 30.0})
+
+    def test_a_state_the_universe_never_mentions_is_refused_loudly(self):
+        # The alternative is a record under an invented name, which joins no
+        # boundary and vanishes without a word. A fetch that cannot name a
+        # state does not know where its people are.
+        with self.assertRaises(SystemExit) as cm:
+            us_prri.aggregate(self.nodes(), {"09001": 500.0, "09003": 500.0},
+                              [], year=2024)
+        self.assertIn("no name in the universe", str(cm.exception))
+        self.assertIn("09", str(cm.exception))
 
 
 class TheNationIsNotThisAdaptersToFile(unittest.TestCase):
