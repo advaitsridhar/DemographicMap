@@ -1016,6 +1016,34 @@ things that cannot both be true.
 And one control the file supplies itself: an assembly may not hold more people
 than the parent it is declared under, where that parent prints its own row.
 
+**The refusal that was missing, and the run that proved it was.** The first
+version of this had one more branch than it should have: a declaration that
+reached none of the sheet's areas was passed over, on the theory that a sheet
+might simply not carry them. Dispatched to the runner, it merged nothing in
+either country and said nothing about it -- the log read `141 areas: 6 admin1,
+135 admin2`, `every one of 141 areas reaches its published total`, `wrote
+data/processed/pakistan_language.json (329 kB)`, and the file came back
+byte-identical. The only way anyone knew was by diffing the output.
+
+The cause was one line wide. Every declaration in a `Country` -- `aliases`,
+`no_shape`, `merged` -- is written in the spelling the records carry, which is
+the sheet's cell put through `str.title()`; Pakistan's Table 11 prints
+`KARACHI CENTRAL DISTRICT`. `aliases` and `no_shape` had always folded the
+cell before comparing. `combine()` compared it raw, so it was testing the one
+spelling no declaration in this module is written in. The fold now lives in
+`spelling()`, named and in one place, and a merge that matches nothing is
+refused with what the sheet does have printed beside it -- `KARACHI CENTRAL
+DISTRICT` next to `Karachi Central District` is a diagnosis at a glance.
+
+Two things about how that got through are worth keeping. The tests passed,
+because they handed `combine()` a mapping the test file had built, in a
+spelling the test file had chosen: a test that writes both sides of a
+comparison cannot see the two sides disagreeing. They now build a *sheet* and
+read it through `read()`, in both spellings. And Ethiopia was briefly reported
+as working because its output file had changed -- it had, by exactly the alias
+line and the `no_shape` removal, and not by a single assembled record. A
+changed file is not a done job.
+
 Karachi now reads Urdu 42.3%, Pushto 15.0%, Punjabi 10.7%, Sindhi 10.7%, of
 16,024,894 people the mother-tongue table counts -- 2017 figures on a shape
 whose 2023 population is 20.4 million, and the record says so.
