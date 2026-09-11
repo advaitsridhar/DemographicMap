@@ -1,6 +1,6 @@
-us_acs: ACS 2022 5-year, level=state
-  wrote data/processed/us_state.json (305 kB)
-  52 state records
-  state: 161,224,088 vs whole-country row 161,224,088 (0.0000% apart, 51 areas)
+us_acs: ACS 2022 5-year, level=county
+  wrote data/processed/us_county.json (16057 kB)
+  3222 county records
+  county: 161,009,516 vs whole-country row 161,009,516 (0.0000% apart, 3141 areas)
   175 bodies defaulted to Protestant; largest: Non-denominational Christian Churches 21,095,641, Southern Baptist Convention 17,649,040, United Methodist Church 8,018,629, Evangelical Lutheran Church in America 3,139,413, Assemblies of God 3,094,547
-  religion attached to 51 of 52 records
+  religion attached to 3132 of 3222 records
