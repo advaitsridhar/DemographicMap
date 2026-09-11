@@ -247,3 +247,168 @@ class TheThreeTiers(unittest.TestCase):
                      "White: English, Welsh, Scottish, Northern Irish or British"):
             self.assertEqual(group_tree.at_tier("ethnicity", name, 1),
                              "European ancestry", name)
+
+
+class ReadingANameTheTablesDoNotSpell(unittest.TestCase):
+    """The rules that place a label no table lists, and their refusals.
+
+    Every rule here earns its place by what it refuses as much as by what it
+    places: a label read wrongly is filed under a heading no census wrote,
+    and unlike an unplaced one it never shows up again.
+    """
+
+    def test_a_spelling_difference_is_not_a_different_group(self):
+        import group_tree
+        for field, name, expected in (
+                ("language", "Éwé", "Ewe"),
+                ("language", "Banda Languages", "Banda"),
+                ("language", "Alaba-K’abeena", "Alaba-K'abeena"),
+                ("language", "Lushai/Mizo", "Mizo")):
+            self.assertEqual(group_tree.parent_of(field, name),
+                             group_tree.parent_of(field, expected),
+                             f"{name} parts company with {expected}")
+
+    def test_a_compound_lands_where_all_of_its_parts_agree(self):
+        import group_tree
+        # China's 1.4 billion, written as the people and as the country.
+        self.assertEqual(group_tree.parent_of("ethnicity", "Han Chinese"),
+                         group_tree.parent_of("ethnicity", "Han"))
+        # Neither Amazigh nor Arab, but both are the same ancestry.
+        self.assertEqual(
+            group_tree.at_tier("ethnicity", "Amazigh and Arab", 1),
+            "Middle Eastern and North African ancestry")
+
+    def test_two_answers_welded_together_are_refused(self):
+        """The refusal that keeps the rule honest.
+
+        "European and Mestizo" is one census category covering two
+        ancestries that share no node above them. Reading it as either would
+        put a real number under a heading nobody published, so it stays
+        unplaced and stays visible as unplaced.
+        """
+        import group_tree
+        for name in ("European and Mestizo", "White or Mestizo"):
+            self.assertIsNone(group_tree.parent_of("ethnicity", name), name)
+
+    def test_a_bands_remainder_sits_under_the_band(self):
+        """"Romance languages, n.i.e." is Romance, not its sibling.
+
+        Read as a sibling, the family it is the leftover of would not count
+        it, and Romance would come up short by exactly the rows the census
+        could not name.
+        """
+        import group_tree
+        self.assertEqual(
+            group_tree.parent_of("language", "Italic (Romance) languages, n.i.e."),
+            "Romance languages")
+        self.assertEqual(group_tree.parent_of("language", "Turkic languages, n.i.e."),
+                         "Turkic languages")
+
+    def test_a_top_grouping_never_acquires_a_parent(self):
+        """The invariant the word rules could break.
+
+        "African ancestry" contains the word "African", which is a census
+        category *underneath* it. Any rule that reads a name word by word can
+        close that loop, and a loop in the tree hangs the first paint, so the
+        top of each tree says no before the rules get a turn.
+        """
+        import group_tree
+        for field in FIELDS:
+            for name in group_tree.tier1_names(field):
+                self.assertIsNone(group_tree.parent_of(field, name),
+                                  f"{field}: {name} was given a parent")
+
+    def test_every_label_in_the_shipped_data_terminates(self):
+        """No label, however odd, may loop or run away climbing the tree."""
+        import group_tree
+        path = ROOT / "site" / "data" / "admin0.json"
+        if not path.exists():
+            raise unittest.SkipTest("site/data has not been built")
+        for record in json.loads(path.read_text()):
+            for field in FIELDS:
+                rows = record.get(field)
+                if not isinstance(rows, list):
+                    continue
+                for row in rows:
+                    name = row.get("group")
+                    if not name:
+                        continue
+                    trail = cg.ancestry(field, name)
+                    self.assertEqual(len(trail), len(set(trail)),
+                                     f"{field}: {name} loops through {trail}")
+                    self.assertLess(len(trail), 12, f"{field}: {name} is {trail}")
+
+
+class SpellingVariantsAreSynonyms(unittest.TestCase):
+    def test_a_variant_and_its_target_are_one_group(self):
+        import group_tree
+        for field, variant, target in (
+                ("ethnicity", "Maure", "Moor"),
+                ("ethnicity", "Wambo", "Ovambo"),
+                ("ethnicity", "Han Chinese", "Han"),
+                ("language", "Fulah", "Fula"),
+                ("language", "Merina", "Malagasy")):
+            self.assertEqual(group_tree.parent_of(field, variant),
+                             group_tree.parent_of(field, target),
+                             f"{variant} is not filed with {target}")
+
+    def test_a_variant_may_not_shadow_a_name_the_tree_places(self):
+        """Two tables disagreeing about one string is a bug, not a fallback.
+
+        If the tree places "Malinke" and a variant also calls it a spelling
+        of something else, whichever table is merged last silently wins. The
+        builder refuses instead.
+        """
+        import group_tree
+        with self.assertRaises(ValueError):
+            group_tree._resolve_variants(
+                "ethnicity", {"Zulu": "Xhosa"}, {"Zulu": "Bantu peoples"})
+
+
+class TheTablesDoNotContradictEachOther(unittest.TestCase):
+    def test_no_top_grouping_is_also_declared_a_child(self):
+        """A tier-1 node named in some family's child list is a loop.
+
+        "Other and unspecified languages" was a top grouping *and* a member of
+        the band hanging under it, so each was the other's parent. Nothing
+        caught it while `parent_of` answered from whichever table was merged
+        last; it surfaced the moment the top of the tree began saying no.
+        """
+        import group_tree
+        for field in FIELDS:
+            tops = group_tree.tier1_names(field)
+            for child, parent in group_tree.parents(field).items():
+                self.assertNotIn(child, tops,
+                                 f"{field}: top grouping {child!r} is also "
+                                 f"listed as a child of {parent!r}")
+
+
+class NounClassPrefixes(unittest.TestCase):
+    """One root, however many class markers the censuses put in front of it."""
+
+    def test_a_prefixed_name_is_the_root_it_is_built_on(self):
+        import group_tree
+        for name in ("Mzaramo", "Ciyao", "Mokgatla", "Muganda", "Xitswa",
+                     "Msambaa", "Mbena"):
+            self.assertEqual(group_tree.parent_of("ethnicity", name),
+                             "Bantu peoples", name)
+
+    def test_the_rule_only_fires_where_the_convention_holds(self):
+        """The guard that keeps three spare letters from matching the world.
+
+        Stripping "Se" from "Serb" leaves "rb", and on a big enough table
+        some such remnant will collide with a real name. The rule therefore
+        accepts a match only when the root lands in a family that actually
+        uses these prefixes, so a European or Asian name is never reached
+        this way.
+        """
+        import group_tree
+        self.assertIsNone(group_tree.class_prefix_parent("ethnicity", "Serbian"))
+        self.assertIsNone(group_tree.class_prefix_parent("ethnicity", "Mongolian"))
+        self.assertIsNone(group_tree.class_prefix_parent("ethnicity", "Malay"))
+
+    def test_an_exact_name_still_wins(self):
+        # "Malinke" is in the tree; it must never be read as a prefixed form.
+        import group_tree
+        self.assertEqual(group_tree.parent_of("ethnicity", "Malinke"),
+                         "West African peoples")

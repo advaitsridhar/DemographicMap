@@ -614,9 +614,14 @@
     // "Cushitic languages" is not.
     const family = row.flat && group.parent
       ? `<span class="g-parent">in ${esc(group.parent)}</span>` : "";
+    // An unplaced group keeps the reserved colour here too, and says why on
+    // hover. A grey dot in a list of coloured ones reads as "nothing here";
+    // these entries are the opposite -- a real group whose family is the one
+    // thing not yet known.
     const swatch = group.hue
       ? `<span class="g-swatch" style="background:${esc(group.hue)}" aria-hidden="true"></span>`
-      : `<span class="g-swatch g-swatch-none" aria-hidden="true"></span>`;
+      : `<span class="g-swatch g-swatch-none" title="Not yet placed in the classification"
+               style="background:${window.Palette.unplaced()}" aria-hidden="true"></span>`;
     return `<div class="g-row" style="--g-depth:${row.depth}">${twist}
       <button type="button" role="treeitem" class="g-opt" data-value="${esc(group.name)}"
               aria-selected="false" tabindex="-1">
@@ -891,6 +896,13 @@
            </div>
            <div class="legend-ends"><span>${legend.floor}% or less</span><span>100%</span></div>
          </div>` +
+        (legend.unplaced
+          ? `<div class="legend-item">
+               <span class="legend-swatch" style="background:${legend.unplacedColor}"></span>
+               <span>Group not yet classified in ${number(legend.unplaced)} unit${legend.unplaced === 1 ? "" : "s"}</span>
+               <button class="info" type="button" data-info-text="These units have a figure and a group name, but the name is not placed in the tree yet, so the map cannot say which family it belongs to. It is drawn in its own colour rather than left blank, because the data is there -- only the classification is missing.">i</button>
+             </div>`
+          : "") +
         (legend.missing
           ? `<div class="legend-item">
                <span class="legend-swatch" style="background:${legend.missingColor}"></span>

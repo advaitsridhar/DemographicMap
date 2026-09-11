@@ -253,6 +253,40 @@ people counted by European registers; Roma are of South Asian origin and Europea
 residence. Neither belongs under one ancestry without an argument this map has no
 business making, so they stand alone.
 
+#### Reading a name the tables do not spell
+
+No table will ever list every spelling of every group, so `parent_of` falls
+through a series of rules, narrowest first. Each is a statement about what the
+name *is*, not a guess at where it might fit:
+
+1. **the name itself**, then **a spelling of it** — accents and typographic
+   punctuation flattened (`Éwé` is `Ewe`, `Alaba-K’abeena` is `Alaba-K'abeena`),
+   a kind word added or dropped (`Banda Languages` is `Banda`, `Romance` is
+   `Romance languages`), a bracket or slash opened (`Lushai/Mizo` is `Mizo`);
+2. **a band's remainder under the band** — `Romance languages, n.i.e.` is filed
+   *under* Romance, not beside it, or the family would not count the rows the
+   census could not name;
+3. **a root word**, for the national blocks that document one;
+4. **a noun-class prefix taken off** — `Mzaramo`, `Ciyao` and `Mokgatla` are
+   Zaramo, Yao and Kgatla. Accepted only where the root lands in a family that
+   uses these prefixes, so three spare letters cannot match something on the
+   other side of the world;
+5. **a compound whose parts agree** — `Han Chinese` is Han and is Chinese, and
+   both are Han and Sinitic peoples. The label lands at the deepest node all of
+   its resolvable parts share, so `Amazigh and Arab`, which is neither, still
+   lands in the ancestry both belong to.
+
+**The refusal is the point of rule 5.** `European and Mestizo` names two
+ancestries sharing no node, so it is left unplaced rather than read as either.
+An unplaced group keeps its figure and its name and is drawn in a reserved
+colour that is not the no-data grey: the data is there, only the classification
+is missing, and saying so is different from reporting a gap.
+
+`python -m scripts.check_classified` counts what is still unplaced, by units led
+and by distinct label — the two numbers mean different things, and a long tail of
+labels leading one district each is not the same problem as one label leading a
+hundred.
+
 Coverage is measured rather than assumed — `python -m scripts.group_tree
 --coverage` prints the share of the shipped map each tree accounts for. It is
 99.4% of religion mentions, 96.8% of ethnicity and 92.1% of language.

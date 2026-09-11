@@ -1136,6 +1136,18 @@ RESIDUAL: frozenset[str] = frozenset({
     "Other or unspecified", "other/not stated", "Other/not stated",
     "No ethnic group", "Unknown ethnicity", "Not declared",
     "Some other race (non-Hispanic)", "Other and unspecified languages",
+    # A marker the source prints where it has nothing to report. It is not a
+    # group at all, and until it was named here it read as one: grey on the
+    # map, indistinguishable from a country the map has no data for, but
+    # counted in the composition and able to lead a unit.
+    "No Data", "No religion data", "not applicable", "undeclared",
+    "Not applicable", "Undeclared", "other or unaffiliated",
+    "other and unaffiliated", "agnostics and other", "other",
+    "Other tribe", "Other groups", "other minorities", "ethnic minorities",
+    "Related to regional origin (badio/sampadjudo)",
+    "Indigenous languages, n.o.s.", "Indigenous languages, n.i.e.",
+    "indigenous languages", "other languages/dialects",
+    "other traditional religions", "other Mozambican languages",
 })
 
 

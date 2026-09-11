@@ -58,7 +58,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
+import unicodedata
 from pathlib import Path
 from typing import Any
 
@@ -445,7 +447,11 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
     "Unclassified language answers": (
         "Other languages", "Other and unspecified", "Other small languages",
         "Other languages (unspecified)", "Language not stated",
-        "Other Asian and Pacific Island", "Other and unspecified languages",
+        "Other Asian and Pacific Island",
+        # Not "Other and unspecified languages": that is the tier-1 node this
+        # band already hangs from, and naming it here too made the two each
+        # other's parent. The loop was invisible until the top of the tree
+        # started refusing a parent outright.
         "Other language", "Other", "Not stated",
         # Mexico asks whether a person speaks an indigenous language, which is
         # a different question from which language they speak. Neither answer
@@ -909,6 +915,201 @@ def _invert(table: dict[str, tuple[str, ...]]) -> dict[str, str]:
     return out
 
 
+# A name the tables already carry, spelled the way another office spells it.
+#
+# These are not groupings and they add nothing to the tree: each says that two
+# strings are one group, so the right-hand name's placement is the left-hand
+# name's placement. They exist because the rules above work on the shape of a
+# name -- accents, brackets, slashes, a kind word -- and nothing in the shape
+# of "Maure" says it is the French for "Moor", or that Namibia's "Wambo" and
+# Angola's "Ovambo" are the same people. Only a reader who knows the two
+# literatures can say that, so it is said here, once, by hand.
+#
+# The test of an entry is that a statistical office would accept it as a
+# translation rather than a classification. "Peulh" is French for Fula and
+# "Kinh" is what Vietnam calls the Vietnamese; neither decides anything. A
+# name whose identity is genuinely contested does not belong here -- it
+# belongs in the tree with its own node.
+# Names the families above did not carry, with the family each belongs to.
+#
+# Everything here is a language or a people a source actually reports and the
+# tree had no row for -- not a new grouping, just a member of an existing one.
+# They are separated from the family tables only so that what was added to
+# answer a gap stays legible as such.
+LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
+    "Bantu languages": (
+        "Ovambo", "Herero", "Kwangali", "Lozi", "Yeyi", "Mbukushu",
+        "Ngombe", "Teke", "Punu", "Kongo", "Luba", "Bemba", "Tonga",
+        "Chokwe", "Ngangela", "Kwanyama", "Nyaneka", "Zaramo", "Korekore",
+        "Umbundu", "Kimbundu",
+    ),
+    "Mande languages": ("Mandingo", "Dogon"),
+    "Indo-Aryan languages": ("Halabi", "Avadhi"),
+    "Munda languages": ("Nicobarese",),
+    "Nilo-Saharan languages": ("Songhai", "Zarma", "Kanuri", "Fur", "Gula"),
+    "Gur languages": ("Gurma", "Bwamu", "Lobi", "Dagara"),
+    # Central African Republic: the Ubangian languages its census lists, which
+    # the tree reached only through the "Banda" and "Gbaya" cover terms.
+    "Adamawa-Ubangi languages": (
+        "Yakoma", "Nzakara", "Gbanziri", "Langbashe", "Sere", "Mandjia",
+        "Gbanu", "Bokoto", "Suma", "Kare", "Dakpa", "Langba", "Ndi",
+        "Tongo", "Gbaguiri", "Mboundjia", "Issongo", "Bofi", "Gbadok",
+        "Ngbandjiri", "Bogongo", "Ali", "Pana", "Kaba", "Yangere",
+        "Nbugu", "Binga", "Mbanza", "Banziri",
+    ),
+    # Ethiopia: the Omotic languages of the south-west, which the census
+    # writes with the Amharic language suffix -gna as often as not.
+    "Omotic languages": (
+        "Aari", "Melo", "Chara", "Oyda", "Gofa", "Yemsa", "Dime",
+        "Shekkacho", "Dizin", "Sheko", "Koorete", "Nayi", "Bambassi",
+        "Zayse-Zergulla", "Kachama-Ganjule", "Boro", "Basketo", "Male",
+        "Dawro", "Gamo", "Wolaytta", "Hamer-Banna",
+    ),
+    "Cushitic languages": ("Alaba-K'abeena", "Qebena", "Werji", "Burji"),
+    # Russia's federal subjects.
+    "Northeast Caucasian languages": ("Dagestani", "Tat"),
+    "Sinitic languages": ("Dungan",),
+    # North-east India and the Himalaya.
+    "Tibeto-Burman languages": (
+        "Bhotia", "Adi", "Mishmi", "Thado", "Kinnauri", "Sharchopkha",
+        "Nissi", "Dafla", "Nyishi", "Kuki-Chin", "Karenic",
+        # Nagaland and Assam, whose census lists each language separately.
+        "Angami", "Ao", "Konyak", "Phom", "Sangtam", "Dimasa", "Lotha",
+        "Sema", "Rengma", "Chang", "Khiamniungan", "Yimchungre", "Zeliang",
+        "Chakru", "Chokri", "Lakher", "Mao", "Kabui", "Wancho", "Tangkhul",
+    ),
+}
+
+ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
+    "West African peoples": (
+        "Gurma", "Mandingo", "Songhai", "Themne", "Dogon", "Toucouleur",
+        # Ghana, Burkina Faso, Togo and Benin.
+        "Gonja", "Frafra", "Dagaaba", "Aja", "Marka", "Senufo", "Kru",
+        "Tem", "Kotokoli", "Moba",
+        # Liberia and Nigeria.
+        "Gola", "Loma", "Grebo", "Idoma", "Bura", "Efik", "Urhobo",
+        "Igala", "Tarok",
+    ),
+    "Bantu peoples": (
+        "Ovambo", "Ngombe", "Teke", "Punu", "Mokoena", "Herero",
+        "Zaramo", "Korekore", "Chokwe", "Ngangela", "Nyaneka",
+        # The roots behind the prefixed forms the censuses print. Listed bare
+        # so that "Ciyao", "Mmakuwa" and "Yao" are one group, not three.
+        "Yao", "Ganda", "Makua", "Bena", "Tswa", "Sambaa", "Fokeng",
+        "Kgatla", "Kalanga", "Lete", "Ha", "Nyakyusa", "Luguru", "Fipa",
+        "Nyaturu", "Manyika", "Karanga", "Shangaan", "Changana", "Lomwe",
+        # Democratic Republic of the Congo.
+        "Ntandu", "Yombe", "Yansi", "Songe", "Sengele", "Lega", "Nande",
+        "Tetela", "Shi", "Poke", "Budu", "Mbosi", "Kanyok",
+        # Gabon and the Republic of the Congo.
+        "Mbete", "Nzebi", "Kota", "Kalonji", "Yaka",
+    ),
+    "Mainland Southeast Asian peoples": ("Vietnamese",),
+    "Malagasy peoples": ("Sihanaka", "Masikoro", "Antesaka", "Antandroy"),
+    "Nilotic peoples": ("Teso", "Luo"),
+    "Mongolic and Siberian peoples": ("Khalkha",),
+    "Central African peoples": ("Oubanguiens",),
+    "Himalayan and Tibeto-Burman peoples": ("Ngalop", "Sharchop"),
+    "Arab peoples": ("Iraki",),
+    # Suriname's census names the community by where its ancestors came from.
+    "Indo-Aryan peoples": ("Hindustani",),
+    "Pacific Islander (census category)": (
+        "Native Hawaiian and other Pacific Islander",
+    ),
+    "Black or African (census category)": (
+        "African-American or African descent",
+    ),
+    # Small territories whose census asks for the island, not an ancestry.
+    "Other national identities": (
+        "Cayman Islander", "Curacaoan", "Falkland Islander", "Gibraltarian",
+        "Greenlandic", "Guernsey", "Jersey", "Manx", "Bermudian",
+        "Saint Helenian", "Montserratian", "Anguillian", "Aruban",
+        "Faroese", "iTaukei", "Liechtensteiner", "Monegasque",
+        "St. Helena", "Saint Maarten", "Sint Maarten",
+    ),
+    # Mauritius counts four "communities" defined by religion and origin
+    # together, so two of its four are a faith. Reading "Hindou" as South
+    # Asian ancestry would be the likelier guess and still a guess: the
+    # census asks about religion there, and the honest answer is to say the
+    # category is not an ancestry rather than to pick one for it.
+    "Unclassified ethnicity answers": ("Hindou", "Musulman"),
+    "Han and Sinitic peoples": ("Hui",),
+}
+
+
+LANGUAGE_VARIANTS: dict[str, str] = {
+    # Fula, across a dozen colonial orthographies.
+    "Fulah": "Fula", "Fulata": "Fula", "Peulh": "Fula", "Peul": "Fula",
+    "Pular": "Fula", "Mbororo": "Fula", "Fulani": "Fula", "Poular": "Fula",
+    # Madagascar's census names the highland dialect, not the language.
+    "Merina": "Malagasy",
+    # Ghana's census names the Akan dialects separately.
+    "Asante": "Akan", "Ashanti": "Akan", "Akuapem": "Akan",
+    # Southern Africa, where the noun class prefix is part of the name.
+    "Oshiwambo": "Ovambo", "Wambo": "Ovambo", "Owambo": "Ovambo",
+    "Otjiherero": "Herero", "Rukwangali": "Kwangali",
+    "Chewa": "Chichewa",
+    # West Africa.
+    "Sossou": "Susu", "Soso": "Susu",
+    "Mandinka": "Mandingo", "Mandingue": "Mandingo",
+    "Songhay": "Songhai", "Djerma": "Songhai",
+    "Gourma": "Gurma", "Moore": "Mossi",
+    # Central Asia, where Russian sources add -i.
+    "Uzbeki": "Uzbek", "Tajiki": "Tajik", "Turkmeni": "Turkmen",
+    "Kirghiz": "Kyrgyz", "Kirgiz": "Kyrgyz",
+    # The Philippines, whose census writes the pair.
+    "Bisaya": "Cebuano", "Binisaya": "Cebuano", "Ilonggo": "Hiligaynon",
+    "Bicol": "Bikol", "Ilokano": "Ilocano",
+    # Vietnam and China name the majority by its own ethnonym.
+    "Kinh": "Vietnamese", "Putonghua": "Mandarin", "Guoyu": "Mandarin",
+}
+
+ETHNIC_VARIANTS: dict[str, str] = {
+    "Maure": "Moor", "Maur": "Moor",
+    "Wambo": "Ovambo", "Owambo": "Ovambo", "Oshiwambo": "Ovambo",
+    "Mandinka": "Mandingo", "Mandingue": "Mandingo",
+    "Sossou": "Susu", "Soso": "Susu",
+    "Letebele": "Ndebele", "Matebele": "Ndebele",
+    "Zarma": "Songhai", "Songhay": "Songhai", "Djerma": "Songhai",
+    "Gourma": "Gurma", "Moore": "Mossi",
+    "Kinh": "Vietnamese", "Han Chinese": "Han", "Hui Chinese": "Hui",
+    # French and Portuguese spellings of names the tree carries in English.
+    "Haoussa": "Hausa", "Peuhl": "Fula", "Gourmatche": "Gurma",
+    "Senoufo": "Senufo", "S\u00e9noufo": "Senufo", "Dagari": "Dagaaba",
+    "Dagaati": "Dagaaba", "Frafri": "Frafra", "Lomue": "Lomwe",
+    "Krou": "Kru", "Mjaruo": "Luo", "Ateso": "Teso", "Khalkh": "Khalkha",
+    "Makuwa": "Makua", "Mmakuwa": "Makua",
+    "Bakwa Kalonji": "Kalonji", "Mb\u00e9d\u00e8": "Mbete", "Muha": "Ha",
+    "Lorma": "Loma",
+    "Serb": "Serbian", "Black Moors": "Moor",
+}
+
+
+def _resolve_variants(field: str, variants: dict[str, str],
+                      placed: dict[str, str]) -> dict[str, str]:
+    """Give each spelling variant the parent of the name it is a spelling of.
+
+    A variant is a synonym, so it becomes a *sibling* of nothing and a second
+    name for one node: it takes the same parent, which is what makes the two
+    spellings roll up to one figure. A variant whose target the tree does not
+    place is dropped rather than guessed at, and a variant that would shadow a
+    name the tree already places is refused outright, because that would mean
+    two tables disagree about one string and the quiet winner would depend on
+    dictionary order.
+    """
+    out: dict[str, str] = {}
+    for name, target in variants.items():
+        if name in placed:
+            raise ValueError(
+                f"{field}: {name!r} is both placed by the tree "
+                f"(under {placed[name]!r}) and listed as a spelling of "
+                f"{target!r}; one of the two has to go")
+        parent = placed.get(target)
+        if parent is not None:
+            out[name] = parent
+    return out
+
+
 def parents(field: str) -> dict[str, str]:
     """child -> parent for one field, over the whole tree."""
     if field == "religion":
@@ -917,6 +1118,8 @@ def parents(field: str) -> dict[str, str]:
         out = _invert(LANGUAGE_BRANCH)
         out.update(_invert(LANGUAGE_BANDS))
         out.update(_invert(LANGUAGE_FAMILY))
+        out.update(_invert(LANGUAGE_EXTRA))
+        out.update(_resolve_variants("language", LANGUAGE_VARIANTS, out))
         return out
     if field == "ethnicity":
         out = {name: "Unclassified ethnicity answers" for name in ETHNIC_RESIDUALS}
@@ -924,6 +1127,8 @@ def parents(field: str) -> dict[str, str]:
         out.update(_invert(ETHNIC_CENSUS))
         out.update(_invert(ETHNIC_NATIONALITY))
         out.update(_invert(ETHNIC_ANCESTRY))
+        out.update(_invert(ETHNIC_EXTRA))
+        out.update(_resolve_variants("ethnicity", ETHNIC_VARIANTS, out))
         return out
     return {}
 
@@ -944,8 +1149,42 @@ def census_categories() -> frozenset[str]:
 _QUALIFIERS = (", n.i.e.", ", n.i.e", ", n.o.s.", ", n.o.s")
 
 
+# A word that says what kind of thing the entry is, not which one it is.
+# Stripping it, or adding it, is the same normalisation read in two
+# directions: a source may write "Turkic languages" where the table says
+# "Turkic", or "Italic (Romance)" where the table says "Romance languages".
+_KINDS = (" languages", " language", " peoples", " people", " speakers",
+          " dialects", " dialect")
+
+
+# Typographic punctuation, as a document sets it, against the plain ASCII a
+# table is typed in. Ethiopia's "Alaba-K\u2019abeena" and a table's
+# "Alaba-K'abeena" are one language, and nothing but the apostrophe differs.
+_PUNCTUATION = {
+    "\u2018": "'", "\u2019": "'", "\u02bc": "'", "\u00b4": "'", "`": "'",
+    "\u201c": '"', "\u201d": '"',
+    "\u2010": "-", "\u2011": "-", "\u2012": "-", "\u2013": "-",
+    "\u2014": "-", "\u2212": "-",
+    "\u00a0": " ",
+}
+
+
+def _defold(name: str) -> str:
+    """``name`` with its accents and typographic punctuation flattened."""
+    plain = "".join(_PUNCTUATION.get(c, c) for c in name)
+    return "".join(c for c in unicodedata.normalize("NFD", plain)
+                   if unicodedata.category(c) != "Mn")
+
+
 def normalisations(name: str) -> list[str]:
-    """Other forms of ``name`` worth looking up, most faithful first."""
+    """Other forms of ``name`` worth looking up, most faithful first.
+
+    Every form here is the same answer spelled differently, so a match on
+    one is a match on the name. Forms that would *change* the answer -- a
+    word of the label dropped, two names joined by "and" split apart -- are
+    not normalisations and are not produced here; `agreed_parent` handles
+    those under a rule that can refuse.
+    """
     out = []
     plain = name
     for tail in _QUALIFIERS:
@@ -954,11 +1193,26 @@ def normalisations(name: str) -> list[str]:
             break
     if plain != name:
         out.append(plain)
-    # "Turkic languages" -> "Turkic", so a band reaches the family it names
-    # even where the table lists the family under a bare word.
+    # An accented spelling and a bare one are the same name: "Éwé" is "Ewe",
+    # "Malinké" is "Malinke", "Guaraní" is "Guarani".
     for form in list(out) + [name]:
-        if form.endswith(" languages"):
-            out.append(form[: -len(" languages")])
+        bare = _defold(form)
+        if bare != form:
+            out.append(bare)
+            out.append(bare.replace("'", ""))
+    # "Turkic languages" -> "Turkic", so a band reaches the family it names
+    # even where the table lists the family under a bare word -- and back the
+    # other way, so "Romance" reaches "Romance languages". Case-insensitive,
+    # because the Central African Republic's tables write "Banda Languages".
+    for form in list(out) + [name]:
+        low = form.lower()
+        for kind in _KINDS:
+            if low.endswith(kind) and len(form) > len(kind) + 1:
+                out.append(form[: -len(kind)].strip())
+                break
+        else:
+            out.append(form + " languages")
+            out.append(form + " peoples")
     # "Punjabi (Panjabi)" -> "Punjabi", and the bracketed name too: which of
     # the two the table knows varies by entry.
     for form in list(out) + [name]:
@@ -966,8 +1220,103 @@ def normalisations(name: str) -> list[str]:
             head, _, rest = form.partition("(")
             out.append(head.strip())
             out.append(rest[:-1].strip())
+    # "Lushai/Mizo", "Yakthung/Limbu", "Bisaya/Binisaya": a slash between two
+    # names of one people is the censuses' own convention for an alternate
+    # spelling, unlike "and", which joins two different answers.
+    for form in list(out) + [name]:
+        if "/" in form:
+            out.extend(part.strip() for part in form.split("/"))
+    # "Buddhists" is "Buddhist", "Baha'is" is "Baha'i". Only a form the table
+    # already knows is ever accepted, so a wrong singular costs nothing.
+    for form in list(out) + [name]:
+        if form.endswith("s") and len(form) > 3 and not form.endswith("ss"):
+            out.append(form[:-1])
+    # Once brackets and slashes have opened the name up, offer the kind word
+    # again: "Italic (Romance) languages" yields "Romance", and the table
+    # spells it "Romance languages".
+    for form in list(out):
+        low = form.lower()
+        if not any(low.endswith(kind) for kind in _KINDS):
+            out.append(form + " languages")
+            out.append(form + " peoples")
     seen: set[str] = set()
     return [f for f in out if f and f != name and not (f in seen or seen.add(f))]
+
+
+# Words that say something about the answer without naming one, so they carry
+# no placement of their own and must not vote on where a compound belongs.
+_EMPTY_WORDS = frozenset({
+    "and", "or", "the", "of", "other", "others", "not", "elsewhere",
+    "included", "specified", "stated", "reported", "origin", "origins",
+    "ancestry", "ancestries", "ethnicity", "ethnic", "group", "groups",
+    "only", "mainly", "mainland", "nie", "nos", "some", "all", "any",
+    "both", "mixed", "multiple", "another", "unspecified", "descent",
+})
+
+
+def _constituents(name: str) -> list[str]:
+    """The parts of ``name`` that could each name a group on their own."""
+    words = [w for w in re.split(r"[\s,/()\-]+", name) if w]
+    words = [w for w in words
+             if len(w) > 2 and w.lower().strip(".") not in _EMPTY_WORDS]
+    out = list(words)
+    # Pairs too, because "Sri Lankan" and "Black British" are two words that
+    # name one thing and would otherwise vote as two.
+    out += [f"{a} {b}" for a, b in zip(words, words[1:])]
+    return out
+
+
+_AGREED: dict[str, dict[str, str | None]] = {}
+
+
+def agreed_parent(field: str, name: str) -> str | None:
+    """Where a compound label belongs, when all of its parts agree.
+
+    A label no table spells may still be made of names the tables do spell:
+    "Han Chinese" is Han and it is Chinese, and both are Han and Sinitic
+    peoples, so the label is too. The rule is that every part that resolves
+    must agree, and the label lands at the deepest node they share --
+    "Amazigh and Arab" is not Amazigh and is not Arab, but both are Middle
+    Eastern and North African ancestry, so that is where it goes.
+
+    The refusal is the point. "European and Mestizo" names two ancestries
+    that share nothing, so it is left unplaced and stays visible as a group
+    the tree does not cover, which is the honest answer. Reading it as
+    either one would put a number under a heading no census wrote.
+    """
+    cache = _AGREED.setdefault(field, {})
+    if name in cache:
+        return cache[name]
+    cache[name] = None            # guards against recursing through itself
+    tops = tier1_names(field)
+    trails: list[list[str]] = []
+    for part in _constituents(name):
+        if part == name:
+            continue
+        if part not in tops and parent_of(field, part) is None:
+            continue
+        trail, seen = [], {part}
+        at: str | None = part
+        while at is not None:
+            trail.append(at)
+            at = None if at in tops else parent_of(field, at)
+            if at in seen:
+                break
+            if at is not None:
+                seen.add(at)
+        trails.append(list(reversed(trail)))
+    common: list[str] | None = None
+    for trail in trails:
+        if common is None:
+            common = trail
+            continue
+        stop = 0
+        while stop < min(len(common), len(trail)) and common[stop] == trail[stop]:
+            stop += 1
+        common = common[:stop]
+    found = common[-1] if common else None
+    cache[name] = None if found == name else found
+    return cache[name]
 
 
 def pattern_parent(field: str, name: str) -> str | None:
@@ -1044,10 +1393,31 @@ def parent_of(field: str, name: str, table: dict[str, str] | None = None,
               ) -> str | None:
     """The one step up from ``name``: exact, then folded, then by rule."""
     table = merged_parents(field) if table is None else table
+    # A tier-1 node is the top by definition, and saying so here rather than
+    # relying on no rule matching is what keeps the tree a tree: the rules
+    # below work on the words of a name, and "African ancestry" contains
+    # "African", which is a census category *under* it. Answering that would
+    # close a loop.
+    if name in tier1_names(field):
+        return None
     if name in table:
         return table[name]
     folded = _folded(field)
     tops = tier1_names(field)
+    # "Romance languages, n.i.e." is the part of Romance that the table did
+    # not name separately, so it belongs *under* Romance rather than beside
+    # it: read as a sibling, the family it is the remainder of would not
+    # count it, and Canada publishes a dozen of these bands. This runs first
+    # for the same reason -- the general loop below would match the stripped
+    # name and hand back its parent, losing a level.
+    for tail in _QUALIFIERS:
+        if not name.endswith(tail):
+            continue
+        base = name[: -len(tail)].strip()
+        for form in [base] + normalisations(base):
+            if form != name and (form in table or form in tops):
+                return form
+        break
     for form in [name] + normalisations(name):
         if form in table:
             return table[form]
@@ -1055,7 +1425,57 @@ def parent_of(field: str, name: str, table: dict[str, str] | None = None,
             return folded[form.lower()]
         if form != name and form in tops:
             return form
-    return pattern_parent(field, name)
+    by_root = pattern_parent(field, name)
+    if by_root is not None:
+        return by_root
+    by_class = class_prefix_parent(field, name)
+    if by_class is not None:
+        return by_class
+    # Last: a compound whose parts all point the same way. It runs after the
+    # patterns because a pattern is a statement about one people and this is
+    # an inference from several, so the narrower rule should win.
+    return agreed_parent(field, name)
+
+
+# The Bantu noun-class prefixes, as censuses across eastern and southern
+# Africa attach them to one root.
+#
+# Tanzania writes the person ("Mzaramo"), Mozambique the language ("Ciyao"),
+# Botswana the member of the group ("Mokgatla"), South Africa the language
+# with its own prefix ("isiZulu") -- all of them the same root with a class
+# marker in front. A table cannot list every prefixed form of every root, and
+# stripping the marker is the operation the grammar itself performs.
+#
+# The rule is deliberately narrow: the stripped root must land in a family
+# that uses these prefixes. Without that, "Serb" loses an "Se" and any three
+# letters left over could collide with something on the other side of the
+# world; with it, a match is only accepted where the convention it assumes
+# actually holds.
+_CLASS_PREFIXES = (
+    "oshi", "otji", "tshi", "ichi", "isi", "chi", "shi", "umu", "aba",
+    "ama", "ki", "ci", "xi", "se", "si", "lu", "ru", "bu", "ba", "wa",
+    "mo", "mu", "mw", "ma", "m", "u", "a",
+)
+_PREFIXED_FAMILIES = frozenset({
+    "Bantu languages", "Bantu peoples", "Nilotic peoples",
+    "Nilotic languages", "Khoisan peoples", "Central African peoples",
+})
+
+
+def class_prefix_parent(field: str, name: str) -> str | None:
+    """Where a name belongs once its noun-class prefix is taken off."""
+    lowered = name.lower()
+    for prefix in _CLASS_PREFIXES:
+        if not lowered.startswith(prefix):
+            continue
+        root = name[len(prefix):]
+        if len(root) < 3:
+            continue
+        for form in (root, root.capitalize()):
+            parent = parent_of(field, form)
+            if parent in _PREFIXED_FAMILIES:
+                return parent
+    return None
 
 
 def _reaches_tier1(field: str, name: str, table: dict[str, str],

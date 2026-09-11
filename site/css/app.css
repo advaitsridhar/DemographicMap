@@ -321,7 +321,12 @@ html, body {
   grid-area: swatch; width: .55rem; height: .55rem; margin: .28rem .4rem 0 0;
   border-radius: 2px; box-shadow: inset 0 0 0 1px var(--border-ring);
 }
-.g-swatch-none { background: var(--axis); }
+.g-swatch-none {
+  /* The inline colour wins; this keeps the shape recognisable if the script
+     that sets it has not run, and marks the dot as an outline rather than a
+     fill so it reads as provisional. */
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
+}
 .g-opt:hover { background: var(--surface-sunken); }
 .g-opt:focus-visible { outline: 2px solid var(--accent); outline-offset: -1px; }
 .g-opt[aria-selected="true"] {

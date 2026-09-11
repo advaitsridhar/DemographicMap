@@ -341,10 +341,15 @@ window.Metrics = (function () {
       // world under thirty that cover a district each.
       const led = new Map();
       let missing = 0;
+      let unplaced = 0;
       for (const record of records) {
         const top = dominant(record, opts.field, opts.depth);
         if (!top) { out.set(record.id, Palette.neutral()); missing += 1; continue; }
-        const hue = hueOf(opts.field, top.group);
+        // A group the tree does not place gets the reserved colour rather
+        // than the neutral: the figure exists and the name was published, so
+        // drawing it as a blank would report a gap the source did not leave.
+        const hue = hueOf(opts.field, top.group) || Palette.unplaced();
+        if (!hueOf(opts.field, top.group)) unplaced += 1;
         out.set(record.id, Palette.group(hue, top.pct));
         const seen = led.get(top.group) ||
           { name: top.group, hue, units: 0, residual: top.residual, peak: 0 };
@@ -362,6 +367,8 @@ window.Metrics = (function () {
           shown: Math.min(items.length, 12),
           missing,
           missingColor: Palette.neutral(),
+          unplaced,
+          unplacedColor: Palette.unplaced(),
           floor: Palette.SHARE_FLOOR,
           note: metric.note,
         },

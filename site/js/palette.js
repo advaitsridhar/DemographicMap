@@ -58,6 +58,20 @@ window.Palette = (function () {
   };
 
   const NEUTRAL = { light: "#d8d6ce", dark: "#33332f" };
+  /* A group the classification does not place yet.
+   *
+   * It has to be a colour and not the neutral, because the neutral means the
+   * map has no figure here and this unit has one: a census counted these
+   * people and named them, and the only thing missing is the tree's opinion
+   * about which family the name belongs to. Drawn in the neutral, that read
+   * as a data gap -- the one confusion this project can least afford, since a
+   * gap is supposed to be the honest signal that nobody has asked.
+   *
+   * It is deliberately outside the family palettes, which run warm through
+   * the ancestries and saturated through the language families: a violet-grey
+   * belongs to no family, so it cannot be mistaken for one.
+   */
+  const UNPLACED = { light: "#a48fbb", dark: "#6b5980" };
 
   function mode() {
     const stamped = document.documentElement.getAttribute("data-theme");
@@ -164,9 +178,10 @@ window.Palette = (function () {
 
   function ramp() { return SEQUENTIAL[mode()].slice(); }
   function neutral() { return NEUTRAL[mode()]; }
+  function unplaced() { return UNPLACED[mode()]; }
   function status(name) { return STATUS[name] || STATUS.not_available; }
 
-  return { categorical, sequential, ramp, neutral, status, mode, STATUS,
+  return { categorical, sequential, ramp, neutral, unplaced, status, mode, STATUS,
            group, groupRamp, SHARE_FLOOR,
            MAX_CATEGORIES: CATEGORICAL.light.length };
 })();
