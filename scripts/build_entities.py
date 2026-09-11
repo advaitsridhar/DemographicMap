@@ -530,7 +530,26 @@ def value_fields(row: dict[str, Any]) -> set[str]:
 
 
 def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
-    """Adapter values override seeds; gap markers never overwrite real values."""
+    """Adapter values override seeds; gap markers never overwrite real values.
+
+    A source that is superseded goes with the figures it produced. PRRI
+    replaces the 2020 Religion Census on every county it covers, and keeping
+    both citations left the panel crediting a study whose numbers were no
+    longer on the record -- the first religion source listed was the one that
+    had just been overwritten. A citation describes the value held now.
+
+    Only a source whose every field is being replaced is dropped. The ACS is
+    cited for "ethnicity/language/population" at once, and a row that replaces
+    religion has nothing to say about those.
+    """
+    replaced = {key for key, value in row.items()
+                if key in VALUE_FIELDS and not is_gap(value)}
+    if replaced:
+        entity["sources"] = [
+            src for src in entity.get("sources", [])
+            if not (str(src.get("field") or "").split("/")
+                    and all(part in replaced
+                            for part in str(src.get("field") or "").split("/")))]
     for key, value in row.items():
         if key in {"id", "level", "name", "parent", "parent_name", "parent_aliases",
                    "match_by", "_source"}:

@@ -5223,3 +5223,42 @@ class RollingUpWithoutAPopulationToCheckAgainst(unittest.TestCase):
         del children[0]["population"]
         why = be.roll_up_field(parent, children, "religion", complete=True)
         self.assertIn("shares with no counts", why or "")
+
+
+class SupersededSources(unittest.TestCase):
+    """A citation describes the value the record holds now.
+
+    PRRI replaces the 2020 Religion Census on every county it covers. Keeping
+    both citations left the panel crediting a study whose figures were no
+    longer on the record -- and the superseded one was listed first, so a
+    reader checking where a number came from got the wrong answer.
+    """
+
+    def test_the_replaced_source_goes_with_the_figures_it_produced(self):
+        entity = {"religion": [{"group": "Old", "pct": 100.0}],
+                  "sources": [{"field": "religion", "name": "ASARB"}]}
+        be.merge_adapter(
+            entity, {"religion": [{"group": "New", "pct": 100.0}],
+                     "sources": [{"field": "religion", "name": "PRRI"}]})
+        self.assertEqual([s["name"] for s in entity["sources"]], ["PRRI"])
+
+    def test_a_source_covering_more_than_is_replaced_is_kept(self):
+        """The ACS is cited for three fields at once, and a row that replaces
+        religion has nothing to say about the other two."""
+        entity = {"sources": [
+            {"field": "ethnicity/language/population", "name": "ACS"},
+            {"field": "religion", "name": "ASARB"}]}
+        be.merge_adapter(
+            entity, {"religion": [{"group": "New", "pct": 100.0}],
+                     "sources": [{"field": "religion", "name": "PRRI"}]})
+        self.assertEqual([s["name"] for s in entity["sources"]],
+                         ["ACS", "PRRI"])
+
+    def test_a_gap_does_not_evict_the_source_of_a_real_value(self):
+        """A row that carries no figure replaces nothing, so it takes no
+        citation with it."""
+        entity = {"religion": [{"group": "Old", "pct": 100.0}],
+                  "sources": [{"field": "religion", "name": "ASARB"}]}
+        be.merge_adapter(
+            entity, {"religion": {"status": "not_available"}, "sources": []})
+        self.assertEqual([s["name"] for s in entity["sources"]], ["ASARB"])
