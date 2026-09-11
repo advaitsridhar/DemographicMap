@@ -104,7 +104,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Mexico | INEGI Censo de Población y Vivienda 2020, ITER | state, municipality | Religion, indigenous-language speaking and Afro-descendant identification for 2,453 of 2,457 municipios. All from the *cuestionario básico*, so these are counts, not sample estimates. |
 | New Zealand | Stats NZ 2023 Census via Aotearoa Data Explorer (SDMX) | region, territorial authority | Ethnicity, languages spoken and religious affiliation for all 88 territorial authorities and Auckland local boards. All three are multi-response, so shares are of people who named a group, not slices of a whole. Needs an API key. |
 | Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. All 7 provinces and 66 of 77 districts — the boundary file's district names do not all sit on the right polygons. |
-| India | Census 2011 tables C-01, C-01 Appendix, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. The Appendix names the religions inside "Other religions and persuasions" (Donyi-Polo, Sarna, Sanamahi …) for states only. 637 of 735 district shapes carry figures; the other 98 are districts the census never enumerated and each says so. |
+| India | Census 2011 tables C-01, C-01 Appendix, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. The Appendix names the religions inside "Other religions and persuasions" (Donyi-Polo, Sarna, Sanamahi …) for states only. 562 of 735 district shapes carry figures. The other 173 each say why: 98 are districts the census never enumerated, and 75 are districts that have since lost territory, so the 2011 row counts people who no longer live in the shape. Telangana and Ladakh have state figures summed from the ten and two districts the census did enumerate, and Andhra Pradesh and Jammu and Kashmir carry the residual rather than the undivided state. |
 
 ### New Zealand: the geography that already fitted
 
@@ -812,19 +812,23 @@ workbooks, checked into `data/raw/india/c16/` because there is no API to fetch
 them from — `scripts/fetch_census/india_language.py` reads whatever is present.
 
 The all-India workbook (`DDWC16STMTMDDS0000.XLSX`) carries every state, so all 34
-states enumerated in 2011 have a mother-tongue composition. All 35 per-state
-workbooks are present, giving 637 of 735 districts. The 98 without a figure are
+states enumerated in 2011 have a mother-tongue composition, and Telangana and
+Ladakh have one summed from their districts' rows. All 35 per-state workbooks
+are present, giving 562 of 735 districts. The 173 without a figure are
 census-vintage gaps, not missing files: **91** are districts created after 2011,
-**6** are the successors of the three districts that have been subdivided since,
-and **1** is not a district at all — geoBoundaries draws a feature in Jammu and
+**75** are districts that have lost territory to one of those 91, **6** are the
+successors of the three districts that have been subdivided since, and **1** is
+not a district at all — geoBoundaries draws a feature in Jammu and
 Kashmir named, literally, "DATA NOT AVAILABLE", which is 268 disjoint fragments
-totalling about 390 km², the slivers between the district polygons. All 98 carry
+totalling about 390 km², the slivers between the district polygons. All 173 carry
 an explicit reason on population, religion and language; the 91 name the year
 they were created and the 2011 district they were carved from
 (`CREATED_AFTER_2011`, checked against the census's own district list on every
-run). Nothing is carried down into them — a new district is a *part* of an old
-one, and the rule that a figure coarser than the shape is not spread across the
-shape's members applies.
+run), and the 75 name what was taken out of them and how much ground they have
+left (`LOST_TERRITORY_SINCE_2011`, checked against `CREATED_AFTER_2011`).
+Nothing is carried down into any of them — a new district is a *part* of an old
+one, the district that kept the name is another part, and the rule that a figure
+coarser than the shape is not spread across the shape's members applies to both.
 
 **Not the `DDWC16TOWN...` files.** The catalogue also publishes a town-level
 C-16 whose filename differs only by that infix. It enumerates urban population
@@ -873,13 +877,145 @@ primary record rather than a derivative.
 
 * ~109 of 735 present-day districts did not exist in 2011 and carry no census
   figure.
-* Four 2011 districts have since been subdivided (Jaintia Hills, Karbi Anglong,
-  Warangal, and Hyderabad's reorganisation). Their figures are **not** spread
-  across the successor districts -- the census never measured those areas
-  separately, and apportioning them would be an estimate presented as a
-  measurement. The successors carry an explicit gap saying so.
-* Telangana (2014) and Ladakh (2019) postdate the census entirely, so they have
-  no state-level figure even though their districts do.
+* Three 2011 districts have since been subdivided so thoroughly that their
+  names survive on no shape at all (Jaintia Hills, Karbi Anglong, Warangal).
+  Their figures are **not** spread across the successor districts -- the census
+  never measured those areas separately, and apportioning them would be an
+  estimate presented as a measurement. The successors carry an explicit gap
+  saying so.
+* 75 more lost territory without losing their names, and are the subject of the
+  next section.
+* Telangana (2014) and Ladakh (2019) postdate the census entirely. They now
+  carry a figure summed from the districts the census did enumerate, and the
+  states they were separated from carry the residual; see below.
+
+### The district that keeps the name is a fragment too
+
+This is the error that took longest to see, because it looked exactly like data.
+
+When Jagtial, Peddapalli and Rajanna Sircilla were carved out of Karimnagar in
+2016, three new shapes appeared on the map with no figures and an explicit
+reason. The fourth shape kept the name Karimnagar, kept the 2011 census row,
+and lost three quarters of its ground: 2,132 km² of the 9,103 km² the census
+measured. It went on showing 3,776,269 people, 85.6% Hindu, sourced and dated,
+on a district that holds about a quarter of them. The blanks beside it were
+honest about what was not known. The number was not, and nothing on the panel
+said so.
+
+`SUBDIVIDED_SINCE_2011` had the principle right and applied it to three
+districts only. Warangal's six successors carry no figure because the census
+measured the undivided district and the map cannot split it. **Karimnagar is
+the same case**; the only difference is that one of its fragments kept the
+name. `LOST_TERRITORY_SINCE_2011` now says so for every one of them.
+
+**How many, and where.** Measured against the CGAZ shapes this map draws with
+-- each district's area against its own area plus the area of every shape
+`CREATED_AFTER_2011` declares was carved out of it -- 75 districts in 16 states
+were in that position, carrying 172 million people's worth of 2011 figures:
+
+| state | districts | state | districts |
+|---|---|---|---|
+| Gujarat | 10 | Tripura, Mizoram, Delhi, Meghalaya | 3 each |
+| Telangana, Arunachal Pradesh | 8 each | Punjab, Madhya Pradesh | 2 each |
+| Manipur | 7 | Maharashtra | 1 |
+| Chhattisgarh | 6 | | |
+| Tamil Nadu, Uttar Pradesh, Assam | 5 each | | |
+| West Bengal | 4 | | |
+
+The worst were Mahbubnagar (18% of its 2011 ground, 4,053,028 people),
+Karimnagar (23%), Raipur (25%), Adilabad (25%), Medak (26%) and Durg (27%).
+The largest single figure in the wrong place was Thane's 11,060,148, on 44% of
+the district Palghar was taken out of in 2014.
+
+**Why there is no "close enough" threshold.** The obvious softening -- keep the
+figure where the district lost only a little -- cannot be done honestly with
+what is measurable here. The measurement is of *territory* and the error is in
+*people*, and the two do not track each other in the same direction twice:
+Rangareddy kept 52% of its ground and lost Medchal-Malkajgiri, a small dense
+suburb of Hyderabad holding close to half its population; Upper Subansiri kept
+90% of its ground and the part it lost is high Himalaya with almost nobody in
+it. A threshold set anywhere between them would be a guess wearing a
+tolerance's clothes.
+
+What area *can* settle is the binary question, and the measurement turns out to
+be unambiguous about it: every district in the table retained between 18% and
+90% of its 2011 extent, and every other Indian district retained 100%. There is
+nothing in the gap to draw a line through, so the line is not drawn on area at
+all -- it is "did a district get carved out of this one", which
+`CREATED_AFTER_2011` already declares. `check_lost_territory` requires the two
+tables to be exact mirrors of each other on every run: a predecessor named
+there without a measurement here would leave a shape wearing the undivided
+figure, and a measurement here with no predecessor there would delete a good
+one.
+
+**What is kept.** Hyderabad, and it is the check that the rule is not simply
+deleting everything. The 2016 reorganisation created Medchal-Malkajgiri out of
+Ranga Reddy, not out of Hyderabad, and left Hyderabad district's sixteen
+mandals alone; no entry in `CREATED_AFTER_2011` names it, so nothing was
+carved out of it and its figure stands. Of Telangana's nine districts that had
+figures, that is the one that survives.
+
+**The route that would fill them, and why it is not taken.** C-01 *is*
+published below district level: the Registrar General's own workbook for
+Andhra Pradesh (`DDW28C01_MDDS.XLS`) carries 1,128 tehsil rows beside its 23
+district rows, and they sum to the district totals to the person. C-16 is
+published the same way. A modern district made of whole 2011 mandals could
+therefore be summed rather than estimated. What does not exist is the other
+half of that join: the census publishes no concordance from 2011 sub-districts
+to present-day districts, and the 2016 reorganisation did not only reallocate
+mandals but split some of them, so a hand-written mapping would not be a
+partition even if every line of it were right. Writing one out would invent
+precisely the thing the sub-district tables were meant to supply.
+
+### Telangana, Ladakh, and summing a state from its districts
+
+The mirror of the same problem, one level up, and here the fix adds figures
+rather than removing them.
+
+Telangana's state row read *not available*: "the 2011 census enumerated that
+territory as part of Andhra Pradesh, so no census figure exists for Telangana
+as such". That is true of the published tables and false of the census. Every
+person in Telangana was counted in 2011, in one of ten district rows — 532
+Adilabad through 541 Khammam — which partition the territory exactly. Ten
+disjoint measurements that exhaust a territory sum to a measurement of it.
+Nothing is apportioned and nothing is estimated.
+
+Andhra Pradesh had the matching error and it was the invisible kind. Its state
+row carried 84,580,777 people and 88.5% Hindu — undivided Andhra Pradesh,
+Telangana included — on the shape of the residual state. The thirteen districts
+that stayed hold 49,386,799 people and are 90.9% Hindu and 7.3% Muslim, against
+Telangana's 85.1% and 12.7%. The undivided figure described neither. Jammu and
+Kashmir and Ladakh were the same pair, smaller: Ladakh's two districts are 2.2%
+of the old state's people and a quarter of its area.
+
+| | summed | published | check |
+|---|---|---|---|
+| Telangana | 35,193,978 | 35,193,978 | Wikidata gives the same, independently |
+| Andhra Pradesh (residual) | 49,386,799 | 49,386,799 | |
+| Ladakh | 274,289 | 274,289 | |
+| Jammu and Kashmir (residual) | 12,267,013 | 12,541,302 − 274,289 | |
+
+Both halves must add back to the undivided state in **every** column, and each
+half's population must equal the published figure to the person, or nothing is
+emitted. The same split runs over C-16 for mother tongue, and the two tables
+are kept apart deliberately: they have different district columns, and a split
+right in one and wrong in the other is the failure neither file can see alone.
+`SPLIT_STATES` carries both the district names and the census's district codes
+because the religion extract keys on the name and the language workbooks key on
+the code.
+
+**The 190,304 people the sum cannot lose.** Seven mandals of Khammam —
+Burgampahad, Chintur, Kukunoor, Kunavaram, Vararamachandrapuram, Velairpadu and
+part of Bhadrachalam — were moved to Andhra Pradesh by ordinance on 29 May
+2014, four days before Telangana existed, to put the Polavaram project on one
+side of the border. They are inside the ten districts and outside the
+present-day state, which is why the Registrar General's figure for Telangana as
+it now stands is **35,003,674** and the ten districts hold 190,304 more. That
+0.5% is stated on the record rather than removed, because removing it would
+mean subtracting six whole mandals (208,421 people in the official
+sub-district table) to land on 34,985,557 — a number nobody published, 18,117
+people from the one they did, and wrong by an amount the note could not state.
+A visible 0.5% beats an invisible one.
 
 ### Pakistan: a table that exists only as a document
 
@@ -3257,6 +3393,21 @@ polygon contains its centroid, so Hurlingham, Lanús and Morón, all in Buenos
 Aires Province, come out inside the Autonomous City. A rule that refused every
 parent disagreement would have deleted all of them.
 
+**Yanam is under Andhra Pradesh, and it is the boundary file saying so.** The
+map lists Yanam as a district of Andhra Pradesh. It is not one: it is a 30 km²
+enclave of Puducherry, 600 km from the rest of that union territory, entirely
+surrounded by East Godavari district. The census adapter has it right — its row
+says Puducherry, and Puducherry's state total of 1,247,953 includes Yanam's
+55,626 people. The parent on the map comes from the shapes, and CGAZ's shapes
+disagree with each other about this one. Its ADM1 polygon for Andhra Pradesh is
+not cut to exclude the enclave: it covers 66% of the ADM2 Yanam feature and
+contains its representative point. CGAZ's Puducherry ADM1 *does* carry a Yanam
+part, and that part overlaps only 34% of the ADM2 feature. Two CGAZ levels drawn
+from different sources, neither one hole matching the other, so a
+point-in-polygon test lands in the state that surrounds it rather than the one
+that administers it. Nothing here can fix that without asserting a boundary the
+file does not draw, so it is reported rather than overridden.
+
 **Where there is no coordinate, nothing is refused.** India's district figures
 are from the 2011 census, so they name the states of 2011: Adilabad and
 Nizamabad say Andhra Pradesh where the boundary file says Telangana, Leh and
@@ -3360,6 +3511,13 @@ India's district figures never published a row for it — while publishing both
 of its districts. A territory whose every constituent part is measured should
 not read as unmeasured, so `build_entities.py` sums one when it can.
 
+Ladakh is now summed in the adapter instead, from the census's own rows rather
+than from whichever of its districts happen to reach a shape — see *Telangana,
+Ladakh, and summing a state from its districts* above. It is kept here as the
+case that shaped this function, and because the control it was built on is the
+same one: the sum has to meet a population nobody involved in the sum
+published.
+
 **The control is the parent's own published population.** Leh (133,487) and
 Kargil (140,802) sum to 274,289, which is exactly the population Wikidata gives
 Ladakh — and Wikidata is not where the district figures came from, so the two
@@ -3378,8 +3536,13 @@ were filled and eleven were not:
   Whatever those two numbers count, it is not the same people.
 * **England, Telangana, Singapore's five regions, American Samoa.** Partial
   coverage — 9 of England's 150 children have no religion, 24 of Telangana's 33
-  have none. This is the dangerous case, because the sum would look whole and
-  describe only part of the territory.
+  had none. This is the dangerous case, because the sum would look whole and
+  describe only part of the territory. Telangana's refusal was right for the
+  wrong reason: the nine that *did* carry figures were eight mis-matches and
+  Hyderabad, so a sum over them would have counted 31.7 million people across a
+  third of the state. It now has 32 gaps out of 33 and a state figure summed
+  from the census's own ten district rows, which is the honest form of the same
+  arithmetic.
 
 **Percentages are recomputed against the denominator the children used, not
 against population.** Mexico publishes indigenous-language shares of the
