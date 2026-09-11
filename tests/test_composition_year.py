@@ -61,14 +61,12 @@ AWAITING_AN_ADAPTER_RUN = {
     "bosnia_canton.json", "bosnia_entity.json",
     "brazil_municipality.json", "brazil_state.json",
     "cambodia_province.json",       # wiki_census
-    "canada_economic_region.json", "canada_province.json",
     "croatia_county.json", "croatia_unit.json",
     "czechia_kraj.json", "czechia_okres.json",
     "ireland_lea.json",
     "kazakhstan_region.json",       # wiki_census
     "kenya_county.json",
     "malaysia_district.json", "malaysia_state.json",
-    "poland_powiat.json", "poland_voivodeship.json",
     "thailand_province.json",
     "uk_county.json", "uk_lad.json",
     "us_county.json", "us_state.json",
