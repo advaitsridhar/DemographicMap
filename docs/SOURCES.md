@@ -104,7 +104,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Mexico | INEGI Censo de Población y Vivienda 2020, ITER | state, municipality | Religion, indigenous-language speaking and Afro-descendant identification for 2,453 of 2,457 municipios. All from the *cuestionario básico*, so these are counts, not sample estimates. |
 | New Zealand | Stats NZ 2023 Census via Aotearoa Data Explorer (SDMX) | region, territorial authority | Ethnicity, languages spoken and religious affiliation for all 88 territorial authorities and Auckland local boards. All three are multi-response, so shares are of people who named a group, not slices of a whole. Needs an API key. |
 | Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. All 7 provinces and 66 of 77 districts — the boundary file's district names do not all sit on the right polygons. |
-| India | Census 2011 tables C-01, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. |
+| India | Census 2011 tables C-01, C-01 Appendix, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. The Appendix names the religions inside "Other religions and persuasions" (Donyi-Polo, Sarna, Sanamahi …) for states only. 637 of 735 district shapes carry figures; the other 98 are districts the census never enumerated and each says so. |
 
 ### New Zealand: the geography that already fitted
 
@@ -774,6 +774,36 @@ is a retrieval path, exactly as the factbook.json mirror is for the Factbook.
 To use the official workbooks instead, download them into `data/raw/india/` and
 run with `--input`.
 
+### What is inside "Other religions and persuasions"
+
+C-01 publishes eight categories, one of which is a residual, and in four states
+that residual is the third or fourth largest answer there is: Arunachal Pradesh
+26.2% (362,553 people), Jharkhand 12.8% (4,235,786), Meghalaya 8.7% (258,271),
+Manipur 8.2% (233,767). Nationally it is 7,937,734 people, 0.66%.
+
+The Registrar General breaks it up in table **C-01 Appendix**, *Details of
+religious community shown under 'Other religions and persuasions' in main table
+C-01* (NADA 11398), which names the religions inside it — Donyi-Polo, Sarna,
+Sanamahi, Khasi, Niamtre and scores more, nearly all Adivasi, and no other
+census on earth names them. `india_census.py --level state` reads it and
+substitutes those religions for C-01's single residual row; named plus a
+labelled remainder is C-01's figure exactly, so the composition still sums to
+the state's enumerated population, which the adapter checks.
+
+**It is published for India and the states and nothing finer.** The sheet has a
+district column and it reads `000` on every row — the reader refuses if it ever
+does not, because the note it publishes on every state record says no
+district-level figure exists. So a district's religion panel keeps the undivided
+residual, and says why.
+
+Its TLS is worth knowing about: censusindia.gov.in serves its leaf certificate
+without the intermediate above it, which urllib reports as *unable to get local
+issuer certificate*. That is not a reason to stop verifying. `probe_tls.py
+--chain` fetches the missing intermediate from the certificate's own Authority
+Information Access extension and verifies against it plus the public roots, and
+`http_get(..., aia=True)` is the same repair for adapters. Certificate
+verification is never disabled.
+
 ### Mother tongue: the official C-16 workbooks
 
 Table C-16 (population by mother tongue) is a separate publication from C-01 and
@@ -784,8 +814,17 @@ them from — `scripts/fetch_census/india_language.py` reads whatever is present
 The all-India workbook (`DDWC16STMTMDDS0000.XLSX`) carries every state, so all 34
 states enumerated in 2011 have a mother-tongue composition. All 35 per-state
 workbooks are present, giving 637 of 735 districts. The 98 without a figure are
-census-vintage gaps, not missing files: 92 are districts created after 2011 and
-6 were undivided when the census ran.
+census-vintage gaps, not missing files: **91** are districts created after 2011,
+**6** are the successors of the three districts that have been subdivided since,
+and **1** is not a district at all — geoBoundaries draws a feature in Jammu and
+Kashmir named, literally, "DATA NOT AVAILABLE", which is 268 disjoint fragments
+totalling about 390 km², the slivers between the district polygons. All 98 carry
+an explicit reason on population, religion and language; the 91 name the year
+they were created and the 2011 district they were carved from
+(`CREATED_AFTER_2011`, checked against the census's own district list on every
+run). Nothing is carried down into them — a new district is a *part* of an old
+one, and the rule that a figure coarser than the shape is not spread across the
+shape's members applies.
 
 **Not the `DDWC16TOWN...` files.** The catalogue also publishes a town-level
 C-16 whose filename differs only by that infix. It enumerates urban population
@@ -972,6 +1011,113 @@ Both levels reconcile exactly: 207,684,626 against the census's own
 207,684,626, and every one of the 141 areas published reaches its own total.
 Sindh reads Sindhi 61.6% and Urdu 18.2%; Punjab, Punjabi 69.7% and Saraiki
 20.7%; Balochistan splits Balochi 35.5% against Pushto 35.3%.
+
+### Karachi: the largest second-level language gap on the map, and why it was there
+
+Pakistan's district language coverage was measured at **114 of 126 shapes**,
+which reads like a country nearly finished. Ranked by people rather than by
+shapes it read differently: one of the twelve blanks was **Karachi, 20.4
+million people** -- more than every other blank district in the world outside
+China, Indonesia, Bangladesh, Nigeria, Russia and the Congo put together.
+
+The cause was not a bad join. It was a join with nothing to make:
+
+* geoBoundaries draws **one** district called Karachi.
+* The 2017 census counts **six** inside it -- Karachi Central, East, South and
+  West, Korangi and Malir -- and the Bureau's workbook lists all six at level
+  3, the level this map reads.
+* Six rows, one shape. Each of the six reached nothing, because none of them
+  *is* Karachi, and the shape stayed empty.
+
+`scripts/fetch_census/pakistan.py` had already met this on the religion side
+and declared it: `MERGED` sums the seven districts of 2023 into the one shape,
+which is why Karachi carries a religion and a population and no language. The
+Census Bureau reader had no such facility, so `Country.merged` is now the same
+declaration in the same shape, and `combine()` performs it.
+
+**Seven districts in 2023 and six in 2017 is not a contradiction.** Keamari was
+split out of Karachi West in 2020. The ground is the same ground; only the
+lines inside it moved, which is exactly the case one boundary shape covers.
+
+**Every check refuses rather than repairs**, because each of them is a way for
+a wrong merge to look like a right one. The dangerous one is a missing part:
+five districts summed onto a shape that is six would put four fifths of
+Karachi's people on all of Karachi and report nothing wrong -- the shares would
+still add to 100%, every district would still reconcile against its own
+published total, and the only trace would be a population no other check looks
+at. So a merge is all of its declared parts or it is refused. The others are
+the assembled area also being printed in the sheet (its people counted twice),
+parts at two levels (a division and the districts inside it are the same
+people), a denominator published for some parts and not others, and an area
+declared both `no_shape` and part of a merge, which is a config asserting two
+things that cannot both be true.
+
+And one control the file supplies itself: an assembly may not hold more people
+than the parent it is declared under, where that parent prints its own row.
+
+**The refusal that was missing, and the run that proved it was.** The first
+version of this had one more branch than it should have: a declaration that
+reached none of the sheet's areas was passed over, on the theory that a sheet
+might simply not carry them. Dispatched to the runner, it merged nothing in
+either country and said nothing about it -- the log read `141 areas: 6 admin1,
+135 admin2`, `every one of 141 areas reaches its published total`, `wrote
+data/processed/pakistan_language.json (329 kB)`, and the file came back
+byte-identical. The only way anyone knew was by diffing the output.
+
+The cause was one line wide. Every declaration in a `Country` -- `aliases`,
+`no_shape`, `merged` -- is written in the spelling the records carry, which is
+the sheet's cell put through `str.title()`; Pakistan's Table 11 prints
+`KARACHI CENTRAL DISTRICT`. `aliases` and `no_shape` had always folded the
+cell before comparing. `combine()` compared it raw, so it was testing the one
+spelling no declaration in this module is written in. The fold now lives in
+`spelling()`, named and in one place, and a merge that matches nothing is
+refused with what the sheet does have printed beside it -- `KARACHI CENTRAL
+DISTRICT` next to `Karachi Central District` is a diagnosis at a glance.
+
+Two things about how that got through are worth keeping. The tests passed,
+because they handed `combine()` a mapping the test file had built, in a
+spelling the test file had chosen: a test that writes both sides of a
+comparison cannot see the two sides disagreeing. They now build a *sheet* and
+read it through `read()`, in both spellings. And Ethiopia was briefly reported
+as working because its output file had changed -- it had, by exactly the alias
+line and the `no_shape` removal, and not by a single assembled record. A
+changed file is not a done job.
+
+Karachi now reads Urdu 42.3%, Pushto 15.0%, Punjabi 10.7%, Sindhi 10.7%, of
+16,024,894 people the mother-tongue table counts -- 2017 figures on a shape
+whose 2023 population is 20.4 million, and the record says so.
+
+**The eleven other blanks are not this, and are not fixable here.** Ten are
+Gilgit-Baltistan's districts and the eleventh is Azad Kashmir, both of which
+this map has carried as a visible gap since the language adapter was written:
+the 2017 census tabulates mother tongue for Pakistan proper, and those two
+territories are enumerated apart from it. The 2023 round says the same thing
+from a different direction -- `pakistan.py` lists Islamabad, Azad Jammu and
+Kashmir and Gilgit-Baltistan as optional provinces and its last run found a
+Table 9 for none of the three, at either of the two paths the Bureau uses. Not
+a fetch that went wrong: a fact about what the Bureau publishes under the
+census proper.
+
+**Is 2017 the most current this can be?** No, and that is worth stating
+plainly rather than leaving implied. PBS completed the 7th census in 2023 and
+publishes its tables as per-province PDFs; `pakistan.py` already reads Table 9
+(religion) from them. What is not established is whether the 2023 round
+publishes a mother-tongue table in the same series, and under which number --
+2017's was Table 11, and a table number is not a thing to guess at, because a
+guessed URL that 404s and a table that was never published are the same
+observation. The route to settle it is reconnaissance, not assumption:
+
+```
+scripts.probe_links https://www.pbs.gov.pk/census-2023-tables --match pdf --limit 80
+scripts.fetch_census.uscb --inspect pakistan-subnational-population-and-housing-data-tables
+```
+
+The first says what the 2023 index actually links to. The second says whether
+the Census Bureau's extraction is still the 2017 census or has been reissued --
+its metadata sheet carries the census year, and the file's own date is an
+extraction date that has been mistaken for it before. Until one of those
+answers, 2017 is the most recent mother tongue this project can show, and the
+records say 2017.
 
 ### Central African Republic: three fields, and a table that counts two things
 
@@ -2325,6 +2471,13 @@ PSA's published ones: Roman Catholic 78.81%, Islam 6.42%, Iglesia ni Cristo
 adapter and a visible country are different things, and the only way to know
 which one you have is to run the join and count.
 
+The table below is the measurement as it stood when Addis Ababa's ten
+sub-cities were declared shapeless. They are now summed into the shape instead
+-- see *Addis Ababa: the fold that was pointing the wrong way*, below -- so on
+the next run Ethiopia's zones read 84 areas rather than 93 and one fewer shape
+is empty. The figures here are left as they were measured rather than replaced
+with what they are expected to become.
+
 | | Rows | On a shape | Declared shapeless | Unmatched |
 | --- | --- | --- | --- | --- |
 | Philippines regions | 17 | 17 | -- | -- |
@@ -2364,6 +2517,42 @@ Three kinds of miss, and they are not the same kind of thing:
   exactly one of two tied shapes is written the way the row writes it, that is
   stronger evidence than the key that tied them, and the tie is now settled on
   the exact name and on nothing weaker.
+
+#### Addis Ababa: the fold that was pointing the wrong way
+
+"Declared shapeless" was the right answer for a Philippine city drawn inside
+its province, and the wrong one for Addis Ababa's ten sub-cities -- and the
+difference is a fact about the shape, not a matter of taste.
+
+A highly urbanized city is drawn *inside* something larger that has a row of
+its own: the province's figures already cover the city, so the city's row has
+nowhere to go and `no_shape` says so. Addis Ababa's sub-cities are not inside
+anything else at the second order. The ten **are** the second order there:
+geoBoundaries draws exactly one zone-level shape in Addis Ababa, labelled
+"Region 14", and it is the region entire. Declaring the ten absent left that
+shape with no religion, no ethnicity and no language -- 2.7 million people, the
+capital city, blank -- while ten rows of real figures sat beside it with
+nowhere to be shown.
+
+So they are summed into it, through the same `Country.merged` facility Karachi
+uses, and the source itself says the sum is right. The ten sub-cities come to
+**2,739,551** against a region row of **2,739,551** -- exact, group by group,
+for all six religions. That is the census's own arithmetic stating that these
+ten are all of Addis Ababa and nothing else is, which is the one thing a merge
+declaration cannot establish about itself.
+
+The shape is reached by an alias rather than by its name. The census calls the
+place Ādīs Ābeba; "Region 14" is a label on a polygon, and it is declared as
+what geoBoundaries calls this place rather than adopted as what the place is
+called. At the first order it matches nothing, because no region is drawn under
+that name.
+
+"Special Woreda" is deliberately left alone. It looks like the same case and is
+not: its bounding box is a single small area in Amhara, one special wereda
+rather than a shape standing for all of them, and summing Ethiopia's scattered
+special weredas into it would put people from five regions inside one polygon.
+Identifying which wereda it is from a bounding box is a guess, and a guess is
+how a mis-match gets made.
 
 **A sheet's name is not its contents, and three countries prove it.**
 

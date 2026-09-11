@@ -1,5 +1,7 @@
-korea_survey: Hankook Research, 2025 Religion Perception Survey: religious population and religious activity (Weekly Report No. 358-3, 3 December 2025), religion by residence region
-  5,535,370 bytes
-  20 pages
-  17 provinces from 7 residence regions
-  wrote data/processed/korea_survey_province.json (45 kB)
+india_census: Census 2011, level=state
+  validated against published national totals: 640 districts, 1,210,854,977 people
+  C-01 Appendix: https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx
+  C-01 Appendix: 35 states, 83 named religions, 7,788,066 of the 7,937,734 people in 'Other religions and persuasions'
+  wrote data/processed/india_state.json (165 kB)
+  37 records, 35 with religion shares, 2 explicit gaps carrying their reason
+  groups beyond C-01's eight columns (20): ADI DHARM, Addi Bassi, Adim dhamm, Animist, Atheist, Doni Polo / Sidonyi Polo, Gond / Gondi, Heraka, Khasi, Nani Intiya, Niamtre, Nocte, Other religions (not separately named), Rangfra, Sanamahi, Sari Dharma, Sarna, Songsarek, Tribal Religion, Yumasam

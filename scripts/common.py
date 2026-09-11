@@ -302,11 +302,23 @@ def log(*args: Any) -> None:
 
 def http_get(url: str, *, cache: bool = True, retries: int = 4, timeout: int = 120,
              headers: dict[str, str] | None = None, binary: bool = False,
-             cache_dir: Path | None = None) -> bytes | str:
+             cache_dir: Path | None = None, aia: bool = False) -> bytes | str:
     """GET with a content-addressed disk cache and exponential backoff.
 
     Retries only network/5xx errors; a 404 raises immediately so callers can
     treat "this country has no ADM2" as data rather than as a failure.
+
+    ``aia`` is for a server that sends its leaf certificate and omits the
+    intermediate above it, which urllib reports as *unable to get local issuer
+    certificate*. censusindia.gov.in is one: its certificate is properly issued
+    and its chain is one link short, so a browser reaches it and Python does
+    not. The repair is to fetch the missing intermediate from the certificate's
+    own Authority Information Access extension and verify against it plus the
+    public roots -- full verification, with the link the server failed to send
+    supplied. It is never a way to skip the check: see scripts/probe_tls.py,
+    which does the work and explains why an intermediate fetched over plain
+    HTTP is safe to add (it is believed only if it chains to a trusted root,
+    which the handshake then tests).
     """
     cache_dir = cache_dir or (RAW / "http_cache")
     key = hashlib.sha256(url.encode()).hexdigest()[:24]
@@ -317,12 +329,22 @@ def http_get(url: str, *, cache: bool = True, retries: int = 4, timeout: int = 1
 
     req_headers = {"User-Agent": USER_AGENT, "Accept-Encoding": "gzip"}
     req_headers.update(headers or {})
+    opener = urllib.request.urlopen
+    if aia:
+        # Imported here, and with the directory put on the path first: this
+        # module is reached both as `common` (scripts/ on sys.path) and as
+        # `scripts.common`, and probe_tls is a sibling file rather than a
+        # package member. Nothing above pays for it -- an adapter that does not
+        # ask for the repair never runs this.
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from probe_tls import verified_opener                 # noqa: PLC0415
+        opener = verified_opener(urllib.parse.urlsplit(url).hostname or "").open
     delay = 2.0
     last: Exception | None = None
     for attempt in range(retries + 1):
         try:
             req = urllib.request.Request(url, headers=req_headers)
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
+            with opener(req, timeout=timeout) as resp:
                 blob = resp.read()
                 if resp.headers.get("Content-Encoding") == "gzip":
                     import gzip

@@ -238,6 +238,29 @@ class Country:
     # upstream release could fix, and a declaration here would then be a lie
     # that suppresses a match. A declaration should only ever be doing work.
     no_shape: frozenset[tuple[str, str]] = frozenset()
+    # The other half of that story: census areas the boundary file draws as
+    # ONE shape, as {(parent, the assembled area): (the parts it is made of)}.
+    # Summed, and the note on the record says which parts were summed.
+    #
+    # `no_shape` and this are the two honest answers to "several rows, one
+    # shape", and which applies is a fact about the shape rather than a
+    # preference. Where the shape is one of the parts and the rest are drawn
+    # inside it -- a highly urbanized city inside its province -- the parts
+    # have no boundary and `no_shape` says so. Where the shape is *all* the
+    # parts and none of them separately -- Karachi's six districts, Addis
+    # Ababa's ten sub-cities -- the shape has a figure and this is how it
+    # gets one.
+    #
+    # Summing is the only option that is right in both directions. Matching
+    # any one part to the whole shape puts a fraction of the people on all of
+    # them, and leaving them unmatched drops Karachi -- sixteen million people
+    # in 2017 -- off the map without saying so.
+    #
+    # Keyed on (parent, name) for the same reason `no_shape` is: a name alone
+    # is not an address, and the parent is what tells two areas that share a
+    # name apart.
+    merged: dict[tuple[str, str], tuple[str, ...]] = dc_field(
+        default_factory=dict)
     # Whether this file's figures count people. They do everywhere but the
     # DRC, whose survey counts the heads of household it sampled -- 31,755 of
     # them, for 119 million people. Publishing that beside Pakistan's census
@@ -354,7 +377,11 @@ ETHIOPIA = Country(
     # the single shape "Region 14", and the special weredas it draws as one
     # "Special Woreda". Those are absent shapes, not wrong names.
     aliases={
-        "Ādīs Ābeba": ("Addis Ababa",),
+        # "Region 14" is what geoBoundaries calls the single second-order
+        # shape inside Addis Ababa, which is the region entire. It is an alias
+        # of the region so the assembled sub-cities reach it; at the first
+        # order it matches nothing, because no region is drawn under that name.
+        "Ādīs Ābeba": ("Addis Ababa", "Region 14"),
         "Āfar": ("Afar",),
         "Āmara": ("Amhara",),
         "Bīnshangul Gumuz": ("Beneshangul Gumu", "Benishangul Gumuz"),
@@ -374,24 +401,23 @@ ETHIOPIA = Country(
         "Southwest Shuwa": ("South West Shewa",),
         "Welayita": ("Wolayita",),
     },
-    # Addis Ababa's ten sub-cities are one shape called "Region 14", and the
-    # special weredas and town administrations are one called "Special Woreda".
-    # Basketo is not here: it has a shape of its own and is aliased above.
-    # "Jimma Town Special Wereda" is the one that was doing damage -- it
-    # reached the zone of Jimma by prefix, 350 km of countryside wearing a
+    # Addis Ababa's ten sub-cities were here, declared as having no shape,
+    # and that was half true and the wrong half. They have no shape each; the
+    # ten together are exactly the shape geoBoundaries calls "Region 14", the
+    # only second-order shape inside Addis Ababa. Declaring them absent left
+    # that shape empty -- 2.7 million people, the capital, with no religion,
+    # no ethnicity and no language -- so they are summed into it below
+    # instead. The file's own arithmetic says the ten are all of it: they come
+    # to 2,739,551 against a region row of 2,739,551.
+    #
+    # The special weredas and town administrations stay. Each of those is one
+    # area drawn inside something larger, not a set of parts making a whole.
+    # Basketo is not here either: it has a shape of its own and is aliased
+    # above. "Jimma Town Special Wereda" is the one that was doing damage --
+    # it reached the zone of Jimma by prefix, 350 km of countryside wearing a
     # town's figures, and was refused only because the zone's own row got
     # there first.
     no_shape=frozenset((
-        ("Ādīs Ābeba", "Addis Ketema"),
-        ("Ādīs Ābeba", "Akaki Kaliti"),
-        ("Ādīs Ābeba", "Arada"),
-        ("Ādīs Ābeba", "Bole"),
-        ("Ādīs Ābeba", "Gulele"),
-        ("Ādīs Ābeba", "Kirkos"),
-        ("Ādīs Ābeba", "Kolfe Keranyo"),
-        ("Ādīs Ābeba", "Lideta"),
-        ("Ādīs Ābeba", "Nefas Silk Lafto"),
-        ("Ādīs Ābeba", "Yeka"),
         ("Bīnshangul Gumuz", "Mao Komo Special Wereda"),
         ("Bīnshangul Gumuz", "Pawe Special Wereda"),
         ("Gambēla Hizboch", "Etang Special Wereda"),
@@ -403,6 +429,16 @@ ETHIOPIA = Country(
         ("Āmara", "Bahir Dar Special Wereda"),
         ("Yedebub Bihēroch Bihēreseboch Na Hizboch", "Hawassa City Administration"),
     )),
+    # The ten sub-cities are the whole of "Region 14", so the assembled area
+    # is the region itself and carries the region's name. The boundary file's
+    # name for it is an alias above rather than the name here, because the
+    # census calls this place Ādīs Ābeba and "Region 14" is a label on a
+    # polygon.
+    merged={
+        ("Ādīs Ābeba", "Ādīs Ābeba"): (
+            "Addis Ketema", "Akaki Kaliti", "Arada", "Bole", "Gulele",
+            "Kirkos", "Kolfe Keranyo", "Lideta", "Nefas Silk Lafto", "Yeka"),
+    },
     note=("2007 Population and Housing Census -- the last census Ethiopia has "
           "completed. The 2017 round was postponed and never held, so this is "
           "the most recent measurement in existence, not the most recent "
@@ -622,6 +658,25 @@ PAKISTAN = Country(
     # boundary that no longer exists rather than as a row this map lost.
     no_shape=frozenset(
         (("Pakistan", "Federally Administered Tribal Areas"),)),
+    # geoBoundaries draws Karachi as one district. The census counts the six
+    # inside it, so every one of them reached no shape and Karachi -- 16.0
+    # million people in 2017, 20.4 million in 2023 -- was the largest
+    # second-level language gap left on this map, in a country that is
+    # otherwise 114 districts full.
+    #
+    # This is the same declaration scripts/fetch_census/pakistan.py already
+    # makes for religion off the 2023 census, and deliberately not the same
+    # list: that one has seven parts because Keamari was split out of Karachi
+    # West in 2020, after this census counted. Six districts in 2017 and seven
+    # in 2023 are the same ground, which is why one shape fits both.
+    merged={
+        ("Sindh", "Karachi"): ("Karachi Central District",
+                               "Karachi East District",
+                               "Karachi South District",
+                               "Karachi West District",
+                               "Korangi District",
+                               "Malir District"),
+    },
     note=("2017 Population and Housing Census. The question is mother tongue, "
           "which is the language of the household a person grew up in rather "
           "than the language they speak now, and Pakistan's nine named "
@@ -1426,6 +1481,165 @@ def read(book, country: Country,
     return out
 
 
+def spelling(country: Country, parent: str, name: str) -> tuple[str, str]:
+    """A (parent, area) pair written the way a Country's declarations write it.
+
+    Every declaration in a `Country` -- `aliases`, `no_shape` and `merged` --
+    is written in the spelling the records carry, which is the sheet's own
+    cell put through `str.title()`: that is what `record()` publishes and what
+    those three are read against. The sheets are not consistent about case.
+    Pakistan's Table 11 prints "KARACHI CENTRAL DISTRICT"; the declaration
+    says "Karachi Central District", because that is what came out the other
+    end.
+
+    This is not a hypothetical tidiness. `combine()` compared the raw cell for
+    exactly one run, and the raw cell is the one spelling no declaration in
+    this module is written in: it matched nothing in either country, assembled
+    nothing, and reported a clean read of 141 areas every one of which
+    reconciled against its published total. `aliases` and `no_shape` went on
+    working through the same run, which is why the miss looked like a Pakistan
+    problem rather than the one-line difference it was -- so the fold lives
+    here, named, in one place, instead of being spelt out at each use.
+
+    Whitespace is collapsed with it. A cell padded or double-spaced is the
+    same area, and `match_admin2` in the build already folds parent names that
+    way for the same reason.
+    """
+    return (" ".join(parent.split()).title() or country.name,
+            " ".join(name.split()).title())
+
+
+def combine(country: Country, topic: Topic,
+            areas: dict[tuple[str, str], dict[str, Any]]) -> None:
+    """Fold the census areas that share one boundary shape into that shape.
+
+    Declared in `Country.merged`, never derived. Nothing in a sheet says that
+    "Karachi Central District" and five others are the whole of a shape called
+    "Karachi", or that Addis Ababa's ten sub-cities are the whole of one called
+    "Region 14"; that is a fact about the boundary file, and a rule loose
+    enough to infer it from names would fold Karachi Central into Central,
+    Ethiopia's zone of that name, 700 km away.
+
+    Every check here refuses rather than repairs, because each of them is a
+    way for this to look like it worked:
+
+    * **Nothing matched at all.** The quietest one, and the one that actually
+      happened. A declaration that reaches none of the sheet's areas used to
+      be passed over on the theory that the sheet might not carry them; what
+      it really means is that the two are spelt differently, and the run then
+      reports a full and reconciled read while doing none of the work it was
+      configured to do. A declared merge fires or the run stops.
+    * **A part missing.** The dangerous one. Five districts summed onto a
+      shape that is six would put four fifths of Karachi's people on all of
+      Karachi and report nothing wrong -- the shares would still add to 100%,
+      every district would still reconcile, and the only sign would be a
+      population nobody checks against anything.
+    * **The assembled area already a row of its own.** Then its people are
+      counted twice, once printed and once assembled.
+    * **Parts at more than one level.** A level-2 division and a level-3
+      district inside it are the same people, so the sum is not a sum.
+    * **Some parts with a published denominator and some without.** The
+      shares would be of a denominator covering only the part of the area
+      that happened to have one.
+    * **A part also declared `no_shape`.** The two declarations contradict
+      each other -- one says the row has no boundary, the other that it is
+      part of one -- and a config that says both is a config whose author
+      believed one of them.
+
+    And one control the file supplies itself: where the parent publishes its
+    own row, the assembly cannot hold more people than the parent it sits
+    inside. Addis Ababa's ten sub-cities come to 2,739,551 against a region
+    of exactly 2,739,551, which is the source's own arithmetic agreeing that
+    these ten are all of it.
+    """
+    # The sheet's own keys, indexed by the spelling the declarations use.
+    spelt = {}
+    for key in areas:
+        spelt.setdefault(spelling(country, *key), key)
+
+    for (parent, name), parts in sorted(country.merged.items()):
+        keys = [spelt.get((parent, part)) for part in parts]
+        here = [key for key in keys if key is not None]
+        if not here:
+            # Named with what the sheet does have under that parent, because
+            # the difference is usually one look: "KARACHI CENTRAL DISTRICT"
+            # beside "Karachi Central District" says everything a paragraph
+            # of explanation would.
+            siblings = sorted(area for (its_parent, area) in spelt
+                              if its_parent == parent)
+            raise SystemExit(
+                f"{country.iso3} {topic.sheet}: {name} is declared as "
+                f"{', '.join(parts)} under {parent}, and not one of them is "
+                "in the sheet. " + (
+                    f"Under {parent} the sheet has: "
+                    + ", ".join(siblings[:8])
+                    + (" ..." if len(siblings) > 8 else "")
+                    if siblings else
+                    f"The sheet has no areas under {parent} at all; the "
+                    "parent is spelt differently or sits at another level."))
+        if len(here) != len(keys):
+            absent = [part for part, key in zip(parts, keys) if key is None]
+            raise SystemExit(
+                f"{country.iso3} {topic.sheet}: {name} under {parent} is "
+                f"{', '.join(parts)} and {', '.join(absent)} "
+                f"{'is' if len(absent) == 1 else 'are'} not in the sheet; "
+                "refusing to put part of an area's people on all of it")
+        if (parent, name) in spelt:
+            raise SystemExit(
+                f"{country.iso3} {topic.sheet}: {name} under {parent} is "
+                "both printed in the sheet and assembled from its parts "
+                "here, so its people would be counted twice")
+        clash = [part for part in parts
+                 if (parent or country.name, part) in country.no_shape]
+        if clash:
+            raise SystemExit(
+                f"{country.iso3}: {', '.join(clash)} {'is' if len(clash) == 1 else 'are'} "
+                f"declared both no_shape and part of {name}; one of those "
+                "declarations is wrong")
+        levels = {areas[key]["level"] for key in keys}
+        if len(levels) != 1:
+            raise SystemExit(
+                f"{country.iso3} {topic.sheet}: {name} is assembled from "
+                f"levels {sorted(levels)}; areas at two levels overlap, so "
+                "adding them up counts the same people twice")
+        published = [areas[key]["published"] for key in keys]
+        if any(p is None for p in published) and not all(p is None
+                                                         for p in published):
+            raise SystemExit(
+                f"{country.iso3} {topic.sheet}: {name} is assembled from "
+                "areas of which only some publish a denominator, so the "
+                "shares would be of part of the area")
+
+        counts: dict[str, float] = {}
+        for key in keys:
+            for label, value in areas[key]["counts"].items():
+                counts[label] = counts.get(label, 0.0) + value
+        total = None if published[0] is None else sum(published)
+        summed = sum(counts.values())
+
+        # The parent's own row, found by the same fold: a first-order area
+        # has an empty parent cell, which `spelling()` reads as the country.
+        whole = areas.get(spelt.get((country.name, parent)))
+        if whole and whole["published"] and total \
+                and total > whole["published"] * 1.001:
+            raise SystemExit(
+                f"{country.iso3} {topic.sheet}: {name} comes to "
+                f"{total:,.0f} against {parent}'s own published "
+                f"{whole['published']:,.0f}, so the parts are not all inside "
+                "the parent they are declared under")
+
+        areas[(parent, name)] = {
+            "level": levels.pop(), "parent": parent, "name": name,
+            "counts": counts, "published": total, "summed": summed,
+            "assembled": tuple(parts)}
+        for key in keys:
+            del areas[key]
+        share = (f", {100 * summed / whole['summed']:.1f}% of {parent}"
+                 if whole and whole["summed"] else "")
+        log(f"    {name} is one shape in the boundaries: summed "
+            f"{len(parts)} areas, {summed:,.0f} people{share}")
+
+
 def check_total(country: Country, topic: Topic,
                 areas: dict[str, dict[str, Any]]) -> None:
     """Where the sheet publishes a denominator, how near do the groups come?
@@ -1534,6 +1748,10 @@ def main() -> int:
         fields: dict[str, dict[str, dict[str, Any]]] = {}
         for topic in country.topics:
             areas = read(book, country, topic)
+            # After reading and before checking: the fold is about the
+            # boundary file, not the sheet, and an assembled area has to face
+            # the same reconciliation as a printed one.
+            combine(country, topic, areas)
             check_total(country, topic, areas)
             fields[topic.field] = areas
         book.close()
@@ -1562,7 +1780,16 @@ def main() -> int:
                                  for g in published]
                 values[topic.field] = published or gap(NOT_AVAILABLE)
                 values[f"{topic.field}_year"] = topic.year or country.year
-                values[f"{topic.field}_note"] = topic.note or country.note
+                note = topic.note or country.note
+                if row.get("assembled"):
+                    # Said on the record, not only in the run's log. A reader
+                    # looking at Karachi is looking at six districts added
+                    # together, and that is a fact about the figure rather
+                    # than about how it was produced.
+                    note += (" The boundary file draws one shape here, so "
+                             "this is " + ", ".join(row["assembled"])
+                             + " summed.")
+                values[f"{topic.field}_note"] = note
                 cites.append({"field": topic.field,
                               "name": topic.source or country.source,
                               "url": dataset_url(country.dataset),

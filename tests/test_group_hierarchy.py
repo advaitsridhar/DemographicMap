@@ -278,6 +278,31 @@ class ReadingANameTheTablesDoNotSpell(unittest.TestCase):
             group_tree.at_tier("ethnicity", "Amazigh and Arab", 1),
             "Middle Eastern and North African ancestry")
 
+    def test_a_semicolon_lists_synonyms_and_not_two_languages(self):
+        """ISO 639 names a language and lists its other names after a
+        semicolon, and a register that types its code list into a census
+        table brings the punctuation with it. Both names are one language,
+        so the label belongs where that language belongs -- beside it, not
+        under it, which is where reading only the last word had put it.
+        """
+        import group_tree
+        for name, target in (("Catalan; Valencian", "Catalan"),
+                             ("Avaric;  Avar;  Avarish", "Avar"),
+                             ("Panjabi; Punjabi", "Punjabi"),
+                             ("Kalaallisut; Greenlandic", "Greenlandic")):
+            self.assertEqual(group_tree.parent_of("language", name),
+                             group_tree.parent_of("language", target),
+                             f"{name} parts company with {target}")
+            self.assertNotEqual(group_tree.parent_of("language", name), target,
+                                f"{name} was filed under {target}")
+
+    def test_and_still_joins_two_different_answers(self):
+        """The refusal the semicolon rule must not undo: a conjunction is
+        not a synonym, and two languages of two families share no node."""
+        import group_tree
+        for name in ("Spanish and Guarani", "Niuean and English"):
+            self.assertIsNone(group_tree.parent_of("language", name), name)
+
     def test_two_answers_welded_together_are_refused(self):
         """The refusal that keeps the rule honest.
 
@@ -339,6 +364,143 @@ class ReadingANameTheTablesDoNotSpell(unittest.TestCase):
                     self.assertLess(len(trail), 12, f"{field}: {name} is {trail}")
 
 
+class TheTailOfNamesTheTablesNowCarry(unittest.TestCase):
+    """The blocks a single census publishes, and what stays out of them.
+
+    Each of these is a whole country's list rather than a name, and the
+    argument for the block is what is tested: that Nepal's Tarai castes
+    speak Indo-Aryan languages, that Kiranti is Tibeto-Burman, that a clan
+    name in Lesotho is the clan root with a person prefix on it. The
+    refusals beside them are the cases where the same reasoning would have
+    to guess, and does not.
+    """
+
+    def test_a_national_block_lands_in_one_family(self):
+        import group_tree
+        cases = (
+            # Nepal: the Tarai castes, the Kiranti (Rai) languages of the
+            # eastern hills, and the far-western dialects of Nepali named
+            # after the district that speaks them.
+            ("ethnicity", "Sonar", "Indo-Aryan peoples"),
+            ("ethnicity", "Kayastha", "Indo-Aryan peoples"),
+            ("ethnicity", "Bantawa", "Himalayan and Tibeto-Burman peoples"),
+            ("language", "Chamling", "Tibeto-Burman languages"),
+            ("language", "Baitadeli", "Indo-Aryan languages"),
+            ("language", "Santhali", "Munda languages"),
+            # Russia's smallest counted peoples, by the language each speaks.
+            ("language", "Bezhta", "Northeast Caucasian languages"),
+            ("language", "Chukchi", "Chukotko-Kamchatkan languages"),
+            ("language", "Teleut", "Turkic languages"),
+            ("ethnicity", "Mountain Jew", "Jewish"),
+            # Timor-Leste's Austronesian languages and its Papuan ones.
+            ("language", "Tetun Prasa", "Malayo-Polynesian languages"),
+            ("language", "Fataluku", "Papuan languages"),
+            # The Congo basin, Zambia and Madagascar.
+            ("ethnicity", "Bushoong", "Bantu peoples"),
+            ("ethnicity", "Mangbetu", "Central African peoples"),
+            ("ethnicity", "Namwanga", "Bantu peoples"),
+            ("ethnicity", "Antanosy", "Malagasy peoples"),
+            # Scotland writes each census category three ways at once.
+            ("ethnicity", "Bangladeshi, Bangladeshi Scottish or Bangladeshi "
+                          "British", "Asian (census category)"),
+        )
+        for field, name, expected in cases:
+            self.assertEqual(group_tree.parent_of(field, name), expected, name)
+
+    def test_a_clan_name_is_its_root_with_a_prefix_on_it(self):
+        """Lesotho, Botswana, Uganda and Tanzania ask for the clan or the
+        person, not the people: one Motaung of the Bataung, one Musoga of
+        the Basoga. The roots are in the table and the prefix rule takes
+        the marker off, so all three spellings are one group."""
+        import group_tree
+        for name in ("Motaung", "Mokgalagadi", "Musoga", "Mugishu",
+                     "Mzigua", "Mkerewe"):
+            self.assertEqual(group_tree.parent_of("ethnicity", name),
+                             "Bantu peoples", name)
+        # And where the root is a click-language people, it lands there
+        # instead: Mosarwa is one of the Basarwa, and Msandawe one Sandawe.
+        for name in ("Mosarwa", "Msandawe"):
+            self.assertEqual(group_tree.parent_of("ethnicity", name),
+                             "Khoisan peoples", name)
+
+    def test_the_khoisan_languages_hang_from_nothing_else(self):
+        """They are not one family, which is the reason they are a top
+        grouping of their own rather than a corner of Niger-Congo."""
+        import group_tree
+        self.assertEqual(group_tree.parent_of("language", "Khoisan"),
+                         "Khoisan languages")
+        self.assertEqual(group_tree.at_tier("language", "Sesarwa", 1),
+                         "Khoisan languages")
+        # Burkina Faso writes "San" for the Samo language, which is Mande.
+        # One three-letter string cannot be both, so the tree says neither.
+        self.assertIsNone(group_tree.parent_of("language", "San"))
+
+    def test_an_answer_that_names_no_group_is_not_given_one(self):
+        """A marker, a count of languages, a ground of discrimination and a
+        religion written into the ethnicity question are all answers to
+        something other than the question asked. They are kept, and kept
+        apart, rather than coloured as a group."""
+        import group_tree
+        self.assertEqual(
+            group_tree.at_tier("language",
+                               "some 839 living indigenous languages "
+                               "are spoken", 1),
+            "Other and unspecified languages")
+        for name in ("Related to gender", "Orthodox (written as ethnicity)",
+                     "Race not stated", "non-Gambian"):
+            self.assertEqual(group_tree.at_tier("ethnicity", name, 1),
+                             "Other or not stated ancestry", name)
+        for name in ("Serbian (written as religion)", "other or none",
+                     "Believer, no church"):
+            self.assertEqual(group_tree.at_tier("religion", name, 1),
+                             "Not stated", name)
+
+    def test_a_church_is_still_a_church(self):
+        """The rule above reads "Believer" as someone who names no church,
+        and it must not take the churches with it."""
+        import group_tree
+        for name in ("Believers Church", "Jesus is Alive Community, Inc.",
+                     "Filipino Assemblies of the First Born, Incorporated"):
+            self.assertEqual(group_tree.at_tier("religion", name, 1),
+                             "Abrahamic religions", name)
+        self.assertEqual(
+            group_tree.parent_of("religion",
+                                 "Oblates of Mary Immaculate, Incorporated"),
+            "Catholicism")
+
+    def test_the_names_that_stay_unplaced(self):
+        """What the tail is still made of, and why each is left alone.
+
+        These are not oversights. A name whose identity is argued over, a
+        people two censuses could mean two things by, and a row that is one
+        census's tail with no root the references carry are all better read
+        as a gap than as a guess.
+        """
+        import group_tree
+        for field, name in (
+                # Two ancestries welded into one answer.
+                ("ethnicity", "Chinese and Portuguese"),
+                ("ethnicity", "Afro-Asian"),
+                ("ethnicity", "American or European"),
+                # A nationality that is argued over, not a spelling.
+                ("ethnicity", "Muslim"),
+                ("ethnicity", "Ashkali"),
+                # An identity defined by mixture whose census treats it as
+                # its own thing.
+                ("ethnicity", "Montubio"),
+                ("ethnicity", "Cholo/Chola"),
+                # Ethiopia's 2007 tail, written with the Amharic language
+                # suffix on a root no reference spells the same way.
+                ("language", "Shetagna"),
+                ("language", "Gedoligna"),
+                # And the Central African Republic's, which is mostly
+                # Ubangian and not reliably so.
+                ("language", "Tal\u00e9"),
+        ):
+            self.assertIsNone(group_tree.parent_of(field, name),
+                              f"{field}: {name} was given a parent")
+
+
 class SpellingVariantsAreSynonyms(unittest.TestCase):
     def test_a_variant_and_its_target_are_one_group(self):
         import group_tree
@@ -351,6 +513,48 @@ class SpellingVariantsAreSynonyms(unittest.TestCase):
             self.assertEqual(group_tree.parent_of(field, variant),
                              group_tree.parent_of(field, target),
                              f"{variant} is not filed with {target}")
+
+    def test_a_variant_may_not_merge_two_rows_a_source_prints_together(self):
+        """A variant says two strings are one group. A source that prints
+        both of them in one record says they are two, and the source wins.
+
+        This is not pedantry about spelling: merging them adds one row's
+        share to the other's, so a census that distinguishes Bosnian from
+        Bosniak, or Nepali from Khas, would have a number invented for it.
+        Each of those was a variant here until this test was written.
+        """
+        import group_tree
+        folder = ROOT / "site" / "data"
+        if not folder.is_dir():
+            raise unittest.SkipTest("site/data has not been built")
+        tables = {"language": group_tree.LANGUAGE_VARIANTS,
+                  "ethnicity": group_tree.ETHNIC_VARIANTS}
+        files = [folder / "admin0.json"]
+        for level in ("admin1", "admin2"):
+            if (folder / level).is_dir():
+                files += sorted((folder / level).iterdir())
+        for path in files:
+            try:
+                records = json.loads(path.read_text())
+            except (OSError, ValueError):
+                continue
+            if not isinstance(records, list):
+                continue
+            for record in records:
+                if not isinstance(record, dict):
+                    continue
+                for field, variants in tables.items():
+                    rows = record.get(field)
+                    if not isinstance(rows, list):
+                        continue
+                    named = {r["group"] for r in rows
+                             if isinstance(r, dict) and r.get("group")}
+                    for name, target in variants.items():
+                        self.assertFalse(
+                            name in named and target in named,
+                            f"{field}: {path.name} {record.get('id')} prints "
+                            f"{name!r} and {target!r} as two rows, and the "
+                            f"tree calls them one group")
 
     def test_a_variant_may_not_shadow_a_name_the_tree_places(self):
         """Two tables disagreeing about one string is a bug, not a fallback.

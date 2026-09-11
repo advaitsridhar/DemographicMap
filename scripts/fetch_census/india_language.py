@@ -26,12 +26,14 @@ district, so only rows with a zero sub-district code are read.
 
 The all-India workbook (``...0000.XLSX``) holds every state; the numbered
 workbooks hold that state's districts. Whichever files are present are used, so
-adding the remaining states is a matter of dropping their workbooks in.
+adding a state is a matter of dropping its workbook in.
 
-Coverage is therefore uneven *by design*, and says so: every state has a
-mother-tongue composition, while districts have one only where the state's
-workbook is present. Districts in the other states keep an explicit gap naming
-the missing file, rather than an unexplained blank.
+**All 35 are now present**, so every district the 2011 census enumerated has a
+mother-tongue composition: 643 records covering all 640 districts, three of
+which have since been subdivided and emit their successors as gaps instead.
+The shapes without a composition are the ones the census never enumerated at
+all -- districts created after 2011 -- and those are ``india_census.py``'s
+``CREATED_AFTER_2011`` rather than a missing file here.
 
 Usage:
     python -m scripts.fetch_census.india_language --level district
@@ -51,6 +53,7 @@ from ._shared import (
 )
 from .india_census import (
     CATALOG, DISTRICT_ALIASES, STATE_ALIASES, SUBDIVIDED_SINCE_2011,
+    subdivided_reason,
 )
 
 WORKBOOKS = RAW / "india" / "c16"
@@ -291,16 +294,24 @@ def build(units: dict[tuple[str, str], dict[str, Any]], level: str
             # One census row, several present-day districts. Splitting a language
             # composition across successors would be an estimate wearing the
             # clothes of a measurement, so each successor gets the reason instead.
+            #
+            # Religion and population carry the same reason rather than the
+            # bare gap `record` would default them to. This file and
+            # india_census.py both emit a record for these successors under the
+            # same id, and merging lets a gap overwrite a gap: a default
+            # `not_available` with no note landing on top of india_census's
+            # explained one is how East Jaintia Hills came to show an
+            # unexplained blank for religion beside a fully explained blank for
+            # language.
+            reason = subdivided_reason(raw_name)
             for successor in SUBDIVIDED_SINCE_2011[key]:
                 out.append(record(
                     f"IND-D{district_code}-{successor}", successor,
                     level="admin2", parent="IND",
                     parent_name=states.get(state_code),
-                    language=gap(NOT_AVAILABLE,
-                                 f"The 2011 census reported mother tongue for the "
-                                 f"undivided {raw_name} district, which has since "
-                                 f"been subdivided. The successor districts were "
-                                 f"never enumerated separately."),
+                    population=gap(NOT_AVAILABLE, reason),
+                    religion=gap(NOT_AVAILABLE, reason),
+                    language=gap(NOT_AVAILABLE, reason),
                     sources=[{"field": "note", "name": SOURCE, "url": CATALOG}],
                 ))
             continue

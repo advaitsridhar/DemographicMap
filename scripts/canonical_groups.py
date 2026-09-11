@@ -238,6 +238,19 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "Ratana", "Ringatū", "Ringatu",
         "Other Māori religions, beliefs and philosophies",
     ),
+    # India's C-01 Appendix, the break-up of "Other religions and persuasions".
+    # Only the entries where the Appendix writes two names in one cell are
+    # folded; the rest of its 83 religions key on themselves, because the
+    # census's word is the answer and Kirat and Prakriti above set the
+    # precedent. "Doni Polo / Sidonyi Polo" is a slash-joined pair of regional
+    # spellings rather than a name, and the religion is written Donyi-Polo --
+    # "Sun-Moon" -- everywhere outside the table.
+    "Donyi-Polo": ("Doni Polo / Sidonyi Polo", "Doni Polo", "Donyi Polo",
+                   "Sidonyi Polo", "Donyi Poloism", "Donyipolo"),
+    "Gondi": ("Gond / Gondi", "Gond"),
+    "Idu Mishmi": ("Idu / Idu Mishmi", "Idu"),
+    "Boro": ("Bodo / Boro", "Bodo"),
+    "Karbi": ("Karbi / Mikir", "Mikir"),
     "No religion": (
         "No religion", "No religion / secular", "Sem religião", "none",
         "None", "Secular Other Spiritual and No Religious Affiliation",

@@ -56,10 +56,25 @@ window.Dashboard = (function () {
     </div>`;
   }
 
-  function measureCard(label, measure, format) {
+  /* A measure's unit, written the way a person would say it.
+   *
+   * "1084" answers nothing on its own: a sex ratio can be counted either way
+   * round, and which way this one runs is the whole meaning of the number.
+   * The unit used to be appended to the *place's* subtitle, where it read as
+   * part of the place's identity -- "Kerala / India - females per 1000
+   * males" -- which told the reader nothing about Kerala and hid the one fact
+   * that makes the figure legible.
+   */
+  function unitLabel(measure) {
+    if (isGap(measure) || !measure || !measure.unit) return "";
+    return String(measure.unit).replace(/_/g, " ");
+  }
+
+  function measureCard(label, measure, format, unit) {
     if (isGap(measure)) return factCard(label, measure);
     const raw = valueOf(measure);
     const meta = [];
+    if (unit) meta.push(unit);
     if (measure && measure.year) meta.push(String(measure.year));
     if (measure && measure.source) meta.push(measure.source.split(",")[0]);
     return factCard(label, format ? format(raw) : raw, meta.join(" · "));
@@ -365,7 +380,8 @@ window.Dashboard = (function () {
                    ? `${number(valueOf(record.largest_settlement_population))} people`
                    : null)}
       ${measureCard("Median age", record.median_age, (n) => `${n} yrs`)}
-      ${measureCard("Sex ratio", record.sex_ratio, (n) => String(n))}
+      ${measureCard("Sex ratio", record.sex_ratio, (n) => String(n),
+                    unitLabel(record.sex_ratio))}
       ${measureCard("Life expectancy", record.life_expectancy, (n) => `${n} yrs`)}
     </div>`);
 
@@ -400,10 +416,6 @@ window.Dashboard = (function () {
     } else {
       const country = window.DataStore.country(record.country);
       if (country) bits.push(country.name);
-    }
-    const sexRatio = record.sex_ratio;
-    if (!isGap(sexRatio) && sexRatio.unit) {
-      bits.push(sexRatio.unit.replace(/_/g, " "));
     }
     return bits.filter(Boolean).join(" · ");
   }
