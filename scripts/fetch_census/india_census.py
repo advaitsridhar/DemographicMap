@@ -47,9 +47,22 @@ them. A blank beside it said honestly that no figure existed for Jagtial; the
 number next to it said, with a source and a year, something that was not about
 the shape it sat on. 75 districts across 16 states were in that position,
 carrying 172 million people's worth of 2011 figures between them.
-``LOST_TERRITORY_SINCE_2011`` declares every one, and they are now treated
-exactly as their siblings are: the census measured the undivided district, both
-fragments are fragments, and neither carries the figure. The state total does.
+``LOST_TERRITORY_SINCE_2011`` declares every one, with the share of its 2011
+ground the shape still covers, and every one carries its census figure together
+with a sentence saying what that figure is for.
+
+Blanking them was tried first and was the wrong call. The number is the
+Registrar General's, it is for a district of this name, and deleting it cost
+the map 172 million people's worth of coverage to fix a problem that was never
+that the figure is wrong -- only that it was silently about more ground than
+the shape covers. The cure for silent is a sentence, which is the trade this
+project makes everywhere else: a country roll-up that names the divisions it
+leaves out, a summed parent that names the figure it displaced. It is a better
+trade here than most, because the *shares* survive a boundary change far better
+than the counts do. Religion does not reorganise itself along a new district
+line, so the choropleth -- which shades by share -- is close to right, and it
+is the head count in the panel that covers more ground than the shape does.
+The note says so, on every field the census row filled.
 
 What *would* fill all of them is a level down, and the route is real enough to
 be worth stating precisely. C-01 **is** published to sub-district: the official
@@ -816,15 +829,28 @@ def created_reason(name: str, year: int, predecessors: tuple[str, ...]) -> str:
 
 def lost_territory_reason(name: str, share: int,
                           successors: tuple[tuple[str, int], ...]) -> str:
-    """Why a district the census *did* enumerate carries no figure here.
+    """What a district the census enumerated before its split is a figure for.
 
-    The hardest note in this file to write honestly, because the figure exists,
-    is official, and has this district's name on it. What it does not have is
-    this district's *shape*: the census measured the ground before the split
-    and the boundary file draws it after, so the row counts people who now live
-    in the districts named here. Saying that is the whole job -- a reader who
-    wants the number can find it on the state, and a reader who does not know
-    the district was cut in half is exactly who a silent figure would mislead.
+    The figure exists, is official, and has this district's name on it. What it
+    does not have is this district's *shape*: the census measured the ground
+    before the split and the boundary file draws it after, so the row counts
+    people who now live in the districts named here too.
+
+    This file blanked these for one revision, treating the shape as a fragment
+    like its siblings. The owner asked for the figures back, and on reflection
+    that is the better answer: the danger was never that the number is wrong
+    but that it is silently about somewhere else, and the cure for silent is a
+    sentence, not a deletion. It is the trade this project makes everywhere --
+    a partial country roll-up naming what it leaves out, a summed parent naming
+    the figure it displaced -- and it is a better one here too, because the
+    *shares* survive the boundary change far better than the counts do.
+    Religion does not reorganise itself along a new district line, so the
+    choropleth, which shades by share, is close to right; it is the head count
+    in the panel that is for more ground than the shape covers.
+
+    So the note says which districts were carved out and when, what fraction of
+    the census's ground is left, and, where most of the people have gone, that
+    the count is mostly of somewhere else.
     """
     names = [child for child, _ in successors]
     years = sorted({year for _, year in successors})
@@ -833,20 +859,16 @@ def lost_territory_reason(name: str, share: int,
     when = (f" ({years[0]})" if len(years) == 1
             else " (" + " and ".join(str(y) for y in years) + ")")
     many = len(names) > 1
-    note = (f"The 2011 census measured {name} as it then stood. {listed}"
-            f"{when} {'have' if many else 'has'} been carved out of it since, "
-            f"leaving the district that kept the name with about {share}% of "
-            f"the ground the census counted. ")
-    if share < 50:
-        note += ("Most of the people in that census row live outside this "
-                 "shape. ")
-    note += (f"The figure is not shown here because it is not a figure for "
-             f"this district: it counts everyone in the undivided one, of "
-             f"which this shape is a fragment -- exactly as {names[0]} is. The "
-             f"census never measured the parts separately, and splitting one "
-             f"figure between them would be an estimate rather than a "
-             f"measurement, so neither fragment carries it. The state total "
-             f"does.")
+    note = (f"This figure is for {name} as the 2011 census measured it, before "
+            f"{listed}{when} {'were' if many else 'was'} carved out of it. The "
+            f"shape drawn here keeps about {share}% of the ground that row "
+            f"counted")
+    note += (", so most of the people in it now live outside this boundary. "
+             if share < 50 else ", and the rest is now in those districts. ")
+    note += ("The census never measured the parts separately, so the shares "
+             "are the undivided district's and the counts are its whole "
+             "population -- read the percentages as describing this area and "
+             "the head counts as covering more of it than the map shows.")
     return note
 
 
@@ -872,13 +894,13 @@ def lost_territory() -> dict[tuple[str, str], tuple[int, tuple[tuple[str, int], 
 def check_lost_territory(rows: list[dict[str, str]]) -> None:
     """The shrunken-district table must be CREATED_AFTER_2011 read backwards.
 
-    Three ways it could be wrong and each is worse than what it replaced.
-    A district listed here that lost nothing would delete a good figure for no
-    reason. A district that *did* lose territory and is missing from here keeps
-    wearing a figure for people who no longer live in it, which is the bug this
-    table exists to fix and the one that cannot be seen on the map. And a name
-    the census never enumerated is a claim about a place that is not checked
-    anywhere else.
+    Three ways it could be wrong. A district listed here that lost nothing
+    would put a caveat on a sound figure, telling a reader to discount
+    something they need not. A district that *did* lose territory and is
+    missing from here shows a figure for people who no longer live in it and
+    says nothing about that, which is the bug this table exists to fix and the
+    one that cannot be seen on the map. And a name the census never enumerated
+    is a claim about a place that is not checked anywhere else.
 
     So the set of districts here is required to be exactly the set of
     predecessors CREATED_AFTER_2011 names, less the three whose name survives
@@ -1029,31 +1051,6 @@ def districts(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
         parent_name = STATE_ALIASES.get(
             state.lower(), state.title().replace(" And ", " and ").replace(" Of ", " of "))
 
-        shrink = shrunken.get((state.casefold(), key))
-        if shrink:
-            # The district is still drawn and still named, and the shape is a
-            # fragment of what this row measured. Same treatment as the
-            # successors that were carved out of it, because that is what this
-            # is: another fragment, distinguished only by keeping the name.
-            share, successors = shrink
-            reason = lost_territory_reason(DISTRICT_ALIASES.get(key, name),
-                                           share, successors)
-            record_ = record(
-                f"IND-D{code}", DISTRICT_ALIASES.get(key, name),
-                level="admin2", parent="IND",
-                codes={"census2011_district": code, "state_name": state},
-                population=gap(NOT_AVAILABLE, reason),
-                sex_ratio=gap(NOT_AVAILABLE, reason),
-                religion=gap(NOT_AVAILABLE, reason),
-                scheduled_groups=gap(NOT_AVAILABLE, reason),
-                language=gap(NOT_AVAILABLE, reason),
-                ethnicity=gap(NOT_COLLECTED, "India does not collect ethnicity."),
-                sources=[{"field": "note", "name": SOURCE, "url": CATALOG}],
-            )
-            record_["parent_name"] = parent_name
-            out.append(record_)
-            continue
-
         if key in SUBDIVIDED_SINCE_2011:
             # One census row, several present-day districts: emit the gap, not a guess.
             # Every field the census would have filled carries the reason, not
@@ -1079,6 +1076,21 @@ def districts(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
             codes={"census2011_district": code, "state_name": state})
         # District names repeat across states; the state is what disambiguates.
         record_["parent_name"] = parent_name
+        # A district that has since been carved up keeps its figure and says
+        # so. The shape is a fragment of the ground this row measured, which
+        # is a fact about the figure rather than a reason to withhold it: the
+        # note goes on every field the row filled, because a reader looking at
+        # the head count needs it as much as one looking at the shares -- more,
+        # since the shares survive a boundary change and the counts do not.
+        shrink = shrunken.get((state.casefold(), key))
+        if shrink:
+            caveat = lost_territory_reason(DISTRICT_ALIASES.get(key, name),
+                                           *shrink)
+            for field in ("population", "sex_ratio", "religion",
+                          "scheduled_groups", "language"):
+                note = record_.get(f"{field}_note")
+                record_[f"{field}_note"] = f"{note} {caveat}" if note else caveat
+            record_["lost_territory_pct"] = 100 - shrink[0]
         out.append(record_)
 
     # The shapes the census has no row for at all, each carrying why.

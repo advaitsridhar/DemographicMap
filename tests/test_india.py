@@ -812,33 +812,53 @@ class TheStateSplit(unittest.TestCase):
 class DistrictsThatLostTheirGround(unittest.TestCase):
     """The other half of the same fact, and the one that was invisible."""
 
-    def test_a_shrunken_district_does_not_carry_the_undivided_figure(self):
+    def test_a_shrunken_district_keeps_its_figure(self):
+        # These were blanked for one revision and the owner asked for them
+        # back. The danger was never that the number is wrong -- it is the
+        # Registrar General's, for a district of this name -- but that it is
+        # silently about more ground than the shape covers, and the cure for
+        # silent is a sentence.
+        got = emitted()["Surguja"]
+        self.assertIsInstance(got["religion"], list)
+        self.assertIsInstance(got["scheduled_groups"], list)
+        self.assertEqual(2359886, got["population"]["value"])
+
+    def test_every_field_the_row_filled_carries_the_caveat(self):
+        # The head count needs it more than the shares do: religion does not
+        # reorganise itself along a new district line, so the percentages
+        # survive the boundary change and the population does not.
         got = emitted()["Surguja"]
         for field in ("population", "religion", "language", "sex_ratio",
                       "scheduled_groups"):
             with self.subTest(field=field):
-                self.assertNotIsInstance(got[field], list)
-                self.assertIsNone(got[field].get("value"))
-                self.assertEqual(india_census.NOT_AVAILABLE,
-                                 got[field]["status"])
+                self.assertIn("carved out of it", got[f"{field}_note"])
 
-    def test_the_gap_names_what_took_the_ground_and_how_much(self):
-        note = emitted()["Surguja"]["religion"]["note"]
+    def test_the_note_names_what_took_the_ground_and_how_much(self):
+        note = emitted()["Surguja"]["religion_note"]
         self.assertIn("Balrampur", note)
         self.assertIn("2012", note)
         self.assertIn("31%", note)
-        self.assertIn("The state total does.", note)
+        self.assertIn("the counts are its whole population", note)
+
+    def test_the_share_of_ground_lost_is_on_the_record(self):
+        # Not only in prose: a reader filtering or sorting needs the number.
+        self.assertEqual(69, emitted()["Surguja"]["lost_territory_pct"])
 
     def test_a_district_that_kept_more_than_half_makes_no_claim_about_people(self):
         # Area is what is measured and people are what is at stake, and the two
         # do not track each other. The sentence about where the people live is
         # only written where the area measurement alone establishes it.
-        self.assertIn("Most of the people",
-                      emitted()["Surguja"]["religion"]["note"])
-        self.assertNotIn("Most of the people",
+        self.assertIn("most of the people",
+                      emitted()["Surguja"]["religion_note"])
+        self.assertNotIn("most of the people",
                          emitted(lost={"Maharashtra": (("Thane", 84),)},
                                  table={"Maharashtra": TABLE["Maharashtra"]},
-                                 )["Thane"]["religion"]["note"])
+                                 )["Thane"]["religion_note"])
+
+    def test_a_district_that_lost_nothing_carries_no_caveat(self):
+        self.assertNotIn("carved out of it",
+                         emitted()["Raigarh"].get("religion_note", ""))
+        self.assertNotIn("lost_territory_pct", emitted()["Raigarh"])
 
     def test_a_district_that_lost_nothing_is_untouched(self):
         self.assertEqual(1493984, emitted()["Raigarh"]["population"]["value"])
