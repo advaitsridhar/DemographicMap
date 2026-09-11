@@ -927,28 +927,58 @@ def aggregate(nodes: dict[str, dict[str, float]],
             state_id, sample.get("parent_name") or f"State {state}",
             level="admin1", parent="USA", country="USA",
             codes={"geoid": state, "fips_state": state, "fips_county": None},
-            religion=shares_as_rows(shares) or gap(NOT_AVAILABLE),
+            religion=shares_as_rows(shares, base) or gap(NOT_AVAILABLE),
             religion_year=year,
             religion_basis="self-identification",
             religion_note=aggregate_note(len(members), "counties"),
             sources=[{"field": "religion", "name": SOURCE, "url": PAGE,
                       "license": LICENCE}]))
 
-    shares, _ = compose(national)
-    records.append(record(
-        "USA", "United States", level="admin0", parent="USA", country="USA",
-        religion=shares_as_rows(shares) or gap(NOT_AVAILABLE),
-        religion_year=year,
-        religion_basis="self-identification",
-        religion_note=aggregate_note(len(national), "counties"),
-        sources=[{"field": "religion", "name": SOURCE, "url": PAGE,
-                  "license": LICENCE}]))
     return records
 
 
-def shares_as_rows(shares: dict[str, float]) -> list[dict[str, Any]]:
-    """A composition as the map wants it: largest first, nothing at zero."""
-    return [{"group": node, "pct": round(pct, 1)}
+def nationally(nodes: dict[str, dict[str, float]],
+               populations: dict[str, float]) -> list[dict[str, Any]]:
+    """PRRI's whole universe in one composition, for the log and nothing else.
+
+    Deliberately not written as a record. It is the 50 states and the District
+    of Columbia -- PRRI surveyed nobody in Puerto Rico, Guam, the U.S. Virgin
+    Islands, American Samoa or the Northern Mariana Islands -- so filing it as
+    the United States would state a figure for 3.6 million people it never
+    asked. The build sums the country from the first-level divisions instead,
+    which produces the same arithmetic and a note that names what is outside
+    it.
+
+    Printing it is still worth the lines: it is the number a reader can check
+    against PRRI's own published national release, and a fetch that quietly
+    reweighted something would show up here first.
+    """
+    base = sum(populations.get(f, 0.0) for f in nodes)
+    if base <= 0:
+        return []
+    total: dict[str, float] = defaultdict(float)
+    for fips, shares in nodes.items():
+        weight = populations.get(fips, 0.0)
+        for node, pct in shares.items():
+            total[node] += weight * pct
+    return shares_as_rows({node: v / base for node, v in total.items()})
+
+
+def shares_as_rows(shares: dict[str, float],
+                   base: float | None = None) -> list[dict[str, Any]]:
+    """A composition as the map wants it: largest first, nothing at zero.
+
+    ``base`` is the number of people the shares were taken of -- PRRI's adult
+    population, not the state's -- and giving it puts a count on every row.
+    That matters one level up: a parent summed from these is weighted by the
+    denominator each child's own percentages were taken against, so the
+    national figure is PRRI's own arithmetic in a different order. Without the
+    counts the sum would have to price each state's shares against its census
+    population instead, quietly reweighting a survey of adults by the number of
+    children living in each state.
+    """
+    return [{"group": node, "pct": round(pct, 1),
+             **({} if base is None else {"count": int(round(base * pct / 100))})}
             for node, pct in sorted(shares.items(), key=lambda kv: (-kv[1], kv[0]))
             if round(pct, 1) > 0]
 
@@ -1214,11 +1244,11 @@ def main() -> int:
     # The states and the nation, from the counties just written. Without these
     # the map answers the same question three different ways as you zoom out.
     wider = aggregate(nodes, populations, universe, year=year)
-    states = [r for r in wider if r["level"] == "admin1"]
-    log(f"  {len(states)} states and the nation summed from those counties")
-    national = next(r for r in wider if r["level"] == "admin0")
-    log("  national: " + ", ".join(
-        f"{g['group']} {g['pct']}%" for g in national["religion"][:4]))
+    log(f"  {len(wider)} states summed from those counties")
+    log("  across PRRI's whole universe: " + ", ".join(
+        f"{g['group']} {g['pct']}%" for g in nationally(nodes, populations)[:4])
+        + " -- not written; the build sums the country from the states, where "
+          "it can say which territories are outside the answer")
     write_json(args.out or PROCESSED / OUT, records + wider)
     return 0
 

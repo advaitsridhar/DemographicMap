@@ -715,14 +715,11 @@ class StatesAndTheNation(unittest.TestCase):
         return us_prri.aggregate(self.nodes, self.pops, self.universe,
                                  year=2024, **kw)
 
-    def test_a_state_and_a_nation_come_back(self):
+    def test_states_come_back_and_a_nation_deliberately_does_not(self):
         got = self.wider()
-        states = [r for r in got if r["level"] == "admin1"]
-        nation = [r for r in got if r["level"] == "admin0"]
-        self.assertEqual(len(nation), 1)
-        self.assertTrue(states)
-        self.assertEqual(nation[0]["id"], "USA")
-        self.assertEqual(nation[0]["religion_year"], 2024)
+        self.assertTrue(got)
+        self.assertEqual({r["level"] for r in got}, {"admin1"})
+        self.assertTrue(all(r["religion_year"] == 2024 for r in got))
 
     def test_a_state_is_the_weighted_mean_of_its_counties(self):
         """Equal weights, so the state is the plain mean -- and the check is
@@ -754,17 +751,66 @@ class StatesAndTheNation(unittest.TestCase):
         self.assertIn("no population", str(cm.exception))
 
     def test_the_note_says_the_figure_was_summed(self):
-        got = self.wider()
-        nation = next(r for r in got if r["level"] == "admin0")
-        self.assertIn("Summed from the", nation["religion_note"])
-        self.assertIn("weighted by", nation["religion_note"])
+        note = self.wider()[0]["religion_note"]
+        self.assertIn("Summed from the", note)
+        self.assertIn("weighted by", note)
 
-    def test_the_nation_is_every_county_not_every_state_averaged(self):
+
+class TheNationIsNotThisAdaptersToFile(unittest.TestCase):
+    """PRRI surveyed the 50 states and the District of Columbia.
+
+    It asked nobody in Puerto Rico, Guam, the U.S. Virgin Islands, American
+    Samoa or the Northern Mariana Islands, so a record filed as "United States"
+    would state a figure for 3.6 million people who were never in the sample,
+    and the record itself would have no way to say so. The build sums the
+    country from its first-level divisions instead, which reaches the same
+    arithmetic and can name the five that are outside it.
+
+    What stays here is the number, computed for the fetch log: it is what a
+    reader checks against PRRI's own national release.
+    """
+
+    def setUp(self):
+        self.universe = universe(3_100)
+
+    def test_no_record_claims_to_be_the_country(self):
+        got = us_prri.aggregate(nodes_for(3_100),
+                                {f: 1_000.0 for f in nodes_for(3_100)},
+                                self.universe, year=2024)
+        self.assertFalse([r for r in got if r["level"] == "admin0"])
+        self.assertFalse([r for r in got if r["id"] == "USA"])
+
+    def test_the_figure_is_every_county_not_every_state_averaged(self):
         """Averaging states would give Wyoming the weight of California."""
         nodes = {"01001": {"Protestantism": 100.0},
                  "02001": {"No religion": 100.0}}
         pops = {"01001": 9_000.0, "02001": 1_000.0}
-        got = us_prri.aggregate(nodes, pops, self.universe, year=2024)
-        nation = next(r for r in got if r["level"] == "admin0")
-        shares = {g["group"]: g["pct"] for g in nation["religion"]}
+        shares = {g["group"]: g["pct"]
+                  for g in us_prri.nationally(nodes, pops)}
         self.assertEqual(shares["Protestantism"], 90.0)
+
+    def test_it_agrees_with_summing_the_states_it_does_write(self):
+        # The build's country roll-up weights the states by the denominator
+        # each one's percentages were taken against, which is why the state
+        # rows carry counts. Same numbers, other order.
+        nodes = {"01001": {"Protestantism": 100.0},
+                 "01003": {"No religion": 100.0},
+                 "02001": {"No religion": 100.0}}
+        pops = {"01001": 6_000.0, "01003": 1_000.0, "02001": 3_000.0}
+        states = us_prri.aggregate(nodes, pops, self.universe, year=2024)
+        summed: dict[str, float] = {}
+        for state in states:
+            for row in state["religion"]:
+                summed[row["group"]] = summed.get(row["group"], 0) + row["count"]
+        base = sum(summed.values())
+        direct = {g["group"]: g["pct"] for g in us_prri.nationally(nodes, pops)}
+        for group, count in summed.items():
+            self.assertAlmostEqual(100 * count / base, direct[group], places=1)
+        self.assertEqual(base, 10_000)
+
+    def test_counts_are_prris_adult_base_not_the_states_population(self):
+        nodes = {"01001": {"Protestantism": 75.0, "No religion": 25.0}}
+        states = us_prri.aggregate(nodes, {"01001": 4_000.0},
+                                   self.universe, year=2024)
+        counts = {g["group"]: g["count"] for g in states[0]["religion"]}
+        self.assertEqual(counts, {"Protestantism": 3_000, "No religion": 1_000})

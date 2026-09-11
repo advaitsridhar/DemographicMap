@@ -11,6 +11,7 @@ import pathlib
 import re
 import sys
 import tempfile
+from unittest import mock
 import unittest
 from pathlib import Path
 
@@ -1169,6 +1170,144 @@ class RollUpToTheCountry(unittest.TestCase):
                                          "note": "France asks no such question"})
         self.roll(country, self.regions())
         self.assertEqual(country["language"]["status"], "not_collected")
+
+
+class ACountryMostOfWhosePartsPublish(unittest.TestCase):
+    """A near-complete set of divisions beats an older estimate of the whole.
+
+    The United States is the case. PRRI measured religion in all 3,142 counties
+    in 2024, which summed to 51 states and the District of Columbia -- but the
+    country record kept a 2014 Factbook composition, because five territories
+    (Puerto Rico, Guam, the U.S. Virgin Islands, American Samoa, the Northern
+    Mariana Islands) publish no religion at all. Refusing there does not leave
+    an honest gap the way it does one level down; it leaves a decade-old
+    estimate standing in place of a current measurement of 98.9% of the
+    country, and says nothing about either.
+
+    So the country pass, and only the country pass, will sum a set that is
+    short, provided what is left out is small enough to bound the answer and
+    the record says what it was.
+    """
+
+    def country(self, population=1000):
+        return {"id": "XXX", "codes": {"iso3": "XXX"}, "name": "Somewhere",
+                "population": {"value": population, "year": 2025,
+                               "source": "Estimate"},
+                "language": [{"group": "Alpha", "pct": 90.0, "count": 900},
+                             {"group": "other", "pct": 10.0, "count": 100}],
+                "sources": []}
+
+    def region(self, name, pop, groups=None):
+        row = {"id": name, "name": name, "parent": "XXX",
+               "population": None if pop is None else
+               {"value": pop, "year": 2025, "source": "Register"},
+               "sources": []}
+        if groups is None:
+            row["language"] = {"status": "not_available"}
+        else:
+            total = sum(groups.values())
+            row["language"] = [{"group": g, "pct": round(100 * c / total, 1),
+                                "count": c} for g, c in groups.items()]
+        return row
+
+    def roll(self, country, regions):
+        be.roll_up_countries([country], {"XXX": regions})
+        return country
+
+    def nearly(self, silent_pop=10):
+        """Two publishing regions and one that does not, at 99% coverage."""
+        return [self.region("North", 600, {"Alpha": 500, "Beta": 100}),
+                self.region("South", 390, {"Alpha": 300, "Beta": 90}),
+                self.region("Territory", silent_pop)]
+
+    def test_the_sum_is_taken_when_what_is_left_out_is_small_enough(self):
+        country = self.roll(self.country(), self.nearly())
+        self.assertEqual([(g["group"], g["count"]) for g in country["language"]],
+                         [("Alpha", 800), ("Beta", 190)])
+
+    def test_the_note_names_what_was_left_out_and_how_much_of_the_country(self):
+        # The bias is bounded and the bound is the thing that makes the figure
+        # publishable, so it is said on the record a reader sees, not in a log.
+        note = self.roll(self.country(), self.nearly())["language_note"]
+        self.assertIn("Territory", note)
+        self.assertIn("1 of the 3 divisions publishes no language", note)
+        self.assertIn("describes the 99.0% of the population", note)
+
+    def test_the_note_stops_claiming_all_the_divisions(self):
+        whole = RollUpToTheCountry()
+        full = whole.roll(whole.country(), whole.regions())["language_note"]
+        self.assertIn("Summed from all 2 first-level", full)
+        partial = self.roll(self.country(), self.nearly())["language_note"]
+        self.assertIn("Summed from 2 first-level", partial)
+        self.assertNotIn("all 2", partial)
+
+    def test_too_much_missing_is_still_refused(self):
+        # 60% of the country is not "nearly all of it", and a sum of it would
+        # read exactly like a sum of the whole.
+        regions = self.nearly(silent_pop=400)
+        country = self.roll(self.country(population=1390), regions)
+        self.assertEqual([g["group"] for g in country["language"]],
+                         ["Alpha", "other"])
+
+    def test_the_refusal_says_how_much_of_the_country_does_publish(self):
+        # India stays refused at 97.2% -- Telangana published no 2011 religion
+        # row -- and the number is why, so the message carries it.
+        regions = self.nearly(silent_pop=400)
+        logged: list[str] = []
+        with mock.patch.object(be, "log", logged.append):
+            self.roll(self.country(population=1390), regions)
+        refusals = [line for line in logged if "not summed" in line]
+        self.assertTrue(refusals)
+        self.assertIn("71.2% of the population", " ".join(refusals))
+
+    def test_a_silent_division_with_no_population_refuses_the_sum(self):
+        # The dangerous case: a division carrying neither the field nor a
+        # population is invisible to both sums, so it would leave the coverage
+        # reading 100% while being exactly the unmeasured tail. Puerto Rico
+        # with no population would be three million people counted as nobody.
+        country = self.roll(self.country(population=990),
+                            self.nearly(silent_pop=None))
+        self.assertEqual([g["group"] for g in country["language"]],
+                         ["Alpha", "other"])
+
+    def test_the_level_below_does_not_get_this(self):
+        # A refused admin1 leaves a gap, which is honest. Only the country pass
+        # faces the choice between a partial sum and a stale estimate.
+        parent = {"name": "Province",
+                  "population": {"value": 990, "year": 2025}}
+        kids = [dict(r, parent="Province") for r in self.nearly()]
+        why = be.roll_up_field(parent, kids, "language")
+        self.assertIn("1 of 3 children have no language", why)
+        self.assertNotIn("language", [k for k, v in parent.items()
+                                      if isinstance(v, list)])
+
+
+class CoveredShare(unittest.TestCase):
+    """How much of the children's population the publishing ones carry."""
+
+    def child(self, pop, has=True):
+        row = {"population": None if pop is None
+               else {"value": pop, "year": 2025}}
+        row["religion"] = ([{"group": "A", "pct": 100.0, "count": pop}]
+                           if has else {"status": "not_available"})
+        return row
+
+    def test_it_is_population_weighted_not_a_count_of_units(self):
+        kids = [self.child(990), self.child(10, has=False)]
+        self.assertAlmostEqual(be.covered_share(kids, "religion"), 0.99)
+
+    def test_a_publisher_with_no_population_only_lowers_the_share(self):
+        # It leaves both sums, which can only understate the coverage -- an
+        # error in the safe direction, so it is allowed.
+        kids = [self.child(990), self.child(None), self.child(10, has=False)]
+        self.assertAlmostEqual(be.covered_share(kids, "religion"), 0.99)
+
+    def test_a_silent_child_with_no_population_cannot_be_measured(self):
+        kids = [self.child(990), self.child(None, has=False)]
+        self.assertIsNone(be.covered_share(kids, "religion"))
+
+    def test_no_populations_at_all_is_not_full_coverage(self):
+        self.assertIsNone(be.covered_share([self.child(None)], "religion"))
 
 
 class RollUpFromChildren(unittest.TestCase):
