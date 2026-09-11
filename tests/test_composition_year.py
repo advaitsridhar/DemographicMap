@@ -61,8 +61,6 @@ AWAITING_AN_ADAPTER_RUN = {
     "brazil_municipality.json", "brazil_state.json",
     "cambodia_province.json",       # wiki_census
     "kazakhstan_region.json",       # wiki_census
-    "kenya_county.json",
-    "malaysia_district.json", "malaysia_state.json",
     "thailand_province.json",
     "uk_county.json", "uk_lad.json",
     "us_county.json", "us_state.json",
