@@ -3365,6 +3365,30 @@ The `not_collected` marker is asserted from these tables and nowhere else:
 Adding a country means adding a row with a citable reason. An empty API response is
 never sufficient grounds: it produces `not_available`.
 
+### Measured on the runner, and declared: Iran, Korea, Egypt, Afghanistan, Venezuela
+
+A second pass over the largest countries still empty at the first level, after
+the Wikipedia transcriptions above, ended in declarations rather than files:
+
+* **Iran** -- the 2016 census asked religion and the Statistical Centre
+  publishes it by province, but `amar.org.ir` ends the TLS handshake before a
+  standard client reads a page (`SSL: UNEXPECTED_EOF_WHILE_READING`, measured
+  on the runner). Verification is not turned off for it. The country carries a
+  `gap_reason` saying the data exists and is unreachable; ethnicity and
+  language were already declared not collected.
+* **South Korea** -- the 2015 census asked religion and KOSIS publishes it by
+  province, behind an API that needs a registered key; *Religion in South
+  Korea* carries the national series only. A `gap_reason`, not a policy.
+* **Egypt** -- CAPMAS collected religion in 2017 and has published nothing
+  by governorate since 2006. Collected and withheld is a `gap_reason`, not
+  `not_collected`.
+* **Afghanistan** -- no population census has ever been completed (the 1979
+  count was abandoned partway), so no census question exists for any of the
+  three fields: `not_collected` on all three, with the NSIA's estimates named
+  as what does exist.
+* **Venezuela** -- the 2011 census asked indigenous and Afro-descendant
+  self-recognition and not religion; `not_collected` for religion only.
+
 ### Collecting vs. not, in the EU
 
 Romania, Bulgaria, Slovakia, Ireland, Hungary, Croatia, Slovenia, the Baltics and

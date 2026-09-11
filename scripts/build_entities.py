@@ -195,6 +195,17 @@ ADAPTER_GAPS: dict[str, str] = {
            "tried. Religion by province is the 2000 census, read from its "
            "provincial final reports as transcribed on Wikipedia; language was "
            "made public once, for 2000, in a file that is not a composition.",
+    "IRN": "The 2016 census asked religion and the Statistical Centre publishes "
+           "it by province, but amar.org.ir ends the TLS handshake before a "
+           "standard client can read a page (an EOF in the protocol, measured "
+           "on the runner), and this project does not turn verification off. "
+           "The data exists and is not reachable from here.",
+    "KOR": "The 2015 census asked religion and KOSIS publishes it by province, "
+           "but only through an API that needs a registered key; the article "
+           "that might have transcribed it carries national figures only.",
+    "EGY": "CAPMAS collected religion in the 2017 census and has not published "
+           "it, nationally or by governorate; the last published figures are "
+           "the 2006 census, national only. The data exists and is withheld.",
 }
 
 EUROSTAT_HINT = ("Eurostat NUTS population and median age: "

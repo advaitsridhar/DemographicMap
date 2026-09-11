@@ -192,6 +192,14 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
         "religion": "Greece's census has not asked religion since 1951; the 2021 census records citizenship and country of birth.",
         "language": "Greece's census has not asked mother tongue since 1951.",
     },
+    "AFG": {
+        "religion": "Afghanistan has never completed a population census: the 1979 count was abandoned partway and none has been held since, so no census question on religion exists; the NSIA publishes estimates only.",
+        "ethnicity": "Afghanistan has never completed a population census, so no census question on ethnicity exists; the NSIA publishes estimates only.",
+        "language": "Afghanistan has never completed a population census, so no census question on language exists; the NSIA publishes estimates only.",
+    },
+    "VEN": {
+        "religion": "Venezuela's 2011 census asked indigenous and Afro-descendant self-recognition and not religion; no census since 1961 has carried a religion question.",
+    },
     "PRK": {
         "religion": "North Korea's only modern census, 2008, asked no religion question, and the state publishes no other figures.",
         "ethnicity": "North Korea's 2008 census asked no ethnicity question.",
