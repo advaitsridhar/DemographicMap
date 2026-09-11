@@ -58,10 +58,8 @@ AWAITING_AN_ADAPTER_RUN = {
     "admin0.json",                  # fetch_factbook
     "angola_province.json",
     "australia_lga.json", "australia_state.json",
-    "bosnia_canton.json", "bosnia_entity.json",
     "brazil_municipality.json", "brazil_state.json",
     "cambodia_province.json",       # wiki_census
-    "ireland_lea.json",
     "kazakhstan_region.json",       # wiki_census
     "kenya_county.json",
     "malaysia_district.json", "malaysia_state.json",
