@@ -70,7 +70,10 @@ census declines to ask keeps its real value. Countries covered:
 - **France** collects neither ethnicity nor religion in its census.
 - **Germany** records citizenship and migration background, not ethnicity; religion
   comes from church-tax registration rather than fine-grained census self-ID.
-- **Japan** asks nationality, not ethnicity, and does not ask religion at all.
+- **Japan** asks nationality, not ethnicity, and asks neither religion nor
+  language. e-Stat's catalogue says so as well as the questionnaire: its one
+  religion statistic counts adherents reported by religious bodies, and they
+  come to 141% of the population.
 - **India** collects religion and mother tongue, plus Scheduled Caste / Scheduled
   Tribe status — but not ethnicity.
 - **China** records the 56 official nationalities (*minzu*); the census does not ask
@@ -377,7 +380,13 @@ itself, as CC BY requires.
 
 - **The Factbook is frozen.** It was retired in February 2026, so country figures are
   a snapshot. Every field carries its own reference year so the staleness is visible.
-- **India's subnational data is from 2011.** The next census was postponed repeatedly.
+- **India's subnational data is from 2011.** The next census was postponed repeatedly,
+  and the districts have moved since: 91 of the 735 shapes are districts the census
+  never enumerated, and 75 more are districts that have lost territory to one of
+  those 91, so the 2011 row counts people who no longer live in the shape. Neither
+  carries a figure, and each says why. Telangana and Ladakh, which postdate the
+  census entirely, carry a state figure summed from the ten and the two districts it
+  did enumerate.
 - **Indonesia's ethnicity and religion data is from 2010** — the 2020 census dropped
   both questions.
 - **The 2020 U.S. Religion Census counts adherents**, reported by 372 religious

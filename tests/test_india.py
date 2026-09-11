@@ -23,8 +23,9 @@ from scripts.fetch_census import india_census, india_language
 
 # Four real rows of the district extract, trimmed to the columns the reader
 # reads. Jaintia Hills is one of the three districts SUBDIVIDED_SINCE_2011
-# names; Surguja and Thane are predecessors the post-2011 table points at;
-# Warangal is the predecessor that has itself since been abolished.
+# names; Surguja and Thane are predecessors the post-2011 table points at, so
+# both have since lost ground; Warangal is the predecessor that has itself been
+# abolished; Raigarh is the control that lost nothing.
 ROWS = [
     {"District code": "299", "State name": "MEGHALAYA", "District name": "Jaintia Hills",
      "Population": "395124", "Male": "196285", "Female": "198839",
@@ -47,6 +48,14 @@ ROWS = [
      "Hindus": "3273755", "Muslims": "197333", "Christians": "31377", "Sikhs": "1453",
      "Buddhists": "253", "Jains": "569", "Others_Religions": "126",
      "Religion_Not_Stated": "7710", "SC": "616102", "ST": "530656"},
+    # The control the others are measured against: a district nothing was
+    # carved out of, which therefore still covers the ground the census
+    # counted and still carries its figures.
+    {"District code": "403", "State name": "CHHATTISGARH", "District name": "Raigarh",
+     "Population": "1493984", "Male": "750278", "Female": "743706",
+     "Hindus": "1422986", "Muslims": "17332", "Christians": "47653", "Sikhs": "2117",
+     "Buddhists": "781", "Jains": "409", "Others_Religions": "1782",
+     "Religion_Not_Stated": "924", "SC": "224942", "ST": "505609"},
 ]
 
 # A table small enough to reason about, declaring one district against each of
@@ -58,18 +67,41 @@ TABLE = {
     "Telangana": (("Jangaon", 2016, ("Warangal",)),),
 }
 
+# The other side of the same three facts. Every predecessor in TABLE whose name
+# still sits on a shape is a district that lost ground, so it appears here --
+# Warangal does not, because its name survives on no present-day shape at all
+# and SUBDIVIDED_SINCE_2011 already accounts for it. The two tables are
+# required to agree, which is what :func:`check_lost_territory` is for.
+LOST = {
+    "Chhattisgarh": (("Surguja", 31),),
+    "Maharashtra": (("Thane", 44),),
+}
 
-def emitted(table=TABLE, rows=ROWS):
-    """The district records, with the post-2011 table swapped for a small one."""
-    with mock.patch.dict(india_census.CREATED_AFTER_2011, table, clear=True):
+
+def emitted(table=TABLE, rows=ROWS, lost=LOST):
+    """The district records, with the post-2011 tables swapped for small ones."""
+    with mock.patch.dict(india_census.CREATED_AFTER_2011, table, clear=True), \
+            mock.patch.dict(india_census.LOST_TERRITORY_SINCE_2011, lost, clear=True):
         return {r["name"]: r for r in india_census.districts(rows)}
 
 
-def refusal(table, rows=ROWS):
+def refusal(table, rows=ROWS, lost=LOST):
     """The message check_new_districts refuses `table` with, or '' if it allows it."""
-    with mock.patch.dict(india_census.CREATED_AFTER_2011, table, clear=True):
+    with mock.patch.dict(india_census.CREATED_AFTER_2011, table, clear=True), \
+            mock.patch.dict(india_census.LOST_TERRITORY_SINCE_2011, lost, clear=True):
         try:
             india_census.check_new_districts(rows)
+        except SystemExit as exit_:
+            return str(exit_)
+    return ""
+
+
+def shrink_refusal(lost, table=TABLE, rows=ROWS):
+    """The message check_lost_territory refuses `lost` with, or '' if it allows it."""
+    with mock.patch.dict(india_census.CREATED_AFTER_2011, table, clear=True), \
+            mock.patch.dict(india_census.LOST_TERRITORY_SINCE_2011, lost, clear=True):
+        try:
+            india_census.check_lost_territory(rows)
         except SystemExit as exit_:
             return str(exit_)
     return ""
@@ -82,8 +114,10 @@ class NewDistricts(unittest.TestCase):
         self.assertEqual(got["religion"]["status"], india_census.NOT_AVAILABLE)
         self.assertIn("created in 2014", note)
         self.assertIn("Thane", note)
-        # The reader is told where the measurement covering this ground is.
-        self.assertIn("are on this map under that name", note)
+        # The reader is told where the measurement covering this ground is --
+        # and it is not the district next door, which is a fragment too.
+        self.assertIn("The state total carries it", note)
+        self.assertIn("only the part left after this district was carved out", note)
 
     def test_a_predecessor_that_is_itself_gone_is_not_offered_as_somewhere_to_look(self):
         # Warangal was split six ways and its name is on no present-day shape,
@@ -91,7 +125,7 @@ class NewDistricts(unittest.TestCase):
         # place that does not exist.
         note = emitted()["Jangaon"]["religion"]["note"]
         self.assertIn("Warangal has itself since been subdivided", note)
-        self.assertNotIn("are on this map under that name", note)
+        self.assertNotIn("the part left after this district", note)
 
     def test_the_gap_reaches_every_field_the_census_would_have_filled(self):
         got = emitted()["Balrampur"]
@@ -195,9 +229,9 @@ class TableIsSelfConsistent(unittest.TestCase):
         self.assertEqual(set(), {n for _, n in self.names()} & successors)
 
     def test_the_states_that_did_not_exist_in_2011_are_mapped(self):
-        # A state in FORMED_AFTER_2011 has no census rows of its own, so any
+        # A state in SPLIT_STATES has no census rows of its own, so any
         # district declared under it must be checked against its 2011 state.
-        for state in india_census.FORMED_AFTER_2011:
+        for state in india_census.SPLIT_STATES:
             if any(state == declared for declared, _ in self.names()):
                 self.assertIn(state, india_census.STATE_IN_2011)
         self.assertEqual("Andhra Pradesh", india_census.STATE_IN_2011["Telangana"])
@@ -552,31 +586,370 @@ class TheTreePlacesWhatTheAppendixSurfaces(unittest.TestCase):
                          got)
 
 
+# The 23 districts of undivided Andhra Pradesh, as the extract prints them.
+# 532-541 are the ten that became Telangana in 2014 and 542-554 the thirteen
+# that stayed, and what makes this a test rather than a restatement is that the
+# two sums are checked against figures published outside this repository:
+# 35,193,978 and 49,386,799, which add to the 84,580,777 the Registrar General
+# published for the undivided state.
+ANDHRA = [
+    {"District code": "532", "District name": "Adilabad",
+     "Population": "2741239", "Male": "1369597", "Female": "1371642",
+     "Hindus": "2399901", "Muslims": "275970", "Christians": "15422", "Sikhs": "1377",
+     "Buddhists": "25510", "Jains": "617", "Others_Religions": "322",
+     "Religion_Not_Stated": "22120"},
+    {"District code": "533", "District name": "Nizamabad",
+     "Population": "2551335", "Male": "1250641", "Female": "1300694",
+     "Hindus": "2123426", "Muslims": "391596", "Christians": "19653", "Sikhs": "2357",
+     "Buddhists": "1847", "Jains": "542", "Others_Religions": "146",
+     "Religion_Not_Stated": "11768"},
+    {"District code": "534", "District name": "Karimnagar",
+     "Population": "3776269", "Male": "1880800", "Female": "1895469",
+     "Hindus": "3491139", "Muslims": "244723", "Christians": "24979", "Sikhs": "2086",
+     "Buddhists": "332", "Jains": "312", "Others_Religions": "115",
+     "Religion_Not_Stated": "12583"},
+    {"District code": "535", "District name": "Medak",
+     "Population": "3033288", "Male": "1523030", "Female": "1510258",
+     "Hindus": "2637313", "Muslims": "342449", "Christians": "34301", "Sikhs": "1309",
+     "Buddhists": "554", "Jains": "457", "Others_Religions": "217",
+     "Religion_Not_Stated": "16688"},
+    {"District code": "536", "District name": "Hyderabad",
+     "Population": "3943323", "Male": "2018575", "Female": "1924748",
+     "Hindus": "2046051", "Muslims": "1713405", "Christians": "87522", "Sikhs": "11446",
+     "Buddhists": "1268", "Jains": "19560", "Others_Religions": "1929",
+     "Religion_Not_Stated": "62142"},
+    {"District code": "537", "District name": "Rangareddy",
+     "Population": "5296741", "Male": "2701008", "Female": "2595733",
+     "Hindus": "4458858", "Muslims": "617518", "Christians": "144037", "Sikhs": "8062",
+     "Buddhists": "2041", "Jains": "3536", "Others_Religions": "1629",
+     "Religion_Not_Stated": "61060"},
+    {"District code": "538", "District name": "Mahbubnagar",
+     "Population": "4053028", "Male": "2050386", "Female": "2002642",
+     "Hindus": "3673456", "Muslims": "334172", "Christians": "21345", "Sikhs": "658",
+     "Buddhists": "290", "Jains": "388", "Others_Religions": "267",
+     "Religion_Not_Stated": "22452"},
+    {"District code": "539", "District name": "Nalgonda",
+     "Population": "3488809", "Male": "1759772", "Female": "1729037",
+     "Hindus": "3249231", "Muslims": "188646", "Christians": "35025", "Sikhs": "937",
+     "Buddhists": "241", "Jains": "250", "Others_Religions": "132",
+     "Religion_Not_Stated": "14347"},
+    {"District code": "540", "District name": "Warangal",
+     "Population": "3512576", "Male": "1759281", "Female": "1753295",
+     "Hindus": "3273755", "Muslims": "197333", "Christians": "31377", "Sikhs": "1453",
+     "Buddhists": "253", "Jains": "569", "Others_Religions": "126",
+     "Religion_Not_Stated": "7710"},
+    {"District code": "541", "District name": "Khammam",
+     "Population": "2797370", "Male": "1390988", "Female": "1406382",
+     "Hindus": "2595321", "Muslims": "158887", "Christians": "33463", "Sikhs": "655",
+     "Buddhists": "217", "Jains": "459", "Others_Religions": "539",
+     "Religion_Not_Stated": "7829"},
+    {"District code": "542", "District name": "Srikakulam",
+     "Population": "2703114", "Male": "1341738", "Female": "1361376",
+     "Hindus": "2666950", "Muslims": "9025", "Christians": "18879", "Sikhs": "193",
+     "Buddhists": "77", "Jains": "160", "Others_Religions": "106",
+     "Religion_Not_Stated": "7724"},
+    {"District code": "543", "District name": "Vizianagaram",
+     "Population": "2344474", "Male": "1161477", "Female": "1182997",
+     "Hindus": "2299129", "Muslims": "16423", "Christians": "17853", "Sikhs": "380",
+     "Buddhists": "114", "Jains": "815", "Others_Religions": "183",
+     "Religion_Not_Stated": "9577"},
+    {"District code": "544", "District name": "Visakhapatnam",
+     "Population": "4290589", "Male": "2138910", "Female": "2151679",
+     "Hindus": "4105320", "Muslims": "86330", "Christians": "77607", "Sikhs": "2301",
+     "Buddhists": "850", "Jains": "2316", "Others_Religions": "286",
+     "Religion_Not_Stated": "15579"},
+    {"District code": "545", "District name": "East Godavari",
+     "Population": "5154296", "Male": "2569688", "Female": "2584608",
+     "Hindus": "4983330", "Muslims": "77777", "Christians": "77825", "Sikhs": "738",
+     "Buddhists": "413", "Jains": "4149", "Others_Religions": "403",
+     "Religion_Not_Stated": "9661"},
+    {"District code": "546", "District name": "West Godavari",
+     "Population": "3936966", "Male": "1964918", "Female": "1972048",
+     "Hindus": "3733191", "Muslims": "86142", "Christians": "109120", "Sikhs": "288",
+     "Buddhists": "209", "Jains": "1578", "Others_Religions": "211",
+     "Religion_Not_Stated": "6227"},
+    {"District code": "547", "District name": "Krishna",
+     "Population": "4517398", "Male": "2267375", "Female": "2250023",
+     "Hindus": "4023678", "Muslims": "307043", "Christians": "145598", "Sikhs": "1393",
+     "Buddhists": "863", "Jains": "6320", "Others_Religions": "906",
+     "Religion_Not_Stated": "31597"},
+    {"District code": "548", "District name": "Guntur",
+     "Population": "4887813", "Male": "2440521", "Female": "2447292",
+     "Hindus": "4217597", "Muslims": "559770", "Christians": "89763", "Sikhs": "764",
+     "Buddhists": "323", "Jains": "3282", "Others_Religions": "332",
+     "Religion_Not_Stated": "15982"},
+    {"District code": "549", "District name": "Prakasam",
+     "Population": "3397448", "Male": "1714764", "Female": "1682684",
+     "Hindus": "3150195", "Muslims": "220654", "Christians": "18775", "Sikhs": "266",
+     "Buddhists": "97", "Jains": "204", "Others_Religions": "206",
+     "Religion_Not_Stated": "7051"},
+    {"District code": "550", "District name": "Sri Potti Sriramulu Nellore",
+     "Population": "2963557", "Male": "1492974", "Female": "1470583",
+     "Hindus": "2639737", "Muslims": "288378", "Christians": "26202", "Sikhs": "678",
+     "Buddhists": "239", "Jains": "2610", "Others_Religions": "146",
+     "Religion_Not_Stated": "5567"},
+    {"District code": "551", "District name": "Y.S.R.",
+     "Population": "2882469", "Male": "1451777", "Female": "1430692",
+     "Hindus": "2391231", "Muslims": "454108", "Christians": "23281", "Sikhs": "367",
+     "Buddhists": "105", "Jains": "751", "Others_Religions": "245",
+     "Religion_Not_Stated": "12381"},
+    {"District code": "552", "District name": "Kurnool",
+     "Population": "4053463", "Male": "2039227", "Female": "2014236",
+     "Hindus": "3328380", "Muslims": "670737", "Christians": "33165", "Sikhs": "737",
+     "Buddhists": "255", "Jains": "2235", "Others_Religions": "434",
+     "Religion_Not_Stated": "17520"},
+    {"District code": "553", "District name": "Anantapur",
+     "Population": "4081148", "Male": "2064495", "Female": "2016653",
+     "Hindus": "3599372", "Muslims": "443456", "Christians": "20463", "Sikhs": "932",
+     "Buddhists": "341", "Jains": "1417", "Others_Religions": "309",
+     "Religion_Not_Stated": "14858"},
+    {"District code": "554", "District name": "Chittoor",
+     "Population": "4174064", "Male": "2090204", "Female": "2083860",
+     "Hindus": "3737588", "Muslims": "397870", "Christians": "24129", "Sikhs": "867",
+     "Buddhists": "253", "Jains": "1322", "Others_Religions": "358",
+     "Religion_Not_Stated": "11677"},
+]
+ANDHRA = [dict(row, **{"State name": "ANDHRA PRADESH"}) for row in ANDHRA]
+
+TELANGANA = india_census.SPLIT_STATES["Telangana"]
+
+
+def andhra_states(rows=ANDHRA, splits=None):
+    """The state records the extract's Andhra Pradesh rows produce, by name."""
+    splits = {"Telangana": TELANGANA} if splits is None else splits
+    with mock.patch.dict(india_census.SPLIT_STATES, splits, clear=True):
+        return {r["name"]: r for r in india_census.states(rows)}
+
+
+class TheStateSplit(unittest.TestCase):
+    """Telangana's figure is nobody's publication, so every digit is checked."""
+
+    def test_the_ten_districts_reconcile_to_telanganas_published_total(self):
+        got = andhra_states()["Telangana"]
+        self.assertEqual(35_193_978, got["population"]["value"])
+        self.assertEqual(35_193_978,
+                         sum(row["count"] for row in got["religion"]))
+
+    def test_the_thirteen_that_stayed_reconcile_to_andhra_pradeshs(self):
+        got = andhra_states()["Andhra Pradesh"]
+        self.assertEqual(49_386_799, got["population"]["value"])
+        self.assertEqual(49_386_799,
+                         sum(row["count"] for row in got["religion"]))
+
+    def test_the_two_halves_add_back_to_the_undivided_state(self):
+        # The control that needs no table: whatever the split does, it must not
+        # lose or duplicate a person, and 84,580,777 is what the Registrar
+        # General published for Andhra Pradesh before the state was divided.
+        got = andhra_states()
+        self.assertEqual(84_580_777, got["Telangana"]["population"]["value"]
+                         + got["Andhra Pradesh"]["population"]["value"])
+
+    def test_the_residual_is_not_the_undivided_state(self):
+        # The bug this replaced: 88.5% Hindu and 84.6 million people, which is
+        # undivided Andhra Pradesh, sitting on the shape of the residual one.
+        got = andhra_states()["Andhra Pradesh"]
+        shares = {row["group"]: row["pct"] for row in got["religion"]}
+        self.assertAlmostEqual(90.9, shares["Hindu"], places=1)
+        self.assertAlmostEqual(7.3, shares["Muslim"], places=1)
+
+    def test_telangana_is_more_muslim_than_what_was_left(self):
+        # Not a rounding check: the split is worth making because the two
+        # halves are genuinely different places, and the undivided figure
+        # described neither.
+        got = andhra_states()
+        muslim = {name: next(r["pct"] for r in got[name]["religion"]
+                             if r["group"] == "Muslim")
+                  for name in ("Telangana", "Andhra Pradesh")}
+        self.assertGreater(muslim["Telangana"], muslim["Andhra Pradesh"] + 4)
+
+    def test_the_note_says_it_was_summed_and_from_which_districts(self):
+        note = andhra_states()["Telangana"]["population_note"]
+        self.assertIn("Summed from the 10 districts", note)
+        for district in TELANGANA.districts:
+            self.assertIn(district, note)
+        # And what the sum does not cover, which is the whole reason the
+        # published figure for the present-day state is a different number.
+        self.assertIn("35,003,674", note)
+        self.assertIn("190,304", note)
+
+    def test_a_district_missing_from_the_extract_stops_the_run(self):
+        short = [row for row in ANDHRA if row["District name"] != "Khammam"]
+        with self.assertRaises(SystemExit) as ctx:
+            andhra_states(short)
+        self.assertIn("no district called 'Khammam'", str(ctx.exception))
+
+    def test_a_sum_that_misses_the_published_total_stops_the_run(self):
+        rows = [dict(row) for row in ANDHRA]
+        rows[0]["Population"] = "2741240"        # one person too many
+        with self.assertRaises(SystemExit) as ctx:
+            andhra_states(rows)
+        self.assertIn("against a published 35,193,978", str(ctx.exception))
+
+    def test_a_wrong_district_code_stops_the_run(self):
+        # Name and code are two independent handles on the same row, and the
+        # religion extract keys on one while the mother-tongue workbooks key on
+        # the other. A split right in one table and wrong in the other is what
+        # this catches.
+        wrong = TELANGANA._replace(codes=(532, 533, 534, 535, 536,
+                                          537, 538, 539, 540, 999))
+        with self.assertRaises(SystemExit) as ctx:
+            andhra_states(splits={"Telangana": wrong})
+        self.assertIn("SPLIT_STATES", str(ctx.exception))
+
+    def test_two_states_may_not_claim_one_district(self):
+        rival = TELANGANA._replace(districts=("Khammam",), codes=(541,))
+        with self.assertRaises(SystemExit) as ctx:
+            andhra_states(splits={"Telangana": TELANGANA, "Nowhere": rival})
+        self.assertIn("claimed by both", str(ctx.exception))
+
+    def test_a_state_split_from_a_state_it_is_not_split_from(self):
+        wrong = TELANGANA._replace(parent="Karnataka")
+        with self.assertRaises(SystemExit) as ctx:
+            andhra_states(splits={"Telangana": wrong})
+        self.assertIn("STATE_IN_2011", str(ctx.exception))
+
+
+class DistrictsThatLostTheirGround(unittest.TestCase):
+    """The other half of the same fact, and the one that was invisible."""
+
+    def test_a_shrunken_district_keeps_its_figure(self):
+        # These were blanked for one revision and the owner asked for them
+        # back. The danger was never that the number is wrong -- it is the
+        # Registrar General's, for a district of this name -- but that it is
+        # silently about more ground than the shape covers, and the cure for
+        # silent is a sentence.
+        got = emitted()["Surguja"]
+        self.assertIsInstance(got["religion"], list)
+        self.assertIsInstance(got["scheduled_groups"], list)
+        self.assertEqual(2359886, got["population"]["value"])
+
+    def test_every_field_the_row_filled_carries_the_caveat(self):
+        # The head count needs it more than the shares do: religion does not
+        # reorganise itself along a new district line, so the percentages
+        # survive the boundary change and the population does not.
+        got = emitted()["Surguja"]
+        for field in ("population", "religion", "language", "sex_ratio",
+                      "scheduled_groups"):
+            with self.subTest(field=field):
+                self.assertIn("carved out of it", got[f"{field}_note"])
+
+    def test_the_note_names_what_took_the_ground_and_how_much(self):
+        note = emitted()["Surguja"]["religion_note"]
+        self.assertIn("Balrampur", note)
+        self.assertIn("2012", note)
+        self.assertIn("31%", note)
+        self.assertIn("the counts are its whole population", note)
+
+    def test_the_share_of_ground_lost_is_on_the_record(self):
+        # Not only in prose: a reader filtering or sorting needs the number.
+        self.assertEqual(69, emitted()["Surguja"]["lost_territory_pct"])
+
+    def test_a_district_that_kept_more_than_half_makes_no_claim_about_people(self):
+        # Area is what is measured and people are what is at stake, and the two
+        # do not track each other. The sentence about where the people live is
+        # only written where the area measurement alone establishes it.
+        self.assertIn("most of the people",
+                      emitted()["Surguja"]["religion_note"])
+        self.assertNotIn("most of the people",
+                         emitted(lost={"Maharashtra": (("Thane", 84),)},
+                                 table={"Maharashtra": TABLE["Maharashtra"]},
+                                 )["Thane"]["religion_note"])
+
+    def test_a_district_that_lost_nothing_carries_no_caveat(self):
+        self.assertNotIn("carved out of it",
+                         emitted()["Raigarh"].get("religion_note", ""))
+        self.assertNotIn("lost_territory_pct", emitted()["Raigarh"])
+
+    def test_a_district_that_lost_nothing_is_untouched(self):
+        self.assertEqual(1493984, emitted()["Raigarh"]["population"]["value"])
+
+    def test_hyderabad_keeps_its_figures(self):
+        # The one Telangana district the 2016 reorganisation left alone: no
+        # entry in CREATED_AFTER_2011 names it as a predecessor, so nothing was
+        # carved out of it and its shape still covers what the census counted.
+        carved = {p for entries in india_census.CREATED_AFTER_2011.values()
+                  for _, _, preds in entries for p in preds}
+        self.assertNotIn("Hyderabad", carved)
+        self.assertNotIn(
+            "Hyderabad",
+            [name for name, _ in
+             india_census.LOST_TERRITORY_SINCE_2011.get("Telangana", ())])
+
+    def test_the_eight_telangana_districts_that_were_cut_down(self):
+        # The nine Telangana shapes that carried 2011 figures, settled one by
+        # one: eight are fragments of the district whose figure they wore, and
+        # Hyderabad is not. Named here rather than counted, because the count
+        # is the same whichever eight they are.
+        self.assertEqual(
+            {"Adilabad", "Karimnagar", "Khammam", "Mahbubnagar", "Medak",
+             "Nalgonda", "Nizamabad", "Rangareddy"},
+            {name for name, _
+             in india_census.LOST_TERRITORY_SINCE_2011["Telangana"]})
+
+    def test_every_predecessor_still_standing_is_measured(self):
+        # The real tables, against each other. A district carved out of X
+        # without X being measured here leaves X wearing the undivided figure,
+        # which is the bug and is invisible on the map.
+        message = shrink_refusal({"Chhattisgarh": (("Surguja", 31),)})
+        self.assertIn("Maharashtra / Thane", message)
+        self.assertIn("would keep the undivided district's figure", message)
+
+    def test_measuring_a_district_nothing_was_carved_from(self):
+        message = shrink_refusal(dict(LOST, Chhattisgarh=(("Surguja", 31),
+                                                          ("Raigarh", 70))))
+        self.assertIn("no district in CREATED_AFTER_2011 was carved out of it",
+                      message)
+
+    def test_a_district_the_census_never_enumerated(self):
+        message = shrink_refusal(dict(LOST, Chhattisgarh=(("Surgooja", 31),)))
+        self.assertIn("the census enumerated no district of that name", message)
+
+    def test_a_share_that_is_not_a_share(self):
+        message = shrink_refusal(dict(LOST, Maharashtra=(("Thane", 100),)))
+        self.assertIn("is not a share of a district that lost some", message)
+
+    def test_the_real_table_agrees_with_the_real_post_2011_table(self):
+        # No fixtures: the two shipped tables, checked against each other and
+        # against the census's own district list would need the extract, so
+        # this checks the half that needs no network.
+        declared = {(state, name)
+                    for state, entries
+                    in india_census.LOST_TERRITORY_SINCE_2011.items()
+                    for name, _ in entries}
+        derived = {(state, predecessor)
+                   for state, entries in india_census.CREATED_AFTER_2011.items()
+                   for _, _, predecessors in entries
+                   for predecessor in predecessors
+                   if predecessor.casefold()
+                   not in india_census.SUBDIVIDED_SINCE_2011}
+        self.assertEqual(derived, declared)
+
+
 class RealDistrictsAreUntouched(unittest.TestCase):
     def test_a_district_the_census_did_enumerate_keeps_its_figures(self):
-        got = emitted()["Surguja"]
-        self.assertEqual(2359886, got["population"]["value"])
+        got = emitted()["Raigarh"]
+        self.assertEqual(1493984, got["population"]["value"])
         shares = {row["group"]: row["count"] for row in got["religion"]}
-        self.assertEqual(2126195, shares["Hindu"])
-        self.assertEqual(48295, shares["Other religions"])
+        self.assertEqual(1422986, shares["Hindu"])
+        self.assertEqual(1782, shares["Other religions"])
 
     def test_the_religion_groups_account_for_everyone_enumerated(self):
         # Eight columns that partition the district, including the census's own
         # residual: if the reader ever dropped one, or counted a level twice,
         # this stops matching the population it was divided by.
-        for name in ("Surguja", "Thane"):
+        for name in ("Raigarh",):
             with self.subTest(district=name):
                 got = emitted()[name]
                 self.assertEqual(got["population"]["value"],
                                  sum(row["count"] for row in got["religion"]))
 
     def test_the_census_residual_keeps_the_census_label(self):
-        # 48,295 people in Surguja are inside "Other religions and persuasions"
+        # 1,782 people in Raigarh are inside "Other religions and persuasions"
         # and C-01 publishes nothing beneath it -- the break-up is table C-01
         # Appendix, which the Registrar General publishes for states only. The
         # group is emitted as its own row rather than folded away, so the share
         # is visible even while its contents are not.
-        groups = [row["group"] for row in emitted()["Surguja"]["religion"]]
+        groups = [row["group"] for row in emitted()["Raigarh"]["religion"]]
         self.assertIn("Other religions", groups)
         self.assertIn("Not stated", groups)
 
