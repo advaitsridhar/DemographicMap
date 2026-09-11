@@ -1,9 +1,23 @@
-india_census: Census 2011, level=state
-  validated against published national totals: 640 districts, 1,210,854,977 people
-  C-01 Appendix: https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx
-  C-01 Appendix: 35 states, 83 named religions, 7,788,066 of the 7,937,734 people in 'Other religions and persuasions'
-  split Jammu And Kashmir: Ladakh 274,289, Jammu and Kashmir 12,267,013
-  split Andhra Pradesh: Telangana 35,193,978, Andhra Pradesh 49,386,799
-  wrote data/processed/india_state.json (183 kB)
-  37 records, 37 with religion shares, 0 explicit gaps carrying their reason
-  groups beyond C-01's eight columns (20): ADI DHARM, Addi Bassi, Adim dhamm, Animist, Atheist, Doni Polo / Sidonyi Polo, Gond / Gondi, Heraka, Khasi, Nani Intiya, Niamtre, Nocte, Other religions (not separately named), Rangfra, Sanamahi, Sari Dharma, Sarna, Songsarek, Tribal Religion, Yumasam
+probe_estat: ESTAT_API found, 40 characters
+
+== data for 0003328491
+  getStatsData?statsDataId=0003328491&limit=40&metaGetFlg=Y&cntGetFlg=N&cdArea=00000%2C13000&cdTime=2016100000
+    -> 18 values total, rows 1-18
+      area=00000"全国" cat01=010"外国籍" cat02=010"合計" tab=010"児童・生徒数" time=2016100000"2016年度"  = 34335 人
+      area=13000"東京都" cat01=010"外国籍" cat02=010"合計" tab=010"児童・生徒数" time=2016100000"2016年度"  = 2932 人
+      area=00000"全国" cat01=010"外国籍" cat02=020"英語" tab=010"児童・生徒数" time=2016100000"2016年度"  = 982 人
+      area=13000"東京都" cat01=010"外国籍" cat02=020"英語" tab=010"児童・生徒数" time=2016100000"2016年度"  = 172 人
+      area=00000"全国" cat01=010"外国籍" cat02=030"韓国・朝鮮語" tab=010"児童・生徒数" time=2016100000"2016年度"  = 627 人
+      area=13000"東京都" cat01=010"外国籍" cat02=030"韓国・朝鮮語" tab=010"児童・生徒数" time=2016100000"2016年度"  = 125 人
+      area=00000"全国" cat01=010"外国籍" cat02=040"スペイン語" tab=010"児童・生徒数" time=2016100000"2016年度"  = 3600 人
+      area=13000"東京都" cat01=010"外国籍" cat02=040"スペイン語" tab=010"児童・生徒数" time=2016100000"2016年度"  = 46 人
+      area=00000"全国" cat01=010"外国籍" cat02=050"中国語" tab=010"児童・生徒数" time=2016100000"2016年度"  = 8204 人
+      area=13000"東京都" cat01=010"外国籍" cat02=050"中国語" tab=010"児童・生徒数" time=2016100000"2016年度"  = 1512 人
+      area=00000"全国" cat01=010"外国籍" cat02=060"フィリピノ語" tab=010"児童・生徒数" time=2016100000"2016年度"  = 6283 人
+      area=13000"東京都" cat01=010"外国籍" cat02=060"フィリピノ語" tab=010"児童・生徒数" time=2016100000"2016年度"  = 427 人
+      area=00000"全国" cat01=010"外国籍" cat02=070"ベトナム語" tab=010"児童・生徒数" time=2016100000"2016年度"  = 1515 人
+      area=13000"東京都" cat01=010"外国籍" cat02=070"ベトナム語" tab=010"児童・生徒数" time=2016100000"2016年度"  = 59 人
+      area=00000"全国" cat01=010"外国籍" cat02=080"ポルトガル語" tab=010"児童・生徒数" time=2016100000"2016年度"  = 8779 人
+      area=13000"東京都" cat01=010"外国籍" cat02=080"ポルトガル語" tab=010"児童・生徒数" time=2016100000"2016年度"  = 25 人
+      area=00000"全国" cat01=010"外国籍" cat02=090"その他" tab=010"児童・生徒数" time=2016100000"2016年度"  = 4345 人
+      area=13000"東京都" cat01=010"外国籍" cat02=090"その他" tab=010"児童・生徒数" time=2016100000"2016年度"  = 566 人
