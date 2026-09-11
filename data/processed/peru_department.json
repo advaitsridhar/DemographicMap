@@ -1,0 +1,3179 @@
+[
+  {
+    "id": "PER-amazonas",
+    "level": "admin1",
+    "name": "Amazonas",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 63.9,
+        "count": 179874
+      },
+      {
+        "group": "Evangelical",
+        "pct": 23.0,
+        "count": 64696
+      },
+      {
+        "group": "No religion",
+        "pct": 8.0,
+        "count": 22659
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.1,
+        "count": 14376
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 85.0,
+        "count": 289755
+      },
+      {
+        "group": "Awajún",
+        "pct": 12.0,
+        "count": 40976
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.6,
+        "count": 5372
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.7,
+        "count": 2481
+      },
+      {
+        "group": "Quechua",
+        "pct": 0.2,
+        "count": 820
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.2,
+        "count": 740
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.1,
+        "count": 241
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 100
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.0,
+        "count": 116
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-ancash",
+    "level": "admin1",
+    "name": "Ancash",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 76.7,
+        "count": 652615
+      },
+      {
+        "group": "Evangelical",
+        "pct": 15.6,
+        "count": 132624
+      },
+      {
+        "group": "No religion",
+        "pct": 4.7,
+        "count": 39568
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.0,
+        "count": 25700
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 68.4,
+        "count": 677844
+      },
+      {
+        "group": "Quechua",
+        "pct": 30.5,
+        "count": 301744
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.8,
+        "count": 8286
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.1,
+        "count": 781
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 1051
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.0,
+        "count": 296
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 432
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [
+      "Áncash"
+    ],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-apurímac",
+    "level": "admin1",
+    "name": "Apurímac",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 78.0,
+        "count": 245586
+      },
+      {
+        "group": "Evangelical",
+        "pct": 17.7,
+        "count": 55641
+      },
+      {
+        "group": "Other religion",
+        "pct": 2.4,
+        "count": 7520
+      },
+      {
+        "group": "No religion",
+        "pct": 2.0,
+        "count": 6259
+      }
+    ],
+    "language": [
+      {
+        "group": "Quechua",
+        "pct": 70.8,
+        "count": 261849
+      },
+      {
+        "group": "Spanish",
+        "pct": 28.4,
+        "count": 105273
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 1606
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.2,
+        "count": 657
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.1,
+        "count": 189
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 331
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 134
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-arequipa",
+    "level": "admin1",
+    "name": "Arequipa",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 83.4,
+        "count": 932142
+      },
+      {
+        "group": "Evangelical",
+        "pct": 6.3,
+        "count": 70419
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.1,
+        "count": 68454
+      },
+      {
+        "group": "No religion",
+        "pct": 4.2,
+        "count": 47208
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 79.6,
+        "count": 1013321
+      },
+      {
+        "group": "Quechua",
+        "pct": 17.9,
+        "count": 227600
+      },
+      {
+        "group": "Aymara",
+        "pct": 2.1,
+        "count": 26737
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 2188
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.1,
+        "count": 1736
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 798
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 85
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 331
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-ayacucho",
+    "level": "admin1",
+    "name": "Ayacucho",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 75.6,
+        "count": 362165
+      },
+      {
+        "group": "Evangelical",
+        "pct": 20.5,
+        "count": 98252
+      },
+      {
+        "group": "No religion",
+        "pct": 2.6,
+        "count": 12398
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.3,
+        "count": 6305
+      }
+    ],
+    "language": [
+      {
+        "group": "Quechua",
+        "pct": 63.6,
+        "count": 357308
+      },
+      {
+        "group": "Spanish",
+        "pct": 35.6,
+        "count": 199869
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 3033
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.1,
+        "count": 668
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 495
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 190
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.0,
+        "count": 139
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 188
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-cajamarca",
+    "level": "admin1",
+    "name": "Cajamarca",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 75.4,
+        "count": 774428
+      },
+      {
+        "group": "Evangelical",
+        "pct": 17.8,
+        "count": 182469
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.5,
+        "count": 35720
+      },
+      {
+        "group": "No religion",
+        "pct": 3.3,
+        "count": 34117
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 98.6,
+        "count": 1200017
+      },
+      {
+        "group": "Quechua",
+        "pct": 0.6,
+        "count": 6975
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 5939
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.2,
+        "count": 2245
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.1,
+        "count": 1109
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.1,
+        "count": 715
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.0,
+        "count": 110
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.0,
+        "count": 354
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-cusco",
+    "level": "admin1",
+    "name": "Cusco",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 78.8,
+        "count": 748407
+      },
+      {
+        "group": "Evangelical",
+        "pct": 13.4,
+        "count": 127394
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.5,
+        "count": 43047
+      },
+      {
+        "group": "No religion",
+        "pct": 3.3,
+        "count": 31475
+      }
+    ],
+    "language": [
+      {
+        "group": "Quechua",
+        "pct": 55.2,
+        "count": 609655
+      },
+      {
+        "group": "Spanish",
+        "pct": 41.8,
+        "count": 461672
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.9,
+        "count": 20430
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.3,
+        "count": 3819
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.2,
+        "count": 2656
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.2,
+        "count": 1862
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.2,
+        "count": 2248
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 847
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 357
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-el-callao",
+    "level": "admin1",
+    "name": "El Callao",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 76.0,
+        "count": 607399
+      },
+      {
+        "group": "Evangelical",
+        "pct": 11.8,
+        "count": 94533
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.8,
+        "count": 54334
+      },
+      {
+        "group": "No religion",
+        "pct": 5.4,
+        "count": 43342
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 93.3,
+        "count": 854606
+      },
+      {
+        "group": "Quechua",
+        "pct": 5.5,
+        "count": 49923
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.4,
+        "count": 3336
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 4032
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.3,
+        "count": 2304
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 740
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 105
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 125
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 332
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [
+      "Callao",
+      "Prov. Const. del Callao"
+    ],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-huancavelica",
+    "level": "admin1",
+    "name": "Huancavelica",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 72.8,
+        "count": 194220
+      },
+      {
+        "group": "Evangelical",
+        "pct": 25.2,
+        "count": 67350
+      },
+      {
+        "group": "No religion",
+        "pct": 1.4,
+        "count": 3708
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.6,
+        "count": 1547
+      }
+    ],
+    "language": [
+      {
+        "group": "Quechua",
+        "pct": 65.2,
+        "count": 206087
+      },
+      {
+        "group": "Spanish",
+        "pct": 34.1,
+        "count": 107714
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 1381
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 370
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.1,
+        "count": 171
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.0,
+        "count": 92
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.0,
+        "count": 65
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-huánuco",
+    "level": "admin1",
+    "name": "Huánuco",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 68.0,
+        "count": 375083
+      },
+      {
+        "group": "Evangelical",
+        "pct": 26.4,
+        "count": 145711
+      },
+      {
+        "group": "No religion",
+        "pct": 3.7,
+        "count": 20227
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.9,
+        "count": 10580
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 68.6,
+        "count": 447902
+      },
+      {
+        "group": "Quechua",
+        "pct": 28.4,
+        "count": 185779
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.5,
+        "count": 16463
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.1,
+        "count": 659
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.1,
+        "count": 559
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 852
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.1,
+        "count": 342
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.0,
+        "count": 283
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 228
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.0,
+        "count": 230
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-ica",
+    "level": "admin1",
+    "name": "Ica",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 81.5,
+        "count": 539790
+      },
+      {
+        "group": "Evangelical",
+        "pct": 10.3,
+        "count": 67956
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.5,
+        "count": 29839
+      },
+      {
+        "group": "No religion",
+        "pct": 3.8,
+        "count": 24859
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 92.6,
+        "count": 714986
+      },
+      {
+        "group": "Quechua",
+        "pct": 6.7,
+        "count": 51494
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.2,
+        "count": 1576
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 1560
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.1,
+        "count": 547
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.1,
+        "count": 829
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 709
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 323
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-junín",
+    "level": "admin1",
+    "name": "Junín",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 74.1,
+        "count": 718465
+      },
+      {
+        "group": "Evangelical",
+        "pct": 18.7,
+        "count": 180771
+      },
+      {
+        "group": "No religion",
+        "pct": 4.7,
+        "count": 45190
+      },
+      {
+        "group": "Other religion",
+        "pct": 2.5,
+        "count": 24633
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 81.2,
+        "count": 920995
+      },
+      {
+        "group": "Quechua",
+        "pct": 13.6,
+        "count": 153795
+      },
+      {
+        "group": "Asháninka",
+        "pct": 3.2,
+        "count": 36617
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.3,
+        "count": 14838
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.4,
+        "count": 4587
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.1,
+        "count": 785
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 997
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 72
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 193
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.0,
+        "count": 498
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 443
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-la-libertad",
+    "level": "admin1",
+    "name": "La Libertad",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 68.3,
+        "count": 941814
+      },
+      {
+        "group": "Evangelical",
+        "pct": 19.7,
+        "count": 272271
+      },
+      {
+        "group": "No religion",
+        "pct": 7.2,
+        "count": 99435
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.8,
+        "count": 66093
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 99.1,
+        "count": 1601307
+      },
+      {
+        "group": "Quechua",
+        "pct": 0.3,
+        "count": 5573
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 4493
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.1,
+        "count": 1618
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 1536
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.0,
+        "count": 317
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 189
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 677
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-lambayeque",
+    "level": "admin1",
+    "name": "Lambayeque",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 79.6,
+        "count": 744958
+      },
+      {
+        "group": "Evangelical",
+        "pct": 13.7,
+        "count": 128087
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.4,
+        "count": 32049
+      },
+      {
+        "group": "No religion",
+        "pct": 3.3,
+        "count": 30470
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 97.2,
+        "count": 1060080
+      },
+      {
+        "group": "Quechua",
+        "pct": 2.3,
+        "count": 25536
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.1,
+        "count": 751
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 1173
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 1410
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.0,
+        "count": 248
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 303
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 518
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-lima",
+    "level": "admin1",
+    "name": "Lima",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 80.5,
+        "count": 581178
+      },
+      {
+        "group": "Evangelical",
+        "pct": 11.8,
+        "count": 85341
+      },
+      {
+        "group": "No religion",
+        "pct": 4.1,
+        "count": 29867
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.5,
+        "count": 25136
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 89.8,
+        "count": 747966
+      },
+      {
+        "group": "Quechua",
+        "pct": 9.2,
+        "count": 76402
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 5605
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.1,
+        "count": 659
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.1,
+        "count": 866
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 726
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 139
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 367
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 366
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [
+      "Región Lima"
+    ],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-loreto",
+    "level": "admin1",
+    "name": "Loreto",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 67.3,
+        "count": 419438
+      },
+      {
+        "group": "Evangelical",
+        "pct": 24.2,
+        "count": 150604
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.3,
+        "count": 26831
+      },
+      {
+        "group": "No religion",
+        "pct": 4.2,
+        "count": 26156
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 90.1,
+        "count": 704883
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.6,
+        "count": 27813
+      },
+      {
+        "group": "Other native language",
+        "pct": 2.3,
+        "count": 18197
+      },
+      {
+        "group": "Shawi",
+        "pct": 1.9,
+        "count": 14852
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.7,
+        "count": 5392
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.7,
+        "count": 5154
+      },
+      {
+        "group": "Quechua",
+        "pct": 0.5,
+        "count": 4154
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.1,
+        "count": 891
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 735
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.0,
+        "count": 127
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 276
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-madre-de-dios",
+    "level": "admin1",
+    "name": "Madre de Dios",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 70.6,
+        "count": 74443
+      },
+      {
+        "group": "Evangelical",
+        "pct": 15.8,
+        "count": 16664
+      },
+      {
+        "group": "No religion",
+        "pct": 7.5,
+        "count": 7867
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.2,
+        "count": 6529
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 76.1,
+        "count": 96286
+      },
+      {
+        "group": "Quechua",
+        "pct": 19.3,
+        "count": 24391
+      },
+      {
+        "group": "Other native language",
+        "pct": 1.8,
+        "count": 2244
+      },
+      {
+        "group": "Aymara",
+        "pct": 1.2,
+        "count": 1479
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.0,
+        "count": 1209
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.4,
+        "count": 454
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.2,
+        "count": 239
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.1,
+        "count": 78
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 97
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 56
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-moquegua",
+    "level": "admin1",
+    "name": "Moquegua",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 80.6,
+        "count": 114676
+      },
+      {
+        "group": "Evangelical",
+        "pct": 7.3,
+        "count": 10389
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.9,
+        "count": 9841
+      },
+      {
+        "group": "No religion",
+        "pct": 5.1,
+        "count": 7305
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 77.4,
+        "count": 125324
+      },
+      {
+        "group": "Aymara",
+        "pct": 13.2,
+        "count": 21438
+      },
+      {
+        "group": "Quechua",
+        "pct": 8.9,
+        "count": 14388
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 355
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.1,
+        "count": 139
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 114
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 40
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-municipalidad-metropolitana-de-lima",
+    "level": "admin1",
+    "name": "Municipalidad Metropolitana de Lima",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 76.7,
+        "count": 5414514
+      },
+      {
+        "group": "Evangelical",
+        "pct": 10.7,
+        "count": 758961
+      },
+      {
+        "group": "No religion",
+        "pct": 6.5,
+        "count": 458304
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.1,
+        "count": 428981
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 90.7,
+        "count": 7217567
+      },
+      {
+        "group": "Quechua",
+        "pct": 8.1,
+        "count": 648373
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.4,
+        "count": 30010
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.4,
+        "count": 31591
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 16104
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 5499
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 1133
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 936
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 1528
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 146
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 1320
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 2666
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [
+      "Provincia de Lima",
+      "Lima Metropolitana"
+    ],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-pasco",
+    "level": "admin1",
+    "name": "Pasco",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 66.9,
+        "count": 131701
+      },
+      {
+        "group": "Evangelical",
+        "pct": 23.8,
+        "count": 46886
+      },
+      {
+        "group": "No religion",
+        "pct": 5.7,
+        "count": 11173
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.6,
+        "count": 7020
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 80.5,
+        "count": 186264
+      },
+      {
+        "group": "Quechua",
+        "pct": 10.8,
+        "count": 24943
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.3,
+        "count": 10037
+      },
+      {
+        "group": "Asháninka",
+        "pct": 3.9,
+        "count": 8957
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.2,
+        "count": 516
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.1,
+        "count": 181
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.1,
+        "count": 210
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 211
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 80
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-piura",
+    "level": "admin1",
+    "name": "Piura",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 84.8,
+        "count": 1196169
+      },
+      {
+        "group": "Evangelical",
+        "pct": 10.7,
+        "count": 150323
+      },
+      {
+        "group": "Other religion",
+        "pct": 2.8,
+        "count": 38800
+      },
+      {
+        "group": "No religion",
+        "pct": 1.8,
+        "count": 25394
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 98.4,
+        "count": 1649507
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.2,
+        "count": 20353
+      },
+      {
+        "group": "Quechua",
+        "pct": 0.2,
+        "count": 3313
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.1,
+        "count": 942
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 1731
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.0,
+        "count": 169
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 115
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 802
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-puno",
+    "level": "admin1",
+    "name": "Puno",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 82.0,
+        "count": 774536
+      },
+      {
+        "group": "Evangelical",
+        "pct": 8.0,
+        "count": 75218
+      },
+      {
+        "group": "Other religion",
+        "pct": 7.0,
+        "count": 65855
+      },
+      {
+        "group": "No religion",
+        "pct": 3.0,
+        "count": 28474
+      }
+    ],
+    "language": [
+      {
+        "group": "Quechua",
+        "pct": 42.9,
+        "count": 464231
+      },
+      {
+        "group": "Spanish",
+        "pct": 28.0,
+        "count": 303652
+      },
+      {
+        "group": "Aymara",
+        "pct": 27.0,
+        "count": 292866
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.9,
+        "count": 20770
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 713
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 258
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.0,
+        "count": 210
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 229
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-san-martín",
+    "level": "admin1",
+    "name": "San Martín",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 60.3,
+        "count": 366581
+      },
+      {
+        "group": "Evangelical",
+        "pct": 22.1,
+        "count": 134509
+      },
+      {
+        "group": "No religion",
+        "pct": 11.3,
+        "count": 68558
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.4,
+        "count": 38756
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 97.7,
+        "count": 715134
+      },
+      {
+        "group": "Quechua",
+        "pct": 1.4,
+        "count": 9940
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.4,
+        "count": 2904
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 1473
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.1,
+        "count": 457
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.1,
+        "count": 415
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 1079
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.0,
+        "count": 115
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 77
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 85
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 360
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-tacna",
+    "level": "admin1",
+    "name": "Tacna",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 75.7,
+        "count": 203754
+      },
+      {
+        "group": "Evangelical",
+        "pct": 8.9,
+        "count": 24051
+      },
+      {
+        "group": "Other religion",
+        "pct": 8.9,
+        "count": 23911
+      },
+      {
+        "group": "No religion",
+        "pct": 6.4,
+        "count": 17311
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 75.0,
+        "count": 229049
+      },
+      {
+        "group": "Aymara",
+        "pct": 19.4,
+        "count": 59237
+      },
+      {
+        "group": "Quechua",
+        "pct": 3.5,
+        "count": 10580
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.9,
+        "count": 5934
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.1,
+        "count": 323
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 200
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 90
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-tumbes",
+    "level": "admin1",
+    "name": "Tumbes",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 78.4,
+        "count": 134380
+      },
+      {
+        "group": "Evangelical",
+        "pct": 14.8,
+        "count": 25279
+      },
+      {
+        "group": "No religion",
+        "pct": 3.7,
+        "count": 6393
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.1,
+        "count": 5299
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 99.1,
+        "count": 201332
+      },
+      {
+        "group": "Quechua",
+        "pct": 0.3,
+        "count": 593
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 637
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.1,
+        "count": 141
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 243
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.1,
+        "count": 102
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Asháninka",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Other native language",
+        "pct": 0.0,
+        "count": 23
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  },
+  {
+    "id": "PER-ucayali",
+    "level": "admin1",
+    "name": "Ucayali",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 58.0,
+        "count": 207023
+      },
+      {
+        "group": "Evangelical",
+        "pct": 27.6,
+        "count": 98420
+      },
+      {
+        "group": "No religion",
+        "pct": 9.1,
+        "count": 32644
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.2,
+        "count": 18716
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 85.8,
+        "count": 377381
+      },
+      {
+        "group": "Shipibo-Konibo",
+        "pct": 5.2,
+        "count": 22969
+      },
+      {
+        "group": "Asháninka",
+        "pct": 4.2,
+        "count": 18271
+      },
+      {
+        "group": "Quechua",
+        "pct": 2.3,
+        "count": 10236
+      },
+      {
+        "group": "Other native language",
+        "pct": 1.5,
+        "count": 6628
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 2508
+      },
+      {
+        "group": "Foreign language",
+        "pct": 0.2,
+        "count": 870
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.1,
+        "count": 263
+      },
+      {
+        "group": "Deaf, does not speak",
+        "pct": 0.1,
+        "count": 392
+      },
+      {
+        "group": "Awajún",
+        "pct": 0.0,
+        "count": 194
+      },
+      {
+        "group": "Shawi",
+        "pct": 0.0,
+        "count": 87
+      },
+      {
+        "group": "Peruvian Sign Language",
+        "pct": 0.0,
+        "count": 176
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional)",
+        "url": "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1539/libro.pdf",
+        "license": "Official statistics publication of the Instituto Nacional de Estadística e Informática"
+      }
+    ],
+    "country": "PER",
+    "aliases": [],
+    "language_year": 2017,
+    "language_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadro 2.64: lengua materna aprendida en la niñez of the population aged 5 and over, as the census groups it (Otra lengua nativa folds Matsigenka, Achuar, Kichwa, Tikuna, Nomatsigenga and others).",
+    "religion_year": 2017,
+    "religion_note": "INEI, Censos Nacionales 2017: XII de Población y VII de Vivienda, Perú: Perfil Sociodemográfico (Informe Nacional). Cuadros 2.78 to 2.81: religión que profesa of the population aged 12 and over, in the four classes the census publishes; Otra folds Cristiano, Adventista, Testigo de Jehová, Mormón, Israelita, Budismo, Judaísmo and Musulmán."
+  }
+]
