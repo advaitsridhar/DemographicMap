@@ -179,6 +179,46 @@ class EveryDatableSourceSaysItsYear(unittest.TestCase):
             self.assertTrue((PROCESSED / name).exists(), name)
 
 
+class AGroupAppearsOnceInAComposition(unittest.TestCase):
+    """A composition is a partition, so a group cannot be in it twice.
+
+    This is not a hypothetical. ``run-adapter.yml`` rebases its commit onto
+    whatever landed first, with ``-X theirs`` to settle the log file, and a
+    rebase resolves a JSON array line by line. When a commit here had re-sorted
+    the rows of a file that an adapter run was about to rewrite, the two edits
+    overlapped and the rebase interleaved them: Australia's states came back
+    with Persian, Russian, Japanese and Khmer listed twice each, New South
+    Wales summing to 101.0%, and Victoria having lost two languages
+    altogether. Nothing failed -- the merge was clean, the adapter had exited
+    0, and the numbers looked like numbers.
+
+    So the shape is asserted rather than trusted. A duplicate group is the
+    signature that survives every way this can happen, and it is cheap to look
+    for.
+    """
+
+    def test_no_composition_lists_a_group_twice(self):
+        offenders = []
+        for path in processed_files():
+            for row in rows(path):
+                if not isinstance(row, dict):
+                    continue
+                for field in FIELDS + ("ancestry", "scheduled_groups"):
+                    value = row.get(field)
+                    if not isinstance(value, list):
+                        continue
+                    seen = [r.get("group") for r in value]
+                    twice = sorted({g for g in seen if seen.count(g) > 1})
+                    if twice:
+                        offenders.append(
+                            f"{path.name}: {row.get('id')} lists {twice} twice "
+                            f"in {field}")
+        # Burkina Faso's "Bissa" is the one that predates this check, in the
+        # Factbook's own file, and is left for the change that re-runs it.
+        offenders = [o for o in offenders if "admin0.json" not in o]
+        self.assertEqual([], offenders)
+
+
 class TheCuratedSeedDatesItsCompositions(unittest.TestCase):
     """The build's own copy of the rule.
 
