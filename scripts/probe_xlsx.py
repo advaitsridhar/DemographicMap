@@ -26,7 +26,9 @@ from __future__ import annotations
 import argparse
 import io
 import sys
+import urllib.parse
 import urllib.request
+from pathlib import Path
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; DemographicMap/1.0; "
@@ -40,9 +42,25 @@ def log(message: str = "") -> None:
     print(message, flush=True)
 
 
-def fetch(url: str) -> bytes:
+def fetch(url: str, aia: bool = False) -> bytes:
+    """The workbook's bytes, verifying the certificate either way.
+
+    ``aia`` is for a server that sends its leaf certificate without the
+    intermediate above it -- censusindia.gov.in does -- which urllib reports as
+    *unable to get local issuer certificate* and which is not a reason to stop
+    checking. probe_tls fetches the missing intermediate from the certificate's
+    own AIA extension and hands back a context that still carries the public
+    roots and still checks the hostname; see the note there.
+    """
     req = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+    if not aia:
+        with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+            return resp.read()
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from probe_tls import verified_opener            # noqa: PLC0415
+
+    host = urllib.parse.urlsplit(url).hostname or ""
+    with verified_opener(host).open(req, timeout=TIMEOUT) as resp:
         return resp.read()
 
 
@@ -101,6 +119,9 @@ def main() -> int:
                     help="comma-separated substrings; only these sheets")
     ap.add_argument("--cols", type=int, default=60,
                     help="columns to print from each row")
+    ap.add_argument("--aia", action="store_true",
+                    help="complete the server's certificate chain from its AIA "
+                         "extension before fetching (still fully verified)")
     args = ap.parse_args()
 
     match = [t.strip().lower() for t in args.match.split(",") if t.strip()]
@@ -108,7 +129,7 @@ def main() -> int:
     for url in args.url:
         log(f"probe_xlsx: {url}")
         try:
-            blob = fetch(url)
+            blob = fetch(url, aia=args.aia)
         except Exception as err:                  # noqa: BLE001
             # The whole message: a TLS failure names the host the certificate
             # is valid for, and that name is the finding.
