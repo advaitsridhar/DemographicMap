@@ -1,3 +1,13 @@
-kenya: religion by county, KNBS 2019 Volume IV via openAFRICA
-  47 counties
-  wrote data/processed/kenya_county.json (121 kB)
+angola: INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos (Quadros 6.1, 6.2 and 7.1)
+  11,908,578 bytes
+  248 pages
+  ethnicity: Quadro 6.1 group of 7 figures on page 109
+  ethnicity: page 110 rows carry [7] figures, wanted 8
+  ethnicity: Quadro 6.1 group of 8 figures on page 111
+  language: Quadro 6.2 group of 13 figures on page 113
+  language: Quadro 6.2 group of 12 figures on page 114
+  religion: Quadro 7.1 group of 10 figures on page 117
+  religion: page 118 rows carry [10] figures, wanted 13
+  religion: Quadro 7.1 group of 13 figures on page 119
+  18 provinces
+  wrote data/processed/angola_province.json (132 kB)
