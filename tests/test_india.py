@@ -363,6 +363,17 @@ class Appendix(unittest.TestCase):
             self.read(rows)
         self.assertIn("is not total", str(caught.exception))
 
+    def test_a_cell_that_is_not_a_count_names_itself(self):
+        # Offices mark a suppressed cell with a dash far more often than with
+        # a blank, and int("-") is a traceback that says nothing about which
+        # row it came from.
+        rows = [list(row) for row in APPENDIX_ROWS]
+        rows[6][7] = "-"
+        with self.assertRaises(SystemExit) as caught:
+            self.read(rows)
+        self.assertIn("Addi Bassi", str(caught.exception))
+        self.assertIn("Persons column", str(caught.exception))
+
     def test_a_district_row_would_overturn_the_claim_we_publish(self):
         # The note on every state says no district-level figure exists. If the
         # table ever carries one, that note is false and the reader is wrong

@@ -104,7 +104,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Mexico | INEGI Censo de Población y Vivienda 2020, ITER | state, municipality | Religion, indigenous-language speaking and Afro-descendant identification for 2,453 of 2,457 municipios. All from the *cuestionario básico*, so these are counts, not sample estimates. |
 | New Zealand | Stats NZ 2023 Census via Aotearoa Data Explorer (SDMX) | region, territorial authority | Ethnicity, languages spoken and religious affiliation for all 88 territorial authorities and Auckland local boards. All three are multi-response, so shares are of people who named a group, not slices of a whole. Needs an API key. |
 | Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. All 7 provinces and 66 of 77 districts — the boundary file's district names do not all sit on the right polygons. |
-| India | Census 2011 tables C-01, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. |
+| India | Census 2011 tables C-01, C-01 Appendix, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. The Appendix names the religions inside "Other religions and persuasions" (Donyi-Polo, Sarna, Sanamahi …) for states only. 637 of 735 district shapes carry figures; the other 98 are districts the census never enumerated and each says so. |
 
 ### New Zealand: the geography that already fitted
 
@@ -774,6 +774,36 @@ is a retrieval path, exactly as the factbook.json mirror is for the Factbook.
 To use the official workbooks instead, download them into `data/raw/india/` and
 run with `--input`.
 
+### What is inside "Other religions and persuasions"
+
+C-01 publishes eight categories, one of which is a residual, and in four states
+that residual is the third or fourth largest answer there is: Arunachal Pradesh
+26.2% (362,553 people), Jharkhand 12.8% (4,235,786), Meghalaya 8.7% (258,271),
+Manipur 8.2% (233,767). Nationally it is 7,937,734 people, 0.66%.
+
+The Registrar General breaks it up in table **C-01 Appendix**, *Details of
+religious community shown under 'Other religions and persuasions' in main table
+C-01* (NADA 11398), which names the religions inside it — Donyi-Polo, Sarna,
+Sanamahi, Khasi, Niamtre and scores more, nearly all Adivasi, and no other
+census on earth names them. `india_census.py --level state` reads it and
+substitutes those religions for C-01's single residual row; named plus a
+labelled remainder is C-01's figure exactly, so the composition still sums to
+the state's enumerated population, which the adapter checks.
+
+**It is published for India and the states and nothing finer.** The sheet has a
+district column and it reads `000` on every row — the reader refuses if it ever
+does not, because the note it publishes on every state record says no
+district-level figure exists. So a district's religion panel keeps the undivided
+residual, and says why.
+
+Its TLS is worth knowing about: censusindia.gov.in serves its leaf certificate
+without the intermediate above it, which urllib reports as *unable to get local
+issuer certificate*. That is not a reason to stop verifying. `probe_tls.py
+--chain` fetches the missing intermediate from the certificate's own Authority
+Information Access extension and verifies against it plus the public roots, and
+`http_get(..., aia=True)` is the same repair for adapters. Certificate
+verification is never disabled.
+
 ### Mother tongue: the official C-16 workbooks
 
 Table C-16 (population by mother tongue) is a separate publication from C-01 and
@@ -784,8 +814,17 @@ them from — `scripts/fetch_census/india_language.py` reads whatever is present
 The all-India workbook (`DDWC16STMTMDDS0000.XLSX`) carries every state, so all 34
 states enumerated in 2011 have a mother-tongue composition. All 35 per-state
 workbooks are present, giving 637 of 735 districts. The 98 without a figure are
-census-vintage gaps, not missing files: 92 are districts created after 2011 and
-6 were undivided when the census ran.
+census-vintage gaps, not missing files: **91** are districts created after 2011,
+**6** are the successors of the three districts that have been subdivided since,
+and **1** is not a district at all — geoBoundaries draws a feature in Jammu and
+Kashmir named, literally, "DATA NOT AVAILABLE", which is 268 disjoint fragments
+totalling about 390 km², the slivers between the district polygons. All 98 carry
+an explicit reason on population, religion and language; the 91 name the year
+they were created and the 2011 district they were carved from
+(`CREATED_AFTER_2011`, checked against the census's own district list on every
+run). Nothing is carried down into them — a new district is a *part* of an old
+one, and the rule that a figure coarser than the shape is not spread across the
+shape's members applies.
 
 **Not the `DDWC16TOWN...` files.** The catalogue also publishes a town-level
 C-16 whose filename differs only by that infix. It enumerates urban population

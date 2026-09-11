@@ -111,6 +111,21 @@ RELIGION_TRADITION: dict[str, tuple[str, ...]] = {
         "Nani Intiya", "Nyarino", "Idu Mishmi", "Hill Miri", "Aka",
         "Santal", "Ho", "Munda", "Oraon", "Bhil", "Baiga", "Korku",
         "Boro", "Karbi",
+        # Adi Dharm is listed here in its own right, and that placement is
+        # load-bearing rather than tidy. Left to the compound rule, "ADI
+        # DHARM" resolves through its first word to "Adi" above and is filed
+        # as a kind of it -- but Adi Dharm is a Dalit movement of Punjab and
+        # the Adi are a people of Arunachal Pradesh, and nesting one under
+        # the other asserts a relation no census states and rolls its figures
+        # together. Naming it wins on the exact match before any word rule
+        # gets a turn.
+        "Adi Dharm",
+        # Two more the Appendix names, each its own answer. Chhattisgarh
+        # prints "ADI DHARM" and "Adim dhamm" as separate rows in the same
+        # state, so whatever their histories the census is counting them
+        # apart, and folding one into the other would invent a share. Yumasam
+        # is the Limbu faith, 2.0% of Sikkim.
+        "Adim dhamm", "Yumasam",
     ),
     "Other and new religions": (
         "Zoroastrianism", "Yazidi", "Jedi", "Eckankar", "Wicca",

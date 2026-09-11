@@ -784,6 +784,23 @@ def _code(value: Any, width: int) -> str:
     return text.zfill(width) if text.isdigit() else text
 
 
+def _count(value: Any, area: str, label: str, column: str) -> int:
+    """A figure from a count column, or a refusal naming the cell.
+
+    An office marks a suppressed or absent cell with a dash or an asterisk far
+    more often than with a blank, and int("-") is an unhandled traceback that
+    says nothing about which row it came from. This says which row.
+    """
+    if value is None or _text(value) == "":
+        return 0
+    try:
+        return int(float(value))
+    except (TypeError, ValueError):
+        raise SystemExit(
+            f"C-01 Appendix: {area} / {label} has {value!r} in the {column} "
+            f"column, which is not a count. Nothing is being emitted.") from None
+
+
 def read_appendix(blob: bytes) -> dict[str, dict[str, Any]]:
     """state code -> {name, bucket, counts}, from DDW00C-01 Appendix.
 
@@ -838,8 +855,9 @@ def read_appendix(blob: bytes) -> dict[str, dict[str, Any]]:
         code = _text(row[APX_CODE])
         label = _text(row[APX_NAME])
         split = _text(row[APX_SPLIT])
-        persons = int(row[APX_PERSONS] or 0)
-        males, females = int(row[APX_MALES] or 0), int(row[APX_FEMALES] or 0)
+        persons = _count(row[APX_PERSONS], _text(row[APX_AREA]), label, "Persons")
+        males = _count(row[APX_MALES], _text(row[APX_AREA]), label, "Males")
+        females = _count(row[APX_FEMALES], _text(row[APX_AREA]), label, "Females")
         if males + females != persons:
             problems.append(f"{_text(row[APX_AREA])} {label} {split}: "
                             f"{males:,} males + {females:,} females "
