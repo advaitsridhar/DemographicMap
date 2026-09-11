@@ -1102,6 +1102,25 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     if not children:
         return None
 
+    # A sum is of figures that count the same thing, and `{field}_basis` is
+    # where a source says when it does not. Gilgit-Baltistan is the only place
+    # in the world where this bites: it is the one division of Pakistan with a
+    # sectarian breakdown, so the national sum came out listing Twelver Shi'a
+    # at 0.2% -- arithmetically right, since its people appear once, and a flat
+    # misstatement about a country that is perhaps a sixth Shia. The 0.2% is an
+    # artefact of one division in fifty answering a different question.
+    #
+    # So a division counting something its siblings do not is left out and
+    # named, exactly as one that publishes nothing is. Its own record keeps the
+    # detail, which is where that detail is true.
+    bases = [c.get(f"{field}_basis") for c in children
+             if isinstance(c.get(field), list)]
+    usual = max(set(bases), key=bases.count) if bases else None
+    apart = [c for c in children if isinstance(c.get(field), list)
+             and c.get(f"{field}_basis") != usual]
+    if apart:
+        children = [c for c in children if c not in apart]
+
     missing = [c for c in children if not isinstance(c.get(field), list)]
     left_out = ""
     if missing:
@@ -1304,6 +1323,13 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
            ", so their counts are those shares taken of their own published "
            "populations." if derived else "")
         + disagrees + displaced + left_out
+        + (" " + ", ".join(sorted(c.get("name", c.get("id", "?"))
+                                  for c in apart))
+           + (f" counts {apart[0].get(f'{field}_basis')} rather than what the "
+              f"others count, so it is not added in; its own record carries "
+              f"that figure." if len(apart) == 1 else
+              " count something the others do not, so they are not added in.")
+           if apart else "")
         + (f" Dated {dated} because that is when all but"
            f" {', '.join(f'{n} ({y})' for y, n in aside)} were counted."
            if dated is not None else

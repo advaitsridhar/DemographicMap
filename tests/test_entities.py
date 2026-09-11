@@ -1391,6 +1391,69 @@ class TheYearBelongsToTheFigure(unittest.TestCase):
         self.assertEqual(got["religion_year"], 2021)
 
 
+class ADivisionCountingSomethingElse(unittest.TestCase):
+    """You cannot add figures that count different things.
+
+    Gilgit-Baltistan is the only place in the world where this bites. It is the
+    one division of Pakistan with a sectarian breakdown, so the national sum
+    listed Twelver Shi'a Islam at 0.2% -- arithmetically right, since its
+    people appear exactly once, and a flat misstatement about a country
+    perhaps a sixth Shia. The 0.2% was an artefact of one division in fifty
+    answering a different question.
+    """
+
+    def parent(self):
+        return {"id": "XXX", "codes": {"iso3": "XXX"}, "name": "Somewhere",
+                "population": {"value": 1000, "year": 2025},
+                "religion": [{"group": "Muslim", "pct": 100.0, "count": 1000}],
+                "sources": []}
+
+    def child(self, name, pop, groups, basis=None):
+        row = {"id": name, "name": name, "parent": "XXX",
+               "population": {"value": pop, "year": 2025},
+               "religion": [{"group": g, "pct": round(100 * c / sum(groups.values()), 1),
+                             "count": c} for g, c in groups.items()],
+               "sources": []}
+        if basis:
+            row["religion_basis"] = basis
+        return row
+
+    def kids(self):
+        # Odd is 1% of the country, as Gilgit-Baltistan is 0.5% of Pakistan:
+        # leaving out a division large enough to matter would fail the
+        # population gate instead, which is a different refusal.
+        return [self.child("Big", 990, {"Muslim": 890, "Hindu": 100}),
+                self.child("Odd", 10, {"Twelver Shia Islam": 6,
+                                       "Sunni Islam": 4},
+                           basis="sectarian affiliation")]
+
+    def roll(self, parent, kids):
+        be.roll_up_countries([parent], {"XXX": kids})
+        return parent
+
+    def test_the_odd_one_out_is_not_added_in(self):
+        got = self.roll(self.parent(), self.kids())
+        self.assertEqual({g["group"] for g in got["religion"]},
+                         {"Muslim", "Hindu"})
+
+    def test_the_note_names_it_and_what_it_counts(self):
+        note = self.roll(self.parent(), self.kids())["religion_note"]
+        self.assertIn("Odd counts sectarian affiliation rather than what the "
+                      "others count", note)
+        self.assertIn("its own record carries that figure", note)
+
+    def test_divisions_that_agree_are_all_added_in(self):
+        # The ordinary case, and the one that must not change: a basis shared
+        # by every division is not a difference. The United States is this --
+        # all 51 of its PRRI divisions say self-identification.
+        kids = [self.child("A", 600, {"Muslim": 500, "Hindu": 100}, basis="x"),
+                self.child("B", 400, {"Muslim": 300, "Hindu": 100}, basis="x")]
+        got = self.roll(self.parent(), kids)
+        self.assertEqual(got["religion"][0]["count"], 800)
+        self.assertNotIn("rather than what the others count",
+                         got["religion_note"])
+
+
 class CoveredShare(unittest.TestCase):
     """How much of the children's population the publishing ones carry."""
 
