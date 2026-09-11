@@ -120,36 +120,75 @@ window.Palette = (function () {
     return `#${f(0)}${f(8)}${f(4)}`;
   }
 
-  /* A group's colour at a given share.
+  /* The relative luminance of a colour, as the WCAG defines it.
    *
-   * Hue and saturation are the group's; only lightness moves, so the shade
-   * answers "how much" without ever changing the answer to "which". The band
-   * is deliberately narrow at the pale end: a unit where the largest group
-   * holds 30% is a plural place, not an empty one, and it still has to be
-   * clearly its own colour rather than nearly the page.
+   * This is what the eye reads as "how dark is that", and it is not what HSL
+   * calls lightness. Yellow and blue at the same HSL lightness differ by more
+   * than four times in luminance, which is why driving the ramp with HSL
+   * produced a map whose shading meant one thing in India and another in
+   * Mongolia.
+   */
+  function luminance(hex) {
+    const c = hex.replace("#", "");
+    const part = [0, 2, 4].map((i) => {
+      const v = parseInt(c.slice(i, i + 2), 16) / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    });
+    return 0.2126 * part[0] + 0.7152 * part[1] + 0.0722 * part[2];
+  }
+
+  /* The colour of this hue that reads as dark as `target` asks.
+   *
+   * Luminance rises monotonically with HSL lightness for a fixed hue and
+   * saturation, so a bisection finds the lightness that hits the target. It
+   * is a search rather than a formula because the relationship depends on the
+   * hue: to look as dark as a mid blue, a yellow has to go much further down.
+   */
+  function atLuminance(h, s, target) {
+    let low = 0;
+    let high = 1;
+    let hex = "#000000";
+    for (let i = 0; i < 16; i += 1) {
+      const mid = (low + high) / 2;
+      hex = hslToHex(h, s, mid);
+      if (luminance(hex) < target) low = mid; else high = mid;
+    }
+    return hex;
+  }
+
+  /* A group's colour at a given share: hue says which group, darkness says
+   * how much of it.
+   *
+   * Two things were wrong before and both made the map say the opposite of
+   * what it meant. The band was cut in HSL lightness, so equal shares landed
+   * up to five times apart in luminance -- a county 80% gold rendered lighter
+   * than one 50% red, and the reader comparing them read the shading
+   * backwards. And dark mode ran the band the other way, on the usual
+   * dark-interface reasoning that more should glow brighter, which meant
+   * every share on the map was encoded upside down for anyone whose browser
+   * was in dark mode.
+   *
+   * So the ramp is now stated in luminance, the same target for every hue,
+   * and it runs pale to dark in BOTH themes. What a shade means is a property
+   * of the data and must not change with the colour of the surrounding
+   * furniture. The two themes differ only in where the dark end stops, so
+   * that a full-share unit stays clearly apart from the land beneath it:
+   * light mode can go almost to black, dark mode stops well above its own
+   * background.
    *
    * Below `floor` every share is drawn at the palest step rather than fading
    * out, because a plurality of 26% is a fact about the place and not a
-   * near-absence. Dark mode runs the band the other way: there, more of a
-   * group means a brighter shape against a dark ground.
+   * near-absence.
    */
   const SHARE_FLOOR = 25;
+  const BAND = {
+    light: { pale: 0.78, deep: 0.055 },
+    // Dark mode's land sits at about 0.023, so the deep end stops at roughly
+    // five times that: still plainly the dark end of the ramp, still plainly
+    // not the empty land under it.
+    dark: { pale: 0.70, deep: 0.115 },
+  };
 
-  /* A group's colour at a given share.
-   *
-   * Hue stays the group's; lightness carries the magnitude, and it has to go
-   * genuinely dark at the top or the encoding inverts. The first version ran
-   * lightness from 0.82 down to 0.38 while pushing saturation up to 0.95,
-   * which for a dark base hue produced a *lighter* colour the larger the
-   * share: Saudi Arabia at 90% Arab came out #d1ab0e against a base #b7950b.
-   * The band now ends below every base hue's own lightness, and saturation
-   * barely moves, so "darker" means "more" for every hue in the table.
-   *
-   * Below `floor` every share is drawn at the palest step rather than fading
-   * out, because a plurality of 26% is a fact about the place and not a
-   * near-absence. Dark mode runs the band the other way: there, more of a
-   * group means a brighter shape against a dark ground.
-   */
   function group(hex, share, floor) {
     if (!hex) return NEUTRAL[mode()];
     const [h, s] = hexToHsl(hex);
@@ -159,13 +198,12 @@ window.Palette = (function () {
     const base = Number.isFinite(floor) ? floor : SHARE_FLOOR;
     const t = Math.max(0, Math.min(1,
       ((Number.isFinite(share) ? share : 100) - base) / Math.max(1, 100 - base)));
-    const dark = mode() === "dark";
-    // Light mode: 0.88 (a tint) down to 0.22 (a deep shade).
-    // Dark mode: 0.30 (barely off the ground) up to 0.72 (a bright fill).
-    const light = dark ? 0.30 + t * 0.42 : 0.88 - t * 0.66;
-    const grey = s < 0.02;
-    const sat = grey ? 0 : Math.max(0.3, Math.min(0.9, s * (0.85 + t * 0.3)));
-    return hslToHex(h, sat, light);
+    const band = BAND[mode()] || BAND.light;
+    const target = band.pale + t * (band.deep - band.pale);
+    // A grey base stays grey: hue 0 of a colourless input is red, and the
+    // legend's neutral ramp stands for every group at once.
+    const sat = s < 0.02 ? 0 : Math.max(0.35, Math.min(0.95, s));
+    return atLuminance(h, sat, target);
   }
 
   /** The steps of one group's share ramp, palest first, for a legend. */
