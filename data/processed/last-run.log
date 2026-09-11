@@ -1,5 +1,28 @@
-korea_survey: Hankook Research, 2025 Religion Perception Survey: religious population and religious activity (Weekly Report No. 358-3, 3 December 2025), religion by residence region
-  5,535,370 bytes
-  20 pages
-  17 provinces from 7 residence regions
-  wrote data/processed/korea_survey_province.json (45 kB)
+Pakistan: https://data.humdata.org/dataset/13ba0782-feca-46bb-81b8-53ee1faeebde/resource/ec76611c-2acb-44cd-ba31-51cfba5db94e/download/pakistan_uscb_202401.xlsx
+  1,147,052 bytes
+  Mother Tongue [LNG_]: 785 rows, 10 groups, denominator 'Total population'
+    621 rows skipped: another level, or no area name
+    22 areas listed with no figures at all: ASTORE DISTRICT, AZAD KASHMIR, BAGH DISTRICT, BALTISTAN DISTRICT, BHIMBER DISTRICT, DIAMIR DISTRICT ...
+    admin1: 207,684,626 against the country's own 207,684,626 -- exactly
+    admin2: 207,684,626 against the country's own 207,684,626 -- exactly
+    every one of 141 areas reaches its published total
+  wrote data/processed/pakistan_language.json (329 kB)
+  141 areas: 6 admin1, 135 admin2
+Ethiopia: https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/ethiopia_uscb_202308.xlsx
+  1,759,157 bytes
+  Religion: 851 rows, 6 groups, by sex, no published denominator
+    6 groups reconcile by sex across 5070 cells
+    743 rows skipped: another level, or no area name
+    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
+    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
+    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
+  Ethnicity: 108 rows, 93 groups, no published denominator
+    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
+    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
+    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
+  Language: 108 rows, 91 groups, no published denominator
+    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
+    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
+    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
+  wrote data/processed/ethiopia_region.json (1759 kB)
+  106 areas: 13 admin1, 93 admin2
