@@ -30,23 +30,37 @@ Two standing caveats the app displays with every Indian figure:
 **The districts moved and the census did not.** The census enumerated 640
 districts; the boundary files draw 735, because India has created about a
 hundred since -- Telangana replaced ten with thirty-three in 2016 alone. Those
-95 extra shapes are not a join that failed. Every census row reaches its
-shape: 637 by name, and three (Jaintia Hills, Karbi Anglong, Warangal) only as
-the successors that replaced them, which carry no figure. The surplus shapes
-are districts the census never counted, and no later count exists to fill
-them. They are declared in ``CREATED_AFTER_2011`` with the year and the
-district they were carved from, so the panel says which measurement covers
-their ground instead of showing an unexplained blank. Nothing is carried down
-into them: a new district is a *part* of an old one, and giving it the old
-one's composition would assert an even spread inside a district that nobody
-measured.
+95 extra shapes are not a join that failed. They are districts the census never
+counted, and no later count exists to fill them. They are declared in
+``CREATED_AFTER_2011`` with the year and the district they were carved from, so
+the panel says which measurement covers their ground instead of showing an
+unexplained blank. Nothing is carried down into them: a new district is a
+*part* of an old one, and giving it the old one's composition would assert an
+even spread inside a district that nobody measured.
 
-What *would* fill them is a level down. C-01 and C-16 are both published to
-sub-district, and a new district is made of whole 2011 sub-districts, so
-summing those would be arithmetic on measurements rather than an estimate.
-That needs the 35 per-state C-01 workbooks (this file reads a district-level
-extract instead) and a 2011-sub-district-to-present-day-district mapping,
-which the census does not publish; it is the route, and it is not taken here.
+**And the district that keeps the name is a part of it too.** That is the half
+this file had wrong for longer than the other. When Jagtial, Peddapalli and
+Rajanna Sircilla were carved out of Karimnagar in 2016, the shape still called
+Karimnagar kept its name and lost three quarters of its ground -- and kept the
+undivided district's 3,776,269 people, on a shape that holds about a quarter of
+them. A blank beside it said honestly that no figure existed for Jagtial; the
+number next to it said, with a source and a year, something that was not about
+the shape it sat on. 75 districts across 16 states were in that position,
+carrying 172 million people's worth of 2011 figures between them.
+``LOST_TERRITORY_SINCE_2011`` declares every one, and they are now treated
+exactly as their siblings are: the census measured the undivided district, both
+fragments are fragments, and neither carries the figure. The state total does.
+
+What *would* fill all of them is a level down, and the route is real enough to
+be worth stating precisely. C-01 **is** published to sub-district: the official
+per-state workbook for Andhra Pradesh carries 1,128 tehsil rows beside its 23
+district rows, and they sum to the district totals exactly. C-16 is published
+the same way. What does not exist is the other half of the join -- a mapping
+from 2011 sub-districts to present-day districts. The census does not publish
+one, and the 2016 reorganisation did not merely reallocate mandals but split
+some of them, so even a hand-built mapping would not be a partition. Writing
+one out would be inventing the very thing the sub-district tables were supposed
+to supply, so it is not done here.
 
 **"Other religions" is the census's residual and it is not small everywhere.**
 C-01 publishes six named religions, "Other religions and persuasions" and
@@ -85,7 +99,7 @@ import difflib
 import io
 import urllib.parse
 from pathlib import Path
-from typing import Any
+from typing import Any, NamedTuple
 
 from ._shared import (
     NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, gap, http_get, log, measure,
@@ -145,19 +159,87 @@ STATE_ALIASES = {
     "nct of delhi": "NCT of Delhi",
 }
 
-# States that did not exist at the 2011 census, so no census row covers them.
-# Their territory was enumerated under the predecessor state; splitting that
-# retrospectively would be an estimate, not a measurement, so they get an
-# explicit gap carrying the reason.
-FORMED_AFTER_2011 = {
-    "Telangana": ("Telangana was formed in 2014 from ten districts of Andhra "
-                  "Pradesh. The 2011 census enumerated that territory as part of "
-                  "Andhra Pradesh, so no census figure exists for Telangana as "
-                  "such. Its districts do carry 2011 figures."),
-    "Ladakh": ("Ladakh became a union territory in 2019, split from Jammu and "
-               "Kashmir. The 2011 census enumerated it as part of Jammu and "
-               "Kashmir, so no census figure exists for Ladakh as such. Its "
-               "districts (Leh, Kargil) do carry 2011 figures."),
+# States that did not exist at the 2011 census, whose territory is nonetheless
+# a whole number of districts the census *did* enumerate.
+#
+# This is the one place where a figure nobody published may honestly be
+# assembled, and it is worth being exact about why. Telangana was formed in
+# 2014 out of ten districts of Andhra Pradesh; the census enumerated all ten
+# separately, and ten disjoint measurements that exhaust a territory sum to a
+# measurement of that territory. Nothing is apportioned, nothing is estimated,
+# and the residual state is the same arithmetic run the other way. The
+# alternative -- the gap this replaced -- said "no census figure exists for
+# Telangana as such", which was true of the *published tables* and false of the
+# *census*: every person in Telangana was counted in 2011, in one of these ten
+# rows.
+#
+# Each entry names the districts on both sides and the published totals both
+# sides must reproduce **to the person**; ``check_splits`` refuses to emit
+# anything if they do not. The district codes are carried as well as the names
+# because the C-16 mother-tongue workbooks key on the code and the C-01 extract
+# on the name, and a split that is right in one table and wrong in the other is
+# exactly the failure neither file could see on its own.
+class StateSplit(NamedTuple):
+    parent: str                    # the state the 2011 census enumerated
+    state_code: str                # its census state code, as C-16 writes it
+    year: int                      # when the new state came into being
+    districts: tuple[str, ...]     # the 2011 districts that became the new state
+    codes: tuple[int, ...]         # ... and their census district codes
+    population: int                # published 2011 population of the new state
+    residual: int                  # ... and of what was left of the old one
+    caveat: str                    # what the new state's sum does not cover
+    residual_caveat: str           # ... and the same fact from the other side
+
+
+SPLIT_STATES: dict[str, StateSplit] = {
+    # Andhra Pradesh's ten Telangana districts. 532-541 in the census's own
+    # numbering, contiguous, and 542-554 are the thirteen that stayed.
+    #
+    # The caveat is a real one and is stated on the record rather than rounded
+    # away. Seven mandals of Khammam district -- Burgampahad, Chintur,
+    # Kukunoor, Kunavaram, Vararamachandrapuram, Velairpadu and part of
+    # Bhadrachalam -- were moved to Andhra Pradesh by the Andhra Pradesh
+    # Reorganisation (Amendment) Ordinance of 29 May 2014, four days before
+    # Telangana came into being, to put the Polavaram project on one side of
+    # the border. They are inside the ten districts and outside the present-day
+    # state, which is why the Registrar General's figure for present-day
+    # Telangana is 35,003,674 and the ten districts hold 190,304 more. Those
+    # six whole mandals hold 208,421 people between them in the official C-01
+    # sub-district table, so the transferred part is most but not all of them
+    # -- which is precisely why this is not subtracted here: whole-mandal
+    # arithmetic would give 34,985,557, a number no one published and 18,117
+    # people away from the one they did.
+    "Telangana": StateSplit(
+        parent="Andhra Pradesh", state_code="28", year=2014,
+        districts=("Adilabad", "Nizamabad", "Karimnagar", "Medak", "Hyderabad",
+                   "Rangareddy", "Mahbubnagar", "Nalgonda", "Warangal", "Khammam"),
+        codes=tuple(range(532, 542)),
+        population=35_193_978, residual=49_386_799,
+        caveat=("The seven mandals of Khammam district that were moved to "
+                "Andhra Pradesh in 2014 for the Polavaram project are inside "
+                "these ten districts and outside the present-day state, so "
+                "this figure is 190,304 people -- 0.5% -- above the "
+                "35,003,674 the Registrar General gives for Telangana as it "
+                "now stands. The census published no sub-district religion "
+                "figure for the part of Bhadrachalam that stayed, so "
+                "subtracting the mandals whole would trade a stated 0.5% for "
+                "an unstated one."),
+        residual_caveat=(
+            "The seven mandals of Khammam district that came here from "
+            "Telangana in 2014 for the Polavaram project are outside these "
+            "thirteen districts and inside the present-day state, so this "
+            "figure is 190,304 people -- 0.4% -- below the 49,577,103 the "
+            "Registrar General gives for Andhra Pradesh as it now stands."),
+    ),
+    # Ladakh's two districts. The union territory was carved out of Jammu and
+    # Kashmir in 2019 along the boundary of Leh and Kargil, which the census
+    # enumerated separately, so the same arithmetic applies.
+    "Ladakh": StateSplit(
+        parent="Jammu and Kashmir", state_code="01", year=2019,
+        districts=("Leh(Ladakh)", "Kargil"), codes=(3, 4),
+        population=274_289, residual=12_267_013,
+        caveat="", residual_caveat="",
+    ),
 }
 
 # 2011 districts that have since been subdivided, so one census row covers
@@ -168,8 +250,9 @@ FORMED_AFTER_2011 = {
 #
 # These are the three where the 2011 name survives on no present-day shape at
 # all, so the census row has nowhere to go. A district that merely *lost*
-# territory to a new one keeps its name, keeps its shape and keeps its 2011
-# row; the new district is in CREATED_AFTER_2011 below.
+# territory to a new one keeps its name and keeps its shape -- and used to keep
+# its 2011 row as well, which was the same error in a quieter form and is now
+# ``LOST_TERRITORY_SINCE_2011`` below.
 SUBDIVIDED_SINCE_2011 = {
     "jaintia hills": ["East Jaintia Hills", "West Jaintia Hills"],
     "karbi anglong": ["Karbi Anglong East", "Karbi Anglong West"],
@@ -350,6 +433,159 @@ CREATED_AFTER_2011: dict[str, tuple[tuple[str, int, tuple[str, ...]], ...]] = {
         ("Jhargram", 2017, ("Paschim Medinipur",)),
         ("Kalimpong", 2017, ("Darjiling",)),
         ("Paschim Barddhaman", 2017, ("Barddhaman",)),
+    ),
+}
+
+# The other half of the 2016-and-friends reorganisations, and the half this
+# file used to get wrong.
+#
+# When a new district is carved out, the district that keeps the name keeps its
+# shape too -- a smaller one. Its 2011 census row did not shrink with it. So
+# modern Karimnagar, 2,132 km2 of the 9,103 km2 the census measured under that
+# name, was wearing all 3,776,269 of the undivided district's people, three
+# quarters of whom now live in Jagtial, Peddapalli and Rajanna Sircilla. That
+# is the mis-match this project exists to prevent, and it is worse than the
+# blank beside it: Jagtial's panel said plainly that no figure exists for it,
+# while Karimnagar's showed a number with a source and a year that was not
+# about the shape it sat on.
+#
+# The rule is now symmetric with SUBDIVIDED_SINCE_2011, as it should always
+# have been. The census measured *undivided* Karimnagar. Modern Karimnagar and
+# Jagtial are both fragments of that measurement, and the only difference
+# between them is which fragment kept the name. Neither carries the figure; the
+# state total does, and the note says so.
+#
+# **Why not keep the ones that barely changed?** Because the measurement here
+# is of territory and the error is in people, and the two do not track each
+# other. Rangareddy kept 52% of its ground and lost Medchal-Malkajgiri, a small
+# dense suburb of Hyderabad holding nearly half its people; Upper Subansiri
+# kept 90% of its ground and the part it lost is high Himalaya with almost
+# nobody in it. An area threshold set anywhere between them would be a guess
+# dressed as a tolerance. What area *can* answer is the binary question -- did
+# this district lose territory or not -- and the measurement is unambiguous
+# about that: every district here retained between 18% and 90% of its 2011
+# extent, and every other Indian district retained all of it. There is nothing
+# in between to draw a line through.
+#
+# Each entry is (district as the 2011 census spells it, percentage of its 2011
+# extent the present-day shape still covers), grouped by present-day state, and
+# the comment gives the 2011 population, the two areas and the districts that
+# took the difference. The shares are measured from the CGAZ boundary files
+# this map draws with -- shape area against the area of that shape plus every
+# shape CREATED_AFTER_2011 declares was carved out of it -- so they carry
+# CGAZ's simplification with them and are quoted to the percent, not finer.
+# Which districts appear here is NOT a judgement: it is derived from
+# CREATED_AFTER_2011 and checked against it on every run
+# (:func:`check_lost_territory`), so a predecessor added there without a
+# measurement here, or measured here without being declared there, stops the
+# run.
+LOST_TERRITORY_SINCE_2011: dict[str, tuple[tuple[str, int], ...]] = {
+    "Arunachal Pradesh": (
+        ("East Kameng", 68),  #     78,690 in 6,582 km2 -> now 4,457 km2; lost to Pakke Kessang
+        ("East Siang", 63),  #     99,214 in 3,763 km2 -> now 2,389 km2; lost to Lower Siang, Siang
+        ("Kurung Kumey", 70),  #     92,076 in 6,587 km2 -> now 4,589 km2; lost to Kra Daadi
+        ("Lohit", 69),  #    145,726 in 4,087 km2 -> now 2,806 km2; lost to Namsai
+        ("Lower Subansiri", 65),  #     83,030 in 2,077 km2 -> now 1,358 km2; lost to Kamle
+        ("Tirap", 59),  #    111,975 in 2,052 km2 -> now 1,203 km2; lost to Longding
+        ("Upper Subansiri", 90),  #     83,448 in 6,945 km2 -> now 6,226 km2; lost to Kamle
+        ("West Siang", 29),  #    112,274 in 7,834 km2 -> now 2,255 km2; lost to Leparada, Lower Siang, Shi Yomi, Siang
+    ),
+    "Assam": (
+        ("Dhubri", 71),  #  1,949,258 in 2,498 km2 -> now 1,779 km2; lost to South Salmara-Mankachar
+        ("Jorhat", 60),  #  1,092,256 in 3,150 km2 -> now 1,899 km2; lost to Majuli
+        ("Nagaon", 63),  #  2,823,768 in 3,967 km2 -> now 2,510 km2; lost to Hojai
+        ("Sivasagar", 59),  #  1,151,050 in 2,578 km2 -> now 1,527 km2; lost to Charaideo
+        ("Sonitpur", 66),  #  1,924,110 in 5,278 km2 -> now 3,483 km2; lost to Biswanath
+    ),
+    "Chhattisgarh": (
+        ("Bastar", 50),  #  1,413,199 in 10,408 km2 -> now 5,218 km2; lost to Kondagaon
+        ("Bilaspur", 48),  #  2,663,629 in 8,803 km2 -> now 4,259 km2; lost to Gaurella Pendra Marwahi, Mungeli
+        ("Dakshin Bastar Dantewada", 34),  #    533,638 in 8,545 km2 -> now 2,873 km2; lost to Sukma
+        ("Durg", 27),  #  3,343,872 in 8,331 km2 -> now 2,281 km2; lost to Balod, Bemetra
+        ("Raipur", 25),  #  4,063,872 in 11,746 km2 -> now 2,883 km2; lost to Baloda Bazar, Gariaband
+        ("Surguja", 31),  #  2,359,886 in 15,755 km2 -> now 4,897 km2; lost to Balrampur, Surajpur
+    ),
+    "Delhi": (
+        ("East", 84),  #  1,709,346 in 80 km2 -> now 67 km2; lost to Shahdara
+        ("North East", 75),  #  2,241,624 in 52 km2 -> now 39 km2; lost to Shahdara
+        ("South", 59),  #  2,731,929 in 257 km2 -> now 151 km2; lost to South East
+    ),
+    "Gujarat": (
+        ("Ahmadabad", 84),  #  7,214,225 in 8,345 km2 -> now 7,028 km2; lost to Batod
+        ("Bhavnagar", 83),  #  2,880,365 in 7,964 km2 -> now 6,648 km2; lost to Batod
+        ("Jamnagar", 52),  #  2,160,119 in 12,097 km2 -> now 6,275 km2; lost to Devbhumi Dwarka, Morbi
+        ("Junagadh", 57),  #  2,743,082 in 8,843 km2 -> now 5,071 km2; lost to Gir Somnath
+        ("Kheda", 73),  #  2,299,885 in 4,657 km2 -> now 3,404 km2; lost to Mahisagar
+        ("Panch Mahals", 73),  #  2,390,776 in 4,584 km2 -> now 3,331 km2; lost to Mahisagar
+        ("Rajkot", 83),  #  3,804,558 in 9,272 km2 -> now 7,657 km2; lost to Morbi
+        ("Sabar Kantha", 56),  #  2,428,589 in 7,441 km2 -> now 4,170 km2; lost to Aravali
+        ("Surendranagar", 85),  #  1,756,268 in 10,840 km2 -> now 9,224 km2; lost to Morbi
+        ("Vadodara", 54),  #  4,165,626 in 7,618 km2 -> now 4,142 km2; lost to Chhota Udaipur
+    ),
+    "Madhya Pradesh": (
+        ("Shajapur", 56),  #  1,512,681 in 6,221 km2 -> now 3,459 km2; lost to Agar
+        ("Tikamgarh", 74),  #  1,445,166 in 5,008 km2 -> now 3,711 km2; lost to Niwari
+    ),
+    "Maharashtra": (
+        ("Thane", 44),  # 11,060,148 in 9,416 km2 -> now 4,146 km2; lost to Palghar
+    ),
+    "Manipur": (
+        ("Chandel", 65),  #    144,182 in 3,276 km2 -> now 2,125 km2; lost to Tengnoupal
+        ("Churachandpur", 52),  #    274,143 in 4,851 km2 -> now 2,517 km2; lost to Pherzawl
+        ("Imphal East", 71),  #    456,113 in 504 km2 -> now 358 km2; lost to Jiribam
+        ("Senapati", 49),  #    479,148 in 3,589 km2 -> now 1,746 km2; lost to Kangpokpi
+        ("Tamenglong", 73),  #    140,651 in 4,044 km2 -> now 2,944 km2; lost to Noney
+        ("Thoubal", 58),  #    422,168 in 644 km2 -> now 370 km2; lost to Kakching
+        ("Ukhrul", 49),  #    183,998 in 4,532 km2 -> now 2,220 km2; lost to Kamjong
+    ),
+    "Meghalaya": (
+        ("East Garo Hills", 63),  #    317,917 in 2,813 km2 -> now 1,764 km2; lost to North Garo Hills
+        ("West Garo Hills", 83),  #    643,291 in 3,474 km2 -> now 2,883 km2; lost to South West Garo Hills
+        ("West Khasi Hills", 74),  #    383,461 in 5,183 km2 -> now 3,837 km2; lost to South West Khasi Hills
+    ),
+    "Mizoram": (
+        ("Aizawl", 66),  #    400,309 in 3,984 km2 -> now 2,621 km2; lost to Saitual
+        ("Champhai", 58),  #    125,745 in 2,611 km2 -> now 1,519 km2; lost to Khawzawl
+        ("Lunglei", 81),  #    161,428 in 4,412 km2 -> now 3,565 km2; lost to Hnahthial
+    ),
+    "Punjab": (
+        ("Firozpur", 40),  #  2,029,074 in 5,411 km2 -> now 2,148 km2; lost to Fazilka
+        ("Gurdaspur", 72),  #  2,298,323 in 3,636 km2 -> now 2,628 km2; lost to Pathankot
+    ),
+    "Tamil Nadu": (
+        ("Kancheepuram", 61),  #  3,998,252 in 4,474 km2 -> now 2,725 km2; lost to Chengalputtu
+        ("Nagapattinam", 53),  #  1,616,450 in 2,509 km2 -> now 1,341 km2; lost to Mayiladuthurai
+        ("Tirunelveli", 57),  #  3,077,233 in 6,674 km2 -> now 3,793 km2; lost to Tenkasi
+        ("Vellore", 35),  #  3,936,331 in 6,088 km2 -> now 2,156 km2; lost to Ranipet, Tirupathur
+        ("Viluppuram", 55),  #  3,458,873 in 7,236 km2 -> now 3,991 km2; lost to Kallakurichi
+    ),
+    "Telangana": (
+        ("Adilabad", 25),  #  2,741,239 in 16,087 km2 -> now 4,083 km2; lost to Komaram Bheem, Mancherial, Nirmal
+        ("Karimnagar", 23),  #  3,776,269 in 9,103 km2 -> now 2,132 km2; lost to Jagtial, Peddapalli, Rajanna Sircilla
+        ("Khammam", 30),  #  2,797,370 in 15,667 km2 -> now 4,681 km2; lost to Bhadradri
+        ("Mahbubnagar", 18),  #  4,053,028 in 16,144 km2 -> now 2,850 km2; lost to Jogulamba, Nagarkurnool, Narayanpet, Wanaparthy
+        ("Medak", 26),  #  3,033,288 in 10,954 km2 -> now 2,817 km2; lost to Sangareddy, Siddipet
+        ("Nalgonda", 51),  #  3,488,809 in 14,128 km2 -> now 7,203 km2; lost to Suryapet, Yadadri Bhongiri
+        ("Nizamabad", 55),  #  2,551,335 in 7,926 km2 -> now 4,324 km2; lost to Kamareddy
+        ("Rangareddy", 52),  #  5,296,741 in 9,779 km2 -> now 5,092 km2; lost to Medchal, Vikarabad
+    ),
+    "Tripura": (
+        ("North Tripura", 67),  #    693,947 in 2,006 km2 -> now 1,353 km2; lost to Unokoti
+        ("South Tripura", 48),  #    876,001 in 3,095 km2 -> now 1,478 km2; lost to Gomati
+        ("West Tripura", 31),  #  1,725,739 in 3,068 km2 -> now 946 km2; lost to Khowai, Sipahijula
+    ),
+    "Uttar Pradesh": (
+        ("Ghaziabad", 47),  #  4,681,645 in 2,028 km2 -> now 961 km2; lost to Hapur
+        ("Moradabad", 49),  #  4,772,006 in 4,796 km2 -> now 2,331 km2; lost to Sambhal
+        ("Muzaffarnagar", 67),  #  4,143,512 in 4,080 km2 -> now 2,742 km2; lost to Samli
+        ("Rae Bareli", 75),  #  3,405,559 in 5,271 km2 -> now 3,959 km2; lost to Amethi
+        ("Sultanpur", 65),  #  3,797,117 in 3,778 km2 -> now 2,466 km2; lost to Amethi
+    ),
+    "West Bengal": (
+        ("Barddhaman", 77),  #  7,717,563 in 7,034 km2 -> now 5,396 km2; lost to Paschim Barddhaman
+        ("Darjiling", 68),  #  1,846,823 in 3,475 km2 -> now 2,373 km2; lost to Kalimpong
+        ("Jalpaiguri", 55),  #  3,872,846 in 6,191 km2 -> now 3,398 km2; lost to Alipurduar
+        ("Paschim Medinipur", 67),  #  5,913,457 in 9,380 km2 -> now 6,285 km2; lost to Jhargram
     ),
 }
 
@@ -549,12 +785,13 @@ def created_reason(name: str, year: int, predecessors: tuple[str, ...]) -> str:
     """Why a district created after the census carries no figure, and where its
     people were counted instead.
 
-    The last sentence differs by predecessor for a reason the reader can act
-    on: where the predecessor is still a district, its 2011 row is on this map
-    under that name and covers this ground as well, so the figure is one click
-    away. Where the predecessor was itself abolished -- Warangal, Jaintia
-    Hills, Karbi Anglong -- the row is on no shape at all, and saying "look at
-    the parent" would send the reader somewhere that does not exist.
+    The last sentence used to send the reader to the predecessor: "the 2011
+    figures for Karimnagar are on this map under that name and cover this
+    ground too". They were, and it was the bug -- the shape called Karimnagar
+    is a quarter of the district the census measured, and pointing at it as
+    though it were the whole was how the mis-match got its confident tone.
+    Neither fragment carries the figure now, so the sentence names where it
+    actually is: the state.
     """
     orphaned = [p for p in predecessors if p.casefold() in SUBDIVIDED_SINCE_2011]
     listed = " and ".join(predecessors)
@@ -567,11 +804,129 @@ def created_reason(name: str, year: int, predecessors: tuple[str, ...]) -> str:
                  f"the 2011 row covering this ground is on no district on this "
                  f"map either; the state total carries it.")
     else:
-        note += (f"The 2011 figures for {listed} are on this map under that name "
-                 f"and cover this ground too. They are not split across it here: "
-                 f"the census never measured the split, and a share invented for "
-                 f"the part would be an estimate wearing a measurement's clothes.")
+        many = len(predecessors) > 1
+        note += (f"The 2011 row that counted these people covers the undivided "
+                 f"{listed}, and no district on this map carries it: the shape "
+                 f"that still bears {'those names is' if many else 'that name is'} "
+                 f"only the part left after this district was carved out, and "
+                 f"giving a fragment the whole district's figure is the error "
+                 f"this gap exists to avoid. The state total carries it.")
     return note
+
+
+def lost_territory_reason(name: str, share: int,
+                          successors: tuple[tuple[str, int], ...]) -> str:
+    """Why a district the census *did* enumerate carries no figure here.
+
+    The hardest note in this file to write honestly, because the figure exists,
+    is official, and has this district's name on it. What it does not have is
+    this district's *shape*: the census measured the ground before the split
+    and the boundary file draws it after, so the row counts people who now live
+    in the districts named here. Saying that is the whole job -- a reader who
+    wants the number can find it on the state, and a reader who does not know
+    the district was cut in half is exactly who a silent figure would mislead.
+    """
+    names = [child for child, _ in successors]
+    years = sorted({year for _, year in successors})
+    listed = (", ".join(names[:-1]) + " and " + names[-1]
+              if len(names) > 1 else names[0])
+    when = (f" ({years[0]})" if len(years) == 1
+            else " (" + " and ".join(str(y) for y in years) + ")")
+    many = len(names) > 1
+    note = (f"The 2011 census measured {name} as it then stood. {listed}"
+            f"{when} {'have' if many else 'has'} been carved out of it since, "
+            f"leaving the district that kept the name with about {share}% of "
+            f"the ground the census counted. ")
+    if share < 50:
+        note += ("Most of the people in that census row live outside this "
+                 "shape. ")
+    note += (f"The figure is not shown here because it is not a figure for "
+             f"this district: it counts everyone in the undivided one, of "
+             f"which this shape is a fragment -- exactly as {names[0]} is. The "
+             f"census never measured the parts separately, and splitting one "
+             f"figure between them would be an estimate rather than a "
+             f"measurement, so neither fragment carries it. The state total "
+             f"does.")
+    return note
+
+
+def lost_territory() -> dict[tuple[str, str], tuple[int, tuple[tuple[str, int], ...]]]:
+    """(2011 state, 2011 district) -> (retained share, successors with years).
+
+    Keyed by the state the *census* named, because that is the only thing a
+    district row carries: Adilabad's row says Andhra Pradesh, and the table
+    above is written under Telangana because that is where the shape is now.
+    """
+    out: dict[tuple[str, str], tuple[int, tuple[tuple[str, int], ...]]] = {}
+    for state, entries in LOST_TERRITORY_SINCE_2011.items():
+        state_2011 = STATE_IN_2011.get(state, state)
+        for name, share in entries:
+            successors = tuple(
+                (child, year)
+                for child, year, predecessors in CREATED_AFTER_2011.get(state, ())
+                if any(p.casefold() == name.casefold() for p in predecessors))
+            out[(state_2011.casefold(), name.casefold())] = (share, successors)
+    return out
+
+
+def check_lost_territory(rows: list[dict[str, str]]) -> None:
+    """The shrunken-district table must be CREATED_AFTER_2011 read backwards.
+
+    Three ways it could be wrong and each is worse than what it replaced.
+    A district listed here that lost nothing would delete a good figure for no
+    reason. A district that *did* lose territory and is missing from here keeps
+    wearing a figure for people who no longer live in it, which is the bug this
+    table exists to fix and the one that cannot be seen on the map. And a name
+    the census never enumerated is a claim about a place that is not checked
+    anywhere else.
+
+    So the set of districts here is required to be exactly the set of
+    predecessors CREATED_AFTER_2011 names, less the three whose name survives
+    on no shape at all (those are SUBDIVIDED_SINCE_2011's job), and every one
+    of them is required to be a real 2011 district of the state the table files
+    it under. Derived and declared have to agree or nothing is emitted.
+    """
+    census = enumerated(rows)
+    problems: list[str] = []
+
+    declared: set[tuple[str, str]] = set()
+    for state, entries in LOST_TERRITORY_SINCE_2011.items():
+        state_2011 = STATE_IN_2011.get(state, state)
+        for name, share in entries:
+            key = (state, name)
+            if key in declared:
+                problems.append(f"{state} / {name} is declared twice")
+            declared.add(key)
+            if (state_2011.casefold(), name.casefold()) not in census:
+                problems.append(
+                    f"{state} / {name} is declared to have lost territory, but "
+                    f"the census enumerated no district of that name in "
+                    f"{state_2011}")
+            if not 0 < share < 100:
+                problems.append(
+                    f"{state} / {name}: a retained share of {share}% is not a "
+                    f"share of a district that lost some of its ground")
+
+    derived = {(state, predecessor)
+               for state, entries in CREATED_AFTER_2011.items()
+               for _, _, predecessors in entries
+               for predecessor in predecessors
+               if predecessor.casefold() not in SUBDIVIDED_SINCE_2011}
+    for state, name in sorted(derived - declared):
+        problems.append(
+            f"{state} / {name} had a district carved out of it after 2011 but "
+            f"is not in LOST_TERRITORY_SINCE_2011, so its shape would keep the "
+            f"undivided district's figure")
+    for state, name in sorted(declared - derived):
+        problems.append(
+            f"{state} / {name} is in LOST_TERRITORY_SINCE_2011 but no district "
+            f"in CREATED_AFTER_2011 was carved out of it")
+
+    if problems:
+        raise SystemExit(
+            "india_census: the shrunken-district table does not agree with the "
+            "post-2011 district table, so nothing is being emitted:\n  - "
+            + "\n  - ".join(problems))
 
 
 def new_districts() -> list[dict[str, Any]]:
@@ -660,6 +1015,8 @@ def build_record(name: str, counts: collections.Counter, *, level: str,
 def districts(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
     numeric = list(RELIGION_COLUMNS) + list(SCHEDULED_COLUMNS) + ["Population", "Male", "Female"]
+    check_lost_territory(rows)
+    shrunken = lost_territory()
 
     for row in rows:
         name = (row.get("District name") or "").strip()
@@ -668,6 +1025,34 @@ def districts(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
         key = name.lower()
         counts = collections.Counter({col: cell(row, col) for col in numeric})
         code = (row.get("District code") or "").strip()
+        state = (row.get("State name") or "").strip()
+        parent_name = STATE_ALIASES.get(
+            state.lower(), state.title().replace(" And ", " and ").replace(" Of ", " of "))
+
+        shrink = shrunken.get((state.casefold(), key))
+        if shrink:
+            # The district is still drawn and still named, and the shape is a
+            # fragment of what this row measured. Same treatment as the
+            # successors that were carved out of it, because that is what this
+            # is: another fragment, distinguished only by keeping the name.
+            share, successors = shrink
+            reason = lost_territory_reason(DISTRICT_ALIASES.get(key, name),
+                                           share, successors)
+            record_ = record(
+                f"IND-D{code}", DISTRICT_ALIASES.get(key, name),
+                level="admin2", parent="IND",
+                codes={"census2011_district": code, "state_name": state},
+                population=gap(NOT_AVAILABLE, reason),
+                sex_ratio=gap(NOT_AVAILABLE, reason),
+                religion=gap(NOT_AVAILABLE, reason),
+                scheduled_groups=gap(NOT_AVAILABLE, reason),
+                language=gap(NOT_AVAILABLE, reason),
+                ethnicity=gap(NOT_COLLECTED, "India does not collect ethnicity."),
+                sources=[{"field": "note", "name": SOURCE, "url": CATALOG}],
+            )
+            record_["parent_name"] = parent_name
+            out.append(record_)
+            continue
 
         if key in SUBDIVIDED_SINCE_2011:
             # One census row, several present-day districts: emit the gap, not a guess.
@@ -688,14 +1073,12 @@ def districts(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
                 ))
             continue
 
-        state = (row.get("State name") or "").strip()
         record_ = build_record(
             DISTRICT_ALIASES.get(key, name), counts,
             level="admin2", parent="IND", entity_id=f"IND-D{code}",
             codes={"census2011_district": code, "state_name": state})
         # District names repeat across states; the state is what disambiguates.
-        record_["parent_name"] = STATE_ALIASES.get(
-            state.lower(), state.title().replace(" And ", " and ").replace(" Of ", " of "))
+        record_["parent_name"] = parent_name
         out.append(record_)
 
     # The shapes the census has no row for at all, each carrying why.
@@ -1118,51 +1501,199 @@ def states(rows: list[dict[str, str]],
         for col in numeric:
             agg[state][col] += cell(row, col)
 
+    # Before anything is split. The Appendix is published against the 2011
+    # states, so its bucket has to be checked against the 2011 aggregates --
+    # after the split there is no "Andhra Pradesh" for it to match.
     if appendix is not None:
         check_appendix(appendix, {state_key(state): counts["Others_Religions"]
                                   for state, counts in agg.items()})
     detail = {state_key(unit["name"]): unit
               for code, unit in (appendix or {}).items() if code != "00"}
 
-    out = []
-    for state, counts in sorted(agg.items()):
-        # The extract shouts state names; the boundary files use title case.
-        name = state.title().replace(" And ", " and ").replace(" Of ", " of ")
-        name = STATE_ALIASES.get(state.lower(), name)
-        record_ = build_record(
-            name, counts, level="admin1", parent="IND",
-            entity_id=f"IND-S-{name.replace(' ', '-')}",
-            codes={"census2011_state_name": state})
-        unit = detail.get(state_key(state))
-        if unit and unit["counts"] and isinstance(record_["religion"], list):
-            record_["religion"] = religion_with_detail(counts, unit)
-            record_["religion_note"] = (
-                record_["religion_note"] + " "
-                + residual_note(named_residual(unit["counts"], unit["bucket"],
-                                               counts["Population"]),
-                                unit["counts"], unit["bucket"],
-                                counts["Population"]))
-            record_["sources"].append(
-                {"field": "religion", "name": APPENDIX_SOURCE,
-                 "url": APPENDIX_URL, "year": 2011,
-                 "license": "Government of India open data (GODL-India)",
-                 "note": "Published for India and the states only; the table's "
-                         "district column is zero on every row."})
-        out.append(record_)
+    pieces = split_states(rows, agg, numeric)
 
-    for name, reason in FORMED_AFTER_2011.items():
-        out.append(record(
-            f"IND-S-{name.replace(' ', '-')}", name, level="admin1", parent="IND",
-            religion=gap(NOT_AVAILABLE, reason),
-            population=gap(NOT_AVAILABLE, reason),
-            # Mother tongue too, and for the same reason. C-16 has no row for
-            # a state that did not exist, so india_language.py emits nothing
-            # here -- which left Telangana the one first-level unit in India
-            # whose language panel was blank with nothing in it to say why.
-            language=gap(NOT_AVAILABLE, reason),
-            ethnicity=gap(NOT_COLLECTED, "India does not collect ethnicity."),
-            sources=[{"field": "note", "name": SOURCE, "url": CATALOG}],
-        ))
+    out = []
+    for state, whole in sorted(agg.items()):
+        # The extract shouts state names; the boundary files use title case.
+        plain = state.title().replace(" And ", " and ").replace(" Of ", " of ")
+        plain = STATE_ALIASES.get(state.lower(), plain)
+        for name, counts, split_prose in pieces.get(state, [(plain, whole, "")]):
+            record_ = build_record(
+                name, counts, level="admin1", parent="IND",
+                entity_id=f"IND-S-{name.replace(' ', '-')}",
+                codes={"census2011_state_name": state})
+            unit = detail.get(state_key(state)) if not split_prose else None
+            if unit and unit["counts"] and isinstance(record_["religion"], list):
+                record_["religion"] = religion_with_detail(counts, unit)
+                record_["religion_note"] = (
+                    record_["religion_note"] + " "
+                    + residual_note(named_residual(unit["counts"], unit["bucket"],
+                                                   counts["Population"]),
+                                    unit["counts"], unit["bucket"],
+                                    counts["Population"]))
+                record_["sources"].append(
+                    {"field": "religion", "name": APPENDIX_SOURCE,
+                     "url": APPENDIX_URL, "year": 2011,
+                     "license": "Government of India open data (GODL-India)",
+                     "note": "Published for India and the states only; the table's "
+                             "district column is zero on every row."})
+            if split_prose:
+                for field in ("population", "religion", "scheduled_groups",
+                              "sex_ratio", "language"):
+                    record_[f"{field}_note"] = (
+                        (record_.get(f"{field}_note", "") + " " + split_prose).strip())
+            out.append(record_)
+    return out
+
+
+def split_note(new_state: str, split: StateSplit, *, residual: bool,
+               total: int, undivided: int, kept: int) -> str:
+    """What a summed state has to say about itself on the record.
+
+    The codebase's convention for a figure nobody published is a ``_note`` on
+    the field saying where it came from -- ``roll_up_field`` writes one, and so
+    does ``us_prri``'s ``aggregate_note``. This is the same promise: name the
+    arithmetic, name what went into it, and give the reader the number to check
+    it against.
+    """
+    members = (", ".join(split.districts[:-1]) + " and " + split.districts[-1]
+               if len(split.districts) > 1 else split.districts[0])
+    if residual:
+        note = (f"Summed from the {kept} districts of {split.parent} that "
+                f"stayed in it when {new_state} was separated in "
+                f"{split.year}. The 2011 "
+                f"census enumerated {split.parent} whole -- {undivided:,} "
+                f"people -- and this record covers only what was left of it: "
+                f"{total:,}. Nothing is apportioned. The split ran along "
+                f"district boundaries the census had already measured on both "
+                f"sides, so this is that census's own figures added up, not an "
+                f"estimate of a share.")
+    else:
+        note = (f"Summed from the {len(split.districts)} districts of "
+                f"{split.parent} that became {new_state}: {members}. The 2011 "
+                f"census enumerated all {len(split.districts)} separately and "
+                f"they exhaust the territory, so their total -- {total:,} "
+                f"people -- is that census's figure for this state rather than "
+                f"an estimate of one. The Registrar General published no row "
+                f"under this name because the state did not exist when the "
+                f"tables were drawn up.")
+    caveat = split.residual_caveat if residual else split.caveat
+    if caveat:
+        note += " " + caveat
+    note += (" Table C-01 Appendix, which names the religions inside 'Other "
+             "religions and persuasions', is published against the states of "
+             "2011 and has no row for this one, so the residual stays whole "
+             "here where those states show its break-up.")
+    return note
+
+
+def split_states(rows: list[dict[str, str]],
+                 agg: dict[str, collections.Counter],
+                 numeric: list[str],
+                 ) -> dict[str, list[tuple[str, collections.Counter, str]]]:
+    """Turn each 2011 state that has since been divided into its present-day parts.
+
+    Every check here is arithmetic against a figure this function did not
+    produce, because a sum can only be checked by something outside it:
+
+    * the districts named in the split must all be districts the census
+      enumerated in the parent state, and their codes must be the codes the
+      census gave them -- name and code are two independent handles on the same
+      row and the C-01 extract and the C-16 workbooks key on different ones;
+    * the two halves must add back to the parent's own enumerated total in
+      every column, which catches a district counted twice or dropped;
+    * each half's population must equal the published figure in the table
+      above, to the person.
+
+    Any of them failing stops the run. A state figure assembled out of
+    districts is a claim nobody else has made in print, and the only thing that
+    makes it safe is that it is checkable.
+    """
+    problems: list[str] = []
+    out: dict[str, list[tuple[str, collections.Counter, str]]] = {}
+    by_parent: dict[str, list[tuple[str, StateSplit]]] = collections.defaultdict(list)
+    for new_state, split in SPLIT_STATES.items():
+        by_parent[split.parent.casefold()].append((new_state, split))
+        if STATE_IN_2011.get(new_state) != split.parent:
+            problems.append(
+                f"{new_state} is split from {split.parent} here and "
+                f"{STATE_IN_2011.get(new_state)!r} in STATE_IN_2011")
+
+    for parent_raw, counts in agg.items():
+        splits = by_parent.get(state_key(parent_raw))
+        if not splits:
+            continue
+        parent = parent_raw.title().replace(" And ", " and ").replace(" Of ", " of ")
+        parent = STATE_ALIASES.get(parent_raw.lower(), parent)
+        claimed: dict[str, str] = {}
+        parts: list[tuple[str, collections.Counter, str]] = []
+        for new_state, split in splits:
+            for district in split.districts:
+                if district.casefold() in claimed:
+                    problems.append(f"{district} is claimed by both "
+                                    f"{claimed[district.casefold()]} and {new_state}")
+                claimed[district.casefold()] = new_state
+        residual_counts: collections.Counter = collections.Counter()
+        member_counts: dict[str, collections.Counter] = {
+            new_state: collections.Counter() for new_state, _ in splits}
+        seen: dict[str, str] = {}
+        for row in rows:
+            if (row.get("State name") or "").strip() != parent_raw:
+                continue
+            name = (row.get("District name") or "").strip()
+            owner = claimed.get(name.casefold())
+            seen[name.casefold()] = (row.get("District code") or "").strip()
+            target = member_counts[owner] if owner else residual_counts
+            for col in numeric:
+                target[col] += cell(row, col)
+        for new_state, split in splits:
+            for district, code in zip(split.districts, split.codes):
+                got = seen.get(district.casefold())
+                if got is None:
+                    problems.append(
+                        f"{new_state}: the census enumerated no district called "
+                        f"{district!r} in {parent}")
+                elif got.lstrip("0") != str(code):
+                    problems.append(
+                        f"{new_state}: {district} is district {got} in the "
+                        f"extract and {code} in SPLIT_STATES")
+            got = member_counts[new_state]["Population"]
+            if got != split.population:
+                problems.append(
+                    f"{new_state}: its {len(split.districts)} districts sum to "
+                    f"{got:,} people against a published {split.population:,}")
+            parts.append((new_state, member_counts[new_state],
+                          split_note(new_state, split, residual=False,
+                                     total=member_counts[new_state]["Population"],
+                                     undivided=counts["Population"],
+                                     kept=0)))
+        for col in numeric:
+            total = residual_counts[col] + sum(c[col] for c in member_counts.values())
+            if total != counts[col]:
+                problems.append(
+                    f"{parent}: the parts sum to {total:,} in column {col} "
+                    f"against {counts[col]:,} for the undivided state")
+        only = splits[0][1]
+        if len(splits) == 1 and residual_counts["Population"] != only.residual:
+            problems.append(
+                f"{parent}: what is left after {splits[0][0]} is "
+                f"{residual_counts['Population']:,} people against a published "
+                f"{only.residual:,}")
+        kept = len(seen) - sum(len(s.districts) for _, s in splits)
+        parts.append((parent, residual_counts,
+                      split_note(splits[0][0], only, residual=True,
+                                 total=residual_counts["Population"],
+                                 undivided=counts["Population"], kept=kept)))
+        out[parent_raw] = parts
+
+    if problems:
+        raise SystemExit(
+            "india_census: the state splits do not reproduce the census's own "
+            "figures, so nothing is being emitted:\n  - "
+            + "\n  - ".join(problems))
+    for parent_raw, parts in out.items():
+        log("  split " + parent_raw.title() + ": "
+            + ", ".join(f"{name} {c['Population']:,}" for name, c, _ in parts))
     return out
 
 
