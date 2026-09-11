@@ -321,7 +321,12 @@ window.WorldMap = (function () {
         if (handlers.onLevelChange) handlers.onLevelChange(activeLevel);
       }
       clearTimeout(moveTimer);
-      moveTimer = setTimeout(announceView, 120);
+      moveTimer = setTimeout(() => {
+        announceView();
+        // Only the fitted shading cares where the viewport is; the handler is
+        // a no-op otherwise, so this costs a call per pan and nothing else.
+        if (handlers.onMoved) handlers.onMoved();
+      }, 120);
     });
 
     map.on("sourcedata", (event) => {
@@ -381,10 +386,19 @@ window.WorldMap = (function () {
   }
 
   function getMap() { return map; }
+
+  /** Is this point inside what the reader can currently see? */
+  function inView(point) {
+    if (!map || !Array.isArray(point)) return false;
+    const bounds = map.getBounds();
+    const [lng, lat] = point;
+    return lat >= bounds.getSouth() && lat <= bounds.getNorth()
+      && lng >= bounds.getWest() && lng <= bounds.getEast();
+  }
   function getLevel() { return activeLevel; }
   function levelId(i) { return LEVELS[i].id; }
 
-  return { init, applyColors, repaintAll, select, fitBBox, visibleCountries,
+  return { init, applyColors, repaintAll, select, fitBBox, visibleCountries, inView,
            getMap, getLevel, levelId, restyle, setPinnedLevel, getPinnedLevel,
            LEVELS };
 })();

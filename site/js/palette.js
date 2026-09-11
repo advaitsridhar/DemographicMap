@@ -58,6 +58,20 @@ window.Palette = (function () {
   };
 
   const NEUTRAL = { light: "#d8d6ce", dark: "#33332f" };
+  /* A group the classification does not place yet.
+   *
+   * It has to be a colour and not the neutral, because the neutral means the
+   * map has no figure here and this unit has one: a census counted these
+   * people and named them, and the only thing missing is the tree's opinion
+   * about which family the name belongs to. Drawn in the neutral, that read
+   * as a data gap -- the one confusion this project can least afford, since a
+   * gap is supposed to be the honest signal that nobody has asked.
+   *
+   * It is deliberately outside the family palettes, which run warm through
+   * the ancestries and saturated through the language families: a violet-grey
+   * belongs to no family, so it cannot be mistaken for one.
+   */
+  const UNPLACED = { light: "#a48fbb", dark: "#6b5980" };
 
   function mode() {
     const stamped = document.documentElement.getAttribute("data-theme");
@@ -106,48 +120,112 @@ window.Palette = (function () {
     return `#${f(0)}${f(8)}${f(4)}`;
   }
 
-  /* A group's colour at a given share.
+  /* The relative luminance of a colour, as the WCAG defines it.
    *
-   * Hue and saturation are the group's; only lightness moves, so the shade
-   * answers "how much" without ever changing the answer to "which". The band
-   * is deliberately narrow at the pale end: a unit where the largest group
-   * holds 30% is a plural place, not an empty one, and it still has to be
-   * clearly its own colour rather than nearly the page.
+   * This is what the eye reads as "how dark is that", and it is not what HSL
+   * calls lightness. Yellow and blue at the same HSL lightness differ by more
+   * than four times in luminance, which is why driving the ramp with HSL
+   * produced a map whose shading meant one thing in India and another in
+   * Mongolia.
+   */
+  function luminance(hex) {
+    const c = hex.replace("#", "");
+    const part = [0, 2, 4].map((i) => {
+      const v = parseInt(c.slice(i, i + 2), 16) / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    });
+    return 0.2126 * part[0] + 0.7152 * part[1] + 0.0722 * part[2];
+  }
+
+  /* The colour of this hue that reads as dark as `target` asks.
+   *
+   * Luminance rises monotonically with HSL lightness for a fixed hue and
+   * saturation, so a bisection finds the lightness that hits the target. It
+   * is a search rather than a formula because the relationship depends on the
+   * hue: to look as dark as a mid blue, a yellow has to go much further down.
+   */
+  function atLuminance(h, s, target) {
+    let low = 0;
+    let high = 1;
+    let hex = "#000000";
+    for (let i = 0; i < 16; i += 1) {
+      const mid = (low + high) / 2;
+      hex = hslToHex(h, s, mid);
+      if (luminance(hex) < target) low = mid; else high = mid;
+    }
+    return hex;
+  }
+
+  /* A group's colour at a given share: hue says which group, darkness says
+   * how much of it.
+   *
+   * Two things were wrong before and both made the map say the opposite of
+   * what it meant. The band was cut in HSL lightness, so equal shares landed
+   * up to five times apart in luminance -- a county 80% gold rendered lighter
+   * than one 50% red, and the reader comparing them read the shading
+   * backwards. And dark mode ran the band the other way, on the usual
+   * dark-interface reasoning that more should glow brighter, which meant
+   * every share on the map was encoded upside down for anyone whose browser
+   * was in dark mode.
+   *
+   * So the ramp is now stated in luminance, the same target for every hue,
+   * and it runs pale to dark in BOTH themes. What a shade means is a property
+   * of the data and must not change with the colour of the surrounding
+   * furniture. The two themes differ only in where the dark end stops, so
+   * that a full-share unit stays clearly apart from the land beneath it:
+   * light mode can go almost to black, dark mode stops well above its own
+   * background.
    *
    * Below `floor` every share is drawn at the palest step rather than fading
    * out, because a plurality of 26% is a fact about the place and not a
-   * near-absence. Dark mode runs the band the other way: there, more of a
-   * group means a brighter shape against a dark ground.
+   * near-absence.
    */
   const SHARE_FLOOR = 25;
+  const BAND = {
+    light: { pale: 0.78, deep: 0.055 },
+    // Dark mode's land sits at about 0.023, so the deep end stops at roughly
+    // five times that: still plainly the dark end of the ramp, still plainly
+    // not the empty land under it.
+    dark: { pale: 0.70, deep: 0.115 },
+  };
 
-  function group(hex, share) {
+  function group(hex, share, floor, top) {
     if (!hex) return NEUTRAL[mode()];
     const [h, s] = hexToHsl(hex);
+    // The floor is 25 for the most-populous-group map, where nothing can lead
+    // with less, and 0 for a single group's share, where 3% is a real answer
+    // that must not be drawn as the same near-white as 0%. `top` is normally
+    // 100; it drops only when the reader asks the ramp to fit the range
+    // actually on screen, which is the difference between a screenful of
+    // districts that are all 85-95% one group reading as one flat colour and
+    // reading as the spread it is.
+    const base = Number.isFinite(floor) ? floor : SHARE_FLOOR;
+    const ceiling = Number.isFinite(top) ? top : 100;
     const t = Math.max(0, Math.min(1,
-      ((Number.isFinite(share) ? share : 100) - SHARE_FLOOR) / (100 - SHARE_FLOOR)));
-    const dark = mode() === "dark";
-    const light = dark ? 0.30 + t * 0.38 : 0.82 - t * 0.44;
-    // A grey base stays grey. Floor-ing saturation at 0.25 turned the legend's
-    // neutral share ramp -- drawn from a grey so it stands for every group at
-    // once -- into a row of pinks, because hue 0 of a colourless input is red.
-    const sat = s < 0.02 ? 0
-      : Math.max(0.25, Math.min(0.95, s * (dark ? 0.75 + t * 0.35 : 0.55 + t * 0.5)));
-    return hslToHex(h, sat, light);
+      ((Number.isFinite(share) ? share : 100) - base) / Math.max(1, ceiling - base)));
+    const band = BAND[mode()] || BAND.light;
+    const target = band.pale + t * (band.deep - band.pale);
+    // A grey base stays grey: hue 0 of a colourless input is red, and the
+    // legend's neutral ramp stands for every group at once.
+    const sat = s < 0.02 ? 0 : Math.max(0.35, Math.min(0.95, s));
+    return atLuminance(h, sat, target);
   }
 
   /** The steps of one group's share ramp, palest first, for a legend. */
-  function groupRamp(hex, steps) {
+  function groupRamp(hex, steps, floor, top) {
     const n = steps || 5;
+    const base = Number.isFinite(floor) ? floor : SHARE_FLOOR;
+    const ceiling = Number.isFinite(top) ? top : 100;
     return Array.from({ length: n },
-      (_, i) => group(hex, SHARE_FLOOR + (i / (n - 1)) * (100 - SHARE_FLOOR)));
+      (_, i) => group(hex, base + (i / (n - 1)) * (ceiling - base), base, ceiling));
   }
 
   function ramp() { return SEQUENTIAL[mode()].slice(); }
   function neutral() { return NEUTRAL[mode()]; }
+  function unplaced() { return UNPLACED[mode()]; }
   function status(name) { return STATUS[name] || STATUS.not_available; }
 
-  return { categorical, sequential, ramp, neutral, status, mode, STATUS,
+  return { categorical, sequential, ramp, neutral, unplaced, status, mode, STATUS,
            group, groupRamp, SHARE_FLOOR,
            MAX_CATEGORIES: CATEGORICAL.light.length };
 })();

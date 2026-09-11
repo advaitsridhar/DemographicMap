@@ -222,12 +222,76 @@ less than mistaking Islam for Buddhism. And the map does have room for a label:
 every unit names its group and share on hover, the legend names each colour in
 the order it leads the most units, and the panel names it again on selection.
 
-### Groups are a tree
+### Groups are a three-tier tree
 
-`scripts/canonical_groups.py` says which source labels mean the same thing and
-which of those sit inside which. `Roman Catholic` is its own group under
-`Christianity`; `Mandarin` sits under `Chinese` under `Sino-Tibetan languages`.
-Three things follow:
+`scripts/canonical_groups.py` says which source labels mean the same thing.
+`scripts/group_tree.py` says how those names nest, in three tiers that mean the
+same thing in every topic:
+
+| tier | religion | language | ethnicity |
+|---|---|---|---|
+| 1 — the broadest defensible grouping | Abrahamic religions | Indo-European | African ancestry |
+| 2 — the family | Christianity | Germanic | Bantu peoples |
+| 3 — as reported | Catholicism | English | Zulu |
+
+**Ethnicity's tier 1 is ancestry, not race.** Race categories are made by states
+and no two states make the same ones: US race, Brazilian *cor ou raça*, UK ethnic
+group and Chinese *minzu* have different answer sets and different questions
+behind them. What they share with an ethnonym is that both assert something about
+where a population came from, so ancestry is the axis that can carry all of them
+at once — and it is why Yoruba, "Black or African American" and Nigerian land in
+one colour band on the map.
+
+**A census race category is a sibling of the peoples, never their parent.** "Black
+or African American" and Bantu peoples both sit under African ancestry; neither
+contains the other. Making Yoruba a child of Black would have the map assert a
+mapping no census publishes, and would double-count the moment a source published
+both.
+
+**A contested placement gets its own tier-1 node.** Jews are an ethnoreligious
+people counted by European registers; Roma are of South Asian origin and European
+residence. Neither belongs under one ancestry without an argument this map has no
+business making, so they stand alone.
+
+#### Reading a name the tables do not spell
+
+No table will ever list every spelling of every group, so `parent_of` falls
+through a series of rules, narrowest first. Each is a statement about what the
+name *is*, not a guess at where it might fit:
+
+1. **the name itself**, then **a spelling of it** — accents and typographic
+   punctuation flattened (`Éwé` is `Ewe`, `Alaba-K’abeena` is `Alaba-K'abeena`),
+   a kind word added or dropped (`Banda Languages` is `Banda`, `Romance` is
+   `Romance languages`), a bracket or slash opened (`Lushai/Mizo` is `Mizo`);
+2. **a band's remainder under the band** — `Romance languages, n.i.e.` is filed
+   *under* Romance, not beside it, or the family would not count the rows the
+   census could not name;
+3. **a root word**, for the national blocks that document one;
+4. **a noun-class prefix taken off** — `Mzaramo`, `Ciyao` and `Mokgatla` are
+   Zaramo, Yao and Kgatla. Accepted only where the root lands in a family that
+   uses these prefixes, so three spare letters cannot match something on the
+   other side of the world;
+5. **a compound whose parts agree** — `Han Chinese` is Han and is Chinese, and
+   both are Han and Sinitic peoples. The label lands at the deepest node all of
+   its resolvable parts share, so `Amazigh and Arab`, which is neither, still
+   lands in the ancestry both belong to.
+
+**The refusal is the point of rule 5.** `European and Mestizo` names two
+ancestries sharing no node, so it is left unplaced rather than read as either.
+An unplaced group keeps its figure and its name and is drawn in a reserved
+colour that is not the no-data grey: the data is there, only the classification
+is missing, and saying so is different from reporting a gap.
+
+`python -m scripts.check_classified` counts what is still unplaced, by units led
+and by distinct label — the two numbers mean different things, and a long tail of
+labels leading one district each is not the same problem as one label leading a
+hundred.
+
+Coverage is measured rather than assumed — `python -m scripts.group_tree
+--coverage` prints the share of the shipped map each tree accounts for. It is
+99.4% of religion mentions, 96.8% of ethnicity and 92.1% of language.
+
+Three things follow from the nesting:
 
 - **Either level can be asked for.** Picking Christianity over Poland counts the
   `Roman Catholic` rows that never say the word; picking Catholicism counts only
@@ -239,9 +303,10 @@ Three things follow:
   person gave once. Of 1,824 shipped records shaped like that, none is a total row
   restated.
 - **The picker is a tree.** Families first, widest reach first, open to show what
-  is inside. `site/data/groups.json` carries each group's parent, children, colour,
-  and reach counted both for the group alone and for its whole subtree — the
-  picker shows the second, because that is what picking it shades.
+  is inside. `site/data/groups.json` carries each group's parent, children, tier,
+  colour, whether it is a census category, and reach counted both for the group
+  alone and for its whole subtree — the picker shows the second, because that is
+  what picking it shades.
 
 ---
 

@@ -321,7 +321,12 @@ html, body {
   grid-area: swatch; width: .55rem; height: .55rem; margin: .28rem .4rem 0 0;
   border-radius: 2px; box-shadow: inset 0 0 0 1px var(--border-ring);
 }
-.g-swatch-none { background: var(--axis); }
+.g-swatch-none {
+  /* The inline colour wins; this keeps the shape recognisable if the script
+     that sets it has not run, and marks the dot as an outline rather than a
+     fill so it reads as provisional. */
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
+}
 .g-opt:hover { background: var(--surface-sunken); }
 .g-opt:focus-visible { outline: 2px solid var(--accent); outline-offset: -1px; }
 .g-opt[aria-selected="true"] {
@@ -632,3 +637,30 @@ dialog p, dialog li { font-size: .8rem; line-height: 1.6; color: var(--ink-secon
    button inheriting the heading's letter-spacing. */
 .filter-section > h3, .panel-head h3 { display: flex; align-items: center; }
 .panel-head h3 .info { letter-spacing: 0; }
+
+/* The table view's total, which exists so a reader can see the column adds up
+   rather than take it on trust. */
+.data-table .total-row th {
+  padding-top: .3rem; border-top: 1px solid var(--hairline);
+  font-size: .7rem; color: var(--ink-secondary); text-align: left;
+}
+.data-table .total-row th:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* The shading scale, when it has been stretched to the range on screen.
+   It is called out because a shade that means something different from one
+   view to the next has to say so where the shade is explained. */
+.legend-fitted {
+  font-style: normal;
+  font-size: 11px;
+  color: var(--ink-muted);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 0 5px;
+  margin-left: 4px;
+  white-space: nowrap;
+}
+.legend-fitted-note {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: var(--ink-muted);
+}

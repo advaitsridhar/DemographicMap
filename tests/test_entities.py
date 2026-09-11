@@ -4275,19 +4275,23 @@ class ASurveyIsNotACount(unittest.TestCase):
         for Islam still counts every one of them.
         """
         import canonical_groups as cg
+        import group_tree
         table = cg.lookup("religion")
         for label in ("Muslim only", "Sunni only", "Tijaniya Brotherhood",
                       "Mouridiya Brotherhood", "Qadiriya", "Ismaeli"):
             name = table.get(cg.key(label))
-            self.assertEqual(cg.family("religion", name), "Islam", label)
+            self.assertEqual(group_tree.at_tier("religion", name, 2), "Islam",
+                             label)
 
     def test_the_named_churches_reach_christianity(self):
         import canonical_groups as cg
+        import group_tree
         table = cg.lookup("religion")
         for label in ("Christian only", "Zionist Christian Church", "Coptic",
                       "New Apostolic Church", "Dutch Reformed"):
             name = table.get(cg.key(label))
-            self.assertEqual(cg.family("religion", name), "Christianity", label)
+            self.assertEqual(group_tree.at_tier("religion", name, 2),
+                             "Christianity", label)
 
 
 class ScotlandsCensusNestsAndAsksThreeQuestions(unittest.TestCase):
@@ -4421,6 +4425,7 @@ class NorthernIrelandAsksTwoReligionQuestions(unittest.TestCase):
         would show the province at roughly the Catholic share alone.
         """
         import canonical_groups as cg
+        import group_tree
         table = cg.lookup("religion")
         for label in ("Presbyterian Church in Ireland", "Church of Ireland",
                       "Methodist Church in Ireland", "Free Presbyterian",
@@ -4428,7 +4433,8 @@ class NorthernIrelandAsksTwoReligionQuestions(unittest.TestCase):
                       "Mixed Catholic / Protestant",
                       "Other Christian denominations"):
             name = table.get(cg.key(label))
-            self.assertEqual(cg.family("religion", name), "Christianity", label)
+            self.assertEqual(group_tree.at_tier("religion", name, 2),
+                             "Christianity", label)
         belfast = next(r for r in self.rows() if r["name"] == "Belfast")
         folded = cg.canonicalise(belfast["religion"], "religion")
         self.assertGreater(cg.share_of(folded, "religion", "Christianity"), 70.0)

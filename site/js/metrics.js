@@ -107,14 +107,22 @@ window.Metrics = (function () {
    * Christianity where it said Christian. Nothing is counted twice either
    * way: each row lands in exactly one bucket.
    */
-  function tally(record, field, level) {
+  /** ``name`` rolled up to tier ``want``, or as far up as its tree goes. */
+  function atTier(field, name, want) {
+    const trail = ancestry(field, name);          // leaf first, tier 1 last
+    const index = trail.length - want;
+    return trail[Math.max(0, Math.min(index, trail.length - 1))];
+  }
+
+  function tally(record, field, tier) {
     const value = record[field];
     const out = new Map();
     if (!Array.isArray(value)) return out;
+    const want = Number(tier) || 2;
     for (const row of value) {
       if (typeof row.pct !== "number") continue;
       const name = canonicalName(field, row.group);
-      const key = level === "family" ? familyOf(field, name) : name;
+      const key = atTier(field, name, want);
       out.set(key, (out.get(key) || 0) + row.pct);
     }
     return out;
@@ -186,7 +194,7 @@ window.Metrics = (function () {
    * says so either way.
    */
   function dominant(record, field, level) {
-    const totals = tally(record, field, level || "family");
+    const totals = tally(record, field, level || 2);
     if (!totals.size) return null;
     let best = null;
     let bestResidual = null;
@@ -313,6 +321,34 @@ window.Metrics = (function () {
   ];
 
   /** Compute colours for a set of records under one metric. */
+
+  /* The two ends of the shading ramp for one screenful of units.
+   *
+   * "absolute" is the honest default: 25% to 100% always means the same thing,
+   * so two places can be compared across a session and across the map. Its
+   * cost is that a homogeneous region reads as one flat colour -- zoomed into
+   * a state where every district is 85-95% one group, an absolute ramp throws
+   * away every distinction the reader came to see.
+   *
+   * "fit" trades that comparability for contrast, stretching the ramp over the
+   * range actually present. It is never silent: the caller puts the two real
+   * endpoints in the legend, because a shade that means something different
+   * from one view to the next has to say so.
+   */
+  function spanOf(values, spread, floor, keep) {
+    const base = Number.isFinite(floor) ? floor : 25;
+    const real = values.filter((v, i) => typeof v === "number" && isFinite(v)
+                                         && (!keep || keep(i)));
+    if (spread !== "fit" || real.length < 2) return { floor: base, top: 100, fitted: false };
+    const low = Math.min(...real);
+    const high = Math.max(...real);
+    // A range narrower than a couple of points is noise, not structure, and
+    // stretching it would turn rounding into a pattern the reader would read
+    // as real.
+    if (high - low < 2) return { floor: base, top: 100, fitted: false };
+    return { floor: Math.floor(low), top: Math.ceil(high), fitted: true };
+  }
+
   function paint(records, metricKey, opts) {
     const metric = METRICS[metricKey] || METRICS.coverage;
     const Palette = window.Palette;
@@ -333,17 +369,36 @@ window.Metrics = (function () {
       // world under thirty that cover a district each.
       const led = new Map();
       let missing = 0;
+      let unplaced = 0;
+      // Two passes, because the ramp may need to know the range before it can
+      // colour anything. Zoomed into Madhya Pradesh every district is between
+      // 85% and 95% Hindu, and against a fixed 25-100% ramp that is one flat
+      // brown: the data is all there and none of it is visible.
+      const leaders = [];
       for (const record of records) {
         const top = dominant(record, opts.field, opts.depth);
-        if (!top) { out.set(record.id, Palette.neutral()); missing += 1; continue; }
-        const hue = hueOf(opts.field, top.group);
-        out.set(record.id, Palette.group(hue, top.pct));
+        if (!top) { missing += 1; leaders.push(null); continue; }
+        leaders.push(top);
+      }
+      const span = spanOf(leaders.map((t) => t && t.pct), opts.spread,
+                          Palette.SHARE_FLOOR,
+                          opts.inView && ((i) => opts.inView(records[i])));
+      records.forEach((record, i) => {
+        const top = leaders[i];
+        if (!top) { out.set(record.id, Palette.neutral()); return; }
+        // A group the tree does not place gets the reserved colour rather
+        // than the neutral: the figure exists and the name was published, so
+        // drawing it as a blank would report a gap the source did not leave.
+        const own = hueOf(opts.field, top.group);
+        const hue = own || Palette.unplaced();
+        if (!own) unplaced += 1;
+        out.set(record.id, Palette.group(hue, top.pct, span.floor, span.top));
         const seen = led.get(top.group) ||
           { name: top.group, hue, units: 0, residual: top.residual, peak: 0 };
         seen.units += 1;
         seen.peak = Math.max(seen.peak, top.pct);
         led.set(top.group, seen);
-      }
+      });
       const items = Array.from(led.values())
         .sort((a, b) => b.units - a.units || a.name.localeCompare(b.name));
       return {
@@ -354,7 +409,11 @@ window.Metrics = (function () {
           shown: Math.min(items.length, 12),
           missing,
           missingColor: Palette.neutral(),
-          floor: Palette.SHARE_FLOOR,
+          unplaced,
+          unplacedColor: Palette.unplaced(),
+          floor: span.floor,
+          ceiling: span.top,
+          fitted: span.fitted,
           note: metric.note,
         },
         metric,
@@ -369,6 +428,13 @@ window.Metrics = (function () {
     if (!values.length) {
       return { colors: out, legend: { type: "empty", metric }, metric };
     }
+
+    // A share-of-one-group map is drawn in that group's own colour, so the
+    // map answers "which group" and "how much" with one look and matches the
+    // swatch beside the group in the picker. Every other sequential metric --
+    // population, median age -- has no group and keeps the neutral blue ramp.
+    const groupHue = metric.needsGroup && opts.group
+      ? hueOf(opts.field, opts.group) : null;
 
     values.sort((a, b) => a - b);
     const domain = metric.domain || [values[0], values[values.length - 1]];
@@ -386,11 +452,21 @@ window.Metrics = (function () {
       return hi === lo ? 0.5 : (x - lo) / (hi - lo);
     };
 
+    // A share map gets the same choice as the group map: 0-100 always, or the
+    // range actually on screen. The other sequential metrics already fit
+    // themselves, by percentile, a few lines above.
+    const share = groupHue
+      ? spanOf(records.map((r) => metric.evaluate(r, opts)), opts.spread, 0,
+               opts.inView && ((i) => opts.inView(records[i])))
+      : { floor: 0, top: 100, fitted: false };
+
     let missing = 0;
     for (const record of records) {
       const value = metric.evaluate(record, opts);
       if (Number.isFinite(value)) {
-        out.set(record.id, Palette.sequential(project(value)));
+        out.set(record.id,
+                groupHue ? Palette.group(groupHue, value, share.floor, share.top)
+                         : Palette.sequential(project(value)));
       } else {
         // Neutral grey, not a status colour: on a sequential map the status
         // palette would read as a value at one end of the ramp.
@@ -403,9 +479,14 @@ window.Metrics = (function () {
       colors: out,
       legend: {
         type: "ramp",
-        stops: Palette.ramp(),
-        low: metric.format ? metric.format(low) : String(low),
-        high: metric.format ? metric.format(high) : String(high),
+        stops: groupHue
+          ? Palette.groupRamp(groupHue, 11, share.floor, share.top)
+          : Palette.ramp(),
+        low: groupHue ? `${share.floor}%`
+                      : (metric.format ? metric.format(low) : String(low)),
+        high: groupHue ? `${share.top}%`
+                       : (metric.format ? metric.format(high) : String(high)),
+        fitted: share.fitted,
         missing,
         missingColor: Palette.neutral(),
         note: metric.note,
@@ -426,6 +507,6 @@ window.Metrics = (function () {
   }
 
   return { METRICS, FIELDS, paint, topGroups, dominant, largestShare, shareOf,
-           shareDetail, largestShareDetail, tally,
+           shareDetail, largestShareDetail, tally, atTier,
            setGroupIndex, canonicalName, ancestry, familyOf, hueOf, groupEntry };
 })();

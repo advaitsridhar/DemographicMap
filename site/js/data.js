@@ -206,9 +206,25 @@ window.Fmt = (function () {
     return style === "compact" && Math.abs(n) >= 10000 ? compact.format(n) : plain.format(n);
   }
 
+  /* Two percentage formats, because they answer different questions.
+   *
+   * `pct` is for a single figure read on its own -- a hover readout, a legend
+   * end -- where "91%" is easier to take in than "90.9%" and the tenth adds
+   * nothing.
+   *
+   * `pct1` is for a figure read in a column with others. There the tenth is
+   * the whole point: rounding 90.9 to 91 makes a composition that sums to
+   * exactly 100.0 look as though it sums to 100.1, and a reader who checks
+   * the arithmetic is entitled to find it correct.
+   */
   function pct(n) {
     if (!Number.isFinite(n)) return "—";
     return `${n >= 10 ? Math.round(n) : Math.round(n * 10) / 10}%`;
+  }
+
+  function pct1(n) {
+    if (!Number.isFinite(n)) return "—";
+    return `${(Math.round(n * 10) / 10).toFixed(1)}%`;
   }
 
   function escape(text) {
@@ -217,5 +233,5 @@ window.Fmt = (function () {
       .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
   }
 
-  return { isGap, gapStatus, valueOf, number, pct, escape };
+  return { isGap, gapStatus, valueOf, number, pct, pct1, escape };
 })();

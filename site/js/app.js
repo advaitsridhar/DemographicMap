@@ -14,6 +14,8 @@
     fieldSection: document.getElementById("field-section"),
     fieldOptions: document.getElementById("field-options"),
     depthSection: document.getElementById("depth-section"),
+    spreadSection: document.getElementById("spread-section"),
+    spreadOptions: document.getElementById("spread-options"),
     depthOptions: document.getElementById("depth-options"),
     groupSection: document.getElementById("group-section"),
     groupSearch: document.getElementById("group-search"),
@@ -54,7 +56,11 @@
     groupQuery: "",
     // How finely the "most populous group" map reads a composition: the top
     // of each tree, or the finest canonical name a source wrote.
-    depth: "family",
+    depth: "2",
+    // Whether the shading runs over the whole 25-100% range or over the range
+    // actually on screen. Absolute by default, because a shade that means the
+    // same thing everywhere is the more honest starting point.
+    spread: "absolute",
     // Which parents the group tree is showing the children of. Expanding is
     // per field, because the fields are three different trees.
     openBranches: {},
@@ -174,11 +180,20 @@
       "Chinese minzu have different answer sets. Categories are comparable " +
       "within a country and often not across a border.",
     depth:
-      "Broad families use the top of each tree — Christianity, Islam, " +
-      "Indo-European languages — which means the same distinction in every " +
-      "country. As reported splits them as far as each source does, so " +
-      "Catholic, Protestant and Orthodox separate wherever a census counted " +
-      "them and stay together where it did not.",
+      "Three widths of the same rows. The widest is the broadest grouping " +
+      "this map is willing to make and the one that means the same thing in " +
+      "every country: Abrahamic religions, Indo-European languages, African " +
+      "ancestry. The middle is the family — Christianity, Germanic, Bantu " +
+      "peoples. As reported is each census's own words, which is the most " +
+      "detail and the least comparable across a border.",
+    spread:
+      "The full range always means the same thing, so two places can be " +
+      "compared anywhere on the map — but zoom into a region where every " +
+      "district is 85 to 95 per cent one group and it is all one flat " +
+      "colour. Fit to view stretches the ramp over the range actually on " +
+      "screen, which shows that variation at the cost of the shade meaning " +
+      "something different from one view to the next. The legend always " +
+      "names the two ends, so you can see which you are looking at.",
     group:
       "Picking a family counts every group inside it, so Christianity finds " +
       "the censuses that only ever say Roman Catholic. Open a family to pick " +
@@ -326,10 +341,26 @@
    * wherever a census bothered to, which is what makes Europe look like
    * itself rather than like one blue sheet.
    */
-  const DEPTHS = [
-    ["family", "Broad families"],
-    ["group", "As reported"],
-  ];
+  /* How wide a grouping the most-populous-group map reads.
+   *
+   * Three tiers, the same three in every topic, because the tree is three
+   * deep everywhere: the broadest grouping the project is willing to make,
+   * the family, and the words a census actually used. The labels change with
+   * the topic because the same tier is a different kind of thing in each --
+   * tier 1 of religion is a tradition, of language a family, of ethnicity an
+   * ancestry -- and a control that said "Tier 1" would be asking the reader
+   * to hold the abstraction rather than the question.
+   */
+  const DEPTH_LABELS = {
+    religion: ["Traditions", "Religions", "As reported"],
+    language: ["Families", "Branches", "As reported"],
+    ethnicity: ["Ancestry", "Peoples", "As reported"],
+  };
+
+  function depths() {
+    const names = DEPTH_LABELS[state.field] || DEPTH_LABELS.religion;
+    return names.map((label, i) => [String(i + 1), label]);
+  }
 
   const DETAIL_LEVELS = [
     ["auto", "Follow zoom", "Countries, then first-level, then second-level as you zoom in."],
@@ -363,22 +394,30 @@
         els.groupSearch.value = "";
       }
       markChoice(els.fieldOptions, state.field);
+      renderDepths();
       syncSections();
       refreshColors();
     });
     markChoice(els.fieldOptions, state.field);
 
-    els.depthOptions.innerHTML = DEPTHS
+    els.spreadOptions.innerHTML = [["absolute", "Full range"], ["fit", "Fit to view"]]
       .map(([value, label]) => `<button type="button" role="radio" class="seg" data-value="${esc(value)}"
                                aria-checked="false" tabindex="-1">${esc(label)}</button>`)
       .join("");
+    markChoice(els.spreadOptions, state.spread);
+    wireChoice(els.spreadOptions, (value) => {
+      state.spread = value;
+      markChoice(els.spreadOptions, value);
+      refreshColors();
+    });
+
+    renderDepths();
     wireChoice(els.depthOptions, (value) => {
       state.depth = value;
       markChoice(els.depthOptions, value);
       renderSummary();
       refreshColors();
     });
-    markChoice(els.depthOptions, state.depth);
 
     els.detailOptions.innerHTML = DETAIL_LEVELS
       .map(([value, label, hint]) => optionHTML("radio", "opt", value, label, hint)).join("");
@@ -462,6 +501,9 @@
     const metric = window.Metrics.METRICS[state.metric];
     els.fieldSection.hidden = !metric.needsField;
     els.depthSection.hidden = !metric.needsDepth;
+    // The shading choice belongs to the two maps that draw a share: the
+    // most-populous-group map and a single group's share.
+    els.spreadSection.hidden = !(metric.kind === "group" || metric.needsGroup);
     els.groupSection.hidden = !metric.needsGroup;
     if (metric.needsGroup) {
       renderGroupList();
@@ -469,6 +511,14 @@
       describeReach();
       renderSummary();
     }
+  }
+
+  function renderDepths() {
+    els.depthOptions.innerHTML = depths()
+      .map(([value, label]) => `<button type="button" role="radio" class="seg" data-value="${esc(value)}"
+                               aria-checked="false" tabindex="-1">${esc(label)}</button>`)
+      .join("");
+    markChoice(els.depthOptions, state.depth);
   }
 
   function fieldLabel() {
@@ -592,9 +642,14 @@
     // "Cushitic languages" is not.
     const family = row.flat && group.parent
       ? `<span class="g-parent">in ${esc(group.parent)}</span>` : "";
+    // An unplaced group keeps the reserved colour here too, and says why on
+    // hover. A grey dot in a list of coloured ones reads as "nothing here";
+    // these entries are the opposite -- a real group whose family is the one
+    // thing not yet known.
     const swatch = group.hue
       ? `<span class="g-swatch" style="background:${esc(group.hue)}" aria-hidden="true"></span>`
-      : `<span class="g-swatch g-swatch-none" aria-hidden="true"></span>`;
+      : `<span class="g-swatch g-swatch-none" title="Not yet placed in the classification"
+               style="background:${window.Palette.unplaced()}" aria-hidden="true"></span>`;
     return `<div class="g-row" style="--g-depth:${row.depth}">${twist}
       <button type="button" role="treeitem" class="g-opt" data-value="${esc(group.name)}"
               aria-selected="false" tabindex="-1">
@@ -695,7 +750,7 @@
     const chips = [{ text: metric.label }];
     if (metric.needsField) chips.push({ text: fieldLabel() });
     if (metric.needsDepth) {
-      const depth = DEPTHS.find((d) => d[0] === state.depth);
+      const depth = depths().find((d) => d[0] === state.depth);
       if (depth) chips.push({ text: depth[1] });
     }
     if (metric.needsGroup && state.group) chips.push({ text: state.group, key: true });
@@ -862,13 +917,22 @@
           : "") +
         `</ul>
          <div class="legend-shade">
-           <span class="legend-shade-label">Share of the leading group</span>
+           <span class="legend-shade-label">Share of the leading group${
+             legend.fitted ? ` <em class="legend-fitted">fitted to this view</em>` : ""}</span>
            <div class="legend-scale" role="img"
                 aria-label="Paler is a smaller share, darker is a larger one">
-             ${window.Palette.groupRamp("#6b6b6b", 5).map((c) => `<span style="background:${c}"></span>`).join("")}
+             ${window.Palette.groupRamp("#6b6b6b", 5, legend.floor, legend.ceiling)
+                 .map((c) => `<span style="background:${c}"></span>`).join("")}
            </div>
-           <div class="legend-ends"><span>${legend.floor}% or less</span><span>100%</span></div>
+           <div class="legend-ends"><span>${legend.floor}%${legend.fitted ? "" : " or less"}</span><span>${legend.ceiling}%</span></div>
          </div>` +
+        (legend.unplaced
+          ? `<div class="legend-item">
+               <span class="legend-swatch" style="background:${legend.unplacedColor}"></span>
+               <span>Group not yet classified in ${number(legend.unplaced)} unit${legend.unplaced === 1 ? "" : "s"}</span>
+               <button class="info" type="button" data-info-text="These units have a figure and a group name, but the name is not placed in the tree yet, so the map cannot say which family it belongs to. It is drawn in its own colour rather than left blank, because the data is there -- only the classification is missing.">i</button>
+             </div>`
+          : "") +
         (legend.missing
           ? `<div class="legend-item">
                <span class="legend-swatch" style="background:${legend.missingColor}"></span>
@@ -888,6 +952,8 @@
            ${legend.stops.map((c) => `<span style="background:${c}"></span>`).join("")}
          </div>
          <div class="legend-ends"><span>${esc(legend.low)}</span><span>${esc(legend.high)}</span></div>` +
+        (legend.fitted
+          ? `<p class="legend-fitted-note">Fitted to the range on screen.</p>` : "") +
         (legend.missing
           ? `<div class="legend-item">
                <span class="legend-swatch" style="background:${legend.missingColor}"></span>
@@ -907,7 +973,9 @@
     const records = currentRecords();
     const result = window.Metrics.paint(records, state.metric,
                                         { field: state.field, group: state.group,
-                                          depth: state.depth });
+                                          depth: state.depth, spread: state.spread,
+                                          inView: (record) =>
+                                            window.WorldMap.inView(record.point) });
     window.WorldMap.applyColors(levelId, result.colors);
     renderLegend(result.legend);
     updateLevelNote(level, records.length);
@@ -1093,6 +1161,9 @@
         renderSummary();
         refreshColors();
       },
+      // A ramp fitted to the range on screen has to be recomputed when the
+      // screen changes, or the legend describes the view you just left.
+      onMoved: () => { if (state.spread === "fit") refreshColors(); },
       onViewChange,
       onHover: hoverHTML,
       onSelect: (id, properties, level) => {
