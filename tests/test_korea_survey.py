@@ -10,18 +10,19 @@ sys.path.insert(0, str(ROOT))
 
 from scripts.fetch_census import korea_survey  # noqa: E402
 
-# Page 8 of weekly report No. 358-3, the residence-region block and the rows
-# around it, as extracted; the Korean labels and the fifteen figures per row
-# are the printed ones.
+# Page 8 of weekly report No. 358-3 as the runner's PDF reader printed it
+# (it drops the spaces inside Korean phrases: "개신교신자"), the
+# residence-region block and the rows around it.
 PAGE = """한국리서치 주간리포트
 8
-(단위 : %, %포인트)
-종교 인구 비율 49%, 전년과 동일
-주요 종교별 신자 비율도 지난해와 동일
-개신교 신자 천주교 신자 불교 신자 믿는 종교 있음 믿는 종교 없음
+(단위: %, %포인트)
+종교인구비율49%, 전년과동일
+주요종교별신자비율도지난해와동일
+개신교신자 천주교신자 불교신자 믿는종교있음 믿는종교없음
 ‘24년 ‘25년
 차이
-(25년-24년)
+(25년-
+24년)
 전체 20 20 - 11 11 - 16 16 - 49 49 - 51 51 -
 성별
 남자 18 18 - 10 10 - 16 16 - 45 45 - 55 55 -
@@ -50,6 +51,11 @@ class Reading(unittest.TestCase):
         self.assertEqual(table["Busan/Ulsan/Gyeongnam"]["Buddhism"], 29.0)
         self.assertEqual(table["Busan/Ulsan/Gyeongnam"]["Other religions"], 2.0)
         self.assertEqual(table["Gangwon/Jeju"]["Roman Catholic"], 16.0)
+
+    def test_a_reader_that_keeps_the_spaces_in_the_heads_also_reads(self):
+        page = PAGE.replace("개신교신자 천주교신자 불교신자 믿는종교있음 믿는종교없음",
+                            "개신교 신자 천주교 신자 불교 신자 믿는 종교 있음 믿는 종교 없음")
+        self.assertEqual(korea_survey.read(page)["Seoul"]["Protestant"], 22.0)
 
     def test_a_row_split_over_lines_still_reads(self):
         page = PAGE.replace("서울 22 22 - 13 13 -", "서울 22 22 -\n13 13 -")

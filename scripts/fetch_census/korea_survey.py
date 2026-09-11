@@ -88,13 +88,16 @@ NATIONAL = "전체"
 # The five printed blocks, each "'24 '25 change": the 2025 value is the second.
 COLUMNS = ["Protestant", "Roman Catholic", "Buddhism", "has_religion", "No religion"]
 TOKEN = re.compile(r"^(?:[+-]?\d+|-)$")
-MARKS = ["거주지역", "개신교 신자", "천주교 신자", "불교 신자", "믿는 종교 없음"]
+# The column heads, compared with every space removed: one PDF reader keeps
+# the spaces inside "개신교 신자" and another drops them.
+MARKS = ["거주지역", "개신교신자", "천주교신자", "불교신자", "믿는종교없음"]
 
 
 def page_of(text: str) -> str:
     """The page that crosses religion with the residence regions."""
     for page in text.split(PAGE_BREAK):
-        if all(mark in page for mark in MARKS) and all(k in page for k, *_ in GROUPINGS):
+        flat = re.sub(r"\s+", "", page)
+        if all(mark in flat for mark in MARKS) and all(k in flat for k, *_ in GROUPINGS):
             return page
     raise SystemExit("korea_survey: no page carries religion by residence region")
 
