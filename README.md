@@ -70,7 +70,10 @@ census declines to ask keeps its real value. Countries covered:
 - **France** collects neither ethnicity nor religion in its census.
 - **Germany** records citizenship and migration background, not ethnicity; religion
   comes from church-tax registration rather than fine-grained census self-ID.
-- **Japan** asks nationality, not ethnicity, and does not ask religion at all.
+- **Japan** asks nationality, not ethnicity, and asks neither religion nor
+  language. e-Stat's catalogue says so as well as the questionnaire: its one
+  religion statistic counts adherents reported by religious bodies, and they
+  come to 141% of the population.
 - **India** collects religion and mother tongue, plus Scheduled Caste / Scheduled
   Tribe status — but not ethnicity.
 - **China** records the 56 official nationalities (*minzu*); the census does not ask
