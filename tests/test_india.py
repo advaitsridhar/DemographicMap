@@ -261,30 +261,33 @@ APPENDIX_ROWS = [
     ["C01APX", "00", "000", "INDIA", "701003", "Adi", "Urban", 2840, 1414, 1426],
     # -- Arunachal Pradesh: the whole of Adi, and most of the bucket unnamed.
     # 362,553 is the state's real "Other religions and persuasions" from C-01.
-    ["C01APX", "12", "000", "ARUNACHAL PRADESH", "700000",
+    # The "State - " on the area name is the file's own: every state row
+    # carries a level marker and the India row above carries none, which is
+    # why a sample of the India block alone does not show it.
+    ["C01APX", "12", "000", "State - ARUNACHAL PRADESH", "700000",
      "Other Religions and Persuasions", "Total", 362553, 180000, 182553],
-    ["C01APX", "12", "000", "ARUNACHAL PRADESH", "700000",
+    ["C01APX", "12", "000", "State - ARUNACHAL PRADESH", "700000",
      "Other Religions and Persuasions", "Rural", 300000, 149000, 151000],
-    ["C01APX", "12", "000", "ARUNACHAL PRADESH", "700000",
+    ["C01APX", "12", "000", "State - ARUNACHAL PRADESH", "700000",
      "Other Religions and Persuasions", "Urban", 62553, 31000, 31553],
-    ["C01APX", "12", "000", "ARUNACHAL PRADESH", "701003", "Adi",
+    ["C01APX", "12", "000", "State - ARUNACHAL PRADESH", "701003", "Adi",
      "Total", 24381, 12056, 12325],
-    ["C01APX", "12", "000", "ARUNACHAL PRADESH", "701003", "Adi",
+    ["C01APX", "12", "000", "State - ARUNACHAL PRADESH", "701003", "Adi",
      "Rural", 21541, 10642, 10899],
-    ["C01APX", "12", "000", "ARUNACHAL PRADESH", "701003", "Adi",
+    ["C01APX", "12", "000", "State - ARUNACHAL PRADESH", "701003", "Adi",
      "Urban", 2840, 1414, 1426],
     # -- Chhattisgarh: the whole of Addi Bassi.
-    ["C01APX", "22", "000", "CHHATTISGARH", "700000",
+    ["C01APX", "22", "000", "State - CHHATTISGARH", "700000",
      "Other Religions and Persuasions", "Total", 100000, 50000, 50000],
-    ["C01APX", "22", "000", "CHHATTISGARH", "700000",
+    ["C01APX", "22", "000", "State - CHHATTISGARH", "700000",
      "Other Religions and Persuasions", "Rural", 90000, 45000, 45000],
-    ["C01APX", "22", "000", "CHHATTISGARH", "700000",
+    ["C01APX", "22", "000", "State - CHHATTISGARH", "700000",
      "Other Religions and Persuasions", "Urban", 10000, 5000, 5000],
-    ["C01APX", "22", "000", "CHHATTISGARH", "701002", "Addi Bassi",
+    ["C01APX", "22", "000", "State - CHHATTISGARH", "701002", "Addi Bassi",
      "Total", 86877, 43665, 43212],
-    ["C01APX", "22", "000", "CHHATTISGARH", "701002", "Addi Bassi",
+    ["C01APX", "22", "000", "State - CHHATTISGARH", "701002", "Addi Bassi",
      "Rural", 76629, 38318, 38311],
-    ["C01APX", "22", "000", "CHHATTISGARH", "701002", "Addi Bassi",
+    ["C01APX", "22", "000", "State - CHHATTISGARH", "701002", "Addi Bassi",
      "Urban", 10248, 5347, 4901],
 ]
 
@@ -366,7 +369,7 @@ class Appendix(unittest.TestCase):
         # about the table rather than merely incomplete.
         rows = [list(row) for row in APPENDIX_ROWS]
         for row in rows:
-            if len(row) > 4 and row[3] == "ARUNACHAL PRADESH":
+            if len(row) > 4 and row[3] == "State - ARUNACHAL PRADESH":
                 row[2] = "001"
         with self.assertRaises(SystemExit) as caught:
             self.read(rows)
@@ -393,7 +396,7 @@ class AppendixAgainstC01(unittest.TestCase):
                  "Urban": (10246, 5345, 4901)}
         rows = [list(row) for row in APPENDIX_ROWS]
         for row in rows:
-            if len(row) > 4 and row[3] == "CHHATTISGARH" and row[4] == "701002":
+            if len(row) > 4 and row[3] == "State - CHHATTISGARH" and row[4] == "701002":
                 row[7], row[8], row[9] = edits[row[6]]
         with self.assertRaises(SystemExit) as caught:
             india_census.check_appendix(self.units(rows), self.BUCKETS)
@@ -408,7 +411,7 @@ class AppendixAgainstC01(unittest.TestCase):
     def test_named_religions_may_not_exceed_their_own_bucket(self):
         rows = [list(row) for row in APPENDIX_ROWS]
         for row in rows:
-            if len(row) > 4 and row[3] == "ARUNACHAL PRADESH" and row[4] == "700000":
+            if len(row) > 4 and row[3] == "State - ARUNACHAL PRADESH" and row[4] == "700000":
                 row[7] = {"Total": 20000, "Rural": 18000, "Urban": 2000}[row[6]]
                 row[8] = row[9] = row[7] // 2
         buckets = dict(self.BUCKETS, **{"arunachal pradesh": 20000})
@@ -417,19 +420,41 @@ class AppendixAgainstC01(unittest.TestCase):
         self.assertIn("more than the 20,000", str(caught.exception))
 
     def test_a_state_name_the_two_tables_spell_differently_still_matches(self):
-        # C-01's extract shouts "JAMMU AND KASHMIR" and this table may write
-        # "Jammu & Kashmir"; the key has to survive that or the run refuses.
+        # Three disagreements between two tables of the same census: a level
+        # marker on one side and not the other, an ampersand, and a state
+        # renamed between the tables being written.
         self.assertEqual(india_census.state_key("JAMMU AND KASHMIR"),
-                         india_census.state_key("Jammu & Kashmir"))
+                         india_census.state_key("State - JAMMU & KASHMIR"))
         self.assertEqual(india_census.state_key("ORISSA"),
-                         india_census.state_key("Odisha"))
+                         india_census.state_key("State - ODISHA"))
+        self.assertEqual(india_census.state_key("NCT OF DELHI"),
+                         india_census.state_key("State - NCT OF DELHI"))
+
+    def test_a_dash_inside_a_real_name_is_not_a_level_marker(self):
+        # "Janjgir - Champa" and "Baloda Bazar - Bhatapara" are districts, so
+        # stripping whatever precedes the first " - " would turn one of them
+        # into Champa. Only the census's own level words are stripped.
+        self.assertEqual(india_census.state_key("Janjgir - Champa"),
+                         india_census.state_key("District - Janjgir - Champa"))
+        self.assertIn("janjgir", india_census.state_key("Janjgir - Champa"))
+
+    def test_an_unmatched_state_says_what_it_was_compared_against(self):
+        # The first version of this refusal said only "no state of that name",
+        # and the cause -- a level marker on every row of one table and none of
+        # the other -- had to be spotted by eye. The two keys side by side are
+        # what makes it readable from the log.
+        with self.assertRaises(SystemExit) as caught:
+            india_census.check_appendix(self.units(), {"kerala": 1})
+        message = str(caught.exception)
+        self.assertIn("normalises to 'arunachal pradesh'", message)
+        self.assertIn("'kerala'", message)
 
 
 class ResidualDetail(unittest.TestCase):
     """Substituting the Appendix's religions for C-01's one residual row."""
 
     def unit(self, counts, bucket=362553):
-        return {"name": "ARUNACHAL PRADESH", "bucket": bucket,
+        return {"name": "State - ARUNACHAL PRADESH", "bucket": bucket,
                 "counts": collections.Counter(counts)}
 
     def test_the_groups_still_add_to_the_population(self):

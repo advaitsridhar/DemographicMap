@@ -81,6 +81,7 @@ from __future__ import annotations
 import argparse
 import collections
 import csv
+import difflib
 import io
 import urllib.parse
 from pathlib import Path
@@ -707,17 +708,20 @@ def districts(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
 # C-01 Appendix: what is inside "Other religions and persuasions"
 # ---------------------------------------------------------------------------
 #
-# C-01 stops at eight categories, one of which is a residual, and in three
-# states that residual is the largest or second-largest answer there is:
-# Arunachal Pradesh 26.2%, Meghalaya 11.5%, Manipur 8.2%. Calling a quarter of
-# a state "other religions" is not a description of it.
+# C-01 stops at eight categories, one of which is a residual, and in four
+# states that residual is the third or fourth largest answer there is --
+# ahead of every religion except two or three of the six the form names.
+# Summed from the extract this file already reads: Arunachal Pradesh 26.2%
+# (362,553 of 1,383,727), Jharkhand 12.8% (4,235,786), Meghalaya 8.7%
+# (258,271), Manipur 8.2% (233,767). Calling a quarter of a state "other
+# religions" is not a description of it.
 #
-# The Appendix is the table that says what is in there: 83 named religions,
-# almost all of them Adivasi, and no other census on earth names them. It is
-# published for **India and the states and nothing finer** -- the sheet has a
-# district column and it reads 000 on every row, which this reader checks
-# rather than assumes -- so a district-level share for Donyi-Polo or Sarna does
-# not exist anywhere, and the note on every record says so.
+# The Appendix is the table that says what is in there: scores of named
+# religions, almost all of them Adivasi, and no other census on earth names
+# them. It is published for **India and the states and nothing finer** -- the
+# sheet has a district column and it reads 000 on every row, which this reader
+# checks rather than assumes -- so a district-level share for Donyi-Polo or
+# Sarna does not exist anywhere, and the note on every record says so.
 
 APPENDIX_FILE = "DDW00C-01 Appendix MDDS.xlsx"
 # quote() rather than a literal %20: the file name has two spaces in it and the
@@ -758,7 +762,8 @@ ORP_MAX_GROUPS = 12
 # What is left of the bucket once the named religions above the floor are
 # taken out. It is two things at once and the label has to cover both: the
 # small ones this reader folded, and the ones the Appendix itself does not
-# name (it names a religion only where it has 100 adherents nationally). Kept
+# name -- its rows do not account for the whole of the parent row above them,
+# which is a property of the published table and not of this reader. Kept
 # distinct from C-01's "Other religions", which is the whole bucket.
 ORP_REMAINDER = "Other religions (not separately named)"
 
@@ -903,8 +908,19 @@ def check_appendix(units: dict[str, dict[str, Any]],
                 f"persuasions' row")
         expected = buckets.get(state_key(unit["name"]))
         if expected is None:
-            problems.append(f"{unit['name']}: no state of that name in the "
-                            f"C-01 extract, so its bucket cannot be checked")
+            # The normalised key and the nearest C-01 keys, not just "no
+            # match". The first version of this said only that the name was
+            # not found, and the cause -- a "State - " level marker on every
+            # row of the Appendix and on none of C-01's -- took a person
+            # spotting the prefix by eye. Two keys side by side would have
+            # said it: 'state jammu and kashmir' against 'jammu and kashmir'.
+            key = state_key(unit["name"])
+            near = difflib.get_close_matches(key, sorted(buckets), n=3, cutoff=0.0)
+            problems.append(
+                f"{unit['name']}: no state of that name in the C-01 extract, "
+                f"so its bucket cannot be checked. It normalises to {key!r}; "
+                f"the nearest of the {len(buckets)} C-01 keys are "
+                + ", ".join(repr(n) for n in near))
         elif expected != unit["bucket"]:
             problems.append(
                 f"{unit['name']}: 'Other religions and persuasions' is "
@@ -923,15 +939,44 @@ def check_appendix(units: dict[str, dict[str, Any]],
         f"in 'Other religions and persuasions'")
 
 
+# The words a DDW table puts in front of an area name to say which level the
+# row is at: "State - JAMMU & KASHMIR", "District - Garhwa". The India row
+# carries no marker at all, which is why a sample of that row alone does not
+# show the pattern.
+#
+# Matched against this list rather than by stripping whatever precedes the
+# first " - ", because a dash with spaces around it also occurs *inside* real
+# names -- "Janjgir - Champa" and "Baloda Bazar - Bhatapara" are districts --
+# and a general strip would turn Janjgir-Champa into Champa. The level words
+# are a closed set the census defines; the names are not.
+LEVEL_MARKERS = ("country", "india", "state", "union territory", "ut",
+                 "district", "distt", "sub-district", "sub district",
+                 "subdistrict", "tehsil", "taluk", "town", "city")
+
+
 def state_key(name: str) -> str:
     """A state name reduced to what the two census tables agree on.
 
-    They do not agree on much: C-01's extract shouts "JAMMU AND KASHMIR" and
-    the Appendix writes "JAMMU & KASHMIR", and one of them still says Orissa.
-    Every state has to match or :func:`check_appendix` refuses -- 35 of 35 is
-    the test, so a normalisation that quietly fails on one state fails the run.
+    They do not agree on much. C-01's extract shouts "JAMMU AND KASHMIR" and
+    the Appendix writes "State - JAMMU & KASHMIR": a level marker, an ampersand
+    and a case difference between two tables of the same census. One of them
+    still says Orissa. Every state has to match or :func:`check_appendix`
+    refuses -- 35 of 35 is the test, so a normalisation that quietly fails on
+    one state fails the run rather than dropping that state's detail.
+
+    Matching on a code would be better than matching on a rendering, and it is
+    not available: **the district extract this file reads carries no state
+    code**. Its geography columns are "District code", "State name" and
+    "District name", and the district code runs 1-640 across the country
+    rather than being composed from a state code, so there is nothing to join
+    on but the name. The Appendix does carry a two-digit state code; the 35
+    official per-state C-01 workbooks would too, and reading those instead
+    would retire this function.
     """
     text = _text(name).casefold().replace("&", "and")
+    head, sep, tail = text.partition(" - ")
+    if sep and head.strip() in LEVEL_MARKERS:
+        text = tail
     text = "".join(c for c in text if c.isalnum() or c == " ")
     text = " ".join(text.split())
     return STATE_ALIASES.get(text, text).casefold()
@@ -1008,9 +1053,9 @@ def residual_note(kept: dict[str, int], counts: collections.Counter,
     if len(counts) > len(named):
         note += (f"The Appendix names {len(counts)} religions in this state; "
                  f"the {len(counts) - len(named)} smallest are summed into "
-                 f"'{ORP_REMAINDER}' rather than listed, along with the people "
-                 f"the Appendix itself leaves unnamed -- it names a religion "
-                 f"only where it has a hundred adherents nationally. ")
+                 f"'{ORP_REMAINDER}' rather than listed, along with the "
+                 f"people the Appendix itself leaves unnamed: its rows do not "
+                 f"account for the whole of the residual. ")
     note += ("The Registrar General publishes this Appendix for India and the "
              "states only; its district column reads zero on every row. So "
              "there is no district-level figure for any of these religions in "
