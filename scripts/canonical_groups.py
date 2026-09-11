@@ -179,7 +179,34 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "Qadiriya", "Qadiriya Brotherhood", "Ançardine",
     ),
     "Shia Islam": (
-        "Shia", "Shia Muslim", "Shi'a", "Ismaeli", "Ismaili",
+        "Shia", "Shia Muslim", "Shi'a", "Shiite", "Shi'ite",
+    ),
+    # Gilgit-Baltistan is the first place on this map to report Islam by sect,
+    # and the reason these are three nodes rather than one is that a single
+    # "Shia Islam" would have said 70% and lost what is distinctive about the
+    # territory: it is the only Shia-plurality region of a Sunni-majority
+    # country, and one person in four there is Ismaili.
+    #
+    # "Ismaili" used to be an alias of Shia Islam, which folded the Aga Khan's
+    # community into the Twelver majority wherever anyone counted it. It is
+    # promoted here, and nothing else on the map moves, because nothing else
+    # on the map reported any branch of Islam at all.
+    "Twelver Shia Islam": (
+        "Twelver Shi'a Islam", "Twelver Shia Islam", "Twelver", "Twelvers",
+        "Ithna Ashari", "Isna Ashari", "Jafari",
+    ),
+    "Ismailism": (
+        "Isma'ili Shi'a Islam", "Ismaili Shia Islam", "Ismaili", "Ismailis",
+        "Ismaeli", "Isma'ili", "Nizari", "Nizari Ismaili",
+    ),
+    # Filed under Shia Islam, which is where Pakistani and Gilgit-Baltistani
+    # usage puts it and what the order's own Shia lineage supports, though it
+    # began as a Sufi order and some of its members in Baltistan identify as
+    # Sunni. The census does not ask, so nothing here can settle it; the
+    # placement follows the source that does the counting.
+    "Nurbakhshia": (
+        "Nurbakhshia Islam", "Nurbakhshi", "Nurbakhshis", "Noorbakhshi",
+        "Nurbakhshiya",
     ),
     "Ibadi Islam": ("Ibadhi", "Ibadi"),
     # Pakistan counts Ahmadis separately and by law does not count them as
@@ -990,6 +1017,9 @@ PARENT: dict[str, dict[str, str]] = {
         "Latter-day Saints": "Christianity",
         "Sunni Islam": "Islam",
         "Shia Islam": "Islam",
+        "Twelver Shia Islam": "Shia Islam",
+        "Ismailism": "Shia Islam",
+        "Nurbakhshia": "Shia Islam",
         "Ibadi Islam": "Islam",
         "Ahmadiyya": "Islam",
         "Atheism": "No religion",
@@ -1019,6 +1049,9 @@ HUE: dict[str, dict[str, str]] = {
         "Islam": "#1e8449",
         "Sunni Islam": "#1e8449",
         "Shia Islam": "#52be80",
+        "Twelver Shia Islam": "#52be80",
+        "Ismailism": "#73c6b6",
+        "Nurbakhshia": "#a2d9ce",
         "Ahmadiyya": "#82e0aa",
         "Ibadi Islam": "#0e6251",
         "Hinduism": "#e67e22",

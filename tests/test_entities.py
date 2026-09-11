@@ -1330,14 +1330,35 @@ class TheYearBelongsToTheFigure(unittest.TestCase):
         got = self.roll(self.parent(2021), self.kids(2000))
         self.assertEqual(got["religion_year"], 2000)
 
-    def test_an_undated_sum_says_why_on_the_record(self):
-        # A blank where a year belongs reads as an omission. Pakistan is the
-        # case: four provinces and Islamabad from the 2023 census, Azad Kashmir
-        # from 2017, so the sum is genuinely undated rather than unfinished.
+    def test_a_lone_old_division_does_not_take_the_date_off_the_rest(self):
+        # Pakistan: four provinces and Islamabad from the 2023 census, Azad
+        # Kashmir from 2017 and 1.65% of the people. The figure is a 2023 one
+        # with a stated exception, and a blank where the year goes reads as an
+        # omission rather than as the mixture it is.
+        kids = [self.child("North", 990, {"Alpha": 800, "Beta": 190}, 2023),
+                self.child("South", 10, {"Alpha": 8, "Beta": 2}, 2017)]
+        got = self.roll(self.parent(2021), kids)
+        self.assertEqual(2023, got["religion_year"])
+        self.assertIn("Dated 2023 because that is when all but South (2017) "
+                      "were counted.", got["religion_note"])
+
+    def test_a_country_split_between_two_censuses_stays_undated(self):
+        # Half and half is not "2023 with an exception", and stamping the
+        # larger half would be a date that looks checked.
         kids = [self.child("North", 600, {"Alpha": 500, "Beta": 100}, 2023),
                 self.child("South", 400, {"Alpha": 300, "Beta": 100}, 2017)]
-        note = self.roll(self.parent(2021), kids)["religion_note"]
-        self.assertIn("do not all report the same year (2017, 2023)", note)
+        got = self.roll(self.parent(2021), kids)
+        self.assertIsNone(got.get("religion_year"))
+        self.assertIn("do not all report the same year (2017, 2023)",
+                      got["religion_note"])
+
+    def test_the_weight_is_people_not_divisions(self):
+        # One large division on an older census should take the date off the
+        # sum; two tiny ones should not keep it.
+        kids = [self.child("North", 600, {"Alpha": 500, "Beta": 100}, 2017),
+                self.child("A", 200, {"Alpha": 150, "Beta": 50}, 2023),
+                self.child("B", 200, {"Alpha": 150, "Beta": 50}, 2023)]
+        self.assertIsNone(self.roll(self.parent(2021), kids).get("religion_year"))
 
     def test_children_with_no_year_at_all_say_that_instead(self):
         note = self.roll(self.parent(2021), self.kids())["religion_note"]
@@ -1368,6 +1389,91 @@ class TheYearBelongsToTheFigure(unittest.TestCase):
         self.assertEqual([g["group"] for g in got["religion"]],
                          ["Alpha", "other"])
         self.assertEqual(got["religion_year"], 2021)
+
+
+class ADivisionCountingSomethingElse(unittest.TestCase):
+    """You cannot add figures that count different things.
+
+    Gilgit-Baltistan is the only place in the world where this bites. It is the
+    one division of Pakistan with a sectarian breakdown, so the national sum
+    listed Twelver Shi'a Islam at 0.2% -- arithmetically right, since its
+    people appear exactly once, and a flat misstatement about a country
+    perhaps a sixth Shia. The 0.2% was an artefact of one division in fifty
+    answering a different question.
+    """
+
+    def parent(self):
+        return {"id": "XXX", "codes": {"iso3": "XXX"}, "name": "Somewhere",
+                "population": {"value": 1000, "year": 2025},
+                "religion": [{"group": "Muslim", "pct": 100.0, "count": 1000}],
+                "sources": []}
+
+    def child(self, name, pop, groups, basis=None):
+        row = {"id": name, "name": name, "parent": "XXX",
+               "population": {"value": pop, "year": 2025},
+               "religion": [{"group": g, "pct": round(100 * c / sum(groups.values()), 1),
+                             "count": c} for g, c in groups.items()],
+               "sources": []}
+        if basis:
+            row["religion_basis"] = basis
+        return row
+
+    def kids(self):
+        # Odd is 1% of the country, as Gilgit-Baltistan is 0.5% of Pakistan:
+        # leaving out a division large enough to matter would fail the
+        # population gate instead, which is a different refusal.
+        return [self.child("Big", 990, {"Muslim": 890, "Hindu": 100}),
+                self.child("Odd", 10, {"Twelver Shia Islam": 6,
+                                       "Sunni Islam": 4},
+                           basis="sectarian affiliation")]
+
+    def roll(self, parent, kids):
+        be.roll_up_countries([parent], {"XXX": kids})
+        return parent
+
+    def test_the_odd_one_out_is_not_added_in(self):
+        got = self.roll(self.parent(), self.kids())
+        self.assertEqual({g["group"] for g in got["religion"]},
+                         {"Muslim", "Hindu"})
+
+    def test_the_note_names_it_and_what_it_counts(self):
+        note = self.roll(self.parent(), self.kids())["religion_note"]
+        self.assertIn("Odd counts sectarian affiliation rather than what the "
+                      "others count", note)
+        self.assertIn("its own record carries that figure", note)
+
+    def test_which_basis_is_usual_does_not_depend_on_the_hash_seed(self):
+        # CI and a local run disagreed about which of two equally-sized
+        # divisions was the odd one out, because the first version picked the
+        # commonest basis out of a set and a tie resolved by iteration order.
+        # People decide it now, and a genuine tie is broken on the name.
+        kids = self.kids()
+        for _ in range(8):
+            parent = self.parent()
+            be.roll_up_countries([parent], {"XXX": [dict(k) for k in kids]})
+            self.assertEqual({g["group"] for g in parent["religion"]},
+                             {"Muslim", "Hindu"})
+
+    def test_the_bigger_division_sets_the_usual_basis(self):
+        # Counting divisions would make a two-district territory outvote a
+        # province; counting people does not.
+        kids = [self.child("Big", 980, {"Muslim": 880, "Hindu": 100}),
+                self.child("A", 10, {"Twelver Shia Islam": 10}, basis="sect"),
+                self.child("B", 10, {"Sunni Islam": 10}, basis="sect")]
+        got = self.roll(self.parent(), kids)
+        self.assertEqual({g["group"] for g in got["religion"]},
+                         {"Muslim", "Hindu"})
+
+    def test_divisions_that_agree_are_all_added_in(self):
+        # The ordinary case, and the one that must not change: a basis shared
+        # by every division is not a difference. The United States is this --
+        # all 51 of its PRRI divisions say self-identification.
+        kids = [self.child("A", 600, {"Muslim": 500, "Hindu": 100}, basis="x"),
+                self.child("B", 400, {"Muslim": 300, "Hindu": 100}, basis="x")]
+        got = self.roll(self.parent(), kids)
+        self.assertEqual(got["religion"][0]["count"], 800)
+        self.assertNotIn("rather than what the others count",
+                         got["religion_note"])
 
 
 class CoveredShare(unittest.TestCase):
@@ -2552,15 +2658,41 @@ class PakistanDeclaresWhatIsNotPublished(unittest.TestCase):
         # publication, and not_collected would say the state never asked.
         for row in self.absent("ajk", "gb"):
             for field in ("religion", "language"):
+                if isinstance(row.get(field), list):
+                    continue          # Gilgit-Baltistan's religion, below
                 self.assertEqual(row[field]["status"], "not_available")
                 self.assertIn("publishes no Table 9", row[field]["note"])
 
-    def test_the_declaration_carries_no_figure_of_its_own(self):
+    def test_gilgit_baltistan_carries_its_one_non_census_figure(self):
+        # The territory row, and only it: PILDAT estimates the sects for the
+        # whole of Gilgit-Baltistan and the districts differ sharply from that
+        # average, so they keep the declaration.
+        rows = {r["name"]: r for r in self.absent("gb")}
+        gb = rows["Gilgit-Baltistan"]
+        self.assertEqual(round(sum(g["pct"] for g in gb["religion"]), 2), 100.0)
+        self.assertTrue(gb["religion_note"].startswith("Not a census."))
+        self.assertIn("PILDAT", " ".join(str(x.get("name"))
+                                         for x in gb["sources"]))
+        for name in ("Skardu", "Hunza", "Diamer"):
+            self.assertEqual(rows[name]["religion"]["status"], "not_available")
+
+    def test_shares_that_stop_partitioning_refuse_the_run(self):
+        # Declared rather than read, so a typo here is a thing nothing else
+        # could catch.
+        with mock.patch.dict(self.pk.GB_SECTS, {"Sunni Islam": 31.05}):
+            with self.assertRaises(SystemExit) as cm:
+                self.pk.gb_religion()
+        self.assertIn("sum to 101.0, not 100", str(cm.exception))
+
+    def test_the_declaration_carries_no_census_figure_of_its_own(self):
         # Including population: Wikidata supplies one for both territories and
         # a gap marker must never displace a real value, whichever order the
-        # two files merge in.
+        # two files merge in. Gilgit-Baltistan's religion is the one field
+        # here that is not a gap, and it is not the census's.
         for row in self.absent("ajk", "gb"):
             for field in ("population", "religion", "language", "ethnicity"):
+                if isinstance(row.get(field), list):
+                    continue
                 self.assertIn("status", row[field])
 
     def test_azad_kashmir_is_declared_under_the_name_the_map_draws_it_by(self):

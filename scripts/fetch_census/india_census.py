@@ -951,28 +951,114 @@ def check_lost_territory(rows: list[dict[str, str]]) -> None:
             + "\n  - ".join(problems))
 
 
-def new_districts() -> list[dict[str, Any]]:
-    """One explicit gap record per post-2011 district, and one per artefact shape.
+def inherited_note(name: str, year: int, predecessors: tuple[str, ...]) -> str:
+    """That this district's shares are its predecessor's, and what that costs.
 
-    These carry no figures by construction. What they carry is the reason, the
-    year and the predecessor, so the panel says why it is empty instead of
-    being empty.
+    An estimate, and the file's only one. The census never enumerated these
+    districts, so the alternative is a blank: 91 shapes across 16 states, and
+    on the map a hole in the middle of a state whose every neighbour is
+    shaded. The owner asked for the parent's composition on them instead, and
+    the assumption it rests on -- that a district resembles the one it was cut
+    out of -- is a real assumption, weakest exactly where a district was carved
+    out *because* it differs, which is not rare in India.
+
+    So the shares are carried and the counts are not. A share is a claim about
+    proportion that survives being applied to a part; a count is a claim about
+    how many people there are, and putting the predecessor's count here would
+    say the parent's whole population lives in each of its fragments as well as
+    in the parent. Population stays a gap, and the note says the figure is an
+    estimate before it says anything else.
     """
+    listed = (", ".join(predecessors[:-1]) + " and " + predecessors[-1]
+              if len(predecessors) > 1 else predecessors[0])
+    note = (f"Estimated, not measured. {name} was created in {year} out of "
+            f"{listed} and has never been enumerated separately -- India's "
+            f"last census was 2011 and the next was postponed. The shares "
+            f"shown are ")
+    note += (f"{listed}'s 2011 shares combined, weighted by their populations, "
+             if len(predecessors) > 1 else f"{listed}'s own 2011 shares, ")
+    note += ("which assumes this district resembles the ground it was cut out "
+             "of. No population or head count is shown: the census counted "
+             f"those people as part of {listed}, where the count is carried, "
+             "and repeating it here would count them twice.")
+    return note
+
+
+def without_counts(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Shares with the head counts taken off.
+
+    The counts belong to the district the census measured, not to the fragment
+    inheriting its proportions, and a percentage is the only part of a
+    composition that can honestly be carried across a boundary it was not
+    measured for.
+    """
+    return [{k: v for k, v in row.items() if k != "count"} for row in rows]
+
+
+def new_districts(measured: dict[tuple[str, str], collections.Counter]
+                  | None = None) -> list[dict[str, Any]]:
+    """One record per post-2011 district, and one per artefact shape.
+
+    The census enumerated none of these. Where the district they were cut out
+    of *was* enumerated, they carry its shares as an explicit estimate; where
+    it was not, they carry the gap and its reason, so the panel says why it is
+    empty instead of being empty.
+    """
+    measured = measured or {}
     out: list[dict[str, Any]] = []
     for state, entries in CREATED_AFTER_2011.items():
+        state_2011 = STATE_IN_2011.get(state, state)
         for name, year, predecessors in entries:
             reason = created_reason(name, year, predecessors)
             alias = NEW_DISTRICT_ALIASES.get(name)
+            # Summing the predecessors' counters is what weights a district cut
+            # from two of them: each contributes the people it actually had, so
+            # Morbi leans towards Rajkot because Rajkot is the larger part of
+            # it, rather than towards whichever name was written first.
+            parts = [measured.get((state_2011.casefold(), p.casefold()))
+                     for p in predecessors]
+            fields: dict[str, Any] = {
+                "population": gap(NOT_AVAILABLE, reason),
+                "religion": gap(NOT_AVAILABLE, reason),
+                "language": gap(NOT_AVAILABLE, reason),
+            }
+            if all(part is not None for part in parts):
+                whole: collections.Counter = collections.Counter()
+                for part in parts:
+                    whole.update(part)
+                total = whole["Population"]
+                estimate = inherited_note(name, year, predecessors)
+                religion = without_counts(shares(
+                    {label: whole[col] for col, label in RELIGION_COLUMNS.items()
+                     if whole[col]}, total=total))
+                scheduled = without_counts(shares(
+                    {label: whole[col] for col, label in SCHEDULED_COLUMNS.items()
+                     if whole[col]}, total=total))
+                males, females = whole["Male"], whole["Female"]
+                if religion:
+                    fields["religion"] = religion
+                    fields["religion_note"] = estimate
+                    fields["religion_year"] = 2011
+                    fields["religion_estimated"] = True
+                if scheduled:
+                    fields["scheduled_groups"] = scheduled
+                    fields["scheduled_groups_note"] = estimate
+                if males:
+                    # A ratio, not a count: it describes the people rather than
+                    # counting them, so carrying it doubles nobody.
+                    fields["sex_ratio"] = measure(
+                        round(1000.0 * females / males),
+                        unit="females_per_1000_males", year=2011, source=SOURCE)
+                    fields["sex_ratio_note"] = estimate
+                fields["population"] = gap(NOT_AVAILABLE, estimate)
             out.append(record(
                 f"IND-NEW-{state.replace(' ', '-')}-{name.replace(' ', '-')}",
                 name, level="admin2", parent="IND",
                 parent_name=state,
                 aliases=[alias] if alias else None,
-                population=gap(NOT_AVAILABLE, reason),
-                religion=gap(NOT_AVAILABLE, reason),
-                language=gap(NOT_AVAILABLE, reason),
                 ethnicity=gap(NOT_COLLECTED, "India does not collect ethnicity."),
                 sources=[{"field": "note", "name": SOURCE, "url": CATALOG}],
+                **fields,
             ))
     for name, (state, reason) in BOUNDARY_ARTEFACTS.items():
         out.append(record(
@@ -1040,6 +1126,9 @@ def districts(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
     numeric = list(RELIGION_COLUMNS) + list(SCHEDULED_COLUMNS) + ["Population", "Male", "Female"]
     check_lost_territory(rows)
     shrunken = lost_territory()
+    # (2011 state, 2011 district) -> its counts, so a district carved out of it
+    # after the census can inherit its shares.
+    measured: dict[tuple[str, str], collections.Counter] = {}
 
     for row in rows:
         name = (row.get("District name") or "").strip()
@@ -1071,6 +1160,8 @@ def districts(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
                 ))
             continue
 
+        # Kept so the districts carved out of this one can inherit its shares.
+        measured[(state.casefold(), key)] = counts
         record_ = build_record(
             DISTRICT_ALIASES.get(key, name), counts,
             level="admin2", parent="IND", entity_id=f"IND-D{code}",
@@ -1094,9 +1185,11 @@ def districts(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
             record_["lost_territory_pct"] = 100 - shrink[0]
         out.append(record_)
 
-    # The shapes the census has no row for at all, each carrying why.
+    # The shapes the census has no row for at all: the ones whose predecessor
+    # it did measure carry that district's shares as a stated estimate, the
+    # rest carry the gap and its reason.
     check_new_districts(rows)
-    out.extend(new_districts())
+    out.extend(new_districts(measured))
     return out
 
 

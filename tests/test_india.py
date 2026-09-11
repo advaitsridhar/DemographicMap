@@ -108,41 +108,45 @@ def shrink_refusal(lost, table=TABLE, rows=ROWS):
 
 
 class NewDistricts(unittest.TestCase):
-    def test_a_district_the_census_never_had_gets_a_gap_naming_its_predecessor(self):
+    def test_a_district_the_census_never_had_inherits_its_predecessor(self):
+        # The owner asked for the parent's composition on these rather than a
+        # hole in the middle of a shaded state. It is the file's one estimate
+        # and the note says so before it says anything else.
         got = emitted()["Palghar"]
-        note = got["religion"]["note"]
-        self.assertEqual(got["religion"]["status"], india_census.NOT_AVAILABLE)
-        self.assertIn("created in 2014", note)
-        self.assertIn("Thane", note)
-        # The reader is told where the measurement covering this ground is --
-        # and it is not the district next door, which is a fragment too.
-        self.assertIn("The state total carries it", note)
-        self.assertIn("only the part left after this district was carved out", note)
+        self.assertIsInstance(got["religion"], list)
+        note = got["religion_note"]
+        self.assertTrue(note.startswith("Estimated, not measured."))
+        self.assertIn("created in 2014 out of Thane", note)
 
-    def test_a_predecessor_that_is_itself_gone_is_not_offered_as_somewhere_to_look(self):
-        # Warangal was split six ways and its name is on no present-day shape,
-        # so pointing at "the district of that name" would send the reader to a
-        # place that does not exist.
-        note = emitted()["Jangaon"]["religion"]["note"]
-        self.assertIn("Warangal has itself since been subdivided", note)
-        self.assertNotIn("the part left after this district", note)
+    def test_the_inherited_shares_are_the_predecessors_own(self):
+        both = emitted()
+        self.assertEqual([(g["group"], g["pct"]) for g in both["Palghar"]["religion"]],
+                         [(g["group"], g["pct"]) for g in both["Thane"]["religion"]])
 
-    def test_the_gap_reaches_every_field_the_census_would_have_filled(self):
-        got = emitted()["Balrampur"]
-        for field in ("population", "religion", "language"):
-            with self.subTest(field=field):
-                self.assertEqual(got[field]["status"], india_census.NOT_AVAILABLE)
-                self.assertIn("Surguja", got[field]["note"])
-        # Ethnicity is a different kind of absence and keeps its own status:
-        # India does not ask the question of anyone, anywhere.
-        self.assertEqual(got["ethnicity"]["status"], india_census.NOT_COLLECTED)
+    def test_a_predecessor_the_census_did_not_measure_still_gets_the_gap(self):
+        # Jangaon came out of Warangal, which was split six ways and has no
+        # row in this fixture, so there is nothing to inherit and the gap and
+        # its reason stand.
+        got = emitted()["Jangaon"]
+        self.assertNotIsInstance(got["religion"], list)
+        self.assertIn("Warangal has itself since been subdivided",
+                      got["religion"]["note"])
 
-    def test_a_new_district_carries_no_figures_at_all(self):
+    def test_no_head_count_travels_with_the_shares(self):
+        # The whole point of carrying shares and not counts: Thane's people
+        # are counted once, in Thane. Palghar shows its proportions and says
+        # where the count lives.
         got = emitted()["Palghar"]
-        for field in ("population", "religion", "language", "sex_ratio"):
-            with self.subTest(field=field):
-                self.assertNotIsInstance(got[field], list)
-                self.assertIsNone(got[field].get("value"))
+        self.assertFalse(any("count" in g for g in got["religion"]))
+        self.assertNotIsInstance(got["population"], list)
+        self.assertIsNone(got["population"].get("value"))
+        self.assertIn("count them twice", got["population"]["note"])
+
+    def test_ethnicity_keeps_its_own_kind_of_absence(self):
+        # India does not ask the question of anyone, anywhere, so this is not
+        # something an estimate could fill.
+        self.assertEqual(emitted()["Palghar"]["ethnicity"]["status"],
+                         india_census.NOT_COLLECTED)
 
     def test_the_state_travels_with_the_row(self):
         # Chhattisgarh's Balrampur and Uttar Pradesh's are different districts
