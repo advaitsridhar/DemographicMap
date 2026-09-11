@@ -58,7 +58,6 @@ AWAITING_AN_ADAPTER_RUN = {
     "admin0.json",                                  # fetch_factbook
     "australia_lga.json", "australia_state.json",   # abs
     "brazil_municipality.json", "brazil_state.json",  # ibge_sidra
-    "uk_county.json",                               # uk_nomis --level county
     "us_county.json", "us_state.json",              # us_acs
 }
 
