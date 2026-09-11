@@ -1261,6 +1261,11 @@ Table 9 for none of the three, at either of the two paths the Bureau uses. Not
 a fetch that went wrong: a fact about what the Bureau publishes under the
 census proper.
 
+> Two of those three have since moved. Islamabad's Table 9 and Table 11 are
+> both published and both now read; Azad Kashmir has religion from its own
+> government. Mother tongue for Azad Kashmir and Gilgit-Baltistan is still
+> exactly this: eleven blanks, and the section below says what was asked.
+
 **Is 2017 the most current this can be?** No, and that is worth stating
 plainly rather than leaving implied. PBS completed the 7th census in 2023 and
 publishes its tables as per-province PDFs; `pakistan.py` already reads Table 9
@@ -1268,19 +1273,207 @@ publishes its tables as per-province PDFs; `pakistan.py` already reads Table 9
 publishes a mother-tongue table in the same series, and under which number --
 2017's was Table 11, and a table number is not a thing to guess at, because a
 guessed URL that 404s and a table that was never published are the same
-observation. The route to settle it is reconnaissance, not assumption:
+observation.
 
-```
-scripts.probe_links https://www.pbs.gov.pk/census-2023-tables --match pdf --limit 80
-scripts.fetch_census.uscb --inspect pakistan-subnational-population-and-housing-data-tables
-```
+**It is Table 11, and it is published.** Asked on the runner, the office
+answers 200 to `table_11_kp_districts.pdf` (3.4 MB),
+`table_11_punjab_districts.pdf` (3.5 MB), `table_11_sindh_districts.pdf`
+(3.2 MB), `table_11_balochistan_districts.pdf` (3.6 MB) and
+`table_11_islamabad.pdf` (45,805 bytes) -- the same five areas and the same
+naming scheme as Table 9, down to Islamabad dropping the word "districts". It
+answers 404 to `table_11_ajk.pdf` and `table_11_gb.pdf`. So the 2023 round
+does publish mother tongue by district, for 240 million of Pakistan's people,
+and the figures on this map are 2017.
 
-The first says what the 2023 index actually links to. The second says whether
-the Census Bureau's extraction is still the 2017 census or has been reissued --
-its metadata sheet carries the census year, and the file's own date is an
-extraction date that has been mistaken for it before. Until one of those
-answers, 2017 is the most recent mother tongue this project can show, and the
-records say 2017.
+**Wiring it is not a matter of adding a file, which is why it has not been
+done here.** `pakistan_district.json` and `pakistan_language.json` currently
+share 114 district shapes without colliding, because neither publishes a field
+the other does: one carries population and religion, the other language.
+Putting 2023 mother tongue into the first would give both a real `language`
+on one shape, and `conflicting()` in `build_entities.py` counts two real
+values that differ as a conflict -- which would send Pakistan's language to a
+gap on every district that currently has one. The 2023 table is a
+*replacement* for the 2017 route, not an addition beside it: it means
+retiring `PAKISTAN` from `uscb.py` and reading Table 11 the way Table 9 is
+read, with the same reconciliations. That is a day's work with a real payoff
+-- 2023 figures, and Islamabad's mother tongue from the census rather than
+from a Census Bureau extraction -- and it is left measured rather than
+half-done.
+
+The other half of the old plan is answered too:
+`scripts.fetch_census.uscb --inspect pakistan-subnational-population-and-housing-data-tables`
+was the second route named here, to say whether the Census Bureau's workbook
+had been reissued off the 2023 round. It does not need running to settle the
+question the 2023 tables now answer directly.
+
+### Pakistan's last three divisions: a filename, a yearbook, and one real absence
+
+Seven first-level units, four of them full since the 2023 census landed and
+three of them blank. The three were blank for three different reasons, and
+the file said they were blank for one.
+
+**Everything below was measured on the runner.** Each line is a URL asked for
+and what the host answered; nothing here is inferred from a search result.
+
+| asked | answered |
+| --- | --- |
+| `…/census_tables/tables/table_9_islamabad.pdf` | **200**, application/pdf, 36,012 bytes |
+| `…/census_tables/tables/table_9_islamabad_districts.pdf` | 404 |
+| `…/census_tables/tables/table_9_ict_districts.pdf` | 404 |
+| `…/census_tables/tables/table_11_islamabad.pdf` | **200**, 45,805 bytes |
+| `…/census_tables/tables/table_11_{kp,punjab,sindh,balochistan}_districts.pdf` | **200**, 3.2–3.6 MB each |
+| `…/census_tables/tables/table_9_{ajk,gb}.pdf` | 404 |
+| `…/census_tables/tables/table_9_{ajk,gb}_districts.pdf` | 404 |
+| `…/census_tables/tables/table_9_{gilgit_baltistan,azad_jammu_kashmir}.pdf` | 404 |
+| `…/census_tables/tables/table_11_{ajk,gb}.pdf` | 404 |
+| `…/population/2023/tables/table_9_{islamabad,punjab,ajk,gb,kp}.xlsx` | 404, all five |
+| `www.pbs.gov.pk/census-2023-tables` | **404**, three times |
+| `www.pbs.gov.pk/census-2023`, `/census_tables`, `/digital-census/detailed-results` | 404 |
+| `www.pbs.gov.pk/…/National-Census-Report-2023.pdf` | 200, 12.1 MB |
+| `www.pbs.gov.pk/…/District-Census-Report-2023-Islamabad.pdf` | 200, 4.7 MB |
+| `www.pbos.gov.pk/page/population-census` | **TLS: certificate has expired** |
+| `census23.pbos.gov.pk/` | timed out at 40s |
+| `pndajk.gov.pk/…/AJ&K Statistical Year Book 2023(1).pdf` | **200**, and carries the religion table below |
+| `www.pndajk.gov.pk/…/Statistical Year Book 2020.pdf` | 200, no mother-tongue table |
+| `www.pndajk.gov.pk/…/AJK At a Glance 2025.pdf` | 200, 4.9 MB, no religion and no mother tongue |
+| `www.pnd.gog.pk/pages/downloads` | 200, eight PDFs, listed below |
+| `alfgb.gbit.gov.pk/storage/downloads/…` | TLS: `TLSV1_ALERT_INTERNAL_ERROR` |
+
+**`www.pbs.gov.pk` did not block anything.** It answered a plain
+`DemographicMap/1.0` client on every request above, 404 where the file is not
+there and 200 where it is. The two hosts that are closed are closed by their
+certificates -- `www.pbos.gov.pk` serves an expired one and `alfgb.gbit.gov.pk`
+fails the handshake outright -- and neither is a thing to work around. An
+expired certificate is not an incomplete chain: the AIA `caIssuers` trick that
+`india_census.py` uses completes a chain the server forgot to send, and there
+is nothing to complete here.
+
+#### Islamabad was behind a filename
+
+`table_9_islamabad.pdf`. The four provinces are `table_9_<slug>_districts.pdf`,
+this module read "districts" as part of the scheme, and the office drops the
+word for the capital, which has no districts under it, being one. Both names
+this module tried came back 404 -- and a 404 from a name the office does not
+use looks exactly like a 404 from a table that was never written. Islamabad
+spent two census rounds filed under "enumerated apart, not published", which
+was true of the other two and never of it.
+
+The file is one page and prints one district, `ISLAMABAD DISTRICT`, followed
+by `ISLAMABAD TEHSIL` repeating the same figures. So it has no territory row
+above its districts, and the territory row is the Malakand check -- the one
+control that catches a unit the reader never noticed, worth 825,377 people in
+Khyber Pakhtunkhwa. `ONE_DISTRICT` in `pakistan.py` names the province where
+that row is redundant rather than letting a missing row pass anywhere it turns
+up, and the declaration pays for the check it removes: exactly one district
+must be read, or the province is refused.
+
+Islamabad now carries **2,283,244 people, Muslim 95.6%, Christian 4.3%,
+Ahmadi 0.1%, Hindu 0.0%** — the largest Christian share of any first-level
+unit in Pakistan, and a fifth of the country's Christians in 0.9% of its
+people. Its row also breaks three figures across two words each (45, 60 and
+10) and sets the tightest column gap either province offered, **12 points**
+between `,283,244` and the `2` of `2,181,663`, against the 13 this file
+records as the minimum. `GAP` is 4, so the margin is 4 against 12; a rule
+tuned any closer to the gap it had seen would have joined two columns here.
+
+#### Azad Jammu and Kashmir: religion from its own government
+
+The Bureau publishes no Table 9 for it. Its own does. The **AJ&K Statistical
+Year Book 2023**, from the Bureau of Statistics, P&DD, Azad Government of the
+State of Jammu & Kashmir, reprints two religion tables from the **2017**
+census: 15.23 for the territory rural and urban, and **15.24 by district**.
+That is a Pakistan Bureau of Statistics table reprinted by the territory's
+government, which is the same standard `wiki_census.py` holds a Wikipedia
+transcription to, met by a government publication instead.
+
+15.24 is the one read, because it is the one that can be checked. Its ten
+districts sum to its own AJ&K row in **all seven columns, to the person**:
+
+| | Muslim | Hindu | Christian | Ahmadi | Sch. Caste | Other | Total |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| ten districts summed | 4,025,737 | 14 | 2,934 | 3,402 | 60 | 270 | 4,032,363 |
+| the printed AJ&K row | 4,025,737 | 14 | 2,934 | 3,402 | 60 | 270 | 4,032,363 |
+
+A territory-level table alone would have had no such control, which is why
+15.23 is not the one taken.
+
+**One discrepancy, carried rather than hidden.** Poonch's religions sum to 54
+more than the total printed beside them, and the AJ&K row's own parts exceed
+its own total by the same 54 -- which is exactly the gap between 15.24's
+Muslims (4,025,737) and 15.23's (4,025,683, being 3,325,839 rural plus 699,844
+urban). The yearbook disagrees with itself about 54 Muslims in Poonch out of
+four million people, and says so twice. It is 0.011% of Poonch, it moves no
+share this map prints, and the run names it in the log.
+
+**The districts are not published as records.** geoBoundaries draws Azad
+Kashmir as a *single* second-level unit where the yearbook counts ten, so ten
+rows would reach one shape: nine would lose and the tenth would put a
+district's figures on the whole territory, looking entirely normal while being
+wrong by four fifths. The territory's row goes on the territory's shape. This
+also answers a question worth asking outright -- AJK is drawn as one admin2
+unit because the boundary file draws one, not because a join is failing.
+
+The territory's population becomes **4,032,363 (2017 census)**, replacing a
+**2008** Wikidata figure of 4,567,982.
+
+#### Gilgit-Baltistan is the one real absence
+
+Nothing found for it, and the routes are worth naming so nobody walks them
+again.
+
+* **The Bureau's census tables.** Six filenames, six 404s, listed above.
+* **Its own Planning & Development Department**, `www.pnd.gog.pk/pages/downloads`,
+  publishes eight PDFs: *GB At a Glance 2025*, *GB MICS 2024-25* in two
+  reports, an investment brochure, and four Annual Development Programmes. **GB
+  At a Glance 2025 contains district tables drawn from the 2023 census and the
+  words "religion", "tongue", "Muslim" and "Shia" on no page of it.**
+* **GB-MICS** does carry language, and it is not the same question. Its
+  background table reads Balti 28.4%, Burushaski 11.4%, Khowar 5.2%, Wakhi
+  0.9%, Other 6.2%, against weighted and unweighted respondent counts in the
+  hundreds and low thousands -- a survey's *respondents* by language, not a
+  population by mother tongue, and territory-wide rather than by district.
+  Publishing that beside four provinces of census mother tongue, in the same
+  field, is the mismatch this project exists to refuse. It is a real official
+  survey and a usable source for someone willing to mark the basis
+  (`{field}_basis`, as `us_prri.py` does) and to establish the universe from
+  the report rather than from its table of contents; it is recorded here and
+  not wired.
+* **`mics.unicef.org` was not asked**, and does not need to be: this
+  repository has already recorded it as blocking non-browser clients, and the
+  GB government serves the same reports itself.
+* **The Pamir Times article** (`pamirtimes.net`, December 2023) that circulates
+  household counts by language for GB cites GB-MICS 2017 for them. A regional
+  news outlet is not a source this project cites; what it points at is, and
+  what it points at is the survey above.
+* **The census's own category scheme is the deeper problem.** Pakistan's
+  mother-tongue question names nine tongues and an "Other", and Shina, Balti
+  and Burushaski -- which is to say nearly all of Gilgit-Baltistan -- are in
+  the Other. So even a Table 11 for the territory would not name a single one
+  of its languages. A census figure with a category scheme that cannot see the
+  population is a different problem from no census figure, and for GB the
+  answer happens to be both.
+
+Gilgit-Baltistan's two first-level fields and its ten districts therefore
+carry an explicit `not_available` with a note naming what was asked, rather
+than an empty field that reads as an adapter nobody has run. `not_available`
+and not `not_collected`: Pakistan does ask religion and mother tongue, and
+asked them there in 2023. It is the publication that is missing, not the
+question.
+
+#### What it moved
+
+| | before | after |
+| --- | --- | --- |
+| Islamabad Capital Territory | no population, no religion | 2,283,244; religion 2023 |
+| Azad Jammu and Kashmir | no religion; population 2008 (Wikidata) | religion 2017; population 4,032,363 (2017) |
+| Gilgit-Baltistan | empty | declared, with the routes named |
+| Pakistan's religion roll-up | refused, and **unmeasurable** -- Islamabad had neither the field nor a population, so `covered_share` could not answer at all | measurable, at **99.5%**: only Gilgit-Baltistan's 1.2 million are outside it, against a `COUNTRY_MIN_COVERAGE` of 98% |
+| Pakistan's language roll-up | refused at 97.65% | still refused: Azad Kashmir and Gilgit-Baltistan have no mother tongue, and 2.1% of the country is more than the bound allows |
+
+The language roll-up is the one thing still blocked, and the two ways to
+unblock it are both named above: read the 2023 Table 11 (which replaces the
+2017 route rather than joining it), or find a mother tongue for the two
+territories, where every route measured so far is closed.
 
 ### Central African Republic: three fields, and a table that counts two things
 
@@ -3160,7 +3353,7 @@ the tables say how much of the catalogue is involved.
 | word | tables | surveys | what they are |
 | --- | --- | --- | --- |
 | 宗教 religion | 5,603 | 39 | almost all of it economic: 宗教 is an industry class in the Economic Census, the establishment statistics and the national accounts. Exactly one survey is demography -- **宗教統計調査**, 00401101, the Agency for Cultural Affairs |
-| 信者 believers | 30 | 3 | that survey, plus two that use the word for something else |
+| 信者 believers | 30 | 3 | seventeen of them are that survey's own tables and one is a 社会・人口統計体系 indicator table; the other eleven are 通信利用動向調査 tables about how often a household receives spam mail, where 信者 is the tail of 受信者 and 送信者 |
 | 信徒 believers, the other word | 0 | 0 | nothing at all |
 | 民族 ethnicity | 8 | 2 | six 社会教育調査 tables of *museum holdings*, where 民族資料 is a shelf of ethnographic objects, and two 矯正統計調査 tables counting foreign prisoners by nationality |
 | 言語 language | 636 | 14 | 学校基本調査 counts of graduate schools (言語文化研究科 and its kin) and ICD-10 tables in 人口動態調査 and 患者調査, where 言語 is a speech disorder |
@@ -3168,6 +3361,14 @@ the tables say how much of the catalogue is involved.
 | アイヌ Ainu | 13 | 3 | prosecution statistics, human-rights infringement cases, and the national forest yearbook. None of the three counts a population |
 | 国籍 nationality | 2,280 | 26 | the census, the migration report, immigration and residence statistics |
 | 外国人 foreign residents | 2,017 | 30 | likewise |
+
+The one apparent second source is not one. 社会・人口統計体系 (00200502) also
+carries the word, in table `0000010107`, Ｇ　文化・スポーツ, published by
+prefecture -- but that is a compilation: 248 indicators per prefecture going
+back to 1975, assembled from other statistics rather than collected. The only
+statistic in the catalogue that asks anybody about religion is 宗教統計調査, so
+any believer count anywhere in e-Stat is that survey's figure wearing another
+table's number.
 
 Asked in English the same catalogue answers differently and worse. `ethnic`
 matches **no survey at all**; `religion` matches eleven, none of them
