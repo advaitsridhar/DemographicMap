@@ -143,11 +143,33 @@ def table_pages(text: str, heading: str) -> list[str]:
     return [p for p in text.split(PAGE_BREAK) if heading in BOX.sub("", p)]
 
 
+def merged(*lines: str) -> str:
+    """Two baselines of one row as one line, in x order: on the letter-spaced
+    pages Región Lima's percentages sit on one line and its counts on the
+    next, and which column each belongs to is a matter of position."""
+    words = [(float(a), m) for line in lines for m in WORD.finditer(line)
+             for a in (m.group(2),)]
+    return " ".join(m.group(0) for _, m in sorted(words, key=lambda w: w[0]))
+
+
 def rows_of(page: str, width: int) -> dict[str, list[float]]:
     out: dict[str, list[float]] = {}
-    for line in page.splitlines():
+    lines = page.splitlines()
+    for i, line in enumerate(lines):
         name, values = parse_row(line)
-        if name and len(values) == width:
+        if not name:
+            continue
+        if len(values) != width:
+            # A short row: its other figures may sit on the line below or above.
+            for j in (i + 1, i - 1):
+                if 0 <= j < len(lines) and parse_row(lines[j])[0] is None \
+                        and cells(lines[j]) \
+                        and all(number(c) is not None for c in cells(lines[j])):
+                    name2, values2 = parse_row(merged(line, lines[j]))
+                    if name2 == name and len(values2) == width:
+                        values = values2
+                        break
+        if len(values) == width:
             if name in out:
                 raise SystemExit(f"peru: {name} appears twice on one page")
             out[name] = values

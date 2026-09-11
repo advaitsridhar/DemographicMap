@@ -55,6 +55,19 @@ class RowsAreReadFromPositions(unittest.TestCase):
         self.assertEqual(values, [262668, 19806, 7.5, 281605, 14376, 5.1, -5430, -27.4, -3.2])
 
 
+class ARowSplitOverTwoBaselinesIsOneRow(unittest.TestCase):
+    def test_region_lima_on_the_letter_spaced_page(self):
+        top = ("R[87-91] e[91-95] g[95-99] ió[99-106] n[106-110] L[112-116] im[116-123] a[123-127] "
+               "3[129-132] /[132-134] 2[258-262] ,2[262-267] 3[363-366] ,5[366-372] 7[440-444] "
+               "2[444-447] ,6[447-453] 5[480-484] ,1[484-489]")
+        below = ("6[184-187] 4[187-191] 9[191-195] 9[196-200] 8[200-204] 1[204-207] 1[227-230] "
+                 "4[230-234] 5[236-239] 6[239-243] 3[243-246] 7[293-296] 2[296-300] 1[300-303] "
+                 "5[305-309] 2[309-312] 2[312-316] 2[334-338] 5[337-341] 1[343-347] 3[347-350] "
+                 "6[350-354] 1[400-404] 0[405-409] 5[409-413] 7[413-416] 3[416-419]")
+        rows = peru.rows_of("\n".join(["x[1-2]", top, below, "y[1-2]"]), 9)
+        self.assertEqual(rows, {"Lima": [649981, 14563, 2.2, 721522, 25136, 3.5, 10573, 72.6, 5.1]})
+
+
 class FourReligionTablesAndTwoLanguageHalvesAreOneCensus(unittest.TestCase):
     def tables(self, break_total=False):
         names = list(peru.DEPARTMENTS) + ["Lima"]
