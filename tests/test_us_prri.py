@@ -104,6 +104,7 @@ def universe(n: int, *, names: dict[str, str] | None = None,
         out.append({
             "id": f"USA-{fips}", "name": names.get(fips, f"County {i}"),
             "parent": f"USA-{fips[:2]}",
+            "parent_name": f"Region {fips[:2]}",
             "codes": {"geoid": fips, "fips_state": fips[:2],
                       "fips_county": fips[2:]},
             "population": {"value": population},
@@ -692,3 +693,184 @@ class CountiesTheUniverseDoesNotCarry(unittest.TestCase):
         nodes["99999"] = {"Protestantism": 100.0}
         got = build(nodes, self.universe, year=2024)
         self.assertFalse(any(r["id"] == "USA-99999" for r in got))
+
+
+class StatesAndTheNation(unittest.TestCase):
+    """A source that fills one level and leaves the others makes the map
+    contradict itself.
+
+    Before this, the United States read as PRRI 2024 at county level, the 2020
+    Religion Census at state level and a 2014 Factbook estimate nationally --
+    three answers to one question, the two coarser ones from the source that
+    had just been superseded. Zooming out changed the figures and nothing said
+    why.
+    """
+
+    def setUp(self):
+        self.n = 3_100
+        self.nodes = nodes_for(self.n)
+        self.universe = universe(self.n)
+        self.pops = {fips: 1_000.0 for fips in self.nodes}
+
+    def wider(self, **kw):
+        return us_prri.aggregate(self.nodes, self.pops, self.universe,
+                                 year=2024, **kw)
+
+    def test_states_come_back_and_a_nation_deliberately_does_not(self):
+        got = self.wider()
+        self.assertTrue(got)
+        self.assertEqual({r["level"] for r in got}, {"admin1"})
+        self.assertTrue(all(r["religion_year"] == 2024 for r in got))
+
+    def test_a_state_is_the_weighted_mean_of_its_counties(self):
+        """Equal weights, so the state is the plain mean -- and the check is
+        that it is the mean of *its own* counties and not of all of them."""
+        nodes = {"01001": {"Protestantism": 80.0, "No religion": 20.0},
+                 "01003": {"Protestantism": 60.0, "No religion": 40.0},
+                 "02001": {"Protestantism": 10.0, "No religion": 90.0}}
+        pops = {"01001": 100.0, "01003": 100.0, "02001": 100.0}
+        got = us_prri.aggregate(nodes, pops, self.universe, year=2024)
+        alabama = next(r for r in got if r["id"] == "USA-01")
+        shares = {g["group"]: g["pct"] for g in alabama["religion"]}
+        self.assertEqual(shares["Protestantism"], 70.0)
+        self.assertEqual(shares["No religion"], 30.0)
+
+    def test_population_weights_are_used_not_a_plain_average(self):
+        nodes = {"01001": {"Protestantism": 100.0},
+                 "01003": {"No religion": 100.0}}
+        pops = {"01001": 900.0, "01003": 100.0}
+        got = us_prri.aggregate(nodes, pops, self.universe, year=2024)
+        alabama = next(r for r in got if r["id"] == "USA-01")
+        shares = {g["group"]: g["pct"] for g in alabama["religion"]}
+        self.assertEqual(shares["Protestantism"], 90.0)
+
+    def test_counties_with_no_population_between_them_refuse(self):
+        """Weighting by nothing would produce a figure with no basis."""
+        nodes = {"01001": {"Protestantism": 100.0}}
+        with self.assertRaises(SystemExit) as cm:
+            us_prri.aggregate(nodes, {"01001": 0.0}, self.universe, year=2024)
+        self.assertIn("no population", str(cm.exception))
+
+    def test_the_note_says_the_figure_was_summed(self):
+        note = self.wider()[0]["religion_note"]
+        self.assertIn("Summed from the", note)
+        self.assertIn("weighted by", note)
+
+
+class AStateWhoseCountiesTheUniverseRenamed(unittest.TestCase):
+    """Connecticut, and the way a bad join hides rather than fails.
+
+    The ACS retired Connecticut's eight counties for nine planning regions in
+    2022; PRRI still reports the eight and the boundary file still draws them.
+    So not one Connecticut geoid in PRRI appears in the county universe, and
+    reading the state's name off the first of its counties gave "State 09" --
+    a record that matched no shape, silently left Connecticut wearing the 2020
+    study PRRI had replaced, and put two sources' labels into the national sum
+    (Catholicism from PRRI's fifty states and Catholic from Connecticut's).
+
+    Nothing failed. The build's double-counting check caught it four steps
+    later, by which time the only symptom was a country carrying a religion
+    and its own parent.
+    """
+
+    def universe(self):
+        """Connecticut as the ACS has it: planning regions, new geoids."""
+        return [{"id": "USA-09110", "name": "Capitol Planning Region",
+                 "parent": "USA-09", "parent_name": "Connecticut",
+                 "codes": {"geoid": "09110", "fips_state": "09",
+                           "fips_county": "110"},
+                 "population": {"value": 980_000}},
+                {"id": "USA-09120", "name": "Greater Bridgeport",
+                 "parent": "USA-09", "parent_name": "Connecticut",
+                 "codes": {"geoid": "09120", "fips_state": "09",
+                           "fips_county": "120"},
+                 "population": {"value": 325_000}}]
+
+    def nodes(self):
+        """PRRI as it has it: the old counties, none of them in the universe."""
+        return {"09001": {"Catholicism": 40.0, "Protestantism": 60.0},
+                "09003": {"Catholicism": 20.0, "Protestantism": 80.0}}
+
+    def test_the_state_is_named_from_the_universes_other_rows(self):
+        got = us_prri.aggregate(self.nodes(),
+                                {"09001": 500.0, "09003": 500.0},
+                                self.universe(), year=2024)
+        self.assertEqual([r["name"] for r in got], ["Connecticut"])
+        self.assertEqual(got[0]["id"], "USA-09")
+
+    def test_the_figures_are_still_the_counties_own(self):
+        got = us_prri.aggregate(self.nodes(),
+                                {"09001": 500.0, "09003": 500.0},
+                                self.universe(), year=2024)
+        shares = {g["group"]: g["pct"] for g in got[0]["religion"]}
+        self.assertEqual(shares, {"Protestantism": 70.0, "Catholicism": 30.0})
+
+    def test_a_state_the_universe_never_mentions_is_refused_loudly(self):
+        # The alternative is a record under an invented name, which joins no
+        # boundary and vanishes without a word. A fetch that cannot name a
+        # state does not know where its people are.
+        with self.assertRaises(SystemExit) as cm:
+            us_prri.aggregate(self.nodes(), {"09001": 500.0, "09003": 500.0},
+                              [], year=2024)
+        self.assertIn("no name in the universe", str(cm.exception))
+        self.assertIn("09", str(cm.exception))
+
+
+class TheNationIsNotThisAdaptersToFile(unittest.TestCase):
+    """PRRI surveyed the 50 states and the District of Columbia.
+
+    It asked nobody in Puerto Rico, Guam, the U.S. Virgin Islands, American
+    Samoa or the Northern Mariana Islands, so a record filed as "United States"
+    would state a figure for 3.6 million people who were never in the sample,
+    and the record itself would have no way to say so. The build sums the
+    country from its first-level divisions instead, which reaches the same
+    arithmetic and can name the five that are outside it.
+
+    What stays here is the number, computed for the fetch log: it is what a
+    reader checks against PRRI's own national release.
+    """
+
+    def setUp(self):
+        self.universe = universe(3_100)
+
+    def test_no_record_claims_to_be_the_country(self):
+        got = us_prri.aggregate(nodes_for(3_100),
+                                {f: 1_000.0 for f in nodes_for(3_100)},
+                                self.universe, year=2024)
+        self.assertFalse([r for r in got if r["level"] == "admin0"])
+        self.assertFalse([r for r in got if r["id"] == "USA"])
+
+    def test_the_figure_is_every_county_not_every_state_averaged(self):
+        """Averaging states would give Wyoming the weight of California."""
+        nodes = {"01001": {"Protestantism": 100.0},
+                 "02001": {"No religion": 100.0}}
+        pops = {"01001": 9_000.0, "02001": 1_000.0}
+        shares = {g["group"]: g["pct"]
+                  for g in us_prri.nationally(nodes, pops)}
+        self.assertEqual(shares["Protestantism"], 90.0)
+
+    def test_it_agrees_with_summing_the_states_it_does_write(self):
+        # The build's country roll-up weights the states by the denominator
+        # each one's percentages were taken against, which is why the state
+        # rows carry counts. Same numbers, other order.
+        nodes = {"01001": {"Protestantism": 100.0},
+                 "01003": {"No religion": 100.0},
+                 "02001": {"No religion": 100.0}}
+        pops = {"01001": 6_000.0, "01003": 1_000.0, "02001": 3_000.0}
+        states = us_prri.aggregate(nodes, pops, self.universe, year=2024)
+        summed: dict[str, float] = {}
+        for state in states:
+            for row in state["religion"]:
+                summed[row["group"]] = summed.get(row["group"], 0) + row["count"]
+        base = sum(summed.values())
+        direct = {g["group"]: g["pct"] for g in us_prri.nationally(nodes, pops)}
+        for group, count in summed.items():
+            self.assertAlmostEqual(100 * count / base, direct[group], places=1)
+        self.assertEqual(base, 10_000)
+
+    def test_counts_are_prris_adult_base_not_the_states_population(self):
+        nodes = {"01001": {"Protestantism": 75.0, "No religion": 25.0}}
+        states = us_prri.aggregate(nodes, {"01001": 4_000.0},
+                                   self.universe, year=2024)
+        counts = {g["group"]: g["count"] for g in states[0]["religion"]}
+        self.assertEqual(counts, {"Protestantism": 3_000, "No religion": 1_000})

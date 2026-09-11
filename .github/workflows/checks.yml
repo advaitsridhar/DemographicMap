@@ -19,6 +19,16 @@ jobs:
         with:
           node-version: "20"
 
+      # The tests read real workbooks and PDFs through the same libraries the
+      # adapters do -- India's C-01 appendix is an .xlsx and its test builds
+      # one with openpyxl rather than faking the API. Without this step those
+      # tests error on a missing module, and unittest reports the error as a
+      # failure of the thing being tested. That is how thirteen India tests
+      # spent two merges red while passing on every machine that had the
+      # requirements installed.
+      - name: Install the ETL dependencies
+        run: pip install -r requirements.txt
+
       - name: Byte-compile the ETL scripts
         run: python3 -m compileall -q scripts
 

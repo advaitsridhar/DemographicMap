@@ -895,6 +895,21 @@ ROLLUP_TOLERANCE = 0.02
 ROLLUP_DRIFT_PER_YEAR = 0.015
 ROLLUP_DRIFT_CAP = 0.20
 
+# How much of a country's population its first-level divisions must carry
+# before the country is summed from the ones that publish. It is the same 2%
+# the population gate above allows, spent on the same kind of thing: there it
+# is the gap between two counts of the same people, here it is the part of the
+# country the sum does not reach. Both bound the error rather than denying it,
+# and this one is stated on the record the reader sees.
+#
+# The level below is deliberately not given this. There a refused parent leaves
+# a gap, which is honest; here it leaves the Factbook's older estimate standing
+# in place of the divisions' own recent count, and pretending that is the
+# safer of the two is what this constant refuses to do. 2% is also what keeps
+# it to near-complete sets: India at 97.2% -- Telangana never published a 2011
+# religion row -- stays refused, and says so with the figure.
+COUNTRY_MIN_COVERAGE = 0.98
+
 
 def published(value: Any) -> float | None:
     """A measured number, or None for a gap marker or anything else."""
@@ -976,11 +991,43 @@ def implied_total(groups: list[dict[str, Any]]) -> float | None:
     return best[1] if best else None
 
 
+def covered_share(children: list[dict[str, Any]], field: str) -> float | None:
+    """How much of the children's population is carried by those with `field`.
+
+    The bound on a partial sum, and the only number that makes one publishable:
+    a group's share taken from 98.9% of a country can be wrong by at most the
+    1.1% that was left out, so a reader told the figure can judge it. Without
+    it there is no difference between a sum missing Wyoming and a sum missing
+    California.
+
+    Returns None when it cannot be measured, and the case that matters is a
+    child with no `field` *and* no published population. Such a child is
+    invisible to both sums, so leaving it out would inflate the answer in the
+    one direction that must never be inflated -- the shares of the units that
+    published nothing are exactly what an unmeasured tail is. A child that has
+    the field and no population is the opposite and is simply dropped: it
+    leaves both sums, which can only understate the coverage.
+    """
+    covered = total = 0.0
+    for child in children:
+        pop = published(child.get("population"))
+        has = isinstance(child.get(field), list)
+        if pop is None:
+            if not has:
+                return None
+            continue
+        total += pop
+        if has:
+            covered += pop
+    return covered / total if total > 0 else None
+
+
 def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                   field: str, *, level: str = "second-level",
                   over_published: bool = False,
                   whole_country: bool = False,
-                  complete: bool | None = None) -> str | None:
+                  complete: bool | None = None,
+                  min_coverage: float | None = None) -> str | None:
     """Fill a parent's composition by summing a complete set of its children.
 
     Ladakh is the case this exists for. It became a union territory in 2019, so
@@ -1024,11 +1071,44 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         return None
 
     missing = [c for c in children if not isinstance(c.get(field), list)]
+    left_out = ""
     if missing:
         # Partial coverage is the dangerous case: the sum would look whole and
-        # describe only part of the territory.
-        return (f"{len(missing)} of {len(children)} children have no {field}"
-                if len(missing) < len(children) else None)
+        # describe only part of the territory. It is refused by default and
+        # always was.
+        #
+        # `min_coverage` is the one place that is relaxed, and only for a
+        # country summed from its first-level divisions, because there the
+        # alternative is not a gap. It is a coarse published estimate that
+        # stays on the map unchallenged: the United States kept a 2014
+        # Factbook figure while 51 of its 56 divisions carried a 2024 one,
+        # and Thailand, Senegal, Namibia, Niger and Latvia sat the same way.
+        # Preferring an old estimate of the whole to a recent measurement of
+        # 99% of it is not caution, it is just a different error, and a
+        # silent one.
+        #
+        # What makes it safe enough to allow is that the bias is bounded and
+        # stated: a group's share can be wrong by at most the share of the
+        # population left out, and the note names the units and that figure,
+        # so a reader can see exactly how much of the country the answer
+        # describes.
+        share = covered_share(children, field)
+        if (min_coverage is None or share is None
+                or share < min_coverage or len(missing) == len(children)):
+            detail = ("" if share is None else
+                      f" (the rest are {share:.1%} of the population)")
+            return (f"{len(missing)} of {len(children)} children have no "
+                    f"{field}{detail}"
+                    if len(missing) < len(children) else None)
+        listed = sorted(c.get("name", c.get("id", "?")) for c in missing)
+        names = ", ".join(listed[:6]) + (" and others" if len(listed) > 6 else "")
+        one = len(missing) == 1
+        left_out = (f" {len(missing)} of the {len(children)} divisions "
+                    f"publish{'es' if one else ''} no {field} and "
+                    f"{'is' if one else 'are'} not included ({names}); this "
+                    f"figure describes the {share:.1%} of the population that "
+                    f"does.")
+        children = [c for c in children if isinstance(c.get(field), list)]
 
     # The population comparison below is a control on one thing: whether these
     # are all the children. ``whole_country`` establishes that directly and
@@ -1148,8 +1228,8 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                      f"({top}), which is kept here as the only independent "
                      f"check on this sum.")
     parent[f"{field}_note"] = (
-        f"Summed from all {len(children)} {level} division"
-        f"{'s' if many else ''};"
+        f"Summed from {'all ' if not left_out else ''}{len(children)} {level} "
+        f"division{'s' if many else ''};"
         + (" no source publishes this figure for the unit itself."
            if not displaced else "")
         # A unit with no published population of its own was filled because
@@ -1173,10 +1253,25 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
            f"{' (' + ', '.join(sorted(derived)[:3]) + ')' if len(derived) <= 3 else ''}"
            ", so their counts are those shares taken of their own published "
            "populations." if derived else "")
-        + disagrees + displaced)
+        + disagrees + displaced + left_out)
+    # The year belongs to the figure, not to the record, so it is rewritten
+    # with it. Thailand is what made this matter: its 76 provinces carry the
+    # 2000 census and stamp no year at all, so the sum inherited the 2021 the
+    # Factbook estimate had been wearing, and the country's panel dated a
+    # quarter-century-old count to five years ago. Britain and Poland were the
+    # same fault pointing the other way -- 2021 census children under an
+    # inherited 2011.
+    #
+    # Where the children do not agree on a year the stamp is dropped rather
+    # than guessed. That costs the roughly two dozen countries whose displaced
+    # figure happened to cite the same census their divisions did; it costs
+    # them a label that was right by luck, and the note still says what the
+    # figure was summed from. The alternative is a date that looks checked.
     years = {c.get(f"{field}_year") for c in children} - {None}
     if len(years) == 1:
         parent[f"{field}_year"] = years.pop()
+    else:
+        parent.pop(f"{field}_year", None)
 
     # A unit whose composition was just summed from a complete set of children
     # should carry their population too, when it has none, an older one, or one
@@ -1256,6 +1351,16 @@ def roll_up_countries(admin0: list[dict[str, Any]],
     it is the only independent statement about the country and the sum has
     nothing else to be checked against.
 
+    ``COUNTRY_MIN_COVERAGE`` is the other thing particular to this level. One
+    division short refuses the sum everywhere else, and rightly: a partial sum
+    would look whole. Here the alternative to a partial sum is not a gap but
+    the Factbook estimate staying put, so refusing is a choice between two
+    imperfect figures rather than between a figure and silence. The United
+    States is the case -- 51 divisions carrying PRRI's 2024 count and five
+    territories carrying nothing, against a 2014 estimate of the whole -- and
+    the reason it is safe to take is that the error is bounded by what was left
+    out and the note says what that was.
+
     The population gate is the same 2% used below, and at this level it is
     doing something different: the parent's population comes from a current
     estimate and the children's from a census, so it refuses any country whose
@@ -1283,7 +1388,8 @@ def roll_up_countries(admin0: list[dict[str, Any]],
             # country's own published population, which stays gated at 2%.
             why = roll_up_field(country, children, field,
                                 level="first-level", over_published=True,
-                                complete=True)
+                                complete=True,
+                                min_coverage=COUNTRY_MIN_COVERAGE)
             if why:
                 refused.append(f"{iso3}: {why}")
             elif country.get(field) is not before:

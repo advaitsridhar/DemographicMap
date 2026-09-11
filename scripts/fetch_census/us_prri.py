@@ -143,6 +143,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+from collections import defaultdict
 import io
 import re
 import statistics
@@ -857,6 +858,174 @@ OUTSIDE_UNIVERSE: dict[str, tuple[str, str]] = {
     "02261": ("Valdez-Cordova", "Alaska"),
 }
 
+
+# How far a state's summed adult population may sit from the sum of the
+# counties the universe assigns to it. It is the same arithmetic twice, so
+# anything at all is a fault; the room is for float addition over 3,142 terms.
+AGGREGATE_SLACK = 1e-6
+
+
+def aggregate(nodes: dict[str, dict[str, float]],
+              populations: dict[str, float],
+              universe: list[dict[str, Any]],
+              *, year: int) -> list[dict[str, Any]]:
+    """The states and the nation, summed from the counties this file wrote.
+
+    A source that fills one level and leaves the others alone makes the map
+    contradict itself. PRRI covers counties, so before this the United States
+    read as PRRI 2024 at county level, the 2020 Religion Census at state
+    level, and a 2014 Factbook estimate nationally -- three different answers
+    to one question, and the two coarser ones from the source the owner had
+    just decided against. Zooming out changed the figures and nothing said
+    why.
+
+    The build can sum a parent from its children, and for the states it
+    deliberately does not: it fills a parent that is *empty*, and these were
+    not empty, they were full of the superseded source. Rather than loosen
+    that rule for everybody -- 505 of the 674 sums it would newly allow are
+    no-ops and 169 would move a published figure by more than a point, for
+    reasons that belong to those countries and not to this one -- the adapter
+    that knows this data sums its own.
+
+    The weights are PRRI's own adult population, the denominator its shares
+    are already expressed over, so a state is a weighted mean of its counties
+    and not an approximation of one.
+    """
+    # The state each county belongs to, taken from every row in the universe
+    # rather than from the one county being written. Connecticut is why. The
+    # ACS retired its eight counties for nine planning regions in 2022 and PRRI
+    # still publishes the eight, so not one Connecticut geoid in this file
+    # appears in the universe -- and reading the state's name off the first
+    # such county produced "State 09", a record that matched no shape, left
+    # Connecticut wearing the superseded study, and mixed two sources' labels
+    # into the national sum. The FIPS prefix is the thing both files agree on
+    # whatever they call the pieces.
+    named: dict[str, tuple[str, str]] = {}
+    for row in universe:
+        state = (row.get("codes") or {}).get("fips_state")
+        if state and row.get("parent") and row.get("parent_name"):
+            named.setdefault(state, (row["parent"], row["parent_name"]))
+    by_state: dict[str, list[str]] = defaultdict(list)
+    for fips in nodes:
+        by_state[fips[:2]].append(fips)
+    nameless = sorted(set(by_state) - set(named))
+    if nameless:
+        # A state written under a made-up name joins no shape and is invisible
+        # -- the failure this whole file is careful about. Say it instead.
+        raise SystemExit(
+            f"us_prri: {len(nameless)} states have no name in the universe "
+            f"({', '.join(nameless)}); a state written as 'State NN' would "
+            f"match no boundary and disappear")
+
+    def compose(members: list[str]) -> tuple[dict[str, float], float]:
+        base = sum(populations.get(f, 0.0) for f in members)
+        if base <= 0:
+            raise SystemExit(
+                f"us_prri: {len(members)} counties carry no population "
+                f"between them, so their shares cannot be weighted")
+        total: dict[str, float] = defaultdict(float)
+        for f in members:
+            weight = populations.get(f, 0.0)
+            for node, pct in nodes[f].items():
+                total[node] += weight * pct
+        return {node: value / base for node, value in total.items()}, base
+
+    records: list[dict[str, Any]] = []
+    national: list[str] = []
+    for state, members in sorted(by_state.items()):
+        national.extend(members)
+        shares, base = compose(members)
+        # The same addition in the other order: if these disagree, the
+        # grouping lost or duplicated a county.
+        check = sum(populations.get(f, 0.0) for f in members)
+        if abs(check - base) > AGGREGATE_SLACK:
+            raise SystemExit(
+                f"us_prri: state {state} sums to {base} one way and {check} "
+                f"the other; a county is counted twice or not at all")
+        state_id, state_name = named[state]
+        records.append(record(
+            state_id, state_name,
+            level="admin1", parent="USA", country="USA",
+            codes={"geoid": state, "fips_state": state, "fips_county": None},
+            religion=shares_as_rows(shares, base) or gap(NOT_AVAILABLE),
+            religion_year=year,
+            religion_basis="self-identification",
+            religion_note=aggregate_note(len(members), "counties"),
+            sources=[{"field": "religion", "name": SOURCE, "url": PAGE,
+                      "license": LICENCE}]))
+
+    return records
+
+
+def nationally(nodes: dict[str, dict[str, float]],
+               populations: dict[str, float]) -> list[dict[str, Any]]:
+    """PRRI's whole universe in one composition, for the log and nothing else.
+
+    Deliberately not written as a record. It is the 50 states and the District
+    of Columbia -- PRRI surveyed nobody in Puerto Rico, Guam, the U.S. Virgin
+    Islands, American Samoa or the Northern Mariana Islands -- so filing it as
+    the United States would state a figure for 3.6 million people it never
+    asked. The build sums the country from the first-level divisions instead,
+    which produces the same arithmetic and a note that names what is outside
+    it.
+
+    Printing it is still worth the lines: it is the number a reader can check
+    against PRRI's own published national release, and a fetch that quietly
+    reweighted something would show up here first.
+    """
+    base = sum(populations.get(f, 0.0) for f in nodes)
+    if base <= 0:
+        return []
+    total: dict[str, float] = defaultdict(float)
+    for fips, shares in nodes.items():
+        weight = populations.get(fips, 0.0)
+        for node, pct in shares.items():
+            total[node] += weight * pct
+    return shares_as_rows({node: v / base for node, v in total.items()})
+
+
+def shares_as_rows(shares: dict[str, float],
+                   base: float | None = None) -> list[dict[str, Any]]:
+    """A composition as the map wants it: largest first, nothing at zero.
+
+    ``base`` is the number of people the shares were taken of -- PRRI's adult
+    population, not the state's -- and giving it puts a count on every row.
+    That matters one level up: a parent summed from these is weighted by the
+    denominator each child's own percentages were taken against, so the
+    national figure is PRRI's own arithmetic in a different order. Without the
+    counts the sum would have to price each state's shares against its census
+    population instead, quietly reweighting a survey of adults by the number of
+    children living in each state.
+    """
+    return [{"group": node, "pct": round(pct, 1),
+             **({} if base is None else {"count": int(round(base * pct / 100))})}
+            for node, pct in sorted(shares.items(), key=lambda kv: (-kv[1], kv[0]))
+            if round(pct, 1) > 0]
+
+
+def aggregate_note(parts: int, kind: str) -> str:
+    """Say that this figure was summed, and from how many pieces.
+
+    A reader who zooms out from a county to its state is entitled to know
+    whether the state was measured or added up, and that the two agree because
+    the second is made of the first.
+    """
+    return (f"Summed from the {parts} {kind} PRRI publishes, weighted by "
+            f"PRRI's own adult population -- the denominator its county "
+            f"shares are already expressed over, so this is those counties' "
+            f"weighted mean rather than a separate estimate. "
+            f"{SOURCE}. Self-reported religious identity among adults, "
+            f"modelled to county level from a national random sample of "
+            f"40,000 adults on Ipsos's KnowledgePanel; small-area estimates "
+            f"rather than an enumeration, describing adults rather than all "
+            f"residents. Replaces the 2020 U.S. Religion Census adherent "
+            f"counts this unit carried, which reached about 48.6% of the "
+            f"population and could not distinguish the unaffiliated from the "
+            f"unreported. PRRI's categories cross race with religion; the "
+            f"Protestant and Catholic categories are summed into "
+            f"Protestantism and Catholicism and the racial detail is dropped "
+            f"rather than filed under religion.")
+
 def build(counties: dict[str, dict[str, float]],
           universe: list[dict[str, Any]],
           *, year: int,
@@ -1092,7 +1261,15 @@ def main() -> int:
     records = build(nodes, universe, year=year,
                     prri_names={f: r["name"] for f, r in counties.items()})
     log(f"  {len(records)} counties written")
-    write_json(args.out or PROCESSED / OUT, records)
+    # The states and the nation, from the counties just written. Without these
+    # the map answers the same question three different ways as you zoom out.
+    wider = aggregate(nodes, populations, universe, year=year)
+    log(f"  {len(wider)} states summed from those counties")
+    log("  across PRRI's whole universe: " + ", ".join(
+        f"{g['group']} {g['pct']}%" for g in nationally(nodes, populations)[:4])
+        + " -- not written; the build sums the country from the states, where "
+          "it can say which territories are outside the answer")
+    write_json(args.out or PROCESSED / OUT, records + wider)
     return 0
 
 
