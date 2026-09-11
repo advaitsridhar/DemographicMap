@@ -183,11 +183,13 @@ def result_of(payload: dict[str, Any], envelope: str) -> tuple[int, str, dict[st
 
 
 def search(term: str, key: str, *, limit: int, lang: str = "J",
-           surveys: bool = False) -> None:
+           surveys: bool = False, raw: bool = False,
+           extra: dict[str, Any] | None = None) -> None:
     """One catalogue search, printed as tables or as the surveys behind them."""
     params: dict[str, Any] = {"searchWord": term, "limit": limit, "lang": lang}
     if surveys:
         params["statsNameList"] = "Y"
+    params.update(extra or {})
     show(f"  {shown_call('getStatsList', params)}")
     payload = call("getStatsList", params, key)
     status, message, inner = result_of(payload, "GET_STATS_LIST")
@@ -200,6 +202,11 @@ def search(term: str, key: str, *, limit: int, lang: str = "J",
     number = datalist.get("NUMBER", 0)
     rows = listed(datalist.get("TABLE_INF")) or listed(datalist.get("LIST_INF"))
     show(f"    -> {number} match(es), {len(rows)} listed")
+    if raw and rows:
+        # One entry as the API actually shaped it. A reader of this log should
+        # not have to trust one_line()'s idea of which fields exist, and a test
+        # that pins the reading needs bytes rather than a paraphrase.
+        show("    raw[0]: " + json.dumps(rows[0], ensure_ascii=False)[:1500])
     for row in rows:
         show("    " + one_line(row))
 
@@ -326,13 +333,23 @@ def show_data(stats_data_id: str, key: str, filters: dict[str, str],
             show(f"      {code} {name}: {total:,.0f}")
 
 
-def sweep(key: str, *, limit: int) -> None:
-    show("e-Stat catalogue sweep -- surveys first, then tables")
+def sweep(key: str, *, limit: int, only: list[str]) -> None:
+    """The standing search, or the subset of it named on the command line.
+
+    A subset because a catalogue search over a common word is slow -- e-Stat
+    takes tens of seconds over 言語 or 外国人 -- and a runner has a wall clock.
+    Naming terms splits one sweep into several runs without editing the list.
+    """
+    show("e-Stat catalogue sweep -- surveys carrying each word")
     for term, gloss in TERMS:
+        if only and term not in only:
+            continue
         show(f"\n== {term}  ({gloss}) -- surveys carrying the word")
         search(term, key, limit=limit, surveys=True)
         time.sleep(0.4)
     for term in ENGLISH_TERMS:
+        if only and term not in only:
+            continue
         show(f"\n== {term} (lang=E) -- surveys carrying the word")
         search(term, key, limit=limit, lang="E", surveys=True)
         time.sleep(0.4)
@@ -354,20 +371,29 @@ def main() -> int:
     ap.add_argument("--lang", default="J", choices=["J", "E"])
     ap.add_argument("--classes", type=int, default=60,
                     help="codes to print per dimension in --meta")
+    ap.add_argument("--terms", default="",
+                    help="comma-separated subset of the standing sweep to run")
+    ap.add_argument("--collect-area", default="",
+                    help="e-Stat collectArea filter: 1 national, 2 prefecture, "
+                         "3 municipality, 4 other")
+    ap.add_argument("--raw", action="store_true",
+                    help="also print the first catalogue entry as the API shaped it")
     args = ap.parse_args()
 
     key = app_id()
     show(f"probe_estat: {KEY_VAR} found, {len(key)} characters")
 
+    extra = {"collectArea": args.collect_area} if args.collect_area else {}
     did_something = False
     if args.search:
         show(f"\n== {args.search} -- tables")
-        search(args.search, key, limit=args.limit, lang=args.lang)
+        search(args.search, key, limit=args.limit, lang=args.lang,
+               raw=args.raw, extra=extra)
         did_something = True
     if args.surveys:
         show(f"\n== {args.surveys} -- surveys")
         search(args.surveys, key, limit=args.limit, lang=args.lang,
-               surveys=True)
+               surveys=True, raw=args.raw, extra=extra)
         did_something = True
     if args.meta:
         show(f"\n== metadata for {args.meta}")
@@ -381,7 +407,8 @@ def main() -> int:
                   limit=args.limit)
         did_something = True
     if not did_something:
-        sweep(key, limit=args.limit)
+        sweep(key, limit=args.limit,
+              only=[t for t in args.terms.split(',') if t])
     return 0
 
 
