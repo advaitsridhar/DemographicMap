@@ -1,22 +1,25 @@
 """Tests for the PRRI county-religion reader in scripts/fetch_census/us_prri.py.
 
-A caveat that belongs at the top of this file rather than buried in it: the
-fixtures below are **synthetic**. The adapter has never been run against the
-real Datawrapper tables, because ``datawrapper.dwcdn.net`` and ``prri.org`` are
-both refused by the egress proxy on the machine this was written on, so nobody
-here has seen PRRI's actual CSV header. The fixtures reproduce the *shape* a
-Datawrapper county choropleth table has -- a county name column, a column of
-5-digit FIPS codes, one column of percentages -- and the percentages are made
-up. What is being tested is therefore the reader's behaviour and its refusals,
-not agreement with PRRI's numbers; the national roll-up check in the adapter is
-the thing that tests agreement, and it can only run where the CDN is reachable.
+The fixture is real. ``REAL_HEADER`` and ``REAL_ROWS`` are the header and the
+first six data rows of
+``https://datawrapper.dwcdn.net/d76SP/7/dataset.csv`` exactly as the adapter's
+own ``--probe`` printed them from a GitHub Actions runner, which is the only
+place in this project with egress to the CDN. The wider tables built here for
+the county-count and join tests are generated in that same shape, and say so.
 
-The refusals are the point. Every case here is a way eighteen separate charts
-can be joined into one county table wrongly without anything looking wrong: a
-chart silently absent leaves every county summing to less than 100, a category
-filed under the wrong node leaves the sums perfect and the map wrong, and a
-FIPS code that was reassigned between vintages joins one county's religion onto
-another county's shape.
+Two facts from that probe shape everything below. Every chart serves the *whole*
+table -- all eighteen group columns, plus population, FIPS, county name and the
+diversity index -- so this reads one chart rather than joining eighteen. And
+the table's ``year`` column is ``2024`` in every row, which looks exactly like
+a county FIPS code to any test that only asks "four or five digits beginning
+with a valid state prefix", because 20 is Kansas. That near-miss is the reason
+a key column has to prove it is distinct and non-constant as well.
+
+The refusals are the point. Every case here is a way a wide table can be read
+wrongly without anything looking wrong: a renamed column shifting which figure
+is read as which religion, an unpadded FIPS silently dropping every state from
+01 to 09, a category filed under the wrong node leaving the sums perfect and
+the map wrong.
 """
 
 import sys
@@ -27,199 +30,237 @@ from unittest import mock
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import scripts.fetch_census.us_prri as us_prri  # noqa: E402
-
 from scripts.fetch_census.us_prri import (  # noqa: E402
-    CHARTS, COLLAPSE, EXCLUDED, build, censored, check_coverage, check_national,
-    check_sums, classify, collapse, normalise, read_dataset, split_rows,
+    CHARTS, COLLAPSE, COLUMNS, EXCLUDED, STRUCTURAL, build, censored,
+    check_national, check_population, check_sums, collapse, cross_check,
+    looks_like_key, normalise, read_table, split_rows,
 )
 
-# Enough rows that the reader will accept the table as county-level at all;
-# its FIPS test deliberately refuses anything short, because a real county
-# table has about 3,100 rows and a 5-row one is a different table.
-N_ROWS = 150
+REAL_HEADER = (
+    "year,Population,fipsstcnty,fips_fct,white_evangelical_protestant,"
+    "white_mainline_protestant,white_catholic,black_protestant,"
+    "hispanic_catholic,hispanic_protestant,mormon,other_catholic,"
+    "other_protestant,jehovahs_witness,orthodox_christian,jewish,muslim,"
+    "buddhist,hindu,unitarian_universalist,other_religion,unaffiliated,"
+    "diversity_index"
+)
+
+REAL_ROWS = [
+    '2024,44335,1001,"Autauga County, AL",37.9,15.6,3.0,13.9,0.5,0.7,0.5,0.6,'
+    '3.6,0.4,0.3,0.4,0.3,0.3,0.3,0.3,0.5,21.1,0.496',
+    '2024,175265,1003,"Baldwin County, AL",31.9,22.4,8.5,6.3,2.4,2.8,0.9,1.0,'
+    '5.1,0.6,0.5,0.8,0.5,0.6,0.5,0.4,0.8,14.1,0.558',
+    '2024,18031,1005,"Barbour County, AL",30.0,11.2,2.8,27.6,1.2,1.6,0.5,0.4,'
+    '1.6,0.4,0.3,0.3,0.4,0.4,0.4,0.3,0.4,20.3,0.493',
+    '2024,17421,1007,"Bibb County, AL",47.4,13.7,2.8,8.3,0.4,0.5,0.4,0.3,0.5,'
+    '0.3,0.3,0.2,0.2,0.2,0.2,0.2,0.3,23.7,0.502',
+    '2024,45114,1009,"Blount County, AL",60.7,11.6,2.3,3.7,2.1,1.2,0.4,0.4,'
+    '2.3,0.4,0.3,0.3,0.2,0.3,0.2,0.2,0.4,13.1,0.393',
+    '2024,8440,1011,"Bullock County, AL",5.7,2.3,0.3,86.5,0.2,0.3,0.1,0.1,0.5,'
+    '0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,3.2,0.103',
+]
+
+REAL = "\n".join([REAL_HEADER] + REAL_ROWS)
+
+
+def edit(row: str, column: str, value: str) -> str:
+    """Replace one field of a real row, by column name."""
+    names = REAL_HEADER.split(",")
+    cells = next(iter(__import__("csv").reader([row])))
+    cells[names.index(column)] = value
+    return ",".join(f'"{c}"' if "," in c else c for c in cells)
 
 
 def fips_at(i: int) -> str:
-    """A plausible 5-digit county FIPS, state 01 upward."""
-    return f"{i // 100 + 1:02d}{i % 100 + 1:03d}"
+    """A plausible county FIPS, unpadded as PRRI writes them."""
+    return f"{i // 100 + 1:d}{i % 100 + 1:03d}"
 
 
-def table(values: list[float] | None = None, *, header=("County", "FIPS", "Percent"),
-          rows: int = N_ROWS) -> str:
-    """A Datawrapper-shaped county CSV. Values are invented."""
-    values = values if values is not None else [10.0] * rows
-    out = [",".join(header)]
+def wide(rows: int) -> str:
+    """A table in the real shape, with invented numbers. Sums to 100.2 like
+    Autauga does, so the sum checks see something realistic."""
+    body = []
     for i in range(rows):
-        out.append(f"County {i},{fips_at(i)},{values[i]}")
-    return "\n".join(out)
+        shares = REAL_ROWS[0].split(",")[-19:]        # 18 groups + diversity
+        body.append(",".join(["2024", "40000", fips_at(i), f"County {i}"] + shares))
+    return "\n".join([REAL_HEADER] + body)
 
 
-def spread(national: dict[str, float], rows: int = N_ROWS) -> dict[str, dict[str, float]]:
-    """Give every county the same made-up composition, keyed by category."""
-    return {cat: {fips_at(i): pct for i in range(rows)}
-            for cat, pct in national.items()}
+def nodes_for(rows: int) -> dict[str, dict[str, float]]:
+    """{FIPS: {religion node: pct}} straight from the real composition."""
+    counties, _ = read_table(wide(rows), chart="d76SP")
+    return collapse(counties)
 
 
-# A synthetic composition whose collapsed roll-up lands on PRRI's published
-# national anchors: Christian 66, religiously unaffiliated 27, non-Christian 6.
-# Those three are whole-percent figures and they sum to 99, not 100 -- which is
-# itself the reason the adapter's tolerances are not hairline. The fixture puts
-# the missing point on the unaffiliated, the group whose "nothing in particular"
-# tail is widest, so that it closes at 100 and still sits inside the 2.5-point
-# national band. The individual numbers are invented; only the totals are meant
-# to resemble anything.
-COMPOSITION = {
-    "White Evangelical Protestant": 13.0,
-    "White Mainline/Non-evangelical Protestant": 13.0,
-    "Black Protestant": 8.0,
-    "Hispanic Protestant": 4.0,
-    "Other Protestant of Color": 2.0,
-    "White Catholic": 12.0,
-    "Hispanic Catholic": 8.0,
-    "Other Catholic of Color": 2.0,
-    "Latter-day Saint (Mormon)": 1.5,
-    "Orthodox Christian": 0.5,
-    "Jehovah's Witness": 2.0,
-    "Jewish": 2.0,
-    "Muslim": 1.0,
-    "Buddhist": 1.0,
-    "Hindu": 1.0,
-    "Unitarian Universalist": 0.5,
-    "Other Non-Christian Religious": 0.5,
-    "Religiously Unaffiliated": 28.0,
-}
-
-
-def universe(n: int, *, names: dict[str, str] | None = None) -> list[dict]:
+def universe(n: int, *, names: dict[str, str] | None = None,
+             population: int = 60_000) -> list[dict]:
     """The county universe us_acs.py writes, reduced to what the join uses."""
     names = names or {}
     out = []
     for i in range(n):
-        fips = fips_at(i)
+        fips = fips_at(i).zfill(5)
         out.append({
-            "id": f"USA-{fips}",
-            "name": names.get(fips, f"County {i}"),
+            "id": f"USA-{fips}", "name": names.get(fips, f"County {i}"),
             "parent": f"USA-{fips[:2]}",
             "codes": {"geoid": fips, "fips_state": fips[:2],
                       "fips_county": fips[2:]},
-            "population": {"value": 10_000},
+            "population": {"value": population},
         })
     return out
 
 
-class ReadDataset(unittest.TestCase):
-    """One chart's CSV -> {FIPS: percent}."""
+class RealTable(unittest.TestCase):
+    """The reader against the bytes PRRI actually serves."""
 
-    def test_reads_a_county_table(self):
-        got = read_dataset(table(), chart="d76SP")
-        self.assertEqual(len(got), N_ROWS)
-        self.assertEqual(got["01001"], 10.0)
+    def setUp(self):
+        self.counties, self.year = read_table(REAL, chart="d76SP")
 
-    def test_pads_four_digit_fips(self):
-        """Alabama's 01001 is often written 1001 once a spreadsheet has been
-        near it. Joining '1001' against a map keyed on '01001' matches nothing,
-        so the pad happens at the reader rather than at the join."""
-        rows = ["County,FIPS,Percent"]
-        rows += [f"County {i},{int(fips_at(i))},{10.0}" for i in range(N_ROWS)]
-        got = read_dataset("\n".join(rows), chart="d76SP")
-        self.assertIn("01001", got)
+    def test_reads_every_row(self):
+        self.assertEqual(len(self.counties), len(REAL_ROWS))
 
-    def test_accepts_percent_signs_and_commas(self):
-        rows = ["County,FIPS,Percent"]
-        rows += [f"County {i},{fips_at(i)},10.5%" for i in range(N_ROWS)]
-        got = read_dataset("\n".join(rows), chart="d76SP")
-        self.assertAlmostEqual(got["01001"], 10.5)
+    def test_takes_the_year_from_the_data_not_the_title(self):
+        """The article is titled 2023; the table says 2024."""
+        self.assertEqual(self.year, 2024)
 
-    def test_finds_the_columns_whatever_they_are_called(self):
-        """The header is not trusted: the adapter was written without sight of
-        the real one, so the columns are found by content."""
-        got = read_dataset(table(header=("name", "id", "value")), chart="d76SP")
-        self.assertEqual(got["01001"], 10.0)
+    def test_pads_the_fips(self):
+        """PRRI writes Autauga as 1001. Joined unpadded against a 5-digit key,
+        every state from 01 to 09 would silently match nothing."""
+        self.assertIn("01001", self.counties)
+        self.assertNotIn("1001", self.counties)
 
-    def test_refuses_a_table_that_is_not_county_level(self):
-        """A state table has no 5-digit FIPS column, and reading one as if it
-        were counties is the mis-match this whole adapter is written against."""
-        rows = ["State,FIPS,Percent"] + [f"State {i},{i:02d},10.0" for i in range(N_ROWS)]
+    def test_carries_the_name_and_population(self):
+        autauga = self.counties["01001"]
+        self.assertEqual(autauga["name"], "Autauga County, AL")
+        self.assertEqual(autauga["population"], 44335)
+
+    def test_reads_all_eighteen_groups_from_one_chart(self):
+        """The chart titled 'White Evangelical Protestant' carries the lot."""
+        self.assertEqual(len(self.counties["01001"]["shares"]), 18)
+        self.assertEqual(set(self.counties["01001"]["shares"]), set(COLUMNS.values()))
+
+    def test_shares_sum_to_about_100(self):
+        self.assertAlmostEqual(
+            sum(self.counties["01001"]["shares"].values()), 100.2, places=6)
+        self.assertAlmostEqual(
+            sum(self.counties["01011"]["shares"].values()), 100.0, places=6)
+
+    def test_the_diversity_index_is_not_a_group(self):
+        """It is a 0-1 score and it sits in every CSV as a column as well as
+        being a chart of its own. Read as a nineteenth share it would add half
+        a point to every county."""
+        self.assertIn("mL9BH", EXCLUDED)
+        self.assertNotIn("mL9BH", CHARTS)
+        self.assertIn("diversity_index", STRUCTURAL)
+        self.assertNotIn("diversity_index", COLUMNS)
+        for row in self.counties.values():
+            self.assertNotIn(0.496, list(row["shares"].values()))
+
+    def test_values_are_percentages_not_proportions(self):
+        self.assertEqual(self.counties["01001"]["shares"]
+                         ["White Evangelical Protestant"], 37.9)
+
+
+class KeyColumn(unittest.TestCase):
+    """Which column is the key, and the one that nearly passes for it."""
+
+    def test_the_fips_column_is_a_key(self):
+        ok, _ = looks_like_key(["1001", "1003", "1005"])
+        self.assertTrue(ok)
+
+    def test_the_year_column_is_not(self):
+        """2024 is four digits and 20 is a valid state prefix, so the only
+        thing separating it from a FIPS code is that it never varies."""
+        ok, why = looks_like_key(["2024"] * 6)
+        self.assertFalse(ok)
+        self.assertIn("constant", why)
+
+    def test_a_repeated_code_is_not_a_key(self):
+        ok, why = looks_like_key(["1001", "1003", "1003"])
+        self.assertFalse(ok)
+        self.assertIn("distinct", why)
+
+    def test_a_population_column_is_not_a_key(self):
+        """Populations stray outside the 01-56 state prefixes almost at once."""
+        ok, _ = looks_like_key([str(90000 + i) for i in range(20)])
+        self.assertFalse(ok)
+
+    def test_refuses_when_the_named_key_stops_being_one(self):
+        rows = [edit(r, "fipsstcnty", "1001") for r in REAL_ROWS]
         with self.assertRaises(SystemExit) as cm:
-            read_dataset("\n".join(rows), chart="d76SP")
-        self.assertIn("not the county-level table", str(cm.exception))
+            read_table("\n".join([REAL_HEADER] + rows), chart="d76SP")
+        self.assertIn("not a county key", str(cm.exception))
 
-    def test_refuses_a_short_table(self):
-        """Three thousand counties do not fit in five rows."""
-        with self.assertRaises(SystemExit):
-            read_dataset(table(rows=5), chart="d76SP")
 
-    def test_refuses_two_candidate_value_columns(self):
-        """Which of two numeric series is the percentage cannot be settled
-        without guessing, so it is not guessed."""
-        rows = ["County,FIPS,Percent,Margin"]
-        rows += [f"County {i},{fips_at(i)},10.0,1.2" for i in range(N_ROWS)]
+class HeaderChanges(unittest.TestCase):
+    """A column that moves, vanishes or appears must stop the run."""
+
+    def test_refuses_a_renamed_column(self):
+        """Renaming is the dangerous one: the run would otherwise continue with
+        one religion's figures read as another's."""
+        header = REAL_HEADER.replace("hispanic_catholic", "latino_catholic")
         with self.assertRaises(SystemExit) as cm:
-            read_dataset("\n".join(rows), chart="d76SP")
-        self.assertIn("numeric value", str(cm.exception))
+            read_table("\n".join([header] + REAL_ROWS), chart="d76SP")
+        self.assertIn("hispanic_catholic", str(cm.exception))
 
-    def test_refuses_a_duplicated_county(self):
-        rows = ["County,FIPS,Percent"]
-        rows += [f"County {i},{fips_at(i)},10.0" for i in range(N_ROWS)]
-        rows.append("County 0 again,01001,99.0")
+    def test_refuses_an_unknown_new_column(self):
+        header = REAL_HEADER + ",neo_druid"
+        rows = [r + ",0.1" for r in REAL_ROWS]
         with self.assertRaises(SystemExit) as cm:
-            read_dataset("\n".join(rows), chart="d76SP")
-        self.assertIn("twice", str(cm.exception))
+            read_table("\n".join([header] + rows), chart="d76SP")
+        self.assertIn("neo_druid", str(cm.exception))
 
-    def test_refuses_an_empty_chart(self):
-        with self.assertRaises(SystemExit):
-            read_dataset("County,FIPS,Percent\n", chart="d76SP")
+    def test_column_order_does_not_matter(self):
+        """Columns are found by name, so a reordered table reads the same."""
+        import csv as _csv
+        import io as _io
+        names = REAL_HEADER.split(",")
+        order = list(reversed(range(len(names))))
+        out = [",".join(names[i] for i in order)]
+        for row in REAL_ROWS:
+            cells = next(iter(_csv.reader(_io.StringIO(row))))
+            out.append(",".join(f'"{cells[i]}"' if "," in cells[i] else cells[i]
+                                for i in order))
+        counties, _ = read_table("\n".join(out), chart="d76SP")
+        self.assertEqual(counties["01001"]["shares"]
+                         ["White Evangelical Protestant"], 37.9)
+
+    def test_covers_every_column_in_the_real_header(self):
+        self.assertEqual(set(REAL_HEADER.split(",")), set(COLUMNS) | STRUCTURAL)
 
 
-class FirstContact(unittest.TestCase):
-    """The ways a real Datawrapper table can differ from the guessed one.
+class BadCells(unittest.TestCase):
 
-    None of this is known to be what PRRI publishes -- that is what the
-    --probe path is for. These are the shapes that must not be read wrongly if
-    they do turn up.
-    """
-
-    def test_reads_a_tab_separated_table(self):
-        """Read with the comma reader, a TSV is one fused column and the
-        refusal that follows blames the wrong thing."""
-        rows = ["County\tFIPS\tPercent"]
-        rows += [f"County {i}\t{fips_at(i)}\t10.0" for i in range(N_ROWS)]
-        parsed, delimiter = split_rows("\n".join(rows))
-        self.assertEqual(delimiter, "\t")
-        self.assertEqual(read_dataset("\n".join(rows), chart="d76SP")["01001"], 10.0)
-
-    def test_reads_a_semicolon_separated_table(self):
-        rows = ["County;FIPS;Percent"]
-        rows += [f"County {i};{fips_at(i)};10.0" for i in range(N_ROWS)]
-        self.assertEqual(read_dataset("\n".join(rows), chart="d76SP")["01001"], 10.0)
-
-    def test_refuses_two_columns_that_both_look_like_fips(self):
-        """A population column is five digits too. Taking the first candidate
-        would key three thousand counties on their populations."""
-        rows = ["County,FIPS,Population,Percent"]
-        rows += [f"County {i},{fips_at(i)},{12000 + i},10.0" for i in range(N_ROWS)]
+    def test_refuses_mixed_years(self):
+        rows = list(REAL_ROWS)
+        rows[0] = edit(rows[0], "year", "2023")
         with self.assertRaises(SystemExit) as cm:
-            read_dataset("\n".join(rows), chart="d76SP")
-        self.assertIn("cannot be decided without guessing", str(cm.exception))
-
-    def test_a_population_column_is_not_mistaken_for_fips(self):
-        """Populations stray outside the 01-56 state prefixes almost at once,
-        which is what keeps them out of the FIPS candidates."""
-        columns = [tuple(f"{90000 + i}" for i in range(N_ROWS))]
-        fips_cols, value_cols = classify(columns)
-        self.assertEqual(fips_cols, [])
-        self.assertEqual(value_cols, [0])
+            read_table("\n".join([REAL_HEADER] + rows), chart="d76SP")
+        self.assertIn("mixes data years", str(cm.exception))
 
     def test_refuses_a_censored_value(self):
-        """PRRI writes small shares as '<0.5'. Reading that as zero understates
-        the group and leaves the county short of 100; reading it as 0.5
-        invents a number. So it stops and says how many there are."""
-        rows = ["County,FIPS,Percent"]
-        rows += [f"County {i},{fips_at(i)},10.0" for i in range(N_ROWS - 1)]
-        rows.append(f"County {N_ROWS - 1},{fips_at(N_ROWS - 1)},<0.5")
+        """PRRI censors nothing today. If a revision does, reading '<0.5' as
+        zero understates the group and reading it as 0.5 invents a number."""
+        rows = list(REAL_ROWS)
+        rows[0] = edit(rows[0], "muslim", "<0.5")
         with self.assertRaises(SystemExit) as cm:
-            read_dataset("\n".join(rows), chart="d76SP")
-        self.assertIn("censors 1 counties", str(cm.exception))
+            read_table("\n".join([REAL_HEADER] + rows), chart="d76SP")
+        self.assertIn("censors 1 values", str(cm.exception))
+
+    def test_refuses_a_blank_share(self):
+        """A blank is not a zero and must not be read as one."""
+        rows = list(REAL_ROWS)
+        rows[0] = edit(rows[0], "jewish", "")
+        with self.assertRaises(SystemExit) as cm:
+            read_table("\n".join([REAL_HEADER] + rows), chart="d76SP")
+        self.assertIn("no number", str(cm.exception))
+
+    def test_refuses_a_duplicated_county(self):
+        """Caught by the key check rather than row by row -- a key that repeats
+        is not a key -- so the message names the repeated code."""
+        with self.assertRaises(SystemExit) as cm:
+            read_table("\n".join([REAL_HEADER] + REAL_ROWS + [REAL_ROWS[0]]),
+                       chart="d76SP")
+        self.assertIn("repeated twice or more: ['1001']", str(cm.exception))
 
     def test_censored_detects_both_bounds(self):
         self.assertTrue(censored("<0.5"))
@@ -227,130 +268,168 @@ class FirstContact(unittest.TestCase):
         self.assertFalse(censored("0.5"))
         self.assertFalse(censored(""))
 
-    def test_ragged_rows_do_not_shift_columns(self):
-        """A short final row is common in a hand-edited export; zip() would
-        silently truncate every column to its length."""
-        rows = ["County,FIPS,Percent"]
-        rows += [f"County {i},{fips_at(i)},10.0" for i in range(N_ROWS)]
-        rows.append("County trailing,")
-        got = read_dataset("\n".join(rows), chart="d76SP")
-        self.assertEqual(len(got), N_ROWS)
+    def test_detects_a_tab_separated_table(self):
+        """Read with the comma reader, a TSV is one fused column and the
+        refusal that follows blames the wrong thing."""
+        tsv = REAL.replace('"Autauga County, AL"', "Autauga County AL")
+        tsv = "\n".join(line.replace(",", "\t") for line in tsv.splitlines())
+        _, delimiter = split_rows(tsv)
+        self.assertEqual(delimiter, "\t")
 
-    def test_a_proportion_table_fails_the_sum_check(self):
-        """If Datawrapper stores 0.135 rather than 13.5 every column test still
-        passes. The sums are what notice, so this checks they do."""
-        counties = collapse(spread({k: v / 100 for k, v in COMPOSITION.items()},
-                                   rows=50))
-        with self.assertRaises(SystemExit):
-            check_sums(counties)
+
+class CrossCheck(unittest.TestCase):
+    """Every chart is supposed to serve the same table. Proved, not assumed."""
+
+    def setUp(self):
+        self.primary, _ = read_table(REAL, chart="d76SP")
+
+    def test_an_identical_table_agrees(self):
+        other, _ = read_table(REAL, chart="CLuyf")
+        cross_check(self.primary, other, chart="CLuyf")
+
+    def test_refuses_a_chart_with_different_numbers(self):
+        rows = list(REAL_ROWS)
+        rows[0] = edit(rows[0], "muslim", "9.9")
+        other, _ = read_table("\n".join([REAL_HEADER] + rows), chart="CLuyf")
+        with self.assertRaises(SystemExit) as cm:
+            cross_check(self.primary, other, chart="CLuyf")
+        self.assertIn("Muslim", str(cm.exception))
+
+    def test_refuses_a_chart_with_different_counties(self):
+        other, _ = read_table("\n".join([REAL_HEADER] + REAL_ROWS[:-1]),
+                              chart="CLuyf")
+        with self.assertRaises(SystemExit) as cm:
+            cross_check(self.primary, other, chart="CLuyf")
+        self.assertIn("different counties", str(cm.exception))
 
 
 class Categories(unittest.TestCase):
     """The race-crossed categories, and how they collapse."""
 
-    def test_every_chart_has_a_decided_node(self):
-        self.assertEqual(sorted(CHARTS.values()), sorted(COLLAPSE))
+    def setUp(self):
+        self.counties, _ = read_table(REAL, chart="d76SP")
+        self.nodes = collapse(self.counties)
 
-    def test_the_diversity_index_is_not_a_group(self):
-        """mL9BH is a 0-1 score. Reading it as an eighteenth share would add
-        fifty-odd points to every county."""
-        self.assertIn("mL9BH", EXCLUDED)
-        self.assertNotIn("mL9BH", CHARTS)
+    def test_every_column_has_a_decided_node(self):
+        self.assertEqual(sorted(COLUMNS.values()), sorted(COLLAPSE))
 
     def test_protestant_variants_sum_into_one_node(self):
-        got = collapse(spread(COMPOSITION, rows=2))
-        # 13 + 13 + 8 + 4 + 2
-        self.assertAlmostEqual(got["01001"]["Protestantism"], 40.0)
-        # 12 + 8 + 2
-        self.assertAlmostEqual(got["01001"]["Catholicism"], 22.0)
+        # 37.9 evangelical + 15.6 mainline + 13.9 Black + 0.7 Hispanic
+        # + 3.6 other Protestant of colour
+        self.assertAlmostEqual(self.nodes["01001"]["Protestantism"], 71.7, places=6)
+        # 3.0 white + 0.5 Hispanic + 0.6 other Catholic of colour
+        self.assertAlmostEqual(self.nodes["01001"]["Catholicism"], 4.1, places=6)
+
+    def test_a_majority_black_protestant_county_reads_as_protestant(self):
+        """Bullock County is 86.5% Black Protestant. Race is dropped, so what
+        the map shows is a 95.3% Protestant county."""
+        self.assertAlmostEqual(self.nodes["01011"]["Protestantism"], 95.3, places=6)
 
     def test_race_detail_is_gone_not_refiled(self):
-        """No node in the output carries a racial term. The alternative --
-        keeping 'White Evangelical Protestant' as a group -- would put race in
-        the religion tree, where a reader filtering Protestantism misses most
-        American Protestants."""
-        got = collapse(spread(COMPOSITION, rows=2))
-        for node in got["01001"]:
-            for word in ("White", "Black", "Hispanic", "of Color"):
+        """No node carries a racial term. Keeping 'White Evangelical
+        Protestant' as a group would put race in the religion tree, where a
+        reader filtering Protestantism misses most American Protestants."""
+        for node in self.nodes["01001"]:
+            for word in ("White", "Black", "Hispanic", "of Color", "white"):
                 self.assertNotIn(word, node)
 
+    def test_unaffiliated_becomes_no_religion(self):
+        self.assertAlmostEqual(self.nodes["01001"]["No religion"], 21.1, places=6)
+
     def test_unitarians_land_in_other_religions(self):
-        got = collapse(spread(COMPOSITION, rows=2))
-        self.assertAlmostEqual(got["01001"]["Other religions"], 1.0)
+        # 0.3 Unitarian Universalist + 0.5 other non-Christian
+        self.assertAlmostEqual(self.nodes["01001"]["Other religions"], 0.8, places=6)
 
     def test_refuses_a_category_it_has_not_decided_about(self):
-        """A nineteenth group in a later PRRI release must be mapped by hand."""
-        extra = dict(spread(COMPOSITION, rows=2))
-        extra["Neo-Druid"] = {"01001": 1.0, "01002": 1.0}
+        counties = {"01001": {"name": "x", "population": 1.0,
+                              "shares": {"Neo-Druid": 1.0}}}
         with self.assertRaises(SystemExit) as cm:
-            collapse(extra)
+            collapse(counties)
         self.assertIn("Neo-Druid", str(cm.exception))
-
-
-class Coverage(unittest.TestCase):
-
-    def test_reports_and_intersects_disagreeing_charts(self):
-        data = spread(COMPOSITION, rows=10)
-        data["Muslim"].pop("01001")
-        common = check_coverage(data)
-        self.assertNotIn("01001", common)
-        self.assertEqual(len(common), 9)
-
-    def test_refuses_charts_with_nothing_in_common(self):
-        data = {"Muslim": {"01001": 1.0}, "Jewish": {"01002": 1.0}}
-        with self.assertRaises(SystemExit):
-            check_coverage(data)
 
 
 class Sums(unittest.TestCase):
 
-    def test_accepts_a_composition_that_closes(self):
-        check_sums(collapse(spread(COMPOSITION, rows=50)))
-
-    def test_accepts_rounding_sized_slack(self):
-        """Eighteen separately modelled shares are not constrained to sum."""
-        near = dict(COMPOSITION, Muslim=1.6)
-        check_sums(collapse(spread(near, rows=50)))
+    def test_accepts_the_real_composition(self):
+        check_sums(nodes_for(50))
 
     def test_refuses_one_county_far_from_100(self):
-        counties = collapse(spread(COMPOSITION, rows=50))
-        counties["01001"]["Protestantism"] += 40.0
+        nodes = nodes_for(50)
+        nodes["01001"]["Protestantism"] += 40.0
         with self.assertRaises(SystemExit) as cm:
-            check_sums(counties)
+            check_sums(nodes)
         self.assertIn("01001", str(cm.exception))
 
-    def test_refuses_a_systematically_missing_chart(self):
-        """The per-county band is loose enough to miss this; the median is not.
-        Losing the Jewish chart leaves every county at 98 -- well inside the
-        five-point per-county tolerance, and nowhere near the median's."""
-        without = {k: v for k, v in COMPOSITION.items() if k != "Jewish"}
+    def test_refuses_a_systematically_missing_column(self):
+        """The per-county band is loose enough to miss a small group going
+        astray; the median is not. Losing the Jewish column leaves every
+        county at 99.8, which the median catches at 0.2... so this drops
+        Catholicism, 4.1 points, which stays inside the per-county band."""
+        nodes = nodes_for(50)
+        for groups in nodes.values():
+            groups.pop("Catholicism")
         with self.assertRaises(SystemExit) as cm:
-            check_sums(collapse(spread(without, rows=50)))
+            check_sums(nodes)
         self.assertIn("systematic", str(cm.exception))
+
+    def test_a_proportion_table_fails_the_sum_check(self):
+        """If a revision stored 0.379 rather than 37.9 every column test still
+        passes. The sums are what notice, so this checks they do."""
+        nodes = {f: {k: v / 100 for k, v in g.items()}
+                 for f, g in nodes_for(50).items()}
+        with self.assertRaises(SystemExit):
+            check_sums(nodes)
 
 
 class National(unittest.TestCase):
+    """PRRI's own published totals, as the check on the collapse."""
 
     def setUp(self):
-        self.pops = {fips_at(i): 10_000.0 for i in range(50)}
+        # A composition weighted to land on Christian 66 / unaffiliated 27 /
+        # non-Christian 6. Invented; only the three totals mean anything.
+        self.nodes = {
+            "01001": {"Protestantism": 40.0, "Catholicism": 22.0,
+                      "Latter-day Saints": 1.5, "Orthodoxy": 0.5,
+                      "Jehovah's Witnesses": 2.0, "Judaism": 2.0,
+                      "Islam": 1.0, "Buddhism": 1.0, "Hinduism": 1.0,
+                      "Other religions": 1.0, "No religion": 28.0},
+        }
+        self.pops = {"01001": 44335.0}
 
     def test_accepts_a_rollup_matching_the_published_figures(self):
-        check_national(collapse(spread(COMPOSITION, rows=50)), self.pops)
+        check_national(self.nodes, self.pops)
 
     def test_refuses_a_category_collapsed_into_the_wrong_node(self):
         """The sums stay at 100 however the eighteen are filed. Only the
         published national totals notice that Catholics became Muslims."""
-        counties = collapse(spread(COMPOSITION, rows=50))
-        for groups in counties.values():
+        nodes = {f: dict(g) for f, g in self.nodes.items()}
+        for groups in nodes.values():
             groups["Islam"] = groups.pop("Catholicism") + groups["Islam"]
         with self.assertRaises(SystemExit) as cm:
-            check_national(counties, self.pops)
+            check_national(nodes, self.pops)
         self.assertIn("Christian", str(cm.exception))
 
     def test_refuses_when_no_county_has_a_population(self):
         with self.assertRaises(SystemExit) as cm:
-            check_national(collapse(spread(COMPOSITION, rows=50)), {})
+            check_national(self.nodes, {})
         self.assertIn("cannot be weighted", str(cm.exception))
+
+
+class Population(unittest.TestCase):
+    """PRRI's denominator is adults; the ACS count is residents."""
+
+    def test_accepts_an_adult_sized_denominator(self):
+        counties, _ = read_table(REAL, chart="d76SP")
+        # Autauga: 44,335 adults against roughly 59,800 residents.
+        check_population(counties, universe(6, population=59_800))
+
+    def test_refuses_a_denominator_that_is_not_a_subset(self):
+        """If Population were residents, or something else entirely, weighting
+        the national roll-up by it would be wrong."""
+        counties, _ = read_table(REAL, chart="d76SP")
+        with self.assertRaises(SystemExit) as cm:
+            check_population(counties, universe(6, population=10_000))
+        self.assertIn("not the adult denominator", str(cm.exception))
 
 
 class Join(unittest.TestCase):
@@ -358,10 +437,10 @@ class Join(unittest.TestCase):
 
     def setUp(self):
         self.n = 3_100
-        self.counties = collapse(spread(COMPOSITION, rows=self.n))
+        self.nodes = nodes_for(self.n)
 
     def test_builds_a_record_per_county(self):
-        got = build(self.counties, universe(self.n))
+        got = build(self.nodes, universe(self.n), year=2024)
         self.assertEqual(len(got), self.n)
         first = got[0]
         self.assertEqual(first["id"], "USA-01001")
@@ -369,67 +448,60 @@ class Join(unittest.TestCase):
         self.assertEqual(first["parent"], "USA-01")
         self.assertEqual(first["country"], "USA")
         self.assertEqual(first["codes"]["geoid"], "01001")
-        self.assertEqual(first["religion_year"], 2023)
+        self.assertEqual(first["religion_year"], 2024)
         self.assertEqual(first["religion_basis"], "self-identification")
         self.assertEqual(first["sources"][0]["field"], "religion")
 
-    def test_religion_rows_are_sorted_and_sum_to_100(self):
-        got = build(self.counties, universe(self.n))
+    def test_religion_rows_are_sorted_and_sum_to_the_table(self):
+        got = build(self.nodes, universe(self.n), year=2024)
         rows = got[0]["religion"]
         self.assertEqual([r["pct"] for r in rows],
                          sorted((r["pct"] for r in rows), reverse=True))
-        self.assertAlmostEqual(sum(r["pct"] for r in rows), 100.0, places=1)
+        self.assertAlmostEqual(sum(r["pct"] for r in rows), 100.2, places=1)
         self.assertEqual(rows[0]["group"], "Protestantism")
 
     def test_takes_the_name_from_the_map_not_from_prri(self):
-        names = {"01001": "Autauga County, Alabama"}
-        got = build(self.counties, universe(self.n, names=names))
+        got = build(self.nodes, universe(self.n, names={"01001": "Autauga County, Alabama"}),
+                    year=2024)
         self.assertEqual(got[0]["name"], "Autauga County, Alabama")
 
-    def test_accepts_a_name_that_differs_only_in_decoration(self):
-        """'Autauga County, Alabama' and 'Autauga' are the same place."""
-        names = {"01001": "Autauga County, Alabama"}
-        got = build(self.counties, universe(self.n, names=names),
-                    prri_names={"01001": "Autauga"})
+    def test_accepts_prris_state_abbreviation(self):
+        """PRRI writes 'Autauga County, AL' and the map 'Autauga County,
+        Alabama'. The same place, and the check must not say otherwise."""
+        got = build(self.nodes,
+                    universe(self.n, names={"01001": "Autauga County, Alabama"}),
+                    year=2024, prri_names={"01001": "Autauga County, AL"})
         self.assertEqual(len(got), self.n)
 
     def test_refuses_a_fips_naming_a_different_county(self):
         """A FIPS whose name moved is usually a FIPS that was reassigned --
         Connecticut's 2022 planning regions are the live case. Joining it
-        anyway puts one county's religion on another county's shape, which is
-        invisible once it is on the map."""
-        names = {"01001": "Autauga County, Alabama"}
+        anyway puts one county's religion on another county's shape."""
         with self.assertRaises(SystemExit) as cm:
-            build(self.counties, universe(self.n, names=names),
-                  prri_names={"01001": "Litchfield"})
+            build(self.nodes,
+                  universe(self.n, names={"01001": "Autauga County, Alabama"}),
+                  year=2024, prri_names={"01001": "Litchfield County, CT"})
         self.assertIn("different county", str(cm.exception))
 
     def test_refuses_when_too_little_joins(self):
         """Part-matching two county vintages is worse than refusing both."""
         with self.assertRaises(SystemExit) as cm:
-            build(self.counties, universe(2_800))
+            build(self.nodes, universe(2_800), year=2024)
         self.assertIn("different county vintages", str(cm.exception))
 
     def test_refuses_an_implausible_county_count(self):
-        small = collapse(spread(COMPOSITION, rows=100))
         with self.assertRaises(SystemExit) as cm:
-            build(small, universe(100))
+            build(nodes_for(100), universe(100), year=2024)
         self.assertIn("3,143", str(cm.exception))
 
     def test_unmatched_counties_are_dropped_not_forced(self):
         """A PRRI county with no shape is a visible gap, not a guess."""
-        short = universe(self.n)[:-20]
-        got = build(self.counties, short)
+        got = build(self.nodes, universe(self.n)[:-20], year=2024)
         self.assertEqual(len(got), self.n - 20)
 
 
 class Probe(unittest.TestCase):
-    """The read-only path that corrects the column rules against the real file.
-
-    It runs on the Actions runner, where the CDN is reachable; here only its
-    argument handling and its refusal behaviour can be exercised, so the fetch
-    itself is stubbed.
-    """
+    """The read-only path that corrected the column rules against the file."""
 
     def run_main(self, argv: list[str], fake_probe):
         with mock.patch.object(us_prri, "probe", fake_probe), \
@@ -455,8 +527,8 @@ class Probe(unittest.TestCase):
                 raise SystemExit("us_prri: 404")
 
         code = self.run_main(["--probe", "--chart", "all"], flaky)
-        self.assertEqual(seen, list(CHARTS))   # it kept going
-        self.assertEqual(code, 1)              # and still ended red
+        self.assertEqual(seen, list(CHARTS))
+        self.assertEqual(code, 1)
 
     def test_refuses_a_chart_id_it_does_not_know(self):
         with self.assertRaises(SystemExit) as cm:
@@ -466,8 +538,8 @@ class Probe(unittest.TestCase):
     def test_arguments_are_xargs_safe(self):
         """The runner passes these through
         ``printf '%s' "$ADAPTER" | xargs python3 -m``, which splits on
-        whitespace and strips quotes. Any default carrying a space or a quote
-        would arrive as two arguments."""
+        whitespace and strips quotes. Any flag or default carrying a space or a
+        quote would arrive as two arguments."""
         parser = us_prri.build_parser()
         for action in parser._actions:
             for flag in action.option_strings:
@@ -479,8 +551,9 @@ class Probe(unittest.TestCase):
 class Normalise(unittest.TestCase):
 
     def test_strips_type_words_and_state(self):
+        self.assertEqual(normalise("Autauga County, AL"), "autauga")
         self.assertEqual(normalise("Autauga County, Alabama"), "autauga")
-        self.assertEqual(normalise("Orleans Parish, Louisiana"), "orleans")
+        self.assertEqual(normalise("Orleans Parish, LA"), "orleans")
         self.assertEqual(normalise("Doña Ana County"), normalise("Dona Ana"))
 
     def test_keeps_genuinely_different_names_apart(self):

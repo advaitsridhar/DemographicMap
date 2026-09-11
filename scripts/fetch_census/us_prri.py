@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""United States: religion by county, from the 2023 PRRI Census of American Religion.
+"""United States: religion by county, from the PRRI Census of American Religion.
 
 The counties already carry religion, from the 2020 U.S. Religion Census (ASARB)
 by way of ``us_acs.py``. That study is a count of *adherents reported by
@@ -10,80 +10,97 @@ the study genuinely cannot tell them apart. It is the best congregational count
 that exists and it answers a different question from the one this map asks.
 
 PRRI's Census of American Religion answers the map's question. It is
-self-identification: 40,000 adults on Ipsos's KnowledgePanel, interviewed
-through 2023 as part of the American Values Atlas, asked what they are. It
-covers 100% of the population rather than 48.6%, and it separates the
-religiously unaffiliated (27% of Americans) from non-response instead of
-banking them together. So where this file matches a county, it **replaces** the
-ASARB religion figures rather than filling a gap -- every county it touches
-already had a religion list -- and because it replaces figures already on the
-map, the repository owner reviews the change before it ships.
+self-identification: adults on Ipsos's KnowledgePanel asked what they are, as
+part of the American Values Atlas, modelled down to county level. It covers
+100% of the population rather than 48.6%, and it separates the religiously
+unaffiliated (27% of Americans) from non-response instead of banking them
+together. So where this file matches a county it **replaces** the ASARB
+religion figures rather than filling a gap -- every county it touches already
+had a religion list -- and because it replaces figures already on the map, the
+repository owner reviews the change before it ships.
 
 Two things about it are not a census and the note on every record says so:
 these are modelled small-area estimates from a national sample, not a
 county-by-county enumeration, and they describe adults, not residents.
 
-**Where the numbers come from.** PRRI publishes the county data as Datawrapper
-choropleths embedded in the article, one chart per religious group. The chart
-IDs below were read out of the saved article page (the ``datawrapper-chart-*``
-iframe ids, each beside its own ``title`` attribute), and Datawrapper serves
-every published chart's underlying table at
-``https://datawrapper.dwcdn.net/<id>/<version>/dataset.csv``. There is no
-single county-by-religion table anywhere; assembling one means fetching all
-eighteen and joining them on FIPS, which is what this does.
+**The article says 2023 and the data says 2024.** PRRI titles the report the
+2023 Census of American Religion; the published table's own ``year`` column
+reads 2024 in every row. The file is what this adapter has, so the file is what
+it records -- ``religion_year`` is read out of the data rather than taken from
+the title, and the note says both numbers so that nobody has to rediscover the
+discrepancy. If a later revision carries a different year, that year is what
+lands, and the log says which.
+
+**Where the numbers come from, and what one fetch gets you.** PRRI publishes
+the county data as Datawrapper choropleths embedded in the article, one chart
+per religious group, and Datawrapper serves each published chart's underlying
+table at ``https://datawrapper.dwcdn.net/<id>/<version>/dataset.csv``. The
+chart IDs were read out of the saved article page (the ``datawrapper-chart-*``
+iframe ids, each beside its own ``title`` attribute).
+
+A probe of the first chart showed the thing that shapes this adapter: **every
+chart carries the whole table.** The CSV behind "White Evangelical Protestant"
+has all eighteen group columns in it, plus population, FIPS, county name and
+the diversity index -- 3,142 rows, one per county. So this fetches one chart,
+not eighteen, and then fetches a second and checks the two agree column for
+column and county for county. That cross-check is the price of relying on the
+observation: if PRRI ever publishes a chart from a different table, the run
+stops instead of quietly preferring whichever one it read first.
 
 **Race is dropped, not refiled.** PRRI's categories are race crossed with
-religion -- "White Evangelical Protestant", "Black Protestant", "Hispanic
-Catholic" -- because the racial split is the finding the report is about. This
-map's religion tree is about religion. There is no node for "White Protestant"
-and inventing one would put race in the religion tree, where a reader filtering
-for Protestantism would then miss four-fifths of American Protestants. So the
-five Protestant categories collapse to Protestantism and the three Catholic
-ones to Catholicism, and the race detail is *dropped* rather than misfiled:
-this file cannot answer "how many Black Protestants are in this county" and
-does not pretend to. PRRI's article is the place for that question.
+religion -- ``white_evangelical_protestant``, ``black_protestant``,
+``hispanic_catholic`` -- because the racial split is the finding the report is
+about. This map's religion tree is about religion. There is no node for "White
+Protestant" and inventing one would put race in the religion tree, where a
+reader filtering for Protestantism would then miss four-fifths of American
+Protestants. So the five Protestant columns collapse to Protestantism and the
+three Catholic ones to Catholicism, and the race detail is *dropped* rather
+than misfiled: this file cannot answer "how many Black Protestants are in this
+county" and does not pretend to. PRRI's article is the place for that question.
 
 Two categories have no node and are not worth inventing one for. Unitarian
-Universalists are 0.5% of Americans and "Other Non-Christian Religious" is
-already a residual; both become "Other religions", which is what that node is
-for. The collapse is lossy in one visible way and the note records it.
+Universalists are 0.5% of Americans and ``other_religion`` is already a
+residual; both become "Other religions", which is what that node is for. The
+collapse is lossy in one visible way and the note records it.
 
-**The nineteenth chart is not a percentage.** ``mL9BH`` is the Religious
-Diversity Index, a 0-1 concentration score, not a share of anyone. Reading it
-alongside the other eighteen would add a spurious "group" worth 50-odd points
-to every county and quietly wreck the sums. It is listed below as excluded so
-that a later reader can see it was considered rather than missed.
+**The diversity index is not a share.** It appears twice -- as its own chart
+``mL9BH`` and as a ``diversity_index`` column in every CSV -- and it is a 0-1
+concentration score, not a percentage of anybody. Read as a nineteenth group it
+would add half a point to every county and quietly spoil the sums. Both the
+chart and the column are named below as excluded, so that a later reader can
+see it was considered rather than missed.
 
 **The join is by FIPS and only by FIPS.** County *names* are the classic silent
 mis-match here -- there are thirty-odd Washington Counties and a Wilcox in both
-Alabama and Georgia -- so the name is never the key. It is used only as a
-check: where PRRI's own county name and the map's disagree after normalisation,
-that FIPS is reported and refused rather than joined, because a FIPS whose name
-moved is usually a FIPS that was reassigned. Connecticut is the live case:
-the state replaced its eight counties with nine planning regions in 2022, and a
-PRRI table on the new codes joined against an ACS 2022 county file on the old
-ones would match nothing there and must say so rather than drop it.
+Alabama and Georgia -- so the name is never the key. PRRI's FIPS arrive
+unpadded (Autauga County, Alabama is ``1001``, not ``01001``), and joining
+those against a five-digit key would silently lose every state from 01 to 09,
+so they are padded at the reader. The name column ``fips_fct`` is used only as
+a check: where PRRI's county name and the map's disagree after normalisation,
+that FIPS is refused rather than joined, because a FIPS whose name moved is
+usually a FIPS that was reassigned. Connecticut is the live case -- the state
+replaced its eight counties with nine planning regions in 2022 -- and a
+mismatch there must be reported, not absorbed.
 
-**Status: this adapter has not yet been run against the real tables.** Both
-``datawrapper.dwcdn.net`` and ``prri.org`` are refused by the build sandbox's
-egress proxy (``403 to CONNECT``, an organisation policy denial, confirmed from
-two independent clients), which is the ordinary state of affairs here and the
-reason ``.github/workflows/run-adapter.yml`` exists: the fetch runs on an
-Actions runner with open egress. Nothing about the column *names* below was
-read off a real PRRI file, so the reader identifies its columns by testing
-their contents rather than by trusting a header, and refuses wherever the
-answer is ambiguous instead of taking the first candidate.
+**A key column is not just a column of numbers.** The probe caught this: the
+table's ``year`` column is ``2024`` in every row, which looks exactly like a
+county FIPS code to any test that only asks "are these four or five digits
+beginning with a valid state prefix". Two further things are true of a key and
+false of ``year``: a key takes as many distinct values as there are rows, and a
+key is not constant. Both are checked, which is why the column is identified by
+name and then *verified* by content rather than sniffed out of the header.
 
-Probe before fetching. ``--probe`` fetches one chart and prints its delimiter,
-header, first rows, per-column classification and value range without writing
-anything, so the rules can be corrected against the real file:
+**Running it.** The build sandbox cannot reach ``datawrapper.dwcdn.net`` or
+``prri.org`` -- the egress proxy answers 403 to CONNECT, an organisation policy
+denial -- which is why ``.github/workflows/run-adapter.yml`` exists: the fetch
+runs on an Actions runner with open egress. ``--probe`` fetches without writing
+anything and prints the delimiter, header, first rows, per-column
+classification and value ranges, which is how the rules above were fixed
+against fact rather than guessed.
 
-    scripts.fetch_census.us_prri --probe --chart d76SP     # commit off
-    scripts.fetch_census.us_prri --probe --chart all       # every chart's header
-
-Arguments are passed to the runner through ``printf '%s' "$ADAPTER" | xargs
-python3 -m``, so they must survive word-splitting: no spaces inside a value, no
-quotes, no shell metacharacters. Chart ids and integers are all this takes.
+Arguments reach the runner through ``printf '%s' "$ADAPTER" | xargs python3
+-m``, so they must survive word-splitting: no spaces inside a value, no quotes,
+no shell metacharacters. Chart ids and integers are all this takes.
 
 Usage:
     python -m scripts.fetch_census.us_prri --probe --chart d76SP
@@ -96,6 +113,8 @@ import argparse
 import csv
 import io
 import re
+import statistics
+from pathlib import Path
 from typing import Any
 
 from ._shared import (
@@ -103,22 +122,22 @@ from ._shared import (
 )
 
 OUT = "us_prri_county.json"
-YEAR = 2023
-SOURCE = ("PRRI, 2023 Census of American Religion: County-Level Data on "
-          "Religious Identity and Diversity (American Values Atlas 2023)")
+SOURCE = ("PRRI, Census of American Religion: County-Level Data on Religious "
+          "Identity and Diversity (American Values Atlas)")
 PAGE = ("https://www.prri.org/research/2023-prri-census-of-american-religion-"
         "county-level-data-on-religious-identity-and-diversity/")
 LICENCE = "Copyright PRRI; used with attribution to the published report"
 
 # The county universe and its canonical names. Written by us_acs.py, which is
 # the file this one overwrites the religion field of; taking the names and
-# parents from there rather than from PRRI is what keeps the two files mergeable.
+# parents from there rather than from PRRI is what keeps the two mergeable.
 UNIVERSE = "us_county.json"
 
 CDN = "https://datawrapper.dwcdn.net"
 
 # Chart id -> the title PRRI gave it, read from the iframe attributes in the
-# saved article. Eighteen groups that partition the adult population once.
+# saved article. Every one of these serves the same whole table; PRIMARY is the
+# one fetched and CROSS_CHECK the one used to prove that claim on each run.
 CHARTS: dict[str, str] = {
     "d76SP": "White Evangelical Protestant",
     "kgIZw": "White Mainline/Non-evangelical Protestant",
@@ -139,12 +158,49 @@ CHARTS: dict[str, str] = {
     "8fj2m": "Other Non-Christian Religious",
     "CLuyf": "Religiously Unaffiliated",
 }
+PRIMARY = "d76SP"
+CROSS_CHECK = "CLuyf"
 
 # Present in the article, deliberately not read: an index, not a share.
 EXCLUDED: dict[str, str] = {
     "mL9BH": "The Religious Diversity Index, By County -- a 0-1 concentration "
              "score rather than a percentage of anybody",
 }
+
+# The table's own column names, as the probe found them.
+KEY_COLUMN = "fipsstcnty"          # 1001, unpadded
+NAME_COLUMN = "fips_fct"           # "Autauga County, AL"
+POPULATION_COLUMN = "Population"
+YEAR_COLUMN = "year"
+DIVERSITY_COLUMN = "diversity_index"
+
+# CSV column -> the category PRRI titles the matching chart with. Identified by
+# name because the header is now known fact; a column that vanishes or is
+# renamed stops the run rather than being skipped.
+COLUMNS: dict[str, str] = {
+    "white_evangelical_protestant": "White Evangelical Protestant",
+    "white_mainline_protestant": "White Mainline/Non-evangelical Protestant",
+    "black_protestant": "Black Protestant",
+    "hispanic_protestant": "Hispanic Protestant",
+    "other_protestant": "Other Protestant of Color",
+    "white_catholic": "White Catholic",
+    "hispanic_catholic": "Hispanic Catholic",
+    "other_catholic": "Other Catholic of Color",
+    "mormon": "Latter-day Saint (Mormon)",
+    "orthodox_christian": "Orthodox Christian",
+    "jehovahs_witness": "Jehovah's Witness",
+    "jewish": "Jewish",
+    "muslim": "Muslim",
+    "buddhist": "Buddhist",
+    "hindu": "Hindu",
+    "unitarian_universalist": "Unitarian Universalist",
+    "other_religion": "Other Non-Christian Religious",
+    "unaffiliated": "Religiously Unaffiliated",
+}
+
+# Columns that are real and deliberately not religion shares.
+STRUCTURAL = {KEY_COLUMN, NAME_COLUMN, POPULATION_COLUMN, YEAR_COLUMN,
+              DIVERSITY_COLUMN}
 
 # PRRI category -> the religion node this map already has. Race is dropped
 # here; see the module docstring for why it is not refiled instead.
@@ -169,9 +225,7 @@ COLLAPSE: dict[str, str] = {
     "Religiously Unaffiliated": "No religion",
 }
 
-# The national figures PRRI states in the article's own opening paragraph and
-# its first three footnotes, quoted here so the roll-up has something published
-# to be checked against:
+# The national figures PRRI states in the article's own opening paragraph:
 #
 #   "Two-thirds of Americans (66%) identify as Christian ... Over one-quarter
 #   of Americans (27%) are religiously unaffiliated, and 6% belong to a
@@ -180,7 +234,8 @@ COLLAPSE: dict[str, str] = {
 # These three are used rather than the eighteen group figures because they are
 # the numbers PRRI writes as single published values; the group shares in the
 # footnotes are rounded to whole percents and summing five of them to check
-# Protestantism would be checking the rounding as much as the data.
+# Protestantism would be checking the rounding as much as the data. Note they
+# sum to 99, not 100, which is why none of the tolerances here are hairline.
 NATIONAL: dict[str, float] = {
     "Christian": 66.0,
     "No religion": 27.0,
@@ -190,29 +245,29 @@ CHRISTIAN = {"Protestantism", "Catholicism", "Orthodoxy", "Latter-day Saints",
              "Jehovah's Witnesses"}
 
 # How far a county's eighteen shares may sit from 100 before the run stops.
-# Eighteen values each rounded to one decimal can drift 0.9 on rounding alone,
-# and PRRI fits each group's small-area model separately rather than
-# constraining the eighteen to sum, so exact closure is not expected. Five
-# points is the band that still catches the failure this guards against: a
-# chart fetched twice or not at all moves a real county by more than that for
-# every group bigger than Hinduism.
+# The real table is close: Autauga sums to 100.2, Bullock to 100.0. Eighteen
+# values each rounded to one decimal can drift 0.9 on rounding alone, and PRRI
+# fits each group's small-area model separately rather than constraining the
+# eighteen to sum, so exact closure is not expected. Five points is the band
+# that still catches the failure this guards against -- a column read twice or
+# not at all -- while leaving the published rounding alone.
 SUM_TOLERANCE = 5.0
 # The per-county band above is deliberately loose, so it would not notice one
-# missing chart in a county where that group is tiny. This one would: across
+# missing column in a county where that group is tiny. This one would: across
 # three thousand counties the typical miss should be rounding-sized, and a
-# systematically absent chart drags the median straight off zero.
+# systematically absent column drags the median straight off zero.
 MEDIAN_SUM_TOLERANCE = 1.5
 
-# The national roll-up is weighted by ACS total population because that is the
-# weight this repository has. PRRI weights to the adult population, and the
-# under-18 share varies by county, so the two cannot agree exactly; the article
-# also rounds its national figures to whole percents. Two and a half points is
-# wide enough for both and still far narrower than the error any mis-assembled
-# category table would produce.
+# The national roll-up is weighted by the table's own Population column, which
+# is PRRI's own denominator and so the right weight for PRRI's own shares. The
+# article rounds its national figures to whole percents and they sum to 99, so
+# two and a half points is wide enough to be fair to them and still far
+# narrower than the error any mis-assembled category table would produce.
 NATIONAL_TOLERANCE = 2.5
 
-# US counties and county equivalents. The expected count is stated rather than
-# inferred so that a table which quietly lost a state fails here.
+# US counties and county equivalents. The probe found 3,142 rows; the expected
+# range is stated rather than inferred so that a table which quietly lost a
+# state fails here.
 MIN_COUNTIES = 3_000
 MAX_COUNTIES = 3_200
 
@@ -220,29 +275,44 @@ MAX_COUNTIES = 3_200
 # reporting "some counties unmatched" would understate it.
 MIN_JOIN_RATE = 0.95
 
+# PRRI's Population is smaller than the ACS resident count for the same county
+# -- 44,335 against about 59,800 for Autauga -- which is what an adult (18+)
+# base looks like, and adults are who PRRI asked. A median ratio outside this
+# band means the column is not the denominator it appears to be.
+POPULATION_RATIO = (0.55, 1.02)
+
+# The two-digit prefixes a real county FIPS can start with: the 50 states and
+# DC run 01-56 with gaps, and the territories sit in the 60s and 70s.
+STATE_PREFIXES = ({f"{n:02d}" for n in range(1, 57)}
+                  | {"60", "66", "68", "69", "70", "72", "74", "78"})
+
+# Datawrapper writes whatever the chart's author uploaded. The real file is
+# comma-separated, but reading a tab-separated one with the comma reader yields
+# a single fused column and a confusing refusal further down.
+DELIMITERS = (",", "\t", ";", "|")
+
 
 def normalise(name: str) -> str:
     """A county name reduced to the part two sources have to agree on.
 
-    'Autauga County, Alabama' and 'Autauga' are the same place; 'Doña Ana' and
-    'Dona Ana' are too. Only ever used to decide whether a name *disagrees*
-    with the one already on the map -- never to make a join.
+    PRRI writes "Autauga County, AL" and the map writes "Autauga County,
+    Alabama"; 'Doña Ana' and 'Dona Ana' are the same place too. Only ever used
+    to decide whether a name *disagrees* with the one already on the map --
+    never to make a join.
     """
     name = name.split(",")[0]
     name = name.replace("ñ", "n").replace("Ñ", "N")
     name = re.sub(r"\b(County|Parish|Borough|Census Area|Municipality|City and "
                   r"Borough|Municipio|Planning Region)\b", " ", name, flags=re.I)
-    name = re.sub(r"[^a-z0-9]+", "", name.lower())
-    return name
+    return re.sub(r"[^a-z0-9]+", "", name.lower())
 
 
 def reachable(url: str, *, timeout: int) -> str:
     """GET, turning an unreachable CDN into a refusal that says what to do.
 
-    This is the failure the adapter was written under, so it gets a sentence
-    rather than a stack trace: on the machine it was written on the egress
-    proxy answers 403 to CONNECT for datawrapper.dwcdn.net and prri.org alike,
-    which is an organisation policy denial and not something to retry around.
+    On the build sandbox the egress proxy answers 403 to CONNECT for
+    datawrapper.dwcdn.net and prri.org alike, which is an organisation policy
+    denial and not something to retry around; the fetch belongs on the runner.
     """
     try:
         page = http_get(url, timeout=timeout)
@@ -253,6 +323,8 @@ def reachable(url: str, *, timeout: int) -> str:
             f"If this is a 403 from an egress proxy it is a policy denial: "
             f"report the blocked host rather than routing around it. Nothing "
             f"was written; the counties keep the ASARB figures they have.") from exc
+    if isinstance(page, bytes):
+        page = page.decode("utf-8-sig", "replace")
     return page
 
 
@@ -260,12 +332,11 @@ def chart_version(chart: str) -> int:
     """The version integer Datawrapper is currently publishing for a chart.
 
     The published page references its own assets by version, so the number is
-    in the HTML; guessing it instead would mean either fetching a stale table
-    or 404ing on a chart that has been revised more times than the guess.
+    in the HTML; guessing it would mean fetching a stale table or 404ing on a
+    chart revised more times than the guess. The first chart probed was at
+    version 7, which is why this is read rather than assumed to be 1.
     """
     page = reachable(f"{CDN}/{chart}/", timeout=60)
-    if isinstance(page, bytes):
-        page = page.decode("utf-8", "replace")
     found = {int(m) for m in re.findall(rf"{chart}/(\d+)/", page)}
     if not found:
         raise SystemExit(
@@ -279,23 +350,8 @@ def fetch_dataset(chart: str) -> str:
     """The published table behind one chart."""
     version = chart_version(chart)
     url = f"{CDN}/{chart}/{version}/dataset.csv"
-    text = reachable(url, timeout=120)
-    if isinstance(text, bytes):
-        text = text.decode("utf-8-sig", "replace")
-    return text
-
-
-# The two-digit prefixes a real county FIPS can start with: the 50 states and
-# DC run 01-56 with gaps, and the territories sit in the 60s and 70s. A column
-# of populations or of years will contain something outside this set almost at
-# once, which is what makes it a usable test for "is this really a FIPS column".
-STATE_PREFIXES = ({f"{n:02d}" for n in range(1, 57)}
-                  | {"60", "66", "68", "69", "70", "72", "74", "78"})
-
-# Datawrapper writes whatever the chart's author uploaded. A table is not
-# necessarily comma-separated, and reading a tab-separated one with the comma
-# reader yields a single fused column and a confusing refusal further down.
-DELIMITERS = (",", "\t", ";", "|")
+    log(f"  {chart} v{version}: {url}")
+    return reachable(url, timeout=120)
 
 
 def split_rows(text: str) -> tuple[list[list[str]], str]:
@@ -310,13 +366,14 @@ def split_rows(text: str) -> tuple[list[list[str]], str]:
         if best is None or width > max(len(r) for r in best[0]):
             best = (rows, delimiter)
     if best is None:
-        return [r for r in csv.reader(io.StringIO(text)) if any(c.strip() for c in r)], ","
+        return ([r for r in csv.reader(io.StringIO(text)) if any(c.strip() for c in r)],
+                ",")
     return best
 
 
 def as_float(cell: str) -> float | None:
     """A cell as a number, or None if it is not one."""
-    cell = cell.strip().rstrip("%").replace(",", "").replace("−", "-")
+    cell = (cell or "").strip().rstrip("%").replace(",", "").replace("−", "-")
     if not cell:
         return None
     try:
@@ -326,138 +383,173 @@ def as_float(cell: str) -> float | None:
 
 
 def censored(cell: str) -> bool:
-    """A cell PRRI deliberately did not give precisely, e.g. '<0.5'."""
+    """A cell PRRI deliberately did not give precisely, e.g. '<0.5'.
+
+    The real table censors nothing, which is worth knowing rather than
+    assuming: this stays so that a later revision which does censor stops the
+    run instead of being read as zero.
+    """
     return bool(re.match(r"^\s*[<>]\s*\d", cell or ""))
 
 
-def classify(columns: list[tuple[str, ...]]) -> tuple[list[int], list[int]]:
-    """Which columns hold county FIPS codes, and which hold a numeric series."""
-    fips_cols, value_cols = [], []
-    for i, col in enumerate(columns):
-        values = [v.strip() for v in col]
-        if not values:
-            continue
-        digits = [v for v in values if re.fullmatch(r"\d{4,5}", v)]
-        prefixed = [v for v in digits if v.zfill(5)[:2] in STATE_PREFIXES]
-        # A county table has about 3,100 rows; a handful of rows is some other
-        # table entirely, and no length of guessing makes it into this one.
-        if len(values) > 100 and len(prefixed) >= 0.9 * len(values):
-            fips_cols.append(i)
-            continue
-        if sum(as_float(v) is not None for v in values) >= 0.9 * len(values):
-            value_cols.append(i)
-    return fips_cols, value_cols
+def looks_like_key(values: list[str]) -> tuple[bool, str]:
+    """Is this column a county FIPS key? Returns the verdict and why.
+
+    Being four or five digits with a valid state prefix is not enough on its
+    own: the table's ``year`` column is 2024 in every row and passes that test,
+    because "20" is Kansas. A key is also distinct in every row and takes more
+    than one value, and ``year`` fails both.
+    """
+    values = [v.strip() for v in values]
+    if not values:
+        return False, "empty"
+    digits = [v for v in values if re.fullmatch(r"\d{4,5}", v)]
+    if len(digits) < 0.99 * len(values):
+        return False, f"only {len(digits)}/{len(values)} are 4-5 digit numbers"
+    prefixed = [v for v in digits if v.zfill(5)[:2] in STATE_PREFIXES]
+    if len(prefixed) < 0.99 * len(values):
+        return False, f"only {len(prefixed)}/{len(values)} carry a state prefix"
+    distinct = len(set(values))
+    if distinct == 1:
+        return False, f"constant ({values[0]}) -- a key is not one value"
+    if distinct != len(values):
+        seen: set[str] = set()
+        repeated = sorted({v for v in values if v in seen or seen.add(v)})
+        return False, (f"{distinct} distinct values in {len(values)} rows; "
+                       f"repeated twice or more: {repeated[:5]}")
+    return True, f"{distinct} distinct 5-digit codes"
 
 
-def read_dataset(text: str, *, chart: str) -> dict[str, float]:
-    """One chart's table -> {5-digit FIPS: percent}.
+def read_table(text: str, *, chart: str) -> tuple[dict[str, dict[str, Any]], int]:
+    """One chart's CSV -> ({FIPS: {name, population, shares}}, data year).
 
-    The columns are identified by what they contain rather than by name. A
-    Datawrapper dataset carries whatever headers its author typed, and this
-    adapter was written without sight of the real ones (see the module
-    docstring); a header guess that was wrong would fail as a KeyError months
-    from now, while this fails immediately and says which column it could not
-    find. It also does the job the header could not: a table that is not
-    county-level has no column of county FIPS codes in it, and that is exactly
-    the thing being tested for.
-
-    Both the key column and the value column must be unambiguous. Taking the
-    first of two candidates is a guess, and a guess between a FIPS column and a
-    population column is the silent mis-match this repository exists to avoid.
+    Every chart serves the same whole table, so this reads all eighteen group
+    columns at once. The columns are named rather than sniffed -- the header is
+    known fact now -- and then verified, because a header that has been
+    reshuffled or renamed is exactly the change that must stop a run rather
+    than quietly shift which column is read as which religion.
     """
     rows, _ = split_rows(text)
     if len(rows) < 2:
         raise SystemExit(f"us_prri: chart {chart} returned no rows")
-    header, body = rows[0], rows[1:]
+    header = [h.strip() for h in rows[0]]
+    body = [r + [""] * (len(header) - len(r)) for r in rows[1:]]
 
-    width = max(len(r) for r in body)
-    body = [r + [""] * (width - len(r)) for r in body]
-    columns = list(zip(*body))
-    fips_cols, value_cols = classify(columns)
-
-    if len(fips_cols) != 1:
+    missing = sorted((set(COLUMNS) | STRUCTURAL) - set(header))
+    if missing:
         raise SystemExit(
-            f"us_prri: chart {chart} has {len(fips_cols)} columns of county "
-            f"FIPS codes (header {header}); "
-            + ("this is not the county-level table"
-               if not fips_cols else
-               "which one is the key cannot be decided without guessing"))
-    fips_col = fips_cols[0]
-    if len(value_cols) != 1:
+            f"us_prri: chart {chart} is missing the columns {missing} "
+            f"(header {header}); PRRI has changed the table and the mapping "
+            f"has to be redone by hand rather than part-applied")
+    unknown = sorted(set(header) - set(COLUMNS) - STRUCTURAL)
+    if unknown:
         raise SystemExit(
-            f"us_prri: chart {chart} has {len(value_cols)} numeric value "
-            f"columns besides FIPS (header {header}); which one is the "
-            f"percentage cannot be decided without guessing")
-    value_col = value_cols[0]
+            f"us_prri: chart {chart} has columns this adapter has not decided "
+            f"about: {unknown}. If one is a new religious group it must be "
+            f"mapped, and if it is not it must be named as structural -- "
+            f"either way, not silently dropped.")
 
-    # PRRI may publish a suppressed share as "<0.5" rather than a number.
-    # Dropping those cells would leave the county's shares quietly short of
-    # 100, so the run stops and says how many there are: what a censored value
-    # should become is a judgement for whoever is reading the real table, not
-    # something to decide here by default.
-    hidden = [r[fips_col].strip() for r in body if censored(r[value_col])]
+    index = {name: i for i, name in enumerate(header)}
+    columns = {name: [r[i] for r in body] for name, i in index.items()}
+
+    ok, why = looks_like_key(columns[KEY_COLUMN])
+    if not ok:
+        raise SystemExit(
+            f"us_prri: chart {chart} column {KEY_COLUMN!r} is not a county key "
+            f"({why}); joining on it would be a guess")
+
+    years = {v.strip() for v in columns[YEAR_COLUMN] if v.strip()}
+    if len(years) != 1:
+        raise SystemExit(
+            f"us_prri: chart {chart} mixes data years {sorted(years)}; a "
+            f"single religion_year cannot describe it")
+    year = as_float(years.pop())
+    if year is None or not 1990 <= year <= 2100:
+        raise SystemExit(f"us_prri: chart {chart} has an implausible year")
+
+    hidden = sum(censored(cell) for name in COLUMNS for cell in columns[name])
     if hidden:
         raise SystemExit(
-            f"us_prri: chart {chart} censors {len(hidden)} counties (e.g. "
-            f"{hidden[:5]}) with a '<' or '>' value. Treating those as zero "
-            f"would understate the group and leave the county's shares short "
-            f"of 100; decide what they should become and say so in the note "
-            f"before running this again.")
+            f"us_prri: chart {chart} censors {hidden} values with a '<' or "
+            f"'>'. Treating those as zero would understate the group and leave "
+            f"the county short of 100; decide what they should become and say "
+            f"so in the note before running this again.")
 
-    out: dict[str, float] = {}
-    for row in body:
-        fips = row[fips_col].strip().zfill(5)
-        value = as_float(row[value_col])
-        if value is None:
-            continue
-        if fips in out:
+    counties: dict[str, dict[str, Any]] = {}
+    for row_no, row in enumerate(body):
+        # PRRI writes Autauga County, Alabama as 1001. Unpadded codes joined
+        # against a 5-digit key lose every state from 01 to 09 in silence.
+        fips = row[index[KEY_COLUMN]].strip().zfill(5)
+        if fips in counties:
             raise SystemExit(
                 f"us_prri: chart {chart} lists FIPS {fips} twice; a duplicated "
                 f"county would be counted twice in the national roll-up")
-        out[fips] = value
-    if not out:
+        population = as_float(row[index[POPULATION_COLUMN]])
+        shares: dict[str, float] = {}
+        for column, category in COLUMNS.items():
+            value = as_float(row[index[column]])
+            if value is None:
+                raise SystemExit(
+                    f"us_prri: chart {chart} row {row_no + 2} has no number in "
+                    f"{column!r} for FIPS {fips}; a blank share is not a zero "
+                    f"and must not be read as one")
+            shares[category] = value
+        counties[fips] = {"name": row[index[NAME_COLUMN]].strip(),
+                          "population": population, "shares": shares}
+    if not counties:
         raise SystemExit(f"us_prri: chart {chart} yielded no usable rows")
-    return out
+    return counties, int(year)
 
 
-def collapse(by_category: dict[str, dict[str, float]]) -> dict[str, dict[str, float]]:
-    """{category: {fips: pct}} -> {fips: {religion node: pct}}.
+def cross_check(primary: dict[str, dict[str, Any]],
+                other: dict[str, dict[str, Any]], *, chart: str) -> None:
+    """Prove that a second chart serves the same table as the first.
+
+    The whole adapter rests on one observation -- that every chart carries all
+    eighteen columns -- and an observation made once is worth re-making on
+    every run. If PRRI ever publishes a chart from a different table, this is
+    what stops the run instead of quietly preferring whichever was read first.
+    """
+    if set(primary) != set(other):
+        only_primary = sorted(set(primary) - set(other))[:5]
+        only_other = sorted(set(other) - set(primary))[:5]
+        raise SystemExit(
+            f"us_prri: chart {chart} covers different counties from "
+            f"{PRIMARY} (only in {PRIMARY}: {only_primary}; only in {chart}: "
+            f"{only_other}); the charts are not one table")
+    for fips, row in primary.items():
+        if row["shares"] != other[fips]["shares"]:
+            differing = sorted(k for k, v in row["shares"].items()
+                               if other[fips]["shares"].get(k) != v)
+            raise SystemExit(
+                f"us_prri: chart {chart} disagrees with {PRIMARY} for FIPS "
+                f"{fips} on {differing}; the charts are not one table and "
+                f"which is right cannot be decided here")
+    log(f"  cross-check: {chart} matches {PRIMARY} across {len(primary)} counties")
+
+
+def collapse(counties: dict[str, dict[str, Any]]) -> dict[str, dict[str, float]]:
+    """{FIPS: {..., shares}} -> {FIPS: {religion node: pct}}.
 
     Every category must be one this adapter has decided about. A nineteenth
     group appearing in a later PRRI release would otherwise be silently
     dropped, which is the failure mode the whole file is written against.
     """
-    unknown = sorted(set(by_category) - set(COLLAPSE))
+    seen = {cat for row in counties.values() for cat in row["shares"]}
+    unknown = sorted(seen - set(COLLAPSE))
     if unknown:
         raise SystemExit(
             f"us_prri: no religion node decided for {unknown}; PRRI has added "
             f"a category and it must be mapped by hand, not defaulted")
 
     out: dict[str, dict[str, float]] = {}
-    for category, values in by_category.items():
-        node = COLLAPSE[category]
-        for fips, pct in values.items():
-            out.setdefault(fips, {})
-            out[fips][node] = out[fips].get(node, 0.0) + pct
+    for fips, row in counties.items():
+        nodes: dict[str, float] = {}
+        for category, pct in row["shares"].items():
+            node = COLLAPSE[category]
+            nodes[node] = nodes.get(node, 0.0) + pct
+        out[fips] = nodes
     return out
-
-
-def check_coverage(by_category: dict[str, dict[str, float]]) -> set[str]:
-    """Every chart must describe the same counties.
-
-    Eighteen separately published tables can disagree about which counties they
-    cover, and a county missing from one of them is a county whose shares sum
-    to less than 100 for a reason that has nothing to do with its religion.
-    """
-    sets = {cat: set(vals) for cat, vals in by_category.items()}
-    common = set.intersection(*sets.values()) if sets else set()
-    for category, fips in sets.items():
-        missing = len(common) and len(fips - common)
-        if missing:
-            log(f"  {category}: {missing} counties not shared by every chart")
-    if not common:
-        raise SystemExit("us_prri: the eighteen charts share no county at all")
-    return common
 
 
 def check_sums(counties: dict[str, dict[str, float]]) -> None:
@@ -469,14 +561,14 @@ def check_sums(counties: dict[str, dict[str, float]]) -> None:
         raise SystemExit(
             f"us_prri: county {worst_fips} sums to "
             f"{sum(counties[worst_fips].values()):.1f}%, {worst:.1f} points "
-            f"from 100 against a tolerance of {SUM_TOLERANCE}; a chart is "
+            f"from 100 against a tolerance of {SUM_TOLERANCE}; a column is "
             f"missing, duplicated, or is not a percentage")
     median = misses[len(misses) // 2][0]
     if median > MEDIAN_SUM_TOLERANCE:
         raise SystemExit(
             f"us_prri: the typical county is {median:.1f} points from 100 "
             f"(tolerance {MEDIAN_SUM_TOLERANCE}); that is a systematic gap, "
-            f"not rounding -- one of the eighteen charts is absent")
+            f"not rounding -- one of the eighteen columns is absent")
     log(f"  sums: worst county {worst:.1f}pp from 100, median {median:.1f}pp")
 
 
@@ -510,20 +602,58 @@ def check_national(counties: dict[str, dict[str, float]],
         "Non-Christian": sum(v for k, v in share.items()
                              if k not in CHRISTIAN and k != "No religion"),
     }
+    # Logged before the check, not after, so a refusal comes with the whole
+    # picture: which node holds what is the difference between "the collapse is
+    # wrong" and "the tolerance is too tight", and only one of those is a bug.
+    log("  national roll-up by node: " + ", ".join(
+        f"{k} {v:.1f}%" for k, v in sorted(share.items(), key=lambda kv: -kv[1])))
     for label, published in NATIONAL.items():
         got = rolled[label]
         if abs(got - published) > NATIONAL_TOLERANCE:
             raise SystemExit(
                 f"us_prri: the county roll-up puts {label} at {got:.1f}% "
                 f"against PRRI's published {published:.0f}%, outside the "
-                f"{NATIONAL_TOLERANCE} point tolerance; the categories are not "
-                f"being collapsed into the right nodes")
+                f"{NATIONAL_TOLERANCE} point tolerance. Most likely the "
+                f"categories are not being collapsed into the right nodes -- "
+                f"check the per-node roll-up logged above. Note the published "
+                f"anchors are the article's 2023 figures while the table is a "
+                f"later vintage, so a miss of a point or so is vintage and a "
+                f"miss of ten is a mapping error.")
     log("  national roll-up: " + ", ".join(
         f"{k} {rolled[k]:.1f}% (published {v:.0f}%)" for k, v in NATIONAL.items()))
 
 
+def check_population(counties: dict[str, dict[str, Any]],
+                     universe: list[dict[str, Any]]) -> None:
+    """PRRI's denominator should look like the adults inside the ACS count.
+
+    Not a hard identity -- the two are different vintages and different
+    universes -- but a column that is not the denominator it appears to be
+    would show up here as a ratio nowhere near one.
+    """
+    acs = {(row.get("codes") or {}).get("geoid"): (row.get("population") or {}).get("value")
+           for row in universe}
+    ratios = [counties[f]["population"] / acs[f]
+              for f in counties
+              if acs.get(f) and counties[f].get("population")]
+    if not ratios:
+        log("  population: no county could be compared with the ACS count")
+        return
+    median = statistics.median(ratios)
+    low, high = POPULATION_RATIO
+    if not low <= median <= high:
+        raise SystemExit(
+            f"us_prri: PRRI's Population is a median {median:.2f} of the ACS "
+            f"resident count, outside the expected {low}-{high}; it is not the "
+            f"adult denominator it was taken for, and weighting the national "
+            f"roll-up by it would be wrong")
+    log(f"  population: median {median:.2f} of the ACS resident count "
+        f"(an adult base, as expected)")
+
+
 def build(counties: dict[str, dict[str, float]],
           universe: list[dict[str, Any]],
+          *, year: int,
           prri_names: dict[str, str] | None = None) -> list[dict[str, Any]]:
     """Join PRRI's counties onto the map's, by FIPS, and refuse what will not join."""
     by_fips = {(row.get("codes") or {}).get("geoid"): row for row in universe}
@@ -542,9 +672,8 @@ def build(counties: dict[str, dict[str, float]],
                 renamed.append(f"{fips} PRRI {prri_names[fips]!r} "
                                f"vs map {home.get('name')!r}")
                 continue
-        groups = counties[fips]
         rows = [{"group": node, "pct": round(pct, 1)}
-                for node, pct in sorted(groups.items(),
+                for node, pct in sorted(counties[fips].items(),
                                         key=lambda kv: (-kv[1], kv[0]))
                 if round(pct, 1) > 0]
         records.append(record(
@@ -552,17 +681,19 @@ def build(counties: dict[str, dict[str, float]],
             level="admin2", parent=home.get("parent", "USA"), country="USA",
             codes=home.get("codes"),
             religion=rows or gap(NOT_AVAILABLE),
-            religion_year=YEAR,
+            religion_year=year,
             religion_basis="self-identification",
             religion_note=(
-                f"{SOURCE}. Self-reported religious identity among adults, "
-                f"modelled to county level from a national random sample of "
-                f"40,000 adults on Ipsos's KnowledgePanel interviewed during "
-                f"2023 (national margin of error +/-0.7 points); these are "
-                f"small-area estimates, not an enumeration, and they describe "
-                f"adults rather than all residents. Replaces the 2020 U.S. "
-                f"Religion Census adherent counts this county carried, which "
-                f"reached about 48.6% of the population and could not "
+                f"{SOURCE}, published as the 2023 PRRI Census of American "
+                f"Religion; the released table's own year column reads {year}, "
+                f"which is the year recorded here. Self-reported religious "
+                f"identity among adults, modelled to county level from a "
+                f"national random sample of 40,000 adults on Ipsos's "
+                f"KnowledgePanel (national margin of error +/-0.7 points); "
+                f"these are small-area estimates, not an enumeration, and they "
+                f"describe adults rather than all residents. Replaces the 2020 "
+                f"U.S. Religion Census adherent counts this county carried, "
+                f"which reached about 48.6% of the population and could not "
                 f"distinguish the unaffiliated from the unreported. PRRI's "
                 f"categories cross race with religion; the five Protestant and "
                 f"three Catholic categories are summed into Protestantism and "
@@ -602,22 +733,12 @@ def build(counties: dict[str, dict[str, float]],
 def probe(chart: str, *, rows: int) -> None:
     """Print what Datawrapper actually returns for one chart. Writes nothing.
 
-    The column identification above was written without sight of a real PRRI
-    table, so its rules are reasoning about a shape rather than knowledge of
-    one. This is how that gets corrected against fact: dispatch it on the
-    runner with commit off, read the header and the first rows it prints, and
-    fix the rules to the file instead of to a guess.
-
     It deliberately reports rather than refuses. A probe that died on the first
     surprise would hide the second one, and the whole point of a read-only run
     is to come back with every surprise at once.
     """
     log(f"--- {chart}: {CHARTS.get(chart, EXCLUDED.get(chart, 'unknown chart'))}")
-    version = chart_version(chart)
-    url = f"{CDN}/{chart}/{version}/dataset.csv"
-    log(f"    version {version}")
-    log(f"    url {url}")
-    text = reachable(url, timeout=120)
+    text = fetch_dataset(chart)
     log(f"    {len(text)} bytes")
 
     parsed, delimiter = split_rows(text)
@@ -629,35 +750,33 @@ def probe(chart: str, *, rows: int) -> None:
     if len(parsed) < 2:
         log("    no body rows to classify")
         return
-    header, body = parsed[0], parsed[1:]
-    width = max(len(r) for r in body)
-    body = [r + [""] * (width - len(r)) for r in body]
-    columns = list(zip(*body))
-    fips_cols, value_cols = classify(columns)
-
+    header = [h.strip() for h in parsed[0]]
+    body = [r + [""] * (len(header) - len(r)) for r in parsed[1:]]
     log(f"    header: {header}")
-    for i, col in enumerate(columns):
-        name = header[i] if i < len(header) else f"<unnamed {i}>"
-        kind = ("FIPS" if i in fips_cols else
-                "value" if i in value_cols else "other")
+    for i, name in enumerate(header):
+        col = [r[i] for r in body]
         numbers = [v for v in (as_float(c) for c in col) if v is not None]
-        span = (f"{min(numbers):g}..{max(numbers):g}" if numbers else "-")
-        hidden = sum(censored(c) for c in col)
-        log(f"      [{i}] {name!r} -> {kind}; sample {list(col[:3])}; "
-            f"numeric {len(numbers)}/{len(col)} range {span}; censored {hidden}")
+        span = f"{min(numbers):g}..{max(numbers):g}" if numbers else "-"
+        key_ok, why = looks_like_key(col)
+        role = ("group" if name in COLUMNS else
+                "structural" if name in STRUCTURAL else "UNKNOWN")
+        log(f"      [{i}] {name!r} -> {role}; sample {col[:3]}; "
+            f"numeric {len(numbers)}/{len(col)} range {span}; "
+            f"censored {sum(censored(c) for c in col)}; "
+            f"key={'yes' if key_ok else 'no'} ({why})")
 
-    log(f"    classify: fips_cols={fips_cols} value_cols={value_cols}")
-    # The range matters as much as the columns: a table storing 0.135 rather
-    # than 13.5 would pass every column test and fail every sum.
     try:
-        got = read_dataset(text, chart=chart)
+        counties, year = read_table(text, chart=chart)
     except SystemExit as exc:
-        log(f"    read_dataset REFUSED: {exc}")
+        log(f"    read_table REFUSED: {exc}")
         return
-    sample = sorted(got)[:5]
-    log(f"    read_dataset ok: {len(got)} counties; "
-        f"sample {[(f, got[f]) for f in sample]}")
-    log(f"    value range {min(got.values()):g}..{max(got.values()):g}")
+    sample = sorted(counties)[:3]
+    log(f"    read_table ok: {len(counties)} counties, year {year}")
+    for fips in sample:
+        row = counties[fips]
+        total = sum(row["shares"].values())
+        log(f"      {fips} {row['name']!r} pop {row['population']:.0f} "
+            f"shares sum {total:.1f}")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -667,17 +786,19 @@ def build_parser() -> argparse.ArgumentParser:
     ``printf '%s' "$ADAPTER" | xargs python3 -m ...`` on the Actions runner, so
     every one of them must survive word-splitting: no spaces inside a value, no
     quotes, no shell metacharacters. Chart ids and integers are all that is
-    asked for here, which keeps that easy -- and a test asserts it stays true.
+    asked for here, and a test asserts it stays true.
     """
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--out", default=None)
+    ap.add_argument("--out", type=Path, default=None)
     ap.add_argument("--probe", action="store_true",
                     help="fetch and describe the table without writing anything")
-    ap.add_argument("--chart", default="d76SP",
-                    help="chart id to probe, or all for every chart")
+    ap.add_argument("--chart", default=PRIMARY,
+                    help="chart id to read or probe, or all to probe every one")
+    ap.add_argument("--cross-check", default=CROSS_CHECK, dest="cross_check",
+                    help="second chart id proving the tables agree, or none")
     ap.add_argument("--rows", type=int, default=6,
-                    help="how many raw lines to print per chart")
+                    help="how many raw lines to print per chart when probing")
     return ap
 
 
@@ -709,8 +830,11 @@ def main() -> int:
         log(f"us_prri: all {len(charts)} charts probed")
         return 0
 
-    log("us_prri: religion by county, PRRI 2023 Census of American Religion")
-    log(f"  {len(CHARTS)} charts; excluding {', '.join(EXCLUDED)} "
+    if args.chart not in CHARTS:
+        raise SystemExit(f"us_prri: no such chart {args.chart!r}; the ids are "
+                         f"{' '.join(CHARTS)}")
+    log("us_prri: religion by county, PRRI Census of American Religion")
+    log(f"  excluding {' '.join(EXCLUDED)} and the {DIVERSITY_COLUMN} column "
         f"({'; '.join(EXCLUDED.values())})")
 
     universe = read_json(PROCESSED / UNIVERSE, None)
@@ -720,26 +844,32 @@ def main() -> int:
             f"county FIPS universe and the canonical names this file joins "
             f"onto. Run scripts.fetch_census.us_acs first.")
 
-    by_category: dict[str, dict[str, float]] = {}
-    for chart, category in CHARTS.items():
-        by_category[category] = read_dataset(fetch_dataset(chart), chart=chart)
-        log(f"  {category}: {len(by_category[category])} counties")
+    counties, year = read_table(fetch_dataset(args.chart), chart=args.chart)
+    log(f"  {len(counties)} counties, data year {year}")
 
-    common = check_coverage(by_category)
-    trimmed = {cat: {f: v for f, v in vals.items() if f in common}
-               for cat, vals in by_category.items()}
-    counties = collapse(trimmed)
-    check_sums(counties)
+    if args.cross_check and args.cross_check != "none":
+        if args.cross_check not in CHARTS:
+            raise SystemExit(f"us_prri: no such chart {args.cross_check!r} to "
+                             f"cross-check against")
+        other, other_year = read_table(fetch_dataset(args.cross_check),
+                                       chart=args.cross_check)
+        if other_year != year:
+            raise SystemExit(
+                f"us_prri: {args.chart} is year {year} and "
+                f"{args.cross_check} is year {other_year}; the charts are not "
+                f"one table")
+        cross_check(counties, other, chart=args.cross_check)
+    else:
+        log("  cross-check skipped; the one-table claim is untested this run")
 
-    populations = {}
-    for row in universe:
-        fips = (row.get("codes") or {}).get("geoid")
-        pop = (row.get("population") or {}).get("value")
-        if fips and pop:
-            populations[fips] = float(pop)
-    check_national(counties, populations)
+    check_population(counties, universe)
+    nodes = collapse(counties)
+    check_sums(nodes)
+    check_national(nodes, {f: r["population"] for f, r in counties.items()
+                           if r.get("population")})
 
-    records = build(counties, universe)
+    records = build(nodes, universe, year=year,
+                    prri_names={f: r["name"] for f, r in counties.items()})
     log(f"  {len(records)} counties written")
     write_json(args.out or PROCESSED / OUT, records)
     return 0
