@@ -1,5 +1,14 @@
-statcan: 2021 Census Profile, provinces and economic regions
-  98-401-X2021008_English_CSV_data.csv: 37,091,682 bytes
-  {'admin1': 13, 'admin2': 76}
-  wrote data/processed/canada_province.json (391 kB)
-  wrote data/processed/canada_economic_region.json (2275 kB)
+poland: admin1
+/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
+  warn("""Cannot parse header or footer so it will be ignored""")
+  ethnicity: 16 units
+  language: 16 units
+  religion: 17 units
+  16 records
+  wrote data/processed/poland_voivodeship.json (259 kB)
+poland: admin2
+  ethnicity: 380 units
+  language: 380 units
+  religion: 380 units
+  380 records
+  wrote data/processed/poland_powiat.json (3335 kB)
