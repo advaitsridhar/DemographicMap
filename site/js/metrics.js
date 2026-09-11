@@ -321,6 +321,34 @@ window.Metrics = (function () {
   ];
 
   /** Compute colours for a set of records under one metric. */
+
+  /* The two ends of the shading ramp for one screenful of units.
+   *
+   * "absolute" is the honest default: 25% to 100% always means the same thing,
+   * so two places can be compared across a session and across the map. Its
+   * cost is that a homogeneous region reads as one flat colour -- zoomed into
+   * a state where every district is 85-95% one group, an absolute ramp throws
+   * away every distinction the reader came to see.
+   *
+   * "fit" trades that comparability for contrast, stretching the ramp over the
+   * range actually present. It is never silent: the caller puts the two real
+   * endpoints in the legend, because a shade that means something different
+   * from one view to the next has to say so.
+   */
+  function spanOf(values, spread, floor, keep) {
+    const base = Number.isFinite(floor) ? floor : 25;
+    const real = values.filter((v, i) => typeof v === "number" && isFinite(v)
+                                         && (!keep || keep(i)));
+    if (spread !== "fit" || real.length < 2) return { floor: base, top: 100, fitted: false };
+    const low = Math.min(...real);
+    const high = Math.max(...real);
+    // A range narrower than a couple of points is noise, not structure, and
+    // stretching it would turn rounding into a pattern the reader would read
+    // as real.
+    if (high - low < 2) return { floor: base, top: 100, fitted: false };
+    return { floor: Math.floor(low), top: Math.ceil(high), fitted: true };
+  }
+
   function paint(records, metricKey, opts) {
     const metric = METRICS[metricKey] || METRICS.coverage;
     const Palette = window.Palette;
@@ -342,21 +370,35 @@ window.Metrics = (function () {
       const led = new Map();
       let missing = 0;
       let unplaced = 0;
+      // Two passes, because the ramp may need to know the range before it can
+      // colour anything. Zoomed into Madhya Pradesh every district is between
+      // 85% and 95% Hindu, and against a fixed 25-100% ramp that is one flat
+      // brown: the data is all there and none of it is visible.
+      const leaders = [];
       for (const record of records) {
         const top = dominant(record, opts.field, opts.depth);
-        if (!top) { out.set(record.id, Palette.neutral()); missing += 1; continue; }
+        if (!top) { missing += 1; leaders.push(null); continue; }
+        leaders.push(top);
+      }
+      const span = spanOf(leaders.map((t) => t && t.pct), opts.spread,
+                          Palette.SHARE_FLOOR,
+                          opts.inView && ((i) => opts.inView(records[i])));
+      records.forEach((record, i) => {
+        const top = leaders[i];
+        if (!top) { out.set(record.id, Palette.neutral()); return; }
         // A group the tree does not place gets the reserved colour rather
         // than the neutral: the figure exists and the name was published, so
         // drawing it as a blank would report a gap the source did not leave.
-        const hue = hueOf(opts.field, top.group) || Palette.unplaced();
-        if (!hueOf(opts.field, top.group)) unplaced += 1;
-        out.set(record.id, Palette.group(hue, top.pct));
+        const own = hueOf(opts.field, top.group);
+        const hue = own || Palette.unplaced();
+        if (!own) unplaced += 1;
+        out.set(record.id, Palette.group(hue, top.pct, span.floor, span.top));
         const seen = led.get(top.group) ||
           { name: top.group, hue, units: 0, residual: top.residual, peak: 0 };
         seen.units += 1;
         seen.peak = Math.max(seen.peak, top.pct);
         led.set(top.group, seen);
-      }
+      });
       const items = Array.from(led.values())
         .sort((a, b) => b.units - a.units || a.name.localeCompare(b.name));
       return {
@@ -369,7 +411,9 @@ window.Metrics = (function () {
           missingColor: Palette.neutral(),
           unplaced,
           unplacedColor: Palette.unplaced(),
-          floor: Palette.SHARE_FLOOR,
+          floor: span.floor,
+          ceiling: span.top,
+          fitted: span.fitted,
           note: metric.note,
         },
         metric,
@@ -408,12 +452,21 @@ window.Metrics = (function () {
       return hi === lo ? 0.5 : (x - lo) / (hi - lo);
     };
 
+    // A share map gets the same choice as the group map: 0-100 always, or the
+    // range actually on screen. The other sequential metrics already fit
+    // themselves, by percentile, a few lines above.
+    const share = groupHue
+      ? spanOf(records.map((r) => metric.evaluate(r, opts)), opts.spread, 0,
+               opts.inView && ((i) => opts.inView(records[i])))
+      : { floor: 0, top: 100, fitted: false };
+
     let missing = 0;
     for (const record of records) {
       const value = metric.evaluate(record, opts);
       if (Number.isFinite(value)) {
-        out.set(record.id, groupHue ? Palette.group(groupHue, value, 0)
-                                    : Palette.sequential(project(value)));
+        out.set(record.id,
+                groupHue ? Palette.group(groupHue, value, share.floor, share.top)
+                         : Palette.sequential(project(value)));
       } else {
         // Neutral grey, not a status colour: on a sequential map the status
         // palette would read as a value at one end of the ramp.
@@ -426,9 +479,14 @@ window.Metrics = (function () {
       colors: out,
       legend: {
         type: "ramp",
-        stops: groupHue ? Palette.groupRamp(groupHue, 11, 0) : Palette.ramp(),
-        low: metric.format ? metric.format(low) : String(low),
-        high: metric.format ? metric.format(high) : String(high),
+        stops: groupHue
+          ? Palette.groupRamp(groupHue, 11, share.floor, share.top)
+          : Palette.ramp(),
+        low: groupHue ? `${share.floor}%`
+                      : (metric.format ? metric.format(low) : String(low)),
+        high: groupHue ? `${share.top}%`
+                       : (metric.format ? metric.format(high) : String(high)),
+        fitted: share.fitted,
         missing,
         missingColor: Palette.neutral(),
         note: metric.note,

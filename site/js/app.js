@@ -14,6 +14,8 @@
     fieldSection: document.getElementById("field-section"),
     fieldOptions: document.getElementById("field-options"),
     depthSection: document.getElementById("depth-section"),
+    spreadSection: document.getElementById("spread-section"),
+    spreadOptions: document.getElementById("spread-options"),
     depthOptions: document.getElementById("depth-options"),
     groupSection: document.getElementById("group-section"),
     groupSearch: document.getElementById("group-search"),
@@ -55,6 +57,10 @@
     // How finely the "most populous group" map reads a composition: the top
     // of each tree, or the finest canonical name a source wrote.
     depth: "2",
+    // Whether the shading runs over the whole 25-100% range or over the range
+    // actually on screen. Absolute by default, because a shade that means the
+    // same thing everywhere is the more honest starting point.
+    spread: "absolute",
     // Which parents the group tree is showing the children of. Expanding is
     // per field, because the fields are three different trees.
     openBranches: {},
@@ -180,6 +186,14 @@
       "ancestry. The middle is the family — Christianity, Germanic, Bantu " +
       "peoples. As reported is each census's own words, which is the most " +
       "detail and the least comparable across a border.",
+    spread:
+      "The full range always means the same thing, so two places can be " +
+      "compared anywhere on the map — but zoom into a region where every " +
+      "district is 85 to 95 per cent one group and it is all one flat " +
+      "colour. Fit to view stretches the ramp over the range actually on " +
+      "screen, which shows that variation at the cost of the shade meaning " +
+      "something different from one view to the next. The legend always " +
+      "names the two ends, so you can see which you are looking at.",
     group:
       "Picking a family counts every group inside it, so Christianity finds " +
       "the censuses that only ever say Roman Catholic. Open a family to pick " +
@@ -386,6 +400,17 @@
     });
     markChoice(els.fieldOptions, state.field);
 
+    els.spreadOptions.innerHTML = [["absolute", "Full range"], ["fit", "Fit to view"]]
+      .map(([value, label]) => `<button type="button" role="radio" class="seg" data-value="${esc(value)}"
+                               aria-checked="false" tabindex="-1">${esc(label)}</button>`)
+      .join("");
+    markChoice(els.spreadOptions, state.spread);
+    wireChoice(els.spreadOptions, (value) => {
+      state.spread = value;
+      markChoice(els.spreadOptions, value);
+      refreshColors();
+    });
+
     renderDepths();
     wireChoice(els.depthOptions, (value) => {
       state.depth = value;
@@ -476,6 +501,9 @@
     const metric = window.Metrics.METRICS[state.metric];
     els.fieldSection.hidden = !metric.needsField;
     els.depthSection.hidden = !metric.needsDepth;
+    // The shading choice belongs to the two maps that draw a share: the
+    // most-populous-group map and a single group's share.
+    els.spreadSection.hidden = !(metric.kind === "group" || metric.needsGroup);
     els.groupSection.hidden = !metric.needsGroup;
     if (metric.needsGroup) {
       renderGroupList();
@@ -889,12 +917,14 @@
           : "") +
         `</ul>
          <div class="legend-shade">
-           <span class="legend-shade-label">Share of the leading group</span>
+           <span class="legend-shade-label">Share of the leading group${
+             legend.fitted ? ` <em class="legend-fitted">fitted to this view</em>` : ""}</span>
            <div class="legend-scale" role="img"
                 aria-label="Paler is a smaller share, darker is a larger one">
-             ${window.Palette.groupRamp("#6b6b6b", 5).map((c) => `<span style="background:${c}"></span>`).join("")}
+             ${window.Palette.groupRamp("#6b6b6b", 5, legend.floor, legend.ceiling)
+                 .map((c) => `<span style="background:${c}"></span>`).join("")}
            </div>
-           <div class="legend-ends"><span>${legend.floor}% or less</span><span>100%</span></div>
+           <div class="legend-ends"><span>${legend.floor}%${legend.fitted ? "" : " or less"}</span><span>${legend.ceiling}%</span></div>
          </div>` +
         (legend.unplaced
           ? `<div class="legend-item">
@@ -922,6 +952,8 @@
            ${legend.stops.map((c) => `<span style="background:${c}"></span>`).join("")}
          </div>
          <div class="legend-ends"><span>${esc(legend.low)}</span><span>${esc(legend.high)}</span></div>` +
+        (legend.fitted
+          ? `<p class="legend-fitted-note">Fitted to the range on screen.</p>` : "") +
         (legend.missing
           ? `<div class="legend-item">
                <span class="legend-swatch" style="background:${legend.missingColor}"></span>
@@ -941,7 +973,9 @@
     const records = currentRecords();
     const result = window.Metrics.paint(records, state.metric,
                                         { field: state.field, group: state.group,
-                                          depth: state.depth });
+                                          depth: state.depth, spread: state.spread,
+                                          inView: (record) =>
+                                            window.WorldMap.inView(record.point) });
     window.WorldMap.applyColors(levelId, result.colors);
     renderLegend(result.legend);
     updateLevelNote(level, records.length);
@@ -1127,6 +1161,9 @@
         renderSummary();
         refreshColors();
       },
+      // A ramp fitted to the range on screen has to be recomputed when the
+      // screen changes, or the legend describes the view you just left.
+      onMoved: () => { if (state.spread === "fit") refreshColors(); },
       onViewChange,
       onHover: hoverHTML,
       onSelect: (id, properties, level) => {

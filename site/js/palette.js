@@ -189,15 +189,20 @@ window.Palette = (function () {
     dark: { pale: 0.70, deep: 0.115 },
   };
 
-  function group(hex, share, floor) {
+  function group(hex, share, floor, top) {
     if (!hex) return NEUTRAL[mode()];
     const [h, s] = hexToHsl(hex);
     // The floor is 25 for the most-populous-group map, where nothing can lead
     // with less, and 0 for a single group's share, where 3% is a real answer
-    // that must not be drawn as the same near-white as 0%.
+    // that must not be drawn as the same near-white as 0%. `top` is normally
+    // 100; it drops only when the reader asks the ramp to fit the range
+    // actually on screen, which is the difference between a screenful of
+    // districts that are all 85-95% one group reading as one flat colour and
+    // reading as the spread it is.
     const base = Number.isFinite(floor) ? floor : SHARE_FLOOR;
+    const ceiling = Number.isFinite(top) ? top : 100;
     const t = Math.max(0, Math.min(1,
-      ((Number.isFinite(share) ? share : 100) - base) / Math.max(1, 100 - base)));
+      ((Number.isFinite(share) ? share : 100) - base) / Math.max(1, ceiling - base)));
     const band = BAND[mode()] || BAND.light;
     const target = band.pale + t * (band.deep - band.pale);
     // A grey base stays grey: hue 0 of a colourless input is red, and the
@@ -207,11 +212,12 @@ window.Palette = (function () {
   }
 
   /** The steps of one group's share ramp, palest first, for a legend. */
-  function groupRamp(hex, steps, floor) {
+  function groupRamp(hex, steps, floor, top) {
     const n = steps || 5;
     const base = Number.isFinite(floor) ? floor : SHARE_FLOOR;
+    const ceiling = Number.isFinite(top) ? top : 100;
     return Array.from({ length: n },
-      (_, i) => group(hex, base + (i / (n - 1)) * (100 - base), base));
+      (_, i) => group(hex, base + (i / (n - 1)) * (ceiling - base), base, ceiling));
   }
 
   function ramp() { return SEQUENTIAL[mode()].slice(); }

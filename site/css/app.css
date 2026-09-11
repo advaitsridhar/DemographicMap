@@ -645,3 +645,22 @@ dialog p, dialog li { font-size: .8rem; line-height: 1.6; color: var(--ink-secon
   font-size: .7rem; color: var(--ink-secondary); text-align: left;
 }
 .data-table .total-row th:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* The shading scale, when it has been stretched to the range on screen.
+   It is called out because a shade that means something different from one
+   view to the next has to say so where the shade is explained. */
+.legend-fitted {
+  font-style: normal;
+  font-size: 11px;
+  color: var(--ink-muted);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 0 5px;
+  margin-left: 4px;
+  white-space: nowrap;
+}
+.legend-fitted-note {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: var(--ink-muted);
+}
