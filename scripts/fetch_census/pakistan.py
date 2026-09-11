@@ -716,6 +716,76 @@ def ajk_check(found: dict[str, dict[str, int]], whole: dict[str, int]) -> None:
             f"printed total, which the yearbook's own 15.23 also shows")
 
 
+# Gilgit-Baltistan's religion, which no census publishes and one institute does.
+#
+# Everything above this is a census table read off a government file. This is
+# not: it is PILDAT's, from a background paper on sectarian conflict, and it is
+# here because the alternative was a blank on 1.2 million people after every
+# official route was measured and found shut -- twelve 404s across two table
+# numbers and four spellings, both territories' own At a Glance volumes, and a
+# survey that counts respondents rather than people.
+#
+# Two things make it publishable rather than merely available. The four shares
+# sum to 100.00% exactly, which is what a composition has to do and what an
+# assembled guess usually does not. And the thing it leaves out is checkable:
+# these are shares of a population taken to be entirely Muslim, and the last
+# census that counted religion in this territory -- 1941, Jammu & Kashmir --
+# put it at 99.7%, so the non-Muslim remainder it ignores is a third of a
+# percent rather than something that would change the picture.
+#
+# What it is not is a census, and the note says so first. It is also
+# territory-wide: the ten districts differ sharply -- Skardu and Kharmang are
+# heavily Twelver, Hunza and Ghizer heavily Ismaili, Diamer almost entirely
+# Sunni -- and the paper gives no district table, so the districts keep their
+# declared gaps rather than wearing the territory's average.
+GB_SECTS: dict[str, float] = {
+    "Twelver Shi'a Islam": 39.85,
+    "Sunni Islam": 30.05,
+    "Isma'ili Shi'a Islam": 24.0,
+    "Nurbakhshia Islam": 6.1,
+}
+GB_SOURCE = ("PILDAT (Pakistan Institute of Legislative Development and "
+             "Transparency), Sectarian Conflict in Gilgit-Baltistan, "
+             "background paper, May 2011")
+GB_URL = ("https://web.archive.org/web/20130927213540/http://www.pildat.org/"
+          "publications/publication/Conflict_Management/"
+          "GB-SectarianConflit-BackgroundPaperEng-May2011.pdf")
+GB_YEAR = 2011
+GB_NOTE = (
+    "Not a census. Pakistan's Bureau of Statistics publishes no religion table "
+    "for Gilgit-Baltistan at all, so this is PILDAT's estimate of the "
+    "territory's sectarian composition, from a 2011 background paper on "
+    "sectarian conflict. The four shares are as that paper gives them and sum "
+    "to 100%. They describe a population taken to be entirely Muslim, which "
+    "the last census to count religion here bears out: the 1941 Census of "
+    "India returned 99.7% Muslim across Gilgit Agency, Gilgit Leased, Skardu "
+    "and Astore. Gilgit-Baltistan is the only Shia-plurality region of a "
+    "Sunni-majority country and the figures are territory-wide: its districts "
+    "differ sharply from each other and from this average, and no source "
+    "breaks it down, so none of them carries this figure.")
+
+
+def gb_records() -> list[dict[str, Any]]:
+    """Gilgit-Baltistan's territory row, and nothing below it."""
+    total = round(sum(GB_SECTS.values()), 2)
+    if total != 100.0:
+        raise SystemExit(
+            f"pakistan: the Gilgit-Baltistan sect shares sum to {total}, not "
+            f"100. A composition that does not partition its population is "
+            f"not one, and this one is declared rather than read, so a wrong "
+            f"figure here would be a typo nothing else could catch")
+    return [record(
+        "PAK-gb", "Gilgit-Baltistan", level="admin1", parent="PAK",
+        religion=[{"group": name, "pct": pct}
+                  for name, pct in sorted(GB_SECTS.items(),
+                                          key=lambda kv: -kv[1])],
+        religion_year=GB_YEAR, religion_note=GB_NOTE,
+        religion_basis="sectarian affiliation",
+        sources=[{"field": "religion", "name": GB_SOURCE, "url": GB_URL,
+                  "year": GB_YEAR}],
+    )]
+
+
 def ajk_records(found: dict[str, dict[str, int]],
                 whole: dict[str, int]) -> list[dict[str, Any]]:
     """Azad Jammu and Kashmir, and the one second-level shape drawn for it.
@@ -901,6 +971,7 @@ def main() -> int:
                 absent[APART] = [(slug, line) for slug, line in absent[APART]
                                  if slug != "ajk"]
 
+    records.extend(gb_records())
     records.extend(declared_gaps(absent))
     out = args.out or PROCESSED / "pakistan_district.json"
     write_json(out, records)
