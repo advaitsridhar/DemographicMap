@@ -654,6 +654,17 @@ def ajk_table(blob: bytes) -> tuple[dict[str, dict[str, int]], dict[str, int]]:
                 whole = dict(zip(AJK_COLUMNS, figures))
             elif name not in found:
                 found[name] = dict(zip(AJK_COLUMNS, figures))
+        if not found:
+            # The caption also appears in the book's contents, thirteen pages
+            # before the table -- a line of text and a page number, no figures
+            # under it. The first version of this stopped at the first page
+            # carrying the caption and refused the run over the listing. A
+            # page with the caption and no district rows at all is a mention
+            # of the table; a page with the caption and *some* of them is a
+            # misread, and the two are not the same failure.
+            log(f"    Table 15.24 named on page {number} with no rows under "
+                f"it: the contents, not the table")
+            continue
         if len(found) != len(AJK_DISTRICTS) or not whole:
             raise SystemExit(
                 f"AJ&K Table 15.24 is on page {number} and this read "

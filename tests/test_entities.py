@@ -2391,6 +2391,32 @@ class AjkYearbookReligion(unittest.TestCase):
         with self.assertRaises(SystemExit):
             self.pk.values(PakistanCells.row(self.WHOLE), "AJ&K", "row")
 
+    def test_the_caption_in_the_contents_is_not_the_table(self):
+        # It is named on page 15 and printed on page 175. Stopping at the
+        # first page carrying the caption refused the whole run over a line
+        # of the contents listing -- and the run that proved it had already
+        # read all five provinces.
+        from io import BytesIO
+        pages = [[[(80.0, 134.0, "District"), (136.0, 190.0, "wise"),
+                   (192.0, 246.0, "Population"), (248.0, 260.0, "of"),
+                   (262.0, 290.0, "AJ&K"), (292.0, 300.0, "by"),
+                   (302.0, 340.0, "Religion"), (500.0, 510.0, "175")]],
+                 [[(80.0, 134.0, "District"), (136.0, 190.0, "wise"),
+                   (192.0, 246.0, "Population"), (248.0, 260.0, "of"),
+                   (262.0, 290.0, "AJ&K"), (292.0, 300.0, "by"),
+                   (302.0, 340.0, "Religion")]]
+                 + [PakistanCells.row(spec) for spec in self.ROWS]]
+        # The second page has three of the ten, which is a misread and not a
+        # listing: it must refuse rather than skip on.
+        with mock.patch.object(self.pk, "words_by_row", lambda _blob: iter(pages)):
+            with self.assertRaises(SystemExit) as caught:
+                self.pk.ajk_table(BytesIO(b"").read())
+        self.assertIn("read 3 of 10 districts", str(caught.exception))
+        with mock.patch.object(self.pk, "words_by_row",
+                               lambda _blob: iter(pages[:1])):
+            with self.assertRaises(LookupError):
+                self.pk.ajk_table(b"")
+
     def test_kotli_reads_as_the_page_prints_it(self):
         got = self.read(self.ROWS[0])
         self.assertEqual(got["Muslim"], 771_535)
