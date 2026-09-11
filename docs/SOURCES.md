@@ -973,6 +973,85 @@ Both levels reconcile exactly: 207,684,626 against the census's own
 Sindh reads Sindhi 61.6% and Urdu 18.2%; Punjab, Punjabi 69.7% and Saraiki
 20.7%; Balochistan splits Balochi 35.5% against Pushto 35.3%.
 
+### Karachi: the largest second-level language gap on the map, and why it was there
+
+Pakistan's district language coverage was measured at **114 of 126 shapes**,
+which reads like a country nearly finished. Ranked by people rather than by
+shapes it read differently: one of the twelve blanks was **Karachi, 20.4
+million people** -- more than every other blank district in the world outside
+China, Indonesia, Bangladesh, Nigeria, Russia and the Congo put together.
+
+The cause was not a bad join. It was a join with nothing to make:
+
+* geoBoundaries draws **one** district called Karachi.
+* The 2017 census counts **six** inside it -- Karachi Central, East, South and
+  West, Korangi and Malir -- and the Bureau's workbook lists all six at level
+  3, the level this map reads.
+* Six rows, one shape. Each of the six reached nothing, because none of them
+  *is* Karachi, and the shape stayed empty.
+
+`scripts/fetch_census/pakistan.py` had already met this on the religion side
+and declared it: `MERGED` sums the seven districts of 2023 into the one shape,
+which is why Karachi carries a religion and a population and no language. The
+Census Bureau reader had no such facility, so `Country.merged` is now the same
+declaration in the same shape, and `combine()` performs it.
+
+**Seven districts in 2023 and six in 2017 is not a contradiction.** Keamari was
+split out of Karachi West in 2020. The ground is the same ground; only the
+lines inside it moved, which is exactly the case one boundary shape covers.
+
+**Every check refuses rather than repairs**, because each of them is a way for
+a wrong merge to look like a right one. The dangerous one is a missing part:
+five districts summed onto a shape that is six would put four fifths of
+Karachi's people on all of Karachi and report nothing wrong -- the shares would
+still add to 100%, every district would still reconcile against its own
+published total, and the only trace would be a population no other check looks
+at. So a merge is all of its declared parts or it is refused. The others are
+the assembled area also being printed in the sheet (its people counted twice),
+parts at two levels (a division and the districts inside it are the same
+people), a denominator published for some parts and not others, and an area
+declared both `no_shape` and part of a merge, which is a config asserting two
+things that cannot both be true.
+
+And one control the file supplies itself: an assembly may not hold more people
+than the parent it is declared under, where that parent prints its own row.
+
+Karachi now reads Urdu 42.3%, Pushto 15.0%, Punjabi 10.7%, Sindhi 10.7%, of
+16,024,894 people the mother-tongue table counts -- 2017 figures on a shape
+whose 2023 population is 20.4 million, and the record says so.
+
+**The eleven other blanks are not this, and are not fixable here.** Ten are
+Gilgit-Baltistan's districts and the eleventh is Azad Kashmir, both of which
+this map has carried as a visible gap since the language adapter was written:
+the 2017 census tabulates mother tongue for Pakistan proper, and those two
+territories are enumerated apart from it. The 2023 round says the same thing
+from a different direction -- `pakistan.py` lists Islamabad, Azad Jammu and
+Kashmir and Gilgit-Baltistan as optional provinces and its last run found a
+Table 9 for none of the three, at either of the two paths the Bureau uses. Not
+a fetch that went wrong: a fact about what the Bureau publishes under the
+census proper.
+
+**Is 2017 the most current this can be?** No, and that is worth stating
+plainly rather than leaving implied. PBS completed the 7th census in 2023 and
+publishes its tables as per-province PDFs; `pakistan.py` already reads Table 9
+(religion) from them. What is not established is whether the 2023 round
+publishes a mother-tongue table in the same series, and under which number --
+2017's was Table 11, and a table number is not a thing to guess at, because a
+guessed URL that 404s and a table that was never published are the same
+observation. The route to settle it is reconnaissance, not assumption:
+
+```
+scripts.probe_links https://www.pbs.gov.pk/census-2023-tables --match pdf --limit 80
+scripts.fetch_census.uscb --inspect pakistan-subnational-population-and-housing-data-tables
+```
+
+The first says what the 2023 index actually links to. The second says whether
+the Census Bureau's extraction is still the 2017 census or has been reissued --
+its metadata sheet carries the census year, and the file's own date is an
+extraction date that has been mistaken for it before. Until one of those
+answers, 2017 is the most recent mother tongue this project can show, and the
+records say 2017.
+
 ### Central African Republic: three fields, and a table that counts two things
 
 The 2003 census (RGPH03) publishes ethnicity, religion and language, all three
@@ -2325,6 +2404,13 @@ PSA's published ones: Roman Catholic 78.81%, Islam 6.42%, Iglesia ni Cristo
 adapter and a visible country are different things, and the only way to know
 which one you have is to run the join and count.
 
+The table below is the measurement as it stood when Addis Ababa's ten
+sub-cities were declared shapeless. They are now summed into the shape instead
+-- see *Addis Ababa: the fold that was pointing the wrong way*, below -- so on
+the next run Ethiopia's zones read 84 areas rather than 93 and one fewer shape
+is empty. The figures here are left as they were measured rather than replaced
+with what they are expected to become.
+
 | | Rows | On a shape | Declared shapeless | Unmatched |
 | --- | --- | --- | --- | --- |
 | Philippines regions | 17 | 17 | -- | -- |
@@ -2364,6 +2450,42 @@ Three kinds of miss, and they are not the same kind of thing:
   exactly one of two tied shapes is written the way the row writes it, that is
   stronger evidence than the key that tied them, and the tie is now settled on
   the exact name and on nothing weaker.
+
+#### Addis Ababa: the fold that was pointing the wrong way
+
+"Declared shapeless" was the right answer for a Philippine city drawn inside
+its province, and the wrong one for Addis Ababa's ten sub-cities -- and the
+difference is a fact about the shape, not a matter of taste.
+
+A highly urbanized city is drawn *inside* something larger that has a row of
+its own: the province's figures already cover the city, so the city's row has
+nowhere to go and `no_shape` says so. Addis Ababa's sub-cities are not inside
+anything else at the second order. The ten **are** the second order there:
+geoBoundaries draws exactly one zone-level shape in Addis Ababa, labelled
+"Region 14", and it is the region entire. Declaring the ten absent left that
+shape with no religion, no ethnicity and no language -- 2.7 million people, the
+capital city, blank -- while ten rows of real figures sat beside it with
+nowhere to be shown.
+
+So they are summed into it, through the same `Country.merged` facility Karachi
+uses, and the source itself says the sum is right. The ten sub-cities come to
+**2,739,551** against a region row of **2,739,551** -- exact, group by group,
+for all six religions. That is the census's own arithmetic stating that these
+ten are all of Addis Ababa and nothing else is, which is the one thing a merge
+declaration cannot establish about itself.
+
+The shape is reached by an alias rather than by its name. The census calls the
+place Ādīs Ābeba; "Region 14" is a label on a polygon, and it is declared as
+what geoBoundaries calls this place rather than adopted as what the place is
+called. At the first order it matches nothing, because no region is drawn under
+that name.
+
+"Special Woreda" is deliberately left alone. It looks like the same case and is
+not: its bounding box is a single small area in Amhara, one special wereda
+rather than a shape standing for all of them, and summing Ethiopia's scattered
+special weredas into it would put people from five regions inside one polygon.
+Identifying which wereda it is from a bounding box is a guess, and a guess is
+how a mis-match gets made.
 
 **A sheet's name is not its contents, and three countries prove it.**
 
