@@ -13,6 +13,8 @@ arithmetic against the census's own district list on every run. So each way it
 can be wrong gets a test that proves the run stops.
 """
 
+import collections
+import io
 import unittest
 from unittest import mock
 
@@ -226,6 +228,292 @@ class Subdivided(unittest.TestCase):
             with self.subTest(field=field):
                 self.assertEqual(india_census.subdivided_reason("Jaintia Hills"),
                                  rows["East Jaintia Hills"][field]["note"])
+
+
+# The C-01 Appendix as probe_xlsx prints it: a title row, the header, a row of
+# column numbers, then three rows per community. The India block is verbatim
+# from the file -- and it reconciles, which is the first evidence that the
+# columns are what the header says: Rural + Urban is Total and Males + Females
+# is Persons on every one of these rows, and the 7,937,734 in the parent row is
+# the same figure C-01 gives for "Other religions and persuasions" nationally.
+#
+# The two state blocks are built to match that India block rather than taken
+# from the file, because the Appendix's per-state figures are what the run is
+# for and are not known here. Their shape is the file's.
+APPENDIX_ROWS = [
+    ["C-1 APPENDIX - 2011 DETAILS OF RELIGIOUS COMMUNITY SHOWN UNDER "
+     "'OTHER RELIGIONS AND PERSUASIONS' IN MAIN TABLE C-1"],
+    ["Table  Name", "State Code", "Distt. Code", "Area Name", "Religion Code",
+     "Religious Community", "Total/ Rural/ Urban", "Persons", "Males", "Females"],
+    ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+    # -- India
+    ["C01APX", "00", "000", "INDIA", "700000", "Other Religions and Persuasions",
+     "Total", 7937734, 3952064, 3985670],
+    ["C01APX", "00", "000", "INDIA", "700000", "Other Religions and Persuasions",
+     "Rural", 7199007, 3583894, 3615113],
+    ["C01APX", "00", "000", "INDIA", "700000", "Other Religions and Persuasions",
+     "Urban", 738727, 368170, 370557],
+    ["C01APX", "00", "000", "INDIA", "701002", "Addi Bassi", "Total", 86877, 43665, 43212],
+    ["C01APX", "00", "000", "INDIA", "701002", "Addi Bassi", "Rural", 76629, 38318, 38311],
+    ["C01APX", "00", "000", "INDIA", "701002", "Addi Bassi", "Urban", 10248, 5347, 4901],
+    ["C01APX", "00", "000", "INDIA", "701003", "Adi", "Total", 24381, 12056, 12325],
+    ["C01APX", "00", "000", "INDIA", "701003", "Adi", "Rural", 21541, 10642, 10899],
+    ["C01APX", "00", "000", "INDIA", "701003", "Adi", "Urban", 2840, 1414, 1426],
+    # -- Arunachal Pradesh: the whole of Adi, and most of the bucket unnamed.
+    # 362,553 is the state's real "Other religions and persuasions" from C-01.
+    ["C01APX", "12", "000", "ARUNACHAL PRADESH", "700000",
+     "Other Religions and Persuasions", "Total", 362553, 180000, 182553],
+    ["C01APX", "12", "000", "ARUNACHAL PRADESH", "700000",
+     "Other Religions and Persuasions", "Rural", 300000, 149000, 151000],
+    ["C01APX", "12", "000", "ARUNACHAL PRADESH", "700000",
+     "Other Religions and Persuasions", "Urban", 62553, 31000, 31553],
+    ["C01APX", "12", "000", "ARUNACHAL PRADESH", "701003", "Adi",
+     "Total", 24381, 12056, 12325],
+    ["C01APX", "12", "000", "ARUNACHAL PRADESH", "701003", "Adi",
+     "Rural", 21541, 10642, 10899],
+    ["C01APX", "12", "000", "ARUNACHAL PRADESH", "701003", "Adi",
+     "Urban", 2840, 1414, 1426],
+    # -- Chhattisgarh: the whole of Addi Bassi.
+    ["C01APX", "22", "000", "CHHATTISGARH", "700000",
+     "Other Religions and Persuasions", "Total", 100000, 50000, 50000],
+    ["C01APX", "22", "000", "CHHATTISGARH", "700000",
+     "Other Religions and Persuasions", "Rural", 90000, 45000, 45000],
+    ["C01APX", "22", "000", "CHHATTISGARH", "700000",
+     "Other Religions and Persuasions", "Urban", 10000, 5000, 5000],
+    ["C01APX", "22", "000", "CHHATTISGARH", "701002", "Addi Bassi",
+     "Total", 86877, 43665, 43212],
+    ["C01APX", "22", "000", "CHHATTISGARH", "701002", "Addi Bassi",
+     "Rural", 76629, 38318, 38311],
+    ["C01APX", "22", "000", "CHHATTISGARH", "701002", "Addi Bassi",
+     "Urban", 10248, 5347, 4901],
+]
+
+# Arunachal Pradesh's own C-01 columns, summed from the district extract. The
+# eight add to 1,383,727, the population the state enumerated.
+ARUNACHAL = collections.Counter({
+    "Population": 1383727, "Male": 713912, "Female": 669815,
+    "Hindus": 401876, "Muslims": 27045, "Christians": 418732, "Sikhs": 3287,
+    "Buddhists": 162815, "Jains": 771, "Others_Religions": 362553,
+    "Religion_Not_Stated": 6648, "SC": 6188, "ST": 951821,
+})
+
+
+def workbook(rows=APPENDIX_ROWS) -> bytes:
+    """The fixture rows as an .xlsx, so the reader is exercised end to end."""
+    import openpyxl
+
+    book = openpyxl.Workbook()
+    for row in rows:
+        book.worksheets[0].append(row)
+    buffer = io.BytesIO()
+    book.save(buffer)
+    return buffer.getvalue()
+
+
+class Appendix(unittest.TestCase):
+    def read(self, rows=APPENDIX_ROWS):
+        return india_census.read_appendix(workbook(rows))
+
+    def test_the_parent_row_is_the_bucket_and_not_a_religion(self):
+        # C-01 writes "Other religions and persuasions" and this table writes
+        # it with capitals, so the parent is recognised by its code. Read as a
+        # member it would add the whole bucket a second time.
+        units = self.read()
+        self.assertEqual(7937734, units["00"]["bucket"])
+        self.assertNotIn("Other Religions and Persuasions", units["00"]["counts"])
+        self.assertEqual({"Addi Bassi": 86877, "Adi": 24381},
+                         dict(units["00"]["counts"]))
+
+    def test_only_the_total_rows_are_read(self):
+        # Rural and Urban are the same people split. Summed in, every figure
+        # in the table doubles.
+        self.assertEqual(24381, self.read()["12"]["counts"]["Adi"])
+
+    def test_a_state_code_that_arrives_as_a_number_is_still_india(self):
+        # The same code is text in one census workbook and a number in
+        # another; read without padding, India becomes a 36th state and
+        # everything is counted twice.
+        rows = [list(row) for row in APPENDIX_ROWS]
+        for row in rows[3:]:
+            if len(row) > 4 and row[1] == "00":
+                row[1], row[2] = 0, 0
+        self.assertIn("00", self.read(rows))
+
+    def test_a_moved_column_stops_the_run(self):
+        rows = [list(row) for row in APPENDIX_ROWS]
+        rows[1][7], rows[1][8] = "Males", "Persons"
+        with self.assertRaises(SystemExit) as caught:
+            self.read(rows)
+        self.assertIn("not where this reader expects them", str(caught.exception))
+
+    def test_males_and_females_must_make_persons(self):
+        rows = [list(row) for row in APPENDIX_ROWS]
+        rows[6][8] = 43664
+        with self.assertRaises(SystemExit) as caught:
+            self.read(rows)
+        self.assertIn("is not 86,877 persons", str(caught.exception))
+
+    def test_rural_and_urban_must_make_the_total(self):
+        rows = [list(row) for row in APPENDIX_ROWS]
+        rows[8][7] = 10249
+        with self.assertRaises(SystemExit) as caught:
+            self.read(rows)
+        self.assertIn("is not total", str(caught.exception))
+
+    def test_a_district_row_would_overturn_the_claim_we_publish(self):
+        # The note on every state says no district-level figure exists. If the
+        # table ever carries one, that note is false and the reader is wrong
+        # about the table rather than merely incomplete.
+        rows = [list(row) for row in APPENDIX_ROWS]
+        for row in rows:
+            if len(row) > 4 and row[3] == "ARUNACHAL PRADESH":
+                row[2] = "001"
+        with self.assertRaises(SystemExit) as caught:
+            self.read(rows)
+        self.assertIn("not state-level after all", str(caught.exception))
+
+
+class AppendixAgainstC01(unittest.TestCase):
+    BUCKETS = {"arunachal pradesh": 362553, "chhattisgarh": 100000}
+
+    def units(self, rows=APPENDIX_ROWS):
+        return india_census.read_appendix(workbook(rows))
+
+    def test_it_agrees_with_c01(self):
+        india_census.check_appendix(self.units(), self.BUCKETS)
+
+    def test_the_india_row_must_equal_the_states_summed(self):
+        # The check that catches the whole table being read twice.
+        # Two people taken off Chhattisgarh's Addi Bassi, with its own Rural,
+        # Urban, Males and Females adjusted to match -- so every identity
+        # inside the sheet still holds and only the cross-total is wrong. That
+        # is the shape of the failure this check exists for: a table read at
+        # two levels stays internally consistent.
+        edits = {"Total": (86875, 43663, 43212), "Rural": (76629, 38318, 38311),
+                 "Urban": (10246, 5345, 4901)}
+        rows = [list(row) for row in APPENDIX_ROWS]
+        for row in rows:
+            if len(row) > 4 and row[3] == "CHHATTISGARH" and row[4] == "701002":
+                row[7], row[8], row[9] = edits[row[6]]
+        with self.assertRaises(SystemExit) as caught:
+            india_census.check_appendix(self.units(rows), self.BUCKETS)
+        self.assertIn("India row says 86,877", str(caught.exception))
+
+    def test_a_bucket_c01_does_not_confirm_stops_the_run(self):
+        buckets = dict(self.BUCKETS, **{"arunachal pradesh": 362554})
+        with self.assertRaises(SystemExit) as caught:
+            india_census.check_appendix(self.units(), buckets)
+        self.assertIn("362,553 here and 362,554 in C-01", str(caught.exception))
+
+    def test_named_religions_may_not_exceed_their_own_bucket(self):
+        rows = [list(row) for row in APPENDIX_ROWS]
+        for row in rows:
+            if len(row) > 4 and row[3] == "ARUNACHAL PRADESH" and row[4] == "700000":
+                row[7] = {"Total": 20000, "Rural": 18000, "Urban": 2000}[row[6]]
+                row[8] = row[9] = row[7] // 2
+        buckets = dict(self.BUCKETS, **{"arunachal pradesh": 20000})
+        with self.assertRaises(SystemExit) as caught:
+            india_census.check_appendix(self.units(rows), buckets)
+        self.assertIn("more than the 20,000", str(caught.exception))
+
+    def test_a_state_name_the_two_tables_spell_differently_still_matches(self):
+        # C-01's extract shouts "JAMMU AND KASHMIR" and this table may write
+        # "Jammu & Kashmir"; the key has to survive that or the run refuses.
+        self.assertEqual(india_census.state_key("JAMMU AND KASHMIR"),
+                         india_census.state_key("Jammu & Kashmir"))
+        self.assertEqual(india_census.state_key("ORISSA"),
+                         india_census.state_key("Odisha"))
+
+
+class ResidualDetail(unittest.TestCase):
+    """Substituting the Appendix's religions for C-01's one residual row."""
+
+    def unit(self, counts, bucket=362553):
+        return {"name": "ARUNACHAL PRADESH", "bucket": bucket,
+                "counts": collections.Counter(counts)}
+
+    def test_the_groups_still_add_to_the_population(self):
+        got = india_census.religion_with_detail(
+            ARUNACHAL, self.unit({"Doni Polo / Sidonyi Polo": 324742, "Nocte": 5000}))
+        self.assertEqual(ARUNACHAL["Population"],
+                         sum(row["count"] for row in got))
+
+    def test_the_residual_is_replaced_rather_than_joined(self):
+        got = {row["group"]: row["count"] for row in india_census.religion_with_detail(
+            ARUNACHAL, self.unit({"Doni Polo / Sidonyi Polo": 324742}))}
+        self.assertNotIn("Other religions", got)
+        self.assertEqual(324742, got["Doni Polo / Sidonyi Polo"])
+        # What the Appendix does not name is still shown, never dropped.
+        self.assertEqual(362553 - 324742, got[india_census.ORP_REMAINDER])
+
+    def test_the_six_named_religions_are_untouched(self):
+        got = {row["group"]: row["count"] for row in india_census.religion_with_detail(
+            ARUNACHAL, self.unit({"Doni Polo / Sidonyi Polo": 324742}))}
+        self.assertEqual(418732, got["Christian"])
+        self.assertEqual(162815, got["Buddhist"])
+        self.assertEqual(6648, got["Not stated"])
+
+    def test_the_tail_is_summed_and_not_dropped(self):
+        tail = {f"Faith {n}": 10 for n in range(40)}
+        got = {row["group"]: row["count"] for row in india_census.religion_with_detail(
+            ARUNACHAL, self.unit(dict(tail, **{"Doni Polo / Sidonyi Polo": 324742})))}
+        self.assertNotIn("Faith 0", got)
+        self.assertEqual(362553 - 324742, got[india_census.ORP_REMAINDER])
+
+    def test_a_bucket_that_does_not_match_c01_refuses(self):
+        with self.assertRaises(SystemExit) as caught:
+            india_census.religion_with_detail(
+                ARUNACHAL, self.unit({"Doni Polo / Sidonyi Polo": 1}, bucket=2))
+        self.assertIn("against an enumerated 1,383,727", str(caught.exception))
+
+    def test_the_note_says_it_is_a_state_figure_with_no_district_below_it(self):
+        counts = collections.Counter({"Doni Polo / Sidonyi Polo": 324742,
+                                      "Nocte": 500, "Aka": 300})
+        kept = india_census.named_residual(counts, 362553, ARUNACHAL["Population"])
+        note = india_census.residual_note(kept, counts, 362553,
+                                          ARUNACHAL["Population"])
+        self.assertIn("states only", note)
+        self.assertIn("no district-level figure", note)
+        self.assertIn("362,553", note)
+
+
+class TheTreePlacesWhatTheAppendixSurfaces(unittest.TestCase):
+    """A religion the map draws and the tree does not place gets no colour.
+
+    Surfacing Donyi-Polo and leaving it unclassified would trade one honest
+    blank for another, so the labels the Appendix puts on the map are checked
+    against the tree here rather than found in the shipped site.
+    """
+
+    def tiers(self, labels):
+        import sys
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+        import canonical_groups  # noqa: PLC0415
+        import group_tree        # noqa: PLC0415
+
+        rows = [{"group": label, "pct": 1.0} for label in labels]
+        placed = group_tree.parents("religion")
+        return {name: placed.get(name)
+                for name in canonical_groups.canonicalise(rows, "religion")}
+
+    def test_the_adivasi_religions_land_under_folk_and_traditional(self):
+        # The census's own spellings, including the two it writes as a
+        # slash-joined pair rather than as a name.
+        got = self.tiers(["Doni Polo / Sidonyi Polo", "Sarna", "Sanamahi",
+                          "Khasi", "Niamtre", "Gond / Gondi", "Nocte"])
+        self.assertIn("Donyi-Polo", got)
+        self.assertIn("Gondi", got)
+        for name, band in got.items():
+            with self.subTest(religion=name):
+                self.assertEqual("Folk and traditional religions", band)
+
+    def test_the_unnamed_part_of_the_residual_is_placed_apart_from_them(self):
+        # It is what is left of C-01's bucket, not a religion, so it belongs
+        # where the bucket belongs and not with the faiths taken out of it.
+        got = self.tiers([india_census.ORP_REMAINDER])
+        self.assertEqual({india_census.ORP_REMAINDER: "Other and new religions"},
+                         got)
 
 
 class RealDistrictsAreUntouched(unittest.TestCase):

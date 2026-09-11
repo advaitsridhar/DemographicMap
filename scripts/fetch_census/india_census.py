@@ -30,27 +30,41 @@ Two standing caveats the app displays with every Indian figure:
 **The districts moved and the census did not.** The census enumerated 640
 districts; the boundary files draw 735, because India has created about a
 hundred since -- Telangana replaced ten with thirty-three in 2016 alone. Those
-95 extra shapes are not a join that failed. Every one of the 640 census rows
-matches a shape; the surplus shapes are districts the census never counted,
-and no later count exists to fill them. They are declared in
-``CREATED_AFTER_2011`` with the year and the district they were carved from,
-so the panel says which measurement covers their ground instead of showing an
-unexplained blank. Nothing is carried down into them: a new district is a
-*part* of an old one, and giving it the old one's composition would assert an
-even spread inside a district that nobody measured.
+95 extra shapes are not a join that failed. Every census row reaches its
+shape: 637 by name, and three (Jaintia Hills, Karbi Anglong, Warangal) only as
+the successors that replaced them, which carry no figure. The surplus shapes
+are districts the census never counted, and no later count exists to fill
+them. They are declared in ``CREATED_AFTER_2011`` with the year and the
+district they were carved from, so the panel says which measurement covers
+their ground instead of showing an unexplained blank. Nothing is carried down
+into them: a new district is a *part* of an old one, and giving it the old
+one's composition would assert an even spread inside a district that nobody
+measured.
+
+What *would* fill them is a level down. C-01 and C-16 are both published to
+sub-district, and a new district is made of whole 2011 sub-districts, so
+summing those would be arithmetic on measurements rather than an estimate.
+That needs the 35 per-state C-01 workbooks (this file reads a district-level
+extract instead) and a 2011-sub-district-to-present-day-district mapping,
+which the census does not publish; it is the route, and it is not taken here.
 
 **"Other religions" is the census's residual and it is not small everywhere.**
 C-01 publishes six named religions, "Other religions and persuasions" and
-"Religion not stated", and nothing beneath them. Nationally the residual is
+"Religion not stated", and nothing beneath them. Nationally that residual is
 7,937,734 people, 0.66%; in Arunachal Pradesh it is 362,553 people, 26.2% of
-the state, and almost all of that is Donyi-Polo. The Registrar General does
-publish the break-up -- table **C-01 Appendix**, *Details of religious
-community shown under 'Other religions and persuasions'*, 83 named religions
-including Donyi-Polo, Sarna, Sanamahi, Khasi and Niamtre -- but only for India
-and the states, never by district, so a district-level figure for any of them
-does not exist in any Indian census publication. Until that workbook is read,
-the residual is emitted as the one group the census published, labelled the
-way the census labels it.
+the state, and calling a quarter of a state "other religions" is not a
+description of it. The Registrar General does publish the break-up -- table
+**C-01 Appendix**, *Details of religious community shown under 'Other
+religions and persuasions' in main table C-01* -- and at ``--level state`` it
+is read here, so Donyi-Polo, Sarna, Sanamahi, Khasi and the rest appear as
+themselves.
+
+The Appendix is published **for India and the states and nothing finer**. Its
+sheet has a district column and it reads zero on every row, which
+:func:`read_appendix` checks rather than assumes, and refuses on if it ever
+does not. So there is no district-level figure for any of these religions in
+any Indian census publication; a state's districts keep C-01's undivided
+residual, and the note on the state record says why.
 
 Mother tongue (table C-16) is a separate publication and is not in this
 extract; ``india_language.py`` reads it from the official workbooks.
@@ -58,6 +72,7 @@ extract; ``india_language.py`` reads it from the official workbooks.
 Usage:
     python -m scripts.fetch_census.india_census --level district
     python -m scripts.fetch_census.india_census --level state
+    python -m scripts.fetch_census.india_census --level state --no-appendix
     python -m scripts.fetch_census.india_census --input data/raw/india   # XLSX
 """
 
@@ -67,6 +82,7 @@ import argparse
 import collections
 import csv
 import io
+import urllib.parse
 from pathlib import Path
 from typing import Any
 
@@ -687,11 +703,348 @@ def districts(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
     return out
 
 
-def states(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
+# ---------------------------------------------------------------------------
+# C-01 Appendix: what is inside "Other religions and persuasions"
+# ---------------------------------------------------------------------------
+#
+# C-01 stops at eight categories, one of which is a residual, and in three
+# states that residual is the largest or second-largest answer there is:
+# Arunachal Pradesh 26.2%, Meghalaya 11.5%, Manipur 8.2%. Calling a quarter of
+# a state "other religions" is not a description of it.
+#
+# The Appendix is the table that says what is in there: 83 named religions,
+# almost all of them Adivasi, and no other census on earth names them. It is
+# published for **India and the states and nothing finer** -- the sheet has a
+# district column and it reads 000 on every row, which this reader checks
+# rather than assumes -- so a district-level share for Donyi-Polo or Sarna does
+# not exist anywhere, and the note on every record says so.
+
+APPENDIX_FILE = "DDW00C-01 Appendix MDDS.xlsx"
+# quote() rather than a literal %20: the file name has two spaces in it and the
+# URL has to carry them encoded, which is not something to leave to whoever
+# types the command next.
+APPENDIX_URL = (f"{CATALOG}/11398/download/14511/"
+                + urllib.parse.quote(APPENDIX_FILE))
+APPENDIX_SOURCE = (
+    "Census of India 2011, table C-01 Appendix, details of religious community "
+    "shown under 'Other religions and persuasions' in main table C-01 "
+    "(Registrar General & Census Commissioner)")
+
+# The sheet's header, in the order it writes it. Compared with whitespace
+# collapsed, because the first cell is written "Table  Name" with two spaces.
+# A column that moved and was read anyway is the failure this project cannot
+# see, so the header is checked before a single figure is taken.
+APPENDIX_HEADER = ("Table Name", "State Code", "Distt. Code", "Area Name",
+                   "Religion Code", "Religious Community",
+                   "Total/ Rural/ Urban", "Persons", "Males", "Females")
+(APX_TABLE, APX_STATE, APX_DISTRICT, APX_AREA, APX_CODE, APX_NAME,
+ APX_SPLIT, APX_PERSONS, APX_MALES, APX_FEMALES) = range(len(APPENDIX_HEADER))
+
+# The bucket's own row, repeated once inside every state block. It is the
+# parent and not a member of itself, and it is recognised by this code rather
+# than by its label: C-01 writes "Other religions and persuasions" and this
+# table writes "Other Religions and Persuasions", so matching on the name
+# quietly fails to recognise the parent and adds the whole bucket a second
+# time as though it were one more religion.
+APPENDIX_PARENT = "700000"
+
+# Below this share of the state a named religion is folded into the remainder
+# rather than listed. The same floor india_language.py uses, for the same
+# reason: a state's tail of religions that round to 0.0% is payload rather than
+# information. The tail is summed and shown, never dropped.
+ORP_MIN_PCT = 0.1
+ORP_MAX_GROUPS = 12
+
+# What is left of the bucket once the named religions above the floor are
+# taken out. It is two things at once and the label has to cover both: the
+# small ones this reader folded, and the ones the Appendix itself does not
+# name (it names a religion only where it has 100 adherents nationally). Kept
+# distinct from C-01's "Other religions", which is the whole bucket.
+ORP_REMAINDER = "Other religions (not separately named)"
+
+
+def _text(value: Any) -> str:
+    return " ".join(str(value if value is not None else "").split())
+
+
+def _code(value: Any, width: int) -> str:
+    """A code as text, zero-padded, whatever type the cell happens to hold.
+
+    The same code is text in one census workbook and a number in another, so
+    India's own row arrives as "00" from one file and "0" from the other. Read
+    without normalising, it becomes a 36th state and every figure in the table
+    is counted twice.
+    """
+    text = _text(value)
+    return text.zfill(width) if text.isdigit() else text
+
+
+def read_appendix(blob: bytes) -> dict[str, dict[str, Any]]:
+    """state code -> {name, bucket, counts}, from DDW00C-01 Appendix.
+
+    ``bucket`` is the parent row -- the unit's whole "Other religions and
+    persuasions" figure -- and ``counts`` the named religions inside it. Only
+    the Total rows are read; Rural and Urban are the same people split, and
+    that is checked rather than trusted.
+    """
+    try:
+        import openpyxl
+    except ImportError as exc:  # pragma: no cover - environment problem
+        raise SystemExit("pip install openpyxl to read the C-01 Appendix") from exc
+
+    sheet = openpyxl.load_workbook(io.BytesIO(blob), read_only=True,
+                                   data_only=True).worksheets[0]
+    rows = [list(row) for row in sheet.iter_rows(values_only=True)]
+    header = next((i for i, row in enumerate(rows)
+                   if _text(row[APX_STATE] if len(row) > APX_STATE else None)
+                   == "State Code"), None)
+    if header is None:
+        raise SystemExit(
+            f"C-01 Appendix: no header row in {APPENDIX_FILE}; the first rows "
+            f"are {[[_text(c) for c in r] for r in rows[:3]]}")
+    got = tuple(_text(cell) for cell in rows[header][:len(APPENDIX_HEADER)])
+    if got != APPENDIX_HEADER:
+        raise SystemExit(
+            "C-01 Appendix: the columns are not where this reader expects "
+            f"them, so nothing is being read.\n  expected {APPENDIX_HEADER}\n"
+            f"  got      {got}")
+
+    units: dict[str, dict[str, Any]] = {}
+    splits: dict[tuple[str, str], dict[str, int]] = collections.defaultdict(dict)
+    problems: list[str] = []
+    for row in rows[header + 1:]:
+        code = _text(row[APX_CODE]) if len(row) >= len(APPENDIX_HEADER) else ""
+        if len(code) != 6 or not code.isdigit():
+            # Blank rows, and the row of column numbers the sheet puts under
+            # the header: its religion-code cell holds "5", which is a digit
+            # and is not a religion code. Six is the width the table uses.
+            continue
+        state = _code(row[APX_STATE], 2)
+        district = _code(row[APX_DISTRICT], 3)
+        if district != "000":
+            # The one thing that would overturn "state level only". If it ever
+            # happens this reader is wrong about the table, not merely
+            # incomplete, so it stops instead of emitting a note that says no
+            # district figure exists while the file in front of it has one.
+            raise SystemExit(
+                f"C-01 Appendix: {_text(row[APX_AREA])} carries district code "
+                f"{district}, so this table is not state-level after all and "
+                f"the reader and its note both need rewriting.")
+        code = _text(row[APX_CODE])
+        label = _text(row[APX_NAME])
+        split = _text(row[APX_SPLIT])
+        persons = int(row[APX_PERSONS] or 0)
+        males, females = int(row[APX_MALES] or 0), int(row[APX_FEMALES] or 0)
+        if males + females != persons:
+            problems.append(f"{_text(row[APX_AREA])} {label} {split}: "
+                            f"{males:,} males + {females:,} females "
+                            f"is not {persons:,} persons")
+        splits[(state, code)][split] = persons
+        if split != "Total":
+            continue
+        unit = units.setdefault(state, {"name": _text(row[APX_AREA]),
+                                        "bucket": 0,
+                                        "counts": collections.Counter()})
+        if code == APPENDIX_PARENT:
+            unit["bucket"] = persons
+        else:
+            unit["counts"][label] = persons
+
+    for (state, code), parts in splits.items():
+        total, rural, urban = (parts.get("Total"), parts.get("Rural"),
+                               parts.get("Urban"))
+        if total is None or rural is None or urban is None:
+            problems.append(f"state {state} religion {code}: expected Total, "
+                            f"Rural and Urban rows, got {sorted(parts)}")
+        elif rural + urban != total:
+            problems.append(f"state {state} religion {code}: rural {rural:,} + "
+                            f"urban {urban:,} is not total {total:,}")
+    if problems:
+        raise SystemExit("C-01 Appendix: the sheet does not add up, so it is "
+                         "not being used:\n  - " + "\n  - ".join(problems[:10]))
+    return units
+
+
+def check_appendix(units: dict[str, dict[str, Any]],
+                   buckets: dict[str, int]) -> None:
+    """The Appendix must fit inside the bucket C-01 already measured.
+
+    Three separate arithmetic checks, none of which the Appendix can satisfy on
+    its own -- which is the point. A table checked only against itself will
+    pass while being read twice over.
+
+    * every unit's named religions must sum to no *more* than its own parent
+      row. Less is expected and is not an error: the Appendix names a religion
+      only where it has a hundred adherents nationally, so a remainder is part
+      of the table's design;
+    * the India row must equal the 35 states summed, religion by religion.
+      This is what catches India being read as a 36th state, which is exactly
+      what happens when a code arrives as "0" instead of "00";
+    * every state's parent row must equal the "Other religions and
+      persuasions" column ``india_census`` already has from C-01 -- a figure
+      this table did not produce, in a file it was not published in.
+    """
+    problems: list[str] = []
+    india = units.get("00")
+    if not india:
+        raise SystemExit("C-01 Appendix: no India row (state code 00), so the "
+                         "national totals cannot be checked.")
+
+    summed: collections.Counter = collections.Counter()
+    for state, unit in units.items():
+        if state == "00":
+            continue
+        summed.update(unit["counts"])
+        named = sum(unit["counts"].values())
+        if named > unit["bucket"]:
+            problems.append(
+                f"{unit['name']}: named religions sum to {named:,}, more than "
+                f"the {unit['bucket']:,} in its own 'Other religions and "
+                f"persuasions' row")
+        expected = buckets.get(state_key(unit["name"]))
+        if expected is None:
+            problems.append(f"{unit['name']}: no state of that name in the "
+                            f"C-01 extract, so its bucket cannot be checked")
+        elif expected != unit["bucket"]:
+            problems.append(
+                f"{unit['name']}: 'Other religions and persuasions' is "
+                f"{unit['bucket']:,} here and {expected:,} in C-01")
+
+    for label, total in sorted(india["counts"].items()):
+        if summed.get(label, 0) != total:
+            problems.append(f"{label}: India row says {total:,}, the states sum "
+                            f"to {summed.get(label, 0):,}")
+    if problems:
+        raise SystemExit("C-01 Appendix: it does not agree with C-01, so it is "
+                         "not being used:\n  - " + "\n  - ".join(problems[:10]))
+    log(f"  C-01 Appendix: {len(units) - 1} states, "
+        f"{len(india['counts'])} named religions, "
+        f"{sum(india['counts'].values()):,} of the {india['bucket']:,} people "
+        f"in 'Other religions and persuasions'")
+
+
+def state_key(name: str) -> str:
+    """A state name reduced to what the two census tables agree on.
+
+    They do not agree on much: C-01's extract shouts "JAMMU AND KASHMIR" and
+    the Appendix writes "JAMMU & KASHMIR", and one of them still says Orissa.
+    Every state has to match or :func:`check_appendix` refuses -- 35 of 35 is
+    the test, so a normalisation that quietly fails on one state fails the run.
+    """
+    text = _text(name).casefold().replace("&", "and")
+    text = "".join(c for c in text if c.isalnum() or c == " ")
+    text = " ".join(text.split())
+    return STATE_ALIASES.get(text, text).casefold()
+
+
+def named_residual(counts: collections.Counter, bucket: int, population: int
+                   ) -> dict[str, int]:
+    """The Appendix's religions for one state, largest first, with a remainder.
+
+    The remainder is what makes this safe to substitute for C-01's single
+    "Other religions" row: named plus remainder is the bucket exactly, so the
+    eight columns still partition the state and the shares still cover
+    everyone enumerated.
+    """
+    kept: dict[str, int] = {}
+    for label, value in sorted(counts.items(), key=lambda kv: -kv[1]):
+        if len(kept) < ORP_MAX_GROUPS and 100.0 * value / population >= ORP_MIN_PCT:
+            kept[label] = value
+    remainder = bucket - sum(kept.values())
+    if remainder > 0:
+        kept[ORP_REMAINDER] = remainder
+    return kept
+
+
+def religion_with_detail(counts: collections.Counter, unit: dict[str, Any]
+                         ) -> list[dict[str, Any]]:
+    """C-01's eight columns, with its residual replaced by what is inside it.
+
+    The substitution has one invariant and it is checked here rather than
+    trusted: the groups must still sum to the population the state enumerated.
+    Australia's religion figures were silently doubled by a table read at two
+    levels at once and the shares still added to 100%, so adding to 100% is not
+    the test -- adding to a total the religion table did not produce is.
+    """
+    population = counts["Population"]
+    religion_counts = {label: counts[column]
+                       for column, label in RELIGION_COLUMNS.items()
+                       if counts[column] and column != "Others_Religions"}
+    religion_counts.update(named_residual(unit["counts"], unit["bucket"], population))
+    got = sum(religion_counts.values())
+    if got != population:
+        raise SystemExit(
+            f"C-01 Appendix: substituting the break-up of 'Other religions and "
+            f"persuasions' in {unit['name']} leaves {got:,} people against an "
+            f"enumerated {population:,}. The Appendix's bucket is "
+            f"{unit['bucket']:,} and C-01's is "
+            f"{counts['Others_Religions']:,}; nothing is being emitted.")
+    return shares(religion_counts, total=population)
+
+
+def residual_note(kept: dict[str, int], counts: collections.Counter,
+                  bucket: int, population: int) -> str:
+    """What the reader needs to know about a share that came from the Appendix.
+
+    It leads with the magnitude and not with the name. A group nobody has heard
+    of, listed without a figure beside it, reads as something the map invented;
+    the same group with "324,742 people, 23.5% of the state" beside it reads as
+    a measurement, which is what it is.
+    """
+    named = [label for label in kept if label != ORP_REMAINDER]
+    largest = max((kept[label] for label in named), default=0)
+    leader = next((label for label in named if kept[label] == largest), "")
+    note = (f"Census 2011 table C-01 reports {bucket:,} people here -- "
+            f"{100.0 * bucket / population:.1f}% of the state -- as one "
+            f"residual, 'Other religions and persuasions'. The religions "
+            f"standing in its place come from table C-01 Appendix, which names "
+            f"what is inside it. ")
+    if leader:
+        note += (f"The largest here is {leader}: {largest:,} people, "
+                 f"{100.0 * largest / population:.1f}% of the state and "
+                 f"{100.0 * largest / bucket:.0f}% of the residual. ")
+    note += ("Named plus remainder is C-01's figure exactly, so nobody is "
+             "counted twice and nobody is dropped. ")
+    if len(counts) > len(named):
+        note += (f"The Appendix names {len(counts)} religions in this state; "
+                 f"the {len(counts) - len(named)} smallest are summed into "
+                 f"'{ORP_REMAINDER}' rather than listed, along with the people "
+                 f"the Appendix itself leaves unnamed -- it names a religion "
+                 f"only where it has a hundred adherents nationally. ")
+    note += ("The Registrar General publishes this Appendix for India and the "
+             "states only; its district column reads zero on every row. So "
+             "there is no district-level figure for any of these religions in "
+             "any Indian census publication, and this state's districts show "
+             "the undivided 'Other religions' instead.")
+    return note
+
+
+def load_appendix(url: str = APPENDIX_URL) -> bytes:
+    """The Appendix workbook, over a connection that is fully verified.
+
+    censusindia.gov.in serves its leaf certificate without the intermediate
+    above it, which urllib reports as *unable to get local issuer certificate*.
+    ``aia=True`` fetches that intermediate from the certificate's own Authority
+    Information Access extension and verifies against it plus the public roots;
+    nothing is skipped. See scripts/probe_tls.py.
+    """
+    blob = http_get(url, binary=True, timeout=300, aia=True)
+    assert isinstance(blob, bytes)
+    return blob
+
+
+def states(rows: list[dict[str, str]],
+           appendix: dict[str, dict[str, Any]] | None = None
+           ) -> list[dict[str, Any]]:
     """State totals summed from the district rows.
 
     Plain arithmetic on official counts, not estimation: the sums reproduce the
     published state populations exactly.
+
+    With ``appendix``, C-01's single "Other religions" row is replaced by the
+    religions the Appendix names inside it plus a labelled remainder. That is a
+    substitution and not an addition: the two together are the bucket exactly,
+    so the composition still adds to the state's population.
     """
     numeric = list(RELIGION_COLUMNS) + list(SCHEDULED_COLUMNS) + ["Population", "Male", "Female"]
     agg: dict[str, collections.Counter] = collections.defaultdict(collections.Counter)
@@ -702,15 +1055,37 @@ def states(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
         for col in numeric:
             agg[state][col] += cell(row, col)
 
+    if appendix is not None:
+        check_appendix(appendix, {state_key(state): counts["Others_Religions"]
+                                  for state, counts in agg.items()})
+    detail = {state_key(unit["name"]): unit
+              for code, unit in (appendix or {}).items() if code != "00"}
+
     out = []
     for state, counts in sorted(agg.items()):
         # The extract shouts state names; the boundary files use title case.
         name = state.title().replace(" And ", " and ").replace(" Of ", " of ")
         name = STATE_ALIASES.get(state.lower(), name)
-        out.append(build_record(
+        record_ = build_record(
             name, counts, level="admin1", parent="IND",
             entity_id=f"IND-S-{name.replace(' ', '-')}",
-            codes={"census2011_state_name": state}))
+            codes={"census2011_state_name": state})
+        unit = detail.get(state_key(state))
+        if unit and unit["counts"] and isinstance(record_["religion"], list):
+            record_["religion"] = religion_with_detail(counts, unit)
+            record_["religion_note"] = (
+                record_["religion_note"] + " "
+                + residual_note(named_residual(unit["counts"], unit["bucket"],
+                                               counts["Population"]),
+                                unit["counts"], unit["bucket"],
+                                counts["Population"]))
+            record_["sources"].append(
+                {"field": "religion", "name": APPENDIX_SOURCE,
+                 "url": APPENDIX_URL, "year": 2011,
+                 "license": "Government of India open data (GODL-India)",
+                 "note": "Published for India and the states only; the table's "
+                         "district column is zero on every row."})
+        out.append(record_)
 
     for name, reason in FORMED_AFTER_2011.items():
         out.append(record(
@@ -790,11 +1165,19 @@ def main() -> int:
                     help="directory of official C-01 workbooks; overrides --csv-url")
     ap.add_argument("--list-sources", action="store_true")
     ap.add_argument("--out", type=Path, default=None)
+    ap.add_argument("--appendix-url", default=APPENDIX_URL,
+                    help="C-01 Appendix workbook, the break-up of 'Other "
+                         "religions and persuasions'")
+    ap.add_argument("--no-appendix", action="store_true",
+                    help="skip the Appendix and leave C-01's residual whole")
     args = ap.parse_args()
 
     if args.list_sources:
         print(f"Census of India 2011 NADA catalogue: {CATALOG}")
         print("  C-01  Population by religious community")
+        print("  C-01 Appendix  the religions inside 'Other religions and")
+        print("                 persuasions', India and states only:")
+        print(f"                 {APPENDIX_URL}")
         print("  C-16  Population by mother tongue")
         print(f"District-level extract used by default: {args.csv_url}")
         return 0
@@ -809,7 +1192,32 @@ def main() -> int:
         log(f"india_census: Census 2011, level={args.level}")
         rows = load_csv(args.csv_url)
         validate(rows)
-        records = states(rows) if args.level == "state" else districts(rows)
+        if args.level != "state":
+            records = districts(rows)
+        else:
+            # Only at state level, because that is the only level the Appendix
+            # is published at. Asking for it while building districts would
+            # download a file with nothing in it for them.
+            #
+            # A source that cannot be reached and a source that does not add up
+            # are different failures and get different answers. Unreachable is
+            # a normal condition -- censusindia is slow and sometimes down --
+            # and it costs the detail, not the state figures, so it is reported
+            # and the run continues with C-01's residual whole. Anything the
+            # reader or the checks refuse is not caught here: that is the file
+            # disagreeing with the census, and nothing should be emitted.
+            appendix = None
+            if not args.no_appendix:
+                log(f"  C-01 Appendix: {args.appendix_url}")
+                try:
+                    blob = load_appendix(args.appendix_url)
+                except Exception as err:              # noqa: BLE001 - reported
+                    log(f"  unreachable ({type(err).__name__}: {err}); the "
+                        f"break-up of 'Other religions and persuasions' is not "
+                        f"in this run and the residual stays whole")
+                else:
+                    appendix = read_appendix(blob)
+            records = states(rows, appendix)
 
     out = args.out or PROCESSED / f"india_{args.level}.json"
     write_json(out, records)
@@ -822,6 +1230,17 @@ def main() -> int:
                     and (r.get("religion") or {}).get("note"))
     log(f"  {len(records)} records, {with_religion} with religion shares, "
         f"{explained} explicit gaps carrying their reason")
+    # The labels the Appendix put on the map, printed because they are what
+    # the group tree has to place: a religion surfaced here and left
+    # unclassified is drawn in the reserved "not yet classified" colour, and
+    # the only way to know which ones those are is to see the list.
+    surfaced = sorted({row["group"] for r in records
+                       if isinstance(r.get("religion"), list)
+                       for row in r["religion"]}
+                      - set(RELIGION_COLUMNS.values()))
+    if surfaced:
+        log(f"  groups beyond C-01's eight columns ({len(surfaced)}): "
+            + ", ".join(surfaced))
     return 0
 
 

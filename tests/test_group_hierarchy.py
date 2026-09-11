@@ -514,6 +514,48 @@ class SpellingVariantsAreSynonyms(unittest.TestCase):
                              group_tree.parent_of(field, target),
                              f"{variant} is not filed with {target}")
 
+    def test_a_variant_may_not_merge_two_rows_a_source_prints_together(self):
+        """A variant says two strings are one group. A source that prints
+        both of them in one record says they are two, and the source wins.
+
+        This is not pedantry about spelling: merging them adds one row's
+        share to the other's, so a census that distinguishes Bosnian from
+        Bosniak, or Nepali from Khas, would have a number invented for it.
+        Each of those was a variant here until this test was written.
+        """
+        import group_tree
+        folder = ROOT / "site" / "data"
+        if not folder.is_dir():
+            raise unittest.SkipTest("site/data has not been built")
+        tables = {"language": group_tree.LANGUAGE_VARIANTS,
+                  "ethnicity": group_tree.ETHNIC_VARIANTS}
+        files = [folder / "admin0.json"]
+        for level in ("admin1", "admin2"):
+            if (folder / level).is_dir():
+                files += sorted((folder / level).iterdir())
+        for path in files:
+            try:
+                records = json.loads(path.read_text())
+            except (OSError, ValueError):
+                continue
+            if not isinstance(records, list):
+                continue
+            for record in records:
+                if not isinstance(record, dict):
+                    continue
+                for field, variants in tables.items():
+                    rows = record.get(field)
+                    if not isinstance(rows, list):
+                        continue
+                    named = {r["group"] for r in rows
+                             if isinstance(r, dict) and r.get("group")}
+                    for name, target in variants.items():
+                        self.assertFalse(
+                            name in named and target in named,
+                            f"{field}: {path.name} {record.get('id')} prints "
+                            f"{name!r} and {target!r} as two rows, and the "
+                            f"tree calls them one group")
+
     def test_a_variant_may_not_shadow_a_name_the_tree_places(self):
         """Two tables disagreeing about one string is a bug, not a fallback.
 

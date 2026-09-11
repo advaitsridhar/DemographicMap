@@ -251,7 +251,10 @@ both.
 **A contested placement gets its own tier-1 node.** Jews are an ethnoreligious
 people counted by European registers; Roma are of South Asian origin and European
 residence. Neither belongs under one ancestry without an argument this map has no
-business making, so they stand alone.
+business making, so they stand alone. The Khoisan languages stand alone for the
+opposite reason: they are not one family but three, and they are not Niger-Congo
+or Nilo-Saharan either, so filing them under a neighbour to save a colour would
+assert something no reference does.
 
 #### Reading a name the tables do not spell
 
@@ -262,7 +265,11 @@ name *is*, not a guess at where it might fit:
 1. **the name itself**, then **a spelling of it** — accents and typographic
    punctuation flattened (`Éwé` is `Ewe`, `Alaba-K’abeena` is `Alaba-K'abeena`),
    a kind word added or dropped (`Banda Languages` is `Banda`, `Romance` is
-   `Romance languages`), a bracket or slash opened (`Lushai/Mizo` is `Mizo`);
+   `Romance languages`), a bracket, slash or semicolon opened (`Lushai/Mizo` is
+   `Mizo`; `Catalan; Valencian` is Catalan, because ISO 639 lists a language's
+   other names after a semicolon and a register that types its code list into a
+   census table brings the punctuation with it). A conjunction is never opened
+   this way: `and` joins two answers, not two names for one;
 2. **a band's remainder under the band** — `Romance languages, n.i.e.` is filed
    *under* Romance, not beside it, or the family would not count the rows the
    census could not name;
@@ -282,6 +289,12 @@ An unplaced group keeps its figure and its name and is drawn in a reserved
 colour that is not the no-data grey: the data is there, only the classification
 is missing, and saying so is different from reporting a gap.
 
+**A spelling variant carries the same burden in the other direction.** It claims
+two strings are one group, and a source that prints both of them in one record
+says they are two. Bosnia publishes Bosnian beside Bosniak and Jumla publishes
+Nepali beside Khas, so neither pair is merged, and a test walks the shipped data
+to keep it that way.
+
 `python -m scripts.check_classified` counts what is still unplaced, by units led
 and by distinct label — the two numbers mean different things, and a long tail of
 labels leading one district each is not the same problem as one label leading a
@@ -289,7 +302,7 @@ hundred.
 
 Coverage is measured rather than assumed — `python -m scripts.group_tree
 --coverage` prints the share of the shipped map each tree accounts for. It is
-99.4% of religion mentions, 96.8% of ethnicity and 92.1% of language.
+100% of religion mentions, 99.9% of ethnicity and 98.7% of language.
 
 Three things follow from the nesting:
 

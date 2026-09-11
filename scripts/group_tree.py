@@ -95,11 +95,34 @@ RELIGION_TRADITION: dict[str, tuple[str, ...]] = {
         "Prakriti", "Bon", "Modekngei", "Badimo", "Shamanism",
         # Myanmar's nat worship, named the way the census names it.
         "Nat",
+        # India's Adivasi religions, from Census 2011 table C-01 Appendix --
+        # the break-up of "Other religions and persuasions", which is the only
+        # place any census names them. They are here for the same reason
+        # Nepal's Kirat, Prakriti and Bon are: they are living traditions with
+        # a counted population, and dropping them into "Folk and traditional
+        # religion" would erase the one census that counts them. Donyi-Polo is
+        # 26% of Arunachal Pradesh, Sanamahi 8% of Manipur, Sarna 13% of
+        # Jharkhand. Several are named for the people rather than the faith --
+        # "Adi", "Santal", "Munda" -- because that is the answer the census
+        # recorded; see canonical_groups for the spellings each folds.
+        "Donyi-Polo", "Sarna", "Sari Dharma", "Sanamahi", "Khasi", "Niamtre",
+        "Niam Shnong", "Songsarek", "Heraka", "Gondi", "Koyatur",
+        "Addi Bassi", "Adi", "Bidin", "Nocte", "Rangfra", "Intaya",
+        "Nani Intiya", "Nyarino", "Idu Mishmi", "Hill Miri", "Aka",
+        "Santal", "Ho", "Munda", "Oraon", "Bhil", "Baiga", "Korku",
+        "Boro", "Karbi",
     ),
     "Other and new religions": (
         "Zoroastrianism", "Yazidi", "Jedi", "Eckankar", "Wicca",
         "Pagan and neo-pagan", "Spiritualism and New Age religions",
         "Eastern religions", "Other religions",
+        # India's C-01 Appendix names a religion only where it has a hundred
+        # adherents nationally, so every state has a part of the residual that
+        # it does not name. india_census.py shows that part rather than
+        # normalising it away, and it is not the same thing as the whole
+        # "Other religions" bucket -- it is what is left of the bucket once the
+        # named religions are out of it.
+        "Other religions (not separately named)",
     ),
     "No religion": ("No religion",),
     "Not stated": ("Not stated", "Unaffiliated or not reported",

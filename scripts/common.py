@@ -331,6 +331,12 @@ def http_get(url: str, *, cache: bool = True, retries: int = 4, timeout: int = 1
     req_headers.update(headers or {})
     opener = urllib.request.urlopen
     if aia:
+        # Imported here, and with the directory put on the path first: this
+        # module is reached both as `common` (scripts/ on sys.path) and as
+        # `scripts.common`, and probe_tls is a sibling file rather than a
+        # package member. Nothing above pays for it -- an adapter that does not
+        # ask for the repair never runs this.
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
         from probe_tls import verified_opener                 # noqa: PLC0415
         opener = verified_opener(urllib.parse.urlsplit(url).hostname or "").open
     delay = 2.0
