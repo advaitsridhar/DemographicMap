@@ -10979,7 +10979,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 4032363,
+      "year": 2017,
+      "source": "Pakistan Bureau of Statistics, Population and Housing Census 2017, Table: District wise Population of AJ&K by Religion, as printed in the AJ&K Statistical Year Book 2023 (Bureau of Statistics, P&DD, Azad Government of the State of Jammu & Kashmir)"
     },
     "median_age": {
       "status": "not_available"
@@ -10987,28 +10989,58 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper -- their people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 (religion) or Table 11 (mother tongue) for either: the four provinces and Islamabad have both and these two have neither, at any path the office uses. Their own Planning & Development departments publish district tables from the same census, and those carry population without ever naming a religion or a mother tongue. The 2017 round is no better: its subnational workbook lists both territories and leaves them blank. The question was asked; the answer is unpublished."
-    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 99.8,
+        "count": 4025737
+      },
+      {
+        "group": "Christian",
+        "pct": 0.1,
+        "count": 2934
+      },
+      {
+        "group": "Ahmadi",
+        "pct": 0.1,
+        "count": 3402
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Scheduled Castes",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 270
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper -- their people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 (religion) or Table 11 (mother tongue) for either: the four provinces and Islamabad have both and these two have neither, at any path the office uses. Their own Planning & Development departments publish district tables from the same census, and those carry population without ever naming a religion or a mother tongue. The 2017 round is no better: its subnational workbook lists both territories and leaves them blank. The question was asked; the answer is unpublished."
+      "note": "Mother tongue is the field Azad Jammu and Kashmir still has no source for. The Bureau of Statistics publishes no Table 11 for it, the U.S. Census Bureau's workbook of the 2017 census lists the territory and leaves it blank, and the AJ&K Statistical Year Book 2023 -- which does print the census's religion table -- contains the word 'tongue' on no page of it."
     },
     "ethnicity": {
       "status": "not_available"
     },
     "sources": [
       {
-        "field": "note",
-        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 9",
-        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/",
-        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+        "field": "population/religion",
+        "name": "Pakistan Bureau of Statistics, Population and Housing Census 2017, Table: District wise Population of AJ&K by Religion, as printed in the AJ&K Statistical Year Book 2023 (Bureau of Statistics, P&DD, Azad Government of the State of Jammu & Kashmir)",
+        "url": "https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf",
+        "license": "Azad Government of the State of Jammu & Kashmir, P&DD"
       }
     ],
     "aliases": [
       "Azad Kashmir"
-    ]
+    ],
+    "religion_year": 2017,
+    "religion_note": "Population and Housing Census 2017, as reprinted by the AJ&K Bureau of Statistics in its Statistical Year Book 2023. Azad Jammu and Kashmir is enumerated apart from the census proper -- its people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 for it, so this comes from the territory's own government rather than from the same file as the four provinces. The categories are the census's own: Ahmadis are counted separately from Muslims and Scheduled Castes separately from Hindus."
   },
   {
     "id": "PAK-ajk-azad-kashmir",
@@ -11022,7 +11054,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 4032363,
+      "year": 2017,
+      "source": "Pakistan Bureau of Statistics, Population and Housing Census 2017, Table: District wise Population of AJ&K by Religion, as printed in the AJ&K Statistical Year Book 2023 (Bureau of Statistics, P&DD, Azad Government of the State of Jammu & Kashmir)"
     },
     "median_age": {
       "status": "not_available"
@@ -11030,29 +11064,59 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper -- their people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 (religion) or Table 11 (mother tongue) for either: the four provinces and Islamabad have both and these two have neither, at any path the office uses. Their own Planning & Development departments publish district tables from the same census, and those carry population without ever naming a religion or a mother tongue. The 2017 round is no better: its subnational workbook lists both territories and leaves them blank. The question was asked; the answer is unpublished."
-    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 99.8,
+        "count": 4025737
+      },
+      {
+        "group": "Christian",
+        "pct": 0.1,
+        "count": 2934
+      },
+      {
+        "group": "Ahmadi",
+        "pct": 0.1,
+        "count": 3402
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Scheduled Castes",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 270
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper -- their people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 (religion) or Table 11 (mother tongue) for either: the four provinces and Islamabad have both and these two have neither, at any path the office uses. Their own Planning & Development departments publish district tables from the same census, and those carry population without ever naming a religion or a mother tongue. The 2017 round is no better: its subnational workbook lists both territories and leaves them blank. The question was asked; the answer is unpublished."
+      "note": "Mother tongue is the field Azad Jammu and Kashmir still has no source for. The Bureau of Statistics publishes no Table 11 for it, the U.S. Census Bureau's workbook of the 2017 census lists the territory and leaves it blank, and the AJ&K Statistical Year Book 2023 -- which does print the census's religion table -- contains the word 'tongue' on no page of it."
     },
     "ethnicity": {
       "status": "not_available"
     },
     "sources": [
       {
-        "field": "note",
-        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 9",
-        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/",
-        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+        "field": "population/religion",
+        "name": "Pakistan Bureau of Statistics, Population and Housing Census 2017, Table: District wise Population of AJ&K by Religion, as printed in the AJ&K Statistical Year Book 2023 (Bureau of Statistics, P&DD, Azad Government of the State of Jammu & Kashmir)",
+        "url": "https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf",
+        "license": "Azad Government of the State of Jammu & Kashmir, P&DD"
       }
     ],
     "parent_name": "Azad Jammu and Kashmir",
     "parent_aliases": [
       "Azad Kashmir"
-    ]
+    ],
+    "religion_year": 2017,
+    "religion_note": "Population and Housing Census 2017, as reprinted by the AJ&K Bureau of Statistics in its Statistical Year Book 2023. Azad Jammu and Kashmir is enumerated apart from the census proper -- its people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 for it, so this comes from the territory's own government rather than from the same file as the four provinces. The categories are the census's own: Ahmadis are counted separately from Muslims and Scheduled Castes separately from Hindus. geoBoundaries draws one second-level unit for the whole territory where the yearbook counts ten districts, so this is the territory's figure on the territory's shape rather than any one district's."
   },
   {
     "id": "PAK-gb",

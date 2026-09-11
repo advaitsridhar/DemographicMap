@@ -1,28 +1,43 @@
-probe_estat: ESTAT_API found, 40 characters
-
-== metadata for 0000010107
-  getMetaInfo?statsDataId=0000010107
-    table: 0000010107 | [00200502] 社会・人口統計体系 | 総務省 | Ｇ　文化・スポーツ | survey 0 | area 全国 (Japan as a whole) | 104736 cells
-      TITLE_SPEC.TABLE_NAME: Ｇ　文化・スポーツ
-      STATISTICS_NAME_SPEC.TABULATION_CATEGORY: 都道府県データ
-      STATISTICS_NAME_SPEC.TABULATION_SUB_CATEGORY1: 基礎データ
-    class tab = 観測値 (1 codes)
-      00001  観測値   (level 1)
-    class cat01 = Ｇ　文化・スポーツ (248 codes)
-      G1101  G1101_社会教育関係職員数   (level 1 unit 人)
-      G110101  G110101_社会教育関係職員数（専任）   (level 1 unit 人)
-      G1102  G1102_社会体育担当職員数   (level 1 unit 人)
-      G110201  G110201_社会体育担当職員数（専任）   (level 1 unit 人)
-      ... and 244 more
-    class area = 地域 (48 codes)
-      00000  全国   (level 1)
-      01000  北海道   (level 2)
-      02000  青森県   (level 2)
-      03000  岩手県   (level 2)
-      ... and 44 more
-    class time = 調査年 (50 codes)
-      1975100000  1975年度   (level 1)
-      1976100000  1976年度   (level 1)
-      1977100000  1977年度   (level 1)
-      1978100000  1978年度   (level 1)
-      ... and 46 more
+pakistan: Bureau of Statistics, Census 2023 Table 9
+  Khyber Pakhtunkhwa
+    2,255,958 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
+    35 districts, 123 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 35 districts add up to the province
+    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
+    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
+  Punjab
+    2,592,933 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_punjab_districts.pdf
+    36 districts, 145 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 36 districts add up to the province
+  Sindh
+    2,399,774 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_sindh_districts.pdf
+    30 districts, 0 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 30 districts add up to the province
+    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
+  Balochistan
+    2,698,658 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_balochistan_districts.pdf
+    34 districts, 80 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 34 districts add up to the province
+  Islamabad Capital Territory
+    36,012 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_islamabad.pdf
+    1 districts, 1 tehsils passed over
+    one district, and it is the territory: the table prints no separate territory row
+    every district's religions sum to its own printed total
+    and the 1 districts add up to the province
+  Azad Jammu and Kashmir
+  Gilgit-Baltistan
+  NOT PUBLISHED (enumerated apart from the census proper) -- Azad Jammu and Kashmir: table_9_ajk.pdf: HTTPError HTTP Error 404: Not Found; table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
+  NOT PUBLISHED (enumerated apart from the census proper) -- Gilgit-Baltistan: table_9_gb.pdf: HTTPError HTTP Error 404: Not Found; table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
+  Azad Jammu and Kashmir, from the territory's own yearbook
+    9,083,563 bytes from https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf
+    Table 15.24 named on page 15 with no rows under it: the contents, not the table
+    Table 15.24 on page 209: 10 districts
+    all 7 columns sum to the printed AJ&K row
+    Poonch: religions sum to +54 against its own printed total, which the yearbook's own 15.23 also shows
+  11 records declaring what is not published, rather than leaving the field empty
+  wrote data/processed/pakistan_district.json (313 kB)
+  138 districts and 7 provinces
