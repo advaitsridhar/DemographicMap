@@ -1,0 +1,1812 @@
+[
+  {
+    "id": "ZWE-bulawayo",
+    "level": "admin1",
+    "name": "Bulawayo",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Pentecostal",
+        "pct": 24.9,
+        "count": 165766
+      },
+      {
+        "group": "Apostolic sect",
+        "pct": 21.2,
+        "count": 141335
+      },
+      {
+        "group": "Protestant",
+        "pct": 20.2,
+        "count": 134560
+      },
+      {
+        "group": "Other Christian",
+        "pct": 13.2,
+        "count": 87723
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 8.5,
+        "count": 56517
+      },
+      {
+        "group": "No religion",
+        "pct": 7.8,
+        "count": 51733
+      },
+      {
+        "group": "African traditional religion",
+        "pct": 2.4,
+        "count": 15953
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.4,
+        "count": 9551
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3,
+        "count": 2174
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1,
+        "count": 506
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 134
+      }
+    ],
+    "language": [
+      {
+        "group": "Ndebele",
+        "pct": 61.6,
+        "count": 384447
+      },
+      {
+        "group": "Shona",
+        "pct": 31.2,
+        "count": 194608
+      },
+      {
+        "group": "Tonga",
+        "pct": 2.2,
+        "count": 13431
+      },
+      {
+        "group": "English",
+        "pct": 1.6,
+        "count": 9802
+      },
+      {
+        "group": "Kalanga",
+        "pct": 1.0,
+        "count": 5981
+      },
+      {
+        "group": "Sotho",
+        "pct": 0.6,
+        "count": 3467
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.6,
+        "count": 3671
+      },
+      {
+        "group": "Nambya",
+        "pct": 0.4,
+        "count": 2279
+      },
+      {
+        "group": "Chewa",
+        "pct": 0.4,
+        "count": 2376
+      },
+      {
+        "group": "Ndau",
+        "pct": 0.2,
+        "count": 962
+      },
+      {
+        "group": "Venda",
+        "pct": 0.2,
+        "count": 1169
+      },
+      {
+        "group": "Xhosa",
+        "pct": 0.2,
+        "count": 1189
+      },
+      {
+        "group": "Shangani",
+        "pct": 0.1,
+        "count": 435
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Chibarwe",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 92
+      },
+      {
+        "group": "Tswana",
+        "pct": 0.0,
+        "count": 293
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17)",
+        "url": "https://www.zimstat.co.zw/wp-content/uploads/Census/2022_PHC_Report_27012023_Final.pdf",
+        "license": "Official statistics publication of the Zimbabwe National Statistics Agency"
+      }
+    ],
+    "country": "ZWE",
+    "religion_year": 2022,
+    "religion_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.14(c): religion of the whole population in the eleven classes the report prints; the Apostolic sect, Pentecostal and Protestant classes are the report's own and are kept apart.",
+    "language_year": 2022,
+    "language_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.17: mother tongue as the report groups it. The table covers 13,913,253 people against a census population of 15,178,957, and the report does not state the table's age floor on the page."
+  },
+  {
+    "id": "ZWE-manicaland",
+    "level": "admin1",
+    "name": "Manicaland",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Apostolic sect",
+        "pct": 50.2,
+        "count": 1023813
+      },
+      {
+        "group": "Protestant",
+        "pct": 15.4,
+        "count": 312977
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 14.3,
+        "count": 292168
+      },
+      {
+        "group": "African traditional religion",
+        "pct": 4.8,
+        "count": 97876
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 4.8,
+        "count": 98381
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.8,
+        "count": 98772
+      },
+      {
+        "group": "No religion",
+        "pct": 4.5,
+        "count": 92401
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5,
+        "count": 10610
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.5,
+        "count": 9383
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 1105
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0,
+        "count": 217
+      }
+    ],
+    "language": [
+      {
+        "group": "Shona",
+        "pct": 80.4,
+        "count": 1497197
+      },
+      {
+        "group": "Ndau",
+        "pct": 18.0,
+        "count": 334578
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.5,
+        "count": 9694
+      },
+      {
+        "group": "Ndebele",
+        "pct": 0.3,
+        "count": 5777
+      },
+      {
+        "group": "Shangani",
+        "pct": 0.3,
+        "count": 5722
+      },
+      {
+        "group": "Kalanga",
+        "pct": 0.2,
+        "count": 2897
+      },
+      {
+        "group": "English",
+        "pct": 0.1,
+        "count": 1642
+      },
+      {
+        "group": "Chibarwe",
+        "pct": 0.1,
+        "count": 1817
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Nambya",
+        "pct": 0.0,
+        "count": 474
+      },
+      {
+        "group": "Chewa",
+        "pct": 0.0,
+        "count": 675
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 157
+      },
+      {
+        "group": "Sotho",
+        "pct": 0.0,
+        "count": 127
+      },
+      {
+        "group": "Tonga",
+        "pct": 0.0,
+        "count": 300
+      },
+      {
+        "group": "Tswana",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Venda",
+        "pct": 0.0,
+        "count": 164
+      },
+      {
+        "group": "Xhosa",
+        "pct": 0.0,
+        "count": 71
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17)",
+        "url": "https://www.zimstat.co.zw/wp-content/uploads/Census/2022_PHC_Report_27012023_Final.pdf",
+        "license": "Official statistics publication of the Zimbabwe National Statistics Agency"
+      }
+    ],
+    "country": "ZWE",
+    "religion_year": 2022,
+    "religion_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.14(c): religion of the whole population in the eleven classes the report prints; the Apostolic sect, Pentecostal and Protestant classes are the report's own and are kept apart.",
+    "language_year": 2022,
+    "language_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.17: mother tongue as the report groups it. The table covers 13,913,253 people against a census population of 15,178,957, and the report does not state the table's age floor on the page."
+  },
+  {
+    "id": "ZWE-mashonaland-central",
+    "level": "admin1",
+    "name": "Mashonaland Central",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Apostolic sect",
+        "pct": 53.3,
+        "count": 738690
+      },
+      {
+        "group": "No religion",
+        "pct": 12.1,
+        "count": 167074
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 10.5,
+        "count": 145711
+      },
+      {
+        "group": "African traditional religion",
+        "pct": 8.8,
+        "count": 121454
+      },
+      {
+        "group": "Protestant",
+        "pct": 7.4,
+        "count": 102251
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.3,
+        "count": 45824
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 3.2,
+        "count": 44029
+      },
+      {
+        "group": "Islam",
+        "pct": 1.1,
+        "count": 15380
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 3843
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 538
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0,
+        "count": 97
+      }
+    ],
+    "language": [
+      {
+        "group": "Shona",
+        "pct": 98.7,
+        "count": 1240364
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.4,
+        "count": 4924
+      },
+      {
+        "group": "Ndebele",
+        "pct": 0.3,
+        "count": 3819
+      },
+      {
+        "group": "Chewa",
+        "pct": 0.3,
+        "count": 3798
+      },
+      {
+        "group": "Ndau",
+        "pct": 0.1,
+        "count": 1119
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 568
+      },
+      {
+        "group": "Kalanga",
+        "pct": 0.0,
+        "count": 559
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Nambya",
+        "pct": 0.0,
+        "count": 173
+      },
+      {
+        "group": "Chibarwe",
+        "pct": 0.0,
+        "count": 198
+      },
+      {
+        "group": "Shangani",
+        "pct": 0.0,
+        "count": 153
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 128
+      },
+      {
+        "group": "Sotho",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Tonga",
+        "pct": 0.0,
+        "count": 480
+      },
+      {
+        "group": "Tswana",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Venda",
+        "pct": 0.0,
+        "count": 98
+      },
+      {
+        "group": "Xhosa",
+        "pct": 0.0,
+        "count": 32
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17)",
+        "url": "https://www.zimstat.co.zw/wp-content/uploads/Census/2022_PHC_Report_27012023_Final.pdf",
+        "license": "Official statistics publication of the Zimbabwe National Statistics Agency"
+      }
+    ],
+    "country": "ZWE",
+    "religion_year": 2022,
+    "religion_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.14(c): religion of the whole population in the eleven classes the report prints; the Apostolic sect, Pentecostal and Protestant classes are the report's own and are kept apart.",
+    "language_year": 2022,
+    "language_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.17: mother tongue as the report groups it. The table covers 13,913,253 people against a census population of 15,178,957, and the report does not state the table's age floor on the page."
+  },
+  {
+    "id": "ZWE-mashonaland-east",
+    "level": "admin1",
+    "name": "Mashonaland East",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Apostolic sect",
+        "pct": 45.9,
+        "count": 795356
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 16.5,
+        "count": 285802
+      },
+      {
+        "group": "Protestant",
+        "pct": 11.9,
+        "count": 206735
+      },
+      {
+        "group": "No religion",
+        "pct": 8.8,
+        "count": 152451
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 6.3,
+        "count": 108621
+      },
+      {
+        "group": "African traditional religion",
+        "pct": 4.9,
+        "count": 84340
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.5,
+        "count": 77974
+      },
+      {
+        "group": "Islam",
+        "pct": 0.7,
+        "count": 12737
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 6731
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 218
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0,
+        "count": 208
+      }
+    ],
+    "language": [
+      {
+        "group": "Shona",
+        "pct": 98.6,
+        "count": 1560987
+      },
+      {
+        "group": "Ndebele",
+        "pct": 0.5,
+        "count": 8438
+      },
+      {
+        "group": "Ndau",
+        "pct": 0.2,
+        "count": 2646
+      },
+      {
+        "group": "Chewa",
+        "pct": 0.2,
+        "count": 2821
+      },
+      {
+        "group": "English",
+        "pct": 0.1,
+        "count": 2039
+      },
+      {
+        "group": "Tonga",
+        "pct": 0.1,
+        "count": 818
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.1,
+        "count": 2281
+      },
+      {
+        "group": "Kalanga",
+        "pct": 0.0,
+        "count": 729
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Nambya",
+        "pct": 0.0,
+        "count": 207
+      },
+      {
+        "group": "Chibarwe",
+        "pct": 0.0,
+        "count": 455
+      },
+      {
+        "group": "Shangani",
+        "pct": 0.0,
+        "count": 281
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 208
+      },
+      {
+        "group": "Sotho",
+        "pct": 0.0,
+        "count": 124
+      },
+      {
+        "group": "Tswana",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
+        "group": "Venda",
+        "pct": 0.0,
+        "count": 168
+      },
+      {
+        "group": "Xhosa",
+        "pct": 0.0,
+        "count": 141
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17)",
+        "url": "https://www.zimstat.co.zw/wp-content/uploads/Census/2022_PHC_Report_27012023_Final.pdf",
+        "license": "Official statistics publication of the Zimbabwe National Statistics Agency"
+      }
+    ],
+    "country": "ZWE",
+    "religion_year": 2022,
+    "religion_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.14(c): religion of the whole population in the eleven classes the report prints; the Apostolic sect, Pentecostal and Protestant classes are the report's own and are kept apart.",
+    "language_year": 2022,
+    "language_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.17: mother tongue as the report groups it. The table covers 13,913,253 people against a census population of 15,178,957, and the report does not state the table's age floor on the page."
+  },
+  {
+    "id": "ZWE-mashonaland-west",
+    "level": "admin1",
+    "name": "Mashonaland West",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Apostolic sect",
+        "pct": 41.9,
+        "count": 793337
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 16.0,
+        "count": 303112
+      },
+      {
+        "group": "Protestant",
+        "pct": 12.2,
+        "count": 231719
+      },
+      {
+        "group": "No religion",
+        "pct": 12.1,
+        "count": 229803
+      },
+      {
+        "group": "African traditional religion",
+        "pct": 6.1,
+        "count": 115820
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 5.2,
+        "count": 98529
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.6,
+        "count": 86799
+      },
+      {
+        "group": "Islam",
+        "pct": 1.1,
+        "count": 20736
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.7,
+        "count": 13106
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 297
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0,
+        "count": 326
+      }
+    ],
+    "language": [
+      {
+        "group": "Shona",
+        "pct": 96.2,
+        "count": 1659614
+      },
+      {
+        "group": "Tonga",
+        "pct": 1.2,
+        "count": 21263
+      },
+      {
+        "group": "Ndebele",
+        "pct": 1.0,
+        "count": 16594
+      },
+      {
+        "group": "Chewa",
+        "pct": 0.6,
+        "count": 10167
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.5,
+        "count": 7981
+      },
+      {
+        "group": "Ndau",
+        "pct": 0.2,
+        "count": 3093
+      },
+      {
+        "group": "English",
+        "pct": 0.1,
+        "count": 2157
+      },
+      {
+        "group": "Kalanga",
+        "pct": 0.1,
+        "count": 2059
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
+        "group": "Nambya",
+        "pct": 0.0,
+        "count": 539
+      },
+      {
+        "group": "Chibarwe",
+        "pct": 0.0,
+        "count": 189
+      },
+      {
+        "group": "Shangani",
+        "pct": 0.0,
+        "count": 543
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 114
+      },
+      {
+        "group": "Sotho",
+        "pct": 0.0,
+        "count": 189
+      },
+      {
+        "group": "Tswana",
+        "pct": 0.0,
+        "count": 95
+      },
+      {
+        "group": "Venda",
+        "pct": 0.0,
+        "count": 279
+      },
+      {
+        "group": "Xhosa",
+        "pct": 0.0,
+        "count": 332
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17)",
+        "url": "https://www.zimstat.co.zw/wp-content/uploads/Census/2022_PHC_Report_27012023_Final.pdf",
+        "license": "Official statistics publication of the Zimbabwe National Statistics Agency"
+      }
+    ],
+    "country": "ZWE",
+    "religion_year": 2022,
+    "religion_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.14(c): religion of the whole population in the eleven classes the report prints; the Apostolic sect, Pentecostal and Protestant classes are the report's own and are kept apart.",
+    "language_year": 2022,
+    "language_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.17: mother tongue as the report groups it. The table covers 13,913,253 people against a census population of 15,178,957, and the report does not state the table's age floor on the page."
+  },
+  {
+    "id": "ZWE-matabeleland-north",
+    "level": "admin1",
+    "name": "Matabeleland North",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Apostolic sect",
+        "pct": 34.3,
+        "count": 284238
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 16.4,
+        "count": 135723
+      },
+      {
+        "group": "Other Christian",
+        "pct": 13.2,
+        "count": 109471
+      },
+      {
+        "group": "Protestant",
+        "pct": 10.6,
+        "count": 87548
+      },
+      {
+        "group": "No religion",
+        "pct": 10.3,
+        "count": 85508
+      },
+      {
+        "group": "African traditional religion",
+        "pct": 7.1,
+        "count": 58392
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 6.1,
+        "count": 50142
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.9,
+        "count": 15831
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 552
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 129
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0,
+        "count": 111
+      }
+    ],
+    "language": [
+      {
+        "group": "Ndebele",
+        "pct": 64.1,
+        "count": 489320
+      },
+      {
+        "group": "Tonga",
+        "pct": 20.6,
+        "count": 157302
+      },
+      {
+        "group": "Shona",
+        "pct": 8.4,
+        "count": 63746
+      },
+      {
+        "group": "Nambya",
+        "pct": 4.2,
+        "count": 32254
+      },
+      {
+        "group": "Xhosa",
+        "pct": 0.9,
+        "count": 6494
+      },
+      {
+        "group": "Chewa",
+        "pct": 0.7,
+        "count": 5353
+      },
+      {
+        "group": "Kalanga",
+        "pct": 0.4,
+        "count": 2683
+      },
+      {
+        "group": "English",
+        "pct": 0.2,
+        "count": 1348
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.2,
+        "count": 1581
+      },
+      {
+        "group": "Ndau",
+        "pct": 0.1,
+        "count": 426
+      },
+      {
+        "group": "Sotho",
+        "pct": 0.1,
+        "count": 1086
+      },
+      {
+        "group": "Venda",
+        "pct": 0.1,
+        "count": 522
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Chibarwe",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Shangani",
+        "pct": 0.0,
+        "count": 312
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 130
+      },
+      {
+        "group": "Tswana",
+        "pct": 0.0,
+        "count": 181
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17)",
+        "url": "https://www.zimstat.co.zw/wp-content/uploads/Census/2022_PHC_Report_27012023_Final.pdf",
+        "license": "Official statistics publication of the Zimbabwe National Statistics Agency"
+      }
+    ],
+    "country": "ZWE",
+    "religion_year": 2022,
+    "religion_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.14(c): religion of the whole population in the eleven classes the report prints; the Apostolic sect, Pentecostal and Protestant classes are the report's own and are kept apart.",
+    "language_year": 2022,
+    "language_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.17: mother tongue as the report groups it. The table covers 13,913,253 people against a census population of 15,178,957, and the report does not state the table's age floor on the page."
+  },
+  {
+    "id": "ZWE-matabeleland-south",
+    "level": "admin1",
+    "name": "Matabeleland South",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Apostolic sect",
+        "pct": 32.4,
+        "count": 246166
+      },
+      {
+        "group": "Other Christian",
+        "pct": 16.1,
+        "count": 122507
+      },
+      {
+        "group": "No religion",
+        "pct": 13.5,
+        "count": 102631
+      },
+      {
+        "group": "Protestant",
+        "pct": 12.7,
+        "count": 96869
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 12.6,
+        "count": 95533
+      },
+      {
+        "group": "African traditional religion",
+        "pct": 6.3,
+        "count": 47918
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 3.7,
+        "count": 28150
+      },
+      {
+        "group": "Other religion",
+        "pct": 2.6,
+        "count": 19393
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 820
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 286
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0,
+        "count": 72
+      }
+    ],
+    "language": [
+      {
+        "group": "Ndebele",
+        "pct": 63.6,
+        "count": 445820
+      },
+      {
+        "group": "Shona",
+        "pct": 14.7,
+        "count": 102791
+      },
+      {
+        "group": "Venda",
+        "pct": 9.3,
+        "count": 65039
+      },
+      {
+        "group": "Kalanga",
+        "pct": 4.7,
+        "count": 32742
+      },
+      {
+        "group": "Sotho",
+        "pct": 4.7,
+        "count": 32758
+      },
+      {
+        "group": "Tonga",
+        "pct": 0.9,
+        "count": 6628
+      },
+      {
+        "group": "Shangani",
+        "pct": 0.8,
+        "count": 5598
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.4,
+        "count": 2818
+      },
+      {
+        "group": "Nambya",
+        "pct": 0.2,
+        "count": 1135
+      },
+      {
+        "group": "Xhosa",
+        "pct": 0.2,
+        "count": 1556
+      },
+      {
+        "group": "English",
+        "pct": 0.1,
+        "count": 847
+      },
+      {
+        "group": "Ndau",
+        "pct": 0.1,
+        "count": 791
+      },
+      {
+        "group": "Chewa",
+        "pct": 0.1,
+        "count": 880
+      },
+      {
+        "group": "Tswana",
+        "pct": 0.1,
+        "count": 1011
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Chibarwe",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 146
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17)",
+        "url": "https://www.zimstat.co.zw/wp-content/uploads/Census/2022_PHC_Report_27012023_Final.pdf",
+        "license": "Official statistics publication of the Zimbabwe National Statistics Agency"
+      }
+    ],
+    "country": "ZWE",
+    "religion_year": 2022,
+    "religion_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.14(c): religion of the whole population in the eleven classes the report prints; the Apostolic sect, Pentecostal and Protestant classes are the report's own and are kept apart.",
+    "language_year": 2022,
+    "language_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.17: mother tongue as the report groups it. The table covers 13,913,253 people against a census population of 15,178,957, and the report does not state the table's age floor on the page."
+  },
+  {
+    "id": "ZWE-midlands",
+    "level": "admin1",
+    "name": "Midlands",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Apostolic sect",
+        "pct": 40.0,
+        "count": 724510
+      },
+      {
+        "group": "Protestant",
+        "pct": 16.6,
+        "count": 300203
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 14.5,
+        "count": 262800
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 8.3,
+        "count": 149747
+      },
+      {
+        "group": "Other Christian",
+        "pct": 8.3,
+        "count": 150372
+      },
+      {
+        "group": "No religion",
+        "pct": 6.7,
+        "count": 121641
+      },
+      {
+        "group": "African traditional religion",
+        "pct": 4.2,
+        "count": 76860
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.0,
+        "count": 17391
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3,
+        "count": 5565
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 2578
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0,
+        "count": 238
+      }
+    ],
+    "language": [
+      {
+        "group": "Shona",
+        "pct": 84.8,
+        "count": 1402206
+      },
+      {
+        "group": "Ndebele",
+        "pct": 12.2,
+        "count": 202217
+      },
+      {
+        "group": "Tonga",
+        "pct": 1.7,
+        "count": 28747
+      },
+      {
+        "group": "Ndau",
+        "pct": 0.2,
+        "count": 3943
+      },
+      {
+        "group": "Chewa",
+        "pct": 0.2,
+        "count": 4088
+      },
+      {
+        "group": "English",
+        "pct": 0.1,
+        "count": 2343
+      },
+      {
+        "group": "Kalanga",
+        "pct": 0.1,
+        "count": 1988
+      },
+      {
+        "group": "Shangani",
+        "pct": 0.1,
+        "count": 1437
+      },
+      {
+        "group": "Xhosa",
+        "pct": 0.1,
+        "count": 996
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.1,
+        "count": 2275
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Nambya",
+        "pct": 0.0,
+        "count": 560
+      },
+      {
+        "group": "Chibarwe",
+        "pct": 0.0,
+        "count": 93
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 211
+      },
+      {
+        "group": "Sotho",
+        "pct": 0.0,
+        "count": 648
+      },
+      {
+        "group": "Tswana",
+        "pct": 0.0,
+        "count": 170
+      },
+      {
+        "group": "Venda",
+        "pct": 0.0,
+        "count": 806
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17)",
+        "url": "https://www.zimstat.co.zw/wp-content/uploads/Census/2022_PHC_Report_27012023_Final.pdf",
+        "license": "Official statistics publication of the Zimbabwe National Statistics Agency"
+      }
+    ],
+    "country": "ZWE",
+    "religion_year": 2022,
+    "religion_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.14(c): religion of the whole population in the eleven classes the report prints; the Apostolic sect, Pentecostal and Protestant classes are the report's own and are kept apart.",
+    "language_year": 2022,
+    "language_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.17: mother tongue as the report groups it. The table covers 13,913,253 people against a census population of 15,178,957, and the report does not state the table's age floor on the page."
+  },
+  {
+    "id": "ZWE-masvingo",
+    "level": "admin1",
+    "name": "Masvingo",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Apostolic sect",
+        "pct": 43.0,
+        "count": 705097
+      },
+      {
+        "group": "Other Christian",
+        "pct": 15.5,
+        "count": 254650
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 12.5,
+        "count": 205120
+      },
+      {
+        "group": "Protestant",
+        "pct": 11.2,
+        "count": 183566
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 7.6,
+        "count": 124522
+      },
+      {
+        "group": "No religion",
+        "pct": 4.9,
+        "count": 80868
+      },
+      {
+        "group": "African traditional religion",
+        "pct": 4.0,
+        "count": 65031
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.0,
+        "count": 15627
+      },
+      {
+        "group": "Islam",
+        "pct": 0.2,
+        "count": 2954
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 994
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.0,
+        "count": 99
+      }
+    ],
+    "language": [
+      {
+        "group": "Shona",
+        "pct": 90.5,
+        "count": 1361210
+      },
+      {
+        "group": "Shangani",
+        "pct": 6.7,
+        "count": 100113
+      },
+      {
+        "group": "Ndau",
+        "pct": 1.3,
+        "count": 19461
+      },
+      {
+        "group": "Ndebele",
+        "pct": 1.0,
+        "count": 15198
+      },
+      {
+        "group": "Venda",
+        "pct": 0.2,
+        "count": 2962
+      },
+      {
+        "group": "English",
+        "pct": 0.1,
+        "count": 865
+      },
+      {
+        "group": "Kalanga",
+        "pct": 0.1,
+        "count": 1432
+      },
+      {
+        "group": "Chewa",
+        "pct": 0.1,
+        "count": 784
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Nambya",
+        "pct": 0.0,
+        "count": 208
+      },
+      {
+        "group": "Chibarwe",
+        "pct": 0.0,
+        "count": 144
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 215
+      },
+      {
+        "group": "Sotho",
+        "pct": 0.0,
+        "count": 350
+      },
+      {
+        "group": "Tonga",
+        "pct": 0.0,
+        "count": 577
+      },
+      {
+        "group": "Tswana",
+        "pct": 0.0,
+        "count": 125
+      },
+      {
+        "group": "Xhosa",
+        "pct": 0.0,
+        "count": 106
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.0,
+        "count": 342
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17)",
+        "url": "https://www.zimstat.co.zw/wp-content/uploads/Census/2022_PHC_Report_27012023_Final.pdf",
+        "license": "Official statistics publication of the Zimbabwe National Statistics Agency"
+      }
+    ],
+    "country": "ZWE",
+    "religion_year": 2022,
+    "religion_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.14(c): religion of the whole population in the eleven classes the report prints; the Apostolic sect, Pentecostal and Protestant classes are the report's own and are kept apart.",
+    "language_year": 2022,
+    "language_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.17: mother tongue as the report groups it. The table covers 13,913,253 people against a census population of 15,178,957, and the report does not state the table's age floor on the page."
+  },
+  {
+    "id": "ZWE-harare",
+    "level": "admin1",
+    "name": "Harare",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Pentecostal",
+        "pct": 28.5,
+        "count": 690830
+      },
+      {
+        "group": "Apostolic sect",
+        "pct": 27.2,
+        "count": 659961
+      },
+      {
+        "group": "Protestant",
+        "pct": 17.9,
+        "count": 433307
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 8.9,
+        "count": 216850
+      },
+      {
+        "group": "No religion",
+        "pct": 7.1,
+        "count": 171468
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.9,
+        "count": 143421
+      },
+      {
+        "group": "African traditional religion",
+        "pct": 3.3,
+        "count": 79016
+      },
+      {
+        "group": "Islam",
+        "pct": 0.7,
+        "count": 17100
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.5,
+        "count": 13161
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1,
+        "count": 1551
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 566
+      }
+    ],
+    "language": [
+      {
+        "group": "Shona",
+        "pct": 96.7,
+        "count": 2169011
+      },
+      {
+        "group": "Ndebele",
+        "pct": 1.2,
+        "count": 27694
+      },
+      {
+        "group": "English",
+        "pct": 1.0,
+        "count": 22298
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.3,
+        "count": 7829
+      },
+      {
+        "group": "Ndau",
+        "pct": 0.2,
+        "count": 5588
+      },
+      {
+        "group": "Chewa",
+        "pct": 0.2,
+        "count": 4875
+      },
+      {
+        "group": "Kalanga",
+        "pct": 0.1,
+        "count": 1226
+      },
+      {
+        "group": "Tonga",
+        "pct": 0.1,
+        "count": 1613
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Nambya",
+        "pct": 0.0,
+        "count": 473
+      },
+      {
+        "group": "Chibarwe",
+        "pct": 0.0,
+        "count": 269
+      },
+      {
+        "group": "Shangani",
+        "pct": 0.0,
+        "count": 539
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 219
+      },
+      {
+        "group": "Sotho",
+        "pct": 0.0,
+        "count": 346
+      },
+      {
+        "group": "Tswana",
+        "pct": 0.0,
+        "count": 201
+      },
+      {
+        "group": "Venda",
+        "pct": 0.0,
+        "count": 440
+      },
+      {
+        "group": "Xhosa",
+        "pct": 0.0,
+        "count": 387
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion/language",
+        "name": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17)",
+        "url": "https://www.zimstat.co.zw/wp-content/uploads/Census/2022_PHC_Report_27012023_Final.pdf",
+        "license": "Official statistics publication of the Zimbabwe National Statistics Agency"
+      }
+    ],
+    "country": "ZWE",
+    "religion_year": 2022,
+    "religion_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.14(c): religion of the whole population in the eleven classes the report prints; the Apostolic sect, Pentecostal and Protestant classes are the report's own and are kept apart.",
+    "language_year": 2022,
+    "language_note": "ZIMSTAT, 2022 Population and Housing Census Report (Tables 2.14(c) and 2.17). Table 2.17: mother tongue as the report groups it. The table covers 13,913,253 people against a census population of 15,178,957, and the report does not state the table's age floor on the page."
+  }
+]
