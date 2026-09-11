@@ -1,37 +1,9 @@
-pakistan: Bureau of Statistics, Census 2023 Table 9
-  Khyber Pakhtunkhwa
-    2,255,958 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
-    35 districts, 123 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 35 districts add up to the province
-    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
-    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
-  Punjab
-    2,592,933 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_punjab_districts.pdf
-    36 districts, 145 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 36 districts add up to the province
-  Sindh
-    2,399,774 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_sindh_districts.pdf
-    30 districts, 0 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 30 districts add up to the province
-    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
-  Balochistan
-    2,698,658 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_balochistan_districts.pdf
-    34 districts, 80 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 34 districts add up to the province
-  Islamabad Capital Territory
-    36,012 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_islamabad.pdf
-    1 districts, 1 tehsils passed over
-    one district, and it is the territory: the table prints no separate territory row
-    every district's religions sum to its own printed total
-    and the 1 districts add up to the province
-  Azad Jammu and Kashmir
-  Gilgit-Baltistan
-  NOT PUBLISHED (enumerated apart from the census proper) -- Azad Jammu and Kashmir: table_9_ajk.pdf: HTTPError HTTP Error 404: Not Found; table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  NOT PUBLISHED (enumerated apart from the census proper) -- Gilgit-Baltistan: table_9_gb.pdf: HTTPError HTTP Error 404: Not Found; table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  13 records declaring what is not published, rather than leaving the field empty
-  wrote data/processed/pakistan_district.json (311 kB)
-  138 districts and 7 provinces
+india_census: Census 2011, level=state
+  validated against published national totals: 640 districts, 1,210,854,977 people
+  C-01 Appendix: https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx
+  C-01 Appendix: 35 states, 83 named religions, 7,788,066 of the 7,937,734 people in 'Other religions and persuasions'
+  split Jammu And Kashmir: Ladakh 274,289, Jammu and Kashmir 12,267,013
+  split Andhra Pradesh: Telangana 35,193,978, Andhra Pradesh 49,386,799
+  wrote data/processed/india_state.json (183 kB)
+  37 records, 37 with religion shares, 0 explicit gaps carrying their reason
+  groups beyond C-01's eight columns (20): ADI DHARM, Addi Bassi, Adim dhamm, Animist, Atheist, Doni Polo / Sidonyi Polo, Gond / Gondi, Heraka, Khasi, Nani Intiya, Niamtre, Nocte, Other religions (not separately named), Rangfra, Sanamahi, Sari Dharma, Sarna, Songsarek, Tribal Religion, Yumasam
