@@ -48,12 +48,13 @@ class Synonyms(unittest.TestCase):
         self.assertAlmostEqual(cg.share_of(got, "religion", "Christianity"), 71.2)
 
     def test_a_group_rolls_up_through_every_level(self):
-        # Language nests two deep: a Mandarin speaker is a Chinese speaker and
-        # a Sino-Tibetan one, and asking for any of the three must work.
+        # A Mandarin speaker is a Sinitic speaker and a Sino-Tibetan one, and
+        # asking for any of the three must work.
         got = cg.canonicalise(rows(("Mandarin", 12.0), ("Cantonese", 3.0)),
                               "language")
         self.assertEqual(cg.share_of(got, "language", "Mandarin"), 12.0)
-        self.assertEqual(cg.share_of(got, "language", "Chinese"), 15.0)
+        self.assertEqual(
+            cg.share_of(got, "language", "Sinitic languages"), 15.0)
         self.assertEqual(
             cg.share_of(got, "language", "Sino-Tibetan languages"), 15.0)
 

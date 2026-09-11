@@ -987,375 +987,14 @@ PARENT: dict[str, dict[str, str]] = {
     # it, which is why the branch level exists between the two: Slavic
     # languages should look like each other and not like Hindi, though both
     # are Indo-European.
-    "language": {
-        # -- Indo-European
-        "Germanic languages": "Indo-European languages",
-        "Romance languages": "Indo-European languages",
-        "Slavic languages": "Indo-European languages",
-        "Indo-Aryan languages": "Indo-European languages",
-        "Iranian languages": "Indo-European languages",
-        "Baltic languages": "Indo-European languages",
-        "Celtic languages": "Indo-European languages",
-        "Greek": "Indo-European languages",
-        "Albanian": "Indo-European languages",
-        "Armenian": "Indo-European languages",
-        "English": "Germanic languages",
-        "German": "Germanic languages",
-        "Dutch": "Germanic languages",
-        "Afrikaans": "Germanic languages",
-        "Swedish": "Germanic languages",
-        "Norwegian": "Germanic languages",
-        "Danish": "Germanic languages",
-        "Icelandic": "Germanic languages",
-        "Faroese": "Germanic languages",
-        "Yiddish": "Germanic languages",
-        "Frisian": "Germanic languages",
-        "Luxembourgish": "Germanic languages",
-        "Spanish": "Romance languages",
-        "Portuguese": "Romance languages",
-        "French": "Romance languages",
-        "Italian": "Romance languages",
-        "Romanian": "Romance languages",
-        "Catalan": "Romance languages",
-        "Galician": "Romance languages",
-        "Romansh": "Romance languages",
-        "Moldovan": "Romance languages",
-        "Russian": "Slavic languages",
-        "Ukrainian": "Slavic languages",
-        "Belarusian": "Slavic languages",
-        "Polish": "Slavic languages",
-        "Czech": "Slavic languages",
-        "Slovak": "Slavic languages",
-        "Bulgarian": "Slavic languages",
-        "Macedonian": "Slavic languages",
-        "Serbian": "Slavic languages",
-        "Croatian": "Slavic languages",
-        "Bosnian": "Slavic languages",
-        "Montenegrin": "Slavic languages",
-        "Serbo-Croatian": "Slavic languages",
-        "Slovenian": "Slavic languages",
-        "Slovene": "Slavic languages",
-        "Sorbian": "Slavic languages",
-        "Hindi": "Indo-Aryan languages",
-        "Urdu": "Indo-Aryan languages",
-        "Bengali": "Indo-Aryan languages",
-        "Panjabi": "Indo-Aryan languages",
-        "Marathi": "Indo-Aryan languages",
-        "Gujarati": "Indo-Aryan languages",
-        "Nepali": "Indo-Aryan languages",
-        "Sindhi": "Indo-Aryan languages",
-        "Odia": "Indo-Aryan languages",
-        "Assamese": "Indo-Aryan languages",
-        "Kashmiri": "Indo-Aryan languages",
-        "Maithili": "Indo-Aryan languages",
-        "Bhojpuri": "Indo-Aryan languages",
-        "Sinhala": "Indo-Aryan languages",
-        "Dhivehi": "Indo-Aryan languages",
-        "Romani": "Indo-Aryan languages",
-        "Persian": "Iranian languages",
-        "Persian (excluding Dari)": "Iranian languages",
-        "Dari": "Iranian languages",
-        "Pashto": "Iranian languages",
-        "Kurdish": "Iranian languages",
-        "Tajik": "Iranian languages",
-        "Balochi": "Iranian languages",
-        "Ossetian": "Iranian languages",
-        "Lithuanian": "Baltic languages",
-        "Latvian": "Baltic languages",
-        "Irish": "Celtic languages",
-        "Welsh": "Celtic languages",
-        "Scottish Gaelic": "Celtic languages",
-        "Breton": "Celtic languages",
-        # -- Afro-Asiatic
-        "Semitic languages": "Afro-Asiatic languages",
-        "Berber languages": "Afro-Asiatic languages",
-        "Cushitic languages": "Afro-Asiatic languages",
-        "Chadic languages": "Afro-Asiatic languages",
-        "Arabic": "Semitic languages",
-        "Hebrew": "Semitic languages",
-        "Amharic": "Semitic languages",
-        "Tigrinya": "Semitic languages",
-        "Maltese": "Semitic languages",
-        "Assyrian Neo-Aramaic": "Semitic languages",
-        "Tamazight": "Berber languages",
-        "Kabyle": "Berber languages",
-        "Somali": "Cushitic languages",
-        "Oromo": "Cushitic languages",
-        "Afar": "Cushitic languages",
-        "Sidamo": "Cushitic languages",
-        "Hausa": "Chadic languages",
-        # -- Sino-Tibetan
-        "Chinese": "Sino-Tibetan languages",
-        "Chinese (incl. Mandarin, Cantonese)": "Sino-Tibetan languages",
-        "Mandarin": "Chinese",
-        "Cantonese": "Chinese",
-        "Hokkien": "Chinese",
-        "Hakka": "Chinese",
-        "Burmese": "Sino-Tibetan languages",
-        "Tibetan": "Sino-Tibetan languages",
-        "Karen": "Sino-Tibetan languages",
-        # -- Turkic
-        "Turkish": "Turkic languages",
-        "Azerbaijani": "Turkic languages",
-        "Kazakh": "Turkic languages",
-        "Uzbek": "Turkic languages",
-        "Kyrgyz": "Turkic languages",
-        "Turkmen": "Turkic languages",
-        "Tatar": "Turkic languages",
-        "Bashkir": "Turkic languages",
-        "Chuvash": "Turkic languages",
-        "Uyghur": "Turkic languages",
-        "Yakut": "Turkic languages",
-        "Karakalpak": "Turkic languages",
-        "Gagauz": "Turkic languages",
-        # -- Austronesian
-        "Malay": "Austronesian languages",
-        "Indonesian": "Austronesian languages",
-        "Javanese": "Austronesian languages",
-        "Tagalog": "Austronesian languages",
-        "Tagalog (incl. Filipino)": "Austronesian languages",
-        "Cebuano": "Austronesian languages",
-        "Ilocano": "Austronesian languages",
-        "Malagasy": "Austronesian languages",
-        "Samoan": "Austronesian languages",
-        "Tongan": "Austronesian languages",
-        "Fijian": "Austronesian languages",
-        "Māori": "Austronesian languages",
-        "Maori": "Austronesian languages",
-        "Hawaiian": "Austronesian languages",
-        "Chamorro": "Austronesian languages",
-        "Tetum": "Austronesian languages",
-        "Southeast Asian Austronesian languages": "Austronesian languages",
-        # -- Niger-Congo, where offices name an individual language
-        "Swahili": "Niger-Congo languages",
-        "Shona": "Niger-Congo languages",
-        "isiZulu": "Niger-Congo languages",
-        "isiXhosa": "Niger-Congo languages",
-        "Sesotho": "Niger-Congo languages",
-        "Setswana": "Niger-Congo languages",
-        "Sepedi": "Niger-Congo languages",
-        "Xitsonga": "Niger-Congo languages",
-        "Tshivenda": "Niger-Congo languages",
-        "siSwati": "Niger-Congo languages",
-        "isiNdebele": "Niger-Congo languages",
-        "Lingala": "Niger-Congo languages",
-        "Kikongo": "Niger-Congo languages",
-        "Tshiluba": "Niger-Congo languages",
-        "Wolof": "Niger-Congo languages",
-        "Fula": "Niger-Congo languages",
-        "Yoruba": "Niger-Congo languages",
-        "Igbo": "Niger-Congo languages",
-        "Akan": "Niger-Congo languages",
-        "Ewe": "Niger-Congo languages",
-        "Bambara": "Niger-Congo languages",
-        "Kinyarwanda": "Niger-Congo languages",
-        "Kirundi": "Niger-Congo languages",
-        "Luganda": "Niger-Congo languages",
-        "Chichewa": "Niger-Congo languages",
-        "Bemba": "Niger-Congo languages",
-        "Umbundu": "Niger-Congo languages",
-        "Kimbundu": "Niger-Congo languages",
-        "Mooré": "Niger-Congo languages",
-        "Dioula": "Niger-Congo languages",
-        # -- the rest of the families
-        "Tamil": "Dravidian languages",
-        "Telugu": "Dravidian languages",
-        "Malayalam": "Dravidian languages",
-        "Kannada": "Dravidian languages",
-        "Vietnamese": "Austroasiatic languages",
-        "Khmer": "Austroasiatic languages",
-        "Santali": "Austroasiatic languages",
-        "Thai": "Tai-Kadai languages",
-        "Lao": "Tai-Kadai languages",
-        "Finnish": "Uralic languages",
-        "Estonian": "Uralic languages",
-        "Hungarian": "Uralic languages",
-        "Sami": "Uralic languages",
-        "Georgian": "Kartvelian languages",
-        "Chechen": "Northeast Caucasian languages",
-        "Avar": "Northeast Caucasian languages",
-        "Dargin": "Northeast Caucasian languages",
-        "Mongolian": "Mongolic languages",
-        "Buryat": "Mongolic languages",
-        "Japanese": "Japonic languages",
-        "Korean": "Koreanic languages",
-        "Papiamento": "Creole languages",
-        "Creole": "Creole languages",
-        "Haitian Creole": "Creole languages",
-        "Tok Pisin": "Creole languages",
-        "Bislama": "Creole languages",
-        "Sranan Tongo": "Creole languages",
-        "Cape Verdean Creole": "Creole languages",
-        "Mauritian Creole": "Creole languages",
-        "Seychellois Creole": "Creole languages",
-        "Quechua": "Indigenous American languages",
-        "Aymara": "Indigenous American languages",
-        "Guarani": "Indigenous American languages",
-        "Nahuatl": "Indigenous American languages",
-        "Maya": "Indigenous American languages",
-        "Navajo": "Indigenous American languages",
-        "Inuktitut": "Indigenous American languages",
-        "Cree": "Indigenous American languages",
-        "Greenlandic": "Indigenous American languages",
-        "Speaks an indigenous language": "Indigenous American languages",
-        "Australian Aboriginal languages": "Indigenous Australian languages",
-        "Sign language": "Sign languages",
-        "Auslan": "Sign languages",
-    },
-    # Ethnicity's tree is the shallowest of the three, on purpose.
-    #
-    # A named people and a census race category are different kinds of answer,
-    # and most of the incomparability this map warns about lives in the
-    # difference. Brazil's *pardo*, the United States' "White (non-Hispanic)"
-    # and the United Kingdom's "White British" are answers to three different
-    # questions; Yoruba, Croat and Uzbek are ethnonyms that mean the same kind
-    # of thing wherever they are asked. So the top level separates the two,
-    # and the peoples are grouped by the region their ethnonyms come from --
-    # which is what makes related groups look alike on a map without claiming
-    # they are one group.
-    "ethnicity": {
-        # The census race and origin categories. Each country's own wording is
-        # kept as its own group and given the cross-walk category as a parent,
-        # rather than being renamed into it: "White (non-Hispanic)" is what the
-        # United States asked and is what its records should say, while a
-        # reader who wants every White answer on one map can have that too.
-        "White (non-Hispanic)": "White",
-        "White British": "White",
-        "White: English, Welsh, Scottish, Northern Irish or British": "White",
-        "White Irish": "White",
-        "White: Irish": "White",
-        "White Other": "White",
-        "White: Other White": "White",
-        "White European": "White",
-        "Caucasian": "White",
-        "Black or African American (non-Hispanic)": "Black",
-        "Black African": "Black",
-        "Black Caribbean": "Black",
-        "Black or African American": "Black",
-        "African": "Black",
-        "Asian (non-Hispanic)": "Asian",
-        "Asian or Asian British": "Asian",
-        "Two or more races (non-Hispanic)": "Mixed or multiple",
-        "Mixed": "Mixed or multiple",
-        "Mixed or Multiple ethnic groups": "Mixed or multiple",
-        "Two or more races": "Mixed or multiple",
-        "Coloured": "Mixed or multiple",
-        "Mestizo": "Mixed or multiple",
-        "Hispanic or Latino (any race)": "Hispanic or Latino",
-        "Native Hawaiian and Other Pacific Islander (non-Hispanic)":
-            "Pacific Islander",
-        "American Indian and Alaska Native (non-Hispanic)": "Indigenous",
-        "Indigenous People": "Indigenous",
-        "Aboriginal and Torres Strait Islander": "Indigenous",
-        "Indigenous Peoples": "Indigenous",
-        "Amerindian": "Indigenous",
-        "White": "Census race and origin categories",
-        "Black": "Census race and origin categories",
-        "Asian": "Census race and origin categories",
-        "Pardo": "Census race and origin categories",
-        "Mixed or multiple": "Census race and origin categories",
-        "Hispanic or Latino": "Census race and origin categories",
-        "Pacific Islander": "Census race and origin categories",
-        "Indigenous": "Census race and origin categories",
-        "Afro-descendant": "Census race and origin categories",
-        "Middle Eastern or North African": "Census race and origin categories",
-        "European peoples": "Named peoples",
-        "African peoples": "Named peoples",
-        "Asian peoples": "Named peoples",
-        "Middle Eastern and North African peoples": "Named peoples",
-        "Indigenous peoples of the Americas": "Named peoples",
-        "Pacific peoples": "Named peoples",
-    },
+    # Language and ethnicity nest in ``group_tree``, which holds the wider
+    # tables and the tiers above them. Religion's nesting stays here because
+    # it is a fact about the labels: a census that writes "Roman Catholic" has
+    # named a tradition of Christianity, the same kind of statement as saying
+    # "Muslim" and "Islam" are one word for one answer.
 }
 
-# The ethnonyms, by the region their name comes from.
-#
-# This is a hue source and nothing more. Nobody selects "European peoples" on
-# the map; what it does is make Serb and Croat neighbouring shades of one
-# colour and Kazakh and Uzbek shades of another, which is how a reader sees
-# regions rather than confetti. A people missing from here keeps its own name
-# and takes a colour of its own, so the list being incomplete costs nothing
-# but the resemblance.
-_ETHNIC_REGIONS: dict[str, tuple[str, ...]] = {
-    "European peoples": (
-        "German", "Russian", "Ukrainian", "Polish", "Italian", "Czech",
-        "Croatian", "Serbian", "Belarusian", "Hungarian", "Slovak",
-        "Lithuanian", "French", "Greek", "Spanish", "Bulgarian", "Slovene",
-        "Slovenian", "Romanian", "Macedonian", "Bosniak", "Irish", "English",
-        "Austrian", "Dutch", "Albanian", "Silesian", "Swiss", "Swedish",
-        "Norwegian", "Belgian", "Moldovan", "Scottish", "Danish", "Finnish",
-        "Portuguese", "Welsh", "Latvian", "Estonian", "Montenegrin",
-        "Romani", "Jewish", "Karaim", "Rusyn", "Kashubian", "Sorbian",
-        "Gagauz", "Icelandic", "Luxembourgish", "Maltese", "Basque",
-        "Catalan", "Galician", "Sami", "Faroese", "Frisian", "Cornish",
-        "Manx", "Vlach", "Aromanian", "Yugoslav", "Bosnian", "Ruthenian",
-        "American", "Canadian", "Australian", "New Zealander", "Afrikaner",
-    ),
-    "Asian peoples": (
-        "Chinese", "Korean", "Japanese", "Indian", "Kazakh", "Uzbek",
-        "Vietnamese", "Filipino", "Thai", "Malay", "Indonesian", "Kyrgyz",
-        "Tajik", "Turkmen", "Tatar", "Bashkir", "Chuvash", "Uyghur",
-        "Mongolian", "Buryat", "Yakut", "Nepali", "Bengali", "Sinhalese",
-        "Tamil", "Punjabi", "Pashtun", "Baloch", "Hazara", "Sindhi",
-        "Karakalpak", "Dungan", "Kalmyk", "Tuvan", "Khmer", "Lao",
-        "Burman", "Shan", "Karen", "Rakhine", "Mon", "Chin", "Kachin",
-        "Javanese", "Sundanese", "Hmong", "Tibetan",
-    ),
-    "African peoples": (
-        "Yoruba", "Igbo", "Hausa", "Fulani", "Akan", "Ewe", "Wolof",
-        "Serer", "Bambara", "Malinke", "Soninke", "Dogon", "Mossi",
-        "Bobo", "Senufo", "Lobi", "Gurunsi", "Zulu", "Xhosa", "Sotho",
-        "Tswana", "Tsonga", "Venda", "Swazi", "Ndebele", "Shona",
-        "Kikuyu", "Luhya", "Luo", "Kalenjin", "Kamba", "Kisii", "Meru",
-        "Somali", "Oromo", "Amhara", "Tigray", "Sidama", "Afar",
-        "Baganda", "Banyankole", "Basoga", "Bakiga", "Iteso", "Langi",
-        "Acholi", "Lugbara", "Chagga", "Sukuma", "Nyamwezi", "Makonde",
-        "Bemba", "Tonga", "Lozi", "Chewa", "Ngoni", "Lunda", "Luvale",
-        "Kongo", "Luba", "Mongo", "Lulua", "Ovimbundu", "Ambundu",
-        "Bakongo", "Fang", "Bamileke", "Beti", "Duala", "Tikar",
-        "Kanuri", "Tiv", "Ijaw", "Ibibio", "Nupe", "Berber", "Bissa",
-        "Gourmantche", "Peulh", "Dagomba", "Ga", "Mande", "Kru", "Temne",
-        "Mende", "Limba", "Kpelle", "Bassa", "Gio", "Krahn", "Sara",
-        "Zaghawa", "Dinka", "Nuer", "Shilluk", "Azande", "Bari",
-    ),
-    "Middle Eastern and North African peoples": (
-        "Arab", "Arabs", "Turkish", "Turk", "Kurdish", "Kurd", "Persian",
-        "Armenian", "Georgian", "Azerbaijani", "Assyrian", "Chechen",
-        "Avar", "Dargin", "Lezgin", "Ingush", "Ossetian", "Kabardian",
-        "Circassian", "Druze", "Copt", "Amazigh", "Tuareg", "Beja",
-    ),
-    "Indigenous peoples of the Americas": (
-        "Quechua", "Aymara", "Guarani", "Mapuche", "Nahua", "Maya",
-        "Zapotec", "Mixtec", "Otomi", "Totonac", "Purepecha", "Navajo",
-        "Cherokee", "Sioux", "Ojibwe", "Cree", "Inuit", "Métis",
-        "Wayuu", "Nasa", "Embera", "Raizal", "Palenquero", "Miskito",
-        "Garifuna", "Kichwa", "Shuar", "Aimara",
-    ),
-    "Pacific peoples": (
-        "Māori", "Samoan", "Tongan", "Fijian", "Cook Islands Maori",
-        "Niuean", "Tokelauan", "Tuvaluan", "i-Kiribati", "Ni-Vanuatu",
-        "Papuan", "Chamorro", "Palauan", "Marshallese", "Chuukese",
-        "Pohnpeian", "Yapese", "Kosraean", "Nauruan", "Hawaiian",
-        "Pacific Peoples", "Pacific Islander",
-    ),
-}
-for _region, _peoples in _ETHNIC_REGIONS.items():
-    for _people in _peoples:
-        PARENT["ethnicity"].setdefault(_people, _region)
 
-# Base colour for a group on the "most populous group" map, where hue is the
-# group's identity and lightness is how large its share is.
-#
-# Only the top of each tree is listed. A child takes its parent's hue and is
-# told apart by a rotation the frontend applies, so Catholicism and
-# Protestantism are recognisably two traditions of one religion rather than
-# two unrelated colours -- the arrangement the printed religion maps use, and
-# the reason a reader can tell Latin America from northern Europe at a glance.
-#
-# Chosen for separation under the three common forms of colour-blindness as
-# well as in full colour. They are never the only thing carrying identity:
-# every unit names its group on hover, the legend names each colour, and the
-# panel names it again.
 HUE: dict[str, dict[str, str]] = {
     "religion": {
         "Christianity": "#3b6fd4",
@@ -1391,72 +1030,22 @@ HUE: dict[str, dict[str, str]] = {
         "Not stated": "#bdc3c7",
         "Unaffiliated or not reported": "#aeb6bf",
     },
-    "language": {
-        "Indo-European languages": "#c0392b",
-        "Germanic languages": "#2e86c1",
-        "Romance languages": "#c0392b",
-        "Slavic languages": "#7d3c98",
-        "Indo-Aryan languages": "#e67e22",
-        "Iranian languages": "#b9770e",
-        "Baltic languages": "#5499c7",
-        "Celtic languages": "#16a085",
-        "Greek": "#5dade2",
-        "Albanian": "#a04000",
-        "Armenian": "#922b21",
-        "Afro-Asiatic languages": "#b7950b",
-        "Semitic languages": "#b7950b",
-        "Berber languages": "#d4ac0d",
-        "Cushitic languages": "#9a7d0a",
-        "Chadic languages": "#7d6608",
-        "Sino-Tibetan languages": "#1e8449",
-        "Chinese": "#1e8449",
-        "Turkic languages": "#8e44ad",
-        "Austronesian languages": "#48c9b0",
-        "Niger-Congo languages": "#52be80",
-        "Dravidian languages": "#e74c3c",
-        "Austroasiatic languages": "#17a589",
-        "Tai-Kadai languages": "#f39c12",
-        "Uralic languages": "#5d6d7e",
-        "Kartvelian languages": "#76448a",
-        "Northeast Caucasian languages": "#6c3483",
-        "Mongolic languages": "#a569bd",
-        "Japonic languages": "#d98880",
-        "Koreanic languages": "#cd6155",
-        "Creole languages": "#af7ac5",
-        "Indigenous American languages": "#e59866",
-        "Indigenous Australian languages": "#ba4a00",
-        "Sign languages": "#85929e",
-        "Other languages": "#c39bd3",
-        "Language not stated": "#bdc3c7",
-    },
-    "ethnicity": {
-        "Census race and origin categories": "#5499c7",
-        "White": "#5dade2",
-        "Black": "#8e44ad",
-        "Asian": "#e67e22",
-        "Pardo": "#d98880",
-        "Mixed or multiple": "#c39bd3",
-        "Hispanic or Latino": "#e59866",
-        "Pacific Islander": "#48c9b0",
-        "Indigenous": "#b9770e",
-        "Afro-descendant": "#7d3c98",
-        "Middle Eastern or North African": "#b7950b",
-        "Named peoples": "#1e8449",
-        "European peoples": "#c0392b",
-        "African peoples": "#1e8449",
-        "Asian peoples": "#e74c3c",
-        "Middle Eastern and North African peoples": "#d4ac0d",
-        "Indigenous peoples of the Americas": "#a04000",
-        "Pacific peoples": "#17a589",
-        "Other ethnicity": "#c39bd3",
-        "Ethnicity not stated": "#bdc3c7",
-    },
 }
 
 
 def parent_of(field: str, name: str) -> str | None:
-    """The group ``name`` rolls up into, or None when it is top level."""
-    return PARENT.get(field, {}).get(name)
+    """The group ``name`` rolls up into, or None when it is top level.
+
+    PARENT above is the nesting that is a fact about the labels themselves --
+    Catholicism inside Christianity, Sunni inside Islam. The tiers above that
+    (Abrahamic religions, Indo-European languages, African ancestry) live in
+    ``group_tree``, which also knows how to read a band or a qualified
+    spelling. Imported here rather than at module scope because group_tree
+    reads this module's tables; neither import runs at the other's import
+    time, so there is no cycle.
+    """
+    import group_tree
+    return group_tree.parent_of(field, name)
 
 
 def ancestry(field: str, name: str) -> list[str]:
@@ -1481,9 +1070,12 @@ def family(field: str, name: str) -> str:
 
 
 def children(field: str) -> dict[str, list[str]]:
-    """parent -> its direct children, for one field."""
+    """parent -> its direct children, for one field, over the whole tree."""
+    import group_tree
     out: dict[str, list[str]] = {}
-    for child, up in PARENT.get(field, {}).items():
+    merged = dict(PARENT.get(field, {}))
+    merged.update(group_tree.parents(field))
+    for child, up in merged.items():
         out.setdefault(up, []).append(child)
     for kids in out.values():
         kids.sort()
@@ -1519,12 +1111,9 @@ def share_of(counts: dict[str, float], field: str, group: str) -> float:
 
 
 def hue(field: str, name: str) -> str | None:
-    """The group's own colour, or the nearest one above it."""
-    table = HUE.get(field, {})
-    for step in ancestry(field, name):
-        if step in table:
-            return table[step]
-    return None
+    """The group's own colour, or the nearest one above it in the tree."""
+    import group_tree
+    return group_tree.hue(field, name)
 
 
 # Groups that are the absence of an answer rather than an answer: a residual

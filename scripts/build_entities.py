@@ -40,6 +40,7 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import canonical_groups
+import group_tree
 from common import (  # noqa: E402
     NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, ROOT, apply_collection_policy,
     gap, is_gap, log, measure, read_json, repair, respell, write_json,
@@ -1595,6 +1596,11 @@ def group_index(admin0: list[dict[str, Any]],
                  "parent": canonical_groups.parent_of(field, name),
                  "children": [k for k in kids.get(name, []) if k in names],
                  "depth": len(canonical_groups.ancestry(field, name)) - 1,
+                 # How broad a claim this group is: 1 is the widest grouping
+                 # the project is willing to make, 3 is what a census wrote.
+                 # The map's category control reads it.
+                 "tier": group_tree.tier(field, name),
+                 "census_category": name in group_tree.census_categories(),
                  "hue": canonical_groups.hue(field, name),
                  "labels": sorted(labels.get(name, ())),
                  # A residual is an answer's absence, not an answer. The

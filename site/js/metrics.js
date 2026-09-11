@@ -107,14 +107,22 @@ window.Metrics = (function () {
    * Christianity where it said Christian. Nothing is counted twice either
    * way: each row lands in exactly one bucket.
    */
-  function tally(record, field, level) {
+  /** ``name`` rolled up to tier ``want``, or as far up as its tree goes. */
+  function atTier(field, name, want) {
+    const trail = ancestry(field, name);          // leaf first, tier 1 last
+    const index = trail.length - want;
+    return trail[Math.max(0, Math.min(index, trail.length - 1))];
+  }
+
+  function tally(record, field, tier) {
     const value = record[field];
     const out = new Map();
     if (!Array.isArray(value)) return out;
+    const want = Number(tier) || 2;
     for (const row of value) {
       if (typeof row.pct !== "number") continue;
       const name = canonicalName(field, row.group);
-      const key = level === "family" ? familyOf(field, name) : name;
+      const key = atTier(field, name, want);
       out.set(key, (out.get(key) || 0) + row.pct);
     }
     return out;
@@ -186,7 +194,7 @@ window.Metrics = (function () {
    * says so either way.
    */
   function dominant(record, field, level) {
-    const totals = tally(record, field, level || "family");
+    const totals = tally(record, field, level || 2);
     if (!totals.size) return null;
     let best = null;
     let bestResidual = null;
@@ -426,6 +434,6 @@ window.Metrics = (function () {
   }
 
   return { METRICS, FIELDS, paint, topGroups, dominant, largestShare, shareOf,
-           shareDetail, largestShareDetail, tally,
+           shareDetail, largestShareDetail, tally, atTier,
            setGroupIndex, canonicalName, ancestry, familyOf, hueOf, groupEntry };
 })();

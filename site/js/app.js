@@ -54,7 +54,7 @@
     groupQuery: "",
     // How finely the "most populous group" map reads a composition: the top
     // of each tree, or the finest canonical name a source wrote.
-    depth: "family",
+    depth: "2",
     // Which parents the group tree is showing the children of. Expanding is
     // per field, because the fields are three different trees.
     openBranches: {},
@@ -174,11 +174,12 @@
       "Chinese minzu have different answer sets. Categories are comparable " +
       "within a country and often not across a border.",
     depth:
-      "Broad families use the top of each tree — Christianity, Islam, " +
-      "Indo-European languages — which means the same distinction in every " +
-      "country. As reported splits them as far as each source does, so " +
-      "Catholic, Protestant and Orthodox separate wherever a census counted " +
-      "them and stay together where it did not.",
+      "Three widths of the same rows. The widest is the broadest grouping " +
+      "this map is willing to make and the one that means the same thing in " +
+      "every country: Abrahamic religions, Indo-European languages, African " +
+      "ancestry. The middle is the family — Christianity, Germanic, Bantu " +
+      "peoples. As reported is each census's own words, which is the most " +
+      "detail and the least comparable across a border.",
     group:
       "Picking a family counts every group inside it, so Christianity finds " +
       "the censuses that only ever say Roman Catholic. Open a family to pick " +
@@ -326,10 +327,26 @@
    * wherever a census bothered to, which is what makes Europe look like
    * itself rather than like one blue sheet.
    */
-  const DEPTHS = [
-    ["family", "Broad families"],
-    ["group", "As reported"],
-  ];
+  /* How wide a grouping the most-populous-group map reads.
+   *
+   * Three tiers, the same three in every topic, because the tree is three
+   * deep everywhere: the broadest grouping the project is willing to make,
+   * the family, and the words a census actually used. The labels change with
+   * the topic because the same tier is a different kind of thing in each --
+   * tier 1 of religion is a tradition, of language a family, of ethnicity an
+   * ancestry -- and a control that said "Tier 1" would be asking the reader
+   * to hold the abstraction rather than the question.
+   */
+  const DEPTH_LABELS = {
+    religion: ["Traditions", "Religions", "As reported"],
+    language: ["Families", "Branches", "As reported"],
+    ethnicity: ["Ancestry", "Peoples", "As reported"],
+  };
+
+  function depths() {
+    const names = DEPTH_LABELS[state.field] || DEPTH_LABELS.religion;
+    return names.map((label, i) => [String(i + 1), label]);
+  }
 
   const DETAIL_LEVELS = [
     ["auto", "Follow zoom", "Countries, then first-level, then second-level as you zoom in."],
@@ -363,22 +380,19 @@
         els.groupSearch.value = "";
       }
       markChoice(els.fieldOptions, state.field);
+      renderDepths();
       syncSections();
       refreshColors();
     });
     markChoice(els.fieldOptions, state.field);
 
-    els.depthOptions.innerHTML = DEPTHS
-      .map(([value, label]) => `<button type="button" role="radio" class="seg" data-value="${esc(value)}"
-                               aria-checked="false" tabindex="-1">${esc(label)}</button>`)
-      .join("");
+    renderDepths();
     wireChoice(els.depthOptions, (value) => {
       state.depth = value;
       markChoice(els.depthOptions, value);
       renderSummary();
       refreshColors();
     });
-    markChoice(els.depthOptions, state.depth);
 
     els.detailOptions.innerHTML = DETAIL_LEVELS
       .map(([value, label, hint]) => optionHTML("radio", "opt", value, label, hint)).join("");
@@ -469,6 +483,14 @@
       describeReach();
       renderSummary();
     }
+  }
+
+  function renderDepths() {
+    els.depthOptions.innerHTML = depths()
+      .map(([value, label]) => `<button type="button" role="radio" class="seg" data-value="${esc(value)}"
+                               aria-checked="false" tabindex="-1">${esc(label)}</button>`)
+      .join("");
+    markChoice(els.depthOptions, state.depth);
   }
 
   function fieldLabel() {
@@ -695,7 +717,7 @@
     const chips = [{ text: metric.label }];
     if (metric.needsField) chips.push({ text: fieldLabel() });
     if (metric.needsDepth) {
-      const depth = DEPTHS.find((d) => d[0] === state.depth);
+      const depth = depths().find((d) => d[0] === state.depth);
       if (depth) chips.push({ text: depth[1] });
     }
     if (metric.needsGroup && state.group) chips.push({ text: state.group, key: true });
