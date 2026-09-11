@@ -28,4 +28,6 @@ us_prri: religion by county, PRRI Census of American Religion
   aggregates: Christian 70.1% (2023 published 66%), No religion 23.1% (2023 published 27%), Non-Christian 6.5% (2023 published 6%)
   9 counties the ACS universe does not carry, matched to the shape the boundary file draws: Valdez-Cordova, Alaska, Fairfield, Connecticut, Hartford, Connecticut, Litchfield, Connecticut, Middlesex, Connecticut, New Haven, Connecticut, New London, Connecticut, Tolland, Connecticut, Windham, Connecticut
   3142 counties written
-  wrote data/processed/us_prri_county.json (9526 kB)
+  51 states and the nation summed from those counties
+  national: Protestantism 44.7%, No religion 23.1%, Catholicism 22.0%, Other religions 1.8%
+  wrote data/processed/us_prri_county.json (9676 kB)

@@ -285806,5 +285806,4680 @@
     "religion_year": 2024,
     "religion_basis": "self-identification",
     "religion_note": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas), published as the 2023 PRRI Census of American Religion; the released table's own year column reads 2024, which is the year recorded here. Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel (national margin of error +/-0.7 points); these are small-area estimates, not an enumeration, and they describe adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this county carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the five Protestant and three Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion, so this file cannot be used to ask about religion by race. Unitarian Universalists are counted in 'Other religions'."
+  },
+  {
+    "id": "USA-01",
+    "level": "admin1",
+    "name": "Alabama",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 73.0
+      },
+      {
+        "group": "No religion",
+        "pct": 15.2
+      },
+      {
+        "group": "Catholicism",
+        "pct": 6.1
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.2
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.8
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.7
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.6
+      },
+      {
+        "group": "Islam",
+        "pct": 0.6
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.5
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.5
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "01",
+      "fips_state": "01",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 67 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-02",
+    "level": "admin1",
+    "name": "Alaska",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 43.6
+      },
+      {
+        "group": "No religion",
+        "pct": 28.3
+      },
+      {
+        "group": "Catholicism",
+        "pct": 16.4
+      },
+      {
+        "group": "Other religions",
+        "pct": 3.2
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 2.8
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.4
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.2
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0
+      },
+      {
+        "group": "Islam",
+        "pct": 0.8
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.7
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "02",
+      "fips_state": "02",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 29 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-04",
+    "level": "admin1",
+    "name": "Arizona",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 35.8
+      },
+      {
+        "group": "No religion",
+        "pct": 28.5
+      },
+      {
+        "group": "Catholicism",
+        "pct": 24.1
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 4.5
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.7
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.2
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.2
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0
+      },
+      {
+        "group": "Islam",
+        "pct": 0.6
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.2
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "04",
+      "fips_state": "04",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 15 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-05",
+    "level": "admin1",
+    "name": "Arkansas",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 69.2
+      },
+      {
+        "group": "No religion",
+        "pct": 17.8
+      },
+      {
+        "group": "Catholicism",
+        "pct": 8.1
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.2
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.7
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.6
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.5
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.5
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.4
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "05",
+      "fips_state": "05",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 75 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-06",
+    "level": "admin1",
+    "name": "California",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 32.2
+      },
+      {
+        "group": "Catholicism",
+        "pct": 30.2
+      },
+      {
+        "group": "No religion",
+        "pct": 26.8
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.9
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.8
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.5
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.4
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.1
+      },
+      {
+        "group": "Hinduism",
+        "pct": 1.0
+      },
+      {
+        "group": "Islam",
+        "pct": 0.8
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "06",
+      "fips_state": "06",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 58 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-08",
+    "level": "admin1",
+    "name": "Colorado",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 37.6
+      },
+      {
+        "group": "No religion",
+        "pct": 29.7
+      },
+      {
+        "group": "Catholicism",
+        "pct": 20.5
+      },
+      {
+        "group": "Other religions",
+        "pct": 3.0
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 2.2
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.7
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.5
+      },
+      {
+        "group": "Islam",
+        "pct": 1.1
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.9
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.8
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "08",
+      "fips_state": "08",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 64 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-09",
+    "level": "admin1",
+    "name": "State 09",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholicism",
+        "pct": 31.9
+      },
+      {
+        "group": "Protestantism",
+        "pct": 31.7
+      },
+      {
+        "group": "No religion",
+        "pct": 21.2
+      },
+      {
+        "group": "Judaism",
+        "pct": 3.9
+      },
+      {
+        "group": "Other religions",
+        "pct": 3.1
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.6
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.5
+      },
+      {
+        "group": "Islam",
+        "pct": 1.4
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.2
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 1.2
+      },
+      {
+        "group": "Hinduism",
+        "pct": 1.2
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "09",
+      "fips_state": "09",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 8 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-10",
+    "level": "admin1",
+    "name": "Delaware",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 44.6
+      },
+      {
+        "group": "Catholicism",
+        "pct": 23.3
+      },
+      {
+        "group": "No religion",
+        "pct": 21.8
+      },
+      {
+        "group": "Other religions",
+        "pct": 2.5
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.7
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.2
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.1
+      },
+      {
+        "group": "Islam",
+        "pct": 1.1
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.1
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.8
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.8
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "10",
+      "fips_state": "10",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 3 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-11",
+    "level": "admin1",
+    "name": "District of Columbia",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 40.3
+      },
+      {
+        "group": "No religion",
+        "pct": 24.4
+      },
+      {
+        "group": "Catholicism",
+        "pct": 16.0
+      },
+      {
+        "group": "Judaism",
+        "pct": 4.2
+      },
+      {
+        "group": "Other religions",
+        "pct": 3.5
+      },
+      {
+        "group": "Buddhism",
+        "pct": 2.6
+      },
+      {
+        "group": "Islam",
+        "pct": 2.6
+      },
+      {
+        "group": "Hinduism",
+        "pct": 1.9
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.6
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.4
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 1.3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "11",
+      "fips_state": "11",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 1 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-12",
+    "level": "admin1",
+    "name": "Florida",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 42.6
+      },
+      {
+        "group": "Catholicism",
+        "pct": 24.5
+      },
+      {
+        "group": "No religion",
+        "pct": 23.0
+      },
+      {
+        "group": "Judaism",
+        "pct": 2.5
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.9
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.2
+      },
+      {
+        "group": "Islam",
+        "pct": 0.9
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.9
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.9
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.7
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "12",
+      "fips_state": "12",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 67 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-13",
+    "level": "admin1",
+    "name": "Georgia",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 66.0
+      },
+      {
+        "group": "No religion",
+        "pct": 16.7
+      },
+      {
+        "group": "Catholicism",
+        "pct": 10.2
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.6
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.0
+      },
+      {
+        "group": "Islam",
+        "pct": 0.9
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.8
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.8
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.7
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.5
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "13",
+      "fips_state": "13",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 159 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-15",
+    "level": "admin1",
+    "name": "Hawaii",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 37.0
+      },
+      {
+        "group": "Catholicism",
+        "pct": 28.2
+      },
+      {
+        "group": "No religion",
+        "pct": 18.4
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 5.2
+      },
+      {
+        "group": "Other religions",
+        "pct": 3.7
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.9
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.6
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.4
+      },
+      {
+        "group": "Islam",
+        "pct": 0.9
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.8
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.8
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "15",
+      "fips_state": "15",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 5 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-16",
+    "level": "admin1",
+    "name": "Idaho",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 33.1
+      },
+      {
+        "group": "No religion",
+        "pct": 28.2
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 19.1
+      },
+      {
+        "group": "Catholicism",
+        "pct": 14.6
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.7
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.7
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.7
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.4
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.4
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "16",
+      "fips_state": "16",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 44 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-17",
+    "level": "admin1",
+    "name": "Illinois",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 39.7
+      },
+      {
+        "group": "Catholicism",
+        "pct": 26.5
+      },
+      {
+        "group": "No religion",
+        "pct": 24.1
+      },
+      {
+        "group": "Judaism",
+        "pct": 2.2
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.4
+      },
+      {
+        "group": "Islam",
+        "pct": 1.2
+      },
+      {
+        "group": "Hinduism",
+        "pct": 1.1
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.9
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.7
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "17",
+      "fips_state": "17",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 102 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-18",
+    "level": "admin1",
+    "name": "Indiana",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 54.3
+      },
+      {
+        "group": "No religion",
+        "pct": 23.8
+      },
+      {
+        "group": "Catholicism",
+        "pct": 14.6
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.8
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.9
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.9
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.8
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.8
+      },
+      {
+        "group": "Islam",
+        "pct": 0.8
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.6
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "18",
+      "fips_state": "18",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 92 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-19",
+    "level": "admin1",
+    "name": "Iowa",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 50.8
+      },
+      {
+        "group": "No religion",
+        "pct": 24.1
+      },
+      {
+        "group": "Catholicism",
+        "pct": 19.6
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.4
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.8
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.6
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.6
+      },
+      {
+        "group": "Islam",
+        "pct": 0.6
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.5
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.4
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "19",
+      "fips_state": "19",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 99 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-20",
+    "level": "admin1",
+    "name": "Kansas",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 51.4
+      },
+      {
+        "group": "No religion",
+        "pct": 23.5
+      },
+      {
+        "group": "Catholicism",
+        "pct": 17.8
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.7
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.1
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.9
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.8
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.8
+      },
+      {
+        "group": "Islam",
+        "pct": 0.7
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.7
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "20",
+      "fips_state": "20",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 105 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-21",
+    "level": "admin1",
+    "name": "Kentucky",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 59.9
+      },
+      {
+        "group": "No religion",
+        "pct": 22.4
+      },
+      {
+        "group": "Catholicism",
+        "pct": 11.8
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.4
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.8
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.7
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.7
+      },
+      {
+        "group": "Islam",
+        "pct": 0.6
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.5
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.5
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "21",
+      "fips_state": "21",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 120 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-22",
+    "level": "admin1",
+    "name": "Louisiana",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 53.1
+      },
+      {
+        "group": "Catholicism",
+        "pct": 25.2
+      },
+      {
+        "group": "No religion",
+        "pct": 16.1
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.3
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.7
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.7
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.7
+      },
+      {
+        "group": "Islam",
+        "pct": 0.6
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.5
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.5
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "22",
+      "fips_state": "22",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 64 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-23",
+    "level": "admin1",
+    "name": "Maine",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 42.9
+      },
+      {
+        "group": "No religion",
+        "pct": 29.7
+      },
+      {
+        "group": "Catholicism",
+        "pct": 20.5
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.9
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.1
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.9
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.8
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.5
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.5
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "23",
+      "fips_state": "23",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 16 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-24",
+    "level": "admin1",
+    "name": "Maryland",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 47.1
+      },
+      {
+        "group": "No religion",
+        "pct": 21.0
+      },
+      {
+        "group": "Catholicism",
+        "pct": 18.2
+      },
+      {
+        "group": "Judaism",
+        "pct": 3.2
+      },
+      {
+        "group": "Other religions",
+        "pct": 2.7
+      },
+      {
+        "group": "Islam",
+        "pct": 1.6
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.5
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.3
+      },
+      {
+        "group": "Hinduism",
+        "pct": 1.2
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.2
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 1.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "24",
+      "fips_state": "24",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 24 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-25",
+    "level": "admin1",
+    "name": "Massachusetts",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholicism",
+        "pct": 32.8
+      },
+      {
+        "group": "Protestantism",
+        "pct": 28.6
+      },
+      {
+        "group": "No religion",
+        "pct": 23.6
+      },
+      {
+        "group": "Judaism",
+        "pct": 4.3
+      },
+      {
+        "group": "Other religions",
+        "pct": 3.1
+      },
+      {
+        "group": "Hinduism",
+        "pct": 1.6
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.5
+      },
+      {
+        "group": "Islam",
+        "pct": 1.0
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.0
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.9
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.9
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "25",
+      "fips_state": "25",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 14 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-26",
+    "level": "admin1",
+    "name": "Michigan",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 45.9
+      },
+      {
+        "group": "No religion",
+        "pct": 25.1
+      },
+      {
+        "group": "Catholicism",
+        "pct": 20.2
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.9
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.5
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.1
+      },
+      {
+        "group": "Islam",
+        "pct": 1.0
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.8
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.7
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.6
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "26",
+      "fips_state": "26",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 83 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-27",
+    "level": "admin1",
+    "name": "Minnesota",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 46.1
+      },
+      {
+        "group": "Catholicism",
+        "pct": 24.2
+      },
+      {
+        "group": "No religion",
+        "pct": 22.8
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.8
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.0
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.8
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.7
+      },
+      {
+        "group": "Islam",
+        "pct": 0.6
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.5
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.5
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "27",
+      "fips_state": "27",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 87 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-28",
+    "level": "admin1",
+    "name": "Mississippi",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 76.7
+      },
+      {
+        "group": "No religion",
+        "pct": 14.0
+      },
+      {
+        "group": "Catholicism",
+        "pct": 5.9
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.8
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.4
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.4
+      },
+      {
+        "group": "Islam",
+        "pct": 0.4
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.4
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.4
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.4
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "28",
+      "fips_state": "28",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 82 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-29",
+    "level": "admin1",
+    "name": "Missouri",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 55.1
+      },
+      {
+        "group": "No religion",
+        "pct": 20.6
+      },
+      {
+        "group": "Catholicism",
+        "pct": 15.6
+      },
+      {
+        "group": "Other religions",
+        "pct": 2.0
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.4
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.1
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.0
+      },
+      {
+        "group": "Islam",
+        "pct": 0.9
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.9
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.7
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.7
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "29",
+      "fips_state": "29",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 115 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-30",
+    "level": "admin1",
+    "name": "Montana",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 45.5
+      },
+      {
+        "group": "No religion",
+        "pct": 32.9
+      },
+      {
+        "group": "Catholicism",
+        "pct": 16.1
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.3
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.3
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.6
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.6
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5
+      },
+      {
+        "group": "Islam",
+        "pct": 0.4
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.4
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.4
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "30",
+      "fips_state": "30",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 56 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-31",
+    "level": "admin1",
+    "name": "Nebraska",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 46.5
+      },
+      {
+        "group": "No religion",
+        "pct": 23.3
+      },
+      {
+        "group": "Catholicism",
+        "pct": 23.0
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.7
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.1
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.9
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.8
+      },
+      {
+        "group": "Islam",
+        "pct": 0.7
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.6
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "31",
+      "fips_state": "31",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 93 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-32",
+    "level": "admin1",
+    "name": "Nevada",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 35.6
+      },
+      {
+        "group": "Protestantism",
+        "pct": 31.6
+      },
+      {
+        "group": "Catholicism",
+        "pct": 21.9
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 4.0
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.3
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.2
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.2
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.8
+      },
+      {
+        "group": "Islam",
+        "pct": 0.4
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.4
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "32",
+      "fips_state": "32",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 17 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-33",
+    "level": "admin1",
+    "name": "New Hampshire",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 32.4
+      },
+      {
+        "group": "Protestantism",
+        "pct": 31.7
+      },
+      {
+        "group": "Catholicism",
+        "pct": 27.6
+      },
+      {
+        "group": "Other religions",
+        "pct": 2.2
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.7
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.0
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.9
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.7
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6
+      },
+      {
+        "group": "Islam",
+        "pct": 0.6
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "33",
+      "fips_state": "33",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 10 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-34",
+    "level": "admin1",
+    "name": "New Jersey",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 33.6
+      },
+      {
+        "group": "Catholicism",
+        "pct": 32.9
+      },
+      {
+        "group": "No religion",
+        "pct": 18.6
+      },
+      {
+        "group": "Judaism",
+        "pct": 4.2
+      },
+      {
+        "group": "Other religions",
+        "pct": 2.6
+      },
+      {
+        "group": "Islam",
+        "pct": 1.8
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.5
+      },
+      {
+        "group": "Hinduism",
+        "pct": 1.4
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 1.3
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.1
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.0
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "34",
+      "fips_state": "34",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 21 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-35",
+    "level": "admin1",
+    "name": "New Mexico",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 38.3
+      },
+      {
+        "group": "No religion",
+        "pct": 27.8
+      },
+      {
+        "group": "Catholicism",
+        "pct": 27.6
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.5
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.4
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.7
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.6
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.3
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "35",
+      "fips_state": "35",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 33 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-36",
+    "level": "admin1",
+    "name": "New York",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholicism",
+        "pct": 32.0
+      },
+      {
+        "group": "Protestantism",
+        "pct": 29.7
+      },
+      {
+        "group": "No religion",
+        "pct": 23.1
+      },
+      {
+        "group": "Judaism",
+        "pct": 5.3
+      },
+      {
+        "group": "Islam",
+        "pct": 2.2
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.9
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.5
+      },
+      {
+        "group": "Hinduism",
+        "pct": 1.1
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.9
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.8
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "36",
+      "fips_state": "36",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 62 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-37",
+    "level": "admin1",
+    "name": "North Carolina",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 62.0
+      },
+      {
+        "group": "No religion",
+        "pct": 19.4
+      },
+      {
+        "group": "Catholicism",
+        "pct": 11.2
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.5
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.0
+      },
+      {
+        "group": "Islam",
+        "pct": 0.9
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.8
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.8
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.8
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.6
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "37",
+      "fips_state": "37",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 100 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-38",
+    "level": "admin1",
+    "name": "North Dakota",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 54.0
+      },
+      {
+        "group": "Catholicism",
+        "pct": 24.1
+      },
+      {
+        "group": "No religion",
+        "pct": 17.8
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.9
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.7
+      },
+      {
+        "group": "Islam",
+        "pct": 0.4
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.4
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.4
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.4
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.4
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "38",
+      "fips_state": "38",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 53 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-39",
+    "level": "admin1",
+    "name": "Ohio",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 49.1
+      },
+      {
+        "group": "No religion",
+        "pct": 24.3
+      },
+      {
+        "group": "Catholicism",
+        "pct": 18.9
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.8
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.2
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.9
+      },
+      {
+        "group": "Islam",
+        "pct": 0.8
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.8
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.6
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "39",
+      "fips_state": "39",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 88 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-40",
+    "level": "admin1",
+    "name": "Oklahoma",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 59.7
+      },
+      {
+        "group": "No religion",
+        "pct": 23.1
+      },
+      {
+        "group": "Catholicism",
+        "pct": 10.1
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.8
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.2
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.8
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.8
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.8
+      },
+      {
+        "group": "Islam",
+        "pct": 0.7
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.6
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.5
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "40",
+      "fips_state": "40",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 77 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-41",
+    "level": "admin1",
+    "name": "Oregon",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 38.6
+      },
+      {
+        "group": "No religion",
+        "pct": 32.1
+      },
+      {
+        "group": "Catholicism",
+        "pct": 16.0
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 3.6
+      },
+      {
+        "group": "Other religions",
+        "pct": 3.4
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.5
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.4
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0
+      },
+      {
+        "group": "Islam",
+        "pct": 0.9
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.8
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.7
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "41",
+      "fips_state": "41",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 36 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-42",
+    "level": "admin1",
+    "name": "Pennsylvania",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 45.2
+      },
+      {
+        "group": "Catholicism",
+        "pct": 23.7
+      },
+      {
+        "group": "No religion",
+        "pct": 20.7
+      },
+      {
+        "group": "Other religions",
+        "pct": 2.1
+      },
+      {
+        "group": "Judaism",
+        "pct": 2.1
+      },
+      {
+        "group": "Islam",
+        "pct": 1.4
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.0
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.9
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.9
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.8
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.8
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "42",
+      "fips_state": "42",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 67 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-44",
+    "level": "admin1",
+    "name": "Rhode Island",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholicism",
+        "pct": 41.4
+      },
+      {
+        "group": "Protestantism",
+        "pct": 27.3
+      },
+      {
+        "group": "No religion",
+        "pct": 21.3
+      },
+      {
+        "group": "Other religions",
+        "pct": 2.7
+      },
+      {
+        "group": "Judaism",
+        "pct": 2.1
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.2
+      },
+      {
+        "group": "Islam",
+        "pct": 0.9
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.9
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.8
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.7
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.7
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "44",
+      "fips_state": "44",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 5 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-45",
+    "level": "admin1",
+    "name": "South Carolina",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 64.8
+      },
+      {
+        "group": "No religion",
+        "pct": 18.7
+      },
+      {
+        "group": "Catholicism",
+        "pct": 10.2
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.5
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.8
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.8
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.7
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.7
+      },
+      {
+        "group": "Islam",
+        "pct": 0.7
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.6
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.5
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "45",
+      "fips_state": "45",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 46 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-46",
+    "level": "admin1",
+    "name": "South Dakota",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 58.4
+      },
+      {
+        "group": "No religion",
+        "pct": 19.7
+      },
+      {
+        "group": "Catholicism",
+        "pct": 17.5
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.1
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.8
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.5
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.5
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5
+      },
+      {
+        "group": "Islam",
+        "pct": 0.4
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.4
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "46",
+      "fips_state": "46",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 66 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-47",
+    "level": "admin1",
+    "name": "Tennessee",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 66.5
+      },
+      {
+        "group": "No religion",
+        "pct": 18.7
+      },
+      {
+        "group": "Catholicism",
+        "pct": 7.8
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.6
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.9
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.9
+      },
+      {
+        "group": "Islam",
+        "pct": 0.8
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.8
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.8
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.7
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "47",
+      "fips_state": "47",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 95 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-48",
+    "level": "admin1",
+    "name": "Texas",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 48.1
+      },
+      {
+        "group": "Catholicism",
+        "pct": 25.4
+      },
+      {
+        "group": "No religion",
+        "pct": 18.5
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.5
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.0
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0
+      },
+      {
+        "group": "Islam",
+        "pct": 1.0
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.9
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.8
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.7
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.5
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "48",
+      "fips_state": "48",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 254 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-49",
+    "level": "admin1",
+    "name": "Utah",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Latter-day Saints",
+        "pct": 52.5
+      },
+      {
+        "group": "No religion",
+        "pct": 19.1
+      },
+      {
+        "group": "Protestantism",
+        "pct": 13.2
+      },
+      {
+        "group": "Catholicism",
+        "pct": 10.0
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.6
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.0
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.6
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.5
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.3
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "49",
+      "fips_state": "49",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 29 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-50",
+    "level": "admin1",
+    "name": "Vermont",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 37.6
+      },
+      {
+        "group": "Protestantism",
+        "pct": 34.0
+      },
+      {
+        "group": "Catholicism",
+        "pct": 23.0
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.5
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.9
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.7
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.7
+      },
+      {
+        "group": "Islam",
+        "pct": 0.4
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.4
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.4
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.4
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "50",
+      "fips_state": "50",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 14 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-51",
+    "level": "admin1",
+    "name": "Virginia",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 53.9
+      },
+      {
+        "group": "No religion",
+        "pct": 25.3
+      },
+      {
+        "group": "Catholicism",
+        "pct": 13.2
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.6
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.3
+      },
+      {
+        "group": "Islam",
+        "pct": 1.0
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.0
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.9
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.8
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.5
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "51",
+      "fips_state": "51",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 133 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-53",
+    "level": "admin1",
+    "name": "Washington",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 36.6
+      },
+      {
+        "group": "No religion",
+        "pct": 33.7
+      },
+      {
+        "group": "Catholicism",
+        "pct": 16.9
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 3.3
+      },
+      {
+        "group": "Other religions",
+        "pct": 2.8
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.6
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.2
+      },
+      {
+        "group": "Hinduism",
+        "pct": 1.1
+      },
+      {
+        "group": "Islam",
+        "pct": 0.8
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.8
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "53",
+      "fips_state": "53",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 39 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-54",
+    "level": "admin1",
+    "name": "West Virginia",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 62.8
+      },
+      {
+        "group": "No religion",
+        "pct": 24.6
+      },
+      {
+        "group": "Catholicism",
+        "pct": 8.6
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.0
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.5
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.5
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.4
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.3
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "54",
+      "fips_state": "54",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 55 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-55",
+    "level": "admin1",
+    "name": "Wisconsin",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 42.2
+      },
+      {
+        "group": "Catholicism",
+        "pct": 26.6
+      },
+      {
+        "group": "No religion",
+        "pct": 23.5
+      },
+      {
+        "group": "Other religions",
+        "pct": 2.0
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.0
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.9
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.9
+      },
+      {
+        "group": "Islam",
+        "pct": 0.9
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.8
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.7
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "55",
+      "fips_state": "55",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 72 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA-56",
+    "level": "admin1",
+    "name": "Wyoming",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 46.7
+      },
+      {
+        "group": "No religion",
+        "pct": 26.5
+      },
+      {
+        "group": "Catholicism",
+        "pct": 14.5
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 9.0
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.0
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.5
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.5
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.4
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.3
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "56",
+      "fips_state": "56",
+      "fips_county": null
+    },
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 23 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
+  },
+  {
+    "id": "USA",
+    "level": "admin0",
+    "name": "United States",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 44.7
+      },
+      {
+        "group": "No religion",
+        "pct": 23.1
+      },
+      {
+        "group": "Catholicism",
+        "pct": 22.0
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.8
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.8
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 1.8
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.0
+      },
+      {
+        "group": "Islam",
+        "pct": 1.0
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.9
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.8
+      },
+      {
+        "group": "Orthodoxy",
+        "pct": 0.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas)",
+        "url": "https://www.prri.org/research/2023-prri-census-of-american-religion-county-level-data-on-religious-identity-and-diversity/",
+        "license": "Copyright PRRI; used with attribution to the published report"
+      }
+    ],
+    "country": "USA",
+    "religion_year": 2024,
+    "religion_basis": "self-identification",
+    "religion_note": "Summed from the 3142 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate. PRRI, Census of American Religion: County-Level Data on Religious Identity and Diversity (American Values Atlas). Self-reported religious identity among adults, modelled to county level from a national random sample of 40,000 adults on Ipsos's KnowledgePanel; small-area estimates rather than an enumeration, describing adults rather than all residents. Replaces the 2020 U.S. Religion Census adherent counts this unit carried, which reached about 48.6% of the population and could not distinguish the unaffiliated from the unreported. PRRI's categories cross race with religion; the Protestant and Catholic categories are summed into Protestantism and Catholicism and the racial detail is dropped rather than filed under religion."
   }
 ]
