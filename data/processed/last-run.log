@@ -1,14 +1,9 @@
-poland: admin1
-/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
-  warn("""Cannot parse header or footer so it will be ignored""")
-  ethnicity: 16 units
-  language: 16 units
-  religion: 17 units
-  16 records
-  wrote data/processed/poland_voivodeship.json (259 kB)
-poland: admin2
-  ethnicity: 380 units
-  language: 380 units
-  religion: 380 units
-  380 records
-  wrote data/processed/poland_powiat.json (3335 kB)
+croatia: Popis 2021, counties and towns/municipalities
+  18,279,747 bytes
+  sheet 1. (ethnicity): 29 categories: ['Croats', 'Albanians', 'Austrians', 'Bosniacs', 'Bulgarians', 'Montenegrins', 'Czechs', 'Hungarians', 'Macedonians', 'Germans', 'Poles', 'Roma', 'Romanians', 'Russians', 'Ruthenians', 'Slovaks', 'Slovenians', 'Serbs', 'Italians', 'Turks', 'Ukrainians', 'Vlachs', 'Jews', 'Other', 'Regional affiliation', 'Declared religion', 'Not classified', 'Not declared', 'Unknown']
+  sheet 2. (religion): 12 categories: ['Catholics', 'Orthodox', 'Protestants', 'Other Christians', 'Muslims', 'Jews', 'Oriental religions', 'Other religions, movements and life philosophies', 'Agnostics and sceptics', 'Not religious and atheists', 'Not declared', 'Unknown']
+  sheet 4. (language): 26 categories: ['Croatian', 'Croato-Serbian', 'Albanian', 'Bosnian', 'Bulgarian', 'Montenegrin', 'Czech', 'Hungarian', 'Macedonian', 'German', 'Polish', 'Romani', 'Romanian', 'Russian', 'Ruthenian', 'Slovak', 'Slovenian', 'Serbian', 'Serbo-Croatian', 'Italian', 'Turkish', 'Ukrainian', 'Vlach', 'Hebrew', 'Other languages', 'Unknown']
+  skipped 17 rows of type 'Gradska četvrt': not a town or municipality
+  {'admin1': 21, 'admin2': 556}
+  wrote data/processed/croatia_county.json (158 kB)
+  wrote data/processed/croatia_unit.json (2848 kB)
