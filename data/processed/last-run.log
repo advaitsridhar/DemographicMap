@@ -1,10 +1,32 @@
-us_prri: religion by county, PRRI Census of American Religion
-  excluding mL9BH and the diversity_index column (The Religious Diversity Index, By County -- a 0-1 concentration score rather than a percentage of anybody)
-  d76SP v7: https://datawrapper.dwcdn.net/d76SP/7/dataset.csv
-  3142 counties, data year 2024
-  CLuyf v4: https://datawrapper.dwcdn.net/CLuyf/4/dataset.csv
-  cross-check: CLuyf matches d76SP across 3142 counties
-  population: median 0.74 of the ACS resident count (an adult base, as expected)
-  sums: worst county 4.7pp from 100, median 0.1pp
-  national roll-up by node: Protestantism 44.7%, No religion 23.1%, Catholicism 22.0%, Other religions 1.8%, Judaism 1.8%, Latter-day Saints 1.8%, Buddhism 1.0%, Islam 1.0%, Jehovah's Witnesses 0.9%, Hinduism 0.8%, Orthodoxy 0.6%
-us_prri: the county roll-up puts Christian at 70.1% against PRRI's published 66%, outside the 2.5 point tolerance. Most likely the categories are not being collapsed into the right nodes -- check the per-node roll-up logged above. Note the published anchors are the article's 2023 figures while the table is a later vintage, so a miss of a point or so is vintage and a miss of ten is a mapping error.
+Pakistan: https://data.humdata.org/dataset/13ba0782-feca-46bb-81b8-53ee1faeebde/resource/ec76611c-2acb-44cd-ba31-51cfba5db94e/download/pakistan_uscb_202401.xlsx
+  1,147,052 bytes
+  Mother Tongue [LNG_]: 785 rows, 10 groups, denominator 'Total population'
+    621 rows skipped: another level, or no area name
+    22 areas listed with no figures at all: ASTORE DISTRICT, AZAD KASHMIR, BAGH DISTRICT, BALTISTAN DISTRICT, BHIMBER DISTRICT, DIAMIR DISTRICT ...
+    admin1: 207,684,626 against the country's own 207,684,626 -- exactly
+    admin2: 207,684,626 against the country's own 207,684,626 -- exactly
+    Karachi is one shape in the boundaries: summed 6 areas, 16,024,894 people, 33.5% of Sindh
+    every one of 136 areas reaches its published total
+  wrote data/processed/pakistan_language.json (318 kB)
+  136 areas: 6 admin1, 130 admin2
+Ethiopia: https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/ethiopia_uscb_202308.xlsx
+  1,759,157 bytes
+  Religion: 851 rows, 6 groups, by sex, no published denominator
+    6 groups reconcile by sex across 5070 cells
+    743 rows skipped: another level, or no area name
+    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
+    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
+    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
+    Ādīs Ābeba is one shape in the boundaries: summed 10 areas, 2,739,551 people, 100.0% of Ādīs Ābeba
+  Ethnicity: 108 rows, 93 groups, no published denominator
+    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
+    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
+    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
+    Ādīs Ābeba is one shape in the boundaries: summed 10 areas, 2,739,551 people, 100.0% of Ādīs Ābeba
+  Language: 108 rows, 91 groups, no published denominator
+    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
+    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
+    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
+    Ādīs Ābeba is one shape in the boundaries: summed 10 areas, 2,739,551 people, 100.0% of Ādīs Ābeba
+  wrote data/processed/ethiopia_region.json (1586 kB)
+  97 areas: 13 admin1, 84 admin2
