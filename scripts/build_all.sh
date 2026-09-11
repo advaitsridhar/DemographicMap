@@ -73,6 +73,8 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.angola
   # INSTAT Mali's RGPH5 thematic report (18 MB); annex tables read cell by cell.
   soft python3 -m scripts.fetch_census.mali
+  # INEI's 2017 profile book (600 pages); read from word positions.
+  soft python3 -m scripts.fetch_census.peru
   # One MediaWiki API call; the NSO's own hosts refuse automated readers.
   soft python3 -m scripts.fetch_census.thailand
   # Census tables that reach us only as Wikipedia transcriptions (KAZ, KHM).
