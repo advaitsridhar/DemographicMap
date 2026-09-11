@@ -56,7 +56,6 @@ UNDATED_BY_DESIGN = {
 # from shipping undated and quietly joining the backlog.
 AWAITING_AN_ADAPTER_RUN = {
     "admin0.json",                                  # fetch_factbook
-    "australia_state.json",                         # abs --level state
 }
 
 
