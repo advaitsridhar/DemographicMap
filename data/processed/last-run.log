@@ -1,9 +1,14 @@
-croatia: Popis 2021, counties and towns/municipalities
-  18,279,747 bytes
-  sheet 1. (ethnicity): 29 categories: ['Croats', 'Albanians', 'Austrians', 'Bosniacs', 'Bulgarians', 'Montenegrins', 'Czechs', 'Hungarians', 'Macedonians', 'Germans', 'Poles', 'Roma', 'Romanians', 'Russians', 'Ruthenians', 'Slovaks', 'Slovenians', 'Serbs', 'Italians', 'Turks', 'Ukrainians', 'Vlachs', 'Jews', 'Other', 'Regional affiliation', 'Declared religion', 'Not classified', 'Not declared', 'Unknown']
-  sheet 2. (religion): 12 categories: ['Catholics', 'Orthodox', 'Protestants', 'Other Christians', 'Muslims', 'Jews', 'Oriental religions', 'Other religions, movements and life philosophies', 'Agnostics and sceptics', 'Not religious and atheists', 'Not declared', 'Unknown']
-  sheet 4. (language): 26 categories: ['Croatian', 'Croato-Serbian', 'Albanian', 'Bosnian', 'Bulgarian', 'Montenegrin', 'Czech', 'Hungarian', 'Macedonian', 'German', 'Polish', 'Romani', 'Romanian', 'Russian', 'Ruthenian', 'Slovak', 'Slovenian', 'Serbian', 'Serbo-Croatian', 'Italian', 'Turkish', 'Ukrainian', 'Vlach', 'Hebrew', 'Other languages', 'Unknown']
-  skipped 17 rows of type 'Gradska četvrt': not a town or municipality
-  {'admin1': 21, 'admin2': 556}
-  wrote data/processed/croatia_county.json (158 kB)
-  wrote data/processed/croatia_unit.json (2848 kB)
+bosnia: Popis 2013, Book 2, entities and cantons
+  K2_T2_B.xlsx (ethnicity): 17,482 bytes
+    18 categories: ['Bosniak', 'Serb', 'Croat', 'Bosnian', 'Romani', 'Muslim', 'Bosnian and Herzegovinian', 'Albanian', 'Yugoslav', 'Ukrainian', 'Montenegrin', 'Turk', 'Slovenian', 'Orthodox', 'Macedonian', 'Others', 'Undeclared', 'Unknown']
+    14 territories: BOSNA I HERCEGOVINA, FEDERACIJA BOSNE I HERCEGOVINE, UNSKO-SANSKI KANTON, POSAVSKI KANTON, TUZLANSKI KANTON, ZENIČKO-DOBOJSKI KANTON, BOSANSKO-PODRINJSKI KANTON, SREDNJOBOSANSKI KANTON, HERCEGOVAČKO-NERETVANSKI KANTON, ZAPADNOHERCEGOVAČKI KANTON, KANTON SARAJEVO, KANTON 10, REPUBLIKA SRPSKA, BRČKO DISTRIKT BOSNE I HERCEGOVINE
+  K2_T5_B.xlsx (religion): 16,952 bytes
+    20 categories: ['Islam', 'Orthodox', 'Catholic', 'Muslim', 'Roman Catholic', 'Serbian', "Jehovah's Witnesses", 'Greek Catholic', 'Protestant', 'Romani', 'Christian', 'Bosniak', 'Croat', 'Adventist', 'Bosnian', 'Agnostic', 'Atheist', 'Others', 'Undeclared', 'Unknown']
+    14 territories: BOSNA I HERCEGOVINA, FEDERACIJA BOSNE I HERCEGOVINE, UNSKO-SANSKI KANTON, POSAVSKI KANTON, TUZLANSKI KANTON, ZENIČKO-DOBOJSKI KANTON, BOSANSKO-PODRINJSKI KANTON, SREDNJOBOSANSKI KANTON, HERCEGOVAČKO-NERETVANSKI KANTON, ZAPADNOHERCEGOVAČKI KANTON, KANTON SARAJEVO, KANTON 10, REPUBLIKA SRPSKA, BRČKO DISTRIKT BOSNE I HERCEGOVINE
+  K2_T6_B.xlsx (language): 15,103 bytes
+    17 categories: ['Bosnian', 'Serbian', 'Croatian', 'Serbo-Croatian', 'Romani', 'Albanian', 'Bosnian-Croatian-Serbian', 'Turkish', 'Croato-Serbian', 'Bosniak', 'Ukrainian', 'Bosnian-Serbian-Croatian', 'Bosnian-Croatian', 'Bosnian-Herzegovinian', 'German', 'Other', 'Unknown']
+    14 territories: BOSNA I HERCEGOVINA, FEDERACIJA BOSNE I HERCEGOVINE, UNSKO-SANSKI KANTON, POSAVSKI KANTON, TUZLANSKI KANTON, ZENIČKO-DOBOJSKI KANTON, BOSANSKO-PODRINJSKI KANTON, SREDNJOBOSANSKI KANTON, HERCEGOVAČKO-NERETVANSKI KANTON, ZAPADNOHERCEGOVAČKI KANTON, KANTON SARAJEVO, KANTON 10, REPUBLIKA SRPSKA, BRČKO DISTRIKT BOSNE I HERCEGOVINE
+  admin1: 3 records
+  wrote data/processed/bosnia_entity.json (21 kB)
+  admin2: 12 records
+  wrote data/processed/bosnia_canton.json (82 kB)
