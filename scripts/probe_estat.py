@@ -333,6 +333,27 @@ def show_data(stats_data_id: str, key: str, filters: dict[str, str],
             show(f"      {code} {name}: {total:,.0f}")
 
 
+def counts(key: str, *, only: list[str]) -> None:
+    """How many *tables* in the whole catalogue carry each word.
+
+    The survey-level sweep says which statistics mention a word; this says how
+    much of the catalogue does, which is the number a declaration has to rest
+    on. It asks for one row and reads ``NUMBER``, so a word matching four
+    thousand tables costs exactly as much as one matching none.
+    """
+    show("e-Stat catalogue: tables carrying each word")
+    for term, gloss in TERMS:
+        if only and term not in only:
+            continue
+        params = {"searchWord": term, "limit": 1, "lang": "J"}
+        payload = call("getStatsList", params, key)
+        status, message, inner = result_of(payload, "GET_STATS_LIST")
+        number = (inner.get("DATALIST_INF") or {}).get("NUMBER", 0) if status == 0 else 0
+        note = "" if status == 0 else f"  ({status}: {message})"
+        show(f"  {term} ({gloss}): {number} tables{note}")
+        time.sleep(0.4)
+
+
 def sweep(key: str, *, limit: int, only: list[str]) -> None:
     """The standing search, or the subset of it named on the command line.
 
@@ -376,6 +397,8 @@ def main() -> int:
     ap.add_argument("--collect-area", default="",
                     help="e-Stat collectArea filter: 1 national, 2 prefecture, "
                          "3 municipality, 4 other")
+    ap.add_argument("--counts", action="store_true",
+                    help="print how many tables carry each standing search word")
     ap.add_argument("--raw", action="store_true",
                     help="also print the first catalogue entry as the API shaped it")
     args = ap.parse_args()
@@ -405,6 +428,9 @@ def main() -> int:
         group = [g for g in args.group.split(",") if g]
         show_data(args.data, key, filters, rows=args.rows, group=group,
                   limit=args.limit)
+        did_something = True
+    if args.counts:
+        counts(key, only=[t for t in args.terms.split(",") if t])
         did_something = True
     if not did_something:
         sweep(key, limit=args.limit,
