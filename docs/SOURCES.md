@@ -104,7 +104,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Mexico | INEGI Censo de Población y Vivienda 2020, ITER | state, municipality | Religion, indigenous-language speaking and Afro-descendant identification for 2,453 of 2,457 municipios. All from the *cuestionario básico*, so these are counts, not sample estimates. |
 | New Zealand | Stats NZ 2023 Census via Aotearoa Data Explorer (SDMX) | region, territorial authority | Ethnicity, languages spoken and religious affiliation for all 88 territorial authorities and Auckland local boards. All three are multi-response, so shares are of people who named a group, not slices of a whole. Needs an API key. |
 | Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. All 7 provinces and 66 of 77 districts — the boundary file's district names do not all sit on the right polygons. |
-| India | Census 2011 tables C-01, C-01 Appendix, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. The Appendix names the religions inside "Other religions and persuasions" (Donyi-Polo, Sarna, Sanamahi …) for states only. 562 of 735 district shapes carry figures. The other 173 each say why: 98 are districts the census never enumerated, and 75 are districts that have since lost territory, so the 2011 row counts people who no longer live in the shape. Telangana and Ladakh have state figures summed from the ten and two districts the census did enumerate, and Andhra Pradesh and Jammu and Kashmir carry the residual rather than the undivided state. |
+| India | Census 2011 tables C-01, C-01 Appendix, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. The Appendix names the religions inside "Other religions and persuasions" (Donyi-Polo, Sarna, Sanamahi …) for states only. 734 of 735 district shapes carry figures. 637 are the census's own rows; 97 are shapes the census never enumerated and which carry their predecessor's shares as a stated estimate, with no head count, so nobody is counted twice. 75 more are districts that have since lost territory, and keep their 2011 figure under a caveat saying how much ground they have left. The one shape without figures is not a district at all. Telangana and Ladakh have state figures summed from the ten and two districts the census did enumerate, and Andhra Pradesh and Jammu and Kashmir carry the residual rather than the undivided state. |
 
 ### New Zealand: the geography that already fitted
 
@@ -814,21 +814,35 @@ them from — `scripts/fetch_census/india_language.py` reads whatever is present
 The all-India workbook (`DDWC16STMTMDDS0000.XLSX`) carries every state, so all 34
 states enumerated in 2011 have a mother-tongue composition, and Telangana and
 Ladakh have one summed from their districts' rows. All 35 per-state workbooks
-are present, giving 562 of 735 districts. The 173 without a figure are
-census-vintage gaps, not missing files: **91** are districts created after 2011,
-**75** are districts that have lost territory to one of those 91, **6** are the
-successors of the three districts that have been subdivided since, and **1** is
-not a district at all — geoBoundaries draws a feature in Jammu and
-Kashmir named, literally, "DATA NOT AVAILABLE", which is 268 disjoint fragments
-totalling about 390 km², the slivers between the district polygons. All 173 carry
-an explicit reason on population, religion and language; the 91 name the year
-they were created and the 2011 district they were carved from
-(`CREATED_AFTER_2011`, checked against the census's own district list on every
-run), and the 75 name what was taken out of them and how much ground they have
-left (`LOST_TERRITORY_SINCE_2011`, checked against `CREATED_AFTER_2011`).
-Nothing is carried down into any of them — a new district is a *part* of an old
-one, the district that kept the name is another part, and the rule that a figure
-coarser than the shape is not spread across the shape's members applies to both.
+are present, giving 734 of 735 districts. 637 of those are the census's own
+rows. The other 97 are shapes the census never enumerated — **91** districts
+created after 2011 and **6** successors of the three districts subdivided since
+— and they carry their predecessor's 2011 shares as an estimate the note
+declares before it says anything else. Shares only: the head count stays with
+the row the census measured, so the 637 populations still sum to less than the
+national total rather than more.
+
+The **1** shape with no figures is not a district at all — geoBoundaries draws a
+feature in Jammu and Kashmir named, literally, "DATA NOT AVAILABLE", which is
+268 disjoint fragments totalling about 390 km², the slivers between the district
+polygons. It carries an explicit reason on every field.
+
+Every inherited and every empty shape says where its figures come from or why
+there are none: the 91 name the year they were created and the 2011 district
+they were carved from (`CREATED_AFTER_2011`, checked against the census's own
+district list on every run), the 6 name the undivided district they are a
+fragment of (`SUBDIVIDED_SINCE_2011`), and the 75 that lost territory without
+losing their names keep their figure and name what was taken out of them and how
+much ground they have left (`LOST_TERRITORY_SINCE_2011`, checked against
+`CREATED_AFTER_2011`).
+**Shares are carried down; counts never are.** A new district is a *part* of an
+old one and the district that kept the name is another part, so a head count
+put on either would be the same people counted twice. The proportions are a
+different kind of claim: they survive being applied to a part, on the stated
+assumption that a district resembles the ground it was cut out of. That
+assumption is real, and weakest exactly where a district was carved out
+*because* it differs — which is why every inherited composition opens with
+"Estimated, not measured" rather than carrying it quietly.
 
 **Not the `DDWC16TOWN...` files.** The catalogue also publishes a town-level
 C-16 whose filename differs only by that infix. It enumerates urban population
@@ -876,13 +890,16 @@ primary record rather than a derivative.
 **Boundary vintage.** The boundary files are newer than the census, so:
 
 * ~109 of 735 present-day districts did not exist in 2011 and carry no census
-  figure.
+  figure of their own. They carry their predecessor's shares instead, labelled
+  as an estimate.
 * Three 2011 districts have since been subdivided so thoroughly that their
   names survive on no shape at all (Jaintia Hills, Karbi Anglong, Warangal).
-  Their figures are **not** spread across the successor districts -- the census
-  never measured those areas separately, and apportioning them would be an
-  estimate presented as a measurement. The successors carry an explicit gap
-  saying so.
+  Their **counts** are still not spread across the successors -- the census
+  never measured those areas separately, and splitting a head count between
+  them would put the same people on six shapes at once. Their **shares** are
+  carried to all six, which is the treatment every other post-2011 district
+  gets and which these are: the only thing that ever set them apart is that two
+  of them kept the old district's name.
 * 75 more lost territory without losing their names, and are the subject of the
   next section.
 * Telangana (2014) and Ladakh (2019) postdate the census entirely. They now
